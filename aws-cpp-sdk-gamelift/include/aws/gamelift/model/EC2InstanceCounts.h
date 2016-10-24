@@ -139,19 +139,19 @@ namespace Model
 
     /**
      * <p>Number of instances in the fleet that are no longer active but haven't yet
-     * been terminated. </p>
+     * been terminated.</p>
      */
     inline int GetTERMINATING() const{ return m_tERMINATING; }
 
     /**
      * <p>Number of instances in the fleet that are no longer active but haven't yet
-     * been terminated. </p>
+     * been terminated.</p>
      */
     inline void SetTERMINATING(int value) { m_tERMINATINGHasBeenSet = true; m_tERMINATING = value; }
 
     /**
      * <p>Number of instances in the fleet that are no longer active but haven't yet
-     * been terminated. </p>
+     * been terminated.</p>
      */
     inline EC2InstanceCounts& WithTERMINATING(int value) { SetTERMINATING(value); return *this;}
 

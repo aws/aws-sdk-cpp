@@ -78,42 +78,42 @@ namespace Model
     inline IncompatibilityMessage& WithMessage(const char* value) { SetMessage(value); return *this;}
 
     /**
-     * <p>The type of incompatibility.</p> <p>Allowed values include:</p> <ul>
-     * <li><p>ARN: The ARN.</p></li> <li><p>FORM_FACTOR: The form factor (for example,
-     * phone or tablet).</p></li> <li><p>MANUFACTURER: The manufacturer.</p></li>
-     * <li><p>PLATFORM: The platform (for example, Android or iOS).</p></li> </ul>
+     * <p>The type of incompatibility.</p> <p>Allowed values include:</p> <ul> <li>
+     * <p>ARN: The ARN.</p> </li> <li> <p>FORM_FACTOR: The form factor (for example,
+     * phone or tablet).</p> </li> <li> <p>MANUFACTURER: The manufacturer.</p> </li>
+     * <li> <p>PLATFORM: The platform (for example, Android or iOS).</p> </li> </ul>
      */
     inline const DeviceAttribute& GetType() const{ return m_type; }
 
     /**
-     * <p>The type of incompatibility.</p> <p>Allowed values include:</p> <ul>
-     * <li><p>ARN: The ARN.</p></li> <li><p>FORM_FACTOR: The form factor (for example,
-     * phone or tablet).</p></li> <li><p>MANUFACTURER: The manufacturer.</p></li>
-     * <li><p>PLATFORM: The platform (for example, Android or iOS).</p></li> </ul>
+     * <p>The type of incompatibility.</p> <p>Allowed values include:</p> <ul> <li>
+     * <p>ARN: The ARN.</p> </li> <li> <p>FORM_FACTOR: The form factor (for example,
+     * phone or tablet).</p> </li> <li> <p>MANUFACTURER: The manufacturer.</p> </li>
+     * <li> <p>PLATFORM: The platform (for example, Android or iOS).</p> </li> </ul>
      */
     inline void SetType(const DeviceAttribute& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type of incompatibility.</p> <p>Allowed values include:</p> <ul>
-     * <li><p>ARN: The ARN.</p></li> <li><p>FORM_FACTOR: The form factor (for example,
-     * phone or tablet).</p></li> <li><p>MANUFACTURER: The manufacturer.</p></li>
-     * <li><p>PLATFORM: The platform (for example, Android or iOS).</p></li> </ul>
+     * <p>The type of incompatibility.</p> <p>Allowed values include:</p> <ul> <li>
+     * <p>ARN: The ARN.</p> </li> <li> <p>FORM_FACTOR: The form factor (for example,
+     * phone or tablet).</p> </li> <li> <p>MANUFACTURER: The manufacturer.</p> </li>
+     * <li> <p>PLATFORM: The platform (for example, Android or iOS).</p> </li> </ul>
      */
     inline void SetType(DeviceAttribute&& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type of incompatibility.</p> <p>Allowed values include:</p> <ul>
-     * <li><p>ARN: The ARN.</p></li> <li><p>FORM_FACTOR: The form factor (for example,
-     * phone or tablet).</p></li> <li><p>MANUFACTURER: The manufacturer.</p></li>
-     * <li><p>PLATFORM: The platform (for example, Android or iOS).</p></li> </ul>
+     * <p>The type of incompatibility.</p> <p>Allowed values include:</p> <ul> <li>
+     * <p>ARN: The ARN.</p> </li> <li> <p>FORM_FACTOR: The form factor (for example,
+     * phone or tablet).</p> </li> <li> <p>MANUFACTURER: The manufacturer.</p> </li>
+     * <li> <p>PLATFORM: The platform (for example, Android or iOS).</p> </li> </ul>
      */
     inline IncompatibilityMessage& WithType(const DeviceAttribute& value) { SetType(value); return *this;}
 
     /**
-     * <p>The type of incompatibility.</p> <p>Allowed values include:</p> <ul>
-     * <li><p>ARN: The ARN.</p></li> <li><p>FORM_FACTOR: The form factor (for example,
-     * phone or tablet).</p></li> <li><p>MANUFACTURER: The manufacturer.</p></li>
-     * <li><p>PLATFORM: The platform (for example, Android or iOS).</p></li> </ul>
+     * <p>The type of incompatibility.</p> <p>Allowed values include:</p> <ul> <li>
+     * <p>ARN: The ARN.</p> </li> <li> <p>FORM_FACTOR: The form factor (for example,
+     * phone or tablet).</p> </li> <li> <p>MANUFACTURER: The manufacturer.</p> </li>
+     * <li> <p>PLATFORM: The platform (for example, Android or iOS).</p> </li> </ul>
      */
     inline IncompatibilityMessage& WithType(DeviceAttribute&& value) { SetType(value); return *this;}
 

@@ -19,6 +19,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/cognito-idp/model/UserStatusType.h>
 #include <aws/cognito-idp/model/AttributeType.h>
+#include <aws/cognito-idp/model/MFAOptionType.h>
 
 namespace Aws
 {
@@ -181,49 +182,84 @@ namespace Model
     inline UserType& WithEnabled(bool value) { SetEnabled(value); return *this;}
 
     /**
-     * <p>The user status. Can be one of the following:</p> <ul> <li>UNCONFIRMED - User
-     * has been created but not confirmed.</li> <li>CONFIRMED - User has been
-     * confirmed.</li> <li>ARCHIVED - User is no longer active.</li> <li>COMPROMISED -
-     * User is disabled due to a potential security threat.</li> <li>UNKNOWN - User
-     * status is not known.</li> </ul>
+     * <p>The user status. Can be one of the following:</p> <ul> <li> <p>UNCONFIRMED -
+     * User has been created but not confirmed.</p> </li> <li> <p>CONFIRMED - User has
+     * been confirmed.</p> </li> <li> <p>ARCHIVED - User is no longer active.</p> </li>
+     * <li> <p>COMPROMISED - User is disabled due to a potential security threat.</p>
+     * </li> <li> <p>UNKNOWN - User status is not known.</p> </li> </ul>
      */
     inline const UserStatusType& GetUserStatus() const{ return m_userStatus; }
 
     /**
-     * <p>The user status. Can be one of the following:</p> <ul> <li>UNCONFIRMED - User
-     * has been created but not confirmed.</li> <li>CONFIRMED - User has been
-     * confirmed.</li> <li>ARCHIVED - User is no longer active.</li> <li>COMPROMISED -
-     * User is disabled due to a potential security threat.</li> <li>UNKNOWN - User
-     * status is not known.</li> </ul>
+     * <p>The user status. Can be one of the following:</p> <ul> <li> <p>UNCONFIRMED -
+     * User has been created but not confirmed.</p> </li> <li> <p>CONFIRMED - User has
+     * been confirmed.</p> </li> <li> <p>ARCHIVED - User is no longer active.</p> </li>
+     * <li> <p>COMPROMISED - User is disabled due to a potential security threat.</p>
+     * </li> <li> <p>UNKNOWN - User status is not known.</p> </li> </ul>
      */
     inline void SetUserStatus(const UserStatusType& value) { m_userStatusHasBeenSet = true; m_userStatus = value; }
 
     /**
-     * <p>The user status. Can be one of the following:</p> <ul> <li>UNCONFIRMED - User
-     * has been created but not confirmed.</li> <li>CONFIRMED - User has been
-     * confirmed.</li> <li>ARCHIVED - User is no longer active.</li> <li>COMPROMISED -
-     * User is disabled due to a potential security threat.</li> <li>UNKNOWN - User
-     * status is not known.</li> </ul>
+     * <p>The user status. Can be one of the following:</p> <ul> <li> <p>UNCONFIRMED -
+     * User has been created but not confirmed.</p> </li> <li> <p>CONFIRMED - User has
+     * been confirmed.</p> </li> <li> <p>ARCHIVED - User is no longer active.</p> </li>
+     * <li> <p>COMPROMISED - User is disabled due to a potential security threat.</p>
+     * </li> <li> <p>UNKNOWN - User status is not known.</p> </li> </ul>
      */
     inline void SetUserStatus(UserStatusType&& value) { m_userStatusHasBeenSet = true; m_userStatus = value; }
 
     /**
-     * <p>The user status. Can be one of the following:</p> <ul> <li>UNCONFIRMED - User
-     * has been created but not confirmed.</li> <li>CONFIRMED - User has been
-     * confirmed.</li> <li>ARCHIVED - User is no longer active.</li> <li>COMPROMISED -
-     * User is disabled due to a potential security threat.</li> <li>UNKNOWN - User
-     * status is not known.</li> </ul>
+     * <p>The user status. Can be one of the following:</p> <ul> <li> <p>UNCONFIRMED -
+     * User has been created but not confirmed.</p> </li> <li> <p>CONFIRMED - User has
+     * been confirmed.</p> </li> <li> <p>ARCHIVED - User is no longer active.</p> </li>
+     * <li> <p>COMPROMISED - User is disabled due to a potential security threat.</p>
+     * </li> <li> <p>UNKNOWN - User status is not known.</p> </li> </ul>
      */
     inline UserType& WithUserStatus(const UserStatusType& value) { SetUserStatus(value); return *this;}
 
     /**
-     * <p>The user status. Can be one of the following:</p> <ul> <li>UNCONFIRMED - User
-     * has been created but not confirmed.</li> <li>CONFIRMED - User has been
-     * confirmed.</li> <li>ARCHIVED - User is no longer active.</li> <li>COMPROMISED -
-     * User is disabled due to a potential security threat.</li> <li>UNKNOWN - User
-     * status is not known.</li> </ul>
+     * <p>The user status. Can be one of the following:</p> <ul> <li> <p>UNCONFIRMED -
+     * User has been created but not confirmed.</p> </li> <li> <p>CONFIRMED - User has
+     * been confirmed.</p> </li> <li> <p>ARCHIVED - User is no longer active.</p> </li>
+     * <li> <p>COMPROMISED - User is disabled due to a potential security threat.</p>
+     * </li> <li> <p>UNKNOWN - User status is not known.</p> </li> </ul>
      */
     inline UserType& WithUserStatus(UserStatusType&& value) { SetUserStatus(value); return *this;}
+
+    /**
+     * <p>The MFA options for the user.</p>
+     */
+    inline const Aws::Vector<MFAOptionType>& GetMFAOptions() const{ return m_mFAOptions; }
+
+    /**
+     * <p>The MFA options for the user.</p>
+     */
+    inline void SetMFAOptions(const Aws::Vector<MFAOptionType>& value) { m_mFAOptionsHasBeenSet = true; m_mFAOptions = value; }
+
+    /**
+     * <p>The MFA options for the user.</p>
+     */
+    inline void SetMFAOptions(Aws::Vector<MFAOptionType>&& value) { m_mFAOptionsHasBeenSet = true; m_mFAOptions = value; }
+
+    /**
+     * <p>The MFA options for the user.</p>
+     */
+    inline UserType& WithMFAOptions(const Aws::Vector<MFAOptionType>& value) { SetMFAOptions(value); return *this;}
+
+    /**
+     * <p>The MFA options for the user.</p>
+     */
+    inline UserType& WithMFAOptions(Aws::Vector<MFAOptionType>&& value) { SetMFAOptions(value); return *this;}
+
+    /**
+     * <p>The MFA options for the user.</p>
+     */
+    inline UserType& AddMFAOptions(const MFAOptionType& value) { m_mFAOptionsHasBeenSet = true; m_mFAOptions.push_back(value); return *this; }
+
+    /**
+     * <p>The MFA options for the user.</p>
+     */
+    inline UserType& AddMFAOptions(MFAOptionType&& value) { m_mFAOptionsHasBeenSet = true; m_mFAOptions.push_back(value); return *this; }
 
   private:
     Aws::String m_username;
@@ -238,6 +274,8 @@ namespace Model
     bool m_enabledHasBeenSet;
     UserStatusType m_userStatus;
     bool m_userStatusHasBeenSet;
+    Aws::Vector<MFAOptionType> m_mFAOptions;
+    bool m_mFAOptionsHasBeenSet;
   };
 
 } // namespace Model

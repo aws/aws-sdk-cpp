@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-Core;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 1.0.8;
+        version : 1.0.20;
 
         // Display name for package.
         title: AWS SDK for C++ (Core Runtime);
@@ -153,6 +153,7 @@ nuget {
         Libraries += bcrypt.lib;
         Libraries += userenv.lib;
         Libraries += Rpcrt4.lib;
+        Libraries += Version.lib;
     }
 }    
      

@@ -123,84 +123,84 @@ namespace Model
     /**
      * <p>An array of <code>ByteMatchSetUpdate</code> objects that you want to insert
      * into or delete from a <a>ByteMatchSet</a>. For more information, see the
-     * applicable data types:</p> <ul> <li><a>ByteMatchSetUpdate</a>: Contains
-     * <code>Action</code> and <code>ByteMatchTuple</code></li>
-     * <li><a>ByteMatchTuple</a>: Contains <code>FieldToMatch</code>,
+     * applicable data types:</p> <ul> <li> <p> <a>ByteMatchSetUpdate</a>: Contains
+     * <code>Action</code> and <code>ByteMatchTuple</code> </p> </li> <li> <p>
+     * <a>ByteMatchTuple</a>: Contains <code>FieldToMatch</code>,
      * <code>PositionalConstraint</code>, <code>TargetString</code>, and
-     * <code>TextTransformation</code></li> <li><a>FieldToMatch</a>: Contains
-     * <code>Data</code> and <code>Type</code></li> </ul>
+     * <code>TextTransformation</code> </p> </li> <li> <p> <a>FieldToMatch</a>:
+     * Contains <code>Data</code> and <code>Type</code> </p> </li> </ul>
      */
     inline const Aws::Vector<ByteMatchSetUpdate>& GetUpdates() const{ return m_updates; }
 
     /**
      * <p>An array of <code>ByteMatchSetUpdate</code> objects that you want to insert
      * into or delete from a <a>ByteMatchSet</a>. For more information, see the
-     * applicable data types:</p> <ul> <li><a>ByteMatchSetUpdate</a>: Contains
-     * <code>Action</code> and <code>ByteMatchTuple</code></li>
-     * <li><a>ByteMatchTuple</a>: Contains <code>FieldToMatch</code>,
+     * applicable data types:</p> <ul> <li> <p> <a>ByteMatchSetUpdate</a>: Contains
+     * <code>Action</code> and <code>ByteMatchTuple</code> </p> </li> <li> <p>
+     * <a>ByteMatchTuple</a>: Contains <code>FieldToMatch</code>,
      * <code>PositionalConstraint</code>, <code>TargetString</code>, and
-     * <code>TextTransformation</code></li> <li><a>FieldToMatch</a>: Contains
-     * <code>Data</code> and <code>Type</code></li> </ul>
+     * <code>TextTransformation</code> </p> </li> <li> <p> <a>FieldToMatch</a>:
+     * Contains <code>Data</code> and <code>Type</code> </p> </li> </ul>
      */
     inline void SetUpdates(const Aws::Vector<ByteMatchSetUpdate>& value) { m_updatesHasBeenSet = true; m_updates = value; }
 
     /**
      * <p>An array of <code>ByteMatchSetUpdate</code> objects that you want to insert
      * into or delete from a <a>ByteMatchSet</a>. For more information, see the
-     * applicable data types:</p> <ul> <li><a>ByteMatchSetUpdate</a>: Contains
-     * <code>Action</code> and <code>ByteMatchTuple</code></li>
-     * <li><a>ByteMatchTuple</a>: Contains <code>FieldToMatch</code>,
+     * applicable data types:</p> <ul> <li> <p> <a>ByteMatchSetUpdate</a>: Contains
+     * <code>Action</code> and <code>ByteMatchTuple</code> </p> </li> <li> <p>
+     * <a>ByteMatchTuple</a>: Contains <code>FieldToMatch</code>,
      * <code>PositionalConstraint</code>, <code>TargetString</code>, and
-     * <code>TextTransformation</code></li> <li><a>FieldToMatch</a>: Contains
-     * <code>Data</code> and <code>Type</code></li> </ul>
+     * <code>TextTransformation</code> </p> </li> <li> <p> <a>FieldToMatch</a>:
+     * Contains <code>Data</code> and <code>Type</code> </p> </li> </ul>
      */
     inline void SetUpdates(Aws::Vector<ByteMatchSetUpdate>&& value) { m_updatesHasBeenSet = true; m_updates = value; }
 
     /**
      * <p>An array of <code>ByteMatchSetUpdate</code> objects that you want to insert
      * into or delete from a <a>ByteMatchSet</a>. For more information, see the
-     * applicable data types:</p> <ul> <li><a>ByteMatchSetUpdate</a>: Contains
-     * <code>Action</code> and <code>ByteMatchTuple</code></li>
-     * <li><a>ByteMatchTuple</a>: Contains <code>FieldToMatch</code>,
+     * applicable data types:</p> <ul> <li> <p> <a>ByteMatchSetUpdate</a>: Contains
+     * <code>Action</code> and <code>ByteMatchTuple</code> </p> </li> <li> <p>
+     * <a>ByteMatchTuple</a>: Contains <code>FieldToMatch</code>,
      * <code>PositionalConstraint</code>, <code>TargetString</code>, and
-     * <code>TextTransformation</code></li> <li><a>FieldToMatch</a>: Contains
-     * <code>Data</code> and <code>Type</code></li> </ul>
+     * <code>TextTransformation</code> </p> </li> <li> <p> <a>FieldToMatch</a>:
+     * Contains <code>Data</code> and <code>Type</code> </p> </li> </ul>
      */
     inline UpdateByteMatchSetRequest& WithUpdates(const Aws::Vector<ByteMatchSetUpdate>& value) { SetUpdates(value); return *this;}
 
     /**
      * <p>An array of <code>ByteMatchSetUpdate</code> objects that you want to insert
      * into or delete from a <a>ByteMatchSet</a>. For more information, see the
-     * applicable data types:</p> <ul> <li><a>ByteMatchSetUpdate</a>: Contains
-     * <code>Action</code> and <code>ByteMatchTuple</code></li>
-     * <li><a>ByteMatchTuple</a>: Contains <code>FieldToMatch</code>,
+     * applicable data types:</p> <ul> <li> <p> <a>ByteMatchSetUpdate</a>: Contains
+     * <code>Action</code> and <code>ByteMatchTuple</code> </p> </li> <li> <p>
+     * <a>ByteMatchTuple</a>: Contains <code>FieldToMatch</code>,
      * <code>PositionalConstraint</code>, <code>TargetString</code>, and
-     * <code>TextTransformation</code></li> <li><a>FieldToMatch</a>: Contains
-     * <code>Data</code> and <code>Type</code></li> </ul>
+     * <code>TextTransformation</code> </p> </li> <li> <p> <a>FieldToMatch</a>:
+     * Contains <code>Data</code> and <code>Type</code> </p> </li> </ul>
      */
     inline UpdateByteMatchSetRequest& WithUpdates(Aws::Vector<ByteMatchSetUpdate>&& value) { SetUpdates(value); return *this;}
 
     /**
      * <p>An array of <code>ByteMatchSetUpdate</code> objects that you want to insert
      * into or delete from a <a>ByteMatchSet</a>. For more information, see the
-     * applicable data types:</p> <ul> <li><a>ByteMatchSetUpdate</a>: Contains
-     * <code>Action</code> and <code>ByteMatchTuple</code></li>
-     * <li><a>ByteMatchTuple</a>: Contains <code>FieldToMatch</code>,
+     * applicable data types:</p> <ul> <li> <p> <a>ByteMatchSetUpdate</a>: Contains
+     * <code>Action</code> and <code>ByteMatchTuple</code> </p> </li> <li> <p>
+     * <a>ByteMatchTuple</a>: Contains <code>FieldToMatch</code>,
      * <code>PositionalConstraint</code>, <code>TargetString</code>, and
-     * <code>TextTransformation</code></li> <li><a>FieldToMatch</a>: Contains
-     * <code>Data</code> and <code>Type</code></li> </ul>
+     * <code>TextTransformation</code> </p> </li> <li> <p> <a>FieldToMatch</a>:
+     * Contains <code>Data</code> and <code>Type</code> </p> </li> </ul>
      */
     inline UpdateByteMatchSetRequest& AddUpdates(const ByteMatchSetUpdate& value) { m_updatesHasBeenSet = true; m_updates.push_back(value); return *this; }
 
     /**
      * <p>An array of <code>ByteMatchSetUpdate</code> objects that you want to insert
      * into or delete from a <a>ByteMatchSet</a>. For more information, see the
-     * applicable data types:</p> <ul> <li><a>ByteMatchSetUpdate</a>: Contains
-     * <code>Action</code> and <code>ByteMatchTuple</code></li>
-     * <li><a>ByteMatchTuple</a>: Contains <code>FieldToMatch</code>,
+     * applicable data types:</p> <ul> <li> <p> <a>ByteMatchSetUpdate</a>: Contains
+     * <code>Action</code> and <code>ByteMatchTuple</code> </p> </li> <li> <p>
+     * <a>ByteMatchTuple</a>: Contains <code>FieldToMatch</code>,
      * <code>PositionalConstraint</code>, <code>TargetString</code>, and
-     * <code>TextTransformation</code></li> <li><a>FieldToMatch</a>: Contains
-     * <code>Data</code> and <code>Type</code></li> </ul>
+     * <code>TextTransformation</code> </p> </li> <li> <p> <a>FieldToMatch</a>:
+     * Contains <code>Data</code> and <code>Type</code> </p> </li> </ul>
      */
     inline UpdateByteMatchSetRequest& AddUpdates(ByteMatchSetUpdate&& value) { m_updatesHasBeenSet = true; m_updates.push_back(value); return *this; }
 

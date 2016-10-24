@@ -21,6 +21,7 @@
 #include <aws/acm/model/RevocationReason.h>
 #include <aws/acm/model/KeyAlgorithm.h>
 #include <aws/acm/model/FailureReason.h>
+#include <aws/acm/model/CertificateType.h>
 #include <aws/acm/model/DomainValidation.h>
 
 namespace Aws
@@ -53,7 +54,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the certificate. For more information about
      * ARNs, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
+     * Reference</i>.</p>
      */
     inline const Aws::String& GetCertificateArn() const{ return m_certificateArn; }
 
@@ -61,7 +63,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the certificate. For more information about
      * ARNs, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
+     * Reference</i>.</p>
      */
     inline void SetCertificateArn(const Aws::String& value) { m_certificateArnHasBeenSet = true; m_certificateArn = value; }
 
@@ -69,7 +72,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the certificate. For more information about
      * ARNs, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
+     * Reference</i>.</p>
      */
     inline void SetCertificateArn(Aws::String&& value) { m_certificateArnHasBeenSet = true; m_certificateArn = value; }
 
@@ -77,7 +81,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the certificate. For more information about
      * ARNs, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
+     * Reference</i>.</p>
      */
     inline void SetCertificateArn(const char* value) { m_certificateArnHasBeenSet = true; m_certificateArn.assign(value); }
 
@@ -85,7 +90,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the certificate. For more information about
      * ARNs, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
+     * Reference</i>.</p>
      */
     inline CertificateDetail& WithCertificateArn(const Aws::String& value) { SetCertificateArn(value); return *this;}
 
@@ -93,7 +99,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the certificate. For more information about
      * ARNs, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
+     * Reference</i>.</p>
      */
     inline CertificateDetail& WithCertificateArn(Aws::String&& value) { SetCertificateArn(value); return *this;}
 
@@ -101,163 +108,171 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the certificate. For more information about
      * ARNs, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
+     * Reference</i>.</p>
      */
     inline CertificateDetail& WithCertificateArn(const char* value) { SetCertificateArn(value); return *this;}
 
     /**
-     * <p>The fully qualified domain name (FQDN) for the certificate, such as
-     * www.example.com or example.com.</p>
+     * <p>The fully qualified domain name for the certificate, such as www.example.com
+     * or example.com.</p>
      */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
 
     /**
-     * <p>The fully qualified domain name (FQDN) for the certificate, such as
-     * www.example.com or example.com.</p>
+     * <p>The fully qualified domain name for the certificate, such as www.example.com
+     * or example.com.</p>
      */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     /**
-     * <p>The fully qualified domain name (FQDN) for the certificate, such as
-     * www.example.com or example.com.</p>
+     * <p>The fully qualified domain name for the certificate, such as www.example.com
+     * or example.com.</p>
      */
     inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     /**
-     * <p>The fully qualified domain name (FQDN) for the certificate, such as
-     * www.example.com or example.com.</p>
+     * <p>The fully qualified domain name for the certificate, such as www.example.com
+     * or example.com.</p>
      */
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
 
     /**
-     * <p>The fully qualified domain name (FQDN) for the certificate, such as
-     * www.example.com or example.com.</p>
+     * <p>The fully qualified domain name for the certificate, such as www.example.com
+     * or example.com.</p>
      */
     inline CertificateDetail& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
 
     /**
-     * <p>The fully qualified domain name (FQDN) for the certificate, such as
-     * www.example.com or example.com.</p>
+     * <p>The fully qualified domain name for the certificate, such as www.example.com
+     * or example.com.</p>
      */
     inline CertificateDetail& WithDomainName(Aws::String&& value) { SetDomainName(value); return *this;}
 
     /**
-     * <p>The fully qualified domain name (FQDN) for the certificate, such as
-     * www.example.com or example.com.</p>
+     * <p>The fully qualified domain name for the certificate, such as www.example.com
+     * or example.com.</p>
      */
     inline CertificateDetail& WithDomainName(const char* value) { SetDomainName(value); return *this;}
 
     /**
      * <p>One or more domain names (subject alternative names) included in the
-     * certificate request. After the certificate is issued, this list includes the
-     * domain names bound to the public key contained in the certificate. The subject
-     * alternative names include the canonical domain name (CN) of the certificate and
-     * additional domain names that can be used to connect to the website.</p>
+     * certificate. This list contains the domain names that are bound to the public
+     * key that is contained in the certificate. The subject alternative names include
+     * the canonical domain name (CN) of the certificate and additional domain names
+     * that can be used to connect to the website.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSubjectAlternativeNames() const{ return m_subjectAlternativeNames; }
 
     /**
      * <p>One or more domain names (subject alternative names) included in the
-     * certificate request. After the certificate is issued, this list includes the
-     * domain names bound to the public key contained in the certificate. The subject
-     * alternative names include the canonical domain name (CN) of the certificate and
-     * additional domain names that can be used to connect to the website.</p>
+     * certificate. This list contains the domain names that are bound to the public
+     * key that is contained in the certificate. The subject alternative names include
+     * the canonical domain name (CN) of the certificate and additional domain names
+     * that can be used to connect to the website.</p>
      */
     inline void SetSubjectAlternativeNames(const Aws::Vector<Aws::String>& value) { m_subjectAlternativeNamesHasBeenSet = true; m_subjectAlternativeNames = value; }
 
     /**
      * <p>One or more domain names (subject alternative names) included in the
-     * certificate request. After the certificate is issued, this list includes the
-     * domain names bound to the public key contained in the certificate. The subject
-     * alternative names include the canonical domain name (CN) of the certificate and
-     * additional domain names that can be used to connect to the website.</p>
+     * certificate. This list contains the domain names that are bound to the public
+     * key that is contained in the certificate. The subject alternative names include
+     * the canonical domain name (CN) of the certificate and additional domain names
+     * that can be used to connect to the website.</p>
      */
     inline void SetSubjectAlternativeNames(Aws::Vector<Aws::String>&& value) { m_subjectAlternativeNamesHasBeenSet = true; m_subjectAlternativeNames = value; }
 
     /**
      * <p>One or more domain names (subject alternative names) included in the
-     * certificate request. After the certificate is issued, this list includes the
-     * domain names bound to the public key contained in the certificate. The subject
-     * alternative names include the canonical domain name (CN) of the certificate and
-     * additional domain names that can be used to connect to the website.</p>
+     * certificate. This list contains the domain names that are bound to the public
+     * key that is contained in the certificate. The subject alternative names include
+     * the canonical domain name (CN) of the certificate and additional domain names
+     * that can be used to connect to the website.</p>
      */
     inline CertificateDetail& WithSubjectAlternativeNames(const Aws::Vector<Aws::String>& value) { SetSubjectAlternativeNames(value); return *this;}
 
     /**
      * <p>One or more domain names (subject alternative names) included in the
-     * certificate request. After the certificate is issued, this list includes the
-     * domain names bound to the public key contained in the certificate. The subject
-     * alternative names include the canonical domain name (CN) of the certificate and
-     * additional domain names that can be used to connect to the website.</p>
+     * certificate. This list contains the domain names that are bound to the public
+     * key that is contained in the certificate. The subject alternative names include
+     * the canonical domain name (CN) of the certificate and additional domain names
+     * that can be used to connect to the website.</p>
      */
     inline CertificateDetail& WithSubjectAlternativeNames(Aws::Vector<Aws::String>&& value) { SetSubjectAlternativeNames(value); return *this;}
 
     /**
      * <p>One or more domain names (subject alternative names) included in the
-     * certificate request. After the certificate is issued, this list includes the
-     * domain names bound to the public key contained in the certificate. The subject
-     * alternative names include the canonical domain name (CN) of the certificate and
-     * additional domain names that can be used to connect to the website.</p>
+     * certificate. This list contains the domain names that are bound to the public
+     * key that is contained in the certificate. The subject alternative names include
+     * the canonical domain name (CN) of the certificate and additional domain names
+     * that can be used to connect to the website.</p>
      */
     inline CertificateDetail& AddSubjectAlternativeNames(const Aws::String& value) { m_subjectAlternativeNamesHasBeenSet = true; m_subjectAlternativeNames.push_back(value); return *this; }
 
     /**
      * <p>One or more domain names (subject alternative names) included in the
-     * certificate request. After the certificate is issued, this list includes the
-     * domain names bound to the public key contained in the certificate. The subject
-     * alternative names include the canonical domain name (CN) of the certificate and
-     * additional domain names that can be used to connect to the website.</p>
+     * certificate. This list contains the domain names that are bound to the public
+     * key that is contained in the certificate. The subject alternative names include
+     * the canonical domain name (CN) of the certificate and additional domain names
+     * that can be used to connect to the website.</p>
      */
     inline CertificateDetail& AddSubjectAlternativeNames(Aws::String&& value) { m_subjectAlternativeNamesHasBeenSet = true; m_subjectAlternativeNames.push_back(value); return *this; }
 
     /**
      * <p>One or more domain names (subject alternative names) included in the
-     * certificate request. After the certificate is issued, this list includes the
-     * domain names bound to the public key contained in the certificate. The subject
-     * alternative names include the canonical domain name (CN) of the certificate and
-     * additional domain names that can be used to connect to the website.</p>
+     * certificate. This list contains the domain names that are bound to the public
+     * key that is contained in the certificate. The subject alternative names include
+     * the canonical domain name (CN) of the certificate and additional domain names
+     * that can be used to connect to the website.</p>
      */
     inline CertificateDetail& AddSubjectAlternativeNames(const char* value) { m_subjectAlternativeNamesHasBeenSet = true; m_subjectAlternativeNames.push_back(value); return *this; }
 
     /**
      * <p>Contains information about the email address or addresses used for domain
-     * validation.</p>
+     * validation. This field exists only when the certificate type is
+     * <code>AMAZON_ISSUED</code>.</p>
      */
     inline const Aws::Vector<DomainValidation>& GetDomainValidationOptions() const{ return m_domainValidationOptions; }
 
     /**
      * <p>Contains information about the email address or addresses used for domain
-     * validation.</p>
+     * validation. This field exists only when the certificate type is
+     * <code>AMAZON_ISSUED</code>.</p>
      */
     inline void SetDomainValidationOptions(const Aws::Vector<DomainValidation>& value) { m_domainValidationOptionsHasBeenSet = true; m_domainValidationOptions = value; }
 
     /**
      * <p>Contains information about the email address or addresses used for domain
-     * validation.</p>
+     * validation. This field exists only when the certificate type is
+     * <code>AMAZON_ISSUED</code>.</p>
      */
     inline void SetDomainValidationOptions(Aws::Vector<DomainValidation>&& value) { m_domainValidationOptionsHasBeenSet = true; m_domainValidationOptions = value; }
 
     /**
      * <p>Contains information about the email address or addresses used for domain
-     * validation.</p>
+     * validation. This field exists only when the certificate type is
+     * <code>AMAZON_ISSUED</code>.</p>
      */
     inline CertificateDetail& WithDomainValidationOptions(const Aws::Vector<DomainValidation>& value) { SetDomainValidationOptions(value); return *this;}
 
     /**
      * <p>Contains information about the email address or addresses used for domain
-     * validation.</p>
+     * validation. This field exists only when the certificate type is
+     * <code>AMAZON_ISSUED</code>.</p>
      */
     inline CertificateDetail& WithDomainValidationOptions(Aws::Vector<DomainValidation>&& value) { SetDomainValidationOptions(value); return *this;}
 
     /**
      * <p>Contains information about the email address or addresses used for domain
-     * validation.</p>
+     * validation. This field exists only when the certificate type is
+     * <code>AMAZON_ISSUED</code>.</p>
      */
     inline CertificateDetail& AddDomainValidationOptions(const DomainValidation& value) { m_domainValidationOptionsHasBeenSet = true; m_domainValidationOptions.push_back(value); return *this; }
 
     /**
      * <p>Contains information about the email address or addresses used for domain
-     * validation.</p>
+     * validation. This field exists only when the certificate type is
+     * <code>AMAZON_ISSUED</code>.</p>
      */
     inline CertificateDetail& AddDomainValidationOptions(DomainValidation&& value) { m_domainValidationOptionsHasBeenSet = true; m_domainValidationOptions.push_back(value); return *this; }
 
@@ -297,138 +312,178 @@ namespace Model
     inline CertificateDetail& WithSerial(const char* value) { SetSerial(value); return *this;}
 
     /**
-     * <p>The X.500 distinguished name of the entity associated with the public key
-     * contained in the certificate.</p>
+     * <p>The name of the entity that is associated with the public key contained in
+     * the certificate.</p>
      */
     inline const Aws::String& GetSubject() const{ return m_subject; }
 
     /**
-     * <p>The X.500 distinguished name of the entity associated with the public key
-     * contained in the certificate.</p>
+     * <p>The name of the entity that is associated with the public key contained in
+     * the certificate.</p>
      */
     inline void SetSubject(const Aws::String& value) { m_subjectHasBeenSet = true; m_subject = value; }
 
     /**
-     * <p>The X.500 distinguished name of the entity associated with the public key
-     * contained in the certificate.</p>
+     * <p>The name of the entity that is associated with the public key contained in
+     * the certificate.</p>
      */
     inline void SetSubject(Aws::String&& value) { m_subjectHasBeenSet = true; m_subject = value; }
 
     /**
-     * <p>The X.500 distinguished name of the entity associated with the public key
-     * contained in the certificate.</p>
+     * <p>The name of the entity that is associated with the public key contained in
+     * the certificate.</p>
      */
     inline void SetSubject(const char* value) { m_subjectHasBeenSet = true; m_subject.assign(value); }
 
     /**
-     * <p>The X.500 distinguished name of the entity associated with the public key
-     * contained in the certificate.</p>
+     * <p>The name of the entity that is associated with the public key contained in
+     * the certificate.</p>
      */
     inline CertificateDetail& WithSubject(const Aws::String& value) { SetSubject(value); return *this;}
 
     /**
-     * <p>The X.500 distinguished name of the entity associated with the public key
-     * contained in the certificate.</p>
+     * <p>The name of the entity that is associated with the public key contained in
+     * the certificate.</p>
      */
     inline CertificateDetail& WithSubject(Aws::String&& value) { SetSubject(value); return *this;}
 
     /**
-     * <p>The X.500 distinguished name of the entity associated with the public key
-     * contained in the certificate.</p>
+     * <p>The name of the entity that is associated with the public key contained in
+     * the certificate.</p>
      */
     inline CertificateDetail& WithSubject(const char* value) { SetSubject(value); return *this;}
 
     /**
-     * <p>The X.500 distinguished name of the CA that issued and signed the
+     * <p>The name of the certificate authority that issued and signed the
      * certificate.</p>
      */
     inline const Aws::String& GetIssuer() const{ return m_issuer; }
 
     /**
-     * <p>The X.500 distinguished name of the CA that issued and signed the
+     * <p>The name of the certificate authority that issued and signed the
      * certificate.</p>
      */
     inline void SetIssuer(const Aws::String& value) { m_issuerHasBeenSet = true; m_issuer = value; }
 
     /**
-     * <p>The X.500 distinguished name of the CA that issued and signed the
+     * <p>The name of the certificate authority that issued and signed the
      * certificate.</p>
      */
     inline void SetIssuer(Aws::String&& value) { m_issuerHasBeenSet = true; m_issuer = value; }
 
     /**
-     * <p>The X.500 distinguished name of the CA that issued and signed the
+     * <p>The name of the certificate authority that issued and signed the
      * certificate.</p>
      */
     inline void SetIssuer(const char* value) { m_issuerHasBeenSet = true; m_issuer.assign(value); }
 
     /**
-     * <p>The X.500 distinguished name of the CA that issued and signed the
+     * <p>The name of the certificate authority that issued and signed the
      * certificate.</p>
      */
     inline CertificateDetail& WithIssuer(const Aws::String& value) { SetIssuer(value); return *this;}
 
     /**
-     * <p>The X.500 distinguished name of the CA that issued and signed the
+     * <p>The name of the certificate authority that issued and signed the
      * certificate.</p>
      */
     inline CertificateDetail& WithIssuer(Aws::String&& value) { SetIssuer(value); return *this;}
 
     /**
-     * <p>The X.500 distinguished name of the CA that issued and signed the
+     * <p>The name of the certificate authority that issued and signed the
      * certificate.</p>
      */
     inline CertificateDetail& WithIssuer(const char* value) { SetIssuer(value); return *this;}
 
     /**
-     * <p>The time at which the certificate was requested.</p>
+     * <p>The time at which the certificate was requested. This value exists only when
+     * the certificate type is <code>AMAZON_ISSUED</code>.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
 
     /**
-     * <p>The time at which the certificate was requested.</p>
+     * <p>The time at which the certificate was requested. This value exists only when
+     * the certificate type is <code>AMAZON_ISSUED</code>.</p>
      */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
-     * <p>The time at which the certificate was requested.</p>
+     * <p>The time at which the certificate was requested. This value exists only when
+     * the certificate type is <code>AMAZON_ISSUED</code>.</p>
      */
     inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
-     * <p>The time at which the certificate was requested.</p>
+     * <p>The time at which the certificate was requested. This value exists only when
+     * the certificate type is <code>AMAZON_ISSUED</code>.</p>
      */
     inline CertificateDetail& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
 
     /**
-     * <p>The time at which the certificate was requested.</p>
+     * <p>The time at which the certificate was requested. This value exists only when
+     * the certificate type is <code>AMAZON_ISSUED</code>.</p>
      */
     inline CertificateDetail& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(value); return *this;}
 
     /**
-     * <p>The time at which the certificate was issued.</p>
+     * <p>The time at which the certificate was issued. This value exists only when the
+     * certificate type is <code>AMAZON_ISSUED</code>.</p>
      */
     inline const Aws::Utils::DateTime& GetIssuedAt() const{ return m_issuedAt; }
 
     /**
-     * <p>The time at which the certificate was issued.</p>
+     * <p>The time at which the certificate was issued. This value exists only when the
+     * certificate type is <code>AMAZON_ISSUED</code>.</p>
      */
     inline void SetIssuedAt(const Aws::Utils::DateTime& value) { m_issuedAtHasBeenSet = true; m_issuedAt = value; }
 
     /**
-     * <p>The time at which the certificate was issued.</p>
+     * <p>The time at which the certificate was issued. This value exists only when the
+     * certificate type is <code>AMAZON_ISSUED</code>.</p>
      */
     inline void SetIssuedAt(Aws::Utils::DateTime&& value) { m_issuedAtHasBeenSet = true; m_issuedAt = value; }
 
     /**
-     * <p>The time at which the certificate was issued.</p>
+     * <p>The time at which the certificate was issued. This value exists only when the
+     * certificate type is <code>AMAZON_ISSUED</code>.</p>
      */
     inline CertificateDetail& WithIssuedAt(const Aws::Utils::DateTime& value) { SetIssuedAt(value); return *this;}
 
     /**
-     * <p>The time at which the certificate was issued.</p>
+     * <p>The time at which the certificate was issued. This value exists only when the
+     * certificate type is <code>AMAZON_ISSUED</code>.</p>
      */
     inline CertificateDetail& WithIssuedAt(Aws::Utils::DateTime&& value) { SetIssuedAt(value); return *this;}
+
+    /**
+     * <p>The date and time at which the certificate was imported. This value exists
+     * only when the certificate type is <code>IMPORTED</code>.</p>
+     */
+    inline const Aws::Utils::DateTime& GetImportedAt() const{ return m_importedAt; }
+
+    /**
+     * <p>The date and time at which the certificate was imported. This value exists
+     * only when the certificate type is <code>IMPORTED</code>.</p>
+     */
+    inline void SetImportedAt(const Aws::Utils::DateTime& value) { m_importedAtHasBeenSet = true; m_importedAt = value; }
+
+    /**
+     * <p>The date and time at which the certificate was imported. This value exists
+     * only when the certificate type is <code>IMPORTED</code>.</p>
+     */
+    inline void SetImportedAt(Aws::Utils::DateTime&& value) { m_importedAtHasBeenSet = true; m_importedAt = value; }
+
+    /**
+     * <p>The date and time at which the certificate was imported. This value exists
+     * only when the certificate type is <code>IMPORTED</code>.</p>
+     */
+    inline CertificateDetail& WithImportedAt(const Aws::Utils::DateTime& value) { SetImportedAt(value); return *this;}
+
+    /**
+     * <p>The date and time at which the certificate was imported. This value exists
+     * only when the certificate type is <code>IMPORTED</code>.</p>
+     */
+    inline CertificateDetail& WithImportedAt(Aws::Utils::DateTime&& value) { SetImportedAt(value); return *this;}
 
     /**
      * <p>The status of the certificate.</p>
@@ -566,129 +621,121 @@ namespace Model
     inline CertificateDetail& WithNotAfter(Aws::Utils::DateTime&& value) { SetNotAfter(value); return *this;}
 
     /**
-     * <p>The algorithm used to generate the key pair (the public and private key).
-     * Currently the only supported value is <code>RSA_2048</code>.</p>
+     * <p>The algorithm that was used to generate the key pair (the public and private
+     * key).</p>
      */
     inline const KeyAlgorithm& GetKeyAlgorithm() const{ return m_keyAlgorithm; }
 
     /**
-     * <p>The algorithm used to generate the key pair (the public and private key).
-     * Currently the only supported value is <code>RSA_2048</code>.</p>
+     * <p>The algorithm that was used to generate the key pair (the public and private
+     * key).</p>
      */
     inline void SetKeyAlgorithm(const KeyAlgorithm& value) { m_keyAlgorithmHasBeenSet = true; m_keyAlgorithm = value; }
 
     /**
-     * <p>The algorithm used to generate the key pair (the public and private key).
-     * Currently the only supported value is <code>RSA_2048</code>.</p>
+     * <p>The algorithm that was used to generate the key pair (the public and private
+     * key).</p>
      */
     inline void SetKeyAlgorithm(KeyAlgorithm&& value) { m_keyAlgorithmHasBeenSet = true; m_keyAlgorithm = value; }
 
     /**
-     * <p>The algorithm used to generate the key pair (the public and private key).
-     * Currently the only supported value is <code>RSA_2048</code>.</p>
+     * <p>The algorithm that was used to generate the key pair (the public and private
+     * key).</p>
      */
     inline CertificateDetail& WithKeyAlgorithm(const KeyAlgorithm& value) { SetKeyAlgorithm(value); return *this;}
 
     /**
-     * <p>The algorithm used to generate the key pair (the public and private key).
-     * Currently the only supported value is <code>RSA_2048</code>.</p>
+     * <p>The algorithm that was used to generate the key pair (the public and private
+     * key).</p>
      */
     inline CertificateDetail& WithKeyAlgorithm(KeyAlgorithm&& value) { SetKeyAlgorithm(value); return *this;}
 
     /**
-     * <p>The algorithm used to generate a signature. Currently the only supported
-     * value is <code>SHA256WITHRSA</code>.</p>
+     * <p>The algorithm that was used to sign the certificate.</p>
      */
     inline const Aws::String& GetSignatureAlgorithm() const{ return m_signatureAlgorithm; }
 
     /**
-     * <p>The algorithm used to generate a signature. Currently the only supported
-     * value is <code>SHA256WITHRSA</code>.</p>
+     * <p>The algorithm that was used to sign the certificate.</p>
      */
     inline void SetSignatureAlgorithm(const Aws::String& value) { m_signatureAlgorithmHasBeenSet = true; m_signatureAlgorithm = value; }
 
     /**
-     * <p>The algorithm used to generate a signature. Currently the only supported
-     * value is <code>SHA256WITHRSA</code>.</p>
+     * <p>The algorithm that was used to sign the certificate.</p>
      */
     inline void SetSignatureAlgorithm(Aws::String&& value) { m_signatureAlgorithmHasBeenSet = true; m_signatureAlgorithm = value; }
 
     /**
-     * <p>The algorithm used to generate a signature. Currently the only supported
-     * value is <code>SHA256WITHRSA</code>.</p>
+     * <p>The algorithm that was used to sign the certificate.</p>
      */
     inline void SetSignatureAlgorithm(const char* value) { m_signatureAlgorithmHasBeenSet = true; m_signatureAlgorithm.assign(value); }
 
     /**
-     * <p>The algorithm used to generate a signature. Currently the only supported
-     * value is <code>SHA256WITHRSA</code>.</p>
+     * <p>The algorithm that was used to sign the certificate.</p>
      */
     inline CertificateDetail& WithSignatureAlgorithm(const Aws::String& value) { SetSignatureAlgorithm(value); return *this;}
 
     /**
-     * <p>The algorithm used to generate a signature. Currently the only supported
-     * value is <code>SHA256WITHRSA</code>.</p>
+     * <p>The algorithm that was used to sign the certificate.</p>
      */
     inline CertificateDetail& WithSignatureAlgorithm(Aws::String&& value) { SetSignatureAlgorithm(value); return *this;}
 
     /**
-     * <p>The algorithm used to generate a signature. Currently the only supported
-     * value is <code>SHA256WITHRSA</code>.</p>
+     * <p>The algorithm that was used to sign the certificate.</p>
      */
     inline CertificateDetail& WithSignatureAlgorithm(const char* value) { SetSignatureAlgorithm(value); return *this;}
 
     /**
-     * <p>A list of ARNs for the resources that are using the certificate. An ACM
-     * Certificate can be used by multiple AWS resources.</p>
+     * <p>A list of ARNs for the AWS resources that are using the certificate. A
+     * certificate can be used by multiple AWS resources.</p>
      */
     inline const Aws::Vector<Aws::String>& GetInUseBy() const{ return m_inUseBy; }
 
     /**
-     * <p>A list of ARNs for the resources that are using the certificate. An ACM
-     * Certificate can be used by multiple AWS resources.</p>
+     * <p>A list of ARNs for the AWS resources that are using the certificate. A
+     * certificate can be used by multiple AWS resources.</p>
      */
     inline void SetInUseBy(const Aws::Vector<Aws::String>& value) { m_inUseByHasBeenSet = true; m_inUseBy = value; }
 
     /**
-     * <p>A list of ARNs for the resources that are using the certificate. An ACM
-     * Certificate can be used by multiple AWS resources.</p>
+     * <p>A list of ARNs for the AWS resources that are using the certificate. A
+     * certificate can be used by multiple AWS resources.</p>
      */
     inline void SetInUseBy(Aws::Vector<Aws::String>&& value) { m_inUseByHasBeenSet = true; m_inUseBy = value; }
 
     /**
-     * <p>A list of ARNs for the resources that are using the certificate. An ACM
-     * Certificate can be used by multiple AWS resources.</p>
+     * <p>A list of ARNs for the AWS resources that are using the certificate. A
+     * certificate can be used by multiple AWS resources.</p>
      */
     inline CertificateDetail& WithInUseBy(const Aws::Vector<Aws::String>& value) { SetInUseBy(value); return *this;}
 
     /**
-     * <p>A list of ARNs for the resources that are using the certificate. An ACM
-     * Certificate can be used by multiple AWS resources.</p>
+     * <p>A list of ARNs for the AWS resources that are using the certificate. A
+     * certificate can be used by multiple AWS resources.</p>
      */
     inline CertificateDetail& WithInUseBy(Aws::Vector<Aws::String>&& value) { SetInUseBy(value); return *this;}
 
     /**
-     * <p>A list of ARNs for the resources that are using the certificate. An ACM
-     * Certificate can be used by multiple AWS resources.</p>
+     * <p>A list of ARNs for the AWS resources that are using the certificate. A
+     * certificate can be used by multiple AWS resources.</p>
      */
     inline CertificateDetail& AddInUseBy(const Aws::String& value) { m_inUseByHasBeenSet = true; m_inUseBy.push_back(value); return *this; }
 
     /**
-     * <p>A list of ARNs for the resources that are using the certificate. An ACM
-     * Certificate can be used by multiple AWS resources.</p>
+     * <p>A list of ARNs for the AWS resources that are using the certificate. A
+     * certificate can be used by multiple AWS resources.</p>
      */
     inline CertificateDetail& AddInUseBy(Aws::String&& value) { m_inUseByHasBeenSet = true; m_inUseBy.push_back(value); return *this; }
 
     /**
-     * <p>A list of ARNs for the resources that are using the certificate. An ACM
-     * Certificate can be used by multiple AWS resources.</p>
+     * <p>A list of ARNs for the AWS resources that are using the certificate. A
+     * certificate can be used by multiple AWS resources.</p>
      */
     inline CertificateDetail& AddInUseBy(const char* value) { m_inUseByHasBeenSet = true; m_inUseBy.push_back(value); return *this; }
 
     /**
      * <p>The reason the certificate request failed. This value exists only when the
-     * structure's <code>Status</code> is <code>FAILED</code>. For more information,
-     * see <a
+     * certificate status is <code>FAILED</code>. For more information, see <a
      * href="http://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed">Certificate
      * Request Failed</a> in the <i>AWS Certificate Manager User Guide</i>.</p>
      */
@@ -696,8 +743,7 @@ namespace Model
 
     /**
      * <p>The reason the certificate request failed. This value exists only when the
-     * structure's <code>Status</code> is <code>FAILED</code>. For more information,
-     * see <a
+     * certificate status is <code>FAILED</code>. For more information, see <a
      * href="http://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed">Certificate
      * Request Failed</a> in the <i>AWS Certificate Manager User Guide</i>.</p>
      */
@@ -705,8 +751,7 @@ namespace Model
 
     /**
      * <p>The reason the certificate request failed. This value exists only when the
-     * structure's <code>Status</code> is <code>FAILED</code>. For more information,
-     * see <a
+     * certificate status is <code>FAILED</code>. For more information, see <a
      * href="http://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed">Certificate
      * Request Failed</a> in the <i>AWS Certificate Manager User Guide</i>.</p>
      */
@@ -714,8 +759,7 @@ namespace Model
 
     /**
      * <p>The reason the certificate request failed. This value exists only when the
-     * structure's <code>Status</code> is <code>FAILED</code>. For more information,
-     * see <a
+     * certificate status is <code>FAILED</code>. For more information, see <a
      * href="http://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed">Certificate
      * Request Failed</a> in the <i>AWS Certificate Manager User Guide</i>.</p>
      */
@@ -723,12 +767,81 @@ namespace Model
 
     /**
      * <p>The reason the certificate request failed. This value exists only when the
-     * structure's <code>Status</code> is <code>FAILED</code>. For more information,
-     * see <a
+     * certificate status is <code>FAILED</code>. For more information, see <a
      * href="http://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed">Certificate
      * Request Failed</a> in the <i>AWS Certificate Manager User Guide</i>.</p>
      */
     inline CertificateDetail& WithFailureReason(FailureReason&& value) { SetFailureReason(value); return *this;}
+
+    /**
+     * <p>The source of the certificate. For certificates provided by ACM, this value
+     * is <code>AMAZON_ISSUED</code>. For certificates that you imported with
+     * <a>ImportCertificate</a>, this value is <code>IMPORTED</code>. ACM does not
+     * provide <a
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
+     * renewal</a> for imported certificates. For more information about the
+     * differences between certificates that you import and those that ACM provides,
+     * see <a
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing
+     * Certificates</a> in the <i>AWS Certificate Manager User Guide</i>.</p>
+     */
+    inline const CertificateType& GetType() const{ return m_type; }
+
+    /**
+     * <p>The source of the certificate. For certificates provided by ACM, this value
+     * is <code>AMAZON_ISSUED</code>. For certificates that you imported with
+     * <a>ImportCertificate</a>, this value is <code>IMPORTED</code>. ACM does not
+     * provide <a
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
+     * renewal</a> for imported certificates. For more information about the
+     * differences between certificates that you import and those that ACM provides,
+     * see <a
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing
+     * Certificates</a> in the <i>AWS Certificate Manager User Guide</i>.</p>
+     */
+    inline void SetType(const CertificateType& value) { m_typeHasBeenSet = true; m_type = value; }
+
+    /**
+     * <p>The source of the certificate. For certificates provided by ACM, this value
+     * is <code>AMAZON_ISSUED</code>. For certificates that you imported with
+     * <a>ImportCertificate</a>, this value is <code>IMPORTED</code>. ACM does not
+     * provide <a
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
+     * renewal</a> for imported certificates. For more information about the
+     * differences between certificates that you import and those that ACM provides,
+     * see <a
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing
+     * Certificates</a> in the <i>AWS Certificate Manager User Guide</i>.</p>
+     */
+    inline void SetType(CertificateType&& value) { m_typeHasBeenSet = true; m_type = value; }
+
+    /**
+     * <p>The source of the certificate. For certificates provided by ACM, this value
+     * is <code>AMAZON_ISSUED</code>. For certificates that you imported with
+     * <a>ImportCertificate</a>, this value is <code>IMPORTED</code>. ACM does not
+     * provide <a
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
+     * renewal</a> for imported certificates. For more information about the
+     * differences between certificates that you import and those that ACM provides,
+     * see <a
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing
+     * Certificates</a> in the <i>AWS Certificate Manager User Guide</i>.</p>
+     */
+    inline CertificateDetail& WithType(const CertificateType& value) { SetType(value); return *this;}
+
+    /**
+     * <p>The source of the certificate. For certificates provided by ACM, this value
+     * is <code>AMAZON_ISSUED</code>. For certificates that you imported with
+     * <a>ImportCertificate</a>, this value is <code>IMPORTED</code>. ACM does not
+     * provide <a
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
+     * renewal</a> for imported certificates. For more information about the
+     * differences between certificates that you import and those that ACM provides,
+     * see <a
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing
+     * Certificates</a> in the <i>AWS Certificate Manager User Guide</i>.</p>
+     */
+    inline CertificateDetail& WithType(CertificateType&& value) { SetType(value); return *this;}
 
   private:
     Aws::String m_certificateArn;
@@ -749,6 +862,8 @@ namespace Model
     bool m_createdAtHasBeenSet;
     Aws::Utils::DateTime m_issuedAt;
     bool m_issuedAtHasBeenSet;
+    Aws::Utils::DateTime m_importedAt;
+    bool m_importedAtHasBeenSet;
     CertificateStatus m_status;
     bool m_statusHasBeenSet;
     Aws::Utils::DateTime m_revokedAt;
@@ -767,6 +882,8 @@ namespace Model
     bool m_inUseByHasBeenSet;
     FailureReason m_failureReason;
     bool m_failureReasonHasBeenSet;
+    CertificateType m_type;
+    bool m_typeHasBeenSet;
   };
 
 } // namespace Model

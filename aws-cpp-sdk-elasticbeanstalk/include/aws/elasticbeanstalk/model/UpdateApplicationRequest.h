@@ -83,44 +83,44 @@ namespace Model
     inline UpdateApplicationRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
 
     /**
-     * <p> A new description for the application. </p> <p>Default: If not specified,
-     * AWS Elastic Beanstalk does not update the description. </p>
+     * <p>A new description for the application.</p> <p>Default: If not specified, AWS
+     * Elastic Beanstalk does not update the description.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p> A new description for the application. </p> <p>Default: If not specified,
-     * AWS Elastic Beanstalk does not update the description. </p>
+     * <p>A new description for the application.</p> <p>Default: If not specified, AWS
+     * Elastic Beanstalk does not update the description.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p> A new description for the application. </p> <p>Default: If not specified,
-     * AWS Elastic Beanstalk does not update the description. </p>
+     * <p>A new description for the application.</p> <p>Default: If not specified, AWS
+     * Elastic Beanstalk does not update the description.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p> A new description for the application. </p> <p>Default: If not specified,
-     * AWS Elastic Beanstalk does not update the description. </p>
+     * <p>A new description for the application.</p> <p>Default: If not specified, AWS
+     * Elastic Beanstalk does not update the description.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p> A new description for the application. </p> <p>Default: If not specified,
-     * AWS Elastic Beanstalk does not update the description. </p>
+     * <p>A new description for the application.</p> <p>Default: If not specified, AWS
+     * Elastic Beanstalk does not update the description.</p>
      */
     inline UpdateApplicationRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p> A new description for the application. </p> <p>Default: If not specified,
-     * AWS Elastic Beanstalk does not update the description. </p>
+     * <p>A new description for the application.</p> <p>Default: If not specified, AWS
+     * Elastic Beanstalk does not update the description.</p>
      */
     inline UpdateApplicationRequest& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
 
     /**
-     * <p> A new description for the application. </p> <p>Default: If not specified,
-     * AWS Elastic Beanstalk does not update the description. </p>
+     * <p>A new description for the application.</p> <p>Default: If not specified, AWS
+     * Elastic Beanstalk does not update the description.</p>
      */
     inline UpdateApplicationRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 

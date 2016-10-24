@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/ecr/ECR_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -223,6 +224,36 @@ namespace Model
      */
     inline Repository& WithRepositoryUri(const char* value) { SetRepositoryUri(value); return *this;}
 
+    /**
+     * <p>The date and time, in JavaScript date/time format, when the repository was
+     * created.</p>
+     */
+    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
+
+    /**
+     * <p>The date and time, in JavaScript date/time format, when the repository was
+     * created.</p>
+     */
+    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
+
+    /**
+     * <p>The date and time, in JavaScript date/time format, when the repository was
+     * created.</p>
+     */
+    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
+
+    /**
+     * <p>The date and time, in JavaScript date/time format, when the repository was
+     * created.</p>
+     */
+    inline Repository& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
+
+    /**
+     * <p>The date and time, in JavaScript date/time format, when the repository was
+     * created.</p>
+     */
+    inline Repository& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(value); return *this;}
+
   private:
     Aws::String m_repositoryArn;
     bool m_repositoryArnHasBeenSet;
@@ -232,6 +263,8 @@ namespace Model
     bool m_repositoryNameHasBeenSet;
     Aws::String m_repositoryUri;
     bool m_repositoryUriHasBeenSet;
+    Aws::Utils::DateTime m_createdAt;
+    bool m_createdAtHasBeenSet;
   };
 
 } // namespace Model

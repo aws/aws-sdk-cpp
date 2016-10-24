@@ -36,37 +36,37 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * <p>Unique identifier for the build you want to delete. </p>
+     * <p>Unique identifier for the build you want to delete.</p>
      */
     inline const Aws::String& GetBuildId() const{ return m_buildId; }
 
     /**
-     * <p>Unique identifier for the build you want to delete. </p>
+     * <p>Unique identifier for the build you want to delete.</p>
      */
     inline void SetBuildId(const Aws::String& value) { m_buildIdHasBeenSet = true; m_buildId = value; }
 
     /**
-     * <p>Unique identifier for the build you want to delete. </p>
+     * <p>Unique identifier for the build you want to delete.</p>
      */
     inline void SetBuildId(Aws::String&& value) { m_buildIdHasBeenSet = true; m_buildId = value; }
 
     /**
-     * <p>Unique identifier for the build you want to delete. </p>
+     * <p>Unique identifier for the build you want to delete.</p>
      */
     inline void SetBuildId(const char* value) { m_buildIdHasBeenSet = true; m_buildId.assign(value); }
 
     /**
-     * <p>Unique identifier for the build you want to delete. </p>
+     * <p>Unique identifier for the build you want to delete.</p>
      */
     inline DeleteBuildRequest& WithBuildId(const Aws::String& value) { SetBuildId(value); return *this;}
 
     /**
-     * <p>Unique identifier for the build you want to delete. </p>
+     * <p>Unique identifier for the build you want to delete.</p>
      */
     inline DeleteBuildRequest& WithBuildId(Aws::String&& value) { SetBuildId(value); return *this;}
 
     /**
-     * <p>Unique identifier for the build you want to delete. </p>
+     * <p>Unique identifier for the build you want to delete.</p>
      */
     inline DeleteBuildRequest& WithBuildId(const char* value) { SetBuildId(value); return *this;}
 

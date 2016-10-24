@@ -27,7 +27,8 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input of a <i>ModifyCacheParameterGroup</i> action.</p>
+   * <p>Represents the input of a <code>ModifyCacheParameterGroup</code>
+   * operation.</p>
    */
   class AWS_ELASTICACHE_API ModifyCacheParameterGroupRequest : public ElastiCacheRequest
   {

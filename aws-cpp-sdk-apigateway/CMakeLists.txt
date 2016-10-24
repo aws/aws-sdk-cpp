@@ -84,7 +84,7 @@ project(aws-cpp-sdk-apigateway)
   install (FILES ${AWS_APIGATEWAY_HEADERS} DESTINATION include/aws/apigateway)
   install (FILES ${AWS_APIGATEWAY_MODEL_HEADERS} DESTINATION include/aws/apigateway/model)
 
-  if(MSVC)
+  if(PLATFORM_WINDOWS AND MSVC)
     install (FILES nuget/aws-cpp-sdk-apigateway.autopkg DESTINATION nuget)
   endif()
 

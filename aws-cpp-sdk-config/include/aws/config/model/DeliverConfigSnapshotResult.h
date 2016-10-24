@@ -33,7 +33,7 @@ namespace ConfigService
 namespace Model
 {
   /**
-   * <p> The output for the <a>DeliverConfigSnapshot</a> action in JSON format. </p>
+   * <p>The output for the <a>DeliverConfigSnapshot</a> action in JSON format.</p>
    */
   class AWS_CONFIGSERVICE_API DeliverConfigSnapshotResult
   {

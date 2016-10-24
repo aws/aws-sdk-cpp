@@ -36,37 +36,44 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * <p>The uploads' ARNs.</p>
+     * <p>The Amazon Resource Name (ARN) of the project for which you want to list
+     * uploads.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p>The uploads' ARNs.</p>
+     * <p>The Amazon Resource Name (ARN) of the project for which you want to list
+     * uploads.</p>
      */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
-     * <p>The uploads' ARNs.</p>
+     * <p>The Amazon Resource Name (ARN) of the project for which you want to list
+     * uploads.</p>
      */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
-     * <p>The uploads' ARNs.</p>
+     * <p>The Amazon Resource Name (ARN) of the project for which you want to list
+     * uploads.</p>
      */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
     /**
-     * <p>The uploads' ARNs.</p>
+     * <p>The Amazon Resource Name (ARN) of the project for which you want to list
+     * uploads.</p>
      */
     inline ListUploadsRequest& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p>The uploads' ARNs.</p>
+     * <p>The Amazon Resource Name (ARN) of the project for which you want to list
+     * uploads.</p>
      */
     inline ListUploadsRequest& WithArn(Aws::String&& value) { SetArn(value); return *this;}
 
     /**
-     * <p>The uploads' ARNs.</p>
+     * <p>The Amazon Resource Name (ARN) of the project for which you want to list
+     * uploads.</p>
      */
     inline ListUploadsRequest& WithArn(const char* value) { SetArn(value); return *this;}
 

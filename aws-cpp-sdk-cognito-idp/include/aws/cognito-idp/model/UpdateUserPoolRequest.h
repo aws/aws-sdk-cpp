@@ -23,6 +23,7 @@
 #include <aws/cognito-idp/model/DeviceConfigurationType.h>
 #include <aws/cognito-idp/model/EmailConfigurationType.h>
 #include <aws/cognito-idp/model/SmsConfigurationType.h>
+#include <aws/cognito-idp/model/AdminCreateUserConfigType.h>
 #include <aws/cognito-idp/model/VerifiedAttributeType.h>
 
 namespace Aws
@@ -246,37 +247,37 @@ namespace Model
     inline UpdateUserPoolRequest& WithEmailVerificationMessage(const char* value) { SetEmailVerificationMessage(value); return *this;}
 
     /**
-     * <p>The subject of the email verfication message</p>
+     * <p>The subject of the email verfication message.</p>
      */
     inline const Aws::String& GetEmailVerificationSubject() const{ return m_emailVerificationSubject; }
 
     /**
-     * <p>The subject of the email verfication message</p>
+     * <p>The subject of the email verfication message.</p>
      */
     inline void SetEmailVerificationSubject(const Aws::String& value) { m_emailVerificationSubjectHasBeenSet = true; m_emailVerificationSubject = value; }
 
     /**
-     * <p>The subject of the email verfication message</p>
+     * <p>The subject of the email verfication message.</p>
      */
     inline void SetEmailVerificationSubject(Aws::String&& value) { m_emailVerificationSubjectHasBeenSet = true; m_emailVerificationSubject = value; }
 
     /**
-     * <p>The subject of the email verfication message</p>
+     * <p>The subject of the email verfication message.</p>
      */
     inline void SetEmailVerificationSubject(const char* value) { m_emailVerificationSubjectHasBeenSet = true; m_emailVerificationSubject.assign(value); }
 
     /**
-     * <p>The subject of the email verfication message</p>
+     * <p>The subject of the email verfication message.</p>
      */
     inline UpdateUserPoolRequest& WithEmailVerificationSubject(const Aws::String& value) { SetEmailVerificationSubject(value); return *this;}
 
     /**
-     * <p>The subject of the email verfication message</p>
+     * <p>The subject of the email verfication message.</p>
      */
     inline UpdateUserPoolRequest& WithEmailVerificationSubject(Aws::String&& value) { SetEmailVerificationSubject(value); return *this;}
 
     /**
-     * <p>The subject of the email verfication message</p>
+     * <p>The subject of the email verfication message.</p>
      */
     inline UpdateUserPoolRequest& WithEmailVerificationSubject(const char* value) { SetEmailVerificationSubject(value); return *this;}
 
@@ -316,52 +317,52 @@ namespace Model
     inline UpdateUserPoolRequest& WithSmsAuthenticationMessage(const char* value) { SetSmsAuthenticationMessage(value); return *this;}
 
     /**
-     * <p>Can be one of the following values:</p> <ul> <li><code>OFF</code> - MFA
-     * tokens are not required and cannot be specified during user registration.</li>
-     * <li><code>ON</code> - MFA tokens are required for all user registrations. You
-     * can only specify required when you are initially creating a user pool.</li>
-     * <li><code>OPTIONAL</code> - Users have the option when registering to create an
-     * MFA token.</li> </ul>
+     * <p>Can be one of the following values:</p> <ul> <li> <p> <code>OFF</code> - MFA
+     * tokens are not required and cannot be specified during user registration.</p>
+     * </li> <li> <p> <code>ON</code> - MFA tokens are required for all user
+     * registrations. You can only specify required when you are initially creating a
+     * user pool.</p> </li> <li> <p> <code>OPTIONAL</code> - Users have the option when
+     * registering to create an MFA token.</p> </li> </ul>
      */
     inline const UserPoolMfaType& GetMfaConfiguration() const{ return m_mfaConfiguration; }
 
     /**
-     * <p>Can be one of the following values:</p> <ul> <li><code>OFF</code> - MFA
-     * tokens are not required and cannot be specified during user registration.</li>
-     * <li><code>ON</code> - MFA tokens are required for all user registrations. You
-     * can only specify required when you are initially creating a user pool.</li>
-     * <li><code>OPTIONAL</code> - Users have the option when registering to create an
-     * MFA token.</li> </ul>
+     * <p>Can be one of the following values:</p> <ul> <li> <p> <code>OFF</code> - MFA
+     * tokens are not required and cannot be specified during user registration.</p>
+     * </li> <li> <p> <code>ON</code> - MFA tokens are required for all user
+     * registrations. You can only specify required when you are initially creating a
+     * user pool.</p> </li> <li> <p> <code>OPTIONAL</code> - Users have the option when
+     * registering to create an MFA token.</p> </li> </ul>
      */
     inline void SetMfaConfiguration(const UserPoolMfaType& value) { m_mfaConfigurationHasBeenSet = true; m_mfaConfiguration = value; }
 
     /**
-     * <p>Can be one of the following values:</p> <ul> <li><code>OFF</code> - MFA
-     * tokens are not required and cannot be specified during user registration.</li>
-     * <li><code>ON</code> - MFA tokens are required for all user registrations. You
-     * can only specify required when you are initially creating a user pool.</li>
-     * <li><code>OPTIONAL</code> - Users have the option when registering to create an
-     * MFA token.</li> </ul>
+     * <p>Can be one of the following values:</p> <ul> <li> <p> <code>OFF</code> - MFA
+     * tokens are not required and cannot be specified during user registration.</p>
+     * </li> <li> <p> <code>ON</code> - MFA tokens are required for all user
+     * registrations. You can only specify required when you are initially creating a
+     * user pool.</p> </li> <li> <p> <code>OPTIONAL</code> - Users have the option when
+     * registering to create an MFA token.</p> </li> </ul>
      */
     inline void SetMfaConfiguration(UserPoolMfaType&& value) { m_mfaConfigurationHasBeenSet = true; m_mfaConfiguration = value; }
 
     /**
-     * <p>Can be one of the following values:</p> <ul> <li><code>OFF</code> - MFA
-     * tokens are not required and cannot be specified during user registration.</li>
-     * <li><code>ON</code> - MFA tokens are required for all user registrations. You
-     * can only specify required when you are initially creating a user pool.</li>
-     * <li><code>OPTIONAL</code> - Users have the option when registering to create an
-     * MFA token.</li> </ul>
+     * <p>Can be one of the following values:</p> <ul> <li> <p> <code>OFF</code> - MFA
+     * tokens are not required and cannot be specified during user registration.</p>
+     * </li> <li> <p> <code>ON</code> - MFA tokens are required for all user
+     * registrations. You can only specify required when you are initially creating a
+     * user pool.</p> </li> <li> <p> <code>OPTIONAL</code> - Users have the option when
+     * registering to create an MFA token.</p> </li> </ul>
      */
     inline UpdateUserPoolRequest& WithMfaConfiguration(const UserPoolMfaType& value) { SetMfaConfiguration(value); return *this;}
 
     /**
-     * <p>Can be one of the following values:</p> <ul> <li><code>OFF</code> - MFA
-     * tokens are not required and cannot be specified during user registration.</li>
-     * <li><code>ON</code> - MFA tokens are required for all user registrations. You
-     * can only specify required when you are initially creating a user pool.</li>
-     * <li><code>OPTIONAL</code> - Users have the option when registering to create an
-     * MFA token.</li> </ul>
+     * <p>Can be one of the following values:</p> <ul> <li> <p> <code>OFF</code> - MFA
+     * tokens are not required and cannot be specified during user registration.</p>
+     * </li> <li> <p> <code>ON</code> - MFA tokens are required for all user
+     * registrations. You can only specify required when you are initially creating a
+     * user pool.</p> </li> <li> <p> <code>OPTIONAL</code> - Users have the option when
+     * registering to create an MFA token.</p> </li> </ul>
      */
     inline UpdateUserPoolRequest& WithMfaConfiguration(UserPoolMfaType&& value) { SetMfaConfiguration(value); return *this;}
 
@@ -440,6 +441,31 @@ namespace Model
      */
     inline UpdateUserPoolRequest& WithSmsConfiguration(SmsConfigurationType&& value) { SetSmsConfiguration(value); return *this;}
 
+    /**
+     * <p>The configuration for AdminCreateUser requests.</p>
+     */
+    inline const AdminCreateUserConfigType& GetAdminCreateUserConfig() const{ return m_adminCreateUserConfig; }
+
+    /**
+     * <p>The configuration for AdminCreateUser requests.</p>
+     */
+    inline void SetAdminCreateUserConfig(const AdminCreateUserConfigType& value) { m_adminCreateUserConfigHasBeenSet = true; m_adminCreateUserConfig = value; }
+
+    /**
+     * <p>The configuration for AdminCreateUser requests.</p>
+     */
+    inline void SetAdminCreateUserConfig(AdminCreateUserConfigType&& value) { m_adminCreateUserConfigHasBeenSet = true; m_adminCreateUserConfig = value; }
+
+    /**
+     * <p>The configuration for AdminCreateUser requests.</p>
+     */
+    inline UpdateUserPoolRequest& WithAdminCreateUserConfig(const AdminCreateUserConfigType& value) { SetAdminCreateUserConfig(value); return *this;}
+
+    /**
+     * <p>The configuration for AdminCreateUser requests.</p>
+     */
+    inline UpdateUserPoolRequest& WithAdminCreateUserConfig(AdminCreateUserConfigType&& value) { SetAdminCreateUserConfig(value); return *this;}
+
   private:
     Aws::String m_userPoolId;
     bool m_userPoolIdHasBeenSet;
@@ -465,6 +491,8 @@ namespace Model
     bool m_emailConfigurationHasBeenSet;
     SmsConfigurationType m_smsConfiguration;
     bool m_smsConfigurationHasBeenSet;
+    AdminCreateUserConfigType m_adminCreateUserConfig;
+    bool m_adminCreateUserConfigHasBeenSet;
   };
 
 } // namespace Model

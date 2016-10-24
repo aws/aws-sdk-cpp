@@ -38,221 +38,248 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * <p>A unique identifier for the customer master key. This value can be a globally
-     * unique identifier, a fully specified ARN to either an alias or a key, or an
-     * alias name prefixed by "alias/".</p> <ul> <li> <p>Key ARN Example -
-     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</p>
-     * </li> <li> <p>Alias ARN Example -
-     * arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</p> </li> <li> <p>Globally
-     * Unique Key ID Example - 12345678-1234-1234-1234-123456789012</p> </li> <li>
-     * <p>Alias Name Example - alias/MyAliasName</p> </li> </ul>
+     * <p>The identifier of the CMK under which to generate and encrypt the data
+     * encryption key.</p> <p>A valid identifier is the unique key ID or the Amazon
+     * Resource Name (ARN) of the CMK, or the alias name or ARN of an alias that points
+     * to the CMK. Examples:</p> <ul> <li> <p>Unique key ID:
+     * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>CMK ARN:
+     * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>
+     * <p>Alias ARN: <code>arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias</code>
+     * </p> </li> </ul>
      */
     inline const Aws::String& GetKeyId() const{ return m_keyId; }
 
     /**
-     * <p>A unique identifier for the customer master key. This value can be a globally
-     * unique identifier, a fully specified ARN to either an alias or a key, or an
-     * alias name prefixed by "alias/".</p> <ul> <li> <p>Key ARN Example -
-     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</p>
-     * </li> <li> <p>Alias ARN Example -
-     * arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</p> </li> <li> <p>Globally
-     * Unique Key ID Example - 12345678-1234-1234-1234-123456789012</p> </li> <li>
-     * <p>Alias Name Example - alias/MyAliasName</p> </li> </ul>
+     * <p>The identifier of the CMK under which to generate and encrypt the data
+     * encryption key.</p> <p>A valid identifier is the unique key ID or the Amazon
+     * Resource Name (ARN) of the CMK, or the alias name or ARN of an alias that points
+     * to the CMK. Examples:</p> <ul> <li> <p>Unique key ID:
+     * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>CMK ARN:
+     * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>
+     * <p>Alias ARN: <code>arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias</code>
+     * </p> </li> </ul>
      */
     inline void SetKeyId(const Aws::String& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
 
     /**
-     * <p>A unique identifier for the customer master key. This value can be a globally
-     * unique identifier, a fully specified ARN to either an alias or a key, or an
-     * alias name prefixed by "alias/".</p> <ul> <li> <p>Key ARN Example -
-     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</p>
-     * </li> <li> <p>Alias ARN Example -
-     * arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</p> </li> <li> <p>Globally
-     * Unique Key ID Example - 12345678-1234-1234-1234-123456789012</p> </li> <li>
-     * <p>Alias Name Example - alias/MyAliasName</p> </li> </ul>
+     * <p>The identifier of the CMK under which to generate and encrypt the data
+     * encryption key.</p> <p>A valid identifier is the unique key ID or the Amazon
+     * Resource Name (ARN) of the CMK, or the alias name or ARN of an alias that points
+     * to the CMK. Examples:</p> <ul> <li> <p>Unique key ID:
+     * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>CMK ARN:
+     * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>
+     * <p>Alias ARN: <code>arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias</code>
+     * </p> </li> </ul>
      */
     inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
 
     /**
-     * <p>A unique identifier for the customer master key. This value can be a globally
-     * unique identifier, a fully specified ARN to either an alias or a key, or an
-     * alias name prefixed by "alias/".</p> <ul> <li> <p>Key ARN Example -
-     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</p>
-     * </li> <li> <p>Alias ARN Example -
-     * arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</p> </li> <li> <p>Globally
-     * Unique Key ID Example - 12345678-1234-1234-1234-123456789012</p> </li> <li>
-     * <p>Alias Name Example - alias/MyAliasName</p> </li> </ul>
+     * <p>The identifier of the CMK under which to generate and encrypt the data
+     * encryption key.</p> <p>A valid identifier is the unique key ID or the Amazon
+     * Resource Name (ARN) of the CMK, or the alias name or ARN of an alias that points
+     * to the CMK. Examples:</p> <ul> <li> <p>Unique key ID:
+     * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>CMK ARN:
+     * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>
+     * <p>Alias ARN: <code>arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias</code>
+     * </p> </li> </ul>
      */
     inline void SetKeyId(const char* value) { m_keyIdHasBeenSet = true; m_keyId.assign(value); }
 
     /**
-     * <p>A unique identifier for the customer master key. This value can be a globally
-     * unique identifier, a fully specified ARN to either an alias or a key, or an
-     * alias name prefixed by "alias/".</p> <ul> <li> <p>Key ARN Example -
-     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</p>
-     * </li> <li> <p>Alias ARN Example -
-     * arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</p> </li> <li> <p>Globally
-     * Unique Key ID Example - 12345678-1234-1234-1234-123456789012</p> </li> <li>
-     * <p>Alias Name Example - alias/MyAliasName</p> </li> </ul>
+     * <p>The identifier of the CMK under which to generate and encrypt the data
+     * encryption key.</p> <p>A valid identifier is the unique key ID or the Amazon
+     * Resource Name (ARN) of the CMK, or the alias name or ARN of an alias that points
+     * to the CMK. Examples:</p> <ul> <li> <p>Unique key ID:
+     * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>CMK ARN:
+     * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>
+     * <p>Alias ARN: <code>arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias</code>
+     * </p> </li> </ul>
      */
     inline GenerateDataKeyRequest& WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
 
     /**
-     * <p>A unique identifier for the customer master key. This value can be a globally
-     * unique identifier, a fully specified ARN to either an alias or a key, or an
-     * alias name prefixed by "alias/".</p> <ul> <li> <p>Key ARN Example -
-     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</p>
-     * </li> <li> <p>Alias ARN Example -
-     * arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</p> </li> <li> <p>Globally
-     * Unique Key ID Example - 12345678-1234-1234-1234-123456789012</p> </li> <li>
-     * <p>Alias Name Example - alias/MyAliasName</p> </li> </ul>
+     * <p>The identifier of the CMK under which to generate and encrypt the data
+     * encryption key.</p> <p>A valid identifier is the unique key ID or the Amazon
+     * Resource Name (ARN) of the CMK, or the alias name or ARN of an alias that points
+     * to the CMK. Examples:</p> <ul> <li> <p>Unique key ID:
+     * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>CMK ARN:
+     * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>
+     * <p>Alias ARN: <code>arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias</code>
+     * </p> </li> </ul>
      */
     inline GenerateDataKeyRequest& WithKeyId(Aws::String&& value) { SetKeyId(value); return *this;}
 
     /**
-     * <p>A unique identifier for the customer master key. This value can be a globally
-     * unique identifier, a fully specified ARN to either an alias or a key, or an
-     * alias name prefixed by "alias/".</p> <ul> <li> <p>Key ARN Example -
-     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</p>
-     * </li> <li> <p>Alias ARN Example -
-     * arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</p> </li> <li> <p>Globally
-     * Unique Key ID Example - 12345678-1234-1234-1234-123456789012</p> </li> <li>
-     * <p>Alias Name Example - alias/MyAliasName</p> </li> </ul>
+     * <p>The identifier of the CMK under which to generate and encrypt the data
+     * encryption key.</p> <p>A valid identifier is the unique key ID or the Amazon
+     * Resource Name (ARN) of the CMK, or the alias name or ARN of an alias that points
+     * to the CMK. Examples:</p> <ul> <li> <p>Unique key ID:
+     * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>CMK ARN:
+     * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>
+     * <p>Alias ARN: <code>arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias</code>
+     * </p> </li> </ul>
      */
     inline GenerateDataKeyRequest& WithKeyId(const char* value) { SetKeyId(value); return *this;}
 
     /**
-     * <p>Name/value pair that contains additional data to be authenticated during the
-     * encryption and decryption processes that use the key. This value is logged by
-     * AWS CloudTrail to provide context around the data encrypted by the key.</p>
+     * <p>A set of key-value pairs that represents additional authenticated data.</p>
+     * <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption
+     * Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetEncryptionContext() const{ return m_encryptionContext; }
 
     /**
-     * <p>Name/value pair that contains additional data to be authenticated during the
-     * encryption and decryption processes that use the key. This value is logged by
-     * AWS CloudTrail to provide context around the data encrypted by the key.</p>
+     * <p>A set of key-value pairs that represents additional authenticated data.</p>
+     * <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption
+     * Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline void SetEncryptionContext(const Aws::Map<Aws::String, Aws::String>& value) { m_encryptionContextHasBeenSet = true; m_encryptionContext = value; }
 
     /**
-     * <p>Name/value pair that contains additional data to be authenticated during the
-     * encryption and decryption processes that use the key. This value is logged by
-     * AWS CloudTrail to provide context around the data encrypted by the key.</p>
+     * <p>A set of key-value pairs that represents additional authenticated data.</p>
+     * <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption
+     * Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline void SetEncryptionContext(Aws::Map<Aws::String, Aws::String>&& value) { m_encryptionContextHasBeenSet = true; m_encryptionContext = value; }
 
     /**
-     * <p>Name/value pair that contains additional data to be authenticated during the
-     * encryption and decryption processes that use the key. This value is logged by
-     * AWS CloudTrail to provide context around the data encrypted by the key.</p>
+     * <p>A set of key-value pairs that represents additional authenticated data.</p>
+     * <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption
+     * Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline GenerateDataKeyRequest& WithEncryptionContext(const Aws::Map<Aws::String, Aws::String>& value) { SetEncryptionContext(value); return *this;}
 
     /**
-     * <p>Name/value pair that contains additional data to be authenticated during the
-     * encryption and decryption processes that use the key. This value is logged by
-     * AWS CloudTrail to provide context around the data encrypted by the key.</p>
+     * <p>A set of key-value pairs that represents additional authenticated data.</p>
+     * <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption
+     * Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline GenerateDataKeyRequest& WithEncryptionContext(Aws::Map<Aws::String, Aws::String>&& value) { SetEncryptionContext(value); return *this;}
 
     /**
-     * <p>Name/value pair that contains additional data to be authenticated during the
-     * encryption and decryption processes that use the key. This value is logged by
-     * AWS CloudTrail to provide context around the data encrypted by the key.</p>
+     * <p>A set of key-value pairs that represents additional authenticated data.</p>
+     * <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption
+     * Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline GenerateDataKeyRequest& AddEncryptionContext(const Aws::String& key, const Aws::String& value) { m_encryptionContextHasBeenSet = true; m_encryptionContext[key] = value; return *this; }
 
     /**
-     * <p>Name/value pair that contains additional data to be authenticated during the
-     * encryption and decryption processes that use the key. This value is logged by
-     * AWS CloudTrail to provide context around the data encrypted by the key.</p>
+     * <p>A set of key-value pairs that represents additional authenticated data.</p>
+     * <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption
+     * Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline GenerateDataKeyRequest& AddEncryptionContext(Aws::String&& key, const Aws::String& value) { m_encryptionContextHasBeenSet = true; m_encryptionContext[key] = value; return *this; }
 
     /**
-     * <p>Name/value pair that contains additional data to be authenticated during the
-     * encryption and decryption processes that use the key. This value is logged by
-     * AWS CloudTrail to provide context around the data encrypted by the key.</p>
+     * <p>A set of key-value pairs that represents additional authenticated data.</p>
+     * <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption
+     * Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline GenerateDataKeyRequest& AddEncryptionContext(const Aws::String& key, Aws::String&& value) { m_encryptionContextHasBeenSet = true; m_encryptionContext[key] = value; return *this; }
 
     /**
-     * <p>Name/value pair that contains additional data to be authenticated during the
-     * encryption and decryption processes that use the key. This value is logged by
-     * AWS CloudTrail to provide context around the data encrypted by the key.</p>
+     * <p>A set of key-value pairs that represents additional authenticated data.</p>
+     * <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption
+     * Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline GenerateDataKeyRequest& AddEncryptionContext(Aws::String&& key, Aws::String&& value) { m_encryptionContextHasBeenSet = true; m_encryptionContext[key] = value; return *this; }
 
     /**
-     * <p>Name/value pair that contains additional data to be authenticated during the
-     * encryption and decryption processes that use the key. This value is logged by
-     * AWS CloudTrail to provide context around the data encrypted by the key.</p>
+     * <p>A set of key-value pairs that represents additional authenticated data.</p>
+     * <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption
+     * Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline GenerateDataKeyRequest& AddEncryptionContext(const char* key, Aws::String&& value) { m_encryptionContextHasBeenSet = true; m_encryptionContext[key] = value; return *this; }
 
     /**
-     * <p>Name/value pair that contains additional data to be authenticated during the
-     * encryption and decryption processes that use the key. This value is logged by
-     * AWS CloudTrail to provide context around the data encrypted by the key.</p>
+     * <p>A set of key-value pairs that represents additional authenticated data.</p>
+     * <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption
+     * Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline GenerateDataKeyRequest& AddEncryptionContext(Aws::String&& key, const char* value) { m_encryptionContextHasBeenSet = true; m_encryptionContext[key] = value; return *this; }
 
     /**
-     * <p>Name/value pair that contains additional data to be authenticated during the
-     * encryption and decryption processes that use the key. This value is logged by
-     * AWS CloudTrail to provide context around the data encrypted by the key.</p>
+     * <p>A set of key-value pairs that represents additional authenticated data.</p>
+     * <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption
+     * Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline GenerateDataKeyRequest& AddEncryptionContext(const char* key, const char* value) { m_encryptionContextHasBeenSet = true; m_encryptionContext[key] = value; return *this; }
 
     /**
-     * <p>Integer that contains the number of bytes to generate. Common values are 128,
-     * 256, 512, and 1024. 1024 is the current limit. We recommend that you use the
-     * <code>KeySpec</code> parameter instead.</p>
+     * <p>The length of the data encryption key in bytes. For example, use the value 64
+     * to generate a 512-bit data key (64 bytes is 512 bits). For common key lengths
+     * (128-bit and 256-bit symmetric keys), we recommend that you use the
+     * <code>KeySpec</code> field instead of this one.</p>
      */
     inline int GetNumberOfBytes() const{ return m_numberOfBytes; }
 
     /**
-     * <p>Integer that contains the number of bytes to generate. Common values are 128,
-     * 256, 512, and 1024. 1024 is the current limit. We recommend that you use the
-     * <code>KeySpec</code> parameter instead.</p>
+     * <p>The length of the data encryption key in bytes. For example, use the value 64
+     * to generate a 512-bit data key (64 bytes is 512 bits). For common key lengths
+     * (128-bit and 256-bit symmetric keys), we recommend that you use the
+     * <code>KeySpec</code> field instead of this one.</p>
      */
     inline void SetNumberOfBytes(int value) { m_numberOfBytesHasBeenSet = true; m_numberOfBytes = value; }
 
     /**
-     * <p>Integer that contains the number of bytes to generate. Common values are 128,
-     * 256, 512, and 1024. 1024 is the current limit. We recommend that you use the
-     * <code>KeySpec</code> parameter instead.</p>
+     * <p>The length of the data encryption key in bytes. For example, use the value 64
+     * to generate a 512-bit data key (64 bytes is 512 bits). For common key lengths
+     * (128-bit and 256-bit symmetric keys), we recommend that you use the
+     * <code>KeySpec</code> field instead of this one.</p>
      */
     inline GenerateDataKeyRequest& WithNumberOfBytes(int value) { SetNumberOfBytes(value); return *this;}
 
     /**
-     * <p>Value that identifies the encryption algorithm and key size to generate a
-     * data key for. Currently this can be AES_128 or AES_256.</p>
+     * <p>The length of the data encryption key. Use <code>AES_128</code> to generate a
+     * 128-bit symmetric key, or <code>AES_256</code> to generate a 256-bit symmetric
+     * key.</p>
      */
     inline const DataKeySpec& GetKeySpec() const{ return m_keySpec; }
 
     /**
-     * <p>Value that identifies the encryption algorithm and key size to generate a
-     * data key for. Currently this can be AES_128 or AES_256.</p>
+     * <p>The length of the data encryption key. Use <code>AES_128</code> to generate a
+     * 128-bit symmetric key, or <code>AES_256</code> to generate a 256-bit symmetric
+     * key.</p>
      */
     inline void SetKeySpec(const DataKeySpec& value) { m_keySpecHasBeenSet = true; m_keySpec = value; }
 
     /**
-     * <p>Value that identifies the encryption algorithm and key size to generate a
-     * data key for. Currently this can be AES_128 or AES_256.</p>
+     * <p>The length of the data encryption key. Use <code>AES_128</code> to generate a
+     * 128-bit symmetric key, or <code>AES_256</code> to generate a 256-bit symmetric
+     * key.</p>
      */
     inline void SetKeySpec(DataKeySpec&& value) { m_keySpecHasBeenSet = true; m_keySpec = value; }
 
     /**
-     * <p>Value that identifies the encryption algorithm and key size to generate a
-     * data key for. Currently this can be AES_128 or AES_256.</p>
+     * <p>The length of the data encryption key. Use <code>AES_128</code> to generate a
+     * 128-bit symmetric key, or <code>AES_256</code> to generate a 256-bit symmetric
+     * key.</p>
      */
     inline GenerateDataKeyRequest& WithKeySpec(const DataKeySpec& value) { SetKeySpec(value); return *this;}
 
     /**
-     * <p>Value that identifies the encryption algorithm and key size to generate a
-     * data key for. Currently this can be AES_128 or AES_256.</p>
+     * <p>The length of the data encryption key. Use <code>AES_128</code> to generate a
+     * 128-bit symmetric key, or <code>AES_256</code> to generate a 256-bit symmetric
+     * key.</p>
      */
     inline GenerateDataKeyRequest& WithKeySpec(DataKeySpec&& value) { SetKeySpec(value); return *this;}
 

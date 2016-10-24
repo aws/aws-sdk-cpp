@@ -34,49 +34,49 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     /**
-     * <p> The name of the application associated with this version. </p> <p> If no
+     * <p>The name of the application associated with this version.</p> <p> If no
      * application is found with this name, <code>UpdateApplication</code> returns an
      * <code>InvalidParameterValue</code> error. </p>
      */
     inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
 
     /**
-     * <p> The name of the application associated with this version. </p> <p> If no
+     * <p>The name of the application associated with this version.</p> <p> If no
      * application is found with this name, <code>UpdateApplication</code> returns an
      * <code>InvalidParameterValue</code> error. </p>
      */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /**
-     * <p> The name of the application associated with this version. </p> <p> If no
+     * <p>The name of the application associated with this version.</p> <p> If no
      * application is found with this name, <code>UpdateApplication</code> returns an
      * <code>InvalidParameterValue</code> error. </p>
      */
     inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /**
-     * <p> The name of the application associated with this version. </p> <p> If no
+     * <p>The name of the application associated with this version.</p> <p> If no
      * application is found with this name, <code>UpdateApplication</code> returns an
      * <code>InvalidParameterValue</code> error. </p>
      */
     inline void SetApplicationName(const char* value) { m_applicationNameHasBeenSet = true; m_applicationName.assign(value); }
 
     /**
-     * <p> The name of the application associated with this version. </p> <p> If no
+     * <p>The name of the application associated with this version.</p> <p> If no
      * application is found with this name, <code>UpdateApplication</code> returns an
      * <code>InvalidParameterValue</code> error. </p>
      */
     inline UpdateApplicationVersionRequest& WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
 
     /**
-     * <p> The name of the application associated with this version. </p> <p> If no
+     * <p>The name of the application associated with this version.</p> <p> If no
      * application is found with this name, <code>UpdateApplication</code> returns an
      * <code>InvalidParameterValue</code> error. </p>
      */
     inline UpdateApplicationVersionRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(value); return *this;}
 
     /**
-     * <p> The name of the application associated with this version. </p> <p> If no
+     * <p>The name of the application associated with this version.</p> <p> If no
      * application is found with this name, <code>UpdateApplication</code> returns an
      * <code>InvalidParameterValue</code> error. </p>
      */

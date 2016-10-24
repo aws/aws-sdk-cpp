@@ -15,7 +15,7 @@
 
 #include <jni.h>
 
-#include <aws/testing/android/AndroidTesting.h>
+#include <aws/testing/platform/android/AndroidTesting.h>
 
 
 #ifdef __cplusplus

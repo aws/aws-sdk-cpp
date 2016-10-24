@@ -37,6 +37,7 @@ CertificateDetail::CertificateDetail() :
     m_issuerHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_issuedAtHasBeenSet(false),
+    m_importedAtHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_revokedAtHasBeenSet(false),
     m_revocationReasonHasBeenSet(false),
@@ -45,7 +46,8 @@ CertificateDetail::CertificateDetail() :
     m_keyAlgorithmHasBeenSet(false),
     m_signatureAlgorithmHasBeenSet(false),
     m_inUseByHasBeenSet(false),
-    m_failureReasonHasBeenSet(false)
+    m_failureReasonHasBeenSet(false),
+    m_typeHasBeenSet(false)
 {
 }
 
@@ -59,6 +61,7 @@ CertificateDetail::CertificateDetail(const JsonValue& jsonValue) :
     m_issuerHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_issuedAtHasBeenSet(false),
+    m_importedAtHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_revokedAtHasBeenSet(false),
     m_revocationReasonHasBeenSet(false),
@@ -67,7 +70,8 @@ CertificateDetail::CertificateDetail(const JsonValue& jsonValue) :
     m_keyAlgorithmHasBeenSet(false),
     m_signatureAlgorithmHasBeenSet(false),
     m_inUseByHasBeenSet(false),
-    m_failureReasonHasBeenSet(false)
+    m_failureReasonHasBeenSet(false),
+    m_typeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -143,6 +147,13 @@ CertificateDetail& CertificateDetail::operator =(const JsonValue& jsonValue)
     m_issuedAtHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ImportedAt"))
+  {
+    m_importedAt = jsonValue.GetDouble("ImportedAt");
+
+    m_importedAtHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Status"))
   {
     m_status = CertificateStatusMapper::GetCertificateStatusForName(jsonValue.GetString("Status"));
@@ -207,6 +218,13 @@ CertificateDetail& CertificateDetail::operator =(const JsonValue& jsonValue)
     m_failureReason = FailureReasonMapper::GetFailureReasonForName(jsonValue.GetString("FailureReason"));
 
     m_failureReasonHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Type"))
+  {
+    m_type = CertificateTypeMapper::GetCertificateTypeForName(jsonValue.GetString("Type"));
+
+    m_typeHasBeenSet = true;
   }
 
   return *this;
@@ -278,6 +296,11 @@ JsonValue CertificateDetail::Jsonize() const
    payload.WithDouble("IssuedAt", m_issuedAt.SecondsWithMSPrecision());
   }
 
+  if(m_importedAtHasBeenSet)
+  {
+   payload.WithDouble("ImportedAt", m_importedAt.SecondsWithMSPrecision());
+  }
+
   if(m_statusHasBeenSet)
   {
    payload.WithString("Status", CertificateStatusMapper::GetNameForCertificateStatus(m_status));
@@ -328,6 +351,11 @@ JsonValue CertificateDetail::Jsonize() const
   if(m_failureReasonHasBeenSet)
   {
    payload.WithString("FailureReason", FailureReasonMapper::GetNameForFailureReason(m_failureReason));
+  }
+
+  if(m_typeHasBeenSet)
+  {
+   payload.WithString("Type", CertificateTypeMapper::GetNameForCertificateType(m_type));
   }
 
   return payload;

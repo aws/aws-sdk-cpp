@@ -84,7 +84,7 @@ project(aws-cpp-sdk-ssm)
   install (FILES ${AWS_SSM_HEADERS} DESTINATION include/aws/ssm)
   install (FILES ${AWS_SSM_MODEL_HEADERS} DESTINATION include/aws/ssm/model)
 
-  if(MSVC)
+  if(PLATFORM_WINDOWS AND MSVC)
     install (FILES nuget/aws-cpp-sdk-ssm.autopkg DESTINATION nuget)
   endif()
 

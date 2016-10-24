@@ -17,6 +17,8 @@
 
 #include <aws/core/Core_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/StringUtils.h>
 
 namespace Aws
 {
@@ -48,8 +50,9 @@ namespace Aws
 
             //by policy we enforce all clients to contain a CoreErrors alignment for their Errors.
             AWSError(const AWSError<CoreErrors>& rhs) :
-                m_errorType(static_cast<ERROR_TYPE>(rhs.GetErrorType())), m_exceptionName(rhs.GetExceptionName()), m_message(rhs.GetMessage()), m_isRetryable(rhs.ShouldRetry())
-            {}
+                m_errorType(static_cast<ERROR_TYPE>(rhs.GetErrorType())), m_exceptionName(rhs.GetExceptionName()), 
+                m_message(rhs.GetMessage()), m_responseHeaders(rhs.GetResponseHeaders()) , m_isRetryable(rhs.ShouldRetry())
+            {}          
 
             /**
              * Gets underlying errorType.
@@ -75,11 +78,25 @@ namespace Aws
              * returns whether or not this error is eligible for retry.
              */
             inline bool ShouldRetry() const { return m_isRetryable; }
+            /**
+             * gets the response headers from the http response.
+             */
+            inline const Aws::Http::HeaderValueCollection& GetResponseHeaders() const { return m_responseHeaders; }
+            /**
+             * Sets the response headers from the http response.
+             */
+            inline void SetResponseHeaders(const Aws::Http::HeaderValueCollection& headers) { m_responseHeaders = headers; }
+            /**
+             * tests whether or not a header exists.
+             */
+            inline bool ResponseHeaderExists(const Aws::String& headerName) const { return m_responseHeaders.find(Aws::Utils::StringUtils::ToLower(headerName.c_str())) != m_responseHeaders.end(); }
 
         private:
             ERROR_TYPE m_errorType;
             Aws::String m_exceptionName;
             Aws::String m_message;
+            Aws::Http::HeaderValueCollection m_responseHeaders;
+
             bool m_isRetryable;
         };
 

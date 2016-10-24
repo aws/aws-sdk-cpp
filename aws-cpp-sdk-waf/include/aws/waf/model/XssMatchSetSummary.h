@@ -48,7 +48,7 @@ namespace Model
      * <a>UpdateXssMatchSet</a>), insert an <code>XssMatchSet</code> into a
      * <code>Rule</code> or delete one from a <code>Rule</code> (see
      * <a>UpdateRule</a>), and delete an <code>XssMatchSet</code> from AWS WAF (see
-     * <a>DeleteXssMatchSet</a>).</p> <p><code>XssMatchSetId</code> is returned by
+     * <a>DeleteXssMatchSet</a>).</p> <p> <code>XssMatchSetId</code> is returned by
      * <a>CreateXssMatchSet</a> and by <a>ListXssMatchSets</a>.</p>
      */
     inline const Aws::String& GetXssMatchSetId() const{ return m_xssMatchSetId; }
@@ -60,7 +60,7 @@ namespace Model
      * <a>UpdateXssMatchSet</a>), insert an <code>XssMatchSet</code> into a
      * <code>Rule</code> or delete one from a <code>Rule</code> (see
      * <a>UpdateRule</a>), and delete an <code>XssMatchSet</code> from AWS WAF (see
-     * <a>DeleteXssMatchSet</a>).</p> <p><code>XssMatchSetId</code> is returned by
+     * <a>DeleteXssMatchSet</a>).</p> <p> <code>XssMatchSetId</code> is returned by
      * <a>CreateXssMatchSet</a> and by <a>ListXssMatchSets</a>.</p>
      */
     inline void SetXssMatchSetId(const Aws::String& value) { m_xssMatchSetIdHasBeenSet = true; m_xssMatchSetId = value; }
@@ -72,7 +72,7 @@ namespace Model
      * <a>UpdateXssMatchSet</a>), insert an <code>XssMatchSet</code> into a
      * <code>Rule</code> or delete one from a <code>Rule</code> (see
      * <a>UpdateRule</a>), and delete an <code>XssMatchSet</code> from AWS WAF (see
-     * <a>DeleteXssMatchSet</a>).</p> <p><code>XssMatchSetId</code> is returned by
+     * <a>DeleteXssMatchSet</a>).</p> <p> <code>XssMatchSetId</code> is returned by
      * <a>CreateXssMatchSet</a> and by <a>ListXssMatchSets</a>.</p>
      */
     inline void SetXssMatchSetId(Aws::String&& value) { m_xssMatchSetIdHasBeenSet = true; m_xssMatchSetId = value; }
@@ -84,7 +84,7 @@ namespace Model
      * <a>UpdateXssMatchSet</a>), insert an <code>XssMatchSet</code> into a
      * <code>Rule</code> or delete one from a <code>Rule</code> (see
      * <a>UpdateRule</a>), and delete an <code>XssMatchSet</code> from AWS WAF (see
-     * <a>DeleteXssMatchSet</a>).</p> <p><code>XssMatchSetId</code> is returned by
+     * <a>DeleteXssMatchSet</a>).</p> <p> <code>XssMatchSetId</code> is returned by
      * <a>CreateXssMatchSet</a> and by <a>ListXssMatchSets</a>.</p>
      */
     inline void SetXssMatchSetId(const char* value) { m_xssMatchSetIdHasBeenSet = true; m_xssMatchSetId.assign(value); }
@@ -96,7 +96,7 @@ namespace Model
      * <a>UpdateXssMatchSet</a>), insert an <code>XssMatchSet</code> into a
      * <code>Rule</code> or delete one from a <code>Rule</code> (see
      * <a>UpdateRule</a>), and delete an <code>XssMatchSet</code> from AWS WAF (see
-     * <a>DeleteXssMatchSet</a>).</p> <p><code>XssMatchSetId</code> is returned by
+     * <a>DeleteXssMatchSet</a>).</p> <p> <code>XssMatchSetId</code> is returned by
      * <a>CreateXssMatchSet</a> and by <a>ListXssMatchSets</a>.</p>
      */
     inline XssMatchSetSummary& WithXssMatchSetId(const Aws::String& value) { SetXssMatchSetId(value); return *this;}
@@ -108,7 +108,7 @@ namespace Model
      * <a>UpdateXssMatchSet</a>), insert an <code>XssMatchSet</code> into a
      * <code>Rule</code> or delete one from a <code>Rule</code> (see
      * <a>UpdateRule</a>), and delete an <code>XssMatchSet</code> from AWS WAF (see
-     * <a>DeleteXssMatchSet</a>).</p> <p><code>XssMatchSetId</code> is returned by
+     * <a>DeleteXssMatchSet</a>).</p> <p> <code>XssMatchSetId</code> is returned by
      * <a>CreateXssMatchSet</a> and by <a>ListXssMatchSets</a>.</p>
      */
     inline XssMatchSetSummary& WithXssMatchSetId(Aws::String&& value) { SetXssMatchSetId(value); return *this;}
@@ -120,7 +120,7 @@ namespace Model
      * <a>UpdateXssMatchSet</a>), insert an <code>XssMatchSet</code> into a
      * <code>Rule</code> or delete one from a <code>Rule</code> (see
      * <a>UpdateRule</a>), and delete an <code>XssMatchSet</code> from AWS WAF (see
-     * <a>DeleteXssMatchSet</a>).</p> <p><code>XssMatchSetId</code> is returned by
+     * <a>DeleteXssMatchSet</a>).</p> <p> <code>XssMatchSetId</code> is returned by
      * <a>CreateXssMatchSet</a> and by <a>ListXssMatchSets</a>.</p>
      */
     inline XssMatchSetSummary& WithXssMatchSetId(const char* value) { SetXssMatchSetId(value); return *this;}

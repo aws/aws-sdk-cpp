@@ -254,8 +254,8 @@ namespace Model
    * href="http://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl">http://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl</a>.
    * To install the Software Development Kits (SDKs), Integrated Development
    * Environment (IDE) Toolkits, and command line tools that enable you to access the
-   * API, go to <a href="https://aws.amazon.com/tools/">Tools for Amazon Web
-   * Services</a>.</p> <p><b>Endpoints</b></p> <p>For a list of region-specific
+   * API, go to <a href="http://aws.amazon.com/tools/">Tools for Amazon Web
+   * Services</a>.</p> <p> <b>Endpoints</b> </p> <p>For a list of region-specific
    * endpoints that AWS Elastic Beanstalk supports, go to <a
    * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region">Regions
    * and Endpoints</a> in the <i>Amazon Web Services Glossary</i>.</p>
@@ -334,19 +334,19 @@ namespace Model
         virtual void ApplyEnvironmentManagedActionAsync(const Model::ApplyEnvironmentManagedActionRequest& request, const ApplyEnvironmentManagedActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Checks if the specified CNAME is available. </p>
+         * <p>Checks if the specified CNAME is available.</p>
          */
         virtual Model::CheckDNSAvailabilityOutcome CheckDNSAvailability(const Model::CheckDNSAvailabilityRequest& request) const;
 
         /**
-         * <p> Checks if the specified CNAME is available. </p>
+         * <p>Checks if the specified CNAME is available.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CheckDNSAvailabilityOutcomeCallable CheckDNSAvailabilityCallable(const Model::CheckDNSAvailabilityRequest& request) const;
 
         /**
-         * <p> Checks if the specified CNAME is available. </p>
+         * <p>Checks if the specified CNAME is available.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -412,31 +412,31 @@ namespace Model
         virtual void CreateApplicationAsync(const Model::CreateApplicationRequest& request, const CreateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates an application version for the specified application.</p> <note>Once
-         * you create an application version with a specified Amazon S3 bucket and key
-         * location, you cannot change that Amazon S3 location. If you change the Amazon S3
-         * location, you receive an exception when you attempt to launch an environment
-         * from the application version. </note>
+         * <p>Creates an application version for the specified application.</p> <note>
+         * <p>Once you create an application version with a specified Amazon S3 bucket and
+         * key location, you cannot change that Amazon S3 location. If you change the
+         * Amazon S3 location, you receive an exception when you attempt to launch an
+         * environment from the application version.</p> </note>
          */
         virtual Model::CreateApplicationVersionOutcome CreateApplicationVersion(const Model::CreateApplicationVersionRequest& request) const;
 
         /**
-         * <p>Creates an application version for the specified application.</p> <note>Once
-         * you create an application version with a specified Amazon S3 bucket and key
-         * location, you cannot change that Amazon S3 location. If you change the Amazon S3
-         * location, you receive an exception when you attempt to launch an environment
-         * from the application version. </note>
+         * <p>Creates an application version for the specified application.</p> <note>
+         * <p>Once you create an application version with a specified Amazon S3 bucket and
+         * key location, you cannot change that Amazon S3 location. If you change the
+         * Amazon S3 location, you receive an exception when you attempt to launch an
+         * environment from the application version.</p> </note>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateApplicationVersionOutcomeCallable CreateApplicationVersionCallable(const Model::CreateApplicationVersionRequest& request) const;
 
         /**
-         * <p>Creates an application version for the specified application.</p> <note>Once
-         * you create an application version with a specified Amazon S3 bucket and key
-         * location, you cannot change that Amazon S3 location. If you change the Amazon S3
-         * location, you receive an exception when you attempt to launch an environment
-         * from the application version. </note>
+         * <p>Creates an application version for the specified application.</p> <note>
+         * <p>Once you create an application version with a specified Amazon S3 bucket and
+         * key location, you cannot change that Amazon S3 location. If you change the
+         * Amazon S3 location, you receive an exception when you attempt to launch an
+         * environment from the application version.</p> </note>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -445,20 +445,20 @@ namespace Model
         /**
          * <p>Creates a configuration template. Templates are associated with a specific
          * application and are used to deploy different versions of the application with
-         * the same configuration settings.</p> <p>Related Topics</p> <ul> <li>
-         * <a>DescribeConfigurationOptions</a> </li> <li>
-         * <a>DescribeConfigurationSettings</a> </li> <li>
-         * <a>ListAvailableSolutionStacks</a> </li> </ul>
+         * the same configuration settings.</p> <p>Related Topics</p> <ul> <li> <p>
+         * <a>DescribeConfigurationOptions</a> </p> </li> <li> <p>
+         * <a>DescribeConfigurationSettings</a> </p> </li> <li> <p>
+         * <a>ListAvailableSolutionStacks</a> </p> </li> </ul>
          */
         virtual Model::CreateConfigurationTemplateOutcome CreateConfigurationTemplate(const Model::CreateConfigurationTemplateRequest& request) const;
 
         /**
          * <p>Creates a configuration template. Templates are associated with a specific
          * application and are used to deploy different versions of the application with
-         * the same configuration settings.</p> <p>Related Topics</p> <ul> <li>
-         * <a>DescribeConfigurationOptions</a> </li> <li>
-         * <a>DescribeConfigurationSettings</a> </li> <li>
-         * <a>ListAvailableSolutionStacks</a> </li> </ul>
+         * the same configuration settings.</p> <p>Related Topics</p> <ul> <li> <p>
+         * <a>DescribeConfigurationOptions</a> </p> </li> <li> <p>
+         * <a>DescribeConfigurationSettings</a> </p> </li> <li> <p>
+         * <a>ListAvailableSolutionStacks</a> </p> </li> </ul>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -467,10 +467,10 @@ namespace Model
         /**
          * <p>Creates a configuration template. Templates are associated with a specific
          * application and are used to deploy different versions of the application with
-         * the same configuration settings.</p> <p>Related Topics</p> <ul> <li>
-         * <a>DescribeConfigurationOptions</a> </li> <li>
-         * <a>DescribeConfigurationSettings</a> </li> <li>
-         * <a>ListAvailableSolutionStacks</a> </li> </ul>
+         * the same configuration settings.</p> <p>Related Topics</p> <ul> <li> <p>
+         * <a>DescribeConfigurationOptions</a> </p> </li> <li> <p>
+         * <a>DescribeConfigurationSettings</a> </p> </li> <li> <p>
+         * <a>ListAvailableSolutionStacks</a> </p> </li> </ul>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -499,103 +499,103 @@ namespace Model
         virtual void CreateEnvironmentAsync(const Model::CreateEnvironmentRequest& request, const CreateEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Creates the Amazon S3 storage location for the account. </p> <p> This
-         * location is used to store user log files. </p>
+         * <p>Creates the Amazon S3 storage location for the account.</p> <p>This location
+         * is used to store user log files.</p>
          */
         virtual Model::CreateStorageLocationOutcome CreateStorageLocation(const Model::CreateStorageLocationRequest& request) const;
 
         /**
-         * <p> Creates the Amazon S3 storage location for the account. </p> <p> This
-         * location is used to store user log files. </p>
+         * <p>Creates the Amazon S3 storage location for the account.</p> <p>This location
+         * is used to store user log files.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateStorageLocationOutcomeCallable CreateStorageLocationCallable(const Model::CreateStorageLocationRequest& request) const;
 
         /**
-         * <p> Creates the Amazon S3 storage location for the account. </p> <p> This
-         * location is used to store user log files. </p>
+         * <p>Creates the Amazon S3 storage location for the account.</p> <p>This location
+         * is used to store user log files.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateStorageLocationAsync(const Model::CreateStorageLocationRequest& request, const CreateStorageLocationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Deletes the specified application along with all associated versions and
+         * <p>Deletes the specified application along with all associated versions and
          * configurations. The application versions will not be deleted from your Amazon S3
-         * bucket. </p> <note>You cannot delete an application that has a running
-         * environment. </note>
+         * bucket.</p> <note> <p>You cannot delete an application that has a running
+         * environment.</p> </note>
          */
         virtual Model::DeleteApplicationOutcome DeleteApplication(const Model::DeleteApplicationRequest& request) const;
 
         /**
-         * <p> Deletes the specified application along with all associated versions and
+         * <p>Deletes the specified application along with all associated versions and
          * configurations. The application versions will not be deleted from your Amazon S3
-         * bucket. </p> <note>You cannot delete an application that has a running
-         * environment. </note>
+         * bucket.</p> <note> <p>You cannot delete an application that has a running
+         * environment.</p> </note>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteApplicationOutcomeCallable DeleteApplicationCallable(const Model::DeleteApplicationRequest& request) const;
 
         /**
-         * <p> Deletes the specified application along with all associated versions and
+         * <p>Deletes the specified application along with all associated versions and
          * configurations. The application versions will not be deleted from your Amazon S3
-         * bucket. </p> <note>You cannot delete an application that has a running
-         * environment. </note>
+         * bucket.</p> <note> <p>You cannot delete an application that has a running
+         * environment.</p> </note>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteApplicationAsync(const Model::DeleteApplicationRequest& request, const DeleteApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Deletes the specified version from the specified application. </p> <note>You
-         * cannot delete an application version that is associated with a running
-         * environment.</note>
+         * <p>Deletes the specified version from the specified application.</p> <note>
+         * <p>You cannot delete an application version that is associated with a running
+         * environment.</p> </note>
          */
         virtual Model::DeleteApplicationVersionOutcome DeleteApplicationVersion(const Model::DeleteApplicationVersionRequest& request) const;
 
         /**
-         * <p> Deletes the specified version from the specified application. </p> <note>You
-         * cannot delete an application version that is associated with a running
-         * environment.</note>
+         * <p>Deletes the specified version from the specified application.</p> <note>
+         * <p>You cannot delete an application version that is associated with a running
+         * environment.</p> </note>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteApplicationVersionOutcomeCallable DeleteApplicationVersionCallable(const Model::DeleteApplicationVersionRequest& request) const;
 
         /**
-         * <p> Deletes the specified version from the specified application. </p> <note>You
-         * cannot delete an application version that is associated with a running
-         * environment.</note>
+         * <p>Deletes the specified version from the specified application.</p> <note>
+         * <p>You cannot delete an application version that is associated with a running
+         * environment.</p> </note>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteApplicationVersionAsync(const Model::DeleteApplicationVersionRequest& request, const DeleteApplicationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the specified configuration template.</p> <note>When you launch an
-         * environment using a configuration template, the environment gets a copy of the
-         * template. You can delete or modify the environment's copy of the template
-         * without affecting the running environment.</note>
+         * <p>Deletes the specified configuration template.</p> <note> <p>When you launch
+         * an environment using a configuration template, the environment gets a copy of
+         * the template. You can delete or modify the environment's copy of the template
+         * without affecting the running environment.</p> </note>
          */
         virtual Model::DeleteConfigurationTemplateOutcome DeleteConfigurationTemplate(const Model::DeleteConfigurationTemplateRequest& request) const;
 
         /**
-         * <p>Deletes the specified configuration template.</p> <note>When you launch an
-         * environment using a configuration template, the environment gets a copy of the
-         * template. You can delete or modify the environment's copy of the template
-         * without affecting the running environment.</note>
+         * <p>Deletes the specified configuration template.</p> <note> <p>When you launch
+         * an environment using a configuration template, the environment gets a copy of
+         * the template. You can delete or modify the environment's copy of the template
+         * without affecting the running environment.</p> </note>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteConfigurationTemplateOutcomeCallable DeleteConfigurationTemplateCallable(const Model::DeleteConfigurationTemplateRequest& request) const;
 
         /**
-         * <p>Deletes the specified configuration template.</p> <note>When you launch an
-         * environment using a configuration template, the environment gets a copy of the
-         * template. You can delete or modify the environment's copy of the template
-         * without affecting the running environment.</note>
+         * <p>Deletes the specified configuration template.</p> <note> <p>When you launch
+         * an environment using a configuration template, the environment gets a copy of
+         * the template. You can delete or modify the environment's copy of the template
+         * without affecting the running environment.</p> </note>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -680,71 +680,71 @@ namespace Model
         virtual void DescribeApplicationsAsync(const Model::DescribeApplicationsRequest& request, const DescribeApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Describes the configuration options that are used in a particular
+         * <p>Describes the configuration options that are used in a particular
          * configuration template or environment, or that a specified solution stack
          * defines. The description includes the values the options, their default values,
          * and an indication of the required action on a running environment if an option
-         * value is changed. </p>
+         * value is changed.</p>
          */
         virtual Model::DescribeConfigurationOptionsOutcome DescribeConfigurationOptions(const Model::DescribeConfigurationOptionsRequest& request) const;
 
         /**
-         * <p> Describes the configuration options that are used in a particular
+         * <p>Describes the configuration options that are used in a particular
          * configuration template or environment, or that a specified solution stack
          * defines. The description includes the values the options, their default values,
          * and an indication of the required action on a running environment if an option
-         * value is changed. </p>
+         * value is changed.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeConfigurationOptionsOutcomeCallable DescribeConfigurationOptionsCallable(const Model::DescribeConfigurationOptionsRequest& request) const;
 
         /**
-         * <p> Describes the configuration options that are used in a particular
+         * <p>Describes the configuration options that are used in a particular
          * configuration template or environment, or that a specified solution stack
          * defines. The description includes the values the options, their default values,
          * and an indication of the required action on a running environment if an option
-         * value is changed. </p>
+         * value is changed.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeConfigurationOptionsAsync(const Model::DescribeConfigurationOptionsRequest& request, const DescribeConfigurationOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Returns a description of the settings for the specified configuration set,
+         * <p>Returns a description of the settings for the specified configuration set,
          * that is, either a configuration template or the configuration set associated
-         * with a running environment. </p> <p> When describing the settings for the
+         * with a running environment.</p> <p>When describing the settings for the
          * configuration set associated with a running environment, it is possible to
          * receive two sets of setting descriptions. One is the deployed configuration set,
          * and the other is a draft configuration of an environment that is either in the
-         * process of deployment or that failed to deploy. </p> <p>Related Topics</p> <ul>
-         * <li> <a>DeleteEnvironmentConfiguration</a> </li> </ul>
+         * process of deployment or that failed to deploy.</p> <p>Related Topics</p> <ul>
+         * <li> <p> <a>DeleteEnvironmentConfiguration</a> </p> </li> </ul>
          */
         virtual Model::DescribeConfigurationSettingsOutcome DescribeConfigurationSettings(const Model::DescribeConfigurationSettingsRequest& request) const;
 
         /**
-         * <p> Returns a description of the settings for the specified configuration set,
+         * <p>Returns a description of the settings for the specified configuration set,
          * that is, either a configuration template or the configuration set associated
-         * with a running environment. </p> <p> When describing the settings for the
+         * with a running environment.</p> <p>When describing the settings for the
          * configuration set associated with a running environment, it is possible to
          * receive two sets of setting descriptions. One is the deployed configuration set,
          * and the other is a draft configuration of an environment that is either in the
-         * process of deployment or that failed to deploy. </p> <p>Related Topics</p> <ul>
-         * <li> <a>DeleteEnvironmentConfiguration</a> </li> </ul>
+         * process of deployment or that failed to deploy.</p> <p>Related Topics</p> <ul>
+         * <li> <p> <a>DeleteEnvironmentConfiguration</a> </p> </li> </ul>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeConfigurationSettingsOutcomeCallable DescribeConfigurationSettingsCallable(const Model::DescribeConfigurationSettingsRequest& request) const;
 
         /**
-         * <p> Returns a description of the settings for the specified configuration set,
+         * <p>Returns a description of the settings for the specified configuration set,
          * that is, either a configuration template or the configuration set associated
-         * with a running environment. </p> <p> When describing the settings for the
+         * with a running environment.</p> <p>When describing the settings for the
          * configuration set associated with a running environment, it is possible to
          * receive two sets of setting descriptions. One is the deployed configuration set,
          * and the other is a draft configuration of an environment that is either in the
-         * process of deployment or that failed to deploy. </p> <p>Related Topics</p> <ul>
-         * <li> <a>DeleteEnvironmentConfiguration</a> </li> </ul>
+         * process of deployment or that failed to deploy.</p> <p>Related Topics</p> <ul>
+         * <li> <p> <a>DeleteEnvironmentConfiguration</a> </p> </li> </ul>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -853,15 +853,15 @@ namespace Model
 
         /**
          * <p>Returns list of event descriptions matching criteria up to the last 6
-         * weeks.</p> <note>This action returns the most recent 1,000 events from the
-         * specified <code>NextToken</code>.</note>
+         * weeks.</p> <note> <p>This action returns the most recent 1,000 events from the
+         * specified <code>NextToken</code>.</p> </note>
          */
         virtual Model::DescribeEventsOutcome DescribeEvents(const Model::DescribeEventsRequest& request) const;
 
         /**
          * <p>Returns list of event descriptions matching criteria up to the last 6
-         * weeks.</p> <note>This action returns the most recent 1,000 events from the
-         * specified <code>NextToken</code>.</note>
+         * weeks.</p> <note> <p>This action returns the most recent 1,000 events from the
+         * specified <code>NextToken</code>.</p> </note>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -869,8 +869,8 @@ namespace Model
 
         /**
          * <p>Returns list of event descriptions matching criteria up to the last 6
-         * weeks.</p> <note>This action returns the most recent 1,000 events from the
-         * specified <code>NextToken</code>.</note>
+         * weeks.</p> <note> <p>This action returns the most recent 1,000 events from the
+         * specified <code>NextToken</code>.</p> </note>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -905,87 +905,87 @@ namespace Model
         virtual void DescribeInstancesHealthAsync(const Model::DescribeInstancesHealthRequest& request, const DescribeInstancesHealthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Returns a list of the available solution stack names. </p>
+         * <p>Returns a list of the available solution stack names.</p>
          */
         virtual Model::ListAvailableSolutionStacksOutcome ListAvailableSolutionStacks(const Model::ListAvailableSolutionStacksRequest& request) const;
 
         /**
-         * <p> Returns a list of the available solution stack names. </p>
+         * <p>Returns a list of the available solution stack names.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListAvailableSolutionStacksOutcomeCallable ListAvailableSolutionStacksCallable(const Model::ListAvailableSolutionStacksRequest& request) const;
 
         /**
-         * <p> Returns a list of the available solution stack names. </p>
+         * <p>Returns a list of the available solution stack names.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListAvailableSolutionStacksAsync(const Model::ListAvailableSolutionStacksRequest& request, const ListAvailableSolutionStacksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Deletes and recreates all of the AWS resources (for example: the Auto
-         * Scaling group, load balancer, etc.) for a specified environment and forces a
-         * restart. </p>
+         * <p>Deletes and recreates all of the AWS resources (for example: the Auto Scaling
+         * group, load balancer, etc.) for a specified environment and forces a
+         * restart.</p>
          */
         virtual Model::RebuildEnvironmentOutcome RebuildEnvironment(const Model::RebuildEnvironmentRequest& request) const;
 
         /**
-         * <p> Deletes and recreates all of the AWS resources (for example: the Auto
-         * Scaling group, load balancer, etc.) for a specified environment and forces a
-         * restart. </p>
+         * <p>Deletes and recreates all of the AWS resources (for example: the Auto Scaling
+         * group, load balancer, etc.) for a specified environment and forces a
+         * restart.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::RebuildEnvironmentOutcomeCallable RebuildEnvironmentCallable(const Model::RebuildEnvironmentRequest& request) const;
 
         /**
-         * <p> Deletes and recreates all of the AWS resources (for example: the Auto
-         * Scaling group, load balancer, etc.) for a specified environment and forces a
-         * restart. </p>
+         * <p>Deletes and recreates all of the AWS resources (for example: the Auto Scaling
+         * group, load balancer, etc.) for a specified environment and forces a
+         * restart.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void RebuildEnvironmentAsync(const Model::RebuildEnvironmentRequest& request, const RebuildEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Initiates a request to compile the specified type of information of the
-         * deployed environment. </p> <p> Setting the <code>InfoType</code> to
+         * <p>Initiates a request to compile the specified type of information of the
+         * deployed environment.</p> <p> Setting the <code>InfoType</code> to
          * <code>tail</code> compiles the last lines from the application server log files
          * of every Amazon EC2 instance in your environment. </p> <p> Setting the
          * <code>InfoType</code> to <code>bundle</code> compresses the application server
          * log files for every Amazon EC2 instance into a <code>.zip</code> file. Legacy
          * and .NET containers do not support bundle logs. </p> <p> Use
          * <a>RetrieveEnvironmentInfo</a> to obtain the set of logs. </p> <p>Related
-         * Topics</p> <ul> <li> <a>RetrieveEnvironmentInfo</a> </li> </ul>
+         * Topics</p> <ul> <li> <p> <a>RetrieveEnvironmentInfo</a> </p> </li> </ul>
          */
         virtual Model::RequestEnvironmentInfoOutcome RequestEnvironmentInfo(const Model::RequestEnvironmentInfoRequest& request) const;
 
         /**
-         * <p> Initiates a request to compile the specified type of information of the
-         * deployed environment. </p> <p> Setting the <code>InfoType</code> to
+         * <p>Initiates a request to compile the specified type of information of the
+         * deployed environment.</p> <p> Setting the <code>InfoType</code> to
          * <code>tail</code> compiles the last lines from the application server log files
          * of every Amazon EC2 instance in your environment. </p> <p> Setting the
          * <code>InfoType</code> to <code>bundle</code> compresses the application server
          * log files for every Amazon EC2 instance into a <code>.zip</code> file. Legacy
          * and .NET containers do not support bundle logs. </p> <p> Use
          * <a>RetrieveEnvironmentInfo</a> to obtain the set of logs. </p> <p>Related
-         * Topics</p> <ul> <li> <a>RetrieveEnvironmentInfo</a> </li> </ul>
+         * Topics</p> <ul> <li> <p> <a>RetrieveEnvironmentInfo</a> </p> </li> </ul>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::RequestEnvironmentInfoOutcomeCallable RequestEnvironmentInfoCallable(const Model::RequestEnvironmentInfoRequest& request) const;
 
         /**
-         * <p> Initiates a request to compile the specified type of information of the
-         * deployed environment. </p> <p> Setting the <code>InfoType</code> to
+         * <p>Initiates a request to compile the specified type of information of the
+         * deployed environment.</p> <p> Setting the <code>InfoType</code> to
          * <code>tail</code> compiles the last lines from the application server log files
          * of every Amazon EC2 instance in your environment. </p> <p> Setting the
          * <code>InfoType</code> to <code>bundle</code> compresses the application server
          * log files for every Amazon EC2 instance into a <code>.zip</code> file. Legacy
          * and .NET containers do not support bundle logs. </p> <p> Use
          * <a>RetrieveEnvironmentInfo</a> to obtain the set of logs. </p> <p>Related
-         * Topics</p> <ul> <li> <a>RetrieveEnvironmentInfo</a> </li> </ul>
+         * Topics</p> <ul> <li> <p> <a>RetrieveEnvironmentInfo</a> </p> </li> </ul>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1015,15 +1015,15 @@ namespace Model
 
         /**
          * <p>Retrieves the compiled information from a <a>RequestEnvironmentInfo</a>
-         * request.</p> <p>Related Topics</p> <ul> <li> <a>RequestEnvironmentInfo</a> </li>
-         * </ul>
+         * request.</p> <p>Related Topics</p> <ul> <li> <p> <a>RequestEnvironmentInfo</a>
+         * </p> </li> </ul>
          */
         virtual Model::RetrieveEnvironmentInfoOutcome RetrieveEnvironmentInfo(const Model::RetrieveEnvironmentInfoRequest& request) const;
 
         /**
          * <p>Retrieves the compiled information from a <a>RequestEnvironmentInfo</a>
-         * request.</p> <p>Related Topics</p> <ul> <li> <a>RequestEnvironmentInfo</a> </li>
-         * </ul>
+         * request.</p> <p>Related Topics</p> <ul> <li> <p> <a>RequestEnvironmentInfo</a>
+         * </p> </li> </ul>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1031,142 +1031,142 @@ namespace Model
 
         /**
          * <p>Retrieves the compiled information from a <a>RequestEnvironmentInfo</a>
-         * request.</p> <p>Related Topics</p> <ul> <li> <a>RequestEnvironmentInfo</a> </li>
-         * </ul>
+         * request.</p> <p>Related Topics</p> <ul> <li> <p> <a>RequestEnvironmentInfo</a>
+         * </p> </li> </ul>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void RetrieveEnvironmentInfoAsync(const Model::RetrieveEnvironmentInfoRequest& request, const RetrieveEnvironmentInfoResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Swaps the CNAMEs of two environments. </p>
+         * <p>Swaps the CNAMEs of two environments.</p>
          */
         virtual Model::SwapEnvironmentCNAMEsOutcome SwapEnvironmentCNAMEs(const Model::SwapEnvironmentCNAMEsRequest& request) const;
 
         /**
-         * <p> Swaps the CNAMEs of two environments. </p>
+         * <p>Swaps the CNAMEs of two environments.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::SwapEnvironmentCNAMEsOutcomeCallable SwapEnvironmentCNAMEsCallable(const Model::SwapEnvironmentCNAMEsRequest& request) const;
 
         /**
-         * <p> Swaps the CNAMEs of two environments. </p>
+         * <p>Swaps the CNAMEs of two environments.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void SwapEnvironmentCNAMEsAsync(const Model::SwapEnvironmentCNAMEsRequest& request, const SwapEnvironmentCNAMEsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Terminates the specified environment. </p>
+         * <p>Terminates the specified environment.</p>
          */
         virtual Model::TerminateEnvironmentOutcome TerminateEnvironment(const Model::TerminateEnvironmentRequest& request) const;
 
         /**
-         * <p> Terminates the specified environment. </p>
+         * <p>Terminates the specified environment.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::TerminateEnvironmentOutcomeCallable TerminateEnvironmentCallable(const Model::TerminateEnvironmentRequest& request) const;
 
         /**
-         * <p> Terminates the specified environment. </p>
+         * <p>Terminates the specified environment.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void TerminateEnvironmentAsync(const Model::TerminateEnvironmentRequest& request, const TerminateEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates the specified application to have the specified properties. </p>
-         * <note> If a property (for example, <code>description</code>) is not provided,
-         * the value remains unchanged. To clear these properties, specify an empty string.
-         * </note>
+         * <p>Updates the specified application to have the specified properties.</p>
+         * <note> <p>If a property (for example, <code>description</code>) is not provided,
+         * the value remains unchanged. To clear these properties, specify an empty
+         * string.</p> </note>
          */
         virtual Model::UpdateApplicationOutcome UpdateApplication(const Model::UpdateApplicationRequest& request) const;
 
         /**
-         * <p>Updates the specified application to have the specified properties. </p>
-         * <note> If a property (for example, <code>description</code>) is not provided,
-         * the value remains unchanged. To clear these properties, specify an empty string.
-         * </note>
+         * <p>Updates the specified application to have the specified properties.</p>
+         * <note> <p>If a property (for example, <code>description</code>) is not provided,
+         * the value remains unchanged. To clear these properties, specify an empty
+         * string.</p> </note>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateApplicationOutcomeCallable UpdateApplicationCallable(const Model::UpdateApplicationRequest& request) const;
 
         /**
-         * <p>Updates the specified application to have the specified properties. </p>
-         * <note> If a property (for example, <code>description</code>) is not provided,
-         * the value remains unchanged. To clear these properties, specify an empty string.
-         * </note>
+         * <p>Updates the specified application to have the specified properties.</p>
+         * <note> <p>If a property (for example, <code>description</code>) is not provided,
+         * the value remains unchanged. To clear these properties, specify an empty
+         * string.</p> </note>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateApplicationAsync(const Model::UpdateApplicationRequest& request, const UpdateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Updates the specified application version to have the specified properties.
-         * </p> <note> If a property (for example, <code>description</code>) is not
-         * provided, the value remains unchanged. To clear properties, specify an empty
-         * string. </note>
+         * <p>Updates the specified application version to have the specified
+         * properties.</p> <note> <p>If a property (for example, <code>description</code>)
+         * is not provided, the value remains unchanged. To clear properties, specify an
+         * empty string.</p> </note>
          */
         virtual Model::UpdateApplicationVersionOutcome UpdateApplicationVersion(const Model::UpdateApplicationVersionRequest& request) const;
 
         /**
-         * <p> Updates the specified application version to have the specified properties.
-         * </p> <note> If a property (for example, <code>description</code>) is not
-         * provided, the value remains unchanged. To clear properties, specify an empty
-         * string. </note>
+         * <p>Updates the specified application version to have the specified
+         * properties.</p> <note> <p>If a property (for example, <code>description</code>)
+         * is not provided, the value remains unchanged. To clear properties, specify an
+         * empty string.</p> </note>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateApplicationVersionOutcomeCallable UpdateApplicationVersionCallable(const Model::UpdateApplicationVersionRequest& request) const;
 
         /**
-         * <p> Updates the specified application version to have the specified properties.
-         * </p> <note> If a property (for example, <code>description</code>) is not
-         * provided, the value remains unchanged. To clear properties, specify an empty
-         * string. </note>
+         * <p>Updates the specified application version to have the specified
+         * properties.</p> <note> <p>If a property (for example, <code>description</code>)
+         * is not provided, the value remains unchanged. To clear properties, specify an
+         * empty string.</p> </note>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateApplicationVersionAsync(const Model::UpdateApplicationVersionRequest& request, const UpdateApplicationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Updates the specified configuration template to have the specified
-         * properties or configuration option values. </p> <note> If a property (for
-         * example, <code>ApplicationName</code>) is not provided, its value remains
-         * unchanged. To clear such properties, specify an empty string. </note> <p>Related
-         * Topics</p> <ul> <li> <a>DescribeConfigurationOptions</a> </li> </ul>
+         * <p>Updates the specified configuration template to have the specified properties
+         * or configuration option values.</p> <note> <p>If a property (for example,
+         * <code>ApplicationName</code>) is not provided, its value remains unchanged. To
+         * clear such properties, specify an empty string.</p> </note> <p>Related
+         * Topics</p> <ul> <li> <p> <a>DescribeConfigurationOptions</a> </p> </li> </ul>
          */
         virtual Model::UpdateConfigurationTemplateOutcome UpdateConfigurationTemplate(const Model::UpdateConfigurationTemplateRequest& request) const;
 
         /**
-         * <p> Updates the specified configuration template to have the specified
-         * properties or configuration option values. </p> <note> If a property (for
-         * example, <code>ApplicationName</code>) is not provided, its value remains
-         * unchanged. To clear such properties, specify an empty string. </note> <p>Related
-         * Topics</p> <ul> <li> <a>DescribeConfigurationOptions</a> </li> </ul>
+         * <p>Updates the specified configuration template to have the specified properties
+         * or configuration option values.</p> <note> <p>If a property (for example,
+         * <code>ApplicationName</code>) is not provided, its value remains unchanged. To
+         * clear such properties, specify an empty string.</p> </note> <p>Related
+         * Topics</p> <ul> <li> <p> <a>DescribeConfigurationOptions</a> </p> </li> </ul>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateConfigurationTemplateOutcomeCallable UpdateConfigurationTemplateCallable(const Model::UpdateConfigurationTemplateRequest& request) const;
 
         /**
-         * <p> Updates the specified configuration template to have the specified
-         * properties or configuration option values. </p> <note> If a property (for
-         * example, <code>ApplicationName</code>) is not provided, its value remains
-         * unchanged. To clear such properties, specify an empty string. </note> <p>Related
-         * Topics</p> <ul> <li> <a>DescribeConfigurationOptions</a> </li> </ul>
+         * <p>Updates the specified configuration template to have the specified properties
+         * or configuration option values.</p> <note> <p>If a property (for example,
+         * <code>ApplicationName</code>) is not provided, its value remains unchanged. To
+         * clear such properties, specify an empty string.</p> </note> <p>Related
+         * Topics</p> <ul> <li> <p> <a>DescribeConfigurationOptions</a> </p> </li> </ul>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateConfigurationTemplateAsync(const Model::UpdateConfigurationTemplateRequest& request, const UpdateConfigurationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Updates the environment description, deploys a new application version,
+         * <p>Updates the environment description, deploys a new application version,
          * updates the configuration settings to an entirely new configuration template, or
-         * updates select configuration option values in the running environment. </p> <p>
+         * updates select configuration option values in the running environment.</p> <p>
          * Attempting to update both the release and configuration is not allowed and AWS
          * Elastic Beanstalk returns an <code>InvalidParameterCombination</code> error.
          * </p> <p> When updating the configuration settings to a new template or
@@ -1177,9 +1177,9 @@ namespace Model
         virtual Model::UpdateEnvironmentOutcome UpdateEnvironment(const Model::UpdateEnvironmentRequest& request) const;
 
         /**
-         * <p> Updates the environment description, deploys a new application version,
+         * <p>Updates the environment description, deploys a new application version,
          * updates the configuration settings to an entirely new configuration template, or
-         * updates select configuration option values in the running environment. </p> <p>
+         * updates select configuration option values in the running environment.</p> <p>
          * Attempting to update both the release and configuration is not allowed and AWS
          * Elastic Beanstalk returns an <code>InvalidParameterCombination</code> error.
          * </p> <p> When updating the configuration settings to a new template or
@@ -1192,9 +1192,9 @@ namespace Model
         virtual Model::UpdateEnvironmentOutcomeCallable UpdateEnvironmentCallable(const Model::UpdateEnvironmentRequest& request) const;
 
         /**
-         * <p> Updates the environment description, deploys a new application version,
+         * <p>Updates the environment description, deploys a new application version,
          * updates the configuration settings to an entirely new configuration template, or
-         * updates select configuration option values in the running environment. </p> <p>
+         * updates select configuration option values in the running environment.</p> <p>
          * Attempting to update both the release and configuration is not allowed and AWS
          * Elastic Beanstalk returns an <code>InvalidParameterCombination</code> error.
          * </p> <p> When updating the configuration settings to a new template or
@@ -1207,28 +1207,28 @@ namespace Model
         virtual void UpdateEnvironmentAsync(const Model::UpdateEnvironmentRequest& request, const UpdateEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Takes a set of configuration settings and either a configuration template or
-         * environment, and determines whether those values are valid. </p> <p> This action
+         * <p>Takes a set of configuration settings and either a configuration template or
+         * environment, and determines whether those values are valid.</p> <p>This action
          * returns a list of messages indicating any errors or warnings associated with the
-         * selection of option values. </p>
+         * selection of option values.</p>
          */
         virtual Model::ValidateConfigurationSettingsOutcome ValidateConfigurationSettings(const Model::ValidateConfigurationSettingsRequest& request) const;
 
         /**
-         * <p> Takes a set of configuration settings and either a configuration template or
-         * environment, and determines whether those values are valid. </p> <p> This action
+         * <p>Takes a set of configuration settings and either a configuration template or
+         * environment, and determines whether those values are valid.</p> <p>This action
          * returns a list of messages indicating any errors or warnings associated with the
-         * selection of option values. </p>
+         * selection of option values.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ValidateConfigurationSettingsOutcomeCallable ValidateConfigurationSettingsCallable(const Model::ValidateConfigurationSettingsRequest& request) const;
 
         /**
-         * <p> Takes a set of configuration settings and either a configuration template or
-         * environment, and determines whether those values are valid. </p> <p> This action
+         * <p>Takes a set of configuration settings and either a configuration template or
+         * environment, and determines whether those values are valid.</p> <p>This action
          * returns a list of messages indicating any errors or warnings associated with the
-         * selection of option values. </p>
+         * selection of option values.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */

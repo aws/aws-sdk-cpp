@@ -84,7 +84,7 @@ project(aws-cpp-sdk-es)
   install (FILES ${AWS_ES_HEADERS} DESTINATION include/aws/es)
   install (FILES ${AWS_ES_MODEL_HEADERS} DESTINATION include/aws/es/model)
 
-  if(MSVC)
+  if(PLATFORM_WINDOWS AND MSVC)
     install (FILES nuget/aws-cpp-sdk-es.autopkg DESTINATION nuget)
   endif()
 

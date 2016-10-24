@@ -41,124 +41,99 @@ namespace Model
     GenerateDataKeyResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * <p>Ciphertext that contains the encrypted data key. You must store the blob and
-     * enough information to reconstruct the encryption context so that the data
-     * encrypted by using the key can later be decrypted. You must provide both the
-     * ciphertext blob and the encryption context to the <a>Decrypt</a> API to recover
-     * the plaintext data key and decrypt the object.</p> <p>If you are using the CLI,
-     * the value is Base64 encoded. Otherwise, it is not encoded.</p>
+     * <p>The encrypted data encryption key.</p>
      */
     inline const Aws::Utils::ByteBuffer& GetCiphertextBlob() const{ return m_ciphertextBlob; }
 
     /**
-     * <p>Ciphertext that contains the encrypted data key. You must store the blob and
-     * enough information to reconstruct the encryption context so that the data
-     * encrypted by using the key can later be decrypted. You must provide both the
-     * ciphertext blob and the encryption context to the <a>Decrypt</a> API to recover
-     * the plaintext data key and decrypt the object.</p> <p>If you are using the CLI,
-     * the value is Base64 encoded. Otherwise, it is not encoded.</p>
+     * <p>The encrypted data encryption key.</p>
      */
     inline void SetCiphertextBlob(const Aws::Utils::ByteBuffer& value) { m_ciphertextBlob = value; }
 
     /**
-     * <p>Ciphertext that contains the encrypted data key. You must store the blob and
-     * enough information to reconstruct the encryption context so that the data
-     * encrypted by using the key can later be decrypted. You must provide both the
-     * ciphertext blob and the encryption context to the <a>Decrypt</a> API to recover
-     * the plaintext data key and decrypt the object.</p> <p>If you are using the CLI,
-     * the value is Base64 encoded. Otherwise, it is not encoded.</p>
+     * <p>The encrypted data encryption key.</p>
      */
     inline void SetCiphertextBlob(Aws::Utils::ByteBuffer&& value) { m_ciphertextBlob = value; }
 
     /**
-     * <p>Ciphertext that contains the encrypted data key. You must store the blob and
-     * enough information to reconstruct the encryption context so that the data
-     * encrypted by using the key can later be decrypted. You must provide both the
-     * ciphertext blob and the encryption context to the <a>Decrypt</a> API to recover
-     * the plaintext data key and decrypt the object.</p> <p>If you are using the CLI,
-     * the value is Base64 encoded. Otherwise, it is not encoded.</p>
+     * <p>The encrypted data encryption key.</p>
      */
     inline GenerateDataKeyResult& WithCiphertextBlob(const Aws::Utils::ByteBuffer& value) { SetCiphertextBlob(value); return *this;}
 
     /**
-     * <p>Ciphertext that contains the encrypted data key. You must store the blob and
-     * enough information to reconstruct the encryption context so that the data
-     * encrypted by using the key can later be decrypted. You must provide both the
-     * ciphertext blob and the encryption context to the <a>Decrypt</a> API to recover
-     * the plaintext data key and decrypt the object.</p> <p>If you are using the CLI,
-     * the value is Base64 encoded. Otherwise, it is not encoded.</p>
+     * <p>The encrypted data encryption key.</p>
      */
     inline GenerateDataKeyResult& WithCiphertextBlob(Aws::Utils::ByteBuffer&& value) { SetCiphertextBlob(value); return *this;}
 
     /**
-     * <p>Plaintext that contains the data key. Use this for encryption and decryption
-     * and then remove it from memory as soon as possible.</p>
+     * <p>The data encryption key. Use this data key for local encryption and
+     * decryption, then remove it from memory as soon as possible.</p>
      */
     inline const Aws::Utils::ByteBuffer& GetPlaintext() const{ return m_plaintext; }
 
     /**
-     * <p>Plaintext that contains the data key. Use this for encryption and decryption
-     * and then remove it from memory as soon as possible.</p>
+     * <p>The data encryption key. Use this data key for local encryption and
+     * decryption, then remove it from memory as soon as possible.</p>
      */
     inline void SetPlaintext(const Aws::Utils::ByteBuffer& value) { m_plaintext = value; }
 
     /**
-     * <p>Plaintext that contains the data key. Use this for encryption and decryption
-     * and then remove it from memory as soon as possible.</p>
+     * <p>The data encryption key. Use this data key for local encryption and
+     * decryption, then remove it from memory as soon as possible.</p>
      */
     inline void SetPlaintext(Aws::Utils::ByteBuffer&& value) { m_plaintext = value; }
 
     /**
-     * <p>Plaintext that contains the data key. Use this for encryption and decryption
-     * and then remove it from memory as soon as possible.</p>
+     * <p>The data encryption key. Use this data key for local encryption and
+     * decryption, then remove it from memory as soon as possible.</p>
      */
     inline GenerateDataKeyResult& WithPlaintext(const Aws::Utils::ByteBuffer& value) { SetPlaintext(value); return *this;}
 
     /**
-     * <p>Plaintext that contains the data key. Use this for encryption and decryption
-     * and then remove it from memory as soon as possible.</p>
+     * <p>The data encryption key. Use this data key for local encryption and
+     * decryption, then remove it from memory as soon as possible.</p>
      */
     inline GenerateDataKeyResult& WithPlaintext(Aws::Utils::ByteBuffer&& value) { SetPlaintext(value); return *this;}
 
     /**
-     * <p>System generated unique identifier of the key to be used to decrypt the
-     * encrypted copy of the data key.</p>
+     * <p>The identifier of the CMK under which the data encryption key was generated
+     * and encrypted.</p>
      */
     inline const Aws::String& GetKeyId() const{ return m_keyId; }
 
     /**
-     * <p>System generated unique identifier of the key to be used to decrypt the
-     * encrypted copy of the data key.</p>
+     * <p>The identifier of the CMK under which the data encryption key was generated
+     * and encrypted.</p>
      */
     inline void SetKeyId(const Aws::String& value) { m_keyId = value; }
 
     /**
-     * <p>System generated unique identifier of the key to be used to decrypt the
-     * encrypted copy of the data key.</p>
+     * <p>The identifier of the CMK under which the data encryption key was generated
+     * and encrypted.</p>
      */
     inline void SetKeyId(Aws::String&& value) { m_keyId = value; }
 
     /**
-     * <p>System generated unique identifier of the key to be used to decrypt the
-     * encrypted copy of the data key.</p>
+     * <p>The identifier of the CMK under which the data encryption key was generated
+     * and encrypted.</p>
      */
     inline void SetKeyId(const char* value) { m_keyId.assign(value); }
 
     /**
-     * <p>System generated unique identifier of the key to be used to decrypt the
-     * encrypted copy of the data key.</p>
+     * <p>The identifier of the CMK under which the data encryption key was generated
+     * and encrypted.</p>
      */
     inline GenerateDataKeyResult& WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
 
     /**
-     * <p>System generated unique identifier of the key to be used to decrypt the
-     * encrypted copy of the data key.</p>
+     * <p>The identifier of the CMK under which the data encryption key was generated
+     * and encrypted.</p>
      */
     inline GenerateDataKeyResult& WithKeyId(Aws::String&& value) { SetKeyId(value); return *this;}
 
     /**
-     * <p>System generated unique identifier of the key to be used to decrypt the
-     * encrypted copy of the data key.</p>
+     * <p>The identifier of the CMK under which the data encryption key was generated
+     * and encrypted.</p>
      */
     inline GenerateDataKeyResult& WithKeyId(const char* value) { SetKeyId(value); return *this;}
 

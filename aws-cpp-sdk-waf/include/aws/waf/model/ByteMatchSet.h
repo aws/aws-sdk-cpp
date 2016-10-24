@@ -58,7 +58,7 @@ namespace Model
      * <a>UpdateByteMatchSet</a>), insert a <code>ByteMatchSet</code> into a
      * <code>Rule</code> or delete one from a <code>Rule</code> (see
      * <a>UpdateRule</a>), and delete a <code>ByteMatchSet</code> from AWS WAF (see
-     * <a>DeleteByteMatchSet</a>).</p> <p><code>ByteMatchSetId</code> is returned by
+     * <a>DeleteByteMatchSet</a>).</p> <p> <code>ByteMatchSetId</code> is returned by
      * <a>CreateByteMatchSet</a> and by <a>ListByteMatchSets</a>.</p>
      */
     inline const Aws::String& GetByteMatchSetId() const{ return m_byteMatchSetId; }
@@ -70,7 +70,7 @@ namespace Model
      * <a>UpdateByteMatchSet</a>), insert a <code>ByteMatchSet</code> into a
      * <code>Rule</code> or delete one from a <code>Rule</code> (see
      * <a>UpdateRule</a>), and delete a <code>ByteMatchSet</code> from AWS WAF (see
-     * <a>DeleteByteMatchSet</a>).</p> <p><code>ByteMatchSetId</code> is returned by
+     * <a>DeleteByteMatchSet</a>).</p> <p> <code>ByteMatchSetId</code> is returned by
      * <a>CreateByteMatchSet</a> and by <a>ListByteMatchSets</a>.</p>
      */
     inline void SetByteMatchSetId(const Aws::String& value) { m_byteMatchSetIdHasBeenSet = true; m_byteMatchSetId = value; }
@@ -82,7 +82,7 @@ namespace Model
      * <a>UpdateByteMatchSet</a>), insert a <code>ByteMatchSet</code> into a
      * <code>Rule</code> or delete one from a <code>Rule</code> (see
      * <a>UpdateRule</a>), and delete a <code>ByteMatchSet</code> from AWS WAF (see
-     * <a>DeleteByteMatchSet</a>).</p> <p><code>ByteMatchSetId</code> is returned by
+     * <a>DeleteByteMatchSet</a>).</p> <p> <code>ByteMatchSetId</code> is returned by
      * <a>CreateByteMatchSet</a> and by <a>ListByteMatchSets</a>.</p>
      */
     inline void SetByteMatchSetId(Aws::String&& value) { m_byteMatchSetIdHasBeenSet = true; m_byteMatchSetId = value; }
@@ -94,7 +94,7 @@ namespace Model
      * <a>UpdateByteMatchSet</a>), insert a <code>ByteMatchSet</code> into a
      * <code>Rule</code> or delete one from a <code>Rule</code> (see
      * <a>UpdateRule</a>), and delete a <code>ByteMatchSet</code> from AWS WAF (see
-     * <a>DeleteByteMatchSet</a>).</p> <p><code>ByteMatchSetId</code> is returned by
+     * <a>DeleteByteMatchSet</a>).</p> <p> <code>ByteMatchSetId</code> is returned by
      * <a>CreateByteMatchSet</a> and by <a>ListByteMatchSets</a>.</p>
      */
     inline void SetByteMatchSetId(const char* value) { m_byteMatchSetIdHasBeenSet = true; m_byteMatchSetId.assign(value); }
@@ -106,7 +106,7 @@ namespace Model
      * <a>UpdateByteMatchSet</a>), insert a <code>ByteMatchSet</code> into a
      * <code>Rule</code> or delete one from a <code>Rule</code> (see
      * <a>UpdateRule</a>), and delete a <code>ByteMatchSet</code> from AWS WAF (see
-     * <a>DeleteByteMatchSet</a>).</p> <p><code>ByteMatchSetId</code> is returned by
+     * <a>DeleteByteMatchSet</a>).</p> <p> <code>ByteMatchSetId</code> is returned by
      * <a>CreateByteMatchSet</a> and by <a>ListByteMatchSets</a>.</p>
      */
     inline ByteMatchSet& WithByteMatchSetId(const Aws::String& value) { SetByteMatchSetId(value); return *this;}
@@ -118,7 +118,7 @@ namespace Model
      * <a>UpdateByteMatchSet</a>), insert a <code>ByteMatchSet</code> into a
      * <code>Rule</code> or delete one from a <code>Rule</code> (see
      * <a>UpdateRule</a>), and delete a <code>ByteMatchSet</code> from AWS WAF (see
-     * <a>DeleteByteMatchSet</a>).</p> <p><code>ByteMatchSetId</code> is returned by
+     * <a>DeleteByteMatchSet</a>).</p> <p> <code>ByteMatchSetId</code> is returned by
      * <a>CreateByteMatchSet</a> and by <a>ListByteMatchSets</a>.</p>
      */
     inline ByteMatchSet& WithByteMatchSetId(Aws::String&& value) { SetByteMatchSetId(value); return *this;}
@@ -130,7 +130,7 @@ namespace Model
      * <a>UpdateByteMatchSet</a>), insert a <code>ByteMatchSet</code> into a
      * <code>Rule</code> or delete one from a <code>Rule</code> (see
      * <a>UpdateRule</a>), and delete a <code>ByteMatchSet</code> from AWS WAF (see
-     * <a>DeleteByteMatchSet</a>).</p> <p><code>ByteMatchSetId</code> is returned by
+     * <a>DeleteByteMatchSet</a>).</p> <p> <code>ByteMatchSetId</code> is returned by
      * <a>CreateByteMatchSet</a> and by <a>ListByteMatchSets</a>.</p>
      */
     inline ByteMatchSet& WithByteMatchSetId(const char* value) { SetByteMatchSetId(value); return *this;}

@@ -101,6 +101,9 @@ namespace Aws
             bool operator <= (const DateTime& other) const;
             bool operator >= (const DateTime& other) const;
 
+            DateTime operator+(const std::chrono::milliseconds& a) const;
+            DateTime operator-(const std::chrono::milliseconds& a) const;
+            
             /**
              * Assign from seconds.millis since epoch.
              */
@@ -225,6 +228,11 @@ namespace Aws
              * The amazon timestamp format is a double with seconds.milliseconds
              */
             static double ComputeCurrentTimestampInAmazonFormat();
+
+            /**
+             * Compute the difference between two timestamps.
+             */
+            static std::chrono::milliseconds Diff(const DateTime& a, const DateTime& b);
 
         private:
             std::chrono::system_clock::time_point m_time;

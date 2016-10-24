@@ -31,7 +31,7 @@ namespace Model
 
   /**
    * <p>The number of AWS resources or AWS Config rules responsible for the current
-   * compliance of the item, up to a maximum number. </p>
+   * compliance of the item, up to a maximum number.</p>
    */
   class AWS_CONFIGSERVICE_API ComplianceContributorCount
   {

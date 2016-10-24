@@ -84,7 +84,7 @@ project(aws-cpp-sdk-iot)
   install (FILES ${AWS_IOT_HEADERS} DESTINATION include/aws/iot)
   install (FILES ${AWS_IOT_MODEL_HEADERS} DESTINATION include/aws/iot/model)
 
-  if(MSVC)
+  if(PLATFORM_WINDOWS AND MSVC)
     install (FILES nuget/aws-cpp-sdk-iot.autopkg DESTINATION nuget)
   endif()
 

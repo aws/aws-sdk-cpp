@@ -184,47 +184,47 @@ namespace Model
     inline AdminGetUserResult& WithEnabled(bool value) { SetEnabled(value); return *this;}
 
     /**
-     * <p>The user status. Can be one of the following:</p> <ul> <li>UNCONFIRMED - User
-     * has been created but not confirmed.</li> <li>CONFIRMED - User has been
-     * confirmed.</li> <li>ARCHIVED - User is no longer active.</li> <li>COMPROMISED -
-     * User is disabled due to a potential security threat.</li> <li>UNKNOWN - User
-     * status is not known.</li> </ul>
+     * <p>The user status. Can be one of the following:</p> <ul> <li> <p>UNCONFIRMED -
+     * User has been created but not confirmed.</p> </li> <li> <p>CONFIRMED - User has
+     * been confirmed.</p> </li> <li> <p>ARCHIVED - User is no longer active.</p> </li>
+     * <li> <p>COMPROMISED - User is disabled due to a potential security threat.</p>
+     * </li> <li> <p>UNKNOWN - User status is not known.</p> </li> </ul>
      */
     inline const UserStatusType& GetUserStatus() const{ return m_userStatus; }
 
     /**
-     * <p>The user status. Can be one of the following:</p> <ul> <li>UNCONFIRMED - User
-     * has been created but not confirmed.</li> <li>CONFIRMED - User has been
-     * confirmed.</li> <li>ARCHIVED - User is no longer active.</li> <li>COMPROMISED -
-     * User is disabled due to a potential security threat.</li> <li>UNKNOWN - User
-     * status is not known.</li> </ul>
+     * <p>The user status. Can be one of the following:</p> <ul> <li> <p>UNCONFIRMED -
+     * User has been created but not confirmed.</p> </li> <li> <p>CONFIRMED - User has
+     * been confirmed.</p> </li> <li> <p>ARCHIVED - User is no longer active.</p> </li>
+     * <li> <p>COMPROMISED - User is disabled due to a potential security threat.</p>
+     * </li> <li> <p>UNKNOWN - User status is not known.</p> </li> </ul>
      */
     inline void SetUserStatus(const UserStatusType& value) { m_userStatus = value; }
 
     /**
-     * <p>The user status. Can be one of the following:</p> <ul> <li>UNCONFIRMED - User
-     * has been created but not confirmed.</li> <li>CONFIRMED - User has been
-     * confirmed.</li> <li>ARCHIVED - User is no longer active.</li> <li>COMPROMISED -
-     * User is disabled due to a potential security threat.</li> <li>UNKNOWN - User
-     * status is not known.</li> </ul>
+     * <p>The user status. Can be one of the following:</p> <ul> <li> <p>UNCONFIRMED -
+     * User has been created but not confirmed.</p> </li> <li> <p>CONFIRMED - User has
+     * been confirmed.</p> </li> <li> <p>ARCHIVED - User is no longer active.</p> </li>
+     * <li> <p>COMPROMISED - User is disabled due to a potential security threat.</p>
+     * </li> <li> <p>UNKNOWN - User status is not known.</p> </li> </ul>
      */
     inline void SetUserStatus(UserStatusType&& value) { m_userStatus = value; }
 
     /**
-     * <p>The user status. Can be one of the following:</p> <ul> <li>UNCONFIRMED - User
-     * has been created but not confirmed.</li> <li>CONFIRMED - User has been
-     * confirmed.</li> <li>ARCHIVED - User is no longer active.</li> <li>COMPROMISED -
-     * User is disabled due to a potential security threat.</li> <li>UNKNOWN - User
-     * status is not known.</li> </ul>
+     * <p>The user status. Can be one of the following:</p> <ul> <li> <p>UNCONFIRMED -
+     * User has been created but not confirmed.</p> </li> <li> <p>CONFIRMED - User has
+     * been confirmed.</p> </li> <li> <p>ARCHIVED - User is no longer active.</p> </li>
+     * <li> <p>COMPROMISED - User is disabled due to a potential security threat.</p>
+     * </li> <li> <p>UNKNOWN - User status is not known.</p> </li> </ul>
      */
     inline AdminGetUserResult& WithUserStatus(const UserStatusType& value) { SetUserStatus(value); return *this;}
 
     /**
-     * <p>The user status. Can be one of the following:</p> <ul> <li>UNCONFIRMED - User
-     * has been created but not confirmed.</li> <li>CONFIRMED - User has been
-     * confirmed.</li> <li>ARCHIVED - User is no longer active.</li> <li>COMPROMISED -
-     * User is disabled due to a potential security threat.</li> <li>UNKNOWN - User
-     * status is not known.</li> </ul>
+     * <p>The user status. Can be one of the following:</p> <ul> <li> <p>UNCONFIRMED -
+     * User has been created but not confirmed.</p> </li> <li> <p>CONFIRMED - User has
+     * been confirmed.</p> </li> <li> <p>ARCHIVED - User is no longer active.</p> </li>
+     * <li> <p>COMPROMISED - User is disabled due to a potential security threat.</p>
+     * </li> <li> <p>UNKNOWN - User status is not known.</p> </li> </ul>
      */
     inline AdminGetUserResult& WithUserStatus(UserStatusType&& value) { SetUserStatus(value); return *this;}
 

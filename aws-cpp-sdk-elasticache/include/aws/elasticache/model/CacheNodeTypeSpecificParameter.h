@@ -36,9 +36,9 @@ namespace Model
 
   /**
    * <p>A parameter that has a different value for each cache node type it is applied
-   * to. For example, in a Redis cache cluster, a <i>cache.m1.large</i> cache node
-   * type would have a larger <i>maxmemory</i> value than a <i>cache.m1.small</i>
-   * type.</p>
+   * to. For example, in a Redis cache cluster, a <code>cache.m1.large</code> cache
+   * node type would have a larger <code>maxmemory</code> value than a
+   * <code>cache.m1.small</code> type.</p>
    */
   class AWS_ELASTICACHE_API CacheNodeTypeSpecificParameter
   {
@@ -324,50 +324,45 @@ namespace Model
     inline CacheNodeTypeSpecificParameter& AddCacheNodeTypeSpecificValues(CacheNodeTypeSpecificValue&& value) { m_cacheNodeTypeSpecificValuesHasBeenSet = true; m_cacheNodeTypeSpecificValues.push_back(value); return *this; }
 
     /**
-     * <p>ChangeType indicates whether a change to the parameter will be applied
-     * immediately or requires a reboot for the change to be applied. You can force a
-     * reboot or wait until the next maintenance window's reboot. For more information,
-     * see <a
+     * <p>Indicates whether a change to the parameter is applied immediately or
+     * requires a reboot for the change to be applied. You can force a reboot or wait
+     * until the next maintenance window's reboot. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Clusters.Rebooting.html">Rebooting
      * a Cluster</a>.</p>
      */
     inline const ChangeType& GetChangeType() const{ return m_changeType; }
 
     /**
-     * <p>ChangeType indicates whether a change to the parameter will be applied
-     * immediately or requires a reboot for the change to be applied. You can force a
-     * reboot or wait until the next maintenance window's reboot. For more information,
-     * see <a
+     * <p>Indicates whether a change to the parameter is applied immediately or
+     * requires a reboot for the change to be applied. You can force a reboot or wait
+     * until the next maintenance window's reboot. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Clusters.Rebooting.html">Rebooting
      * a Cluster</a>.</p>
      */
     inline void SetChangeType(const ChangeType& value) { m_changeTypeHasBeenSet = true; m_changeType = value; }
 
     /**
-     * <p>ChangeType indicates whether a change to the parameter will be applied
-     * immediately or requires a reboot for the change to be applied. You can force a
-     * reboot or wait until the next maintenance window's reboot. For more information,
-     * see <a
+     * <p>Indicates whether a change to the parameter is applied immediately or
+     * requires a reboot for the change to be applied. You can force a reboot or wait
+     * until the next maintenance window's reboot. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Clusters.Rebooting.html">Rebooting
      * a Cluster</a>.</p>
      */
     inline void SetChangeType(ChangeType&& value) { m_changeTypeHasBeenSet = true; m_changeType = value; }
 
     /**
-     * <p>ChangeType indicates whether a change to the parameter will be applied
-     * immediately or requires a reboot for the change to be applied. You can force a
-     * reboot or wait until the next maintenance window's reboot. For more information,
-     * see <a
+     * <p>Indicates whether a change to the parameter is applied immediately or
+     * requires a reboot for the change to be applied. You can force a reboot or wait
+     * until the next maintenance window's reboot. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Clusters.Rebooting.html">Rebooting
      * a Cluster</a>.</p>
      */
     inline CacheNodeTypeSpecificParameter& WithChangeType(const ChangeType& value) { SetChangeType(value); return *this;}
 
     /**
-     * <p>ChangeType indicates whether a change to the parameter will be applied
-     * immediately or requires a reboot for the change to be applied. You can force a
-     * reboot or wait until the next maintenance window's reboot. For more information,
-     * see <a
+     * <p>Indicates whether a change to the parameter is applied immediately or
+     * requires a reboot for the change to be applied. You can force a reboot or wait
+     * until the next maintenance window's reboot. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Clusters.Rebooting.html">Rebooting
      * a Cluster</a>.</p>
      */

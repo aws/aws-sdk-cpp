@@ -23,6 +23,7 @@ CreateApplicationVersionRequest::CreateApplicationVersionRequest() :
     m_applicationNameHasBeenSet(false),
     m_versionLabelHasBeenSet(false),
     m_descriptionHasBeenSet(false),
+    m_sourceBuildInformationHasBeenSet(false),
     m_sourceBundleHasBeenSet(false),
     m_autoCreateApplication(false),
     m_autoCreateApplicationHasBeenSet(false),
@@ -48,6 +49,11 @@ Aws::String CreateApplicationVersionRequest::SerializePayload() const
   if(m_descriptionHasBeenSet)
   {
     ss << "Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
+  }
+
+  if(m_sourceBuildInformationHasBeenSet)
+  {
+    m_sourceBuildInformation.OutputToStream(ss, "SourceBuildInformation");
   }
 
   if(m_sourceBundleHasBeenSet)

@@ -39,60 +39,60 @@ namespace Model
     /**
      * <p>Type of routing to filter results on. Use this parameter to retrieve only
      * aliases of a certain type. To retrieve all aliases, leave this parameter
-     * empty.</p> <p>Possible routing types include the following:</p>
-     * <ul><li><b>SIMPLE</b> – The alias resolves to one specific fleet. Use this type
-     * when routing to active fleets.</li><li><b>TERMINAL</b> – The alias does not
-     * resolve to a fleet but instead can be used to display a message to the user. A
-     * terminal alias throws a TerminalRoutingStrategyException with the
-     * <a>RoutingStrategy</a> message embedded.</li></ul>
+     * empty.</p> <p>Possible routing types include the following:</p> <ul> <li> <p>
+     * <b>SIMPLE</b> – The alias resolves to one specific fleet. Use this type when
+     * routing to active fleets.</p> </li> <li> <p> <b>TERMINAL</b> – The alias does
+     * not resolve to a fleet but instead can be used to display a message to the user.
+     * A terminal alias throws a TerminalRoutingStrategyException with the
+     * <a>RoutingStrategy</a> message embedded.</p> </li> </ul>
      */
     inline const RoutingStrategyType& GetRoutingStrategyType() const{ return m_routingStrategyType; }
 
     /**
      * <p>Type of routing to filter results on. Use this parameter to retrieve only
      * aliases of a certain type. To retrieve all aliases, leave this parameter
-     * empty.</p> <p>Possible routing types include the following:</p>
-     * <ul><li><b>SIMPLE</b> – The alias resolves to one specific fleet. Use this type
-     * when routing to active fleets.</li><li><b>TERMINAL</b> – The alias does not
-     * resolve to a fleet but instead can be used to display a message to the user. A
-     * terminal alias throws a TerminalRoutingStrategyException with the
-     * <a>RoutingStrategy</a> message embedded.</li></ul>
+     * empty.</p> <p>Possible routing types include the following:</p> <ul> <li> <p>
+     * <b>SIMPLE</b> – The alias resolves to one specific fleet. Use this type when
+     * routing to active fleets.</p> </li> <li> <p> <b>TERMINAL</b> – The alias does
+     * not resolve to a fleet but instead can be used to display a message to the user.
+     * A terminal alias throws a TerminalRoutingStrategyException with the
+     * <a>RoutingStrategy</a> message embedded.</p> </li> </ul>
      */
     inline void SetRoutingStrategyType(const RoutingStrategyType& value) { m_routingStrategyTypeHasBeenSet = true; m_routingStrategyType = value; }
 
     /**
      * <p>Type of routing to filter results on. Use this parameter to retrieve only
      * aliases of a certain type. To retrieve all aliases, leave this parameter
-     * empty.</p> <p>Possible routing types include the following:</p>
-     * <ul><li><b>SIMPLE</b> – The alias resolves to one specific fleet. Use this type
-     * when routing to active fleets.</li><li><b>TERMINAL</b> – The alias does not
-     * resolve to a fleet but instead can be used to display a message to the user. A
-     * terminal alias throws a TerminalRoutingStrategyException with the
-     * <a>RoutingStrategy</a> message embedded.</li></ul>
+     * empty.</p> <p>Possible routing types include the following:</p> <ul> <li> <p>
+     * <b>SIMPLE</b> – The alias resolves to one specific fleet. Use this type when
+     * routing to active fleets.</p> </li> <li> <p> <b>TERMINAL</b> – The alias does
+     * not resolve to a fleet but instead can be used to display a message to the user.
+     * A terminal alias throws a TerminalRoutingStrategyException with the
+     * <a>RoutingStrategy</a> message embedded.</p> </li> </ul>
      */
     inline void SetRoutingStrategyType(RoutingStrategyType&& value) { m_routingStrategyTypeHasBeenSet = true; m_routingStrategyType = value; }
 
     /**
      * <p>Type of routing to filter results on. Use this parameter to retrieve only
      * aliases of a certain type. To retrieve all aliases, leave this parameter
-     * empty.</p> <p>Possible routing types include the following:</p>
-     * <ul><li><b>SIMPLE</b> – The alias resolves to one specific fleet. Use this type
-     * when routing to active fleets.</li><li><b>TERMINAL</b> – The alias does not
-     * resolve to a fleet but instead can be used to display a message to the user. A
-     * terminal alias throws a TerminalRoutingStrategyException with the
-     * <a>RoutingStrategy</a> message embedded.</li></ul>
+     * empty.</p> <p>Possible routing types include the following:</p> <ul> <li> <p>
+     * <b>SIMPLE</b> – The alias resolves to one specific fleet. Use this type when
+     * routing to active fleets.</p> </li> <li> <p> <b>TERMINAL</b> – The alias does
+     * not resolve to a fleet but instead can be used to display a message to the user.
+     * A terminal alias throws a TerminalRoutingStrategyException with the
+     * <a>RoutingStrategy</a> message embedded.</p> </li> </ul>
      */
     inline ListAliasesRequest& WithRoutingStrategyType(const RoutingStrategyType& value) { SetRoutingStrategyType(value); return *this;}
 
     /**
      * <p>Type of routing to filter results on. Use this parameter to retrieve only
      * aliases of a certain type. To retrieve all aliases, leave this parameter
-     * empty.</p> <p>Possible routing types include the following:</p>
-     * <ul><li><b>SIMPLE</b> – The alias resolves to one specific fleet. Use this type
-     * when routing to active fleets.</li><li><b>TERMINAL</b> – The alias does not
-     * resolve to a fleet but instead can be used to display a message to the user. A
-     * terminal alias throws a TerminalRoutingStrategyException with the
-     * <a>RoutingStrategy</a> message embedded.</li></ul>
+     * empty.</p> <p>Possible routing types include the following:</p> <ul> <li> <p>
+     * <b>SIMPLE</b> – The alias resolves to one specific fleet. Use this type when
+     * routing to active fleets.</p> </li> <li> <p> <b>TERMINAL</b> – The alias does
+     * not resolve to a fleet but instead can be used to display a message to the user.
+     * A terminal alias throws a TerminalRoutingStrategyException with the
+     * <a>RoutingStrategy</a> message embedded.</p> </li> </ul>
      */
     inline ListAliasesRequest& WithRoutingStrategyType(RoutingStrategyType&& value) { SetRoutingStrategyType(value); return *this;}
 

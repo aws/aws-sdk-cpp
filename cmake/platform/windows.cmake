@@ -14,8 +14,8 @@ macro(apply_post_project_platform_settings)
         set(SDK_INSTALL_BINARY_PREFIX "${SDK_INSTALL_BINARY_PREFIX}/intel64")
     else()
         set(SDK_INSTALL_BINARY_PREFIX "${SDK_INSTALL_BINARY_PREFIX}/ia32")
-    endif()
-
-    set(PLATFORM_DEP_LIBS Userenv Rpcrt4)
+    endif()    
+   
+    set(PLATFORM_DEP_LIBS Userenv Rpcrt4 version)    
 
 endmacro()

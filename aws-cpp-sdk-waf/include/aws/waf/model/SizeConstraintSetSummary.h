@@ -50,7 +50,7 @@ namespace Model
      * <code>SizeConstraintSet</code> into a <code>Rule</code> or delete one from a
      * <code>Rule</code> (see <a>UpdateRule</a>), and delete a
      * <code>SizeConstraintSet</code> from AWS WAF (see
-     * <a>DeleteSizeConstraintSet</a>).</p> <p><code>SizeConstraintSetId</code> is
+     * <a>DeleteSizeConstraintSet</a>).</p> <p> <code>SizeConstraintSetId</code> is
      * returned by <a>CreateSizeConstraintSet</a> and by
      * <a>ListSizeConstraintSets</a>.</p>
      */
@@ -64,7 +64,7 @@ namespace Model
      * <code>SizeConstraintSet</code> into a <code>Rule</code> or delete one from a
      * <code>Rule</code> (see <a>UpdateRule</a>), and delete a
      * <code>SizeConstraintSet</code> from AWS WAF (see
-     * <a>DeleteSizeConstraintSet</a>).</p> <p><code>SizeConstraintSetId</code> is
+     * <a>DeleteSizeConstraintSet</a>).</p> <p> <code>SizeConstraintSetId</code> is
      * returned by <a>CreateSizeConstraintSet</a> and by
      * <a>ListSizeConstraintSets</a>.</p>
      */
@@ -78,7 +78,7 @@ namespace Model
      * <code>SizeConstraintSet</code> into a <code>Rule</code> or delete one from a
      * <code>Rule</code> (see <a>UpdateRule</a>), and delete a
      * <code>SizeConstraintSet</code> from AWS WAF (see
-     * <a>DeleteSizeConstraintSet</a>).</p> <p><code>SizeConstraintSetId</code> is
+     * <a>DeleteSizeConstraintSet</a>).</p> <p> <code>SizeConstraintSetId</code> is
      * returned by <a>CreateSizeConstraintSet</a> and by
      * <a>ListSizeConstraintSets</a>.</p>
      */
@@ -92,7 +92,7 @@ namespace Model
      * <code>SizeConstraintSet</code> into a <code>Rule</code> or delete one from a
      * <code>Rule</code> (see <a>UpdateRule</a>), and delete a
      * <code>SizeConstraintSet</code> from AWS WAF (see
-     * <a>DeleteSizeConstraintSet</a>).</p> <p><code>SizeConstraintSetId</code> is
+     * <a>DeleteSizeConstraintSet</a>).</p> <p> <code>SizeConstraintSetId</code> is
      * returned by <a>CreateSizeConstraintSet</a> and by
      * <a>ListSizeConstraintSets</a>.</p>
      */
@@ -106,7 +106,7 @@ namespace Model
      * <code>SizeConstraintSet</code> into a <code>Rule</code> or delete one from a
      * <code>Rule</code> (see <a>UpdateRule</a>), and delete a
      * <code>SizeConstraintSet</code> from AWS WAF (see
-     * <a>DeleteSizeConstraintSet</a>).</p> <p><code>SizeConstraintSetId</code> is
+     * <a>DeleteSizeConstraintSet</a>).</p> <p> <code>SizeConstraintSetId</code> is
      * returned by <a>CreateSizeConstraintSet</a> and by
      * <a>ListSizeConstraintSets</a>.</p>
      */
@@ -120,7 +120,7 @@ namespace Model
      * <code>SizeConstraintSet</code> into a <code>Rule</code> or delete one from a
      * <code>Rule</code> (see <a>UpdateRule</a>), and delete a
      * <code>SizeConstraintSet</code> from AWS WAF (see
-     * <a>DeleteSizeConstraintSet</a>).</p> <p><code>SizeConstraintSetId</code> is
+     * <a>DeleteSizeConstraintSet</a>).</p> <p> <code>SizeConstraintSetId</code> is
      * returned by <a>CreateSizeConstraintSet</a> and by
      * <a>ListSizeConstraintSets</a>.</p>
      */
@@ -134,7 +134,7 @@ namespace Model
      * <code>SizeConstraintSet</code> into a <code>Rule</code> or delete one from a
      * <code>Rule</code> (see <a>UpdateRule</a>), and delete a
      * <code>SizeConstraintSet</code> from AWS WAF (see
-     * <a>DeleteSizeConstraintSet</a>).</p> <p><code>SizeConstraintSetId</code> is
+     * <a>DeleteSizeConstraintSet</a>).</p> <p> <code>SizeConstraintSetId</code> is
      * returned by <a>CreateSizeConstraintSet</a> and by
      * <a>ListSizeConstraintSets</a>.</p>
      */

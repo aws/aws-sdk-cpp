@@ -25,10 +25,13 @@ namespace CloudWatchLogs
 {
 namespace CloudWatchLogsEndpoint
 {
-
+  static const int CN_REGION_HASH = Aws::Utils::HashingUtils::HashString("cn-north-1");
+  
 
   Aws::String ForRegion(const Aws::String& regionName, bool useDualStack)
   {
+    auto hash = Aws::Utils::HashingUtils::HashString(regionName.c_str());
+    
     Aws::StringStream ss;
     ss << "logs" << ".";
 
@@ -38,6 +41,12 @@ namespace CloudWatchLogsEndpoint
     }
 
     ss << regionName << ".amazonaws.com";
+    
+    if(hash == CN_REGION_HASH)
+    {
+      ss << ".cn"; 
+    }
+    
     return ss.str();
   }
 

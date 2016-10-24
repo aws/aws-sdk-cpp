@@ -26,7 +26,7 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input of a <i>RebootCacheCluster</i> action.</p>
+   * <p>Represents the input of a <code>RebootCacheCluster</code> operation.</p>
    */
   class AWS_ELASTICACHE_API RebootCacheClusterRequest : public ElastiCacheRequest
   {

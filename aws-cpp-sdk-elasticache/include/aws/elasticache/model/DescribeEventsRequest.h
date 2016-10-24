@@ -27,7 +27,7 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input of a <i>DescribeEvents</i> action.</p>
+   * <p>Represents the input of a <code>DescribeEvents</code> operation.</p>
    */
   class AWS_ELASTICACHE_API DescribeEventsRequest : public ElastiCacheRequest
   {
@@ -36,84 +36,74 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     /**
-     * <p>The identifier of the event source for which events will be returned. If not
-     * specified, then all sources are included in the response.</p>
+     * <p>The identifier of the event source for which events are returned. If not
+     * specified, all sources are included in the response.</p>
      */
     inline const Aws::String& GetSourceIdentifier() const{ return m_sourceIdentifier; }
 
     /**
-     * <p>The identifier of the event source for which events will be returned. If not
-     * specified, then all sources are included in the response.</p>
+     * <p>The identifier of the event source for which events are returned. If not
+     * specified, all sources are included in the response.</p>
      */
     inline void SetSourceIdentifier(const Aws::String& value) { m_sourceIdentifierHasBeenSet = true; m_sourceIdentifier = value; }
 
     /**
-     * <p>The identifier of the event source for which events will be returned. If not
-     * specified, then all sources are included in the response.</p>
+     * <p>The identifier of the event source for which events are returned. If not
+     * specified, all sources are included in the response.</p>
      */
     inline void SetSourceIdentifier(Aws::String&& value) { m_sourceIdentifierHasBeenSet = true; m_sourceIdentifier = value; }
 
     /**
-     * <p>The identifier of the event source for which events will be returned. If not
-     * specified, then all sources are included in the response.</p>
+     * <p>The identifier of the event source for which events are returned. If not
+     * specified, all sources are included in the response.</p>
      */
     inline void SetSourceIdentifier(const char* value) { m_sourceIdentifierHasBeenSet = true; m_sourceIdentifier.assign(value); }
 
     /**
-     * <p>The identifier of the event source for which events will be returned. If not
-     * specified, then all sources are included in the response.</p>
+     * <p>The identifier of the event source for which events are returned. If not
+     * specified, all sources are included in the response.</p>
      */
     inline DescribeEventsRequest& WithSourceIdentifier(const Aws::String& value) { SetSourceIdentifier(value); return *this;}
 
     /**
-     * <p>The identifier of the event source for which events will be returned. If not
-     * specified, then all sources are included in the response.</p>
+     * <p>The identifier of the event source for which events are returned. If not
+     * specified, all sources are included in the response.</p>
      */
     inline DescribeEventsRequest& WithSourceIdentifier(Aws::String&& value) { SetSourceIdentifier(value); return *this;}
 
     /**
-     * <p>The identifier of the event source for which events will be returned. If not
-     * specified, then all sources are included in the response.</p>
+     * <p>The identifier of the event source for which events are returned. If not
+     * specified, all sources are included in the response.</p>
      */
     inline DescribeEventsRequest& WithSourceIdentifier(const char* value) { SetSourceIdentifier(value); return *this;}
 
     /**
      * <p>The event source to retrieve events for. If no value is specified, all events
-     * are returned.</p> <p>Valid values are: <code>cache-cluster</code> |
-     * <code>cache-parameter-group</code> | <code>cache-security-group</code> |
-     * <code>cache-subnet-group</code> </p>
+     * are returned.</p>
      */
     inline const SourceType& GetSourceType() const{ return m_sourceType; }
 
     /**
      * <p>The event source to retrieve events for. If no value is specified, all events
-     * are returned.</p> <p>Valid values are: <code>cache-cluster</code> |
-     * <code>cache-parameter-group</code> | <code>cache-security-group</code> |
-     * <code>cache-subnet-group</code> </p>
+     * are returned.</p>
      */
     inline void SetSourceType(const SourceType& value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
 
     /**
      * <p>The event source to retrieve events for. If no value is specified, all events
-     * are returned.</p> <p>Valid values are: <code>cache-cluster</code> |
-     * <code>cache-parameter-group</code> | <code>cache-security-group</code> |
-     * <code>cache-subnet-group</code> </p>
+     * are returned.</p>
      */
     inline void SetSourceType(SourceType&& value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
 
     /**
      * <p>The event source to retrieve events for. If no value is specified, all events
-     * are returned.</p> <p>Valid values are: <code>cache-cluster</code> |
-     * <code>cache-parameter-group</code> | <code>cache-security-group</code> |
-     * <code>cache-subnet-group</code> </p>
+     * are returned.</p>
      */
     inline DescribeEventsRequest& WithSourceType(const SourceType& value) { SetSourceType(value); return *this;}
 
     /**
      * <p>The event source to retrieve events for. If no value is specified, all events
-     * are returned.</p> <p>Valid values are: <code>cache-cluster</code> |
-     * <code>cache-parameter-group</code> | <code>cache-security-group</code> |
-     * <code>cache-subnet-group</code> </p>
+     * are returned.</p>
      */
     inline DescribeEventsRequest& WithSourceType(SourceType&& value) { SetSourceType(value); return *this;}
 
@@ -218,57 +208,57 @@ namespace Model
 
     /**
      * <p>An optional marker returned from a prior request. Use this marker for
-     * pagination of results from this action. If this parameter is specified, the
+     * pagination of results from this operation. If this parameter is specified, the
      * response includes only records beyond the marker, up to the value specified by
-     * <i>MaxRecords</i>.</p>
+     * <code>MaxRecords</code>.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
 
     /**
      * <p>An optional marker returned from a prior request. Use this marker for
-     * pagination of results from this action. If this parameter is specified, the
+     * pagination of results from this operation. If this parameter is specified, the
      * response includes only records beyond the marker, up to the value specified by
-     * <i>MaxRecords</i>.</p>
+     * <code>MaxRecords</code>.</p>
      */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
 
     /**
      * <p>An optional marker returned from a prior request. Use this marker for
-     * pagination of results from this action. If this parameter is specified, the
+     * pagination of results from this operation. If this parameter is specified, the
      * response includes only records beyond the marker, up to the value specified by
-     * <i>MaxRecords</i>.</p>
+     * <code>MaxRecords</code>.</p>
      */
     inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = value; }
 
     /**
      * <p>An optional marker returned from a prior request. Use this marker for
-     * pagination of results from this action. If this parameter is specified, the
+     * pagination of results from this operation. If this parameter is specified, the
      * response includes only records beyond the marker, up to the value specified by
-     * <i>MaxRecords</i>.</p>
+     * <code>MaxRecords</code>.</p>
      */
     inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
 
     /**
      * <p>An optional marker returned from a prior request. Use this marker for
-     * pagination of results from this action. If this parameter is specified, the
+     * pagination of results from this operation. If this parameter is specified, the
      * response includes only records beyond the marker, up to the value specified by
-     * <i>MaxRecords</i>.</p>
+     * <code>MaxRecords</code>.</p>
      */
     inline DescribeEventsRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
 
     /**
      * <p>An optional marker returned from a prior request. Use this marker for
-     * pagination of results from this action. If this parameter is specified, the
+     * pagination of results from this operation. If this parameter is specified, the
      * response includes only records beyond the marker, up to the value specified by
-     * <i>MaxRecords</i>.</p>
+     * <code>MaxRecords</code>.</p>
      */
     inline DescribeEventsRequest& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
 
     /**
      * <p>An optional marker returned from a prior request. Use this marker for
-     * pagination of results from this action. If this parameter is specified, the
+     * pagination of results from this operation. If this parameter is specified, the
      * response includes only records beyond the marker, up to the value specified by
-     * <i>MaxRecords</i>.</p>
+     * <code>MaxRecords</code>.</p>
      */
     inline DescribeEventsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 

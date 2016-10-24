@@ -27,6 +27,7 @@ namespace Model
 {
 
   /**
+   * <p/>
    */
   class AWS_CONFIGSERVICE_API DescribeComplianceByResourceRequest : public ConfigServiceRequest
   {

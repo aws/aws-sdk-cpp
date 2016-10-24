@@ -19,6 +19,7 @@
 #include <aws/elasticache/model/ReplicationGroupPendingModifiedValues.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticache/model/AutomaticFailoverStatus.h>
+#include <aws/elasticache/model/Endpoint.h>
 #include <aws/elasticache/model/NodeGroup.h>
 
 namespace Aws
@@ -36,7 +37,7 @@ namespace Model
 {
 
   /**
-   * <p>Contains all of the attributes of a specific replication group.</p>
+   * <p>Contains all of the attributes of a specific Redis replication group.</p>
    */
   class AWS_ELASTICACHE_API ReplicationGroup
   {
@@ -119,44 +120,44 @@ namespace Model
     inline ReplicationGroup& WithDescription(const char* value) { SetDescription(value); return *this;}
 
     /**
-     * <p>The current state of this replication group - <i>creating</i>,
-     * <i>available</i>, etc.</p>
+     * <p>The current state of this replication group - <code>creating</code>,
+     * <code>available</code>, etc.</p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The current state of this replication group - <i>creating</i>,
-     * <i>available</i>, etc.</p>
+     * <p>The current state of this replication group - <code>creating</code>,
+     * <code>available</code>, etc.</p>
      */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The current state of this replication group - <i>creating</i>,
-     * <i>available</i>, etc.</p>
+     * <p>The current state of this replication group - <code>creating</code>,
+     * <code>available</code>, etc.</p>
      */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The current state of this replication group - <i>creating</i>,
-     * <i>available</i>, etc.</p>
+     * <p>The current state of this replication group - <code>creating</code>,
+     * <code>available</code>, etc.</p>
      */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
 
     /**
-     * <p>The current state of this replication group - <i>creating</i>,
-     * <i>available</i>, etc.</p>
+     * <p>The current state of this replication group - <code>creating</code>,
+     * <code>available</code>, etc.</p>
      */
     inline ReplicationGroup& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The current state of this replication group - <i>creating</i>,
-     * <i>available</i>, etc.</p>
+     * <p>The current state of this replication group - <code>creating</code>,
+     * <code>available</code>, etc.</p>
      */
     inline ReplicationGroup& WithStatus(Aws::String&& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The current state of this replication group - <i>creating</i>,
-     * <i>available</i>, etc.</p>
+     * <p>The current state of this replication group - <code>creating</code>,
+     * <code>available</code>, etc.</p>
      */
     inline ReplicationGroup& WithStatus(const char* value) { SetStatus(value); return *this;}
 
@@ -325,42 +326,170 @@ namespace Model
     /**
      * <p>Indicates the status of Multi-AZ for this replication group.</p> <note>
      * <p>ElastiCache Multi-AZ replication groups are not supported on:</p> <ul> <li>
-     * <p>Redis versions earlier than 2.8.6.</p> </li> <li> <p>T1 and T2 cache node
-     * types.</p> </li> </ul> </note>
+     * <p>Redis versions earlier than 2.8.6.</p> </li> <li> <p>Redis (cluster mode
+     * disabled):T1 and T2 cache node types.</p> <p>Redis (cluster mode enabled): T1
+     * node types.</p> </li> </ul> </note>
      */
     inline const AutomaticFailoverStatus& GetAutomaticFailover() const{ return m_automaticFailover; }
 
     /**
      * <p>Indicates the status of Multi-AZ for this replication group.</p> <note>
      * <p>ElastiCache Multi-AZ replication groups are not supported on:</p> <ul> <li>
-     * <p>Redis versions earlier than 2.8.6.</p> </li> <li> <p>T1 and T2 cache node
-     * types.</p> </li> </ul> </note>
+     * <p>Redis versions earlier than 2.8.6.</p> </li> <li> <p>Redis (cluster mode
+     * disabled):T1 and T2 cache node types.</p> <p>Redis (cluster mode enabled): T1
+     * node types.</p> </li> </ul> </note>
      */
     inline void SetAutomaticFailover(const AutomaticFailoverStatus& value) { m_automaticFailoverHasBeenSet = true; m_automaticFailover = value; }
 
     /**
      * <p>Indicates the status of Multi-AZ for this replication group.</p> <note>
      * <p>ElastiCache Multi-AZ replication groups are not supported on:</p> <ul> <li>
-     * <p>Redis versions earlier than 2.8.6.</p> </li> <li> <p>T1 and T2 cache node
-     * types.</p> </li> </ul> </note>
+     * <p>Redis versions earlier than 2.8.6.</p> </li> <li> <p>Redis (cluster mode
+     * disabled):T1 and T2 cache node types.</p> <p>Redis (cluster mode enabled): T1
+     * node types.</p> </li> </ul> </note>
      */
     inline void SetAutomaticFailover(AutomaticFailoverStatus&& value) { m_automaticFailoverHasBeenSet = true; m_automaticFailover = value; }
 
     /**
      * <p>Indicates the status of Multi-AZ for this replication group.</p> <note>
      * <p>ElastiCache Multi-AZ replication groups are not supported on:</p> <ul> <li>
-     * <p>Redis versions earlier than 2.8.6.</p> </li> <li> <p>T1 and T2 cache node
-     * types.</p> </li> </ul> </note>
+     * <p>Redis versions earlier than 2.8.6.</p> </li> <li> <p>Redis (cluster mode
+     * disabled):T1 and T2 cache node types.</p> <p>Redis (cluster mode enabled): T1
+     * node types.</p> </li> </ul> </note>
      */
     inline ReplicationGroup& WithAutomaticFailover(const AutomaticFailoverStatus& value) { SetAutomaticFailover(value); return *this;}
 
     /**
      * <p>Indicates the status of Multi-AZ for this replication group.</p> <note>
      * <p>ElastiCache Multi-AZ replication groups are not supported on:</p> <ul> <li>
-     * <p>Redis versions earlier than 2.8.6.</p> </li> <li> <p>T1 and T2 cache node
-     * types.</p> </li> </ul> </note>
+     * <p>Redis versions earlier than 2.8.6.</p> </li> <li> <p>Redis (cluster mode
+     * disabled):T1 and T2 cache node types.</p> <p>Redis (cluster mode enabled): T1
+     * node types.</p> </li> </ul> </note>
      */
     inline ReplicationGroup& WithAutomaticFailover(AutomaticFailoverStatus&& value) { SetAutomaticFailover(value); return *this;}
+
+    /**
+     * <p>The configuration endpoint for this replicaiton group. Use the configuration
+     * endpoint to connect to this replication group.</p>
+     */
+    inline const Endpoint& GetConfigurationEndpoint() const{ return m_configurationEndpoint; }
+
+    /**
+     * <p>The configuration endpoint for this replicaiton group. Use the configuration
+     * endpoint to connect to this replication group.</p>
+     */
+    inline void SetConfigurationEndpoint(const Endpoint& value) { m_configurationEndpointHasBeenSet = true; m_configurationEndpoint = value; }
+
+    /**
+     * <p>The configuration endpoint for this replicaiton group. Use the configuration
+     * endpoint to connect to this replication group.</p>
+     */
+    inline void SetConfigurationEndpoint(Endpoint&& value) { m_configurationEndpointHasBeenSet = true; m_configurationEndpoint = value; }
+
+    /**
+     * <p>The configuration endpoint for this replicaiton group. Use the configuration
+     * endpoint to connect to this replication group.</p>
+     */
+    inline ReplicationGroup& WithConfigurationEndpoint(const Endpoint& value) { SetConfigurationEndpoint(value); return *this;}
+
+    /**
+     * <p>The configuration endpoint for this replicaiton group. Use the configuration
+     * endpoint to connect to this replication group.</p>
+     */
+    inline ReplicationGroup& WithConfigurationEndpoint(Endpoint&& value) { SetConfigurationEndpoint(value); return *this;}
+
+    /**
+     * <p>The number of days for which ElastiCache retains automatic cache cluster
+     * snapshots before deleting them. For example, if you set
+     * <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is
+     * retained for 5 days before being deleted.</p> <important> <p> If the value of
+     * <code>SnapshotRetentionLimit</code> is set to zero (0), backups are turned
+     * off.</p> </important>
+     */
+    inline int GetSnapshotRetentionLimit() const{ return m_snapshotRetentionLimit; }
+
+    /**
+     * <p>The number of days for which ElastiCache retains automatic cache cluster
+     * snapshots before deleting them. For example, if you set
+     * <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is
+     * retained for 5 days before being deleted.</p> <important> <p> If the value of
+     * <code>SnapshotRetentionLimit</code> is set to zero (0), backups are turned
+     * off.</p> </important>
+     */
+    inline void SetSnapshotRetentionLimit(int value) { m_snapshotRetentionLimitHasBeenSet = true; m_snapshotRetentionLimit = value; }
+
+    /**
+     * <p>The number of days for which ElastiCache retains automatic cache cluster
+     * snapshots before deleting them. For example, if you set
+     * <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is
+     * retained for 5 days before being deleted.</p> <important> <p> If the value of
+     * <code>SnapshotRetentionLimit</code> is set to zero (0), backups are turned
+     * off.</p> </important>
+     */
+    inline ReplicationGroup& WithSnapshotRetentionLimit(int value) { SetSnapshotRetentionLimit(value); return *this;}
+
+    /**
+     * <p>The daily time range (in UTC) during which ElastiCache begins taking a daily
+     * snapshot of your node group (shard).</p> <p>Example: <code>05:00-09:00</code>
+     * </p> <p>If you do not specify this parameter, ElastiCache automatically chooses
+     * an appropriate time range.</p> <p> <b>Note:</b> This parameter is only valid if
+     * the <code>Engine</code> parameter is <code>redis</code>.</p>
+     */
+    inline const Aws::String& GetSnapshotWindow() const{ return m_snapshotWindow; }
+
+    /**
+     * <p>The daily time range (in UTC) during which ElastiCache begins taking a daily
+     * snapshot of your node group (shard).</p> <p>Example: <code>05:00-09:00</code>
+     * </p> <p>If you do not specify this parameter, ElastiCache automatically chooses
+     * an appropriate time range.</p> <p> <b>Note:</b> This parameter is only valid if
+     * the <code>Engine</code> parameter is <code>redis</code>.</p>
+     */
+    inline void SetSnapshotWindow(const Aws::String& value) { m_snapshotWindowHasBeenSet = true; m_snapshotWindow = value; }
+
+    /**
+     * <p>The daily time range (in UTC) during which ElastiCache begins taking a daily
+     * snapshot of your node group (shard).</p> <p>Example: <code>05:00-09:00</code>
+     * </p> <p>If you do not specify this parameter, ElastiCache automatically chooses
+     * an appropriate time range.</p> <p> <b>Note:</b> This parameter is only valid if
+     * the <code>Engine</code> parameter is <code>redis</code>.</p>
+     */
+    inline void SetSnapshotWindow(Aws::String&& value) { m_snapshotWindowHasBeenSet = true; m_snapshotWindow = value; }
+
+    /**
+     * <p>The daily time range (in UTC) during which ElastiCache begins taking a daily
+     * snapshot of your node group (shard).</p> <p>Example: <code>05:00-09:00</code>
+     * </p> <p>If you do not specify this parameter, ElastiCache automatically chooses
+     * an appropriate time range.</p> <p> <b>Note:</b> This parameter is only valid if
+     * the <code>Engine</code> parameter is <code>redis</code>.</p>
+     */
+    inline void SetSnapshotWindow(const char* value) { m_snapshotWindowHasBeenSet = true; m_snapshotWindow.assign(value); }
+
+    /**
+     * <p>The daily time range (in UTC) during which ElastiCache begins taking a daily
+     * snapshot of your node group (shard).</p> <p>Example: <code>05:00-09:00</code>
+     * </p> <p>If you do not specify this parameter, ElastiCache automatically chooses
+     * an appropriate time range.</p> <p> <b>Note:</b> This parameter is only valid if
+     * the <code>Engine</code> parameter is <code>redis</code>.</p>
+     */
+    inline ReplicationGroup& WithSnapshotWindow(const Aws::String& value) { SetSnapshotWindow(value); return *this;}
+
+    /**
+     * <p>The daily time range (in UTC) during which ElastiCache begins taking a daily
+     * snapshot of your node group (shard).</p> <p>Example: <code>05:00-09:00</code>
+     * </p> <p>If you do not specify this parameter, ElastiCache automatically chooses
+     * an appropriate time range.</p> <p> <b>Note:</b> This parameter is only valid if
+     * the <code>Engine</code> parameter is <code>redis</code>.</p>
+     */
+    inline ReplicationGroup& WithSnapshotWindow(Aws::String&& value) { SetSnapshotWindow(value); return *this;}
+
+    /**
+     * <p>The daily time range (in UTC) during which ElastiCache begins taking a daily
+     * snapshot of your node group (shard).</p> <p>Example: <code>05:00-09:00</code>
+     * </p> <p>If you do not specify this parameter, ElastiCache automatically chooses
+     * an appropriate time range.</p> <p> <b>Note:</b> This parameter is only valid if
+     * the <code>Engine</code> parameter is <code>redis</code>.</p>
+     */
+    inline ReplicationGroup& WithSnapshotWindow(const char* value) { SetSnapshotWindow(value); return *this;}
 
   private:
     Aws::String m_replicationGroupId;
@@ -379,6 +508,12 @@ namespace Model
     bool m_snapshottingClusterIdHasBeenSet;
     AutomaticFailoverStatus m_automaticFailover;
     bool m_automaticFailoverHasBeenSet;
+    Endpoint m_configurationEndpoint;
+    bool m_configurationEndpointHasBeenSet;
+    int m_snapshotRetentionLimit;
+    bool m_snapshotRetentionLimitHasBeenSet;
+    Aws::String m_snapshotWindow;
+    bool m_snapshotWindowHasBeenSet;
   };
 
 } // namespace Model

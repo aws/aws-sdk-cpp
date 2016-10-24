@@ -84,7 +84,7 @@ project(aws-cpp-sdk-config)
   install (FILES ${AWS_CONFIG_HEADERS} DESTINATION include/aws/config)
   install (FILES ${AWS_CONFIG_MODEL_HEADERS} DESTINATION include/aws/config/model)
 
-  if(MSVC)
+  if(PLATFORM_WINDOWS AND MSVC)
     install (FILES nuget/aws-cpp-sdk-config.autopkg DESTINATION nuget)
   endif()
 

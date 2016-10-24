@@ -207,50 +207,50 @@ namespace Model
     inline ApplicationDescription& AddVersions(const char* value) { m_versionsHasBeenSet = true; m_versions.push_back(value); return *this; }
 
     /**
-     * <p> The names of the configuration templates associated with this application.
-     * </p>
+     * <p>The names of the configuration templates associated with this
+     * application.</p>
      */
     inline const Aws::Vector<Aws::String>& GetConfigurationTemplates() const{ return m_configurationTemplates; }
 
     /**
-     * <p> The names of the configuration templates associated with this application.
-     * </p>
+     * <p>The names of the configuration templates associated with this
+     * application.</p>
      */
     inline void SetConfigurationTemplates(const Aws::Vector<Aws::String>& value) { m_configurationTemplatesHasBeenSet = true; m_configurationTemplates = value; }
 
     /**
-     * <p> The names of the configuration templates associated with this application.
-     * </p>
+     * <p>The names of the configuration templates associated with this
+     * application.</p>
      */
     inline void SetConfigurationTemplates(Aws::Vector<Aws::String>&& value) { m_configurationTemplatesHasBeenSet = true; m_configurationTemplates = value; }
 
     /**
-     * <p> The names of the configuration templates associated with this application.
-     * </p>
+     * <p>The names of the configuration templates associated with this
+     * application.</p>
      */
     inline ApplicationDescription& WithConfigurationTemplates(const Aws::Vector<Aws::String>& value) { SetConfigurationTemplates(value); return *this;}
 
     /**
-     * <p> The names of the configuration templates associated with this application.
-     * </p>
+     * <p>The names of the configuration templates associated with this
+     * application.</p>
      */
     inline ApplicationDescription& WithConfigurationTemplates(Aws::Vector<Aws::String>&& value) { SetConfigurationTemplates(value); return *this;}
 
     /**
-     * <p> The names of the configuration templates associated with this application.
-     * </p>
+     * <p>The names of the configuration templates associated with this
+     * application.</p>
      */
     inline ApplicationDescription& AddConfigurationTemplates(const Aws::String& value) { m_configurationTemplatesHasBeenSet = true; m_configurationTemplates.push_back(value); return *this; }
 
     /**
-     * <p> The names of the configuration templates associated with this application.
-     * </p>
+     * <p>The names of the configuration templates associated with this
+     * application.</p>
      */
     inline ApplicationDescription& AddConfigurationTemplates(Aws::String&& value) { m_configurationTemplatesHasBeenSet = true; m_configurationTemplates.push_back(value); return *this; }
 
     /**
-     * <p> The names of the configuration templates associated with this application.
-     * </p>
+     * <p>The names of the configuration templates associated with this
+     * application.</p>
      */
     inline ApplicationDescription& AddConfigurationTemplates(const char* value) { m_configurationTemplatesHasBeenSet = true; m_configurationTemplates.push_back(value); return *this; }
 

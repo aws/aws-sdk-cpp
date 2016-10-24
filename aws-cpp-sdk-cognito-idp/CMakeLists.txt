@@ -84,7 +84,7 @@ project(aws-cpp-sdk-cognito-idp)
   install (FILES ${AWS_COGNITO-IDP_HEADERS} DESTINATION include/aws/cognito-idp)
   install (FILES ${AWS_COGNITO-IDP_MODEL_HEADERS} DESTINATION include/aws/cognito-idp/model)
 
-  if(MSVC)
+  if(PLATFORM_WINDOWS AND MSVC)
     install (FILES nuget/aws-cpp-sdk-cognito-idp.autopkg DESTINATION nuget)
   endif()
 

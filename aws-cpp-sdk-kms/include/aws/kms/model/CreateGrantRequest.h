@@ -392,7 +392,7 @@ namespace Model
      * allowed.</p> <p>You can use this value to allow the operations permitted by the
      * grant only when a specified encryption context is present. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encrypt-context.html">Encryption
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption
      * Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline const GrantConstraints& GetConstraints() const{ return m_constraints; }
@@ -402,7 +402,7 @@ namespace Model
      * allowed.</p> <p>You can use this value to allow the operations permitted by the
      * grant only when a specified encryption context is present. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encrypt-context.html">Encryption
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption
      * Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline void SetConstraints(const GrantConstraints& value) { m_constraintsHasBeenSet = true; m_constraints = value; }
@@ -412,7 +412,7 @@ namespace Model
      * allowed.</p> <p>You can use this value to allow the operations permitted by the
      * grant only when a specified encryption context is present. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encrypt-context.html">Encryption
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption
      * Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline void SetConstraints(GrantConstraints&& value) { m_constraintsHasBeenSet = true; m_constraints = value; }
@@ -422,7 +422,7 @@ namespace Model
      * allowed.</p> <p>You can use this value to allow the operations permitted by the
      * grant only when a specified encryption context is present. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encrypt-context.html">Encryption
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption
      * Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline CreateGrantRequest& WithConstraints(const GrantConstraints& value) { SetConstraints(value); return *this;}
@@ -432,7 +432,7 @@ namespace Model
      * allowed.</p> <p>You can use this value to allow the operations permitted by the
      * grant only when a specified encryption context is present. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encrypt-context.html">Encryption
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption
      * Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline CreateGrantRequest& WithConstraints(GrantConstraints&& value) { SetConstraints(value); return *this;}

@@ -22,6 +22,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/acm/model/DescribeCertificateResult.h>
 #include <aws/acm/model/GetCertificateResult.h>
+#include <aws/acm/model/ImportCertificateResult.h>
 #include <aws/acm/model/ListCertificatesResult.h>
 #include <aws/acm/model/ListTagsForCertificateResult.h>
 #include <aws/acm/model/RequestCertificateResult.h>
@@ -75,6 +76,7 @@ namespace Model
         class DeleteCertificateRequest;
         class DescribeCertificateRequest;
         class GetCertificateRequest;
+        class ImportCertificateRequest;
         class ListCertificatesRequest;
         class ListTagsForCertificateRequest;
         class RemoveTagsFromCertificateRequest;
@@ -85,6 +87,7 @@ namespace Model
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<ACMErrors>> DeleteCertificateOutcome;
         typedef Aws::Utils::Outcome<DescribeCertificateResult, Aws::Client::AWSError<ACMErrors>> DescribeCertificateOutcome;
         typedef Aws::Utils::Outcome<GetCertificateResult, Aws::Client::AWSError<ACMErrors>> GetCertificateOutcome;
+        typedef Aws::Utils::Outcome<ImportCertificateResult, Aws::Client::AWSError<ACMErrors>> ImportCertificateOutcome;
         typedef Aws::Utils::Outcome<ListCertificatesResult, Aws::Client::AWSError<ACMErrors>> ListCertificatesOutcome;
         typedef Aws::Utils::Outcome<ListTagsForCertificateResult, Aws::Client::AWSError<ACMErrors>> ListTagsForCertificateOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<ACMErrors>> RemoveTagsFromCertificateOutcome;
@@ -95,6 +98,7 @@ namespace Model
         typedef std::future<DeleteCertificateOutcome> DeleteCertificateOutcomeCallable;
         typedef std::future<DescribeCertificateOutcome> DescribeCertificateOutcomeCallable;
         typedef std::future<GetCertificateOutcome> GetCertificateOutcomeCallable;
+        typedef std::future<ImportCertificateOutcome> ImportCertificateOutcomeCallable;
         typedef std::future<ListCertificatesOutcome> ListCertificatesOutcomeCallable;
         typedef std::future<ListTagsForCertificateOutcome> ListTagsForCertificateOutcomeCallable;
         typedef std::future<RemoveTagsFromCertificateOutcome> RemoveTagsFromCertificateOutcomeCallable;
@@ -108,6 +112,7 @@ namespace Model
     typedef std::function<void(const ACMClient*, const Model::DeleteCertificateRequest&, const Model::DeleteCertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteCertificateResponseReceivedHandler;
     typedef std::function<void(const ACMClient*, const Model::DescribeCertificateRequest&, const Model::DescribeCertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCertificateResponseReceivedHandler;
     typedef std::function<void(const ACMClient*, const Model::GetCertificateRequest&, const Model::GetCertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCertificateResponseReceivedHandler;
+    typedef std::function<void(const ACMClient*, const Model::ImportCertificateRequest&, const Model::ImportCertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ImportCertificateResponseReceivedHandler;
     typedef std::function<void(const ACMClient*, const Model::ListCertificatesRequest&, const Model::ListCertificatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCertificatesResponseReceivedHandler;
     typedef std::function<void(const ACMClient*, const Model::ListTagsForCertificateRequest&, const Model::ListTagsForCertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForCertificateResponseReceivedHandler;
     typedef std::function<void(const ACMClient*, const Model::RemoveTagsFromCertificateRequest&, const Model::RemoveTagsFromCertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveTagsFromCertificateResponseReceivedHandler;
@@ -116,16 +121,11 @@ namespace Model
 
   /**
    * <fullname>AWS Certificate Manager</fullname> <p>Welcome to the AWS Certificate
-   * Manager (ACM) Command Reference. This guide provides descriptions, syntax, and
-   * usage examples for each ACM command. You can use AWS Certificate Manager to
-   * request ACM Certificates for your AWS-based websites and applications. For
-   * general information about using ACM and for more information about using the
-   * console, see the <a
-   * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-overview.html">AWS
-   * Certificate Manager User Guide</a>. For more information about using the ACM
-   * API, see the <a
-   * href="http://docs.aws.amazon.com/acm/latest/APIReference/Welcome.html">AWS
-   * Certificate Manager API Reference</a>.</p>
+   * Manager (ACM) API documentation.</p> <p>You can use ACM to manage SSL/TLS
+   * certificates for your AWS-based websites and applications. For general
+   * information about using ACM, see the <a
+   * href="http://docs.aws.amazon.com/acm/latest/userguide/"> <i>AWS Certificate
+   * Manager User Guide</i> </a>.</p>
    */
   class AWS_ACM_API ACMClient : public Aws::Client::AWSJsonClient
   {
@@ -323,6 +323,91 @@ namespace Model
         virtual void GetCertificateAsync(const Model::GetCertificateRequest& request, const GetCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Imports an SSL/TLS certificate into AWS Certificate Manager (ACM) to use with
+         * <a
+         * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-services.html">ACM's
+         * integrated AWS services</a>.</p> <note> <p>ACM does not provide <a
+         * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
+         * renewal</a> for certificates that you import.</p> </note> <p>For more
+         * information about importing certificates into ACM, including the differences
+         * between certificates that you import and those that ACM provides, see <a
+         * href="http://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing
+         * Certificates</a> in the <i>AWS Certificate Manager User Guide</i>.</p> <p>To
+         * import a certificate, you must provide the certificate and the matching private
+         * key. When the certificate is not self-signed, you must also provide a
+         * certificate chain. You can omit the certificate chain when importing a
+         * self-signed certificate.</p> <p>The certificate, private key, and certificate
+         * chain must be PEM-encoded. For more information about converting these items to
+         * PEM format, see <a
+         * href="http://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html#import-certificate-troubleshooting">Importing
+         * Certificates Troubleshooting</a> in the <i>AWS Certificate Manager User
+         * Guide</i>.</p> <p>To import a new certificate, omit the
+         * <code>CertificateArn</code> field. Include this field only when you want to
+         * replace a previously imported certificate.</p> <p>This operation returns the <a
+         * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+         * Resource Name (ARN)</a> of the imported certificate.</p>
+         */
+        virtual Model::ImportCertificateOutcome ImportCertificate(const Model::ImportCertificateRequest& request) const;
+
+        /**
+         * <p>Imports an SSL/TLS certificate into AWS Certificate Manager (ACM) to use with
+         * <a
+         * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-services.html">ACM's
+         * integrated AWS services</a>.</p> <note> <p>ACM does not provide <a
+         * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
+         * renewal</a> for certificates that you import.</p> </note> <p>For more
+         * information about importing certificates into ACM, including the differences
+         * between certificates that you import and those that ACM provides, see <a
+         * href="http://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing
+         * Certificates</a> in the <i>AWS Certificate Manager User Guide</i>.</p> <p>To
+         * import a certificate, you must provide the certificate and the matching private
+         * key. When the certificate is not self-signed, you must also provide a
+         * certificate chain. You can omit the certificate chain when importing a
+         * self-signed certificate.</p> <p>The certificate, private key, and certificate
+         * chain must be PEM-encoded. For more information about converting these items to
+         * PEM format, see <a
+         * href="http://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html#import-certificate-troubleshooting">Importing
+         * Certificates Troubleshooting</a> in the <i>AWS Certificate Manager User
+         * Guide</i>.</p> <p>To import a new certificate, omit the
+         * <code>CertificateArn</code> field. Include this field only when you want to
+         * replace a previously imported certificate.</p> <p>This operation returns the <a
+         * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+         * Resource Name (ARN)</a> of the imported certificate.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ImportCertificateOutcomeCallable ImportCertificateCallable(const Model::ImportCertificateRequest& request) const;
+
+        /**
+         * <p>Imports an SSL/TLS certificate into AWS Certificate Manager (ACM) to use with
+         * <a
+         * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-services.html">ACM's
+         * integrated AWS services</a>.</p> <note> <p>ACM does not provide <a
+         * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
+         * renewal</a> for certificates that you import.</p> </note> <p>For more
+         * information about importing certificates into ACM, including the differences
+         * between certificates that you import and those that ACM provides, see <a
+         * href="http://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing
+         * Certificates</a> in the <i>AWS Certificate Manager User Guide</i>.</p> <p>To
+         * import a certificate, you must provide the certificate and the matching private
+         * key. When the certificate is not self-signed, you must also provide a
+         * certificate chain. You can omit the certificate chain when importing a
+         * self-signed certificate.</p> <p>The certificate, private key, and certificate
+         * chain must be PEM-encoded. For more information about converting these items to
+         * PEM format, see <a
+         * href="http://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html#import-certificate-troubleshooting">Importing
+         * Certificates Troubleshooting</a> in the <i>AWS Certificate Manager User
+         * Guide</i>.</p> <p>To import a new certificate, omit the
+         * <code>CertificateArn</code> field. Include this field only when you want to
+         * replace a previously imported certificate.</p> <p>This operation returns the <a
+         * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+         * Resource Name (ARN)</a> of the imported certificate.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ImportCertificateAsync(const Model::ImportCertificateRequest& request, const ImportCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Retrieves a list of ACM Certificates and the domain name for each. You can
          * optionally filter the list to return only the certificates that match the
          * specified status.</p>
@@ -419,8 +504,8 @@ namespace Model
          * using other names. For each domain name you specify, email is sent to the domain
          * owner to request approval to issue the certificate. After receiving approval
          * from the domain owner, the ACM Certificate is issued. For more information, see
-         * the <a href="http://docs.aws.amazon.com/acm/latest/userguide/overview.html">AWS
-         * Certificate Manager User Guide </a>.</p>
+         * the <a href="http://docs.aws.amazon.com/acm/latest/userguide/">AWS Certificate
+         * Manager User Guide</a>.</p>
          */
         virtual Model::RequestCertificateOutcome RequestCertificate(const Model::RequestCertificateRequest& request) const;
 
@@ -431,8 +516,8 @@ namespace Model
          * using other names. For each domain name you specify, email is sent to the domain
          * owner to request approval to issue the certificate. After receiving approval
          * from the domain owner, the ACM Certificate is issued. For more information, see
-         * the <a href="http://docs.aws.amazon.com/acm/latest/userguide/overview.html">AWS
-         * Certificate Manager User Guide </a>.</p>
+         * the <a href="http://docs.aws.amazon.com/acm/latest/userguide/">AWS Certificate
+         * Manager User Guide</a>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -445,8 +530,8 @@ namespace Model
          * using other names. For each domain name you specify, email is sent to the domain
          * owner to request approval to issue the certificate. After receiving approval
          * from the domain owner, the ACM Certificate is issued. For more information, see
-         * the <a href="http://docs.aws.amazon.com/acm/latest/userguide/overview.html">AWS
-         * Certificate Manager User Guide </a>.</p>
+         * the <a href="http://docs.aws.amazon.com/acm/latest/userguide/">AWS Certificate
+         * Manager User Guide</a>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -504,6 +589,7 @@ namespace Model
         void DeleteCertificateAsyncHelper(const Model::DeleteCertificateRequest& request, const DeleteCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeCertificateAsyncHelper(const Model::DescribeCertificateRequest& request, const DescribeCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetCertificateAsyncHelper(const Model::GetCertificateRequest& request, const GetCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ImportCertificateAsyncHelper(const Model::ImportCertificateRequest& request, const ImportCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListCertificatesAsyncHelper(const Model::ListCertificatesRequest& request, const ListCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForCertificateAsyncHelper(const Model::ListTagsForCertificateRequest& request, const ListTagsForCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RemoveTagsFromCertificateAsyncHelper(const Model::RemoveTagsFromCertificateRequest& request, const RemoveTagsFromCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

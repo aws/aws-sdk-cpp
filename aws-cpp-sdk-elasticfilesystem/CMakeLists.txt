@@ -84,7 +84,7 @@ project(aws-cpp-sdk-elasticfilesystem)
   install (FILES ${AWS_ELASTICFILESYSTEM_HEADERS} DESTINATION include/aws/elasticfilesystem)
   install (FILES ${AWS_ELASTICFILESYSTEM_MODEL_HEADERS} DESTINATION include/aws/elasticfilesystem/model)
 
-  if(MSVC)
+  if(PLATFORM_WINDOWS AND MSVC)
     install (FILES nuget/aws-cpp-sdk-elasticfilesystem.autopkg DESTINATION nuget)
   endif()
 

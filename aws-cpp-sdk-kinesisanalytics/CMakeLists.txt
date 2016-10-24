@@ -84,7 +84,7 @@ project(aws-cpp-sdk-kinesisanalytics)
   install (FILES ${AWS_KINESISANALYTICS_HEADERS} DESTINATION include/aws/kinesisanalytics)
   install (FILES ${AWS_KINESISANALYTICS_MODEL_HEADERS} DESTINATION include/aws/kinesisanalytics/model)
 
-  if(MSVC)
+  if(PLATFORM_WINDOWS AND MSVC)
     install (FILES nuget/aws-cpp-sdk-kinesisanalytics.autopkg DESTINATION nuget)
   endif()
 

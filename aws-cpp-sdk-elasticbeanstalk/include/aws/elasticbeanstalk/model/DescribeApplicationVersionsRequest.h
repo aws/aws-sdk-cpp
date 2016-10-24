@@ -124,11 +124,68 @@ namespace Model
      */
     inline DescribeApplicationVersionsRequest& AddVersionLabels(const char* value) { m_versionLabelsHasBeenSet = true; m_versionLabels.push_back(value); return *this; }
 
+    /**
+     * <p>Specify a maximum number of application versions to paginate in the
+     * request.</p>
+     */
+    inline int GetMaxRecords() const{ return m_maxRecords; }
+
+    /**
+     * <p>Specify a maximum number of application versions to paginate in the
+     * request.</p>
+     */
+    inline void SetMaxRecords(int value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
+
+    /**
+     * <p>Specify a maximum number of application versions to paginate in the
+     * request.</p>
+     */
+    inline DescribeApplicationVersionsRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
+
+    /**
+     * <p>Specify a next token to retrieve the next page in a paginated request.</p>
+     */
+    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>Specify a next token to retrieve the next page in a paginated request.</p>
+     */
+    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+
+    /**
+     * <p>Specify a next token to retrieve the next page in a paginated request.</p>
+     */
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+
+    /**
+     * <p>Specify a next token to retrieve the next page in a paginated request.</p>
+     */
+    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
+
+    /**
+     * <p>Specify a next token to retrieve the next page in a paginated request.</p>
+     */
+    inline DescribeApplicationVersionsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+
+    /**
+     * <p>Specify a next token to retrieve the next page in a paginated request.</p>
+     */
+    inline DescribeApplicationVersionsRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+
+    /**
+     * <p>Specify a next token to retrieve the next page in a paginated request.</p>
+     */
+    inline DescribeApplicationVersionsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+
   private:
     Aws::String m_applicationName;
     bool m_applicationNameHasBeenSet;
     Aws::Vector<Aws::String> m_versionLabels;
     bool m_versionLabelsHasBeenSet;
+    int m_maxRecords;
+    bool m_maxRecordsHasBeenSet;
+    Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet;
   };
 
 } // namespace Model

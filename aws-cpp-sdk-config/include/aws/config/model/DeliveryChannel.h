@@ -45,64 +45,64 @@ namespace Model
 
     /**
      * <p>The name of the delivery channel. By default, AWS Config assigns the name
-     * &quot;default&quot; when creating the delivery channel. To change the delivery
-     * channel name, you must use the DeleteDeliveryChannel action to delete your
-     * current delivery channel, and then you must use the PutDeliveryChannel command
-     * to create a delivery channel that has the desired name.</p>
+     * "default" when creating the delivery channel. To change the delivery channel
+     * name, you must use the DeleteDeliveryChannel action to delete your current
+     * delivery channel, and then you must use the PutDeliveryChannel command to create
+     * a delivery channel that has the desired name.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
      * <p>The name of the delivery channel. By default, AWS Config assigns the name
-     * &quot;default&quot; when creating the delivery channel. To change the delivery
-     * channel name, you must use the DeleteDeliveryChannel action to delete your
-     * current delivery channel, and then you must use the PutDeliveryChannel command
-     * to create a delivery channel that has the desired name.</p>
+     * "default" when creating the delivery channel. To change the delivery channel
+     * name, you must use the DeleteDeliveryChannel action to delete your current
+     * delivery channel, and then you must use the PutDeliveryChannel command to create
+     * a delivery channel that has the desired name.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
      * <p>The name of the delivery channel. By default, AWS Config assigns the name
-     * &quot;default&quot; when creating the delivery channel. To change the delivery
-     * channel name, you must use the DeleteDeliveryChannel action to delete your
-     * current delivery channel, and then you must use the PutDeliveryChannel command
-     * to create a delivery channel that has the desired name.</p>
+     * "default" when creating the delivery channel. To change the delivery channel
+     * name, you must use the DeleteDeliveryChannel action to delete your current
+     * delivery channel, and then you must use the PutDeliveryChannel command to create
+     * a delivery channel that has the desired name.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
      * <p>The name of the delivery channel. By default, AWS Config assigns the name
-     * &quot;default&quot; when creating the delivery channel. To change the delivery
-     * channel name, you must use the DeleteDeliveryChannel action to delete your
-     * current delivery channel, and then you must use the PutDeliveryChannel command
-     * to create a delivery channel that has the desired name.</p>
+     * "default" when creating the delivery channel. To change the delivery channel
+     * name, you must use the DeleteDeliveryChannel action to delete your current
+     * delivery channel, and then you must use the PutDeliveryChannel command to create
+     * a delivery channel that has the desired name.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
      * <p>The name of the delivery channel. By default, AWS Config assigns the name
-     * &quot;default&quot; when creating the delivery channel. To change the delivery
-     * channel name, you must use the DeleteDeliveryChannel action to delete your
-     * current delivery channel, and then you must use the PutDeliveryChannel command
-     * to create a delivery channel that has the desired name.</p>
+     * "default" when creating the delivery channel. To change the delivery channel
+     * name, you must use the DeleteDeliveryChannel action to delete your current
+     * delivery channel, and then you must use the PutDeliveryChannel command to create
+     * a delivery channel that has the desired name.</p>
      */
     inline DeliveryChannel& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
      * <p>The name of the delivery channel. By default, AWS Config assigns the name
-     * &quot;default&quot; when creating the delivery channel. To change the delivery
-     * channel name, you must use the DeleteDeliveryChannel action to delete your
-     * current delivery channel, and then you must use the PutDeliveryChannel command
-     * to create a delivery channel that has the desired name.</p>
+     * "default" when creating the delivery channel. To change the delivery channel
+     * name, you must use the DeleteDeliveryChannel action to delete your current
+     * delivery channel, and then you must use the PutDeliveryChannel command to create
+     * a delivery channel that has the desired name.</p>
      */
     inline DeliveryChannel& WithName(Aws::String&& value) { SetName(value); return *this;}
 
     /**
      * <p>The name of the delivery channel. By default, AWS Config assigns the name
-     * &quot;default&quot; when creating the delivery channel. To change the delivery
-     * channel name, you must use the DeleteDeliveryChannel action to delete your
-     * current delivery channel, and then you must use the PutDeliveryChannel command
-     * to create a delivery channel that has the desired name.</p>
+     * "default" when creating the delivery channel. To change the delivery channel
+     * name, you must use the DeleteDeliveryChannel action to delete your current
+     * delivery channel, and then you must use the PutDeliveryChannel command to create
+     * a delivery channel that has the desired name.</p>
      */
     inline DeliveryChannel& WithName(const char* value) { SetName(value); return *this;}
 

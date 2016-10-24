@@ -84,7 +84,7 @@ project(aws-cpp-sdk-sts)
   install (FILES ${AWS_STS_HEADERS} DESTINATION include/aws/sts)
   install (FILES ${AWS_STS_MODEL_HEADERS} DESTINATION include/aws/sts/model)
 
-  if(MSVC)
+  if(PLATFORM_WINDOWS AND MSVC)
     install (FILES nuget/aws-cpp-sdk-sts.autopkg DESTINATION nuget)
   endif()
 

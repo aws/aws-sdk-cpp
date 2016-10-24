@@ -1307,9 +1307,9 @@ namespace Model
      * create a health check for which the value of
      * <code>FullyQualifiedDomainName</code> matches the name of the resource record
      * sets and then associate the health check with those resource record sets, health
-     * check results will be unpredictable.</p> </important> <p>For more informaiton,
-     * see the following topics in the Amazon Route 53 Developer Guide:</p> <ul> <li>
-     * <p> <a
+     * check results will be unpredictable.</p> </important> <p>For more information,
+     * see the following topics in the <i>Amazon Route 53 Developer Guide</i>:</p> <ul>
+     * <li> <p> <a
      * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Amazon
      * Route 53 Health Checks and DNS Failover</a> </p> </li> <li> <p> <a
      * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">Configuring
@@ -1366,9 +1366,9 @@ namespace Model
      * create a health check for which the value of
      * <code>FullyQualifiedDomainName</code> matches the name of the resource record
      * sets and then associate the health check with those resource record sets, health
-     * check results will be unpredictable.</p> </important> <p>For more informaiton,
-     * see the following topics in the Amazon Route 53 Developer Guide:</p> <ul> <li>
-     * <p> <a
+     * check results will be unpredictable.</p> </important> <p>For more information,
+     * see the following topics in the <i>Amazon Route 53 Developer Guide</i>:</p> <ul>
+     * <li> <p> <a
      * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Amazon
      * Route 53 Health Checks and DNS Failover</a> </p> </li> <li> <p> <a
      * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">Configuring
@@ -1425,9 +1425,9 @@ namespace Model
      * create a health check for which the value of
      * <code>FullyQualifiedDomainName</code> matches the name of the resource record
      * sets and then associate the health check with those resource record sets, health
-     * check results will be unpredictable.</p> </important> <p>For more informaiton,
-     * see the following topics in the Amazon Route 53 Developer Guide:</p> <ul> <li>
-     * <p> <a
+     * check results will be unpredictable.</p> </important> <p>For more information,
+     * see the following topics in the <i>Amazon Route 53 Developer Guide</i>:</p> <ul>
+     * <li> <p> <a
      * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Amazon
      * Route 53 Health Checks and DNS Failover</a> </p> </li> <li> <p> <a
      * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">Configuring
@@ -1484,9 +1484,9 @@ namespace Model
      * create a health check for which the value of
      * <code>FullyQualifiedDomainName</code> matches the name of the resource record
      * sets and then associate the health check with those resource record sets, health
-     * check results will be unpredictable.</p> </important> <p>For more informaiton,
-     * see the following topics in the Amazon Route 53 Developer Guide:</p> <ul> <li>
-     * <p> <a
+     * check results will be unpredictable.</p> </important> <p>For more information,
+     * see the following topics in the <i>Amazon Route 53 Developer Guide</i>:</p> <ul>
+     * <li> <p> <a
      * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Amazon
      * Route 53 Health Checks and DNS Failover</a> </p> </li> <li> <p> <a
      * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">Configuring
@@ -1543,9 +1543,9 @@ namespace Model
      * create a health check for which the value of
      * <code>FullyQualifiedDomainName</code> matches the name of the resource record
      * sets and then associate the health check with those resource record sets, health
-     * check results will be unpredictable.</p> </important> <p>For more informaiton,
-     * see the following topics in the Amazon Route 53 Developer Guide:</p> <ul> <li>
-     * <p> <a
+     * check results will be unpredictable.</p> </important> <p>For more information,
+     * see the following topics in the <i>Amazon Route 53 Developer Guide</i>:</p> <ul>
+     * <li> <p> <a
      * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Amazon
      * Route 53 Health Checks and DNS Failover</a> </p> </li> <li> <p> <a
      * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">Configuring
@@ -1602,9 +1602,9 @@ namespace Model
      * create a health check for which the value of
      * <code>FullyQualifiedDomainName</code> matches the name of the resource record
      * sets and then associate the health check with those resource record sets, health
-     * check results will be unpredictable.</p> </important> <p>For more informaiton,
-     * see the following topics in the Amazon Route 53 Developer Guide:</p> <ul> <li>
-     * <p> <a
+     * check results will be unpredictable.</p> </important> <p>For more information,
+     * see the following topics in the <i>Amazon Route 53 Developer Guide</i>:</p> <ul>
+     * <li> <p> <a
      * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Amazon
      * Route 53 Health Checks and DNS Failover</a> </p> </li> <li> <p> <a
      * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">Configuring
@@ -1661,9 +1661,9 @@ namespace Model
      * create a health check for which the value of
      * <code>FullyQualifiedDomainName</code> matches the name of the resource record
      * sets and then associate the health check with those resource record sets, health
-     * check results will be unpredictable.</p> </important> <p>For more informaiton,
-     * see the following topics in the Amazon Route 53 Developer Guide:</p> <ul> <li>
-     * <p> <a
+     * check results will be unpredictable.</p> </important> <p>For more information,
+     * see the following topics in the <i>Amazon Route 53 Developer Guide</i>:</p> <ul>
+     * <li> <p> <a
      * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Amazon
      * Route 53 Health Checks and DNS Failover</a> </p> </li> <li> <p> <a
      * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">Configuring
@@ -1671,25 +1671,102 @@ namespace Model
      */
     inline ResourceRecordSet& WithHealthCheckId(const char* value) { SetHealthCheckId(value); return *this;}
 
-    
+    /**
+     * <p>When you create a traffic policy instance, Amazon Route 53 automatically
+     * creates a resource record set. <code>TrafficPolicyInstanceId</code> is the ID of
+     * the traffic policy instance that Amazon Route 53 created this resource record
+     * set for.</p> <important> <p>To delete the resource record set that is associated
+     * with a traffic policy instance, use <code>DeleteTrafficPolicyInstance</code>.
+     * Amazon Route 53 will delete the resource record set automatically. If you delete
+     * the resource record set by using <code>ChangeResourceRecordSets</code>, Amazon
+     * Route 53 doesn't automatically delete the traffic policy instance, and you'll
+     * continue to be charged for it even though it's no longer in use. </p>
+     * </important>
+     */
     inline const Aws::String& GetTrafficPolicyInstanceId() const{ return m_trafficPolicyInstanceId; }
 
-    
+    /**
+     * <p>When you create a traffic policy instance, Amazon Route 53 automatically
+     * creates a resource record set. <code>TrafficPolicyInstanceId</code> is the ID of
+     * the traffic policy instance that Amazon Route 53 created this resource record
+     * set for.</p> <important> <p>To delete the resource record set that is associated
+     * with a traffic policy instance, use <code>DeleteTrafficPolicyInstance</code>.
+     * Amazon Route 53 will delete the resource record set automatically. If you delete
+     * the resource record set by using <code>ChangeResourceRecordSets</code>, Amazon
+     * Route 53 doesn't automatically delete the traffic policy instance, and you'll
+     * continue to be charged for it even though it's no longer in use. </p>
+     * </important>
+     */
     inline void SetTrafficPolicyInstanceId(const Aws::String& value) { m_trafficPolicyInstanceIdHasBeenSet = true; m_trafficPolicyInstanceId = value; }
 
-    
+    /**
+     * <p>When you create a traffic policy instance, Amazon Route 53 automatically
+     * creates a resource record set. <code>TrafficPolicyInstanceId</code> is the ID of
+     * the traffic policy instance that Amazon Route 53 created this resource record
+     * set for.</p> <important> <p>To delete the resource record set that is associated
+     * with a traffic policy instance, use <code>DeleteTrafficPolicyInstance</code>.
+     * Amazon Route 53 will delete the resource record set automatically. If you delete
+     * the resource record set by using <code>ChangeResourceRecordSets</code>, Amazon
+     * Route 53 doesn't automatically delete the traffic policy instance, and you'll
+     * continue to be charged for it even though it's no longer in use. </p>
+     * </important>
+     */
     inline void SetTrafficPolicyInstanceId(Aws::String&& value) { m_trafficPolicyInstanceIdHasBeenSet = true; m_trafficPolicyInstanceId = value; }
 
-    
+    /**
+     * <p>When you create a traffic policy instance, Amazon Route 53 automatically
+     * creates a resource record set. <code>TrafficPolicyInstanceId</code> is the ID of
+     * the traffic policy instance that Amazon Route 53 created this resource record
+     * set for.</p> <important> <p>To delete the resource record set that is associated
+     * with a traffic policy instance, use <code>DeleteTrafficPolicyInstance</code>.
+     * Amazon Route 53 will delete the resource record set automatically. If you delete
+     * the resource record set by using <code>ChangeResourceRecordSets</code>, Amazon
+     * Route 53 doesn't automatically delete the traffic policy instance, and you'll
+     * continue to be charged for it even though it's no longer in use. </p>
+     * </important>
+     */
     inline void SetTrafficPolicyInstanceId(const char* value) { m_trafficPolicyInstanceIdHasBeenSet = true; m_trafficPolicyInstanceId.assign(value); }
 
-    
+    /**
+     * <p>When you create a traffic policy instance, Amazon Route 53 automatically
+     * creates a resource record set. <code>TrafficPolicyInstanceId</code> is the ID of
+     * the traffic policy instance that Amazon Route 53 created this resource record
+     * set for.</p> <important> <p>To delete the resource record set that is associated
+     * with a traffic policy instance, use <code>DeleteTrafficPolicyInstance</code>.
+     * Amazon Route 53 will delete the resource record set automatically. If you delete
+     * the resource record set by using <code>ChangeResourceRecordSets</code>, Amazon
+     * Route 53 doesn't automatically delete the traffic policy instance, and you'll
+     * continue to be charged for it even though it's no longer in use. </p>
+     * </important>
+     */
     inline ResourceRecordSet& WithTrafficPolicyInstanceId(const Aws::String& value) { SetTrafficPolicyInstanceId(value); return *this;}
 
-    
+    /**
+     * <p>When you create a traffic policy instance, Amazon Route 53 automatically
+     * creates a resource record set. <code>TrafficPolicyInstanceId</code> is the ID of
+     * the traffic policy instance that Amazon Route 53 created this resource record
+     * set for.</p> <important> <p>To delete the resource record set that is associated
+     * with a traffic policy instance, use <code>DeleteTrafficPolicyInstance</code>.
+     * Amazon Route 53 will delete the resource record set automatically. If you delete
+     * the resource record set by using <code>ChangeResourceRecordSets</code>, Amazon
+     * Route 53 doesn't automatically delete the traffic policy instance, and you'll
+     * continue to be charged for it even though it's no longer in use. </p>
+     * </important>
+     */
     inline ResourceRecordSet& WithTrafficPolicyInstanceId(Aws::String&& value) { SetTrafficPolicyInstanceId(value); return *this;}
 
-    
+    /**
+     * <p>When you create a traffic policy instance, Amazon Route 53 automatically
+     * creates a resource record set. <code>TrafficPolicyInstanceId</code> is the ID of
+     * the traffic policy instance that Amazon Route 53 created this resource record
+     * set for.</p> <important> <p>To delete the resource record set that is associated
+     * with a traffic policy instance, use <code>DeleteTrafficPolicyInstance</code>.
+     * Amazon Route 53 will delete the resource record set automatically. If you delete
+     * the resource record set by using <code>ChangeResourceRecordSets</code>, Amazon
+     * Route 53 doesn't automatically delete the traffic policy instance, and you'll
+     * continue to be charged for it even though it's no longer in use. </p>
+     * </important>
+     */
     inline ResourceRecordSet& WithTrafficPolicyInstanceId(const char* value) { SetTrafficPolicyInstanceId(value); return *this;}
 
   private:

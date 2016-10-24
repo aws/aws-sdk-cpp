@@ -39,7 +39,8 @@ FleetAttributes::FleetAttributes() :
     m_serverLaunchParametersHasBeenSet(false),
     m_logPathsHasBeenSet(false),
     m_newGameSessionProtectionPolicyHasBeenSet(false),
-    m_operatingSystemHasBeenSet(false)
+    m_operatingSystemHasBeenSet(false),
+    m_resourceCreationLimitPolicyHasBeenSet(false)
 {
 }
 
@@ -55,7 +56,8 @@ FleetAttributes::FleetAttributes(const JsonValue& jsonValue) :
     m_serverLaunchParametersHasBeenSet(false),
     m_logPathsHasBeenSet(false),
     m_newGameSessionProtectionPolicyHasBeenSet(false),
-    m_operatingSystemHasBeenSet(false)
+    m_operatingSystemHasBeenSet(false),
+    m_resourceCreationLimitPolicyHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -149,6 +151,13 @@ FleetAttributes& FleetAttributes::operator =(const JsonValue& jsonValue)
     m_operatingSystemHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ResourceCreationLimitPolicy"))
+  {
+    m_resourceCreationLimitPolicy = jsonValue.GetObject("ResourceCreationLimitPolicy");
+
+    m_resourceCreationLimitPolicyHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -226,6 +235,12 @@ JsonValue FleetAttributes::Jsonize() const
   if(m_operatingSystemHasBeenSet)
   {
    payload.WithString("OperatingSystem", OperatingSystemMapper::GetNameForOperatingSystem(m_operatingSystem));
+  }
+
+  if(m_resourceCreationLimitPolicyHasBeenSet)
+  {
+   payload.WithObject("ResourceCreationLimitPolicy", m_resourceCreationLimitPolicy.Jsonize());
+
   }
 
   return payload;

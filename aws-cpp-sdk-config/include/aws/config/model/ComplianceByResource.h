@@ -35,7 +35,7 @@ namespace Model
    * <p>Indicates whether an AWS resource that is evaluated according to one or more
    * AWS Config rules is compliant. A resource is compliant if it complies with all
    * of the rules that evaluate it, and it is noncompliant if it does not comply with
-   * one or more of these rules. </p>
+   * one or more of these rules.</p>
    */
   class AWS_CONFIGSERVICE_API ComplianceByResource
   {

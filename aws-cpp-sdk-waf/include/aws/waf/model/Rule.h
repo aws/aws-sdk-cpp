@@ -36,14 +36,14 @@ namespace Model
    * <p>A combination of <a>ByteMatchSet</a>, <a>IPSet</a>, and/or
    * <a>SqlInjectionMatchSet</a> objects that identify the web requests that you want
    * to allow, block, or count. For example, you might create a <code>Rule</code>
-   * that includes the following predicates:</p> <ul> <li>An <code>IPSet</code> that
-   * causes AWS WAF to search for web requests that originate from the IP address
-   * <code>192.0.2.44</code></li> <li>A <code>ByteMatchSet</code> that causes AWS WAF
-   * to search for web requests for which the value of the <code>User-Agent</code>
-   * header is <code>BadBot</code>.</li> </ul> <p>To match the settings in this
-   * <code>Rule</code>, a request must originate from <code>192.0.2.44</code> AND
-   * include a <code>User-Agent</code> header for which the value is
-   * <code>BadBot</code>.</p>
+   * that includes the following predicates:</p> <ul> <li> <p>An <code>IPSet</code>
+   * that causes AWS WAF to search for web requests that originate from the IP
+   * address <code>192.0.2.44</code> </p> </li> <li> <p>A <code>ByteMatchSet</code>
+   * that causes AWS WAF to search for web requests for which the value of the
+   * <code>User-Agent</code> header is <code>BadBot</code>.</p> </li> </ul> <p>To
+   * match the settings in this <code>Rule</code>, a request must originate from
+   * <code>192.0.2.44</code> AND include a <code>User-Agent</code> header for which
+   * the value is <code>BadBot</code>.</p>
    */
   class AWS_WAF_API Rule
   {
@@ -59,7 +59,7 @@ namespace Model
      * <code>Rule</code> (see <a>UpdateRule</a>), insert a <code>Rule</code> into a
      * <code>WebACL</code> or delete a one from a <code>WebACL</code> (see
      * <a>UpdateWebACL</a>), or delete a <code>Rule</code> from AWS WAF (see
-     * <a>DeleteRule</a>).</p> <p><code>RuleId</code> is returned by <a>CreateRule</a>
+     * <a>DeleteRule</a>).</p> <p> <code>RuleId</code> is returned by <a>CreateRule</a>
      * and by <a>ListRules</a>.</p>
      */
     inline const Aws::String& GetRuleId() const{ return m_ruleId; }
@@ -70,7 +70,7 @@ namespace Model
      * <code>Rule</code> (see <a>UpdateRule</a>), insert a <code>Rule</code> into a
      * <code>WebACL</code> or delete a one from a <code>WebACL</code> (see
      * <a>UpdateWebACL</a>), or delete a <code>Rule</code> from AWS WAF (see
-     * <a>DeleteRule</a>).</p> <p><code>RuleId</code> is returned by <a>CreateRule</a>
+     * <a>DeleteRule</a>).</p> <p> <code>RuleId</code> is returned by <a>CreateRule</a>
      * and by <a>ListRules</a>.</p>
      */
     inline void SetRuleId(const Aws::String& value) { m_ruleIdHasBeenSet = true; m_ruleId = value; }
@@ -81,7 +81,7 @@ namespace Model
      * <code>Rule</code> (see <a>UpdateRule</a>), insert a <code>Rule</code> into a
      * <code>WebACL</code> or delete a one from a <code>WebACL</code> (see
      * <a>UpdateWebACL</a>), or delete a <code>Rule</code> from AWS WAF (see
-     * <a>DeleteRule</a>).</p> <p><code>RuleId</code> is returned by <a>CreateRule</a>
+     * <a>DeleteRule</a>).</p> <p> <code>RuleId</code> is returned by <a>CreateRule</a>
      * and by <a>ListRules</a>.</p>
      */
     inline void SetRuleId(Aws::String&& value) { m_ruleIdHasBeenSet = true; m_ruleId = value; }
@@ -92,7 +92,7 @@ namespace Model
      * <code>Rule</code> (see <a>UpdateRule</a>), insert a <code>Rule</code> into a
      * <code>WebACL</code> or delete a one from a <code>WebACL</code> (see
      * <a>UpdateWebACL</a>), or delete a <code>Rule</code> from AWS WAF (see
-     * <a>DeleteRule</a>).</p> <p><code>RuleId</code> is returned by <a>CreateRule</a>
+     * <a>DeleteRule</a>).</p> <p> <code>RuleId</code> is returned by <a>CreateRule</a>
      * and by <a>ListRules</a>.</p>
      */
     inline void SetRuleId(const char* value) { m_ruleIdHasBeenSet = true; m_ruleId.assign(value); }
@@ -103,7 +103,7 @@ namespace Model
      * <code>Rule</code> (see <a>UpdateRule</a>), insert a <code>Rule</code> into a
      * <code>WebACL</code> or delete a one from a <code>WebACL</code> (see
      * <a>UpdateWebACL</a>), or delete a <code>Rule</code> from AWS WAF (see
-     * <a>DeleteRule</a>).</p> <p><code>RuleId</code> is returned by <a>CreateRule</a>
+     * <a>DeleteRule</a>).</p> <p> <code>RuleId</code> is returned by <a>CreateRule</a>
      * and by <a>ListRules</a>.</p>
      */
     inline Rule& WithRuleId(const Aws::String& value) { SetRuleId(value); return *this;}
@@ -114,7 +114,7 @@ namespace Model
      * <code>Rule</code> (see <a>UpdateRule</a>), insert a <code>Rule</code> into a
      * <code>WebACL</code> or delete a one from a <code>WebACL</code> (see
      * <a>UpdateWebACL</a>), or delete a <code>Rule</code> from AWS WAF (see
-     * <a>DeleteRule</a>).</p> <p><code>RuleId</code> is returned by <a>CreateRule</a>
+     * <a>DeleteRule</a>).</p> <p> <code>RuleId</code> is returned by <a>CreateRule</a>
      * and by <a>ListRules</a>.</p>
      */
     inline Rule& WithRuleId(Aws::String&& value) { SetRuleId(value); return *this;}
@@ -125,7 +125,7 @@ namespace Model
      * <code>Rule</code> (see <a>UpdateRule</a>), insert a <code>Rule</code> into a
      * <code>WebACL</code> or delete a one from a <code>WebACL</code> (see
      * <a>UpdateWebACL</a>), or delete a <code>Rule</code> from AWS WAF (see
-     * <a>DeleteRule</a>).</p> <p><code>RuleId</code> is returned by <a>CreateRule</a>
+     * <a>DeleteRule</a>).</p> <p> <code>RuleId</code> is returned by <a>CreateRule</a>
      * and by <a>ListRules</a>.</p>
      */
     inline Rule& WithRuleId(const char* value) { SetRuleId(value); return *this;}

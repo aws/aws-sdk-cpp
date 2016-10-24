@@ -23,6 +23,7 @@
 #include <aws/cognito-idp/model/DeviceConfigurationType.h>
 #include <aws/cognito-idp/model/EmailConfigurationType.h>
 #include <aws/cognito-idp/model/SmsConfigurationType.h>
+#include <aws/cognito-idp/model/AdminCreateUserConfigType.h>
 #include <aws/cognito-idp/model/VerifiedAttributeType.h>
 #include <aws/cognito-idp/model/AliasAttributeType.h>
 
@@ -453,6 +454,31 @@ namespace Model
      */
     inline CreateUserPoolRequest& WithSmsConfiguration(SmsConfigurationType&& value) { SetSmsConfiguration(value); return *this;}
 
+    /**
+     * <p>The configuration for AdminCreateUser requests.</p>
+     */
+    inline const AdminCreateUserConfigType& GetAdminCreateUserConfig() const{ return m_adminCreateUserConfig; }
+
+    /**
+     * <p>The configuration for AdminCreateUser requests.</p>
+     */
+    inline void SetAdminCreateUserConfig(const AdminCreateUserConfigType& value) { m_adminCreateUserConfigHasBeenSet = true; m_adminCreateUserConfig = value; }
+
+    /**
+     * <p>The configuration for AdminCreateUser requests.</p>
+     */
+    inline void SetAdminCreateUserConfig(AdminCreateUserConfigType&& value) { m_adminCreateUserConfigHasBeenSet = true; m_adminCreateUserConfig = value; }
+
+    /**
+     * <p>The configuration for AdminCreateUser requests.</p>
+     */
+    inline CreateUserPoolRequest& WithAdminCreateUserConfig(const AdminCreateUserConfigType& value) { SetAdminCreateUserConfig(value); return *this;}
+
+    /**
+     * <p>The configuration for AdminCreateUser requests.</p>
+     */
+    inline CreateUserPoolRequest& WithAdminCreateUserConfig(AdminCreateUserConfigType&& value) { SetAdminCreateUserConfig(value); return *this;}
+
   private:
     Aws::String m_poolName;
     bool m_poolNameHasBeenSet;
@@ -480,6 +506,8 @@ namespace Model
     bool m_emailConfigurationHasBeenSet;
     SmsConfigurationType m_smsConfiguration;
     bool m_smsConfigurationHasBeenSet;
+    AdminCreateUserConfigType m_adminCreateUserConfig;
+    bool m_adminCreateUserConfigHasBeenSet;
   };
 
 } // namespace Model

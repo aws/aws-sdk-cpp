@@ -37,37 +37,37 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * <p>Unique identifier for the fleet to get event logs for. </p>
+     * <p>Unique identifier for the fleet to get event logs for.</p>
      */
     inline const Aws::String& GetFleetId() const{ return m_fleetId; }
 
     /**
-     * <p>Unique identifier for the fleet to get event logs for. </p>
+     * <p>Unique identifier for the fleet to get event logs for.</p>
      */
     inline void SetFleetId(const Aws::String& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
 
     /**
-     * <p>Unique identifier for the fleet to get event logs for. </p>
+     * <p>Unique identifier for the fleet to get event logs for.</p>
      */
     inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
 
     /**
-     * <p>Unique identifier for the fleet to get event logs for. </p>
+     * <p>Unique identifier for the fleet to get event logs for.</p>
      */
     inline void SetFleetId(const char* value) { m_fleetIdHasBeenSet = true; m_fleetId.assign(value); }
 
     /**
-     * <p>Unique identifier for the fleet to get event logs for. </p>
+     * <p>Unique identifier for the fleet to get event logs for.</p>
      */
     inline DescribeFleetEventsRequest& WithFleetId(const Aws::String& value) { SetFleetId(value); return *this;}
 
     /**
-     * <p>Unique identifier for the fleet to get event logs for. </p>
+     * <p>Unique identifier for the fleet to get event logs for.</p>
      */
     inline DescribeFleetEventsRequest& WithFleetId(Aws::String&& value) { SetFleetId(value); return *this;}
 
     /**
-     * <p>Unique identifier for the fleet to get event logs for. </p>
+     * <p>Unique identifier for the fleet to get event logs for.</p>
      */
     inline DescribeFleetEventsRequest& WithFleetId(const char* value) { SetFleetId(value); return *this;}
 

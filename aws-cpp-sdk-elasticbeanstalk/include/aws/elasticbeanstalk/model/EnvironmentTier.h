@@ -32,7 +32,7 @@ namespace Model
 {
 
   /**
-   * <p> Describes the properties of an environment tier </p>
+   * <p>Describes the properties of an environment tier</p>
    */
   class AWS_ELASTICBEANSTALK_API EnvironmentTier
   {

@@ -28,6 +28,7 @@ CreateChangeSetRequest::CreateChangeSetRequest() :
     m_parametersHasBeenSet(false),
     m_capabilitiesHasBeenSet(false),
     m_resourceTypesHasBeenSet(false),
+    m_roleARNHasBeenSet(false),
     m_notificationARNsHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_changeSetNameHasBeenSet(false),
@@ -90,6 +91,11 @@ Aws::String CreateChangeSetRequest::SerializePayload() const
           << StringUtils::URLEncode(item.c_str()) << "&";
       resourceTypesCount++;
     }
+  }
+
+  if(m_roleARNHasBeenSet)
+  {
+    ss << "RoleARN=" << StringUtils::URLEncode(m_roleARN.c_str()) << "&";
   }
 
   if(m_notificationARNsHasBeenSet)

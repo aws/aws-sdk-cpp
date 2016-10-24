@@ -84,7 +84,7 @@ project(aws-cpp-sdk-workspaces)
   install (FILES ${AWS_WORKSPACES_HEADERS} DESTINATION include/aws/workspaces)
   install (FILES ${AWS_WORKSPACES_MODEL_HEADERS} DESTINATION include/aws/workspaces/model)
 
-  if(MSVC)
+  if(PLATFORM_WINDOWS AND MSVC)
     install (FILES nuget/aws-cpp-sdk-workspaces.autopkg DESTINATION nuget)
   endif()
 

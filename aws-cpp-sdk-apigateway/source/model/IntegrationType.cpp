@@ -32,6 +32,8 @@ namespace Aws
         static const int HTTP_HASH = HashingUtils::HashString("HTTP");
         static const int AWS_HASH = HashingUtils::HashString("AWS");
         static const int MOCK_HASH = HashingUtils::HashString("MOCK");
+        static const int HTTP_PROXY_HASH = HashingUtils::HashString("HTTP_PROXY");
+        static const int AWS_PROXY_HASH = HashingUtils::HashString("AWS_PROXY");
 
 
         IntegrationType GetIntegrationTypeForName(const Aws::String& name)
@@ -48,6 +50,14 @@ namespace Aws
           else if (hashCode == MOCK_HASH)
           {
             return IntegrationType::MOCK;
+          }
+          else if (hashCode == HTTP_PROXY_HASH)
+          {
+            return IntegrationType::HTTP_PROXY;
+          }
+          else if (hashCode == AWS_PROXY_HASH)
+          {
+            return IntegrationType::AWS_PROXY;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -69,6 +79,10 @@ namespace Aws
             return "AWS";
           case IntegrationType::MOCK:
             return "MOCK";
+          case IntegrationType::HTTP_PROXY:
+            return "HTTP_PROXY";
+          case IntegrationType::AWS_PROXY:
+            return "AWS_PROXY";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

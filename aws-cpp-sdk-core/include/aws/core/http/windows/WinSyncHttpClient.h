@@ -91,7 +91,7 @@ namespace Aws
             virtual bool DoReadData(void* hHttpRequest, char* body, uint64_t size, uint64_t& read) const = 0;
             virtual void* GetClientModule() const = 0;
 
-            bool StreamPayloadToRequest(const HttpRequest& request, void* hHttpRequest) const;
+            bool StreamPayloadToRequest(const HttpRequest& request, void* hHttpRequest, Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter) const;
             void LogRequestInternalFailure() const;
             std::shared_ptr<HttpResponse> BuildSuccessResponse(const Aws::Http::HttpRequest& request, void* hHttpRequest, Aws::Utils::RateLimits::RateLimiterInterface* readLimiter) const;
             void AddHeadersToRequest(const HttpRequest& request, void* hHttpRequest) const;

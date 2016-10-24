@@ -72,7 +72,7 @@ if(BUILD_CURL OR BUILD_OPENSSL OR BUILD_ZLIB)
             DEPENDS ZLIB
             SOURCE_DIR ${OPENSSL_SOURCE_DIR}
             GIT_REPOSITORY https://github.com/openssl/openssl.git
-            GIT_TAG 902f3f50d051dfd6ebf009d352aaf581195caabf # 1.0.2g
+            GIT_TAG e216bf9d7ca761718f34e8b3094fcb32c7a143e4 # 1.0.2j
             UPDATE_COMMAND cd ${CMAKE_SOURCE_DIR} && python android-build/configure_openssl_cmake.py
             CMAKE_ARGS
             -DCMAKE_TOOLCHAIN_FILE=${CMAKE_TOOLCHAIN_FILE}

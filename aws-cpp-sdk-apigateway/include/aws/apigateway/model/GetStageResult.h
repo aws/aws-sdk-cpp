@@ -266,9 +266,7 @@ namespace Model
      * <p>A map that defines the method settings for a <a>Stage</a> resource. Keys
      * (designated as <code>/{method_setting_key</code> below) are method paths defined
      * as <code>{resource_path}/{http_method}</code> for an individual method override,
-     * or <code>/\* /\*</code> for overriding all methods in the stage. Any forward
-     * slash ("/") characters in the <code>resource_path</code> part must be encoded as
-     * "~1" as in, for example, <code>~1resource~1sub-resource/GET</code>.</p>
+     * or <code>/\* /\*</code> for overriding all methods in the stage. </p>
      */
     inline const Aws::Map<Aws::String, MethodSetting>& GetMethodSettings() const{ return m_methodSettings; }
 
@@ -276,9 +274,7 @@ namespace Model
      * <p>A map that defines the method settings for a <a>Stage</a> resource. Keys
      * (designated as <code>/{method_setting_key</code> below) are method paths defined
      * as <code>{resource_path}/{http_method}</code> for an individual method override,
-     * or <code>/\* /\*</code> for overriding all methods in the stage. Any forward
-     * slash ("/") characters in the <code>resource_path</code> part must be encoded as
-     * "~1" as in, for example, <code>~1resource~1sub-resource/GET</code>.</p>
+     * or <code>/\* /\*</code> for overriding all methods in the stage. </p>
      */
     inline void SetMethodSettings(const Aws::Map<Aws::String, MethodSetting>& value) { m_methodSettings = value; }
 
@@ -286,9 +282,7 @@ namespace Model
      * <p>A map that defines the method settings for a <a>Stage</a> resource. Keys
      * (designated as <code>/{method_setting_key</code> below) are method paths defined
      * as <code>{resource_path}/{http_method}</code> for an individual method override,
-     * or <code>/\* /\*</code> for overriding all methods in the stage. Any forward
-     * slash ("/") characters in the <code>resource_path</code> part must be encoded as
-     * "~1" as in, for example, <code>~1resource~1sub-resource/GET</code>.</p>
+     * or <code>/\* /\*</code> for overriding all methods in the stage. </p>
      */
     inline void SetMethodSettings(Aws::Map<Aws::String, MethodSetting>&& value) { m_methodSettings = value; }
 
@@ -296,9 +290,7 @@ namespace Model
      * <p>A map that defines the method settings for a <a>Stage</a> resource. Keys
      * (designated as <code>/{method_setting_key</code> below) are method paths defined
      * as <code>{resource_path}/{http_method}</code> for an individual method override,
-     * or <code>/\* /\*</code> for overriding all methods in the stage. Any forward
-     * slash ("/") characters in the <code>resource_path</code> part must be encoded as
-     * "~1" as in, for example, <code>~1resource~1sub-resource/GET</code>.</p>
+     * or <code>/\* /\*</code> for overriding all methods in the stage. </p>
      */
     inline GetStageResult& WithMethodSettings(const Aws::Map<Aws::String, MethodSetting>& value) { SetMethodSettings(value); return *this;}
 
@@ -306,9 +298,7 @@ namespace Model
      * <p>A map that defines the method settings for a <a>Stage</a> resource. Keys
      * (designated as <code>/{method_setting_key</code> below) are method paths defined
      * as <code>{resource_path}/{http_method}</code> for an individual method override,
-     * or <code>/\* /\*</code> for overriding all methods in the stage. Any forward
-     * slash ("/") characters in the <code>resource_path</code> part must be encoded as
-     * "~1" as in, for example, <code>~1resource~1sub-resource/GET</code>.</p>
+     * or <code>/\* /\*</code> for overriding all methods in the stage. </p>
      */
     inline GetStageResult& WithMethodSettings(Aws::Map<Aws::String, MethodSetting>&& value) { SetMethodSettings(value); return *this;}
 
@@ -316,9 +306,7 @@ namespace Model
      * <p>A map that defines the method settings for a <a>Stage</a> resource. Keys
      * (designated as <code>/{method_setting_key</code> below) are method paths defined
      * as <code>{resource_path}/{http_method}</code> for an individual method override,
-     * or <code>/\* /\*</code> for overriding all methods in the stage. Any forward
-     * slash ("/") characters in the <code>resource_path</code> part must be encoded as
-     * "~1" as in, for example, <code>~1resource~1sub-resource/GET</code>.</p>
+     * or <code>/\* /\*</code> for overriding all methods in the stage. </p>
      */
     inline GetStageResult& AddMethodSettings(const Aws::String& key, const MethodSetting& value) { m_methodSettings[key] = value; return *this; }
 
@@ -326,9 +314,7 @@ namespace Model
      * <p>A map that defines the method settings for a <a>Stage</a> resource. Keys
      * (designated as <code>/{method_setting_key</code> below) are method paths defined
      * as <code>{resource_path}/{http_method}</code> for an individual method override,
-     * or <code>/\* /\*</code> for overriding all methods in the stage. Any forward
-     * slash ("/") characters in the <code>resource_path</code> part must be encoded as
-     * "~1" as in, for example, <code>~1resource~1sub-resource/GET</code>.</p>
+     * or <code>/\* /\*</code> for overriding all methods in the stage. </p>
      */
     inline GetStageResult& AddMethodSettings(Aws::String&& key, const MethodSetting& value) { m_methodSettings[key] = value; return *this; }
 
@@ -336,9 +322,7 @@ namespace Model
      * <p>A map that defines the method settings for a <a>Stage</a> resource. Keys
      * (designated as <code>/{method_setting_key</code> below) are method paths defined
      * as <code>{resource_path}/{http_method}</code> for an individual method override,
-     * or <code>/\* /\*</code> for overriding all methods in the stage. Any forward
-     * slash ("/") characters in the <code>resource_path</code> part must be encoded as
-     * "~1" as in, for example, <code>~1resource~1sub-resource/GET</code>.</p>
+     * or <code>/\* /\*</code> for overriding all methods in the stage. </p>
      */
     inline GetStageResult& AddMethodSettings(const Aws::String& key, MethodSetting&& value) { m_methodSettings[key] = value; return *this; }
 
@@ -346,9 +330,7 @@ namespace Model
      * <p>A map that defines the method settings for a <a>Stage</a> resource. Keys
      * (designated as <code>/{method_setting_key</code> below) are method paths defined
      * as <code>{resource_path}/{http_method}</code> for an individual method override,
-     * or <code>/\* /\*</code> for overriding all methods in the stage. Any forward
-     * slash ("/") characters in the <code>resource_path</code> part must be encoded as
-     * "~1" as in, for example, <code>~1resource~1sub-resource/GET</code>.</p>
+     * or <code>/\* /\*</code> for overriding all methods in the stage. </p>
      */
     inline GetStageResult& AddMethodSettings(Aws::String&& key, MethodSetting&& value) { m_methodSettings[key] = value; return *this; }
 
@@ -356,9 +338,7 @@ namespace Model
      * <p>A map that defines the method settings for a <a>Stage</a> resource. Keys
      * (designated as <code>/{method_setting_key</code> below) are method paths defined
      * as <code>{resource_path}/{http_method}</code> for an individual method override,
-     * or <code>/\* /\*</code> for overriding all methods in the stage. Any forward
-     * slash ("/") characters in the <code>resource_path</code> part must be encoded as
-     * "~1" as in, for example, <code>~1resource~1sub-resource/GET</code>.</p>
+     * or <code>/\* /\*</code> for overriding all methods in the stage. </p>
      */
     inline GetStageResult& AddMethodSettings(const char* key, MethodSetting&& value) { m_methodSettings[key] = value; return *this; }
 
@@ -366,9 +346,7 @@ namespace Model
      * <p>A map that defines the method settings for a <a>Stage</a> resource. Keys
      * (designated as <code>/{method_setting_key</code> below) are method paths defined
      * as <code>{resource_path}/{http_method}</code> for an individual method override,
-     * or <code>/\* /\*</code> for overriding all methods in the stage. Any forward
-     * slash ("/") characters in the <code>resource_path</code> part must be encoded as
-     * "~1" as in, for example, <code>~1resource~1sub-resource/GET</code>.</p>
+     * or <code>/\* /\*</code> for overriding all methods in the stage. </p>
      */
     inline GetStageResult& AddMethodSettings(const char* key, const MethodSetting& value) { m_methodSettings[key] = value; return *this; }
 

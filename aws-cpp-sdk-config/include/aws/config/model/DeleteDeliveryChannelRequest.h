@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p> The input for the <a>DeleteDeliveryChannel</a> action. The action accepts
-   * the following data in JSON format. </p>
+   * <p>The input for the <a>DeleteDeliveryChannel</a> action. The action accepts the
+   * following data in JSON format. </p>
    */
   class AWS_CONFIGSERVICE_API DeleteDeliveryChannelRequest : public ConfigServiceRequest
   {

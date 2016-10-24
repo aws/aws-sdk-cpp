@@ -131,77 +131,84 @@ namespace Model
     /**
      * <p>An array of <code>SqlInjectionMatchSetUpdate</code> objects that you want to
      * insert into or delete from a <a>SqlInjectionMatchSet</a>. For more information,
-     * see the applicable data types:</p> <ul> <li><a>SqlInjectionMatchSetUpdate</a>:
-     * Contains <code>Action</code> and <code>SqlInjectionMatchTuple</code></li>
-     * <li><a>SqlInjectionMatchTuple</a>: Contains <code>FieldToMatch</code> and
-     * <code>TextTransformation</code></li> <li><a>FieldToMatch</a>: Contains
-     * <code>Data</code> and <code>Type</code></li> </ul>
+     * see the applicable data types:</p> <ul> <li> <p>
+     * <a>SqlInjectionMatchSetUpdate</a>: Contains <code>Action</code> and
+     * <code>SqlInjectionMatchTuple</code> </p> </li> <li> <p>
+     * <a>SqlInjectionMatchTuple</a>: Contains <code>FieldToMatch</code> and
+     * <code>TextTransformation</code> </p> </li> <li> <p> <a>FieldToMatch</a>:
+     * Contains <code>Data</code> and <code>Type</code> </p> </li> </ul>
      */
     inline const Aws::Vector<SqlInjectionMatchSetUpdate>& GetUpdates() const{ return m_updates; }
 
     /**
      * <p>An array of <code>SqlInjectionMatchSetUpdate</code> objects that you want to
      * insert into or delete from a <a>SqlInjectionMatchSet</a>. For more information,
-     * see the applicable data types:</p> <ul> <li><a>SqlInjectionMatchSetUpdate</a>:
-     * Contains <code>Action</code> and <code>SqlInjectionMatchTuple</code></li>
-     * <li><a>SqlInjectionMatchTuple</a>: Contains <code>FieldToMatch</code> and
-     * <code>TextTransformation</code></li> <li><a>FieldToMatch</a>: Contains
-     * <code>Data</code> and <code>Type</code></li> </ul>
+     * see the applicable data types:</p> <ul> <li> <p>
+     * <a>SqlInjectionMatchSetUpdate</a>: Contains <code>Action</code> and
+     * <code>SqlInjectionMatchTuple</code> </p> </li> <li> <p>
+     * <a>SqlInjectionMatchTuple</a>: Contains <code>FieldToMatch</code> and
+     * <code>TextTransformation</code> </p> </li> <li> <p> <a>FieldToMatch</a>:
+     * Contains <code>Data</code> and <code>Type</code> </p> </li> </ul>
      */
     inline void SetUpdates(const Aws::Vector<SqlInjectionMatchSetUpdate>& value) { m_updatesHasBeenSet = true; m_updates = value; }
 
     /**
      * <p>An array of <code>SqlInjectionMatchSetUpdate</code> objects that you want to
      * insert into or delete from a <a>SqlInjectionMatchSet</a>. For more information,
-     * see the applicable data types:</p> <ul> <li><a>SqlInjectionMatchSetUpdate</a>:
-     * Contains <code>Action</code> and <code>SqlInjectionMatchTuple</code></li>
-     * <li><a>SqlInjectionMatchTuple</a>: Contains <code>FieldToMatch</code> and
-     * <code>TextTransformation</code></li> <li><a>FieldToMatch</a>: Contains
-     * <code>Data</code> and <code>Type</code></li> </ul>
+     * see the applicable data types:</p> <ul> <li> <p>
+     * <a>SqlInjectionMatchSetUpdate</a>: Contains <code>Action</code> and
+     * <code>SqlInjectionMatchTuple</code> </p> </li> <li> <p>
+     * <a>SqlInjectionMatchTuple</a>: Contains <code>FieldToMatch</code> and
+     * <code>TextTransformation</code> </p> </li> <li> <p> <a>FieldToMatch</a>:
+     * Contains <code>Data</code> and <code>Type</code> </p> </li> </ul>
      */
     inline void SetUpdates(Aws::Vector<SqlInjectionMatchSetUpdate>&& value) { m_updatesHasBeenSet = true; m_updates = value; }
 
     /**
      * <p>An array of <code>SqlInjectionMatchSetUpdate</code> objects that you want to
      * insert into or delete from a <a>SqlInjectionMatchSet</a>. For more information,
-     * see the applicable data types:</p> <ul> <li><a>SqlInjectionMatchSetUpdate</a>:
-     * Contains <code>Action</code> and <code>SqlInjectionMatchTuple</code></li>
-     * <li><a>SqlInjectionMatchTuple</a>: Contains <code>FieldToMatch</code> and
-     * <code>TextTransformation</code></li> <li><a>FieldToMatch</a>: Contains
-     * <code>Data</code> and <code>Type</code></li> </ul>
+     * see the applicable data types:</p> <ul> <li> <p>
+     * <a>SqlInjectionMatchSetUpdate</a>: Contains <code>Action</code> and
+     * <code>SqlInjectionMatchTuple</code> </p> </li> <li> <p>
+     * <a>SqlInjectionMatchTuple</a>: Contains <code>FieldToMatch</code> and
+     * <code>TextTransformation</code> </p> </li> <li> <p> <a>FieldToMatch</a>:
+     * Contains <code>Data</code> and <code>Type</code> </p> </li> </ul>
      */
     inline UpdateSqlInjectionMatchSetRequest& WithUpdates(const Aws::Vector<SqlInjectionMatchSetUpdate>& value) { SetUpdates(value); return *this;}
 
     /**
      * <p>An array of <code>SqlInjectionMatchSetUpdate</code> objects that you want to
      * insert into or delete from a <a>SqlInjectionMatchSet</a>. For more information,
-     * see the applicable data types:</p> <ul> <li><a>SqlInjectionMatchSetUpdate</a>:
-     * Contains <code>Action</code> and <code>SqlInjectionMatchTuple</code></li>
-     * <li><a>SqlInjectionMatchTuple</a>: Contains <code>FieldToMatch</code> and
-     * <code>TextTransformation</code></li> <li><a>FieldToMatch</a>: Contains
-     * <code>Data</code> and <code>Type</code></li> </ul>
+     * see the applicable data types:</p> <ul> <li> <p>
+     * <a>SqlInjectionMatchSetUpdate</a>: Contains <code>Action</code> and
+     * <code>SqlInjectionMatchTuple</code> </p> </li> <li> <p>
+     * <a>SqlInjectionMatchTuple</a>: Contains <code>FieldToMatch</code> and
+     * <code>TextTransformation</code> </p> </li> <li> <p> <a>FieldToMatch</a>:
+     * Contains <code>Data</code> and <code>Type</code> </p> </li> </ul>
      */
     inline UpdateSqlInjectionMatchSetRequest& WithUpdates(Aws::Vector<SqlInjectionMatchSetUpdate>&& value) { SetUpdates(value); return *this;}
 
     /**
      * <p>An array of <code>SqlInjectionMatchSetUpdate</code> objects that you want to
      * insert into or delete from a <a>SqlInjectionMatchSet</a>. For more information,
-     * see the applicable data types:</p> <ul> <li><a>SqlInjectionMatchSetUpdate</a>:
-     * Contains <code>Action</code> and <code>SqlInjectionMatchTuple</code></li>
-     * <li><a>SqlInjectionMatchTuple</a>: Contains <code>FieldToMatch</code> and
-     * <code>TextTransformation</code></li> <li><a>FieldToMatch</a>: Contains
-     * <code>Data</code> and <code>Type</code></li> </ul>
+     * see the applicable data types:</p> <ul> <li> <p>
+     * <a>SqlInjectionMatchSetUpdate</a>: Contains <code>Action</code> and
+     * <code>SqlInjectionMatchTuple</code> </p> </li> <li> <p>
+     * <a>SqlInjectionMatchTuple</a>: Contains <code>FieldToMatch</code> and
+     * <code>TextTransformation</code> </p> </li> <li> <p> <a>FieldToMatch</a>:
+     * Contains <code>Data</code> and <code>Type</code> </p> </li> </ul>
      */
     inline UpdateSqlInjectionMatchSetRequest& AddUpdates(const SqlInjectionMatchSetUpdate& value) { m_updatesHasBeenSet = true; m_updates.push_back(value); return *this; }
 
     /**
      * <p>An array of <code>SqlInjectionMatchSetUpdate</code> objects that you want to
      * insert into or delete from a <a>SqlInjectionMatchSet</a>. For more information,
-     * see the applicable data types:</p> <ul> <li><a>SqlInjectionMatchSetUpdate</a>:
-     * Contains <code>Action</code> and <code>SqlInjectionMatchTuple</code></li>
-     * <li><a>SqlInjectionMatchTuple</a>: Contains <code>FieldToMatch</code> and
-     * <code>TextTransformation</code></li> <li><a>FieldToMatch</a>: Contains
-     * <code>Data</code> and <code>Type</code></li> </ul>
+     * see the applicable data types:</p> <ul> <li> <p>
+     * <a>SqlInjectionMatchSetUpdate</a>: Contains <code>Action</code> and
+     * <code>SqlInjectionMatchTuple</code> </p> </li> <li> <p>
+     * <a>SqlInjectionMatchTuple</a>: Contains <code>FieldToMatch</code> and
+     * <code>TextTransformation</code> </p> </li> <li> <p> <a>FieldToMatch</a>:
+     * Contains <code>Data</code> and <code>Type</code> </p> </li> </ul>
      */
     inline UpdateSqlInjectionMatchSetRequest& AddUpdates(SqlInjectionMatchSetUpdate&& value) { m_updatesHasBeenSet = true; m_updates.push_back(value); return *this; }
 

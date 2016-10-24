@@ -84,7 +84,7 @@ project(aws-cpp-sdk-logs)
   install (FILES ${AWS_LOGS_HEADERS} DESTINATION include/aws/logs)
   install (FILES ${AWS_LOGS_MODEL_HEADERS} DESTINATION include/aws/logs/model)
 
-  if(MSVC)
+  if(PLATFORM_WINDOWS AND MSVC)
     install (FILES nuget/aws-cpp-sdk-logs.autopkg DESTINATION nuget)
   endif()
 

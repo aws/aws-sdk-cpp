@@ -36,37 +36,44 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * <p>The samples' ARNs.</p>
+     * <p>The Amazon Resource Name (ARN) of the project for which you want to list
+     * samples.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p>The samples' ARNs.</p>
+     * <p>The Amazon Resource Name (ARN) of the project for which you want to list
+     * samples.</p>
      */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
-     * <p>The samples' ARNs.</p>
+     * <p>The Amazon Resource Name (ARN) of the project for which you want to list
+     * samples.</p>
      */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
-     * <p>The samples' ARNs.</p>
+     * <p>The Amazon Resource Name (ARN) of the project for which you want to list
+     * samples.</p>
      */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
     /**
-     * <p>The samples' ARNs.</p>
+     * <p>The Amazon Resource Name (ARN) of the project for which you want to list
+     * samples.</p>
      */
     inline ListSamplesRequest& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p>The samples' ARNs.</p>
+     * <p>The Amazon Resource Name (ARN) of the project for which you want to list
+     * samples.</p>
      */
     inline ListSamplesRequest& WithArn(Aws::String&& value) { SetArn(value); return *this;}
 
     /**
-     * <p>The samples' ARNs.</p>
+     * <p>The Amazon Resource Name (ARN) of the project for which you want to list
+     * samples.</p>
      */
     inline ListSamplesRequest& WithArn(const char* value) { SetArn(value); return *this;}
 

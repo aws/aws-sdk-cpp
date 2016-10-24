@@ -31,6 +31,10 @@ namespace Route53
 namespace Model
 {
 
+  /**
+   * <p>A complex type that contains information about the Amazon VPC that you're
+   * associating with the specified hosted zone.</p>
+   */
   class AWS_ROUTE53_API VPC
   {
   public:
@@ -40,19 +44,34 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
-    
+    /**
+     * <p>The region in which you created the VPC that you want to associate with the
+     * specified Amazon Route 53 hosted zone.</p>
+     */
     inline const VPCRegion& GetVPCRegion() const{ return m_vPCRegion; }
 
-    
+    /**
+     * <p>The region in which you created the VPC that you want to associate with the
+     * specified Amazon Route 53 hosted zone.</p>
+     */
     inline void SetVPCRegion(const VPCRegion& value) { m_vPCRegionHasBeenSet = true; m_vPCRegion = value; }
 
-    
+    /**
+     * <p>The region in which you created the VPC that you want to associate with the
+     * specified Amazon Route 53 hosted zone.</p>
+     */
     inline void SetVPCRegion(VPCRegion&& value) { m_vPCRegionHasBeenSet = true; m_vPCRegion = value; }
 
-    
+    /**
+     * <p>The region in which you created the VPC that you want to associate with the
+     * specified Amazon Route 53 hosted zone.</p>
+     */
     inline VPC& WithVPCRegion(const VPCRegion& value) { SetVPCRegion(value); return *this;}
 
-    
+    /**
+     * <p>The region in which you created the VPC that you want to associate with the
+     * specified Amazon Route 53 hosted zone.</p>
+     */
     inline VPC& WithVPCRegion(VPCRegion&& value) { SetVPCRegion(value); return *this;}
 
     

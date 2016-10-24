@@ -124,77 +124,77 @@ namespace Model
     /**
      * <p>An array of <code>XssMatchSetUpdate</code> objects that you want to insert
      * into or delete from a <a>XssMatchSet</a>. For more information, see the
-     * applicable data types:</p> <ul> <li><a>XssMatchSetUpdate</a>: Contains
-     * <code>Action</code> and <code>XssMatchTuple</code></li>
-     * <li><a>XssMatchTuple</a>: Contains <code>FieldToMatch</code> and
-     * <code>TextTransformation</code></li> <li><a>FieldToMatch</a>: Contains
-     * <code>Data</code> and <code>Type</code></li> </ul>
+     * applicable data types:</p> <ul> <li> <p> <a>XssMatchSetUpdate</a>: Contains
+     * <code>Action</code> and <code>XssMatchTuple</code> </p> </li> <li> <p>
+     * <a>XssMatchTuple</a>: Contains <code>FieldToMatch</code> and
+     * <code>TextTransformation</code> </p> </li> <li> <p> <a>FieldToMatch</a>:
+     * Contains <code>Data</code> and <code>Type</code> </p> </li> </ul>
      */
     inline const Aws::Vector<XssMatchSetUpdate>& GetUpdates() const{ return m_updates; }
 
     /**
      * <p>An array of <code>XssMatchSetUpdate</code> objects that you want to insert
      * into or delete from a <a>XssMatchSet</a>. For more information, see the
-     * applicable data types:</p> <ul> <li><a>XssMatchSetUpdate</a>: Contains
-     * <code>Action</code> and <code>XssMatchTuple</code></li>
-     * <li><a>XssMatchTuple</a>: Contains <code>FieldToMatch</code> and
-     * <code>TextTransformation</code></li> <li><a>FieldToMatch</a>: Contains
-     * <code>Data</code> and <code>Type</code></li> </ul>
+     * applicable data types:</p> <ul> <li> <p> <a>XssMatchSetUpdate</a>: Contains
+     * <code>Action</code> and <code>XssMatchTuple</code> </p> </li> <li> <p>
+     * <a>XssMatchTuple</a>: Contains <code>FieldToMatch</code> and
+     * <code>TextTransformation</code> </p> </li> <li> <p> <a>FieldToMatch</a>:
+     * Contains <code>Data</code> and <code>Type</code> </p> </li> </ul>
      */
     inline void SetUpdates(const Aws::Vector<XssMatchSetUpdate>& value) { m_updatesHasBeenSet = true; m_updates = value; }
 
     /**
      * <p>An array of <code>XssMatchSetUpdate</code> objects that you want to insert
      * into or delete from a <a>XssMatchSet</a>. For more information, see the
-     * applicable data types:</p> <ul> <li><a>XssMatchSetUpdate</a>: Contains
-     * <code>Action</code> and <code>XssMatchTuple</code></li>
-     * <li><a>XssMatchTuple</a>: Contains <code>FieldToMatch</code> and
-     * <code>TextTransformation</code></li> <li><a>FieldToMatch</a>: Contains
-     * <code>Data</code> and <code>Type</code></li> </ul>
+     * applicable data types:</p> <ul> <li> <p> <a>XssMatchSetUpdate</a>: Contains
+     * <code>Action</code> and <code>XssMatchTuple</code> </p> </li> <li> <p>
+     * <a>XssMatchTuple</a>: Contains <code>FieldToMatch</code> and
+     * <code>TextTransformation</code> </p> </li> <li> <p> <a>FieldToMatch</a>:
+     * Contains <code>Data</code> and <code>Type</code> </p> </li> </ul>
      */
     inline void SetUpdates(Aws::Vector<XssMatchSetUpdate>&& value) { m_updatesHasBeenSet = true; m_updates = value; }
 
     /**
      * <p>An array of <code>XssMatchSetUpdate</code> objects that you want to insert
      * into or delete from a <a>XssMatchSet</a>. For more information, see the
-     * applicable data types:</p> <ul> <li><a>XssMatchSetUpdate</a>: Contains
-     * <code>Action</code> and <code>XssMatchTuple</code></li>
-     * <li><a>XssMatchTuple</a>: Contains <code>FieldToMatch</code> and
-     * <code>TextTransformation</code></li> <li><a>FieldToMatch</a>: Contains
-     * <code>Data</code> and <code>Type</code></li> </ul>
+     * applicable data types:</p> <ul> <li> <p> <a>XssMatchSetUpdate</a>: Contains
+     * <code>Action</code> and <code>XssMatchTuple</code> </p> </li> <li> <p>
+     * <a>XssMatchTuple</a>: Contains <code>FieldToMatch</code> and
+     * <code>TextTransformation</code> </p> </li> <li> <p> <a>FieldToMatch</a>:
+     * Contains <code>Data</code> and <code>Type</code> </p> </li> </ul>
      */
     inline UpdateXssMatchSetRequest& WithUpdates(const Aws::Vector<XssMatchSetUpdate>& value) { SetUpdates(value); return *this;}
 
     /**
      * <p>An array of <code>XssMatchSetUpdate</code> objects that you want to insert
      * into or delete from a <a>XssMatchSet</a>. For more information, see the
-     * applicable data types:</p> <ul> <li><a>XssMatchSetUpdate</a>: Contains
-     * <code>Action</code> and <code>XssMatchTuple</code></li>
-     * <li><a>XssMatchTuple</a>: Contains <code>FieldToMatch</code> and
-     * <code>TextTransformation</code></li> <li><a>FieldToMatch</a>: Contains
-     * <code>Data</code> and <code>Type</code></li> </ul>
+     * applicable data types:</p> <ul> <li> <p> <a>XssMatchSetUpdate</a>: Contains
+     * <code>Action</code> and <code>XssMatchTuple</code> </p> </li> <li> <p>
+     * <a>XssMatchTuple</a>: Contains <code>FieldToMatch</code> and
+     * <code>TextTransformation</code> </p> </li> <li> <p> <a>FieldToMatch</a>:
+     * Contains <code>Data</code> and <code>Type</code> </p> </li> </ul>
      */
     inline UpdateXssMatchSetRequest& WithUpdates(Aws::Vector<XssMatchSetUpdate>&& value) { SetUpdates(value); return *this;}
 
     /**
      * <p>An array of <code>XssMatchSetUpdate</code> objects that you want to insert
      * into or delete from a <a>XssMatchSet</a>. For more information, see the
-     * applicable data types:</p> <ul> <li><a>XssMatchSetUpdate</a>: Contains
-     * <code>Action</code> and <code>XssMatchTuple</code></li>
-     * <li><a>XssMatchTuple</a>: Contains <code>FieldToMatch</code> and
-     * <code>TextTransformation</code></li> <li><a>FieldToMatch</a>: Contains
-     * <code>Data</code> and <code>Type</code></li> </ul>
+     * applicable data types:</p> <ul> <li> <p> <a>XssMatchSetUpdate</a>: Contains
+     * <code>Action</code> and <code>XssMatchTuple</code> </p> </li> <li> <p>
+     * <a>XssMatchTuple</a>: Contains <code>FieldToMatch</code> and
+     * <code>TextTransformation</code> </p> </li> <li> <p> <a>FieldToMatch</a>:
+     * Contains <code>Data</code> and <code>Type</code> </p> </li> </ul>
      */
     inline UpdateXssMatchSetRequest& AddUpdates(const XssMatchSetUpdate& value) { m_updatesHasBeenSet = true; m_updates.push_back(value); return *this; }
 
     /**
      * <p>An array of <code>XssMatchSetUpdate</code> objects that you want to insert
      * into or delete from a <a>XssMatchSet</a>. For more information, see the
-     * applicable data types:</p> <ul> <li><a>XssMatchSetUpdate</a>: Contains
-     * <code>Action</code> and <code>XssMatchTuple</code></li>
-     * <li><a>XssMatchTuple</a>: Contains <code>FieldToMatch</code> and
-     * <code>TextTransformation</code></li> <li><a>FieldToMatch</a>: Contains
-     * <code>Data</code> and <code>Type</code></li> </ul>
+     * applicable data types:</p> <ul> <li> <p> <a>XssMatchSetUpdate</a>: Contains
+     * <code>Action</code> and <code>XssMatchTuple</code> </p> </li> <li> <p>
+     * <a>XssMatchTuple</a>: Contains <code>FieldToMatch</code> and
+     * <code>TextTransformation</code> </p> </li> <li> <p> <a>FieldToMatch</a>:
+     * Contains <code>Data</code> and <code>Type</code> </p> </li> </ul>
      */
     inline UpdateXssMatchSetRequest& AddUpdates(XssMatchSetUpdate&& value) { m_updatesHasBeenSet = true; m_updates.push_back(value); return *this; }
 

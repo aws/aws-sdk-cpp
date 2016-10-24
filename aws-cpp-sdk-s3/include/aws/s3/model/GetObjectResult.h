@@ -899,6 +899,21 @@ namespace Model
     
     inline GetObjectResult& WithReplicationStatus(ReplicationStatus&& value) { SetReplicationStatus(value); return *this;}
 
+    /**
+     * The count of parts this object has.
+     */
+    inline int GetPartsCount() const{ return m_partsCount; }
+
+    /**
+     * The count of parts this object has.
+     */
+    inline void SetPartsCount(int value) { m_partsCount = value; }
+
+    /**
+     * The count of parts this object has.
+     */
+    inline GetObjectResult& WithPartsCount(int value) { SetPartsCount(value); return *this;}
+
   private:
     Utils::Stream::ResponseStream m_body;
     bool m_deleteMarker;
@@ -926,6 +941,7 @@ namespace Model
     StorageClass m_storageClass;
     RequestCharged m_requestCharged;
     ReplicationStatus m_replicationStatus;
+    int m_partsCount;
   };
 
 } // namespace Model

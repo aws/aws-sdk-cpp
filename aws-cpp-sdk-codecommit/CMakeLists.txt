@@ -84,7 +84,7 @@ project(aws-cpp-sdk-codecommit)
   install (FILES ${AWS_CODECOMMIT_HEADERS} DESTINATION include/aws/codecommit)
   install (FILES ${AWS_CODECOMMIT_MODEL_HEADERS} DESTINATION include/aws/codecommit/model)
 
-  if(MSVC)
+  if(PLATFORM_WINDOWS AND MSVC)
     install (FILES nuget/aws-cpp-sdk-codecommit.autopkg DESTINATION nuget)
   endif()
 

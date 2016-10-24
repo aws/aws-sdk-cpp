@@ -25,7 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input of a <i>DeleteCacheParameterGroup</i> action.</p>
+   * <p>Represents the input of a <code>DeleteCacheParameterGroup</code>
+   * operation.</p>
    */
   class AWS_ELASTICACHE_API DeleteCacheParameterGroupRequest : public ElastiCacheRequest
   {

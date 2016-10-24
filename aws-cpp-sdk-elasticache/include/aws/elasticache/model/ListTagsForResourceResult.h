@@ -35,8 +35,9 @@ namespace ElastiCache
 namespace Model
 {
   /**
-   * <p>Represents the output from the <i>AddTagsToResource</i>,
-   * <i>ListTagsOnResource</i>, and <i>RemoveTagsFromResource</i> actions.</p>
+   * <p>Represents the output from the <code>AddTagsToResource</code>,
+   * <code>ListTagsOnResource</code>, and <code>RemoveTagsFromResource</code>
+   * operations.</p>
    */
   class AWS_ELASTICACHE_API ListTagsForResourceResult
   {

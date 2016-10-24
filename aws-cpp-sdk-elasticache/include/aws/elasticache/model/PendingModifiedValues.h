@@ -33,8 +33,8 @@ namespace Model
 {
 
   /**
-   * <p>A group of settings that will be applied to the cache cluster in the future,
-   * or that are currently being applied.</p>
+   * <p>A group of settings that are applied to the cache cluster in the future, or
+   * that are currently being applied.</p>
    */
   class AWS_ELASTICACHE_API PendingModifiedValues
   {
@@ -116,79 +116,79 @@ namespace Model
     inline PendingModifiedValues& AddCacheNodeIdsToRemove(const char* value) { m_cacheNodeIdsToRemoveHasBeenSet = true; m_cacheNodeIdsToRemove.push_back(value); return *this; }
 
     /**
-     * <p>The new cache engine version that the cache cluster will run.</p>
+     * <p>The new cache engine version that the cache cluster runs.</p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
 
     /**
-     * <p>The new cache engine version that the cache cluster will run.</p>
+     * <p>The new cache engine version that the cache cluster runs.</p>
      */
     inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
 
     /**
-     * <p>The new cache engine version that the cache cluster will run.</p>
+     * <p>The new cache engine version that the cache cluster runs.</p>
      */
     inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
 
     /**
-     * <p>The new cache engine version that the cache cluster will run.</p>
+     * <p>The new cache engine version that the cache cluster runs.</p>
      */
     inline void SetEngineVersion(const char* value) { m_engineVersionHasBeenSet = true; m_engineVersion.assign(value); }
 
     /**
-     * <p>The new cache engine version that the cache cluster will run.</p>
+     * <p>The new cache engine version that the cache cluster runs.</p>
      */
     inline PendingModifiedValues& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
 
     /**
-     * <p>The new cache engine version that the cache cluster will run.</p>
+     * <p>The new cache engine version that the cache cluster runs.</p>
      */
     inline PendingModifiedValues& WithEngineVersion(Aws::String&& value) { SetEngineVersion(value); return *this;}
 
     /**
-     * <p>The new cache engine version that the cache cluster will run.</p>
+     * <p>The new cache engine version that the cache cluster runs.</p>
      */
     inline PendingModifiedValues& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
 
     /**
-     * <p>The cache node type that this cache cluster or replication group will be
-     * scaled to.</p>
+     * <p>The cache node type that this cache cluster or replication group is scaled
+     * to.</p>
      */
     inline const Aws::String& GetCacheNodeType() const{ return m_cacheNodeType; }
 
     /**
-     * <p>The cache node type that this cache cluster or replication group will be
-     * scaled to.</p>
+     * <p>The cache node type that this cache cluster or replication group is scaled
+     * to.</p>
      */
     inline void SetCacheNodeType(const Aws::String& value) { m_cacheNodeTypeHasBeenSet = true; m_cacheNodeType = value; }
 
     /**
-     * <p>The cache node type that this cache cluster or replication group will be
-     * scaled to.</p>
+     * <p>The cache node type that this cache cluster or replication group is scaled
+     * to.</p>
      */
     inline void SetCacheNodeType(Aws::String&& value) { m_cacheNodeTypeHasBeenSet = true; m_cacheNodeType = value; }
 
     /**
-     * <p>The cache node type that this cache cluster or replication group will be
-     * scaled to.</p>
+     * <p>The cache node type that this cache cluster or replication group is scaled
+     * to.</p>
      */
     inline void SetCacheNodeType(const char* value) { m_cacheNodeTypeHasBeenSet = true; m_cacheNodeType.assign(value); }
 
     /**
-     * <p>The cache node type that this cache cluster or replication group will be
-     * scaled to.</p>
+     * <p>The cache node type that this cache cluster or replication group is scaled
+     * to.</p>
      */
     inline PendingModifiedValues& WithCacheNodeType(const Aws::String& value) { SetCacheNodeType(value); return *this;}
 
     /**
-     * <p>The cache node type that this cache cluster or replication group will be
-     * scaled to.</p>
+     * <p>The cache node type that this cache cluster or replication group is scaled
+     * to.</p>
      */
     inline PendingModifiedValues& WithCacheNodeType(Aws::String&& value) { SetCacheNodeType(value); return *this;}
 
     /**
-     * <p>The cache node type that this cache cluster or replication group will be
-     * scaled to.</p>
+     * <p>The cache node type that this cache cluster or replication group is scaled
+     * to.</p>
      */
     inline PendingModifiedValues& WithCacheNodeType(const char* value) { SetCacheNodeType(value); return *this;}
 

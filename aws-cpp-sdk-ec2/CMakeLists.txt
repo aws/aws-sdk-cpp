@@ -84,7 +84,7 @@ project(aws-cpp-sdk-ec2)
   install (FILES ${AWS_EC2_HEADERS} DESTINATION include/aws/ec2)
   install (FILES ${AWS_EC2_MODEL_HEADERS} DESTINATION include/aws/ec2/model)
 
-  if(MSVC)
+  if(PLATFORM_WINDOWS AND MSVC)
     install (FILES nuget/aws-cpp-sdk-ec2.autopkg DESTINATION nuget)
   endif()
 

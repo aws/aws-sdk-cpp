@@ -263,76 +263,76 @@ namespace Model
 
     /**
      * <p>If this parameter is specified, AWS Elastic Beanstalk updates the description
-     * of this environment. </p>
+     * of this environment.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
      * <p>If this parameter is specified, AWS Elastic Beanstalk updates the description
-     * of this environment. </p>
+     * of this environment.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
      * <p>If this parameter is specified, AWS Elastic Beanstalk updates the description
-     * of this environment. </p>
+     * of this environment.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
      * <p>If this parameter is specified, AWS Elastic Beanstalk updates the description
-     * of this environment. </p>
+     * of this environment.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
      * <p>If this parameter is specified, AWS Elastic Beanstalk updates the description
-     * of this environment. </p>
+     * of this environment.</p>
      */
     inline UpdateEnvironmentRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
      * <p>If this parameter is specified, AWS Elastic Beanstalk updates the description
-     * of this environment. </p>
+     * of this environment.</p>
      */
     inline UpdateEnvironmentRequest& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
 
     /**
      * <p>If this parameter is specified, AWS Elastic Beanstalk updates the description
-     * of this environment. </p>
+     * of this environment.</p>
      */
     inline UpdateEnvironmentRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
     /**
-     * <p>This specifies the tier to use to update the environment. </p> <p>Condition:
+     * <p>This specifies the tier to use to update the environment.</p> <p>Condition:
      * At this time, if you change the tier version, name, or type, AWS Elastic
      * Beanstalk returns <code>InvalidParameterValue</code> error. </p>
      */
     inline const EnvironmentTier& GetTier() const{ return m_tier; }
 
     /**
-     * <p>This specifies the tier to use to update the environment. </p> <p>Condition:
+     * <p>This specifies the tier to use to update the environment.</p> <p>Condition:
      * At this time, if you change the tier version, name, or type, AWS Elastic
      * Beanstalk returns <code>InvalidParameterValue</code> error. </p>
      */
     inline void SetTier(const EnvironmentTier& value) { m_tierHasBeenSet = true; m_tier = value; }
 
     /**
-     * <p>This specifies the tier to use to update the environment. </p> <p>Condition:
+     * <p>This specifies the tier to use to update the environment.</p> <p>Condition:
      * At this time, if you change the tier version, name, or type, AWS Elastic
      * Beanstalk returns <code>InvalidParameterValue</code> error. </p>
      */
     inline void SetTier(EnvironmentTier&& value) { m_tierHasBeenSet = true; m_tier = value; }
 
     /**
-     * <p>This specifies the tier to use to update the environment. </p> <p>Condition:
+     * <p>This specifies the tier to use to update the environment.</p> <p>Condition:
      * At this time, if you change the tier version, name, or type, AWS Elastic
      * Beanstalk returns <code>InvalidParameterValue</code> error. </p>
      */
     inline UpdateEnvironmentRequest& WithTier(const EnvironmentTier& value) { SetTier(value); return *this;}
 
     /**
-     * <p>This specifies the tier to use to update the environment. </p> <p>Condition:
+     * <p>This specifies the tier to use to update the environment.</p> <p>Condition:
      * At this time, if you change the tier version, name, or type, AWS Elastic
      * Beanstalk returns <code>InvalidParameterValue</code> error. </p>
      */
@@ -445,134 +445,134 @@ namespace Model
 
     /**
      * <p>This specifies the platform version that the environment will run after the
-     * environment is updated. </p>
+     * environment is updated.</p>
      */
     inline const Aws::String& GetSolutionStackName() const{ return m_solutionStackName; }
 
     /**
      * <p>This specifies the platform version that the environment will run after the
-     * environment is updated. </p>
+     * environment is updated.</p>
      */
     inline void SetSolutionStackName(const Aws::String& value) { m_solutionStackNameHasBeenSet = true; m_solutionStackName = value; }
 
     /**
      * <p>This specifies the platform version that the environment will run after the
-     * environment is updated. </p>
+     * environment is updated.</p>
      */
     inline void SetSolutionStackName(Aws::String&& value) { m_solutionStackNameHasBeenSet = true; m_solutionStackName = value; }
 
     /**
      * <p>This specifies the platform version that the environment will run after the
-     * environment is updated. </p>
+     * environment is updated.</p>
      */
     inline void SetSolutionStackName(const char* value) { m_solutionStackNameHasBeenSet = true; m_solutionStackName.assign(value); }
 
     /**
      * <p>This specifies the platform version that the environment will run after the
-     * environment is updated. </p>
+     * environment is updated.</p>
      */
     inline UpdateEnvironmentRequest& WithSolutionStackName(const Aws::String& value) { SetSolutionStackName(value); return *this;}
 
     /**
      * <p>This specifies the platform version that the environment will run after the
-     * environment is updated. </p>
+     * environment is updated.</p>
      */
     inline UpdateEnvironmentRequest& WithSolutionStackName(Aws::String&& value) { SetSolutionStackName(value); return *this;}
 
     /**
      * <p>This specifies the platform version that the environment will run after the
-     * environment is updated. </p>
+     * environment is updated.</p>
      */
     inline UpdateEnvironmentRequest& WithSolutionStackName(const char* value) { SetSolutionStackName(value); return *this;}
 
     /**
      * <p>If specified, AWS Elastic Beanstalk updates the configuration set associated
      * with the running environment and sets the specified configuration options to the
-     * requested value. </p>
+     * requested value.</p>
      */
     inline const Aws::Vector<ConfigurationOptionSetting>& GetOptionSettings() const{ return m_optionSettings; }
 
     /**
      * <p>If specified, AWS Elastic Beanstalk updates the configuration set associated
      * with the running environment and sets the specified configuration options to the
-     * requested value. </p>
+     * requested value.</p>
      */
     inline void SetOptionSettings(const Aws::Vector<ConfigurationOptionSetting>& value) { m_optionSettingsHasBeenSet = true; m_optionSettings = value; }
 
     /**
      * <p>If specified, AWS Elastic Beanstalk updates the configuration set associated
      * with the running environment and sets the specified configuration options to the
-     * requested value. </p>
+     * requested value.</p>
      */
     inline void SetOptionSettings(Aws::Vector<ConfigurationOptionSetting>&& value) { m_optionSettingsHasBeenSet = true; m_optionSettings = value; }
 
     /**
      * <p>If specified, AWS Elastic Beanstalk updates the configuration set associated
      * with the running environment and sets the specified configuration options to the
-     * requested value. </p>
+     * requested value.</p>
      */
     inline UpdateEnvironmentRequest& WithOptionSettings(const Aws::Vector<ConfigurationOptionSetting>& value) { SetOptionSettings(value); return *this;}
 
     /**
      * <p>If specified, AWS Elastic Beanstalk updates the configuration set associated
      * with the running environment and sets the specified configuration options to the
-     * requested value. </p>
+     * requested value.</p>
      */
     inline UpdateEnvironmentRequest& WithOptionSettings(Aws::Vector<ConfigurationOptionSetting>&& value) { SetOptionSettings(value); return *this;}
 
     /**
      * <p>If specified, AWS Elastic Beanstalk updates the configuration set associated
      * with the running environment and sets the specified configuration options to the
-     * requested value. </p>
+     * requested value.</p>
      */
     inline UpdateEnvironmentRequest& AddOptionSettings(const ConfigurationOptionSetting& value) { m_optionSettingsHasBeenSet = true; m_optionSettings.push_back(value); return *this; }
 
     /**
      * <p>If specified, AWS Elastic Beanstalk updates the configuration set associated
      * with the running environment and sets the specified configuration options to the
-     * requested value. </p>
+     * requested value.</p>
      */
     inline UpdateEnvironmentRequest& AddOptionSettings(ConfigurationOptionSetting&& value) { m_optionSettingsHasBeenSet = true; m_optionSettings.push_back(value); return *this; }
 
     /**
      * <p>A list of custom user-defined configuration options to remove from the
-     * configuration set for this environment. </p>
+     * configuration set for this environment.</p>
      */
     inline const Aws::Vector<OptionSpecification>& GetOptionsToRemove() const{ return m_optionsToRemove; }
 
     /**
      * <p>A list of custom user-defined configuration options to remove from the
-     * configuration set for this environment. </p>
+     * configuration set for this environment.</p>
      */
     inline void SetOptionsToRemove(const Aws::Vector<OptionSpecification>& value) { m_optionsToRemoveHasBeenSet = true; m_optionsToRemove = value; }
 
     /**
      * <p>A list of custom user-defined configuration options to remove from the
-     * configuration set for this environment. </p>
+     * configuration set for this environment.</p>
      */
     inline void SetOptionsToRemove(Aws::Vector<OptionSpecification>&& value) { m_optionsToRemoveHasBeenSet = true; m_optionsToRemove = value; }
 
     /**
      * <p>A list of custom user-defined configuration options to remove from the
-     * configuration set for this environment. </p>
+     * configuration set for this environment.</p>
      */
     inline UpdateEnvironmentRequest& WithOptionsToRemove(const Aws::Vector<OptionSpecification>& value) { SetOptionsToRemove(value); return *this;}
 
     /**
      * <p>A list of custom user-defined configuration options to remove from the
-     * configuration set for this environment. </p>
+     * configuration set for this environment.</p>
      */
     inline UpdateEnvironmentRequest& WithOptionsToRemove(Aws::Vector<OptionSpecification>&& value) { SetOptionsToRemove(value); return *this;}
 
     /**
      * <p>A list of custom user-defined configuration options to remove from the
-     * configuration set for this environment. </p>
+     * configuration set for this environment.</p>
      */
     inline UpdateEnvironmentRequest& AddOptionsToRemove(const OptionSpecification& value) { m_optionsToRemoveHasBeenSet = true; m_optionsToRemove.push_back(value); return *this; }
 
     /**
      * <p>A list of custom user-defined configuration options to remove from the
-     * configuration set for this environment. </p>
+     * configuration set for this environment.</p>
      */
     inline UpdateEnvironmentRequest& AddOptionsToRemove(OptionSpecification&& value) { m_optionsToRemoveHasBeenSet = true; m_optionsToRemove.push_back(value); return *this; }
 

@@ -41,37 +41,42 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * <p>The category of the custom action, such as a source action or a build
-     * action.</p> <note> <p>Although Source is listed as a valid value, it is not
-     * currently functional. This value is reserved for future use.</p> </note>
+     * <p>The category of the custom action, such as a build action or a test
+     * action.</p> <note> <p>Although Source and Approval are listed as valid values,
+     * they are not currently functional. These values are reserved for future use.</p>
+     * </note>
      */
     inline const ActionCategory& GetCategory() const{ return m_category; }
 
     /**
-     * <p>The category of the custom action, such as a source action or a build
-     * action.</p> <note> <p>Although Source is listed as a valid value, it is not
-     * currently functional. This value is reserved for future use.</p> </note>
+     * <p>The category of the custom action, such as a build action or a test
+     * action.</p> <note> <p>Although Source and Approval are listed as valid values,
+     * they are not currently functional. These values are reserved for future use.</p>
+     * </note>
      */
     inline void SetCategory(const ActionCategory& value) { m_categoryHasBeenSet = true; m_category = value; }
 
     /**
-     * <p>The category of the custom action, such as a source action or a build
-     * action.</p> <note> <p>Although Source is listed as a valid value, it is not
-     * currently functional. This value is reserved for future use.</p> </note>
+     * <p>The category of the custom action, such as a build action or a test
+     * action.</p> <note> <p>Although Source and Approval are listed as valid values,
+     * they are not currently functional. These values are reserved for future use.</p>
+     * </note>
      */
     inline void SetCategory(ActionCategory&& value) { m_categoryHasBeenSet = true; m_category = value; }
 
     /**
-     * <p>The category of the custom action, such as a source action or a build
-     * action.</p> <note> <p>Although Source is listed as a valid value, it is not
-     * currently functional. This value is reserved for future use.</p> </note>
+     * <p>The category of the custom action, such as a build action or a test
+     * action.</p> <note> <p>Although Source and Approval are listed as valid values,
+     * they are not currently functional. These values are reserved for future use.</p>
+     * </note>
      */
     inline CreateCustomActionTypeRequest& WithCategory(const ActionCategory& value) { SetCategory(value); return *this;}
 
     /**
-     * <p>The category of the custom action, such as a source action or a build
-     * action.</p> <note> <p>Although Source is listed as a valid value, it is not
-     * currently functional. This value is reserved for future use.</p> </note>
+     * <p>The category of the custom action, such as a build action or a test
+     * action.</p> <note> <p>Although Source and Approval are listed as valid values,
+     * they are not currently functional. These values are reserved for future use.</p>
+     * </note>
      */
     inline CreateCustomActionTypeRequest& WithCategory(ActionCategory&& value) { SetCategory(value); return *this;}
 
@@ -118,37 +123,37 @@ namespace Model
     inline CreateCustomActionTypeRequest& WithProvider(const char* value) { SetProvider(value); return *this;}
 
     /**
-     * <p>The version number of the custom action.</p>
+     * <p>The version identifier of the custom action.</p>
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
 
     /**
-     * <p>The version number of the custom action.</p>
+     * <p>The version identifier of the custom action.</p>
      */
     inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
 
     /**
-     * <p>The version number of the custom action.</p>
+     * <p>The version identifier of the custom action.</p>
      */
     inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = value; }
 
     /**
-     * <p>The version number of the custom action.</p>
+     * <p>The version identifier of the custom action.</p>
      */
     inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
 
     /**
-     * <p>The version number of the custom action.</p>
+     * <p>The version identifier of the custom action.</p>
      */
     inline CreateCustomActionTypeRequest& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
 
     /**
-     * <p>The version number of the custom action.</p>
+     * <p>The version identifier of the custom action.</p>
      */
     inline CreateCustomActionTypeRequest& WithVersion(Aws::String&& value) { SetVersion(value); return *this;}
 
     /**
-     * <p>The version number of the custom action.</p>
+     * <p>The version identifier of the custom action.</p>
      */
     inline CreateCustomActionTypeRequest& WithVersion(const char* value) { SetVersion(value); return *this;}
 

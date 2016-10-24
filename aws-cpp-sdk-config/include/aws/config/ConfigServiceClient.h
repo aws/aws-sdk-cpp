@@ -378,10 +378,10 @@ namespace Model
          * <p>Schedules delivery of a configuration snapshot to the Amazon S3 bucket in the
          * specified delivery channel. After the delivery has started, AWS Config sends
          * following notifications using an Amazon SNS topic that you have specified.</p>
-         * <ul> <li>Notification of starting the delivery.</li> <li>Notification of
-         * delivery completed, if the delivery was successfully completed.</li>
-         * <li>Notification of delivery failure, if the delivery failed to complete.</li>
-         * </ul>
+         * <ul> <li> <p>Notification of starting the delivery.</p> </li> <li>
+         * <p>Notification of delivery completed, if the delivery was successfully
+         * completed.</p> </li> <li> <p>Notification of delivery failure, if the delivery
+         * failed to complete.</p> </li> </ul>
          */
         virtual Model::DeliverConfigSnapshotOutcome DeliverConfigSnapshot(const Model::DeliverConfigSnapshotRequest& request) const;
 
@@ -389,10 +389,10 @@ namespace Model
          * <p>Schedules delivery of a configuration snapshot to the Amazon S3 bucket in the
          * specified delivery channel. After the delivery has started, AWS Config sends
          * following notifications using an Amazon SNS topic that you have specified.</p>
-         * <ul> <li>Notification of starting the delivery.</li> <li>Notification of
-         * delivery completed, if the delivery was successfully completed.</li>
-         * <li>Notification of delivery failure, if the delivery failed to complete.</li>
-         * </ul>
+         * <ul> <li> <p>Notification of starting the delivery.</p> </li> <li>
+         * <p>Notification of delivery completed, if the delivery was successfully
+         * completed.</p> </li> <li> <p>Notification of delivery failure, if the delivery
+         * failed to complete.</p> </li> </ul>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -402,10 +402,10 @@ namespace Model
          * <p>Schedules delivery of a configuration snapshot to the Amazon S3 bucket in the
          * specified delivery channel. After the delivery has started, AWS Config sends
          * following notifications using an Amazon SNS topic that you have specified.</p>
-         * <ul> <li>Notification of starting the delivery.</li> <li>Notification of
-         * delivery completed, if the delivery was successfully completed.</li>
-         * <li>Notification of delivery failure, if the delivery failed to complete.</li>
-         * </ul>
+         * <ul> <li> <p>Notification of starting the delivery.</p> </li> <li>
+         * <p>Notification of delivery completed, if the delivery was successfully
+         * completed.</p> </li> <li> <p>Notification of delivery failure, if the delivery
+         * failed to complete.</p> </li> </ul>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -415,22 +415,22 @@ namespace Model
          * <p>Indicates whether the specified AWS Config rules are compliant. If a rule is
          * noncompliant, this action returns the number of AWS resources that do not comply
          * with the rule.</p> <p>A rule is compliant if all of the evaluated resources
-         * comply with it, and it is noncompliant if any of these resources do not comply.
-         * </p> <p>If AWS Config has no current evaluation results for the rule, it returns
-         * <code>INSUFFICIENT_DATA</code>. This result might indicate one of the following
-         * conditions:</p> <ul> <li>AWS Config has never invoked an evaluation for the
-         * rule. To check whether it has, use the
+         * comply with it, and it is noncompliant if any of these resources do not
+         * comply.</p> <p>If AWS Config has no current evaluation results for the rule, it
+         * returns <code>INSUFFICIENT_DATA</code>. This result might indicate one of the
+         * following conditions:</p> <ul> <li> <p>AWS Config has never invoked an
+         * evaluation for the rule. To check whether it has, use the
          * <code>DescribeConfigRuleEvaluationStatus</code> action to get the
          * <code>LastSuccessfulInvocationTime</code> and
-         * <code>LastFailedInvocationTime</code>.</li> <li>The rule's AWS Lambda function
-         * is failing to send evaluation results to AWS Config. Verify that the role that
-         * you assigned to your configuration recorder includes the
+         * <code>LastFailedInvocationTime</code>.</p> </li> <li> <p>The rule's AWS Lambda
+         * function is failing to send evaluation results to AWS Config. Verify that the
+         * role that you assigned to your configuration recorder includes the
          * <code>config:PutEvaluations</code> permission. If the rule is a custom rule,
          * verify that the AWS Lambda execution role includes the
-         * <code>config:PutEvaluations</code> permission.</li> <li>The rule's AWS Lambda
-         * function has returned <code>NOT_APPLICABLE</code> for all evaluation results.
-         * This can occur if the resources were deleted or removed from the rule's
-         * scope.</li> </ul>
+         * <code>config:PutEvaluations</code> permission.</p> </li> <li> <p>The rule's AWS
+         * Lambda function has returned <code>NOT_APPLICABLE</code> for all evaluation
+         * results. This can occur if the resources were deleted or removed from the rule's
+         * scope.</p> </li> </ul>
          */
         virtual Model::DescribeComplianceByConfigRuleOutcome DescribeComplianceByConfigRule(const Model::DescribeComplianceByConfigRuleRequest& request) const;
 
@@ -438,22 +438,22 @@ namespace Model
          * <p>Indicates whether the specified AWS Config rules are compliant. If a rule is
          * noncompliant, this action returns the number of AWS resources that do not comply
          * with the rule.</p> <p>A rule is compliant if all of the evaluated resources
-         * comply with it, and it is noncompliant if any of these resources do not comply.
-         * </p> <p>If AWS Config has no current evaluation results for the rule, it returns
-         * <code>INSUFFICIENT_DATA</code>. This result might indicate one of the following
-         * conditions:</p> <ul> <li>AWS Config has never invoked an evaluation for the
-         * rule. To check whether it has, use the
+         * comply with it, and it is noncompliant if any of these resources do not
+         * comply.</p> <p>If AWS Config has no current evaluation results for the rule, it
+         * returns <code>INSUFFICIENT_DATA</code>. This result might indicate one of the
+         * following conditions:</p> <ul> <li> <p>AWS Config has never invoked an
+         * evaluation for the rule. To check whether it has, use the
          * <code>DescribeConfigRuleEvaluationStatus</code> action to get the
          * <code>LastSuccessfulInvocationTime</code> and
-         * <code>LastFailedInvocationTime</code>.</li> <li>The rule's AWS Lambda function
-         * is failing to send evaluation results to AWS Config. Verify that the role that
-         * you assigned to your configuration recorder includes the
+         * <code>LastFailedInvocationTime</code>.</p> </li> <li> <p>The rule's AWS Lambda
+         * function is failing to send evaluation results to AWS Config. Verify that the
+         * role that you assigned to your configuration recorder includes the
          * <code>config:PutEvaluations</code> permission. If the rule is a custom rule,
          * verify that the AWS Lambda execution role includes the
-         * <code>config:PutEvaluations</code> permission.</li> <li>The rule's AWS Lambda
-         * function has returned <code>NOT_APPLICABLE</code> for all evaluation results.
-         * This can occur if the resources were deleted or removed from the rule's
-         * scope.</li> </ul>
+         * <code>config:PutEvaluations</code> permission.</p> </li> <li> <p>The rule's AWS
+         * Lambda function has returned <code>NOT_APPLICABLE</code> for all evaluation
+         * results. This can occur if the resources were deleted or removed from the rule's
+         * scope.</p> </li> </ul>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -463,22 +463,22 @@ namespace Model
          * <p>Indicates whether the specified AWS Config rules are compliant. If a rule is
          * noncompliant, this action returns the number of AWS resources that do not comply
          * with the rule.</p> <p>A rule is compliant if all of the evaluated resources
-         * comply with it, and it is noncompliant if any of these resources do not comply.
-         * </p> <p>If AWS Config has no current evaluation results for the rule, it returns
-         * <code>INSUFFICIENT_DATA</code>. This result might indicate one of the following
-         * conditions:</p> <ul> <li>AWS Config has never invoked an evaluation for the
-         * rule. To check whether it has, use the
+         * comply with it, and it is noncompliant if any of these resources do not
+         * comply.</p> <p>If AWS Config has no current evaluation results for the rule, it
+         * returns <code>INSUFFICIENT_DATA</code>. This result might indicate one of the
+         * following conditions:</p> <ul> <li> <p>AWS Config has never invoked an
+         * evaluation for the rule. To check whether it has, use the
          * <code>DescribeConfigRuleEvaluationStatus</code> action to get the
          * <code>LastSuccessfulInvocationTime</code> and
-         * <code>LastFailedInvocationTime</code>.</li> <li>The rule's AWS Lambda function
-         * is failing to send evaluation results to AWS Config. Verify that the role that
-         * you assigned to your configuration recorder includes the
+         * <code>LastFailedInvocationTime</code>.</p> </li> <li> <p>The rule's AWS Lambda
+         * function is failing to send evaluation results to AWS Config. Verify that the
+         * role that you assigned to your configuration recorder includes the
          * <code>config:PutEvaluations</code> permission. If the rule is a custom rule,
          * verify that the AWS Lambda execution role includes the
-         * <code>config:PutEvaluations</code> permission.</li> <li>The rule's AWS Lambda
-         * function has returned <code>NOT_APPLICABLE</code> for all evaluation results.
-         * This can occur if the resources were deleted or removed from the rule's
-         * scope.</li> </ul>
+         * <code>config:PutEvaluations</code> permission.</p> </li> <li> <p>The rule's AWS
+         * Lambda function has returned <code>NOT_APPLICABLE</code> for all evaluation
+         * results. This can occur if the resources were deleted or removed from the rule's
+         * scope.</p> </li> </ul>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -487,48 +487,48 @@ namespace Model
         /**
          * <p>Indicates whether the specified AWS resources are compliant. If a resource is
          * noncompliant, this action returns the number of AWS Config rules that the
-         * resource does not comply with. </p> <p>A resource is compliant if it complies
+         * resource does not comply with.</p> <p>A resource is compliant if it complies
          * with all the AWS Config rules that evaluate it. It is noncompliant if it does
          * not comply with one or more of these rules.</p> <p>If AWS Config has no current
          * evaluation results for the resource, it returns <code>INSUFFICIENT_DATA</code>.
          * This result might indicate one of the following conditions about the rules that
-         * evaluate the resource:</p> <ul> <li>AWS Config has never invoked an evaluation
-         * for the rule. To check whether it has, use the
+         * evaluate the resource:</p> <ul> <li> <p>AWS Config has never invoked an
+         * evaluation for the rule. To check whether it has, use the
          * <code>DescribeConfigRuleEvaluationStatus</code> action to get the
          * <code>LastSuccessfulInvocationTime</code> and
-         * <code>LastFailedInvocationTime</code>.</li> <li>The rule's AWS Lambda function
-         * is failing to send evaluation results to AWS Config. Verify that the role that
-         * you assigned to your configuration recorder includes the
+         * <code>LastFailedInvocationTime</code>.</p> </li> <li> <p>The rule's AWS Lambda
+         * function is failing to send evaluation results to AWS Config. Verify that the
+         * role that you assigned to your configuration recorder includes the
          * <code>config:PutEvaluations</code> permission. If the rule is a custom rule,
          * verify that the AWS Lambda execution role includes the
-         * <code>config:PutEvaluations</code> permission.</li> <li>The rule's AWS Lambda
-         * function has returned <code>NOT_APPLICABLE</code> for all evaluation results.
-         * This can occur if the resources were deleted or removed from the rule's
-         * scope.</li> </ul>
+         * <code>config:PutEvaluations</code> permission.</p> </li> <li> <p>The rule's AWS
+         * Lambda function has returned <code>NOT_APPLICABLE</code> for all evaluation
+         * results. This can occur if the resources were deleted or removed from the rule's
+         * scope.</p> </li> </ul>
          */
         virtual Model::DescribeComplianceByResourceOutcome DescribeComplianceByResource(const Model::DescribeComplianceByResourceRequest& request) const;
 
         /**
          * <p>Indicates whether the specified AWS resources are compliant. If a resource is
          * noncompliant, this action returns the number of AWS Config rules that the
-         * resource does not comply with. </p> <p>A resource is compliant if it complies
+         * resource does not comply with.</p> <p>A resource is compliant if it complies
          * with all the AWS Config rules that evaluate it. It is noncompliant if it does
          * not comply with one or more of these rules.</p> <p>If AWS Config has no current
          * evaluation results for the resource, it returns <code>INSUFFICIENT_DATA</code>.
          * This result might indicate one of the following conditions about the rules that
-         * evaluate the resource:</p> <ul> <li>AWS Config has never invoked an evaluation
-         * for the rule. To check whether it has, use the
+         * evaluate the resource:</p> <ul> <li> <p>AWS Config has never invoked an
+         * evaluation for the rule. To check whether it has, use the
          * <code>DescribeConfigRuleEvaluationStatus</code> action to get the
          * <code>LastSuccessfulInvocationTime</code> and
-         * <code>LastFailedInvocationTime</code>.</li> <li>The rule's AWS Lambda function
-         * is failing to send evaluation results to AWS Config. Verify that the role that
-         * you assigned to your configuration recorder includes the
+         * <code>LastFailedInvocationTime</code>.</p> </li> <li> <p>The rule's AWS Lambda
+         * function is failing to send evaluation results to AWS Config. Verify that the
+         * role that you assigned to your configuration recorder includes the
          * <code>config:PutEvaluations</code> permission. If the rule is a custom rule,
          * verify that the AWS Lambda execution role includes the
-         * <code>config:PutEvaluations</code> permission.</li> <li>The rule's AWS Lambda
-         * function has returned <code>NOT_APPLICABLE</code> for all evaluation results.
-         * This can occur if the resources were deleted or removed from the rule's
-         * scope.</li> </ul>
+         * <code>config:PutEvaluations</code> permission.</p> </li> <li> <p>The rule's AWS
+         * Lambda function has returned <code>NOT_APPLICABLE</code> for all evaluation
+         * results. This can occur if the resources were deleted or removed from the rule's
+         * scope.</p> </li> </ul>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -537,24 +537,24 @@ namespace Model
         /**
          * <p>Indicates whether the specified AWS resources are compliant. If a resource is
          * noncompliant, this action returns the number of AWS Config rules that the
-         * resource does not comply with. </p> <p>A resource is compliant if it complies
+         * resource does not comply with.</p> <p>A resource is compliant if it complies
          * with all the AWS Config rules that evaluate it. It is noncompliant if it does
          * not comply with one or more of these rules.</p> <p>If AWS Config has no current
          * evaluation results for the resource, it returns <code>INSUFFICIENT_DATA</code>.
          * This result might indicate one of the following conditions about the rules that
-         * evaluate the resource:</p> <ul> <li>AWS Config has never invoked an evaluation
-         * for the rule. To check whether it has, use the
+         * evaluate the resource:</p> <ul> <li> <p>AWS Config has never invoked an
+         * evaluation for the rule. To check whether it has, use the
          * <code>DescribeConfigRuleEvaluationStatus</code> action to get the
          * <code>LastSuccessfulInvocationTime</code> and
-         * <code>LastFailedInvocationTime</code>.</li> <li>The rule's AWS Lambda function
-         * is failing to send evaluation results to AWS Config. Verify that the role that
-         * you assigned to your configuration recorder includes the
+         * <code>LastFailedInvocationTime</code>.</p> </li> <li> <p>The rule's AWS Lambda
+         * function is failing to send evaluation results to AWS Config. Verify that the
+         * role that you assigned to your configuration recorder includes the
          * <code>config:PutEvaluations</code> permission. If the rule is a custom rule,
          * verify that the AWS Lambda execution role includes the
-         * <code>config:PutEvaluations</code> permission.</li> <li>The rule's AWS Lambda
-         * function has returned <code>NOT_APPLICABLE</code> for all evaluation results.
-         * This can occur if the resources were deleted or removed from the rule's
-         * scope.</li> </ul>
+         * <code>config:PutEvaluations</code> permission.</p> </li> <li> <p>The rule's AWS
+         * Lambda function has returned <code>NOT_APPLICABLE</code> for all evaluation
+         * results. This can occur if the resources were deleted or removed from the rule's
+         * scope.</p> </li> </ul>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -611,7 +611,8 @@ namespace Model
          * <p>Returns the current status of the specified configuration recorder. If a
          * configuration recorder is not specified, this action returns the status of all
          * configuration recorder associated with the account.</p> <note> <p>Currently, you
-         * can specify only one configuration recorder per account.</p> </note>
+         * can specify only one configuration recorder per region in your account.</p>
+         * </note>
          */
         virtual Model::DescribeConfigurationRecorderStatusOutcome DescribeConfigurationRecorderStatus(const Model::DescribeConfigurationRecorderStatusRequest& request) const;
 
@@ -619,7 +620,8 @@ namespace Model
          * <p>Returns the current status of the specified configuration recorder. If a
          * configuration recorder is not specified, this action returns the status of all
          * configuration recorder associated with the account.</p> <note> <p>Currently, you
-         * can specify only one configuration recorder per account.</p> </note>
+         * can specify only one configuration recorder per region in your account.</p>
+         * </note>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -629,35 +631,39 @@ namespace Model
          * <p>Returns the current status of the specified configuration recorder. If a
          * configuration recorder is not specified, this action returns the status of all
          * configuration recorder associated with the account.</p> <note> <p>Currently, you
-         * can specify only one configuration recorder per account.</p> </note>
+         * can specify only one configuration recorder per region in your account.</p>
+         * </note>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeConfigurationRecorderStatusAsync(const Model::DescribeConfigurationRecorderStatusRequest& request, const DescribeConfigurationRecorderStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns the name of one or more specified configuration recorders. If the
-         * recorder name is not specified, this action returns the names of all the
-         * configuration recorders associated with the account. </p> <note> <p>Currently,
-         * you can specify only one configuration recorder per account.</p> </note>
+         * <p>Returns the details for the specified configuration recorders. If the
+         * configuration recorder is not specified, this action returns the details for all
+         * configuration recorders associated with the account.</p> <note> <p>Currently,
+         * you can specify only one configuration recorder per region in your account.</p>
+         * </note>
          */
         virtual Model::DescribeConfigurationRecordersOutcome DescribeConfigurationRecorders(const Model::DescribeConfigurationRecordersRequest& request) const;
 
         /**
-         * <p>Returns the name of one or more specified configuration recorders. If the
-         * recorder name is not specified, this action returns the names of all the
-         * configuration recorders associated with the account. </p> <note> <p>Currently,
-         * you can specify only one configuration recorder per account.</p> </note>
+         * <p>Returns the details for the specified configuration recorders. If the
+         * configuration recorder is not specified, this action returns the details for all
+         * configuration recorders associated with the account.</p> <note> <p>Currently,
+         * you can specify only one configuration recorder per region in your account.</p>
+         * </note>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeConfigurationRecordersOutcomeCallable DescribeConfigurationRecordersCallable(const Model::DescribeConfigurationRecordersRequest& request) const;
 
         /**
-         * <p>Returns the name of one or more specified configuration recorders. If the
-         * recorder name is not specified, this action returns the names of all the
-         * configuration recorders associated with the account. </p> <note> <p>Currently,
-         * you can specify only one configuration recorder per account.</p> </note>
+         * <p>Returns the details for the specified configuration recorders. If the
+         * configuration recorder is not specified, this action returns the details for all
+         * configuration recorders associated with the account.</p> <note> <p>Currently,
+         * you can specify only one configuration recorder per region in your account.</p>
+         * </note>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -666,16 +672,16 @@ namespace Model
         /**
          * <p>Returns the current status of the specified delivery channel. If a delivery
          * channel is not specified, this action returns the current status of all delivery
-         * channels associated with the account. </p> <note> <p>Currently, you can specify
-         * only one delivery channel per account.</p> </note>
+         * channels associated with the account.</p> <note> <p>Currently, you can specify
+         * only one delivery channel per region in your account.</p> </note>
          */
         virtual Model::DescribeDeliveryChannelStatusOutcome DescribeDeliveryChannelStatus(const Model::DescribeDeliveryChannelStatusRequest& request) const;
 
         /**
          * <p>Returns the current status of the specified delivery channel. If a delivery
          * channel is not specified, this action returns the current status of all delivery
-         * channels associated with the account. </p> <note> <p>Currently, you can specify
-         * only one delivery channel per account.</p> </note>
+         * channels associated with the account.</p> <note> <p>Currently, you can specify
+         * only one delivery channel per region in your account.</p> </note>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -684,8 +690,8 @@ namespace Model
         /**
          * <p>Returns the current status of the specified delivery channel. If a delivery
          * channel is not specified, this action returns the current status of all delivery
-         * channels associated with the account. </p> <note> <p>Currently, you can specify
-         * only one delivery channel per account.</p> </note>
+         * channels associated with the account.</p> <note> <p>Currently, you can specify
+         * only one delivery channel per region in your account.</p> </note>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -694,16 +700,16 @@ namespace Model
         /**
          * <p>Returns details about the specified delivery channel. If a delivery channel
          * is not specified, this action returns the details of all delivery channels
-         * associated with the account. </p> <note> <p>Currently, you can specify only one
-         * delivery channel per account.</p> </note>
+         * associated with the account.</p> <note> <p>Currently, you can specify only one
+         * delivery channel per region in your account.</p> </note>
          */
         virtual Model::DescribeDeliveryChannelsOutcome DescribeDeliveryChannels(const Model::DescribeDeliveryChannelsRequest& request) const;
 
         /**
          * <p>Returns details about the specified delivery channel. If a delivery channel
          * is not specified, this action returns the details of all delivery channels
-         * associated with the account. </p> <note> <p>Currently, you can specify only one
-         * delivery channel per account.</p> </note>
+         * associated with the account.</p> <note> <p>Currently, you can specify only one
+         * delivery channel per region in your account.</p> </note>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -712,8 +718,8 @@ namespace Model
         /**
          * <p>Returns details about the specified delivery channel. If a delivery channel
          * is not specified, this action returns the details of all delivery channels
-         * associated with the account. </p> <note> <p>Currently, you can specify only one
-         * delivery channel per account.</p> </note>
+         * associated with the account.</p> <note> <p>Currently, you can specify only one
+         * delivery channel per region in your account.</p> </note>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -918,7 +924,7 @@ namespace Model
 
         /**
          * <p>Adds or updates an AWS Config rule for evaluating whether your AWS resources
-         * comply with your desired configurations. </p> <p>You can use this action for
+         * comply with your desired configurations.</p> <p>You can use this action for
          * custom Config rules and AWS managed Config rules. A custom Config rule is a rule
          * that you develop and maintain. An AWS managed Config rule is a customizable,
          * predefined rule that AWS Config provides.</p> <p>If you are adding a new custom
@@ -936,7 +942,7 @@ namespace Model
          * <code>ConfigRuleName</code> in the <code>ConfigRule</code> object. Do not
          * specify the <code>ConfigRuleArn</code> or the <code>ConfigRuleId</code>. These
          * values are generated by AWS Config for new rules.</p> <p>If you are updating a
-         * rule that you have added previously, specify the rule's
+         * rule that you added previously, you can specify the rule by
          * <code>ConfigRuleName</code>, <code>ConfigRuleId</code>, or
          * <code>ConfigRuleArn</code> in the <code>ConfigRule</code> data type that you use
          * in this request.</p> <p>The maximum number of rules that AWS Config supports is
@@ -944,13 +950,13 @@ namespace Model
          * <a
          * href="http://docs.aws.amazon.com/config/latest/developerguide/evaluate-config.html">Evaluating
          * AWS Resource Configurations with AWS Config</a> in the <i>AWS Config Developer
-         * Guide</i>.</p> <p/>
+         * Guide</i>.</p>
          */
         virtual Model::PutConfigRuleOutcome PutConfigRule(const Model::PutConfigRuleRequest& request) const;
 
         /**
          * <p>Adds or updates an AWS Config rule for evaluating whether your AWS resources
-         * comply with your desired configurations. </p> <p>You can use this action for
+         * comply with your desired configurations.</p> <p>You can use this action for
          * custom Config rules and AWS managed Config rules. A custom Config rule is a rule
          * that you develop and maintain. An AWS managed Config rule is a customizable,
          * predefined rule that AWS Config provides.</p> <p>If you are adding a new custom
@@ -968,7 +974,7 @@ namespace Model
          * <code>ConfigRuleName</code> in the <code>ConfigRule</code> object. Do not
          * specify the <code>ConfigRuleArn</code> or the <code>ConfigRuleId</code>. These
          * values are generated by AWS Config for new rules.</p> <p>If you are updating a
-         * rule that you have added previously, specify the rule's
+         * rule that you added previously, you can specify the rule by
          * <code>ConfigRuleName</code>, <code>ConfigRuleId</code>, or
          * <code>ConfigRuleArn</code> in the <code>ConfigRule</code> data type that you use
          * in this request.</p> <p>The maximum number of rules that AWS Config supports is
@@ -976,7 +982,7 @@ namespace Model
          * <a
          * href="http://docs.aws.amazon.com/config/latest/developerguide/evaluate-config.html">Evaluating
          * AWS Resource Configurations with AWS Config</a> in the <i>AWS Config Developer
-         * Guide</i>.</p> <p/>
+         * Guide</i>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -984,7 +990,7 @@ namespace Model
 
         /**
          * <p>Adds or updates an AWS Config rule for evaluating whether your AWS resources
-         * comply with your desired configurations. </p> <p>You can use this action for
+         * comply with your desired configurations.</p> <p>You can use this action for
          * custom Config rules and AWS managed Config rules. A custom Config rule is a rule
          * that you develop and maintain. An AWS managed Config rule is a customizable,
          * predefined rule that AWS Config provides.</p> <p>If you are adding a new custom
@@ -1002,7 +1008,7 @@ namespace Model
          * <code>ConfigRuleName</code> in the <code>ConfigRule</code> object. Do not
          * specify the <code>ConfigRuleArn</code> or the <code>ConfigRuleId</code>. These
          * values are generated by AWS Config for new rules.</p> <p>If you are updating a
-         * rule that you have added previously, specify the rule's
+         * rule that you added previously, you can specify the rule by
          * <code>ConfigRuleName</code>, <code>ConfigRuleId</code>, or
          * <code>ConfigRuleArn</code> in the <code>ConfigRule</code> data type that you use
          * in this request.</p> <p>The maximum number of rules that AWS Config supports is
@@ -1010,7 +1016,7 @@ namespace Model
          * <a
          * href="http://docs.aws.amazon.com/config/latest/developerguide/evaluate-config.html">Evaluating
          * AWS Resource Configurations with AWS Config</a> in the <i>AWS Config Developer
-         * Guide</i>.</p> <p/>
+         * Guide</i>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1022,9 +1028,10 @@ namespace Model
          * <code>roleARN</code> and/or the <code>recordingGroup</code> of an existing
          * recorder. To change the role, call the action on the existing configuration
          * recorder and specify a role.</p> <note> <p>Currently, you can specify only one
-         * configuration recorder per account.</p> <p>If <code>ConfigurationRecorder</code>
-         * does not have the <b>recordingGroup</b> parameter specified, the default is to
-         * record all supported resource types.</p> </note>
+         * configuration recorder per region in your account.</p> <p>If
+         * <code>ConfigurationRecorder</code> does not have the <b>recordingGroup</b>
+         * parameter specified, the default is to record all supported resource types.</p>
+         * </note>
          */
         virtual Model::PutConfigurationRecorderOutcome PutConfigurationRecorder(const Model::PutConfigurationRecorderRequest& request) const;
 
@@ -1034,9 +1041,10 @@ namespace Model
          * <code>roleARN</code> and/or the <code>recordingGroup</code> of an existing
          * recorder. To change the role, call the action on the existing configuration
          * recorder and specify a role.</p> <note> <p>Currently, you can specify only one
-         * configuration recorder per account.</p> <p>If <code>ConfigurationRecorder</code>
-         * does not have the <b>recordingGroup</b> parameter specified, the default is to
-         * record all supported resource types.</p> </note>
+         * configuration recorder per region in your account.</p> <p>If
+         * <code>ConfigurationRecorder</code> does not have the <b>recordingGroup</b>
+         * parameter specified, the default is to record all supported resource types.</p>
+         * </note>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1048,9 +1056,10 @@ namespace Model
          * <code>roleARN</code> and/or the <code>recordingGroup</code> of an existing
          * recorder. To change the role, call the action on the existing configuration
          * recorder and specify a role.</p> <note> <p>Currently, you can specify only one
-         * configuration recorder per account.</p> <p>If <code>ConfigurationRecorder</code>
-         * does not have the <b>recordingGroup</b> parameter specified, the default is to
-         * record all supported resource types.</p> </note>
+         * configuration recorder per region in your account.</p> <p>If
+         * <code>ConfigurationRecorder</code> does not have the <b>recordingGroup</b>
+         * parameter specified, the default is to record all supported resource types.</p>
+         * </note>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1065,7 +1074,8 @@ namespace Model
          * this action and specify the changed values for the S3 bucket and the SNS topic.
          * If you specify a different value for either the S3 bucket or the SNS topic, this
          * action will keep the existing value for the parameter that is not changed.</p>
-         * <note> <p>You can have only one delivery channel per AWS account.</p> </note>
+         * <note> <p>You can have only one delivery channel per region in your account.</p>
+         * </note>
          */
         virtual Model::PutDeliveryChannelOutcome PutDeliveryChannel(const Model::PutDeliveryChannelRequest& request) const;
 
@@ -1078,7 +1088,8 @@ namespace Model
          * this action and specify the changed values for the S3 bucket and the SNS topic.
          * If you specify a different value for either the S3 bucket or the SNS topic, this
          * action will keep the existing value for the parameter that is not changed.</p>
-         * <note> <p>You can have only one delivery channel per AWS account.</p> </note>
+         * <note> <p>You can have only one delivery channel per region in your account.</p>
+         * </note>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1093,7 +1104,8 @@ namespace Model
          * this action and specify the changed values for the S3 bucket and the SNS topic.
          * If you specify a different value for either the S3 bucket or the SNS topic, this
          * action will keep the existing value for the parameter that is not changed.</p>
-         * <note> <p>You can have only one delivery channel per AWS account.</p> </note>
+         * <note> <p>You can have only one delivery channel per region in your account.</p>
+         * </note>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1135,14 +1147,14 @@ namespace Model
          * rule. When you create a new rule, AWS Config automatically evaluates your
          * resources against the rule. </p> </note> <p>The
          * <code>StartConfigRulesEvaluation</code> API is useful if you want to run
-         * on-demand evaluations, such as the following example:</p> <ol> <li><p>You have a
-         * custom rule that evaluates your IAM resources every 24 hours.</p></li>
-         * <li><p>You update your Lambda function to add additional conditions to your
-         * rule.</p></li> <li><p>Instead of waiting for the next periodic evaluation, you
-         * call the <code>StartConfigRulesEvaluation</code> API.</p></li> <li><p>AWS Config
-         * invokes your Lambda function and evaluates your IAM resources.</p></li>
-         * <li><p>Your custom rule will still run periodic evaluations every 24
-         * hours.</p></li> </ol>
+         * on-demand evaluations, such as the following example:</p> <ol> <li> <p>You have
+         * a custom rule that evaluates your IAM resources every 24 hours.</p> </li> <li>
+         * <p>You update your Lambda function to add additional conditions to your
+         * rule.</p> </li> <li> <p>Instead of waiting for the next periodic evaluation, you
+         * call the <code>StartConfigRulesEvaluation</code> API.</p> </li> <li> <p>AWS
+         * Config invokes your Lambda function and evaluates your IAM resources.</p> </li>
+         * <li> <p>Your custom rule will still run periodic evaluations every 24 hours.</p>
+         * </li> </ol>
          */
         virtual Model::StartConfigRulesEvaluationOutcome StartConfigRulesEvaluation(const Model::StartConfigRulesEvaluationRequest& request) const;
 
@@ -1157,14 +1169,14 @@ namespace Model
          * rule. When you create a new rule, AWS Config automatically evaluates your
          * resources against the rule. </p> </note> <p>The
          * <code>StartConfigRulesEvaluation</code> API is useful if you want to run
-         * on-demand evaluations, such as the following example:</p> <ol> <li><p>You have a
-         * custom rule that evaluates your IAM resources every 24 hours.</p></li>
-         * <li><p>You update your Lambda function to add additional conditions to your
-         * rule.</p></li> <li><p>Instead of waiting for the next periodic evaluation, you
-         * call the <code>StartConfigRulesEvaluation</code> API.</p></li> <li><p>AWS Config
-         * invokes your Lambda function and evaluates your IAM resources.</p></li>
-         * <li><p>Your custom rule will still run periodic evaluations every 24
-         * hours.</p></li> </ol>
+         * on-demand evaluations, such as the following example:</p> <ol> <li> <p>You have
+         * a custom rule that evaluates your IAM resources every 24 hours.</p> </li> <li>
+         * <p>You update your Lambda function to add additional conditions to your
+         * rule.</p> </li> <li> <p>Instead of waiting for the next periodic evaluation, you
+         * call the <code>StartConfigRulesEvaluation</code> API.</p> </li> <li> <p>AWS
+         * Config invokes your Lambda function and evaluates your IAM resources.</p> </li>
+         * <li> <p>Your custom rule will still run periodic evaluations every 24 hours.</p>
+         * </li> </ol>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1181,14 +1193,14 @@ namespace Model
          * rule. When you create a new rule, AWS Config automatically evaluates your
          * resources against the rule. </p> </note> <p>The
          * <code>StartConfigRulesEvaluation</code> API is useful if you want to run
-         * on-demand evaluations, such as the following example:</p> <ol> <li><p>You have a
-         * custom rule that evaluates your IAM resources every 24 hours.</p></li>
-         * <li><p>You update your Lambda function to add additional conditions to your
-         * rule.</p></li> <li><p>Instead of waiting for the next periodic evaluation, you
-         * call the <code>StartConfigRulesEvaluation</code> API.</p></li> <li><p>AWS Config
-         * invokes your Lambda function and evaluates your IAM resources.</p></li>
-         * <li><p>Your custom rule will still run periodic evaluations every 24
-         * hours.</p></li> </ol>
+         * on-demand evaluations, such as the following example:</p> <ol> <li> <p>You have
+         * a custom rule that evaluates your IAM resources every 24 hours.</p> </li> <li>
+         * <p>You update your Lambda function to add additional conditions to your
+         * rule.</p> </li> <li> <p>Instead of waiting for the next periodic evaluation, you
+         * call the <code>StartConfigRulesEvaluation</code> API.</p> </li> <li> <p>AWS
+         * Config invokes your Lambda function and evaluates your IAM resources.</p> </li>
+         * <li> <p>Your custom rule will still run periodic evaluations every 24 hours.</p>
+         * </li> </ol>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */

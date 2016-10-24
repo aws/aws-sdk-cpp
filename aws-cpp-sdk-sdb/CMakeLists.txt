@@ -84,7 +84,7 @@ project(aws-cpp-sdk-sdb)
   install (FILES ${AWS_SDB_HEADERS} DESTINATION include/aws/sdb)
   install (FILES ${AWS_SDB_MODEL_HEADERS} DESTINATION include/aws/sdb/model)
 
-  if(MSVC)
+  if(PLATFORM_WINDOWS AND MSVC)
     install (FILES nuget/aws-cpp-sdk-sdb.autopkg DESTINATION nuget)
   endif()
 

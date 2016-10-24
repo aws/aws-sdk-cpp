@@ -84,7 +84,7 @@ project(aws-cpp-sdk-cloudtrail)
   install (FILES ${AWS_CLOUDTRAIL_HEADERS} DESTINATION include/aws/cloudtrail)
   install (FILES ${AWS_CLOUDTRAIL_MODEL_HEADERS} DESTINATION include/aws/cloudtrail/model)
 
-  if(MSVC)
+  if(PLATFORM_WINDOWS AND MSVC)
     install (FILES nuget/aws-cpp-sdk-cloudtrail.autopkg DESTINATION nuget)
   endif()
 

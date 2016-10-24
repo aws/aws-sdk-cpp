@@ -45,100 +45,86 @@ namespace Model
     ListBuildsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * <p>Collection of build records that match the request. </p>
+     * <p>Collection of build records that match the request.</p>
      */
     inline const Aws::Vector<Build>& GetBuilds() const{ return m_builds; }
 
     /**
-     * <p>Collection of build records that match the request. </p>
+     * <p>Collection of build records that match the request.</p>
      */
     inline void SetBuilds(const Aws::Vector<Build>& value) { m_builds = value; }
 
     /**
-     * <p>Collection of build records that match the request. </p>
+     * <p>Collection of build records that match the request.</p>
      */
     inline void SetBuilds(Aws::Vector<Build>&& value) { m_builds = value; }
 
     /**
-     * <p>Collection of build records that match the request. </p>
+     * <p>Collection of build records that match the request.</p>
      */
     inline ListBuildsResult& WithBuilds(const Aws::Vector<Build>& value) { SetBuilds(value); return *this;}
 
     /**
-     * <p>Collection of build records that match the request. </p>
+     * <p>Collection of build records that match the request.</p>
      */
     inline ListBuildsResult& WithBuilds(Aws::Vector<Build>&& value) { SetBuilds(value); return *this;}
 
     /**
-     * <p>Collection of build records that match the request. </p>
+     * <p>Collection of build records that match the request.</p>
      */
     inline ListBuildsResult& AddBuilds(const Build& value) { m_builds.push_back(value); return *this; }
 
     /**
-     * <p>Collection of build records that match the request. </p>
+     * <p>Collection of build records that match the request.</p>
      */
     inline ListBuildsResult& AddBuilds(Build&& value) { m_builds.push_back(value); return *this; }
 
     /**
      * <p>Token indicating where to resume retrieving results on the next call to this
      * action. If no token is returned, these results represent the end of the
-     * list.</p> <note> <p>If a request has a limit that exactly matches the number of
-     * remaining results, a token is returned even though there are no more results to
-     * retrieve.</p> </note>
+     * list.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
      * <p>Token indicating where to resume retrieving results on the next call to this
      * action. If no token is returned, these results represent the end of the
-     * list.</p> <note> <p>If a request has a limit that exactly matches the number of
-     * remaining results, a token is returned even though there are no more results to
-     * retrieve.</p> </note>
+     * list.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
      * <p>Token indicating where to resume retrieving results on the next call to this
      * action. If no token is returned, these results represent the end of the
-     * list.</p> <note> <p>If a request has a limit that exactly matches the number of
-     * remaining results, a token is returned even though there are no more results to
-     * retrieve.</p> </note>
+     * list.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
 
     /**
      * <p>Token indicating where to resume retrieving results on the next call to this
      * action. If no token is returned, these results represent the end of the
-     * list.</p> <note> <p>If a request has a limit that exactly matches the number of
-     * remaining results, a token is returned even though there are no more results to
-     * retrieve.</p> </note>
+     * list.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
      * <p>Token indicating where to resume retrieving results on the next call to this
      * action. If no token is returned, these results represent the end of the
-     * list.</p> <note> <p>If a request has a limit that exactly matches the number of
-     * remaining results, a token is returned even though there are no more results to
-     * retrieve.</p> </note>
+     * list.</p>
      */
     inline ListBuildsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
      * <p>Token indicating where to resume retrieving results on the next call to this
      * action. If no token is returned, these results represent the end of the
-     * list.</p> <note> <p>If a request has a limit that exactly matches the number of
-     * remaining results, a token is returned even though there are no more results to
-     * retrieve.</p> </note>
+     * list.</p>
      */
     inline ListBuildsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
     /**
      * <p>Token indicating where to resume retrieving results on the next call to this
      * action. If no token is returned, these results represent the end of the
-     * list.</p> <note> <p>If a request has a limit that exactly matches the number of
-     * remaining results, a token is returned even though there are no more results to
-     * retrieve.</p> </note>
+     * list.</p>
      */
     inline ListBuildsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

@@ -95,7 +95,7 @@ void WinSyncHttpClient::AddHeadersToRequest(const HttpRequest& request, void* hH
     }
 }
 
-bool WinSyncHttpClient::StreamPayloadToRequest(const HttpRequest& request, void* hHttpRequest) const
+bool WinSyncHttpClient::StreamPayloadToRequest(const HttpRequest& request, void* hHttpRequest, Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter) const
 {
     bool success = true;
     auto payloadStream = request.GetContentBody();
@@ -118,6 +118,10 @@ bool WinSyncHttpClient::StreamPayloadToRequest(const HttpRequest& request, void*
                 if (!bytesWritten)
                 {                    
                     success = false;
+                }
+                else if(writeLimiter)
+                {
+                    writeLimiter->ApplyAndPayForCost(bytesWritten);
                 }
             }
 
@@ -289,7 +293,7 @@ std::shared_ptr<HttpResponse> WinSyncHttpClient::MakeRequest(HttpRequest& reques
 
     if(success)
     {
-        success = StreamPayloadToRequest(request, hHttpRequest);
+        success = StreamPayloadToRequest(request, hHttpRequest, writeLimiter);
     }
 
     std::shared_ptr<HttpResponse> response(nullptr);

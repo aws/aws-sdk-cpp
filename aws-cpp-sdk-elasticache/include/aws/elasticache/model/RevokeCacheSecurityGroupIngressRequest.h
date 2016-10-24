@@ -25,7 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input of a <i>RevokeCacheSecurityGroupIngress</i> action.</p>
+   * <p>Represents the input of a <code>RevokeCacheSecurityGroupIngress</code>
+   * operation.</p>
    */
   class AWS_ELASTICACHE_API RevokeCacheSecurityGroupIngressRequest : public ElastiCacheRequest
   {

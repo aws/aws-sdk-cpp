@@ -474,6 +474,30 @@ namespace Model
     
     inline HeadObjectRequest& WithRequestPayer(RequestPayer&& value) { SetRequestPayer(value); return *this;}
 
+    /**
+     * Part number of the object being read. This is a positive integer between 1 and
+     * 10,000. Effectively performs a 'ranged' HEAD request for the part specified.
+     * Useful querying about the size of the part and the number of parts in this
+     * object.
+     */
+    inline int GetPartNumber() const{ return m_partNumber; }
+
+    /**
+     * Part number of the object being read. This is a positive integer between 1 and
+     * 10,000. Effectively performs a 'ranged' HEAD request for the part specified.
+     * Useful querying about the size of the part and the number of parts in this
+     * object.
+     */
+    inline void SetPartNumber(int value) { m_partNumberHasBeenSet = true; m_partNumber = value; }
+
+    /**
+     * Part number of the object being read. This is a positive integer between 1 and
+     * 10,000. Effectively performs a 'ranged' HEAD request for the part specified.
+     * Useful querying about the size of the part and the number of parts in this
+     * object.
+     */
+    inline HeadObjectRequest& WithPartNumber(int value) { SetPartNumber(value); return *this;}
+
   private:
     Aws::String m_bucket;
     bool m_bucketHasBeenSet;
@@ -499,6 +523,8 @@ namespace Model
     bool m_sSECustomerKeyMD5HasBeenSet;
     RequestPayer m_requestPayer;
     bool m_requestPayerHasBeenSet;
+    int m_partNumber;
+    bool m_partNumberHasBeenSet;
   };
 
 } // namespace Model

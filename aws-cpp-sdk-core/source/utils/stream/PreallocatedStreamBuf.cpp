@@ -60,8 +60,8 @@ namespace Aws
 
             PreallocatedStreamBuf::pos_type PreallocatedStreamBuf::seekpos(pos_type pos, std::ios_base::openmode which)
             {
-                assert(static_cast<size_t>(pos) < m_lengthToRead);
-                if (static_cast<size_t>(pos) >= m_lengthToRead)
+                assert(static_cast<size_t>(pos) <= m_lengthToRead);
+                if (static_cast<size_t>(pos) > m_lengthToRead)
                 {
                     return pos_type(off_type(-1));
                 }

@@ -48,91 +48,91 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p> </p> <p>The source of the event, such as an AWS service, that triggers AWS
-     * Config to evaluate your AWS resources.</p>
+     * <p>The source of the event, such as an AWS service, that triggers AWS Config to
+     * evaluate your AWS resources.</p>
      */
     inline const EventSource& GetEventSource() const{ return m_eventSource; }
 
     /**
-     * <p> </p> <p>The source of the event, such as an AWS service, that triggers AWS
-     * Config to evaluate your AWS resources.</p>
+     * <p>The source of the event, such as an AWS service, that triggers AWS Config to
+     * evaluate your AWS resources.</p>
      */
     inline void SetEventSource(const EventSource& value) { m_eventSourceHasBeenSet = true; m_eventSource = value; }
 
     /**
-     * <p> </p> <p>The source of the event, such as an AWS service, that triggers AWS
-     * Config to evaluate your AWS resources.</p>
+     * <p>The source of the event, such as an AWS service, that triggers AWS Config to
+     * evaluate your AWS resources.</p>
      */
     inline void SetEventSource(EventSource&& value) { m_eventSourceHasBeenSet = true; m_eventSource = value; }
 
     /**
-     * <p> </p> <p>The source of the event, such as an AWS service, that triggers AWS
-     * Config to evaluate your AWS resources.</p>
+     * <p>The source of the event, such as an AWS service, that triggers AWS Config to
+     * evaluate your AWS resources.</p>
      */
     inline SourceDetail& WithEventSource(const EventSource& value) { SetEventSource(value); return *this;}
 
     /**
-     * <p> </p> <p>The source of the event, such as an AWS service, that triggers AWS
-     * Config to evaluate your AWS resources.</p>
+     * <p>The source of the event, such as an AWS service, that triggers AWS Config to
+     * evaluate your AWS resources.</p>
      */
     inline SourceDetail& WithEventSource(EventSource&& value) { SetEventSource(value); return *this;}
 
     /**
      * <p>The type of notification that triggers AWS Config to run an evaluation. You
-     * can specify the following notification types:</p>
-     * <p><code>ConfigurationItemChangeNotification</code> - Triggers an evaluation
-     * when AWS Config delivers a configuration item change notification.</p>
-     * <p><code>ScheduledNotification</code> - Triggers a periodic evaluation at the
-     * frequency specified for <code>MaximumExecutionFrequency</code>.</p>
-     * <p><code>ConfigurationSnapshotDeliveryCompleted</code> - Triggers a periodic
+     * can specify the following notification types:</p> <p>
+     * <code>ConfigurationItemChangeNotification</code> - Triggers an evaluation when
+     * AWS Config delivers a configuration item change notification.</p> <p>
+     * <code>ScheduledNotification</code> - Triggers a periodic evaluation at the
+     * frequency specified for <code>MaximumExecutionFrequency</code>.</p> <p>
+     * <code>ConfigurationSnapshotDeliveryCompleted</code> - Triggers a periodic
      * evaluation when AWS Config delivers a configuration snapshot.</p>
      */
     inline const MessageType& GetMessageType() const{ return m_messageType; }
 
     /**
      * <p>The type of notification that triggers AWS Config to run an evaluation. You
-     * can specify the following notification types:</p>
-     * <p><code>ConfigurationItemChangeNotification</code> - Triggers an evaluation
-     * when AWS Config delivers a configuration item change notification.</p>
-     * <p><code>ScheduledNotification</code> - Triggers a periodic evaluation at the
-     * frequency specified for <code>MaximumExecutionFrequency</code>.</p>
-     * <p><code>ConfigurationSnapshotDeliveryCompleted</code> - Triggers a periodic
+     * can specify the following notification types:</p> <p>
+     * <code>ConfigurationItemChangeNotification</code> - Triggers an evaluation when
+     * AWS Config delivers a configuration item change notification.</p> <p>
+     * <code>ScheduledNotification</code> - Triggers a periodic evaluation at the
+     * frequency specified for <code>MaximumExecutionFrequency</code>.</p> <p>
+     * <code>ConfigurationSnapshotDeliveryCompleted</code> - Triggers a periodic
      * evaluation when AWS Config delivers a configuration snapshot.</p>
      */
     inline void SetMessageType(const MessageType& value) { m_messageTypeHasBeenSet = true; m_messageType = value; }
 
     /**
      * <p>The type of notification that triggers AWS Config to run an evaluation. You
-     * can specify the following notification types:</p>
-     * <p><code>ConfigurationItemChangeNotification</code> - Triggers an evaluation
-     * when AWS Config delivers a configuration item change notification.</p>
-     * <p><code>ScheduledNotification</code> - Triggers a periodic evaluation at the
-     * frequency specified for <code>MaximumExecutionFrequency</code>.</p>
-     * <p><code>ConfigurationSnapshotDeliveryCompleted</code> - Triggers a periodic
+     * can specify the following notification types:</p> <p>
+     * <code>ConfigurationItemChangeNotification</code> - Triggers an evaluation when
+     * AWS Config delivers a configuration item change notification.</p> <p>
+     * <code>ScheduledNotification</code> - Triggers a periodic evaluation at the
+     * frequency specified for <code>MaximumExecutionFrequency</code>.</p> <p>
+     * <code>ConfigurationSnapshotDeliveryCompleted</code> - Triggers a periodic
      * evaluation when AWS Config delivers a configuration snapshot.</p>
      */
     inline void SetMessageType(MessageType&& value) { m_messageTypeHasBeenSet = true; m_messageType = value; }
 
     /**
      * <p>The type of notification that triggers AWS Config to run an evaluation. You
-     * can specify the following notification types:</p>
-     * <p><code>ConfigurationItemChangeNotification</code> - Triggers an evaluation
-     * when AWS Config delivers a configuration item change notification.</p>
-     * <p><code>ScheduledNotification</code> - Triggers a periodic evaluation at the
-     * frequency specified for <code>MaximumExecutionFrequency</code>.</p>
-     * <p><code>ConfigurationSnapshotDeliveryCompleted</code> - Triggers a periodic
+     * can specify the following notification types:</p> <p>
+     * <code>ConfigurationItemChangeNotification</code> - Triggers an evaluation when
+     * AWS Config delivers a configuration item change notification.</p> <p>
+     * <code>ScheduledNotification</code> - Triggers a periodic evaluation at the
+     * frequency specified for <code>MaximumExecutionFrequency</code>.</p> <p>
+     * <code>ConfigurationSnapshotDeliveryCompleted</code> - Triggers a periodic
      * evaluation when AWS Config delivers a configuration snapshot.</p>
      */
     inline SourceDetail& WithMessageType(const MessageType& value) { SetMessageType(value); return *this;}
 
     /**
      * <p>The type of notification that triggers AWS Config to run an evaluation. You
-     * can specify the following notification types:</p>
-     * <p><code>ConfigurationItemChangeNotification</code> - Triggers an evaluation
-     * when AWS Config delivers a configuration item change notification.</p>
-     * <p><code>ScheduledNotification</code> - Triggers a periodic evaluation at the
-     * frequency specified for <code>MaximumExecutionFrequency</code>.</p>
-     * <p><code>ConfigurationSnapshotDeliveryCompleted</code> - Triggers a periodic
+     * can specify the following notification types:</p> <p>
+     * <code>ConfigurationItemChangeNotification</code> - Triggers an evaluation when
+     * AWS Config delivers a configuration item change notification.</p> <p>
+     * <code>ScheduledNotification</code> - Triggers a periodic evaluation at the
+     * frequency specified for <code>MaximumExecutionFrequency</code>.</p> <p>
+     * <code>ConfigurationSnapshotDeliveryCompleted</code> - Triggers a periodic
      * evaluation when AWS Config delivers a configuration snapshot.</p>
      */
     inline SourceDetail& WithMessageType(MessageType&& value) { SetMessageType(value); return *this;}

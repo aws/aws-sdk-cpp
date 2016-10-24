@@ -25,7 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input of a <i>CreateCacheSecurityGroup</i> action.</p>
+   * <p>Represents the input of a <code>CreateCacheSecurityGroup</code>
+   * operation.</p>
    */
   class AWS_ELASTICACHE_API CreateCacheSecurityGroupRequest : public ElastiCacheRequest
   {

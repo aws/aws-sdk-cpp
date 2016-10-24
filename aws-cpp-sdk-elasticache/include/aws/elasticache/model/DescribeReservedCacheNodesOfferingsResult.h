@@ -36,8 +36,8 @@ namespace ElastiCache
 namespace Model
 {
   /**
-   * <p>Represents the output of a <i>DescribeReservedCacheNodesOfferings</i>
-   * action.</p>
+   * <p>Represents the output of a <code>DescribeReservedCacheNodesOfferings</code>
+   * operation.</p>
    */
   class AWS_ELASTICACHE_API DescribeReservedCacheNodesOfferingsResult
   {

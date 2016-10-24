@@ -33,6 +33,9 @@ namespace ConfigService
 {
 namespace Model
 {
+  /**
+   * <p/>
+   */
   class AWS_CONFIGSERVICE_API PutEvaluationsResult
   {
   public:

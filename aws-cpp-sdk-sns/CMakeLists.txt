@@ -84,7 +84,7 @@ project(aws-cpp-sdk-sns)
   install (FILES ${AWS_SNS_HEADERS} DESTINATION include/aws/sns)
   install (FILES ${AWS_SNS_MODEL_HEADERS} DESTINATION include/aws/sns/model)
 
-  if(MSVC)
+  if(PLATFORM_WINDOWS AND MSVC)
     install (FILES nuget/aws-cpp-sdk-sns.autopkg DESTINATION nuget)
   endif()
 

@@ -186,72 +186,72 @@ namespace Model
     inline Device& WithModel(const char* value) { SetModel(value); return *this;}
 
     /**
-     * <p>The device's form factor.</p> <p>Allowed values include:</p> <ul>
-     * <li><p>PHONE: The phone form factor.</p></li> <li><p>TABLET: The tablet form
-     * factor.</p></li> </ul>
+     * <p>The device's form factor.</p> <p>Allowed values include:</p> <ul> <li>
+     * <p>PHONE: The phone form factor.</p> </li> <li> <p>TABLET: The tablet form
+     * factor.</p> </li> </ul>
      */
     inline const DeviceFormFactor& GetFormFactor() const{ return m_formFactor; }
 
     /**
-     * <p>The device's form factor.</p> <p>Allowed values include:</p> <ul>
-     * <li><p>PHONE: The phone form factor.</p></li> <li><p>TABLET: The tablet form
-     * factor.</p></li> </ul>
+     * <p>The device's form factor.</p> <p>Allowed values include:</p> <ul> <li>
+     * <p>PHONE: The phone form factor.</p> </li> <li> <p>TABLET: The tablet form
+     * factor.</p> </li> </ul>
      */
     inline void SetFormFactor(const DeviceFormFactor& value) { m_formFactorHasBeenSet = true; m_formFactor = value; }
 
     /**
-     * <p>The device's form factor.</p> <p>Allowed values include:</p> <ul>
-     * <li><p>PHONE: The phone form factor.</p></li> <li><p>TABLET: The tablet form
-     * factor.</p></li> </ul>
+     * <p>The device's form factor.</p> <p>Allowed values include:</p> <ul> <li>
+     * <p>PHONE: The phone form factor.</p> </li> <li> <p>TABLET: The tablet form
+     * factor.</p> </li> </ul>
      */
     inline void SetFormFactor(DeviceFormFactor&& value) { m_formFactorHasBeenSet = true; m_formFactor = value; }
 
     /**
-     * <p>The device's form factor.</p> <p>Allowed values include:</p> <ul>
-     * <li><p>PHONE: The phone form factor.</p></li> <li><p>TABLET: The tablet form
-     * factor.</p></li> </ul>
+     * <p>The device's form factor.</p> <p>Allowed values include:</p> <ul> <li>
+     * <p>PHONE: The phone form factor.</p> </li> <li> <p>TABLET: The tablet form
+     * factor.</p> </li> </ul>
      */
     inline Device& WithFormFactor(const DeviceFormFactor& value) { SetFormFactor(value); return *this;}
 
     /**
-     * <p>The device's form factor.</p> <p>Allowed values include:</p> <ul>
-     * <li><p>PHONE: The phone form factor.</p></li> <li><p>TABLET: The tablet form
-     * factor.</p></li> </ul>
+     * <p>The device's form factor.</p> <p>Allowed values include:</p> <ul> <li>
+     * <p>PHONE: The phone form factor.</p> </li> <li> <p>TABLET: The tablet form
+     * factor.</p> </li> </ul>
      */
     inline Device& WithFormFactor(DeviceFormFactor&& value) { SetFormFactor(value); return *this;}
 
     /**
-     * <p>The device's platform.</p> <p>Allowed values include:</p> <ul>
-     * <li><p>ANDROID: The Android platform.</p></li> <li><p>IOS: The iOS
-     * platform.</p></li> </ul>
+     * <p>The device's platform.</p> <p>Allowed values include:</p> <ul> <li>
+     * <p>ANDROID: The Android platform.</p> </li> <li> <p>IOS: The iOS platform.</p>
+     * </li> </ul>
      */
     inline const DevicePlatform& GetPlatform() const{ return m_platform; }
 
     /**
-     * <p>The device's platform.</p> <p>Allowed values include:</p> <ul>
-     * <li><p>ANDROID: The Android platform.</p></li> <li><p>IOS: The iOS
-     * platform.</p></li> </ul>
+     * <p>The device's platform.</p> <p>Allowed values include:</p> <ul> <li>
+     * <p>ANDROID: The Android platform.</p> </li> <li> <p>IOS: The iOS platform.</p>
+     * </li> </ul>
      */
     inline void SetPlatform(const DevicePlatform& value) { m_platformHasBeenSet = true; m_platform = value; }
 
     /**
-     * <p>The device's platform.</p> <p>Allowed values include:</p> <ul>
-     * <li><p>ANDROID: The Android platform.</p></li> <li><p>IOS: The iOS
-     * platform.</p></li> </ul>
+     * <p>The device's platform.</p> <p>Allowed values include:</p> <ul> <li>
+     * <p>ANDROID: The Android platform.</p> </li> <li> <p>IOS: The iOS platform.</p>
+     * </li> </ul>
      */
     inline void SetPlatform(DevicePlatform&& value) { m_platformHasBeenSet = true; m_platform = value; }
 
     /**
-     * <p>The device's platform.</p> <p>Allowed values include:</p> <ul>
-     * <li><p>ANDROID: The Android platform.</p></li> <li><p>IOS: The iOS
-     * platform.</p></li> </ul>
+     * <p>The device's platform.</p> <p>Allowed values include:</p> <ul> <li>
+     * <p>ANDROID: The Android platform.</p> </li> <li> <p>IOS: The iOS platform.</p>
+     * </li> </ul>
      */
     inline Device& WithPlatform(const DevicePlatform& value) { SetPlatform(value); return *this;}
 
     /**
-     * <p>The device's platform.</p> <p>Allowed values include:</p> <ul>
-     * <li><p>ANDROID: The Android platform.</p></li> <li><p>IOS: The iOS
-     * platform.</p></li> </ul>
+     * <p>The device's platform.</p> <p>Allowed values include:</p> <ul> <li>
+     * <p>ANDROID: The Android platform.</p> </li> <li> <p>IOS: The iOS platform.</p>
+     * </li> </ul>
      */
     inline Device& WithPlatform(DevicePlatform&& value) { SetPlatform(value); return *this;}
 

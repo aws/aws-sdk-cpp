@@ -32,6 +32,9 @@ namespace ConfigService
 {
 namespace Model
 {
+  /**
+   * <p/>
+   */
   class AWS_CONFIGSERVICE_API GetComplianceSummaryByConfigRuleResult
   {
   public:

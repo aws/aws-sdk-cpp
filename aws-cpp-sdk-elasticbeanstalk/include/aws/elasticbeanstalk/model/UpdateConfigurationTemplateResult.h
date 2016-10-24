@@ -38,7 +38,7 @@ namespace ElasticBeanstalk
 namespace Model
 {
   /**
-   * <p> Describes the settings for a configuration set. </p>
+   * <p>Describes the settings for a configuration set.</p>
    */
   class AWS_ELASTICBEANSTALK_API UpdateConfigurationTemplateResult
   {
@@ -48,72 +48,72 @@ namespace Model
     UpdateConfigurationTemplateResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
     /**
-     * <p> The name of the solution stack this configuration set uses. </p>
+     * <p>The name of the solution stack this configuration set uses.</p>
      */
     inline const Aws::String& GetSolutionStackName() const{ return m_solutionStackName; }
 
     /**
-     * <p> The name of the solution stack this configuration set uses. </p>
+     * <p>The name of the solution stack this configuration set uses.</p>
      */
     inline void SetSolutionStackName(const Aws::String& value) { m_solutionStackName = value; }
 
     /**
-     * <p> The name of the solution stack this configuration set uses. </p>
+     * <p>The name of the solution stack this configuration set uses.</p>
      */
     inline void SetSolutionStackName(Aws::String&& value) { m_solutionStackName = value; }
 
     /**
-     * <p> The name of the solution stack this configuration set uses. </p>
+     * <p>The name of the solution stack this configuration set uses.</p>
      */
     inline void SetSolutionStackName(const char* value) { m_solutionStackName.assign(value); }
 
     /**
-     * <p> The name of the solution stack this configuration set uses. </p>
+     * <p>The name of the solution stack this configuration set uses.</p>
      */
     inline UpdateConfigurationTemplateResult& WithSolutionStackName(const Aws::String& value) { SetSolutionStackName(value); return *this;}
 
     /**
-     * <p> The name of the solution stack this configuration set uses. </p>
+     * <p>The name of the solution stack this configuration set uses.</p>
      */
     inline UpdateConfigurationTemplateResult& WithSolutionStackName(Aws::String&& value) { SetSolutionStackName(value); return *this;}
 
     /**
-     * <p> The name of the solution stack this configuration set uses. </p>
+     * <p>The name of the solution stack this configuration set uses.</p>
      */
     inline UpdateConfigurationTemplateResult& WithSolutionStackName(const char* value) { SetSolutionStackName(value); return *this;}
 
     /**
-     * <p> The name of the application associated with this configuration set. </p>
+     * <p>The name of the application associated with this configuration set.</p>
      */
     inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
 
     /**
-     * <p> The name of the application associated with this configuration set. </p>
+     * <p>The name of the application associated with this configuration set.</p>
      */
     inline void SetApplicationName(const Aws::String& value) { m_applicationName = value; }
 
     /**
-     * <p> The name of the application associated with this configuration set. </p>
+     * <p>The name of the application associated with this configuration set.</p>
      */
     inline void SetApplicationName(Aws::String&& value) { m_applicationName = value; }
 
     /**
-     * <p> The name of the application associated with this configuration set. </p>
+     * <p>The name of the application associated with this configuration set.</p>
      */
     inline void SetApplicationName(const char* value) { m_applicationName.assign(value); }
 
     /**
-     * <p> The name of the application associated with this configuration set. </p>
+     * <p>The name of the application associated with this configuration set.</p>
      */
     inline UpdateConfigurationTemplateResult& WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
 
     /**
-     * <p> The name of the application associated with this configuration set. </p>
+     * <p>The name of the application associated with this configuration set.</p>
      */
     inline UpdateConfigurationTemplateResult& WithApplicationName(Aws::String&& value) { SetApplicationName(value); return *this;}
 
     /**
-     * <p> The name of the application associated with this configuration set. </p>
+     * <p>The name of the application associated with this configuration set.</p>
      */
     inline UpdateConfigurationTemplateResult& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
 
@@ -160,37 +160,37 @@ namespace Model
     inline UpdateConfigurationTemplateResult& WithTemplateName(const char* value) { SetTemplateName(value); return *this;}
 
     /**
-     * <p> Describes this configuration set. </p>
+     * <p>Describes this configuration set.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p> Describes this configuration set. </p>
+     * <p>Describes this configuration set.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_description = value; }
 
     /**
-     * <p> Describes this configuration set. </p>
+     * <p>Describes this configuration set.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_description = value; }
 
     /**
-     * <p> Describes this configuration set. </p>
+     * <p>Describes this configuration set.</p>
      */
     inline void SetDescription(const char* value) { m_description.assign(value); }
 
     /**
-     * <p> Describes this configuration set. </p>
+     * <p>Describes this configuration set.</p>
      */
     inline UpdateConfigurationTemplateResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p> Describes this configuration set. </p>
+     * <p>Describes this configuration set.</p>
      */
     inline UpdateConfigurationTemplateResult& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
 
     /**
-     * <p> Describes this configuration set. </p>
+     * <p>Describes this configuration set.</p>
      */
     inline UpdateConfigurationTemplateResult& WithDescription(const char* value) { SetDescription(value); return *this;}
 
@@ -239,157 +239,157 @@ namespace Model
     /**
      * <p> If this configuration set is associated with an environment, the
      * <code>DeploymentStatus</code> parameter indicates the deployment status of this
-     * configuration set: </p> <ul> <li> <code>null</code>: This configuration is not
-     * associated with a running environment. </li> <li> <code>pending</code>: This is
-     * a draft configuration that is not deployed to the associated environment but is
-     * in the process of deploying. </li> <li> <code>deployed</code>: This is the
-     * configuration that is currently deployed to the associated running environment.
-     * </li> <li> <code>failed</code>: This is a draft configuration that failed to
-     * successfully deploy. </li> </ul>
+     * configuration set: </p> <ul> <li> <p> <code>null</code>: This configuration is
+     * not associated with a running environment.</p> </li> <li> <p>
+     * <code>pending</code>: This is a draft configuration that is not deployed to the
+     * associated environment but is in the process of deploying.</p> </li> <li> <p>
+     * <code>deployed</code>: This is the configuration that is currently deployed to
+     * the associated running environment.</p> </li> <li> <p> <code>failed</code>: This
+     * is a draft configuration that failed to successfully deploy.</p> </li> </ul>
      */
     inline const ConfigurationDeploymentStatus& GetDeploymentStatus() const{ return m_deploymentStatus; }
 
     /**
      * <p> If this configuration set is associated with an environment, the
      * <code>DeploymentStatus</code> parameter indicates the deployment status of this
-     * configuration set: </p> <ul> <li> <code>null</code>: This configuration is not
-     * associated with a running environment. </li> <li> <code>pending</code>: This is
-     * a draft configuration that is not deployed to the associated environment but is
-     * in the process of deploying. </li> <li> <code>deployed</code>: This is the
-     * configuration that is currently deployed to the associated running environment.
-     * </li> <li> <code>failed</code>: This is a draft configuration that failed to
-     * successfully deploy. </li> </ul>
+     * configuration set: </p> <ul> <li> <p> <code>null</code>: This configuration is
+     * not associated with a running environment.</p> </li> <li> <p>
+     * <code>pending</code>: This is a draft configuration that is not deployed to the
+     * associated environment but is in the process of deploying.</p> </li> <li> <p>
+     * <code>deployed</code>: This is the configuration that is currently deployed to
+     * the associated running environment.</p> </li> <li> <p> <code>failed</code>: This
+     * is a draft configuration that failed to successfully deploy.</p> </li> </ul>
      */
     inline void SetDeploymentStatus(const ConfigurationDeploymentStatus& value) { m_deploymentStatus = value; }
 
     /**
      * <p> If this configuration set is associated with an environment, the
      * <code>DeploymentStatus</code> parameter indicates the deployment status of this
-     * configuration set: </p> <ul> <li> <code>null</code>: This configuration is not
-     * associated with a running environment. </li> <li> <code>pending</code>: This is
-     * a draft configuration that is not deployed to the associated environment but is
-     * in the process of deploying. </li> <li> <code>deployed</code>: This is the
-     * configuration that is currently deployed to the associated running environment.
-     * </li> <li> <code>failed</code>: This is a draft configuration that failed to
-     * successfully deploy. </li> </ul>
+     * configuration set: </p> <ul> <li> <p> <code>null</code>: This configuration is
+     * not associated with a running environment.</p> </li> <li> <p>
+     * <code>pending</code>: This is a draft configuration that is not deployed to the
+     * associated environment but is in the process of deploying.</p> </li> <li> <p>
+     * <code>deployed</code>: This is the configuration that is currently deployed to
+     * the associated running environment.</p> </li> <li> <p> <code>failed</code>: This
+     * is a draft configuration that failed to successfully deploy.</p> </li> </ul>
      */
     inline void SetDeploymentStatus(ConfigurationDeploymentStatus&& value) { m_deploymentStatus = value; }
 
     /**
      * <p> If this configuration set is associated with an environment, the
      * <code>DeploymentStatus</code> parameter indicates the deployment status of this
-     * configuration set: </p> <ul> <li> <code>null</code>: This configuration is not
-     * associated with a running environment. </li> <li> <code>pending</code>: This is
-     * a draft configuration that is not deployed to the associated environment but is
-     * in the process of deploying. </li> <li> <code>deployed</code>: This is the
-     * configuration that is currently deployed to the associated running environment.
-     * </li> <li> <code>failed</code>: This is a draft configuration that failed to
-     * successfully deploy. </li> </ul>
+     * configuration set: </p> <ul> <li> <p> <code>null</code>: This configuration is
+     * not associated with a running environment.</p> </li> <li> <p>
+     * <code>pending</code>: This is a draft configuration that is not deployed to the
+     * associated environment but is in the process of deploying.</p> </li> <li> <p>
+     * <code>deployed</code>: This is the configuration that is currently deployed to
+     * the associated running environment.</p> </li> <li> <p> <code>failed</code>: This
+     * is a draft configuration that failed to successfully deploy.</p> </li> </ul>
      */
     inline UpdateConfigurationTemplateResult& WithDeploymentStatus(const ConfigurationDeploymentStatus& value) { SetDeploymentStatus(value); return *this;}
 
     /**
      * <p> If this configuration set is associated with an environment, the
      * <code>DeploymentStatus</code> parameter indicates the deployment status of this
-     * configuration set: </p> <ul> <li> <code>null</code>: This configuration is not
-     * associated with a running environment. </li> <li> <code>pending</code>: This is
-     * a draft configuration that is not deployed to the associated environment but is
-     * in the process of deploying. </li> <li> <code>deployed</code>: This is the
-     * configuration that is currently deployed to the associated running environment.
-     * </li> <li> <code>failed</code>: This is a draft configuration that failed to
-     * successfully deploy. </li> </ul>
+     * configuration set: </p> <ul> <li> <p> <code>null</code>: This configuration is
+     * not associated with a running environment.</p> </li> <li> <p>
+     * <code>pending</code>: This is a draft configuration that is not deployed to the
+     * associated environment but is in the process of deploying.</p> </li> <li> <p>
+     * <code>deployed</code>: This is the configuration that is currently deployed to
+     * the associated running environment.</p> </li> <li> <p> <code>failed</code>: This
+     * is a draft configuration that failed to successfully deploy.</p> </li> </ul>
      */
     inline UpdateConfigurationTemplateResult& WithDeploymentStatus(ConfigurationDeploymentStatus&& value) { SetDeploymentStatus(value); return *this;}
 
     /**
-     * <p> The date (in UTC time) when this configuration set was created. </p>
+     * <p>The date (in UTC time) when this configuration set was created.</p>
      */
     inline const Aws::Utils::DateTime& GetDateCreated() const{ return m_dateCreated; }
 
     /**
-     * <p> The date (in UTC time) when this configuration set was created. </p>
+     * <p>The date (in UTC time) when this configuration set was created.</p>
      */
     inline void SetDateCreated(const Aws::Utils::DateTime& value) { m_dateCreated = value; }
 
     /**
-     * <p> The date (in UTC time) when this configuration set was created. </p>
+     * <p>The date (in UTC time) when this configuration set was created.</p>
      */
     inline void SetDateCreated(Aws::Utils::DateTime&& value) { m_dateCreated = value; }
 
     /**
-     * <p> The date (in UTC time) when this configuration set was created. </p>
+     * <p>The date (in UTC time) when this configuration set was created.</p>
      */
     inline UpdateConfigurationTemplateResult& WithDateCreated(const Aws::Utils::DateTime& value) { SetDateCreated(value); return *this;}
 
     /**
-     * <p> The date (in UTC time) when this configuration set was created. </p>
+     * <p>The date (in UTC time) when this configuration set was created.</p>
      */
     inline UpdateConfigurationTemplateResult& WithDateCreated(Aws::Utils::DateTime&& value) { SetDateCreated(value); return *this;}
 
     /**
-     * <p> The date (in UTC time) when this configuration set was last modified. </p>
+     * <p>The date (in UTC time) when this configuration set was last modified.</p>
      */
     inline const Aws::Utils::DateTime& GetDateUpdated() const{ return m_dateUpdated; }
 
     /**
-     * <p> The date (in UTC time) when this configuration set was last modified. </p>
+     * <p>The date (in UTC time) when this configuration set was last modified.</p>
      */
     inline void SetDateUpdated(const Aws::Utils::DateTime& value) { m_dateUpdated = value; }
 
     /**
-     * <p> The date (in UTC time) when this configuration set was last modified. </p>
+     * <p>The date (in UTC time) when this configuration set was last modified.</p>
      */
     inline void SetDateUpdated(Aws::Utils::DateTime&& value) { m_dateUpdated = value; }
 
     /**
-     * <p> The date (in UTC time) when this configuration set was last modified. </p>
+     * <p>The date (in UTC time) when this configuration set was last modified.</p>
      */
     inline UpdateConfigurationTemplateResult& WithDateUpdated(const Aws::Utils::DateTime& value) { SetDateUpdated(value); return *this;}
 
     /**
-     * <p> The date (in UTC time) when this configuration set was last modified. </p>
+     * <p>The date (in UTC time) when this configuration set was last modified.</p>
      */
     inline UpdateConfigurationTemplateResult& WithDateUpdated(Aws::Utils::DateTime&& value) { SetDateUpdated(value); return *this;}
 
     /**
-     * <p> A list of the configuration options and their values in this configuration
-     * set. </p>
+     * <p>A list of the configuration options and their values in this configuration
+     * set.</p>
      */
     inline const Aws::Vector<ConfigurationOptionSetting>& GetOptionSettings() const{ return m_optionSettings; }
 
     /**
-     * <p> A list of the configuration options and their values in this configuration
-     * set. </p>
+     * <p>A list of the configuration options and their values in this configuration
+     * set.</p>
      */
     inline void SetOptionSettings(const Aws::Vector<ConfigurationOptionSetting>& value) { m_optionSettings = value; }
 
     /**
-     * <p> A list of the configuration options and their values in this configuration
-     * set. </p>
+     * <p>A list of the configuration options and their values in this configuration
+     * set.</p>
      */
     inline void SetOptionSettings(Aws::Vector<ConfigurationOptionSetting>&& value) { m_optionSettings = value; }
 
     /**
-     * <p> A list of the configuration options and their values in this configuration
-     * set. </p>
+     * <p>A list of the configuration options and their values in this configuration
+     * set.</p>
      */
     inline UpdateConfigurationTemplateResult& WithOptionSettings(const Aws::Vector<ConfigurationOptionSetting>& value) { SetOptionSettings(value); return *this;}
 
     /**
-     * <p> A list of the configuration options and their values in this configuration
-     * set. </p>
+     * <p>A list of the configuration options and their values in this configuration
+     * set.</p>
      */
     inline UpdateConfigurationTemplateResult& WithOptionSettings(Aws::Vector<ConfigurationOptionSetting>&& value) { SetOptionSettings(value); return *this;}
 
     /**
-     * <p> A list of the configuration options and their values in this configuration
-     * set. </p>
+     * <p>A list of the configuration options and their values in this configuration
+     * set.</p>
      */
     inline UpdateConfigurationTemplateResult& AddOptionSettings(const ConfigurationOptionSetting& value) { m_optionSettings.push_back(value); return *this; }
 
     /**
-     * <p> A list of the configuration options and their values in this configuration
-     * set. </p>
+     * <p>A list of the configuration options and their values in this configuration
+     * set.</p>
      */
     inline UpdateConfigurationTemplateResult& AddOptionSettings(ConfigurationOptionSetting&& value) { m_optionSettings.push_back(value); return *this; }
 

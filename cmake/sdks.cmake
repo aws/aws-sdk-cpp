@@ -3,6 +3,7 @@ set(C2J_LIST "")
 list(APPEND C2J_LIST "acm:2015-12-08") 
 list(APPEND C2J_LIST "apigateway:2015-07-09")
 list(APPEND C2J_LIST "autoscaling:2011-01-01")
+list(APPEND C2J_LIST "budgets:2016-10-20")
 list(APPEND C2J_LIST "cloudformation:2010-05-15")
 list(APPEND C2J_LIST "cloudfront:2016-01-28")
 list(APPEND C2J_LIST "cloudhsm:2014-05-30")
@@ -309,7 +310,6 @@ macro(add_sdks)
                 COMMAND ${PYTHON_CMD} scripts/generate_sdks.py --serviceName ${C_SERVICE_NAME} --apiVersion ${C_VERSION} --outputLocation ./
                 WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
             )
-
             STRING(CONCAT C_DIR "aws-cpp-sdk-" ${C_SERVICE_NAME})
             add_subdirectory(${C_DIR})
         endif()

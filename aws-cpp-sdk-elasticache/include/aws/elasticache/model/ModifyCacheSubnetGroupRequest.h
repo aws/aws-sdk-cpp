@@ -26,7 +26,7 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input of a <i>ModifyCacheSubnetGroup</i> action.</p>
+   * <p>Represents the input of a <code>ModifyCacheSubnetGroup</code> operation.</p>
    */
   class AWS_ELASTICACHE_API ModifyCacheSubnetGroupRequest : public ElastiCacheRequest
   {
@@ -84,37 +84,37 @@ namespace Model
     inline ModifyCacheSubnetGroupRequest& WithCacheSubnetGroupName(const char* value) { SetCacheSubnetGroupName(value); return *this;}
 
     /**
-     * <p>A description for the cache subnet group.</p>
+     * <p>A description of the cache subnet group.</p>
      */
     inline const Aws::String& GetCacheSubnetGroupDescription() const{ return m_cacheSubnetGroupDescription; }
 
     /**
-     * <p>A description for the cache subnet group.</p>
+     * <p>A description of the cache subnet group.</p>
      */
     inline void SetCacheSubnetGroupDescription(const Aws::String& value) { m_cacheSubnetGroupDescriptionHasBeenSet = true; m_cacheSubnetGroupDescription = value; }
 
     /**
-     * <p>A description for the cache subnet group.</p>
+     * <p>A description of the cache subnet group.</p>
      */
     inline void SetCacheSubnetGroupDescription(Aws::String&& value) { m_cacheSubnetGroupDescriptionHasBeenSet = true; m_cacheSubnetGroupDescription = value; }
 
     /**
-     * <p>A description for the cache subnet group.</p>
+     * <p>A description of the cache subnet group.</p>
      */
     inline void SetCacheSubnetGroupDescription(const char* value) { m_cacheSubnetGroupDescriptionHasBeenSet = true; m_cacheSubnetGroupDescription.assign(value); }
 
     /**
-     * <p>A description for the cache subnet group.</p>
+     * <p>A description of the cache subnet group.</p>
      */
     inline ModifyCacheSubnetGroupRequest& WithCacheSubnetGroupDescription(const Aws::String& value) { SetCacheSubnetGroupDescription(value); return *this;}
 
     /**
-     * <p>A description for the cache subnet group.</p>
+     * <p>A description of the cache subnet group.</p>
      */
     inline ModifyCacheSubnetGroupRequest& WithCacheSubnetGroupDescription(Aws::String&& value) { SetCacheSubnetGroupDescription(value); return *this;}
 
     /**
-     * <p>A description for the cache subnet group.</p>
+     * <p>A description of the cache subnet group.</p>
      */
     inline ModifyCacheSubnetGroupRequest& WithCacheSubnetGroupDescription(const char* value) { SetCacheSubnetGroupDescription(value); return *this;}
 

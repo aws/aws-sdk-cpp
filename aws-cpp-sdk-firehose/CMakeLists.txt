@@ -84,7 +84,7 @@ project(aws-cpp-sdk-firehose)
   install (FILES ${AWS_FIREHOSE_HEADERS} DESTINATION include/aws/firehose)
   install (FILES ${AWS_FIREHOSE_MODEL_HEADERS} DESTINATION include/aws/firehose/model)
 
-  if(MSVC)
+  if(PLATFORM_WINDOWS AND MSVC)
     install (FILES nuget/aws-cpp-sdk-firehose.autopkg DESTINATION nuget)
   endif()
 

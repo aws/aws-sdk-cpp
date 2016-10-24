@@ -46,106 +46,92 @@ namespace Model
 
     /**
      * <p>Collection of objects containing attribute metadata for each requested fleet
-     * ID. </p>
+     * ID.</p>
      */
     inline const Aws::Vector<FleetAttributes>& GetFleetAttributes() const{ return m_fleetAttributes; }
 
     /**
      * <p>Collection of objects containing attribute metadata for each requested fleet
-     * ID. </p>
+     * ID.</p>
      */
     inline void SetFleetAttributes(const Aws::Vector<FleetAttributes>& value) { m_fleetAttributes = value; }
 
     /**
      * <p>Collection of objects containing attribute metadata for each requested fleet
-     * ID. </p>
+     * ID.</p>
      */
     inline void SetFleetAttributes(Aws::Vector<FleetAttributes>&& value) { m_fleetAttributes = value; }
 
     /**
      * <p>Collection of objects containing attribute metadata for each requested fleet
-     * ID. </p>
+     * ID.</p>
      */
     inline DescribeFleetAttributesResult& WithFleetAttributes(const Aws::Vector<FleetAttributes>& value) { SetFleetAttributes(value); return *this;}
 
     /**
      * <p>Collection of objects containing attribute metadata for each requested fleet
-     * ID. </p>
+     * ID.</p>
      */
     inline DescribeFleetAttributesResult& WithFleetAttributes(Aws::Vector<FleetAttributes>&& value) { SetFleetAttributes(value); return *this;}
 
     /**
      * <p>Collection of objects containing attribute metadata for each requested fleet
-     * ID. </p>
+     * ID.</p>
      */
     inline DescribeFleetAttributesResult& AddFleetAttributes(const FleetAttributes& value) { m_fleetAttributes.push_back(value); return *this; }
 
     /**
      * <p>Collection of objects containing attribute metadata for each requested fleet
-     * ID. </p>
+     * ID.</p>
      */
     inline DescribeFleetAttributesResult& AddFleetAttributes(FleetAttributes&& value) { m_fleetAttributes.push_back(value); return *this; }
 
     /**
      * <p>Token indicating where to resume retrieving results on the next call to this
      * action. If no token is returned, these results represent the end of the
-     * list.</p> <note> <p>If a request has a limit that exactly matches the number of
-     * remaining results, a token is returned even though there are no more results to
-     * retrieve.</p> </note>
+     * list.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
      * <p>Token indicating where to resume retrieving results on the next call to this
      * action. If no token is returned, these results represent the end of the
-     * list.</p> <note> <p>If a request has a limit that exactly matches the number of
-     * remaining results, a token is returned even though there are no more results to
-     * retrieve.</p> </note>
+     * list.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
      * <p>Token indicating where to resume retrieving results on the next call to this
      * action. If no token is returned, these results represent the end of the
-     * list.</p> <note> <p>If a request has a limit that exactly matches the number of
-     * remaining results, a token is returned even though there are no more results to
-     * retrieve.</p> </note>
+     * list.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
 
     /**
      * <p>Token indicating where to resume retrieving results on the next call to this
      * action. If no token is returned, these results represent the end of the
-     * list.</p> <note> <p>If a request has a limit that exactly matches the number of
-     * remaining results, a token is returned even though there are no more results to
-     * retrieve.</p> </note>
+     * list.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
      * <p>Token indicating where to resume retrieving results on the next call to this
      * action. If no token is returned, these results represent the end of the
-     * list.</p> <note> <p>If a request has a limit that exactly matches the number of
-     * remaining results, a token is returned even though there are no more results to
-     * retrieve.</p> </note>
+     * list.</p>
      */
     inline DescribeFleetAttributesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
      * <p>Token indicating where to resume retrieving results on the next call to this
      * action. If no token is returned, these results represent the end of the
-     * list.</p> <note> <p>If a request has a limit that exactly matches the number of
-     * remaining results, a token is returned even though there are no more results to
-     * retrieve.</p> </note>
+     * list.</p>
      */
     inline DescribeFleetAttributesResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
     /**
      * <p>Token indicating where to resume retrieving results on the next call to this
      * action. If no token is returned, these results represent the end of the
-     * list.</p> <note> <p>If a request has a limit that exactly matches the number of
-     * remaining results, a token is returned even though there are no more results to
-     * retrieve.</p> </note>
+     * list.</p>
      */
     inline DescribeFleetAttributesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

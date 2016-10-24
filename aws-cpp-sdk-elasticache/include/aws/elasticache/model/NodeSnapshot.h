@@ -16,6 +16,7 @@
 #include <aws/elasticache/ElastiCache_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/elasticache/model/NodeGroupConfiguration.h>
 #include <aws/core/utils/DateTime.h>
 
 namespace Aws
@@ -44,6 +45,76 @@ namespace Model
 
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
+
+    /**
+     * <p>A unique identifier for the source cache cluster.</p>
+     */
+    inline const Aws::String& GetCacheClusterId() const{ return m_cacheClusterId; }
+
+    /**
+     * <p>A unique identifier for the source cache cluster.</p>
+     */
+    inline void SetCacheClusterId(const Aws::String& value) { m_cacheClusterIdHasBeenSet = true; m_cacheClusterId = value; }
+
+    /**
+     * <p>A unique identifier for the source cache cluster.</p>
+     */
+    inline void SetCacheClusterId(Aws::String&& value) { m_cacheClusterIdHasBeenSet = true; m_cacheClusterId = value; }
+
+    /**
+     * <p>A unique identifier for the source cache cluster.</p>
+     */
+    inline void SetCacheClusterId(const char* value) { m_cacheClusterIdHasBeenSet = true; m_cacheClusterId.assign(value); }
+
+    /**
+     * <p>A unique identifier for the source cache cluster.</p>
+     */
+    inline NodeSnapshot& WithCacheClusterId(const Aws::String& value) { SetCacheClusterId(value); return *this;}
+
+    /**
+     * <p>A unique identifier for the source cache cluster.</p>
+     */
+    inline NodeSnapshot& WithCacheClusterId(Aws::String&& value) { SetCacheClusterId(value); return *this;}
+
+    /**
+     * <p>A unique identifier for the source cache cluster.</p>
+     */
+    inline NodeSnapshot& WithCacheClusterId(const char* value) { SetCacheClusterId(value); return *this;}
+
+    /**
+     * <p>A unique identifier for the source node group (shard).</p>
+     */
+    inline const Aws::String& GetNodeGroupId() const{ return m_nodeGroupId; }
+
+    /**
+     * <p>A unique identifier for the source node group (shard).</p>
+     */
+    inline void SetNodeGroupId(const Aws::String& value) { m_nodeGroupIdHasBeenSet = true; m_nodeGroupId = value; }
+
+    /**
+     * <p>A unique identifier for the source node group (shard).</p>
+     */
+    inline void SetNodeGroupId(Aws::String&& value) { m_nodeGroupIdHasBeenSet = true; m_nodeGroupId = value; }
+
+    /**
+     * <p>A unique identifier for the source node group (shard).</p>
+     */
+    inline void SetNodeGroupId(const char* value) { m_nodeGroupIdHasBeenSet = true; m_nodeGroupId.assign(value); }
+
+    /**
+     * <p>A unique identifier for the source node group (shard).</p>
+     */
+    inline NodeSnapshot& WithNodeGroupId(const Aws::String& value) { SetNodeGroupId(value); return *this;}
+
+    /**
+     * <p>A unique identifier for the source node group (shard).</p>
+     */
+    inline NodeSnapshot& WithNodeGroupId(Aws::String&& value) { SetNodeGroupId(value); return *this;}
+
+    /**
+     * <p>A unique identifier for the source node group (shard).</p>
+     */
+    inline NodeSnapshot& WithNodeGroupId(const char* value) { SetNodeGroupId(value); return *this;}
 
     /**
      * <p>The cache node identifier for the node in the source cache cluster.</p>
@@ -79,6 +150,31 @@ namespace Model
      * <p>The cache node identifier for the node in the source cache cluster.</p>
      */
     inline NodeSnapshot& WithCacheNodeId(const char* value) { SetCacheNodeId(value); return *this;}
+
+    /**
+     * <p>The configuration for the source node group (shard).</p>
+     */
+    inline const NodeGroupConfiguration& GetNodeGroupConfiguration() const{ return m_nodeGroupConfiguration; }
+
+    /**
+     * <p>The configuration for the source node group (shard).</p>
+     */
+    inline void SetNodeGroupConfiguration(const NodeGroupConfiguration& value) { m_nodeGroupConfigurationHasBeenSet = true; m_nodeGroupConfiguration = value; }
+
+    /**
+     * <p>The configuration for the source node group (shard).</p>
+     */
+    inline void SetNodeGroupConfiguration(NodeGroupConfiguration&& value) { m_nodeGroupConfigurationHasBeenSet = true; m_nodeGroupConfiguration = value; }
+
+    /**
+     * <p>The configuration for the source node group (shard).</p>
+     */
+    inline NodeSnapshot& WithNodeGroupConfiguration(const NodeGroupConfiguration& value) { SetNodeGroupConfiguration(value); return *this;}
+
+    /**
+     * <p>The configuration for the source node group (shard).</p>
+     */
+    inline NodeSnapshot& WithNodeGroupConfiguration(NodeGroupConfiguration&& value) { SetNodeGroupConfiguration(value); return *this;}
 
     /**
      * <p>The size of the cache on the source cache node.</p>
@@ -176,8 +272,14 @@ namespace Model
     inline NodeSnapshot& WithSnapshotCreateTime(Aws::Utils::DateTime&& value) { SetSnapshotCreateTime(value); return *this;}
 
   private:
+    Aws::String m_cacheClusterId;
+    bool m_cacheClusterIdHasBeenSet;
+    Aws::String m_nodeGroupId;
+    bool m_nodeGroupIdHasBeenSet;
     Aws::String m_cacheNodeId;
     bool m_cacheNodeIdHasBeenSet;
+    NodeGroupConfiguration m_nodeGroupConfiguration;
+    bool m_nodeGroupConfigurationHasBeenSet;
     Aws::String m_cacheSize;
     bool m_cacheSizeHasBeenSet;
     Aws::Utils::DateTime m_cacheNodeCreateTime;

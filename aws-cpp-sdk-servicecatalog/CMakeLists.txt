@@ -84,7 +84,7 @@ project(aws-cpp-sdk-servicecatalog)
   install (FILES ${AWS_SERVICECATALOG_HEADERS} DESTINATION include/aws/servicecatalog)
   install (FILES ${AWS_SERVICECATALOG_MODEL_HEADERS} DESTINATION include/aws/servicecatalog/model)
 
-  if(MSVC)
+  if(PLATFORM_WINDOWS AND MSVC)
     install (FILES nuget/aws-cpp-sdk-servicecatalog.autopkg DESTINATION nuget)
   endif()
 

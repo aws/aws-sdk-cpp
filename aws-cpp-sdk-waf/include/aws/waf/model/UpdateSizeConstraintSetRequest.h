@@ -123,84 +123,84 @@ namespace Model
     /**
      * <p>An array of <code>SizeConstraintSetUpdate</code> objects that you want to
      * insert into or delete from a <a>SizeConstraintSet</a>. For more information, see
-     * the applicable data types:</p> <ul> <li><a>SizeConstraintSetUpdate</a>: Contains
-     * <code>Action</code> and <code>SizeConstraint</code></li>
-     * <li><a>SizeConstraint</a>: Contains <code>FieldToMatch</code>,
+     * the applicable data types:</p> <ul> <li> <p> <a>SizeConstraintSetUpdate</a>:
+     * Contains <code>Action</code> and <code>SizeConstraint</code> </p> </li> <li> <p>
+     * <a>SizeConstraint</a>: Contains <code>FieldToMatch</code>,
      * <code>TextTransformation</code>, <code>ComparisonOperator</code>, and
-     * <code>Size</code></li> <li><a>FieldToMatch</a>: Contains <code>Data</code> and
-     * <code>Type</code></li> </ul>
+     * <code>Size</code> </p> </li> <li> <p> <a>FieldToMatch</a>: Contains
+     * <code>Data</code> and <code>Type</code> </p> </li> </ul>
      */
     inline const Aws::Vector<SizeConstraintSetUpdate>& GetUpdates() const{ return m_updates; }
 
     /**
      * <p>An array of <code>SizeConstraintSetUpdate</code> objects that you want to
      * insert into or delete from a <a>SizeConstraintSet</a>. For more information, see
-     * the applicable data types:</p> <ul> <li><a>SizeConstraintSetUpdate</a>: Contains
-     * <code>Action</code> and <code>SizeConstraint</code></li>
-     * <li><a>SizeConstraint</a>: Contains <code>FieldToMatch</code>,
+     * the applicable data types:</p> <ul> <li> <p> <a>SizeConstraintSetUpdate</a>:
+     * Contains <code>Action</code> and <code>SizeConstraint</code> </p> </li> <li> <p>
+     * <a>SizeConstraint</a>: Contains <code>FieldToMatch</code>,
      * <code>TextTransformation</code>, <code>ComparisonOperator</code>, and
-     * <code>Size</code></li> <li><a>FieldToMatch</a>: Contains <code>Data</code> and
-     * <code>Type</code></li> </ul>
+     * <code>Size</code> </p> </li> <li> <p> <a>FieldToMatch</a>: Contains
+     * <code>Data</code> and <code>Type</code> </p> </li> </ul>
      */
     inline void SetUpdates(const Aws::Vector<SizeConstraintSetUpdate>& value) { m_updatesHasBeenSet = true; m_updates = value; }
 
     /**
      * <p>An array of <code>SizeConstraintSetUpdate</code> objects that you want to
      * insert into or delete from a <a>SizeConstraintSet</a>. For more information, see
-     * the applicable data types:</p> <ul> <li><a>SizeConstraintSetUpdate</a>: Contains
-     * <code>Action</code> and <code>SizeConstraint</code></li>
-     * <li><a>SizeConstraint</a>: Contains <code>FieldToMatch</code>,
+     * the applicable data types:</p> <ul> <li> <p> <a>SizeConstraintSetUpdate</a>:
+     * Contains <code>Action</code> and <code>SizeConstraint</code> </p> </li> <li> <p>
+     * <a>SizeConstraint</a>: Contains <code>FieldToMatch</code>,
      * <code>TextTransformation</code>, <code>ComparisonOperator</code>, and
-     * <code>Size</code></li> <li><a>FieldToMatch</a>: Contains <code>Data</code> and
-     * <code>Type</code></li> </ul>
+     * <code>Size</code> </p> </li> <li> <p> <a>FieldToMatch</a>: Contains
+     * <code>Data</code> and <code>Type</code> </p> </li> </ul>
      */
     inline void SetUpdates(Aws::Vector<SizeConstraintSetUpdate>&& value) { m_updatesHasBeenSet = true; m_updates = value; }
 
     /**
      * <p>An array of <code>SizeConstraintSetUpdate</code> objects that you want to
      * insert into or delete from a <a>SizeConstraintSet</a>. For more information, see
-     * the applicable data types:</p> <ul> <li><a>SizeConstraintSetUpdate</a>: Contains
-     * <code>Action</code> and <code>SizeConstraint</code></li>
-     * <li><a>SizeConstraint</a>: Contains <code>FieldToMatch</code>,
+     * the applicable data types:</p> <ul> <li> <p> <a>SizeConstraintSetUpdate</a>:
+     * Contains <code>Action</code> and <code>SizeConstraint</code> </p> </li> <li> <p>
+     * <a>SizeConstraint</a>: Contains <code>FieldToMatch</code>,
      * <code>TextTransformation</code>, <code>ComparisonOperator</code>, and
-     * <code>Size</code></li> <li><a>FieldToMatch</a>: Contains <code>Data</code> and
-     * <code>Type</code></li> </ul>
+     * <code>Size</code> </p> </li> <li> <p> <a>FieldToMatch</a>: Contains
+     * <code>Data</code> and <code>Type</code> </p> </li> </ul>
      */
     inline UpdateSizeConstraintSetRequest& WithUpdates(const Aws::Vector<SizeConstraintSetUpdate>& value) { SetUpdates(value); return *this;}
 
     /**
      * <p>An array of <code>SizeConstraintSetUpdate</code> objects that you want to
      * insert into or delete from a <a>SizeConstraintSet</a>. For more information, see
-     * the applicable data types:</p> <ul> <li><a>SizeConstraintSetUpdate</a>: Contains
-     * <code>Action</code> and <code>SizeConstraint</code></li>
-     * <li><a>SizeConstraint</a>: Contains <code>FieldToMatch</code>,
+     * the applicable data types:</p> <ul> <li> <p> <a>SizeConstraintSetUpdate</a>:
+     * Contains <code>Action</code> and <code>SizeConstraint</code> </p> </li> <li> <p>
+     * <a>SizeConstraint</a>: Contains <code>FieldToMatch</code>,
      * <code>TextTransformation</code>, <code>ComparisonOperator</code>, and
-     * <code>Size</code></li> <li><a>FieldToMatch</a>: Contains <code>Data</code> and
-     * <code>Type</code></li> </ul>
+     * <code>Size</code> </p> </li> <li> <p> <a>FieldToMatch</a>: Contains
+     * <code>Data</code> and <code>Type</code> </p> </li> </ul>
      */
     inline UpdateSizeConstraintSetRequest& WithUpdates(Aws::Vector<SizeConstraintSetUpdate>&& value) { SetUpdates(value); return *this;}
 
     /**
      * <p>An array of <code>SizeConstraintSetUpdate</code> objects that you want to
      * insert into or delete from a <a>SizeConstraintSet</a>. For more information, see
-     * the applicable data types:</p> <ul> <li><a>SizeConstraintSetUpdate</a>: Contains
-     * <code>Action</code> and <code>SizeConstraint</code></li>
-     * <li><a>SizeConstraint</a>: Contains <code>FieldToMatch</code>,
+     * the applicable data types:</p> <ul> <li> <p> <a>SizeConstraintSetUpdate</a>:
+     * Contains <code>Action</code> and <code>SizeConstraint</code> </p> </li> <li> <p>
+     * <a>SizeConstraint</a>: Contains <code>FieldToMatch</code>,
      * <code>TextTransformation</code>, <code>ComparisonOperator</code>, and
-     * <code>Size</code></li> <li><a>FieldToMatch</a>: Contains <code>Data</code> and
-     * <code>Type</code></li> </ul>
+     * <code>Size</code> </p> </li> <li> <p> <a>FieldToMatch</a>: Contains
+     * <code>Data</code> and <code>Type</code> </p> </li> </ul>
      */
     inline UpdateSizeConstraintSetRequest& AddUpdates(const SizeConstraintSetUpdate& value) { m_updatesHasBeenSet = true; m_updates.push_back(value); return *this; }
 
     /**
      * <p>An array of <code>SizeConstraintSetUpdate</code> objects that you want to
      * insert into or delete from a <a>SizeConstraintSet</a>. For more information, see
-     * the applicable data types:</p> <ul> <li><a>SizeConstraintSetUpdate</a>: Contains
-     * <code>Action</code> and <code>SizeConstraint</code></li>
-     * <li><a>SizeConstraint</a>: Contains <code>FieldToMatch</code>,
+     * the applicable data types:</p> <ul> <li> <p> <a>SizeConstraintSetUpdate</a>:
+     * Contains <code>Action</code> and <code>SizeConstraint</code> </p> </li> <li> <p>
+     * <a>SizeConstraint</a>: Contains <code>FieldToMatch</code>,
      * <code>TextTransformation</code>, <code>ComparisonOperator</code>, and
-     * <code>Size</code></li> <li><a>FieldToMatch</a>: Contains <code>Data</code> and
-     * <code>Type</code></li> </ul>
+     * <code>Size</code> </p> </li> <li> <p> <a>FieldToMatch</a>: Contains
+     * <code>Data</code> and <code>Type</code> </p> </li> </ul>
      */
     inline UpdateSizeConstraintSetRequest& AddUpdates(SizeConstraintSetUpdate&& value) { m_updatesHasBeenSet = true; m_updates.push_back(value); return *this; }
 

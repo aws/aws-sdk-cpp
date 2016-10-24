@@ -33,6 +33,7 @@ NodeGroup::NodeGroup() :
     m_nodeGroupIdHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_primaryEndpointHasBeenSet(false),
+    m_slotsHasBeenSet(false),
     m_nodeGroupMembersHasBeenSet(false)
 {
 }
@@ -41,6 +42,7 @@ NodeGroup::NodeGroup(const XmlNode& xmlNode) :
     m_nodeGroupIdHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_primaryEndpointHasBeenSet(false),
+    m_slotsHasBeenSet(false),
     m_nodeGroupMembersHasBeenSet(false)
 {
   *this = xmlNode;
@@ -69,6 +71,12 @@ NodeGroup& NodeGroup::operator =(const XmlNode& xmlNode)
     {
       m_primaryEndpoint = primaryEndpointNode;
       m_primaryEndpointHasBeenSet = true;
+    }
+    XmlNode slotsNode = resultNode.FirstChild("Slots");
+    if(!slotsNode.IsNull())
+    {
+      m_slots = StringUtils::Trim(slotsNode.GetText().c_str());
+      m_slotsHasBeenSet = true;
     }
     XmlNode nodeGroupMembersNode = resultNode.FirstChild("NodeGroupMembers");
     if(!nodeGroupMembersNode.IsNull())
@@ -106,6 +114,11 @@ void NodeGroup::OutputToStream(Aws::OStream& oStream, const char* location, unsi
       m_primaryEndpoint.OutputToStream(oStream, primaryEndpointLocationAndMemberSs.str().c_str());
   }
 
+  if(m_slotsHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Slots=" << StringUtils::URLEncode(m_slots.c_str()) << "&";
+  }
+
   if(m_nodeGroupMembersHasBeenSet)
   {
       unsigned nodeGroupMembersIdx = 1;
@@ -134,6 +147,10 @@ void NodeGroup::OutputToStream(Aws::OStream& oStream, const char* location) cons
       Aws::String primaryEndpointLocationAndMember(location);
       primaryEndpointLocationAndMember += ".PrimaryEndpoint";
       m_primaryEndpoint.OutputToStream(oStream, primaryEndpointLocationAndMember.c_str());
+  }
+  if(m_slotsHasBeenSet)
+  {
+      oStream << location << ".Slots=" << StringUtils::URLEncode(m_slots.c_str()) << "&";
   }
   if(m_nodeGroupMembersHasBeenSet)
   {

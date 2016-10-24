@@ -84,7 +84,7 @@ project(aws-cpp-sdk-glacier)
   install (FILES ${AWS_GLACIER_HEADERS} DESTINATION include/aws/glacier)
   install (FILES ${AWS_GLACIER_MODEL_HEADERS} DESTINATION include/aws/glacier/model)
 
-  if(MSVC)
+  if(PLATFORM_WINDOWS AND MSVC)
     install (FILES nuget/aws-cpp-sdk-glacier.autopkg DESTINATION nuget)
   endif()
 

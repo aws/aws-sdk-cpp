@@ -84,7 +84,7 @@ project(aws-cpp-sdk-opsworks)
   install (FILES ${AWS_OPSWORKS_HEADERS} DESTINATION include/aws/opsworks)
   install (FILES ${AWS_OPSWORKS_MODEL_HEADERS} DESTINATION include/aws/opsworks/model)
 
-  if(MSVC)
+  if(PLATFORM_WINDOWS AND MSVC)
     install (FILES nuget/aws-cpp-sdk-opsworks.autopkg DESTINATION nuget)
   endif()
 

@@ -36,7 +36,8 @@ namespace ElastiCache
 namespace Model
 {
   /**
-   * <p>Represents the output of a <i>DescribeCacheSubnetGroups</i> action.</p>
+   * <p>Represents the output of a <code>DescribeCacheSubnetGroups</code>
+   * operation.</p>
    */
   class AWS_ELASTICACHE_API DescribeCacheSubnetGroupsResult
   {

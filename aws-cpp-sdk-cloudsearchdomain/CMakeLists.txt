@@ -84,7 +84,7 @@ project(aws-cpp-sdk-cloudsearchdomain)
   install (FILES ${AWS_CLOUDSEARCHDOMAIN_HEADERS} DESTINATION include/aws/cloudsearchdomain)
   install (FILES ${AWS_CLOUDSEARCHDOMAIN_MODEL_HEADERS} DESTINATION include/aws/cloudsearchdomain/model)
 
-  if(MSVC)
+  if(PLATFORM_WINDOWS AND MSVC)
     install (FILES nuget/aws-cpp-sdk-cloudsearchdomain.autopkg DESTINATION nuget)
   endif()
 

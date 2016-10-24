@@ -78,44 +78,65 @@ namespace Model
     inline DescribeGameSessionsRequest& WithFleetId(const char* value) { SetFleetId(value); return *this;}
 
     /**
-     * <p>Unique identifier for a game session. Specify the game session to retrieve
-     * information on.</p>
+     * <p>Unique identifier for the game session to retrieve information on. Game
+     * session ID format is as follows:
+     * "arn:aws:gamelift:&lt;region&gt;::gamesession/fleet-&lt;fleet ID&gt;/&lt;ID
+     * string&gt;". The value of &lt;ID string&gt; is either a custom ID string (if one
+     * was specified when the game session was created) an auto-generated string. </p>
      */
     inline const Aws::String& GetGameSessionId() const{ return m_gameSessionId; }
 
     /**
-     * <p>Unique identifier for a game session. Specify the game session to retrieve
-     * information on.</p>
+     * <p>Unique identifier for the game session to retrieve information on. Game
+     * session ID format is as follows:
+     * "arn:aws:gamelift:&lt;region&gt;::gamesession/fleet-&lt;fleet ID&gt;/&lt;ID
+     * string&gt;". The value of &lt;ID string&gt; is either a custom ID string (if one
+     * was specified when the game session was created) an auto-generated string. </p>
      */
     inline void SetGameSessionId(const Aws::String& value) { m_gameSessionIdHasBeenSet = true; m_gameSessionId = value; }
 
     /**
-     * <p>Unique identifier for a game session. Specify the game session to retrieve
-     * information on.</p>
+     * <p>Unique identifier for the game session to retrieve information on. Game
+     * session ID format is as follows:
+     * "arn:aws:gamelift:&lt;region&gt;::gamesession/fleet-&lt;fleet ID&gt;/&lt;ID
+     * string&gt;". The value of &lt;ID string&gt; is either a custom ID string (if one
+     * was specified when the game session was created) an auto-generated string. </p>
      */
     inline void SetGameSessionId(Aws::String&& value) { m_gameSessionIdHasBeenSet = true; m_gameSessionId = value; }
 
     /**
-     * <p>Unique identifier for a game session. Specify the game session to retrieve
-     * information on.</p>
+     * <p>Unique identifier for the game session to retrieve information on. Game
+     * session ID format is as follows:
+     * "arn:aws:gamelift:&lt;region&gt;::gamesession/fleet-&lt;fleet ID&gt;/&lt;ID
+     * string&gt;". The value of &lt;ID string&gt; is either a custom ID string (if one
+     * was specified when the game session was created) an auto-generated string. </p>
      */
     inline void SetGameSessionId(const char* value) { m_gameSessionIdHasBeenSet = true; m_gameSessionId.assign(value); }
 
     /**
-     * <p>Unique identifier for a game session. Specify the game session to retrieve
-     * information on.</p>
+     * <p>Unique identifier for the game session to retrieve information on. Game
+     * session ID format is as follows:
+     * "arn:aws:gamelift:&lt;region&gt;::gamesession/fleet-&lt;fleet ID&gt;/&lt;ID
+     * string&gt;". The value of &lt;ID string&gt; is either a custom ID string (if one
+     * was specified when the game session was created) an auto-generated string. </p>
      */
     inline DescribeGameSessionsRequest& WithGameSessionId(const Aws::String& value) { SetGameSessionId(value); return *this;}
 
     /**
-     * <p>Unique identifier for a game session. Specify the game session to retrieve
-     * information on.</p>
+     * <p>Unique identifier for the game session to retrieve information on. Game
+     * session ID format is as follows:
+     * "arn:aws:gamelift:&lt;region&gt;::gamesession/fleet-&lt;fleet ID&gt;/&lt;ID
+     * string&gt;". The value of &lt;ID string&gt; is either a custom ID string (if one
+     * was specified when the game session was created) an auto-generated string. </p>
      */
     inline DescribeGameSessionsRequest& WithGameSessionId(Aws::String&& value) { SetGameSessionId(value); return *this;}
 
     /**
-     * <p>Unique identifier for a game session. Specify the game session to retrieve
-     * information on.</p>
+     * <p>Unique identifier for the game session to retrieve information on. Game
+     * session ID format is as follows:
+     * "arn:aws:gamelift:&lt;region&gt;::gamesession/fleet-&lt;fleet ID&gt;/&lt;ID
+     * string&gt;". The value of &lt;ID string&gt; is either a custom ID string (if one
+     * was specified when the game session was created) an auto-generated string. </p>
      */
     inline DescribeGameSessionsRequest& WithGameSessionId(const char* value) { SetGameSessionId(value); return *this;}
 

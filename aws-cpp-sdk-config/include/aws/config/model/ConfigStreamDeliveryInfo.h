@@ -34,7 +34,7 @@ namespace Model
 
   /**
    * <p>A list that contains the status of the delivery of the configuration stream
-   * notification to the Amazon SNS topic. </p>
+   * notification to the Amazon SNS topic.</p>
    */
   class AWS_CONFIGSERVICE_API ConfigStreamDeliveryInfo
   {
@@ -45,7 +45,7 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p>Status of the last attempted delivery.</p> <p><b>Note</b> Providing an SNS
+     * <p>Status of the last attempted delivery.</p> <p> <b>Note</b> Providing an SNS
      * topic on a <a
      * href="http://docs.aws.amazon.com/config/latest/APIReference/API_DeliveryChannel.html">DeliveryChannel</a>
      * for AWS Config is optional. If the SNS delivery is turned off, the last status
@@ -54,7 +54,7 @@ namespace Model
     inline const DeliveryStatus& GetLastStatus() const{ return m_lastStatus; }
 
     /**
-     * <p>Status of the last attempted delivery.</p> <p><b>Note</b> Providing an SNS
+     * <p>Status of the last attempted delivery.</p> <p> <b>Note</b> Providing an SNS
      * topic on a <a
      * href="http://docs.aws.amazon.com/config/latest/APIReference/API_DeliveryChannel.html">DeliveryChannel</a>
      * for AWS Config is optional. If the SNS delivery is turned off, the last status
@@ -63,7 +63,7 @@ namespace Model
     inline void SetLastStatus(const DeliveryStatus& value) { m_lastStatusHasBeenSet = true; m_lastStatus = value; }
 
     /**
-     * <p>Status of the last attempted delivery.</p> <p><b>Note</b> Providing an SNS
+     * <p>Status of the last attempted delivery.</p> <p> <b>Note</b> Providing an SNS
      * topic on a <a
      * href="http://docs.aws.amazon.com/config/latest/APIReference/API_DeliveryChannel.html">DeliveryChannel</a>
      * for AWS Config is optional. If the SNS delivery is turned off, the last status
@@ -72,7 +72,7 @@ namespace Model
     inline void SetLastStatus(DeliveryStatus&& value) { m_lastStatusHasBeenSet = true; m_lastStatus = value; }
 
     /**
-     * <p>Status of the last attempted delivery.</p> <p><b>Note</b> Providing an SNS
+     * <p>Status of the last attempted delivery.</p> <p> <b>Note</b> Providing an SNS
      * topic on a <a
      * href="http://docs.aws.amazon.com/config/latest/APIReference/API_DeliveryChannel.html">DeliveryChannel</a>
      * for AWS Config is optional. If the SNS delivery is turned off, the last status
@@ -81,7 +81,7 @@ namespace Model
     inline ConfigStreamDeliveryInfo& WithLastStatus(const DeliveryStatus& value) { SetLastStatus(value); return *this;}
 
     /**
-     * <p>Status of the last attempted delivery.</p> <p><b>Note</b> Providing an SNS
+     * <p>Status of the last attempted delivery.</p> <p> <b>Note</b> Providing an SNS
      * topic on a <a
      * href="http://docs.aws.amazon.com/config/latest/APIReference/API_DeliveryChannel.html">DeliveryChannel</a>
      * for AWS Config is optional. If the SNS delivery is turned off, the last status

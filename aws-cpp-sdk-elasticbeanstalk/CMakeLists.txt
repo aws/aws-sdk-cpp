@@ -84,7 +84,7 @@ project(aws-cpp-sdk-elasticbeanstalk)
   install (FILES ${AWS_ELASTICBEANSTALK_HEADERS} DESTINATION include/aws/elasticbeanstalk)
   install (FILES ${AWS_ELASTICBEANSTALK_MODEL_HEADERS} DESTINATION include/aws/elasticbeanstalk/model)
 
-  if(MSVC)
+  if(PLATFORM_WINDOWS AND MSVC)
     install (FILES nuget/aws-cpp-sdk-elasticbeanstalk.autopkg DESTINATION nuget)
   endif()
 

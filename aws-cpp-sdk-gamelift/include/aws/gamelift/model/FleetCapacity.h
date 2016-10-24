@@ -86,7 +86,7 @@ namespace Model
      * instance type determines the computing resources of each instance in the fleet,
      * including CPU, memory, storage, and networking capacity. GameLift supports the
      * following EC2 instance types. See <a
-     * href="https://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>
+     * href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>
      * for detailed descriptions.</p>
      */
     inline const EC2InstanceType& GetInstanceType() const{ return m_instanceType; }
@@ -96,7 +96,7 @@ namespace Model
      * instance type determines the computing resources of each instance in the fleet,
      * including CPU, memory, storage, and networking capacity. GameLift supports the
      * following EC2 instance types. See <a
-     * href="https://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>
+     * href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>
      * for detailed descriptions.</p>
      */
     inline void SetInstanceType(const EC2InstanceType& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
@@ -106,7 +106,7 @@ namespace Model
      * instance type determines the computing resources of each instance in the fleet,
      * including CPU, memory, storage, and networking capacity. GameLift supports the
      * following EC2 instance types. See <a
-     * href="https://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>
+     * href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>
      * for detailed descriptions.</p>
      */
     inline void SetInstanceType(EC2InstanceType&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
@@ -116,7 +116,7 @@ namespace Model
      * instance type determines the computing resources of each instance in the fleet,
      * including CPU, memory, storage, and networking capacity. GameLift supports the
      * following EC2 instance types. See <a
-     * href="https://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>
+     * href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>
      * for detailed descriptions.</p>
      */
     inline FleetCapacity& WithInstanceType(const EC2InstanceType& value) { SetInstanceType(value); return *this;}
@@ -126,7 +126,7 @@ namespace Model
      * instance type determines the computing resources of each instance in the fleet,
      * including CPU, memory, storage, and networking capacity. GameLift supports the
      * following EC2 instance types. See <a
-     * href="https://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>
+     * href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>
      * for detailed descriptions.</p>
      */
     inline FleetCapacity& WithInstanceType(EC2InstanceType&& value) { SetInstanceType(value); return *this;}

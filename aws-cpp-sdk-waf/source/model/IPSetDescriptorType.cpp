@@ -30,6 +30,7 @@ namespace Aws
       {
 
         static const int IPV4_HASH = HashingUtils::HashString("IPV4");
+        static const int IPV6_HASH = HashingUtils::HashString("IPV6");
 
 
         IPSetDescriptorType GetIPSetDescriptorTypeForName(const Aws::String& name)
@@ -38,6 +39,10 @@ namespace Aws
           if (hashCode == IPV4_HASH)
           {
             return IPSetDescriptorType::IPV4;
+          }
+          else if (hashCode == IPV6_HASH)
+          {
+            return IPSetDescriptorType::IPV6;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -55,6 +60,8 @@ namespace Aws
           {
           case IPSetDescriptorType::IPV4:
             return "IPV4";
+          case IPSetDescriptorType::IPV6:
+            return "IPV6";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -84,7 +84,7 @@ project(aws-cpp-sdk-cloudformation)
   install (FILES ${AWS_CLOUDFORMATION_HEADERS} DESTINATION include/aws/cloudformation)
   install (FILES ${AWS_CLOUDFORMATION_MODEL_HEADERS} DESTINATION include/aws/cloudformation/model)
 
-  if(MSVC)
+  if(PLATFORM_WINDOWS AND MSVC)
     install (FILES nuget/aws-cpp-sdk-cloudformation.autopkg DESTINATION nuget)
   endif()
 

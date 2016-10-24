@@ -84,7 +84,7 @@ project(aws-cpp-sdk-directconnect)
   install (FILES ${AWS_DIRECTCONNECT_HEADERS} DESTINATION include/aws/directconnect)
   install (FILES ${AWS_DIRECTCONNECT_MODEL_HEADERS} DESTINATION include/aws/directconnect/model)
 
-  if(MSVC)
+  if(PLATFORM_WINDOWS AND MSVC)
     install (FILES nuget/aws-cpp-sdk-directconnect.autopkg DESTINATION nuget)
   endif()
 

@@ -25,7 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input of a <i>DescribeCacheEngineVersions</i> action.</p>
+   * <p>Represents the input of a <code>DescribeCacheEngineVersions</code>
+   * operation.</p>
    */
   class AWS_ELASTICACHE_API DescribeCacheEngineVersionsRequest : public ElastiCacheRequest
   {
@@ -112,57 +113,71 @@ namespace Model
 
     /**
      * <p>The name of a specific cache parameter group family to return details
-     * for.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 alphanumeric
-     * characters</p> </li> <li> <p>First character must be a letter</p> </li> <li>
-     * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * for.</p> <p>Valid values are: <code>memcached1.4</code> | <code>redis2.6</code>
+     * | <code>redis2.8</code> | <code>redis3.2</code> </p> <p>Constraints:</p> <ul>
+     * <li> <p>Must be 1 to 255 alphanumeric characters</p> </li> <li> <p>First
+     * character must be a letter</p> </li> <li> <p>Cannot end with a hyphen or contain
+     * two consecutive hyphens</p> </li> </ul>
      */
     inline const Aws::String& GetCacheParameterGroupFamily() const{ return m_cacheParameterGroupFamily; }
 
     /**
      * <p>The name of a specific cache parameter group family to return details
-     * for.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 alphanumeric
-     * characters</p> </li> <li> <p>First character must be a letter</p> </li> <li>
-     * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * for.</p> <p>Valid values are: <code>memcached1.4</code> | <code>redis2.6</code>
+     * | <code>redis2.8</code> | <code>redis3.2</code> </p> <p>Constraints:</p> <ul>
+     * <li> <p>Must be 1 to 255 alphanumeric characters</p> </li> <li> <p>First
+     * character must be a letter</p> </li> <li> <p>Cannot end with a hyphen or contain
+     * two consecutive hyphens</p> </li> </ul>
      */
     inline void SetCacheParameterGroupFamily(const Aws::String& value) { m_cacheParameterGroupFamilyHasBeenSet = true; m_cacheParameterGroupFamily = value; }
 
     /**
      * <p>The name of a specific cache parameter group family to return details
-     * for.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 alphanumeric
-     * characters</p> </li> <li> <p>First character must be a letter</p> </li> <li>
-     * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * for.</p> <p>Valid values are: <code>memcached1.4</code> | <code>redis2.6</code>
+     * | <code>redis2.8</code> | <code>redis3.2</code> </p> <p>Constraints:</p> <ul>
+     * <li> <p>Must be 1 to 255 alphanumeric characters</p> </li> <li> <p>First
+     * character must be a letter</p> </li> <li> <p>Cannot end with a hyphen or contain
+     * two consecutive hyphens</p> </li> </ul>
      */
     inline void SetCacheParameterGroupFamily(Aws::String&& value) { m_cacheParameterGroupFamilyHasBeenSet = true; m_cacheParameterGroupFamily = value; }
 
     /**
      * <p>The name of a specific cache parameter group family to return details
-     * for.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 alphanumeric
-     * characters</p> </li> <li> <p>First character must be a letter</p> </li> <li>
-     * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * for.</p> <p>Valid values are: <code>memcached1.4</code> | <code>redis2.6</code>
+     * | <code>redis2.8</code> | <code>redis3.2</code> </p> <p>Constraints:</p> <ul>
+     * <li> <p>Must be 1 to 255 alphanumeric characters</p> </li> <li> <p>First
+     * character must be a letter</p> </li> <li> <p>Cannot end with a hyphen or contain
+     * two consecutive hyphens</p> </li> </ul>
      */
     inline void SetCacheParameterGroupFamily(const char* value) { m_cacheParameterGroupFamilyHasBeenSet = true; m_cacheParameterGroupFamily.assign(value); }
 
     /**
      * <p>The name of a specific cache parameter group family to return details
-     * for.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 alphanumeric
-     * characters</p> </li> <li> <p>First character must be a letter</p> </li> <li>
-     * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * for.</p> <p>Valid values are: <code>memcached1.4</code> | <code>redis2.6</code>
+     * | <code>redis2.8</code> | <code>redis3.2</code> </p> <p>Constraints:</p> <ul>
+     * <li> <p>Must be 1 to 255 alphanumeric characters</p> </li> <li> <p>First
+     * character must be a letter</p> </li> <li> <p>Cannot end with a hyphen or contain
+     * two consecutive hyphens</p> </li> </ul>
      */
     inline DescribeCacheEngineVersionsRequest& WithCacheParameterGroupFamily(const Aws::String& value) { SetCacheParameterGroupFamily(value); return *this;}
 
     /**
      * <p>The name of a specific cache parameter group family to return details
-     * for.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 alphanumeric
-     * characters</p> </li> <li> <p>First character must be a letter</p> </li> <li>
-     * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * for.</p> <p>Valid values are: <code>memcached1.4</code> | <code>redis2.6</code>
+     * | <code>redis2.8</code> | <code>redis3.2</code> </p> <p>Constraints:</p> <ul>
+     * <li> <p>Must be 1 to 255 alphanumeric characters</p> </li> <li> <p>First
+     * character must be a letter</p> </li> <li> <p>Cannot end with a hyphen or contain
+     * two consecutive hyphens</p> </li> </ul>
      */
     inline DescribeCacheEngineVersionsRequest& WithCacheParameterGroupFamily(Aws::String&& value) { SetCacheParameterGroupFamily(value); return *this;}
 
     /**
      * <p>The name of a specific cache parameter group family to return details
-     * for.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 alphanumeric
-     * characters</p> </li> <li> <p>First character must be a letter</p> </li> <li>
-     * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * for.</p> <p>Valid values are: <code>memcached1.4</code> | <code>redis2.6</code>
+     * | <code>redis2.8</code> | <code>redis3.2</code> </p> <p>Constraints:</p> <ul>
+     * <li> <p>Must be 1 to 255 alphanumeric characters</p> </li> <li> <p>First
+     * character must be a letter</p> </li> <li> <p>Cannot end with a hyphen or contain
+     * two consecutive hyphens</p> </li> </ul>
      */
     inline DescribeCacheEngineVersionsRequest& WithCacheParameterGroupFamily(const char* value) { SetCacheParameterGroupFamily(value); return *this;}
 
@@ -192,75 +207,75 @@ namespace Model
 
     /**
      * <p>An optional marker returned from a prior request. Use this marker for
-     * pagination of results from this action. If this parameter is specified, the
+     * pagination of results from this operation. If this parameter is specified, the
      * response includes only records beyond the marker, up to the value specified by
-     * <i>MaxRecords</i>.</p>
+     * <code>MaxRecords</code>.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
 
     /**
      * <p>An optional marker returned from a prior request. Use this marker for
-     * pagination of results from this action. If this parameter is specified, the
+     * pagination of results from this operation. If this parameter is specified, the
      * response includes only records beyond the marker, up to the value specified by
-     * <i>MaxRecords</i>.</p>
+     * <code>MaxRecords</code>.</p>
      */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
 
     /**
      * <p>An optional marker returned from a prior request. Use this marker for
-     * pagination of results from this action. If this parameter is specified, the
+     * pagination of results from this operation. If this parameter is specified, the
      * response includes only records beyond the marker, up to the value specified by
-     * <i>MaxRecords</i>.</p>
+     * <code>MaxRecords</code>.</p>
      */
     inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = value; }
 
     /**
      * <p>An optional marker returned from a prior request. Use this marker for
-     * pagination of results from this action. If this parameter is specified, the
+     * pagination of results from this operation. If this parameter is specified, the
      * response includes only records beyond the marker, up to the value specified by
-     * <i>MaxRecords</i>.</p>
+     * <code>MaxRecords</code>.</p>
      */
     inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
 
     /**
      * <p>An optional marker returned from a prior request. Use this marker for
-     * pagination of results from this action. If this parameter is specified, the
+     * pagination of results from this operation. If this parameter is specified, the
      * response includes only records beyond the marker, up to the value specified by
-     * <i>MaxRecords</i>.</p>
+     * <code>MaxRecords</code>.</p>
      */
     inline DescribeCacheEngineVersionsRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
 
     /**
      * <p>An optional marker returned from a prior request. Use this marker for
-     * pagination of results from this action. If this parameter is specified, the
+     * pagination of results from this operation. If this parameter is specified, the
      * response includes only records beyond the marker, up to the value specified by
-     * <i>MaxRecords</i>.</p>
+     * <code>MaxRecords</code>.</p>
      */
     inline DescribeCacheEngineVersionsRequest& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
 
     /**
      * <p>An optional marker returned from a prior request. Use this marker for
-     * pagination of results from this action. If this parameter is specified, the
+     * pagination of results from this operation. If this parameter is specified, the
      * response includes only records beyond the marker, up to the value specified by
-     * <i>MaxRecords</i>.</p>
+     * <code>MaxRecords</code>.</p>
      */
     inline DescribeCacheEngineVersionsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
     /**
-     * <p>If <i>true</i>, specifies that only the default version of the specified
-     * engine or engine and major version combination is to be returned.</p>
+     * <p>If <code>true</code>, specifies that only the default version of the
+     * specified engine or engine and major version combination is to be returned.</p>
      */
     inline bool GetDefaultOnly() const{ return m_defaultOnly; }
 
     /**
-     * <p>If <i>true</i>, specifies that only the default version of the specified
-     * engine or engine and major version combination is to be returned.</p>
+     * <p>If <code>true</code>, specifies that only the default version of the
+     * specified engine or engine and major version combination is to be returned.</p>
      */
     inline void SetDefaultOnly(bool value) { m_defaultOnlyHasBeenSet = true; m_defaultOnly = value; }
 
     /**
-     * <p>If <i>true</i>, specifies that only the default version of the specified
-     * engine or engine and major version combination is to be returned.</p>
+     * <p>If <code>true</code>, specifies that only the default version of the
+     * specified engine or engine and major version combination is to be returned.</p>
      */
     inline DescribeCacheEngineVersionsRequest& WithDefaultOnly(bool value) { SetDefaultOnly(value); return *this;}
 

@@ -84,7 +84,7 @@ project(aws-cpp-sdk-swf)
   install (FILES ${AWS_SWF_HEADERS} DESTINATION include/aws/swf)
   install (FILES ${AWS_SWF_MODEL_HEADERS} DESTINATION include/aws/swf/model)
 
-  if(MSVC)
+  if(PLATFORM_WINDOWS AND MSVC)
     install (FILES nuget/aws-cpp-sdk-swf.autopkg DESTINATION nuget)
   endif()
 

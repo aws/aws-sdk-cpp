@@ -35,7 +35,7 @@ namespace Model
    * fleet. Each instruction set identifies the location of the server executable,
    * optional launch parameters, and the number of server processes with this
    * configuration to maintain concurrently on the instance. Server process
-   * configurations make up a fleet's <code><a>RuntimeConfiguration</a></code>.</p>
+   * configurations make up a fleet's <code> <a>RuntimeConfiguration</a> </code>.</p>
    */
   class AWS_GAMELIFT_API ServerProcess
   {
@@ -138,19 +138,19 @@ namespace Model
 
     /**
      * <p>Number of server processes using this configuration to run concurrently on an
-     * instance. </p>
+     * instance.</p>
      */
     inline int GetConcurrentExecutions() const{ return m_concurrentExecutions; }
 
     /**
      * <p>Number of server processes using this configuration to run concurrently on an
-     * instance. </p>
+     * instance.</p>
      */
     inline void SetConcurrentExecutions(int value) { m_concurrentExecutionsHasBeenSet = true; m_concurrentExecutions = value; }
 
     /**
      * <p>Number of server processes using this configuration to run concurrently on an
-     * instance. </p>
+     * instance.</p>
      */
     inline ServerProcess& WithConcurrentExecutions(int value) { SetConcurrentExecutions(value); return *this;}
 

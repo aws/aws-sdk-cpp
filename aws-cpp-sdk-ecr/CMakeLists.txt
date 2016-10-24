@@ -84,7 +84,7 @@ project(aws-cpp-sdk-ecr)
   install (FILES ${AWS_ECR_HEADERS} DESTINATION include/aws/ecr)
   install (FILES ${AWS_ECR_MODEL_HEADERS} DESTINATION include/aws/ecr/model)
 
-  if(MSVC)
+  if(PLATFORM_WINDOWS AND MSVC)
     install (FILES nuget/aws-cpp-sdk-ecr.autopkg DESTINATION nuget)
   endif()
 

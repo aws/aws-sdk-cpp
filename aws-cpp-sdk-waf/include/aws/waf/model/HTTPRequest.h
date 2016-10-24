@@ -49,70 +49,70 @@ namespace Model
     /**
      * <p>The IP address that the request originated from. If the <code>WebACL</code>
      * is associated with a CloudFront distribution, this is the value of one of the
-     * following fields in CloudFront access logs:</p> <ul> <li><code>c-ip</code>, if
-     * the viewer did not use an HTTP proxy or a load balancer to send the request</li>
-     * <li><code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load
-     * balancer to send the request</li> </ul>
+     * following fields in CloudFront access logs:</p> <ul> <li> <p> <code>c-ip</code>,
+     * if the viewer did not use an HTTP proxy or a load balancer to send the
+     * request</p> </li> <li> <p> <code>x-forwarded-for</code>, if the viewer did use
+     * an HTTP proxy or a load balancer to send the request</p> </li> </ul>
      */
     inline const Aws::String& GetClientIP() const{ return m_clientIP; }
 
     /**
      * <p>The IP address that the request originated from. If the <code>WebACL</code>
      * is associated with a CloudFront distribution, this is the value of one of the
-     * following fields in CloudFront access logs:</p> <ul> <li><code>c-ip</code>, if
-     * the viewer did not use an HTTP proxy or a load balancer to send the request</li>
-     * <li><code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load
-     * balancer to send the request</li> </ul>
+     * following fields in CloudFront access logs:</p> <ul> <li> <p> <code>c-ip</code>,
+     * if the viewer did not use an HTTP proxy or a load balancer to send the
+     * request</p> </li> <li> <p> <code>x-forwarded-for</code>, if the viewer did use
+     * an HTTP proxy or a load balancer to send the request</p> </li> </ul>
      */
     inline void SetClientIP(const Aws::String& value) { m_clientIPHasBeenSet = true; m_clientIP = value; }
 
     /**
      * <p>The IP address that the request originated from. If the <code>WebACL</code>
      * is associated with a CloudFront distribution, this is the value of one of the
-     * following fields in CloudFront access logs:</p> <ul> <li><code>c-ip</code>, if
-     * the viewer did not use an HTTP proxy or a load balancer to send the request</li>
-     * <li><code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load
-     * balancer to send the request</li> </ul>
+     * following fields in CloudFront access logs:</p> <ul> <li> <p> <code>c-ip</code>,
+     * if the viewer did not use an HTTP proxy or a load balancer to send the
+     * request</p> </li> <li> <p> <code>x-forwarded-for</code>, if the viewer did use
+     * an HTTP proxy or a load balancer to send the request</p> </li> </ul>
      */
     inline void SetClientIP(Aws::String&& value) { m_clientIPHasBeenSet = true; m_clientIP = value; }
 
     /**
      * <p>The IP address that the request originated from. If the <code>WebACL</code>
      * is associated with a CloudFront distribution, this is the value of one of the
-     * following fields in CloudFront access logs:</p> <ul> <li><code>c-ip</code>, if
-     * the viewer did not use an HTTP proxy or a load balancer to send the request</li>
-     * <li><code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load
-     * balancer to send the request</li> </ul>
+     * following fields in CloudFront access logs:</p> <ul> <li> <p> <code>c-ip</code>,
+     * if the viewer did not use an HTTP proxy or a load balancer to send the
+     * request</p> </li> <li> <p> <code>x-forwarded-for</code>, if the viewer did use
+     * an HTTP proxy or a load balancer to send the request</p> </li> </ul>
      */
     inline void SetClientIP(const char* value) { m_clientIPHasBeenSet = true; m_clientIP.assign(value); }
 
     /**
      * <p>The IP address that the request originated from. If the <code>WebACL</code>
      * is associated with a CloudFront distribution, this is the value of one of the
-     * following fields in CloudFront access logs:</p> <ul> <li><code>c-ip</code>, if
-     * the viewer did not use an HTTP proxy or a load balancer to send the request</li>
-     * <li><code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load
-     * balancer to send the request</li> </ul>
+     * following fields in CloudFront access logs:</p> <ul> <li> <p> <code>c-ip</code>,
+     * if the viewer did not use an HTTP proxy or a load balancer to send the
+     * request</p> </li> <li> <p> <code>x-forwarded-for</code>, if the viewer did use
+     * an HTTP proxy or a load balancer to send the request</p> </li> </ul>
      */
     inline HTTPRequest& WithClientIP(const Aws::String& value) { SetClientIP(value); return *this;}
 
     /**
      * <p>The IP address that the request originated from. If the <code>WebACL</code>
      * is associated with a CloudFront distribution, this is the value of one of the
-     * following fields in CloudFront access logs:</p> <ul> <li><code>c-ip</code>, if
-     * the viewer did not use an HTTP proxy or a load balancer to send the request</li>
-     * <li><code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load
-     * balancer to send the request</li> </ul>
+     * following fields in CloudFront access logs:</p> <ul> <li> <p> <code>c-ip</code>,
+     * if the viewer did not use an HTTP proxy or a load balancer to send the
+     * request</p> </li> <li> <p> <code>x-forwarded-for</code>, if the viewer did use
+     * an HTTP proxy or a load balancer to send the request</p> </li> </ul>
      */
     inline HTTPRequest& WithClientIP(Aws::String&& value) { SetClientIP(value); return *this;}
 
     /**
      * <p>The IP address that the request originated from. If the <code>WebACL</code>
      * is associated with a CloudFront distribution, this is the value of one of the
-     * following fields in CloudFront access logs:</p> <ul> <li><code>c-ip</code>, if
-     * the viewer did not use an HTTP proxy or a load balancer to send the request</li>
-     * <li><code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load
-     * balancer to send the request</li> </ul>
+     * following fields in CloudFront access logs:</p> <ul> <li> <p> <code>c-ip</code>,
+     * if the viewer did not use an HTTP proxy or a load balancer to send the
+     * request</p> </li> <li> <p> <code>x-forwarded-for</code>, if the viewer did use
+     * an HTTP proxy or a load balancer to send the request</p> </li> </ul>
      */
     inline HTTPRequest& WithClientIP(const char* value) { SetClientIP(value); return *this;}
 

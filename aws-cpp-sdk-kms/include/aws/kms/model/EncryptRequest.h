@@ -147,109 +147,109 @@ namespace Model
     inline EncryptRequest& WithPlaintext(Aws::Utils::ByteBuffer&& value) { SetPlaintext(value); return *this;}
 
     /**
-     * <p>Name/value pair that specifies the encryption context to be used for
+     * <p>Name-value pair that specifies the encryption context to be used for
      * authenticated encryption. If used here, the same value must be supplied to the
      * <code>Decrypt</code> API or decryption will fail. For more information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encrypt-context.html">Encryption
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption
      * Context</a>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetEncryptionContext() const{ return m_encryptionContext; }
 
     /**
-     * <p>Name/value pair that specifies the encryption context to be used for
+     * <p>Name-value pair that specifies the encryption context to be used for
      * authenticated encryption. If used here, the same value must be supplied to the
      * <code>Decrypt</code> API or decryption will fail. For more information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encrypt-context.html">Encryption
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption
      * Context</a>.</p>
      */
     inline void SetEncryptionContext(const Aws::Map<Aws::String, Aws::String>& value) { m_encryptionContextHasBeenSet = true; m_encryptionContext = value; }
 
     /**
-     * <p>Name/value pair that specifies the encryption context to be used for
+     * <p>Name-value pair that specifies the encryption context to be used for
      * authenticated encryption. If used here, the same value must be supplied to the
      * <code>Decrypt</code> API or decryption will fail. For more information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encrypt-context.html">Encryption
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption
      * Context</a>.</p>
      */
     inline void SetEncryptionContext(Aws::Map<Aws::String, Aws::String>&& value) { m_encryptionContextHasBeenSet = true; m_encryptionContext = value; }
 
     /**
-     * <p>Name/value pair that specifies the encryption context to be used for
+     * <p>Name-value pair that specifies the encryption context to be used for
      * authenticated encryption. If used here, the same value must be supplied to the
      * <code>Decrypt</code> API or decryption will fail. For more information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encrypt-context.html">Encryption
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption
      * Context</a>.</p>
      */
     inline EncryptRequest& WithEncryptionContext(const Aws::Map<Aws::String, Aws::String>& value) { SetEncryptionContext(value); return *this;}
 
     /**
-     * <p>Name/value pair that specifies the encryption context to be used for
+     * <p>Name-value pair that specifies the encryption context to be used for
      * authenticated encryption. If used here, the same value must be supplied to the
      * <code>Decrypt</code> API or decryption will fail. For more information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encrypt-context.html">Encryption
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption
      * Context</a>.</p>
      */
     inline EncryptRequest& WithEncryptionContext(Aws::Map<Aws::String, Aws::String>&& value) { SetEncryptionContext(value); return *this;}
 
     /**
-     * <p>Name/value pair that specifies the encryption context to be used for
+     * <p>Name-value pair that specifies the encryption context to be used for
      * authenticated encryption. If used here, the same value must be supplied to the
      * <code>Decrypt</code> API or decryption will fail. For more information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encrypt-context.html">Encryption
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption
      * Context</a>.</p>
      */
     inline EncryptRequest& AddEncryptionContext(const Aws::String& key, const Aws::String& value) { m_encryptionContextHasBeenSet = true; m_encryptionContext[key] = value; return *this; }
 
     /**
-     * <p>Name/value pair that specifies the encryption context to be used for
+     * <p>Name-value pair that specifies the encryption context to be used for
      * authenticated encryption. If used here, the same value must be supplied to the
      * <code>Decrypt</code> API or decryption will fail. For more information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encrypt-context.html">Encryption
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption
      * Context</a>.</p>
      */
     inline EncryptRequest& AddEncryptionContext(Aws::String&& key, const Aws::String& value) { m_encryptionContextHasBeenSet = true; m_encryptionContext[key] = value; return *this; }
 
     /**
-     * <p>Name/value pair that specifies the encryption context to be used for
+     * <p>Name-value pair that specifies the encryption context to be used for
      * authenticated encryption. If used here, the same value must be supplied to the
      * <code>Decrypt</code> API or decryption will fail. For more information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encrypt-context.html">Encryption
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption
      * Context</a>.</p>
      */
     inline EncryptRequest& AddEncryptionContext(const Aws::String& key, Aws::String&& value) { m_encryptionContextHasBeenSet = true; m_encryptionContext[key] = value; return *this; }
 
     /**
-     * <p>Name/value pair that specifies the encryption context to be used for
+     * <p>Name-value pair that specifies the encryption context to be used for
      * authenticated encryption. If used here, the same value must be supplied to the
      * <code>Decrypt</code> API or decryption will fail. For more information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encrypt-context.html">Encryption
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption
      * Context</a>.</p>
      */
     inline EncryptRequest& AddEncryptionContext(Aws::String&& key, Aws::String&& value) { m_encryptionContextHasBeenSet = true; m_encryptionContext[key] = value; return *this; }
 
     /**
-     * <p>Name/value pair that specifies the encryption context to be used for
+     * <p>Name-value pair that specifies the encryption context to be used for
      * authenticated encryption. If used here, the same value must be supplied to the
      * <code>Decrypt</code> API or decryption will fail. For more information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encrypt-context.html">Encryption
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption
      * Context</a>.</p>
      */
     inline EncryptRequest& AddEncryptionContext(const char* key, Aws::String&& value) { m_encryptionContextHasBeenSet = true; m_encryptionContext[key] = value; return *this; }
 
     /**
-     * <p>Name/value pair that specifies the encryption context to be used for
+     * <p>Name-value pair that specifies the encryption context to be used for
      * authenticated encryption. If used here, the same value must be supplied to the
      * <code>Decrypt</code> API or decryption will fail. For more information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encrypt-context.html">Encryption
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption
      * Context</a>.</p>
      */
     inline EncryptRequest& AddEncryptionContext(Aws::String&& key, const char* value) { m_encryptionContextHasBeenSet = true; m_encryptionContext[key] = value; return *this; }
 
     /**
-     * <p>Name/value pair that specifies the encryption context to be used for
+     * <p>Name-value pair that specifies the encryption context to be used for
      * authenticated encryption. If used here, the same value must be supplied to the
      * <code>Decrypt</code> API or decryption will fail. For more information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encrypt-context.html">Encryption
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption
      * Context</a>.</p>
      */
     inline EncryptRequest& AddEncryptionContext(const char* key, const char* value) { m_encryptionContextHasBeenSet = true; m_encryptionContext[key] = value; return *this; }

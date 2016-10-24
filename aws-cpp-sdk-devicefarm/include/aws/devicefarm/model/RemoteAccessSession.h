@@ -144,106 +144,111 @@ namespace Model
 
     /**
      * <p>The status of the remote access session. Can be any of the following:</p>
-     * <ul> <li><p>PENDING: A pending status.</p></li> <li><p>PENDING_CONCURRENCY: A
-     * pending concurrency status.</p></li> <li><p>PENDING_DEVICE: A pending device
-     * status.</p></li> <li><p>PROCESSING: A processing status.</p></li>
-     * <li><p>SCHEDULING: A scheduling status.</p></li> <li><p>PREPARING: A preparing
-     * status.</p></li> <li><p>RUNNING: A running status.</p></li> <li><p>COMPLETED: A
-     * completed status.</p></li> <li><p>STOPPING: A stopping status.</p></li> </ul>
+     * <ul> <li> <p>PENDING: A pending status.</p> </li> <li> <p>PENDING_CONCURRENCY: A
+     * pending concurrency status.</p> </li> <li> <p>PENDING_DEVICE: A pending device
+     * status.</p> </li> <li> <p>PROCESSING: A processing status.</p> </li> <li>
+     * <p>SCHEDULING: A scheduling status.</p> </li> <li> <p>PREPARING: A preparing
+     * status.</p> </li> <li> <p>RUNNING: A running status.</p> </li> <li>
+     * <p>COMPLETED: A completed status.</p> </li> <li> <p>STOPPING: A stopping
+     * status.</p> </li> </ul>
      */
     inline const ExecutionStatus& GetStatus() const{ return m_status; }
 
     /**
      * <p>The status of the remote access session. Can be any of the following:</p>
-     * <ul> <li><p>PENDING: A pending status.</p></li> <li><p>PENDING_CONCURRENCY: A
-     * pending concurrency status.</p></li> <li><p>PENDING_DEVICE: A pending device
-     * status.</p></li> <li><p>PROCESSING: A processing status.</p></li>
-     * <li><p>SCHEDULING: A scheduling status.</p></li> <li><p>PREPARING: A preparing
-     * status.</p></li> <li><p>RUNNING: A running status.</p></li> <li><p>COMPLETED: A
-     * completed status.</p></li> <li><p>STOPPING: A stopping status.</p></li> </ul>
+     * <ul> <li> <p>PENDING: A pending status.</p> </li> <li> <p>PENDING_CONCURRENCY: A
+     * pending concurrency status.</p> </li> <li> <p>PENDING_DEVICE: A pending device
+     * status.</p> </li> <li> <p>PROCESSING: A processing status.</p> </li> <li>
+     * <p>SCHEDULING: A scheduling status.</p> </li> <li> <p>PREPARING: A preparing
+     * status.</p> </li> <li> <p>RUNNING: A running status.</p> </li> <li>
+     * <p>COMPLETED: A completed status.</p> </li> <li> <p>STOPPING: A stopping
+     * status.</p> </li> </ul>
      */
     inline void SetStatus(const ExecutionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
      * <p>The status of the remote access session. Can be any of the following:</p>
-     * <ul> <li><p>PENDING: A pending status.</p></li> <li><p>PENDING_CONCURRENCY: A
-     * pending concurrency status.</p></li> <li><p>PENDING_DEVICE: A pending device
-     * status.</p></li> <li><p>PROCESSING: A processing status.</p></li>
-     * <li><p>SCHEDULING: A scheduling status.</p></li> <li><p>PREPARING: A preparing
-     * status.</p></li> <li><p>RUNNING: A running status.</p></li> <li><p>COMPLETED: A
-     * completed status.</p></li> <li><p>STOPPING: A stopping status.</p></li> </ul>
+     * <ul> <li> <p>PENDING: A pending status.</p> </li> <li> <p>PENDING_CONCURRENCY: A
+     * pending concurrency status.</p> </li> <li> <p>PENDING_DEVICE: A pending device
+     * status.</p> </li> <li> <p>PROCESSING: A processing status.</p> </li> <li>
+     * <p>SCHEDULING: A scheduling status.</p> </li> <li> <p>PREPARING: A preparing
+     * status.</p> </li> <li> <p>RUNNING: A running status.</p> </li> <li>
+     * <p>COMPLETED: A completed status.</p> </li> <li> <p>STOPPING: A stopping
+     * status.</p> </li> </ul>
      */
     inline void SetStatus(ExecutionStatus&& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
      * <p>The status of the remote access session. Can be any of the following:</p>
-     * <ul> <li><p>PENDING: A pending status.</p></li> <li><p>PENDING_CONCURRENCY: A
-     * pending concurrency status.</p></li> <li><p>PENDING_DEVICE: A pending device
-     * status.</p></li> <li><p>PROCESSING: A processing status.</p></li>
-     * <li><p>SCHEDULING: A scheduling status.</p></li> <li><p>PREPARING: A preparing
-     * status.</p></li> <li><p>RUNNING: A running status.</p></li> <li><p>COMPLETED: A
-     * completed status.</p></li> <li><p>STOPPING: A stopping status.</p></li> </ul>
+     * <ul> <li> <p>PENDING: A pending status.</p> </li> <li> <p>PENDING_CONCURRENCY: A
+     * pending concurrency status.</p> </li> <li> <p>PENDING_DEVICE: A pending device
+     * status.</p> </li> <li> <p>PROCESSING: A processing status.</p> </li> <li>
+     * <p>SCHEDULING: A scheduling status.</p> </li> <li> <p>PREPARING: A preparing
+     * status.</p> </li> <li> <p>RUNNING: A running status.</p> </li> <li>
+     * <p>COMPLETED: A completed status.</p> </li> <li> <p>STOPPING: A stopping
+     * status.</p> </li> </ul>
      */
     inline RemoteAccessSession& WithStatus(const ExecutionStatus& value) { SetStatus(value); return *this;}
 
     /**
      * <p>The status of the remote access session. Can be any of the following:</p>
-     * <ul> <li><p>PENDING: A pending status.</p></li> <li><p>PENDING_CONCURRENCY: A
-     * pending concurrency status.</p></li> <li><p>PENDING_DEVICE: A pending device
-     * status.</p></li> <li><p>PROCESSING: A processing status.</p></li>
-     * <li><p>SCHEDULING: A scheduling status.</p></li> <li><p>PREPARING: A preparing
-     * status.</p></li> <li><p>RUNNING: A running status.</p></li> <li><p>COMPLETED: A
-     * completed status.</p></li> <li><p>STOPPING: A stopping status.</p></li> </ul>
+     * <ul> <li> <p>PENDING: A pending status.</p> </li> <li> <p>PENDING_CONCURRENCY: A
+     * pending concurrency status.</p> </li> <li> <p>PENDING_DEVICE: A pending device
+     * status.</p> </li> <li> <p>PROCESSING: A processing status.</p> </li> <li>
+     * <p>SCHEDULING: A scheduling status.</p> </li> <li> <p>PREPARING: A preparing
+     * status.</p> </li> <li> <p>RUNNING: A running status.</p> </li> <li>
+     * <p>COMPLETED: A completed status.</p> </li> <li> <p>STOPPING: A stopping
+     * status.</p> </li> </ul>
      */
     inline RemoteAccessSession& WithStatus(ExecutionStatus&& value) { SetStatus(value); return *this;}
 
     /**
      * <p>The result of the remote access session. Can be any of the following:</p>
-     * <ul> <li><p>PENDING: A pending condition.</p></li> <li><p>PASSED: A passing
-     * condition.</p></li> <li><p>WARNED: A warning condition.</p></li> <li><p>FAILED:
-     * A failed condition.</p></li> <li><p>SKIPPED: A skipped condition.</p></li>
-     * <li><p>ERRORED: An error condition.</p></li> <li><p>STOPPED: A stopped
-     * condition.</p></li> </ul>
+     * <ul> <li> <p>PENDING: A pending condition.</p> </li> <li> <p>PASSED: A passing
+     * condition.</p> </li> <li> <p>WARNED: A warning condition.</p> </li> <li>
+     * <p>FAILED: A failed condition.</p> </li> <li> <p>SKIPPED: A skipped
+     * condition.</p> </li> <li> <p>ERRORED: An error condition.</p> </li> <li>
+     * <p>STOPPED: A stopped condition.</p> </li> </ul>
      */
     inline const ExecutionResult& GetResult() const{ return m_result; }
 
     /**
      * <p>The result of the remote access session. Can be any of the following:</p>
-     * <ul> <li><p>PENDING: A pending condition.</p></li> <li><p>PASSED: A passing
-     * condition.</p></li> <li><p>WARNED: A warning condition.</p></li> <li><p>FAILED:
-     * A failed condition.</p></li> <li><p>SKIPPED: A skipped condition.</p></li>
-     * <li><p>ERRORED: An error condition.</p></li> <li><p>STOPPED: A stopped
-     * condition.</p></li> </ul>
+     * <ul> <li> <p>PENDING: A pending condition.</p> </li> <li> <p>PASSED: A passing
+     * condition.</p> </li> <li> <p>WARNED: A warning condition.</p> </li> <li>
+     * <p>FAILED: A failed condition.</p> </li> <li> <p>SKIPPED: A skipped
+     * condition.</p> </li> <li> <p>ERRORED: An error condition.</p> </li> <li>
+     * <p>STOPPED: A stopped condition.</p> </li> </ul>
      */
     inline void SetResult(const ExecutionResult& value) { m_resultHasBeenSet = true; m_result = value; }
 
     /**
      * <p>The result of the remote access session. Can be any of the following:</p>
-     * <ul> <li><p>PENDING: A pending condition.</p></li> <li><p>PASSED: A passing
-     * condition.</p></li> <li><p>WARNED: A warning condition.</p></li> <li><p>FAILED:
-     * A failed condition.</p></li> <li><p>SKIPPED: A skipped condition.</p></li>
-     * <li><p>ERRORED: An error condition.</p></li> <li><p>STOPPED: A stopped
-     * condition.</p></li> </ul>
+     * <ul> <li> <p>PENDING: A pending condition.</p> </li> <li> <p>PASSED: A passing
+     * condition.</p> </li> <li> <p>WARNED: A warning condition.</p> </li> <li>
+     * <p>FAILED: A failed condition.</p> </li> <li> <p>SKIPPED: A skipped
+     * condition.</p> </li> <li> <p>ERRORED: An error condition.</p> </li> <li>
+     * <p>STOPPED: A stopped condition.</p> </li> </ul>
      */
     inline void SetResult(ExecutionResult&& value) { m_resultHasBeenSet = true; m_result = value; }
 
     /**
      * <p>The result of the remote access session. Can be any of the following:</p>
-     * <ul> <li><p>PENDING: A pending condition.</p></li> <li><p>PASSED: A passing
-     * condition.</p></li> <li><p>WARNED: A warning condition.</p></li> <li><p>FAILED:
-     * A failed condition.</p></li> <li><p>SKIPPED: A skipped condition.</p></li>
-     * <li><p>ERRORED: An error condition.</p></li> <li><p>STOPPED: A stopped
-     * condition.</p></li> </ul>
+     * <ul> <li> <p>PENDING: A pending condition.</p> </li> <li> <p>PASSED: A passing
+     * condition.</p> </li> <li> <p>WARNED: A warning condition.</p> </li> <li>
+     * <p>FAILED: A failed condition.</p> </li> <li> <p>SKIPPED: A skipped
+     * condition.</p> </li> <li> <p>ERRORED: An error condition.</p> </li> <li>
+     * <p>STOPPED: A stopped condition.</p> </li> </ul>
      */
     inline RemoteAccessSession& WithResult(const ExecutionResult& value) { SetResult(value); return *this;}
 
     /**
      * <p>The result of the remote access session. Can be any of the following:</p>
-     * <ul> <li><p>PENDING: A pending condition.</p></li> <li><p>PASSED: A passing
-     * condition.</p></li> <li><p>WARNED: A warning condition.</p></li> <li><p>FAILED:
-     * A failed condition.</p></li> <li><p>SKIPPED: A skipped condition.</p></li>
-     * <li><p>ERRORED: An error condition.</p></li> <li><p>STOPPED: A stopped
-     * condition.</p></li> </ul>
+     * <ul> <li> <p>PENDING: A pending condition.</p> </li> <li> <p>PASSED: A passing
+     * condition.</p> </li> <li> <p>WARNED: A warning condition.</p> </li> <li>
+     * <p>FAILED: A failed condition.</p> </li> <li> <p>SKIPPED: A skipped
+     * condition.</p> </li> <li> <p>ERRORED: An error condition.</p> </li> <li>
+     * <p>STOPPED: A stopped condition.</p> </li> </ul>
      */
     inline RemoteAccessSession& WithResult(ExecutionResult&& value) { SetResult(value); return *this;}
 

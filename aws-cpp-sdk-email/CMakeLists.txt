@@ -84,7 +84,7 @@ project(aws-cpp-sdk-email)
   install (FILES ${AWS_EMAIL_HEADERS} DESTINATION include/aws/email)
   install (FILES ${AWS_EMAIL_MODEL_HEADERS} DESTINATION include/aws/email/model)
 
-  if(MSVC)
+  if(PLATFORM_WINDOWS AND MSVC)
     install (FILES nuget/aws-cpp-sdk-email.autopkg DESTINATION nuget)
   endif()
 

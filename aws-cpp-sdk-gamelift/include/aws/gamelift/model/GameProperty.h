@@ -45,46 +45,74 @@ namespace Model
     GameProperty& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
-    
+    /**
+     * <p>TBD</p>
+     */
     inline const Aws::String& GetKey() const{ return m_key; }
 
-    
+    /**
+     * <p>TBD</p>
+     */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
-    
+    /**
+     * <p>TBD</p>
+     */
     inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = value; }
 
-    
+    /**
+     * <p>TBD</p>
+     */
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
 
-    
+    /**
+     * <p>TBD</p>
+     */
     inline GameProperty& WithKey(const Aws::String& value) { SetKey(value); return *this;}
 
-    
+    /**
+     * <p>TBD</p>
+     */
     inline GameProperty& WithKey(Aws::String&& value) { SetKey(value); return *this;}
 
-    
+    /**
+     * <p>TBD</p>
+     */
     inline GameProperty& WithKey(const char* value) { SetKey(value); return *this;}
 
-    
+    /**
+     * <p>TBD</p>
+     */
     inline const Aws::String& GetValue() const{ return m_value; }
 
-    
+    /**
+     * <p>TBD</p>
+     */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
-    
+    /**
+     * <p>TBD</p>
+     */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = value; }
 
-    
+    /**
+     * <p>TBD</p>
+     */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
 
-    
+    /**
+     * <p>TBD</p>
+     */
     inline GameProperty& WithValue(const Aws::String& value) { SetValue(value); return *this;}
 
-    
+    /**
+     * <p>TBD</p>
+     */
     inline GameProperty& WithValue(Aws::String&& value) { SetValue(value); return *this;}
 
-    
+    /**
+     * <p>TBD</p>
+     */
     inline GameProperty& WithValue(const char* value) { SetValue(value); return *this;}
 
   private:
