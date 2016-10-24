@@ -30,7 +30,7 @@ public class BudgetsCppClientGenerator extends JsonCppClientGenerator {
     @Override
     protected Map<String, String> computeRegionEndpointsForService(final ServiceModel serviceModel) {
         Map<String, String> endpoints = new HashMap<>();
-        endpoints.put("us-east-1", serviceModel.getMetadata().getGlobalEndpoint());
+        endpoints.put("us-east-1", "budgets.amazonaws.com");
 
         return endpoints;
     }
