@@ -163,39 +163,45 @@ namespace Model
     /**
      * <p>Forces the deregistration of the container instance. If you have tasks
      * running on the container instance when you deregister it with the
-     * <code>force</code> option, these tasks remain running and they continue to pass
-     * Elastic Load Balancing load balancer health checks until you terminate the
+     * <code>force</code> option, these tasks remain running until you terminate the
      * instance or the tasks stop through some other means, but they are orphaned (no
      * longer monitored or accounted for by Amazon ECS). If an orphaned task on your
      * container instance is part of an Amazon ECS service, then the service scheduler
-     * starts another copy of that task, on a different container instance if
-     * possible.</p>
+     * starts another copy of that task, on a different container instance if possible.
+     * </p> <p>Any containers in orphaned service tasks that are registered with a
+     * Classic load balancer or an Application load balancer target group are
+     * deregistered, and they will begin connection draining according to the settings
+     * on the load balancer or target group.</p>
      */
     inline bool GetForce() const{ return m_force; }
 
     /**
      * <p>Forces the deregistration of the container instance. If you have tasks
      * running on the container instance when you deregister it with the
-     * <code>force</code> option, these tasks remain running and they continue to pass
-     * Elastic Load Balancing load balancer health checks until you terminate the
+     * <code>force</code> option, these tasks remain running until you terminate the
      * instance or the tasks stop through some other means, but they are orphaned (no
      * longer monitored or accounted for by Amazon ECS). If an orphaned task on your
      * container instance is part of an Amazon ECS service, then the service scheduler
-     * starts another copy of that task, on a different container instance if
-     * possible.</p>
+     * starts another copy of that task, on a different container instance if possible.
+     * </p> <p>Any containers in orphaned service tasks that are registered with a
+     * Classic load balancer or an Application load balancer target group are
+     * deregistered, and they will begin connection draining according to the settings
+     * on the load balancer or target group.</p>
      */
     inline void SetForce(bool value) { m_forceHasBeenSet = true; m_force = value; }
 
     /**
      * <p>Forces the deregistration of the container instance. If you have tasks
      * running on the container instance when you deregister it with the
-     * <code>force</code> option, these tasks remain running and they continue to pass
-     * Elastic Load Balancing load balancer health checks until you terminate the
+     * <code>force</code> option, these tasks remain running until you terminate the
      * instance or the tasks stop through some other means, but they are orphaned (no
      * longer monitored or accounted for by Amazon ECS). If an orphaned task on your
      * container instance is part of an Amazon ECS service, then the service scheduler
-     * starts another copy of that task, on a different container instance if
-     * possible.</p>
+     * starts another copy of that task, on a different container instance if possible.
+     * </p> <p>Any containers in orphaned service tasks that are registered with a
+     * Classic load balancer or an Application load balancer target group are
+     * deregistered, and they will begin connection draining according to the settings
+     * on the load balancer or target group.</p>
      */
     inline DeregisterContainerInstanceRequest& WithForce(bool value) { SetForce(value); return *this;}
 
