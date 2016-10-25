@@ -71,37 +71,44 @@ namespace Model
     inline DeregisterTargetsRequest& WithTargetGroupArn(const char* value) { SetTargetGroupArn(value); return *this;}
 
     /**
-     * <p>The targets.</p>
+     * <p>The targets. If you specified a port override when you registered a target,
+     * you must specify both the target ID and the port when you deregister it.</p>
      */
     inline const Aws::Vector<TargetDescription>& GetTargets() const{ return m_targets; }
 
     /**
-     * <p>The targets.</p>
+     * <p>The targets. If you specified a port override when you registered a target,
+     * you must specify both the target ID and the port when you deregister it.</p>
      */
     inline void SetTargets(const Aws::Vector<TargetDescription>& value) { m_targetsHasBeenSet = true; m_targets = value; }
 
     /**
-     * <p>The targets.</p>
+     * <p>The targets. If you specified a port override when you registered a target,
+     * you must specify both the target ID and the port when you deregister it.</p>
      */
     inline void SetTargets(Aws::Vector<TargetDescription>&& value) { m_targetsHasBeenSet = true; m_targets = value; }
 
     /**
-     * <p>The targets.</p>
+     * <p>The targets. If you specified a port override when you registered a target,
+     * you must specify both the target ID and the port when you deregister it.</p>
      */
     inline DeregisterTargetsRequest& WithTargets(const Aws::Vector<TargetDescription>& value) { SetTargets(value); return *this;}
 
     /**
-     * <p>The targets.</p>
+     * <p>The targets. If you specified a port override when you registered a target,
+     * you must specify both the target ID and the port when you deregister it.</p>
      */
     inline DeregisterTargetsRequest& WithTargets(Aws::Vector<TargetDescription>&& value) { SetTargets(value); return *this;}
 
     /**
-     * <p>The targets.</p>
+     * <p>The targets. If you specified a port override when you registered a target,
+     * you must specify both the target ID and the port when you deregister it.</p>
      */
     inline DeregisterTargetsRequest& AddTargets(const TargetDescription& value) { m_targetsHasBeenSet = true; m_targets.push_back(value); return *this; }
 
     /**
-     * <p>The targets.</p>
+     * <p>The targets. If you specified a port override when you registered a target,
+     * you must specify both the target ID and the port when you deregister it.</p>
      */
     inline DeregisterTargetsRequest& AddTargets(TargetDescription&& value) { m_targetsHasBeenSet = true; m_targets.push_back(value); return *this; }
 

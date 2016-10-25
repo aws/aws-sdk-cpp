@@ -228,30 +228,30 @@ namespace Model
    * group with a protocol and port number for connections from the load balancer to
    * the targets, and with health check settings to be used when checking the health
    * status of the targets.</p> <p>Elastic Load Balancing supports two types of load
-   * balancers: Classic load balancers and Application load balancers (new). A
-   * Classic load balancer makes routing and load balancing decisions either at the
-   * transport layer (TCP/SSL) or the application layer (HTTP/HTTPS), and supports
-   * either EC2-Classic or a VPC. An Application load balancer makes routing and load
+   * balancers: Classic Load Balancers and Application Load Balancers. A Classic Load
+   * Balancer makes routing and load balancing decisions either at the transport
+   * layer (TCP/SSL) or the application layer (HTTP/HTTPS), and supports either
+   * EC2-Classic or a VPC. An Application Load Balancer makes routing and load
    * balancing decisions at the application layer (HTTP/HTTPS), supports path-based
    * routing, and can route requests to one or more ports on each EC2 instance or
    * container instance in your virtual private cloud (VPC). For more information,
    * see the <a
    * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/">Elastic
    * Load Balancing User Guide</a>.</p> <p>This reference covers the 2015-12-01 API,
-   * which supports Application load balancers. The 2012-06-01 API supports Classic
-   * load balancers.</p> <p>To get started with an Application load balancer,
-   * complete the following tasks:</p> <ol> <li> <p>Create a load balancer using
-   * <a>CreateLoadBalancer</a>.</p> </li> <li> <p>Create a target group using
-   * <a>CreateTargetGroup</a>.</p> </li> <li> <p>Register targets for the target
-   * group using <a>RegisterTargets</a>.</p> </li> <li> <p>Create one or more
-   * listeners for your load balancer using <a>CreateListener</a>.</p> </li> <li>
-   * <p>(Optional) Create one or more rules for content routing based on URL using
-   * <a>CreateRule</a>.</p> </li> </ol> <p>To delete an Application load balancer and
-   * its related resources, complete the following tasks:</p> <ol> <li> <p>Delete the
-   * load balancer using <a>DeleteLoadBalancer</a>.</p> </li> <li> <p>Delete the
-   * target group using <a>DeleteTargetGroup</a>.</p> </li> </ol> <p>All Elastic Load
-   * Balancing operations are idempotent, which means that they complete at most one
-   * time. If you repeat an operation, it succeeds.</p>
+   * which supports Application Load Balancers. The 2012-06-01 API supports Classic
+   * Load Balancers.</p> <p>To get started, complete the following tasks:</p> <ol>
+   * <li> <p>Create an Application Load Balancer using <a>CreateLoadBalancer</a>.</p>
+   * </li> <li> <p>Create a target group using <a>CreateTargetGroup</a>.</p> </li>
+   * <li> <p>Register targets for the target group using <a>RegisterTargets</a>.</p>
+   * </li> <li> <p>Create one or more listeners for your load balancer using
+   * <a>CreateListener</a>.</p> </li> <li> <p>(Optional) Create one or more rules for
+   * content routing based on URL using <a>CreateRule</a>.</p> </li> </ol> <p>To
+   * delete an Application Load Balancer and its related resources, complete the
+   * following tasks:</p> <ol> <li> <p>Delete the load balancer using
+   * <a>DeleteLoadBalancer</a>.</p> </li> <li> <p>Delete the target group using
+   * <a>DeleteTargetGroup</a>.</p> </li> </ol> <p>All Elastic Load Balancing
+   * operations are idempotent, which means that they complete at most one time. If
+   * you repeat an operation, it succeeds.</p>
    */
   class AWS_ELASTICLOADBALANCINGV2_API ElasticLoadBalancingv2Client : public Aws::Client::AWSXMLClient
   {
@@ -281,7 +281,7 @@ namespace Model
 
         /**
          * <p>Adds the specified tags to the specified resource. You can tag your
-         * Application load balancers and your target groups.</p> <p>Each tag consists of a
+         * Application Load Balancers and your target groups.</p> <p>Each tag consists of a
          * key and an optional value. If a resource already has a tag with the same key,
          * <code>AddTags</code> updates its value.</p> <p>To list the current tags for your
          * resources, use <a>DescribeTags</a>. To remove tags from your resources, use
@@ -291,7 +291,7 @@ namespace Model
 
         /**
          * <p>Adds the specified tags to the specified resource. You can tag your
-         * Application load balancers and your target groups.</p> <p>Each tag consists of a
+         * Application Load Balancers and your target groups.</p> <p>Each tag consists of a
          * key and an optional value. If a resource already has a tag with the same key,
          * <code>AddTags</code> updates its value.</p> <p>To list the current tags for your
          * resources, use <a>DescribeTags</a>. To remove tags from your resources, use
@@ -303,7 +303,7 @@ namespace Model
 
         /**
          * <p>Adds the specified tags to the specified resource. You can tag your
-         * Application load balancers and your target groups.</p> <p>Each tag consists of a
+         * Application Load Balancers and your target groups.</p> <p>Each tag consists of a
          * key and an optional value. If a resource already has a tag with the same key,
          * <code>AddTags</code> updates its value.</p> <p>To list the current tags for your
          * resources, use <a>DescribeTags</a>. To remove tags from your resources, use
@@ -314,11 +314,12 @@ namespace Model
         virtual void AddTagsAsync(const Model::AddTagsRequest& request, const AddTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a listener for the specified Application load balancer.</p> <p>To
-         * update a listener, use <a>ModifyListener</a>. When you are finished with a
-         * listener, you can delete it using <a>DeleteListener</a>. If you are finished
-         * with both the listener and the load balancer, you can delete them both using
-         * <a>DeleteLoadBalancer</a>.</p> <p>For more information, see <a
+         * <p>Creates a listener for the specified Application Load Balancer.</p> <p>You
+         * can create up to 10 listeners per load balancer.</p> <p>To update a listener,
+         * use <a>ModifyListener</a>. When you are finished with a listener, you can delete
+         * it using <a>DeleteListener</a>. If you are finished with both the listener and
+         * the load balancer, you can delete them both using <a>DeleteLoadBalancer</a>.</p>
+         * <p>For more information, see <a
          * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html">Listeners
          * for Your Application Load Balancers</a> in the <i>Application Load Balancers
          * Guide</i>.</p>
@@ -326,11 +327,12 @@ namespace Model
         virtual Model::CreateListenerOutcome CreateListener(const Model::CreateListenerRequest& request) const;
 
         /**
-         * <p>Creates a listener for the specified Application load balancer.</p> <p>To
-         * update a listener, use <a>ModifyListener</a>. When you are finished with a
-         * listener, you can delete it using <a>DeleteListener</a>. If you are finished
-         * with both the listener and the load balancer, you can delete them both using
-         * <a>DeleteLoadBalancer</a>.</p> <p>For more information, see <a
+         * <p>Creates a listener for the specified Application Load Balancer.</p> <p>You
+         * can create up to 10 listeners per load balancer.</p> <p>To update a listener,
+         * use <a>ModifyListener</a>. When you are finished with a listener, you can delete
+         * it using <a>DeleteListener</a>. If you are finished with both the listener and
+         * the load balancer, you can delete them both using <a>DeleteLoadBalancer</a>.</p>
+         * <p>For more information, see <a
          * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html">Listeners
          * for Your Application Load Balancers</a> in the <i>Application Load Balancers
          * Guide</i>.</p>
@@ -340,11 +342,12 @@ namespace Model
         virtual Model::CreateListenerOutcomeCallable CreateListenerCallable(const Model::CreateListenerRequest& request) const;
 
         /**
-         * <p>Creates a listener for the specified Application load balancer.</p> <p>To
-         * update a listener, use <a>ModifyListener</a>. When you are finished with a
-         * listener, you can delete it using <a>DeleteListener</a>. If you are finished
-         * with both the listener and the load balancer, you can delete them both using
-         * <a>DeleteLoadBalancer</a>.</p> <p>For more information, see <a
+         * <p>Creates a listener for the specified Application Load Balancer.</p> <p>You
+         * can create up to 10 listeners per load balancer.</p> <p>To update a listener,
+         * use <a>ModifyListener</a>. When you are finished with a listener, you can delete
+         * it using <a>DeleteListener</a>. If you are finished with both the listener and
+         * the load balancer, you can delete them both using <a>DeleteLoadBalancer</a>.</p>
+         * <p>For more information, see <a
          * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html">Listeners
          * for Your Application Load Balancers</a> in the <i>Application Load Balancers
          * Guide</i>.</p>
@@ -354,7 +357,7 @@ namespace Model
         virtual void CreateListenerAsync(const Model::CreateListenerRequest& request, const CreateListenerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates an Application load balancer.</p> <p>To create listeners for your
+         * <p>Creates an Application Load Balancer.</p> <p>To create listeners for your
          * load balancer, use <a>CreateListener</a>. You can add security groups, subnets,
          * and tags when you create your load balancer, or you can add them later using
          * <a>SetSecurityGroups</a>, <a>SetSubnets</a>, and <a>AddTags</a>.</p> <p>To
@@ -365,12 +368,14 @@ namespace Model
          * for your account. For more information, see <a
          * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-limits.html">Limits
          * for Your Application Load Balancer</a> in the <i>Application Load Balancers
-         * Guide</i>.</p>
+         * Guide</i>.</p> <p>For more information, see <a
+         * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/application-load-balancers.html">Application
+         * Load Balancers</a> in the <i>Application Load Balancers Guide</i>.</p>
          */
         virtual Model::CreateLoadBalancerOutcome CreateLoadBalancer(const Model::CreateLoadBalancerRequest& request) const;
 
         /**
-         * <p>Creates an Application load balancer.</p> <p>To create listeners for your
+         * <p>Creates an Application Load Balancer.</p> <p>To create listeners for your
          * load balancer, use <a>CreateListener</a>. You can add security groups, subnets,
          * and tags when you create your load balancer, or you can add them later using
          * <a>SetSecurityGroups</a>, <a>SetSubnets</a>, and <a>AddTags</a>.</p> <p>To
@@ -381,14 +386,16 @@ namespace Model
          * for your account. For more information, see <a
          * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-limits.html">Limits
          * for Your Application Load Balancer</a> in the <i>Application Load Balancers
-         * Guide</i>.</p>
+         * Guide</i>.</p> <p>For more information, see <a
+         * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/application-load-balancers.html">Application
+         * Load Balancers</a> in the <i>Application Load Balancers Guide</i>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateLoadBalancerOutcomeCallable CreateLoadBalancerCallable(const Model::CreateLoadBalancerRequest& request) const;
 
         /**
-         * <p>Creates an Application load balancer.</p> <p>To create listeners for your
+         * <p>Creates an Application Load Balancer.</p> <p>To create listeners for your
          * load balancer, use <a>CreateListener</a>. You can add security groups, subnets,
          * and tags when you create your load balancer, or you can add them later using
          * <a>SetSecurityGroups</a>, <a>SetSubnets</a>, and <a>AddTags</a>.</p> <p>To
@@ -399,30 +406,38 @@ namespace Model
          * for your account. For more information, see <a
          * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-limits.html">Limits
          * for Your Application Load Balancer</a> in the <i>Application Load Balancers
-         * Guide</i>.</p>
+         * Guide</i>.</p> <p>For more information, see <a
+         * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/application-load-balancers.html">Application
+         * Load Balancers</a> in the <i>Application Load Balancers Guide</i>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateLoadBalancerAsync(const Model::CreateLoadBalancerRequest& request, const CreateLoadBalancerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a rule for the specified listener.</p> <p>A rule consists conditions
-         * and actions. Rules are evaluated in priority order, from the lowest value to the
-         * highest value. When the conditions for a rule are met, the specified actions are
-         * taken. If no rule's conditions are met, the default actions for the listener are
-         * taken.</p> <p>To view your current rules, use <a>DescribeRules</a>. To update a
-         * rule, use <a>ModifyRule</a>. To set the priorities of your rules, use
+         * <p>Creates a rule for the specified listener.</p> <p>Each rule can have one
+         * action and one condition. Rules are evaluated in priority order, from the lowest
+         * value to the highest value. When the condition for a rule is met, the specified
+         * action is taken. If no conditions are met, the default action for the default
+         * rule is taken. For more information, see <a
+         * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html#listener-rules">Listener
+         * Rules</a> in the <i>Application Load Balancers Guide</i>.</p> <p>To view your
+         * current rules, use <a>DescribeRules</a>. To update a rule, use
+         * <a>ModifyRule</a>. To set the priorities of your rules, use
          * <a>SetRulePriorities</a>. To delete a rule, use <a>DeleteRule</a>.</p>
          */
         virtual Model::CreateRuleOutcome CreateRule(const Model::CreateRuleRequest& request) const;
 
         /**
-         * <p>Creates a rule for the specified listener.</p> <p>A rule consists conditions
-         * and actions. Rules are evaluated in priority order, from the lowest value to the
-         * highest value. When the conditions for a rule are met, the specified actions are
-         * taken. If no rule's conditions are met, the default actions for the listener are
-         * taken.</p> <p>To view your current rules, use <a>DescribeRules</a>. To update a
-         * rule, use <a>ModifyRule</a>. To set the priorities of your rules, use
+         * <p>Creates a rule for the specified listener.</p> <p>Each rule can have one
+         * action and one condition. Rules are evaluated in priority order, from the lowest
+         * value to the highest value. When the condition for a rule is met, the specified
+         * action is taken. If no conditions are met, the default action for the default
+         * rule is taken. For more information, see <a
+         * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html#listener-rules">Listener
+         * Rules</a> in the <i>Application Load Balancers Guide</i>.</p> <p>To view your
+         * current rules, use <a>DescribeRules</a>. To update a rule, use
+         * <a>ModifyRule</a>. To set the priorities of your rules, use
          * <a>SetRulePriorities</a>. To delete a rule, use <a>DeleteRule</a>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -430,12 +445,15 @@ namespace Model
         virtual Model::CreateRuleOutcomeCallable CreateRuleCallable(const Model::CreateRuleRequest& request) const;
 
         /**
-         * <p>Creates a rule for the specified listener.</p> <p>A rule consists conditions
-         * and actions. Rules are evaluated in priority order, from the lowest value to the
-         * highest value. When the conditions for a rule are met, the specified actions are
-         * taken. If no rule's conditions are met, the default actions for the listener are
-         * taken.</p> <p>To view your current rules, use <a>DescribeRules</a>. To update a
-         * rule, use <a>ModifyRule</a>. To set the priorities of your rules, use
+         * <p>Creates a rule for the specified listener.</p> <p>Each rule can have one
+         * action and one condition. Rules are evaluated in priority order, from the lowest
+         * value to the highest value. When the condition for a rule is met, the specified
+         * action is taken. If no conditions are met, the default action for the default
+         * rule is taken. For more information, see <a
+         * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html#listener-rules">Listener
+         * Rules</a> in the <i>Application Load Balancers Guide</i>.</p> <p>To view your
+         * current rules, use <a>DescribeRules</a>. To update a rule, use
+         * <a>ModifyRule</a>. To set the priorities of your rules, use
          * <a>SetRulePriorities</a>. To delete a rule, use <a>DeleteRule</a>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -514,37 +532,37 @@ namespace Model
         virtual void DeleteListenerAsync(const Model::DeleteListenerRequest& request, const DeleteListenerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the specified load balancer and its attached listeners.</p> <p>You
-         * can't delete a load balancer if deletion protection is enabled. If the load
-         * balancer does not exist or has already been deleted, the call succeeds.</p>
-         * <p>Deleting a load balancer does not affect its registered targets. For example,
-         * your EC2 instances continue to run and are still registered to their target
-         * groups. If you no longer need these EC2 instances, you can stop or terminate
-         * them.</p>
+         * <p>Deletes the specified Application Load Balancer and its attached
+         * listeners.</p> <p>You can't delete a load balancer if deletion protection is
+         * enabled. If the load balancer does not exist or has already been deleted, the
+         * call succeeds.</p> <p>Deleting a load balancer does not affect its registered
+         * targets. For example, your EC2 instances continue to run and are still
+         * registered to their target groups. If you no longer need these EC2 instances,
+         * you can stop or terminate them.</p>
          */
         virtual Model::DeleteLoadBalancerOutcome DeleteLoadBalancer(const Model::DeleteLoadBalancerRequest& request) const;
 
         /**
-         * <p>Deletes the specified load balancer and its attached listeners.</p> <p>You
-         * can't delete a load balancer if deletion protection is enabled. If the load
-         * balancer does not exist or has already been deleted, the call succeeds.</p>
-         * <p>Deleting a load balancer does not affect its registered targets. For example,
-         * your EC2 instances continue to run and are still registered to their target
-         * groups. If you no longer need these EC2 instances, you can stop or terminate
-         * them.</p>
+         * <p>Deletes the specified Application Load Balancer and its attached
+         * listeners.</p> <p>You can't delete a load balancer if deletion protection is
+         * enabled. If the load balancer does not exist or has already been deleted, the
+         * call succeeds.</p> <p>Deleting a load balancer does not affect its registered
+         * targets. For example, your EC2 instances continue to run and are still
+         * registered to their target groups. If you no longer need these EC2 instances,
+         * you can stop or terminate them.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteLoadBalancerOutcomeCallable DeleteLoadBalancerCallable(const Model::DeleteLoadBalancerRequest& request) const;
 
         /**
-         * <p>Deletes the specified load balancer and its attached listeners.</p> <p>You
-         * can't delete a load balancer if deletion protection is enabled. If the load
-         * balancer does not exist or has already been deleted, the call succeeds.</p>
-         * <p>Deleting a load balancer does not affect its registered targets. For example,
-         * your EC2 instances continue to run and are still registered to their target
-         * groups. If you no longer need these EC2 instances, you can stop or terminate
-         * them.</p>
+         * <p>Deletes the specified Application Load Balancer and its attached
+         * listeners.</p> <p>You can't delete a load balancer if deletion protection is
+         * enabled. If the load balancer does not exist or has already been deleted, the
+         * call succeeds.</p> <p>Deleting a load balancer does not affect its registered
+         * targets. For example, your EC2 instances continue to run and are still
+         * registered to their target groups. If you no longer need these EC2 instances,
+         * you can stop or terminate them.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -620,57 +638,60 @@ namespace Model
         virtual void DeregisterTargetsAsync(const Model::DeregisterTargetsRequest& request, const DeregisterTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes the specified listeners or the listeners for the specified load
-         * balancer. You must specify either a load balancer or one or more listeners.</p>
+         * <p>Describes the specified listeners or the listeners for the specified
+         * Application Load Balancer. You must specify either a load balancer or one or
+         * more listeners.</p>
          */
         virtual Model::DescribeListenersOutcome DescribeListeners(const Model::DescribeListenersRequest& request) const;
 
         /**
-         * <p>Describes the specified listeners or the listeners for the specified load
-         * balancer. You must specify either a load balancer or one or more listeners.</p>
+         * <p>Describes the specified listeners or the listeners for the specified
+         * Application Load Balancer. You must specify either a load balancer or one or
+         * more listeners.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeListenersOutcomeCallable DescribeListenersCallable(const Model::DescribeListenersRequest& request) const;
 
         /**
-         * <p>Describes the specified listeners or the listeners for the specified load
-         * balancer. You must specify either a load balancer or one or more listeners.</p>
+         * <p>Describes the specified listeners or the listeners for the specified
+         * Application Load Balancer. You must specify either a load balancer or one or
+         * more listeners.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeListenersAsync(const Model::DescribeListenersRequest& request, const DescribeListenersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes the attributes for the specified load balancer.</p>
+         * <p>Describes the attributes for the specified Application Load Balancer.</p>
          */
         virtual Model::DescribeLoadBalancerAttributesOutcome DescribeLoadBalancerAttributes(const Model::DescribeLoadBalancerAttributesRequest& request) const;
 
         /**
-         * <p>Describes the attributes for the specified load balancer.</p>
+         * <p>Describes the attributes for the specified Application Load Balancer.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeLoadBalancerAttributesOutcomeCallable DescribeLoadBalancerAttributesCallable(const Model::DescribeLoadBalancerAttributesRequest& request) const;
 
         /**
-         * <p>Describes the attributes for the specified load balancer.</p>
+         * <p>Describes the attributes for the specified Application Load Balancer.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeLoadBalancerAttributesAsync(const Model::DescribeLoadBalancerAttributesRequest& request, const DescribeLoadBalancerAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes the specified Application load balancers or all of your Application
-         * load balancers.</p> <p>To describe the listeners for a load balancer, use
+         * <p>Describes the specified Application Load Balancers or all of your Application
+         * Load Balancers.</p> <p>To describe the listeners for a load balancer, use
          * <a>DescribeListeners</a>. To describe the attributes for a load balancer, use
          * <a>DescribeLoadBalancerAttributes</a>.</p>
          */
         virtual Model::DescribeLoadBalancersOutcome DescribeLoadBalancers(const Model::DescribeLoadBalancersRequest& request) const;
 
         /**
-         * <p>Describes the specified Application load balancers or all of your Application
-         * load balancers.</p> <p>To describe the listeners for a load balancer, use
+         * <p>Describes the specified Application Load Balancers or all of your Application
+         * Load Balancers.</p> <p>To describe the listeners for a load balancer, use
          * <a>DescribeListeners</a>. To describe the attributes for a load balancer, use
          * <a>DescribeLoadBalancerAttributes</a>.</p>
          *
@@ -679,8 +700,8 @@ namespace Model
         virtual Model::DescribeLoadBalancersOutcomeCallable DescribeLoadBalancersCallable(const Model::DescribeLoadBalancersRequest& request) const;
 
         /**
-         * <p>Describes the specified Application load balancers or all of your Application
-         * load balancers.</p> <p>To describe the listeners for a load balancer, use
+         * <p>Describes the specified Application Load Balancers or all of your Application
+         * Load Balancers.</p> <p>To describe the listeners for a load balancer, use
          * <a>DescribeListeners</a>. To describe the attributes for a load balancer, use
          * <a>DescribeLoadBalancerAttributes</a>.</p>
          *
@@ -861,25 +882,28 @@ namespace Model
         virtual void ModifyListenerAsync(const Model::ModifyListenerRequest& request, const ModifyListenerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Modifies the specified attributes of the specified load balancer.</p> <p>If
-         * any of the specified attributes can't be modified as requested, the call fails.
-         * Any existing attributes that you do not modify retain their current values.</p>
+         * <p>Modifies the specified attributes of the specified Application Load
+         * Balancer.</p> <p>If any of the specified attributes can't be modified as
+         * requested, the call fails. Any existing attributes that you do not modify retain
+         * their current values.</p>
          */
         virtual Model::ModifyLoadBalancerAttributesOutcome ModifyLoadBalancerAttributes(const Model::ModifyLoadBalancerAttributesRequest& request) const;
 
         /**
-         * <p>Modifies the specified attributes of the specified load balancer.</p> <p>If
-         * any of the specified attributes can't be modified as requested, the call fails.
-         * Any existing attributes that you do not modify retain their current values.</p>
+         * <p>Modifies the specified attributes of the specified Application Load
+         * Balancer.</p> <p>If any of the specified attributes can't be modified as
+         * requested, the call fails. Any existing attributes that you do not modify retain
+         * their current values.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ModifyLoadBalancerAttributesOutcomeCallable ModifyLoadBalancerAttributesCallable(const Model::ModifyLoadBalancerAttributesRequest& request) const;
 
         /**
-         * <p>Modifies the specified attributes of the specified load balancer.</p> <p>If
-         * any of the specified attributes can't be modified as requested, the call fails.
-         * Any existing attributes that you do not modify retain their current values.</p>
+         * <p>Modifies the specified attributes of the specified Application Load
+         * Balancer.</p> <p>If any of the specified attributes can't be modified as
+         * requested, the call fails. Any existing attributes that you do not modify retain
+         * their current values.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -955,28 +979,40 @@ namespace Model
         virtual void ModifyTargetGroupAttributesAsync(const Model::ModifyTargetGroupAttributesRequest& request, const ModifyTargetGroupAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Registers the specified targets with the specified target group.</p> <p>The
-         * target must be in the virtual private cloud (VPC) that you specified for the
-         * target group.</p> <p>To remove a target from a target group, use
-         * <a>DeregisterTargets</a>.</p>
+         * <p>Registers the specified targets with the specified target group.</p> <p>By
+         * default, the load balancer routes requests to registered targets using the
+         * protocol and port number for the target group. Alternatively, you can override
+         * the port for a target when you register it.</p> <p>The target must be in the
+         * virtual private cloud (VPC) that you specified for the target group. If the
+         * target is an EC2 instance, it can't be in the <code>stopped</code> or
+         * <code>running</code> state when you register it.</p> <p>To remove a target from
+         * a target group, use <a>DeregisterTargets</a>.</p>
          */
         virtual Model::RegisterTargetsOutcome RegisterTargets(const Model::RegisterTargetsRequest& request) const;
 
         /**
-         * <p>Registers the specified targets with the specified target group.</p> <p>The
-         * target must be in the virtual private cloud (VPC) that you specified for the
-         * target group.</p> <p>To remove a target from a target group, use
-         * <a>DeregisterTargets</a>.</p>
+         * <p>Registers the specified targets with the specified target group.</p> <p>By
+         * default, the load balancer routes requests to registered targets using the
+         * protocol and port number for the target group. Alternatively, you can override
+         * the port for a target when you register it.</p> <p>The target must be in the
+         * virtual private cloud (VPC) that you specified for the target group. If the
+         * target is an EC2 instance, it can't be in the <code>stopped</code> or
+         * <code>running</code> state when you register it.</p> <p>To remove a target from
+         * a target group, use <a>DeregisterTargets</a>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::RegisterTargetsOutcomeCallable RegisterTargetsCallable(const Model::RegisterTargetsRequest& request) const;
 
         /**
-         * <p>Registers the specified targets with the specified target group.</p> <p>The
-         * target must be in the virtual private cloud (VPC) that you specified for the
-         * target group.</p> <p>To remove a target from a target group, use
-         * <a>DeregisterTargets</a>.</p>
+         * <p>Registers the specified targets with the specified target group.</p> <p>By
+         * default, the load balancer routes requests to registered targets using the
+         * protocol and port number for the target group. Alternatively, you can override
+         * the port for a target when you register it.</p> <p>The target must be in the
+         * virtual private cloud (VPC) that you specified for the target group. If the
+         * target is an EC2 instance, it can't be in the <code>stopped</code> or
+         * <code>running</code> state when you register it.</p> <p>To remove a target from
+         * a target group, use <a>DeregisterTargets</a>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */

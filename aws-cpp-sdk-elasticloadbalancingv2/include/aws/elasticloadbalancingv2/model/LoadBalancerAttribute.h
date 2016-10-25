@@ -47,119 +47,126 @@ namespace Model
     /**
      * <p>The name of the attribute.</p> <ul> <li> <p>
      * <code>access_logs.s3.enabled</code> - Indicates whether access logs stored in
-     * Amazon S3 are enabled.</p> </li> <li> <p> <code>access_logs.s3.bucket</code> -
-     * The name of the S3 bucket for the access logs. This attribute is required if
-     * access logs in Amazon S3 are enabled. The bucket must exist in the same region
-     * as the load balancer and have a bucket policy that grants Elastic Load Balancing
-     * permission to write to the bucket.</p> </li> <li> <p>
-     * <code>access_logs.s3.prefix</code> - The prefix for the location in the S3
-     * bucket. If you don't specify a prefix, the access logs are stored in the root of
-     * the bucket.</p> </li> <li> <p> <code>deletion_protection.enabled</code> -
-     * Indicates whether deletion protection is enabled.</p> </li> <li> <p>
-     * <code>idle_timeout.timeout_seconds</code> - The idle timeout value, in seconds.
-     * The valid range is 1-3600. The default is 60 seconds.</p> </li> </ul>
+     * Amazon S3 are enabled. The value is <code>true</code> or <code>false</code>.</p>
+     * </li> <li> <p> <code>access_logs.s3.bucket</code> - The name of the S3 bucket
+     * for the access logs. This attribute is required if access logs in Amazon S3 are
+     * enabled. The bucket must exist in the same region as the load balancer and have
+     * a bucket policy that grants Elastic Load Balancing permission to write to the
+     * bucket.</p> </li> <li> <p> <code>access_logs.s3.prefix</code> - The prefix for
+     * the location in the S3 bucket. If you don't specify a prefix, the access logs
+     * are stored in the root of the bucket.</p> </li> <li> <p>
+     * <code>deletion_protection.enabled</code> - Indicates whether deletion protection
+     * is enabled. The value is <code>true</code> or <code>false</code>.</p> </li> <li>
+     * <p> <code>idle_timeout.timeout_seconds</code> - The idle timeout value, in
+     * seconds. The valid range is 1-3600. The default is 60 seconds.</p> </li> </ul>
      */
     inline const Aws::String& GetKey() const{ return m_key; }
 
     /**
      * <p>The name of the attribute.</p> <ul> <li> <p>
      * <code>access_logs.s3.enabled</code> - Indicates whether access logs stored in
-     * Amazon S3 are enabled.</p> </li> <li> <p> <code>access_logs.s3.bucket</code> -
-     * The name of the S3 bucket for the access logs. This attribute is required if
-     * access logs in Amazon S3 are enabled. The bucket must exist in the same region
-     * as the load balancer and have a bucket policy that grants Elastic Load Balancing
-     * permission to write to the bucket.</p> </li> <li> <p>
-     * <code>access_logs.s3.prefix</code> - The prefix for the location in the S3
-     * bucket. If you don't specify a prefix, the access logs are stored in the root of
-     * the bucket.</p> </li> <li> <p> <code>deletion_protection.enabled</code> -
-     * Indicates whether deletion protection is enabled.</p> </li> <li> <p>
-     * <code>idle_timeout.timeout_seconds</code> - The idle timeout value, in seconds.
-     * The valid range is 1-3600. The default is 60 seconds.</p> </li> </ul>
+     * Amazon S3 are enabled. The value is <code>true</code> or <code>false</code>.</p>
+     * </li> <li> <p> <code>access_logs.s3.bucket</code> - The name of the S3 bucket
+     * for the access logs. This attribute is required if access logs in Amazon S3 are
+     * enabled. The bucket must exist in the same region as the load balancer and have
+     * a bucket policy that grants Elastic Load Balancing permission to write to the
+     * bucket.</p> </li> <li> <p> <code>access_logs.s3.prefix</code> - The prefix for
+     * the location in the S3 bucket. If you don't specify a prefix, the access logs
+     * are stored in the root of the bucket.</p> </li> <li> <p>
+     * <code>deletion_protection.enabled</code> - Indicates whether deletion protection
+     * is enabled. The value is <code>true</code> or <code>false</code>.</p> </li> <li>
+     * <p> <code>idle_timeout.timeout_seconds</code> - The idle timeout value, in
+     * seconds. The valid range is 1-3600. The default is 60 seconds.</p> </li> </ul>
      */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
      * <p>The name of the attribute.</p> <ul> <li> <p>
      * <code>access_logs.s3.enabled</code> - Indicates whether access logs stored in
-     * Amazon S3 are enabled.</p> </li> <li> <p> <code>access_logs.s3.bucket</code> -
-     * The name of the S3 bucket for the access logs. This attribute is required if
-     * access logs in Amazon S3 are enabled. The bucket must exist in the same region
-     * as the load balancer and have a bucket policy that grants Elastic Load Balancing
-     * permission to write to the bucket.</p> </li> <li> <p>
-     * <code>access_logs.s3.prefix</code> - The prefix for the location in the S3
-     * bucket. If you don't specify a prefix, the access logs are stored in the root of
-     * the bucket.</p> </li> <li> <p> <code>deletion_protection.enabled</code> -
-     * Indicates whether deletion protection is enabled.</p> </li> <li> <p>
-     * <code>idle_timeout.timeout_seconds</code> - The idle timeout value, in seconds.
-     * The valid range is 1-3600. The default is 60 seconds.</p> </li> </ul>
+     * Amazon S3 are enabled. The value is <code>true</code> or <code>false</code>.</p>
+     * </li> <li> <p> <code>access_logs.s3.bucket</code> - The name of the S3 bucket
+     * for the access logs. This attribute is required if access logs in Amazon S3 are
+     * enabled. The bucket must exist in the same region as the load balancer and have
+     * a bucket policy that grants Elastic Load Balancing permission to write to the
+     * bucket.</p> </li> <li> <p> <code>access_logs.s3.prefix</code> - The prefix for
+     * the location in the S3 bucket. If you don't specify a prefix, the access logs
+     * are stored in the root of the bucket.</p> </li> <li> <p>
+     * <code>deletion_protection.enabled</code> - Indicates whether deletion protection
+     * is enabled. The value is <code>true</code> or <code>false</code>.</p> </li> <li>
+     * <p> <code>idle_timeout.timeout_seconds</code> - The idle timeout value, in
+     * seconds. The valid range is 1-3600. The default is 60 seconds.</p> </li> </ul>
      */
     inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
      * <p>The name of the attribute.</p> <ul> <li> <p>
      * <code>access_logs.s3.enabled</code> - Indicates whether access logs stored in
-     * Amazon S3 are enabled.</p> </li> <li> <p> <code>access_logs.s3.bucket</code> -
-     * The name of the S3 bucket for the access logs. This attribute is required if
-     * access logs in Amazon S3 are enabled. The bucket must exist in the same region
-     * as the load balancer and have a bucket policy that grants Elastic Load Balancing
-     * permission to write to the bucket.</p> </li> <li> <p>
-     * <code>access_logs.s3.prefix</code> - The prefix for the location in the S3
-     * bucket. If you don't specify a prefix, the access logs are stored in the root of
-     * the bucket.</p> </li> <li> <p> <code>deletion_protection.enabled</code> -
-     * Indicates whether deletion protection is enabled.</p> </li> <li> <p>
-     * <code>idle_timeout.timeout_seconds</code> - The idle timeout value, in seconds.
-     * The valid range is 1-3600. The default is 60 seconds.</p> </li> </ul>
+     * Amazon S3 are enabled. The value is <code>true</code> or <code>false</code>.</p>
+     * </li> <li> <p> <code>access_logs.s3.bucket</code> - The name of the S3 bucket
+     * for the access logs. This attribute is required if access logs in Amazon S3 are
+     * enabled. The bucket must exist in the same region as the load balancer and have
+     * a bucket policy that grants Elastic Load Balancing permission to write to the
+     * bucket.</p> </li> <li> <p> <code>access_logs.s3.prefix</code> - The prefix for
+     * the location in the S3 bucket. If you don't specify a prefix, the access logs
+     * are stored in the root of the bucket.</p> </li> <li> <p>
+     * <code>deletion_protection.enabled</code> - Indicates whether deletion protection
+     * is enabled. The value is <code>true</code> or <code>false</code>.</p> </li> <li>
+     * <p> <code>idle_timeout.timeout_seconds</code> - The idle timeout value, in
+     * seconds. The valid range is 1-3600. The default is 60 seconds.</p> </li> </ul>
      */
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
 
     /**
      * <p>The name of the attribute.</p> <ul> <li> <p>
      * <code>access_logs.s3.enabled</code> - Indicates whether access logs stored in
-     * Amazon S3 are enabled.</p> </li> <li> <p> <code>access_logs.s3.bucket</code> -
-     * The name of the S3 bucket for the access logs. This attribute is required if
-     * access logs in Amazon S3 are enabled. The bucket must exist in the same region
-     * as the load balancer and have a bucket policy that grants Elastic Load Balancing
-     * permission to write to the bucket.</p> </li> <li> <p>
-     * <code>access_logs.s3.prefix</code> - The prefix for the location in the S3
-     * bucket. If you don't specify a prefix, the access logs are stored in the root of
-     * the bucket.</p> </li> <li> <p> <code>deletion_protection.enabled</code> -
-     * Indicates whether deletion protection is enabled.</p> </li> <li> <p>
-     * <code>idle_timeout.timeout_seconds</code> - The idle timeout value, in seconds.
-     * The valid range is 1-3600. The default is 60 seconds.</p> </li> </ul>
+     * Amazon S3 are enabled. The value is <code>true</code> or <code>false</code>.</p>
+     * </li> <li> <p> <code>access_logs.s3.bucket</code> - The name of the S3 bucket
+     * for the access logs. This attribute is required if access logs in Amazon S3 are
+     * enabled. The bucket must exist in the same region as the load balancer and have
+     * a bucket policy that grants Elastic Load Balancing permission to write to the
+     * bucket.</p> </li> <li> <p> <code>access_logs.s3.prefix</code> - The prefix for
+     * the location in the S3 bucket. If you don't specify a prefix, the access logs
+     * are stored in the root of the bucket.</p> </li> <li> <p>
+     * <code>deletion_protection.enabled</code> - Indicates whether deletion protection
+     * is enabled. The value is <code>true</code> or <code>false</code>.</p> </li> <li>
+     * <p> <code>idle_timeout.timeout_seconds</code> - The idle timeout value, in
+     * seconds. The valid range is 1-3600. The default is 60 seconds.</p> </li> </ul>
      */
     inline LoadBalancerAttribute& WithKey(const Aws::String& value) { SetKey(value); return *this;}
 
     /**
      * <p>The name of the attribute.</p> <ul> <li> <p>
      * <code>access_logs.s3.enabled</code> - Indicates whether access logs stored in
-     * Amazon S3 are enabled.</p> </li> <li> <p> <code>access_logs.s3.bucket</code> -
-     * The name of the S3 bucket for the access logs. This attribute is required if
-     * access logs in Amazon S3 are enabled. The bucket must exist in the same region
-     * as the load balancer and have a bucket policy that grants Elastic Load Balancing
-     * permission to write to the bucket.</p> </li> <li> <p>
-     * <code>access_logs.s3.prefix</code> - The prefix for the location in the S3
-     * bucket. If you don't specify a prefix, the access logs are stored in the root of
-     * the bucket.</p> </li> <li> <p> <code>deletion_protection.enabled</code> -
-     * Indicates whether deletion protection is enabled.</p> </li> <li> <p>
-     * <code>idle_timeout.timeout_seconds</code> - The idle timeout value, in seconds.
-     * The valid range is 1-3600. The default is 60 seconds.</p> </li> </ul>
+     * Amazon S3 are enabled. The value is <code>true</code> or <code>false</code>.</p>
+     * </li> <li> <p> <code>access_logs.s3.bucket</code> - The name of the S3 bucket
+     * for the access logs. This attribute is required if access logs in Amazon S3 are
+     * enabled. The bucket must exist in the same region as the load balancer and have
+     * a bucket policy that grants Elastic Load Balancing permission to write to the
+     * bucket.</p> </li> <li> <p> <code>access_logs.s3.prefix</code> - The prefix for
+     * the location in the S3 bucket. If you don't specify a prefix, the access logs
+     * are stored in the root of the bucket.</p> </li> <li> <p>
+     * <code>deletion_protection.enabled</code> - Indicates whether deletion protection
+     * is enabled. The value is <code>true</code> or <code>false</code>.</p> </li> <li>
+     * <p> <code>idle_timeout.timeout_seconds</code> - The idle timeout value, in
+     * seconds. The valid range is 1-3600. The default is 60 seconds.</p> </li> </ul>
      */
     inline LoadBalancerAttribute& WithKey(Aws::String&& value) { SetKey(value); return *this;}
 
     /**
      * <p>The name of the attribute.</p> <ul> <li> <p>
      * <code>access_logs.s3.enabled</code> - Indicates whether access logs stored in
-     * Amazon S3 are enabled.</p> </li> <li> <p> <code>access_logs.s3.bucket</code> -
-     * The name of the S3 bucket for the access logs. This attribute is required if
-     * access logs in Amazon S3 are enabled. The bucket must exist in the same region
-     * as the load balancer and have a bucket policy that grants Elastic Load Balancing
-     * permission to write to the bucket.</p> </li> <li> <p>
-     * <code>access_logs.s3.prefix</code> - The prefix for the location in the S3
-     * bucket. If you don't specify a prefix, the access logs are stored in the root of
-     * the bucket.</p> </li> <li> <p> <code>deletion_protection.enabled</code> -
-     * Indicates whether deletion protection is enabled.</p> </li> <li> <p>
-     * <code>idle_timeout.timeout_seconds</code> - The idle timeout value, in seconds.
-     * The valid range is 1-3600. The default is 60 seconds.</p> </li> </ul>
+     * Amazon S3 are enabled. The value is <code>true</code> or <code>false</code>.</p>
+     * </li> <li> <p> <code>access_logs.s3.bucket</code> - The name of the S3 bucket
+     * for the access logs. This attribute is required if access logs in Amazon S3 are
+     * enabled. The bucket must exist in the same region as the load balancer and have
+     * a bucket policy that grants Elastic Load Balancing permission to write to the
+     * bucket.</p> </li> <li> <p> <code>access_logs.s3.prefix</code> - The prefix for
+     * the location in the S3 bucket. If you don't specify a prefix, the access logs
+     * are stored in the root of the bucket.</p> </li> <li> <p>
+     * <code>deletion_protection.enabled</code> - Indicates whether deletion protection
+     * is enabled. The value is <code>true</code> or <code>false</code>.</p> </li> <li>
+     * <p> <code>idle_timeout.timeout_seconds</code> - The idle timeout value, in
+     * seconds. The valid range is 1-3600. The default is 60 seconds.</p> </li> </ul>
      */
     inline LoadBalancerAttribute& WithKey(const char* value) { SetKey(value); return *this;}
 
