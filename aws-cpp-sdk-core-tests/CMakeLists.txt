@@ -1,5 +1,8 @@
 cmake_minimum_required(VERSION 2.8.12)
-project(aws-cpp-sdk-core-tests)
+add_project(aws-cpp-sdk-core-tests 
+    "Tests for the AWS Core C++ Library"
+    testing-resources 
+    aws-cpp-sdk-core )
 
 # Headers are included in the source so that they show up in Visual Studio.
 # They are included elsewhere for consistency.
@@ -52,13 +55,6 @@ if(PLATFORM_WINDOWS)
   endif()
 endif()
 
-set(TestApplication_INCLUDES
-  "${AWS_NATIVE_SDK_ROOT}/aws-cpp-sdk-core/include/"
-  "${AWS_NATIVE_SDK_ROOT}/testing-resources/include/"
-)
-
-include_directories(${TestApplication_INCLUDES})
-
 enable_testing()
 
 if(USE_WINDOWS_DLL_SEMANTICS AND BUILD_SHARED_LIBS)
@@ -66,21 +62,21 @@ if(USE_WINDOWS_DLL_SEMANTICS AND BUILD_SHARED_LIBS)
 endif()
 
 if(PLATFORM_ANDROID AND BUILD_SHARED_LIBS)
-    add_library(runCoreUnitTests ${LIBTYPE} ${AWS_CPP_SDK_CORE_TESTS_SRC})
+    add_library(${PROJECT_NAME} ${LIBTYPE} ${AWS_CPP_SDK_CORE_TESTS_SRC})
 else()
-    add_executable(runCoreUnitTests ${AWS_CPP_SDK_CORE_TESTS_SRC})
+    add_executable(${PROJECT_NAME} ${AWS_CPP_SDK_CORE_TESTS_SRC})
 endif()
 
-target_link_libraries(runCoreUnitTests aws-cpp-sdk-core testing-resources)
+target_link_libraries(${PROJECT_NAME} ${PROJECT_LIBS})
 
-copyDlls(runCoreUnitTests aws-cpp-sdk-core testing-resources)
+copyDlls(${PROJECT_NAME} ${PROJECT_LIBS_RAW})
 
 add_custom_command(TARGET runCoreUnitTests PRE_BUILD
                    COMMAND ${CMAKE_COMMAND} -E copy_directory
                        ${CMAKE_CURRENT_SOURCE_DIR}/resources ${CMAKE_CURRENT_BINARY_DIR})
 
 if(NOT CMAKE_CROSSCOMPILING)
-    ADD_CUSTOM_COMMAND( TARGET runCoreUnitTests POST_BUILD COMMAND $<TARGET_FILE:runCoreUnitTests>)
-    SET_TARGET_PROPERTIES(runCoreUnitTests PROPERTIES OUTPUT_NAME runCoreUnitTests)
+    ADD_CUSTOM_COMMAND( TARGET ${PROJECT_NAME} POST_BUILD COMMAND $<TARGET_FILE:${PROJECT_NAME}>)
+    SET_TARGET_PROPERTIES(${PROJECT_NAME} PROPERTIES OUTPUT_NAME ${PROJECT_NAME})
 endif()
 
