@@ -83,6 +83,7 @@ list(APPEND SDK_TEST_PROJECT_LIST "lambda:aws-cpp-sdk-lambda-integration-tests")
 list(APPEND SDK_TEST_PROJECT_LIST "s3:aws-cpp-sdk-s3-integration-tests")
 list(APPEND SDK_TEST_PROJECT_LIST "sqs:aws-cpp-sdk-sqs-integration-tests")
 list(APPEND SDK_TEST_PROJECT_LIST "transfer:aws-cpp-sdk-transfer-tests")
+list(APPEND SDK_TEST_PROJECT_LIST "core:aws-cpp-sdk-core-tests")
 
 set(SDK_DEPENDENCY_LIST "")
 list(APPEND SDK_DEPENDENCY_LIST "access-management:iam,cognito-identity,core")
