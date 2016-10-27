@@ -355,7 +355,7 @@ namespace Model
          * load balancer. If there are target groups attached to your Auto Scaling group,
          * the instances are also registered with the target groups.</p> <p>For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/attach-instance-asg.html">Attach
+         * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/attach-instance-asg.html">Attach
          * EC2 Instances to Your Auto Scaling Group</a> in the <i>Auto Scaling User
          * Guide</i>.</p>
          */
@@ -371,7 +371,7 @@ namespace Model
          * load balancer. If there are target groups attached to your Auto Scaling group,
          * the instances are also registered with the target groups.</p> <p>For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/attach-instance-asg.html">Attach
+         * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/attach-instance-asg.html">Attach
          * EC2 Instances to Your Auto Scaling Group</a> in the <i>Auto Scaling User
          * Guide</i>.</p>
          *
@@ -389,7 +389,7 @@ namespace Model
          * load balancer. If there are target groups attached to your Auto Scaling group,
          * the instances are also registered with the target groups.</p> <p>For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/attach-instance-asg.html">Attach
+         * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/attach-instance-asg.html">Attach
          * EC2 Instances to Your Auto Scaling Group</a> in the <i>Auto Scaling User
          * Guide</i>.</p>
          *
@@ -403,7 +403,7 @@ namespace Model
          * <a>DescribeLoadBalancerTargetGroups</a>. To detach the target group from the
          * Auto Scaling group, use <a>DetachLoadBalancerTargetGroups</a>.</p> <p>For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/attach-load-balancer-asg.html">Attach
+         * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/attach-load-balancer-asg.html">Attach
          * a Load Balancer to Your Auto Scaling Group</a> in the <i>Auto Scaling User
          * Guide</i>.</p>
          */
@@ -415,7 +415,7 @@ namespace Model
          * <a>DescribeLoadBalancerTargetGroups</a>. To detach the target group from the
          * Auto Scaling group, use <a>DetachLoadBalancerTargetGroups</a>.</p> <p>For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/attach-load-balancer-asg.html">Attach
+         * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/attach-load-balancer-asg.html">Attach
          * a Load Balancer to Your Auto Scaling Group</a> in the <i>Auto Scaling User
          * Guide</i>.</p>
          *
@@ -429,7 +429,7 @@ namespace Model
          * <a>DescribeLoadBalancerTargetGroups</a>. To detach the target group from the
          * Auto Scaling group, use <a>DetachLoadBalancerTargetGroups</a>.</p> <p>For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/attach-load-balancer-asg.html">Attach
+         * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/attach-load-balancer-asg.html">Attach
          * a Load Balancer to Your Auto Scaling Group</a> in the <i>Auto Scaling User
          * Guide</i>.</p>
          *
@@ -444,7 +444,7 @@ namespace Model
          * an Auto Scaling group, use <a>DescribeLoadBalancers</a>. To detach the load
          * balancer from the Auto Scaling group, use <a>DetachLoadBalancers</a>.</p> <p>For
          * more information, see <a
-         * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/attach-load-balancer-asg.html">Attach
+         * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/attach-load-balancer-asg.html">Attach
          * a Load Balancer to Your Auto Scaling Group</a> in the <i>Auto Scaling User
          * Guide</i>.</p>
          */
@@ -457,7 +457,7 @@ namespace Model
          * an Auto Scaling group, use <a>DescribeLoadBalancers</a>. To detach the load
          * balancer from the Auto Scaling group, use <a>DetachLoadBalancers</a>.</p> <p>For
          * more information, see <a
-         * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/attach-load-balancer-asg.html">Attach
+         * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/attach-load-balancer-asg.html">Attach
          * a Load Balancer to Your Auto Scaling Group</a> in the <i>Auto Scaling User
          * Guide</i>.</p>
          *
@@ -472,7 +472,7 @@ namespace Model
          * an Auto Scaling group, use <a>DescribeLoadBalancers</a>. To detach the load
          * balancer from the Auto Scaling group, use <a>DetachLoadBalancers</a>.</p> <p>For
          * more information, see <a
-         * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/attach-load-balancer-asg.html">Attach
+         * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/attach-load-balancer-asg.html">Attach
          * a Load Balancer to Your Auto Scaling Group</a> in the <i>Auto Scaling User
          * Guide</i>.</p>
          *
@@ -494,7 +494,7 @@ namespace Model
          * heartbeat to keep the instance in a pending state.</p> </li> <li> <p> <b>If you
          * finish before the timeout period ends, complete the lifecycle action.</b> </p>
          * </li> </ol> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html">Auto
+         * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/AutoScalingGroupLifecycle.html">Auto
          * Scaling Lifecycle</a> in the <i>Auto Scaling User Guide</i>.</p>
          */
         virtual Model::CompleteLifecycleActionOutcome CompleteLifecycleAction(const Model::CompleteLifecycleActionRequest& request) const;
@@ -513,7 +513,7 @@ namespace Model
          * heartbeat to keep the instance in a pending state.</p> </li> <li> <p> <b>If you
          * finish before the timeout period ends, complete the lifecycle action.</b> </p>
          * </li> </ol> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html">Auto
+         * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/AutoScalingGroupLifecycle.html">Auto
          * Scaling Lifecycle</a> in the <i>Auto Scaling User Guide</i>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -534,7 +534,7 @@ namespace Model
          * heartbeat to keep the instance in a pending state.</p> </li> <li> <p> <b>If you
          * finish before the timeout period ends, complete the lifecycle action.</b> </p>
          * </li> </ol> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html">Auto
+         * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/AutoScalingGroupLifecycle.html">Auto
          * Scaling Lifecycle</a> in the <i>Auto Scaling User Guide</i>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -546,7 +546,7 @@ namespace Model
          * <p>If you exceed your maximum limit of Auto Scaling groups, which by default is
          * 20 per region, the call fails. For information about viewing and updating this
          * limit, see <a>DescribeAccountLimits</a>.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroup.html">Auto
+         * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/AutoScalingGroup.html">Auto
          * Scaling Groups</a> in the <i>Auto Scaling User Guide</i>.</p>
          */
         virtual Model::CreateAutoScalingGroupOutcome CreateAutoScalingGroup(const Model::CreateAutoScalingGroupRequest& request) const;
@@ -556,7 +556,7 @@ namespace Model
          * <p>If you exceed your maximum limit of Auto Scaling groups, which by default is
          * 20 per region, the call fails. For information about viewing and updating this
          * limit, see <a>DescribeAccountLimits</a>.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroup.html">Auto
+         * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/AutoScalingGroup.html">Auto
          * Scaling Groups</a> in the <i>Auto Scaling User Guide</i>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -568,7 +568,7 @@ namespace Model
          * <p>If you exceed your maximum limit of Auto Scaling groups, which by default is
          * 20 per region, the call fails. For information about viewing and updating this
          * limit, see <a>DescribeAccountLimits</a>.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroup.html">Auto
+         * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/AutoScalingGroup.html">Auto
          * Scaling Groups</a> in the <i>Auto Scaling User Guide</i>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -580,7 +580,7 @@ namespace Model
          * launch configurations, which by default is 100 per region, the call fails. For
          * information about viewing and updating this limit, see
          * <a>DescribeAccountLimits</a>.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/LaunchConfiguration.html">Launch
+         * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/LaunchConfiguration.html">Launch
          * Configurations</a> in the <i>Auto Scaling User Guide</i>.</p>
          */
         virtual Model::CreateLaunchConfigurationOutcome CreateLaunchConfiguration(const Model::CreateLaunchConfigurationRequest& request) const;
@@ -590,7 +590,7 @@ namespace Model
          * launch configurations, which by default is 100 per region, the call fails. For
          * information about viewing and updating this limit, see
          * <a>DescribeAccountLimits</a>.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/LaunchConfiguration.html">Launch
+         * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/LaunchConfiguration.html">Launch
          * Configurations</a> in the <i>Auto Scaling User Guide</i>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -602,7 +602,7 @@ namespace Model
          * launch configurations, which by default is 100 per region, the call fails. For
          * information about viewing and updating this limit, see
          * <a>DescribeAccountLimits</a>.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/LaunchConfiguration.html">Launch
+         * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/LaunchConfiguration.html">Launch
          * Configurations</a> in the <i>Auto Scaling User Guide</i>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -614,7 +614,7 @@ namespace Model
          * specify a tag with a key that already exists, the operation overwrites the
          * previous tag definition, and you do not get an error message.</p> <p>For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/ASTagging.html">Tagging
+         * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/autoscaling-tagging.html">Tagging
          * Auto Scaling Groups and Instances</a> in the <i>Auto Scaling User Guide</i>.</p>
          */
         virtual Model::CreateOrUpdateTagsOutcome CreateOrUpdateTags(const Model::CreateOrUpdateTagsRequest& request) const;
@@ -624,7 +624,7 @@ namespace Model
          * specify a tag with a key that already exists, the operation overwrites the
          * previous tag definition, and you do not get an error message.</p> <p>For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/ASTagging.html">Tagging
+         * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/autoscaling-tagging.html">Tagging
          * Auto Scaling Groups and Instances</a> in the <i>Auto Scaling User Guide</i>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -636,7 +636,7 @@ namespace Model
          * specify a tag with a key that already exists, the operation overwrites the
          * previous tag definition, and you do not get an error message.</p> <p>For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/ASTagging.html">Tagging
+         * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/autoscaling-tagging.html">Tagging
          * Auto Scaling Groups and Instances</a> in the <i>Auto Scaling User Guide</i>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -1235,7 +1235,7 @@ namespace Model
          * the Auto Scaling group, the instances are deregistered from the load balancer.
          * If there are target groups attached to the Auto Scaling group, the instances are
          * deregistered from the target groups.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/detach-instance-asg.html">Detach
+         * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/detach-instance-asg.html">Detach
          * EC2 Instances from Your Auto Scaling Group</a> in the <i>Auto Scaling User
          * Guide</i>.</p>
          */
@@ -1250,7 +1250,7 @@ namespace Model
          * the Auto Scaling group, the instances are deregistered from the load balancer.
          * If there are target groups attached to the Auto Scaling group, the instances are
          * deregistered from the target groups.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/detach-instance-asg.html">Detach
+         * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/detach-instance-asg.html">Detach
          * EC2 Instances from Your Auto Scaling Group</a> in the <i>Auto Scaling User
          * Guide</i>.</p>
          *
@@ -1267,7 +1267,7 @@ namespace Model
          * the Auto Scaling group, the instances are deregistered from the load balancer.
          * If there are target groups attached to the Auto Scaling group, the instances are
          * deregistered from the target groups.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/detach-instance-asg.html">Detach
+         * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/detach-instance-asg.html">Detach
          * EC2 Instances from Your Auto Scaling Group</a> in the <i>Auto Scaling User
          * Guide</i>.</p>
          *
@@ -1356,7 +1356,7 @@ namespace Model
         /**
          * <p>Enables group metrics for the specified Auto Scaling group. For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/AutoScaling/latest/userguide/as-instance-monitoring.html">Monitoring
+         * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/as-instance-monitoring.html">Monitoring
          * Your Auto Scaling Groups and Instances</a> in the <i>Auto Scaling User
          * Guide</i>.</p>
          */
@@ -1365,7 +1365,7 @@ namespace Model
         /**
          * <p>Enables group metrics for the specified Auto Scaling group. For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/AutoScaling/latest/userguide/as-instance-monitoring.html">Monitoring
+         * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/as-instance-monitoring.html">Monitoring
          * Your Auto Scaling Groups and Instances</a> in the <i>Auto Scaling User
          * Guide</i>.</p>
          *
@@ -1376,7 +1376,7 @@ namespace Model
         /**
          * <p>Enables group metrics for the specified Auto Scaling group. For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/AutoScaling/latest/userguide/as-instance-monitoring.html">Monitoring
+         * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/as-instance-monitoring.html">Monitoring
          * Your Auto Scaling Groups and Instances</a> in the <i>Auto Scaling User
          * Guide</i>.</p>
          *
@@ -1387,7 +1387,7 @@ namespace Model
         /**
          * <p>Moves the specified instances into <code>Standby</code> mode.</p> <p>For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html">Auto
+         * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/AutoScalingGroupLifecycle.html">Auto
          * Scaling Lifecycle</a> in the <i>Auto Scaling User Guide</i>.</p>
          */
         virtual Model::EnterStandbyOutcome EnterStandby(const Model::EnterStandbyRequest& request) const;
@@ -1395,7 +1395,7 @@ namespace Model
         /**
          * <p>Moves the specified instances into <code>Standby</code> mode.</p> <p>For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html">Auto
+         * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/AutoScalingGroupLifecycle.html">Auto
          * Scaling Lifecycle</a> in the <i>Auto Scaling User Guide</i>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -1405,7 +1405,7 @@ namespace Model
         /**
          * <p>Moves the specified instances into <code>Standby</code> mode.</p> <p>For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html">Auto
+         * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/AutoScalingGroupLifecycle.html">Auto
          * Scaling Lifecycle</a> in the <i>Auto Scaling User Guide</i>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -1434,7 +1434,7 @@ namespace Model
         /**
          * <p>Moves the specified instances out of <code>Standby</code> mode.</p> <p>For
          * more information, see <a
-         * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html">Auto
+         * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/AutoScalingGroupLifecycle.html">Auto
          * Scaling Lifecycle</a> in the <i>Auto Scaling User Guide</i>.</p>
          */
         virtual Model::ExitStandbyOutcome ExitStandby(const Model::ExitStandbyRequest& request) const;
@@ -1442,7 +1442,7 @@ namespace Model
         /**
          * <p>Moves the specified instances out of <code>Standby</code> mode.</p> <p>For
          * more information, see <a
-         * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html">Auto
+         * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/AutoScalingGroupLifecycle.html">Auto
          * Scaling Lifecycle</a> in the <i>Auto Scaling User Guide</i>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -1452,7 +1452,7 @@ namespace Model
         /**
          * <p>Moves the specified instances out of <code>Standby</code> mode.</p> <p>For
          * more information, see <a
-         * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html">Auto
+         * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/AutoScalingGroupLifecycle.html">Auto
          * Scaling Lifecycle</a> in the <i>Auto Scaling User Guide</i>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -1475,8 +1475,8 @@ namespace Model
          * time, record the lifecycle action heartbeat to keep the instance in a pending
          * state.</p> </li> <li> <p>If you finish before the timeout period ends, complete
          * the lifecycle action.</p> </li> </ol> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html">Auto
-         * Scaling Lifecycle</a> in the <i>Auto Scaling User Guide</i>.</p> <p>If you
+         * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/lifecycle-hooks.html">Auto
+         * Scaling Lifecycle Hooks</a> in the <i>Auto Scaling User Guide</i>.</p> <p>If you
          * exceed your maximum limit of lifecycle hooks, which by default is 50 per Auto
          * Scaling group, the call fails. For information about updating this limit, see <a
          * href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">AWS
@@ -1500,8 +1500,8 @@ namespace Model
          * time, record the lifecycle action heartbeat to keep the instance in a pending
          * state.</p> </li> <li> <p>If you finish before the timeout period ends, complete
          * the lifecycle action.</p> </li> </ol> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html">Auto
-         * Scaling Lifecycle</a> in the <i>Auto Scaling User Guide</i>.</p> <p>If you
+         * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/lifecycle-hooks.html">Auto
+         * Scaling Lifecycle Hooks</a> in the <i>Auto Scaling User Guide</i>.</p> <p>If you
          * exceed your maximum limit of lifecycle hooks, which by default is 50 per Auto
          * Scaling group, the call fails. For information about updating this limit, see <a
          * href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">AWS
@@ -1527,8 +1527,8 @@ namespace Model
          * time, record the lifecycle action heartbeat to keep the instance in a pending
          * state.</p> </li> <li> <p>If you finish before the timeout period ends, complete
          * the lifecycle action.</p> </li> </ol> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html">Auto
-         * Scaling Lifecycle</a> in the <i>Auto Scaling User Guide</i>.</p> <p>If you
+         * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/lifecycle-hooks.html">Auto
+         * Scaling Lifecycle Hooks</a> in the <i>Auto Scaling User Guide</i>.</p> <p>If you
          * exceed your maximum limit of lifecycle hooks, which by default is 50 per Auto
          * Scaling group, the call fails. For information about updating this limit, see <a
          * href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">AWS
@@ -1543,7 +1543,7 @@ namespace Model
          * take place. Subscribers to the specified topic can have messages delivered to an
          * endpoint such as a web server or an email address.</p> <p>This configuration
          * overwrites any existing configuration.</p> <p>For more information see <a
-         * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/ASGettingNotifications.html">Getting
+         * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/ASGettingNotifications.html">Getting
          * SNS Notifications When Your Auto Scaling Group Scales</a> in the <i>Auto Scaling
          * User Guide</i>.</p>
          */
@@ -1554,7 +1554,7 @@ namespace Model
          * take place. Subscribers to the specified topic can have messages delivered to an
          * endpoint such as a web server or an email address.</p> <p>This configuration
          * overwrites any existing configuration.</p> <p>For more information see <a
-         * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/ASGettingNotifications.html">Getting
+         * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/ASGettingNotifications.html">Getting
          * SNS Notifications When Your Auto Scaling Group Scales</a> in the <i>Auto Scaling
          * User Guide</i>.</p>
          *
@@ -1567,7 +1567,7 @@ namespace Model
          * take place. Subscribers to the specified topic can have messages delivered to an
          * endpoint such as a web server or an email address.</p> <p>This configuration
          * overwrites any existing configuration.</p> <p>For more information see <a
-         * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/ASGettingNotifications.html">Getting
+         * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/ASGettingNotifications.html">Getting
          * SNS Notifications When Your Auto Scaling Group Scales</a> in the <i>Auto Scaling
          * User Guide</i>.</p>
          *
@@ -1618,9 +1618,8 @@ namespace Model
         /**
          * <p>Creates or updates a scheduled scaling action for an Auto Scaling group. When
          * updating a scheduled scaling action, if you leave a parameter unspecified, the
-         * corresponding value remains unchanged in the affected Auto Scaling group.</p>
-         * <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/schedule_time.html">Scheduled
+         * corresponding value remains unchanged.</p> <p>For more information, see <a
+         * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/schedule_time.html">Scheduled
          * Scaling</a> in the <i>Auto Scaling User Guide</i>.</p>
          */
         virtual Model::PutScheduledUpdateGroupActionOutcome PutScheduledUpdateGroupAction(const Model::PutScheduledUpdateGroupActionRequest& request) const;
@@ -1628,9 +1627,8 @@ namespace Model
         /**
          * <p>Creates or updates a scheduled scaling action for an Auto Scaling group. When
          * updating a scheduled scaling action, if you leave a parameter unspecified, the
-         * corresponding value remains unchanged in the affected Auto Scaling group.</p>
-         * <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/schedule_time.html">Scheduled
+         * corresponding value remains unchanged.</p> <p>For more information, see <a
+         * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/schedule_time.html">Scheduled
          * Scaling</a> in the <i>Auto Scaling User Guide</i>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -1640,9 +1638,8 @@ namespace Model
         /**
          * <p>Creates or updates a scheduled scaling action for an Auto Scaling group. When
          * updating a scheduled scaling action, if you leave a parameter unspecified, the
-         * corresponding value remains unchanged in the affected Auto Scaling group.</p>
-         * <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/schedule_time.html">Scheduled
+         * corresponding value remains unchanged.</p> <p>For more information, see <a
+         * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/schedule_time.html">Scheduled
          * Scaling</a> in the <i>Auto Scaling User Guide</i>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -1664,7 +1661,7 @@ namespace Model
          * action heartbeat to keep the instance in a pending state.</b> </p> </li> <li>
          * <p>If you finish before the timeout period ends, complete the lifecycle
          * action.</p> </li> </ol> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html">Auto
+         * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/AutoScalingGroupLifecycle.html">Auto
          * Scaling Lifecycle</a> in the <i>Auto Scaling User Guide</i>.</p>
          */
         virtual Model::RecordLifecycleActionHeartbeatOutcome RecordLifecycleActionHeartbeat(const Model::RecordLifecycleActionHeartbeatRequest& request) const;
@@ -1684,7 +1681,7 @@ namespace Model
          * action heartbeat to keep the instance in a pending state.</b> </p> </li> <li>
          * <p>If you finish before the timeout period ends, complete the lifecycle
          * action.</p> </li> </ol> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html">Auto
+         * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/AutoScalingGroupLifecycle.html">Auto
          * Scaling Lifecycle</a> in the <i>Auto Scaling User Guide</i>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -1706,7 +1703,7 @@ namespace Model
          * action heartbeat to keep the instance in a pending state.</b> </p> </li> <li>
          * <p>If you finish before the timeout period ends, complete the lifecycle
          * action.</p> </li> </ol> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html">Auto
+         * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/AutoScalingGroupLifecycle.html">Auto
          * Scaling Lifecycle</a> in the <i>Auto Scaling User Guide</i>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -1717,7 +1714,7 @@ namespace Model
          * <p>Resumes the specified suspended Auto Scaling processes, or all suspended
          * process, for the specified Auto Scaling group.</p> <p>For more information, see
          * <a
-         * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US_SuspendResume.html">Suspending
+         * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/as-suspend-resume-processes.html">Suspending
          * and Resuming Auto Scaling Processes</a> in the <i>Auto Scaling User
          * Guide</i>.</p>
          */
@@ -1727,7 +1724,7 @@ namespace Model
          * <p>Resumes the specified suspended Auto Scaling processes, or all suspended
          * process, for the specified Auto Scaling group.</p> <p>For more information, see
          * <a
-         * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US_SuspendResume.html">Suspending
+         * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/as-suspend-resume-processes.html">Suspending
          * and Resuming Auto Scaling Processes</a> in the <i>Auto Scaling User
          * Guide</i>.</p>
          *
@@ -1739,7 +1736,7 @@ namespace Model
          * <p>Resumes the specified suspended Auto Scaling processes, or all suspended
          * process, for the specified Auto Scaling group.</p> <p>For more information, see
          * <a
-         * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US_SuspendResume.html">Suspending
+         * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/as-suspend-resume-processes.html">Suspending
          * and Resuming Auto Scaling Processes</a> in the <i>Auto Scaling User
          * Guide</i>.</p>
          *
@@ -1750,7 +1747,7 @@ namespace Model
         /**
          * <p>Sets the size of the specified Auto Scaling group.</p> <p>For more
          * information about desired capacity, see <a
-         * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/WhatIsAutoScaling.html">What
+         * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/WhatIsAutoScaling.html">What
          * Is Auto Scaling?</a> in the <i>Auto Scaling User Guide</i>.</p>
          */
         virtual Model::SetDesiredCapacityOutcome SetDesiredCapacity(const Model::SetDesiredCapacityRequest& request) const;
@@ -1758,7 +1755,7 @@ namespace Model
         /**
          * <p>Sets the size of the specified Auto Scaling group.</p> <p>For more
          * information about desired capacity, see <a
-         * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/WhatIsAutoScaling.html">What
+         * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/WhatIsAutoScaling.html">What
          * Is Auto Scaling?</a> in the <i>Auto Scaling User Guide</i>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -1768,7 +1765,7 @@ namespace Model
         /**
          * <p>Sets the size of the specified Auto Scaling group.</p> <p>For more
          * information about desired capacity, see <a
-         * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/WhatIsAutoScaling.html">What
+         * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/WhatIsAutoScaling.html">What
          * Is Auto Scaling?</a> in the <i>Auto Scaling User Guide</i>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -1778,7 +1775,7 @@ namespace Model
         /**
          * <p>Sets the health status of the specified instance.</p> <p>For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/healthcheck.html">Health
+         * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/healthcheck.html">Health
          * Checks</a> in the <i>Auto Scaling User Guide</i>.</p>
          */
         virtual Model::SetInstanceHealthOutcome SetInstanceHealth(const Model::SetInstanceHealthRequest& request) const;
@@ -1786,7 +1783,7 @@ namespace Model
         /**
          * <p>Sets the health status of the specified instance.</p> <p>For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/healthcheck.html">Health
+         * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/healthcheck.html">Health
          * Checks</a> in the <i>Auto Scaling User Guide</i>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -1796,7 +1793,7 @@ namespace Model
         /**
          * <p>Sets the health status of the specified instance.</p> <p>For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/healthcheck.html">Health
+         * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/healthcheck.html">Health
          * Checks</a> in the <i>Auto Scaling User Guide</i>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -1806,7 +1803,7 @@ namespace Model
         /**
          * <p>Updates the instance protection settings of the specified instances.</p>
          * <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingBehavior.InstanceTermination.html#instance-protection">Instance
+         * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/as-instance-termination.html#instance-protection">Instance
          * Protection</a> in the <i>Auto Scaling User Guide</i>.</p>
          */
         virtual Model::SetInstanceProtectionOutcome SetInstanceProtection(const Model::SetInstanceProtectionRequest& request) const;
@@ -1814,7 +1811,7 @@ namespace Model
         /**
          * <p>Updates the instance protection settings of the specified instances.</p>
          * <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingBehavior.InstanceTermination.html#instance-protection">Instance
+         * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/as-instance-termination.html#instance-protection">Instance
          * Protection</a> in the <i>Auto Scaling User Guide</i>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -1824,7 +1821,7 @@ namespace Model
         /**
          * <p>Updates the instance protection settings of the specified instances.</p>
          * <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingBehavior.InstanceTermination.html#instance-protection">Instance
+         * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/as-instance-termination.html#instance-protection">Instance
          * Protection</a> in the <i>Auto Scaling User Guide</i>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -1838,7 +1835,7 @@ namespace Model
          * other process types from functioning properly.</p> <p>To resume processes that
          * have been suspended, use <a>ResumeProcesses</a>.</p> <p>For more information,
          * see <a
-         * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US_SuspendResume.html">Suspending
+         * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/as-suspend-resume-processes.html">Suspending
          * and Resuming Auto Scaling Processes</a> in the <i>Auto Scaling User
          * Guide</i>.</p>
          */
@@ -1851,7 +1848,7 @@ namespace Model
          * other process types from functioning properly.</p> <p>To resume processes that
          * have been suspended, use <a>ResumeProcesses</a>.</p> <p>For more information,
          * see <a
-         * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US_SuspendResume.html">Suspending
+         * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/as-suspend-resume-processes.html">Suspending
          * and Resuming Auto Scaling Processes</a> in the <i>Auto Scaling User
          * Guide</i>.</p>
          *
@@ -1866,7 +1863,7 @@ namespace Model
          * other process types from functioning properly.</p> <p>To resume processes that
          * have been suspended, use <a>ResumeProcesses</a>.</p> <p>For more information,
          * see <a
-         * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US_SuspendResume.html">Suspending
+         * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/as-suspend-resume-processes.html">Suspending
          * and Resuming Auto Scaling Processes</a> in the <i>Auto Scaling User
          * Guide</i>.</p>
          *

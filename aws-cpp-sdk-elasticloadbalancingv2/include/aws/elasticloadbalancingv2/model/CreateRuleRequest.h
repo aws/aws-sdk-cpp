@@ -72,37 +72,72 @@ namespace Model
     inline CreateRuleRequest& WithListenerArn(const char* value) { SetListenerArn(value); return *this;}
 
     /**
-     * <p>The conditions.</p>
+     * <p>A condition. Each condition has the field <code>path-pattern</code> and
+     * specifies one path pattern. A path pattern is case sensitive, can be up to 255
+     * characters in length, and can contain any of the following characters:</p> <ul>
+     * <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ " ' @ : +</p> </li> <li>
+     * <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or more
+     * characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li> </ul>
      */
     inline const Aws::Vector<RuleCondition>& GetConditions() const{ return m_conditions; }
 
     /**
-     * <p>The conditions.</p>
+     * <p>A condition. Each condition has the field <code>path-pattern</code> and
+     * specifies one path pattern. A path pattern is case sensitive, can be up to 255
+     * characters in length, and can contain any of the following characters:</p> <ul>
+     * <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ " ' @ : +</p> </li> <li>
+     * <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or more
+     * characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li> </ul>
      */
     inline void SetConditions(const Aws::Vector<RuleCondition>& value) { m_conditionsHasBeenSet = true; m_conditions = value; }
 
     /**
-     * <p>The conditions.</p>
+     * <p>A condition. Each condition has the field <code>path-pattern</code> and
+     * specifies one path pattern. A path pattern is case sensitive, can be up to 255
+     * characters in length, and can contain any of the following characters:</p> <ul>
+     * <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ " ' @ : +</p> </li> <li>
+     * <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or more
+     * characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li> </ul>
      */
     inline void SetConditions(Aws::Vector<RuleCondition>&& value) { m_conditionsHasBeenSet = true; m_conditions = value; }
 
     /**
-     * <p>The conditions.</p>
+     * <p>A condition. Each condition has the field <code>path-pattern</code> and
+     * specifies one path pattern. A path pattern is case sensitive, can be up to 255
+     * characters in length, and can contain any of the following characters:</p> <ul>
+     * <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ " ' @ : +</p> </li> <li>
+     * <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or more
+     * characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li> </ul>
      */
     inline CreateRuleRequest& WithConditions(const Aws::Vector<RuleCondition>& value) { SetConditions(value); return *this;}
 
     /**
-     * <p>The conditions.</p>
+     * <p>A condition. Each condition has the field <code>path-pattern</code> and
+     * specifies one path pattern. A path pattern is case sensitive, can be up to 255
+     * characters in length, and can contain any of the following characters:</p> <ul>
+     * <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ " ' @ : +</p> </li> <li>
+     * <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or more
+     * characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li> </ul>
      */
     inline CreateRuleRequest& WithConditions(Aws::Vector<RuleCondition>&& value) { SetConditions(value); return *this;}
 
     /**
-     * <p>The conditions.</p>
+     * <p>A condition. Each condition has the field <code>path-pattern</code> and
+     * specifies one path pattern. A path pattern is case sensitive, can be up to 255
+     * characters in length, and can contain any of the following characters:</p> <ul>
+     * <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ " ' @ : +</p> </li> <li>
+     * <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or more
+     * characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li> </ul>
      */
     inline CreateRuleRequest& AddConditions(const RuleCondition& value) { m_conditionsHasBeenSet = true; m_conditions.push_back(value); return *this; }
 
     /**
-     * <p>The conditions.</p>
+     * <p>A condition. Each condition has the field <code>path-pattern</code> and
+     * specifies one path pattern. A path pattern is case sensitive, can be up to 255
+     * characters in length, and can contain any of the following characters:</p> <ul>
+     * <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ " ' @ : +</p> </li> <li>
+     * <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or more
+     * characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li> </ul>
      */
     inline CreateRuleRequest& AddConditions(RuleCondition&& value) { m_conditionsHasBeenSet = true; m_conditions.push_back(value); return *this; }
 
@@ -125,37 +160,44 @@ namespace Model
     inline CreateRuleRequest& WithPriority(int value) { SetPriority(value); return *this;}
 
     /**
-     * <p>The actions for the rule.</p>
+     * <p>An action. Each action has the type <code>forward</code> and specifies a
+     * target group.</p>
      */
     inline const Aws::Vector<Action>& GetActions() const{ return m_actions; }
 
     /**
-     * <p>The actions for the rule.</p>
+     * <p>An action. Each action has the type <code>forward</code> and specifies a
+     * target group.</p>
      */
     inline void SetActions(const Aws::Vector<Action>& value) { m_actionsHasBeenSet = true; m_actions = value; }
 
     /**
-     * <p>The actions for the rule.</p>
+     * <p>An action. Each action has the type <code>forward</code> and specifies a
+     * target group.</p>
      */
     inline void SetActions(Aws::Vector<Action>&& value) { m_actionsHasBeenSet = true; m_actions = value; }
 
     /**
-     * <p>The actions for the rule.</p>
+     * <p>An action. Each action has the type <code>forward</code> and specifies a
+     * target group.</p>
      */
     inline CreateRuleRequest& WithActions(const Aws::Vector<Action>& value) { SetActions(value); return *this;}
 
     /**
-     * <p>The actions for the rule.</p>
+     * <p>An action. Each action has the type <code>forward</code> and specifies a
+     * target group.</p>
      */
     inline CreateRuleRequest& WithActions(Aws::Vector<Action>&& value) { SetActions(value); return *this;}
 
     /**
-     * <p>The actions for the rule.</p>
+     * <p>An action. Each action has the type <code>forward</code> and specifies a
+     * target group.</p>
      */
     inline CreateRuleRequest& AddActions(const Action& value) { m_actionsHasBeenSet = true; m_actions.push_back(value); return *this; }
 
     /**
-     * <p>The actions for the rule.</p>
+     * <p>An action. Each action has the type <code>forward</code> and specifies a
+     * target group.</p>
      */
     inline CreateRuleRequest& AddActions(Action&& value) { m_actionsHasBeenSet = true; m_actions.push_back(value); return *this; }
 

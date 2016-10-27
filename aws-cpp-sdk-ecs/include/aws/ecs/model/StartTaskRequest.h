@@ -39,49 +39,49 @@ namespace Model
     /**
      * <p>The short name or full Amazon Resource Name (ARN) of the cluster on which to
      * start your task. If you do not specify a cluster, the default cluster is
-     * assumed..</p>
+     * assumed.</p>
      */
     inline const Aws::String& GetCluster() const{ return m_cluster; }
 
     /**
      * <p>The short name or full Amazon Resource Name (ARN) of the cluster on which to
      * start your task. If you do not specify a cluster, the default cluster is
-     * assumed..</p>
+     * assumed.</p>
      */
     inline void SetCluster(const Aws::String& value) { m_clusterHasBeenSet = true; m_cluster = value; }
 
     /**
      * <p>The short name or full Amazon Resource Name (ARN) of the cluster on which to
      * start your task. If you do not specify a cluster, the default cluster is
-     * assumed..</p>
+     * assumed.</p>
      */
     inline void SetCluster(Aws::String&& value) { m_clusterHasBeenSet = true; m_cluster = value; }
 
     /**
      * <p>The short name or full Amazon Resource Name (ARN) of the cluster on which to
      * start your task. If you do not specify a cluster, the default cluster is
-     * assumed..</p>
+     * assumed.</p>
      */
     inline void SetCluster(const char* value) { m_clusterHasBeenSet = true; m_cluster.assign(value); }
 
     /**
      * <p>The short name or full Amazon Resource Name (ARN) of the cluster on which to
      * start your task. If you do not specify a cluster, the default cluster is
-     * assumed..</p>
+     * assumed.</p>
      */
     inline StartTaskRequest& WithCluster(const Aws::String& value) { SetCluster(value); return *this;}
 
     /**
      * <p>The short name or full Amazon Resource Name (ARN) of the cluster on which to
      * start your task. If you do not specify a cluster, the default cluster is
-     * assumed..</p>
+     * assumed.</p>
      */
     inline StartTaskRequest& WithCluster(Aws::String&& value) { SetCluster(value); return *this;}
 
     /**
      * <p>The short name or full Amazon Resource Name (ARN) of the cluster on which to
      * start your task. If you do not specify a cluster, the default cluster is
-     * assumed..</p>
+     * assumed.</p>
      */
     inline StartTaskRequest& WithCluster(const char* value) { SetCluster(value); return *this;}
 
