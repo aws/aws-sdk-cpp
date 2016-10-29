@@ -55,6 +55,7 @@ static const char* X_AMZ_SIGNATURE = "X-Amz-Signature";
 static const char* SIGNING_KEY = "AWS4";
 static const char* LONG_DATE_FORMAT_STR = "%Y%m%dT%H%M%SZ";
 static const char* SIMPLE_DATE_FORMAT_STR = "%Y%m%d";
+static const char* EMPTY_STRING_SHA256 = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855";
 
 static const char* v4LogTag = "AWSAuthV4Signer";
 
@@ -131,6 +132,8 @@ AWSAuthV4Signer::AWSAuthV4Signer(const std::shared_ptr<Auth::AWSCredentialsProvi
     m_signPayloads(signPayloads),
     m_urlEscapePath(urlEscapePath)
 {
+    //go ahead and warm up the signing cache.
+    ComputeLongLivedHash(credentialsProvider->GetAWSCredentials().GetAWSSecretKey(), DateTime::CalculateGmtTimestampAsString(SIMPLE_DATE_FORMAT_STR));
 }
 
 AWSAuthV4Signer::~AWSAuthV4Signer()
@@ -322,45 +325,9 @@ Aws::String AWSAuthV4Signer::GenerateSignature(const AWSCredentials& credentials
 
     Aws::StringStream ss;
 
-    //now we do the complicated part of deriving a signing key.
-    Aws::String signingKey(SIGNING_KEY);
-    signingKey.append(credentials.GetAWSSecretKey());
-
-    //we use digest only for the derivation process.
-    auto hashResult = m_HMAC->Calculate(ByteBuffer((unsigned char*)simpleDate.c_str(), simpleDate.length()),
-        ByteBuffer((unsigned char*)signingKey.c_str(), signingKey.length()));
-    if (!hashResult.IsSuccess())
-    {
-        AWS_LOGSTREAM_ERROR(v4LogTag, "Failed to hmac (sha256) date string \"" << simpleDate << "\"");
-        return "";
-    }
-
-    auto kDate = hashResult.GetResult();
-    hashResult = m_HMAC->Calculate(ByteBuffer((unsigned char*)m_region.c_str(), m_region.length()), kDate);
-    if (!hashResult.IsSuccess())
-    {
-        AWS_LOGSTREAM_ERROR(v4LogTag, "Failed to hmac (sha256) region string \"" << m_region << "\"");
-        return "";
-    }
-
-    auto kRegion = hashResult.GetResult();
-    hashResult = m_HMAC->Calculate(ByteBuffer((unsigned char*)m_serviceName.c_str(), m_serviceName.length()), kRegion);
-    if (!hashResult.IsSuccess())
-    {
-        AWS_LOGSTREAM_ERROR(v4LogTag, "Failed to hmac (sha256) service string \"" << m_serviceName << "\"");
-        return "";
-    }
-
-    auto kService = hashResult.GetResult();
-    hashResult = m_HMAC->Calculate(ByteBuffer((unsigned char*)AWS4_REQUEST, strlen(AWS4_REQUEST)), kService);
-    if (!hashResult.IsSuccess())
-    {
-        AWS_LOGSTREAM_ERROR(v4LogTag, "Unable to hmac (sha256) request string \"" << AWS4_REQUEST << "\"");
-        return "";
-    }
-
-    auto kSigning = hashResult.GetResult();
-    hashResult = m_HMAC->Calculate(ByteBuffer((unsigned char*)stringToSign.c_str(), stringToSign.length()), kSigning);
+    auto& partialSignature = ComputeLongLivedHash(credentials.GetAWSSecretKey(), simpleDate);
+        
+    auto hashResult = m_HMAC->Calculate(ByteBuffer((unsigned char*)stringToSign.c_str(), stringToSign.length()), partialSignature);
     if (!hashResult.IsSuccess())
     {
         AWS_LOGSTREAM_ERROR(v4LogTag, "Unable to hmac (sha256) final string \"" << stringToSign << "\"");
@@ -378,9 +345,14 @@ Aws::String AWSAuthV4Signer::GenerateSignature(const AWSCredentials& credentials
 
 Aws::String AWSAuthV4Signer::ComputePayloadHash(Aws::Http::HttpRequest& request) const
 {
+    if (!request.GetContentBody())
+    {
+        AWS_LOGSTREAM_DEBUG(v4LogTag, "Using cached empty string sha256 " << EMPTY_STRING_SHA256 << " because payload is empty.");
+        return EMPTY_STRING_SHA256;
+    }
+
     //compute hash on payload if it exists.
-    auto hashResult = request.GetContentBody() ? m_hash->Calculate(*request.GetContentBody())
-        : m_hash->Calculate("");
+    auto hashResult =  m_hash->Calculate(*request.GetContentBody());
 
     if(request.GetContentBody())
     {
@@ -410,4 +382,65 @@ Aws::String AWSAuthV4Signer::GenerateStringToSign(const Aws::String& dateValue, 
         << m_serviceName << "/" << AWS4_REQUEST << NEWLINE << canonicalRequestHash;
 
     return ss.str();
+}
+
+const Aws::Utils::Array<unsigned char>& AWSAuthV4Signer::ComputeLongLivedHash(const Aws::String& secretKey, const Aws::String& simpleDate) const
+{
+    //only compute this once and use it until either the credentials change, or the date changes.
+    if (m_currentDateStr != simpleDate || m_currentSecretKey != secretKey)
+    {
+        std::lock_guard<std::mutex> locker(m_partialSignatureLock);
+        if (m_currentDateStr != simpleDate || m_currentSecretKey != secretKey)
+        {
+            m_currentSecretKey = secretKey;
+            m_currentDateStr = simpleDate;
+
+            //now we do the complicated part of deriving a signing key.
+            Aws::String signingKey(SIGNING_KEY);
+            
+            signingKey.append(m_currentSecretKey);
+
+            //we use digest only for the derivation process.
+            auto hashResult = m_HMAC->Calculate(ByteBuffer((unsigned char*)simpleDate.c_str(), simpleDate.length()),
+                ByteBuffer((unsigned char*)signingKey.c_str(), signingKey.length()));
+
+            if (!hashResult.IsSuccess())
+            {
+                AWS_LOGSTREAM_ERROR(v4LogTag, "Failed to hmac (sha256) date string \"" << simpleDate << "\"");
+                m_partialSignature = ByteBuffer();
+                return m_partialSignature;
+            }
+
+            auto kDate = hashResult.GetResult();
+            hashResult = m_HMAC->Calculate(ByteBuffer((unsigned char*)m_region.c_str(), m_region.length()), kDate);
+            if (!hashResult.IsSuccess())
+            {
+                AWS_LOGSTREAM_ERROR(v4LogTag, "Failed to hmac (sha256) region string \"" << m_region << "\"");
+                m_partialSignature = ByteBuffer();
+                return m_partialSignature;
+            }
+
+            auto kRegion = hashResult.GetResult();
+            hashResult = m_HMAC->Calculate(ByteBuffer((unsigned char*)m_serviceName.c_str(), m_serviceName.length()), kRegion);
+            if (!hashResult.IsSuccess())
+            {
+                AWS_LOGSTREAM_ERROR(v4LogTag, "Failed to hmac (sha256) service string \"" << m_serviceName << "\"");
+                m_partialSignature = ByteBuffer();
+                return m_partialSignature;
+            }
+
+            auto kService = hashResult.GetResult();
+            hashResult = m_HMAC->Calculate(ByteBuffer((unsigned char*)AWS4_REQUEST, strlen(AWS4_REQUEST)), kService);
+            if (!hashResult.IsSuccess())
+            {
+                AWS_LOGSTREAM_ERROR(v4LogTag, "Unable to hmac (sha256) request string \"" << AWS4_REQUEST << "\"");
+                m_partialSignature = ByteBuffer();
+                return m_partialSignature;
+            }
+
+            m_partialSignature = hashResult.GetResult();
+        }
+    }
+
+    return m_partialSignature;
 }
