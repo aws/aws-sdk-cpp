@@ -1,4 +1,3 @@
-cmake_minimum_required(VERSION 2.6)
 project(aws-cpp-sdk-queues)
 
 file(GLOB AWS_QUEUES_HEADERS

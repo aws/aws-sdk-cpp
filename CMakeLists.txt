@@ -16,7 +16,7 @@
 # minimum version of cmake that 
 #   (1) supports ExternalProject_Add URL_HASH
 #   (2) correctly extracts OPENSSL's version number from openssl/opensslv.h in version 1.0.2d
-cmake_minimum_required (VERSION 2.8.12)
+cmake_minimum_required (VERSION 3.0 FATAL_ERROR)
 
 # git is required for Android builds and optional for all other platforms
 find_package(Git)
