@@ -1,3 +1,17 @@
+if(REGENERATE_CLIENTS)
+    message(STATUS "Checking for SDK generation requirements")
+    include(FindJava)
+
+    if(NOT Java_JAVA_EXECUTABLE OR NOT Java_JAVAC_EXECUTABLE)
+        message(FATAL_ERROR "Generating SDK clients requires a jdk 1.8 installation")
+    endif()
+
+    find_program(MAVEN_PROGRAM mvn)
+    if(NOT MAVEN_PROGRAM)
+        message(FATAL_ERROR "Generating SDK clients requires a maven installation")
+    endif()
+endif()
+
 # cmake doesn't support maps, so we use list elements as key-value pairs; the ':' becomes a separator between key and value
 set(C2J_LIST "")
 list(APPEND C2J_LIST "acm:2015-12-08") 

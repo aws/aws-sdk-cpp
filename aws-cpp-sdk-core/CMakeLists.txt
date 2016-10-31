@@ -18,7 +18,7 @@ if(GIT_FOUND)
             "${CMAKE_CURRENT_SOURCE_DIR}/include/aws/core/VersionConfig.h.in"
             "${CMAKE_CURRENT_SOURCE_DIR}/include/aws/core/VersionConfig.h")
     else()
-        message("Not able to compute versioning string, not updating.")
+        message(STATUS "Not able to compute versioning string, not updating.")
     endif()
 endif()
 
