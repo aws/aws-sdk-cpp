@@ -15,6 +15,8 @@
 
 #include <stdlib.h>
 
+#include <aws/core/Aws.h>
+
 namespace Aws
 {
 namespace Environment
