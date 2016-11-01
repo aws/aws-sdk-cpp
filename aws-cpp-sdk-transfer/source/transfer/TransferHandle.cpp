@@ -36,48 +36,68 @@ namespace Aws
             m_completedParts.insert(std::pair<int, Aws::String>(partNumber, eTag));
         }
 
-        Aws::Set<int> TransferHandle::GetQueuedParts() const
+        PartStateMap TransferHandle::GetQueuedParts() const
         {
             std::lock_guard<std::mutex> locker(m_partsLock);
             return m_queuedParts;
         }
 
-        void TransferHandle::AddQueuedPart(int partNumber)
-        {            
+        bool TransferHandle::HasQueuedParts() const
+        {
             std::lock_guard<std::mutex> locker(m_partsLock);
-            m_failedParts.erase(partNumber);          
-            m_queuedParts.insert(partNumber);
+            return m_queuedParts.size() > 0;
         }
 
-        Aws::Set<int> TransferHandle::GetPendingParts() const
+        void TransferHandle::AddQueuedPart(const PartPointer& partState)
+        {            
+            std::lock_guard<std::mutex> locker(m_partsLock);
+            m_failedParts.erase(partState->GetPartId());          
+            m_queuedParts[partState->GetPartId()] = partState;
+        }
+
+        PartStateMap TransferHandle::GetPendingParts() const
         {
             std::lock_guard<std::mutex> locker(m_partsLock);
             return m_pendingParts;
         }
 
-        void TransferHandle::AddPendingPart(int partNumber)
-        {            
+        bool TransferHandle::HasPendingParts() const
+        {
             std::lock_guard<std::mutex> locker(m_partsLock);
-            m_queuedParts.erase(partNumber);           
-            m_pendingParts.insert(partNumber);
+            return m_pendingParts.size() > 0;
         }
 
-        Aws::Set<int> TransferHandle::GetFailedParts() const
+        void TransferHandle::AddPendingPart(const PartPointer& partState)
+        {            
+            std::lock_guard<std::mutex> locker(m_partsLock);
+            m_queuedParts.erase(partState->GetPartId());           
+            m_pendingParts[partState->GetPartId()] = partState;
+        }
+
+        PartStateMap TransferHandle::GetFailedParts() const
         {
             std::lock_guard<std::mutex> locker(m_partsLock);
             return m_failedParts;
         }
 
-        void TransferHandle::ChangePartToFailed(int partNumber)
+        bool TransferHandle::HasFailedParts() const
         {
             std::lock_guard<std::mutex> locker(m_partsLock);
-            m_pendingParts.erase(partNumber);  
-            m_queuedParts.erase(partNumber);            
-            m_failedParts.insert(partNumber);
+            return m_failedParts.size() > 0;
         }
 
-        void TransferHandle::GetAllPartsTransactional(Aws::Set<int>& queuedParts, Aws::Set<int>& pendingParts,
-            Aws::Set<int>& failedParts, Aws::Set<std::pair<int, Aws::String>>& completedParts)
+        void TransferHandle::ChangePartToFailed(const PartPointer& partState)
+        {
+            int partId = partState->GetPartId();
+
+            std::lock_guard<std::mutex> locker(m_partsLock);
+            m_pendingParts.erase(partId);
+            m_queuedParts.erase(partId);
+            m_failedParts[partId] = partState;
+        }
+
+        void TransferHandle::GetAllPartsTransactional(PartStateMap& queuedParts, PartStateMap& pendingParts,
+            PartStateMap& failedParts, Aws::Set<std::pair<int, Aws::String>>& completedParts)
         {
             std::lock_guard<std::mutex> locker(m_partsLock);
             queuedParts = m_queuedParts;
@@ -121,11 +141,11 @@ namespace Aws
 
         void TransferHandle::WaitUntilFinished() const
         {
-            if (!IsFinishedStatus(static_cast<TransferStatus>(m_status.load())) || GetPendingParts().size() > 0)
+            if (!IsFinishedStatus(static_cast<TransferStatus>(m_status.load())) || HasPendingParts())
             {
                 std::unique_lock<std::mutex> semaphoreLock(m_statusLock);
                 m_waitUntilFinishedSignal.wait(semaphoreLock, [this]()
-                    { return IsFinishedStatus(static_cast<TransferStatus>(m_status.load())) && GetPendingParts().size() == 0; });
+                    { return IsFinishedStatus(static_cast<TransferStatus>(m_status.load())) && !HasPendingParts(); });
                 semaphoreLock.unlock();
             }
         }

@@ -35,6 +35,7 @@ namespace Aws
         struct TransferHandleAsyncContext : public Aws::Client::AsyncCallerContext
         {
             std::shared_ptr<TransferHandle> handle;
+            PartPointer partState;
         };
 
         TransferManager::TransferManager(const TransferManagerConfiguration& configuration) : m_transferConfig(configuration)
@@ -183,10 +184,13 @@ namespace Aws
                 if (createMultipartResponse.IsSuccess())
                 {
                     handle->SetMultipartId(createMultipartResponse.GetResult().GetUploadId());
-                    int partNumber = 1;
-                    for (uint64_t i = 1; i < handle->GetBytesTotalSize(); i += m_transferConfig.bufferSize)
+                    uint64_t totalSize = handle->GetBytesTotalSize();
+                    uint64_t partCount = totalSize / m_transferConfig.bufferSize;
+
+                    for (uint64_t i = 0; i < partCount; ++i)
                     {
-                        handle->AddQueuedPart(partNumber++);
+                        uint64_t partSize = std::min(totalSize - i * m_transferConfig.bufferSize, m_transferConfig.bufferSize);
+                        handle->AddQueuedPart(Aws::MakeShared<PartState>(CLASS_TAG, i + 1, 0, partSize));
                     }                    
                 }
                 else
@@ -201,16 +205,18 @@ namespace Aws
             else
             {
                 int partsToRetry = 0;
+                sentBytes = handle->GetBytesTotalSize();
                 //at this point we've been going synchronously so this is consistent
                 for (auto failedParts : handle->GetFailedParts())
                 {
                     partsToRetry++;
-                    handle->AddQueuedPart(failedParts);
+                    sentBytes -= failedParts.second->GetSizeInBytes();
+                    handle->AddQueuedPart(failedParts.second);
                 }
-                sentBytes = handle->GetBytesTotalSize() - (partsToRetry * m_transferConfig.bufferSize);
             }
+
             //still consistent
-            Set<int> queuedParts = handle->GetQueuedParts();
+            PartStateMap queuedParts = handle->GetQueuedParts();
             auto partsIter = queuedParts.begin();
 
             TriggerTransferStatusUpdatedCallback(*handle);
@@ -220,8 +226,8 @@ namespace Aws
                 auto buffer = m_bufferManager.Acquire();
                 if(handle->ShouldContinue())
                 {
-                    auto lengthToWrite = std::min(static_cast<uint64_t>(buffer->GetLength()), handle->GetBytesTotalSize() - sentBytes);
-                    streamToPut->seekg((*partsIter - 1) * m_transferConfig.bufferSize);
+                    auto lengthToWrite = partsIter->second->GetSizeInBytes();
+                    streamToPut->seekg((partsIter->first - 1) * m_transferConfig.bufferSize);
                     streamToPut->read((char*)buffer->GetUnderlyingData(), lengthToWrite);
 
                     auto streamBuf = Aws::New<Aws::Utils::Stream::PreallocatedStreamBuf>(CLASS_TAG, buffer, static_cast<size_t>(lengthToWrite));
@@ -232,15 +238,16 @@ namespace Aws
                     uploadPartRequest.WithBucket(handle->GetBucketName())
                         .WithContentLength(static_cast<long long>(lengthToWrite))
                         .WithKey(handle->GetKey())
-                        .WithPartNumber(*partsIter)
+                        .WithPartNumber(partsIter->first)
                         .WithUploadId(handle->GetMultiPartId());
 
-                    handle->AddPendingPart(*partsIter);
+                    handle->AddPendingPart(partsIter->second);
 
                     uploadPartRequest.SetBody(preallocatedStreamReader);
                     uploadPartRequest.SetContentType(handle->GetContentType());
                     auto asyncContext = Aws::MakeShared<TransferHandleAsyncContext>(CLASS_TAG);
                     asyncContext->handle = handle;
+                    asyncContext->partState = partsIter->second;
 
                     auto callback = [this](const Aws::S3::S3Client* client, const Aws::S3::Model::UploadPartRequest& request,
                         const Aws::S3::Model::UploadPartOutcome& outcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
@@ -262,16 +269,18 @@ namespace Aws
             //still consistent.
             for (; partsIter != queuedParts.end(); ++partsIter)
             {
-                handle->ChangePartToFailed(*partsIter);
+                handle->ChangePartToFailed(partsIter->second);
             }
            
         }
 
         void TransferManager::DoSinglePartUpload(const std::shared_ptr<Aws::IOStream>& streamToPut, const std::shared_ptr<TransferHandle>& handle)
         {
+            auto partState = Aws::MakeShared<PartState>(CLASS_TAG, 1, 0, handle->GetBytesTotalSize());
+
             handle->UpdateStatus(TransferStatus::IN_PROGRESS);
             handle->SetIsMultipart(false);
-            handle->AddPendingPart(1);
+            handle->AddPendingPart(partState);
 
             auto putObjectRequest = m_transferConfig.putObjectTemplate;
             putObjectRequest.SetContinueRequestHandler([handle](const Aws::Http::HttpRequest*) { return handle->ShouldContinue(); });
@@ -309,6 +318,7 @@ namespace Aws
 
             auto asyncContext = Aws::MakeShared<TransferHandleAsyncContext>(CLASS_TAG);
             asyncContext->handle = handle;
+            asyncContext->partState = partState;
 
             auto callback = [this](const Aws::S3::S3Client* client, const Aws::S3::Model::PutObjectRequest& request,
                 const Aws::S3::Model::PutObjectOutcome& outcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
@@ -338,14 +348,14 @@ namespace Aws
             }
             else
             {
-                transferContext->handle->ChangePartToFailed(request.GetPartNumber());
+                transferContext->handle->ChangePartToFailed(transferContext->partState);
                 transferContext->handle->SetError(outcome.GetError());
                 TriggerErrorCallback(*transferContext->handle, outcome.GetError());
             }
 
             TriggerTransferStatusUpdatedCallback(*transferContext->handle);
 
-            Aws::Set<int> pendingParts, queuedParts, failedParts;
+            PartStateMap pendingParts, queuedParts, failedParts;
             Aws::Set<std::pair<int, Aws::String>> completedParts;
             transferContext->handle->GetAllPartsTransactional(queuedParts, pendingParts, failedParts, completedParts);
 
@@ -409,7 +419,7 @@ namespace Aws
             else
             {
                 transferContext->handle->UpdateStatus(DetermineIfFailedOrCanceled(*transferContext->handle));
-                transferContext->handle->ChangePartToFailed(1);
+                transferContext->handle->ChangePartToFailed(transferContext->partState);
                 transferContext->handle->SetError(outcome.GetError());
                 TriggerErrorCallback(*transferContext->handle, outcome.GetError());
             }
@@ -419,9 +429,10 @@ namespace Aws
 
         void TransferManager::DoDownload(CreateDownloadStreamCallback writeToStreamfn, const std::shared_ptr<TransferHandle>& handle)
         {
+            auto partState = Aws::MakeShared<PartState>(CLASS_TAG, 1, 0, 0);
             handle->SetIsMultipart(false);
             handle->UpdateStatus(TransferStatus::IN_PROGRESS);
-            handle->AddPendingPart(1);
+            handle->AddPendingPart(partState);
 
             TriggerTransferStatusUpdatedCallback(*handle);
 
@@ -433,14 +444,16 @@ namespace Aws
 
             if (headObjectOutcome.IsSuccess())
             {
-                handle->SetBytesTotalSize(static_cast<uint64_t>(headObjectOutcome.GetResult().GetContentLength()));
+                size_t downloadSize = static_cast<uint64_t>(headObjectOutcome.GetResult().GetContentLength());
+                partState->GetSizeInBytes(downloadSize);
+                handle->SetBytesTotalSize(downloadSize);
                 handle->SetContentType(headObjectOutcome.GetResult().GetContentType());
                 handle->SetMetadata(headObjectOutcome.GetResult().GetMetadata());
                 TriggerTransferStatusUpdatedCallback(*handle);
             }
             else
             {
-                handle->ChangePartToFailed(1);
+                handle->ChangePartToFailed(partState);
                 handle->UpdateStatus(TransferStatus::FAILED);
                 handle->SetError(headObjectOutcome.GetError());
                 TriggerErrorCallback(*handle, headObjectOutcome.GetError());
@@ -476,7 +489,7 @@ namespace Aws
             }
             else
             {
-                handle->ChangePartToFailed(1);
+                handle->ChangePartToFailed(partState);
                 handle->UpdateStatus(DetermineIfFailedOrCanceled(*handle));
                 handle->SetError(getObjectOutcome.GetError());
 

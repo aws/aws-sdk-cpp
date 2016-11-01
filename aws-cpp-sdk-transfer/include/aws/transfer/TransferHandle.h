@@ -30,6 +30,44 @@ namespace Aws
 {
     namespace Transfer
     {
+        class PartState
+        {
+            public:
+                PartState() :
+                    m_partId(0),
+                    m_bestProgressInBytes(0),
+                    m_sizeInBytes(0)
+                {}
+
+                PartState(int partId, size_t bestProgressInBytes, size_t sizeInBytes) :
+                    m_partId(partId),
+                    m_bestProgressInBytes(bestProgressInBytes),
+                    m_sizeInBytes(sizeInBytes)
+                {}
+
+                PartState(const PartState& rhs) :
+                    m_partId(rhs.m_partId),
+                    m_bestProgressInBytes(rhs.m_bestProgressInBytes),
+                    m_sizeInBytes(rhs.m_sizeInBytes)
+                {}
+
+                int GetPartId() const { return m_partId; }
+
+                size_t GetBestProgressInBytes() const { return m_bestProgressInBytes; }
+                void SetBestProgressInBytes(size_t progressInBytes) { m_bestProgressInBytes = progressInBytes; }
+
+                size_t GetSizeInBytes() const { return m_sizeInBytes; }
+
+            private:
+
+                int m_partId;
+                size_t m_bestProgressInBytes;
+                size_t m_sizeInBytes;
+        };
+
+        using PartPointer = std::shared_ptr< PartState >;
+        using PartStateMap = Aws::Map< int, PartPointer >;
+
         enum class TransferStatus
         {
             //this value is only used for directory synchronization
@@ -107,32 +145,44 @@ namespace Aws
             /**
              * Returns a copy of the pending parts. Used for all transfers.
              */
-            Aws::Set<int> GetPendingParts() const;
+            PartStateMap GetPendingParts() const;
+            /**
+            * Returns true or false if there are currently any pending parts.
+            */
+            bool HasPendingParts() const;
             /**
              * Set a part to pending. Used for all transfers.
              */
-            void AddPendingPart(int);
+            void AddPendingPart(const PartPointer& partState);
             /**
              * Returns a copy of the queued parts. Used for all transfers.
              */
-            Aws::Set<int> GetQueuedParts() const;
+            PartStateMap GetQueuedParts() const;
+            /**
+            * Returns true or false if there are currently any queued parts.
+            */
+            bool HasQueuedParts() const;
             /**
              * Set a part to queued. Used for all transfers.
              */
-            void AddQueuedPart(int);
+            void AddQueuedPart(const PartPointer& partState);
             /**
              * Returns a copy of the failed parts. Used for all transfers.
              */
-            Aws::Set<int> GetFailedParts() const;
+            PartStateMap GetFailedParts() const;
+            /**
+            * Returns true or false if there are currently any failed parts.
+            */
+            bool HasFailedParts() const;
             /**
              * Set a pending part to failed. Used for all transfers.
              */
-            void ChangePartToFailed(int);
+            void ChangePartToFailed(const PartPointer& partState);
             /**
              * Get the parts transactionally, mostly for internal purposes.
              */
-             void GetAllPartsTransactional(Aws::Set<int>& queuedParts, Aws::Set<int>& pendingParts,
-                 Aws::Set<int>& failedParts, Aws::Set<std::pair<int, Aws::String>>& completedParts);
+             void GetAllPartsTransactional(PartStateMap& queuedParts, PartStateMap& pendingParts,
+                 PartStateMap& failedParts, Aws::Set<std::pair<int, Aws::String>>& completedParts);
             /**
              * Returns false if Cancel has been called. Largely for internal use.
              */
@@ -230,13 +280,14 @@ namespace Aws
             void WaitUntilFinished() const;      
 
         private:
+
             bool m_isMultipart;
             Aws::String m_multipartId;
             TransferDirection m_direction;
             Aws::Set<std::pair<int, Aws::String>> m_completedParts;
-            Aws::Set<int> m_pendingParts;
-            Aws::Set<int> m_queuedParts;
-            Aws::Set<int> m_failedParts;
+            PartStateMap m_pendingParts;
+            PartStateMap m_queuedParts;
+            PartStateMap m_failedParts;
             std::atomic<uint64_t> m_bytesTransferred;
             uint64_t m_bytesTotalSize;
             Aws::String m_bucket;
