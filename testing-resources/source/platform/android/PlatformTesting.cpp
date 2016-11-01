@@ -13,6 +13,8 @@
   * permissions and limitations under the License.
   */
 
+#include <aws/core/Aws.h>
+
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <regex>
