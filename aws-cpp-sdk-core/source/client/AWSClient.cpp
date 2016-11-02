@@ -598,7 +598,7 @@ AWSError<CoreErrors> AWSXMLClient::BuildAWSError(const std::shared_ptr<Http::Htt
                 XmlNode codeNode = errorNode.FirstChild("Code");
                 XmlNode messageNode = errorNode.FirstChild("Message");
 
-                if (!(codeNode.IsNull() || messageNode.IsNull()))
+                if (!codeNode.IsNull())
                 {
                     error = GetErrorMarshaller()->Marshall(StringUtils::Trim(codeNode.GetText().c_str()),
                         StringUtils::Trim(messageNode.GetText().c_str()));
