@@ -17,6 +17,7 @@
 #include <aws/cloudformation/CloudFormationRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/cloudformation/model/ChangeSetType.h>
 #include <aws/cloudformation/model/Parameter.h>
 #include <aws/cloudformation/model/Capability.h>
 #include <aws/cloudformation/model/Tag.h>
@@ -1001,6 +1002,56 @@ namespace Model
      */
     inline CreateChangeSetRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+    /**
+     * <p>The type of change set operation. Valid values are <code>CREATE</code> and
+     * <code>UPDATE</code>:</p> <ul> <li> <p> <code>CREATE</code> - Specify for a
+     * change set for a stack that does not yet exist. The stack has an expected unique
+     * ID, but no template or resources. It can include multiple change sets.</p> </li>
+     * <li> <p> <code>UPDATE</code> - Specify for a change set for an existing
+     * stack.</p> </li> </ul>
+     */
+    inline const ChangeSetType& GetChangeSetType() const{ return m_changeSetType; }
+
+    /**
+     * <p>The type of change set operation. Valid values are <code>CREATE</code> and
+     * <code>UPDATE</code>:</p> <ul> <li> <p> <code>CREATE</code> - Specify for a
+     * change set for a stack that does not yet exist. The stack has an expected unique
+     * ID, but no template or resources. It can include multiple change sets.</p> </li>
+     * <li> <p> <code>UPDATE</code> - Specify for a change set for an existing
+     * stack.</p> </li> </ul>
+     */
+    inline void SetChangeSetType(const ChangeSetType& value) { m_changeSetTypeHasBeenSet = true; m_changeSetType = value; }
+
+    /**
+     * <p>The type of change set operation. Valid values are <code>CREATE</code> and
+     * <code>UPDATE</code>:</p> <ul> <li> <p> <code>CREATE</code> - Specify for a
+     * change set for a stack that does not yet exist. The stack has an expected unique
+     * ID, but no template or resources. It can include multiple change sets.</p> </li>
+     * <li> <p> <code>UPDATE</code> - Specify for a change set for an existing
+     * stack.</p> </li> </ul>
+     */
+    inline void SetChangeSetType(ChangeSetType&& value) { m_changeSetTypeHasBeenSet = true; m_changeSetType = value; }
+
+    /**
+     * <p>The type of change set operation. Valid values are <code>CREATE</code> and
+     * <code>UPDATE</code>:</p> <ul> <li> <p> <code>CREATE</code> - Specify for a
+     * change set for a stack that does not yet exist. The stack has an expected unique
+     * ID, but no template or resources. It can include multiple change sets.</p> </li>
+     * <li> <p> <code>UPDATE</code> - Specify for a change set for an existing
+     * stack.</p> </li> </ul>
+     */
+    inline CreateChangeSetRequest& WithChangeSetType(const ChangeSetType& value) { SetChangeSetType(value); return *this;}
+
+    /**
+     * <p>The type of change set operation. Valid values are <code>CREATE</code> and
+     * <code>UPDATE</code>:</p> <ul> <li> <p> <code>CREATE</code> - Specify for a
+     * change set for a stack that does not yet exist. The stack has an expected unique
+     * ID, but no template or resources. It can include multiple change sets.</p> </li>
+     * <li> <p> <code>UPDATE</code> - Specify for a change set for an existing
+     * stack.</p> </li> </ul>
+     */
+    inline CreateChangeSetRequest& WithChangeSetType(ChangeSetType&& value) { SetChangeSetType(value); return *this;}
+
   private:
     Aws::String m_stackName;
     bool m_stackNameHasBeenSet;
@@ -1028,6 +1079,8 @@ namespace Model
     bool m_clientTokenHasBeenSet;
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+    ChangeSetType m_changeSetType;
+    bool m_changeSetTypeHasBeenSet;
   };
 
 } // namespace Model

@@ -52,6 +52,11 @@ CreateChangeSetResult& CreateChangeSetResult::operator =(const AmazonWebServiceR
     {
       m_id = StringUtils::Trim(idNode.GetText().c_str());
     }
+    XmlNode stackIdNode = resultNode.FirstChild("StackId");
+    if(!stackIdNode.IsNull())
+    {
+      m_stackId = StringUtils::Trim(stackIdNode.GetText().c_str());
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

@@ -79,6 +79,17 @@ ValidateTemplateResult& ValidateTemplateResult::operator =(const AmazonWebServic
     {
       m_capabilitiesReason = StringUtils::Trim(capabilitiesReasonNode.GetText().c_str());
     }
+    XmlNode declaredTransformsNode = resultNode.FirstChild("DeclaredTransforms");
+    if(!declaredTransformsNode.IsNull())
+    {
+      XmlNode declaredTransformsMember = declaredTransformsNode.FirstChild("member");
+      while(!declaredTransformsMember.IsNull())
+      {
+        m_declaredTransforms.push_back(StringUtils::Trim(declaredTransformsMember.GetText().c_str()));
+        declaredTransformsMember = declaredTransformsMember.NextNode("member");
+      }
+
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

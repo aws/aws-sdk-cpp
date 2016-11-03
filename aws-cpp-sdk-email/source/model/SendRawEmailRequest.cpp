@@ -25,7 +25,9 @@ SendRawEmailRequest::SendRawEmailRequest() :
     m_rawMessageHasBeenSet(false),
     m_fromArnHasBeenSet(false),
     m_sourceArnHasBeenSet(false),
-    m_returnPathArnHasBeenSet(false)
+    m_returnPathArnHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_configurationSetNameHasBeenSet(false)
 {
 }
 
@@ -67,6 +69,21 @@ Aws::String SendRawEmailRequest::SerializePayload() const
   if(m_returnPathArnHasBeenSet)
   {
     ss << "ReturnPathArn=" << StringUtils::URLEncode(m_returnPathArn.c_str()) << "&";
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+    unsigned tagsCount = 1;
+    for(auto& item : m_tags)
+    {
+      item.OutputToStream(ss, "Tags.member.", tagsCount, "");
+      tagsCount++;
+    }
+  }
+
+  if(m_configurationSetNameHasBeenSet)
+  {
+    ss << "ConfigurationSetName=" << StringUtils::URLEncode(m_configurationSetName.c_str()) << "&";
   }
 
   ss << "Version=2010-12-01";
