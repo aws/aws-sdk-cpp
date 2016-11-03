@@ -1,5 +1,4 @@
 #set($metadata = $serviceModel.metadata)
-cmake_minimum_required(VERSION 2.8.12)
 project(aws-cpp-sdk-${metadata.projectName})
 
 #set($projectNameCaps = $metadata.projectName.toUpperCase())

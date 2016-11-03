@@ -13,10 +13,13 @@
 # permissions and limitations under the License.
 #
 
-# minimum version of cmake that 
-#   (1) supports ExternalProject_Add URL_HASH
-#   (2) correctly extracts OPENSSL's version number from openssl/opensslv.h in version 1.0.2d
 cmake_minimum_required (VERSION 2.8.12)
+
+# 3.0 or higher is strongly suggested; build settings (target_compile_options/etc...) sometimes do not get propagated properly under certain conditions prior to this version
+# Making this a hard requirement is potentially disruptive to existing customers who aren't affected by the bad behavior though, so just warn for now
+if(CMAKE_MAJOR_VERSION LESS 3)
+    message(WARNING "Building with CMake 3.0 or higher is strongly suggested; current version is ${CMAKE_MAJOR_VERSION}.${CMAKE_MINOR_VERSION}.${CMAKE_PATCH_VERSION}")
+endif()
 
 # git is required for Android builds and optional for all other platforms
 find_package(Git)
