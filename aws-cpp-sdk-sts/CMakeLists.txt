@@ -1,4 +1,3 @@
-cmake_minimum_required(VERSION 2.8.12)
 project(aws-cpp-sdk-sts)
 
   file(GLOB AWS_STS_HEADERS
