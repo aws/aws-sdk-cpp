@@ -75,7 +75,6 @@ macro(do_packaging)
 
         export(EXPORT "${PROJECT_NAME}-targets"
             FILE "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}-targets.cmake"
-            NAMESPACE AWS::
         )
 
         configure_file(
@@ -86,7 +85,6 @@ macro(do_packaging)
         set(ConfigPackageLocation "${LIBRARY_DIRECTORY}/cmake/${PROJECT_NAME}")
         install(EXPORT "${PROJECT_NAME}-targets"
             FILE "${PROJECT_NAME}-targets.cmake"
-            NAMESPACE AWS::
             DESTINATION ${ConfigPackageLocation}
         )
 

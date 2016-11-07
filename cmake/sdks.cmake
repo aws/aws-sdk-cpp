@@ -347,6 +347,13 @@ macro(add_sdks)
         endif()
     endif()
 
-    export(TARGETS ${EXPORTS} FILE aws-sdk-cpp-config.cmake)
+    # the catch-all config needs to list all the targets in a dependency-sorted order
+    include(dependencies)
+    sort_links(EXPORTS)
 
+    # make an everything config by just including all the individual configs
+    file(WRITE ${CMAKE_BINARY_DIR}/aws-sdk-cpp-config.cmake "")
+    foreach(EXPORT_TARGET IN LISTS EXPORTS)
+        file(APPEND ${CMAKE_BINARY_DIR}/aws-sdk-cpp-config.cmake "include(\"\${CMAKE_CURRENT_LIST_DIR}/${EXPORT_TARGET}/${EXPORT_TARGET}-config.cmake\")\n")
+    endforeach()
 endmacro()

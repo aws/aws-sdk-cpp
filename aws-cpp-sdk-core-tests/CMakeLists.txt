@@ -71,7 +71,7 @@ target_link_libraries(${PROJECT_NAME} ${PROJECT_LIBS})
 
 copyDlls(${PROJECT_NAME} ${PROJECT_LIBS_RAW})
 
-add_custom_command(TARGET runCoreUnitTests PRE_BUILD
+add_custom_command(TARGET aws-cpp-sdk-core-tests PRE_BUILD
                    COMMAND ${CMAKE_COMMAND} -E copy_directory
                        ${CMAKE_CURRENT_SOURCE_DIR}/resources ${CMAKE_CURRENT_BINARY_DIR})
 

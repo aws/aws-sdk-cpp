@@ -24,7 +24,7 @@ macro(add_project name description)
     set(PROJECT_LIBS "")
     set(PROJECT_LIBS_RAW "")
     foreach(library_var ${ARGN})
-        list(APPEND PROJECT_LIBS "AWS::${library_var}")
+        list(APPEND PROJECT_LIBS "${library_var}")
         list(APPEND PROJECT_LIBS_RAW "${library_var}")
     endforeach()
 
