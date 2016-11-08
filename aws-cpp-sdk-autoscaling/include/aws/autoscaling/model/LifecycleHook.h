@@ -38,7 +38,7 @@ namespace Model
    * instance after it launches, but before it is put into service</p> </li> <li>
    * <p>Pause the instance as it terminates, but before it is fully terminated</p>
    * </li> </ul> <p>For more information, see <a
-   * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html">Auto
+   * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/AutoScalingGroupLifecycle.html">Auto
    * Scaling Lifecycle</a> in the <i>Auto Scaling User Guide</i>.</p>
    */
   class AWS_AUTOSCALING_API LifecycleHook
@@ -357,22 +357,25 @@ namespace Model
 
     /**
      * <p>The maximum time, in seconds, that an instance can remain in a
-     * <code>Pending:Wait</code> or <code>Terminating:Wait</code> state. The default is
-     * 172800 seconds (48 hours).</p>
+     * <code>Pending:Wait</code> or <code>Terminating:Wait</code> state. The maximum is
+     * 172800 seconds (48 hours) or 100 times <code>HeartbeatTimeout</code>, whichever
+     * is smaller.</p>
      */
     inline int GetGlobalTimeout() const{ return m_globalTimeout; }
 
     /**
      * <p>The maximum time, in seconds, that an instance can remain in a
-     * <code>Pending:Wait</code> or <code>Terminating:Wait</code> state. The default is
-     * 172800 seconds (48 hours).</p>
+     * <code>Pending:Wait</code> or <code>Terminating:Wait</code> state. The maximum is
+     * 172800 seconds (48 hours) or 100 times <code>HeartbeatTimeout</code>, whichever
+     * is smaller.</p>
      */
     inline void SetGlobalTimeout(int value) { m_globalTimeoutHasBeenSet = true; m_globalTimeout = value; }
 
     /**
      * <p>The maximum time, in seconds, that an instance can remain in a
-     * <code>Pending:Wait</code> or <code>Terminating:Wait</code> state. The default is
-     * 172800 seconds (48 hours).</p>
+     * <code>Pending:Wait</code> or <code>Terminating:Wait</code> state. The maximum is
+     * 172800 seconds (48 hours) or 100 times <code>HeartbeatTimeout</code>, whichever
+     * is smaller.</p>
      */
     inline LifecycleHook& WithGlobalTimeout(int value) { SetGlobalTimeout(value); return *this;}
 

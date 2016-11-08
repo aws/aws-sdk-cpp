@@ -1,4 +1,3 @@
-cmake_minimum_required(VERSION 2.8.12)
 add_project(aws-cpp-sdk-core-tests 
     "Tests for the AWS Core C++ Library"
     testing-resources 
@@ -55,6 +54,12 @@ if(PLATFORM_WINDOWS)
   endif()
 endif()
 
+if(PLATFORM_CUSTOM)
+    if(COMMAND add_custom_core_testing_definitions)
+        add_custom_core_testing_definitions()
+    endif()
+endif()
+
 enable_testing()
 
 if(USE_WINDOWS_DLL_SEMANTICS AND BUILD_SHARED_LIBS)
@@ -69,11 +74,11 @@ endif()
 
 target_link_libraries(${PROJECT_NAME} ${PROJECT_LIBS})
 
-copyDlls(${PROJECT_NAME} ${PROJECT_LIBS_RAW})
+copyDlls(${PROJECT_NAME} ${PROJECT_LIBS})
 
 add_custom_command(TARGET aws-cpp-sdk-core-tests PRE_BUILD
                    COMMAND ${CMAKE_COMMAND} -E copy_directory
-                       ${CMAKE_CURRENT_SOURCE_DIR}/resources ${CMAKE_CURRENT_BINARY_DIR})
+                   ${CMAKE_CURRENT_SOURCE_DIR}/resources ${CMAKE_CURRENT_BINARY_DIR})
 
 if(NOT CMAKE_CROSSCOMPILING)
     ADD_CUSTOM_COMMAND( TARGET ${PROJECT_NAME} POST_BUILD COMMAND $<TARGET_FILE:${PROJECT_NAME}>)

@@ -17,6 +17,7 @@
 #pragma once
 
 #include <aws/testing/Testing_EXPORTS.h>
+#include <aws/core/Aws.h>
 
 namespace Aws
 {
@@ -34,4 +35,10 @@ namespace Environment
     AWS_TESTING_API int UnSetEnv(const char* name);
 
 } // namespace Environment
+namespace Testing
+{
+    AWS_TESTING_API void InitPlatformTest(Aws::SDKOptions& sdkOptions);
+    AWS_TESTING_API void ShutdownPlatformTest(Aws::SDKOptions& sdkOptions);
+    AWS_TESTING_API const char* GetDefaultWriteFolder();
+} // namespace Testing
 } // namespace Aws

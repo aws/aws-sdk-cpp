@@ -13,6 +13,7 @@
 * permissions and limitations under the License.
 */
 
+
 #include <aws/external/gtest.h>
 #include <aws/testing/ProxyConfig.h>
 #include <aws/core/client/ClientConfiguration.h>
@@ -40,7 +41,8 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/http/HttpClientFactory.h>
 #include <aws/core/http/HttpClient.h>
-
+#include <aws/core/utils/threading/Executor.h>
+#include <aws/testing/platform/PlatformTesting.h>
 #include <fstream>
 
 #ifdef _WIN32
@@ -101,6 +103,7 @@ namespace
             config.requestTimeoutMs = 30000;
             config.readRateLimiter = Limiter;
             config.writeRateLimiter = Limiter;
+            config.executor = Aws::MakeShared<Aws::Utils::Threading::PooledThreadExecutor>(ALLOCATION_TAG, 4);
 
             //to use a proxy, uncomment the next two lines.
             if (USE_PROXY_FOR_TESTS)
@@ -351,6 +354,8 @@ namespace
 
         Client->DisableRequestProcessing();
 
+        auto taskStatus = getCallable.wait_for(std::chrono::seconds(10));
+        ASSERT_EQ(taskStatus, std::future_status::ready);
         auto&& getOutcome = getCallable.get();
         Client->EnableRequestProcessing();
 
@@ -775,7 +780,8 @@ namespace
 
         // repeat the get, but channel it directly to a file; tests the ability to override the output stream
 #ifndef __ANDROID__
-    Aws::String TestFileName = "DownloadTestFile";
+        Aws::String TestFileName{ Aws::Testing::GetDefaultWriteFolder() };
+        TestFileName += "DownloadTestFile";
 #else
     Aws::String TestFileName = Aws::Platform::GetCacheDirectory() + Aws::String("DownloadTestFile");
 #endif

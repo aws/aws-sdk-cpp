@@ -1,4 +1,3 @@
-cmake_minimum_required(VERSION 2.8.12)
 add_project(aws-cpp-sdk-access-management 
     "C++ interface for Amazon Access Management"
     aws-cpp-sdk-cognito-identity 

@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 2.8.12)
+add_project(aws-cpp-sdk-core "Core http and utility library for the AWS C++ SDK")
 
 if(VERSION_STRING)
     set(Version_VERSION_STRING ${VERSION_STRING})
@@ -13,8 +13,6 @@ if(VERSION_STRING)
 else()
     message("Not able to compute versioning string, not updating.")
 endif()
-
-add_project(aws-cpp-sdk-core "Core http and utility library for the AWS C++ SDK")
 
 # If building shared libraries, custom memory management enabled is the default, otherwise regular memory management is the default.
 # We make custom memory management the default on shared library builds because it is safer and much more difficult to accidentally
@@ -310,6 +308,16 @@ endif(MSVC)
 
 set(Core_INCLUDES "${CMAKE_CURRENT_SOURCE_DIR}/include/")
 
+if(PLATFORM_CUSTOM)
+  if(COMMAND add_custom_core_include_directories)
+    add_custom_core_include_directories(CORE_CUSTOM_INCLUDE)
+    SET(Core_INCLUDES ${Core_INCLUDES} ${CORE_CUSTOM_INCLUDE})
+  endif()
+  if(COMMAND add_custom_definitions)
+    add_custom_definitions()
+  endif()
+endif()
+
 include_directories(${Core_INCLUDES})
 
 if(NOT PLATFORM_CUSTOM)
@@ -339,6 +347,12 @@ endif()
 
 if(ENABLE_OPENSSL_ENCRYPTION AND BUILD_OPENSSL)
     add_dependencies(${PROJECT_NAME} OPENSSL)
+endif()
+
+if(PLATFORM_CUSTOM)
+  if(COMMAND add_custom_core_libraries)
+    add_custom_core_libraries()
+  endif()
 endif()
 
 target_include_directories(${PROJECT_NAME} PUBLIC

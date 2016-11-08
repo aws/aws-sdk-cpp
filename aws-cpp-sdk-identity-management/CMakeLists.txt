@@ -1,4 +1,3 @@
-cmake_minimum_required(VERSION 2.8.12)
 add_project(aws-cpp-sdk-identity-management 
     "High-level C++ SDK for identity management against AWS" 
     aws-cpp-sdk-cognito-identity 

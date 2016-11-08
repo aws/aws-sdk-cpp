@@ -1,4 +1,3 @@
-cmake_minimum_required(VERSION 2.8.12)
 add_project(aws-cpp-sdk-transfer-tests
     "Tests for the AWS Transfer C++ SDK"
     aws-cpp-sdk-transfer
@@ -26,4 +25,4 @@ else()
 endif()
 
 target_link_libraries(${PROJECT_NAME} ${PROJECT_LIBS})
-copyDlls(${PROJECT_NAME} ${PROJECT_LIBS_RAW})
+copyDlls(${PROJECT_NAME} ${PROJECT_LIBS})

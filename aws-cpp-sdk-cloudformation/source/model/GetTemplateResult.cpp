@@ -52,6 +52,17 @@ GetTemplateResult& GetTemplateResult::operator =(const AmazonWebServiceResult<Xm
     {
       m_templateBody = StringUtils::Trim(templateBodyNode.GetText().c_str());
     }
+    XmlNode stagesAvailableNode = resultNode.FirstChild("StagesAvailable");
+    if(!stagesAvailableNode.IsNull())
+    {
+      XmlNode stagesAvailableMember = stagesAvailableNode.FirstChild("member");
+      while(!stagesAvailableMember.IsNull())
+      {
+        m_stagesAvailable.push_back(TemplateStageMapper::GetTemplateStageForName(StringUtils::Trim(stagesAvailableMember.GetText().c_str())));
+        stagesAvailableMember = stagesAvailableMember.NextNode("member");
+      }
+
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

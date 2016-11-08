@@ -257,13 +257,15 @@ HttpResponseOutcome AWSClient::AttemptOneRequest(const Aws::String& uri,
 HttpResponseOutcome AWSClient::AttemptOneRequest(const Aws::String& uri, HttpMethod method) const
 {
     std::shared_ptr<HttpRequest> httpRequest(CreateHttpRequest(uri, method, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod));
-    AddCommonHeaders(*httpRequest);
-
+    
     if (!m_signer->SignRequest(*httpRequest))
     {
         AWS_LOG_ERROR(AWS_CLIENT_LOG_TAG, "Request signing failed. Returning error.");
         return HttpResponseOutcome(); // TODO: make a real error when error revamp reaches branch (SIGNING_ERROR)
     }
+
+    //user agent and headers like that shouldn't be signed for the sake of compatibility with proxies which MAY mutate that header.
+    AddCommonHeaders(*httpRequest);
 
     AWS_LOG_DEBUG(AWS_CLIENT_LOG_TAG, "Request Successfully signed");
     std::shared_ptr<HttpResponse> httpResponse(
@@ -596,7 +598,7 @@ AWSError<CoreErrors> AWSXMLClient::BuildAWSError(const std::shared_ptr<Http::Htt
                 XmlNode codeNode = errorNode.FirstChild("Code");
                 XmlNode messageNode = errorNode.FirstChild("Message");
 
-                if (!(codeNode.IsNull() || messageNode.IsNull()))
+                if (!codeNode.IsNull())
                 {
                     error = GetErrorMarshaller()->Marshall(StringUtils::Trim(codeNode.GetText().c_str()),
                         StringUtils::Trim(messageNode.GetText().c_str()));

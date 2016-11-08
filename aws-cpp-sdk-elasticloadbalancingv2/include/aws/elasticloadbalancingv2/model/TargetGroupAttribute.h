@@ -50,11 +50,11 @@ namespace Model
      * Load Balancing to wait before changing the state of a deregistering target from
      * <code>draining</code> to <code>unused</code>. The range is 0-3600 seconds. The
      * default value is 300 seconds.</p> </li> <li> <p> <code>stickiness.enabled</code>
-     * - Indicates whether sticky sessions are enabled.</p> </li> <li> <p>
-     * <code>stickiness.type</code> - The type of sticky sessions. The possible value
-     * is <code>lb_cookie</code>.</p> </li> <li> <p>
-     * <code>stickiness.lb_cookie.duration_seconds</code> - The time period, in
-     * seconds, during which requests from a client should be routed to the same
+     * - Indicates whether sticky sessions are enabled. The value is <code>true</code>
+     * or <code>false</code>.</p> </li> <li> <p> <code>stickiness.type</code> - The
+     * type of sticky sessions. The possible value is <code>lb_cookie</code>.</p> </li>
+     * <li> <p> <code>stickiness.lb_cookie.duration_seconds</code> - The time period,
+     * in seconds, during which requests from a client should be routed to the same
      * target. After this time period expires, the load balancer-generated cookie is
      * considered stale. The range is 1 second to 1 week (604800 seconds). The default
      * value is 1 day (86400 seconds).</p> </li> </ul>
@@ -67,11 +67,11 @@ namespace Model
      * Load Balancing to wait before changing the state of a deregistering target from
      * <code>draining</code> to <code>unused</code>. The range is 0-3600 seconds. The
      * default value is 300 seconds.</p> </li> <li> <p> <code>stickiness.enabled</code>
-     * - Indicates whether sticky sessions are enabled.</p> </li> <li> <p>
-     * <code>stickiness.type</code> - The type of sticky sessions. The possible value
-     * is <code>lb_cookie</code>.</p> </li> <li> <p>
-     * <code>stickiness.lb_cookie.duration_seconds</code> - The time period, in
-     * seconds, during which requests from a client should be routed to the same
+     * - Indicates whether sticky sessions are enabled. The value is <code>true</code>
+     * or <code>false</code>.</p> </li> <li> <p> <code>stickiness.type</code> - The
+     * type of sticky sessions. The possible value is <code>lb_cookie</code>.</p> </li>
+     * <li> <p> <code>stickiness.lb_cookie.duration_seconds</code> - The time period,
+     * in seconds, during which requests from a client should be routed to the same
      * target. After this time period expires, the load balancer-generated cookie is
      * considered stale. The range is 1 second to 1 week (604800 seconds). The default
      * value is 1 day (86400 seconds).</p> </li> </ul>
@@ -84,11 +84,11 @@ namespace Model
      * Load Balancing to wait before changing the state of a deregistering target from
      * <code>draining</code> to <code>unused</code>. The range is 0-3600 seconds. The
      * default value is 300 seconds.</p> </li> <li> <p> <code>stickiness.enabled</code>
-     * - Indicates whether sticky sessions are enabled.</p> </li> <li> <p>
-     * <code>stickiness.type</code> - The type of sticky sessions. The possible value
-     * is <code>lb_cookie</code>.</p> </li> <li> <p>
-     * <code>stickiness.lb_cookie.duration_seconds</code> - The time period, in
-     * seconds, during which requests from a client should be routed to the same
+     * - Indicates whether sticky sessions are enabled. The value is <code>true</code>
+     * or <code>false</code>.</p> </li> <li> <p> <code>stickiness.type</code> - The
+     * type of sticky sessions. The possible value is <code>lb_cookie</code>.</p> </li>
+     * <li> <p> <code>stickiness.lb_cookie.duration_seconds</code> - The time period,
+     * in seconds, during which requests from a client should be routed to the same
      * target. After this time period expires, the load balancer-generated cookie is
      * considered stale. The range is 1 second to 1 week (604800 seconds). The default
      * value is 1 day (86400 seconds).</p> </li> </ul>
@@ -101,11 +101,11 @@ namespace Model
      * Load Balancing to wait before changing the state of a deregistering target from
      * <code>draining</code> to <code>unused</code>. The range is 0-3600 seconds. The
      * default value is 300 seconds.</p> </li> <li> <p> <code>stickiness.enabled</code>
-     * - Indicates whether sticky sessions are enabled.</p> </li> <li> <p>
-     * <code>stickiness.type</code> - The type of sticky sessions. The possible value
-     * is <code>lb_cookie</code>.</p> </li> <li> <p>
-     * <code>stickiness.lb_cookie.duration_seconds</code> - The time period, in
-     * seconds, during which requests from a client should be routed to the same
+     * - Indicates whether sticky sessions are enabled. The value is <code>true</code>
+     * or <code>false</code>.</p> </li> <li> <p> <code>stickiness.type</code> - The
+     * type of sticky sessions. The possible value is <code>lb_cookie</code>.</p> </li>
+     * <li> <p> <code>stickiness.lb_cookie.duration_seconds</code> - The time period,
+     * in seconds, during which requests from a client should be routed to the same
      * target. After this time period expires, the load balancer-generated cookie is
      * considered stale. The range is 1 second to 1 week (604800 seconds). The default
      * value is 1 day (86400 seconds).</p> </li> </ul>
@@ -118,11 +118,11 @@ namespace Model
      * Load Balancing to wait before changing the state of a deregistering target from
      * <code>draining</code> to <code>unused</code>. The range is 0-3600 seconds. The
      * default value is 300 seconds.</p> </li> <li> <p> <code>stickiness.enabled</code>
-     * - Indicates whether sticky sessions are enabled.</p> </li> <li> <p>
-     * <code>stickiness.type</code> - The type of sticky sessions. The possible value
-     * is <code>lb_cookie</code>.</p> </li> <li> <p>
-     * <code>stickiness.lb_cookie.duration_seconds</code> - The time period, in
-     * seconds, during which requests from a client should be routed to the same
+     * - Indicates whether sticky sessions are enabled. The value is <code>true</code>
+     * or <code>false</code>.</p> </li> <li> <p> <code>stickiness.type</code> - The
+     * type of sticky sessions. The possible value is <code>lb_cookie</code>.</p> </li>
+     * <li> <p> <code>stickiness.lb_cookie.duration_seconds</code> - The time period,
+     * in seconds, during which requests from a client should be routed to the same
      * target. After this time period expires, the load balancer-generated cookie is
      * considered stale. The range is 1 second to 1 week (604800 seconds). The default
      * value is 1 day (86400 seconds).</p> </li> </ul>
@@ -135,11 +135,11 @@ namespace Model
      * Load Balancing to wait before changing the state of a deregistering target from
      * <code>draining</code> to <code>unused</code>. The range is 0-3600 seconds. The
      * default value is 300 seconds.</p> </li> <li> <p> <code>stickiness.enabled</code>
-     * - Indicates whether sticky sessions are enabled.</p> </li> <li> <p>
-     * <code>stickiness.type</code> - The type of sticky sessions. The possible value
-     * is <code>lb_cookie</code>.</p> </li> <li> <p>
-     * <code>stickiness.lb_cookie.duration_seconds</code> - The time period, in
-     * seconds, during which requests from a client should be routed to the same
+     * - Indicates whether sticky sessions are enabled. The value is <code>true</code>
+     * or <code>false</code>.</p> </li> <li> <p> <code>stickiness.type</code> - The
+     * type of sticky sessions. The possible value is <code>lb_cookie</code>.</p> </li>
+     * <li> <p> <code>stickiness.lb_cookie.duration_seconds</code> - The time period,
+     * in seconds, during which requests from a client should be routed to the same
      * target. After this time period expires, the load balancer-generated cookie is
      * considered stale. The range is 1 second to 1 week (604800 seconds). The default
      * value is 1 day (86400 seconds).</p> </li> </ul>
@@ -152,11 +152,11 @@ namespace Model
      * Load Balancing to wait before changing the state of a deregistering target from
      * <code>draining</code> to <code>unused</code>. The range is 0-3600 seconds. The
      * default value is 300 seconds.</p> </li> <li> <p> <code>stickiness.enabled</code>
-     * - Indicates whether sticky sessions are enabled.</p> </li> <li> <p>
-     * <code>stickiness.type</code> - The type of sticky sessions. The possible value
-     * is <code>lb_cookie</code>.</p> </li> <li> <p>
-     * <code>stickiness.lb_cookie.duration_seconds</code> - The time period, in
-     * seconds, during which requests from a client should be routed to the same
+     * - Indicates whether sticky sessions are enabled. The value is <code>true</code>
+     * or <code>false</code>.</p> </li> <li> <p> <code>stickiness.type</code> - The
+     * type of sticky sessions. The possible value is <code>lb_cookie</code>.</p> </li>
+     * <li> <p> <code>stickiness.lb_cookie.duration_seconds</code> - The time period,
+     * in seconds, during which requests from a client should be routed to the same
      * target. After this time period expires, the load balancer-generated cookie is
      * considered stale. The range is 1 second to 1 week (604800 seconds). The default
      * value is 1 day (86400 seconds).</p> </li> </ul>

@@ -1,4 +1,3 @@
-cmake_minimum_required(VERSION 2.8.12)
 add_project(aws-cpp-sdk-transfer
     "High-level C++ SDK for file transfer to/from AWS S3"
     aws-cpp-sdk-s3

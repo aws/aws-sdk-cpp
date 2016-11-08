@@ -158,7 +158,7 @@ namespace Model
      * <p>The adjustment type. Valid values are <code>ChangeInCapacity</code>,
      * <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p> <p>For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-scale-based-on-demand.html">Dynamic
+     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/as-scale-based-on-demand.html">Dynamic
      * Scaling</a> in the <i>Auto Scaling User Guide</i>.</p>
      */
     inline const Aws::String& GetAdjustmentType() const{ return m_adjustmentType; }
@@ -167,7 +167,7 @@ namespace Model
      * <p>The adjustment type. Valid values are <code>ChangeInCapacity</code>,
      * <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p> <p>For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-scale-based-on-demand.html">Dynamic
+     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/as-scale-based-on-demand.html">Dynamic
      * Scaling</a> in the <i>Auto Scaling User Guide</i>.</p>
      */
     inline void SetAdjustmentType(const Aws::String& value) { m_adjustmentTypeHasBeenSet = true; m_adjustmentType = value; }
@@ -176,7 +176,7 @@ namespace Model
      * <p>The adjustment type. Valid values are <code>ChangeInCapacity</code>,
      * <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p> <p>For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-scale-based-on-demand.html">Dynamic
+     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/as-scale-based-on-demand.html">Dynamic
      * Scaling</a> in the <i>Auto Scaling User Guide</i>.</p>
      */
     inline void SetAdjustmentType(Aws::String&& value) { m_adjustmentTypeHasBeenSet = true; m_adjustmentType = value; }
@@ -185,7 +185,7 @@ namespace Model
      * <p>The adjustment type. Valid values are <code>ChangeInCapacity</code>,
      * <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p> <p>For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-scale-based-on-demand.html">Dynamic
+     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/as-scale-based-on-demand.html">Dynamic
      * Scaling</a> in the <i>Auto Scaling User Guide</i>.</p>
      */
     inline void SetAdjustmentType(const char* value) { m_adjustmentTypeHasBeenSet = true; m_adjustmentType.assign(value); }
@@ -194,7 +194,7 @@ namespace Model
      * <p>The adjustment type. Valid values are <code>ChangeInCapacity</code>,
      * <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p> <p>For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-scale-based-on-demand.html">Dynamic
+     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/as-scale-based-on-demand.html">Dynamic
      * Scaling</a> in the <i>Auto Scaling User Guide</i>.</p>
      */
     inline PutScalingPolicyRequest& WithAdjustmentType(const Aws::String& value) { SetAdjustmentType(value); return *this;}
@@ -203,7 +203,7 @@ namespace Model
      * <p>The adjustment type. Valid values are <code>ChangeInCapacity</code>,
      * <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p> <p>For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-scale-based-on-demand.html">Dynamic
+     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/as-scale-based-on-demand.html">Dynamic
      * Scaling</a> in the <i>Auto Scaling User Guide</i>.</p>
      */
     inline PutScalingPolicyRequest& WithAdjustmentType(Aws::String&& value) { SetAdjustmentType(value); return *this;}
@@ -212,7 +212,7 @@ namespace Model
      * <p>The adjustment type. Valid values are <code>ChangeInCapacity</code>,
      * <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p> <p>For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-scale-based-on-demand.html">Dynamic
+     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/as-scale-based-on-demand.html">Dynamic
      * Scaling</a> in the <i>Auto Scaling User Guide</i>.</p>
      */
     inline PutScalingPolicyRequest& WithAdjustmentType(const char* value) { SetAdjustmentType(value); return *this;}
@@ -292,7 +292,7 @@ namespace Model
      * default cooldown period for the group applies.</p> <p>This parameter is not
      * supported unless the policy type is <code>SimpleScaling</code>.</p> <p>For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Auto
+     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/Cooldown.html">Auto
      * Scaling Cooldowns</a> in the <i>Auto Scaling User Guide</i>.</p>
      */
     inline int GetCooldown() const{ return m_cooldown; }
@@ -303,7 +303,7 @@ namespace Model
      * default cooldown period for the group applies.</p> <p>This parameter is not
      * supported unless the policy type is <code>SimpleScaling</code>.</p> <p>For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Auto
+     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/Cooldown.html">Auto
      * Scaling Cooldowns</a> in the <i>Auto Scaling User Guide</i>.</p>
      */
     inline void SetCooldown(int value) { m_cooldownHasBeenSet = true; m_cooldown = value; }
@@ -314,7 +314,7 @@ namespace Model
      * default cooldown period for the group applies.</p> <p>This parameter is not
      * supported unless the policy type is <code>SimpleScaling</code>.</p> <p>For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Auto
+     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/Cooldown.html">Auto
      * Scaling Cooldowns</a> in the <i>Auto Scaling User Guide</i>.</p>
      */
     inline PutScalingPolicyRequest& WithCooldown(int value) { SetCooldown(value); return *this;}

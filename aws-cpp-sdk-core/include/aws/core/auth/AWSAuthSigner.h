@@ -20,6 +20,7 @@
 #include <aws/core/Region.h>
 #include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/Array.h>
 
 #include <memory>
 #include <atomic>
@@ -127,12 +128,20 @@ namespace Aws
             Aws::String GenerateSignature(const Aws::Auth::AWSCredentials& credentials, const Aws::String& stringToSign, const Aws::String& simpleDate) const;
             Aws::String ComputePayloadHash(Aws::Http::HttpRequest&) const;
             Aws::String GenerateStringToSign(const Aws::String& dateValue, const Aws::String& simpleDate, const Aws::String& canonicalRequestHash) const;
+            const Aws::Utils::ByteBuffer& ComputeLongLivedHash(const Aws::String& secretKey, const Aws::String& simpleDate) const;
 
             std::shared_ptr<Auth::AWSCredentialsProvider> m_credentialsProvider;
             Aws::String m_serviceName;
             Aws::String m_region;
             Aws::UniquePtr<Aws::Utils::Crypto::Sha256> m_hash;
             Aws::UniquePtr<Aws::Utils::Crypto::Sha256HMAC> m_HMAC;
+            //these next four fields are ONLY for caching purposes and do not change
+            //the logical state of the signer. They are marked mutable so the
+            //interface can remain const.
+            mutable Aws::Utils::ByteBuffer m_partialSignature;
+            mutable Aws::String m_currentDateStr;
+            mutable Aws::String m_currentSecretKey;
+            mutable std::mutex m_partialSignatureLock;
             bool m_signPayloads;
             bool m_urlEscapePath;
         };

@@ -1,4 +1,3 @@
-cmake_minimum_required(VERSION 2.8.12)
 add_project(aws-cpp-sdk-identity-management-tests 
     "Tests for the AWS Identity Management C++ SDK" 
     aws-cpp-sdk-identity-management
@@ -34,7 +33,7 @@ else()
 endif()
 
 target_link_libraries(${PROJECT_NAME} ${PROJECT_LIBS})
-copyDlls(${PROJECT_NAME} ${PROJECT_LIBS_RAW})
+copyDlls(${PROJECT_NAME} ${PROJECT_LIBS})
 
 if(NOT CMAKE_CROSSCOMPILING)
     ADD_CUSTOM_COMMAND( TARGET ${PROJECT_NAME} POST_BUILD COMMAND $<TARGET_FILE:${PROJECT_NAME}>)

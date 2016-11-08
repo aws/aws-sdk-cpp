@@ -1,4 +1,3 @@
-cmake_minimum_required(VERSION 2.8.12)
 project(android-unified-tests)
 
 # Headers are included in the source so that they show up in Visual Studio.

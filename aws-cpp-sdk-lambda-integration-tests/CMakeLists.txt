@@ -1,4 +1,3 @@
-cmake_minimum_required(VERSION 2.8.12)
 add_project(aws-cpp-sdk-lambda-integration-tests
     "Tests for the AWS Lambda C++ SDK"
     aws-cpp-sdk-access-management
@@ -22,6 +21,8 @@ add_project(aws-cpp-sdk-lambda-integration-tests
 
 if(PLATFORM_ANDROID)
   add_definitions(-DRESOURCES_DIR="resources")
+elseif(COMMAND add_custom_lambda_resources_directory_definition)
+  add_custom_lambda_resources_directory_definition()
 else()
   add_definitions(-DRESOURCES_DIR="${CMAKE_CURRENT_SOURCE_DIR}/resources")
 endif()
@@ -39,4 +40,8 @@ else()
 endif()
 
 target_link_libraries(${PROJECT_NAME} ${PROJECT_LIBS})
-copyDlls(${PROJECT_NAME} ${PROJECT_LIBS_RAW})
+copyDlls(${PROJECT_NAME} ${PROJECT_LIBS})
+
+if(COMMAND copy_lambda_testing_resources)
+  copy_lambda_testing_resources()
+endif()

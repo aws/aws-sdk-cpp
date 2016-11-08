@@ -102,51 +102,72 @@ namespace Model
     inline RegisterTaskDefinitionRequest& WithFamily(const char* value) { SetFamily(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role that containers in this task
-     * can assume. All containers in this task are granted the permissions that are
-     * specified in this role.</p>
+     * <p>The short name or full Amazon Resource Name (ARN) of the IAM role that
+     * containers in this task can assume. All containers in this task are granted the
+     * permissions that are specified in this role. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
+     * Roles for Tasks</a> in the <i>Amazon EC2 Container Service Developer
+     * Guide</i>.</p>
      */
     inline const Aws::String& GetTaskRoleArn() const{ return m_taskRoleArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role that containers in this task
-     * can assume. All containers in this task are granted the permissions that are
-     * specified in this role.</p>
+     * <p>The short name or full Amazon Resource Name (ARN) of the IAM role that
+     * containers in this task can assume. All containers in this task are granted the
+     * permissions that are specified in this role. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
+     * Roles for Tasks</a> in the <i>Amazon EC2 Container Service Developer
+     * Guide</i>.</p>
      */
     inline void SetTaskRoleArn(const Aws::String& value) { m_taskRoleArnHasBeenSet = true; m_taskRoleArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role that containers in this task
-     * can assume. All containers in this task are granted the permissions that are
-     * specified in this role.</p>
+     * <p>The short name or full Amazon Resource Name (ARN) of the IAM role that
+     * containers in this task can assume. All containers in this task are granted the
+     * permissions that are specified in this role. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
+     * Roles for Tasks</a> in the <i>Amazon EC2 Container Service Developer
+     * Guide</i>.</p>
      */
     inline void SetTaskRoleArn(Aws::String&& value) { m_taskRoleArnHasBeenSet = true; m_taskRoleArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role that containers in this task
-     * can assume. All containers in this task are granted the permissions that are
-     * specified in this role.</p>
+     * <p>The short name or full Amazon Resource Name (ARN) of the IAM role that
+     * containers in this task can assume. All containers in this task are granted the
+     * permissions that are specified in this role. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
+     * Roles for Tasks</a> in the <i>Amazon EC2 Container Service Developer
+     * Guide</i>.</p>
      */
     inline void SetTaskRoleArn(const char* value) { m_taskRoleArnHasBeenSet = true; m_taskRoleArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role that containers in this task
-     * can assume. All containers in this task are granted the permissions that are
-     * specified in this role.</p>
+     * <p>The short name or full Amazon Resource Name (ARN) of the IAM role that
+     * containers in this task can assume. All containers in this task are granted the
+     * permissions that are specified in this role. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
+     * Roles for Tasks</a> in the <i>Amazon EC2 Container Service Developer
+     * Guide</i>.</p>
      */
     inline RegisterTaskDefinitionRequest& WithTaskRoleArn(const Aws::String& value) { SetTaskRoleArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role that containers in this task
-     * can assume. All containers in this task are granted the permissions that are
-     * specified in this role.</p>
+     * <p>The short name or full Amazon Resource Name (ARN) of the IAM role that
+     * containers in this task can assume. All containers in this task are granted the
+     * permissions that are specified in this role. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
+     * Roles for Tasks</a> in the <i>Amazon EC2 Container Service Developer
+     * Guide</i>.</p>
      */
     inline RegisterTaskDefinitionRequest& WithTaskRoleArn(Aws::String&& value) { SetTaskRoleArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role that containers in this task
-     * can assume. All containers in this task are granted the permissions that are
-     * specified in this role.</p>
+     * <p>The short name or full Amazon Resource Name (ARN) of the IAM role that
+     * containers in this task can assume. All containers in this task are granted the
+     * permissions that are specified in this role. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
+     * Roles for Tasks</a> in the <i>Amazon EC2 Container Service Developer
+     * Guide</i>.</p>
      */
     inline RegisterTaskDefinitionRequest& WithTaskRoleArn(const char* value) { SetTaskRoleArn(value); return *this;}
 

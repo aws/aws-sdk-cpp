@@ -15,7 +15,9 @@
 #pragma once
 #include <aws/cloudformation/CloudFormation_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/cloudformation/model/ResponseMetadata.h>
+#include <aws/cloudformation/model/TemplateStage.h>
 
 namespace Aws
 {
@@ -99,6 +101,62 @@ namespace Model
      */
     inline GetTemplateResult& WithTemplateBody(const char* value) { SetTemplateBody(value); return *this;}
 
+    /**
+     * <p>The available template type. For stacks, both the <code>Original</code> and
+     * <code>Processed</code> template types are always available. For change sets, the
+     * <code>Original</code> template is always available. After the transforms are
+     * processed, the <code>Processed</code> template becomes available.</p>
+     */
+    inline const Aws::Vector<TemplateStage>& GetStagesAvailable() const{ return m_stagesAvailable; }
+
+    /**
+     * <p>The available template type. For stacks, both the <code>Original</code> and
+     * <code>Processed</code> template types are always available. For change sets, the
+     * <code>Original</code> template is always available. After the transforms are
+     * processed, the <code>Processed</code> template becomes available.</p>
+     */
+    inline void SetStagesAvailable(const Aws::Vector<TemplateStage>& value) { m_stagesAvailable = value; }
+
+    /**
+     * <p>The available template type. For stacks, both the <code>Original</code> and
+     * <code>Processed</code> template types are always available. For change sets, the
+     * <code>Original</code> template is always available. After the transforms are
+     * processed, the <code>Processed</code> template becomes available.</p>
+     */
+    inline void SetStagesAvailable(Aws::Vector<TemplateStage>&& value) { m_stagesAvailable = value; }
+
+    /**
+     * <p>The available template type. For stacks, both the <code>Original</code> and
+     * <code>Processed</code> template types are always available. For change sets, the
+     * <code>Original</code> template is always available. After the transforms are
+     * processed, the <code>Processed</code> template becomes available.</p>
+     */
+    inline GetTemplateResult& WithStagesAvailable(const Aws::Vector<TemplateStage>& value) { SetStagesAvailable(value); return *this;}
+
+    /**
+     * <p>The available template type. For stacks, both the <code>Original</code> and
+     * <code>Processed</code> template types are always available. For change sets, the
+     * <code>Original</code> template is always available. After the transforms are
+     * processed, the <code>Processed</code> template becomes available.</p>
+     */
+    inline GetTemplateResult& WithStagesAvailable(Aws::Vector<TemplateStage>&& value) { SetStagesAvailable(value); return *this;}
+
+    /**
+     * <p>The available template type. For stacks, both the <code>Original</code> and
+     * <code>Processed</code> template types are always available. For change sets, the
+     * <code>Original</code> template is always available. After the transforms are
+     * processed, the <code>Processed</code> template becomes available.</p>
+     */
+    inline GetTemplateResult& AddStagesAvailable(const TemplateStage& value) { m_stagesAvailable.push_back(value); return *this; }
+
+    /**
+     * <p>The available template type. For stacks, both the <code>Original</code> and
+     * <code>Processed</code> template types are always available. For change sets, the
+     * <code>Original</code> template is always available. After the transforms are
+     * processed, the <code>Processed</code> template becomes available.</p>
+     */
+    inline GetTemplateResult& AddStagesAvailable(TemplateStage&& value) { m_stagesAvailable.push_back(value); return *this; }
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -116,6 +174,7 @@ namespace Model
 
   private:
     Aws::String m_templateBody;
+    Aws::Vector<TemplateStage> m_stagesAvailable;
     ResponseMetadata m_responseMetadata;
   };
 

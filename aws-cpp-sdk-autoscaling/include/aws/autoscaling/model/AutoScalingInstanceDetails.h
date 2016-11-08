@@ -151,49 +151,49 @@ namespace Model
 
     /**
      * <p>The lifecycle state for the instance. For more information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html">Auto
+     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/AutoScalingGroupLifecycle.html">Auto
      * Scaling Lifecycle</a> in the <i>Auto Scaling User Guide</i>.</p>
      */
     inline const Aws::String& GetLifecycleState() const{ return m_lifecycleState; }
 
     /**
      * <p>The lifecycle state for the instance. For more information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html">Auto
+     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/AutoScalingGroupLifecycle.html">Auto
      * Scaling Lifecycle</a> in the <i>Auto Scaling User Guide</i>.</p>
      */
     inline void SetLifecycleState(const Aws::String& value) { m_lifecycleStateHasBeenSet = true; m_lifecycleState = value; }
 
     /**
      * <p>The lifecycle state for the instance. For more information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html">Auto
+     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/AutoScalingGroupLifecycle.html">Auto
      * Scaling Lifecycle</a> in the <i>Auto Scaling User Guide</i>.</p>
      */
     inline void SetLifecycleState(Aws::String&& value) { m_lifecycleStateHasBeenSet = true; m_lifecycleState = value; }
 
     /**
      * <p>The lifecycle state for the instance. For more information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html">Auto
+     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/AutoScalingGroupLifecycle.html">Auto
      * Scaling Lifecycle</a> in the <i>Auto Scaling User Guide</i>.</p>
      */
     inline void SetLifecycleState(const char* value) { m_lifecycleStateHasBeenSet = true; m_lifecycleState.assign(value); }
 
     /**
      * <p>The lifecycle state for the instance. For more information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html">Auto
+     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/AutoScalingGroupLifecycle.html">Auto
      * Scaling Lifecycle</a> in the <i>Auto Scaling User Guide</i>.</p>
      */
     inline AutoScalingInstanceDetails& WithLifecycleState(const Aws::String& value) { SetLifecycleState(value); return *this;}
 
     /**
      * <p>The lifecycle state for the instance. For more information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html">Auto
+     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/AutoScalingGroupLifecycle.html">Auto
      * Scaling Lifecycle</a> in the <i>Auto Scaling User Guide</i>.</p>
      */
     inline AutoScalingInstanceDetails& WithLifecycleState(Aws::String&& value) { SetLifecycleState(value); return *this;}
 
     /**
      * <p>The lifecycle state for the instance. For more information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html">Auto
+     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/AutoScalingGroupLifecycle.html">Auto
      * Scaling Lifecycle</a> in the <i>Auto Scaling User Guide</i>.</p>
      */
     inline AutoScalingInstanceDetails& WithLifecycleState(const char* value) { SetLifecycleState(value); return *this;}

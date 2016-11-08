@@ -78,42 +78,50 @@ namespace Model
     inline DescribeServicesRequest& WithCluster(const char* value) { SetCluster(value); return *this;}
 
     /**
-     * <p>A list of services to describe.</p>
+     * <p>A list of services to describe. You may specify up to 10 services to describe
+     * in a single operation.</p>
      */
     inline const Aws::Vector<Aws::String>& GetServices() const{ return m_services; }
 
     /**
-     * <p>A list of services to describe.</p>
+     * <p>A list of services to describe. You may specify up to 10 services to describe
+     * in a single operation.</p>
      */
     inline void SetServices(const Aws::Vector<Aws::String>& value) { m_servicesHasBeenSet = true; m_services = value; }
 
     /**
-     * <p>A list of services to describe.</p>
+     * <p>A list of services to describe. You may specify up to 10 services to describe
+     * in a single operation.</p>
      */
     inline void SetServices(Aws::Vector<Aws::String>&& value) { m_servicesHasBeenSet = true; m_services = value; }
 
     /**
-     * <p>A list of services to describe.</p>
+     * <p>A list of services to describe. You may specify up to 10 services to describe
+     * in a single operation.</p>
      */
     inline DescribeServicesRequest& WithServices(const Aws::Vector<Aws::String>& value) { SetServices(value); return *this;}
 
     /**
-     * <p>A list of services to describe.</p>
+     * <p>A list of services to describe. You may specify up to 10 services to describe
+     * in a single operation.</p>
      */
     inline DescribeServicesRequest& WithServices(Aws::Vector<Aws::String>&& value) { SetServices(value); return *this;}
 
     /**
-     * <p>A list of services to describe.</p>
+     * <p>A list of services to describe. You may specify up to 10 services to describe
+     * in a single operation.</p>
      */
     inline DescribeServicesRequest& AddServices(const Aws::String& value) { m_servicesHasBeenSet = true; m_services.push_back(value); return *this; }
 
     /**
-     * <p>A list of services to describe.</p>
+     * <p>A list of services to describe. You may specify up to 10 services to describe
+     * in a single operation.</p>
      */
     inline DescribeServicesRequest& AddServices(Aws::String&& value) { m_servicesHasBeenSet = true; m_services.push_back(value); return *this; }
 
     /**
-     * <p>A list of services to describe.</p>
+     * <p>A list of services to describe. You may specify up to 10 services to describe
+     * in a single operation.</p>
      */
     inline DescribeServicesRequest& AddServices(const char* value) { m_servicesHasBeenSet = true; m_services.push_back(value); return *this; }
 

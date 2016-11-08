@@ -13,7 +13,6 @@
 # permissions and limitations under the License.
 #
 
-cmake_minimum_required(VERSION 2.8.12)
 add_project(testing-resources 
     "Testing utility library for the AWS C++ SDK"
     aws-cpp-sdk-core)
@@ -76,6 +75,16 @@ set(INCLUDES
     "${CMAKE_CURRENT_SOURCE_DIR}/include/"
 )
 
+if(PLATFORM_CUSTOM)
+  if(COMMAND add_custom_core_include_directories)
+    add_custom_core_include_directories(CUSTOM_INCLUDE)
+    set(INCLUDES ${INCLUDES} ${CUSTOM_INCLUDE})
+  endif()
+  if(COMMAND add_custom_definitions)
+    add_custom_definitions()
+  endif()
+endif()
+
 include_directories(${INCLUDES})
 
 if(USE_WINDOWS_DLL_SEMANTICS AND BUILD_SHARED_LIBS)
@@ -89,6 +98,10 @@ endif()
 
 add_library(${PROJECT_NAME} ${LIBTYPE} ${TestingResources_SRC})
 add_library(AWS::${PROJECT_NAME} ALIAS ${PROJECT_NAME})
+
+if(PLATFORM_CUSTOM)
+  add_custom_testing_target_compile_definitions()
+endif()
 
 target_include_directories(${PROJECT_NAME} PUBLIC
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>

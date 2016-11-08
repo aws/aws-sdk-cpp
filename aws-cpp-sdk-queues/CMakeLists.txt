@@ -1,4 +1,3 @@
-cmake_minimum_required(VERSION 2.6)
 add_project(aws-cpp-sdk-queues 
     "High-level C++ SDK for SQS message passing" 
     aws-cpp-sdk-sqs 

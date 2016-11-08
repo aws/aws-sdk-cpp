@@ -1,5 +1,8 @@
-cmake_minimum_required(VERSION 2.8.12)
-add_project(aws-cpp-sdk-cloudfront-tests "Tests for the AWS Cloudfront C++ SDK" aws-cpp-sdk-core aws-cpp-sdk-cloudfront testing-resources)
+add_project(aws-cpp-sdk-cloudfront-tests 
+    "Tests for the AWS Cloudfront C++ SDK" 
+    aws-cpp-sdk-core 
+    aws-cpp-sdk-cloudfront 
+    testing-resources)
 
 # Headers are included in the source so that they show up in Visual Studio.
 # They are included elsewhere for consistency.
@@ -33,4 +36,4 @@ else()
 endif()
 
 target_link_libraries(${PROJECT_NAME} ${PROJECT_LIBS})
-copyDlls(${PROJECT_NAME} ${PROJECT_LIBS_RAW})
+copyDlls(${PROJECT_NAME} ${PROJECT_LIBS})

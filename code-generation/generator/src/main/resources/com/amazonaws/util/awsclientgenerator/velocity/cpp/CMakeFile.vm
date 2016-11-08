@@ -1,5 +1,4 @@
 #set($metadata = $serviceModel.metadata)
-cmake_minimum_required(VERSION 2.8.12)
 add_project(aws-cpp-sdk-${metadata.projectName} "C++ SDK for the AWS ${metadata.projectName} service" aws-cpp-sdk-core)
 
 #set($projectNameCaps = $metadata.projectName.toUpperCase())
@@ -67,7 +66,7 @@ target_include_directories(${PROJECT_NAME} PUBLIC
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
     $<INSTALL_INTERFACE:include>)
   
-target_link_libraries(${PROJECT_NAME} aws-cpp-sdk-core)
+target_link_libraries(${PROJECT_NAME} ${PROJECT_LIBS})
 
 setup_install()
 
