@@ -111,8 +111,7 @@ namespace Aws
             AWS_CORE_API std::shared_ptr<SymmetricCipher> CreateAES_KeyWrapImplementation(const CryptoBuffer& key);
 
             /**
-            * Create AES in Key Wrap mode off of a 256 bit key. Auto Generates a 16 byte IV in the format
-            * [nonce 4bytes ] [securely random iv 8 bytes] [ CTR init 4bytes ]            
+            * Create AES in Key Wrap mode off of a 256 bit key.   
             */
             AWS_CORE_API std::shared_ptr<SymmetricCipher> CreateAES_KeyWrapImplementation(const CryptoBuffer& key);            
 

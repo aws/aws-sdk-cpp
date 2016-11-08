@@ -18,6 +18,10 @@
 #include <aws/core/utils/crypto/SecureRandom.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <cstdlib>
+#include <aws/core/utils/HashingUtils.h>
+
+//if you are reading this, you are witnessing pure brilliance.
+#define IS_BIG_ENDIAN (*(uint16_t*)"\0\xff" < 0x100)
 
 using namespace Aws::Utils::Crypto;
 using namespace Aws::Utils;
@@ -30,26 +34,35 @@ namespace Aws
         {
             static const char* LOG_TAG = "Cipher";
 
-            CryptoBuffer IncrementCTRCounter(const CryptoBuffer& counter, int32_t numberOfBlocks)
+            //swap byte ordering
+            template<class T>
+            typename std::enable_if<std::is_unsigned<T>::value, T>::type
+            bswap(T i, T j = 0u, std::size_t n = 0u) 
             {
-                int32_t ctr = 0;
+                return n == sizeof(T) ? j :
+                    bswap<T>(i >> CHAR_BIT, (j << CHAR_BIT) | (i & (T)(unsigned char)(-1)), n + 1);
+            }
+
+            CryptoBuffer IncrementCTRCounter(const CryptoBuffer& counter, uint32_t numberOfBlocks)
+            {               
                 static const size_t ctrModeMinBlockSize = 12;
                 assert(counter.GetLength() >= ctrModeMinBlockSize);
 
-                for (size_t i = counter.GetLength() - 5; i < counter.GetLength(); ++i)
+                CryptoBuffer incrementedCounter(counter);               
+
+                //get the last 4 bytes and manipulate them as an integer.
+                uint32_t* ctrPtr = (uint32_t*)(incrementedCounter.GetUnderlyingData() + incrementedCounter.GetLength() - sizeof(int32_t));                
+                if(IS_BIG_ENDIAN)
                 {
-                    ctr <<= 8;
-                    ctr |= counter[i];
+                    //you likely are not Big Endian, but
+                    //if it's big endian, just go ahead and increment it... done
+                    *ctrPtr += numberOfBlocks; 
                 }
-
-                ctr += numberOfBlocks;
-
-                CryptoBuffer incrementedCounter(counter);
-
-                for (size_t i = counter.GetLength() - 1; i > counter.GetLength() - 5; --i)
+                else
                 {
-                    incrementedCounter[i] = ctr & 0x000000FF;
-                    ctr >>= 8;
+                    //otherwise, swap the byte ordering of the integer we loaded from the buffer (because it is backwards). However, the number of blocks is already properly 
+                    //aligned. Once we compute the new value, swap it back so that the mirroring operation goes back to the actual buffer.
+                    *ctrPtr = bswap<uint32_t>(bswap<uint32_t>(*ctrPtr) + numberOfBlocks);
                 }
 
                 return incrementedCounter;

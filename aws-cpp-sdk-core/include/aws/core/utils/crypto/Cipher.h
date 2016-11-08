@@ -28,7 +28,7 @@ namespace Aws
             static const size_t SYMMETRIC_KEY_LENGTH = 32;
             static const size_t MIN_IV_LENGTH = 12;
 
-            AWS_CORE_API CryptoBuffer IncrementCTRCounter(const CryptoBuffer& counter, int32_t numberOfBlocks);
+            AWS_CORE_API CryptoBuffer IncrementCTRCounter(const CryptoBuffer& counter, uint32_t numberOfBlocks);
 
             /**
              * Interface for symmetric encryption and decryption providers. An instance of this class is good for exactly one encryption or decryption run.

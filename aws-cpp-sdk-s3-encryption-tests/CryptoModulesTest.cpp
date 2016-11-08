@@ -369,6 +369,7 @@ namespace
         ASSERT_EQ(s3Client.m_putObjectCalled, 1);
     }
 
+#ifndef ENABLE_COMMONCRYPTO_ENCRYPTION
     TEST_F(CryptoModulesTest, StrictAuthenticatedEncryptionOperationsTestWithSimpleEncryptionMaterials)
     {
         Aws::Utils::CryptoBuffer masterKey = Aws::Utils::Crypto::SymmetricCipher::GenerateKey();
@@ -433,6 +434,7 @@ namespace
         ASSERT_EQ(s3Client.m_getObjectCalled, 2);
         ASSERT_EQ(s3Client.m_putObjectCalled, 1);
     }
+#endif
 
     TEST_F(CryptoModulesTest, EncryptionOnlyOperationsTestWithKMSEncryptionMaterials)
     {
@@ -635,6 +637,7 @@ namespace
         ASSERT_EQ(s3Client.m_putObjectCalled, 1u);
     }
 
+#ifdef ENABLE_COMMONCRYPTO_ENCRYPTION
     TEST_F(CryptoModulesTest, StrictAuthenticatedEncryptionOperationsTestWithKMSEncryptionMaterials)
     {
         auto kmsClient = Aws::MakeShared<MockKMSClient>(ALLOCATION_TAG, ClientConfiguration());
@@ -815,6 +818,7 @@ namespace
         auto getObjectFunction = [&s3Client](Aws::S3::Model::GetObjectRequest getRequest) -> Aws::S3::Model::GetObjectOutcome { return s3Client.GetObject(getRequest); };
         ASSERT_DEATH({ decryptionModule->GetObjectSecurely(getRequest, headOutcome.GetResult(), contentCryptoMaterial, getObjectFunction); }, ASSERTION_FAILED);
     }
+#endif
 
     TEST_F(CryptoModulesTest, RangeParserSuccess)
     {

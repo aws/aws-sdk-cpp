@@ -29,12 +29,12 @@ namespace S3Encryption
 namespace Modules
 {
 static const char* const ALLOCATION_TAG = "CryptoModule";
+static const char* LAST_BYTES_SPECIFIER = "bytes=-";
+static const char* FIRST_BYTES_SPECIFIER = "bytes=0-";
 static const size_t CBC_IV_SIZE = 16u;
 static const size_t GCM_IV_SIZE = 12u;
 static const size_t TAG_SIZE_BYTES = 16u;
 static const size_t AES_BLOCK_SIZE = 16u;
-static const Aws::String LAST_BYTES_SPECIFIER = "bytes=-";
-static const Aws::String FIRST_BYTES_SPECIFIER = "bytes=0-";
 static const size_t BITS_IN_BYTE = 8u;
 
 CryptoModule::CryptoModule(const std::shared_ptr<Materials::EncryptionMaterials>& encryptionMaterials, const CryptoConfiguration & cryptoConfig) :
@@ -86,14 +86,16 @@ Aws::S3::Model::GetObjectOutcome CryptoModule::GetObjectSecurely(const Aws::S3::
 
     CryptoBuffer tagFromBody = GetTag(copyRequest, getObjectFunction);
     int64_t rangeStart = 0;
+    int64_t rangeEnd = 0;
 
     if (!request.GetRange().empty())
     {
         auto range = ParseGetObjectRequestRange(request.GetRange(), headObjectResult.GetContentLength());
         rangeStart = range.first;
+        rangeEnd = range.second;
     }
 
-    InitDecryptionCipher(rangeStart, tagFromBody);
+    InitDecryptionCipher(rangeStart, rangeEnd, tagFromBody);
     auto newRange = AdjustRange(copyRequest, headObjectResult);
 
     int16_t firstBlockAdjustment = 0;
@@ -195,10 +197,10 @@ CryptoModuleEO::CryptoModuleEO(const std::shared_ptr<Materials::EncryptionMateri
 void CryptoModuleEO::SetContentLength(Aws::S3::Model::PutObjectRequest & request)
 {
     request.GetBody()->seekg(0, std::ios_base::end);
-    size_t paddingLength = static_cast<size_t>(request.GetBody()->tellg());
-    auto paddingAddition = (paddingLength % AES_BLOCK_SIZE) == 0 ? AES_BLOCK_SIZE : AES_BLOCK_SIZE - paddingLength % AES_BLOCK_SIZE;
-    paddingLength += paddingAddition;
-    request.SetContentLength(paddingLength);
+    size_t ciphertextLength = static_cast<size_t>(request.GetBody()->tellg());
+    auto cipherTextAddition = (ciphertextLength  % AES_BLOCK_SIZE) == 0 ? AES_BLOCK_SIZE : AES_BLOCK_SIZE - ciphertextLength % AES_BLOCK_SIZE;
+    ciphertextLength += cipherTextAddition;
+    request.SetContentLength(ciphertextLength);
     request.GetBody()->seekg(0, std::ios_base::beg);
 }
 
@@ -215,7 +217,7 @@ void CryptoModuleEO::InitEncryptionCipher()
     m_contentCryptoMaterial.SetIV(m_cipher->GetIV());
 }
 
-void CryptoModuleEO::InitDecryptionCipher(int64_t, const Aws::Utils::CryptoBuffer &)
+void CryptoModuleEO::InitDecryptionCipher(int64_t, int64_t, const Aws::Utils::CryptoBuffer &)
 {    
     m_cipher = CreateAES_CBCImplementation(m_contentCryptoMaterial.GetContentEncryptionKey(), m_contentCryptoMaterial.GetIV());
 }
@@ -249,10 +251,10 @@ CryptoModuleAE::CryptoModuleAE(const std::shared_ptr<Materials::EncryptionMateri
 void CryptoModuleAE::SetContentLength(Aws::S3::Model::PutObjectRequest & request)
 {
     request.GetBody()->seekg(0, std::ios_base::end);
-    size_t paddingLength = static_cast<size_t>(request.GetBody()->tellg());
+    size_t cipherTextLength = static_cast<size_t>(request.GetBody()->tellg());
     //Adding 16 bytes to content length since tag is automatically appended
-    paddingLength += TAG_SIZE_BYTES;
-    request.SetContentLength(paddingLength);
+    cipherTextLength += TAG_SIZE_BYTES;
+    request.SetContentLength(cipherTextLength);
     request.GetBody()->seekg(0, std::ios_base::beg);
 }
 
@@ -269,9 +271,16 @@ void CryptoModuleAE::InitEncryptionCipher()
     m_contentCryptoMaterial.SetIV(m_cipher->GetIV());
 }
 
-void CryptoModuleAE::InitDecryptionCipher(int64_t rangeStart, const Aws::Utils::CryptoBuffer& tag)
+void CryptoModuleAE::InitDecryptionCipher(int64_t rangeStart, int64_t rangeEnd, const Aws::Utils::CryptoBuffer& tag)
 {
-    if (rangeStart > 0)
+    bool forceCtr;
+#ifdef ENABLE_COMMONCRYPTO_ENCRYPTION
+    forceCtr = true;
+#else
+    forceCtr = false;
+#endif
+
+    if (rangeStart > 0 || rangeEnd > 0 || forceCtr)
     {
         //See http://csrc.nist.gov/publications/nistpubs/800-38D/SP-800-38D.pdf for decrypting a GCM message using CTR mode.
         assert(m_contentCryptoMaterial.GetIV().GetLength() == GCM_IV_SIZE);
@@ -392,10 +401,11 @@ void CryptoModuleStrictAE::InitEncryptionCipher()
     m_contentCryptoMaterial.SetIV(m_cipher->GetIV());
 }
 
-void CryptoModuleStrictAE::InitDecryptionCipher(int64_t rangeStart, const Aws::Utils::CryptoBuffer & tag)
+void CryptoModuleStrictAE::InitDecryptionCipher(int64_t rangeStart, int64_t rangeEnd, const Aws::Utils::CryptoBuffer & tag)
 {
     //range gets not allowed in Strict AE.
     assert(rangeStart == 0);
+    assert(rangeEnd == 0);
     m_cipher = CreateAES_GCMImplementation(m_contentCryptoMaterial.GetContentEncryptionKey(), m_contentCryptoMaterial.GetIV(), tag);
 }
 

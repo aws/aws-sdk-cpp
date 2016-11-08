@@ -88,14 +88,17 @@ namespace S3Encryption
         {
             decryptionCryptoConfig.SetCryptoMode(CryptoMode::ENCRYPTION_ONLY);
         }
-        else if (contentCryptoMaterial.GetContentCryptoScheme() == ContentCryptoScheme::GCM && !request.GetRange().empty())
+        else if (m_cryptoConfig.GetCryptoMode() != CryptoMode::STRICT_AUTHENTICATED_ENCRYPTION && 
+            contentCryptoMaterial.GetContentCryptoScheme() == ContentCryptoScheme::GCM)
         {
             decryptionCryptoConfig.SetCryptoMode(CryptoMode::AUTHENTICATED_ENCRYPTION);
         }
         else
         {
+            assert(request.GetRange().empty());
             decryptionCryptoConfig.SetCryptoMode(CryptoMode::STRICT_AUTHENTICATED_ENCRYPTION);
         }
+
         auto module = m_cryptoModuleFactory.FetchCryptoModule(m_encryptionMaterials, decryptionCryptoConfig);
         auto getObjectFunction = [this](const Aws::S3::Model::GetObjectRequest& getRequest) { return S3Client::GetObject(getRequest); };
         return module->GetObjectSecurely(request, headOutcome.GetResult(), contentCryptoMaterial, getObjectFunction);

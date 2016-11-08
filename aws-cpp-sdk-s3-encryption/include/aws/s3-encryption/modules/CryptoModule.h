@@ -88,7 +88,7 @@ namespace Aws
                 /**
                 * This function initializes the cipher for decryption with the content encryption key, iv and tag. 
                 */
-                virtual void InitDecryptionCipher(int64_t rangeStart = 0, const Aws::Utils::CryptoBuffer& tag = Aws::Utils::CryptoBuffer()) = 0;
+                virtual void InitDecryptionCipher(int64_t rangeStart = 0, int64_t rangeEnd = 0, const Aws::Utils::CryptoBuffer& tag = Aws::Utils::CryptoBuffer()) = 0;
 
                 /*
                 * This function populates the content crypto material with the module specific details for encryption. 
@@ -143,7 +143,7 @@ namespace Aws
                 /**
                 *Function to initialize the cipher for decryption using the crypto content material.
                 */
-                void InitDecryptionCipher(int64_t rangeStart = 0, const Aws::Utils::CryptoBuffer& tag = Aws::Utils::CryptoBuffer());
+                void InitDecryptionCipher(int64_t rangeStart = 0, int64_t rangeEnd = 0, const Aws::Utils::CryptoBuffer& tag = Aws::Utils::CryptoBuffer()) override;
 
                 /*
                 * Function to get the crypto tag according to the module. 
@@ -187,7 +187,7 @@ namespace Aws
                 /**
                 *Function to initialize the cipher for decryption using the crypto content material.
                 */
-                void InitDecryptionCipher(int64_t rangeStart = 0, const Aws::Utils::CryptoBuffer& tag = Aws::Utils::CryptoBuffer());
+                void InitDecryptionCipher(int64_t rangeStart = 0, int64_t rangeEnd = 0, const Aws::Utils::CryptoBuffer& tag = Aws::Utils::CryptoBuffer()) override;
 
                 /*
                 * Function to get the crypto tag according to the module.
@@ -231,7 +231,7 @@ namespace Aws
                 /**
                 *Function to initialize the cipher for decryption using the crypto content material.
                 */
-                void InitDecryptionCipher(int64_t rangeStart = 0, const Aws::Utils::CryptoBuffer& tag = Aws::Utils::CryptoBuffer());
+                void InitDecryptionCipher(int64_t rangeStart = 0, int64_t rangeEnd = 0, const Aws::Utils::CryptoBuffer& tag = Aws::Utils::CryptoBuffer()) override;
 
                 /*
                 * Function to get the crypto tag according to the module.
