@@ -27,25 +27,25 @@ namespace Aws
         {
         public:
             /*
-            * Initialize the S3 Encryption Client with encryption materials, crypto configuration, and a client configuration. If no client configuration is supplied, 
+            * Initialize the S3 Encryption Client with encryption materials, crypto configuration, and a client configuration. If no client configuration is supplied,
             * the default client configuration will be used.
             */
-            S3EncryptionClient(const std::shared_ptr<Aws::Utils::Crypto::EncryptionMaterials>& encryptionMaterials, const Aws::S3Encryption::CryptoConfiguration& cryptoConfig, 
-                    const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+            S3EncryptionClient(const std::shared_ptr<Aws::Utils::Crypto::EncryptionMaterials>& encryptionMaterials, const Aws::S3Encryption::CryptoConfiguration& cryptoConfig,
+                const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
 
             /*
-            * Initialize the S3 Encryption Client with encryption materials, crypto configuration, AWS credentials and a client configuration. If no client configuration is supplied, 
+            * Initialize the S3 Encryption Client with encryption materials, crypto configuration, AWS credentials and a client configuration. If no client configuration is supplied,
             * the default client configuration will be used.
             */
-            S3EncryptionClient(const std::shared_ptr<Aws::Utils::Crypto::EncryptionMaterials>& encryptionMaterials, const Aws::S3Encryption::CryptoConfiguration& cryptoConfig, 
-                    const Auth::AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+            S3EncryptionClient(const std::shared_ptr<Aws::Utils::Crypto::EncryptionMaterials>& encryptionMaterials, const Aws::S3Encryption::CryptoConfiguration& cryptoConfig,
+                const Auth::AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
 
             /*
-            * Initialize the S3 Encryption Client with encryption materials, crypto configuration, AWS credentials provider and a client configuration. If no client configuration is supplied, 
+            * Initialize the S3 Encryption Client with encryption materials, crypto configuration, AWS credentials provider and a client configuration. If no client configuration is supplied,
             * the default client configuration will be used.
             */
-            S3EncryptionClient(const std::shared_ptr<Aws::Utils::Crypto::EncryptionMaterials>& encryptionMaterials, const Aws::S3Encryption::CryptoConfiguration& cryptoConfig, 
-                    const std::shared_ptr<Auth::AWSCredentialsProvider>& credentialsProvider, const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+            S3EncryptionClient(const std::shared_ptr<Aws::Utils::Crypto::EncryptionMaterials>& encryptionMaterials, const Aws::S3Encryption::CryptoConfiguration& cryptoConfig,
+                const std::shared_ptr<Auth::AWSCredentialsProvider>& credentialsProvider, const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
 
             /*
             * Function to put an object encrypted to S3.
@@ -53,13 +53,13 @@ namespace Aws
             Aws::S3::Model::PutObjectOutcome PutObject(const Aws::S3::Model::PutObjectRequest& request) const override;
 
             /*
-            * Function to get an object decrypted from S3. 
+            * Function to get an object decrypted from S3.
             */
             Aws::S3::Model::GetObjectOutcome GetObject(const Aws::S3::Model::GetObjectRequest& request) const override;
 
         private:
             /*
-            * Function to get the instruction file object of a encrypted object from S3. This instruction file object will be used to assist decryption. 
+            * Function to get the instruction file object of a encrypted object from S3. This instruction file object will be used to assist decryption.
             */
             Aws::S3::Model::GetObjectOutcome GetInstructionFileObject(const Aws::S3::Model::GetObjectRequest& originalGetRequest) const;
 

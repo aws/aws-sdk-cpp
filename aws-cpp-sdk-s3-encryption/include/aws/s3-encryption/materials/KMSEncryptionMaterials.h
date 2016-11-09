@@ -32,10 +32,10 @@ namespace Aws
             * KMS Encryption Materials is responsible for handling the encryption/decryption of
             * content encryption keys using KMS. This class will use a user provided customer
             * master key ID to encrypt/decrypt keys. It also allows the user to pass in their
-            * own KMS Client, or a Client Configuration where it will create a KMS Client 
+            * own KMS Client, or a Client Configuration where it will create a KMS Client
             * with that configuration.
             */
-            class AWS_S3ENCRYPTION_API KMSEncryptionMaterials : public Aws::Utils::Crypto::EncryptionMaterials 
+            class AWS_S3ENCRYPTION_API KMSEncryptionMaterials : public Aws::Utils::Crypto::EncryptionMaterials
             {
             public:
                 /*
@@ -50,7 +50,7 @@ namespace Aws
                 KMSEncryptionMaterials(const Aws::String& customerMasterKeyID, const std::shared_ptr<Aws::KMS::KMSClient>& kmsClient);
 
                 /*
-                * This will encrypt the cek by calling to KMS. This will occur in place. 
+                * This will encrypt the cek by calling to KMS. This will occur in place.
                 * It will set the key ID to the current customer master key ID and also set the encryption context to the materials
                 * description.
                 * A invalid customer master key ID will result in an empty content encryption key.
@@ -58,9 +58,9 @@ namespace Aws
                 void EncryptCEK(Aws::Utils::Crypto::ContentCryptoMaterial& contentCryptoMaterial);
 
                 /*
-                * This will decrypt the cek by calling to KMS. This will occur in place. 
+                * This will decrypt the cek by calling to KMS. This will occur in place.
                 * It will check to make sure that the key wrap algorithm is KMS and that the materials description matches
-                * the identifier + customer master key ID. It will then decrypt. 
+                * the identifier + customer master key ID. It will then decrypt.
                 * A invalid customer master key ID will result in an empty content encryption key.
                 */
                 void DecryptCEK(Aws::Utils::Crypto::ContentCryptoMaterial& contentCryptoMaterial);

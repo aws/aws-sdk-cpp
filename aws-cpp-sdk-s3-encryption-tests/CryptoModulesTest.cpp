@@ -20,23 +20,25 @@
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/crypto/ContentCryptoScheme.h>
+#include <aws/core/utils/crypto/CryptoStream.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/Array.h>
+
 #include <aws/s3-encryption/modules/CryptoModuleFactory.h>
 #include <aws/s3-encryption/materials/KMSEncryptionMaterials.h>
 #include <aws/s3-encryption/materials/SimpleEncryptionMaterials.h>
 #include <aws/s3-encryption/CryptoConfiguration.h>
 #include <aws/s3-encryption/handlers/InstructionFileHandler.h>
-#include <aws/s3-encryption/ContentCryptoScheme.h>
+
 #include <aws/s3/model/PutObjectRequest.h>
 #include <aws/s3/model/CreateBucketRequest.h>
 #include <aws/s3/model/DeleteBucketRequest.h>
 #include <aws/s3/model/DeleteObjectRequest.h>
-#include <aws/core/utils/crypto/CryptoStream.h>
 
 #include <aws/kms/KMSClient.h>
 #include <aws/kms/model/EncryptRequest.h>
 #include <aws/kms/model/DecryptRequest.h>
-#include <aws/core/utils/HashingUtils.h>
-#include <aws/core/utils/Array.h>
 
 namespace
 {
@@ -59,8 +61,9 @@ namespace
     using namespace Aws::Auth;
     using namespace Aws::Client;
     using namespace Aws::S3Encryption;
-    using namespace Aws::S3Encryption::ContentCryptoSchemeMapper;
-    using namespace Aws::S3Encryption::KeyWrapAlgorithmMapper;
+    using namespace Aws::Utils::Crypto;
+    using namespace Aws::Utils::Crypto::ContentCryptoSchemeMapper;
+    using namespace Aws::Utils::Crypto::KeyWrapAlgorithmMapper;
     using namespace Aws::S3Encryption::Modules;
     using namespace Aws::S3Encryption::Materials;
     using namespace Aws::S3::Model;
@@ -71,7 +74,7 @@ namespace
     /*
     * This is a class that represents a mock KMS Client which is used to encrypt/decrypt the content encryption key
     * in the S3 Encryption Client module. When encrypt is called, it will take the plain text key and store it and
-    * return the user a different generated key to take place as the encrypted key. Then when decrypt is called, the 
+    * return the user a different generated key to take place as the encrypted key. Then when decrypt is called, the
     * plaintext key will be returned to the user. This does not actually decrypt or encrypt anything, but acts in
     * the same fashion as an actual KMS Client.
     */
@@ -124,10 +127,10 @@ namespace
     /*
     * This is a class that represents a S3 Client which is used to mimic the put/get operations of a actual s3 client.
     * During a put object, the body of the request is stored as well as the metadata of the requet. This data is then
-    * populated into a get object result when a get operation is called. If a get request has a range specifying the 
+    * populated into a get object result when a get operation is called. If a get request has a range specifying the
     * last 16 bytes of data, we know this is the crypto tag stored at the end of the body for GCM encryption, and we
     * return this. If the range is everything but the last 16 bytes then we only return that part of the body to the
-    * result. 
+    * result.
     */
     class MockS3Client : public Aws::S3::S3Client
     {
@@ -172,15 +175,15 @@ namespace
                 auto bytes = m_requestContentLength;
                 auto rangeBytes = CryptoModule::ParseGetObjectRequestRange(range, bytes);
                 responseStream.GetUnderlyingStream().write((const char*)bodyString.c_str() + rangeBytes.first, rangeBytes.second - rangeBytes.first + 1);
-                written = rangeBytes.second - rangeBytes.first; 
+                written = rangeBytes.second - rangeBytes.first;
             }
             else
             {
                 responseStream.GetUnderlyingStream().write((const char*)bodyString.c_str(), m_requestContentLength);
                 written = m_requestContentLength;
-            }          
-            
-            responseStream.GetUnderlyingStream().flush();            
+            }
+
+            responseStream.GetUnderlyingStream().flush();
             Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream> awsStream(std::move(responseStream), Aws::Http::HeaderValueCollection());
             Aws::S3::Model::GetObjectResult getObjectResult(std::move(awsStream));
             getObjectResult.SetContentLength(written);
@@ -216,13 +219,13 @@ namespace
         mutable size_t m_requestContentLength;
     };
 
-    class CryptoModulesTest : public ::testing::Test 
+    class CryptoModulesTest : public ::testing::Test
     {
     protected:
         /*
         * Function to check if metadata map contains content crypto material.
         * Use this function to make sure a put object request contains all the material after
-        * a PutObjectSecurely call. 
+        * a PutObjectSecurely call.
         */
         static void MetadataFilled(Aws::Map<Aws::String, Aws::String> metadataMap)
         {
@@ -270,10 +273,10 @@ namespace
         Aws::Utils::CryptoBuffer ivBuffer = Aws::Utils::HashingUtils::Base64Decode(metadata[IV_HEADER]);
         ASSERT_EQ(ivBuffer.GetLength(), CBC_IV_SIZE_BYTES);
 
-        Aws::S3Encryption::ContentCryptoScheme scheme = Aws::S3Encryption::ContentCryptoSchemeMapper::GetContentCryptoSchemeForName(metadata[CONTENT_CRYPTO_SCHEME_HEADER]);
+        ContentCryptoScheme scheme = ContentCryptoSchemeMapper::GetContentCryptoSchemeForName(metadata[CONTENT_CRYPTO_SCHEME_HEADER]);
         ASSERT_EQ(scheme, ContentCryptoScheme::CBC);
 
-        Aws::S3Encryption::KeyWrapAlgorithm keyWrapAlgorithm = Aws::S3Encryption::KeyWrapAlgorithmMapper::GetKeyWrapAlgorithmForName(metadata[KEY_WRAP_ALGORITHM]);
+        KeyWrapAlgorithm keyWrapAlgorithm = KeyWrapAlgorithmMapper::GetKeyWrapAlgorithmForName(metadata[KEY_WRAP_ALGORITHM]);
         ASSERT_EQ(keyWrapAlgorithm, KeyWrapAlgorithm::AES_KEY_WRAP);
 
         ASSERT_TRUE(s3Client.GetRequestContentLength() > strlen(BODY_STREAM_TEST));
@@ -297,7 +300,7 @@ namespace
         Aws::OStream& ostream = getOutcome.GetResult().GetBody();
         Aws::OStringStream ss;
         ss << ostream.rdbuf();
-        
+
         ASSERT_STREQ(BODY_STREAM_TEST, ss.str().c_str());
         ASSERT_EQ(s3Client.GetMetadata(), getOutcome.GetResult().GetMetadata());
         ASSERT_EQ(s3Client.m_getObjectCalled, 1);
@@ -335,10 +338,10 @@ namespace
         Aws::Utils::CryptoBuffer ivBuffer = Aws::Utils::HashingUtils::Base64Decode(metadata[IV_HEADER]);
         ASSERT_EQ(ivBuffer.GetLength(), GCM_IV_SIZE_BYTES);
 
-        Aws::S3Encryption::ContentCryptoScheme scheme = Aws::S3Encryption::ContentCryptoSchemeMapper::GetContentCryptoSchemeForName(metadata[CONTENT_CRYPTO_SCHEME_HEADER]);
+        ContentCryptoScheme scheme = ContentCryptoSchemeMapper::GetContentCryptoSchemeForName(metadata[CONTENT_CRYPTO_SCHEME_HEADER]);
         ASSERT_EQ(scheme, ContentCryptoScheme::GCM);
 
-        Aws::S3Encryption::KeyWrapAlgorithm keyWrapAlgorithm = Aws::S3Encryption::KeyWrapAlgorithmMapper::GetKeyWrapAlgorithmForName(metadata[KEY_WRAP_ALGORITHM]);
+        KeyWrapAlgorithm keyWrapAlgorithm = KeyWrapAlgorithmMapper::GetKeyWrapAlgorithmForName(metadata[KEY_WRAP_ALGORITHM]);
         ASSERT_EQ(keyWrapAlgorithm, KeyWrapAlgorithm::AES_KEY_WRAP);
 
         ASSERT_TRUE(s3Client.GetRequestContentLength() > strlen(BODY_STREAM_TEST));
@@ -401,10 +404,10 @@ namespace
         Aws::Utils::CryptoBuffer ivBuffer = Aws::Utils::HashingUtils::Base64Decode(metadata[IV_HEADER]);
         ASSERT_EQ(ivBuffer.GetLength(), GCM_IV_SIZE_BYTES);
 
-        Aws::S3Encryption::ContentCryptoScheme scheme = Aws::S3Encryption::ContentCryptoSchemeMapper::GetContentCryptoSchemeForName(metadata[CONTENT_CRYPTO_SCHEME_HEADER]);
+        ContentCryptoScheme scheme = ContentCryptoSchemeMapper::GetContentCryptoSchemeForName(metadata[CONTENT_CRYPTO_SCHEME_HEADER]);
         ASSERT_EQ(scheme, ContentCryptoScheme::GCM);
 
-        Aws::S3Encryption::KeyWrapAlgorithm keyWrapAlgorithm = Aws::S3Encryption::KeyWrapAlgorithmMapper::GetKeyWrapAlgorithmForName(metadata[KEY_WRAP_ALGORITHM]);
+        KeyWrapAlgorithm keyWrapAlgorithm = KeyWrapAlgorithmMapper::GetKeyWrapAlgorithmForName(metadata[KEY_WRAP_ALGORITHM]);
         ASSERT_EQ(keyWrapAlgorithm, KeyWrapAlgorithm::AES_KEY_WRAP);
 
         ASSERT_TRUE(s3Client.GetRequestContentLength() > strlen(BODY_STREAM_TEST));
@@ -467,10 +470,10 @@ namespace
         Aws::Utils::CryptoBuffer ivBuffer = Aws::Utils::HashingUtils::Base64Decode(metadata[IV_HEADER]);
         ASSERT_EQ(ivBuffer.GetLength(), CBC_IV_SIZE_BYTES);
 
-        Aws::S3Encryption::ContentCryptoScheme scheme = Aws::S3Encryption::ContentCryptoSchemeMapper::GetContentCryptoSchemeForName(metadata[CONTENT_CRYPTO_SCHEME_HEADER]);
+        ContentCryptoScheme scheme = ContentCryptoSchemeMapper::GetContentCryptoSchemeForName(metadata[CONTENT_CRYPTO_SCHEME_HEADER]);
         ASSERT_EQ(scheme, ContentCryptoScheme::CBC);
 
-        Aws::S3Encryption::KeyWrapAlgorithm keyWrapAlgorithm = Aws::S3Encryption::KeyWrapAlgorithmMapper::GetKeyWrapAlgorithmForName(metadata[KEY_WRAP_ALGORITHM]);
+        KeyWrapAlgorithm keyWrapAlgorithm = KeyWrapAlgorithmMapper::GetKeyWrapAlgorithmForName(metadata[KEY_WRAP_ALGORITHM]);
         ASSERT_EQ(keyWrapAlgorithm, KeyWrapAlgorithm::KMS);
 
         ASSERT_TRUE(s3Client.GetRequestContentLength() > strlen(BODY_STREAM_TEST));
@@ -534,10 +537,10 @@ namespace
         Aws::Utils::CryptoBuffer ivBuffer = Aws::Utils::HashingUtils::Base64Decode(metadata[IV_HEADER]);
         ASSERT_EQ(ivBuffer.GetLength(), GCM_IV_SIZE_BYTES);
 
-        Aws::S3Encryption::ContentCryptoScheme scheme = Aws::S3Encryption::ContentCryptoSchemeMapper::GetContentCryptoSchemeForName(metadata[CONTENT_CRYPTO_SCHEME_HEADER]);
+        ContentCryptoScheme scheme = ContentCryptoSchemeMapper::GetContentCryptoSchemeForName(metadata[CONTENT_CRYPTO_SCHEME_HEADER]);
         ASSERT_EQ(scheme, ContentCryptoScheme::GCM);
 
-        Aws::S3Encryption::KeyWrapAlgorithm keyWrapAlgorithm = Aws::S3Encryption::KeyWrapAlgorithmMapper::GetKeyWrapAlgorithmForName(metadata[KEY_WRAP_ALGORITHM]);
+        KeyWrapAlgorithm keyWrapAlgorithm = KeyWrapAlgorithmMapper::GetKeyWrapAlgorithmForName(metadata[KEY_WRAP_ALGORITHM]);
         ASSERT_EQ(keyWrapAlgorithm, KeyWrapAlgorithm::KMS);
 
         ASSERT_TRUE(s3Client.GetRequestContentLength() > strlen(BODY_STREAM_TEST));
@@ -601,10 +604,10 @@ namespace
         Aws::Utils::CryptoBuffer ivBuffer = Aws::Utils::HashingUtils::Base64Decode(metadata[IV_HEADER]);
         ASSERT_EQ(GCM_IV_SIZE_BYTES, ivBuffer.GetLength());
 
-        Aws::S3Encryption::ContentCryptoScheme scheme = Aws::S3Encryption::ContentCryptoSchemeMapper::GetContentCryptoSchemeForName(metadata[CONTENT_CRYPTO_SCHEME_HEADER]);
+        ContentCryptoScheme scheme = ContentCryptoSchemeMapper::GetContentCryptoSchemeForName(metadata[CONTENT_CRYPTO_SCHEME_HEADER]);
         ASSERT_EQ(ContentCryptoScheme::GCM, scheme);
 
-        Aws::S3Encryption::KeyWrapAlgorithm keyWrapAlgorithm = Aws::S3Encryption::KeyWrapAlgorithmMapper::GetKeyWrapAlgorithmForName(metadata[KEY_WRAP_ALGORITHM]);
+        KeyWrapAlgorithm keyWrapAlgorithm = KeyWrapAlgorithmMapper::GetKeyWrapAlgorithmForName(metadata[KEY_WRAP_ALGORITHM]);
         ASSERT_EQ(KeyWrapAlgorithm::AES_KEY_WRAP, keyWrapAlgorithm);
 
         ASSERT_TRUE(s3Client.GetRequestContentLength() > strlen(BODY_STREAM_TEST));
@@ -824,7 +827,7 @@ namespace
     {
         SimpleEncryptionMaterials materials(Aws::Utils::Crypto::SymmetricCipher::GenerateKey());
         CryptoConfiguration config(StorageMethod::METADATA, CryptoMode::ENCRYPTION_ONLY);
-        CryptoModuleFactory factory;        
+        CryptoModuleFactory factory;
 
         int64_t contentLength = 90;
         Aws::Vector<Aws::String> rangeOptions = { "bytes=10-20", "bytes=-20", "bytes=20-", "bytes=1-9" };
@@ -834,7 +837,7 @@ namespace
             std::make_pair(20LL, contentLength - 1),
             std::make_pair(1LL, 9LL)
         };
-        
+
         for (size_t i = 0; i < rangeOptions.size(); ++i)
         {
             auto pair = CryptoModule::ParseGetObjectRequestRange(rangeOptions[i], contentLength);
@@ -846,7 +849,7 @@ namespace
     {
         SimpleEncryptionMaterials materials(Aws::Utils::Crypto::SymmetricCipher::GenerateKey());
         CryptoConfiguration config(StorageMethod::METADATA, CryptoMode::ENCRYPTION_ONLY);
-        CryptoModuleFactory factory;        
+        CryptoModuleFactory factory;
 
         int64_t contentLength = 90;
         Aws::Vector<Aws::String> rangeOptions = { "bytes10-20", "bytes=20", "20=-", "bytes19" };

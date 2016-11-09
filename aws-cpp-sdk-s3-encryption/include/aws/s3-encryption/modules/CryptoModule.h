@@ -55,7 +55,7 @@ namespace Aws
                 /*
                 * Function to get an encrypted object from S3. This function takes a headObjectResult as well to collect metadata.
                 */
-                Aws::S3::Model::GetObjectOutcome GetObjectSecurely(const Aws::S3::Model::GetObjectRequest& request, const Aws::S3::Model::HeadObjectResult& headObjectResult, 
+                Aws::S3::Model::GetObjectOutcome GetObjectSecurely(const Aws::S3::Model::GetObjectRequest& request, const Aws::S3::Model::HeadObjectResult& headObjectResult,
                     const Aws::Utils::Crypto::ContentCryptoMaterial& contentCryptoMaterial, const GetObjectFunction& getObjectFunction);
 
                 /*
@@ -81,17 +81,17 @@ namespace Aws
                 virtual void SetContentLength(Aws::S3::Model::PutObjectRequest& request) = 0;
 
                 /**
-                * This function initializes the cipher for encryption with the content encryption key and iv. 
+                * This function initializes the cipher for encryption with the content encryption key and iv.
                 */
                 virtual void InitEncryptionCipher() = 0;
 
                 /**
-                * This function initializes the cipher for decryption with the content encryption key, iv and tag. 
+                * This function initializes the cipher for decryption with the content encryption key, iv and tag.
                 */
                 virtual void InitDecryptionCipher(int64_t rangeStart = 0, int64_t rangeEnd = 0, const Aws::Utils::CryptoBuffer& tag = Aws::Utils::CryptoBuffer()) = 0;
 
                 /*
-                * This function populates the content crypto material with the module specific details for encryption. 
+                * This function populates the content crypto material with the module specific details for encryption.
                 */
                 virtual void PopulateCryptoContentMaterial() = 0;
 
@@ -146,7 +146,7 @@ namespace Aws
                 void InitDecryptionCipher(int64_t rangeStart = 0, int64_t rangeEnd = 0, const Aws::Utils::CryptoBuffer& tag = Aws::Utils::CryptoBuffer()) override;
 
                 /*
-                * Function to get the crypto tag according to the module. 
+                * Function to get the crypto tag according to the module.
                 */
                 Aws::Utils::CryptoBuffer GetTag(const Aws::S3::Model::GetObjectRequest& request, const std::function < Aws::S3::Model::GetObjectOutcome(const Aws::S3::Model::GetObjectRequest&) >& getObjectFunction) override;
 
@@ -158,7 +158,7 @@ namespace Aws
                 /*
                 * Function to adjust getObjectRequest range to only specify the encrypted body.
                 */
-                std::pair<int64_t, int64_t> AdjustRange( Aws::S3::Model::GetObjectRequest& getObjectRequest, const Aws::S3::Model::HeadObjectResult& headObjectResult) override;
+                std::pair<int64_t, int64_t> AdjustRange(Aws::S3::Model::GetObjectRequest& getObjectRequest, const Aws::S3::Model::HeadObjectResult& headObjectResult) override;
             };
 
             class AWS_S3ENCRYPTION_API CryptoModuleAE : public CryptoModule
@@ -212,7 +212,7 @@ namespace Aws
                 * Constructor to initialize encryption materials, crypto configuration, and internal S3 client.
                 */
                 CryptoModuleStrictAE(const std::shared_ptr<Aws::Utils::Crypto::EncryptionMaterials>& encryptionMaterials, const CryptoConfiguration & cryptoConfig);
-                
+
             private:
                 /*
                 * Function to set content length of request which accounts for the GCM tag appended to the body of the request.
@@ -247,7 +247,7 @@ namespace Aws
                 * Function adjust getObjectRequest range to only specify the encrypted body.
                 */
                 std::pair<int64_t, int64_t> AdjustRange(Aws::S3::Model::GetObjectRequest& getObjectRequest, const Aws::S3::Model::HeadObjectResult& headObjectResult) override;
-            };           
+            };
 
             /**
              * This isn't a normal GCM Cipher. It appends the tag to the stream so that the tag can be sent as part of the stream
@@ -257,7 +257,7 @@ namespace Aws
             {
             public:
                 /**
-                 * This will create a GCM cipher under the hood, passing the specified key. 
+                 * This will create a GCM cipher under the hood, passing the specified key.
                  */
                 AES_GCM_AppendedTag(const Aws::Utils::CryptoBuffer& key);
 
@@ -270,7 +270,7 @@ namespace Aws
 
                 /**
                  * Finalize Encryption, returns whatever is left in the cipher, computes the tag, and appends the tag to the output.
-                 *  Calls FinalizeEncryption on the underlying cipher first. 
+                 *  Calls FinalizeEncryption on the underlying cipher first.
                  */
                 Aws::Utils::CryptoBuffer FinalizeEncryption() override;
 

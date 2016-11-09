@@ -40,7 +40,7 @@ static const char* ENCRYPTED_BUCKET_TEST_NAME = "awsnativesdks3encotest";
 static const char* ALLOCATION_TAG = "LiveClientTest";
 static const char TEST_STRING[] = "This is a test string. It is meant to test AES CBC, AES CTR, and AES GCM modes of operation with the Aws S3 Encryption Client";
 static const char* RANGE_GET_STR = "bytes=38-75";
-static const char RANGE_GET_TEST_STRING[] ="test AES CBC, AES CTR, and AES GCM mod";
+static const char RANGE_GET_TEST_STRING[] = "test AES CBC, AES CTR, and AES GCM mod";
 
 class LiveClientTest : public ::testing::Test
 {
@@ -53,14 +53,14 @@ public:
     static void SetUpTestCase()
     {
         clientConfig.region = Aws::Region::US_EAST_1;
-        
+
         //to use a proxy, uncomment the next two lines.
         if (USE_PROXY_FOR_TESTS)
         {
             clientConfig.proxyHost = PROXY_HOST;
             clientConfig.proxyPort = PROXY_PORT;
-        }   
-        
+        }
+
         StandardClient = Aws::MakeShared<Aws::S3::S3Client>(ALLOCATION_TAG, clientConfig);
         BucketName = ComputeUniqueBucketName(ENCRYPTED_BUCKET_TEST_NAME);
         Model::CreateBucketRequest createBucketRequest;
@@ -102,10 +102,10 @@ TEST_F(LiveClientTest, TestEOMode)
 
     auto key = SymmetricCipher::GenerateKey();
     auto simpleEncryptionMaterials = Aws::MakeShared<Materials::SimpleEncryptionMaterials>(ALLOCATION_TAG, key);
-  
+
     static const char* objectKey = "TestEOKey";
 
-    S3EncryptionClient client(simpleEncryptionMaterials, configuration, clientConfig);   
+    S3EncryptionClient client(simpleEncryptionMaterials, configuration, clientConfig);
 
     Model::PutObjectRequest putObjectRequest;
     putObjectRequest.WithBucket(BucketName)
@@ -145,21 +145,21 @@ TEST_F(LiveClientTest, TestEOMode)
     auto cbcCipher = CreateAES_CBCImplementation(cryptoMaterial.GetContentEncryptionKey(), HashingUtils::Base64Decode(ivStr));
 
     Aws::StringStream comparisonStream;
-    Crypto::SymmetricCryptoStream cryptoStream((Aws::OStream&)comparisonStream, CipherMode::Encrypt, *cbcCipher);   
-   
+    Crypto::SymmetricCryptoStream cryptoStream((Aws::OStream&)comparisonStream, CipherMode::Encrypt, *cbcCipher);
+
     Model::GetObjectRequest getUnencryptedObjectRequest;
     getUnencryptedObjectRequest.WithBucket(BucketName).WithKey(objectKey);
     getObjectResult = StandardClient->GetObject(getUnencryptedObjectRequest);
 
     EXPECT_TRUE(getObjectResult.IsSuccess());
-    ByteBuffer rawData(getObjectResult.GetResult().GetContentLength()); 
+    ByteBuffer rawData(getObjectResult.GetResult().GetContentLength());
     memset(rawData.GetUnderlyingData(), 0, rawData.GetLength());
     getObjectResult.GetResult().GetBody().read((char*)rawData.GetUnderlyingData(), rawData.GetLength());
     auto amountRead = getObjectResult.GetResult().GetBody().tellg();
-   
+
     cryptoStream << TEST_STRING;
     cryptoStream.Finalize();
-        
+
     ByteBuffer comparisonResult((unsigned char*)comparisonStream.str().c_str(), comparisonStream.str().length());
     EXPECT_STREQ(HashingUtils::HexEncode(comparisonResult).c_str(), HashingUtils::HexEncode(rawData).c_str());
 

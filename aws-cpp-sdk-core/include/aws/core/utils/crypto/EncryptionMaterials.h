@@ -14,7 +14,6 @@
 */
 #pragma once
 
-#include <aws/core/Aws.h>
 #include <aws/core/Core_EXPORTS.h>
 #include <aws/core/utils/crypto/CryptoBuf.h>
 #include <aws/core/utils/crypto/ContentCryptoMaterial.h>
@@ -28,7 +27,7 @@ namespace Aws
             class AWS_CORE_API EncryptionMaterials
             {
             public:
-                virtual ~EncryptionMaterials() = default;
+                virtual ~EncryptionMaterials();
 
                 /*
                 * Override this method to control how to encrypt the content encryption key (CEK). This occurs in place.

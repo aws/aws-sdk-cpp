@@ -29,7 +29,7 @@ namespace Aws
         namespace Modules
         {
             /*
-            * This class is an abstract class for the crypto module factories. 
+            * This class is an abstract class for the crypto module factories.
             */
             class AWS_S3ENCRYPTION_API CryptoModuleAbstractFactory
             {
