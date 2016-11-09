@@ -15,30 +15,31 @@
 #pragma once
 
 #include <aws/core/Aws.h>
+#include <aws/core/Core_EXPORTS.h>
 #include <aws/core/utils/crypto/CryptoBuf.h>
-#include <aws/s3-encryption/s3Encryption_EXPORTS.h>
-#include <aws/s3-encryption/ContentCryptoMaterial.h>
+#include <aws/core/utils/crypto/ContentCryptoMaterial.h>
 
 namespace Aws
 {
-    namespace S3Encryption
+    namespace Utils
     {
-        namespace Materials
+        namespace Crypto
         {
-            class AWS_S3ENCRYPTION_API EncryptionMaterials
+            class AWS_CORE_API EncryptionMaterials
             {
             public:
                 virtual ~EncryptionMaterials() = default;
+
                 /*
                 * Override this method to control how to encrypt the content encryption key (CEK). This occurs in place.
                 */
-                virtual void EncryptCEK(Aws::S3Encryption::ContentCryptoMaterial& contentCryptoMaterial) = 0;
+                virtual void EncryptCEK(ContentCryptoMaterial& contentCryptoMaterial) = 0;
 
                 /*
                 * Override this method to control how to decrypt the content encryption key (CEK). This occurs in place.
                 */
-                virtual void DecryptCEK(Aws::S3Encryption::ContentCryptoMaterial& contentCryptoMaterial) = 0;
+                virtual void DecryptCEK(ContentCryptoMaterial& contentCryptoMaterial) = 0;
             };
-        }//namespace Materials
-    }//namespace S3Encryption
+        }//namespace Crypto
+    }//namespace Utils
 }//namespace Aws

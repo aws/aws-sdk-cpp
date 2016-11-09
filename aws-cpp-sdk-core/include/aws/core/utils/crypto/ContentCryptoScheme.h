@@ -13,27 +13,30 @@
 * permissions and limitations under the License.
 */
 #pragma once
-#include <aws/s3-encryption/s3Encryption_EXPORTS.h>
+#include <aws/core/Core_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 namespace Aws
 {
-    namespace S3Encryption
+    namespace Utils
     {
-        enum class ContentCryptoScheme
+        namespace Crypto
         {
-            CBC,
-            CTR,
-            GCM,
-            NONE
-        };
+            enum class ContentCryptoScheme
+            {
+                CBC,
+                CTR,
+                GCM,
+                NONE
+            };
 
-        namespace ContentCryptoSchemeMapper
-        {
-            AWS_S3ENCRYPTION_API ContentCryptoScheme GetContentCryptoSchemeForName(const Aws::String& name);
+            namespace ContentCryptoSchemeMapper
+            {
+                AWS_CORE_API ContentCryptoScheme GetContentCryptoSchemeForName(const Aws::String& name);
 
-            AWS_S3ENCRYPTION_API Aws::String GetNameForContentCryptoScheme(ContentCryptoScheme enumValue);
-        }
+                AWS_CORE_API Aws::String GetNameForContentCryptoScheme(ContentCryptoScheme enumValue);
+            }
+        } //namespace Crypto
 
-    }//namespace S3Encryption
+    }//namespace Utils
 }//namespace Aws

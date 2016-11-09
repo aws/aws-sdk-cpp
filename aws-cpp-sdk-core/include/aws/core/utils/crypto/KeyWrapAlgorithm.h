@@ -13,26 +13,29 @@
 * permissions and limitations under the License.
 */
 #pragma once
-#include <aws/s3-encryption/s3Encryption_EXPORTS.h>
+#include <aws/core/Core_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 namespace Aws
 {
-    namespace S3Encryption
+    namespace Utils
     {
-        enum class KeyWrapAlgorithm
+        namespace Crypto
         {
-            KMS,
-            AES_KEY_WRAP,
-            NONE
-        };
+            enum class KeyWrapAlgorithm
+            {
+                KMS,
+                AES_KEY_WRAP,
+                NONE
+            };
 
-        namespace KeyWrapAlgorithmMapper
-        {
-            AWS_S3ENCRYPTION_API KeyWrapAlgorithm GetKeyWrapAlgorithmForName(const Aws::String& name);
+            namespace KeyWrapAlgorithmMapper
+            {
+                AWS_CORE_API KeyWrapAlgorithm GetKeyWrapAlgorithmForName(const Aws::String& name);
 
-            AWS_S3ENCRYPTION_API Aws::String GetNameForKeyWrapAlgorithm(KeyWrapAlgorithm enumValue);
-        }
+                AWS_CORE_API Aws::String GetNameForKeyWrapAlgorithm(KeyWrapAlgorithm enumValue);
+            }
+        } //namespace Crypto
 
-    }//namespace S3Encryption
+    }//namespace Utils
 }//namespace Aws

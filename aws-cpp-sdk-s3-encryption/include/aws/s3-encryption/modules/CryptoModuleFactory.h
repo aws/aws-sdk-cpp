@@ -16,9 +16,9 @@
 
 #include <aws/core/Aws.h>
 #include <aws/core/auth/AWSCredentialsProvider.h>
+#include <aws/core/utils/crypto/EncryptionMaterials.h>
 #include <aws/s3-encryption/s3Encryption_EXPORTS.h>
 #include <aws/s3-encryption/CryptoConfiguration.h>
-#include <aws/s3-encryption/materials/EncryptionMaterials.h>
 #include <aws/s3-encryption/modules/CryptoModule.h>
 
 
@@ -37,7 +37,7 @@ namespace Aws
                 /*
                 * Override this method to create a specific crypto module.
                 */
-                virtual std::shared_ptr<CryptoModule> CreateModule(const std::shared_ptr<Aws::S3Encryption::Materials::EncryptionMaterials>& encryptionMaterials, const CryptoConfiguration& cryptoConfig) = 0;
+                virtual std::shared_ptr<CryptoModule> CreateModule(const std::shared_ptr<Aws::Utils::Crypto::EncryptionMaterials>& encryptionMaterials, const CryptoConfiguration& cryptoConfig) = 0;
 
                 /*
                 * Returns the crypto mode each sub class handles.
@@ -61,7 +61,7 @@ namespace Aws
                 /*
                 * Determines which module to use and returns a specific factory for that module.
                 */
-                std::shared_ptr<CryptoModule> FetchCryptoModule(const std::shared_ptr<Aws::S3Encryption::Materials::EncryptionMaterials>& encryptionMaterials, const CryptoConfiguration& cryptoConfig) const;
+                std::shared_ptr<CryptoModule> FetchCryptoModule(const std::shared_ptr<Aws::Utils::Crypto::EncryptionMaterials>& encryptionMaterials, const CryptoConfiguration& cryptoConfig) const;
 
             private:
                 Aws::Map<Aws::S3Encryption::CryptoMode, std::shared_ptr<CryptoModuleAbstractFactory>> m_cryptoFactories;
@@ -84,7 +84,7 @@ namespace Aws
                 * Creates a encryption only crypto module or returns an existing one using
                 * the encryption materials, crypto configuration, and AWS credentials provider.
                 */
-                std::shared_ptr<CryptoModule> CreateModule(const std::shared_ptr<Aws::S3Encryption::Materials::EncryptionMaterials>& encryptionMaterials, const CryptoConfiguration& cryptoConfig) override;
+                std::shared_ptr<CryptoModule> CreateModule(const std::shared_ptr<Aws::Utils::Crypto::EncryptionMaterials>& encryptionMaterials, const CryptoConfiguration& cryptoConfig) override;
 
                 CryptoMode HandlesMode() const;
             };
@@ -106,7 +106,7 @@ namespace Aws
                 * Creates a authenticated encryption crypto module or returns an existing one using
                 * the encryption materials, crypto configuration, and AWS credentials provider.
                 */
-                std::shared_ptr<CryptoModule> CreateModule(const std::shared_ptr<Aws::S3Encryption::Materials::EncryptionMaterials>& encryptionMaterials, const CryptoConfiguration& cryptoConfig) override;
+                std::shared_ptr<CryptoModule> CreateModule(const std::shared_ptr<Aws::Utils::Crypto::EncryptionMaterials>& encryptionMaterials, const CryptoConfiguration& cryptoConfig) override;
 
                 CryptoMode HandlesMode() const;
             };
@@ -128,7 +128,7 @@ namespace Aws
                 * Creates a strict authenticated encryption crypto module or returns an existing one using
                 * the encryption materials, crypto configuration, and AWS credentials provider.
                 */
-                std::shared_ptr<CryptoModule> CreateModule(const std::shared_ptr<Aws::S3Encryption::Materials::EncryptionMaterials>& encryptionMaterials, const CryptoConfiguration& cryptoConfig) override;
+                std::shared_ptr<CryptoModule> CreateModule(const std::shared_ptr<Aws::Utils::Crypto::EncryptionMaterials>& encryptionMaterials, const CryptoConfiguration& cryptoConfig) override;
 
                 CryptoMode HandlesMode() const;
             };

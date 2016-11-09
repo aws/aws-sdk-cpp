@@ -32,12 +32,12 @@ namespace Aws
                 /*
                 Write ContentCryptoMaterial data to an instruction file object which is passed as an arguement for this function.
                 */
-                void PopulateRequest(Aws::S3::Model::PutObjectRequest& request, const ContentCryptoMaterial& contentCryptoMaterial) override;
+                void PopulateRequest(Aws::S3::Model::PutObjectRequest& request, const Aws::Utils::Crypto::ContentCryptoMaterial& contentCryptoMaterial) override;
 
                 /*
                 Read data from an instruction file object and return a Content Crypto Material object.
                 */
-                ContentCryptoMaterial ReadContentCryptoMaterial(Aws::S3::Model::GetObjectResult& result) override;
+                Aws::Utils::Crypto::ContentCryptoMaterial ReadContentCryptoMaterial(Aws::S3::Model::GetObjectResult& result) override;
             };
         }
     }

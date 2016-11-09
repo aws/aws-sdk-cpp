@@ -15,14 +15,14 @@
 #pragma once
 
 #include <aws/s3-encryption/s3Encryption_EXPORTS.h>
-#include <aws/s3-encryption/ContentCryptoMaterial.h>
+#include <aws/core/utils/crypto/ContentCryptoMaterial.h>
+#include <aws/core/utils/crypto/Cipher.h>
+#include <aws/core/utils/crypto/EncryptionMaterials.h>
 #include <aws/s3-encryption/CryptoConfiguration.h>
 #include <aws/s3-encryption/handlers/DataHandler.h>
-#include <aws/s3-encryption/materials/EncryptionMaterials.h>
 #include <aws/s3-encryption/handlers/InstructionFileHandler.h>
 #include <aws/s3-encryption/handlers/MetadataHandler.h>
 #include <aws/core/auth/AWSCredentialsProvider.h>
-#include <aws/core/utils/crypto/Cipher.h>
 #include <aws/s3/S3Client.h>
 #include <aws/s3/model/PutObjectRequest.h>
 #include <aws/s3/model/PutObjectResult.h>
@@ -45,7 +45,7 @@ namespace Aws
                 /*
                 * Constructor to initialize encryption materials, crypto configuration, and internal S3 client.
                 */
-                CryptoModule(const std::shared_ptr<Materials::EncryptionMaterials>& encryptionMaterials, const CryptoConfiguration & cryptoConfig);
+                CryptoModule(const std::shared_ptr<Aws::Utils::Crypto::EncryptionMaterials>& encryptionMaterials, const CryptoConfiguration & cryptoConfig);
 
                 /*
                 * Function to put an encrypted object to S3.
@@ -55,8 +55,8 @@ namespace Aws
                 /*
                 * Function to get an encrypted object from S3. This function takes a headObjectResult as well to collect metadata.
                 */
-                Aws::S3::Model::GetObjectOutcome GetObjectSecurely(const Aws::S3::Model::GetObjectRequest& request, const Aws::S3::Model::HeadObjectResult& headObjectResult, const ContentCryptoMaterial& contentCryptoMaterial
-                    , const GetObjectFunction& getObjectFunction);
+                Aws::S3::Model::GetObjectOutcome GetObjectSecurely(const Aws::S3::Model::GetObjectRequest& request, const Aws::S3::Model::HeadObjectResult& headObjectResult, 
+                    const Aws::Utils::Crypto::ContentCryptoMaterial& contentCryptoMaterial, const GetObjectFunction& getObjectFunction);
 
                 /*
                 * Function to parse range of a get object request and return a pair containing the lower and upper bounds.
@@ -110,8 +110,8 @@ namespace Aws
                 */
                 virtual std::pair<int64_t, int64_t> AdjustRange(Aws::S3::Model::GetObjectRequest& getObjectRequest, const Aws::S3::Model::HeadObjectResult& headObjectResult) = 0;
 
-                std::shared_ptr<Materials::EncryptionMaterials> m_encryptionMaterials;
-                ContentCryptoMaterial m_contentCryptoMaterial;
+                std::shared_ptr<Aws::Utils::Crypto::EncryptionMaterials> m_encryptionMaterials;
+                Aws::Utils::Crypto::ContentCryptoMaterial m_contentCryptoMaterial;
                 CryptoConfiguration m_cryptoConfig;
                 std::shared_ptr<Aws::Utils::Crypto::SymmetricCipher> m_cipher;
             };
@@ -122,7 +122,7 @@ namespace Aws
                 /*
                 * Constructor to initialize encryption materials, crypto configuration, and internal S3 client.
                 */
-                CryptoModuleEO(const std::shared_ptr<Materials::EncryptionMaterials>& encryptionMaterials, const CryptoConfiguration & cryptoConfig);
+                CryptoModuleEO(const std::shared_ptr<Aws::Utils::Crypto::EncryptionMaterials>& encryptionMaterials, const CryptoConfiguration & cryptoConfig);
 
             private:
                 /*
@@ -167,7 +167,7 @@ namespace Aws
                 /*
                 * Constructor to initialize encryption materials, crypto configuration, and internal S3 client.
                 */
-                CryptoModuleAE(const std::shared_ptr<Materials::EncryptionMaterials>& encryptionMaterials, const CryptoConfiguration & cryptoConfig);
+                CryptoModuleAE(const std::shared_ptr<Aws::Utils::Crypto::EncryptionMaterials>& encryptionMaterials, const CryptoConfiguration & cryptoConfig);
 
             private:
                 /*
@@ -211,7 +211,7 @@ namespace Aws
                 /*
                 * Constructor to initialize encryption materials, crypto configuration, and internal S3 client.
                 */
-                CryptoModuleStrictAE(const std::shared_ptr<Materials::EncryptionMaterials>& encryptionMaterials, const CryptoConfiguration & cryptoConfig);
+                CryptoModuleStrictAE(const std::shared_ptr<Aws::Utils::Crypto::EncryptionMaterials>& encryptionMaterials, const CryptoConfiguration & cryptoConfig);
                 
             private:
                 /*

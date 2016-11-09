@@ -33,17 +33,17 @@ namespace Aws
                 /*
                 * Write ContentCryptoMaterial data to a put object request. This occurs in place.
                 */
-                void PopulateRequest(Aws::S3::Model::PutObjectRequest& request, const ContentCryptoMaterial& contentCryptoMaterial) override;
+                void PopulateRequest(Aws::S3::Model::PutObjectRequest& request, const Aws::Utils::Crypto::ContentCryptoMaterial& contentCryptoMaterial) override;
 
                 /*
                 * Read the metadata of a GetObject result and store into a ContentCryptoMaterial Object.
                 */
-                ContentCryptoMaterial ReadContentCryptoMaterial(Aws::S3::Model::GetObjectResult& result) override;
+                Aws::Utils::Crypto::ContentCryptoMaterial ReadContentCryptoMaterial(Aws::S3::Model::GetObjectResult& result) override;
 
                 /*
                 * Read the metadata of a HeadObeject result and store into a ContentCryptoMaterialObject.
                 */
-                ContentCryptoMaterial ReadContentCryptoMaterial(const Aws::S3::Model::HeadObjectResult& result);
+                Aws::Utils::Crypto::ContentCryptoMaterial ReadContentCryptoMaterial(const Aws::S3::Model::HeadObjectResult& result);
             };
         }
     }

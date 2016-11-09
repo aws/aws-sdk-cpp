@@ -14,8 +14,8 @@
 */
 #pragma once
 #include <aws/core/Aws.h>
+#include <aws/core/utils/crypto/ContentCryptoMaterial.h>
 #include <aws/s3-encryption/s3Encryption_EXPORTS.h>
-#include <aws/s3-encryption/ContentCryptoMaterial.h>
 #include <aws/s3/model/GetObjectResult.h>
 #include <aws/s3/model/PutObjectRequest.h>
 #include <aws/s3/model/HeadObjectResult.h>
@@ -45,12 +45,12 @@ namespace Aws
                 /*
                 Override this function to write content crypto material data to S3 object request.
                 */
-                virtual void PopulateRequest(Aws::S3::Model::PutObjectRequest& request, const ContentCryptoMaterial& contentCryptoMaterial) = 0;
+                virtual void PopulateRequest(Aws::S3::Model::PutObjectRequest& request, const Aws::Utils::Crypto::ContentCryptoMaterial& contentCryptoMaterial) = 0;
 
                 /*
                 Override this function to read data from an S3 object and return a Content Crypto Material object.
                 */
-                virtual ContentCryptoMaterial ReadContentCryptoMaterial(Aws::S3::Model::GetObjectResult& result) = 0;
+                virtual Aws::Utils::Crypto::ContentCryptoMaterial ReadContentCryptoMaterial(Aws::S3::Model::GetObjectResult& result) = 0;
 
                 /*
                 Function to json serialize a map contianing pairs of strings.
@@ -61,11 +61,12 @@ namespace Aws
                 Function to deserialize a string to map.
                 */
                 const Aws::Map<Aws::String, Aws::String> DeserializeMap(const Aws::String& jsonString);
+
             protected:
                 /*
                 * Function to read meta data and return a content crypto material object.
                 */
-                ContentCryptoMaterial ReadMetadata(const Aws::Map<Aws::String, Aws::String>& metadata);
+                Aws::Utils::Crypto::ContentCryptoMaterial ReadMetadata(const Aws::Map<Aws::String, Aws::String>& metadata);
             };
         }
     }

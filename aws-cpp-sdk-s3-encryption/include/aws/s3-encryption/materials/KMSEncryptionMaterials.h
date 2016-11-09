@@ -13,9 +13,9 @@
 * permissions and limitations under the License.
 */
 #pragma once
-#include <aws/s3-encryption/materials/EncryptionMaterials.h>
+#include <aws/core/utils/crypto/EncryptionMaterials.h>
+#include <aws/core/utils/crypto/ContentCryptoMaterial.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/s3-encryption/ContentCryptoMaterial.h>
 #include <aws/kms/KMSClient.h>
 #include <aws/s3-encryption/s3Encryption_EXPORTS.h>
 
@@ -35,7 +35,7 @@ namespace Aws
             * own KMS Client, or a Client Configuration where it will create a KMS Client 
             * with that configuration.
             */
-            class AWS_S3ENCRYPTION_API KMSEncryptionMaterials : public EncryptionMaterials 
+            class AWS_S3ENCRYPTION_API KMSEncryptionMaterials : public Aws::Utils::Crypto::EncryptionMaterials 
             {
             public:
                 /*
@@ -55,7 +55,7 @@ namespace Aws
                 * description.
                 * A invalid customer master key ID will result in an empty content encryption key.
                 */
-                void EncryptCEK(Aws::S3Encryption::ContentCryptoMaterial& contentCryptoMaterial);
+                void EncryptCEK(Aws::Utils::Crypto::ContentCryptoMaterial& contentCryptoMaterial);
 
                 /*
                 * This will decrypt the cek by calling to KMS. This will occur in place. 
@@ -63,7 +63,7 @@ namespace Aws
                 * the identifier + customer master key ID. It will then decrypt. 
                 * A invalid customer master key ID will result in an empty content encryption key.
                 */
-                void DecryptCEK(Aws::S3Encryption::ContentCryptoMaterial& contentCryptoMaterial);
+                void DecryptCEK(Aws::Utils::Crypto::ContentCryptoMaterial& contentCryptoMaterial);
 
             private:
                 Aws::String m_customerMasterKeyID;
