@@ -55,6 +55,10 @@ public class S3RestXmlCppClientGenerator  extends RestXmlCppClientGenerator {
                         opsThatNeedMd5.contains(operationEntry.getName()))
                 .forEach(operationEntry -> operationEntry.getRequest().getShape().setComputeContentMd5(true));
 
+        //size and content length should ALWAYS be 64 bit integers, if they aren't set them as that now.
+        serviceModel.getShapes().entrySet().stream().filter(shapeEntry -> shapeEntry.getKey().toLowerCase().equals("contentlength") || shapeEntry.getKey().toLowerCase().equals("size"))
+                .forEach(shapeEntry -> shapeEntry.getValue().setType("long"));
+
         return super.generateSourceFiles(serviceModel);
     }
 

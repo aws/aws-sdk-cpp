@@ -3,7 +3,7 @@
 #set($initializerCount = 0)
 #foreach($entry in $shape.members.entrySet())
 #set($memberShape = $entry.value.shape)
-#if($memberShape.primitive)
+#if($memberShape.primitive || $memberShape.enum)
 #set($initializerCount = $initializerCount + 1)
 #end
 #set($isStreamingMember = ($shape.payload && ($shape.payload == $entry.key && !$entry.value.shape.structure)))
@@ -17,8 +17,12 @@
 #set($index = 1)
 #foreach($entry in $shape.members.entrySet())
 #set($memberShape = $entry.value.shape)
+#if($memberShape.primitive || $memberShape.enum)
 #if($memberShape.primitive)
 #set($initializers = "${initializers}${nl}    ${CppViewHelper.computeMemberVariableName($entry.key)}(${CppViewHelper.computeDefaultValue($memberShape)})")
+#elseif($memberShape.enum)
+#set($initializers = "${initializers}${nl}    ${CppViewHelper.computeMemberVariableName($entry.key)}(${memberShape.name}::NOT_SET)")
+#end
 #if($index < $initializerCount)
 #set($initializers = "${initializers},")
 #end
