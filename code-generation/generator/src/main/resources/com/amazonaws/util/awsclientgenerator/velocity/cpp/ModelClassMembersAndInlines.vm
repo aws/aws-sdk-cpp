@@ -28,7 +28,7 @@
     inline Aws::IOStream& Get${memberKeyWithFirstLetterCapitalized}() { return ${memberVariableName}.GetUnderlyingStream(); }
 
     $memberDocumentation
-    inline void ReplaceBody(Aws::IOStream* body) { m_body = Aws::Utils::Stream::ResponseStream(body); }
+    inline void ReplaceBody(Aws::IOStream* body) { ${memberVariableName} = Aws::Utils::Stream::ResponseStream(body); }
     
 #else
 #set($override = "")

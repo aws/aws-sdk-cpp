@@ -1,5 +1,10 @@
-cmake_minimum_required(VERSION 2.6)
-project(aws-cpp-sdk-s3-encryption-tests)
+add_project(aws-cpp-sdk-s3-encryption-tests 
+    "Unit tests for the Amazon S3 Encryption Client"
+    testing-resources 
+    aws-cpp-sdk-core 
+    aws-cpp-sdk-s3 
+    aws-cpp-sdk-kms 
+    aws-cpp-sdk-s3-encryption)
 
 # Headers are included in the source so that they show up in Visual Studio.
 # They are included elsewhere for consistency.
@@ -24,16 +29,16 @@ endif()
 
 enable_testing()
 
-if(PLATFORM_ANDROID AND BUILD_SHARED_LIBS)
-    add_library(runS3EncryptionTests ${LIBTYPE} ${S3ENCRYPTION_TEST_SRC})
+if(USE_WINDOWS_DLL_SEMANTICS AND BUILD_SHARED_LIBS)
+    add_library(aws-cpp-sdk-s3-encryption-tests ${LIBTYPE} ${S3ENCRYPTION_TEST_SRC})
 else()
-    add_executable(runS3EncryptionTests ${S3ENCRYPTION_TEST_SRC})
+    add_executable(aws-cpp-sdk-s3-encryption-tests ${S3ENCRYPTION_TEST_SRC})
 endif()
 
-target_link_libraries(runS3EncryptionTests aws-cpp-sdk-s3-encryption testing-resources)
-copyDlls(runS3EncryptionTests aws-cpp-sdk-core aws-cpp-sdk-s3 aws-cpp-sdk-kms aws-cpp-sdk-s3-encryption testing-resources)
+target_link_libraries(aws-cpp-sdk-s3-encryption-tests ${PROJECT_LIBS})
+copyDlls(aws-cpp-sdk-s3-encryption-tests ${PROJECT_LIBS})
 
 if(NOT CMAKE_CROSSCOMPILING)
-    ADD_CUSTOM_COMMAND( TARGET runS3EncryptionTests POST_BUILD COMMAND $<TARGET_FILE:runS3EncryptionTests>)
-    SET_TARGET_PROPERTIES(runS3EncryptionTests PROPERTIES OUTPUT_NAME runS3EncryptionTests)
+    ADD_CUSTOM_COMMAND( TARGET aws-cpp-sdk-s3-encryption-tests POST_BUILD COMMAND $<TARGET_FILE:aws-cpp-sdk-s3-encryption-tests>)
+    SET_TARGET_PROPERTIES(aws-cpp-sdk-s3-encryption-tests PROPERTIES OUTPUT_NAME aws-cpp-sdk-s3-encryption-tests)
 endif()

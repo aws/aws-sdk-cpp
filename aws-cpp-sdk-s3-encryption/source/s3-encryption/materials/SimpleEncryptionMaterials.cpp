@@ -13,6 +13,7 @@
 * permissions and limitations under the License.
 */
 #include <aws/s3-encryption/materials/SimpleEncryptionMaterials.h>
+#include <aws/core/utils/crypto/Factories.h>
 #include <aws/core/utils/logging/LogMacros.h>
 
 using namespace Aws::Utils;

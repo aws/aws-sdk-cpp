@@ -124,6 +124,12 @@ namespace Model
      */
     inline Aws::IOStream& GetBody() { return m_body.GetUnderlyingStream(); }
 
+    /**
+     * <p>The binary blob response to <a>GetSdk</a>, which contains the generated
+     * SDK.</p>
+     */
+    inline void ReplaceBody(Aws::IOStream* body) { m_body = Aws::Utils::Stream::ResponseStream(body); }
+    
   private:
     Aws::String m_contentType;
     Aws::String m_contentDisposition;

@@ -53,6 +53,11 @@ namespace Model
     inline Aws::IOStream& GetBody() { return m_body.GetUnderlyingStream(); }
 
     /**
+     * <p>The job data, either archive data or inventory data.</p>
+     */
+    inline void ReplaceBody(Aws::IOStream* body) { m_body = Aws::Utils::Stream::ResponseStream(body); }
+    
+    /**
      * <p> The checksum of the data in the response. This header is returned only when
      * retrieving the output for an archive retrieval job. Furthermore, this header
      * appears only under the following conditions: <ul> <li>You get the entire range

@@ -1,5 +1,10 @@
-cmake_minimum_required(VERSION 2.6)
-project(aws-cpp-sdk-s3-encryption-tests)
+add_project(aws-cpp-sdk-s3-encryption-integration-tests 
+    "Integration tests for the Amazon S3 Encryption Client"
+    testing-resources 
+    aws-cpp-sdk-core 
+    aws-cpp-sdk-s3 
+    aws-cpp-sdk-kms 
+    aws-cpp-sdk-s3-encryption)
 
 # Headers are included in the source so that they show up in Visual Studio.
 # They are included elsewhere for consistency.
@@ -18,17 +23,17 @@ set(S3ECRYPTION_INT_TEST_APPLICATION_INCLUDES
 
 include_directories(${S3ECRYPTION_INT_TEST_APPLICATION_INCLUDES})
 
-if(MSVC AND BUILD_SHARED_LIBS)
+if(USE_WINDOWS_DLL_SEMANTICS AND BUILD_SHARED_LIBS)
     add_definitions(-DGTEST_LINKED_AS_SHARED_LIBRARY=1)
 endif()
 
 enable_testing()
 
 if(PLATFORM_ANDROID AND BUILD_SHARED_LIBS)
-    add_library(runS3EncryptionIntegrationTests ${LIBTYPE} ${S3ENCRYPTION_INT_TEST_SRC})
+    add_library(aws-cpp-sdk-s3-encryption-integration-tests ${LIBTYPE} ${S3ENCRYPTION_INT_TEST_SRC})
 else()
-    add_executable(runS3EncryptionIntegrationTests ${S3ENCRYPTION_INT_TEST_SRC})
+    add_executable(aws-cpp-sdk-s3-encryption-integration-tests ${S3ENCRYPTION_INT_TEST_SRC})
 endif()
 
-target_link_libraries(runS3EncryptionIntegrationTests aws-cpp-sdk-s3-encryption testing-resources)
-copyDlls(runS3EncryptionIntegrationTests aws-cpp-sdk-core aws-cpp-sdk-s3 aws-cpp-sdk-kms aws-cpp-sdk-s3-encryption testing-resources)
+target_link_libraries(aws-cpp-sdk-s3-encryption-integration-tests ${PROJECT_LIBS})
+copyDlls(aws-cpp-sdk-s3-encryption-integration-tests ${PROJECT_LIBS})

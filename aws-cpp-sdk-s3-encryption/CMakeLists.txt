@@ -1,5 +1,8 @@
-cmake_minimum_required(VERSION 2.6)
-project(aws-cpp-sdk-s3-encryption)
+add_project(aws-cpp-sdk-s3-encryption-integration-tests 
+    "Amazon S3 Encryption Client"
+    aws-cpp-sdk-core 
+    aws-cpp-sdk-s3 
+    aws-cpp-sdk-kms)
 
 file( GLOB S3ENCRYPTION_HEADERS "include/aws/s3-encryption/*.h" )
 file( GLOB S3ENCRYPTION_MATERIALS_HEADERS "include/aws/s3-encryption/materials/*.h" )
@@ -61,7 +64,7 @@ add_library(aws-cpp-sdk-s3-encryption ${LIBTYPE} ${ALL_S3ENCRYPTION})
 target_include_directories(aws-cpp-sdk-s3-encryption PUBLIC
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
         $<INSTALL_INTERFACE:include>)
-target_link_libraries(aws-cpp-sdk-s3-encryption aws-cpp-sdk-s3 aws-cpp-sdk-kms aws-cpp-sdk-core)
+target_link_libraries(aws-cpp-sdk-s3-encryption ${PROJECT_LIBS})
 
 if(SIMPLE_INSTALL)
     install (TARGETS aws-cpp-sdk-s3-encryption
