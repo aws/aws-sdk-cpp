@@ -41,6 +41,7 @@ CreateStackRequest::CreateStackRequest() :
     m_useOpsworksSecurityGroupsHasBeenSet(false),
     m_customCookbooksSourceHasBeenSet(false),
     m_defaultSshKeyNameHasBeenSet(false),
+    m_defaultRootDeviceType(RootDeviceType::NOT_SET),
     m_defaultRootDeviceTypeHasBeenSet(false),
     m_agentVersionHasBeenSet(false)
 {

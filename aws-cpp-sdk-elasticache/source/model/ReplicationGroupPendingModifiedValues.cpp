@@ -31,12 +31,14 @@ namespace Model
 
 ReplicationGroupPendingModifiedValues::ReplicationGroupPendingModifiedValues() : 
     m_primaryClusterIdHasBeenSet(false),
+    m_automaticFailoverStatus(PendingAutomaticFailoverStatus::NOT_SET),
     m_automaticFailoverStatusHasBeenSet(false)
 {
 }
 
 ReplicationGroupPendingModifiedValues::ReplicationGroupPendingModifiedValues(const XmlNode& xmlNode) : 
     m_primaryClusterIdHasBeenSet(false),
+    m_automaticFailoverStatus(PendingAutomaticFailoverStatus::NOT_SET),
     m_automaticFailoverStatusHasBeenSet(false)
 {
   *this = xmlNode;

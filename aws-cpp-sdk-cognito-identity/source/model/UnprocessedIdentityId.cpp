@@ -29,12 +29,14 @@ namespace Model
 
 UnprocessedIdentityId::UnprocessedIdentityId() : 
     m_identityIdHasBeenSet(false),
+    m_errorCode(ErrorCode::NOT_SET),
     m_errorCodeHasBeenSet(false)
 {
 }
 
 UnprocessedIdentityId::UnprocessedIdentityId(const JsonValue& jsonValue) : 
     m_identityIdHasBeenSet(false),
+    m_errorCode(ErrorCode::NOT_SET),
     m_errorCodeHasBeenSet(false)
 {
   *this = jsonValue;

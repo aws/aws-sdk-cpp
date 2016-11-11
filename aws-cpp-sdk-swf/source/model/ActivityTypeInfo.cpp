@@ -29,6 +29,7 @@ namespace Model
 
 ActivityTypeInfo::ActivityTypeInfo() : 
     m_activityTypeHasBeenSet(false),
+    m_status(RegistrationStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_creationDateHasBeenSet(false),
@@ -38,6 +39,7 @@ ActivityTypeInfo::ActivityTypeInfo() :
 
 ActivityTypeInfo::ActivityTypeInfo(const JsonValue& jsonValue) : 
     m_activityTypeHasBeenSet(false),
+    m_status(RegistrationStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_creationDateHasBeenSet(false),

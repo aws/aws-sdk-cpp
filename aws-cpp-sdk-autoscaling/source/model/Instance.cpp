@@ -32,6 +32,7 @@ namespace Model
 Instance::Instance() : 
     m_instanceIdHasBeenSet(false),
     m_availabilityZoneHasBeenSet(false),
+    m_lifecycleState(LifecycleState::NOT_SET),
     m_lifecycleStateHasBeenSet(false),
     m_healthStatusHasBeenSet(false),
     m_launchConfigurationNameHasBeenSet(false),
@@ -43,6 +44,7 @@ Instance::Instance() :
 Instance::Instance(const XmlNode& xmlNode) : 
     m_instanceIdHasBeenSet(false),
     m_availabilityZoneHasBeenSet(false),
+    m_lifecycleState(LifecycleState::NOT_SET),
     m_lifecycleStateHasBeenSet(false),
     m_healthStatusHasBeenSet(false),
     m_launchConfigurationNameHasBeenSet(false),

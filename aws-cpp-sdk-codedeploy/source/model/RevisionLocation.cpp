@@ -28,6 +28,7 @@ namespace Model
 {
 
 RevisionLocation::RevisionLocation() : 
+    m_revisionType(RevisionLocationType::NOT_SET),
     m_revisionTypeHasBeenSet(false),
     m_s3LocationHasBeenSet(false),
     m_gitHubLocationHasBeenSet(false)
@@ -35,6 +36,7 @@ RevisionLocation::RevisionLocation() :
 }
 
 RevisionLocation::RevisionLocation(const JsonValue& jsonValue) : 
+    m_revisionType(RevisionLocationType::NOT_SET),
     m_revisionTypeHasBeenSet(false),
     m_s3LocationHasBeenSet(false),
     m_gitHubLocationHasBeenSet(false)

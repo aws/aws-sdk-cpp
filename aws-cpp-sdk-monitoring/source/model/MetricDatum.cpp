@@ -36,6 +36,7 @@ MetricDatum::MetricDatum() :
     m_value(0.0),
     m_valueHasBeenSet(false),
     m_statisticValuesHasBeenSet(false),
+    m_unit(StandardUnit::NOT_SET),
     m_unitHasBeenSet(false)
 {
 }
@@ -47,6 +48,7 @@ MetricDatum::MetricDatum(const XmlNode& xmlNode) :
     m_value(0.0),
     m_valueHasBeenSet(false),
     m_statisticValuesHasBeenSet(false),
+    m_unit(StandardUnit::NOT_SET),
     m_unitHasBeenSet(false)
 {
   *this = xmlNode;

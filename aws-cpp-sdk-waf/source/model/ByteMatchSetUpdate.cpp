@@ -28,12 +28,14 @@ namespace Model
 {
 
 ByteMatchSetUpdate::ByteMatchSetUpdate() : 
+    m_action(ChangeAction::NOT_SET),
     m_actionHasBeenSet(false),
     m_byteMatchTupleHasBeenSet(false)
 {
 }
 
 ByteMatchSetUpdate::ByteMatchSetUpdate(const JsonValue& jsonValue) : 
+    m_action(ChangeAction::NOT_SET),
     m_actionHasBeenSet(false),
     m_byteMatchTupleHasBeenSet(false)
 {

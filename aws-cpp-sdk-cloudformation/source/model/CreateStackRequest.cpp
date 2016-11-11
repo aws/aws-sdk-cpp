@@ -32,6 +32,7 @@ CreateStackRequest::CreateStackRequest() :
     m_capabilitiesHasBeenSet(false),
     m_resourceTypesHasBeenSet(false),
     m_roleARNHasBeenSet(false),
+    m_onFailure(OnFailure::NOT_SET),
     m_onFailureHasBeenSet(false),
     m_stackPolicyBodyHasBeenSet(false),
     m_stackPolicyURLHasBeenSet(false),

@@ -45,6 +45,7 @@ MethodSetting::MethodSetting() :
     m_cacheDataEncryptedHasBeenSet(false),
     m_requireAuthorizationForCacheControl(false),
     m_requireAuthorizationForCacheControlHasBeenSet(false),
+    m_unauthorizedCacheControlHeaderStrategy(UnauthorizedCacheControlHeaderStrategy::NOT_SET),
     m_unauthorizedCacheControlHeaderStrategyHasBeenSet(false)
 {
 }
@@ -67,6 +68,7 @@ MethodSetting::MethodSetting(const JsonValue& jsonValue) :
     m_cacheDataEncryptedHasBeenSet(false),
     m_requireAuthorizationForCacheControl(false),
     m_requireAuthorizationForCacheControlHasBeenSet(false),
+    m_unauthorizedCacheControlHeaderStrategy(UnauthorizedCacheControlHeaderStrategy::NOT_SET),
     m_unauthorizedCacheControlHeaderStrategyHasBeenSet(false)
 {
   *this = jsonValue;

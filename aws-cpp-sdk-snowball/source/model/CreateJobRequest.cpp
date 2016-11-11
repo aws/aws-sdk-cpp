@@ -22,13 +22,16 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 CreateJobRequest::CreateJobRequest() : 
+    m_jobType(JobType::NOT_SET),
     m_jobTypeHasBeenSet(false),
     m_resourcesHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_addressIdHasBeenSet(false),
     m_kmsKeyARNHasBeenSet(false),
     m_roleARNHasBeenSet(false),
+    m_snowballCapacityPreference(SnowballCapacity::NOT_SET),
     m_snowballCapacityPreferenceHasBeenSet(false),
+    m_shippingOption(ShippingOption::NOT_SET),
     m_shippingOptionHasBeenSet(false),
     m_notificationHasBeenSet(false)
 {

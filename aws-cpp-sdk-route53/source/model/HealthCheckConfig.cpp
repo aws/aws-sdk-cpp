@@ -33,6 +33,7 @@ HealthCheckConfig::HealthCheckConfig() :
     m_iPAddressHasBeenSet(false),
     m_port(0),
     m_portHasBeenSet(false),
+    m_type(HealthCheckType::NOT_SET),
     m_typeHasBeenSet(false),
     m_resourcePathHasBeenSet(false),
     m_fullyQualifiedDomainNameHasBeenSet(false),
@@ -52,6 +53,7 @@ HealthCheckConfig::HealthCheckConfig() :
     m_enableSNIHasBeenSet(false),
     m_regionsHasBeenSet(false),
     m_alarmIdentifierHasBeenSet(false),
+    m_insufficientDataHealthStatus(InsufficientDataHealthStatus::NOT_SET),
     m_insufficientDataHealthStatusHasBeenSet(false)
 {
 }
@@ -60,6 +62,7 @@ HealthCheckConfig::HealthCheckConfig(const XmlNode& xmlNode) :
     m_iPAddressHasBeenSet(false),
     m_port(0),
     m_portHasBeenSet(false),
+    m_type(HealthCheckType::NOT_SET),
     m_typeHasBeenSet(false),
     m_resourcePathHasBeenSet(false),
     m_fullyQualifiedDomainNameHasBeenSet(false),
@@ -79,6 +82,7 @@ HealthCheckConfig::HealthCheckConfig(const XmlNode& xmlNode) :
     m_enableSNIHasBeenSet(false),
     m_regionsHasBeenSet(false),
     m_alarmIdentifierHasBeenSet(false),
+    m_insufficientDataHealthStatus(InsufficientDataHealthStatus::NOT_SET),
     m_insufficientDataHealthStatusHasBeenSet(false)
 {
   *this = xmlNode;

@@ -30,6 +30,7 @@ namespace Model
 NotificationConfig::NotificationConfig() : 
     m_notificationArnHasBeenSet(false),
     m_notificationEventsHasBeenSet(false),
+    m_notificationType(NotificationType::NOT_SET),
     m_notificationTypeHasBeenSet(false)
 {
 }
@@ -37,6 +38,7 @@ NotificationConfig::NotificationConfig() :
 NotificationConfig::NotificationConfig(const JsonValue& jsonValue) : 
     m_notificationArnHasBeenSet(false),
     m_notificationEventsHasBeenSet(false),
+    m_notificationType(NotificationType::NOT_SET),
     m_notificationTypeHasBeenSet(false)
 {
   *this = jsonValue;

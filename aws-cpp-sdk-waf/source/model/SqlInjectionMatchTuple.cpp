@@ -29,12 +29,14 @@ namespace Model
 
 SqlInjectionMatchTuple::SqlInjectionMatchTuple() : 
     m_fieldToMatchHasBeenSet(false),
+    m_textTransformation(TextTransformation::NOT_SET),
     m_textTransformationHasBeenSet(false)
 {
 }
 
 SqlInjectionMatchTuple::SqlInjectionMatchTuple(const JsonValue& jsonValue) : 
     m_fieldToMatchHasBeenSet(false),
+    m_textTransformation(TextTransformation::NOT_SET),
     m_textTransformationHasBeenSet(false)
 {
   *this = jsonValue;

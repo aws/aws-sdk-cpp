@@ -30,6 +30,7 @@ namespace Model
 TagFilter::TagFilter() : 
     m_keyHasBeenSet(false),
     m_valueHasBeenSet(false),
+    m_type(TagFilterType::NOT_SET),
     m_typeHasBeenSet(false)
 {
 }
@@ -37,6 +38,7 @@ TagFilter::TagFilter() :
 TagFilter::TagFilter(const JsonValue& jsonValue) : 
     m_keyHasBeenSet(false),
     m_valueHasBeenSet(false),
+    m_type(TagFilterType::NOT_SET),
     m_typeHasBeenSet(false)
 {
   *this = jsonValue;

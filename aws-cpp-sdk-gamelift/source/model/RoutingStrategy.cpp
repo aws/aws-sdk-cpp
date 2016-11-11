@@ -28,6 +28,7 @@ namespace Model
 {
 
 RoutingStrategy::RoutingStrategy() : 
+    m_type(RoutingStrategyType::NOT_SET),
     m_typeHasBeenSet(false),
     m_fleetIdHasBeenSet(false),
     m_messageHasBeenSet(false)
@@ -35,6 +36,7 @@ RoutingStrategy::RoutingStrategy() :
 }
 
 RoutingStrategy::RoutingStrategy(const JsonValue& jsonValue) : 
+    m_type(RoutingStrategyType::NOT_SET),
     m_typeHasBeenSet(false),
     m_fleetIdHasBeenSet(false),
     m_messageHasBeenSet(false)

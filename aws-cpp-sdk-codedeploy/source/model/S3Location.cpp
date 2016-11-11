@@ -30,6 +30,7 @@ namespace Model
 S3Location::S3Location() : 
     m_bucketHasBeenSet(false),
     m_keyHasBeenSet(false),
+    m_bundleType(BundleType::NOT_SET),
     m_bundleTypeHasBeenSet(false),
     m_versionHasBeenSet(false),
     m_eTagHasBeenSet(false)
@@ -39,6 +40,7 @@ S3Location::S3Location() :
 S3Location::S3Location(const JsonValue& jsonValue) : 
     m_bucketHasBeenSet(false),
     m_keyHasBeenSet(false),
+    m_bundleType(BundleType::NOT_SET),
     m_bundleTypeHasBeenSet(false),
     m_versionHasBeenSet(false),
     m_eTagHasBeenSet(false)

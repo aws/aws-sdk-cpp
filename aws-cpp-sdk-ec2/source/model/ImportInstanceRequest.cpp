@@ -25,6 +25,7 @@ ImportInstanceRequest::ImportInstanceRequest() :
     m_descriptionHasBeenSet(false),
     m_launchSpecificationHasBeenSet(false),
     m_diskImagesHasBeenSet(false),
+    m_platform(PlatformValues::NOT_SET),
     m_platformHasBeenSet(false)
 {
 }

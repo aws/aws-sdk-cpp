@@ -23,6 +23,7 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
 ChangeTagsForResourceRequest::ChangeTagsForResourceRequest() : 
+    m_resourceType(TagResourceType::NOT_SET),
     m_resourceTypeHasBeenSet(false),
     m_resourceIdHasBeenSet(false),
     m_addTagsHasBeenSet(false),

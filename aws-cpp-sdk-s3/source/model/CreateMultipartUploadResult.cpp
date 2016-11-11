@@ -25,11 +25,15 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateMultipartUploadResult::CreateMultipartUploadResult()
+CreateMultipartUploadResult::CreateMultipartUploadResult() : 
+    m_serverSideEncryption(ServerSideEncryption::NOT_SET),
+    m_requestCharged(RequestCharged::NOT_SET)
 {
 }
 
-CreateMultipartUploadResult::CreateMultipartUploadResult(const AmazonWebServiceResult<XmlDocument>& result)
+CreateMultipartUploadResult::CreateMultipartUploadResult(const AmazonWebServiceResult<XmlDocument>& result) : 
+    m_serverSideEncryption(ServerSideEncryption::NOT_SET),
+    m_requestCharged(RequestCharged::NOT_SET)
 {
   *this = result;
 }

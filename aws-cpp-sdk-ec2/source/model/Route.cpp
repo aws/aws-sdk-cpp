@@ -38,7 +38,9 @@ Route::Route() :
     m_networkInterfaceIdHasBeenSet(false),
     m_vpcPeeringConnectionIdHasBeenSet(false),
     m_natGatewayIdHasBeenSet(false),
+    m_state(RouteState::NOT_SET),
     m_stateHasBeenSet(false),
+    m_origin(RouteOrigin::NOT_SET),
     m_originHasBeenSet(false)
 {
 }
@@ -52,7 +54,9 @@ Route::Route(const XmlNode& xmlNode) :
     m_networkInterfaceIdHasBeenSet(false),
     m_vpcPeeringConnectionIdHasBeenSet(false),
     m_natGatewayIdHasBeenSet(false),
+    m_state(RouteState::NOT_SET),
     m_stateHasBeenSet(false),
+    m_origin(RouteOrigin::NOT_SET),
     m_originHasBeenSet(false)
 {
   *this = xmlNode;

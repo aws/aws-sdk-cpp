@@ -27,6 +27,7 @@ TerminateWorkflowExecutionRequest::TerminateWorkflowExecutionRequest() :
     m_runIdHasBeenSet(false),
     m_reasonHasBeenSet(false),
     m_detailsHasBeenSet(false),
+    m_childPolicy(ChildPolicy::NOT_SET),
     m_childPolicyHasBeenSet(false)
 {
 }

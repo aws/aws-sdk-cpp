@@ -43,6 +43,7 @@ UploadPartCopyRequest::UploadPartCopyRequest() :
     m_copySourceSSECustomerAlgorithmHasBeenSet(false),
     m_copySourceSSECustomerKeyHasBeenSet(false),
     m_copySourceSSECustomerKeyMD5HasBeenSet(false),
+    m_requestPayer(RequestPayer::NOT_SET),
     m_requestPayerHasBeenSet(false)
 {
 }

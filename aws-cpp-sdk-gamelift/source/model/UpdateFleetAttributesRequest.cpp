@@ -25,6 +25,7 @@ UpdateFleetAttributesRequest::UpdateFleetAttributesRequest() :
     m_fleetIdHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
+    m_newGameSessionProtectionPolicy(ProtectionPolicy::NOT_SET),
     m_newGameSessionProtectionPolicyHasBeenSet(false),
     m_resourceCreationLimitPolicyHasBeenSet(false)
 {

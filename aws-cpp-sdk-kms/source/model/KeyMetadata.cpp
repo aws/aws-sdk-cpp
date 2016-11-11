@@ -35,11 +35,15 @@ KeyMetadata::KeyMetadata() :
     m_enabled(false),
     m_enabledHasBeenSet(false),
     m_descriptionHasBeenSet(false),
+    m_keyUsage(KeyUsageType::NOT_SET),
     m_keyUsageHasBeenSet(false),
+    m_keyState(KeyState::NOT_SET),
     m_keyStateHasBeenSet(false),
     m_deletionDateHasBeenSet(false),
     m_validToHasBeenSet(false),
+    m_origin(OriginType::NOT_SET),
     m_originHasBeenSet(false),
+    m_expirationModel(ExpirationModelType::NOT_SET),
     m_expirationModelHasBeenSet(false)
 {
 }
@@ -52,11 +56,15 @@ KeyMetadata::KeyMetadata(const JsonValue& jsonValue) :
     m_enabled(false),
     m_enabledHasBeenSet(false),
     m_descriptionHasBeenSet(false),
+    m_keyUsage(KeyUsageType::NOT_SET),
     m_keyUsageHasBeenSet(false),
+    m_keyState(KeyState::NOT_SET),
     m_keyStateHasBeenSet(false),
     m_deletionDateHasBeenSet(false),
     m_validToHasBeenSet(false),
+    m_origin(OriginType::NOT_SET),
     m_originHasBeenSet(false),
+    m_expirationModel(ExpirationModelType::NOT_SET),
     m_expirationModelHasBeenSet(false)
 {
   *this = jsonValue;

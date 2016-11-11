@@ -22,6 +22,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 StartSupportDataExportRequest::StartSupportDataExportRequest() : 
+    m_dataSetType(SupportDataSetType::NOT_SET),
     m_dataSetTypeHasBeenSet(false),
     m_fromDateHasBeenSet(false),
     m_roleNameArnHasBeenSet(false),

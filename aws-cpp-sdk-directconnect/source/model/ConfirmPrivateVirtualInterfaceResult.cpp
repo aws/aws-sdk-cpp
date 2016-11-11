@@ -24,11 +24,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ConfirmPrivateVirtualInterfaceResult::ConfirmPrivateVirtualInterfaceResult()
+ConfirmPrivateVirtualInterfaceResult::ConfirmPrivateVirtualInterfaceResult() : 
+    m_virtualInterfaceState(VirtualInterfaceState::NOT_SET)
 {
 }
 
-ConfirmPrivateVirtualInterfaceResult::ConfirmPrivateVirtualInterfaceResult(const AmazonWebServiceResult<JsonValue>& result)
+ConfirmPrivateVirtualInterfaceResult::ConfirmPrivateVirtualInterfaceResult(const AmazonWebServiceResult<JsonValue>& result) : 
+    m_virtualInterfaceState(VirtualInterfaceState::NOT_SET)
 {
   *this = result;
 }

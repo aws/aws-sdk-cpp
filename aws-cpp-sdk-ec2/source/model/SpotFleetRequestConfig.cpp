@@ -31,6 +31,7 @@ namespace Model
 
 SpotFleetRequestConfig::SpotFleetRequestConfig() : 
     m_spotFleetRequestIdHasBeenSet(false),
+    m_spotFleetRequestState(BatchState::NOT_SET),
     m_spotFleetRequestStateHasBeenSet(false),
     m_spotFleetRequestConfigHasBeenSet(false),
     m_createTimeHasBeenSet(false)
@@ -39,6 +40,7 @@ SpotFleetRequestConfig::SpotFleetRequestConfig() :
 
 SpotFleetRequestConfig::SpotFleetRequestConfig(const XmlNode& xmlNode) : 
     m_spotFleetRequestIdHasBeenSet(false),
+    m_spotFleetRequestState(BatchState::NOT_SET),
     m_spotFleetRequestStateHasBeenSet(false),
     m_spotFleetRequestConfigHasBeenSet(false),
     m_createTimeHasBeenSet(false)

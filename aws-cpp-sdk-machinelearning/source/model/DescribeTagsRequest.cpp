@@ -23,6 +23,7 @@ using namespace Aws::Utils;
 
 DescribeTagsRequest::DescribeTagsRequest() : 
     m_resourceIdHasBeenSet(false),
+    m_resourceType(TaggableResourceType::NOT_SET),
     m_resourceTypeHasBeenSet(false)
 {
 }

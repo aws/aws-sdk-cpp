@@ -31,6 +31,7 @@ namespace Model
 
 ValidationMessage::ValidationMessage() : 
     m_messageHasBeenSet(false),
+    m_severity(ValidationSeverity::NOT_SET),
     m_severityHasBeenSet(false),
     m_namespaceHasBeenSet(false),
     m_optionNameHasBeenSet(false)
@@ -39,6 +40,7 @@ ValidationMessage::ValidationMessage() :
 
 ValidationMessage::ValidationMessage(const XmlNode& xmlNode) : 
     m_messageHasBeenSet(false),
+    m_severity(ValidationSeverity::NOT_SET),
     m_severityHasBeenSet(false),
     m_namespaceHasBeenSet(false),
     m_optionNameHasBeenSet(false)

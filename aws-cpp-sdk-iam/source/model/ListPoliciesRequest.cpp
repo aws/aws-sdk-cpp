@@ -20,6 +20,7 @@ using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
 ListPoliciesRequest::ListPoliciesRequest() : 
+    m_scope(PolicyScopeType::NOT_SET),
     m_scopeHasBeenSet(false),
     m_onlyAttached(false),
     m_onlyAttachedHasBeenSet(false),

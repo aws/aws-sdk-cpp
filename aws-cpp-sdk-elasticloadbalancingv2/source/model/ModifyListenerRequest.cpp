@@ -23,6 +23,7 @@ ModifyListenerRequest::ModifyListenerRequest() :
     m_listenerArnHasBeenSet(false),
     m_port(0),
     m_portHasBeenSet(false),
+    m_protocol(ProtocolEnum::NOT_SET),
     m_protocolHasBeenSet(false),
     m_sslPolicyHasBeenSet(false),
     m_certificatesHasBeenSet(false),

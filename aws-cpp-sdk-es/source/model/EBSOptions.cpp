@@ -30,6 +30,7 @@ namespace Model
 EBSOptions::EBSOptions() : 
     m_eBSEnabled(false),
     m_eBSEnabledHasBeenSet(false),
+    m_volumeType(VolumeType::NOT_SET),
     m_volumeTypeHasBeenSet(false),
     m_volumeSize(0),
     m_volumeSizeHasBeenSet(false),
@@ -41,6 +42,7 @@ EBSOptions::EBSOptions() :
 EBSOptions::EBSOptions(const JsonValue& jsonValue) : 
     m_eBSEnabled(false),
     m_eBSEnabledHasBeenSet(false),
+    m_volumeType(VolumeType::NOT_SET),
     m_volumeTypeHasBeenSet(false),
     m_volumeSize(0),
     m_volumeSizeHasBeenSet(false),

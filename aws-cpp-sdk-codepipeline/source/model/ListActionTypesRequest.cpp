@@ -22,6 +22,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 ListActionTypesRequest::ListActionTypesRequest() : 
+    m_actionOwnerFilter(ActionOwner::NOT_SET),
     m_actionOwnerFilterHasBeenSet(false),
     m_nextTokenHasBeenSet(false)
 {

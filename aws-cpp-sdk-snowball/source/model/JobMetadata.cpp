@@ -29,7 +29,9 @@ namespace Model
 
 JobMetadata::JobMetadata() : 
     m_jobIdHasBeenSet(false),
+    m_jobState(JobState::NOT_SET),
     m_jobStateHasBeenSet(false),
+    m_jobType(JobType::NOT_SET),
     m_jobTypeHasBeenSet(false),
     m_creationDateHasBeenSet(false),
     m_resourcesHasBeenSet(false),
@@ -38,6 +40,7 @@ JobMetadata::JobMetadata() :
     m_roleARNHasBeenSet(false),
     m_addressIdHasBeenSet(false),
     m_shippingDetailsHasBeenSet(false),
+    m_snowballCapacityPreference(SnowballCapacity::NOT_SET),
     m_snowballCapacityPreferenceHasBeenSet(false),
     m_notificationHasBeenSet(false),
     m_dataTransferProgressHasBeenSet(false),
@@ -47,7 +50,9 @@ JobMetadata::JobMetadata() :
 
 JobMetadata::JobMetadata(const JsonValue& jsonValue) : 
     m_jobIdHasBeenSet(false),
+    m_jobState(JobState::NOT_SET),
     m_jobStateHasBeenSet(false),
+    m_jobType(JobType::NOT_SET),
     m_jobTypeHasBeenSet(false),
     m_creationDateHasBeenSet(false),
     m_resourcesHasBeenSet(false),
@@ -56,6 +61,7 @@ JobMetadata::JobMetadata(const JsonValue& jsonValue) :
     m_roleARNHasBeenSet(false),
     m_addressIdHasBeenSet(false),
     m_shippingDetailsHasBeenSet(false),
+    m_snowballCapacityPreference(SnowballCapacity::NOT_SET),
     m_snowballCapacityPreferenceHasBeenSet(false),
     m_notificationHasBeenSet(false),
     m_dataTransferProgressHasBeenSet(false),

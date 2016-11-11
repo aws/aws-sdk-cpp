@@ -31,6 +31,7 @@ StartWorkflowExecutionRequest::StartWorkflowExecutionRequest() :
     m_executionStartToCloseTimeoutHasBeenSet(false),
     m_tagListHasBeenSet(false),
     m_taskStartToCloseTimeoutHasBeenSet(false),
+    m_childPolicy(ChildPolicy::NOT_SET),
     m_childPolicyHasBeenSet(false),
     m_lambdaRoleHasBeenSet(false)
 {

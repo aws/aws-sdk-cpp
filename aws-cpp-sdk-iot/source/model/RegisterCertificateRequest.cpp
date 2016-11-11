@@ -24,6 +24,7 @@ using namespace Aws::Utils;
 RegisterCertificateRequest::RegisterCertificateRequest() : 
     m_certificatePemHasBeenSet(false),
     m_caCertificatePemHasBeenSet(false),
+    m_status(CertificateStatus::NOT_SET),
     m_statusHasBeenSet(false)
 {
 }

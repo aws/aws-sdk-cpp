@@ -30,6 +30,7 @@ namespace Model
 {
 
 DiskImageDetail::DiskImageDetail() : 
+    m_format(DiskImageFormat::NOT_SET),
     m_formatHasBeenSet(false),
     m_bytes(0),
     m_bytesHasBeenSet(false),
@@ -38,6 +39,7 @@ DiskImageDetail::DiskImageDetail() :
 }
 
 DiskImageDetail::DiskImageDetail(const XmlNode& xmlNode) : 
+    m_format(DiskImageFormat::NOT_SET),
     m_formatHasBeenSet(false),
     m_bytes(0),
     m_bytesHasBeenSet(false),

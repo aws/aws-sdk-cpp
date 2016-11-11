@@ -24,6 +24,7 @@ using namespace Aws::Utils;
 AddTagsRequest::AddTagsRequest() : 
     m_tagsHasBeenSet(false),
     m_resourceIdHasBeenSet(false),
+    m_resourceType(TaggableResourceType::NOT_SET),
     m_resourceTypeHasBeenSet(false)
 {
 }

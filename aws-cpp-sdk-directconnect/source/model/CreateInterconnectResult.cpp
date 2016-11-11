@@ -24,11 +24,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateInterconnectResult::CreateInterconnectResult()
+CreateInterconnectResult::CreateInterconnectResult() : 
+    m_interconnectState(InterconnectState::NOT_SET)
 {
 }
 
-CreateInterconnectResult::CreateInterconnectResult(const AmazonWebServiceResult<JsonValue>& result)
+CreateInterconnectResult::CreateInterconnectResult(const AmazonWebServiceResult<JsonValue>& result) : 
+    m_interconnectState(InterconnectState::NOT_SET)
 {
   *this = result;
 }

@@ -20,6 +20,7 @@ using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
 AllocateHostsRequest::AllocateHostsRequest() : 
+    m_autoPlacement(AutoPlacement::NOT_SET),
     m_autoPlacementHasBeenSet(false),
     m_clientTokenHasBeenSet(false),
     m_instanceTypeHasBeenSet(false),

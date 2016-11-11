@@ -31,6 +31,7 @@ namespace Model
 
 AnalysisScheme::AnalysisScheme() : 
     m_analysisSchemeNameHasBeenSet(false),
+    m_analysisSchemeLanguage(AnalysisSchemeLanguage::NOT_SET),
     m_analysisSchemeLanguageHasBeenSet(false),
     m_analysisOptionsHasBeenSet(false)
 {
@@ -38,6 +39,7 @@ AnalysisScheme::AnalysisScheme() :
 
 AnalysisScheme::AnalysisScheme(const XmlNode& xmlNode) : 
     m_analysisSchemeNameHasBeenSet(false),
+    m_analysisSchemeLanguage(AnalysisSchemeLanguage::NOT_SET),
     m_analysisSchemeLanguageHasBeenSet(false),
     m_analysisOptionsHasBeenSet(false)
 {

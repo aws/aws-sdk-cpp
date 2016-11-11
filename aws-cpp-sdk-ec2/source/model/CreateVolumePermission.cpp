@@ -31,12 +31,14 @@ namespace Model
 
 CreateVolumePermission::CreateVolumePermission() : 
     m_userIdHasBeenSet(false),
+    m_group(PermissionGroup::NOT_SET),
     m_groupHasBeenSet(false)
 {
 }
 
 CreateVolumePermission::CreateVolumePermission(const XmlNode& xmlNode) : 
     m_userIdHasBeenSet(false),
+    m_group(PermissionGroup::NOT_SET),
     m_groupHasBeenSet(false)
 {
   *this = xmlNode;

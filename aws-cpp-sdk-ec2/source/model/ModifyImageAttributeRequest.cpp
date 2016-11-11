@@ -24,6 +24,7 @@ ModifyImageAttributeRequest::ModifyImageAttributeRequest() :
     m_dryRunHasBeenSet(false),
     m_imageIdHasBeenSet(false),
     m_attributeHasBeenSet(false),
+    m_operationType(OperationType::NOT_SET),
     m_operationTypeHasBeenSet(false),
     m_userIdsHasBeenSet(false),
     m_userGroupsHasBeenSet(false),

@@ -23,6 +23,7 @@ ResetSnapshotAttributeRequest::ResetSnapshotAttributeRequest() :
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
     m_snapshotIdHasBeenSet(false),
+    m_attribute(SnapshotAttributeName::NOT_SET),
     m_attributeHasBeenSet(false)
 {
 }

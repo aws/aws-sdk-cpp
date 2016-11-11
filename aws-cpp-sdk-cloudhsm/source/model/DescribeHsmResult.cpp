@@ -24,11 +24,15 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeHsmResult::DescribeHsmResult()
+DescribeHsmResult::DescribeHsmResult() : 
+    m_status(HsmStatus::NOT_SET),
+    m_subscriptionType(SubscriptionType::NOT_SET)
 {
 }
 
-DescribeHsmResult::DescribeHsmResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeHsmResult::DescribeHsmResult(const AmazonWebServiceResult<JsonValue>& result) : 
+    m_status(HsmStatus::NOT_SET),
+    m_subscriptionType(SubscriptionType::NOT_SET)
 {
   *this = result;
 }

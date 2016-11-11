@@ -28,6 +28,7 @@ using namespace Aws::Http;
 ListObjectsV2Request::ListObjectsV2Request() : 
     m_bucketHasBeenSet(false),
     m_delimiterHasBeenSet(false),
+    m_encodingType(EncodingType::NOT_SET),
     m_encodingTypeHasBeenSet(false),
     m_maxKeys(0),
     m_maxKeysHasBeenSet(false),
@@ -36,6 +37,7 @@ ListObjectsV2Request::ListObjectsV2Request() :
     m_fetchOwner(false),
     m_fetchOwnerHasBeenSet(false),
     m_startAfterHasBeenSet(false),
+    m_requestPayer(RequestPayer::NOT_SET),
     m_requestPayerHasBeenSet(false)
 {
 }

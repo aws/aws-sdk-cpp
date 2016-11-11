@@ -29,6 +29,7 @@ namespace Model
 
 Sample::Sample() : 
     m_arnHasBeenSet(false),
+    m_type(SampleType::NOT_SET),
     m_typeHasBeenSet(false),
     m_urlHasBeenSet(false)
 {
@@ -36,6 +37,7 @@ Sample::Sample() :
 
 Sample::Sample(const JsonValue& jsonValue) : 
     m_arnHasBeenSet(false),
+    m_type(SampleType::NOT_SET),
     m_typeHasBeenSet(false),
     m_urlHasBeenSet(false)
 {

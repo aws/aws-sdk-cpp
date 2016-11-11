@@ -31,12 +31,14 @@ namespace Model
 
 ProductCode::ProductCode() : 
     m_productCodeIdHasBeenSet(false),
+    m_productCodeType(ProductCodeValues::NOT_SET),
     m_productCodeTypeHasBeenSet(false)
 {
 }
 
 ProductCode::ProductCode(const XmlNode& xmlNode) : 
     m_productCodeIdHasBeenSet(false),
+    m_productCodeType(ProductCodeValues::NOT_SET),
     m_productCodeTypeHasBeenSet(false)
 {
   *this = xmlNode;

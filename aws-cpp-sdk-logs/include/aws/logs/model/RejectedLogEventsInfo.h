@@ -29,6 +29,9 @@ namespace CloudWatchLogs
 namespace Model
 {
 
+  /**
+   * <p>Represents the rejected events.</p>
+   */
   class AWS_CLOUDWATCHLOGS_API RejectedLogEventsInfo
   {
   public:
@@ -37,31 +40,49 @@ namespace Model
     RejectedLogEventsInfo& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
-    
+    /**
+     * <p>The log events that are too new.</p>
+     */
     inline int GetTooNewLogEventStartIndex() const{ return m_tooNewLogEventStartIndex; }
 
-    
+    /**
+     * <p>The log events that are too new.</p>
+     */
     inline void SetTooNewLogEventStartIndex(int value) { m_tooNewLogEventStartIndexHasBeenSet = true; m_tooNewLogEventStartIndex = value; }
 
-    
+    /**
+     * <p>The log events that are too new.</p>
+     */
     inline RejectedLogEventsInfo& WithTooNewLogEventStartIndex(int value) { SetTooNewLogEventStartIndex(value); return *this;}
 
-    
+    /**
+     * <p>The log events that are too old.</p>
+     */
     inline int GetTooOldLogEventEndIndex() const{ return m_tooOldLogEventEndIndex; }
 
-    
+    /**
+     * <p>The log events that are too old.</p>
+     */
     inline void SetTooOldLogEventEndIndex(int value) { m_tooOldLogEventEndIndexHasBeenSet = true; m_tooOldLogEventEndIndex = value; }
 
-    
+    /**
+     * <p>The log events that are too old.</p>
+     */
     inline RejectedLogEventsInfo& WithTooOldLogEventEndIndex(int value) { SetTooOldLogEventEndIndex(value); return *this;}
 
-    
+    /**
+     * <p>The expired log events.</p>
+     */
     inline int GetExpiredLogEventEndIndex() const{ return m_expiredLogEventEndIndex; }
 
-    
+    /**
+     * <p>The expired log events.</p>
+     */
     inline void SetExpiredLogEventEndIndex(int value) { m_expiredLogEventEndIndexHasBeenSet = true; m_expiredLogEventEndIndex = value; }
 
-    
+    /**
+     * <p>The expired log events.</p>
+     */
     inline RejectedLogEventsInfo& WithExpiredLogEventEndIndex(int value) { SetExpiredLogEventEndIndex(value); return *this;}
 
   private:

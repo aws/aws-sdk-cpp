@@ -30,10 +30,12 @@ namespace Model
 CACertificateDescription::CACertificateDescription() : 
     m_certificateArnHasBeenSet(false),
     m_certificateIdHasBeenSet(false),
+    m_status(CACertificateStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_certificatePemHasBeenSet(false),
     m_ownedByHasBeenSet(false),
     m_creationDateHasBeenSet(false),
+    m_autoRegistrationStatus(AutoRegistrationStatus::NOT_SET),
     m_autoRegistrationStatusHasBeenSet(false)
 {
 }
@@ -41,10 +43,12 @@ CACertificateDescription::CACertificateDescription() :
 CACertificateDescription::CACertificateDescription(const JsonValue& jsonValue) : 
     m_certificateArnHasBeenSet(false),
     m_certificateIdHasBeenSet(false),
+    m_status(CACertificateStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_certificatePemHasBeenSet(false),
     m_ownedByHasBeenSet(false),
     m_creationDateHasBeenSet(false),
+    m_autoRegistrationStatus(AutoRegistrationStatus::NOT_SET),
     m_autoRegistrationStatusHasBeenSet(false)
 {
   *this = jsonValue;

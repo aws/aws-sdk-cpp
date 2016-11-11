@@ -30,13 +30,17 @@ namespace Model
 {
 
 VersioningConfiguration::VersioningConfiguration() : 
+    m_mFADelete(MFADelete::NOT_SET),
     m_mFADeleteHasBeenSet(false),
+    m_status(BucketVersioningStatus::NOT_SET),
     m_statusHasBeenSet(false)
 {
 }
 
 VersioningConfiguration::VersioningConfiguration(const XmlNode& xmlNode) : 
+    m_mFADelete(MFADelete::NOT_SET),
     m_mFADeleteHasBeenSet(false),
+    m_status(BucketVersioningStatus::NOT_SET),
     m_statusHasBeenSet(false)
 {
   *this = xmlNode;

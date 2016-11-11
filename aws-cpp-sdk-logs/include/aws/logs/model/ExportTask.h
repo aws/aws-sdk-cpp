@@ -44,37 +44,37 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p>Id of the export task.</p>
+     * <p>The ID of the export task.</p>
      */
     inline const Aws::String& GetTaskId() const{ return m_taskId; }
 
     /**
-     * <p>Id of the export task.</p>
+     * <p>The ID of the export task.</p>
      */
     inline void SetTaskId(const Aws::String& value) { m_taskIdHasBeenSet = true; m_taskId = value; }
 
     /**
-     * <p>Id of the export task.</p>
+     * <p>The ID of the export task.</p>
      */
     inline void SetTaskId(Aws::String&& value) { m_taskIdHasBeenSet = true; m_taskId = value; }
 
     /**
-     * <p>Id of the export task.</p>
+     * <p>The ID of the export task.</p>
      */
     inline void SetTaskId(const char* value) { m_taskIdHasBeenSet = true; m_taskId.assign(value); }
 
     /**
-     * <p>Id of the export task.</p>
+     * <p>The ID of the export task.</p>
      */
     inline ExportTask& WithTaskId(const Aws::String& value) { SetTaskId(value); return *this;}
 
     /**
-     * <p>Id of the export task.</p>
+     * <p>The ID of the export task.</p>
      */
     inline ExportTask& WithTaskId(Aws::String&& value) { SetTaskId(value); return *this;}
 
     /**
-     * <p>Id of the export task.</p>
+     * <p>The ID of the export task.</p>
      */
     inline ExportTask& WithTaskId(const char* value) { SetTaskId(value); return *this;}
 
@@ -149,140 +149,140 @@ namespace Model
     inline ExportTask& WithLogGroupName(const char* value) { SetLogGroupName(value); return *this;}
 
     /**
-     * <p>A point in time expressed as the number of milliseconds since Jan 1, 1970
-     * 00:00:00 UTC. Events with a timestamp prior to this time are not exported.</p>
+     * <p>The start time. Events with a timestamp prior to this time are not
+     * exported.</p>
      */
     inline long long GetFrom() const{ return m_from; }
 
     /**
-     * <p>A point in time expressed as the number of milliseconds since Jan 1, 1970
-     * 00:00:00 UTC. Events with a timestamp prior to this time are not exported.</p>
+     * <p>The start time. Events with a timestamp prior to this time are not
+     * exported.</p>
      */
     inline void SetFrom(long long value) { m_fromHasBeenSet = true; m_from = value; }
 
     /**
-     * <p>A point in time expressed as the number of milliseconds since Jan 1, 1970
-     * 00:00:00 UTC. Events with a timestamp prior to this time are not exported.</p>
+     * <p>The start time. Events with a timestamp prior to this time are not
+     * exported.</p>
      */
     inline ExportTask& WithFrom(long long value) { SetFrom(value); return *this;}
 
     /**
-     * <p>A point in time expressed as the number of milliseconds since Jan 1, 1970
-     * 00:00:00 UTC. Events with a timestamp later than this time are not exported.</p>
+     * <p>The end time. Events with a timestamp later than this time are not
+     * exported.</p>
      */
     inline long long GetTo() const{ return m_to; }
 
     /**
-     * <p>A point in time expressed as the number of milliseconds since Jan 1, 1970
-     * 00:00:00 UTC. Events with a timestamp later than this time are not exported.</p>
+     * <p>The end time. Events with a timestamp later than this time are not
+     * exported.</p>
      */
     inline void SetTo(long long value) { m_toHasBeenSet = true; m_to = value; }
 
     /**
-     * <p>A point in time expressed as the number of milliseconds since Jan 1, 1970
-     * 00:00:00 UTC. Events with a timestamp later than this time are not exported.</p>
+     * <p>The end time. Events with a timestamp later than this time are not
+     * exported.</p>
      */
     inline ExportTask& WithTo(long long value) { SetTo(value); return *this;}
 
     /**
-     * <p>Name of Amazon S3 bucket to which the log data was exported.</p>
+     * <p>The name of Amazon S3 bucket to which the log data was exported.</p>
      */
     inline const Aws::String& GetDestination() const{ return m_destination; }
 
     /**
-     * <p>Name of Amazon S3 bucket to which the log data was exported.</p>
+     * <p>The name of Amazon S3 bucket to which the log data was exported.</p>
      */
     inline void SetDestination(const Aws::String& value) { m_destinationHasBeenSet = true; m_destination = value; }
 
     /**
-     * <p>Name of Amazon S3 bucket to which the log data was exported.</p>
+     * <p>The name of Amazon S3 bucket to which the log data was exported.</p>
      */
     inline void SetDestination(Aws::String&& value) { m_destinationHasBeenSet = true; m_destination = value; }
 
     /**
-     * <p>Name of Amazon S3 bucket to which the log data was exported.</p>
+     * <p>The name of Amazon S3 bucket to which the log data was exported.</p>
      */
     inline void SetDestination(const char* value) { m_destinationHasBeenSet = true; m_destination.assign(value); }
 
     /**
-     * <p>Name of Amazon S3 bucket to which the log data was exported.</p>
+     * <p>The name of Amazon S3 bucket to which the log data was exported.</p>
      */
     inline ExportTask& WithDestination(const Aws::String& value) { SetDestination(value); return *this;}
 
     /**
-     * <p>Name of Amazon S3 bucket to which the log data was exported.</p>
+     * <p>The name of Amazon S3 bucket to which the log data was exported.</p>
      */
     inline ExportTask& WithDestination(Aws::String&& value) { SetDestination(value); return *this;}
 
     /**
-     * <p>Name of Amazon S3 bucket to which the log data was exported.</p>
+     * <p>The name of Amazon S3 bucket to which the log data was exported.</p>
      */
     inline ExportTask& WithDestination(const char* value) { SetDestination(value); return *this;}
 
     /**
-     * <p>Prefix that was used as the start of Amazon S3 key for every object
+     * <p>The prefix that was used as the start of Amazon S3 key for every object
      * exported.</p>
      */
     inline const Aws::String& GetDestinationPrefix() const{ return m_destinationPrefix; }
 
     /**
-     * <p>Prefix that was used as the start of Amazon S3 key for every object
+     * <p>The prefix that was used as the start of Amazon S3 key for every object
      * exported.</p>
      */
     inline void SetDestinationPrefix(const Aws::String& value) { m_destinationPrefixHasBeenSet = true; m_destinationPrefix = value; }
 
     /**
-     * <p>Prefix that was used as the start of Amazon S3 key for every object
+     * <p>The prefix that was used as the start of Amazon S3 key for every object
      * exported.</p>
      */
     inline void SetDestinationPrefix(Aws::String&& value) { m_destinationPrefixHasBeenSet = true; m_destinationPrefix = value; }
 
     /**
-     * <p>Prefix that was used as the start of Amazon S3 key for every object
+     * <p>The prefix that was used as the start of Amazon S3 key for every object
      * exported.</p>
      */
     inline void SetDestinationPrefix(const char* value) { m_destinationPrefixHasBeenSet = true; m_destinationPrefix.assign(value); }
 
     /**
-     * <p>Prefix that was used as the start of Amazon S3 key for every object
+     * <p>The prefix that was used as the start of Amazon S3 key for every object
      * exported.</p>
      */
     inline ExportTask& WithDestinationPrefix(const Aws::String& value) { SetDestinationPrefix(value); return *this;}
 
     /**
-     * <p>Prefix that was used as the start of Amazon S3 key for every object
+     * <p>The prefix that was used as the start of Amazon S3 key for every object
      * exported.</p>
      */
     inline ExportTask& WithDestinationPrefix(Aws::String&& value) { SetDestinationPrefix(value); return *this;}
 
     /**
-     * <p>Prefix that was used as the start of Amazon S3 key for every object
+     * <p>The prefix that was used as the start of Amazon S3 key for every object
      * exported.</p>
      */
     inline ExportTask& WithDestinationPrefix(const char* value) { SetDestinationPrefix(value); return *this;}
 
     /**
-     * <p>Status of the export task.</p>
+     * <p>The status of the export task.</p>
      */
     inline const ExportTaskStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>Status of the export task.</p>
+     * <p>The status of the export task.</p>
      */
     inline void SetStatus(const ExportTaskStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>Status of the export task.</p>
+     * <p>The status of the export task.</p>
      */
     inline void SetStatus(ExportTaskStatus&& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>Status of the export task.</p>
+     * <p>The status of the export task.</p>
      */
     inline ExportTask& WithStatus(const ExportTaskStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>Status of the export task.</p>
+     * <p>The status of the export task.</p>
      */
     inline ExportTask& WithStatus(ExportTaskStatus&& value) { SetStatus(value); return *this;}
 

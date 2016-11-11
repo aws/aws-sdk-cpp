@@ -22,6 +22,7 @@ using namespace Aws::Utils;
 CreateCacheClusterRequest::CreateCacheClusterRequest() : 
     m_cacheClusterIdHasBeenSet(false),
     m_replicationGroupIdHasBeenSet(false),
+    m_aZMode(AZMode::NOT_SET),
     m_aZModeHasBeenSet(false),
     m_preferredAvailabilityZoneHasBeenSet(false),
     m_preferredAvailabilityZonesHasBeenSet(false),

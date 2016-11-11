@@ -39,19 +39,29 @@ namespace Model
     PutDestinationResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     PutDestinationResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    
+    /**
+     * <p>The destination.</p>
+     */
     inline const Destination& GetDestination() const{ return m_destination; }
 
-    
+    /**
+     * <p>The destination.</p>
+     */
     inline void SetDestination(const Destination& value) { m_destination = value; }
 
-    
+    /**
+     * <p>The destination.</p>
+     */
     inline void SetDestination(Destination&& value) { m_destination = value; }
 
-    
+    /**
+     * <p>The destination.</p>
+     */
     inline PutDestinationResult& WithDestination(const Destination& value) { SetDestination(value); return *this;}
 
-    
+    /**
+     * <p>The destination.</p>
+     */
     inline PutDestinationResult& WithDestination(Destination&& value) { SetDestination(value); return *this;}
 
   private:

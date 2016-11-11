@@ -30,6 +30,7 @@ CompleteMultipartUploadRequest::CompleteMultipartUploadRequest() :
     m_keyHasBeenSet(false),
     m_multipartUploadHasBeenSet(false),
     m_uploadIdHasBeenSet(false),
+    m_requestPayer(RequestPayer::NOT_SET),
     m_requestPayerHasBeenSet(false)
 {
 }

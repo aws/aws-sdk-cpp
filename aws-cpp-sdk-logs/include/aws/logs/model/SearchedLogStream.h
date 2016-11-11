@@ -31,8 +31,7 @@ namespace Model
 {
 
   /**
-   * <p>An object indicating the search status of a log stream in a
-   * <code>FilterLogEvents</code> request.</p>
+   * <p>Represents the search status of a log stream.</p>
    */
   class AWS_CLOUDWATCHLOGS_API SearchedLogStream
   {
@@ -78,20 +77,17 @@ namespace Model
     inline SearchedLogStream& WithLogStreamName(const char* value) { SetLogStreamName(value); return *this;}
 
     /**
-     * <p>Indicates whether all the events in this log stream were searched or more
-     * data exists to search by paginating further.</p>
+     * <p>Indicates whether all the events in this log stream were searched.</p>
      */
     inline bool GetSearchedCompletely() const{ return m_searchedCompletely; }
 
     /**
-     * <p>Indicates whether all the events in this log stream were searched or more
-     * data exists to search by paginating further.</p>
+     * <p>Indicates whether all the events in this log stream were searched.</p>
      */
     inline void SetSearchedCompletely(bool value) { m_searchedCompletelyHasBeenSet = true; m_searchedCompletely = value; }
 
     /**
-     * <p>Indicates whether all the events in this log stream were searched or more
-     * data exists to search by paginating further.</p>
+     * <p>Indicates whether all the events in this log stream were searched.</p>
      */
     inline SearchedLogStream& WithSearchedCompletely(bool value) { SetSearchedCompletely(value); return *this;}
 

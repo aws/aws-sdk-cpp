@@ -31,12 +31,14 @@ namespace Model
 
 Destination::Destination() : 
     m_bucketHasBeenSet(false),
+    m_storageClass(StorageClass::NOT_SET),
     m_storageClassHasBeenSet(false)
 {
 }
 
 Destination::Destination(const XmlNode& xmlNode) : 
     m_bucketHasBeenSet(false),
+    m_storageClass(StorageClass::NOT_SET),
     m_storageClassHasBeenSet(false)
 {
   *this = xmlNode;

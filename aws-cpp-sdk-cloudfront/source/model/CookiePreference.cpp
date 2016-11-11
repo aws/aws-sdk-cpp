@@ -30,12 +30,14 @@ namespace Model
 {
 
 CookiePreference::CookiePreference() : 
+    m_forward(ItemSelection::NOT_SET),
     m_forwardHasBeenSet(false),
     m_whitelistedNamesHasBeenSet(false)
 {
 }
 
 CookiePreference::CookiePreference(const XmlNode& xmlNode) : 
+    m_forward(ItemSelection::NOT_SET),
     m_forwardHasBeenSet(false),
     m_whitelistedNamesHasBeenSet(false)
 {

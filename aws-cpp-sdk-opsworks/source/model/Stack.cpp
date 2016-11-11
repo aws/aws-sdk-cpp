@@ -50,6 +50,7 @@ Stack::Stack() :
     m_customCookbooksSourceHasBeenSet(false),
     m_defaultSshKeyNameHasBeenSet(false),
     m_createdAtHasBeenSet(false),
+    m_defaultRootDeviceType(RootDeviceType::NOT_SET),
     m_defaultRootDeviceTypeHasBeenSet(false),
     m_agentVersionHasBeenSet(false)
 {
@@ -78,6 +79,7 @@ Stack::Stack(const JsonValue& jsonValue) :
     m_customCookbooksSourceHasBeenSet(false),
     m_defaultSshKeyNameHasBeenSet(false),
     m_createdAtHasBeenSet(false),
+    m_defaultRootDeviceType(RootDeviceType::NOT_SET),
     m_defaultRootDeviceTypeHasBeenSet(false),
     m_agentVersionHasBeenSet(false)
 {

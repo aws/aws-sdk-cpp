@@ -30,6 +30,7 @@ RegisterWorkflowTypeRequest::RegisterWorkflowTypeRequest() :
     m_defaultExecutionStartToCloseTimeoutHasBeenSet(false),
     m_defaultTaskListHasBeenSet(false),
     m_defaultTaskPriorityHasBeenSet(false),
+    m_defaultChildPolicy(ChildPolicy::NOT_SET),
     m_defaultChildPolicyHasBeenSet(false),
     m_defaultLambdaRoleHasBeenSet(false)
 {

@@ -30,6 +30,7 @@ namespace Model
 MonetaryAmount::MonetaryAmount() : 
     m_amount(0.0),
     m_amountHasBeenSet(false),
+    m_currencyCode(CurrencyCode::NOT_SET),
     m_currencyCodeHasBeenSet(false)
 {
 }
@@ -37,6 +38,7 @@ MonetaryAmount::MonetaryAmount() :
 MonetaryAmount::MonetaryAmount(const JsonValue& jsonValue) : 
     m_amount(0.0),
     m_amountHasBeenSet(false),
+    m_currencyCode(CurrencyCode::NOT_SET),
     m_currencyCodeHasBeenSet(false)
 {
   *this = jsonValue;

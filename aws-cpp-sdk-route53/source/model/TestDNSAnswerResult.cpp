@@ -24,11 +24,13 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-TestDNSAnswerResult::TestDNSAnswerResult()
+TestDNSAnswerResult::TestDNSAnswerResult() : 
+    m_recordType(RRType::NOT_SET)
 {
 }
 
-TestDNSAnswerResult::TestDNSAnswerResult(const AmazonWebServiceResult<XmlDocument>& result)
+TestDNSAnswerResult::TestDNSAnswerResult(const AmazonWebServiceResult<XmlDocument>& result) : 
+    m_recordType(RRType::NOT_SET)
 {
   *this = result;
 }

@@ -32,6 +32,7 @@ namespace Model
 ContextEntry::ContextEntry() : 
     m_contextKeyNameHasBeenSet(false),
     m_contextKeyValuesHasBeenSet(false),
+    m_contextKeyType(ContextKeyTypeEnum::NOT_SET),
     m_contextKeyTypeHasBeenSet(false)
 {
 }
@@ -39,6 +40,7 @@ ContextEntry::ContextEntry() :
 ContextEntry::ContextEntry(const XmlNode& xmlNode) : 
     m_contextKeyNameHasBeenSet(false),
     m_contextKeyValuesHasBeenSet(false),
+    m_contextKeyType(ContextKeyTypeEnum::NOT_SET),
     m_contextKeyTypeHasBeenSet(false)
 {
   *this = xmlNode;

@@ -23,6 +23,7 @@ using namespace Aws::Utils;
 
 GetConfigRequest::GetConfigRequest() : 
     m_clientArnHasBeenSet(false),
+    m_clientVersion(ClientVersion::NOT_SET),
     m_clientVersionHasBeenSet(false),
     m_hapgListHasBeenSet(false)
 {

@@ -121,17 +121,17 @@ namespace Model
     /**
      * Size of the uploaded part data.
      */
-    inline int GetSize() const{ return m_size; }
+    inline long long GetSize() const{ return m_size; }
 
     /**
      * Size of the uploaded part data.
      */
-    inline void SetSize(int value) { m_sizeHasBeenSet = true; m_size = value; }
+    inline void SetSize(long long value) { m_sizeHasBeenSet = true; m_size = value; }
 
     /**
      * Size of the uploaded part data.
      */
-    inline Part& WithSize(int value) { SetSize(value); return *this;}
+    inline Part& WithSize(long long value) { SetSize(value); return *this;}
 
   private:
     int m_partNumber;
@@ -140,7 +140,7 @@ namespace Model
     bool m_lastModifiedHasBeenSet;
     Aws::String m_eTag;
     bool m_eTagHasBeenSet;
-    int m_size;
+    long long m_size;
     bool m_sizeHasBeenSet;
   };
 

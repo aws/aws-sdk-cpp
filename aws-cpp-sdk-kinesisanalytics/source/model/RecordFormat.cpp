@@ -28,12 +28,14 @@ namespace Model
 {
 
 RecordFormat::RecordFormat() : 
+    m_recordFormatType(RecordFormatType::NOT_SET),
     m_recordFormatTypeHasBeenSet(false),
     m_mappingParametersHasBeenSet(false)
 {
 }
 
 RecordFormat::RecordFormat(const JsonValue& jsonValue) : 
+    m_recordFormatType(RecordFormatType::NOT_SET),
     m_recordFormatTypeHasBeenSet(false),
     m_mappingParametersHasBeenSet(false)
 {

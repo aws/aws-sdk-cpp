@@ -30,6 +30,7 @@ namespace Model
 ApplicationSummary::ApplicationSummary() : 
     m_applicationNameHasBeenSet(false),
     m_applicationARNHasBeenSet(false),
+    m_applicationStatus(ApplicationStatus::NOT_SET),
     m_applicationStatusHasBeenSet(false)
 {
 }
@@ -37,6 +38,7 @@ ApplicationSummary::ApplicationSummary() :
 ApplicationSummary::ApplicationSummary(const JsonValue& jsonValue) : 
     m_applicationNameHasBeenSet(false),
     m_applicationARNHasBeenSet(false),
+    m_applicationStatus(ApplicationStatus::NOT_SET),
     m_applicationStatusHasBeenSet(false)
 {
   *this = jsonValue;

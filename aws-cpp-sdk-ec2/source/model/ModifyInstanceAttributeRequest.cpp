@@ -23,6 +23,7 @@ ModifyInstanceAttributeRequest::ModifyInstanceAttributeRequest() :
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
+    m_attribute(InstanceAttributeName::NOT_SET),
     m_attributeHasBeenSet(false),
     m_valueHasBeenSet(false),
     m_blockDeviceMappingsHasBeenSet(false),

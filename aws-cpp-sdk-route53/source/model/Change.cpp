@@ -30,12 +30,14 @@ namespace Model
 {
 
 Change::Change() : 
+    m_action(ChangeAction::NOT_SET),
     m_actionHasBeenSet(false),
     m_resourceRecordSetHasBeenSet(false)
 {
 }
 
 Change::Change(const XmlNode& xmlNode) : 
+    m_action(ChangeAction::NOT_SET),
     m_actionHasBeenSet(false),
     m_resourceRecordSetHasBeenSet(false)
 {

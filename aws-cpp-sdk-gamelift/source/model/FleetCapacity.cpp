@@ -29,6 +29,7 @@ namespace Model
 
 FleetCapacity::FleetCapacity() : 
     m_fleetIdHasBeenSet(false),
+    m_instanceType(EC2InstanceType::NOT_SET),
     m_instanceTypeHasBeenSet(false),
     m_instanceCountsHasBeenSet(false)
 {
@@ -36,6 +37,7 @@ FleetCapacity::FleetCapacity() :
 
 FleetCapacity::FleetCapacity(const JsonValue& jsonValue) : 
     m_fleetIdHasBeenSet(false),
+    m_instanceType(EC2InstanceType::NOT_SET),
     m_instanceTypeHasBeenSet(false),
     m_instanceCountsHasBeenSet(false)
 {

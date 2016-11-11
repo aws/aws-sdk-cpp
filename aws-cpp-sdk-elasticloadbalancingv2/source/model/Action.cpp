@@ -30,12 +30,14 @@ namespace Model
 {
 
 Action::Action() : 
+    m_type(ActionTypeEnum::NOT_SET),
     m_typeHasBeenSet(false),
     m_targetGroupArnHasBeenSet(false)
 {
 }
 
 Action::Action(const XmlNode& xmlNode) : 
+    m_type(ActionTypeEnum::NOT_SET),
     m_typeHasBeenSet(false),
     m_targetGroupArnHasBeenSet(false)
 {

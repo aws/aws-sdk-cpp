@@ -29,7 +29,9 @@ namespace Model
 
 InstanceGroupConfig::InstanceGroupConfig() : 
     m_nameHasBeenSet(false),
+    m_market(MarketType::NOT_SET),
     m_marketHasBeenSet(false),
+    m_instanceRole(InstanceRoleType::NOT_SET),
     m_instanceRoleHasBeenSet(false),
     m_bidPriceHasBeenSet(false),
     m_instanceTypeHasBeenSet(false),
@@ -42,7 +44,9 @@ InstanceGroupConfig::InstanceGroupConfig() :
 
 InstanceGroupConfig::InstanceGroupConfig(const JsonValue& jsonValue) : 
     m_nameHasBeenSet(false),
+    m_market(MarketType::NOT_SET),
     m_marketHasBeenSet(false),
+    m_instanceRole(InstanceRoleType::NOT_SET),
     m_instanceRoleHasBeenSet(false),
     m_bidPriceHasBeenSet(false),
     m_instanceTypeHasBeenSet(false),

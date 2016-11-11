@@ -28,6 +28,7 @@ GetMetricStatisticsRequest::GetMetricStatisticsRequest() :
     m_period(0),
     m_periodHasBeenSet(false),
     m_statisticsHasBeenSet(false),
+    m_unit(StandardUnit::NOT_SET),
     m_unitHasBeenSet(false)
 {
 }

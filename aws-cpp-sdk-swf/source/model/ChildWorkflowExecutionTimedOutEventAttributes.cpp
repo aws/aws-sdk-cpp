@@ -30,6 +30,7 @@ namespace Model
 ChildWorkflowExecutionTimedOutEventAttributes::ChildWorkflowExecutionTimedOutEventAttributes() : 
     m_workflowExecutionHasBeenSet(false),
     m_workflowTypeHasBeenSet(false),
+    m_timeoutType(WorkflowExecutionTimeoutType::NOT_SET),
     m_timeoutTypeHasBeenSet(false),
     m_initiatedEventId(0),
     m_initiatedEventIdHasBeenSet(false),
@@ -41,6 +42,7 @@ ChildWorkflowExecutionTimedOutEventAttributes::ChildWorkflowExecutionTimedOutEve
 ChildWorkflowExecutionTimedOutEventAttributes::ChildWorkflowExecutionTimedOutEventAttributes(const JsonValue& jsonValue) : 
     m_workflowExecutionHasBeenSet(false),
     m_workflowTypeHasBeenSet(false),
+    m_timeoutType(WorkflowExecutionTimeoutType::NOT_SET),
     m_timeoutTypeHasBeenSet(false),
     m_initiatedEventId(0),
     m_initiatedEventIdHasBeenSet(false),

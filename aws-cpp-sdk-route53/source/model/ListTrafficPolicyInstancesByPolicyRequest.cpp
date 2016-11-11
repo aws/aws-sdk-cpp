@@ -31,6 +31,7 @@ ListTrafficPolicyInstancesByPolicyRequest::ListTrafficPolicyInstancesByPolicyReq
     m_trafficPolicyVersionHasBeenSet(false),
     m_hostedZoneIdMarkerHasBeenSet(false),
     m_trafficPolicyInstanceNameMarkerHasBeenSet(false),
+    m_trafficPolicyInstanceTypeMarker(RRType::NOT_SET),
     m_trafficPolicyInstanceTypeMarkerHasBeenSet(false),
     m_maxItemsHasBeenSet(false)
 {

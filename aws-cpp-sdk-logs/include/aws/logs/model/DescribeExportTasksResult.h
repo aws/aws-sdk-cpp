@@ -41,25 +41,39 @@ namespace Model
     DescribeExportTasksResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     DescribeExportTasksResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    
+    /**
+     * <p>The export tasks.</p>
+     */
     inline const Aws::Vector<ExportTask>& GetExportTasks() const{ return m_exportTasks; }
 
-    
+    /**
+     * <p>The export tasks.</p>
+     */
     inline void SetExportTasks(const Aws::Vector<ExportTask>& value) { m_exportTasks = value; }
 
-    
+    /**
+     * <p>The export tasks.</p>
+     */
     inline void SetExportTasks(Aws::Vector<ExportTask>&& value) { m_exportTasks = value; }
 
-    
+    /**
+     * <p>The export tasks.</p>
+     */
     inline DescribeExportTasksResult& WithExportTasks(const Aws::Vector<ExportTask>& value) { SetExportTasks(value); return *this;}
 
-    
+    /**
+     * <p>The export tasks.</p>
+     */
     inline DescribeExportTasksResult& WithExportTasks(Aws::Vector<ExportTask>&& value) { SetExportTasks(value); return *this;}
 
-    
+    /**
+     * <p>The export tasks.</p>
+     */
     inline DescribeExportTasksResult& AddExportTasks(const ExportTask& value) { m_exportTasks.push_back(value); return *this; }
 
-    
+    /**
+     * <p>The export tasks.</p>
+     */
     inline DescribeExportTasksResult& AddExportTasks(ExportTask&& value) { m_exportTasks.push_back(value); return *this; }
 
     

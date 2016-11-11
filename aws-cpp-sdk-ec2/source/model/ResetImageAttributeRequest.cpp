@@ -23,6 +23,7 @@ ResetImageAttributeRequest::ResetImageAttributeRequest() :
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
     m_imageIdHasBeenSet(false),
+    m_attribute(ResetImageAttributeName::NOT_SET),
     m_attributeHasBeenSet(false)
 {
 }

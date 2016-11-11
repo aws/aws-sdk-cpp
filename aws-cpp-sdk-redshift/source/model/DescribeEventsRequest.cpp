@@ -21,6 +21,7 @@ using namespace Aws::Utils;
 
 DescribeEventsRequest::DescribeEventsRequest() : 
     m_sourceIdentifierHasBeenSet(false),
+    m_sourceType(SourceType::NOT_SET),
     m_sourceTypeHasBeenSet(false),
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),

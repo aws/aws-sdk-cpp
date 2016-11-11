@@ -25,14 +25,18 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 GetMLModelResult::GetMLModelResult() : 
+    m_status(EntityStatus::NOT_SET),
     m_sizeInBytes(0),
+    m_mLModelType(MLModelType::NOT_SET),
     m_scoreThreshold(0.0),
     m_computeTime(0)
 {
 }
 
 GetMLModelResult::GetMLModelResult(const AmazonWebServiceResult<JsonValue>& result) : 
+    m_status(EntityStatus::NOT_SET),
     m_sizeInBytes(0),
+    m_mLModelType(MLModelType::NOT_SET),
     m_scoreThreshold(0.0),
     m_computeTime(0)
 {

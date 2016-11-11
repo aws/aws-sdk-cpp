@@ -33,6 +33,7 @@ MultipartUpload::MultipartUpload() :
     m_uploadIdHasBeenSet(false),
     m_keyHasBeenSet(false),
     m_initiatedHasBeenSet(false),
+    m_storageClass(StorageClass::NOT_SET),
     m_storageClassHasBeenSet(false),
     m_ownerHasBeenSet(false),
     m_initiatorHasBeenSet(false)
@@ -43,6 +44,7 @@ MultipartUpload::MultipartUpload(const XmlNode& xmlNode) :
     m_uploadIdHasBeenSet(false),
     m_keyHasBeenSet(false),
     m_initiatedHasBeenSet(false),
+    m_storageClass(StorageClass::NOT_SET),
     m_storageClassHasBeenSet(false),
     m_ownerHasBeenSet(false),
     m_initiatorHasBeenSet(false)

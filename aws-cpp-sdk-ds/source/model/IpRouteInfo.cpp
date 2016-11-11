@@ -30,6 +30,7 @@ namespace Model
 IpRouteInfo::IpRouteInfo() : 
     m_directoryIdHasBeenSet(false),
     m_cidrIpHasBeenSet(false),
+    m_ipRouteStatusMsg(IpRouteStatusMsg::NOT_SET),
     m_ipRouteStatusMsgHasBeenSet(false),
     m_addedDateTimeHasBeenSet(false),
     m_ipRouteStatusReasonHasBeenSet(false),
@@ -40,6 +41,7 @@ IpRouteInfo::IpRouteInfo() :
 IpRouteInfo::IpRouteInfo(const JsonValue& jsonValue) : 
     m_directoryIdHasBeenSet(false),
     m_cidrIpHasBeenSet(false),
+    m_ipRouteStatusMsg(IpRouteStatusMsg::NOT_SET),
     m_ipRouteStatusMsgHasBeenSet(false),
     m_addedDateTimeHasBeenSet(false),
     m_ipRouteStatusReasonHasBeenSet(false),

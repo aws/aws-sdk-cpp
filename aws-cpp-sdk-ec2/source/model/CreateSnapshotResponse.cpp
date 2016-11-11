@@ -27,12 +27,14 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 CreateSnapshotResponse::CreateSnapshotResponse() : 
+    m_state(SnapshotState::NOT_SET),
     m_volumeSize(0),
     m_encrypted(false)
 {
 }
 
 CreateSnapshotResponse::CreateSnapshotResponse(const AmazonWebServiceResult<XmlDocument>& result) : 
+    m_state(SnapshotState::NOT_SET),
     m_volumeSize(0),
     m_encrypted(false)
 {

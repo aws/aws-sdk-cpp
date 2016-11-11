@@ -23,6 +23,7 @@ using namespace Aws::Utils;
 
 BatchGetItemRequest::BatchGetItemRequest() : 
     m_requestItemsHasBeenSet(false),
+    m_returnConsumedCapacity(ReturnConsumedCapacity::NOT_SET),
     m_returnConsumedCapacityHasBeenSet(false)
 {
 }

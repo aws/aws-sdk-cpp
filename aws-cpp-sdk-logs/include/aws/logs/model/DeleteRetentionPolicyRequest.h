@@ -35,44 +35,37 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * <p>The name of the log group that is associated with the retention policy to
-     * delete.</p>
+     * <p>The name of the log group.</p>
      */
     inline const Aws::String& GetLogGroupName() const{ return m_logGroupName; }
 
     /**
-     * <p>The name of the log group that is associated with the retention policy to
-     * delete.</p>
+     * <p>The name of the log group.</p>
      */
     inline void SetLogGroupName(const Aws::String& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
 
     /**
-     * <p>The name of the log group that is associated with the retention policy to
-     * delete.</p>
+     * <p>The name of the log group.</p>
      */
     inline void SetLogGroupName(Aws::String&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
 
     /**
-     * <p>The name of the log group that is associated with the retention policy to
-     * delete.</p>
+     * <p>The name of the log group.</p>
      */
     inline void SetLogGroupName(const char* value) { m_logGroupNameHasBeenSet = true; m_logGroupName.assign(value); }
 
     /**
-     * <p>The name of the log group that is associated with the retention policy to
-     * delete.</p>
+     * <p>The name of the log group.</p>
      */
     inline DeleteRetentionPolicyRequest& WithLogGroupName(const Aws::String& value) { SetLogGroupName(value); return *this;}
 
     /**
-     * <p>The name of the log group that is associated with the retention policy to
-     * delete.</p>
+     * <p>The name of the log group.</p>
      */
     inline DeleteRetentionPolicyRequest& WithLogGroupName(Aws::String&& value) { SetLogGroupName(value); return *this;}
 
     /**
-     * <p>The name of the log group that is associated with the retention policy to
-     * delete.</p>
+     * <p>The name of the log group.</p>
      */
     inline DeleteRetentionPolicyRequest& WithLogGroupName(const char* value) { SetLogGroupName(value); return *this;}
 

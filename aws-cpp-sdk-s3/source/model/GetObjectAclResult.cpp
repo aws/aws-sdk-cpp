@@ -25,11 +25,13 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetObjectAclResult::GetObjectAclResult()
+GetObjectAclResult::GetObjectAclResult() : 
+    m_requestCharged(RequestCharged::NOT_SET)
 {
 }
 
-GetObjectAclResult::GetObjectAclResult(const AmazonWebServiceResult<XmlDocument>& result)
+GetObjectAclResult::GetObjectAclResult(const AmazonWebServiceResult<XmlDocument>& result) : 
+    m_requestCharged(RequestCharged::NOT_SET)
 {
   *this = result;
 }

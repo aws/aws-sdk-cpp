@@ -24,11 +24,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteTagsResult::DeleteTagsResult()
+DeleteTagsResult::DeleteTagsResult() : 
+    m_resourceType(TaggableResourceType::NOT_SET)
 {
 }
 
-DeleteTagsResult::DeleteTagsResult(const AmazonWebServiceResult<JsonValue>& result)
+DeleteTagsResult::DeleteTagsResult(const AmazonWebServiceResult<JsonValue>& result) : 
+    m_resourceType(TaggableResourceType::NOT_SET)
 {
   *this = result;
 }

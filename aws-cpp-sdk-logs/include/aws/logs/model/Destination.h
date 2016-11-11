@@ -31,7 +31,7 @@ namespace Model
 {
 
   /**
-   * <p>A cross account destination that is the recipient of subscription log
+   * <p>Represents a cross-account destination that receives subscription log
    * events.</p>
    */
   class AWS_CLOUDWATCHLOGS_API Destination
@@ -43,114 +43,114 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p>Name of the destination.</p>
+     * <p>The name of the destination.</p>
      */
     inline const Aws::String& GetDestinationName() const{ return m_destinationName; }
 
     /**
-     * <p>Name of the destination.</p>
+     * <p>The name of the destination.</p>
      */
     inline void SetDestinationName(const Aws::String& value) { m_destinationNameHasBeenSet = true; m_destinationName = value; }
 
     /**
-     * <p>Name of the destination.</p>
+     * <p>The name of the destination.</p>
      */
     inline void SetDestinationName(Aws::String&& value) { m_destinationNameHasBeenSet = true; m_destinationName = value; }
 
     /**
-     * <p>Name of the destination.</p>
+     * <p>The name of the destination.</p>
      */
     inline void SetDestinationName(const char* value) { m_destinationNameHasBeenSet = true; m_destinationName.assign(value); }
 
     /**
-     * <p>Name of the destination.</p>
+     * <p>The name of the destination.</p>
      */
     inline Destination& WithDestinationName(const Aws::String& value) { SetDestinationName(value); return *this;}
 
     /**
-     * <p>Name of the destination.</p>
+     * <p>The name of the destination.</p>
      */
     inline Destination& WithDestinationName(Aws::String&& value) { SetDestinationName(value); return *this;}
 
     /**
-     * <p>Name of the destination.</p>
+     * <p>The name of the destination.</p>
      */
     inline Destination& WithDestinationName(const char* value) { SetDestinationName(value); return *this;}
 
     /**
-     * <p>ARN of the physical target where the log events will be delivered (eg. ARN of
-     * a Kinesis stream).</p>
+     * <p>The Amazon Resource Name (ARN) of the physical target where the log events
+     * will be delivered (for example, a Kinesis stream).</p>
      */
     inline const Aws::String& GetTargetArn() const{ return m_targetArn; }
 
     /**
-     * <p>ARN of the physical target where the log events will be delivered (eg. ARN of
-     * a Kinesis stream).</p>
+     * <p>The Amazon Resource Name (ARN) of the physical target where the log events
+     * will be delivered (for example, a Kinesis stream).</p>
      */
     inline void SetTargetArn(const Aws::String& value) { m_targetArnHasBeenSet = true; m_targetArn = value; }
 
     /**
-     * <p>ARN of the physical target where the log events will be delivered (eg. ARN of
-     * a Kinesis stream).</p>
+     * <p>The Amazon Resource Name (ARN) of the physical target where the log events
+     * will be delivered (for example, a Kinesis stream).</p>
      */
     inline void SetTargetArn(Aws::String&& value) { m_targetArnHasBeenSet = true; m_targetArn = value; }
 
     /**
-     * <p>ARN of the physical target where the log events will be delivered (eg. ARN of
-     * a Kinesis stream).</p>
+     * <p>The Amazon Resource Name (ARN) of the physical target where the log events
+     * will be delivered (for example, a Kinesis stream).</p>
      */
     inline void SetTargetArn(const char* value) { m_targetArnHasBeenSet = true; m_targetArn.assign(value); }
 
     /**
-     * <p>ARN of the physical target where the log events will be delivered (eg. ARN of
-     * a Kinesis stream).</p>
+     * <p>The Amazon Resource Name (ARN) of the physical target where the log events
+     * will be delivered (for example, a Kinesis stream).</p>
      */
     inline Destination& WithTargetArn(const Aws::String& value) { SetTargetArn(value); return *this;}
 
     /**
-     * <p>ARN of the physical target where the log events will be delivered (eg. ARN of
-     * a Kinesis stream).</p>
+     * <p>The Amazon Resource Name (ARN) of the physical target where the log events
+     * will be delivered (for example, a Kinesis stream).</p>
      */
     inline Destination& WithTargetArn(Aws::String&& value) { SetTargetArn(value); return *this;}
 
     /**
-     * <p>ARN of the physical target where the log events will be delivered (eg. ARN of
-     * a Kinesis stream).</p>
+     * <p>The Amazon Resource Name (ARN) of the physical target where the log events
+     * will be delivered (for example, a Kinesis stream).</p>
      */
     inline Destination& WithTargetArn(const char* value) { SetTargetArn(value); return *this;}
 
     /**
-     * <p>A role for impersonation for delivering log events to the target.</p>
+     * <p>A role for impersonation, used when delivering log events to the target.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
-     * <p>A role for impersonation for delivering log events to the target.</p>
+     * <p>A role for impersonation, used when delivering log events to the target.</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
-     * <p>A role for impersonation for delivering log events to the target.</p>
+     * <p>A role for impersonation, used when delivering log events to the target.</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
-     * <p>A role for impersonation for delivering log events to the target.</p>
+     * <p>A role for impersonation, used when delivering log events to the target.</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
-     * <p>A role for impersonation for delivering log events to the target.</p>
+     * <p>A role for impersonation, used when delivering log events to the target.</p>
      */
     inline Destination& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
-     * <p>A role for impersonation for delivering log events to the target.</p>
+     * <p>A role for impersonation, used when delivering log events to the target.</p>
      */
     inline Destination& WithRoleArn(Aws::String&& value) { SetRoleArn(value); return *this;}
 
     /**
-     * <p>A role for impersonation for delivering log events to the target.</p>
+     * <p>A role for impersonation, used when delivering log events to the target.</p>
      */
     inline Destination& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
@@ -197,55 +197,52 @@ namespace Model
     inline Destination& WithAccessPolicy(const char* value) { SetAccessPolicy(value); return *this;}
 
     /**
-     * <p>ARN of this destination.</p>
+     * <p>The ARN of this destination.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p>ARN of this destination.</p>
+     * <p>The ARN of this destination.</p>
      */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
-     * <p>ARN of this destination.</p>
+     * <p>The ARN of this destination.</p>
      */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
-     * <p>ARN of this destination.</p>
+     * <p>The ARN of this destination.</p>
      */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
     /**
-     * <p>ARN of this destination.</p>
+     * <p>The ARN of this destination.</p>
      */
     inline Destination& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p>ARN of this destination.</p>
+     * <p>The ARN of this destination.</p>
      */
     inline Destination& WithArn(Aws::String&& value) { SetArn(value); return *this;}
 
     /**
-     * <p>ARN of this destination.</p>
+     * <p>The ARN of this destination.</p>
      */
     inline Destination& WithArn(const char* value) { SetArn(value); return *this;}
 
     /**
-     * <p>A point in time expressed as the number of milliseconds since Jan 1, 1970
-     * 00:00:00 UTC specifying when this destination was created.</p>
+     * <p>The creation time of the destination.</p>
      */
     inline long long GetCreationTime() const{ return m_creationTime; }
 
     /**
-     * <p>A point in time expressed as the number of milliseconds since Jan 1, 1970
-     * 00:00:00 UTC specifying when this destination was created.</p>
+     * <p>The creation time of the destination.</p>
      */
     inline void SetCreationTime(long long value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
-     * <p>A point in time expressed as the number of milliseconds since Jan 1, 1970
-     * 00:00:00 UTC specifying when this destination was created.</p>
+     * <p>The creation time of the destination.</p>
      */
     inline Destination& WithCreationTime(long long value) { SetCreationTime(value); return *this;}
 

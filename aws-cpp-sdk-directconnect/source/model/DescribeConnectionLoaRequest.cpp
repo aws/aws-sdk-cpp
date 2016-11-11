@@ -24,6 +24,7 @@ using namespace Aws::Utils;
 DescribeConnectionLoaRequest::DescribeConnectionLoaRequest() : 
     m_connectionIdHasBeenSet(false),
     m_providerNameHasBeenSet(false),
+    m_loaContentType(LoaContentType::NOT_SET),
     m_loaContentTypeHasBeenSet(false)
 {
 }

@@ -23,6 +23,7 @@ using namespace Aws::Utils;
 
 ModifyDocumentPermissionRequest::ModifyDocumentPermissionRequest() : 
     m_nameHasBeenSet(false),
+    m_permissionType(DocumentPermissionType::NOT_SET),
     m_permissionTypeHasBeenSet(false),
     m_accountIdsToAddHasBeenSet(false),
     m_accountIdsToRemoveHasBeenSet(false)

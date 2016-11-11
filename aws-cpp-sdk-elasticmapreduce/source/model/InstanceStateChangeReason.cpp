@@ -28,12 +28,14 @@ namespace Model
 {
 
 InstanceStateChangeReason::InstanceStateChangeReason() : 
+    m_code(InstanceStateChangeReasonCode::NOT_SET),
     m_codeHasBeenSet(false),
     m_messageHasBeenSet(false)
 {
 }
 
 InstanceStateChangeReason::InstanceStateChangeReason(const JsonValue& jsonValue) : 
+    m_code(InstanceStateChangeReasonCode::NOT_SET),
     m_codeHasBeenSet(false),
     m_messageHasBeenSet(false)
 {

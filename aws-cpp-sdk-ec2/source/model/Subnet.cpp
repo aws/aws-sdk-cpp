@@ -31,6 +31,7 @@ namespace Model
 
 Subnet::Subnet() : 
     m_subnetIdHasBeenSet(false),
+    m_state(SubnetState::NOT_SET),
     m_stateHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
     m_cidrBlockHasBeenSet(false),
@@ -47,6 +48,7 @@ Subnet::Subnet() :
 
 Subnet::Subnet(const XmlNode& xmlNode) : 
     m_subnetIdHasBeenSet(false),
+    m_state(SubnetState::NOT_SET),
     m_stateHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
     m_cidrBlockHasBeenSet(false),

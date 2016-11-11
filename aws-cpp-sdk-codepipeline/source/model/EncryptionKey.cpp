@@ -29,12 +29,14 @@ namespace Model
 
 EncryptionKey::EncryptionKey() : 
     m_idHasBeenSet(false),
+    m_type(EncryptionKeyType::NOT_SET),
     m_typeHasBeenSet(false)
 {
 }
 
 EncryptionKey::EncryptionKey(const JsonValue& jsonValue) : 
     m_idHasBeenSet(false),
+    m_type(EncryptionKeyType::NOT_SET),
     m_typeHasBeenSet(false)
 {
   *this = jsonValue;

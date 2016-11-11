@@ -45,6 +45,7 @@ CloneStackRequest::CloneStackRequest() :
     m_clonePermissions(false),
     m_clonePermissionsHasBeenSet(false),
     m_cloneAppIdsHasBeenSet(false),
+    m_defaultRootDeviceType(RootDeviceType::NOT_SET),
     m_defaultRootDeviceTypeHasBeenSet(false),
     m_agentVersionHasBeenSet(false)
 {

@@ -31,12 +31,14 @@ namespace Model
 
 LaunchPermission::LaunchPermission() : 
     m_userIdHasBeenSet(false),
+    m_group(PermissionGroup::NOT_SET),
     m_groupHasBeenSet(false)
 {
 }
 
 LaunchPermission::LaunchPermission(const XmlNode& xmlNode) : 
     m_userIdHasBeenSet(false),
+    m_group(PermissionGroup::NOT_SET),
     m_groupHasBeenSet(false)
 {
   *this = xmlNode;

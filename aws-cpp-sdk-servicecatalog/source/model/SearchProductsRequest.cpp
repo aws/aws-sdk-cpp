@@ -26,7 +26,9 @@ SearchProductsRequest::SearchProductsRequest() :
     m_filtersHasBeenSet(false),
     m_pageSize(0),
     m_pageSizeHasBeenSet(false),
+    m_sortBy(ProductViewSortBy::NOT_SET),
     m_sortByHasBeenSet(false),
+    m_sortOrder(SortOrder::NOT_SET),
     m_sortOrderHasBeenSet(false),
     m_pageTokenHasBeenSet(false)
 {

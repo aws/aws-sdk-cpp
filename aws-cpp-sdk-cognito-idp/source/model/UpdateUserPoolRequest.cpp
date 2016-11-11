@@ -30,6 +30,7 @@ UpdateUserPoolRequest::UpdateUserPoolRequest() :
     m_emailVerificationMessageHasBeenSet(false),
     m_emailVerificationSubjectHasBeenSet(false),
     m_smsAuthenticationMessageHasBeenSet(false),
+    m_mfaConfiguration(UserPoolMfaType::NOT_SET),
     m_mfaConfigurationHasBeenSet(false),
     m_deviceConfigurationHasBeenSet(false),
     m_emailConfigurationHasBeenSet(false),

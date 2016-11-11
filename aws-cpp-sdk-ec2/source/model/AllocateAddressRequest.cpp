@@ -22,6 +22,7 @@ using namespace Aws::Utils;
 AllocateAddressRequest::AllocateAddressRequest() : 
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
+    m_domain(DomainType::NOT_SET),
     m_domainHasBeenSet(false)
 {
 }

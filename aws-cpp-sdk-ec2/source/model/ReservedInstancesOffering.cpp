@@ -31,6 +31,7 @@ namespace Model
 
 ReservedInstancesOffering::ReservedInstancesOffering() : 
     m_reservedInstancesOfferingIdHasBeenSet(false),
+    m_instanceType(InstanceType::NOT_SET),
     m_instanceTypeHasBeenSet(false),
     m_availabilityZoneHasBeenSet(false),
     m_duration(0),
@@ -39,9 +40,13 @@ ReservedInstancesOffering::ReservedInstancesOffering() :
     m_usagePriceHasBeenSet(false),
     m_fixedPrice(0.0),
     m_fixedPriceHasBeenSet(false),
+    m_productDescription(RIProductDescription::NOT_SET),
     m_productDescriptionHasBeenSet(false),
+    m_instanceTenancy(Tenancy::NOT_SET),
     m_instanceTenancyHasBeenSet(false),
+    m_currencyCode(CurrencyCodeValues::NOT_SET),
     m_currencyCodeHasBeenSet(false),
+    m_offeringType(OfferingTypeValues::NOT_SET),
     m_offeringTypeHasBeenSet(false),
     m_recurringChargesHasBeenSet(false),
     m_marketplace(false),
@@ -52,6 +57,7 @@ ReservedInstancesOffering::ReservedInstancesOffering() :
 
 ReservedInstancesOffering::ReservedInstancesOffering(const XmlNode& xmlNode) : 
     m_reservedInstancesOfferingIdHasBeenSet(false),
+    m_instanceType(InstanceType::NOT_SET),
     m_instanceTypeHasBeenSet(false),
     m_availabilityZoneHasBeenSet(false),
     m_duration(0),
@@ -60,9 +66,13 @@ ReservedInstancesOffering::ReservedInstancesOffering(const XmlNode& xmlNode) :
     m_usagePriceHasBeenSet(false),
     m_fixedPrice(0.0),
     m_fixedPriceHasBeenSet(false),
+    m_productDescription(RIProductDescription::NOT_SET),
     m_productDescriptionHasBeenSet(false),
+    m_instanceTenancy(Tenancy::NOT_SET),
     m_instanceTenancyHasBeenSet(false),
+    m_currencyCode(CurrencyCodeValues::NOT_SET),
     m_currencyCodeHasBeenSet(false),
+    m_offeringType(OfferingTypeValues::NOT_SET),
     m_offeringTypeHasBeenSet(false),
     m_recurringChargesHasBeenSet(false),
     m_marketplace(false),

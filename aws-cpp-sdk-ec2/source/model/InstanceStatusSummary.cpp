@@ -30,12 +30,14 @@ namespace Model
 {
 
 InstanceStatusSummary::InstanceStatusSummary() : 
+    m_status(SummaryStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_detailsHasBeenSet(false)
 {
 }
 
 InstanceStatusSummary::InstanceStatusSummary(const XmlNode& xmlNode) : 
+    m_status(SummaryStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_detailsHasBeenSet(false)
 {

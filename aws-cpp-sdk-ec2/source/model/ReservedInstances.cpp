@@ -31,6 +31,7 @@ namespace Model
 
 ReservedInstances::ReservedInstances() : 
     m_reservedInstancesIdHasBeenSet(false),
+    m_instanceType(InstanceType::NOT_SET),
     m_instanceTypeHasBeenSet(false),
     m_availabilityZoneHasBeenSet(false),
     m_startHasBeenSet(false),
@@ -43,11 +44,16 @@ ReservedInstances::ReservedInstances() :
     m_fixedPriceHasBeenSet(false),
     m_instanceCount(0),
     m_instanceCountHasBeenSet(false),
+    m_productDescription(RIProductDescription::NOT_SET),
     m_productDescriptionHasBeenSet(false),
+    m_state(ReservedInstanceState::NOT_SET),
     m_stateHasBeenSet(false),
     m_tagsHasBeenSet(false),
+    m_instanceTenancy(Tenancy::NOT_SET),
     m_instanceTenancyHasBeenSet(false),
+    m_currencyCode(CurrencyCodeValues::NOT_SET),
     m_currencyCodeHasBeenSet(false),
+    m_offeringType(OfferingTypeValues::NOT_SET),
     m_offeringTypeHasBeenSet(false),
     m_recurringChargesHasBeenSet(false)
 {
@@ -55,6 +61,7 @@ ReservedInstances::ReservedInstances() :
 
 ReservedInstances::ReservedInstances(const XmlNode& xmlNode) : 
     m_reservedInstancesIdHasBeenSet(false),
+    m_instanceType(InstanceType::NOT_SET),
     m_instanceTypeHasBeenSet(false),
     m_availabilityZoneHasBeenSet(false),
     m_startHasBeenSet(false),
@@ -67,11 +74,16 @@ ReservedInstances::ReservedInstances(const XmlNode& xmlNode) :
     m_fixedPriceHasBeenSet(false),
     m_instanceCount(0),
     m_instanceCountHasBeenSet(false),
+    m_productDescription(RIProductDescription::NOT_SET),
     m_productDescriptionHasBeenSet(false),
+    m_state(ReservedInstanceState::NOT_SET),
     m_stateHasBeenSet(false),
     m_tagsHasBeenSet(false),
+    m_instanceTenancy(Tenancy::NOT_SET),
     m_instanceTenancyHasBeenSet(false),
+    m_currencyCode(CurrencyCodeValues::NOT_SET),
     m_currencyCodeHasBeenSet(false),
+    m_offeringType(OfferingTypeValues::NOT_SET),
     m_offeringTypeHasBeenSet(false),
     m_recurringChargesHasBeenSet(false)
 {

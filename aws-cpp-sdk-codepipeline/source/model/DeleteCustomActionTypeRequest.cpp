@@ -22,6 +22,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 DeleteCustomActionTypeRequest::DeleteCustomActionTypeRequest() : 
+    m_category(ActionCategory::NOT_SET),
     m_categoryHasBeenSet(false),
     m_providerHasBeenSet(false),
     m_versionHasBeenSet(false)

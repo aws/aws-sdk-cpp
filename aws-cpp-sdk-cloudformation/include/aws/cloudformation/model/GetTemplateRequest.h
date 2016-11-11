@@ -147,47 +147,52 @@ namespace Model
     inline GetTemplateRequest& WithChangeSetName(const char* value) { SetChangeSetName(value); return *this;}
 
     /**
-     * <p>The stage of the template that is returned. Valid values are
-     * <code>Original</code> and <code>Processed</code>:</p> <ul> <li> <p>
-     * <code>Original</code> - Use to return the specified pre-transform template.</p>
-     * </li> <li> <p> <code>Processed</code> - Use to return the template after all
-     * transforms have been processed.</p> </li> </ul>
+     * <p>The stage of the template that is returned.</p> <p>Valid values are
+     * <code>Original</code> and <code>Processed</code>. The default value is
+     * <code>Original</code>.</p> <ul> <li> <p> <code>Original</code> - Use this value
+     * to return the user-submitted template.</p> </li> <li> <p> <code>Processed</code>
+     * - Use this value to return the template after all transforms have been
+     * processed.</p> </li> </ul>
      */
     inline const TemplateStage& GetTemplateStage() const{ return m_templateStage; }
 
     /**
-     * <p>The stage of the template that is returned. Valid values are
-     * <code>Original</code> and <code>Processed</code>:</p> <ul> <li> <p>
-     * <code>Original</code> - Use to return the specified pre-transform template.</p>
-     * </li> <li> <p> <code>Processed</code> - Use to return the template after all
-     * transforms have been processed.</p> </li> </ul>
+     * <p>The stage of the template that is returned.</p> <p>Valid values are
+     * <code>Original</code> and <code>Processed</code>. The default value is
+     * <code>Original</code>.</p> <ul> <li> <p> <code>Original</code> - Use this value
+     * to return the user-submitted template.</p> </li> <li> <p> <code>Processed</code>
+     * - Use this value to return the template after all transforms have been
+     * processed.</p> </li> </ul>
      */
     inline void SetTemplateStage(const TemplateStage& value) { m_templateStageHasBeenSet = true; m_templateStage = value; }
 
     /**
-     * <p>The stage of the template that is returned. Valid values are
-     * <code>Original</code> and <code>Processed</code>:</p> <ul> <li> <p>
-     * <code>Original</code> - Use to return the specified pre-transform template.</p>
-     * </li> <li> <p> <code>Processed</code> - Use to return the template after all
-     * transforms have been processed.</p> </li> </ul>
+     * <p>The stage of the template that is returned.</p> <p>Valid values are
+     * <code>Original</code> and <code>Processed</code>. The default value is
+     * <code>Original</code>.</p> <ul> <li> <p> <code>Original</code> - Use this value
+     * to return the user-submitted template.</p> </li> <li> <p> <code>Processed</code>
+     * - Use this value to return the template after all transforms have been
+     * processed.</p> </li> </ul>
      */
     inline void SetTemplateStage(TemplateStage&& value) { m_templateStageHasBeenSet = true; m_templateStage = value; }
 
     /**
-     * <p>The stage of the template that is returned. Valid values are
-     * <code>Original</code> and <code>Processed</code>:</p> <ul> <li> <p>
-     * <code>Original</code> - Use to return the specified pre-transform template.</p>
-     * </li> <li> <p> <code>Processed</code> - Use to return the template after all
-     * transforms have been processed.</p> </li> </ul>
+     * <p>The stage of the template that is returned.</p> <p>Valid values are
+     * <code>Original</code> and <code>Processed</code>. The default value is
+     * <code>Original</code>.</p> <ul> <li> <p> <code>Original</code> - Use this value
+     * to return the user-submitted template.</p> </li> <li> <p> <code>Processed</code>
+     * - Use this value to return the template after all transforms have been
+     * processed.</p> </li> </ul>
      */
     inline GetTemplateRequest& WithTemplateStage(const TemplateStage& value) { SetTemplateStage(value); return *this;}
 
     /**
-     * <p>The stage of the template that is returned. Valid values are
-     * <code>Original</code> and <code>Processed</code>:</p> <ul> <li> <p>
-     * <code>Original</code> - Use to return the specified pre-transform template.</p>
-     * </li> <li> <p> <code>Processed</code> - Use to return the template after all
-     * transforms have been processed.</p> </li> </ul>
+     * <p>The stage of the template that is returned.</p> <p>Valid values are
+     * <code>Original</code> and <code>Processed</code>. The default value is
+     * <code>Original</code>.</p> <ul> <li> <p> <code>Original</code> - Use this value
+     * to return the user-submitted template.</p> </li> <li> <p> <code>Processed</code>
+     * - Use this value to return the template after all transforms have been
+     * processed.</p> </li> </ul>
      */
     inline GetTemplateRequest& WithTemplateStage(TemplateStage&& value) { SetTemplateStage(value); return *this;}
 

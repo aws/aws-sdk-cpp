@@ -28,11 +28,13 @@ namespace Model
 {
 
 WafAction::WafAction() : 
+    m_type(WafActionType::NOT_SET),
     m_typeHasBeenSet(false)
 {
 }
 
 WafAction::WafAction(const JsonValue& jsonValue) : 
+    m_type(WafActionType::NOT_SET),
     m_typeHasBeenSet(false)
 {
   *this = jsonValue;

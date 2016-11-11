@@ -30,11 +30,13 @@ namespace Model
 {
 
 RequestPaymentConfiguration::RequestPaymentConfiguration() : 
+    m_payer(Payer::NOT_SET),
     m_payerHasBeenSet(false)
 {
 }
 
 RequestPaymentConfiguration::RequestPaymentConfiguration(const XmlNode& xmlNode) : 
+    m_payer(Payer::NOT_SET),
     m_payerHasBeenSet(false)
 {
   *this = xmlNode;

@@ -29,6 +29,7 @@ namespace Model
 
 AssociationStatus::AssociationStatus() : 
     m_dateHasBeenSet(false),
+    m_name(AssociationStatusName::NOT_SET),
     m_nameHasBeenSet(false),
     m_messageHasBeenSet(false),
     m_additionalInfoHasBeenSet(false)
@@ -37,6 +38,7 @@ AssociationStatus::AssociationStatus() :
 
 AssociationStatus::AssociationStatus(const JsonValue& jsonValue) : 
     m_dateHasBeenSet(false),
+    m_name(AssociationStatusName::NOT_SET),
     m_nameHasBeenSet(false),
     m_messageHasBeenSet(false),
     m_additionalInfoHasBeenSet(false)

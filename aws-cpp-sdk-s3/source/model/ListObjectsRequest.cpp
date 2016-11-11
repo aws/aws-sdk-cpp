@@ -28,11 +28,13 @@ using namespace Aws::Http;
 ListObjectsRequest::ListObjectsRequest() : 
     m_bucketHasBeenSet(false),
     m_delimiterHasBeenSet(false),
+    m_encodingType(EncodingType::NOT_SET),
     m_encodingTypeHasBeenSet(false),
     m_markerHasBeenSet(false),
     m_maxKeys(0),
     m_maxKeysHasBeenSet(false),
     m_prefixHasBeenSet(false),
+    m_requestPayer(RequestPayer::NOT_SET),
     m_requestPayerHasBeenSet(false)
 {
 }

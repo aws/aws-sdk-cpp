@@ -38,15 +38,20 @@ CertificateDetail::CertificateDetail() :
     m_createdAtHasBeenSet(false),
     m_issuedAtHasBeenSet(false),
     m_importedAtHasBeenSet(false),
+    m_status(CertificateStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_revokedAtHasBeenSet(false),
+    m_revocationReason(RevocationReason::NOT_SET),
     m_revocationReasonHasBeenSet(false),
     m_notBeforeHasBeenSet(false),
     m_notAfterHasBeenSet(false),
+    m_keyAlgorithm(KeyAlgorithm::NOT_SET),
     m_keyAlgorithmHasBeenSet(false),
     m_signatureAlgorithmHasBeenSet(false),
     m_inUseByHasBeenSet(false),
+    m_failureReason(FailureReason::NOT_SET),
     m_failureReasonHasBeenSet(false),
+    m_type(CertificateType::NOT_SET),
     m_typeHasBeenSet(false)
 {
 }
@@ -62,15 +67,20 @@ CertificateDetail::CertificateDetail(const JsonValue& jsonValue) :
     m_createdAtHasBeenSet(false),
     m_issuedAtHasBeenSet(false),
     m_importedAtHasBeenSet(false),
+    m_status(CertificateStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_revokedAtHasBeenSet(false),
+    m_revocationReason(RevocationReason::NOT_SET),
     m_revocationReasonHasBeenSet(false),
     m_notBeforeHasBeenSet(false),
     m_notAfterHasBeenSet(false),
+    m_keyAlgorithm(KeyAlgorithm::NOT_SET),
     m_keyAlgorithmHasBeenSet(false),
     m_signatureAlgorithmHasBeenSet(false),
     m_inUseByHasBeenSet(false),
+    m_failureReason(FailureReason::NOT_SET),
     m_failureReasonHasBeenSet(false),
+    m_type(CertificateType::NOT_SET),
     m_typeHasBeenSet(false)
 {
   *this = jsonValue;

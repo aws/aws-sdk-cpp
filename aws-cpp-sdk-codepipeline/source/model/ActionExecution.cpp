@@ -28,6 +28,7 @@ namespace Model
 {
 
 ActionExecution::ActionExecution() : 
+    m_status(ActionExecutionStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_summaryHasBeenSet(false),
     m_lastStatusChangeHasBeenSet(false),
@@ -42,6 +43,7 @@ ActionExecution::ActionExecution() :
 }
 
 ActionExecution::ActionExecution(const JsonValue& jsonValue) : 
+    m_status(ActionExecutionStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_summaryHasBeenSet(false),
     m_lastStatusChangeHasBeenSet(false),

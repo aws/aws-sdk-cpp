@@ -31,12 +31,14 @@ namespace Model
 
 SNSAction::SNSAction() : 
     m_topicArnHasBeenSet(false),
+    m_encoding(SNSActionEncoding::NOT_SET),
     m_encodingHasBeenSet(false)
 {
 }
 
 SNSAction::SNSAction(const XmlNode& xmlNode) : 
     m_topicArnHasBeenSet(false),
+    m_encoding(SNSActionEncoding::NOT_SET),
     m_encodingHasBeenSet(false)
 {
   *this = xmlNode;

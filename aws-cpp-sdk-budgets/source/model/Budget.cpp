@@ -32,9 +32,11 @@ Budget::Budget() :
     m_budgetLimitHasBeenSet(false),
     m_costFiltersHasBeenSet(false),
     m_costTypesHasBeenSet(false),
+    m_timeUnit(TimeUnit::NOT_SET),
     m_timeUnitHasBeenSet(false),
     m_timePeriodHasBeenSet(false),
     m_calculatedSpendHasBeenSet(false),
+    m_budgetType(BudgetType::NOT_SET),
     m_budgetTypeHasBeenSet(false)
 {
 }
@@ -44,9 +46,11 @@ Budget::Budget(const JsonValue& jsonValue) :
     m_budgetLimitHasBeenSet(false),
     m_costFiltersHasBeenSet(false),
     m_costTypesHasBeenSet(false),
+    m_timeUnit(TimeUnit::NOT_SET),
     m_timeUnitHasBeenSet(false),
     m_timePeriodHasBeenSet(false),
     m_calculatedSpendHasBeenSet(false),
+    m_budgetType(BudgetType::NOT_SET),
     m_budgetTypeHasBeenSet(false)
 {
   *this = jsonValue;

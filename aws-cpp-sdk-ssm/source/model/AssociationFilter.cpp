@@ -28,12 +28,14 @@ namespace Model
 {
 
 AssociationFilter::AssociationFilter() : 
+    m_key(AssociationFilterKey::NOT_SET),
     m_keyHasBeenSet(false),
     m_valueHasBeenSet(false)
 {
 }
 
 AssociationFilter::AssociationFilter(const JsonValue& jsonValue) : 
+    m_key(AssociationFilterKey::NOT_SET),
     m_keyHasBeenSet(false),
     m_valueHasBeenSet(false)
 {

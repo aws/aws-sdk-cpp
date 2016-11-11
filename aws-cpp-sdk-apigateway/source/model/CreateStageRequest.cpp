@@ -28,6 +28,7 @@ CreateStageRequest::CreateStageRequest() :
     m_descriptionHasBeenSet(false),
     m_cacheClusterEnabled(false),
     m_cacheClusterEnabledHasBeenSet(false),
+    m_cacheClusterSize(CacheClusterSize::NOT_SET),
     m_cacheClusterSizeHasBeenSet(false),
     m_variablesHasBeenSet(false)
 {

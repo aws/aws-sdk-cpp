@@ -27,6 +27,7 @@ DeleteObjectsRequest::DeleteObjectsRequest() :
     m_bucketHasBeenSet(false),
     m_deleteHasBeenSet(false),
     m_mFAHasBeenSet(false),
+    m_requestPayer(RequestPayer::NOT_SET),
     m_requestPayerHasBeenSet(false)
 {
 }

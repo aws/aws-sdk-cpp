@@ -31,6 +31,7 @@ namespace Model
 
 AvailabilityZone::AvailabilityZone() : 
     m_zoneNameHasBeenSet(false),
+    m_state(AvailabilityZoneState::NOT_SET),
     m_stateHasBeenSet(false),
     m_regionNameHasBeenSet(false),
     m_messagesHasBeenSet(false)
@@ -39,6 +40,7 @@ AvailabilityZone::AvailabilityZone() :
 
 AvailabilityZone::AvailabilityZone(const XmlNode& xmlNode) : 
     m_zoneNameHasBeenSet(false),
+    m_state(AvailabilityZoneState::NOT_SET),
     m_stateHasBeenSet(false),
     m_regionNameHasBeenSet(false),
     m_messagesHasBeenSet(false)

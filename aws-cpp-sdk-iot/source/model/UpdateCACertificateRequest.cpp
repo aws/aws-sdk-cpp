@@ -26,7 +26,9 @@ using namespace Aws::Http;
 
 UpdateCACertificateRequest::UpdateCACertificateRequest() : 
     m_certificateIdHasBeenSet(false),
+    m_newStatus(CACertificateStatus::NOT_SET),
     m_newStatusHasBeenSet(false),
+    m_newAutoRegistrationStatus(AutoRegistrationStatus::NOT_SET),
     m_newAutoRegistrationStatusHasBeenSet(false)
 {
 }

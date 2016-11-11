@@ -26,6 +26,7 @@ DescribeEventsRequest::DescribeEventsRequest() :
     m_environmentIdHasBeenSet(false),
     m_environmentNameHasBeenSet(false),
     m_requestIdHasBeenSet(false),
+    m_severity(EventSeverity::NOT_SET),
     m_severityHasBeenSet(false),
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),

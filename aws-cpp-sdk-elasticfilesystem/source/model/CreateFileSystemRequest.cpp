@@ -23,6 +23,7 @@ using namespace Aws::Utils;
 
 CreateFileSystemRequest::CreateFileSystemRequest() : 
     m_creationTokenHasBeenSet(false),
+    m_performanceMode(PerformanceMode::NOT_SET),
     m_performanceModeHasBeenSet(false)
 {
 }

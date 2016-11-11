@@ -28,12 +28,14 @@ namespace Model
 {
 
 WebACLUpdate::WebACLUpdate() : 
+    m_action(ChangeAction::NOT_SET),
     m_actionHasBeenSet(false),
     m_activatedRuleHasBeenSet(false)
 {
 }
 
 WebACLUpdate::WebACLUpdate(const JsonValue& jsonValue) : 
+    m_action(ChangeAction::NOT_SET),
     m_actionHasBeenSet(false),
     m_activatedRuleHasBeenSet(false)
 {

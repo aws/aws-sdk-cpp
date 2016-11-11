@@ -22,6 +22,7 @@ using namespace Aws::Utils;
 CreateVpnGatewayRequest::CreateVpnGatewayRequest() : 
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
+    m_type(GatewayType::NOT_SET),
     m_typeHasBeenSet(false),
     m_availabilityZoneHasBeenSet(false)
 {

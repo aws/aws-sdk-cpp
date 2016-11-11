@@ -34,6 +34,7 @@ AnalysisOptions::AnalysisOptions() :
     m_stopwordsHasBeenSet(false),
     m_stemmingDictionaryHasBeenSet(false),
     m_japaneseTokenizationDictionaryHasBeenSet(false),
+    m_algorithmicStemming(AlgorithmicStemming::NOT_SET),
     m_algorithmicStemmingHasBeenSet(false)
 {
 }
@@ -43,6 +44,7 @@ AnalysisOptions::AnalysisOptions(const XmlNode& xmlNode) :
     m_stopwordsHasBeenSet(false),
     m_stemmingDictionaryHasBeenSet(false),
     m_japaneseTokenizationDictionaryHasBeenSet(false),
+    m_algorithmicStemming(AlgorithmicStemming::NOT_SET),
     m_algorithmicStemmingHasBeenSet(false)
 {
   *this = xmlNode;

@@ -102,58 +102,72 @@ namespace Model
     inline GetTemplateResult& WithTemplateBody(const char* value) { SetTemplateBody(value); return *this;}
 
     /**
-     * <p>The available template type. For stacks, both the <code>Original</code> and
-     * <code>Processed</code> template types are always available. For change sets, the
-     * <code>Original</code> template is always available. After the transforms are
-     * processed, the <code>Processed</code> template becomes available.</p>
+     * <p>The template type.</p> <ul> <li> <p>For stacks, you can use either the
+     * <code>Original</code> or the <code>Processed</code> template type.</p> </li>
+     * <li> <p>For change sets, you can use only the <code>Original</code> template
+     * type. After the transforms are processed, you can use the <code>Processed</code>
+     * template type.</p> </li> </ul> <note> <p>If you create a change set for a new
+     * stack, you must select the template type.</p> </note>
      */
     inline const Aws::Vector<TemplateStage>& GetStagesAvailable() const{ return m_stagesAvailable; }
 
     /**
-     * <p>The available template type. For stacks, both the <code>Original</code> and
-     * <code>Processed</code> template types are always available. For change sets, the
-     * <code>Original</code> template is always available. After the transforms are
-     * processed, the <code>Processed</code> template becomes available.</p>
+     * <p>The template type.</p> <ul> <li> <p>For stacks, you can use either the
+     * <code>Original</code> or the <code>Processed</code> template type.</p> </li>
+     * <li> <p>For change sets, you can use only the <code>Original</code> template
+     * type. After the transforms are processed, you can use the <code>Processed</code>
+     * template type.</p> </li> </ul> <note> <p>If you create a change set for a new
+     * stack, you must select the template type.</p> </note>
      */
     inline void SetStagesAvailable(const Aws::Vector<TemplateStage>& value) { m_stagesAvailable = value; }
 
     /**
-     * <p>The available template type. For stacks, both the <code>Original</code> and
-     * <code>Processed</code> template types are always available. For change sets, the
-     * <code>Original</code> template is always available. After the transforms are
-     * processed, the <code>Processed</code> template becomes available.</p>
+     * <p>The template type.</p> <ul> <li> <p>For stacks, you can use either the
+     * <code>Original</code> or the <code>Processed</code> template type.</p> </li>
+     * <li> <p>For change sets, you can use only the <code>Original</code> template
+     * type. After the transforms are processed, you can use the <code>Processed</code>
+     * template type.</p> </li> </ul> <note> <p>If you create a change set for a new
+     * stack, you must select the template type.</p> </note>
      */
     inline void SetStagesAvailable(Aws::Vector<TemplateStage>&& value) { m_stagesAvailable = value; }
 
     /**
-     * <p>The available template type. For stacks, both the <code>Original</code> and
-     * <code>Processed</code> template types are always available. For change sets, the
-     * <code>Original</code> template is always available. After the transforms are
-     * processed, the <code>Processed</code> template becomes available.</p>
+     * <p>The template type.</p> <ul> <li> <p>For stacks, you can use either the
+     * <code>Original</code> or the <code>Processed</code> template type.</p> </li>
+     * <li> <p>For change sets, you can use only the <code>Original</code> template
+     * type. After the transforms are processed, you can use the <code>Processed</code>
+     * template type.</p> </li> </ul> <note> <p>If you create a change set for a new
+     * stack, you must select the template type.</p> </note>
      */
     inline GetTemplateResult& WithStagesAvailable(const Aws::Vector<TemplateStage>& value) { SetStagesAvailable(value); return *this;}
 
     /**
-     * <p>The available template type. For stacks, both the <code>Original</code> and
-     * <code>Processed</code> template types are always available. For change sets, the
-     * <code>Original</code> template is always available. After the transforms are
-     * processed, the <code>Processed</code> template becomes available.</p>
+     * <p>The template type.</p> <ul> <li> <p>For stacks, you can use either the
+     * <code>Original</code> or the <code>Processed</code> template type.</p> </li>
+     * <li> <p>For change sets, you can use only the <code>Original</code> template
+     * type. After the transforms are processed, you can use the <code>Processed</code>
+     * template type.</p> </li> </ul> <note> <p>If you create a change set for a new
+     * stack, you must select the template type.</p> </note>
      */
     inline GetTemplateResult& WithStagesAvailable(Aws::Vector<TemplateStage>&& value) { SetStagesAvailable(value); return *this;}
 
     /**
-     * <p>The available template type. For stacks, both the <code>Original</code> and
-     * <code>Processed</code> template types are always available. For change sets, the
-     * <code>Original</code> template is always available. After the transforms are
-     * processed, the <code>Processed</code> template becomes available.</p>
+     * <p>The template type.</p> <ul> <li> <p>For stacks, you can use either the
+     * <code>Original</code> or the <code>Processed</code> template type.</p> </li>
+     * <li> <p>For change sets, you can use only the <code>Original</code> template
+     * type. After the transforms are processed, you can use the <code>Processed</code>
+     * template type.</p> </li> </ul> <note> <p>If you create a change set for a new
+     * stack, you must select the template type.</p> </note>
      */
     inline GetTemplateResult& AddStagesAvailable(const TemplateStage& value) { m_stagesAvailable.push_back(value); return *this; }
 
     /**
-     * <p>The available template type. For stacks, both the <code>Original</code> and
-     * <code>Processed</code> template types are always available. For change sets, the
-     * <code>Original</code> template is always available. After the transforms are
-     * processed, the <code>Processed</code> template becomes available.</p>
+     * <p>The template type.</p> <ul> <li> <p>For stacks, you can use either the
+     * <code>Original</code> or the <code>Processed</code> template type.</p> </li>
+     * <li> <p>For change sets, you can use only the <code>Original</code> template
+     * type. After the transforms are processed, you can use the <code>Processed</code>
+     * template type.</p> </li> </ul> <note> <p>If you create a change set for a new
+     * stack, you must select the template type.</p> </note>
      */
     inline GetTemplateResult& AddStagesAvailable(TemplateStage&& value) { m_stagesAvailable.push_back(value); return *this; }
 

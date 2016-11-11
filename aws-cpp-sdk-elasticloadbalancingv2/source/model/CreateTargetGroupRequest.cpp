@@ -21,10 +21,12 @@ using namespace Aws::Utils;
 
 CreateTargetGroupRequest::CreateTargetGroupRequest() : 
     m_nameHasBeenSet(false),
+    m_protocol(ProtocolEnum::NOT_SET),
     m_protocolHasBeenSet(false),
     m_port(0),
     m_portHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
+    m_healthCheckProtocol(ProtocolEnum::NOT_SET),
     m_healthCheckProtocolHasBeenSet(false),
     m_healthCheckPortHasBeenSet(false),
     m_healthCheckPathHasBeenSet(false),

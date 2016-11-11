@@ -30,12 +30,14 @@ namespace Model
 {
 
 ReceiptIpFilter::ReceiptIpFilter() : 
+    m_policy(ReceiptFilterPolicy::NOT_SET),
     m_policyHasBeenSet(false),
     m_cidrHasBeenSet(false)
 {
 }
 
 ReceiptIpFilter::ReceiptIpFilter(const XmlNode& xmlNode) : 
+    m_policy(ReceiptFilterPolicy::NOT_SET),
     m_policyHasBeenSet(false),
     m_cidrHasBeenSet(false)
 {

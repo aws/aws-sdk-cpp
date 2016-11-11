@@ -37,6 +37,7 @@ ApplicationVersionDescription::ApplicationVersionDescription() :
     m_sourceBundleHasBeenSet(false),
     m_dateCreatedHasBeenSet(false),
     m_dateUpdatedHasBeenSet(false),
+    m_status(ApplicationVersionStatus::NOT_SET),
     m_statusHasBeenSet(false)
 {
 }
@@ -49,6 +50,7 @@ ApplicationVersionDescription::ApplicationVersionDescription(const XmlNode& xmlN
     m_sourceBundleHasBeenSet(false),
     m_dateCreatedHasBeenSet(false),
     m_dateUpdatedHasBeenSet(false),
+    m_status(ApplicationVersionStatus::NOT_SET),
     m_statusHasBeenSet(false)
 {
   *this = xmlNode;

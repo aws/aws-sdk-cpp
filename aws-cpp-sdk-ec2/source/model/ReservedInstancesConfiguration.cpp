@@ -34,6 +34,7 @@ ReservedInstancesConfiguration::ReservedInstancesConfiguration() :
     m_platformHasBeenSet(false),
     m_instanceCount(0),
     m_instanceCountHasBeenSet(false),
+    m_instanceType(InstanceType::NOT_SET),
     m_instanceTypeHasBeenSet(false)
 {
 }
@@ -43,6 +44,7 @@ ReservedInstancesConfiguration::ReservedInstancesConfiguration(const XmlNode& xm
     m_platformHasBeenSet(false),
     m_instanceCount(0),
     m_instanceCountHasBeenSet(false),
+    m_instanceType(InstanceType::NOT_SET),
     m_instanceTypeHasBeenSet(false)
 {
   *this = xmlNode;

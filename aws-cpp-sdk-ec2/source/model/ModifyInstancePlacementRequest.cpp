@@ -21,7 +21,9 @@ using namespace Aws::Utils;
 
 ModifyInstancePlacementRequest::ModifyInstancePlacementRequest() : 
     m_instanceIdHasBeenSet(false),
+    m_tenancy(HostTenancy::NOT_SET),
     m_tenancyHasBeenSet(false),
+    m_affinity(Affinity::NOT_SET),
     m_affinityHasBeenSet(false),
     m_hostIdHasBeenSet(false)
 {

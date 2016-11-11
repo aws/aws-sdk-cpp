@@ -57,6 +57,7 @@ Snapshot::Snapshot() :
     m_snapshotWindowHasBeenSet(false),
     m_numNodeGroups(0),
     m_numNodeGroupsHasBeenSet(false),
+    m_automaticFailover(AutomaticFailoverStatus::NOT_SET),
     m_automaticFailoverHasBeenSet(false),
     m_nodeSnapshotsHasBeenSet(false)
 {
@@ -90,6 +91,7 @@ Snapshot::Snapshot(const XmlNode& xmlNode) :
     m_snapshotWindowHasBeenSet(false),
     m_numNodeGroups(0),
     m_numNodeGroupsHasBeenSet(false),
+    m_automaticFailover(AutomaticFailoverStatus::NOT_SET),
     m_automaticFailoverHasBeenSet(false),
     m_nodeSnapshotsHasBeenSet(false)
 {

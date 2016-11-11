@@ -28,11 +28,13 @@ namespace Model
 {
 
 ListImagesFilter::ListImagesFilter() : 
+    m_tagStatus(TagStatus::NOT_SET),
     m_tagStatusHasBeenSet(false)
 {
 }
 
 ListImagesFilter::ListImagesFilter(const JsonValue& jsonValue) : 
+    m_tagStatus(TagStatus::NOT_SET),
     m_tagStatusHasBeenSet(false)
 {
   *this = jsonValue;

@@ -32,6 +32,7 @@ namespace Model
 InstanceState::InstanceState() : 
     m_code(0),
     m_codeHasBeenSet(false),
+    m_name(InstanceStateName::NOT_SET),
     m_nameHasBeenSet(false)
 {
 }
@@ -39,6 +40,7 @@ InstanceState::InstanceState() :
 InstanceState::InstanceState(const XmlNode& xmlNode) : 
     m_code(0),
     m_codeHasBeenSet(false),
+    m_name(InstanceStateName::NOT_SET),
     m_nameHasBeenSet(false)
 {
   *this = xmlNode;

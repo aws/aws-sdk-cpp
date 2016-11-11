@@ -71,43 +71,43 @@ namespace Model
 
     /**
      * <p>An IAM policy document that authorizes cross-account users to deliver their
-     * log events to associated destination.</p>
+     * log events to the associated destination.</p>
      */
     inline const Aws::String& GetAccessPolicy() const{ return m_accessPolicy; }
 
     /**
      * <p>An IAM policy document that authorizes cross-account users to deliver their
-     * log events to associated destination.</p>
+     * log events to the associated destination.</p>
      */
     inline void SetAccessPolicy(const Aws::String& value) { m_accessPolicyHasBeenSet = true; m_accessPolicy = value; }
 
     /**
      * <p>An IAM policy document that authorizes cross-account users to deliver their
-     * log events to associated destination.</p>
+     * log events to the associated destination.</p>
      */
     inline void SetAccessPolicy(Aws::String&& value) { m_accessPolicyHasBeenSet = true; m_accessPolicy = value; }
 
     /**
      * <p>An IAM policy document that authorizes cross-account users to deliver their
-     * log events to associated destination.</p>
+     * log events to the associated destination.</p>
      */
     inline void SetAccessPolicy(const char* value) { m_accessPolicyHasBeenSet = true; m_accessPolicy.assign(value); }
 
     /**
      * <p>An IAM policy document that authorizes cross-account users to deliver their
-     * log events to associated destination.</p>
+     * log events to the associated destination.</p>
      */
     inline PutDestinationPolicyRequest& WithAccessPolicy(const Aws::String& value) { SetAccessPolicy(value); return *this;}
 
     /**
      * <p>An IAM policy document that authorizes cross-account users to deliver their
-     * log events to associated destination.</p>
+     * log events to the associated destination.</p>
      */
     inline PutDestinationPolicyRequest& WithAccessPolicy(Aws::String&& value) { SetAccessPolicy(value); return *this;}
 
     /**
      * <p>An IAM policy document that authorizes cross-account users to deliver their
-     * log events to associated destination.</p>
+     * log events to the associated destination.</p>
      */
     inline PutDestinationPolicyRequest& WithAccessPolicy(const char* value) { SetAccessPolicy(value); return *this;}
 

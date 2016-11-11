@@ -30,6 +30,7 @@ namespace Model
 Evaluation::Evaluation() : 
     m_complianceResourceTypeHasBeenSet(false),
     m_complianceResourceIdHasBeenSet(false),
+    m_complianceType(ComplianceType::NOT_SET),
     m_complianceTypeHasBeenSet(false),
     m_annotationHasBeenSet(false),
     m_orderingTimestampHasBeenSet(false)
@@ -39,6 +40,7 @@ Evaluation::Evaluation() :
 Evaluation::Evaluation(const JsonValue& jsonValue) : 
     m_complianceResourceTypeHasBeenSet(false),
     m_complianceResourceIdHasBeenSet(false),
+    m_complianceType(ComplianceType::NOT_SET),
     m_complianceTypeHasBeenSet(false),
     m_annotationHasBeenSet(false),
     m_orderingTimestampHasBeenSet(false)

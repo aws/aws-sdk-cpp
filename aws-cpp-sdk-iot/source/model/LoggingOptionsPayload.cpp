@@ -29,12 +29,14 @@ namespace Model
 
 LoggingOptionsPayload::LoggingOptionsPayload() : 
     m_roleArnHasBeenSet(false),
+    m_logLevel(LogLevel::NOT_SET),
     m_logLevelHasBeenSet(false)
 {
 }
 
 LoggingOptionsPayload::LoggingOptionsPayload(const JsonValue& jsonValue) : 
     m_roleArnHasBeenSet(false),
+    m_logLevel(LogLevel::NOT_SET),
     m_logLevelHasBeenSet(false)
 {
   *this = jsonValue;

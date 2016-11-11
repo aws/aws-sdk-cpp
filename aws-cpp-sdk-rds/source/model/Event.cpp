@@ -31,6 +31,7 @@ namespace Model
 
 Event::Event() : 
     m_sourceIdentifierHasBeenSet(false),
+    m_sourceType(SourceType::NOT_SET),
     m_sourceTypeHasBeenSet(false),
     m_messageHasBeenSet(false),
     m_eventCategoriesHasBeenSet(false),
@@ -41,6 +42,7 @@ Event::Event() :
 
 Event::Event(const XmlNode& xmlNode) : 
     m_sourceIdentifierHasBeenSet(false),
+    m_sourceType(SourceType::NOT_SET),
     m_sourceTypeHasBeenSet(false),
     m_messageHasBeenSet(false),
     m_eventCategoriesHasBeenSet(false),

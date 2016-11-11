@@ -35,72 +35,72 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * <p>The name of the log group under which the log stream is to be created.</p>
+     * <p>The name of the log group.</p>
      */
     inline const Aws::String& GetLogGroupName() const{ return m_logGroupName; }
 
     /**
-     * <p>The name of the log group under which the log stream is to be created.</p>
+     * <p>The name of the log group.</p>
      */
     inline void SetLogGroupName(const Aws::String& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
 
     /**
-     * <p>The name of the log group under which the log stream is to be created.</p>
+     * <p>The name of the log group.</p>
      */
     inline void SetLogGroupName(Aws::String&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
 
     /**
-     * <p>The name of the log group under which the log stream is to be created.</p>
+     * <p>The name of the log group.</p>
      */
     inline void SetLogGroupName(const char* value) { m_logGroupNameHasBeenSet = true; m_logGroupName.assign(value); }
 
     /**
-     * <p>The name of the log group under which the log stream is to be created.</p>
+     * <p>The name of the log group.</p>
      */
     inline CreateLogStreamRequest& WithLogGroupName(const Aws::String& value) { SetLogGroupName(value); return *this;}
 
     /**
-     * <p>The name of the log group under which the log stream is to be created.</p>
+     * <p>The name of the log group.</p>
      */
     inline CreateLogStreamRequest& WithLogGroupName(Aws::String&& value) { SetLogGroupName(value); return *this;}
 
     /**
-     * <p>The name of the log group under which the log stream is to be created.</p>
+     * <p>The name of the log group.</p>
      */
     inline CreateLogStreamRequest& WithLogGroupName(const char* value) { SetLogGroupName(value); return *this;}
 
     /**
-     * <p>The name of the log stream to create.</p>
+     * <p>The name of the log stream.</p>
      */
     inline const Aws::String& GetLogStreamName() const{ return m_logStreamName; }
 
     /**
-     * <p>The name of the log stream to create.</p>
+     * <p>The name of the log stream.</p>
      */
     inline void SetLogStreamName(const Aws::String& value) { m_logStreamNameHasBeenSet = true; m_logStreamName = value; }
 
     /**
-     * <p>The name of the log stream to create.</p>
+     * <p>The name of the log stream.</p>
      */
     inline void SetLogStreamName(Aws::String&& value) { m_logStreamNameHasBeenSet = true; m_logStreamName = value; }
 
     /**
-     * <p>The name of the log stream to create.</p>
+     * <p>The name of the log stream.</p>
      */
     inline void SetLogStreamName(const char* value) { m_logStreamNameHasBeenSet = true; m_logStreamName.assign(value); }
 
     /**
-     * <p>The name of the log stream to create.</p>
+     * <p>The name of the log stream.</p>
      */
     inline CreateLogStreamRequest& WithLogStreamName(const Aws::String& value) { SetLogStreamName(value); return *this;}
 
     /**
-     * <p>The name of the log stream to create.</p>
+     * <p>The name of the log stream.</p>
      */
     inline CreateLogStreamRequest& WithLogStreamName(Aws::String&& value) { SetLogStreamName(value); return *this;}
 
     /**
-     * <p>The name of the log stream to create.</p>
+     * <p>The name of the log stream.</p>
      */
     inline CreateLogStreamRequest& WithLogStreamName(const char* value) { SetLogStreamName(value); return *this;}
 

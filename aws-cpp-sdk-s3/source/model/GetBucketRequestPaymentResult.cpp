@@ -24,11 +24,13 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetBucketRequestPaymentResult::GetBucketRequestPaymentResult()
+GetBucketRequestPaymentResult::GetBucketRequestPaymentResult() : 
+    m_payer(Payer::NOT_SET)
 {
 }
 
-GetBucketRequestPaymentResult::GetBucketRequestPaymentResult(const AmazonWebServiceResult<XmlDocument>& result)
+GetBucketRequestPaymentResult::GetBucketRequestPaymentResult(const AmazonWebServiceResult<XmlDocument>& result) : 
+    m_payer(Payer::NOT_SET)
 {
   *this = result;
 }

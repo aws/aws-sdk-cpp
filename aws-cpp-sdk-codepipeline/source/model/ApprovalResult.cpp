@@ -29,12 +29,14 @@ namespace Model
 
 ApprovalResult::ApprovalResult() : 
     m_summaryHasBeenSet(false),
+    m_status(ApprovalStatus::NOT_SET),
     m_statusHasBeenSet(false)
 {
 }
 
 ApprovalResult::ApprovalResult(const JsonValue& jsonValue) : 
     m_summaryHasBeenSet(false),
+    m_status(ApprovalStatus::NOT_SET),
     m_statusHasBeenSet(false)
 {
   *this = jsonValue;

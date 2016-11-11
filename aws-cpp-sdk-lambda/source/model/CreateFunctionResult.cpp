@@ -25,6 +25,7 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 CreateFunctionResult::CreateFunctionResult() : 
+    m_runtime(Runtime::NOT_SET),
     m_codeSize(0),
     m_timeout(0),
     m_memorySize(0)
@@ -32,6 +33,7 @@ CreateFunctionResult::CreateFunctionResult() :
 }
 
 CreateFunctionResult::CreateFunctionResult(const AmazonWebServiceResult<JsonValue>& result) : 
+    m_runtime(Runtime::NOT_SET),
     m_codeSize(0),
     m_timeout(0),
     m_memorySize(0)

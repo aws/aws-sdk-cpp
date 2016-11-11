@@ -28,12 +28,14 @@ namespace Model
 {
 
 DescribeActivationsFilter::DescribeActivationsFilter() : 
+    m_filterKey(DescribeActivationsFilterKeys::NOT_SET),
     m_filterKeyHasBeenSet(false),
     m_filterValuesHasBeenSet(false)
 {
 }
 
 DescribeActivationsFilter::DescribeActivationsFilter(const JsonValue& jsonValue) : 
+    m_filterKey(DescribeActivationsFilterKeys::NOT_SET),
     m_filterKeyHasBeenSet(false),
     m_filterValuesHasBeenSet(false)
 {

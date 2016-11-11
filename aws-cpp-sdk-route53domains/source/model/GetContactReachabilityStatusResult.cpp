@@ -24,11 +24,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetContactReachabilityStatusResult::GetContactReachabilityStatusResult()
+GetContactReachabilityStatusResult::GetContactReachabilityStatusResult() : 
+    m_status(ReachabilityStatus::NOT_SET)
 {
 }
 
-GetContactReachabilityStatusResult::GetContactReachabilityStatusResult(const AmazonWebServiceResult<JsonValue>& result)
+GetContactReachabilityStatusResult::GetContactReachabilityStatusResult(const AmazonWebServiceResult<JsonValue>& result) : 
+    m_status(ReachabilityStatus::NOT_SET)
 {
   *this = result;
 }

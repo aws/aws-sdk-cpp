@@ -40,40 +40,64 @@ namespace Model
     PutLogEventsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     PutLogEventsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    
+    /**
+     * <p>The next sequence token.</p>
+     */
     inline const Aws::String& GetNextSequenceToken() const{ return m_nextSequenceToken; }
 
-    
+    /**
+     * <p>The next sequence token.</p>
+     */
     inline void SetNextSequenceToken(const Aws::String& value) { m_nextSequenceToken = value; }
 
-    
+    /**
+     * <p>The next sequence token.</p>
+     */
     inline void SetNextSequenceToken(Aws::String&& value) { m_nextSequenceToken = value; }
 
-    
+    /**
+     * <p>The next sequence token.</p>
+     */
     inline void SetNextSequenceToken(const char* value) { m_nextSequenceToken.assign(value); }
 
-    
+    /**
+     * <p>The next sequence token.</p>
+     */
     inline PutLogEventsResult& WithNextSequenceToken(const Aws::String& value) { SetNextSequenceToken(value); return *this;}
 
-    
+    /**
+     * <p>The next sequence token.</p>
+     */
     inline PutLogEventsResult& WithNextSequenceToken(Aws::String&& value) { SetNextSequenceToken(value); return *this;}
 
-    
+    /**
+     * <p>The next sequence token.</p>
+     */
     inline PutLogEventsResult& WithNextSequenceToken(const char* value) { SetNextSequenceToken(value); return *this;}
 
-    
+    /**
+     * <p>The rejected events.</p>
+     */
     inline const RejectedLogEventsInfo& GetRejectedLogEventsInfo() const{ return m_rejectedLogEventsInfo; }
 
-    
+    /**
+     * <p>The rejected events.</p>
+     */
     inline void SetRejectedLogEventsInfo(const RejectedLogEventsInfo& value) { m_rejectedLogEventsInfo = value; }
 
-    
+    /**
+     * <p>The rejected events.</p>
+     */
     inline void SetRejectedLogEventsInfo(RejectedLogEventsInfo&& value) { m_rejectedLogEventsInfo = value; }
 
-    
+    /**
+     * <p>The rejected events.</p>
+     */
     inline PutLogEventsResult& WithRejectedLogEventsInfo(const RejectedLogEventsInfo& value) { SetRejectedLogEventsInfo(value); return *this;}
 
-    
+    /**
+     * <p>The rejected events.</p>
+     */
     inline PutLogEventsResult& WithRejectedLogEventsInfo(RejectedLogEventsInfo&& value) { SetRejectedLogEventsInfo(value); return *this;}
 
   private:

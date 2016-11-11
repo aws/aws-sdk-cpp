@@ -27,6 +27,7 @@ using namespace Aws::Http;
 using namespace Aws;
 
 ImportApiKeysRequest::ImportApiKeysRequest() : 
+    m_format(ApiKeysFormat::NOT_SET),
     m_formatHasBeenSet(false),
     m_failOnWarnings(false),
     m_failOnWarningsHasBeenSet(false)

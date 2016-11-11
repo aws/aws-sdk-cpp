@@ -24,6 +24,7 @@ using namespace Aws::Utils;
 GetDevicePoolCompatibilityRequest::GetDevicePoolCompatibilityRequest() : 
     m_devicePoolArnHasBeenSet(false),
     m_appArnHasBeenSet(false),
+    m_testType(TestType::NOT_SET),
     m_testTypeHasBeenSet(false)
 {
 }

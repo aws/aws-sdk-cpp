@@ -30,6 +30,9 @@ namespace CloudWatchLogs
 namespace Model
 {
 
+  /**
+   * <p>Represents a log event.</p>
+   */
   class AWS_CLOUDWATCHLOGS_API OutputLogEvent
   {
   public:
@@ -38,43 +41,69 @@ namespace Model
     OutputLogEvent& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
-    
+    /**
+     * <p>The time the event occurred.</p>
+     */
     inline long long GetTimestamp() const{ return m_timestamp; }
 
-    
+    /**
+     * <p>The time the event occurred.</p>
+     */
     inline void SetTimestamp(long long value) { m_timestampHasBeenSet = true; m_timestamp = value; }
 
-    
+    /**
+     * <p>The time the event occurred.</p>
+     */
     inline OutputLogEvent& WithTimestamp(long long value) { SetTimestamp(value); return *this;}
 
-    
+    /**
+     * <p>The data contained in the log event.</p>
+     */
     inline const Aws::String& GetMessage() const{ return m_message; }
 
-    
+    /**
+     * <p>The data contained in the log event.</p>
+     */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
 
-    
+    /**
+     * <p>The data contained in the log event.</p>
+     */
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = value; }
 
-    
+    /**
+     * <p>The data contained in the log event.</p>
+     */
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
 
-    
+    /**
+     * <p>The data contained in the log event.</p>
+     */
     inline OutputLogEvent& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
 
-    
+    /**
+     * <p>The data contained in the log event.</p>
+     */
     inline OutputLogEvent& WithMessage(Aws::String&& value) { SetMessage(value); return *this;}
 
-    
+    /**
+     * <p>The data contained in the log event.</p>
+     */
     inline OutputLogEvent& WithMessage(const char* value) { SetMessage(value); return *this;}
 
-    
+    /**
+     * <p>The time the event was ingested.</p>
+     */
     inline long long GetIngestionTime() const{ return m_ingestionTime; }
 
-    
+    /**
+     * <p>The time the event was ingested.</p>
+     */
     inline void SetIngestionTime(long long value) { m_ingestionTimeHasBeenSet = true; m_ingestionTime = value; }
 
-    
+    /**
+     * <p>The time the event was ingested.</p>
+     */
     inline OutputLogEvent& WithIngestionTime(long long value) { SetIngestionTime(value); return *this;}
 
   private:

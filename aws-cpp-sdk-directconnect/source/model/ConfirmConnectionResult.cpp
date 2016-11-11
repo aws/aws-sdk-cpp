@@ -24,11 +24,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ConfirmConnectionResult::ConfirmConnectionResult()
+ConfirmConnectionResult::ConfirmConnectionResult() : 
+    m_connectionState(ConnectionState::NOT_SET)
 {
 }
 
-ConfirmConnectionResult::ConfirmConnectionResult(const AmazonWebServiceResult<JsonValue>& result)
+ConfirmConnectionResult::ConfirmConnectionResult(const AmazonWebServiceResult<JsonValue>& result) : 
+    m_connectionState(ConnectionState::NOT_SET)
 {
   *this = result;
 }

@@ -31,6 +31,7 @@ namespace Model
 
 HistoryRecord::HistoryRecord() : 
     m_timestampHasBeenSet(false),
+    m_eventType(EventType::NOT_SET),
     m_eventTypeHasBeenSet(false),
     m_eventInformationHasBeenSet(false)
 {
@@ -38,6 +39,7 @@ HistoryRecord::HistoryRecord() :
 
 HistoryRecord::HistoryRecord(const XmlNode& xmlNode) : 
     m_timestampHasBeenSet(false),
+    m_eventType(EventType::NOT_SET),
     m_eventTypeHasBeenSet(false),
     m_eventInformationHasBeenSet(false)
 {

@@ -30,12 +30,14 @@ namespace Model
 {
 
 VpcPeeringConnectionStateReason::VpcPeeringConnectionStateReason() : 
+    m_code(VpcPeeringConnectionStateReasonCode::NOT_SET),
     m_codeHasBeenSet(false),
     m_messageHasBeenSet(false)
 {
 }
 
 VpcPeeringConnectionStateReason::VpcPeeringConnectionStateReason(const XmlNode& xmlNode) : 
+    m_code(VpcPeeringConnectionStateReasonCode::NOT_SET),
     m_codeHasBeenSet(false),
     m_messageHasBeenSet(false)
 {

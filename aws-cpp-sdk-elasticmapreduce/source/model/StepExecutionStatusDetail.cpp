@@ -28,6 +28,7 @@ namespace Model
 {
 
 StepExecutionStatusDetail::StepExecutionStatusDetail() : 
+    m_state(StepExecutionState::NOT_SET),
     m_stateHasBeenSet(false),
     m_creationDateTimeHasBeenSet(false),
     m_startDateTimeHasBeenSet(false),
@@ -37,6 +38,7 @@ StepExecutionStatusDetail::StepExecutionStatusDetail() :
 }
 
 StepExecutionStatusDetail::StepExecutionStatusDetail(const JsonValue& jsonValue) : 
+    m_state(StepExecutionState::NOT_SET),
     m_stateHasBeenSet(false),
     m_creationDateTimeHasBeenSet(false),
     m_startDateTimeHasBeenSet(false),

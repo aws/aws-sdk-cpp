@@ -30,6 +30,7 @@ namespace Model
 SignalExternalWorkflowExecutionFailedEventAttributes::SignalExternalWorkflowExecutionFailedEventAttributes() : 
     m_workflowIdHasBeenSet(false),
     m_runIdHasBeenSet(false),
+    m_cause(SignalExternalWorkflowExecutionFailedCause::NOT_SET),
     m_causeHasBeenSet(false),
     m_initiatedEventId(0),
     m_initiatedEventIdHasBeenSet(false),
@@ -42,6 +43,7 @@ SignalExternalWorkflowExecutionFailedEventAttributes::SignalExternalWorkflowExec
 SignalExternalWorkflowExecutionFailedEventAttributes::SignalExternalWorkflowExecutionFailedEventAttributes(const JsonValue& jsonValue) : 
     m_workflowIdHasBeenSet(false),
     m_runIdHasBeenSet(false),
+    m_cause(SignalExternalWorkflowExecutionFailedCause::NOT_SET),
     m_causeHasBeenSet(false),
     m_initiatedEventId(0),
     m_initiatedEventIdHasBeenSet(false),

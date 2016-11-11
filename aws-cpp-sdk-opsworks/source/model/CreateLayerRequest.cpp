@@ -23,6 +23,7 @@ using namespace Aws::Utils;
 
 CreateLayerRequest::CreateLayerRequest() : 
     m_stackIdHasBeenSet(false),
+    m_type(LayerType::NOT_SET),
     m_typeHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_shortnameHasBeenSet(false),

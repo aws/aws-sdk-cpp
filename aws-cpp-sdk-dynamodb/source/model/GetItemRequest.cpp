@@ -27,6 +27,7 @@ GetItemRequest::GetItemRequest() :
     m_attributesToGetHasBeenSet(false),
     m_consistentRead(false),
     m_consistentReadHasBeenSet(false),
+    m_returnConsumedCapacity(ReturnConsumedCapacity::NOT_SET),
     m_returnConsumedCapacityHasBeenSet(false),
     m_projectionExpressionHasBeenSet(false),
     m_expressionAttributeNamesHasBeenSet(false)

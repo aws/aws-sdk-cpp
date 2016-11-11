@@ -28,11 +28,13 @@ namespace Model
 {
 
 DestinationSchema::DestinationSchema() : 
+    m_recordFormatType(RecordFormatType::NOT_SET),
     m_recordFormatTypeHasBeenSet(false)
 {
 }
 
 DestinationSchema::DestinationSchema(const JsonValue& jsonValue) : 
+    m_recordFormatType(RecordFormatType::NOT_SET),
     m_recordFormatTypeHasBeenSet(false)
 {
   *this = jsonValue;

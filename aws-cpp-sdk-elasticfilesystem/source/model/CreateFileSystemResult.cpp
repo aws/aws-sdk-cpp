@@ -25,12 +25,16 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 CreateFileSystemResult::CreateFileSystemResult() : 
-    m_numberOfMountTargets(0)
+    m_lifeCycleState(LifeCycleState::NOT_SET),
+    m_numberOfMountTargets(0),
+    m_performanceMode(PerformanceMode::NOT_SET)
 {
 }
 
 CreateFileSystemResult::CreateFileSystemResult(const AmazonWebServiceResult<JsonValue>& result) : 
-    m_numberOfMountTargets(0)
+    m_lifeCycleState(LifeCycleState::NOT_SET),
+    m_numberOfMountTargets(0),
+    m_performanceMode(PerformanceMode::NOT_SET)
 {
   *this = result;
 }

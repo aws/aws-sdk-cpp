@@ -29,6 +29,7 @@ namespace Model
 
 Endpoint::Endpoint() : 
     m_endpointIdentifierHasBeenSet(false),
+    m_endpointType(ReplicationEndpointTypeValue::NOT_SET),
     m_endpointTypeHasBeenSet(false),
     m_engineNameHasBeenSet(false),
     m_usernameHasBeenSet(false),
@@ -41,12 +42,14 @@ Endpoint::Endpoint() :
     m_kmsKeyIdHasBeenSet(false),
     m_endpointArnHasBeenSet(false),
     m_certificateArnHasBeenSet(false),
+    m_sslMode(DmsSslModeValue::NOT_SET),
     m_sslModeHasBeenSet(false)
 {
 }
 
 Endpoint::Endpoint(const JsonValue& jsonValue) : 
     m_endpointIdentifierHasBeenSet(false),
+    m_endpointType(ReplicationEndpointTypeValue::NOT_SET),
     m_endpointTypeHasBeenSet(false),
     m_engineNameHasBeenSet(false),
     m_usernameHasBeenSet(false),
@@ -59,6 +62,7 @@ Endpoint::Endpoint(const JsonValue& jsonValue) :
     m_kmsKeyIdHasBeenSet(false),
     m_endpointArnHasBeenSet(false),
     m_certificateArnHasBeenSet(false),
+    m_sslMode(DmsSslModeValue::NOT_SET),
     m_sslModeHasBeenSet(false)
 {
   *this = jsonValue;

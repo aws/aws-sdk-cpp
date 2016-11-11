@@ -34,6 +34,7 @@ CreateChangeSetRequest::CreateChangeSetRequest() :
     m_changeSetNameHasBeenSet(false),
     m_clientTokenHasBeenSet(false),
     m_descriptionHasBeenSet(false),
+    m_changeSetType(ChangeSetType::NOT_SET),
     m_changeSetTypeHasBeenSet(false)
 {
 }

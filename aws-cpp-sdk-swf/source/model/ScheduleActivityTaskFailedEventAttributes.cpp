@@ -30,6 +30,7 @@ namespace Model
 ScheduleActivityTaskFailedEventAttributes::ScheduleActivityTaskFailedEventAttributes() : 
     m_activityTypeHasBeenSet(false),
     m_activityIdHasBeenSet(false),
+    m_cause(ScheduleActivityTaskFailedCause::NOT_SET),
     m_causeHasBeenSet(false),
     m_decisionTaskCompletedEventId(0),
     m_decisionTaskCompletedEventIdHasBeenSet(false)
@@ -39,6 +40,7 @@ ScheduleActivityTaskFailedEventAttributes::ScheduleActivityTaskFailedEventAttrib
 ScheduleActivityTaskFailedEventAttributes::ScheduleActivityTaskFailedEventAttributes(const JsonValue& jsonValue) : 
     m_activityTypeHasBeenSet(false),
     m_activityIdHasBeenSet(false),
+    m_cause(ScheduleActivityTaskFailedCause::NOT_SET),
     m_causeHasBeenSet(false),
     m_decisionTaskCompletedEventId(0),
     m_decisionTaskCompletedEventIdHasBeenSet(false)

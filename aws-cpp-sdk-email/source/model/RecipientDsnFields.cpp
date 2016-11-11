@@ -31,6 +31,7 @@ namespace Model
 
 RecipientDsnFields::RecipientDsnFields() : 
     m_finalRecipientHasBeenSet(false),
+    m_action(DsnAction::NOT_SET),
     m_actionHasBeenSet(false),
     m_remoteMtaHasBeenSet(false),
     m_statusHasBeenSet(false),
@@ -42,6 +43,7 @@ RecipientDsnFields::RecipientDsnFields() :
 
 RecipientDsnFields::RecipientDsnFields(const XmlNode& xmlNode) : 
     m_finalRecipientHasBeenSet(false),
+    m_action(DsnAction::NOT_SET),
     m_actionHasBeenSet(false),
     m_remoteMtaHasBeenSet(false),
     m_statusHasBeenSet(false),

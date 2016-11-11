@@ -31,12 +31,14 @@ namespace Model
 
 CancelledSpotInstanceRequest::CancelledSpotInstanceRequest() : 
     m_spotInstanceRequestIdHasBeenSet(false),
+    m_state(CancelSpotInstanceRequestState::NOT_SET),
     m_stateHasBeenSet(false)
 {
 }
 
 CancelledSpotInstanceRequest::CancelledSpotInstanceRequest(const XmlNode& xmlNode) : 
     m_spotInstanceRequestIdHasBeenSet(false),
+    m_state(CancelSpotInstanceRequestState::NOT_SET),
     m_stateHasBeenSet(false)
 {
   *this = xmlNode;

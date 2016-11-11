@@ -20,6 +20,7 @@ using namespace Aws::SES::Model;
 using namespace Aws::Utils;
 
 ListIdentitiesRequest::ListIdentitiesRequest() : 
+    m_identityType(IdentityType::NOT_SET),
     m_identityTypeHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
     m_maxItems(0),

@@ -24,11 +24,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetBulkPublishDetailsResult::GetBulkPublishDetailsResult()
+GetBulkPublishDetailsResult::GetBulkPublishDetailsResult() : 
+    m_bulkPublishStatus(BulkPublishStatus::NOT_SET)
 {
 }
 
-GetBulkPublishDetailsResult::GetBulkPublishDetailsResult(const AmazonWebServiceResult<JsonValue>& result)
+GetBulkPublishDetailsResult::GetBulkPublishDetailsResult(const AmazonWebServiceResult<JsonValue>& result) : 
+    m_bulkPublishStatus(BulkPublishStatus::NOT_SET)
 {
   *this = result;
 }

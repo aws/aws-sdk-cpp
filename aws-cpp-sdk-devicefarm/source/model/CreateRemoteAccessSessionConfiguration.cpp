@@ -28,11 +28,13 @@ namespace Model
 {
 
 CreateRemoteAccessSessionConfiguration::CreateRemoteAccessSessionConfiguration() : 
+    m_billingMethod(BillingMethod::NOT_SET),
     m_billingMethodHasBeenSet(false)
 {
 }
 
 CreateRemoteAccessSessionConfiguration::CreateRemoteAccessSessionConfiguration(const JsonValue& jsonValue) : 
+    m_billingMethod(BillingMethod::NOT_SET),
     m_billingMethodHasBeenSet(false)
 {
   *this = jsonValue;

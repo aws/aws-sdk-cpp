@@ -28,12 +28,14 @@ namespace Model
 {
 
 ExtraParam::ExtraParam() : 
+    m_name(ExtraParamName::NOT_SET),
     m_nameHasBeenSet(false),
     m_valueHasBeenSet(false)
 {
 }
 
 ExtraParam::ExtraParam(const JsonValue& jsonValue) : 
+    m_name(ExtraParamName::NOT_SET),
     m_nameHasBeenSet(false),
     m_valueHasBeenSet(false)
 {

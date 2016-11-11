@@ -22,6 +22,7 @@ using namespace Aws::Utils;
 CreateInstanceExportTaskRequest::CreateInstanceExportTaskRequest() : 
     m_descriptionHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
+    m_targetEnvironment(ExportEnvironment::NOT_SET),
     m_targetEnvironmentHasBeenSet(false),
     m_exportToS3TaskHasBeenSet(false)
 {

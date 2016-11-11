@@ -210,7 +210,7 @@ namespace Model
    * CloudFormation Product Page</a>.</p> <p>Amazon CloudFormation makes use of other
    * AWS products. If you need additional technical information about a specific AWS
    * product, you can find the product's technical documentation at <a
-   * href="http://docs.aws.amazon.com/">http://docs.aws.amazon.com/</a>.</p>
+   * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/">http://docs.aws.amazon.com/</a>.</p>
    */
   class AWS_CLOUDFORMATION_API CloudFormationClient : public Aws::Client::AWSXMLClient
   {
@@ -847,7 +847,7 @@ namespace Model
          * import into other stacks. To import values, use the <a
          * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-importvalue.html">
          * <code>Fn::ImportValue</code> </a> function. </p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-importvalue.html">
+         * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-exports.html">
          * AWS CloudFormation Export Stack Output Values</a>.</p>
          */
         virtual Model::ListExportsOutcome ListExports(const Model::ListExportsRequest& request) const;
@@ -858,7 +858,7 @@ namespace Model
          * import into other stacks. To import values, use the <a
          * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-importvalue.html">
          * <code>Fn::ImportValue</code> </a> function. </p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-importvalue.html">
+         * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-exports.html">
          * AWS CloudFormation Export Stack Output Values</a>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -871,7 +871,7 @@ namespace Model
          * import into other stacks. To import values, use the <a
          * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-importvalue.html">
          * <code>Fn::ImportValue</code> </a> function. </p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-importvalue.html">
+         * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-exports.html">
          * AWS CloudFormation Export Stack Output Values</a>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.

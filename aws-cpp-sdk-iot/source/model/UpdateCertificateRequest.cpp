@@ -26,6 +26,7 @@ using namespace Aws::Http;
 
 UpdateCertificateRequest::UpdateCertificateRequest() : 
     m_certificateIdHasBeenSet(false),
+    m_newStatus(CertificateStatus::NOT_SET),
     m_newStatusHasBeenSet(false)
 {
 }

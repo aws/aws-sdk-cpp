@@ -28,6 +28,7 @@ CreateEventSourceMappingRequest::CreateEventSourceMappingRequest() :
     m_enabledHasBeenSet(false),
     m_batchSize(0),
     m_batchSizeHasBeenSet(false),
+    m_startingPosition(EventSourcePosition::NOT_SET),
     m_startingPositionHasBeenSet(false)
 {
 }

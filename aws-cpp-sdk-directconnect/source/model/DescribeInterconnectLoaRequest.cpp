@@ -24,6 +24,7 @@ using namespace Aws::Utils;
 DescribeInterconnectLoaRequest::DescribeInterconnectLoaRequest() : 
     m_interconnectIdHasBeenSet(false),
     m_providerNameHasBeenSet(false),
+    m_loaContentType(LoaContentType::NOT_SET),
     m_loaContentTypeHasBeenSet(false)
 {
 }

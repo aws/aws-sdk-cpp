@@ -29,6 +29,7 @@ AdminCreateUserRequest::AdminCreateUserRequest() :
     m_temporaryPasswordHasBeenSet(false),
     m_forceAliasCreation(false),
     m_forceAliasCreationHasBeenSet(false),
+    m_messageAction(MessageActionType::NOT_SET),
     m_messageActionHasBeenSet(false),
     m_desiredDeliveryMediumsHasBeenSet(false)
 {

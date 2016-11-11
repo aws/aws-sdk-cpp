@@ -27,11 +27,13 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 DetachVolumeResponse::DetachVolumeResponse() : 
+    m_state(VolumeAttachmentState::NOT_SET),
     m_deleteOnTermination(false)
 {
 }
 
 DetachVolumeResponse::DetachVolumeResponse(const AmazonWebServiceResult<XmlDocument>& result) : 
+    m_state(VolumeAttachmentState::NOT_SET),
     m_deleteOnTermination(false)
 {
   *this = result;

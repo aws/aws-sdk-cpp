@@ -25,12 +25,14 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 ListResourceRecordSetsResult::ListResourceRecordSetsResult() : 
-    m_isTruncated(false)
+    m_isTruncated(false),
+    m_nextRecordType(RRType::NOT_SET)
 {
 }
 
 ListResourceRecordSetsResult::ListResourceRecordSetsResult(const AmazonWebServiceResult<XmlDocument>& result) : 
-    m_isTruncated(false)
+    m_isTruncated(false),
+    m_nextRecordType(RRType::NOT_SET)
 {
   *this = result;
 }

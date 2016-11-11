@@ -28,12 +28,14 @@ namespace Model
 {
 
 SizeConstraintSetUpdate::SizeConstraintSetUpdate() : 
+    m_action(ChangeAction::NOT_SET),
     m_actionHasBeenSet(false),
     m_sizeConstraintHasBeenSet(false)
 {
 }
 
 SizeConstraintSetUpdate::SizeConstraintSetUpdate(const JsonValue& jsonValue) : 
+    m_action(ChangeAction::NOT_SET),
     m_actionHasBeenSet(false),
     m_sizeConstraintHasBeenSet(false)
 {

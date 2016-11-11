@@ -23,6 +23,7 @@ using namespace Aws::Utils;
 
 ListTaskDefinitionFamiliesRequest::ListTaskDefinitionFamiliesRequest() : 
     m_familyPrefixHasBeenSet(false),
+    m_status(TaskDefinitionFamilyStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
     m_maxResults(0),

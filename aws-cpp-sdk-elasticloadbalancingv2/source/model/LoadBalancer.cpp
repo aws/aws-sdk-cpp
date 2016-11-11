@@ -35,9 +35,11 @@ LoadBalancer::LoadBalancer() :
     m_canonicalHostedZoneIdHasBeenSet(false),
     m_createdTimeHasBeenSet(false),
     m_loadBalancerNameHasBeenSet(false),
+    m_scheme(LoadBalancerSchemeEnum::NOT_SET),
     m_schemeHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
     m_stateHasBeenSet(false),
+    m_type(LoadBalancerTypeEnum::NOT_SET),
     m_typeHasBeenSet(false),
     m_availabilityZonesHasBeenSet(false),
     m_securityGroupsHasBeenSet(false)
@@ -50,9 +52,11 @@ LoadBalancer::LoadBalancer(const XmlNode& xmlNode) :
     m_canonicalHostedZoneIdHasBeenSet(false),
     m_createdTimeHasBeenSet(false),
     m_loadBalancerNameHasBeenSet(false),
+    m_scheme(LoadBalancerSchemeEnum::NOT_SET),
     m_schemeHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
     m_stateHasBeenSet(false),
+    m_type(LoadBalancerTypeEnum::NOT_SET),
     m_typeHasBeenSet(false),
     m_availabilityZonesHasBeenSet(false),
     m_securityGroupsHasBeenSet(false)

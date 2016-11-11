@@ -32,6 +32,7 @@ PipelineExecution::PipelineExecution() :
     m_pipelineVersion(0),
     m_pipelineVersionHasBeenSet(false),
     m_pipelineExecutionIdHasBeenSet(false),
+    m_status(PipelineExecutionStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_artifactRevisionsHasBeenSet(false)
 {
@@ -42,6 +43,7 @@ PipelineExecution::PipelineExecution(const JsonValue& jsonValue) :
     m_pipelineVersion(0),
     m_pipelineVersionHasBeenSet(false),
     m_pipelineExecutionIdHasBeenSet(false),
+    m_status(PipelineExecutionStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_artifactRevisionsHasBeenSet(false)
 {

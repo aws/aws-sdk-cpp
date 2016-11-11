@@ -32,11 +32,13 @@ FileSystemDescription::FileSystemDescription() :
     m_creationTokenHasBeenSet(false),
     m_fileSystemIdHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
+    m_lifeCycleState(LifeCycleState::NOT_SET),
     m_lifeCycleStateHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_numberOfMountTargets(0),
     m_numberOfMountTargetsHasBeenSet(false),
     m_sizeInBytesHasBeenSet(false),
+    m_performanceMode(PerformanceMode::NOT_SET),
     m_performanceModeHasBeenSet(false)
 {
 }
@@ -46,11 +48,13 @@ FileSystemDescription::FileSystemDescription(const JsonValue& jsonValue) :
     m_creationTokenHasBeenSet(false),
     m_fileSystemIdHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
+    m_lifeCycleState(LifeCycleState::NOT_SET),
     m_lifeCycleStateHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_numberOfMountTargets(0),
     m_numberOfMountTargetsHasBeenSet(false),
     m_sizeInBytesHasBeenSet(false),
+    m_performanceMode(PerformanceMode::NOT_SET),
     m_performanceModeHasBeenSet(false)
 {
   *this = jsonValue;

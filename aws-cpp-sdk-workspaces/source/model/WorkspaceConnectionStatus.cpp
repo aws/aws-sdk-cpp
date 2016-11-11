@@ -29,6 +29,7 @@ namespace Model
 
 WorkspaceConnectionStatus::WorkspaceConnectionStatus() : 
     m_workspaceIdHasBeenSet(false),
+    m_connectionState(ConnectionState::NOT_SET),
     m_connectionStateHasBeenSet(false),
     m_connectionStateCheckTimestampHasBeenSet(false),
     m_lastKnownUserConnectionTimestampHasBeenSet(false)
@@ -37,6 +38,7 @@ WorkspaceConnectionStatus::WorkspaceConnectionStatus() :
 
 WorkspaceConnectionStatus::WorkspaceConnectionStatus(const JsonValue& jsonValue) : 
     m_workspaceIdHasBeenSet(false),
+    m_connectionState(ConnectionState::NOT_SET),
     m_connectionStateHasBeenSet(false),
     m_connectionStateCheckTimestampHasBeenSet(false),
     m_lastKnownUserConnectionTimestampHasBeenSet(false)

@@ -25,6 +25,7 @@ CreateBuildRequest::CreateBuildRequest() :
     m_nameHasBeenSet(false),
     m_versionHasBeenSet(false),
     m_storageLocationHasBeenSet(false),
+    m_operatingSystem(OperatingSystem::NOT_SET),
     m_operatingSystemHasBeenSet(false)
 {
 }

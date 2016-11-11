@@ -27,6 +27,7 @@ CreateHsmRequest::CreateHsmRequest() :
     m_eniIpHasBeenSet(false),
     m_iamRoleArnHasBeenSet(false),
     m_externalIdHasBeenSet(false),
+    m_subscriptionType(SubscriptionType::NOT_SET),
     m_subscriptionTypeHasBeenSet(false),
     m_clientTokenHasBeenSet(false),
     m_syslogIpHasBeenSet(false)

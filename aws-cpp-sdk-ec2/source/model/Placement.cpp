@@ -32,6 +32,7 @@ namespace Model
 Placement::Placement() : 
     m_availabilityZoneHasBeenSet(false),
     m_groupNameHasBeenSet(false),
+    m_tenancy(Tenancy::NOT_SET),
     m_tenancyHasBeenSet(false),
     m_hostIdHasBeenSet(false),
     m_affinityHasBeenSet(false)
@@ -41,6 +42,7 @@ Placement::Placement() :
 Placement::Placement(const XmlNode& xmlNode) : 
     m_availabilityZoneHasBeenSet(false),
     m_groupNameHasBeenSet(false),
+    m_tenancy(Tenancy::NOT_SET),
     m_tenancyHasBeenSet(false),
     m_hostIdHasBeenSet(false),
     m_affinityHasBeenSet(false)

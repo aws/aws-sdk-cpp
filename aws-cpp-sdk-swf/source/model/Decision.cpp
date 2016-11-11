@@ -28,6 +28,7 @@ namespace Model
 {
 
 Decision::Decision() : 
+    m_decisionType(DecisionType::NOT_SET),
     m_decisionTypeHasBeenSet(false),
     m_scheduleActivityTaskDecisionAttributesHasBeenSet(false),
     m_requestCancelActivityTaskDecisionAttributesHasBeenSet(false),
@@ -46,6 +47,7 @@ Decision::Decision() :
 }
 
 Decision::Decision(const JsonValue& jsonValue) : 
+    m_decisionType(DecisionType::NOT_SET),
     m_decisionTypeHasBeenSet(false),
     m_scheduleActivityTaskDecisionAttributesHasBeenSet(false),
     m_requestCancelActivityTaskDecisionAttributesHasBeenSet(false),

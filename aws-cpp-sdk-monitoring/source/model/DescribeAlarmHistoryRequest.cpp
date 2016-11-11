@@ -21,6 +21,7 @@ using namespace Aws::Utils;
 
 DescribeAlarmHistoryRequest::DescribeAlarmHistoryRequest() : 
     m_alarmNameHasBeenSet(false),
+    m_historyItemType(HistoryItemType::NOT_SET),
     m_historyItemTypeHasBeenSet(false),
     m_startDateHasBeenSet(false),
     m_endDateHasBeenSet(false),

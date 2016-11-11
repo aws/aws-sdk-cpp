@@ -29,13 +29,16 @@ namespace Model
 
 ScalingActivity::ScalingActivity() : 
     m_activityIdHasBeenSet(false),
+    m_serviceNamespace(ServiceNamespace::NOT_SET),
     m_serviceNamespaceHasBeenSet(false),
     m_resourceIdHasBeenSet(false),
+    m_scalableDimension(ScalableDimension::NOT_SET),
     m_scalableDimensionHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_causeHasBeenSet(false),
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
+    m_statusCode(ScalingActivityStatusCode::NOT_SET),
     m_statusCodeHasBeenSet(false),
     m_statusMessageHasBeenSet(false),
     m_detailsHasBeenSet(false)
@@ -44,13 +47,16 @@ ScalingActivity::ScalingActivity() :
 
 ScalingActivity::ScalingActivity(const JsonValue& jsonValue) : 
     m_activityIdHasBeenSet(false),
+    m_serviceNamespace(ServiceNamespace::NOT_SET),
     m_serviceNamespaceHasBeenSet(false),
     m_resourceIdHasBeenSet(false),
+    m_scalableDimension(ScalableDimension::NOT_SET),
     m_scalableDimensionHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_causeHasBeenSet(false),
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
+    m_statusCode(ScalingActivityStatusCode::NOT_SET),
     m_statusCodeHasBeenSet(false),
     m_statusMessageHasBeenSet(false),
     m_detailsHasBeenSet(false)

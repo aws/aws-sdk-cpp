@@ -22,6 +22,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 AddTagsToResourceRequest::AddTagsToResourceRequest() : 
+    m_resourceType(ResourceTypeForTagging::NOT_SET),
     m_resourceTypeHasBeenSet(false),
     m_resourceIdHasBeenSet(false),
     m_tagsHasBeenSet(false)

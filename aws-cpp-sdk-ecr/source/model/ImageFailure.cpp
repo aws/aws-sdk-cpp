@@ -29,6 +29,7 @@ namespace Model
 
 ImageFailure::ImageFailure() : 
     m_imageIdHasBeenSet(false),
+    m_failureCode(ImageFailureCode::NOT_SET),
     m_failureCodeHasBeenSet(false),
     m_failureReasonHasBeenSet(false)
 {
@@ -36,6 +37,7 @@ ImageFailure::ImageFailure() :
 
 ImageFailure::ImageFailure(const JsonValue& jsonValue) : 
     m_imageIdHasBeenSet(false),
+    m_failureCode(ImageFailureCode::NOT_SET),
     m_failureCodeHasBeenSet(false),
     m_failureReasonHasBeenSet(false)
 {

@@ -28,12 +28,14 @@ namespace Model
 {
 
 AccessLevelFilter::AccessLevelFilter() : 
+    m_key(AccessLevelFilterKey::NOT_SET),
     m_keyHasBeenSet(false),
     m_valueHasBeenSet(false)
 {
 }
 
 AccessLevelFilter::AccessLevelFilter(const JsonValue& jsonValue) : 
+    m_key(AccessLevelFilterKey::NOT_SET),
     m_keyHasBeenSet(false),
     m_valueHasBeenSet(false)
 {

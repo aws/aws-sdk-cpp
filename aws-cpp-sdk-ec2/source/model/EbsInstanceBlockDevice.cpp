@@ -31,6 +31,7 @@ namespace Model
 
 EbsInstanceBlockDevice::EbsInstanceBlockDevice() : 
     m_volumeIdHasBeenSet(false),
+    m_status(AttachmentStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_attachTimeHasBeenSet(false),
     m_deleteOnTermination(false),
@@ -40,6 +41,7 @@ EbsInstanceBlockDevice::EbsInstanceBlockDevice() :
 
 EbsInstanceBlockDevice::EbsInstanceBlockDevice(const XmlNode& xmlNode) : 
     m_volumeIdHasBeenSet(false),
+    m_status(AttachmentStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_attachTimeHasBeenSet(false),
     m_deleteOnTermination(false),
