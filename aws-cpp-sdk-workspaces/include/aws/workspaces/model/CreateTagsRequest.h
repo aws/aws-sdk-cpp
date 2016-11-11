@@ -27,7 +27,7 @@ namespace Model
 {
 
   /**
-   * <p>The request of the create tags action.</p>
+   * <p>The request of the <a>CreateTags</a> operation.</p>
    */
   class AWS_WORKSPACES_API CreateTagsRequest : public WorkSpacesRequest
   {

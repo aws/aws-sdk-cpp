@@ -34,7 +34,8 @@ Certificate::Certificate() :
     m_certificateTypeHasBeenSet(false),
     m_thumbprintHasBeenSet(false),
     m_validFromHasBeenSet(false),
-    m_validTillHasBeenSet(false)
+    m_validTillHasBeenSet(false),
+    m_certificateArnHasBeenSet(false)
 {
 }
 
@@ -43,7 +44,8 @@ Certificate::Certificate(const XmlNode& xmlNode) :
     m_certificateTypeHasBeenSet(false),
     m_thumbprintHasBeenSet(false),
     m_validFromHasBeenSet(false),
-    m_validTillHasBeenSet(false)
+    m_validTillHasBeenSet(false),
+    m_certificateArnHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -84,6 +86,12 @@ Certificate& Certificate::operator =(const XmlNode& xmlNode)
       m_validTill = DateTime(StringUtils::Trim(validTillNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_validTillHasBeenSet = true;
     }
+    XmlNode certificateArnNode = resultNode.FirstChild("CertificateArn");
+    if(!certificateArnNode.IsNull())
+    {
+      m_certificateArn = StringUtils::Trim(certificateArnNode.GetText().c_str());
+      m_certificateArnHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -116,6 +124,11 @@ void Certificate::OutputToStream(Aws::OStream& oStream, const char* location, un
       oStream << location << index << locationValue << ".ValidTill=" << StringUtils::URLEncode(m_validTill.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
 
+  if(m_certificateArnHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".CertificateArn=" << StringUtils::URLEncode(m_certificateArn.c_str()) << "&";
+  }
+
 }
 
 void Certificate::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -139,6 +152,10 @@ void Certificate::OutputToStream(Aws::OStream& oStream, const char* location) co
   if(m_validTillHasBeenSet)
   {
       oStream << location << ".ValidTill=" << StringUtils::URLEncode(m_validTill.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+  }
+  if(m_certificateArnHasBeenSet)
+  {
+      oStream << location << ".CertificateArn=" << StringUtils::URLEncode(m_certificateArn.c_str()) << "&";
   }
 }
 

@@ -39,6 +39,7 @@ NetworkInterface::NetworkInterface() :
     m_requesterIdHasBeenSet(false),
     m_requesterManaged(false),
     m_requesterManagedHasBeenSet(false),
+    m_status(NetworkInterfaceStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_macAddressHasBeenSet(false),
     m_privateIpAddressHasBeenSet(false),
@@ -50,6 +51,7 @@ NetworkInterface::NetworkInterface() :
     m_associationHasBeenSet(false),
     m_tagSetHasBeenSet(false),
     m_privateIpAddressesHasBeenSet(false),
+    m_interfaceType(NetworkInterfaceType::NOT_SET),
     m_interfaceTypeHasBeenSet(false)
 {
 }
@@ -64,6 +66,7 @@ NetworkInterface::NetworkInterface(const XmlNode& xmlNode) :
     m_requesterIdHasBeenSet(false),
     m_requesterManaged(false),
     m_requesterManagedHasBeenSet(false),
+    m_status(NetworkInterfaceStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_macAddressHasBeenSet(false),
     m_privateIpAddressHasBeenSet(false),
@@ -75,6 +78,7 @@ NetworkInterface::NetworkInterface(const XmlNode& xmlNode) :
     m_associationHasBeenSet(false),
     m_tagSetHasBeenSet(false),
     m_privateIpAddressesHasBeenSet(false),
+    m_interfaceType(NetworkInterfaceType::NOT_SET),
     m_interfaceTypeHasBeenSet(false)
 {
   *this = xmlNode;

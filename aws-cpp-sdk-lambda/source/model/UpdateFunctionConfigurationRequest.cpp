@@ -31,6 +31,7 @@ UpdateFunctionConfigurationRequest::UpdateFunctionConfigurationRequest() :
     m_memorySize(0),
     m_memorySizeHasBeenSet(false),
     m_vpcConfigHasBeenSet(false),
+    m_runtime(Runtime::NOT_SET),
     m_runtimeHasBeenSet(false)
 {
 }

@@ -31,6 +31,7 @@ namespace Model
 
 VgwTelemetry::VgwTelemetry() : 
     m_outsideIpAddressHasBeenSet(false),
+    m_status(TelemetryStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_lastStatusChangeHasBeenSet(false),
     m_statusMessageHasBeenSet(false),
@@ -41,6 +42,7 @@ VgwTelemetry::VgwTelemetry() :
 
 VgwTelemetry::VgwTelemetry(const XmlNode& xmlNode) : 
     m_outsideIpAddressHasBeenSet(false),
+    m_status(TelemetryStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_lastStatusChangeHasBeenSet(false),
     m_statusMessageHasBeenSet(false),

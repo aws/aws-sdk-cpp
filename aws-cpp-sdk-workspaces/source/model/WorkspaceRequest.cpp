@@ -36,6 +36,7 @@ WorkspaceRequest::WorkspaceRequest() :
     m_userVolumeEncryptionEnabledHasBeenSet(false),
     m_rootVolumeEncryptionEnabled(false),
     m_rootVolumeEncryptionEnabledHasBeenSet(false),
+    m_workspacePropertiesHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -49,6 +50,7 @@ WorkspaceRequest::WorkspaceRequest(const JsonValue& jsonValue) :
     m_userVolumeEncryptionEnabledHasBeenSet(false),
     m_rootVolumeEncryptionEnabled(false),
     m_rootVolumeEncryptionEnabledHasBeenSet(false),
+    m_workspacePropertiesHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
   *this = jsonValue;
@@ -96,6 +98,13 @@ WorkspaceRequest& WorkspaceRequest::operator =(const JsonValue& jsonValue)
     m_rootVolumeEncryptionEnabled = jsonValue.GetBool("RootVolumeEncryptionEnabled");
 
     m_rootVolumeEncryptionEnabledHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("WorkspaceProperties"))
+  {
+    m_workspaceProperties = jsonValue.GetObject("WorkspaceProperties");
+
+    m_workspacePropertiesHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Tags"))
@@ -148,6 +157,12 @@ JsonValue WorkspaceRequest::Jsonize() const
   if(m_rootVolumeEncryptionEnabledHasBeenSet)
   {
    payload.WithBool("RootVolumeEncryptionEnabled", m_rootVolumeEncryptionEnabled);
+
+  }
+
+  if(m_workspacePropertiesHasBeenSet)
+  {
+   payload.WithObject("WorkspaceProperties", m_workspaceProperties.Jsonize());
 
   }
 

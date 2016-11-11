@@ -26,12 +26,15 @@ PutScalingPolicyRequest::PutScalingPolicyRequest() :
     m_fleetIdHasBeenSet(false),
     m_scalingAdjustment(0),
     m_scalingAdjustmentHasBeenSet(false),
+    m_scalingAdjustmentType(ScalingAdjustmentType::NOT_SET),
     m_scalingAdjustmentTypeHasBeenSet(false),
     m_threshold(0.0),
     m_thresholdHasBeenSet(false),
+    m_comparisonOperator(ComparisonOperatorType::NOT_SET),
     m_comparisonOperatorHasBeenSet(false),
     m_evaluationPeriods(0),
     m_evaluationPeriodsHasBeenSet(false),
+    m_metricName(MetricName::NOT_SET),
     m_metricNameHasBeenSet(false)
 {
 }

@@ -40,7 +40,9 @@ ModifyClusterRequest::ModifyClusterRequest() :
     m_newClusterIdentifierHasBeenSet(false),
     m_publiclyAccessible(false),
     m_publiclyAccessibleHasBeenSet(false),
-    m_elasticIpHasBeenSet(false)
+    m_elasticIpHasBeenSet(false),
+    m_enhancedVpcRouting(false),
+    m_enhancedVpcRoutingHasBeenSet(false)
 {
 }
 
@@ -143,6 +145,11 @@ Aws::String ModifyClusterRequest::SerializePayload() const
   if(m_elasticIpHasBeenSet)
   {
     ss << "ElasticIp=" << StringUtils::URLEncode(m_elasticIp.c_str()) << "&";
+  }
+
+  if(m_enhancedVpcRoutingHasBeenSet)
+  {
+    ss << "EnhancedVpcRouting=" << m_enhancedVpcRouting << "&";
   }
 
   ss << "Version=2012-12-01";

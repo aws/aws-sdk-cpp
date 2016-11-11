@@ -30,10 +30,14 @@ namespace Model
 Run::Run() : 
     m_arnHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_type(TestType::NOT_SET),
     m_typeHasBeenSet(false),
+    m_platform(DevicePlatform::NOT_SET),
     m_platformHasBeenSet(false),
     m_createdHasBeenSet(false),
+    m_status(ExecutionStatus::NOT_SET),
     m_statusHasBeenSet(false),
+    m_result(ExecutionResult::NOT_SET),
     m_resultHasBeenSet(false),
     m_startedHasBeenSet(false),
     m_stoppedHasBeenSet(false),
@@ -43,6 +47,7 @@ Run::Run() :
     m_totalJobsHasBeenSet(false),
     m_completedJobs(0),
     m_completedJobsHasBeenSet(false),
+    m_billingMethod(BillingMethod::NOT_SET),
     m_billingMethodHasBeenSet(false),
     m_deviceMinutesHasBeenSet(false)
 {
@@ -51,10 +56,14 @@ Run::Run() :
 Run::Run(const JsonValue& jsonValue) : 
     m_arnHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_type(TestType::NOT_SET),
     m_typeHasBeenSet(false),
+    m_platform(DevicePlatform::NOT_SET),
     m_platformHasBeenSet(false),
     m_createdHasBeenSet(false),
+    m_status(ExecutionStatus::NOT_SET),
     m_statusHasBeenSet(false),
+    m_result(ExecutionResult::NOT_SET),
     m_resultHasBeenSet(false),
     m_startedHasBeenSet(false),
     m_stoppedHasBeenSet(false),
@@ -64,6 +73,7 @@ Run::Run(const JsonValue& jsonValue) :
     m_totalJobsHasBeenSet(false),
     m_completedJobs(0),
     m_completedJobsHasBeenSet(false),
+    m_billingMethod(BillingMethod::NOT_SET),
     m_billingMethodHasBeenSet(false),
     m_deviceMinutesHasBeenSet(false)
 {

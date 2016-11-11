@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input of a <i>PurchaseReservedCacheNodesOffering</i>
-   * action.</p>
+   * <p>Represents the input of a <code>PurchaseReservedCacheNodesOffering</code>
+   * operation.</p>
    */
   class AWS_ELASTICACHE_API PurchaseReservedCacheNodesOfferingRequest : public ElastiCacheRequest
   {

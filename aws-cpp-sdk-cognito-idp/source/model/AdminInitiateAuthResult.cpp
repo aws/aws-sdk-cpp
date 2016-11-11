@@ -24,11 +24,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-AdminInitiateAuthResult::AdminInitiateAuthResult()
+AdminInitiateAuthResult::AdminInitiateAuthResult() : 
+    m_challengeName(ChallengeNameType::NOT_SET)
 {
 }
 
-AdminInitiateAuthResult::AdminInitiateAuthResult(const AmazonWebServiceResult<JsonValue>& result)
+AdminInitiateAuthResult::AdminInitiateAuthResult(const AmazonWebServiceResult<JsonValue>& result) : 
+    m_challengeName(ChallengeNameType::NOT_SET)
 {
   *this = result;
 }

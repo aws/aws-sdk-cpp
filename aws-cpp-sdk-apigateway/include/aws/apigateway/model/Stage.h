@@ -37,7 +37,9 @@ namespace Model
 
   /**
    * <p>Represents a unique identifier for a version of a deployed <a>RestApi</a>
-   * that is callable by users.</p>
+   * that is callable by users.</p> <div class="seeAlso"> <a
+   * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-deploy-api.html">Deploy
+   * an API</a> </div>
    */
   class AWS_APIGATEWAY_API Stage
   {
@@ -82,25 +84,39 @@ namespace Model
      */
     inline Stage& WithDeploymentId(const char* value) { SetDeploymentId(value); return *this;}
 
-    
+    /**
+     * <p>The identifier of a client certificate for an API stage.</p>
+     */
     inline const Aws::String& GetClientCertificateId() const{ return m_clientCertificateId; }
 
-    
+    /**
+     * <p>The identifier of a client certificate for an API stage.</p>
+     */
     inline void SetClientCertificateId(const Aws::String& value) { m_clientCertificateIdHasBeenSet = true; m_clientCertificateId = value; }
 
-    
+    /**
+     * <p>The identifier of a client certificate for an API stage.</p>
+     */
     inline void SetClientCertificateId(Aws::String&& value) { m_clientCertificateIdHasBeenSet = true; m_clientCertificateId = value; }
 
-    
+    /**
+     * <p>The identifier of a client certificate for an API stage.</p>
+     */
     inline void SetClientCertificateId(const char* value) { m_clientCertificateIdHasBeenSet = true; m_clientCertificateId.assign(value); }
 
-    
+    /**
+     * <p>The identifier of a client certificate for an API stage.</p>
+     */
     inline Stage& WithClientCertificateId(const Aws::String& value) { SetClientCertificateId(value); return *this;}
 
-    
+    /**
+     * <p>The identifier of a client certificate for an API stage.</p>
+     */
     inline Stage& WithClientCertificateId(Aws::String&& value) { SetClientCertificateId(value); return *this;}
 
-    
+    /**
+     * <p>The identifier of a client certificate for an API stage.</p>
+     */
     inline Stage& WithClientCertificateId(const char* value) { SetClientCertificateId(value); return *this;}
 
     /**
@@ -246,173 +262,173 @@ namespace Model
     inline Stage& WithCacheClusterStatus(CacheClusterStatus&& value) { SetCacheClusterStatus(value); return *this;}
 
     /**
-     * <p>A map that defines the method settings for a <a>Stage</a> resource. Keys are
-     * defined as <code>{resource_path}/{http_method}</code> for an individual method
-     * override, or <code>\* /\*</code> for the settings applied to all methods in the
-     * stage.</p>
+     * <p>A map that defines the method settings for a <a>Stage</a> resource. Keys
+     * (designated as <code>/{method_setting_key</code> below) are method paths defined
+     * as <code>{resource_path}/{http_method}</code> for an individual method override,
+     * or <code>/\* /\*</code> for overriding all methods in the stage. </p>
      */
     inline const Aws::Map<Aws::String, MethodSetting>& GetMethodSettings() const{ return m_methodSettings; }
 
     /**
-     * <p>A map that defines the method settings for a <a>Stage</a> resource. Keys are
-     * defined as <code>{resource_path}/{http_method}</code> for an individual method
-     * override, or <code>\* /\*</code> for the settings applied to all methods in the
-     * stage.</p>
+     * <p>A map that defines the method settings for a <a>Stage</a> resource. Keys
+     * (designated as <code>/{method_setting_key</code> below) are method paths defined
+     * as <code>{resource_path}/{http_method}</code> for an individual method override,
+     * or <code>/\* /\*</code> for overriding all methods in the stage. </p>
      */
     inline void SetMethodSettings(const Aws::Map<Aws::String, MethodSetting>& value) { m_methodSettingsHasBeenSet = true; m_methodSettings = value; }
 
     /**
-     * <p>A map that defines the method settings for a <a>Stage</a> resource. Keys are
-     * defined as <code>{resource_path}/{http_method}</code> for an individual method
-     * override, or <code>\* /\*</code> for the settings applied to all methods in the
-     * stage.</p>
+     * <p>A map that defines the method settings for a <a>Stage</a> resource. Keys
+     * (designated as <code>/{method_setting_key</code> below) are method paths defined
+     * as <code>{resource_path}/{http_method}</code> for an individual method override,
+     * or <code>/\* /\*</code> for overriding all methods in the stage. </p>
      */
     inline void SetMethodSettings(Aws::Map<Aws::String, MethodSetting>&& value) { m_methodSettingsHasBeenSet = true; m_methodSettings = value; }
 
     /**
-     * <p>A map that defines the method settings for a <a>Stage</a> resource. Keys are
-     * defined as <code>{resource_path}/{http_method}</code> for an individual method
-     * override, or <code>\* /\*</code> for the settings applied to all methods in the
-     * stage.</p>
+     * <p>A map that defines the method settings for a <a>Stage</a> resource. Keys
+     * (designated as <code>/{method_setting_key</code> below) are method paths defined
+     * as <code>{resource_path}/{http_method}</code> for an individual method override,
+     * or <code>/\* /\*</code> for overriding all methods in the stage. </p>
      */
     inline Stage& WithMethodSettings(const Aws::Map<Aws::String, MethodSetting>& value) { SetMethodSettings(value); return *this;}
 
     /**
-     * <p>A map that defines the method settings for a <a>Stage</a> resource. Keys are
-     * defined as <code>{resource_path}/{http_method}</code> for an individual method
-     * override, or <code>\* /\*</code> for the settings applied to all methods in the
-     * stage.</p>
+     * <p>A map that defines the method settings for a <a>Stage</a> resource. Keys
+     * (designated as <code>/{method_setting_key</code> below) are method paths defined
+     * as <code>{resource_path}/{http_method}</code> for an individual method override,
+     * or <code>/\* /\*</code> for overriding all methods in the stage. </p>
      */
     inline Stage& WithMethodSettings(Aws::Map<Aws::String, MethodSetting>&& value) { SetMethodSettings(value); return *this;}
 
     /**
-     * <p>A map that defines the method settings for a <a>Stage</a> resource. Keys are
-     * defined as <code>{resource_path}/{http_method}</code> for an individual method
-     * override, or <code>\* /\*</code> for the settings applied to all methods in the
-     * stage.</p>
+     * <p>A map that defines the method settings for a <a>Stage</a> resource. Keys
+     * (designated as <code>/{method_setting_key</code> below) are method paths defined
+     * as <code>{resource_path}/{http_method}</code> for an individual method override,
+     * or <code>/\* /\*</code> for overriding all methods in the stage. </p>
      */
     inline Stage& AddMethodSettings(const Aws::String& key, const MethodSetting& value) { m_methodSettingsHasBeenSet = true; m_methodSettings[key] = value; return *this; }
 
     /**
-     * <p>A map that defines the method settings for a <a>Stage</a> resource. Keys are
-     * defined as <code>{resource_path}/{http_method}</code> for an individual method
-     * override, or <code>\* /\*</code> for the settings applied to all methods in the
-     * stage.</p>
+     * <p>A map that defines the method settings for a <a>Stage</a> resource. Keys
+     * (designated as <code>/{method_setting_key</code> below) are method paths defined
+     * as <code>{resource_path}/{http_method}</code> for an individual method override,
+     * or <code>/\* /\*</code> for overriding all methods in the stage. </p>
      */
     inline Stage& AddMethodSettings(Aws::String&& key, const MethodSetting& value) { m_methodSettingsHasBeenSet = true; m_methodSettings[key] = value; return *this; }
 
     /**
-     * <p>A map that defines the method settings for a <a>Stage</a> resource. Keys are
-     * defined as <code>{resource_path}/{http_method}</code> for an individual method
-     * override, or <code>\* /\*</code> for the settings applied to all methods in the
-     * stage.</p>
+     * <p>A map that defines the method settings for a <a>Stage</a> resource. Keys
+     * (designated as <code>/{method_setting_key</code> below) are method paths defined
+     * as <code>{resource_path}/{http_method}</code> for an individual method override,
+     * or <code>/\* /\*</code> for overriding all methods in the stage. </p>
      */
     inline Stage& AddMethodSettings(const Aws::String& key, MethodSetting&& value) { m_methodSettingsHasBeenSet = true; m_methodSettings[key] = value; return *this; }
 
     /**
-     * <p>A map that defines the method settings for a <a>Stage</a> resource. Keys are
-     * defined as <code>{resource_path}/{http_method}</code> for an individual method
-     * override, or <code>\* /\*</code> for the settings applied to all methods in the
-     * stage.</p>
+     * <p>A map that defines the method settings for a <a>Stage</a> resource. Keys
+     * (designated as <code>/{method_setting_key</code> below) are method paths defined
+     * as <code>{resource_path}/{http_method}</code> for an individual method override,
+     * or <code>/\* /\*</code> for overriding all methods in the stage. </p>
      */
     inline Stage& AddMethodSettings(Aws::String&& key, MethodSetting&& value) { m_methodSettingsHasBeenSet = true; m_methodSettings[key] = value; return *this; }
 
     /**
-     * <p>A map that defines the method settings for a <a>Stage</a> resource. Keys are
-     * defined as <code>{resource_path}/{http_method}</code> for an individual method
-     * override, or <code>\* /\*</code> for the settings applied to all methods in the
-     * stage.</p>
+     * <p>A map that defines the method settings for a <a>Stage</a> resource. Keys
+     * (designated as <code>/{method_setting_key</code> below) are method paths defined
+     * as <code>{resource_path}/{http_method}</code> for an individual method override,
+     * or <code>/\* /\*</code> for overriding all methods in the stage. </p>
      */
     inline Stage& AddMethodSettings(const char* key, MethodSetting&& value) { m_methodSettingsHasBeenSet = true; m_methodSettings[key] = value; return *this; }
 
     /**
-     * <p>A map that defines the method settings for a <a>Stage</a> resource. Keys are
-     * defined as <code>{resource_path}/{http_method}</code> for an individual method
-     * override, or <code>\* /\*</code> for the settings applied to all methods in the
-     * stage.</p>
+     * <p>A map that defines the method settings for a <a>Stage</a> resource. Keys
+     * (designated as <code>/{method_setting_key</code> below) are method paths defined
+     * as <code>{resource_path}/{http_method}</code> for an individual method override,
+     * or <code>/\* /\*</code> for overriding all methods in the stage. </p>
      */
     inline Stage& AddMethodSettings(const char* key, const MethodSetting& value) { m_methodSettingsHasBeenSet = true; m_methodSettings[key] = value; return *this; }
 
     /**
      * <p>A map that defines the stage variables for a <a>Stage</a> resource. Variable
-     * names can have alphanumeric characters, and the values must match
+     * names can have alphanumeric and underscore characters, and the values must match
      * <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetVariables() const{ return m_variables; }
 
     /**
      * <p>A map that defines the stage variables for a <a>Stage</a> resource. Variable
-     * names can have alphanumeric characters, and the values must match
+     * names can have alphanumeric and underscore characters, and the values must match
      * <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.</p>
      */
     inline void SetVariables(const Aws::Map<Aws::String, Aws::String>& value) { m_variablesHasBeenSet = true; m_variables = value; }
 
     /**
      * <p>A map that defines the stage variables for a <a>Stage</a> resource. Variable
-     * names can have alphanumeric characters, and the values must match
+     * names can have alphanumeric and underscore characters, and the values must match
      * <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.</p>
      */
     inline void SetVariables(Aws::Map<Aws::String, Aws::String>&& value) { m_variablesHasBeenSet = true; m_variables = value; }
 
     /**
      * <p>A map that defines the stage variables for a <a>Stage</a> resource. Variable
-     * names can have alphanumeric characters, and the values must match
+     * names can have alphanumeric and underscore characters, and the values must match
      * <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.</p>
      */
     inline Stage& WithVariables(const Aws::Map<Aws::String, Aws::String>& value) { SetVariables(value); return *this;}
 
     /**
      * <p>A map that defines the stage variables for a <a>Stage</a> resource. Variable
-     * names can have alphanumeric characters, and the values must match
+     * names can have alphanumeric and underscore characters, and the values must match
      * <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.</p>
      */
     inline Stage& WithVariables(Aws::Map<Aws::String, Aws::String>&& value) { SetVariables(value); return *this;}
 
     /**
      * <p>A map that defines the stage variables for a <a>Stage</a> resource. Variable
-     * names can have alphanumeric characters, and the values must match
+     * names can have alphanumeric and underscore characters, and the values must match
      * <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.</p>
      */
     inline Stage& AddVariables(const Aws::String& key, const Aws::String& value) { m_variablesHasBeenSet = true; m_variables[key] = value; return *this; }
 
     /**
      * <p>A map that defines the stage variables for a <a>Stage</a> resource. Variable
-     * names can have alphanumeric characters, and the values must match
+     * names can have alphanumeric and underscore characters, and the values must match
      * <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.</p>
      */
     inline Stage& AddVariables(Aws::String&& key, const Aws::String& value) { m_variablesHasBeenSet = true; m_variables[key] = value; return *this; }
 
     /**
      * <p>A map that defines the stage variables for a <a>Stage</a> resource. Variable
-     * names can have alphanumeric characters, and the values must match
+     * names can have alphanumeric and underscore characters, and the values must match
      * <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.</p>
      */
     inline Stage& AddVariables(const Aws::String& key, Aws::String&& value) { m_variablesHasBeenSet = true; m_variables[key] = value; return *this; }
 
     /**
      * <p>A map that defines the stage variables for a <a>Stage</a> resource. Variable
-     * names can have alphanumeric characters, and the values must match
+     * names can have alphanumeric and underscore characters, and the values must match
      * <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.</p>
      */
     inline Stage& AddVariables(Aws::String&& key, Aws::String&& value) { m_variablesHasBeenSet = true; m_variables[key] = value; return *this; }
 
     /**
      * <p>A map that defines the stage variables for a <a>Stage</a> resource. Variable
-     * names can have alphanumeric characters, and the values must match
+     * names can have alphanumeric and underscore characters, and the values must match
      * <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.</p>
      */
     inline Stage& AddVariables(const char* key, Aws::String&& value) { m_variablesHasBeenSet = true; m_variables[key] = value; return *this; }
 
     /**
      * <p>A map that defines the stage variables for a <a>Stage</a> resource. Variable
-     * names can have alphanumeric characters, and the values must match
+     * names can have alphanumeric and underscore characters, and the values must match
      * <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.</p>
      */
     inline Stage& AddVariables(Aws::String&& key, const char* value) { m_variablesHasBeenSet = true; m_variables[key] = value; return *this; }
 
     /**
      * <p>A map that defines the stage variables for a <a>Stage</a> resource. Variable
-     * names can have alphanumeric characters, and the values must match
+     * names can have alphanumeric and underscore characters, and the values must match
      * <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.</p>
      */
     inline Stage& AddVariables(const char* key, const char* value) { m_variablesHasBeenSet = true; m_variables[key] = value; return *this; }

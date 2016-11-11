@@ -44,12 +44,19 @@ enum class DirectConnectErrors
   RESOURCE_NOT_FOUND = 16,
   UNRECOGNIZED_CLIENT = 17,
   MALFORMED_QUERY_STRING = 18,
+  SLOW_DOWN = 19,
+  REQUEST_TIME_TOO_SKEWED = 20,
+  INVALID_SIGNATURE = 21,
+  SIGNATURE_DOES_NOT_MATCH = 22,
   NETWORK_CONNECTION = 99,
+  
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
   DIRECT_CONNECT_CLIENT= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
-  DIRECT_CONNECT_SERVER
+  DIRECT_CONNECT_SERVER,
+  DUPLICATE_TAG_KEYS,
+  TOO_MANY_TAGS
 };
 namespace DirectConnectErrorMapper
 {

@@ -33,6 +33,7 @@ SpotDatafeedSubscription::SpotDatafeedSubscription() :
     m_ownerIdHasBeenSet(false),
     m_bucketHasBeenSet(false),
     m_prefixHasBeenSet(false),
+    m_state(DatafeedSubscriptionState::NOT_SET),
     m_stateHasBeenSet(false),
     m_faultHasBeenSet(false)
 {
@@ -42,6 +43,7 @@ SpotDatafeedSubscription::SpotDatafeedSubscription(const XmlNode& xmlNode) :
     m_ownerIdHasBeenSet(false),
     m_bucketHasBeenSet(false),
     m_prefixHasBeenSet(false),
+    m_state(DatafeedSubscriptionState::NOT_SET),
     m_stateHasBeenSet(false),
     m_faultHasBeenSet(false)
 {

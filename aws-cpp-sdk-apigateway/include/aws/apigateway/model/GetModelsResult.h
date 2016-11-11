@@ -35,7 +35,10 @@ namespace APIGateway
 namespace Model
 {
   /**
-   * <p>Represents a collection of <a>Model</a> resources.</p>
+   * <p>Represents a collection of <a>Model</a> resources.</p> <div class="seeAlso">
+   * <a>Method</a>, <a>MethodResponse</a>, <a
+   * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/models-mappings.html">Models
+   * and Mappings</a> </div>
    */
   class AWS_APIGATEWAY_API GetModelsResult
   {

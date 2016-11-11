@@ -23,6 +23,7 @@ using namespace Aws::Utils;
 
 DescribeExportTasksRequest::DescribeExportTasksRequest() : 
     m_taskIdHasBeenSet(false),
+    m_statusCode(ExportTaskStatusCode::NOT_SET),
     m_statusCodeHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
     m_limit(0),

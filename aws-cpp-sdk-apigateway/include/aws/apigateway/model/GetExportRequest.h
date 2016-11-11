@@ -149,177 +149,201 @@ namespace Model
 
     /**
      * <p>A key-value map of query string parameters that specify properties of the
-     * export, depending on the requested exportType. For exportType 'swagger', any
-     * combination of the following parameters are supported: 'integrations' will
-     * export x-amazon-apigateway-integration extensions 'authorizers' will export
-     * x-amazon-apigateway-authorizer extensions 'postman' will export with Postman
-     * extensions, allowing for import to the Postman tool</p>
+     * export, depending on the requested <code>exportType</code>. For
+     * <code>exportType</code> <code>swagger</code>, any combination of the following
+     * parameters are supported: <code>integrations</code> will export the API with
+     * x-amazon-apigateway-integration extensions. <code>authorizers</code> will export
+     * the API with x-amazon-apigateway-authorizer extensions. <code>postman</code>
+     * will export the API with Postman extensions, allowing for import to the Postman
+     * tool</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetParameters() const{ return m_parameters; }
 
     /**
      * <p>A key-value map of query string parameters that specify properties of the
-     * export, depending on the requested exportType. For exportType 'swagger', any
-     * combination of the following parameters are supported: 'integrations' will
-     * export x-amazon-apigateway-integration extensions 'authorizers' will export
-     * x-amazon-apigateway-authorizer extensions 'postman' will export with Postman
-     * extensions, allowing for import to the Postman tool</p>
+     * export, depending on the requested <code>exportType</code>. For
+     * <code>exportType</code> <code>swagger</code>, any combination of the following
+     * parameters are supported: <code>integrations</code> will export the API with
+     * x-amazon-apigateway-integration extensions. <code>authorizers</code> will export
+     * the API with x-amazon-apigateway-authorizer extensions. <code>postman</code>
+     * will export the API with Postman extensions, allowing for import to the Postman
+     * tool</p>
      */
     inline void SetParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
 
     /**
      * <p>A key-value map of query string parameters that specify properties of the
-     * export, depending on the requested exportType. For exportType 'swagger', any
-     * combination of the following parameters are supported: 'integrations' will
-     * export x-amazon-apigateway-integration extensions 'authorizers' will export
-     * x-amazon-apigateway-authorizer extensions 'postman' will export with Postman
-     * extensions, allowing for import to the Postman tool</p>
+     * export, depending on the requested <code>exportType</code>. For
+     * <code>exportType</code> <code>swagger</code>, any combination of the following
+     * parameters are supported: <code>integrations</code> will export the API with
+     * x-amazon-apigateway-integration extensions. <code>authorizers</code> will export
+     * the API with x-amazon-apigateway-authorizer extensions. <code>postman</code>
+     * will export the API with Postman extensions, allowing for import to the Postman
+     * tool</p>
      */
     inline void SetParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters = value; }
 
     /**
      * <p>A key-value map of query string parameters that specify properties of the
-     * export, depending on the requested exportType. For exportType 'swagger', any
-     * combination of the following parameters are supported: 'integrations' will
-     * export x-amazon-apigateway-integration extensions 'authorizers' will export
-     * x-amazon-apigateway-authorizer extensions 'postman' will export with Postman
-     * extensions, allowing for import to the Postman tool</p>
+     * export, depending on the requested <code>exportType</code>. For
+     * <code>exportType</code> <code>swagger</code>, any combination of the following
+     * parameters are supported: <code>integrations</code> will export the API with
+     * x-amazon-apigateway-integration extensions. <code>authorizers</code> will export
+     * the API with x-amazon-apigateway-authorizer extensions. <code>postman</code>
+     * will export the API with Postman extensions, allowing for import to the Postman
+     * tool</p>
      */
     inline GetExportRequest& WithParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetParameters(value); return *this;}
 
     /**
      * <p>A key-value map of query string parameters that specify properties of the
-     * export, depending on the requested exportType. For exportType 'swagger', any
-     * combination of the following parameters are supported: 'integrations' will
-     * export x-amazon-apigateway-integration extensions 'authorizers' will export
-     * x-amazon-apigateway-authorizer extensions 'postman' will export with Postman
-     * extensions, allowing for import to the Postman tool</p>
+     * export, depending on the requested <code>exportType</code>. For
+     * <code>exportType</code> <code>swagger</code>, any combination of the following
+     * parameters are supported: <code>integrations</code> will export the API with
+     * x-amazon-apigateway-integration extensions. <code>authorizers</code> will export
+     * the API with x-amazon-apigateway-authorizer extensions. <code>postman</code>
+     * will export the API with Postman extensions, allowing for import to the Postman
+     * tool</p>
      */
     inline GetExportRequest& WithParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetParameters(value); return *this;}
 
     /**
      * <p>A key-value map of query string parameters that specify properties of the
-     * export, depending on the requested exportType. For exportType 'swagger', any
-     * combination of the following parameters are supported: 'integrations' will
-     * export x-amazon-apigateway-integration extensions 'authorizers' will export
-     * x-amazon-apigateway-authorizer extensions 'postman' will export with Postman
-     * extensions, allowing for import to the Postman tool</p>
+     * export, depending on the requested <code>exportType</code>. For
+     * <code>exportType</code> <code>swagger</code>, any combination of the following
+     * parameters are supported: <code>integrations</code> will export the API with
+     * x-amazon-apigateway-integration extensions. <code>authorizers</code> will export
+     * the API with x-amazon-apigateway-authorizer extensions. <code>postman</code>
+     * will export the API with Postman extensions, allowing for import to the Postman
+     * tool</p>
      */
     inline GetExportRequest& AddParameters(const Aws::String& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters[key] = value; return *this; }
 
     /**
      * <p>A key-value map of query string parameters that specify properties of the
-     * export, depending on the requested exportType. For exportType 'swagger', any
-     * combination of the following parameters are supported: 'integrations' will
-     * export x-amazon-apigateway-integration extensions 'authorizers' will export
-     * x-amazon-apigateway-authorizer extensions 'postman' will export with Postman
-     * extensions, allowing for import to the Postman tool</p>
+     * export, depending on the requested <code>exportType</code>. For
+     * <code>exportType</code> <code>swagger</code>, any combination of the following
+     * parameters are supported: <code>integrations</code> will export the API with
+     * x-amazon-apigateway-integration extensions. <code>authorizers</code> will export
+     * the API with x-amazon-apigateway-authorizer extensions. <code>postman</code>
+     * will export the API with Postman extensions, allowing for import to the Postman
+     * tool</p>
      */
     inline GetExportRequest& AddParameters(Aws::String&& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters[key] = value; return *this; }
 
     /**
      * <p>A key-value map of query string parameters that specify properties of the
-     * export, depending on the requested exportType. For exportType 'swagger', any
-     * combination of the following parameters are supported: 'integrations' will
-     * export x-amazon-apigateway-integration extensions 'authorizers' will export
-     * x-amazon-apigateway-authorizer extensions 'postman' will export with Postman
-     * extensions, allowing for import to the Postman tool</p>
+     * export, depending on the requested <code>exportType</code>. For
+     * <code>exportType</code> <code>swagger</code>, any combination of the following
+     * parameters are supported: <code>integrations</code> will export the API with
+     * x-amazon-apigateway-integration extensions. <code>authorizers</code> will export
+     * the API with x-amazon-apigateway-authorizer extensions. <code>postman</code>
+     * will export the API with Postman extensions, allowing for import to the Postman
+     * tool</p>
      */
     inline GetExportRequest& AddParameters(const Aws::String& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters[key] = value; return *this; }
 
     /**
      * <p>A key-value map of query string parameters that specify properties of the
-     * export, depending on the requested exportType. For exportType 'swagger', any
-     * combination of the following parameters are supported: 'integrations' will
-     * export x-amazon-apigateway-integration extensions 'authorizers' will export
-     * x-amazon-apigateway-authorizer extensions 'postman' will export with Postman
-     * extensions, allowing for import to the Postman tool</p>
+     * export, depending on the requested <code>exportType</code>. For
+     * <code>exportType</code> <code>swagger</code>, any combination of the following
+     * parameters are supported: <code>integrations</code> will export the API with
+     * x-amazon-apigateway-integration extensions. <code>authorizers</code> will export
+     * the API with x-amazon-apigateway-authorizer extensions. <code>postman</code>
+     * will export the API with Postman extensions, allowing for import to the Postman
+     * tool</p>
      */
     inline GetExportRequest& AddParameters(Aws::String&& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters[key] = value; return *this; }
 
     /**
      * <p>A key-value map of query string parameters that specify properties of the
-     * export, depending on the requested exportType. For exportType 'swagger', any
-     * combination of the following parameters are supported: 'integrations' will
-     * export x-amazon-apigateway-integration extensions 'authorizers' will export
-     * x-amazon-apigateway-authorizer extensions 'postman' will export with Postman
-     * extensions, allowing for import to the Postman tool</p>
+     * export, depending on the requested <code>exportType</code>. For
+     * <code>exportType</code> <code>swagger</code>, any combination of the following
+     * parameters are supported: <code>integrations</code> will export the API with
+     * x-amazon-apigateway-integration extensions. <code>authorizers</code> will export
+     * the API with x-amazon-apigateway-authorizer extensions. <code>postman</code>
+     * will export the API with Postman extensions, allowing for import to the Postman
+     * tool</p>
      */
     inline GetExportRequest& AddParameters(const char* key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters[key] = value; return *this; }
 
     /**
      * <p>A key-value map of query string parameters that specify properties of the
-     * export, depending on the requested exportType. For exportType 'swagger', any
-     * combination of the following parameters are supported: 'integrations' will
-     * export x-amazon-apigateway-integration extensions 'authorizers' will export
-     * x-amazon-apigateway-authorizer extensions 'postman' will export with Postman
-     * extensions, allowing for import to the Postman tool</p>
+     * export, depending on the requested <code>exportType</code>. For
+     * <code>exportType</code> <code>swagger</code>, any combination of the following
+     * parameters are supported: <code>integrations</code> will export the API with
+     * x-amazon-apigateway-integration extensions. <code>authorizers</code> will export
+     * the API with x-amazon-apigateway-authorizer extensions. <code>postman</code>
+     * will export the API with Postman extensions, allowing for import to the Postman
+     * tool</p>
      */
     inline GetExportRequest& AddParameters(Aws::String&& key, const char* value) { m_parametersHasBeenSet = true; m_parameters[key] = value; return *this; }
 
     /**
      * <p>A key-value map of query string parameters that specify properties of the
-     * export, depending on the requested exportType. For exportType 'swagger', any
-     * combination of the following parameters are supported: 'integrations' will
-     * export x-amazon-apigateway-integration extensions 'authorizers' will export
-     * x-amazon-apigateway-authorizer extensions 'postman' will export with Postman
-     * extensions, allowing for import to the Postman tool</p>
+     * export, depending on the requested <code>exportType</code>. For
+     * <code>exportType</code> <code>swagger</code>, any combination of the following
+     * parameters are supported: <code>integrations</code> will export the API with
+     * x-amazon-apigateway-integration extensions. <code>authorizers</code> will export
+     * the API with x-amazon-apigateway-authorizer extensions. <code>postman</code>
+     * will export the API with Postman extensions, allowing for import to the Postman
+     * tool</p>
      */
     inline GetExportRequest& AddParameters(const char* key, const char* value) { m_parametersHasBeenSet = true; m_parameters[key] = value; return *this; }
 
     /**
-     * <p>The content-type of the export, for example 'application/json'. Currently
-     * 'application/json' and 'application/yaml' are supported for exportType
-     * 'swagger'. Should be specifed in the 'Accept' header for direct API
-     * requests.</p>
+     * <p>The content-type of the export, for example <code>application/json</code>.
+     * Currently <code>application/json</code> and <code>application/yaml</code> are
+     * supported for <code>exportType</code> of <code>swagger</code>. This should be
+     * specified in the <code>Accept</code> header for direct API requests.</p>
      */
     inline const Aws::String& GetAccepts() const{ return m_accepts; }
 
     /**
-     * <p>The content-type of the export, for example 'application/json'. Currently
-     * 'application/json' and 'application/yaml' are supported for exportType
-     * 'swagger'. Should be specifed in the 'Accept' header for direct API
-     * requests.</p>
+     * <p>The content-type of the export, for example <code>application/json</code>.
+     * Currently <code>application/json</code> and <code>application/yaml</code> are
+     * supported for <code>exportType</code> of <code>swagger</code>. This should be
+     * specified in the <code>Accept</code> header for direct API requests.</p>
      */
     inline void SetAccepts(const Aws::String& value) { m_acceptsHasBeenSet = true; m_accepts = value; }
 
     /**
-     * <p>The content-type of the export, for example 'application/json'. Currently
-     * 'application/json' and 'application/yaml' are supported for exportType
-     * 'swagger'. Should be specifed in the 'Accept' header for direct API
-     * requests.</p>
+     * <p>The content-type of the export, for example <code>application/json</code>.
+     * Currently <code>application/json</code> and <code>application/yaml</code> are
+     * supported for <code>exportType</code> of <code>swagger</code>. This should be
+     * specified in the <code>Accept</code> header for direct API requests.</p>
      */
     inline void SetAccepts(Aws::String&& value) { m_acceptsHasBeenSet = true; m_accepts = value; }
 
     /**
-     * <p>The content-type of the export, for example 'application/json'. Currently
-     * 'application/json' and 'application/yaml' are supported for exportType
-     * 'swagger'. Should be specifed in the 'Accept' header for direct API
-     * requests.</p>
+     * <p>The content-type of the export, for example <code>application/json</code>.
+     * Currently <code>application/json</code> and <code>application/yaml</code> are
+     * supported for <code>exportType</code> of <code>swagger</code>. This should be
+     * specified in the <code>Accept</code> header for direct API requests.</p>
      */
     inline void SetAccepts(const char* value) { m_acceptsHasBeenSet = true; m_accepts.assign(value); }
 
     /**
-     * <p>The content-type of the export, for example 'application/json'. Currently
-     * 'application/json' and 'application/yaml' are supported for exportType
-     * 'swagger'. Should be specifed in the 'Accept' header for direct API
-     * requests.</p>
+     * <p>The content-type of the export, for example <code>application/json</code>.
+     * Currently <code>application/json</code> and <code>application/yaml</code> are
+     * supported for <code>exportType</code> of <code>swagger</code>. This should be
+     * specified in the <code>Accept</code> header for direct API requests.</p>
      */
     inline GetExportRequest& WithAccepts(const Aws::String& value) { SetAccepts(value); return *this;}
 
     /**
-     * <p>The content-type of the export, for example 'application/json'. Currently
-     * 'application/json' and 'application/yaml' are supported for exportType
-     * 'swagger'. Should be specifed in the 'Accept' header for direct API
-     * requests.</p>
+     * <p>The content-type of the export, for example <code>application/json</code>.
+     * Currently <code>application/json</code> and <code>application/yaml</code> are
+     * supported for <code>exportType</code> of <code>swagger</code>. This should be
+     * specified in the <code>Accept</code> header for direct API requests.</p>
      */
     inline GetExportRequest& WithAccepts(Aws::String&& value) { SetAccepts(value); return *this;}
 
     /**
-     * <p>The content-type of the export, for example 'application/json'. Currently
-     * 'application/json' and 'application/yaml' are supported for exportType
-     * 'swagger'. Should be specifed in the 'Accept' header for direct API
-     * requests.</p>
+     * <p>The content-type of the export, for example <code>application/json</code>.
+     * Currently <code>application/json</code> and <code>application/yaml</code> are
+     * supported for <code>exportType</code> of <code>swagger</code>. This should be
+     * specified in the <code>Accept</code> header for direct API requests.</p>
      */
     inline GetExportRequest& WithAccepts(const char* value) { SetAccepts(value); return *this;}
 

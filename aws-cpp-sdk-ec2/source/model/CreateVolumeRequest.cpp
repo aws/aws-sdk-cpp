@@ -26,6 +26,7 @@ CreateVolumeRequest::CreateVolumeRequest() :
     m_sizeHasBeenSet(false),
     m_snapshotIdHasBeenSet(false),
     m_availabilityZoneHasBeenSet(false),
+    m_volumeType(VolumeType::NOT_SET),
     m_volumeTypeHasBeenSet(false),
     m_iops(0),
     m_iopsHasBeenSet(false),

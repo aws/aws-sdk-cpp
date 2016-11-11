@@ -23,6 +23,7 @@ DescribeNetworkInterfaceAttributeRequest::DescribeNetworkInterfaceAttributeReque
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
     m_networkInterfaceIdHasBeenSet(false),
+    m_attribute(NetworkInterfaceAttribute::NOT_SET),
     m_attributeHasBeenSet(false)
 {
 }

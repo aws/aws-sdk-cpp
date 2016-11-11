@@ -29,6 +29,7 @@ namespace Model
 
 JobListEntry::JobListEntry() : 
     m_jobIdHasBeenSet(false),
+    m_jobState(JobState::NOT_SET),
     m_jobStateHasBeenSet(false),
     m_isMaster(false),
     m_isMasterHasBeenSet(false)
@@ -37,6 +38,7 @@ JobListEntry::JobListEntry() :
 
 JobListEntry::JobListEntry(const JsonValue& jsonValue) : 
     m_jobIdHasBeenSet(false),
+    m_jobState(JobState::NOT_SET),
     m_jobStateHasBeenSet(false),
     m_isMaster(false),
     m_isMasterHasBeenSet(false)

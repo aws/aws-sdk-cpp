@@ -36,6 +36,7 @@ StreamingDistributionConfig::StreamingDistributionConfig() :
     m_commentHasBeenSet(false),
     m_loggingHasBeenSet(false),
     m_trustedSignersHasBeenSet(false),
+    m_priceClass(PriceClass::NOT_SET),
     m_priceClassHasBeenSet(false),
     m_enabled(false),
     m_enabledHasBeenSet(false)
@@ -49,6 +50,7 @@ StreamingDistributionConfig::StreamingDistributionConfig(const XmlNode& xmlNode)
     m_commentHasBeenSet(false),
     m_loggingHasBeenSet(false),
     m_trustedSignersHasBeenSet(false),
+    m_priceClass(PriceClass::NOT_SET),
     m_priceClassHasBeenSet(false),
     m_enabled(false),
     m_enabledHasBeenSet(false)

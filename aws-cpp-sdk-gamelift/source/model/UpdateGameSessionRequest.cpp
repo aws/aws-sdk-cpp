@@ -26,7 +26,9 @@ UpdateGameSessionRequest::UpdateGameSessionRequest() :
     m_maximumPlayerSessionCount(0),
     m_maximumPlayerSessionCountHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_playerSessionCreationPolicy(PlayerSessionCreationPolicy::NOT_SET),
     m_playerSessionCreationPolicyHasBeenSet(false),
+    m_protectionPolicy(ProtectionPolicy::NOT_SET),
     m_protectionPolicyHasBeenSet(false)
 {
 }

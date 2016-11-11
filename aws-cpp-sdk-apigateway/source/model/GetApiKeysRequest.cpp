@@ -27,7 +27,10 @@ using namespace Aws::Http;
 GetApiKeysRequest::GetApiKeysRequest() : 
     m_positionHasBeenSet(false),
     m_limit(0),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_nameQueryHasBeenSet(false),
+    m_includeValues(false),
+    m_includeValuesHasBeenSet(false)
 {
 }
 
@@ -50,6 +53,20 @@ void GetApiKeysRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << m_limit;
       uri.AddQueryStringParameter("limit", ss.str());
+      ss.str("");
+    }
+
+    if(m_nameQueryHasBeenSet)
+    {
+      ss << m_nameQuery;
+      uri.AddQueryStringParameter("name", ss.str());
+      ss.str("");
+    }
+
+    if(m_includeValuesHasBeenSet)
+    {
+      ss << m_includeValues;
+      uri.AddQueryStringParameter("includeValues", ss.str());
       ss.str("");
     }
 

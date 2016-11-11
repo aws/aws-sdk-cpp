@@ -69,25 +69,39 @@ namespace Model
      */
     inline CreateTrafficPolicyResult& WithTrafficPolicy(TrafficPolicy&& value) { SetTrafficPolicy(value); return *this;}
 
-    
+    /**
+     * <p>A unique URL that represents a new traffic policy.</p>
+     */
     inline const Aws::String& GetLocation() const{ return m_location; }
 
-    
+    /**
+     * <p>A unique URL that represents a new traffic policy.</p>
+     */
     inline void SetLocation(const Aws::String& value) { m_location = value; }
 
-    
+    /**
+     * <p>A unique URL that represents a new traffic policy.</p>
+     */
     inline void SetLocation(Aws::String&& value) { m_location = value; }
 
-    
+    /**
+     * <p>A unique URL that represents a new traffic policy.</p>
+     */
     inline void SetLocation(const char* value) { m_location.assign(value); }
 
-    
+    /**
+     * <p>A unique URL that represents a new traffic policy.</p>
+     */
     inline CreateTrafficPolicyResult& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
 
-    
+    /**
+     * <p>A unique URL that represents a new traffic policy.</p>
+     */
     inline CreateTrafficPolicyResult& WithLocation(Aws::String&& value) { SetLocation(value); return *this;}
 
-    
+    /**
+     * <p>A unique URL that represents a new traffic policy.</p>
+     */
     inline CreateTrafficPolicyResult& WithLocation(const char* value) { SetLocation(value); return *this;}
 
   private:

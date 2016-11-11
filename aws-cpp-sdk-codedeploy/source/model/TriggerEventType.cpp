@@ -33,6 +33,7 @@ namespace Aws
         static const int DeploymentSuccess_HASH = HashingUtils::HashString("DeploymentSuccess");
         static const int DeploymentFailure_HASH = HashingUtils::HashString("DeploymentFailure");
         static const int DeploymentStop_HASH = HashingUtils::HashString("DeploymentStop");
+        static const int DeploymentRollback_HASH = HashingUtils::HashString("DeploymentRollback");
         static const int InstanceStart_HASH = HashingUtils::HashString("InstanceStart");
         static const int InstanceSuccess_HASH = HashingUtils::HashString("InstanceSuccess");
         static const int InstanceFailure_HASH = HashingUtils::HashString("InstanceFailure");
@@ -56,6 +57,10 @@ namespace Aws
           else if (hashCode == DeploymentStop_HASH)
           {
             return TriggerEventType::DeploymentStop;
+          }
+          else if (hashCode == DeploymentRollback_HASH)
+          {
+            return TriggerEventType::DeploymentRollback;
           }
           else if (hashCode == InstanceStart_HASH)
           {
@@ -91,6 +96,8 @@ namespace Aws
             return "DeploymentFailure";
           case TriggerEventType::DeploymentStop:
             return "DeploymentStop";
+          case TriggerEventType::DeploymentRollback:
+            return "DeploymentRollback";
           case TriggerEventType::InstanceStart:
             return "InstanceStart";
           case TriggerEventType::InstanceSuccess:

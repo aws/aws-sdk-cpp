@@ -197,37 +197,37 @@ namespace Model
     inline CreateListenerRequest& AddCertificates(Certificate&& value) { m_certificatesHasBeenSet = true; m_certificates.push_back(value); return *this; }
 
     /**
-     * <p>The default actions for the listener.</p>
+     * <p>The default action for the listener.</p>
      */
     inline const Aws::Vector<Action>& GetDefaultActions() const{ return m_defaultActions; }
 
     /**
-     * <p>The default actions for the listener.</p>
+     * <p>The default action for the listener.</p>
      */
     inline void SetDefaultActions(const Aws::Vector<Action>& value) { m_defaultActionsHasBeenSet = true; m_defaultActions = value; }
 
     /**
-     * <p>The default actions for the listener.</p>
+     * <p>The default action for the listener.</p>
      */
     inline void SetDefaultActions(Aws::Vector<Action>&& value) { m_defaultActionsHasBeenSet = true; m_defaultActions = value; }
 
     /**
-     * <p>The default actions for the listener.</p>
+     * <p>The default action for the listener.</p>
      */
     inline CreateListenerRequest& WithDefaultActions(const Aws::Vector<Action>& value) { SetDefaultActions(value); return *this;}
 
     /**
-     * <p>The default actions for the listener.</p>
+     * <p>The default action for the listener.</p>
      */
     inline CreateListenerRequest& WithDefaultActions(Aws::Vector<Action>&& value) { SetDefaultActions(value); return *this;}
 
     /**
-     * <p>The default actions for the listener.</p>
+     * <p>The default action for the listener.</p>
      */
     inline CreateListenerRequest& AddDefaultActions(const Action& value) { m_defaultActionsHasBeenSet = true; m_defaultActions.push_back(value); return *this; }
 
     /**
-     * <p>The default actions for the listener.</p>
+     * <p>The default action for the listener.</p>
      */
     inline CreateListenerRequest& AddDefaultActions(Action&& value) { m_defaultActionsHasBeenSet = true; m_defaultActions.push_back(value); return *this; }
 

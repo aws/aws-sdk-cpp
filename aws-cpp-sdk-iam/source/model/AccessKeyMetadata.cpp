@@ -32,6 +32,7 @@ namespace Model
 AccessKeyMetadata::AccessKeyMetadata() : 
     m_userNameHasBeenSet(false),
     m_accessKeyIdHasBeenSet(false),
+    m_status(StatusType::NOT_SET),
     m_statusHasBeenSet(false),
     m_createDateHasBeenSet(false)
 {
@@ -40,6 +41,7 @@ AccessKeyMetadata::AccessKeyMetadata() :
 AccessKeyMetadata::AccessKeyMetadata(const XmlNode& xmlNode) : 
     m_userNameHasBeenSet(false),
     m_accessKeyIdHasBeenSet(false),
+    m_status(StatusType::NOT_SET),
     m_statusHasBeenSet(false),
     m_createDateHasBeenSet(false)
 {

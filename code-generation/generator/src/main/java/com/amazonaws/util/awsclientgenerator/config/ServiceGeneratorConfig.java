@@ -32,6 +32,7 @@ import com.amazonaws.util.awsclientgenerator.generators.cpp.machinelearning.Mach
 import com.amazonaws.util.awsclientgenerator.generators.cpp.r53.Route53CppClientGenerator;
 import com.amazonaws.util.awsclientgenerator.generators.cpp.s3.S3RestXmlCppClientGenerator;
 import com.amazonaws.util.awsclientgenerator.generators.cpp.sqs.SQSQueryXmlCppClientGenerator;
+import com.amazonaws.util.awsclientgenerator.generators.cpp.budgets.BudgetsCppClientGenerator;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -64,6 +65,8 @@ public class ServiceGeneratorConfig {
             SPEC_OVERRIDE_MAPPING.put("cpp-apigateway", new APIGatewayRestJsonCppClientGenerator());
             SPEC_OVERRIDE_MAPPING.put("cpp-machinelearning", new MachineLearningJsonCppClientGenerator());
             SPEC_OVERRIDE_MAPPING.put("cpp-route53", new Route53CppClientGenerator());
+            SPEC_OVERRIDE_MAPPING.put("cpp-budgets", new BudgetsCppClientGenerator());
+
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input of a <i>DeleteReplicationGroup</i> action.</p>
+   * <p>Represents the input of a <code>DeleteReplicationGroup</code> operation.</p>
    */
   class AWS_ELASTICACHE_API DeleteReplicationGroupRequest : public ElastiCacheRequest
   {
@@ -76,76 +76,76 @@ namespace Model
     inline DeleteReplicationGroupRequest& WithReplicationGroupId(const char* value) { SetReplicationGroupId(value); return *this;}
 
     /**
-     * <p>If set to <i>true</i>, all of the read replicas will be deleted, but the
-     * primary node will be retained.</p>
+     * <p>If set to <code>true</code>, all of the read replicas are deleted, but the
+     * primary node is retained.</p>
      */
     inline bool GetRetainPrimaryCluster() const{ return m_retainPrimaryCluster; }
 
     /**
-     * <p>If set to <i>true</i>, all of the read replicas will be deleted, but the
-     * primary node will be retained.</p>
+     * <p>If set to <code>true</code>, all of the read replicas are deleted, but the
+     * primary node is retained.</p>
      */
     inline void SetRetainPrimaryCluster(bool value) { m_retainPrimaryClusterHasBeenSet = true; m_retainPrimaryCluster = value; }
 
     /**
-     * <p>If set to <i>true</i>, all of the read replicas will be deleted, but the
-     * primary node will be retained.</p>
+     * <p>If set to <code>true</code>, all of the read replicas are deleted, but the
+     * primary node is retained.</p>
      */
     inline DeleteReplicationGroupRequest& WithRetainPrimaryCluster(bool value) { SetRetainPrimaryCluster(value); return *this;}
 
     /**
-     * <p>The name of a final node group snapshot. ElastiCache creates the snapshot
-     * from the primary node in the cluster, rather than one of the replicas; this is
-     * to ensure that it captures the freshest data. After the final snapshot is taken,
-     * the cluster is immediately deleted.</p>
+     * <p>The name of a final node group (shard) snapshot. ElastiCache creates the
+     * snapshot from the primary node in the cluster, rather than one of the replicas;
+     * this is to ensure that it captures the freshest data. After the final snapshot
+     * is taken, the replication group is immediately deleted.</p>
      */
     inline const Aws::String& GetFinalSnapshotIdentifier() const{ return m_finalSnapshotIdentifier; }
 
     /**
-     * <p>The name of a final node group snapshot. ElastiCache creates the snapshot
-     * from the primary node in the cluster, rather than one of the replicas; this is
-     * to ensure that it captures the freshest data. After the final snapshot is taken,
-     * the cluster is immediately deleted.</p>
+     * <p>The name of a final node group (shard) snapshot. ElastiCache creates the
+     * snapshot from the primary node in the cluster, rather than one of the replicas;
+     * this is to ensure that it captures the freshest data. After the final snapshot
+     * is taken, the replication group is immediately deleted.</p>
      */
     inline void SetFinalSnapshotIdentifier(const Aws::String& value) { m_finalSnapshotIdentifierHasBeenSet = true; m_finalSnapshotIdentifier = value; }
 
     /**
-     * <p>The name of a final node group snapshot. ElastiCache creates the snapshot
-     * from the primary node in the cluster, rather than one of the replicas; this is
-     * to ensure that it captures the freshest data. After the final snapshot is taken,
-     * the cluster is immediately deleted.</p>
+     * <p>The name of a final node group (shard) snapshot. ElastiCache creates the
+     * snapshot from the primary node in the cluster, rather than one of the replicas;
+     * this is to ensure that it captures the freshest data. After the final snapshot
+     * is taken, the replication group is immediately deleted.</p>
      */
     inline void SetFinalSnapshotIdentifier(Aws::String&& value) { m_finalSnapshotIdentifierHasBeenSet = true; m_finalSnapshotIdentifier = value; }
 
     /**
-     * <p>The name of a final node group snapshot. ElastiCache creates the snapshot
-     * from the primary node in the cluster, rather than one of the replicas; this is
-     * to ensure that it captures the freshest data. After the final snapshot is taken,
-     * the cluster is immediately deleted.</p>
+     * <p>The name of a final node group (shard) snapshot. ElastiCache creates the
+     * snapshot from the primary node in the cluster, rather than one of the replicas;
+     * this is to ensure that it captures the freshest data. After the final snapshot
+     * is taken, the replication group is immediately deleted.</p>
      */
     inline void SetFinalSnapshotIdentifier(const char* value) { m_finalSnapshotIdentifierHasBeenSet = true; m_finalSnapshotIdentifier.assign(value); }
 
     /**
-     * <p>The name of a final node group snapshot. ElastiCache creates the snapshot
-     * from the primary node in the cluster, rather than one of the replicas; this is
-     * to ensure that it captures the freshest data. After the final snapshot is taken,
-     * the cluster is immediately deleted.</p>
+     * <p>The name of a final node group (shard) snapshot. ElastiCache creates the
+     * snapshot from the primary node in the cluster, rather than one of the replicas;
+     * this is to ensure that it captures the freshest data. After the final snapshot
+     * is taken, the replication group is immediately deleted.</p>
      */
     inline DeleteReplicationGroupRequest& WithFinalSnapshotIdentifier(const Aws::String& value) { SetFinalSnapshotIdentifier(value); return *this;}
 
     /**
-     * <p>The name of a final node group snapshot. ElastiCache creates the snapshot
-     * from the primary node in the cluster, rather than one of the replicas; this is
-     * to ensure that it captures the freshest data. After the final snapshot is taken,
-     * the cluster is immediately deleted.</p>
+     * <p>The name of a final node group (shard) snapshot. ElastiCache creates the
+     * snapshot from the primary node in the cluster, rather than one of the replicas;
+     * this is to ensure that it captures the freshest data. After the final snapshot
+     * is taken, the replication group is immediately deleted.</p>
      */
     inline DeleteReplicationGroupRequest& WithFinalSnapshotIdentifier(Aws::String&& value) { SetFinalSnapshotIdentifier(value); return *this;}
 
     /**
-     * <p>The name of a final node group snapshot. ElastiCache creates the snapshot
-     * from the primary node in the cluster, rather than one of the replicas; this is
-     * to ensure that it captures the freshest data. After the final snapshot is taken,
-     * the cluster is immediately deleted.</p>
+     * <p>The name of a final node group (shard) snapshot. ElastiCache creates the
+     * snapshot from the primary node in the cluster, rather than one of the replicas;
+     * this is to ensure that it captures the freshest data. After the final snapshot
+     * is taken, the replication group is immediately deleted.</p>
      */
     inline DeleteReplicationGroupRequest& WithFinalSnapshotIdentifier(const char* value) { SetFinalSnapshotIdentifier(value); return *this;}
 

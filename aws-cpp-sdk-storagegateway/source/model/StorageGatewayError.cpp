@@ -28,12 +28,14 @@ namespace Model
 {
 
 StorageGatewayError::StorageGatewayError() : 
+    m_errorCode(ErrorCode::NOT_SET),
     m_errorCodeHasBeenSet(false),
     m_errorDetailsHasBeenSet(false)
 {
 }
 
 StorageGatewayError::StorageGatewayError(const JsonValue& jsonValue) : 
+    m_errorCode(ErrorCode::NOT_SET),
     m_errorCodeHasBeenSet(false),
     m_errorDetailsHasBeenSet(false)
 {

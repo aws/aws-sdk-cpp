@@ -528,43 +528,43 @@ namespace Model
     inline DBInstance& AddDBSecurityGroups(DBSecurityGroupMembership&& value) { m_dBSecurityGroupsHasBeenSet = true; m_dBSecurityGroups.push_back(value); return *this; }
 
     /**
-     * <p>Provides List of VPC security group elements that the DB instance belongs
+     * <p>Provides a list of VPC security group elements that the DB instance belongs
      * to.</p>
      */
     inline const Aws::Vector<VpcSecurityGroupMembership>& GetVpcSecurityGroups() const{ return m_vpcSecurityGroups; }
 
     /**
-     * <p>Provides List of VPC security group elements that the DB instance belongs
+     * <p>Provides a list of VPC security group elements that the DB instance belongs
      * to.</p>
      */
     inline void SetVpcSecurityGroups(const Aws::Vector<VpcSecurityGroupMembership>& value) { m_vpcSecurityGroupsHasBeenSet = true; m_vpcSecurityGroups = value; }
 
     /**
-     * <p>Provides List of VPC security group elements that the DB instance belongs
+     * <p>Provides a list of VPC security group elements that the DB instance belongs
      * to.</p>
      */
     inline void SetVpcSecurityGroups(Aws::Vector<VpcSecurityGroupMembership>&& value) { m_vpcSecurityGroupsHasBeenSet = true; m_vpcSecurityGroups = value; }
 
     /**
-     * <p>Provides List of VPC security group elements that the DB instance belongs
+     * <p>Provides a list of VPC security group elements that the DB instance belongs
      * to.</p>
      */
     inline DBInstance& WithVpcSecurityGroups(const Aws::Vector<VpcSecurityGroupMembership>& value) { SetVpcSecurityGroups(value); return *this;}
 
     /**
-     * <p>Provides List of VPC security group elements that the DB instance belongs
+     * <p>Provides a list of VPC security group elements that the DB instance belongs
      * to.</p>
      */
     inline DBInstance& WithVpcSecurityGroups(Aws::Vector<VpcSecurityGroupMembership>&& value) { SetVpcSecurityGroups(value); return *this;}
 
     /**
-     * <p>Provides List of VPC security group elements that the DB instance belongs
+     * <p>Provides a list of VPC security group elements that the DB instance belongs
      * to.</p>
      */
     inline DBInstance& AddVpcSecurityGroups(const VpcSecurityGroupMembership& value) { m_vpcSecurityGroupsHasBeenSet = true; m_vpcSecurityGroups.push_back(value); return *this; }
 
     /**
-     * <p>Provides List of VPC security group elements that the DB instance belongs
+     * <p>Provides a list of VPC security group elements that the DB instance belongs
      * to.</p>
      */
     inline DBInstance& AddVpcSecurityGroups(VpcSecurityGroupMembership&& value) { m_vpcSecurityGroupsHasBeenSet = true; m_vpcSecurityGroups.push_back(value); return *this; }
@@ -1233,43 +1233,43 @@ namespace Model
     inline DBInstance& WithStorageType(const char* value) { SetStorageType(value); return *this;}
 
     /**
-     * <p>The ARN from the Key Store with which the instance is associated for TDE
+     * <p>The ARN from the key store with which the instance is associated for TDE
      * encryption.</p>
      */
     inline const Aws::String& GetTdeCredentialArn() const{ return m_tdeCredentialArn; }
 
     /**
-     * <p>The ARN from the Key Store with which the instance is associated for TDE
+     * <p>The ARN from the key store with which the instance is associated for TDE
      * encryption.</p>
      */
     inline void SetTdeCredentialArn(const Aws::String& value) { m_tdeCredentialArnHasBeenSet = true; m_tdeCredentialArn = value; }
 
     /**
-     * <p>The ARN from the Key Store with which the instance is associated for TDE
+     * <p>The ARN from the key store with which the instance is associated for TDE
      * encryption.</p>
      */
     inline void SetTdeCredentialArn(Aws::String&& value) { m_tdeCredentialArnHasBeenSet = true; m_tdeCredentialArn = value; }
 
     /**
-     * <p>The ARN from the Key Store with which the instance is associated for TDE
+     * <p>The ARN from the key store with which the instance is associated for TDE
      * encryption.</p>
      */
     inline void SetTdeCredentialArn(const char* value) { m_tdeCredentialArnHasBeenSet = true; m_tdeCredentialArn.assign(value); }
 
     /**
-     * <p>The ARN from the Key Store with which the instance is associated for TDE
+     * <p>The ARN from the key store with which the instance is associated for TDE
      * encryption.</p>
      */
     inline DBInstance& WithTdeCredentialArn(const Aws::String& value) { SetTdeCredentialArn(value); return *this;}
 
     /**
-     * <p>The ARN from the Key Store with which the instance is associated for TDE
+     * <p>The ARN from the key store with which the instance is associated for TDE
      * encryption.</p>
      */
     inline DBInstance& WithTdeCredentialArn(Aws::String&& value) { SetTdeCredentialArn(value); return *this;}
 
     /**
-     * <p>The ARN from the Key Store with which the instance is associated for TDE
+     * <p>The ARN from the key store with which the instance is associated for TDE
      * encryption.</p>
      */
     inline DBInstance& WithTdeCredentialArn(const char* value) { SetTdeCredentialArn(value); return *this;}
@@ -1664,6 +1664,90 @@ namespace Model
      */
     inline DBInstance& WithPromotionTier(int value) { SetPromotionTier(value); return *this;}
 
+    /**
+     * <p>The Amazon Resource Name (ARN) for the DB instance.</p>
+     */
+    inline const Aws::String& GetDBInstanceArn() const{ return m_dBInstanceArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the DB instance.</p>
+     */
+    inline void SetDBInstanceArn(const Aws::String& value) { m_dBInstanceArnHasBeenSet = true; m_dBInstanceArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the DB instance.</p>
+     */
+    inline void SetDBInstanceArn(Aws::String&& value) { m_dBInstanceArnHasBeenSet = true; m_dBInstanceArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the DB instance.</p>
+     */
+    inline void SetDBInstanceArn(const char* value) { m_dBInstanceArnHasBeenSet = true; m_dBInstanceArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the DB instance.</p>
+     */
+    inline DBInstance& WithDBInstanceArn(const Aws::String& value) { SetDBInstanceArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the DB instance.</p>
+     */
+    inline DBInstance& WithDBInstanceArn(Aws::String&& value) { SetDBInstanceArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the DB instance.</p>
+     */
+    inline DBInstance& WithDBInstanceArn(const char* value) { SetDBInstanceArn(value); return *this;}
+
+    /**
+     * <p>The time zone of the DB instance. In most cases, the <code>Timezone</code>
+     * element is empty. <code>Timezone</code> content appears only for Microsoft SQL
+     * Server DB instances that were created with a time zone specified. </p>
+     */
+    inline const Aws::String& GetTimezone() const{ return m_timezone; }
+
+    /**
+     * <p>The time zone of the DB instance. In most cases, the <code>Timezone</code>
+     * element is empty. <code>Timezone</code> content appears only for Microsoft SQL
+     * Server DB instances that were created with a time zone specified. </p>
+     */
+    inline void SetTimezone(const Aws::String& value) { m_timezoneHasBeenSet = true; m_timezone = value; }
+
+    /**
+     * <p>The time zone of the DB instance. In most cases, the <code>Timezone</code>
+     * element is empty. <code>Timezone</code> content appears only for Microsoft SQL
+     * Server DB instances that were created with a time zone specified. </p>
+     */
+    inline void SetTimezone(Aws::String&& value) { m_timezoneHasBeenSet = true; m_timezone = value; }
+
+    /**
+     * <p>The time zone of the DB instance. In most cases, the <code>Timezone</code>
+     * element is empty. <code>Timezone</code> content appears only for Microsoft SQL
+     * Server DB instances that were created with a time zone specified. </p>
+     */
+    inline void SetTimezone(const char* value) { m_timezoneHasBeenSet = true; m_timezone.assign(value); }
+
+    /**
+     * <p>The time zone of the DB instance. In most cases, the <code>Timezone</code>
+     * element is empty. <code>Timezone</code> content appears only for Microsoft SQL
+     * Server DB instances that were created with a time zone specified. </p>
+     */
+    inline DBInstance& WithTimezone(const Aws::String& value) { SetTimezone(value); return *this;}
+
+    /**
+     * <p>The time zone of the DB instance. In most cases, the <code>Timezone</code>
+     * element is empty. <code>Timezone</code> content appears only for Microsoft SQL
+     * Server DB instances that were created with a time zone specified. </p>
+     */
+    inline DBInstance& WithTimezone(Aws::String&& value) { SetTimezone(value); return *this;}
+
+    /**
+     * <p>The time zone of the DB instance. In most cases, the <code>Timezone</code>
+     * element is empty. <code>Timezone</code> content appears only for Microsoft SQL
+     * Server DB instances that were created with a time zone specified. </p>
+     */
+    inline DBInstance& WithTimezone(const char* value) { SetTimezone(value); return *this;}
+
   private:
     Aws::String m_dBInstanceIdentifier;
     bool m_dBInstanceIdentifierHasBeenSet;
@@ -1755,6 +1839,10 @@ namespace Model
     bool m_monitoringRoleArnHasBeenSet;
     int m_promotionTier;
     bool m_promotionTierHasBeenSet;
+    Aws::String m_dBInstanceArn;
+    bool m_dBInstanceArnHasBeenSet;
+    Aws::String m_timezone;
+    bool m_timezoneHasBeenSet;
   };
 
 } // namespace Model

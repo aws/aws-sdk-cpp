@@ -507,7 +507,7 @@ namespace Model
      * exception of the block device mapping.</p> <p>To create a launch configuration
      * with a block device mapping or override any other instance attributes, specify
      * them as part of the same request.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/create-lc-with-instanceID.html">Create
+     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/create-lc-with-instanceID.html">Create
      * a Launch Configuration Using an EC2 Instance</a> in the <i>Auto Scaling User
      * Guide</i>.</p>
      */
@@ -519,7 +519,7 @@ namespace Model
      * exception of the block device mapping.</p> <p>To create a launch configuration
      * with a block device mapping or override any other instance attributes, specify
      * them as part of the same request.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/create-lc-with-instanceID.html">Create
+     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/create-lc-with-instanceID.html">Create
      * a Launch Configuration Using an EC2 Instance</a> in the <i>Auto Scaling User
      * Guide</i>.</p>
      */
@@ -531,7 +531,7 @@ namespace Model
      * exception of the block device mapping.</p> <p>To create a launch configuration
      * with a block device mapping or override any other instance attributes, specify
      * them as part of the same request.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/create-lc-with-instanceID.html">Create
+     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/create-lc-with-instanceID.html">Create
      * a Launch Configuration Using an EC2 Instance</a> in the <i>Auto Scaling User
      * Guide</i>.</p>
      */
@@ -543,7 +543,7 @@ namespace Model
      * exception of the block device mapping.</p> <p>To create a launch configuration
      * with a block device mapping or override any other instance attributes, specify
      * them as part of the same request.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/create-lc-with-instanceID.html">Create
+     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/create-lc-with-instanceID.html">Create
      * a Launch Configuration Using an EC2 Instance</a> in the <i>Auto Scaling User
      * Guide</i>.</p>
      */
@@ -555,7 +555,7 @@ namespace Model
      * exception of the block device mapping.</p> <p>To create a launch configuration
      * with a block device mapping or override any other instance attributes, specify
      * them as part of the same request.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/create-lc-with-instanceID.html">Create
+     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/create-lc-with-instanceID.html">Create
      * a Launch Configuration Using an EC2 Instance</a> in the <i>Auto Scaling User
      * Guide</i>.</p>
      */
@@ -567,7 +567,7 @@ namespace Model
      * exception of the block device mapping.</p> <p>To create a launch configuration
      * with a block device mapping or override any other instance attributes, specify
      * them as part of the same request.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/create-lc-with-instanceID.html">Create
+     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/create-lc-with-instanceID.html">Create
      * a Launch Configuration Using an EC2 Instance</a> in the <i>Auto Scaling User
      * Guide</i>.</p>
      */
@@ -579,7 +579,7 @@ namespace Model
      * exception of the block device mapping.</p> <p>To create a launch configuration
      * with a block device mapping or override any other instance attributes, specify
      * them as part of the same request.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/create-lc-with-instanceID.html">Create
+     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/create-lc-with-instanceID.html">Create
      * a Launch Configuration Using an EC2 Instance</a> in the <i>Auto Scaling User
      * Guide</i>.</p>
      */
@@ -775,62 +775,32 @@ namespace Model
     inline CreateLaunchConfigurationRequest& AddBlockDeviceMappings(BlockDeviceMapping&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.push_back(value); return *this; }
 
     /**
-     * <p>Enables detailed monitoring if it is disabled. Detailed monitoring is enabled
-     * by default.</p> <p>When detailed monitoring is enabled, Amazon CloudWatch
-     * generates metrics every minute and your account is charged a fee. When you
-     * disable detailed monitoring, by specifying <code>False</code>, CloudWatch
-     * generates metrics every 5 minutes. For more information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-instance-monitoring.html">Monitoring
-     * Your Auto Scaling Instances and Groups</a> in the <i>Auto Scaling User
-     * Guide</i>.</p>
+     * <p>Enables detailed monitoring (<code>true</code>) or basic monitoring
+     * (<code>false</code>) for the Auto Scaling instances.</p>
      */
     inline const InstanceMonitoring& GetInstanceMonitoring() const{ return m_instanceMonitoring; }
 
     /**
-     * <p>Enables detailed monitoring if it is disabled. Detailed monitoring is enabled
-     * by default.</p> <p>When detailed monitoring is enabled, Amazon CloudWatch
-     * generates metrics every minute and your account is charged a fee. When you
-     * disable detailed monitoring, by specifying <code>False</code>, CloudWatch
-     * generates metrics every 5 minutes. For more information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-instance-monitoring.html">Monitoring
-     * Your Auto Scaling Instances and Groups</a> in the <i>Auto Scaling User
-     * Guide</i>.</p>
+     * <p>Enables detailed monitoring (<code>true</code>) or basic monitoring
+     * (<code>false</code>) for the Auto Scaling instances.</p>
      */
     inline void SetInstanceMonitoring(const InstanceMonitoring& value) { m_instanceMonitoringHasBeenSet = true; m_instanceMonitoring = value; }
 
     /**
-     * <p>Enables detailed monitoring if it is disabled. Detailed monitoring is enabled
-     * by default.</p> <p>When detailed monitoring is enabled, Amazon CloudWatch
-     * generates metrics every minute and your account is charged a fee. When you
-     * disable detailed monitoring, by specifying <code>False</code>, CloudWatch
-     * generates metrics every 5 minutes. For more information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-instance-monitoring.html">Monitoring
-     * Your Auto Scaling Instances and Groups</a> in the <i>Auto Scaling User
-     * Guide</i>.</p>
+     * <p>Enables detailed monitoring (<code>true</code>) or basic monitoring
+     * (<code>false</code>) for the Auto Scaling instances.</p>
      */
     inline void SetInstanceMonitoring(InstanceMonitoring&& value) { m_instanceMonitoringHasBeenSet = true; m_instanceMonitoring = value; }
 
     /**
-     * <p>Enables detailed monitoring if it is disabled. Detailed monitoring is enabled
-     * by default.</p> <p>When detailed monitoring is enabled, Amazon CloudWatch
-     * generates metrics every minute and your account is charged a fee. When you
-     * disable detailed monitoring, by specifying <code>False</code>, CloudWatch
-     * generates metrics every 5 minutes. For more information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-instance-monitoring.html">Monitoring
-     * Your Auto Scaling Instances and Groups</a> in the <i>Auto Scaling User
-     * Guide</i>.</p>
+     * <p>Enables detailed monitoring (<code>true</code>) or basic monitoring
+     * (<code>false</code>) for the Auto Scaling instances.</p>
      */
     inline CreateLaunchConfigurationRequest& WithInstanceMonitoring(const InstanceMonitoring& value) { SetInstanceMonitoring(value); return *this;}
 
     /**
-     * <p>Enables detailed monitoring if it is disabled. Detailed monitoring is enabled
-     * by default.</p> <p>When detailed monitoring is enabled, Amazon CloudWatch
-     * generates metrics every minute and your account is charged a fee. When you
-     * disable detailed monitoring, by specifying <code>False</code>, CloudWatch
-     * generates metrics every 5 minutes. For more information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-instance-monitoring.html">Monitoring
-     * Your Auto Scaling Instances and Groups</a> in the <i>Auto Scaling User
-     * Guide</i>.</p>
+     * <p>Enables detailed monitoring (<code>true</code>) or basic monitoring
+     * (<code>false</code>) for the Auto Scaling instances.</p>
      */
     inline CreateLaunchConfigurationRequest& WithInstanceMonitoring(InstanceMonitoring&& value) { SetInstanceMonitoring(value); return *this;}
 
@@ -838,7 +808,7 @@ namespace Model
      * <p>The maximum hourly price to be paid for any Spot Instance launched to fulfill
      * the request. Spot Instances are launched when the price you specify exceeds the
      * current Spot market price. For more information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US-SpotInstances.html">Launching
+     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/US-SpotInstances.html">Launching
      * Spot Instances in Your Auto Scaling Group</a> in the <i>Auto Scaling User
      * Guide</i>.</p>
      */
@@ -848,7 +818,7 @@ namespace Model
      * <p>The maximum hourly price to be paid for any Spot Instance launched to fulfill
      * the request. Spot Instances are launched when the price you specify exceeds the
      * current Spot market price. For more information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US-SpotInstances.html">Launching
+     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/US-SpotInstances.html">Launching
      * Spot Instances in Your Auto Scaling Group</a> in the <i>Auto Scaling User
      * Guide</i>.</p>
      */
@@ -858,7 +828,7 @@ namespace Model
      * <p>The maximum hourly price to be paid for any Spot Instance launched to fulfill
      * the request. Spot Instances are launched when the price you specify exceeds the
      * current Spot market price. For more information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US-SpotInstances.html">Launching
+     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/US-SpotInstances.html">Launching
      * Spot Instances in Your Auto Scaling Group</a> in the <i>Auto Scaling User
      * Guide</i>.</p>
      */
@@ -868,7 +838,7 @@ namespace Model
      * <p>The maximum hourly price to be paid for any Spot Instance launched to fulfill
      * the request. Spot Instances are launched when the price you specify exceeds the
      * current Spot market price. For more information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US-SpotInstances.html">Launching
+     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/US-SpotInstances.html">Launching
      * Spot Instances in Your Auto Scaling Group</a> in the <i>Auto Scaling User
      * Guide</i>.</p>
      */
@@ -878,7 +848,7 @@ namespace Model
      * <p>The maximum hourly price to be paid for any Spot Instance launched to fulfill
      * the request. Spot Instances are launched when the price you specify exceeds the
      * current Spot market price. For more information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US-SpotInstances.html">Launching
+     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/US-SpotInstances.html">Launching
      * Spot Instances in Your Auto Scaling Group</a> in the <i>Auto Scaling User
      * Guide</i>.</p>
      */
@@ -888,7 +858,7 @@ namespace Model
      * <p>The maximum hourly price to be paid for any Spot Instance launched to fulfill
      * the request. Spot Instances are launched when the price you specify exceeds the
      * current Spot market price. For more information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US-SpotInstances.html">Launching
+     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/US-SpotInstances.html">Launching
      * Spot Instances in Your Auto Scaling Group</a> in the <i>Auto Scaling User
      * Guide</i>.</p>
      */
@@ -898,7 +868,7 @@ namespace Model
      * <p>The maximum hourly price to be paid for any Spot Instance launched to fulfill
      * the request. Spot Instances are launched when the price you specify exceeds the
      * current Spot market price. For more information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US-SpotInstances.html">Launching
+     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/US-SpotInstances.html">Launching
      * Spot Instances in Your Auto Scaling Group</a> in the <i>Auto Scaling User
      * Guide</i>.</p>
      */
@@ -910,7 +880,7 @@ namespace Model
      * role will automatically have AWS security credentials available. You can use IAM
      * roles with Auto Scaling to automatically enable applications running on your EC2
      * instances to securely access other AWS resources. For more information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/us-iam-role.html">Launch
+     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/us-iam-role.html">Launch
      * Auto Scaling Instances with an IAM Role</a> in the <i>Auto Scaling User
      * Guide</i>.</p>
      */
@@ -922,7 +892,7 @@ namespace Model
      * role will automatically have AWS security credentials available. You can use IAM
      * roles with Auto Scaling to automatically enable applications running on your EC2
      * instances to securely access other AWS resources. For more information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/us-iam-role.html">Launch
+     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/us-iam-role.html">Launch
      * Auto Scaling Instances with an IAM Role</a> in the <i>Auto Scaling User
      * Guide</i>.</p>
      */
@@ -934,7 +904,7 @@ namespace Model
      * role will automatically have AWS security credentials available. You can use IAM
      * roles with Auto Scaling to automatically enable applications running on your EC2
      * instances to securely access other AWS resources. For more information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/us-iam-role.html">Launch
+     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/us-iam-role.html">Launch
      * Auto Scaling Instances with an IAM Role</a> in the <i>Auto Scaling User
      * Guide</i>.</p>
      */
@@ -946,7 +916,7 @@ namespace Model
      * role will automatically have AWS security credentials available. You can use IAM
      * roles with Auto Scaling to automatically enable applications running on your EC2
      * instances to securely access other AWS resources. For more information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/us-iam-role.html">Launch
+     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/us-iam-role.html">Launch
      * Auto Scaling Instances with an IAM Role</a> in the <i>Auto Scaling User
      * Guide</i>.</p>
      */
@@ -958,7 +928,7 @@ namespace Model
      * role will automatically have AWS security credentials available. You can use IAM
      * roles with Auto Scaling to automatically enable applications running on your EC2
      * instances to securely access other AWS resources. For more information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/us-iam-role.html">Launch
+     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/us-iam-role.html">Launch
      * Auto Scaling Instances with an IAM Role</a> in the <i>Auto Scaling User
      * Guide</i>.</p>
      */
@@ -970,7 +940,7 @@ namespace Model
      * role will automatically have AWS security credentials available. You can use IAM
      * roles with Auto Scaling to automatically enable applications running on your EC2
      * instances to securely access other AWS resources. For more information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/us-iam-role.html">Launch
+     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/us-iam-role.html">Launch
      * Auto Scaling Instances with an IAM Role</a> in the <i>Auto Scaling User
      * Guide</i>.</p>
      */
@@ -982,7 +952,7 @@ namespace Model
      * role will automatically have AWS security credentials available. You can use IAM
      * roles with Auto Scaling to automatically enable applications running on your EC2
      * instances to securely access other AWS resources. For more information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/us-iam-role.html">Launch
+     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/us-iam-role.html">Launch
      * Auto Scaling Instances with an IAM Role</a> in the <i>Auto Scaling User
      * Guide</i>.</p>
      */
@@ -1028,7 +998,7 @@ namespace Model
      * <p>Used for groups that launch instances into a virtual private cloud (VPC).
      * Specifies whether to assign a public IP address to each instance. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/asg-in-vpc.html">Launching
+     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/asg-in-vpc.html">Launching
      * Auto Scaling Instances in a VPC</a> in the <i>Auto Scaling User Guide</i>.</p>
      * <p>If you specify this parameter, be sure to specify at least one subnet when
      * you create your group.</p> <p>Default: If the instance is launched into a
@@ -1044,7 +1014,7 @@ namespace Model
      * <p>Used for groups that launch instances into a virtual private cloud (VPC).
      * Specifies whether to assign a public IP address to each instance. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/asg-in-vpc.html">Launching
+     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/asg-in-vpc.html">Launching
      * Auto Scaling Instances in a VPC</a> in the <i>Auto Scaling User Guide</i>.</p>
      * <p>If you specify this parameter, be sure to specify at least one subnet when
      * you create your group.</p> <p>Default: If the instance is launched into a
@@ -1060,7 +1030,7 @@ namespace Model
      * <p>Used for groups that launch instances into a virtual private cloud (VPC).
      * Specifies whether to assign a public IP address to each instance. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/asg-in-vpc.html">Launching
+     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/asg-in-vpc.html">Launching
      * Auto Scaling Instances in a VPC</a> in the <i>Auto Scaling User Guide</i>.</p>
      * <p>If you specify this parameter, be sure to specify at least one subnet when
      * you create your group.</p> <p>Default: If the instance is launched into a
@@ -1081,7 +1051,7 @@ namespace Model
      * <code>default</code>).</p> <p>If you specify this parameter, be sure to specify
      * at least one subnet when you create your group.</p> <p>For more information, see
      * <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/asg-in-vpc.html">Launching
+     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/asg-in-vpc.html">Launching
      * Auto Scaling Instances in a VPC</a> in the <i>Auto Scaling User Guide</i>.</p>
      * <p>Valid values: <code>default</code> | <code>dedicated</code> </p>
      */
@@ -1096,7 +1066,7 @@ namespace Model
      * <code>default</code>).</p> <p>If you specify this parameter, be sure to specify
      * at least one subnet when you create your group.</p> <p>For more information, see
      * <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/asg-in-vpc.html">Launching
+     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/asg-in-vpc.html">Launching
      * Auto Scaling Instances in a VPC</a> in the <i>Auto Scaling User Guide</i>.</p>
      * <p>Valid values: <code>default</code> | <code>dedicated</code> </p>
      */
@@ -1111,7 +1081,7 @@ namespace Model
      * <code>default</code>).</p> <p>If you specify this parameter, be sure to specify
      * at least one subnet when you create your group.</p> <p>For more information, see
      * <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/asg-in-vpc.html">Launching
+     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/asg-in-vpc.html">Launching
      * Auto Scaling Instances in a VPC</a> in the <i>Auto Scaling User Guide</i>.</p>
      * <p>Valid values: <code>default</code> | <code>dedicated</code> </p>
      */
@@ -1126,7 +1096,7 @@ namespace Model
      * <code>default</code>).</p> <p>If you specify this parameter, be sure to specify
      * at least one subnet when you create your group.</p> <p>For more information, see
      * <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/asg-in-vpc.html">Launching
+     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/asg-in-vpc.html">Launching
      * Auto Scaling Instances in a VPC</a> in the <i>Auto Scaling User Guide</i>.</p>
      * <p>Valid values: <code>default</code> | <code>dedicated</code> </p>
      */
@@ -1141,7 +1111,7 @@ namespace Model
      * <code>default</code>).</p> <p>If you specify this parameter, be sure to specify
      * at least one subnet when you create your group.</p> <p>For more information, see
      * <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/asg-in-vpc.html">Launching
+     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/asg-in-vpc.html">Launching
      * Auto Scaling Instances in a VPC</a> in the <i>Auto Scaling User Guide</i>.</p>
      * <p>Valid values: <code>default</code> | <code>dedicated</code> </p>
      */
@@ -1156,7 +1126,7 @@ namespace Model
      * <code>default</code>).</p> <p>If you specify this parameter, be sure to specify
      * at least one subnet when you create your group.</p> <p>For more information, see
      * <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/asg-in-vpc.html">Launching
+     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/asg-in-vpc.html">Launching
      * Auto Scaling Instances in a VPC</a> in the <i>Auto Scaling User Guide</i>.</p>
      * <p>Valid values: <code>default</code> | <code>dedicated</code> </p>
      */
@@ -1171,7 +1141,7 @@ namespace Model
      * <code>default</code>).</p> <p>If you specify this parameter, be sure to specify
      * at least one subnet when you create your group.</p> <p>For more information, see
      * <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/asg-in-vpc.html">Launching
+     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/asg-in-vpc.html">Launching
      * Auto Scaling Instances in a VPC</a> in the <i>Auto Scaling User Guide</i>.</p>
      * <p>Valid values: <code>default</code> | <code>dedicated</code> </p>
      */

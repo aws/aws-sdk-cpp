@@ -313,50 +313,45 @@ namespace Model
     inline Parameter& WithMinimumEngineVersion(const char* value) { SetMinimumEngineVersion(value); return *this;}
 
     /**
-     * <p>ChangeType indicates whether a change to the parameter will be applied
-     * immediately or requires a reboot for the change to be applied. You can force a
-     * reboot or wait until the next maintenance window's reboot. For more information,
-     * see <a
+     * <p>Indicates whether a change to the parameter is applied immediately or
+     * requires a reboot for the change to be applied. You can force a reboot or wait
+     * until the next maintenance window's reboot. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Clusters.Rebooting.html">Rebooting
      * a Cluster</a>.</p>
      */
     inline const ChangeType& GetChangeType() const{ return m_changeType; }
 
     /**
-     * <p>ChangeType indicates whether a change to the parameter will be applied
-     * immediately or requires a reboot for the change to be applied. You can force a
-     * reboot or wait until the next maintenance window's reboot. For more information,
-     * see <a
+     * <p>Indicates whether a change to the parameter is applied immediately or
+     * requires a reboot for the change to be applied. You can force a reboot or wait
+     * until the next maintenance window's reboot. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Clusters.Rebooting.html">Rebooting
      * a Cluster</a>.</p>
      */
     inline void SetChangeType(const ChangeType& value) { m_changeTypeHasBeenSet = true; m_changeType = value; }
 
     /**
-     * <p>ChangeType indicates whether a change to the parameter will be applied
-     * immediately or requires a reboot for the change to be applied. You can force a
-     * reboot or wait until the next maintenance window's reboot. For more information,
-     * see <a
+     * <p>Indicates whether a change to the parameter is applied immediately or
+     * requires a reboot for the change to be applied. You can force a reboot or wait
+     * until the next maintenance window's reboot. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Clusters.Rebooting.html">Rebooting
      * a Cluster</a>.</p>
      */
     inline void SetChangeType(ChangeType&& value) { m_changeTypeHasBeenSet = true; m_changeType = value; }
 
     /**
-     * <p>ChangeType indicates whether a change to the parameter will be applied
-     * immediately or requires a reboot for the change to be applied. You can force a
-     * reboot or wait until the next maintenance window's reboot. For more information,
-     * see <a
+     * <p>Indicates whether a change to the parameter is applied immediately or
+     * requires a reboot for the change to be applied. You can force a reboot or wait
+     * until the next maintenance window's reboot. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Clusters.Rebooting.html">Rebooting
      * a Cluster</a>.</p>
      */
     inline Parameter& WithChangeType(const ChangeType& value) { SetChangeType(value); return *this;}
 
     /**
-     * <p>ChangeType indicates whether a change to the parameter will be applied
-     * immediately or requires a reboot for the change to be applied. You can force a
-     * reboot or wait until the next maintenance window's reboot. For more information,
-     * see <a
+     * <p>Indicates whether a change to the parameter is applied immediately or
+     * requires a reboot for the change to be applied. You can force a reboot or wait
+     * until the next maintenance window's reboot. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Clusters.Rebooting.html">Rebooting
      * a Cluster</a>.</p>
      */

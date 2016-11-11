@@ -16,6 +16,7 @@
 #include <aws/elasticbeanstalk/ElasticBeanstalk_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/elasticbeanstalk/model/SourceBuildInformation.h>
 #include <aws/elasticbeanstalk/model/S3Location.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/elasticbeanstalk/model/ApplicationVersionStatus.h>
@@ -35,7 +36,7 @@ namespace Model
 {
 
   /**
-   * <p> Describes the properties of an application version. </p>
+   * <p>Describes the properties of an application version.</p>
    */
   class AWS_ELASTICBEANSTALK_API ApplicationVersionDescription
   {
@@ -118,69 +119,77 @@ namespace Model
     inline ApplicationVersionDescription& WithDescription(const char* value) { SetDescription(value); return *this;}
 
     /**
-     * <p> A label uniquely identifying the version for the associated application.
-     * </p>
+     * <p>A label uniquely identifying the version for the associated application.</p>
      */
     inline const Aws::String& GetVersionLabel() const{ return m_versionLabel; }
 
     /**
-     * <p> A label uniquely identifying the version for the associated application.
-     * </p>
+     * <p>A label uniquely identifying the version for the associated application.</p>
      */
     inline void SetVersionLabel(const Aws::String& value) { m_versionLabelHasBeenSet = true; m_versionLabel = value; }
 
     /**
-     * <p> A label uniquely identifying the version for the associated application.
-     * </p>
+     * <p>A label uniquely identifying the version for the associated application.</p>
      */
     inline void SetVersionLabel(Aws::String&& value) { m_versionLabelHasBeenSet = true; m_versionLabel = value; }
 
     /**
-     * <p> A label uniquely identifying the version for the associated application.
-     * </p>
+     * <p>A label uniquely identifying the version for the associated application.</p>
      */
     inline void SetVersionLabel(const char* value) { m_versionLabelHasBeenSet = true; m_versionLabel.assign(value); }
 
     /**
-     * <p> A label uniquely identifying the version for the associated application.
-     * </p>
+     * <p>A label uniquely identifying the version for the associated application.</p>
      */
     inline ApplicationVersionDescription& WithVersionLabel(const Aws::String& value) { SetVersionLabel(value); return *this;}
 
     /**
-     * <p> A label uniquely identifying the version for the associated application.
-     * </p>
+     * <p>A label uniquely identifying the version for the associated application.</p>
      */
     inline ApplicationVersionDescription& WithVersionLabel(Aws::String&& value) { SetVersionLabel(value); return *this;}
 
     /**
-     * <p> A label uniquely identifying the version for the associated application.
-     * </p>
+     * <p>A label uniquely identifying the version for the associated application.</p>
      */
     inline ApplicationVersionDescription& WithVersionLabel(const char* value) { SetVersionLabel(value); return *this;}
 
+    
+    inline const SourceBuildInformation& GetSourceBuildInformation() const{ return m_sourceBuildInformation; }
+
+    
+    inline void SetSourceBuildInformation(const SourceBuildInformation& value) { m_sourceBuildInformationHasBeenSet = true; m_sourceBuildInformation = value; }
+
+    
+    inline void SetSourceBuildInformation(SourceBuildInformation&& value) { m_sourceBuildInformationHasBeenSet = true; m_sourceBuildInformation = value; }
+
+    
+    inline ApplicationVersionDescription& WithSourceBuildInformation(const SourceBuildInformation& value) { SetSourceBuildInformation(value); return *this;}
+
+    
+    inline ApplicationVersionDescription& WithSourceBuildInformation(SourceBuildInformation&& value) { SetSourceBuildInformation(value); return *this;}
+
     /**
-     * <p> The location where the source bundle is located for this version. </p>
+     * <p>The location where the source bundle is located for this version.</p>
      */
     inline const S3Location& GetSourceBundle() const{ return m_sourceBundle; }
 
     /**
-     * <p> The location where the source bundle is located for this version. </p>
+     * <p>The location where the source bundle is located for this version.</p>
      */
     inline void SetSourceBundle(const S3Location& value) { m_sourceBundleHasBeenSet = true; m_sourceBundle = value; }
 
     /**
-     * <p> The location where the source bundle is located for this version. </p>
+     * <p>The location where the source bundle is located for this version.</p>
      */
     inline void SetSourceBundle(S3Location&& value) { m_sourceBundleHasBeenSet = true; m_sourceBundle = value; }
 
     /**
-     * <p> The location where the source bundle is located for this version. </p>
+     * <p>The location where the source bundle is located for this version.</p>
      */
     inline ApplicationVersionDescription& WithSourceBundle(const S3Location& value) { SetSourceBundle(value); return *this;}
 
     /**
-     * <p> The location where the source bundle is located for this version. </p>
+     * <p>The location where the source bundle is located for this version.</p>
      */
     inline ApplicationVersionDescription& WithSourceBundle(S3Location&& value) { SetSourceBundle(value); return *this;}
 
@@ -266,6 +275,8 @@ namespace Model
     bool m_descriptionHasBeenSet;
     Aws::String m_versionLabel;
     bool m_versionLabelHasBeenSet;
+    SourceBuildInformation m_sourceBuildInformation;
+    bool m_sourceBuildInformationHasBeenSet;
     S3Location m_sourceBundle;
     bool m_sourceBundleHasBeenSet;
     Aws::Utils::DateTime m_dateCreated;

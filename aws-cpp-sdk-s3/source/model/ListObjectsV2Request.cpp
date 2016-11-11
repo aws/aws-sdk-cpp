@@ -28,6 +28,7 @@ using namespace Aws::Http;
 ListObjectsV2Request::ListObjectsV2Request() : 
     m_bucketHasBeenSet(false),
     m_delimiterHasBeenSet(false),
+    m_encodingType(EncodingType::NOT_SET),
     m_encodingTypeHasBeenSet(false),
     m_maxKeys(0),
     m_maxKeysHasBeenSet(false),
@@ -35,7 +36,9 @@ ListObjectsV2Request::ListObjectsV2Request() :
     m_continuationTokenHasBeenSet(false),
     m_fetchOwner(false),
     m_fetchOwnerHasBeenSet(false),
-    m_startAfterHasBeenSet(false)
+    m_startAfterHasBeenSet(false),
+    m_requestPayer(RequestPayer::NOT_SET),
+    m_requestPayerHasBeenSet(false)
 {
 }
 
@@ -98,3 +101,14 @@ void ListObjectsV2Request::AddQueryStringParameters(URI& uri) const
 
 }
 
+Aws::Http::HeaderValueCollection ListObjectsV2Request::GetRequestSpecificHeaders() const
+{
+  Aws::Http::HeaderValueCollection headers;
+  Aws::StringStream ss;
+  if(m_requestPayerHasBeenSet)
+  {
+    headers.insert(Aws::Http::HeaderValuePair("x-amz-request-payer", RequestPayerMapper::GetNameForRequestPayer(m_requestPayer)));
+  }
+
+  return headers;
+}

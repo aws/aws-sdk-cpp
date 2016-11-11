@@ -35,7 +35,8 @@ DBSecurityGroup::DBSecurityGroup() :
     m_dBSecurityGroupDescriptionHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
     m_eC2SecurityGroupsHasBeenSet(false),
-    m_iPRangesHasBeenSet(false)
+    m_iPRangesHasBeenSet(false),
+    m_dBSecurityGroupArnHasBeenSet(false)
 {
 }
 
@@ -45,7 +46,8 @@ DBSecurityGroup::DBSecurityGroup(const XmlNode& xmlNode) :
     m_dBSecurityGroupDescriptionHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
     m_eC2SecurityGroupsHasBeenSet(false),
-    m_iPRangesHasBeenSet(false)
+    m_iPRangesHasBeenSet(false),
+    m_dBSecurityGroupArnHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -104,6 +106,12 @@ DBSecurityGroup& DBSecurityGroup::operator =(const XmlNode& xmlNode)
 
       m_iPRangesHasBeenSet = true;
     }
+    XmlNode dBSecurityGroupArnNode = resultNode.FirstChild("DBSecurityGroupArn");
+    if(!dBSecurityGroupArnNode.IsNull())
+    {
+      m_dBSecurityGroupArn = StringUtils::Trim(dBSecurityGroupArnNode.GetText().c_str());
+      m_dBSecurityGroupArnHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -153,6 +161,11 @@ void DBSecurityGroup::OutputToStream(Aws::OStream& oStream, const char* location
       }
   }
 
+  if(m_dBSecurityGroupArnHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".DBSecurityGroupArn=" << StringUtils::URLEncode(m_dBSecurityGroupArn.c_str()) << "&";
+  }
+
 }
 
 void DBSecurityGroup::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -192,6 +205,10 @@ void DBSecurityGroup::OutputToStream(Aws::OStream& oStream, const char* location
         iPRangesSs << location <<  ".IPRange." << iPRangesIdx++;
         item.OutputToStream(oStream, iPRangesSs.str().c_str());
       }
+  }
+  if(m_dBSecurityGroupArnHasBeenSet)
+  {
+      oStream << location << ".DBSecurityGroupArn=" << StringUtils::URLEncode(m_dBSecurityGroupArn.c_str()) << "&";
   }
 }
 

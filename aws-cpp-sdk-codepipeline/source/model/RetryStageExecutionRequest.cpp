@@ -25,6 +25,7 @@ RetryStageExecutionRequest::RetryStageExecutionRequest() :
     m_pipelineNameHasBeenSet(false),
     m_stageNameHasBeenSet(false),
     m_pipelineExecutionIdHasBeenSet(false),
+    m_retryMode(StageRetryMode::NOT_SET),
     m_retryModeHasBeenSet(false)
 {
 }

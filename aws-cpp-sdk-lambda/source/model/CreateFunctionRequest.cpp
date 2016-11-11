@@ -23,6 +23,7 @@ using namespace Aws::Utils;
 
 CreateFunctionRequest::CreateFunctionRequest() : 
     m_functionNameHasBeenSet(false),
+    m_runtime(Runtime::NOT_SET),
     m_runtimeHasBeenSet(false),
     m_roleHasBeenSet(false),
     m_handlerHasBeenSet(false),

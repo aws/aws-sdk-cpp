@@ -32,6 +32,7 @@ namespace Model
 ChangeBatchRecord::ChangeBatchRecord() : 
     m_idHasBeenSet(false),
     m_submittedAtHasBeenSet(false),
+    m_status(ChangeStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_commentHasBeenSet(false),
     m_submitterHasBeenSet(false),
@@ -42,6 +43,7 @@ ChangeBatchRecord::ChangeBatchRecord() :
 ChangeBatchRecord::ChangeBatchRecord(const XmlNode& xmlNode) : 
     m_idHasBeenSet(false),
     m_submittedAtHasBeenSet(false),
+    m_status(ChangeStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_commentHasBeenSet(false),
     m_submitterHasBeenSet(false),

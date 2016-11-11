@@ -13,8 +13,10 @@
 # permissions and limitations under the License.
 #
 
-cmake_minimum_required(VERSION 2.8.12)
-project(testing-resources)
+add_project(testing-resources 
+    "Testing utility library for the AWS C++ SDK"
+    aws-cpp-sdk-core)
+
 include(GenerateExportHeader)
 
 file(GLOB AWS_TESTING_HEADERS "include/aws/testing/*.h")
@@ -27,77 +29,90 @@ file(GLOB AWS_TESTING_SOURCE "source/*.cpp")
 file(GLOB AWS_TESTING_EXTERNAL_SOURCE "source/external/*.cc")
 
 file(GLOB TestingResources_SHARED_SRC
-  ${AWS_TESTING_HEADERS}
-  ${AWS_TESTING_EXTERNAL_HEADERS}
-  ${AWS_TESTING_AUTH_MOCKS_HEADERS}
-  ${AWS_TESTING_HTTP_MOCKS_HEADERS}
-  ${AWS_TESTING_PLATFORM_HEADERS}
-  ${AWS_TESTING_SOURCE}
-  ${AWS_TESTING_EXTERNAL_SOURCE}
+    ${AWS_TESTING_HEADERS}
+    ${AWS_TESTING_EXTERNAL_HEADERS}
+    ${AWS_TESTING_AUTH_MOCKS_HEADERS}
+    ${AWS_TESTING_HTTP_MOCKS_HEADERS}
+    ${AWS_TESTING_PLATFORM_HEADERS}
+    ${AWS_TESTING_SOURCE}
+    ${AWS_TESTING_EXTERNAL_SOURCE}
 ) 
 
 if(PLATFORM_ANDROID)
-  file(GLOB AWS_TESTING_PLATFORM_ANDROID_HEADERS "include/aws/testing/platform/android/*.h")
-  file(GLOB AWS_TESTING_PLATFORM_ANDROID_SOURCE "source/platform/android/*.cpp")
+    file(GLOB AWS_TESTING_PLATFORM_ANDROID_HEADERS "include/aws/testing/platform/android/*.h")
+    file(GLOB AWS_TESTING_PLATFORM_ANDROID_SOURCE "source/platform/android/*.cpp")
 
-  file(GLOB TestingResources_PLATFORM_SRC ${AWS_TESTING_ANDROID_HEADERS} ${AWS_TESTING_ANDROID_SOURCE})
-  file(GLOB TestingResources_PLATFORM_SRC ${AWS_TESTING_PLATFORM_ANDROID_HEADERS} ${AWS_TESTING_PLATFORM_ANDROID_SOURCE})
+    file(GLOB TestingResources_PLATFORM_SRC ${AWS_TESTING_ANDROID_HEADERS} ${AWS_TESTING_ANDROID_SOURCE})
+    file(GLOB TestingResources_PLATFORM_SRC ${AWS_TESTING_PLATFORM_ANDROID_HEADERS} ${AWS_TESTING_PLATFORM_ANDROID_SOURCE})
 elseif(PLATFORM_WINDOWS)
-  file(GLOB TestingResources_PLATFORM_SRC "source/platform/windows/*.cpp")
+    file(GLOB TestingResources_PLATFORM_SRC "source/platform/windows/*.cpp")
 elseif(PLATFORM_LINUX OR PLATFORM_APPLE)
-  file(GLOB TestingResources_PLATFORM_SRC "source/platform/linux-shared/*.cpp")
+    file(GLOB TestingResources_PLATFORM_SRC "source/platform/linux-shared/*.cpp")
 elseif(PLATFORM_CUSTOM)
-  gather_custom_testing_source(TestingResources_PLATFORM_SRC)
+    gather_custom_testing_source(TestingResources_PLATFORM_SRC)
 endif()
 
 if(PLATFORM_WINDOWS)
-  if(MSVC)
-    source_group("Header Files\\aws\\testing" FILES ${AWS_TESTING_HEADERS})
-    source_group("Header Files\\aws\\testing\\platform" FILES ${AWS_TESTING_PLATFORM_HEADERS})
-    source_group("Header Files\\aws\\external" FILES ${AWS_TESTING_EXTERNAL_HEADERS})
-    source_group("Header Files\\aws\\testing\\mocks\\aws\\auth" FILES ${AWS_TESTING_AUTH_MOCKS_HEADERS})
-    source_group("Header Files\\aws\\testing\\mocks\\http" FILES ${AWS_TESTING_HTTP_MOCKS_HEADERS})
+    if(MSVC)
+        source_group("Header Files\\aws\\testing" FILES ${AWS_TESTING_HEADERS})
+        source_group("Header Files\\aws\\testing\\platform" FILES ${AWS_TESTING_PLATFORM_HEADERS})
+        source_group("Header Files\\aws\\external" FILES ${AWS_TESTING_EXTERNAL_HEADERS})
+        source_group("Header Files\\aws\\testing\\mocks\\aws\\auth" FILES ${AWS_TESTING_AUTH_MOCKS_HEADERS})
+        source_group("Header Files\\aws\\testing\\mocks\\http" FILES ${AWS_TESTING_HTTP_MOCKS_HEADERS})
 
-    source_group("Source Files" FILES ${AWS_TESTING_SOURCE})
-    source_group("Source Files\\external" FILES ${AWS_TESTING_EXTERNAL_SOURCE})
-    source_group("Source Files\\platform\\windows" FILES ${TestingResources_PLATFORM_SRC})
-  endif(MSVC)
+        source_group("Source Files" FILES ${AWS_TESTING_SOURCE})
+        source_group("Source Files\\external" FILES ${AWS_TESTING_EXTERNAL_SOURCE})
+        source_group("Source Files\\platform\\windows" FILES ${TestingResources_PLATFORM_SRC})
+    endif(MSVC)
 endif()
 
 file(GLOB TestingResources_SRC
-  ${TestingResources_SHARED_SRC}
-  ${TestingResources_PLATFORM_SRC}
+    ${TestingResources_SHARED_SRC}
+    ${TestingResources_PLATFORM_SRC}
 )
 
 set(INCLUDES
-  "${CMAKE_CURRENT_SOURCE_DIR}/include/"
-  "${CORE_DIR}/include/"
+    "${CMAKE_CURRENT_SOURCE_DIR}/include/"
 )
+
+if(PLATFORM_CUSTOM)
+  if(COMMAND add_custom_core_include_directories)
+    add_custom_core_include_directories(CUSTOM_INCLUDE)
+    set(INCLUDES ${INCLUDES} ${CUSTOM_INCLUDE})
+  endif()
+  if(COMMAND add_custom_definitions)
+    add_custom_definitions()
+  endif()
+endif()
 
 include_directories(${INCLUDES})
 
 if(USE_WINDOWS_DLL_SEMANTICS AND BUILD_SHARED_LIBS)
-  add_definitions("-DAWS_TESTING_EXPORTS=1")
-  add_definitions("-DGTEST_CREATE_SHARED_LIBRARY=1")
-endif()
-
-if(PLATFORM_CUSTOM)
-  add_custom_testing_definitions()
+    add_definitions(-DAWS_TESTING_EXPORTS=1)
+    add_definitions(-DGTEST_CREATE_SHARED_LIBRARY=1)
 endif()
 
 if(PLATFORM_WINDOWS)
-  add_definitions("-DDISABLE_HOME_DIR_REDIRECT")
+    add_definitions("-DDISABLE_HOME_DIR_REDIRECT")
 endif()
 
-add_library(testing-resources ${LIBTYPE} ${TestingResources_SRC})
-
-target_include_directories(testing-resources PUBLIC
-        $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
-        $<INSTALL_INTERFACE:include>)
-target_link_libraries(testing-resources aws-cpp-sdk-core)
+add_library(${PROJECT_NAME} ${LIBTYPE} ${TestingResources_SRC})
+add_library(AWS::${PROJECT_NAME} ALIAS ${PROJECT_NAME})
 
 if(PLATFORM_CUSTOM)
-  add_custom_testing_link_libraries()
   add_custom_testing_target_compile_definitions()
+endif()
+
+target_include_directories(${PROJECT_NAME} PUBLIC
+        $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+        $<INSTALL_INTERFACE:include>)
+target_link_libraries(${PROJECT_NAME} ${PROJECT_LIBS})
+
+if(COMMAND add_custom_testing_link_libraries)
+    add_custom_testing_link_libraries()
+endif()
+
+if(COMMAND add_custom_testing_target_compile_definitions)
+    add_custom_testing_target_compile_definitions()
 endif()
 

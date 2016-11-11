@@ -23,6 +23,7 @@ using namespace Aws::Utils;
 
 RespondToAuthChallengeRequest::RespondToAuthChallengeRequest() : 
     m_clientIdHasBeenSet(false),
+    m_challengeName(ChallengeNameType::NOT_SET),
     m_challengeNameHasBeenSet(false),
     m_sessionHasBeenSet(false),
     m_challengeResponsesHasBeenSet(false)

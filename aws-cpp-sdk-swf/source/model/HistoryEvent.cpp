@@ -29,6 +29,7 @@ namespace Model
 
 HistoryEvent::HistoryEvent() : 
     m_eventTimestampHasBeenSet(false),
+    m_eventType(EventType::NOT_SET),
     m_eventTypeHasBeenSet(false),
     m_eventId(0),
     m_eventIdHasBeenSet(false),
@@ -91,6 +92,7 @@ HistoryEvent::HistoryEvent() :
 
 HistoryEvent::HistoryEvent(const JsonValue& jsonValue) : 
     m_eventTimestampHasBeenSet(false),
+    m_eventType(EventType::NOT_SET),
     m_eventTypeHasBeenSet(false),
     m_eventId(0),
     m_eventIdHasBeenSet(false),

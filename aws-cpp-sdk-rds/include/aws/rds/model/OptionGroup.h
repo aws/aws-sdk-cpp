@@ -319,6 +319,41 @@ namespace Model
      */
     inline OptionGroup& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 
+    /**
+     * <p>The Amazon Resource Name (ARN) for the option group.</p>
+     */
+    inline const Aws::String& GetOptionGroupArn() const{ return m_optionGroupArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the option group.</p>
+     */
+    inline void SetOptionGroupArn(const Aws::String& value) { m_optionGroupArnHasBeenSet = true; m_optionGroupArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the option group.</p>
+     */
+    inline void SetOptionGroupArn(Aws::String&& value) { m_optionGroupArnHasBeenSet = true; m_optionGroupArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the option group.</p>
+     */
+    inline void SetOptionGroupArn(const char* value) { m_optionGroupArnHasBeenSet = true; m_optionGroupArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the option group.</p>
+     */
+    inline OptionGroup& WithOptionGroupArn(const Aws::String& value) { SetOptionGroupArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the option group.</p>
+     */
+    inline OptionGroup& WithOptionGroupArn(Aws::String&& value) { SetOptionGroupArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the option group.</p>
+     */
+    inline OptionGroup& WithOptionGroupArn(const char* value) { SetOptionGroupArn(value); return *this;}
+
   private:
     Aws::String m_optionGroupName;
     bool m_optionGroupNameHasBeenSet;
@@ -334,6 +369,8 @@ namespace Model
     bool m_allowsVpcAndNonVpcInstanceMembershipsHasBeenSet;
     Aws::String m_vpcId;
     bool m_vpcIdHasBeenSet;
+    Aws::String m_optionGroupArn;
+    bool m_optionGroupArnHasBeenSet;
   };
 
 } // namespace Model

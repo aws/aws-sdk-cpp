@@ -16,6 +16,7 @@
 #include <aws/ecs/ECS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ecs/model/NetworkMode.h>
 #include <aws/ecs/model/TaskDefinitionStatus.h>
 #include <aws/ecs/model/ContainerDefinition.h>
 #include <aws/ecs/model/Volume.h>
@@ -236,6 +237,76 @@ namespace Model
     inline TaskDefinition& WithTaskRoleArn(const char* value) { SetTaskRoleArn(value); return *this;}
 
     /**
+     * <p>The Docker networking mode to use for the containers in the task. The valid
+     * values are <code>none</code>, <code>bridge</code>, and <code>host</code>. </p>
+     * <p>If the network mode is <code>none</code>, the containers do not have external
+     * connectivity. The default Docker network mode is <code>bridge</code>. The
+     * <code>host</code> network mode offers the highest networking performance for
+     * containers because it uses the host network stack instead of the virtualized
+     * network stack provided by the <code>bridge</code> mode.</p> <p>For more
+     * information, see <a
+     * href="https://docs.docker.com/engine/reference/run/#network-settings">Network
+     * settings</a> in the <i>Docker run reference</i>.</p>
+     */
+    inline const NetworkMode& GetNetworkMode() const{ return m_networkMode; }
+
+    /**
+     * <p>The Docker networking mode to use for the containers in the task. The valid
+     * values are <code>none</code>, <code>bridge</code>, and <code>host</code>. </p>
+     * <p>If the network mode is <code>none</code>, the containers do not have external
+     * connectivity. The default Docker network mode is <code>bridge</code>. The
+     * <code>host</code> network mode offers the highest networking performance for
+     * containers because it uses the host network stack instead of the virtualized
+     * network stack provided by the <code>bridge</code> mode.</p> <p>For more
+     * information, see <a
+     * href="https://docs.docker.com/engine/reference/run/#network-settings">Network
+     * settings</a> in the <i>Docker run reference</i>.</p>
+     */
+    inline void SetNetworkMode(const NetworkMode& value) { m_networkModeHasBeenSet = true; m_networkMode = value; }
+
+    /**
+     * <p>The Docker networking mode to use for the containers in the task. The valid
+     * values are <code>none</code>, <code>bridge</code>, and <code>host</code>. </p>
+     * <p>If the network mode is <code>none</code>, the containers do not have external
+     * connectivity. The default Docker network mode is <code>bridge</code>. The
+     * <code>host</code> network mode offers the highest networking performance for
+     * containers because it uses the host network stack instead of the virtualized
+     * network stack provided by the <code>bridge</code> mode.</p> <p>For more
+     * information, see <a
+     * href="https://docs.docker.com/engine/reference/run/#network-settings">Network
+     * settings</a> in the <i>Docker run reference</i>.</p>
+     */
+    inline void SetNetworkMode(NetworkMode&& value) { m_networkModeHasBeenSet = true; m_networkMode = value; }
+
+    /**
+     * <p>The Docker networking mode to use for the containers in the task. The valid
+     * values are <code>none</code>, <code>bridge</code>, and <code>host</code>. </p>
+     * <p>If the network mode is <code>none</code>, the containers do not have external
+     * connectivity. The default Docker network mode is <code>bridge</code>. The
+     * <code>host</code> network mode offers the highest networking performance for
+     * containers because it uses the host network stack instead of the virtualized
+     * network stack provided by the <code>bridge</code> mode.</p> <p>For more
+     * information, see <a
+     * href="https://docs.docker.com/engine/reference/run/#network-settings">Network
+     * settings</a> in the <i>Docker run reference</i>.</p>
+     */
+    inline TaskDefinition& WithNetworkMode(const NetworkMode& value) { SetNetworkMode(value); return *this;}
+
+    /**
+     * <p>The Docker networking mode to use for the containers in the task. The valid
+     * values are <code>none</code>, <code>bridge</code>, and <code>host</code>. </p>
+     * <p>If the network mode is <code>none</code>, the containers do not have external
+     * connectivity. The default Docker network mode is <code>bridge</code>. The
+     * <code>host</code> network mode offers the highest networking performance for
+     * containers because it uses the host network stack instead of the virtualized
+     * network stack provided by the <code>bridge</code> mode.</p> <p>For more
+     * information, see <a
+     * href="https://docs.docker.com/engine/reference/run/#network-settings">Network
+     * settings</a> in the <i>Docker run reference</i>.</p>
+     */
+    inline TaskDefinition& WithNetworkMode(NetworkMode&& value) { SetNetworkMode(value); return *this;}
+
+    /**
      * <p>The revision of the task in a particular family. The revision is a version
      * number of a task definition in a family. When you register a task definition for
      * the first time, the revision is <code>1</code>; each time you register a new
@@ -397,6 +468,8 @@ namespace Model
     bool m_familyHasBeenSet;
     Aws::String m_taskRoleArn;
     bool m_taskRoleArnHasBeenSet;
+    NetworkMode m_networkMode;
+    bool m_networkModeHasBeenSet;
     int m_revision;
     bool m_revisionHasBeenSet;
     Aws::Vector<Volume> m_volumes;

@@ -118,97 +118,92 @@ namespace Model
     inline Test& WithName(const char* value) { SetName(value); return *this;}
 
     /**
-     * <p>The test's type.</p> <p>Must be one of the following values:</p> <ul>
-     * <li><p>BUILTIN_FUZZ: The built-in fuzz type.</p></li> <li><p>BUILTIN_EXPLORER:
-     * For Android, an app explorer that will traverse an Android app, interacting with
-     * it and capturing screenshots at the same time.</p></li>
-     * <li><p>APPIUM_JAVA_JUNIT: The Appium Java JUnit type.</p></li>
-     * <li><p>APPIUM_JAVA_TESTNG: The Appium Java TestNG type.</p></li>
-     * <li><p>APPIUM_PYTHON: The Appium Python type.</p></li>
-     * <li><p>APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.</p></li>
-     * <li><p>APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web
-     * apps.</p></li> <li><p>APPIUM_WEB_PYTHON: The Appium Python type for Web
-     * apps.</p></li> <li><p>CALABASH: The Calabash type.</p></li>
-     * <li><p>INSTRUMENTATION: The Instrumentation type.</p></li> <li><p>UIAUTOMATION:
-     * The uiautomation type.</p></li> <li><p>UIAUTOMATOR: The uiautomator
-     * type.</p></li> <li><p>XCTEST: The XCode test type.</p></li> <li><p>XCTEST_UI:
-     * The XCode UI test type.</p></li> </ul>
+     * <p>The test's type.</p> <p>Must be one of the following values:</p> <ul> <li>
+     * <p>BUILTIN_FUZZ: The built-in fuzz type.</p> </li> <li> <p>BUILTIN_EXPLORER: For
+     * Android, an app explorer that will traverse an Android app, interacting with it
+     * and capturing screenshots at the same time.</p> </li> <li> <p>APPIUM_JAVA_JUNIT:
+     * The Appium Java JUnit type.</p> </li> <li> <p>APPIUM_JAVA_TESTNG: The Appium
+     * Java TestNG type.</p> </li> <li> <p>APPIUM_PYTHON: The Appium Python type.</p>
+     * </li> <li> <p>APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web
+     * apps.</p> </li> <li> <p>APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for
+     * Web apps.</p> </li> <li> <p>APPIUM_WEB_PYTHON: The Appium Python type for Web
+     * apps.</p> </li> <li> <p>CALABASH: The Calabash type.</p> </li> <li>
+     * <p>INSTRUMENTATION: The Instrumentation type.</p> </li> <li> <p>UIAUTOMATION:
+     * The uiautomation type.</p> </li> <li> <p>UIAUTOMATOR: The uiautomator type.</p>
+     * </li> <li> <p>XCTEST: The XCode test type.</p> </li> <li> <p>XCTEST_UI: The
+     * XCode UI test type.</p> </li> </ul>
      */
     inline const TestType& GetType() const{ return m_type; }
 
     /**
-     * <p>The test's type.</p> <p>Must be one of the following values:</p> <ul>
-     * <li><p>BUILTIN_FUZZ: The built-in fuzz type.</p></li> <li><p>BUILTIN_EXPLORER:
-     * For Android, an app explorer that will traverse an Android app, interacting with
-     * it and capturing screenshots at the same time.</p></li>
-     * <li><p>APPIUM_JAVA_JUNIT: The Appium Java JUnit type.</p></li>
-     * <li><p>APPIUM_JAVA_TESTNG: The Appium Java TestNG type.</p></li>
-     * <li><p>APPIUM_PYTHON: The Appium Python type.</p></li>
-     * <li><p>APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.</p></li>
-     * <li><p>APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web
-     * apps.</p></li> <li><p>APPIUM_WEB_PYTHON: The Appium Python type for Web
-     * apps.</p></li> <li><p>CALABASH: The Calabash type.</p></li>
-     * <li><p>INSTRUMENTATION: The Instrumentation type.</p></li> <li><p>UIAUTOMATION:
-     * The uiautomation type.</p></li> <li><p>UIAUTOMATOR: The uiautomator
-     * type.</p></li> <li><p>XCTEST: The XCode test type.</p></li> <li><p>XCTEST_UI:
-     * The XCode UI test type.</p></li> </ul>
+     * <p>The test's type.</p> <p>Must be one of the following values:</p> <ul> <li>
+     * <p>BUILTIN_FUZZ: The built-in fuzz type.</p> </li> <li> <p>BUILTIN_EXPLORER: For
+     * Android, an app explorer that will traverse an Android app, interacting with it
+     * and capturing screenshots at the same time.</p> </li> <li> <p>APPIUM_JAVA_JUNIT:
+     * The Appium Java JUnit type.</p> </li> <li> <p>APPIUM_JAVA_TESTNG: The Appium
+     * Java TestNG type.</p> </li> <li> <p>APPIUM_PYTHON: The Appium Python type.</p>
+     * </li> <li> <p>APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web
+     * apps.</p> </li> <li> <p>APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for
+     * Web apps.</p> </li> <li> <p>APPIUM_WEB_PYTHON: The Appium Python type for Web
+     * apps.</p> </li> <li> <p>CALABASH: The Calabash type.</p> </li> <li>
+     * <p>INSTRUMENTATION: The Instrumentation type.</p> </li> <li> <p>UIAUTOMATION:
+     * The uiautomation type.</p> </li> <li> <p>UIAUTOMATOR: The uiautomator type.</p>
+     * </li> <li> <p>XCTEST: The XCode test type.</p> </li> <li> <p>XCTEST_UI: The
+     * XCode UI test type.</p> </li> </ul>
      */
     inline void SetType(const TestType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The test's type.</p> <p>Must be one of the following values:</p> <ul>
-     * <li><p>BUILTIN_FUZZ: The built-in fuzz type.</p></li> <li><p>BUILTIN_EXPLORER:
-     * For Android, an app explorer that will traverse an Android app, interacting with
-     * it and capturing screenshots at the same time.</p></li>
-     * <li><p>APPIUM_JAVA_JUNIT: The Appium Java JUnit type.</p></li>
-     * <li><p>APPIUM_JAVA_TESTNG: The Appium Java TestNG type.</p></li>
-     * <li><p>APPIUM_PYTHON: The Appium Python type.</p></li>
-     * <li><p>APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.</p></li>
-     * <li><p>APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web
-     * apps.</p></li> <li><p>APPIUM_WEB_PYTHON: The Appium Python type for Web
-     * apps.</p></li> <li><p>CALABASH: The Calabash type.</p></li>
-     * <li><p>INSTRUMENTATION: The Instrumentation type.</p></li> <li><p>UIAUTOMATION:
-     * The uiautomation type.</p></li> <li><p>UIAUTOMATOR: The uiautomator
-     * type.</p></li> <li><p>XCTEST: The XCode test type.</p></li> <li><p>XCTEST_UI:
-     * The XCode UI test type.</p></li> </ul>
+     * <p>The test's type.</p> <p>Must be one of the following values:</p> <ul> <li>
+     * <p>BUILTIN_FUZZ: The built-in fuzz type.</p> </li> <li> <p>BUILTIN_EXPLORER: For
+     * Android, an app explorer that will traverse an Android app, interacting with it
+     * and capturing screenshots at the same time.</p> </li> <li> <p>APPIUM_JAVA_JUNIT:
+     * The Appium Java JUnit type.</p> </li> <li> <p>APPIUM_JAVA_TESTNG: The Appium
+     * Java TestNG type.</p> </li> <li> <p>APPIUM_PYTHON: The Appium Python type.</p>
+     * </li> <li> <p>APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web
+     * apps.</p> </li> <li> <p>APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for
+     * Web apps.</p> </li> <li> <p>APPIUM_WEB_PYTHON: The Appium Python type for Web
+     * apps.</p> </li> <li> <p>CALABASH: The Calabash type.</p> </li> <li>
+     * <p>INSTRUMENTATION: The Instrumentation type.</p> </li> <li> <p>UIAUTOMATION:
+     * The uiautomation type.</p> </li> <li> <p>UIAUTOMATOR: The uiautomator type.</p>
+     * </li> <li> <p>XCTEST: The XCode test type.</p> </li> <li> <p>XCTEST_UI: The
+     * XCode UI test type.</p> </li> </ul>
      */
     inline void SetType(TestType&& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The test's type.</p> <p>Must be one of the following values:</p> <ul>
-     * <li><p>BUILTIN_FUZZ: The built-in fuzz type.</p></li> <li><p>BUILTIN_EXPLORER:
-     * For Android, an app explorer that will traverse an Android app, interacting with
-     * it and capturing screenshots at the same time.</p></li>
-     * <li><p>APPIUM_JAVA_JUNIT: The Appium Java JUnit type.</p></li>
-     * <li><p>APPIUM_JAVA_TESTNG: The Appium Java TestNG type.</p></li>
-     * <li><p>APPIUM_PYTHON: The Appium Python type.</p></li>
-     * <li><p>APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.</p></li>
-     * <li><p>APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web
-     * apps.</p></li> <li><p>APPIUM_WEB_PYTHON: The Appium Python type for Web
-     * apps.</p></li> <li><p>CALABASH: The Calabash type.</p></li>
-     * <li><p>INSTRUMENTATION: The Instrumentation type.</p></li> <li><p>UIAUTOMATION:
-     * The uiautomation type.</p></li> <li><p>UIAUTOMATOR: The uiautomator
-     * type.</p></li> <li><p>XCTEST: The XCode test type.</p></li> <li><p>XCTEST_UI:
-     * The XCode UI test type.</p></li> </ul>
+     * <p>The test's type.</p> <p>Must be one of the following values:</p> <ul> <li>
+     * <p>BUILTIN_FUZZ: The built-in fuzz type.</p> </li> <li> <p>BUILTIN_EXPLORER: For
+     * Android, an app explorer that will traverse an Android app, interacting with it
+     * and capturing screenshots at the same time.</p> </li> <li> <p>APPIUM_JAVA_JUNIT:
+     * The Appium Java JUnit type.</p> </li> <li> <p>APPIUM_JAVA_TESTNG: The Appium
+     * Java TestNG type.</p> </li> <li> <p>APPIUM_PYTHON: The Appium Python type.</p>
+     * </li> <li> <p>APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web
+     * apps.</p> </li> <li> <p>APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for
+     * Web apps.</p> </li> <li> <p>APPIUM_WEB_PYTHON: The Appium Python type for Web
+     * apps.</p> </li> <li> <p>CALABASH: The Calabash type.</p> </li> <li>
+     * <p>INSTRUMENTATION: The Instrumentation type.</p> </li> <li> <p>UIAUTOMATION:
+     * The uiautomation type.</p> </li> <li> <p>UIAUTOMATOR: The uiautomator type.</p>
+     * </li> <li> <p>XCTEST: The XCode test type.</p> </li> <li> <p>XCTEST_UI: The
+     * XCode UI test type.</p> </li> </ul>
      */
     inline Test& WithType(const TestType& value) { SetType(value); return *this;}
 
     /**
-     * <p>The test's type.</p> <p>Must be one of the following values:</p> <ul>
-     * <li><p>BUILTIN_FUZZ: The built-in fuzz type.</p></li> <li><p>BUILTIN_EXPLORER:
-     * For Android, an app explorer that will traverse an Android app, interacting with
-     * it and capturing screenshots at the same time.</p></li>
-     * <li><p>APPIUM_JAVA_JUNIT: The Appium Java JUnit type.</p></li>
-     * <li><p>APPIUM_JAVA_TESTNG: The Appium Java TestNG type.</p></li>
-     * <li><p>APPIUM_PYTHON: The Appium Python type.</p></li>
-     * <li><p>APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.</p></li>
-     * <li><p>APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web
-     * apps.</p></li> <li><p>APPIUM_WEB_PYTHON: The Appium Python type for Web
-     * apps.</p></li> <li><p>CALABASH: The Calabash type.</p></li>
-     * <li><p>INSTRUMENTATION: The Instrumentation type.</p></li> <li><p>UIAUTOMATION:
-     * The uiautomation type.</p></li> <li><p>UIAUTOMATOR: The uiautomator
-     * type.</p></li> <li><p>XCTEST: The XCode test type.</p></li> <li><p>XCTEST_UI:
-     * The XCode UI test type.</p></li> </ul>
+     * <p>The test's type.</p> <p>Must be one of the following values:</p> <ul> <li>
+     * <p>BUILTIN_FUZZ: The built-in fuzz type.</p> </li> <li> <p>BUILTIN_EXPLORER: For
+     * Android, an app explorer that will traverse an Android app, interacting with it
+     * and capturing screenshots at the same time.</p> </li> <li> <p>APPIUM_JAVA_JUNIT:
+     * The Appium Java JUnit type.</p> </li> <li> <p>APPIUM_JAVA_TESTNG: The Appium
+     * Java TestNG type.</p> </li> <li> <p>APPIUM_PYTHON: The Appium Python type.</p>
+     * </li> <li> <p>APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web
+     * apps.</p> </li> <li> <p>APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for
+     * Web apps.</p> </li> <li> <p>APPIUM_WEB_PYTHON: The Appium Python type for Web
+     * apps.</p> </li> <li> <p>CALABASH: The Calabash type.</p> </li> <li>
+     * <p>INSTRUMENTATION: The Instrumentation type.</p> </li> <li> <p>UIAUTOMATION:
+     * The uiautomation type.</p> </li> <li> <p>UIAUTOMATOR: The uiautomator type.</p>
+     * </li> <li> <p>XCTEST: The XCode test type.</p> </li> <li> <p>XCTEST_UI: The
+     * XCode UI test type.</p> </li> </ul>
      */
     inline Test& WithType(TestType&& value) { SetType(value); return *this;}
 
@@ -238,107 +233,107 @@ namespace Model
     inline Test& WithCreated(Aws::Utils::DateTime&& value) { SetCreated(value); return *this;}
 
     /**
-     * <p>The test's status.</p> <p>Allowed values include:</p> <ul> <li><p>PENDING: A
-     * pending status.</p></li> <li><p>PENDING_CONCURRENCY: A pending concurrency
-     * status.</p></li> <li><p>PENDING_DEVICE: A pending device status.</p></li>
-     * <li><p>PROCESSING: A processing status.</p></li> <li><p>SCHEDULING: A scheduling
-     * status.</p></li> <li><p>PREPARING: A preparing status.</p></li> <li><p>RUNNING:
-     * A running status.</p></li> <li><p>COMPLETED: A completed status.</p></li>
-     * <li><p>STOPPING: A stopping status.</p></li> </ul>
+     * <p>The test's status.</p> <p>Allowed values include:</p> <ul> <li> <p>PENDING: A
+     * pending status.</p> </li> <li> <p>PENDING_CONCURRENCY: A pending concurrency
+     * status.</p> </li> <li> <p>PENDING_DEVICE: A pending device status.</p> </li>
+     * <li> <p>PROCESSING: A processing status.</p> </li> <li> <p>SCHEDULING: A
+     * scheduling status.</p> </li> <li> <p>PREPARING: A preparing status.</p> </li>
+     * <li> <p>RUNNING: A running status.</p> </li> <li> <p>COMPLETED: A completed
+     * status.</p> </li> <li> <p>STOPPING: A stopping status.</p> </li> </ul>
      */
     inline const ExecutionStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The test's status.</p> <p>Allowed values include:</p> <ul> <li><p>PENDING: A
-     * pending status.</p></li> <li><p>PENDING_CONCURRENCY: A pending concurrency
-     * status.</p></li> <li><p>PENDING_DEVICE: A pending device status.</p></li>
-     * <li><p>PROCESSING: A processing status.</p></li> <li><p>SCHEDULING: A scheduling
-     * status.</p></li> <li><p>PREPARING: A preparing status.</p></li> <li><p>RUNNING:
-     * A running status.</p></li> <li><p>COMPLETED: A completed status.</p></li>
-     * <li><p>STOPPING: A stopping status.</p></li> </ul>
+     * <p>The test's status.</p> <p>Allowed values include:</p> <ul> <li> <p>PENDING: A
+     * pending status.</p> </li> <li> <p>PENDING_CONCURRENCY: A pending concurrency
+     * status.</p> </li> <li> <p>PENDING_DEVICE: A pending device status.</p> </li>
+     * <li> <p>PROCESSING: A processing status.</p> </li> <li> <p>SCHEDULING: A
+     * scheduling status.</p> </li> <li> <p>PREPARING: A preparing status.</p> </li>
+     * <li> <p>RUNNING: A running status.</p> </li> <li> <p>COMPLETED: A completed
+     * status.</p> </li> <li> <p>STOPPING: A stopping status.</p> </li> </ul>
      */
     inline void SetStatus(const ExecutionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The test's status.</p> <p>Allowed values include:</p> <ul> <li><p>PENDING: A
-     * pending status.</p></li> <li><p>PENDING_CONCURRENCY: A pending concurrency
-     * status.</p></li> <li><p>PENDING_DEVICE: A pending device status.</p></li>
-     * <li><p>PROCESSING: A processing status.</p></li> <li><p>SCHEDULING: A scheduling
-     * status.</p></li> <li><p>PREPARING: A preparing status.</p></li> <li><p>RUNNING:
-     * A running status.</p></li> <li><p>COMPLETED: A completed status.</p></li>
-     * <li><p>STOPPING: A stopping status.</p></li> </ul>
+     * <p>The test's status.</p> <p>Allowed values include:</p> <ul> <li> <p>PENDING: A
+     * pending status.</p> </li> <li> <p>PENDING_CONCURRENCY: A pending concurrency
+     * status.</p> </li> <li> <p>PENDING_DEVICE: A pending device status.</p> </li>
+     * <li> <p>PROCESSING: A processing status.</p> </li> <li> <p>SCHEDULING: A
+     * scheduling status.</p> </li> <li> <p>PREPARING: A preparing status.</p> </li>
+     * <li> <p>RUNNING: A running status.</p> </li> <li> <p>COMPLETED: A completed
+     * status.</p> </li> <li> <p>STOPPING: A stopping status.</p> </li> </ul>
      */
     inline void SetStatus(ExecutionStatus&& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The test's status.</p> <p>Allowed values include:</p> <ul> <li><p>PENDING: A
-     * pending status.</p></li> <li><p>PENDING_CONCURRENCY: A pending concurrency
-     * status.</p></li> <li><p>PENDING_DEVICE: A pending device status.</p></li>
-     * <li><p>PROCESSING: A processing status.</p></li> <li><p>SCHEDULING: A scheduling
-     * status.</p></li> <li><p>PREPARING: A preparing status.</p></li> <li><p>RUNNING:
-     * A running status.</p></li> <li><p>COMPLETED: A completed status.</p></li>
-     * <li><p>STOPPING: A stopping status.</p></li> </ul>
+     * <p>The test's status.</p> <p>Allowed values include:</p> <ul> <li> <p>PENDING: A
+     * pending status.</p> </li> <li> <p>PENDING_CONCURRENCY: A pending concurrency
+     * status.</p> </li> <li> <p>PENDING_DEVICE: A pending device status.</p> </li>
+     * <li> <p>PROCESSING: A processing status.</p> </li> <li> <p>SCHEDULING: A
+     * scheduling status.</p> </li> <li> <p>PREPARING: A preparing status.</p> </li>
+     * <li> <p>RUNNING: A running status.</p> </li> <li> <p>COMPLETED: A completed
+     * status.</p> </li> <li> <p>STOPPING: A stopping status.</p> </li> </ul>
      */
     inline Test& WithStatus(const ExecutionStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The test's status.</p> <p>Allowed values include:</p> <ul> <li><p>PENDING: A
-     * pending status.</p></li> <li><p>PENDING_CONCURRENCY: A pending concurrency
-     * status.</p></li> <li><p>PENDING_DEVICE: A pending device status.</p></li>
-     * <li><p>PROCESSING: A processing status.</p></li> <li><p>SCHEDULING: A scheduling
-     * status.</p></li> <li><p>PREPARING: A preparing status.</p></li> <li><p>RUNNING:
-     * A running status.</p></li> <li><p>COMPLETED: A completed status.</p></li>
-     * <li><p>STOPPING: A stopping status.</p></li> </ul>
+     * <p>The test's status.</p> <p>Allowed values include:</p> <ul> <li> <p>PENDING: A
+     * pending status.</p> </li> <li> <p>PENDING_CONCURRENCY: A pending concurrency
+     * status.</p> </li> <li> <p>PENDING_DEVICE: A pending device status.</p> </li>
+     * <li> <p>PROCESSING: A processing status.</p> </li> <li> <p>SCHEDULING: A
+     * scheduling status.</p> </li> <li> <p>PREPARING: A preparing status.</p> </li>
+     * <li> <p>RUNNING: A running status.</p> </li> <li> <p>COMPLETED: A completed
+     * status.</p> </li> <li> <p>STOPPING: A stopping status.</p> </li> </ul>
      */
     inline Test& WithStatus(ExecutionStatus&& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The test's result.</p> <p>Allowed values include:</p> <ul> <li><p>PENDING: A
-     * pending condition.</p></li> <li><p>PASSED: A passing condition.</p></li>
-     * <li><p>WARNED: A warning condition.</p></li> <li><p>FAILED: A failed
-     * condition.</p></li> <li><p>SKIPPED: A skipped condition.</p></li>
-     * <li><p>ERRORED: An error condition.</p></li> <li><p>STOPPED: A stopped
-     * condition.</p></li> </ul>
+     * <p>The test's result.</p> <p>Allowed values include:</p> <ul> <li> <p>PENDING: A
+     * pending condition.</p> </li> <li> <p>PASSED: A passing condition.</p> </li> <li>
+     * <p>WARNED: A warning condition.</p> </li> <li> <p>FAILED: A failed
+     * condition.</p> </li> <li> <p>SKIPPED: A skipped condition.</p> </li> <li>
+     * <p>ERRORED: An error condition.</p> </li> <li> <p>STOPPED: A stopped
+     * condition.</p> </li> </ul>
      */
     inline const ExecutionResult& GetResult() const{ return m_result; }
 
     /**
-     * <p>The test's result.</p> <p>Allowed values include:</p> <ul> <li><p>PENDING: A
-     * pending condition.</p></li> <li><p>PASSED: A passing condition.</p></li>
-     * <li><p>WARNED: A warning condition.</p></li> <li><p>FAILED: A failed
-     * condition.</p></li> <li><p>SKIPPED: A skipped condition.</p></li>
-     * <li><p>ERRORED: An error condition.</p></li> <li><p>STOPPED: A stopped
-     * condition.</p></li> </ul>
+     * <p>The test's result.</p> <p>Allowed values include:</p> <ul> <li> <p>PENDING: A
+     * pending condition.</p> </li> <li> <p>PASSED: A passing condition.</p> </li> <li>
+     * <p>WARNED: A warning condition.</p> </li> <li> <p>FAILED: A failed
+     * condition.</p> </li> <li> <p>SKIPPED: A skipped condition.</p> </li> <li>
+     * <p>ERRORED: An error condition.</p> </li> <li> <p>STOPPED: A stopped
+     * condition.</p> </li> </ul>
      */
     inline void SetResult(const ExecutionResult& value) { m_resultHasBeenSet = true; m_result = value; }
 
     /**
-     * <p>The test's result.</p> <p>Allowed values include:</p> <ul> <li><p>PENDING: A
-     * pending condition.</p></li> <li><p>PASSED: A passing condition.</p></li>
-     * <li><p>WARNED: A warning condition.</p></li> <li><p>FAILED: A failed
-     * condition.</p></li> <li><p>SKIPPED: A skipped condition.</p></li>
-     * <li><p>ERRORED: An error condition.</p></li> <li><p>STOPPED: A stopped
-     * condition.</p></li> </ul>
+     * <p>The test's result.</p> <p>Allowed values include:</p> <ul> <li> <p>PENDING: A
+     * pending condition.</p> </li> <li> <p>PASSED: A passing condition.</p> </li> <li>
+     * <p>WARNED: A warning condition.</p> </li> <li> <p>FAILED: A failed
+     * condition.</p> </li> <li> <p>SKIPPED: A skipped condition.</p> </li> <li>
+     * <p>ERRORED: An error condition.</p> </li> <li> <p>STOPPED: A stopped
+     * condition.</p> </li> </ul>
      */
     inline void SetResult(ExecutionResult&& value) { m_resultHasBeenSet = true; m_result = value; }
 
     /**
-     * <p>The test's result.</p> <p>Allowed values include:</p> <ul> <li><p>PENDING: A
-     * pending condition.</p></li> <li><p>PASSED: A passing condition.</p></li>
-     * <li><p>WARNED: A warning condition.</p></li> <li><p>FAILED: A failed
-     * condition.</p></li> <li><p>SKIPPED: A skipped condition.</p></li>
-     * <li><p>ERRORED: An error condition.</p></li> <li><p>STOPPED: A stopped
-     * condition.</p></li> </ul>
+     * <p>The test's result.</p> <p>Allowed values include:</p> <ul> <li> <p>PENDING: A
+     * pending condition.</p> </li> <li> <p>PASSED: A passing condition.</p> </li> <li>
+     * <p>WARNED: A warning condition.</p> </li> <li> <p>FAILED: A failed
+     * condition.</p> </li> <li> <p>SKIPPED: A skipped condition.</p> </li> <li>
+     * <p>ERRORED: An error condition.</p> </li> <li> <p>STOPPED: A stopped
+     * condition.</p> </li> </ul>
      */
     inline Test& WithResult(const ExecutionResult& value) { SetResult(value); return *this;}
 
     /**
-     * <p>The test's result.</p> <p>Allowed values include:</p> <ul> <li><p>PENDING: A
-     * pending condition.</p></li> <li><p>PASSED: A passing condition.</p></li>
-     * <li><p>WARNED: A warning condition.</p></li> <li><p>FAILED: A failed
-     * condition.</p></li> <li><p>SKIPPED: A skipped condition.</p></li>
-     * <li><p>ERRORED: An error condition.</p></li> <li><p>STOPPED: A stopped
-     * condition.</p></li> </ul>
+     * <p>The test's result.</p> <p>Allowed values include:</p> <ul> <li> <p>PENDING: A
+     * pending condition.</p> </li> <li> <p>PASSED: A passing condition.</p> </li> <li>
+     * <p>WARNED: A warning condition.</p> </li> <li> <p>FAILED: A failed
+     * condition.</p> </li> <li> <p>SKIPPED: A skipped condition.</p> </li> <li>
+     * <p>ERRORED: An error condition.</p> </li> <li> <p>STOPPED: A stopped
+     * condition.</p> </li> </ul>
      */
     inline Test& WithResult(ExecutionResult&& value) { SetResult(value); return *this;}
 

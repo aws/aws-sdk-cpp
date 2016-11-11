@@ -30,6 +30,7 @@ namespace Model
 {
 
 InstanceStatusEvent::InstanceStatusEvent() : 
+    m_code(EventCode::NOT_SET),
     m_codeHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_notBeforeHasBeenSet(false),
@@ -38,6 +39,7 @@ InstanceStatusEvent::InstanceStatusEvent() :
 }
 
 InstanceStatusEvent::InstanceStatusEvent(const XmlNode& xmlNode) : 
+    m_code(EventCode::NOT_SET),
     m_codeHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_notBeforeHasBeenSet(false),

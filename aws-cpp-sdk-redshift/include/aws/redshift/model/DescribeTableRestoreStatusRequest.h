@@ -25,6 +25,7 @@ namespace Model
 {
 
   /**
+   * <p/>
    */
   class AWS_REDSHIFT_API DescribeTableRestoreStatusRequest : public RedshiftRequest
   {

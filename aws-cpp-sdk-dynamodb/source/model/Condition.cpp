@@ -29,12 +29,14 @@ namespace Model
 
 Condition::Condition() : 
     m_attributeValueListHasBeenSet(false),
+    m_comparisonOperator(ComparisonOperator::NOT_SET),
     m_comparisonOperatorHasBeenSet(false)
 {
 }
 
 Condition::Condition(const JsonValue& jsonValue) : 
     m_attributeValueListHasBeenSet(false),
+    m_comparisonOperator(ComparisonOperator::NOT_SET),
     m_comparisonOperatorHasBeenSet(false)
 {
   *this = jsonValue;

@@ -16,6 +16,7 @@
 #include <aws/ecs/ECS_EXPORTS.h>
 #include <aws/ecs/ECSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ecs/model/NetworkMode.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ecs/model/ContainerDefinition.h>
 #include <aws/ecs/model/Volume.h>
@@ -101,53 +102,164 @@ namespace Model
     inline RegisterTaskDefinitionRequest& WithFamily(const char* value) { SetFamily(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role that containers in this task
-     * can assume. All containers in this task are granted the permissions that are
-     * specified in this role.</p>
+     * <p>The short name or full Amazon Resource Name (ARN) of the IAM role that
+     * containers in this task can assume. All containers in this task are granted the
+     * permissions that are specified in this role. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
+     * Roles for Tasks</a> in the <i>Amazon EC2 Container Service Developer
+     * Guide</i>.</p>
      */
     inline const Aws::String& GetTaskRoleArn() const{ return m_taskRoleArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role that containers in this task
-     * can assume. All containers in this task are granted the permissions that are
-     * specified in this role.</p>
+     * <p>The short name or full Amazon Resource Name (ARN) of the IAM role that
+     * containers in this task can assume. All containers in this task are granted the
+     * permissions that are specified in this role. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
+     * Roles for Tasks</a> in the <i>Amazon EC2 Container Service Developer
+     * Guide</i>.</p>
      */
     inline void SetTaskRoleArn(const Aws::String& value) { m_taskRoleArnHasBeenSet = true; m_taskRoleArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role that containers in this task
-     * can assume. All containers in this task are granted the permissions that are
-     * specified in this role.</p>
+     * <p>The short name or full Amazon Resource Name (ARN) of the IAM role that
+     * containers in this task can assume. All containers in this task are granted the
+     * permissions that are specified in this role. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
+     * Roles for Tasks</a> in the <i>Amazon EC2 Container Service Developer
+     * Guide</i>.</p>
      */
     inline void SetTaskRoleArn(Aws::String&& value) { m_taskRoleArnHasBeenSet = true; m_taskRoleArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role that containers in this task
-     * can assume. All containers in this task are granted the permissions that are
-     * specified in this role.</p>
+     * <p>The short name or full Amazon Resource Name (ARN) of the IAM role that
+     * containers in this task can assume. All containers in this task are granted the
+     * permissions that are specified in this role. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
+     * Roles for Tasks</a> in the <i>Amazon EC2 Container Service Developer
+     * Guide</i>.</p>
      */
     inline void SetTaskRoleArn(const char* value) { m_taskRoleArnHasBeenSet = true; m_taskRoleArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role that containers in this task
-     * can assume. All containers in this task are granted the permissions that are
-     * specified in this role.</p>
+     * <p>The short name or full Amazon Resource Name (ARN) of the IAM role that
+     * containers in this task can assume. All containers in this task are granted the
+     * permissions that are specified in this role. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
+     * Roles for Tasks</a> in the <i>Amazon EC2 Container Service Developer
+     * Guide</i>.</p>
      */
     inline RegisterTaskDefinitionRequest& WithTaskRoleArn(const Aws::String& value) { SetTaskRoleArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role that containers in this task
-     * can assume. All containers in this task are granted the permissions that are
-     * specified in this role.</p>
+     * <p>The short name or full Amazon Resource Name (ARN) of the IAM role that
+     * containers in this task can assume. All containers in this task are granted the
+     * permissions that are specified in this role. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
+     * Roles for Tasks</a> in the <i>Amazon EC2 Container Service Developer
+     * Guide</i>.</p>
      */
     inline RegisterTaskDefinitionRequest& WithTaskRoleArn(Aws::String&& value) { SetTaskRoleArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role that containers in this task
-     * can assume. All containers in this task are granted the permissions that are
-     * specified in this role.</p>
+     * <p>The short name or full Amazon Resource Name (ARN) of the IAM role that
+     * containers in this task can assume. All containers in this task are granted the
+     * permissions that are specified in this role. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
+     * Roles for Tasks</a> in the <i>Amazon EC2 Container Service Developer
+     * Guide</i>.</p>
      */
     inline RegisterTaskDefinitionRequest& WithTaskRoleArn(const char* value) { SetTaskRoleArn(value); return *this;}
+
+    /**
+     * <p>The Docker networking mode to use for the containers in the task. The valid
+     * values are <code>none</code>, <code>bridge</code>, and <code>host</code>. </p>
+     * <p>The default Docker network mode is <code>bridge</code>. If the network mode
+     * is set to <code>none</code>, you cannot specify port mappings in your container
+     * definitions, and the task's containers do not have external connectivity. The
+     * <code>host</code> network mode offers the highest networking performance for
+     * containers because they use the host network stack instead of the virtualized
+     * network stack provided by the <code>bridge</code> mode; however, exposed
+     * container ports are mapped directly to the corresponding host port, so you
+     * cannot take advantage of dynamic host port mappings or run multiple
+     * instantiations of the same task on a single container instance if port mappings
+     * are used.</p> <p>For more information, see <a
+     * href="https://docs.docker.com/engine/reference/run/#network-settings">Network
+     * settings</a> in the <i>Docker run reference</i>.</p>
+     */
+    inline const NetworkMode& GetNetworkMode() const{ return m_networkMode; }
+
+    /**
+     * <p>The Docker networking mode to use for the containers in the task. The valid
+     * values are <code>none</code>, <code>bridge</code>, and <code>host</code>. </p>
+     * <p>The default Docker network mode is <code>bridge</code>. If the network mode
+     * is set to <code>none</code>, you cannot specify port mappings in your container
+     * definitions, and the task's containers do not have external connectivity. The
+     * <code>host</code> network mode offers the highest networking performance for
+     * containers because they use the host network stack instead of the virtualized
+     * network stack provided by the <code>bridge</code> mode; however, exposed
+     * container ports are mapped directly to the corresponding host port, so you
+     * cannot take advantage of dynamic host port mappings or run multiple
+     * instantiations of the same task on a single container instance if port mappings
+     * are used.</p> <p>For more information, see <a
+     * href="https://docs.docker.com/engine/reference/run/#network-settings">Network
+     * settings</a> in the <i>Docker run reference</i>.</p>
+     */
+    inline void SetNetworkMode(const NetworkMode& value) { m_networkModeHasBeenSet = true; m_networkMode = value; }
+
+    /**
+     * <p>The Docker networking mode to use for the containers in the task. The valid
+     * values are <code>none</code>, <code>bridge</code>, and <code>host</code>. </p>
+     * <p>The default Docker network mode is <code>bridge</code>. If the network mode
+     * is set to <code>none</code>, you cannot specify port mappings in your container
+     * definitions, and the task's containers do not have external connectivity. The
+     * <code>host</code> network mode offers the highest networking performance for
+     * containers because they use the host network stack instead of the virtualized
+     * network stack provided by the <code>bridge</code> mode; however, exposed
+     * container ports are mapped directly to the corresponding host port, so you
+     * cannot take advantage of dynamic host port mappings or run multiple
+     * instantiations of the same task on a single container instance if port mappings
+     * are used.</p> <p>For more information, see <a
+     * href="https://docs.docker.com/engine/reference/run/#network-settings">Network
+     * settings</a> in the <i>Docker run reference</i>.</p>
+     */
+    inline void SetNetworkMode(NetworkMode&& value) { m_networkModeHasBeenSet = true; m_networkMode = value; }
+
+    /**
+     * <p>The Docker networking mode to use for the containers in the task. The valid
+     * values are <code>none</code>, <code>bridge</code>, and <code>host</code>. </p>
+     * <p>The default Docker network mode is <code>bridge</code>. If the network mode
+     * is set to <code>none</code>, you cannot specify port mappings in your container
+     * definitions, and the task's containers do not have external connectivity. The
+     * <code>host</code> network mode offers the highest networking performance for
+     * containers because they use the host network stack instead of the virtualized
+     * network stack provided by the <code>bridge</code> mode; however, exposed
+     * container ports are mapped directly to the corresponding host port, so you
+     * cannot take advantage of dynamic host port mappings or run multiple
+     * instantiations of the same task on a single container instance if port mappings
+     * are used.</p> <p>For more information, see <a
+     * href="https://docs.docker.com/engine/reference/run/#network-settings">Network
+     * settings</a> in the <i>Docker run reference</i>.</p>
+     */
+    inline RegisterTaskDefinitionRequest& WithNetworkMode(const NetworkMode& value) { SetNetworkMode(value); return *this;}
+
+    /**
+     * <p>The Docker networking mode to use for the containers in the task. The valid
+     * values are <code>none</code>, <code>bridge</code>, and <code>host</code>. </p>
+     * <p>The default Docker network mode is <code>bridge</code>. If the network mode
+     * is set to <code>none</code>, you cannot specify port mappings in your container
+     * definitions, and the task's containers do not have external connectivity. The
+     * <code>host</code> network mode offers the highest networking performance for
+     * containers because they use the host network stack instead of the virtualized
+     * network stack provided by the <code>bridge</code> mode; however, exposed
+     * container ports are mapped directly to the corresponding host port, so you
+     * cannot take advantage of dynamic host port mappings or run multiple
+     * instantiations of the same task on a single container instance if port mappings
+     * are used.</p> <p>For more information, see <a
+     * href="https://docs.docker.com/engine/reference/run/#network-settings">Network
+     * settings</a> in the <i>Docker run reference</i>.</p>
+     */
+    inline RegisterTaskDefinitionRequest& WithNetworkMode(NetworkMode&& value) { SetNetworkMode(value); return *this;}
 
     /**
      * <p>A list of container definitions in JSON format that describe the different
@@ -238,6 +350,8 @@ namespace Model
     bool m_familyHasBeenSet;
     Aws::String m_taskRoleArn;
     bool m_taskRoleArnHasBeenSet;
+    NetworkMode m_networkMode;
+    bool m_networkModeHasBeenSet;
     Aws::Vector<ContainerDefinition> m_containerDefinitions;
     bool m_containerDefinitionsHasBeenSet;
     Aws::Vector<Volume> m_volumes;

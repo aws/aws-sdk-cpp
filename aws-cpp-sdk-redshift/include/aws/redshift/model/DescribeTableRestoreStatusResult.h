@@ -35,6 +35,9 @@ namespace Redshift
 {
 namespace Model
 {
+  /**
+   * <p/>
+   */
   class AWS_REDSHIFT_API DescribeTableRestoreStatusResult
   {
   public:
@@ -43,37 +46,37 @@ namespace Model
     DescribeTableRestoreStatusResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
     /**
-     * <p>A list of status details for one or more table restore requests. </p>
+     * <p>A list of status details for one or more table restore requests.</p>
      */
     inline const Aws::Vector<TableRestoreStatus>& GetTableRestoreStatusDetails() const{ return m_tableRestoreStatusDetails; }
 
     /**
-     * <p>A list of status details for one or more table restore requests. </p>
+     * <p>A list of status details for one or more table restore requests.</p>
      */
     inline void SetTableRestoreStatusDetails(const Aws::Vector<TableRestoreStatus>& value) { m_tableRestoreStatusDetails = value; }
 
     /**
-     * <p>A list of status details for one or more table restore requests. </p>
+     * <p>A list of status details for one or more table restore requests.</p>
      */
     inline void SetTableRestoreStatusDetails(Aws::Vector<TableRestoreStatus>&& value) { m_tableRestoreStatusDetails = value; }
 
     /**
-     * <p>A list of status details for one or more table restore requests. </p>
+     * <p>A list of status details for one or more table restore requests.</p>
      */
     inline DescribeTableRestoreStatusResult& WithTableRestoreStatusDetails(const Aws::Vector<TableRestoreStatus>& value) { SetTableRestoreStatusDetails(value); return *this;}
 
     /**
-     * <p>A list of status details for one or more table restore requests. </p>
+     * <p>A list of status details for one or more table restore requests.</p>
      */
     inline DescribeTableRestoreStatusResult& WithTableRestoreStatusDetails(Aws::Vector<TableRestoreStatus>&& value) { SetTableRestoreStatusDetails(value); return *this;}
 
     /**
-     * <p>A list of status details for one or more table restore requests. </p>
+     * <p>A list of status details for one or more table restore requests.</p>
      */
     inline DescribeTableRestoreStatusResult& AddTableRestoreStatusDetails(const TableRestoreStatus& value) { m_tableRestoreStatusDetails.push_back(value); return *this; }
 
     /**
-     * <p>A list of status details for one or more table restore requests. </p>
+     * <p>A list of status details for one or more table restore requests.</p>
      */
     inline DescribeTableRestoreStatusResult& AddTableRestoreStatusDetails(TableRestoreStatus&& value) { m_tableRestoreStatusDetails.push_back(value); return *this; }
 

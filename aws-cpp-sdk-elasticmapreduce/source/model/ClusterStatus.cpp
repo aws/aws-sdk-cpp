@@ -28,6 +28,7 @@ namespace Model
 {
 
 ClusterStatus::ClusterStatus() : 
+    m_state(ClusterState::NOT_SET),
     m_stateHasBeenSet(false),
     m_stateChangeReasonHasBeenSet(false),
     m_timelineHasBeenSet(false)
@@ -35,6 +36,7 @@ ClusterStatus::ClusterStatus() :
 }
 
 ClusterStatus::ClusterStatus(const JsonValue& jsonValue) : 
+    m_state(ClusterState::NOT_SET),
     m_stateHasBeenSet(false),
     m_stateChangeReasonHasBeenSet(false),
     m_timelineHasBeenSet(false)

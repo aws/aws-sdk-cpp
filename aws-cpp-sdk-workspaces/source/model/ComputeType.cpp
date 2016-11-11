@@ -28,11 +28,13 @@ namespace Model
 {
 
 ComputeType::ComputeType() : 
+    m_name(Compute::NOT_SET),
     m_nameHasBeenSet(false)
 {
 }
 
 ComputeType::ComputeType(const JsonValue& jsonValue) : 
+    m_name(Compute::NOT_SET),
     m_nameHasBeenSet(false)
 {
   *this = jsonValue;

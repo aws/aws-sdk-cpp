@@ -27,8 +27,10 @@ UpdateJobRequest::UpdateJobRequest() :
     m_notificationHasBeenSet(false),
     m_resourcesHasBeenSet(false),
     m_addressIdHasBeenSet(false),
+    m_shippingOption(ShippingOption::NOT_SET),
     m_shippingOptionHasBeenSet(false),
     m_descriptionHasBeenSet(false),
+    m_snowballCapacityPreference(SnowballCapacity::NOT_SET),
     m_snowballCapacityPreferenceHasBeenSet(false)
 {
 }

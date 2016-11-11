@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>The input parameters for the <i>ListAllowedNodeTypeModifications</i>
-   * action.</p>
+   * <p>The input parameters for the <code>ListAllowedNodeTypeModifications</code>
+   * operation.</p>
    */
   class AWS_ELASTICACHE_API ListAllowedNodeTypeModificationsRequest : public ElastiCacheRequest
   {
@@ -37,63 +37,70 @@ namespace Model
     /**
      * <p>The name of the cache cluster you want to scale up to a larger node instanced
      * type. ElastiCache uses the cluster id to identify the current node type of this
-     * cluster and from that to to create a list of node types you can scale up to.</p>
-     * <important> <p>You must provide a value for either the <i>CacheClusterId</i> or
-     * the <i>ReplicationGroupId</i>.</p> </important>
+     * cluster and from that to create a list of node types you can scale up to.</p>
+     * <important> <p>You must provide a value for either the
+     * <code>CacheClusterId</code> or the <code>ReplicationGroupId</code>.</p>
+     * </important>
      */
     inline const Aws::String& GetCacheClusterId() const{ return m_cacheClusterId; }
 
     /**
      * <p>The name of the cache cluster you want to scale up to a larger node instanced
      * type. ElastiCache uses the cluster id to identify the current node type of this
-     * cluster and from that to to create a list of node types you can scale up to.</p>
-     * <important> <p>You must provide a value for either the <i>CacheClusterId</i> or
-     * the <i>ReplicationGroupId</i>.</p> </important>
+     * cluster and from that to create a list of node types you can scale up to.</p>
+     * <important> <p>You must provide a value for either the
+     * <code>CacheClusterId</code> or the <code>ReplicationGroupId</code>.</p>
+     * </important>
      */
     inline void SetCacheClusterId(const Aws::String& value) { m_cacheClusterIdHasBeenSet = true; m_cacheClusterId = value; }
 
     /**
      * <p>The name of the cache cluster you want to scale up to a larger node instanced
      * type. ElastiCache uses the cluster id to identify the current node type of this
-     * cluster and from that to to create a list of node types you can scale up to.</p>
-     * <important> <p>You must provide a value for either the <i>CacheClusterId</i> or
-     * the <i>ReplicationGroupId</i>.</p> </important>
+     * cluster and from that to create a list of node types you can scale up to.</p>
+     * <important> <p>You must provide a value for either the
+     * <code>CacheClusterId</code> or the <code>ReplicationGroupId</code>.</p>
+     * </important>
      */
     inline void SetCacheClusterId(Aws::String&& value) { m_cacheClusterIdHasBeenSet = true; m_cacheClusterId = value; }
 
     /**
      * <p>The name of the cache cluster you want to scale up to a larger node instanced
      * type. ElastiCache uses the cluster id to identify the current node type of this
-     * cluster and from that to to create a list of node types you can scale up to.</p>
-     * <important> <p>You must provide a value for either the <i>CacheClusterId</i> or
-     * the <i>ReplicationGroupId</i>.</p> </important>
+     * cluster and from that to create a list of node types you can scale up to.</p>
+     * <important> <p>You must provide a value for either the
+     * <code>CacheClusterId</code> or the <code>ReplicationGroupId</code>.</p>
+     * </important>
      */
     inline void SetCacheClusterId(const char* value) { m_cacheClusterIdHasBeenSet = true; m_cacheClusterId.assign(value); }
 
     /**
      * <p>The name of the cache cluster you want to scale up to a larger node instanced
      * type. ElastiCache uses the cluster id to identify the current node type of this
-     * cluster and from that to to create a list of node types you can scale up to.</p>
-     * <important> <p>You must provide a value for either the <i>CacheClusterId</i> or
-     * the <i>ReplicationGroupId</i>.</p> </important>
+     * cluster and from that to create a list of node types you can scale up to.</p>
+     * <important> <p>You must provide a value for either the
+     * <code>CacheClusterId</code> or the <code>ReplicationGroupId</code>.</p>
+     * </important>
      */
     inline ListAllowedNodeTypeModificationsRequest& WithCacheClusterId(const Aws::String& value) { SetCacheClusterId(value); return *this;}
 
     /**
      * <p>The name of the cache cluster you want to scale up to a larger node instanced
      * type. ElastiCache uses the cluster id to identify the current node type of this
-     * cluster and from that to to create a list of node types you can scale up to.</p>
-     * <important> <p>You must provide a value for either the <i>CacheClusterId</i> or
-     * the <i>ReplicationGroupId</i>.</p> </important>
+     * cluster and from that to create a list of node types you can scale up to.</p>
+     * <important> <p>You must provide a value for either the
+     * <code>CacheClusterId</code> or the <code>ReplicationGroupId</code>.</p>
+     * </important>
      */
     inline ListAllowedNodeTypeModificationsRequest& WithCacheClusterId(Aws::String&& value) { SetCacheClusterId(value); return *this;}
 
     /**
      * <p>The name of the cache cluster you want to scale up to a larger node instanced
      * type. ElastiCache uses the cluster id to identify the current node type of this
-     * cluster and from that to to create a list of node types you can scale up to.</p>
-     * <important> <p>You must provide a value for either the <i>CacheClusterId</i> or
-     * the <i>ReplicationGroupId</i>.</p> </important>
+     * cluster and from that to create a list of node types you can scale up to.</p>
+     * <important> <p>You must provide a value for either the
+     * <code>CacheClusterId</code> or the <code>ReplicationGroupId</code>.</p>
+     * </important>
      */
     inline ListAllowedNodeTypeModificationsRequest& WithCacheClusterId(const char* value) { SetCacheClusterId(value); return *this;}
 
@@ -102,8 +109,8 @@ namespace Model
      * ElastiCache uses the replication group id to identify the current node type
      * being used by this replication group, and from that to create a list of node
      * types you can scale up to.</p> <important> <p>You must provide a value for
-     * either the <i>CacheClusterId</i> or the <i>ReplicationGroupId</i>.</p>
-     * </important>
+     * either the <code>CacheClusterId</code> or the
+     * <code>ReplicationGroupId</code>.</p> </important>
      */
     inline const Aws::String& GetReplicationGroupId() const{ return m_replicationGroupId; }
 
@@ -112,8 +119,8 @@ namespace Model
      * ElastiCache uses the replication group id to identify the current node type
      * being used by this replication group, and from that to create a list of node
      * types you can scale up to.</p> <important> <p>You must provide a value for
-     * either the <i>CacheClusterId</i> or the <i>ReplicationGroupId</i>.</p>
-     * </important>
+     * either the <code>CacheClusterId</code> or the
+     * <code>ReplicationGroupId</code>.</p> </important>
      */
     inline void SetReplicationGroupId(const Aws::String& value) { m_replicationGroupIdHasBeenSet = true; m_replicationGroupId = value; }
 
@@ -122,8 +129,8 @@ namespace Model
      * ElastiCache uses the replication group id to identify the current node type
      * being used by this replication group, and from that to create a list of node
      * types you can scale up to.</p> <important> <p>You must provide a value for
-     * either the <i>CacheClusterId</i> or the <i>ReplicationGroupId</i>.</p>
-     * </important>
+     * either the <code>CacheClusterId</code> or the
+     * <code>ReplicationGroupId</code>.</p> </important>
      */
     inline void SetReplicationGroupId(Aws::String&& value) { m_replicationGroupIdHasBeenSet = true; m_replicationGroupId = value; }
 
@@ -132,8 +139,8 @@ namespace Model
      * ElastiCache uses the replication group id to identify the current node type
      * being used by this replication group, and from that to create a list of node
      * types you can scale up to.</p> <important> <p>You must provide a value for
-     * either the <i>CacheClusterId</i> or the <i>ReplicationGroupId</i>.</p>
-     * </important>
+     * either the <code>CacheClusterId</code> or the
+     * <code>ReplicationGroupId</code>.</p> </important>
      */
     inline void SetReplicationGroupId(const char* value) { m_replicationGroupIdHasBeenSet = true; m_replicationGroupId.assign(value); }
 
@@ -142,8 +149,8 @@ namespace Model
      * ElastiCache uses the replication group id to identify the current node type
      * being used by this replication group, and from that to create a list of node
      * types you can scale up to.</p> <important> <p>You must provide a value for
-     * either the <i>CacheClusterId</i> or the <i>ReplicationGroupId</i>.</p>
-     * </important>
+     * either the <code>CacheClusterId</code> or the
+     * <code>ReplicationGroupId</code>.</p> </important>
      */
     inline ListAllowedNodeTypeModificationsRequest& WithReplicationGroupId(const Aws::String& value) { SetReplicationGroupId(value); return *this;}
 
@@ -152,8 +159,8 @@ namespace Model
      * ElastiCache uses the replication group id to identify the current node type
      * being used by this replication group, and from that to create a list of node
      * types you can scale up to.</p> <important> <p>You must provide a value for
-     * either the <i>CacheClusterId</i> or the <i>ReplicationGroupId</i>.</p>
-     * </important>
+     * either the <code>CacheClusterId</code> or the
+     * <code>ReplicationGroupId</code>.</p> </important>
      */
     inline ListAllowedNodeTypeModificationsRequest& WithReplicationGroupId(Aws::String&& value) { SetReplicationGroupId(value); return *this;}
 
@@ -162,8 +169,8 @@ namespace Model
      * ElastiCache uses the replication group id to identify the current node type
      * being used by this replication group, and from that to create a list of node
      * types you can scale up to.</p> <important> <p>You must provide a value for
-     * either the <i>CacheClusterId</i> or the <i>ReplicationGroupId</i>.</p>
-     * </important>
+     * either the <code>CacheClusterId</code> or the
+     * <code>ReplicationGroupId</code>.</p> </important>
      */
     inline ListAllowedNodeTypeModificationsRequest& WithReplicationGroupId(const char* value) { SetReplicationGroupId(value); return *this;}
 

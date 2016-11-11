@@ -28,12 +28,14 @@ namespace Model
 {
 
 SqlInjectionMatchSetUpdate::SqlInjectionMatchSetUpdate() : 
+    m_action(ChangeAction::NOT_SET),
     m_actionHasBeenSet(false),
     m_sqlInjectionMatchTupleHasBeenSet(false)
 {
 }
 
 SqlInjectionMatchSetUpdate::SqlInjectionMatchSetUpdate(const JsonValue& jsonValue) : 
+    m_action(ChangeAction::NOT_SET),
     m_actionHasBeenSet(false),
     m_sqlInjectionMatchTupleHasBeenSet(false)
 {

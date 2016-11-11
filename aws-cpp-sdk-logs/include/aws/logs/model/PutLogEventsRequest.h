@@ -37,135 +37,142 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * <p>The name of the log group to put log events to.</p>
+     * <p>The name of the log group.</p>
      */
     inline const Aws::String& GetLogGroupName() const{ return m_logGroupName; }
 
     /**
-     * <p>The name of the log group to put log events to.</p>
+     * <p>The name of the log group.</p>
      */
     inline void SetLogGroupName(const Aws::String& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
 
     /**
-     * <p>The name of the log group to put log events to.</p>
+     * <p>The name of the log group.</p>
      */
     inline void SetLogGroupName(Aws::String&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
 
     /**
-     * <p>The name of the log group to put log events to.</p>
+     * <p>The name of the log group.</p>
      */
     inline void SetLogGroupName(const char* value) { m_logGroupNameHasBeenSet = true; m_logGroupName.assign(value); }
 
     /**
-     * <p>The name of the log group to put log events to.</p>
+     * <p>The name of the log group.</p>
      */
     inline PutLogEventsRequest& WithLogGroupName(const Aws::String& value) { SetLogGroupName(value); return *this;}
 
     /**
-     * <p>The name of the log group to put log events to.</p>
+     * <p>The name of the log group.</p>
      */
     inline PutLogEventsRequest& WithLogGroupName(Aws::String&& value) { SetLogGroupName(value); return *this;}
 
     /**
-     * <p>The name of the log group to put log events to.</p>
+     * <p>The name of the log group.</p>
      */
     inline PutLogEventsRequest& WithLogGroupName(const char* value) { SetLogGroupName(value); return *this;}
 
     /**
-     * <p>The name of the log stream to put log events to.</p>
+     * <p>The name of the log stream.</p>
      */
     inline const Aws::String& GetLogStreamName() const{ return m_logStreamName; }
 
     /**
-     * <p>The name of the log stream to put log events to.</p>
+     * <p>The name of the log stream.</p>
      */
     inline void SetLogStreamName(const Aws::String& value) { m_logStreamNameHasBeenSet = true; m_logStreamName = value; }
 
     /**
-     * <p>The name of the log stream to put log events to.</p>
+     * <p>The name of the log stream.</p>
      */
     inline void SetLogStreamName(Aws::String&& value) { m_logStreamNameHasBeenSet = true; m_logStreamName = value; }
 
     /**
-     * <p>The name of the log stream to put log events to.</p>
+     * <p>The name of the log stream.</p>
      */
     inline void SetLogStreamName(const char* value) { m_logStreamNameHasBeenSet = true; m_logStreamName.assign(value); }
 
     /**
-     * <p>The name of the log stream to put log events to.</p>
+     * <p>The name of the log stream.</p>
      */
     inline PutLogEventsRequest& WithLogStreamName(const Aws::String& value) { SetLogStreamName(value); return *this;}
 
     /**
-     * <p>The name of the log stream to put log events to.</p>
+     * <p>The name of the log stream.</p>
      */
     inline PutLogEventsRequest& WithLogStreamName(Aws::String&& value) { SetLogStreamName(value); return *this;}
 
     /**
-     * <p>The name of the log stream to put log events to.</p>
+     * <p>The name of the log stream.</p>
      */
     inline PutLogEventsRequest& WithLogStreamName(const char* value) { SetLogStreamName(value); return *this;}
 
-    
+    /**
+     * <p>The log events.</p>
+     */
     inline const Aws::Vector<InputLogEvent>& GetLogEvents() const{ return m_logEvents; }
 
-    
+    /**
+     * <p>The log events.</p>
+     */
     inline void SetLogEvents(const Aws::Vector<InputLogEvent>& value) { m_logEventsHasBeenSet = true; m_logEvents = value; }
 
-    
+    /**
+     * <p>The log events.</p>
+     */
     inline void SetLogEvents(Aws::Vector<InputLogEvent>&& value) { m_logEventsHasBeenSet = true; m_logEvents = value; }
 
-    
+    /**
+     * <p>The log events.</p>
+     */
     inline PutLogEventsRequest& WithLogEvents(const Aws::Vector<InputLogEvent>& value) { SetLogEvents(value); return *this;}
 
-    
+    /**
+     * <p>The log events.</p>
+     */
     inline PutLogEventsRequest& WithLogEvents(Aws::Vector<InputLogEvent>&& value) { SetLogEvents(value); return *this;}
 
-    
+    /**
+     * <p>The log events.</p>
+     */
     inline PutLogEventsRequest& AddLogEvents(const InputLogEvent& value) { m_logEventsHasBeenSet = true; m_logEvents.push_back(value); return *this; }
 
-    
+    /**
+     * <p>The log events.</p>
+     */
     inline PutLogEventsRequest& AddLogEvents(InputLogEvent&& value) { m_logEventsHasBeenSet = true; m_logEvents.push_back(value); return *this; }
 
     /**
-     * <p>A string token that must be obtained from the response of the previous
-     * <code>PutLogEvents</code> request.</p>
+     * <p>The sequence token.</p>
      */
     inline const Aws::String& GetSequenceToken() const{ return m_sequenceToken; }
 
     /**
-     * <p>A string token that must be obtained from the response of the previous
-     * <code>PutLogEvents</code> request.</p>
+     * <p>The sequence token.</p>
      */
     inline void SetSequenceToken(const Aws::String& value) { m_sequenceTokenHasBeenSet = true; m_sequenceToken = value; }
 
     /**
-     * <p>A string token that must be obtained from the response of the previous
-     * <code>PutLogEvents</code> request.</p>
+     * <p>The sequence token.</p>
      */
     inline void SetSequenceToken(Aws::String&& value) { m_sequenceTokenHasBeenSet = true; m_sequenceToken = value; }
 
     /**
-     * <p>A string token that must be obtained from the response of the previous
-     * <code>PutLogEvents</code> request.</p>
+     * <p>The sequence token.</p>
      */
     inline void SetSequenceToken(const char* value) { m_sequenceTokenHasBeenSet = true; m_sequenceToken.assign(value); }
 
     /**
-     * <p>A string token that must be obtained from the response of the previous
-     * <code>PutLogEvents</code> request.</p>
+     * <p>The sequence token.</p>
      */
     inline PutLogEventsRequest& WithSequenceToken(const Aws::String& value) { SetSequenceToken(value); return *this;}
 
     /**
-     * <p>A string token that must be obtained from the response of the previous
-     * <code>PutLogEvents</code> request.</p>
+     * <p>The sequence token.</p>
      */
     inline PutLogEventsRequest& WithSequenceToken(Aws::String&& value) { SetSequenceToken(value); return *this;}
 
     /**
-     * <p>A string token that must be obtained from the response of the previous
-     * <code>PutLogEvents</code> request.</p>
+     * <p>The sequence token.</p>
      */
     inline PutLogEventsRequest& WithSequenceToken(const char* value) { SetSequenceToken(value); return *this;}
 

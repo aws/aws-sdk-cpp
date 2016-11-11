@@ -26,6 +26,7 @@ namespace Model
 {
 
   /**
+   * <p/>
    */
   class AWS_SUPPORT_API CreateCaseRequest : public SupportRequest
   {
@@ -114,99 +115,99 @@ namespace Model
 
     /**
      * <p>The code for the severity level returned by the call to
-     * <a>DescribeSeverityLevels</a>.</p> <note><p>The availability of severity levels
+     * <a>DescribeSeverityLevels</a>.</p> <note> <p>The availability of severity levels
      * depends on each customer's support subscription. In other words, your
-     * subscription may not necessarily require the urgent level of response
-     * time.</p></note>
+     * subscription may not necessarily require the urgent level of response time.</p>
+     * </note>
      */
     inline const Aws::String& GetSeverityCode() const{ return m_severityCode; }
 
     /**
      * <p>The code for the severity level returned by the call to
-     * <a>DescribeSeverityLevels</a>.</p> <note><p>The availability of severity levels
+     * <a>DescribeSeverityLevels</a>.</p> <note> <p>The availability of severity levels
      * depends on each customer's support subscription. In other words, your
-     * subscription may not necessarily require the urgent level of response
-     * time.</p></note>
+     * subscription may not necessarily require the urgent level of response time.</p>
+     * </note>
      */
     inline void SetSeverityCode(const Aws::String& value) { m_severityCodeHasBeenSet = true; m_severityCode = value; }
 
     /**
      * <p>The code for the severity level returned by the call to
-     * <a>DescribeSeverityLevels</a>.</p> <note><p>The availability of severity levels
+     * <a>DescribeSeverityLevels</a>.</p> <note> <p>The availability of severity levels
      * depends on each customer's support subscription. In other words, your
-     * subscription may not necessarily require the urgent level of response
-     * time.</p></note>
+     * subscription may not necessarily require the urgent level of response time.</p>
+     * </note>
      */
     inline void SetSeverityCode(Aws::String&& value) { m_severityCodeHasBeenSet = true; m_severityCode = value; }
 
     /**
      * <p>The code for the severity level returned by the call to
-     * <a>DescribeSeverityLevels</a>.</p> <note><p>The availability of severity levels
+     * <a>DescribeSeverityLevels</a>.</p> <note> <p>The availability of severity levels
      * depends on each customer's support subscription. In other words, your
-     * subscription may not necessarily require the urgent level of response
-     * time.</p></note>
+     * subscription may not necessarily require the urgent level of response time.</p>
+     * </note>
      */
     inline void SetSeverityCode(const char* value) { m_severityCodeHasBeenSet = true; m_severityCode.assign(value); }
 
     /**
      * <p>The code for the severity level returned by the call to
-     * <a>DescribeSeverityLevels</a>.</p> <note><p>The availability of severity levels
+     * <a>DescribeSeverityLevels</a>.</p> <note> <p>The availability of severity levels
      * depends on each customer's support subscription. In other words, your
-     * subscription may not necessarily require the urgent level of response
-     * time.</p></note>
+     * subscription may not necessarily require the urgent level of response time.</p>
+     * </note>
      */
     inline CreateCaseRequest& WithSeverityCode(const Aws::String& value) { SetSeverityCode(value); return *this;}
 
     /**
      * <p>The code for the severity level returned by the call to
-     * <a>DescribeSeverityLevels</a>.</p> <note><p>The availability of severity levels
+     * <a>DescribeSeverityLevels</a>.</p> <note> <p>The availability of severity levels
      * depends on each customer's support subscription. In other words, your
-     * subscription may not necessarily require the urgent level of response
-     * time.</p></note>
+     * subscription may not necessarily require the urgent level of response time.</p>
+     * </note>
      */
     inline CreateCaseRequest& WithSeverityCode(Aws::String&& value) { SetSeverityCode(value); return *this;}
 
     /**
      * <p>The code for the severity level returned by the call to
-     * <a>DescribeSeverityLevels</a>.</p> <note><p>The availability of severity levels
+     * <a>DescribeSeverityLevels</a>.</p> <note> <p>The availability of severity levels
      * depends on each customer's support subscription. In other words, your
-     * subscription may not necessarily require the urgent level of response
-     * time.</p></note>
+     * subscription may not necessarily require the urgent level of response time.</p>
+     * </note>
      */
     inline CreateCaseRequest& WithSeverityCode(const char* value) { SetSeverityCode(value); return *this;}
 
     /**
-     * <p>The category of problem for the AWS Support case. </p>
+     * <p>The category of problem for the AWS Support case.</p>
      */
     inline const Aws::String& GetCategoryCode() const{ return m_categoryCode; }
 
     /**
-     * <p>The category of problem for the AWS Support case. </p>
+     * <p>The category of problem for the AWS Support case.</p>
      */
     inline void SetCategoryCode(const Aws::String& value) { m_categoryCodeHasBeenSet = true; m_categoryCode = value; }
 
     /**
-     * <p>The category of problem for the AWS Support case. </p>
+     * <p>The category of problem for the AWS Support case.</p>
      */
     inline void SetCategoryCode(Aws::String&& value) { m_categoryCodeHasBeenSet = true; m_categoryCode = value; }
 
     /**
-     * <p>The category of problem for the AWS Support case. </p>
+     * <p>The category of problem for the AWS Support case.</p>
      */
     inline void SetCategoryCode(const char* value) { m_categoryCodeHasBeenSet = true; m_categoryCode.assign(value); }
 
     /**
-     * <p>The category of problem for the AWS Support case. </p>
+     * <p>The category of problem for the AWS Support case.</p>
      */
     inline CreateCaseRequest& WithCategoryCode(const Aws::String& value) { SetCategoryCode(value); return *this;}
 
     /**
-     * <p>The category of problem for the AWS Support case. </p>
+     * <p>The category of problem for the AWS Support case.</p>
      */
     inline CreateCaseRequest& WithCategoryCode(Aws::String&& value) { SetCategoryCode(value); return *this;}
 
     /**
-     * <p>The category of problem for the AWS Support case. </p>
+     * <p>The category of problem for the AWS Support case.</p>
      */
     inline CreateCaseRequest& WithCategoryCode(const char* value) { SetCategoryCode(value); return *this;}
 
@@ -343,43 +344,43 @@ namespace Model
 
     /**
      * <p>The type of issue for the case. You can specify either "customer-service" or
-     * "technical." If you do not indicate a value, the default is "technical." </p>
+     * "technical." If you do not indicate a value, the default is "technical."</p>
      */
     inline const Aws::String& GetIssueType() const{ return m_issueType; }
 
     /**
      * <p>The type of issue for the case. You can specify either "customer-service" or
-     * "technical." If you do not indicate a value, the default is "technical." </p>
+     * "technical." If you do not indicate a value, the default is "technical."</p>
      */
     inline void SetIssueType(const Aws::String& value) { m_issueTypeHasBeenSet = true; m_issueType = value; }
 
     /**
      * <p>The type of issue for the case. You can specify either "customer-service" or
-     * "technical." If you do not indicate a value, the default is "technical." </p>
+     * "technical." If you do not indicate a value, the default is "technical."</p>
      */
     inline void SetIssueType(Aws::String&& value) { m_issueTypeHasBeenSet = true; m_issueType = value; }
 
     /**
      * <p>The type of issue for the case. You can specify either "customer-service" or
-     * "technical." If you do not indicate a value, the default is "technical." </p>
+     * "technical." If you do not indicate a value, the default is "technical."</p>
      */
     inline void SetIssueType(const char* value) { m_issueTypeHasBeenSet = true; m_issueType.assign(value); }
 
     /**
      * <p>The type of issue for the case. You can specify either "customer-service" or
-     * "technical." If you do not indicate a value, the default is "technical." </p>
+     * "technical." If you do not indicate a value, the default is "technical."</p>
      */
     inline CreateCaseRequest& WithIssueType(const Aws::String& value) { SetIssueType(value); return *this;}
 
     /**
      * <p>The type of issue for the case. You can specify either "customer-service" or
-     * "technical." If you do not indicate a value, the default is "technical." </p>
+     * "technical." If you do not indicate a value, the default is "technical."</p>
      */
     inline CreateCaseRequest& WithIssueType(Aws::String&& value) { SetIssueType(value); return *this;}
 
     /**
      * <p>The type of issue for the case. You can specify either "customer-service" or
-     * "technical." If you do not indicate a value, the default is "technical." </p>
+     * "technical." If you do not indicate a value, the default is "technical."</p>
      */
     inline CreateCaseRequest& WithIssueType(const char* value) { SetIssueType(value); return *this;}
 

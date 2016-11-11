@@ -38,44 +38,65 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * <p>Unique identifier for a game session. Specify the game session you want to
-     * update. </p>
+     * <p>Unique identifier for the game session to update. Game session ID format is
+     * as follows: "arn:aws:gamelift:&lt;region&gt;::gamesession/fleet-&lt;fleet
+     * ID&gt;/&lt;ID string&gt;". The value of &lt;ID string&gt; is either a custom ID
+     * string (if one was specified when the game session was created) an
+     * auto-generated string. </p>
      */
     inline const Aws::String& GetGameSessionId() const{ return m_gameSessionId; }
 
     /**
-     * <p>Unique identifier for a game session. Specify the game session you want to
-     * update. </p>
+     * <p>Unique identifier for the game session to update. Game session ID format is
+     * as follows: "arn:aws:gamelift:&lt;region&gt;::gamesession/fleet-&lt;fleet
+     * ID&gt;/&lt;ID string&gt;". The value of &lt;ID string&gt; is either a custom ID
+     * string (if one was specified when the game session was created) an
+     * auto-generated string. </p>
      */
     inline void SetGameSessionId(const Aws::String& value) { m_gameSessionIdHasBeenSet = true; m_gameSessionId = value; }
 
     /**
-     * <p>Unique identifier for a game session. Specify the game session you want to
-     * update. </p>
+     * <p>Unique identifier for the game session to update. Game session ID format is
+     * as follows: "arn:aws:gamelift:&lt;region&gt;::gamesession/fleet-&lt;fleet
+     * ID&gt;/&lt;ID string&gt;". The value of &lt;ID string&gt; is either a custom ID
+     * string (if one was specified when the game session was created) an
+     * auto-generated string. </p>
      */
     inline void SetGameSessionId(Aws::String&& value) { m_gameSessionIdHasBeenSet = true; m_gameSessionId = value; }
 
     /**
-     * <p>Unique identifier for a game session. Specify the game session you want to
-     * update. </p>
+     * <p>Unique identifier for the game session to update. Game session ID format is
+     * as follows: "arn:aws:gamelift:&lt;region&gt;::gamesession/fleet-&lt;fleet
+     * ID&gt;/&lt;ID string&gt;". The value of &lt;ID string&gt; is either a custom ID
+     * string (if one was specified when the game session was created) an
+     * auto-generated string. </p>
      */
     inline void SetGameSessionId(const char* value) { m_gameSessionIdHasBeenSet = true; m_gameSessionId.assign(value); }
 
     /**
-     * <p>Unique identifier for a game session. Specify the game session you want to
-     * update. </p>
+     * <p>Unique identifier for the game session to update. Game session ID format is
+     * as follows: "arn:aws:gamelift:&lt;region&gt;::gamesession/fleet-&lt;fleet
+     * ID&gt;/&lt;ID string&gt;". The value of &lt;ID string&gt; is either a custom ID
+     * string (if one was specified when the game session was created) an
+     * auto-generated string. </p>
      */
     inline UpdateGameSessionRequest& WithGameSessionId(const Aws::String& value) { SetGameSessionId(value); return *this;}
 
     /**
-     * <p>Unique identifier for a game session. Specify the game session you want to
-     * update. </p>
+     * <p>Unique identifier for the game session to update. Game session ID format is
+     * as follows: "arn:aws:gamelift:&lt;region&gt;::gamesession/fleet-&lt;fleet
+     * ID&gt;/&lt;ID string&gt;". The value of &lt;ID string&gt; is either a custom ID
+     * string (if one was specified when the game session was created) an
+     * auto-generated string. </p>
      */
     inline UpdateGameSessionRequest& WithGameSessionId(Aws::String&& value) { SetGameSessionId(value); return *this;}
 
     /**
-     * <p>Unique identifier for a game session. Specify the game session you want to
-     * update. </p>
+     * <p>Unique identifier for the game session to update. Game session ID format is
+     * as follows: "arn:aws:gamelift:&lt;region&gt;::gamesession/fleet-&lt;fleet
+     * ID&gt;/&lt;ID string&gt;". The value of &lt;ID string&gt; is either a custom ID
+     * string (if one was specified when the game session was created) an
+     * auto-generated string. </p>
      */
     inline UpdateGameSessionRequest& WithGameSessionId(const char* value) { SetGameSessionId(value); return *this;}
 
@@ -165,47 +186,47 @@ namespace Model
     inline UpdateGameSessionRequest& WithPlayerSessionCreationPolicy(PlayerSessionCreationPolicy&& value) { SetPlayerSessionCreationPolicy(value); return *this;}
 
     /**
-     * <p>Game session protection policy to apply to this game session only.</p>
-     * <ul><li><b>NoProtection</b> – The game session can be terminated during a
-     * scale-down event.</li> <li><b>FullProtection</b> – If the game session is in an
-     * <code>ACTIVE</code> status, it cannot be terminated during a scale-down
-     * event.</li></ul>
+     * <p>Game session protection policy to apply to this game session only.</p> <ul>
+     * <li> <p> <b>NoProtection</b> – The game session can be terminated during a
+     * scale-down event.</p> </li> <li> <p> <b>FullProtection</b> – If the game session
+     * is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down
+     * event.</p> </li> </ul>
      */
     inline const ProtectionPolicy& GetProtectionPolicy() const{ return m_protectionPolicy; }
 
     /**
-     * <p>Game session protection policy to apply to this game session only.</p>
-     * <ul><li><b>NoProtection</b> – The game session can be terminated during a
-     * scale-down event.</li> <li><b>FullProtection</b> – If the game session is in an
-     * <code>ACTIVE</code> status, it cannot be terminated during a scale-down
-     * event.</li></ul>
+     * <p>Game session protection policy to apply to this game session only.</p> <ul>
+     * <li> <p> <b>NoProtection</b> – The game session can be terminated during a
+     * scale-down event.</p> </li> <li> <p> <b>FullProtection</b> – If the game session
+     * is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down
+     * event.</p> </li> </ul>
      */
     inline void SetProtectionPolicy(const ProtectionPolicy& value) { m_protectionPolicyHasBeenSet = true; m_protectionPolicy = value; }
 
     /**
-     * <p>Game session protection policy to apply to this game session only.</p>
-     * <ul><li><b>NoProtection</b> – The game session can be terminated during a
-     * scale-down event.</li> <li><b>FullProtection</b> – If the game session is in an
-     * <code>ACTIVE</code> status, it cannot be terminated during a scale-down
-     * event.</li></ul>
+     * <p>Game session protection policy to apply to this game session only.</p> <ul>
+     * <li> <p> <b>NoProtection</b> – The game session can be terminated during a
+     * scale-down event.</p> </li> <li> <p> <b>FullProtection</b> – If the game session
+     * is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down
+     * event.</p> </li> </ul>
      */
     inline void SetProtectionPolicy(ProtectionPolicy&& value) { m_protectionPolicyHasBeenSet = true; m_protectionPolicy = value; }
 
     /**
-     * <p>Game session protection policy to apply to this game session only.</p>
-     * <ul><li><b>NoProtection</b> – The game session can be terminated during a
-     * scale-down event.</li> <li><b>FullProtection</b> – If the game session is in an
-     * <code>ACTIVE</code> status, it cannot be terminated during a scale-down
-     * event.</li></ul>
+     * <p>Game session protection policy to apply to this game session only.</p> <ul>
+     * <li> <p> <b>NoProtection</b> – The game session can be terminated during a
+     * scale-down event.</p> </li> <li> <p> <b>FullProtection</b> – If the game session
+     * is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down
+     * event.</p> </li> </ul>
      */
     inline UpdateGameSessionRequest& WithProtectionPolicy(const ProtectionPolicy& value) { SetProtectionPolicy(value); return *this;}
 
     /**
-     * <p>Game session protection policy to apply to this game session only.</p>
-     * <ul><li><b>NoProtection</b> – The game session can be terminated during a
-     * scale-down event.</li> <li><b>FullProtection</b> – If the game session is in an
-     * <code>ACTIVE</code> status, it cannot be terminated during a scale-down
-     * event.</li></ul>
+     * <p>Game session protection policy to apply to this game session only.</p> <ul>
+     * <li> <p> <b>NoProtection</b> – The game session can be terminated during a
+     * scale-down event.</p> </li> <li> <p> <b>FullProtection</b> – If the game session
+     * is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down
+     * event.</p> </li> </ul>
      */
     inline UpdateGameSessionRequest& WithProtectionPolicy(ProtectionPolicy&& value) { SetProtectionPolicy(value); return *this;}
 

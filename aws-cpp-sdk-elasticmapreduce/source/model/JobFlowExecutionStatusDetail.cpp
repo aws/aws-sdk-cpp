@@ -28,6 +28,7 @@ namespace Model
 {
 
 JobFlowExecutionStatusDetail::JobFlowExecutionStatusDetail() : 
+    m_state(JobFlowExecutionState::NOT_SET),
     m_stateHasBeenSet(false),
     m_creationDateTimeHasBeenSet(false),
     m_startDateTimeHasBeenSet(false),
@@ -38,6 +39,7 @@ JobFlowExecutionStatusDetail::JobFlowExecutionStatusDetail() :
 }
 
 JobFlowExecutionStatusDetail::JobFlowExecutionStatusDetail(const JsonValue& jsonValue) : 
+    m_state(JobFlowExecutionState::NOT_SET),
     m_stateHasBeenSet(false),
     m_creationDateTimeHasBeenSet(false),
     m_startDateTimeHasBeenSet(false),

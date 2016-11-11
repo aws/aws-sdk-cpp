@@ -27,6 +27,7 @@ CreateAppRequest::CreateAppRequest() :
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_dataSourcesHasBeenSet(false),
+    m_type(AppType::NOT_SET),
     m_typeHasBeenSet(false),
     m_appSourceHasBeenSet(false),
     m_domainsHasBeenSet(false),

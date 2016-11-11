@@ -26,11 +26,13 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateConfigurationTemplateResult::CreateConfigurationTemplateResult()
+CreateConfigurationTemplateResult::CreateConfigurationTemplateResult() : 
+    m_deploymentStatus(ConfigurationDeploymentStatus::NOT_SET)
 {
 }
 
-CreateConfigurationTemplateResult::CreateConfigurationTemplateResult(const AmazonWebServiceResult<XmlDocument>& result)
+CreateConfigurationTemplateResult::CreateConfigurationTemplateResult(const AmazonWebServiceResult<XmlDocument>& result) : 
+    m_deploymentStatus(ConfigurationDeploymentStatus::NOT_SET)
 {
   *this = result;
 }

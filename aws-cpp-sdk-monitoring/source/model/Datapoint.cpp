@@ -41,6 +41,7 @@ Datapoint::Datapoint() :
     m_minimumHasBeenSet(false),
     m_maximum(0.0),
     m_maximumHasBeenSet(false),
+    m_unit(StandardUnit::NOT_SET),
     m_unitHasBeenSet(false)
 {
 }
@@ -57,6 +58,7 @@ Datapoint::Datapoint(const XmlNode& xmlNode) :
     m_minimumHasBeenSet(false),
     m_maximum(0.0),
     m_maximumHasBeenSet(false),
+    m_unit(StandardUnit::NOT_SET),
     m_unitHasBeenSet(false)
 {
   *this = xmlNode;

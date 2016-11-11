@@ -32,7 +32,7 @@ namespace Model
 {
 
   /**
-   * <p>A complex type that contains name server information.</p>
+   * <p>A complex type that describes the name servers for this hosted zone.</p>
    */
   class AWS_ROUTE53_API DelegationSet
   {
@@ -43,109 +43,156 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
-    
+    /**
+     * <p>The ID that Amazon Route 53 assigns to a reusable delegation set.</p>
+     */
     inline const Aws::String& GetId() const{ return m_id; }
 
-    
+    /**
+     * <p>The ID that Amazon Route 53 assigns to a reusable delegation set.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
-    
+    /**
+     * <p>The ID that Amazon Route 53 assigns to a reusable delegation set.</p>
+     */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
 
-    
+    /**
+     * <p>The ID that Amazon Route 53 assigns to a reusable delegation set.</p>
+     */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
-    
+    /**
+     * <p>The ID that Amazon Route 53 assigns to a reusable delegation set.</p>
+     */
     inline DelegationSet& WithId(const Aws::String& value) { SetId(value); return *this;}
 
-    
+    /**
+     * <p>The ID that Amazon Route 53 assigns to a reusable delegation set.</p>
+     */
     inline DelegationSet& WithId(Aws::String&& value) { SetId(value); return *this;}
 
-    
+    /**
+     * <p>The ID that Amazon Route 53 assigns to a reusable delegation set.</p>
+     */
     inline DelegationSet& WithId(const char* value) { SetId(value); return *this;}
 
-    
+    /**
+     * <p>A unique string that identifies the request, and that allows you to retry
+     * failed <code>CreateReusableDelegationSet</code> requests without the risk of
+     * executing the operation twice. You must use a unique
+     * <code>CallerReference</code> string every time you submit a
+     * <code>CreateReusableDelegationSet</code> request. <code>CallerReference</code>
+     * can be any unique string, for example, a date/time stamp.</p>
+     */
     inline const Aws::String& GetCallerReference() const{ return m_callerReference; }
 
-    
+    /**
+     * <p>A unique string that identifies the request, and that allows you to retry
+     * failed <code>CreateReusableDelegationSet</code> requests without the risk of
+     * executing the operation twice. You must use a unique
+     * <code>CallerReference</code> string every time you submit a
+     * <code>CreateReusableDelegationSet</code> request. <code>CallerReference</code>
+     * can be any unique string, for example, a date/time stamp.</p>
+     */
     inline void SetCallerReference(const Aws::String& value) { m_callerReferenceHasBeenSet = true; m_callerReference = value; }
 
-    
+    /**
+     * <p>A unique string that identifies the request, and that allows you to retry
+     * failed <code>CreateReusableDelegationSet</code> requests without the risk of
+     * executing the operation twice. You must use a unique
+     * <code>CallerReference</code> string every time you submit a
+     * <code>CreateReusableDelegationSet</code> request. <code>CallerReference</code>
+     * can be any unique string, for example, a date/time stamp.</p>
+     */
     inline void SetCallerReference(Aws::String&& value) { m_callerReferenceHasBeenSet = true; m_callerReference = value; }
 
-    
+    /**
+     * <p>A unique string that identifies the request, and that allows you to retry
+     * failed <code>CreateReusableDelegationSet</code> requests without the risk of
+     * executing the operation twice. You must use a unique
+     * <code>CallerReference</code> string every time you submit a
+     * <code>CreateReusableDelegationSet</code> request. <code>CallerReference</code>
+     * can be any unique string, for example, a date/time stamp.</p>
+     */
     inline void SetCallerReference(const char* value) { m_callerReferenceHasBeenSet = true; m_callerReference.assign(value); }
 
-    
+    /**
+     * <p>A unique string that identifies the request, and that allows you to retry
+     * failed <code>CreateReusableDelegationSet</code> requests without the risk of
+     * executing the operation twice. You must use a unique
+     * <code>CallerReference</code> string every time you submit a
+     * <code>CreateReusableDelegationSet</code> request. <code>CallerReference</code>
+     * can be any unique string, for example, a date/time stamp.</p>
+     */
     inline DelegationSet& WithCallerReference(const Aws::String& value) { SetCallerReference(value); return *this;}
 
-    
+    /**
+     * <p>A unique string that identifies the request, and that allows you to retry
+     * failed <code>CreateReusableDelegationSet</code> requests without the risk of
+     * executing the operation twice. You must use a unique
+     * <code>CallerReference</code> string every time you submit a
+     * <code>CreateReusableDelegationSet</code> request. <code>CallerReference</code>
+     * can be any unique string, for example, a date/time stamp.</p>
+     */
     inline DelegationSet& WithCallerReference(Aws::String&& value) { SetCallerReference(value); return *this;}
 
-    
+    /**
+     * <p>A unique string that identifies the request, and that allows you to retry
+     * failed <code>CreateReusableDelegationSet</code> requests without the risk of
+     * executing the operation twice. You must use a unique
+     * <code>CallerReference</code> string every time you submit a
+     * <code>CreateReusableDelegationSet</code> request. <code>CallerReference</code>
+     * can be any unique string, for example, a date/time stamp.</p>
+     */
     inline DelegationSet& WithCallerReference(const char* value) { SetCallerReference(value); return *this;}
 
     /**
-     * <p>A complex type that contains the authoritative name servers for the hosted
-     * zone. Use the method provided by your domain registrar to add an NS record to
-     * your domain for each <code>NameServer</code> that is assigned to your hosted
-     * zone.</p>
+     * <p>A complex type that contains a list of the authoritative name servers for the
+     * hosted zone.</p>
      */
     inline const Aws::Vector<Aws::String>& GetNameServers() const{ return m_nameServers; }
 
     /**
-     * <p>A complex type that contains the authoritative name servers for the hosted
-     * zone. Use the method provided by your domain registrar to add an NS record to
-     * your domain for each <code>NameServer</code> that is assigned to your hosted
-     * zone.</p>
+     * <p>A complex type that contains a list of the authoritative name servers for the
+     * hosted zone.</p>
      */
     inline void SetNameServers(const Aws::Vector<Aws::String>& value) { m_nameServersHasBeenSet = true; m_nameServers = value; }
 
     /**
-     * <p>A complex type that contains the authoritative name servers for the hosted
-     * zone. Use the method provided by your domain registrar to add an NS record to
-     * your domain for each <code>NameServer</code> that is assigned to your hosted
-     * zone.</p>
+     * <p>A complex type that contains a list of the authoritative name servers for the
+     * hosted zone.</p>
      */
     inline void SetNameServers(Aws::Vector<Aws::String>&& value) { m_nameServersHasBeenSet = true; m_nameServers = value; }
 
     /**
-     * <p>A complex type that contains the authoritative name servers for the hosted
-     * zone. Use the method provided by your domain registrar to add an NS record to
-     * your domain for each <code>NameServer</code> that is assigned to your hosted
-     * zone.</p>
+     * <p>A complex type that contains a list of the authoritative name servers for the
+     * hosted zone.</p>
      */
     inline DelegationSet& WithNameServers(const Aws::Vector<Aws::String>& value) { SetNameServers(value); return *this;}
 
     /**
-     * <p>A complex type that contains the authoritative name servers for the hosted
-     * zone. Use the method provided by your domain registrar to add an NS record to
-     * your domain for each <code>NameServer</code> that is assigned to your hosted
-     * zone.</p>
+     * <p>A complex type that contains a list of the authoritative name servers for the
+     * hosted zone.</p>
      */
     inline DelegationSet& WithNameServers(Aws::Vector<Aws::String>&& value) { SetNameServers(value); return *this;}
 
     /**
-     * <p>A complex type that contains the authoritative name servers for the hosted
-     * zone. Use the method provided by your domain registrar to add an NS record to
-     * your domain for each <code>NameServer</code> that is assigned to your hosted
-     * zone.</p>
+     * <p>A complex type that contains a list of the authoritative name servers for the
+     * hosted zone.</p>
      */
     inline DelegationSet& AddNameServers(const Aws::String& value) { m_nameServersHasBeenSet = true; m_nameServers.push_back(value); return *this; }
 
     /**
-     * <p>A complex type that contains the authoritative name servers for the hosted
-     * zone. Use the method provided by your domain registrar to add an NS record to
-     * your domain for each <code>NameServer</code> that is assigned to your hosted
-     * zone.</p>
+     * <p>A complex type that contains a list of the authoritative name servers for the
+     * hosted zone.</p>
      */
     inline DelegationSet& AddNameServers(Aws::String&& value) { m_nameServersHasBeenSet = true; m_nameServers.push_back(value); return *this; }
 
     /**
-     * <p>A complex type that contains the authoritative name servers for the hosted
-     * zone. Use the method provided by your domain registrar to add an NS record to
-     * your domain for each <code>NameServer</code> that is assigned to your hosted
-     * zone.</p>
+     * <p>A complex type that contains a list of the authoritative name servers for the
+     * hosted zone.</p>
      */
     inline DelegationSet& AddNameServers(const char* value) { m_nameServersHasBeenSet = true; m_nameServers.push_back(value); return *this; }
 

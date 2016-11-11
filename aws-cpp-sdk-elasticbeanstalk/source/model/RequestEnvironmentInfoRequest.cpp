@@ -22,6 +22,7 @@ using namespace Aws::Utils;
 RequestEnvironmentInfoRequest::RequestEnvironmentInfoRequest() : 
     m_environmentIdHasBeenSet(false),
     m_environmentNameHasBeenSet(false),
+    m_infoType(EnvironmentInfoType::NOT_SET),
     m_infoTypeHasBeenSet(false)
 {
 }

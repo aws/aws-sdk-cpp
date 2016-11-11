@@ -34,7 +34,7 @@ namespace Redshift
 namespace Model
 {
   /**
-   * <p> </p>
+   * <p/>
    */
   class AWS_REDSHIFT_API ResetClusterParameterGroupResult
   {
@@ -44,86 +44,86 @@ namespace Model
     ResetClusterParameterGroupResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
     /**
-     * <p> The name of the cluster parameter group. </p>
+     * <p>The name of the cluster parameter group.</p>
      */
     inline const Aws::String& GetParameterGroupName() const{ return m_parameterGroupName; }
 
     /**
-     * <p> The name of the cluster parameter group. </p>
+     * <p>The name of the cluster parameter group.</p>
      */
     inline void SetParameterGroupName(const Aws::String& value) { m_parameterGroupName = value; }
 
     /**
-     * <p> The name of the cluster parameter group. </p>
+     * <p>The name of the cluster parameter group.</p>
      */
     inline void SetParameterGroupName(Aws::String&& value) { m_parameterGroupName = value; }
 
     /**
-     * <p> The name of the cluster parameter group. </p>
+     * <p>The name of the cluster parameter group.</p>
      */
     inline void SetParameterGroupName(const char* value) { m_parameterGroupName.assign(value); }
 
     /**
-     * <p> The name of the cluster parameter group. </p>
+     * <p>The name of the cluster parameter group.</p>
      */
     inline ResetClusterParameterGroupResult& WithParameterGroupName(const Aws::String& value) { SetParameterGroupName(value); return *this;}
 
     /**
-     * <p> The name of the cluster parameter group. </p>
+     * <p>The name of the cluster parameter group.</p>
      */
     inline ResetClusterParameterGroupResult& WithParameterGroupName(Aws::String&& value) { SetParameterGroupName(value); return *this;}
 
     /**
-     * <p> The name of the cluster parameter group. </p>
+     * <p>The name of the cluster parameter group.</p>
      */
     inline ResetClusterParameterGroupResult& WithParameterGroupName(const char* value) { SetParameterGroupName(value); return *this;}
 
     /**
-     * <p> The status of the parameter group. For example, if you made a change to a
+     * <p>The status of the parameter group. For example, if you made a change to a
      * parameter group name-value pair, then the change could be pending a reboot of an
-     * associated cluster. </p>
+     * associated cluster.</p>
      */
     inline const Aws::String& GetParameterGroupStatus() const{ return m_parameterGroupStatus; }
 
     /**
-     * <p> The status of the parameter group. For example, if you made a change to a
+     * <p>The status of the parameter group. For example, if you made a change to a
      * parameter group name-value pair, then the change could be pending a reboot of an
-     * associated cluster. </p>
+     * associated cluster.</p>
      */
     inline void SetParameterGroupStatus(const Aws::String& value) { m_parameterGroupStatus = value; }
 
     /**
-     * <p> The status of the parameter group. For example, if you made a change to a
+     * <p>The status of the parameter group. For example, if you made a change to a
      * parameter group name-value pair, then the change could be pending a reboot of an
-     * associated cluster. </p>
+     * associated cluster.</p>
      */
     inline void SetParameterGroupStatus(Aws::String&& value) { m_parameterGroupStatus = value; }
 
     /**
-     * <p> The status of the parameter group. For example, if you made a change to a
+     * <p>The status of the parameter group. For example, if you made a change to a
      * parameter group name-value pair, then the change could be pending a reboot of an
-     * associated cluster. </p>
+     * associated cluster.</p>
      */
     inline void SetParameterGroupStatus(const char* value) { m_parameterGroupStatus.assign(value); }
 
     /**
-     * <p> The status of the parameter group. For example, if you made a change to a
+     * <p>The status of the parameter group. For example, if you made a change to a
      * parameter group name-value pair, then the change could be pending a reboot of an
-     * associated cluster. </p>
+     * associated cluster.</p>
      */
     inline ResetClusterParameterGroupResult& WithParameterGroupStatus(const Aws::String& value) { SetParameterGroupStatus(value); return *this;}
 
     /**
-     * <p> The status of the parameter group. For example, if you made a change to a
+     * <p>The status of the parameter group. For example, if you made a change to a
      * parameter group name-value pair, then the change could be pending a reboot of an
-     * associated cluster. </p>
+     * associated cluster.</p>
      */
     inline ResetClusterParameterGroupResult& WithParameterGroupStatus(Aws::String&& value) { SetParameterGroupStatus(value); return *this;}
 
     /**
-     * <p> The status of the parameter group. For example, if you made a change to a
+     * <p>The status of the parameter group. For example, if you made a change to a
      * parameter group name-value pair, then the change could be pending a reboot of an
-     * associated cluster. </p>
+     * associated cluster.</p>
      */
     inline ResetClusterParameterGroupResult& WithParameterGroupStatus(const char* value) { SetParameterGroupStatus(value); return *this;}
 

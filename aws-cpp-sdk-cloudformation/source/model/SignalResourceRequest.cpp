@@ -23,6 +23,7 @@ SignalResourceRequest::SignalResourceRequest() :
     m_stackNameHasBeenSet(false),
     m_logicalResourceIdHasBeenSet(false),
     m_uniqueIdHasBeenSet(false),
+    m_status(ResourceSignalStatus::NOT_SET),
     m_statusHasBeenSet(false)
 {
 }

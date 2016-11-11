@@ -30,6 +30,7 @@ UpdateStackRequest::UpdateStackRequest() :
     m_parametersHasBeenSet(false),
     m_capabilitiesHasBeenSet(false),
     m_resourceTypesHasBeenSet(false),
+    m_roleARNHasBeenSet(false),
     m_stackPolicyBodyHasBeenSet(false),
     m_stackPolicyURLHasBeenSet(false),
     m_notificationARNsHasBeenSet(false),
@@ -101,6 +102,11 @@ Aws::String UpdateStackRequest::SerializePayload() const
           << StringUtils::URLEncode(item.c_str()) << "&";
       resourceTypesCount++;
     }
+  }
+
+  if(m_roleARNHasBeenSet)
+  {
+    ss << "RoleARN=" << StringUtils::URLEncode(m_roleARN.c_str()) << "&";
   }
 
   if(m_stackPolicyBodyHasBeenSet)

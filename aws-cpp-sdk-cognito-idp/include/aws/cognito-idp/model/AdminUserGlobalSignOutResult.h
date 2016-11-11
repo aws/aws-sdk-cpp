@@ -32,7 +32,7 @@ namespace CognitoIdentityProvider
 namespace Model
 {
   /**
-   * <p>The global signot response, as an administrator.</p>
+   * <p>The global sign-out response, as an administrator.</p>
    */
   class AWS_COGNITOIDENTITYPROVIDER_API AdminUserGlobalSignOutResult
   {

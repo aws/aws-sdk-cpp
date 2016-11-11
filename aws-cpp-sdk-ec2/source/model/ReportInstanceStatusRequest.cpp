@@ -23,6 +23,7 @@ ReportInstanceStatusRequest::ReportInstanceStatusRequest() :
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
     m_instancesHasBeenSet(false),
+    m_status(ReportStatusType::NOT_SET),
     m_statusHasBeenSet(false),
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),

@@ -28,6 +28,7 @@ namespace Model
 {
 
 CompleteWorkflowExecutionFailedEventAttributes::CompleteWorkflowExecutionFailedEventAttributes() : 
+    m_cause(CompleteWorkflowExecutionFailedCause::NOT_SET),
     m_causeHasBeenSet(false),
     m_decisionTaskCompletedEventId(0),
     m_decisionTaskCompletedEventIdHasBeenSet(false)
@@ -35,6 +36,7 @@ CompleteWorkflowExecutionFailedEventAttributes::CompleteWorkflowExecutionFailedE
 }
 
 CompleteWorkflowExecutionFailedEventAttributes::CompleteWorkflowExecutionFailedEventAttributes(const JsonValue& jsonValue) : 
+    m_cause(CompleteWorkflowExecutionFailedCause::NOT_SET),
     m_causeHasBeenSet(false),
     m_decisionTaskCompletedEventId(0),
     m_decisionTaskCompletedEventIdHasBeenSet(false)

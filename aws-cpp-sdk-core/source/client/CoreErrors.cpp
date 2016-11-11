@@ -24,6 +24,8 @@ using namespace Aws::Utils;
 //instead we compute the hash of these strings to avoid so many string compares.
 static const int INCOMPLETE_SIGNATURE_EXCEPTION_HASH = HashingUtils::HashString("IncompleteSignatureException");
 static const int INCOMPLETE_SIGNATURE_HASH = HashingUtils::HashString("IncompleteSignature");
+static const int INVALID_SIGNATURE_EXCEPTION_HASH = HashingUtils::HashString("InvalidSignatureException");
+static const int INVALID_SIGNATURE_HASH = HashingUtils::HashString("InvalidSignature");
 static const int INTERNAL_FAILURE_HASH = HashingUtils::HashString("InternalFailure");
 static const int INTERNAL_SERVER_ERROR_HASH = HashingUtils::HashString("InternalServerError");
 static const int INVALID_ACTION_HASH = HashingUtils::HashString("InvalidAction");
@@ -54,6 +56,12 @@ static const int RESOURCE_NOT_FOUND_HASH = HashingUtils::HashString("ResourceNot
 static const int RESOURCE_NOT_FOUND_EXCEPTION_HASH = HashingUtils::HashString("ResourceNotFoundException");
 static const int UNRECOGNIZED_CLIENT_HASH = HashingUtils::HashString("UnrecognizedClient");
 static const int UNRECOGNIZED_CLIENT_EXCEPTION_HASH = HashingUtils::HashString("UnrecognizedClientException");
+static const int SLOW_DOWN_HASH = HashingUtils::HashString("SlowDown");
+static const int SLOW_DOWN_EXCEPTION_HASH = HashingUtils::HashString("SlowDownException");
+static const int SIGNATURE_DOES_NOT_MATCH_HASH = HashingUtils::HashString("SignatureDoesNotMatch");
+static const int SIGNATURE_DOES_NOT_MATCH_EXCEPTION_HASH = HashingUtils::HashString("SignatureDoesNotMatchException");
+static const int REQUEST_TIME_TOO_SKEWED_HASH = HashingUtils::HashString("RequestTimeTooSkewed");
+static const int REQUEST_TIME_TOO_SKEWED_EXCEPTION_HASH = HashingUtils::HashString("RequestTimeTooSkewedException");
 
 AWSError<CoreErrors> CoreErrorsMapper::GetErrorForName(const char* errorName)
 {
@@ -62,6 +70,10 @@ AWSError<CoreErrors> CoreErrorsMapper::GetErrorForName(const char* errorName)
   if (errorHash == INCOMPLETE_SIGNATURE_HASH || errorHash == INCOMPLETE_SIGNATURE_EXCEPTION_HASH)
   {
     return AWSError<CoreErrors>(CoreErrors::INCOMPLETE_SIGNATURE, false);
+  }
+  else if (errorHash == INVALID_SIGNATURE_EXCEPTION_HASH || errorHash == INVALID_SIGNATURE_HASH)
+  {
+      return AWSError<CoreErrors>(CoreErrors::INVALID_SIGNATURE, true);
   }
   else if (errorHash == INTERNAL_FAILURE_HASH || errorHash == INTERNAL_SERVER_ERROR_HASH)
   {
@@ -130,6 +142,18 @@ AWSError<CoreErrors> CoreErrorsMapper::GetErrorForName(const char* errorName)
   else if (errorHash == UNRECOGNIZED_CLIENT_HASH || errorHash == UNRECOGNIZED_CLIENT_EXCEPTION_HASH)
   {
     return AWSError<CoreErrors>(CoreErrors::UNRECOGNIZED_CLIENT, false);
+  }
+  else if (errorHash == SLOW_DOWN_HASH || errorHash == SLOW_DOWN_EXCEPTION_HASH)
+  {
+    return AWSError<CoreErrors>(CoreErrors::SLOW_DOWN, true);
+  }
+  else if (errorHash == SIGNATURE_DOES_NOT_MATCH_HASH || errorHash == SIGNATURE_DOES_NOT_MATCH_EXCEPTION_HASH)
+  {
+      return AWSError<CoreErrors>(CoreErrors::SIGNATURE_DOES_NOT_MATCH, true);
+  }
+  else if (errorHash == REQUEST_TIME_TOO_SKEWED_HASH || errorHash == REQUEST_TIME_TOO_SKEWED_EXCEPTION_HASH)
+  {
+    return AWSError<CoreErrors>(CoreErrors::REQUEST_TIME_TOO_SKEWED, true);
   }
 
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);

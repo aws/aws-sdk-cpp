@@ -37,8 +37,7 @@ namespace Route53
 namespace Model
 {
   /**
-   * <p>A complex type containing the response information for the new hosted
-   * zone.</p>
+   * <p>A complex type containing the response information for the hosted zone.</p>
    */
   class AWS_ROUTE53_API CreateHostedZoneResult
   {
@@ -48,108 +47,108 @@ namespace Model
     CreateHostedZoneResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
     /**
-     * <p>A complex type that contains identifying information about the hosted
-     * zone.</p>
+     * <p>A complex type that contains general information about the hosted zone.</p>
      */
     inline const HostedZone& GetHostedZone() const{ return m_hostedZone; }
 
     /**
-     * <p>A complex type that contains identifying information about the hosted
-     * zone.</p>
+     * <p>A complex type that contains general information about the hosted zone.</p>
      */
     inline void SetHostedZone(const HostedZone& value) { m_hostedZone = value; }
 
     /**
-     * <p>A complex type that contains identifying information about the hosted
-     * zone.</p>
+     * <p>A complex type that contains general information about the hosted zone.</p>
      */
     inline void SetHostedZone(HostedZone&& value) { m_hostedZone = value; }
 
     /**
-     * <p>A complex type that contains identifying information about the hosted
-     * zone.</p>
+     * <p>A complex type that contains general information about the hosted zone.</p>
      */
     inline CreateHostedZoneResult& WithHostedZone(const HostedZone& value) { SetHostedZone(value); return *this;}
 
     /**
-     * <p>A complex type that contains identifying information about the hosted
-     * zone.</p>
+     * <p>A complex type that contains general information about the hosted zone.</p>
      */
     inline CreateHostedZoneResult& WithHostedZone(HostedZone&& value) { SetHostedZone(value); return *this;}
 
     /**
-     * <p>A complex type that contains information about the request to create a hosted
-     * zone. This includes an ID that you use when you call the <code>GetChange</code>
-     * action to get the current status of the change request.</p>
+     * <p>A complex type that describes the changes made to your hosted zone.</p>
      */
     inline const ChangeInfo& GetChangeInfo() const{ return m_changeInfo; }
 
     /**
-     * <p>A complex type that contains information about the request to create a hosted
-     * zone. This includes an ID that you use when you call the <code>GetChange</code>
-     * action to get the current status of the change request.</p>
+     * <p>A complex type that describes the changes made to your hosted zone.</p>
      */
     inline void SetChangeInfo(const ChangeInfo& value) { m_changeInfo = value; }
 
     /**
-     * <p>A complex type that contains information about the request to create a hosted
-     * zone. This includes an ID that you use when you call the <code>GetChange</code>
-     * action to get the current status of the change request.</p>
+     * <p>A complex type that describes the changes made to your hosted zone.</p>
      */
     inline void SetChangeInfo(ChangeInfo&& value) { m_changeInfo = value; }
 
     /**
-     * <p>A complex type that contains information about the request to create a hosted
-     * zone. This includes an ID that you use when you call the <code>GetChange</code>
-     * action to get the current status of the change request.</p>
+     * <p>A complex type that describes the changes made to your hosted zone.</p>
      */
     inline CreateHostedZoneResult& WithChangeInfo(const ChangeInfo& value) { SetChangeInfo(value); return *this;}
 
     /**
-     * <p>A complex type that contains information about the request to create a hosted
-     * zone. This includes an ID that you use when you call the <code>GetChange</code>
-     * action to get the current status of the change request.</p>
+     * <p>A complex type that describes the changes made to your hosted zone.</p>
      */
     inline CreateHostedZoneResult& WithChangeInfo(ChangeInfo&& value) { SetChangeInfo(value); return *this;}
 
     /**
-     * <p>A complex type that contains name server information.</p>
+     * <p>A complex type that describes the name servers for this hosted zone.</p>
      */
     inline const DelegationSet& GetDelegationSet() const{ return m_delegationSet; }
 
     /**
-     * <p>A complex type that contains name server information.</p>
+     * <p>A complex type that describes the name servers for this hosted zone.</p>
      */
     inline void SetDelegationSet(const DelegationSet& value) { m_delegationSet = value; }
 
     /**
-     * <p>A complex type that contains name server information.</p>
+     * <p>A complex type that describes the name servers for this hosted zone.</p>
      */
     inline void SetDelegationSet(DelegationSet&& value) { m_delegationSet = value; }
 
     /**
-     * <p>A complex type that contains name server information.</p>
+     * <p>A complex type that describes the name servers for this hosted zone.</p>
      */
     inline CreateHostedZoneResult& WithDelegationSet(const DelegationSet& value) { SetDelegationSet(value); return *this;}
 
     /**
-     * <p>A complex type that contains name server information.</p>
+     * <p>A complex type that describes the name servers for this hosted zone.</p>
      */
     inline CreateHostedZoneResult& WithDelegationSet(DelegationSet&& value) { SetDelegationSet(value); return *this;}
 
-    
+    /**
+     * <p>A complex type that contains information about an Amazon VPC that you
+     * associated with this hosted zone.</p>
+     */
     inline const VPC& GetVPC() const{ return m_vPC; }
 
-    
+    /**
+     * <p>A complex type that contains information about an Amazon VPC that you
+     * associated with this hosted zone.</p>
+     */
     inline void SetVPC(const VPC& value) { m_vPC = value; }
 
-    
+    /**
+     * <p>A complex type that contains information about an Amazon VPC that you
+     * associated with this hosted zone.</p>
+     */
     inline void SetVPC(VPC&& value) { m_vPC = value; }
 
-    
+    /**
+     * <p>A complex type that contains information about an Amazon VPC that you
+     * associated with this hosted zone.</p>
+     */
     inline CreateHostedZoneResult& WithVPC(const VPC& value) { SetVPC(value); return *this;}
 
-    
+    /**
+     * <p>A complex type that contains information about an Amazon VPC that you
+     * associated with this hosted zone.</p>
+     */
     inline CreateHostedZoneResult& WithVPC(VPC&& value) { SetVPC(value); return *this;}
 
     /**

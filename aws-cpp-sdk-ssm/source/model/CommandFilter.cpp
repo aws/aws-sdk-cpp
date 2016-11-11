@@ -28,12 +28,14 @@ namespace Model
 {
 
 CommandFilter::CommandFilter() : 
+    m_key(CommandFilterKey::NOT_SET),
     m_keyHasBeenSet(false),
     m_valueHasBeenSet(false)
 {
 }
 
 CommandFilter::CommandFilter(const JsonValue& jsonValue) : 
+    m_key(CommandFilterKey::NOT_SET),
     m_keyHasBeenSet(false),
     m_valueHasBeenSet(false)
 {

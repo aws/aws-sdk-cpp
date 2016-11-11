@@ -93,7 +93,7 @@ namespace Model
      * <code>ListTrafficPolicies</code> again and specifying the value of the
      * <code>TrafficPolicyIdMarker</code> element in the
      * <code>TrafficPolicyIdMarker</code> request parameter.</p> <p>Valid Values:
-     * <code>true</code> | <code>false</code></p>
+     * <code>true</code> | <code>false</code> </p>
      */
     inline bool GetIsTruncated() const{ return m_isTruncated; }
 
@@ -104,7 +104,7 @@ namespace Model
      * <code>ListTrafficPolicies</code> again and specifying the value of the
      * <code>TrafficPolicyIdMarker</code> element in the
      * <code>TrafficPolicyIdMarker</code> request parameter.</p> <p>Valid Values:
-     * <code>true</code> | <code>false</code></p>
+     * <code>true</code> | <code>false</code> </p>
      */
     inline void SetIsTruncated(bool value) { m_isTruncated = value; }
 
@@ -115,7 +115,7 @@ namespace Model
      * <code>ListTrafficPolicies</code> again and specifying the value of the
      * <code>TrafficPolicyIdMarker</code> element in the
      * <code>TrafficPolicyIdMarker</code> request parameter.</p> <p>Valid Values:
-     * <code>true</code> | <code>false</code></p>
+     * <code>true</code> | <code>false</code> </p>
      */
     inline ListTrafficPoliciesResult& WithIsTruncated(bool value) { SetIsTruncated(value); return *this;}
 

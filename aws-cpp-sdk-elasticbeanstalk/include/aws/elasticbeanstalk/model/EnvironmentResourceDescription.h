@@ -263,37 +263,37 @@ namespace Model
     inline EnvironmentResourceDescription& AddTriggers(Trigger&& value) { m_triggersHasBeenSet = true; m_triggers.push_back(value); return *this; }
 
     /**
-     * <p>The queues used by this environment. </p>
+     * <p>The queues used by this environment.</p>
      */
     inline const Aws::Vector<Queue>& GetQueues() const{ return m_queues; }
 
     /**
-     * <p>The queues used by this environment. </p>
+     * <p>The queues used by this environment.</p>
      */
     inline void SetQueues(const Aws::Vector<Queue>& value) { m_queuesHasBeenSet = true; m_queues = value; }
 
     /**
-     * <p>The queues used by this environment. </p>
+     * <p>The queues used by this environment.</p>
      */
     inline void SetQueues(Aws::Vector<Queue>&& value) { m_queuesHasBeenSet = true; m_queues = value; }
 
     /**
-     * <p>The queues used by this environment. </p>
+     * <p>The queues used by this environment.</p>
      */
     inline EnvironmentResourceDescription& WithQueues(const Aws::Vector<Queue>& value) { SetQueues(value); return *this;}
 
     /**
-     * <p>The queues used by this environment. </p>
+     * <p>The queues used by this environment.</p>
      */
     inline EnvironmentResourceDescription& WithQueues(Aws::Vector<Queue>&& value) { SetQueues(value); return *this;}
 
     /**
-     * <p>The queues used by this environment. </p>
+     * <p>The queues used by this environment.</p>
      */
     inline EnvironmentResourceDescription& AddQueues(const Queue& value) { m_queuesHasBeenSet = true; m_queues.push_back(value); return *this; }
 
     /**
-     * <p>The queues used by this environment. </p>
+     * <p>The queues used by this environment.</p>
      */
     inline EnvironmentResourceDescription& AddQueues(Queue&& value) { m_queuesHasBeenSet = true; m_queues.push_back(value); return *this; }
 

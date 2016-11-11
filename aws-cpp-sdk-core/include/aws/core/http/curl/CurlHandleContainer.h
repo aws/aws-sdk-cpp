@@ -15,11 +15,9 @@
 
 #pragma once
 
-#include <aws/core/utils/memory/stl/AWSStack.h>
+#include <aws/core/utils/ResourceManager.h>
 
 #include <utility>
-#include <mutex>
-#include <condition_variable>
 #include <curl/curl.h>
 
 namespace Aws
@@ -62,9 +60,7 @@ private:
     bool CheckAndGrowPool();
     void SetDefaultOptionsOnHandle(void* handle);
 
-    Aws::Stack<CURL*> m_handleContainer;
-    std::mutex m_handleContainerMutex;
-    std::condition_variable m_conditionVariable;
+    Aws::Utils::ExclusiveOwnershipResourceManager<CURL*> m_handleContainer;
     unsigned m_maxPoolSize;
     unsigned long m_requestTimeout;
     unsigned long m_connectTimeout;

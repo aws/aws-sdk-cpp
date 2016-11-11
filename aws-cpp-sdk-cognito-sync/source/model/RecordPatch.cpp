@@ -28,6 +28,7 @@ namespace Model
 {
 
 RecordPatch::RecordPatch() : 
+    m_op(Operation::NOT_SET),
     m_opHasBeenSet(false),
     m_keyHasBeenSet(false),
     m_valueHasBeenSet(false),
@@ -38,6 +39,7 @@ RecordPatch::RecordPatch() :
 }
 
 RecordPatch::RecordPatch(const JsonValue& jsonValue) : 
+    m_op(Operation::NOT_SET),
     m_opHasBeenSet(false),
     m_keyHasBeenSet(false),
     m_valueHasBeenSet(false),

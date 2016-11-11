@@ -25,6 +25,7 @@ PutIntegrationRequest::PutIntegrationRequest() :
     m_restApiIdHasBeenSet(false),
     m_resourceIdHasBeenSet(false),
     m_httpMethodHasBeenSet(false),
+    m_type(IntegrationType::NOT_SET),
     m_typeHasBeenSet(false),
     m_integrationHttpMethodHasBeenSet(false),
     m_uriHasBeenSet(false),

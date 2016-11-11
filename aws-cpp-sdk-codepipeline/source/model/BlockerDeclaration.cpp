@@ -29,12 +29,14 @@ namespace Model
 
 BlockerDeclaration::BlockerDeclaration() : 
     m_nameHasBeenSet(false),
+    m_type(BlockerType::NOT_SET),
     m_typeHasBeenSet(false)
 {
 }
 
 BlockerDeclaration::BlockerDeclaration(const JsonValue& jsonValue) : 
     m_nameHasBeenSet(false),
+    m_type(BlockerType::NOT_SET),
     m_typeHasBeenSet(false)
 {
   *this = jsonValue;

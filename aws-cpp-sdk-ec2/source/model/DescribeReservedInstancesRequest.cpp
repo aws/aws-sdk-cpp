@@ -24,6 +24,7 @@ DescribeReservedInstancesRequest::DescribeReservedInstancesRequest() :
     m_dryRunHasBeenSet(false),
     m_reservedInstancesIdsHasBeenSet(false),
     m_filtersHasBeenSet(false),
+    m_offeringType(OfferingTypeValues::NOT_SET),
     m_offeringTypeHasBeenSet(false)
 {
 }

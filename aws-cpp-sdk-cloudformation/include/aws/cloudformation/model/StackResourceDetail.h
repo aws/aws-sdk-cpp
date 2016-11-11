@@ -363,56 +363,56 @@ namespace Model
     inline StackResourceDetail& WithDescription(const char* value) { SetDescription(value); return *this;}
 
     /**
-     * <p>The JSON format content of the <code>Metadata</code> attribute declared for
-     * the resource. For more information, see <a
+     * <p>The content of the <code>Metadata</code> attribute declared for the resource.
+     * For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-metadata.html">Metadata
      * Attribute</a> in the AWS CloudFormation User Guide.</p>
      */
     inline const Aws::String& GetMetadata() const{ return m_metadata; }
 
     /**
-     * <p>The JSON format content of the <code>Metadata</code> attribute declared for
-     * the resource. For more information, see <a
+     * <p>The content of the <code>Metadata</code> attribute declared for the resource.
+     * For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-metadata.html">Metadata
      * Attribute</a> in the AWS CloudFormation User Guide.</p>
      */
     inline void SetMetadata(const Aws::String& value) { m_metadataHasBeenSet = true; m_metadata = value; }
 
     /**
-     * <p>The JSON format content of the <code>Metadata</code> attribute declared for
-     * the resource. For more information, see <a
+     * <p>The content of the <code>Metadata</code> attribute declared for the resource.
+     * For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-metadata.html">Metadata
      * Attribute</a> in the AWS CloudFormation User Guide.</p>
      */
     inline void SetMetadata(Aws::String&& value) { m_metadataHasBeenSet = true; m_metadata = value; }
 
     /**
-     * <p>The JSON format content of the <code>Metadata</code> attribute declared for
-     * the resource. For more information, see <a
+     * <p>The content of the <code>Metadata</code> attribute declared for the resource.
+     * For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-metadata.html">Metadata
      * Attribute</a> in the AWS CloudFormation User Guide.</p>
      */
     inline void SetMetadata(const char* value) { m_metadataHasBeenSet = true; m_metadata.assign(value); }
 
     /**
-     * <p>The JSON format content of the <code>Metadata</code> attribute declared for
-     * the resource. For more information, see <a
+     * <p>The content of the <code>Metadata</code> attribute declared for the resource.
+     * For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-metadata.html">Metadata
      * Attribute</a> in the AWS CloudFormation User Guide.</p>
      */
     inline StackResourceDetail& WithMetadata(const Aws::String& value) { SetMetadata(value); return *this;}
 
     /**
-     * <p>The JSON format content of the <code>Metadata</code> attribute declared for
-     * the resource. For more information, see <a
+     * <p>The content of the <code>Metadata</code> attribute declared for the resource.
+     * For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-metadata.html">Metadata
      * Attribute</a> in the AWS CloudFormation User Guide.</p>
      */
     inline StackResourceDetail& WithMetadata(Aws::String&& value) { SetMetadata(value); return *this;}
 
     /**
-     * <p>The JSON format content of the <code>Metadata</code> attribute declared for
-     * the resource. For more information, see <a
+     * <p>The content of the <code>Metadata</code> attribute declared for the resource.
+     * For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-metadata.html">Metadata
      * Attribute</a> in the AWS CloudFormation User Guide.</p>
      */

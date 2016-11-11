@@ -389,6 +389,46 @@ namespace Model
      */
     inline GetTemplateSummaryResult& WithMetadata(const char* value) { SetMetadata(value); return *this;}
 
+    /**
+     * <p>A list of the transforms that are declared in the template.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetDeclaredTransforms() const{ return m_declaredTransforms; }
+
+    /**
+     * <p>A list of the transforms that are declared in the template.</p>
+     */
+    inline void SetDeclaredTransforms(const Aws::Vector<Aws::String>& value) { m_declaredTransforms = value; }
+
+    /**
+     * <p>A list of the transforms that are declared in the template.</p>
+     */
+    inline void SetDeclaredTransforms(Aws::Vector<Aws::String>&& value) { m_declaredTransforms = value; }
+
+    /**
+     * <p>A list of the transforms that are declared in the template.</p>
+     */
+    inline GetTemplateSummaryResult& WithDeclaredTransforms(const Aws::Vector<Aws::String>& value) { SetDeclaredTransforms(value); return *this;}
+
+    /**
+     * <p>A list of the transforms that are declared in the template.</p>
+     */
+    inline GetTemplateSummaryResult& WithDeclaredTransforms(Aws::Vector<Aws::String>&& value) { SetDeclaredTransforms(value); return *this;}
+
+    /**
+     * <p>A list of the transforms that are declared in the template.</p>
+     */
+    inline GetTemplateSummaryResult& AddDeclaredTransforms(const Aws::String& value) { m_declaredTransforms.push_back(value); return *this; }
+
+    /**
+     * <p>A list of the transforms that are declared in the template.</p>
+     */
+    inline GetTemplateSummaryResult& AddDeclaredTransforms(Aws::String&& value) { m_declaredTransforms.push_back(value); return *this; }
+
+    /**
+     * <p>A list of the transforms that are declared in the template.</p>
+     */
+    inline GetTemplateSummaryResult& AddDeclaredTransforms(const char* value) { m_declaredTransforms.push_back(value); return *this; }
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -412,6 +452,7 @@ namespace Model
     Aws::Vector<Aws::String> m_resourceTypes;
     Aws::String m_version;
     Aws::String m_metadata;
+    Aws::Vector<Aws::String> m_declaredTransforms;
     ResponseMetadata m_responseMetadata;
   };
 

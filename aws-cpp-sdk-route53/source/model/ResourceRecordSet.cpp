@@ -31,12 +31,15 @@ namespace Model
 
 ResourceRecordSet::ResourceRecordSet() : 
     m_nameHasBeenSet(false),
+    m_type(RRType::NOT_SET),
     m_typeHasBeenSet(false),
     m_setIdentifierHasBeenSet(false),
     m_weight(0),
     m_weightHasBeenSet(false),
+    m_region(ResourceRecordSetRegion::NOT_SET),
     m_regionHasBeenSet(false),
     m_geoLocationHasBeenSet(false),
+    m_failover(ResourceRecordSetFailover::NOT_SET),
     m_failoverHasBeenSet(false),
     m_tTL(0),
     m_tTLHasBeenSet(false),
@@ -49,12 +52,15 @@ ResourceRecordSet::ResourceRecordSet() :
 
 ResourceRecordSet::ResourceRecordSet(const XmlNode& xmlNode) : 
     m_nameHasBeenSet(false),
+    m_type(RRType::NOT_SET),
     m_typeHasBeenSet(false),
     m_setIdentifierHasBeenSet(false),
     m_weight(0),
     m_weightHasBeenSet(false),
+    m_region(ResourceRecordSetRegion::NOT_SET),
     m_regionHasBeenSet(false),
     m_geoLocationHasBeenSet(false),
+    m_failover(ResourceRecordSetFailover::NOT_SET),
     m_failoverHasBeenSet(false),
     m_tTL(0),
     m_tTLHasBeenSet(false),

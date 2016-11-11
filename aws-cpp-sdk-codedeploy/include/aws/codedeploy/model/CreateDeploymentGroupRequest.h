@@ -17,6 +17,8 @@
 #include <aws/codedeploy/CodeDeployRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/codedeploy/model/AlarmConfiguration.h>
+#include <aws/codedeploy/model/AutoRollbackConfiguration.h>
 #include <aws/codedeploy/model/EC2TagFilter.h>
 #include <aws/codedeploy/model/TagFilter.h>
 #include <aws/codedeploy/model/TriggerConfig.h>
@@ -123,24 +125,24 @@ namespace Model
      * operation.</p> <note> <p>CodeDeployDefault.OneAtATime is the default deployment
      * configuration. It is used if a configuration isn't specified for the deployment
      * or the deployment group.</p> </note> <p>The predefined deployment configurations
-     * include the following:</p> <ul> <li> <p><b>CodeDeployDefault.AllAtOnce</b>
-     * attempts to deploy an application revision to as many instance as possible at
+     * include the following:</p> <ul> <li> <p> <b>CodeDeployDefault.AllAtOnce</b>
+     * attempts to deploy an application revision to as many instances as possible at
      * once. The status of the overall deployment will be displayed as <b>Succeeded</b>
      * if the application revision is deployed to one or more of the instances. The
      * status of the overall deployment will be displayed as <b>Failed</b> if the
      * application revision is not deployed to any of the instances. Using an example
-     * of nine instance, CodeDeployDefault.AllAtOnce will attempt to deploy to all nine
-     * instance at once. The overall deployment will succeed if deployment to even a
-     * single instance is successful; it will fail only if deployments to all nine
-     * instance fail. </p> </li> <li> <p><b>CodeDeployDefault.HalfAtATime</b> deploys
-     * to up to half of the instances at a time (with fractions rounded down). The
-     * overall deployment succeeds if the application revision is deployed to at least
-     * half of the instances (with fractions rounded up); otherwise, the deployment
-     * fails. In the example of nine instances, it will deploy to up to four instance
-     * at a time. The overall deployment succeeds if deployment to five or more
-     * instances succeed; otherwise, the deployment fails. The deployment may be
+     * of nine instances, CodeDeployDefault.AllAtOnce will attempt to deploy to all
+     * nine instances at once. The overall deployment will succeed if deployment to
+     * even a single instance is successful; it will fail only if deployments to all
+     * nine instances fail. </p> </li> <li> <p> <b>CodeDeployDefault.HalfAtATime</b>
+     * deploys to up to half of the instances at a time (with fractions rounded down).
+     * The overall deployment succeeds if the application revision is deployed to at
+     * least half of the instances (with fractions rounded up); otherwise, the
+     * deployment fails. In the example of nine instances, it will deploy to up to four
+     * instances at a time. The overall deployment succeeds if deployment to five or
+     * more instances succeed; otherwise, the deployment fails. The deployment may be
      * successfully deployed to some instances even if the overall deployment
-     * fails.</p> </li> <li> <p><b>CodeDeployDefault.OneAtATime</b> deploys the
+     * fails.</p> </li> <li> <p> <b>CodeDeployDefault.OneAtATime</b> deploys the
      * application revision to only one instance at a time.</p> <p>For deployment
      * groups that contain more than one instance:</p> <ul> <li> <p>The overall
      * deployment succeeds if the application revision is deployed to all of the
@@ -151,9 +153,9 @@ namespace Model
      * deployment fails as soon as the application revision fails to be deployed to any
      * but the last instance. The deployment may be successfully deployed to some
      * instances even if the overall deployment fails.</p> </li> <li> <p>In an example
-     * using nine instance, it will deploy to one instance at a time. The overall
-     * deployment succeeds if deployment to the first eight instance is successful; the
-     * overall deployment fails if deployment to any of the first eight instance
+     * using nine instances, it will deploy to one instance at a time. The overall
+     * deployment succeeds if deployment to the first eight instances is successful;
+     * the overall deployment fails if deployment to any of the first eight instances
      * fails.</p> </li> </ul> <p>For deployment groups that contain only one instance,
      * the overall deployment is successful only if deployment to the single instance
      * is successful</p> </li> </ul>
@@ -167,24 +169,24 @@ namespace Model
      * operation.</p> <note> <p>CodeDeployDefault.OneAtATime is the default deployment
      * configuration. It is used if a configuration isn't specified for the deployment
      * or the deployment group.</p> </note> <p>The predefined deployment configurations
-     * include the following:</p> <ul> <li> <p><b>CodeDeployDefault.AllAtOnce</b>
-     * attempts to deploy an application revision to as many instance as possible at
+     * include the following:</p> <ul> <li> <p> <b>CodeDeployDefault.AllAtOnce</b>
+     * attempts to deploy an application revision to as many instances as possible at
      * once. The status of the overall deployment will be displayed as <b>Succeeded</b>
      * if the application revision is deployed to one or more of the instances. The
      * status of the overall deployment will be displayed as <b>Failed</b> if the
      * application revision is not deployed to any of the instances. Using an example
-     * of nine instance, CodeDeployDefault.AllAtOnce will attempt to deploy to all nine
-     * instance at once. The overall deployment will succeed if deployment to even a
-     * single instance is successful; it will fail only if deployments to all nine
-     * instance fail. </p> </li> <li> <p><b>CodeDeployDefault.HalfAtATime</b> deploys
-     * to up to half of the instances at a time (with fractions rounded down). The
-     * overall deployment succeeds if the application revision is deployed to at least
-     * half of the instances (with fractions rounded up); otherwise, the deployment
-     * fails. In the example of nine instances, it will deploy to up to four instance
-     * at a time. The overall deployment succeeds if deployment to five or more
-     * instances succeed; otherwise, the deployment fails. The deployment may be
+     * of nine instances, CodeDeployDefault.AllAtOnce will attempt to deploy to all
+     * nine instances at once. The overall deployment will succeed if deployment to
+     * even a single instance is successful; it will fail only if deployments to all
+     * nine instances fail. </p> </li> <li> <p> <b>CodeDeployDefault.HalfAtATime</b>
+     * deploys to up to half of the instances at a time (with fractions rounded down).
+     * The overall deployment succeeds if the application revision is deployed to at
+     * least half of the instances (with fractions rounded up); otherwise, the
+     * deployment fails. In the example of nine instances, it will deploy to up to four
+     * instances at a time. The overall deployment succeeds if deployment to five or
+     * more instances succeed; otherwise, the deployment fails. The deployment may be
      * successfully deployed to some instances even if the overall deployment
-     * fails.</p> </li> <li> <p><b>CodeDeployDefault.OneAtATime</b> deploys the
+     * fails.</p> </li> <li> <p> <b>CodeDeployDefault.OneAtATime</b> deploys the
      * application revision to only one instance at a time.</p> <p>For deployment
      * groups that contain more than one instance:</p> <ul> <li> <p>The overall
      * deployment succeeds if the application revision is deployed to all of the
@@ -195,9 +197,9 @@ namespace Model
      * deployment fails as soon as the application revision fails to be deployed to any
      * but the last instance. The deployment may be successfully deployed to some
      * instances even if the overall deployment fails.</p> </li> <li> <p>In an example
-     * using nine instance, it will deploy to one instance at a time. The overall
-     * deployment succeeds if deployment to the first eight instance is successful; the
-     * overall deployment fails if deployment to any of the first eight instance
+     * using nine instances, it will deploy to one instance at a time. The overall
+     * deployment succeeds if deployment to the first eight instances is successful;
+     * the overall deployment fails if deployment to any of the first eight instances
      * fails.</p> </li> </ul> <p>For deployment groups that contain only one instance,
      * the overall deployment is successful only if deployment to the single instance
      * is successful</p> </li> </ul>
@@ -211,24 +213,24 @@ namespace Model
      * operation.</p> <note> <p>CodeDeployDefault.OneAtATime is the default deployment
      * configuration. It is used if a configuration isn't specified for the deployment
      * or the deployment group.</p> </note> <p>The predefined deployment configurations
-     * include the following:</p> <ul> <li> <p><b>CodeDeployDefault.AllAtOnce</b>
-     * attempts to deploy an application revision to as many instance as possible at
+     * include the following:</p> <ul> <li> <p> <b>CodeDeployDefault.AllAtOnce</b>
+     * attempts to deploy an application revision to as many instances as possible at
      * once. The status of the overall deployment will be displayed as <b>Succeeded</b>
      * if the application revision is deployed to one or more of the instances. The
      * status of the overall deployment will be displayed as <b>Failed</b> if the
      * application revision is not deployed to any of the instances. Using an example
-     * of nine instance, CodeDeployDefault.AllAtOnce will attempt to deploy to all nine
-     * instance at once. The overall deployment will succeed if deployment to even a
-     * single instance is successful; it will fail only if deployments to all nine
-     * instance fail. </p> </li> <li> <p><b>CodeDeployDefault.HalfAtATime</b> deploys
-     * to up to half of the instances at a time (with fractions rounded down). The
-     * overall deployment succeeds if the application revision is deployed to at least
-     * half of the instances (with fractions rounded up); otherwise, the deployment
-     * fails. In the example of nine instances, it will deploy to up to four instance
-     * at a time. The overall deployment succeeds if deployment to five or more
-     * instances succeed; otherwise, the deployment fails. The deployment may be
+     * of nine instances, CodeDeployDefault.AllAtOnce will attempt to deploy to all
+     * nine instances at once. The overall deployment will succeed if deployment to
+     * even a single instance is successful; it will fail only if deployments to all
+     * nine instances fail. </p> </li> <li> <p> <b>CodeDeployDefault.HalfAtATime</b>
+     * deploys to up to half of the instances at a time (with fractions rounded down).
+     * The overall deployment succeeds if the application revision is deployed to at
+     * least half of the instances (with fractions rounded up); otherwise, the
+     * deployment fails. In the example of nine instances, it will deploy to up to four
+     * instances at a time. The overall deployment succeeds if deployment to five or
+     * more instances succeed; otherwise, the deployment fails. The deployment may be
      * successfully deployed to some instances even if the overall deployment
-     * fails.</p> </li> <li> <p><b>CodeDeployDefault.OneAtATime</b> deploys the
+     * fails.</p> </li> <li> <p> <b>CodeDeployDefault.OneAtATime</b> deploys the
      * application revision to only one instance at a time.</p> <p>For deployment
      * groups that contain more than one instance:</p> <ul> <li> <p>The overall
      * deployment succeeds if the application revision is deployed to all of the
@@ -239,9 +241,9 @@ namespace Model
      * deployment fails as soon as the application revision fails to be deployed to any
      * but the last instance. The deployment may be successfully deployed to some
      * instances even if the overall deployment fails.</p> </li> <li> <p>In an example
-     * using nine instance, it will deploy to one instance at a time. The overall
-     * deployment succeeds if deployment to the first eight instance is successful; the
-     * overall deployment fails if deployment to any of the first eight instance
+     * using nine instances, it will deploy to one instance at a time. The overall
+     * deployment succeeds if deployment to the first eight instances is successful;
+     * the overall deployment fails if deployment to any of the first eight instances
      * fails.</p> </li> </ul> <p>For deployment groups that contain only one instance,
      * the overall deployment is successful only if deployment to the single instance
      * is successful</p> </li> </ul>
@@ -255,24 +257,24 @@ namespace Model
      * operation.</p> <note> <p>CodeDeployDefault.OneAtATime is the default deployment
      * configuration. It is used if a configuration isn't specified for the deployment
      * or the deployment group.</p> </note> <p>The predefined deployment configurations
-     * include the following:</p> <ul> <li> <p><b>CodeDeployDefault.AllAtOnce</b>
-     * attempts to deploy an application revision to as many instance as possible at
+     * include the following:</p> <ul> <li> <p> <b>CodeDeployDefault.AllAtOnce</b>
+     * attempts to deploy an application revision to as many instances as possible at
      * once. The status of the overall deployment will be displayed as <b>Succeeded</b>
      * if the application revision is deployed to one or more of the instances. The
      * status of the overall deployment will be displayed as <b>Failed</b> if the
      * application revision is not deployed to any of the instances. Using an example
-     * of nine instance, CodeDeployDefault.AllAtOnce will attempt to deploy to all nine
-     * instance at once. The overall deployment will succeed if deployment to even a
-     * single instance is successful; it will fail only if deployments to all nine
-     * instance fail. </p> </li> <li> <p><b>CodeDeployDefault.HalfAtATime</b> deploys
-     * to up to half of the instances at a time (with fractions rounded down). The
-     * overall deployment succeeds if the application revision is deployed to at least
-     * half of the instances (with fractions rounded up); otherwise, the deployment
-     * fails. In the example of nine instances, it will deploy to up to four instance
-     * at a time. The overall deployment succeeds if deployment to five or more
-     * instances succeed; otherwise, the deployment fails. The deployment may be
+     * of nine instances, CodeDeployDefault.AllAtOnce will attempt to deploy to all
+     * nine instances at once. The overall deployment will succeed if deployment to
+     * even a single instance is successful; it will fail only if deployments to all
+     * nine instances fail. </p> </li> <li> <p> <b>CodeDeployDefault.HalfAtATime</b>
+     * deploys to up to half of the instances at a time (with fractions rounded down).
+     * The overall deployment succeeds if the application revision is deployed to at
+     * least half of the instances (with fractions rounded up); otherwise, the
+     * deployment fails. In the example of nine instances, it will deploy to up to four
+     * instances at a time. The overall deployment succeeds if deployment to five or
+     * more instances succeed; otherwise, the deployment fails. The deployment may be
      * successfully deployed to some instances even if the overall deployment
-     * fails.</p> </li> <li> <p><b>CodeDeployDefault.OneAtATime</b> deploys the
+     * fails.</p> </li> <li> <p> <b>CodeDeployDefault.OneAtATime</b> deploys the
      * application revision to only one instance at a time.</p> <p>For deployment
      * groups that contain more than one instance:</p> <ul> <li> <p>The overall
      * deployment succeeds if the application revision is deployed to all of the
@@ -283,9 +285,9 @@ namespace Model
      * deployment fails as soon as the application revision fails to be deployed to any
      * but the last instance. The deployment may be successfully deployed to some
      * instances even if the overall deployment fails.</p> </li> <li> <p>In an example
-     * using nine instance, it will deploy to one instance at a time. The overall
-     * deployment succeeds if deployment to the first eight instance is successful; the
-     * overall deployment fails if deployment to any of the first eight instance
+     * using nine instances, it will deploy to one instance at a time. The overall
+     * deployment succeeds if deployment to the first eight instances is successful;
+     * the overall deployment fails if deployment to any of the first eight instances
      * fails.</p> </li> </ul> <p>For deployment groups that contain only one instance,
      * the overall deployment is successful only if deployment to the single instance
      * is successful</p> </li> </ul>
@@ -299,24 +301,24 @@ namespace Model
      * operation.</p> <note> <p>CodeDeployDefault.OneAtATime is the default deployment
      * configuration. It is used if a configuration isn't specified for the deployment
      * or the deployment group.</p> </note> <p>The predefined deployment configurations
-     * include the following:</p> <ul> <li> <p><b>CodeDeployDefault.AllAtOnce</b>
-     * attempts to deploy an application revision to as many instance as possible at
+     * include the following:</p> <ul> <li> <p> <b>CodeDeployDefault.AllAtOnce</b>
+     * attempts to deploy an application revision to as many instances as possible at
      * once. The status of the overall deployment will be displayed as <b>Succeeded</b>
      * if the application revision is deployed to one or more of the instances. The
      * status of the overall deployment will be displayed as <b>Failed</b> if the
      * application revision is not deployed to any of the instances. Using an example
-     * of nine instance, CodeDeployDefault.AllAtOnce will attempt to deploy to all nine
-     * instance at once. The overall deployment will succeed if deployment to even a
-     * single instance is successful; it will fail only if deployments to all nine
-     * instance fail. </p> </li> <li> <p><b>CodeDeployDefault.HalfAtATime</b> deploys
-     * to up to half of the instances at a time (with fractions rounded down). The
-     * overall deployment succeeds if the application revision is deployed to at least
-     * half of the instances (with fractions rounded up); otherwise, the deployment
-     * fails. In the example of nine instances, it will deploy to up to four instance
-     * at a time. The overall deployment succeeds if deployment to five or more
-     * instances succeed; otherwise, the deployment fails. The deployment may be
+     * of nine instances, CodeDeployDefault.AllAtOnce will attempt to deploy to all
+     * nine instances at once. The overall deployment will succeed if deployment to
+     * even a single instance is successful; it will fail only if deployments to all
+     * nine instances fail. </p> </li> <li> <p> <b>CodeDeployDefault.HalfAtATime</b>
+     * deploys to up to half of the instances at a time (with fractions rounded down).
+     * The overall deployment succeeds if the application revision is deployed to at
+     * least half of the instances (with fractions rounded up); otherwise, the
+     * deployment fails. In the example of nine instances, it will deploy to up to four
+     * instances at a time. The overall deployment succeeds if deployment to five or
+     * more instances succeed; otherwise, the deployment fails. The deployment may be
      * successfully deployed to some instances even if the overall deployment
-     * fails.</p> </li> <li> <p><b>CodeDeployDefault.OneAtATime</b> deploys the
+     * fails.</p> </li> <li> <p> <b>CodeDeployDefault.OneAtATime</b> deploys the
      * application revision to only one instance at a time.</p> <p>For deployment
      * groups that contain more than one instance:</p> <ul> <li> <p>The overall
      * deployment succeeds if the application revision is deployed to all of the
@@ -327,9 +329,9 @@ namespace Model
      * deployment fails as soon as the application revision fails to be deployed to any
      * but the last instance. The deployment may be successfully deployed to some
      * instances even if the overall deployment fails.</p> </li> <li> <p>In an example
-     * using nine instance, it will deploy to one instance at a time. The overall
-     * deployment succeeds if deployment to the first eight instance is successful; the
-     * overall deployment fails if deployment to any of the first eight instance
+     * using nine instances, it will deploy to one instance at a time. The overall
+     * deployment succeeds if deployment to the first eight instances is successful;
+     * the overall deployment fails if deployment to any of the first eight instances
      * fails.</p> </li> </ul> <p>For deployment groups that contain only one instance,
      * the overall deployment is successful only if deployment to the single instance
      * is successful</p> </li> </ul>
@@ -343,24 +345,24 @@ namespace Model
      * operation.</p> <note> <p>CodeDeployDefault.OneAtATime is the default deployment
      * configuration. It is used if a configuration isn't specified for the deployment
      * or the deployment group.</p> </note> <p>The predefined deployment configurations
-     * include the following:</p> <ul> <li> <p><b>CodeDeployDefault.AllAtOnce</b>
-     * attempts to deploy an application revision to as many instance as possible at
+     * include the following:</p> <ul> <li> <p> <b>CodeDeployDefault.AllAtOnce</b>
+     * attempts to deploy an application revision to as many instances as possible at
      * once. The status of the overall deployment will be displayed as <b>Succeeded</b>
      * if the application revision is deployed to one or more of the instances. The
      * status of the overall deployment will be displayed as <b>Failed</b> if the
      * application revision is not deployed to any of the instances. Using an example
-     * of nine instance, CodeDeployDefault.AllAtOnce will attempt to deploy to all nine
-     * instance at once. The overall deployment will succeed if deployment to even a
-     * single instance is successful; it will fail only if deployments to all nine
-     * instance fail. </p> </li> <li> <p><b>CodeDeployDefault.HalfAtATime</b> deploys
-     * to up to half of the instances at a time (with fractions rounded down). The
-     * overall deployment succeeds if the application revision is deployed to at least
-     * half of the instances (with fractions rounded up); otherwise, the deployment
-     * fails. In the example of nine instances, it will deploy to up to four instance
-     * at a time. The overall deployment succeeds if deployment to five or more
-     * instances succeed; otherwise, the deployment fails. The deployment may be
+     * of nine instances, CodeDeployDefault.AllAtOnce will attempt to deploy to all
+     * nine instances at once. The overall deployment will succeed if deployment to
+     * even a single instance is successful; it will fail only if deployments to all
+     * nine instances fail. </p> </li> <li> <p> <b>CodeDeployDefault.HalfAtATime</b>
+     * deploys to up to half of the instances at a time (with fractions rounded down).
+     * The overall deployment succeeds if the application revision is deployed to at
+     * least half of the instances (with fractions rounded up); otherwise, the
+     * deployment fails. In the example of nine instances, it will deploy to up to four
+     * instances at a time. The overall deployment succeeds if deployment to five or
+     * more instances succeed; otherwise, the deployment fails. The deployment may be
      * successfully deployed to some instances even if the overall deployment
-     * fails.</p> </li> <li> <p><b>CodeDeployDefault.OneAtATime</b> deploys the
+     * fails.</p> </li> <li> <p> <b>CodeDeployDefault.OneAtATime</b> deploys the
      * application revision to only one instance at a time.</p> <p>For deployment
      * groups that contain more than one instance:</p> <ul> <li> <p>The overall
      * deployment succeeds if the application revision is deployed to all of the
@@ -371,9 +373,9 @@ namespace Model
      * deployment fails as soon as the application revision fails to be deployed to any
      * but the last instance. The deployment may be successfully deployed to some
      * instances even if the overall deployment fails.</p> </li> <li> <p>In an example
-     * using nine instance, it will deploy to one instance at a time. The overall
-     * deployment succeeds if deployment to the first eight instance is successful; the
-     * overall deployment fails if deployment to any of the first eight instance
+     * using nine instances, it will deploy to one instance at a time. The overall
+     * deployment succeeds if deployment to the first eight instances is successful;
+     * the overall deployment fails if deployment to any of the first eight instances
      * fails.</p> </li> </ul> <p>For deployment groups that contain only one instance,
      * the overall deployment is successful only if deployment to the single instance
      * is successful</p> </li> </ul>
@@ -387,24 +389,24 @@ namespace Model
      * operation.</p> <note> <p>CodeDeployDefault.OneAtATime is the default deployment
      * configuration. It is used if a configuration isn't specified for the deployment
      * or the deployment group.</p> </note> <p>The predefined deployment configurations
-     * include the following:</p> <ul> <li> <p><b>CodeDeployDefault.AllAtOnce</b>
-     * attempts to deploy an application revision to as many instance as possible at
+     * include the following:</p> <ul> <li> <p> <b>CodeDeployDefault.AllAtOnce</b>
+     * attempts to deploy an application revision to as many instances as possible at
      * once. The status of the overall deployment will be displayed as <b>Succeeded</b>
      * if the application revision is deployed to one or more of the instances. The
      * status of the overall deployment will be displayed as <b>Failed</b> if the
      * application revision is not deployed to any of the instances. Using an example
-     * of nine instance, CodeDeployDefault.AllAtOnce will attempt to deploy to all nine
-     * instance at once. The overall deployment will succeed if deployment to even a
-     * single instance is successful; it will fail only if deployments to all nine
-     * instance fail. </p> </li> <li> <p><b>CodeDeployDefault.HalfAtATime</b> deploys
-     * to up to half of the instances at a time (with fractions rounded down). The
-     * overall deployment succeeds if the application revision is deployed to at least
-     * half of the instances (with fractions rounded up); otherwise, the deployment
-     * fails. In the example of nine instances, it will deploy to up to four instance
-     * at a time. The overall deployment succeeds if deployment to five or more
-     * instances succeed; otherwise, the deployment fails. The deployment may be
+     * of nine instances, CodeDeployDefault.AllAtOnce will attempt to deploy to all
+     * nine instances at once. The overall deployment will succeed if deployment to
+     * even a single instance is successful; it will fail only if deployments to all
+     * nine instances fail. </p> </li> <li> <p> <b>CodeDeployDefault.HalfAtATime</b>
+     * deploys to up to half of the instances at a time (with fractions rounded down).
+     * The overall deployment succeeds if the application revision is deployed to at
+     * least half of the instances (with fractions rounded up); otherwise, the
+     * deployment fails. In the example of nine instances, it will deploy to up to four
+     * instances at a time. The overall deployment succeeds if deployment to five or
+     * more instances succeed; otherwise, the deployment fails. The deployment may be
      * successfully deployed to some instances even if the overall deployment
-     * fails.</p> </li> <li> <p><b>CodeDeployDefault.OneAtATime</b> deploys the
+     * fails.</p> </li> <li> <p> <b>CodeDeployDefault.OneAtATime</b> deploys the
      * application revision to only one instance at a time.</p> <p>For deployment
      * groups that contain more than one instance:</p> <ul> <li> <p>The overall
      * deployment succeeds if the application revision is deployed to all of the
@@ -415,9 +417,9 @@ namespace Model
      * deployment fails as soon as the application revision fails to be deployed to any
      * but the last instance. The deployment may be successfully deployed to some
      * instances even if the overall deployment fails.</p> </li> <li> <p>In an example
-     * using nine instance, it will deploy to one instance at a time. The overall
-     * deployment succeeds if deployment to the first eight instance is successful; the
-     * overall deployment fails if deployment to any of the first eight instance
+     * using nine instances, it will deploy to one instance at a time. The overall
+     * deployment succeeds if deployment to the first eight instances is successful;
+     * the overall deployment fails if deployment to any of the first eight instances
      * fails.</p> </li> </ul> <p>For deployment groups that contain only one instance,
      * the overall deployment is successful only if deployment to the single instance
      * is successful</p> </li> </ul>
@@ -577,46 +579,120 @@ namespace Model
     inline CreateDeploymentGroupRequest& WithServiceRoleArn(const char* value) { SetServiceRoleArn(value); return *this;}
 
     /**
-     * <p>Information about triggers to create when the deployment group is
-     * created.</p>
+     * <p>Information about triggers to create when the deployment group is created.
+     * For examples, see <a
+     * href="http://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-sns.html">Create
+     * a Trigger for an AWS CodeDeploy Event</a> in the AWS CodeDeploy User Guide.</p>
      */
     inline const Aws::Vector<TriggerConfig>& GetTriggerConfigurations() const{ return m_triggerConfigurations; }
 
     /**
-     * <p>Information about triggers to create when the deployment group is
-     * created.</p>
+     * <p>Information about triggers to create when the deployment group is created.
+     * For examples, see <a
+     * href="http://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-sns.html">Create
+     * a Trigger for an AWS CodeDeploy Event</a> in the AWS CodeDeploy User Guide.</p>
      */
     inline void SetTriggerConfigurations(const Aws::Vector<TriggerConfig>& value) { m_triggerConfigurationsHasBeenSet = true; m_triggerConfigurations = value; }
 
     /**
-     * <p>Information about triggers to create when the deployment group is
-     * created.</p>
+     * <p>Information about triggers to create when the deployment group is created.
+     * For examples, see <a
+     * href="http://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-sns.html">Create
+     * a Trigger for an AWS CodeDeploy Event</a> in the AWS CodeDeploy User Guide.</p>
      */
     inline void SetTriggerConfigurations(Aws::Vector<TriggerConfig>&& value) { m_triggerConfigurationsHasBeenSet = true; m_triggerConfigurations = value; }
 
     /**
-     * <p>Information about triggers to create when the deployment group is
-     * created.</p>
+     * <p>Information about triggers to create when the deployment group is created.
+     * For examples, see <a
+     * href="http://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-sns.html">Create
+     * a Trigger for an AWS CodeDeploy Event</a> in the AWS CodeDeploy User Guide.</p>
      */
     inline CreateDeploymentGroupRequest& WithTriggerConfigurations(const Aws::Vector<TriggerConfig>& value) { SetTriggerConfigurations(value); return *this;}
 
     /**
-     * <p>Information about triggers to create when the deployment group is
-     * created.</p>
+     * <p>Information about triggers to create when the deployment group is created.
+     * For examples, see <a
+     * href="http://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-sns.html">Create
+     * a Trigger for an AWS CodeDeploy Event</a> in the AWS CodeDeploy User Guide.</p>
      */
     inline CreateDeploymentGroupRequest& WithTriggerConfigurations(Aws::Vector<TriggerConfig>&& value) { SetTriggerConfigurations(value); return *this;}
 
     /**
-     * <p>Information about triggers to create when the deployment group is
-     * created.</p>
+     * <p>Information about triggers to create when the deployment group is created.
+     * For examples, see <a
+     * href="http://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-sns.html">Create
+     * a Trigger for an AWS CodeDeploy Event</a> in the AWS CodeDeploy User Guide.</p>
      */
     inline CreateDeploymentGroupRequest& AddTriggerConfigurations(const TriggerConfig& value) { m_triggerConfigurationsHasBeenSet = true; m_triggerConfigurations.push_back(value); return *this; }
 
     /**
-     * <p>Information about triggers to create when the deployment group is
-     * created.</p>
+     * <p>Information about triggers to create when the deployment group is created.
+     * For examples, see <a
+     * href="http://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-sns.html">Create
+     * a Trigger for an AWS CodeDeploy Event</a> in the AWS CodeDeploy User Guide.</p>
      */
     inline CreateDeploymentGroupRequest& AddTriggerConfigurations(TriggerConfig&& value) { m_triggerConfigurationsHasBeenSet = true; m_triggerConfigurations.push_back(value); return *this; }
+
+    /**
+     * <p>Information to add about Amazon CloudWatch alarms when the deployment group
+     * is created. </p>
+     */
+    inline const AlarmConfiguration& GetAlarmConfiguration() const{ return m_alarmConfiguration; }
+
+    /**
+     * <p>Information to add about Amazon CloudWatch alarms when the deployment group
+     * is created. </p>
+     */
+    inline void SetAlarmConfiguration(const AlarmConfiguration& value) { m_alarmConfigurationHasBeenSet = true; m_alarmConfiguration = value; }
+
+    /**
+     * <p>Information to add about Amazon CloudWatch alarms when the deployment group
+     * is created. </p>
+     */
+    inline void SetAlarmConfiguration(AlarmConfiguration&& value) { m_alarmConfigurationHasBeenSet = true; m_alarmConfiguration = value; }
+
+    /**
+     * <p>Information to add about Amazon CloudWatch alarms when the deployment group
+     * is created. </p>
+     */
+    inline CreateDeploymentGroupRequest& WithAlarmConfiguration(const AlarmConfiguration& value) { SetAlarmConfiguration(value); return *this;}
+
+    /**
+     * <p>Information to add about Amazon CloudWatch alarms when the deployment group
+     * is created. </p>
+     */
+    inline CreateDeploymentGroupRequest& WithAlarmConfiguration(AlarmConfiguration&& value) { SetAlarmConfiguration(value); return *this;}
+
+    /**
+     * <p>Configuration information for an automatic rollback that is added when a
+     * deployment group is created.</p>
+     */
+    inline const AutoRollbackConfiguration& GetAutoRollbackConfiguration() const{ return m_autoRollbackConfiguration; }
+
+    /**
+     * <p>Configuration information for an automatic rollback that is added when a
+     * deployment group is created.</p>
+     */
+    inline void SetAutoRollbackConfiguration(const AutoRollbackConfiguration& value) { m_autoRollbackConfigurationHasBeenSet = true; m_autoRollbackConfiguration = value; }
+
+    /**
+     * <p>Configuration information for an automatic rollback that is added when a
+     * deployment group is created.</p>
+     */
+    inline void SetAutoRollbackConfiguration(AutoRollbackConfiguration&& value) { m_autoRollbackConfigurationHasBeenSet = true; m_autoRollbackConfiguration = value; }
+
+    /**
+     * <p>Configuration information for an automatic rollback that is added when a
+     * deployment group is created.</p>
+     */
+    inline CreateDeploymentGroupRequest& WithAutoRollbackConfiguration(const AutoRollbackConfiguration& value) { SetAutoRollbackConfiguration(value); return *this;}
+
+    /**
+     * <p>Configuration information for an automatic rollback that is added when a
+     * deployment group is created.</p>
+     */
+    inline CreateDeploymentGroupRequest& WithAutoRollbackConfiguration(AutoRollbackConfiguration&& value) { SetAutoRollbackConfiguration(value); return *this;}
 
   private:
     Aws::String m_applicationName;
@@ -635,6 +711,10 @@ namespace Model
     bool m_serviceRoleArnHasBeenSet;
     Aws::Vector<TriggerConfig> m_triggerConfigurations;
     bool m_triggerConfigurationsHasBeenSet;
+    AlarmConfiguration m_alarmConfiguration;
+    bool m_alarmConfigurationHasBeenSet;
+    AutoRollbackConfiguration m_autoRollbackConfiguration;
+    bool m_autoRollbackConfigurationHasBeenSet;
   };
 
 } // namespace Model

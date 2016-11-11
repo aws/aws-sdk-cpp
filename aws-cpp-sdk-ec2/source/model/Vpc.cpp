@@ -31,10 +31,12 @@ namespace Model
 
 Vpc::Vpc() : 
     m_vpcIdHasBeenSet(false),
+    m_state(VpcState::NOT_SET),
     m_stateHasBeenSet(false),
     m_cidrBlockHasBeenSet(false),
     m_dhcpOptionsIdHasBeenSet(false),
     m_tagsHasBeenSet(false),
+    m_instanceTenancy(Tenancy::NOT_SET),
     m_instanceTenancyHasBeenSet(false),
     m_isDefault(false),
     m_isDefaultHasBeenSet(false)
@@ -43,10 +45,12 @@ Vpc::Vpc() :
 
 Vpc::Vpc(const XmlNode& xmlNode) : 
     m_vpcIdHasBeenSet(false),
+    m_state(VpcState::NOT_SET),
     m_stateHasBeenSet(false),
     m_cidrBlockHasBeenSet(false),
     m_dhcpOptionsIdHasBeenSet(false),
     m_tagsHasBeenSet(false),
+    m_instanceTenancy(Tenancy::NOT_SET),
     m_instanceTenancyHasBeenSet(false),
     m_isDefault(false),
     m_isDefaultHasBeenSet(false)

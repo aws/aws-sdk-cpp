@@ -25,7 +25,8 @@ namespace Model
   enum class IPSetDescriptorType
   {
     NOT_SET,
-    IPV4
+    IPV4,
+    IPV6
   };
 
 namespace IPSetDescriptorTypeMapper

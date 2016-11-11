@@ -30,6 +30,7 @@ namespace Model
 Artifact::Artifact() : 
     m_arnHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_type(ArtifactType::NOT_SET),
     m_typeHasBeenSet(false),
     m_extensionHasBeenSet(false),
     m_urlHasBeenSet(false)
@@ -39,6 +40,7 @@ Artifact::Artifact() :
 Artifact::Artifact(const JsonValue& jsonValue) : 
     m_arnHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_type(ArtifactType::NOT_SET),
     m_typeHasBeenSet(false),
     m_extensionHasBeenSet(false),
     m_urlHasBeenSet(false)

@@ -28,6 +28,7 @@ namespace Model
 {
 
 ScheduleRunTest::ScheduleRunTest() : 
+    m_type(TestType::NOT_SET),
     m_typeHasBeenSet(false),
     m_testPackageArnHasBeenSet(false),
     m_filterHasBeenSet(false),
@@ -36,6 +37,7 @@ ScheduleRunTest::ScheduleRunTest() :
 }
 
 ScheduleRunTest::ScheduleRunTest(const JsonValue& jsonValue) : 
+    m_type(TestType::NOT_SET),
     m_typeHasBeenSet(false),
     m_testPackageArnHasBeenSet(false),
     m_filterHasBeenSet(false),

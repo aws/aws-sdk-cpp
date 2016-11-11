@@ -26,7 +26,7 @@ namespace Model
 {
 
   /**
-   * <p> </p>
+   * <p/>
    */
   class AWS_REDSHIFT_API ModifyClusterSubnetGroupRequest : public RedshiftRequest
   {
@@ -105,50 +105,50 @@ namespace Model
     inline ModifyClusterSubnetGroupRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
     /**
-     * <p> An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a
-     * single request. </p>
+     * <p>An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a
+     * single request.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSubnetIds() const{ return m_subnetIds; }
 
     /**
-     * <p> An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a
-     * single request. </p>
+     * <p>An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a
+     * single request.</p>
      */
     inline void SetSubnetIds(const Aws::Vector<Aws::String>& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = value; }
 
     /**
-     * <p> An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a
-     * single request. </p>
+     * <p>An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a
+     * single request.</p>
      */
     inline void SetSubnetIds(Aws::Vector<Aws::String>&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = value; }
 
     /**
-     * <p> An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a
-     * single request. </p>
+     * <p>An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a
+     * single request.</p>
      */
     inline ModifyClusterSubnetGroupRequest& WithSubnetIds(const Aws::Vector<Aws::String>& value) { SetSubnetIds(value); return *this;}
 
     /**
-     * <p> An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a
-     * single request. </p>
+     * <p>An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a
+     * single request.</p>
      */
     inline ModifyClusterSubnetGroupRequest& WithSubnetIds(Aws::Vector<Aws::String>&& value) { SetSubnetIds(value); return *this;}
 
     /**
-     * <p> An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a
-     * single request. </p>
+     * <p>An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a
+     * single request.</p>
      */
     inline ModifyClusterSubnetGroupRequest& AddSubnetIds(const Aws::String& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
 
     /**
-     * <p> An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a
-     * single request. </p>
+     * <p>An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a
+     * single request.</p>
      */
     inline ModifyClusterSubnetGroupRequest& AddSubnetIds(Aws::String&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
 
     /**
-     * <p> An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a
-     * single request. </p>
+     * <p>An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a
+     * single request.</p>
      */
     inline ModifyClusterSubnetGroupRequest& AddSubnetIds(const char* value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
 

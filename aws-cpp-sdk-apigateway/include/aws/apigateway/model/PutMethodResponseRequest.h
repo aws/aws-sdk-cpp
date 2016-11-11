@@ -106,37 +106,37 @@ namespace Model
     inline PutMethodResponseRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
 
     /**
-     * <p>The HTTP verb that identifies the <a>Method</a> resource.</p>
+     * <p>The HTTP verb of the <a>Method</a> resource.</p>
      */
     inline const Aws::String& GetHttpMethod() const{ return m_httpMethod; }
 
     /**
-     * <p>The HTTP verb that identifies the <a>Method</a> resource.</p>
+     * <p>The HTTP verb of the <a>Method</a> resource.</p>
      */
     inline void SetHttpMethod(const Aws::String& value) { m_httpMethodHasBeenSet = true; m_httpMethod = value; }
 
     /**
-     * <p>The HTTP verb that identifies the <a>Method</a> resource.</p>
+     * <p>The HTTP verb of the <a>Method</a> resource.</p>
      */
     inline void SetHttpMethod(Aws::String&& value) { m_httpMethodHasBeenSet = true; m_httpMethod = value; }
 
     /**
-     * <p>The HTTP verb that identifies the <a>Method</a> resource.</p>
+     * <p>The HTTP verb of the <a>Method</a> resource.</p>
      */
     inline void SetHttpMethod(const char* value) { m_httpMethodHasBeenSet = true; m_httpMethod.assign(value); }
 
     /**
-     * <p>The HTTP verb that identifies the <a>Method</a> resource.</p>
+     * <p>The HTTP verb of the <a>Method</a> resource.</p>
      */
     inline PutMethodResponseRequest& WithHttpMethod(const Aws::String& value) { SetHttpMethod(value); return *this;}
 
     /**
-     * <p>The HTTP verb that identifies the <a>Method</a> resource.</p>
+     * <p>The HTTP verb of the <a>Method</a> resource.</p>
      */
     inline PutMethodResponseRequest& WithHttpMethod(Aws::String&& value) { SetHttpMethod(value); return *this;}
 
     /**
-     * <p>The HTTP verb that identifies the <a>Method</a> resource.</p>
+     * <p>The HTTP verb of the <a>Method</a> resource.</p>
      */
     inline PutMethodResponseRequest& WithHttpMethod(const char* value) { SetHttpMethod(value); return *this;}
 
@@ -176,90 +176,146 @@ namespace Model
     inline PutMethodResponseRequest& WithStatusCode(const char* value) { SetStatusCode(value); return *this;}
 
     /**
-     * <p>Represents response parameters that can be sent back to the caller by Amazon
-     * API Gateway. Response parameters are represented as a key/value map, with a
-     * destination as the key and a Boolean flag as the value. The Boolean flag is used
-     * to specify whether the parameter is required. A destination must match the
-     * pattern <code>method.response.header.{name}</code>, where <code>name</code> is a
-     * valid, unique header name. Destinations specified here are available to the
-     * integration for mapping from integration response parameters.</p>
+     * <p>A key-value map specifying required or optional response parameters that
+     * Amazon API Gateway can send back to the caller. A key defines a method response
+     * header name and the associated value is a Boolean flag indicating whether the
+     * method response parameter is required or not. The method response header names
+     * must match the pattern of <code>method.response.header.{name}</code>, where
+     * <code>name</code> is a valid and unique header name. The response parameter
+     * names defined here are available in the integration response to be mapped from
+     * an integration response header expressed in
+     * <code>integration.response.header.{name}</code>, a static value enclosed within
+     * a pair of single quotes (e.g., <code>'application/json'</code>), or a JSON
+     * expression from the back-end response payload in the form of
+     * <code>integration.response.body.{JSON-expression}</code>, where
+     * <code>JSON-expression</code> is a valid JSON expression without the
+     * <code>$</code> prefix.)</p>
      */
     inline const Aws::Map<Aws::String, bool>& GetResponseParameters() const{ return m_responseParameters; }
 
     /**
-     * <p>Represents response parameters that can be sent back to the caller by Amazon
-     * API Gateway. Response parameters are represented as a key/value map, with a
-     * destination as the key and a Boolean flag as the value. The Boolean flag is used
-     * to specify whether the parameter is required. A destination must match the
-     * pattern <code>method.response.header.{name}</code>, where <code>name</code> is a
-     * valid, unique header name. Destinations specified here are available to the
-     * integration for mapping from integration response parameters.</p>
+     * <p>A key-value map specifying required or optional response parameters that
+     * Amazon API Gateway can send back to the caller. A key defines a method response
+     * header name and the associated value is a Boolean flag indicating whether the
+     * method response parameter is required or not. The method response header names
+     * must match the pattern of <code>method.response.header.{name}</code>, where
+     * <code>name</code> is a valid and unique header name. The response parameter
+     * names defined here are available in the integration response to be mapped from
+     * an integration response header expressed in
+     * <code>integration.response.header.{name}</code>, a static value enclosed within
+     * a pair of single quotes (e.g., <code>'application/json'</code>), or a JSON
+     * expression from the back-end response payload in the form of
+     * <code>integration.response.body.{JSON-expression}</code>, where
+     * <code>JSON-expression</code> is a valid JSON expression without the
+     * <code>$</code> prefix.)</p>
      */
     inline void SetResponseParameters(const Aws::Map<Aws::String, bool>& value) { m_responseParametersHasBeenSet = true; m_responseParameters = value; }
 
     /**
-     * <p>Represents response parameters that can be sent back to the caller by Amazon
-     * API Gateway. Response parameters are represented as a key/value map, with a
-     * destination as the key and a Boolean flag as the value. The Boolean flag is used
-     * to specify whether the parameter is required. A destination must match the
-     * pattern <code>method.response.header.{name}</code>, where <code>name</code> is a
-     * valid, unique header name. Destinations specified here are available to the
-     * integration for mapping from integration response parameters.</p>
+     * <p>A key-value map specifying required or optional response parameters that
+     * Amazon API Gateway can send back to the caller. A key defines a method response
+     * header name and the associated value is a Boolean flag indicating whether the
+     * method response parameter is required or not. The method response header names
+     * must match the pattern of <code>method.response.header.{name}</code>, where
+     * <code>name</code> is a valid and unique header name. The response parameter
+     * names defined here are available in the integration response to be mapped from
+     * an integration response header expressed in
+     * <code>integration.response.header.{name}</code>, a static value enclosed within
+     * a pair of single quotes (e.g., <code>'application/json'</code>), or a JSON
+     * expression from the back-end response payload in the form of
+     * <code>integration.response.body.{JSON-expression}</code>, where
+     * <code>JSON-expression</code> is a valid JSON expression without the
+     * <code>$</code> prefix.)</p>
      */
     inline void SetResponseParameters(Aws::Map<Aws::String, bool>&& value) { m_responseParametersHasBeenSet = true; m_responseParameters = value; }
 
     /**
-     * <p>Represents response parameters that can be sent back to the caller by Amazon
-     * API Gateway. Response parameters are represented as a key/value map, with a
-     * destination as the key and a Boolean flag as the value. The Boolean flag is used
-     * to specify whether the parameter is required. A destination must match the
-     * pattern <code>method.response.header.{name}</code>, where <code>name</code> is a
-     * valid, unique header name. Destinations specified here are available to the
-     * integration for mapping from integration response parameters.</p>
+     * <p>A key-value map specifying required or optional response parameters that
+     * Amazon API Gateway can send back to the caller. A key defines a method response
+     * header name and the associated value is a Boolean flag indicating whether the
+     * method response parameter is required or not. The method response header names
+     * must match the pattern of <code>method.response.header.{name}</code>, where
+     * <code>name</code> is a valid and unique header name. The response parameter
+     * names defined here are available in the integration response to be mapped from
+     * an integration response header expressed in
+     * <code>integration.response.header.{name}</code>, a static value enclosed within
+     * a pair of single quotes (e.g., <code>'application/json'</code>), or a JSON
+     * expression from the back-end response payload in the form of
+     * <code>integration.response.body.{JSON-expression}</code>, where
+     * <code>JSON-expression</code> is a valid JSON expression without the
+     * <code>$</code> prefix.)</p>
      */
     inline PutMethodResponseRequest& WithResponseParameters(const Aws::Map<Aws::String, bool>& value) { SetResponseParameters(value); return *this;}
 
     /**
-     * <p>Represents response parameters that can be sent back to the caller by Amazon
-     * API Gateway. Response parameters are represented as a key/value map, with a
-     * destination as the key and a Boolean flag as the value. The Boolean flag is used
-     * to specify whether the parameter is required. A destination must match the
-     * pattern <code>method.response.header.{name}</code>, where <code>name</code> is a
-     * valid, unique header name. Destinations specified here are available to the
-     * integration for mapping from integration response parameters.</p>
+     * <p>A key-value map specifying required or optional response parameters that
+     * Amazon API Gateway can send back to the caller. A key defines a method response
+     * header name and the associated value is a Boolean flag indicating whether the
+     * method response parameter is required or not. The method response header names
+     * must match the pattern of <code>method.response.header.{name}</code>, where
+     * <code>name</code> is a valid and unique header name. The response parameter
+     * names defined here are available in the integration response to be mapped from
+     * an integration response header expressed in
+     * <code>integration.response.header.{name}</code>, a static value enclosed within
+     * a pair of single quotes (e.g., <code>'application/json'</code>), or a JSON
+     * expression from the back-end response payload in the form of
+     * <code>integration.response.body.{JSON-expression}</code>, where
+     * <code>JSON-expression</code> is a valid JSON expression without the
+     * <code>$</code> prefix.)</p>
      */
     inline PutMethodResponseRequest& WithResponseParameters(Aws::Map<Aws::String, bool>&& value) { SetResponseParameters(value); return *this;}
 
     /**
-     * <p>Represents response parameters that can be sent back to the caller by Amazon
-     * API Gateway. Response parameters are represented as a key/value map, with a
-     * destination as the key and a Boolean flag as the value. The Boolean flag is used
-     * to specify whether the parameter is required. A destination must match the
-     * pattern <code>method.response.header.{name}</code>, where <code>name</code> is a
-     * valid, unique header name. Destinations specified here are available to the
-     * integration for mapping from integration response parameters.</p>
+     * <p>A key-value map specifying required or optional response parameters that
+     * Amazon API Gateway can send back to the caller. A key defines a method response
+     * header name and the associated value is a Boolean flag indicating whether the
+     * method response parameter is required or not. The method response header names
+     * must match the pattern of <code>method.response.header.{name}</code>, where
+     * <code>name</code> is a valid and unique header name. The response parameter
+     * names defined here are available in the integration response to be mapped from
+     * an integration response header expressed in
+     * <code>integration.response.header.{name}</code>, a static value enclosed within
+     * a pair of single quotes (e.g., <code>'application/json'</code>), or a JSON
+     * expression from the back-end response payload in the form of
+     * <code>integration.response.body.{JSON-expression}</code>, where
+     * <code>JSON-expression</code> is a valid JSON expression without the
+     * <code>$</code> prefix.)</p>
      */
     inline PutMethodResponseRequest& AddResponseParameters(const Aws::String& key, bool value) { m_responseParametersHasBeenSet = true; m_responseParameters[key] = value; return *this; }
 
     /**
-     * <p>Represents response parameters that can be sent back to the caller by Amazon
-     * API Gateway. Response parameters are represented as a key/value map, with a
-     * destination as the key and a Boolean flag as the value. The Boolean flag is used
-     * to specify whether the parameter is required. A destination must match the
-     * pattern <code>method.response.header.{name}</code>, where <code>name</code> is a
-     * valid, unique header name. Destinations specified here are available to the
-     * integration for mapping from integration response parameters.</p>
+     * <p>A key-value map specifying required or optional response parameters that
+     * Amazon API Gateway can send back to the caller. A key defines a method response
+     * header name and the associated value is a Boolean flag indicating whether the
+     * method response parameter is required or not. The method response header names
+     * must match the pattern of <code>method.response.header.{name}</code>, where
+     * <code>name</code> is a valid and unique header name. The response parameter
+     * names defined here are available in the integration response to be mapped from
+     * an integration response header expressed in
+     * <code>integration.response.header.{name}</code>, a static value enclosed within
+     * a pair of single quotes (e.g., <code>'application/json'</code>), or a JSON
+     * expression from the back-end response payload in the form of
+     * <code>integration.response.body.{JSON-expression}</code>, where
+     * <code>JSON-expression</code> is a valid JSON expression without the
+     * <code>$</code> prefix.)</p>
      */
     inline PutMethodResponseRequest& AddResponseParameters(Aws::String&& key, bool value) { m_responseParametersHasBeenSet = true; m_responseParameters[key] = value; return *this; }
 
     /**
-     * <p>Represents response parameters that can be sent back to the caller by Amazon
-     * API Gateway. Response parameters are represented as a key/value map, with a
-     * destination as the key and a Boolean flag as the value. The Boolean flag is used
-     * to specify whether the parameter is required. A destination must match the
-     * pattern <code>method.response.header.{name}</code>, where <code>name</code> is a
-     * valid, unique header name. Destinations specified here are available to the
-     * integration for mapping from integration response parameters.</p>
+     * <p>A key-value map specifying required or optional response parameters that
+     * Amazon API Gateway can send back to the caller. A key defines a method response
+     * header name and the associated value is a Boolean flag indicating whether the
+     * method response parameter is required or not. The method response header names
+     * must match the pattern of <code>method.response.header.{name}</code>, where
+     * <code>name</code> is a valid and unique header name. The response parameter
+     * names defined here are available in the integration response to be mapped from
+     * an integration response header expressed in
+     * <code>integration.response.header.{name}</code>, a static value enclosed within
+     * a pair of single quotes (e.g., <code>'application/json'</code>), or a JSON
+     * expression from the back-end response payload in the form of
+     * <code>integration.response.body.{JSON-expression}</code>, where
+     * <code>JSON-expression</code> is a valid JSON expression without the
+     * <code>$</code> prefix.)</p>
      */
     inline PutMethodResponseRequest& AddResponseParameters(const char* key, bool value) { m_responseParametersHasBeenSet = true; m_responseParameters[key] = value; return *this; }
 

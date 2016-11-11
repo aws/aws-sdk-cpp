@@ -28,6 +28,7 @@ namespace Model
 {
 
 ResourceIdentifier::ResourceIdentifier() : 
+    m_resourceType(ResourceType::NOT_SET),
     m_resourceTypeHasBeenSet(false),
     m_resourceIdHasBeenSet(false),
     m_resourceNameHasBeenSet(false),
@@ -36,6 +37,7 @@ ResourceIdentifier::ResourceIdentifier() :
 }
 
 ResourceIdentifier::ResourceIdentifier(const JsonValue& jsonValue) : 
+    m_resourceType(ResourceType::NOT_SET),
     m_resourceTypeHasBeenSet(false),
     m_resourceIdHasBeenSet(false),
     m_resourceNameHasBeenSet(false),

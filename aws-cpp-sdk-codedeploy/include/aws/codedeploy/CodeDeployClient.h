@@ -241,19 +241,19 @@ namespace Model
     typedef std::function<void(const CodeDeployClient*, const Model::UpdateDeploymentGroupRequest&, const Model::UpdateDeploymentGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDeploymentGroupResponseReceivedHandler;
 
   /**
-   * <fullname>AWS CodeDeploy</fullname> <b>Overview</b> <p>This reference guide
-   * provides descriptions of the AWS CodeDeploy APIs. For more information about AWS
-   * CodeDeploy, see the <a
-   * href="docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy User
-   * Guide</a>.</p> <b>Using the APIs</b> <p>You can use the AWS CodeDeploy APIs to
-   * work with the following:</p> <ul> <li> <p>Applications are unique identifiers
-   * used by AWS CodeDeploy to ensure the correct combinations of revisions,
-   * deployment configurations, and deployment groups are being referenced during
-   * deployments.</p> <p>You can use the AWS CodeDeploy APIs to create, delete, get,
-   * list, and update applications.</p> </li> <li> <p>Deployment configurations are
-   * sets of deployment rules and success and failure conditions used by AWS
-   * CodeDeploy during deployments.</p> <p>You can use the AWS CodeDeploy APIs to
-   * create, delete, get, and list deployment configurations.</p> </li> <li>
+   * <fullname>AWS CodeDeploy</fullname> <p> <b>Overview</b> </p> <p>This reference
+   * guide provides descriptions of the AWS CodeDeploy APIs. For more information
+   * about AWS CodeDeploy, see the <a
+   * href="http://docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy
+   * User Guide</a>.</p> <p> <b>Using the APIs</b> </p> <p>You can use the AWS
+   * CodeDeploy APIs to work with the following:</p> <ul> <li> <p>Applications are
+   * unique identifiers used by AWS CodeDeploy to ensure the correct combinations of
+   * revisions, deployment configurations, and deployment groups are being referenced
+   * during deployments.</p> <p>You can use the AWS CodeDeploy APIs to create,
+   * delete, get, list, and update applications.</p> </li> <li> <p>Deployment
+   * configurations are sets of deployment rules and success and failure conditions
+   * used by AWS CodeDeploy during deployments.</p> <p>You can use the AWS CodeDeploy
+   * APIs to create, delete, get, and list deployment configurations.</p> </li> <li>
    * <p>Deployment groups are groups of instances to which application revisions can
    * be deployed.</p> <p>You can use the AWS CodeDeploy APIs to create, delete, get,
    * list, and update deployment groups.</p> </li> <li> <p>Instances represent Amazon
@@ -267,11 +267,11 @@ namespace Model
    * revisions contain source content (such as source code, web pages, executable
    * files, and deployment scripts) along with an application specification (AppSpec)
    * file. (The AppSpec file is unique to AWS CodeDeploy; it defines the deployment
-   * actions you want AWS CodeDeploy to execute.) Ffor application revisions stored
-   * in Amazon S3 buckets, an application revision is uniquely identified by its
-   * Amazon S3 object key and its ETag, version, or both. For application revisions
-   * stored in GitHub repositories, an application revision is uniquely identified by
-   * its repository name and commit ID. Application revisions are deployed through
+   * actions you want AWS CodeDeploy to execute.) For application revisions stored in
+   * Amazon S3 buckets, an application revision is uniquely identified by its Amazon
+   * S3 object key and its ETag, version, or both. For application revisions stored
+   * in GitHub repositories, an application revision is uniquely identified by its
+   * repository name and commit ID. Application revisions are deployed through
    * deployment groups.</p> <p>You can use the AWS CodeDeploy APIs to get, list, and
    * register application revisions.</p> </li> </ul>
    */
@@ -536,25 +536,25 @@ namespace Model
         virtual void DeleteApplicationAsync(const Model::DeleteApplicationRequest& request, const DeleteApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a deployment configuration.</p> <note>A deployment configuration
+         * <p>Deletes a deployment configuration.</p> <note> <p>A deployment configuration
          * cannot be deleted if it is currently in use. Predefined configurations cannot be
-         * deleted.</note>
+         * deleted.</p> </note>
          */
         virtual Model::DeleteDeploymentConfigOutcome DeleteDeploymentConfig(const Model::DeleteDeploymentConfigRequest& request) const;
 
         /**
-         * <p>Deletes a deployment configuration.</p> <note>A deployment configuration
+         * <p>Deletes a deployment configuration.</p> <note> <p>A deployment configuration
          * cannot be deleted if it is currently in use. Predefined configurations cannot be
-         * deleted.</note>
+         * deleted.</p> </note>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteDeploymentConfigOutcomeCallable DeleteDeploymentConfigCallable(const Model::DeleteDeploymentConfigRequest& request) const;
 
         /**
-         * <p>Deletes a deployment configuration.</p> <note>A deployment configuration
+         * <p>Deletes a deployment configuration.</p> <note> <p>A deployment configuration
          * cannot be deleted if it is currently in use. Predefined configurations cannot be
-         * deleted.</note>
+         * deleted.</p> </note>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */

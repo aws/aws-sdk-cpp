@@ -32,6 +32,7 @@ MountTargetDescription::MountTargetDescription() :
     m_mountTargetIdHasBeenSet(false),
     m_fileSystemIdHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
+    m_lifeCycleState(LifeCycleState::NOT_SET),
     m_lifeCycleStateHasBeenSet(false),
     m_ipAddressHasBeenSet(false),
     m_networkInterfaceIdHasBeenSet(false)
@@ -43,6 +44,7 @@ MountTargetDescription::MountTargetDescription(const JsonValue& jsonValue) :
     m_mountTargetIdHasBeenSet(false),
     m_fileSystemIdHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
+    m_lifeCycleState(LifeCycleState::NOT_SET),
     m_lifeCycleStateHasBeenSet(false),
     m_ipAddressHasBeenSet(false),
     m_networkInterfaceIdHasBeenSet(false)

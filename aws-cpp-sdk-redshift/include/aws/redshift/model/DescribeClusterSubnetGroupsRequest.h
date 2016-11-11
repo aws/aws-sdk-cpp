@@ -26,7 +26,7 @@ namespace Model
 {
 
   /**
-   * <p> </p>
+   * <p/>
    */
   class AWS_REDSHIFT_API DescribeClusterSubnetGroupsRequest : public RedshiftRequest
   {
@@ -35,72 +35,72 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     /**
-     * <p>The name of the cluster subnet group for which information is requested. </p>
+     * <p>The name of the cluster subnet group for which information is requested.</p>
      */
     inline const Aws::String& GetClusterSubnetGroupName() const{ return m_clusterSubnetGroupName; }
 
     /**
-     * <p>The name of the cluster subnet group for which information is requested. </p>
+     * <p>The name of the cluster subnet group for which information is requested.</p>
      */
     inline void SetClusterSubnetGroupName(const Aws::String& value) { m_clusterSubnetGroupNameHasBeenSet = true; m_clusterSubnetGroupName = value; }
 
     /**
-     * <p>The name of the cluster subnet group for which information is requested. </p>
+     * <p>The name of the cluster subnet group for which information is requested.</p>
      */
     inline void SetClusterSubnetGroupName(Aws::String&& value) { m_clusterSubnetGroupNameHasBeenSet = true; m_clusterSubnetGroupName = value; }
 
     /**
-     * <p>The name of the cluster subnet group for which information is requested. </p>
+     * <p>The name of the cluster subnet group for which information is requested.</p>
      */
     inline void SetClusterSubnetGroupName(const char* value) { m_clusterSubnetGroupNameHasBeenSet = true; m_clusterSubnetGroupName.assign(value); }
 
     /**
-     * <p>The name of the cluster subnet group for which information is requested. </p>
+     * <p>The name of the cluster subnet group for which information is requested.</p>
      */
     inline DescribeClusterSubnetGroupsRequest& WithClusterSubnetGroupName(const Aws::String& value) { SetClusterSubnetGroupName(value); return *this;}
 
     /**
-     * <p>The name of the cluster subnet group for which information is requested. </p>
+     * <p>The name of the cluster subnet group for which information is requested.</p>
      */
     inline DescribeClusterSubnetGroupsRequest& WithClusterSubnetGroupName(Aws::String&& value) { SetClusterSubnetGroupName(value); return *this;}
 
     /**
-     * <p>The name of the cluster subnet group for which information is requested. </p>
+     * <p>The name of the cluster subnet group for which information is requested.</p>
      */
     inline DescribeClusterSubnetGroupsRequest& WithClusterSubnetGroupName(const char* value) { SetClusterSubnetGroupName(value); return *this;}
 
     /**
-     * <p> The maximum number of response records to return in each call. If the number
+     * <p>The maximum number of response records to return in each call. If the number
      * of remaining response records exceeds the specified <code>MaxRecords</code>
      * value, a value is returned in a <code>marker</code> field of the response. You
      * can retrieve the next set of records by retrying the command with the returned
-     * marker value. </p> <p>Default: <code>100</code></p> <p>Constraints: minimum 20,
+     * marker value. </p> <p>Default: <code>100</code> </p> <p>Constraints: minimum 20,
      * maximum 100.</p>
      */
     inline int GetMaxRecords() const{ return m_maxRecords; }
 
     /**
-     * <p> The maximum number of response records to return in each call. If the number
+     * <p>The maximum number of response records to return in each call. If the number
      * of remaining response records exceeds the specified <code>MaxRecords</code>
      * value, a value is returned in a <code>marker</code> field of the response. You
      * can retrieve the next set of records by retrying the command with the returned
-     * marker value. </p> <p>Default: <code>100</code></p> <p>Constraints: minimum 20,
+     * marker value. </p> <p>Default: <code>100</code> </p> <p>Constraints: minimum 20,
      * maximum 100.</p>
      */
     inline void SetMaxRecords(int value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
 
     /**
-     * <p> The maximum number of response records to return in each call. If the number
+     * <p>The maximum number of response records to return in each call. If the number
      * of remaining response records exceeds the specified <code>MaxRecords</code>
      * value, a value is returned in a <code>marker</code> field of the response. You
      * can retrieve the next set of records by retrying the command with the returned
-     * marker value. </p> <p>Default: <code>100</code></p> <p>Constraints: minimum 20,
+     * marker value. </p> <p>Default: <code>100</code> </p> <p>Constraints: minimum 20,
      * maximum 100.</p>
      */
     inline DescribeClusterSubnetGroupsRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
 
     /**
-     * <p> An optional parameter that specifies the starting point to return a set of
+     * <p>An optional parameter that specifies the starting point to return a set of
      * response records. When the results of a <a>DescribeClusterSubnetGroups</a>
      * request exceed the value specified in <code>MaxRecords</code>, AWS returns a
      * value in the <code>Marker</code> field of the response. You can retrieve the
@@ -110,7 +110,7 @@ namespace Model
     inline const Aws::String& GetMarker() const{ return m_marker; }
 
     /**
-     * <p> An optional parameter that specifies the starting point to return a set of
+     * <p>An optional parameter that specifies the starting point to return a set of
      * response records. When the results of a <a>DescribeClusterSubnetGroups</a>
      * request exceed the value specified in <code>MaxRecords</code>, AWS returns a
      * value in the <code>Marker</code> field of the response. You can retrieve the
@@ -120,7 +120,7 @@ namespace Model
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
 
     /**
-     * <p> An optional parameter that specifies the starting point to return a set of
+     * <p>An optional parameter that specifies the starting point to return a set of
      * response records. When the results of a <a>DescribeClusterSubnetGroups</a>
      * request exceed the value specified in <code>MaxRecords</code>, AWS returns a
      * value in the <code>Marker</code> field of the response. You can retrieve the
@@ -130,7 +130,7 @@ namespace Model
     inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = value; }
 
     /**
-     * <p> An optional parameter that specifies the starting point to return a set of
+     * <p>An optional parameter that specifies the starting point to return a set of
      * response records. When the results of a <a>DescribeClusterSubnetGroups</a>
      * request exceed the value specified in <code>MaxRecords</code>, AWS returns a
      * value in the <code>Marker</code> field of the response. You can retrieve the
@@ -140,7 +140,7 @@ namespace Model
     inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
 
     /**
-     * <p> An optional parameter that specifies the starting point to return a set of
+     * <p>An optional parameter that specifies the starting point to return a set of
      * response records. When the results of a <a>DescribeClusterSubnetGroups</a>
      * request exceed the value specified in <code>MaxRecords</code>, AWS returns a
      * value in the <code>Marker</code> field of the response. You can retrieve the
@@ -150,7 +150,7 @@ namespace Model
     inline DescribeClusterSubnetGroupsRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
 
     /**
-     * <p> An optional parameter that specifies the starting point to return a set of
+     * <p>An optional parameter that specifies the starting point to return a set of
      * response records. When the results of a <a>DescribeClusterSubnetGroups</a>
      * request exceed the value specified in <code>MaxRecords</code>, AWS returns a
      * value in the <code>Marker</code> field of the response. You can retrieve the
@@ -160,7 +160,7 @@ namespace Model
     inline DescribeClusterSubnetGroupsRequest& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
 
     /**
-     * <p> An optional parameter that specifies the starting point to return a set of
+     * <p>An optional parameter that specifies the starting point to return a set of
      * response records. When the results of a <a>DescribeClusterSubnetGroups</a>
      * request exceed the value specified in <code>MaxRecords</code>, AWS returns a
      * value in the <code>Marker</code> field of the response. You can retrieve the

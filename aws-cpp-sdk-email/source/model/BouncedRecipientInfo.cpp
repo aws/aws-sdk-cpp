@@ -32,6 +32,7 @@ namespace Model
 BouncedRecipientInfo::BouncedRecipientInfo() : 
     m_recipientHasBeenSet(false),
     m_recipientArnHasBeenSet(false),
+    m_bounceType(BounceType::NOT_SET),
     m_bounceTypeHasBeenSet(false),
     m_recipientDsnFieldsHasBeenSet(false)
 {
@@ -40,6 +41,7 @@ BouncedRecipientInfo::BouncedRecipientInfo() :
 BouncedRecipientInfo::BouncedRecipientInfo(const XmlNode& xmlNode) : 
     m_recipientHasBeenSet(false),
     m_recipientArnHasBeenSet(false),
+    m_bounceType(BounceType::NOT_SET),
     m_bounceTypeHasBeenSet(false),
     m_recipientDsnFieldsHasBeenSet(false)
 {

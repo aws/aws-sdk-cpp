@@ -26,13 +26,15 @@ using namespace Aws;
 
 CreatePublicVirtualInterfaceResult::CreatePublicVirtualInterfaceResult() : 
     m_vlan(0),
-    m_asn(0)
+    m_asn(0),
+    m_virtualInterfaceState(VirtualInterfaceState::NOT_SET)
 {
 }
 
 CreatePublicVirtualInterfaceResult::CreatePublicVirtualInterfaceResult(const AmazonWebServiceResult<JsonValue>& result) : 
     m_vlan(0),
-    m_asn(0)
+    m_asn(0),
+    m_virtualInterfaceState(VirtualInterfaceState::NOT_SET)
 {
   *this = result;
 }

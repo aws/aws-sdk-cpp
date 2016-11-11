@@ -70,37 +70,37 @@ namespace Model
     inline SetPermissionRequest& WithStackId(const char* value) { SetStackId(value); return *this;}
 
     /**
-     * <p>The user's IAM ARN.</p>
+     * <p>The user's IAM ARN. This can also be a federated user's ARN.</p>
      */
     inline const Aws::String& GetIamUserArn() const{ return m_iamUserArn; }
 
     /**
-     * <p>The user's IAM ARN.</p>
+     * <p>The user's IAM ARN. This can also be a federated user's ARN.</p>
      */
     inline void SetIamUserArn(const Aws::String& value) { m_iamUserArnHasBeenSet = true; m_iamUserArn = value; }
 
     /**
-     * <p>The user's IAM ARN.</p>
+     * <p>The user's IAM ARN. This can also be a federated user's ARN.</p>
      */
     inline void SetIamUserArn(Aws::String&& value) { m_iamUserArnHasBeenSet = true; m_iamUserArn = value; }
 
     /**
-     * <p>The user's IAM ARN.</p>
+     * <p>The user's IAM ARN. This can also be a federated user's ARN.</p>
      */
     inline void SetIamUserArn(const char* value) { m_iamUserArnHasBeenSet = true; m_iamUserArn.assign(value); }
 
     /**
-     * <p>The user's IAM ARN.</p>
+     * <p>The user's IAM ARN. This can also be a federated user's ARN.</p>
      */
     inline SetPermissionRequest& WithIamUserArn(const Aws::String& value) { SetIamUserArn(value); return *this;}
 
     /**
-     * <p>The user's IAM ARN.</p>
+     * <p>The user's IAM ARN. This can also be a federated user's ARN.</p>
      */
     inline SetPermissionRequest& WithIamUserArn(Aws::String&& value) { SetIamUserArn(value); return *this;}
 
     /**
-     * <p>The user's IAM ARN.</p>
+     * <p>The user's IAM ARN. This can also be a federated user's ARN.</p>
      */
     inline SetPermissionRequest& WithIamUserArn(const char* value) { SetIamUserArn(value); return *this;}
 

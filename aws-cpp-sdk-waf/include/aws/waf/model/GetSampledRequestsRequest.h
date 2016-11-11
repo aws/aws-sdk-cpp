@@ -78,72 +78,72 @@ namespace Model
     inline GetSampledRequestsRequest& WithWebAclId(const char* value) { SetWebAclId(value); return *this;}
 
     /**
-     * <p><code>RuleId</code> is one of two values:</p> <ul> <li>The
+     * <p> <code>RuleId</code> is one of two values:</p> <ul> <li> <p>The
      * <code>RuleId</code> of the <code>Rule</code> for which you want
-     * <code>GetSampledRequests</code> to return a sample of requests.</li>
-     * <li><code>Default_Action</code>, which causes <code>GetSampledRequests</code> to
+     * <code>GetSampledRequests</code> to return a sample of requests.</p> </li> <li>
+     * <p> <code>Default_Action</code>, which causes <code>GetSampledRequests</code> to
      * return a sample of the requests that didn't match any of the rules in the
-     * specified <code>WebACL</code>.</li> </ul>
+     * specified <code>WebACL</code>.</p> </li> </ul>
      */
     inline const Aws::String& GetRuleId() const{ return m_ruleId; }
 
     /**
-     * <p><code>RuleId</code> is one of two values:</p> <ul> <li>The
+     * <p> <code>RuleId</code> is one of two values:</p> <ul> <li> <p>The
      * <code>RuleId</code> of the <code>Rule</code> for which you want
-     * <code>GetSampledRequests</code> to return a sample of requests.</li>
-     * <li><code>Default_Action</code>, which causes <code>GetSampledRequests</code> to
+     * <code>GetSampledRequests</code> to return a sample of requests.</p> </li> <li>
+     * <p> <code>Default_Action</code>, which causes <code>GetSampledRequests</code> to
      * return a sample of the requests that didn't match any of the rules in the
-     * specified <code>WebACL</code>.</li> </ul>
+     * specified <code>WebACL</code>.</p> </li> </ul>
      */
     inline void SetRuleId(const Aws::String& value) { m_ruleIdHasBeenSet = true; m_ruleId = value; }
 
     /**
-     * <p><code>RuleId</code> is one of two values:</p> <ul> <li>The
+     * <p> <code>RuleId</code> is one of two values:</p> <ul> <li> <p>The
      * <code>RuleId</code> of the <code>Rule</code> for which you want
-     * <code>GetSampledRequests</code> to return a sample of requests.</li>
-     * <li><code>Default_Action</code>, which causes <code>GetSampledRequests</code> to
+     * <code>GetSampledRequests</code> to return a sample of requests.</p> </li> <li>
+     * <p> <code>Default_Action</code>, which causes <code>GetSampledRequests</code> to
      * return a sample of the requests that didn't match any of the rules in the
-     * specified <code>WebACL</code>.</li> </ul>
+     * specified <code>WebACL</code>.</p> </li> </ul>
      */
     inline void SetRuleId(Aws::String&& value) { m_ruleIdHasBeenSet = true; m_ruleId = value; }
 
     /**
-     * <p><code>RuleId</code> is one of two values:</p> <ul> <li>The
+     * <p> <code>RuleId</code> is one of two values:</p> <ul> <li> <p>The
      * <code>RuleId</code> of the <code>Rule</code> for which you want
-     * <code>GetSampledRequests</code> to return a sample of requests.</li>
-     * <li><code>Default_Action</code>, which causes <code>GetSampledRequests</code> to
+     * <code>GetSampledRequests</code> to return a sample of requests.</p> </li> <li>
+     * <p> <code>Default_Action</code>, which causes <code>GetSampledRequests</code> to
      * return a sample of the requests that didn't match any of the rules in the
-     * specified <code>WebACL</code>.</li> </ul>
+     * specified <code>WebACL</code>.</p> </li> </ul>
      */
     inline void SetRuleId(const char* value) { m_ruleIdHasBeenSet = true; m_ruleId.assign(value); }
 
     /**
-     * <p><code>RuleId</code> is one of two values:</p> <ul> <li>The
+     * <p> <code>RuleId</code> is one of two values:</p> <ul> <li> <p>The
      * <code>RuleId</code> of the <code>Rule</code> for which you want
-     * <code>GetSampledRequests</code> to return a sample of requests.</li>
-     * <li><code>Default_Action</code>, which causes <code>GetSampledRequests</code> to
+     * <code>GetSampledRequests</code> to return a sample of requests.</p> </li> <li>
+     * <p> <code>Default_Action</code>, which causes <code>GetSampledRequests</code> to
      * return a sample of the requests that didn't match any of the rules in the
-     * specified <code>WebACL</code>.</li> </ul>
+     * specified <code>WebACL</code>.</p> </li> </ul>
      */
     inline GetSampledRequestsRequest& WithRuleId(const Aws::String& value) { SetRuleId(value); return *this;}
 
     /**
-     * <p><code>RuleId</code> is one of two values:</p> <ul> <li>The
+     * <p> <code>RuleId</code> is one of two values:</p> <ul> <li> <p>The
      * <code>RuleId</code> of the <code>Rule</code> for which you want
-     * <code>GetSampledRequests</code> to return a sample of requests.</li>
-     * <li><code>Default_Action</code>, which causes <code>GetSampledRequests</code> to
+     * <code>GetSampledRequests</code> to return a sample of requests.</p> </li> <li>
+     * <p> <code>Default_Action</code>, which causes <code>GetSampledRequests</code> to
      * return a sample of the requests that didn't match any of the rules in the
-     * specified <code>WebACL</code>.</li> </ul>
+     * specified <code>WebACL</code>.</p> </li> </ul>
      */
     inline GetSampledRequestsRequest& WithRuleId(Aws::String&& value) { SetRuleId(value); return *this;}
 
     /**
-     * <p><code>RuleId</code> is one of two values:</p> <ul> <li>The
+     * <p> <code>RuleId</code> is one of two values:</p> <ul> <li> <p>The
      * <code>RuleId</code> of the <code>Rule</code> for which you want
-     * <code>GetSampledRequests</code> to return a sample of requests.</li>
-     * <li><code>Default_Action</code>, which causes <code>GetSampledRequests</code> to
+     * <code>GetSampledRequests</code> to return a sample of requests.</p> </li> <li>
+     * <p> <code>Default_Action</code>, which causes <code>GetSampledRequests</code> to
      * return a sample of the requests that didn't match any of the rules in the
-     * specified <code>WebACL</code>.</li> </ul>
+     * specified <code>WebACL</code>.</p> </li> </ul>
      */
     inline GetSampledRequestsRequest& WithRuleId(const char* value) { SetRuleId(value); return *this;}
 

@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p> The input for the <a>DeliverConfigSnapshot</a> action. </p>
+   * <p>The input for the <a>DeliverConfigSnapshot</a> action.</p>
    */
   class AWS_CONFIGSERVICE_API DeliverConfigSnapshotRequest : public ConfigServiceRequest
   {

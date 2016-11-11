@@ -24,6 +24,7 @@ using namespace Aws::Utils;
 AdminRespondToAuthChallengeRequest::AdminRespondToAuthChallengeRequest() : 
     m_userPoolIdHasBeenSet(false),
     m_clientIdHasBeenSet(false),
+    m_challengeName(ChallengeNameType::NOT_SET),
     m_challengeNameHasBeenSet(false),
     m_challengeResponsesHasBeenSet(false),
     m_sessionHasBeenSet(false)

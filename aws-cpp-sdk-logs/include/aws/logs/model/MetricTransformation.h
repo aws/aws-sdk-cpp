@@ -30,6 +30,10 @@ namespace CloudWatchLogs
 namespace Model
 {
 
+  /**
+   * <p>Indicates how to transform ingested log events into metric data in a
+   * CloudWatch metric.</p>
+   */
   class AWS_CLOUDWATCHLOGS_API MetricTransformation
   {
   public:
@@ -39,132 +43,132 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p>Name of the metric.</p>
+     * <p>The name of the CloudWatch metric.</p>
      */
     inline const Aws::String& GetMetricName() const{ return m_metricName; }
 
     /**
-     * <p>Name of the metric.</p>
+     * <p>The name of the CloudWatch metric.</p>
      */
     inline void SetMetricName(const Aws::String& value) { m_metricNameHasBeenSet = true; m_metricName = value; }
 
     /**
-     * <p>Name of the metric.</p>
+     * <p>The name of the CloudWatch metric.</p>
      */
     inline void SetMetricName(Aws::String&& value) { m_metricNameHasBeenSet = true; m_metricName = value; }
 
     /**
-     * <p>Name of the metric.</p>
+     * <p>The name of the CloudWatch metric.</p>
      */
     inline void SetMetricName(const char* value) { m_metricNameHasBeenSet = true; m_metricName.assign(value); }
 
     /**
-     * <p>Name of the metric.</p>
+     * <p>The name of the CloudWatch metric.</p>
      */
     inline MetricTransformation& WithMetricName(const Aws::String& value) { SetMetricName(value); return *this;}
 
     /**
-     * <p>Name of the metric.</p>
+     * <p>The name of the CloudWatch metric.</p>
      */
     inline MetricTransformation& WithMetricName(Aws::String&& value) { SetMetricName(value); return *this;}
 
     /**
-     * <p>Name of the metric.</p>
+     * <p>The name of the CloudWatch metric.</p>
      */
     inline MetricTransformation& WithMetricName(const char* value) { SetMetricName(value); return *this;}
 
     /**
-     * <p>Namespace to which the metric belongs.</p>
+     * <p>The namespace of the CloudWatch metric.</p>
      */
     inline const Aws::String& GetMetricNamespace() const{ return m_metricNamespace; }
 
     /**
-     * <p>Namespace to which the metric belongs.</p>
+     * <p>The namespace of the CloudWatch metric.</p>
      */
     inline void SetMetricNamespace(const Aws::String& value) { m_metricNamespaceHasBeenSet = true; m_metricNamespace = value; }
 
     /**
-     * <p>Namespace to which the metric belongs.</p>
+     * <p>The namespace of the CloudWatch metric.</p>
      */
     inline void SetMetricNamespace(Aws::String&& value) { m_metricNamespaceHasBeenSet = true; m_metricNamespace = value; }
 
     /**
-     * <p>Namespace to which the metric belongs.</p>
+     * <p>The namespace of the CloudWatch metric.</p>
      */
     inline void SetMetricNamespace(const char* value) { m_metricNamespaceHasBeenSet = true; m_metricNamespace.assign(value); }
 
     /**
-     * <p>Namespace to which the metric belongs.</p>
+     * <p>The namespace of the CloudWatch metric.</p>
      */
     inline MetricTransformation& WithMetricNamespace(const Aws::String& value) { SetMetricNamespace(value); return *this;}
 
     /**
-     * <p>Namespace to which the metric belongs.</p>
+     * <p>The namespace of the CloudWatch metric.</p>
      */
     inline MetricTransformation& WithMetricNamespace(Aws::String&& value) { SetMetricNamespace(value); return *this;}
 
     /**
-     * <p>Namespace to which the metric belongs.</p>
+     * <p>The namespace of the CloudWatch metric.</p>
      */
     inline MetricTransformation& WithMetricNamespace(const char* value) { SetMetricNamespace(value); return *this;}
 
     /**
-     * <p> A string representing a value to publish to this metric when a filter
-     * pattern matches a log event. </p>
+     * <p>The value to publish to the CloudWatch metric when a filter pattern matches a
+     * log event.</p>
      */
     inline const Aws::String& GetMetricValue() const{ return m_metricValue; }
 
     /**
-     * <p> A string representing a value to publish to this metric when a filter
-     * pattern matches a log event. </p>
+     * <p>The value to publish to the CloudWatch metric when a filter pattern matches a
+     * log event.</p>
      */
     inline void SetMetricValue(const Aws::String& value) { m_metricValueHasBeenSet = true; m_metricValue = value; }
 
     /**
-     * <p> A string representing a value to publish to this metric when a filter
-     * pattern matches a log event. </p>
+     * <p>The value to publish to the CloudWatch metric when a filter pattern matches a
+     * log event.</p>
      */
     inline void SetMetricValue(Aws::String&& value) { m_metricValueHasBeenSet = true; m_metricValue = value; }
 
     /**
-     * <p> A string representing a value to publish to this metric when a filter
-     * pattern matches a log event. </p>
+     * <p>The value to publish to the CloudWatch metric when a filter pattern matches a
+     * log event.</p>
      */
     inline void SetMetricValue(const char* value) { m_metricValueHasBeenSet = true; m_metricValue.assign(value); }
 
     /**
-     * <p> A string representing a value to publish to this metric when a filter
-     * pattern matches a log event. </p>
+     * <p>The value to publish to the CloudWatch metric when a filter pattern matches a
+     * log event.</p>
      */
     inline MetricTransformation& WithMetricValue(const Aws::String& value) { SetMetricValue(value); return *this;}
 
     /**
-     * <p> A string representing a value to publish to this metric when a filter
-     * pattern matches a log event. </p>
+     * <p>The value to publish to the CloudWatch metric when a filter pattern matches a
+     * log event.</p>
      */
     inline MetricTransformation& WithMetricValue(Aws::String&& value) { SetMetricValue(value); return *this;}
 
     /**
-     * <p> A string representing a value to publish to this metric when a filter
-     * pattern matches a log event. </p>
+     * <p>The value to publish to the CloudWatch metric when a filter pattern matches a
+     * log event.</p>
      */
     inline MetricTransformation& WithMetricValue(const char* value) { SetMetricValue(value); return *this;}
 
     /**
-     * <p>(Optional) A default value to emit when a filter pattern does not match a log
-     * event. Can be null.</p>
+     * <p>(Optional) The value to emit when a filter pattern does not match a log
+     * event. This value can be null.</p>
      */
     inline double GetDefaultValue() const{ return m_defaultValue; }
 
     /**
-     * <p>(Optional) A default value to emit when a filter pattern does not match a log
-     * event. Can be null.</p>
+     * <p>(Optional) The value to emit when a filter pattern does not match a log
+     * event. This value can be null.</p>
      */
     inline void SetDefaultValue(double value) { m_defaultValueHasBeenSet = true; m_defaultValue = value; }
 
     /**
-     * <p>(Optional) A default value to emit when a filter pattern does not match a log
-     * event. Can be null.</p>
+     * <p>(Optional) The value to emit when a filter pattern does not match a log
+     * event. This value can be null.</p>
      */
     inline MetricTransformation& WithDefaultValue(double value) { SetDefaultValue(value); return *this;}
 

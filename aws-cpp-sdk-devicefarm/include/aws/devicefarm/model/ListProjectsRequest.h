@@ -36,37 +36,51 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * <p>The projects' ARNs.</p>
+     * <p>Optional. If no Amazon Resource Name (ARN) is specified, then AWS Device Farm
+     * returns a list of all projects for the AWS account. You can also specify a
+     * project ARN.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p>The projects' ARNs.</p>
+     * <p>Optional. If no Amazon Resource Name (ARN) is specified, then AWS Device Farm
+     * returns a list of all projects for the AWS account. You can also specify a
+     * project ARN.</p>
      */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
-     * <p>The projects' ARNs.</p>
+     * <p>Optional. If no Amazon Resource Name (ARN) is specified, then AWS Device Farm
+     * returns a list of all projects for the AWS account. You can also specify a
+     * project ARN.</p>
      */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
-     * <p>The projects' ARNs.</p>
+     * <p>Optional. If no Amazon Resource Name (ARN) is specified, then AWS Device Farm
+     * returns a list of all projects for the AWS account. You can also specify a
+     * project ARN.</p>
      */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
     /**
-     * <p>The projects' ARNs.</p>
+     * <p>Optional. If no Amazon Resource Name (ARN) is specified, then AWS Device Farm
+     * returns a list of all projects for the AWS account. You can also specify a
+     * project ARN.</p>
      */
     inline ListProjectsRequest& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p>The projects' ARNs.</p>
+     * <p>Optional. If no Amazon Resource Name (ARN) is specified, then AWS Device Farm
+     * returns a list of all projects for the AWS account. You can also specify a
+     * project ARN.</p>
      */
     inline ListProjectsRequest& WithArn(Aws::String&& value) { SetArn(value); return *this;}
 
     /**
-     * <p>The projects' ARNs.</p>
+     * <p>Optional. If no Amazon Resource Name (ARN) is specified, then AWS Device Farm
+     * returns a list of all projects for the AWS account. You can also specify a
+     * project ARN.</p>
      */
     inline ListProjectsRequest& WithArn(const char* value) { SetArn(value); return *this;}
 

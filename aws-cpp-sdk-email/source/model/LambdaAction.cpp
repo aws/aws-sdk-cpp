@@ -32,6 +32,7 @@ namespace Model
 LambdaAction::LambdaAction() : 
     m_topicArnHasBeenSet(false),
     m_functionArnHasBeenSet(false),
+    m_invocationType(InvocationType::NOT_SET),
     m_invocationTypeHasBeenSet(false)
 {
 }
@@ -39,6 +40,7 @@ LambdaAction::LambdaAction() :
 LambdaAction::LambdaAction(const XmlNode& xmlNode) : 
     m_topicArnHasBeenSet(false),
     m_functionArnHasBeenSet(false),
+    m_invocationType(InvocationType::NOT_SET),
     m_invocationTypeHasBeenSet(false)
 {
   *this = xmlNode;

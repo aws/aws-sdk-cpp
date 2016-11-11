@@ -45,8 +45,8 @@ namespace Model
      * <p>A unique identifier for a <code>WebACL</code>. You use <code>WebACLId</code>
      * to get information about a <code>WebACL</code> (see <a>GetWebACL</a>), update a
      * <code>WebACL</code> (see <a>UpdateWebACL</a>), and delete a <code>WebACL</code>
-     * from AWS WAF (see <a>DeleteWebACL</a>).</p> <p><code>WebACLId</code> is returned
-     * by <a>CreateWebACL</a> and by <a>ListWebACLs</a>.</p>
+     * from AWS WAF (see <a>DeleteWebACL</a>).</p> <p> <code>WebACLId</code> is
+     * returned by <a>CreateWebACL</a> and by <a>ListWebACLs</a>.</p>
      */
     inline const Aws::String& GetWebACLId() const{ return m_webACLId; }
 
@@ -54,8 +54,8 @@ namespace Model
      * <p>A unique identifier for a <code>WebACL</code>. You use <code>WebACLId</code>
      * to get information about a <code>WebACL</code> (see <a>GetWebACL</a>), update a
      * <code>WebACL</code> (see <a>UpdateWebACL</a>), and delete a <code>WebACL</code>
-     * from AWS WAF (see <a>DeleteWebACL</a>).</p> <p><code>WebACLId</code> is returned
-     * by <a>CreateWebACL</a> and by <a>ListWebACLs</a>.</p>
+     * from AWS WAF (see <a>DeleteWebACL</a>).</p> <p> <code>WebACLId</code> is
+     * returned by <a>CreateWebACL</a> and by <a>ListWebACLs</a>.</p>
      */
     inline void SetWebACLId(const Aws::String& value) { m_webACLIdHasBeenSet = true; m_webACLId = value; }
 
@@ -63,8 +63,8 @@ namespace Model
      * <p>A unique identifier for a <code>WebACL</code>. You use <code>WebACLId</code>
      * to get information about a <code>WebACL</code> (see <a>GetWebACL</a>), update a
      * <code>WebACL</code> (see <a>UpdateWebACL</a>), and delete a <code>WebACL</code>
-     * from AWS WAF (see <a>DeleteWebACL</a>).</p> <p><code>WebACLId</code> is returned
-     * by <a>CreateWebACL</a> and by <a>ListWebACLs</a>.</p>
+     * from AWS WAF (see <a>DeleteWebACL</a>).</p> <p> <code>WebACLId</code> is
+     * returned by <a>CreateWebACL</a> and by <a>ListWebACLs</a>.</p>
      */
     inline void SetWebACLId(Aws::String&& value) { m_webACLIdHasBeenSet = true; m_webACLId = value; }
 
@@ -72,8 +72,8 @@ namespace Model
      * <p>A unique identifier for a <code>WebACL</code>. You use <code>WebACLId</code>
      * to get information about a <code>WebACL</code> (see <a>GetWebACL</a>), update a
      * <code>WebACL</code> (see <a>UpdateWebACL</a>), and delete a <code>WebACL</code>
-     * from AWS WAF (see <a>DeleteWebACL</a>).</p> <p><code>WebACLId</code> is returned
-     * by <a>CreateWebACL</a> and by <a>ListWebACLs</a>.</p>
+     * from AWS WAF (see <a>DeleteWebACL</a>).</p> <p> <code>WebACLId</code> is
+     * returned by <a>CreateWebACL</a> and by <a>ListWebACLs</a>.</p>
      */
     inline void SetWebACLId(const char* value) { m_webACLIdHasBeenSet = true; m_webACLId.assign(value); }
 
@@ -81,8 +81,8 @@ namespace Model
      * <p>A unique identifier for a <code>WebACL</code>. You use <code>WebACLId</code>
      * to get information about a <code>WebACL</code> (see <a>GetWebACL</a>), update a
      * <code>WebACL</code> (see <a>UpdateWebACL</a>), and delete a <code>WebACL</code>
-     * from AWS WAF (see <a>DeleteWebACL</a>).</p> <p><code>WebACLId</code> is returned
-     * by <a>CreateWebACL</a> and by <a>ListWebACLs</a>.</p>
+     * from AWS WAF (see <a>DeleteWebACL</a>).</p> <p> <code>WebACLId</code> is
+     * returned by <a>CreateWebACL</a> and by <a>ListWebACLs</a>.</p>
      */
     inline WebACLSummary& WithWebACLId(const Aws::String& value) { SetWebACLId(value); return *this;}
 
@@ -90,8 +90,8 @@ namespace Model
      * <p>A unique identifier for a <code>WebACL</code>. You use <code>WebACLId</code>
      * to get information about a <code>WebACL</code> (see <a>GetWebACL</a>), update a
      * <code>WebACL</code> (see <a>UpdateWebACL</a>), and delete a <code>WebACL</code>
-     * from AWS WAF (see <a>DeleteWebACL</a>).</p> <p><code>WebACLId</code> is returned
-     * by <a>CreateWebACL</a> and by <a>ListWebACLs</a>.</p>
+     * from AWS WAF (see <a>DeleteWebACL</a>).</p> <p> <code>WebACLId</code> is
+     * returned by <a>CreateWebACL</a> and by <a>ListWebACLs</a>.</p>
      */
     inline WebACLSummary& WithWebACLId(Aws::String&& value) { SetWebACLId(value); return *this;}
 
@@ -99,8 +99,8 @@ namespace Model
      * <p>A unique identifier for a <code>WebACL</code>. You use <code>WebACLId</code>
      * to get information about a <code>WebACL</code> (see <a>GetWebACL</a>), update a
      * <code>WebACL</code> (see <a>UpdateWebACL</a>), and delete a <code>WebACL</code>
-     * from AWS WAF (see <a>DeleteWebACL</a>).</p> <p><code>WebACLId</code> is returned
-     * by <a>CreateWebACL</a> and by <a>ListWebACLs</a>.</p>
+     * from AWS WAF (see <a>DeleteWebACL</a>).</p> <p> <code>WebACLId</code> is
+     * returned by <a>CreateWebACL</a> and by <a>ListWebACLs</a>.</p>
      */
     inline WebACLSummary& WithWebACLId(const char* value) { SetWebACLId(value); return *this;}
 

@@ -153,56 +153,56 @@ namespace Model
     inline Stack& WithArn(const char* value) { SetArn(value); return *this;}
 
     /**
-     * <p>The stack AWS region, such as "us-east-1". For more information about AWS
-     * regions, see <a
+     * <p>The stack AWS region, such as "ap-northeast-2". For more information about
+     * AWS regions, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
      * Endpoints</a>.</p>
      */
     inline const Aws::String& GetRegion() const{ return m_region; }
 
     /**
-     * <p>The stack AWS region, such as "us-east-1". For more information about AWS
-     * regions, see <a
+     * <p>The stack AWS region, such as "ap-northeast-2". For more information about
+     * AWS regions, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
      * Endpoints</a>.</p>
      */
     inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
 
     /**
-     * <p>The stack AWS region, such as "us-east-1". For more information about AWS
-     * regions, see <a
+     * <p>The stack AWS region, such as "ap-northeast-2". For more information about
+     * AWS regions, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
      * Endpoints</a>.</p>
      */
     inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = value; }
 
     /**
-     * <p>The stack AWS region, such as "us-east-1". For more information about AWS
-     * regions, see <a
+     * <p>The stack AWS region, such as "ap-northeast-2". For more information about
+     * AWS regions, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
      * Endpoints</a>.</p>
      */
     inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
 
     /**
-     * <p>The stack AWS region, such as "us-east-1". For more information about AWS
-     * regions, see <a
+     * <p>The stack AWS region, such as "ap-northeast-2". For more information about
+     * AWS regions, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
      * Endpoints</a>.</p>
      */
     inline Stack& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
 
     /**
-     * <p>The stack AWS region, such as "us-east-1". For more information about AWS
-     * regions, see <a
+     * <p>The stack AWS region, such as "ap-northeast-2". For more information about
+     * AWS regions, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
      * Endpoints</a>.</p>
      */
     inline Stack& WithRegion(Aws::String&& value) { SetRegion(value); return *this;}
 
     /**
-     * <p>The stack AWS region, such as "us-east-1". For more information about AWS
-     * regions, see <a
+     * <p>The stack AWS region, such as "ap-northeast-2". For more information about
+     * AWS regions, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
      * Endpoints</a>.</p>
      */
@@ -547,9 +547,9 @@ namespace Model
      * <p>A JSON object that contains user-defined attributes to be added to the stack
      * configuration and deployment attributes. You can use custom JSON to override the
      * corresponding default stack configuration attribute values or to pass data to
-     * recipes. The string should be in the following format and must escape characters
-     * such as '"':</p> <p> <code>"{\"key1\": \"value1\", \"key2\":
-     * \"value2\",...}"</code> </p> <p>For more information on custom JSON, see <a
+     * recipes. The string should be in the following format:</p> <p> <code>"{\"key1\":
+     * \"value1\", \"key2\": \"value2\",...}"</code> </p> <p>For more information on
+     * custom JSON, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
      * Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
      */
@@ -559,9 +559,9 @@ namespace Model
      * <p>A JSON object that contains user-defined attributes to be added to the stack
      * configuration and deployment attributes. You can use custom JSON to override the
      * corresponding default stack configuration attribute values or to pass data to
-     * recipes. The string should be in the following format and must escape characters
-     * such as '"':</p> <p> <code>"{\"key1\": \"value1\", \"key2\":
-     * \"value2\",...}"</code> </p> <p>For more information on custom JSON, see <a
+     * recipes. The string should be in the following format:</p> <p> <code>"{\"key1\":
+     * \"value1\", \"key2\": \"value2\",...}"</code> </p> <p>For more information on
+     * custom JSON, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
      * Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
      */
@@ -571,9 +571,9 @@ namespace Model
      * <p>A JSON object that contains user-defined attributes to be added to the stack
      * configuration and deployment attributes. You can use custom JSON to override the
      * corresponding default stack configuration attribute values or to pass data to
-     * recipes. The string should be in the following format and must escape characters
-     * such as '"':</p> <p> <code>"{\"key1\": \"value1\", \"key2\":
-     * \"value2\",...}"</code> </p> <p>For more information on custom JSON, see <a
+     * recipes. The string should be in the following format:</p> <p> <code>"{\"key1\":
+     * \"value1\", \"key2\": \"value2\",...}"</code> </p> <p>For more information on
+     * custom JSON, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
      * Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
      */
@@ -583,9 +583,9 @@ namespace Model
      * <p>A JSON object that contains user-defined attributes to be added to the stack
      * configuration and deployment attributes. You can use custom JSON to override the
      * corresponding default stack configuration attribute values or to pass data to
-     * recipes. The string should be in the following format and must escape characters
-     * such as '"':</p> <p> <code>"{\"key1\": \"value1\", \"key2\":
-     * \"value2\",...}"</code> </p> <p>For more information on custom JSON, see <a
+     * recipes. The string should be in the following format:</p> <p> <code>"{\"key1\":
+     * \"value1\", \"key2\": \"value2\",...}"</code> </p> <p>For more information on
+     * custom JSON, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
      * Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
      */
@@ -595,9 +595,9 @@ namespace Model
      * <p>A JSON object that contains user-defined attributes to be added to the stack
      * configuration and deployment attributes. You can use custom JSON to override the
      * corresponding default stack configuration attribute values or to pass data to
-     * recipes. The string should be in the following format and must escape characters
-     * such as '"':</p> <p> <code>"{\"key1\": \"value1\", \"key2\":
-     * \"value2\",...}"</code> </p> <p>For more information on custom JSON, see <a
+     * recipes. The string should be in the following format:</p> <p> <code>"{\"key1\":
+     * \"value1\", \"key2\": \"value2\",...}"</code> </p> <p>For more information on
+     * custom JSON, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
      * Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
      */
@@ -607,9 +607,9 @@ namespace Model
      * <p>A JSON object that contains user-defined attributes to be added to the stack
      * configuration and deployment attributes. You can use custom JSON to override the
      * corresponding default stack configuration attribute values or to pass data to
-     * recipes. The string should be in the following format and must escape characters
-     * such as '"':</p> <p> <code>"{\"key1\": \"value1\", \"key2\":
-     * \"value2\",...}"</code> </p> <p>For more information on custom JSON, see <a
+     * recipes. The string should be in the following format:</p> <p> <code>"{\"key1\":
+     * \"value1\", \"key2\": \"value2\",...}"</code> </p> <p>For more information on
+     * custom JSON, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
      * Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
      */
@@ -619,9 +619,9 @@ namespace Model
      * <p>A JSON object that contains user-defined attributes to be added to the stack
      * configuration and deployment attributes. You can use custom JSON to override the
      * corresponding default stack configuration attribute values or to pass data to
-     * recipes. The string should be in the following format and must escape characters
-     * such as '"':</p> <p> <code>"{\"key1\": \"value1\", \"key2\":
-     * \"value2\",...}"</code> </p> <p>For more information on custom JSON, see <a
+     * recipes. The string should be in the following format:</p> <p> <code>"{\"key1\":
+     * \"value1\", \"key2\": \"value2\",...}"</code> </p> <p>For more information on
+     * custom JSON, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
      * Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
      */

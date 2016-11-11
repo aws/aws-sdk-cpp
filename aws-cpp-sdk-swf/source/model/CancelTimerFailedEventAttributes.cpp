@@ -29,6 +29,7 @@ namespace Model
 
 CancelTimerFailedEventAttributes::CancelTimerFailedEventAttributes() : 
     m_timerIdHasBeenSet(false),
+    m_cause(CancelTimerFailedCause::NOT_SET),
     m_causeHasBeenSet(false),
     m_decisionTaskCompletedEventId(0),
     m_decisionTaskCompletedEventIdHasBeenSet(false)
@@ -37,6 +38,7 @@ CancelTimerFailedEventAttributes::CancelTimerFailedEventAttributes() :
 
 CancelTimerFailedEventAttributes::CancelTimerFailedEventAttributes(const JsonValue& jsonValue) : 
     m_timerIdHasBeenSet(false),
+    m_cause(CancelTimerFailedCause::NOT_SET),
     m_causeHasBeenSet(false),
     m_decisionTaskCompletedEventId(0),
     m_decisionTaskCompletedEventIdHasBeenSet(false)

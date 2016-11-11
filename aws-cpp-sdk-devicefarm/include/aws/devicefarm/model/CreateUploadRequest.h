@@ -72,59 +72,87 @@ namespace Model
     inline CreateUploadRequest& WithProjectArn(const char* value) { SetProjectArn(value); return *this;}
 
     /**
-     * <p>The upload's file name. The name should not contain the '/' character.</p>
+     * <p>The upload's file name. The name should not contain the '/' character. If
+     * uploading an iOS app, the file name needs to end with the <code>.ipa</code>
+     * extension. If uploading an Android app, the file name needs to end with the
+     * <code>.apk</code> extension. For all others, the file name must end with the
+     * <code>.zip</code> file extension.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The upload's file name. The name should not contain the '/' character.</p>
+     * <p>The upload's file name. The name should not contain the '/' character. If
+     * uploading an iOS app, the file name needs to end with the <code>.ipa</code>
+     * extension. If uploading an Android app, the file name needs to end with the
+     * <code>.apk</code> extension. For all others, the file name must end with the
+     * <code>.zip</code> file extension.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The upload's file name. The name should not contain the '/' character.</p>
+     * <p>The upload's file name. The name should not contain the '/' character. If
+     * uploading an iOS app, the file name needs to end with the <code>.ipa</code>
+     * extension. If uploading an Android app, the file name needs to end with the
+     * <code>.apk</code> extension. For all others, the file name must end with the
+     * <code>.zip</code> file extension.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The upload's file name. The name should not contain the '/' character.</p>
+     * <p>The upload's file name. The name should not contain the '/' character. If
+     * uploading an iOS app, the file name needs to end with the <code>.ipa</code>
+     * extension. If uploading an Android app, the file name needs to end with the
+     * <code>.apk</code> extension. For all others, the file name must end with the
+     * <code>.zip</code> file extension.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The upload's file name. The name should not contain the '/' character.</p>
+     * <p>The upload's file name. The name should not contain the '/' character. If
+     * uploading an iOS app, the file name needs to end with the <code>.ipa</code>
+     * extension. If uploading an Android app, the file name needs to end with the
+     * <code>.apk</code> extension. For all others, the file name must end with the
+     * <code>.zip</code> file extension.</p>
      */
     inline CreateUploadRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The upload's file name. The name should not contain the '/' character.</p>
+     * <p>The upload's file name. The name should not contain the '/' character. If
+     * uploading an iOS app, the file name needs to end with the <code>.ipa</code>
+     * extension. If uploading an Android app, the file name needs to end with the
+     * <code>.apk</code> extension. For all others, the file name must end with the
+     * <code>.zip</code> file extension.</p>
      */
     inline CreateUploadRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
 
     /**
-     * <p>The upload's file name. The name should not contain the '/' character.</p>
+     * <p>The upload's file name. The name should not contain the '/' character. If
+     * uploading an iOS app, the file name needs to end with the <code>.ipa</code>
+     * extension. If uploading an Android app, the file name needs to end with the
+     * <code>.apk</code> extension. For all others, the file name must end with the
+     * <code>.zip</code> file extension.</p>
      */
     inline CreateUploadRequest& WithName(const char* value) { SetName(value); return *this;}
 
     /**
      * <p>The upload's upload type.</p> <p>Must be one of the following values:</p>
-     * <ul> <li><p>ANDROID_APP: An Android upload.</p></li> <li><p>IOS_APP: An iOS
-     * upload.</p></li> <li><p>WEB_APP: A web appliction upload.</p></li>
-     * <li><p>EXTERNAL_DATA: An external data upload.</p></li>
-     * <li><p>APPIUM_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package
-     * upload.</p></li> <li><p>APPIUM_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG
-     * test package upload.</p></li> <li><p>APPIUM_PYTHON_TEST_PACKAGE: An Appium
-     * Python test package upload.</p></li> <li><p>APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE:
-     * An Appium Java JUnit test package upload.</p></li>
-     * <li><p>APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package
-     * upload.</p></li> <li><p>APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test
-     * package upload.</p></li> <li><p>CALABASH_TEST_PACKAGE: A Calabash test package
-     * upload.</p></li> <li><p>INSTRUMENTATION_TEST_PACKAGE: An instrumentation
-     * upload.</p></li> <li><p>UIAUTOMATION_TEST_PACKAGE: A uiautomation test package
-     * upload.</p></li> <li><p>UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package
-     * upload.</p></li> <li><p>XCTEST_TEST_PACKAGE: An XCode test package
-     * upload.</p></li> <li><p>XCTEST_UI_TEST_PACKAGE: An XCode UI test package
-     * upload.</p></li> </ul> <p><b>Note</b> If you call <code>CreateUpload</code> with
+     * <ul> <li> <p>ANDROID_APP: An Android upload.</p> </li> <li> <p>IOS_APP: An iOS
+     * upload.</p> </li> <li> <p>WEB_APP: A web appliction upload.</p> </li> <li>
+     * <p>EXTERNAL_DATA: An external data upload.</p> </li> <li>
+     * <p>APPIUM_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload.</p>
+     * </li> <li> <p>APPIUM_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test
+     * package upload.</p> </li> <li> <p>APPIUM_PYTHON_TEST_PACKAGE: An Appium Python
+     * test package upload.</p> </li> <li> <p>APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An
+     * Appium Java JUnit test package upload.</p> </li> <li>
+     * <p>APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package
+     * upload.</p> </li> <li> <p>APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test
+     * package upload.</p> </li> <li> <p>CALABASH_TEST_PACKAGE: A Calabash test package
+     * upload.</p> </li> <li> <p>INSTRUMENTATION_TEST_PACKAGE: An instrumentation
+     * upload.</p> </li> <li> <p>UIAUTOMATION_TEST_PACKAGE: A uiautomation test package
+     * upload.</p> </li> <li> <p>UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package
+     * upload.</p> </li> <li> <p>XCTEST_TEST_PACKAGE: An XCode test package upload.</p>
+     * </li> <li> <p>XCTEST_UI_TEST_PACKAGE: An XCode UI test package upload.</p> </li>
+     * </ul> <p> <b>Note</b> If you call <code>CreateUpload</code> with
      * <code>WEB_APP</code> specified, AWS Device Farm throws an
      * <code>ArgumentException</code> error.</p>
      */
@@ -132,23 +160,23 @@ namespace Model
 
     /**
      * <p>The upload's upload type.</p> <p>Must be one of the following values:</p>
-     * <ul> <li><p>ANDROID_APP: An Android upload.</p></li> <li><p>IOS_APP: An iOS
-     * upload.</p></li> <li><p>WEB_APP: A web appliction upload.</p></li>
-     * <li><p>EXTERNAL_DATA: An external data upload.</p></li>
-     * <li><p>APPIUM_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package
-     * upload.</p></li> <li><p>APPIUM_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG
-     * test package upload.</p></li> <li><p>APPIUM_PYTHON_TEST_PACKAGE: An Appium
-     * Python test package upload.</p></li> <li><p>APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE:
-     * An Appium Java JUnit test package upload.</p></li>
-     * <li><p>APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package
-     * upload.</p></li> <li><p>APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test
-     * package upload.</p></li> <li><p>CALABASH_TEST_PACKAGE: A Calabash test package
-     * upload.</p></li> <li><p>INSTRUMENTATION_TEST_PACKAGE: An instrumentation
-     * upload.</p></li> <li><p>UIAUTOMATION_TEST_PACKAGE: A uiautomation test package
-     * upload.</p></li> <li><p>UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package
-     * upload.</p></li> <li><p>XCTEST_TEST_PACKAGE: An XCode test package
-     * upload.</p></li> <li><p>XCTEST_UI_TEST_PACKAGE: An XCode UI test package
-     * upload.</p></li> </ul> <p><b>Note</b> If you call <code>CreateUpload</code> with
+     * <ul> <li> <p>ANDROID_APP: An Android upload.</p> </li> <li> <p>IOS_APP: An iOS
+     * upload.</p> </li> <li> <p>WEB_APP: A web appliction upload.</p> </li> <li>
+     * <p>EXTERNAL_DATA: An external data upload.</p> </li> <li>
+     * <p>APPIUM_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload.</p>
+     * </li> <li> <p>APPIUM_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test
+     * package upload.</p> </li> <li> <p>APPIUM_PYTHON_TEST_PACKAGE: An Appium Python
+     * test package upload.</p> </li> <li> <p>APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An
+     * Appium Java JUnit test package upload.</p> </li> <li>
+     * <p>APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package
+     * upload.</p> </li> <li> <p>APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test
+     * package upload.</p> </li> <li> <p>CALABASH_TEST_PACKAGE: A Calabash test package
+     * upload.</p> </li> <li> <p>INSTRUMENTATION_TEST_PACKAGE: An instrumentation
+     * upload.</p> </li> <li> <p>UIAUTOMATION_TEST_PACKAGE: A uiautomation test package
+     * upload.</p> </li> <li> <p>UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package
+     * upload.</p> </li> <li> <p>XCTEST_TEST_PACKAGE: An XCode test package upload.</p>
+     * </li> <li> <p>XCTEST_UI_TEST_PACKAGE: An XCode UI test package upload.</p> </li>
+     * </ul> <p> <b>Note</b> If you call <code>CreateUpload</code> with
      * <code>WEB_APP</code> specified, AWS Device Farm throws an
      * <code>ArgumentException</code> error.</p>
      */
@@ -156,23 +184,23 @@ namespace Model
 
     /**
      * <p>The upload's upload type.</p> <p>Must be one of the following values:</p>
-     * <ul> <li><p>ANDROID_APP: An Android upload.</p></li> <li><p>IOS_APP: An iOS
-     * upload.</p></li> <li><p>WEB_APP: A web appliction upload.</p></li>
-     * <li><p>EXTERNAL_DATA: An external data upload.</p></li>
-     * <li><p>APPIUM_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package
-     * upload.</p></li> <li><p>APPIUM_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG
-     * test package upload.</p></li> <li><p>APPIUM_PYTHON_TEST_PACKAGE: An Appium
-     * Python test package upload.</p></li> <li><p>APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE:
-     * An Appium Java JUnit test package upload.</p></li>
-     * <li><p>APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package
-     * upload.</p></li> <li><p>APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test
-     * package upload.</p></li> <li><p>CALABASH_TEST_PACKAGE: A Calabash test package
-     * upload.</p></li> <li><p>INSTRUMENTATION_TEST_PACKAGE: An instrumentation
-     * upload.</p></li> <li><p>UIAUTOMATION_TEST_PACKAGE: A uiautomation test package
-     * upload.</p></li> <li><p>UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package
-     * upload.</p></li> <li><p>XCTEST_TEST_PACKAGE: An XCode test package
-     * upload.</p></li> <li><p>XCTEST_UI_TEST_PACKAGE: An XCode UI test package
-     * upload.</p></li> </ul> <p><b>Note</b> If you call <code>CreateUpload</code> with
+     * <ul> <li> <p>ANDROID_APP: An Android upload.</p> </li> <li> <p>IOS_APP: An iOS
+     * upload.</p> </li> <li> <p>WEB_APP: A web appliction upload.</p> </li> <li>
+     * <p>EXTERNAL_DATA: An external data upload.</p> </li> <li>
+     * <p>APPIUM_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload.</p>
+     * </li> <li> <p>APPIUM_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test
+     * package upload.</p> </li> <li> <p>APPIUM_PYTHON_TEST_PACKAGE: An Appium Python
+     * test package upload.</p> </li> <li> <p>APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An
+     * Appium Java JUnit test package upload.</p> </li> <li>
+     * <p>APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package
+     * upload.</p> </li> <li> <p>APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test
+     * package upload.</p> </li> <li> <p>CALABASH_TEST_PACKAGE: A Calabash test package
+     * upload.</p> </li> <li> <p>INSTRUMENTATION_TEST_PACKAGE: An instrumentation
+     * upload.</p> </li> <li> <p>UIAUTOMATION_TEST_PACKAGE: A uiautomation test package
+     * upload.</p> </li> <li> <p>UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package
+     * upload.</p> </li> <li> <p>XCTEST_TEST_PACKAGE: An XCode test package upload.</p>
+     * </li> <li> <p>XCTEST_UI_TEST_PACKAGE: An XCode UI test package upload.</p> </li>
+     * </ul> <p> <b>Note</b> If you call <code>CreateUpload</code> with
      * <code>WEB_APP</code> specified, AWS Device Farm throws an
      * <code>ArgumentException</code> error.</p>
      */
@@ -180,23 +208,23 @@ namespace Model
 
     /**
      * <p>The upload's upload type.</p> <p>Must be one of the following values:</p>
-     * <ul> <li><p>ANDROID_APP: An Android upload.</p></li> <li><p>IOS_APP: An iOS
-     * upload.</p></li> <li><p>WEB_APP: A web appliction upload.</p></li>
-     * <li><p>EXTERNAL_DATA: An external data upload.</p></li>
-     * <li><p>APPIUM_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package
-     * upload.</p></li> <li><p>APPIUM_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG
-     * test package upload.</p></li> <li><p>APPIUM_PYTHON_TEST_PACKAGE: An Appium
-     * Python test package upload.</p></li> <li><p>APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE:
-     * An Appium Java JUnit test package upload.</p></li>
-     * <li><p>APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package
-     * upload.</p></li> <li><p>APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test
-     * package upload.</p></li> <li><p>CALABASH_TEST_PACKAGE: A Calabash test package
-     * upload.</p></li> <li><p>INSTRUMENTATION_TEST_PACKAGE: An instrumentation
-     * upload.</p></li> <li><p>UIAUTOMATION_TEST_PACKAGE: A uiautomation test package
-     * upload.</p></li> <li><p>UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package
-     * upload.</p></li> <li><p>XCTEST_TEST_PACKAGE: An XCode test package
-     * upload.</p></li> <li><p>XCTEST_UI_TEST_PACKAGE: An XCode UI test package
-     * upload.</p></li> </ul> <p><b>Note</b> If you call <code>CreateUpload</code> with
+     * <ul> <li> <p>ANDROID_APP: An Android upload.</p> </li> <li> <p>IOS_APP: An iOS
+     * upload.</p> </li> <li> <p>WEB_APP: A web appliction upload.</p> </li> <li>
+     * <p>EXTERNAL_DATA: An external data upload.</p> </li> <li>
+     * <p>APPIUM_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload.</p>
+     * </li> <li> <p>APPIUM_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test
+     * package upload.</p> </li> <li> <p>APPIUM_PYTHON_TEST_PACKAGE: An Appium Python
+     * test package upload.</p> </li> <li> <p>APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An
+     * Appium Java JUnit test package upload.</p> </li> <li>
+     * <p>APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package
+     * upload.</p> </li> <li> <p>APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test
+     * package upload.</p> </li> <li> <p>CALABASH_TEST_PACKAGE: A Calabash test package
+     * upload.</p> </li> <li> <p>INSTRUMENTATION_TEST_PACKAGE: An instrumentation
+     * upload.</p> </li> <li> <p>UIAUTOMATION_TEST_PACKAGE: A uiautomation test package
+     * upload.</p> </li> <li> <p>UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package
+     * upload.</p> </li> <li> <p>XCTEST_TEST_PACKAGE: An XCode test package upload.</p>
+     * </li> <li> <p>XCTEST_UI_TEST_PACKAGE: An XCode UI test package upload.</p> </li>
+     * </ul> <p> <b>Note</b> If you call <code>CreateUpload</code> with
      * <code>WEB_APP</code> specified, AWS Device Farm throws an
      * <code>ArgumentException</code> error.</p>
      */
@@ -204,23 +232,23 @@ namespace Model
 
     /**
      * <p>The upload's upload type.</p> <p>Must be one of the following values:</p>
-     * <ul> <li><p>ANDROID_APP: An Android upload.</p></li> <li><p>IOS_APP: An iOS
-     * upload.</p></li> <li><p>WEB_APP: A web appliction upload.</p></li>
-     * <li><p>EXTERNAL_DATA: An external data upload.</p></li>
-     * <li><p>APPIUM_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package
-     * upload.</p></li> <li><p>APPIUM_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG
-     * test package upload.</p></li> <li><p>APPIUM_PYTHON_TEST_PACKAGE: An Appium
-     * Python test package upload.</p></li> <li><p>APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE:
-     * An Appium Java JUnit test package upload.</p></li>
-     * <li><p>APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package
-     * upload.</p></li> <li><p>APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test
-     * package upload.</p></li> <li><p>CALABASH_TEST_PACKAGE: A Calabash test package
-     * upload.</p></li> <li><p>INSTRUMENTATION_TEST_PACKAGE: An instrumentation
-     * upload.</p></li> <li><p>UIAUTOMATION_TEST_PACKAGE: A uiautomation test package
-     * upload.</p></li> <li><p>UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package
-     * upload.</p></li> <li><p>XCTEST_TEST_PACKAGE: An XCode test package
-     * upload.</p></li> <li><p>XCTEST_UI_TEST_PACKAGE: An XCode UI test package
-     * upload.</p></li> </ul> <p><b>Note</b> If you call <code>CreateUpload</code> with
+     * <ul> <li> <p>ANDROID_APP: An Android upload.</p> </li> <li> <p>IOS_APP: An iOS
+     * upload.</p> </li> <li> <p>WEB_APP: A web appliction upload.</p> </li> <li>
+     * <p>EXTERNAL_DATA: An external data upload.</p> </li> <li>
+     * <p>APPIUM_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload.</p>
+     * </li> <li> <p>APPIUM_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test
+     * package upload.</p> </li> <li> <p>APPIUM_PYTHON_TEST_PACKAGE: An Appium Python
+     * test package upload.</p> </li> <li> <p>APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An
+     * Appium Java JUnit test package upload.</p> </li> <li>
+     * <p>APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package
+     * upload.</p> </li> <li> <p>APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test
+     * package upload.</p> </li> <li> <p>CALABASH_TEST_PACKAGE: A Calabash test package
+     * upload.</p> </li> <li> <p>INSTRUMENTATION_TEST_PACKAGE: An instrumentation
+     * upload.</p> </li> <li> <p>UIAUTOMATION_TEST_PACKAGE: A uiautomation test package
+     * upload.</p> </li> <li> <p>UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package
+     * upload.</p> </li> <li> <p>XCTEST_TEST_PACKAGE: An XCode test package upload.</p>
+     * </li> <li> <p>XCTEST_UI_TEST_PACKAGE: An XCode UI test package upload.</p> </li>
+     * </ul> <p> <b>Note</b> If you call <code>CreateUpload</code> with
      * <code>WEB_APP</code> specified, AWS Device Farm throws an
      * <code>ArgumentException</code> error.</p>
      */

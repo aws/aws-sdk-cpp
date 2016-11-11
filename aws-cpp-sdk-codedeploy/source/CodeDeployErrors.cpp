@@ -41,6 +41,7 @@ static const int INVALID_ROLE_HASH = HashingUtils::HashString("InvalidRoleExcept
 static const int APPLICATION_NAME_REQUIRED_HASH = HashingUtils::HashString("ApplicationNameRequiredException");
 static const int INVALID_REVISION_HASH = HashingUtils::HashString("InvalidRevisionException");
 static const int INVALID_DEPLOYMENT_CONFIG_NAME_HASH = HashingUtils::HashString("InvalidDeploymentConfigNameException");
+static const int ALARMS_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("AlarmsLimitExceededException");
 static const int DEPLOYMENT_ID_REQUIRED_HASH = HashingUtils::HashString("DeploymentIdRequiredException");
 static const int APPLICATION_DOES_NOT_EXIST_HASH = HashingUtils::HashString("ApplicationDoesNotExistException");
 static const int INVALID_OPERATION_HASH = HashingUtils::HashString("InvalidOperationException");
@@ -57,6 +58,7 @@ static const int TRIGGER_TARGETS_LIMIT_EXCEEDED_HASH = HashingUtils::HashString(
 static const int DEPLOYMENT_CONFIG_IN_USE_HASH = HashingUtils::HashString("DeploymentConfigInUseException");
 static const int INVALID_TAG_FILTER_HASH = HashingUtils::HashString("InvalidTagFilterException");
 static const int INVALID_DEPLOYED_STATE_FILTER_HASH = HashingUtils::HashString("InvalidDeployedStateFilterException");
+static const int INVALID_ALARM_CONFIG_HASH = HashingUtils::HashString("InvalidAlarmConfigException");
 static const int INVALID_INSTANCE_STATUS_HASH = HashingUtils::HashString("InvalidInstanceStatusException");
 static const int REVISION_DOES_NOT_EXIST_HASH = HashingUtils::HashString("RevisionDoesNotExistException");
 static const int INVALID_TRIGGER_CONFIG_HASH = HashingUtils::HashString("InvalidTriggerConfigException");
@@ -86,6 +88,7 @@ static const int INVALID_APPLICATION_NAME_HASH = HashingUtils::HashString("Inval
 static const int DEPLOYMENT_GROUP_ALREADY_EXISTS_HASH = HashingUtils::HashString("DeploymentGroupAlreadyExistsException");
 static const int INVALID_KEY_PREFIX_FILTER_HASH = HashingUtils::HashString("InvalidKeyPrefixFilterException");
 static const int INVALID_TAG_HASH = HashingUtils::HashString("InvalidTagException");
+static const int INVALID_AUTO_ROLLBACK_CONFIG_HASH = HashingUtils::HashString("InvalidAutoRollbackConfigException");
 static const int TAG_REQUIRED_HASH = HashingUtils::HashString("TagRequiredException");
 static const int DEPLOYMENT_CONFIG_ALREADY_EXISTS_HASH = HashingUtils::HashString("DeploymentConfigAlreadyExistsException");
 
@@ -150,6 +153,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::INVALID_DEPLOYMENT_CONFIG_NAME), false);
   }
+  else if (hashCode == ALARMS_LIMIT_EXCEEDED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::ALARMS_LIMIT_EXCEEDED), false);
+  }
   else if (hashCode == DEPLOYMENT_ID_REQUIRED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::DEPLOYMENT_ID_REQUIRED), false);
@@ -213,6 +220,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INVALID_DEPLOYED_STATE_FILTER_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::INVALID_DEPLOYED_STATE_FILTER), false);
+  }
+  else if (hashCode == INVALID_ALARM_CONFIG_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::INVALID_ALARM_CONFIG), false);
   }
   else if (hashCode == INVALID_INSTANCE_STATUS_HASH)
   {
@@ -329,6 +340,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INVALID_TAG_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::INVALID_TAG), false);
+  }
+  else if (hashCode == INVALID_AUTO_ROLLBACK_CONFIG_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::INVALID_AUTO_ROLLBACK_CONFIG), false);
   }
   else if (hashCode == TAG_REQUIRED_HASH)
   {

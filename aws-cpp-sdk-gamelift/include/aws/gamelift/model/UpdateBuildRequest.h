@@ -36,37 +36,37 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * <p>Unique identifier of the build you want to update. </p>
+     * <p>Unique identifier of the build you want to update.</p>
      */
     inline const Aws::String& GetBuildId() const{ return m_buildId; }
 
     /**
-     * <p>Unique identifier of the build you want to update. </p>
+     * <p>Unique identifier of the build you want to update.</p>
      */
     inline void SetBuildId(const Aws::String& value) { m_buildIdHasBeenSet = true; m_buildId = value; }
 
     /**
-     * <p>Unique identifier of the build you want to update. </p>
+     * <p>Unique identifier of the build you want to update.</p>
      */
     inline void SetBuildId(Aws::String&& value) { m_buildIdHasBeenSet = true; m_buildId = value; }
 
     /**
-     * <p>Unique identifier of the build you want to update. </p>
+     * <p>Unique identifier of the build you want to update.</p>
      */
     inline void SetBuildId(const char* value) { m_buildIdHasBeenSet = true; m_buildId.assign(value); }
 
     /**
-     * <p>Unique identifier of the build you want to update. </p>
+     * <p>Unique identifier of the build you want to update.</p>
      */
     inline UpdateBuildRequest& WithBuildId(const Aws::String& value) { SetBuildId(value); return *this;}
 
     /**
-     * <p>Unique identifier of the build you want to update. </p>
+     * <p>Unique identifier of the build you want to update.</p>
      */
     inline UpdateBuildRequest& WithBuildId(Aws::String&& value) { SetBuildId(value); return *this;}
 
     /**
-     * <p>Unique identifier of the build you want to update. </p>
+     * <p>Unique identifier of the build you want to update.</p>
      */
     inline UpdateBuildRequest& WithBuildId(const char* value) { SetBuildId(value); return *this;}
 

@@ -417,22 +417,22 @@ namespace Model
         virtual void DeleteDevicePoolAsync(const Model::DeleteDevicePoolRequest& request, const DeleteDevicePoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes an AWS Device Farm project, given the project ARN.</p> <p><b>Note</b>
-         * Deleting this resource does not stop an in-progress run.</p>
+         * <p>Deletes an AWS Device Farm project, given the project ARN.</p> <p>
+         * <b>Note</b> Deleting this resource does not stop an in-progress run.</p>
          */
         virtual Model::DeleteProjectOutcome DeleteProject(const Model::DeleteProjectRequest& request) const;
 
         /**
-         * <p>Deletes an AWS Device Farm project, given the project ARN.</p> <p><b>Note</b>
-         * Deleting this resource does not stop an in-progress run.</p>
+         * <p>Deletes an AWS Device Farm project, given the project ARN.</p> <p>
+         * <b>Note</b> Deleting this resource does not stop an in-progress run.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteProjectOutcomeCallable DeleteProjectCallable(const Model::DeleteProjectRequest& request) const;
 
         /**
-         * <p>Deletes an AWS Device Farm project, given the project ARN.</p> <p><b>Note</b>
-         * Deleting this resource does not stop an in-progress run.</p>
+         * <p>Deletes an AWS Device Farm project, given the project ARN.</p> <p>
+         * <b>Note</b> Deleting this resource does not stop an in-progress run.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -458,22 +458,22 @@ namespace Model
         virtual void DeleteRemoteAccessSessionAsync(const Model::DeleteRemoteAccessSessionRequest& request, const DeleteRemoteAccessSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the run, given the run ARN.</p> <p><b>Note</b> Deleting this resource
-         * does not stop an in-progress run.</p>
+         * <p>Deletes the run, given the run ARN.</p> <p> <b>Note</b> Deleting this
+         * resource does not stop an in-progress run.</p>
          */
         virtual Model::DeleteRunOutcome DeleteRun(const Model::DeleteRunRequest& request) const;
 
         /**
-         * <p>Deletes the run, given the run ARN.</p> <p><b>Note</b> Deleting this resource
-         * does not stop an in-progress run.</p>
+         * <p>Deletes the run, given the run ARN.</p> <p> <b>Note</b> Deleting this
+         * resource does not stop an in-progress run.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteRunOutcomeCallable DeleteRunCallable(const Model::DeleteRunRequest& request) const;
 
         /**
-         * <p>Deletes the run, given the run ARN.</p> <p><b>Note</b> Deleting this resource
-         * does not stop an in-progress run.</p>
+         * <p>Deletes the run, given the run ARN.</p> <p> <b>Note</b> Deleting this
+         * resource does not stop an in-progress run.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -958,38 +958,38 @@ namespace Model
         virtual void ListRemoteAccessSessionsAsync(const Model::ListRemoteAccessSessionsRequest& request, const ListRemoteAccessSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets information about runs.</p>
+         * <p>Gets information about runs, given an AWS Device Farm project ARN.</p>
          */
         virtual Model::ListRunsOutcome ListRuns(const Model::ListRunsRequest& request) const;
 
         /**
-         * <p>Gets information about runs.</p>
+         * <p>Gets information about runs, given an AWS Device Farm project ARN.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListRunsOutcomeCallable ListRunsCallable(const Model::ListRunsRequest& request) const;
 
         /**
-         * <p>Gets information about runs.</p>
+         * <p>Gets information about runs, given an AWS Device Farm project ARN.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListRunsAsync(const Model::ListRunsRequest& request, const ListRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets information about samples.</p>
+         * <p>Gets information about samples, given an AWS Device Farm project ARN</p>
          */
         virtual Model::ListSamplesOutcome ListSamples(const Model::ListSamplesRequest& request) const;
 
         /**
-         * <p>Gets information about samples.</p>
+         * <p>Gets information about samples, given an AWS Device Farm project ARN</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListSamplesOutcomeCallable ListSamplesCallable(const Model::ListSamplesRequest& request) const;
 
         /**
-         * <p>Gets information about samples.</p>
+         * <p>Gets information about samples, given an AWS Device Farm project ARN</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1053,19 +1053,19 @@ namespace Model
         virtual void ListUniqueProblemsAsync(const Model::ListUniqueProblemsRequest& request, const ListUniqueProblemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets information about uploads.</p>
+         * <p>Gets information about uploads, given an AWS Device Farm project ARN.</p>
          */
         virtual Model::ListUploadsOutcome ListUploads(const Model::ListUploadsRequest& request) const;
 
         /**
-         * <p>Gets information about uploads.</p>
+         * <p>Gets information about uploads, given an AWS Device Farm project ARN.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListUploadsOutcomeCallable ListUploadsCallable(const Model::ListUploadsRequest& request) const;
 
         /**
-         * <p>Gets information about uploads.</p>
+         * <p>Gets information about uploads, given an AWS Device Farm project ARN.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */

@@ -36,49 +36,49 @@ namespace Model
 
     /**
      * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
-     * only include those with the specified names. </p>
+     * only include those with the specified names.</p>
      */
     inline const Aws::Vector<Aws::String>& GetApplicationNames() const{ return m_applicationNames; }
 
     /**
      * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
-     * only include those with the specified names. </p>
+     * only include those with the specified names.</p>
      */
     inline void SetApplicationNames(const Aws::Vector<Aws::String>& value) { m_applicationNamesHasBeenSet = true; m_applicationNames = value; }
 
     /**
      * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
-     * only include those with the specified names. </p>
+     * only include those with the specified names.</p>
      */
     inline void SetApplicationNames(Aws::Vector<Aws::String>&& value) { m_applicationNamesHasBeenSet = true; m_applicationNames = value; }
 
     /**
      * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
-     * only include those with the specified names. </p>
+     * only include those with the specified names.</p>
      */
     inline DescribeApplicationsRequest& WithApplicationNames(const Aws::Vector<Aws::String>& value) { SetApplicationNames(value); return *this;}
 
     /**
      * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
-     * only include those with the specified names. </p>
+     * only include those with the specified names.</p>
      */
     inline DescribeApplicationsRequest& WithApplicationNames(Aws::Vector<Aws::String>&& value) { SetApplicationNames(value); return *this;}
 
     /**
      * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
-     * only include those with the specified names. </p>
+     * only include those with the specified names.</p>
      */
     inline DescribeApplicationsRequest& AddApplicationNames(const Aws::String& value) { m_applicationNamesHasBeenSet = true; m_applicationNames.push_back(value); return *this; }
 
     /**
      * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
-     * only include those with the specified names. </p>
+     * only include those with the specified names.</p>
      */
     inline DescribeApplicationsRequest& AddApplicationNames(Aws::String&& value) { m_applicationNamesHasBeenSet = true; m_applicationNames.push_back(value); return *this; }
 
     /**
      * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
-     * only include those with the specified names. </p>
+     * only include those with the specified names.</p>
      */
     inline DescribeApplicationsRequest& AddApplicationNames(const char* value) { m_applicationNamesHasBeenSet = true; m_applicationNames.push_back(value); return *this; }
 

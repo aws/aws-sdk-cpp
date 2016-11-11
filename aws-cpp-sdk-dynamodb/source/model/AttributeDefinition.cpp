@@ -29,12 +29,14 @@ namespace Model
 
 AttributeDefinition::AttributeDefinition() : 
     m_attributeNameHasBeenSet(false),
+    m_attributeType(ScalarAttributeType::NOT_SET),
     m_attributeTypeHasBeenSet(false)
 {
 }
 
 AttributeDefinition::AttributeDefinition(const JsonValue& jsonValue) : 
     m_attributeNameHasBeenSet(false),
+    m_attributeType(ScalarAttributeType::NOT_SET),
     m_attributeTypeHasBeenSet(false)
 {
   *this = jsonValue;

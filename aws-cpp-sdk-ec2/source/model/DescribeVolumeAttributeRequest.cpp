@@ -23,6 +23,7 @@ DescribeVolumeAttributeRequest::DescribeVolumeAttributeRequest() :
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
     m_volumeIdHasBeenSet(false),
+    m_attribute(VolumeAttributeName::NOT_SET),
     m_attributeHasBeenSet(false)
 {
 }

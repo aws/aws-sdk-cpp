@@ -62,6 +62,14 @@ public class CoreErrors
         VARIANTS.add("UnrecognizedClient");
         VARIANTS.add("UnrecognizedClientException");
         VARIANTS.add("InternalServerError");
+        VARIANTS.add("SlowDown");
+        VARIANTS.add("SlowDownException");
+        VARIANTS.add("RequestTimeTooSkewed");
+        VARIANTS.add("RequestTimeTooSkewedException");
+        VARIANTS.add("InvalidSignature");
+        VARIANTS.add("InvalidSignatureException");
+        VARIANTS.add("SignatureDoesNotMatch");
+        VARIANTS.add("SignatureDoesNotMatchException");
     }
 
 }

@@ -85,7 +85,9 @@ DBInstance::DBInstance() :
     m_enhancedMonitoringResourceArnHasBeenSet(false),
     m_monitoringRoleArnHasBeenSet(false),
     m_promotionTier(0),
-    m_promotionTierHasBeenSet(false)
+    m_promotionTierHasBeenSet(false),
+    m_dBInstanceArnHasBeenSet(false),
+    m_timezoneHasBeenSet(false)
 {
 }
 
@@ -145,7 +147,9 @@ DBInstance::DBInstance(const XmlNode& xmlNode) :
     m_enhancedMonitoringResourceArnHasBeenSet(false),
     m_monitoringRoleArnHasBeenSet(false),
     m_promotionTier(0),
-    m_promotionTierHasBeenSet(false)
+    m_promotionTierHasBeenSet(false),
+    m_dBInstanceArnHasBeenSet(false),
+    m_timezoneHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -468,6 +472,18 @@ DBInstance& DBInstance::operator =(const XmlNode& xmlNode)
       m_promotionTier = StringUtils::ConvertToInt32(StringUtils::Trim(promotionTierNode.GetText().c_str()).c_str());
       m_promotionTierHasBeenSet = true;
     }
+    XmlNode dBInstanceArnNode = resultNode.FirstChild("DBInstanceArn");
+    if(!dBInstanceArnNode.IsNull())
+    {
+      m_dBInstanceArn = StringUtils::Trim(dBInstanceArnNode.GetText().c_str());
+      m_dBInstanceArnHasBeenSet = true;
+    }
+    XmlNode timezoneNode = resultNode.FirstChild("Timezone");
+    if(!timezoneNode.IsNull())
+    {
+      m_timezone = StringUtils::Trim(timezoneNode.GetText().c_str());
+      m_timezoneHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -746,6 +762,16 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location, uns
       oStream << location << index << locationValue << ".PromotionTier=" << m_promotionTier << "&";
   }
 
+  if(m_dBInstanceArnHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".DBInstanceArn=" << StringUtils::URLEncode(m_dBInstanceArn.c_str()) << "&";
+  }
+
+  if(m_timezoneHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Timezone=" << StringUtils::URLEncode(m_timezone.c_str()) << "&";
+  }
+
 }
 
 void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -975,6 +1001,14 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) con
   if(m_promotionTierHasBeenSet)
   {
       oStream << location << ".PromotionTier=" << m_promotionTier << "&";
+  }
+  if(m_dBInstanceArnHasBeenSet)
+  {
+      oStream << location << ".DBInstanceArn=" << StringUtils::URLEncode(m_dBInstanceArn.c_str()) << "&";
+  }
+  if(m_timezoneHasBeenSet)
+  {
+      oStream << location << ".Timezone=" << StringUtils::URLEncode(m_timezone.c_str()) << "&";
   }
 }
 

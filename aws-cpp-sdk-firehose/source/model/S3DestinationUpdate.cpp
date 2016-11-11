@@ -32,6 +32,7 @@ S3DestinationUpdate::S3DestinationUpdate() :
     m_bucketARNHasBeenSet(false),
     m_prefixHasBeenSet(false),
     m_bufferingHintsHasBeenSet(false),
+    m_compressionFormat(CompressionFormat::NOT_SET),
     m_compressionFormatHasBeenSet(false),
     m_encryptionConfigurationHasBeenSet(false),
     m_cloudWatchLoggingOptionsHasBeenSet(false)
@@ -43,6 +44,7 @@ S3DestinationUpdate::S3DestinationUpdate(const JsonValue& jsonValue) :
     m_bucketARNHasBeenSet(false),
     m_prefixHasBeenSet(false),
     m_bufferingHintsHasBeenSet(false),
+    m_compressionFormat(CompressionFormat::NOT_SET),
     m_compressionFormatHasBeenSet(false),
     m_encryptionConfigurationHasBeenSet(false),
     m_cloudWatchLoggingOptionsHasBeenSet(false)

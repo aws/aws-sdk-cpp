@@ -32,6 +32,7 @@ namespace Model
 Snapshot::Snapshot() : 
     m_snapshotIdHasBeenSet(false),
     m_volumeIdHasBeenSet(false),
+    m_state(SnapshotState::NOT_SET),
     m_stateHasBeenSet(false),
     m_stateMessageHasBeenSet(false),
     m_startTimeHasBeenSet(false),
@@ -53,6 +54,7 @@ Snapshot::Snapshot() :
 Snapshot::Snapshot(const XmlNode& xmlNode) : 
     m_snapshotIdHasBeenSet(false),
     m_volumeIdHasBeenSet(false),
+    m_state(SnapshotState::NOT_SET),
     m_stateHasBeenSet(false),
     m_stateMessageHasBeenSet(false),
     m_startTimeHasBeenSet(false),

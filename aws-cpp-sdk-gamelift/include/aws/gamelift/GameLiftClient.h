@@ -36,6 +36,7 @@
 #include <aws/gamelift/model/DescribeFleetUtilizationResult.h>
 #include <aws/gamelift/model/DescribeGameSessionDetailsResult.h>
 #include <aws/gamelift/model/DescribeGameSessionsResult.h>
+#include <aws/gamelift/model/DescribeInstancesResult.h>
 #include <aws/gamelift/model/DescribePlayerSessionsResult.h>
 #include <aws/gamelift/model/DescribeRuntimeConfigurationResult.h>
 #include <aws/gamelift/model/DescribeScalingPoliciesResult.h>
@@ -120,6 +121,7 @@ namespace Model
         class DescribeFleetUtilizationRequest;
         class DescribeGameSessionDetailsRequest;
         class DescribeGameSessionsRequest;
+        class DescribeInstancesRequest;
         class DescribePlayerSessionsRequest;
         class DescribeRuntimeConfigurationRequest;
         class DescribeScalingPoliciesRequest;
@@ -159,6 +161,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeFleetUtilizationResult, Aws::Client::AWSError<GameLiftErrors>> DescribeFleetUtilizationOutcome;
         typedef Aws::Utils::Outcome<DescribeGameSessionDetailsResult, Aws::Client::AWSError<GameLiftErrors>> DescribeGameSessionDetailsOutcome;
         typedef Aws::Utils::Outcome<DescribeGameSessionsResult, Aws::Client::AWSError<GameLiftErrors>> DescribeGameSessionsOutcome;
+        typedef Aws::Utils::Outcome<DescribeInstancesResult, Aws::Client::AWSError<GameLiftErrors>> DescribeInstancesOutcome;
         typedef Aws::Utils::Outcome<DescribePlayerSessionsResult, Aws::Client::AWSError<GameLiftErrors>> DescribePlayerSessionsOutcome;
         typedef Aws::Utils::Outcome<DescribeRuntimeConfigurationResult, Aws::Client::AWSError<GameLiftErrors>> DescribeRuntimeConfigurationOutcome;
         typedef Aws::Utils::Outcome<DescribeScalingPoliciesResult, Aws::Client::AWSError<GameLiftErrors>> DescribeScalingPoliciesOutcome;
@@ -198,6 +201,7 @@ namespace Model
         typedef std::future<DescribeFleetUtilizationOutcome> DescribeFleetUtilizationOutcomeCallable;
         typedef std::future<DescribeGameSessionDetailsOutcome> DescribeGameSessionDetailsOutcomeCallable;
         typedef std::future<DescribeGameSessionsOutcome> DescribeGameSessionsOutcomeCallable;
+        typedef std::future<DescribeInstancesOutcome> DescribeInstancesOutcomeCallable;
         typedef std::future<DescribePlayerSessionsOutcome> DescribePlayerSessionsOutcomeCallable;
         typedef std::future<DescribeRuntimeConfigurationOutcome> DescribeRuntimeConfigurationOutcomeCallable;
         typedef std::future<DescribeScalingPoliciesOutcome> DescribeScalingPoliciesOutcomeCallable;
@@ -240,6 +244,7 @@ namespace Model
     typedef std::function<void(const GameLiftClient*, const Model::DescribeFleetUtilizationRequest&, const Model::DescribeFleetUtilizationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFleetUtilizationResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::DescribeGameSessionDetailsRequest&, const Model::DescribeGameSessionDetailsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeGameSessionDetailsResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::DescribeGameSessionsRequest&, const Model::DescribeGameSessionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeGameSessionsResponseReceivedHandler;
+    typedef std::function<void(const GameLiftClient*, const Model::DescribeInstancesRequest&, const Model::DescribeInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeInstancesResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::DescribePlayerSessionsRequest&, const Model::DescribePlayerSessionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribePlayerSessionsResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::DescribeRuntimeConfigurationRequest&, const Model::DescribeRuntimeConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeRuntimeConfigurationResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::DescribeScalingPoliciesRequest&, const Model::DescribeScalingPoliciesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeScalingPoliciesResponseReceivedHandler;
@@ -266,54 +271,60 @@ namespace Model
    * multiplayer games. Amazon GameLift provides setup and deployment of game
    * servers, and handles infrastructure scaling and session management.</p> <p>This
    * reference describes the low-level service API for GameLift. You can call this
-   * API directly or use the <a href="https://aws.amazon.com/tools/">AWS SDK</a> for
-   * your preferred language. The AWS SDK includes a set of high-level GameLift
+   * API directly or use the <a href="http://aws.amazon.com/tools/#sdk">AWS SDK</a>
+   * for your preferred language. The AWS SDK includes a set of high-level GameLift
    * actions multiplayer game sessions. Alternatively, you can use the <a
-   * href="https://aws.amazon.com/cli/">AWS command-line interface</a> (CLI) tool,
+   * href="http://aws.amazon.com/cli/">AWS command-line interface</a> (CLI) tool,
    * which includes commands for GameLift. For administrative actions, you can also
-   * use the Amazon GameLift console. </p> <p><b>More Resources</b></p> <ul> <li> <a
-   * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/">Amazon
+   * use the Amazon GameLift console. </p> <p> <b>More Resources</b> </p> <ul> <li>
+   * <p> <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/">Amazon
    * GameLift Developer Guide</a>: Learn more about GameLift features and how to use
-   * them </li> <li> <a href="https://gamedev.amazon.com/forums/tutorials">Lumberyard
-   * and GameLift Tutorials</a>: Get started fast with walkthroughs and sample
-   * projects</li> <li> <a href="https://aws.amazon.com/blogs/gamedev/">GameDev
-   * Blog</a>: Stay up to date with new features and techniques</li> <li> <a
+   * them </p> </li> <li> <p> <a
+   * href="https://gamedev.amazon.com/forums/tutorials">Lumberyard and GameLift
+   * Tutorials</a>: Get started fast with walkthroughs and sample projects</p> </li>
+   * <li> <p> <a href="http://aws.amazon.com/blogs/gamedev/">GameDev Blog</a>: Stay
+   * up to date with new features and techniques</p> </li> <li> <p> <a
    * href="https://gamedev.amazon.com/forums/spaces/123/gamelift-discussion.html">GameDev
-   * Forums</a>: Connect with the GameDev community</li> </ul> <p><b>Manage Games and
-   * Players Through GameLift</b></p> <p>Call these actions from your game clients
-   * and/or services to create and manage multiplayer game sessions and player
-   * sessions.</p> <ul> <li> <b>Game sessions</b> <ul>
-   * <li><a>CreateGameSession</a></li> <li><a>DescribeGameSessions</a></li>
-   * <li><a>DescribeGameSessionDetails</a></li> <li><a>UpdateGameSession</a></li>
-   * <li><a>SearchGameSessions</a></li> </ul> </li> <li> <b>Player sessions</b> <ul>
-   * <li><a>CreatePlayerSession</a></li> <li><a>CreatePlayerSessions</a></li>
-   * <li><a>DescribePlayerSessions</a></li> </ul> </li> <li> <b>Other actions:</b>
-   * <ul> <li><a>GetGameSessionLogUrl</a></li> </ul> </li> </ul> <p><b>Set Up and
-   * Manage Game Servers</b></p> <p>Use these administrative actions to configure
-   * GameLift to host your game servers. When setting up GameLift, you'll need to (1)
-   * configure a build for your game and upload build files, and (2) set up one or
-   * more fleets to host game sessions. Once you've created and activated a fleet,
-   * you can assign aliases to it, scale capacity, track performance and utilization,
-   * etc.</p> <ul> <li> <b>Manage your builds:</b> <ul> <li><a>ListBuilds</a></li>
-   * <li><a>CreateBuild</a></li> <li><a>DescribeBuild</a></li>
-   * <li><a>UpdateBuild</a></li> <li><a>DeleteBuild</a></li>
-   * <li><a>RequestUploadCredentials</a></li> </ul> </li> <li> <b>Manage your
-   * fleets:</b> <ul> <li><a>ListFleets</a></li> <li><a>CreateFleet</a></li>
-   * <li>Describe fleets: <ul> <li><a>DescribeFleetAttributes</a></li>
-   * <li><a>DescribeFleetCapacity</a></li> <li><a>DescribeFleetPortSettings</a></li>
-   * <li><a>DescribeFleetUtilization</a></li>
-   * <li><a>DescribeEC2InstanceLimits</a></li> <li><a>DescribeFleetEvents</a></li>
-   * <li><a>DescribeRuntimeConfiguration</a></li> </ul> </li> <li>Update fleets: <ul>
-   * <li><a>UpdateFleetAttributes</a></li> <li><a>UpdateFleetCapacity</a></li>
-   * <li><a>UpdateFleetPortSettings</a></li>
-   * <li><a>UpdateRuntimeConfiguration</a></li> </ul> </li>
-   * <li><a>DeleteFleet</a></li> </ul> </li> <li> <b>Manage fleet aliases:</b> <ul>
-   * <li><a>ListAliases</a></li> <li><a>CreateAlias</a></li>
-   * <li><a>DescribeAlias</a></li> <li><a>UpdateAlias</a></li>
-   * <li><a>DeleteAlias</a></li> <li><a>ResolveAlias</a></li> </ul> </li> <li>
-   * <b>Manage autoscaling:</b> <ul> <li><a>PutScalingPolicy</a></li>
-   * <li><a>DescribeScalingPolicies</a></li> <li><a>DeleteScalingPolicy</a></li>
-   * </ul> </li> </ul> <p>To view changes to the API, see the GameLift <a
+   * Forums</a>: Connect with the GameDev community</p> </li> </ul> <p> <b>Manage
+   * Games and Players Through GameLift</b> </p> <p>Call these actions from your game
+   * clients and/or services to create and manage multiplayer game sessions and
+   * player sessions.</p> <ul> <li> <p> <b>Game sessions:</b> </p> <ul> <li> <p>
+   * <a>CreateGameSession</a> </p> </li> <li> <p> <a>DescribeGameSessions</a> </p>
+   * </li> <li> <p> <a>DescribeGameSessionDetails</a> </p> </li> <li> <p>
+   * <a>UpdateGameSession</a> </p> </li> <li> <p> <a>SearchGameSessions</a> </p>
+   * </li> </ul> </li> <li> <p> <b>Player sessions:</b> </p> <ul> <li> <p>
+   * <a>CreatePlayerSession</a> </p> </li> <li> <p> <a>CreatePlayerSessions</a> </p>
+   * </li> <li> <p> <a>DescribePlayerSessions</a> </p> </li> </ul> </li> <li> <p>
+   * <b>Other actions:</b> </p> <ul> <li> <p> <a>GetGameSessionLogUrl</a> </p> </li>
+   * </ul> </li> </ul> <p> <b>Set Up and Manage Game Servers</b> </p> <p>Use these
+   * administrative actions to configure GameLift to host your game servers. When
+   * setting up GameLift, you will need to (1) configure a build for your game and
+   * upload build files, and (2) set up one or more fleets to host game sessions.
+   * Once you've created and activated a fleet, you can assign aliases to it, scale
+   * capacity, track performance and utilization, etc.</p> <ul> <li> <p> <b>Game
+   * builds:</b> </p> <ul> <li> <p> <a>ListBuilds</a> </p> </li> <li> <p>
+   * <a>CreateBuild</a> </p> </li> <li> <p> <a>DescribeBuild</a> </p> </li> <li> <p>
+   * <a>UpdateBuild</a> </p> </li> <li> <p> <a>DeleteBuild</a> </p> </li> <li> <p>
+   * <a>RequestUploadCredentials</a> </p> </li> </ul> </li> <li> <p> <b>Fleets:</b>
+   * </p> <ul> <li> <p> <a>ListFleets</a> </p> </li> <li> <p> <a>CreateFleet</a> </p>
+   * </li> <li> <p>Describe fleets:</p> <ul> <li> <p> <a>DescribeFleetAttributes</a>
+   * </p> </li> <li> <p> <a>DescribeFleetCapacity</a> </p> </li> <li> <p>
+   * <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
+   * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
+   * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p> <a>DescribeFleetEvents</a>
+   * </p> </li> <li> <p> <a>DescribeRuntimeConfiguration</a> </p> </li> </ul> </li>
+   * <li> <p>Update fleets:</p> <ul> <li> <p> <a>UpdateFleetAttributes</a> </p> </li>
+   * <li> <p> <a>UpdateFleetCapacity</a> </p> </li> <li> <p>
+   * <a>UpdateFleetPortSettings</a> </p> </li> <li> <p>
+   * <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li> <li> <p>
+   * <a>DeleteFleet</a> </p> </li> </ul> </li> <li> <p> <b>Manage fleet aliases:</b>
+   * </p> <ul> <li> <p> <a>ListAliases</a> </p> </li> <li> <p> <a>CreateAlias</a>
+   * </p> </li> <li> <p> <a>DescribeAlias</a> </p> </li> <li> <p> <a>UpdateAlias</a>
+   * </p> </li> <li> <p> <a>DeleteAlias</a> </p> </li> <li> <p> <a>ResolveAlias</a>
+   * </p> </li> </ul> </li> <li> <p> <b>Manage autoscaling:</b> </p> <ul> <li> <p>
+   * <a>PutScalingPolicy</a> </p> </li> <li> <p> <a>DescribeScalingPolicies</a> </p>
+   * </li> <li> <p> <a>DeleteScalingPolicy</a> </p> </li> </ul> </li> </ul> <p>To
+   * view changes to the API, see the GameLift <a
    * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/doc-history.html">Document
    * History</a> page.</p>
    */
@@ -401,14 +412,15 @@ namespace Model
          * files. Instead, to create a build, use the CLI command
          * <code>upload-build</code>, which creates a new build record and uploads the
          * build files in one step. (See the <a
-         * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/">Amazon
-         * GameLift Developer Guide</a> for more details on the CLI and the upload
-         * process.) </p> </important> <p>To create a new build, optionally specify a build
-         * name and version. This metadata is stored with other properties in the build
-         * record and is displayed in the GameLift console (it is not visible to players).
-         * If successful, this action returns the newly created build record along with the
-         * Amazon S3 storage location and AWS account credentials. Use the location and
-         * credentials to upload your game build.</p>
+         * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-intro.html">Amazon
+         * GameLift Developer Guide</a> help on packaging and uploading your build.) </p>
+         * </important> <p>To create a new build, identify the operating system of the game
+         * server binaries. All game servers in a build must use the same operating system.
+         * Optionally, specify a build name and version; this metadata is stored with other
+         * properties in the build record and is displayed in the GameLift console (it is
+         * not visible to players). If successful, this action returns the newly created
+         * build record along with the Amazon S3 storage location and AWS account
+         * credentials. Use the location and credentials to upload your game build.</p>
          */
         virtual Model::CreateBuildOutcome CreateBuild(const Model::CreateBuildRequest& request) const;
 
@@ -421,14 +433,15 @@ namespace Model
          * files. Instead, to create a build, use the CLI command
          * <code>upload-build</code>, which creates a new build record and uploads the
          * build files in one step. (See the <a
-         * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/">Amazon
-         * GameLift Developer Guide</a> for more details on the CLI and the upload
-         * process.) </p> </important> <p>To create a new build, optionally specify a build
-         * name and version. This metadata is stored with other properties in the build
-         * record and is displayed in the GameLift console (it is not visible to players).
-         * If successful, this action returns the newly created build record along with the
-         * Amazon S3 storage location and AWS account credentials. Use the location and
-         * credentials to upload your game build.</p>
+         * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-intro.html">Amazon
+         * GameLift Developer Guide</a> help on packaging and uploading your build.) </p>
+         * </important> <p>To create a new build, identify the operating system of the game
+         * server binaries. All game servers in a build must use the same operating system.
+         * Optionally, specify a build name and version; this metadata is stored with other
+         * properties in the build record and is displayed in the GameLift console (it is
+         * not visible to players). If successful, this action returns the newly created
+         * build record along with the Amazon S3 storage location and AWS account
+         * credentials. Use the location and credentials to upload your game build.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -443,14 +456,15 @@ namespace Model
          * files. Instead, to create a build, use the CLI command
          * <code>upload-build</code>, which creates a new build record and uploads the
          * build files in one step. (See the <a
-         * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/">Amazon
-         * GameLift Developer Guide</a> for more details on the CLI and the upload
-         * process.) </p> </important> <p>To create a new build, optionally specify a build
-         * name and version. This metadata is stored with other properties in the build
-         * record and is displayed in the GameLift console (it is not visible to players).
-         * If successful, this action returns the newly created build record along with the
-         * Amazon S3 storage location and AWS account credentials. Use the location and
-         * credentials to upload your game build.</p>
+         * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-intro.html">Amazon
+         * GameLift Developer Guide</a> help on packaging and uploading your build.) </p>
+         * </important> <p>To create a new build, identify the operating system of the game
+         * server binaries. All game servers in a build must use the same operating system.
+         * Optionally, specify a build name and version; this metadata is stored with other
+         * properties in the build record and is displayed in the GameLift console (it is
+         * not visible to players). If successful, this action returns the newly created
+         * build record along with the Amazon S3 storage location and AWS account
+         * credentials. Use the location and credentials to upload your game build.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -461,7 +475,7 @@ namespace Model
          * Elastic Compute Cloud (Amazon EC2) instances, each of which can run multiple
          * server processes to host game sessions. You configure a fleet to create
          * instances with certain hardware specifications (see <a
-         * href="https://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>
+         * href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>
          * for more information), and deploy a specified game build to each instance. A
          * newly created fleet passes through several statuses; once it reaches the
          * <code>ACTIVE</code> status, it can begin hosting game sessions.</p> <p>To create
@@ -472,23 +486,25 @@ namespace Model
          * for inbound traffic, (3) fleet-wide game session protection, and (4) the
          * location of default log files for GameLift to upload and store.</p> <p>If the
          * <code>CreateFleet</code> call is successful, Amazon GameLift performs the
-         * following tasks:</p> <ul> <li>Creates a fleet record and sets the status to
-         * <code>NEW</code> (followed by other statuses as the fleet is activated).</li>
-         * <li>Sets the fleet's capacity to 1 "desired", which causes GameLift to start one
-         * new EC2 instance.</li> <li>Starts launching server processes on the instance. If
-         * the fleet is configured to run multiple server processes per instance, GameLift
-         * staggers each launch by a few seconds.</li> <li>Begins writing events to the
-         * fleet event log, which can be accessed in the GameLift console.</li> <li>Sets
-         * the fleet's status to <code>ACTIVE</code> once one server process in the fleet
-         * is ready to host a game session.</li> </ul> <p>After a fleet is created, use the
-         * following actions to change fleet properties and configuration:</p> <ul> <li>
+         * following tasks:</p> <ul> <li> <p>Creates a fleet record and sets the status to
+         * <code>NEW</code> (followed by other statuses as the fleet is activated).</p>
+         * </li> <li> <p>Sets the fleet's capacity to 1 "desired", which causes GameLift to
+         * start one new EC2 instance.</p> </li> <li> <p>Starts launching server processes
+         * on the instance. If the fleet is configured to run multiple server processes per
+         * instance, GameLift staggers each launch by a few seconds.</p> </li> <li>
+         * <p>Begins writing events to the fleet event log, which can be accessed in the
+         * GameLift console.</p> </li> <li> <p>Sets the fleet's status to
+         * <code>ACTIVE</code> once one server process in the fleet is ready to host a game
+         * session.</p> </li> </ul> <p>After a fleet is created, use the following actions
+         * to change fleet properties and configuration:</p> <ul> <li> <p>
          * <a>UpdateFleetAttributes</a> -- Update fleet metadata, including name and
-         * description.</li> <li> <a>UpdateFleetCapacity</a> -- Increase or decrease the
-         * number of instances you want the fleet to maintain.</li> <li>
-         * <a>UpdateFleetPortSettings</a> -- Change the IP address and port ranges that
-         * allow access to incoming traffic.</li> <li> <a>UpdateRuntimeConfiguration</a> --
-         * Change how server processes are launched in the fleet, including launch path,
-         * launch parameters, and the number of concurrent processes.</li> </ul>
+         * description.</p> </li> <li> <p> <a>UpdateFleetCapacity</a> -- Increase or
+         * decrease the number of instances you want the fleet to maintain.</p> </li> <li>
+         * <p> <a>UpdateFleetPortSettings</a> -- Change the IP address and port ranges that
+         * allow access to incoming traffic.</p> </li> <li> <p>
+         * <a>UpdateRuntimeConfiguration</a> -- Change how server processes are launched in
+         * the fleet, including launch path, launch parameters, and the number of
+         * concurrent processes.</p> </li> </ul>
          */
         virtual Model::CreateFleetOutcome CreateFleet(const Model::CreateFleetRequest& request) const;
 
@@ -497,7 +513,7 @@ namespace Model
          * Elastic Compute Cloud (Amazon EC2) instances, each of which can run multiple
          * server processes to host game sessions. You configure a fleet to create
          * instances with certain hardware specifications (see <a
-         * href="https://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>
+         * href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>
          * for more information), and deploy a specified game build to each instance. A
          * newly created fleet passes through several statuses; once it reaches the
          * <code>ACTIVE</code> status, it can begin hosting game sessions.</p> <p>To create
@@ -508,23 +524,25 @@ namespace Model
          * for inbound traffic, (3) fleet-wide game session protection, and (4) the
          * location of default log files for GameLift to upload and store.</p> <p>If the
          * <code>CreateFleet</code> call is successful, Amazon GameLift performs the
-         * following tasks:</p> <ul> <li>Creates a fleet record and sets the status to
-         * <code>NEW</code> (followed by other statuses as the fleet is activated).</li>
-         * <li>Sets the fleet's capacity to 1 "desired", which causes GameLift to start one
-         * new EC2 instance.</li> <li>Starts launching server processes on the instance. If
-         * the fleet is configured to run multiple server processes per instance, GameLift
-         * staggers each launch by a few seconds.</li> <li>Begins writing events to the
-         * fleet event log, which can be accessed in the GameLift console.</li> <li>Sets
-         * the fleet's status to <code>ACTIVE</code> once one server process in the fleet
-         * is ready to host a game session.</li> </ul> <p>After a fleet is created, use the
-         * following actions to change fleet properties and configuration:</p> <ul> <li>
+         * following tasks:</p> <ul> <li> <p>Creates a fleet record and sets the status to
+         * <code>NEW</code> (followed by other statuses as the fleet is activated).</p>
+         * </li> <li> <p>Sets the fleet's capacity to 1 "desired", which causes GameLift to
+         * start one new EC2 instance.</p> </li> <li> <p>Starts launching server processes
+         * on the instance. If the fleet is configured to run multiple server processes per
+         * instance, GameLift staggers each launch by a few seconds.</p> </li> <li>
+         * <p>Begins writing events to the fleet event log, which can be accessed in the
+         * GameLift console.</p> </li> <li> <p>Sets the fleet's status to
+         * <code>ACTIVE</code> once one server process in the fleet is ready to host a game
+         * session.</p> </li> </ul> <p>After a fleet is created, use the following actions
+         * to change fleet properties and configuration:</p> <ul> <li> <p>
          * <a>UpdateFleetAttributes</a> -- Update fleet metadata, including name and
-         * description.</li> <li> <a>UpdateFleetCapacity</a> -- Increase or decrease the
-         * number of instances you want the fleet to maintain.</li> <li>
-         * <a>UpdateFleetPortSettings</a> -- Change the IP address and port ranges that
-         * allow access to incoming traffic.</li> <li> <a>UpdateRuntimeConfiguration</a> --
-         * Change how server processes are launched in the fleet, including launch path,
-         * launch parameters, and the number of concurrent processes.</li> </ul>
+         * description.</p> </li> <li> <p> <a>UpdateFleetCapacity</a> -- Increase or
+         * decrease the number of instances you want the fleet to maintain.</p> </li> <li>
+         * <p> <a>UpdateFleetPortSettings</a> -- Change the IP address and port ranges that
+         * allow access to incoming traffic.</p> </li> <li> <p>
+         * <a>UpdateRuntimeConfiguration</a> -- Change how server processes are launched in
+         * the fleet, including launch path, launch parameters, and the number of
+         * concurrent processes.</p> </li> </ul>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -535,7 +553,7 @@ namespace Model
          * Elastic Compute Cloud (Amazon EC2) instances, each of which can run multiple
          * server processes to host game sessions. You configure a fleet to create
          * instances with certain hardware specifications (see <a
-         * href="https://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>
+         * href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>
          * for more information), and deploy a specified game build to each instance. A
          * newly created fleet passes through several statuses; once it reaches the
          * <code>ACTIVE</code> status, it can begin hosting game sessions.</p> <p>To create
@@ -546,23 +564,25 @@ namespace Model
          * for inbound traffic, (3) fleet-wide game session protection, and (4) the
          * location of default log files for GameLift to upload and store.</p> <p>If the
          * <code>CreateFleet</code> call is successful, Amazon GameLift performs the
-         * following tasks:</p> <ul> <li>Creates a fleet record and sets the status to
-         * <code>NEW</code> (followed by other statuses as the fleet is activated).</li>
-         * <li>Sets the fleet's capacity to 1 "desired", which causes GameLift to start one
-         * new EC2 instance.</li> <li>Starts launching server processes on the instance. If
-         * the fleet is configured to run multiple server processes per instance, GameLift
-         * staggers each launch by a few seconds.</li> <li>Begins writing events to the
-         * fleet event log, which can be accessed in the GameLift console.</li> <li>Sets
-         * the fleet's status to <code>ACTIVE</code> once one server process in the fleet
-         * is ready to host a game session.</li> </ul> <p>After a fleet is created, use the
-         * following actions to change fleet properties and configuration:</p> <ul> <li>
+         * following tasks:</p> <ul> <li> <p>Creates a fleet record and sets the status to
+         * <code>NEW</code> (followed by other statuses as the fleet is activated).</p>
+         * </li> <li> <p>Sets the fleet's capacity to 1 "desired", which causes GameLift to
+         * start one new EC2 instance.</p> </li> <li> <p>Starts launching server processes
+         * on the instance. If the fleet is configured to run multiple server processes per
+         * instance, GameLift staggers each launch by a few seconds.</p> </li> <li>
+         * <p>Begins writing events to the fleet event log, which can be accessed in the
+         * GameLift console.</p> </li> <li> <p>Sets the fleet's status to
+         * <code>ACTIVE</code> once one server process in the fleet is ready to host a game
+         * session.</p> </li> </ul> <p>After a fleet is created, use the following actions
+         * to change fleet properties and configuration:</p> <ul> <li> <p>
          * <a>UpdateFleetAttributes</a> -- Update fleet metadata, including name and
-         * description.</li> <li> <a>UpdateFleetCapacity</a> -- Increase or decrease the
-         * number of instances you want the fleet to maintain.</li> <li>
-         * <a>UpdateFleetPortSettings</a> -- Change the IP address and port ranges that
-         * allow access to incoming traffic.</li> <li> <a>UpdateRuntimeConfiguration</a> --
-         * Change how server processes are launched in the fleet, including launch path,
-         * launch parameters, and the number of concurrent processes.</li> </ul>
+         * description.</p> </li> <li> <p> <a>UpdateFleetCapacity</a> -- Increase or
+         * decrease the number of instances you want the fleet to maintain.</p> </li> <li>
+         * <p> <a>UpdateFleetPortSettings</a> -- Change the IP address and port ranges that
+         * allow access to incoming traffic.</p> </li> <li> <p>
+         * <a>UpdateRuntimeConfiguration</a> -- Change how server processes are launched in
+         * the fleet, including launch path, launch parameters, and the number of
+         * concurrent processes.</p> </li> </ul>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -778,16 +798,14 @@ namespace Model
         /**
          * <p>Deletes a fleet scaling policy. This action means that the policy is no
          * longer in force and removes all record of it. To delete a scaling policy,
-         * specify both the scaling policy name and the fleet ID it is associated with.
-         * </p>
+         * specify both the scaling policy name and the fleet ID it is associated with.</p>
          */
         virtual Model::DeleteScalingPolicyOutcome DeleteScalingPolicy(const Model::DeleteScalingPolicyRequest& request) const;
 
         /**
          * <p>Deletes a fleet scaling policy. This action means that the policy is no
          * longer in force and removes all record of it. To delete a scaling policy,
-         * specify both the scaling policy name and the fleet ID it is associated with.
-         * </p>
+         * specify both the scaling policy name and the fleet ID it is associated with.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -796,8 +814,7 @@ namespace Model
         /**
          * <p>Deletes a fleet scaling policy. This action means that the policy is no
          * longer in force and removes all record of it. To delete a scaling policy,
-         * specify both the scaling policy name and the fleet ID it is associated with.
-         * </p>
+         * specify both the scaling policy name and the fleet ID it is associated with.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -849,21 +866,21 @@ namespace Model
 
         /**
          * <p>Retrieves the following information for the specified EC2 instance type:</p>
-         * <ul> <li>maximum number of instances allowed per AWS account (service
-         * limit)</li> <li>current usage level for the AWS account </li> </ul> <p>Service
-         * limits vary depending on region. Available regions for GameLift can be found in
-         * the AWS Management Console for GameLift (see the drop-down list in the upper
-         * right corner).</p>
+         * <ul> <li> <p>maximum number of instances allowed per AWS account (service
+         * limit)</p> </li> <li> <p>current usage level for the AWS account</p> </li> </ul>
+         * <p>Service limits vary depending on region. Available regions for GameLift can
+         * be found in the AWS Management Console for GameLift (see the drop-down list in
+         * the upper right corner).</p>
          */
         virtual Model::DescribeEC2InstanceLimitsOutcome DescribeEC2InstanceLimits(const Model::DescribeEC2InstanceLimitsRequest& request) const;
 
         /**
          * <p>Retrieves the following information for the specified EC2 instance type:</p>
-         * <ul> <li>maximum number of instances allowed per AWS account (service
-         * limit)</li> <li>current usage level for the AWS account </li> </ul> <p>Service
-         * limits vary depending on region. Available regions for GameLift can be found in
-         * the AWS Management Console for GameLift (see the drop-down list in the upper
-         * right corner).</p>
+         * <ul> <li> <p>maximum number of instances allowed per AWS account (service
+         * limit)</p> </li> <li> <p>current usage level for the AWS account</p> </li> </ul>
+         * <p>Service limits vary depending on region. Available regions for GameLift can
+         * be found in the AWS Management Console for GameLift (see the drop-down list in
+         * the upper right corner).</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -871,11 +888,11 @@ namespace Model
 
         /**
          * <p>Retrieves the following information for the specified EC2 instance type:</p>
-         * <ul> <li>maximum number of instances allowed per AWS account (service
-         * limit)</li> <li>current usage level for the AWS account </li> </ul> <p>Service
-         * limits vary depending on region. Available regions for GameLift can be found in
-         * the AWS Management Console for GameLift (see the drop-down list in the upper
-         * right corner).</p>
+         * <ul> <li> <p>maximum number of instances allowed per AWS account (service
+         * limit)</p> </li> <li> <p>current usage level for the AWS account</p> </li> </ul>
+         * <p>Service limits vary depending on region. Available regions for GameLift can
+         * be found in the AWS Management Console for GameLift (see the drop-down list in
+         * the upper right corner).</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1122,47 +1139,87 @@ namespace Model
         virtual void DescribeGameSessionDetailsAsync(const Model::DescribeGameSessionDetailsRequest& request, const DescribeGameSessionDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves properties for one or more game sessions. This action can be used
-         * in several ways: (1) provide a <code>GameSessionId</code> to request properties
-         * for a specific game session; (2) provide a <code>FleetId</code> or an
+         * <p>Retrieves a set of one or more game sessions and properties. This action can
+         * be used in several ways: (1) provide a <code>GameSessionId</code> to request
+         * properties for a specific game session; (2) provide a <code>FleetId</code> or an
          * <code>AliasId</code> to request properties for all game sessions running on a
-         * fleet. </p> <p>To get game session record(s), specify just one of the following:
-         * game session ID, fleet ID, or alias ID. You can filter this request by game
-         * session status. Use the pagination parameters to retrieve results as a set of
-         * sequential pages. If successful, a <a>GameSession</a> object is returned for
-         * each session matching the request.</p>
+         * fleet. You can also use <a>SearchGameSessions</a>, which allows you to retrieve
+         * all game sessions or filter on certain criteria, but only returns game sessions
+         * with a status of ACTIVE. If you need to retrieve the protection policy for each
+         * game session, use <a>DescribeGameSessionDetails</a>.</p> <p>To get game session
+         * record(s), specify just one of the following: game session ID, fleet ID, or
+         * alias ID. You can filter this request by game session status. Use the pagination
+         * parameters to retrieve results as a set of sequential pages. If successful, a
+         * <a>GameSession</a> object is returned for each session matching the request.</p>
          */
         virtual Model::DescribeGameSessionsOutcome DescribeGameSessions(const Model::DescribeGameSessionsRequest& request) const;
 
         /**
-         * <p>Retrieves properties for one or more game sessions. This action can be used
-         * in several ways: (1) provide a <code>GameSessionId</code> to request properties
-         * for a specific game session; (2) provide a <code>FleetId</code> or an
+         * <p>Retrieves a set of one or more game sessions and properties. This action can
+         * be used in several ways: (1) provide a <code>GameSessionId</code> to request
+         * properties for a specific game session; (2) provide a <code>FleetId</code> or an
          * <code>AliasId</code> to request properties for all game sessions running on a
-         * fleet. </p> <p>To get game session record(s), specify just one of the following:
-         * game session ID, fleet ID, or alias ID. You can filter this request by game
-         * session status. Use the pagination parameters to retrieve results as a set of
-         * sequential pages. If successful, a <a>GameSession</a> object is returned for
-         * each session matching the request.</p>
+         * fleet. You can also use <a>SearchGameSessions</a>, which allows you to retrieve
+         * all game sessions or filter on certain criteria, but only returns game sessions
+         * with a status of ACTIVE. If you need to retrieve the protection policy for each
+         * game session, use <a>DescribeGameSessionDetails</a>.</p> <p>To get game session
+         * record(s), specify just one of the following: game session ID, fleet ID, or
+         * alias ID. You can filter this request by game session status. Use the pagination
+         * parameters to retrieve results as a set of sequential pages. If successful, a
+         * <a>GameSession</a> object is returned for each session matching the request.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeGameSessionsOutcomeCallable DescribeGameSessionsCallable(const Model::DescribeGameSessionsRequest& request) const;
 
         /**
-         * <p>Retrieves properties for one or more game sessions. This action can be used
-         * in several ways: (1) provide a <code>GameSessionId</code> to request properties
-         * for a specific game session; (2) provide a <code>FleetId</code> or an
+         * <p>Retrieves a set of one or more game sessions and properties. This action can
+         * be used in several ways: (1) provide a <code>GameSessionId</code> to request
+         * properties for a specific game session; (2) provide a <code>FleetId</code> or an
          * <code>AliasId</code> to request properties for all game sessions running on a
-         * fleet. </p> <p>To get game session record(s), specify just one of the following:
-         * game session ID, fleet ID, or alias ID. You can filter this request by game
-         * session status. Use the pagination parameters to retrieve results as a set of
-         * sequential pages. If successful, a <a>GameSession</a> object is returned for
-         * each session matching the request.</p>
+         * fleet. You can also use <a>SearchGameSessions</a>, which allows you to retrieve
+         * all game sessions or filter on certain criteria, but only returns game sessions
+         * with a status of ACTIVE. If you need to retrieve the protection policy for each
+         * game session, use <a>DescribeGameSessionDetails</a>.</p> <p>To get game session
+         * record(s), specify just one of the following: game session ID, fleet ID, or
+         * alias ID. You can filter this request by game session status. Use the pagination
+         * parameters to retrieve results as a set of sequential pages. If successful, a
+         * <a>GameSession</a> object is returned for each session matching the request.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeGameSessionsAsync(const Model::DescribeGameSessionsRequest& request, const DescribeGameSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves information about instances in a fleet.</p> <p>To get information
+         * on a specific instance, specify both a fleet ID and instance ID. To get
+         * information for all instances in a fleet, specify a fleet ID only. Use the
+         * pagination parameters to retrieve results as a set of sequential pages. If
+         * successful, an <a>Instance</a> object is returned for each result.</p>
+         */
+        virtual Model::DescribeInstancesOutcome DescribeInstances(const Model::DescribeInstancesRequest& request) const;
+
+        /**
+         * <p>Retrieves information about instances in a fleet.</p> <p>To get information
+         * on a specific instance, specify both a fleet ID and instance ID. To get
+         * information for all instances in a fleet, specify a fleet ID only. Use the
+         * pagination parameters to retrieve results as a set of sequential pages. If
+         * successful, an <a>Instance</a> object is returned for each result.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeInstancesOutcomeCallable DescribeInstancesCallable(const Model::DescribeInstancesRequest& request) const;
+
+        /**
+         * <p>Retrieves information about instances in a fleet.</p> <p>To get information
+         * on a specific instance, specify both a fleet ID and instance ID. To get
+         * information for all instances in a fleet, specify a fleet ID only. Use the
+         * pagination parameters to retrieve results as a set of sequential pages. If
+         * successful, an <a>Instance</a> object is returned for each result.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeInstancesAsync(const Model::DescribeInstancesRequest& request, const DescribeInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves properties for one or more player sessions. This action can be used
@@ -1239,7 +1296,7 @@ namespace Model
         virtual void DescribeRuntimeConfigurationAsync(const Model::DescribeRuntimeConfigurationRequest& request, const DescribeRuntimeConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves all scaling policies applied to a fleet. </p> <p>To get a fleet's
+         * <p>Retrieves all scaling policies applied to a fleet.</p> <p>To get a fleet's
          * scaling policies, specify the fleet ID. You can filter this request by policy
          * status, such as to retrieve only active scaling policies. Use the pagination
          * parameters to retrieve results as a set of sequential pages. If successful, set
@@ -1248,7 +1305,7 @@ namespace Model
         virtual Model::DescribeScalingPoliciesOutcome DescribeScalingPolicies(const Model::DescribeScalingPoliciesRequest& request) const;
 
         /**
-         * <p>Retrieves all scaling policies applied to a fleet. </p> <p>To get a fleet's
+         * <p>Retrieves all scaling policies applied to a fleet.</p> <p>To get a fleet's
          * scaling policies, specify the fleet ID. You can filter this request by policy
          * status, such as to retrieve only active scaling policies. Use the pagination
          * parameters to retrieve results as a set of sequential pages. If successful, set
@@ -1259,7 +1316,7 @@ namespace Model
         virtual Model::DescribeScalingPoliciesOutcomeCallable DescribeScalingPoliciesCallable(const Model::DescribeScalingPoliciesRequest& request) const;
 
         /**
-         * <p>Retrieves all scaling policies applied to a fleet. </p> <p>To get a fleet's
+         * <p>Retrieves all scaling policies applied to a fleet.</p> <p>To get a fleet's
          * scaling policies, specify the fleet ID. You can filter this request by policy
          * status, such as to retrieve only active scaling policies. Use the pagination
          * parameters to retrieve results as a set of sequential pages. If successful, set
@@ -1309,7 +1366,7 @@ namespace Model
         /**
          * <p>Retrieves a collection of alias records for this AWS account. You can filter
          * the result set by alias name and/or routing strategy type. Use the pagination
-         * parameters to retrieve results in sequential pages. </p> <note> <p>Aliases are
+         * parameters to retrieve results in sequential pages.</p> <note> <p>Aliases are
          * not listed in any particular order.</p> </note>
          */
         virtual Model::ListAliasesOutcome ListAliases(const Model::ListAliasesRequest& request) const;
@@ -1317,7 +1374,7 @@ namespace Model
         /**
          * <p>Retrieves a collection of alias records for this AWS account. You can filter
          * the result set by alias name and/or routing strategy type. Use the pagination
-         * parameters to retrieve results in sequential pages. </p> <note> <p>Aliases are
+         * parameters to retrieve results in sequential pages.</p> <note> <p>Aliases are
          * not listed in any particular order.</p> </note>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -1327,7 +1384,7 @@ namespace Model
         /**
          * <p>Retrieves a collection of alias records for this AWS account. You can filter
          * the result set by alias name and/or routing strategy type. Use the pagination
-         * parameters to retrieve results in sequential pages. </p> <note> <p>Aliases are
+         * parameters to retrieve results in sequential pages.</p> <note> <p>Aliases are
          * not listed in any particular order.</p> </note>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -1368,7 +1425,7 @@ namespace Model
         /**
          * <p>Retrieves a collection of fleet records for this AWS account. You can filter
          * the result set by build ID. Use the pagination parameters to retrieve results in
-         * sequential pages. </p> <note> <p>Fleet records are not listed in any particular
+         * sequential pages.</p> <note> <p>Fleet records are not listed in any particular
          * order.</p> </note>
          */
         virtual Model::ListFleetsOutcome ListFleets(const Model::ListFleetsRequest& request) const;
@@ -1376,7 +1433,7 @@ namespace Model
         /**
          * <p>Retrieves a collection of fleet records for this AWS account. You can filter
          * the result set by build ID. Use the pagination parameters to retrieve results in
-         * sequential pages. </p> <note> <p>Fleet records are not listed in any particular
+         * sequential pages.</p> <note> <p>Fleet records are not listed in any particular
          * order.</p> </note>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -1386,7 +1443,7 @@ namespace Model
         /**
          * <p>Retrieves a collection of fleet records for this AWS account. You can filter
          * the result set by build ID. Use the pagination parameters to retrieve results in
-         * sequential pages. </p> <note> <p>Fleet records are not listed in any particular
+         * sequential pages.</p> <note> <p>Fleet records are not listed in any particular
          * order.</p> </note>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -1405,9 +1462,9 @@ namespace Model
          * <code>[ScalingAdjustmentType]</code> to/by <code>[ScalingAdjustment]</code>.</p>
          * <p>For example, this policy: "If the number of idle instances exceeds 20 for
          * more than 15 minutes, then reduce the fleet capacity by 10 instances" could be
-         * implemented as the following rule statement: </p> <p>If [IdleInstances] is
+         * implemented as the following rule statement:</p> <p>If [IdleInstances] is
          * [GreaterThanOrEqualToThreshold] [20] for [15] minutes, then [ChangeInCapacity]
-         * by [-10]. </p> <p>To create or update a scaling policy, specify a unique
+         * by [-10].</p> <p>To create or update a scaling policy, specify a unique
          * combination of name and fleet ID, and set the rule values. All parameters for
          * this action are required. If successful, the policy name is returned. Scaling
          * policies cannot be suspended or made inactive. To stop enforcing a scaling
@@ -1427,9 +1484,9 @@ namespace Model
          * <code>[ScalingAdjustmentType]</code> to/by <code>[ScalingAdjustment]</code>.</p>
          * <p>For example, this policy: "If the number of idle instances exceeds 20 for
          * more than 15 minutes, then reduce the fleet capacity by 10 instances" could be
-         * implemented as the following rule statement: </p> <p>If [IdleInstances] is
+         * implemented as the following rule statement:</p> <p>If [IdleInstances] is
          * [GreaterThanOrEqualToThreshold] [20] for [15] minutes, then [ChangeInCapacity]
-         * by [-10]. </p> <p>To create or update a scaling policy, specify a unique
+         * by [-10].</p> <p>To create or update a scaling policy, specify a unique
          * combination of name and fleet ID, and set the rule values. All parameters for
          * this action are required. If successful, the policy name is returned. Scaling
          * policies cannot be suspended or made inactive. To stop enforcing a scaling
@@ -1451,9 +1508,9 @@ namespace Model
          * <code>[ScalingAdjustmentType]</code> to/by <code>[ScalingAdjustment]</code>.</p>
          * <p>For example, this policy: "If the number of idle instances exceeds 20 for
          * more than 15 minutes, then reduce the fleet capacity by 10 instances" could be
-         * implemented as the following rule statement: </p> <p>If [IdleInstances] is
+         * implemented as the following rule statement:</p> <p>If [IdleInstances] is
          * [GreaterThanOrEqualToThreshold] [20] for [15] minutes, then [ChangeInCapacity]
-         * by [-10]. </p> <p>To create or update a scaling policy, specify a unique
+         * by [-10].</p> <p>To create or update a scaling policy, specify a unique
          * combination of name and fleet ID, and set the rule values. All parameters for
          * this action are required. If successful, the policy name is returned. Scaling
          * policies cannot be suspended or made inactive. To stop enforcing a scaling
@@ -1467,7 +1524,7 @@ namespace Model
          * <p>Retrieves a fresh set of upload credentials and the assigned Amazon S3
          * storage location for a specific build. Valid credentials are required to upload
          * your game build files to Amazon S3.</p> <important> <p>Call this action only if
-         * you need credentials for a build created with <code><a>CreateBuild</a></code>.
+         * you need credentials for a build created with <code> <a>CreateBuild</a> </code>.
          * This is a rare situation; in most cases, builds are created using the CLI
          * command <code>upload-build</code>, which creates a build record and also uploads
          * build files. </p> </important> <p>Upload credentials are returned when you
@@ -1482,7 +1539,7 @@ namespace Model
          * <p>Retrieves a fresh set of upload credentials and the assigned Amazon S3
          * storage location for a specific build. Valid credentials are required to upload
          * your game build files to Amazon S3.</p> <important> <p>Call this action only if
-         * you need credentials for a build created with <code><a>CreateBuild</a></code>.
+         * you need credentials for a build created with <code> <a>CreateBuild</a> </code>.
          * This is a rare situation; in most cases, builds are created using the CLI
          * command <code>upload-build</code>, which creates a build record and also uploads
          * build files. </p> </important> <p>Upload credentials are returned when you
@@ -1499,7 +1556,7 @@ namespace Model
          * <p>Retrieves a fresh set of upload credentials and the assigned Amazon S3
          * storage location for a specific build. Valid credentials are required to upload
          * your game build files to Amazon S3.</p> <important> <p>Call this action only if
-         * you need credentials for a build created with <code><a>CreateBuild</a></code>.
+         * you need credentials for a build created with <code> <a>CreateBuild</a> </code>.
          * This is a rare situation; in most cases, builds are created using the CLI
          * command <code>upload-build</code>, which creates a build record and also uploads
          * build files. </p> </important> <p>Upload credentials are returned when you
@@ -1513,52 +1570,55 @@ namespace Model
         virtual void RequestUploadCredentialsAsync(const Model::RequestUploadCredentialsRequest& request, const RequestUploadCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves the fleet ID that a specified alias is currently pointing to. </p>
+         * <p>Retrieves the fleet ID that a specified alias is currently pointing to.</p>
          */
         virtual Model::ResolveAliasOutcome ResolveAlias(const Model::ResolveAliasRequest& request) const;
 
         /**
-         * <p>Retrieves the fleet ID that a specified alias is currently pointing to. </p>
+         * <p>Retrieves the fleet ID that a specified alias is currently pointing to.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ResolveAliasOutcomeCallable ResolveAliasCallable(const Model::ResolveAliasRequest& request) const;
 
         /**
-         * <p>Retrieves the fleet ID that a specified alias is currently pointing to. </p>
+         * <p>Retrieves the fleet ID that a specified alias is currently pointing to.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ResolveAliasAsync(const Model::ResolveAliasRequest& request, const ResolveAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves a list of game sessions in a fleet that match a set of search
-         * criteria and sorts them in a specified order. Currently game session searches
-         * are limited to a single fleet. Search results include only game sessions that
-         * are in ACTIVE status.</p> <p>You can search or sort by the following game
-         * session attributes:</p> <ul> <li> <b>gameSessionId</b> -- ID value assigned to a
-         * game session. This unique value is returned in a <a>GameSession</a> object when
-         * a new game session is created. </li> <li> <b>gameSessionName</b> -- Name
-         * assigned to a game session. This value is set when requesting a new game session
-         * with <a>CreateGameSession</a> or updating with <a>UpdateGameSession</a>. Game
-         * session names do not need to be unique to a game session.</li> <li>
+         * <p>Retrieves a set of game sessions that match a set of search criteria and
+         * sorts them in a specified order. Currently a game session search is limited to a
+         * single fleet. Search results include only game sessions that are in ACTIVE
+         * status. If you need to retrieve game sessions with a status other than active,
+         * use <a>DescribeGameSessions</a>. If you need to retrieve the protection policy
+         * for each game session, use <a>DescribeGameSessionDetails</a>.</p> <p>You can
+         * search or sort by the following game session attributes:</p> <ul> <li> <p>
+         * <b>gameSessionId</b> -- ID value assigned to a game session. This unique value
+         * is returned in a <a>GameSession</a> object when a new game session is created.
+         * </p> </li> <li> <p> <b>gameSessionName</b> -- Name assigned to a game session.
+         * This value is set when requesting a new game session with
+         * <a>CreateGameSession</a> or updating with <a>UpdateGameSession</a>. Game session
+         * names do not need to be unique to a game session.</p> </li> <li> <p>
          * <b>creationTimeMillis</b> -- Value indicating when a game session was created.
-         * It is expressed in Unix time as milliseconds.</li> <li>
+         * It is expressed in Unix time as milliseconds.</p> </li> <li> <p>
          * <b>playerSessionCount</b> -- Number of players currently connected to a game
-         * session. This value changes rapidly as players join the session or drop
-         * out.</li> <li> <b>maximumSessions</b> -- Maximum number of player sessions
+         * session. This value changes rapidly as players join the session or drop out.</p>
+         * </li> <li> <p> <b>maximumSessions</b> -- Maximum number of player sessions
          * allowed for a game session. This value is set when requesting a new game session
-         * with <a>CreateGameSession</a> or updating with <a>UpdateGameSession</a>.</li>
-         * <li> <b>hasAvailablePlayerSessions</b> -- Boolean value indicating whether or
-         * not a game session has reached its maximum number of players. When searching
-         * with this attribute, the search value must be <code>true</code> or
+         * with <a>CreateGameSession</a> or updating with <a>UpdateGameSession</a>.</p>
+         * </li> <li> <p> <b>hasAvailablePlayerSessions</b> -- Boolean value indicating
+         * whether or not a game session has reached its maximum number of players. When
+         * searching with this attribute, the search value must be <code>true</code> or
          * <code>false</code>. It is highly recommended that all search requests include
          * this filter attribute to optimize search performance and return only sessions
-         * that players can join. </li> </ul> <p>To search or sort, specify either a fleet
-         * ID or an alias ID, and provide a search filter expression, a sort expression, or
-         * both. Use the pagination parameters to retrieve results as a set of sequential
-         * pages. If successful, a collection of <a>GameSession</a> objects matching the
-         * request is returned.</p> <note> <p>Returned values for
+         * that players can join. </p> </li> </ul> <p>To search or sort, specify either a
+         * fleet ID or an alias ID, and provide a search filter expression, a sort
+         * expression, or both. Use the pagination parameters to retrieve results as a set
+         * of sequential pages. If successful, a collection of <a>GameSession</a> objects
+         * matching the request is returned.</p> <note> <p>Returned values for
          * <code>playerSessionCount</code> and <code>hasAvailablePlayerSessions</code>
          * change quickly as players join sessions and others drop out. Results should be
          * considered a snapshot in time. Be sure to refresh search results often, and
@@ -1567,33 +1627,36 @@ namespace Model
         virtual Model::SearchGameSessionsOutcome SearchGameSessions(const Model::SearchGameSessionsRequest& request) const;
 
         /**
-         * <p>Retrieves a list of game sessions in a fleet that match a set of search
-         * criteria and sorts them in a specified order. Currently game session searches
-         * are limited to a single fleet. Search results include only game sessions that
-         * are in ACTIVE status.</p> <p>You can search or sort by the following game
-         * session attributes:</p> <ul> <li> <b>gameSessionId</b> -- ID value assigned to a
-         * game session. This unique value is returned in a <a>GameSession</a> object when
-         * a new game session is created. </li> <li> <b>gameSessionName</b> -- Name
-         * assigned to a game session. This value is set when requesting a new game session
-         * with <a>CreateGameSession</a> or updating with <a>UpdateGameSession</a>. Game
-         * session names do not need to be unique to a game session.</li> <li>
+         * <p>Retrieves a set of game sessions that match a set of search criteria and
+         * sorts them in a specified order. Currently a game session search is limited to a
+         * single fleet. Search results include only game sessions that are in ACTIVE
+         * status. If you need to retrieve game sessions with a status other than active,
+         * use <a>DescribeGameSessions</a>. If you need to retrieve the protection policy
+         * for each game session, use <a>DescribeGameSessionDetails</a>.</p> <p>You can
+         * search or sort by the following game session attributes:</p> <ul> <li> <p>
+         * <b>gameSessionId</b> -- ID value assigned to a game session. This unique value
+         * is returned in a <a>GameSession</a> object when a new game session is created.
+         * </p> </li> <li> <p> <b>gameSessionName</b> -- Name assigned to a game session.
+         * This value is set when requesting a new game session with
+         * <a>CreateGameSession</a> or updating with <a>UpdateGameSession</a>. Game session
+         * names do not need to be unique to a game session.</p> </li> <li> <p>
          * <b>creationTimeMillis</b> -- Value indicating when a game session was created.
-         * It is expressed in Unix time as milliseconds.</li> <li>
+         * It is expressed in Unix time as milliseconds.</p> </li> <li> <p>
          * <b>playerSessionCount</b> -- Number of players currently connected to a game
-         * session. This value changes rapidly as players join the session or drop
-         * out.</li> <li> <b>maximumSessions</b> -- Maximum number of player sessions
+         * session. This value changes rapidly as players join the session or drop out.</p>
+         * </li> <li> <p> <b>maximumSessions</b> -- Maximum number of player sessions
          * allowed for a game session. This value is set when requesting a new game session
-         * with <a>CreateGameSession</a> or updating with <a>UpdateGameSession</a>.</li>
-         * <li> <b>hasAvailablePlayerSessions</b> -- Boolean value indicating whether or
-         * not a game session has reached its maximum number of players. When searching
-         * with this attribute, the search value must be <code>true</code> or
+         * with <a>CreateGameSession</a> or updating with <a>UpdateGameSession</a>.</p>
+         * </li> <li> <p> <b>hasAvailablePlayerSessions</b> -- Boolean value indicating
+         * whether or not a game session has reached its maximum number of players. When
+         * searching with this attribute, the search value must be <code>true</code> or
          * <code>false</code>. It is highly recommended that all search requests include
          * this filter attribute to optimize search performance and return only sessions
-         * that players can join. </li> </ul> <p>To search or sort, specify either a fleet
-         * ID or an alias ID, and provide a search filter expression, a sort expression, or
-         * both. Use the pagination parameters to retrieve results as a set of sequential
-         * pages. If successful, a collection of <a>GameSession</a> objects matching the
-         * request is returned.</p> <note> <p>Returned values for
+         * that players can join. </p> </li> </ul> <p>To search or sort, specify either a
+         * fleet ID or an alias ID, and provide a search filter expression, a sort
+         * expression, or both. Use the pagination parameters to retrieve results as a set
+         * of sequential pages. If successful, a collection of <a>GameSession</a> objects
+         * matching the request is returned.</p> <note> <p>Returned values for
          * <code>playerSessionCount</code> and <code>hasAvailablePlayerSessions</code>
          * change quickly as players join sessions and others drop out. Results should be
          * considered a snapshot in time. Be sure to refresh search results often, and
@@ -1604,33 +1667,36 @@ namespace Model
         virtual Model::SearchGameSessionsOutcomeCallable SearchGameSessionsCallable(const Model::SearchGameSessionsRequest& request) const;
 
         /**
-         * <p>Retrieves a list of game sessions in a fleet that match a set of search
-         * criteria and sorts them in a specified order. Currently game session searches
-         * are limited to a single fleet. Search results include only game sessions that
-         * are in ACTIVE status.</p> <p>You can search or sort by the following game
-         * session attributes:</p> <ul> <li> <b>gameSessionId</b> -- ID value assigned to a
-         * game session. This unique value is returned in a <a>GameSession</a> object when
-         * a new game session is created. </li> <li> <b>gameSessionName</b> -- Name
-         * assigned to a game session. This value is set when requesting a new game session
-         * with <a>CreateGameSession</a> or updating with <a>UpdateGameSession</a>. Game
-         * session names do not need to be unique to a game session.</li> <li>
+         * <p>Retrieves a set of game sessions that match a set of search criteria and
+         * sorts them in a specified order. Currently a game session search is limited to a
+         * single fleet. Search results include only game sessions that are in ACTIVE
+         * status. If you need to retrieve game sessions with a status other than active,
+         * use <a>DescribeGameSessions</a>. If you need to retrieve the protection policy
+         * for each game session, use <a>DescribeGameSessionDetails</a>.</p> <p>You can
+         * search or sort by the following game session attributes:</p> <ul> <li> <p>
+         * <b>gameSessionId</b> -- ID value assigned to a game session. This unique value
+         * is returned in a <a>GameSession</a> object when a new game session is created.
+         * </p> </li> <li> <p> <b>gameSessionName</b> -- Name assigned to a game session.
+         * This value is set when requesting a new game session with
+         * <a>CreateGameSession</a> or updating with <a>UpdateGameSession</a>. Game session
+         * names do not need to be unique to a game session.</p> </li> <li> <p>
          * <b>creationTimeMillis</b> -- Value indicating when a game session was created.
-         * It is expressed in Unix time as milliseconds.</li> <li>
+         * It is expressed in Unix time as milliseconds.</p> </li> <li> <p>
          * <b>playerSessionCount</b> -- Number of players currently connected to a game
-         * session. This value changes rapidly as players join the session or drop
-         * out.</li> <li> <b>maximumSessions</b> -- Maximum number of player sessions
+         * session. This value changes rapidly as players join the session or drop out.</p>
+         * </li> <li> <p> <b>maximumSessions</b> -- Maximum number of player sessions
          * allowed for a game session. This value is set when requesting a new game session
-         * with <a>CreateGameSession</a> or updating with <a>UpdateGameSession</a>.</li>
-         * <li> <b>hasAvailablePlayerSessions</b> -- Boolean value indicating whether or
-         * not a game session has reached its maximum number of players. When searching
-         * with this attribute, the search value must be <code>true</code> or
+         * with <a>CreateGameSession</a> or updating with <a>UpdateGameSession</a>.</p>
+         * </li> <li> <p> <b>hasAvailablePlayerSessions</b> -- Boolean value indicating
+         * whether or not a game session has reached its maximum number of players. When
+         * searching with this attribute, the search value must be <code>true</code> or
          * <code>false</code>. It is highly recommended that all search requests include
          * this filter attribute to optimize search performance and return only sessions
-         * that players can join. </li> </ul> <p>To search or sort, specify either a fleet
-         * ID or an alias ID, and provide a search filter expression, a sort expression, or
-         * both. Use the pagination parameters to retrieve results as a set of sequential
-         * pages. If successful, a collection of <a>GameSession</a> objects matching the
-         * request is returned.</p> <note> <p>Returned values for
+         * that players can join. </p> </li> </ul> <p>To search or sort, specify either a
+         * fleet ID or an alias ID, and provide a search filter expression, a sort
+         * expression, or both. Use the pagination parameters to retrieve results as a set
+         * of sequential pages. If successful, a collection of <a>GameSession</a> objects
+         * matching the request is returned.</p> <note> <p>Returned values for
          * <code>playerSessionCount</code> and <code>hasAvailablePlayerSessions</code>
          * change quickly as players join sessions and others drop out. Results should be
          * considered a snapshot in time. Be sure to refresh search results often, and
@@ -1671,14 +1737,14 @@ namespace Model
         /**
          * <p>Updates metadata in a build record, including the build name and version. To
          * update the metadata, specify the build ID to update and provide the new values.
-         * If successful, a build object containing the updated metadata is returned. </p>
+         * If successful, a build object containing the updated metadata is returned.</p>
          */
         virtual Model::UpdateBuildOutcome UpdateBuild(const Model::UpdateBuildRequest& request) const;
 
         /**
          * <p>Updates metadata in a build record, including the build name and version. To
          * update the metadata, specify the build ID to update and provide the new values.
-         * If successful, a build object containing the updated metadata is returned. </p>
+         * If successful, a build object containing the updated metadata is returned.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1687,7 +1753,7 @@ namespace Model
         /**
          * <p>Updates metadata in a build record, including the build name and version. To
          * update the metadata, specify the build ID to update and provide the new values.
-         * If successful, a build object containing the updated metadata is returned. </p>
+         * If successful, a build object containing the updated metadata is returned.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1927,6 +1993,7 @@ namespace Model
         void DescribeFleetUtilizationAsyncHelper(const Model::DescribeFleetUtilizationRequest& request, const DescribeFleetUtilizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeGameSessionDetailsAsyncHelper(const Model::DescribeGameSessionDetailsRequest& request, const DescribeGameSessionDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeGameSessionsAsyncHelper(const Model::DescribeGameSessionsRequest& request, const DescribeGameSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeInstancesAsyncHelper(const Model::DescribeInstancesRequest& request, const DescribeInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribePlayerSessionsAsyncHelper(const Model::DescribePlayerSessionsRequest& request, const DescribePlayerSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeRuntimeConfigurationAsyncHelper(const Model::DescribeRuntimeConfigurationRequest& request, const DescribeRuntimeConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeScalingPoliciesAsyncHelper(const Model::DescribeScalingPoliciesRequest& request, const DescribeScalingPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

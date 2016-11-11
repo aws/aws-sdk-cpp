@@ -58,6 +58,10 @@ namespace Aws
          * closure type for receiving notifications that data has been sent.
          */
         typedef std::function<void(const HttpRequest*, long long)> DataSentEventHandler;
+        /**
+         * Closure type for handling whether or not a request should be canceled.
+         */
+        typedef std::function<bool(const HttpRequest*)> ContinueRequestHandler;
 
         /**
           * Abstract class for representing an HttpRequest.
@@ -344,34 +348,44 @@ namespace Aws
             /**
              * Sets the closure for receiving events when data is received from the server.
              */
-            inline void SetDataReceivedEventHandler(const DataReceivedEventHandler& dataReceivedEventHandler) { onDataReceived = dataReceivedEventHandler; }
+            inline void SetDataReceivedEventHandler(const DataReceivedEventHandler& dataReceivedEventHandler) { m_onDataReceived = dataReceivedEventHandler; }
             /**
              * Sets the closure for receiving events when data is received from the server.
              */
-            inline void SetDataReceivedEventHandler(DataReceivedEventHandler&& dataReceivedEventHandler) { onDataReceived = dataReceivedEventHandler; }
+            inline void SetDataReceivedEventHandler(DataReceivedEventHandler&& dataReceivedEventHandler) { m_onDataReceived = std::move(dataReceivedEventHandler); }
             /**
              * Sets the closure for receiving events when data is sent to the server.
              */
-            inline void SetDataSentEventHandler(const DataSentEventHandler& dataSentEventHandler) { onDataSent = dataSentEventHandler; }
+            inline void SetDataSentEventHandler(const DataSentEventHandler& dataSentEventHandler) { m_onDataSent = dataSentEventHandler; }
             /**
              * Sets the closure for receiving events when data is sent to the server.
              */
-            inline void SetDataSentEventHandler(DataSentEventHandler&& dataSentEventHandler) { onDataSent = dataSentEventHandler; }
+            inline void SetDataSentEventHandler(DataSentEventHandler&& dataSentEventHandler) { m_onDataSent = std::move(dataSentEventHandler); }
+            /**
+             * Sets the closure for handling whether or not to cancel a request.
+             */
+            inline void SetContinueRequestHandle(const ContinueRequestHandler& continueRequestHandler) { m_continueRequest = continueRequestHandler; }
+            /**
+             * Sets the closure for handling whether or not to cancel a request.
+             */
+            inline void SetContinueRequestHandle(ContinueRequestHandler&& continueRequestHandler) { m_continueRequest = std::move(continueRequestHandler); }
+
             /**
              * Gets the closure for receiving events when data is received from the server.
              */
-            inline const DataReceivedEventHandler& GetDataReceivedEventHandler() const { return onDataReceived; }
+            inline const DataReceivedEventHandler& GetDataReceivedEventHandler() const { return m_onDataReceived; }
             /**
              * Gets the closure for receiving events when data is sent to the server.
              */
-            inline const DataSentEventHandler& GetDataSentEventHandler() const { return onDataSent; }
+            inline const DataSentEventHandler& GetDataSentEventHandler() const { return m_onDataSent; }
 
+            inline const ContinueRequestHandler& GetContinueRequestHandler() const { return m_continueRequest; }
         private:
             URI m_uri;
             HttpMethod m_method;
-            DataReceivedEventHandler onDataReceived;
-            DataSentEventHandler onDataSent;
-
+            DataReceivedEventHandler m_onDataReceived;
+            DataSentEventHandler m_onDataSent;
+            ContinueRequestHandler m_continueRequest;
         };
 
     } // namespace Http

@@ -31,6 +31,7 @@ namespace Model
 
 IndexField::IndexField() : 
     m_indexFieldNameHasBeenSet(false),
+    m_indexFieldType(IndexFieldType::NOT_SET),
     m_indexFieldTypeHasBeenSet(false),
     m_intOptionsHasBeenSet(false),
     m_doubleOptionsHasBeenSet(false),
@@ -48,6 +49,7 @@ IndexField::IndexField() :
 
 IndexField::IndexField(const XmlNode& xmlNode) : 
     m_indexFieldNameHasBeenSet(false),
+    m_indexFieldType(IndexFieldType::NOT_SET),
     m_indexFieldTypeHasBeenSet(false),
     m_intOptionsHasBeenSet(false),
     m_doubleOptionsHasBeenSet(false),

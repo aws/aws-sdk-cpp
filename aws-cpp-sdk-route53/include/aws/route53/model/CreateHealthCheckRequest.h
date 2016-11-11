@@ -26,8 +26,7 @@ namespace Model
 {
 
   /**
-   * <p>>A complex type that contains information about the request to create a
-   * health check.</p>
+   * <p>A complex type that contains the health check request information.</p>
    */
   class AWS_ROUTE53_API CreateHealthCheckRequest : public Route53Request
   {
@@ -39,11 +38,7 @@ namespace Model
      * <p>A unique string that identifies the request and that allows failed
      * <code>CreateHealthCheck</code> requests to be retried without the risk of
      * executing the operation twice. You must use a unique
-     * <code>CallerReference</code> string every time you create a health check.
-     * <code>CallerReference</code> can be any unique string; you might choose to use a
-     * string that identifies your project.</p> <p>Valid characters are any Unicode
-     * code points that are legal in an XML 1.0 document. The UTF-8 encoding of the
-     * value must be less than 128 bytes.</p>
+     * <code>CallerReference</code> string every time you create a health check.</p>
      */
     inline const Aws::String& GetCallerReference() const{ return m_callerReference; }
 
@@ -51,11 +46,7 @@ namespace Model
      * <p>A unique string that identifies the request and that allows failed
      * <code>CreateHealthCheck</code> requests to be retried without the risk of
      * executing the operation twice. You must use a unique
-     * <code>CallerReference</code> string every time you create a health check.
-     * <code>CallerReference</code> can be any unique string; you might choose to use a
-     * string that identifies your project.</p> <p>Valid characters are any Unicode
-     * code points that are legal in an XML 1.0 document. The UTF-8 encoding of the
-     * value must be less than 128 bytes.</p>
+     * <code>CallerReference</code> string every time you create a health check.</p>
      */
     inline void SetCallerReference(const Aws::String& value) { m_callerReferenceHasBeenSet = true; m_callerReference = value; }
 
@@ -63,11 +54,7 @@ namespace Model
      * <p>A unique string that identifies the request and that allows failed
      * <code>CreateHealthCheck</code> requests to be retried without the risk of
      * executing the operation twice. You must use a unique
-     * <code>CallerReference</code> string every time you create a health check.
-     * <code>CallerReference</code> can be any unique string; you might choose to use a
-     * string that identifies your project.</p> <p>Valid characters are any Unicode
-     * code points that are legal in an XML 1.0 document. The UTF-8 encoding of the
-     * value must be less than 128 bytes.</p>
+     * <code>CallerReference</code> string every time you create a health check.</p>
      */
     inline void SetCallerReference(Aws::String&& value) { m_callerReferenceHasBeenSet = true; m_callerReference = value; }
 
@@ -75,11 +62,7 @@ namespace Model
      * <p>A unique string that identifies the request and that allows failed
      * <code>CreateHealthCheck</code> requests to be retried without the risk of
      * executing the operation twice. You must use a unique
-     * <code>CallerReference</code> string every time you create a health check.
-     * <code>CallerReference</code> can be any unique string; you might choose to use a
-     * string that identifies your project.</p> <p>Valid characters are any Unicode
-     * code points that are legal in an XML 1.0 document. The UTF-8 encoding of the
-     * value must be less than 128 bytes.</p>
+     * <code>CallerReference</code> string every time you create a health check.</p>
      */
     inline void SetCallerReference(const char* value) { m_callerReferenceHasBeenSet = true; m_callerReference.assign(value); }
 
@@ -87,11 +70,7 @@ namespace Model
      * <p>A unique string that identifies the request and that allows failed
      * <code>CreateHealthCheck</code> requests to be retried without the risk of
      * executing the operation twice. You must use a unique
-     * <code>CallerReference</code> string every time you create a health check.
-     * <code>CallerReference</code> can be any unique string; you might choose to use a
-     * string that identifies your project.</p> <p>Valid characters are any Unicode
-     * code points that are legal in an XML 1.0 document. The UTF-8 encoding of the
-     * value must be less than 128 bytes.</p>
+     * <code>CallerReference</code> string every time you create a health check.</p>
      */
     inline CreateHealthCheckRequest& WithCallerReference(const Aws::String& value) { SetCallerReference(value); return *this;}
 
@@ -99,11 +78,7 @@ namespace Model
      * <p>A unique string that identifies the request and that allows failed
      * <code>CreateHealthCheck</code> requests to be retried without the risk of
      * executing the operation twice. You must use a unique
-     * <code>CallerReference</code> string every time you create a health check.
-     * <code>CallerReference</code> can be any unique string; you might choose to use a
-     * string that identifies your project.</p> <p>Valid characters are any Unicode
-     * code points that are legal in an XML 1.0 document. The UTF-8 encoding of the
-     * value must be less than 128 bytes.</p>
+     * <code>CallerReference</code> string every time you create a health check.</p>
      */
     inline CreateHealthCheckRequest& WithCallerReference(Aws::String&& value) { SetCallerReference(value); return *this;}
 
@@ -111,36 +86,37 @@ namespace Model
      * <p>A unique string that identifies the request and that allows failed
      * <code>CreateHealthCheck</code> requests to be retried without the risk of
      * executing the operation twice. You must use a unique
-     * <code>CallerReference</code> string every time you create a health check.
-     * <code>CallerReference</code> can be any unique string; you might choose to use a
-     * string that identifies your project.</p> <p>Valid characters are any Unicode
-     * code points that are legal in an XML 1.0 document. The UTF-8 encoding of the
-     * value must be less than 128 bytes.</p>
+     * <code>CallerReference</code> string every time you create a health check.</p>
      */
     inline CreateHealthCheckRequest& WithCallerReference(const char* value) { SetCallerReference(value); return *this;}
 
     /**
-     * <p>A complex type that contains health check configuration.</p>
+     * <p>A complex type that contains the response to a <code>CreateHealthCheck</code>
+     * request. </p>
      */
     inline const HealthCheckConfig& GetHealthCheckConfig() const{ return m_healthCheckConfig; }
 
     /**
-     * <p>A complex type that contains health check configuration.</p>
+     * <p>A complex type that contains the response to a <code>CreateHealthCheck</code>
+     * request. </p>
      */
     inline void SetHealthCheckConfig(const HealthCheckConfig& value) { m_healthCheckConfigHasBeenSet = true; m_healthCheckConfig = value; }
 
     /**
-     * <p>A complex type that contains health check configuration.</p>
+     * <p>A complex type that contains the response to a <code>CreateHealthCheck</code>
+     * request. </p>
      */
     inline void SetHealthCheckConfig(HealthCheckConfig&& value) { m_healthCheckConfigHasBeenSet = true; m_healthCheckConfig = value; }
 
     /**
-     * <p>A complex type that contains health check configuration.</p>
+     * <p>A complex type that contains the response to a <code>CreateHealthCheck</code>
+     * request. </p>
      */
     inline CreateHealthCheckRequest& WithHealthCheckConfig(const HealthCheckConfig& value) { SetHealthCheckConfig(value); return *this;}
 
     /**
-     * <p>A complex type that contains health check configuration.</p>
+     * <p>A complex type that contains the response to a <code>CreateHealthCheck</code>
+     * request. </p>
      */
     inline CreateHealthCheckRequest& WithHealthCheckConfig(HealthCheckConfig&& value) { SetHealthCheckConfig(value); return *this;}
 

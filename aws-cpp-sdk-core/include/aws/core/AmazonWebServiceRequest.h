@@ -32,6 +32,13 @@ namespace Aws
         class URI;
     } // namespace Http
 
+    class AmazonWebServiceRequest;
+
+    /**
+     * Closure definition for handling a retry notification. This is only for if you want to be notified that a particular request is being retried.
+     */
+    typedef std::function<void(const AmazonWebServiceRequest&)> RequestRetryHandler;
+
     /**
      * Base level abstraction for all modeled AWS requests
      */
@@ -73,13 +80,29 @@ namespace Aws
          */
         inline virtual void SetDataSentEventHandler(const Aws::Http::DataSentEventHandler& dataSentEventHandler) { m_onDataSent = dataSentEventHandler; }
         /**
+         * Register closure for  handling whether or not to continue a request.
+         */
+        inline virtual void SetContinueRequestHandler(const Aws::Http::ContinueRequestHandler& continueRequestHandler) { m_continueRequest = continueRequestHandler; }
+        /**
         * Register closure for data recieved event.
         */
-        inline virtual void SetDataReceivedEventHandler(Aws::Http::DataReceivedEventHandler&& dataReceivedEventHandler) { m_onDataReceived = dataReceivedEventHandler; }
+        inline virtual void SetDataReceivedEventHandler(Aws::Http::DataReceivedEventHandler&& dataReceivedEventHandler) { m_onDataReceived = std::move(dataReceivedEventHandler); }
         /**
         * register closure for data sent event
         */
-        inline virtual void SetDataSentEventHandler(Aws::Http::DataSentEventHandler&& dataSentEventHandler) { m_onDataSent = dataSentEventHandler; }
+        inline virtual void SetDataSentEventHandler(Aws::Http::DataSentEventHandler&& dataSentEventHandler) { m_onDataSent = std::move(dataSentEventHandler); }
+        /**
+         * Register closure for handling whether or not to cancel a request.
+         */
+        inline virtual void SetContinueRequestHandler(Aws::Http::ContinueRequestHandler&& continueRequestHandler) { m_continueRequest = std::move(continueRequestHandler); }
+        /**
+        * Register closure for notification that a request is being retried
+        */
+        inline virtual void SetRequestRetryHandler(const RequestRetryHandler& handler) { m_requestRetryHandler = handler; }
+        /**
+        * Register closure for notification that a request is being retried
+        */
+        inline virtual void SetRequestRetryHandler(RequestRetryHandler&& handler) { m_requestRetryHandler = std::move(handler); }
         /**
         * get closure for data recieved event.
         */
@@ -89,17 +112,25 @@ namespace Aws
         */
         inline virtual const Aws::Http::DataSentEventHandler& GetDataSentEventHandler() const { return m_onDataSent; }
         /**
+         * get closure for handling whether or not to cancel a request.
+         */
+        inline virtual const Aws::Http::ContinueRequestHandler& GetContinueRequestHandler() const { return m_continueRequest; }
+        /**
+         * get closure for notification that a request is being retried
+         */
+         inline virtual const RequestRetryHandler& GetRequestRetryHandler() const { return m_requestRetryHandler; }
+        /**
          * If this is set to true, content-md5 needs to be computed and set on the request
          */
         inline virtual bool ShouldComputeContentMd5() const { return false; }
 
-
     private:
-
         Aws::IOStreamFactory m_responseStreamFactory;
 
         Aws::Http::DataReceivedEventHandler m_onDataReceived;
         Aws::Http::DataSentEventHandler m_onDataSent;
+        Aws::Http::ContinueRequestHandler m_continueRequest;
+        RequestRetryHandler m_requestRetryHandler;
     };
 
 } // namespace Aws

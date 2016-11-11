@@ -30,6 +30,7 @@ namespace Model
 StreamSpecification::StreamSpecification() : 
     m_streamEnabled(false),
     m_streamEnabledHasBeenSet(false),
+    m_streamViewType(StreamViewType::NOT_SET),
     m_streamViewTypeHasBeenSet(false)
 {
 }
@@ -37,6 +38,7 @@ StreamSpecification::StreamSpecification() :
 StreamSpecification::StreamSpecification(const JsonValue& jsonValue) : 
     m_streamEnabled(false),
     m_streamEnabledHasBeenSet(false),
+    m_streamViewType(StreamViewType::NOT_SET),
     m_streamViewTypeHasBeenSet(false)
 {
   *this = jsonValue;

@@ -29,6 +29,7 @@ namespace Model
 
 Layer::Layer() : 
     m_layerDigestHasBeenSet(false),
+    m_layerAvailability(LayerAvailability::NOT_SET),
     m_layerAvailabilityHasBeenSet(false),
     m_layerSize(0),
     m_layerSizeHasBeenSet(false)
@@ -37,6 +38,7 @@ Layer::Layer() :
 
 Layer::Layer(const JsonValue& jsonValue) : 
     m_layerDigestHasBeenSet(false),
+    m_layerAvailability(LayerAvailability::NOT_SET),
     m_layerAvailabilityHasBeenSet(false),
     m_layerSize(0),
     m_layerSizeHasBeenSet(false)

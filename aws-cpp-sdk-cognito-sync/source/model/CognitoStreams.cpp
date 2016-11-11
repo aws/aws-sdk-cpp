@@ -30,6 +30,7 @@ namespace Model
 CognitoStreams::CognitoStreams() : 
     m_streamNameHasBeenSet(false),
     m_roleArnHasBeenSet(false),
+    m_streamingStatus(StreamingStatus::NOT_SET),
     m_streamingStatusHasBeenSet(false)
 {
 }
@@ -37,6 +38,7 @@ CognitoStreams::CognitoStreams() :
 CognitoStreams::CognitoStreams(const JsonValue& jsonValue) : 
     m_streamNameHasBeenSet(false),
     m_roleArnHasBeenSet(false),
+    m_streamingStatus(StreamingStatus::NOT_SET),
     m_streamingStatusHasBeenSet(false)
 {
   *this = jsonValue;

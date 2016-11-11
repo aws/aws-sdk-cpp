@@ -30,6 +30,7 @@ namespace Model
 {
 
 InstanceCount::InstanceCount() : 
+    m_state(ListingState::NOT_SET),
     m_stateHasBeenSet(false),
     m_instanceCount(0),
     m_instanceCountHasBeenSet(false)
@@ -37,6 +38,7 @@ InstanceCount::InstanceCount() :
 }
 
 InstanceCount::InstanceCount(const XmlNode& xmlNode) : 
+    m_state(ListingState::NOT_SET),
     m_stateHasBeenSet(false),
     m_instanceCount(0),
     m_instanceCountHasBeenSet(false)

@@ -35,7 +35,10 @@ namespace APIGateway
 namespace Model
 {
   /**
-   * <p>Represents a collection of <a>Authorizer</a> resources.</p>
+   * <p>Represents a collection of <a>Authorizer</a> resources.</p> <div
+   * class="seeAlso"> <a
+   * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/use-custom-authorizer.html">Enable
+   * custom authorization</a> </div>
    */
   class AWS_APIGATEWAY_API GetAuthorizersResult
   {

@@ -113,37 +113,37 @@ namespace Model
     inline TagFilter& WithValue(const char* value) { SetValue(value); return *this;}
 
     /**
-     * <p>The on-premises instance tag filter type:</p> <ul> <li>KEY_ONLY: Key
-     * only.</li> <li>VALUE_ONLY: Value only.</li> <li>KEY_AND_VALUE: Key and
-     * value.</li> </ul>
+     * <p>The on-premises instance tag filter type:</p> <ul> <li> <p>KEY_ONLY: Key
+     * only.</p> </li> <li> <p>VALUE_ONLY: Value only.</p> </li> <li> <p>KEY_AND_VALUE:
+     * Key and value.</p> </li> </ul>
      */
     inline const TagFilterType& GetType() const{ return m_type; }
 
     /**
-     * <p>The on-premises instance tag filter type:</p> <ul> <li>KEY_ONLY: Key
-     * only.</li> <li>VALUE_ONLY: Value only.</li> <li>KEY_AND_VALUE: Key and
-     * value.</li> </ul>
+     * <p>The on-premises instance tag filter type:</p> <ul> <li> <p>KEY_ONLY: Key
+     * only.</p> </li> <li> <p>VALUE_ONLY: Value only.</p> </li> <li> <p>KEY_AND_VALUE:
+     * Key and value.</p> </li> </ul>
      */
     inline void SetType(const TagFilterType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The on-premises instance tag filter type:</p> <ul> <li>KEY_ONLY: Key
-     * only.</li> <li>VALUE_ONLY: Value only.</li> <li>KEY_AND_VALUE: Key and
-     * value.</li> </ul>
+     * <p>The on-premises instance tag filter type:</p> <ul> <li> <p>KEY_ONLY: Key
+     * only.</p> </li> <li> <p>VALUE_ONLY: Value only.</p> </li> <li> <p>KEY_AND_VALUE:
+     * Key and value.</p> </li> </ul>
      */
     inline void SetType(TagFilterType&& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The on-premises instance tag filter type:</p> <ul> <li>KEY_ONLY: Key
-     * only.</li> <li>VALUE_ONLY: Value only.</li> <li>KEY_AND_VALUE: Key and
-     * value.</li> </ul>
+     * <p>The on-premises instance tag filter type:</p> <ul> <li> <p>KEY_ONLY: Key
+     * only.</p> </li> <li> <p>VALUE_ONLY: Value only.</p> </li> <li> <p>KEY_AND_VALUE:
+     * Key and value.</p> </li> </ul>
      */
     inline TagFilter& WithType(const TagFilterType& value) { SetType(value); return *this;}
 
     /**
-     * <p>The on-premises instance tag filter type:</p> <ul> <li>KEY_ONLY: Key
-     * only.</li> <li>VALUE_ONLY: Value only.</li> <li>KEY_AND_VALUE: Key and
-     * value.</li> </ul>
+     * <p>The on-premises instance tag filter type:</p> <ul> <li> <p>KEY_ONLY: Key
+     * only.</p> </li> <li> <p>VALUE_ONLY: Value only.</p> </li> <li> <p>KEY_AND_VALUE:
+     * Key and value.</p> </li> </ul>
      */
     inline TagFilter& WithType(TagFilterType&& value) { SetType(value); return *this;}
 

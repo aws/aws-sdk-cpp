@@ -34,7 +34,9 @@ ViewerCertificate::ViewerCertificate() :
     m_cloudFrontDefaultCertificateHasBeenSet(false),
     m_iAMCertificateIdHasBeenSet(false),
     m_aCMCertificateArnHasBeenSet(false),
+    m_sSLSupportMethod(SSLSupportMethod::NOT_SET),
     m_sSLSupportMethodHasBeenSet(false),
+    m_minimumProtocolVersion(MinimumProtocolVersion::NOT_SET),
     m_minimumProtocolVersionHasBeenSet(false)
 {
 }
@@ -44,7 +46,9 @@ ViewerCertificate::ViewerCertificate(const XmlNode& xmlNode) :
     m_cloudFrontDefaultCertificateHasBeenSet(false),
     m_iAMCertificateIdHasBeenSet(false),
     m_aCMCertificateArnHasBeenSet(false),
+    m_sSLSupportMethod(SSLSupportMethod::NOT_SET),
     m_sSLSupportMethodHasBeenSet(false),
+    m_minimumProtocolVersion(MinimumProtocolVersion::NOT_SET),
     m_minimumProtocolVersionHasBeenSet(false)
 {
   *this = xmlNode;

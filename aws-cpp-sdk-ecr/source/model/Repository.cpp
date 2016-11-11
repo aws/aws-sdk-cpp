@@ -31,7 +31,8 @@ Repository::Repository() :
     m_repositoryArnHasBeenSet(false),
     m_registryIdHasBeenSet(false),
     m_repositoryNameHasBeenSet(false),
-    m_repositoryUriHasBeenSet(false)
+    m_repositoryUriHasBeenSet(false),
+    m_createdAtHasBeenSet(false)
 {
 }
 
@@ -39,7 +40,8 @@ Repository::Repository(const JsonValue& jsonValue) :
     m_repositoryArnHasBeenSet(false),
     m_registryIdHasBeenSet(false),
     m_repositoryNameHasBeenSet(false),
-    m_repositoryUriHasBeenSet(false)
+    m_repositoryUriHasBeenSet(false),
+    m_createdAtHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -74,6 +76,13 @@ Repository& Repository::operator =(const JsonValue& jsonValue)
     m_repositoryUriHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("createdAt"))
+  {
+    m_createdAt = jsonValue.GetDouble("createdAt");
+
+    m_createdAtHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -103,6 +112,11 @@ JsonValue Repository::Jsonize() const
   {
    payload.WithString("repositoryUri", m_repositoryUri);
 
+  }
+
+  if(m_createdAtHasBeenSet)
+  {
+   payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
   }
 
   return payload;

@@ -81,92 +81,92 @@ namespace Model
     inline ListApplicationRevisionsRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
 
     /**
-     * <p>The column name to use to sort the list results:</p> <ul> <li>registerTime:
-     * Sort by the time the revisions were registered with AWS CodeDeploy.</li>
-     * <li>firstUsedTime: Sort by the time the revisions were first used in a
-     * deployment.</li> <li>lastUsedTime: Sort by the time the revisions were last used
-     * in a deployment.</li> </ul> <p>If not specified or set to null, the results will
-     * be returned in an arbitrary order.</p>
+     * <p>The column name to use to sort the list results:</p> <ul> <li>
+     * <p>registerTime: Sort by the time the revisions were registered with AWS
+     * CodeDeploy.</p> </li> <li> <p>firstUsedTime: Sort by the time the revisions were
+     * first used in a deployment.</p> </li> <li> <p>lastUsedTime: Sort by the time the
+     * revisions were last used in a deployment.</p> </li> </ul> <p>If not specified or
+     * set to null, the results will be returned in an arbitrary order.</p>
      */
     inline const ApplicationRevisionSortBy& GetSortBy() const{ return m_sortBy; }
 
     /**
-     * <p>The column name to use to sort the list results:</p> <ul> <li>registerTime:
-     * Sort by the time the revisions were registered with AWS CodeDeploy.</li>
-     * <li>firstUsedTime: Sort by the time the revisions were first used in a
-     * deployment.</li> <li>lastUsedTime: Sort by the time the revisions were last used
-     * in a deployment.</li> </ul> <p>If not specified or set to null, the results will
-     * be returned in an arbitrary order.</p>
+     * <p>The column name to use to sort the list results:</p> <ul> <li>
+     * <p>registerTime: Sort by the time the revisions were registered with AWS
+     * CodeDeploy.</p> </li> <li> <p>firstUsedTime: Sort by the time the revisions were
+     * first used in a deployment.</p> </li> <li> <p>lastUsedTime: Sort by the time the
+     * revisions were last used in a deployment.</p> </li> </ul> <p>If not specified or
+     * set to null, the results will be returned in an arbitrary order.</p>
      */
     inline void SetSortBy(const ApplicationRevisionSortBy& value) { m_sortByHasBeenSet = true; m_sortBy = value; }
 
     /**
-     * <p>The column name to use to sort the list results:</p> <ul> <li>registerTime:
-     * Sort by the time the revisions were registered with AWS CodeDeploy.</li>
-     * <li>firstUsedTime: Sort by the time the revisions were first used in a
-     * deployment.</li> <li>lastUsedTime: Sort by the time the revisions were last used
-     * in a deployment.</li> </ul> <p>If not specified or set to null, the results will
-     * be returned in an arbitrary order.</p>
+     * <p>The column name to use to sort the list results:</p> <ul> <li>
+     * <p>registerTime: Sort by the time the revisions were registered with AWS
+     * CodeDeploy.</p> </li> <li> <p>firstUsedTime: Sort by the time the revisions were
+     * first used in a deployment.</p> </li> <li> <p>lastUsedTime: Sort by the time the
+     * revisions were last used in a deployment.</p> </li> </ul> <p>If not specified or
+     * set to null, the results will be returned in an arbitrary order.</p>
      */
     inline void SetSortBy(ApplicationRevisionSortBy&& value) { m_sortByHasBeenSet = true; m_sortBy = value; }
 
     /**
-     * <p>The column name to use to sort the list results:</p> <ul> <li>registerTime:
-     * Sort by the time the revisions were registered with AWS CodeDeploy.</li>
-     * <li>firstUsedTime: Sort by the time the revisions were first used in a
-     * deployment.</li> <li>lastUsedTime: Sort by the time the revisions were last used
-     * in a deployment.</li> </ul> <p>If not specified or set to null, the results will
-     * be returned in an arbitrary order.</p>
+     * <p>The column name to use to sort the list results:</p> <ul> <li>
+     * <p>registerTime: Sort by the time the revisions were registered with AWS
+     * CodeDeploy.</p> </li> <li> <p>firstUsedTime: Sort by the time the revisions were
+     * first used in a deployment.</p> </li> <li> <p>lastUsedTime: Sort by the time the
+     * revisions were last used in a deployment.</p> </li> </ul> <p>If not specified or
+     * set to null, the results will be returned in an arbitrary order.</p>
      */
     inline ListApplicationRevisionsRequest& WithSortBy(const ApplicationRevisionSortBy& value) { SetSortBy(value); return *this;}
 
     /**
-     * <p>The column name to use to sort the list results:</p> <ul> <li>registerTime:
-     * Sort by the time the revisions were registered with AWS CodeDeploy.</li>
-     * <li>firstUsedTime: Sort by the time the revisions were first used in a
-     * deployment.</li> <li>lastUsedTime: Sort by the time the revisions were last used
-     * in a deployment.</li> </ul> <p>If not specified or set to null, the results will
-     * be returned in an arbitrary order.</p>
+     * <p>The column name to use to sort the list results:</p> <ul> <li>
+     * <p>registerTime: Sort by the time the revisions were registered with AWS
+     * CodeDeploy.</p> </li> <li> <p>firstUsedTime: Sort by the time the revisions were
+     * first used in a deployment.</p> </li> <li> <p>lastUsedTime: Sort by the time the
+     * revisions were last used in a deployment.</p> </li> </ul> <p>If not specified or
+     * set to null, the results will be returned in an arbitrary order.</p>
      */
     inline ListApplicationRevisionsRequest& WithSortBy(ApplicationRevisionSortBy&& value) { SetSortBy(value); return *this;}
 
     /**
-     * <p>The order in which to sort the list results:</p> <ul> <li>ascending:
-     * ascending order.</li> <li>descending: descending order.</li> </ul> <p>If not
-     * specified, the results will be sorted in ascending order.</p> <p>If set to null,
-     * the results will be sorted in an arbitrary order.</p>
+     * <p>The order in which to sort the list results:</p> <ul> <li> <p>ascending:
+     * ascending order.</p> </li> <li> <p>descending: descending order.</p> </li> </ul>
+     * <p>If not specified, the results will be sorted in ascending order.</p> <p>If
+     * set to null, the results will be sorted in an arbitrary order.</p>
      */
     inline const SortOrder& GetSortOrder() const{ return m_sortOrder; }
 
     /**
-     * <p>The order in which to sort the list results:</p> <ul> <li>ascending:
-     * ascending order.</li> <li>descending: descending order.</li> </ul> <p>If not
-     * specified, the results will be sorted in ascending order.</p> <p>If set to null,
-     * the results will be sorted in an arbitrary order.</p>
+     * <p>The order in which to sort the list results:</p> <ul> <li> <p>ascending:
+     * ascending order.</p> </li> <li> <p>descending: descending order.</p> </li> </ul>
+     * <p>If not specified, the results will be sorted in ascending order.</p> <p>If
+     * set to null, the results will be sorted in an arbitrary order.</p>
      */
     inline void SetSortOrder(const SortOrder& value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
 
     /**
-     * <p>The order in which to sort the list results:</p> <ul> <li>ascending:
-     * ascending order.</li> <li>descending: descending order.</li> </ul> <p>If not
-     * specified, the results will be sorted in ascending order.</p> <p>If set to null,
-     * the results will be sorted in an arbitrary order.</p>
+     * <p>The order in which to sort the list results:</p> <ul> <li> <p>ascending:
+     * ascending order.</p> </li> <li> <p>descending: descending order.</p> </li> </ul>
+     * <p>If not specified, the results will be sorted in ascending order.</p> <p>If
+     * set to null, the results will be sorted in an arbitrary order.</p>
      */
     inline void SetSortOrder(SortOrder&& value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
 
     /**
-     * <p>The order in which to sort the list results:</p> <ul> <li>ascending:
-     * ascending order.</li> <li>descending: descending order.</li> </ul> <p>If not
-     * specified, the results will be sorted in ascending order.</p> <p>If set to null,
-     * the results will be sorted in an arbitrary order.</p>
+     * <p>The order in which to sort the list results:</p> <ul> <li> <p>ascending:
+     * ascending order.</p> </li> <li> <p>descending: descending order.</p> </li> </ul>
+     * <p>If not specified, the results will be sorted in ascending order.</p> <p>If
+     * set to null, the results will be sorted in an arbitrary order.</p>
      */
     inline ListApplicationRevisionsRequest& WithSortOrder(const SortOrder& value) { SetSortOrder(value); return *this;}
 
     /**
-     * <p>The order in which to sort the list results:</p> <ul> <li>ascending:
-     * ascending order.</li> <li>descending: descending order.</li> </ul> <p>If not
-     * specified, the results will be sorted in ascending order.</p> <p>If set to null,
-     * the results will be sorted in an arbitrary order.</p>
+     * <p>The order in which to sort the list results:</p> <ul> <li> <p>ascending:
+     * ascending order.</p> </li> <li> <p>descending: descending order.</p> </li> </ul>
+     * <p>If not specified, the results will be sorted in ascending order.</p> <p>If
+     * set to null, the results will be sorted in an arbitrary order.</p>
      */
     inline ListApplicationRevisionsRequest& WithSortOrder(SortOrder&& value) { SetSortOrder(value); return *this;}
 
@@ -256,46 +256,46 @@ namespace Model
 
     /**
      * <p>Whether to list revisions based on whether the revision is the target
-     * revision of an deployment group:</p> <ul> <li>include: List revisions that are
-     * target revisions of a deployment group.</li> <li>exclude: Do not list revisions
-     * that are target revisions of a deployment group.</li> <li>ignore: List all
-     * revisions.</li> </ul>
+     * revision of an deployment group:</p> <ul> <li> <p>include: List revisions that
+     * are target revisions of a deployment group.</p> </li> <li> <p>exclude: Do not
+     * list revisions that are target revisions of a deployment group.</p> </li> <li>
+     * <p>ignore: List all revisions.</p> </li> </ul>
      */
     inline const ListStateFilterAction& GetDeployed() const{ return m_deployed; }
 
     /**
      * <p>Whether to list revisions based on whether the revision is the target
-     * revision of an deployment group:</p> <ul> <li>include: List revisions that are
-     * target revisions of a deployment group.</li> <li>exclude: Do not list revisions
-     * that are target revisions of a deployment group.</li> <li>ignore: List all
-     * revisions.</li> </ul>
+     * revision of an deployment group:</p> <ul> <li> <p>include: List revisions that
+     * are target revisions of a deployment group.</p> </li> <li> <p>exclude: Do not
+     * list revisions that are target revisions of a deployment group.</p> </li> <li>
+     * <p>ignore: List all revisions.</p> </li> </ul>
      */
     inline void SetDeployed(const ListStateFilterAction& value) { m_deployedHasBeenSet = true; m_deployed = value; }
 
     /**
      * <p>Whether to list revisions based on whether the revision is the target
-     * revision of an deployment group:</p> <ul> <li>include: List revisions that are
-     * target revisions of a deployment group.</li> <li>exclude: Do not list revisions
-     * that are target revisions of a deployment group.</li> <li>ignore: List all
-     * revisions.</li> </ul>
+     * revision of an deployment group:</p> <ul> <li> <p>include: List revisions that
+     * are target revisions of a deployment group.</p> </li> <li> <p>exclude: Do not
+     * list revisions that are target revisions of a deployment group.</p> </li> <li>
+     * <p>ignore: List all revisions.</p> </li> </ul>
      */
     inline void SetDeployed(ListStateFilterAction&& value) { m_deployedHasBeenSet = true; m_deployed = value; }
 
     /**
      * <p>Whether to list revisions based on whether the revision is the target
-     * revision of an deployment group:</p> <ul> <li>include: List revisions that are
-     * target revisions of a deployment group.</li> <li>exclude: Do not list revisions
-     * that are target revisions of a deployment group.</li> <li>ignore: List all
-     * revisions.</li> </ul>
+     * revision of an deployment group:</p> <ul> <li> <p>include: List revisions that
+     * are target revisions of a deployment group.</p> </li> <li> <p>exclude: Do not
+     * list revisions that are target revisions of a deployment group.</p> </li> <li>
+     * <p>ignore: List all revisions.</p> </li> </ul>
      */
     inline ListApplicationRevisionsRequest& WithDeployed(const ListStateFilterAction& value) { SetDeployed(value); return *this;}
 
     /**
      * <p>Whether to list revisions based on whether the revision is the target
-     * revision of an deployment group:</p> <ul> <li>include: List revisions that are
-     * target revisions of a deployment group.</li> <li>exclude: Do not list revisions
-     * that are target revisions of a deployment group.</li> <li>ignore: List all
-     * revisions.</li> </ul>
+     * revision of an deployment group:</p> <ul> <li> <p>include: List revisions that
+     * are target revisions of a deployment group.</p> </li> <li> <p>exclude: Do not
+     * list revisions that are target revisions of a deployment group.</p> </li> <li>
+     * <p>ignore: List all revisions.</p> </li> </ul>
      */
     inline ListApplicationRevisionsRequest& WithDeployed(ListStateFilterAction&& value) { SetDeployed(value); return *this;}
 

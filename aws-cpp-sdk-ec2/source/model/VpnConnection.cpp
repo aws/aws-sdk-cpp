@@ -31,8 +31,10 @@ namespace Model
 
 VpnConnection::VpnConnection() : 
     m_vpnConnectionIdHasBeenSet(false),
+    m_state(VpnState::NOT_SET),
     m_stateHasBeenSet(false),
     m_customerGatewayConfigurationHasBeenSet(false),
+    m_type(GatewayType::NOT_SET),
     m_typeHasBeenSet(false),
     m_customerGatewayIdHasBeenSet(false),
     m_vpnGatewayIdHasBeenSet(false),
@@ -45,8 +47,10 @@ VpnConnection::VpnConnection() :
 
 VpnConnection::VpnConnection(const XmlNode& xmlNode) : 
     m_vpnConnectionIdHasBeenSet(false),
+    m_state(VpnState::NOT_SET),
     m_stateHasBeenSet(false),
     m_customerGatewayConfigurationHasBeenSet(false),
+    m_type(GatewayType::NOT_SET),
     m_typeHasBeenSet(false),
     m_customerGatewayIdHasBeenSet(false),
     m_vpnGatewayIdHasBeenSet(false),

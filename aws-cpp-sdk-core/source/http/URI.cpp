@@ -205,7 +205,7 @@ void URI::CanonicalizeQueryString()
             }
 
             first = false;
-            queryStringStream << iter->first << "=" << iter->second;
+            queryStringStream << iter->first.c_str() << "=" << iter->second.c_str();
         }
 
         m_queryString = queryStringStream.str();

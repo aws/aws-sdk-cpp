@@ -16,6 +16,7 @@
 #include <aws/workspaces/WorkSpaces_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/workspaces/model/WorkspaceState.h>
+#include <aws/workspaces/model/WorkspaceProperties.h>
 
 namespace Aws
 {
@@ -467,6 +468,21 @@ namespace Model
      */
     inline Workspace& WithRootVolumeEncryptionEnabled(bool value) { SetRootVolumeEncryptionEnabled(value); return *this;}
 
+    
+    inline const WorkspaceProperties& GetWorkspaceProperties() const{ return m_workspaceProperties; }
+
+    
+    inline void SetWorkspaceProperties(const WorkspaceProperties& value) { m_workspacePropertiesHasBeenSet = true; m_workspaceProperties = value; }
+
+    
+    inline void SetWorkspaceProperties(WorkspaceProperties&& value) { m_workspacePropertiesHasBeenSet = true; m_workspaceProperties = value; }
+
+    
+    inline Workspace& WithWorkspaceProperties(const WorkspaceProperties& value) { SetWorkspaceProperties(value); return *this;}
+
+    
+    inline Workspace& WithWorkspaceProperties(WorkspaceProperties&& value) { SetWorkspaceProperties(value); return *this;}
+
   private:
     Aws::String m_workspaceId;
     bool m_workspaceIdHasBeenSet;
@@ -494,6 +510,8 @@ namespace Model
     bool m_userVolumeEncryptionEnabledHasBeenSet;
     bool m_rootVolumeEncryptionEnabled;
     bool m_rootVolumeEncryptionEnabledHasBeenSet;
+    WorkspaceProperties m_workspaceProperties;
+    bool m_workspacePropertiesHasBeenSet;
   };
 
 } // namespace Model

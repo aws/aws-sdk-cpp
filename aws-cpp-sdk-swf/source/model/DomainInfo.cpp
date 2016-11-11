@@ -29,6 +29,7 @@ namespace Model
 
 DomainInfo::DomainInfo() : 
     m_nameHasBeenSet(false),
+    m_status(RegistrationStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_descriptionHasBeenSet(false)
 {
@@ -36,6 +37,7 @@ DomainInfo::DomainInfo() :
 
 DomainInfo::DomainInfo(const JsonValue& jsonValue) : 
     m_nameHasBeenSet(false),
+    m_status(RegistrationStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_descriptionHasBeenSet(false)
 {

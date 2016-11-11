@@ -32,6 +32,7 @@ EventTopic::EventTopic() :
     m_topicNameHasBeenSet(false),
     m_topicArnHasBeenSet(false),
     m_createdDateTimeHasBeenSet(false),
+    m_status(TopicStatus::NOT_SET),
     m_statusHasBeenSet(false)
 {
 }
@@ -41,6 +42,7 @@ EventTopic::EventTopic(const JsonValue& jsonValue) :
     m_topicNameHasBeenSet(false),
     m_topicArnHasBeenSet(false),
     m_createdDateTimeHasBeenSet(false),
+    m_status(TopicStatus::NOT_SET),
     m_statusHasBeenSet(false)
 {
   *this = jsonValue;

@@ -23,7 +23,9 @@ using namespace Aws::Utils;
 
 GetParametersForImportRequest::GetParametersForImportRequest() : 
     m_keyIdHasBeenSet(false),
+    m_wrappingAlgorithm(AlgorithmSpec::NOT_SET),
     m_wrappingAlgorithmHasBeenSet(false),
+    m_wrappingKeySpec(WrappingKeySpec::NOT_SET),
     m_wrappingKeySpecHasBeenSet(false)
 {
 }

@@ -21,6 +21,7 @@ using namespace Aws::Utils;
 
 ModifyHostsRequest::ModifyHostsRequest() : 
     m_hostIdsHasBeenSet(false),
+    m_autoPlacement(AutoPlacement::NOT_SET),
     m_autoPlacementHasBeenSet(false)
 {
 }

@@ -26,11 +26,13 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-RestoreAddressToClassicResponse::RestoreAddressToClassicResponse()
+RestoreAddressToClassicResponse::RestoreAddressToClassicResponse() : 
+    m_status(Status::NOT_SET)
 {
 }
 
-RestoreAddressToClassicResponse::RestoreAddressToClassicResponse(const AmazonWebServiceResult<XmlDocument>& result)
+RestoreAddressToClassicResponse::RestoreAddressToClassicResponse(const AmazonWebServiceResult<XmlDocument>& result) : 
+    m_status(Status::NOT_SET)
 {
   *this = result;
 }

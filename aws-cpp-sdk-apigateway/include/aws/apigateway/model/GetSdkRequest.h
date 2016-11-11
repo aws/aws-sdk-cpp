@@ -111,152 +111,164 @@ namespace Model
     inline GetSdkRequest& WithStageName(const char* value) { SetStageName(value); return *this;}
 
     /**
-     * <p>The language for the generated SDK. Currently javascript, android, and
-     * objectivec (for iOS) are supported.</p>
+     * <p>The language for the generated SDK. Currently <code>javascript</code>,
+     * <code>android</code>, and <code>objectivec</code> (for iOS) are supported.</p>
      */
     inline const Aws::String& GetSdkType() const{ return m_sdkType; }
 
     /**
-     * <p>The language for the generated SDK. Currently javascript, android, and
-     * objectivec (for iOS) are supported.</p>
+     * <p>The language for the generated SDK. Currently <code>javascript</code>,
+     * <code>android</code>, and <code>objectivec</code> (for iOS) are supported.</p>
      */
     inline void SetSdkType(const Aws::String& value) { m_sdkTypeHasBeenSet = true; m_sdkType = value; }
 
     /**
-     * <p>The language for the generated SDK. Currently javascript, android, and
-     * objectivec (for iOS) are supported.</p>
+     * <p>The language for the generated SDK. Currently <code>javascript</code>,
+     * <code>android</code>, and <code>objectivec</code> (for iOS) are supported.</p>
      */
     inline void SetSdkType(Aws::String&& value) { m_sdkTypeHasBeenSet = true; m_sdkType = value; }
 
     /**
-     * <p>The language for the generated SDK. Currently javascript, android, and
-     * objectivec (for iOS) are supported.</p>
+     * <p>The language for the generated SDK. Currently <code>javascript</code>,
+     * <code>android</code>, and <code>objectivec</code> (for iOS) are supported.</p>
      */
     inline void SetSdkType(const char* value) { m_sdkTypeHasBeenSet = true; m_sdkType.assign(value); }
 
     /**
-     * <p>The language for the generated SDK. Currently javascript, android, and
-     * objectivec (for iOS) are supported.</p>
+     * <p>The language for the generated SDK. Currently <code>javascript</code>,
+     * <code>android</code>, and <code>objectivec</code> (for iOS) are supported.</p>
      */
     inline GetSdkRequest& WithSdkType(const Aws::String& value) { SetSdkType(value); return *this;}
 
     /**
-     * <p>The language for the generated SDK. Currently javascript, android, and
-     * objectivec (for iOS) are supported.</p>
+     * <p>The language for the generated SDK. Currently <code>javascript</code>,
+     * <code>android</code>, and <code>objectivec</code> (for iOS) are supported.</p>
      */
     inline GetSdkRequest& WithSdkType(Aws::String&& value) { SetSdkType(value); return *this;}
 
     /**
-     * <p>The language for the generated SDK. Currently javascript, android, and
-     * objectivec (for iOS) are supported.</p>
+     * <p>The language for the generated SDK. Currently <code>javascript</code>,
+     * <code>android</code>, and <code>objectivec</code> (for iOS) are supported.</p>
      */
     inline GetSdkRequest& WithSdkType(const char* value) { SetSdkType(value); return *this;}
 
     /**
      * <p>A key-value map of query string parameters that specify properties of the
-     * SDK, depending on the requested sdkType. For sdkType 'objectivec', a parameter
-     * named "classPrefix" is required. For sdkType 'android', parameters named
-     * "groupId", "artifactId", "artifactVersion", and "invokerPackage" are
-     * required.</p>
+     * SDK, depending on the requested <code>sdkType</code>. For <code>sdkType</code>
+     * of <code>objectivec</code>, a parameter named <code>classPrefix</code> is
+     * required. For <code>sdkType</code> of <code>android</code>, parameters named
+     * <code>groupId</code>, <code>artifactId</code>, <code>artifactVersion</code>, and
+     * <code>invokerPackage</code> are required.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetParameters() const{ return m_parameters; }
 
     /**
      * <p>A key-value map of query string parameters that specify properties of the
-     * SDK, depending on the requested sdkType. For sdkType 'objectivec', a parameter
-     * named "classPrefix" is required. For sdkType 'android', parameters named
-     * "groupId", "artifactId", "artifactVersion", and "invokerPackage" are
-     * required.</p>
+     * SDK, depending on the requested <code>sdkType</code>. For <code>sdkType</code>
+     * of <code>objectivec</code>, a parameter named <code>classPrefix</code> is
+     * required. For <code>sdkType</code> of <code>android</code>, parameters named
+     * <code>groupId</code>, <code>artifactId</code>, <code>artifactVersion</code>, and
+     * <code>invokerPackage</code> are required.</p>
      */
     inline void SetParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
 
     /**
      * <p>A key-value map of query string parameters that specify properties of the
-     * SDK, depending on the requested sdkType. For sdkType 'objectivec', a parameter
-     * named "classPrefix" is required. For sdkType 'android', parameters named
-     * "groupId", "artifactId", "artifactVersion", and "invokerPackage" are
-     * required.</p>
+     * SDK, depending on the requested <code>sdkType</code>. For <code>sdkType</code>
+     * of <code>objectivec</code>, a parameter named <code>classPrefix</code> is
+     * required. For <code>sdkType</code> of <code>android</code>, parameters named
+     * <code>groupId</code>, <code>artifactId</code>, <code>artifactVersion</code>, and
+     * <code>invokerPackage</code> are required.</p>
      */
     inline void SetParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters = value; }
 
     /**
      * <p>A key-value map of query string parameters that specify properties of the
-     * SDK, depending on the requested sdkType. For sdkType 'objectivec', a parameter
-     * named "classPrefix" is required. For sdkType 'android', parameters named
-     * "groupId", "artifactId", "artifactVersion", and "invokerPackage" are
-     * required.</p>
+     * SDK, depending on the requested <code>sdkType</code>. For <code>sdkType</code>
+     * of <code>objectivec</code>, a parameter named <code>classPrefix</code> is
+     * required. For <code>sdkType</code> of <code>android</code>, parameters named
+     * <code>groupId</code>, <code>artifactId</code>, <code>artifactVersion</code>, and
+     * <code>invokerPackage</code> are required.</p>
      */
     inline GetSdkRequest& WithParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetParameters(value); return *this;}
 
     /**
      * <p>A key-value map of query string parameters that specify properties of the
-     * SDK, depending on the requested sdkType. For sdkType 'objectivec', a parameter
-     * named "classPrefix" is required. For sdkType 'android', parameters named
-     * "groupId", "artifactId", "artifactVersion", and "invokerPackage" are
-     * required.</p>
+     * SDK, depending on the requested <code>sdkType</code>. For <code>sdkType</code>
+     * of <code>objectivec</code>, a parameter named <code>classPrefix</code> is
+     * required. For <code>sdkType</code> of <code>android</code>, parameters named
+     * <code>groupId</code>, <code>artifactId</code>, <code>artifactVersion</code>, and
+     * <code>invokerPackage</code> are required.</p>
      */
     inline GetSdkRequest& WithParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetParameters(value); return *this;}
 
     /**
      * <p>A key-value map of query string parameters that specify properties of the
-     * SDK, depending on the requested sdkType. For sdkType 'objectivec', a parameter
-     * named "classPrefix" is required. For sdkType 'android', parameters named
-     * "groupId", "artifactId", "artifactVersion", and "invokerPackage" are
-     * required.</p>
+     * SDK, depending on the requested <code>sdkType</code>. For <code>sdkType</code>
+     * of <code>objectivec</code>, a parameter named <code>classPrefix</code> is
+     * required. For <code>sdkType</code> of <code>android</code>, parameters named
+     * <code>groupId</code>, <code>artifactId</code>, <code>artifactVersion</code>, and
+     * <code>invokerPackage</code> are required.</p>
      */
     inline GetSdkRequest& AddParameters(const Aws::String& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters[key] = value; return *this; }
 
     /**
      * <p>A key-value map of query string parameters that specify properties of the
-     * SDK, depending on the requested sdkType. For sdkType 'objectivec', a parameter
-     * named "classPrefix" is required. For sdkType 'android', parameters named
-     * "groupId", "artifactId", "artifactVersion", and "invokerPackage" are
-     * required.</p>
+     * SDK, depending on the requested <code>sdkType</code>. For <code>sdkType</code>
+     * of <code>objectivec</code>, a parameter named <code>classPrefix</code> is
+     * required. For <code>sdkType</code> of <code>android</code>, parameters named
+     * <code>groupId</code>, <code>artifactId</code>, <code>artifactVersion</code>, and
+     * <code>invokerPackage</code> are required.</p>
      */
     inline GetSdkRequest& AddParameters(Aws::String&& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters[key] = value; return *this; }
 
     /**
      * <p>A key-value map of query string parameters that specify properties of the
-     * SDK, depending on the requested sdkType. For sdkType 'objectivec', a parameter
-     * named "classPrefix" is required. For sdkType 'android', parameters named
-     * "groupId", "artifactId", "artifactVersion", and "invokerPackage" are
-     * required.</p>
+     * SDK, depending on the requested <code>sdkType</code>. For <code>sdkType</code>
+     * of <code>objectivec</code>, a parameter named <code>classPrefix</code> is
+     * required. For <code>sdkType</code> of <code>android</code>, parameters named
+     * <code>groupId</code>, <code>artifactId</code>, <code>artifactVersion</code>, and
+     * <code>invokerPackage</code> are required.</p>
      */
     inline GetSdkRequest& AddParameters(const Aws::String& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters[key] = value; return *this; }
 
     /**
      * <p>A key-value map of query string parameters that specify properties of the
-     * SDK, depending on the requested sdkType. For sdkType 'objectivec', a parameter
-     * named "classPrefix" is required. For sdkType 'android', parameters named
-     * "groupId", "artifactId", "artifactVersion", and "invokerPackage" are
-     * required.</p>
+     * SDK, depending on the requested <code>sdkType</code>. For <code>sdkType</code>
+     * of <code>objectivec</code>, a parameter named <code>classPrefix</code> is
+     * required. For <code>sdkType</code> of <code>android</code>, parameters named
+     * <code>groupId</code>, <code>artifactId</code>, <code>artifactVersion</code>, and
+     * <code>invokerPackage</code> are required.</p>
      */
     inline GetSdkRequest& AddParameters(Aws::String&& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters[key] = value; return *this; }
 
     /**
      * <p>A key-value map of query string parameters that specify properties of the
-     * SDK, depending on the requested sdkType. For sdkType 'objectivec', a parameter
-     * named "classPrefix" is required. For sdkType 'android', parameters named
-     * "groupId", "artifactId", "artifactVersion", and "invokerPackage" are
-     * required.</p>
+     * SDK, depending on the requested <code>sdkType</code>. For <code>sdkType</code>
+     * of <code>objectivec</code>, a parameter named <code>classPrefix</code> is
+     * required. For <code>sdkType</code> of <code>android</code>, parameters named
+     * <code>groupId</code>, <code>artifactId</code>, <code>artifactVersion</code>, and
+     * <code>invokerPackage</code> are required.</p>
      */
     inline GetSdkRequest& AddParameters(const char* key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters[key] = value; return *this; }
 
     /**
      * <p>A key-value map of query string parameters that specify properties of the
-     * SDK, depending on the requested sdkType. For sdkType 'objectivec', a parameter
-     * named "classPrefix" is required. For sdkType 'android', parameters named
-     * "groupId", "artifactId", "artifactVersion", and "invokerPackage" are
-     * required.</p>
+     * SDK, depending on the requested <code>sdkType</code>. For <code>sdkType</code>
+     * of <code>objectivec</code>, a parameter named <code>classPrefix</code> is
+     * required. For <code>sdkType</code> of <code>android</code>, parameters named
+     * <code>groupId</code>, <code>artifactId</code>, <code>artifactVersion</code>, and
+     * <code>invokerPackage</code> are required.</p>
      */
     inline GetSdkRequest& AddParameters(Aws::String&& key, const char* value) { m_parametersHasBeenSet = true; m_parameters[key] = value; return *this; }
 
     /**
      * <p>A key-value map of query string parameters that specify properties of the
-     * SDK, depending on the requested sdkType. For sdkType 'objectivec', a parameter
-     * named "classPrefix" is required. For sdkType 'android', parameters named
-     * "groupId", "artifactId", "artifactVersion", and "invokerPackage" are
-     * required.</p>
+     * SDK, depending on the requested <code>sdkType</code>. For <code>sdkType</code>
+     * of <code>objectivec</code>, a parameter named <code>classPrefix</code> is
+     * required. For <code>sdkType</code> of <code>android</code>, parameters named
+     * <code>groupId</code>, <code>artifactId</code>, <code>artifactVersion</code>, and
+     * <code>invokerPackage</code> are required.</p>
      */
     inline GetSdkRequest& AddParameters(const char* key, const char* value) { m_parametersHasBeenSet = true; m_parameters[key] = value; return *this; }
 

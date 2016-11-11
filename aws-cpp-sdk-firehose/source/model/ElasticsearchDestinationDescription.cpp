@@ -32,9 +32,11 @@ ElasticsearchDestinationDescription::ElasticsearchDestinationDescription() :
     m_domainARNHasBeenSet(false),
     m_indexNameHasBeenSet(false),
     m_typeNameHasBeenSet(false),
+    m_indexRotationPeriod(ElasticsearchIndexRotationPeriod::NOT_SET),
     m_indexRotationPeriodHasBeenSet(false),
     m_bufferingHintsHasBeenSet(false),
     m_retryOptionsHasBeenSet(false),
+    m_s3BackupMode(ElasticsearchS3BackupMode::NOT_SET),
     m_s3BackupModeHasBeenSet(false),
     m_s3DestinationDescriptionHasBeenSet(false),
     m_cloudWatchLoggingOptionsHasBeenSet(false)
@@ -46,9 +48,11 @@ ElasticsearchDestinationDescription::ElasticsearchDestinationDescription(const J
     m_domainARNHasBeenSet(false),
     m_indexNameHasBeenSet(false),
     m_typeNameHasBeenSet(false),
+    m_indexRotationPeriod(ElasticsearchIndexRotationPeriod::NOT_SET),
     m_indexRotationPeriodHasBeenSet(false),
     m_bufferingHintsHasBeenSet(false),
     m_retryOptionsHasBeenSet(false),
+    m_s3BackupMode(ElasticsearchS3BackupMode::NOT_SET),
     m_s3BackupModeHasBeenSet(false),
     m_s3DestinationDescriptionHasBeenSet(false),
     m_cloudWatchLoggingOptionsHasBeenSet(false)

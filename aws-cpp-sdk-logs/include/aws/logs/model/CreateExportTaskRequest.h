@@ -70,205 +70,205 @@ namespace Model
     inline CreateExportTaskRequest& WithTaskName(const char* value) { SetTaskName(value); return *this;}
 
     /**
-     * <p>The name of the log group to export.</p>
+     * <p>The name of the log group.</p>
      */
     inline const Aws::String& GetLogGroupName() const{ return m_logGroupName; }
 
     /**
-     * <p>The name of the log group to export.</p>
+     * <p>The name of the log group.</p>
      */
     inline void SetLogGroupName(const Aws::String& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
 
     /**
-     * <p>The name of the log group to export.</p>
+     * <p>The name of the log group.</p>
      */
     inline void SetLogGroupName(Aws::String&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
 
     /**
-     * <p>The name of the log group to export.</p>
+     * <p>The name of the log group.</p>
      */
     inline void SetLogGroupName(const char* value) { m_logGroupNameHasBeenSet = true; m_logGroupName.assign(value); }
 
     /**
-     * <p>The name of the log group to export.</p>
+     * <p>The name of the log group.</p>
      */
     inline CreateExportTaskRequest& WithLogGroupName(const Aws::String& value) { SetLogGroupName(value); return *this;}
 
     /**
-     * <p>The name of the log group to export.</p>
+     * <p>The name of the log group.</p>
      */
     inline CreateExportTaskRequest& WithLogGroupName(Aws::String&& value) { SetLogGroupName(value); return *this;}
 
     /**
-     * <p>The name of the log group to export.</p>
+     * <p>The name of the log group.</p>
      */
     inline CreateExportTaskRequest& WithLogGroupName(const char* value) { SetLogGroupName(value); return *this;}
 
     /**
-     * <p>Will only export log streams that match the provided logStreamNamePrefix. If
-     * you don't specify a value, no prefix filter is applied.</p>
+     * <p>Export only log streams that match the provided prefix. If you don't specify
+     * a value, no prefix filter is applied.</p>
      */
     inline const Aws::String& GetLogStreamNamePrefix() const{ return m_logStreamNamePrefix; }
 
     /**
-     * <p>Will only export log streams that match the provided logStreamNamePrefix. If
-     * you don't specify a value, no prefix filter is applied.</p>
+     * <p>Export only log streams that match the provided prefix. If you don't specify
+     * a value, no prefix filter is applied.</p>
      */
     inline void SetLogStreamNamePrefix(const Aws::String& value) { m_logStreamNamePrefixHasBeenSet = true; m_logStreamNamePrefix = value; }
 
     /**
-     * <p>Will only export log streams that match the provided logStreamNamePrefix. If
-     * you don't specify a value, no prefix filter is applied.</p>
+     * <p>Export only log streams that match the provided prefix. If you don't specify
+     * a value, no prefix filter is applied.</p>
      */
     inline void SetLogStreamNamePrefix(Aws::String&& value) { m_logStreamNamePrefixHasBeenSet = true; m_logStreamNamePrefix = value; }
 
     /**
-     * <p>Will only export log streams that match the provided logStreamNamePrefix. If
-     * you don't specify a value, no prefix filter is applied.</p>
+     * <p>Export only log streams that match the provided prefix. If you don't specify
+     * a value, no prefix filter is applied.</p>
      */
     inline void SetLogStreamNamePrefix(const char* value) { m_logStreamNamePrefixHasBeenSet = true; m_logStreamNamePrefix.assign(value); }
 
     /**
-     * <p>Will only export log streams that match the provided logStreamNamePrefix. If
-     * you don't specify a value, no prefix filter is applied.</p>
+     * <p>Export only log streams that match the provided prefix. If you don't specify
+     * a value, no prefix filter is applied.</p>
      */
     inline CreateExportTaskRequest& WithLogStreamNamePrefix(const Aws::String& value) { SetLogStreamNamePrefix(value); return *this;}
 
     /**
-     * <p>Will only export log streams that match the provided logStreamNamePrefix. If
-     * you don't specify a value, no prefix filter is applied.</p>
+     * <p>Export only log streams that match the provided prefix. If you don't specify
+     * a value, no prefix filter is applied.</p>
      */
     inline CreateExportTaskRequest& WithLogStreamNamePrefix(Aws::String&& value) { SetLogStreamNamePrefix(value); return *this;}
 
     /**
-     * <p>Will only export log streams that match the provided logStreamNamePrefix. If
-     * you don't specify a value, no prefix filter is applied.</p>
+     * <p>Export only log streams that match the provided prefix. If you don't specify
+     * a value, no prefix filter is applied.</p>
      */
     inline CreateExportTaskRequest& WithLogStreamNamePrefix(const char* value) { SetLogStreamNamePrefix(value); return *this;}
 
     /**
-     * <p>A point in time expressed as the number of milliseconds since Jan 1, 1970
-     * 00:00:00 UTC. It indicates the start time of the range for the request. Events
-     * with a timestamp prior to this time will not be exported.</p>
+     * <p>The start time of the range for the request, expressed as the number of
+     * milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp earlier
+     * than this time are not exported.</p>
      */
     inline long long GetFrom() const{ return m_from; }
 
     /**
-     * <p>A point in time expressed as the number of milliseconds since Jan 1, 1970
-     * 00:00:00 UTC. It indicates the start time of the range for the request. Events
-     * with a timestamp prior to this time will not be exported.</p>
+     * <p>The start time of the range for the request, expressed as the number of
+     * milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp earlier
+     * than this time are not exported.</p>
      */
     inline void SetFrom(long long value) { m_fromHasBeenSet = true; m_from = value; }
 
     /**
-     * <p>A point in time expressed as the number of milliseconds since Jan 1, 1970
-     * 00:00:00 UTC. It indicates the start time of the range for the request. Events
-     * with a timestamp prior to this time will not be exported.</p>
+     * <p>The start time of the range for the request, expressed as the number of
+     * milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp earlier
+     * than this time are not exported.</p>
      */
     inline CreateExportTaskRequest& WithFrom(long long value) { SetFrom(value); return *this;}
 
     /**
-     * <p>A point in time expressed as the number of milliseconds since Jan 1, 1970
-     * 00:00:00 UTC. It indicates the end time of the range for the request. Events
-     * with a timestamp later than this time will not be exported.</p>
+     * <p>The end time of the range for the request, expressed as the number of
+     * milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than
+     * this time are not exported.</p>
      */
     inline long long GetTo() const{ return m_to; }
 
     /**
-     * <p>A point in time expressed as the number of milliseconds since Jan 1, 1970
-     * 00:00:00 UTC. It indicates the end time of the range for the request. Events
-     * with a timestamp later than this time will not be exported.</p>
+     * <p>The end time of the range for the request, expressed as the number of
+     * milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than
+     * this time are not exported.</p>
      */
     inline void SetTo(long long value) { m_toHasBeenSet = true; m_to = value; }
 
     /**
-     * <p>A point in time expressed as the number of milliseconds since Jan 1, 1970
-     * 00:00:00 UTC. It indicates the end time of the range for the request. Events
-     * with a timestamp later than this time will not be exported.</p>
+     * <p>The end time of the range for the request, expressed as the number of
+     * milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than
+     * this time are not exported.</p>
      */
     inline CreateExportTaskRequest& WithTo(long long value) { SetTo(value); return *this;}
 
     /**
-     * <p>Name of Amazon S3 bucket to which the log data will be exported.</p> <p>
-     * <b>Note:</b> Only buckets in the same AWS region are supported.</p>
+     * <p>The name of S3 bucket for the exported log data. The bucket must be in the
+     * same AWS region.</p>
      */
     inline const Aws::String& GetDestination() const{ return m_destination; }
 
     /**
-     * <p>Name of Amazon S3 bucket to which the log data will be exported.</p> <p>
-     * <b>Note:</b> Only buckets in the same AWS region are supported.</p>
+     * <p>The name of S3 bucket for the exported log data. The bucket must be in the
+     * same AWS region.</p>
      */
     inline void SetDestination(const Aws::String& value) { m_destinationHasBeenSet = true; m_destination = value; }
 
     /**
-     * <p>Name of Amazon S3 bucket to which the log data will be exported.</p> <p>
-     * <b>Note:</b> Only buckets in the same AWS region are supported.</p>
+     * <p>The name of S3 bucket for the exported log data. The bucket must be in the
+     * same AWS region.</p>
      */
     inline void SetDestination(Aws::String&& value) { m_destinationHasBeenSet = true; m_destination = value; }
 
     /**
-     * <p>Name of Amazon S3 bucket to which the log data will be exported.</p> <p>
-     * <b>Note:</b> Only buckets in the same AWS region are supported.</p>
+     * <p>The name of S3 bucket for the exported log data. The bucket must be in the
+     * same AWS region.</p>
      */
     inline void SetDestination(const char* value) { m_destinationHasBeenSet = true; m_destination.assign(value); }
 
     /**
-     * <p>Name of Amazon S3 bucket to which the log data will be exported.</p> <p>
-     * <b>Note:</b> Only buckets in the same AWS region are supported.</p>
+     * <p>The name of S3 bucket for the exported log data. The bucket must be in the
+     * same AWS region.</p>
      */
     inline CreateExportTaskRequest& WithDestination(const Aws::String& value) { SetDestination(value); return *this;}
 
     /**
-     * <p>Name of Amazon S3 bucket to which the log data will be exported.</p> <p>
-     * <b>Note:</b> Only buckets in the same AWS region are supported.</p>
+     * <p>The name of S3 bucket for the exported log data. The bucket must be in the
+     * same AWS region.</p>
      */
     inline CreateExportTaskRequest& WithDestination(Aws::String&& value) { SetDestination(value); return *this;}
 
     /**
-     * <p>Name of Amazon S3 bucket to which the log data will be exported.</p> <p>
-     * <b>Note:</b> Only buckets in the same AWS region are supported.</p>
+     * <p>The name of S3 bucket for the exported log data. The bucket must be in the
+     * same AWS region.</p>
      */
     inline CreateExportTaskRequest& WithDestination(const char* value) { SetDestination(value); return *this;}
 
     /**
-     * <p>Prefix that will be used as the start of Amazon S3 key for every object
-     * exported. If not specified, this defaults to 'exportedlogs'.</p>
+     * <p>The prefix used as the start of the key for every object exported. If you
+     * don't specify a value, the default is <code>exportedlogs</code>.</p>
      */
     inline const Aws::String& GetDestinationPrefix() const{ return m_destinationPrefix; }
 
     /**
-     * <p>Prefix that will be used as the start of Amazon S3 key for every object
-     * exported. If not specified, this defaults to 'exportedlogs'.</p>
+     * <p>The prefix used as the start of the key for every object exported. If you
+     * don't specify a value, the default is <code>exportedlogs</code>.</p>
      */
     inline void SetDestinationPrefix(const Aws::String& value) { m_destinationPrefixHasBeenSet = true; m_destinationPrefix = value; }
 
     /**
-     * <p>Prefix that will be used as the start of Amazon S3 key for every object
-     * exported. If not specified, this defaults to 'exportedlogs'.</p>
+     * <p>The prefix used as the start of the key for every object exported. If you
+     * don't specify a value, the default is <code>exportedlogs</code>.</p>
      */
     inline void SetDestinationPrefix(Aws::String&& value) { m_destinationPrefixHasBeenSet = true; m_destinationPrefix = value; }
 
     /**
-     * <p>Prefix that will be used as the start of Amazon S3 key for every object
-     * exported. If not specified, this defaults to 'exportedlogs'.</p>
+     * <p>The prefix used as the start of the key for every object exported. If you
+     * don't specify a value, the default is <code>exportedlogs</code>.</p>
      */
     inline void SetDestinationPrefix(const char* value) { m_destinationPrefixHasBeenSet = true; m_destinationPrefix.assign(value); }
 
     /**
-     * <p>Prefix that will be used as the start of Amazon S3 key for every object
-     * exported. If not specified, this defaults to 'exportedlogs'.</p>
+     * <p>The prefix used as the start of the key for every object exported. If you
+     * don't specify a value, the default is <code>exportedlogs</code>.</p>
      */
     inline CreateExportTaskRequest& WithDestinationPrefix(const Aws::String& value) { SetDestinationPrefix(value); return *this;}
 
     /**
-     * <p>Prefix that will be used as the start of Amazon S3 key for every object
-     * exported. If not specified, this defaults to 'exportedlogs'.</p>
+     * <p>The prefix used as the start of the key for every object exported. If you
+     * don't specify a value, the default is <code>exportedlogs</code>.</p>
      */
     inline CreateExportTaskRequest& WithDestinationPrefix(Aws::String&& value) { SetDestinationPrefix(value); return *this;}
 
     /**
-     * <p>Prefix that will be used as the start of Amazon S3 key for every object
-     * exported. If not specified, this defaults to 'exportedlogs'.</p>
+     * <p>The prefix used as the start of the key for every object exported. If you
+     * don't specify a value, the default is <code>exportedlogs</code>.</p>
      */
     inline CreateExportTaskRequest& WithDestinationPrefix(const char* value) { SetDestinationPrefix(value); return *this;}
 

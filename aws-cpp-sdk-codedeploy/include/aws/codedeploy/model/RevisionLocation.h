@@ -44,37 +44,37 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p>The type of application revision:</p> <ul> <li>S3: An application revision
-     * stored in Amazon S3.</li> <li>GitHub: An application revision stored in
-     * GitHub.</li> </ul>
+     * <p>The type of application revision:</p> <ul> <li> <p>S3: An application
+     * revision stored in Amazon S3.</p> </li> <li> <p>GitHub: An application revision
+     * stored in GitHub.</p> </li> </ul>
      */
     inline const RevisionLocationType& GetRevisionType() const{ return m_revisionType; }
 
     /**
-     * <p>The type of application revision:</p> <ul> <li>S3: An application revision
-     * stored in Amazon S3.</li> <li>GitHub: An application revision stored in
-     * GitHub.</li> </ul>
+     * <p>The type of application revision:</p> <ul> <li> <p>S3: An application
+     * revision stored in Amazon S3.</p> </li> <li> <p>GitHub: An application revision
+     * stored in GitHub.</p> </li> </ul>
      */
     inline void SetRevisionType(const RevisionLocationType& value) { m_revisionTypeHasBeenSet = true; m_revisionType = value; }
 
     /**
-     * <p>The type of application revision:</p> <ul> <li>S3: An application revision
-     * stored in Amazon S3.</li> <li>GitHub: An application revision stored in
-     * GitHub.</li> </ul>
+     * <p>The type of application revision:</p> <ul> <li> <p>S3: An application
+     * revision stored in Amazon S3.</p> </li> <li> <p>GitHub: An application revision
+     * stored in GitHub.</p> </li> </ul>
      */
     inline void SetRevisionType(RevisionLocationType&& value) { m_revisionTypeHasBeenSet = true; m_revisionType = value; }
 
     /**
-     * <p>The type of application revision:</p> <ul> <li>S3: An application revision
-     * stored in Amazon S3.</li> <li>GitHub: An application revision stored in
-     * GitHub.</li> </ul>
+     * <p>The type of application revision:</p> <ul> <li> <p>S3: An application
+     * revision stored in Amazon S3.</p> </li> <li> <p>GitHub: An application revision
+     * stored in GitHub.</p> </li> </ul>
      */
     inline RevisionLocation& WithRevisionType(const RevisionLocationType& value) { SetRevisionType(value); return *this;}
 
     /**
-     * <p>The type of application revision:</p> <ul> <li>S3: An application revision
-     * stored in Amazon S3.</li> <li>GitHub: An application revision stored in
-     * GitHub.</li> </ul>
+     * <p>The type of application revision:</p> <ul> <li> <p>S3: An application
+     * revision stored in Amazon S3.</p> </li> <li> <p>GitHub: An application revision
+     * stored in GitHub.</p> </li> </ul>
      */
     inline RevisionLocation& WithRevisionType(RevisionLocationType&& value) { SetRevisionType(value); return *this;}
 

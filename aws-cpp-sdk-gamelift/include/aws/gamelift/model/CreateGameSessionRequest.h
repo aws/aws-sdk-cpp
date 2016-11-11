@@ -123,19 +123,19 @@ namespace Model
 
     /**
      * <p>Maximum number of players that can be connected simultaneously to the game
-     * session. </p>
+     * session.</p>
      */
     inline int GetMaximumPlayerSessionCount() const{ return m_maximumPlayerSessionCount; }
 
     /**
      * <p>Maximum number of players that can be connected simultaneously to the game
-     * session. </p>
+     * session.</p>
      */
     inline void SetMaximumPlayerSessionCount(int value) { m_maximumPlayerSessionCountHasBeenSet = true; m_maximumPlayerSessionCount = value; }
 
     /**
      * <p>Maximum number of players that can be connected simultaneously to the game
-     * session. </p>
+     * session.</p>
      */
     inline CreateGameSessionRequest& WithMaximumPlayerSessionCount(int value) { SetMaximumPlayerSessionCount(value); return *this;}
 
@@ -183,45 +183,178 @@ namespace Model
 
     /**
      * <p>Set of properties used to administer a game session. These properties are
-     * passed to the server process hosting it. </p>
+     * passed to the server process hosting it.</p>
      */
     inline const Aws::Vector<GameProperty>& GetGameProperties() const{ return m_gameProperties; }
 
     /**
      * <p>Set of properties used to administer a game session. These properties are
-     * passed to the server process hosting it. </p>
+     * passed to the server process hosting it.</p>
      */
     inline void SetGameProperties(const Aws::Vector<GameProperty>& value) { m_gamePropertiesHasBeenSet = true; m_gameProperties = value; }
 
     /**
      * <p>Set of properties used to administer a game session. These properties are
-     * passed to the server process hosting it. </p>
+     * passed to the server process hosting it.</p>
      */
     inline void SetGameProperties(Aws::Vector<GameProperty>&& value) { m_gamePropertiesHasBeenSet = true; m_gameProperties = value; }
 
     /**
      * <p>Set of properties used to administer a game session. These properties are
-     * passed to the server process hosting it. </p>
+     * passed to the server process hosting it.</p>
      */
     inline CreateGameSessionRequest& WithGameProperties(const Aws::Vector<GameProperty>& value) { SetGameProperties(value); return *this;}
 
     /**
      * <p>Set of properties used to administer a game session. These properties are
-     * passed to the server process hosting it. </p>
+     * passed to the server process hosting it.</p>
      */
     inline CreateGameSessionRequest& WithGameProperties(Aws::Vector<GameProperty>&& value) { SetGameProperties(value); return *this;}
 
     /**
      * <p>Set of properties used to administer a game session. These properties are
-     * passed to the server process hosting it. </p>
+     * passed to the server process hosting it.</p>
      */
     inline CreateGameSessionRequest& AddGameProperties(const GameProperty& value) { m_gamePropertiesHasBeenSet = true; m_gameProperties.push_back(value); return *this; }
 
     /**
      * <p>Set of properties used to administer a game session. These properties are
-     * passed to the server process hosting it. </p>
+     * passed to the server process hosting it.</p>
      */
     inline CreateGameSessionRequest& AddGameProperties(GameProperty&& value) { m_gamePropertiesHasBeenSet = true; m_gameProperties.push_back(value); return *this; }
+
+    /**
+     * <p>Player ID identifying the person or entity creating the game session. This ID
+     * is used to enforce a resource protection policy (if one exists) that limits the
+     * number of concurrent active game sessions one player can have.</p>
+     */
+    inline const Aws::String& GetCreatorId() const{ return m_creatorId; }
+
+    /**
+     * <p>Player ID identifying the person or entity creating the game session. This ID
+     * is used to enforce a resource protection policy (if one exists) that limits the
+     * number of concurrent active game sessions one player can have.</p>
+     */
+    inline void SetCreatorId(const Aws::String& value) { m_creatorIdHasBeenSet = true; m_creatorId = value; }
+
+    /**
+     * <p>Player ID identifying the person or entity creating the game session. This ID
+     * is used to enforce a resource protection policy (if one exists) that limits the
+     * number of concurrent active game sessions one player can have.</p>
+     */
+    inline void SetCreatorId(Aws::String&& value) { m_creatorIdHasBeenSet = true; m_creatorId = value; }
+
+    /**
+     * <p>Player ID identifying the person or entity creating the game session. This ID
+     * is used to enforce a resource protection policy (if one exists) that limits the
+     * number of concurrent active game sessions one player can have.</p>
+     */
+    inline void SetCreatorId(const char* value) { m_creatorIdHasBeenSet = true; m_creatorId.assign(value); }
+
+    /**
+     * <p>Player ID identifying the person or entity creating the game session. This ID
+     * is used to enforce a resource protection policy (if one exists) that limits the
+     * number of concurrent active game sessions one player can have.</p>
+     */
+    inline CreateGameSessionRequest& WithCreatorId(const Aws::String& value) { SetCreatorId(value); return *this;}
+
+    /**
+     * <p>Player ID identifying the person or entity creating the game session. This ID
+     * is used to enforce a resource protection policy (if one exists) that limits the
+     * number of concurrent active game sessions one player can have.</p>
+     */
+    inline CreateGameSessionRequest& WithCreatorId(Aws::String&& value) { SetCreatorId(value); return *this;}
+
+    /**
+     * <p>Player ID identifying the person or entity creating the game session. This ID
+     * is used to enforce a resource protection policy (if one exists) that limits the
+     * number of concurrent active game sessions one player can have.</p>
+     */
+    inline CreateGameSessionRequest& WithCreatorId(const char* value) { SetCreatorId(value); return *this;}
+
+    /**
+     * <p>Custom string to include in the game session ID, with a maximum length of 48
+     * characters. If this parameter is set, GameLift creates a game session ID in the
+     * following format: "arn:aws:gamelift:&lt;region&gt;::gamesession/fleet-&lt;fleet
+     * ID&gt;/&lt;custom ID string&gt;". For example, this full game session ID:
+     * "arn:aws:gamelift:us-west-2::gamesession/fleet-2ec2aae5-c2c7-43ca-b19d-8249fe5fddf2/my-game-session"
+     * includes the custom ID string "my-game-session". If this parameter is not set,
+     * GameLift creates a game session ID in the same format with an auto-generated ID
+     * string. </p>
+     */
+    inline const Aws::String& GetGameSessionId() const{ return m_gameSessionId; }
+
+    /**
+     * <p>Custom string to include in the game session ID, with a maximum length of 48
+     * characters. If this parameter is set, GameLift creates a game session ID in the
+     * following format: "arn:aws:gamelift:&lt;region&gt;::gamesession/fleet-&lt;fleet
+     * ID&gt;/&lt;custom ID string&gt;". For example, this full game session ID:
+     * "arn:aws:gamelift:us-west-2::gamesession/fleet-2ec2aae5-c2c7-43ca-b19d-8249fe5fddf2/my-game-session"
+     * includes the custom ID string "my-game-session". If this parameter is not set,
+     * GameLift creates a game session ID in the same format with an auto-generated ID
+     * string. </p>
+     */
+    inline void SetGameSessionId(const Aws::String& value) { m_gameSessionIdHasBeenSet = true; m_gameSessionId = value; }
+
+    /**
+     * <p>Custom string to include in the game session ID, with a maximum length of 48
+     * characters. If this parameter is set, GameLift creates a game session ID in the
+     * following format: "arn:aws:gamelift:&lt;region&gt;::gamesession/fleet-&lt;fleet
+     * ID&gt;/&lt;custom ID string&gt;". For example, this full game session ID:
+     * "arn:aws:gamelift:us-west-2::gamesession/fleet-2ec2aae5-c2c7-43ca-b19d-8249fe5fddf2/my-game-session"
+     * includes the custom ID string "my-game-session". If this parameter is not set,
+     * GameLift creates a game session ID in the same format with an auto-generated ID
+     * string. </p>
+     */
+    inline void SetGameSessionId(Aws::String&& value) { m_gameSessionIdHasBeenSet = true; m_gameSessionId = value; }
+
+    /**
+     * <p>Custom string to include in the game session ID, with a maximum length of 48
+     * characters. If this parameter is set, GameLift creates a game session ID in the
+     * following format: "arn:aws:gamelift:&lt;region&gt;::gamesession/fleet-&lt;fleet
+     * ID&gt;/&lt;custom ID string&gt;". For example, this full game session ID:
+     * "arn:aws:gamelift:us-west-2::gamesession/fleet-2ec2aae5-c2c7-43ca-b19d-8249fe5fddf2/my-game-session"
+     * includes the custom ID string "my-game-session". If this parameter is not set,
+     * GameLift creates a game session ID in the same format with an auto-generated ID
+     * string. </p>
+     */
+    inline void SetGameSessionId(const char* value) { m_gameSessionIdHasBeenSet = true; m_gameSessionId.assign(value); }
+
+    /**
+     * <p>Custom string to include in the game session ID, with a maximum length of 48
+     * characters. If this parameter is set, GameLift creates a game session ID in the
+     * following format: "arn:aws:gamelift:&lt;region&gt;::gamesession/fleet-&lt;fleet
+     * ID&gt;/&lt;custom ID string&gt;". For example, this full game session ID:
+     * "arn:aws:gamelift:us-west-2::gamesession/fleet-2ec2aae5-c2c7-43ca-b19d-8249fe5fddf2/my-game-session"
+     * includes the custom ID string "my-game-session". If this parameter is not set,
+     * GameLift creates a game session ID in the same format with an auto-generated ID
+     * string. </p>
+     */
+    inline CreateGameSessionRequest& WithGameSessionId(const Aws::String& value) { SetGameSessionId(value); return *this;}
+
+    /**
+     * <p>Custom string to include in the game session ID, with a maximum length of 48
+     * characters. If this parameter is set, GameLift creates a game session ID in the
+     * following format: "arn:aws:gamelift:&lt;region&gt;::gamesession/fleet-&lt;fleet
+     * ID&gt;/&lt;custom ID string&gt;". For example, this full game session ID:
+     * "arn:aws:gamelift:us-west-2::gamesession/fleet-2ec2aae5-c2c7-43ca-b19d-8249fe5fddf2/my-game-session"
+     * includes the custom ID string "my-game-session". If this parameter is not set,
+     * GameLift creates a game session ID in the same format with an auto-generated ID
+     * string. </p>
+     */
+    inline CreateGameSessionRequest& WithGameSessionId(Aws::String&& value) { SetGameSessionId(value); return *this;}
+
+    /**
+     * <p>Custom string to include in the game session ID, with a maximum length of 48
+     * characters. If this parameter is set, GameLift creates a game session ID in the
+     * following format: "arn:aws:gamelift:&lt;region&gt;::gamesession/fleet-&lt;fleet
+     * ID&gt;/&lt;custom ID string&gt;". For example, this full game session ID:
+     * "arn:aws:gamelift:us-west-2::gamesession/fleet-2ec2aae5-c2c7-43ca-b19d-8249fe5fddf2/my-game-session"
+     * includes the custom ID string "my-game-session". If this parameter is not set,
+     * GameLift creates a game session ID in the same format with an auto-generated ID
+     * string. </p>
+     */
+    inline CreateGameSessionRequest& WithGameSessionId(const char* value) { SetGameSessionId(value); return *this;}
 
   private:
     Aws::String m_fleetId;
@@ -234,6 +367,10 @@ namespace Model
     bool m_nameHasBeenSet;
     Aws::Vector<GameProperty> m_gameProperties;
     bool m_gamePropertiesHasBeenSet;
+    Aws::String m_creatorId;
+    bool m_creatorIdHasBeenSet;
+    Aws::String m_gameSessionId;
+    bool m_gameSessionIdHasBeenSet;
   };
 
 } // namespace Model

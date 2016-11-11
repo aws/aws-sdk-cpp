@@ -584,6 +584,41 @@ namespace Model
      */
     inline DBClusterSnapshot& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
+    /**
+     * <p>The Amazon Resource Name (ARN) for the DB cluster snapshot.</p>
+     */
+    inline const Aws::String& GetDBClusterSnapshotArn() const{ return m_dBClusterSnapshotArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the DB cluster snapshot.</p>
+     */
+    inline void SetDBClusterSnapshotArn(const Aws::String& value) { m_dBClusterSnapshotArnHasBeenSet = true; m_dBClusterSnapshotArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the DB cluster snapshot.</p>
+     */
+    inline void SetDBClusterSnapshotArn(Aws::String&& value) { m_dBClusterSnapshotArnHasBeenSet = true; m_dBClusterSnapshotArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the DB cluster snapshot.</p>
+     */
+    inline void SetDBClusterSnapshotArn(const char* value) { m_dBClusterSnapshotArnHasBeenSet = true; m_dBClusterSnapshotArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the DB cluster snapshot.</p>
+     */
+    inline DBClusterSnapshot& WithDBClusterSnapshotArn(const Aws::String& value) { SetDBClusterSnapshotArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the DB cluster snapshot.</p>
+     */
+    inline DBClusterSnapshot& WithDBClusterSnapshotArn(Aws::String&& value) { SetDBClusterSnapshotArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the DB cluster snapshot.</p>
+     */
+    inline DBClusterSnapshot& WithDBClusterSnapshotArn(const char* value) { SetDBClusterSnapshotArn(value); return *this;}
+
   private:
     Aws::Vector<Aws::String> m_availabilityZones;
     bool m_availabilityZonesHasBeenSet;
@@ -619,6 +654,8 @@ namespace Model
     bool m_storageEncryptedHasBeenSet;
     Aws::String m_kmsKeyId;
     bool m_kmsKeyIdHasBeenSet;
+    Aws::String m_dBClusterSnapshotArn;
+    bool m_dBClusterSnapshotArnHasBeenSet;
   };
 
 } // namespace Model

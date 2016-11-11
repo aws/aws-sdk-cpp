@@ -37,7 +37,12 @@ ReplicationGroup::ReplicationGroup() :
     m_memberClustersHasBeenSet(false),
     m_nodeGroupsHasBeenSet(false),
     m_snapshottingClusterIdHasBeenSet(false),
-    m_automaticFailoverHasBeenSet(false)
+    m_automaticFailover(AutomaticFailoverStatus::NOT_SET),
+    m_automaticFailoverHasBeenSet(false),
+    m_configurationEndpointHasBeenSet(false),
+    m_snapshotRetentionLimit(0),
+    m_snapshotRetentionLimitHasBeenSet(false),
+    m_snapshotWindowHasBeenSet(false)
 {
 }
 
@@ -49,7 +54,12 @@ ReplicationGroup::ReplicationGroup(const XmlNode& xmlNode) :
     m_memberClustersHasBeenSet(false),
     m_nodeGroupsHasBeenSet(false),
     m_snapshottingClusterIdHasBeenSet(false),
-    m_automaticFailoverHasBeenSet(false)
+    m_automaticFailover(AutomaticFailoverStatus::NOT_SET),
+    m_automaticFailoverHasBeenSet(false),
+    m_configurationEndpointHasBeenSet(false),
+    m_snapshotRetentionLimit(0),
+    m_snapshotRetentionLimitHasBeenSet(false),
+    m_snapshotWindowHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -120,6 +130,24 @@ ReplicationGroup& ReplicationGroup::operator =(const XmlNode& xmlNode)
       m_automaticFailover = AutomaticFailoverStatusMapper::GetAutomaticFailoverStatusForName(StringUtils::Trim(automaticFailoverNode.GetText().c_str()).c_str());
       m_automaticFailoverHasBeenSet = true;
     }
+    XmlNode configurationEndpointNode = resultNode.FirstChild("ConfigurationEndpoint");
+    if(!configurationEndpointNode.IsNull())
+    {
+      m_configurationEndpoint = configurationEndpointNode;
+      m_configurationEndpointHasBeenSet = true;
+    }
+    XmlNode snapshotRetentionLimitNode = resultNode.FirstChild("SnapshotRetentionLimit");
+    if(!snapshotRetentionLimitNode.IsNull())
+    {
+      m_snapshotRetentionLimit = StringUtils::ConvertToInt32(StringUtils::Trim(snapshotRetentionLimitNode.GetText().c_str()).c_str());
+      m_snapshotRetentionLimitHasBeenSet = true;
+    }
+    XmlNode snapshotWindowNode = resultNode.FirstChild("SnapshotWindow");
+    if(!snapshotWindowNode.IsNull())
+    {
+      m_snapshotWindow = StringUtils::Trim(snapshotWindowNode.GetText().c_str());
+      m_snapshotWindowHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -179,6 +207,23 @@ void ReplicationGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
       oStream << location << index << locationValue << ".AutomaticFailover=" << AutomaticFailoverStatusMapper::GetNameForAutomaticFailoverStatus(m_automaticFailover) << "&";
   }
 
+  if(m_configurationEndpointHasBeenSet)
+  {
+      Aws::StringStream configurationEndpointLocationAndMemberSs;
+      configurationEndpointLocationAndMemberSs << location << index << locationValue << ".ConfigurationEndpoint";
+      m_configurationEndpoint.OutputToStream(oStream, configurationEndpointLocationAndMemberSs.str().c_str());
+  }
+
+  if(m_snapshotRetentionLimitHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".SnapshotRetentionLimit=" << m_snapshotRetentionLimit << "&";
+  }
+
+  if(m_snapshotWindowHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".SnapshotWindow=" << StringUtils::URLEncode(m_snapshotWindow.c_str()) << "&";
+  }
+
 }
 
 void ReplicationGroup::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -226,6 +271,20 @@ void ReplicationGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
   if(m_automaticFailoverHasBeenSet)
   {
       oStream << location << ".AutomaticFailover=" << AutomaticFailoverStatusMapper::GetNameForAutomaticFailoverStatus(m_automaticFailover) << "&";
+  }
+  if(m_configurationEndpointHasBeenSet)
+  {
+      Aws::String configurationEndpointLocationAndMember(location);
+      configurationEndpointLocationAndMember += ".ConfigurationEndpoint";
+      m_configurationEndpoint.OutputToStream(oStream, configurationEndpointLocationAndMember.c_str());
+  }
+  if(m_snapshotRetentionLimitHasBeenSet)
+  {
+      oStream << location << ".SnapshotRetentionLimit=" << m_snapshotRetentionLimit << "&";
+  }
+  if(m_snapshotWindowHasBeenSet)
+  {
+      oStream << location << ".SnapshotWindow=" << StringUtils::URLEncode(m_snapshotWindow.c_str()) << "&";
   }
 }
 

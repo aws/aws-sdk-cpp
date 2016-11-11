@@ -396,6 +396,41 @@ namespace Model
      */
     inline EventSubscription& WithEnabled(bool value) { SetEnabled(value); return *this;}
 
+    /**
+     * <p>The Amazon Resource Name (ARN) for the event subscription.</p>
+     */
+    inline const Aws::String& GetEventSubscriptionArn() const{ return m_eventSubscriptionArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the event subscription.</p>
+     */
+    inline void SetEventSubscriptionArn(const Aws::String& value) { m_eventSubscriptionArnHasBeenSet = true; m_eventSubscriptionArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the event subscription.</p>
+     */
+    inline void SetEventSubscriptionArn(Aws::String&& value) { m_eventSubscriptionArnHasBeenSet = true; m_eventSubscriptionArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the event subscription.</p>
+     */
+    inline void SetEventSubscriptionArn(const char* value) { m_eventSubscriptionArnHasBeenSet = true; m_eventSubscriptionArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the event subscription.</p>
+     */
+    inline EventSubscription& WithEventSubscriptionArn(const Aws::String& value) { SetEventSubscriptionArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the event subscription.</p>
+     */
+    inline EventSubscription& WithEventSubscriptionArn(Aws::String&& value) { SetEventSubscriptionArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the event subscription.</p>
+     */
+    inline EventSubscription& WithEventSubscriptionArn(const char* value) { SetEventSubscriptionArn(value); return *this;}
+
   private:
     Aws::String m_customerAwsId;
     bool m_customerAwsIdHasBeenSet;
@@ -415,6 +450,8 @@ namespace Model
     bool m_eventCategoriesListHasBeenSet;
     bool m_enabled;
     bool m_enabledHasBeenSet;
+    Aws::String m_eventSubscriptionArn;
+    bool m_eventSubscriptionArnHasBeenSet;
   };
 
 } // namespace Model

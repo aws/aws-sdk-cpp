@@ -36,204 +36,205 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * <p>The log group name for which log streams are to be listed.</p>
+     * <p>The name of the log group.</p>
      */
     inline const Aws::String& GetLogGroupName() const{ return m_logGroupName; }
 
     /**
-     * <p>The log group name for which log streams are to be listed.</p>
+     * <p>The name of the log group.</p>
      */
     inline void SetLogGroupName(const Aws::String& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
 
     /**
-     * <p>The log group name for which log streams are to be listed.</p>
+     * <p>The name of the log group.</p>
      */
     inline void SetLogGroupName(Aws::String&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
 
     /**
-     * <p>The log group name for which log streams are to be listed.</p>
+     * <p>The name of the log group.</p>
      */
     inline void SetLogGroupName(const char* value) { m_logGroupNameHasBeenSet = true; m_logGroupName.assign(value); }
 
     /**
-     * <p>The log group name for which log streams are to be listed.</p>
+     * <p>The name of the log group.</p>
      */
     inline DescribeLogStreamsRequest& WithLogGroupName(const Aws::String& value) { SetLogGroupName(value); return *this;}
 
     /**
-     * <p>The log group name for which log streams are to be listed.</p>
+     * <p>The name of the log group.</p>
      */
     inline DescribeLogStreamsRequest& WithLogGroupName(Aws::String&& value) { SetLogGroupName(value); return *this;}
 
     /**
-     * <p>The log group name for which log streams are to be listed.</p>
+     * <p>The name of the log group.</p>
      */
     inline DescribeLogStreamsRequest& WithLogGroupName(const char* value) { SetLogGroupName(value); return *this;}
 
     /**
-     * <p>Will only return log streams that match the provided logStreamNamePrefix. If
-     * you don't specify a value, no prefix filter is applied.</p>
+     * <p>The prefix to match.</p> <p>You cannot specify this parameter if
+     * <code>orderBy</code> is <code>LastEventTime</code>.</p>
      */
     inline const Aws::String& GetLogStreamNamePrefix() const{ return m_logStreamNamePrefix; }
 
     /**
-     * <p>Will only return log streams that match the provided logStreamNamePrefix. If
-     * you don't specify a value, no prefix filter is applied.</p>
+     * <p>The prefix to match.</p> <p>You cannot specify this parameter if
+     * <code>orderBy</code> is <code>LastEventTime</code>.</p>
      */
     inline void SetLogStreamNamePrefix(const Aws::String& value) { m_logStreamNamePrefixHasBeenSet = true; m_logStreamNamePrefix = value; }
 
     /**
-     * <p>Will only return log streams that match the provided logStreamNamePrefix. If
-     * you don't specify a value, no prefix filter is applied.</p>
+     * <p>The prefix to match.</p> <p>You cannot specify this parameter if
+     * <code>orderBy</code> is <code>LastEventTime</code>.</p>
      */
     inline void SetLogStreamNamePrefix(Aws::String&& value) { m_logStreamNamePrefixHasBeenSet = true; m_logStreamNamePrefix = value; }
 
     /**
-     * <p>Will only return log streams that match the provided logStreamNamePrefix. If
-     * you don't specify a value, no prefix filter is applied.</p>
+     * <p>The prefix to match.</p> <p>You cannot specify this parameter if
+     * <code>orderBy</code> is <code>LastEventTime</code>.</p>
      */
     inline void SetLogStreamNamePrefix(const char* value) { m_logStreamNamePrefixHasBeenSet = true; m_logStreamNamePrefix.assign(value); }
 
     /**
-     * <p>Will only return log streams that match the provided logStreamNamePrefix. If
-     * you don't specify a value, no prefix filter is applied.</p>
+     * <p>The prefix to match.</p> <p>You cannot specify this parameter if
+     * <code>orderBy</code> is <code>LastEventTime</code>.</p>
      */
     inline DescribeLogStreamsRequest& WithLogStreamNamePrefix(const Aws::String& value) { SetLogStreamNamePrefix(value); return *this;}
 
     /**
-     * <p>Will only return log streams that match the provided logStreamNamePrefix. If
-     * you don't specify a value, no prefix filter is applied.</p>
+     * <p>The prefix to match.</p> <p>You cannot specify this parameter if
+     * <code>orderBy</code> is <code>LastEventTime</code>.</p>
      */
     inline DescribeLogStreamsRequest& WithLogStreamNamePrefix(Aws::String&& value) { SetLogStreamNamePrefix(value); return *this;}
 
     /**
-     * <p>Will only return log streams that match the provided logStreamNamePrefix. If
-     * you don't specify a value, no prefix filter is applied.</p>
+     * <p>The prefix to match.</p> <p>You cannot specify this parameter if
+     * <code>orderBy</code> is <code>LastEventTime</code>.</p>
      */
     inline DescribeLogStreamsRequest& WithLogStreamNamePrefix(const char* value) { SetLogStreamNamePrefix(value); return *this;}
 
     /**
-     * <p>Specifies what to order the returned log streams by. Valid arguments are
-     * 'LogStreamName' or 'LastEventTime'. If you don't specify a value, results are
-     * ordered by LogStreamName. If 'LastEventTime' is chosen, the request cannot also
-     * contain a logStreamNamePrefix.</p>
+     * <p>If the value is <code>LogStreamName</code>, the results are ordered by log
+     * stream name. If the value is <code>LastEventTime</code>, the results are ordered
+     * by the event time. The default value is <code>LogStreamName</code>.</p> <p>If
+     * you order the results by event time, you cannot specify the
+     * <code>logStreamNamePrefix</code> parameter.</p>
      */
     inline const OrderBy& GetOrderBy() const{ return m_orderBy; }
 
     /**
-     * <p>Specifies what to order the returned log streams by. Valid arguments are
-     * 'LogStreamName' or 'LastEventTime'. If you don't specify a value, results are
-     * ordered by LogStreamName. If 'LastEventTime' is chosen, the request cannot also
-     * contain a logStreamNamePrefix.</p>
+     * <p>If the value is <code>LogStreamName</code>, the results are ordered by log
+     * stream name. If the value is <code>LastEventTime</code>, the results are ordered
+     * by the event time. The default value is <code>LogStreamName</code>.</p> <p>If
+     * you order the results by event time, you cannot specify the
+     * <code>logStreamNamePrefix</code> parameter.</p>
      */
     inline void SetOrderBy(const OrderBy& value) { m_orderByHasBeenSet = true; m_orderBy = value; }
 
     /**
-     * <p>Specifies what to order the returned log streams by. Valid arguments are
-     * 'LogStreamName' or 'LastEventTime'. If you don't specify a value, results are
-     * ordered by LogStreamName. If 'LastEventTime' is chosen, the request cannot also
-     * contain a logStreamNamePrefix.</p>
+     * <p>If the value is <code>LogStreamName</code>, the results are ordered by log
+     * stream name. If the value is <code>LastEventTime</code>, the results are ordered
+     * by the event time. The default value is <code>LogStreamName</code>.</p> <p>If
+     * you order the results by event time, you cannot specify the
+     * <code>logStreamNamePrefix</code> parameter.</p>
      */
     inline void SetOrderBy(OrderBy&& value) { m_orderByHasBeenSet = true; m_orderBy = value; }
 
     /**
-     * <p>Specifies what to order the returned log streams by. Valid arguments are
-     * 'LogStreamName' or 'LastEventTime'. If you don't specify a value, results are
-     * ordered by LogStreamName. If 'LastEventTime' is chosen, the request cannot also
-     * contain a logStreamNamePrefix.</p>
+     * <p>If the value is <code>LogStreamName</code>, the results are ordered by log
+     * stream name. If the value is <code>LastEventTime</code>, the results are ordered
+     * by the event time. The default value is <code>LogStreamName</code>.</p> <p>If
+     * you order the results by event time, you cannot specify the
+     * <code>logStreamNamePrefix</code> parameter.</p>
      */
     inline DescribeLogStreamsRequest& WithOrderBy(const OrderBy& value) { SetOrderBy(value); return *this;}
 
     /**
-     * <p>Specifies what to order the returned log streams by. Valid arguments are
-     * 'LogStreamName' or 'LastEventTime'. If you don't specify a value, results are
-     * ordered by LogStreamName. If 'LastEventTime' is chosen, the request cannot also
-     * contain a logStreamNamePrefix.</p>
+     * <p>If the value is <code>LogStreamName</code>, the results are ordered by log
+     * stream name. If the value is <code>LastEventTime</code>, the results are ordered
+     * by the event time. The default value is <code>LogStreamName</code>.</p> <p>If
+     * you order the results by event time, you cannot specify the
+     * <code>logStreamNamePrefix</code> parameter.</p>
      */
     inline DescribeLogStreamsRequest& WithOrderBy(OrderBy&& value) { SetOrderBy(value); return *this;}
 
     /**
-     * <p>If set to true, results are returned in descending order. If you don't
-     * specify a value or set it to false, results are returned in ascending order.</p>
+     * <p>If the value is true, results are returned in descending order. If the value
+     * is to false, results are returned in ascending order. The default value is
+     * false.</p>
      */
     inline bool GetDescending() const{ return m_descending; }
 
     /**
-     * <p>If set to true, results are returned in descending order. If you don't
-     * specify a value or set it to false, results are returned in ascending order.</p>
+     * <p>If the value is true, results are returned in descending order. If the value
+     * is to false, results are returned in ascending order. The default value is
+     * false.</p>
      */
     inline void SetDescending(bool value) { m_descendingHasBeenSet = true; m_descending = value; }
 
     /**
-     * <p>If set to true, results are returned in descending order. If you don't
-     * specify a value or set it to false, results are returned in ascending order.</p>
+     * <p>If the value is true, results are returned in descending order. If the value
+     * is to false, results are returned in ascending order. The default value is
+     * false.</p>
      */
     inline DescribeLogStreamsRequest& WithDescending(bool value) { SetDescending(value); return *this;}
 
     /**
-     * <p>A string token used for pagination that points to the next page of results.
-     * It must be a value obtained from the response of the previous
-     * <code>DescribeLogStreams</code> request.</p>
+     * <p>The token for the next set of items to return. (You received this token from
+     * a previous call.)</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>A string token used for pagination that points to the next page of results.
-     * It must be a value obtained from the response of the previous
-     * <code>DescribeLogStreams</code> request.</p>
+     * <p>The token for the next set of items to return. (You received this token from
+     * a previous call.)</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>A string token used for pagination that points to the next page of results.
-     * It must be a value obtained from the response of the previous
-     * <code>DescribeLogStreams</code> request.</p>
+     * <p>The token for the next set of items to return. (You received this token from
+     * a previous call.)</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>A string token used for pagination that points to the next page of results.
-     * It must be a value obtained from the response of the previous
-     * <code>DescribeLogStreams</code> request.</p>
+     * <p>The token for the next set of items to return. (You received this token from
+     * a previous call.)</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>A string token used for pagination that points to the next page of results.
-     * It must be a value obtained from the response of the previous
-     * <code>DescribeLogStreams</code> request.</p>
+     * <p>The token for the next set of items to return. (You received this token from
+     * a previous call.)</p>
      */
     inline DescribeLogStreamsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>A string token used for pagination that points to the next page of results.
-     * It must be a value obtained from the response of the previous
-     * <code>DescribeLogStreams</code> request.</p>
+     * <p>The token for the next set of items to return. (You received this token from
+     * a previous call.)</p>
      */
     inline DescribeLogStreamsRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>A string token used for pagination that points to the next page of results.
-     * It must be a value obtained from the response of the previous
-     * <code>DescribeLogStreams</code> request.</p>
+     * <p>The token for the next set of items to return. (You received this token from
+     * a previous call.)</p>
      */
     inline DescribeLogStreamsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>The maximum number of items returned in the response. If you don't specify a
-     * value, the request would return up to 50 items.</p>
+     * <p>The maximum number of items returned. If you don't specify a value, the
+     * default is up to 50 items.</p>
      */
     inline int GetLimit() const{ return m_limit; }
 
     /**
-     * <p>The maximum number of items returned in the response. If you don't specify a
-     * value, the request would return up to 50 items.</p>
+     * <p>The maximum number of items returned. If you don't specify a value, the
+     * default is up to 50 items.</p>
      */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
-     * <p>The maximum number of items returned in the response. If you don't specify a
-     * value, the request would return up to 50 items.</p>
+     * <p>The maximum number of items returned. If you don't specify a value, the
+     * default is up to 50 items.</p>
      */
     inline DescribeLogStreamsRequest& WithLimit(int value) { SetLimit(value); return *this;}
 

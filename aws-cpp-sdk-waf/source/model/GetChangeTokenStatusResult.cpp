@@ -24,11 +24,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetChangeTokenStatusResult::GetChangeTokenStatusResult()
+GetChangeTokenStatusResult::GetChangeTokenStatusResult() : 
+    m_changeTokenStatus(ChangeTokenStatus::NOT_SET)
 {
 }
 
-GetChangeTokenStatusResult::GetChangeTokenStatusResult(const AmazonWebServiceResult<JsonValue>& result)
+GetChangeTokenStatusResult::GetChangeTokenStatusResult(const AmazonWebServiceResult<JsonValue>& result) : 
+    m_changeTokenStatus(ChangeTokenStatus::NOT_SET)
 {
   *this = result;
 }

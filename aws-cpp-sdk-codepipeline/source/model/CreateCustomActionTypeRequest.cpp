@@ -22,6 +22,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 CreateCustomActionTypeRequest::CreateCustomActionTypeRequest() : 
+    m_category(ActionCategory::NOT_SET),
     m_categoryHasBeenSet(false),
     m_providerHasBeenSet(false),
     m_versionHasBeenSet(false),

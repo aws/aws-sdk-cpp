@@ -23,6 +23,7 @@ using namespace Aws::Utils;
 
 CreateEndpointRequest::CreateEndpointRequest() : 
     m_endpointIdentifierHasBeenSet(false),
+    m_endpointType(ReplicationEndpointTypeValue::NOT_SET),
     m_endpointTypeHasBeenSet(false),
     m_engineNameHasBeenSet(false),
     m_usernameHasBeenSet(false),
@@ -35,6 +36,7 @@ CreateEndpointRequest::CreateEndpointRequest() :
     m_kmsKeyIdHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_certificateArnHasBeenSet(false),
+    m_sslMode(DmsSslModeValue::NOT_SET),
     m_sslModeHasBeenSet(false)
 {
 }

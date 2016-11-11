@@ -30,6 +30,7 @@ namespace Model
 StreamDescription::StreamDescription() : 
     m_streamNameHasBeenSet(false),
     m_streamARNHasBeenSet(false),
+    m_streamStatus(StreamStatus::NOT_SET),
     m_streamStatusHasBeenSet(false),
     m_shardsHasBeenSet(false),
     m_hasMoreShards(false),
@@ -43,6 +44,7 @@ StreamDescription::StreamDescription() :
 StreamDescription::StreamDescription(const JsonValue& jsonValue) : 
     m_streamNameHasBeenSet(false),
     m_streamARNHasBeenSet(false),
+    m_streamStatus(StreamStatus::NOT_SET),
     m_streamStatusHasBeenSet(false),
     m_shardsHasBeenSet(false),
     m_hasMoreShards(false),

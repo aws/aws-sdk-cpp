@@ -17,6 +17,7 @@
 #include <aws/codedeploy/CodeDeployRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/codedeploy/model/RevisionLocation.h>
+#include <aws/codedeploy/model/AutoRollbackConfiguration.h>
 
 namespace Aws
 {
@@ -269,6 +270,54 @@ namespace Model
      */
     inline CreateDeploymentRequest& WithIgnoreApplicationStopFailures(bool value) { SetIgnoreApplicationStopFailures(value); return *this;}
 
+    /**
+     * <p>Configuration information for an automatic rollback that is added when a
+     * deployment is created.</p>
+     */
+    inline const AutoRollbackConfiguration& GetAutoRollbackConfiguration() const{ return m_autoRollbackConfiguration; }
+
+    /**
+     * <p>Configuration information for an automatic rollback that is added when a
+     * deployment is created.</p>
+     */
+    inline void SetAutoRollbackConfiguration(const AutoRollbackConfiguration& value) { m_autoRollbackConfigurationHasBeenSet = true; m_autoRollbackConfiguration = value; }
+
+    /**
+     * <p>Configuration information for an automatic rollback that is added when a
+     * deployment is created.</p>
+     */
+    inline void SetAutoRollbackConfiguration(AutoRollbackConfiguration&& value) { m_autoRollbackConfigurationHasBeenSet = true; m_autoRollbackConfiguration = value; }
+
+    /**
+     * <p>Configuration information for an automatic rollback that is added when a
+     * deployment is created.</p>
+     */
+    inline CreateDeploymentRequest& WithAutoRollbackConfiguration(const AutoRollbackConfiguration& value) { SetAutoRollbackConfiguration(value); return *this;}
+
+    /**
+     * <p>Configuration information for an automatic rollback that is added when a
+     * deployment is created.</p>
+     */
+    inline CreateDeploymentRequest& WithAutoRollbackConfiguration(AutoRollbackConfiguration&& value) { SetAutoRollbackConfiguration(value); return *this;}
+
+    /**
+     * <p>Indicates whether to deploy to all instances or only to instances that are
+     * not running the latest application revision.</p>
+     */
+    inline bool GetUpdateOutdatedInstancesOnly() const{ return m_updateOutdatedInstancesOnly; }
+
+    /**
+     * <p>Indicates whether to deploy to all instances or only to instances that are
+     * not running the latest application revision.</p>
+     */
+    inline void SetUpdateOutdatedInstancesOnly(bool value) { m_updateOutdatedInstancesOnlyHasBeenSet = true; m_updateOutdatedInstancesOnly = value; }
+
+    /**
+     * <p>Indicates whether to deploy to all instances or only to instances that are
+     * not running the latest application revision.</p>
+     */
+    inline CreateDeploymentRequest& WithUpdateOutdatedInstancesOnly(bool value) { SetUpdateOutdatedInstancesOnly(value); return *this;}
+
   private:
     Aws::String m_applicationName;
     bool m_applicationNameHasBeenSet;
@@ -282,6 +331,10 @@ namespace Model
     bool m_descriptionHasBeenSet;
     bool m_ignoreApplicationStopFailures;
     bool m_ignoreApplicationStopFailuresHasBeenSet;
+    AutoRollbackConfiguration m_autoRollbackConfiguration;
+    bool m_autoRollbackConfigurationHasBeenSet;
+    bool m_updateOutdatedInstancesOnly;
+    bool m_updateOutdatedInstancesOnlyHasBeenSet;
   };
 
 } // namespace Model

@@ -24,6 +24,7 @@ using namespace Aws::Utils;
 DisableStageTransitionRequest::DisableStageTransitionRequest() : 
     m_pipelineNameHasBeenSet(false),
     m_stageNameHasBeenSet(false),
+    m_transitionType(StageTransitionType::NOT_SET),
     m_transitionTypeHasBeenSet(false),
     m_reasonHasBeenSet(false)
 {

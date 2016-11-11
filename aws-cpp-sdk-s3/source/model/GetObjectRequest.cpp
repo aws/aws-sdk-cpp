@@ -43,7 +43,10 @@ GetObjectRequest::GetObjectRequest() :
     m_sSECustomerAlgorithmHasBeenSet(false),
     m_sSECustomerKeyHasBeenSet(false),
     m_sSECustomerKeyMD5HasBeenSet(false),
-    m_requestPayerHasBeenSet(false)
+    m_requestPayer(RequestPayer::NOT_SET),
+    m_requestPayerHasBeenSet(false),
+    m_partNumber(0),
+    m_partNumberHasBeenSet(false)
 {
 }
 
@@ -101,6 +104,13 @@ void GetObjectRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << m_versionId;
       uri.AddQueryStringParameter("versionId", ss.str());
+      ss.str("");
+    }
+
+    if(m_partNumberHasBeenSet)
+    {
+      ss << m_partNumber;
+      uri.AddQueryStringParameter("partNumber", ss.str());
       ss.str("");
     }
 

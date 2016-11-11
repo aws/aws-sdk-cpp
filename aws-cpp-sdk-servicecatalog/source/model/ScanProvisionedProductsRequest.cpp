@@ -23,6 +23,7 @@ using namespace Aws::Utils;
 
 ScanProvisionedProductsRequest::ScanProvisionedProductsRequest() : 
     m_acceptLanguageHasBeenSet(false),
+    m_accessLevelFilterHasBeenSet(false),
     m_pageSize(0),
     m_pageSizeHasBeenSet(false),
     m_pageTokenHasBeenSet(false)
@@ -36,6 +37,12 @@ Aws::String ScanProvisionedProductsRequest::SerializePayload() const
   if(m_acceptLanguageHasBeenSet)
   {
    payload.WithString("AcceptLanguage", m_acceptLanguage);
+
+  }
+
+  if(m_accessLevelFilterHasBeenSet)
+  {
+   payload.WithObject("AccessLevelFilter", m_accessLevelFilter.Jsonize());
 
   }
 

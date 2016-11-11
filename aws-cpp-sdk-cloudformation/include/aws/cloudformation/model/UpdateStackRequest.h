@@ -784,6 +784,104 @@ namespace Model
     inline UpdateStackRequest& AddResourceTypes(const char* value) { m_resourceTypesHasBeenSet = true; m_resourceTypes.push_back(value); return *this; }
 
     /**
+     * <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM)
+     * role that AWS CloudFormation assumes to update the stack. AWS CloudFormation
+     * uses the role's credentials to make calls on your behalf. AWS CloudFormation
+     * always uses this role for all future operations on the stack. As long as users
+     * have permission to operate on the stack, AWS CloudFormation uses this role even
+     * if the users don't have permission to pass it. Ensure that the role grants least
+     * privilege.</p> <p>If you don't specify a value, AWS CloudFormation uses the role
+     * that was previously associated with the stack. If no role is available, AWS
+     * CloudFormation uses a temporary session that is generated from your user
+     * credentials.</p>
+     */
+    inline const Aws::String& GetRoleARN() const{ return m_roleARN; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM)
+     * role that AWS CloudFormation assumes to update the stack. AWS CloudFormation
+     * uses the role's credentials to make calls on your behalf. AWS CloudFormation
+     * always uses this role for all future operations on the stack. As long as users
+     * have permission to operate on the stack, AWS CloudFormation uses this role even
+     * if the users don't have permission to pass it. Ensure that the role grants least
+     * privilege.</p> <p>If you don't specify a value, AWS CloudFormation uses the role
+     * that was previously associated with the stack. If no role is available, AWS
+     * CloudFormation uses a temporary session that is generated from your user
+     * credentials.</p>
+     */
+    inline void SetRoleARN(const Aws::String& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM)
+     * role that AWS CloudFormation assumes to update the stack. AWS CloudFormation
+     * uses the role's credentials to make calls on your behalf. AWS CloudFormation
+     * always uses this role for all future operations on the stack. As long as users
+     * have permission to operate on the stack, AWS CloudFormation uses this role even
+     * if the users don't have permission to pass it. Ensure that the role grants least
+     * privilege.</p> <p>If you don't specify a value, AWS CloudFormation uses the role
+     * that was previously associated with the stack. If no role is available, AWS
+     * CloudFormation uses a temporary session that is generated from your user
+     * credentials.</p>
+     */
+    inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM)
+     * role that AWS CloudFormation assumes to update the stack. AWS CloudFormation
+     * uses the role's credentials to make calls on your behalf. AWS CloudFormation
+     * always uses this role for all future operations on the stack. As long as users
+     * have permission to operate on the stack, AWS CloudFormation uses this role even
+     * if the users don't have permission to pass it. Ensure that the role grants least
+     * privilege.</p> <p>If you don't specify a value, AWS CloudFormation uses the role
+     * that was previously associated with the stack. If no role is available, AWS
+     * CloudFormation uses a temporary session that is generated from your user
+     * credentials.</p>
+     */
+    inline void SetRoleARN(const char* value) { m_roleARNHasBeenSet = true; m_roleARN.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM)
+     * role that AWS CloudFormation assumes to update the stack. AWS CloudFormation
+     * uses the role's credentials to make calls on your behalf. AWS CloudFormation
+     * always uses this role for all future operations on the stack. As long as users
+     * have permission to operate on the stack, AWS CloudFormation uses this role even
+     * if the users don't have permission to pass it. Ensure that the role grants least
+     * privilege.</p> <p>If you don't specify a value, AWS CloudFormation uses the role
+     * that was previously associated with the stack. If no role is available, AWS
+     * CloudFormation uses a temporary session that is generated from your user
+     * credentials.</p>
+     */
+    inline UpdateStackRequest& WithRoleARN(const Aws::String& value) { SetRoleARN(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM)
+     * role that AWS CloudFormation assumes to update the stack. AWS CloudFormation
+     * uses the role's credentials to make calls on your behalf. AWS CloudFormation
+     * always uses this role for all future operations on the stack. As long as users
+     * have permission to operate on the stack, AWS CloudFormation uses this role even
+     * if the users don't have permission to pass it. Ensure that the role grants least
+     * privilege.</p> <p>If you don't specify a value, AWS CloudFormation uses the role
+     * that was previously associated with the stack. If no role is available, AWS
+     * CloudFormation uses a temporary session that is generated from your user
+     * credentials.</p>
+     */
+    inline UpdateStackRequest& WithRoleARN(Aws::String&& value) { SetRoleARN(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM)
+     * role that AWS CloudFormation assumes to update the stack. AWS CloudFormation
+     * uses the role's credentials to make calls on your behalf. AWS CloudFormation
+     * always uses this role for all future operations on the stack. As long as users
+     * have permission to operate on the stack, AWS CloudFormation uses this role even
+     * if the users don't have permission to pass it. Ensure that the role grants least
+     * privilege.</p> <p>If you don't specify a value, AWS CloudFormation uses the role
+     * that was previously associated with the stack. If no role is available, AWS
+     * CloudFormation uses a temporary session that is generated from your user
+     * credentials.</p>
+     */
+    inline UpdateStackRequest& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}
+
+    /**
      * <p>Structure containing a new stack policy body. You can specify either the
      * <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but
      * not both.</p> <p>You might update the stack policy, for example, in order to
@@ -1068,6 +1166,8 @@ namespace Model
     bool m_capabilitiesHasBeenSet;
     Aws::Vector<Aws::String> m_resourceTypes;
     bool m_resourceTypesHasBeenSet;
+    Aws::String m_roleARN;
+    bool m_roleARNHasBeenSet;
     Aws::String m_stackPolicyBody;
     bool m_stackPolicyBodyHasBeenSet;
     Aws::String m_stackPolicyURL;

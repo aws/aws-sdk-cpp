@@ -20,12 +20,15 @@ using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils;
 
 DescribeSnapshotsRequest::DescribeSnapshotsRequest() : 
+    m_replicationGroupIdHasBeenSet(false),
     m_cacheClusterIdHasBeenSet(false),
     m_snapshotNameHasBeenSet(false),
     m_snapshotSourceHasBeenSet(false),
     m_markerHasBeenSet(false),
     m_maxRecords(0),
-    m_maxRecordsHasBeenSet(false)
+    m_maxRecordsHasBeenSet(false),
+    m_showNodeGroupConfig(false),
+    m_showNodeGroupConfigHasBeenSet(false)
 {
 }
 
@@ -33,6 +36,11 @@ Aws::String DescribeSnapshotsRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=DescribeSnapshots&";
+  if(m_replicationGroupIdHasBeenSet)
+  {
+    ss << "ReplicationGroupId=" << StringUtils::URLEncode(m_replicationGroupId.c_str()) << "&";
+  }
+
   if(m_cacheClusterIdHasBeenSet)
   {
     ss << "CacheClusterId=" << StringUtils::URLEncode(m_cacheClusterId.c_str()) << "&";
@@ -56,6 +64,11 @@ Aws::String DescribeSnapshotsRequest::SerializePayload() const
   if(m_maxRecordsHasBeenSet)
   {
     ss << "MaxRecords=" << m_maxRecords << "&";
+  }
+
+  if(m_showNodeGroupConfigHasBeenSet)
+  {
+    ss << "ShowNodeGroupConfig=" << m_showNodeGroupConfig << "&";
   }
 
   ss << "Version=2015-02-02";

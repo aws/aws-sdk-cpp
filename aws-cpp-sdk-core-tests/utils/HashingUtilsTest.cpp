@@ -101,8 +101,6 @@ TEST(HashingUtilsTest, TestHexEncodingDecoding)
     AWS_END_MEMORY_TEST
 }
 
-#ifndef ENABLE_INJECTED_ENCRYPTION
-
 TEST(HashingUtilsTest, TestSHA256HMAC)
 {
     const char* toHash = "TestHash";
@@ -231,4 +229,3 @@ TEST(HashingUtilsTest, TestMD5FromStream)
     AWS_END_MEMORY_TEST
 }
 
-#endif // ENABLE_INJECTED_ENCRYPTION

@@ -26,6 +26,7 @@ namespace Model
   {
     NOT_SET,
     RSA_2048,
+    RSA_1024,
     EC_prime256v1
   };
 

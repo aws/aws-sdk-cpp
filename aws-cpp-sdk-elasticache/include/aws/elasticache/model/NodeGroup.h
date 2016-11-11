@@ -35,7 +35,9 @@ namespace Model
 {
 
   /**
-   * <p>Represents a collection of cache nodes in a replication group.</p>
+   * <p>Represents a collection of cache nodes in a replication group. One node in
+   * the node group is the read/write Primary node. All the other nodes are read-only
+   * Replica nodes.</p>
    */
   class AWS_ELASTICACHE_API NodeGroup
   {
@@ -48,143 +50,202 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     /**
-     * <p>The identifier for the node group. A replication group contains only one node
-     * group; therefore, the node group ID is 0001.</p>
+     * <p>The identifier for the node group (shard). A Redis (cluster mode disabled)
+     * replication group contains only 1 node group; therefore, the node group ID is
+     * 0001. A Redis (cluster mode enabled) replication group contains 1 to 15 node
+     * groups numbered 0001 to 0015. </p>
      */
     inline const Aws::String& GetNodeGroupId() const{ return m_nodeGroupId; }
 
     /**
-     * <p>The identifier for the node group. A replication group contains only one node
-     * group; therefore, the node group ID is 0001.</p>
+     * <p>The identifier for the node group (shard). A Redis (cluster mode disabled)
+     * replication group contains only 1 node group; therefore, the node group ID is
+     * 0001. A Redis (cluster mode enabled) replication group contains 1 to 15 node
+     * groups numbered 0001 to 0015. </p>
      */
     inline void SetNodeGroupId(const Aws::String& value) { m_nodeGroupIdHasBeenSet = true; m_nodeGroupId = value; }
 
     /**
-     * <p>The identifier for the node group. A replication group contains only one node
-     * group; therefore, the node group ID is 0001.</p>
+     * <p>The identifier for the node group (shard). A Redis (cluster mode disabled)
+     * replication group contains only 1 node group; therefore, the node group ID is
+     * 0001. A Redis (cluster mode enabled) replication group contains 1 to 15 node
+     * groups numbered 0001 to 0015. </p>
      */
     inline void SetNodeGroupId(Aws::String&& value) { m_nodeGroupIdHasBeenSet = true; m_nodeGroupId = value; }
 
     /**
-     * <p>The identifier for the node group. A replication group contains only one node
-     * group; therefore, the node group ID is 0001.</p>
+     * <p>The identifier for the node group (shard). A Redis (cluster mode disabled)
+     * replication group contains only 1 node group; therefore, the node group ID is
+     * 0001. A Redis (cluster mode enabled) replication group contains 1 to 15 node
+     * groups numbered 0001 to 0015. </p>
      */
     inline void SetNodeGroupId(const char* value) { m_nodeGroupIdHasBeenSet = true; m_nodeGroupId.assign(value); }
 
     /**
-     * <p>The identifier for the node group. A replication group contains only one node
-     * group; therefore, the node group ID is 0001.</p>
+     * <p>The identifier for the node group (shard). A Redis (cluster mode disabled)
+     * replication group contains only 1 node group; therefore, the node group ID is
+     * 0001. A Redis (cluster mode enabled) replication group contains 1 to 15 node
+     * groups numbered 0001 to 0015. </p>
      */
     inline NodeGroup& WithNodeGroupId(const Aws::String& value) { SetNodeGroupId(value); return *this;}
 
     /**
-     * <p>The identifier for the node group. A replication group contains only one node
-     * group; therefore, the node group ID is 0001.</p>
+     * <p>The identifier for the node group (shard). A Redis (cluster mode disabled)
+     * replication group contains only 1 node group; therefore, the node group ID is
+     * 0001. A Redis (cluster mode enabled) replication group contains 1 to 15 node
+     * groups numbered 0001 to 0015. </p>
      */
     inline NodeGroup& WithNodeGroupId(Aws::String&& value) { SetNodeGroupId(value); return *this;}
 
     /**
-     * <p>The identifier for the node group. A replication group contains only one node
-     * group; therefore, the node group ID is 0001.</p>
+     * <p>The identifier for the node group (shard). A Redis (cluster mode disabled)
+     * replication group contains only 1 node group; therefore, the node group ID is
+     * 0001. A Redis (cluster mode enabled) replication group contains 1 to 15 node
+     * groups numbered 0001 to 0015. </p>
      */
     inline NodeGroup& WithNodeGroupId(const char* value) { SetNodeGroupId(value); return *this;}
 
     /**
-     * <p>The current state of this replication group - <i>creating</i>,
-     * <i>available</i>, etc.</p>
+     * <p>The current state of this replication group - <code>creating</code>,
+     * <code>available</code>, etc.</p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The current state of this replication group - <i>creating</i>,
-     * <i>available</i>, etc.</p>
+     * <p>The current state of this replication group - <code>creating</code>,
+     * <code>available</code>, etc.</p>
      */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The current state of this replication group - <i>creating</i>,
-     * <i>available</i>, etc.</p>
+     * <p>The current state of this replication group - <code>creating</code>,
+     * <code>available</code>, etc.</p>
      */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The current state of this replication group - <i>creating</i>,
-     * <i>available</i>, etc.</p>
+     * <p>The current state of this replication group - <code>creating</code>,
+     * <code>available</code>, etc.</p>
      */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
 
     /**
-     * <p>The current state of this replication group - <i>creating</i>,
-     * <i>available</i>, etc.</p>
+     * <p>The current state of this replication group - <code>creating</code>,
+     * <code>available</code>, etc.</p>
      */
     inline NodeGroup& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The current state of this replication group - <i>creating</i>,
-     * <i>available</i>, etc.</p>
+     * <p>The current state of this replication group - <code>creating</code>,
+     * <code>available</code>, etc.</p>
      */
     inline NodeGroup& WithStatus(Aws::String&& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The current state of this replication group - <i>creating</i>,
-     * <i>available</i>, etc.</p>
+     * <p>The current state of this replication group - <code>creating</code>,
+     * <code>available</code>, etc.</p>
      */
     inline NodeGroup& WithStatus(const char* value) { SetStatus(value); return *this;}
 
-    
+    /**
+     * <p>The endpoint of the primary node in this node group (shard).</p>
+     */
     inline const Endpoint& GetPrimaryEndpoint() const{ return m_primaryEndpoint; }
 
-    
+    /**
+     * <p>The endpoint of the primary node in this node group (shard).</p>
+     */
     inline void SetPrimaryEndpoint(const Endpoint& value) { m_primaryEndpointHasBeenSet = true; m_primaryEndpoint = value; }
 
-    
+    /**
+     * <p>The endpoint of the primary node in this node group (shard).</p>
+     */
     inline void SetPrimaryEndpoint(Endpoint&& value) { m_primaryEndpointHasBeenSet = true; m_primaryEndpoint = value; }
 
-    
+    /**
+     * <p>The endpoint of the primary node in this node group (shard).</p>
+     */
     inline NodeGroup& WithPrimaryEndpoint(const Endpoint& value) { SetPrimaryEndpoint(value); return *this;}
 
-    
+    /**
+     * <p>The endpoint of the primary node in this node group (shard).</p>
+     */
     inline NodeGroup& WithPrimaryEndpoint(Endpoint&& value) { SetPrimaryEndpoint(value); return *this;}
 
     /**
-     * <p>A list containing information about individual nodes within the node
-     * group.</p>
+     * <p>The keyspace for this node group (shard).</p>
+     */
+    inline const Aws::String& GetSlots() const{ return m_slots; }
+
+    /**
+     * <p>The keyspace for this node group (shard).</p>
+     */
+    inline void SetSlots(const Aws::String& value) { m_slotsHasBeenSet = true; m_slots = value; }
+
+    /**
+     * <p>The keyspace for this node group (shard).</p>
+     */
+    inline void SetSlots(Aws::String&& value) { m_slotsHasBeenSet = true; m_slots = value; }
+
+    /**
+     * <p>The keyspace for this node group (shard).</p>
+     */
+    inline void SetSlots(const char* value) { m_slotsHasBeenSet = true; m_slots.assign(value); }
+
+    /**
+     * <p>The keyspace for this node group (shard).</p>
+     */
+    inline NodeGroup& WithSlots(const Aws::String& value) { SetSlots(value); return *this;}
+
+    /**
+     * <p>The keyspace for this node group (shard).</p>
+     */
+    inline NodeGroup& WithSlots(Aws::String&& value) { SetSlots(value); return *this;}
+
+    /**
+     * <p>The keyspace for this node group (shard).</p>
+     */
+    inline NodeGroup& WithSlots(const char* value) { SetSlots(value); return *this;}
+
+    /**
+     * <p>A list containing information about individual nodes within the node group
+     * (shard).</p>
      */
     inline const Aws::Vector<NodeGroupMember>& GetNodeGroupMembers() const{ return m_nodeGroupMembers; }
 
     /**
-     * <p>A list containing information about individual nodes within the node
-     * group.</p>
+     * <p>A list containing information about individual nodes within the node group
+     * (shard).</p>
      */
     inline void SetNodeGroupMembers(const Aws::Vector<NodeGroupMember>& value) { m_nodeGroupMembersHasBeenSet = true; m_nodeGroupMembers = value; }
 
     /**
-     * <p>A list containing information about individual nodes within the node
-     * group.</p>
+     * <p>A list containing information about individual nodes within the node group
+     * (shard).</p>
      */
     inline void SetNodeGroupMembers(Aws::Vector<NodeGroupMember>&& value) { m_nodeGroupMembersHasBeenSet = true; m_nodeGroupMembers = value; }
 
     /**
-     * <p>A list containing information about individual nodes within the node
-     * group.</p>
+     * <p>A list containing information about individual nodes within the node group
+     * (shard).</p>
      */
     inline NodeGroup& WithNodeGroupMembers(const Aws::Vector<NodeGroupMember>& value) { SetNodeGroupMembers(value); return *this;}
 
     /**
-     * <p>A list containing information about individual nodes within the node
-     * group.</p>
+     * <p>A list containing information about individual nodes within the node group
+     * (shard).</p>
      */
     inline NodeGroup& WithNodeGroupMembers(Aws::Vector<NodeGroupMember>&& value) { SetNodeGroupMembers(value); return *this;}
 
     /**
-     * <p>A list containing information about individual nodes within the node
-     * group.</p>
+     * <p>A list containing information about individual nodes within the node group
+     * (shard).</p>
      */
     inline NodeGroup& AddNodeGroupMembers(const NodeGroupMember& value) { m_nodeGroupMembersHasBeenSet = true; m_nodeGroupMembers.push_back(value); return *this; }
 
     /**
-     * <p>A list containing information about individual nodes within the node
-     * group.</p>
+     * <p>A list containing information about individual nodes within the node group
+     * (shard).</p>
      */
     inline NodeGroup& AddNodeGroupMembers(NodeGroupMember&& value) { m_nodeGroupMembersHasBeenSet = true; m_nodeGroupMembers.push_back(value); return *this; }
 
@@ -195,6 +256,8 @@ namespace Model
     bool m_statusHasBeenSet;
     Endpoint m_primaryEndpoint;
     bool m_primaryEndpointHasBeenSet;
+    Aws::String m_slots;
+    bool m_slotsHasBeenSet;
     Aws::Vector<NodeGroupMember> m_nodeGroupMembers;
     bool m_nodeGroupMembersHasBeenSet;
   };

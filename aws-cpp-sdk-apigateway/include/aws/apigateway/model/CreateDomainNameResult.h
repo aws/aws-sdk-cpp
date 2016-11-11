@@ -35,7 +35,9 @@ namespace Model
 {
   /**
    * <p>Represents a domain name that is contained in a simpler, more intuitive URL
-   * that can be called.</p>
+   * that can be called.</p> <div class="seeAlso"> <a
+   * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-custom-domains.html">Use
+   * Client-Side Certificate</a> </div>
    */
   class AWS_APIGATEWAY_API CreateDomainNameResult
   {

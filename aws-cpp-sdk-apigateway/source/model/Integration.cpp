@@ -28,6 +28,7 @@ namespace Model
 {
 
 Integration::Integration() : 
+    m_type(IntegrationType::NOT_SET),
     m_typeHasBeenSet(false),
     m_httpMethodHasBeenSet(false),
     m_uriHasBeenSet(false),
@@ -42,6 +43,7 @@ Integration::Integration() :
 }
 
 Integration::Integration(const JsonValue& jsonValue) : 
+    m_type(IntegrationType::NOT_SET),
     m_typeHasBeenSet(false),
     m_httpMethodHasBeenSet(false),
     m_uriHasBeenSet(false),

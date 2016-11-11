@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/iot/IoT_EXPORTS.h>
 #include <aws/iot/model/DynamoDBAction.h>
+#include <aws/iot/model/DynamoDBv2Action.h>
 #include <aws/iot/model/LambdaAction.h>
 #include <aws/iot/model/SnsAction.h>
 #include <aws/iot/model/SqsAction.h>
@@ -75,6 +76,41 @@ namespace Model
      * <p>Write to a DynamoDB table.</p>
      */
     inline Action& WithDynamoDB(DynamoDBAction&& value) { SetDynamoDB(value); return *this;}
+
+    /**
+     * <p>Write to a DynamoDB table. This is a new version of the DynamoDB action. It
+     * allows you to write each attribute in an MQTT message payload into a separate
+     * DynamoDB column.</p>
+     */
+    inline const DynamoDBv2Action& GetDynamoDBv2() const{ return m_dynamoDBv2; }
+
+    /**
+     * <p>Write to a DynamoDB table. This is a new version of the DynamoDB action. It
+     * allows you to write each attribute in an MQTT message payload into a separate
+     * DynamoDB column.</p>
+     */
+    inline void SetDynamoDBv2(const DynamoDBv2Action& value) { m_dynamoDBv2HasBeenSet = true; m_dynamoDBv2 = value; }
+
+    /**
+     * <p>Write to a DynamoDB table. This is a new version of the DynamoDB action. It
+     * allows you to write each attribute in an MQTT message payload into a separate
+     * DynamoDB column.</p>
+     */
+    inline void SetDynamoDBv2(DynamoDBv2Action&& value) { m_dynamoDBv2HasBeenSet = true; m_dynamoDBv2 = value; }
+
+    /**
+     * <p>Write to a DynamoDB table. This is a new version of the DynamoDB action. It
+     * allows you to write each attribute in an MQTT message payload into a separate
+     * DynamoDB column.</p>
+     */
+    inline Action& WithDynamoDBv2(const DynamoDBv2Action& value) { SetDynamoDBv2(value); return *this;}
+
+    /**
+     * <p>Write to a DynamoDB table. This is a new version of the DynamoDB action. It
+     * allows you to write each attribute in an MQTT message payload into a separate
+     * DynamoDB column.</p>
+     */
+    inline Action& WithDynamoDBv2(DynamoDBv2Action&& value) { SetDynamoDBv2(value); return *this;}
 
     /**
      * <p>Invoke a Lambda function.</p>
@@ -302,33 +338,35 @@ namespace Model
     inline Action& WithCloudwatchAlarm(CloudwatchAlarmAction&& value) { SetCloudwatchAlarm(value); return *this;}
 
     /**
-     * <p>Write data to an Amazon Elasticsearch Service; domain.</p>
+     * <p>Write data to an Amazon Elasticsearch Service domain.</p>
      */
     inline const ElasticsearchAction& GetElasticsearch() const{ return m_elasticsearch; }
 
     /**
-     * <p>Write data to an Amazon Elasticsearch Service; domain.</p>
+     * <p>Write data to an Amazon Elasticsearch Service domain.</p>
      */
     inline void SetElasticsearch(const ElasticsearchAction& value) { m_elasticsearchHasBeenSet = true; m_elasticsearch = value; }
 
     /**
-     * <p>Write data to an Amazon Elasticsearch Service; domain.</p>
+     * <p>Write data to an Amazon Elasticsearch Service domain.</p>
      */
     inline void SetElasticsearch(ElasticsearchAction&& value) { m_elasticsearchHasBeenSet = true; m_elasticsearch = value; }
 
     /**
-     * <p>Write data to an Amazon Elasticsearch Service; domain.</p>
+     * <p>Write data to an Amazon Elasticsearch Service domain.</p>
      */
     inline Action& WithElasticsearch(const ElasticsearchAction& value) { SetElasticsearch(value); return *this;}
 
     /**
-     * <p>Write data to an Amazon Elasticsearch Service; domain.</p>
+     * <p>Write data to an Amazon Elasticsearch Service domain.</p>
      */
     inline Action& WithElasticsearch(ElasticsearchAction&& value) { SetElasticsearch(value); return *this;}
 
   private:
     DynamoDBAction m_dynamoDB;
     bool m_dynamoDBHasBeenSet;
+    DynamoDBv2Action m_dynamoDBv2;
+    bool m_dynamoDBv2HasBeenSet;
     LambdaAction m_lambda;
     bool m_lambdaHasBeenSet;
     SnsAction m_sns;

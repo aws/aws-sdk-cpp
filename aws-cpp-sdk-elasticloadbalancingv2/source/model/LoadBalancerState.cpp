@@ -30,12 +30,14 @@ namespace Model
 {
 
 LoadBalancerState::LoadBalancerState() : 
+    m_code(LoadBalancerStateEnum::NOT_SET),
     m_codeHasBeenSet(false),
     m_reasonHasBeenSet(false)
 {
 }
 
 LoadBalancerState::LoadBalancerState(const XmlNode& xmlNode) : 
+    m_code(LoadBalancerStateEnum::NOT_SET),
     m_codeHasBeenSet(false),
     m_reasonHasBeenSet(false)
 {

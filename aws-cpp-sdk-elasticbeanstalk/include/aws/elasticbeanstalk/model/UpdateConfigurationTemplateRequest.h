@@ -178,93 +178,93 @@ namespace Model
     inline UpdateConfigurationTemplateRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
     /**
-     * <p> A list of configuration option settings to update with the new specified
-     * option value. </p>
+     * <p>A list of configuration option settings to update with the new specified
+     * option value.</p>
      */
     inline const Aws::Vector<ConfigurationOptionSetting>& GetOptionSettings() const{ return m_optionSettings; }
 
     /**
-     * <p> A list of configuration option settings to update with the new specified
-     * option value. </p>
+     * <p>A list of configuration option settings to update with the new specified
+     * option value.</p>
      */
     inline void SetOptionSettings(const Aws::Vector<ConfigurationOptionSetting>& value) { m_optionSettingsHasBeenSet = true; m_optionSettings = value; }
 
     /**
-     * <p> A list of configuration option settings to update with the new specified
-     * option value. </p>
+     * <p>A list of configuration option settings to update with the new specified
+     * option value.</p>
      */
     inline void SetOptionSettings(Aws::Vector<ConfigurationOptionSetting>&& value) { m_optionSettingsHasBeenSet = true; m_optionSettings = value; }
 
     /**
-     * <p> A list of configuration option settings to update with the new specified
-     * option value. </p>
+     * <p>A list of configuration option settings to update with the new specified
+     * option value.</p>
      */
     inline UpdateConfigurationTemplateRequest& WithOptionSettings(const Aws::Vector<ConfigurationOptionSetting>& value) { SetOptionSettings(value); return *this;}
 
     /**
-     * <p> A list of configuration option settings to update with the new specified
-     * option value. </p>
+     * <p>A list of configuration option settings to update with the new specified
+     * option value.</p>
      */
     inline UpdateConfigurationTemplateRequest& WithOptionSettings(Aws::Vector<ConfigurationOptionSetting>&& value) { SetOptionSettings(value); return *this;}
 
     /**
-     * <p> A list of configuration option settings to update with the new specified
-     * option value. </p>
+     * <p>A list of configuration option settings to update with the new specified
+     * option value.</p>
      */
     inline UpdateConfigurationTemplateRequest& AddOptionSettings(const ConfigurationOptionSetting& value) { m_optionSettingsHasBeenSet = true; m_optionSettings.push_back(value); return *this; }
 
     /**
-     * <p> A list of configuration option settings to update with the new specified
-     * option value. </p>
+     * <p>A list of configuration option settings to update with the new specified
+     * option value.</p>
      */
     inline UpdateConfigurationTemplateRequest& AddOptionSettings(ConfigurationOptionSetting&& value) { m_optionSettingsHasBeenSet = true; m_optionSettings.push_back(value); return *this; }
 
     /**
-     * <p> A list of configuration options to remove from the configuration set. </p>
-     * <p> Constraint: You can remove only <code>UserDefined</code> configuration
-     * options. </p>
+     * <p>A list of configuration options to remove from the configuration set.</p> <p>
+     * Constraint: You can remove only <code>UserDefined</code> configuration options.
+     * </p>
      */
     inline const Aws::Vector<OptionSpecification>& GetOptionsToRemove() const{ return m_optionsToRemove; }
 
     /**
-     * <p> A list of configuration options to remove from the configuration set. </p>
-     * <p> Constraint: You can remove only <code>UserDefined</code> configuration
-     * options. </p>
+     * <p>A list of configuration options to remove from the configuration set.</p> <p>
+     * Constraint: You can remove only <code>UserDefined</code> configuration options.
+     * </p>
      */
     inline void SetOptionsToRemove(const Aws::Vector<OptionSpecification>& value) { m_optionsToRemoveHasBeenSet = true; m_optionsToRemove = value; }
 
     /**
-     * <p> A list of configuration options to remove from the configuration set. </p>
-     * <p> Constraint: You can remove only <code>UserDefined</code> configuration
-     * options. </p>
+     * <p>A list of configuration options to remove from the configuration set.</p> <p>
+     * Constraint: You can remove only <code>UserDefined</code> configuration options.
+     * </p>
      */
     inline void SetOptionsToRemove(Aws::Vector<OptionSpecification>&& value) { m_optionsToRemoveHasBeenSet = true; m_optionsToRemove = value; }
 
     /**
-     * <p> A list of configuration options to remove from the configuration set. </p>
-     * <p> Constraint: You can remove only <code>UserDefined</code> configuration
-     * options. </p>
+     * <p>A list of configuration options to remove from the configuration set.</p> <p>
+     * Constraint: You can remove only <code>UserDefined</code> configuration options.
+     * </p>
      */
     inline UpdateConfigurationTemplateRequest& WithOptionsToRemove(const Aws::Vector<OptionSpecification>& value) { SetOptionsToRemove(value); return *this;}
 
     /**
-     * <p> A list of configuration options to remove from the configuration set. </p>
-     * <p> Constraint: You can remove only <code>UserDefined</code> configuration
-     * options. </p>
+     * <p>A list of configuration options to remove from the configuration set.</p> <p>
+     * Constraint: You can remove only <code>UserDefined</code> configuration options.
+     * </p>
      */
     inline UpdateConfigurationTemplateRequest& WithOptionsToRemove(Aws::Vector<OptionSpecification>&& value) { SetOptionsToRemove(value); return *this;}
 
     /**
-     * <p> A list of configuration options to remove from the configuration set. </p>
-     * <p> Constraint: You can remove only <code>UserDefined</code> configuration
-     * options. </p>
+     * <p>A list of configuration options to remove from the configuration set.</p> <p>
+     * Constraint: You can remove only <code>UserDefined</code> configuration options.
+     * </p>
      */
     inline UpdateConfigurationTemplateRequest& AddOptionsToRemove(const OptionSpecification& value) { m_optionsToRemoveHasBeenSet = true; m_optionsToRemove.push_back(value); return *this; }
 
     /**
-     * <p> A list of configuration options to remove from the configuration set. </p>
-     * <p> Constraint: You can remove only <code>UserDefined</code> configuration
-     * options. </p>
+     * <p>A list of configuration options to remove from the configuration set.</p> <p>
+     * Constraint: You can remove only <code>UserDefined</code> configuration options.
+     * </p>
      */
     inline UpdateConfigurationTemplateRequest& AddOptionsToRemove(OptionSpecification&& value) { m_optionsToRemoveHasBeenSet = true; m_optionsToRemove.push_back(value); return *this; }
 

@@ -30,14 +30,18 @@ namespace Model
 S3Action::S3Action() : 
     m_roleArnHasBeenSet(false),
     m_bucketNameHasBeenSet(false),
-    m_keyHasBeenSet(false)
+    m_keyHasBeenSet(false),
+    m_cannedAcl(CannedAccessControlList::NOT_SET),
+    m_cannedAclHasBeenSet(false)
 {
 }
 
 S3Action::S3Action(const JsonValue& jsonValue) : 
     m_roleArnHasBeenSet(false),
     m_bucketNameHasBeenSet(false),
-    m_keyHasBeenSet(false)
+    m_keyHasBeenSet(false),
+    m_cannedAcl(CannedAccessControlList::NOT_SET),
+    m_cannedAclHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -65,6 +69,13 @@ S3Action& S3Action::operator =(const JsonValue& jsonValue)
     m_keyHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("cannedAcl"))
+  {
+    m_cannedAcl = CannedAccessControlListMapper::GetCannedAccessControlListForName(jsonValue.GetString("cannedAcl"));
+
+    m_cannedAclHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -88,6 +99,11 @@ JsonValue S3Action::Jsonize() const
   {
    payload.WithString("key", m_key);
 
+  }
+
+  if(m_cannedAclHasBeenSet)
+  {
+   payload.WithString("cannedAcl", CannedAccessControlListMapper::GetNameForCannedAccessControlList(m_cannedAcl));
   }
 
   return payload;

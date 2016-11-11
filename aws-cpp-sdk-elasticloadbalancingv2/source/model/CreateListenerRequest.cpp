@@ -21,6 +21,7 @@ using namespace Aws::Utils;
 
 CreateListenerRequest::CreateListenerRequest() : 
     m_loadBalancerArnHasBeenSet(false),
+    m_protocol(ProtocolEnum::NOT_SET),
     m_protocolHasBeenSet(false),
     m_port(0),
     m_portHasBeenSet(false),

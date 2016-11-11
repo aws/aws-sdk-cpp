@@ -127,7 +127,9 @@ namespace Model
      * <p>The name of the user to create.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
      * string of characters consisting of upper and lowercase alphanumeric characters
-     * with no spaces. You can also include any of the following characters: =,.@-</p>
+     * with no spaces. You can also include any of the following characters: =,.@-.
+     * User names are not distinguished by case. For example, you cannot create users
+     * named both "TESTUSER" and "testuser".</p>
      */
     inline const Aws::String& GetUserName() const{ return m_userName; }
 
@@ -135,7 +137,9 @@ namespace Model
      * <p>The name of the user to create.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
      * string of characters consisting of upper and lowercase alphanumeric characters
-     * with no spaces. You can also include any of the following characters: =,.@-</p>
+     * with no spaces. You can also include any of the following characters: =,.@-.
+     * User names are not distinguished by case. For example, you cannot create users
+     * named both "TESTUSER" and "testuser".</p>
      */
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
@@ -143,7 +147,9 @@ namespace Model
      * <p>The name of the user to create.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
      * string of characters consisting of upper and lowercase alphanumeric characters
-     * with no spaces. You can also include any of the following characters: =,.@-</p>
+     * with no spaces. You can also include any of the following characters: =,.@-.
+     * User names are not distinguished by case. For example, you cannot create users
+     * named both "TESTUSER" and "testuser".</p>
      */
     inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
@@ -151,7 +157,9 @@ namespace Model
      * <p>The name of the user to create.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
      * string of characters consisting of upper and lowercase alphanumeric characters
-     * with no spaces. You can also include any of the following characters: =,.@-</p>
+     * with no spaces. You can also include any of the following characters: =,.@-.
+     * User names are not distinguished by case. For example, you cannot create users
+     * named both "TESTUSER" and "testuser".</p>
      */
     inline void SetUserName(const char* value) { m_userNameHasBeenSet = true; m_userName.assign(value); }
 
@@ -159,7 +167,9 @@ namespace Model
      * <p>The name of the user to create.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
      * string of characters consisting of upper and lowercase alphanumeric characters
-     * with no spaces. You can also include any of the following characters: =,.@-</p>
+     * with no spaces. You can also include any of the following characters: =,.@-.
+     * User names are not distinguished by case. For example, you cannot create users
+     * named both "TESTUSER" and "testuser".</p>
      */
     inline CreateUserRequest& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
 
@@ -167,7 +177,9 @@ namespace Model
      * <p>The name of the user to create.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
      * string of characters consisting of upper and lowercase alphanumeric characters
-     * with no spaces. You can also include any of the following characters: =,.@-</p>
+     * with no spaces. You can also include any of the following characters: =,.@-.
+     * User names are not distinguished by case. For example, you cannot create users
+     * named both "TESTUSER" and "testuser".</p>
      */
     inline CreateUserRequest& WithUserName(Aws::String&& value) { SetUserName(value); return *this;}
 
@@ -175,7 +187,9 @@ namespace Model
      * <p>The name of the user to create.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
      * string of characters consisting of upper and lowercase alphanumeric characters
-     * with no spaces. You can also include any of the following characters: =,.@-</p>
+     * with no spaces. You can also include any of the following characters: =,.@-.
+     * User names are not distinguished by case. For example, you cannot create users
+     * named both "TESTUSER" and "testuser".</p>
      */
     inline CreateUserRequest& WithUserName(const char* value) { SetUserName(value); return *this;}
 

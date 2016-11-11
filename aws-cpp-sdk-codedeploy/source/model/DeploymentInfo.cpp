@@ -33,6 +33,7 @@ DeploymentInfo::DeploymentInfo() :
     m_deploymentConfigNameHasBeenSet(false),
     m_deploymentIdHasBeenSet(false),
     m_revisionHasBeenSet(false),
+    m_status(DeploymentStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_errorInformationHasBeenSet(false),
     m_createTimeHasBeenSet(false),
@@ -40,9 +41,14 @@ DeploymentInfo::DeploymentInfo() :
     m_completeTimeHasBeenSet(false),
     m_deploymentOverviewHasBeenSet(false),
     m_descriptionHasBeenSet(false),
+    m_creator(DeploymentCreator::NOT_SET),
     m_creatorHasBeenSet(false),
     m_ignoreApplicationStopFailures(false),
-    m_ignoreApplicationStopFailuresHasBeenSet(false)
+    m_ignoreApplicationStopFailuresHasBeenSet(false),
+    m_autoRollbackConfigurationHasBeenSet(false),
+    m_updateOutdatedInstancesOnly(false),
+    m_updateOutdatedInstancesOnlyHasBeenSet(false),
+    m_rollbackInfoHasBeenSet(false)
 {
 }
 
@@ -52,6 +58,7 @@ DeploymentInfo::DeploymentInfo(const JsonValue& jsonValue) :
     m_deploymentConfigNameHasBeenSet(false),
     m_deploymentIdHasBeenSet(false),
     m_revisionHasBeenSet(false),
+    m_status(DeploymentStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_errorInformationHasBeenSet(false),
     m_createTimeHasBeenSet(false),
@@ -59,9 +66,14 @@ DeploymentInfo::DeploymentInfo(const JsonValue& jsonValue) :
     m_completeTimeHasBeenSet(false),
     m_deploymentOverviewHasBeenSet(false),
     m_descriptionHasBeenSet(false),
+    m_creator(DeploymentCreator::NOT_SET),
     m_creatorHasBeenSet(false),
     m_ignoreApplicationStopFailures(false),
-    m_ignoreApplicationStopFailuresHasBeenSet(false)
+    m_ignoreApplicationStopFailuresHasBeenSet(false),
+    m_autoRollbackConfigurationHasBeenSet(false),
+    m_updateOutdatedInstancesOnly(false),
+    m_updateOutdatedInstancesOnlyHasBeenSet(false),
+    m_rollbackInfoHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -166,6 +178,27 @@ DeploymentInfo& DeploymentInfo::operator =(const JsonValue& jsonValue)
     m_ignoreApplicationStopFailuresHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("autoRollbackConfiguration"))
+  {
+    m_autoRollbackConfiguration = jsonValue.GetObject("autoRollbackConfiguration");
+
+    m_autoRollbackConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("updateOutdatedInstancesOnly"))
+  {
+    m_updateOutdatedInstancesOnly = jsonValue.GetBool("updateOutdatedInstancesOnly");
+
+    m_updateOutdatedInstancesOnlyHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("rollbackInfo"))
+  {
+    m_rollbackInfo = jsonValue.GetObject("rollbackInfo");
+
+    m_rollbackInfoHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -249,6 +282,24 @@ JsonValue DeploymentInfo::Jsonize() const
   if(m_ignoreApplicationStopFailuresHasBeenSet)
   {
    payload.WithBool("ignoreApplicationStopFailures", m_ignoreApplicationStopFailures);
+
+  }
+
+  if(m_autoRollbackConfigurationHasBeenSet)
+  {
+   payload.WithObject("autoRollbackConfiguration", m_autoRollbackConfiguration.Jsonize());
+
+  }
+
+  if(m_updateOutdatedInstancesOnlyHasBeenSet)
+  {
+   payload.WithBool("updateOutdatedInstancesOnly", m_updateOutdatedInstancesOnly);
+
+  }
+
+  if(m_rollbackInfoHasBeenSet)
+  {
+   payload.WithObject("rollbackInfo", m_rollbackInfo.Jsonize());
 
   }
 

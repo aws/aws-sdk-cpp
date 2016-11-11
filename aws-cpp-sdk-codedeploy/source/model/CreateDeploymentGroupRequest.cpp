@@ -29,7 +29,9 @@ CreateDeploymentGroupRequest::CreateDeploymentGroupRequest() :
     m_onPremisesInstanceTagFiltersHasBeenSet(false),
     m_autoScalingGroupsHasBeenSet(false),
     m_serviceRoleArnHasBeenSet(false),
-    m_triggerConfigurationsHasBeenSet(false)
+    m_triggerConfigurationsHasBeenSet(false),
+    m_alarmConfigurationHasBeenSet(false),
+    m_autoRollbackConfigurationHasBeenSet(false)
 {
 }
 
@@ -102,6 +104,18 @@ Aws::String CreateDeploymentGroupRequest::SerializePayload() const
      triggerConfigurationsJsonList[triggerConfigurationsIndex].AsObject(m_triggerConfigurations[triggerConfigurationsIndex].Jsonize());
    }
    payload.WithArray("triggerConfigurations", std::move(triggerConfigurationsJsonList));
+
+  }
+
+  if(m_alarmConfigurationHasBeenSet)
+  {
+   payload.WithObject("alarmConfiguration", m_alarmConfiguration.Jsonize());
+
+  }
+
+  if(m_autoRollbackConfigurationHasBeenSet)
+  {
+   payload.WithObject("autoRollbackConfiguration", m_autoRollbackConfiguration.Jsonize());
 
   }
 

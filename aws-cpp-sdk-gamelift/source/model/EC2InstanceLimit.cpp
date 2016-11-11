@@ -28,6 +28,7 @@ namespace Model
 {
 
 EC2InstanceLimit::EC2InstanceLimit() : 
+    m_eC2InstanceType(EC2InstanceType::NOT_SET),
     m_eC2InstanceTypeHasBeenSet(false),
     m_currentInstances(0),
     m_currentInstancesHasBeenSet(false),
@@ -37,6 +38,7 @@ EC2InstanceLimit::EC2InstanceLimit() :
 }
 
 EC2InstanceLimit::EC2InstanceLimit(const JsonValue& jsonValue) : 
+    m_eC2InstanceType(EC2InstanceType::NOT_SET),
     m_eC2InstanceTypeHasBeenSet(false),
     m_currentInstances(0),
     m_currentInstancesHasBeenSet(false),

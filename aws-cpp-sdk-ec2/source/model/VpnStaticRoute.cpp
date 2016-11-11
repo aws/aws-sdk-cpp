@@ -31,14 +31,18 @@ namespace Model
 
 VpnStaticRoute::VpnStaticRoute() : 
     m_destinationCidrBlockHasBeenSet(false),
+    m_source(VpnStaticRouteSource::NOT_SET),
     m_sourceHasBeenSet(false),
+    m_state(VpnState::NOT_SET),
     m_stateHasBeenSet(false)
 {
 }
 
 VpnStaticRoute::VpnStaticRoute(const XmlNode& xmlNode) : 
     m_destinationCidrBlockHasBeenSet(false),
+    m_source(VpnStaticRouteSource::NOT_SET),
     m_sourceHasBeenSet(false),
+    m_state(VpnState::NOT_SET),
     m_stateHasBeenSet(false)
 {
   *this = xmlNode;

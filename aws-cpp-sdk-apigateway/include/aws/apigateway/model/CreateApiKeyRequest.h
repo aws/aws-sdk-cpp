@@ -121,37 +121,97 @@ namespace Model
     inline CreateApiKeyRequest& WithEnabled(bool value) { SetEnabled(value); return *this;}
 
     /**
-     * <p>Specifies whether the <a>ApiKey</a> can be used by callers.</p>
+     * <p>Specifies whether (<code>true</code>) or not (<code>false</code>) the key
+     * identifier is distinct from the created API key value.</p>
+     */
+    inline bool GetGenerateDistinctId() const{ return m_generateDistinctId; }
+
+    /**
+     * <p>Specifies whether (<code>true</code>) or not (<code>false</code>) the key
+     * identifier is distinct from the created API key value.</p>
+     */
+    inline void SetGenerateDistinctId(bool value) { m_generateDistinctIdHasBeenSet = true; m_generateDistinctId = value; }
+
+    /**
+     * <p>Specifies whether (<code>true</code>) or not (<code>false</code>) the key
+     * identifier is distinct from the created API key value.</p>
+     */
+    inline CreateApiKeyRequest& WithGenerateDistinctId(bool value) { SetGenerateDistinctId(value); return *this;}
+
+    /**
+     * <p>Specifies a value of the API key.</p>
+     */
+    inline const Aws::String& GetValue() const{ return m_value; }
+
+    /**
+     * <p>Specifies a value of the API key.</p>
+     */
+    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
+
+    /**
+     * <p>Specifies a value of the API key.</p>
+     */
+    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = value; }
+
+    /**
+     * <p>Specifies a value of the API key.</p>
+     */
+    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
+
+    /**
+     * <p>Specifies a value of the API key.</p>
+     */
+    inline CreateApiKeyRequest& WithValue(const Aws::String& value) { SetValue(value); return *this;}
+
+    /**
+     * <p>Specifies a value of the API key.</p>
+     */
+    inline CreateApiKeyRequest& WithValue(Aws::String&& value) { SetValue(value); return *this;}
+
+    /**
+     * <p>Specifies a value of the API key.</p>
+     */
+    inline CreateApiKeyRequest& WithValue(const char* value) { SetValue(value); return *this;}
+
+    /**
+     * <p>DEPRECATED FOR USAGE PLANS - Specifies stages associated with the API
+     * key.</p>
      */
     inline const Aws::Vector<StageKey>& GetStageKeys() const{ return m_stageKeys; }
 
     /**
-     * <p>Specifies whether the <a>ApiKey</a> can be used by callers.</p>
+     * <p>DEPRECATED FOR USAGE PLANS - Specifies stages associated with the API
+     * key.</p>
      */
     inline void SetStageKeys(const Aws::Vector<StageKey>& value) { m_stageKeysHasBeenSet = true; m_stageKeys = value; }
 
     /**
-     * <p>Specifies whether the <a>ApiKey</a> can be used by callers.</p>
+     * <p>DEPRECATED FOR USAGE PLANS - Specifies stages associated with the API
+     * key.</p>
      */
     inline void SetStageKeys(Aws::Vector<StageKey>&& value) { m_stageKeysHasBeenSet = true; m_stageKeys = value; }
 
     /**
-     * <p>Specifies whether the <a>ApiKey</a> can be used by callers.</p>
+     * <p>DEPRECATED FOR USAGE PLANS - Specifies stages associated with the API
+     * key.</p>
      */
     inline CreateApiKeyRequest& WithStageKeys(const Aws::Vector<StageKey>& value) { SetStageKeys(value); return *this;}
 
     /**
-     * <p>Specifies whether the <a>ApiKey</a> can be used by callers.</p>
+     * <p>DEPRECATED FOR USAGE PLANS - Specifies stages associated with the API
+     * key.</p>
      */
     inline CreateApiKeyRequest& WithStageKeys(Aws::Vector<StageKey>&& value) { SetStageKeys(value); return *this;}
 
     /**
-     * <p>Specifies whether the <a>ApiKey</a> can be used by callers.</p>
+     * <p>DEPRECATED FOR USAGE PLANS - Specifies stages associated with the API
+     * key.</p>
      */
     inline CreateApiKeyRequest& AddStageKeys(const StageKey& value) { m_stageKeysHasBeenSet = true; m_stageKeys.push_back(value); return *this; }
 
     /**
-     * <p>Specifies whether the <a>ApiKey</a> can be used by callers.</p>
+     * <p>DEPRECATED FOR USAGE PLANS - Specifies stages associated with the API
+     * key.</p>
      */
     inline CreateApiKeyRequest& AddStageKeys(StageKey&& value) { m_stageKeysHasBeenSet = true; m_stageKeys.push_back(value); return *this; }
 
@@ -162,6 +222,10 @@ namespace Model
     bool m_descriptionHasBeenSet;
     bool m_enabled;
     bool m_enabledHasBeenSet;
+    bool m_generateDistinctId;
+    bool m_generateDistinctIdHasBeenSet;
+    Aws::String m_value;
+    bool m_valueHasBeenSet;
     Aws::Vector<StageKey> m_stageKeys;
     bool m_stageKeysHasBeenSet;
   };

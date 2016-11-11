@@ -40,6 +40,7 @@ TrafficPolicyInstance::TrafficPolicyInstance() :
     m_trafficPolicyIdHasBeenSet(false),
     m_trafficPolicyVersion(0),
     m_trafficPolicyVersionHasBeenSet(false),
+    m_trafficPolicyType(RRType::NOT_SET),
     m_trafficPolicyTypeHasBeenSet(false)
 {
 }
@@ -55,6 +56,7 @@ TrafficPolicyInstance::TrafficPolicyInstance(const XmlNode& xmlNode) :
     m_trafficPolicyIdHasBeenSet(false),
     m_trafficPolicyVersion(0),
     m_trafficPolicyVersionHasBeenSet(false),
+    m_trafficPolicyType(RRType::NOT_SET),
     m_trafficPolicyTypeHasBeenSet(false)
 {
   *this = xmlNode;

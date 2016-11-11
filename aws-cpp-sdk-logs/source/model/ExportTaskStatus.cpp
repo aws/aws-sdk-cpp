@@ -28,12 +28,14 @@ namespace Model
 {
 
 ExportTaskStatus::ExportTaskStatus() : 
+    m_code(ExportTaskStatusCode::NOT_SET),
     m_codeHasBeenSet(false),
     m_messageHasBeenSet(false)
 {
 }
 
 ExportTaskStatus::ExportTaskStatus(const JsonValue& jsonValue) : 
+    m_code(ExportTaskStatusCode::NOT_SET),
     m_codeHasBeenSet(false),
     m_messageHasBeenSet(false)
 {

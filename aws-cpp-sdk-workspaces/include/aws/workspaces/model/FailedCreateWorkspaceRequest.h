@@ -43,32 +43,32 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p>A <a>WorkspaceRequest</a> object that contains the information about the
-     * WorkSpace that could not be created.</p>
+     * <p>A <a>FailedCreateWorkspaceRequest$WorkspaceRequest</a> object that contains
+     * the information about the WorkSpace that could not be created.</p>
      */
     inline const WorkspaceRequest& GetWorkspaceRequest() const{ return m_workspaceRequest; }
 
     /**
-     * <p>A <a>WorkspaceRequest</a> object that contains the information about the
-     * WorkSpace that could not be created.</p>
+     * <p>A <a>FailedCreateWorkspaceRequest$WorkspaceRequest</a> object that contains
+     * the information about the WorkSpace that could not be created.</p>
      */
     inline void SetWorkspaceRequest(const WorkspaceRequest& value) { m_workspaceRequestHasBeenSet = true; m_workspaceRequest = value; }
 
     /**
-     * <p>A <a>WorkspaceRequest</a> object that contains the information about the
-     * WorkSpace that could not be created.</p>
+     * <p>A <a>FailedCreateWorkspaceRequest$WorkspaceRequest</a> object that contains
+     * the information about the WorkSpace that could not be created.</p>
      */
     inline void SetWorkspaceRequest(WorkspaceRequest&& value) { m_workspaceRequestHasBeenSet = true; m_workspaceRequest = value; }
 
     /**
-     * <p>A <a>WorkspaceRequest</a> object that contains the information about the
-     * WorkSpace that could not be created.</p>
+     * <p>A <a>FailedCreateWorkspaceRequest$WorkspaceRequest</a> object that contains
+     * the information about the WorkSpace that could not be created.</p>
      */
     inline FailedCreateWorkspaceRequest& WithWorkspaceRequest(const WorkspaceRequest& value) { SetWorkspaceRequest(value); return *this;}
 
     /**
-     * <p>A <a>WorkspaceRequest</a> object that contains the information about the
-     * WorkSpace that could not be created.</p>
+     * <p>A <a>FailedCreateWorkspaceRequest$WorkspaceRequest</a> object that contains
+     * the information about the WorkSpace that could not be created.</p>
      */
     inline FailedCreateWorkspaceRequest& WithWorkspaceRequest(WorkspaceRequest&& value) { SetWorkspaceRequest(value); return *this;}
 

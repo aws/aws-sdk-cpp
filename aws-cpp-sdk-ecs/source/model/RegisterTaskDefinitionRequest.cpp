@@ -24,6 +24,8 @@ using namespace Aws::Utils;
 RegisterTaskDefinitionRequest::RegisterTaskDefinitionRequest() : 
     m_familyHasBeenSet(false),
     m_taskRoleArnHasBeenSet(false),
+    m_networkMode(NetworkMode::NOT_SET),
+    m_networkModeHasBeenSet(false),
     m_containerDefinitionsHasBeenSet(false),
     m_volumesHasBeenSet(false)
 {
@@ -43,6 +45,11 @@ Aws::String RegisterTaskDefinitionRequest::SerializePayload() const
   {
    payload.WithString("taskRoleArn", m_taskRoleArn);
 
+  }
+
+  if(m_networkModeHasBeenSet)
+  {
+   payload.WithString("networkMode", NetworkModeMapper::GetNameForNetworkMode(m_networkMode));
   }
 
   if(m_containerDefinitionsHasBeenSet)

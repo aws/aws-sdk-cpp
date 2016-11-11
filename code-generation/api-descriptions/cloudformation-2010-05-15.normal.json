@@ -47,7 +47,7 @@
         {"shape":"InsufficientCapabilitiesException"},
         {"shape":"LimitExceededException"}
       ],
-      "documentation":"<p>Creates a list of changes for a stack. AWS CloudFormation generates the change set by comparing the stack's information with the information that you submit. A change set can help you understand which resources AWS CloudFormation will change and how it will change them before you update your stack. Change sets allow you to check before you make a change so that you don't delete or replace critical resources.</p> <p>AWS CloudFormation doesn't make any changes to the stack when you create a change set. To make the specified changes, you must execute the change set by using the <a>ExecuteChangeSet</a> action.</p> <p>After the call successfully completes, AWS CloudFormation starts creating the change set. To check the status of the change set, use the <a>DescribeChangeSet</a> action.</p>"
+      "documentation":"<p>Creates a list of changes for a stack. AWS CloudFormation generates the change set by comparing the template's information with the information that you submit. A change set can help you understand which resources AWS CloudFormation will change, and how it will change them, before you update your stack. Change sets allow you to check before making a change to avoid deleting or replacing critical resources.</p> <p>AWS CloudFormation doesn't make any changes to the stack when you create a change set. To make the specified changes, you must execute the change set by using the <a>ExecuteChangeSet</a> action.</p> <p>After the call successfully completes, AWS CloudFormation starts creating the change set. To check the status of the change set, use the <a>DescribeChangeSet</a> action.</p>"
     },
     "CreateStack":{
       "name":"CreateStack",
@@ -171,7 +171,7 @@
         "shape":"DescribeStacksOutput",
         "resultWrapper":"DescribeStacksResult"
       },
-      "documentation":"<p>Returns the description for the specified stack; if no stack name was specified, then it returns the description for all the stacks created.</p>"
+      "documentation":"<p>Returns the description for the specified stack; if no stack name was specified, then it returns the description for all the stacks created.</p> <note> <p>If the stack does not exist, an <code>AmazonCloudFormationException</code> is returned.</p> </note>"
     },
     "EstimateTemplateCost":{
       "name":"EstimateTemplateCost",
@@ -255,6 +255,19 @@
       },
       "documentation":"<p>Returns the ID and status of each active change set for a stack. For example, AWS CloudFormation lists change sets that are in the <code>CREATE_IN_PROGRESS</code> or <code>CREATE_PENDING</code> state.</p>"
     },
+    "ListExports":{
+      "name":"ListExports",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"ListExportsInput"},
+      "output":{
+        "shape":"ListExportsOutput",
+        "resultWrapper":"ListExportsResult"
+      },
+      "documentation":"<p>Lists all exported output values in the account and region in which you call this action. Use this action to see the exported output values that you can import into other stacks. To import values, use the <a href=\"http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-importvalue.html\"> <code>Fn::ImportValue</code> </a> function. </p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-exports.html\"> AWS CloudFormation Export Stack Output Values</a>.</p>"
+    },
     "ListStackResources":{
       "name":"ListStackResources",
       "http":{
@@ -326,7 +339,7 @@
         "shape":"ValidateTemplateOutput",
         "resultWrapper":"ValidateTemplateResult"
       },
-      "documentation":"<p>Validates a specified template.</p>"
+      "documentation":"<p>Validates a specified template. AWS CloudFormation first checks if the template is valid JSON. If it isn't, AWS CloudFormation checks if the template is valid YAML. If both these checks fail, AWS CloudFormation returns a template validation error.</p>"
     }
   },
   "shapes":{
@@ -497,6 +510,13 @@
       },
       "documentation":"<p>The <code>ChangeSetSummary</code> structure describes a change set, its status, and the stack with which it's associated.</p>"
     },
+    "ChangeSetType":{
+      "type":"string",
+      "enum":[
+        "CREATE",
+        "UPDATE"
+      ]
+    },
     "ChangeSource":{
       "type":"string",
       "enum":[
@@ -526,7 +546,15 @@
       "members":{
         "StackName":{
           "shape":"StackNameOrId",
-          "documentation":"<p>The name or the unique ID of the stack that you want to continue rolling back.</p>"
+          "documentation":"<p>The name or the unique ID of the stack that you want to continue rolling back.</p> <note> <p>Don't specify the name of a nested stack (a stack that was created by using the <code>AWS::CloudFormation::Stack</code> resource). Instead, use this operation on the parent stack (the stack that contains the <code>AWS::CloudFormation::Stack</code> resource).</p> </note>"
+        },
+        "RoleARN":{
+          "shape":"RoleARN",
+          "documentation":"<p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role that AWS CloudFormation assumes to roll back the stack. AWS CloudFormation uses the role's credentials to make calls on your behalf. AWS CloudFormation always uses this role for all future operations on the stack. As long as users have permission to operate on the stack, AWS CloudFormation uses this role even if the users don't have permission to pass it. Ensure that the role grants least privilege.</p> <p>If you don't specify a value, AWS CloudFormation uses the role that was previously associated with the stack. If no role is available, AWS CloudFormation uses a temporary session that is generated from your user credentials.</p>"
+        },
+        "ResourcesToSkip":{
+          "shape":"ResourcesToSkip",
+          "documentation":"<p>A list of the logical IDs of the resources that AWS CloudFormation skips during the continue update rollback operation. You can specify only resources that are in the <code>UPDATE_FAILED</code> state because a rollback failed. You can't specify resources that are in the <code>UPDATE_FAILED</code> state for other reasons, for example, because an update was canceled. To check why a resource update failed, use the <a>DescribeStackResources</a> action, and view the resource status reason. </p> <important> <p>Specify this property to skip rolling back resources that AWS CloudFormation can't successfully roll back. We recommend that you <a href=\"http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed\"> troubleshoot</a> resources before skipping them. AWS CloudFormation sets the status of the specified resources to <code>UPDATE_COMPLETE</code> and continues to roll back the stack. After the rollback is complete, the state of the skipped resources will be inconsistent with the state of the resources in the stack template. Before performing another stack update, you must update the stack or resources to be consistent with each other. If you don't, subsequent stack updates might fail, and the stack will become unrecoverable. </p> </important> <p>Specify the minimum number of resources required to successfully roll back your stack. For example, a failed resource update might cause dependent resources to fail. In this case, it might not be necessary to skip the dependent resources. </p> <p>To specify resources in a nested stack, use the following format: <code>NestedStackName.ResourceLogicalID</code>. You can specify a nested stack resource (the logical ID of an <code>AWS::CloudFormation::Stack</code> resource) only if it's in one of the following states: <code>DELETE_IN_PROGRESS</code>, <code>DELETE_COMPLETE</code>, or <code>DELETE_FAILED</code>. </p>"
         }
       },
       "documentation":"<p>The input for the <a>ContinueUpdateRollback</a> action.</p>"
@@ -572,6 +600,10 @@
           "shape":"ResourceTypes",
           "documentation":"<p>The template resource types that you have permissions to work with if you execute this change set, such as <code>AWS::EC2::Instance</code>, <code>AWS::EC2::*</code>, or <code>Custom::MyCustomInstance</code>.</p> <p>If the list of resource types doesn't include a resource type that you're updating, the stack update fails. By default, AWS CloudFormation grants permissions to all resource types. AWS Identity and Access Management (IAM) uses this parameter for condition keys in IAM policies for AWS CloudFormation. For more information, see <a href=\"http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html\">Controlling Access with AWS Identity and Access Management</a> in the AWS CloudFormation User Guide.</p>"
         },
+        "RoleARN":{
+          "shape":"RoleARN",
+          "documentation":"<p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role that AWS CloudFormation assumes when executing the change set. AWS CloudFormation uses the role's credentials to make calls on your behalf. AWS CloudFormation uses this role for all future operations on the stack. As long as users have permission to operate on the stack, AWS CloudFormation uses this role even if the users don't have permission to pass it. Ensure that the role grants least privilege.</p> <p>If you don't specify a value, AWS CloudFormation uses the role that was previously associated with the stack. If no role is available, AWS CloudFormation uses a temporary session that is generated from your user credentials.</p>"
+        },
         "NotificationARNs":{
           "shape":"NotificationARNs",
           "documentation":"<p>The Amazon Resource Names (ARNs) of Amazon Simple Notification Service (Amazon SNS) topics that AWS CloudFormation associates with the stack. To remove all associated notification topics, specify an empty list.</p>"
@@ -591,6 +623,10 @@
         "Description":{
           "shape":"Description",
           "documentation":"<p>A description to help you identify this change set.</p>"
+        },
+        "ChangeSetType":{
+          "shape":"ChangeSetType",
+          "documentation":"<p>The type of change set operation.</p> <p>Valid values are <code>CREATE</code> and <code>UPDATE</code>. The default value is <code>UPDATE</code>.</p> <ul> <li> <p> <code>CREATE</code> - Specify to use the change set to create a new stack. While AWS CloudFormation creates the stack, the stack has the <a href=\"http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995\"> <code>REVIEW_IN_PROGRESS</code> </a> status and an expected <code>StackId</code>, but no template or resources. Except for its <code>StackId</code>, the stack is completely empty until you execute the change set. You can apply multiple change sets to a stack.</p> </li> <li> <p> <code>UPDATE</code> - Specify to create a change set for an existing stack.</p> </li> </ul>"
         }
       },
       "documentation":"<p>The input for the <a>CreateChangeSet</a> action.</p>"
@@ -601,6 +637,10 @@
         "Id":{
           "shape":"ChangeSetId",
           "documentation":"<p>The Amazon Resource Name (ARN) of the change set.</p>"
+        },
+        "StackId":{
+          "shape":"StackId",
+          "documentation":"<p>The unique ID of the stack.</p>"
         }
       },
       "documentation":"<p>The output for the <a>CreateChangeSet</a> action.</p>"
@@ -645,17 +685,21 @@
           "shape":"ResourceTypes",
           "documentation":"<p>The template resource types that you have permissions to work with for this create stack action, such as <code>AWS::EC2::Instance</code>, <code>AWS::EC2::*</code>, or <code>Custom::MyCustomInstance</code>. Use the following syntax to describe template resource types: <code>AWS::*</code> (for all AWS resource), <code>Custom::*</code> (for all custom resources), <code>Custom::<i>logical_ID</i> </code> (for a specific custom resource), <code>AWS::<i>service_name</i>::*</code> (for all resources of a particular AWS service), and <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i> </code> (for a specific AWS resource).</p> <p>If the list of resource types doesn't include a resource that you're creating, the stack creation fails. By default, AWS CloudFormation grants permissions to all resource types. AWS Identity and Access Management (IAM) uses this parameter for AWS CloudFormation-specific condition keys in IAM policies. For more information, see <a href=\"http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html\">Controlling Access with AWS Identity and Access Management</a>.</p>"
         },
+        "RoleARN":{
+          "shape":"RoleARN",
+          "documentation":"<p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role that AWS CloudFormation assumes to create the stack. AWS CloudFormation uses the role's credentials to make calls on your behalf. AWS CloudFormation always uses this role for all future operations on the stack. As long as users have permission to operate on the stack, AWS CloudFormation uses this role even if the users don't have permission to pass it. Ensure that the role grants least privilege.</p> <p>If you don't specify a value, AWS CloudFormation uses the role that was previously associated with the stack. If no role is available, AWS CloudFormation uses a temporary session that is generated from your user credentials.</p>"
+        },
         "OnFailure":{
           "shape":"OnFailure",
           "documentation":"<p>Determines what action will be taken if stack creation fails. This must be one of: DO_NOTHING, ROLLBACK, or DELETE. You can specify either <code>OnFailure</code> or <code>DisableRollback</code>, but not both.</p> <p>Default: <code>ROLLBACK</code> </p>"
         },
         "StackPolicyBody":{
           "shape":"StackPolicyBody",
-          "documentation":"<p>Structure containing the stack policy body. For more information, go to <a href=\"http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html\"> Prevent Updates to Stack Resources</a> in the AWS CloudFormation User Guide. You can specify either the <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but not both.</p>"
+          "documentation":"<p>Structure containing the stack policy body. For more information, go to <a href=\"http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html\"> Prevent Updates to Stack Resources</a> in the <i>AWS CloudFormation User Guide</i>. You can specify either the <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but not both.</p>"
         },
         "StackPolicyURL":{
           "shape":"StackPolicyURL",
-          "documentation":"<p>Location of a file containing the stack policy. The URL must point to a policy (max size: 16KB) located in an S3 bucket in the same region as the stack. You can specify either the <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but not both.</p>"
+          "documentation":"<p>Location of a file containing the stack policy. The URL must point to a policy (maximum size: 16 KB) located in an S3 bucket in the same region as the stack. You can specify either the <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but not both.</p>"
         },
         "Tags":{
           "shape":"Tags",
@@ -707,6 +751,10 @@
         "RetainResources":{
           "shape":"RetainResources",
           "documentation":"<p>For stacks in the <code>DELETE_FAILED</code> state, a list of resource logical IDs that are associated with the resources you want to retain. During deletion, AWS CloudFormation deletes the stack but does not delete the retained resources.</p> <p>Retaining resources is useful when you cannot delete a resource, such as a non-empty S3 bucket, but you want to delete the stack.</p>"
+        },
+        "RoleARN":{
+          "shape":"RoleARN",
+          "documentation":"<p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role that AWS CloudFormation assumes to delete the stack. AWS CloudFormation uses the role's credentials to make calls on your behalf.</p> <p>If you don't specify a value, AWS CloudFormation uses the role that was previously associated with the stack. If no role is available, AWS CloudFormation uses a temporary session that is generated from your user credentials.</p>"
         }
       },
       "documentation":"<p>The input for <a>DeleteStack</a> action.</p>"
@@ -1007,6 +1055,30 @@
         "OBSOLETE"
       ]
     },
+    "Export":{
+      "type":"structure",
+      "members":{
+        "ExportingStackId":{
+          "shape":"StackId",
+          "documentation":"<p>The stack that contains the exported output name and value.</p>"
+        },
+        "Name":{
+          "shape":"ExportName",
+          "documentation":"<p>The name of exported output value. Use this name and the <code>Fn::ImportValue</code> function to import the associated value into other stacks. The name is defined in the <code>Export</code> field in the associated stack's <code>Outputs</code> section.</p>"
+        },
+        "Value":{
+          "shape":"ExportValue",
+          "documentation":"<p>The value of the exported output, such as a resource physical ID. This value is defined in the <code>Export</code> field in the associated stack's <code>Outputs</code> section.</p>"
+        }
+      },
+      "documentation":"<p>The <code>Export</code> structure describes the exported output values for a stack.</p>"
+    },
+    "ExportName":{"type":"string"},
+    "ExportValue":{"type":"string"},
+    "Exports":{
+      "type":"list",
+      "member":{"shape":"Export"}
+    },
     "GetStackPolicyInput":{
       "type":"structure",
       "required":["StackName"],
@@ -1030,11 +1102,18 @@
     },
     "GetTemplateInput":{
       "type":"structure",
-      "required":["StackName"],
       "members":{
         "StackName":{
           "shape":"StackName",
           "documentation":"<p>The name or the unique stack ID that is associated with the stack, which are not always interchangeable:</p> <ul> <li> <p>Running stacks: You can specify either the stack's name or its unique stack ID.</p> </li> <li> <p>Deleted stacks: You must specify the unique stack ID.</p> </li> </ul> <p>Default: There is no default value.</p>"
+        },
+        "ChangeSetName":{
+          "shape":"ChangeSetNameOrId",
+          "documentation":"<p>Returns the template for a change set using the Amazon Resource Name (ARN) or name of the change set. If you specify a name, you must also specify the <code>StackName</code>.</p>"
+        },
+        "TemplateStage":{
+          "shape":"TemplateStage",
+          "documentation":"<p>The stage of the template that is returned.</p> <p>Valid values are <code>Original</code> and <code>Processed</code>. The default value is <code>Original</code>.</p> <ul> <li> <p> <code>Original</code> - Use this value to return the user-submitted template.</p> </li> <li> <p> <code>Processed</code> - Use this value to return the template after all transforms have been processed.</p> </li> </ul>"
         }
       },
       "documentation":"<p>The input for a <a>GetTemplate</a> action.</p>"
@@ -1044,7 +1123,11 @@
       "members":{
         "TemplateBody":{
           "shape":"TemplateBody",
-          "documentation":"<p>Structure containing the template body. (For more information, go to <a href=\"http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html\">Template Anatomy</a> in the AWS CloudFormation User Guide.)</p>"
+          "documentation":"<p>Structure containing the template body. (For more information, go to <a href=\"http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html\">Template Anatomy</a> in the AWS CloudFormation User Guide.)</p> <p>AWS CloudFormation returns the same template that was used when the stack was created.</p>"
+        },
+        "StagesAvailable":{
+          "shape":"StageList",
+          "documentation":"<p>The template type.</p> <ul> <li> <p>For stacks, you can use either the <code>Original</code> or the <code>Processed</code> template type.</p> </li> <li> <p>For change sets, you can use only the <code>Original</code> template type. After the transforms are processed, you can use the <code>Processed</code> template type.</p> </li> </ul> <note> <p>If you create a change set for a new stack, you must select the template type.</p> </note>"
         }
       },
       "documentation":"<p>The output for <a>GetTemplate</a> action.</p>"
@@ -1097,6 +1180,10 @@
         "Metadata":{
           "shape":"Metadata",
           "documentation":"<p>The value that is defined for the <code>Metadata</code> property of the template.</p>"
+        },
+        "DeclaredTransforms":{
+          "shape":"TransformsList",
+          "documentation":"<p>A list of the transforms that are declared in the template.</p>"
         }
       },
       "documentation":"<p>The output for the <a>GetTemplateSummary</a> action.</p>"
@@ -1168,6 +1255,28 @@
         }
       },
       "documentation":"<p>The output for the <a>ListChangeSets</a> action.</p>"
+    },
+    "ListExportsInput":{
+      "type":"structure",
+      "members":{
+        "NextToken":{
+          "shape":"NextToken",
+          "documentation":"<p>A string (provided by the <a>ListExports</a> response output) that identifies the next page of exported output values that you asked to retrieve.</p>"
+        }
+      }
+    },
+    "ListExportsOutput":{
+      "type":"structure",
+      "members":{
+        "Exports":{
+          "shape":"Exports",
+          "documentation":"<p>The output for the <a>ListExports</a> action.</p>"
+        },
+        "NextToken":{
+          "shape":"NextToken",
+          "documentation":"<p>If the output exceeds 100 exported output values, a string that identifies the next page of exports. If there is no additional page, this value is null.</p>"
+        }
+      }
     },
     "ListStackResourcesInput":{
       "type":"structure",
@@ -1477,6 +1586,10 @@
       },
       "documentation":"<p>The field that AWS CloudFormation will change, such as the name of a resource's property, and whether the resource will be recreated.</p>"
     },
+    "ResourceToSkip":{
+      "type":"string",
+      "pattern":"[a-zA-Z0-9]+|[a-zA-Z][-a-zA-Z0-9]*\\.[a-zA-Z0-9]+"
+    },
     "ResourceType":{
       "type":"string",
       "max":256,
@@ -1486,9 +1599,18 @@
       "type":"list",
       "member":{"shape":"ResourceType"}
     },
+    "ResourcesToSkip":{
+      "type":"list",
+      "member":{"shape":"ResourceToSkip"}
+    },
     "RetainResources":{
       "type":"list",
       "member":{"shape":"LogicalResourceId"}
+    },
+    "RoleARN":{
+      "type":"string",
+      "max":2048,
+      "min":20
     },
     "Scope":{
       "type":"list",
@@ -1557,6 +1679,10 @@
           "shape":"StackName",
           "documentation":"<p>The name associated with the stack.</p>"
         },
+        "ChangeSetId":{
+          "shape":"ChangeSetId",
+          "documentation":"<p>The unique ID of the change set.</p>"
+        },
         "Description":{
           "shape":"Description",
           "documentation":"<p>A user-defined description associated with the stack.</p>"
@@ -1600,6 +1726,10 @@
         "Outputs":{
           "shape":"Outputs",
           "documentation":"<p>A list of output structures.</p>"
+        },
+        "RoleARN":{
+          "shape":"RoleARN",
+          "documentation":"<p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role that is associated with the stack. During a stack operation, AWS CloudFormation uses this role's credentials to make calls on your behalf.</p>"
         },
         "Tags":{
           "shape":"Tags",
@@ -1786,7 +1916,7 @@
         },
         "Metadata":{
           "shape":"Metadata",
-          "documentation":"<p>The JSON format content of the <code>Metadata</code> attribute declared for the resource. For more information, see <a href=\"http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-metadata.html\">Metadata Attribute</a> in the AWS CloudFormation User Guide.</p>"
+          "documentation":"<p>The content of the <code>Metadata</code> attribute declared for the resource. For more information, see <a href=\"http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-metadata.html\">Metadata Attribute</a> in the AWS CloudFormation User Guide.</p>"
         }
       },
       "documentation":"<p>Contains detailed information about the specified stack resource.</p>"
@@ -1853,7 +1983,8 @@
         "UPDATE_ROLLBACK_IN_PROGRESS",
         "UPDATE_ROLLBACK_FAILED",
         "UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS",
-        "UPDATE_ROLLBACK_COMPLETE"
+        "UPDATE_ROLLBACK_COMPLETE",
+        "REVIEW_IN_PROGRESS"
       ]
     },
     "StackStatusFilter":{
@@ -1912,6 +2043,10 @@
       "type":"list",
       "member":{"shape":"Stack"}
     },
+    "StageList":{
+      "type":"list",
+      "member":{"shape":"TemplateStage"}
+    },
     "Tag":{
       "type":"structure",
       "members":{
@@ -1963,6 +2098,13 @@
       "type":"list",
       "member":{"shape":"TemplateParameter"}
     },
+    "TemplateStage":{
+      "type":"string",
+      "enum":[
+        "Original",
+        "Processed"
+      ]
+    },
     "TemplateURL":{
       "type":"string",
       "max":1024,
@@ -1973,6 +2115,11 @@
       "min":1
     },
     "Timestamp":{"type":"timestamp"},
+    "TransformName":{"type":"string"},
+    "TransformsList":{
+      "type":"list",
+      "member":{"shape":"TransformName"}
+    },
     "UpdateStackInput":{
       "type":"structure",
       "required":["StackName"],
@@ -2012,6 +2159,10 @@
         "ResourceTypes":{
           "shape":"ResourceTypes",
           "documentation":"<p>The template resource types that you have permissions to work with for this update stack action, such as <code>AWS::EC2::Instance</code>, <code>AWS::EC2::*</code>, or <code>Custom::MyCustomInstance</code>.</p> <p>If the list of resource types doesn't include a resource that you're updating, the stack update fails. By default, AWS CloudFormation grants permissions to all resource types. AWS Identity and Access Management (IAM) uses this parameter for AWS CloudFormation-specific condition keys in IAM policies. For more information, see <a href=\"http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html\">Controlling Access with AWS Identity and Access Management</a>.</p>"
+        },
+        "RoleARN":{
+          "shape":"RoleARN",
+          "documentation":"<p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role that AWS CloudFormation assumes to update the stack. AWS CloudFormation uses the role's credentials to make calls on your behalf. AWS CloudFormation always uses this role for all future operations on the stack. As long as users have permission to operate on the stack, AWS CloudFormation uses this role even if the users don't have permission to pass it. Ensure that the role grants least privilege.</p> <p>If you don't specify a value, AWS CloudFormation uses the role that was previously associated with the stack. If no role is available, AWS CloudFormation uses a temporary session that is generated from your user credentials.</p>"
         },
         "StackPolicyBody":{
           "shape":"StackPolicyBody",
@@ -2077,11 +2228,15 @@
         "CapabilitiesReason":{
           "shape":"CapabilitiesReason",
           "documentation":"<p>The list of resources that generated the values in the <code>Capabilities</code> response element.</p>"
+        },
+        "DeclaredTransforms":{
+          "shape":"TransformsList",
+          "documentation":"<p>A list of the transforms that are declared in the template.</p>"
         }
       },
       "documentation":"<p>The output for <a>ValidateTemplate</a> action.</p>"
     },
     "Version":{"type":"string"}
   },
-  "documentation":"<fullname>AWS CloudFormation</fullname> <p>AWS CloudFormation enables you to create and manage AWS infrastructure deployments predictably and repeatedly. AWS CloudFormation helps you leverage AWS products such as Amazon EC2, EBS, Amazon SNS, ELB, and Auto Scaling to build highly-reliable, highly scalable, cost effective applications without worrying about creating and configuring the underlying AWS infrastructure.</p> <p>With AWS CloudFormation, you declare all of your resources and dependencies in a template file. The template defines a collection of resources as a single unit called a stack. AWS CloudFormation creates and deletes all member resources of the stack together and manages all dependencies between the resources for you.</p> <p>For more information about this product, go to the <a href=\"http://aws.amazon.com/cloudformation/\">CloudFormation Product Page</a>.</p> <p>Amazon CloudFormation makes use of other AWS products. If you need additional technical information about a specific AWS product, you can find the product's technical documentation at <a href=\"http://docs.aws.amazon.com/\">http://docs.aws.amazon.com/</a>.</p>"
+  "documentation":"<fullname>AWS CloudFormation</fullname> <p>AWS CloudFormation allows you to create and manage AWS infrastructure deployments predictably and repeatedly. You can use AWS CloudFormation to leverage AWS products, such as Amazon Elastic Compute Cloud, Amazon Elastic Block Store, Amazon Simple Notification Service, Elastic Load Balancing, and Auto Scaling to build highly-reliable, highly scalable, cost-effective applications without creating or configuring the underlying AWS infrastructure.</p> <p>With AWS CloudFormation, you declare all of your resources and dependencies in a template file. The template defines a collection of resources as a single unit called a stack. AWS CloudFormation creates and deletes all member resources of the stack together and manages all dependencies between the resources for you.</p> <p>For more information about AWS CloudFormation, see the <a href=\"http://aws.amazon.com/cloudformation/\">AWS CloudFormation Product Page</a>.</p> <p>Amazon CloudFormation makes use of other AWS products. If you need additional technical information about a specific AWS product, you can find the product's technical documentation at <a href=\"http://docs.aws.amazon.com/http:/docs.aws.amazon.com/\">http://docs.aws.amazon.com/</a>.</p>"
 }

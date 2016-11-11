@@ -32,10 +32,12 @@ namespace Model
 Stack::Stack() : 
     m_stackIdHasBeenSet(false),
     m_stackNameHasBeenSet(false),
+    m_changeSetIdHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_parametersHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
     m_lastUpdatedTimeHasBeenSet(false),
+    m_stackStatus(StackStatus::NOT_SET),
     m_stackStatusHasBeenSet(false),
     m_stackStatusReasonHasBeenSet(false),
     m_disableRollback(false),
@@ -45,6 +47,7 @@ Stack::Stack() :
     m_timeoutInMinutesHasBeenSet(false),
     m_capabilitiesHasBeenSet(false),
     m_outputsHasBeenSet(false),
+    m_roleARNHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -52,10 +55,12 @@ Stack::Stack() :
 Stack::Stack(const XmlNode& xmlNode) : 
     m_stackIdHasBeenSet(false),
     m_stackNameHasBeenSet(false),
+    m_changeSetIdHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_parametersHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
     m_lastUpdatedTimeHasBeenSet(false),
+    m_stackStatus(StackStatus::NOT_SET),
     m_stackStatusHasBeenSet(false),
     m_stackStatusReasonHasBeenSet(false),
     m_disableRollback(false),
@@ -65,6 +70,7 @@ Stack::Stack(const XmlNode& xmlNode) :
     m_timeoutInMinutesHasBeenSet(false),
     m_capabilitiesHasBeenSet(false),
     m_outputsHasBeenSet(false),
+    m_roleARNHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
   *this = xmlNode;
@@ -87,6 +93,12 @@ Stack& Stack::operator =(const XmlNode& xmlNode)
     {
       m_stackName = StringUtils::Trim(stackNameNode.GetText().c_str());
       m_stackNameHasBeenSet = true;
+    }
+    XmlNode changeSetIdNode = resultNode.FirstChild("ChangeSetId");
+    if(!changeSetIdNode.IsNull())
+    {
+      m_changeSetId = StringUtils::Trim(changeSetIdNode.GetText().c_str());
+      m_changeSetIdHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
     if(!descriptionNode.IsNull())
@@ -178,6 +190,12 @@ Stack& Stack::operator =(const XmlNode& xmlNode)
 
       m_outputsHasBeenSet = true;
     }
+    XmlNode roleARNNode = resultNode.FirstChild("RoleARN");
+    if(!roleARNNode.IsNull())
+    {
+      m_roleARN = StringUtils::Trim(roleARNNode.GetText().c_str());
+      m_roleARNHasBeenSet = true;
+    }
     XmlNode tagsNode = resultNode.FirstChild("Tags");
     if(!tagsNode.IsNull())
     {
@@ -205,6 +223,11 @@ void Stack::OutputToStream(Aws::OStream& oStream, const char* location, unsigned
   if(m_stackNameHasBeenSet)
   {
       oStream << location << index << locationValue << ".StackName=" << StringUtils::URLEncode(m_stackName.c_str()) << "&";
+  }
+
+  if(m_changeSetIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ChangeSetId=" << StringUtils::URLEncode(m_changeSetId.c_str()) << "&";
   }
 
   if(m_descriptionHasBeenSet)
@@ -282,6 +305,11 @@ void Stack::OutputToStream(Aws::OStream& oStream, const char* location, unsigned
       }
   }
 
+  if(m_roleARNHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".RoleARN=" << StringUtils::URLEncode(m_roleARN.c_str()) << "&";
+  }
+
   if(m_tagsHasBeenSet)
   {
       unsigned tagsIdx = 1;
@@ -304,6 +332,10 @@ void Stack::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_stackNameHasBeenSet)
   {
       oStream << location << ".StackName=" << StringUtils::URLEncode(m_stackName.c_str()) << "&";
+  }
+  if(m_changeSetIdHasBeenSet)
+  {
+      oStream << location << ".ChangeSetId=" << StringUtils::URLEncode(m_changeSetId.c_str()) << "&";
   }
   if(m_descriptionHasBeenSet)
   {
@@ -368,6 +400,10 @@ void Stack::OutputToStream(Aws::OStream& oStream, const char* location) const
         outputsSs << location <<  ".Outputs.member." << outputsIdx++;
         item.OutputToStream(oStream, outputsSs.str().c_str());
       }
+  }
+  if(m_roleARNHasBeenSet)
+  {
+      oStream << location << ".RoleARN=" << StringUtils::URLEncode(m_roleARN.c_str()) << "&";
   }
   if(m_tagsHasBeenSet)
   {

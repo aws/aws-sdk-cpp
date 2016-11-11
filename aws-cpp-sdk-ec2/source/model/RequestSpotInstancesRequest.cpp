@@ -26,6 +26,7 @@ RequestSpotInstancesRequest::RequestSpotInstancesRequest() :
     m_clientTokenHasBeenSet(false),
     m_instanceCount(0),
     m_instanceCountHasBeenSet(false),
+    m_type(SpotInstanceType::NOT_SET),
     m_typeHasBeenSet(false),
     m_validFromHasBeenSet(false),
     m_validUntilHasBeenSet(false),

@@ -33,6 +33,7 @@ ListPartsRequest::ListPartsRequest() :
     m_partNumberMarker(0),
     m_partNumberMarkerHasBeenSet(false),
     m_uploadIdHasBeenSet(false),
+    m_requestPayer(RequestPayer::NOT_SET),
     m_requestPayerHasBeenSet(false)
 {
 }

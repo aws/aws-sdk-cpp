@@ -33,12 +33,17 @@ FleetAttributes::FleetAttributes() :
     m_nameHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
     m_terminationTimeHasBeenSet(false),
+    m_status(FleetStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_buildIdHasBeenSet(false),
     m_serverLaunchPathHasBeenSet(false),
     m_serverLaunchParametersHasBeenSet(false),
     m_logPathsHasBeenSet(false),
-    m_newGameSessionProtectionPolicyHasBeenSet(false)
+    m_newGameSessionProtectionPolicy(ProtectionPolicy::NOT_SET),
+    m_newGameSessionProtectionPolicyHasBeenSet(false),
+    m_operatingSystem(OperatingSystem::NOT_SET),
+    m_operatingSystemHasBeenSet(false),
+    m_resourceCreationLimitPolicyHasBeenSet(false)
 {
 }
 
@@ -48,12 +53,17 @@ FleetAttributes::FleetAttributes(const JsonValue& jsonValue) :
     m_nameHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
     m_terminationTimeHasBeenSet(false),
+    m_status(FleetStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_buildIdHasBeenSet(false),
     m_serverLaunchPathHasBeenSet(false),
     m_serverLaunchParametersHasBeenSet(false),
     m_logPathsHasBeenSet(false),
-    m_newGameSessionProtectionPolicyHasBeenSet(false)
+    m_newGameSessionProtectionPolicy(ProtectionPolicy::NOT_SET),
+    m_newGameSessionProtectionPolicyHasBeenSet(false),
+    m_operatingSystem(OperatingSystem::NOT_SET),
+    m_operatingSystemHasBeenSet(false),
+    m_resourceCreationLimitPolicyHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -140,6 +150,20 @@ FleetAttributes& FleetAttributes::operator =(const JsonValue& jsonValue)
     m_newGameSessionProtectionPolicyHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("OperatingSystem"))
+  {
+    m_operatingSystem = OperatingSystemMapper::GetOperatingSystemForName(jsonValue.GetString("OperatingSystem"));
+
+    m_operatingSystemHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ResourceCreationLimitPolicy"))
+  {
+    m_resourceCreationLimitPolicy = jsonValue.GetObject("ResourceCreationLimitPolicy");
+
+    m_resourceCreationLimitPolicyHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -212,6 +236,17 @@ JsonValue FleetAttributes::Jsonize() const
   if(m_newGameSessionProtectionPolicyHasBeenSet)
   {
    payload.WithString("NewGameSessionProtectionPolicy", ProtectionPolicyMapper::GetNameForProtectionPolicy(m_newGameSessionProtectionPolicy));
+  }
+
+  if(m_operatingSystemHasBeenSet)
+  {
+   payload.WithString("OperatingSystem", OperatingSystemMapper::GetNameForOperatingSystem(m_operatingSystem));
+  }
+
+  if(m_resourceCreationLimitPolicyHasBeenSet)
+  {
+   payload.WithObject("ResourceCreationLimitPolicy", m_resourceCreationLimitPolicy.Jsonize());
+
   }
 
   return payload;

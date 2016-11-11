@@ -31,7 +31,7 @@ namespace Model
 {
 
   /**
-   * <p>Describes an action that writes data to an Amazon Elasticsearch Service;
+   * <p>Describes an action that writes data to an Amazon Elasticsearch Service
    * domain.</p>
    */
   class AWS_IOT_API ElasticsearchAction

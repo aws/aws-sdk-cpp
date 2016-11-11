@@ -28,12 +28,14 @@ namespace Model
 {
 
 DeploymentCommand::DeploymentCommand() : 
+    m_name(DeploymentCommandName::NOT_SET),
     m_nameHasBeenSet(false),
     m_argsHasBeenSet(false)
 {
 }
 
 DeploymentCommand::DeploymentCommand(const JsonValue& jsonValue) : 
+    m_name(DeploymentCommandName::NOT_SET),
     m_nameHasBeenSet(false),
     m_argsHasBeenSet(false)
 {

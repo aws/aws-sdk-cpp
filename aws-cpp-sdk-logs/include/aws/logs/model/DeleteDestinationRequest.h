@@ -35,37 +35,37 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * <p>The name of destination to delete.</p>
+     * <p>The name of the destination.</p>
      */
     inline const Aws::String& GetDestinationName() const{ return m_destinationName; }
 
     /**
-     * <p>The name of destination to delete.</p>
+     * <p>The name of the destination.</p>
      */
     inline void SetDestinationName(const Aws::String& value) { m_destinationNameHasBeenSet = true; m_destinationName = value; }
 
     /**
-     * <p>The name of destination to delete.</p>
+     * <p>The name of the destination.</p>
      */
     inline void SetDestinationName(Aws::String&& value) { m_destinationNameHasBeenSet = true; m_destinationName = value; }
 
     /**
-     * <p>The name of destination to delete.</p>
+     * <p>The name of the destination.</p>
      */
     inline void SetDestinationName(const char* value) { m_destinationNameHasBeenSet = true; m_destinationName.assign(value); }
 
     /**
-     * <p>The name of destination to delete.</p>
+     * <p>The name of the destination.</p>
      */
     inline DeleteDestinationRequest& WithDestinationName(const Aws::String& value) { SetDestinationName(value); return *this;}
 
     /**
-     * <p>The name of destination to delete.</p>
+     * <p>The name of the destination.</p>
      */
     inline DeleteDestinationRequest& WithDestinationName(Aws::String&& value) { SetDestinationName(value); return *this;}
 
     /**
-     * <p>The name of destination to delete.</p>
+     * <p>The name of the destination.</p>
      */
     inline DeleteDestinationRequest& WithDestinationName(const char* value) { SetDestinationName(value); return *this;}
 

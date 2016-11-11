@@ -46,117 +46,117 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     /**
-     * <p>The name of the field. The possible value is <code>path-pattern</code>.</p>
+     * <p>The only possible value is <code>path-pattern</code>.</p>
      */
     inline const Aws::String& GetField() const{ return m_field; }
 
     /**
-     * <p>The name of the field. The possible value is <code>path-pattern</code>.</p>
+     * <p>The only possible value is <code>path-pattern</code>.</p>
      */
     inline void SetField(const Aws::String& value) { m_fieldHasBeenSet = true; m_field = value; }
 
     /**
-     * <p>The name of the field. The possible value is <code>path-pattern</code>.</p>
+     * <p>The only possible value is <code>path-pattern</code>.</p>
      */
     inline void SetField(Aws::String&& value) { m_fieldHasBeenSet = true; m_field = value; }
 
     /**
-     * <p>The name of the field. The possible value is <code>path-pattern</code>.</p>
+     * <p>The only possible value is <code>path-pattern</code>.</p>
      */
     inline void SetField(const char* value) { m_fieldHasBeenSet = true; m_field.assign(value); }
 
     /**
-     * <p>The name of the field. The possible value is <code>path-pattern</code>.</p>
+     * <p>The only possible value is <code>path-pattern</code>.</p>
      */
     inline RuleCondition& WithField(const Aws::String& value) { SetField(value); return *this;}
 
     /**
-     * <p>The name of the field. The possible value is <code>path-pattern</code>.</p>
+     * <p>The only possible value is <code>path-pattern</code>.</p>
      */
     inline RuleCondition& WithField(Aws::String&& value) { SetField(value); return *this;}
 
     /**
-     * <p>The name of the field. The possible value is <code>path-pattern</code>.</p>
+     * <p>The only possible value is <code>path-pattern</code>.</p>
      */
     inline RuleCondition& WithField(const char* value) { SetField(value); return *this;}
 
     /**
-     * <p>The values for the field.</p> <p>A path pattern is case sensitive, can be up
-     * to 255 characters in length, and can contain any of the following
-     * characters:</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ " ' @ :
-     * +</p> </li> <li> <p>&amp;amp; (using &amp;amp;amp;)</p> </li> <li> <p>* (matches
-     * 0 or more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p>
-     * </li> </ul>
+     * <p>The path pattern. You can specify a single path pattern.</p> <p>A path
+     * pattern is case sensitive, can be up to 255 characters in length, and can
+     * contain any of the following characters:</p> <ul> <li> <p>A-Z, a-z, 0-9</p>
+     * </li> <li> <p>_ - . $ / ~ " ' @ : +</p> </li> <li> <p>&amp; (using
+     * &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li>
+     * <p>? (matches exactly 1 character)</p> </li> </ul>
      */
     inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
 
     /**
-     * <p>The values for the field.</p> <p>A path pattern is case sensitive, can be up
-     * to 255 characters in length, and can contain any of the following
-     * characters:</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ " ' @ :
-     * +</p> </li> <li> <p>&amp;amp; (using &amp;amp;amp;)</p> </li> <li> <p>* (matches
-     * 0 or more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p>
-     * </li> </ul>
+     * <p>The path pattern. You can specify a single path pattern.</p> <p>A path
+     * pattern is case sensitive, can be up to 255 characters in length, and can
+     * contain any of the following characters:</p> <ul> <li> <p>A-Z, a-z, 0-9</p>
+     * </li> <li> <p>_ - . $ / ~ " ' @ : +</p> </li> <li> <p>&amp; (using
+     * &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li>
+     * <p>? (matches exactly 1 character)</p> </li> </ul>
      */
     inline void SetValues(const Aws::Vector<Aws::String>& value) { m_valuesHasBeenSet = true; m_values = value; }
 
     /**
-     * <p>The values for the field.</p> <p>A path pattern is case sensitive, can be up
-     * to 255 characters in length, and can contain any of the following
-     * characters:</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ " ' @ :
-     * +</p> </li> <li> <p>&amp;amp; (using &amp;amp;amp;)</p> </li> <li> <p>* (matches
-     * 0 or more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p>
-     * </li> </ul>
+     * <p>The path pattern. You can specify a single path pattern.</p> <p>A path
+     * pattern is case sensitive, can be up to 255 characters in length, and can
+     * contain any of the following characters:</p> <ul> <li> <p>A-Z, a-z, 0-9</p>
+     * </li> <li> <p>_ - . $ / ~ " ' @ : +</p> </li> <li> <p>&amp; (using
+     * &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li>
+     * <p>? (matches exactly 1 character)</p> </li> </ul>
      */
     inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = value; }
 
     /**
-     * <p>The values for the field.</p> <p>A path pattern is case sensitive, can be up
-     * to 255 characters in length, and can contain any of the following
-     * characters:</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ " ' @ :
-     * +</p> </li> <li> <p>&amp;amp; (using &amp;amp;amp;)</p> </li> <li> <p>* (matches
-     * 0 or more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p>
-     * </li> </ul>
+     * <p>The path pattern. You can specify a single path pattern.</p> <p>A path
+     * pattern is case sensitive, can be up to 255 characters in length, and can
+     * contain any of the following characters:</p> <ul> <li> <p>A-Z, a-z, 0-9</p>
+     * </li> <li> <p>_ - . $ / ~ " ' @ : +</p> </li> <li> <p>&amp; (using
+     * &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li>
+     * <p>? (matches exactly 1 character)</p> </li> </ul>
      */
     inline RuleCondition& WithValues(const Aws::Vector<Aws::String>& value) { SetValues(value); return *this;}
 
     /**
-     * <p>The values for the field.</p> <p>A path pattern is case sensitive, can be up
-     * to 255 characters in length, and can contain any of the following
-     * characters:</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ " ' @ :
-     * +</p> </li> <li> <p>&amp;amp; (using &amp;amp;amp;)</p> </li> <li> <p>* (matches
-     * 0 or more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p>
-     * </li> </ul>
+     * <p>The path pattern. You can specify a single path pattern.</p> <p>A path
+     * pattern is case sensitive, can be up to 255 characters in length, and can
+     * contain any of the following characters:</p> <ul> <li> <p>A-Z, a-z, 0-9</p>
+     * </li> <li> <p>_ - . $ / ~ " ' @ : +</p> </li> <li> <p>&amp; (using
+     * &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li>
+     * <p>? (matches exactly 1 character)</p> </li> </ul>
      */
     inline RuleCondition& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(value); return *this;}
 
     /**
-     * <p>The values for the field.</p> <p>A path pattern is case sensitive, can be up
-     * to 255 characters in length, and can contain any of the following
-     * characters:</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ " ' @ :
-     * +</p> </li> <li> <p>&amp;amp; (using &amp;amp;amp;)</p> </li> <li> <p>* (matches
-     * 0 or more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p>
-     * </li> </ul>
+     * <p>The path pattern. You can specify a single path pattern.</p> <p>A path
+     * pattern is case sensitive, can be up to 255 characters in length, and can
+     * contain any of the following characters:</p> <ul> <li> <p>A-Z, a-z, 0-9</p>
+     * </li> <li> <p>_ - . $ / ~ " ' @ : +</p> </li> <li> <p>&amp; (using
+     * &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li>
+     * <p>? (matches exactly 1 character)</p> </li> </ul>
      */
     inline RuleCondition& AddValues(const Aws::String& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
 
     /**
-     * <p>The values for the field.</p> <p>A path pattern is case sensitive, can be up
-     * to 255 characters in length, and can contain any of the following
-     * characters:</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ " ' @ :
-     * +</p> </li> <li> <p>&amp;amp; (using &amp;amp;amp;)</p> </li> <li> <p>* (matches
-     * 0 or more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p>
-     * </li> </ul>
+     * <p>The path pattern. You can specify a single path pattern.</p> <p>A path
+     * pattern is case sensitive, can be up to 255 characters in length, and can
+     * contain any of the following characters:</p> <ul> <li> <p>A-Z, a-z, 0-9</p>
+     * </li> <li> <p>_ - . $ / ~ " ' @ : +</p> </li> <li> <p>&amp; (using
+     * &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li>
+     * <p>? (matches exactly 1 character)</p> </li> </ul>
      */
     inline RuleCondition& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
 
     /**
-     * <p>The values for the field.</p> <p>A path pattern is case sensitive, can be up
-     * to 255 characters in length, and can contain any of the following
-     * characters:</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ " ' @ :
-     * +</p> </li> <li> <p>&amp;amp; (using &amp;amp;amp;)</p> </li> <li> <p>* (matches
-     * 0 or more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p>
-     * </li> </ul>
+     * <p>The path pattern. You can specify a single path pattern.</p> <p>A path
+     * pattern is case sensitive, can be up to 255 characters in length, and can
+     * contain any of the following characters:</p> <ul> <li> <p>A-Z, a-z, 0-9</p>
+     * </li> <li> <p>_ - . $ / ~ " ' @ : +</p> </li> <li> <p>&amp; (using
+     * &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li>
+     * <p>? (matches exactly 1 character)</p> </li> </ul>
      */
     inline RuleCondition& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
 

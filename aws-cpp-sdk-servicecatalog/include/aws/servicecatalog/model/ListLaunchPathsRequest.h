@@ -35,51 +35,51 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * <p>Optional language code. Supported language codes are as follows:</p> <p>"en"
-     * (English)</p> <p>"jp" (Japanese)</p> <p>"zh" (Chinese)</p> <p>If no code is
-     * specified, "en" is used as the default.</p>
+     * <p>The language code to use for this operation. Supported language codes are as
+     * follows:</p> <p>"en" (English)</p> <p>"jp" (Japanese)</p> <p>"zh" (Chinese)</p>
+     * <p>If no code is specified, "en" is used as the default.</p>
      */
     inline const Aws::String& GetAcceptLanguage() const{ return m_acceptLanguage; }
 
     /**
-     * <p>Optional language code. Supported language codes are as follows:</p> <p>"en"
-     * (English)</p> <p>"jp" (Japanese)</p> <p>"zh" (Chinese)</p> <p>If no code is
-     * specified, "en" is used as the default.</p>
+     * <p>The language code to use for this operation. Supported language codes are as
+     * follows:</p> <p>"en" (English)</p> <p>"jp" (Japanese)</p> <p>"zh" (Chinese)</p>
+     * <p>If no code is specified, "en" is used as the default.</p>
      */
     inline void SetAcceptLanguage(const Aws::String& value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage = value; }
 
     /**
-     * <p>Optional language code. Supported language codes are as follows:</p> <p>"en"
-     * (English)</p> <p>"jp" (Japanese)</p> <p>"zh" (Chinese)</p> <p>If no code is
-     * specified, "en" is used as the default.</p>
+     * <p>The language code to use for this operation. Supported language codes are as
+     * follows:</p> <p>"en" (English)</p> <p>"jp" (Japanese)</p> <p>"zh" (Chinese)</p>
+     * <p>If no code is specified, "en" is used as the default.</p>
      */
     inline void SetAcceptLanguage(Aws::String&& value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage = value; }
 
     /**
-     * <p>Optional language code. Supported language codes are as follows:</p> <p>"en"
-     * (English)</p> <p>"jp" (Japanese)</p> <p>"zh" (Chinese)</p> <p>If no code is
-     * specified, "en" is used as the default.</p>
+     * <p>The language code to use for this operation. Supported language codes are as
+     * follows:</p> <p>"en" (English)</p> <p>"jp" (Japanese)</p> <p>"zh" (Chinese)</p>
+     * <p>If no code is specified, "en" is used as the default.</p>
      */
     inline void SetAcceptLanguage(const char* value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage.assign(value); }
 
     /**
-     * <p>Optional language code. Supported language codes are as follows:</p> <p>"en"
-     * (English)</p> <p>"jp" (Japanese)</p> <p>"zh" (Chinese)</p> <p>If no code is
-     * specified, "en" is used as the default.</p>
+     * <p>The language code to use for this operation. Supported language codes are as
+     * follows:</p> <p>"en" (English)</p> <p>"jp" (Japanese)</p> <p>"zh" (Chinese)</p>
+     * <p>If no code is specified, "en" is used as the default.</p>
      */
     inline ListLaunchPathsRequest& WithAcceptLanguage(const Aws::String& value) { SetAcceptLanguage(value); return *this;}
 
     /**
-     * <p>Optional language code. Supported language codes are as follows:</p> <p>"en"
-     * (English)</p> <p>"jp" (Japanese)</p> <p>"zh" (Chinese)</p> <p>If no code is
-     * specified, "en" is used as the default.</p>
+     * <p>The language code to use for this operation. Supported language codes are as
+     * follows:</p> <p>"en" (English)</p> <p>"jp" (Japanese)</p> <p>"zh" (Chinese)</p>
+     * <p>If no code is specified, "en" is used as the default.</p>
      */
     inline ListLaunchPathsRequest& WithAcceptLanguage(Aws::String&& value) { SetAcceptLanguage(value); return *this;}
 
     /**
-     * <p>Optional language code. Supported language codes are as follows:</p> <p>"en"
-     * (English)</p> <p>"jp" (Japanese)</p> <p>"zh" (Chinese)</p> <p>If no code is
-     * specified, "en" is used as the default.</p>
+     * <p>The language code to use for this operation. Supported language codes are as
+     * follows:</p> <p>"en" (English)</p> <p>"jp" (Japanese)</p> <p>"zh" (Chinese)</p>
+     * <p>If no code is specified, "en" is used as the default.</p>
      */
     inline ListLaunchPathsRequest& WithAcceptLanguage(const char* value) { SetAcceptLanguage(value); return *this;}
 
@@ -147,43 +147,43 @@ namespace Model
     inline ListLaunchPathsRequest& WithPageSize(int value) { SetPageSize(value); return *this;}
 
     /**
-     * <p>The page token of the first page retrieve. If null, this retrieves the first
+     * <p>The page token of the first page retrieved. If null, this retrieves the first
      * page of size <code>PageSize</code>.</p>
      */
     inline const Aws::String& GetPageToken() const{ return m_pageToken; }
 
     /**
-     * <p>The page token of the first page retrieve. If null, this retrieves the first
+     * <p>The page token of the first page retrieved. If null, this retrieves the first
      * page of size <code>PageSize</code>.</p>
      */
     inline void SetPageToken(const Aws::String& value) { m_pageTokenHasBeenSet = true; m_pageToken = value; }
 
     /**
-     * <p>The page token of the first page retrieve. If null, this retrieves the first
+     * <p>The page token of the first page retrieved. If null, this retrieves the first
      * page of size <code>PageSize</code>.</p>
      */
     inline void SetPageToken(Aws::String&& value) { m_pageTokenHasBeenSet = true; m_pageToken = value; }
 
     /**
-     * <p>The page token of the first page retrieve. If null, this retrieves the first
+     * <p>The page token of the first page retrieved. If null, this retrieves the first
      * page of size <code>PageSize</code>.</p>
      */
     inline void SetPageToken(const char* value) { m_pageTokenHasBeenSet = true; m_pageToken.assign(value); }
 
     /**
-     * <p>The page token of the first page retrieve. If null, this retrieves the first
+     * <p>The page token of the first page retrieved. If null, this retrieves the first
      * page of size <code>PageSize</code>.</p>
      */
     inline ListLaunchPathsRequest& WithPageToken(const Aws::String& value) { SetPageToken(value); return *this;}
 
     /**
-     * <p>The page token of the first page retrieve. If null, this retrieves the first
+     * <p>The page token of the first page retrieved. If null, this retrieves the first
      * page of size <code>PageSize</code>.</p>
      */
     inline ListLaunchPathsRequest& WithPageToken(Aws::String&& value) { SetPageToken(value); return *this;}
 
     /**
-     * <p>The page token of the first page retrieve. If null, this retrieves the first
+     * <p>The page token of the first page retrieved. If null, this retrieves the first
      * page of size <code>PageSize</code>.</p>
      */
     inline ListLaunchPathsRequest& WithPageToken(const char* value) { SetPageToken(value); return *this;}

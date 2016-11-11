@@ -33,7 +33,12 @@ namespace CloudFormation
     inline Aws::Http::HeaderValueCollection GetHeaders() const override
     {
       auto headers = GetRequestSpecificHeaders();
-      headers.insert(Aws::Http::HeaderValuePair(Aws::Http::CONTENT_TYPE_HEADER, FORM_CONTENT_TYPE ));
+
+      if(headers.size() == 0 || (headers.size() > 0 && headers.count(Aws::Http::CONTENT_TYPE_HEADER) == 0))
+      {
+        headers.insert(Aws::Http::HeaderValuePair(Aws::Http::CONTENT_TYPE_HEADER, FORM_CONTENT_TYPE ));
+      }
+
       return headers;
     }
 

@@ -41,25 +41,39 @@ namespace Model
     DescribeDestinationsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     DescribeDestinationsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    
+    /**
+     * <p>The destinations.</p>
+     */
     inline const Aws::Vector<Destination>& GetDestinations() const{ return m_destinations; }
 
-    
+    /**
+     * <p>The destinations.</p>
+     */
     inline void SetDestinations(const Aws::Vector<Destination>& value) { m_destinations = value; }
 
-    
+    /**
+     * <p>The destinations.</p>
+     */
     inline void SetDestinations(Aws::Vector<Destination>&& value) { m_destinations = value; }
 
-    
+    /**
+     * <p>The destinations.</p>
+     */
     inline DescribeDestinationsResult& WithDestinations(const Aws::Vector<Destination>& value) { SetDestinations(value); return *this;}
 
-    
+    /**
+     * <p>The destinations.</p>
+     */
     inline DescribeDestinationsResult& WithDestinations(Aws::Vector<Destination>&& value) { SetDestinations(value); return *this;}
 
-    
+    /**
+     * <p>The destinations.</p>
+     */
     inline DescribeDestinationsResult& AddDestinations(const Destination& value) { m_destinations.push_back(value); return *this; }
 
-    
+    /**
+     * <p>The destinations.</p>
+     */
     inline DescribeDestinationsResult& AddDestinations(Destination&& value) { m_destinations.push_back(value); return *this; }
 
     

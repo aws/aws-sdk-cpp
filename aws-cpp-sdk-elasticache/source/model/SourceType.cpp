@@ -33,6 +33,7 @@ namespace Aws
         static const int cache_parameter_group_HASH = HashingUtils::HashString("cache-parameter-group");
         static const int cache_security_group_HASH = HashingUtils::HashString("cache-security-group");
         static const int cache_subnet_group_HASH = HashingUtils::HashString("cache-subnet-group");
+        static const int replication_group_HASH = HashingUtils::HashString("replication-group");
 
 
         SourceType GetSourceTypeForName(const Aws::String& name)
@@ -53,6 +54,10 @@ namespace Aws
           else if (hashCode == cache_subnet_group_HASH)
           {
             return SourceType::cache_subnet_group;
+          }
+          else if (hashCode == replication_group_HASH)
+          {
+            return SourceType::replication_group;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -76,6 +81,8 @@ namespace Aws
             return "cache-security-group";
           case SourceType::cache_subnet_group:
             return "cache-subnet-group";
+          case SourceType::replication_group:
+            return "replication-group";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

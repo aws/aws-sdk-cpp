@@ -31,12 +31,14 @@ namespace Model
 
 MovingAddressStatus::MovingAddressStatus() : 
     m_publicIpHasBeenSet(false),
+    m_moveStatus(MoveStatus::NOT_SET),
     m_moveStatusHasBeenSet(false)
 {
 }
 
 MovingAddressStatus::MovingAddressStatus(const XmlNode& xmlNode) : 
     m_publicIpHasBeenSet(false),
+    m_moveStatus(MoveStatus::NOT_SET),
     m_moveStatusHasBeenSet(false)
 {
   *this = xmlNode;

@@ -33,7 +33,7 @@ namespace Model
 {
 
   /**
-   * <p>The status of the cache parameter group.</p>
+   * <p>Status of the cache parameter group.</p>
    */
   class AWS_ELASTICACHE_API CacheParameterGroupStatus
   {

@@ -30,6 +30,7 @@ namespace Aws
       {
 
         static const int ADMIN_NO_SRP_AUTH_HASH = HashingUtils::HashString("ADMIN_NO_SRP_AUTH");
+        static const int CUSTOM_AUTH_FLOW_ONLY_HASH = HashingUtils::HashString("CUSTOM_AUTH_FLOW_ONLY");
 
 
         ExplicitAuthFlowsType GetExplicitAuthFlowsTypeForName(const Aws::String& name)
@@ -38,6 +39,10 @@ namespace Aws
           if (hashCode == ADMIN_NO_SRP_AUTH_HASH)
           {
             return ExplicitAuthFlowsType::ADMIN_NO_SRP_AUTH;
+          }
+          else if (hashCode == CUSTOM_AUTH_FLOW_ONLY_HASH)
+          {
+            return ExplicitAuthFlowsType::CUSTOM_AUTH_FLOW_ONLY;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -55,6 +60,8 @@ namespace Aws
           {
           case ExplicitAuthFlowsType::ADMIN_NO_SRP_AUTH:
             return "ADMIN_NO_SRP_AUTH";
+          case ExplicitAuthFlowsType::CUSTOM_AUTH_FLOW_ONLY:
+            return "CUSTOM_AUTH_FLOW_ONLY";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

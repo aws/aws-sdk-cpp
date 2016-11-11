@@ -25,6 +25,7 @@ namespace Model
 {
 
   /**
+   * <p/>
    */
   class AWS_SUPPORT_API RefreshTrustedAdvisorCheckRequest : public SupportRequest
   {
@@ -35,37 +36,51 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * <p>The unique identifier for the Trusted Advisor check.</p>
+     * <p>The unique identifier for the Trusted Advisor check to refresh. <b>Note:</b>
+     * Specifying the check ID of a check that is automatically refreshed causes an
+     * <code>InvalidParameterValue</code> error.</p>
      */
     inline const Aws::String& GetCheckId() const{ return m_checkId; }
 
     /**
-     * <p>The unique identifier for the Trusted Advisor check.</p>
+     * <p>The unique identifier for the Trusted Advisor check to refresh. <b>Note:</b>
+     * Specifying the check ID of a check that is automatically refreshed causes an
+     * <code>InvalidParameterValue</code> error.</p>
      */
     inline void SetCheckId(const Aws::String& value) { m_checkIdHasBeenSet = true; m_checkId = value; }
 
     /**
-     * <p>The unique identifier for the Trusted Advisor check.</p>
+     * <p>The unique identifier for the Trusted Advisor check to refresh. <b>Note:</b>
+     * Specifying the check ID of a check that is automatically refreshed causes an
+     * <code>InvalidParameterValue</code> error.</p>
      */
     inline void SetCheckId(Aws::String&& value) { m_checkIdHasBeenSet = true; m_checkId = value; }
 
     /**
-     * <p>The unique identifier for the Trusted Advisor check.</p>
+     * <p>The unique identifier for the Trusted Advisor check to refresh. <b>Note:</b>
+     * Specifying the check ID of a check that is automatically refreshed causes an
+     * <code>InvalidParameterValue</code> error.</p>
      */
     inline void SetCheckId(const char* value) { m_checkIdHasBeenSet = true; m_checkId.assign(value); }
 
     /**
-     * <p>The unique identifier for the Trusted Advisor check.</p>
+     * <p>The unique identifier for the Trusted Advisor check to refresh. <b>Note:</b>
+     * Specifying the check ID of a check that is automatically refreshed causes an
+     * <code>InvalidParameterValue</code> error.</p>
      */
     inline RefreshTrustedAdvisorCheckRequest& WithCheckId(const Aws::String& value) { SetCheckId(value); return *this;}
 
     /**
-     * <p>The unique identifier for the Trusted Advisor check.</p>
+     * <p>The unique identifier for the Trusted Advisor check to refresh. <b>Note:</b>
+     * Specifying the check ID of a check that is automatically refreshed causes an
+     * <code>InvalidParameterValue</code> error.</p>
      */
     inline RefreshTrustedAdvisorCheckRequest& WithCheckId(Aws::String&& value) { SetCheckId(value); return *this;}
 
     /**
-     * <p>The unique identifier for the Trusted Advisor check.</p>
+     * <p>The unique identifier for the Trusted Advisor check to refresh. <b>Note:</b>
+     * Specifying the check ID of a check that is automatically refreshed causes an
+     * <code>InvalidParameterValue</code> error.</p>
      */
     inline RefreshTrustedAdvisorCheckRequest& WithCheckId(const char* value) { SetCheckId(value); return *this;}
 

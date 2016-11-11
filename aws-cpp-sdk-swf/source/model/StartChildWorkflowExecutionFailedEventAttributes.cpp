@@ -29,6 +29,7 @@ namespace Model
 
 StartChildWorkflowExecutionFailedEventAttributes::StartChildWorkflowExecutionFailedEventAttributes() : 
     m_workflowTypeHasBeenSet(false),
+    m_cause(StartChildWorkflowExecutionFailedCause::NOT_SET),
     m_causeHasBeenSet(false),
     m_workflowIdHasBeenSet(false),
     m_initiatedEventId(0),
@@ -41,6 +42,7 @@ StartChildWorkflowExecutionFailedEventAttributes::StartChildWorkflowExecutionFai
 
 StartChildWorkflowExecutionFailedEventAttributes::StartChildWorkflowExecutionFailedEventAttributes(const JsonValue& jsonValue) : 
     m_workflowTypeHasBeenSet(false),
+    m_cause(StartChildWorkflowExecutionFailedCause::NOT_SET),
     m_causeHasBeenSet(false),
     m_workflowIdHasBeenSet(false),
     m_initiatedEventId(0),

@@ -25,8 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input of an <i>AuthorizeCacheSecurityGroupIngress</i>
-   * action.</p>
+   * <p>Represents the input of an AuthorizeCacheSecurityGroupIngress operation.</p>
    */
   class AWS_ELASTICACHE_API AuthorizeCacheSecurityGroupIngressRequest : public ElastiCacheRequest
   {
@@ -35,37 +34,37 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     /**
-     * <p>The cache security group which will allow network ingress.</p>
+     * <p>The cache security group that allows network ingress.</p>
      */
     inline const Aws::String& GetCacheSecurityGroupName() const{ return m_cacheSecurityGroupName; }
 
     /**
-     * <p>The cache security group which will allow network ingress.</p>
+     * <p>The cache security group that allows network ingress.</p>
      */
     inline void SetCacheSecurityGroupName(const Aws::String& value) { m_cacheSecurityGroupNameHasBeenSet = true; m_cacheSecurityGroupName = value; }
 
     /**
-     * <p>The cache security group which will allow network ingress.</p>
+     * <p>The cache security group that allows network ingress.</p>
      */
     inline void SetCacheSecurityGroupName(Aws::String&& value) { m_cacheSecurityGroupNameHasBeenSet = true; m_cacheSecurityGroupName = value; }
 
     /**
-     * <p>The cache security group which will allow network ingress.</p>
+     * <p>The cache security group that allows network ingress.</p>
      */
     inline void SetCacheSecurityGroupName(const char* value) { m_cacheSecurityGroupNameHasBeenSet = true; m_cacheSecurityGroupName.assign(value); }
 
     /**
-     * <p>The cache security group which will allow network ingress.</p>
+     * <p>The cache security group that allows network ingress.</p>
      */
     inline AuthorizeCacheSecurityGroupIngressRequest& WithCacheSecurityGroupName(const Aws::String& value) { SetCacheSecurityGroupName(value); return *this;}
 
     /**
-     * <p>The cache security group which will allow network ingress.</p>
+     * <p>The cache security group that allows network ingress.</p>
      */
     inline AuthorizeCacheSecurityGroupIngressRequest& WithCacheSecurityGroupName(Aws::String&& value) { SetCacheSecurityGroupName(value); return *this;}
 
     /**
-     * <p>The cache security group which will allow network ingress.</p>
+     * <p>The cache security group that allows network ingress.</p>
      */
     inline AuthorizeCacheSecurityGroupIngressRequest& WithCacheSecurityGroupName(const char* value) { SetCacheSecurityGroupName(value); return *this;}
 

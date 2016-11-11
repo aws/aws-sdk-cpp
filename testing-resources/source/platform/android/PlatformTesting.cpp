@@ -13,6 +13,8 @@
   * permissions and limitations under the License.
   */
 
+#include <aws/core/Aws.h>
+
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <regex>
@@ -33,4 +35,21 @@ int UnSetEnv(const char* name)
 }
 
 } // namespace Environment
+
+namespace Testing
+{
+    void InitPlatformTest(Aws::SDKOptions& sdkOptions)
+    {
+        AWS_UNREFERENCED_PARAM(sdkOptions);
+    }
+
+    void ShutdownPlatformTest(Aws::SDKOptions& sdkOptions)
+    {
+        AWS_UNREFERENCED_PARAM(sdkOptions);
+    }
+    const char* GetDefaultWriteFolder()
+    {
+        return "";
+    }
+} // namespace Testing
 } // namespace Aws

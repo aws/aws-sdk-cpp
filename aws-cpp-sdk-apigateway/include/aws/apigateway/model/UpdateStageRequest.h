@@ -114,44 +114,44 @@ namespace Model
     inline UpdateStageRequest& WithStageName(const char* value) { SetStageName(value); return *this;}
 
     /**
-     * <p>A list of operations describing the updates to apply to the specified
-     * resource. The patches are applied in the order specified in the list.</p>
+     * <p>A list of update operations to be applied to the specified resource and in
+     * the order specified in this list.</p>
      */
     inline const Aws::Vector<PatchOperation>& GetPatchOperations() const{ return m_patchOperations; }
 
     /**
-     * <p>A list of operations describing the updates to apply to the specified
-     * resource. The patches are applied in the order specified in the list.</p>
+     * <p>A list of update operations to be applied to the specified resource and in
+     * the order specified in this list.</p>
      */
     inline void SetPatchOperations(const Aws::Vector<PatchOperation>& value) { m_patchOperationsHasBeenSet = true; m_patchOperations = value; }
 
     /**
-     * <p>A list of operations describing the updates to apply to the specified
-     * resource. The patches are applied in the order specified in the list.</p>
+     * <p>A list of update operations to be applied to the specified resource and in
+     * the order specified in this list.</p>
      */
     inline void SetPatchOperations(Aws::Vector<PatchOperation>&& value) { m_patchOperationsHasBeenSet = true; m_patchOperations = value; }
 
     /**
-     * <p>A list of operations describing the updates to apply to the specified
-     * resource. The patches are applied in the order specified in the list.</p>
+     * <p>A list of update operations to be applied to the specified resource and in
+     * the order specified in this list.</p>
      */
     inline UpdateStageRequest& WithPatchOperations(const Aws::Vector<PatchOperation>& value) { SetPatchOperations(value); return *this;}
 
     /**
-     * <p>A list of operations describing the updates to apply to the specified
-     * resource. The patches are applied in the order specified in the list.</p>
+     * <p>A list of update operations to be applied to the specified resource and in
+     * the order specified in this list.</p>
      */
     inline UpdateStageRequest& WithPatchOperations(Aws::Vector<PatchOperation>&& value) { SetPatchOperations(value); return *this;}
 
     /**
-     * <p>A list of operations describing the updates to apply to the specified
-     * resource. The patches are applied in the order specified in the list.</p>
+     * <p>A list of update operations to be applied to the specified resource and in
+     * the order specified in this list.</p>
      */
     inline UpdateStageRequest& AddPatchOperations(const PatchOperation& value) { m_patchOperationsHasBeenSet = true; m_patchOperations.push_back(value); return *this; }
 
     /**
-     * <p>A list of operations describing the updates to apply to the specified
-     * resource. The patches are applied in the order specified in the list.</p>
+     * <p>A list of update operations to be applied to the specified resource and in
+     * the order specified in this list.</p>
      */
     inline UpdateStageRequest& AddPatchOperations(PatchOperation&& value) { m_patchOperationsHasBeenSet = true; m_patchOperations.push_back(value); return *this; }
 

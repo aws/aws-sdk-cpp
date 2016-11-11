@@ -76,43 +76,43 @@ namespace Model
 
     /**
      * <p>If not all <a>Authorizer</a> resources in the response were present, the
-     * position will specificy where to start the next page of results.</p>
+     * position will specify where to start the next page of results.</p>
      */
     inline const Aws::String& GetPosition() const{ return m_position; }
 
     /**
      * <p>If not all <a>Authorizer</a> resources in the response were present, the
-     * position will specificy where to start the next page of results.</p>
+     * position will specify where to start the next page of results.</p>
      */
     inline void SetPosition(const Aws::String& value) { m_positionHasBeenSet = true; m_position = value; }
 
     /**
      * <p>If not all <a>Authorizer</a> resources in the response were present, the
-     * position will specificy where to start the next page of results.</p>
+     * position will specify where to start the next page of results.</p>
      */
     inline void SetPosition(Aws::String&& value) { m_positionHasBeenSet = true; m_position = value; }
 
     /**
      * <p>If not all <a>Authorizer</a> resources in the response were present, the
-     * position will specificy where to start the next page of results.</p>
+     * position will specify where to start the next page of results.</p>
      */
     inline void SetPosition(const char* value) { m_positionHasBeenSet = true; m_position.assign(value); }
 
     /**
      * <p>If not all <a>Authorizer</a> resources in the response were present, the
-     * position will specificy where to start the next page of results.</p>
+     * position will specify where to start the next page of results.</p>
      */
     inline GetAuthorizersRequest& WithPosition(const Aws::String& value) { SetPosition(value); return *this;}
 
     /**
      * <p>If not all <a>Authorizer</a> resources in the response were present, the
-     * position will specificy where to start the next page of results.</p>
+     * position will specify where to start the next page of results.</p>
      */
     inline GetAuthorizersRequest& WithPosition(Aws::String&& value) { SetPosition(value); return *this;}
 
     /**
      * <p>If not all <a>Authorizer</a> resources in the response were present, the
-     * position will specificy where to start the next page of results.</p>
+     * position will specify where to start the next page of results.</p>
      */
     inline GetAuthorizersRequest& WithPosition(const char* value) { SetPosition(value); return *this;}
 

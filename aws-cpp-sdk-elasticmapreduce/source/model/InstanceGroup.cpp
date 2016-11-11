@@ -30,7 +30,9 @@ namespace Model
 InstanceGroup::InstanceGroup() : 
     m_idHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_market(MarketType::NOT_SET),
     m_marketHasBeenSet(false),
+    m_instanceGroupType(InstanceGroupType::NOT_SET),
     m_instanceGroupTypeHasBeenSet(false),
     m_bidPriceHasBeenSet(false),
     m_instanceTypeHasBeenSet(false),
@@ -50,7 +52,9 @@ InstanceGroup::InstanceGroup() :
 InstanceGroup::InstanceGroup(const JsonValue& jsonValue) : 
     m_idHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_market(MarketType::NOT_SET),
     m_marketHasBeenSet(false),
+    m_instanceGroupType(InstanceGroupType::NOT_SET),
     m_instanceGroupTypeHasBeenSet(false),
     m_bidPriceHasBeenSet(false),
     m_instanceTypeHasBeenSet(false),

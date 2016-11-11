@@ -12,6 +12,8 @@
   * express or implied. See the License for the specific language governing
   * permissions and limitations under the License.
   */
+
+
 #include <aws/external/gtest.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/client/ClientConfiguration.h>
@@ -162,7 +164,7 @@ protected:
         config.readRateLimiter = m_limiter;
         config.writeRateLimiter = m_limiter;
         config.httpLibOverride = transferType;
-        config.executor = Aws::MakeShared<Aws::Utils::Threading::PooledThreadExecutor>(ALLOCATION_TAG, 25);
+        config.executor = Aws::MakeShared<Aws::Utils::Threading::PooledThreadExecutor>(ALLOCATION_TAG, 4);
 
         //to test proxy functionality, uncomment the next two lines.
         //config.proxyHost = "localhost";

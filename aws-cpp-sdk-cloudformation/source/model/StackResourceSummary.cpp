@@ -34,6 +34,7 @@ StackResourceSummary::StackResourceSummary() :
     m_physicalResourceIdHasBeenSet(false),
     m_resourceTypeHasBeenSet(false),
     m_lastUpdatedTimestampHasBeenSet(false),
+    m_resourceStatus(ResourceStatus::NOT_SET),
     m_resourceStatusHasBeenSet(false),
     m_resourceStatusReasonHasBeenSet(false)
 {
@@ -44,6 +45,7 @@ StackResourceSummary::StackResourceSummary(const XmlNode& xmlNode) :
     m_physicalResourceIdHasBeenSet(false),
     m_resourceTypeHasBeenSet(false),
     m_lastUpdatedTimestampHasBeenSet(false),
+    m_resourceStatus(ResourceStatus::NOT_SET),
     m_resourceStatusHasBeenSet(false),
     m_resourceStatusReasonHasBeenSet(false)
 {

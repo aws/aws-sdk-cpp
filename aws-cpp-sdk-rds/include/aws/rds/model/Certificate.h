@@ -200,6 +200,41 @@ namespace Model
      */
     inline Certificate& WithValidTill(Aws::Utils::DateTime&& value) { SetValidTill(value); return *this;}
 
+    /**
+     * <p>The Amazon Resource Name (ARN) for the certificate.</p>
+     */
+    inline const Aws::String& GetCertificateArn() const{ return m_certificateArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the certificate.</p>
+     */
+    inline void SetCertificateArn(const Aws::String& value) { m_certificateArnHasBeenSet = true; m_certificateArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the certificate.</p>
+     */
+    inline void SetCertificateArn(Aws::String&& value) { m_certificateArnHasBeenSet = true; m_certificateArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the certificate.</p>
+     */
+    inline void SetCertificateArn(const char* value) { m_certificateArnHasBeenSet = true; m_certificateArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the certificate.</p>
+     */
+    inline Certificate& WithCertificateArn(const Aws::String& value) { SetCertificateArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the certificate.</p>
+     */
+    inline Certificate& WithCertificateArn(Aws::String&& value) { SetCertificateArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the certificate.</p>
+     */
+    inline Certificate& WithCertificateArn(const char* value) { SetCertificateArn(value); return *this;}
+
   private:
     Aws::String m_certificateIdentifier;
     bool m_certificateIdentifierHasBeenSet;
@@ -211,6 +246,8 @@ namespace Model
     bool m_validFromHasBeenSet;
     Aws::Utils::DateTime m_validTill;
     bool m_validTillHasBeenSet;
+    Aws::String m_certificateArn;
+    bool m_certificateArnHasBeenSet;
   };
 
 } // namespace Model

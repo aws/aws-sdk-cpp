@@ -599,6 +599,41 @@ namespace Model
      */
     inline Cluster& AddConfigurations(Configuration&& value) { m_configurationsHasBeenSet = true; m_configurations.push_back(value); return *this; }
 
+    /**
+     * <p>The name of the security configuration applied to the cluster.</p>
+     */
+    inline const Aws::String& GetSecurityConfiguration() const{ return m_securityConfiguration; }
+
+    /**
+     * <p>The name of the security configuration applied to the cluster.</p>
+     */
+    inline void SetSecurityConfiguration(const Aws::String& value) { m_securityConfigurationHasBeenSet = true; m_securityConfiguration = value; }
+
+    /**
+     * <p>The name of the security configuration applied to the cluster.</p>
+     */
+    inline void SetSecurityConfiguration(Aws::String&& value) { m_securityConfigurationHasBeenSet = true; m_securityConfiguration = value; }
+
+    /**
+     * <p>The name of the security configuration applied to the cluster.</p>
+     */
+    inline void SetSecurityConfiguration(const char* value) { m_securityConfigurationHasBeenSet = true; m_securityConfiguration.assign(value); }
+
+    /**
+     * <p>The name of the security configuration applied to the cluster.</p>
+     */
+    inline Cluster& WithSecurityConfiguration(const Aws::String& value) { SetSecurityConfiguration(value); return *this;}
+
+    /**
+     * <p>The name of the security configuration applied to the cluster.</p>
+     */
+    inline Cluster& WithSecurityConfiguration(Aws::String&& value) { SetSecurityConfiguration(value); return *this;}
+
+    /**
+     * <p>The name of the security configuration applied to the cluster.</p>
+     */
+    inline Cluster& WithSecurityConfiguration(const char* value) { SetSecurityConfiguration(value); return *this;}
+
   private:
     Aws::String m_id;
     bool m_idHasBeenSet;
@@ -634,6 +669,8 @@ namespace Model
     bool m_masterPublicDnsNameHasBeenSet;
     Aws::Vector<Configuration> m_configurations;
     bool m_configurationsHasBeenSet;
+    Aws::String m_securityConfiguration;
+    bool m_securityConfigurationHasBeenSet;
   };
 
 } // namespace Model

@@ -35,15 +35,16 @@ namespace Model
 {
 
   /**
-   * <p>An AWS Lambda function that evaluates configuration items to assess whether
-   * your AWS resources comply with your desired configurations. This function can
-   * run when AWS Config detects a configuration change to an AWS resource and at a
-   * periodic frequency that you choose (for example, every 24 hours).</p> <note>
-   * <p>You can use the AWS CLI and AWS SDKs if you want to create a rule that
-   * triggers evaluations for your resources when AWS Config delivers the
-   * configuration snapshot. For more information, see
-   * <a>ConfigSnapshotDeliveryProperties</a>.</p> </note> <p>For more information
-   * about developing and using AWS Config rules, see <a
+   * <p>An AWS Config rule represents an AWS Lambda function that you create for a
+   * custom rule or a predefined function for an AWS managed rule. The function
+   * evaluates configuration items to assess whether your AWS resources comply with
+   * your desired configurations. This function can run when AWS Config detects a
+   * configuration change to an AWS resource and at a periodic frequency that you
+   * choose (for example, every 24 hours).</p> <note> <p>You can use the AWS CLI and
+   * AWS SDKs if you want to create a rule that triggers evaluations for your
+   * resources when AWS Config delivers the configuration snapshot. For more
+   * information, see <a>ConfigSnapshotDeliveryProperties</a>.</p> </note> <p>For
+   * more information about developing and using AWS Config rules, see <a
    * href="http://docs.aws.amazon.com/config/latest/developerguide/evaluate-config.html">Evaluating
    * AWS Resource Configurations with AWS Config</a> in the <i>AWS Config Developer
    * Guide</i>.</p>
@@ -326,82 +327,52 @@ namespace Model
     inline ConfigRule& WithInputParameters(const char* value) { SetInputParameters(value); return *this;}
 
     /**
-     * <p>If you want to create a rule that evaluates at a frequency that is
-     * independent of the configuration snapshot delivery, use the
-     * <code>MaximumExecutionFrequency</code> parameter in the <a>SourceDetail</a>
-     * object.</p> <note> <p>If you want to create a rule that triggers evaluations for
-     * your resources when AWS Config delivers the configuration snapshot, see the
-     * following:</p> </note> <p>A rule that runs an evaluation when AWS Config
-     * delivers a configuration snapshot cannot run evaluations more frequently than
-     * AWS Config delivers the snapshots. Set the value of the
-     * <code>MaximumExecutionFrequency</code> to be equal to or greater than the value
-     * of the <code>deliveryFrequency</code> key, which is part of
-     * <code>ConfigSnapshotDeliveryProperties</code>.</p> <p>For more information, see
-     * <a>ConfigSnapshotDeliveryProperties</a>.</p>
+     * <p>The maximum frequency with which AWS Config runs evaluations for a rule. You
+     * can specify a value for <code>MaximumExecutionFrequency</code> when:</p> <ul>
+     * <li> <p>You are using an AWS managed rule that is triggered at a periodic
+     * frequency.</p> </li> <li> <p>Your custom rule is triggered when AWS Config
+     * delivers the configuration snapshot.</p> </li> </ul> <p>For more information,
+     * see <a>ConfigSnapshotDeliveryProperties</a>.</p>
      */
     inline const MaximumExecutionFrequency& GetMaximumExecutionFrequency() const{ return m_maximumExecutionFrequency; }
 
     /**
-     * <p>If you want to create a rule that evaluates at a frequency that is
-     * independent of the configuration snapshot delivery, use the
-     * <code>MaximumExecutionFrequency</code> parameter in the <a>SourceDetail</a>
-     * object.</p> <note> <p>If you want to create a rule that triggers evaluations for
-     * your resources when AWS Config delivers the configuration snapshot, see the
-     * following:</p> </note> <p>A rule that runs an evaluation when AWS Config
-     * delivers a configuration snapshot cannot run evaluations more frequently than
-     * AWS Config delivers the snapshots. Set the value of the
-     * <code>MaximumExecutionFrequency</code> to be equal to or greater than the value
-     * of the <code>deliveryFrequency</code> key, which is part of
-     * <code>ConfigSnapshotDeliveryProperties</code>.</p> <p>For more information, see
-     * <a>ConfigSnapshotDeliveryProperties</a>.</p>
+     * <p>The maximum frequency with which AWS Config runs evaluations for a rule. You
+     * can specify a value for <code>MaximumExecutionFrequency</code> when:</p> <ul>
+     * <li> <p>You are using an AWS managed rule that is triggered at a periodic
+     * frequency.</p> </li> <li> <p>Your custom rule is triggered when AWS Config
+     * delivers the configuration snapshot.</p> </li> </ul> <p>For more information,
+     * see <a>ConfigSnapshotDeliveryProperties</a>.</p>
      */
     inline void SetMaximumExecutionFrequency(const MaximumExecutionFrequency& value) { m_maximumExecutionFrequencyHasBeenSet = true; m_maximumExecutionFrequency = value; }
 
     /**
-     * <p>If you want to create a rule that evaluates at a frequency that is
-     * independent of the configuration snapshot delivery, use the
-     * <code>MaximumExecutionFrequency</code> parameter in the <a>SourceDetail</a>
-     * object.</p> <note> <p>If you want to create a rule that triggers evaluations for
-     * your resources when AWS Config delivers the configuration snapshot, see the
-     * following:</p> </note> <p>A rule that runs an evaluation when AWS Config
-     * delivers a configuration snapshot cannot run evaluations more frequently than
-     * AWS Config delivers the snapshots. Set the value of the
-     * <code>MaximumExecutionFrequency</code> to be equal to or greater than the value
-     * of the <code>deliveryFrequency</code> key, which is part of
-     * <code>ConfigSnapshotDeliveryProperties</code>.</p> <p>For more information, see
-     * <a>ConfigSnapshotDeliveryProperties</a>.</p>
+     * <p>The maximum frequency with which AWS Config runs evaluations for a rule. You
+     * can specify a value for <code>MaximumExecutionFrequency</code> when:</p> <ul>
+     * <li> <p>You are using an AWS managed rule that is triggered at a periodic
+     * frequency.</p> </li> <li> <p>Your custom rule is triggered when AWS Config
+     * delivers the configuration snapshot.</p> </li> </ul> <p>For more information,
+     * see <a>ConfigSnapshotDeliveryProperties</a>.</p>
      */
     inline void SetMaximumExecutionFrequency(MaximumExecutionFrequency&& value) { m_maximumExecutionFrequencyHasBeenSet = true; m_maximumExecutionFrequency = value; }
 
     /**
-     * <p>If you want to create a rule that evaluates at a frequency that is
-     * independent of the configuration snapshot delivery, use the
-     * <code>MaximumExecutionFrequency</code> parameter in the <a>SourceDetail</a>
-     * object.</p> <note> <p>If you want to create a rule that triggers evaluations for
-     * your resources when AWS Config delivers the configuration snapshot, see the
-     * following:</p> </note> <p>A rule that runs an evaluation when AWS Config
-     * delivers a configuration snapshot cannot run evaluations more frequently than
-     * AWS Config delivers the snapshots. Set the value of the
-     * <code>MaximumExecutionFrequency</code> to be equal to or greater than the value
-     * of the <code>deliveryFrequency</code> key, which is part of
-     * <code>ConfigSnapshotDeliveryProperties</code>.</p> <p>For more information, see
-     * <a>ConfigSnapshotDeliveryProperties</a>.</p>
+     * <p>The maximum frequency with which AWS Config runs evaluations for a rule. You
+     * can specify a value for <code>MaximumExecutionFrequency</code> when:</p> <ul>
+     * <li> <p>You are using an AWS managed rule that is triggered at a periodic
+     * frequency.</p> </li> <li> <p>Your custom rule is triggered when AWS Config
+     * delivers the configuration snapshot.</p> </li> </ul> <p>For more information,
+     * see <a>ConfigSnapshotDeliveryProperties</a>.</p>
      */
     inline ConfigRule& WithMaximumExecutionFrequency(const MaximumExecutionFrequency& value) { SetMaximumExecutionFrequency(value); return *this;}
 
     /**
-     * <p>If you want to create a rule that evaluates at a frequency that is
-     * independent of the configuration snapshot delivery, use the
-     * <code>MaximumExecutionFrequency</code> parameter in the <a>SourceDetail</a>
-     * object.</p> <note> <p>If you want to create a rule that triggers evaluations for
-     * your resources when AWS Config delivers the configuration snapshot, see the
-     * following:</p> </note> <p>A rule that runs an evaluation when AWS Config
-     * delivers a configuration snapshot cannot run evaluations more frequently than
-     * AWS Config delivers the snapshots. Set the value of the
-     * <code>MaximumExecutionFrequency</code> to be equal to or greater than the value
-     * of the <code>deliveryFrequency</code> key, which is part of
-     * <code>ConfigSnapshotDeliveryProperties</code>.</p> <p>For more information, see
-     * <a>ConfigSnapshotDeliveryProperties</a>.</p>
+     * <p>The maximum frequency with which AWS Config runs evaluations for a rule. You
+     * can specify a value for <code>MaximumExecutionFrequency</code> when:</p> <ul>
+     * <li> <p>You are using an AWS managed rule that is triggered at a periodic
+     * frequency.</p> </li> <li> <p>Your custom rule is triggered when AWS Config
+     * delivers the configuration snapshot.</p> </li> </ul> <p>For more information,
+     * see <a>ConfigSnapshotDeliveryProperties</a>.</p>
      */
     inline ConfigRule& WithMaximumExecutionFrequency(MaximumExecutionFrequency&& value) { SetMaximumExecutionFrequency(value); return *this;}
 

@@ -28,12 +28,14 @@ namespace Model
 {
 
 FieldToMatch::FieldToMatch() : 
+    m_type(MatchFieldType::NOT_SET),
     m_typeHasBeenSet(false),
     m_dataHasBeenSet(false)
 {
 }
 
 FieldToMatch::FieldToMatch(const JsonValue& jsonValue) : 
+    m_type(MatchFieldType::NOT_SET),
     m_typeHasBeenSet(false),
     m_dataHasBeenSet(false)
 {

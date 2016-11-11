@@ -36,7 +36,7 @@ namespace Redshift
 namespace Model
 {
   /**
-   * <p> </p>
+   * <p/>
    */
   class AWS_REDSHIFT_API DescribeReservedNodeOfferingsResult
   {
@@ -46,7 +46,7 @@ namespace Model
     DescribeReservedNodeOfferingsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
     /**
-     * <p> A value that indicates the starting point for the next set of response
+     * <p>A value that indicates the starting point for the next set of response
      * records in a subsequent request. If a value is returned in a response, you can
      * retrieve the next set of records by providing this returned marker value in the
      * <code>Marker</code> parameter and retrying the command. If the
@@ -56,7 +56,7 @@ namespace Model
     inline const Aws::String& GetMarker() const{ return m_marker; }
 
     /**
-     * <p> A value that indicates the starting point for the next set of response
+     * <p>A value that indicates the starting point for the next set of response
      * records in a subsequent request. If a value is returned in a response, you can
      * retrieve the next set of records by providing this returned marker value in the
      * <code>Marker</code> parameter and retrying the command. If the
@@ -66,7 +66,7 @@ namespace Model
     inline void SetMarker(const Aws::String& value) { m_marker = value; }
 
     /**
-     * <p> A value that indicates the starting point for the next set of response
+     * <p>A value that indicates the starting point for the next set of response
      * records in a subsequent request. If a value is returned in a response, you can
      * retrieve the next set of records by providing this returned marker value in the
      * <code>Marker</code> parameter and retrying the command. If the
@@ -76,7 +76,7 @@ namespace Model
     inline void SetMarker(Aws::String&& value) { m_marker = value; }
 
     /**
-     * <p> A value that indicates the starting point for the next set of response
+     * <p>A value that indicates the starting point for the next set of response
      * records in a subsequent request. If a value is returned in a response, you can
      * retrieve the next set of records by providing this returned marker value in the
      * <code>Marker</code> parameter and retrying the command. If the
@@ -86,7 +86,7 @@ namespace Model
     inline void SetMarker(const char* value) { m_marker.assign(value); }
 
     /**
-     * <p> A value that indicates the starting point for the next set of response
+     * <p>A value that indicates the starting point for the next set of response
      * records in a subsequent request. If a value is returned in a response, you can
      * retrieve the next set of records by providing this returned marker value in the
      * <code>Marker</code> parameter and retrying the command. If the
@@ -96,7 +96,7 @@ namespace Model
     inline DescribeReservedNodeOfferingsResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
 
     /**
-     * <p> A value that indicates the starting point for the next set of response
+     * <p>A value that indicates the starting point for the next set of response
      * records in a subsequent request. If a value is returned in a response, you can
      * retrieve the next set of records by providing this returned marker value in the
      * <code>Marker</code> parameter and retrying the command. If the
@@ -106,7 +106,7 @@ namespace Model
     inline DescribeReservedNodeOfferingsResult& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
 
     /**
-     * <p> A value that indicates the starting point for the next set of response
+     * <p>A value that indicates the starting point for the next set of response
      * records in a subsequent request. If a value is returned in a response, you can
      * retrieve the next set of records by providing this returned marker value in the
      * <code>Marker</code> parameter and retrying the command. If the

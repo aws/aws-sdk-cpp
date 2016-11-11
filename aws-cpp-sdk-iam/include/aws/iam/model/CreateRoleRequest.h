@@ -127,7 +127,9 @@ namespace Model
      * <p>The name of the role to create.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
      * string of characters consisting of upper and lowercase alphanumeric characters
-     * with no spaces. You can also include any of the following characters: =,.@-</p>
+     * with no spaces. You can also include any of the following characters: =,.@-.
+     * Role names are not distinguished by case. For example, you cannot create roles
+     * named both "PRODROLE" and "prodrole".</p>
      */
     inline const Aws::String& GetRoleName() const{ return m_roleName; }
 
@@ -135,7 +137,9 @@ namespace Model
      * <p>The name of the role to create.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
      * string of characters consisting of upper and lowercase alphanumeric characters
-     * with no spaces. You can also include any of the following characters: =,.@-</p>
+     * with no spaces. You can also include any of the following characters: =,.@-.
+     * Role names are not distinguished by case. For example, you cannot create roles
+     * named both "PRODROLE" and "prodrole".</p>
      */
     inline void SetRoleName(const Aws::String& value) { m_roleNameHasBeenSet = true; m_roleName = value; }
 
@@ -143,7 +147,9 @@ namespace Model
      * <p>The name of the role to create.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
      * string of characters consisting of upper and lowercase alphanumeric characters
-     * with no spaces. You can also include any of the following characters: =,.@-</p>
+     * with no spaces. You can also include any of the following characters: =,.@-.
+     * Role names are not distinguished by case. For example, you cannot create roles
+     * named both "PRODROLE" and "prodrole".</p>
      */
     inline void SetRoleName(Aws::String&& value) { m_roleNameHasBeenSet = true; m_roleName = value; }
 
@@ -151,7 +157,9 @@ namespace Model
      * <p>The name of the role to create.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
      * string of characters consisting of upper and lowercase alphanumeric characters
-     * with no spaces. You can also include any of the following characters: =,.@-</p>
+     * with no spaces. You can also include any of the following characters: =,.@-.
+     * Role names are not distinguished by case. For example, you cannot create roles
+     * named both "PRODROLE" and "prodrole".</p>
      */
     inline void SetRoleName(const char* value) { m_roleNameHasBeenSet = true; m_roleName.assign(value); }
 
@@ -159,7 +167,9 @@ namespace Model
      * <p>The name of the role to create.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
      * string of characters consisting of upper and lowercase alphanumeric characters
-     * with no spaces. You can also include any of the following characters: =,.@-</p>
+     * with no spaces. You can also include any of the following characters: =,.@-.
+     * Role names are not distinguished by case. For example, you cannot create roles
+     * named both "PRODROLE" and "prodrole".</p>
      */
     inline CreateRoleRequest& WithRoleName(const Aws::String& value) { SetRoleName(value); return *this;}
 
@@ -167,7 +177,9 @@ namespace Model
      * <p>The name of the role to create.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
      * string of characters consisting of upper and lowercase alphanumeric characters
-     * with no spaces. You can also include any of the following characters: =,.@-</p>
+     * with no spaces. You can also include any of the following characters: =,.@-.
+     * Role names are not distinguished by case. For example, you cannot create roles
+     * named both "PRODROLE" and "prodrole".</p>
      */
     inline CreateRoleRequest& WithRoleName(Aws::String&& value) { SetRoleName(value); return *this;}
 
@@ -175,7 +187,9 @@ namespace Model
      * <p>The name of the role to create.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
      * string of characters consisting of upper and lowercase alphanumeric characters
-     * with no spaces. You can also include any of the following characters: =,.@-</p>
+     * with no spaces. You can also include any of the following characters: =,.@-.
+     * Role names are not distinguished by case. For example, you cannot create roles
+     * named both "PRODROLE" and "prodrole".</p>
      */
     inline CreateRoleRequest& WithRoleName(const char* value) { SetRoleName(value); return *this;}
 

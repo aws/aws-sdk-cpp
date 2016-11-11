@@ -27,7 +27,9 @@ namespace Model
     NOT_SET,
     HTTP,
     AWS,
-    MOCK
+    MOCK,
+    HTTP_PROXY,
+    AWS_PROXY
   };
 
 namespace IntegrationTypeMapper

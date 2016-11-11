@@ -32,14 +32,16 @@ namespace Model
 DBClusterParameterGroup::DBClusterParameterGroup() : 
     m_dBClusterParameterGroupNameHasBeenSet(false),
     m_dBParameterGroupFamilyHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_dBClusterParameterGroupArnHasBeenSet(false)
 {
 }
 
 DBClusterParameterGroup::DBClusterParameterGroup(const XmlNode& xmlNode) : 
     m_dBClusterParameterGroupNameHasBeenSet(false),
     m_dBParameterGroupFamilyHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_dBClusterParameterGroupArnHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -68,6 +70,12 @@ DBClusterParameterGroup& DBClusterParameterGroup::operator =(const XmlNode& xmlN
       m_description = StringUtils::Trim(descriptionNode.GetText().c_str());
       m_descriptionHasBeenSet = true;
     }
+    XmlNode dBClusterParameterGroupArnNode = resultNode.FirstChild("DBClusterParameterGroupArn");
+    if(!dBClusterParameterGroupArnNode.IsNull())
+    {
+      m_dBClusterParameterGroupArn = StringUtils::Trim(dBClusterParameterGroupArnNode.GetText().c_str());
+      m_dBClusterParameterGroupArnHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -90,6 +98,11 @@ void DBClusterParameterGroup::OutputToStream(Aws::OStream& oStream, const char* 
       oStream << location << index << locationValue << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
 
+  if(m_dBClusterParameterGroupArnHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".DBClusterParameterGroupArn=" << StringUtils::URLEncode(m_dBClusterParameterGroupArn.c_str()) << "&";
+  }
+
 }
 
 void DBClusterParameterGroup::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -105,6 +118,10 @@ void DBClusterParameterGroup::OutputToStream(Aws::OStream& oStream, const char* 
   if(m_descriptionHasBeenSet)
   {
       oStream << location << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
+  }
+  if(m_dBClusterParameterGroupArnHasBeenSet)
+  {
+      oStream << location << ".DBClusterParameterGroupArn=" << StringUtils::URLEncode(m_dBClusterParameterGroupArn.c_str()) << "&";
   }
 }
 

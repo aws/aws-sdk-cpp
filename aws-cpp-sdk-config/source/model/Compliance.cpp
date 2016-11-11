@@ -28,12 +28,14 @@ namespace Model
 {
 
 Compliance::Compliance() : 
+    m_complianceType(ComplianceType::NOT_SET),
     m_complianceTypeHasBeenSet(false),
     m_complianceContributorCountHasBeenSet(false)
 {
 }
 
 Compliance::Compliance(const JsonValue& jsonValue) : 
+    m_complianceType(ComplianceType::NOT_SET),
     m_complianceTypeHasBeenSet(false),
     m_complianceContributorCountHasBeenSet(false)
 {

@@ -58,6 +58,11 @@ DescribeApplicationVersionsResult& DescribeApplicationVersionsResult::operator =
       }
 
     }
+    XmlNode nextTokenNode = resultNode.FirstChild("NextToken");
+    if(!nextTokenNode.IsNull())
+    {
+      m_nextToken = StringUtils::Trim(nextTokenNode.GetText().c_str());
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

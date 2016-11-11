@@ -122,6 +122,41 @@ namespace Model
     inline Stack& WithStackName(const char* value) { SetStackName(value); return *this;}
 
     /**
+     * <p>The unique ID of the change set.</p>
+     */
+    inline const Aws::String& GetChangeSetId() const{ return m_changeSetId; }
+
+    /**
+     * <p>The unique ID of the change set.</p>
+     */
+    inline void SetChangeSetId(const Aws::String& value) { m_changeSetIdHasBeenSet = true; m_changeSetId = value; }
+
+    /**
+     * <p>The unique ID of the change set.</p>
+     */
+    inline void SetChangeSetId(Aws::String&& value) { m_changeSetIdHasBeenSet = true; m_changeSetId = value; }
+
+    /**
+     * <p>The unique ID of the change set.</p>
+     */
+    inline void SetChangeSetId(const char* value) { m_changeSetIdHasBeenSet = true; m_changeSetId.assign(value); }
+
+    /**
+     * <p>The unique ID of the change set.</p>
+     */
+    inline Stack& WithChangeSetId(const Aws::String& value) { SetChangeSetId(value); return *this;}
+
+    /**
+     * <p>The unique ID of the change set.</p>
+     */
+    inline Stack& WithChangeSetId(Aws::String&& value) { SetChangeSetId(value); return *this;}
+
+    /**
+     * <p>The unique ID of the change set.</p>
+     */
+    inline Stack& WithChangeSetId(const char* value) { SetChangeSetId(value); return *this;}
+
+    /**
      * <p>A user-defined description associated with the stack.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
@@ -453,6 +488,55 @@ namespace Model
     inline Stack& AddOutputs(Output&& value) { m_outputsHasBeenSet = true; m_outputs.push_back(value); return *this; }
 
     /**
+     * <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM)
+     * role that is associated with the stack. During a stack operation, AWS
+     * CloudFormation uses this role's credentials to make calls on your behalf.</p>
+     */
+    inline const Aws::String& GetRoleARN() const{ return m_roleARN; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM)
+     * role that is associated with the stack. During a stack operation, AWS
+     * CloudFormation uses this role's credentials to make calls on your behalf.</p>
+     */
+    inline void SetRoleARN(const Aws::String& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM)
+     * role that is associated with the stack. During a stack operation, AWS
+     * CloudFormation uses this role's credentials to make calls on your behalf.</p>
+     */
+    inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM)
+     * role that is associated with the stack. During a stack operation, AWS
+     * CloudFormation uses this role's credentials to make calls on your behalf.</p>
+     */
+    inline void SetRoleARN(const char* value) { m_roleARNHasBeenSet = true; m_roleARN.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM)
+     * role that is associated with the stack. During a stack operation, AWS
+     * CloudFormation uses this role's credentials to make calls on your behalf.</p>
+     */
+    inline Stack& WithRoleARN(const Aws::String& value) { SetRoleARN(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM)
+     * role that is associated with the stack. During a stack operation, AWS
+     * CloudFormation uses this role's credentials to make calls on your behalf.</p>
+     */
+    inline Stack& WithRoleARN(Aws::String&& value) { SetRoleARN(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM)
+     * role that is associated with the stack. During a stack operation, AWS
+     * CloudFormation uses this role's credentials to make calls on your behalf.</p>
+     */
+    inline Stack& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}
+
+    /**
      * <p>A list of <code>Tag</code>s that specify information about the stack.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
@@ -492,6 +576,8 @@ namespace Model
     bool m_stackIdHasBeenSet;
     Aws::String m_stackName;
     bool m_stackNameHasBeenSet;
+    Aws::String m_changeSetId;
+    bool m_changeSetIdHasBeenSet;
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
     Aws::Vector<Parameter> m_parameters;
@@ -514,6 +600,8 @@ namespace Model
     bool m_capabilitiesHasBeenSet;
     Aws::Vector<Output> m_outputs;
     bool m_outputsHasBeenSet;
+    Aws::String m_roleARN;
+    bool m_roleARNHasBeenSet;
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
   };

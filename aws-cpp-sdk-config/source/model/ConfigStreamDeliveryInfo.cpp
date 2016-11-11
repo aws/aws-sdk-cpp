@@ -28,6 +28,7 @@ namespace Model
 {
 
 ConfigStreamDeliveryInfo::ConfigStreamDeliveryInfo() : 
+    m_lastStatus(DeliveryStatus::NOT_SET),
     m_lastStatusHasBeenSet(false),
     m_lastErrorCodeHasBeenSet(false),
     m_lastErrorMessageHasBeenSet(false),
@@ -36,6 +37,7 @@ ConfigStreamDeliveryInfo::ConfigStreamDeliveryInfo() :
 }
 
 ConfigStreamDeliveryInfo::ConfigStreamDeliveryInfo(const JsonValue& jsonValue) : 
+    m_lastStatus(DeliveryStatus::NOT_SET),
     m_lastStatusHasBeenSet(false),
     m_lastErrorCodeHasBeenSet(false),
     m_lastErrorMessageHasBeenSet(false),

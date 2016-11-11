@@ -25,6 +25,7 @@ PutRuleRequest::PutRuleRequest() :
     m_nameHasBeenSet(false),
     m_scheduleExpressionHasBeenSet(false),
     m_eventPatternHasBeenSet(false),
+    m_state(RuleState::NOT_SET),
     m_stateHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_roleArnHasBeenSet(false)

@@ -16,13 +16,10 @@
 #include <aws/iot/IoT_EXPORTS.h>
 #include <aws/iot/IoTRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iot/model/CertificateStatus.h>
 
 namespace Aws
 {
-namespace Http
-{
-    class URI;
-} //namespace Http
 namespace IoT
 {
 namespace Model
@@ -36,8 +33,6 @@ namespace Model
   public:
     RegisterCertificateRequest();
     Aws::String SerializePayload() const override;
-
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
     /**
      * <p>The certificate data, in PEM format.</p>
@@ -109,28 +104,28 @@ namespace Model
      */
     inline RegisterCertificateRequest& WithCaCertificatePem(const char* value) { SetCaCertificatePem(value); return *this;}
 
-    /**
-     * <p>A boolean value that specifies if the CA certificate is set to active.</p>
-     */
-    inline bool GetSetAsActive() const{ return m_setAsActive; }
+    
+    inline const CertificateStatus& GetStatus() const{ return m_status; }
 
-    /**
-     * <p>A boolean value that specifies if the CA certificate is set to active.</p>
-     */
-    inline void SetSetAsActive(bool value) { m_setAsActiveHasBeenSet = true; m_setAsActive = value; }
+    
+    inline void SetStatus(const CertificateStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
-    /**
-     * <p>A boolean value that specifies if the CA certificate is set to active.</p>
-     */
-    inline RegisterCertificateRequest& WithSetAsActive(bool value) { SetSetAsActive(value); return *this;}
+    
+    inline void SetStatus(CertificateStatus&& value) { m_statusHasBeenSet = true; m_status = value; }
+
+    
+    inline RegisterCertificateRequest& WithStatus(const CertificateStatus& value) { SetStatus(value); return *this;}
+
+    
+    inline RegisterCertificateRequest& WithStatus(CertificateStatus&& value) { SetStatus(value); return *this;}
 
   private:
     Aws::String m_certificatePem;
     bool m_certificatePemHasBeenSet;
     Aws::String m_caCertificatePem;
     bool m_caCertificatePemHasBeenSet;
-    bool m_setAsActive;
-    bool m_setAsActiveHasBeenSet;
+    CertificateStatus m_status;
+    bool m_statusHasBeenSet;
   };
 
 } // namespace Model

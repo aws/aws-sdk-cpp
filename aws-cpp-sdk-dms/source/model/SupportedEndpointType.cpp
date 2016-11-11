@@ -31,6 +31,7 @@ SupportedEndpointType::SupportedEndpointType() :
     m_engineNameHasBeenSet(false),
     m_supportsCDC(false),
     m_supportsCDCHasBeenSet(false),
+    m_endpointType(ReplicationEndpointTypeValue::NOT_SET),
     m_endpointTypeHasBeenSet(false)
 {
 }
@@ -39,6 +40,7 @@ SupportedEndpointType::SupportedEndpointType(const JsonValue& jsonValue) :
     m_engineNameHasBeenSet(false),
     m_supportsCDC(false),
     m_supportsCDCHasBeenSet(false),
+    m_endpointType(ReplicationEndpointTypeValue::NOT_SET),
     m_endpointTypeHasBeenSet(false)
 {
   *this = jsonValue;

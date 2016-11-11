@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/iot/IoT_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iot/model/CannedAccessControlList.h>
 
 namespace Aws
 {
@@ -146,6 +147,46 @@ namespace Model
      */
     inline S3Action& WithKey(const char* value) { SetKey(value); return *this;}
 
+    /**
+     * <p>The Amazon S3 canned ACL that controls access to the object identified by the
+     * object key. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">S3
+     * canned ACLs</a>.</p>
+     */
+    inline const CannedAccessControlList& GetCannedAcl() const{ return m_cannedAcl; }
+
+    /**
+     * <p>The Amazon S3 canned ACL that controls access to the object identified by the
+     * object key. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">S3
+     * canned ACLs</a>.</p>
+     */
+    inline void SetCannedAcl(const CannedAccessControlList& value) { m_cannedAclHasBeenSet = true; m_cannedAcl = value; }
+
+    /**
+     * <p>The Amazon S3 canned ACL that controls access to the object identified by the
+     * object key. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">S3
+     * canned ACLs</a>.</p>
+     */
+    inline void SetCannedAcl(CannedAccessControlList&& value) { m_cannedAclHasBeenSet = true; m_cannedAcl = value; }
+
+    /**
+     * <p>The Amazon S3 canned ACL that controls access to the object identified by the
+     * object key. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">S3
+     * canned ACLs</a>.</p>
+     */
+    inline S3Action& WithCannedAcl(const CannedAccessControlList& value) { SetCannedAcl(value); return *this;}
+
+    /**
+     * <p>The Amazon S3 canned ACL that controls access to the object identified by the
+     * object key. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">S3
+     * canned ACLs</a>.</p>
+     */
+    inline S3Action& WithCannedAcl(CannedAccessControlList&& value) { SetCannedAcl(value); return *this;}
+
   private:
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet;
@@ -153,6 +194,8 @@ namespace Model
     bool m_bucketNameHasBeenSet;
     Aws::String m_key;
     bool m_keyHasBeenSet;
+    CannedAccessControlList m_cannedAcl;
+    bool m_cannedAclHasBeenSet;
   };
 
 } // namespace Model

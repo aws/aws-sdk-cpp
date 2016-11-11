@@ -48,7 +48,8 @@ Cluster::Cluster() :
     m_normalizedInstanceHours(0),
     m_normalizedInstanceHoursHasBeenSet(false),
     m_masterPublicDnsNameHasBeenSet(false),
-    m_configurationsHasBeenSet(false)
+    m_configurationsHasBeenSet(false),
+    m_securityConfigurationHasBeenSet(false)
 {
 }
 
@@ -73,7 +74,8 @@ Cluster::Cluster(const JsonValue& jsonValue) :
     m_normalizedInstanceHours(0),
     m_normalizedInstanceHoursHasBeenSet(false),
     m_masterPublicDnsNameHasBeenSet(false),
-    m_configurationsHasBeenSet(false)
+    m_configurationsHasBeenSet(false),
+    m_securityConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -208,6 +210,13 @@ Cluster& Cluster::operator =(const JsonValue& jsonValue)
     m_configurationsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SecurityConfiguration"))
+  {
+    m_securityConfiguration = jsonValue.GetString("SecurityConfiguration");
+
+    m_securityConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -329,6 +338,12 @@ JsonValue Cluster::Jsonize() const
      configurationsJsonList[configurationsIndex].AsObject(m_configurations[configurationsIndex].Jsonize());
    }
    payload.WithArray("Configurations", std::move(configurationsJsonList));
+
+  }
+
+  if(m_securityConfigurationHasBeenSet)
+  {
+   payload.WithString("SecurityConfiguration", m_securityConfiguration);
 
   }
 

@@ -21,7 +21,8 @@ using namespace Aws::Utils;
 
 DeleteStackRequest::DeleteStackRequest() : 
     m_stackNameHasBeenSet(false),
-    m_retainResourcesHasBeenSet(false)
+    m_retainResourcesHasBeenSet(false),
+    m_roleARNHasBeenSet(false)
 {
 }
 
@@ -43,6 +44,11 @@ Aws::String DeleteStackRequest::SerializePayload() const
           << StringUtils::URLEncode(item.c_str()) << "&";
       retainResourcesCount++;
     }
+  }
+
+  if(m_roleARNHasBeenSet)
+  {
+    ss << "RoleARN=" << StringUtils::URLEncode(m_roleARN.c_str()) << "&";
   }
 
   ss << "Version=2010-05-15";

@@ -23,6 +23,7 @@ DescribeVpcAttributeRequest::DescribeVpcAttributeRequest() :
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
+    m_attribute(VpcAttributeName::NOT_SET),
     m_attributeHasBeenSet(false)
 {
 }

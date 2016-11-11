@@ -26,6 +26,7 @@ GenerateDataKeyRequest::GenerateDataKeyRequest() :
     m_encryptionContextHasBeenSet(false),
     m_numberOfBytes(0),
     m_numberOfBytesHasBeenSet(false),
+    m_keySpec(DataKeySpec::NOT_SET),
     m_keySpecHasBeenSet(false),
     m_grantTokensHasBeenSet(false)
 {

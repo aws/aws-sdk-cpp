@@ -30,10 +30,12 @@ UpdateUserPoolRequest::UpdateUserPoolRequest() :
     m_emailVerificationMessageHasBeenSet(false),
     m_emailVerificationSubjectHasBeenSet(false),
     m_smsAuthenticationMessageHasBeenSet(false),
+    m_mfaConfiguration(UserPoolMfaType::NOT_SET),
     m_mfaConfigurationHasBeenSet(false),
     m_deviceConfigurationHasBeenSet(false),
     m_emailConfigurationHasBeenSet(false),
-    m_smsConfigurationHasBeenSet(false)
+    m_smsConfigurationHasBeenSet(false),
+    m_adminCreateUserConfigHasBeenSet(false)
 {
 }
 
@@ -114,6 +116,12 @@ Aws::String UpdateUserPoolRequest::SerializePayload() const
   if(m_smsConfigurationHasBeenSet)
   {
    payload.WithObject("SmsConfiguration", m_smsConfiguration.Jsonize());
+
+  }
+
+  if(m_adminCreateUserConfigHasBeenSet)
+  {
+   payload.WithObject("AdminCreateUserConfig", m_adminCreateUserConfig.Jsonize());
 
   }
 

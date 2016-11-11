@@ -23,6 +23,7 @@ DescribeImageAttributeRequest::DescribeImageAttributeRequest() :
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
     m_imageIdHasBeenSet(false),
+    m_attribute(ImageAttributeName::NOT_SET),
     m_attributeHasBeenSet(false)
 {
 }

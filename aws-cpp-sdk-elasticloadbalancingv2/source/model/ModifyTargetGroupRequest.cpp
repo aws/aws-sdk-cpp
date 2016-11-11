@@ -21,6 +21,7 @@ using namespace Aws::Utils;
 
 ModifyTargetGroupRequest::ModifyTargetGroupRequest() : 
     m_targetGroupArnHasBeenSet(false),
+    m_healthCheckProtocol(ProtocolEnum::NOT_SET),
     m_healthCheckProtocolHasBeenSet(false),
     m_healthCheckPortHasBeenSet(false),
     m_healthCheckPathHasBeenSet(false),

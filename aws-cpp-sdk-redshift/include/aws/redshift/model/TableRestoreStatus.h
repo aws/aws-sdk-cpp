@@ -85,35 +85,35 @@ namespace Model
     /**
      * <p>A value that describes the current state of the table restore request.</p>
      * <p>Valid Values: <code>SUCCEEDED</code>, <code>FAILED</code>,
-     * <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code></p>
+     * <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code> </p>
      */
     inline const TableRestoreStatusType& GetStatus() const{ return m_status; }
 
     /**
      * <p>A value that describes the current state of the table restore request.</p>
      * <p>Valid Values: <code>SUCCEEDED</code>, <code>FAILED</code>,
-     * <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code></p>
+     * <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code> </p>
      */
     inline void SetStatus(const TableRestoreStatusType& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
      * <p>A value that describes the current state of the table restore request.</p>
      * <p>Valid Values: <code>SUCCEEDED</code>, <code>FAILED</code>,
-     * <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code></p>
+     * <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code> </p>
      */
     inline void SetStatus(TableRestoreStatusType&& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
      * <p>A value that describes the current state of the table restore request.</p>
      * <p>Valid Values: <code>SUCCEEDED</code>, <code>FAILED</code>,
-     * <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code></p>
+     * <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code> </p>
      */
     inline TableRestoreStatus& WithStatus(const TableRestoreStatusType& value) { SetStatus(value); return *this;}
 
     /**
      * <p>A value that describes the current state of the table restore request.</p>
      * <p>Valid Values: <code>SUCCEEDED</code>, <code>FAILED</code>,
-     * <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code></p>
+     * <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code> </p>
      */
     inline TableRestoreStatus& WithStatus(TableRestoreStatusType&& value) { SetStatus(value); return *this;}
 

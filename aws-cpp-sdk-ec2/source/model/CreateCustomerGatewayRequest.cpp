@@ -22,6 +22,7 @@ using namespace Aws::Utils;
 CreateCustomerGatewayRequest::CreateCustomerGatewayRequest() : 
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
+    m_type(GatewayType::NOT_SET),
     m_typeHasBeenSet(false),
     m_publicIpHasBeenSet(false),
     m_bgpAsn(0),

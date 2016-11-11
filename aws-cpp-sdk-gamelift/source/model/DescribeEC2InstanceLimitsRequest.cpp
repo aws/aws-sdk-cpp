@@ -22,6 +22,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 DescribeEC2InstanceLimitsRequest::DescribeEC2InstanceLimitsRequest() : 
+    m_eC2InstanceType(EC2InstanceType::NOT_SET),
     m_eC2InstanceTypeHasBeenSet(false)
 {
 }

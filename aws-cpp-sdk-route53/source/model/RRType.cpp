@@ -35,6 +35,7 @@ namespace Aws
         static const int NS_HASH = HashingUtils::HashString("NS");
         static const int CNAME_HASH = HashingUtils::HashString("CNAME");
         static const int MX_HASH = HashingUtils::HashString("MX");
+        static const int NAPTR_HASH = HashingUtils::HashString("NAPTR");
         static const int PTR_HASH = HashingUtils::HashString("PTR");
         static const int SRV_HASH = HashingUtils::HashString("SRV");
         static const int SPF_HASH = HashingUtils::HashString("SPF");
@@ -67,6 +68,10 @@ namespace Aws
           else if (hashCode == MX_HASH)
           {
             return RRType::MX;
+          }
+          else if (hashCode == NAPTR_HASH)
+          {
+            return RRType::NAPTR;
           }
           else if (hashCode == PTR_HASH)
           {
@@ -110,6 +115,8 @@ namespace Aws
             return "CNAME";
           case RRType::MX:
             return "MX";
+          case RRType::NAPTR:
+            return "NAPTR";
           case RRType::PTR:
             return "PTR";
           case RRType::SRV:

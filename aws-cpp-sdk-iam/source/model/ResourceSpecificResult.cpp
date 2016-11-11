@@ -31,6 +31,7 @@ namespace Model
 
 ResourceSpecificResult::ResourceSpecificResult() : 
     m_evalResourceNameHasBeenSet(false),
+    m_evalResourceDecision(PolicyEvaluationDecisionType::NOT_SET),
     m_evalResourceDecisionHasBeenSet(false),
     m_matchedStatementsHasBeenSet(false),
     m_missingContextValuesHasBeenSet(false),
@@ -40,6 +41,7 @@ ResourceSpecificResult::ResourceSpecificResult() :
 
 ResourceSpecificResult::ResourceSpecificResult(const XmlNode& xmlNode) : 
     m_evalResourceNameHasBeenSet(false),
+    m_evalResourceDecision(PolicyEvaluationDecisionType::NOT_SET),
     m_evalResourceDecisionHasBeenSet(false),
     m_matchedStatementsHasBeenSet(false),
     m_missingContextValuesHasBeenSet(false),

@@ -50,6 +50,8 @@ CreateClusterRequest::CreateClusterRequest() :
     m_elasticIpHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_kmsKeyIdHasBeenSet(false),
+    m_enhancedVpcRouting(false),
+    m_enhancedVpcRoutingHasBeenSet(false),
     m_additionalInfoHasBeenSet(false),
     m_iamRolesHasBeenSet(false)
 {
@@ -194,6 +196,11 @@ Aws::String CreateClusterRequest::SerializePayload() const
   if(m_kmsKeyIdHasBeenSet)
   {
     ss << "KmsKeyId=" << StringUtils::URLEncode(m_kmsKeyId.c_str()) << "&";
+  }
+
+  if(m_enhancedVpcRoutingHasBeenSet)
+  {
+    ss << "EnhancedVpcRouting=" << m_enhancedVpcRouting << "&";
   }
 
   if(m_additionalInfoHasBeenSet)

@@ -28,6 +28,11 @@ CreateReplicationGroupRequest::CreateReplicationGroupRequest() :
     m_numCacheClusters(0),
     m_numCacheClustersHasBeenSet(false),
     m_preferredCacheClusterAZsHasBeenSet(false),
+    m_numNodeGroups(0),
+    m_numNodeGroupsHasBeenSet(false),
+    m_replicasPerNodeGroup(0),
+    m_replicasPerNodeGroupHasBeenSet(false),
+    m_nodeGroupConfigurationHasBeenSet(false),
     m_cacheNodeTypeHasBeenSet(false),
     m_engineHasBeenSet(false),
     m_engineVersionHasBeenSet(false),
@@ -87,6 +92,26 @@ Aws::String CreateReplicationGroupRequest::SerializePayload() const
       ss << "PreferredCacheClusterAZs.member." << preferredCacheClusterAZsCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       preferredCacheClusterAZsCount++;
+    }
+  }
+
+  if(m_numNodeGroupsHasBeenSet)
+  {
+    ss << "NumNodeGroups=" << m_numNodeGroups << "&";
+  }
+
+  if(m_replicasPerNodeGroupHasBeenSet)
+  {
+    ss << "ReplicasPerNodeGroup=" << m_replicasPerNodeGroup << "&";
+  }
+
+  if(m_nodeGroupConfigurationHasBeenSet)
+  {
+    unsigned nodeGroupConfigurationCount = 1;
+    for(auto& item : m_nodeGroupConfiguration)
+    {
+      item.OutputToStream(ss, "NodeGroupConfiguration.member.", nodeGroupConfigurationCount, "");
+      nodeGroupConfigurationCount++;
     }
   }
 

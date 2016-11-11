@@ -22,6 +22,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 ListOnPremisesInstancesRequest::ListOnPremisesInstancesRequest() : 
+    m_registrationStatus(RegistrationStatus::NOT_SET),
     m_registrationStatusHasBeenSet(false),
     m_tagFiltersHasBeenSet(false),
     m_nextTokenHasBeenSet(false)

@@ -149,12 +149,14 @@ struct CurlWriteCallbackContext
 
 struct CurlReadCallbackContext
 {
-    CurlReadCallbackContext(const CurlHttpClient* client, HttpRequest* request) :
+    CurlReadCallbackContext(const CurlHttpClient* client, HttpRequest* request, Aws::Utils::RateLimits::RateLimiterInterface* limiter) :
         m_client(client),
+        m_rateLimiter(limiter),
         m_request(request)
     {}
 
     const CurlHttpClient* m_client;
+    Aws::Utils::RateLimits::RateLimiterInterface* m_rateLimiter;
     HttpRequest* m_request;
 };
 
@@ -341,7 +343,7 @@ std::shared_ptr<HttpResponse> CurlHttpClient::MakeRequest(HttpRequest& request, 
 
         response = Aws::MakeShared<StandardHttpResponse>(CURL_HTTP_CLIENT_TAG, request);
         CurlWriteCallbackContext writeContext(this, &request, response.get(), readLimiter);
-        CurlReadCallbackContext readContext(this, &request);
+        CurlReadCallbackContext readContext(this, &request, writeLimiter);
 
         SetOptCodeForHttpMethod(connectionHandle, request);
 
@@ -405,10 +407,15 @@ std::shared_ptr<HttpResponse> CurlHttpClient::MakeRequest(HttpRequest& request, 
         }
 
         CURLcode curlResponseCode = curl_easy_perform(connectionHandle);
-        if (curlResponseCode != CURLE_OK)
+        bool shouldContinueRequest = ContinueRequest(request);
+        if (curlResponseCode != CURLE_OK && shouldContinueRequest)
         {
             response = nullptr;
             AWS_LOGSTREAM_ERROR(CURL_HTTP_CLIENT_TAG, "Curl returned error code " << curlResponseCode);
+        }
+        else if(!shouldContinueRequest)
+        {
+            response->SetResponseCode(HttpResponseCode::REQUEST_NOT_MADE);
         }
         else
         {
@@ -467,7 +474,7 @@ size_t CurlHttpClient::WriteData(char* ptr, size_t size, size_t nmemb, void* use
         CurlWriteCallbackContext* context = reinterpret_cast<CurlWriteCallbackContext*>(userdata);
 
         const CurlHttpClient* client = context->m_client;
-        if(!client->IsRequestProcessingEnabled())
+        if(!client->ContinueRequest(*context->m_request) || !client->IsRequestProcessingEnabled())
         {
             return 0;
         }
@@ -515,6 +522,7 @@ size_t CurlHttpClient::WriteHeader(char* ptr, size_t size, size_t nmemb, void* u
 
             response->AddHeader(headerName, headerValue);
         }
+
         return size * nmemb;
     }
     return 0;
@@ -526,11 +534,11 @@ size_t CurlHttpClient::ReadBody(char* ptr, size_t size, size_t nmemb, void* user
     CurlReadCallbackContext* context = reinterpret_cast<CurlReadCallbackContext*>(userdata);
     if(context == nullptr)
     {
-	    return 0;
+        return 0;
     }
 
     const CurlHttpClient* client = context->m_client;
-    if(!client->IsRequestProcessingEnabled())
+    if(!client->ContinueRequest(*context->m_request) || !client->IsRequestProcessingEnabled())
     {
         return CURL_READFUNC_ABORT;
     }
@@ -547,6 +555,11 @@ size_t CurlHttpClient::ReadBody(char* ptr, size_t size, size_t nmemb, void* user
         if (sentHandler)
         {
             sentHandler(request, static_cast<long long>(amountRead));
+        }
+
+        if (context->m_rateLimiter)
+        {
+            context->m_rateLimiter->ApplyAndPayForCost(static_cast<int64_t>(amountRead));
         }
 
         return amountRead;

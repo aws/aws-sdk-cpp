@@ -29,12 +29,14 @@ namespace Model
 
 IncompatibilityMessage::IncompatibilityMessage() : 
     m_messageHasBeenSet(false),
+    m_type(DeviceAttribute::NOT_SET),
     m_typeHasBeenSet(false)
 {
 }
 
 IncompatibilityMessage::IncompatibilityMessage(const JsonValue& jsonValue) : 
     m_messageHasBeenSet(false),
+    m_type(DeviceAttribute::NOT_SET),
     m_typeHasBeenSet(false)
 {
   *this = jsonValue;

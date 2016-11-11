@@ -33,6 +33,7 @@ Grantee::Grantee() :
     m_displayNameHasBeenSet(false),
     m_emailAddressHasBeenSet(false),
     m_iDHasBeenSet(false),
+    m_type(Type::NOT_SET),
     m_typeHasBeenSet(false),
     m_uRIHasBeenSet(false)
 {
@@ -42,6 +43,7 @@ Grantee::Grantee(const XmlNode& xmlNode) :
     m_displayNameHasBeenSet(false),
     m_emailAddressHasBeenSet(false),
     m_iDHasBeenSet(false),
+    m_type(Type::NOT_SET),
     m_typeHasBeenSet(false),
     m_uRIHasBeenSet(false)
 {

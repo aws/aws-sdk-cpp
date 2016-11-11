@@ -115,19 +115,19 @@ namespace Model
     inline CreateUserPoolClientRequest& WithClientName(const char* value) { SetClientName(value); return *this;}
 
     /**
-     * <p> Boolean to specify whether you want to generate a secret for the user pool
+     * <p>Boolean to specify whether you want to generate a secret for the user pool
      * client being created.</p>
      */
     inline bool GetGenerateSecret() const{ return m_generateSecret; }
 
     /**
-     * <p> Boolean to specify whether you want to generate a secret for the user pool
+     * <p>Boolean to specify whether you want to generate a secret for the user pool
      * client being created.</p>
      */
     inline void SetGenerateSecret(bool value) { m_generateSecretHasBeenSet = true; m_generateSecret = value; }
 
     /**
-     * <p> Boolean to specify whether you want to generate a secret for the user pool
+     * <p>Boolean to specify whether you want to generate a secret for the user pool
      * client being created.</p>
      */
     inline CreateUserPoolClientRequest& WithGenerateSecret(bool value) { SetGenerateSecret(value); return *this;}

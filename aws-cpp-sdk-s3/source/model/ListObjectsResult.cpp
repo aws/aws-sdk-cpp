@@ -26,13 +26,15 @@ using namespace Aws;
 
 ListObjectsResult::ListObjectsResult() : 
     m_isTruncated(false),
-    m_maxKeys(0)
+    m_maxKeys(0),
+    m_encodingType(EncodingType::NOT_SET)
 {
 }
 
 ListObjectsResult::ListObjectsResult(const AmazonWebServiceResult<XmlDocument>& result) : 
     m_isTruncated(false),
-    m_maxKeys(0)
+    m_maxKeys(0),
+    m_encodingType(EncodingType::NOT_SET)
 {
   *this = result;
 }

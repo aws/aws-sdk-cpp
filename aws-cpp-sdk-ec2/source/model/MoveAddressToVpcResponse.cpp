@@ -26,11 +26,13 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-MoveAddressToVpcResponse::MoveAddressToVpcResponse()
+MoveAddressToVpcResponse::MoveAddressToVpcResponse() : 
+    m_status(Status::NOT_SET)
 {
 }
 
-MoveAddressToVpcResponse::MoveAddressToVpcResponse(const AmazonWebServiceResult<XmlDocument>& result)
+MoveAddressToVpcResponse::MoveAddressToVpcResponse(const AmazonWebServiceResult<XmlDocument>& result) : 
+    m_status(Status::NOT_SET)
 {
   *this = result;
 }

@@ -32,6 +32,7 @@ namespace Model
 ExportTask::ExportTask() : 
     m_exportTaskIdHasBeenSet(false),
     m_descriptionHasBeenSet(false),
+    m_state(ExportTaskState::NOT_SET),
     m_stateHasBeenSet(false),
     m_statusMessageHasBeenSet(false),
     m_instanceExportDetailsHasBeenSet(false),
@@ -42,6 +43,7 @@ ExportTask::ExportTask() :
 ExportTask::ExportTask(const XmlNode& xmlNode) : 
     m_exportTaskIdHasBeenSet(false),
     m_descriptionHasBeenSet(false),
+    m_state(ExportTaskState::NOT_SET),
     m_stateHasBeenSet(false),
     m_statusMessageHasBeenSet(false),
     m_instanceExportDetailsHasBeenSet(false),

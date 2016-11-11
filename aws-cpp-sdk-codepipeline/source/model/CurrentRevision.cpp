@@ -29,13 +29,17 @@ namespace Model
 
 CurrentRevision::CurrentRevision() : 
     m_revisionHasBeenSet(false),
-    m_changeIdentifierHasBeenSet(false)
+    m_changeIdentifierHasBeenSet(false),
+    m_createdHasBeenSet(false),
+    m_revisionSummaryHasBeenSet(false)
 {
 }
 
 CurrentRevision::CurrentRevision(const JsonValue& jsonValue) : 
     m_revisionHasBeenSet(false),
-    m_changeIdentifierHasBeenSet(false)
+    m_changeIdentifierHasBeenSet(false),
+    m_createdHasBeenSet(false),
+    m_revisionSummaryHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -56,6 +60,20 @@ CurrentRevision& CurrentRevision::operator =(const JsonValue& jsonValue)
     m_changeIdentifierHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("created"))
+  {
+    m_created = jsonValue.GetDouble("created");
+
+    m_createdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("revisionSummary"))
+  {
+    m_revisionSummary = jsonValue.GetString("revisionSummary");
+
+    m_revisionSummaryHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -72,6 +90,17 @@ JsonValue CurrentRevision::Jsonize() const
   if(m_changeIdentifierHasBeenSet)
   {
    payload.WithString("changeIdentifier", m_changeIdentifier);
+
+  }
+
+  if(m_createdHasBeenSet)
+  {
+   payload.WithDouble("created", m_created.SecondsWithMSPrecision());
+  }
+
+  if(m_revisionSummaryHasBeenSet)
+  {
+   payload.WithString("revisionSummary", m_revisionSummary);
 
   }
 

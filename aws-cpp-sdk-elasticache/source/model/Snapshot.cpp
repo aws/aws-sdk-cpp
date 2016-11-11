@@ -31,6 +31,8 @@ namespace Model
 
 Snapshot::Snapshot() : 
     m_snapshotNameHasBeenSet(false),
+    m_replicationGroupIdHasBeenSet(false),
+    m_replicationGroupDescriptionHasBeenSet(false),
     m_cacheClusterIdHasBeenSet(false),
     m_snapshotStatusHasBeenSet(false),
     m_snapshotSourceHasBeenSet(false),
@@ -53,12 +55,18 @@ Snapshot::Snapshot() :
     m_snapshotRetentionLimit(0),
     m_snapshotRetentionLimitHasBeenSet(false),
     m_snapshotWindowHasBeenSet(false),
+    m_numNodeGroups(0),
+    m_numNodeGroupsHasBeenSet(false),
+    m_automaticFailover(AutomaticFailoverStatus::NOT_SET),
+    m_automaticFailoverHasBeenSet(false),
     m_nodeSnapshotsHasBeenSet(false)
 {
 }
 
 Snapshot::Snapshot(const XmlNode& xmlNode) : 
     m_snapshotNameHasBeenSet(false),
+    m_replicationGroupIdHasBeenSet(false),
+    m_replicationGroupDescriptionHasBeenSet(false),
     m_cacheClusterIdHasBeenSet(false),
     m_snapshotStatusHasBeenSet(false),
     m_snapshotSourceHasBeenSet(false),
@@ -81,6 +89,10 @@ Snapshot::Snapshot(const XmlNode& xmlNode) :
     m_snapshotRetentionLimit(0),
     m_snapshotRetentionLimitHasBeenSet(false),
     m_snapshotWindowHasBeenSet(false),
+    m_numNodeGroups(0),
+    m_numNodeGroupsHasBeenSet(false),
+    m_automaticFailover(AutomaticFailoverStatus::NOT_SET),
+    m_automaticFailoverHasBeenSet(false),
     m_nodeSnapshotsHasBeenSet(false)
 {
   *this = xmlNode;
@@ -97,6 +109,18 @@ Snapshot& Snapshot::operator =(const XmlNode& xmlNode)
     {
       m_snapshotName = StringUtils::Trim(snapshotNameNode.GetText().c_str());
       m_snapshotNameHasBeenSet = true;
+    }
+    XmlNode replicationGroupIdNode = resultNode.FirstChild("ReplicationGroupId");
+    if(!replicationGroupIdNode.IsNull())
+    {
+      m_replicationGroupId = StringUtils::Trim(replicationGroupIdNode.GetText().c_str());
+      m_replicationGroupIdHasBeenSet = true;
+    }
+    XmlNode replicationGroupDescriptionNode = resultNode.FirstChild("ReplicationGroupDescription");
+    if(!replicationGroupDescriptionNode.IsNull())
+    {
+      m_replicationGroupDescription = StringUtils::Trim(replicationGroupDescriptionNode.GetText().c_str());
+      m_replicationGroupDescriptionHasBeenSet = true;
     }
     XmlNode cacheClusterIdNode = resultNode.FirstChild("CacheClusterId");
     if(!cacheClusterIdNode.IsNull())
@@ -206,6 +230,18 @@ Snapshot& Snapshot::operator =(const XmlNode& xmlNode)
       m_snapshotWindow = StringUtils::Trim(snapshotWindowNode.GetText().c_str());
       m_snapshotWindowHasBeenSet = true;
     }
+    XmlNode numNodeGroupsNode = resultNode.FirstChild("NumNodeGroups");
+    if(!numNodeGroupsNode.IsNull())
+    {
+      m_numNodeGroups = StringUtils::ConvertToInt32(StringUtils::Trim(numNodeGroupsNode.GetText().c_str()).c_str());
+      m_numNodeGroupsHasBeenSet = true;
+    }
+    XmlNode automaticFailoverNode = resultNode.FirstChild("AutomaticFailover");
+    if(!automaticFailoverNode.IsNull())
+    {
+      m_automaticFailover = AutomaticFailoverStatusMapper::GetAutomaticFailoverStatusForName(StringUtils::Trim(automaticFailoverNode.GetText().c_str()).c_str());
+      m_automaticFailoverHasBeenSet = true;
+    }
     XmlNode nodeSnapshotsNode = resultNode.FirstChild("NodeSnapshots");
     if(!nodeSnapshotsNode.IsNull())
     {
@@ -228,6 +264,16 @@ void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location, unsig
   if(m_snapshotNameHasBeenSet)
   {
       oStream << location << index << locationValue << ".SnapshotName=" << StringUtils::URLEncode(m_snapshotName.c_str()) << "&";
+  }
+
+  if(m_replicationGroupIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ReplicationGroupId=" << StringUtils::URLEncode(m_replicationGroupId.c_str()) << "&";
+  }
+
+  if(m_replicationGroupDescriptionHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ReplicationGroupDescription=" << StringUtils::URLEncode(m_replicationGroupDescription.c_str()) << "&";
   }
 
   if(m_cacheClusterIdHasBeenSet)
@@ -320,6 +366,16 @@ void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location, unsig
       oStream << location << index << locationValue << ".SnapshotWindow=" << StringUtils::URLEncode(m_snapshotWindow.c_str()) << "&";
   }
 
+  if(m_numNodeGroupsHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".NumNodeGroups=" << m_numNodeGroups << "&";
+  }
+
+  if(m_automaticFailoverHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".AutomaticFailover=" << AutomaticFailoverStatusMapper::GetNameForAutomaticFailoverStatus(m_automaticFailover) << "&";
+  }
+
   if(m_nodeSnapshotsHasBeenSet)
   {
       unsigned nodeSnapshotsIdx = 1;
@@ -338,6 +394,14 @@ void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_snapshotNameHasBeenSet)
   {
       oStream << location << ".SnapshotName=" << StringUtils::URLEncode(m_snapshotName.c_str()) << "&";
+  }
+  if(m_replicationGroupIdHasBeenSet)
+  {
+      oStream << location << ".ReplicationGroupId=" << StringUtils::URLEncode(m_replicationGroupId.c_str()) << "&";
+  }
+  if(m_replicationGroupDescriptionHasBeenSet)
+  {
+      oStream << location << ".ReplicationGroupDescription=" << StringUtils::URLEncode(m_replicationGroupDescription.c_str()) << "&";
   }
   if(m_cacheClusterIdHasBeenSet)
   {
@@ -410,6 +474,14 @@ void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_snapshotWindowHasBeenSet)
   {
       oStream << location << ".SnapshotWindow=" << StringUtils::URLEncode(m_snapshotWindow.c_str()) << "&";
+  }
+  if(m_numNodeGroupsHasBeenSet)
+  {
+      oStream << location << ".NumNodeGroups=" << m_numNodeGroups << "&";
+  }
+  if(m_automaticFailoverHasBeenSet)
+  {
+      oStream << location << ".AutomaticFailover=" << AutomaticFailoverStatusMapper::GetNameForAutomaticFailoverStatus(m_automaticFailover) << "&";
   }
   if(m_nodeSnapshotsHasBeenSet)
   {

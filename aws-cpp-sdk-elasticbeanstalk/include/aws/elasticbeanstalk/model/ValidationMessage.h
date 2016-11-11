@@ -33,7 +33,7 @@ namespace Model
 {
 
   /**
-   * <p> An error or warning for a desired configuration option value. </p>
+   * <p>An error or warning for a desired configuration option value.</p>
    */
   class AWS_ELASTICBEANSTALK_API ValidationMessage
   {
@@ -46,77 +46,77 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     /**
-     * <p> A message describing the error or warning. </p>
+     * <p>A message describing the error or warning.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
 
     /**
-     * <p> A message describing the error or warning. </p>
+     * <p>A message describing the error or warning.</p>
      */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
 
     /**
-     * <p> A message describing the error or warning. </p>
+     * <p>A message describing the error or warning.</p>
      */
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = value; }
 
     /**
-     * <p> A message describing the error or warning. </p>
+     * <p>A message describing the error or warning.</p>
      */
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
 
     /**
-     * <p> A message describing the error or warning. </p>
+     * <p>A message describing the error or warning.</p>
      */
     inline ValidationMessage& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
 
     /**
-     * <p> A message describing the error or warning. </p>
+     * <p>A message describing the error or warning.</p>
      */
     inline ValidationMessage& WithMessage(Aws::String&& value) { SetMessage(value); return *this;}
 
     /**
-     * <p> A message describing the error or warning. </p>
+     * <p>A message describing the error or warning.</p>
      */
     inline ValidationMessage& WithMessage(const char* value) { SetMessage(value); return *this;}
 
     /**
-     * <p> An indication of the severity of this message: </p> <ul> <li>
+     * <p>An indication of the severity of this message:</p> <ul> <li> <p>
      * <code>error</code>: This message indicates that this is not a valid setting for
-     * an option. </li> <li> <code>warning</code>: This message is providing
-     * information you should take into account. </li> </ul>
+     * an option.</p> </li> <li> <p> <code>warning</code>: This message is providing
+     * information you should take into account.</p> </li> </ul>
      */
     inline const ValidationSeverity& GetSeverity() const{ return m_severity; }
 
     /**
-     * <p> An indication of the severity of this message: </p> <ul> <li>
+     * <p>An indication of the severity of this message:</p> <ul> <li> <p>
      * <code>error</code>: This message indicates that this is not a valid setting for
-     * an option. </li> <li> <code>warning</code>: This message is providing
-     * information you should take into account. </li> </ul>
+     * an option.</p> </li> <li> <p> <code>warning</code>: This message is providing
+     * information you should take into account.</p> </li> </ul>
      */
     inline void SetSeverity(const ValidationSeverity& value) { m_severityHasBeenSet = true; m_severity = value; }
 
     /**
-     * <p> An indication of the severity of this message: </p> <ul> <li>
+     * <p>An indication of the severity of this message:</p> <ul> <li> <p>
      * <code>error</code>: This message indicates that this is not a valid setting for
-     * an option. </li> <li> <code>warning</code>: This message is providing
-     * information you should take into account. </li> </ul>
+     * an option.</p> </li> <li> <p> <code>warning</code>: This message is providing
+     * information you should take into account.</p> </li> </ul>
      */
     inline void SetSeverity(ValidationSeverity&& value) { m_severityHasBeenSet = true; m_severity = value; }
 
     /**
-     * <p> An indication of the severity of this message: </p> <ul> <li>
+     * <p>An indication of the severity of this message:</p> <ul> <li> <p>
      * <code>error</code>: This message indicates that this is not a valid setting for
-     * an option. </li> <li> <code>warning</code>: This message is providing
-     * information you should take into account. </li> </ul>
+     * an option.</p> </li> <li> <p> <code>warning</code>: This message is providing
+     * information you should take into account.</p> </li> </ul>
      */
     inline ValidationMessage& WithSeverity(const ValidationSeverity& value) { SetSeverity(value); return *this;}
 
     /**
-     * <p> An indication of the severity of this message: </p> <ul> <li>
+     * <p>An indication of the severity of this message:</p> <ul> <li> <p>
      * <code>error</code>: This message indicates that this is not a valid setting for
-     * an option. </li> <li> <code>warning</code>: This message is providing
-     * information you should take into account. </li> </ul>
+     * an option.</p> </li> <li> <p> <code>warning</code>: This message is providing
+     * information you should take into account.</p> </li> </ul>
      */
     inline ValidationMessage& WithSeverity(ValidationSeverity&& value) { SetSeverity(value); return *this;}
 

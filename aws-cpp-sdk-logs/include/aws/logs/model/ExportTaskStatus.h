@@ -43,62 +43,62 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p>Status code of the export task.</p>
+     * <p>The status code of the export task.</p>
      */
     inline const ExportTaskStatusCode& GetCode() const{ return m_code; }
 
     /**
-     * <p>Status code of the export task.</p>
+     * <p>The status code of the export task.</p>
      */
     inline void SetCode(const ExportTaskStatusCode& value) { m_codeHasBeenSet = true; m_code = value; }
 
     /**
-     * <p>Status code of the export task.</p>
+     * <p>The status code of the export task.</p>
      */
     inline void SetCode(ExportTaskStatusCode&& value) { m_codeHasBeenSet = true; m_code = value; }
 
     /**
-     * <p>Status code of the export task.</p>
+     * <p>The status code of the export task.</p>
      */
     inline ExportTaskStatus& WithCode(const ExportTaskStatusCode& value) { SetCode(value); return *this;}
 
     /**
-     * <p>Status code of the export task.</p>
+     * <p>The status code of the export task.</p>
      */
     inline ExportTaskStatus& WithCode(ExportTaskStatusCode&& value) { SetCode(value); return *this;}
 
     /**
-     * <p>Status message related to the <code>code</code>.</p>
+     * <p>The status message related to the status code.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
 
     /**
-     * <p>Status message related to the <code>code</code>.</p>
+     * <p>The status message related to the status code.</p>
      */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
 
     /**
-     * <p>Status message related to the <code>code</code>.</p>
+     * <p>The status message related to the status code.</p>
      */
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = value; }
 
     /**
-     * <p>Status message related to the <code>code</code>.</p>
+     * <p>The status message related to the status code.</p>
      */
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
 
     /**
-     * <p>Status message related to the <code>code</code>.</p>
+     * <p>The status message related to the status code.</p>
      */
     inline ExportTaskStatus& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
 
     /**
-     * <p>Status message related to the <code>code</code>.</p>
+     * <p>The status message related to the status code.</p>
      */
     inline ExportTaskStatus& WithMessage(Aws::String&& value) { SetMessage(value); return *this;}
 
     /**
-     * <p>Status message related to the <code>code</code>.</p>
+     * <p>The status message related to the status code.</p>
      */
     inline ExportTaskStatus& WithMessage(const char* value) { SetMessage(value); return *this;}
 

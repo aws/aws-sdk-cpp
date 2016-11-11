@@ -24,11 +24,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PutIntegrationResult::PutIntegrationResult()
+PutIntegrationResult::PutIntegrationResult() : 
+    m_type(IntegrationType::NOT_SET)
 {
 }
 
-PutIntegrationResult::PutIntegrationResult(const AmazonWebServiceResult<JsonValue>& result)
+PutIntegrationResult::PutIntegrationResult(const AmazonWebServiceResult<JsonValue>& result) : 
+    m_type(IntegrationType::NOT_SET)
 {
   *this = result;
 }

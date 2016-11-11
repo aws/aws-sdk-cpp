@@ -34,7 +34,7 @@ namespace ElasticBeanstalk
 namespace Model
 {
   /**
-   * <p> Result message wrapping a single description of an application version. </p>
+   * <p>Result message wrapping a single description of an application version.</p>
    */
   class AWS_ELASTICBEANSTALK_API UpdateApplicationVersionResult
   {

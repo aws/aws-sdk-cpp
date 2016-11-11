@@ -16,6 +16,7 @@
 #include <aws/cloudformation/CloudFormation_EXPORTS.h>
 #include <aws/cloudformation/CloudFormationRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/cloudformation/model/TemplateStage.h>
 
 namespace Aws
 {
@@ -96,9 +97,112 @@ namespace Model
      */
     inline GetTemplateRequest& WithStackName(const char* value) { SetStackName(value); return *this;}
 
+    /**
+     * <p>Returns the template for a change set using the Amazon Resource Name (ARN) or
+     * name of the change set. If you specify a name, you must also specify the
+     * <code>StackName</code>.</p>
+     */
+    inline const Aws::String& GetChangeSetName() const{ return m_changeSetName; }
+
+    /**
+     * <p>Returns the template for a change set using the Amazon Resource Name (ARN) or
+     * name of the change set. If you specify a name, you must also specify the
+     * <code>StackName</code>.</p>
+     */
+    inline void SetChangeSetName(const Aws::String& value) { m_changeSetNameHasBeenSet = true; m_changeSetName = value; }
+
+    /**
+     * <p>Returns the template for a change set using the Amazon Resource Name (ARN) or
+     * name of the change set. If you specify a name, you must also specify the
+     * <code>StackName</code>.</p>
+     */
+    inline void SetChangeSetName(Aws::String&& value) { m_changeSetNameHasBeenSet = true; m_changeSetName = value; }
+
+    /**
+     * <p>Returns the template for a change set using the Amazon Resource Name (ARN) or
+     * name of the change set. If you specify a name, you must also specify the
+     * <code>StackName</code>.</p>
+     */
+    inline void SetChangeSetName(const char* value) { m_changeSetNameHasBeenSet = true; m_changeSetName.assign(value); }
+
+    /**
+     * <p>Returns the template for a change set using the Amazon Resource Name (ARN) or
+     * name of the change set. If you specify a name, you must also specify the
+     * <code>StackName</code>.</p>
+     */
+    inline GetTemplateRequest& WithChangeSetName(const Aws::String& value) { SetChangeSetName(value); return *this;}
+
+    /**
+     * <p>Returns the template for a change set using the Amazon Resource Name (ARN) or
+     * name of the change set. If you specify a name, you must also specify the
+     * <code>StackName</code>.</p>
+     */
+    inline GetTemplateRequest& WithChangeSetName(Aws::String&& value) { SetChangeSetName(value); return *this;}
+
+    /**
+     * <p>Returns the template for a change set using the Amazon Resource Name (ARN) or
+     * name of the change set. If you specify a name, you must also specify the
+     * <code>StackName</code>.</p>
+     */
+    inline GetTemplateRequest& WithChangeSetName(const char* value) { SetChangeSetName(value); return *this;}
+
+    /**
+     * <p>The stage of the template that is returned.</p> <p>Valid values are
+     * <code>Original</code> and <code>Processed</code>. The default value is
+     * <code>Original</code>.</p> <ul> <li> <p> <code>Original</code> - Use this value
+     * to return the user-submitted template.</p> </li> <li> <p> <code>Processed</code>
+     * - Use this value to return the template after all transforms have been
+     * processed.</p> </li> </ul>
+     */
+    inline const TemplateStage& GetTemplateStage() const{ return m_templateStage; }
+
+    /**
+     * <p>The stage of the template that is returned.</p> <p>Valid values are
+     * <code>Original</code> and <code>Processed</code>. The default value is
+     * <code>Original</code>.</p> <ul> <li> <p> <code>Original</code> - Use this value
+     * to return the user-submitted template.</p> </li> <li> <p> <code>Processed</code>
+     * - Use this value to return the template after all transforms have been
+     * processed.</p> </li> </ul>
+     */
+    inline void SetTemplateStage(const TemplateStage& value) { m_templateStageHasBeenSet = true; m_templateStage = value; }
+
+    /**
+     * <p>The stage of the template that is returned.</p> <p>Valid values are
+     * <code>Original</code> and <code>Processed</code>. The default value is
+     * <code>Original</code>.</p> <ul> <li> <p> <code>Original</code> - Use this value
+     * to return the user-submitted template.</p> </li> <li> <p> <code>Processed</code>
+     * - Use this value to return the template after all transforms have been
+     * processed.</p> </li> </ul>
+     */
+    inline void SetTemplateStage(TemplateStage&& value) { m_templateStageHasBeenSet = true; m_templateStage = value; }
+
+    /**
+     * <p>The stage of the template that is returned.</p> <p>Valid values are
+     * <code>Original</code> and <code>Processed</code>. The default value is
+     * <code>Original</code>.</p> <ul> <li> <p> <code>Original</code> - Use this value
+     * to return the user-submitted template.</p> </li> <li> <p> <code>Processed</code>
+     * - Use this value to return the template after all transforms have been
+     * processed.</p> </li> </ul>
+     */
+    inline GetTemplateRequest& WithTemplateStage(const TemplateStage& value) { SetTemplateStage(value); return *this;}
+
+    /**
+     * <p>The stage of the template that is returned.</p> <p>Valid values are
+     * <code>Original</code> and <code>Processed</code>. The default value is
+     * <code>Original</code>.</p> <ul> <li> <p> <code>Original</code> - Use this value
+     * to return the user-submitted template.</p> </li> <li> <p> <code>Processed</code>
+     * - Use this value to return the template after all transforms have been
+     * processed.</p> </li> </ul>
+     */
+    inline GetTemplateRequest& WithTemplateStage(TemplateStage&& value) { SetTemplateStage(value); return *this;}
+
   private:
     Aws::String m_stackName;
     bool m_stackNameHasBeenSet;
+    Aws::String m_changeSetName;
+    bool m_changeSetNameHasBeenSet;
+    TemplateStage m_templateStage;
+    bool m_templateStageHasBeenSet;
   };
 
 } // namespace Model

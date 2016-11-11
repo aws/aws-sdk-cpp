@@ -28,7 +28,8 @@ namespace Model
     ACTIVE,
     ACTIVATING,
     TERMINATED,
-    TERMINATING
+    TERMINATING,
+    ERROR_
   };
 
 namespace GameSessionStatusMapper

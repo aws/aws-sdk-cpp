@@ -44,7 +44,12 @@ enum class CodePipelineErrors
   RESOURCE_NOT_FOUND = 16,
   UNRECOGNIZED_CLIENT = 17,
   MALFORMED_QUERY_STRING = 18,
+  SLOW_DOWN = 19,
+  REQUEST_TIME_TOO_SKEWED = 20,
+  INVALID_SIGNATURE = 21,
+  SIGNATURE_DOES_NOT_MATCH = 22,
   NETWORK_CONNECTION = 99,
+  
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -64,6 +69,7 @@ enum class CodePipelineErrors
   JOB_NOT_FOUND,
   LIMIT_EXCEEDED,
   NOT_LATEST_PIPELINE_EXECUTION,
+  PIPELINE_EXECUTION_NOT_FOUND,
   PIPELINE_NAME_IN_USE,
   PIPELINE_NOT_FOUND,
   PIPELINE_VERSION_NOT_FOUND,

@@ -40,10 +40,13 @@ SpotFleetRequestConfigData::SpotFleetRequestConfigData() :
     m_terminateInstancesWithExpirationHasBeenSet(false),
     m_iamFleetRoleHasBeenSet(false),
     m_launchSpecificationsHasBeenSet(false),
+    m_excessCapacityTerminationPolicy(ExcessCapacityTerminationPolicy::NOT_SET),
     m_excessCapacityTerminationPolicyHasBeenSet(false),
+    m_allocationStrategy(AllocationStrategy::NOT_SET),
     m_allocationStrategyHasBeenSet(false),
     m_fulfilledCapacity(0.0),
     m_fulfilledCapacityHasBeenSet(false),
+    m_type(FleetType::NOT_SET),
     m_typeHasBeenSet(false)
 {
 }
@@ -59,10 +62,13 @@ SpotFleetRequestConfigData::SpotFleetRequestConfigData(const XmlNode& xmlNode) :
     m_terminateInstancesWithExpirationHasBeenSet(false),
     m_iamFleetRoleHasBeenSet(false),
     m_launchSpecificationsHasBeenSet(false),
+    m_excessCapacityTerminationPolicy(ExcessCapacityTerminationPolicy::NOT_SET),
     m_excessCapacityTerminationPolicyHasBeenSet(false),
+    m_allocationStrategy(AllocationStrategy::NOT_SET),
     m_allocationStrategyHasBeenSet(false),
     m_fulfilledCapacity(0.0),
     m_fulfilledCapacityHasBeenSet(false),
+    m_type(FleetType::NOT_SET),
     m_typeHasBeenSet(false)
 {
   *this = xmlNode;

@@ -37,7 +37,8 @@ namespace ElastiCache
 namespace Model
 {
   /**
-   * <p>Represents the output of a <i>DescribeCacheParameters</i> action.</p>
+   * <p>Represents the output of a <code>DescribeCacheParameters</code>
+   * operation.</p>
    */
   class AWS_ELASTICACHE_API DescribeCacheParametersResult
   {

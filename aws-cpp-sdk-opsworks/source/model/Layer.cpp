@@ -30,6 +30,7 @@ namespace Model
 Layer::Layer() : 
     m_stackIdHasBeenSet(false),
     m_layerIdHasBeenSet(false),
+    m_type(LayerType::NOT_SET),
     m_typeHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_shortnameHasBeenSet(false),
@@ -60,6 +61,7 @@ Layer::Layer() :
 Layer::Layer(const JsonValue& jsonValue) : 
     m_stackIdHasBeenSet(false),
     m_layerIdHasBeenSet(false),
+    m_type(LayerType::NOT_SET),
     m_typeHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_shortnameHasBeenSet(false),

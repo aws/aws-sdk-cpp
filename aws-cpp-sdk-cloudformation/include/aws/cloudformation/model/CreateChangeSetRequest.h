@@ -17,6 +17,7 @@
 #include <aws/cloudformation/CloudFormationRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/cloudformation/model/ChangeSetType.h>
 #include <aws/cloudformation/model/Parameter.h>
 #include <aws/cloudformation/model/Capability.h>
 #include <aws/cloudformation/model/Tag.h>
@@ -645,6 +646,104 @@ namespace Model
     inline CreateChangeSetRequest& AddResourceTypes(const char* value) { m_resourceTypesHasBeenSet = true; m_resourceTypes.push_back(value); return *this; }
 
     /**
+     * <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM)
+     * role that AWS CloudFormation assumes when executing the change set. AWS
+     * CloudFormation uses the role's credentials to make calls on your behalf. AWS
+     * CloudFormation uses this role for all future operations on the stack. As long as
+     * users have permission to operate on the stack, AWS CloudFormation uses this role
+     * even if the users don't have permission to pass it. Ensure that the role grants
+     * least privilege.</p> <p>If you don't specify a value, AWS CloudFormation uses
+     * the role that was previously associated with the stack. If no role is available,
+     * AWS CloudFormation uses a temporary session that is generated from your user
+     * credentials.</p>
+     */
+    inline const Aws::String& GetRoleARN() const{ return m_roleARN; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM)
+     * role that AWS CloudFormation assumes when executing the change set. AWS
+     * CloudFormation uses the role's credentials to make calls on your behalf. AWS
+     * CloudFormation uses this role for all future operations on the stack. As long as
+     * users have permission to operate on the stack, AWS CloudFormation uses this role
+     * even if the users don't have permission to pass it. Ensure that the role grants
+     * least privilege.</p> <p>If you don't specify a value, AWS CloudFormation uses
+     * the role that was previously associated with the stack. If no role is available,
+     * AWS CloudFormation uses a temporary session that is generated from your user
+     * credentials.</p>
+     */
+    inline void SetRoleARN(const Aws::String& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM)
+     * role that AWS CloudFormation assumes when executing the change set. AWS
+     * CloudFormation uses the role's credentials to make calls on your behalf. AWS
+     * CloudFormation uses this role for all future operations on the stack. As long as
+     * users have permission to operate on the stack, AWS CloudFormation uses this role
+     * even if the users don't have permission to pass it. Ensure that the role grants
+     * least privilege.</p> <p>If you don't specify a value, AWS CloudFormation uses
+     * the role that was previously associated with the stack. If no role is available,
+     * AWS CloudFormation uses a temporary session that is generated from your user
+     * credentials.</p>
+     */
+    inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM)
+     * role that AWS CloudFormation assumes when executing the change set. AWS
+     * CloudFormation uses the role's credentials to make calls on your behalf. AWS
+     * CloudFormation uses this role for all future operations on the stack. As long as
+     * users have permission to operate on the stack, AWS CloudFormation uses this role
+     * even if the users don't have permission to pass it. Ensure that the role grants
+     * least privilege.</p> <p>If you don't specify a value, AWS CloudFormation uses
+     * the role that was previously associated with the stack. If no role is available,
+     * AWS CloudFormation uses a temporary session that is generated from your user
+     * credentials.</p>
+     */
+    inline void SetRoleARN(const char* value) { m_roleARNHasBeenSet = true; m_roleARN.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM)
+     * role that AWS CloudFormation assumes when executing the change set. AWS
+     * CloudFormation uses the role's credentials to make calls on your behalf. AWS
+     * CloudFormation uses this role for all future operations on the stack. As long as
+     * users have permission to operate on the stack, AWS CloudFormation uses this role
+     * even if the users don't have permission to pass it. Ensure that the role grants
+     * least privilege.</p> <p>If you don't specify a value, AWS CloudFormation uses
+     * the role that was previously associated with the stack. If no role is available,
+     * AWS CloudFormation uses a temporary session that is generated from your user
+     * credentials.</p>
+     */
+    inline CreateChangeSetRequest& WithRoleARN(const Aws::String& value) { SetRoleARN(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM)
+     * role that AWS CloudFormation assumes when executing the change set. AWS
+     * CloudFormation uses the role's credentials to make calls on your behalf. AWS
+     * CloudFormation uses this role for all future operations on the stack. As long as
+     * users have permission to operate on the stack, AWS CloudFormation uses this role
+     * even if the users don't have permission to pass it. Ensure that the role grants
+     * least privilege.</p> <p>If you don't specify a value, AWS CloudFormation uses
+     * the role that was previously associated with the stack. If no role is available,
+     * AWS CloudFormation uses a temporary session that is generated from your user
+     * credentials.</p>
+     */
+    inline CreateChangeSetRequest& WithRoleARN(Aws::String&& value) { SetRoleARN(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM)
+     * role that AWS CloudFormation assumes when executing the change set. AWS
+     * CloudFormation uses the role's credentials to make calls on your behalf. AWS
+     * CloudFormation uses this role for all future operations on the stack. As long as
+     * users have permission to operate on the stack, AWS CloudFormation uses this role
+     * even if the users don't have permission to pass it. Ensure that the role grants
+     * least privilege.</p> <p>If you don't specify a value, AWS CloudFormation uses
+     * the role that was previously associated with the stack. If no role is available,
+     * AWS CloudFormation uses a temporary session that is generated from your user
+     * credentials.</p>
+     */
+    inline CreateChangeSetRequest& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}
+
+    /**
      * <p>The Amazon Resource Names (ARNs) of Amazon Simple Notification Service
      * (Amazon SNS) topics that AWS CloudFormation associates with the stack. To remove
      * all associated notification topics, specify an empty list.</p>
@@ -903,6 +1002,81 @@ namespace Model
      */
     inline CreateChangeSetRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+    /**
+     * <p>The type of change set operation.</p> <p>Valid values are <code>CREATE</code>
+     * and <code>UPDATE</code>. The default value is <code>UPDATE</code>.</p> <ul> <li>
+     * <p> <code>CREATE</code> - Specify to use the change set to create a new stack.
+     * While AWS CloudFormation creates the stack, the stack has the <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995">
+     * <code>REVIEW_IN_PROGRESS</code> </a> status and an expected
+     * <code>StackId</code>, but no template or resources. Except for its
+     * <code>StackId</code>, the stack is completely empty until you execute the change
+     * set. You can apply multiple change sets to a stack.</p> </li> <li> <p>
+     * <code>UPDATE</code> - Specify to create a change set for an existing stack.</p>
+     * </li> </ul>
+     */
+    inline const ChangeSetType& GetChangeSetType() const{ return m_changeSetType; }
+
+    /**
+     * <p>The type of change set operation.</p> <p>Valid values are <code>CREATE</code>
+     * and <code>UPDATE</code>. The default value is <code>UPDATE</code>.</p> <ul> <li>
+     * <p> <code>CREATE</code> - Specify to use the change set to create a new stack.
+     * While AWS CloudFormation creates the stack, the stack has the <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995">
+     * <code>REVIEW_IN_PROGRESS</code> </a> status and an expected
+     * <code>StackId</code>, but no template or resources. Except for its
+     * <code>StackId</code>, the stack is completely empty until you execute the change
+     * set. You can apply multiple change sets to a stack.</p> </li> <li> <p>
+     * <code>UPDATE</code> - Specify to create a change set for an existing stack.</p>
+     * </li> </ul>
+     */
+    inline void SetChangeSetType(const ChangeSetType& value) { m_changeSetTypeHasBeenSet = true; m_changeSetType = value; }
+
+    /**
+     * <p>The type of change set operation.</p> <p>Valid values are <code>CREATE</code>
+     * and <code>UPDATE</code>. The default value is <code>UPDATE</code>.</p> <ul> <li>
+     * <p> <code>CREATE</code> - Specify to use the change set to create a new stack.
+     * While AWS CloudFormation creates the stack, the stack has the <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995">
+     * <code>REVIEW_IN_PROGRESS</code> </a> status and an expected
+     * <code>StackId</code>, but no template or resources. Except for its
+     * <code>StackId</code>, the stack is completely empty until you execute the change
+     * set. You can apply multiple change sets to a stack.</p> </li> <li> <p>
+     * <code>UPDATE</code> - Specify to create a change set for an existing stack.</p>
+     * </li> </ul>
+     */
+    inline void SetChangeSetType(ChangeSetType&& value) { m_changeSetTypeHasBeenSet = true; m_changeSetType = value; }
+
+    /**
+     * <p>The type of change set operation.</p> <p>Valid values are <code>CREATE</code>
+     * and <code>UPDATE</code>. The default value is <code>UPDATE</code>.</p> <ul> <li>
+     * <p> <code>CREATE</code> - Specify to use the change set to create a new stack.
+     * While AWS CloudFormation creates the stack, the stack has the <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995">
+     * <code>REVIEW_IN_PROGRESS</code> </a> status and an expected
+     * <code>StackId</code>, but no template or resources. Except for its
+     * <code>StackId</code>, the stack is completely empty until you execute the change
+     * set. You can apply multiple change sets to a stack.</p> </li> <li> <p>
+     * <code>UPDATE</code> - Specify to create a change set for an existing stack.</p>
+     * </li> </ul>
+     */
+    inline CreateChangeSetRequest& WithChangeSetType(const ChangeSetType& value) { SetChangeSetType(value); return *this;}
+
+    /**
+     * <p>The type of change set operation.</p> <p>Valid values are <code>CREATE</code>
+     * and <code>UPDATE</code>. The default value is <code>UPDATE</code>.</p> <ul> <li>
+     * <p> <code>CREATE</code> - Specify to use the change set to create a new stack.
+     * While AWS CloudFormation creates the stack, the stack has the <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995">
+     * <code>REVIEW_IN_PROGRESS</code> </a> status and an expected
+     * <code>StackId</code>, but no template or resources. Except for its
+     * <code>StackId</code>, the stack is completely empty until you execute the change
+     * set. You can apply multiple change sets to a stack.</p> </li> <li> <p>
+     * <code>UPDATE</code> - Specify to create a change set for an existing stack.</p>
+     * </li> </ul>
+     */
+    inline CreateChangeSetRequest& WithChangeSetType(ChangeSetType&& value) { SetChangeSetType(value); return *this;}
+
   private:
     Aws::String m_stackName;
     bool m_stackNameHasBeenSet;
@@ -918,6 +1092,8 @@ namespace Model
     bool m_capabilitiesHasBeenSet;
     Aws::Vector<Aws::String> m_resourceTypes;
     bool m_resourceTypesHasBeenSet;
+    Aws::String m_roleARN;
+    bool m_roleARNHasBeenSet;
     Aws::Vector<Aws::String> m_notificationARNs;
     bool m_notificationARNsHasBeenSet;
     Aws::Vector<Tag> m_tags;
@@ -928,6 +1104,8 @@ namespace Model
     bool m_clientTokenHasBeenSet;
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+    ChangeSetType m_changeSetType;
+    bool m_changeSetTypeHasBeenSet;
   };
 
 } // namespace Model

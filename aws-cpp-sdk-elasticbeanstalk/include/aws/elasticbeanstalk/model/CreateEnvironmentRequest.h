@@ -39,57 +39,57 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     /**
-     * <p> The name of the application that contains the version to be deployed. </p>
-     * <p> If no application is found with this name, <code>CreateEnvironment</code>
+     * <p>The name of the application that contains the version to be deployed.</p> <p>
+     * If no application is found with this name, <code>CreateEnvironment</code>
      * returns an <code>InvalidParameterValue</code> error. </p>
      */
     inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
 
     /**
-     * <p> The name of the application that contains the version to be deployed. </p>
-     * <p> If no application is found with this name, <code>CreateEnvironment</code>
+     * <p>The name of the application that contains the version to be deployed.</p> <p>
+     * If no application is found with this name, <code>CreateEnvironment</code>
      * returns an <code>InvalidParameterValue</code> error. </p>
      */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /**
-     * <p> The name of the application that contains the version to be deployed. </p>
-     * <p> If no application is found with this name, <code>CreateEnvironment</code>
+     * <p>The name of the application that contains the version to be deployed.</p> <p>
+     * If no application is found with this name, <code>CreateEnvironment</code>
      * returns an <code>InvalidParameterValue</code> error. </p>
      */
     inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /**
-     * <p> The name of the application that contains the version to be deployed. </p>
-     * <p> If no application is found with this name, <code>CreateEnvironment</code>
+     * <p>The name of the application that contains the version to be deployed.</p> <p>
+     * If no application is found with this name, <code>CreateEnvironment</code>
      * returns an <code>InvalidParameterValue</code> error. </p>
      */
     inline void SetApplicationName(const char* value) { m_applicationNameHasBeenSet = true; m_applicationName.assign(value); }
 
     /**
-     * <p> The name of the application that contains the version to be deployed. </p>
-     * <p> If no application is found with this name, <code>CreateEnvironment</code>
+     * <p>The name of the application that contains the version to be deployed.</p> <p>
+     * If no application is found with this name, <code>CreateEnvironment</code>
      * returns an <code>InvalidParameterValue</code> error. </p>
      */
     inline CreateEnvironmentRequest& WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
 
     /**
-     * <p> The name of the application that contains the version to be deployed. </p>
-     * <p> If no application is found with this name, <code>CreateEnvironment</code>
+     * <p>The name of the application that contains the version to be deployed.</p> <p>
+     * If no application is found with this name, <code>CreateEnvironment</code>
      * returns an <code>InvalidParameterValue</code> error. </p>
      */
     inline CreateEnvironmentRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(value); return *this;}
 
     /**
-     * <p> The name of the application that contains the version to be deployed. </p>
-     * <p> If no application is found with this name, <code>CreateEnvironment</code>
+     * <p>The name of the application that contains the version to be deployed.</p> <p>
+     * If no application is found with this name, <code>CreateEnvironment</code>
      * returns an <code>InvalidParameterValue</code> error. </p>
      */
     inline CreateEnvironmentRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
 
     /**
-     * <p> A unique name for the deployment environment. Used in the application URL.
-     * </p> <p>Constraint: Must be from 4 to 40 characters in length. The name can
+     * <p>A unique name for the deployment environment. Used in the application
+     * URL.</p> <p>Constraint: Must be from 4 to 40 characters in length. The name can
      * contain only letters, numbers, and hyphens. It cannot start or end with a
      * hyphen. This name must be unique in your account. If the specified name already
      * exists, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code>
@@ -100,8 +100,8 @@ namespace Model
     inline const Aws::String& GetEnvironmentName() const{ return m_environmentName; }
 
     /**
-     * <p> A unique name for the deployment environment. Used in the application URL.
-     * </p> <p>Constraint: Must be from 4 to 40 characters in length. The name can
+     * <p>A unique name for the deployment environment. Used in the application
+     * URL.</p> <p>Constraint: Must be from 4 to 40 characters in length. The name can
      * contain only letters, numbers, and hyphens. It cannot start or end with a
      * hyphen. This name must be unique in your account. If the specified name already
      * exists, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code>
@@ -112,8 +112,8 @@ namespace Model
     inline void SetEnvironmentName(const Aws::String& value) { m_environmentNameHasBeenSet = true; m_environmentName = value; }
 
     /**
-     * <p> A unique name for the deployment environment. Used in the application URL.
-     * </p> <p>Constraint: Must be from 4 to 40 characters in length. The name can
+     * <p>A unique name for the deployment environment. Used in the application
+     * URL.</p> <p>Constraint: Must be from 4 to 40 characters in length. The name can
      * contain only letters, numbers, and hyphens. It cannot start or end with a
      * hyphen. This name must be unique in your account. If the specified name already
      * exists, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code>
@@ -124,8 +124,8 @@ namespace Model
     inline void SetEnvironmentName(Aws::String&& value) { m_environmentNameHasBeenSet = true; m_environmentName = value; }
 
     /**
-     * <p> A unique name for the deployment environment. Used in the application URL.
-     * </p> <p>Constraint: Must be from 4 to 40 characters in length. The name can
+     * <p>A unique name for the deployment environment. Used in the application
+     * URL.</p> <p>Constraint: Must be from 4 to 40 characters in length. The name can
      * contain only letters, numbers, and hyphens. It cannot start or end with a
      * hyphen. This name must be unique in your account. If the specified name already
      * exists, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code>
@@ -136,8 +136,8 @@ namespace Model
     inline void SetEnvironmentName(const char* value) { m_environmentNameHasBeenSet = true; m_environmentName.assign(value); }
 
     /**
-     * <p> A unique name for the deployment environment. Used in the application URL.
-     * </p> <p>Constraint: Must be from 4 to 40 characters in length. The name can
+     * <p>A unique name for the deployment environment. Used in the application
+     * URL.</p> <p>Constraint: Must be from 4 to 40 characters in length. The name can
      * contain only letters, numbers, and hyphens. It cannot start or end with a
      * hyphen. This name must be unique in your account. If the specified name already
      * exists, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code>
@@ -148,8 +148,8 @@ namespace Model
     inline CreateEnvironmentRequest& WithEnvironmentName(const Aws::String& value) { SetEnvironmentName(value); return *this;}
 
     /**
-     * <p> A unique name for the deployment environment. Used in the application URL.
-     * </p> <p>Constraint: Must be from 4 to 40 characters in length. The name can
+     * <p>A unique name for the deployment environment. Used in the application
+     * URL.</p> <p>Constraint: Must be from 4 to 40 characters in length. The name can
      * contain only letters, numbers, and hyphens. It cannot start or end with a
      * hyphen. This name must be unique in your account. If the specified name already
      * exists, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code>
@@ -160,8 +160,8 @@ namespace Model
     inline CreateEnvironmentRequest& WithEnvironmentName(Aws::String&& value) { SetEnvironmentName(value); return *this;}
 
     /**
-     * <p> A unique name for the deployment environment. Used in the application URL.
-     * </p> <p>Constraint: Must be from 4 to 40 characters in length. The name can
+     * <p>A unique name for the deployment environment. Used in the application
+     * URL.</p> <p>Constraint: Must be from 4 to 40 characters in length. The name can
      * contain only letters, numbers, and hyphens. It cannot start or end with a
      * hyphen. This name must be unique in your account. If the specified name already
      * exists, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code>
@@ -270,111 +270,111 @@ namespace Model
     inline CreateEnvironmentRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
     /**
-     * <p> If specified, the environment attempts to use this value as the prefix for
+     * <p>If specified, the environment attempts to use this value as the prefix for
      * the CNAME. If not specified, the CNAME is generated automatically by appending a
-     * random alphanumeric string to the environment name. </p>
+     * random alphanumeric string to the environment name.</p>
      */
     inline const Aws::String& GetCNAMEPrefix() const{ return m_cNAMEPrefix; }
 
     /**
-     * <p> If specified, the environment attempts to use this value as the prefix for
+     * <p>If specified, the environment attempts to use this value as the prefix for
      * the CNAME. If not specified, the CNAME is generated automatically by appending a
-     * random alphanumeric string to the environment name. </p>
+     * random alphanumeric string to the environment name.</p>
      */
     inline void SetCNAMEPrefix(const Aws::String& value) { m_cNAMEPrefixHasBeenSet = true; m_cNAMEPrefix = value; }
 
     /**
-     * <p> If specified, the environment attempts to use this value as the prefix for
+     * <p>If specified, the environment attempts to use this value as the prefix for
      * the CNAME. If not specified, the CNAME is generated automatically by appending a
-     * random alphanumeric string to the environment name. </p>
+     * random alphanumeric string to the environment name.</p>
      */
     inline void SetCNAMEPrefix(Aws::String&& value) { m_cNAMEPrefixHasBeenSet = true; m_cNAMEPrefix = value; }
 
     /**
-     * <p> If specified, the environment attempts to use this value as the prefix for
+     * <p>If specified, the environment attempts to use this value as the prefix for
      * the CNAME. If not specified, the CNAME is generated automatically by appending a
-     * random alphanumeric string to the environment name. </p>
+     * random alphanumeric string to the environment name.</p>
      */
     inline void SetCNAMEPrefix(const char* value) { m_cNAMEPrefixHasBeenSet = true; m_cNAMEPrefix.assign(value); }
 
     /**
-     * <p> If specified, the environment attempts to use this value as the prefix for
+     * <p>If specified, the environment attempts to use this value as the prefix for
      * the CNAME. If not specified, the CNAME is generated automatically by appending a
-     * random alphanumeric string to the environment name. </p>
+     * random alphanumeric string to the environment name.</p>
      */
     inline CreateEnvironmentRequest& WithCNAMEPrefix(const Aws::String& value) { SetCNAMEPrefix(value); return *this;}
 
     /**
-     * <p> If specified, the environment attempts to use this value as the prefix for
+     * <p>If specified, the environment attempts to use this value as the prefix for
      * the CNAME. If not specified, the CNAME is generated automatically by appending a
-     * random alphanumeric string to the environment name. </p>
+     * random alphanumeric string to the environment name.</p>
      */
     inline CreateEnvironmentRequest& WithCNAMEPrefix(Aws::String&& value) { SetCNAMEPrefix(value); return *this;}
 
     /**
-     * <p> If specified, the environment attempts to use this value as the prefix for
+     * <p>If specified, the environment attempts to use this value as the prefix for
      * the CNAME. If not specified, the CNAME is generated automatically by appending a
-     * random alphanumeric string to the environment name. </p>
+     * random alphanumeric string to the environment name.</p>
      */
     inline CreateEnvironmentRequest& WithCNAMEPrefix(const char* value) { SetCNAMEPrefix(value); return *this;}
 
     /**
-     * <p> This specifies the tier to use for creating this environment. </p>
+     * <p>This specifies the tier to use for creating this environment.</p>
      */
     inline const EnvironmentTier& GetTier() const{ return m_tier; }
 
     /**
-     * <p> This specifies the tier to use for creating this environment. </p>
+     * <p>This specifies the tier to use for creating this environment.</p>
      */
     inline void SetTier(const EnvironmentTier& value) { m_tierHasBeenSet = true; m_tier = value; }
 
     /**
-     * <p> This specifies the tier to use for creating this environment. </p>
+     * <p>This specifies the tier to use for creating this environment.</p>
      */
     inline void SetTier(EnvironmentTier&& value) { m_tierHasBeenSet = true; m_tier = value; }
 
     /**
-     * <p> This specifies the tier to use for creating this environment. </p>
+     * <p>This specifies the tier to use for creating this environment.</p>
      */
     inline CreateEnvironmentRequest& WithTier(const EnvironmentTier& value) { SetTier(value); return *this;}
 
     /**
-     * <p> This specifies the tier to use for creating this environment. </p>
+     * <p>This specifies the tier to use for creating this environment.</p>
      */
     inline CreateEnvironmentRequest& WithTier(EnvironmentTier&& value) { SetTier(value); return *this;}
 
     /**
-     * <p> This specifies the tags applied to resources in the environment. </p>
+     * <p>This specifies the tags applied to resources in the environment.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p> This specifies the tags applied to resources in the environment. </p>
+     * <p>This specifies the tags applied to resources in the environment.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p> This specifies the tags applied to resources in the environment. </p>
+     * <p>This specifies the tags applied to resources in the environment.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p> This specifies the tags applied to resources in the environment. </p>
+     * <p>This specifies the tags applied to resources in the environment.</p>
      */
     inline CreateEnvironmentRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p> This specifies the tags applied to resources in the environment. </p>
+     * <p>This specifies the tags applied to resources in the environment.</p>
      */
     inline CreateEnvironmentRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(value); return *this;}
 
     /**
-     * <p> This specifies the tags applied to resources in the environment. </p>
+     * <p>This specifies the tags applied to resources in the environment.</p>
      */
     inline CreateEnvironmentRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p> This specifies the tags applied to resources in the environment. </p>
+     * <p>This specifies the tags applied to resources in the environment.</p>
      */
     inline CreateEnvironmentRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
@@ -382,8 +382,8 @@ namespace Model
      * <p>The name of the application version to deploy.</p> <p> If the specified
      * application has no associated application versions, AWS Elastic Beanstalk
      * <code>UpdateEnvironment</code> returns an <code>InvalidParameterValue</code>
-     * error. </p> <p> Default: If not specified, AWS Elastic Beanstalk attempts to
-     * launch the sample application in the container. </p>
+     * error. </p> <p>Default: If not specified, AWS Elastic Beanstalk attempts to
+     * launch the sample application in the container.</p>
      */
     inline const Aws::String& GetVersionLabel() const{ return m_versionLabel; }
 
@@ -391,8 +391,8 @@ namespace Model
      * <p>The name of the application version to deploy.</p> <p> If the specified
      * application has no associated application versions, AWS Elastic Beanstalk
      * <code>UpdateEnvironment</code> returns an <code>InvalidParameterValue</code>
-     * error. </p> <p> Default: If not specified, AWS Elastic Beanstalk attempts to
-     * launch the sample application in the container. </p>
+     * error. </p> <p>Default: If not specified, AWS Elastic Beanstalk attempts to
+     * launch the sample application in the container.</p>
      */
     inline void SetVersionLabel(const Aws::String& value) { m_versionLabelHasBeenSet = true; m_versionLabel = value; }
 
@@ -400,8 +400,8 @@ namespace Model
      * <p>The name of the application version to deploy.</p> <p> If the specified
      * application has no associated application versions, AWS Elastic Beanstalk
      * <code>UpdateEnvironment</code> returns an <code>InvalidParameterValue</code>
-     * error. </p> <p> Default: If not specified, AWS Elastic Beanstalk attempts to
-     * launch the sample application in the container. </p>
+     * error. </p> <p>Default: If not specified, AWS Elastic Beanstalk attempts to
+     * launch the sample application in the container.</p>
      */
     inline void SetVersionLabel(Aws::String&& value) { m_versionLabelHasBeenSet = true; m_versionLabel = value; }
 
@@ -409,8 +409,8 @@ namespace Model
      * <p>The name of the application version to deploy.</p> <p> If the specified
      * application has no associated application versions, AWS Elastic Beanstalk
      * <code>UpdateEnvironment</code> returns an <code>InvalidParameterValue</code>
-     * error. </p> <p> Default: If not specified, AWS Elastic Beanstalk attempts to
-     * launch the sample application in the container. </p>
+     * error. </p> <p>Default: If not specified, AWS Elastic Beanstalk attempts to
+     * launch the sample application in the container.</p>
      */
     inline void SetVersionLabel(const char* value) { m_versionLabelHasBeenSet = true; m_versionLabel.assign(value); }
 
@@ -418,8 +418,8 @@ namespace Model
      * <p>The name of the application version to deploy.</p> <p> If the specified
      * application has no associated application versions, AWS Elastic Beanstalk
      * <code>UpdateEnvironment</code> returns an <code>InvalidParameterValue</code>
-     * error. </p> <p> Default: If not specified, AWS Elastic Beanstalk attempts to
-     * launch the sample application in the container. </p>
+     * error. </p> <p>Default: If not specified, AWS Elastic Beanstalk attempts to
+     * launch the sample application in the container.</p>
      */
     inline CreateEnvironmentRequest& WithVersionLabel(const Aws::String& value) { SetVersionLabel(value); return *this;}
 
@@ -427,8 +427,8 @@ namespace Model
      * <p>The name of the application version to deploy.</p> <p> If the specified
      * application has no associated application versions, AWS Elastic Beanstalk
      * <code>UpdateEnvironment</code> returns an <code>InvalidParameterValue</code>
-     * error. </p> <p> Default: If not specified, AWS Elastic Beanstalk attempts to
-     * launch the sample application in the container. </p>
+     * error. </p> <p>Default: If not specified, AWS Elastic Beanstalk attempts to
+     * launch the sample application in the container.</p>
      */
     inline CreateEnvironmentRequest& WithVersionLabel(Aws::String&& value) { SetVersionLabel(value); return *this;}
 
@@ -436,8 +436,8 @@ namespace Model
      * <p>The name of the application version to deploy.</p> <p> If the specified
      * application has no associated application versions, AWS Elastic Beanstalk
      * <code>UpdateEnvironment</code> returns an <code>InvalidParameterValue</code>
-     * error. </p> <p> Default: If not specified, AWS Elastic Beanstalk attempts to
-     * launch the sample application in the container. </p>
+     * error. </p> <p>Default: If not specified, AWS Elastic Beanstalk attempts to
+     * launch the sample application in the container.</p>
      */
     inline CreateEnvironmentRequest& WithVersionLabel(const char* value) { SetVersionLabel(value); return *this;}
 
@@ -526,9 +526,9 @@ namespace Model
     inline CreateEnvironmentRequest& WithTemplateName(const char* value) { SetTemplateName(value); return *this;}
 
     /**
-     * <p> This is an alternative to specifying a template name. If specified, AWS
+     * <p>This is an alternative to specifying a template name. If specified, AWS
      * Elastic Beanstalk sets the configuration values to the default values associated
-     * with the specified solution stack. </p> <p> Condition: You must specify either
+     * with the specified solution stack.</p> <p> Condition: You must specify either
      * this or a <code>TemplateName</code>, but not both. If you specify both, AWS
      * Elastic Beanstalk returns an <code>InvalidParameterCombination</code> error. If
      * you do not specify either, AWS Elastic Beanstalk returns a
@@ -537,9 +537,9 @@ namespace Model
     inline const Aws::String& GetSolutionStackName() const{ return m_solutionStackName; }
 
     /**
-     * <p> This is an alternative to specifying a template name. If specified, AWS
+     * <p>This is an alternative to specifying a template name. If specified, AWS
      * Elastic Beanstalk sets the configuration values to the default values associated
-     * with the specified solution stack. </p> <p> Condition: You must specify either
+     * with the specified solution stack.</p> <p> Condition: You must specify either
      * this or a <code>TemplateName</code>, but not both. If you specify both, AWS
      * Elastic Beanstalk returns an <code>InvalidParameterCombination</code> error. If
      * you do not specify either, AWS Elastic Beanstalk returns a
@@ -548,9 +548,9 @@ namespace Model
     inline void SetSolutionStackName(const Aws::String& value) { m_solutionStackNameHasBeenSet = true; m_solutionStackName = value; }
 
     /**
-     * <p> This is an alternative to specifying a template name. If specified, AWS
+     * <p>This is an alternative to specifying a template name. If specified, AWS
      * Elastic Beanstalk sets the configuration values to the default values associated
-     * with the specified solution stack. </p> <p> Condition: You must specify either
+     * with the specified solution stack.</p> <p> Condition: You must specify either
      * this or a <code>TemplateName</code>, but not both. If you specify both, AWS
      * Elastic Beanstalk returns an <code>InvalidParameterCombination</code> error. If
      * you do not specify either, AWS Elastic Beanstalk returns a
@@ -559,9 +559,9 @@ namespace Model
     inline void SetSolutionStackName(Aws::String&& value) { m_solutionStackNameHasBeenSet = true; m_solutionStackName = value; }
 
     /**
-     * <p> This is an alternative to specifying a template name. If specified, AWS
+     * <p>This is an alternative to specifying a template name. If specified, AWS
      * Elastic Beanstalk sets the configuration values to the default values associated
-     * with the specified solution stack. </p> <p> Condition: You must specify either
+     * with the specified solution stack.</p> <p> Condition: You must specify either
      * this or a <code>TemplateName</code>, but not both. If you specify both, AWS
      * Elastic Beanstalk returns an <code>InvalidParameterCombination</code> error. If
      * you do not specify either, AWS Elastic Beanstalk returns a
@@ -570,9 +570,9 @@ namespace Model
     inline void SetSolutionStackName(const char* value) { m_solutionStackNameHasBeenSet = true; m_solutionStackName.assign(value); }
 
     /**
-     * <p> This is an alternative to specifying a template name. If specified, AWS
+     * <p>This is an alternative to specifying a template name. If specified, AWS
      * Elastic Beanstalk sets the configuration values to the default values associated
-     * with the specified solution stack. </p> <p> Condition: You must specify either
+     * with the specified solution stack.</p> <p> Condition: You must specify either
      * this or a <code>TemplateName</code>, but not both. If you specify both, AWS
      * Elastic Beanstalk returns an <code>InvalidParameterCombination</code> error. If
      * you do not specify either, AWS Elastic Beanstalk returns a
@@ -581,9 +581,9 @@ namespace Model
     inline CreateEnvironmentRequest& WithSolutionStackName(const Aws::String& value) { SetSolutionStackName(value); return *this;}
 
     /**
-     * <p> This is an alternative to specifying a template name. If specified, AWS
+     * <p>This is an alternative to specifying a template name. If specified, AWS
      * Elastic Beanstalk sets the configuration values to the default values associated
-     * with the specified solution stack. </p> <p> Condition: You must specify either
+     * with the specified solution stack.</p> <p> Condition: You must specify either
      * this or a <code>TemplateName</code>, but not both. If you specify both, AWS
      * Elastic Beanstalk returns an <code>InvalidParameterCombination</code> error. If
      * you do not specify either, AWS Elastic Beanstalk returns a
@@ -592,9 +592,9 @@ namespace Model
     inline CreateEnvironmentRequest& WithSolutionStackName(Aws::String&& value) { SetSolutionStackName(value); return *this;}
 
     /**
-     * <p> This is an alternative to specifying a template name. If specified, AWS
+     * <p>This is an alternative to specifying a template name. If specified, AWS
      * Elastic Beanstalk sets the configuration values to the default values associated
-     * with the specified solution stack. </p> <p> Condition: You must specify either
+     * with the specified solution stack.</p> <p> Condition: You must specify either
      * this or a <code>TemplateName</code>, but not both. If you specify both, AWS
      * Elastic Beanstalk returns an <code>InvalidParameterCombination</code> error. If
      * you do not specify either, AWS Elastic Beanstalk returns a
@@ -603,100 +603,100 @@ namespace Model
     inline CreateEnvironmentRequest& WithSolutionStackName(const char* value) { SetSolutionStackName(value); return *this;}
 
     /**
-     * <p> If specified, AWS Elastic Beanstalk sets the specified configuration options
+     * <p>If specified, AWS Elastic Beanstalk sets the specified configuration options
      * to the requested value in the configuration set for the new environment. These
      * override the values obtained from the solution stack or the configuration
-     * template. </p>
+     * template.</p>
      */
     inline const Aws::Vector<ConfigurationOptionSetting>& GetOptionSettings() const{ return m_optionSettings; }
 
     /**
-     * <p> If specified, AWS Elastic Beanstalk sets the specified configuration options
+     * <p>If specified, AWS Elastic Beanstalk sets the specified configuration options
      * to the requested value in the configuration set for the new environment. These
      * override the values obtained from the solution stack or the configuration
-     * template. </p>
+     * template.</p>
      */
     inline void SetOptionSettings(const Aws::Vector<ConfigurationOptionSetting>& value) { m_optionSettingsHasBeenSet = true; m_optionSettings = value; }
 
     /**
-     * <p> If specified, AWS Elastic Beanstalk sets the specified configuration options
+     * <p>If specified, AWS Elastic Beanstalk sets the specified configuration options
      * to the requested value in the configuration set for the new environment. These
      * override the values obtained from the solution stack or the configuration
-     * template. </p>
+     * template.</p>
      */
     inline void SetOptionSettings(Aws::Vector<ConfigurationOptionSetting>&& value) { m_optionSettingsHasBeenSet = true; m_optionSettings = value; }
 
     /**
-     * <p> If specified, AWS Elastic Beanstalk sets the specified configuration options
+     * <p>If specified, AWS Elastic Beanstalk sets the specified configuration options
      * to the requested value in the configuration set for the new environment. These
      * override the values obtained from the solution stack or the configuration
-     * template. </p>
+     * template.</p>
      */
     inline CreateEnvironmentRequest& WithOptionSettings(const Aws::Vector<ConfigurationOptionSetting>& value) { SetOptionSettings(value); return *this;}
 
     /**
-     * <p> If specified, AWS Elastic Beanstalk sets the specified configuration options
+     * <p>If specified, AWS Elastic Beanstalk sets the specified configuration options
      * to the requested value in the configuration set for the new environment. These
      * override the values obtained from the solution stack or the configuration
-     * template. </p>
+     * template.</p>
      */
     inline CreateEnvironmentRequest& WithOptionSettings(Aws::Vector<ConfigurationOptionSetting>&& value) { SetOptionSettings(value); return *this;}
 
     /**
-     * <p> If specified, AWS Elastic Beanstalk sets the specified configuration options
+     * <p>If specified, AWS Elastic Beanstalk sets the specified configuration options
      * to the requested value in the configuration set for the new environment. These
      * override the values obtained from the solution stack or the configuration
-     * template. </p>
+     * template.</p>
      */
     inline CreateEnvironmentRequest& AddOptionSettings(const ConfigurationOptionSetting& value) { m_optionSettingsHasBeenSet = true; m_optionSettings.push_back(value); return *this; }
 
     /**
-     * <p> If specified, AWS Elastic Beanstalk sets the specified configuration options
+     * <p>If specified, AWS Elastic Beanstalk sets the specified configuration options
      * to the requested value in the configuration set for the new environment. These
      * override the values obtained from the solution stack or the configuration
-     * template. </p>
+     * template.</p>
      */
     inline CreateEnvironmentRequest& AddOptionSettings(ConfigurationOptionSetting&& value) { m_optionSettingsHasBeenSet = true; m_optionSettings.push_back(value); return *this; }
 
     /**
-     * <p> A list of custom user-defined configuration options to remove from the
-     * configuration set for this new environment. </p>
+     * <p>A list of custom user-defined configuration options to remove from the
+     * configuration set for this new environment.</p>
      */
     inline const Aws::Vector<OptionSpecification>& GetOptionsToRemove() const{ return m_optionsToRemove; }
 
     /**
-     * <p> A list of custom user-defined configuration options to remove from the
-     * configuration set for this new environment. </p>
+     * <p>A list of custom user-defined configuration options to remove from the
+     * configuration set for this new environment.</p>
      */
     inline void SetOptionsToRemove(const Aws::Vector<OptionSpecification>& value) { m_optionsToRemoveHasBeenSet = true; m_optionsToRemove = value; }
 
     /**
-     * <p> A list of custom user-defined configuration options to remove from the
-     * configuration set for this new environment. </p>
+     * <p>A list of custom user-defined configuration options to remove from the
+     * configuration set for this new environment.</p>
      */
     inline void SetOptionsToRemove(Aws::Vector<OptionSpecification>&& value) { m_optionsToRemoveHasBeenSet = true; m_optionsToRemove = value; }
 
     /**
-     * <p> A list of custom user-defined configuration options to remove from the
-     * configuration set for this new environment. </p>
+     * <p>A list of custom user-defined configuration options to remove from the
+     * configuration set for this new environment.</p>
      */
     inline CreateEnvironmentRequest& WithOptionsToRemove(const Aws::Vector<OptionSpecification>& value) { SetOptionsToRemove(value); return *this;}
 
     /**
-     * <p> A list of custom user-defined configuration options to remove from the
-     * configuration set for this new environment. </p>
+     * <p>A list of custom user-defined configuration options to remove from the
+     * configuration set for this new environment.</p>
      */
     inline CreateEnvironmentRequest& WithOptionsToRemove(Aws::Vector<OptionSpecification>&& value) { SetOptionsToRemove(value); return *this;}
 
     /**
-     * <p> A list of custom user-defined configuration options to remove from the
-     * configuration set for this new environment. </p>
+     * <p>A list of custom user-defined configuration options to remove from the
+     * configuration set for this new environment.</p>
      */
     inline CreateEnvironmentRequest& AddOptionsToRemove(const OptionSpecification& value) { m_optionsToRemoveHasBeenSet = true; m_optionsToRemove.push_back(value); return *this; }
 
     /**
-     * <p> A list of custom user-defined configuration options to remove from the
-     * configuration set for this new environment. </p>
+     * <p>A list of custom user-defined configuration options to remove from the
+     * configuration set for this new environment.</p>
      */
     inline CreateEnvironmentRequest& AddOptionsToRemove(OptionSpecification&& value) { m_optionsToRemoveHasBeenSet = true; m_optionsToRemove.push_back(value); return *this; }
 

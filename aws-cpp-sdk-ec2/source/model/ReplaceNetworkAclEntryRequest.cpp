@@ -26,6 +26,7 @@ ReplaceNetworkAclEntryRequest::ReplaceNetworkAclEntryRequest() :
     m_ruleNumber(0),
     m_ruleNumberHasBeenSet(false),
     m_protocolHasBeenSet(false),
+    m_ruleAction(RuleAction::NOT_SET),
     m_ruleActionHasBeenSet(false),
     m_egress(false),
     m_egressHasBeenSet(false),

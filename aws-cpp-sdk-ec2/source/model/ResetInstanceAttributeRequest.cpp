@@ -23,6 +23,7 @@ ResetInstanceAttributeRequest::ResetInstanceAttributeRequest() :
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
+    m_attribute(InstanceAttributeName::NOT_SET),
     m_attributeHasBeenSet(false)
 {
 }

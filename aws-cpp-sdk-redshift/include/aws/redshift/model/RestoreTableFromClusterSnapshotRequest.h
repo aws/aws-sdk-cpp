@@ -25,6 +25,7 @@ namespace Model
 {
 
   /**
+   * <p/>
    */
   class AWS_REDSHIFT_API RestoreTableFromClusterSnapshotRequest : public RedshiftRequest
   {
@@ -306,37 +307,37 @@ namespace Model
     inline RestoreTableFromClusterSnapshotRequest& WithTargetSchemaName(const char* value) { SetTargetSchemaName(value); return *this;}
 
     /**
-     * <p>The name of the table to create as a result of the current request. </p>
+     * <p>The name of the table to create as a result of the current request.</p>
      */
     inline const Aws::String& GetNewTableName() const{ return m_newTableName; }
 
     /**
-     * <p>The name of the table to create as a result of the current request. </p>
+     * <p>The name of the table to create as a result of the current request.</p>
      */
     inline void SetNewTableName(const Aws::String& value) { m_newTableNameHasBeenSet = true; m_newTableName = value; }
 
     /**
-     * <p>The name of the table to create as a result of the current request. </p>
+     * <p>The name of the table to create as a result of the current request.</p>
      */
     inline void SetNewTableName(Aws::String&& value) { m_newTableNameHasBeenSet = true; m_newTableName = value; }
 
     /**
-     * <p>The name of the table to create as a result of the current request. </p>
+     * <p>The name of the table to create as a result of the current request.</p>
      */
     inline void SetNewTableName(const char* value) { m_newTableNameHasBeenSet = true; m_newTableName.assign(value); }
 
     /**
-     * <p>The name of the table to create as a result of the current request. </p>
+     * <p>The name of the table to create as a result of the current request.</p>
      */
     inline RestoreTableFromClusterSnapshotRequest& WithNewTableName(const Aws::String& value) { SetNewTableName(value); return *this;}
 
     /**
-     * <p>The name of the table to create as a result of the current request. </p>
+     * <p>The name of the table to create as a result of the current request.</p>
      */
     inline RestoreTableFromClusterSnapshotRequest& WithNewTableName(Aws::String&& value) { SetNewTableName(value); return *this;}
 
     /**
-     * <p>The name of the table to create as a result of the current request. </p>
+     * <p>The name of the table to create as a result of the current request.</p>
      */
     inline RestoreTableFromClusterSnapshotRequest& WithNewTableName(const char* value) { SetNewTableName(value); return *this;}
 

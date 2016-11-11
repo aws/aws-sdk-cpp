@@ -22,6 +22,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 GenerateDataSetRequest::GenerateDataSetRequest() : 
+    m_dataSetType(DataSetType::NOT_SET),
     m_dataSetTypeHasBeenSet(false),
     m_dataSetPublicationDateHasBeenSet(false),
     m_roleNameArnHasBeenSet(false),

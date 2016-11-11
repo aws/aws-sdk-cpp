@@ -23,6 +23,7 @@ CreateVpcRequest::CreateVpcRequest() :
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
     m_cidrBlockHasBeenSet(false),
+    m_instanceTenancy(Tenancy::NOT_SET),
     m_instanceTenancyHasBeenSet(false)
 {
 }

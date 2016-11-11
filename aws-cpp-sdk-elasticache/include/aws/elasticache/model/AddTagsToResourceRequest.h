@@ -27,7 +27,7 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input of an <i>AddTagsToResource</i> action.</p>
+   * <p>Represents the input of an AddTagsToResource operation.</p>
    */
   class AWS_ELASTICACHE_API AddTagsToResourceRequest : public ElastiCacheRequest
   {
@@ -40,7 +40,7 @@ namespace Model
      * added, for example
      * <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code> or
      * <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>.</p>
-     * <p>For more information on ARNs, go to <a
+     * <p>For more information about ARNs, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
@@ -51,7 +51,7 @@ namespace Model
      * added, for example
      * <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code> or
      * <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>.</p>
-     * <p>For more information on ARNs, go to <a
+     * <p>For more information about ARNs, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
@@ -62,7 +62,7 @@ namespace Model
      * added, for example
      * <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code> or
      * <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>.</p>
-     * <p>For more information on ARNs, go to <a
+     * <p>For more information about ARNs, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
@@ -73,7 +73,7 @@ namespace Model
      * added, for example
      * <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code> or
      * <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>.</p>
-     * <p>For more information on ARNs, go to <a
+     * <p>For more information about ARNs, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
@@ -84,7 +84,7 @@ namespace Model
      * added, for example
      * <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code> or
      * <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>.</p>
-     * <p>For more information on ARNs, go to <a
+     * <p>For more information about ARNs, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
@@ -95,7 +95,7 @@ namespace Model
      * added, for example
      * <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code> or
      * <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>.</p>
-     * <p>For more information on ARNs, go to <a
+     * <p>For more information about ARNs, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
@@ -106,7 +106,7 @@ namespace Model
      * added, for example
      * <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code> or
      * <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>.</p>
-     * <p>For more information on ARNs, go to <a
+     * <p>For more information about ARNs, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */

@@ -26,6 +26,7 @@ namespace Model
 {
 
   /**
+   * <p/>
    */
   class AWS_CONFIGSERVICE_API DescribeConfigRulesRequest : public ConfigServiceRequest
   {

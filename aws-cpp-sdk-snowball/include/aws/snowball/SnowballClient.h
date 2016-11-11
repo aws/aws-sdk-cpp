@@ -128,7 +128,16 @@ namespace Model
     typedef std::function<void(const SnowballClient*, const Model::UpdateJobRequest&, const Model::UpdateJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateJobResponseReceivedHandler;
 
   /**
-   * <p>This is a test of the welcome page front matter.</p>
+   * <p>AWS Import/Export Snowball is a petabyte-scale data transport solution that
+   * uses secure appliances to transfer large amounts of data between your
+   * on-premises data centers and Amazon Simple Storage Service (Amazon S3). The
+   * Snowball commands described here provide access to the same functionality that
+   * is available in the AWS Snowball Management Console, which enables you to create
+   * and manage jobs for Snowball. To transfer data locally with a Snowball
+   * appliance, you'll need to use the Snowball client or the Amazon S3 API adapter
+   * for Snowball. For more information, see the <a
+   * href="http://docs.aws.amazon.com/AWSImportExport/latest/ug/api-reference.html">User
+   * Guide</a>.</p>
    */
   class AWS_SNOWBALL_API SnowballClient : public Aws::Client::AWSJsonClient
   {

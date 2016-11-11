@@ -31,14 +31,18 @@ namespace Model
 
 PlacementGroup::PlacementGroup() : 
     m_groupNameHasBeenSet(false),
+    m_strategy(PlacementStrategy::NOT_SET),
     m_strategyHasBeenSet(false),
+    m_state(PlacementGroupState::NOT_SET),
     m_stateHasBeenSet(false)
 {
 }
 
 PlacementGroup::PlacementGroup(const XmlNode& xmlNode) : 
     m_groupNameHasBeenSet(false),
+    m_strategy(PlacementStrategy::NOT_SET),
     m_strategyHasBeenSet(false),
+    m_state(PlacementGroupState::NOT_SET),
     m_stateHasBeenSet(false)
 {
   *this = xmlNode;

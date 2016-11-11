@@ -37,12 +37,15 @@ GameSession::GameSession() :
     m_currentPlayerSessionCountHasBeenSet(false),
     m_maximumPlayerSessionCount(0),
     m_maximumPlayerSessionCountHasBeenSet(false),
+    m_status(GameSessionStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_gamePropertiesHasBeenSet(false),
     m_ipAddressHasBeenSet(false),
     m_port(0),
     m_portHasBeenSet(false),
-    m_playerSessionCreationPolicyHasBeenSet(false)
+    m_playerSessionCreationPolicy(PlayerSessionCreationPolicy::NOT_SET),
+    m_playerSessionCreationPolicyHasBeenSet(false),
+    m_creatorIdHasBeenSet(false)
 {
 }
 
@@ -56,12 +59,15 @@ GameSession::GameSession(const JsonValue& jsonValue) :
     m_currentPlayerSessionCountHasBeenSet(false),
     m_maximumPlayerSessionCount(0),
     m_maximumPlayerSessionCountHasBeenSet(false),
+    m_status(GameSessionStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_gamePropertiesHasBeenSet(false),
     m_ipAddressHasBeenSet(false),
     m_port(0),
     m_portHasBeenSet(false),
-    m_playerSessionCreationPolicyHasBeenSet(false)
+    m_playerSessionCreationPolicy(PlayerSessionCreationPolicy::NOT_SET),
+    m_playerSessionCreationPolicyHasBeenSet(false),
+    m_creatorIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -155,6 +161,13 @@ GameSession& GameSession::operator =(const JsonValue& jsonValue)
     m_playerSessionCreationPolicyHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CreatorId"))
+  {
+    m_creatorId = jsonValue.GetString("CreatorId");
+
+    m_creatorIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -233,6 +246,12 @@ JsonValue GameSession::Jsonize() const
   if(m_playerSessionCreationPolicyHasBeenSet)
   {
    payload.WithString("PlayerSessionCreationPolicy", PlayerSessionCreationPolicyMapper::GetNameForPlayerSessionCreationPolicy(m_playerSessionCreationPolicy));
+  }
+
+  if(m_creatorIdHasBeenSet)
+  {
+   payload.WithString("CreatorId", m_creatorId);
+
   }
 
   return payload;

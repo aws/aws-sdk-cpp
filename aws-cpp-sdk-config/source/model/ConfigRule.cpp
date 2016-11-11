@@ -35,7 +35,9 @@ ConfigRule::ConfigRule() :
     m_scopeHasBeenSet(false),
     m_sourceHasBeenSet(false),
     m_inputParametersHasBeenSet(false),
+    m_maximumExecutionFrequency(MaximumExecutionFrequency::NOT_SET),
     m_maximumExecutionFrequencyHasBeenSet(false),
+    m_configRuleState(ConfigRuleState::NOT_SET),
     m_configRuleStateHasBeenSet(false)
 {
 }
@@ -48,7 +50,9 @@ ConfigRule::ConfigRule(const JsonValue& jsonValue) :
     m_scopeHasBeenSet(false),
     m_sourceHasBeenSet(false),
     m_inputParametersHasBeenSet(false),
+    m_maximumExecutionFrequency(MaximumExecutionFrequency::NOT_SET),
     m_maximumExecutionFrequencyHasBeenSet(false),
+    m_configRuleState(ConfigRuleState::NOT_SET),
     m_configRuleStateHasBeenSet(false)
 {
   *this = jsonValue;

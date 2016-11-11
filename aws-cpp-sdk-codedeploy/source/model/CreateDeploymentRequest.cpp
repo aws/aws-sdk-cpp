@@ -28,7 +28,10 @@ CreateDeploymentRequest::CreateDeploymentRequest() :
     m_deploymentConfigNameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_ignoreApplicationStopFailures(false),
-    m_ignoreApplicationStopFailuresHasBeenSet(false)
+    m_ignoreApplicationStopFailuresHasBeenSet(false),
+    m_autoRollbackConfigurationHasBeenSet(false),
+    m_updateOutdatedInstancesOnly(false),
+    m_updateOutdatedInstancesOnlyHasBeenSet(false)
 {
 }
 
@@ -69,6 +72,18 @@ Aws::String CreateDeploymentRequest::SerializePayload() const
   if(m_ignoreApplicationStopFailuresHasBeenSet)
   {
    payload.WithBool("ignoreApplicationStopFailures", m_ignoreApplicationStopFailures);
+
+  }
+
+  if(m_autoRollbackConfigurationHasBeenSet)
+  {
+   payload.WithObject("autoRollbackConfiguration", m_autoRollbackConfiguration.Jsonize());
+
+  }
+
+  if(m_updateOutdatedInstancesOnlyHasBeenSet)
+  {
+   payload.WithBool("updateOutdatedInstancesOnly", m_updateOutdatedInstancesOnly);
 
   }
 

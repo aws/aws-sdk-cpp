@@ -30,7 +30,7 @@ namespace Model
 {
 
   /**
-   * <p>Returns the throttle settings.</p>
+   * <p> The API request rate limits.</p>
    */
   class AWS_APIGATEWAY_API ThrottleSettings
   {
@@ -41,32 +41,38 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p>Returns the burstLimit when <b>ThrottleSettings</b> is called.</p>
+     * <p>The API request burst limit, the maximum rate limit over a time ranging from
+     * one to a few seconds, depending upon whether the underlying token bucket is at
+     * its full capacity.</p>
      */
     inline int GetBurstLimit() const{ return m_burstLimit; }
 
     /**
-     * <p>Returns the burstLimit when <b>ThrottleSettings</b> is called.</p>
+     * <p>The API request burst limit, the maximum rate limit over a time ranging from
+     * one to a few seconds, depending upon whether the underlying token bucket is at
+     * its full capacity.</p>
      */
     inline void SetBurstLimit(int value) { m_burstLimitHasBeenSet = true; m_burstLimit = value; }
 
     /**
-     * <p>Returns the burstLimit when <b>ThrottleSettings</b> is called.</p>
+     * <p>The API request burst limit, the maximum rate limit over a time ranging from
+     * one to a few seconds, depending upon whether the underlying token bucket is at
+     * its full capacity.</p>
      */
     inline ThrottleSettings& WithBurstLimit(int value) { SetBurstLimit(value); return *this;}
 
     /**
-     * <p>Returns the rateLimit when <b>ThrottleSettings</b> is called.</p>
+     * <p>The API request steady-state rate limit.</p>
      */
     inline double GetRateLimit() const{ return m_rateLimit; }
 
     /**
-     * <p>Returns the rateLimit when <b>ThrottleSettings</b> is called.</p>
+     * <p>The API request steady-state rate limit.</p>
      */
     inline void SetRateLimit(double value) { m_rateLimitHasBeenSet = true; m_rateLimit = value; }
 
     /**
-     * <p>Returns the rateLimit when <b>ThrottleSettings</b> is called.</p>
+     * <p>The API request steady-state rate limit.</p>
      */
     inline ThrottleSettings& WithRateLimit(double value) { SetRateLimit(value); return *this;}
 

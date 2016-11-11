@@ -46,37 +46,37 @@ namespace Model
     DescribeConfigurationOptionsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
     /**
-     * <p> The name of the solution stack these configuration options belong to. </p>
+     * <p>The name of the solution stack these configuration options belong to.</p>
      */
     inline const Aws::String& GetSolutionStackName() const{ return m_solutionStackName; }
 
     /**
-     * <p> The name of the solution stack these configuration options belong to. </p>
+     * <p>The name of the solution stack these configuration options belong to.</p>
      */
     inline void SetSolutionStackName(const Aws::String& value) { m_solutionStackName = value; }
 
     /**
-     * <p> The name of the solution stack these configuration options belong to. </p>
+     * <p>The name of the solution stack these configuration options belong to.</p>
      */
     inline void SetSolutionStackName(Aws::String&& value) { m_solutionStackName = value; }
 
     /**
-     * <p> The name of the solution stack these configuration options belong to. </p>
+     * <p>The name of the solution stack these configuration options belong to.</p>
      */
     inline void SetSolutionStackName(const char* value) { m_solutionStackName.assign(value); }
 
     /**
-     * <p> The name of the solution stack these configuration options belong to. </p>
+     * <p>The name of the solution stack these configuration options belong to.</p>
      */
     inline DescribeConfigurationOptionsResult& WithSolutionStackName(const Aws::String& value) { SetSolutionStackName(value); return *this;}
 
     /**
-     * <p> The name of the solution stack these configuration options belong to. </p>
+     * <p>The name of the solution stack these configuration options belong to.</p>
      */
     inline DescribeConfigurationOptionsResult& WithSolutionStackName(Aws::String&& value) { SetSolutionStackName(value); return *this;}
 
     /**
-     * <p> The name of the solution stack these configuration options belong to. </p>
+     * <p>The name of the solution stack these configuration options belong to.</p>
      */
     inline DescribeConfigurationOptionsResult& WithSolutionStackName(const char* value) { SetSolutionStackName(value); return *this;}
 

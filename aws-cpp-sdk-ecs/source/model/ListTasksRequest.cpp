@@ -30,6 +30,7 @@ ListTasksRequest::ListTasksRequest() :
     m_maxResultsHasBeenSet(false),
     m_startedByHasBeenSet(false),
     m_serviceNameHasBeenSet(false),
+    m_desiredStatus(DesiredStatus::NOT_SET),
     m_desiredStatusHasBeenSet(false)
 {
 }

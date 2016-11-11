@@ -27,11 +27,13 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetCredentialReportResult::GetCredentialReportResult()
+GetCredentialReportResult::GetCredentialReportResult() : 
+    m_reportFormat(ReportFormatType::NOT_SET)
 {
 }
 
-GetCredentialReportResult::GetCredentialReportResult(const AmazonWebServiceResult<XmlDocument>& result)
+GetCredentialReportResult::GetCredentialReportResult(const AmazonWebServiceResult<XmlDocument>& result) : 
+    m_reportFormat(ReportFormatType::NOT_SET)
 {
   *this = result;
 }

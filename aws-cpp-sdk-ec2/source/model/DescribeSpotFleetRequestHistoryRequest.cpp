@@ -23,6 +23,7 @@ DescribeSpotFleetRequestHistoryRequest::DescribeSpotFleetRequestHistoryRequest()
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
     m_spotFleetRequestIdHasBeenSet(false),
+    m_eventType(EventType::NOT_SET),
     m_eventTypeHasBeenSet(false),
     m_startTimeHasBeenSet(false),
     m_nextTokenHasBeenSet(false),

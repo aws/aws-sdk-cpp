@@ -30,6 +30,7 @@ namespace Model
 FunctionConfiguration::FunctionConfiguration() : 
     m_functionNameHasBeenSet(false),
     m_functionArnHasBeenSet(false),
+    m_runtime(Runtime::NOT_SET),
     m_runtimeHasBeenSet(false),
     m_roleHasBeenSet(false),
     m_handlerHasBeenSet(false),
@@ -50,6 +51,7 @@ FunctionConfiguration::FunctionConfiguration() :
 FunctionConfiguration::FunctionConfiguration(const JsonValue& jsonValue) : 
     m_functionNameHasBeenSet(false),
     m_functionArnHasBeenSet(false),
+    m_runtime(Runtime::NOT_SET),
     m_runtimeHasBeenSet(false),
     m_roleHasBeenSet(false),
     m_handlerHasBeenSet(false),

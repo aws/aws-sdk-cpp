@@ -40,114 +40,114 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * <p>Optional language code. Supported language codes are as follows:</p> <p>"en"
-     * (English)</p> <p>"jp" (Japanese)</p> <p>"zh" (Chinese)</p> <p>If no code is
-     * specified, "en" is used as the default.</p>
+     * <p>The language code to use for this operation. Supported language codes are as
+     * follows:</p> <p>"en" (English)</p> <p>"jp" (Japanese)</p> <p>"zh" (Chinese)</p>
+     * <p>If no code is specified, "en" is used as the default.</p>
      */
     inline const Aws::String& GetAcceptLanguage() const{ return m_acceptLanguage; }
 
     /**
-     * <p>Optional language code. Supported language codes are as follows:</p> <p>"en"
-     * (English)</p> <p>"jp" (Japanese)</p> <p>"zh" (Chinese)</p> <p>If no code is
-     * specified, "en" is used as the default.</p>
+     * <p>The language code to use for this operation. Supported language codes are as
+     * follows:</p> <p>"en" (English)</p> <p>"jp" (Japanese)</p> <p>"zh" (Chinese)</p>
+     * <p>If no code is specified, "en" is used as the default.</p>
      */
     inline void SetAcceptLanguage(const Aws::String& value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage = value; }
 
     /**
-     * <p>Optional language code. Supported language codes are as follows:</p> <p>"en"
-     * (English)</p> <p>"jp" (Japanese)</p> <p>"zh" (Chinese)</p> <p>If no code is
-     * specified, "en" is used as the default.</p>
+     * <p>The language code to use for this operation. Supported language codes are as
+     * follows:</p> <p>"en" (English)</p> <p>"jp" (Japanese)</p> <p>"zh" (Chinese)</p>
+     * <p>If no code is specified, "en" is used as the default.</p>
      */
     inline void SetAcceptLanguage(Aws::String&& value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage = value; }
 
     /**
-     * <p>Optional language code. Supported language codes are as follows:</p> <p>"en"
-     * (English)</p> <p>"jp" (Japanese)</p> <p>"zh" (Chinese)</p> <p>If no code is
-     * specified, "en" is used as the default.</p>
+     * <p>The language code to use for this operation. Supported language codes are as
+     * follows:</p> <p>"en" (English)</p> <p>"jp" (Japanese)</p> <p>"zh" (Chinese)</p>
+     * <p>If no code is specified, "en" is used as the default.</p>
      */
     inline void SetAcceptLanguage(const char* value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage.assign(value); }
 
     /**
-     * <p>Optional language code. Supported language codes are as follows:</p> <p>"en"
-     * (English)</p> <p>"jp" (Japanese)</p> <p>"zh" (Chinese)</p> <p>If no code is
-     * specified, "en" is used as the default.</p>
+     * <p>The language code to use for this operation. Supported language codes are as
+     * follows:</p> <p>"en" (English)</p> <p>"jp" (Japanese)</p> <p>"zh" (Chinese)</p>
+     * <p>If no code is specified, "en" is used as the default.</p>
      */
     inline SearchProductsRequest& WithAcceptLanguage(const Aws::String& value) { SetAcceptLanguage(value); return *this;}
 
     /**
-     * <p>Optional language code. Supported language codes are as follows:</p> <p>"en"
-     * (English)</p> <p>"jp" (Japanese)</p> <p>"zh" (Chinese)</p> <p>If no code is
-     * specified, "en" is used as the default.</p>
+     * <p>The language code to use for this operation. Supported language codes are as
+     * follows:</p> <p>"en" (English)</p> <p>"jp" (Japanese)</p> <p>"zh" (Chinese)</p>
+     * <p>If no code is specified, "en" is used as the default.</p>
      */
     inline SearchProductsRequest& WithAcceptLanguage(Aws::String&& value) { SetAcceptLanguage(value); return *this;}
 
     /**
-     * <p>Optional language code. Supported language codes are as follows:</p> <p>"en"
-     * (English)</p> <p>"jp" (Japanese)</p> <p>"zh" (Chinese)</p> <p>If no code is
-     * specified, "en" is used as the default.</p>
+     * <p>The language code to use for this operation. Supported language codes are as
+     * follows:</p> <p>"en" (English)</p> <p>"jp" (Japanese)</p> <p>"zh" (Chinese)</p>
+     * <p>If no code is specified, "en" is used as the default.</p>
      */
     inline SearchProductsRequest& WithAcceptLanguage(const char* value) { SetAcceptLanguage(value); return *this;}
 
     /**
-     * <p>(Optional) The list of filters with which to limit search results. If no
-     * search filters are specified, the output is all the products to which the
-     * calling user has access. </p>
+     * <p>The list of filters with which to limit search results. If no search filters
+     * are specified, the output is all the products to which the calling user has
+     * access. </p>
      */
     inline const Aws::Map<ProductViewFilterBy, Aws::Vector<Aws::String>>& GetFilters() const{ return m_filters; }
 
     /**
-     * <p>(Optional) The list of filters with which to limit search results. If no
-     * search filters are specified, the output is all the products to which the
-     * calling user has access. </p>
+     * <p>The list of filters with which to limit search results. If no search filters
+     * are specified, the output is all the products to which the calling user has
+     * access. </p>
      */
     inline void SetFilters(const Aws::Map<ProductViewFilterBy, Aws::Vector<Aws::String>>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>(Optional) The list of filters with which to limit search results. If no
-     * search filters are specified, the output is all the products to which the
-     * calling user has access. </p>
+     * <p>The list of filters with which to limit search results. If no search filters
+     * are specified, the output is all the products to which the calling user has
+     * access. </p>
      */
     inline void SetFilters(Aws::Map<ProductViewFilterBy, Aws::Vector<Aws::String>>&& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>(Optional) The list of filters with which to limit search results. If no
-     * search filters are specified, the output is all the products to which the
-     * calling user has access. </p>
+     * <p>The list of filters with which to limit search results. If no search filters
+     * are specified, the output is all the products to which the calling user has
+     * access. </p>
      */
     inline SearchProductsRequest& WithFilters(const Aws::Map<ProductViewFilterBy, Aws::Vector<Aws::String>>& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>(Optional) The list of filters with which to limit search results. If no
-     * search filters are specified, the output is all the products to which the
-     * calling user has access. </p>
+     * <p>The list of filters with which to limit search results. If no search filters
+     * are specified, the output is all the products to which the calling user has
+     * access. </p>
      */
     inline SearchProductsRequest& WithFilters(Aws::Map<ProductViewFilterBy, Aws::Vector<Aws::String>>&& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>(Optional) The list of filters with which to limit search results. If no
-     * search filters are specified, the output is all the products to which the
-     * calling user has access. </p>
+     * <p>The list of filters with which to limit search results. If no search filters
+     * are specified, the output is all the products to which the calling user has
+     * access. </p>
      */
     inline SearchProductsRequest& AddFilters(const ProductViewFilterBy& key, const Aws::Vector<Aws::String>& value) { m_filtersHasBeenSet = true; m_filters[key] = value; return *this; }
 
     /**
-     * <p>(Optional) The list of filters with which to limit search results. If no
-     * search filters are specified, the output is all the products to which the
-     * calling user has access. </p>
+     * <p>The list of filters with which to limit search results. If no search filters
+     * are specified, the output is all the products to which the calling user has
+     * access. </p>
      */
     inline SearchProductsRequest& AddFilters(ProductViewFilterBy&& key, const Aws::Vector<Aws::String>& value) { m_filtersHasBeenSet = true; m_filters[key] = value; return *this; }
 
     /**
-     * <p>(Optional) The list of filters with which to limit search results. If no
-     * search filters are specified, the output is all the products to which the
-     * calling user has access. </p>
+     * <p>The list of filters with which to limit search results. If no search filters
+     * are specified, the output is all the products to which the calling user has
+     * access. </p>
      */
     inline SearchProductsRequest& AddFilters(const ProductViewFilterBy& key, Aws::Vector<Aws::String>&& value) { m_filtersHasBeenSet = true; m_filters[key] = value; return *this; }
 
     /**
-     * <p>(Optional) The list of filters with which to limit search results. If no
-     * search filters are specified, the output is all the products to which the
-     * calling user has access. </p>
+     * <p>The list of filters with which to limit search results. If no search filters
+     * are specified, the output is all the products to which the calling user has
+     * access. </p>
      */
     inline SearchProductsRequest& AddFilters(ProductViewFilterBy&& key, Aws::Vector<Aws::String>&& value) { m_filtersHasBeenSet = true; m_filters[key] = value; return *this; }
 
@@ -173,103 +173,103 @@ namespace Model
     inline SearchProductsRequest& WithPageSize(int value) { SetPageSize(value); return *this;}
 
     /**
-     * <p>(Optional) The sort field specifier. If no value is specified, results are
-     * not sorted.</p>
+     * <p>The sort field specifier. If no value is specified, results are not
+     * sorted.</p>
      */
     inline const ProductViewSortBy& GetSortBy() const{ return m_sortBy; }
 
     /**
-     * <p>(Optional) The sort field specifier. If no value is specified, results are
-     * not sorted.</p>
+     * <p>The sort field specifier. If no value is specified, results are not
+     * sorted.</p>
      */
     inline void SetSortBy(const ProductViewSortBy& value) { m_sortByHasBeenSet = true; m_sortBy = value; }
 
     /**
-     * <p>(Optional) The sort field specifier. If no value is specified, results are
-     * not sorted.</p>
+     * <p>The sort field specifier. If no value is specified, results are not
+     * sorted.</p>
      */
     inline void SetSortBy(ProductViewSortBy&& value) { m_sortByHasBeenSet = true; m_sortBy = value; }
 
     /**
-     * <p>(Optional) The sort field specifier. If no value is specified, results are
-     * not sorted.</p>
+     * <p>The sort field specifier. If no value is specified, results are not
+     * sorted.</p>
      */
     inline SearchProductsRequest& WithSortBy(const ProductViewSortBy& value) { SetSortBy(value); return *this;}
 
     /**
-     * <p>(Optional) The sort field specifier. If no value is specified, results are
-     * not sorted.</p>
+     * <p>The sort field specifier. If no value is specified, results are not
+     * sorted.</p>
      */
     inline SearchProductsRequest& WithSortBy(ProductViewSortBy&& value) { SetSortBy(value); return *this;}
 
     /**
-     * <p>(Optional) The sort order specifier. If no value is specified, results are
-     * not sorted.</p>
+     * <p>The sort order specifier. If no value is specified, results are not
+     * sorted.</p>
      */
     inline const SortOrder& GetSortOrder() const{ return m_sortOrder; }
 
     /**
-     * <p>(Optional) The sort order specifier. If no value is specified, results are
-     * not sorted.</p>
+     * <p>The sort order specifier. If no value is specified, results are not
+     * sorted.</p>
      */
     inline void SetSortOrder(const SortOrder& value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
 
     /**
-     * <p>(Optional) The sort order specifier. If no value is specified, results are
-     * not sorted.</p>
+     * <p>The sort order specifier. If no value is specified, results are not
+     * sorted.</p>
      */
     inline void SetSortOrder(SortOrder&& value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
 
     /**
-     * <p>(Optional) The sort order specifier. If no value is specified, results are
-     * not sorted.</p>
+     * <p>The sort order specifier. If no value is specified, results are not
+     * sorted.</p>
      */
     inline SearchProductsRequest& WithSortOrder(const SortOrder& value) { SetSortOrder(value); return *this;}
 
     /**
-     * <p>(Optional) The sort order specifier. If no value is specified, results are
-     * not sorted.</p>
+     * <p>The sort order specifier. If no value is specified, results are not
+     * sorted.</p>
      */
     inline SearchProductsRequest& WithSortOrder(SortOrder&& value) { SetSortOrder(value); return *this;}
 
     /**
-     * <p>The page token of the first page retrieve. If null, this retrieves the first
+     * <p>The page token of the first page retrieved. If null, this retrieves the first
      * page of size <code>PageSize</code>.</p>
      */
     inline const Aws::String& GetPageToken() const{ return m_pageToken; }
 
     /**
-     * <p>The page token of the first page retrieve. If null, this retrieves the first
+     * <p>The page token of the first page retrieved. If null, this retrieves the first
      * page of size <code>PageSize</code>.</p>
      */
     inline void SetPageToken(const Aws::String& value) { m_pageTokenHasBeenSet = true; m_pageToken = value; }
 
     /**
-     * <p>The page token of the first page retrieve. If null, this retrieves the first
+     * <p>The page token of the first page retrieved. If null, this retrieves the first
      * page of size <code>PageSize</code>.</p>
      */
     inline void SetPageToken(Aws::String&& value) { m_pageTokenHasBeenSet = true; m_pageToken = value; }
 
     /**
-     * <p>The page token of the first page retrieve. If null, this retrieves the first
+     * <p>The page token of the first page retrieved. If null, this retrieves the first
      * page of size <code>PageSize</code>.</p>
      */
     inline void SetPageToken(const char* value) { m_pageTokenHasBeenSet = true; m_pageToken.assign(value); }
 
     /**
-     * <p>The page token of the first page retrieve. If null, this retrieves the first
+     * <p>The page token of the first page retrieved. If null, this retrieves the first
      * page of size <code>PageSize</code>.</p>
      */
     inline SearchProductsRequest& WithPageToken(const Aws::String& value) { SetPageToken(value); return *this;}
 
     /**
-     * <p>The page token of the first page retrieve. If null, this retrieves the first
+     * <p>The page token of the first page retrieved. If null, this retrieves the first
      * page of size <code>PageSize</code>.</p>
      */
     inline SearchProductsRequest& WithPageToken(Aws::String&& value) { SetPageToken(value); return *this;}
 
     /**
-     * <p>The page token of the first page retrieve. If null, this retrieves the first
+     * <p>The page token of the first page retrieved. If null, this retrieves the first
      * page of size <code>PageSize</code>.</p>
      */
     inline SearchProductsRequest& WithPageToken(const char* value) { SetPageToken(value); return *this;}

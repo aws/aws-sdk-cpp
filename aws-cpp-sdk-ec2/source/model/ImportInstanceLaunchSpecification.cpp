@@ -30,32 +30,38 @@ namespace Model
 {
 
 ImportInstanceLaunchSpecification::ImportInstanceLaunchSpecification() : 
+    m_architecture(ArchitectureValues::NOT_SET),
     m_architectureHasBeenSet(false),
     m_groupNamesHasBeenSet(false),
     m_groupIdsHasBeenSet(false),
     m_additionalInfoHasBeenSet(false),
     m_userDataHasBeenSet(false),
+    m_instanceType(InstanceType::NOT_SET),
     m_instanceTypeHasBeenSet(false),
     m_placementHasBeenSet(false),
     m_monitoring(false),
     m_monitoringHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
+    m_instanceInitiatedShutdownBehavior(ShutdownBehavior::NOT_SET),
     m_instanceInitiatedShutdownBehaviorHasBeenSet(false),
     m_privateIpAddressHasBeenSet(false)
 {
 }
 
 ImportInstanceLaunchSpecification::ImportInstanceLaunchSpecification(const XmlNode& xmlNode) : 
+    m_architecture(ArchitectureValues::NOT_SET),
     m_architectureHasBeenSet(false),
     m_groupNamesHasBeenSet(false),
     m_groupIdsHasBeenSet(false),
     m_additionalInfoHasBeenSet(false),
     m_userDataHasBeenSet(false),
+    m_instanceType(InstanceType::NOT_SET),
     m_instanceTypeHasBeenSet(false),
     m_placementHasBeenSet(false),
     m_monitoring(false),
     m_monitoringHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
+    m_instanceInitiatedShutdownBehavior(ShutdownBehavior::NOT_SET),
     m_instanceInitiatedShutdownBehaviorHasBeenSet(false),
     m_privateIpAddressHasBeenSet(false)
 {

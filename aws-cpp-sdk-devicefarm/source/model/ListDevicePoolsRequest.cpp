@@ -23,6 +23,7 @@ using namespace Aws::Utils;
 
 ListDevicePoolsRequest::ListDevicePoolsRequest() : 
     m_arnHasBeenSet(false),
+    m_type(DevicePoolType::NOT_SET),
     m_typeHasBeenSet(false),
     m_nextTokenHasBeenSet(false)
 {

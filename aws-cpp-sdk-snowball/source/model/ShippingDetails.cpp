@@ -28,6 +28,7 @@ namespace Model
 {
 
 ShippingDetails::ShippingDetails() : 
+    m_shippingOption(ShippingOption::NOT_SET),
     m_shippingOptionHasBeenSet(false),
     m_inboundShipmentHasBeenSet(false),
     m_outboundShipmentHasBeenSet(false)
@@ -35,6 +36,7 @@ ShippingDetails::ShippingDetails() :
 }
 
 ShippingDetails::ShippingDetails(const JsonValue& jsonValue) : 
+    m_shippingOption(ShippingOption::NOT_SET),
     m_shippingOptionHasBeenSet(false),
     m_inboundShipmentHasBeenSet(false),
     m_outboundShipmentHasBeenSet(false)

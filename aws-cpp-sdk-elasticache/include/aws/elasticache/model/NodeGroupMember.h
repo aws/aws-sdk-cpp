@@ -33,7 +33,7 @@ namespace Model
 {
 
   /**
-   * <p>Represents a single node within a node group.</p>
+   * <p>Represents a single node within a node group (shard).</p>
    */
   class AWS_ELASTICACHE_API NodeGroupMember
   {
@@ -173,44 +173,44 @@ namespace Model
     inline NodeGroupMember& WithPreferredAvailabilityZone(const char* value) { SetPreferredAvailabilityZone(value); return *this;}
 
     /**
-     * <p>The role that is currently assigned to the node - <i>primary</i> or
-     * <i>replica</i>.</p>
+     * <p>The role that is currently assigned to the node - <code>primary</code> or
+     * <code>replica</code>.</p>
      */
     inline const Aws::String& GetCurrentRole() const{ return m_currentRole; }
 
     /**
-     * <p>The role that is currently assigned to the node - <i>primary</i> or
-     * <i>replica</i>.</p>
+     * <p>The role that is currently assigned to the node - <code>primary</code> or
+     * <code>replica</code>.</p>
      */
     inline void SetCurrentRole(const Aws::String& value) { m_currentRoleHasBeenSet = true; m_currentRole = value; }
 
     /**
-     * <p>The role that is currently assigned to the node - <i>primary</i> or
-     * <i>replica</i>.</p>
+     * <p>The role that is currently assigned to the node - <code>primary</code> or
+     * <code>replica</code>.</p>
      */
     inline void SetCurrentRole(Aws::String&& value) { m_currentRoleHasBeenSet = true; m_currentRole = value; }
 
     /**
-     * <p>The role that is currently assigned to the node - <i>primary</i> or
-     * <i>replica</i>.</p>
+     * <p>The role that is currently assigned to the node - <code>primary</code> or
+     * <code>replica</code>.</p>
      */
     inline void SetCurrentRole(const char* value) { m_currentRoleHasBeenSet = true; m_currentRole.assign(value); }
 
     /**
-     * <p>The role that is currently assigned to the node - <i>primary</i> or
-     * <i>replica</i>.</p>
+     * <p>The role that is currently assigned to the node - <code>primary</code> or
+     * <code>replica</code>.</p>
      */
     inline NodeGroupMember& WithCurrentRole(const Aws::String& value) { SetCurrentRole(value); return *this;}
 
     /**
-     * <p>The role that is currently assigned to the node - <i>primary</i> or
-     * <i>replica</i>.</p>
+     * <p>The role that is currently assigned to the node - <code>primary</code> or
+     * <code>replica</code>.</p>
      */
     inline NodeGroupMember& WithCurrentRole(Aws::String&& value) { SetCurrentRole(value); return *this;}
 
     /**
-     * <p>The role that is currently assigned to the node - <i>primary</i> or
-     * <i>replica</i>.</p>
+     * <p>The role that is currently assigned to the node - <code>primary</code> or
+     * <code>replica</code>.</p>
      */
     inline NodeGroupMember& WithCurrentRole(const char* value) { SetCurrentRole(value); return *this;}
 

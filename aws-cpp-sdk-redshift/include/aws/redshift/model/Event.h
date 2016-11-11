@@ -35,7 +35,7 @@ namespace Model
 {
 
   /**
-   * <p> Describes an event. </p>
+   * <p>Describes an event.</p>
    */
   class AWS_REDSHIFT_API Event
   {
@@ -48,144 +48,144 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     /**
-     * <p> The identifier for the source of the event. </p>
+     * <p>The identifier for the source of the event.</p>
      */
     inline const Aws::String& GetSourceIdentifier() const{ return m_sourceIdentifier; }
 
     /**
-     * <p> The identifier for the source of the event. </p>
+     * <p>The identifier for the source of the event.</p>
      */
     inline void SetSourceIdentifier(const Aws::String& value) { m_sourceIdentifierHasBeenSet = true; m_sourceIdentifier = value; }
 
     /**
-     * <p> The identifier for the source of the event. </p>
+     * <p>The identifier for the source of the event.</p>
      */
     inline void SetSourceIdentifier(Aws::String&& value) { m_sourceIdentifierHasBeenSet = true; m_sourceIdentifier = value; }
 
     /**
-     * <p> The identifier for the source of the event. </p>
+     * <p>The identifier for the source of the event.</p>
      */
     inline void SetSourceIdentifier(const char* value) { m_sourceIdentifierHasBeenSet = true; m_sourceIdentifier.assign(value); }
 
     /**
-     * <p> The identifier for the source of the event. </p>
+     * <p>The identifier for the source of the event.</p>
      */
     inline Event& WithSourceIdentifier(const Aws::String& value) { SetSourceIdentifier(value); return *this;}
 
     /**
-     * <p> The identifier for the source of the event. </p>
+     * <p>The identifier for the source of the event.</p>
      */
     inline Event& WithSourceIdentifier(Aws::String&& value) { SetSourceIdentifier(value); return *this;}
 
     /**
-     * <p> The identifier for the source of the event. </p>
+     * <p>The identifier for the source of the event.</p>
      */
     inline Event& WithSourceIdentifier(const char* value) { SetSourceIdentifier(value); return *this;}
 
     /**
-     * <p> The source type for this event. </p>
+     * <p>The source type for this event.</p>
      */
     inline const SourceType& GetSourceType() const{ return m_sourceType; }
 
     /**
-     * <p> The source type for this event. </p>
+     * <p>The source type for this event.</p>
      */
     inline void SetSourceType(const SourceType& value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
 
     /**
-     * <p> The source type for this event. </p>
+     * <p>The source type for this event.</p>
      */
     inline void SetSourceType(SourceType&& value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
 
     /**
-     * <p> The source type for this event. </p>
+     * <p>The source type for this event.</p>
      */
     inline Event& WithSourceType(const SourceType& value) { SetSourceType(value); return *this;}
 
     /**
-     * <p> The source type for this event. </p>
+     * <p>The source type for this event.</p>
      */
     inline Event& WithSourceType(SourceType&& value) { SetSourceType(value); return *this;}
 
     /**
-     * <p> The text of this event. </p>
+     * <p>The text of this event.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
 
     /**
-     * <p> The text of this event. </p>
+     * <p>The text of this event.</p>
      */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
 
     /**
-     * <p> The text of this event. </p>
+     * <p>The text of this event.</p>
      */
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = value; }
 
     /**
-     * <p> The text of this event. </p>
+     * <p>The text of this event.</p>
      */
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
 
     /**
-     * <p> The text of this event. </p>
+     * <p>The text of this event.</p>
      */
     inline Event& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
 
     /**
-     * <p> The text of this event. </p>
+     * <p>The text of this event.</p>
      */
     inline Event& WithMessage(Aws::String&& value) { SetMessage(value); return *this;}
 
     /**
-     * <p> The text of this event. </p>
+     * <p>The text of this event.</p>
      */
     inline Event& WithMessage(const char* value) { SetMessage(value); return *this;}
 
     /**
-     * <p> A list of the event categories. </p> <p>Values: Configuration, Management,
+     * <p>A list of the event categories.</p> <p>Values: Configuration, Management,
      * Monitoring, Security</p>
      */
     inline const Aws::Vector<Aws::String>& GetEventCategories() const{ return m_eventCategories; }
 
     /**
-     * <p> A list of the event categories. </p> <p>Values: Configuration, Management,
+     * <p>A list of the event categories.</p> <p>Values: Configuration, Management,
      * Monitoring, Security</p>
      */
     inline void SetEventCategories(const Aws::Vector<Aws::String>& value) { m_eventCategoriesHasBeenSet = true; m_eventCategories = value; }
 
     /**
-     * <p> A list of the event categories. </p> <p>Values: Configuration, Management,
+     * <p>A list of the event categories.</p> <p>Values: Configuration, Management,
      * Monitoring, Security</p>
      */
     inline void SetEventCategories(Aws::Vector<Aws::String>&& value) { m_eventCategoriesHasBeenSet = true; m_eventCategories = value; }
 
     /**
-     * <p> A list of the event categories. </p> <p>Values: Configuration, Management,
+     * <p>A list of the event categories.</p> <p>Values: Configuration, Management,
      * Monitoring, Security</p>
      */
     inline Event& WithEventCategories(const Aws::Vector<Aws::String>& value) { SetEventCategories(value); return *this;}
 
     /**
-     * <p> A list of the event categories. </p> <p>Values: Configuration, Management,
+     * <p>A list of the event categories.</p> <p>Values: Configuration, Management,
      * Monitoring, Security</p>
      */
     inline Event& WithEventCategories(Aws::Vector<Aws::String>&& value) { SetEventCategories(value); return *this;}
 
     /**
-     * <p> A list of the event categories. </p> <p>Values: Configuration, Management,
+     * <p>A list of the event categories.</p> <p>Values: Configuration, Management,
      * Monitoring, Security</p>
      */
     inline Event& AddEventCategories(const Aws::String& value) { m_eventCategoriesHasBeenSet = true; m_eventCategories.push_back(value); return *this; }
 
     /**
-     * <p> A list of the event categories. </p> <p>Values: Configuration, Management,
+     * <p>A list of the event categories.</p> <p>Values: Configuration, Management,
      * Monitoring, Security</p>
      */
     inline Event& AddEventCategories(Aws::String&& value) { m_eventCategoriesHasBeenSet = true; m_eventCategories.push_back(value); return *this; }
 
     /**
-     * <p> A list of the event categories. </p> <p>Values: Configuration, Management,
+     * <p>A list of the event categories.</p> <p>Values: Configuration, Management,
      * Monitoring, Security</p>
      */
     inline Event& AddEventCategories(const char* value) { m_eventCategoriesHasBeenSet = true; m_eventCategories.push_back(value); return *this; }
@@ -226,62 +226,62 @@ namespace Model
     inline Event& WithSeverity(const char* value) { SetSeverity(value); return *this;}
 
     /**
-     * <p> The date and time of the event. </p>
+     * <p>The date and time of the event.</p>
      */
     inline const Aws::Utils::DateTime& GetDate() const{ return m_date; }
 
     /**
-     * <p> The date and time of the event. </p>
+     * <p>The date and time of the event.</p>
      */
     inline void SetDate(const Aws::Utils::DateTime& value) { m_dateHasBeenSet = true; m_date = value; }
 
     /**
-     * <p> The date and time of the event. </p>
+     * <p>The date and time of the event.</p>
      */
     inline void SetDate(Aws::Utils::DateTime&& value) { m_dateHasBeenSet = true; m_date = value; }
 
     /**
-     * <p> The date and time of the event. </p>
+     * <p>The date and time of the event.</p>
      */
     inline Event& WithDate(const Aws::Utils::DateTime& value) { SetDate(value); return *this;}
 
     /**
-     * <p> The date and time of the event. </p>
+     * <p>The date and time of the event.</p>
      */
     inline Event& WithDate(Aws::Utils::DateTime&& value) { SetDate(value); return *this;}
 
     /**
-     * <p> The identifier of the event. </p>
+     * <p>The identifier of the event.</p>
      */
     inline const Aws::String& GetEventId() const{ return m_eventId; }
 
     /**
-     * <p> The identifier of the event. </p>
+     * <p>The identifier of the event.</p>
      */
     inline void SetEventId(const Aws::String& value) { m_eventIdHasBeenSet = true; m_eventId = value; }
 
     /**
-     * <p> The identifier of the event. </p>
+     * <p>The identifier of the event.</p>
      */
     inline void SetEventId(Aws::String&& value) { m_eventIdHasBeenSet = true; m_eventId = value; }
 
     /**
-     * <p> The identifier of the event. </p>
+     * <p>The identifier of the event.</p>
      */
     inline void SetEventId(const char* value) { m_eventIdHasBeenSet = true; m_eventId.assign(value); }
 
     /**
-     * <p> The identifier of the event. </p>
+     * <p>The identifier of the event.</p>
      */
     inline Event& WithEventId(const Aws::String& value) { SetEventId(value); return *this;}
 
     /**
-     * <p> The identifier of the event. </p>
+     * <p>The identifier of the event.</p>
      */
     inline Event& WithEventId(Aws::String&& value) { SetEventId(value); return *this;}
 
     /**
-     * <p> The identifier of the event. </p>
+     * <p>The identifier of the event.</p>
      */
     inline Event& WithEventId(const char* value) { SetEventId(value); return *this;}
 

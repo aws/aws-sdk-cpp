@@ -19,6 +19,7 @@
 #include <aws/rds/model/CharacterSet.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rds/model/UpgradeTarget.h>
+#include <aws/rds/model/Timezone.h>
 
 namespace Aws
 {
@@ -260,43 +261,50 @@ namespace Model
 
     /**
      * <p> A list of the character sets supported by this engine for the
-     * <code>CharacterSetName</code> parameter of the CreateDBInstance API. </p>
+     * <code>CharacterSetName</code> parameter of the <code>CreateDBInstance</code>
+     * action. </p>
      */
     inline const Aws::Vector<CharacterSet>& GetSupportedCharacterSets() const{ return m_supportedCharacterSets; }
 
     /**
      * <p> A list of the character sets supported by this engine for the
-     * <code>CharacterSetName</code> parameter of the CreateDBInstance API. </p>
+     * <code>CharacterSetName</code> parameter of the <code>CreateDBInstance</code>
+     * action. </p>
      */
     inline void SetSupportedCharacterSets(const Aws::Vector<CharacterSet>& value) { m_supportedCharacterSetsHasBeenSet = true; m_supportedCharacterSets = value; }
 
     /**
      * <p> A list of the character sets supported by this engine for the
-     * <code>CharacterSetName</code> parameter of the CreateDBInstance API. </p>
+     * <code>CharacterSetName</code> parameter of the <code>CreateDBInstance</code>
+     * action. </p>
      */
     inline void SetSupportedCharacterSets(Aws::Vector<CharacterSet>&& value) { m_supportedCharacterSetsHasBeenSet = true; m_supportedCharacterSets = value; }
 
     /**
      * <p> A list of the character sets supported by this engine for the
-     * <code>CharacterSetName</code> parameter of the CreateDBInstance API. </p>
+     * <code>CharacterSetName</code> parameter of the <code>CreateDBInstance</code>
+     * action. </p>
      */
     inline DBEngineVersion& WithSupportedCharacterSets(const Aws::Vector<CharacterSet>& value) { SetSupportedCharacterSets(value); return *this;}
 
     /**
      * <p> A list of the character sets supported by this engine for the
-     * <code>CharacterSetName</code> parameter of the CreateDBInstance API. </p>
+     * <code>CharacterSetName</code> parameter of the <code>CreateDBInstance</code>
+     * action. </p>
      */
     inline DBEngineVersion& WithSupportedCharacterSets(Aws::Vector<CharacterSet>&& value) { SetSupportedCharacterSets(value); return *this;}
 
     /**
      * <p> A list of the character sets supported by this engine for the
-     * <code>CharacterSetName</code> parameter of the CreateDBInstance API. </p>
+     * <code>CharacterSetName</code> parameter of the <code>CreateDBInstance</code>
+     * action. </p>
      */
     inline DBEngineVersion& AddSupportedCharacterSets(const CharacterSet& value) { m_supportedCharacterSetsHasBeenSet = true; m_supportedCharacterSets.push_back(value); return *this; }
 
     /**
      * <p> A list of the character sets supported by this engine for the
-     * <code>CharacterSetName</code> parameter of the CreateDBInstance API. </p>
+     * <code>CharacterSetName</code> parameter of the <code>CreateDBInstance</code>
+     * action. </p>
      */
     inline DBEngineVersion& AddSupportedCharacterSets(CharacterSet&& value) { m_supportedCharacterSetsHasBeenSet = true; m_supportedCharacterSets.push_back(value); return *this; }
 
@@ -342,6 +350,55 @@ namespace Model
      */
     inline DBEngineVersion& AddValidUpgradeTarget(UpgradeTarget&& value) { m_validUpgradeTargetHasBeenSet = true; m_validUpgradeTarget.push_back(value); return *this; }
 
+    /**
+     * <p>A list of the time zones supported by this engine for the
+     * <code>Timezone</code> parameter of the <code>CreateDBInstance</code> action.
+     * </p>
+     */
+    inline const Aws::Vector<Timezone>& GetSupportedTimezones() const{ return m_supportedTimezones; }
+
+    /**
+     * <p>A list of the time zones supported by this engine for the
+     * <code>Timezone</code> parameter of the <code>CreateDBInstance</code> action.
+     * </p>
+     */
+    inline void SetSupportedTimezones(const Aws::Vector<Timezone>& value) { m_supportedTimezonesHasBeenSet = true; m_supportedTimezones = value; }
+
+    /**
+     * <p>A list of the time zones supported by this engine for the
+     * <code>Timezone</code> parameter of the <code>CreateDBInstance</code> action.
+     * </p>
+     */
+    inline void SetSupportedTimezones(Aws::Vector<Timezone>&& value) { m_supportedTimezonesHasBeenSet = true; m_supportedTimezones = value; }
+
+    /**
+     * <p>A list of the time zones supported by this engine for the
+     * <code>Timezone</code> parameter of the <code>CreateDBInstance</code> action.
+     * </p>
+     */
+    inline DBEngineVersion& WithSupportedTimezones(const Aws::Vector<Timezone>& value) { SetSupportedTimezones(value); return *this;}
+
+    /**
+     * <p>A list of the time zones supported by this engine for the
+     * <code>Timezone</code> parameter of the <code>CreateDBInstance</code> action.
+     * </p>
+     */
+    inline DBEngineVersion& WithSupportedTimezones(Aws::Vector<Timezone>&& value) { SetSupportedTimezones(value); return *this;}
+
+    /**
+     * <p>A list of the time zones supported by this engine for the
+     * <code>Timezone</code> parameter of the <code>CreateDBInstance</code> action.
+     * </p>
+     */
+    inline DBEngineVersion& AddSupportedTimezones(const Timezone& value) { m_supportedTimezonesHasBeenSet = true; m_supportedTimezones.push_back(value); return *this; }
+
+    /**
+     * <p>A list of the time zones supported by this engine for the
+     * <code>Timezone</code> parameter of the <code>CreateDBInstance</code> action.
+     * </p>
+     */
+    inline DBEngineVersion& AddSupportedTimezones(Timezone&& value) { m_supportedTimezonesHasBeenSet = true; m_supportedTimezones.push_back(value); return *this; }
+
   private:
     Aws::String m_engine;
     bool m_engineHasBeenSet;
@@ -359,6 +416,8 @@ namespace Model
     bool m_supportedCharacterSetsHasBeenSet;
     Aws::Vector<UpgradeTarget> m_validUpgradeTarget;
     bool m_validUpgradeTargetHasBeenSet;
+    Aws::Vector<Timezone> m_supportedTimezones;
+    bool m_supportedTimezonesHasBeenSet;
   };
 
 } // namespace Model

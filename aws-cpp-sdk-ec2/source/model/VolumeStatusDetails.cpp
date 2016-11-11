@@ -30,12 +30,14 @@ namespace Model
 {
 
 VolumeStatusDetails::VolumeStatusDetails() : 
+    m_name(VolumeStatusName::NOT_SET),
     m_nameHasBeenSet(false),
     m_statusHasBeenSet(false)
 {
 }
 
 VolumeStatusDetails::VolumeStatusDetails(const XmlNode& xmlNode) : 
+    m_name(VolumeStatusName::NOT_SET),
     m_nameHasBeenSet(false),
     m_statusHasBeenSet(false)
 {

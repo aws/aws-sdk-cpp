@@ -30,15 +30,19 @@ namespace Model
 {
 
 ResourceTargetDefinition::ResourceTargetDefinition() : 
+    m_attribute(ResourceAttribute::NOT_SET),
     m_attributeHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_requiresRecreation(RequiresRecreation::NOT_SET),
     m_requiresRecreationHasBeenSet(false)
 {
 }
 
 ResourceTargetDefinition::ResourceTargetDefinition(const XmlNode& xmlNode) : 
+    m_attribute(ResourceAttribute::NOT_SET),
     m_attributeHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_requiresRecreation(RequiresRecreation::NOT_SET),
     m_requiresRecreationHasBeenSet(false)
 {
   *this = xmlNode;

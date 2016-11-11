@@ -674,6 +674,27 @@ namespace Model
     
     inline GetObjectRequest& WithRequestPayer(RequestPayer&& value) { SetRequestPayer(value); return *this;}
 
+    /**
+     * Part number of the object being read. This is a positive integer between 1 and
+     * 10,000. Effectively performs a 'ranged' GET request for the part specified.
+     * Useful for downloading just a part of an object.
+     */
+    inline int GetPartNumber() const{ return m_partNumber; }
+
+    /**
+     * Part number of the object being read. This is a positive integer between 1 and
+     * 10,000. Effectively performs a 'ranged' GET request for the part specified.
+     * Useful for downloading just a part of an object.
+     */
+    inline void SetPartNumber(int value) { m_partNumberHasBeenSet = true; m_partNumber = value; }
+
+    /**
+     * Part number of the object being read. This is a positive integer between 1 and
+     * 10,000. Effectively performs a 'ranged' GET request for the part specified.
+     * Useful for downloading just a part of an object.
+     */
+    inline GetObjectRequest& WithPartNumber(int value) { SetPartNumber(value); return *this;}
+
   private:
     Aws::String m_bucket;
     bool m_bucketHasBeenSet;
@@ -711,6 +732,8 @@ namespace Model
     bool m_sSECustomerKeyMD5HasBeenSet;
     RequestPayer m_requestPayer;
     bool m_requestPayerHasBeenSet;
+    int m_partNumber;
+    bool m_partNumberHasBeenSet;
   };
 
 } // namespace Model

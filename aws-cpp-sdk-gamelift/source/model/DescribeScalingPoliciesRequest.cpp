@@ -23,6 +23,7 @@ using namespace Aws::Utils;
 
 DescribeScalingPoliciesRequest::DescribeScalingPoliciesRequest() : 
     m_fleetIdHasBeenSet(false),
+    m_statusFilter(ScalingStatusType::NOT_SET),
     m_statusFilterHasBeenSet(false),
     m_limit(0),
     m_limitHasBeenSet(false),

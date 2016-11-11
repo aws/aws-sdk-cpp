@@ -31,6 +31,7 @@ ExpectedAttributeValue::ExpectedAttributeValue() :
     m_valueHasBeenSet(false),
     m_exists(false),
     m_existsHasBeenSet(false),
+    m_comparisonOperator(ComparisonOperator::NOT_SET),
     m_comparisonOperatorHasBeenSet(false),
     m_attributeValueListHasBeenSet(false)
 {
@@ -40,6 +41,7 @@ ExpectedAttributeValue::ExpectedAttributeValue(const JsonValue& jsonValue) :
     m_valueHasBeenSet(false),
     m_exists(false),
     m_existsHasBeenSet(false),
+    m_comparisonOperator(ComparisonOperator::NOT_SET),
     m_comparisonOperatorHasBeenSet(false),
     m_attributeValueListHasBeenSet(false)
 {

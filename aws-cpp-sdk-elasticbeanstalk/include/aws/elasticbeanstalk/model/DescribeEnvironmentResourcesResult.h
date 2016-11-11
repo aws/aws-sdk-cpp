@@ -34,7 +34,7 @@ namespace ElasticBeanstalk
 namespace Model
 {
   /**
-   * <p>Result message containing a list of environment resource descriptions. </p>
+   * <p>Result message containing a list of environment resource descriptions.</p>
    */
   class AWS_ELASTICBEANSTALK_API DescribeEnvironmentResourcesResult
   {

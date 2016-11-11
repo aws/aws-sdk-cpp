@@ -29,6 +29,7 @@ namespace Model
 
 BillingRecord::BillingRecord() : 
     m_domainNameHasBeenSet(false),
+    m_operation(OperationType::NOT_SET),
     m_operationHasBeenSet(false),
     m_invoiceIdHasBeenSet(false),
     m_billDateHasBeenSet(false),
@@ -39,6 +40,7 @@ BillingRecord::BillingRecord() :
 
 BillingRecord::BillingRecord(const JsonValue& jsonValue) : 
     m_domainNameHasBeenSet(false),
+    m_operation(OperationType::NOT_SET),
     m_operationHasBeenSet(false),
     m_invoiceIdHasBeenSet(false),
     m_billDateHasBeenSet(false),

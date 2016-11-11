@@ -29,6 +29,7 @@ namespace Model
 
 CommandPlugin::CommandPlugin() : 
     m_nameHasBeenSet(false),
+    m_status(CommandPluginStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_responseCode(0),
     m_responseCodeHasBeenSet(false),
@@ -42,6 +43,7 @@ CommandPlugin::CommandPlugin() :
 
 CommandPlugin::CommandPlugin(const JsonValue& jsonValue) : 
     m_nameHasBeenSet(false),
+    m_status(CommandPluginStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_responseCode(0),
     m_responseCodeHasBeenSet(false),

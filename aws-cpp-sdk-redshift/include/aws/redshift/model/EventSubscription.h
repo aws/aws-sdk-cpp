@@ -168,71 +168,71 @@ namespace Model
 
     /**
      * <p>The status of the Amazon Redshift event notification subscription.</p>
-     * <p>Constraints:</p> <ul> <li>Can be one of the following: active | no-permission
-     * | topic-not-exist</li> <li>The status "no-permission" indicates that Amazon
-     * Redshift no longer has permission to post to the Amazon SNS topic. The status
-     * "topic-not-exist" indicates that the topic was deleted after the subscription
-     * was created.</li> </ul>
+     * <p>Constraints:</p> <ul> <li> <p>Can be one of the following: active |
+     * no-permission | topic-not-exist</p> </li> <li> <p>The status "no-permission"
+     * indicates that Amazon Redshift no longer has permission to post to the Amazon
+     * SNS topic. The status "topic-not-exist" indicates that the topic was deleted
+     * after the subscription was created.</p> </li> </ul>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
 
     /**
      * <p>The status of the Amazon Redshift event notification subscription.</p>
-     * <p>Constraints:</p> <ul> <li>Can be one of the following: active | no-permission
-     * | topic-not-exist</li> <li>The status "no-permission" indicates that Amazon
-     * Redshift no longer has permission to post to the Amazon SNS topic. The status
-     * "topic-not-exist" indicates that the topic was deleted after the subscription
-     * was created.</li> </ul>
+     * <p>Constraints:</p> <ul> <li> <p>Can be one of the following: active |
+     * no-permission | topic-not-exist</p> </li> <li> <p>The status "no-permission"
+     * indicates that Amazon Redshift no longer has permission to post to the Amazon
+     * SNS topic. The status "topic-not-exist" indicates that the topic was deleted
+     * after the subscription was created.</p> </li> </ul>
      */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
      * <p>The status of the Amazon Redshift event notification subscription.</p>
-     * <p>Constraints:</p> <ul> <li>Can be one of the following: active | no-permission
-     * | topic-not-exist</li> <li>The status "no-permission" indicates that Amazon
-     * Redshift no longer has permission to post to the Amazon SNS topic. The status
-     * "topic-not-exist" indicates that the topic was deleted after the subscription
-     * was created.</li> </ul>
+     * <p>Constraints:</p> <ul> <li> <p>Can be one of the following: active |
+     * no-permission | topic-not-exist</p> </li> <li> <p>The status "no-permission"
+     * indicates that Amazon Redshift no longer has permission to post to the Amazon
+     * SNS topic. The status "topic-not-exist" indicates that the topic was deleted
+     * after the subscription was created.</p> </li> </ul>
      */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
      * <p>The status of the Amazon Redshift event notification subscription.</p>
-     * <p>Constraints:</p> <ul> <li>Can be one of the following: active | no-permission
-     * | topic-not-exist</li> <li>The status "no-permission" indicates that Amazon
-     * Redshift no longer has permission to post to the Amazon SNS topic. The status
-     * "topic-not-exist" indicates that the topic was deleted after the subscription
-     * was created.</li> </ul>
+     * <p>Constraints:</p> <ul> <li> <p>Can be one of the following: active |
+     * no-permission | topic-not-exist</p> </li> <li> <p>The status "no-permission"
+     * indicates that Amazon Redshift no longer has permission to post to the Amazon
+     * SNS topic. The status "topic-not-exist" indicates that the topic was deleted
+     * after the subscription was created.</p> </li> </ul>
      */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
 
     /**
      * <p>The status of the Amazon Redshift event notification subscription.</p>
-     * <p>Constraints:</p> <ul> <li>Can be one of the following: active | no-permission
-     * | topic-not-exist</li> <li>The status "no-permission" indicates that Amazon
-     * Redshift no longer has permission to post to the Amazon SNS topic. The status
-     * "topic-not-exist" indicates that the topic was deleted after the subscription
-     * was created.</li> </ul>
+     * <p>Constraints:</p> <ul> <li> <p>Can be one of the following: active |
+     * no-permission | topic-not-exist</p> </li> <li> <p>The status "no-permission"
+     * indicates that Amazon Redshift no longer has permission to post to the Amazon
+     * SNS topic. The status "topic-not-exist" indicates that the topic was deleted
+     * after the subscription was created.</p> </li> </ul>
      */
     inline EventSubscription& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
 
     /**
      * <p>The status of the Amazon Redshift event notification subscription.</p>
-     * <p>Constraints:</p> <ul> <li>Can be one of the following: active | no-permission
-     * | topic-not-exist</li> <li>The status "no-permission" indicates that Amazon
-     * Redshift no longer has permission to post to the Amazon SNS topic. The status
-     * "topic-not-exist" indicates that the topic was deleted after the subscription
-     * was created.</li> </ul>
+     * <p>Constraints:</p> <ul> <li> <p>Can be one of the following: active |
+     * no-permission | topic-not-exist</p> </li> <li> <p>The status "no-permission"
+     * indicates that Amazon Redshift no longer has permission to post to the Amazon
+     * SNS topic. The status "topic-not-exist" indicates that the topic was deleted
+     * after the subscription was created.</p> </li> </ul>
      */
     inline EventSubscription& WithStatus(Aws::String&& value) { SetStatus(value); return *this;}
 
     /**
      * <p>The status of the Amazon Redshift event notification subscription.</p>
-     * <p>Constraints:</p> <ul> <li>Can be one of the following: active | no-permission
-     * | topic-not-exist</li> <li>The status "no-permission" indicates that Amazon
-     * Redshift no longer has permission to post to the Amazon SNS topic. The status
-     * "topic-not-exist" indicates that the topic was deleted after the subscription
-     * was created.</li> </ul>
+     * <p>Constraints:</p> <ul> <li> <p>Can be one of the following: active |
+     * no-permission | topic-not-exist</p> </li> <li> <p>The status "no-permission"
+     * indicates that Amazon Redshift no longer has permission to post to the Amazon
+     * SNS topic. The status "topic-not-exist" indicates that the topic was deleted
+     * after the subscription was created.</p> </li> </ul>
      */
     inline EventSubscription& WithStatus(const char* value) { SetStatus(value); return *this;}
 

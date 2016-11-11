@@ -32,6 +32,7 @@ RealtimeEndpointInfo::RealtimeEndpointInfo() :
     m_peakRequestsPerSecondHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_endpointUrlHasBeenSet(false),
+    m_endpointStatus(RealtimeEndpointStatus::NOT_SET),
     m_endpointStatusHasBeenSet(false)
 {
 }
@@ -41,6 +42,7 @@ RealtimeEndpointInfo::RealtimeEndpointInfo(const JsonValue& jsonValue) :
     m_peakRequestsPerSecondHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_endpointUrlHasBeenSet(false),
+    m_endpointStatus(RealtimeEndpointStatus::NOT_SET),
     m_endpointStatusHasBeenSet(false)
 {
   *this = jsonValue;

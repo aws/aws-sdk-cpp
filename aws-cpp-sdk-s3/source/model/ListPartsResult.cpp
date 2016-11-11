@@ -29,7 +29,9 @@ ListPartsResult::ListPartsResult() :
     m_partNumberMarker(0),
     m_nextPartNumberMarker(0),
     m_maxParts(0),
-    m_isTruncated(false)
+    m_isTruncated(false),
+    m_storageClass(StorageClass::NOT_SET),
+    m_requestCharged(RequestCharged::NOT_SET)
 {
 }
 
@@ -37,7 +39,9 @@ ListPartsResult::ListPartsResult(const AmazonWebServiceResult<XmlDocument>& resu
     m_partNumberMarker(0),
     m_nextPartNumberMarker(0),
     m_maxParts(0),
-    m_isTruncated(false)
+    m_isTruncated(false),
+    m_storageClass(StorageClass::NOT_SET),
+    m_requestCharged(RequestCharged::NOT_SET)
 {
   *this = result;
 }

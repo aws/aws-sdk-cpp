@@ -25,6 +25,7 @@ SendCommandRequest::SendCommandRequest() :
     m_instanceIdsHasBeenSet(false),
     m_documentNameHasBeenSet(false),
     m_documentHashHasBeenSet(false),
+    m_documentHashType(DocumentHashType::NOT_SET),
     m_documentHashTypeHasBeenSet(false),
     m_timeoutSeconds(0),
     m_timeoutSecondsHasBeenSet(false),

@@ -161,27 +161,27 @@ namespace Model
     inline RetrieveEnvironmentInfoRequest& WithEnvironmentName(const char* value) { SetEnvironmentName(value); return *this;}
 
     /**
-     * <p> The type of information to retrieve. </p>
+     * <p>The type of information to retrieve.</p>
      */
     inline const EnvironmentInfoType& GetInfoType() const{ return m_infoType; }
 
     /**
-     * <p> The type of information to retrieve. </p>
+     * <p>The type of information to retrieve.</p>
      */
     inline void SetInfoType(const EnvironmentInfoType& value) { m_infoTypeHasBeenSet = true; m_infoType = value; }
 
     /**
-     * <p> The type of information to retrieve. </p>
+     * <p>The type of information to retrieve.</p>
      */
     inline void SetInfoType(EnvironmentInfoType&& value) { m_infoTypeHasBeenSet = true; m_infoType = value; }
 
     /**
-     * <p> The type of information to retrieve. </p>
+     * <p>The type of information to retrieve.</p>
      */
     inline RetrieveEnvironmentInfoRequest& WithInfoType(const EnvironmentInfoType& value) { SetInfoType(value); return *this;}
 
     /**
-     * <p> The type of information to retrieve. </p>
+     * <p>The type of information to retrieve.</p>
      */
     inline RetrieveEnvironmentInfoRequest& WithInfoType(EnvironmentInfoType&& value) { SetInfoType(value); return *this;}
 

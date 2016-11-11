@@ -23,6 +23,7 @@ using namespace Aws::Utils;
 
 DescribeDocumentPermissionRequest::DescribeDocumentPermissionRequest() : 
     m_nameHasBeenSet(false),
+    m_permissionType(DocumentPermissionType::NOT_SET),
     m_permissionTypeHasBeenSet(false)
 {
 }

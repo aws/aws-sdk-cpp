@@ -15,18 +15,19 @@ namespace ${metadata.namespace}
 {
 namespace ${metadata.classNamePrefix}Endpoint
 {
-
+  static const int CN_REGION_HASH = Aws::Utils::HashingUtils::HashString("cn-north-1");
+  
 #foreach($regionEndpointPair in $endpointMapping.entrySet())
   static const int ${regionEndpointPair.key.toUpperCase().replace("-", "_")}_HASH = Aws::Utils::HashingUtils::HashString("${regionEndpointPair.key}");
 #end
 
   Aws::String ForRegion(const Aws::String& regionName, bool useDualStack)
   {
+    auto hash = Aws::Utils::HashingUtils::HashString(regionName.c_str());
+    
 #if($endpointMapping.size() > 0)
     if(!useDualStack)
-    {
-      auto hash = Aws::Utils::HashingUtils::HashString(regionName.c_str());
-
+    {      
 #set($elseText = "")
 #foreach($regionEndpointPair in $endpointMapping.entrySet())
       ${elseText}if(hash == ${regionEndpointPair.key.toUpperCase().replace("-", "_")}_HASH)
@@ -46,6 +47,12 @@ namespace ${metadata.classNamePrefix}Endpoint
     }
 
     ss << regionName << ".amazonaws.com";
+    
+    if(hash == CN_REGION_HASH)
+    {
+      ss << ".cn"; 
+    }
+    
     return ss.str();
   }
 

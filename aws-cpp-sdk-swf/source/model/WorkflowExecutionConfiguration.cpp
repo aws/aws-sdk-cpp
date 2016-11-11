@@ -32,6 +32,7 @@ WorkflowExecutionConfiguration::WorkflowExecutionConfiguration() :
     m_executionStartToCloseTimeoutHasBeenSet(false),
     m_taskListHasBeenSet(false),
     m_taskPriorityHasBeenSet(false),
+    m_childPolicy(ChildPolicy::NOT_SET),
     m_childPolicyHasBeenSet(false),
     m_lambdaRoleHasBeenSet(false)
 {
@@ -42,6 +43,7 @@ WorkflowExecutionConfiguration::WorkflowExecutionConfiguration(const JsonValue& 
     m_executionStartToCloseTimeoutHasBeenSet(false),
     m_taskListHasBeenSet(false),
     m_taskPriorityHasBeenSet(false),
+    m_childPolicy(ChildPolicy::NOT_SET),
     m_childPolicyHasBeenSet(false),
     m_lambdaRoleHasBeenSet(false)
 {

@@ -25,11 +25,13 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 GetEvaluationResult::GetEvaluationResult() : 
+    m_status(EntityStatus::NOT_SET),
     m_computeTime(0)
 {
 }
 
 GetEvaluationResult::GetEvaluationResult(const AmazonWebServiceResult<JsonValue>& result) : 
+    m_status(EntityStatus::NOT_SET),
     m_computeTime(0)
 {
   *this = result;

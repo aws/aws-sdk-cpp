@@ -665,11 +665,7 @@ public class Ec2CppClientGenerator extends QueryCppClientGenerator{
         final Error securityGroupsPerInterfaceLimitExceeded = new Error();
         securityGroupsPerInterfaceLimitExceeded.setName("SecurityGroupsPerInterfaceLimitExceeded");
         securityGroupsPerInterfaceLimitExceeded.setText("SecurityGroupsPerInterfaceLimitExceeded");
-        serviceErrors.add(securityGroupsPerInterfaceLimitExceeded);
-        final Error signatureDoesNotMatch = new Error();
-        signatureDoesNotMatch.setName("SignatureDoesNotMatch");
-        signatureDoesNotMatch.setText("SignatureDoesNotMatch");
-        serviceErrors.add(signatureDoesNotMatch);
+        serviceErrors.add(securityGroupsPerInterfaceLimitExceeded);        
         final Error snapshotLimitExceeded = new Error();
         snapshotLimitExceeded.setName("SnapshotLimitExceeded");
         snapshotLimitExceeded.setText("SnapshotLimitExceeded");

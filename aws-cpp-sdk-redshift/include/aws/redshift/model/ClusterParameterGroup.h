@@ -47,114 +47,114 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     /**
-     * <p> The name of the cluster parameter group. </p>
+     * <p>The name of the cluster parameter group.</p>
      */
     inline const Aws::String& GetParameterGroupName() const{ return m_parameterGroupName; }
 
     /**
-     * <p> The name of the cluster parameter group. </p>
+     * <p>The name of the cluster parameter group.</p>
      */
     inline void SetParameterGroupName(const Aws::String& value) { m_parameterGroupNameHasBeenSet = true; m_parameterGroupName = value; }
 
     /**
-     * <p> The name of the cluster parameter group. </p>
+     * <p>The name of the cluster parameter group.</p>
      */
     inline void SetParameterGroupName(Aws::String&& value) { m_parameterGroupNameHasBeenSet = true; m_parameterGroupName = value; }
 
     /**
-     * <p> The name of the cluster parameter group. </p>
+     * <p>The name of the cluster parameter group.</p>
      */
     inline void SetParameterGroupName(const char* value) { m_parameterGroupNameHasBeenSet = true; m_parameterGroupName.assign(value); }
 
     /**
-     * <p> The name of the cluster parameter group. </p>
+     * <p>The name of the cluster parameter group.</p>
      */
     inline ClusterParameterGroup& WithParameterGroupName(const Aws::String& value) { SetParameterGroupName(value); return *this;}
 
     /**
-     * <p> The name of the cluster parameter group. </p>
+     * <p>The name of the cluster parameter group.</p>
      */
     inline ClusterParameterGroup& WithParameterGroupName(Aws::String&& value) { SetParameterGroupName(value); return *this;}
 
     /**
-     * <p> The name of the cluster parameter group. </p>
+     * <p>The name of the cluster parameter group.</p>
      */
     inline ClusterParameterGroup& WithParameterGroupName(const char* value) { SetParameterGroupName(value); return *this;}
 
     /**
-     * <p> The name of the cluster parameter group family that this cluster parameter
-     * group is compatible with. </p>
+     * <p>The name of the cluster parameter group family that this cluster parameter
+     * group is compatible with.</p>
      */
     inline const Aws::String& GetParameterGroupFamily() const{ return m_parameterGroupFamily; }
 
     /**
-     * <p> The name of the cluster parameter group family that this cluster parameter
-     * group is compatible with. </p>
+     * <p>The name of the cluster parameter group family that this cluster parameter
+     * group is compatible with.</p>
      */
     inline void SetParameterGroupFamily(const Aws::String& value) { m_parameterGroupFamilyHasBeenSet = true; m_parameterGroupFamily = value; }
 
     /**
-     * <p> The name of the cluster parameter group family that this cluster parameter
-     * group is compatible with. </p>
+     * <p>The name of the cluster parameter group family that this cluster parameter
+     * group is compatible with.</p>
      */
     inline void SetParameterGroupFamily(Aws::String&& value) { m_parameterGroupFamilyHasBeenSet = true; m_parameterGroupFamily = value; }
 
     /**
-     * <p> The name of the cluster parameter group family that this cluster parameter
-     * group is compatible with. </p>
+     * <p>The name of the cluster parameter group family that this cluster parameter
+     * group is compatible with.</p>
      */
     inline void SetParameterGroupFamily(const char* value) { m_parameterGroupFamilyHasBeenSet = true; m_parameterGroupFamily.assign(value); }
 
     /**
-     * <p> The name of the cluster parameter group family that this cluster parameter
-     * group is compatible with. </p>
+     * <p>The name of the cluster parameter group family that this cluster parameter
+     * group is compatible with.</p>
      */
     inline ClusterParameterGroup& WithParameterGroupFamily(const Aws::String& value) { SetParameterGroupFamily(value); return *this;}
 
     /**
-     * <p> The name of the cluster parameter group family that this cluster parameter
-     * group is compatible with. </p>
+     * <p>The name of the cluster parameter group family that this cluster parameter
+     * group is compatible with.</p>
      */
     inline ClusterParameterGroup& WithParameterGroupFamily(Aws::String&& value) { SetParameterGroupFamily(value); return *this;}
 
     /**
-     * <p> The name of the cluster parameter group family that this cluster parameter
-     * group is compatible with. </p>
+     * <p>The name of the cluster parameter group family that this cluster parameter
+     * group is compatible with.</p>
      */
     inline ClusterParameterGroup& WithParameterGroupFamily(const char* value) { SetParameterGroupFamily(value); return *this;}
 
     /**
-     * <p> The description of the parameter group. </p>
+     * <p>The description of the parameter group.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p> The description of the parameter group. </p>
+     * <p>The description of the parameter group.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p> The description of the parameter group. </p>
+     * <p>The description of the parameter group.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p> The description of the parameter group. </p>
+     * <p>The description of the parameter group.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p> The description of the parameter group. </p>
+     * <p>The description of the parameter group.</p>
      */
     inline ClusterParameterGroup& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p> The description of the parameter group. </p>
+     * <p>The description of the parameter group.</p>
      */
     inline ClusterParameterGroup& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
 
     /**
-     * <p> The description of the parameter group. </p>
+     * <p>The description of the parameter group.</p>
      */
     inline ClusterParameterGroup& WithDescription(const char* value) { SetDescription(value); return *this;}
 

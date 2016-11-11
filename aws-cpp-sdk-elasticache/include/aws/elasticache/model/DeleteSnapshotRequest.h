@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input of a <i>DeleteSnapshot</i> action.</p>
+   * <p>Represents the input of a <code>DeleteSnapshot</code> operation.</p>
    */
   class AWS_ELASTICACHE_API DeleteSnapshotRequest : public ElastiCacheRequest
   {

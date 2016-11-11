@@ -27,7 +27,9 @@ def GetBuildEnvironments():
              'msbuild' : { 'global_build_call' : [ "msbuild", "ALL_BUILD.vcxproj" ],
                            'parallel_option' : '-m:??' },
              'nmake' : { 'global_build_call' : [ "nmake" ],
-                         'parallel_option' : '' } }
+                         'parallel_option' : '' },
+             'jom' : { 'global_build_call' : [ "jom" ],
+                       'parallel_option' : '' } }
 
 def GetPlatformEnvironments():
     return { 'Windows' : { 'default_install_directory' : 'C:\\temp\\AWSNativeSDK' },
@@ -78,56 +80,55 @@ def GetPlatformBuildTargets():
                                'build_environment' : 'msbuild',
                                'gen_param' : { 'x86' : "-G \"Visual Studio 14 2015\"", 'x86_64' : "-G \"Visual Studio 14 2015 Win64\"" },
                                'global_cmake_params' : "-DGENERATE_VERSION_INFO=0 -DSIMPLE_INSTALL=OFF -DENABLE_UNITY_BUILD=ON -DCMAKE_CONFIGURATION_TYPES=\"Debug;Release;MinSizeRel;RelWithDebInfo\" -DCMAKE_CXX_FLAGS_DEBUGOPT=\"\" -DCMAKE_EXE_LINKER_FLAGS_DEBUGOPT=\"\" -DCMAKE_SHARED_LINKER_FLAGS_DEBUGOPT=\"\"" },
-             'Android' : { 'buildPlatforms' : [ 'Linux' ],
-                           'configs' : { 'DebugDynamic' : { 'directory' : '_build_android_dynamic_debug', 
-                                                            'cmake_params' : "-DSTATIC_LINKING=0 -DCMAKE_BUILD_TYPE=Debug",
-                                                            'build_params' : [],
-                                                            'config' : 'Debug' },
-                                         'DebugStatic' : { 'directory' : '_build_android_dynamic_static', 
-                                                           'cmake_params' : "-DSTATIC_LINKING=1 -DCMAKE_BUILD_TYPE=Debug",
-                                                           'build_params' : [],
-                                                           'config' : 'Debug' },
-                                         'ReleaseDynamic' : { 'directory' : '_build_android_dynamic_release', 
-                                                              'cmake_params' : "-DSTATIC_LINKING=0 -DCMAKE_BUILD_TYPE=Release",
+             'AndroidArm' : { 'buildPlatforms' : [ 'Linux' ],
+                              'configs' : { 'DebugDynamic' : { 'directory' : '_build_android_arm_32_dynamic_debug', 
+                                                               'cmake_params' : "-DSTATIC_LINKING=0 -DCMAKE_BUILD_TYPE=Debug",
+                                                               'build_params' : [],
+                                                               'config' : 'Debug' },
+                                            'DebugStatic' : { 'directory' : '_build_android_arm_32_dynamic_static', 
+                                                              'cmake_params' : "-DSTATIC_LINKING=1 -DCMAKE_BUILD_TYPE=Debug",
                                                               'build_params' : [],
-                                                              'config' : 'Release' }, 
-                                         'ReleaseStatic' : { 'directory' : '_build_android_static_release', 
-                                                             'cmake_params' : "-DSTATIC_LINKING=1 -DCMAKE_BUILD_TYPE=Release",
-                                                             'build_params' : [],
-                                                             'config' : 'Release' } },
-                           'platform_install_qualifier' : "",
-                           'build_environment' : 'make',
-                           'gen_param' : { 'x86' : "-DCMAKE_CXX_FLAGS=-m32 -DCMAKE_C_FLAGS=-m32", 'x86_64' : "" },
-                           'global_cmake_params' : "-DSIMPLE_INSTALL=OFF " \
-                                                   "-DGENERATE_VERSION_INFO=0 " \
-                                                   "-DMINIMIZE_SIZE=ON " \
-                                                   "-DANDROID_STL=gnustl " \
-                                                   "-DTARGET_ARCH=ANDROID "},
-             'AndroidWindows' : { 'buildPlatforms' : [ 'Windows' ],
-                                  'configs' : { 'DebugDynamic' : { 'directory' : '_build_android_dynamic_debug', 
-                                                                   'cmake_params' : "-DSTATIC_LINKING=0 -DCMAKE_BUILD_TYPE=Debug",
+                                                              'config' : 'Debug' },
+                                            'ReleaseDynamic' : { 'directory' : '_build_android_arm_32_dynamic_release', 
+                                                                 'cmake_params' : "-DSTATIC_LINKING=0 -DCMAKE_BUILD_TYPE=Release",
+                                                                 'build_params' : [],
+                                                                 'config' : 'Release' }, 
+                                            'ReleaseStatic' : { 'directory' : '_build_android_arm_32_static_release', 
+                                                                'cmake_params' : "-DSTATIC_LINKING=1 -DCMAKE_BUILD_TYPE=Release",
+                                                                'build_params' : [],
+                                                                'config' : 'Release' } },
+                              'platform_install_qualifier' : "",
+                              'build_environment' : 'make',
+                              'gen_param' : { 'x86' : "", 'x86_64' : "" },
+                              'global_cmake_params' : "-DSIMPLE_INSTALL=OFF " \
+                                                      "-DGENERATE_VERSION_INFO=0 " \
+                                                      "-DMINIMIZE_SIZE=ON " \
+                                                      "-DTARGET_ARCH=ANDROID "},
+             'AndroidArm64' : { 'buildPlatforms' : [ 'Linux' ],
+                                'configs' : { 'DebugDynamic' : { 'directory' : '_build_android_arm_64_dynamic_debug', 
+                                                                 'cmake_params' : "-DSTATIC_LINKING=0 -DCMAKE_BUILD_TYPE=Debug",
+                                                                 'build_params' : [],
+                                                                 'config' : 'Debug' },
+                                              'DebugStatic' : { 'directory' : '_build_android_arm_64_dynamic_static', 
+                                                                'cmake_params' : "-DSTATIC_LINKING=1 -DCMAKE_BUILD_TYPE=Debug",
+                                                                'build_params' : [],
+                                                                'config' : 'Debug' },
+                                              'ReleaseDynamic' : { 'directory' : '_build_android_arm_64_dynamic_release', 
+                                                                   'cmake_params' : "-DSTATIC_LINKING=0 -DCMAKE_BUILD_TYPE=Release",
                                                                    'build_params' : [],
-                                                                   'config' : 'Debug' },
-                                                'DebugStatic' : { 'directory' : '_build_android_dynamic_static', 
-                                                                  'cmake_params' : "-DSTATIC_LINKING=1 -DCMAKE_BUILD_TYPE=Debug",
+                                                                   'config' : 'Release' }, 
+                                              'ReleaseStatic' : { 'directory' : '_build_android_arm_64_static_release', 
+                                                                  'cmake_params' : "-DSTATIC_LINKING=1 -DCMAKE_BUILD_TYPE=Release",
                                                                   'build_params' : [],
-                                                                  'config' : 'Debug' },
-                                                'ReleaseDynamic' : { 'directory' : '_build_android_dynamic_release', 
-                                                                     'cmake_params' : "-DSTATIC_LINKING=0 -DCMAKE_BUILD_TYPE=Release",
-                                                                     'build_params' : [],
-                                                                     'config' : 'Release' }, 
-                                                'ReleaseStatic' : { 'directory' : '_build_android_static_release', 
-                                                                    'cmake_params' : "-DSTATIC_LINKING=1 -DCMAKE_BUILD_TYPE=Release",
-                                                                    'build_params' : [],
-                                                                    'config' : 'Release' } },
-                                  'platform_install_qualifier' : "",
-                                  'build_environment' : 'nmake',
-                                  'gen_param' : { 'x86' : "-G \"NMake Makefiles\" -DCMAKE_CXX_FLAGS=-m32", 'x86_64' : "-G \"NMake Makefiles\" " },
-                                  'global_cmake_params' : "-DSIMPLE_INSTALL=OFF " \
-                                                          "-DGENERATE_VERSION_INFO=0 " \
-                                                          "-DMINIMIZE_SIZE=ON " \
-                                                          "-DANDROID_STL=gnustl " \
-                                                          "-DTARGET_ARCH=ANDROID "},
+                                                                  'config' : 'Release' } },
+                                'platform_install_qualifier' : "",
+                                'build_environment' : 'make',
+                                'gen_param' : { 'x86' : "", 'x86_64' : "" },
+                                'global_cmake_params' : "-DSIMPLE_INSTALL=OFF " \
+                                                        "-DGENERATE_VERSION_INFO=0 " \
+                                                        "-DMINIMIZE_SIZE=ON " \
+                                                        "-DTARGET_ARCH=ANDROID " \
+                                                        "-DANDROID_ABI=arm64-v8a "},
              'Linux' : { 'buildPlatforms' : [ 'Linux' ],
                          'configs' : { 'DebugDynamic' : { 'directory' : '_build_linux_dynamic_debug', 
                                                           'cmake_params' : "-DSTATIC_LINKING=0 -DCMAKE_BUILD_TYPE=Debug",
@@ -189,6 +190,7 @@ def ParseArguments(platformEnvironments):
     parser.add_argument("--customMemoryManagement", action="store")
     parser.add_argument("--enableRtti", action="store")
     parser.add_argument("--cpuArchitecture", action="store")
+    parser.add_argument("--customplatformdir", action="store")
 
     args = vars( parser.parse_args() )
     argMap[ "installDir" ] = args[ "installdir" ] or platformEnv['default_install_directory']
@@ -201,7 +203,8 @@ def ParseArguments(platformEnvironments):
     argMap[ "customMemoryManagement" ] = args[ "customMemoryManagement"] or "1"
     argMap[ "enableRtti" ] = args[ "enableRtti"] or "0"
     argMap[ "cpuArchitecture" ] = args[ "cpuArchitecture" ] or "x86_64"
-    
+    argMap[ "customplatformdir" ] = args[ "customplatformdir" ] or ""
+
     return argMap
 
 
@@ -214,7 +217,7 @@ def CopyPDBs(config, libDir, installDirectoryPrefix, platformInstallQualifier, c
             for dirName in dirNames:
                 
                 sourceFile = os.path.join(rootDir, dirName, config, dirName + ".pdb")
-                if os.path.isfile(sourceFile):
+                if os.path.isfile(sourceFile) and not dirName.endswith("-tests"):
                     subprocess.check_call( "copy " + sourceFile + " \"" + destDirectory + "\"", shell = True )
     
 
@@ -264,6 +267,16 @@ def Main():
     if cpuArch == "x86":
         windowsCpuArch = "ia32"
 
+    customPlatformDir = arguments[ "customplatformdir" ]
+    if customPlatformDir != "" and os.path.exists( customPlatformDir ):
+        import sys
+        sys.path.insert(0, os.path.join(customPlatformDir, 'scripts'))
+
+        import build_custom_3rdparty
+        customTargets = build_custom_3rdparty.GetPlatformBuildTargets()
+        for k in customTargets:
+            platformBuildTargets[ k ] = customTargets[ k ]
+
     if os.path.exists( installDirectory ):
         shutil.rmtree( installDirectory )
 
@@ -311,14 +324,19 @@ def Main():
             os.chdir( buildDirectory )
             cmake_call_list = "cmake " + customCmakeParams + " " + archConfig[ 'cmake_params' ] + " " + targetPlatformDef[ 'gen_param' ][cpuArch] + " " + targetPlatformDef[ 'global_cmake_params' ]
             if targetPlatformDef[ 'platform_install_qualifier' ] != "":
-                 cmake_call_list = cmake_call_list + " -DPLATFORM_INSTALL_QUALIFIER=" + targetPlatformDef[ 'platform_install_qualifier' ]
+                cmake_call_list = cmake_call_list + " -DPLATFORM_INSTALL_QUALIFIER=" + targetPlatformDef[ 'platform_install_qualifier' ]
  
+            if customPlatformDir != "":
+                cmake_call_list = cmake_call_list + " -DCUSTOM_PLATFORM_DIR=\"" + customPlatformDir + "\""
+
             cmake_call_list = cmake_call_list + " " + sourceDir
             print( "cmake call = " + cmake_call_list )
             subprocess.check_call( cmake_call_list, shell = True )
 
             parallelBuildOption = buildEnvironment[ 'parallel_option' ].replace("??", str(parallelJobs))
-            build_call_list = buildEnvironment[ 'global_build_call' ] + [ parallelBuildOption ] + archConfig[ 'build_params' ]
+            build_call_list = buildEnvironment[ 'global_build_call' ] + archConfig[ 'build_params' ]
+            if parallelBuildOption != "":
+                build_call_list = build_call_list + [ parallelBuildOption ]
             print( "build call = " + str( build_call_list ) )
             subprocess.check_call( build_call_list )
 
@@ -329,7 +347,7 @@ def Main():
             # platform specific stuff
         
             # Copy Windows PDBs
-            if architecture.startswith('Windows'):
+            if architecture.startswith('Windows') and targetConfig.endswith("Dynamic"):
                  CopyPDBs( archConfig[ 'config' ], "bin", installDirectory, targetPlatformDef[ 'platform_install_qualifier' ], windowsCpuArch )
 
             # Install Android auxiliary dependencies (zlib, openssl, curl)

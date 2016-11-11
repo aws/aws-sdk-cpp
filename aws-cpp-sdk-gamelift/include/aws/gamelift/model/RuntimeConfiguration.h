@@ -46,7 +46,7 @@ namespace Model
    * parameters.</p> <p>A GameLift instance is limited to 50 processes running
    * simultaneously. To calculate the total number of processes specified in a
    * runtime configuration, add the values of the <code>ConcurrentExecutions</code>
-   * parameter for each <code><a>ServerProcess</a></code> object in the runtime
+   * parameter for each <code> <a>ServerProcess</a> </code> object in the runtime
    * configuration.</p>
    */
   class AWS_GAMELIFT_API RuntimeConfiguration
@@ -59,43 +59,43 @@ namespace Model
 
     /**
      * <p>Collection of server process configurations describing what server processes
-     * to run on each instance in a fleet </p>
+     * to run on each instance in a fleet</p>
      */
     inline const Aws::Vector<ServerProcess>& GetServerProcesses() const{ return m_serverProcesses; }
 
     /**
      * <p>Collection of server process configurations describing what server processes
-     * to run on each instance in a fleet </p>
+     * to run on each instance in a fleet</p>
      */
     inline void SetServerProcesses(const Aws::Vector<ServerProcess>& value) { m_serverProcessesHasBeenSet = true; m_serverProcesses = value; }
 
     /**
      * <p>Collection of server process configurations describing what server processes
-     * to run on each instance in a fleet </p>
+     * to run on each instance in a fleet</p>
      */
     inline void SetServerProcesses(Aws::Vector<ServerProcess>&& value) { m_serverProcessesHasBeenSet = true; m_serverProcesses = value; }
 
     /**
      * <p>Collection of server process configurations describing what server processes
-     * to run on each instance in a fleet </p>
+     * to run on each instance in a fleet</p>
      */
     inline RuntimeConfiguration& WithServerProcesses(const Aws::Vector<ServerProcess>& value) { SetServerProcesses(value); return *this;}
 
     /**
      * <p>Collection of server process configurations describing what server processes
-     * to run on each instance in a fleet </p>
+     * to run on each instance in a fleet</p>
      */
     inline RuntimeConfiguration& WithServerProcesses(Aws::Vector<ServerProcess>&& value) { SetServerProcesses(value); return *this;}
 
     /**
      * <p>Collection of server process configurations describing what server processes
-     * to run on each instance in a fleet </p>
+     * to run on each instance in a fleet</p>
      */
     inline RuntimeConfiguration& AddServerProcesses(const ServerProcess& value) { m_serverProcessesHasBeenSet = true; m_serverProcesses.push_back(value); return *this; }
 
     /**
      * <p>Collection of server process configurations describing what server processes
-     * to run on each instance in a fleet </p>
+     * to run on each instance in a fleet</p>
      */
     inline RuntimeConfiguration& AddServerProcesses(ServerProcess&& value) { m_serverProcessesHasBeenSet = true; m_serverProcesses.push_back(value); return *this; }
 

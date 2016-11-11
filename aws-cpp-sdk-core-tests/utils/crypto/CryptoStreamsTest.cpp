@@ -12,6 +12,9 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
+
+#ifndef NO_SYMMETRIC_ENCRYPTION
+
 #include <aws/external/gtest.h>
 #include <aws/core/utils/crypto/CryptoStream.h>
 #include <aws/core/utils/memory/stl/AWSQueue.h>
@@ -561,3 +564,5 @@ TEST(CryptoStreamsTest, TestLiveSymmetricCipher)
     }
 }
 #endif
+
+#endif // NO_SYMMETRIC_ENCRYPTION

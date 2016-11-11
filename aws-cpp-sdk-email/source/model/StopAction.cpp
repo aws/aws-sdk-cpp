@@ -30,12 +30,14 @@ namespace Model
 {
 
 StopAction::StopAction() : 
+    m_scope(StopScope::NOT_SET),
     m_scopeHasBeenSet(false),
     m_topicArnHasBeenSet(false)
 {
 }
 
 StopAction::StopAction(const XmlNode& xmlNode) : 
+    m_scope(StopScope::NOT_SET),
     m_scopeHasBeenSet(false),
     m_topicArnHasBeenSet(false)
 {

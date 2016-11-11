@@ -29,6 +29,7 @@ AbortMultipartUploadRequest::AbortMultipartUploadRequest() :
     m_bucketHasBeenSet(false),
     m_keyHasBeenSet(false),
     m_uploadIdHasBeenSet(false),
+    m_requestPayer(RequestPayer::NOT_SET),
     m_requestPayerHasBeenSet(false)
 {
 }

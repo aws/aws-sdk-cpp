@@ -91,37 +91,37 @@ namespace Model
     inline GetExportResult& WithContentType(const char* value) { SetContentType(value); return *this;}
 
     /**
-     * <p>The content-disposition header value in the HTTP reseponse.</p>
+     * <p>The content-disposition header value in the HTTP response.</p>
      */
     inline const Aws::String& GetContentDisposition() const{ return m_contentDisposition; }
 
     /**
-     * <p>The content-disposition header value in the HTTP reseponse.</p>
+     * <p>The content-disposition header value in the HTTP response.</p>
      */
     inline void SetContentDisposition(const Aws::String& value) { m_contentDisposition = value; }
 
     /**
-     * <p>The content-disposition header value in the HTTP reseponse.</p>
+     * <p>The content-disposition header value in the HTTP response.</p>
      */
     inline void SetContentDisposition(Aws::String&& value) { m_contentDisposition = value; }
 
     /**
-     * <p>The content-disposition header value in the HTTP reseponse.</p>
+     * <p>The content-disposition header value in the HTTP response.</p>
      */
     inline void SetContentDisposition(const char* value) { m_contentDisposition.assign(value); }
 
     /**
-     * <p>The content-disposition header value in the HTTP reseponse.</p>
+     * <p>The content-disposition header value in the HTTP response.</p>
      */
     inline GetExportResult& WithContentDisposition(const Aws::String& value) { SetContentDisposition(value); return *this;}
 
     /**
-     * <p>The content-disposition header value in the HTTP reseponse.</p>
+     * <p>The content-disposition header value in the HTTP response.</p>
      */
     inline GetExportResult& WithContentDisposition(Aws::String&& value) { SetContentDisposition(value); return *this;}
 
     /**
-     * <p>The content-disposition header value in the HTTP reseponse.</p>
+     * <p>The content-disposition header value in the HTTP response.</p>
      */
     inline GetExportResult& WithContentDisposition(const char* value) { SetContentDisposition(value); return *this;}
 

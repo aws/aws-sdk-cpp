@@ -87,63 +87,63 @@ namespace Model
     /**
      * <p>The owner of the bundles to retrieve. This parameter cannot be combined with
      * any other filter parameter.</p> <p>This contains one of the following
-     * values:</p> <ul> <li>null - Retrieves the bundles that belong to the account
-     * making the call.</li> <li><code>AMAZON</code> - Retrieves the bundles that are
-     * provided by AWS.</li> </ul>
+     * values:</p> <ul> <li> <p>null- Retrieves the bundles that belong to the account
+     * making the call.</p> </li> <li> <p> <code>AMAZON</code>- Retrieves the bundles
+     * that are provided by AWS.</p> </li> </ul>
      */
     inline const Aws::String& GetOwner() const{ return m_owner; }
 
     /**
      * <p>The owner of the bundles to retrieve. This parameter cannot be combined with
      * any other filter parameter.</p> <p>This contains one of the following
-     * values:</p> <ul> <li>null - Retrieves the bundles that belong to the account
-     * making the call.</li> <li><code>AMAZON</code> - Retrieves the bundles that are
-     * provided by AWS.</li> </ul>
+     * values:</p> <ul> <li> <p>null- Retrieves the bundles that belong to the account
+     * making the call.</p> </li> <li> <p> <code>AMAZON</code>- Retrieves the bundles
+     * that are provided by AWS.</p> </li> </ul>
      */
     inline void SetOwner(const Aws::String& value) { m_ownerHasBeenSet = true; m_owner = value; }
 
     /**
      * <p>The owner of the bundles to retrieve. This parameter cannot be combined with
      * any other filter parameter.</p> <p>This contains one of the following
-     * values:</p> <ul> <li>null - Retrieves the bundles that belong to the account
-     * making the call.</li> <li><code>AMAZON</code> - Retrieves the bundles that are
-     * provided by AWS.</li> </ul>
+     * values:</p> <ul> <li> <p>null- Retrieves the bundles that belong to the account
+     * making the call.</p> </li> <li> <p> <code>AMAZON</code>- Retrieves the bundles
+     * that are provided by AWS.</p> </li> </ul>
      */
     inline void SetOwner(Aws::String&& value) { m_ownerHasBeenSet = true; m_owner = value; }
 
     /**
      * <p>The owner of the bundles to retrieve. This parameter cannot be combined with
      * any other filter parameter.</p> <p>This contains one of the following
-     * values:</p> <ul> <li>null - Retrieves the bundles that belong to the account
-     * making the call.</li> <li><code>AMAZON</code> - Retrieves the bundles that are
-     * provided by AWS.</li> </ul>
+     * values:</p> <ul> <li> <p>null- Retrieves the bundles that belong to the account
+     * making the call.</p> </li> <li> <p> <code>AMAZON</code>- Retrieves the bundles
+     * that are provided by AWS.</p> </li> </ul>
      */
     inline void SetOwner(const char* value) { m_ownerHasBeenSet = true; m_owner.assign(value); }
 
     /**
      * <p>The owner of the bundles to retrieve. This parameter cannot be combined with
      * any other filter parameter.</p> <p>This contains one of the following
-     * values:</p> <ul> <li>null - Retrieves the bundles that belong to the account
-     * making the call.</li> <li><code>AMAZON</code> - Retrieves the bundles that are
-     * provided by AWS.</li> </ul>
+     * values:</p> <ul> <li> <p>null- Retrieves the bundles that belong to the account
+     * making the call.</p> </li> <li> <p> <code>AMAZON</code>- Retrieves the bundles
+     * that are provided by AWS.</p> </li> </ul>
      */
     inline DescribeWorkspaceBundlesRequest& WithOwner(const Aws::String& value) { SetOwner(value); return *this;}
 
     /**
      * <p>The owner of the bundles to retrieve. This parameter cannot be combined with
      * any other filter parameter.</p> <p>This contains one of the following
-     * values:</p> <ul> <li>null - Retrieves the bundles that belong to the account
-     * making the call.</li> <li><code>AMAZON</code> - Retrieves the bundles that are
-     * provided by AWS.</li> </ul>
+     * values:</p> <ul> <li> <p>null- Retrieves the bundles that belong to the account
+     * making the call.</p> </li> <li> <p> <code>AMAZON</code>- Retrieves the bundles
+     * that are provided by AWS.</p> </li> </ul>
      */
     inline DescribeWorkspaceBundlesRequest& WithOwner(Aws::String&& value) { SetOwner(value); return *this;}
 
     /**
      * <p>The owner of the bundles to retrieve. This parameter cannot be combined with
      * any other filter parameter.</p> <p>This contains one of the following
-     * values:</p> <ul> <li>null - Retrieves the bundles that belong to the account
-     * making the call.</li> <li><code>AMAZON</code> - Retrieves the bundles that are
-     * provided by AWS.</li> </ul>
+     * values:</p> <ul> <li> <p>null- Retrieves the bundles that belong to the account
+     * making the call.</p> </li> <li> <p> <code>AMAZON</code>- Retrieves the bundles
+     * that are provided by AWS.</p> </li> </ul>
      */
     inline DescribeWorkspaceBundlesRequest& WithOwner(const char* value) { SetOwner(value); return *this;}
 

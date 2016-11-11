@@ -36,6 +36,7 @@
 #include <aws/cloudformation/model/GetTemplateResult.h>
 #include <aws/cloudformation/model/GetTemplateSummaryResult.h>
 #include <aws/cloudformation/model/ListChangeSetsResult.h>
+#include <aws/cloudformation/model/ListExportsResult.h>
 #include <aws/cloudformation/model/ListStackResourcesResult.h>
 #include <aws/cloudformation/model/ListStacksResult.h>
 #include <aws/cloudformation/model/UpdateStackResult.h>
@@ -104,6 +105,7 @@ namespace Model
         class GetTemplateRequest;
         class GetTemplateSummaryRequest;
         class ListChangeSetsRequest;
+        class ListExportsRequest;
         class ListStackResourcesRequest;
         class ListStacksRequest;
         class SetStackPolicyRequest;
@@ -129,6 +131,7 @@ namespace Model
         typedef Aws::Utils::Outcome<GetTemplateResult, Aws::Client::AWSError<CloudFormationErrors>> GetTemplateOutcome;
         typedef Aws::Utils::Outcome<GetTemplateSummaryResult, Aws::Client::AWSError<CloudFormationErrors>> GetTemplateSummaryOutcome;
         typedef Aws::Utils::Outcome<ListChangeSetsResult, Aws::Client::AWSError<CloudFormationErrors>> ListChangeSetsOutcome;
+        typedef Aws::Utils::Outcome<ListExportsResult, Aws::Client::AWSError<CloudFormationErrors>> ListExportsOutcome;
         typedef Aws::Utils::Outcome<ListStackResourcesResult, Aws::Client::AWSError<CloudFormationErrors>> ListStackResourcesOutcome;
         typedef Aws::Utils::Outcome<ListStacksResult, Aws::Client::AWSError<CloudFormationErrors>> ListStacksOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<CloudFormationErrors>> SetStackPolicyOutcome;
@@ -154,6 +157,7 @@ namespace Model
         typedef std::future<GetTemplateOutcome> GetTemplateOutcomeCallable;
         typedef std::future<GetTemplateSummaryOutcome> GetTemplateSummaryOutcomeCallable;
         typedef std::future<ListChangeSetsOutcome> ListChangeSetsOutcomeCallable;
+        typedef std::future<ListExportsOutcome> ListExportsOutcomeCallable;
         typedef std::future<ListStackResourcesOutcome> ListStackResourcesOutcomeCallable;
         typedef std::future<ListStacksOutcome> ListStacksOutcomeCallable;
         typedef std::future<SetStackPolicyOutcome> SetStackPolicyOutcomeCallable;
@@ -182,6 +186,7 @@ namespace Model
     typedef std::function<void(const CloudFormationClient*, const Model::GetTemplateRequest&, const Model::GetTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTemplateResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::GetTemplateSummaryRequest&, const Model::GetTemplateSummaryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTemplateSummaryResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::ListChangeSetsRequest&, const Model::ListChangeSetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListChangeSetsResponseReceivedHandler;
+    typedef std::function<void(const CloudFormationClient*, const Model::ListExportsRequest&, const Model::ListExportsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListExportsResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::ListStackResourcesRequest&, const Model::ListStackResourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListStackResourcesResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::ListStacksRequest&, const Model::ListStacksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListStacksResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::SetStackPolicyRequest&, const Model::SetStackPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetStackPolicyResponseReceivedHandler;
@@ -190,22 +195,22 @@ namespace Model
     typedef std::function<void(const CloudFormationClient*, const Model::ValidateTemplateRequest&, const Model::ValidateTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ValidateTemplateResponseReceivedHandler;
 
   /**
-   * <fullname>AWS CloudFormation</fullname> <p>AWS CloudFormation enables you to
-   * create and manage AWS infrastructure deployments predictably and repeatedly. AWS
-   * CloudFormation helps you leverage AWS products such as Amazon EC2, EBS, Amazon
-   * SNS, ELB, and Auto Scaling to build highly-reliable, highly scalable, cost
-   * effective applications without worrying about creating and configuring the
+   * <fullname>AWS CloudFormation</fullname> <p>AWS CloudFormation allows you to
+   * create and manage AWS infrastructure deployments predictably and repeatedly. You
+   * can use AWS CloudFormation to leverage AWS products, such as Amazon Elastic
+   * Compute Cloud, Amazon Elastic Block Store, Amazon Simple Notification Service,
+   * Elastic Load Balancing, and Auto Scaling to build highly-reliable, highly
+   * scalable, cost-effective applications without creating or configuring the
    * underlying AWS infrastructure.</p> <p>With AWS CloudFormation, you declare all
    * of your resources and dependencies in a template file. The template defines a
    * collection of resources as a single unit called a stack. AWS CloudFormation
    * creates and deletes all member resources of the stack together and manages all
    * dependencies between the resources for you.</p> <p>For more information about
-   * this product, go to the <a
-   * href="http://aws.amazon.com/cloudformation/">CloudFormation Product
-   * Page</a>.</p> <p>Amazon CloudFormation makes use of other AWS products. If you
-   * need additional technical information about a specific AWS product, you can find
-   * the product's technical documentation at <a
-   * href="http://docs.aws.amazon.com/">http://docs.aws.amazon.com/</a>.</p>
+   * AWS CloudFormation, see the <a href="http://aws.amazon.com/cloudformation/">AWS
+   * CloudFormation Product Page</a>.</p> <p>Amazon CloudFormation makes use of other
+   * AWS products. If you need additional technical information about a specific AWS
+   * product, you can find the product's technical documentation at <a
+   * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/">http://docs.aws.amazon.com/</a>.</p>
    */
   class AWS_CLOUDFORMATION_API CloudFormationClient : public Aws::Client::AWSXMLClient
   {
@@ -318,31 +323,31 @@ namespace Model
 
         /**
          * <p>Creates a list of changes for a stack. AWS CloudFormation generates the
-         * change set by comparing the stack's information with the information that you
+         * change set by comparing the template's information with the information that you
          * submit. A change set can help you understand which resources AWS CloudFormation
-         * will change and how it will change them before you update your stack. Change
-         * sets allow you to check before you make a change so that you don't delete or
-         * replace critical resources.</p> <p>AWS CloudFormation doesn't make any changes
-         * to the stack when you create a change set. To make the specified changes, you
-         * must execute the change set by using the <a>ExecuteChangeSet</a> action.</p>
-         * <p>After the call successfully completes, AWS CloudFormation starts creating the
-         * change set. To check the status of the change set, use the
-         * <a>DescribeChangeSet</a> action.</p>
+         * will change, and how it will change them, before you update your stack. Change
+         * sets allow you to check before making a change to avoid deleting or replacing
+         * critical resources.</p> <p>AWS CloudFormation doesn't make any changes to the
+         * stack when you create a change set. To make the specified changes, you must
+         * execute the change set by using the <a>ExecuteChangeSet</a> action.</p> <p>After
+         * the call successfully completes, AWS CloudFormation starts creating the change
+         * set. To check the status of the change set, use the <a>DescribeChangeSet</a>
+         * action.</p>
          */
         virtual Model::CreateChangeSetOutcome CreateChangeSet(const Model::CreateChangeSetRequest& request) const;
 
         /**
          * <p>Creates a list of changes for a stack. AWS CloudFormation generates the
-         * change set by comparing the stack's information with the information that you
+         * change set by comparing the template's information with the information that you
          * submit. A change set can help you understand which resources AWS CloudFormation
-         * will change and how it will change them before you update your stack. Change
-         * sets allow you to check before you make a change so that you don't delete or
-         * replace critical resources.</p> <p>AWS CloudFormation doesn't make any changes
-         * to the stack when you create a change set. To make the specified changes, you
-         * must execute the change set by using the <a>ExecuteChangeSet</a> action.</p>
-         * <p>After the call successfully completes, AWS CloudFormation starts creating the
-         * change set. To check the status of the change set, use the
-         * <a>DescribeChangeSet</a> action.</p>
+         * will change, and how it will change them, before you update your stack. Change
+         * sets allow you to check before making a change to avoid deleting or replacing
+         * critical resources.</p> <p>AWS CloudFormation doesn't make any changes to the
+         * stack when you create a change set. To make the specified changes, you must
+         * execute the change set by using the <a>ExecuteChangeSet</a> action.</p> <p>After
+         * the call successfully completes, AWS CloudFormation starts creating the change
+         * set. To check the status of the change set, use the <a>DescribeChangeSet</a>
+         * action.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -350,16 +355,16 @@ namespace Model
 
         /**
          * <p>Creates a list of changes for a stack. AWS CloudFormation generates the
-         * change set by comparing the stack's information with the information that you
+         * change set by comparing the template's information with the information that you
          * submit. A change set can help you understand which resources AWS CloudFormation
-         * will change and how it will change them before you update your stack. Change
-         * sets allow you to check before you make a change so that you don't delete or
-         * replace critical resources.</p> <p>AWS CloudFormation doesn't make any changes
-         * to the stack when you create a change set. To make the specified changes, you
-         * must execute the change set by using the <a>ExecuteChangeSet</a> action.</p>
-         * <p>After the call successfully completes, AWS CloudFormation starts creating the
-         * change set. To check the status of the change set, use the
-         * <a>DescribeChangeSet</a> action.</p>
+         * will change, and how it will change them, before you update your stack. Change
+         * sets allow you to check before making a change to avoid deleting or replacing
+         * critical resources.</p> <p>AWS CloudFormation doesn't make any changes to the
+         * stack when you create a change set. To make the specified changes, you must
+         * execute the change set by using the <a>ExecuteChangeSet</a> action.</p> <p>After
+         * the call successfully completes, AWS CloudFormation starts creating the change
+         * set. To check the status of the change set, use the <a>DescribeChangeSet</a>
+         * action.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -625,12 +630,16 @@ namespace Model
         /**
          * <p>Returns the description for the specified stack; if no stack name was
          * specified, then it returns the description for all the stacks created.</p>
+         * <note> <p>If the stack does not exist, an
+         * <code>AmazonCloudFormationException</code> is returned.</p> </note>
          */
         virtual Model::DescribeStacksOutcome DescribeStacks(const Model::DescribeStacksRequest& request) const;
 
         /**
          * <p>Returns the description for the specified stack; if no stack name was
          * specified, then it returns the description for all the stacks created.</p>
+         * <note> <p>If the stack does not exist, an
+         * <code>AmazonCloudFormationException</code> is returned.</p> </note>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -639,6 +648,8 @@ namespace Model
         /**
          * <p>Returns the description for the specified stack; if no stack name was
          * specified, then it returns the description for all the stacks created.</p>
+         * <note> <p>If the stack does not exist, an
+         * <code>AmazonCloudFormationException</code> is returned.</p> </note>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -831,6 +842,43 @@ namespace Model
         virtual void ListChangeSetsAsync(const Model::ListChangeSetsRequest& request, const ListChangeSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Lists all exported output values in the account and region in which you call
+         * this action. Use this action to see the exported output values that you can
+         * import into other stacks. To import values, use the <a
+         * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-importvalue.html">
+         * <code>Fn::ImportValue</code> </a> function. </p> <p>For more information, see <a
+         * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-exports.html">
+         * AWS CloudFormation Export Stack Output Values</a>.</p>
+         */
+        virtual Model::ListExportsOutcome ListExports(const Model::ListExportsRequest& request) const;
+
+        /**
+         * <p>Lists all exported output values in the account and region in which you call
+         * this action. Use this action to see the exported output values that you can
+         * import into other stacks. To import values, use the <a
+         * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-importvalue.html">
+         * <code>Fn::ImportValue</code> </a> function. </p> <p>For more information, see <a
+         * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-exports.html">
+         * AWS CloudFormation Export Stack Output Values</a>.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListExportsOutcomeCallable ListExportsCallable(const Model::ListExportsRequest& request) const;
+
+        /**
+         * <p>Lists all exported output values in the account and region in which you call
+         * this action. Use this action to see the exported output values that you can
+         * import into other stacks. To import values, use the <a
+         * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-importvalue.html">
+         * <code>Fn::ImportValue</code> </a> function. </p> <p>For more information, see <a
+         * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-exports.html">
+         * AWS CloudFormation Export Stack Output Values</a>.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListExportsAsync(const Model::ListExportsRequest& request, const ListExportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns descriptions of all resources of the specified stack.</p> <p>For
          * deleted stacks, ListStackResources returns resource information for up to 90
          * days after the stack has been deleted.</p>
@@ -980,19 +1028,28 @@ namespace Model
         virtual void UpdateStackAsync(const Model::UpdateStackRequest& request, const UpdateStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Validates a specified template.</p>
+         * <p>Validates a specified template. AWS CloudFormation first checks if the
+         * template is valid JSON. If it isn't, AWS CloudFormation checks if the template
+         * is valid YAML. If both these checks fail, AWS CloudFormation returns a template
+         * validation error.</p>
          */
         virtual Model::ValidateTemplateOutcome ValidateTemplate(const Model::ValidateTemplateRequest& request) const;
 
         /**
-         * <p>Validates a specified template.</p>
+         * <p>Validates a specified template. AWS CloudFormation first checks if the
+         * template is valid JSON. If it isn't, AWS CloudFormation checks if the template
+         * is valid YAML. If both these checks fail, AWS CloudFormation returns a template
+         * validation error.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ValidateTemplateOutcomeCallable ValidateTemplateCallable(const Model::ValidateTemplateRequest& request) const;
 
         /**
-         * <p>Validates a specified template.</p>
+         * <p>Validates a specified template. AWS CloudFormation first checks if the
+         * template is valid JSON. If it isn't, AWS CloudFormation checks if the template
+         * is valid YAML. If both these checks fail, AWS CloudFormation returns a template
+         * validation error.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1021,6 +1078,7 @@ namespace Model
         void GetTemplateAsyncHelper(const Model::GetTemplateRequest& request, const GetTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetTemplateSummaryAsyncHelper(const Model::GetTemplateSummaryRequest& request, const GetTemplateSummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListChangeSetsAsyncHelper(const Model::ListChangeSetsRequest& request, const ListChangeSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListExportsAsyncHelper(const Model::ListExportsRequest& request, const ListExportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListStackResourcesAsyncHelper(const Model::ListStackResourcesRequest& request, const ListStackResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListStacksAsyncHelper(const Model::ListStacksRequest& request, const ListStacksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SetStackPolicyAsyncHelper(const Model::SetStackPolicyRequest& request, const SetStackPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

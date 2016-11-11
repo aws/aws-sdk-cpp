@@ -32,6 +32,7 @@ Workspace::Workspace() :
     m_directoryIdHasBeenSet(false),
     m_userNameHasBeenSet(false),
     m_ipAddressHasBeenSet(false),
+    m_state(WorkspaceState::NOT_SET),
     m_stateHasBeenSet(false),
     m_bundleIdHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
@@ -42,7 +43,8 @@ Workspace::Workspace() :
     m_userVolumeEncryptionEnabled(false),
     m_userVolumeEncryptionEnabledHasBeenSet(false),
     m_rootVolumeEncryptionEnabled(false),
-    m_rootVolumeEncryptionEnabledHasBeenSet(false)
+    m_rootVolumeEncryptionEnabledHasBeenSet(false),
+    m_workspacePropertiesHasBeenSet(false)
 {
 }
 
@@ -51,6 +53,7 @@ Workspace::Workspace(const JsonValue& jsonValue) :
     m_directoryIdHasBeenSet(false),
     m_userNameHasBeenSet(false),
     m_ipAddressHasBeenSet(false),
+    m_state(WorkspaceState::NOT_SET),
     m_stateHasBeenSet(false),
     m_bundleIdHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
@@ -61,7 +64,8 @@ Workspace::Workspace(const JsonValue& jsonValue) :
     m_userVolumeEncryptionEnabled(false),
     m_userVolumeEncryptionEnabledHasBeenSet(false),
     m_rootVolumeEncryptionEnabled(false),
-    m_rootVolumeEncryptionEnabledHasBeenSet(false)
+    m_rootVolumeEncryptionEnabledHasBeenSet(false),
+    m_workspacePropertiesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -159,6 +163,13 @@ Workspace& Workspace::operator =(const JsonValue& jsonValue)
     m_rootVolumeEncryptionEnabledHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("WorkspaceProperties"))
+  {
+    m_workspaceProperties = jsonValue.GetObject("WorkspaceProperties");
+
+    m_workspacePropertiesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -240,6 +251,12 @@ JsonValue Workspace::Jsonize() const
   if(m_rootVolumeEncryptionEnabledHasBeenSet)
   {
    payload.WithBool("RootVolumeEncryptionEnabled", m_rootVolumeEncryptionEnabled);
+
+  }
+
+  if(m_workspacePropertiesHasBeenSet)
+  {
+   payload.WithObject("WorkspaceProperties", m_workspaceProperties.Jsonize());
 
   }
 

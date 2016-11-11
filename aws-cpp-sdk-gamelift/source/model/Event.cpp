@@ -30,6 +30,7 @@ namespace Model
 Event::Event() : 
     m_eventIdHasBeenSet(false),
     m_resourceIdHasBeenSet(false),
+    m_eventCode(EventCode::NOT_SET),
     m_eventCodeHasBeenSet(false),
     m_messageHasBeenSet(false),
     m_eventTimeHasBeenSet(false)
@@ -39,6 +40,7 @@ Event::Event() :
 Event::Event(const JsonValue& jsonValue) : 
     m_eventIdHasBeenSet(false),
     m_resourceIdHasBeenSet(false),
+    m_eventCode(EventCode::NOT_SET),
     m_eventCodeHasBeenSet(false),
     m_messageHasBeenSet(false),
     m_eventTimeHasBeenSet(false)

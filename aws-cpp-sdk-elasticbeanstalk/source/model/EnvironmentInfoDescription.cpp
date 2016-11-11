@@ -30,6 +30,7 @@ namespace Model
 {
 
 EnvironmentInfoDescription::EnvironmentInfoDescription() : 
+    m_infoType(EnvironmentInfoType::NOT_SET),
     m_infoTypeHasBeenSet(false),
     m_ec2InstanceIdHasBeenSet(false),
     m_sampleTimestampHasBeenSet(false),
@@ -38,6 +39,7 @@ EnvironmentInfoDescription::EnvironmentInfoDescription() :
 }
 
 EnvironmentInfoDescription::EnvironmentInfoDescription(const XmlNode& xmlNode) : 
+    m_infoType(EnvironmentInfoType::NOT_SET),
     m_infoTypeHasBeenSet(false),
     m_ec2InstanceIdHasBeenSet(false),
     m_sampleTimestampHasBeenSet(false),

@@ -30,8 +30,10 @@ namespace Model
 Snapshot::Snapshot() : 
     m_directoryIdHasBeenSet(false),
     m_snapshotIdHasBeenSet(false),
+    m_type(SnapshotType::NOT_SET),
     m_typeHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_status(SnapshotStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_startTimeHasBeenSet(false)
 {
@@ -40,8 +42,10 @@ Snapshot::Snapshot() :
 Snapshot::Snapshot(const JsonValue& jsonValue) : 
     m_directoryIdHasBeenSet(false),
     m_snapshotIdHasBeenSet(false),
+    m_type(SnapshotType::NOT_SET),
     m_typeHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_status(SnapshotStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_startTimeHasBeenSet(false)
 {

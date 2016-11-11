@@ -24,6 +24,7 @@ using namespace Aws::Utils;
 DescribeLogStreamsRequest::DescribeLogStreamsRequest() : 
     m_logGroupNameHasBeenSet(false),
     m_logStreamNamePrefixHasBeenSet(false),
+    m_orderBy(OrderBy::NOT_SET),
     m_orderByHasBeenSet(false),
     m_descending(false),
     m_descendingHasBeenSet(false),

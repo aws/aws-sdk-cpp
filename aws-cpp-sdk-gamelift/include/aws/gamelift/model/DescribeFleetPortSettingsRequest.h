@@ -36,37 +36,37 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * <p>Unique identifier for the fleet you want to retrieve port settings for. </p>
+     * <p>Unique identifier for the fleet you want to retrieve port settings for.</p>
      */
     inline const Aws::String& GetFleetId() const{ return m_fleetId; }
 
     /**
-     * <p>Unique identifier for the fleet you want to retrieve port settings for. </p>
+     * <p>Unique identifier for the fleet you want to retrieve port settings for.</p>
      */
     inline void SetFleetId(const Aws::String& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
 
     /**
-     * <p>Unique identifier for the fleet you want to retrieve port settings for. </p>
+     * <p>Unique identifier for the fleet you want to retrieve port settings for.</p>
      */
     inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
 
     /**
-     * <p>Unique identifier for the fleet you want to retrieve port settings for. </p>
+     * <p>Unique identifier for the fleet you want to retrieve port settings for.</p>
      */
     inline void SetFleetId(const char* value) { m_fleetIdHasBeenSet = true; m_fleetId.assign(value); }
 
     /**
-     * <p>Unique identifier for the fleet you want to retrieve port settings for. </p>
+     * <p>Unique identifier for the fleet you want to retrieve port settings for.</p>
      */
     inline DescribeFleetPortSettingsRequest& WithFleetId(const Aws::String& value) { SetFleetId(value); return *this;}
 
     /**
-     * <p>Unique identifier for the fleet you want to retrieve port settings for. </p>
+     * <p>Unique identifier for the fleet you want to retrieve port settings for.</p>
      */
     inline DescribeFleetPortSettingsRequest& WithFleetId(Aws::String&& value) { SetFleetId(value); return *this;}
 
     /**
-     * <p>Unique identifier for the fleet you want to retrieve port settings for. </p>
+     * <p>Unique identifier for the fleet you want to retrieve port settings for.</p>
      */
     inline DescribeFleetPortSettingsRequest& WithFleetId(const char* value) { SetFleetId(value); return *this;}
 

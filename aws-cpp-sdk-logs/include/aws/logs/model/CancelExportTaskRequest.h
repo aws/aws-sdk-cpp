@@ -35,37 +35,37 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * <p>Id of the export task to cancel.</p>
+     * <p>The ID of the export task.</p>
      */
     inline const Aws::String& GetTaskId() const{ return m_taskId; }
 
     /**
-     * <p>Id of the export task to cancel.</p>
+     * <p>The ID of the export task.</p>
      */
     inline void SetTaskId(const Aws::String& value) { m_taskIdHasBeenSet = true; m_taskId = value; }
 
     /**
-     * <p>Id of the export task to cancel.</p>
+     * <p>The ID of the export task.</p>
      */
     inline void SetTaskId(Aws::String&& value) { m_taskIdHasBeenSet = true; m_taskId = value; }
 
     /**
-     * <p>Id of the export task to cancel.</p>
+     * <p>The ID of the export task.</p>
      */
     inline void SetTaskId(const char* value) { m_taskIdHasBeenSet = true; m_taskId.assign(value); }
 
     /**
-     * <p>Id of the export task to cancel.</p>
+     * <p>The ID of the export task.</p>
      */
     inline CancelExportTaskRequest& WithTaskId(const Aws::String& value) { SetTaskId(value); return *this;}
 
     /**
-     * <p>Id of the export task to cancel.</p>
+     * <p>The ID of the export task.</p>
      */
     inline CancelExportTaskRequest& WithTaskId(Aws::String&& value) { SetTaskId(value); return *this;}
 
     /**
-     * <p>Id of the export task to cancel.</p>
+     * <p>The ID of the export task.</p>
      */
     inline CancelExportTaskRequest& WithTaskId(const char* value) { SetTaskId(value); return *this;}
 

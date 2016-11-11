@@ -23,6 +23,7 @@ ModifySpotFleetRequestRequest::ModifySpotFleetRequestRequest() :
     m_spotFleetRequestIdHasBeenSet(false),
     m_targetCapacity(0),
     m_targetCapacityHasBeenSet(false),
+    m_excessCapacityTerminationPolicy(ExcessCapacityTerminationPolicy::NOT_SET),
     m_excessCapacityTerminationPolicyHasBeenSet(false)
 {
 }

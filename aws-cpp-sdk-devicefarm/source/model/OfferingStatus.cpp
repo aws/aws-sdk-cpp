@@ -28,6 +28,7 @@ namespace Model
 {
 
 OfferingStatus::OfferingStatus() : 
+    m_type(OfferingTransactionType::NOT_SET),
     m_typeHasBeenSet(false),
     m_offeringHasBeenSet(false),
     m_quantity(0),
@@ -37,6 +38,7 @@ OfferingStatus::OfferingStatus() :
 }
 
 OfferingStatus::OfferingStatus(const JsonValue& jsonValue) : 
+    m_type(OfferingTransactionType::NOT_SET),
     m_typeHasBeenSet(false),
     m_offeringHasBeenSet(false),
     m_quantity(0),

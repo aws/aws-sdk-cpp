@@ -32,6 +32,7 @@ LifecycleEvent::LifecycleEvent() :
     m_diagnosticsHasBeenSet(false),
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
+    m_status(LifecycleEventStatus::NOT_SET),
     m_statusHasBeenSet(false)
 {
 }
@@ -41,6 +42,7 @@ LifecycleEvent::LifecycleEvent(const JsonValue& jsonValue) :
     m_diagnosticsHasBeenSet(false),
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
+    m_status(LifecycleEventStatus::NOT_SET),
     m_statusHasBeenSet(false)
 {
   *this = jsonValue;

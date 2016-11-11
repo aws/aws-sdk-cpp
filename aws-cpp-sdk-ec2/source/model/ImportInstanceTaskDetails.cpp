@@ -32,6 +32,7 @@ namespace Model
 ImportInstanceTaskDetails::ImportInstanceTaskDetails() : 
     m_volumesHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
+    m_platform(PlatformValues::NOT_SET),
     m_platformHasBeenSet(false),
     m_descriptionHasBeenSet(false)
 {
@@ -40,6 +41,7 @@ ImportInstanceTaskDetails::ImportInstanceTaskDetails() :
 ImportInstanceTaskDetails::ImportInstanceTaskDetails(const XmlNode& xmlNode) : 
     m_volumesHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
+    m_platform(PlatformValues::NOT_SET),
     m_platformHasBeenSet(false),
     m_descriptionHasBeenSet(false)
 {

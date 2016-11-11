@@ -28,6 +28,7 @@ namespace Model
 {
 
 PatchOperation::PatchOperation() : 
+    m_op(Op::NOT_SET),
     m_opHasBeenSet(false),
     m_pathHasBeenSet(false),
     m_valueHasBeenSet(false),
@@ -36,6 +37,7 @@ PatchOperation::PatchOperation() :
 }
 
 PatchOperation::PatchOperation(const JsonValue& jsonValue) : 
+    m_op(Op::NOT_SET),
     m_opHasBeenSet(false),
     m_pathHasBeenSet(false),
     m_valueHasBeenSet(false),

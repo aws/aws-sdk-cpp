@@ -18,6 +18,8 @@
 
 #undef min
 
+#include <algorithm>
+
 using namespace Aws::Utils::Logging;
 using namespace Aws::Http;
 
@@ -34,33 +36,26 @@ CurlHandleContainer::CurlHandleContainer(unsigned maxSize, long requestTimeout, 
 CurlHandleContainer::~CurlHandleContainer()
 {
     AWS_LOG_INFO(CURL_HANDLE_CONTAINER_TAG, "Cleaning up CurlHandleContainer.");
-    while (m_handleContainer.size() > 0)
+    for (CURL* handle : m_handleContainer.ShutdownAndWait(m_poolSize))
     {
-        AWS_LOG_DEBUG(CURL_HANDLE_CONTAINER_TAG, "Cleaning up %p.", m_handleContainer.top());
-        curl_easy_cleanup(m_handleContainer.top());
-        m_handleContainer.pop();
+        AWS_LOG_DEBUG(CURL_HANDLE_CONTAINER_TAG, "Cleaning up %p.", handle);
+        curl_easy_cleanup(handle);
     }
 }
 
 CURL* CurlHandleContainer::AcquireCurlHandle()
 {
     AWS_LOG_DEBUG(CURL_HANDLE_CONTAINER_TAG, "Attempting to acquire curl connection.");
-    std::unique_lock<std::mutex> locker(m_handleContainerMutex);
 
-    while (m_handleContainer.size() == 0)
+    if(!m_handleContainer.HasResourcesAvailable())
     {
         AWS_LOG_DEBUG(CURL_HANDLE_CONTAINER_TAG, "No current connections available in pool. Attempting to create new connections.");
-        if (!CheckAndGrowPool())
-        {
-            AWS_LOG_INFO(CURL_HANDLE_CONTAINER_TAG, "Connection pool has reached its max size. Waiting on connection to be freed.");
-            m_conditionVariable.wait(locker);
-            AWS_LOG_INFO(CURL_HANDLE_CONTAINER_TAG, "Connection has been released. Continuing.");
-        }
+        CheckAndGrowPool();
     }
 
-    CURL* handle = m_handleContainer.top();
+    CURL* handle = m_handleContainer.Acquire();
+    AWS_LOG_INFO(CURL_HANDLE_CONTAINER_TAG, "Connection has been released. Continuing.");
     AWS_LOGSTREAM_DEBUG(CURL_HANDLE_CONTAINER_TAG, "Returning connection handle " << handle);
-    m_handleContainer.pop();
     return handle;
 }
 
@@ -71,11 +66,8 @@ void CurlHandleContainer::ReleaseCurlHandle(CURL* handle)
         curl_easy_reset(handle);
         SetDefaultOptionsOnHandle(handle);
         AWS_LOGSTREAM_DEBUG(CURL_HANDLE_CONTAINER_TAG, "Releasing curl handle " << handle);
-        std::unique_lock<std::mutex> locker(m_handleContainerMutex);
-        m_handleContainer.push(handle);
-        locker.unlock();
-        AWS_LOG_DEBUG(CURL_HANDLE_CONTAINER_TAG, "Notifying waiting threads.");
-        m_conditionVariable.notify_one();
+        m_handleContainer.Release(handle);
+        AWS_LOG_DEBUG(CURL_HANDLE_CONTAINER_TAG, "Notified waiting threads.");
     }
 }
 
@@ -95,7 +87,7 @@ bool CurlHandleContainer::CheckAndGrowPool()
             if (curlHandle)
             {
                 SetDefaultOptionsOnHandle(curlHandle);
-                m_handleContainer.push(curlHandle);
+                m_handleContainer.Release(curlHandle);
                 ++actuallyAdded;
             }
             else

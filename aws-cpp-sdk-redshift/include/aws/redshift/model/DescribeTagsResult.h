@@ -46,42 +46,42 @@ namespace Model
     DescribeTagsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
     /**
-     * <p> A list of tags with their associated resources. </p>
+     * <p>A list of tags with their associated resources.</p>
      */
     inline const Aws::Vector<TaggedResource>& GetTaggedResources() const{ return m_taggedResources; }
 
     /**
-     * <p> A list of tags with their associated resources. </p>
+     * <p>A list of tags with their associated resources.</p>
      */
     inline void SetTaggedResources(const Aws::Vector<TaggedResource>& value) { m_taggedResources = value; }
 
     /**
-     * <p> A list of tags with their associated resources. </p>
+     * <p>A list of tags with their associated resources.</p>
      */
     inline void SetTaggedResources(Aws::Vector<TaggedResource>&& value) { m_taggedResources = value; }
 
     /**
-     * <p> A list of tags with their associated resources. </p>
+     * <p>A list of tags with their associated resources.</p>
      */
     inline DescribeTagsResult& WithTaggedResources(const Aws::Vector<TaggedResource>& value) { SetTaggedResources(value); return *this;}
 
     /**
-     * <p> A list of tags with their associated resources. </p>
+     * <p>A list of tags with their associated resources.</p>
      */
     inline DescribeTagsResult& WithTaggedResources(Aws::Vector<TaggedResource>&& value) { SetTaggedResources(value); return *this;}
 
     /**
-     * <p> A list of tags with their associated resources. </p>
+     * <p>A list of tags with their associated resources.</p>
      */
     inline DescribeTagsResult& AddTaggedResources(const TaggedResource& value) { m_taggedResources.push_back(value); return *this; }
 
     /**
-     * <p> A list of tags with their associated resources. </p>
+     * <p>A list of tags with their associated resources.</p>
      */
     inline DescribeTagsResult& AddTaggedResources(TaggedResource&& value) { m_taggedResources.push_back(value); return *this; }
 
     /**
-     * <p> A value that indicates the starting point for the next set of response
+     * <p>A value that indicates the starting point for the next set of response
      * records in a subsequent request. If a value is returned in a response, you can
      * retrieve the next set of records by providing this returned marker value in the
      * <code>Marker</code> parameter and retrying the command. If the
@@ -91,7 +91,7 @@ namespace Model
     inline const Aws::String& GetMarker() const{ return m_marker; }
 
     /**
-     * <p> A value that indicates the starting point for the next set of response
+     * <p>A value that indicates the starting point for the next set of response
      * records in a subsequent request. If a value is returned in a response, you can
      * retrieve the next set of records by providing this returned marker value in the
      * <code>Marker</code> parameter and retrying the command. If the
@@ -101,7 +101,7 @@ namespace Model
     inline void SetMarker(const Aws::String& value) { m_marker = value; }
 
     /**
-     * <p> A value that indicates the starting point for the next set of response
+     * <p>A value that indicates the starting point for the next set of response
      * records in a subsequent request. If a value is returned in a response, you can
      * retrieve the next set of records by providing this returned marker value in the
      * <code>Marker</code> parameter and retrying the command. If the
@@ -111,7 +111,7 @@ namespace Model
     inline void SetMarker(Aws::String&& value) { m_marker = value; }
 
     /**
-     * <p> A value that indicates the starting point for the next set of response
+     * <p>A value that indicates the starting point for the next set of response
      * records in a subsequent request. If a value is returned in a response, you can
      * retrieve the next set of records by providing this returned marker value in the
      * <code>Marker</code> parameter and retrying the command. If the
@@ -121,7 +121,7 @@ namespace Model
     inline void SetMarker(const char* value) { m_marker.assign(value); }
 
     /**
-     * <p> A value that indicates the starting point for the next set of response
+     * <p>A value that indicates the starting point for the next set of response
      * records in a subsequent request. If a value is returned in a response, you can
      * retrieve the next set of records by providing this returned marker value in the
      * <code>Marker</code> parameter and retrying the command. If the
@@ -131,7 +131,7 @@ namespace Model
     inline DescribeTagsResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
 
     /**
-     * <p> A value that indicates the starting point for the next set of response
+     * <p>A value that indicates the starting point for the next set of response
      * records in a subsequent request. If a value is returned in a response, you can
      * retrieve the next set of records by providing this returned marker value in the
      * <code>Marker</code> parameter and retrying the command. If the
@@ -141,7 +141,7 @@ namespace Model
     inline DescribeTagsResult& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
 
     /**
-     * <p> A value that indicates the starting point for the next set of response
+     * <p>A value that indicates the starting point for the next set of response
      * records in a subsequent request. If a value is returned in a response, you can
      * retrieve the next set of records by providing this returned marker value in the
      * <code>Marker</code> parameter and retrying the command. If the

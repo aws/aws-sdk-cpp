@@ -28,12 +28,14 @@ namespace Model
 {
 
 IPSetUpdate::IPSetUpdate() : 
+    m_action(ChangeAction::NOT_SET),
     m_actionHasBeenSet(false),
     m_iPSetDescriptorHasBeenSet(false)
 {
 }
 
 IPSetUpdate::IPSetUpdate(const JsonValue& jsonValue) : 
+    m_action(ChangeAction::NOT_SET),
     m_actionHasBeenSet(false),
     m_iPSetDescriptorHasBeenSet(false)
 {

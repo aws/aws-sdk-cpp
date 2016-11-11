@@ -28,6 +28,7 @@ namespace Model
 {
 
 ConfigExportDeliveryInfo::ConfigExportDeliveryInfo() : 
+    m_lastStatus(DeliveryStatus::NOT_SET),
     m_lastStatusHasBeenSet(false),
     m_lastErrorCodeHasBeenSet(false),
     m_lastErrorMessageHasBeenSet(false),
@@ -38,6 +39,7 @@ ConfigExportDeliveryInfo::ConfigExportDeliveryInfo() :
 }
 
 ConfigExportDeliveryInfo::ConfigExportDeliveryInfo(const JsonValue& jsonValue) : 
+    m_lastStatus(DeliveryStatus::NOT_SET),
     m_lastStatusHasBeenSet(false),
     m_lastErrorCodeHasBeenSet(false),
     m_lastErrorMessageHasBeenSet(false),
