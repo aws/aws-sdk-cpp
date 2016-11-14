@@ -47,13 +47,16 @@ namespace
     static const char* const KEY_TEST_NAME = "testKey";
     static const char* const BODY_STREAM_TEST = "This is a test message for encryption and decryption.";
     static const char* const TEST_CMK_ID = "ARN:SOME_COMBINATION_OF_LETTERS_AND_NUMBERS";
+    static size_t const CBC_IV_SIZE_BYTES = 16u;
+
+#ifndef ENABLE_COMMONCRYPTO_ENCRYPTION
     static const char* const BYTES_SPECIFIER = "bytes=0-10";
+    static const char* const ASSERTION_FAILED = "Assertion failed: 0";
     static const char* const GET_RANGE_SPECIFIER = "bytes=20-40";
     static const char* const GET_RANGE_OUTPUT = "ge for encryption and";
-    static const char* const ASSERTION_FAILED = "Assertion failed: 0";
     static size_t const GCM_TAG_LENGTH = 128u;
-    static size_t const CBC_IV_SIZE_BYTES = 16u;
     static size_t const GCM_IV_SIZE_BYTES = 12u;
+#endif
 
     using namespace Aws::Auth;
     using namespace Aws::Client;
@@ -304,6 +307,7 @@ namespace
         ASSERT_EQ(s3Client.m_putObjectCalled, 1u);
     }
 
+#ifndef ENABLE_COMMONCRYPTO_ENCRYPTION
     TEST_F(CryptoModulesTest, AuthenticatedEncryptionOperationsTestWithSimpleEncryptionMaterials)
     {
         Aws::Utils::CryptoBuffer masterKey = Aws::Utils::Crypto::SymmetricCipher::GenerateKey();
@@ -369,7 +373,7 @@ namespace
         ASSERT_EQ(s3Client.m_putObjectCalled, 1u);
     }
 
-#ifndef ENABLE_COMMONCRYPTO_ENCRYPTION
+
     TEST_F(CryptoModulesTest, StrictAuthenticatedEncryptionOperationsTestWithSimpleEncryptionMaterials)
     {
         Aws::Utils::CryptoBuffer masterKey = Aws::Utils::Crypto::SymmetricCipher::GenerateKey();
@@ -503,6 +507,8 @@ namespace
         ASSERT_EQ(kmsClient->m_decryptCalledCount, 1u);
     }
 
+
+#ifndef ENABLE_COMMONCRYPTO_ENCRYPTION
     TEST_F(CryptoModulesTest, AuthenticatedEncryptionOperationsTestWithKMSEncryptionMaterials)
     {
         auto kmsClient = Aws::MakeShared<MockKMSClient>(ALLOCATION_TAG, ClientConfiguration());
@@ -637,7 +643,7 @@ namespace
         ASSERT_EQ(s3Client.m_putObjectCalled, 1u);
     }
 
-#ifdef ENABLE_COMMONCRYPTO_ENCRYPTION
+
     TEST_F(CryptoModulesTest, StrictAuthenticatedEncryptionOperationsTestWithKMSEncryptionMaterials)
     {
         auto kmsClient = Aws::MakeShared<MockKMSClient>(ALLOCATION_TAG, ClientConfiguration());
@@ -668,10 +674,10 @@ namespace
         Aws::Utils::CryptoBuffer ivBuffer = Aws::Utils::HashingUtils::Base64Decode(metadata[IV_HEADER]);
         ASSERT_EQ(ivBuffer.GetLength(), GCM_IV_SIZE_BYTES);
 
-        Aws::S3Encryption::ContentCryptoScheme scheme = Aws::S3Encryption::ContentCryptoSchemeMapper::GetContentCryptoSchemeForName(metadata[CONTENT_CRYPTO_SCHEME_HEADER]);
+        ContentCryptoScheme scheme = ContentCryptoSchemeMapper::GetContentCryptoSchemeForName(metadata[CONTENT_CRYPTO_SCHEME_HEADER]);
         ASSERT_EQ(scheme, ContentCryptoScheme::GCM);
 
-        Aws::S3Encryption::KeyWrapAlgorithm keyWrapAlgorithm = Aws::S3Encryption::KeyWrapAlgorithmMapper::GetKeyWrapAlgorithmForName(metadata[KEY_WRAP_ALGORITHM]);
+        KeyWrapAlgorithm keyWrapAlgorithm = KeyWrapAlgorithmMapper::GetKeyWrapAlgorithmForName(metadata[KEY_WRAP_ALGORITHM]);
         ASSERT_EQ(keyWrapAlgorithm, KeyWrapAlgorithm::KMS);
 
         ASSERT_TRUE(s3Client.GetRequestContentLength() > strlen(BODY_STREAM_TEST));

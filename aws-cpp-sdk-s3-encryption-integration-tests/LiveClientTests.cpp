@@ -39,8 +39,11 @@ using namespace Aws::Utils::Crypto;
 static const char* ENCRYPTED_BUCKET_TEST_NAME = "awsnativesdks3encotest";
 static const char* ALLOCATION_TAG = "LiveClientTest";
 static const char TEST_STRING[] = "This is a test string. It is meant to test AES CBC, AES CTR, and AES GCM modes of operation with the Aws S3 Encryption Client";
+
+#ifndef ENABLE_COMMONCRYPTO_ENCRYPTION
 static const char* RANGE_GET_STR = "bytes=38-75";
 static const char RANGE_GET_TEST_STRING[] = "test AES CBC, AES CTR, and AES GCM mod";
+#endif
 
 class LiveClientTest : public ::testing::Test
 {
@@ -168,6 +171,8 @@ TEST_F(LiveClientTest, TestEOMode)
     auto deleteResult = client.DeleteObject(deleteObject);
     EXPECT_TRUE(deleteResult.IsSuccess());
 }
+
+#ifndef ENABLE_COMMONCRYPTO_ENCRYPTION
 
 TEST_F(LiveClientTest, TestAEMode)
 {
@@ -331,3 +336,5 @@ TEST_F(LiveClientTest, TestAEModeRangeGet)
     auto deleteResult = client.DeleteObject(deleteObject);
     EXPECT_TRUE(deleteResult.IsSuccess());
 }
+#endif
+

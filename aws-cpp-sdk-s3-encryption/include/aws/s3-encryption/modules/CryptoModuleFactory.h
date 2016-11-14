@@ -86,7 +86,7 @@ namespace Aws
                 */
                 std::shared_ptr<CryptoModule> CreateModule(const std::shared_ptr<Aws::Utils::Crypto::EncryptionMaterials>& encryptionMaterials, const CryptoConfiguration& cryptoConfig) override;
 
-                CryptoMode HandlesMode() const;
+                CryptoMode HandlesMode() const override;
             };
 
             /*
@@ -108,7 +108,7 @@ namespace Aws
                 */
                 std::shared_ptr<CryptoModule> CreateModule(const std::shared_ptr<Aws::Utils::Crypto::EncryptionMaterials>& encryptionMaterials, const CryptoConfiguration& cryptoConfig) override;
 
-                CryptoMode HandlesMode() const;
+                CryptoMode HandlesMode() const override;
             };
 
             /*
@@ -130,7 +130,7 @@ namespace Aws
                 */
                 std::shared_ptr<CryptoModule> CreateModule(const std::shared_ptr<Aws::Utils::Crypto::EncryptionMaterials>& encryptionMaterials, const CryptoConfiguration& cryptoConfig) override;
 
-                CryptoMode HandlesMode() const;
+                CryptoMode HandlesMode() const override;
             };
         }
     }

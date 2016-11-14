@@ -31,7 +31,6 @@ namespace Aws
             static const char* const ALLOCATION_TAG = "CryptoModule";
             static const char* LAST_BYTES_SPECIFIER = "bytes=-";
             static const char* FIRST_BYTES_SPECIFIER = "bytes=0-";
-            static const size_t CBC_IV_SIZE = 16u;
             static const size_t GCM_IV_SIZE = 12u;
             static const size_t TAG_SIZE_BYTES = 16u;
             static const size_t AES_BLOCK_SIZE = 16u;

@@ -30,8 +30,6 @@ namespace Aws
     {
         namespace Handlers
         {
-            static const char* const ALLOCATION_TAG = "MetadataHandler";
-
             void MetadataHandler::PopulateRequest(Aws::S3::Model::PutObjectRequest& request, const ContentCryptoMaterial& contentCryptoMaterial)
             {
                 Aws::String encodedCEK = HashingUtils::Base64Encode(contentCryptoMaterial.GetEncryptedContentEncryptionKey());
