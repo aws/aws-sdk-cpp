@@ -26,7 +26,7 @@ namespace Aws
         namespace Materials
         {
             //identifier for materials description
-            static const char* cmkID_Identifier = "kms_cmk_id";
+            extern const char* cmkID_Identifier;
 
             /*
             * KMS Encryption Materials is responsible for handling the encryption/decryption of

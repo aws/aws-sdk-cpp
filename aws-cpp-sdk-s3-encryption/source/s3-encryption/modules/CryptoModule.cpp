@@ -109,7 +109,7 @@ namespace Aws
                 return UnwrapAndMakeRequestWithCipher(copyRequest, getObjectFunction, firstBlockAdjustment);
             }
 
-            const Aws::S3::Model::PutObjectOutcome CryptoModule::WrapAndMakeRequestWithCipher(Aws::S3::Model::PutObjectRequest & request, const PutObjectFunction& putObjectFunction)
+            Aws::S3::Model::PutObjectOutcome CryptoModule::WrapAndMakeRequestWithCipher(Aws::S3::Model::PutObjectRequest & request, const PutObjectFunction& putObjectFunction)
             {
                 std::shared_ptr<Aws::IOStream> iostream = request.GetBody();
                 request.SetBody(Aws::MakeShared<Aws::Utils::Crypto::SymmetricCryptoStream>(ALLOCATION_TAG, (Aws::IStream&)*iostream, CipherMode::Encrypt, (*m_cipher)));
@@ -126,9 +126,9 @@ namespace Aws
                 return outcome;
             }
 
-            const Aws::S3::Model::GetObjectOutcome CryptoModule::UnwrapAndMakeRequestWithCipher(Aws::S3::Model::GetObjectRequest& request, const GetObjectFunction& getObjectFunction, int16_t firstBlockOffset)
+            Aws::S3::Model::GetObjectOutcome CryptoModule::UnwrapAndMakeRequestWithCipher(Aws::S3::Model::GetObjectRequest& request, const GetObjectFunction& getObjectFunction, int16_t firstBlockOffset)
             {
-                assert(firstBlockOffset < AES_BLOCK_SIZE && firstBlockOffset >= 0);
+                assert(static_cast<size_t>(firstBlockOffset) < AES_BLOCK_SIZE && firstBlockOffset >= 0);
                 auto userSuppliedStreamFactory = request.GetResponseStreamFactory();
                 auto userSuppliedStream = userSuppliedStreamFactory();
 

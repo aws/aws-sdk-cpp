@@ -23,6 +23,7 @@ namespace Aws
         namespace Materials
         {
             static const char* const ALLOCATION_TAG = "KMSEncryptionMaterials";
+            const char* cmkID_Identifier = "kms_cmk_id";
 
             KMSEncryptionMaterials::KMSEncryptionMaterials(const String& customerMasterKeyID, const ClientConfiguration& clientConfig) :
                 m_customerMasterKeyID(customerMasterKeyID), m_kmsClient(Aws::MakeShared<KMSClient>(ALLOCATION_TAG, clientConfig))

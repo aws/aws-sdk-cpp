@@ -67,12 +67,12 @@ namespace Aws
                 /*
                 * This function is used to encrypt the given S3 PutObjectRequest.
                 */
-                const Aws::S3::Model::PutObjectOutcome WrapAndMakeRequestWithCipher(Aws::S3::Model::PutObjectRequest& request, const PutObjectFunction& putObjectFunction);
+                Aws::S3::Model::PutObjectOutcome WrapAndMakeRequestWithCipher(Aws::S3::Model::PutObjectRequest& request, const PutObjectFunction& putObjectFunction);
 
                 /*
                 * This function is used to decrypt the given S3 GetObjectResult.
                 */
-                const Aws::S3::Model::GetObjectOutcome UnwrapAndMakeRequestWithCipher(Aws::S3::Model::GetObjectRequest& request, const GetObjectFunction& getObjectFunction, int16_t firstBlockOffset = 0);
+                Aws::S3::Model::GetObjectOutcome UnwrapAndMakeRequestWithCipher(Aws::S3::Model::GetObjectRequest& request, const GetObjectFunction& getObjectFunction, int16_t firstBlockOffset = 0);
 
             protected:
                 /*

@@ -18,6 +18,7 @@
 #include <aws/core/utils/crypto/SecureRandom.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <cstdlib>
+#include <climits>
 
 //if you are reading this, you are witnessing pure brilliance.
 #define IS_BIG_ENDIAN (*(uint16_t*)"\0\xff" < 0x100)

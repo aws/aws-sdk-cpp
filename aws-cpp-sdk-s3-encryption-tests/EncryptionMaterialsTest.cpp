@@ -312,8 +312,8 @@ namespace
         auto decryptedContentKey = contentCryptoMaterial.GetContentEncryptionKey();
         ASSERT_NE(encryptedContentKey, decryptedContentKey);
 
-        ASSERT_EQ(myClient->m_encryptCalledCount, 1);
-        ASSERT_EQ(myClient->m_decryptCalledCount, 1);
+        ASSERT_EQ(myClient->m_encryptCalledCount, 1u);
+        ASSERT_EQ(myClient->m_decryptCalledCount, 1u);
         ASSERT_NE(contentEncryptionKey, encryptedContentKey);
         ASSERT_NE(encryptedContentKey, decryptedContentKey);
     }
@@ -339,8 +339,8 @@ namespace
         ASSERT_NE(encryptedContentEncryptionKey, decryptedContentKey);
         ASSERT_EQ(encryptedContentEncryptionKey, contentCryptoMaterial.GetEncryptedContentEncryptionKey());
         //Decrypt returns early, so counter not incremented
-        ASSERT_EQ(myClient->m_decryptCalledCount, 0);
-        ASSERT_EQ(myClient->m_encryptCalledCount, 0);
+        ASSERT_EQ(myClient->m_decryptCalledCount, 0u);
+        ASSERT_EQ(myClient->m_encryptCalledCount, 0u);
     }
 
     //This tests KMS Encryption Materials Decrypt CEK by using a mock KMS Client with an invalid materials description.
@@ -365,8 +365,8 @@ namespace
         ASSERT_NE(encryptedContentEncryptionKey, decryptedContentKey);
         ASSERT_EQ(encryptedContentEncryptionKey, contentCryptoMaterial.GetEncryptedContentEncryptionKey());
         //Decrypt returns early, so counter not incremented
-        ASSERT_EQ(myClient->m_decryptCalledCount, 0);
-        ASSERT_EQ(myClient->m_encryptCalledCount, 0);
+        ASSERT_EQ(myClient->m_decryptCalledCount, 0u);
+        ASSERT_EQ(myClient->m_encryptCalledCount, 0u);
     }
 
     //This tests KMS Encryption Materials Decrypt CEK by using a mock KMS Client with a missing encrypted key.
@@ -388,7 +388,7 @@ namespace
         ASSERT_EQ(decryptedContentKey.GetLength(), 0u);
         ASSERT_EQ(encryptedContentEncryptionKey, contentCryptoMaterial.GetEncryptedContentEncryptionKey());
         //Decrypt returns early, so counter not incremented
-        ASSERT_EQ(myClient->m_decryptCalledCount, 0);
-        ASSERT_EQ(myClient->m_encryptCalledCount, 0);
+        ASSERT_EQ(myClient->m_decryptCalledCount, 0u);
+        ASSERT_EQ(myClient->m_encryptCalledCount, 0u);
     }
 }

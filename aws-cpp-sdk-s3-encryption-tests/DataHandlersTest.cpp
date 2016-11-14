@@ -30,7 +30,6 @@
 #include <aws/s3/model/GetObjectRequest.h>
 #include <aws/s3/model/PutObjectResult.h>
 
-static const char* ALLOCATION_TAG = "DataHandlersTest";
 static const char* const INSTRUCTION_HEADER_VALUE = "default instruction file header";
 static size_t CRYPTO_TAG_LENGTH = 16;
 static size_t IV_SIZE = 12;

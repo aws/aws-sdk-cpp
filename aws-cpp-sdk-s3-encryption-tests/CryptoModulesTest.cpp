@@ -45,15 +45,12 @@ namespace
     static const char* const ALLOCATION_TAG = "CryptoModuleTests";
     static const char* const BUCKET_TEST_NAME = "testbucket";
     static const char* const KEY_TEST_NAME = "testKey";
-    static const char* const INSTRUCTION_KEY_NAME = "testKey.instruction";
     static const char* const BODY_STREAM_TEST = "This is a test message for encryption and decryption.";
     static const char* const TEST_CMK_ID = "ARN:SOME_COMBINATION_OF_LETTERS_AND_NUMBERS";
-    static const int TIMEOUT_MAX = 30;
     static const char* const BYTES_SPECIFIER = "bytes=0-10";
     static const char* const GET_RANGE_SPECIFIER = "bytes=20-40";
     static const char* const GET_RANGE_OUTPUT = "ge for encryption and";
     static const char* const ASSERTION_FAILED = "Assertion failed: 0";
-    static const char* const TAG_REQUEST_RANGE_SPECIFIER = "bytes=-16";
     static size_t const GCM_TAG_LENGTH = 128u;
     static size_t const CBC_IV_SIZE_BYTES = 16u;
     static size_t const GCM_IV_SIZE_BYTES = 12u;
@@ -205,7 +202,7 @@ namespace
             return m_metadata;
         }
 
-        const size_t GetRequestContentLength() const
+        size_t GetRequestContentLength() const
         {
             return m_requestContentLength;
         }
@@ -303,8 +300,8 @@ namespace
 
         ASSERT_STREQ(BODY_STREAM_TEST, ss.str().c_str());
         ASSERT_EQ(s3Client.GetMetadata(), getOutcome.GetResult().GetMetadata());
-        ASSERT_EQ(s3Client.m_getObjectCalled, 1);
-        ASSERT_EQ(s3Client.m_putObjectCalled, 1);
+        ASSERT_EQ(s3Client.m_getObjectCalled, 1u);
+        ASSERT_EQ(s3Client.m_putObjectCalled, 1u);
     }
 
     TEST_F(CryptoModulesTest, AuthenticatedEncryptionOperationsTestWithSimpleEncryptionMaterials)
@@ -368,8 +365,8 @@ namespace
 
         ASSERT_STREQ(BODY_STREAM_TEST, ss.str().c_str());
         ASSERT_EQ(getOutcome.GetResult().GetMetadata(), s3Client.GetMetadata());
-        ASSERT_EQ(s3Client.m_getObjectCalled, 2);
-        ASSERT_EQ(s3Client.m_putObjectCalled, 1);
+        ASSERT_EQ(s3Client.m_getObjectCalled, 2u);
+        ASSERT_EQ(s3Client.m_putObjectCalled, 1u);
     }
 
 #ifndef ENABLE_COMMONCRYPTO_ENCRYPTION
@@ -434,8 +431,8 @@ namespace
 
         ASSERT_STREQ(ss.str().c_str(), BODY_STREAM_TEST);
         ASSERT_EQ(getOutcome.GetResult().GetMetadata(), s3Client.GetMetadata());
-        ASSERT_EQ(s3Client.m_getObjectCalled, 2);
-        ASSERT_EQ(s3Client.m_putObjectCalled, 1);
+        ASSERT_EQ(s3Client.m_getObjectCalled, 2u);
+        ASSERT_EQ(s3Client.m_putObjectCalled, 1u);
     }
 #endif
 
@@ -857,7 +854,7 @@ namespace
         for (size_t i = 0; i < rangeOptions.size(); ++i)
         {
             auto pair = CryptoModule::ParseGetObjectRequestRange(rangeOptions[i], contentLength);
-            ASSERT_EQ(pair, std::make_pair(0LL, 0LL));
+            ASSERT_EQ(pair, std::make_pair(static_cast<int64_t>(0), static_cast<int64_t>(0)));
         }
     }
 }
