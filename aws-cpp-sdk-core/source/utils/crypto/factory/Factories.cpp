@@ -683,6 +683,12 @@ void Aws::Utils::Crypto::CleanupCrypto()
         s_AES_GCMFactory = nullptr;
     }
 
+    if(s_AES_KeyWrapFactory)
+    {
+        s_AES_KeyWrapFactory->CleanupStaticState();
+        s_AES_KeyWrapFactory = nullptr;
+    }
+
     if(s_SecureRandomFactory)
     {
         s_SecureRandomFactory->CleanupStaticState();
