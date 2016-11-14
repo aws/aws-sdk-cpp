@@ -434,7 +434,7 @@ namespace Aws
                     }
 
                     if(!m_authInfoPtr && m_initializationVector.GetLength() > 0)
-                    {                        
+                    {              
                         NTSTATUS status = BCryptSetProperty(m_keyHandle, BCRYPT_INITIALIZATION_VECTOR, m_initializationVector.GetUnderlyingData(), static_cast<ULONG>(m_initializationVector.GetLength()), 0);
 
                         if (!NT_SUCCESS(status))
@@ -836,7 +836,7 @@ namespace Aws
             }
 
             void AES_CTR_Cipher_BCrypt::InitEncryptor_Internal()
-            {
+            {                
                 m_flags = 0;
                 NTSTATUS status = BCryptOpenAlgorithmProvider(&m_algHandle, BCRYPT_AES_ALGORITHM, nullptr, 0);
 
@@ -855,7 +855,7 @@ namespace Aws
             }
 
             void AES_CTR_Cipher_BCrypt::InitDecryptor_Internal()
-            {
+            {                
                 m_flags = 0;
                 NTSTATUS status = BCryptOpenAlgorithmProvider(&m_algHandle, BCRYPT_AES_ALGORITHM, nullptr, 0);
 
@@ -913,7 +913,7 @@ namespace Aws
                 for (size_t i = 0; i < slicedBuffers.GetLength(); ++i)
                 {
                     if (slicedBuffers[i].GetLength() == BlockSizeBytes || (m_blockOverflow.GetLength() > 0 && slicedBuffers.GetLength() == 1))
-                    {
+                    {                       
                         ULONG lengthWritten = static_cast<ULONG>(BlockSizeBytes);
                         CryptoBuffer encryptedText(BlockSizeBytes);
 
@@ -931,7 +931,7 @@ namespace Aws
                         CryptoBuffer* newBuffer = Aws::New<CryptoBuffer>(CTR_LOG_TAG, BlockSizeBytes);
                         *newBuffer = slicedBuffers[i] ^ encryptedText;
                         finalBufferSet[i] = newBuffer;
-                        IncrementCounter(m_workingIv);
+                        m_workingIv = IncrementCTRCounter(m_workingIv, 1);
                         bytesWritten += static_cast<size_t>(lengthWritten);
                     }
                     else
@@ -962,27 +962,7 @@ namespace Aws
             size_t AES_CTR_Cipher_BCrypt::GetKeyLengthBits() const
             {
                 return KeyLengthBits;
-            }
-
-            void AES_CTR_Cipher_BCrypt::IncrementCounter(CryptoBuffer& buffer)
-            {
-                assert(buffer.GetLength() == BlockSizeBytes);
-
-                int32_t ctr = 0;
-                for (size_t i = BlockSizeBytes - 5; i < BlockSizeBytes; ++i)
-                {
-                    ctr <<= 8;
-                    ctr |= buffer[i];
-                }
-
-                ctr += 1;
-
-                for (size_t i = BlockSizeBytes - 1; i > BlockSizeBytes - 5; --i)
-                {
-                    buffer[i] = ctr & 0x000000FF;
-                    ctr >>= 8;
-                }
-            }
+            }           
 
             void AES_CTR_Cipher_BCrypt::InitBuffersToNull(Aws::Vector<ByteBuffer*>& initBuffers)
             {

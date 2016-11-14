@@ -56,6 +56,11 @@ namespace Model
     inline Aws::IOStream& GetBody() { return m_body.GetUnderlyingStream(); }
 
     /**
+     * Object data.
+     */
+    inline void ReplaceBody(Aws::IOStream* body) { m_body = Aws::Utils::Stream::ResponseStream(body); }
+    
+    /**
      * Specifies whether the object retrieved was (true) or was not (false) a Delete
      * Marker. If false, this response header does not appear in the response.
      */

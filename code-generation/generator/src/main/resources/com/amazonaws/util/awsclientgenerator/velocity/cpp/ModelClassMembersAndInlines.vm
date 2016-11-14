@@ -27,6 +27,9 @@
     $memberDocumentation
     inline Aws::IOStream& Get${memberKeyWithFirstLetterCapitalized}() { return ${memberVariableName}.GetUnderlyingStream(); }
 
+    $memberDocumentation
+    inline void ReplaceBody(Aws::IOStream* body) { ${memberVariableName} = Aws::Utils::Stream::ResponseStream(body); }
+    
 #else
 #set($override = "")
 #if($memberKeyWithFirstLetterCapitalized == "ContentType" && $shape.hasStreamMembers() && $shape.request)

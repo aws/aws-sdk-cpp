@@ -56,7 +56,7 @@ namespace Aws
                  * mode of operation for cipher encryption or decryption
                  * cipher to use on the data
                  */
-                SymmetricCryptoStream(Aws::OStream& sink, CipherMode mode, SymmetricCipher& cipher, size_t bufLen = DEFAULT_BUF_SIZE);
+                SymmetricCryptoStream(Aws::OStream& sink, CipherMode mode, SymmetricCipher& cipher, size_t bufLen = DEFAULT_BUF_SIZE, int16_t blockOffset = 0 );
                 /**
                  * bufSrc streambuf to use
                  */

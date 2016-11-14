@@ -48,6 +48,9 @@ namespace Model
     inline Aws::IOStream& GetBody() { return m_body.GetUnderlyingStream(); }
 
     
+    inline void ReplaceBody(Aws::IOStream* body) { m_body = Aws::Utils::Stream::ResponseStream(body); }
+    
+    
     inline const RequestCharged& GetRequestCharged() const{ return m_requestCharged; }
 
     
