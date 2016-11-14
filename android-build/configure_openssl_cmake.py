@@ -13,6 +13,7 @@
 # permissions and limitations under the License.
 #
 
+import argparse
 import os
 import shutil
 import platform
@@ -20,8 +21,8 @@ import platform
 # openssl doesn't have any cmake files; this script copies in cmake files to appropriate directories
 # The CMakeFiles.txt files are variants of what can be found at https://launchpad.net/openssl-cmake
 # but have been modified to account for changes in later OpenSSL versions (the original files are frozen at version 1.0.1e)
-def CopyCMakeFiles(destDir):
-    sourceDir = os.path.join("android-build", "cmakefiles", "openssl-cmake")
+def CopyCMakeFiles(baseDir, destDir):
+    sourceDir = os.path.join(baseDir, "android-build", "cmakefiles", "openssl-cmake")
     dirLength = len(sourceDir)
 
     for rootDir, dirNames, fileNames in os.walk(sourceDir):
@@ -124,8 +125,8 @@ def BuildIncludeFileList():
     return includes
 
 
-def CopyIncludeDirectory():
-    path = os.path.join( "openssl", "include", "openssl" )
+def CopyIncludeDirectory(baseDir):
+    path = os.path.join( baseDir, "include", "openssl" )
     if os.path.exists( path ) == False:
         os.makedirs( path )
 
@@ -133,18 +134,25 @@ def CopyIncludeDirectory():
     for includeFile in BuildIncludeFileList():
         shutil.copy( includeFile, "." )
 
-    os.chdir( "../../..")
-
 
 def Main():
+    parser = argparse.ArgumentParser(description="AWSNativeSDK Android Openssl Update")
+    parser.add_argument("--source", action="store")
+    parser.add_argument("--dest", action="store")
+
+    args = vars( parser.parse_args() )
+
+    sourceDir = args[ "source" ]
+    destDir = args[ "dest" ]
+
     print ("Copying CMakeLists.txt files")
-    if not CopyCMakeFiles(os.path.join("openssl")):
+    if not CopyCMakeFiles(sourceDir, destDir):
         print( "Failed to copy required CMake files" )
         return 1
 
     print("Making unified include directory")
     # normally these would be symlinks created by configure, but since we're not running configure, copy them manually
-    CopyIncludeDirectory()
+    CopyIncludeDirectory(destDir)
 
     return 0
 
