@@ -151,7 +151,7 @@ namespace Aws
                 static CryptoBuffer GenerateKey(size_t keyLengthBytes = SYMMETRIC_KEY_LENGTH);                
 
             protected:
-                SymmetricCipher() {}
+                SymmetricCipher() : m_failure(false) {}
 
                 CryptoBuffer m_key;
                 CryptoBuffer m_initializationVector;
