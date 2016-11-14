@@ -29,7 +29,7 @@ endif()
 
 enable_testing()
 
-if(USE_WINDOWS_DLL_SEMANTICS AND BUILD_SHARED_LIBS)
+if(PLATFORM_ANDROID AND BUILD_SHARED_LIBS)
     add_library(aws-cpp-sdk-s3-encryption-tests ${LIBTYPE} ${S3ENCRYPTION_TEST_SRC})
 else()
     add_executable(aws-cpp-sdk-s3-encryption-tests ${S3ENCRYPTION_TEST_SRC})

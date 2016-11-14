@@ -55,14 +55,7 @@ public:
 
     static void SetUpTestCase()
     {
-        clientConfig.region = Aws::Region::US_EAST_1;
-
-        //to use a proxy, uncomment the next two lines.
-        if (USE_PROXY_FOR_TESTS)
-        {
-            clientConfig.proxyHost = PROXY_HOST;
-            clientConfig.proxyPort = PROXY_PORT;
-        }
+        clientConfig.region = Aws::Region::US_EAST_1;    
 
         StandardClient = Aws::MakeShared<Aws::S3::S3Client>(ALLOCATION_TAG, clientConfig);
         BucketName = ComputeUniqueBucketName(ENCRYPTED_BUCKET_TEST_NAME);

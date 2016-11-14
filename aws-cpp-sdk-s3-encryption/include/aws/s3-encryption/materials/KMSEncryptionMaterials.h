@@ -26,7 +26,7 @@ namespace Aws
         namespace Materials
         {
             //identifier for materials description
-            extern const char* cmkID_Identifier;
+            extern AWS_S3ENCRYPTION_API const char* cmkID_Identifier;
 
             /*
             * KMS Encryption Materials is responsible for handling the encryption/decryption of
