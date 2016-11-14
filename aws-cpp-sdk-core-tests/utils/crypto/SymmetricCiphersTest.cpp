@@ -670,10 +670,14 @@ static void TestGCMMultipleBuffers(const Aws::String& iv_raw, const Aws::String&
     CryptoBuffer* buffer = Aws::New<CryptoBuffer>(ALLOC_TAG);   
     *buffer = cipher->FinalizeEncryption();
     encryptedStreams.push_back(buffer);
-    CryptoBuffer encryptedResult(std::move(encryptedStreams));   
+    auto encryptedStreamsCpy = encryptedStreams;
+    CryptoBuffer encryptedResult(std::move(encryptedStreamsCpy));   
     ASSERT_TRUE(*cipher);
 
-
+    for(ByteBuffer* toDelete : encryptedStreams)
+    {
+        Aws::Delete(toDelete);
+    }
 
     ASSERT_EQ(tag, cipher->GetTag());
 
@@ -698,7 +702,8 @@ static void TestGCMMultipleBuffers(const Aws::String& iv_raw, const Aws::String&
     }
 
     ASSERT_TRUE(*cipher);
-    auto decryptResult = CryptoBuffer(std::move(decryptedStreams));
+    auto buffersCpy = decryptedStreams;
+    auto decryptResult = CryptoBuffer(std::move(buffersCpy));
 
     for (ByteBuffer* toDelete : decryptedStreams)
     {

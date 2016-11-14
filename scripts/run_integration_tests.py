@@ -98,6 +98,14 @@ def Main():
     AddExecutableBit(transferTest)  
     subprocess.check_call(transferTest)
 
+    s3EncryptionTest = ( arguments["buildDir"] +
+                     "/aws-cpp-sdk-s3-encryption-integration-tests/" +
+                     configDir +
+                     "/aws-cpp-sdk-s3-encryption-integration-tests" +
+                     exeExtension )
+    AddExecutableBit(s3EncryptionTest)
+    subprocess.check_call(s3EncryptionTest)
+
     #These will cost you lots of money, don't run them unless you decide you want to test this functionality
     #cloudFrontTests = ( arguments["buildDir"] + "/aws-cpp-sdk-cloudfront-integration-tests/" + configDir + "/aws-cpp-sdk-cloudfront-integration-tests" + exeExtension )
     #AddExecutableBit(cloudFrontTests)
