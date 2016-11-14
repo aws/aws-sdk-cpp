@@ -26,6 +26,11 @@ macro(add_project name description)
         list(APPEND PROJECT_LIBS "${library_var}")
     endforeach()
 
+    cmake_policy(SET CMP0028 NEW)
+    cmake_policy(SET CMP0048 NEW)
+    cmake_policy(SET CMP0054 NEW)
+    cmake_policy(SET CMP0056 NEW)
+
     project(${name} VERSION "${PROJECT_VERSION}" LANGUAGES CXX)
 
 endmacro()
