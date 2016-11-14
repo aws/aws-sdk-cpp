@@ -741,10 +741,10 @@ namespace
         Aws::Utils::CryptoBuffer ivBuffer = Aws::Utils::HashingUtils::Base64Decode(metadata[IV_HEADER]);
         ASSERT_EQ(ivBuffer.GetLength(), GCM_IV_SIZE_BYTES);
 
-        Aws::S3Encryption::ContentCryptoScheme scheme = Aws::S3Encryption::ContentCryptoSchemeMapper::GetContentCryptoSchemeForName(metadata[CONTENT_CRYPTO_SCHEME_HEADER]);
+        ContentCryptoScheme scheme = ContentCryptoSchemeMapper::GetContentCryptoSchemeForName(metadata[CONTENT_CRYPTO_SCHEME_HEADER]);
         ASSERT_EQ(scheme, ContentCryptoScheme::GCM);
 
-        Aws::S3Encryption::KeyWrapAlgorithm keyWrapAlgorithm = Aws::S3Encryption::KeyWrapAlgorithmMapper::GetKeyWrapAlgorithmForName(metadata[KEY_WRAP_ALGORITHM]);
+        KeyWrapAlgorithm keyWrapAlgorithm = KeyWrapAlgorithmMapper::GetKeyWrapAlgorithmForName(metadata[KEY_WRAP_ALGORITHM]);
         ASSERT_EQ(keyWrapAlgorithm, KeyWrapAlgorithm::AES_KEY_WRAP);
 
         ASSERT_TRUE(s3Client.GetRequestContentLength() > strlen(BODY_STREAM_TEST));
@@ -799,10 +799,10 @@ namespace
         Aws::Utils::CryptoBuffer ivBuffer = Aws::Utils::HashingUtils::Base64Decode(metadata[IV_HEADER]);
         ASSERT_EQ(ivBuffer.GetLength(), CBC_IV_SIZE_BYTES);
 
-        Aws::S3Encryption::ContentCryptoScheme scheme = Aws::S3Encryption::ContentCryptoSchemeMapper::GetContentCryptoSchemeForName(metadata[CONTENT_CRYPTO_SCHEME_HEADER]);
+        ContentCryptoScheme scheme = ContentCryptoSchemeMapper::GetContentCryptoSchemeForName(metadata[CONTENT_CRYPTO_SCHEME_HEADER]);
         ASSERT_EQ(scheme, ContentCryptoScheme::CBC);
 
-        Aws::S3Encryption::KeyWrapAlgorithm keyWrapAlgorithm = Aws::S3Encryption::KeyWrapAlgorithmMapper::GetKeyWrapAlgorithmForName(metadata[KEY_WRAP_ALGORITHM]);
+        KeyWrapAlgorithm keyWrapAlgorithm = KeyWrapAlgorithmMapper::GetKeyWrapAlgorithmForName(metadata[KEY_WRAP_ALGORITHM]);
         ASSERT_EQ(keyWrapAlgorithm, KeyWrapAlgorithm::AES_KEY_WRAP);
 
         //check to make sure content length is now padded since StrictAE appends the tag to the end of the body
