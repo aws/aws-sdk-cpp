@@ -80,6 +80,12 @@ if(COMMAND apply_pre_project_platform_settings)
 endif()
 
 include(initialize_project_version)
+
+cmake_policy(SET CMP0028 NEW)
+cmake_policy(SET CMP0048 NEW)
+cmake_policy(SET CMP0054 NEW)
+cmake_policy(SET CMP0056 NEW)
+
 project("aws-cpp-sdk-all" VERSION "${PROJECT_VERSION}" LANGUAGES CXX)
 
 # http client, encryption, zlib, uuid
