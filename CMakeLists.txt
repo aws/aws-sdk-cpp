@@ -80,7 +80,7 @@ if(COMMAND apply_pre_project_platform_settings)
 endif()
 
 include(initialize_project_version)
-add_project("aws-cpp-sdk-all" "AWS SDK for C++")
+project("aws-cpp-sdk-all" VERSION "${PROJECT_VERSION}" LANGUAGES CXX)
 
 # http client, encryption, zlib, uuid
 include(external_dependencies)
