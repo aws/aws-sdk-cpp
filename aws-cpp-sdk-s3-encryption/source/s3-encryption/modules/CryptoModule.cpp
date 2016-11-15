@@ -282,6 +282,7 @@ namespace Aws
 
                 if (rangeStart > 0 || rangeEnd > 0 || forceCtr)
                 {
+                    AWS_UNREFERENCED_PARAM(GCM_IV_SIZE);
                     //See http://csrc.nist.gov/publications/nistpubs/800-38D/SP-800-38D.pdf for decrypting a GCM message using CTR mode.
                     assert(m_contentCryptoMaterial.GetIV().GetLength() == GCM_IV_SIZE);
                     CryptoBuffer counter(4);
