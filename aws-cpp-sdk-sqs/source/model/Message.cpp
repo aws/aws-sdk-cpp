@@ -90,7 +90,7 @@ Message& Message::operator =(const XmlNode& xmlNode)
       {
         XmlNode keyNode = attributeEntry.FirstChild("Name");
         XmlNode valueNode = attributeEntry.FirstChild("Value");
-        m_attributes[QueueAttributeNameMapper::GetQueueAttributeNameForName(StringUtils::Trim(keyNode.GetText().c_str()))] =
+        m_attributes[AttributeNameMapper::GetAttributeNameForName(StringUtils::Trim(keyNode.GetText().c_str()))] =
             StringUtils::Trim(valueNode.GetText().c_str());
         attributeEntry = attributeEntry.NextNode("Attribute");
       }

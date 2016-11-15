@@ -17,7 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
-#include <aws/sqs/model/QueueAttributeName.h>
+#include <aws/sqs/model/AttributeName.h>
 #include <aws/sqs/model/MessageAttributeValue.h>
 
 namespace Aws
@@ -216,7 +216,7 @@ namespace Model
      * representing the <a href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a>
      * in milliseconds.</p>
      */
-    inline const Aws::Map<QueueAttributeName, Aws::String>& GetAttributes() const{ return m_attributes; }
+    inline const Aws::Map<AttributeName, Aws::String>& GetAttributes() const{ return m_attributes; }
 
     /**
      * <p><code>SenderId</code>, <code>SentTimestamp</code>,
@@ -226,7 +226,7 @@ namespace Model
      * representing the <a href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a>
      * in milliseconds.</p>
      */
-    inline void SetAttributes(const Aws::Map<QueueAttributeName, Aws::String>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
+    inline void SetAttributes(const Aws::Map<AttributeName, Aws::String>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
 
     /**
      * <p><code>SenderId</code>, <code>SentTimestamp</code>,
@@ -236,7 +236,7 @@ namespace Model
      * representing the <a href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a>
      * in milliseconds.</p>
      */
-    inline void SetAttributes(Aws::Map<QueueAttributeName, Aws::String>&& value) { m_attributesHasBeenSet = true; m_attributes = value; }
+    inline void SetAttributes(Aws::Map<AttributeName, Aws::String>&& value) { m_attributesHasBeenSet = true; m_attributes = value; }
 
     /**
      * <p><code>SenderId</code>, <code>SentTimestamp</code>,
@@ -246,7 +246,7 @@ namespace Model
      * representing the <a href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a>
      * in milliseconds.</p>
      */
-    inline Message& WithAttributes(const Aws::Map<QueueAttributeName, Aws::String>& value) { SetAttributes(value); return *this;}
+    inline Message& WithAttributes(const Aws::Map<AttributeName, Aws::String>& value) { SetAttributes(value); return *this;}
 
     /**
      * <p><code>SenderId</code>, <code>SentTimestamp</code>,
@@ -256,7 +256,7 @@ namespace Model
      * representing the <a href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a>
      * in milliseconds.</p>
      */
-    inline Message& WithAttributes(Aws::Map<QueueAttributeName, Aws::String>&& value) { SetAttributes(value); return *this;}
+    inline Message& WithAttributes(Aws::Map<AttributeName, Aws::String>&& value) { SetAttributes(value); return *this;}
 
     /**
      * <p><code>SenderId</code>, <code>SentTimestamp</code>,
@@ -266,7 +266,7 @@ namespace Model
      * representing the <a href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a>
      * in milliseconds.</p>
      */
-    inline Message& AddAttributes(const QueueAttributeName& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes[key] = value; return *this; }
+    inline Message& AddAttributes(const AttributeName& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes[key] = value; return *this; }
 
     /**
      * <p><code>SenderId</code>, <code>SentTimestamp</code>,
@@ -276,7 +276,7 @@ namespace Model
      * representing the <a href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a>
      * in milliseconds.</p>
      */
-    inline Message& AddAttributes(QueueAttributeName&& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes[key] = value; return *this; }
+    inline Message& AddAttributes(AttributeName&& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes[key] = value; return *this; }
 
     /**
      * <p><code>SenderId</code>, <code>SentTimestamp</code>,
@@ -286,7 +286,7 @@ namespace Model
      * representing the <a href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a>
      * in milliseconds.</p>
      */
-    inline Message& AddAttributes(const QueueAttributeName& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes[key] = value; return *this; }
+    inline Message& AddAttributes(const AttributeName& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes[key] = value; return *this; }
 
     /**
      * <p><code>SenderId</code>, <code>SentTimestamp</code>,
@@ -296,7 +296,7 @@ namespace Model
      * representing the <a href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a>
      * in milliseconds.</p>
      */
-    inline Message& AddAttributes(QueueAttributeName&& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes[key] = value; return *this; }
+    inline Message& AddAttributes(AttributeName&& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes[key] = value; return *this; }
 
     /**
      * <p><code>SenderId</code>, <code>SentTimestamp</code>,
@@ -306,7 +306,7 @@ namespace Model
      * representing the <a href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a>
      * in milliseconds.</p>
      */
-    inline Message& AddAttributes(QueueAttributeName&& key, const char* value) { m_attributesHasBeenSet = true; m_attributes[key] = value; return *this; }
+    inline Message& AddAttributes(AttributeName&& key, const char* value) { m_attributesHasBeenSet = true; m_attributes[key] = value; return *this; }
 
     /**
      * <p><code>SenderId</code>, <code>SentTimestamp</code>,
@@ -316,7 +316,7 @@ namespace Model
      * representing the <a href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a>
      * in milliseconds.</p>
      */
-    inline Message& AddAttributes(const QueueAttributeName& key, const char* value) { m_attributesHasBeenSet = true; m_attributes[key] = value; return *this; }
+    inline Message& AddAttributes(const AttributeName& key, const char* value) { m_attributesHasBeenSet = true; m_attributes[key] = value; return *this; }
 
     /**
      * <p>An MD5 digest of the non-URL-encoded message attribute string. This can be
@@ -478,7 +478,7 @@ namespace Model
     bool m_mD5OfBodyHasBeenSet;
     Aws::String m_body;
     bool m_bodyHasBeenSet;
-    Aws::Map<QueueAttributeName, Aws::String> m_attributes;
+    Aws::Map<AttributeName, Aws::String> m_attributes;
     bool m_attributesHasBeenSet;
     Aws::String m_mD5OfMessageAttributes;
     bool m_mD5OfMessageAttributesHasBeenSet;
