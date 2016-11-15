@@ -15,7 +15,7 @@ if(BUILD_CURL OR BUILD_OPENSSL OR BUILD_ZLIB)
         set(ZLIB_SOURCE_DIR ${CMAKE_BINARY_DIR}/zlib CACHE INTERNAL "zlib source dir")
         set(ZLIB_INSTALL_DIR ${EXTERNAL_INSTALL_DIR}/zlib CACHE INTERNAL "zlib install dir")
         set(ZLIB_INCLUDE_DIR ${ZLIB_INSTALL_DIR}/include/zlib CACHE INTERNAL "zlib include dir")
-        set(ZLIB_LIBRARY_DIR ${ZLIB_INSTALL_DIR}/lib/${CMAKE_BUILD_TYPE} CACHE INTERNAL "zlib library dir")
+        set(ZLIB_LIBRARY_DIR ${ZLIB_INSTALL_DIR}/lib CACHE INTERNAL "zlib library dir")
 
         set( ZLIB_INCLUDE_FLAGS "-isystem ${ZLIB_INCLUDE_DIR}" CACHE INTERNAL "compiler flags to find zlib includes")
         set( ZLIB_LINKER_FLAGS "-L${ZLIB_LIBRARY_DIR}" CACHE INTERNAL "linker flags to find zlib")

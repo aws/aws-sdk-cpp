@@ -42,6 +42,6 @@ target_link_libraries ( ssl crypto )
 install( FILES ssl.h ssl2.h ssl3.h ssl23.h tls1.h dtls1.h kssl.h srtp.h
     DESTINATION include/openssl )
 
-install( TARGETS ssl RUNTIME DESTINATION bin/${SDK_INSTALL_BINARY_PREFIX}/${CMAKE_BUILD_TYPE}
-                     LIBRARY DESTINATION lib/${SDK_INSTALL_BINARY_PREFIX}/${CMAKE_BUILD_TYPE}
-                     ARCHIVE DESTINATION lib/${SDK_INSTALL_BINARY_PREFIX}/${CMAKE_BUILD_TYPE} )
+install( TARGETS ssl RUNTIME DESTINATION bin
+                     LIBRARY DESTINATION lib
+                     ARCHIVE DESTINATION lib )

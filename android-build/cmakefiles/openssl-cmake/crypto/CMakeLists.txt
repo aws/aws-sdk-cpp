@@ -218,6 +218,6 @@ endif()
 
 install( FILES ${EXHEADERS} DESTINATION include/openssl )
 
-install( TARGETS crypto RUNTIME DESTINATION bin/${SDK_INSTALL_BINARY_PREFIX}/${CMAKE_BUILD_TYPE}
-                        LIBRARY DESTINATION lib/${SDK_INSTALL_BINARY_PREFIX}/${CMAKE_BUILD_TYPE}
-                        ARCHIVE DESTINATION lib/${SDK_INSTALL_BINARY_PREFIX}/${CMAKE_BUILD_TYPE} )
+install( TARGETS crypto RUNTIME DESTINATION bin
+                        LIBRARY DESTINATION lib
+                        ARCHIVE DESTINATION lib )
