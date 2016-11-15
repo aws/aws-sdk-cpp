@@ -113,43 +113,43 @@ namespace Model
     inline ForgotPasswordRequest& WithSecretHash(const char* value) { SetSecretHash(value); return *this;}
 
     /**
-     * <p>The user name of the user for whom you want to enter a code to retrieve a
+     * <p>The user name of the user for whom you want to enter a code to reset a
      * forgotten password.</p>
      */
     inline const Aws::String& GetUsername() const{ return m_username; }
 
     /**
-     * <p>The user name of the user for whom you want to enter a code to retrieve a
+     * <p>The user name of the user for whom you want to enter a code to reset a
      * forgotten password.</p>
      */
     inline void SetUsername(const Aws::String& value) { m_usernameHasBeenSet = true; m_username = value; }
 
     /**
-     * <p>The user name of the user for whom you want to enter a code to retrieve a
+     * <p>The user name of the user for whom you want to enter a code to reset a
      * forgotten password.</p>
      */
     inline void SetUsername(Aws::String&& value) { m_usernameHasBeenSet = true; m_username = value; }
 
     /**
-     * <p>The user name of the user for whom you want to enter a code to retrieve a
+     * <p>The user name of the user for whom you want to enter a code to reset a
      * forgotten password.</p>
      */
     inline void SetUsername(const char* value) { m_usernameHasBeenSet = true; m_username.assign(value); }
 
     /**
-     * <p>The user name of the user for whom you want to enter a code to retrieve a
+     * <p>The user name of the user for whom you want to enter a code to reset a
      * forgotten password.</p>
      */
     inline ForgotPasswordRequest& WithUsername(const Aws::String& value) { SetUsername(value); return *this;}
 
     /**
-     * <p>The user name of the user for whom you want to enter a code to retrieve a
+     * <p>The user name of the user for whom you want to enter a code to reset a
      * forgotten password.</p>
      */
     inline ForgotPasswordRequest& WithUsername(Aws::String&& value) { SetUsername(value); return *this;}
 
     /**
-     * <p>The user name of the user for whom you want to enter a code to retrieve a
+     * <p>The user name of the user for whom you want to enter a code to reset a
      * forgotten password.</p>
      */
     inline ForgotPasswordRequest& WithUsername(const char* value) { SetUsername(value); return *this;}

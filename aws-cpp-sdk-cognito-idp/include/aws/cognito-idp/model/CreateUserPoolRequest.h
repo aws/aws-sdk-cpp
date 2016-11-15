@@ -26,6 +26,7 @@
 #include <aws/cognito-idp/model/AdminCreateUserConfigType.h>
 #include <aws/cognito-idp/model/VerifiedAttributeType.h>
 #include <aws/cognito-idp/model/AliasAttributeType.h>
+#include <aws/cognito-idp/model/SchemaAttributeType.h>
 
 namespace Aws
 {
@@ -479,6 +480,48 @@ namespace Model
      */
     inline CreateUserPoolRequest& WithAdminCreateUserConfig(AdminCreateUserConfigType&& value) { SetAdminCreateUserConfig(value); return *this;}
 
+    /**
+     * <p>An array of schema attributes for the new user pool. These attributes can be
+     * standard or custom attributes.</p>
+     */
+    inline const Aws::Vector<SchemaAttributeType>& GetSchema() const{ return m_schema; }
+
+    /**
+     * <p>An array of schema attributes for the new user pool. These attributes can be
+     * standard or custom attributes.</p>
+     */
+    inline void SetSchema(const Aws::Vector<SchemaAttributeType>& value) { m_schemaHasBeenSet = true; m_schema = value; }
+
+    /**
+     * <p>An array of schema attributes for the new user pool. These attributes can be
+     * standard or custom attributes.</p>
+     */
+    inline void SetSchema(Aws::Vector<SchemaAttributeType>&& value) { m_schemaHasBeenSet = true; m_schema = value; }
+
+    /**
+     * <p>An array of schema attributes for the new user pool. These attributes can be
+     * standard or custom attributes.</p>
+     */
+    inline CreateUserPoolRequest& WithSchema(const Aws::Vector<SchemaAttributeType>& value) { SetSchema(value); return *this;}
+
+    /**
+     * <p>An array of schema attributes for the new user pool. These attributes can be
+     * standard or custom attributes.</p>
+     */
+    inline CreateUserPoolRequest& WithSchema(Aws::Vector<SchemaAttributeType>&& value) { SetSchema(value); return *this;}
+
+    /**
+     * <p>An array of schema attributes for the new user pool. These attributes can be
+     * standard or custom attributes.</p>
+     */
+    inline CreateUserPoolRequest& AddSchema(const SchemaAttributeType& value) { m_schemaHasBeenSet = true; m_schema.push_back(value); return *this; }
+
+    /**
+     * <p>An array of schema attributes for the new user pool. These attributes can be
+     * standard or custom attributes.</p>
+     */
+    inline CreateUserPoolRequest& AddSchema(SchemaAttributeType&& value) { m_schemaHasBeenSet = true; m_schema.push_back(value); return *this; }
+
   private:
     Aws::String m_poolName;
     bool m_poolNameHasBeenSet;
@@ -508,6 +551,8 @@ namespace Model
     bool m_smsConfigurationHasBeenSet;
     AdminCreateUserConfigType m_adminCreateUserConfig;
     bool m_adminCreateUserConfigHasBeenSet;
+    Aws::Vector<SchemaAttributeType> m_schema;
+    bool m_schemaHasBeenSet;
   };
 
 } // namespace Model

@@ -33,8 +33,8 @@ namespace CognitoIdentityProvider
 namespace Model
 {
   /**
-   * <p>The response from the server when the Amazon Cognito service makes the
-   * request to resend a confirmation code.</p>
+   * <p>The response from the server when the Amazon Cognito Your User Pools service
+   * makes the request to resend a confirmation code.</p>
    */
   class AWS_COGNITOIDENTITYPROVIDER_API ResendConfirmationCodeResult
   {
@@ -43,19 +43,34 @@ namespace Model
     ResendConfirmationCodeResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     ResendConfirmationCodeResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    
+    /**
+     * <p>The code delivery details returned by the server in response to the request
+     * to resend the confirmation code.</p>
+     */
     inline const CodeDeliveryDetailsType& GetCodeDeliveryDetails() const{ return m_codeDeliveryDetails; }
 
-    
+    /**
+     * <p>The code delivery details returned by the server in response to the request
+     * to resend the confirmation code.</p>
+     */
     inline void SetCodeDeliveryDetails(const CodeDeliveryDetailsType& value) { m_codeDeliveryDetails = value; }
 
-    
+    /**
+     * <p>The code delivery details returned by the server in response to the request
+     * to resend the confirmation code.</p>
+     */
     inline void SetCodeDeliveryDetails(CodeDeliveryDetailsType&& value) { m_codeDeliveryDetails = value; }
 
-    
+    /**
+     * <p>The code delivery details returned by the server in response to the request
+     * to resend the confirmation code.</p>
+     */
     inline ResendConfirmationCodeResult& WithCodeDeliveryDetails(const CodeDeliveryDetailsType& value) { SetCodeDeliveryDetails(value); return *this;}
 
-    
+    /**
+     * <p>The code delivery details returned by the server in response to the request
+     * to resend the confirmation code.</p>
+     */
     inline ResendConfirmationCodeResult& WithCodeDeliveryDetails(CodeDeliveryDetailsType&& value) { SetCodeDeliveryDetails(value); return *this;}
 
   private:

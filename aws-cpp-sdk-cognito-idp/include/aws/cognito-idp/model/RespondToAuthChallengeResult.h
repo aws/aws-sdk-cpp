@@ -165,19 +165,34 @@ namespace Model
      */
     inline RespondToAuthChallengeResult& AddChallengeParameters(const char* key, const char* value) { m_challengeParameters[key] = value; return *this; }
 
-    
+    /**
+     * <p>The result returned by the server in response to the request to respond to
+     * the authentication challenge.</p>
+     */
     inline const AuthenticationResultType& GetAuthenticationResult() const{ return m_authenticationResult; }
 
-    
+    /**
+     * <p>The result returned by the server in response to the request to respond to
+     * the authentication challenge.</p>
+     */
     inline void SetAuthenticationResult(const AuthenticationResultType& value) { m_authenticationResult = value; }
 
-    
+    /**
+     * <p>The result returned by the server in response to the request to respond to
+     * the authentication challenge.</p>
+     */
     inline void SetAuthenticationResult(AuthenticationResultType&& value) { m_authenticationResult = value; }
 
-    
+    /**
+     * <p>The result returned by the server in response to the request to respond to
+     * the authentication challenge.</p>
+     */
     inline RespondToAuthChallengeResult& WithAuthenticationResult(const AuthenticationResultType& value) { SetAuthenticationResult(value); return *this;}
 
-    
+    /**
+     * <p>The result returned by the server in response to the request to respond to
+     * the authentication challenge.</p>
+     */
     inline RespondToAuthChallengeResult& WithAuthenticationResult(AuthenticationResultType&& value) { SetAuthenticationResult(value); return *this;}
 
   private:

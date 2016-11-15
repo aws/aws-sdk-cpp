@@ -60,19 +60,34 @@ namespace Model
      */
     inline SignUpResult& WithUserConfirmed(bool value) { SetUserConfirmed(value); return *this;}
 
-    
+    /**
+     * <p>The code delivery details returned by the server response to the user
+     * registration request.</p>
+     */
     inline const CodeDeliveryDetailsType& GetCodeDeliveryDetails() const{ return m_codeDeliveryDetails; }
 
-    
+    /**
+     * <p>The code delivery details returned by the server response to the user
+     * registration request.</p>
+     */
     inline void SetCodeDeliveryDetails(const CodeDeliveryDetailsType& value) { m_codeDeliveryDetails = value; }
 
-    
+    /**
+     * <p>The code delivery details returned by the server response to the user
+     * registration request.</p>
+     */
     inline void SetCodeDeliveryDetails(CodeDeliveryDetailsType&& value) { m_codeDeliveryDetails = value; }
 
-    
+    /**
+     * <p>The code delivery details returned by the server response to the user
+     * registration request.</p>
+     */
     inline SignUpResult& WithCodeDeliveryDetails(const CodeDeliveryDetailsType& value) { SetCodeDeliveryDetails(value); return *this;}
 
-    
+    /**
+     * <p>The code delivery details returned by the server response to the user
+     * registration request.</p>
+     */
     inline SignUpResult& WithCodeDeliveryDetails(CodeDeliveryDetailsType&& value) { SetCodeDeliveryDetails(value); return *this;}
 
   private:

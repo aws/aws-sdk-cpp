@@ -43,19 +43,34 @@ namespace Model
     ForgotPasswordResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     ForgotPasswordResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    
+    /**
+     * <p>The code delivery details returned by the server in response to the request
+     * to reset a password.</p>
+     */
     inline const CodeDeliveryDetailsType& GetCodeDeliveryDetails() const{ return m_codeDeliveryDetails; }
 
-    
+    /**
+     * <p>The code delivery details returned by the server in response to the request
+     * to reset a password.</p>
+     */
     inline void SetCodeDeliveryDetails(const CodeDeliveryDetailsType& value) { m_codeDeliveryDetails = value; }
 
-    
+    /**
+     * <p>The code delivery details returned by the server in response to the request
+     * to reset a password.</p>
+     */
     inline void SetCodeDeliveryDetails(CodeDeliveryDetailsType&& value) { m_codeDeliveryDetails = value; }
 
-    
+    /**
+     * <p>The code delivery details returned by the server in response to the request
+     * to reset a password.</p>
+     */
     inline ForgotPasswordResult& WithCodeDeliveryDetails(const CodeDeliveryDetailsType& value) { SetCodeDeliveryDetails(value); return *this;}
 
-    
+    /**
+     * <p>The code delivery details returned by the server in response to the request
+     * to reset a password.</p>
+     */
     inline ForgotPasswordResult& WithCodeDeliveryDetails(CodeDeliveryDetailsType&& value) { SetCodeDeliveryDetails(value); return *this;}
 
   private:
