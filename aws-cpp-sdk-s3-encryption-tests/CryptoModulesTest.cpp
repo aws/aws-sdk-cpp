@@ -51,7 +51,7 @@ namespace
 
 #ifndef ENABLE_COMMONCRYPTO_ENCRYPTION
     static const char* const BYTES_SPECIFIER = "bytes=0-10";
-    static const char* const ASSERTION_FAILED = "Assertion failed: 0";
+    static const char* const ASSERTION_FAILED = "Assertion .*";
     static const char* const GET_RANGE_SPECIFIER = "bytes=20-40";
     static const char* const GET_RANGE_OUTPUT = "ge for encryption and";
     static size_t const GCM_TAG_LENGTH = 128u;
