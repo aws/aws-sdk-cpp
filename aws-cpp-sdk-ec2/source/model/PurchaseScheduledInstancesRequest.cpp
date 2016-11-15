@@ -22,7 +22,8 @@ using namespace Aws::Utils;
 PurchaseScheduledInstancesRequest::PurchaseScheduledInstancesRequest() : 
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
-    m_clientTokenHasBeenSet(false),
+    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientTokenHasBeenSet(true),
     m_purchaseRequestsHasBeenSet(false)
 {
 }

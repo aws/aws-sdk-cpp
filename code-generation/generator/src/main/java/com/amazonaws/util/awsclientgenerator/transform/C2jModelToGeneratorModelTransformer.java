@@ -216,6 +216,7 @@ public class C2jModelToGeneratorModelTransformer {
         shapeMember.setLocationName(c2jShapeMember.getLocationName());
         shapeMember.setLocation(c2jShapeMember.getLocation());
         shapeMember.setStreaming(c2jShapeMember.isStreaming());
+        shapeMember.setIdempotencyToken(c2jShapeMember.isIdempotencyToken());
         if(shapeMember.isStreaming()) {
             shapeMember.setRequired(true);
         }

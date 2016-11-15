@@ -20,6 +20,7 @@ import lombok.Data;
 @Data
 public class ShapeMember {
     Shape shape;
+    boolean idempotencyToken;
     boolean isRequired;
     boolean streaming;
     String documentation;

@@ -17,6 +17,7 @@
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/ScheduledInstancesLaunchSpecification.h>
+#include <aws/core/utils/UUID.h>
 
 namespace Aws
 {

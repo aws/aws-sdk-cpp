@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/servicecatalog/model/ProvisioningParameter.h>
 #include <aws/servicecatalog/model/Tag.h>
+#include <aws/core/utils/UUID.h>
 
 namespace Aws
 {
