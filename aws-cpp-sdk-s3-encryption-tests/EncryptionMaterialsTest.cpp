@@ -13,6 +13,8 @@
 * permissions and limitations under the License.
 */
 
+#ifndef NO_SYMMETRIC_ENCRYPTION
+
 #include <aws/external/gtest.h>
 #include <aws/core/Aws.h>
 #include <aws/core/utils/crypto/CryptoBuf.h>
@@ -392,3 +394,5 @@ namespace
         ASSERT_EQ(myClient->m_encryptCalledCount, 0u);
     }
 }
+
+#endif

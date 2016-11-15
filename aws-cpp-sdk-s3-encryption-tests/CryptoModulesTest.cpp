@@ -13,6 +13,8 @@
 * permissions and limitations under the License.
 */
 
+#ifndef NO_SYMMETRIC_ENCRYPTION
+
 #include <aws/external/gtest.h>
 #include <aws/core/Aws.h>
 #include <aws/core/auth/AWSCredentialsProvider.h>
@@ -864,3 +866,5 @@ namespace
         }
     }
 }
+
+#endif
