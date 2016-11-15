@@ -45,8 +45,9 @@ namespace Aws
 
             CryptoBuffer IncrementCTRCounter(const CryptoBuffer& counter, uint32_t numberOfBlocks)
             {               
-                static const size_t ctrModeMinBlockSize = 12;
-                assert(counter.GetLength() >= ctrModeMinBlockSize);
+                // minium counter size is 12 bytes. This isn't a variable because some compilers
+                // are stupid and thing that variable is unused.
+                assert(counter.GetLength() >= 12);
 
                 CryptoBuffer incrementedCounter(counter);               
 
