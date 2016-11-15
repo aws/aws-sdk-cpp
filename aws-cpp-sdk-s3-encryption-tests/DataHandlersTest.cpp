@@ -15,6 +15,7 @@
 
 #include <aws/external/gtest.h>
 #include <aws/core/Aws.h>
+#include <aws/core/auth/AWSCredentialsProvider.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/Outcome.h>
 #include <aws/core/utils/stream/ResponseStream.h>
@@ -38,7 +39,7 @@ class MockS3Client : public Aws::S3::S3Client
 {
 public:
     MockS3Client(Aws::Client::ClientConfiguration clientConfiguration = Aws::Client::ClientConfiguration()) :
-        S3Client(clientConfiguration), m_putObjectCalled(0), m_getObjectCalled(0), m_body(nullptr)
+        S3Client(Aws::Auth::AWSCredentials("", ""), clientConfiguration), m_putObjectCalled(0), m_getObjectCalled(0), m_body(nullptr)
     {
     }
 

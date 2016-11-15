@@ -44,7 +44,7 @@ class MockKMSClient : public KMSClient
 {
 public:
     MockKMSClient(ClientConfiguration clientConfiguration = ClientConfiguration()) :
-        KMSClient(clientConfiguration), m_encryptCalledCount(0), m_decryptCalledCount(0)
+        KMSClient(Aws::Auth::AWSCredentials("", ""), clientConfiguration), m_encryptCalledCount(0), m_decryptCalledCount(0)
     {
     }
 
@@ -274,7 +274,7 @@ namespace
     TEST_F(KMSEncryptionMaterialsTest, TestEncryptCEKInvalidCmkID)
     {
         Aws::String testCmkID = "someRandomCustomerMasterKeyID";
-        auto myClient = Aws::MakeShared<KMSClient>(AllocationTag, ClientConfiguration());
+        auto myClient = Aws::MakeShared<MockKMSClient>(AllocationTag, ClientConfiguration());
         KMSEncryptionMaterials encryptionMaterials(testCmkID, myClient);
 
         ContentCryptoMaterial contentCryptoMaterial(ContentCryptoScheme::CBC);

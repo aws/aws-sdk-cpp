@@ -18,8 +18,7 @@
 
 int main(int argc, char** argv)
 {
-    Aws::SDKOptions options;
-    options.loggingOptions.logLevel = Aws::Utils::Logging::LogLevel::Trace;
+    Aws::SDKOptions options;    
     Aws::InitAPI(options);
     ::testing::InitGoogleTest(&argc, argv);
     int exitCode = RUN_ALL_TESTS(); 

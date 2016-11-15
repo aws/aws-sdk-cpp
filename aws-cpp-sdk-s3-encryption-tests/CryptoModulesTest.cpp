@@ -84,7 +84,7 @@ namespace
     {
     public:
         MockKMSClient(ClientConfiguration clientConfiguration = ClientConfiguration()) :
-            KMSClient(clientConfiguration), m_encryptCalledCount(0), m_decryptCalledCount(0),
+            KMSClient(Aws::Auth::AWSCredentials("", ""), clientConfiguration), m_encryptCalledCount(0), m_decryptCalledCount(0),
             m_encryptedKey(Aws::Utils::Crypto::SymmetricCipher::GenerateKey()), m_decryptedKey(nullptr)
         {
         }
@@ -138,7 +138,7 @@ namespace
     {
     public:
         MockS3Client(Aws::Client::ClientConfiguration clientConfiguration = Aws::Client::ClientConfiguration()) :
-            S3Client(clientConfiguration), m_putObjectCalled(0), m_getObjectCalled(0), m_body(nullptr)
+            S3Client(Aws::Auth::AWSCredentials("", ""), clientConfiguration), m_putObjectCalled(0), m_getObjectCalled(0), m_body(nullptr)
         {
         }
 

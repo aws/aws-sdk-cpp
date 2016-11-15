@@ -236,6 +236,7 @@ namespace Aws
                 //we currently do not support range gets for CBC mode. It is possible, but it is complicated.
                 //if this is something you need, file a github issue requesting it. We recommend that you use Authenticated Encryption and use range gets there.
                 assert(request.GetRange().empty());
+                AWS_UNREFERENCED_PARAM(request);
                 std::pair<int64_t, int64_t> newRange(0, result.GetContentLength());
 
                 return newRange;
@@ -405,6 +406,8 @@ namespace Aws
                 //range gets not allowed in Strict AE.
                 assert(rangeStart == 0);
                 assert(rangeEnd == 0);
+                AWS_UNREFERENCED_PARAM(rangeStart);
+                AWS_UNREFERENCED_PARAM(rangeEnd);
                 m_cipher = CreateAES_GCMImplementation(m_contentCryptoMaterial.GetContentEncryptionKey(), m_contentCryptoMaterial.GetIV(), tag);
             }
 
