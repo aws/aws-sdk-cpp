@@ -82,12 +82,13 @@ namespace Model
     /**
      * <p>List of shard-level metrics to disable.</p> <p>The following are the valid
      * shard-level metrics. The value "<code>ALL</code>" disables every metric.</p>
-     * <ul> <li> <code>IncomingBytes</code> </li> <li> <code>IncomingRecords</code>
-     * </li> <li> <code>OutgoingBytes</code> </li> <li> <code>OutgoingRecords</code>
-     * </li> <li> <code>WriteProvisionedThroughputExceeded</code> </li> <li>
-     * <code>ReadProvisionedThroughputExceeded</code> </li> <li>
-     * <code>IteratorAgeMilliseconds</code> </li> <li> <code>ALL</code> </li> </ul>
-     * <p>For more information, see <a
+     * <ul> <li> <p> <code>IncomingBytes</code> </p> </li> <li> <p>
+     * <code>IncomingRecords</code> </p> </li> <li> <p> <code>OutgoingBytes</code> </p>
+     * </li> <li> <p> <code>OutgoingRecords</code> </p> </li> <li> <p>
+     * <code>WriteProvisionedThroughputExceeded</code> </p> </li> <li> <p>
+     * <code>ReadProvisionedThroughputExceeded</code> </p> </li> <li> <p>
+     * <code>IteratorAgeMilliseconds</code> </p> </li> <li> <p> <code>ALL</code> </p>
+     * </li> </ul> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html">Monitoring
      * the Amazon Kinesis Streams Service with Amazon CloudWatch</a> in the <i>Amazon
      * Kinesis Streams Developer Guide</i>.</p>
@@ -97,12 +98,13 @@ namespace Model
     /**
      * <p>List of shard-level metrics to disable.</p> <p>The following are the valid
      * shard-level metrics. The value "<code>ALL</code>" disables every metric.</p>
-     * <ul> <li> <code>IncomingBytes</code> </li> <li> <code>IncomingRecords</code>
-     * </li> <li> <code>OutgoingBytes</code> </li> <li> <code>OutgoingRecords</code>
-     * </li> <li> <code>WriteProvisionedThroughputExceeded</code> </li> <li>
-     * <code>ReadProvisionedThroughputExceeded</code> </li> <li>
-     * <code>IteratorAgeMilliseconds</code> </li> <li> <code>ALL</code> </li> </ul>
-     * <p>For more information, see <a
+     * <ul> <li> <p> <code>IncomingBytes</code> </p> </li> <li> <p>
+     * <code>IncomingRecords</code> </p> </li> <li> <p> <code>OutgoingBytes</code> </p>
+     * </li> <li> <p> <code>OutgoingRecords</code> </p> </li> <li> <p>
+     * <code>WriteProvisionedThroughputExceeded</code> </p> </li> <li> <p>
+     * <code>ReadProvisionedThroughputExceeded</code> </p> </li> <li> <p>
+     * <code>IteratorAgeMilliseconds</code> </p> </li> <li> <p> <code>ALL</code> </p>
+     * </li> </ul> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html">Monitoring
      * the Amazon Kinesis Streams Service with Amazon CloudWatch</a> in the <i>Amazon
      * Kinesis Streams Developer Guide</i>.</p>
@@ -112,12 +114,13 @@ namespace Model
     /**
      * <p>List of shard-level metrics to disable.</p> <p>The following are the valid
      * shard-level metrics. The value "<code>ALL</code>" disables every metric.</p>
-     * <ul> <li> <code>IncomingBytes</code> </li> <li> <code>IncomingRecords</code>
-     * </li> <li> <code>OutgoingBytes</code> </li> <li> <code>OutgoingRecords</code>
-     * </li> <li> <code>WriteProvisionedThroughputExceeded</code> </li> <li>
-     * <code>ReadProvisionedThroughputExceeded</code> </li> <li>
-     * <code>IteratorAgeMilliseconds</code> </li> <li> <code>ALL</code> </li> </ul>
-     * <p>For more information, see <a
+     * <ul> <li> <p> <code>IncomingBytes</code> </p> </li> <li> <p>
+     * <code>IncomingRecords</code> </p> </li> <li> <p> <code>OutgoingBytes</code> </p>
+     * </li> <li> <p> <code>OutgoingRecords</code> </p> </li> <li> <p>
+     * <code>WriteProvisionedThroughputExceeded</code> </p> </li> <li> <p>
+     * <code>ReadProvisionedThroughputExceeded</code> </p> </li> <li> <p>
+     * <code>IteratorAgeMilliseconds</code> </p> </li> <li> <p> <code>ALL</code> </p>
+     * </li> </ul> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html">Monitoring
      * the Amazon Kinesis Streams Service with Amazon CloudWatch</a> in the <i>Amazon
      * Kinesis Streams Developer Guide</i>.</p>
@@ -127,12 +130,13 @@ namespace Model
     /**
      * <p>List of shard-level metrics to disable.</p> <p>The following are the valid
      * shard-level metrics. The value "<code>ALL</code>" disables every metric.</p>
-     * <ul> <li> <code>IncomingBytes</code> </li> <li> <code>IncomingRecords</code>
-     * </li> <li> <code>OutgoingBytes</code> </li> <li> <code>OutgoingRecords</code>
-     * </li> <li> <code>WriteProvisionedThroughputExceeded</code> </li> <li>
-     * <code>ReadProvisionedThroughputExceeded</code> </li> <li>
-     * <code>IteratorAgeMilliseconds</code> </li> <li> <code>ALL</code> </li> </ul>
-     * <p>For more information, see <a
+     * <ul> <li> <p> <code>IncomingBytes</code> </p> </li> <li> <p>
+     * <code>IncomingRecords</code> </p> </li> <li> <p> <code>OutgoingBytes</code> </p>
+     * </li> <li> <p> <code>OutgoingRecords</code> </p> </li> <li> <p>
+     * <code>WriteProvisionedThroughputExceeded</code> </p> </li> <li> <p>
+     * <code>ReadProvisionedThroughputExceeded</code> </p> </li> <li> <p>
+     * <code>IteratorAgeMilliseconds</code> </p> </li> <li> <p> <code>ALL</code> </p>
+     * </li> </ul> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html">Monitoring
      * the Amazon Kinesis Streams Service with Amazon CloudWatch</a> in the <i>Amazon
      * Kinesis Streams Developer Guide</i>.</p>
@@ -142,12 +146,13 @@ namespace Model
     /**
      * <p>List of shard-level metrics to disable.</p> <p>The following are the valid
      * shard-level metrics. The value "<code>ALL</code>" disables every metric.</p>
-     * <ul> <li> <code>IncomingBytes</code> </li> <li> <code>IncomingRecords</code>
-     * </li> <li> <code>OutgoingBytes</code> </li> <li> <code>OutgoingRecords</code>
-     * </li> <li> <code>WriteProvisionedThroughputExceeded</code> </li> <li>
-     * <code>ReadProvisionedThroughputExceeded</code> </li> <li>
-     * <code>IteratorAgeMilliseconds</code> </li> <li> <code>ALL</code> </li> </ul>
-     * <p>For more information, see <a
+     * <ul> <li> <p> <code>IncomingBytes</code> </p> </li> <li> <p>
+     * <code>IncomingRecords</code> </p> </li> <li> <p> <code>OutgoingBytes</code> </p>
+     * </li> <li> <p> <code>OutgoingRecords</code> </p> </li> <li> <p>
+     * <code>WriteProvisionedThroughputExceeded</code> </p> </li> <li> <p>
+     * <code>ReadProvisionedThroughputExceeded</code> </p> </li> <li> <p>
+     * <code>IteratorAgeMilliseconds</code> </p> </li> <li> <p> <code>ALL</code> </p>
+     * </li> </ul> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html">Monitoring
      * the Amazon Kinesis Streams Service with Amazon CloudWatch</a> in the <i>Amazon
      * Kinesis Streams Developer Guide</i>.</p>
@@ -157,12 +162,13 @@ namespace Model
     /**
      * <p>List of shard-level metrics to disable.</p> <p>The following are the valid
      * shard-level metrics. The value "<code>ALL</code>" disables every metric.</p>
-     * <ul> <li> <code>IncomingBytes</code> </li> <li> <code>IncomingRecords</code>
-     * </li> <li> <code>OutgoingBytes</code> </li> <li> <code>OutgoingRecords</code>
-     * </li> <li> <code>WriteProvisionedThroughputExceeded</code> </li> <li>
-     * <code>ReadProvisionedThroughputExceeded</code> </li> <li>
-     * <code>IteratorAgeMilliseconds</code> </li> <li> <code>ALL</code> </li> </ul>
-     * <p>For more information, see <a
+     * <ul> <li> <p> <code>IncomingBytes</code> </p> </li> <li> <p>
+     * <code>IncomingRecords</code> </p> </li> <li> <p> <code>OutgoingBytes</code> </p>
+     * </li> <li> <p> <code>OutgoingRecords</code> </p> </li> <li> <p>
+     * <code>WriteProvisionedThroughputExceeded</code> </p> </li> <li> <p>
+     * <code>ReadProvisionedThroughputExceeded</code> </p> </li> <li> <p>
+     * <code>IteratorAgeMilliseconds</code> </p> </li> <li> <p> <code>ALL</code> </p>
+     * </li> </ul> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html">Monitoring
      * the Amazon Kinesis Streams Service with Amazon CloudWatch</a> in the <i>Amazon
      * Kinesis Streams Developer Guide</i>.</p>
@@ -172,12 +178,13 @@ namespace Model
     /**
      * <p>List of shard-level metrics to disable.</p> <p>The following are the valid
      * shard-level metrics. The value "<code>ALL</code>" disables every metric.</p>
-     * <ul> <li> <code>IncomingBytes</code> </li> <li> <code>IncomingRecords</code>
-     * </li> <li> <code>OutgoingBytes</code> </li> <li> <code>OutgoingRecords</code>
-     * </li> <li> <code>WriteProvisionedThroughputExceeded</code> </li> <li>
-     * <code>ReadProvisionedThroughputExceeded</code> </li> <li>
-     * <code>IteratorAgeMilliseconds</code> </li> <li> <code>ALL</code> </li> </ul>
-     * <p>For more information, see <a
+     * <ul> <li> <p> <code>IncomingBytes</code> </p> </li> <li> <p>
+     * <code>IncomingRecords</code> </p> </li> <li> <p> <code>OutgoingBytes</code> </p>
+     * </li> <li> <p> <code>OutgoingRecords</code> </p> </li> <li> <p>
+     * <code>WriteProvisionedThroughputExceeded</code> </p> </li> <li> <p>
+     * <code>ReadProvisionedThroughputExceeded</code> </p> </li> <li> <p>
+     * <code>IteratorAgeMilliseconds</code> </p> </li> <li> <p> <code>ALL</code> </p>
+     * </li> </ul> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html">Monitoring
      * the Amazon Kinesis Streams Service with Amazon CloudWatch</a> in the <i>Amazon
      * Kinesis Streams Developer Guide</i>.</p>

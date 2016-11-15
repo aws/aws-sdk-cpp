@@ -1544,6 +1544,76 @@ namespace Model
      */
     inline CreateCacheClusterRequest& WithSnapshotWindow(const char* value) { SetSnapshotWindow(value); return *this;}
 
+    /**
+     * <p>The password used to access a password protected server.</p> <p>Password
+     * constraints:</p> <ul> <li> <p>Must be only printable ASCII characters.</p> </li>
+     * <li> <p>Must be at least 16 characters and no more than 128 characters in
+     * length.</p> </li> <li> <p>Cannot contain any of the following characters: '/',
+     * '"', or "@". </p> </li> </ul> <p>For more information, see <a
+     * href="http://redis.io/commands/AUTH">AUTH password</a> at Redis.</p>
+     */
+    inline const Aws::String& GetAuthToken() const{ return m_authToken; }
+
+    /**
+     * <p>The password used to access a password protected server.</p> <p>Password
+     * constraints:</p> <ul> <li> <p>Must be only printable ASCII characters.</p> </li>
+     * <li> <p>Must be at least 16 characters and no more than 128 characters in
+     * length.</p> </li> <li> <p>Cannot contain any of the following characters: '/',
+     * '"', or "@". </p> </li> </ul> <p>For more information, see <a
+     * href="http://redis.io/commands/AUTH">AUTH password</a> at Redis.</p>
+     */
+    inline void SetAuthToken(const Aws::String& value) { m_authTokenHasBeenSet = true; m_authToken = value; }
+
+    /**
+     * <p>The password used to access a password protected server.</p> <p>Password
+     * constraints:</p> <ul> <li> <p>Must be only printable ASCII characters.</p> </li>
+     * <li> <p>Must be at least 16 characters and no more than 128 characters in
+     * length.</p> </li> <li> <p>Cannot contain any of the following characters: '/',
+     * '"', or "@". </p> </li> </ul> <p>For more information, see <a
+     * href="http://redis.io/commands/AUTH">AUTH password</a> at Redis.</p>
+     */
+    inline void SetAuthToken(Aws::String&& value) { m_authTokenHasBeenSet = true; m_authToken = value; }
+
+    /**
+     * <p>The password used to access a password protected server.</p> <p>Password
+     * constraints:</p> <ul> <li> <p>Must be only printable ASCII characters.</p> </li>
+     * <li> <p>Must be at least 16 characters and no more than 128 characters in
+     * length.</p> </li> <li> <p>Cannot contain any of the following characters: '/',
+     * '"', or "@". </p> </li> </ul> <p>For more information, see <a
+     * href="http://redis.io/commands/AUTH">AUTH password</a> at Redis.</p>
+     */
+    inline void SetAuthToken(const char* value) { m_authTokenHasBeenSet = true; m_authToken.assign(value); }
+
+    /**
+     * <p>The password used to access a password protected server.</p> <p>Password
+     * constraints:</p> <ul> <li> <p>Must be only printable ASCII characters.</p> </li>
+     * <li> <p>Must be at least 16 characters and no more than 128 characters in
+     * length.</p> </li> <li> <p>Cannot contain any of the following characters: '/',
+     * '"', or "@". </p> </li> </ul> <p>For more information, see <a
+     * href="http://redis.io/commands/AUTH">AUTH password</a> at Redis.</p>
+     */
+    inline CreateCacheClusterRequest& WithAuthToken(const Aws::String& value) { SetAuthToken(value); return *this;}
+
+    /**
+     * <p>The password used to access a password protected server.</p> <p>Password
+     * constraints:</p> <ul> <li> <p>Must be only printable ASCII characters.</p> </li>
+     * <li> <p>Must be at least 16 characters and no more than 128 characters in
+     * length.</p> </li> <li> <p>Cannot contain any of the following characters: '/',
+     * '"', or "@". </p> </li> </ul> <p>For more information, see <a
+     * href="http://redis.io/commands/AUTH">AUTH password</a> at Redis.</p>
+     */
+    inline CreateCacheClusterRequest& WithAuthToken(Aws::String&& value) { SetAuthToken(value); return *this;}
+
+    /**
+     * <p>The password used to access a password protected server.</p> <p>Password
+     * constraints:</p> <ul> <li> <p>Must be only printable ASCII characters.</p> </li>
+     * <li> <p>Must be at least 16 characters and no more than 128 characters in
+     * length.</p> </li> <li> <p>Cannot contain any of the following characters: '/',
+     * '"', or "@". </p> </li> </ul> <p>For more information, see <a
+     * href="http://redis.io/commands/AUTH">AUTH password</a> at Redis.</p>
+     */
+    inline CreateCacheClusterRequest& WithAuthToken(const char* value) { SetAuthToken(value); return *this;}
+
   private:
     Aws::String m_cacheClusterId;
     bool m_cacheClusterIdHasBeenSet;
@@ -1589,6 +1659,8 @@ namespace Model
     bool m_snapshotRetentionLimitHasBeenSet;
     Aws::String m_snapshotWindow;
     bool m_snapshotWindowHasBeenSet;
+    Aws::String m_authToken;
+    bool m_authTokenHasBeenSet;
   };
 
 } // namespace Model

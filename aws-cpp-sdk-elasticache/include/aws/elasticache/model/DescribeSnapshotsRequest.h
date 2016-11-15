@@ -304,19 +304,19 @@ namespace Model
     inline DescribeSnapshotsRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
 
     /**
-     * <p>A boolean value which if true, the node group (shard) configuration is
+     * <p>A Boolean value which if true, the node group (shard) configuration is
      * included in the snapshot description.</p>
      */
     inline bool GetShowNodeGroupConfig() const{ return m_showNodeGroupConfig; }
 
     /**
-     * <p>A boolean value which if true, the node group (shard) configuration is
+     * <p>A Boolean value which if true, the node group (shard) configuration is
      * included in the snapshot description.</p>
      */
     inline void SetShowNodeGroupConfig(bool value) { m_showNodeGroupConfigHasBeenSet = true; m_showNodeGroupConfig = value; }
 
     /**
-     * <p>A boolean value which if true, the node group (shard) configuration is
+     * <p>A Boolean value which if true, the node group (shard) configuration is
      * included in the snapshot description.</p>
      */
     inline DescribeSnapshotsRequest& WithShowNodeGroupConfig(bool value) { SetShowNodeGroupConfig(value); return *this;}

@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/servicecatalog/ServiceCatalog_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/servicecatalog/model/ProductType.h>
 
 namespace Aws
 {
@@ -227,43 +228,31 @@ namespace Model
      * <p>The product type. Contact the product administrator for the significance of
      * this value.</p>
      */
-    inline const Aws::String& GetType() const{ return m_type; }
+    inline const ProductType& GetType() const{ return m_type; }
 
     /**
      * <p>The product type. Contact the product administrator for the significance of
      * this value.</p>
      */
-    inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetType(const ProductType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
      * <p>The product type. Contact the product administrator for the significance of
      * this value.</p>
      */
-    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetType(ProductType&& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
      * <p>The product type. Contact the product administrator for the significance of
      * this value.</p>
      */
-    inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
+    inline ProductViewSummary& WithType(const ProductType& value) { SetType(value); return *this;}
 
     /**
      * <p>The product type. Contact the product administrator for the significance of
      * this value.</p>
      */
-    inline ProductViewSummary& WithType(const Aws::String& value) { SetType(value); return *this;}
-
-    /**
-     * <p>The product type. Contact the product administrator for the significance of
-     * this value.</p>
-     */
-    inline ProductViewSummary& WithType(Aws::String&& value) { SetType(value); return *this;}
-
-    /**
-     * <p>The product type. Contact the product administrator for the significance of
-     * this value.</p>
-     */
-    inline ProductViewSummary& WithType(const char* value) { SetType(value); return *this;}
+    inline ProductViewSummary& WithType(ProductType&& value) { SetType(value); return *this;}
 
     /**
      * <p>The distributor of the product. Contact the product administrator for the
@@ -453,7 +442,7 @@ namespace Model
     bool m_ownerHasBeenSet;
     Aws::String m_shortDescription;
     bool m_shortDescriptionHasBeenSet;
-    Aws::String m_type;
+    ProductType m_type;
     bool m_typeHasBeenSet;
     Aws::String m_distributor;
     bool m_distributorHasBeenSet;

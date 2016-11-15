@@ -51,7 +51,8 @@ CreateReplicationGroupRequest::CreateReplicationGroupRequest() :
     m_autoMinorVersionUpgradeHasBeenSet(false),
     m_snapshotRetentionLimit(0),
     m_snapshotRetentionLimitHasBeenSet(false),
-    m_snapshotWindowHasBeenSet(false)
+    m_snapshotWindowHasBeenSet(false),
+    m_authTokenHasBeenSet(false)
 {
 }
 
@@ -216,6 +217,11 @@ Aws::String CreateReplicationGroupRequest::SerializePayload() const
   if(m_snapshotWindowHasBeenSet)
   {
     ss << "SnapshotWindow=" << StringUtils::URLEncode(m_snapshotWindow.c_str()) << "&";
+  }
+
+  if(m_authTokenHasBeenSet)
+  {
+    ss << "AuthToken=" << StringUtils::URLEncode(m_authToken.c_str()) << "&";
   }
 
   ss << "Version=2015-02-02";

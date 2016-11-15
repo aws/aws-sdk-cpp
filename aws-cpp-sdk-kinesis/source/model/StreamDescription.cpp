@@ -37,6 +37,7 @@ StreamDescription::StreamDescription() :
     m_hasMoreShardsHasBeenSet(false),
     m_retentionPeriodHours(0),
     m_retentionPeriodHoursHasBeenSet(false),
+    m_streamCreationTimestampHasBeenSet(false),
     m_enhancedMonitoringHasBeenSet(false)
 {
 }
@@ -51,6 +52,7 @@ StreamDescription::StreamDescription(const JsonValue& jsonValue) :
     m_hasMoreShardsHasBeenSet(false),
     m_retentionPeriodHours(0),
     m_retentionPeriodHoursHasBeenSet(false),
+    m_streamCreationTimestampHasBeenSet(false),
     m_enhancedMonitoringHasBeenSet(false)
 {
   *this = jsonValue;
@@ -101,6 +103,13 @@ StreamDescription& StreamDescription::operator =(const JsonValue& jsonValue)
     m_retentionPeriodHours = jsonValue.GetInteger("RetentionPeriodHours");
 
     m_retentionPeriodHoursHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("StreamCreationTimestamp"))
+  {
+    m_streamCreationTimestamp = jsonValue.GetDouble("StreamCreationTimestamp");
+
+    m_streamCreationTimestampHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("EnhancedMonitoring"))
@@ -158,6 +167,11 @@ JsonValue StreamDescription::Jsonize() const
   {
    payload.WithInteger("RetentionPeriodHours", m_retentionPeriodHours);
 
+  }
+
+  if(m_streamCreationTimestampHasBeenSet)
+  {
+   payload.WithDouble("StreamCreationTimestamp", m_streamCreationTimestamp.SecondsWithMSPrecision());
   }
 
   if(m_enhancedMonitoringHasBeenSet)

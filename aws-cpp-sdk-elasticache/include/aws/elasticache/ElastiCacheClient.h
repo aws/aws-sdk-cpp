@@ -668,7 +668,7 @@ namespace Model
          * groups (shards).</p> <p>When a Redis (cluster mode disabled) replication group
          * has been successfully created, you can add one or more read replicas to it, up
          * to a total of 5 read replicas. You cannot alter a Redis (cluster mode enabled)
-         * replication group once it has been created.</p> <note> <p>This operation is
+         * replication group after it has been created.</p> <note> <p>This operation is
          * valid for Redis only.</p> </note>
          */
         virtual Model::CreateReplicationGroupOutcome CreateReplicationGroup(const Model::CreateReplicationGroupRequest& request) const;
@@ -686,7 +686,7 @@ namespace Model
          * groups (shards).</p> <p>When a Redis (cluster mode disabled) replication group
          * has been successfully created, you can add one or more read replicas to it, up
          * to a total of 5 read replicas. You cannot alter a Redis (cluster mode enabled)
-         * replication group once it has been created.</p> <note> <p>This operation is
+         * replication group after it has been created.</p> <note> <p>This operation is
          * valid for Redis only.</p> </note>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -706,7 +706,7 @@ namespace Model
          * groups (shards).</p> <p>When a Redis (cluster mode disabled) replication group
          * has been successfully created, you can add one or more read replicas to it, up
          * to a total of 5 read replicas. You cannot alter a Redis (cluster mode enabled)
-         * replication group once it has been created.</p> <note> <p>This operation is
+         * replication group after it has been created.</p> <note> <p>This operation is
          * valid for Redis only.</p> </note>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.

@@ -110,80 +110,85 @@ namespace Model
     /**
      * <p>Determines how the shard iterator is used to start reading data records from
      * the shard.</p> <p>The following are the valid Amazon Kinesis shard iterator
-     * types:</p> <ul> <li>AT_SEQUENCE_NUMBER - Start reading from the position denoted
-     * by a specific sequence number, provided in the value
-     * <code>StartingSequenceNumber</code>.</li> <li>AFTER_SEQUENCE_NUMBER - Start
-     * reading right after the position denoted by a specific sequence number, provided
-     * in the value <code>StartingSequenceNumber</code>.</li> <li>AT_TIMESTAMP - Start
-     * reading from the position denoted by a specific timestamp, provided in the value
-     * <code>Timestamp</code>.</li> <li>TRIM_HORIZON - Start reading at the last
-     * untrimmed record in the shard in the system, which is the oldest data record in
-     * the shard.</li> <li>LATEST - Start reading just after the most recent record in
-     * the shard, so that you always read the most recent data in the shard.</li> </ul>
+     * types:</p> <ul> <li><p>AT_SEQUENCE_NUMBER - Start reading from the position
+     * denoted by a specific sequence number, provided in the value
+     * <code>StartingSequenceNumber</code>.</p> </li> <li><p>AFTER_SEQUENCE_NUMBER -
+     * Start reading right after the position denoted by a specific sequence number,
+     * provided in the value <code>StartingSequenceNumber</code>.</p> </li>
+     * <li><p>AT_TIMESTAMP - Start reading from the position denoted by a specific
+     * timestamp, provided in the value <code>Timestamp</code>.</p> </li>
+     * <li><p>TRIM_HORIZON - Start reading at the last untrimmed record in the shard in
+     * the system, which is the oldest data record in the shard.</p> </li>
+     * <li><p>LATEST - Start reading just after the most recent record in the shard, so
+     * that you always read the most recent data in the shard.</p> </li> </ul>
      */
     inline const ShardIteratorType& GetShardIteratorType() const{ return m_shardIteratorType; }
 
     /**
      * <p>Determines how the shard iterator is used to start reading data records from
      * the shard.</p> <p>The following are the valid Amazon Kinesis shard iterator
-     * types:</p> <ul> <li>AT_SEQUENCE_NUMBER - Start reading from the position denoted
-     * by a specific sequence number, provided in the value
-     * <code>StartingSequenceNumber</code>.</li> <li>AFTER_SEQUENCE_NUMBER - Start
-     * reading right after the position denoted by a specific sequence number, provided
-     * in the value <code>StartingSequenceNumber</code>.</li> <li>AT_TIMESTAMP - Start
-     * reading from the position denoted by a specific timestamp, provided in the value
-     * <code>Timestamp</code>.</li> <li>TRIM_HORIZON - Start reading at the last
-     * untrimmed record in the shard in the system, which is the oldest data record in
-     * the shard.</li> <li>LATEST - Start reading just after the most recent record in
-     * the shard, so that you always read the most recent data in the shard.</li> </ul>
+     * types:</p> <ul> <li><p>AT_SEQUENCE_NUMBER - Start reading from the position
+     * denoted by a specific sequence number, provided in the value
+     * <code>StartingSequenceNumber</code>.</p> </li> <li><p>AFTER_SEQUENCE_NUMBER -
+     * Start reading right after the position denoted by a specific sequence number,
+     * provided in the value <code>StartingSequenceNumber</code>.</p> </li>
+     * <li><p>AT_TIMESTAMP - Start reading from the position denoted by a specific
+     * timestamp, provided in the value <code>Timestamp</code>.</p> </li>
+     * <li><p>TRIM_HORIZON - Start reading at the last untrimmed record in the shard in
+     * the system, which is the oldest data record in the shard.</p> </li>
+     * <li><p>LATEST - Start reading just after the most recent record in the shard, so
+     * that you always read the most recent data in the shard.</p> </li> </ul>
      */
     inline void SetShardIteratorType(const ShardIteratorType& value) { m_shardIteratorTypeHasBeenSet = true; m_shardIteratorType = value; }
 
     /**
      * <p>Determines how the shard iterator is used to start reading data records from
      * the shard.</p> <p>The following are the valid Amazon Kinesis shard iterator
-     * types:</p> <ul> <li>AT_SEQUENCE_NUMBER - Start reading from the position denoted
-     * by a specific sequence number, provided in the value
-     * <code>StartingSequenceNumber</code>.</li> <li>AFTER_SEQUENCE_NUMBER - Start
-     * reading right after the position denoted by a specific sequence number, provided
-     * in the value <code>StartingSequenceNumber</code>.</li> <li>AT_TIMESTAMP - Start
-     * reading from the position denoted by a specific timestamp, provided in the value
-     * <code>Timestamp</code>.</li> <li>TRIM_HORIZON - Start reading at the last
-     * untrimmed record in the shard in the system, which is the oldest data record in
-     * the shard.</li> <li>LATEST - Start reading just after the most recent record in
-     * the shard, so that you always read the most recent data in the shard.</li> </ul>
+     * types:</p> <ul> <li><p>AT_SEQUENCE_NUMBER - Start reading from the position
+     * denoted by a specific sequence number, provided in the value
+     * <code>StartingSequenceNumber</code>.</p> </li> <li><p>AFTER_SEQUENCE_NUMBER -
+     * Start reading right after the position denoted by a specific sequence number,
+     * provided in the value <code>StartingSequenceNumber</code>.</p> </li>
+     * <li><p>AT_TIMESTAMP - Start reading from the position denoted by a specific
+     * timestamp, provided in the value <code>Timestamp</code>.</p> </li>
+     * <li><p>TRIM_HORIZON - Start reading at the last untrimmed record in the shard in
+     * the system, which is the oldest data record in the shard.</p> </li>
+     * <li><p>LATEST - Start reading just after the most recent record in the shard, so
+     * that you always read the most recent data in the shard.</p> </li> </ul>
      */
     inline void SetShardIteratorType(ShardIteratorType&& value) { m_shardIteratorTypeHasBeenSet = true; m_shardIteratorType = value; }
 
     /**
      * <p>Determines how the shard iterator is used to start reading data records from
      * the shard.</p> <p>The following are the valid Amazon Kinesis shard iterator
-     * types:</p> <ul> <li>AT_SEQUENCE_NUMBER - Start reading from the position denoted
-     * by a specific sequence number, provided in the value
-     * <code>StartingSequenceNumber</code>.</li> <li>AFTER_SEQUENCE_NUMBER - Start
-     * reading right after the position denoted by a specific sequence number, provided
-     * in the value <code>StartingSequenceNumber</code>.</li> <li>AT_TIMESTAMP - Start
-     * reading from the position denoted by a specific timestamp, provided in the value
-     * <code>Timestamp</code>.</li> <li>TRIM_HORIZON - Start reading at the last
-     * untrimmed record in the shard in the system, which is the oldest data record in
-     * the shard.</li> <li>LATEST - Start reading just after the most recent record in
-     * the shard, so that you always read the most recent data in the shard.</li> </ul>
+     * types:</p> <ul> <li><p>AT_SEQUENCE_NUMBER - Start reading from the position
+     * denoted by a specific sequence number, provided in the value
+     * <code>StartingSequenceNumber</code>.</p> </li> <li><p>AFTER_SEQUENCE_NUMBER -
+     * Start reading right after the position denoted by a specific sequence number,
+     * provided in the value <code>StartingSequenceNumber</code>.</p> </li>
+     * <li><p>AT_TIMESTAMP - Start reading from the position denoted by a specific
+     * timestamp, provided in the value <code>Timestamp</code>.</p> </li>
+     * <li><p>TRIM_HORIZON - Start reading at the last untrimmed record in the shard in
+     * the system, which is the oldest data record in the shard.</p> </li>
+     * <li><p>LATEST - Start reading just after the most recent record in the shard, so
+     * that you always read the most recent data in the shard.</p> </li> </ul>
      */
     inline GetShardIteratorRequest& WithShardIteratorType(const ShardIteratorType& value) { SetShardIteratorType(value); return *this;}
 
     /**
      * <p>Determines how the shard iterator is used to start reading data records from
      * the shard.</p> <p>The following are the valid Amazon Kinesis shard iterator
-     * types:</p> <ul> <li>AT_SEQUENCE_NUMBER - Start reading from the position denoted
-     * by a specific sequence number, provided in the value
-     * <code>StartingSequenceNumber</code>.</li> <li>AFTER_SEQUENCE_NUMBER - Start
-     * reading right after the position denoted by a specific sequence number, provided
-     * in the value <code>StartingSequenceNumber</code>.</li> <li>AT_TIMESTAMP - Start
-     * reading from the position denoted by a specific timestamp, provided in the value
-     * <code>Timestamp</code>.</li> <li>TRIM_HORIZON - Start reading at the last
-     * untrimmed record in the shard in the system, which is the oldest data record in
-     * the shard.</li> <li>LATEST - Start reading just after the most recent record in
-     * the shard, so that you always read the most recent data in the shard.</li> </ul>
+     * types:</p> <ul> <li><p>AT_SEQUENCE_NUMBER - Start reading from the position
+     * denoted by a specific sequence number, provided in the value
+     * <code>StartingSequenceNumber</code>.</p> </li> <li><p>AFTER_SEQUENCE_NUMBER -
+     * Start reading right after the position denoted by a specific sequence number,
+     * provided in the value <code>StartingSequenceNumber</code>.</p> </li>
+     * <li><p>AT_TIMESTAMP - Start reading from the position denoted by a specific
+     * timestamp, provided in the value <code>Timestamp</code>.</p> </li>
+     * <li><p>TRIM_HORIZON - Start reading at the last untrimmed record in the shard in
+     * the system, which is the oldest data record in the shard.</p> </li>
+     * <li><p>LATEST - Start reading just after the most recent record in the shard, so
+     * that you always read the most recent data in the shard.</p> </li> </ul>
      */
     inline GetShardIteratorRequest& WithShardIteratorType(ShardIteratorType&& value) { SetShardIteratorType(value); return *this;}
 

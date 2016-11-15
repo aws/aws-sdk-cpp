@@ -75,7 +75,7 @@ namespace Model
      * <p>The data blob to put into the record, which is base64-encoded when the blob
      * is serialized. When the data blob (the payload before base64-encoding) is added
      * to the partition key size, the total size must not exceed the maximum record
-     * size (1 MB). </p>
+     * size (1 MB).</p>
      */
     inline const Aws::Utils::ByteBuffer& GetData() const{ return m_data; }
 
@@ -83,7 +83,7 @@ namespace Model
      * <p>The data blob to put into the record, which is base64-encoded when the blob
      * is serialized. When the data blob (the payload before base64-encoding) is added
      * to the partition key size, the total size must not exceed the maximum record
-     * size (1 MB). </p>
+     * size (1 MB).</p>
      */
     inline void SetData(const Aws::Utils::ByteBuffer& value) { m_dataHasBeenSet = true; m_data = value; }
 
@@ -91,7 +91,7 @@ namespace Model
      * <p>The data blob to put into the record, which is base64-encoded when the blob
      * is serialized. When the data blob (the payload before base64-encoding) is added
      * to the partition key size, the total size must not exceed the maximum record
-     * size (1 MB). </p>
+     * size (1 MB).</p>
      */
     inline void SetData(Aws::Utils::ByteBuffer&& value) { m_dataHasBeenSet = true; m_data = value; }
 
@@ -99,7 +99,7 @@ namespace Model
      * <p>The data blob to put into the record, which is base64-encoded when the blob
      * is serialized. When the data blob (the payload before base64-encoding) is added
      * to the partition key size, the total size must not exceed the maximum record
-     * size (1 MB). </p>
+     * size (1 MB).</p>
      */
     inline PutRecordRequest& WithData(const Aws::Utils::ByteBuffer& value) { SetData(value); return *this;}
 
@@ -107,7 +107,7 @@ namespace Model
      * <p>The data blob to put into the record, which is base64-encoded when the blob
      * is serialized. When the data blob (the payload before base64-encoding) is added
      * to the partition key size, the total size must not exceed the maximum record
-     * size (1 MB). </p>
+     * size (1 MB).</p>
      */
     inline PutRecordRequest& WithData(Aws::Utils::ByteBuffer&& value) { SetData(value); return *this;}
 

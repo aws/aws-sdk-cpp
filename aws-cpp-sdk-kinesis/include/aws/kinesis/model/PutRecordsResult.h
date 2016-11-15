@@ -34,7 +34,7 @@ namespace Kinesis
 namespace Model
 {
   /**
-   * <p><code>PutRecords</code> results.</p>
+   * <p> <code>PutRecords</code> results.</p>
    */
   class AWS_KINESIS_API PutRecordsResult
   {

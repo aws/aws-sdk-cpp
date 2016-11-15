@@ -44,36 +44,31 @@ namespace Model
 
     /**
      * <p>The current status of the stream, the stream ARN, an array of shard objects
-     * that comprise the stream, and states whether there are more shards
-     * available.</p>
+     * that comprise the stream, and whether there are more shards available.</p>
      */
     inline const StreamDescription& GetStreamDescription() const{ return m_streamDescription; }
 
     /**
      * <p>The current status of the stream, the stream ARN, an array of shard objects
-     * that comprise the stream, and states whether there are more shards
-     * available.</p>
+     * that comprise the stream, and whether there are more shards available.</p>
      */
     inline void SetStreamDescription(const StreamDescription& value) { m_streamDescription = value; }
 
     /**
      * <p>The current status of the stream, the stream ARN, an array of shard objects
-     * that comprise the stream, and states whether there are more shards
-     * available.</p>
+     * that comprise the stream, and whether there are more shards available.</p>
      */
     inline void SetStreamDescription(StreamDescription&& value) { m_streamDescription = value; }
 
     /**
      * <p>The current status of the stream, the stream ARN, an array of shard objects
-     * that comprise the stream, and states whether there are more shards
-     * available.</p>
+     * that comprise the stream, and whether there are more shards available.</p>
      */
     inline DescribeStreamResult& WithStreamDescription(const StreamDescription& value) { SetStreamDescription(value); return *this;}
 
     /**
      * <p>The current status of the stream, the stream ARN, an array of shard objects
-     * that comprise the stream, and states whether there are more shards
-     * available.</p>
+     * that comprise the stream, and whether there are more shards available.</p>
      */
     inline DescribeStreamResult& WithStreamDescription(StreamDescription&& value) { SetStreamDescription(value); return *this;}
 
