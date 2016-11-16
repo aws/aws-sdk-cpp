@@ -712,6 +712,7 @@ namespace
         ASSERT_EQ(kmsClient->m_decryptCalledCount, 1u);
     }
 
+#ifdef _DEBUG
     TEST_F(CryptoModulesTest, StrictAERangeGet)
     {
         SimpleEncryptionMaterials materials(Aws::Utils::Crypto::SymmetricCipher::GenerateKey());
@@ -826,6 +827,7 @@ namespace
         auto getObjectFunction = [&s3Client](Aws::S3::Model::GetObjectRequest getRequest) -> Aws::S3::Model::GetObjectOutcome { return s3Client.GetObject(getRequest); };
         ASSERT_DEATH({ decryptionModule->GetObjectSecurely(getRequest, headOutcome.GetResult(), contentCryptoMaterial, getObjectFunction); }, ASSERTION_FAILED);
     }
+#endif // _DEBUG
 #endif
 
     TEST_F(CryptoModulesTest, RangeParserSuccess)
