@@ -252,11 +252,6 @@ bool AWSAuthV4Signer::PresignRequest(Aws::Http::HttpRequest& request, long long 
     intConversionStream << expirationTimeInSeconds;
     request.AddQueryStringParameter(Http::X_AMZ_EXPIRES_HEADER, intConversionStream.str());   
 
-    if (!credentials.GetSessionToken().empty())
-    {
-        request.AddQueryStringParameter(Http::AWS_SECURITY_TOKEN, credentials.GetSessionToken());       
-    }
-
     //calculate date header to use in internal signature (this also goes into date header).
     DateTime now = GetSigningTimestamp();
     Aws::String dateQueryValue = now.ToGmtString(LONG_DATE_FORMAT_STR);
@@ -315,6 +310,11 @@ bool AWSAuthV4Signer::PresignRequest(Aws::Http::HttpRequest& request, long long 
 
     //add that the signature to the query string    
     request.AddQueryStringParameter(X_AMZ_SIGNATURE, finalSigningHash);
+
+    if (!credentials.GetSessionToken().empty())
+    {
+        request.AddQueryStringParameter(Http::AWS_SECURITY_TOKEN, credentials.GetSessionToken());
+    }
 
     return true;
 }
