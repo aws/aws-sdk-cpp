@@ -142,27 +142,27 @@ namespace Model
     inline RecordDetail& WithStatus(RecordStatus&& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The UTC timestamp of the creation time.</p>
+     * <p>The time when the record for the ProvisionedProduct object was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedTime() const{ return m_createdTime; }
 
     /**
-     * <p>The UTC timestamp of the creation time.</p>
+     * <p>The time when the record for the ProvisionedProduct object was created.</p>
      */
     inline void SetCreatedTime(const Aws::Utils::DateTime& value) { m_createdTimeHasBeenSet = true; m_createdTime = value; }
 
     /**
-     * <p>The UTC timestamp of the creation time.</p>
+     * <p>The time when the record for the ProvisionedProduct object was created.</p>
      */
     inline void SetCreatedTime(Aws::Utils::DateTime&& value) { m_createdTimeHasBeenSet = true; m_createdTime = value; }
 
     /**
-     * <p>The UTC timestamp of the creation time.</p>
+     * <p>The time when the record for the ProvisionedProduct object was created.</p>
      */
     inline RecordDetail& WithCreatedTime(const Aws::Utils::DateTime& value) { SetCreatedTime(value); return *this;}
 
     /**
-     * <p>The UTC timestamp of the creation time.</p>
+     * <p>The time when the record for the ProvisionedProduct object was created.</p>
      */
     inline RecordDetail& WithCreatedTime(Aws::Utils::DateTime&& value) { SetCreatedTime(value); return *this;}
 
@@ -302,37 +302,37 @@ namespace Model
     inline RecordDetail& WithProvisionedProductId(const char* value) { SetProvisionedProductId(value); return *this;}
 
     /**
-     * <p>The product identifier.</p>
+     * <p>The identifier of the product.</p>
      */
     inline const Aws::String& GetProductId() const{ return m_productId; }
 
     /**
-     * <p>The product identifier.</p>
+     * <p>The identifier of the product.</p>
      */
     inline void SetProductId(const Aws::String& value) { m_productIdHasBeenSet = true; m_productId = value; }
 
     /**
-     * <p>The product identifier.</p>
+     * <p>The identifier of the product.</p>
      */
     inline void SetProductId(Aws::String&& value) { m_productIdHasBeenSet = true; m_productId = value; }
 
     /**
-     * <p>The product identifier.</p>
+     * <p>The identifier of the product.</p>
      */
     inline void SetProductId(const char* value) { m_productIdHasBeenSet = true; m_productId.assign(value); }
 
     /**
-     * <p>The product identifier.</p>
+     * <p>The identifier of the product.</p>
      */
     inline RecordDetail& WithProductId(const Aws::String& value) { SetProductId(value); return *this;}
 
     /**
-     * <p>The product identifier.</p>
+     * <p>The identifier of the product.</p>
      */
     inline RecordDetail& WithProductId(Aws::String&& value) { SetProductId(value); return *this;}
 
     /**
-     * <p>The product identifier.</p>
+     * <p>The identifier of the product.</p>
      */
     inline RecordDetail& WithProductId(const char* value) { SetProductId(value); return *this;}
 

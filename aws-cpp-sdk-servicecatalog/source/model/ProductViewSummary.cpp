@@ -33,7 +33,6 @@ ProductViewSummary::ProductViewSummary() :
     m_nameHasBeenSet(false),
     m_ownerHasBeenSet(false),
     m_shortDescriptionHasBeenSet(false),
-    m_type(ProductType::NOT_SET),
     m_typeHasBeenSet(false),
     m_distributorHasBeenSet(false),
     m_hasDefaultPath(false),
@@ -50,7 +49,6 @@ ProductViewSummary::ProductViewSummary(const JsonValue& jsonValue) :
     m_nameHasBeenSet(false),
     m_ownerHasBeenSet(false),
     m_shortDescriptionHasBeenSet(false),
-    m_type(ProductType::NOT_SET),
     m_typeHasBeenSet(false),
     m_distributorHasBeenSet(false),
     m_hasDefaultPath(false),
@@ -101,7 +99,7 @@ ProductViewSummary& ProductViewSummary::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Type"))
   {
-    m_type = ProductTypeMapper::GetProductTypeForName(jsonValue.GetString("Type"));
+    m_type = jsonValue.GetString("Type");
 
     m_typeHasBeenSet = true;
   }
@@ -180,7 +178,8 @@ JsonValue ProductViewSummary::Jsonize() const
 
   if(m_typeHasBeenSet)
   {
-   payload.WithString("Type", ProductTypeMapper::GetNameForProductType(m_type));
+   payload.WithString("Type", m_type);
+
   }
 
   if(m_distributorHasBeenSet)

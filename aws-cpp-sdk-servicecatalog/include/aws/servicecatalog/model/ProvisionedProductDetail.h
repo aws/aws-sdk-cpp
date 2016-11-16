@@ -244,76 +244,62 @@ namespace Model
     inline ProvisionedProductDetail& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
 
     /**
-     * <p>The UTC timestamp of the creation time.</p>
+     * <p>The time the ProvisionedProduct was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedTime() const{ return m_createdTime; }
 
     /**
-     * <p>The UTC timestamp of the creation time.</p>
+     * <p>The time the ProvisionedProduct was created.</p>
      */
     inline void SetCreatedTime(const Aws::Utils::DateTime& value) { m_createdTimeHasBeenSet = true; m_createdTime = value; }
 
     /**
-     * <p>The UTC timestamp of the creation time.</p>
+     * <p>The time the ProvisionedProduct was created.</p>
      */
     inline void SetCreatedTime(Aws::Utils::DateTime&& value) { m_createdTimeHasBeenSet = true; m_createdTime = value; }
 
     /**
-     * <p>The UTC timestamp of the creation time.</p>
+     * <p>The time the ProvisionedProduct was created.</p>
      */
     inline ProvisionedProductDetail& WithCreatedTime(const Aws::Utils::DateTime& value) { SetCreatedTime(value); return *this;}
 
     /**
-     * <p>The UTC timestamp of the creation time.</p>
+     * <p>The time the ProvisionedProduct was created.</p>
      */
     inline ProvisionedProductDetail& WithCreatedTime(Aws::Utils::DateTime&& value) { SetCreatedTime(value); return *this;}
 
     /**
-     * <p>A token to disambiguate duplicate requests. You can create multiple resources
-     * using the same input in multiple requests, provided that you also specify a
-     * different idempotency token for each request.</p>
+     * <p>An idempotency token that uniquely identifies this ProvisionedProduct.</p>
      */
     inline const Aws::String& GetIdempotencyToken() const{ return m_idempotencyToken; }
 
     /**
-     * <p>A token to disambiguate duplicate requests. You can create multiple resources
-     * using the same input in multiple requests, provided that you also specify a
-     * different idempotency token for each request.</p>
+     * <p>An idempotency token that uniquely identifies this ProvisionedProduct.</p>
      */
     inline void SetIdempotencyToken(const Aws::String& value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken = value; }
 
     /**
-     * <p>A token to disambiguate duplicate requests. You can create multiple resources
-     * using the same input in multiple requests, provided that you also specify a
-     * different idempotency token for each request.</p>
+     * <p>An idempotency token that uniquely identifies this ProvisionedProduct.</p>
      */
     inline void SetIdempotencyToken(Aws::String&& value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken = value; }
 
     /**
-     * <p>A token to disambiguate duplicate requests. You can create multiple resources
-     * using the same input in multiple requests, provided that you also specify a
-     * different idempotency token for each request.</p>
+     * <p>An idempotency token that uniquely identifies this ProvisionedProduct.</p>
      */
     inline void SetIdempotencyToken(const char* value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken.assign(value); }
 
     /**
-     * <p>A token to disambiguate duplicate requests. You can create multiple resources
-     * using the same input in multiple requests, provided that you also specify a
-     * different idempotency token for each request.</p>
+     * <p>An idempotency token that uniquely identifies this ProvisionedProduct.</p>
      */
     inline ProvisionedProductDetail& WithIdempotencyToken(const Aws::String& value) { SetIdempotencyToken(value); return *this;}
 
     /**
-     * <p>A token to disambiguate duplicate requests. You can create multiple resources
-     * using the same input in multiple requests, provided that you also specify a
-     * different idempotency token for each request.</p>
+     * <p>An idempotency token that uniquely identifies this ProvisionedProduct.</p>
      */
     inline ProvisionedProductDetail& WithIdempotencyToken(Aws::String&& value) { SetIdempotencyToken(value); return *this;}
 
     /**
-     * <p>A token to disambiguate duplicate requests. You can create multiple resources
-     * using the same input in multiple requests, provided that you also specify a
-     * different idempotency token for each request.</p>
+     * <p>An idempotency token that uniquely identifies this ProvisionedProduct.</p>
      */
     inline ProvisionedProductDetail& WithIdempotencyToken(const char* value) { SetIdempotencyToken(value); return *this;}
 

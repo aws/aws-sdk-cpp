@@ -14,7 +14,6 @@
 */
 #include <aws/servicecatalog/model/ListLaunchPathsRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
@@ -34,6 +33,12 @@ ListLaunchPathsRequest::ListLaunchPathsRequest() :
 Aws::String ListLaunchPathsRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_acceptLanguageHasBeenSet)
+  {
+   payload.WithString("AcceptLanguage", m_acceptLanguage);
+
+  }
 
   if(m_productIdHasBeenSet)
   {
@@ -60,14 +65,6 @@ Aws::Http::HeaderValueCollection ListLaunchPathsRequest::GetRequestSpecificHeade
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWS242ServiceCatalogService.ListLaunchPaths"));
-  Aws::StringStream ss;
-  if(m_acceptLanguageHasBeenSet)
-  {
-    ss << m_acceptLanguage;
-    headers.insert(Aws::Http::HeaderValuePair("accept-language", ss.str()));
-    ss.str("");
-  }
-
   return headers;
 
 }
