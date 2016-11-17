@@ -34,9 +34,7 @@ endfunction(enable_unity_build)
 
 macro(setup_install)
     if(SIMPLE_INSTALL)
-        if(PLATFORM_LINUX)
-            configure_file("${CMAKE_SOURCE_DIR}/toolchains/pkg-config.pc.in" "${PROJECT_NAME}.pc" @ONLY)
-        endif()
+        configure_file("${CMAKE_SOURCE_DIR}/toolchains/pkg-config.pc.in" "${PROJECT_NAME}.pc" @ONLY)
 
         install( TARGETS ${PROJECT_NAME}
                 EXPORT "${PROJECT_NAME}-targets"
@@ -44,7 +42,7 @@ macro(setup_install)
                 LIBRARY DESTINATION ${LIBRARY_DIRECTORY}
                 RUNTIME DESTINATION ${BINARY_DIRECTORY} )
 
-        if (PLATFORM_LINUX AND BUILD_SHARED_LIBS)
+        if (BUILD_SHARED_LIBS)
             install(
                 FILES "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}.pc"
                 DESTINATION ${LIBRARY_DIRECTORY}/pkgconfig)
@@ -66,7 +64,7 @@ macro(do_packaging)
         install (FILES nuget/${PROJECT_NAME}.autopkg DESTINATION nuget)
     endif()
 
-    if(PLATFORM_LINUX AND SIMPLE_INSTALL)
+    if(SIMPLE_INSTALL)
         write_basic_package_version_file(
             "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}-config-version.cmake"
             VERSION ${PROJECT_VERSION}
