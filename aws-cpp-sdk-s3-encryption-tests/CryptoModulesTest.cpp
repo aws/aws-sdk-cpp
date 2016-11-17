@@ -155,7 +155,7 @@ namespace
                 return result;
             }
             m_metadata = request.GetMetadata();
-            m_requestContentLength = request.GetContentLength();
+            m_requestContentLength = static_cast< size_t >(request.GetContentLength());
 
             std::shared_ptr<Aws::IOStream> body = request.GetBody();
             Aws::String tempBodyString((Aws::IStreamBufIterator(*body)), Aws::IStreamBufIterator());
@@ -179,7 +179,7 @@ namespace
                 auto bytes = m_requestContentLength;
                 auto rangeBytes = CryptoModule::ParseGetObjectRequestRange(range, bytes);
                 responseStream.GetUnderlyingStream().write((const char*)bodyString.c_str() + rangeBytes.first, rangeBytes.second - rangeBytes.first + 1);
-                written = rangeBytes.second - rangeBytes.first;
+                written = static_cast< size_t >(rangeBytes.second - rangeBytes.first);
             }
             else
             {

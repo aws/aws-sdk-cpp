@@ -148,7 +148,7 @@ TEST_F(LiveClientTest, TestEOMode)
     getObjectResult = StandardClient->GetObject(getUnencryptedObjectRequest);
 
     EXPECT_TRUE(getObjectResult.IsSuccess());
-    ByteBuffer rawData(getObjectResult.GetResult().GetContentLength());
+    ByteBuffer rawData(static_cast< size_t >(getObjectResult.GetResult().GetContentLength()));
     memset(rawData.GetUnderlyingData(), 0, rawData.GetLength());
     getObjectResult.GetResult().GetBody().read((char*)rawData.GetUnderlyingData(), rawData.GetLength());
 
@@ -231,7 +231,7 @@ TEST_F(LiveClientTest, TestAEMode)
     EXPECT_TRUE(getObjectResult.IsSuccess());
     EXPECT_EQ((cryptoMaterial.GetCryptoTagLength() / 8) + sizeof(TEST_STRING) - 1, static_cast<size_t>(getObjectResult.GetResult().GetContentLength()));
 
-    ByteBuffer rawData(getObjectResult.GetResult().GetContentLength() - (cryptoMaterial.GetCryptoTagLength() / 8));
+    ByteBuffer rawData(static_cast< size_t >(getObjectResult.GetResult().GetContentLength()) - (cryptoMaterial.GetCryptoTagLength() / 8));
     memset(rawData.GetUnderlyingData(), 0, rawData.GetLength());
     getObjectResult.GetResult().GetBody().read((char*)rawData.GetUnderlyingData(), rawData.GetLength());
 
@@ -312,7 +312,7 @@ TEST_F(LiveClientTest, TestAEModeRangeGet)
     EXPECT_TRUE(getObjectResult.IsSuccess());
     EXPECT_EQ(sizeof(RANGE_GET_TEST_STRING) - 1, static_cast<size_t>(getObjectResult.GetResult().GetContentLength()));
 
-    ByteBuffer rawData(getObjectResult.GetResult().GetContentLength());
+    ByteBuffer rawData(static_cast< size_t >(getObjectResult.GetResult().GetContentLength()));
     memset(rawData.GetUnderlyingData(), 0, rawData.GetLength());
     getObjectResult.GetResult().GetBody().read((char*)rawData.GetUnderlyingData(), rawData.GetLength());
 
