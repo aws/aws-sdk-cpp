@@ -399,7 +399,7 @@ else()
     endif()
 endif()
 
-if(PLATFORM_LINUX AND SIMPLE_INSTALL)
+if(SIMPLE_INSTALL)
     configure_file("${CMAKE_SOURCE_DIR}/toolchains/pkg-config.pc.in" "${PROJECT_NAME}.pc" @ONLY)
 
     if(BUILD_SHARED_LIBS)

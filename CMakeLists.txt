@@ -69,6 +69,7 @@ SET(PYTHON_CMD "python")
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/cmake")
 
 include(resolve_platform)
+include(CMakePackageConfigHelpers)
 
 # use response files to prevent command-line-too-big errors for large libraries like iam
 SET(CMAKE_CXX_USE_RESPONSE_FILE_FOR_OBJECTS 1)
