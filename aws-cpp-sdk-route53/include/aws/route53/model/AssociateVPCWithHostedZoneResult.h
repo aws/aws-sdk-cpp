@@ -33,8 +33,8 @@ namespace Route53
 namespace Model
 {
   /**
-   * <p>A complex type that contains the response information for the hosted
-   * zone.</p>
+   * <p>A complex type that contains the response information for the
+   * <code>AssociateVPCWithHostedZone</code> request.</p>
    */
   class AWS_ROUTE53_API AssociateVPCWithHostedZoneResult
   {

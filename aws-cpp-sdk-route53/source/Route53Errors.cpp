@@ -30,6 +30,8 @@ namespace Route53ErrorMapper
 static const int NO_SUCH_TRAFFIC_POLICY_INSTANCE_HASH = HashingUtils::HashString("NoSuchTrafficPolicyInstance");
 static const int HEALTH_CHECK_VERSION_MISMATCH_HASH = HashingUtils::HashString("HealthCheckVersionMismatch");
 static const int HEALTH_CHECK_ALREADY_EXISTS_HASH = HashingUtils::HashString("HealthCheckAlreadyExists");
+static const int NOT_AUTHORIZED_HASH = HashingUtils::HashString("NotAuthorizedException");
+static const int TOO_MANY_V_P_C_ASSOCIATION_AUTHORIZATIONS_HASH = HashingUtils::HashString("TooManyVPCAssociationAuthorizations");
 static const int DELEGATION_SET_NOT_AVAILABLE_HASH = HashingUtils::HashString("DelegationSetNotAvailable");
 static const int LAST_V_P_C_ASSOCIATION_HASH = HashingUtils::HashString("LastVPCAssociation");
 static const int LIMITS_EXCEEDED_HASH = HashingUtils::HashString("LimitsExceeded");
@@ -43,6 +45,7 @@ static const int NO_SUCH_CHANGE_HASH = HashingUtils::HashString("NoSuchChange");
 static const int NO_SUCH_TRAFFIC_POLICY_HASH = HashingUtils::HashString("NoSuchTrafficPolicy");
 static const int PRIOR_REQUEST_NOT_COMPLETE_HASH = HashingUtils::HashString("PriorRequestNotComplete");
 static const int INVALID_TRAFFIC_POLICY_DOCUMENT_HASH = HashingUtils::HashString("InvalidTrafficPolicyDocument");
+static const int INVALID_PAGINATION_TOKEN_HASH = HashingUtils::HashString("InvalidPaginationToken");
 static const int TOO_MANY_TRAFFIC_POLICY_INSTANCES_HASH = HashingUtils::HashString("TooManyTrafficPolicyInstances");
 static const int TRAFFIC_POLICY_IN_USE_HASH = HashingUtils::HashString("TrafficPolicyInUse");
 static const int TOO_MANY_HEALTH_CHECKS_HASH = HashingUtils::HashString("TooManyHealthChecks");
@@ -59,6 +62,7 @@ static const int INVALID_V_P_C_ID_HASH = HashingUtils::HashString("InvalidVPCId"
 static const int DELEGATION_SET_NOT_REUSABLE_HASH = HashingUtils::HashString("DelegationSetNotReusable");
 static const int DELEGATION_SET_ALREADY_CREATED_HASH = HashingUtils::HashString("DelegationSetAlreadyCreated");
 static const int DELEGATION_SET_IN_USE_HASH = HashingUtils::HashString("DelegationSetInUse");
+static const int V_P_C_ASSOCIATION_AUTHORIZATION_NOT_FOUND_HASH = HashingUtils::HashString("VPCAssociationAuthorizationNotFound");
 static const int DELEGATION_SET_ALREADY_REUSABLE_HASH = HashingUtils::HashString("DelegationSetAlreadyReusable");
 static const int CONFLICTING_DOMAIN_EXISTS_HASH = HashingUtils::HashString("ConflictingDomainExists");
 static const int HOSTED_ZONE_ALREADY_EXISTS_HASH = HashingUtils::HashString("HostedZoneAlreadyExists");
@@ -84,6 +88,14 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == HEALTH_CHECK_ALREADY_EXISTS_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(Route53Errors::HEALTH_CHECK_ALREADY_EXISTS), false);
+  }
+  else if (hashCode == NOT_AUTHORIZED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(Route53Errors::NOT_AUTHORIZED), false);
+  }
+  else if (hashCode == TOO_MANY_V_P_C_ASSOCIATION_AUTHORIZATIONS_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(Route53Errors::TOO_MANY_V_P_C_ASSOCIATION_AUTHORIZATIONS), false);
   }
   else if (hashCode == DELEGATION_SET_NOT_AVAILABLE_HASH)
   {
@@ -136,6 +148,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INVALID_TRAFFIC_POLICY_DOCUMENT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(Route53Errors::INVALID_TRAFFIC_POLICY_DOCUMENT), false);
+  }
+  else if (hashCode == INVALID_PAGINATION_TOKEN_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(Route53Errors::INVALID_PAGINATION_TOKEN), false);
   }
   else if (hashCode == TOO_MANY_TRAFFIC_POLICY_INSTANCES_HASH)
   {
@@ -200,6 +216,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == DELEGATION_SET_IN_USE_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(Route53Errors::DELEGATION_SET_IN_USE), false);
+  }
+  else if (hashCode == V_P_C_ASSOCIATION_AUTHORIZATION_NOT_FOUND_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(Route53Errors::V_P_C_ASSOCIATION_AUTHORIZATION_NOT_FOUND), false);
   }
   else if (hashCode == DELEGATION_SET_ALREADY_REUSABLE_HASH)
   {

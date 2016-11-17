@@ -26,8 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>A complex type that contains information about the VPC and the hosted zone
-   * that you want to associate.</p>
+   * <p>A complex type that contains information about the request to associate a VPC
+   * with a private hosted zone.</p>
    */
   class AWS_ROUTE53_API AssociateVPCWithHostedZoneRequest : public Route53Request
   {
@@ -36,81 +36,81 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     /**
-     * <p>The ID of the hosted zone you want to associate your VPC with.</p> <p>Note
-     * that you cannot associate a VPC with a hosted zone that doesn't have an existing
-     * VPC association.</p>
+     * <p>The ID of the private hosted zone that you want to associate an Amazon VPC
+     * with.</p> <p>Note that you can't associate a VPC with a hosted zone that doesn't
+     * have an existing VPC association.</p>
      */
     inline const Aws::String& GetHostedZoneId() const{ return m_hostedZoneId; }
 
     /**
-     * <p>The ID of the hosted zone you want to associate your VPC with.</p> <p>Note
-     * that you cannot associate a VPC with a hosted zone that doesn't have an existing
-     * VPC association.</p>
+     * <p>The ID of the private hosted zone that you want to associate an Amazon VPC
+     * with.</p> <p>Note that you can't associate a VPC with a hosted zone that doesn't
+     * have an existing VPC association.</p>
      */
     inline void SetHostedZoneId(const Aws::String& value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId = value; }
 
     /**
-     * <p>The ID of the hosted zone you want to associate your VPC with.</p> <p>Note
-     * that you cannot associate a VPC with a hosted zone that doesn't have an existing
-     * VPC association.</p>
+     * <p>The ID of the private hosted zone that you want to associate an Amazon VPC
+     * with.</p> <p>Note that you can't associate a VPC with a hosted zone that doesn't
+     * have an existing VPC association.</p>
      */
     inline void SetHostedZoneId(Aws::String&& value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId = value; }
 
     /**
-     * <p>The ID of the hosted zone you want to associate your VPC with.</p> <p>Note
-     * that you cannot associate a VPC with a hosted zone that doesn't have an existing
-     * VPC association.</p>
+     * <p>The ID of the private hosted zone that you want to associate an Amazon VPC
+     * with.</p> <p>Note that you can't associate a VPC with a hosted zone that doesn't
+     * have an existing VPC association.</p>
      */
     inline void SetHostedZoneId(const char* value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId.assign(value); }
 
     /**
-     * <p>The ID of the hosted zone you want to associate your VPC with.</p> <p>Note
-     * that you cannot associate a VPC with a hosted zone that doesn't have an existing
-     * VPC association.</p>
+     * <p>The ID of the private hosted zone that you want to associate an Amazon VPC
+     * with.</p> <p>Note that you can't associate a VPC with a hosted zone that doesn't
+     * have an existing VPC association.</p>
      */
     inline AssociateVPCWithHostedZoneRequest& WithHostedZoneId(const Aws::String& value) { SetHostedZoneId(value); return *this;}
 
     /**
-     * <p>The ID of the hosted zone you want to associate your VPC with.</p> <p>Note
-     * that you cannot associate a VPC with a hosted zone that doesn't have an existing
-     * VPC association.</p>
+     * <p>The ID of the private hosted zone that you want to associate an Amazon VPC
+     * with.</p> <p>Note that you can't associate a VPC with a hosted zone that doesn't
+     * have an existing VPC association.</p>
      */
     inline AssociateVPCWithHostedZoneRequest& WithHostedZoneId(Aws::String&& value) { SetHostedZoneId(value); return *this;}
 
     /**
-     * <p>The ID of the hosted zone you want to associate your VPC with.</p> <p>Note
-     * that you cannot associate a VPC with a hosted zone that doesn't have an existing
-     * VPC association.</p>
+     * <p>The ID of the private hosted zone that you want to associate an Amazon VPC
+     * with.</p> <p>Note that you can't associate a VPC with a hosted zone that doesn't
+     * have an existing VPC association.</p>
      */
     inline AssociateVPCWithHostedZoneRequest& WithHostedZoneId(const char* value) { SetHostedZoneId(value); return *this;}
 
     /**
-     * <p>A complex type containing information about the Amazon VPC that you're
-     * associating with the specified hosted zone.</p>
+     * <p>A complex type that contains information about the VPC that you want to
+     * associate with a private hosted zone.</p>
      */
     inline const VPC& GetVPC() const{ return m_vPC; }
 
     /**
-     * <p>A complex type containing information about the Amazon VPC that you're
-     * associating with the specified hosted zone.</p>
+     * <p>A complex type that contains information about the VPC that you want to
+     * associate with a private hosted zone.</p>
      */
     inline void SetVPC(const VPC& value) { m_vPCHasBeenSet = true; m_vPC = value; }
 
     /**
-     * <p>A complex type containing information about the Amazon VPC that you're
-     * associating with the specified hosted zone.</p>
+     * <p>A complex type that contains information about the VPC that you want to
+     * associate with a private hosted zone.</p>
      */
     inline void SetVPC(VPC&& value) { m_vPCHasBeenSet = true; m_vPC = value; }
 
     /**
-     * <p>A complex type containing information about the Amazon VPC that you're
-     * associating with the specified hosted zone.</p>
+     * <p>A complex type that contains information about the VPC that you want to
+     * associate with a private hosted zone.</p>
      */
     inline AssociateVPCWithHostedZoneRequest& WithVPC(const VPC& value) { SetVPC(value); return *this;}
 
     /**
-     * <p>A complex type containing information about the Amazon VPC that you're
-     * associating with the specified hosted zone.</p>
+     * <p>A complex type that contains information about the VPC that you want to
+     * associate with a private hosted zone.</p>
      */
     inline AssociateVPCWithHostedZoneRequest& WithVPC(VPC&& value) { SetVPC(value); return *this;}
 

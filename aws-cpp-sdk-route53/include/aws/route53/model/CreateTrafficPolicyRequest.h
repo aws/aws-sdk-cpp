@@ -72,56 +72,56 @@ namespace Model
     /**
      * <p>The definition of this traffic policy in JSON format. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/api-policies-traffic-policy-document-format.html">Traffic
-     * Policy Document Format</a> in the <i>Amazon Route 53 API Reference</i>.</p>
+     * href="http://docs.aws.amazon.com/Route53/latest/APIReference/api-policies-traffic-policy-document-format.html">Traffic
+     * Policy Document Format</a>.</p>
      */
     inline const Aws::String& GetDocument() const{ return m_document; }
 
     /**
      * <p>The definition of this traffic policy in JSON format. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/api-policies-traffic-policy-document-format.html">Traffic
-     * Policy Document Format</a> in the <i>Amazon Route 53 API Reference</i>.</p>
+     * href="http://docs.aws.amazon.com/Route53/latest/APIReference/api-policies-traffic-policy-document-format.html">Traffic
+     * Policy Document Format</a>.</p>
      */
     inline void SetDocument(const Aws::String& value) { m_documentHasBeenSet = true; m_document = value; }
 
     /**
      * <p>The definition of this traffic policy in JSON format. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/api-policies-traffic-policy-document-format.html">Traffic
-     * Policy Document Format</a> in the <i>Amazon Route 53 API Reference</i>.</p>
+     * href="http://docs.aws.amazon.com/Route53/latest/APIReference/api-policies-traffic-policy-document-format.html">Traffic
+     * Policy Document Format</a>.</p>
      */
     inline void SetDocument(Aws::String&& value) { m_documentHasBeenSet = true; m_document = value; }
 
     /**
      * <p>The definition of this traffic policy in JSON format. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/api-policies-traffic-policy-document-format.html">Traffic
-     * Policy Document Format</a> in the <i>Amazon Route 53 API Reference</i>.</p>
+     * href="http://docs.aws.amazon.com/Route53/latest/APIReference/api-policies-traffic-policy-document-format.html">Traffic
+     * Policy Document Format</a>.</p>
      */
     inline void SetDocument(const char* value) { m_documentHasBeenSet = true; m_document.assign(value); }
 
     /**
      * <p>The definition of this traffic policy in JSON format. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/api-policies-traffic-policy-document-format.html">Traffic
-     * Policy Document Format</a> in the <i>Amazon Route 53 API Reference</i>.</p>
+     * href="http://docs.aws.amazon.com/Route53/latest/APIReference/api-policies-traffic-policy-document-format.html">Traffic
+     * Policy Document Format</a>.</p>
      */
     inline CreateTrafficPolicyRequest& WithDocument(const Aws::String& value) { SetDocument(value); return *this;}
 
     /**
      * <p>The definition of this traffic policy in JSON format. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/api-policies-traffic-policy-document-format.html">Traffic
-     * Policy Document Format</a> in the <i>Amazon Route 53 API Reference</i>.</p>
+     * href="http://docs.aws.amazon.com/Route53/latest/APIReference/api-policies-traffic-policy-document-format.html">Traffic
+     * Policy Document Format</a>.</p>
      */
     inline CreateTrafficPolicyRequest& WithDocument(Aws::String&& value) { SetDocument(value); return *this;}
 
     /**
      * <p>The definition of this traffic policy in JSON format. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/api-policies-traffic-policy-document-format.html">Traffic
-     * Policy Document Format</a> in the <i>Amazon Route 53 API Reference</i>.</p>
+     * href="http://docs.aws.amazon.com/Route53/latest/APIReference/api-policies-traffic-policy-document-format.html">Traffic
+     * Policy Document Format</a>.</p>
      */
     inline CreateTrafficPolicyRequest& WithDocument(const char* value) { SetDocument(value); return *this;}
 

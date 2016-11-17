@@ -14,7 +14,6 @@
 */
 #include <aws/servicecatalog/model/UpdateProductRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
@@ -40,6 +39,12 @@ UpdateProductRequest::UpdateProductRequest() :
 Aws::String UpdateProductRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_acceptLanguageHasBeenSet)
+  {
+   payload.WithString("AcceptLanguage", m_acceptLanguage);
+
+  }
 
   if(m_idHasBeenSet)
   {
@@ -118,14 +123,6 @@ Aws::Http::HeaderValueCollection UpdateProductRequest::GetRequestSpecificHeaders
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWS242ServiceCatalogService.UpdateProduct"));
-  Aws::StringStream ss;
-  if(m_acceptLanguageHasBeenSet)
-  {
-    ss << m_acceptLanguage;
-    headers.insert(Aws::Http::HeaderValuePair("accept-language", ss.str()));
-    ss.str("");
-  }
-
   return headers;
 
 }

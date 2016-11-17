@@ -32,8 +32,8 @@ namespace Model
 {
 
   /**
-   * <p>A complex type that contains information about the Amazon VPC that you're
-   * associating with the specified hosted zone.</p>
+   * <p>A complex type that contains information about an Amazon VPC that is
+   * associated with a private hosted zone.</p>
    */
   class AWS_ROUTE53_API VPC
   {

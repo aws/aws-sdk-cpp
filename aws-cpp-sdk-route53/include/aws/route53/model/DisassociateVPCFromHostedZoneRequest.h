@@ -26,8 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>A complex type that contains information about the VPC and the hosted zone
-   * that you want to disassociate.</p>
+   * <p>A complex type that contains information about the VPC that you want to
+   * disassociate from a specified private hosted zone.</p>
    */
   class AWS_ROUTE53_API DisassociateVPCFromHostedZoneRequest : public Route53Request
   {
@@ -36,73 +36,73 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     /**
-     * <p>The ID of the VPC that you want to disassociate from an Amazon Route 53
-     * hosted zone.</p>
+     * <p>The ID of the private hosted zone that you want to disassociate a VPC
+     * from.</p>
      */
     inline const Aws::String& GetHostedZoneId() const{ return m_hostedZoneId; }
 
     /**
-     * <p>The ID of the VPC that you want to disassociate from an Amazon Route 53
-     * hosted zone.</p>
+     * <p>The ID of the private hosted zone that you want to disassociate a VPC
+     * from.</p>
      */
     inline void SetHostedZoneId(const Aws::String& value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId = value; }
 
     /**
-     * <p>The ID of the VPC that you want to disassociate from an Amazon Route 53
-     * hosted zone.</p>
+     * <p>The ID of the private hosted zone that you want to disassociate a VPC
+     * from.</p>
      */
     inline void SetHostedZoneId(Aws::String&& value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId = value; }
 
     /**
-     * <p>The ID of the VPC that you want to disassociate from an Amazon Route 53
-     * hosted zone.</p>
+     * <p>The ID of the private hosted zone that you want to disassociate a VPC
+     * from.</p>
      */
     inline void SetHostedZoneId(const char* value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId.assign(value); }
 
     /**
-     * <p>The ID of the VPC that you want to disassociate from an Amazon Route 53
-     * hosted zone.</p>
+     * <p>The ID of the private hosted zone that you want to disassociate a VPC
+     * from.</p>
      */
     inline DisassociateVPCFromHostedZoneRequest& WithHostedZoneId(const Aws::String& value) { SetHostedZoneId(value); return *this;}
 
     /**
-     * <p>The ID of the VPC that you want to disassociate from an Amazon Route 53
-     * hosted zone.</p>
+     * <p>The ID of the private hosted zone that you want to disassociate a VPC
+     * from.</p>
      */
     inline DisassociateVPCFromHostedZoneRequest& WithHostedZoneId(Aws::String&& value) { SetHostedZoneId(value); return *this;}
 
     /**
-     * <p>The ID of the VPC that you want to disassociate from an Amazon Route 53
-     * hosted zone.</p>
+     * <p>The ID of the private hosted zone that you want to disassociate a VPC
+     * from.</p>
      */
     inline DisassociateVPCFromHostedZoneRequest& WithHostedZoneId(const char* value) { SetHostedZoneId(value); return *this;}
 
     /**
-     * <p>A complex type containing information about the Amazon VPC that you're
+     * <p>A complex type that contains information about the VPC that you're
      * disassociating from the specified hosted zone.</p>
      */
     inline const VPC& GetVPC() const{ return m_vPC; }
 
     /**
-     * <p>A complex type containing information about the Amazon VPC that you're
+     * <p>A complex type that contains information about the VPC that you're
      * disassociating from the specified hosted zone.</p>
      */
     inline void SetVPC(const VPC& value) { m_vPCHasBeenSet = true; m_vPC = value; }
 
     /**
-     * <p>A complex type containing information about the Amazon VPC that you're
+     * <p>A complex type that contains information about the VPC that you're
      * disassociating from the specified hosted zone.</p>
      */
     inline void SetVPC(VPC&& value) { m_vPCHasBeenSet = true; m_vPC = value; }
 
     /**
-     * <p>A complex type containing information about the Amazon VPC that you're
+     * <p>A complex type that contains information about the VPC that you're
      * disassociating from the specified hosted zone.</p>
      */
     inline DisassociateVPCFromHostedZoneRequest& WithVPC(const VPC& value) { SetVPC(value); return *this;}
 
     /**
-     * <p>A complex type containing information about the Amazon VPC that you're
+     * <p>A complex type that contains information about the VPC that you're
      * disassociating from the specified hosted zone.</p>
      */
     inline DisassociateVPCFromHostedZoneRequest& WithVPC(VPC&& value) { SetVPC(value); return *this;}

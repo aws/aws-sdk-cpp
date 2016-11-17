@@ -14,7 +14,6 @@
 */
 #include <aws/servicecatalog/model/SearchProductsAsAdminRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
@@ -41,6 +40,12 @@ SearchProductsAsAdminRequest::SearchProductsAsAdminRequest() :
 Aws::String SearchProductsAsAdminRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_acceptLanguageHasBeenSet)
+  {
+   payload.WithString("AcceptLanguage", m_acceptLanguage);
+
+  }
 
   if(m_portfolioIdHasBeenSet)
   {
@@ -98,14 +103,6 @@ Aws::Http::HeaderValueCollection SearchProductsAsAdminRequest::GetRequestSpecifi
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWS242ServiceCatalogService.SearchProductsAsAdmin"));
-  Aws::StringStream ss;
-  if(m_acceptLanguageHasBeenSet)
-  {
-    ss << m_acceptLanguage;
-    headers.insert(Aws::Http::HeaderValuePair("accept-language", ss.str()));
-    ss.str("");
-  }
-
   return headers;
 
 }

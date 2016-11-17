@@ -44,27 +44,32 @@ namespace Model
     DisassociateVPCFromHostedZoneResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
     /**
-     * <p>A complex type that describes the changes made to your hosted zone.</p>
+     * <p>A complex type that describes the changes made to the specified private
+     * hosted zone.</p>
      */
     inline const ChangeInfo& GetChangeInfo() const{ return m_changeInfo; }
 
     /**
-     * <p>A complex type that describes the changes made to your hosted zone.</p>
+     * <p>A complex type that describes the changes made to the specified private
+     * hosted zone.</p>
      */
     inline void SetChangeInfo(const ChangeInfo& value) { m_changeInfo = value; }
 
     /**
-     * <p>A complex type that describes the changes made to your hosted zone.</p>
+     * <p>A complex type that describes the changes made to the specified private
+     * hosted zone.</p>
      */
     inline void SetChangeInfo(ChangeInfo&& value) { m_changeInfo = value; }
 
     /**
-     * <p>A complex type that describes the changes made to your hosted zone.</p>
+     * <p>A complex type that describes the changes made to the specified private
+     * hosted zone.</p>
      */
     inline DisassociateVPCFromHostedZoneResult& WithChangeInfo(const ChangeInfo& value) { SetChangeInfo(value); return *this;}
 
     /**
-     * <p>A complex type that describes the changes made to your hosted zone.</p>
+     * <p>A complex type that describes the changes made to the specified private
+     * hosted zone.</p>
      */
     inline DisassociateVPCFromHostedZoneResult& WithChangeInfo(ChangeInfo&& value) { SetChangeInfo(value); return *this;}
 

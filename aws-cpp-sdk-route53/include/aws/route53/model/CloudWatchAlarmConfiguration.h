@@ -171,7 +171,7 @@ namespace Model
      * information, see <a
      * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html">Amazon
      * CloudWatch Namespaces, Dimensions, and Metrics Reference</a> in the <i>Amazon
-     * CloudWatch Developer Guide</i>.</p>
+     * CloudWatch User Guide</i>.</p>
      */
     inline const Aws::String& GetNamespace() const{ return m_namespace; }
 
@@ -180,7 +180,7 @@ namespace Model
      * information, see <a
      * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html">Amazon
      * CloudWatch Namespaces, Dimensions, and Metrics Reference</a> in the <i>Amazon
-     * CloudWatch Developer Guide</i>.</p>
+     * CloudWatch User Guide</i>.</p>
      */
     inline void SetNamespace(const Aws::String& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
 
@@ -189,7 +189,7 @@ namespace Model
      * information, see <a
      * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html">Amazon
      * CloudWatch Namespaces, Dimensions, and Metrics Reference</a> in the <i>Amazon
-     * CloudWatch Developer Guide</i>.</p>
+     * CloudWatch User Guide</i>.</p>
      */
     inline void SetNamespace(Aws::String&& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
 
@@ -198,7 +198,7 @@ namespace Model
      * information, see <a
      * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html">Amazon
      * CloudWatch Namespaces, Dimensions, and Metrics Reference</a> in the <i>Amazon
-     * CloudWatch Developer Guide</i>.</p>
+     * CloudWatch User Guide</i>.</p>
      */
     inline void SetNamespace(const char* value) { m_namespaceHasBeenSet = true; m_namespace.assign(value); }
 
@@ -207,7 +207,7 @@ namespace Model
      * information, see <a
      * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html">Amazon
      * CloudWatch Namespaces, Dimensions, and Metrics Reference</a> in the <i>Amazon
-     * CloudWatch Developer Guide</i>.</p>
+     * CloudWatch User Guide</i>.</p>
      */
     inline CloudWatchAlarmConfiguration& WithNamespace(const Aws::String& value) { SetNamespace(value); return *this;}
 
@@ -216,7 +216,7 @@ namespace Model
      * information, see <a
      * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html">Amazon
      * CloudWatch Namespaces, Dimensions, and Metrics Reference</a> in the <i>Amazon
-     * CloudWatch Developer Guide</i>.</p>
+     * CloudWatch User Guide</i>.</p>
      */
     inline CloudWatchAlarmConfiguration& WithNamespace(Aws::String&& value) { SetNamespace(value); return *this;}
 
@@ -225,7 +225,7 @@ namespace Model
      * information, see <a
      * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html">Amazon
      * CloudWatch Namespaces, Dimensions, and Metrics Reference</a> in the <i>Amazon
-     * CloudWatch Developer Guide</i>.</p>
+     * CloudWatch User Guide</i>.</p>
      */
     inline CloudWatchAlarmConfiguration& WithNamespace(const char* value) { SetNamespace(value); return *this;}
 
@@ -265,7 +265,7 @@ namespace Model
      * see <a href="
      * http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html">Amazon
      * CloudWatch Namespaces, Dimensions, and Metrics Reference</a> in the <i>Amazon
-     * CloudWatch Developer Guide</i>.</p>
+     * CloudWatch User Guide</i>.</p>
      */
     inline const Aws::Vector<Dimension>& GetDimensions() const{ return m_dimensions; }
 
@@ -275,7 +275,7 @@ namespace Model
      * see <a href="
      * http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html">Amazon
      * CloudWatch Namespaces, Dimensions, and Metrics Reference</a> in the <i>Amazon
-     * CloudWatch Developer Guide</i>.</p>
+     * CloudWatch User Guide</i>.</p>
      */
     inline void SetDimensions(const Aws::Vector<Dimension>& value) { m_dimensionsHasBeenSet = true; m_dimensions = value; }
 
@@ -285,7 +285,7 @@ namespace Model
      * see <a href="
      * http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html">Amazon
      * CloudWatch Namespaces, Dimensions, and Metrics Reference</a> in the <i>Amazon
-     * CloudWatch Developer Guide</i>.</p>
+     * CloudWatch User Guide</i>.</p>
      */
     inline void SetDimensions(Aws::Vector<Dimension>&& value) { m_dimensionsHasBeenSet = true; m_dimensions = value; }
 
@@ -295,7 +295,7 @@ namespace Model
      * see <a href="
      * http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html">Amazon
      * CloudWatch Namespaces, Dimensions, and Metrics Reference</a> in the <i>Amazon
-     * CloudWatch Developer Guide</i>.</p>
+     * CloudWatch User Guide</i>.</p>
      */
     inline CloudWatchAlarmConfiguration& WithDimensions(const Aws::Vector<Dimension>& value) { SetDimensions(value); return *this;}
 
@@ -305,7 +305,7 @@ namespace Model
      * see <a href="
      * http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html">Amazon
      * CloudWatch Namespaces, Dimensions, and Metrics Reference</a> in the <i>Amazon
-     * CloudWatch Developer Guide</i>.</p>
+     * CloudWatch User Guide</i>.</p>
      */
     inline CloudWatchAlarmConfiguration& WithDimensions(Aws::Vector<Dimension>&& value) { SetDimensions(value); return *this;}
 
@@ -315,7 +315,7 @@ namespace Model
      * see <a href="
      * http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html">Amazon
      * CloudWatch Namespaces, Dimensions, and Metrics Reference</a> in the <i>Amazon
-     * CloudWatch Developer Guide</i>.</p>
+     * CloudWatch User Guide</i>.</p>
      */
     inline CloudWatchAlarmConfiguration& AddDimensions(const Dimension& value) { m_dimensionsHasBeenSet = true; m_dimensions.push_back(value); return *this; }
 
@@ -325,7 +325,7 @@ namespace Model
      * see <a href="
      * http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html">Amazon
      * CloudWatch Namespaces, Dimensions, and Metrics Reference</a> in the <i>Amazon
-     * CloudWatch Developer Guide</i>.</p>
+     * CloudWatch User Guide</i>.</p>
      */
     inline CloudWatchAlarmConfiguration& AddDimensions(Dimension&& value) { m_dimensionsHasBeenSet = true; m_dimensions.push_back(value); return *this; }
 

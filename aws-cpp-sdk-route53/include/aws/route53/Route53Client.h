@@ -29,11 +29,13 @@
 #include <aws/route53/model/CreateTrafficPolicyResult.h>
 #include <aws/route53/model/CreateTrafficPolicyInstanceResult.h>
 #include <aws/route53/model/CreateTrafficPolicyVersionResult.h>
+#include <aws/route53/model/CreateVPCAssociationAuthorizationResult.h>
 #include <aws/route53/model/DeleteHealthCheckResult.h>
 #include <aws/route53/model/DeleteHostedZoneResult.h>
 #include <aws/route53/model/DeleteReusableDelegationSetResult.h>
 #include <aws/route53/model/DeleteTrafficPolicyResult.h>
 #include <aws/route53/model/DeleteTrafficPolicyInstanceResult.h>
+#include <aws/route53/model/DeleteVPCAssociationAuthorizationResult.h>
 #include <aws/route53/model/DisassociateVPCFromHostedZoneResult.h>
 #include <aws/route53/model/GetChangeResult.h>
 #include <aws/route53/model/GetCheckerIpRangesResult.h>
@@ -61,6 +63,7 @@
 #include <aws/route53/model/ListTrafficPolicyInstancesByHostedZoneResult.h>
 #include <aws/route53/model/ListTrafficPolicyInstancesByPolicyResult.h>
 #include <aws/route53/model/ListTrafficPolicyVersionsResult.h>
+#include <aws/route53/model/ListVPCAssociationAuthorizationsResult.h>
 #include <aws/route53/model/TestDNSAnswerResult.h>
 #include <aws/route53/model/UpdateHealthCheckResult.h>
 #include <aws/route53/model/UpdateHostedZoneCommentResult.h>
@@ -120,11 +123,13 @@ namespace Model
         class CreateTrafficPolicyRequest;
         class CreateTrafficPolicyInstanceRequest;
         class CreateTrafficPolicyVersionRequest;
+        class CreateVPCAssociationAuthorizationRequest;
         class DeleteHealthCheckRequest;
         class DeleteHostedZoneRequest;
         class DeleteReusableDelegationSetRequest;
         class DeleteTrafficPolicyRequest;
         class DeleteTrafficPolicyInstanceRequest;
+        class DeleteVPCAssociationAuthorizationRequest;
         class DisassociateVPCFromHostedZoneRequest;
         class GetChangeRequest;
         class GetCheckerIpRangesRequest;
@@ -152,6 +157,7 @@ namespace Model
         class ListTrafficPolicyInstancesByHostedZoneRequest;
         class ListTrafficPolicyInstancesByPolicyRequest;
         class ListTrafficPolicyVersionsRequest;
+        class ListVPCAssociationAuthorizationsRequest;
         class TestDNSAnswerRequest;
         class UpdateHealthCheckRequest;
         class UpdateHostedZoneCommentRequest;
@@ -167,11 +173,13 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateTrafficPolicyResult, Aws::Client::AWSError<Route53Errors>> CreateTrafficPolicyOutcome;
         typedef Aws::Utils::Outcome<CreateTrafficPolicyInstanceResult, Aws::Client::AWSError<Route53Errors>> CreateTrafficPolicyInstanceOutcome;
         typedef Aws::Utils::Outcome<CreateTrafficPolicyVersionResult, Aws::Client::AWSError<Route53Errors>> CreateTrafficPolicyVersionOutcome;
+        typedef Aws::Utils::Outcome<CreateVPCAssociationAuthorizationResult, Aws::Client::AWSError<Route53Errors>> CreateVPCAssociationAuthorizationOutcome;
         typedef Aws::Utils::Outcome<DeleteHealthCheckResult, Aws::Client::AWSError<Route53Errors>> DeleteHealthCheckOutcome;
         typedef Aws::Utils::Outcome<DeleteHostedZoneResult, Aws::Client::AWSError<Route53Errors>> DeleteHostedZoneOutcome;
         typedef Aws::Utils::Outcome<DeleteReusableDelegationSetResult, Aws::Client::AWSError<Route53Errors>> DeleteReusableDelegationSetOutcome;
         typedef Aws::Utils::Outcome<DeleteTrafficPolicyResult, Aws::Client::AWSError<Route53Errors>> DeleteTrafficPolicyOutcome;
         typedef Aws::Utils::Outcome<DeleteTrafficPolicyInstanceResult, Aws::Client::AWSError<Route53Errors>> DeleteTrafficPolicyInstanceOutcome;
+        typedef Aws::Utils::Outcome<DeleteVPCAssociationAuthorizationResult, Aws::Client::AWSError<Route53Errors>> DeleteVPCAssociationAuthorizationOutcome;
         typedef Aws::Utils::Outcome<DisassociateVPCFromHostedZoneResult, Aws::Client::AWSError<Route53Errors>> DisassociateVPCFromHostedZoneOutcome;
         typedef Aws::Utils::Outcome<GetChangeResult, Aws::Client::AWSError<Route53Errors>> GetChangeOutcome;
         typedef Aws::Utils::Outcome<GetCheckerIpRangesResult, Aws::Client::AWSError<Route53Errors>> GetCheckerIpRangesOutcome;
@@ -199,6 +207,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListTrafficPolicyInstancesByHostedZoneResult, Aws::Client::AWSError<Route53Errors>> ListTrafficPolicyInstancesByHostedZoneOutcome;
         typedef Aws::Utils::Outcome<ListTrafficPolicyInstancesByPolicyResult, Aws::Client::AWSError<Route53Errors>> ListTrafficPolicyInstancesByPolicyOutcome;
         typedef Aws::Utils::Outcome<ListTrafficPolicyVersionsResult, Aws::Client::AWSError<Route53Errors>> ListTrafficPolicyVersionsOutcome;
+        typedef Aws::Utils::Outcome<ListVPCAssociationAuthorizationsResult, Aws::Client::AWSError<Route53Errors>> ListVPCAssociationAuthorizationsOutcome;
         typedef Aws::Utils::Outcome<TestDNSAnswerResult, Aws::Client::AWSError<Route53Errors>> TestDNSAnswerOutcome;
         typedef Aws::Utils::Outcome<UpdateHealthCheckResult, Aws::Client::AWSError<Route53Errors>> UpdateHealthCheckOutcome;
         typedef Aws::Utils::Outcome<UpdateHostedZoneCommentResult, Aws::Client::AWSError<Route53Errors>> UpdateHostedZoneCommentOutcome;
@@ -214,11 +223,13 @@ namespace Model
         typedef std::future<CreateTrafficPolicyOutcome> CreateTrafficPolicyOutcomeCallable;
         typedef std::future<CreateTrafficPolicyInstanceOutcome> CreateTrafficPolicyInstanceOutcomeCallable;
         typedef std::future<CreateTrafficPolicyVersionOutcome> CreateTrafficPolicyVersionOutcomeCallable;
+        typedef std::future<CreateVPCAssociationAuthorizationOutcome> CreateVPCAssociationAuthorizationOutcomeCallable;
         typedef std::future<DeleteHealthCheckOutcome> DeleteHealthCheckOutcomeCallable;
         typedef std::future<DeleteHostedZoneOutcome> DeleteHostedZoneOutcomeCallable;
         typedef std::future<DeleteReusableDelegationSetOutcome> DeleteReusableDelegationSetOutcomeCallable;
         typedef std::future<DeleteTrafficPolicyOutcome> DeleteTrafficPolicyOutcomeCallable;
         typedef std::future<DeleteTrafficPolicyInstanceOutcome> DeleteTrafficPolicyInstanceOutcomeCallable;
+        typedef std::future<DeleteVPCAssociationAuthorizationOutcome> DeleteVPCAssociationAuthorizationOutcomeCallable;
         typedef std::future<DisassociateVPCFromHostedZoneOutcome> DisassociateVPCFromHostedZoneOutcomeCallable;
         typedef std::future<GetChangeOutcome> GetChangeOutcomeCallable;
         typedef std::future<GetCheckerIpRangesOutcome> GetCheckerIpRangesOutcomeCallable;
@@ -246,6 +257,7 @@ namespace Model
         typedef std::future<ListTrafficPolicyInstancesByHostedZoneOutcome> ListTrafficPolicyInstancesByHostedZoneOutcomeCallable;
         typedef std::future<ListTrafficPolicyInstancesByPolicyOutcome> ListTrafficPolicyInstancesByPolicyOutcomeCallable;
         typedef std::future<ListTrafficPolicyVersionsOutcome> ListTrafficPolicyVersionsOutcomeCallable;
+        typedef std::future<ListVPCAssociationAuthorizationsOutcome> ListVPCAssociationAuthorizationsOutcomeCallable;
         typedef std::future<TestDNSAnswerOutcome> TestDNSAnswerOutcomeCallable;
         typedef std::future<UpdateHealthCheckOutcome> UpdateHealthCheckOutcomeCallable;
         typedef std::future<UpdateHostedZoneCommentOutcome> UpdateHostedZoneCommentOutcomeCallable;
@@ -264,11 +276,13 @@ namespace Model
     typedef std::function<void(const Route53Client*, const Model::CreateTrafficPolicyRequest&, const Model::CreateTrafficPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTrafficPolicyResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::CreateTrafficPolicyInstanceRequest&, const Model::CreateTrafficPolicyInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTrafficPolicyInstanceResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::CreateTrafficPolicyVersionRequest&, const Model::CreateTrafficPolicyVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTrafficPolicyVersionResponseReceivedHandler;
+    typedef std::function<void(const Route53Client*, const Model::CreateVPCAssociationAuthorizationRequest&, const Model::CreateVPCAssociationAuthorizationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateVPCAssociationAuthorizationResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::DeleteHealthCheckRequest&, const Model::DeleteHealthCheckOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteHealthCheckResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::DeleteHostedZoneRequest&, const Model::DeleteHostedZoneOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteHostedZoneResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::DeleteReusableDelegationSetRequest&, const Model::DeleteReusableDelegationSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteReusableDelegationSetResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::DeleteTrafficPolicyRequest&, const Model::DeleteTrafficPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTrafficPolicyResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::DeleteTrafficPolicyInstanceRequest&, const Model::DeleteTrafficPolicyInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTrafficPolicyInstanceResponseReceivedHandler;
+    typedef std::function<void(const Route53Client*, const Model::DeleteVPCAssociationAuthorizationRequest&, const Model::DeleteVPCAssociationAuthorizationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteVPCAssociationAuthorizationResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::DisassociateVPCFromHostedZoneRequest&, const Model::DisassociateVPCFromHostedZoneOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateVPCFromHostedZoneResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::GetChangeRequest&, const Model::GetChangeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetChangeResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::GetCheckerIpRangesRequest&, const Model::GetCheckerIpRangesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCheckerIpRangesResponseReceivedHandler;
@@ -296,6 +310,7 @@ namespace Model
     typedef std::function<void(const Route53Client*, const Model::ListTrafficPolicyInstancesByHostedZoneRequest&, const Model::ListTrafficPolicyInstancesByHostedZoneOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTrafficPolicyInstancesByHostedZoneResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::ListTrafficPolicyInstancesByPolicyRequest&, const Model::ListTrafficPolicyInstancesByPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTrafficPolicyInstancesByPolicyResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::ListTrafficPolicyVersionsRequest&, const Model::ListTrafficPolicyVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTrafficPolicyVersionsResponseReceivedHandler;
+    typedef std::function<void(const Route53Client*, const Model::ListVPCAssociationAuthorizationsRequest&, const Model::ListVPCAssociationAuthorizationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListVPCAssociationAuthorizationsResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::TestDNSAnswerRequest&, const Model::TestDNSAnswerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TestDNSAnswerResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::UpdateHealthCheckRequest&, const Model::UpdateHealthCheckOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateHealthCheckResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::UpdateHostedZoneCommentRequest&, const Model::UpdateHostedZoneCommentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateHostedZoneCommentResponseReceivedHandler;
@@ -329,58 +344,58 @@ namespace Model
         virtual ~Route53Client();
 
         /**
-         * <p>Associates an Amazon VPC with a private hosted zone. </p> <important> <p>The
-         * VPC and the hosted zone must already exist, and you must have created a private
-         * hosted zone. You cannot convert a public hosted zone into a private hosted
-         * zone.</p> </important> <p>Send a <code>POST</code> request to the
+         * <p>Associates an Amazon VPC with a private hosted zone. </p> <important> <p>To
+         * perform the association, the VPC and the private hosted zone must already exist.
+         * You can't convert a public hosted zone into a private hosted zone.</p>
+         * </important> <p>Send a <code>POST</code> request to the
          * <code>/2013-04-01/hostedzone/<i>hosted zone ID</i>/associatevpc</code> resource.
-         * The request body must include an XML document with a
-         * <code>AssociateVPCWithHostedZoneRequest</code> element. The response returns the
-         * <code>AssociateVPCWithHostedZoneResponse</code> element.</p> <note> <p>If you
-         * used different accounts to create the hosted zone and to create the Amazon VPCs
-         * that you want to associate with the hosted zone, we need to update account
-         * permissions for you. For more information, see <a
-         * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/hosted-zone-private-associate-vpcs-different-accounts.html">Associating
-         * Amazon VPCs and Private Hosted Zones That You Create with Different AWS
-         * Accounts</a> in the Amazon Route 53 Developer Guide.</p> </note>
+         * The request body must include a document with an
+         * <code>AssociateVPCWithHostedZoneRequest</code> element. The response contains a
+         * <code>ChangeInfo</code> data type that you can use to track the progress of the
+         * request. </p> <note> <p>If you want to associate a VPC that was created by using
+         * one AWS account with a private hosted zone that was created by using a different
+         * account, the AWS account that created the private hosted zone must first submit
+         * a <code>CreateVPCAssociationAuthorization</code> request. Then the account that
+         * created the VPC must submit an <code>AssociateVPCWithHostedZone</code>
+         * request.</p> </note>
          */
         virtual Model::AssociateVPCWithHostedZoneOutcome AssociateVPCWithHostedZone(const Model::AssociateVPCWithHostedZoneRequest& request) const;
 
         /**
-         * <p>Associates an Amazon VPC with a private hosted zone. </p> <important> <p>The
-         * VPC and the hosted zone must already exist, and you must have created a private
-         * hosted zone. You cannot convert a public hosted zone into a private hosted
-         * zone.</p> </important> <p>Send a <code>POST</code> request to the
+         * <p>Associates an Amazon VPC with a private hosted zone. </p> <important> <p>To
+         * perform the association, the VPC and the private hosted zone must already exist.
+         * You can't convert a public hosted zone into a private hosted zone.</p>
+         * </important> <p>Send a <code>POST</code> request to the
          * <code>/2013-04-01/hostedzone/<i>hosted zone ID</i>/associatevpc</code> resource.
-         * The request body must include an XML document with a
-         * <code>AssociateVPCWithHostedZoneRequest</code> element. The response returns the
-         * <code>AssociateVPCWithHostedZoneResponse</code> element.</p> <note> <p>If you
-         * used different accounts to create the hosted zone and to create the Amazon VPCs
-         * that you want to associate with the hosted zone, we need to update account
-         * permissions for you. For more information, see <a
-         * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/hosted-zone-private-associate-vpcs-different-accounts.html">Associating
-         * Amazon VPCs and Private Hosted Zones That You Create with Different AWS
-         * Accounts</a> in the Amazon Route 53 Developer Guide.</p> </note>
+         * The request body must include a document with an
+         * <code>AssociateVPCWithHostedZoneRequest</code> element. The response contains a
+         * <code>ChangeInfo</code> data type that you can use to track the progress of the
+         * request. </p> <note> <p>If you want to associate a VPC that was created by using
+         * one AWS account with a private hosted zone that was created by using a different
+         * account, the AWS account that created the private hosted zone must first submit
+         * a <code>CreateVPCAssociationAuthorization</code> request. Then the account that
+         * created the VPC must submit an <code>AssociateVPCWithHostedZone</code>
+         * request.</p> </note>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::AssociateVPCWithHostedZoneOutcomeCallable AssociateVPCWithHostedZoneCallable(const Model::AssociateVPCWithHostedZoneRequest& request) const;
 
         /**
-         * <p>Associates an Amazon VPC with a private hosted zone. </p> <important> <p>The
-         * VPC and the hosted zone must already exist, and you must have created a private
-         * hosted zone. You cannot convert a public hosted zone into a private hosted
-         * zone.</p> </important> <p>Send a <code>POST</code> request to the
+         * <p>Associates an Amazon VPC with a private hosted zone. </p> <important> <p>To
+         * perform the association, the VPC and the private hosted zone must already exist.
+         * You can't convert a public hosted zone into a private hosted zone.</p>
+         * </important> <p>Send a <code>POST</code> request to the
          * <code>/2013-04-01/hostedzone/<i>hosted zone ID</i>/associatevpc</code> resource.
-         * The request body must include an XML document with a
-         * <code>AssociateVPCWithHostedZoneRequest</code> element. The response returns the
-         * <code>AssociateVPCWithHostedZoneResponse</code> element.</p> <note> <p>If you
-         * used different accounts to create the hosted zone and to create the Amazon VPCs
-         * that you want to associate with the hosted zone, we need to update account
-         * permissions for you. For more information, see <a
-         * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/hosted-zone-private-associate-vpcs-different-accounts.html">Associating
-         * Amazon VPCs and Private Hosted Zones That You Create with Different AWS
-         * Accounts</a> in the Amazon Route 53 Developer Guide.</p> </note>
+         * The request body must include a document with an
+         * <code>AssociateVPCWithHostedZoneRequest</code> element. The response contains a
+         * <code>ChangeInfo</code> data type that you can use to track the progress of the
+         * request. </p> <note> <p>If you want to associate a VPC that was created by using
+         * one AWS account with a private hosted zone that was created by using a different
+         * account, the AWS account that created the private hosted zone must first submit
+         * a <code>CreateVPCAssociationAuthorization</code> request. Then the account that
+         * created the VPC must submit an <code>AssociateVPCWithHostedZone</code>
+         * request.</p> </note>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -403,7 +418,7 @@ namespace Model
          * resource record set in a single operation. If either the <code>DELETE</code> or
          * the <code>CREATE</code> action fails, then both changes (plus any other changes
          * in the batch) fail, and the original <code>CNAME</code> record continues to
-         * exist.</p> <important> <p>Due to the nature of transactional changes, you cannot
+         * exist.</p> <important> <p>Due to the nature of transactional changes, you can't
          * delete the same resource record set more than once in a single change batch. If
          * you attempt to delete the same change batch more than once, Amazon Route 53
          * returns an <code>InvalidChangeBatch</code> error.</p> </important> <note> <p>To
@@ -420,26 +435,33 @@ namespace Model
          * perform the following actions:</p> <ul> <li> <p> <code>CREATE</code>: Creates a
          * resource record set that has the specified values.</p> </li> <li> <p>
          * <code>DELETE</code>: Deletes an existing resource record set that has the
-         * specified values for <code>Name</code>, <code>Type</code>, <code>Set
-         * Identifier</code> (for code latency, weighted, geolocation, and failover
-         * resource record sets), and <code>TTL</code> (except alias resource record sets,
-         * for which the TTL is determined by the AWS resource you're routing queries
-         * to).</p> </li> <li> <p> <code>UPSERT</code>: If a resource record set does not
-         * already exist, AWS creates it. If a resource set does exist, Amazon Route 53
-         * updates it with the values in the request. Amazon Route 53 can update an
-         * existing resource record set only when all of the following values match:
-         * <code>Name</code>, <code>Type</code>, and <code>Set Identifier</code> (for
-         * weighted, latency, geolocation, and failover resource record sets).</p> </li>
-         * </ul> <p>In response to a <code>ChangeResourceRecordSets</code> request, the DNS
-         * data is changed on all Amazon Route 53 DNS servers. Initially, the status of a
-         * change is <code>PENDING</code>, meaning the change has not yet propagated to all
-         * the authoritative Amazon Route 53 DNS servers. When the change is propagated to
-         * all hosts, the change returns a status of <code>INSYNC</code>.</p> <p>After
-         * sending a change request, confirm your change has propagated to all Amazon Route
-         * 53 DNS servers. Changes generally propagate to all Amazon Route 53 name servers
-         * in a few minutes. In rare circumstances, propagation can take up to 30 minutes.
-         * For more information, see <a>GetChange</a>.</p> <p>For information about the
-         * limits on a <code>ChangeResourceRecordSets</code> request, see <a
+         * applicable values for the following elements:</p> <ul> <li> <p>
+         * <code>Name</code>: required to delete any resource record set</p> </li> <li> <p>
+         * <code>Type</code>: required to delete any resource record set</p> </li> <li> <p>
+         * <code>AliasTarget</code>, <code>DNSName</code>,
+         * <code>EvaluateTargetHealth</code>, and <code>HostedZoneId</code>: required to
+         * delete an alias resource record set</p> </li> <li> <p>
+         * <code>SetIdentifier</code>: required to delete a failover, geolocation, latency,
+         * or weighted resource record set </p> </li> <li> <p> <code>TTL</code>: required
+         * to delete any resource record set except an alias resource record set (For alias
+         * resource record sets, the TTL is determined by the AWS resource tat you're
+         * routing traffic to.)</p> </li> </ul> </li> <li> <p> <code>UPSERT</code>: If a
+         * resource record set does not already exist, AWS creates it. If a resource set
+         * does exist, Amazon Route 53 updates it with the values in the request. Amazon
+         * Route 53 can update an existing resource record set only when all of the
+         * following values match: <code>Name</code>, <code>Type</code>, and <code>Set
+         * Identifier</code> (for weighted, latency, geolocation, and failover resource
+         * record sets).</p> </li> </ul> <p>In response to a
+         * <code>ChangeResourceRecordSets</code> request, the DNS data is changed on all
+         * Amazon Route 53 DNS servers. Initially, the status of a change is
+         * <code>PENDING</code>, meaning the change has not yet propagated to all the
+         * authoritative Amazon Route 53 DNS servers. When the change is propagated to all
+         * hosts, the change returns a status of <code>INSYNC</code>.</p> <p>After sending
+         * a change request, confirm your change has propagated to all Amazon Route 53 DNS
+         * servers. Changes generally propagate to all Amazon Route 53 name servers in a
+         * few minutes. In rare circumstances, propagation can take up to 30 minutes. For
+         * more information, see <a>GetChange</a>.</p> <p>For information about the limits
+         * on a <code>ChangeResourceRecordSets</code> request, see <a
          * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a>
          * in the <i>Amazon Route 53 Developer Guide</i>.</p>
          */
@@ -462,7 +484,7 @@ namespace Model
          * resource record set in a single operation. If either the <code>DELETE</code> or
          * the <code>CREATE</code> action fails, then both changes (plus any other changes
          * in the batch) fail, and the original <code>CNAME</code> record continues to
-         * exist.</p> <important> <p>Due to the nature of transactional changes, you cannot
+         * exist.</p> <important> <p>Due to the nature of transactional changes, you can't
          * delete the same resource record set more than once in a single change batch. If
          * you attempt to delete the same change batch more than once, Amazon Route 53
          * returns an <code>InvalidChangeBatch</code> error.</p> </important> <note> <p>To
@@ -479,26 +501,33 @@ namespace Model
          * perform the following actions:</p> <ul> <li> <p> <code>CREATE</code>: Creates a
          * resource record set that has the specified values.</p> </li> <li> <p>
          * <code>DELETE</code>: Deletes an existing resource record set that has the
-         * specified values for <code>Name</code>, <code>Type</code>, <code>Set
-         * Identifier</code> (for code latency, weighted, geolocation, and failover
-         * resource record sets), and <code>TTL</code> (except alias resource record sets,
-         * for which the TTL is determined by the AWS resource you're routing queries
-         * to).</p> </li> <li> <p> <code>UPSERT</code>: If a resource record set does not
-         * already exist, AWS creates it. If a resource set does exist, Amazon Route 53
-         * updates it with the values in the request. Amazon Route 53 can update an
-         * existing resource record set only when all of the following values match:
-         * <code>Name</code>, <code>Type</code>, and <code>Set Identifier</code> (for
-         * weighted, latency, geolocation, and failover resource record sets).</p> </li>
-         * </ul> <p>In response to a <code>ChangeResourceRecordSets</code> request, the DNS
-         * data is changed on all Amazon Route 53 DNS servers. Initially, the status of a
-         * change is <code>PENDING</code>, meaning the change has not yet propagated to all
-         * the authoritative Amazon Route 53 DNS servers. When the change is propagated to
-         * all hosts, the change returns a status of <code>INSYNC</code>.</p> <p>After
-         * sending a change request, confirm your change has propagated to all Amazon Route
-         * 53 DNS servers. Changes generally propagate to all Amazon Route 53 name servers
-         * in a few minutes. In rare circumstances, propagation can take up to 30 minutes.
-         * For more information, see <a>GetChange</a>.</p> <p>For information about the
-         * limits on a <code>ChangeResourceRecordSets</code> request, see <a
+         * applicable values for the following elements:</p> <ul> <li> <p>
+         * <code>Name</code>: required to delete any resource record set</p> </li> <li> <p>
+         * <code>Type</code>: required to delete any resource record set</p> </li> <li> <p>
+         * <code>AliasTarget</code>, <code>DNSName</code>,
+         * <code>EvaluateTargetHealth</code>, and <code>HostedZoneId</code>: required to
+         * delete an alias resource record set</p> </li> <li> <p>
+         * <code>SetIdentifier</code>: required to delete a failover, geolocation, latency,
+         * or weighted resource record set </p> </li> <li> <p> <code>TTL</code>: required
+         * to delete any resource record set except an alias resource record set (For alias
+         * resource record sets, the TTL is determined by the AWS resource tat you're
+         * routing traffic to.)</p> </li> </ul> </li> <li> <p> <code>UPSERT</code>: If a
+         * resource record set does not already exist, AWS creates it. If a resource set
+         * does exist, Amazon Route 53 updates it with the values in the request. Amazon
+         * Route 53 can update an existing resource record set only when all of the
+         * following values match: <code>Name</code>, <code>Type</code>, and <code>Set
+         * Identifier</code> (for weighted, latency, geolocation, and failover resource
+         * record sets).</p> </li> </ul> <p>In response to a
+         * <code>ChangeResourceRecordSets</code> request, the DNS data is changed on all
+         * Amazon Route 53 DNS servers. Initially, the status of a change is
+         * <code>PENDING</code>, meaning the change has not yet propagated to all the
+         * authoritative Amazon Route 53 DNS servers. When the change is propagated to all
+         * hosts, the change returns a status of <code>INSYNC</code>.</p> <p>After sending
+         * a change request, confirm your change has propagated to all Amazon Route 53 DNS
+         * servers. Changes generally propagate to all Amazon Route 53 name servers in a
+         * few minutes. In rare circumstances, propagation can take up to 30 minutes. For
+         * more information, see <a>GetChange</a>.</p> <p>For information about the limits
+         * on a <code>ChangeResourceRecordSets</code> request, see <a
          * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a>
          * in the <i>Amazon Route 53 Developer Guide</i>.</p>
          *
@@ -523,7 +552,7 @@ namespace Model
          * resource record set in a single operation. If either the <code>DELETE</code> or
          * the <code>CREATE</code> action fails, then both changes (plus any other changes
          * in the batch) fail, and the original <code>CNAME</code> record continues to
-         * exist.</p> <important> <p>Due to the nature of transactional changes, you cannot
+         * exist.</p> <important> <p>Due to the nature of transactional changes, you can't
          * delete the same resource record set more than once in a single change batch. If
          * you attempt to delete the same change batch more than once, Amazon Route 53
          * returns an <code>InvalidChangeBatch</code> error.</p> </important> <note> <p>To
@@ -540,26 +569,33 @@ namespace Model
          * perform the following actions:</p> <ul> <li> <p> <code>CREATE</code>: Creates a
          * resource record set that has the specified values.</p> </li> <li> <p>
          * <code>DELETE</code>: Deletes an existing resource record set that has the
-         * specified values for <code>Name</code>, <code>Type</code>, <code>Set
-         * Identifier</code> (for code latency, weighted, geolocation, and failover
-         * resource record sets), and <code>TTL</code> (except alias resource record sets,
-         * for which the TTL is determined by the AWS resource you're routing queries
-         * to).</p> </li> <li> <p> <code>UPSERT</code>: If a resource record set does not
-         * already exist, AWS creates it. If a resource set does exist, Amazon Route 53
-         * updates it with the values in the request. Amazon Route 53 can update an
-         * existing resource record set only when all of the following values match:
-         * <code>Name</code>, <code>Type</code>, and <code>Set Identifier</code> (for
-         * weighted, latency, geolocation, and failover resource record sets).</p> </li>
-         * </ul> <p>In response to a <code>ChangeResourceRecordSets</code> request, the DNS
-         * data is changed on all Amazon Route 53 DNS servers. Initially, the status of a
-         * change is <code>PENDING</code>, meaning the change has not yet propagated to all
-         * the authoritative Amazon Route 53 DNS servers. When the change is propagated to
-         * all hosts, the change returns a status of <code>INSYNC</code>.</p> <p>After
-         * sending a change request, confirm your change has propagated to all Amazon Route
-         * 53 DNS servers. Changes generally propagate to all Amazon Route 53 name servers
-         * in a few minutes. In rare circumstances, propagation can take up to 30 minutes.
-         * For more information, see <a>GetChange</a>.</p> <p>For information about the
-         * limits on a <code>ChangeResourceRecordSets</code> request, see <a
+         * applicable values for the following elements:</p> <ul> <li> <p>
+         * <code>Name</code>: required to delete any resource record set</p> </li> <li> <p>
+         * <code>Type</code>: required to delete any resource record set</p> </li> <li> <p>
+         * <code>AliasTarget</code>, <code>DNSName</code>,
+         * <code>EvaluateTargetHealth</code>, and <code>HostedZoneId</code>: required to
+         * delete an alias resource record set</p> </li> <li> <p>
+         * <code>SetIdentifier</code>: required to delete a failover, geolocation, latency,
+         * or weighted resource record set </p> </li> <li> <p> <code>TTL</code>: required
+         * to delete any resource record set except an alias resource record set (For alias
+         * resource record sets, the TTL is determined by the AWS resource tat you're
+         * routing traffic to.)</p> </li> </ul> </li> <li> <p> <code>UPSERT</code>: If a
+         * resource record set does not already exist, AWS creates it. If a resource set
+         * does exist, Amazon Route 53 updates it with the values in the request. Amazon
+         * Route 53 can update an existing resource record set only when all of the
+         * following values match: <code>Name</code>, <code>Type</code>, and <code>Set
+         * Identifier</code> (for weighted, latency, geolocation, and failover resource
+         * record sets).</p> </li> </ul> <p>In response to a
+         * <code>ChangeResourceRecordSets</code> request, the DNS data is changed on all
+         * Amazon Route 53 DNS servers. Initially, the status of a change is
+         * <code>PENDING</code>, meaning the change has not yet propagated to all the
+         * authoritative Amazon Route 53 DNS servers. When the change is propagated to all
+         * hosts, the change returns a status of <code>INSYNC</code>.</p> <p>After sending
+         * a change request, confirm your change has propagated to all Amazon Route 53 DNS
+         * servers. Changes generally propagate to all Amazon Route 53 name servers in a
+         * few minutes. In rare circumstances, propagation can take up to 30 minutes. For
+         * more information, see <a>GetChange</a>.</p> <p>For information about the limits
+         * on a <code>ChangeResourceRecordSets</code> request, see <a
          * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a>
          * in the <i>Amazon Route 53 Developer Guide</i>.</p>
          *
@@ -601,64 +637,62 @@ namespace Model
         /**
          * <p>Creates a new health check.</p> <p>To create a new health check, send a
          * <code>POST</code> request to the <code>/2013-04-01/healthcheck</code> resource.
-         * The request body must include an XML document with a
+         * The request body must include a document with a
          * <code>CreateHealthCheckRequest</code> element. The response returns the
          * <code>CreateHealthCheckResponse</code> element, containing the health check ID
          * specified when adding health check to a resource record set. For information
          * about adding health checks to resource record sets, see
          * <a>ResourceRecordSet$HealthCheckId</a> in <a>ChangeResourceRecordSets</a>. </p>
-         * <p>If you are registering Amazon EC2 instances with an Elastic Load Balancing
-         * (ELB) load balancer, do not create Amazon Route 53 health checks for the Amazon
-         * EC2 instances. When you register an Amazon EC2 instance with a load balancer,
-         * you configure settings for an ELB health check, which performs a similar
-         * function to an Amazon Route 53 health check.</p> <p>You can associate health
-         * checks with failover resource record sets in a private hosted zone. Note the
-         * following:</p> <ul> <li> <p>Amazon Route 53 health checkers are outside the VPC.
-         * To check the health of an endpoint within a VPC by IP address, you must assign a
-         * public IP address to the instance in the VPC.</p> </li> <li> <p>You can
-         * configure a health checker to check the health of an external resource that the
-         * instance relies on, such as a database server.</p> </li> <li> <p>You can create
-         * a CloudWatch metric, associate an alarm with the metric, and then create a
-         * health check that is based on the state of the alarm. For example, you might
-         * create a CloudWatch metric that checks the status of the Amazon EC2
-         * <code>StatusCheckFailed</code> metric, add an alarm to the metric, and then
-         * create a health check that is based on the state of the alarm. For information
-         * about creating CloudWatch metrics and alarms by using the CloudWatch console,
-         * see the <a
+         * <p>If you are registering EC2 instances with an Elastic Load Balancing (ELB)
+         * load balancer, do not create Amazon Route 53 health checks for the EC2
+         * instances. When you register an EC2 instance with a load balancer, you configure
+         * settings for an ELB health check, which performs a similar function to an Amazon
+         * Route 53 health check.</p> <p>You can associate health checks with failover
+         * resource record sets in a private hosted zone. Note the following:</p> <ul> <li>
+         * <p>Amazon Route 53 health checkers are outside the VPC. To check the health of
+         * an endpoint within a VPC by IP address, you must assign a public IP address to
+         * the instance in the VPC.</p> </li> <li> <p>You can configure a health checker to
+         * check the health of an external resource that the instance relies on, such as a
+         * database server.</p> </li> <li> <p>You can create a CloudWatch metric, associate
+         * an alarm with the metric, and then create a health check that is based on the
+         * state of the alarm. For example, you might create a CloudWatch metric that
+         * checks the status of the Amazon EC2 <code>StatusCheckFailed</code> metric, add
+         * an alarm to the metric, and then create a health check that is based on the
+         * state of the alarm. For information about creating CloudWatch metrics and alarms
+         * by using the CloudWatch console, see the <a
          * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/WhatIsCloudWatch.html">Amazon
-         * CloudWatch Developer Guide</a>.</p> </li> </ul>
+         * CloudWatch User Guide</a>.</p> </li> </ul>
          */
         virtual Model::CreateHealthCheckOutcome CreateHealthCheck(const Model::CreateHealthCheckRequest& request) const;
 
         /**
          * <p>Creates a new health check.</p> <p>To create a new health check, send a
          * <code>POST</code> request to the <code>/2013-04-01/healthcheck</code> resource.
-         * The request body must include an XML document with a
+         * The request body must include a document with a
          * <code>CreateHealthCheckRequest</code> element. The response returns the
          * <code>CreateHealthCheckResponse</code> element, containing the health check ID
          * specified when adding health check to a resource record set. For information
          * about adding health checks to resource record sets, see
          * <a>ResourceRecordSet$HealthCheckId</a> in <a>ChangeResourceRecordSets</a>. </p>
-         * <p>If you are registering Amazon EC2 instances with an Elastic Load Balancing
-         * (ELB) load balancer, do not create Amazon Route 53 health checks for the Amazon
-         * EC2 instances. When you register an Amazon EC2 instance with a load balancer,
-         * you configure settings for an ELB health check, which performs a similar
-         * function to an Amazon Route 53 health check.</p> <p>You can associate health
-         * checks with failover resource record sets in a private hosted zone. Note the
-         * following:</p> <ul> <li> <p>Amazon Route 53 health checkers are outside the VPC.
-         * To check the health of an endpoint within a VPC by IP address, you must assign a
-         * public IP address to the instance in the VPC.</p> </li> <li> <p>You can
-         * configure a health checker to check the health of an external resource that the
-         * instance relies on, such as a database server.</p> </li> <li> <p>You can create
-         * a CloudWatch metric, associate an alarm with the metric, and then create a
-         * health check that is based on the state of the alarm. For example, you might
-         * create a CloudWatch metric that checks the status of the Amazon EC2
-         * <code>StatusCheckFailed</code> metric, add an alarm to the metric, and then
-         * create a health check that is based on the state of the alarm. For information
-         * about creating CloudWatch metrics and alarms by using the CloudWatch console,
-         * see the <a
+         * <p>If you are registering EC2 instances with an Elastic Load Balancing (ELB)
+         * load balancer, do not create Amazon Route 53 health checks for the EC2
+         * instances. When you register an EC2 instance with a load balancer, you configure
+         * settings for an ELB health check, which performs a similar function to an Amazon
+         * Route 53 health check.</p> <p>You can associate health checks with failover
+         * resource record sets in a private hosted zone. Note the following:</p> <ul> <li>
+         * <p>Amazon Route 53 health checkers are outside the VPC. To check the health of
+         * an endpoint within a VPC by IP address, you must assign a public IP address to
+         * the instance in the VPC.</p> </li> <li> <p>You can configure a health checker to
+         * check the health of an external resource that the instance relies on, such as a
+         * database server.</p> </li> <li> <p>You can create a CloudWatch metric, associate
+         * an alarm with the metric, and then create a health check that is based on the
+         * state of the alarm. For example, you might create a CloudWatch metric that
+         * checks the status of the Amazon EC2 <code>StatusCheckFailed</code> metric, add
+         * an alarm to the metric, and then create a health check that is based on the
+         * state of the alarm. For information about creating CloudWatch metrics and alarms
+         * by using the CloudWatch console, see the <a
          * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/WhatIsCloudWatch.html">Amazon
-         * CloudWatch Developer Guide</a>.</p> </li> </ul>
+         * CloudWatch User Guide</a>.</p> </li> </ul>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -667,32 +701,31 @@ namespace Model
         /**
          * <p>Creates a new health check.</p> <p>To create a new health check, send a
          * <code>POST</code> request to the <code>/2013-04-01/healthcheck</code> resource.
-         * The request body must include an XML document with a
+         * The request body must include a document with a
          * <code>CreateHealthCheckRequest</code> element. The response returns the
          * <code>CreateHealthCheckResponse</code> element, containing the health check ID
          * specified when adding health check to a resource record set. For information
          * about adding health checks to resource record sets, see
          * <a>ResourceRecordSet$HealthCheckId</a> in <a>ChangeResourceRecordSets</a>. </p>
-         * <p>If you are registering Amazon EC2 instances with an Elastic Load Balancing
-         * (ELB) load balancer, do not create Amazon Route 53 health checks for the Amazon
-         * EC2 instances. When you register an Amazon EC2 instance with a load balancer,
-         * you configure settings for an ELB health check, which performs a similar
-         * function to an Amazon Route 53 health check.</p> <p>You can associate health
-         * checks with failover resource record sets in a private hosted zone. Note the
-         * following:</p> <ul> <li> <p>Amazon Route 53 health checkers are outside the VPC.
-         * To check the health of an endpoint within a VPC by IP address, you must assign a
-         * public IP address to the instance in the VPC.</p> </li> <li> <p>You can
-         * configure a health checker to check the health of an external resource that the
-         * instance relies on, such as a database server.</p> </li> <li> <p>You can create
-         * a CloudWatch metric, associate an alarm with the metric, and then create a
-         * health check that is based on the state of the alarm. For example, you might
-         * create a CloudWatch metric that checks the status of the Amazon EC2
-         * <code>StatusCheckFailed</code> metric, add an alarm to the metric, and then
-         * create a health check that is based on the state of the alarm. For information
-         * about creating CloudWatch metrics and alarms by using the CloudWatch console,
-         * see the <a
+         * <p>If you are registering EC2 instances with an Elastic Load Balancing (ELB)
+         * load balancer, do not create Amazon Route 53 health checks for the EC2
+         * instances. When you register an EC2 instance with a load balancer, you configure
+         * settings for an ELB health check, which performs a similar function to an Amazon
+         * Route 53 health check.</p> <p>You can associate health checks with failover
+         * resource record sets in a private hosted zone. Note the following:</p> <ul> <li>
+         * <p>Amazon Route 53 health checkers are outside the VPC. To check the health of
+         * an endpoint within a VPC by IP address, you must assign a public IP address to
+         * the instance in the VPC.</p> </li> <li> <p>You can configure a health checker to
+         * check the health of an external resource that the instance relies on, such as a
+         * database server.</p> </li> <li> <p>You can create a CloudWatch metric, associate
+         * an alarm with the metric, and then create a health check that is based on the
+         * state of the alarm. For example, you might create a CloudWatch metric that
+         * checks the status of the Amazon EC2 <code>StatusCheckFailed</code> metric, add
+         * an alarm to the metric, and then create a health check that is based on the
+         * state of the alarm. For information about creating CloudWatch metrics and alarms
+         * by using the CloudWatch console, see the <a
          * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/WhatIsCloudWatch.html">Amazon
-         * CloudWatch Developer Guide</a>.</p> </li> </ul>
+         * CloudWatch User Guide</a>.</p> </li> </ul>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -701,16 +734,16 @@ namespace Model
         /**
          * <p>Creates a new public hosted zone, used to specify how the Domain Name System
          * (DNS) routes traffic on the Internet for a domain, such as example.com, and its
-         * subdomains. </p> <important> <p>Public hosted zones cannot be converted to a
+         * subdomains. </p> <important> <p>Public hosted zones can't be converted to a
          * private hosted zone or vice versa. Instead, create a new hosted zone with the
          * same name and create new resource record sets.</p> </important> <p>Send a
          * <code>POST</code> request to the <code>/2013-04-01/hostedzone</code> resource.
-         * The request body must include an XML document with a
+         * The request body must include a document with a
          * <code>CreateHostedZoneRequest</code> element. The response returns the
          * <code>CreateHostedZoneResponse</code> element containing metadata about the
          * hosted zone.</p> <p>Fore more information about charges for hosted zones, see <a
          * href="http://aws.amazon.com/route53/pricing/">Amazon Route 53 Pricing</a>.</p>
-         * <p>Note the following:</p> <ul> <li> <p>You cannot create a hosted zone for a
+         * <p>Note the following:</p> <ul> <li> <p>You can't create a hosted zone for a
          * top-level domain (TLD).</p> </li> <li> <p>Amazon Route 53 automatically creates
          * a default SOA record and four NS records for the zone. For more information
          * about SOA and NS records, see <a
@@ -735,16 +768,16 @@ namespace Model
         /**
          * <p>Creates a new public hosted zone, used to specify how the Domain Name System
          * (DNS) routes traffic on the Internet for a domain, such as example.com, and its
-         * subdomains. </p> <important> <p>Public hosted zones cannot be converted to a
+         * subdomains. </p> <important> <p>Public hosted zones can't be converted to a
          * private hosted zone or vice versa. Instead, create a new hosted zone with the
          * same name and create new resource record sets.</p> </important> <p>Send a
          * <code>POST</code> request to the <code>/2013-04-01/hostedzone</code> resource.
-         * The request body must include an XML document with a
+         * The request body must include a document with a
          * <code>CreateHostedZoneRequest</code> element. The response returns the
          * <code>CreateHostedZoneResponse</code> element containing metadata about the
          * hosted zone.</p> <p>Fore more information about charges for hosted zones, see <a
          * href="http://aws.amazon.com/route53/pricing/">Amazon Route 53 Pricing</a>.</p>
-         * <p>Note the following:</p> <ul> <li> <p>You cannot create a hosted zone for a
+         * <p>Note the following:</p> <ul> <li> <p>You can't create a hosted zone for a
          * top-level domain (TLD).</p> </li> <li> <p>Amazon Route 53 automatically creates
          * a default SOA record and four NS records for the zone. For more information
          * about SOA and NS records, see <a
@@ -771,16 +804,16 @@ namespace Model
         /**
          * <p>Creates a new public hosted zone, used to specify how the Domain Name System
          * (DNS) routes traffic on the Internet for a domain, such as example.com, and its
-         * subdomains. </p> <important> <p>Public hosted zones cannot be converted to a
+         * subdomains. </p> <important> <p>Public hosted zones can't be converted to a
          * private hosted zone or vice versa. Instead, create a new hosted zone with the
          * same name and create new resource record sets.</p> </important> <p>Send a
          * <code>POST</code> request to the <code>/2013-04-01/hostedzone</code> resource.
-         * The request body must include an XML document with a
+         * The request body must include a document with a
          * <code>CreateHostedZoneRequest</code> element. The response returns the
          * <code>CreateHostedZoneResponse</code> element containing metadata about the
          * hosted zone.</p> <p>Fore more information about charges for hosted zones, see <a
          * href="http://aws.amazon.com/route53/pricing/">Amazon Route 53 Pricing</a>.</p>
-         * <p>Note the following:</p> <ul> <li> <p>You cannot create a hosted zone for a
+         * <p>Note the following:</p> <ul> <li> <p>You can't create a hosted zone for a
          * top-level domain (TLD).</p> </li> <li> <p>Amazon Route 53 automatically creates
          * a default SOA record and four NS records for the zone. For more information
          * about SOA and NS records, see <a
@@ -809,12 +842,12 @@ namespace Model
          * multiple hosted zones. If a hosted zoned ID is specified,
          * <code>CreateReusableDelegationSet</code> marks the delegation set associated
          * with that zone as reusable</p> <p>Send a <code>POST</code> request to the
-         * <code>/2013-04-01/delegationset</code> resource. The request body must include
-         * an XML document with a <code>CreateReusableDelegationSetRequest</code>
-         * element.</p> <note> <p>A reusable delegation set cannot be associated with a
-         * private hosted zone/</p> </note> <p>For more information, including a procedure
-         * on how to create and configure a reusable delegation set (also known as white
-         * label name servers), see <a
+         * <code>/2013-04-01/delegationset</code> resource. The request body must include a
+         * document with a <code>CreateReusableDelegationSetRequest</code> element.</p>
+         * <note> <p>A reusable delegation set can't be associated with a private hosted
+         * zone/</p> </note> <p>For more information, including a procedure on how to
+         * create and configure a reusable delegation set (also known as white label name
+         * servers), see <a
          * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/white-label-name-servers.html">Configuring
          * White Label Name Servers</a>.</p>
          */
@@ -825,12 +858,12 @@ namespace Model
          * multiple hosted zones. If a hosted zoned ID is specified,
          * <code>CreateReusableDelegationSet</code> marks the delegation set associated
          * with that zone as reusable</p> <p>Send a <code>POST</code> request to the
-         * <code>/2013-04-01/delegationset</code> resource. The request body must include
-         * an XML document with a <code>CreateReusableDelegationSetRequest</code>
-         * element.</p> <note> <p>A reusable delegation set cannot be associated with a
-         * private hosted zone/</p> </note> <p>For more information, including a procedure
-         * on how to create and configure a reusable delegation set (also known as white
-         * label name servers), see <a
+         * <code>/2013-04-01/delegationset</code> resource. The request body must include a
+         * document with a <code>CreateReusableDelegationSetRequest</code> element.</p>
+         * <note> <p>A reusable delegation set can't be associated with a private hosted
+         * zone/</p> </note> <p>For more information, including a procedure on how to
+         * create and configure a reusable delegation set (also known as white label name
+         * servers), see <a
          * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/white-label-name-servers.html">Configuring
          * White Label Name Servers</a>.</p>
          *
@@ -843,12 +876,12 @@ namespace Model
          * multiple hosted zones. If a hosted zoned ID is specified,
          * <code>CreateReusableDelegationSet</code> marks the delegation set associated
          * with that zone as reusable</p> <p>Send a <code>POST</code> request to the
-         * <code>/2013-04-01/delegationset</code> resource. The request body must include
-         * an XML document with a <code>CreateReusableDelegationSetRequest</code>
-         * element.</p> <note> <p>A reusable delegation set cannot be associated with a
-         * private hosted zone/</p> </note> <p>For more information, including a procedure
-         * on how to create and configure a reusable delegation set (also known as white
-         * label name servers), see <a
+         * <code>/2013-04-01/delegationset</code> resource. The request body must include a
+         * document with a <code>CreateReusableDelegationSetRequest</code> element.</p>
+         * <note> <p>A reusable delegation set can't be associated with a private hosted
+         * zone/</p> </note> <p>For more information, including a procedure on how to
+         * create and configure a reusable delegation set (also known as white label name
+         * servers), see <a
          * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/white-label-name-servers.html">Configuring
          * White Label Name Servers</a>.</p>
          *
@@ -998,12 +1031,70 @@ namespace Model
         virtual void CreateTrafficPolicyVersionAsync(const Model::CreateTrafficPolicyVersionRequest& request, const CreateTrafficPolicyVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Authorizes the AWS account that created a specified VPC to submit an
+         * <code>AssociateVPCWithHostedZone</code> request to associate the VPC with a
+         * specified hosted zone that was created by a different account. To submit a
+         * <code>CreateVPCAssociationAuthorization</code> request, you must use the account
+         * that created the hosted zone. After you authorize the association, use the
+         * account that created the VPC to submit an
+         * <code>AssociateVPCWithHostedZone</code> request.</p> <note> <p>If you want to
+         * associate multiple VPCs that you created by using one account with a hosted zone
+         * that you created by using a different account, you must submit one authorization
+         * request for each VPC.</p> </note> <p>Send a <code>POST</code> request to the
+         * <code>/2013-04-01/hostedzone/<i>hosted zone
+         * ID</i>/authorizevpcassociation</code> resource. The request body must include a
+         * document with a <code>CreateVPCAssociationAuthorizationRequest</code> element.
+         * The response contains information about the authorization.</p>
+         */
+        virtual Model::CreateVPCAssociationAuthorizationOutcome CreateVPCAssociationAuthorization(const Model::CreateVPCAssociationAuthorizationRequest& request) const;
+
+        /**
+         * <p>Authorizes the AWS account that created a specified VPC to submit an
+         * <code>AssociateVPCWithHostedZone</code> request to associate the VPC with a
+         * specified hosted zone that was created by a different account. To submit a
+         * <code>CreateVPCAssociationAuthorization</code> request, you must use the account
+         * that created the hosted zone. After you authorize the association, use the
+         * account that created the VPC to submit an
+         * <code>AssociateVPCWithHostedZone</code> request.</p> <note> <p>If you want to
+         * associate multiple VPCs that you created by using one account with a hosted zone
+         * that you created by using a different account, you must submit one authorization
+         * request for each VPC.</p> </note> <p>Send a <code>POST</code> request to the
+         * <code>/2013-04-01/hostedzone/<i>hosted zone
+         * ID</i>/authorizevpcassociation</code> resource. The request body must include a
+         * document with a <code>CreateVPCAssociationAuthorizationRequest</code> element.
+         * The response contains information about the authorization.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateVPCAssociationAuthorizationOutcomeCallable CreateVPCAssociationAuthorizationCallable(const Model::CreateVPCAssociationAuthorizationRequest& request) const;
+
+        /**
+         * <p>Authorizes the AWS account that created a specified VPC to submit an
+         * <code>AssociateVPCWithHostedZone</code> request to associate the VPC with a
+         * specified hosted zone that was created by a different account. To submit a
+         * <code>CreateVPCAssociationAuthorization</code> request, you must use the account
+         * that created the hosted zone. After you authorize the association, use the
+         * account that created the VPC to submit an
+         * <code>AssociateVPCWithHostedZone</code> request.</p> <note> <p>If you want to
+         * associate multiple VPCs that you created by using one account with a hosted zone
+         * that you created by using a different account, you must submit one authorization
+         * request for each VPC.</p> </note> <p>Send a <code>POST</code> request to the
+         * <code>/2013-04-01/hostedzone/<i>hosted zone
+         * ID</i>/authorizevpcassociation</code> resource. The request body must include a
+         * document with a <code>CreateVPCAssociationAuthorizationRequest</code> element.
+         * The response contains information about the authorization.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateVPCAssociationAuthorizationAsync(const Model::CreateVPCAssociationAuthorizationRequest& request, const CreateVPCAssociationAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Deletes a health check. Send a <code>DELETE</code> request to the
          * <code>/2013-04-01/healthcheck/<i>health check ID</i> </code> resource.</p>
          * <important> <p>Amazon Route 53 does not prevent you from deleting a health check
          * even if the health check is associated with one or more resource record sets. If
          * you delete a health check and you don't update the associated resource record
-         * sets, the future status of the health check cannot be predicted and may change.
+         * sets, the future status of the health check can't be predicted and may change.
          * This will affect the routing of DNS queries for your DNS failover configuration.
          * For more information, see <a
          * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/health-checks-creating-deleting.html#health-checks-deleting.html">Replacing
@@ -1018,7 +1109,7 @@ namespace Model
          * <important> <p>Amazon Route 53 does not prevent you from deleting a health check
          * even if the health check is associated with one or more resource record sets. If
          * you delete a health check and you don't update the associated resource record
-         * sets, the future status of the health check cannot be predicted and may change.
+         * sets, the future status of the health check can't be predicted and may change.
          * This will affect the routing of DNS queries for your DNS failover configuration.
          * For more information, see <a
          * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/health-checks-creating-deleting.html#health-checks-deleting.html">Replacing
@@ -1035,7 +1126,7 @@ namespace Model
          * <important> <p>Amazon Route 53 does not prevent you from deleting a health check
          * even if the health check is associated with one or more resource record sets. If
          * you delete a health check and you don't update the associated resource record
-         * sets, the future status of the health check cannot be predicted and may change.
+         * sets, the future status of the health check can't be predicted and may change.
          * This will affect the routing of DNS queries for your DNS failover configuration.
          * For more information, see <a
          * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/health-checks-creating-deleting.html#health-checks-deleting.html">Replacing
@@ -1183,40 +1274,104 @@ namespace Model
         virtual void DeleteTrafficPolicyInstanceAsync(const Model::DeleteTrafficPolicyInstanceRequest& request, const DeleteTrafficPolicyInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Disassociates a VPC from a Amazon Route 53 private hosted zone. </p> <p>Send
-         * a <code>POST</code> request to the <code>/2013-04-01/hostedzone/<i>hosted zone
-         * ID</i>/disassociatevpc</code> resource. The request body must include an XML
-         * document with a <code>DisassociateVPCFromHostedZoneRequest</code> element. The
-         * response returns the <code>DisassociateVPCFromHostedZoneResponse</code>
-         * element.</p> <important> <p>You can only disassociate a VPC from a private
-         * hosted zone when two or more VPCs are associated with that hosted zone. You
-         * cannot convert a private hosted zone into a public hosted zone.</p> </important>
+         * <p>Removes authorization to submit an <code>AssociateVPCWithHostedZone</code>
+         * request to associate a specified VPC with a hosted zone that was created by a
+         * different account. You must use the account that created the hosted zone to
+         * submit a <code>DeleteVPCAssociationAuthorization</code> request.</p> <important>
+         * <p>Sending this request only prevents the AWS account that created the VPC from
+         * associating the VPC with the Amazon Route 53 hosted zone in the future. If the
+         * VPC is already associated with the hosted zone,
+         * <code>DeleteVPCAssociationAuthorization</code> won't disassociate the VPC from
+         * the hosted zone. If you want to delete an existing association, use
+         * <code>DisassociateVPCFromHostedZone</code>.</p> </important> <p>Send a
+         * <code>DELETE</code> request to the <code>/2013-04-01/hostedzone/<i>hosted zone
+         * ID</i>/deauthorizevpcassociation</code> resource. The request body must include
+         * a document with a <code>DeleteVPCAssociationAuthorizationRequest</code>
+         * element.</p>
+         */
+        virtual Model::DeleteVPCAssociationAuthorizationOutcome DeleteVPCAssociationAuthorization(const Model::DeleteVPCAssociationAuthorizationRequest& request) const;
+
+        /**
+         * <p>Removes authorization to submit an <code>AssociateVPCWithHostedZone</code>
+         * request to associate a specified VPC with a hosted zone that was created by a
+         * different account. You must use the account that created the hosted zone to
+         * submit a <code>DeleteVPCAssociationAuthorization</code> request.</p> <important>
+         * <p>Sending this request only prevents the AWS account that created the VPC from
+         * associating the VPC with the Amazon Route 53 hosted zone in the future. If the
+         * VPC is already associated with the hosted zone,
+         * <code>DeleteVPCAssociationAuthorization</code> won't disassociate the VPC from
+         * the hosted zone. If you want to delete an existing association, use
+         * <code>DisassociateVPCFromHostedZone</code>.</p> </important> <p>Send a
+         * <code>DELETE</code> request to the <code>/2013-04-01/hostedzone/<i>hosted zone
+         * ID</i>/deauthorizevpcassociation</code> resource. The request body must include
+         * a document with a <code>DeleteVPCAssociationAuthorizationRequest</code>
+         * element.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteVPCAssociationAuthorizationOutcomeCallable DeleteVPCAssociationAuthorizationCallable(const Model::DeleteVPCAssociationAuthorizationRequest& request) const;
+
+        /**
+         * <p>Removes authorization to submit an <code>AssociateVPCWithHostedZone</code>
+         * request to associate a specified VPC with a hosted zone that was created by a
+         * different account. You must use the account that created the hosted zone to
+         * submit a <code>DeleteVPCAssociationAuthorization</code> request.</p> <important>
+         * <p>Sending this request only prevents the AWS account that created the VPC from
+         * associating the VPC with the Amazon Route 53 hosted zone in the future. If the
+         * VPC is already associated with the hosted zone,
+         * <code>DeleteVPCAssociationAuthorization</code> won't disassociate the VPC from
+         * the hosted zone. If you want to delete an existing association, use
+         * <code>DisassociateVPCFromHostedZone</code>.</p> </important> <p>Send a
+         * <code>DELETE</code> request to the <code>/2013-04-01/hostedzone/<i>hosted zone
+         * ID</i>/deauthorizevpcassociation</code> resource. The request body must include
+         * a document with a <code>DeleteVPCAssociationAuthorizationRequest</code>
+         * element.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteVPCAssociationAuthorizationAsync(const Model::DeleteVPCAssociationAuthorizationRequest& request, const DeleteVPCAssociationAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Disassociates a VPC from a Amazon Route 53 private hosted zone. </p> <note>
+         * <p>You can't disassociate the last VPC from a private hosted zone.</p> </note>
+         * <p>Send a <code>POST</code> request to the
+         * <code>/2013-04-01/hostedzone/<i>hosted zone ID</i>/disassociatevpc</code>
+         * resource. The request body must include a document with a
+         * <code>DisassociateVPCFromHostedZoneRequest</code> element. The response includes
+         * a <code>DisassociateVPCFromHostedZoneResponse</code> element.</p> <important>
+         * <p>You can't disassociate a VPC from a private hosted zone when only one VPC is
+         * associated with the hosted zone. You also can't convert a private hosted zone
+         * into a public hosted zone.</p> </important>
          */
         virtual Model::DisassociateVPCFromHostedZoneOutcome DisassociateVPCFromHostedZone(const Model::DisassociateVPCFromHostedZoneRequest& request) const;
 
         /**
-         * <p>Disassociates a VPC from a Amazon Route 53 private hosted zone. </p> <p>Send
-         * a <code>POST</code> request to the <code>/2013-04-01/hostedzone/<i>hosted zone
-         * ID</i>/disassociatevpc</code> resource. The request body must include an XML
-         * document with a <code>DisassociateVPCFromHostedZoneRequest</code> element. The
-         * response returns the <code>DisassociateVPCFromHostedZoneResponse</code>
-         * element.</p> <important> <p>You can only disassociate a VPC from a private
-         * hosted zone when two or more VPCs are associated with that hosted zone. You
-         * cannot convert a private hosted zone into a public hosted zone.</p> </important>
+         * <p>Disassociates a VPC from a Amazon Route 53 private hosted zone. </p> <note>
+         * <p>You can't disassociate the last VPC from a private hosted zone.</p> </note>
+         * <p>Send a <code>POST</code> request to the
+         * <code>/2013-04-01/hostedzone/<i>hosted zone ID</i>/disassociatevpc</code>
+         * resource. The request body must include a document with a
+         * <code>DisassociateVPCFromHostedZoneRequest</code> element. The response includes
+         * a <code>DisassociateVPCFromHostedZoneResponse</code> element.</p> <important>
+         * <p>You can't disassociate a VPC from a private hosted zone when only one VPC is
+         * associated with the hosted zone. You also can't convert a private hosted zone
+         * into a public hosted zone.</p> </important>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DisassociateVPCFromHostedZoneOutcomeCallable DisassociateVPCFromHostedZoneCallable(const Model::DisassociateVPCFromHostedZoneRequest& request) const;
 
         /**
-         * <p>Disassociates a VPC from a Amazon Route 53 private hosted zone. </p> <p>Send
-         * a <code>POST</code> request to the <code>/2013-04-01/hostedzone/<i>hosted zone
-         * ID</i>/disassociatevpc</code> resource. The request body must include an XML
-         * document with a <code>DisassociateVPCFromHostedZoneRequest</code> element. The
-         * response returns the <code>DisassociateVPCFromHostedZoneResponse</code>
-         * element.</p> <important> <p>You can only disassociate a VPC from a private
-         * hosted zone when two or more VPCs are associated with that hosted zone. You
-         * cannot convert a private hosted zone into a public hosted zone.</p> </important>
+         * <p>Disassociates a VPC from a Amazon Route 53 private hosted zone. </p> <note>
+         * <p>You can't disassociate the last VPC from a private hosted zone.</p> </note>
+         * <p>Send a <code>POST</code> request to the
+         * <code>/2013-04-01/hostedzone/<i>hosted zone ID</i>/disassociatevpc</code>
+         * resource. The request body must include a document with a
+         * <code>DisassociateVPCFromHostedZoneRequest</code> element. The response includes
+         * a <code>DisassociateVPCFromHostedZoneResponse</code> element.</p> <important>
+         * <p>You can't disassociate a VPC from a private hosted zone when only one VPC is
+         * associated with the hosted zone. You also can't convert a private hosted zone
+         * into a public hosted zone.</p> </important>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2587,6 +2742,79 @@ namespace Model
         virtual void ListTrafficPolicyVersionsAsync(const Model::ListTrafficPolicyVersionsRequest& request, const ListTrafficPolicyVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Gets a list of the VPCs that were created by other accounts and that can be
+         * associated with a specified hosted zone because you've submitted one or more
+         * <code>CreateVPCAssociationAuthorization</code> requests. </p> <p>Send a
+         * <code>GET</code> request to the <code>/2013-04-01/hostedzone/<i>hosted zone
+         * ID</i>/authorizevpcassociation</code> resource. The response to this request
+         * includes a <code>VPCs</code> element with a <code>VPC</code> child element for
+         * each VPC that can be associated with the hosted zone.</p> <p>Amazon Route 53
+         * returns up to 50 VPCs per page. To return fewer VPCs per page, include the
+         * <code>MaxResults</code> parameter: </p> <p>
+         * <code>/2013-04-01/hostedzone/<i>hosted zone
+         * ID</i>/authorizevpcassociation?MaxItems=<i>VPCs per page</i> </code> </p> <p>If
+         * the response includes a <code>NextToken</code> element, there are more VPCs to
+         * list. To get the next page of VPCs, submit another
+         * <code>ListVPCAssociationAuthorizations</code> request, and include the value of
+         * the <code>NextToken</code> element from the response in the
+         * <code>NextToken</code> request parameter:</p> <p>
+         * <code>/2013-04-01/hostedzone/<i>hosted zone
+         * ID</i>/authorizevpcassociation?MaxItems=<i>VPCs per page</i>&amp;NextToken=<i/>
+         * </code> </p>
+         */
+        virtual Model::ListVPCAssociationAuthorizationsOutcome ListVPCAssociationAuthorizations(const Model::ListVPCAssociationAuthorizationsRequest& request) const;
+
+        /**
+         * <p>Gets a list of the VPCs that were created by other accounts and that can be
+         * associated with a specified hosted zone because you've submitted one or more
+         * <code>CreateVPCAssociationAuthorization</code> requests. </p> <p>Send a
+         * <code>GET</code> request to the <code>/2013-04-01/hostedzone/<i>hosted zone
+         * ID</i>/authorizevpcassociation</code> resource. The response to this request
+         * includes a <code>VPCs</code> element with a <code>VPC</code> child element for
+         * each VPC that can be associated with the hosted zone.</p> <p>Amazon Route 53
+         * returns up to 50 VPCs per page. To return fewer VPCs per page, include the
+         * <code>MaxResults</code> parameter: </p> <p>
+         * <code>/2013-04-01/hostedzone/<i>hosted zone
+         * ID</i>/authorizevpcassociation?MaxItems=<i>VPCs per page</i> </code> </p> <p>If
+         * the response includes a <code>NextToken</code> element, there are more VPCs to
+         * list. To get the next page of VPCs, submit another
+         * <code>ListVPCAssociationAuthorizations</code> request, and include the value of
+         * the <code>NextToken</code> element from the response in the
+         * <code>NextToken</code> request parameter:</p> <p>
+         * <code>/2013-04-01/hostedzone/<i>hosted zone
+         * ID</i>/authorizevpcassociation?MaxItems=<i>VPCs per page</i>&amp;NextToken=<i/>
+         * </code> </p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListVPCAssociationAuthorizationsOutcomeCallable ListVPCAssociationAuthorizationsCallable(const Model::ListVPCAssociationAuthorizationsRequest& request) const;
+
+        /**
+         * <p>Gets a list of the VPCs that were created by other accounts and that can be
+         * associated with a specified hosted zone because you've submitted one or more
+         * <code>CreateVPCAssociationAuthorization</code> requests. </p> <p>Send a
+         * <code>GET</code> request to the <code>/2013-04-01/hostedzone/<i>hosted zone
+         * ID</i>/authorizevpcassociation</code> resource. The response to this request
+         * includes a <code>VPCs</code> element with a <code>VPC</code> child element for
+         * each VPC that can be associated with the hosted zone.</p> <p>Amazon Route 53
+         * returns up to 50 VPCs per page. To return fewer VPCs per page, include the
+         * <code>MaxResults</code> parameter: </p> <p>
+         * <code>/2013-04-01/hostedzone/<i>hosted zone
+         * ID</i>/authorizevpcassociation?MaxItems=<i>VPCs per page</i> </code> </p> <p>If
+         * the response includes a <code>NextToken</code> element, there are more VPCs to
+         * list. To get the next page of VPCs, submit another
+         * <code>ListVPCAssociationAuthorizations</code> request, and include the value of
+         * the <code>NextToken</code> element from the response in the
+         * <code>NextToken</code> request parameter:</p> <p>
+         * <code>/2013-04-01/hostedzone/<i>hosted zone
+         * ID</i>/authorizevpcassociation?MaxItems=<i>VPCs per page</i>&amp;NextToken=<i/>
+         * </code> </p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListVPCAssociationAuthorizationsAsync(const Model::ListVPCAssociationAuthorizationsRequest& request, const ListVPCAssociationAuthorizationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Gets the value that Amazon Route 53 returns in response to a DNS request for
          * a specified record name and type. You can optionally specify the IP address of a
          * DNS resolver, an EDNS0 client subnet IP address, and a subnet mask. </p>
@@ -2614,7 +2842,7 @@ namespace Model
         /**
          * <p>Updates an existing health check.</p> <p>Send a <code>POST</code> request to
          * the <code>/2013-04-01/healthcheck/<i>health check ID</i> </code> resource. The
-         * request body must include an XML document with an
+         * request body must include a document with an
          * <code>UpdateHealthCheckRequest</code> element. For more information about
          * updating health checks, see <a
          * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/health-checks-creating-deleting.html">Creating,
@@ -2626,7 +2854,7 @@ namespace Model
         /**
          * <p>Updates an existing health check.</p> <p>Send a <code>POST</code> request to
          * the <code>/2013-04-01/healthcheck/<i>health check ID</i> </code> resource. The
-         * request body must include an XML document with an
+         * request body must include a document with an
          * <code>UpdateHealthCheckRequest</code> element. For more information about
          * updating health checks, see <a
          * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/health-checks-creating-deleting.html">Creating,
@@ -2640,7 +2868,7 @@ namespace Model
         /**
          * <p>Updates an existing health check.</p> <p>Send a <code>POST</code> request to
          * the <code>/2013-04-01/healthcheck/<i>health check ID</i> </code> resource. The
-         * request body must include an XML document with an
+         * request body must include a document with an
          * <code>UpdateHealthCheckRequest</code> element. For more information about
          * updating health checks, see <a
          * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/health-checks-creating-deleting.html">Creating,
@@ -2785,11 +3013,13 @@ namespace Model
         void CreateTrafficPolicyAsyncHelper(const Model::CreateTrafficPolicyRequest& request, const CreateTrafficPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateTrafficPolicyInstanceAsyncHelper(const Model::CreateTrafficPolicyInstanceRequest& request, const CreateTrafficPolicyInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateTrafficPolicyVersionAsyncHelper(const Model::CreateTrafficPolicyVersionRequest& request, const CreateTrafficPolicyVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateVPCAssociationAuthorizationAsyncHelper(const Model::CreateVPCAssociationAuthorizationRequest& request, const CreateVPCAssociationAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteHealthCheckAsyncHelper(const Model::DeleteHealthCheckRequest& request, const DeleteHealthCheckResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteHostedZoneAsyncHelper(const Model::DeleteHostedZoneRequest& request, const DeleteHostedZoneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteReusableDelegationSetAsyncHelper(const Model::DeleteReusableDelegationSetRequest& request, const DeleteReusableDelegationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteTrafficPolicyAsyncHelper(const Model::DeleteTrafficPolicyRequest& request, const DeleteTrafficPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteTrafficPolicyInstanceAsyncHelper(const Model::DeleteTrafficPolicyInstanceRequest& request, const DeleteTrafficPolicyInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteVPCAssociationAuthorizationAsyncHelper(const Model::DeleteVPCAssociationAuthorizationRequest& request, const DeleteVPCAssociationAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateVPCFromHostedZoneAsyncHelper(const Model::DisassociateVPCFromHostedZoneRequest& request, const DisassociateVPCFromHostedZoneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetChangeAsyncHelper(const Model::GetChangeRequest& request, const GetChangeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetCheckerIpRangesAsyncHelper(const Model::GetCheckerIpRangesRequest& request, const GetCheckerIpRangesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2817,6 +3047,7 @@ namespace Model
         void ListTrafficPolicyInstancesByHostedZoneAsyncHelper(const Model::ListTrafficPolicyInstancesByHostedZoneRequest& request, const ListTrafficPolicyInstancesByHostedZoneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTrafficPolicyInstancesByPolicyAsyncHelper(const Model::ListTrafficPolicyInstancesByPolicyRequest& request, const ListTrafficPolicyInstancesByPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTrafficPolicyVersionsAsyncHelper(const Model::ListTrafficPolicyVersionsRequest& request, const ListTrafficPolicyVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListVPCAssociationAuthorizationsAsyncHelper(const Model::ListVPCAssociationAuthorizationsRequest& request, const ListVPCAssociationAuthorizationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TestDNSAnswerAsyncHelper(const Model::TestDNSAnswerRequest& request, const TestDNSAnswerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateHealthCheckAsyncHelper(const Model::UpdateHealthCheckRequest& request, const UpdateHealthCheckResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateHostedZoneCommentAsyncHelper(const Model::UpdateHostedZoneCommentRequest& request, const UpdateHostedZoneCommentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

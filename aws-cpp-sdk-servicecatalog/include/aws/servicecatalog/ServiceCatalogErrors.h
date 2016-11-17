@@ -54,7 +54,9 @@ enum class ServiceCatalogErrors
   ///////////////////////////////////////////////////////////////////////////////////////////
 
   DUPLICATE_RESOURCE= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
-  INVALID_PARAMETERS
+  INVALID_PARAMETERS,
+  LIMIT_EXCEEDED,
+  RESOURCE_IN_USE
 };
 namespace ServiceCatalogErrorMapper
 {
