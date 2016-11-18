@@ -78,4 +78,7 @@ else()
              RUNTIME DESTINATION bin/${SDK_INSTALL_BINARY_PREFIX}/${PLATFORM_INSTALL_QUALIFIER}/\${CMAKE_INSTALL_CONFIG_NAME})
 endif()
 
-install (FILES ${ALL_S3ENCRYPTION_HEADERS} DESTINATION include/aws/s3-encryption)
+install (FILES ${S3ENCRYPTION_HEADERS} DESTINATION include/aws/s3-encryption)
+install (FILES ${S3ENCRYPTION_MATERIALS_HEADERS} DESTINATION include/aws/s3-encryption/materials)
+install (FILES ${S3ENCRYPTION_HANDLERS_HEADERS} DESTINATION include/aws/s3-encryption/handlers)
+install (FILES ${S3ENCRYPTION_MODULES_HEADERS} DESTINATION include/aws/s3-encryption/modules)
