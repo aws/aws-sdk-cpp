@@ -22,11 +22,11 @@ import java.util.*;
 @Data
 public class EnumModel {
     private String name;
-    private Set<EnumMemberModel> members;
+    private List<EnumMemberModel> members;
 
     public EnumModel(String enumName, Collection<String> enumMembers) {
         name = enumName;
-        members = new LinkedHashSet<>(enumMembers.size());
+        members = new ArrayList<>(enumMembers.size());
         for (String enumMember : enumMembers) {
            members.add(new EnumMemberModel(PlatformAndKeywordSanitizer.fixEnumValue(enumMember), enumMember));
         }
