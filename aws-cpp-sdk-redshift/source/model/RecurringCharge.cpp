@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::Redshift::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace Redshift
+{
+namespace Model
+{
 
 RecurringCharge::RecurringCharge() : 
     m_recurringChargeAmount(0.0),
@@ -65,22 +71,28 @@ void RecurringCharge::OutputToStream(Aws::OStream& oStream, const char* location
 {
   if(m_recurringChargeAmountHasBeenSet)
   {
-      oStream << location << index << locationValue << ".RecurringChargeAmount=" << m_recurringChargeAmount << "&";
+        oStream << location << index << locationValue << ".RecurringChargeAmount=" << StringUtils::URLEncode(m_recurringChargeAmount) << "&";
   }
+
   if(m_recurringChargeFrequencyHasBeenSet)
   {
       oStream << location << index << locationValue << ".RecurringChargeFrequency=" << StringUtils::URLEncode(m_recurringChargeFrequency.c_str()) << "&";
   }
+
 }
 
 void RecurringCharge::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
   if(m_recurringChargeAmountHasBeenSet)
   {
-      oStream << location << ".RecurringChargeAmount=" << m_recurringChargeAmount << "&";
+        oStream << location << ".RecurringChargeAmount=" << StringUtils::URLEncode(m_recurringChargeAmount) << "&";
   }
   if(m_recurringChargeFrequencyHasBeenSet)
   {
       oStream << location << ".RecurringChargeFrequency=" << StringUtils::URLEncode(m_recurringChargeFrequency.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace Redshift
+} // namespace Aws

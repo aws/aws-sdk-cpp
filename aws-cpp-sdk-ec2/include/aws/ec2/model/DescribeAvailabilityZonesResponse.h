@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -34,9 +34,9 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
+  /**
+   * <p>Contains the output of DescribeAvailabiltyZones.</p>
+   */
   class AWS_EC2_API DescribeAvailabilityZonesResponse
   {
   public:
@@ -44,39 +44,39 @@ namespace Model
     DescribeAvailabilityZonesResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     DescribeAvailabilityZonesResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>Information about one or more Availability Zones.</p>
-    */
+    /**
+     * <p>Information about one or more Availability Zones.</p>
+     */
     inline const Aws::Vector<AvailabilityZone>& GetAvailabilityZones() const{ return m_availabilityZones; }
 
-    /*
-     <p>Information about one or more Availability Zones.</p>
-    */
+    /**
+     * <p>Information about one or more Availability Zones.</p>
+     */
     inline void SetAvailabilityZones(const Aws::Vector<AvailabilityZone>& value) { m_availabilityZones = value; }
 
-    /*
-     <p>Information about one or more Availability Zones.</p>
-    */
+    /**
+     * <p>Information about one or more Availability Zones.</p>
+     */
     inline void SetAvailabilityZones(Aws::Vector<AvailabilityZone>&& value) { m_availabilityZones = value; }
 
-    /*
-     <p>Information about one or more Availability Zones.</p>
-    */
+    /**
+     * <p>Information about one or more Availability Zones.</p>
+     */
     inline DescribeAvailabilityZonesResponse& WithAvailabilityZones(const Aws::Vector<AvailabilityZone>& value) { SetAvailabilityZones(value); return *this;}
 
-    /*
-     <p>Information about one or more Availability Zones.</p>
-    */
+    /**
+     * <p>Information about one or more Availability Zones.</p>
+     */
     inline DescribeAvailabilityZonesResponse& WithAvailabilityZones(Aws::Vector<AvailabilityZone>&& value) { SetAvailabilityZones(value); return *this;}
 
-    /*
-     <p>Information about one or more Availability Zones.</p>
-    */
+    /**
+     * <p>Information about one or more Availability Zones.</p>
+     */
     inline DescribeAvailabilityZonesResponse& AddAvailabilityZones(const AvailabilityZone& value) { m_availabilityZones.push_back(value); return *this; }
 
-    /*
-     <p>Information about one or more Availability Zones.</p>
-    */
+    /**
+     * <p>Information about one or more Availability Zones.</p>
+     */
     inline DescribeAvailabilityZonesResponse& AddAvailabilityZones(AvailabilityZone&& value) { m_availabilityZones.push_back(value); return *this; }
 
     

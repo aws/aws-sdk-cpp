@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -41,16 +41,16 @@ void ListFunctionsRequest::AddQueryStringParameters(URI& uri) const
     Aws::StringStream ss;
     if(m_markerHasBeenSet)
     {
-     ss << m_marker;
-     uri.AddQueryStringParameter("Marker", ss.str());
-     ss.str("");
+      ss << m_marker;
+      uri.AddQueryStringParameter("Marker", ss.str());
+      ss.str("");
     }
 
     if(m_maxItemsHasBeenSet)
     {
-     ss << m_maxItems;
-     uri.AddQueryStringParameter("MaxItems", ss.str());
-     ss.str("");
+      ss << m_maxItems;
+      uri.AddQueryStringParameter("MaxItems", ss.str());
+      ss.str("");
     }
 
 }

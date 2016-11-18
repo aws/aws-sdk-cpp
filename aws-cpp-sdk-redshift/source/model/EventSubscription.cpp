@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,16 +19,21 @@
 
 #include <utility>
 
-using namespace Aws::Redshift::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace Redshift
+{
+namespace Model
+{
 
 EventSubscription::EventSubscription() : 
     m_customerAwsIdHasBeenSet(false),
     m_custSubscriptionIdHasBeenSet(false),
     m_snsTopicArnHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_subscriptionCreationTime(0.0),
     m_subscriptionCreationTimeHasBeenSet(false),
     m_sourceTypeHasBeenSet(false),
     m_sourceIdsListHasBeenSet(false),
@@ -45,7 +50,6 @@ EventSubscription::EventSubscription(const XmlNode& xmlNode) :
     m_custSubscriptionIdHasBeenSet(false),
     m_snsTopicArnHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_subscriptionCreationTime(0.0),
     m_subscriptionCreationTimeHasBeenSet(false),
     m_sourceTypeHasBeenSet(false),
     m_sourceIdsListHasBeenSet(false),
@@ -91,7 +95,7 @@ EventSubscription& EventSubscription::operator =(const XmlNode& xmlNode)
     XmlNode subscriptionCreationTimeNode = resultNode.FirstChild("SubscriptionCreationTime");
     if(!subscriptionCreationTimeNode.IsNull())
     {
-      m_subscriptionCreationTime = StringUtils::ConvertToDouble(StringUtils::Trim(subscriptionCreationTimeNode.GetText().c_str()).c_str());
+      m_subscriptionCreationTime = DateTime(StringUtils::Trim(subscriptionCreationTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_subscriptionCreationTimeHasBeenSet = true;
     }
     XmlNode sourceTypeNode = resultNode.FirstChild("SourceType");
@@ -159,57 +163,71 @@ void EventSubscription::OutputToStream(Aws::OStream& oStream, const char* locati
   {
       oStream << location << index << locationValue << ".CustomerAwsId=" << StringUtils::URLEncode(m_customerAwsId.c_str()) << "&";
   }
+
   if(m_custSubscriptionIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".CustSubscriptionId=" << StringUtils::URLEncode(m_custSubscriptionId.c_str()) << "&";
   }
+
   if(m_snsTopicArnHasBeenSet)
   {
       oStream << location << index << locationValue << ".SnsTopicArn=" << StringUtils::URLEncode(m_snsTopicArn.c_str()) << "&";
   }
+
   if(m_statusHasBeenSet)
   {
       oStream << location << index << locationValue << ".Status=" << StringUtils::URLEncode(m_status.c_str()) << "&";
   }
+
   if(m_subscriptionCreationTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".SubscriptionCreationTime=" << m_subscriptionCreationTime << "&";
+      oStream << location << index << locationValue << ".SubscriptionCreationTime=" << StringUtils::URLEncode(m_subscriptionCreationTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_sourceTypeHasBeenSet)
   {
       oStream << location << index << locationValue << ".SourceType=" << StringUtils::URLEncode(m_sourceType.c_str()) << "&";
   }
+
   if(m_sourceIdsListHasBeenSet)
   {
+      unsigned sourceIdsListIdx = 1;
       for(auto& item : m_sourceIdsList)
       {
-        oStream << location << index << locationValue << ".SourceId=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << index << locationValue << ".SourceId." << sourceIdsListIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
+
   if(m_eventCategoriesListHasBeenSet)
   {
+      unsigned eventCategoriesListIdx = 1;
       for(auto& item : m_eventCategoriesList)
       {
-        oStream << location << index << locationValue << ".EventCategory=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << index << locationValue << ".EventCategory." << eventCategoriesListIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
+
   if(m_severityHasBeenSet)
   {
       oStream << location << index << locationValue << ".Severity=" << StringUtils::URLEncode(m_severity.c_str()) << "&";
   }
+
   if(m_enabledHasBeenSet)
   {
       oStream << location << index << locationValue << ".Enabled=" << m_enabled << "&";
   }
+
   if(m_tagsHasBeenSet)
   {
+      unsigned tagsIdx = 1;
       for(auto& item : m_tags)
       {
         Aws::StringStream tagsSs;
-        tagsSs << location << index << locationValue << ".Tag";
+        tagsSs << location << index << locationValue << ".Tag." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
+
 }
 
 void EventSubscription::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -232,7 +250,7 @@ void EventSubscription::OutputToStream(Aws::OStream& oStream, const char* locati
   }
   if(m_subscriptionCreationTimeHasBeenSet)
   {
-      oStream << location << ".SubscriptionCreationTime=" << m_subscriptionCreationTime << "&";
+      oStream << location << ".SubscriptionCreationTime=" << StringUtils::URLEncode(m_subscriptionCreationTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_sourceTypeHasBeenSet)
   {
@@ -240,16 +258,18 @@ void EventSubscription::OutputToStream(Aws::OStream& oStream, const char* locati
   }
   if(m_sourceIdsListHasBeenSet)
   {
+      unsigned sourceIdsListIdx = 1;
       for(auto& item : m_sourceIdsList)
       {
-        oStream << location << ".SourceId=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << ".SourceId." << sourceIdsListIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
   if(m_eventCategoriesListHasBeenSet)
   {
+      unsigned eventCategoriesListIdx = 1;
       for(auto& item : m_eventCategoriesList)
       {
-        oStream << location << ".EventCategory=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << ".EventCategory." << eventCategoriesListIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
   if(m_severityHasBeenSet)
@@ -262,11 +282,16 @@ void EventSubscription::OutputToStream(Aws::OStream& oStream, const char* locati
   }
   if(m_tagsHasBeenSet)
   {
+      unsigned tagsIdx = 1;
       for(auto& item : m_tags)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".Tag";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream tagsSs;
+        tagsSs << location <<  ".Tag." << tagsIdx++;
+        item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
 }
+
+} // namespace Model
+} // namespace Redshift
+} // namespace Aws

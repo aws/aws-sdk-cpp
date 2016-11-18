@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -33,9 +33,9 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
+  /**
+   * <p>Contains the output of AcceptVpcPeeringConnection.</p>
+   */
   class AWS_EC2_API AcceptVpcPeeringConnectionResponse
   {
   public:
@@ -43,29 +43,29 @@ namespace Model
     AcceptVpcPeeringConnectionResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AcceptVpcPeeringConnectionResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>Information about the VPC peering connection.</p>
-    */
+    /**
+     * <p>Information about the VPC peering connection.</p>
+     */
     inline const VpcPeeringConnection& GetVpcPeeringConnection() const{ return m_vpcPeeringConnection; }
 
-    /*
-     <p>Information about the VPC peering connection.</p>
-    */
+    /**
+     * <p>Information about the VPC peering connection.</p>
+     */
     inline void SetVpcPeeringConnection(const VpcPeeringConnection& value) { m_vpcPeeringConnection = value; }
 
-    /*
-     <p>Information about the VPC peering connection.</p>
-    */
+    /**
+     * <p>Information about the VPC peering connection.</p>
+     */
     inline void SetVpcPeeringConnection(VpcPeeringConnection&& value) { m_vpcPeeringConnection = value; }
 
-    /*
-     <p>Information about the VPC peering connection.</p>
-    */
+    /**
+     * <p>Information about the VPC peering connection.</p>
+     */
     inline AcceptVpcPeeringConnectionResponse& WithVpcPeeringConnection(const VpcPeeringConnection& value) { SetVpcPeeringConnection(value); return *this;}
 
-    /*
-     <p>Information about the VPC peering connection.</p>
-    */
+    /**
+     * <p>Information about the VPC peering connection.</p>
+     */
     inline AcceptVpcPeeringConnectionResponse& WithVpcPeeringConnection(VpcPeeringConnection&& value) { SetVpcPeeringConnection(value); return *this;}
 
     

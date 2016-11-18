@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,17 +19,25 @@
 
 #include <utility>
 
-using namespace Aws::IAM::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
+namespace Aws
+{
+namespace IAM
+{
+namespace Model
+{
+
 PolicyUser::PolicyUser() : 
-    m_userNameHasBeenSet(false)
+    m_userNameHasBeenSet(false),
+    m_userIdHasBeenSet(false)
 {
 }
 
 PolicyUser::PolicyUser(const XmlNode& xmlNode) : 
-    m_userNameHasBeenSet(false)
+    m_userNameHasBeenSet(false),
+    m_userIdHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -46,6 +54,12 @@ PolicyUser& PolicyUser::operator =(const XmlNode& xmlNode)
       m_userName = StringUtils::Trim(userNameNode.GetText().c_str());
       m_userNameHasBeenSet = true;
     }
+    XmlNode userIdNode = resultNode.FirstChild("UserId");
+    if(!userIdNode.IsNull())
+    {
+      m_userId = StringUtils::Trim(userIdNode.GetText().c_str());
+      m_userIdHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -57,6 +71,12 @@ void PolicyUser::OutputToStream(Aws::OStream& oStream, const char* location, uns
   {
       oStream << location << index << locationValue << ".UserName=" << StringUtils::URLEncode(m_userName.c_str()) << "&";
   }
+
+  if(m_userIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".UserId=" << StringUtils::URLEncode(m_userId.c_str()) << "&";
+  }
+
 }
 
 void PolicyUser::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -65,4 +85,12 @@ void PolicyUser::OutputToStream(Aws::OStream& oStream, const char* location) con
   {
       oStream << location << ".UserName=" << StringUtils::URLEncode(m_userName.c_str()) << "&";
   }
+  if(m_userIdHasBeenSet)
+  {
+      oStream << location << ".UserId=" << StringUtils::URLEncode(m_userId.c_str()) << "&";
+  }
 }
+
+} // namespace Model
+} // namespace IAM
+} // namespace Aws

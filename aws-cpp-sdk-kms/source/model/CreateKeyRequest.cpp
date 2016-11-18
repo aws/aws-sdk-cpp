@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,7 +24,12 @@ using namespace Aws::Utils;
 CreateKeyRequest::CreateKeyRequest() : 
     m_policyHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_keyUsageHasBeenSet(false)
+    m_keyUsage(KeyUsageType::NOT_SET),
+    m_keyUsageHasBeenSet(false),
+    m_origin(OriginType::NOT_SET),
+    m_originHasBeenSet(false),
+    m_bypassPolicyLockoutSafetyCheck(false),
+    m_bypassPolicyLockoutSafetyCheckHasBeenSet(false)
 {
 }
 
@@ -49,6 +54,17 @@ Aws::String CreateKeyRequest::SerializePayload() const
    payload.WithString("KeyUsage", KeyUsageTypeMapper::GetNameForKeyUsageType(m_keyUsage));
   }
 
+  if(m_originHasBeenSet)
+  {
+   payload.WithString("Origin", OriginTypeMapper::GetNameForOriginType(m_origin));
+  }
+
+  if(m_bypassPolicyLockoutSafetyCheckHasBeenSet)
+  {
+   payload.WithBool("BypassPolicyLockoutSafetyCheck", m_bypassPolicyLockoutSafetyCheck);
+
+  }
+
   return payload.WriteReadable();
 }
 
@@ -56,7 +72,7 @@ Aws::Http::HeaderValueCollection CreateKeyRequest::GetRequestSpecificHeaders() c
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "TrentService.CreateKey"));
-  return std::move(headers);
+  return headers;
 
 }
 

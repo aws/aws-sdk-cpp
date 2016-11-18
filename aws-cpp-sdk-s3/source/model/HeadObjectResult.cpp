@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -27,19 +27,25 @@ using namespace Aws;
 
 HeadObjectResult::HeadObjectResult() : 
     m_deleteMarker(false),
-    m_lastModified(0.0),
     m_contentLength(0),
     m_missingMeta(0),
-    m_expires(0.0)
+    m_serverSideEncryption(ServerSideEncryption::NOT_SET),
+    m_storageClass(StorageClass::NOT_SET),
+    m_requestCharged(RequestCharged::NOT_SET),
+    m_replicationStatus(ReplicationStatus::NOT_SET),
+    m_partsCount(0)
 {
 }
 
 HeadObjectResult::HeadObjectResult(const AmazonWebServiceResult<XmlDocument>& result) : 
     m_deleteMarker(false),
-    m_lastModified(0.0),
     m_contentLength(0),
     m_missingMeta(0),
-    m_expires(0.0)
+    m_serverSideEncryption(ServerSideEncryption::NOT_SET),
+    m_storageClass(StorageClass::NOT_SET),
+    m_requestCharged(RequestCharged::NOT_SET),
+    m_replicationStatus(ReplicationStatus::NOT_SET),
+    m_partsCount(0)
 {
   *this = result;
 }
@@ -81,13 +87,13 @@ HeadObjectResult& HeadObjectResult::operator =(const AmazonWebServiceResult<XmlD
   const auto& lastModifiedIter = headers.find("last-modified");
   if(lastModifiedIter != headers.end())
   {
-     m_lastModified = StringUtils::ConvertHeaderToDoubleDate(lastModifiedIter->second.c_str());
+    m_lastModified = DateTime(lastModifiedIter->second, DateFormat::RFC822);
   }
 
   const auto& contentLengthIter = headers.find("content-length");
   if(contentLengthIter != headers.end())
   {
-     m_contentLength = StringUtils::ConvertToInt32(contentLengthIter->second.c_str());
+     m_contentLength = StringUtils::ConvertToInt64(contentLengthIter->second.c_str());
   }
 
   const auto& eTagIter = headers.find("etag");
@@ -141,7 +147,7 @@ HeadObjectResult& HeadObjectResult::operator =(const AmazonWebServiceResult<XmlD
   const auto& expiresIter = headers.find("expires");
   if(expiresIter != headers.end())
   {
-     m_expires = StringUtils::ConvertToDouble(expiresIter->second.c_str());
+    m_expires = DateTime(expiresIter->second, DateFormat::RFC822);
   }
 
   const auto& websiteRedirectLocationIter = headers.find("x-amz-website-redirect-location");
@@ -201,6 +207,12 @@ HeadObjectResult& HeadObjectResult::operator =(const AmazonWebServiceResult<XmlD
   if(replicationStatusIter != headers.end())
   {
     m_replicationStatus = ReplicationStatusMapper::GetReplicationStatusForName(replicationStatusIter->second);
+  }
+
+  const auto& partsCountIter = headers.find("x-amz-mp-parts-count");
+  if(partsCountIter != headers.end())
+  {
+     m_partsCount = StringUtils::ConvertToInt32(partsCountIter->second.c_str());
   }
 
   return *this;

@@ -20,16 +20,46 @@ import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.Service
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.Shape;
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.cpp.CppViewHelper;
 import com.amazonaws.util.awsclientgenerator.generators.cpp.RestXmlCppClientGenerator;
-import com.amazonaws.util.awsclientgenerator.regions.RegionEndpointMapper;
 import org.apache.velocity.Template;
 import org.apache.velocity.VelocityContext;
 
+import java.nio.charset.StandardCharsets;
+import java.util.HashSet;
+import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.Set;
 
 public class S3RestXmlCppClientGenerator  extends RestXmlCppClientGenerator {
 
+    private static Set<String> opsThatNeedMd5 = new HashSet<>();
+
+    static {
+        opsThatNeedMd5.add("DeleteObjects");
+        opsThatNeedMd5.add("PutBucketCors");
+        opsThatNeedMd5.add("PutBucketLifecycle");
+        opsThatNeedMd5.add("PutBucketLifecycleConfiguration");
+        opsThatNeedMd5.add("PutBucketPolicy");
+        opsThatNeedMd5.add("PutBucketTagging");
+    }
+
     public S3RestXmlCppClientGenerator() throws Exception {
         super();
+    }
+
+    @Override
+    public SdkFileEntry[] generateSourceFiles(ServiceModel serviceModel) throws Exception {
+
+        //if an operation should precompute md5, make sure it is added here.
+        serviceModel.getOperations().values().stream()
+                .filter(operationEntry ->
+                        opsThatNeedMd5.contains(operationEntry.getName()))
+                .forEach(operationEntry -> operationEntry.getRequest().getShape().setComputeContentMd5(true));
+
+        //size and content length should ALWAYS be 64 bit integers, if they aren't set them as that now.
+        serviceModel.getShapes().entrySet().stream().filter(shapeEntry -> shapeEntry.getKey().toLowerCase().equals("contentlength") || shapeEntry.getKey().toLowerCase().equals("size"))
+                .forEach(shapeEntry -> shapeEntry.getValue().setType("long"));
+
+        return super.generateSourceFiles(serviceModel);
     }
 
     @Override
@@ -42,7 +72,7 @@ public class S3RestXmlCppClientGenerator  extends RestXmlCppClientGenerator {
         String fileName = String.format("include/aws/%s/%sClient.h", serviceModel.getMetadata().getProjectName(),
                 serviceModel.getMetadata().getClassNamePrefix());
 
-        return makeFile(template, context, fileName);
+        return makeFile(template, context, fileName, true);
     }
 
     @Override
@@ -54,15 +84,15 @@ public class S3RestXmlCppClientGenerator  extends RestXmlCppClientGenerator {
 
         String fileName = String.format("source/%sClient.cpp", serviceModel.getMetadata().getClassNamePrefix());
 
-        return makeFile(template, context, fileName);
+        return makeFile(template, context, fileName, true);
     }
 
     @Override
     protected SdkFileEntry generateModelSourceFile(ServiceModel serviceModel, Map.Entry<String, Shape> shapeEntry) throws Exception {
         switch(shapeEntry.getKey()) {
             case "GetBucketLocationResult": {
-                Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/s3/GetBucketLocationResult.vm");
-                return makeFile(template, createContext(serviceModel), "source/model/GetBucketLocationResult.cpp");
+                Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/s3/GetBucketLocationResult.vm", StandardCharsets.UTF_8.name());
+                return makeFile(template, createContext(serviceModel), "source/model/GetBucketLocationResult.cpp", true);
             }
             default:
                 return super.generateModelSourceFile(serviceModel, shapeEntry);
@@ -71,8 +101,15 @@ public class S3RestXmlCppClientGenerator  extends RestXmlCppClientGenerator {
     
 
     protected Map<String, String> computeRegionEndpointsForService(final ServiceModel serviceModel) {
-        Map<String, String> endpoints = RegionEndpointMapper.GetRegionMappingForService(serviceModel.getMetadata().getEndpointPrefix(), "%s-%s");
-        endpoints.put("US_EAST_1", serviceModel.getMetadata().getGlobalEndpoint());
+        Map<String, String> endpoints = new LinkedHashMap<>();
+        endpoints.put("us-east-1", serviceModel.getMetadata().getGlobalEndpoint());
+        endpoints.put("us-west-1", "s3-us-west-1.amazonaws.com");
+        endpoints.put("us-west-2", "s3-us-west-2.amazonaws.com");
+        endpoints.put("eu-west-1", "s3-eu-west-1.amazonaws.com");
+        endpoints.put("ap-southeast-1", "s3-ap-southeast-1.amazonaws.com");
+        endpoints.put("ap-southeast-2", "s3-ap-southeast-2.amazonaws.com");
+        endpoints.put("ap-northeast-1", "s3-ap-northeast-1.amazonaws.com");
+        endpoints.put("sa-east-1", "s3-sa-east-1.amazonaws.com");
 
         return endpoints;
     }

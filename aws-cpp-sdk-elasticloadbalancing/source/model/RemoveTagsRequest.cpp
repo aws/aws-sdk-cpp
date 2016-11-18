@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -39,6 +39,7 @@ Aws::String RemoveTagsRequest::SerializePayload() const
       loadBalancerNamesCount++;
     }
   }
+
   if(m_tagsHasBeenSet)
   {
     unsigned tagsCount = 1;
@@ -48,6 +49,7 @@ Aws::String RemoveTagsRequest::SerializePayload() const
       tagsCount++;
     }
   }
+
   ss << "Version=2012-06-01";
   return ss.str();
 }

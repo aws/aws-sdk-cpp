@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,49 +24,48 @@ namespace Redshift
 namespace Model
 {
 
-  /*
-    <p></p>
-  */
+  /**
+   * <p/>
+   */
   class AWS_REDSHIFT_API DeleteHsmConfigurationRequest : public RedshiftRequest
   {
   public:
     DeleteHsmConfigurationRequest();
     Aws::String SerializePayload() const override;
 
-
-    /*
-     <p>The identifier of the Amazon Redshift HSM configuration to be deleted.</p>
-    */
+    /**
+     * <p>The identifier of the Amazon Redshift HSM configuration to be deleted.</p>
+     */
     inline const Aws::String& GetHsmConfigurationIdentifier() const{ return m_hsmConfigurationIdentifier; }
 
-    /*
-     <p>The identifier of the Amazon Redshift HSM configuration to be deleted.</p>
-    */
+    /**
+     * <p>The identifier of the Amazon Redshift HSM configuration to be deleted.</p>
+     */
     inline void SetHsmConfigurationIdentifier(const Aws::String& value) { m_hsmConfigurationIdentifierHasBeenSet = true; m_hsmConfigurationIdentifier = value; }
 
-    /*
-     <p>The identifier of the Amazon Redshift HSM configuration to be deleted.</p>
-    */
+    /**
+     * <p>The identifier of the Amazon Redshift HSM configuration to be deleted.</p>
+     */
     inline void SetHsmConfigurationIdentifier(Aws::String&& value) { m_hsmConfigurationIdentifierHasBeenSet = true; m_hsmConfigurationIdentifier = value; }
 
-    /*
-     <p>The identifier of the Amazon Redshift HSM configuration to be deleted.</p>
-    */
+    /**
+     * <p>The identifier of the Amazon Redshift HSM configuration to be deleted.</p>
+     */
     inline void SetHsmConfigurationIdentifier(const char* value) { m_hsmConfigurationIdentifierHasBeenSet = true; m_hsmConfigurationIdentifier.assign(value); }
 
-    /*
-     <p>The identifier of the Amazon Redshift HSM configuration to be deleted.</p>
-    */
+    /**
+     * <p>The identifier of the Amazon Redshift HSM configuration to be deleted.</p>
+     */
     inline DeleteHsmConfigurationRequest& WithHsmConfigurationIdentifier(const Aws::String& value) { SetHsmConfigurationIdentifier(value); return *this;}
 
-    /*
-     <p>The identifier of the Amazon Redshift HSM configuration to be deleted.</p>
-    */
+    /**
+     * <p>The identifier of the Amazon Redshift HSM configuration to be deleted.</p>
+     */
     inline DeleteHsmConfigurationRequest& WithHsmConfigurationIdentifier(Aws::String&& value) { SetHsmConfigurationIdentifier(value); return *this;}
 
-    /*
-     <p>The identifier of the Amazon Redshift HSM configuration to be deleted.</p>
-    */
+    /**
+     * <p>The identifier of the Amazon Redshift HSM configuration to be deleted.</p>
+     */
     inline DeleteHsmConfigurationRequest& WithHsmConfigurationIdentifier(const char* value) { SetHsmConfigurationIdentifier(value); return *this;}
 
   private:

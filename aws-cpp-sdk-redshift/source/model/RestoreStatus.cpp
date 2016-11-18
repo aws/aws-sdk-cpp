@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::Redshift::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace Redshift
+{
+namespace Model
+{
 
 RestoreStatus::RestoreStatus() : 
     m_statusHasBeenSet(false),
@@ -107,26 +113,32 @@ void RestoreStatus::OutputToStream(Aws::OStream& oStream, const char* location, 
   {
       oStream << location << index << locationValue << ".Status=" << StringUtils::URLEncode(m_status.c_str()) << "&";
   }
+
   if(m_currentRestoreRateInMegaBytesPerSecondHasBeenSet)
   {
-      oStream << location << index << locationValue << ".CurrentRestoreRateInMegaBytesPerSecond=" << m_currentRestoreRateInMegaBytesPerSecond << "&";
+        oStream << location << index << locationValue << ".CurrentRestoreRateInMegaBytesPerSecond=" << StringUtils::URLEncode(m_currentRestoreRateInMegaBytesPerSecond) << "&";
   }
+
   if(m_snapshotSizeInMegaBytesHasBeenSet)
   {
       oStream << location << index << locationValue << ".SnapshotSizeInMegaBytes=" << m_snapshotSizeInMegaBytes << "&";
   }
+
   if(m_progressInMegaBytesHasBeenSet)
   {
       oStream << location << index << locationValue << ".ProgressInMegaBytes=" << m_progressInMegaBytes << "&";
   }
+
   if(m_elapsedTimeInSecondsHasBeenSet)
   {
       oStream << location << index << locationValue << ".ElapsedTimeInSeconds=" << m_elapsedTimeInSeconds << "&";
   }
+
   if(m_estimatedTimeToCompletionInSecondsHasBeenSet)
   {
       oStream << location << index << locationValue << ".EstimatedTimeToCompletionInSeconds=" << m_estimatedTimeToCompletionInSeconds << "&";
   }
+
 }
 
 void RestoreStatus::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -137,7 +149,7 @@ void RestoreStatus::OutputToStream(Aws::OStream& oStream, const char* location) 
   }
   if(m_currentRestoreRateInMegaBytesPerSecondHasBeenSet)
   {
-      oStream << location << ".CurrentRestoreRateInMegaBytesPerSecond=" << m_currentRestoreRateInMegaBytesPerSecond << "&";
+        oStream << location << ".CurrentRestoreRateInMegaBytesPerSecond=" << StringUtils::URLEncode(m_currentRestoreRateInMegaBytesPerSecond) << "&";
   }
   if(m_snapshotSizeInMegaBytesHasBeenSet)
   {
@@ -156,3 +168,7 @@ void RestoreStatus::OutputToStream(Aws::OStream& oStream, const char* location) 
       oStream << location << ".EstimatedTimeToCompletionInSeconds=" << m_estimatedTimeToCompletionInSeconds << "&";
   }
 }
+
+} // namespace Model
+} // namespace Redshift
+} // namespace Aws

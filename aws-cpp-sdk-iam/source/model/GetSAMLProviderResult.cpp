@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -26,15 +26,11 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetSAMLProviderResult::GetSAMLProviderResult() : 
-    m_createDate(0.0),
-    m_validUntil(0.0)
+GetSAMLProviderResult::GetSAMLProviderResult()
 {
 }
 
-GetSAMLProviderResult::GetSAMLProviderResult(const AmazonWebServiceResult<XmlDocument>& result) : 
-    m_createDate(0.0),
-    m_validUntil(0.0)
+GetSAMLProviderResult::GetSAMLProviderResult(const AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
@@ -59,12 +55,12 @@ GetSAMLProviderResult& GetSAMLProviderResult::operator =(const AmazonWebServiceR
     XmlNode createDateNode = resultNode.FirstChild("CreateDate");
     if(!createDateNode.IsNull())
     {
-      m_createDate = StringUtils::ConvertToDouble(StringUtils::Trim(createDateNode.GetText().c_str()).c_str());
+      m_createDate = DateTime(StringUtils::Trim(createDateNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
     }
     XmlNode validUntilNode = resultNode.FirstChild("ValidUntil");
     if(!validUntilNode.IsNull())
     {
-      m_validUntil = StringUtils::ConvertToDouble(StringUtils::Trim(validUntilNode.GetText().c_str()).c_str());
+      m_validUntil = DateTime(StringUtils::Trim(validUntilNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
     }
   }
 

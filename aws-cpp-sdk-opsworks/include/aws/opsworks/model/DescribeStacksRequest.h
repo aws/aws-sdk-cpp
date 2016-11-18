@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -25,8 +25,8 @@ namespace OpsWorks
 namespace Model
 {
 
-  /*
-  */
+  /**
+   */
   class AWS_OPSWORKS_API DescribeStacksRequest : public OpsWorksRequest
   {
   public:
@@ -35,45 +35,60 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
-    /*
-     <p>An array of stack IDs that specify the stacks to be described. If you omit this parameter, <code>DescribeStacks</code> returns a description of every stack.</p>
-    */
+    /**
+     * <p>An array of stack IDs that specify the stacks to be described. If you omit
+     * this parameter, <code>DescribeStacks</code> returns a description of every
+     * stack.</p>
+     */
     inline const Aws::Vector<Aws::String>& GetStackIds() const{ return m_stackIds; }
 
-    /*
-     <p>An array of stack IDs that specify the stacks to be described. If you omit this parameter, <code>DescribeStacks</code> returns a description of every stack.</p>
-    */
+    /**
+     * <p>An array of stack IDs that specify the stacks to be described. If you omit
+     * this parameter, <code>DescribeStacks</code> returns a description of every
+     * stack.</p>
+     */
     inline void SetStackIds(const Aws::Vector<Aws::String>& value) { m_stackIdsHasBeenSet = true; m_stackIds = value; }
 
-    /*
-     <p>An array of stack IDs that specify the stacks to be described. If you omit this parameter, <code>DescribeStacks</code> returns a description of every stack.</p>
-    */
+    /**
+     * <p>An array of stack IDs that specify the stacks to be described. If you omit
+     * this parameter, <code>DescribeStacks</code> returns a description of every
+     * stack.</p>
+     */
     inline void SetStackIds(Aws::Vector<Aws::String>&& value) { m_stackIdsHasBeenSet = true; m_stackIds = value; }
 
-    /*
-     <p>An array of stack IDs that specify the stacks to be described. If you omit this parameter, <code>DescribeStacks</code> returns a description of every stack.</p>
-    */
+    /**
+     * <p>An array of stack IDs that specify the stacks to be described. If you omit
+     * this parameter, <code>DescribeStacks</code> returns a description of every
+     * stack.</p>
+     */
     inline DescribeStacksRequest& WithStackIds(const Aws::Vector<Aws::String>& value) { SetStackIds(value); return *this;}
 
-    /*
-     <p>An array of stack IDs that specify the stacks to be described. If you omit this parameter, <code>DescribeStacks</code> returns a description of every stack.</p>
-    */
+    /**
+     * <p>An array of stack IDs that specify the stacks to be described. If you omit
+     * this parameter, <code>DescribeStacks</code> returns a description of every
+     * stack.</p>
+     */
     inline DescribeStacksRequest& WithStackIds(Aws::Vector<Aws::String>&& value) { SetStackIds(value); return *this;}
 
-    /*
-     <p>An array of stack IDs that specify the stacks to be described. If you omit this parameter, <code>DescribeStacks</code> returns a description of every stack.</p>
-    */
+    /**
+     * <p>An array of stack IDs that specify the stacks to be described. If you omit
+     * this parameter, <code>DescribeStacks</code> returns a description of every
+     * stack.</p>
+     */
     inline DescribeStacksRequest& AddStackIds(const Aws::String& value) { m_stackIdsHasBeenSet = true; m_stackIds.push_back(value); return *this; }
 
-    /*
-     <p>An array of stack IDs that specify the stacks to be described. If you omit this parameter, <code>DescribeStacks</code> returns a description of every stack.</p>
-    */
+    /**
+     * <p>An array of stack IDs that specify the stacks to be described. If you omit
+     * this parameter, <code>DescribeStacks</code> returns a description of every
+     * stack.</p>
+     */
     inline DescribeStacksRequest& AddStackIds(Aws::String&& value) { m_stackIdsHasBeenSet = true; m_stackIds.push_back(value); return *this; }
 
-    /*
-     <p>An array of stack IDs that specify the stacks to be described. If you omit this parameter, <code>DescribeStacks</code> returns a description of every stack.</p>
-    */
+    /**
+     * <p>An array of stack IDs that specify the stacks to be described. If you omit
+     * this parameter, <code>DescribeStacks</code> returns a description of every
+     * stack.</p>
+     */
     inline DescribeStacksRequest& AddStackIds(const char* value) { m_stackIdsHasBeenSet = true; m_stackIds.push_back(value); return *this; }
 
   private:

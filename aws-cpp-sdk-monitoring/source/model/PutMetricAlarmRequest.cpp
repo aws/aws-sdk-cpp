@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -29,15 +29,18 @@ PutMetricAlarmRequest::PutMetricAlarmRequest() :
     m_insufficientDataActionsHasBeenSet(false),
     m_metricNameHasBeenSet(false),
     m_namespaceHasBeenSet(false),
+    m_statistic(Statistic::NOT_SET),
     m_statisticHasBeenSet(false),
     m_dimensionsHasBeenSet(false),
     m_period(0),
     m_periodHasBeenSet(false),
+    m_unit(StandardUnit::NOT_SET),
     m_unitHasBeenSet(false),
     m_evaluationPeriods(0),
     m_evaluationPeriodsHasBeenSet(false),
     m_threshold(0.0),
     m_thresholdHasBeenSet(false),
+    m_comparisonOperator(ComparisonOperator::NOT_SET),
     m_comparisonOperatorHasBeenSet(false)
 {
 }
@@ -50,14 +53,17 @@ Aws::String PutMetricAlarmRequest::SerializePayload() const
   {
     ss << "AlarmName=" << StringUtils::URLEncode(m_alarmName.c_str()) << "&";
   }
+
   if(m_alarmDescriptionHasBeenSet)
   {
     ss << "AlarmDescription=" << StringUtils::URLEncode(m_alarmDescription.c_str()) << "&";
   }
+
   if(m_actionsEnabledHasBeenSet)
   {
     ss << "ActionsEnabled=" << m_actionsEnabled << "&";
   }
+
   if(m_oKActionsHasBeenSet)
   {
     unsigned oKActionsCount = 1;
@@ -68,6 +74,7 @@ Aws::String PutMetricAlarmRequest::SerializePayload() const
       oKActionsCount++;
     }
   }
+
   if(m_alarmActionsHasBeenSet)
   {
     unsigned alarmActionsCount = 1;
@@ -78,6 +85,7 @@ Aws::String PutMetricAlarmRequest::SerializePayload() const
       alarmActionsCount++;
     }
   }
+
   if(m_insufficientDataActionsHasBeenSet)
   {
     unsigned insufficientDataActionsCount = 1;
@@ -88,18 +96,22 @@ Aws::String PutMetricAlarmRequest::SerializePayload() const
       insufficientDataActionsCount++;
     }
   }
+
   if(m_metricNameHasBeenSet)
   {
     ss << "MetricName=" << StringUtils::URLEncode(m_metricName.c_str()) << "&";
   }
+
   if(m_namespaceHasBeenSet)
   {
     ss << "Namespace=" << StringUtils::URLEncode(m_namespace.c_str()) << "&";
   }
+
   if(m_statisticHasBeenSet)
   {
     ss << "Statistic=" << StatisticMapper::GetNameForStatistic(m_statistic) << "&";
   }
+
   if(m_dimensionsHasBeenSet)
   {
     unsigned dimensionsCount = 1;
@@ -109,26 +121,32 @@ Aws::String PutMetricAlarmRequest::SerializePayload() const
       dimensionsCount++;
     }
   }
+
   if(m_periodHasBeenSet)
   {
     ss << "Period=" << m_period << "&";
   }
+
   if(m_unitHasBeenSet)
   {
     ss << "Unit=" << StandardUnitMapper::GetNameForStandardUnit(m_unit) << "&";
   }
+
   if(m_evaluationPeriodsHasBeenSet)
   {
     ss << "EvaluationPeriods=" << m_evaluationPeriods << "&";
   }
+
   if(m_thresholdHasBeenSet)
   {
-    ss << "Threshold=" << m_threshold << "&";
+    ss << "Threshold=" << StringUtils::URLEncode(m_threshold) << "&";
   }
+
   if(m_comparisonOperatorHasBeenSet)
   {
     ss << "ComparisonOperator=" << ComparisonOperatorMapper::GetNameForComparisonOperator(m_comparisonOperator) << "&";
   }
+
   ss << "Version=2010-08-01";
   return ss.str();
 }

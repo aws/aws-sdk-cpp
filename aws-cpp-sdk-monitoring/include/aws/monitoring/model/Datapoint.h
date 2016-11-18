@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -15,7 +15,7 @@
 #pragma once
 #include <aws/monitoring/CloudWatch_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/monitoring/model/StandardUnit.h>
 
 namespace Aws
@@ -31,9 +31,11 @@ namespace CloudWatch
 {
 namespace Model
 {
-  /*
-    <p> The <code>Datapoint</code> data type encapsulates the statistical data that Amazon CloudWatch computes from metric data. </p>
-  */
+
+  /**
+   * <p> The <code>Datapoint</code> data type encapsulates the statistical data that
+   * Amazon CloudWatch computes from metric data. </p>
+   */
   class AWS_CLOUDWATCH_API Datapoint
   {
   public:
@@ -44,143 +46,136 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p> The time stamp used for the datapoint. Amazon CloudWatch uses Coordinated Universal Time (UTC) when returning time stamps, which do not accommodate seasonal adjustments such as daylight savings time. For more information, see <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Time stamps</a> in the <i>Amazon CloudWatch Developer Guide</i>. </p>
-    */
-    inline const Aws::String& GetTimestamp() const{ return m_timestamp; }
+    /**
+     * <p>The time stamp used for the datapoint.</p>
+     */
+    inline const Aws::Utils::DateTime& GetTimestamp() const{ return m_timestamp; }
 
-    /*
-     <p> The time stamp used for the datapoint. Amazon CloudWatch uses Coordinated Universal Time (UTC) when returning time stamps, which do not accommodate seasonal adjustments such as daylight savings time. For more information, see <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Time stamps</a> in the <i>Amazon CloudWatch Developer Guide</i>. </p>
-    */
-    inline void SetTimestamp(const Aws::String& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
+    /**
+     * <p>The time stamp used for the datapoint.</p>
+     */
+    inline void SetTimestamp(const Aws::Utils::DateTime& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
 
-    /*
-     <p> The time stamp used for the datapoint. Amazon CloudWatch uses Coordinated Universal Time (UTC) when returning time stamps, which do not accommodate seasonal adjustments such as daylight savings time. For more information, see <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Time stamps</a> in the <i>Amazon CloudWatch Developer Guide</i>. </p>
-    */
-    inline void SetTimestamp(Aws::String&& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
+    /**
+     * <p>The time stamp used for the datapoint.</p>
+     */
+    inline void SetTimestamp(Aws::Utils::DateTime&& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
 
-    /*
-     <p> The time stamp used for the datapoint. Amazon CloudWatch uses Coordinated Universal Time (UTC) when returning time stamps, which do not accommodate seasonal adjustments such as daylight savings time. For more information, see <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Time stamps</a> in the <i>Amazon CloudWatch Developer Guide</i>. </p>
-    */
-    inline void SetTimestamp(const char* value) { m_timestampHasBeenSet = true; m_timestamp.assign(value); }
+    /**
+     * <p>The time stamp used for the datapoint.</p>
+     */
+    inline Datapoint& WithTimestamp(const Aws::Utils::DateTime& value) { SetTimestamp(value); return *this;}
 
-    /*
-     <p> The time stamp used for the datapoint. Amazon CloudWatch uses Coordinated Universal Time (UTC) when returning time stamps, which do not accommodate seasonal adjustments such as daylight savings time. For more information, see <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Time stamps</a> in the <i>Amazon CloudWatch Developer Guide</i>. </p>
-    */
-    inline Datapoint& WithTimestamp(const Aws::String& value) { SetTimestamp(value); return *this;}
+    /**
+     * <p>The time stamp used for the datapoint.</p>
+     */
+    inline Datapoint& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(value); return *this;}
 
-    /*
-     <p> The time stamp used for the datapoint. Amazon CloudWatch uses Coordinated Universal Time (UTC) when returning time stamps, which do not accommodate seasonal adjustments such as daylight savings time. For more information, see <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Time stamps</a> in the <i>Amazon CloudWatch Developer Guide</i>. </p>
-    */
-    inline Datapoint& WithTimestamp(Aws::String&& value) { SetTimestamp(value); return *this;}
-
-    /*
-     <p> The time stamp used for the datapoint. Amazon CloudWatch uses Coordinated Universal Time (UTC) when returning time stamps, which do not accommodate seasonal adjustments such as daylight savings time. For more information, see <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Time stamps</a> in the <i>Amazon CloudWatch Developer Guide</i>. </p>
-    */
-    inline Datapoint& WithTimestamp(const char* value) { SetTimestamp(value); return *this;}
-
-    /*
-     <p> The number of metric values that contributed to the aggregate value of this datapoint. </p>
-    */
+    /**
+     * <p>The number of metric values that contributed to the aggregate value of this
+     * datapoint.</p>
+     */
     inline double GetSampleCount() const{ return m_sampleCount; }
 
-    /*
-     <p> The number of metric values that contributed to the aggregate value of this datapoint. </p>
-    */
+    /**
+     * <p>The number of metric values that contributed to the aggregate value of this
+     * datapoint.</p>
+     */
     inline void SetSampleCount(double value) { m_sampleCountHasBeenSet = true; m_sampleCount = value; }
 
-    /*
-     <p> The number of metric values that contributed to the aggregate value of this datapoint. </p>
-    */
+    /**
+     * <p>The number of metric values that contributed to the aggregate value of this
+     * datapoint.</p>
+     */
     inline Datapoint& WithSampleCount(double value) { SetSampleCount(value); return *this;}
 
-    /*
-     <p> The average of metric values that correspond to the datapoint. </p>
-    */
+    /**
+     * <p>The average of metric values that correspond to the datapoint.</p>
+     */
     inline double GetAverage() const{ return m_average; }
 
-    /*
-     <p> The average of metric values that correspond to the datapoint. </p>
-    */
+    /**
+     * <p>The average of metric values that correspond to the datapoint.</p>
+     */
     inline void SetAverage(double value) { m_averageHasBeenSet = true; m_average = value; }
 
-    /*
-     <p> The average of metric values that correspond to the datapoint. </p>
-    */
+    /**
+     * <p>The average of metric values that correspond to the datapoint.</p>
+     */
     inline Datapoint& WithAverage(double value) { SetAverage(value); return *this;}
 
-    /*
-     <p> The sum of metric values used for the datapoint. </p>
-    */
+    /**
+     * <p>The sum of metric values used for the datapoint.</p>
+     */
     inline double GetSum() const{ return m_sum; }
 
-    /*
-     <p> The sum of metric values used for the datapoint. </p>
-    */
+    /**
+     * <p>The sum of metric values used for the datapoint.</p>
+     */
     inline void SetSum(double value) { m_sumHasBeenSet = true; m_sum = value; }
 
-    /*
-     <p> The sum of metric values used for the datapoint. </p>
-    */
+    /**
+     * <p>The sum of metric values used for the datapoint.</p>
+     */
     inline Datapoint& WithSum(double value) { SetSum(value); return *this;}
 
-    /*
-     <p> The minimum metric value used for the datapoint. </p>
-    */
+    /**
+     * <p>The minimum metric value used for the datapoint.</p>
+     */
     inline double GetMinimum() const{ return m_minimum; }
 
-    /*
-     <p> The minimum metric value used for the datapoint. </p>
-    */
+    /**
+     * <p>The minimum metric value used for the datapoint.</p>
+     */
     inline void SetMinimum(double value) { m_minimumHasBeenSet = true; m_minimum = value; }
 
-    /*
-     <p> The minimum metric value used for the datapoint. </p>
-    */
+    /**
+     * <p>The minimum metric value used for the datapoint.</p>
+     */
     inline Datapoint& WithMinimum(double value) { SetMinimum(value); return *this;}
 
-    /*
-     <p> The maximum of the metric value used for the datapoint. </p>
-    */
+    /**
+     * <p>The maximum of the metric value used for the datapoint.</p>
+     */
     inline double GetMaximum() const{ return m_maximum; }
 
-    /*
-     <p> The maximum of the metric value used for the datapoint. </p>
-    */
+    /**
+     * <p>The maximum of the metric value used for the datapoint.</p>
+     */
     inline void SetMaximum(double value) { m_maximumHasBeenSet = true; m_maximum = value; }
 
-    /*
-     <p> The maximum of the metric value used for the datapoint. </p>
-    */
+    /**
+     * <p>The maximum of the metric value used for the datapoint.</p>
+     */
     inline Datapoint& WithMaximum(double value) { SetMaximum(value); return *this;}
 
-    /*
-     <p> The standard unit used for the datapoint. </p>
-    */
+    /**
+     * <p>The standard unit used for the datapoint.</p>
+     */
     inline const StandardUnit& GetUnit() const{ return m_unit; }
 
-    /*
-     <p> The standard unit used for the datapoint. </p>
-    */
+    /**
+     * <p>The standard unit used for the datapoint.</p>
+     */
     inline void SetUnit(const StandardUnit& value) { m_unitHasBeenSet = true; m_unit = value; }
 
-    /*
-     <p> The standard unit used for the datapoint. </p>
-    */
+    /**
+     * <p>The standard unit used for the datapoint.</p>
+     */
     inline void SetUnit(StandardUnit&& value) { m_unitHasBeenSet = true; m_unit = value; }
 
-    /*
-     <p> The standard unit used for the datapoint. </p>
-    */
+    /**
+     * <p>The standard unit used for the datapoint.</p>
+     */
     inline Datapoint& WithUnit(const StandardUnit& value) { SetUnit(value); return *this;}
 
-    /*
-     <p> The standard unit used for the datapoint. </p>
-    */
+    /**
+     * <p>The standard unit used for the datapoint.</p>
+     */
     inline Datapoint& WithUnit(StandardUnit&& value) { SetUnit(value); return *this;}
 
   private:
-    Aws::String m_timestamp;
+    Aws::Utils::DateTime m_timestamp;
     bool m_timestampHasBeenSet;
     double m_sampleCount;
     bool m_sampleCountHasBeenSet;

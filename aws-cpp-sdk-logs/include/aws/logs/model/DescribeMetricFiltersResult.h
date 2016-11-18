@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -34,9 +34,6 @@ namespace CloudWatchLogs
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
   class AWS_CLOUDWATCHLOGS_API DescribeMetricFiltersResult
   {
   public:
@@ -44,25 +41,39 @@ namespace Model
     DescribeMetricFiltersResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     DescribeMetricFiltersResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    
+    /**
+     * <p>The metric filters.</p>
+     */
     inline const Aws::Vector<MetricFilter>& GetMetricFilters() const{ return m_metricFilters; }
 
-    
+    /**
+     * <p>The metric filters.</p>
+     */
     inline void SetMetricFilters(const Aws::Vector<MetricFilter>& value) { m_metricFilters = value; }
 
-    
+    /**
+     * <p>The metric filters.</p>
+     */
     inline void SetMetricFilters(Aws::Vector<MetricFilter>&& value) { m_metricFilters = value; }
 
-    
+    /**
+     * <p>The metric filters.</p>
+     */
     inline DescribeMetricFiltersResult& WithMetricFilters(const Aws::Vector<MetricFilter>& value) { SetMetricFilters(value); return *this;}
 
-    
+    /**
+     * <p>The metric filters.</p>
+     */
     inline DescribeMetricFiltersResult& WithMetricFilters(Aws::Vector<MetricFilter>&& value) { SetMetricFilters(value); return *this;}
 
-    
+    /**
+     * <p>The metric filters.</p>
+     */
     inline DescribeMetricFiltersResult& AddMetricFilters(const MetricFilter& value) { m_metricFilters.push_back(value); return *this; }
 
-    
+    /**
+     * <p>The metric filters.</p>
+     */
     inline DescribeMetricFiltersResult& AddMetricFilters(MetricFilter&& value) { m_metricFilters.push_back(value); return *this; }
 
     

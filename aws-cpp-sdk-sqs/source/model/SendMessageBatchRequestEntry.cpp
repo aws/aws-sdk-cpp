@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::SQS::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace SQS
+{
+namespace Model
+{
 
 SendMessageBatchRequestEntry::SendMessageBatchRequestEntry() : 
     m_idHasBeenSet(false),
@@ -92,17 +98,31 @@ void SendMessageBatchRequestEntry::OutputToStream(Aws::OStream& oStream, const c
   {
       oStream << location << index << locationValue << ".Id=" << StringUtils::URLEncode(m_id.c_str()) << "&";
   }
+
   if(m_messageBodyHasBeenSet)
   {
       oStream << location << index << locationValue << ".MessageBody=" << StringUtils::URLEncode(m_messageBody.c_str()) << "&";
   }
+
   if(m_delaySecondsHasBeenSet)
   {
       oStream << location << index << locationValue << ".DelaySeconds=" << m_delaySeconds << "&";
   }
+
   if(m_messageAttributesHasBeenSet)
   {
+      unsigned messageAttributesIdx = 1;
+      for(auto& item : m_messageAttributes)
+      {
+        oStream << location << index << locationValue << ".MessageAttribute." << messageAttributesIdx << ".Name="
+            << StringUtils::URLEncode(item.first.c_str()) << "&";
+        Aws::StringStream messageAttributesSs;
+        messageAttributesSs << location << index << locationValue << ".MessageAttribute." << messageAttributesIdx << ".Value";
+        item.second.OutputToStream(oStream, messageAttributesSs.str().c_str());
+        messageAttributesIdx++;
+      }
   }
+
 }
 
 void SendMessageBatchRequestEntry::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -121,5 +141,20 @@ void SendMessageBatchRequestEntry::OutputToStream(Aws::OStream& oStream, const c
   }
   if(m_messageAttributesHasBeenSet)
   {
+      unsigned messageAttributesIdx = 1;
+      for(auto& item : m_messageAttributes)
+      {
+        oStream << location << ".MessageAttribute."  << messageAttributesIdx << ".Name="
+            << StringUtils::URLEncode(item.first.c_str()) << "&";
+        Aws::StringStream messageAttributesSs;
+        messageAttributesSs << location << ".MessageAttribute." << messageAttributesIdx << ".Value";
+        item.second.OutputToStream(oStream, messageAttributesSs.str().c_str());
+        messageAttributesIdx++;
+      }
+
   }
 }
+
+} // namespace Model
+} // namespace SQS
+} // namespace Aws

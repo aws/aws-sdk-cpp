@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -34,9 +34,9 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
+  /**
+   * <p>Contains the output of DescribeNetworkAcls.</p>
+   */
   class AWS_EC2_API DescribeNetworkAclsResponse
   {
   public:
@@ -44,39 +44,39 @@ namespace Model
     DescribeNetworkAclsResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     DescribeNetworkAclsResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>Information about one or more network ACLs.</p>
-    */
+    /**
+     * <p>Information about one or more network ACLs.</p>
+     */
     inline const Aws::Vector<NetworkAcl>& GetNetworkAcls() const{ return m_networkAcls; }
 
-    /*
-     <p>Information about one or more network ACLs.</p>
-    */
+    /**
+     * <p>Information about one or more network ACLs.</p>
+     */
     inline void SetNetworkAcls(const Aws::Vector<NetworkAcl>& value) { m_networkAcls = value; }
 
-    /*
-     <p>Information about one or more network ACLs.</p>
-    */
+    /**
+     * <p>Information about one or more network ACLs.</p>
+     */
     inline void SetNetworkAcls(Aws::Vector<NetworkAcl>&& value) { m_networkAcls = value; }
 
-    /*
-     <p>Information about one or more network ACLs.</p>
-    */
+    /**
+     * <p>Information about one or more network ACLs.</p>
+     */
     inline DescribeNetworkAclsResponse& WithNetworkAcls(const Aws::Vector<NetworkAcl>& value) { SetNetworkAcls(value); return *this;}
 
-    /*
-     <p>Information about one or more network ACLs.</p>
-    */
+    /**
+     * <p>Information about one or more network ACLs.</p>
+     */
     inline DescribeNetworkAclsResponse& WithNetworkAcls(Aws::Vector<NetworkAcl>&& value) { SetNetworkAcls(value); return *this;}
 
-    /*
-     <p>Information about one or more network ACLs.</p>
-    */
+    /**
+     * <p>Information about one or more network ACLs.</p>
+     */
     inline DescribeNetworkAclsResponse& AddNetworkAcls(const NetworkAcl& value) { m_networkAcls.push_back(value); return *this; }
 
-    /*
-     <p>Information about one or more network ACLs.</p>
-    */
+    /**
+     * <p>Information about one or more network ACLs.</p>
+     */
     inline DescribeNetworkAclsResponse& AddNetworkAcls(NetworkAcl&& value) { m_networkAcls.push_back(value); return *this; }
 
     

@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::OpsWorks::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace OpsWorks
+{
+namespace Model
+{
 
 EbsBlockDevice::EbsBlockDevice() : 
     m_snapshotIdHasBeenSet(false),
@@ -27,6 +33,7 @@ EbsBlockDevice::EbsBlockDevice() :
     m_iopsHasBeenSet(false),
     m_volumeSize(0),
     m_volumeSizeHasBeenSet(false),
+    m_volumeType(VolumeType::NOT_SET),
     m_volumeTypeHasBeenSet(false),
     m_deleteOnTermination(false),
     m_deleteOnTerminationHasBeenSet(false)
@@ -39,6 +46,7 @@ EbsBlockDevice::EbsBlockDevice(const JsonValue& jsonValue) :
     m_iopsHasBeenSet(false),
     m_volumeSize(0),
     m_volumeSizeHasBeenSet(false),
+    m_volumeType(VolumeType::NOT_SET),
     m_volumeTypeHasBeenSet(false),
     m_deleteOnTermination(false),
     m_deleteOnTerminationHasBeenSet(false)
@@ -119,5 +127,9 @@ JsonValue EbsBlockDevice::Jsonize() const
 
   }
 
-  return std::move(payload);
+  return payload;
 }
+
+} // namespace Model
+} // namespace OpsWorks
+} // namespace Aws

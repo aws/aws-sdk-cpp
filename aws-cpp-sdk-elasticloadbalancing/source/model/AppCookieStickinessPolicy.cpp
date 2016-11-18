@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::ElasticLoadBalancing::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace ElasticLoadBalancing
+{
+namespace Model
+{
 
 AppCookieStickinessPolicy::AppCookieStickinessPolicy() : 
     m_policyNameHasBeenSet(false),
@@ -65,10 +71,12 @@ void AppCookieStickinessPolicy::OutputToStream(Aws::OStream& oStream, const char
   {
       oStream << location << index << locationValue << ".PolicyName=" << StringUtils::URLEncode(m_policyName.c_str()) << "&";
   }
+
   if(m_cookieNameHasBeenSet)
   {
       oStream << location << index << locationValue << ".CookieName=" << StringUtils::URLEncode(m_cookieName.c_str()) << "&";
   }
+
 }
 
 void AppCookieStickinessPolicy::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -82,3 +90,7 @@ void AppCookieStickinessPolicy::OutputToStream(Aws::OStream& oStream, const char
       oStream << location << ".CookieName=" << StringUtils::URLEncode(m_cookieName.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace ElasticLoadBalancing
+} // namespace Aws

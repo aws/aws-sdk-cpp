@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -78,6 +78,17 @@ ValidateTemplateResult& ValidateTemplateResult::operator =(const AmazonWebServic
     if(!capabilitiesReasonNode.IsNull())
     {
       m_capabilitiesReason = StringUtils::Trim(capabilitiesReasonNode.GetText().c_str());
+    }
+    XmlNode declaredTransformsNode = resultNode.FirstChild("DeclaredTransforms");
+    if(!declaredTransformsNode.IsNull())
+    {
+      XmlNode declaredTransformsMember = declaredTransformsNode.FirstChild("member");
+      while(!declaredTransformsMember.IsNull())
+      {
+        m_declaredTransforms.push_back(StringUtils::Trim(declaredTransformsMember.GetText().c_str()));
+        declaredTransformsMember = declaredTransformsMember.NextNode("member");
+      }
+
     }
   }
 

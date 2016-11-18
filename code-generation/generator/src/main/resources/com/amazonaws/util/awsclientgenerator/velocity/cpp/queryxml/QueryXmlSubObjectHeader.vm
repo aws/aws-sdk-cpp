@@ -23,9 +23,12 @@ namespace Model
 {
 #set($xmlRef = "${typeInfo.xmlNodeType}&")
 #set($classNameRef = "${typeInfo.className}&")
-  /*
-    $shape.documentation
-  */
+
+#if($shape.documentation)
+  /**
+   * $shape.documentation
+   */
+#end
   class $typeInfo.exportValue $typeInfo.className
   {
   public:

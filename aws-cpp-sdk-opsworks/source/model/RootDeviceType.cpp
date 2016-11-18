@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -14,50 +14,66 @@
 */
 #include <aws/opsworks/model/RootDeviceType.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
+#include <aws/core/utils/EnumParseOverflowContainer.h>
 
 using namespace Aws::Utils;
 
-static const int ebs_HASH = HashingUtils::HashString("ebs");
-static const int instance_store_HASH = HashingUtils::HashString("instance-store");
 
 namespace Aws
 {
-namespace OpsWorks
-{
-namespace Model
-{
-namespace RootDeviceTypeMapper
-{
-RootDeviceType GetRootDeviceTypeForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-
-  if (hashCode == ebs_HASH)
+  namespace OpsWorks
   {
-    return RootDeviceType::ebs;
-  }
-  else if (hashCode == instance_store_HASH)
-  {
-    return RootDeviceType::instance_store;
-  }
+    namespace Model
+    {
+      namespace RootDeviceTypeMapper
+      {
 
-  return RootDeviceType::NOT_SET;
-}
+        static const int ebs_HASH = HashingUtils::HashString("ebs");
+        static const int instance_store_HASH = HashingUtils::HashString("instance-store");
 
-Aws::String GetNameForRootDeviceType(RootDeviceType value)
-{
-  switch(value)
-  {
-  case RootDeviceType::ebs:
-    return "ebs";
-  case RootDeviceType::instance_store:
-    return "instance-store";
-  default:
-    return "";
-  }
-}
 
-} // namespace RootDeviceTypeMapper
-} // namespace Model
-} // namespace OpsWorks
+        RootDeviceType GetRootDeviceTypeForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == ebs_HASH)
+          {
+            return RootDeviceType::ebs;
+          }
+          else if (hashCode == instance_store_HASH)
+          {
+            return RootDeviceType::instance_store;
+          }
+          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<RootDeviceType>(hashCode);
+          }
+
+          return RootDeviceType::NOT_SET;
+        }
+
+        Aws::String GetNameForRootDeviceType(RootDeviceType enumValue)
+        {
+          switch(enumValue)
+          {
+          case RootDeviceType::ebs:
+            return "ebs";
+          case RootDeviceType::instance_store:
+            return "instance-store";
+          default:
+            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace RootDeviceTypeMapper
+    } // namespace Model
+  } // namespace OpsWorks
 } // namespace Aws

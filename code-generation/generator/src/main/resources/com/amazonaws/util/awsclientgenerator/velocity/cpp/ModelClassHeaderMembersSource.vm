@@ -14,12 +14,18 @@
 #set($memberVarName = $CppViewHelper.computeMemberVariableName($memberName))
 #set($varNameHasBeenSet = $CppViewHelper.computeVariableHasBeenSetName($memberName))
 #if(!$member.required && $useRequiredField)
-#set($spaces = ' ')
+#set($spaces = '  ')
   if($varNameHasBeenSet)
   {
 #end
 #if($member.shape.enum)
   ${spaces}headers.insert(Aws::Http::HeaderValuePair("${locationName}", ${member.shape.name}Mapper::GetNameFor${member.shape.name}($memberVarName)));
+#elseif($member.shape.blob)
+  ${spaces}ss << HashingUtils::Base64Encode(m_${lowerCaseVarName});
+  ${spaces}headers.insert(Aws::Http::HeaderValuePair("${locationName}", ss.str()));
+  ${spaces}ss.str("");
+#elseif($member.shape.timeStamp)
+  ${spaces}headers.insert(Aws::Http::HeaderValuePair("${locationName}", m_${lowerCaseVarName}.ToGmtString(DateFormat::RFC822)));
 #elseif($member.shape.map)
   ${spaces}for(const auto& item : $memberVarName)
   ${spaces}{

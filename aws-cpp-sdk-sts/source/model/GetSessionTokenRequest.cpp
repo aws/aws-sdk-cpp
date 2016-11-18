@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -35,14 +35,17 @@ Aws::String GetSessionTokenRequest::SerializePayload() const
   {
     ss << "DurationSeconds=" << m_durationSeconds << "&";
   }
+
   if(m_serialNumberHasBeenSet)
   {
     ss << "SerialNumber=" << StringUtils::URLEncode(m_serialNumber.c_str()) << "&";
   }
+
   if(m_tokenCodeHasBeenSet)
   {
     ss << "TokenCode=" << StringUtils::URLEncode(m_tokenCode.c_str()) << "&";
   }
+
   ss << "Version=2011-06-15";
   return ss.str();
 }

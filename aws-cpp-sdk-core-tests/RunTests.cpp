@@ -14,14 +14,27 @@
   */
 
 #include <aws/external/gtest.h>
+#include <aws/core/utils/crypto/Factories.h>
+#include <aws/core/http/HttpClientFactory.h>
+#include <aws/core/Aws.h>
+#include <aws/testing/TestingEnvironment.h>
+#include <aws/testing/platform/PlatformTesting.h>
 
 int main(int argc, char** argv)
 {
-    #ifndef _WIN32
-        //Set $HOME to tmp on unix systems
-        setenv("HOME", P_tmpdir, 1);
-    #endif //__UNIX_SV__
 
+    Aws::Testing::RedirectHomeToTempIfAppropriate();
+
+    Aws::SDKOptions options;
+
+    Aws::Testing::InitPlatformTest(options);
+
+    Aws::InitAPI(options);
     ::testing::InitGoogleTest(&argc, argv);
-    return RUN_ALL_TESTS();
+    int retVal = RUN_ALL_TESTS();
+    Aws::ShutdownAPI(options);
+
+    Aws::Testing::ShutdownPlatformTest(options);
+
+    return retVal;
 }

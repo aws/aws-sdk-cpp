@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -14,50 +14,66 @@
 */
 #include <aws/lambda/model/EventSourcePosition.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
+#include <aws/core/utils/EnumParseOverflowContainer.h>
 
 using namespace Aws::Utils;
 
-static const int TRIM_HORIZON_HASH = HashingUtils::HashString("TRIM_HORIZON");
-static const int LATEST_HASH = HashingUtils::HashString("LATEST");
 
 namespace Aws
 {
-namespace Lambda
-{
-namespace Model
-{
-namespace EventSourcePositionMapper
-{
-EventSourcePosition GetEventSourcePositionForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-
-  if (hashCode == TRIM_HORIZON_HASH)
+  namespace Lambda
   {
-    return EventSourcePosition::TRIM_HORIZON;
-  }
-  else if (hashCode == LATEST_HASH)
-  {
-    return EventSourcePosition::LATEST;
-  }
+    namespace Model
+    {
+      namespace EventSourcePositionMapper
+      {
 
-  return EventSourcePosition::NOT_SET;
-}
+        static const int TRIM_HORIZON_HASH = HashingUtils::HashString("TRIM_HORIZON");
+        static const int LATEST_HASH = HashingUtils::HashString("LATEST");
 
-Aws::String GetNameForEventSourcePosition(EventSourcePosition value)
-{
-  switch(value)
-  {
-  case EventSourcePosition::TRIM_HORIZON:
-    return "TRIM_HORIZON";
-  case EventSourcePosition::LATEST:
-    return "LATEST";
-  default:
-    return "";
-  }
-}
 
-} // namespace EventSourcePositionMapper
-} // namespace Model
-} // namespace Lambda
+        EventSourcePosition GetEventSourcePositionForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == TRIM_HORIZON_HASH)
+          {
+            return EventSourcePosition::TRIM_HORIZON;
+          }
+          else if (hashCode == LATEST_HASH)
+          {
+            return EventSourcePosition::LATEST;
+          }
+          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<EventSourcePosition>(hashCode);
+          }
+
+          return EventSourcePosition::NOT_SET;
+        }
+
+        Aws::String GetNameForEventSourcePosition(EventSourcePosition enumValue)
+        {
+          switch(enumValue)
+          {
+          case EventSourcePosition::TRIM_HORIZON:
+            return "TRIM_HORIZON";
+          case EventSourcePosition::LATEST:
+            return "LATEST";
+          default:
+            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace EventSourcePositionMapper
+    } // namespace Model
+  } // namespace Lambda
 } // namespace Aws

@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -17,27 +17,43 @@
 
 #include <utility>
 
-using namespace Aws::Kinesis::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace Kinesis
+{
+namespace Model
+{
 
 StreamDescription::StreamDescription() : 
     m_streamNameHasBeenSet(false),
     m_streamARNHasBeenSet(false),
+    m_streamStatus(StreamStatus::NOT_SET),
     m_streamStatusHasBeenSet(false),
     m_shardsHasBeenSet(false),
     m_hasMoreShards(false),
-    m_hasMoreShardsHasBeenSet(false)
+    m_hasMoreShardsHasBeenSet(false),
+    m_retentionPeriodHours(0),
+    m_retentionPeriodHoursHasBeenSet(false),
+    m_streamCreationTimestampHasBeenSet(false),
+    m_enhancedMonitoringHasBeenSet(false)
 {
 }
 
 StreamDescription::StreamDescription(const JsonValue& jsonValue) : 
     m_streamNameHasBeenSet(false),
     m_streamARNHasBeenSet(false),
+    m_streamStatus(StreamStatus::NOT_SET),
     m_streamStatusHasBeenSet(false),
     m_shardsHasBeenSet(false),
     m_hasMoreShards(false),
-    m_hasMoreShardsHasBeenSet(false)
+    m_hasMoreShardsHasBeenSet(false),
+    m_retentionPeriodHours(0),
+    m_retentionPeriodHoursHasBeenSet(false),
+    m_streamCreationTimestampHasBeenSet(false),
+    m_enhancedMonitoringHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -82,6 +98,30 @@ StreamDescription& StreamDescription::operator =(const JsonValue& jsonValue)
     m_hasMoreShardsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("RetentionPeriodHours"))
+  {
+    m_retentionPeriodHours = jsonValue.GetInteger("RetentionPeriodHours");
+
+    m_retentionPeriodHoursHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("StreamCreationTimestamp"))
+  {
+    m_streamCreationTimestamp = jsonValue.GetDouble("StreamCreationTimestamp");
+
+    m_streamCreationTimestampHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("EnhancedMonitoring"))
+  {
+    Array<JsonValue> enhancedMonitoringJsonList = jsonValue.GetArray("EnhancedMonitoring");
+    for(unsigned enhancedMonitoringIndex = 0; enhancedMonitoringIndex < enhancedMonitoringJsonList.GetLength(); ++enhancedMonitoringIndex)
+    {
+      m_enhancedMonitoring.push_back(enhancedMonitoringJsonList[enhancedMonitoringIndex].AsObject());
+    }
+    m_enhancedMonitoringHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -123,5 +163,31 @@ JsonValue StreamDescription::Jsonize() const
 
   }
 
-  return std::move(payload);
+  if(m_retentionPeriodHoursHasBeenSet)
+  {
+   payload.WithInteger("RetentionPeriodHours", m_retentionPeriodHours);
+
+  }
+
+  if(m_streamCreationTimestampHasBeenSet)
+  {
+   payload.WithDouble("StreamCreationTimestamp", m_streamCreationTimestamp.SecondsWithMSPrecision());
+  }
+
+  if(m_enhancedMonitoringHasBeenSet)
+  {
+   Array<JsonValue> enhancedMonitoringJsonList(m_enhancedMonitoring.size());
+   for(unsigned enhancedMonitoringIndex = 0; enhancedMonitoringIndex < enhancedMonitoringJsonList.GetLength(); ++enhancedMonitoringIndex)
+   {
+     enhancedMonitoringJsonList[enhancedMonitoringIndex].AsObject(m_enhancedMonitoring[enhancedMonitoringIndex].Jsonize());
+   }
+   payload.WithArray("EnhancedMonitoring", std::move(enhancedMonitoringJsonList));
+
+  }
+
+  return payload;
 }
+
+} // namespace Model
+} // namespace Kinesis
+} // namespace Aws

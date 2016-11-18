@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -21,10 +21,9 @@ using namespace Aws::Utils;
 
 DescribeEventsRequest::DescribeEventsRequest() : 
     m_sourceIdentifierHasBeenSet(false),
+    m_sourceType(SourceType::NOT_SET),
     m_sourceTypeHasBeenSet(false),
-    m_startTime(0.0),
     m_startTimeHasBeenSet(false),
-    m_endTime(0.0),
     m_endTimeHasBeenSet(false),
     m_duration(0),
     m_durationHasBeenSet(false),
@@ -42,30 +41,37 @@ Aws::String DescribeEventsRequest::SerializePayload() const
   {
     ss << "SourceIdentifier=" << StringUtils::URLEncode(m_sourceIdentifier.c_str()) << "&";
   }
+
   if(m_sourceTypeHasBeenSet)
   {
     ss << "SourceType=" << SourceTypeMapper::GetNameForSourceType(m_sourceType) << "&";
   }
+
   if(m_startTimeHasBeenSet)
   {
-    ss << "StartTime=" << m_startTime << "&";
+    ss << "StartTime=" << StringUtils::URLEncode(m_startTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_endTimeHasBeenSet)
   {
-    ss << "EndTime=" << m_endTime << "&";
+    ss << "EndTime=" << StringUtils::URLEncode(m_endTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_durationHasBeenSet)
   {
     ss << "Duration=" << m_duration << "&";
   }
+
   if(m_maxRecordsHasBeenSet)
   {
     ss << "MaxRecords=" << m_maxRecords << "&";
   }
+
   if(m_markerHasBeenSet)
   {
     ss << "Marker=" << StringUtils::URLEncode(m_marker.c_str()) << "&";
   }
+
   ss << "Version=2012-12-01";
   return ss.str();
 }

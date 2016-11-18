@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,63 +24,72 @@ namespace EC2
 namespace Model
 {
 
-  /*
-  */
+  /**
+   * <p>Contains the parameters for DeletePlacementGroup.</p>
+   */
   class AWS_EC2_API DeletePlacementGroupRequest : public EC2Request
   {
   public:
     DeletePlacementGroupRequest();
     Aws::String SerializePayload() const override;
 
-
-    /*
-     <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    */
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
     inline bool GetDryRun() const{ return m_dryRun; }
 
-    /*
-     <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    */
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
 
-    /*
-     <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    */
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
     inline DeletePlacementGroupRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
-    /*
-     <p>The name of the placement group.</p>
-    */
+    /**
+     * <p>The name of the placement group.</p>
+     */
     inline const Aws::String& GetGroupName() const{ return m_groupName; }
 
-    /*
-     <p>The name of the placement group.</p>
-    */
+    /**
+     * <p>The name of the placement group.</p>
+     */
     inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
 
-    /*
-     <p>The name of the placement group.</p>
-    */
+    /**
+     * <p>The name of the placement group.</p>
+     */
     inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
 
-    /*
-     <p>The name of the placement group.</p>
-    */
+    /**
+     * <p>The name of the placement group.</p>
+     */
     inline void SetGroupName(const char* value) { m_groupNameHasBeenSet = true; m_groupName.assign(value); }
 
-    /*
-     <p>The name of the placement group.</p>
-    */
+    /**
+     * <p>The name of the placement group.</p>
+     */
     inline DeletePlacementGroupRequest& WithGroupName(const Aws::String& value) { SetGroupName(value); return *this;}
 
-    /*
-     <p>The name of the placement group.</p>
-    */
+    /**
+     * <p>The name of the placement group.</p>
+     */
     inline DeletePlacementGroupRequest& WithGroupName(Aws::String&& value) { SetGroupName(value); return *this;}
 
-    /*
-     <p>The name of the placement group.</p>
-    */
+    /**
+     * <p>The name of the placement group.</p>
+     */
     inline DeletePlacementGroupRequest& WithGroupName(const char* value) { SetGroupName(value); return *this;}
 
   private:

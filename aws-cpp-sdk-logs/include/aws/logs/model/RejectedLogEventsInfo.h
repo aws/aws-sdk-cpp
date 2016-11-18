@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -28,9 +28,10 @@ namespace CloudWatchLogs
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
+
+  /**
+   * <p>Represents the rejected events.</p>
+   */
   class AWS_CLOUDWATCHLOGS_API RejectedLogEventsInfo
   {
   public:
@@ -39,39 +40,57 @@ namespace Model
     RejectedLogEventsInfo& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
-    
-    inline long GetTooNewLogEventStartIndex() const{ return m_tooNewLogEventStartIndex; }
+    /**
+     * <p>The log events that are too new.</p>
+     */
+    inline int GetTooNewLogEventStartIndex() const{ return m_tooNewLogEventStartIndex; }
 
-    
-    inline void SetTooNewLogEventStartIndex(long value) { m_tooNewLogEventStartIndexHasBeenSet = true; m_tooNewLogEventStartIndex = value; }
+    /**
+     * <p>The log events that are too new.</p>
+     */
+    inline void SetTooNewLogEventStartIndex(int value) { m_tooNewLogEventStartIndexHasBeenSet = true; m_tooNewLogEventStartIndex = value; }
 
-    
-    inline RejectedLogEventsInfo& WithTooNewLogEventStartIndex(long value) { SetTooNewLogEventStartIndex(value); return *this;}
+    /**
+     * <p>The log events that are too new.</p>
+     */
+    inline RejectedLogEventsInfo& WithTooNewLogEventStartIndex(int value) { SetTooNewLogEventStartIndex(value); return *this;}
 
-    
-    inline long GetTooOldLogEventEndIndex() const{ return m_tooOldLogEventEndIndex; }
+    /**
+     * <p>The log events that are too old.</p>
+     */
+    inline int GetTooOldLogEventEndIndex() const{ return m_tooOldLogEventEndIndex; }
 
-    
-    inline void SetTooOldLogEventEndIndex(long value) { m_tooOldLogEventEndIndexHasBeenSet = true; m_tooOldLogEventEndIndex = value; }
+    /**
+     * <p>The log events that are too old.</p>
+     */
+    inline void SetTooOldLogEventEndIndex(int value) { m_tooOldLogEventEndIndexHasBeenSet = true; m_tooOldLogEventEndIndex = value; }
 
-    
-    inline RejectedLogEventsInfo& WithTooOldLogEventEndIndex(long value) { SetTooOldLogEventEndIndex(value); return *this;}
+    /**
+     * <p>The log events that are too old.</p>
+     */
+    inline RejectedLogEventsInfo& WithTooOldLogEventEndIndex(int value) { SetTooOldLogEventEndIndex(value); return *this;}
 
-    
-    inline long GetExpiredLogEventEndIndex() const{ return m_expiredLogEventEndIndex; }
+    /**
+     * <p>The expired log events.</p>
+     */
+    inline int GetExpiredLogEventEndIndex() const{ return m_expiredLogEventEndIndex; }
 
-    
-    inline void SetExpiredLogEventEndIndex(long value) { m_expiredLogEventEndIndexHasBeenSet = true; m_expiredLogEventEndIndex = value; }
+    /**
+     * <p>The expired log events.</p>
+     */
+    inline void SetExpiredLogEventEndIndex(int value) { m_expiredLogEventEndIndexHasBeenSet = true; m_expiredLogEventEndIndex = value; }
 
-    
-    inline RejectedLogEventsInfo& WithExpiredLogEventEndIndex(long value) { SetExpiredLogEventEndIndex(value); return *this;}
+    /**
+     * <p>The expired log events.</p>
+     */
+    inline RejectedLogEventsInfo& WithExpiredLogEventEndIndex(int value) { SetExpiredLogEventEndIndex(value); return *this;}
 
   private:
-    long m_tooNewLogEventStartIndex;
+    int m_tooNewLogEventStartIndex;
     bool m_tooNewLogEventStartIndexHasBeenSet;
-    long m_tooOldLogEventEndIndex;
+    int m_tooOldLogEventEndIndex;
     bool m_tooOldLogEventEndIndexHasBeenSet;
-    long m_expiredLogEventEndIndex;
+    int m_expiredLogEventEndIndex;
     bool m_expiredLogEventEndIndexHasBeenSet;
   };
 

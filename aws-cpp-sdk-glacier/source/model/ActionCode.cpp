@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -14,50 +14,66 @@
 */
 #include <aws/glacier/model/ActionCode.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
+#include <aws/core/utils/EnumParseOverflowContainer.h>
 
 using namespace Aws::Utils;
 
-static const int ArchiveRetrieval_HASH = HashingUtils::HashString("ArchiveRetrieval");
-static const int InventoryRetrieval_HASH = HashingUtils::HashString("InventoryRetrieval");
 
 namespace Aws
 {
-namespace Glacier
-{
-namespace Model
-{
-namespace ActionCodeMapper
-{
-ActionCode GetActionCodeForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-
-  if (hashCode == ArchiveRetrieval_HASH)
+  namespace Glacier
   {
-    return ActionCode::ArchiveRetrieval;
-  }
-  else if (hashCode == InventoryRetrieval_HASH)
-  {
-    return ActionCode::InventoryRetrieval;
-  }
+    namespace Model
+    {
+      namespace ActionCodeMapper
+      {
 
-  return ActionCode::NOT_SET;
-}
+        static const int ArchiveRetrieval_HASH = HashingUtils::HashString("ArchiveRetrieval");
+        static const int InventoryRetrieval_HASH = HashingUtils::HashString("InventoryRetrieval");
 
-Aws::String GetNameForActionCode(ActionCode value)
-{
-  switch(value)
-  {
-  case ActionCode::ArchiveRetrieval:
-    return "ArchiveRetrieval";
-  case ActionCode::InventoryRetrieval:
-    return "InventoryRetrieval";
-  default:
-    return "";
-  }
-}
 
-} // namespace ActionCodeMapper
-} // namespace Model
-} // namespace Glacier
+        ActionCode GetActionCodeForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == ArchiveRetrieval_HASH)
+          {
+            return ActionCode::ArchiveRetrieval;
+          }
+          else if (hashCode == InventoryRetrieval_HASH)
+          {
+            return ActionCode::InventoryRetrieval;
+          }
+          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<ActionCode>(hashCode);
+          }
+
+          return ActionCode::NOT_SET;
+        }
+
+        Aws::String GetNameForActionCode(ActionCode enumValue)
+        {
+          switch(enumValue)
+          {
+          case ActionCode::ArchiveRetrieval:
+            return "ArchiveRetrieval";
+          case ActionCode::InventoryRetrieval:
+            return "InventoryRetrieval";
+          default:
+            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace ActionCodeMapper
+    } // namespace Model
+  } // namespace Glacier
 } // namespace Aws

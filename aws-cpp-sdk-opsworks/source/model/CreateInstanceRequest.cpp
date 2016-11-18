@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -25,6 +25,7 @@ CreateInstanceRequest::CreateInstanceRequest() :
     m_stackIdHasBeenSet(false),
     m_layerIdsHasBeenSet(false),
     m_instanceTypeHasBeenSet(false),
+    m_autoScalingType(AutoScalingType::NOT_SET),
     m_autoScalingTypeHasBeenSet(false),
     m_hostnameHasBeenSet(false),
     m_osHasBeenSet(false),
@@ -33,14 +34,17 @@ CreateInstanceRequest::CreateInstanceRequest() :
     m_availabilityZoneHasBeenSet(false),
     m_virtualizationTypeHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
+    m_architecture(Architecture::NOT_SET),
     m_architectureHasBeenSet(false),
+    m_rootDeviceType(RootDeviceType::NOT_SET),
     m_rootDeviceTypeHasBeenSet(false),
     m_blockDeviceMappingsHasBeenSet(false),
     m_installUpdatesOnBoot(false),
     m_installUpdatesOnBootHasBeenSet(false),
     m_ebsOptimized(false),
     m_ebsOptimizedHasBeenSet(false),
-    m_agentVersionHasBeenSet(false)
+    m_agentVersionHasBeenSet(false),
+    m_tenancyHasBeenSet(false)
 {
 }
 
@@ -157,6 +161,12 @@ Aws::String CreateInstanceRequest::SerializePayload() const
 
   }
 
+  if(m_tenancyHasBeenSet)
+  {
+   payload.WithString("Tenancy", m_tenancy);
+
+  }
+
   return payload.WriteReadable();
 }
 
@@ -164,7 +174,7 @@ Aws::Http::HeaderValueCollection CreateInstanceRequest::GetRequestSpecificHeader
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "OpsWorks_20130218.CreateInstance"));
-  return std::move(headers);
+  return headers;
 
 }
 

@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -26,6 +26,7 @@ ReplaceNetworkAclEntryRequest::ReplaceNetworkAclEntryRequest() :
     m_ruleNumber(0),
     m_ruleNumberHasBeenSet(false),
     m_protocolHasBeenSet(false),
+    m_ruleAction(RuleAction::NOT_SET),
     m_ruleActionHasBeenSet(false),
     m_egress(false),
     m_egressHasBeenSet(false),
@@ -43,39 +44,48 @@ Aws::String ReplaceNetworkAclEntryRequest::SerializePayload() const
   {
     ss << "DryRun=" << m_dryRun << "&";
   }
+
   if(m_networkAclIdHasBeenSet)
   {
     ss << "NetworkAclId=" << StringUtils::URLEncode(m_networkAclId.c_str()) << "&";
   }
+
   if(m_ruleNumberHasBeenSet)
   {
     ss << "RuleNumber=" << m_ruleNumber << "&";
   }
+
   if(m_protocolHasBeenSet)
   {
     ss << "Protocol=" << StringUtils::URLEncode(m_protocol.c_str()) << "&";
   }
+
   if(m_ruleActionHasBeenSet)
   {
     ss << "RuleAction=" << RuleActionMapper::GetNameForRuleAction(m_ruleAction) << "&";
   }
+
   if(m_egressHasBeenSet)
   {
     ss << "Egress=" << m_egress << "&";
   }
+
   if(m_cidrBlockHasBeenSet)
   {
     ss << "CidrBlock=" << StringUtils::URLEncode(m_cidrBlock.c_str()) << "&";
   }
+
   if(m_icmpTypeCodeHasBeenSet)
   {
-    m_icmpTypeCode.OutputToStream(ss, "IcmpTypeCode.");
+    m_icmpTypeCode.OutputToStream(ss, "IcmpTypeCode");
   }
+
   if(m_portRangeHasBeenSet)
   {
-    m_portRange.OutputToStream(ss, "PortRange.");
+    m_portRange.OutputToStream(ss, "PortRange");
   }
-  ss << "Version=2015-04-15";
+
+  ss << "Version=2015-10-01";
   return ss.str();
 }
 

@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -28,7 +28,10 @@ CreateDeploymentRequest::CreateDeploymentRequest() :
     m_deploymentConfigNameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_ignoreApplicationStopFailures(false),
-    m_ignoreApplicationStopFailuresHasBeenSet(false)
+    m_ignoreApplicationStopFailuresHasBeenSet(false),
+    m_autoRollbackConfigurationHasBeenSet(false),
+    m_updateOutdatedInstancesOnly(false),
+    m_updateOutdatedInstancesOnlyHasBeenSet(false)
 {
 }
 
@@ -72,6 +75,18 @@ Aws::String CreateDeploymentRequest::SerializePayload() const
 
   }
 
+  if(m_autoRollbackConfigurationHasBeenSet)
+  {
+   payload.WithObject("autoRollbackConfiguration", m_autoRollbackConfiguration.Jsonize());
+
+  }
+
+  if(m_updateOutdatedInstancesOnlyHasBeenSet)
+  {
+   payload.WithBool("updateOutdatedInstancesOnly", m_updateOutdatedInstancesOnly);
+
+  }
+
   return payload.WriteReadable();
 }
 
@@ -79,7 +94,7 @@ Aws::Http::HeaderValueCollection CreateDeploymentRequest::GetRequestSpecificHead
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "CodeDeploy_20141006.CreateDeployment"));
-  return std::move(headers);
+  return headers;
 
 }
 

@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,20 +19,26 @@
 
 #include <utility>
 
-using namespace Aws::S3::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace S3
+{
+namespace Model
+{
 
 ObjectVersion::ObjectVersion() : 
     m_eTagHasBeenSet(false),
     m_size(0),
     m_sizeHasBeenSet(false),
+    m_storageClass(ObjectVersionStorageClass::NOT_SET),
     m_storageClassHasBeenSet(false),
     m_keyHasBeenSet(false),
     m_versionIdHasBeenSet(false),
     m_isLatest(false),
     m_isLatestHasBeenSet(false),
-    m_lastModified(0.0),
     m_lastModifiedHasBeenSet(false),
     m_ownerHasBeenSet(false)
 {
@@ -42,12 +48,12 @@ ObjectVersion::ObjectVersion(const XmlNode& xmlNode) :
     m_eTagHasBeenSet(false),
     m_size(0),
     m_sizeHasBeenSet(false),
+    m_storageClass(ObjectVersionStorageClass::NOT_SET),
     m_storageClassHasBeenSet(false),
     m_keyHasBeenSet(false),
     m_versionIdHasBeenSet(false),
     m_isLatest(false),
     m_isLatestHasBeenSet(false),
-    m_lastModified(0.0),
     m_lastModifiedHasBeenSet(false),
     m_ownerHasBeenSet(false)
 {
@@ -69,7 +75,7 @@ ObjectVersion& ObjectVersion::operator =(const XmlNode& xmlNode)
     XmlNode sizeNode = resultNode.FirstChild("Size");
     if(!sizeNode.IsNull())
     {
-      m_size = StringUtils::ConvertToInt32(StringUtils::Trim(sizeNode.GetText().c_str()).c_str());
+      m_size = StringUtils::ConvertToInt64(StringUtils::Trim(sizeNode.GetText().c_str()).c_str());
       m_sizeHasBeenSet = true;
     }
     XmlNode storageClassNode = resultNode.FirstChild("StorageClass");
@@ -99,7 +105,7 @@ ObjectVersion& ObjectVersion::operator =(const XmlNode& xmlNode)
     XmlNode lastModifiedNode = resultNode.FirstChild("LastModified");
     if(!lastModifiedNode.IsNull())
     {
-      m_lastModified = StringUtils::ConvertXmlToDoubleDate(StringUtils::Trim(lastModifiedNode.GetText().c_str()).c_str());
+      m_lastModified = DateTime(StringUtils::Trim(lastModifiedNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_lastModifiedHasBeenSet = true;
     }
     XmlNode ownerNode = resultNode.FirstChild("Owner");
@@ -158,10 +164,8 @@ void ObjectVersion::AddToNode(XmlNode& parentNode) const
 
   if(m_lastModifiedHasBeenSet)
   {
-   XmlNode lastModifiedNode = parentNode.CreateChildElement("LastModified");
-  ss << m_lastModified;
-   lastModifiedNode.SetText(ss.str());
-  ss.str("");
+     XmlNode lastModifiedNode = parentNode.CreateChildElement("LastModified");
+     lastModifiedNode.SetText(m_lastModified.ToGmtString(DateFormat::ISO_8601));
   }
 
   if(m_ownerHasBeenSet)
@@ -171,3 +175,7 @@ void ObjectVersion::AddToNode(XmlNode& parentNode) const
   }
 
 }
+
+} // namespace Model
+} // namespace S3
+} // namespace Aws

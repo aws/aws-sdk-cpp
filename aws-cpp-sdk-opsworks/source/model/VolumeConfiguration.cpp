@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::OpsWorks::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace OpsWorks
+{
+namespace Model
+{
 
 VolumeConfiguration::VolumeConfiguration() : 
     m_mountPointHasBeenSet(false),
@@ -137,5 +143,9 @@ JsonValue VolumeConfiguration::Jsonize() const
 
   }
 
-  return std::move(payload);
+  return payload;
 }
+
+} // namespace Model
+} // namespace OpsWorks
+} // namespace Aws

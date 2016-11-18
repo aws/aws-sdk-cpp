@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,15 +19,20 @@
 
 #include <utility>
 
-using namespace Aws::Redshift::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace Redshift
+{
+namespace Model
+{
 
 ReservedNode::ReservedNode() : 
     m_reservedNodeIdHasBeenSet(false),
     m_reservedNodeOfferingIdHasBeenSet(false),
     m_nodeTypeHasBeenSet(false),
-    m_startTime(0.0),
     m_startTimeHasBeenSet(false),
     m_duration(0),
     m_durationHasBeenSet(false),
@@ -48,7 +53,6 @@ ReservedNode::ReservedNode(const XmlNode& xmlNode) :
     m_reservedNodeIdHasBeenSet(false),
     m_reservedNodeOfferingIdHasBeenSet(false),
     m_nodeTypeHasBeenSet(false),
-    m_startTime(0.0),
     m_startTimeHasBeenSet(false),
     m_duration(0),
     m_durationHasBeenSet(false),
@@ -93,7 +97,7 @@ ReservedNode& ReservedNode::operator =(const XmlNode& xmlNode)
     XmlNode startTimeNode = resultNode.FirstChild("StartTime");
     if(!startTimeNode.IsNull())
     {
-      m_startTime = StringUtils::ConvertToDouble(StringUtils::Trim(startTimeNode.GetText().c_str()).c_str());
+      m_startTime = DateTime(StringUtils::Trim(startTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_startTimeHasBeenSet = true;
     }
     XmlNode durationNode = resultNode.FirstChild("Duration");
@@ -161,55 +165,68 @@ void ReservedNode::OutputToStream(Aws::OStream& oStream, const char* location, u
   {
       oStream << location << index << locationValue << ".ReservedNodeId=" << StringUtils::URLEncode(m_reservedNodeId.c_str()) << "&";
   }
+
   if(m_reservedNodeOfferingIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".ReservedNodeOfferingId=" << StringUtils::URLEncode(m_reservedNodeOfferingId.c_str()) << "&";
   }
+
   if(m_nodeTypeHasBeenSet)
   {
       oStream << location << index << locationValue << ".NodeType=" << StringUtils::URLEncode(m_nodeType.c_str()) << "&";
   }
+
   if(m_startTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".StartTime=" << m_startTime << "&";
+      oStream << location << index << locationValue << ".StartTime=" << StringUtils::URLEncode(m_startTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_durationHasBeenSet)
   {
       oStream << location << index << locationValue << ".Duration=" << m_duration << "&";
   }
+
   if(m_fixedPriceHasBeenSet)
   {
-      oStream << location << index << locationValue << ".FixedPrice=" << m_fixedPrice << "&";
+        oStream << location << index << locationValue << ".FixedPrice=" << StringUtils::URLEncode(m_fixedPrice) << "&";
   }
+
   if(m_usagePriceHasBeenSet)
   {
-      oStream << location << index << locationValue << ".UsagePrice=" << m_usagePrice << "&";
+        oStream << location << index << locationValue << ".UsagePrice=" << StringUtils::URLEncode(m_usagePrice) << "&";
   }
+
   if(m_currencyCodeHasBeenSet)
   {
       oStream << location << index << locationValue << ".CurrencyCode=" << StringUtils::URLEncode(m_currencyCode.c_str()) << "&";
   }
+
   if(m_nodeCountHasBeenSet)
   {
       oStream << location << index << locationValue << ".NodeCount=" << m_nodeCount << "&";
   }
+
   if(m_stateHasBeenSet)
   {
       oStream << location << index << locationValue << ".State=" << StringUtils::URLEncode(m_state.c_str()) << "&";
   }
+
   if(m_offeringTypeHasBeenSet)
   {
       oStream << location << index << locationValue << ".OfferingType=" << StringUtils::URLEncode(m_offeringType.c_str()) << "&";
   }
+
   if(m_recurringChargesHasBeenSet)
   {
+      unsigned recurringChargesIdx = 1;
       for(auto& item : m_recurringCharges)
       {
         Aws::StringStream recurringChargesSs;
-        recurringChargesSs << location << index << locationValue << ".RecurringCharge";
+        recurringChargesSs << location << index << locationValue << ".RecurringCharge." << recurringChargesIdx++;
         item.OutputToStream(oStream, recurringChargesSs.str().c_str());
       }
   }
+
 }
 
 void ReservedNode::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -228,7 +245,7 @@ void ReservedNode::OutputToStream(Aws::OStream& oStream, const char* location) c
   }
   if(m_startTimeHasBeenSet)
   {
-      oStream << location << ".StartTime=" << m_startTime << "&";
+      oStream << location << ".StartTime=" << StringUtils::URLEncode(m_startTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_durationHasBeenSet)
   {
@@ -236,11 +253,11 @@ void ReservedNode::OutputToStream(Aws::OStream& oStream, const char* location) c
   }
   if(m_fixedPriceHasBeenSet)
   {
-      oStream << location << ".FixedPrice=" << m_fixedPrice << "&";
+        oStream << location << ".FixedPrice=" << StringUtils::URLEncode(m_fixedPrice) << "&";
   }
   if(m_usagePriceHasBeenSet)
   {
-      oStream << location << ".UsagePrice=" << m_usagePrice << "&";
+        oStream << location << ".UsagePrice=" << StringUtils::URLEncode(m_usagePrice) << "&";
   }
   if(m_currencyCodeHasBeenSet)
   {
@@ -260,11 +277,16 @@ void ReservedNode::OutputToStream(Aws::OStream& oStream, const char* location) c
   }
   if(m_recurringChargesHasBeenSet)
   {
+      unsigned recurringChargesIdx = 1;
       for(auto& item : m_recurringCharges)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".RecurringCharge";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream recurringChargesSs;
+        recurringChargesSs << location <<  ".RecurringCharge." << recurringChargesIdx++;
+        item.OutputToStream(oStream, recurringChargesSs.str().c_str());
       }
   }
 }
+
+} // namespace Model
+} // namespace Redshift
+} // namespace Aws

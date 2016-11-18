@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -14,50 +14,66 @@
 */
 #include <aws/cognito-sync/model/StreamingStatus.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
+#include <aws/core/utils/EnumParseOverflowContainer.h>
 
 using namespace Aws::Utils;
 
-static const int ENABLED_HASH = HashingUtils::HashString("ENABLED");
-static const int DISABLED_HASH = HashingUtils::HashString("DISABLED");
 
 namespace Aws
 {
-namespace CognitoSync
-{
-namespace Model
-{
-namespace StreamingStatusMapper
-{
-StreamingStatus GetStreamingStatusForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-
-  if (hashCode == ENABLED_HASH)
+  namespace CognitoSync
   {
-    return StreamingStatus::ENABLED;
-  }
-  else if (hashCode == DISABLED_HASH)
-  {
-    return StreamingStatus::DISABLED;
-  }
+    namespace Model
+    {
+      namespace StreamingStatusMapper
+      {
 
-  return StreamingStatus::NOT_SET;
-}
+        static const int ENABLED_HASH = HashingUtils::HashString("ENABLED");
+        static const int DISABLED_HASH = HashingUtils::HashString("DISABLED");
 
-Aws::String GetNameForStreamingStatus(StreamingStatus value)
-{
-  switch(value)
-  {
-  case StreamingStatus::ENABLED:
-    return "ENABLED";
-  case StreamingStatus::DISABLED:
-    return "DISABLED";
-  default:
-    return "";
-  }
-}
 
-} // namespace StreamingStatusMapper
-} // namespace Model
-} // namespace CognitoSync
+        StreamingStatus GetStreamingStatusForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == ENABLED_HASH)
+          {
+            return StreamingStatus::ENABLED;
+          }
+          else if (hashCode == DISABLED_HASH)
+          {
+            return StreamingStatus::DISABLED;
+          }
+          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<StreamingStatus>(hashCode);
+          }
+
+          return StreamingStatus::NOT_SET;
+        }
+
+        Aws::String GetNameForStreamingStatus(StreamingStatus enumValue)
+        {
+          switch(enumValue)
+          {
+          case StreamingStatus::ENABLED:
+            return "ENABLED";
+          case StreamingStatus::DISABLED:
+            return "DISABLED";
+          default:
+            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace StreamingStatusMapper
+    } // namespace Model
+  } // namespace CognitoSync
 } // namespace Aws

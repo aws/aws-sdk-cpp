@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,8 +24,8 @@ namespace OpsWorks
 namespace Model
 {
 
-  /*
-  */
+  /**
+   */
   class AWS_OPSWORKS_API UpdateRdsDbInstanceRequest : public OpsWorksRequest
   {
   public:
@@ -34,110 +34,109 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
-    /*
-     <p>The Amazon RDS instance's ARN.</p>
-    */
+    /**
+     * <p>The Amazon RDS instance's ARN.</p>
+     */
     inline const Aws::String& GetRdsDbInstanceArn() const{ return m_rdsDbInstanceArn; }
 
-    /*
-     <p>The Amazon RDS instance's ARN.</p>
-    */
+    /**
+     * <p>The Amazon RDS instance's ARN.</p>
+     */
     inline void SetRdsDbInstanceArn(const Aws::String& value) { m_rdsDbInstanceArnHasBeenSet = true; m_rdsDbInstanceArn = value; }
 
-    /*
-     <p>The Amazon RDS instance's ARN.</p>
-    */
+    /**
+     * <p>The Amazon RDS instance's ARN.</p>
+     */
     inline void SetRdsDbInstanceArn(Aws::String&& value) { m_rdsDbInstanceArnHasBeenSet = true; m_rdsDbInstanceArn = value; }
 
-    /*
-     <p>The Amazon RDS instance's ARN.</p>
-    */
+    /**
+     * <p>The Amazon RDS instance's ARN.</p>
+     */
     inline void SetRdsDbInstanceArn(const char* value) { m_rdsDbInstanceArnHasBeenSet = true; m_rdsDbInstanceArn.assign(value); }
 
-    /*
-     <p>The Amazon RDS instance's ARN.</p>
-    */
+    /**
+     * <p>The Amazon RDS instance's ARN.</p>
+     */
     inline UpdateRdsDbInstanceRequest& WithRdsDbInstanceArn(const Aws::String& value) { SetRdsDbInstanceArn(value); return *this;}
 
-    /*
-     <p>The Amazon RDS instance's ARN.</p>
-    */
+    /**
+     * <p>The Amazon RDS instance's ARN.</p>
+     */
     inline UpdateRdsDbInstanceRequest& WithRdsDbInstanceArn(Aws::String&& value) { SetRdsDbInstanceArn(value); return *this;}
 
-    /*
-     <p>The Amazon RDS instance's ARN.</p>
-    */
+    /**
+     * <p>The Amazon RDS instance's ARN.</p>
+     */
     inline UpdateRdsDbInstanceRequest& WithRdsDbInstanceArn(const char* value) { SetRdsDbInstanceArn(value); return *this;}
 
-    /*
-     <p>The master user name.</p>
-    */
+    /**
+     * <p>The master user name.</p>
+     */
     inline const Aws::String& GetDbUser() const{ return m_dbUser; }
 
-    /*
-     <p>The master user name.</p>
-    */
+    /**
+     * <p>The master user name.</p>
+     */
     inline void SetDbUser(const Aws::String& value) { m_dbUserHasBeenSet = true; m_dbUser = value; }
 
-    /*
-     <p>The master user name.</p>
-    */
+    /**
+     * <p>The master user name.</p>
+     */
     inline void SetDbUser(Aws::String&& value) { m_dbUserHasBeenSet = true; m_dbUser = value; }
 
-    /*
-     <p>The master user name.</p>
-    */
+    /**
+     * <p>The master user name.</p>
+     */
     inline void SetDbUser(const char* value) { m_dbUserHasBeenSet = true; m_dbUser.assign(value); }
 
-    /*
-     <p>The master user name.</p>
-    */
+    /**
+     * <p>The master user name.</p>
+     */
     inline UpdateRdsDbInstanceRequest& WithDbUser(const Aws::String& value) { SetDbUser(value); return *this;}
 
-    /*
-     <p>The master user name.</p>
-    */
+    /**
+     * <p>The master user name.</p>
+     */
     inline UpdateRdsDbInstanceRequest& WithDbUser(Aws::String&& value) { SetDbUser(value); return *this;}
 
-    /*
-     <p>The master user name.</p>
-    */
+    /**
+     * <p>The master user name.</p>
+     */
     inline UpdateRdsDbInstanceRequest& WithDbUser(const char* value) { SetDbUser(value); return *this;}
 
-    /*
-     <p>The database password.</p>
-    */
+    /**
+     * <p>The database password.</p>
+     */
     inline const Aws::String& GetDbPassword() const{ return m_dbPassword; }
 
-    /*
-     <p>The database password.</p>
-    */
+    /**
+     * <p>The database password.</p>
+     */
     inline void SetDbPassword(const Aws::String& value) { m_dbPasswordHasBeenSet = true; m_dbPassword = value; }
 
-    /*
-     <p>The database password.</p>
-    */
+    /**
+     * <p>The database password.</p>
+     */
     inline void SetDbPassword(Aws::String&& value) { m_dbPasswordHasBeenSet = true; m_dbPassword = value; }
 
-    /*
-     <p>The database password.</p>
-    */
+    /**
+     * <p>The database password.</p>
+     */
     inline void SetDbPassword(const char* value) { m_dbPasswordHasBeenSet = true; m_dbPassword.assign(value); }
 
-    /*
-     <p>The database password.</p>
-    */
+    /**
+     * <p>The database password.</p>
+     */
     inline UpdateRdsDbInstanceRequest& WithDbPassword(const Aws::String& value) { SetDbPassword(value); return *this;}
 
-    /*
-     <p>The database password.</p>
-    */
+    /**
+     * <p>The database password.</p>
+     */
     inline UpdateRdsDbInstanceRequest& WithDbPassword(Aws::String&& value) { SetDbPassword(value); return *this;}
 
-    /*
-     <p>The database password.</p>
-    */
+    /**
+     * <p>The database password.</p>
+     */
     inline UpdateRdsDbInstanceRequest& WithDbPassword(const char* value) { SetDbPassword(value); return *this;}
 
   private:

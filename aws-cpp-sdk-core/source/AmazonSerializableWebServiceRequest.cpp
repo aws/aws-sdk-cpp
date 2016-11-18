@@ -29,6 +29,6 @@ std::shared_ptr<Aws::IOStream> AmazonSerializableWebServiceRequest::GetBody() co
       *payloadBody << payload;
     }
 
-    return std::move(payloadBody);
+    return payloadBody;
 }
 

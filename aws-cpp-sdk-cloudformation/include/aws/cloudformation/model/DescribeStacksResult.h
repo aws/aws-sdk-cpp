@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -35,9 +35,9 @@ namespace CloudFormation
 {
 namespace Model
 {
-  /*
-    <p>The output for a <a>DescribeStacks</a> action.</p>
-  */
+  /**
+   * <p>The output for a <a>DescribeStacks</a> action.</p>
+   */
   class AWS_CLOUDFORMATION_API DescribeStacksResult
   {
   public:
@@ -45,74 +45,81 @@ namespace Model
     DescribeStacksResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     DescribeStacksResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>A list of stack structures.</p>
-    */
+    /**
+     * <p>A list of stack structures.</p>
+     */
     inline const Aws::Vector<Stack>& GetStacks() const{ return m_stacks; }
 
-    /*
-     <p>A list of stack structures.</p>
-    */
+    /**
+     * <p>A list of stack structures.</p>
+     */
     inline void SetStacks(const Aws::Vector<Stack>& value) { m_stacks = value; }
 
-    /*
-     <p>A list of stack structures.</p>
-    */
+    /**
+     * <p>A list of stack structures.</p>
+     */
     inline void SetStacks(Aws::Vector<Stack>&& value) { m_stacks = value; }
 
-    /*
-     <p>A list of stack structures.</p>
-    */
+    /**
+     * <p>A list of stack structures.</p>
+     */
     inline DescribeStacksResult& WithStacks(const Aws::Vector<Stack>& value) { SetStacks(value); return *this;}
 
-    /*
-     <p>A list of stack structures.</p>
-    */
+    /**
+     * <p>A list of stack structures.</p>
+     */
     inline DescribeStacksResult& WithStacks(Aws::Vector<Stack>&& value) { SetStacks(value); return *this;}
 
-    /*
-     <p>A list of stack structures.</p>
-    */
+    /**
+     * <p>A list of stack structures.</p>
+     */
     inline DescribeStacksResult& AddStacks(const Stack& value) { m_stacks.push_back(value); return *this; }
 
-    /*
-     <p>A list of stack structures.</p>
-    */
+    /**
+     * <p>A list of stack structures.</p>
+     */
     inline DescribeStacksResult& AddStacks(Stack&& value) { m_stacks.push_back(value); return *this; }
 
-    /*
-     String that identifies the start of the next list of stacks, if there is one.
-    */
+    /**
+     * <p>If the output exceeds 1 MB in size, a string that identifies the next page of
+     * stacks. If no additional page exists, this value is null.</p>
+     */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
-    /*
-     String that identifies the start of the next list of stacks, if there is one.
-    */
+    /**
+     * <p>If the output exceeds 1 MB in size, a string that identifies the next page of
+     * stacks. If no additional page exists, this value is null.</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
-    /*
-     String that identifies the start of the next list of stacks, if there is one.
-    */
+    /**
+     * <p>If the output exceeds 1 MB in size, a string that identifies the next page of
+     * stacks. If no additional page exists, this value is null.</p>
+     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
 
-    /*
-     String that identifies the start of the next list of stacks, if there is one.
-    */
+    /**
+     * <p>If the output exceeds 1 MB in size, a string that identifies the next page of
+     * stacks. If no additional page exists, this value is null.</p>
+     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
-    /*
-     String that identifies the start of the next list of stacks, if there is one.
-    */
+    /**
+     * <p>If the output exceeds 1 MB in size, a string that identifies the next page of
+     * stacks. If no additional page exists, this value is null.</p>
+     */
     inline DescribeStacksResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
-    /*
-     String that identifies the start of the next list of stacks, if there is one.
-    */
+    /**
+     * <p>If the output exceeds 1 MB in size, a string that identifies the next page of
+     * stacks. If no additional page exists, this value is null.</p>
+     */
     inline DescribeStacksResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
-    /*
-     String that identifies the start of the next list of stacks, if there is one.
-    */
+    /**
+     * <p>If the output exceeds 1 MB in size, a string that identifies the next page of
+     * stacks. If no additional page exists, this value is null.</p>
+     */
     inline DescribeStacksResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
     

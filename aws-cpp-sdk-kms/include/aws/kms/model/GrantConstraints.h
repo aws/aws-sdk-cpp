@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -30,9 +30,15 @@ namespace KMS
 {
 namespace Model
 {
-  /*
-    Contains constraints on the grant.
-  */
+
+  /**
+   * <p>A structure for specifying the conditions under which the operations
+   * permitted by the grant are allowed.</p> <p>You can use this structure to allow
+   * the operations permitted by the grant only when a specified encryption context
+   * is present. For more information about encryption context, see <a
+   * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption
+   * Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+   */
   class AWS_KMS_API GrantConstraints
   {
   public:
@@ -41,124 +47,220 @@ namespace Model
     GrantConstraints& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
-    /*
-     The constraint equals the full encryption context.
-    */
+    /**
+     * <p>Contains a list of key-value pairs, a subset of which must be present in the
+     * encryption context of a subsequent operation permitted by the grant. When a
+     * subsequent operation permitted by the grant includes an encryption context that
+     * matches this list or is a subset of this list, the grant allows the operation.
+     * Otherwise, the operation is not allowed.</p>
+     */
     inline const Aws::Map<Aws::String, Aws::String>& GetEncryptionContextSubset() const{ return m_encryptionContextSubset; }
 
-    /*
-     The constraint equals the full encryption context.
-    */
+    /**
+     * <p>Contains a list of key-value pairs, a subset of which must be present in the
+     * encryption context of a subsequent operation permitted by the grant. When a
+     * subsequent operation permitted by the grant includes an encryption context that
+     * matches this list or is a subset of this list, the grant allows the operation.
+     * Otherwise, the operation is not allowed.</p>
+     */
     inline void SetEncryptionContextSubset(const Aws::Map<Aws::String, Aws::String>& value) { m_encryptionContextSubsetHasBeenSet = true; m_encryptionContextSubset = value; }
 
-    /*
-     The constraint equals the full encryption context.
-    */
+    /**
+     * <p>Contains a list of key-value pairs, a subset of which must be present in the
+     * encryption context of a subsequent operation permitted by the grant. When a
+     * subsequent operation permitted by the grant includes an encryption context that
+     * matches this list or is a subset of this list, the grant allows the operation.
+     * Otherwise, the operation is not allowed.</p>
+     */
     inline void SetEncryptionContextSubset(Aws::Map<Aws::String, Aws::String>&& value) { m_encryptionContextSubsetHasBeenSet = true; m_encryptionContextSubset = value; }
 
-    /*
-     The constraint equals the full encryption context.
-    */
+    /**
+     * <p>Contains a list of key-value pairs, a subset of which must be present in the
+     * encryption context of a subsequent operation permitted by the grant. When a
+     * subsequent operation permitted by the grant includes an encryption context that
+     * matches this list or is a subset of this list, the grant allows the operation.
+     * Otherwise, the operation is not allowed.</p>
+     */
     inline GrantConstraints& WithEncryptionContextSubset(const Aws::Map<Aws::String, Aws::String>& value) { SetEncryptionContextSubset(value); return *this;}
 
-    /*
-     The constraint equals the full encryption context.
-    */
+    /**
+     * <p>Contains a list of key-value pairs, a subset of which must be present in the
+     * encryption context of a subsequent operation permitted by the grant. When a
+     * subsequent operation permitted by the grant includes an encryption context that
+     * matches this list or is a subset of this list, the grant allows the operation.
+     * Otherwise, the operation is not allowed.</p>
+     */
     inline GrantConstraints& WithEncryptionContextSubset(Aws::Map<Aws::String, Aws::String>&& value) { SetEncryptionContextSubset(value); return *this;}
 
-    /*
-     The constraint equals the full encryption context.
-    */
+    /**
+     * <p>Contains a list of key-value pairs, a subset of which must be present in the
+     * encryption context of a subsequent operation permitted by the grant. When a
+     * subsequent operation permitted by the grant includes an encryption context that
+     * matches this list or is a subset of this list, the grant allows the operation.
+     * Otherwise, the operation is not allowed.</p>
+     */
     inline GrantConstraints& AddEncryptionContextSubset(const Aws::String& key, const Aws::String& value) { m_encryptionContextSubsetHasBeenSet = true; m_encryptionContextSubset[key] = value; return *this; }
 
-    /*
-     The constraint equals the full encryption context.
-    */
+    /**
+     * <p>Contains a list of key-value pairs, a subset of which must be present in the
+     * encryption context of a subsequent operation permitted by the grant. When a
+     * subsequent operation permitted by the grant includes an encryption context that
+     * matches this list or is a subset of this list, the grant allows the operation.
+     * Otherwise, the operation is not allowed.</p>
+     */
     inline GrantConstraints& AddEncryptionContextSubset(Aws::String&& key, const Aws::String& value) { m_encryptionContextSubsetHasBeenSet = true; m_encryptionContextSubset[key] = value; return *this; }
 
-    /*
-     The constraint equals the full encryption context.
-    */
+    /**
+     * <p>Contains a list of key-value pairs, a subset of which must be present in the
+     * encryption context of a subsequent operation permitted by the grant. When a
+     * subsequent operation permitted by the grant includes an encryption context that
+     * matches this list or is a subset of this list, the grant allows the operation.
+     * Otherwise, the operation is not allowed.</p>
+     */
     inline GrantConstraints& AddEncryptionContextSubset(const Aws::String& key, Aws::String&& value) { m_encryptionContextSubsetHasBeenSet = true; m_encryptionContextSubset[key] = value; return *this; }
 
-    /*
-     The constraint equals the full encryption context.
-    */
+    /**
+     * <p>Contains a list of key-value pairs, a subset of which must be present in the
+     * encryption context of a subsequent operation permitted by the grant. When a
+     * subsequent operation permitted by the grant includes an encryption context that
+     * matches this list or is a subset of this list, the grant allows the operation.
+     * Otherwise, the operation is not allowed.</p>
+     */
     inline GrantConstraints& AddEncryptionContextSubset(Aws::String&& key, Aws::String&& value) { m_encryptionContextSubsetHasBeenSet = true; m_encryptionContextSubset[key] = value; return *this; }
 
-    /*
-     The constraint equals the full encryption context.
-    */
+    /**
+     * <p>Contains a list of key-value pairs, a subset of which must be present in the
+     * encryption context of a subsequent operation permitted by the grant. When a
+     * subsequent operation permitted by the grant includes an encryption context that
+     * matches this list or is a subset of this list, the grant allows the operation.
+     * Otherwise, the operation is not allowed.</p>
+     */
     inline GrantConstraints& AddEncryptionContextSubset(const char* key, Aws::String&& value) { m_encryptionContextSubsetHasBeenSet = true; m_encryptionContextSubset[key] = value; return *this; }
 
-    /*
-     The constraint equals the full encryption context.
-    */
+    /**
+     * <p>Contains a list of key-value pairs, a subset of which must be present in the
+     * encryption context of a subsequent operation permitted by the grant. When a
+     * subsequent operation permitted by the grant includes an encryption context that
+     * matches this list or is a subset of this list, the grant allows the operation.
+     * Otherwise, the operation is not allowed.</p>
+     */
     inline GrantConstraints& AddEncryptionContextSubset(Aws::String&& key, const char* value) { m_encryptionContextSubsetHasBeenSet = true; m_encryptionContextSubset[key] = value; return *this; }
 
-    /*
-     The constraint equals the full encryption context.
-    */
+    /**
+     * <p>Contains a list of key-value pairs, a subset of which must be present in the
+     * encryption context of a subsequent operation permitted by the grant. When a
+     * subsequent operation permitted by the grant includes an encryption context that
+     * matches this list or is a subset of this list, the grant allows the operation.
+     * Otherwise, the operation is not allowed.</p>
+     */
     inline GrantConstraints& AddEncryptionContextSubset(const char* key, const char* value) { m_encryptionContextSubsetHasBeenSet = true; m_encryptionContextSubset[key] = value; return *this; }
 
-    /*
-     The constraint contains additional key/value pairs that serve to further limit the grant.
-    */
+    /**
+     * <p>Contains a list of key-value pairs that must be present in the encryption
+     * context of a subsequent operation permitted by the grant. When a subsequent
+     * operation permitted by the grant includes an encryption context that matches
+     * this list, the grant allows the operation. Otherwise, the operation is not
+     * allowed.</p>
+     */
     inline const Aws::Map<Aws::String, Aws::String>& GetEncryptionContextEquals() const{ return m_encryptionContextEquals; }
 
-    /*
-     The constraint contains additional key/value pairs that serve to further limit the grant.
-    */
+    /**
+     * <p>Contains a list of key-value pairs that must be present in the encryption
+     * context of a subsequent operation permitted by the grant. When a subsequent
+     * operation permitted by the grant includes an encryption context that matches
+     * this list, the grant allows the operation. Otherwise, the operation is not
+     * allowed.</p>
+     */
     inline void SetEncryptionContextEquals(const Aws::Map<Aws::String, Aws::String>& value) { m_encryptionContextEqualsHasBeenSet = true; m_encryptionContextEquals = value; }
 
-    /*
-     The constraint contains additional key/value pairs that serve to further limit the grant.
-    */
+    /**
+     * <p>Contains a list of key-value pairs that must be present in the encryption
+     * context of a subsequent operation permitted by the grant. When a subsequent
+     * operation permitted by the grant includes an encryption context that matches
+     * this list, the grant allows the operation. Otherwise, the operation is not
+     * allowed.</p>
+     */
     inline void SetEncryptionContextEquals(Aws::Map<Aws::String, Aws::String>&& value) { m_encryptionContextEqualsHasBeenSet = true; m_encryptionContextEquals = value; }
 
-    /*
-     The constraint contains additional key/value pairs that serve to further limit the grant.
-    */
+    /**
+     * <p>Contains a list of key-value pairs that must be present in the encryption
+     * context of a subsequent operation permitted by the grant. When a subsequent
+     * operation permitted by the grant includes an encryption context that matches
+     * this list, the grant allows the operation. Otherwise, the operation is not
+     * allowed.</p>
+     */
     inline GrantConstraints& WithEncryptionContextEquals(const Aws::Map<Aws::String, Aws::String>& value) { SetEncryptionContextEquals(value); return *this;}
 
-    /*
-     The constraint contains additional key/value pairs that serve to further limit the grant.
-    */
+    /**
+     * <p>Contains a list of key-value pairs that must be present in the encryption
+     * context of a subsequent operation permitted by the grant. When a subsequent
+     * operation permitted by the grant includes an encryption context that matches
+     * this list, the grant allows the operation. Otherwise, the operation is not
+     * allowed.</p>
+     */
     inline GrantConstraints& WithEncryptionContextEquals(Aws::Map<Aws::String, Aws::String>&& value) { SetEncryptionContextEquals(value); return *this;}
 
-    /*
-     The constraint contains additional key/value pairs that serve to further limit the grant.
-    */
+    /**
+     * <p>Contains a list of key-value pairs that must be present in the encryption
+     * context of a subsequent operation permitted by the grant. When a subsequent
+     * operation permitted by the grant includes an encryption context that matches
+     * this list, the grant allows the operation. Otherwise, the operation is not
+     * allowed.</p>
+     */
     inline GrantConstraints& AddEncryptionContextEquals(const Aws::String& key, const Aws::String& value) { m_encryptionContextEqualsHasBeenSet = true; m_encryptionContextEquals[key] = value; return *this; }
 
-    /*
-     The constraint contains additional key/value pairs that serve to further limit the grant.
-    */
+    /**
+     * <p>Contains a list of key-value pairs that must be present in the encryption
+     * context of a subsequent operation permitted by the grant. When a subsequent
+     * operation permitted by the grant includes an encryption context that matches
+     * this list, the grant allows the operation. Otherwise, the operation is not
+     * allowed.</p>
+     */
     inline GrantConstraints& AddEncryptionContextEquals(Aws::String&& key, const Aws::String& value) { m_encryptionContextEqualsHasBeenSet = true; m_encryptionContextEquals[key] = value; return *this; }
 
-    /*
-     The constraint contains additional key/value pairs that serve to further limit the grant.
-    */
+    /**
+     * <p>Contains a list of key-value pairs that must be present in the encryption
+     * context of a subsequent operation permitted by the grant. When a subsequent
+     * operation permitted by the grant includes an encryption context that matches
+     * this list, the grant allows the operation. Otherwise, the operation is not
+     * allowed.</p>
+     */
     inline GrantConstraints& AddEncryptionContextEquals(const Aws::String& key, Aws::String&& value) { m_encryptionContextEqualsHasBeenSet = true; m_encryptionContextEquals[key] = value; return *this; }
 
-    /*
-     The constraint contains additional key/value pairs that serve to further limit the grant.
-    */
+    /**
+     * <p>Contains a list of key-value pairs that must be present in the encryption
+     * context of a subsequent operation permitted by the grant. When a subsequent
+     * operation permitted by the grant includes an encryption context that matches
+     * this list, the grant allows the operation. Otherwise, the operation is not
+     * allowed.</p>
+     */
     inline GrantConstraints& AddEncryptionContextEquals(Aws::String&& key, Aws::String&& value) { m_encryptionContextEqualsHasBeenSet = true; m_encryptionContextEquals[key] = value; return *this; }
 
-    /*
-     The constraint contains additional key/value pairs that serve to further limit the grant.
-    */
+    /**
+     * <p>Contains a list of key-value pairs that must be present in the encryption
+     * context of a subsequent operation permitted by the grant. When a subsequent
+     * operation permitted by the grant includes an encryption context that matches
+     * this list, the grant allows the operation. Otherwise, the operation is not
+     * allowed.</p>
+     */
     inline GrantConstraints& AddEncryptionContextEquals(const char* key, Aws::String&& value) { m_encryptionContextEqualsHasBeenSet = true; m_encryptionContextEquals[key] = value; return *this; }
 
-    /*
-     The constraint contains additional key/value pairs that serve to further limit the grant.
-    */
+    /**
+     * <p>Contains a list of key-value pairs that must be present in the encryption
+     * context of a subsequent operation permitted by the grant. When a subsequent
+     * operation permitted by the grant includes an encryption context that matches
+     * this list, the grant allows the operation. Otherwise, the operation is not
+     * allowed.</p>
+     */
     inline GrantConstraints& AddEncryptionContextEquals(Aws::String&& key, const char* value) { m_encryptionContextEqualsHasBeenSet = true; m_encryptionContextEquals[key] = value; return *this; }
 
-    /*
-     The constraint contains additional key/value pairs that serve to further limit the grant.
-    */
+    /**
+     * <p>Contains a list of key-value pairs that must be present in the encryption
+     * context of a subsequent operation permitted by the grant. When a subsequent
+     * operation permitted by the grant includes an encryption context that matches
+     * this list, the grant allows the operation. Otherwise, the operation is not
+     * allowed.</p>
+     */
     inline GrantConstraints& AddEncryptionContextEquals(const char* key, const char* value) { m_encryptionContextEqualsHasBeenSet = true; m_encryptionContextEquals[key] = value; return *this; }
 
   private:

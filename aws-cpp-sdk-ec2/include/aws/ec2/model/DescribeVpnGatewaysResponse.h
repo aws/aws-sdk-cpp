@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -34,9 +34,9 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
+  /**
+   * <p>Contains the output of DescribeVpnGateways.</p>
+   */
   class AWS_EC2_API DescribeVpnGatewaysResponse
   {
   public:
@@ -44,39 +44,39 @@ namespace Model
     DescribeVpnGatewaysResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     DescribeVpnGatewaysResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>Information about one or more virtual private gateways.</p>
-    */
+    /**
+     * <p>Information about one or more virtual private gateways.</p>
+     */
     inline const Aws::Vector<VpnGateway>& GetVpnGateways() const{ return m_vpnGateways; }
 
-    /*
-     <p>Information about one or more virtual private gateways.</p>
-    */
+    /**
+     * <p>Information about one or more virtual private gateways.</p>
+     */
     inline void SetVpnGateways(const Aws::Vector<VpnGateway>& value) { m_vpnGateways = value; }
 
-    /*
-     <p>Information about one or more virtual private gateways.</p>
-    */
+    /**
+     * <p>Information about one or more virtual private gateways.</p>
+     */
     inline void SetVpnGateways(Aws::Vector<VpnGateway>&& value) { m_vpnGateways = value; }
 
-    /*
-     <p>Information about one or more virtual private gateways.</p>
-    */
+    /**
+     * <p>Information about one or more virtual private gateways.</p>
+     */
     inline DescribeVpnGatewaysResponse& WithVpnGateways(const Aws::Vector<VpnGateway>& value) { SetVpnGateways(value); return *this;}
 
-    /*
-     <p>Information about one or more virtual private gateways.</p>
-    */
+    /**
+     * <p>Information about one or more virtual private gateways.</p>
+     */
     inline DescribeVpnGatewaysResponse& WithVpnGateways(Aws::Vector<VpnGateway>&& value) { SetVpnGateways(value); return *this;}
 
-    /*
-     <p>Information about one or more virtual private gateways.</p>
-    */
+    /**
+     * <p>Information about one or more virtual private gateways.</p>
+     */
     inline DescribeVpnGatewaysResponse& AddVpnGateways(const VpnGateway& value) { m_vpnGateways.push_back(value); return *this; }
 
-    /*
-     <p>Information about one or more virtual private gateways.</p>
-    */
+    /**
+     * <p>Information about one or more virtual private gateways.</p>
+     */
     inline DescribeVpnGatewaysResponse& AddVpnGateways(VpnGateway&& value) { m_vpnGateways.push_back(value); return *this; }
 
     

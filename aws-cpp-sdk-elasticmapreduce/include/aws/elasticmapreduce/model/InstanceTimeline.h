@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -14,6 +14,7 @@
 */
 #pragma once
 #include <aws/elasticmapreduce/EMR_EXPORTS.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -28,9 +29,10 @@ namespace EMR
 {
 namespace Model
 {
-  /*
-    <p>The timeline of the instance lifecycle.</p>
-  */
+
+  /**
+   * <p>The timeline of the instance lifecycle.</p>
+   */
   class AWS_EMR_API InstanceTimeline
   {
   public:
@@ -39,57 +41,87 @@ namespace Model
     InstanceTimeline& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
-    /*
-     <p>The creation date and time of the instance.</p>
-    */
-    inline double GetCreationDateTime() const{ return m_creationDateTime; }
+    /**
+     * <p>The creation date and time of the instance.</p>
+     */
+    inline const Aws::Utils::DateTime& GetCreationDateTime() const{ return m_creationDateTime; }
 
-    /*
-     <p>The creation date and time of the instance.</p>
-    */
-    inline void SetCreationDateTime(double value) { m_creationDateTimeHasBeenSet = true; m_creationDateTime = value; }
+    /**
+     * <p>The creation date and time of the instance.</p>
+     */
+    inline void SetCreationDateTime(const Aws::Utils::DateTime& value) { m_creationDateTimeHasBeenSet = true; m_creationDateTime = value; }
 
-    /*
-     <p>The creation date and time of the instance.</p>
-    */
-    inline InstanceTimeline& WithCreationDateTime(double value) { SetCreationDateTime(value); return *this;}
+    /**
+     * <p>The creation date and time of the instance.</p>
+     */
+    inline void SetCreationDateTime(Aws::Utils::DateTime&& value) { m_creationDateTimeHasBeenSet = true; m_creationDateTime = value; }
 
-    /*
-     <p>The date and time when the instance was ready to perform tasks.</p>
-    */
-    inline double GetReadyDateTime() const{ return m_readyDateTime; }
+    /**
+     * <p>The creation date and time of the instance.</p>
+     */
+    inline InstanceTimeline& WithCreationDateTime(const Aws::Utils::DateTime& value) { SetCreationDateTime(value); return *this;}
 
-    /*
-     <p>The date and time when the instance was ready to perform tasks.</p>
-    */
-    inline void SetReadyDateTime(double value) { m_readyDateTimeHasBeenSet = true; m_readyDateTime = value; }
+    /**
+     * <p>The creation date and time of the instance.</p>
+     */
+    inline InstanceTimeline& WithCreationDateTime(Aws::Utils::DateTime&& value) { SetCreationDateTime(value); return *this;}
 
-    /*
-     <p>The date and time when the instance was ready to perform tasks.</p>
-    */
-    inline InstanceTimeline& WithReadyDateTime(double value) { SetReadyDateTime(value); return *this;}
+    /**
+     * <p>The date and time when the instance was ready to perform tasks.</p>
+     */
+    inline const Aws::Utils::DateTime& GetReadyDateTime() const{ return m_readyDateTime; }
 
-    /*
-     <p>The date and time when the instance was terminated.</p>
-    */
-    inline double GetEndDateTime() const{ return m_endDateTime; }
+    /**
+     * <p>The date and time when the instance was ready to perform tasks.</p>
+     */
+    inline void SetReadyDateTime(const Aws::Utils::DateTime& value) { m_readyDateTimeHasBeenSet = true; m_readyDateTime = value; }
 
-    /*
-     <p>The date and time when the instance was terminated.</p>
-    */
-    inline void SetEndDateTime(double value) { m_endDateTimeHasBeenSet = true; m_endDateTime = value; }
+    /**
+     * <p>The date and time when the instance was ready to perform tasks.</p>
+     */
+    inline void SetReadyDateTime(Aws::Utils::DateTime&& value) { m_readyDateTimeHasBeenSet = true; m_readyDateTime = value; }
 
-    /*
-     <p>The date and time when the instance was terminated.</p>
-    */
-    inline InstanceTimeline& WithEndDateTime(double value) { SetEndDateTime(value); return *this;}
+    /**
+     * <p>The date and time when the instance was ready to perform tasks.</p>
+     */
+    inline InstanceTimeline& WithReadyDateTime(const Aws::Utils::DateTime& value) { SetReadyDateTime(value); return *this;}
+
+    /**
+     * <p>The date and time when the instance was ready to perform tasks.</p>
+     */
+    inline InstanceTimeline& WithReadyDateTime(Aws::Utils::DateTime&& value) { SetReadyDateTime(value); return *this;}
+
+    /**
+     * <p>The date and time when the instance was terminated.</p>
+     */
+    inline const Aws::Utils::DateTime& GetEndDateTime() const{ return m_endDateTime; }
+
+    /**
+     * <p>The date and time when the instance was terminated.</p>
+     */
+    inline void SetEndDateTime(const Aws::Utils::DateTime& value) { m_endDateTimeHasBeenSet = true; m_endDateTime = value; }
+
+    /**
+     * <p>The date and time when the instance was terminated.</p>
+     */
+    inline void SetEndDateTime(Aws::Utils::DateTime&& value) { m_endDateTimeHasBeenSet = true; m_endDateTime = value; }
+
+    /**
+     * <p>The date and time when the instance was terminated.</p>
+     */
+    inline InstanceTimeline& WithEndDateTime(const Aws::Utils::DateTime& value) { SetEndDateTime(value); return *this;}
+
+    /**
+     * <p>The date and time when the instance was terminated.</p>
+     */
+    inline InstanceTimeline& WithEndDateTime(Aws::Utils::DateTime&& value) { SetEndDateTime(value); return *this;}
 
   private:
-    double m_creationDateTime;
+    Aws::Utils::DateTime m_creationDateTime;
     bool m_creationDateTimeHasBeenSet;
-    double m_readyDateTime;
+    Aws::Utils::DateTime m_readyDateTime;
     bool m_readyDateTimeHasBeenSet;
-    double m_endDateTime;
+    Aws::Utils::DateTime m_endDateTime;
     bool m_endDateTimeHasBeenSet;
   };
 

@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -23,7 +23,8 @@ using namespace Aws::Utils;
 
 GetCredentialsForIdentityRequest::GetCredentialsForIdentityRequest() : 
     m_identityIdHasBeenSet(false),
-    m_loginsHasBeenSet(false)
+    m_loginsHasBeenSet(false),
+    m_customRoleArnHasBeenSet(false)
 {
 }
 
@@ -48,6 +49,12 @@ Aws::String GetCredentialsForIdentityRequest::SerializePayload() const
 
   }
 
+  if(m_customRoleArnHasBeenSet)
+  {
+   payload.WithString("CustomRoleArn", m_customRoleArn);
+
+  }
+
   return payload.WriteReadable();
 }
 
@@ -55,7 +62,7 @@ Aws::Http::HeaderValueCollection GetCredentialsForIdentityRequest::GetRequestSpe
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSCognitoIdentityService.GetCredentialsForIdentity"));
-  return std::move(headers);
+  return headers;
 
 }
 

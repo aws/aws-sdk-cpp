@@ -129,7 +129,7 @@ Aws::String URI::URLEncodePath(const Aws::String& path)
 
 void URI::SetPath(const Aws::String& value)
 {    
-   m_path = value;    
+   m_path = value;
 }
 
 QueryStringParameterCollection URI::GetQueryStringParameters(bool decode) const
@@ -205,7 +205,7 @@ void URI::CanonicalizeQueryString()
             }
 
             first = false;
-            queryStringStream << iter->first << "=" << iter->second;
+            queryStringStream << iter->first.c_str() << "=" << iter->second.c_str();
         }
 
         m_queryString = queryStringStream.str();
@@ -248,7 +248,9 @@ Aws::String URI::GetURIString(bool includeQueryString) const
     }
 
     if(includeQueryString)
+    {
         ss << m_queryString;
+    }
 
     return ss.str();
 }

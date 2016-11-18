@@ -58,27 +58,29 @@ namespace Model
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderModelDeclarations.vm")
 } // namespace Model
 
-  #set($className = "${metadata.classNamePrefix}Client")
+#set($className = "${metadata.classNamePrefix}Client")
   class ${className};
 
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderEventTypeDeclarations.vm")
 
-  /*
-    ${serviceModel.documentation}
-  */
+#if($serviceModel.documentation)
+  /**
+   * ${serviceModel.documentation}
+   */
+#end
   class ${CppViewHelper.computeExportValue($metadata.classNamePrefix)} ${className} : public Aws::Client::AWSJsonClient
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
 
-    #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderConstructors.vm")
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderConstructors.vm")
 
-    #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderOperations.vm")
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderOperations.vm")
 
     private:
       void init(const Client::ClientConfiguration& clientConfiguration);
 
-    #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderAsyncHelpers.vm")
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderAsyncHelpers.vm")
 
       Aws::String m_uri;
       std::shared_ptr<Utils::Threading::Executor> m_executor;

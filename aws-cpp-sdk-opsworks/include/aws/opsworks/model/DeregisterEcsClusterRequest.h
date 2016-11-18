@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,8 +24,8 @@ namespace OpsWorks
 namespace Model
 {
 
-  /*
-  */
+  /**
+   */
   class AWS_OPSWORKS_API DeregisterEcsClusterRequest : public OpsWorksRequest
   {
   public:
@@ -34,40 +34,39 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
-    /*
-     <p>The cluster's ARN.</p>
-    */
+    /**
+     * <p>The cluster's ARN.</p>
+     */
     inline const Aws::String& GetEcsClusterArn() const{ return m_ecsClusterArn; }
 
-    /*
-     <p>The cluster's ARN.</p>
-    */
+    /**
+     * <p>The cluster's ARN.</p>
+     */
     inline void SetEcsClusterArn(const Aws::String& value) { m_ecsClusterArnHasBeenSet = true; m_ecsClusterArn = value; }
 
-    /*
-     <p>The cluster's ARN.</p>
-    */
+    /**
+     * <p>The cluster's ARN.</p>
+     */
     inline void SetEcsClusterArn(Aws::String&& value) { m_ecsClusterArnHasBeenSet = true; m_ecsClusterArn = value; }
 
-    /*
-     <p>The cluster's ARN.</p>
-    */
+    /**
+     * <p>The cluster's ARN.</p>
+     */
     inline void SetEcsClusterArn(const char* value) { m_ecsClusterArnHasBeenSet = true; m_ecsClusterArn.assign(value); }
 
-    /*
-     <p>The cluster's ARN.</p>
-    */
+    /**
+     * <p>The cluster's ARN.</p>
+     */
     inline DeregisterEcsClusterRequest& WithEcsClusterArn(const Aws::String& value) { SetEcsClusterArn(value); return *this;}
 
-    /*
-     <p>The cluster's ARN.</p>
-    */
+    /**
+     * <p>The cluster's ARN.</p>
+     */
     inline DeregisterEcsClusterRequest& WithEcsClusterArn(Aws::String&& value) { SetEcsClusterArn(value); return *this;}
 
-    /*
-     <p>The cluster's ARN.</p>
-    */
+    /**
+     * <p>The cluster's ARN.</p>
+     */
     inline DeregisterEcsClusterRequest& WithEcsClusterArn(const char* value) { SetEcsClusterArn(value); return *this;}
 
   private:

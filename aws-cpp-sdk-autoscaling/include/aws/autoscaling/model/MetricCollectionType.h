@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -30,9 +30,10 @@ namespace AutoScaling
 {
 namespace Model
 {
-  /*
-    <p>Describes a metric.</p>
-  */
+
+  /**
+   * <p>Describes a metric.</p>
+   */
   class AWS_AUTOSCALING_API MetricCollectionType
   {
   public:
@@ -43,39 +44,88 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>The metric.</p> <ul> <li><p><code>GroupMinSize</code></p></li> <li><p><code>GroupMaxSize</code></p></li> <li><p><code>GroupDesiredCapacity</code></p></li> <li><p><code>GroupInServiceInstances</code></p></li> <li><p><code>GroupPendingInstances</code></p></li> <li><p><code>GroupStandbyInstances</code></p></li> <li><p><code>GroupTerminatingInstances</code></p></li> <li><p><code>GroupTotalInstances</code></p></li> </ul>
-    */
+    /**
+     * <p>One of the following metrics:</p> <ul> <li> <p> <code>GroupMinSize</code>
+     * </p> </li> <li> <p> <code>GroupMaxSize</code> </p> </li> <li> <p>
+     * <code>GroupDesiredCapacity</code> </p> </li> <li> <p>
+     * <code>GroupInServiceInstances</code> </p> </li> <li> <p>
+     * <code>GroupPendingInstances</code> </p> </li> <li> <p>
+     * <code>GroupStandbyInstances</code> </p> </li> <li> <p>
+     * <code>GroupTerminatingInstances</code> </p> </li> <li> <p>
+     * <code>GroupTotalInstances</code> </p> </li> </ul>
+     */
     inline const Aws::String& GetMetric() const{ return m_metric; }
 
-    /*
-     <p>The metric.</p> <ul> <li><p><code>GroupMinSize</code></p></li> <li><p><code>GroupMaxSize</code></p></li> <li><p><code>GroupDesiredCapacity</code></p></li> <li><p><code>GroupInServiceInstances</code></p></li> <li><p><code>GroupPendingInstances</code></p></li> <li><p><code>GroupStandbyInstances</code></p></li> <li><p><code>GroupTerminatingInstances</code></p></li> <li><p><code>GroupTotalInstances</code></p></li> </ul>
-    */
+    /**
+     * <p>One of the following metrics:</p> <ul> <li> <p> <code>GroupMinSize</code>
+     * </p> </li> <li> <p> <code>GroupMaxSize</code> </p> </li> <li> <p>
+     * <code>GroupDesiredCapacity</code> </p> </li> <li> <p>
+     * <code>GroupInServiceInstances</code> </p> </li> <li> <p>
+     * <code>GroupPendingInstances</code> </p> </li> <li> <p>
+     * <code>GroupStandbyInstances</code> </p> </li> <li> <p>
+     * <code>GroupTerminatingInstances</code> </p> </li> <li> <p>
+     * <code>GroupTotalInstances</code> </p> </li> </ul>
+     */
     inline void SetMetric(const Aws::String& value) { m_metricHasBeenSet = true; m_metric = value; }
 
-    /*
-     <p>The metric.</p> <ul> <li><p><code>GroupMinSize</code></p></li> <li><p><code>GroupMaxSize</code></p></li> <li><p><code>GroupDesiredCapacity</code></p></li> <li><p><code>GroupInServiceInstances</code></p></li> <li><p><code>GroupPendingInstances</code></p></li> <li><p><code>GroupStandbyInstances</code></p></li> <li><p><code>GroupTerminatingInstances</code></p></li> <li><p><code>GroupTotalInstances</code></p></li> </ul>
-    */
+    /**
+     * <p>One of the following metrics:</p> <ul> <li> <p> <code>GroupMinSize</code>
+     * </p> </li> <li> <p> <code>GroupMaxSize</code> </p> </li> <li> <p>
+     * <code>GroupDesiredCapacity</code> </p> </li> <li> <p>
+     * <code>GroupInServiceInstances</code> </p> </li> <li> <p>
+     * <code>GroupPendingInstances</code> </p> </li> <li> <p>
+     * <code>GroupStandbyInstances</code> </p> </li> <li> <p>
+     * <code>GroupTerminatingInstances</code> </p> </li> <li> <p>
+     * <code>GroupTotalInstances</code> </p> </li> </ul>
+     */
     inline void SetMetric(Aws::String&& value) { m_metricHasBeenSet = true; m_metric = value; }
 
-    /*
-     <p>The metric.</p> <ul> <li><p><code>GroupMinSize</code></p></li> <li><p><code>GroupMaxSize</code></p></li> <li><p><code>GroupDesiredCapacity</code></p></li> <li><p><code>GroupInServiceInstances</code></p></li> <li><p><code>GroupPendingInstances</code></p></li> <li><p><code>GroupStandbyInstances</code></p></li> <li><p><code>GroupTerminatingInstances</code></p></li> <li><p><code>GroupTotalInstances</code></p></li> </ul>
-    */
+    /**
+     * <p>One of the following metrics:</p> <ul> <li> <p> <code>GroupMinSize</code>
+     * </p> </li> <li> <p> <code>GroupMaxSize</code> </p> </li> <li> <p>
+     * <code>GroupDesiredCapacity</code> </p> </li> <li> <p>
+     * <code>GroupInServiceInstances</code> </p> </li> <li> <p>
+     * <code>GroupPendingInstances</code> </p> </li> <li> <p>
+     * <code>GroupStandbyInstances</code> </p> </li> <li> <p>
+     * <code>GroupTerminatingInstances</code> </p> </li> <li> <p>
+     * <code>GroupTotalInstances</code> </p> </li> </ul>
+     */
     inline void SetMetric(const char* value) { m_metricHasBeenSet = true; m_metric.assign(value); }
 
-    /*
-     <p>The metric.</p> <ul> <li><p><code>GroupMinSize</code></p></li> <li><p><code>GroupMaxSize</code></p></li> <li><p><code>GroupDesiredCapacity</code></p></li> <li><p><code>GroupInServiceInstances</code></p></li> <li><p><code>GroupPendingInstances</code></p></li> <li><p><code>GroupStandbyInstances</code></p></li> <li><p><code>GroupTerminatingInstances</code></p></li> <li><p><code>GroupTotalInstances</code></p></li> </ul>
-    */
+    /**
+     * <p>One of the following metrics:</p> <ul> <li> <p> <code>GroupMinSize</code>
+     * </p> </li> <li> <p> <code>GroupMaxSize</code> </p> </li> <li> <p>
+     * <code>GroupDesiredCapacity</code> </p> </li> <li> <p>
+     * <code>GroupInServiceInstances</code> </p> </li> <li> <p>
+     * <code>GroupPendingInstances</code> </p> </li> <li> <p>
+     * <code>GroupStandbyInstances</code> </p> </li> <li> <p>
+     * <code>GroupTerminatingInstances</code> </p> </li> <li> <p>
+     * <code>GroupTotalInstances</code> </p> </li> </ul>
+     */
     inline MetricCollectionType& WithMetric(const Aws::String& value) { SetMetric(value); return *this;}
 
-    /*
-     <p>The metric.</p> <ul> <li><p><code>GroupMinSize</code></p></li> <li><p><code>GroupMaxSize</code></p></li> <li><p><code>GroupDesiredCapacity</code></p></li> <li><p><code>GroupInServiceInstances</code></p></li> <li><p><code>GroupPendingInstances</code></p></li> <li><p><code>GroupStandbyInstances</code></p></li> <li><p><code>GroupTerminatingInstances</code></p></li> <li><p><code>GroupTotalInstances</code></p></li> </ul>
-    */
+    /**
+     * <p>One of the following metrics:</p> <ul> <li> <p> <code>GroupMinSize</code>
+     * </p> </li> <li> <p> <code>GroupMaxSize</code> </p> </li> <li> <p>
+     * <code>GroupDesiredCapacity</code> </p> </li> <li> <p>
+     * <code>GroupInServiceInstances</code> </p> </li> <li> <p>
+     * <code>GroupPendingInstances</code> </p> </li> <li> <p>
+     * <code>GroupStandbyInstances</code> </p> </li> <li> <p>
+     * <code>GroupTerminatingInstances</code> </p> </li> <li> <p>
+     * <code>GroupTotalInstances</code> </p> </li> </ul>
+     */
     inline MetricCollectionType& WithMetric(Aws::String&& value) { SetMetric(value); return *this;}
 
-    /*
-     <p>The metric.</p> <ul> <li><p><code>GroupMinSize</code></p></li> <li><p><code>GroupMaxSize</code></p></li> <li><p><code>GroupDesiredCapacity</code></p></li> <li><p><code>GroupInServiceInstances</code></p></li> <li><p><code>GroupPendingInstances</code></p></li> <li><p><code>GroupStandbyInstances</code></p></li> <li><p><code>GroupTerminatingInstances</code></p></li> <li><p><code>GroupTotalInstances</code></p></li> </ul>
-    */
+    /**
+     * <p>One of the following metrics:</p> <ul> <li> <p> <code>GroupMinSize</code>
+     * </p> </li> <li> <p> <code>GroupMaxSize</code> </p> </li> <li> <p>
+     * <code>GroupDesiredCapacity</code> </p> </li> <li> <p>
+     * <code>GroupInServiceInstances</code> </p> </li> <li> <p>
+     * <code>GroupPendingInstances</code> </p> </li> <li> <p>
+     * <code>GroupStandbyInstances</code> </p> </li> <li> <p>
+     * <code>GroupTerminatingInstances</code> </p> </li> <li> <p>
+     * <code>GroupTotalInstances</code> </p> </li> </ul>
+     */
     inline MetricCollectionType& WithMetric(const char* value) { SetMetric(value); return *this;}
 
   private:

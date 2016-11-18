@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::RDS::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace RDS
+{
+namespace Model
+{
 
 DBParameterGroupStatus::DBParameterGroupStatus() : 
     m_dBParameterGroupNameHasBeenSet(false),
@@ -65,10 +71,12 @@ void DBParameterGroupStatus::OutputToStream(Aws::OStream& oStream, const char* l
   {
       oStream << location << index << locationValue << ".DBParameterGroupName=" << StringUtils::URLEncode(m_dBParameterGroupName.c_str()) << "&";
   }
+
   if(m_parameterApplyStatusHasBeenSet)
   {
       oStream << location << index << locationValue << ".ParameterApplyStatus=" << StringUtils::URLEncode(m_parameterApplyStatus.c_str()) << "&";
   }
+
 }
 
 void DBParameterGroupStatus::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -82,3 +90,7 @@ void DBParameterGroupStatus::OutputToStream(Aws::OStream& oStream, const char* l
       oStream << location << ".ParameterApplyStatus=" << StringUtils::URLEncode(m_parameterApplyStatus.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace RDS
+} // namespace Aws

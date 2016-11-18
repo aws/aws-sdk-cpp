@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::Redshift::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace Redshift
+{
+namespace Model
+{
 
 AccountWithRestoreAccess::AccountWithRestoreAccess() : 
     m_accountIdHasBeenSet(false)
@@ -57,6 +63,7 @@ void AccountWithRestoreAccess::OutputToStream(Aws::OStream& oStream, const char*
   {
       oStream << location << index << locationValue << ".AccountId=" << StringUtils::URLEncode(m_accountId.c_str()) << "&";
   }
+
 }
 
 void AccountWithRestoreAccess::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -66,3 +73,7 @@ void AccountWithRestoreAccess::OutputToStream(Aws::OStream& oStream, const char*
       oStream << location << ".AccountId=" << StringUtils::URLEncode(m_accountId.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace Redshift
+} // namespace Aws

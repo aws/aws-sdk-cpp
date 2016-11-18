@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::SimpleDB::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace SimpleDB
+{
+namespace Model
+{
 
 ReplaceableAttribute::ReplaceableAttribute() : 
     m_nameHasBeenSet(false),
@@ -75,14 +81,17 @@ void ReplaceableAttribute::OutputToStream(Aws::OStream& oStream, const char* loc
   {
       oStream << location << index << locationValue << ".Name=" << StringUtils::URLEncode(m_name.c_str()) << "&";
   }
+
   if(m_valueHasBeenSet)
   {
       oStream << location << index << locationValue << ".Value=" << StringUtils::URLEncode(m_value.c_str()) << "&";
   }
+
   if(m_replaceHasBeenSet)
   {
       oStream << location << index << locationValue << ".Replace=" << m_replace << "&";
   }
+
 }
 
 void ReplaceableAttribute::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -100,3 +109,7 @@ void ReplaceableAttribute::OutputToStream(Aws::OStream& oStream, const char* loc
       oStream << location << ".Replace=" << m_replace << "&";
   }
 }
+
+} // namespace Model
+} // namespace SimpleDB
+} // namespace Aws

@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,49 +24,48 @@ namespace ElastiCache
 namespace Model
 {
 
-  /*
-    <p>Represents the input of a <i>DeleteSnapshot</i> action.</p>
-  */
+  /**
+   * <p>Represents the input of a <code>DeleteSnapshot</code> operation.</p>
+   */
   class AWS_ELASTICACHE_API DeleteSnapshotRequest : public ElastiCacheRequest
   {
   public:
     DeleteSnapshotRequest();
     Aws::String SerializePayload() const override;
 
-
-    /*
-     <p>The name of the snapshot to be deleted.</p>
-    */
+    /**
+     * <p>The name of the snapshot to be deleted.</p>
+     */
     inline const Aws::String& GetSnapshotName() const{ return m_snapshotName; }
 
-    /*
-     <p>The name of the snapshot to be deleted.</p>
-    */
+    /**
+     * <p>The name of the snapshot to be deleted.</p>
+     */
     inline void SetSnapshotName(const Aws::String& value) { m_snapshotNameHasBeenSet = true; m_snapshotName = value; }
 
-    /*
-     <p>The name of the snapshot to be deleted.</p>
-    */
+    /**
+     * <p>The name of the snapshot to be deleted.</p>
+     */
     inline void SetSnapshotName(Aws::String&& value) { m_snapshotNameHasBeenSet = true; m_snapshotName = value; }
 
-    /*
-     <p>The name of the snapshot to be deleted.</p>
-    */
+    /**
+     * <p>The name of the snapshot to be deleted.</p>
+     */
     inline void SetSnapshotName(const char* value) { m_snapshotNameHasBeenSet = true; m_snapshotName.assign(value); }
 
-    /*
-     <p>The name of the snapshot to be deleted.</p>
-    */
+    /**
+     * <p>The name of the snapshot to be deleted.</p>
+     */
     inline DeleteSnapshotRequest& WithSnapshotName(const Aws::String& value) { SetSnapshotName(value); return *this;}
 
-    /*
-     <p>The name of the snapshot to be deleted.</p>
-    */
+    /**
+     * <p>The name of the snapshot to be deleted.</p>
+     */
     inline DeleteSnapshotRequest& WithSnapshotName(Aws::String&& value) { SetSnapshotName(value); return *this;}
 
-    /*
-     <p>The name of the snapshot to be deleted.</p>
-    */
+    /**
+     * <p>The name of the snapshot to be deleted.</p>
+     */
     inline DeleteSnapshotRequest& WithSnapshotName(const char* value) { SetSnapshotName(value); return *this;}
 
   private:

@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -26,6 +26,7 @@ GenerateDataKeyRequest::GenerateDataKeyRequest() :
     m_encryptionContextHasBeenSet(false),
     m_numberOfBytes(0),
     m_numberOfBytesHasBeenSet(false),
+    m_keySpec(DataKeySpec::NOT_SET),
     m_keySpecHasBeenSet(false),
     m_grantTokensHasBeenSet(false)
 {
@@ -81,7 +82,7 @@ Aws::Http::HeaderValueCollection GenerateDataKeyRequest::GetRequestSpecificHeade
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "TrentService.GenerateDataKey"));
-  return std::move(headers);
+  return headers;
 
 }
 

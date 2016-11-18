@@ -20,6 +20,7 @@ import lombok.Data;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 @Data
 public class Shape {
@@ -35,10 +36,12 @@ public class Shape {
     private String documentation;
     private String locationName;
     private String payload;
+    private String xmlNamespace;
     private boolean isRequest;
     private boolean isResult;
     private boolean isReferenced;
     private boolean flattened;
+    private boolean computeContentMd5;
 
     public boolean isMap() {
         return "map".equals(type.toLowerCase());
@@ -51,6 +54,8 @@ public class Shape {
     public boolean isStructure() {
         return "structure".equals(type.toLowerCase());
     }
+
+    public boolean isDouble() { return "double".equals(type.toLowerCase()); }
 
     public boolean isString() {
         return "string".equals(type.toLowerCase()) && !isEnum();
@@ -69,7 +74,7 @@ public class Shape {
     }
 
     public boolean isPrimitive() {
-        return !isMap() && !isList() && !isStructure() && !isString() && !isEnum() && !isBlob();
+        return !isMap() && !isList() && !isStructure() && !isString() && !isEnum() && !isBlob() && !isTimeStamp();
     }
 
     public boolean isMemberRequired(String member) {
@@ -86,7 +91,8 @@ public class Shape {
     }
 
     public boolean hasStreamMembers() {
-      return members.values().parallelStream().anyMatch(member -> member.isStreaming()) || (payload != null && !members.get(payload).getShape().isStructure());
+      return members.values().parallelStream()
+              .anyMatch(member -> member.isStreaming()) || (payload != null && members.get(payload) != null && !members.get(payload).getShape().isStructure());
     }
 
     public boolean hasPayloadMembers() {
@@ -100,6 +106,30 @@ public class Shape {
 
     public boolean hasBlobMembers() {
         return members.values().parallelStream().anyMatch(member -> member.getShape().isBlob());
+    }
+
+    public ShapeMember getMemberByLocationName(String locationName) {
+        Optional<ShapeMember> found =
+                members.values().parallelStream().filter(member -> member.getLocationName() != null && locationName.equals(member.getLocationName())).findFirst();
+
+        if(found.isPresent()) {
+            return found.get();
+        }
+
+        return null;
+
+    }
+
+    public String getMemberNameByLocationName(String locationName) {
+        Optional<Map.Entry<String, ShapeMember>> found =
+                members.entrySet().parallelStream().filter(member ->
+                        locationName.equals(member.getValue().getLocationName())).findFirst();
+
+        if(found.isPresent()) {
+            return found.get().getKey();
+        }
+
+        return null;
     }
 
     public Map<String, ShapeMember> getQueryStringMembers() {

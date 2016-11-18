@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -34,14 +34,17 @@ Aws::String CopyClusterSnapshotRequest::SerializePayload() const
   {
     ss << "SourceSnapshotIdentifier=" << StringUtils::URLEncode(m_sourceSnapshotIdentifier.c_str()) << "&";
   }
+
   if(m_sourceSnapshotClusterIdentifierHasBeenSet)
   {
     ss << "SourceSnapshotClusterIdentifier=" << StringUtils::URLEncode(m_sourceSnapshotClusterIdentifier.c_str()) << "&";
   }
+
   if(m_targetSnapshotIdentifierHasBeenSet)
   {
     ss << "TargetSnapshotIdentifier=" << StringUtils::URLEncode(m_targetSnapshotIdentifier.c_str()) << "&";
   }
+
   ss << "Version=2012-12-01";
   return ss.str();
 }

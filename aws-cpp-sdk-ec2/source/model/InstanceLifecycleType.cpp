@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -14,43 +14,66 @@
 */
 #include <aws/ec2/model/InstanceLifecycleType.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
+#include <aws/core/utils/EnumParseOverflowContainer.h>
 
 using namespace Aws::Utils;
 
-static const int spot_HASH = HashingUtils::HashString("spot");
 
 namespace Aws
 {
-namespace EC2
-{
-namespace Model
-{
-namespace InstanceLifecycleTypeMapper
-{
-InstanceLifecycleType GetInstanceLifecycleTypeForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-
-  if (hashCode == spot_HASH)
+  namespace EC2
   {
-    return InstanceLifecycleType::spot;
-  }
+    namespace Model
+    {
+      namespace InstanceLifecycleTypeMapper
+      {
 
-  return InstanceLifecycleType::NOT_SET;
-}
+        static const int spot_HASH = HashingUtils::HashString("spot");
+        static const int scheduled_HASH = HashingUtils::HashString("scheduled");
 
-Aws::String GetNameForInstanceLifecycleType(InstanceLifecycleType value)
-{
-  switch(value)
-  {
-  case InstanceLifecycleType::spot:
-    return "spot";
-  default:
-    return "";
-  }
-}
 
-} // namespace InstanceLifecycleTypeMapper
-} // namespace Model
-} // namespace EC2
+        InstanceLifecycleType GetInstanceLifecycleTypeForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == spot_HASH)
+          {
+            return InstanceLifecycleType::spot;
+          }
+          else if (hashCode == scheduled_HASH)
+          {
+            return InstanceLifecycleType::scheduled;
+          }
+          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<InstanceLifecycleType>(hashCode);
+          }
+
+          return InstanceLifecycleType::NOT_SET;
+        }
+
+        Aws::String GetNameForInstanceLifecycleType(InstanceLifecycleType enumValue)
+        {
+          switch(enumValue)
+          {
+          case InstanceLifecycleType::spot:
+            return "spot";
+          case InstanceLifecycleType::scheduled:
+            return "scheduled";
+          default:
+            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace InstanceLifecycleTypeMapper
+    } // namespace Model
+  } // namespace EC2
 } // namespace Aws

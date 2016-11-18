@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::Redshift::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace Redshift
+{
+namespace Model
+{
 
 EventCategoriesMap::EventCategoriesMap() : 
     m_sourceTypeHasBeenSet(false),
@@ -71,15 +77,18 @@ void EventCategoriesMap::OutputToStream(Aws::OStream& oStream, const char* locat
   {
       oStream << location << index << locationValue << ".SourceType=" << StringUtils::URLEncode(m_sourceType.c_str()) << "&";
   }
+
   if(m_eventsHasBeenSet)
   {
+      unsigned eventsIdx = 1;
       for(auto& item : m_events)
       {
         Aws::StringStream eventsSs;
-        eventsSs << location << index << locationValue << ".EventInfoMap";
+        eventsSs << location << index << locationValue << ".EventInfoMap." << eventsIdx++;
         item.OutputToStream(oStream, eventsSs.str().c_str());
       }
   }
+
 }
 
 void EventCategoriesMap::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -90,11 +99,16 @@ void EventCategoriesMap::OutputToStream(Aws::OStream& oStream, const char* locat
   }
   if(m_eventsHasBeenSet)
   {
+      unsigned eventsIdx = 1;
       for(auto& item : m_events)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".EventInfoMap";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream eventsSs;
+        eventsSs << location <<  ".EventInfoMap." << eventsIdx++;
+        item.OutputToStream(oStream, eventsSs.str().c_str());
       }
   }
 }
+
+} // namespace Model
+} // namespace Redshift
+} // namespace Aws

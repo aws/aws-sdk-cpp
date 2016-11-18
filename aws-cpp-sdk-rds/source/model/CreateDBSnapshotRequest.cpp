@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -21,7 +21,8 @@ using namespace Aws::Utils;
 
 CreateDBSnapshotRequest::CreateDBSnapshotRequest() : 
     m_dBSnapshotIdentifierHasBeenSet(false),
-    m_dBInstanceIdentifierHasBeenSet(false)
+    m_dBInstanceIdentifierHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -33,11 +34,23 @@ Aws::String CreateDBSnapshotRequest::SerializePayload() const
   {
     ss << "DBSnapshotIdentifier=" << StringUtils::URLEncode(m_dBSnapshotIdentifier.c_str()) << "&";
   }
+
   if(m_dBInstanceIdentifierHasBeenSet)
   {
     ss << "DBInstanceIdentifier=" << StringUtils::URLEncode(m_dBInstanceIdentifier.c_str()) << "&";
   }
-  ss << "Version=2013-01-10";
+
+  if(m_tagsHasBeenSet)
+  {
+    unsigned tagsCount = 1;
+    for(auto& item : m_tags)
+    {
+      item.OutputToStream(ss, "Tags.member.", tagsCount, "");
+      tagsCount++;
+    }
+  }
+
+  ss << "Version=2014-10-31";
   return ss.str();
 }
 

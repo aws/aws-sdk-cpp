@@ -98,7 +98,7 @@ void FormattedLogSystem::Log(LogLevel logLevel, const char* tag, const char* for
 
     ss << outputBuff.GetUnderlyingData() << std::endl;  
   
-    ProcessFormattedStatement(std::move(ss.str()));
+    ProcessFormattedStatement(ss.str());
 
     va_end(args);
 }
@@ -108,5 +108,5 @@ void FormattedLogSystem::LogStream(LogLevel logLevel, const char* tag, const Aws
     Aws::StringStream ss;
     ss << CreateLogPrefixLine(logLevel, tag) << message_stream.rdbuf()->str() << std::endl;
 
-    ProcessFormattedStatement(std::move(ss.str()));
+    ProcessFormattedStatement(ss.str());
 }

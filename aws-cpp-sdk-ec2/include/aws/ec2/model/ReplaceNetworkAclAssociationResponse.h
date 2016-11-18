@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -33,9 +33,9 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
+  /**
+   * <p>Contains the output of ReplaceNetworkAclAssociation.</p>
+   */
   class AWS_EC2_API ReplaceNetworkAclAssociationResponse
   {
   public:
@@ -43,39 +43,39 @@ namespace Model
     ReplaceNetworkAclAssociationResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     ReplaceNetworkAclAssociationResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>The ID of the new association.</p>
-    */
+    /**
+     * <p>The ID of the new association.</p>
+     */
     inline const Aws::String& GetNewAssociationId() const{ return m_newAssociationId; }
 
-    /*
-     <p>The ID of the new association.</p>
-    */
+    /**
+     * <p>The ID of the new association.</p>
+     */
     inline void SetNewAssociationId(const Aws::String& value) { m_newAssociationId = value; }
 
-    /*
-     <p>The ID of the new association.</p>
-    */
+    /**
+     * <p>The ID of the new association.</p>
+     */
     inline void SetNewAssociationId(Aws::String&& value) { m_newAssociationId = value; }
 
-    /*
-     <p>The ID of the new association.</p>
-    */
+    /**
+     * <p>The ID of the new association.</p>
+     */
     inline void SetNewAssociationId(const char* value) { m_newAssociationId.assign(value); }
 
-    /*
-     <p>The ID of the new association.</p>
-    */
+    /**
+     * <p>The ID of the new association.</p>
+     */
     inline ReplaceNetworkAclAssociationResponse& WithNewAssociationId(const Aws::String& value) { SetNewAssociationId(value); return *this;}
 
-    /*
-     <p>The ID of the new association.</p>
-    */
+    /**
+     * <p>The ID of the new association.</p>
+     */
     inline ReplaceNetworkAclAssociationResponse& WithNewAssociationId(Aws::String&& value) { SetNewAssociationId(value); return *this;}
 
-    /*
-     <p>The ID of the new association.</p>
-    */
+    /**
+     * <p>The ID of the new association.</p>
+     */
     inline ReplaceNetworkAclAssociationResponse& WithNewAssociationId(const char* value) { SetNewAssociationId(value); return *this;}
 
     

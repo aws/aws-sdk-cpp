@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -21,7 +21,7 @@ namespace Aws
 {
 namespace S3
 {
-enum class AWS_S3_API S3Errors
+enum class S3Errors
 {
   //From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
@@ -44,11 +44,17 @@ enum class AWS_S3_API S3Errors
   RESOURCE_NOT_FOUND = 16,
   UNRECOGNIZED_CLIENT = 17,
   MALFORMED_QUERY_STRING = 18,
+  SLOW_DOWN = 19,
+  REQUEST_TIME_TOO_SKEWED = 20,
+  INVALID_SIGNATURE = 21,
+  SIGNATURE_DOES_NOT_MATCH = 22,
   NETWORK_CONNECTION = 99,
+  
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
   BUCKET_ALREADY_EXISTS= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  BUCKET_ALREADY_OWNED_BY_YOU,
   NO_SUCH_BUCKET,
   NO_SUCH_KEY,
   NO_SUCH_UPLOAD,

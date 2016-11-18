@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -34,9 +34,9 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
+  /**
+   * <p>Contains the output of CancelReservedInstancesListing.</p>
+   */
   class AWS_EC2_API CancelReservedInstancesListingResponse
   {
   public:
@@ -44,39 +44,39 @@ namespace Model
     CancelReservedInstancesListingResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     CancelReservedInstancesListingResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>The Reserved Instance listing.</p>
-    */
+    /**
+     * <p>The Reserved Instance listing.</p>
+     */
     inline const Aws::Vector<ReservedInstancesListing>& GetReservedInstancesListings() const{ return m_reservedInstancesListings; }
 
-    /*
-     <p>The Reserved Instance listing.</p>
-    */
+    /**
+     * <p>The Reserved Instance listing.</p>
+     */
     inline void SetReservedInstancesListings(const Aws::Vector<ReservedInstancesListing>& value) { m_reservedInstancesListings = value; }
 
-    /*
-     <p>The Reserved Instance listing.</p>
-    */
+    /**
+     * <p>The Reserved Instance listing.</p>
+     */
     inline void SetReservedInstancesListings(Aws::Vector<ReservedInstancesListing>&& value) { m_reservedInstancesListings = value; }
 
-    /*
-     <p>The Reserved Instance listing.</p>
-    */
+    /**
+     * <p>The Reserved Instance listing.</p>
+     */
     inline CancelReservedInstancesListingResponse& WithReservedInstancesListings(const Aws::Vector<ReservedInstancesListing>& value) { SetReservedInstancesListings(value); return *this;}
 
-    /*
-     <p>The Reserved Instance listing.</p>
-    */
+    /**
+     * <p>The Reserved Instance listing.</p>
+     */
     inline CancelReservedInstancesListingResponse& WithReservedInstancesListings(Aws::Vector<ReservedInstancesListing>&& value) { SetReservedInstancesListings(value); return *this;}
 
-    /*
-     <p>The Reserved Instance listing.</p>
-    */
+    /**
+     * <p>The Reserved Instance listing.</p>
+     */
     inline CancelReservedInstancesListingResponse& AddReservedInstancesListings(const ReservedInstancesListing& value) { m_reservedInstancesListings.push_back(value); return *this; }
 
-    /*
-     <p>The Reserved Instance listing.</p>
-    */
+    /**
+     * <p>The Reserved Instance listing.</p>
+     */
     inline CancelReservedInstancesListingResponse& AddReservedInstancesListings(ReservedInstancesListing&& value) { m_reservedInstancesListings.push_back(value); return *this; }
 
     

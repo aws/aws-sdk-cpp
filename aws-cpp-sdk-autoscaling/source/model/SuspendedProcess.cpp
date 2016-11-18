@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace AutoScaling
+{
+namespace Model
+{
 
 SuspendedProcess::SuspendedProcess() : 
     m_processNameHasBeenSet(false),
@@ -65,10 +71,12 @@ void SuspendedProcess::OutputToStream(Aws::OStream& oStream, const char* locatio
   {
       oStream << location << index << locationValue << ".ProcessName=" << StringUtils::URLEncode(m_processName.c_str()) << "&";
   }
+
   if(m_suspensionReasonHasBeenSet)
   {
       oStream << location << index << locationValue << ".SuspensionReason=" << StringUtils::URLEncode(m_suspensionReason.c_str()) << "&";
   }
+
 }
 
 void SuspendedProcess::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -82,3 +90,7 @@ void SuspendedProcess::OutputToStream(Aws::OStream& oStream, const char* locatio
       oStream << location << ".SuspensionReason=" << StringUtils::URLEncode(m_suspensionReason.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace AutoScaling
+} // namespace Aws

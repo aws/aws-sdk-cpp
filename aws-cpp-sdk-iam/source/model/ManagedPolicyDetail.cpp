@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::IAM::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace IAM
+{
+namespace Model
+{
 
 ManagedPolicyDetail::ManagedPolicyDetail() : 
     m_policyNameHasBeenSet(false),
@@ -34,9 +40,7 @@ ManagedPolicyDetail::ManagedPolicyDetail() :
     m_isAttachable(false),
     m_isAttachableHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_createDate(0.0),
     m_createDateHasBeenSet(false),
-    m_updateDate(0.0),
     m_updateDateHasBeenSet(false),
     m_policyVersionListHasBeenSet(false)
 {
@@ -53,9 +57,7 @@ ManagedPolicyDetail::ManagedPolicyDetail(const XmlNode& xmlNode) :
     m_isAttachable(false),
     m_isAttachableHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_createDate(0.0),
     m_createDateHasBeenSet(false),
-    m_updateDate(0.0),
     m_updateDateHasBeenSet(false),
     m_policyVersionListHasBeenSet(false)
 {
@@ -119,13 +121,13 @@ ManagedPolicyDetail& ManagedPolicyDetail::operator =(const XmlNode& xmlNode)
     XmlNode createDateNode = resultNode.FirstChild("CreateDate");
     if(!createDateNode.IsNull())
     {
-      m_createDate = StringUtils::ConvertToDouble(StringUtils::Trim(createDateNode.GetText().c_str()).c_str());
+      m_createDate = DateTime(StringUtils::Trim(createDateNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_createDateHasBeenSet = true;
     }
     XmlNode updateDateNode = resultNode.FirstChild("UpdateDate");
     if(!updateDateNode.IsNull())
     {
-      m_updateDate = StringUtils::ConvertToDouble(StringUtils::Trim(updateDateNode.GetText().c_str()).c_str());
+      m_updateDate = DateTime(StringUtils::Trim(updateDateNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_updateDateHasBeenSet = true;
     }
     XmlNode policyVersionListNode = resultNode.FirstChild("PolicyVersionList");
@@ -151,51 +153,63 @@ void ManagedPolicyDetail::OutputToStream(Aws::OStream& oStream, const char* loca
   {
       oStream << location << index << locationValue << ".PolicyName=" << StringUtils::URLEncode(m_policyName.c_str()) << "&";
   }
+
   if(m_policyIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".PolicyId=" << StringUtils::URLEncode(m_policyId.c_str()) << "&";
   }
+
   if(m_arnHasBeenSet)
   {
       oStream << location << index << locationValue << ".Arn=" << StringUtils::URLEncode(m_arn.c_str()) << "&";
   }
+
   if(m_pathHasBeenSet)
   {
       oStream << location << index << locationValue << ".Path=" << StringUtils::URLEncode(m_path.c_str()) << "&";
   }
+
   if(m_defaultVersionIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".DefaultVersionId=" << StringUtils::URLEncode(m_defaultVersionId.c_str()) << "&";
   }
+
   if(m_attachmentCountHasBeenSet)
   {
       oStream << location << index << locationValue << ".AttachmentCount=" << m_attachmentCount << "&";
   }
+
   if(m_isAttachableHasBeenSet)
   {
       oStream << location << index << locationValue << ".IsAttachable=" << m_isAttachable << "&";
   }
+
   if(m_descriptionHasBeenSet)
   {
       oStream << location << index << locationValue << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
+
   if(m_createDateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".CreateDate=" << m_createDate << "&";
+      oStream << location << index << locationValue << ".CreateDate=" << StringUtils::URLEncode(m_createDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_updateDateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".UpdateDate=" << m_updateDate << "&";
+      oStream << location << index << locationValue << ".UpdateDate=" << StringUtils::URLEncode(m_updateDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_policyVersionListHasBeenSet)
   {
+      unsigned policyVersionListIdx = 1;
       for(auto& item : m_policyVersionList)
       {
         Aws::StringStream policyVersionListSs;
-        policyVersionListSs << location << index << locationValue << ".PolicyVersionList";
+        policyVersionListSs << location << index << locationValue << ".PolicyVersionList.member." << policyVersionListIdx++;
         item.OutputToStream(oStream, policyVersionListSs.str().c_str());
       }
   }
+
 }
 
 void ManagedPolicyDetail::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -234,19 +248,24 @@ void ManagedPolicyDetail::OutputToStream(Aws::OStream& oStream, const char* loca
   }
   if(m_createDateHasBeenSet)
   {
-      oStream << location << ".CreateDate=" << m_createDate << "&";
+      oStream << location << ".CreateDate=" << StringUtils::URLEncode(m_createDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_updateDateHasBeenSet)
   {
-      oStream << location << ".UpdateDate=" << m_updateDate << "&";
+      oStream << location << ".UpdateDate=" << StringUtils::URLEncode(m_updateDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_policyVersionListHasBeenSet)
   {
+      unsigned policyVersionListIdx = 1;
       for(auto& item : m_policyVersionList)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".PolicyVersionList";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream policyVersionListSs;
+        policyVersionListSs << location <<  ".PolicyVersionList.member." << policyVersionListIdx++;
+        item.OutputToStream(oStream, policyVersionListSs.str().c_str());
       }
   }
 }
+
+} // namespace Model
+} // namespace IAM
+} // namespace Aws

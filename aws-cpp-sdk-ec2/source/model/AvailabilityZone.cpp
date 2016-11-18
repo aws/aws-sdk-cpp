@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,12 +19,19 @@
 
 #include <utility>
 
-using namespace Aws::EC2::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
+
 AvailabilityZone::AvailabilityZone() : 
     m_zoneNameHasBeenSet(false),
+    m_state(AvailabilityZoneState::NOT_SET),
     m_stateHasBeenSet(false),
     m_regionNameHasBeenSet(false),
     m_messagesHasBeenSet(false)
@@ -33,6 +40,7 @@ AvailabilityZone::AvailabilityZone() :
 
 AvailabilityZone::AvailabilityZone(const XmlNode& xmlNode) : 
     m_zoneNameHasBeenSet(false),
+    m_state(AvailabilityZoneState::NOT_SET),
     m_stateHasBeenSet(false),
     m_regionNameHasBeenSet(false),
     m_messagesHasBeenSet(false)
@@ -87,25 +95,28 @@ void AvailabilityZone::OutputToStream(Aws::OStream& oStream, const char* locatio
   {
       oStream << location << index << locationValue << ".ZoneName=" << StringUtils::URLEncode(m_zoneName.c_str()) << "&";
   }
+
   if(m_stateHasBeenSet)
   {
       oStream << location << index << locationValue << ".State=" << AvailabilityZoneStateMapper::GetNameForAvailabilityZoneState(m_state) << "&";
   }
+
   if(m_regionNameHasBeenSet)
   {
       oStream << location << index << locationValue << ".RegionName=" << StringUtils::URLEncode(m_regionName.c_str()) << "&";
   }
+
   if(m_messagesHasBeenSet)
   {
-      unsigned messagesIdx = 0;
+      unsigned messagesIdx = 1;
       for(auto& item : m_messages)
       {
-        messagesIdx++;
         Aws::StringStream messagesSs;
-        messagesSs << location << index << locationValue << ".MessageSet." << messagesIdx;
+        messagesSs << location << index << locationValue << ".MessageSet." << messagesIdx++;
         item.OutputToStream(oStream, messagesSs.str().c_str());
       }
   }
+
 }
 
 void AvailabilityZone::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -124,11 +135,16 @@ void AvailabilityZone::OutputToStream(Aws::OStream& oStream, const char* locatio
   }
   if(m_messagesHasBeenSet)
   {
+      unsigned messagesIdx = 1;
       for(auto& item : m_messages)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".item";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream messagesSs;
+        messagesSs << location <<  ".item." << messagesIdx++;
+        item.OutputToStream(oStream, messagesSs.str().c_str());
       }
   }
 }
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

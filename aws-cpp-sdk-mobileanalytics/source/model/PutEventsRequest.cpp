@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -53,19 +53,19 @@ Aws::Http::HeaderValueCollection PutEventsRequest::GetRequestSpecificHeaders() c
   Aws::StringStream ss;
   if(m_clientContextHasBeenSet)
   {
-   ss << m_clientContext;
-   headers.insert(Aws::Http::HeaderValuePair("x-amz-client-context", ss.str()));
-   ss.str("");
+    ss << m_clientContext;
+    headers.insert(Aws::Http::HeaderValuePair("x-amz-client-context", ss.str()));
+    ss.str("");
   }
 
   if(m_clientContextEncodingHasBeenSet)
   {
-   ss << m_clientContextEncoding;
-   headers.insert(Aws::Http::HeaderValuePair("x-amz-client-context-encoding", ss.str()));
-   ss.str("");
+    ss << m_clientContextEncoding;
+    headers.insert(Aws::Http::HeaderValuePair("x-amz-client-context-encoding", ss.str()));
+    ss.str("");
   }
 
-  return std::move(headers);
+  return headers;
 
 }
 

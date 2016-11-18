@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -17,18 +17,21 @@
 
 #include <utility>
 
-using namespace Aws::CodeDeploy::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace CodeDeploy
+{
+namespace Model
+{
 
 GenericRevisionInfo::GenericRevisionInfo() : 
     m_descriptionHasBeenSet(false),
     m_deploymentGroupsHasBeenSet(false),
-    m_firstUsedTime(0.0),
     m_firstUsedTimeHasBeenSet(false),
-    m_lastUsedTime(0.0),
     m_lastUsedTimeHasBeenSet(false),
-    m_registerTime(0.0),
     m_registerTimeHasBeenSet(false)
 {
 }
@@ -36,11 +39,8 @@ GenericRevisionInfo::GenericRevisionInfo() :
 GenericRevisionInfo::GenericRevisionInfo(const JsonValue& jsonValue) : 
     m_descriptionHasBeenSet(false),
     m_deploymentGroupsHasBeenSet(false),
-    m_firstUsedTime(0.0),
     m_firstUsedTimeHasBeenSet(false),
-    m_lastUsedTime(0.0),
     m_lastUsedTimeHasBeenSet(false),
-    m_registerTime(0.0),
     m_registerTimeHasBeenSet(false)
 {
   *this = jsonValue;
@@ -112,21 +112,22 @@ JsonValue GenericRevisionInfo::Jsonize() const
 
   if(m_firstUsedTimeHasBeenSet)
   {
-   payload.WithDouble("firstUsedTime", m_firstUsedTime);
-
+   payload.WithDouble("firstUsedTime", m_firstUsedTime.SecondsWithMSPrecision());
   }
 
   if(m_lastUsedTimeHasBeenSet)
   {
-   payload.WithDouble("lastUsedTime", m_lastUsedTime);
-
+   payload.WithDouble("lastUsedTime", m_lastUsedTime.SecondsWithMSPrecision());
   }
 
   if(m_registerTimeHasBeenSet)
   {
-   payload.WithDouble("registerTime", m_registerTime);
-
+   payload.WithDouble("registerTime", m_registerTime.SecondsWithMSPrecision());
   }
 
-  return std::move(payload);
+  return payload;
 }
+
+} // namespace Model
+} // namespace CodeDeploy
+} // namespace Aws

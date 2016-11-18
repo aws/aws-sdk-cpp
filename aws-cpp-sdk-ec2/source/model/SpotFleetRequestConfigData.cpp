@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,23 +19,35 @@
 
 #include <utility>
 
-using namespace Aws::EC2::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
 
 SpotFleetRequestConfigData::SpotFleetRequestConfigData() : 
     m_clientTokenHasBeenSet(false),
     m_spotPriceHasBeenSet(false),
     m_targetCapacity(0),
     m_targetCapacityHasBeenSet(false),
-    m_validFrom(0.0),
     m_validFromHasBeenSet(false),
-    m_validUntil(0.0),
     m_validUntilHasBeenSet(false),
     m_terminateInstancesWithExpiration(false),
     m_terminateInstancesWithExpirationHasBeenSet(false),
     m_iamFleetRoleHasBeenSet(false),
-    m_launchSpecificationsHasBeenSet(false)
+    m_launchSpecificationsHasBeenSet(false),
+    m_excessCapacityTerminationPolicy(ExcessCapacityTerminationPolicy::NOT_SET),
+    m_excessCapacityTerminationPolicyHasBeenSet(false),
+    m_allocationStrategy(AllocationStrategy::NOT_SET),
+    m_allocationStrategyHasBeenSet(false),
+    m_fulfilledCapacity(0.0),
+    m_fulfilledCapacityHasBeenSet(false),
+    m_type(FleetType::NOT_SET),
+    m_typeHasBeenSet(false)
 {
 }
 
@@ -44,14 +56,20 @@ SpotFleetRequestConfigData::SpotFleetRequestConfigData(const XmlNode& xmlNode) :
     m_spotPriceHasBeenSet(false),
     m_targetCapacity(0),
     m_targetCapacityHasBeenSet(false),
-    m_validFrom(0.0),
     m_validFromHasBeenSet(false),
-    m_validUntil(0.0),
     m_validUntilHasBeenSet(false),
     m_terminateInstancesWithExpiration(false),
     m_terminateInstancesWithExpirationHasBeenSet(false),
     m_iamFleetRoleHasBeenSet(false),
-    m_launchSpecificationsHasBeenSet(false)
+    m_launchSpecificationsHasBeenSet(false),
+    m_excessCapacityTerminationPolicy(ExcessCapacityTerminationPolicy::NOT_SET),
+    m_excessCapacityTerminationPolicyHasBeenSet(false),
+    m_allocationStrategy(AllocationStrategy::NOT_SET),
+    m_allocationStrategyHasBeenSet(false),
+    m_fulfilledCapacity(0.0),
+    m_fulfilledCapacityHasBeenSet(false),
+    m_type(FleetType::NOT_SET),
+    m_typeHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -83,13 +101,13 @@ SpotFleetRequestConfigData& SpotFleetRequestConfigData::operator =(const XmlNode
     XmlNode validFromNode = resultNode.FirstChild("validFrom");
     if(!validFromNode.IsNull())
     {
-      m_validFrom = StringUtils::ConvertToDouble(StringUtils::Trim(validFromNode.GetText().c_str()).c_str());
+      m_validFrom = DateTime(StringUtils::Trim(validFromNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_validFromHasBeenSet = true;
     }
     XmlNode validUntilNode = resultNode.FirstChild("validUntil");
     if(!validUntilNode.IsNull())
     {
-      m_validUntil = StringUtils::ConvertToDouble(StringUtils::Trim(validUntilNode.GetText().c_str()).c_str());
+      m_validUntil = DateTime(StringUtils::Trim(validUntilNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_validUntilHasBeenSet = true;
     }
     XmlNode terminateInstancesWithExpirationNode = resultNode.FirstChild("terminateInstancesWithExpiration");
@@ -116,6 +134,30 @@ SpotFleetRequestConfigData& SpotFleetRequestConfigData::operator =(const XmlNode
 
       m_launchSpecificationsHasBeenSet = true;
     }
+    XmlNode excessCapacityTerminationPolicyNode = resultNode.FirstChild("excessCapacityTerminationPolicy");
+    if(!excessCapacityTerminationPolicyNode.IsNull())
+    {
+      m_excessCapacityTerminationPolicy = ExcessCapacityTerminationPolicyMapper::GetExcessCapacityTerminationPolicyForName(StringUtils::Trim(excessCapacityTerminationPolicyNode.GetText().c_str()).c_str());
+      m_excessCapacityTerminationPolicyHasBeenSet = true;
+    }
+    XmlNode allocationStrategyNode = resultNode.FirstChild("allocationStrategy");
+    if(!allocationStrategyNode.IsNull())
+    {
+      m_allocationStrategy = AllocationStrategyMapper::GetAllocationStrategyForName(StringUtils::Trim(allocationStrategyNode.GetText().c_str()).c_str());
+      m_allocationStrategyHasBeenSet = true;
+    }
+    XmlNode fulfilledCapacityNode = resultNode.FirstChild("fulfilledCapacity");
+    if(!fulfilledCapacityNode.IsNull())
+    {
+      m_fulfilledCapacity = StringUtils::ConvertToDouble(StringUtils::Trim(fulfilledCapacityNode.GetText().c_str()).c_str());
+      m_fulfilledCapacityHasBeenSet = true;
+    }
+    XmlNode typeNode = resultNode.FirstChild("type");
+    if(!typeNode.IsNull())
+    {
+      m_type = FleetTypeMapper::GetFleetTypeForName(StringUtils::Trim(typeNode.GetText().c_str()).c_str());
+      m_typeHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -127,41 +169,68 @@ void SpotFleetRequestConfigData::OutputToStream(Aws::OStream& oStream, const cha
   {
       oStream << location << index << locationValue << ".ClientToken=" << StringUtils::URLEncode(m_clientToken.c_str()) << "&";
   }
+
   if(m_spotPriceHasBeenSet)
   {
       oStream << location << index << locationValue << ".SpotPrice=" << StringUtils::URLEncode(m_spotPrice.c_str()) << "&";
   }
+
   if(m_targetCapacityHasBeenSet)
   {
       oStream << location << index << locationValue << ".TargetCapacity=" << m_targetCapacity << "&";
   }
+
   if(m_validFromHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ValidFrom=" << m_validFrom << "&";
+      oStream << location << index << locationValue << ".ValidFrom=" << StringUtils::URLEncode(m_validFrom.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_validUntilHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ValidUntil=" << m_validUntil << "&";
+      oStream << location << index << locationValue << ".ValidUntil=" << StringUtils::URLEncode(m_validUntil.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_terminateInstancesWithExpirationHasBeenSet)
   {
       oStream << location << index << locationValue << ".TerminateInstancesWithExpiration=" << m_terminateInstancesWithExpiration << "&";
   }
+
   if(m_iamFleetRoleHasBeenSet)
   {
       oStream << location << index << locationValue << ".IamFleetRole=" << StringUtils::URLEncode(m_iamFleetRole.c_str()) << "&";
   }
+
   if(m_launchSpecificationsHasBeenSet)
   {
-      unsigned launchSpecificationsIdx = 0;
+      unsigned launchSpecificationsIdx = 1;
       for(auto& item : m_launchSpecifications)
       {
-        launchSpecificationsIdx++;
         Aws::StringStream launchSpecificationsSs;
-        launchSpecificationsSs << location << index << locationValue << ".LaunchSpecifications." << launchSpecificationsIdx;
+        launchSpecificationsSs << location << index << locationValue << ".LaunchSpecifications." << launchSpecificationsIdx++;
         item.OutputToStream(oStream, launchSpecificationsSs.str().c_str());
       }
   }
+
+  if(m_excessCapacityTerminationPolicyHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ExcessCapacityTerminationPolicy=" << ExcessCapacityTerminationPolicyMapper::GetNameForExcessCapacityTerminationPolicy(m_excessCapacityTerminationPolicy) << "&";
+  }
+
+  if(m_allocationStrategyHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".AllocationStrategy=" << AllocationStrategyMapper::GetNameForAllocationStrategy(m_allocationStrategy) << "&";
+  }
+
+  if(m_fulfilledCapacityHasBeenSet)
+  {
+        oStream << location << index << locationValue << ".FulfilledCapacity=" << StringUtils::URLEncode(m_fulfilledCapacity) << "&";
+  }
+
+  if(m_typeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Type=" << FleetTypeMapper::GetNameForFleetType(m_type) << "&";
+  }
+
 }
 
 void SpotFleetRequestConfigData::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -180,11 +249,11 @@ void SpotFleetRequestConfigData::OutputToStream(Aws::OStream& oStream, const cha
   }
   if(m_validFromHasBeenSet)
   {
-      oStream << location << ".ValidFrom=" << m_validFrom << "&";
+      oStream << location << ".ValidFrom=" << StringUtils::URLEncode(m_validFrom.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_validUntilHasBeenSet)
   {
-      oStream << location << ".ValidUntil=" << m_validUntil << "&";
+      oStream << location << ".ValidUntil=" << StringUtils::URLEncode(m_validUntil.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_terminateInstancesWithExpirationHasBeenSet)
   {
@@ -196,11 +265,32 @@ void SpotFleetRequestConfigData::OutputToStream(Aws::OStream& oStream, const cha
   }
   if(m_launchSpecificationsHasBeenSet)
   {
+      unsigned launchSpecificationsIdx = 1;
       for(auto& item : m_launchSpecifications)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".item";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream launchSpecificationsSs;
+        launchSpecificationsSs << location <<  ".item." << launchSpecificationsIdx++;
+        item.OutputToStream(oStream, launchSpecificationsSs.str().c_str());
       }
   }
+  if(m_excessCapacityTerminationPolicyHasBeenSet)
+  {
+      oStream << location << ".ExcessCapacityTerminationPolicy=" << ExcessCapacityTerminationPolicyMapper::GetNameForExcessCapacityTerminationPolicy(m_excessCapacityTerminationPolicy) << "&";
+  }
+  if(m_allocationStrategyHasBeenSet)
+  {
+      oStream << location << ".AllocationStrategy=" << AllocationStrategyMapper::GetNameForAllocationStrategy(m_allocationStrategy) << "&";
+  }
+  if(m_fulfilledCapacityHasBeenSet)
+  {
+        oStream << location << ".FulfilledCapacity=" << StringUtils::URLEncode(m_fulfilledCapacity) << "&";
+  }
+  if(m_typeHasBeenSet)
+  {
+      oStream << location << ".Type=" << FleetTypeMapper::GetNameForFleetType(m_type) << "&";
+  }
 }
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

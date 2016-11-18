@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -21,7 +21,7 @@ namespace Aws
 {
 namespace ElasticBeanstalk
 {
-enum class AWS_ELASTICBEANSTALK_API ElasticBeanstalkErrors
+enum class ElasticBeanstalkErrors
 {
   //From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
@@ -44,13 +44,19 @@ enum class AWS_ELASTICBEANSTALK_API ElasticBeanstalkErrors
   RESOURCE_NOT_FOUND = 16,
   UNRECOGNIZED_CLIENT = 17,
   MALFORMED_QUERY_STRING = 18,
+  SLOW_DOWN = 19,
+  REQUEST_TIME_TOO_SKEWED = 20,
+  INVALID_SIGNATURE = 21,
+  SIGNATURE_DOES_NOT_MATCH = 22,
   NETWORK_CONNECTION = 99,
+  
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
   ELASTIC_BEANSTALK_SERVICE= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   INSUFFICIENT_PRIVILEGES,
   INVALID_REQUEST,
+  MANAGED_ACTION_INVALID_STATE,
   OPERATION_IN_PROGRESS,
   S3_LOCATION_NOT_IN_SERVICE_REGION,
   S3_SUBSCRIPTION_REQUIRED,

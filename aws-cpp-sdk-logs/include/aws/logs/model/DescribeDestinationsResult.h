@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -34,9 +34,6 @@ namespace CloudWatchLogs
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
   class AWS_CLOUDWATCHLOGS_API DescribeDestinationsResult
   {
   public:
@@ -44,25 +41,39 @@ namespace Model
     DescribeDestinationsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     DescribeDestinationsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    
+    /**
+     * <p>The destinations.</p>
+     */
     inline const Aws::Vector<Destination>& GetDestinations() const{ return m_destinations; }
 
-    
+    /**
+     * <p>The destinations.</p>
+     */
     inline void SetDestinations(const Aws::Vector<Destination>& value) { m_destinations = value; }
 
-    
+    /**
+     * <p>The destinations.</p>
+     */
     inline void SetDestinations(Aws::Vector<Destination>&& value) { m_destinations = value; }
 
-    
+    /**
+     * <p>The destinations.</p>
+     */
     inline DescribeDestinationsResult& WithDestinations(const Aws::Vector<Destination>& value) { SetDestinations(value); return *this;}
 
-    
+    /**
+     * <p>The destinations.</p>
+     */
     inline DescribeDestinationsResult& WithDestinations(Aws::Vector<Destination>&& value) { SetDestinations(value); return *this;}
 
-    
+    /**
+     * <p>The destinations.</p>
+     */
     inline DescribeDestinationsResult& AddDestinations(const Destination& value) { m_destinations.push_back(value); return *this; }
 
-    
+    /**
+     * <p>The destinations.</p>
+     */
     inline DescribeDestinationsResult& AddDestinations(Destination&& value) { m_destinations.push_back(value); return *this; }
 
     

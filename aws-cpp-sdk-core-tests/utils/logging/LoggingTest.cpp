@@ -30,6 +30,21 @@ using namespace Aws::Utils::Logging;
 
 static const char* AllocationTag = "LoggingTests";
 
+class ScopedLogger
+{
+    public:
+        ScopedLogger(const std::shared_ptr<LogSystemInterface>& logger)
+        {
+            Aws::Utils::Logging::PushLogger(logger);
+        }
+
+        ~ScopedLogger()
+        {
+            Aws::Utils::Logging::PopLogger();
+        }
+
+};
+
 void LogAllPossibilities(const char* tag)
 {
     AWS_LOG_FATAL(tag, "test fatal level");
@@ -86,11 +101,11 @@ void DoLogTest(LogLevel logLevel, const char *testTag)
 {
     auto ss = Aws::MakeShared<Aws::StringStream>(AllocationTag);
 
-    Aws::Utils::Logging::InitializeAWSLogging(Aws::MakeShared<DefaultLogSystem>(AllocationTag, logLevel, ss));
+    {
+        ScopedLogger loggingScope(Aws::MakeShared<DefaultLogSystem>(AllocationTag, logLevel, ss));
 
-    LogAllPossibilities(testTag);
-
-    Aws::Utils::Logging::ShutdownAWSLogging();
+        LogAllPossibilities(testTag);
+    }
 
     Aws::Vector<Aws::String> loggedStatements = StringUtils::SplitOnLine(ss->str());
     VerifyAllLogsAtOrBelow(logLevel, testTag, loggedStatements);

@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,49 +24,48 @@ namespace SNS
 namespace Model
 {
 
-  /*
-    <p>Input for GetPlatformApplicationAttributes action.</p>
-  */
+  /**
+   * <p>Input for GetPlatformApplicationAttributes action.</p>
+   */
   class AWS_SNS_API GetPlatformApplicationAttributesRequest : public SNSRequest
   {
   public:
     GetPlatformApplicationAttributesRequest();
     Aws::String SerializePayload() const override;
 
-
-    /*
-     <p>PlatformApplicationArn for GetPlatformApplicationAttributesInput.</p>
-    */
+    /**
+     * <p>PlatformApplicationArn for GetPlatformApplicationAttributesInput.</p>
+     */
     inline const Aws::String& GetPlatformApplicationArn() const{ return m_platformApplicationArn; }
 
-    /*
-     <p>PlatformApplicationArn for GetPlatformApplicationAttributesInput.</p>
-    */
+    /**
+     * <p>PlatformApplicationArn for GetPlatformApplicationAttributesInput.</p>
+     */
     inline void SetPlatformApplicationArn(const Aws::String& value) { m_platformApplicationArnHasBeenSet = true; m_platformApplicationArn = value; }
 
-    /*
-     <p>PlatformApplicationArn for GetPlatformApplicationAttributesInput.</p>
-    */
+    /**
+     * <p>PlatformApplicationArn for GetPlatformApplicationAttributesInput.</p>
+     */
     inline void SetPlatformApplicationArn(Aws::String&& value) { m_platformApplicationArnHasBeenSet = true; m_platformApplicationArn = value; }
 
-    /*
-     <p>PlatformApplicationArn for GetPlatformApplicationAttributesInput.</p>
-    */
+    /**
+     * <p>PlatformApplicationArn for GetPlatformApplicationAttributesInput.</p>
+     */
     inline void SetPlatformApplicationArn(const char* value) { m_platformApplicationArnHasBeenSet = true; m_platformApplicationArn.assign(value); }
 
-    /*
-     <p>PlatformApplicationArn for GetPlatformApplicationAttributesInput.</p>
-    */
+    /**
+     * <p>PlatformApplicationArn for GetPlatformApplicationAttributesInput.</p>
+     */
     inline GetPlatformApplicationAttributesRequest& WithPlatformApplicationArn(const Aws::String& value) { SetPlatformApplicationArn(value); return *this;}
 
-    /*
-     <p>PlatformApplicationArn for GetPlatformApplicationAttributesInput.</p>
-    */
+    /**
+     * <p>PlatformApplicationArn for GetPlatformApplicationAttributesInput.</p>
+     */
     inline GetPlatformApplicationAttributesRequest& WithPlatformApplicationArn(Aws::String&& value) { SetPlatformApplicationArn(value); return *this;}
 
-    /*
-     <p>PlatformApplicationArn for GetPlatformApplicationAttributesInput.</p>
-    */
+    /**
+     * <p>PlatformApplicationArn for GetPlatformApplicationAttributesInput.</p>
+     */
     inline GetPlatformApplicationAttributesRequest& WithPlatformApplicationArn(const char* value) { SetPlatformApplicationArn(value); return *this;}
 
   private:

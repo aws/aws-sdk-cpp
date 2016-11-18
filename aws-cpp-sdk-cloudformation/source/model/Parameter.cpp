@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace CloudFormation
+{
+namespace Model
+{
 
 Parameter::Parameter() : 
     m_parameterKeyHasBeenSet(false),
@@ -75,14 +81,17 @@ void Parameter::OutputToStream(Aws::OStream& oStream, const char* location, unsi
   {
       oStream << location << index << locationValue << ".ParameterKey=" << StringUtils::URLEncode(m_parameterKey.c_str()) << "&";
   }
+
   if(m_parameterValueHasBeenSet)
   {
       oStream << location << index << locationValue << ".ParameterValue=" << StringUtils::URLEncode(m_parameterValue.c_str()) << "&";
   }
+
   if(m_usePreviousValueHasBeenSet)
   {
       oStream << location << index << locationValue << ".UsePreviousValue=" << m_usePreviousValue << "&";
   }
+
 }
 
 void Parameter::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -100,3 +109,7 @@ void Parameter::OutputToStream(Aws::OStream& oStream, const char* location) cons
       oStream << location << ".UsePreviousValue=" << m_usePreviousValue << "&";
   }
 }
+
+} // namespace Model
+} // namespace CloudFormation
+} // namespace Aws

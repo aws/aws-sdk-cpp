@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -17,20 +17,30 @@
 
 #include <utility>
 
-using namespace Aws::EMR::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
+namespace Aws
+{
+namespace EMR
+{
+namespace Model
+{
+
 StepStatus::StepStatus() : 
+    m_state(StepState::NOT_SET),
     m_stateHasBeenSet(false),
     m_stateChangeReasonHasBeenSet(false),
+    m_failureDetailsHasBeenSet(false),
     m_timelineHasBeenSet(false)
 {
 }
 
 StepStatus::StepStatus(const JsonValue& jsonValue) : 
+    m_state(StepState::NOT_SET),
     m_stateHasBeenSet(false),
     m_stateChangeReasonHasBeenSet(false),
+    m_failureDetailsHasBeenSet(false),
     m_timelineHasBeenSet(false)
 {
   *this = jsonValue;
@@ -50,6 +60,13 @@ StepStatus& StepStatus::operator =(const JsonValue& jsonValue)
     m_stateChangeReason = jsonValue.GetObject("StateChangeReason");
 
     m_stateChangeReasonHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("FailureDetails"))
+  {
+    m_failureDetails = jsonValue.GetObject("FailureDetails");
+
+    m_failureDetailsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Timeline"))
@@ -77,11 +94,21 @@ JsonValue StepStatus::Jsonize() const
 
   }
 
+  if(m_failureDetailsHasBeenSet)
+  {
+   payload.WithObject("FailureDetails", m_failureDetails.Jsonize());
+
+  }
+
   if(m_timelineHasBeenSet)
   {
    payload.WithObject("Timeline", m_timeline.Jsonize());
 
   }
 
-  return std::move(payload);
+  return payload;
 }
+
+} // namespace Model
+} // namespace EMR
+} // namespace Aws

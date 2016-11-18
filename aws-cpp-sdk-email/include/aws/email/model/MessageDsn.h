@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@
 #include <aws/email/SES_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/email/model/ExtensionField.h>
 
@@ -32,9 +33,14 @@ namespace SES
 {
 namespace Model
 {
-  /*
-    Message level DSN fields.
-  */
+
+  /**
+   * <p>Message-related information to include in the Delivery Status Notification
+   * (DSN) when an email that Amazon SES receives on your behalf bounces.</p> <p>For
+   * information about receiving email through Amazon SES, see the <a
+   * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email.html">Amazon
+   * SES Developer Guide</a>.</p>
+   */
   class AWS_SES_API MessageDsn
   {
   public:
@@ -45,95 +51,131 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     The MTA that attempted to deliver the message. Should be RFC 3464 formatted to be "mta-name-type; mta-name" (e.g. "dns; foo.amazonses.com"). If not specified, "dns; inbound-smtp.[region].amazonaws.com" is used.
-    */
+    /**
+     * <p>The reporting MTA that attempted to deliver the message, formatted as
+     * specified in <a href="https://tools.ietf.org/html/rfc3464">RFC 3464</a>
+     * (<code>mta-name-type; mta-name</code>). The default value is <code>dns;
+     * inbound-smtp.[region].amazonaws.com</code>.</p>
+     */
     inline const Aws::String& GetReportingMta() const{ return m_reportingMta; }
 
-    /*
-     The MTA that attempted to deliver the message. Should be RFC 3464 formatted to be "mta-name-type; mta-name" (e.g. "dns; foo.amazonses.com"). If not specified, "dns; inbound-smtp.[region].amazonaws.com" is used.
-    */
+    /**
+     * <p>The reporting MTA that attempted to deliver the message, formatted as
+     * specified in <a href="https://tools.ietf.org/html/rfc3464">RFC 3464</a>
+     * (<code>mta-name-type; mta-name</code>). The default value is <code>dns;
+     * inbound-smtp.[region].amazonaws.com</code>.</p>
+     */
     inline void SetReportingMta(const Aws::String& value) { m_reportingMtaHasBeenSet = true; m_reportingMta = value; }
 
-    /*
-     The MTA that attempted to deliver the message. Should be RFC 3464 formatted to be "mta-name-type; mta-name" (e.g. "dns; foo.amazonses.com"). If not specified, "dns; inbound-smtp.[region].amazonaws.com" is used.
-    */
+    /**
+     * <p>The reporting MTA that attempted to deliver the message, formatted as
+     * specified in <a href="https://tools.ietf.org/html/rfc3464">RFC 3464</a>
+     * (<code>mta-name-type; mta-name</code>). The default value is <code>dns;
+     * inbound-smtp.[region].amazonaws.com</code>.</p>
+     */
     inline void SetReportingMta(Aws::String&& value) { m_reportingMtaHasBeenSet = true; m_reportingMta = value; }
 
-    /*
-     The MTA that attempted to deliver the message. Should be RFC 3464 formatted to be "mta-name-type; mta-name" (e.g. "dns; foo.amazonses.com"). If not specified, "dns; inbound-smtp.[region].amazonaws.com" is used.
-    */
+    /**
+     * <p>The reporting MTA that attempted to deliver the message, formatted as
+     * specified in <a href="https://tools.ietf.org/html/rfc3464">RFC 3464</a>
+     * (<code>mta-name-type; mta-name</code>). The default value is <code>dns;
+     * inbound-smtp.[region].amazonaws.com</code>.</p>
+     */
     inline void SetReportingMta(const char* value) { m_reportingMtaHasBeenSet = true; m_reportingMta.assign(value); }
 
-    /*
-     The MTA that attempted to deliver the message. Should be RFC 3464 formatted to be "mta-name-type; mta-name" (e.g. "dns; foo.amazonses.com"). If not specified, "dns; inbound-smtp.[region].amazonaws.com" is used.
-    */
+    /**
+     * <p>The reporting MTA that attempted to deliver the message, formatted as
+     * specified in <a href="https://tools.ietf.org/html/rfc3464">RFC 3464</a>
+     * (<code>mta-name-type; mta-name</code>). The default value is <code>dns;
+     * inbound-smtp.[region].amazonaws.com</code>.</p>
+     */
     inline MessageDsn& WithReportingMta(const Aws::String& value) { SetReportingMta(value); return *this;}
 
-    /*
-     The MTA that attempted to deliver the message. Should be RFC 3464 formatted to be "mta-name-type; mta-name" (e.g. "dns; foo.amazonses.com"). If not specified, "dns; inbound-smtp.[region].amazonaws.com" is used.
-    */
+    /**
+     * <p>The reporting MTA that attempted to deliver the message, formatted as
+     * specified in <a href="https://tools.ietf.org/html/rfc3464">RFC 3464</a>
+     * (<code>mta-name-type; mta-name</code>). The default value is <code>dns;
+     * inbound-smtp.[region].amazonaws.com</code>.</p>
+     */
     inline MessageDsn& WithReportingMta(Aws::String&& value) { SetReportingMta(value); return *this;}
 
-    /*
-     The MTA that attempted to deliver the message. Should be RFC 3464 formatted to be "mta-name-type; mta-name" (e.g. "dns; foo.amazonses.com"). If not specified, "dns; inbound-smtp.[region].amazonaws.com" is used.
-    */
+    /**
+     * <p>The reporting MTA that attempted to deliver the message, formatted as
+     * specified in <a href="https://tools.ietf.org/html/rfc3464">RFC 3464</a>
+     * (<code>mta-name-type; mta-name</code>). The default value is <code>dns;
+     * inbound-smtp.[region].amazonaws.com</code>.</p>
+     */
     inline MessageDsn& WithReportingMta(const char* value) { SetReportingMta(value); return *this;}
 
-    /*
-     When the message arrived at the Reporting MTA. This should be in RFC 822 date-time format if it's specified.
-    */
-    inline double GetArrivalDate() const{ return m_arrivalDate; }
+    /**
+     * <p>When the message was received by the reporting mail transfer agent (MTA), in
+     * <a href="https://www.ietf.org/rfc/rfc0822.txt">RFC 822</a> date-time format.</p>
+     */
+    inline const Aws::Utils::DateTime& GetArrivalDate() const{ return m_arrivalDate; }
 
-    /*
-     When the message arrived at the Reporting MTA. This should be in RFC 822 date-time format if it's specified.
-    */
-    inline void SetArrivalDate(double value) { m_arrivalDateHasBeenSet = true; m_arrivalDate = value; }
+    /**
+     * <p>When the message was received by the reporting mail transfer agent (MTA), in
+     * <a href="https://www.ietf.org/rfc/rfc0822.txt">RFC 822</a> date-time format.</p>
+     */
+    inline void SetArrivalDate(const Aws::Utils::DateTime& value) { m_arrivalDateHasBeenSet = true; m_arrivalDate = value; }
 
-    /*
-     When the message arrived at the Reporting MTA. This should be in RFC 822 date-time format if it's specified.
-    */
-    inline MessageDsn& WithArrivalDate(double value) { SetArrivalDate(value); return *this;}
+    /**
+     * <p>When the message was received by the reporting mail transfer agent (MTA), in
+     * <a href="https://www.ietf.org/rfc/rfc0822.txt">RFC 822</a> date-time format.</p>
+     */
+    inline void SetArrivalDate(Aws::Utils::DateTime&& value) { m_arrivalDateHasBeenSet = true; m_arrivalDate = value; }
 
-    /*
-     Additional x-headers to include in the DSN.
-    */
+    /**
+     * <p>When the message was received by the reporting mail transfer agent (MTA), in
+     * <a href="https://www.ietf.org/rfc/rfc0822.txt">RFC 822</a> date-time format.</p>
+     */
+    inline MessageDsn& WithArrivalDate(const Aws::Utils::DateTime& value) { SetArrivalDate(value); return *this;}
+
+    /**
+     * <p>When the message was received by the reporting mail transfer agent (MTA), in
+     * <a href="https://www.ietf.org/rfc/rfc0822.txt">RFC 822</a> date-time format.</p>
+     */
+    inline MessageDsn& WithArrivalDate(Aws::Utils::DateTime&& value) { SetArrivalDate(value); return *this;}
+
+    /**
+     * <p>Additional X-headers to include in the DSN.</p>
+     */
     inline const Aws::Vector<ExtensionField>& GetExtensionFields() const{ return m_extensionFields; }
 
-    /*
-     Additional x-headers to include in the DSN.
-    */
+    /**
+     * <p>Additional X-headers to include in the DSN.</p>
+     */
     inline void SetExtensionFields(const Aws::Vector<ExtensionField>& value) { m_extensionFieldsHasBeenSet = true; m_extensionFields = value; }
 
-    /*
-     Additional x-headers to include in the DSN.
-    */
+    /**
+     * <p>Additional X-headers to include in the DSN.</p>
+     */
     inline void SetExtensionFields(Aws::Vector<ExtensionField>&& value) { m_extensionFieldsHasBeenSet = true; m_extensionFields = value; }
 
-    /*
-     Additional x-headers to include in the DSN.
-    */
+    /**
+     * <p>Additional X-headers to include in the DSN.</p>
+     */
     inline MessageDsn& WithExtensionFields(const Aws::Vector<ExtensionField>& value) { SetExtensionFields(value); return *this;}
 
-    /*
-     Additional x-headers to include in the DSN.
-    */
+    /**
+     * <p>Additional X-headers to include in the DSN.</p>
+     */
     inline MessageDsn& WithExtensionFields(Aws::Vector<ExtensionField>&& value) { SetExtensionFields(value); return *this;}
 
-    /*
-     Additional x-headers to include in the DSN.
-    */
+    /**
+     * <p>Additional X-headers to include in the DSN.</p>
+     */
     inline MessageDsn& AddExtensionFields(const ExtensionField& value) { m_extensionFieldsHasBeenSet = true; m_extensionFields.push_back(value); return *this; }
 
-    /*
-     Additional x-headers to include in the DSN.
-    */
+    /**
+     * <p>Additional X-headers to include in the DSN.</p>
+     */
     inline MessageDsn& AddExtensionFields(ExtensionField&& value) { m_extensionFieldsHasBeenSet = true; m_extensionFields.push_back(value); return *this; }
 
   private:
     Aws::String m_reportingMta;
     bool m_reportingMtaHasBeenSet;
-    double m_arrivalDate;
+    Aws::Utils::DateTime m_arrivalDate;
     bool m_arrivalDateHasBeenSet;
     Aws::Vector<ExtensionField> m_extensionFields;
     bool m_extensionFieldsHasBeenSet;

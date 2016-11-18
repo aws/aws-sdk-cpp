@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -41,7 +41,7 @@ BatchWriteItemResult& BatchWriteItemResult::operator =(const AmazonWebServiceRes
     Aws::Map<Aws::String, JsonValue> unprocessedItemsJsonMap = jsonValue.GetObject("UnprocessedItems").GetAllObjects();
     for(auto& unprocessedItemsItem : unprocessedItemsJsonMap)
     {
-      Array<JsonValue> writeRequestsJsonList = unprocessedItemsItem.second.GetArray("WriteRequests");
+      Array<JsonValue> writeRequestsJsonList = unprocessedItemsItem.second.AsArray();
       Aws::Vector<WriteRequest> writeRequestsList((size_t)writeRequestsJsonList.GetLength());
       for(unsigned writeRequestsIndex = 0; writeRequestsIndex < writeRequestsJsonList.GetLength(); ++writeRequestsIndex)
       {
@@ -56,7 +56,7 @@ BatchWriteItemResult& BatchWriteItemResult::operator =(const AmazonWebServiceRes
     Aws::Map<Aws::String, JsonValue> itemCollectionMetricsJsonMap = jsonValue.GetObject("ItemCollectionMetrics").GetAllObjects();
     for(auto& itemCollectionMetricsItem : itemCollectionMetricsJsonMap)
     {
-      Array<JsonValue> itemCollectionMetricsMultipleJsonList = itemCollectionMetricsItem.second.GetArray("ItemCollectionMetricsMultiple");
+      Array<JsonValue> itemCollectionMetricsMultipleJsonList = itemCollectionMetricsItem.second.AsArray();
       Aws::Vector<ItemCollectionMetrics> itemCollectionMetricsMultipleList((size_t)itemCollectionMetricsMultipleJsonList.GetLength());
       for(unsigned itemCollectionMetricsMultipleIndex = 0; itemCollectionMetricsMultipleIndex < itemCollectionMetricsMultipleJsonList.GetLength(); ++itemCollectionMetricsMultipleIndex)
       {

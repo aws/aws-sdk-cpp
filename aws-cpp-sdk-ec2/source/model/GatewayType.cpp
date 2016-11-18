@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -14,43 +14,59 @@
 */
 #include <aws/ec2/model/GatewayType.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
+#include <aws/core/utils/EnumParseOverflowContainer.h>
 
 using namespace Aws::Utils;
 
-static const int ipsec_1_HASH = HashingUtils::HashString("ipsec.1");
 
 namespace Aws
 {
-namespace EC2
-{
-namespace Model
-{
-namespace GatewayTypeMapper
-{
-GatewayType GetGatewayTypeForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-
-  if (hashCode == ipsec_1_HASH)
+  namespace EC2
   {
-    return GatewayType::ipsec_1;
-  }
+    namespace Model
+    {
+      namespace GatewayTypeMapper
+      {
 
-  return GatewayType::NOT_SET;
-}
+        static const int ipsec_1_HASH = HashingUtils::HashString("ipsec.1");
 
-Aws::String GetNameForGatewayType(GatewayType value)
-{
-  switch(value)
-  {
-  case GatewayType::ipsec_1:
-    return "ipsec.1";
-  default:
-    return "";
-  }
-}
 
-} // namespace GatewayTypeMapper
-} // namespace Model
-} // namespace EC2
+        GatewayType GetGatewayTypeForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == ipsec_1_HASH)
+          {
+            return GatewayType::ipsec_1;
+          }
+          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<GatewayType>(hashCode);
+          }
+
+          return GatewayType::NOT_SET;
+        }
+
+        Aws::String GetNameForGatewayType(GatewayType enumValue)
+        {
+          switch(enumValue)
+          {
+          case GatewayType::ipsec_1:
+            return "ipsec.1";
+          default:
+            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace GatewayTypeMapper
+    } // namespace Model
+  } // namespace EC2
 } // namespace Aws

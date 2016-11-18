@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -33,9 +33,9 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
+  /**
+   * <p>Contains the output of CreateRouteTable.</p>
+   */
   class AWS_EC2_API CreateRouteTableResponse
   {
   public:
@@ -43,29 +43,29 @@ namespace Model
     CreateRouteTableResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     CreateRouteTableResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>Information about the route table.</p>
-    */
+    /**
+     * <p>Information about the route table.</p>
+     */
     inline const RouteTable& GetRouteTable() const{ return m_routeTable; }
 
-    /*
-     <p>Information about the route table.</p>
-    */
+    /**
+     * <p>Information about the route table.</p>
+     */
     inline void SetRouteTable(const RouteTable& value) { m_routeTable = value; }
 
-    /*
-     <p>Information about the route table.</p>
-    */
+    /**
+     * <p>Information about the route table.</p>
+     */
     inline void SetRouteTable(RouteTable&& value) { m_routeTable = value; }
 
-    /*
-     <p>Information about the route table.</p>
-    */
+    /**
+     * <p>Information about the route table.</p>
+     */
     inline CreateRouteTableResponse& WithRouteTable(const RouteTable& value) { SetRouteTable(value); return *this;}
 
-    /*
-     <p>Information about the route table.</p>
-    */
+    /**
+     * <p>Information about the route table.</p>
+     */
     inline CreateRouteTableResponse& WithRouteTable(RouteTable&& value) { SetRouteTable(value); return *this;}
 
     

@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,49 +24,48 @@ namespace SNS
 namespace Model
 {
 
-  /*
-    <p>Input for GetSubscriptionAttributes.</p>
-  */
+  /**
+   * <p>Input for GetSubscriptionAttributes.</p>
+   */
   class AWS_SNS_API GetSubscriptionAttributesRequest : public SNSRequest
   {
   public:
     GetSubscriptionAttributesRequest();
     Aws::String SerializePayload() const override;
 
-
-    /*
-     <p>The ARN of the subscription whose properties you want to get.</p>
-    */
+    /**
+     * <p>The ARN of the subscription whose properties you want to get.</p>
+     */
     inline const Aws::String& GetSubscriptionArn() const{ return m_subscriptionArn; }
 
-    /*
-     <p>The ARN of the subscription whose properties you want to get.</p>
-    */
+    /**
+     * <p>The ARN of the subscription whose properties you want to get.</p>
+     */
     inline void SetSubscriptionArn(const Aws::String& value) { m_subscriptionArnHasBeenSet = true; m_subscriptionArn = value; }
 
-    /*
-     <p>The ARN of the subscription whose properties you want to get.</p>
-    */
+    /**
+     * <p>The ARN of the subscription whose properties you want to get.</p>
+     */
     inline void SetSubscriptionArn(Aws::String&& value) { m_subscriptionArnHasBeenSet = true; m_subscriptionArn = value; }
 
-    /*
-     <p>The ARN of the subscription whose properties you want to get.</p>
-    */
+    /**
+     * <p>The ARN of the subscription whose properties you want to get.</p>
+     */
     inline void SetSubscriptionArn(const char* value) { m_subscriptionArnHasBeenSet = true; m_subscriptionArn.assign(value); }
 
-    /*
-     <p>The ARN of the subscription whose properties you want to get.</p>
-    */
+    /**
+     * <p>The ARN of the subscription whose properties you want to get.</p>
+     */
     inline GetSubscriptionAttributesRequest& WithSubscriptionArn(const Aws::String& value) { SetSubscriptionArn(value); return *this;}
 
-    /*
-     <p>The ARN of the subscription whose properties you want to get.</p>
-    */
+    /**
+     * <p>The ARN of the subscription whose properties you want to get.</p>
+     */
     inline GetSubscriptionAttributesRequest& WithSubscriptionArn(Aws::String&& value) { SetSubscriptionArn(value); return *this;}
 
-    /*
-     <p>The ARN of the subscription whose properties you want to get.</p>
-    */
+    /**
+     * <p>The ARN of the subscription whose properties you want to get.</p>
+     */
     inline GetSubscriptionAttributesRequest& WithSubscriptionArn(const char* value) { SetSubscriptionArn(value); return *this;}
 
   private:

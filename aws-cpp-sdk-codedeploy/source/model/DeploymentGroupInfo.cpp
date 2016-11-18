@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::CodeDeploy::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace CodeDeploy
+{
+namespace Model
+{
 
 DeploymentGroupInfo::DeploymentGroupInfo() : 
     m_applicationNameHasBeenSet(false),
@@ -30,7 +36,10 @@ DeploymentGroupInfo::DeploymentGroupInfo() :
     m_onPremisesInstanceTagFiltersHasBeenSet(false),
     m_autoScalingGroupsHasBeenSet(false),
     m_serviceRoleArnHasBeenSet(false),
-    m_targetRevisionHasBeenSet(false)
+    m_targetRevisionHasBeenSet(false),
+    m_triggerConfigurationsHasBeenSet(false),
+    m_alarmConfigurationHasBeenSet(false),
+    m_autoRollbackConfigurationHasBeenSet(false)
 {
 }
 
@@ -43,7 +52,10 @@ DeploymentGroupInfo::DeploymentGroupInfo(const JsonValue& jsonValue) :
     m_onPremisesInstanceTagFiltersHasBeenSet(false),
     m_autoScalingGroupsHasBeenSet(false),
     m_serviceRoleArnHasBeenSet(false),
-    m_targetRevisionHasBeenSet(false)
+    m_targetRevisionHasBeenSet(false),
+    m_triggerConfigurationsHasBeenSet(false),
+    m_alarmConfigurationHasBeenSet(false),
+    m_autoRollbackConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -122,6 +134,30 @@ DeploymentGroupInfo& DeploymentGroupInfo::operator =(const JsonValue& jsonValue)
     m_targetRevisionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("triggerConfigurations"))
+  {
+    Array<JsonValue> triggerConfigurationsJsonList = jsonValue.GetArray("triggerConfigurations");
+    for(unsigned triggerConfigurationsIndex = 0; triggerConfigurationsIndex < triggerConfigurationsJsonList.GetLength(); ++triggerConfigurationsIndex)
+    {
+      m_triggerConfigurations.push_back(triggerConfigurationsJsonList[triggerConfigurationsIndex].AsObject());
+    }
+    m_triggerConfigurationsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("alarmConfiguration"))
+  {
+    m_alarmConfiguration = jsonValue.GetObject("alarmConfiguration");
+
+    m_alarmConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("autoRollbackConfiguration"))
+  {
+    m_autoRollbackConfiguration = jsonValue.GetObject("autoRollbackConfiguration");
+
+    m_autoRollbackConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -198,5 +234,32 @@ JsonValue DeploymentGroupInfo::Jsonize() const
 
   }
 
-  return std::move(payload);
+  if(m_triggerConfigurationsHasBeenSet)
+  {
+   Array<JsonValue> triggerConfigurationsJsonList(m_triggerConfigurations.size());
+   for(unsigned triggerConfigurationsIndex = 0; triggerConfigurationsIndex < triggerConfigurationsJsonList.GetLength(); ++triggerConfigurationsIndex)
+   {
+     triggerConfigurationsJsonList[triggerConfigurationsIndex].AsObject(m_triggerConfigurations[triggerConfigurationsIndex].Jsonize());
+   }
+   payload.WithArray("triggerConfigurations", std::move(triggerConfigurationsJsonList));
+
+  }
+
+  if(m_alarmConfigurationHasBeenSet)
+  {
+   payload.WithObject("alarmConfiguration", m_alarmConfiguration.Jsonize());
+
+  }
+
+  if(m_autoRollbackConfigurationHasBeenSet)
+  {
+   payload.WithObject("autoRollbackConfiguration", m_autoRollbackConfiguration.Jsonize());
+
+  }
+
+  return payload;
 }
+
+} // namespace Model
+} // namespace CodeDeploy
+} // namespace Aws

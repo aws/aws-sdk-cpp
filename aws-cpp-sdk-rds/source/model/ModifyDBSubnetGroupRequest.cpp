@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -34,10 +34,12 @@ Aws::String ModifyDBSubnetGroupRequest::SerializePayload() const
   {
     ss << "DBSubnetGroupName=" << StringUtils::URLEncode(m_dBSubnetGroupName.c_str()) << "&";
   }
+
   if(m_dBSubnetGroupDescriptionHasBeenSet)
   {
     ss << "DBSubnetGroupDescription=" << StringUtils::URLEncode(m_dBSubnetGroupDescription.c_str()) << "&";
   }
+
   if(m_subnetIdsHasBeenSet)
   {
     unsigned subnetIdsCount = 1;
@@ -48,7 +50,8 @@ Aws::String ModifyDBSubnetGroupRequest::SerializePayload() const
       subnetIdsCount++;
     }
   }
-  ss << "Version=2013-01-10";
+
+  ss << "Version=2014-10-31";
   return ss.str();
 }
 

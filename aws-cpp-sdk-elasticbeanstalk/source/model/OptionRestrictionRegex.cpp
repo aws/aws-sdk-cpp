@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::ElasticBeanstalk::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace ElasticBeanstalk
+{
+namespace Model
+{
 
 OptionRestrictionRegex::OptionRestrictionRegex() : 
     m_patternHasBeenSet(false),
@@ -65,10 +71,12 @@ void OptionRestrictionRegex::OutputToStream(Aws::OStream& oStream, const char* l
   {
       oStream << location << index << locationValue << ".Pattern=" << StringUtils::URLEncode(m_pattern.c_str()) << "&";
   }
+
   if(m_labelHasBeenSet)
   {
       oStream << location << index << locationValue << ".Label=" << StringUtils::URLEncode(m_label.c_str()) << "&";
   }
+
 }
 
 void OptionRestrictionRegex::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -82,3 +90,7 @@ void OptionRestrictionRegex::OutputToStream(Aws::OStream& oStream, const char* l
       oStream << location << ".Label=" << StringUtils::URLEncode(m_label.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace ElasticBeanstalk
+} // namespace Aws

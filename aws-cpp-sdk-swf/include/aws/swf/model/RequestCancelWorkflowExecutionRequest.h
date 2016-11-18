@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,8 +24,8 @@ namespace SWF
 namespace Model
 {
 
-  /*
-  */
+  /**
+   */
   class AWS_SWF_API RequestCancelWorkflowExecutionRequest : public SWFRequest
   {
   public:
@@ -34,110 +34,109 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
-    /*
-     <p>The name of the domain containing the workflow execution to cancel.</p>
-    */
+    /**
+     * <p>The name of the domain containing the workflow execution to cancel.</p>
+     */
     inline const Aws::String& GetDomain() const{ return m_domain; }
 
-    /*
-     <p>The name of the domain containing the workflow execution to cancel.</p>
-    */
+    /**
+     * <p>The name of the domain containing the workflow execution to cancel.</p>
+     */
     inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
 
-    /*
-     <p>The name of the domain containing the workflow execution to cancel.</p>
-    */
+    /**
+     * <p>The name of the domain containing the workflow execution to cancel.</p>
+     */
     inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = value; }
 
-    /*
-     <p>The name of the domain containing the workflow execution to cancel.</p>
-    */
+    /**
+     * <p>The name of the domain containing the workflow execution to cancel.</p>
+     */
     inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
 
-    /*
-     <p>The name of the domain containing the workflow execution to cancel.</p>
-    */
+    /**
+     * <p>The name of the domain containing the workflow execution to cancel.</p>
+     */
     inline RequestCancelWorkflowExecutionRequest& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
 
-    /*
-     <p>The name of the domain containing the workflow execution to cancel.</p>
-    */
+    /**
+     * <p>The name of the domain containing the workflow execution to cancel.</p>
+     */
     inline RequestCancelWorkflowExecutionRequest& WithDomain(Aws::String&& value) { SetDomain(value); return *this;}
 
-    /*
-     <p>The name of the domain containing the workflow execution to cancel.</p>
-    */
+    /**
+     * <p>The name of the domain containing the workflow execution to cancel.</p>
+     */
     inline RequestCancelWorkflowExecutionRequest& WithDomain(const char* value) { SetDomain(value); return *this;}
 
-    /*
-     <p>The workflowId of the workflow execution to cancel.</p>
-    */
+    /**
+     * <p>The workflowId of the workflow execution to cancel.</p>
+     */
     inline const Aws::String& GetWorkflowId() const{ return m_workflowId; }
 
-    /*
-     <p>The workflowId of the workflow execution to cancel.</p>
-    */
+    /**
+     * <p>The workflowId of the workflow execution to cancel.</p>
+     */
     inline void SetWorkflowId(const Aws::String& value) { m_workflowIdHasBeenSet = true; m_workflowId = value; }
 
-    /*
-     <p>The workflowId of the workflow execution to cancel.</p>
-    */
+    /**
+     * <p>The workflowId of the workflow execution to cancel.</p>
+     */
     inline void SetWorkflowId(Aws::String&& value) { m_workflowIdHasBeenSet = true; m_workflowId = value; }
 
-    /*
-     <p>The workflowId of the workflow execution to cancel.</p>
-    */
+    /**
+     * <p>The workflowId of the workflow execution to cancel.</p>
+     */
     inline void SetWorkflowId(const char* value) { m_workflowIdHasBeenSet = true; m_workflowId.assign(value); }
 
-    /*
-     <p>The workflowId of the workflow execution to cancel.</p>
-    */
+    /**
+     * <p>The workflowId of the workflow execution to cancel.</p>
+     */
     inline RequestCancelWorkflowExecutionRequest& WithWorkflowId(const Aws::String& value) { SetWorkflowId(value); return *this;}
 
-    /*
-     <p>The workflowId of the workflow execution to cancel.</p>
-    */
+    /**
+     * <p>The workflowId of the workflow execution to cancel.</p>
+     */
     inline RequestCancelWorkflowExecutionRequest& WithWorkflowId(Aws::String&& value) { SetWorkflowId(value); return *this;}
 
-    /*
-     <p>The workflowId of the workflow execution to cancel.</p>
-    */
+    /**
+     * <p>The workflowId of the workflow execution to cancel.</p>
+     */
     inline RequestCancelWorkflowExecutionRequest& WithWorkflowId(const char* value) { SetWorkflowId(value); return *this;}
 
-    /*
-     <p>The runId of the workflow execution to cancel.</p>
-    */
+    /**
+     * <p>The runId of the workflow execution to cancel.</p>
+     */
     inline const Aws::String& GetRunId() const{ return m_runId; }
 
-    /*
-     <p>The runId of the workflow execution to cancel.</p>
-    */
+    /**
+     * <p>The runId of the workflow execution to cancel.</p>
+     */
     inline void SetRunId(const Aws::String& value) { m_runIdHasBeenSet = true; m_runId = value; }
 
-    /*
-     <p>The runId of the workflow execution to cancel.</p>
-    */
+    /**
+     * <p>The runId of the workflow execution to cancel.</p>
+     */
     inline void SetRunId(Aws::String&& value) { m_runIdHasBeenSet = true; m_runId = value; }
 
-    /*
-     <p>The runId of the workflow execution to cancel.</p>
-    */
+    /**
+     * <p>The runId of the workflow execution to cancel.</p>
+     */
     inline void SetRunId(const char* value) { m_runIdHasBeenSet = true; m_runId.assign(value); }
 
-    /*
-     <p>The runId of the workflow execution to cancel.</p>
-    */
+    /**
+     * <p>The runId of the workflow execution to cancel.</p>
+     */
     inline RequestCancelWorkflowExecutionRequest& WithRunId(const Aws::String& value) { SetRunId(value); return *this;}
 
-    /*
-     <p>The runId of the workflow execution to cancel.</p>
-    */
+    /**
+     * <p>The runId of the workflow execution to cancel.</p>
+     */
     inline RequestCancelWorkflowExecutionRequest& WithRunId(Aws::String&& value) { SetRunId(value); return *this;}
 
-    /*
-     <p>The runId of the workflow execution to cancel.</p>
-    */
+    /**
+     * <p>The runId of the workflow execution to cancel.</p>
+     */
     inline RequestCancelWorkflowExecutionRequest& WithRunId(const char* value) { SetRunId(value); return *this;}
 
   private:

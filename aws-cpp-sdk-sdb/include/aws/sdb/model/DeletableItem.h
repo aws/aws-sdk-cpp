@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -17,7 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/sdb/model/DeletableAttribute.h>
+#include <aws/sdb/model/Attribute.h>
 
 namespace Aws
 {
@@ -32,9 +32,7 @@ namespace SimpleDB
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
+
   class AWS_SIMPLEDB_API DeletableItem
   {
   public:
@@ -67,30 +65,30 @@ namespace Model
     inline DeletableItem& WithName(const char* value) { SetName(value); return *this;}
 
     
-    inline const Aws::Vector<DeletableAttribute>& GetAttributes() const{ return m_attributes; }
+    inline const Aws::Vector<Attribute>& GetAttributes() const{ return m_attributes; }
 
     
-    inline void SetAttributes(const Aws::Vector<DeletableAttribute>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
+    inline void SetAttributes(const Aws::Vector<Attribute>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
 
     
-    inline void SetAttributes(Aws::Vector<DeletableAttribute>&& value) { m_attributesHasBeenSet = true; m_attributes = value; }
+    inline void SetAttributes(Aws::Vector<Attribute>&& value) { m_attributesHasBeenSet = true; m_attributes = value; }
 
     
-    inline DeletableItem& WithAttributes(const Aws::Vector<DeletableAttribute>& value) { SetAttributes(value); return *this;}
+    inline DeletableItem& WithAttributes(const Aws::Vector<Attribute>& value) { SetAttributes(value); return *this;}
 
     
-    inline DeletableItem& WithAttributes(Aws::Vector<DeletableAttribute>&& value) { SetAttributes(value); return *this;}
+    inline DeletableItem& WithAttributes(Aws::Vector<Attribute>&& value) { SetAttributes(value); return *this;}
 
     
-    inline DeletableItem& AddAttributes(const DeletableAttribute& value) { m_attributesHasBeenSet = true; m_attributes.push_back(value); return *this; }
+    inline DeletableItem& AddAttributes(const Attribute& value) { m_attributesHasBeenSet = true; m_attributes.push_back(value); return *this; }
 
     
-    inline DeletableItem& AddAttributes(DeletableAttribute&& value) { m_attributesHasBeenSet = true; m_attributes.push_back(value); return *this; }
+    inline DeletableItem& AddAttributes(Attribute&& value) { m_attributesHasBeenSet = true; m_attributes.push_back(value); return *this; }
 
   private:
     Aws::String m_name;
     bool m_nameHasBeenSet;
-    Aws::Vector<DeletableAttribute> m_attributes;
+    Aws::Vector<Attribute> m_attributes;
     bool m_attributesHasBeenSet;
   };
 

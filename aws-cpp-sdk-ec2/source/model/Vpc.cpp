@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,16 +19,24 @@
 
 #include <utility>
 
-using namespace Aws::EC2::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
+
 Vpc::Vpc() : 
     m_vpcIdHasBeenSet(false),
+    m_state(VpcState::NOT_SET),
     m_stateHasBeenSet(false),
     m_cidrBlockHasBeenSet(false),
     m_dhcpOptionsIdHasBeenSet(false),
     m_tagsHasBeenSet(false),
+    m_instanceTenancy(Tenancy::NOT_SET),
     m_instanceTenancyHasBeenSet(false),
     m_isDefault(false),
     m_isDefaultHasBeenSet(false)
@@ -37,10 +45,12 @@ Vpc::Vpc() :
 
 Vpc::Vpc(const XmlNode& xmlNode) : 
     m_vpcIdHasBeenSet(false),
+    m_state(VpcState::NOT_SET),
     m_stateHasBeenSet(false),
     m_cidrBlockHasBeenSet(false),
     m_dhcpOptionsIdHasBeenSet(false),
     m_tagsHasBeenSet(false),
+    m_instanceTenancy(Tenancy::NOT_SET),
     m_instanceTenancyHasBeenSet(false),
     m_isDefault(false),
     m_isDefaultHasBeenSet(false)
@@ -113,37 +123,43 @@ void Vpc::OutputToStream(Aws::OStream& oStream, const char* location, unsigned i
   {
       oStream << location << index << locationValue << ".VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
   }
+
   if(m_stateHasBeenSet)
   {
       oStream << location << index << locationValue << ".State=" << VpcStateMapper::GetNameForVpcState(m_state) << "&";
   }
+
   if(m_cidrBlockHasBeenSet)
   {
       oStream << location << index << locationValue << ".CidrBlock=" << StringUtils::URLEncode(m_cidrBlock.c_str()) << "&";
   }
+
   if(m_dhcpOptionsIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".DhcpOptionsId=" << StringUtils::URLEncode(m_dhcpOptionsId.c_str()) << "&";
   }
+
   if(m_tagsHasBeenSet)
   {
-      unsigned tagsIdx = 0;
+      unsigned tagsIdx = 1;
       for(auto& item : m_tags)
       {
-        tagsIdx++;
         Aws::StringStream tagsSs;
-        tagsSs << location << index << locationValue << ".TagSet." << tagsIdx;
+        tagsSs << location << index << locationValue << ".TagSet." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
+
   if(m_instanceTenancyHasBeenSet)
   {
       oStream << location << index << locationValue << ".InstanceTenancy=" << TenancyMapper::GetNameForTenancy(m_instanceTenancy) << "&";
   }
+
   if(m_isDefaultHasBeenSet)
   {
       oStream << location << index << locationValue << ".IsDefault=" << m_isDefault << "&";
   }
+
 }
 
 void Vpc::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -166,11 +182,12 @@ void Vpc::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_tagsHasBeenSet)
   {
+      unsigned tagsIdx = 1;
       for(auto& item : m_tags)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".item";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream tagsSs;
+        tagsSs << location <<  ".item." << tagsIdx++;
+        item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
   if(m_instanceTenancyHasBeenSet)
@@ -182,3 +199,7 @@ void Vpc::OutputToStream(Aws::OStream& oStream, const char* location) const
       oStream << location << ".IsDefault=" << m_isDefault << "&";
   }
 }
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,15 +19,21 @@
 
 #include <utility>
 
-using namespace Aws::S3::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace S3
+{
+namespace Model
+{
 
 MultipartUpload::MultipartUpload() : 
     m_uploadIdHasBeenSet(false),
     m_keyHasBeenSet(false),
-    m_initiated(0.0),
     m_initiatedHasBeenSet(false),
+    m_storageClass(StorageClass::NOT_SET),
     m_storageClassHasBeenSet(false),
     m_ownerHasBeenSet(false),
     m_initiatorHasBeenSet(false)
@@ -37,8 +43,8 @@ MultipartUpload::MultipartUpload() :
 MultipartUpload::MultipartUpload(const XmlNode& xmlNode) : 
     m_uploadIdHasBeenSet(false),
     m_keyHasBeenSet(false),
-    m_initiated(0.0),
     m_initiatedHasBeenSet(false),
+    m_storageClass(StorageClass::NOT_SET),
     m_storageClassHasBeenSet(false),
     m_ownerHasBeenSet(false),
     m_initiatorHasBeenSet(false)
@@ -67,7 +73,7 @@ MultipartUpload& MultipartUpload::operator =(const XmlNode& xmlNode)
     XmlNode initiatedNode = resultNode.FirstChild("Initiated");
     if(!initiatedNode.IsNull())
     {
-      m_initiated = StringUtils::ConvertToDouble(StringUtils::Trim(initiatedNode.GetText().c_str()).c_str());
+      m_initiated = DateTime(StringUtils::Trim(initiatedNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_initiatedHasBeenSet = true;
     }
     XmlNode storageClassNode = resultNode.FirstChild("StorageClass");
@@ -110,10 +116,8 @@ void MultipartUpload::AddToNode(XmlNode& parentNode) const
 
   if(m_initiatedHasBeenSet)
   {
-   XmlNode initiatedNode = parentNode.CreateChildElement("Initiated");
-  ss << m_initiated;
-   initiatedNode.SetText(ss.str());
-  ss.str("");
+     XmlNode initiatedNode = parentNode.CreateChildElement("Initiated");
+     initiatedNode.SetText(m_initiated.ToGmtString(DateFormat::ISO_8601));
   }
 
   if(m_storageClassHasBeenSet)
@@ -135,3 +139,7 @@ void MultipartUpload::AddToNode(XmlNode& parentNode) const
   }
 
 }
+
+} // namespace Model
+} // namespace S3
+} // namespace Aws

@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace ElastiCache
+{
+namespace Model
+{
 
 EngineDefaults::EngineDefaults() : 
     m_cacheParameterGroupFamilyHasBeenSet(false),
@@ -93,28 +99,34 @@ void EngineDefaults::OutputToStream(Aws::OStream& oStream, const char* location,
   {
       oStream << location << index << locationValue << ".CacheParameterGroupFamily=" << StringUtils::URLEncode(m_cacheParameterGroupFamily.c_str()) << "&";
   }
+
   if(m_markerHasBeenSet)
   {
       oStream << location << index << locationValue << ".Marker=" << StringUtils::URLEncode(m_marker.c_str()) << "&";
   }
+
   if(m_parametersHasBeenSet)
   {
+      unsigned parametersIdx = 1;
       for(auto& item : m_parameters)
       {
         Aws::StringStream parametersSs;
-        parametersSs << location << index << locationValue << ".Parameter";
+        parametersSs << location << index << locationValue << ".Parameter." << parametersIdx++;
         item.OutputToStream(oStream, parametersSs.str().c_str());
       }
   }
+
   if(m_cacheNodeTypeSpecificParametersHasBeenSet)
   {
+      unsigned cacheNodeTypeSpecificParametersIdx = 1;
       for(auto& item : m_cacheNodeTypeSpecificParameters)
       {
         Aws::StringStream cacheNodeTypeSpecificParametersSs;
-        cacheNodeTypeSpecificParametersSs << location << index << locationValue << ".CacheNodeTypeSpecificParameter";
+        cacheNodeTypeSpecificParametersSs << location << index << locationValue << ".CacheNodeTypeSpecificParameter." << cacheNodeTypeSpecificParametersIdx++;
         item.OutputToStream(oStream, cacheNodeTypeSpecificParametersSs.str().c_str());
       }
   }
+
 }
 
 void EngineDefaults::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -129,20 +141,26 @@ void EngineDefaults::OutputToStream(Aws::OStream& oStream, const char* location)
   }
   if(m_parametersHasBeenSet)
   {
+      unsigned parametersIdx = 1;
       for(auto& item : m_parameters)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".Parameter";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream parametersSs;
+        parametersSs << location <<  ".Parameter." << parametersIdx++;
+        item.OutputToStream(oStream, parametersSs.str().c_str());
       }
   }
   if(m_cacheNodeTypeSpecificParametersHasBeenSet)
   {
+      unsigned cacheNodeTypeSpecificParametersIdx = 1;
       for(auto& item : m_cacheNodeTypeSpecificParameters)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".CacheNodeTypeSpecificParameter";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream cacheNodeTypeSpecificParametersSs;
+        cacheNodeTypeSpecificParametersSs << location <<  ".CacheNodeTypeSpecificParameter." << cacheNodeTypeSpecificParametersIdx++;
+        item.OutputToStream(oStream, cacheNodeTypeSpecificParametersSs.str().c_str());
       }
   }
 }
+
+} // namespace Model
+} // namespace ElastiCache
+} // namespace Aws

@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -25,6 +25,7 @@ ListInstancesRequest::ListInstancesRequest() :
     m_clusterIdHasBeenSet(false),
     m_instanceGroupIdHasBeenSet(false),
     m_instanceGroupTypesHasBeenSet(false),
+    m_instanceStatesHasBeenSet(false),
     m_markerHasBeenSet(false)
 {
 }
@@ -56,6 +57,17 @@ Aws::String ListInstancesRequest::SerializePayload() const
 
   }
 
+  if(m_instanceStatesHasBeenSet)
+  {
+   Array<JsonValue> instanceStatesJsonList(m_instanceStates.size());
+   for(unsigned instanceStatesIndex = 0; instanceStatesIndex < instanceStatesJsonList.GetLength(); ++instanceStatesIndex)
+   {
+     instanceStatesJsonList[instanceStatesIndex].AsString(InstanceStateMapper::GetNameForInstanceState(m_instanceStates[instanceStatesIndex]));
+   }
+   payload.WithArray("InstanceStates", std::move(instanceStatesJsonList));
+
+  }
+
   if(m_markerHasBeenSet)
   {
    payload.WithString("Marker", m_marker);
@@ -69,7 +81,7 @@ Aws::Http::HeaderValueCollection ListInstancesRequest::GetRequestSpecificHeaders
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "ElasticMapReduce.ListInstances"));
-  return std::move(headers);
+  return headers;
 
 }
 

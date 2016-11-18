@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,17 +19,22 @@
 
 #include <utility>
 
-using namespace Aws::EC2::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
+
 ReservedInstances::ReservedInstances() : 
     m_reservedInstancesIdHasBeenSet(false),
+    m_instanceType(InstanceType::NOT_SET),
     m_instanceTypeHasBeenSet(false),
     m_availabilityZoneHasBeenSet(false),
-    m_start(0.0),
     m_startHasBeenSet(false),
-    m_end(0.0),
     m_endHasBeenSet(false),
     m_duration(0),
     m_durationHasBeenSet(false),
@@ -39,11 +44,16 @@ ReservedInstances::ReservedInstances() :
     m_fixedPriceHasBeenSet(false),
     m_instanceCount(0),
     m_instanceCountHasBeenSet(false),
+    m_productDescription(RIProductDescription::NOT_SET),
     m_productDescriptionHasBeenSet(false),
+    m_state(ReservedInstanceState::NOT_SET),
     m_stateHasBeenSet(false),
     m_tagsHasBeenSet(false),
+    m_instanceTenancy(Tenancy::NOT_SET),
     m_instanceTenancyHasBeenSet(false),
+    m_currencyCode(CurrencyCodeValues::NOT_SET),
     m_currencyCodeHasBeenSet(false),
+    m_offeringType(OfferingTypeValues::NOT_SET),
     m_offeringTypeHasBeenSet(false),
     m_recurringChargesHasBeenSet(false)
 {
@@ -51,11 +61,10 @@ ReservedInstances::ReservedInstances() :
 
 ReservedInstances::ReservedInstances(const XmlNode& xmlNode) : 
     m_reservedInstancesIdHasBeenSet(false),
+    m_instanceType(InstanceType::NOT_SET),
     m_instanceTypeHasBeenSet(false),
     m_availabilityZoneHasBeenSet(false),
-    m_start(0.0),
     m_startHasBeenSet(false),
-    m_end(0.0),
     m_endHasBeenSet(false),
     m_duration(0),
     m_durationHasBeenSet(false),
@@ -65,11 +74,16 @@ ReservedInstances::ReservedInstances(const XmlNode& xmlNode) :
     m_fixedPriceHasBeenSet(false),
     m_instanceCount(0),
     m_instanceCountHasBeenSet(false),
+    m_productDescription(RIProductDescription::NOT_SET),
     m_productDescriptionHasBeenSet(false),
+    m_state(ReservedInstanceState::NOT_SET),
     m_stateHasBeenSet(false),
     m_tagsHasBeenSet(false),
+    m_instanceTenancy(Tenancy::NOT_SET),
     m_instanceTenancyHasBeenSet(false),
+    m_currencyCode(CurrencyCodeValues::NOT_SET),
     m_currencyCodeHasBeenSet(false),
+    m_offeringType(OfferingTypeValues::NOT_SET),
     m_offeringTypeHasBeenSet(false),
     m_recurringChargesHasBeenSet(false)
 {
@@ -103,13 +117,13 @@ ReservedInstances& ReservedInstances::operator =(const XmlNode& xmlNode)
     XmlNode startNode = resultNode.FirstChild("start");
     if(!startNode.IsNull())
     {
-      m_start = StringUtils::ConvertToDouble(StringUtils::Trim(startNode.GetText().c_str()).c_str());
+      m_start = DateTime(StringUtils::Trim(startNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_startHasBeenSet = true;
     }
     XmlNode endNode = resultNode.FirstChild("end");
     if(!endNode.IsNull())
     {
-      m_end = StringUtils::ConvertToDouble(StringUtils::Trim(endNode.GetText().c_str()).c_str());
+      m_end = DateTime(StringUtils::Trim(endNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_endHasBeenSet = true;
     }
     XmlNode durationNode = resultNode.FirstChild("duration");
@@ -201,80 +215,94 @@ void ReservedInstances::OutputToStream(Aws::OStream& oStream, const char* locati
   {
       oStream << location << index << locationValue << ".ReservedInstancesId=" << StringUtils::URLEncode(m_reservedInstancesId.c_str()) << "&";
   }
+
   if(m_instanceTypeHasBeenSet)
   {
       oStream << location << index << locationValue << ".InstanceType=" << InstanceTypeMapper::GetNameForInstanceType(m_instanceType) << "&";
   }
+
   if(m_availabilityZoneHasBeenSet)
   {
       oStream << location << index << locationValue << ".AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
   }
+
   if(m_startHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Start=" << m_start << "&";
+      oStream << location << index << locationValue << ".Start=" << StringUtils::URLEncode(m_start.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_endHasBeenSet)
   {
-      oStream << location << index << locationValue << ".End=" << m_end << "&";
+      oStream << location << index << locationValue << ".End=" << StringUtils::URLEncode(m_end.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_durationHasBeenSet)
   {
       oStream << location << index << locationValue << ".Duration=" << m_duration << "&";
   }
+
   if(m_usagePriceHasBeenSet)
   {
       oStream << location << index << locationValue << ".UsagePrice=" << m_usagePrice << "&";
   }
+
   if(m_fixedPriceHasBeenSet)
   {
       oStream << location << index << locationValue << ".FixedPrice=" << m_fixedPrice << "&";
   }
+
   if(m_instanceCountHasBeenSet)
   {
       oStream << location << index << locationValue << ".InstanceCount=" << m_instanceCount << "&";
   }
+
   if(m_productDescriptionHasBeenSet)
   {
       oStream << location << index << locationValue << ".ProductDescription=" << RIProductDescriptionMapper::GetNameForRIProductDescription(m_productDescription) << "&";
   }
+
   if(m_stateHasBeenSet)
   {
       oStream << location << index << locationValue << ".State=" << ReservedInstanceStateMapper::GetNameForReservedInstanceState(m_state) << "&";
   }
+
   if(m_tagsHasBeenSet)
   {
-      unsigned tagsIdx = 0;
+      unsigned tagsIdx = 1;
       for(auto& item : m_tags)
       {
-        tagsIdx++;
         Aws::StringStream tagsSs;
-        tagsSs << location << index << locationValue << ".TagSet." << tagsIdx;
+        tagsSs << location << index << locationValue << ".TagSet." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
+
   if(m_instanceTenancyHasBeenSet)
   {
       oStream << location << index << locationValue << ".InstanceTenancy=" << TenancyMapper::GetNameForTenancy(m_instanceTenancy) << "&";
   }
+
   if(m_currencyCodeHasBeenSet)
   {
       oStream << location << index << locationValue << ".CurrencyCode=" << CurrencyCodeValuesMapper::GetNameForCurrencyCodeValues(m_currencyCode) << "&";
   }
+
   if(m_offeringTypeHasBeenSet)
   {
       oStream << location << index << locationValue << ".OfferingType=" << OfferingTypeValuesMapper::GetNameForOfferingTypeValues(m_offeringType) << "&";
   }
+
   if(m_recurringChargesHasBeenSet)
   {
-      unsigned recurringChargesIdx = 0;
+      unsigned recurringChargesIdx = 1;
       for(auto& item : m_recurringCharges)
       {
-        recurringChargesIdx++;
         Aws::StringStream recurringChargesSs;
-        recurringChargesSs << location << index << locationValue << ".RecurringCharges." << recurringChargesIdx;
+        recurringChargesSs << location << index << locationValue << ".RecurringCharges." << recurringChargesIdx++;
         item.OutputToStream(oStream, recurringChargesSs.str().c_str());
       }
   }
+
 }
 
 void ReservedInstances::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -293,11 +321,11 @@ void ReservedInstances::OutputToStream(Aws::OStream& oStream, const char* locati
   }
   if(m_startHasBeenSet)
   {
-      oStream << location << ".Start=" << m_start << "&";
+      oStream << location << ".Start=" << StringUtils::URLEncode(m_start.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_endHasBeenSet)
   {
-      oStream << location << ".End=" << m_end << "&";
+      oStream << location << ".End=" << StringUtils::URLEncode(m_end.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_durationHasBeenSet)
   {
@@ -325,11 +353,12 @@ void ReservedInstances::OutputToStream(Aws::OStream& oStream, const char* locati
   }
   if(m_tagsHasBeenSet)
   {
+      unsigned tagsIdx = 1;
       for(auto& item : m_tags)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".item";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream tagsSs;
+        tagsSs << location <<  ".item." << tagsIdx++;
+        item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
   if(m_instanceTenancyHasBeenSet)
@@ -346,11 +375,16 @@ void ReservedInstances::OutputToStream(Aws::OStream& oStream, const char* locati
   }
   if(m_recurringChargesHasBeenSet)
   {
+      unsigned recurringChargesIdx = 1;
       for(auto& item : m_recurringCharges)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".item";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream recurringChargesSs;
+        recurringChargesSs << location <<  ".item." << recurringChargesIdx++;
+        item.OutputToStream(oStream, recurringChargesSs.str().c_str());
       }
   }
 }
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

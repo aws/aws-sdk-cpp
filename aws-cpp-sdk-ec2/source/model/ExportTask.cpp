@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,13 +19,20 @@
 
 #include <utility>
 
-using namespace Aws::EC2::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
 
 ExportTask::ExportTask() : 
     m_exportTaskIdHasBeenSet(false),
     m_descriptionHasBeenSet(false),
+    m_state(ExportTaskState::NOT_SET),
     m_stateHasBeenSet(false),
     m_statusMessageHasBeenSet(false),
     m_instanceExportDetailsHasBeenSet(false),
@@ -36,6 +43,7 @@ ExportTask::ExportTask() :
 ExportTask::ExportTask(const XmlNode& xmlNode) : 
     m_exportTaskIdHasBeenSet(false),
     m_descriptionHasBeenSet(false),
+    m_state(ExportTaskState::NOT_SET),
     m_stateHasBeenSet(false),
     m_statusMessageHasBeenSet(false),
     m_instanceExportDetailsHasBeenSet(false),
@@ -97,30 +105,36 @@ void ExportTask::OutputToStream(Aws::OStream& oStream, const char* location, uns
   {
       oStream << location << index << locationValue << ".ExportTaskId=" << StringUtils::URLEncode(m_exportTaskId.c_str()) << "&";
   }
+
   if(m_descriptionHasBeenSet)
   {
       oStream << location << index << locationValue << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
+
   if(m_stateHasBeenSet)
   {
       oStream << location << index << locationValue << ".State=" << ExportTaskStateMapper::GetNameForExportTaskState(m_state) << "&";
   }
+
   if(m_statusMessageHasBeenSet)
   {
       oStream << location << index << locationValue << ".StatusMessage=" << StringUtils::URLEncode(m_statusMessage.c_str()) << "&";
   }
+
   if(m_instanceExportDetailsHasBeenSet)
   {
       Aws::StringStream instanceExportDetailsLocationAndMemberSs;
       instanceExportDetailsLocationAndMemberSs << location << index << locationValue << ".InstanceExportDetails";
       m_instanceExportDetails.OutputToStream(oStream, instanceExportDetailsLocationAndMemberSs.str().c_str());
   }
+
   if(m_exportToS3TaskHasBeenSet)
   {
       Aws::StringStream exportToS3TaskLocationAndMemberSs;
       exportToS3TaskLocationAndMemberSs << location << index << locationValue << ".ExportToS3Task";
       m_exportToS3Task.OutputToStream(oStream, exportToS3TaskLocationAndMemberSs.str().c_str());
   }
+
 }
 
 void ExportTask::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -154,3 +168,7 @@ void ExportTask::OutputToStream(Aws::OStream& oStream, const char* location) con
       m_exportToS3Task.OutputToStream(oStream, exportToS3TaskLocationAndMember.c_str());
   }
 }
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

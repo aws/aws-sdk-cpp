@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,49 +24,62 @@ namespace Redshift
 namespace Model
 {
 
-  /*
-    <p> </p>
-  */
+  /**
+   * <p/>
+   */
   class AWS_REDSHIFT_API DescribeEventCategoriesRequest : public RedshiftRequest
   {
   public:
     DescribeEventCategoriesRequest();
     Aws::String SerializePayload() const override;
 
-
-    /*
-     <p> The source type, such as cluster or parameter group, to which the described event categories apply. </p> <p> Valid values: cluster, snapshot, parameter group, and security group. </p>
-    */
+    /**
+     * <p>The source type, such as cluster or parameter group, to which the described
+     * event categories apply.</p> <p>Valid values: cluster, cluster-snapshot,
+     * cluster-parameter-group, and cluster-security-group.</p>
+     */
     inline const Aws::String& GetSourceType() const{ return m_sourceType; }
 
-    /*
-     <p> The source type, such as cluster or parameter group, to which the described event categories apply. </p> <p> Valid values: cluster, snapshot, parameter group, and security group. </p>
-    */
+    /**
+     * <p>The source type, such as cluster or parameter group, to which the described
+     * event categories apply.</p> <p>Valid values: cluster, cluster-snapshot,
+     * cluster-parameter-group, and cluster-security-group.</p>
+     */
     inline void SetSourceType(const Aws::String& value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
 
-    /*
-     <p> The source type, such as cluster or parameter group, to which the described event categories apply. </p> <p> Valid values: cluster, snapshot, parameter group, and security group. </p>
-    */
+    /**
+     * <p>The source type, such as cluster or parameter group, to which the described
+     * event categories apply.</p> <p>Valid values: cluster, cluster-snapshot,
+     * cluster-parameter-group, and cluster-security-group.</p>
+     */
     inline void SetSourceType(Aws::String&& value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
 
-    /*
-     <p> The source type, such as cluster or parameter group, to which the described event categories apply. </p> <p> Valid values: cluster, snapshot, parameter group, and security group. </p>
-    */
+    /**
+     * <p>The source type, such as cluster or parameter group, to which the described
+     * event categories apply.</p> <p>Valid values: cluster, cluster-snapshot,
+     * cluster-parameter-group, and cluster-security-group.</p>
+     */
     inline void SetSourceType(const char* value) { m_sourceTypeHasBeenSet = true; m_sourceType.assign(value); }
 
-    /*
-     <p> The source type, such as cluster or parameter group, to which the described event categories apply. </p> <p> Valid values: cluster, snapshot, parameter group, and security group. </p>
-    */
+    /**
+     * <p>The source type, such as cluster or parameter group, to which the described
+     * event categories apply.</p> <p>Valid values: cluster, cluster-snapshot,
+     * cluster-parameter-group, and cluster-security-group.</p>
+     */
     inline DescribeEventCategoriesRequest& WithSourceType(const Aws::String& value) { SetSourceType(value); return *this;}
 
-    /*
-     <p> The source type, such as cluster or parameter group, to which the described event categories apply. </p> <p> Valid values: cluster, snapshot, parameter group, and security group. </p>
-    */
+    /**
+     * <p>The source type, such as cluster or parameter group, to which the described
+     * event categories apply.</p> <p>Valid values: cluster, cluster-snapshot,
+     * cluster-parameter-group, and cluster-security-group.</p>
+     */
     inline DescribeEventCategoriesRequest& WithSourceType(Aws::String&& value) { SetSourceType(value); return *this;}
 
-    /*
-     <p> The source type, such as cluster or parameter group, to which the described event categories apply. </p> <p> Valid values: cluster, snapshot, parameter group, and security group. </p>
-    */
+    /**
+     * <p>The source type, such as cluster or parameter group, to which the described
+     * event categories apply.</p> <p>Valid values: cluster, cluster-snapshot,
+     * cluster-parameter-group, and cluster-security-group.</p>
+     */
     inline DescribeEventCategoriesRequest& WithSourceType(const char* value) { SetSourceType(value); return *this;}
 
   private:

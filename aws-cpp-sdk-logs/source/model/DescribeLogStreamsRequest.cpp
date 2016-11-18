@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ using namespace Aws::Utils;
 DescribeLogStreamsRequest::DescribeLogStreamsRequest() : 
     m_logGroupNameHasBeenSet(false),
     m_logStreamNamePrefixHasBeenSet(false),
+    m_orderBy(OrderBy::NOT_SET),
     m_orderByHasBeenSet(false),
     m_descending(false),
     m_descendingHasBeenSet(false),
@@ -79,7 +80,7 @@ Aws::Http::HeaderValueCollection DescribeLogStreamsRequest::GetRequestSpecificHe
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "Logs_20140328.DescribeLogStreams"));
-  return std::move(headers);
+  return headers;
 
 }
 

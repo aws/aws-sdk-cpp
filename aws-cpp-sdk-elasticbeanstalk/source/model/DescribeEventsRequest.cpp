@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -26,10 +26,9 @@ DescribeEventsRequest::DescribeEventsRequest() :
     m_environmentIdHasBeenSet(false),
     m_environmentNameHasBeenSet(false),
     m_requestIdHasBeenSet(false),
+    m_severity(EventSeverity::NOT_SET),
     m_severityHasBeenSet(false),
-    m_startTime(0.0),
     m_startTimeHasBeenSet(false),
-    m_endTime(0.0),
     m_endTimeHasBeenSet(false),
     m_maxRecords(0),
     m_maxRecordsHasBeenSet(false),
@@ -45,46 +44,57 @@ Aws::String DescribeEventsRequest::SerializePayload() const
   {
     ss << "ApplicationName=" << StringUtils::URLEncode(m_applicationName.c_str()) << "&";
   }
+
   if(m_versionLabelHasBeenSet)
   {
     ss << "VersionLabel=" << StringUtils::URLEncode(m_versionLabel.c_str()) << "&";
   }
+
   if(m_templateNameHasBeenSet)
   {
     ss << "TemplateName=" << StringUtils::URLEncode(m_templateName.c_str()) << "&";
   }
+
   if(m_environmentIdHasBeenSet)
   {
     ss << "EnvironmentId=" << StringUtils::URLEncode(m_environmentId.c_str()) << "&";
   }
+
   if(m_environmentNameHasBeenSet)
   {
     ss << "EnvironmentName=" << StringUtils::URLEncode(m_environmentName.c_str()) << "&";
   }
+
   if(m_requestIdHasBeenSet)
   {
     ss << "RequestId=" << StringUtils::URLEncode(m_requestId.c_str()) << "&";
   }
+
   if(m_severityHasBeenSet)
   {
     ss << "Severity=" << EventSeverityMapper::GetNameForEventSeverity(m_severity) << "&";
   }
+
   if(m_startTimeHasBeenSet)
   {
-    ss << "StartTime=" << m_startTime << "&";
+    ss << "StartTime=" << StringUtils::URLEncode(m_startTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_endTimeHasBeenSet)
   {
-    ss << "EndTime=" << m_endTime << "&";
+    ss << "EndTime=" << StringUtils::URLEncode(m_endTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_maxRecordsHasBeenSet)
   {
     ss << "MaxRecords=" << m_maxRecords << "&";
   }
+
   if(m_nextTokenHasBeenSet)
   {
     ss << "NextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";
   }
+
   ss << "Version=2010-12-01";
   return ss.str();
 }

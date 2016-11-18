@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -17,16 +17,20 @@
 
 #include <utility>
 
-using namespace Aws::CognitoSync::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace CognitoSync
+{
+namespace Model
+{
 
 Dataset::Dataset() : 
     m_identityIdHasBeenSet(false),
     m_datasetNameHasBeenSet(false),
-    m_creationDate(0.0),
     m_creationDateHasBeenSet(false),
-    m_lastModifiedDate(0.0),
     m_lastModifiedDateHasBeenSet(false),
     m_lastModifiedByHasBeenSet(false),
     m_dataStorage(0),
@@ -39,9 +43,7 @@ Dataset::Dataset() :
 Dataset::Dataset(const JsonValue& jsonValue) : 
     m_identityIdHasBeenSet(false),
     m_datasetNameHasBeenSet(false),
-    m_creationDate(0.0),
     m_creationDateHasBeenSet(false),
-    m_lastModifiedDate(0.0),
     m_lastModifiedDateHasBeenSet(false),
     m_lastModifiedByHasBeenSet(false),
     m_dataStorage(0),
@@ -124,14 +126,12 @@ JsonValue Dataset::Jsonize() const
 
   if(m_creationDateHasBeenSet)
   {
-   payload.WithDouble("CreationDate", m_creationDate);
-
+   payload.WithDouble("CreationDate", m_creationDate.SecondsWithMSPrecision());
   }
 
   if(m_lastModifiedDateHasBeenSet)
   {
-   payload.WithDouble("LastModifiedDate", m_lastModifiedDate);
-
+   payload.WithDouble("LastModifiedDate", m_lastModifiedDate.SecondsWithMSPrecision());
   }
 
   if(m_lastModifiedByHasBeenSet)
@@ -152,5 +152,9 @@ JsonValue Dataset::Jsonize() const
 
   }
 
-  return std::move(payload);
+  return payload;
 }
+
+} // namespace Model
+} // namespace CognitoSync
+} // namespace Aws

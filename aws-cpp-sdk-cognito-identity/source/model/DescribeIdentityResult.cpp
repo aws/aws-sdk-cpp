@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,15 +24,11 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeIdentityResult::DescribeIdentityResult() : 
-    m_creationDate(0.0),
-    m_lastModifiedDate(0.0)
+DescribeIdentityResult::DescribeIdentityResult()
 {
 }
 
-DescribeIdentityResult::DescribeIdentityResult(const AmazonWebServiceResult<JsonValue>& result) : 
-    m_creationDate(0.0),
-    m_lastModifiedDate(0.0)
+DescribeIdentityResult::DescribeIdentityResult(const AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }

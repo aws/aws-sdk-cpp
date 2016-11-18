@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -33,9 +33,9 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
+  /**
+   * <p>Contains the output of CreateCustomerGateway.</p>
+   */
   class AWS_EC2_API CreateCustomerGatewayResponse
   {
   public:
@@ -43,29 +43,29 @@ namespace Model
     CreateCustomerGatewayResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     CreateCustomerGatewayResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>Information about the customer gateway.</p>
-    */
+    /**
+     * <p>Information about the customer gateway.</p>
+     */
     inline const CustomerGateway& GetCustomerGateway() const{ return m_customerGateway; }
 
-    /*
-     <p>Information about the customer gateway.</p>
-    */
+    /**
+     * <p>Information about the customer gateway.</p>
+     */
     inline void SetCustomerGateway(const CustomerGateway& value) { m_customerGateway = value; }
 
-    /*
-     <p>Information about the customer gateway.</p>
-    */
+    /**
+     * <p>Information about the customer gateway.</p>
+     */
     inline void SetCustomerGateway(CustomerGateway&& value) { m_customerGateway = value; }
 
-    /*
-     <p>Information about the customer gateway.</p>
-    */
+    /**
+     * <p>Information about the customer gateway.</p>
+     */
     inline CreateCustomerGatewayResponse& WithCustomerGateway(const CustomerGateway& value) { SetCustomerGateway(value); return *this;}
 
-    /*
-     <p>Information about the customer gateway.</p>
-    */
+    /**
+     * <p>Information about the customer gateway.</p>
+     */
     inline CreateCustomerGatewayResponse& WithCustomerGateway(CustomerGateway&& value) { SetCustomerGateway(value); return *this;}
 
     

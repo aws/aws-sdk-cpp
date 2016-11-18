@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -17,15 +17,22 @@
 
 #include <utility>
 
-using namespace Aws::EFS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EFS
+{
+namespace Model
+{
 
 MountTargetDescription::MountTargetDescription() : 
     m_ownerIdHasBeenSet(false),
     m_mountTargetIdHasBeenSet(false),
     m_fileSystemIdHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
+    m_lifeCycleState(LifeCycleState::NOT_SET),
     m_lifeCycleStateHasBeenSet(false),
     m_ipAddressHasBeenSet(false),
     m_networkInterfaceIdHasBeenSet(false)
@@ -37,6 +44,7 @@ MountTargetDescription::MountTargetDescription(const JsonValue& jsonValue) :
     m_mountTargetIdHasBeenSet(false),
     m_fileSystemIdHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
+    m_lifeCycleState(LifeCycleState::NOT_SET),
     m_lifeCycleStateHasBeenSet(false),
     m_ipAddressHasBeenSet(false),
     m_networkInterfaceIdHasBeenSet(false)
@@ -143,5 +151,9 @@ JsonValue MountTargetDescription::Jsonize() const
 
   }
 
-  return std::move(payload);
+  return payload;
 }
+
+} // namespace Model
+} // namespace EFS
+} // namespace Aws

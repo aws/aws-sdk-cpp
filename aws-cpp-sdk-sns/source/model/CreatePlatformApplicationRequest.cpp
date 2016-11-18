@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -34,10 +34,12 @@ Aws::String CreatePlatformApplicationRequest::SerializePayload() const
   {
     ss << "Name=" << StringUtils::URLEncode(m_name.c_str()) << "&";
   }
+
   if(m_platformHasBeenSet)
   {
     ss << "Platform=" << StringUtils::URLEncode(m_platform.c_str()) << "&";
   }
+
   if(m_attributesHasBeenSet)
   {
     unsigned attributesCount = 1;
@@ -50,6 +52,7 @@ Aws::String CreatePlatformApplicationRequest::SerializePayload() const
       attributesCount++;
     }
   }
+
   ss << "Version=2010-03-31";
   return ss.str();
 }

@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,49 +24,48 @@ namespace Redshift
 namespace Model
 {
 
-  /*
-    <p>The result of the <code>DeleteSnapshotCopyGrant</code> action.</p>
-  */
+  /**
+   * <p>The result of the <code>DeleteSnapshotCopyGrant</code> action.</p>
+   */
   class AWS_REDSHIFT_API DeleteSnapshotCopyGrantRequest : public RedshiftRequest
   {
   public:
     DeleteSnapshotCopyGrantRequest();
     Aws::String SerializePayload() const override;
 
-
-    /*
-     <p>The name of the snapshot copy grant to delete.</p>
-    */
+    /**
+     * <p>The name of the snapshot copy grant to delete.</p>
+     */
     inline const Aws::String& GetSnapshotCopyGrantName() const{ return m_snapshotCopyGrantName; }
 
-    /*
-     <p>The name of the snapshot copy grant to delete.</p>
-    */
+    /**
+     * <p>The name of the snapshot copy grant to delete.</p>
+     */
     inline void SetSnapshotCopyGrantName(const Aws::String& value) { m_snapshotCopyGrantNameHasBeenSet = true; m_snapshotCopyGrantName = value; }
 
-    /*
-     <p>The name of the snapshot copy grant to delete.</p>
-    */
+    /**
+     * <p>The name of the snapshot copy grant to delete.</p>
+     */
     inline void SetSnapshotCopyGrantName(Aws::String&& value) { m_snapshotCopyGrantNameHasBeenSet = true; m_snapshotCopyGrantName = value; }
 
-    /*
-     <p>The name of the snapshot copy grant to delete.</p>
-    */
+    /**
+     * <p>The name of the snapshot copy grant to delete.</p>
+     */
     inline void SetSnapshotCopyGrantName(const char* value) { m_snapshotCopyGrantNameHasBeenSet = true; m_snapshotCopyGrantName.assign(value); }
 
-    /*
-     <p>The name of the snapshot copy grant to delete.</p>
-    */
+    /**
+     * <p>The name of the snapshot copy grant to delete.</p>
+     */
     inline DeleteSnapshotCopyGrantRequest& WithSnapshotCopyGrantName(const Aws::String& value) { SetSnapshotCopyGrantName(value); return *this;}
 
-    /*
-     <p>The name of the snapshot copy grant to delete.</p>
-    */
+    /**
+     * <p>The name of the snapshot copy grant to delete.</p>
+     */
     inline DeleteSnapshotCopyGrantRequest& WithSnapshotCopyGrantName(Aws::String&& value) { SetSnapshotCopyGrantName(value); return *this;}
 
-    /*
-     <p>The name of the snapshot copy grant to delete.</p>
-    */
+    /**
+     * <p>The name of the snapshot copy grant to delete.</p>
+     */
     inline DeleteSnapshotCopyGrantRequest& WithSnapshotCopyGrantName(const char* value) { SetSnapshotCopyGrantName(value); return *this;}
 
   private:

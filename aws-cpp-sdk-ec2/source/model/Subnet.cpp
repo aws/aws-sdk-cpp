@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,12 +19,19 @@
 
 #include <utility>
 
-using namespace Aws::EC2::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
+
 Subnet::Subnet() : 
     m_subnetIdHasBeenSet(false),
+    m_state(SubnetState::NOT_SET),
     m_stateHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
     m_cidrBlockHasBeenSet(false),
@@ -41,6 +48,7 @@ Subnet::Subnet() :
 
 Subnet::Subnet(const XmlNode& xmlNode) : 
     m_subnetIdHasBeenSet(false),
+    m_state(SubnetState::NOT_SET),
     m_stateHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
     m_cidrBlockHasBeenSet(false),
@@ -133,45 +141,53 @@ void Subnet::OutputToStream(Aws::OStream& oStream, const char* location, unsigne
   {
       oStream << location << index << locationValue << ".SubnetId=" << StringUtils::URLEncode(m_subnetId.c_str()) << "&";
   }
+
   if(m_stateHasBeenSet)
   {
       oStream << location << index << locationValue << ".State=" << SubnetStateMapper::GetNameForSubnetState(m_state) << "&";
   }
+
   if(m_vpcIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
   }
+
   if(m_cidrBlockHasBeenSet)
   {
       oStream << location << index << locationValue << ".CidrBlock=" << StringUtils::URLEncode(m_cidrBlock.c_str()) << "&";
   }
+
   if(m_availableIpAddressCountHasBeenSet)
   {
       oStream << location << index << locationValue << ".AvailableIpAddressCount=" << m_availableIpAddressCount << "&";
   }
+
   if(m_availabilityZoneHasBeenSet)
   {
       oStream << location << index << locationValue << ".AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
   }
+
   if(m_defaultForAzHasBeenSet)
   {
       oStream << location << index << locationValue << ".DefaultForAz=" << m_defaultForAz << "&";
   }
+
   if(m_mapPublicIpOnLaunchHasBeenSet)
   {
       oStream << location << index << locationValue << ".MapPublicIpOnLaunch=" << m_mapPublicIpOnLaunch << "&";
   }
+
   if(m_tagsHasBeenSet)
   {
-      unsigned tagsIdx = 0;
+      unsigned tagsIdx = 1;
       for(auto& item : m_tags)
       {
-        tagsIdx++;
         Aws::StringStream tagsSs;
-        tagsSs << location << index << locationValue << ".TagSet." << tagsIdx;
+        tagsSs << location << index << locationValue << ".TagSet." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
+
 }
 
 void Subnet::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -210,11 +226,16 @@ void Subnet::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_tagsHasBeenSet)
   {
+      unsigned tagsIdx = 1;
       for(auto& item : m_tags)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".item";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream tagsSs;
+        tagsSs << location <<  ".item." << tagsIdx++;
+        item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
 }
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

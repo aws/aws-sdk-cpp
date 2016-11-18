@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -21,7 +21,7 @@ namespace Aws
 {
 namespace KMS
 {
-enum class AWS_KMS_API KMSErrors
+enum class KMSErrors
 {
   //From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
@@ -44,23 +44,31 @@ enum class AWS_KMS_API KMSErrors
   RESOURCE_NOT_FOUND = 16,
   UNRECOGNIZED_CLIENT = 17,
   MALFORMED_QUERY_STRING = 18,
+  SLOW_DOWN = 19,
+  REQUEST_TIME_TOO_SKEWED = 20,
+  INVALID_SIGNATURE = 21,
+  SIGNATURE_DOES_NOT_MATCH = 22,
   NETWORK_CONNECTION = 99,
+  
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
   ALREADY_EXISTS= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   DEPENDENCY_TIMEOUT,
   DISABLED,
+  EXPIRED_IMPORT_TOKEN,
+  INCORRECT_KEY_MATERIAL,
   INVALID_ALIAS_NAME,
   INVALID_ARN,
   INVALID_CIPHERTEXT,
   INVALID_GRANT_ID,
   INVALID_GRANT_TOKEN,
-  INVALID_KEY_STATE_TRANSITION,
+  INVALID_IMPORT_TOKEN,
   INVALID_KEY_USAGE,
   INVALID_MARKER,
   KEY_UNAVAILABLE,
   K_M_S_INTERNAL,
+  K_M_S_INVALID_STATE,
   LIMIT_EXCEEDED,
   MALFORMED_POLICY_DOCUMENT,
   NOT_FOUND,

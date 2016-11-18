@@ -1,5 +1,5 @@
 /*
-  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+  * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
   *
   * Licensed under the Apache License, Version 2.0 (the "License").
   * You may not use this file except in compliance with the License.
@@ -13,89 +13,55 @@
   * permissions and limitations under the License.
   */
 
-
 #include <aws/external/gtest.h>
 #include <aws/testing/MemoryTesting.h>
 #include <aws/identity-management/auth/PersistentCognitoIdentityProvider.h>
-#include <aws/core/utils/FileSystemUtils.h>
+#include <aws/core/platform/FileSystem.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/DateTime.h>
+#include <aws/core/platform/Platform.h>
 #include <fstream>
-
-//since MAC isn't posix compliant, it likes to complain about std::tmpnam. Also, it the std:: function is supposed
-//to be different than the posix defined function.
-//turn it off because we need it for this test and this isn't production code
-//anyways.
-#ifdef __APPLE__
-
-#ifdef __clang__
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wdeprecated-declarations"
-#endif // __clang__
-
-#ifdef __GNUC__
-#pragma GCC diagnostic push
-#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
-#endif // __GNUC__
-
-#endif // __APPLE__
-
-#ifdef _MSC_VER
-#pragma warning(disable: 4996) // _CRT_SECURE_NO_WARNINGS
-#endif
 
 using namespace Aws::Auth;
 using namespace Aws::Utils;
 using namespace Aws::Utils::Json;
 
-#ifdef _WIN32
-Aws::String ComputeIdentityFilePath()
+class PersistentCognitoIdentityProvider_JsonImpl_Test : public ::testing::Test
 {
-    static bool s_initialized = false;
-    static char s_tempName[L_tmpnam_s+1];
+public:
 
-	/*
-	Prior to VS 2014, tmpnam/tmpnam_s generated root level files ("\filename") which were not appropriate for our usage, so for the windows version, we prepended a '.' to make it a
-	tempfile in the current directory.  Starting with VS2014, the behavior of tmpnam/tmpnam_s was changed to be a full, valid filepath based on the 
-	current user ("C:\Users\username\AppData\Local\Temp\...").  
-
-	See the tmpnam section in http://blogs.msdn.com/b/vcblog/archive/2014/06/18/crt-features-fixes-and-breaking-changes-in-visual-studio-14-ctp1.aspx
-	for more details.
-	*/
-    if(!s_initialized)
+    void SetUp()
     {
-#if _MSC_VER >= 1900
-		tmpnam_s(s_tempName, L_tmpnam_s);
+	Aws::String dateTime = DateTime::Now().CalculateGmtTimestampAsString("%H_%M_%S_%Y_%m_%d");
+#ifdef __ANDROID__
+	tempFile = Aws::Platform::GetCacheDirectory() + dateTime;
 #else
-        s_tempName[0] = '.';
-        tmpnam_s(s_tempName + 1, L_tmpnam_s);
-#endif // _MSC_VER
-        s_initialized = true;
+	tempFile = dateTime;
+#endif // __ANDROID__
     }
 
-    return Aws::String(s_tempName);
-}
-#else
-Aws::String ComputeIdentityFilePath()
-{
-    static Aws::String tempFile(std::tmpnam(nullptr));
-    return tempFile;
-}
-#endif
+    void TearDown()
+    {
+        Aws::FileSystem::RemoveFileIfExists(tempFile.c_str());
+    }
 
-TEST(PersistentCognitoIdentityProvider_JsonImpl_Test, TestConstructorWhenNoFileIsAvailable)
+    Aws::String tempFile;
+};
+
+TEST_F(PersistentCognitoIdentityProvider_JsonImpl_Test, TestConstructorWhenNoFileIsAvailable)
 {
-    PersistentCognitoIdentityProvider_JsonFileImpl identityProvider("identityPoolId", "accountId", ComputeIdentityFilePath().c_str());
+    PersistentCognitoIdentityProvider_JsonFileImpl identityProvider("identityPoolId", "accountId", tempFile.c_str());
     ASSERT_FALSE(identityProvider.HasIdentityId());
     ASSERT_FALSE(identityProvider.HasLogins());
     ASSERT_EQ("identityPoolId", identityProvider.GetIdentityPoolId());
     ASSERT_EQ("accountId", identityProvider.GetAccountId());
 
-    Aws::String filePath = ComputeIdentityFilePath();
+    Aws::String filePath = tempFile;
     std::ifstream shouldNotExist(filePath.c_str());
     ASSERT_FALSE(shouldNotExist.good());
 }
 
-TEST(PersistentCognitoIdentityProvider_JsonImpl_Test, TestConstructorWhenFileIsAvaiable)
+TEST_F(PersistentCognitoIdentityProvider_JsonImpl_Test, TestConstructorWhenFileIsAvaiable)
 {
     JsonValue theIdentityPoolWeWant;
     theIdentityPoolWeWant.WithString("IdentityId", "TheIdentityWeWant");
@@ -113,14 +79,14 @@ TEST(PersistentCognitoIdentityProvider_JsonImpl_Test, TestConstructorWhenFileIsA
     identityDoc.WithObject("IdentityPoolWeWant", theIdentityPoolWeWant);
     identityDoc.WithObject("SomeOtherIdentityPool", someOtherIdentityPool);
 
-    Aws::String filePath = ComputeIdentityFilePath();
+    Aws::String filePath = tempFile;
     std::ofstream identityFile(filePath.c_str());
     identityFile << identityDoc.WriteReadable();
     identityFile.flush();
     identityFile.close();
 
     PersistentCognitoIdentityProvider_JsonFileImpl identityProvider("IdentityPoolWeWant", "accountId", filePath.c_str());
-    FileSystemUtils::RemoveFileIfExists(filePath.c_str());
+    Aws::FileSystem::RemoveFileIfExists(filePath.c_str());
 
     ASSERT_TRUE(identityProvider.HasIdentityId());
     ASSERT_EQ(theIdentityPoolWeWant.GetString("IdentityId"), identityProvider.GetIdentityId());
@@ -130,7 +96,7 @@ TEST(PersistentCognitoIdentityProvider_JsonImpl_Test, TestConstructorWhenFileIsA
     ASSERT_EQ("TestLoginValue", identityProvider.GetLogins().begin()->second.accessToken);
 }
 
-TEST(PersistentCognitoIdentityProvider_JsonImpl_Test, TestPersistance)
+TEST_F(PersistentCognitoIdentityProvider_JsonImpl_Test, TestPersistance)
 {
     JsonValue someOtherIdentityPool;
     someOtherIdentityPool.WithString("IdentityId", "SomeOtherIdentity");
@@ -138,8 +104,8 @@ TEST(PersistentCognitoIdentityProvider_JsonImpl_Test, TestPersistance)
     JsonValue identityDoc;
     identityDoc.WithObject("SomeOtherIdentityPool", someOtherIdentityPool);
 
-    Aws::String filePath = ComputeIdentityFilePath();
-    FileSystemUtils::RemoveFileIfExists(filePath.c_str());
+    Aws::String filePath = tempFile;
+    Aws::FileSystem::RemoveFileIfExists(filePath.c_str());
     std::ofstream identityFile(filePath.c_str());
     identityFile << identityDoc.WriteReadable();
     identityFile.close();
@@ -181,7 +147,7 @@ TEST(PersistentCognitoIdentityProvider_JsonImpl_Test, TestPersistance)
     std::ifstream identityFileInput(filePath.c_str());
     JsonValue finalIdentityDoc(identityFileInput);
     identityFileInput.close();
-    FileSystemUtils::RemoveFileIfExists(filePath.c_str());
+    Aws::FileSystem::RemoveFileIfExists(filePath.c_str());
 
     ASSERT_TRUE(finalIdentityDoc.ValueExists("SomeOtherIdentityPool"));
     ASSERT_TRUE(finalIdentityDoc.ValueExists("IdentityPoolWeWant"));
@@ -193,14 +159,3 @@ TEST(PersistentCognitoIdentityProvider_JsonImpl_Test, TestPersistance)
     ASSERT_EQ(loginAccessTokens.longTermTokenExpiry, ourIdentityPool.GetObject("Logins").GetAllObjects().begin()->second.GetInt64("Expiry"));
 }
 
-#ifdef __APPLE__
-
-#ifdef __clang__
-#pragma clang diagnostic pop
-#endif // __clang__
-
-#ifdef __GNUC__
-#pragma GCC diagnostic pop
-#endif // __GNUC__
-
-#endif // __APPLE__

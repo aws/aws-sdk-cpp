@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -38,6 +38,7 @@ UploadPartRequest::UploadPartRequest() :
     m_sSECustomerAlgorithmHasBeenSet(false),
     m_sSECustomerKeyHasBeenSet(false),
     m_sSECustomerKeyMD5HasBeenSet(false),
+    m_requestPayer(RequestPayer::NOT_SET),
     m_requestPayerHasBeenSet(false)
 {
 }
@@ -47,16 +48,16 @@ void UploadPartRequest::AddQueryStringParameters(URI& uri) const
     Aws::StringStream ss;
     if(m_partNumberHasBeenSet)
     {
-     ss << m_partNumber;
-     uri.AddQueryStringParameter("partNumber", ss.str());
-     ss.str("");
+      ss << m_partNumber;
+      uri.AddQueryStringParameter("partNumber", ss.str());
+      ss.str("");
     }
 
     if(m_uploadIdHasBeenSet)
     {
-     ss << m_uploadId;
-     uri.AddQueryStringParameter("uploadId", ss.str());
-     ss.str("");
+      ss << m_uploadId;
+      uri.AddQueryStringParameter("uploadId", ss.str());
+      ss.str("");
     }
 
 }
@@ -66,44 +67,44 @@ Aws::Http::HeaderValueCollection UploadPartRequest::GetRequestSpecificHeaders() 
   Aws::StringStream ss;
   if(m_contentLengthHasBeenSet)
   {
-   ss << m_contentLength;
-   headers.insert(Aws::Http::HeaderValuePair("content-length", ss.str()));
-   ss.str("");
+    ss << m_contentLength;
+    headers.insert(Aws::Http::HeaderValuePair("content-length", ss.str()));
+    ss.str("");
   }
 
   if(m_contentMD5HasBeenSet)
   {
-   ss << m_contentMD5;
-   headers.insert(Aws::Http::HeaderValuePair("content-md5", ss.str()));
-   ss.str("");
+    ss << m_contentMD5;
+    headers.insert(Aws::Http::HeaderValuePair("content-md5", ss.str()));
+    ss.str("");
   }
 
   if(m_sSECustomerAlgorithmHasBeenSet)
   {
-   ss << m_sSECustomerAlgorithm;
-   headers.insert(Aws::Http::HeaderValuePair("x-amz-server-side-encryption-customer-algorithm", ss.str()));
-   ss.str("");
+    ss << m_sSECustomerAlgorithm;
+    headers.insert(Aws::Http::HeaderValuePair("x-amz-server-side-encryption-customer-algorithm", ss.str()));
+    ss.str("");
   }
 
   if(m_sSECustomerKeyHasBeenSet)
   {
-   ss << m_sSECustomerKey;
-   headers.insert(Aws::Http::HeaderValuePair("x-amz-server-side-encryption-customer-key", ss.str()));
-   ss.str("");
+    ss << m_sSECustomerKey;
+    headers.insert(Aws::Http::HeaderValuePair("x-amz-server-side-encryption-customer-key", ss.str()));
+    ss.str("");
   }
 
   if(m_sSECustomerKeyMD5HasBeenSet)
   {
-   ss << m_sSECustomerKeyMD5;
-   headers.insert(Aws::Http::HeaderValuePair("x-amz-server-side-encryption-customer-key-md5", ss.str()));
-   ss.str("");
+    ss << m_sSECustomerKeyMD5;
+    headers.insert(Aws::Http::HeaderValuePair("x-amz-server-side-encryption-customer-key-md5", ss.str()));
+    ss.str("");
   }
 
   if(m_requestPayerHasBeenSet)
   {
-   headers.insert(Aws::Http::HeaderValuePair("x-amz-request-payer", RequestPayerMapper::GetNameForRequestPayer(m_requestPayer)));
+    headers.insert(Aws::Http::HeaderValuePair("x-amz-request-payer", RequestPayerMapper::GetNameForRequestPayer(m_requestPayer)));
   }
 
-  return std::move(headers);
+  return headers;
 
 }

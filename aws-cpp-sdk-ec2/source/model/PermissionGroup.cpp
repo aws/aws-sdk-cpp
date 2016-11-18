@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -14,43 +14,59 @@
 */
 #include <aws/ec2/model/PermissionGroup.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
+#include <aws/core/utils/EnumParseOverflowContainer.h>
 
 using namespace Aws::Utils;
 
-static const int all_HASH = HashingUtils::HashString("all");
 
 namespace Aws
 {
-namespace EC2
-{
-namespace Model
-{
-namespace PermissionGroupMapper
-{
-PermissionGroup GetPermissionGroupForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-
-  if (hashCode == all_HASH)
+  namespace EC2
   {
-    return PermissionGroup::all;
-  }
+    namespace Model
+    {
+      namespace PermissionGroupMapper
+      {
 
-  return PermissionGroup::NOT_SET;
-}
+        static const int all_HASH = HashingUtils::HashString("all");
 
-Aws::String GetNameForPermissionGroup(PermissionGroup value)
-{
-  switch(value)
-  {
-  case PermissionGroup::all:
-    return "all";
-  default:
-    return "";
-  }
-}
 
-} // namespace PermissionGroupMapper
-} // namespace Model
-} // namespace EC2
+        PermissionGroup GetPermissionGroupForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == all_HASH)
+          {
+            return PermissionGroup::all;
+          }
+          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<PermissionGroup>(hashCode);
+          }
+
+          return PermissionGroup::NOT_SET;
+        }
+
+        Aws::String GetNameForPermissionGroup(PermissionGroup enumValue)
+        {
+          switch(enumValue)
+          {
+          case PermissionGroup::all:
+            return "all";
+          default:
+            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace PermissionGroupMapper
+    } // namespace Model
+  } // namespace EC2
 } // namespace Aws

@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -26,8 +26,8 @@ namespace OpsWorks
 namespace Model
 {
 
-  /*
-  */
+  /**
+   */
   class AWS_OPSWORKS_API CreateDeploymentRequest : public OpsWorksRequest
   {
   public:
@@ -36,210 +36,296 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
-    /*
-     <p>The stack ID.</p>
-    */
+    /**
+     * <p>The stack ID.</p>
+     */
     inline const Aws::String& GetStackId() const{ return m_stackId; }
 
-    /*
-     <p>The stack ID.</p>
-    */
+    /**
+     * <p>The stack ID.</p>
+     */
     inline void SetStackId(const Aws::String& value) { m_stackIdHasBeenSet = true; m_stackId = value; }
 
-    /*
-     <p>The stack ID.</p>
-    */
+    /**
+     * <p>The stack ID.</p>
+     */
     inline void SetStackId(Aws::String&& value) { m_stackIdHasBeenSet = true; m_stackId = value; }
 
-    /*
-     <p>The stack ID.</p>
-    */
+    /**
+     * <p>The stack ID.</p>
+     */
     inline void SetStackId(const char* value) { m_stackIdHasBeenSet = true; m_stackId.assign(value); }
 
-    /*
-     <p>The stack ID.</p>
-    */
+    /**
+     * <p>The stack ID.</p>
+     */
     inline CreateDeploymentRequest& WithStackId(const Aws::String& value) { SetStackId(value); return *this;}
 
-    /*
-     <p>The stack ID.</p>
-    */
+    /**
+     * <p>The stack ID.</p>
+     */
     inline CreateDeploymentRequest& WithStackId(Aws::String&& value) { SetStackId(value); return *this;}
 
-    /*
-     <p>The stack ID.</p>
-    */
+    /**
+     * <p>The stack ID.</p>
+     */
     inline CreateDeploymentRequest& WithStackId(const char* value) { SetStackId(value); return *this;}
 
-    /*
-     <p>The app ID. This parameter is required for app deployments, but not for other deployment commands.</p>
-    */
+    /**
+     * <p>The app ID. This parameter is required for app deployments, but not for other
+     * deployment commands.</p>
+     */
     inline const Aws::String& GetAppId() const{ return m_appId; }
 
-    /*
-     <p>The app ID. This parameter is required for app deployments, but not for other deployment commands.</p>
-    */
+    /**
+     * <p>The app ID. This parameter is required for app deployments, but not for other
+     * deployment commands.</p>
+     */
     inline void SetAppId(const Aws::String& value) { m_appIdHasBeenSet = true; m_appId = value; }
 
-    /*
-     <p>The app ID. This parameter is required for app deployments, but not for other deployment commands.</p>
-    */
+    /**
+     * <p>The app ID. This parameter is required for app deployments, but not for other
+     * deployment commands.</p>
+     */
     inline void SetAppId(Aws::String&& value) { m_appIdHasBeenSet = true; m_appId = value; }
 
-    /*
-     <p>The app ID. This parameter is required for app deployments, but not for other deployment commands.</p>
-    */
+    /**
+     * <p>The app ID. This parameter is required for app deployments, but not for other
+     * deployment commands.</p>
+     */
     inline void SetAppId(const char* value) { m_appIdHasBeenSet = true; m_appId.assign(value); }
 
-    /*
-     <p>The app ID. This parameter is required for app deployments, but not for other deployment commands.</p>
-    */
+    /**
+     * <p>The app ID. This parameter is required for app deployments, but not for other
+     * deployment commands.</p>
+     */
     inline CreateDeploymentRequest& WithAppId(const Aws::String& value) { SetAppId(value); return *this;}
 
-    /*
-     <p>The app ID. This parameter is required for app deployments, but not for other deployment commands.</p>
-    */
+    /**
+     * <p>The app ID. This parameter is required for app deployments, but not for other
+     * deployment commands.</p>
+     */
     inline CreateDeploymentRequest& WithAppId(Aws::String&& value) { SetAppId(value); return *this;}
 
-    /*
-     <p>The app ID. This parameter is required for app deployments, but not for other deployment commands.</p>
-    */
+    /**
+     * <p>The app ID. This parameter is required for app deployments, but not for other
+     * deployment commands.</p>
+     */
     inline CreateDeploymentRequest& WithAppId(const char* value) { SetAppId(value); return *this;}
 
-    /*
-     <p>The instance IDs for the deployment targets.</p>
-    */
+    /**
+     * <p>The instance IDs for the deployment targets.</p>
+     */
     inline const Aws::Vector<Aws::String>& GetInstanceIds() const{ return m_instanceIds; }
 
-    /*
-     <p>The instance IDs for the deployment targets.</p>
-    */
+    /**
+     * <p>The instance IDs for the deployment targets.</p>
+     */
     inline void SetInstanceIds(const Aws::Vector<Aws::String>& value) { m_instanceIdsHasBeenSet = true; m_instanceIds = value; }
 
-    /*
-     <p>The instance IDs for the deployment targets.</p>
-    */
+    /**
+     * <p>The instance IDs for the deployment targets.</p>
+     */
     inline void SetInstanceIds(Aws::Vector<Aws::String>&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds = value; }
 
-    /*
-     <p>The instance IDs for the deployment targets.</p>
-    */
+    /**
+     * <p>The instance IDs for the deployment targets.</p>
+     */
     inline CreateDeploymentRequest& WithInstanceIds(const Aws::Vector<Aws::String>& value) { SetInstanceIds(value); return *this;}
 
-    /*
-     <p>The instance IDs for the deployment targets.</p>
-    */
+    /**
+     * <p>The instance IDs for the deployment targets.</p>
+     */
     inline CreateDeploymentRequest& WithInstanceIds(Aws::Vector<Aws::String>&& value) { SetInstanceIds(value); return *this;}
 
-    /*
-     <p>The instance IDs for the deployment targets.</p>
-    */
+    /**
+     * <p>The instance IDs for the deployment targets.</p>
+     */
     inline CreateDeploymentRequest& AddInstanceIds(const Aws::String& value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
 
-    /*
-     <p>The instance IDs for the deployment targets.</p>
-    */
+    /**
+     * <p>The instance IDs for the deployment targets.</p>
+     */
     inline CreateDeploymentRequest& AddInstanceIds(Aws::String&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
 
-    /*
-     <p>The instance IDs for the deployment targets.</p>
-    */
+    /**
+     * <p>The instance IDs for the deployment targets.</p>
+     */
     inline CreateDeploymentRequest& AddInstanceIds(const char* value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
 
-    /*
-     <p>A <code>DeploymentCommand</code> object that specifies the deployment command and any associated arguments.</p>
-    */
+    /**
+     * <p>The layer IDs for the deployment targets.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetLayerIds() const{ return m_layerIds; }
+
+    /**
+     * <p>The layer IDs for the deployment targets.</p>
+     */
+    inline void SetLayerIds(const Aws::Vector<Aws::String>& value) { m_layerIdsHasBeenSet = true; m_layerIds = value; }
+
+    /**
+     * <p>The layer IDs for the deployment targets.</p>
+     */
+    inline void SetLayerIds(Aws::Vector<Aws::String>&& value) { m_layerIdsHasBeenSet = true; m_layerIds = value; }
+
+    /**
+     * <p>The layer IDs for the deployment targets.</p>
+     */
+    inline CreateDeploymentRequest& WithLayerIds(const Aws::Vector<Aws::String>& value) { SetLayerIds(value); return *this;}
+
+    /**
+     * <p>The layer IDs for the deployment targets.</p>
+     */
+    inline CreateDeploymentRequest& WithLayerIds(Aws::Vector<Aws::String>&& value) { SetLayerIds(value); return *this;}
+
+    /**
+     * <p>The layer IDs for the deployment targets.</p>
+     */
+    inline CreateDeploymentRequest& AddLayerIds(const Aws::String& value) { m_layerIdsHasBeenSet = true; m_layerIds.push_back(value); return *this; }
+
+    /**
+     * <p>The layer IDs for the deployment targets.</p>
+     */
+    inline CreateDeploymentRequest& AddLayerIds(Aws::String&& value) { m_layerIdsHasBeenSet = true; m_layerIds.push_back(value); return *this; }
+
+    /**
+     * <p>The layer IDs for the deployment targets.</p>
+     */
+    inline CreateDeploymentRequest& AddLayerIds(const char* value) { m_layerIdsHasBeenSet = true; m_layerIds.push_back(value); return *this; }
+
+    /**
+     * <p>A <code>DeploymentCommand</code> object that specifies the deployment command
+     * and any associated arguments.</p>
+     */
     inline const DeploymentCommand& GetCommand() const{ return m_command; }
 
-    /*
-     <p>A <code>DeploymentCommand</code> object that specifies the deployment command and any associated arguments.</p>
-    */
+    /**
+     * <p>A <code>DeploymentCommand</code> object that specifies the deployment command
+     * and any associated arguments.</p>
+     */
     inline void SetCommand(const DeploymentCommand& value) { m_commandHasBeenSet = true; m_command = value; }
 
-    /*
-     <p>A <code>DeploymentCommand</code> object that specifies the deployment command and any associated arguments.</p>
-    */
+    /**
+     * <p>A <code>DeploymentCommand</code> object that specifies the deployment command
+     * and any associated arguments.</p>
+     */
     inline void SetCommand(DeploymentCommand&& value) { m_commandHasBeenSet = true; m_command = value; }
 
-    /*
-     <p>A <code>DeploymentCommand</code> object that specifies the deployment command and any associated arguments.</p>
-    */
+    /**
+     * <p>A <code>DeploymentCommand</code> object that specifies the deployment command
+     * and any associated arguments.</p>
+     */
     inline CreateDeploymentRequest& WithCommand(const DeploymentCommand& value) { SetCommand(value); return *this;}
 
-    /*
-     <p>A <code>DeploymentCommand</code> object that specifies the deployment command and any associated arguments.</p>
-    */
+    /**
+     * <p>A <code>DeploymentCommand</code> object that specifies the deployment command
+     * and any associated arguments.</p>
+     */
     inline CreateDeploymentRequest& WithCommand(DeploymentCommand&& value) { SetCommand(value); return *this;}
 
-    /*
-     <p>A user-defined comment.</p>
-    */
+    /**
+     * <p>A user-defined comment.</p>
+     */
     inline const Aws::String& GetComment() const{ return m_comment; }
 
-    /*
-     <p>A user-defined comment.</p>
-    */
+    /**
+     * <p>A user-defined comment.</p>
+     */
     inline void SetComment(const Aws::String& value) { m_commentHasBeenSet = true; m_comment = value; }
 
-    /*
-     <p>A user-defined comment.</p>
-    */
+    /**
+     * <p>A user-defined comment.</p>
+     */
     inline void SetComment(Aws::String&& value) { m_commentHasBeenSet = true; m_comment = value; }
 
-    /*
-     <p>A user-defined comment.</p>
-    */
+    /**
+     * <p>A user-defined comment.</p>
+     */
     inline void SetComment(const char* value) { m_commentHasBeenSet = true; m_comment.assign(value); }
 
-    /*
-     <p>A user-defined comment.</p>
-    */
+    /**
+     * <p>A user-defined comment.</p>
+     */
     inline CreateDeploymentRequest& WithComment(const Aws::String& value) { SetComment(value); return *this;}
 
-    /*
-     <p>A user-defined comment.</p>
-    */
+    /**
+     * <p>A user-defined comment.</p>
+     */
     inline CreateDeploymentRequest& WithComment(Aws::String&& value) { SetComment(value); return *this;}
 
-    /*
-     <p>A user-defined comment.</p>
-    */
+    /**
+     * <p>A user-defined comment.</p>
+     */
     inline CreateDeploymentRequest& WithComment(const char* value) { SetComment(value); return *this;}
 
-    /*
-     <p>A string that contains user-defined, custom JSON. It is used to override the corresponding default stack configuration JSON values. The string should be in the following format and must escape characters such as '"':</p> <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p> <p>For more information on custom JSON, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
-    */
+    /**
+     * <p>A string that contains user-defined, custom JSON. It is used to override the
+     * corresponding default stack configuration JSON values. The string should be in
+     * the following format:</p> <p> <code>"{\"key1\": \"value1\", \"key2\":
+     * \"value2\",...}"</code> </p> <p>For more information on custom JSON, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
+     * Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
+     */
     inline const Aws::String& GetCustomJson() const{ return m_customJson; }
 
-    /*
-     <p>A string that contains user-defined, custom JSON. It is used to override the corresponding default stack configuration JSON values. The string should be in the following format and must escape characters such as '"':</p> <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p> <p>For more information on custom JSON, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
-    */
+    /**
+     * <p>A string that contains user-defined, custom JSON. It is used to override the
+     * corresponding default stack configuration JSON values. The string should be in
+     * the following format:</p> <p> <code>"{\"key1\": \"value1\", \"key2\":
+     * \"value2\",...}"</code> </p> <p>For more information on custom JSON, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
+     * Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
+     */
     inline void SetCustomJson(const Aws::String& value) { m_customJsonHasBeenSet = true; m_customJson = value; }
 
-    /*
-     <p>A string that contains user-defined, custom JSON. It is used to override the corresponding default stack configuration JSON values. The string should be in the following format and must escape characters such as '"':</p> <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p> <p>For more information on custom JSON, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
-    */
+    /**
+     * <p>A string that contains user-defined, custom JSON. It is used to override the
+     * corresponding default stack configuration JSON values. The string should be in
+     * the following format:</p> <p> <code>"{\"key1\": \"value1\", \"key2\":
+     * \"value2\",...}"</code> </p> <p>For more information on custom JSON, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
+     * Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
+     */
     inline void SetCustomJson(Aws::String&& value) { m_customJsonHasBeenSet = true; m_customJson = value; }
 
-    /*
-     <p>A string that contains user-defined, custom JSON. It is used to override the corresponding default stack configuration JSON values. The string should be in the following format and must escape characters such as '"':</p> <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p> <p>For more information on custom JSON, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
-    */
+    /**
+     * <p>A string that contains user-defined, custom JSON. It is used to override the
+     * corresponding default stack configuration JSON values. The string should be in
+     * the following format:</p> <p> <code>"{\"key1\": \"value1\", \"key2\":
+     * \"value2\",...}"</code> </p> <p>For more information on custom JSON, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
+     * Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
+     */
     inline void SetCustomJson(const char* value) { m_customJsonHasBeenSet = true; m_customJson.assign(value); }
 
-    /*
-     <p>A string that contains user-defined, custom JSON. It is used to override the corresponding default stack configuration JSON values. The string should be in the following format and must escape characters such as '"':</p> <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p> <p>For more information on custom JSON, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
-    */
+    /**
+     * <p>A string that contains user-defined, custom JSON. It is used to override the
+     * corresponding default stack configuration JSON values. The string should be in
+     * the following format:</p> <p> <code>"{\"key1\": \"value1\", \"key2\":
+     * \"value2\",...}"</code> </p> <p>For more information on custom JSON, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
+     * Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
+     */
     inline CreateDeploymentRequest& WithCustomJson(const Aws::String& value) { SetCustomJson(value); return *this;}
 
-    /*
-     <p>A string that contains user-defined, custom JSON. It is used to override the corresponding default stack configuration JSON values. The string should be in the following format and must escape characters such as '"':</p> <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p> <p>For more information on custom JSON, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
-    */
+    /**
+     * <p>A string that contains user-defined, custom JSON. It is used to override the
+     * corresponding default stack configuration JSON values. The string should be in
+     * the following format:</p> <p> <code>"{\"key1\": \"value1\", \"key2\":
+     * \"value2\",...}"</code> </p> <p>For more information on custom JSON, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
+     * Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
+     */
     inline CreateDeploymentRequest& WithCustomJson(Aws::String&& value) { SetCustomJson(value); return *this;}
 
-    /*
-     <p>A string that contains user-defined, custom JSON. It is used to override the corresponding default stack configuration JSON values. The string should be in the following format and must escape characters such as '"':</p> <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p> <p>For more information on custom JSON, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
-    */
+    /**
+     * <p>A string that contains user-defined, custom JSON. It is used to override the
+     * corresponding default stack configuration JSON values. The string should be in
+     * the following format:</p> <p> <code>"{\"key1\": \"value1\", \"key2\":
+     * \"value2\",...}"</code> </p> <p>For more information on custom JSON, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
+     * Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
+     */
     inline CreateDeploymentRequest& WithCustomJson(const char* value) { SetCustomJson(value); return *this;}
 
   private:
@@ -249,6 +335,8 @@ namespace Model
     bool m_appIdHasBeenSet;
     Aws::Vector<Aws::String> m_instanceIds;
     bool m_instanceIdsHasBeenSet;
+    Aws::Vector<Aws::String> m_layerIds;
+    bool m_layerIdsHasBeenSet;
     DeploymentCommand m_command;
     bool m_commandHasBeenSet;
     Aws::String m_comment;

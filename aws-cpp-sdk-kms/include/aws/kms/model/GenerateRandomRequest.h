@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -23,8 +23,8 @@ namespace KMS
 namespace Model
 {
 
-  /*
-  */
+  /**
+   */
   class AWS_KMS_API GenerateRandomRequest : public KMSRequest
   {
   public:
@@ -33,24 +33,23 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+    /**
+     * <p>The length of the byte string.</p>
+     */
+    inline int GetNumberOfBytes() const{ return m_numberOfBytes; }
 
-    /*
-     <p>Integer that contains the number of bytes to generate. Common values are 128, 256, 512, 1024 and so on. The current limit is 1024 bytes. </p>
-    */
-    inline long GetNumberOfBytes() const{ return m_numberOfBytes; }
+    /**
+     * <p>The length of the byte string.</p>
+     */
+    inline void SetNumberOfBytes(int value) { m_numberOfBytesHasBeenSet = true; m_numberOfBytes = value; }
 
-    /*
-     <p>Integer that contains the number of bytes to generate. Common values are 128, 256, 512, 1024 and so on. The current limit is 1024 bytes. </p>
-    */
-    inline void SetNumberOfBytes(long value) { m_numberOfBytesHasBeenSet = true; m_numberOfBytes = value; }
-
-    /*
-     <p>Integer that contains the number of bytes to generate. Common values are 128, 256, 512, 1024 and so on. The current limit is 1024 bytes. </p>
-    */
-    inline GenerateRandomRequest& WithNumberOfBytes(long value) { SetNumberOfBytes(value); return *this;}
+    /**
+     * <p>The length of the byte string.</p>
+     */
+    inline GenerateRandomRequest& WithNumberOfBytes(int value) { SetNumberOfBytes(value); return *this;}
 
   private:
-    long m_numberOfBytes;
+    int m_numberOfBytes;
     bool m_numberOfBytesHasBeenSet;
   };
 

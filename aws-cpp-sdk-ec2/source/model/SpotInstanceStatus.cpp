@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,13 +19,18 @@
 
 #include <utility>
 
-using namespace Aws::EC2::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
+
 SpotInstanceStatus::SpotInstanceStatus() : 
     m_codeHasBeenSet(false),
-    m_updateTime(0.0),
     m_updateTimeHasBeenSet(false),
     m_messageHasBeenSet(false)
 {
@@ -33,7 +38,6 @@ SpotInstanceStatus::SpotInstanceStatus() :
 
 SpotInstanceStatus::SpotInstanceStatus(const XmlNode& xmlNode) : 
     m_codeHasBeenSet(false),
-    m_updateTime(0.0),
     m_updateTimeHasBeenSet(false),
     m_messageHasBeenSet(false)
 {
@@ -55,7 +59,7 @@ SpotInstanceStatus& SpotInstanceStatus::operator =(const XmlNode& xmlNode)
     XmlNode updateTimeNode = resultNode.FirstChild("updateTime");
     if(!updateTimeNode.IsNull())
     {
-      m_updateTime = StringUtils::ConvertToDouble(StringUtils::Trim(updateTimeNode.GetText().c_str()).c_str());
+      m_updateTime = DateTime(StringUtils::Trim(updateTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_updateTimeHasBeenSet = true;
     }
     XmlNode messageNode = resultNode.FirstChild("message");
@@ -75,14 +79,17 @@ void SpotInstanceStatus::OutputToStream(Aws::OStream& oStream, const char* locat
   {
       oStream << location << index << locationValue << ".Code=" << StringUtils::URLEncode(m_code.c_str()) << "&";
   }
+
   if(m_updateTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".UpdateTime=" << m_updateTime << "&";
+      oStream << location << index << locationValue << ".UpdateTime=" << StringUtils::URLEncode(m_updateTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_messageHasBeenSet)
   {
       oStream << location << index << locationValue << ".Message=" << StringUtils::URLEncode(m_message.c_str()) << "&";
   }
+
 }
 
 void SpotInstanceStatus::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -93,10 +100,14 @@ void SpotInstanceStatus::OutputToStream(Aws::OStream& oStream, const char* locat
   }
   if(m_updateTimeHasBeenSet)
   {
-      oStream << location << ".UpdateTime=" << m_updateTime << "&";
+      oStream << location << ".UpdateTime=" << StringUtils::URLEncode(m_updateTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_messageHasBeenSet)
   {
       oStream << location << ".Message=" << StringUtils::URLEncode(m_message.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

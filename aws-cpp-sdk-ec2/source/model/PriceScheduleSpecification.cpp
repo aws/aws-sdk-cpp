@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,15 +19,22 @@
 
 #include <utility>
 
-using namespace Aws::EC2::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
 
 PriceScheduleSpecification::PriceScheduleSpecification() : 
     m_term(0),
     m_termHasBeenSet(false),
     m_price(0.0),
     m_priceHasBeenSet(false),
+    m_currencyCode(CurrencyCodeValues::NOT_SET),
     m_currencyCodeHasBeenSet(false)
 {
 }
@@ -37,6 +44,7 @@ PriceScheduleSpecification::PriceScheduleSpecification(const XmlNode& xmlNode) :
     m_termHasBeenSet(false),
     m_price(0.0),
     m_priceHasBeenSet(false),
+    m_currencyCode(CurrencyCodeValues::NOT_SET),
     m_currencyCodeHasBeenSet(false)
 {
   *this = xmlNode;
@@ -77,14 +85,17 @@ void PriceScheduleSpecification::OutputToStream(Aws::OStream& oStream, const cha
   {
       oStream << location << index << locationValue << ".Term=" << m_term << "&";
   }
+
   if(m_priceHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Price=" << m_price << "&";
+        oStream << location << index << locationValue << ".Price=" << StringUtils::URLEncode(m_price) << "&";
   }
+
   if(m_currencyCodeHasBeenSet)
   {
       oStream << location << index << locationValue << ".CurrencyCode=" << CurrencyCodeValuesMapper::GetNameForCurrencyCodeValues(m_currencyCode) << "&";
   }
+
 }
 
 void PriceScheduleSpecification::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -95,10 +106,14 @@ void PriceScheduleSpecification::OutputToStream(Aws::OStream& oStream, const cha
   }
   if(m_priceHasBeenSet)
   {
-      oStream << location << ".Price=" << m_price << "&";
+        oStream << location << ".Price=" << StringUtils::URLEncode(m_price) << "&";
   }
   if(m_currencyCodeHasBeenSet)
   {
       oStream << location << ".CurrencyCode=" << CurrencyCodeValuesMapper::GetNameForCurrencyCodeValues(m_currencyCode) << "&";
   }
 }
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

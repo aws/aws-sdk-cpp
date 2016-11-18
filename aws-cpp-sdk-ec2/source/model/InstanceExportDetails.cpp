@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,18 +19,26 @@
 
 #include <utility>
 
-using namespace Aws::EC2::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
+
 InstanceExportDetails::InstanceExportDetails() : 
     m_instanceIdHasBeenSet(false),
+    m_targetEnvironment(ExportEnvironment::NOT_SET),
     m_targetEnvironmentHasBeenSet(false)
 {
 }
 
 InstanceExportDetails::InstanceExportDetails(const XmlNode& xmlNode) : 
     m_instanceIdHasBeenSet(false),
+    m_targetEnvironment(ExportEnvironment::NOT_SET),
     m_targetEnvironmentHasBeenSet(false)
 {
   *this = xmlNode;
@@ -65,10 +73,12 @@ void InstanceExportDetails::OutputToStream(Aws::OStream& oStream, const char* lo
   {
       oStream << location << index << locationValue << ".InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
   }
+
   if(m_targetEnvironmentHasBeenSet)
   {
       oStream << location << index << locationValue << ".TargetEnvironment=" << ExportEnvironmentMapper::GetNameForExportEnvironment(m_targetEnvironment) << "&";
   }
+
 }
 
 void InstanceExportDetails::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -82,3 +92,7 @@ void InstanceExportDetails::OutputToStream(Aws::OStream& oStream, const char* lo
       oStream << location << ".TargetEnvironment=" << ExportEnvironmentMapper::GetNameForExportEnvironment(m_targetEnvironment) << "&";
   }
 }
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

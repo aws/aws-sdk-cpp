@@ -50,8 +50,8 @@ def ParseArguments():
     argMap[ "useExistingEmulator" ] = args[ "emu" ]
     argMap[ "noBuild" ] = args[ "nobuild" ]
     argMap[ "noInstall" ] = args[ "noinstall" ]
-    argMap[ "credentialsFile" ] = args[ "credentials" ] or "android-build/credentials"
-    argMap[ "buildType" ] = args[ "build" ] or "Debug"
+    argMap[ "credentialsFile" ] = args[ "credentials" ] or "~/.aws/credentials"
+    argMap[ "buildType" ] = args[ "build" ] or "Release"
     argMap[ "runTest" ] = args[ "runtest" ]
     argMap[ "so" ] = args[ "so" ]
 
@@ -117,7 +117,7 @@ def IsValidAVD(avd, abi, avdABIs):
 
 def GetTestList(buildSharedObjects):
     if buildSharedObjects:
-        return [ 'core', 's3', 'dynamodb', 'cloudfront', 'cognitoidentity', 'identity', 'lambda', 'logging', 'redshifts', 'sqs', 'transfer' ]
+        return [ 'core', 's3', 'dynamodb', 'cloudfront', 'cognitoidentity', 'identity', 'lambda', 'logging', 'redshift', 'sqs', 'transfer' ]
     else:
         return [ 'unified' ]
 
@@ -161,24 +161,21 @@ def SetupJniDirectory(abi, clean):
         shutil.rmtree(path)
 
     if os.path.exists( path ) == False:
-        os.mkdir( path )
+        os.makedirs( path )
 
     return path
 
 
 def CopyNativeLibraries(buildSharedObjects, jniDir, buildDir, abi):
     if buildSharedObjects:
-        platformLibDir = os.path.join(os.environ['ANDROID_NDK'], "platforms", "android-21", "arch-arm", "usr", "lib")
-
+        toolchainName = abi + "-standalone-clang-android-21-libc++_shared"
+        toolchainDir = os.path.join('toolchains', 'android', toolchainName)
+ 
+        platformLibDir = os.path.join(toolchainDir, "sysroot", "usr", "lib")
         shutil.copy(os.path.join(platformLibDir, "liblog.so"), jniDir)
 
-        shutil.copy(os.path.join(buildDir, "ZLIB-prefix", "src", "ZLIB-build", "libz.so"), jniDir)
-        shutil.copy(os.path.join(buildDir, "OPENSSL-prefix", "src", "OPENSSL-build", "crypto", "libcrypto.so"), jniDir)
-        shutil.copy(os.path.join(buildDir, "OPENSSL-prefix", "src", "OPENSSL-build", "ssl", "libssl.so"), jniDir)
-        shutil.copy(os.path.join(buildDir, "CURL-prefix", "src", "CURL-build", "lib", "libcurl.so"), jniDir)
-
-        stdLibDir = os.path.join(os.environ['ANDROID_NDK'], "sources", "cxx-stl", "gnu-libstdc++", "4.9", "libs", abi)
-        shutil.copy(os.path.join(stdLibDir, "libgnustl_shared.so"), jniDir)
+        stdLibDir = os.path.join(toolchainDir, 'arm-linux-androideabi', 'lib')
+        shutil.copy(os.path.join(stdLibDir, "libc++_shared.so"), jniDir)
 
         soPattern = re.compile(".*\.so$")
 
@@ -205,32 +202,35 @@ def BuildNative(abi, clean, buildDir, jniDir, installDir, buildType, buildShared
         for externalProjectDir in [ "openssl", "zlib", "curl" ]:
             RemoveTree(externalProjectDir)
 
-        os.mkdir( jniDir )
-        os.mkdir( buildDir )
+        os.makedirs( jniDir )
+        os.makedirs( buildDir )
         os.chdir( buildDir )
 
-        if buildSharedObjects:
-            link_type_line = "-DSTATIC_LINKING=0"
-            stl_line = "-DANDROID_STL=gnustl_shared"
+        if not buildSharedObjects:
+            link_type_line = "-DBUILD_SHARED_LIBS=OFF"
+            crt_line = "-DFORCE_SHARED_CRT=OFF"
         else:
-            link_type_line = "-DSTATIC_LINKING=1"
-            stl_line = "-DANDROID_STL=gnustl_static"
-            
+            link_type_line = "-DBUILD_SHARED_LIBS=ON"
+            crt_line = "-DFORCE_SHARED_CRT=ON"
+
         subprocess.check_call( [ "cmake", 
                                  link_type_line,
+                                 crt_line,
                                  "-DCUSTOM_MEMORY_MANAGEMENT=1",
-                                 stl_line, 
-                                 "-DANDROID_STL_FORCE_FEATURES=OFF", 
                                  "-DTARGET_ARCH=ANDROID", 
                                  "-DANDROID_ABI=" + abi, 
-                                 "-DANDROID_TOOLCHAIN_NAME=arm-linux-androideabi-4.9",
                                  "-DCMAKE_BUILD_TYPE=" + buildType,
+                                 "-DENABLE_UNITY_BUILD=ON",
                                  '-DTEST_CERT_PATH="/data/data/aws.coretests/certs"',
+                                 '-DBUILD_ONLY=dynamodb;sqs;s3;lambda;kinesis;cognito-identity;transfer;iam;identity-management;access-management',
                                  ".."] )
     else:
         os.chdir( buildDir )
 
-    subprocess.check_call( [ "make", "-j12" ] )
+    if buildSharedObjects:
+        subprocess.check_call( [ "make", "-j12" ] )
+    else:
+        subprocess.check_call( [ "make", "-j12", "android-unified-tests" ] )
 
     os.chdir( ".." )
     CopyNativeLibraries(buildSharedObjects, jniDir, buildDir, abi)
@@ -304,7 +304,7 @@ def BuildAndInstallCertSet(pemSourceDir, buildDir):
     
     # assume that if the directory exists, then the cert set is valid and we just need to upload
     if not os.path.exists( certDir ):
-        os.mkdir( certDir )
+        os.makedirs( certDir )
     
         # extract all the certs in curl's master cacert.pem file out into individual .pem files
         subprocess.check_call( "cat " + pemSourceFile + " | awk '{print > \"" + certDir + "/cert\" (1+n) \".pem\"} /-----END CERTIFICATE-----/ {n++}'", shell = True )
@@ -327,6 +327,12 @@ def BuildAndInstallCertSet(pemSourceDir, buildDir):
             if certPattern.search(fileName):
                 certFileName = os.path.join(rootDir, fileName)
                 subprocess.check_call( [ "adb", "push", certFileName, "/data/data/aws.coretests/certs" ] )
+
+def UploadTestResources(resourcesDir):
+    for rootDir, dirNames, fileNames in os.walk( resourcesDir ):
+        for fileName in fileNames:
+            resourceFileName = os.path.join( rootDir, fileName )
+            subprocess.check_call( [ "adb", "push", resourceFileName, os.path.join( "/data/data/aws.coretests/resources", fileName ) ] )
 
 
 def InstallTests(credentialsFile):
@@ -410,6 +416,9 @@ def Main():
 
         print("Installing certs...")
         BuildAndInstallCertSet("android-build", buildDir)
+
+        print("Uploading test resources")
+        UploadTestResources("aws-cpp-sdk-lambda-integration-tests/resources")
 
     print("Running tests...")
     RunTest( runTest )

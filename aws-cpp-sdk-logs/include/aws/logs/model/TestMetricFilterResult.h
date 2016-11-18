@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -33,9 +33,6 @@ namespace CloudWatchLogs
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
   class AWS_CLOUDWATCHLOGS_API TestMetricFilterResult
   {
   public:
@@ -43,25 +40,39 @@ namespace Model
     TestMetricFilterResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     TestMetricFilterResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    
+    /**
+     * <p>The matched events.</p>
+     */
     inline const Aws::Vector<MetricFilterMatchRecord>& GetMatches() const{ return m_matches; }
 
-    
+    /**
+     * <p>The matched events.</p>
+     */
     inline void SetMatches(const Aws::Vector<MetricFilterMatchRecord>& value) { m_matches = value; }
 
-    
+    /**
+     * <p>The matched events.</p>
+     */
     inline void SetMatches(Aws::Vector<MetricFilterMatchRecord>&& value) { m_matches = value; }
 
-    
+    /**
+     * <p>The matched events.</p>
+     */
     inline TestMetricFilterResult& WithMatches(const Aws::Vector<MetricFilterMatchRecord>& value) { SetMatches(value); return *this;}
 
-    
+    /**
+     * <p>The matched events.</p>
+     */
     inline TestMetricFilterResult& WithMatches(Aws::Vector<MetricFilterMatchRecord>&& value) { SetMatches(value); return *this;}
 
-    
+    /**
+     * <p>The matched events.</p>
+     */
     inline TestMetricFilterResult& AddMatches(const MetricFilterMatchRecord& value) { m_matches.push_back(value); return *this; }
 
-    
+    /**
+     * <p>The matched events.</p>
+     */
     inline TestMetricFilterResult& AddMatches(MetricFilterMatchRecord&& value) { m_matches.push_back(value); return *this; }
 
   private:

@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace ElastiCache
+{
+namespace Model
+{
 
 NodeGroupMember::NodeGroupMember() : 
     m_cacheClusterIdHasBeenSet(false),
@@ -89,24 +95,29 @@ void NodeGroupMember::OutputToStream(Aws::OStream& oStream, const char* location
   {
       oStream << location << index << locationValue << ".CacheClusterId=" << StringUtils::URLEncode(m_cacheClusterId.c_str()) << "&";
   }
+
   if(m_cacheNodeIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".CacheNodeId=" << StringUtils::URLEncode(m_cacheNodeId.c_str()) << "&";
   }
+
   if(m_readEndpointHasBeenSet)
   {
       Aws::StringStream readEndpointLocationAndMemberSs;
       readEndpointLocationAndMemberSs << location << index << locationValue << ".ReadEndpoint";
       m_readEndpoint.OutputToStream(oStream, readEndpointLocationAndMemberSs.str().c_str());
   }
+
   if(m_preferredAvailabilityZoneHasBeenSet)
   {
       oStream << location << index << locationValue << ".PreferredAvailabilityZone=" << StringUtils::URLEncode(m_preferredAvailabilityZone.c_str()) << "&";
   }
+
   if(m_currentRoleHasBeenSet)
   {
       oStream << location << index << locationValue << ".CurrentRole=" << StringUtils::URLEncode(m_currentRole.c_str()) << "&";
   }
+
 }
 
 void NodeGroupMember::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -134,3 +145,7 @@ void NodeGroupMember::OutputToStream(Aws::OStream& oStream, const char* location
       oStream << location << ".CurrentRole=" << StringUtils::URLEncode(m_currentRole.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace ElastiCache
+} // namespace Aws

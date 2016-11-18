@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -34,9 +34,9 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
+  /**
+   * <p>Contains the output of DescribeRegions.</p>
+   */
   class AWS_EC2_API DescribeRegionsResponse
   {
   public:
@@ -44,39 +44,39 @@ namespace Model
     DescribeRegionsResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     DescribeRegionsResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>Information about one or more regions.</p>
-    */
+    /**
+     * <p>Information about one or more regions.</p>
+     */
     inline const Aws::Vector<Region>& GetRegions() const{ return m_regions; }
 
-    /*
-     <p>Information about one or more regions.</p>
-    */
+    /**
+     * <p>Information about one or more regions.</p>
+     */
     inline void SetRegions(const Aws::Vector<Region>& value) { m_regions = value; }
 
-    /*
-     <p>Information about one or more regions.</p>
-    */
+    /**
+     * <p>Information about one or more regions.</p>
+     */
     inline void SetRegions(Aws::Vector<Region>&& value) { m_regions = value; }
 
-    /*
-     <p>Information about one or more regions.</p>
-    */
+    /**
+     * <p>Information about one or more regions.</p>
+     */
     inline DescribeRegionsResponse& WithRegions(const Aws::Vector<Region>& value) { SetRegions(value); return *this;}
 
-    /*
-     <p>Information about one or more regions.</p>
-    */
+    /**
+     * <p>Information about one or more regions.</p>
+     */
     inline DescribeRegionsResponse& WithRegions(Aws::Vector<Region>&& value) { SetRegions(value); return *this;}
 
-    /*
-     <p>Information about one or more regions.</p>
-    */
+    /**
+     * <p>Information about one or more regions.</p>
+     */
     inline DescribeRegionsResponse& AddRegions(const Region& value) { m_regions.push_back(value); return *this; }
 
-    /*
-     <p>Information about one or more regions.</p>
-    */
+    /**
+     * <p>Information about one or more regions.</p>
+     */
     inline DescribeRegionsResponse& AddRegions(Region&& value) { m_regions.push_back(value); return *this; }
 
     

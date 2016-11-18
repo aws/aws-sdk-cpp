@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace AutoScaling
+{
+namespace Model
+{
 
 ScalingPolicy::ScalingPolicy() : 
     m_autoScalingGroupNameHasBeenSet(false),
@@ -175,64 +181,79 @@ void ScalingPolicy::OutputToStream(Aws::OStream& oStream, const char* location, 
   {
       oStream << location << index << locationValue << ".AutoScalingGroupName=" << StringUtils::URLEncode(m_autoScalingGroupName.c_str()) << "&";
   }
+
   if(m_policyNameHasBeenSet)
   {
       oStream << location << index << locationValue << ".PolicyName=" << StringUtils::URLEncode(m_policyName.c_str()) << "&";
   }
+
   if(m_policyARNHasBeenSet)
   {
       oStream << location << index << locationValue << ".PolicyARN=" << StringUtils::URLEncode(m_policyARN.c_str()) << "&";
   }
+
   if(m_policyTypeHasBeenSet)
   {
       oStream << location << index << locationValue << ".PolicyType=" << StringUtils::URLEncode(m_policyType.c_str()) << "&";
   }
+
   if(m_adjustmentTypeHasBeenSet)
   {
       oStream << location << index << locationValue << ".AdjustmentType=" << StringUtils::URLEncode(m_adjustmentType.c_str()) << "&";
   }
+
   if(m_minAdjustmentStepHasBeenSet)
   {
       oStream << location << index << locationValue << ".MinAdjustmentStep=" << m_minAdjustmentStep << "&";
   }
+
   if(m_minAdjustmentMagnitudeHasBeenSet)
   {
       oStream << location << index << locationValue << ".MinAdjustmentMagnitude=" << m_minAdjustmentMagnitude << "&";
   }
+
   if(m_scalingAdjustmentHasBeenSet)
   {
       oStream << location << index << locationValue << ".ScalingAdjustment=" << m_scalingAdjustment << "&";
   }
+
   if(m_cooldownHasBeenSet)
   {
       oStream << location << index << locationValue << ".Cooldown=" << m_cooldown << "&";
   }
+
   if(m_stepAdjustmentsHasBeenSet)
   {
+      unsigned stepAdjustmentsIdx = 1;
       for(auto& item : m_stepAdjustments)
       {
         Aws::StringStream stepAdjustmentsSs;
-        stepAdjustmentsSs << location << index << locationValue << ".StepAdjustments";
+        stepAdjustmentsSs << location << index << locationValue << ".StepAdjustments.member." << stepAdjustmentsIdx++;
         item.OutputToStream(oStream, stepAdjustmentsSs.str().c_str());
       }
   }
+
   if(m_metricAggregationTypeHasBeenSet)
   {
       oStream << location << index << locationValue << ".MetricAggregationType=" << StringUtils::URLEncode(m_metricAggregationType.c_str()) << "&";
   }
+
   if(m_estimatedInstanceWarmupHasBeenSet)
   {
       oStream << location << index << locationValue << ".EstimatedInstanceWarmup=" << m_estimatedInstanceWarmup << "&";
   }
+
   if(m_alarmsHasBeenSet)
   {
+      unsigned alarmsIdx = 1;
       for(auto& item : m_alarms)
       {
         Aws::StringStream alarmsSs;
-        alarmsSs << location << index << locationValue << ".Alarms";
+        alarmsSs << location << index << locationValue << ".Alarms.member." << alarmsIdx++;
         item.OutputToStream(oStream, alarmsSs.str().c_str());
       }
   }
+
 }
 
 void ScalingPolicy::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -275,11 +296,12 @@ void ScalingPolicy::OutputToStream(Aws::OStream& oStream, const char* location) 
   }
   if(m_stepAdjustmentsHasBeenSet)
   {
+      unsigned stepAdjustmentsIdx = 1;
       for(auto& item : m_stepAdjustments)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".StepAdjustments";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream stepAdjustmentsSs;
+        stepAdjustmentsSs << location <<  ".StepAdjustments.member." << stepAdjustmentsIdx++;
+        item.OutputToStream(oStream, stepAdjustmentsSs.str().c_str());
       }
   }
   if(m_metricAggregationTypeHasBeenSet)
@@ -292,11 +314,16 @@ void ScalingPolicy::OutputToStream(Aws::OStream& oStream, const char* location) 
   }
   if(m_alarmsHasBeenSet)
   {
+      unsigned alarmsIdx = 1;
       for(auto& item : m_alarms)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".Alarms";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream alarmsSs;
+        alarmsSs << location <<  ".Alarms.member." << alarmsIdx++;
+        item.OutputToStream(oStream, alarmsSs.str().c_str());
       }
   }
 }
+
+} // namespace Model
+} // namespace AutoScaling
+} // namespace Aws

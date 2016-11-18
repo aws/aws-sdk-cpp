@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -23,7 +23,8 @@ using namespace Aws::Utils;
 
 StopTaskRequest::StopTaskRequest() : 
     m_clusterHasBeenSet(false),
-    m_taskHasBeenSet(false)
+    m_taskHasBeenSet(false),
+    m_reasonHasBeenSet(false)
 {
 }
 
@@ -43,6 +44,12 @@ Aws::String StopTaskRequest::SerializePayload() const
 
   }
 
+  if(m_reasonHasBeenSet)
+  {
+   payload.WithString("reason", m_reason);
+
+  }
+
   return payload.WriteReadable();
 }
 
@@ -50,7 +57,7 @@ Aws::Http::HeaderValueCollection StopTaskRequest::GetRequestSpecificHeaders() co
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AmazonEC2ContainerServiceV20141113.StopTask"));
-  return std::move(headers);
+  return headers;
 
 }
 

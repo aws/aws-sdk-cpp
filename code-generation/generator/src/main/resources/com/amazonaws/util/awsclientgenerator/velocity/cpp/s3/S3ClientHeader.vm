@@ -14,51 +14,50 @@
 \#include <aws/core/http/HttpTypes.h>
 \#include <future>
 \#include <functional>
+#set($signPayloadsOptional = true)
+namespace Aws
+{
 
-    namespace Aws
-    {
-
-    namespace Http
-    {
+  namespace Http
+  {
     class HttpClient;
     class HttpClientFactory;
-    } // namespace Http
+  } // namespace Http
 
-    namespace Utils
-    {
+  namespace Utils
+  {
     template< typename R, typename E> class Outcome;
 
     namespace Threading
     {
-    class Executor;
+      class Executor;
     } // namespace Threading
 
     namespace Xml
     {
-    class XmlDocument;
+      class XmlDocument;
     } // namespace Xml
-    } // namespace Utils
+  } // namespace Utils
 
-    namespace Auth
-    {
+  namespace Auth
+  {
     class AWSCredentials;
     class AWSCredentialsProvider;
-    } // namespace Auth
+  } // namespace Auth
 
-    namespace Client
-    {
+  namespace Client
+  {
     class RetryStrategy;
-    } // namespace Client
+  } // namespace Client
 
-    namespace ${metadata.namespace}
-    {
-
+  namespace ${metadata.namespace}
+  {
     namespace Model
     {
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderModelDeclarations.vm")
     } // namespace Model
 
-    #set($className = "${metadata.classNamePrefix}Client")
+#set($className = "${metadata.classNamePrefix}Client")
     class ${className};
 
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderEventTypeDeclarations.vm")
@@ -66,9 +65,11 @@
     //max expiration for presigned urls in s3 is 7 days.
     static const unsigned MAX_EXPIRATION_SECONDS = 7 * 24 * 60 * 60;
 
-    /*
-    ${serviceModel.documentation}
-    */
+#if($serviceModel.documentation)
+    /**
+     * ${serviceModel.documentation}
+     */
+#end
     class ${CppViewHelper.computeExportValue($metadata.classNamePrefix)} ${className} : public Aws::Client::AWSXMLClient
     {
     public:
@@ -89,5 +90,5 @@
         std::shared_ptr<Utils::Threading::Executor> m_executor;
     };
 
-} // namespace ${metadata.namespace}
+  } // namespace ${metadata.namespace}
 } // namespace Aws

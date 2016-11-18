@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,13 +19,20 @@
 
 #include <utility>
 
-using namespace Aws::EC2::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
 
 InstanceState::InstanceState() : 
     m_code(0),
     m_codeHasBeenSet(false),
+    m_name(InstanceStateName::NOT_SET),
     m_nameHasBeenSet(false)
 {
 }
@@ -33,6 +40,7 @@ InstanceState::InstanceState() :
 InstanceState::InstanceState(const XmlNode& xmlNode) : 
     m_code(0),
     m_codeHasBeenSet(false),
+    m_name(InstanceStateName::NOT_SET),
     m_nameHasBeenSet(false)
 {
   *this = xmlNode;
@@ -67,10 +75,12 @@ void InstanceState::OutputToStream(Aws::OStream& oStream, const char* location, 
   {
       oStream << location << index << locationValue << ".Code=" << m_code << "&";
   }
+
   if(m_nameHasBeenSet)
   {
       oStream << location << index << locationValue << ".Name=" << InstanceStateNameMapper::GetNameForInstanceStateName(m_name) << "&";
   }
+
 }
 
 void InstanceState::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -84,3 +94,7 @@ void InstanceState::OutputToStream(Aws::OStream& oStream, const char* location) 
       oStream << location << ".Name=" << InstanceStateNameMapper::GetNameForInstanceStateName(m_name) << "&";
   }
 }
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

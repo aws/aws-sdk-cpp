@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -38,7 +38,8 @@ RunJobFlowRequest::RunJobFlowRequest() :
     m_visibleToAllUsersHasBeenSet(false),
     m_jobFlowRoleHasBeenSet(false),
     m_serviceRoleHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_securityConfigurationHasBeenSet(false)
 {
 }
 
@@ -177,6 +178,12 @@ Aws::String RunJobFlowRequest::SerializePayload() const
 
   }
 
+  if(m_securityConfigurationHasBeenSet)
+  {
+   payload.WithString("SecurityConfiguration", m_securityConfiguration);
+
+  }
+
   return payload.WriteReadable();
 }
 
@@ -184,7 +191,7 @@ Aws::Http::HeaderValueCollection RunJobFlowRequest::GetRequestSpecificHeaders() 
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "ElasticMapReduce.RunJobFlow"));
-  return std::move(headers);
+  return headers;
 
 }
 

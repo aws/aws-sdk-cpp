@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -21,7 +21,7 @@ namespace Aws
 {
 namespace IAM
 {
-enum class AWS_IAM_API IAMErrors
+enum class IAMErrors
 {
   //From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
@@ -44,7 +44,12 @@ enum class AWS_IAM_API IAMErrors
   RESOURCE_NOT_FOUND = 16,
   UNRECOGNIZED_CLIENT = 17,
   MALFORMED_QUERY_STRING = 18,
+  SLOW_DOWN = 19,
+  REQUEST_TIME_TOO_SKEWED = 20,
+  INVALID_SIGNATURE = 21,
+  SIGNATURE_DOES_NOT_MATCH = 22,
   NETWORK_CONNECTION = 99,
+  
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -55,26 +60,19 @@ enum class AWS_IAM_API IAMErrors
   DUPLICATE_CERTIFICATE,
   DUPLICATE_S_S_H_PUBLIC_KEY,
   ENTITY_ALREADY_EXISTS,
-  ENTITY_NOT_FOUND,
   ENTITY_TEMPORARILY_UNMODIFIABLE,
   INVALID_AUTHENTICATION_CODE,
   INVALID_CERTIFICATE,
-  INVALID_CONTEXTKEY,
   INVALID_INPUT,
-  INVALID_INPUT_PARAMETERS,
   INVALID_PUBLIC_KEY,
-  INVALID_RESOURCE_FORMAT,
   INVALID_USER_TYPE,
   KEY_PAIR_MISMATCH,
   LIMIT_EXCEEDED,
   MALFORMED_CERTIFICATE,
   MALFORMED_POLICY_DOCUMENT,
-  MISSING_CONTEXT_VALUE,
   NO_SUCH_ENTITY,
   PASSWORD_POLICY_VIOLATION,
   POLICY_EVALUATION,
-  POLICY_ID_CONSTRAINT_VIOLATION,
-  POLICY_PARSING,
   SERVICE_FAILURE,
   UNRECOGNIZED_PUBLIC_KEY_ENCODING
 };

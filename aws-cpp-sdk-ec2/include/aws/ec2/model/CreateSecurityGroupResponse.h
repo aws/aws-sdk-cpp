@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -33,9 +33,9 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
+  /**
+   * <p>Contains the output of CreateSecurityGroup.</p>
+   */
   class AWS_EC2_API CreateSecurityGroupResponse
   {
   public:
@@ -43,39 +43,39 @@ namespace Model
     CreateSecurityGroupResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     CreateSecurityGroupResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>The ID of the security group.</p>
-    */
+    /**
+     * <p>The ID of the security group.</p>
+     */
     inline const Aws::String& GetGroupId() const{ return m_groupId; }
 
-    /*
-     <p>The ID of the security group.</p>
-    */
+    /**
+     * <p>The ID of the security group.</p>
+     */
     inline void SetGroupId(const Aws::String& value) { m_groupId = value; }
 
-    /*
-     <p>The ID of the security group.</p>
-    */
+    /**
+     * <p>The ID of the security group.</p>
+     */
     inline void SetGroupId(Aws::String&& value) { m_groupId = value; }
 
-    /*
-     <p>The ID of the security group.</p>
-    */
+    /**
+     * <p>The ID of the security group.</p>
+     */
     inline void SetGroupId(const char* value) { m_groupId.assign(value); }
 
-    /*
-     <p>The ID of the security group.</p>
-    */
+    /**
+     * <p>The ID of the security group.</p>
+     */
     inline CreateSecurityGroupResponse& WithGroupId(const Aws::String& value) { SetGroupId(value); return *this;}
 
-    /*
-     <p>The ID of the security group.</p>
-    */
+    /**
+     * <p>The ID of the security group.</p>
+     */
     inline CreateSecurityGroupResponse& WithGroupId(Aws::String&& value) { SetGroupId(value); return *this;}
 
-    /*
-     <p>The ID of the security group.</p>
-    */
+    /**
+     * <p>The ID of the security group.</p>
+     */
     inline CreateSecurityGroupResponse& WithGroupId(const char* value) { SetGroupId(value); return *this;}
 
     

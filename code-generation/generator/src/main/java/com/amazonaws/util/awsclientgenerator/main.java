@@ -19,14 +19,14 @@ import com.amazonaws.util.awsclientgenerator.config.exceptions.GeneratorNotImple
 import com.amazonaws.util.awsclientgenerator.generators.DirectFromC2jGenerator;
 import com.amazonaws.util.awsclientgenerator.generators.MainClientGenerator;
 
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 import java.util.Map;
 
 public class main {
 
+    static final String FILE_NAME = "inputfile";
     static final String ARBITRARY_OPTION = "arbitrary";
     static final String LANGUAGE_BINDING_OPTION = "language-binding";
     static final String SERVICE_OPTION = "service";
@@ -41,36 +41,37 @@ public class main {
         Map<String, String> argPairs = getArgOptionPairs(args);
         MainClientGenerator generator = new MainClientGenerator();
 
+        String arbitraryJson = null;
+
         //At this point we want to read the c2j from std in.
         //e.g. cat /home/henso/someC2jFile.normal.json | AWSClientGenerator --service myService --language-binding cpp or
         //AWSClientGenerator --service myService --language-binding cpp < /home/henso/someC2jFile.normal.json
-        if(argPairs.containsKey(ARBITRARY_OPTION)) {
-            if(!argPairs.containsKey(LANGUAGE_BINDING_OPTION)|| argPairs.get(LANGUAGE_BINDING_OPTION).isEmpty()) {
+        if (argPairs.containsKey(ARBITRARY_OPTION) || argPairs.containsKey(FILE_NAME)) {
+            if (!argPairs.containsKey(LANGUAGE_BINDING_OPTION) || argPairs.get(LANGUAGE_BINDING_OPTION).isEmpty()) {
                 System.out.println("Error: A language binding must be specified with the --arbitrary option.");
                 return;
             }
-            if(!argPairs.containsKey(SERVICE_OPTION) || argPairs.get(SERVICE_OPTION).isEmpty()) {
+            if (!argPairs.containsKey(SERVICE_OPTION) || argPairs.get(SERVICE_OPTION).isEmpty()) {
                 System.out.println("Error: A service name must be specified with the --arbitrary option.");
                 return;
             }
 
             String languageBinding = argPairs.get(LANGUAGE_BINDING_OPTION);
             String serviceName = argPairs.get(SERVICE_OPTION);
-            String arbitraryJson;
 
             //read from the piped input
-            try(InputStreamReader reader = new InputStreamReader(System.in, "UTF-8")) {
+            try (InputStream stream = getInputStreamReader(argPairs)) {
                 StringBuilder stringBuilder = new StringBuilder();
 
-                char[] buffer = new char[1024];
-                while(reader.read(buffer) > 0 ) {
-                    stringBuilder.append(buffer);
+                byte[] buffer = new byte[1024];
+                while (stream.read(buffer) > 0) {
+                    stringBuilder.append(new String(buffer, StandardCharsets.UTF_8));
                 }
 
                 arbitraryJson = stringBuilder.toString();
             }
 
-            if(arbitraryJson.length() > 0) {
+            if (arbitraryJson != null && arbitraryJson.length() > 0) {
                 DirectFromC2jGenerator directFromC2jGenerator = new DirectFromC2jGenerator(generator);
                 try {
                     File outputLib = directFromC2jGenerator.generateSourceFromJson(arbitraryJson, languageBinding, serviceName);
@@ -80,16 +81,22 @@ public class main {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-            }
-            else {
+            } else {
                 System.out.println("You must supply standard input if you specify the --arbitrary option.");
-            }
 
+            }
             return;
         }
 
-
         printHelp();
+
+    }
+
+    private static InputStream getInputStreamReader(Map<String, String> argsMap) throws FileNotFoundException, UnsupportedEncodingException {
+        if (argsMap.containsKey(FILE_NAME)) {
+            return new FileInputStream(argsMap.get(FILE_NAME));
+        }
+        return System.in;
     }
 
     private static void printHelp() {
@@ -119,24 +126,24 @@ public class main {
     /**
      * If we have option pairs (e.g. --key value) then this will put them into the map as key to value. If the option
      * does not take an argument, then the option is a key but the value will be empty.
+     *
      * @param args cli args to parse.
      * @return map of passed options and their arguments if they exist.
      */
     private static Map<String, String> getArgOptionPairs(String[] args) {
         Map<String, String> argsPairs = new HashMap<>();
-        for (int i = 0; i < args.length;) {
+        for (int i = 0; i < args.length; ) {
             String key = "", value = "";
-            if(isOption(args[i])) {
+            if (isOption(args[i])) {
                 key = getOptionName(args[i]);
                 ++i;
 
-                if(i < args.length && !isOption(args[i])) {
+                if (i < args.length && !isOption(args[i])) {
                     value = args[i];
                     ++i;
                 }
                 argsPairs.put(key, value);
-            }
-            else {
+            } else {
                 ++i;
             }
         }

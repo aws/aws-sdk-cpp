@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -17,28 +17,34 @@
 
 #include <utility>
 
-using namespace Aws::CognitoSync::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
+namespace Aws
+{
+namespace CognitoSync
+{
+namespace Model
+{
+
 RecordPatch::RecordPatch() : 
+    m_op(Operation::NOT_SET),
     m_opHasBeenSet(false),
     m_keyHasBeenSet(false),
     m_valueHasBeenSet(false),
     m_syncCount(0),
     m_syncCountHasBeenSet(false),
-    m_deviceLastModifiedDate(0.0),
     m_deviceLastModifiedDateHasBeenSet(false)
 {
 }
 
 RecordPatch::RecordPatch(const JsonValue& jsonValue) : 
+    m_op(Operation::NOT_SET),
     m_opHasBeenSet(false),
     m_keyHasBeenSet(false),
     m_valueHasBeenSet(false),
     m_syncCount(0),
     m_syncCountHasBeenSet(false),
-    m_deviceLastModifiedDate(0.0),
     m_deviceLastModifiedDateHasBeenSet(false)
 {
   *this = jsonValue;
@@ -113,9 +119,12 @@ JsonValue RecordPatch::Jsonize() const
 
   if(m_deviceLastModifiedDateHasBeenSet)
   {
-   payload.WithDouble("DeviceLastModifiedDate", m_deviceLastModifiedDate);
-
+   payload.WithDouble("DeviceLastModifiedDate", m_deviceLastModifiedDate.SecondsWithMSPrecision());
   }
 
-  return std::move(payload);
+  return payload;
 }
+
+} // namespace Model
+} // namespace CognitoSync
+} // namespace Aws

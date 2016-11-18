@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,14 +19,20 @@
 
 #include <utility>
 
-using namespace Aws::EC2::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
+
 VgwTelemetry::VgwTelemetry() : 
     m_outsideIpAddressHasBeenSet(false),
+    m_status(TelemetryStatus::NOT_SET),
     m_statusHasBeenSet(false),
-    m_lastStatusChange(0.0),
     m_lastStatusChangeHasBeenSet(false),
     m_statusMessageHasBeenSet(false),
     m_acceptedRouteCount(0),
@@ -36,8 +42,8 @@ VgwTelemetry::VgwTelemetry() :
 
 VgwTelemetry::VgwTelemetry(const XmlNode& xmlNode) : 
     m_outsideIpAddressHasBeenSet(false),
+    m_status(TelemetryStatus::NOT_SET),
     m_statusHasBeenSet(false),
-    m_lastStatusChange(0.0),
     m_lastStatusChangeHasBeenSet(false),
     m_statusMessageHasBeenSet(false),
     m_acceptedRouteCount(0),
@@ -67,7 +73,7 @@ VgwTelemetry& VgwTelemetry::operator =(const XmlNode& xmlNode)
     XmlNode lastStatusChangeNode = resultNode.FirstChild("lastStatusChange");
     if(!lastStatusChangeNode.IsNull())
     {
-      m_lastStatusChange = StringUtils::ConvertToDouble(StringUtils::Trim(lastStatusChangeNode.GetText().c_str()).c_str());
+      m_lastStatusChange = DateTime(StringUtils::Trim(lastStatusChangeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_lastStatusChangeHasBeenSet = true;
     }
     XmlNode statusMessageNode = resultNode.FirstChild("statusMessage");
@@ -93,22 +99,27 @@ void VgwTelemetry::OutputToStream(Aws::OStream& oStream, const char* location, u
   {
       oStream << location << index << locationValue << ".OutsideIpAddress=" << StringUtils::URLEncode(m_outsideIpAddress.c_str()) << "&";
   }
+
   if(m_statusHasBeenSet)
   {
       oStream << location << index << locationValue << ".Status=" << TelemetryStatusMapper::GetNameForTelemetryStatus(m_status) << "&";
   }
+
   if(m_lastStatusChangeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".LastStatusChange=" << m_lastStatusChange << "&";
+      oStream << location << index << locationValue << ".LastStatusChange=" << StringUtils::URLEncode(m_lastStatusChange.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_statusMessageHasBeenSet)
   {
       oStream << location << index << locationValue << ".StatusMessage=" << StringUtils::URLEncode(m_statusMessage.c_str()) << "&";
   }
+
   if(m_acceptedRouteCountHasBeenSet)
   {
       oStream << location << index << locationValue << ".AcceptedRouteCount=" << m_acceptedRouteCount << "&";
   }
+
 }
 
 void VgwTelemetry::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -123,7 +134,7 @@ void VgwTelemetry::OutputToStream(Aws::OStream& oStream, const char* location) c
   }
   if(m_lastStatusChangeHasBeenSet)
   {
-      oStream << location << ".LastStatusChange=" << m_lastStatusChange << "&";
+      oStream << location << ".LastStatusChange=" << StringUtils::URLEncode(m_lastStatusChange.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_statusMessageHasBeenSet)
   {
@@ -134,3 +145,7 @@ void VgwTelemetry::OutputToStream(Aws::OStream& oStream, const char* location) c
       oStream << location << ".AcceptedRouteCount=" << m_acceptedRouteCount << "&";
   }
 }
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

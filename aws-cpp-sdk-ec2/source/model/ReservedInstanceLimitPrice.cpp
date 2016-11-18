@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,13 +19,20 @@
 
 #include <utility>
 
-using namespace Aws::EC2::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
 
 ReservedInstanceLimitPrice::ReservedInstanceLimitPrice() : 
     m_amount(0.0),
     m_amountHasBeenSet(false),
+    m_currencyCode(CurrencyCodeValues::NOT_SET),
     m_currencyCodeHasBeenSet(false)
 {
 }
@@ -33,6 +40,7 @@ ReservedInstanceLimitPrice::ReservedInstanceLimitPrice() :
 ReservedInstanceLimitPrice::ReservedInstanceLimitPrice(const XmlNode& xmlNode) : 
     m_amount(0.0),
     m_amountHasBeenSet(false),
+    m_currencyCode(CurrencyCodeValues::NOT_SET),
     m_currencyCodeHasBeenSet(false)
 {
   *this = xmlNode;
@@ -65,22 +73,28 @@ void ReservedInstanceLimitPrice::OutputToStream(Aws::OStream& oStream, const cha
 {
   if(m_amountHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Amount=" << m_amount << "&";
+        oStream << location << index << locationValue << ".Amount=" << StringUtils::URLEncode(m_amount) << "&";
   }
+
   if(m_currencyCodeHasBeenSet)
   {
       oStream << location << index << locationValue << ".CurrencyCode=" << CurrencyCodeValuesMapper::GetNameForCurrencyCodeValues(m_currencyCode) << "&";
   }
+
 }
 
 void ReservedInstanceLimitPrice::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
   if(m_amountHasBeenSet)
   {
-      oStream << location << ".Amount=" << m_amount << "&";
+        oStream << location << ".Amount=" << StringUtils::URLEncode(m_amount) << "&";
   }
   if(m_currencyCodeHasBeenSet)
   {
       oStream << location << ".CurrencyCode=" << CurrencyCodeValuesMapper::GetNameForCurrencyCodeValues(m_currencyCode) << "&";
   }
 }
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

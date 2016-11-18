@@ -6,7 +6,7 @@
 #if(!((($shape.payload && ($shape.payload == $member.key && !$member.value.shape.structure)) || $member.value.streaming) && $shape.request))
 #set($memberDocumentation = '')
 #if($member.value.documentation)
-#set($memberDocumentation ="/*${nl}     ${member.value.documentation}${nl}    */")
+#set($memberDocumentation ="/**${nl}     * ${member.value.documentation}${nl}     */")
 #end
 #if((($shape.payload && ($shape.payload == $member.key && !$member.value.shape.structure)) || $member.value.streaming) && $shape.result)
 #set($cppType = "Utils::Stream::ResponseStream")
@@ -27,6 +27,9 @@
     $memberDocumentation
     inline Aws::IOStream& Get${memberKeyWithFirstLetterCapitalized}() { return ${memberVariableName}.GetUnderlyingStream(); }
 
+    $memberDocumentation
+    inline void ReplaceBody(Aws::IOStream* body) { ${memberVariableName} = Aws::Utils::Stream::ResponseStream(body); }
+    
 #else
 #set($override = "")
 #if($memberKeyWithFirstLetterCapitalized == "ContentType" && $shape.hasStreamMembers() && $shape.request)

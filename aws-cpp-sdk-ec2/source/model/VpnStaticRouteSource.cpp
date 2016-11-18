@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -14,43 +14,59 @@
 */
 #include <aws/ec2/model/VpnStaticRouteSource.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
+#include <aws/core/utils/EnumParseOverflowContainer.h>
 
 using namespace Aws::Utils;
 
-static const int Static_HASH = HashingUtils::HashString("Static");
 
 namespace Aws
 {
-namespace EC2
-{
-namespace Model
-{
-namespace VpnStaticRouteSourceMapper
-{
-VpnStaticRouteSource GetVpnStaticRouteSourceForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-
-  if (hashCode == Static_HASH)
+  namespace EC2
   {
-    return VpnStaticRouteSource::Static;
-  }
+    namespace Model
+    {
+      namespace VpnStaticRouteSourceMapper
+      {
 
-  return VpnStaticRouteSource::NOT_SET;
-}
+        static const int Static_HASH = HashingUtils::HashString("Static");
 
-Aws::String GetNameForVpnStaticRouteSource(VpnStaticRouteSource value)
-{
-  switch(value)
-  {
-  case VpnStaticRouteSource::Static:
-    return "Static";
-  default:
-    return "";
-  }
-}
 
-} // namespace VpnStaticRouteSourceMapper
-} // namespace Model
-} // namespace EC2
+        VpnStaticRouteSource GetVpnStaticRouteSourceForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == Static_HASH)
+          {
+            return VpnStaticRouteSource::Static;
+          }
+          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<VpnStaticRouteSource>(hashCode);
+          }
+
+          return VpnStaticRouteSource::NOT_SET;
+        }
+
+        Aws::String GetNameForVpnStaticRouteSource(VpnStaticRouteSource enumValue)
+        {
+          switch(enumValue)
+          {
+          case VpnStaticRouteSource::Static:
+            return "Static";
+          default:
+            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace VpnStaticRouteSourceMapper
+    } // namespace Model
+  } // namespace EC2
 } // namespace Aws

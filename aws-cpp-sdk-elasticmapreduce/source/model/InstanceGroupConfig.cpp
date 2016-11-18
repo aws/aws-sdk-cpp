@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -17,31 +17,43 @@
 
 #include <utility>
 
-using namespace Aws::EMR::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
+namespace Aws
+{
+namespace EMR
+{
+namespace Model
+{
+
 InstanceGroupConfig::InstanceGroupConfig() : 
     m_nameHasBeenSet(false),
+    m_market(MarketType::NOT_SET),
     m_marketHasBeenSet(false),
+    m_instanceRole(InstanceRoleType::NOT_SET),
     m_instanceRoleHasBeenSet(false),
     m_bidPriceHasBeenSet(false),
     m_instanceTypeHasBeenSet(false),
     m_instanceCount(0),
     m_instanceCountHasBeenSet(false),
-    m_configurationsHasBeenSet(false)
+    m_configurationsHasBeenSet(false),
+    m_ebsConfigurationHasBeenSet(false)
 {
 }
 
 InstanceGroupConfig::InstanceGroupConfig(const JsonValue& jsonValue) : 
     m_nameHasBeenSet(false),
+    m_market(MarketType::NOT_SET),
     m_marketHasBeenSet(false),
+    m_instanceRole(InstanceRoleType::NOT_SET),
     m_instanceRoleHasBeenSet(false),
     m_bidPriceHasBeenSet(false),
     m_instanceTypeHasBeenSet(false),
     m_instanceCount(0),
     m_instanceCountHasBeenSet(false),
-    m_configurationsHasBeenSet(false)
+    m_configurationsHasBeenSet(false),
+    m_ebsConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -100,6 +112,13 @@ InstanceGroupConfig& InstanceGroupConfig::operator =(const JsonValue& jsonValue)
     m_configurationsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("EbsConfiguration"))
+  {
+    m_ebsConfiguration = jsonValue.GetObject("EbsConfiguration");
+
+    m_ebsConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -152,5 +171,15 @@ JsonValue InstanceGroupConfig::Jsonize() const
 
   }
 
-  return std::move(payload);
+  if(m_ebsConfigurationHasBeenSet)
+  {
+   payload.WithObject("EbsConfiguration", m_ebsConfiguration.Jsonize());
+
+  }
+
+  return payload;
 }
+
+} // namespace Model
+} // namespace EMR
+} // namespace Aws

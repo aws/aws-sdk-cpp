@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/s3/S3_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/s3/model/ObjectStorageClass.h>
 #include <aws/s3/model/Owner.h>
 
@@ -31,9 +32,7 @@ namespace S3
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
+
   class AWS_S3_API Object
   {
   public:
@@ -65,13 +64,19 @@ namespace Model
     inline Object& WithKey(const char* value) { SetKey(value); return *this;}
 
     
-    inline double GetLastModified() const{ return m_lastModified; }
+    inline const Aws::Utils::DateTime& GetLastModified() const{ return m_lastModified; }
 
     
-    inline void SetLastModified(double value) { m_lastModifiedHasBeenSet = true; m_lastModified = value; }
+    inline void SetLastModified(const Aws::Utils::DateTime& value) { m_lastModifiedHasBeenSet = true; m_lastModified = value; }
 
     
-    inline Object& WithLastModified(double value) { SetLastModified(value); return *this;}
+    inline void SetLastModified(Aws::Utils::DateTime&& value) { m_lastModifiedHasBeenSet = true; m_lastModified = value; }
+
+    
+    inline Object& WithLastModified(const Aws::Utils::DateTime& value) { SetLastModified(value); return *this;}
+
+    
+    inline Object& WithLastModified(Aws::Utils::DateTime&& value) { SetLastModified(value); return *this;}
 
     
     inline const Aws::String& GetETag() const{ return m_eTag; }
@@ -95,37 +100,37 @@ namespace Model
     inline Object& WithETag(const char* value) { SetETag(value); return *this;}
 
     
-    inline long GetSize() const{ return m_size; }
+    inline long long GetSize() const{ return m_size; }
 
     
-    inline void SetSize(long value) { m_sizeHasBeenSet = true; m_size = value; }
+    inline void SetSize(long long value) { m_sizeHasBeenSet = true; m_size = value; }
 
     
-    inline Object& WithSize(long value) { SetSize(value); return *this;}
+    inline Object& WithSize(long long value) { SetSize(value); return *this;}
 
-    /*
-     The class of storage used to store the object.
-    */
+    /**
+     * The class of storage used to store the object.
+     */
     inline const ObjectStorageClass& GetStorageClass() const{ return m_storageClass; }
 
-    /*
-     The class of storage used to store the object.
-    */
+    /**
+     * The class of storage used to store the object.
+     */
     inline void SetStorageClass(const ObjectStorageClass& value) { m_storageClassHasBeenSet = true; m_storageClass = value; }
 
-    /*
-     The class of storage used to store the object.
-    */
+    /**
+     * The class of storage used to store the object.
+     */
     inline void SetStorageClass(ObjectStorageClass&& value) { m_storageClassHasBeenSet = true; m_storageClass = value; }
 
-    /*
-     The class of storage used to store the object.
-    */
+    /**
+     * The class of storage used to store the object.
+     */
     inline Object& WithStorageClass(const ObjectStorageClass& value) { SetStorageClass(value); return *this;}
 
-    /*
-     The class of storage used to store the object.
-    */
+    /**
+     * The class of storage used to store the object.
+     */
     inline Object& WithStorageClass(ObjectStorageClass&& value) { SetStorageClass(value); return *this;}
 
     
@@ -146,11 +151,11 @@ namespace Model
   private:
     Aws::String m_key;
     bool m_keyHasBeenSet;
-    double m_lastModified;
+    Aws::Utils::DateTime m_lastModified;
     bool m_lastModifiedHasBeenSet;
     Aws::String m_eTag;
     bool m_eTagHasBeenSet;
-    long m_size;
+    long long m_size;
     bool m_sizeHasBeenSet;
     ObjectStorageClass m_storageClass;
     bool m_storageClassHasBeenSet;

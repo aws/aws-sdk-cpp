@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -29,9 +29,12 @@ namespace IAM
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
+
+  /**
+   * <p>Contains the row and column of a location of a <code>Statement</code> element
+   * in a policy document.</p> <p>This data type is used as a member of the <code>
+   * <a>Statement</a> </code> type.</p>
+   */
   class AWS_IAM_API Position
   {
   public:
@@ -42,28 +45,40 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    
-    inline long GetLine() const{ return m_line; }
+    /**
+     * <p>The line containing the specified position in the document.</p>
+     */
+    inline int GetLine() const{ return m_line; }
 
-    
-    inline void SetLine(long value) { m_lineHasBeenSet = true; m_line = value; }
+    /**
+     * <p>The line containing the specified position in the document.</p>
+     */
+    inline void SetLine(int value) { m_lineHasBeenSet = true; m_line = value; }
 
-    
-    inline Position& WithLine(long value) { SetLine(value); return *this;}
+    /**
+     * <p>The line containing the specified position in the document.</p>
+     */
+    inline Position& WithLine(int value) { SetLine(value); return *this;}
 
-    
-    inline long GetColumn() const{ return m_column; }
+    /**
+     * <p>The column in the line containing the specified position in the document.</p>
+     */
+    inline int GetColumn() const{ return m_column; }
 
-    
-    inline void SetColumn(long value) { m_columnHasBeenSet = true; m_column = value; }
+    /**
+     * <p>The column in the line containing the specified position in the document.</p>
+     */
+    inline void SetColumn(int value) { m_columnHasBeenSet = true; m_column = value; }
 
-    
-    inline Position& WithColumn(long value) { SetColumn(value); return *this;}
+    /**
+     * <p>The column in the line containing the specified position in the document.</p>
+     */
+    inline Position& WithColumn(int value) { SetColumn(value); return *this;}
 
   private:
-    long m_line;
+    int m_line;
     bool m_lineHasBeenSet;
-    long m_column;
+    int m_column;
     bool m_columnHasBeenSet;
   };
 

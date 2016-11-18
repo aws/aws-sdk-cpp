@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -27,7 +27,9 @@ UpdateFunctionCodeRequest::UpdateFunctionCodeRequest() :
     m_zipFileHasBeenSet(false),
     m_s3BucketHasBeenSet(false),
     m_s3KeyHasBeenSet(false),
-    m_s3ObjectVersionHasBeenSet(false)
+    m_s3ObjectVersionHasBeenSet(false),
+    m_publish(false),
+    m_publishHasBeenSet(false)
 {
 }
 
@@ -55,6 +57,12 @@ Aws::String UpdateFunctionCodeRequest::SerializePayload() const
   if(m_s3ObjectVersionHasBeenSet)
   {
    payload.WithString("S3ObjectVersion", m_s3ObjectVersion);
+
+  }
+
+  if(m_publishHasBeenSet)
+  {
+   payload.WithBool("Publish", m_publish);
 
   }
 

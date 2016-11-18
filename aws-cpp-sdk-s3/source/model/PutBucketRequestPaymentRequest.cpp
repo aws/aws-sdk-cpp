@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -14,6 +14,7 @@
 */
 #include <aws/s3/model/PutBucketRequestPaymentRequest.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
@@ -33,11 +34,11 @@ Aws::String PutBucketRequestPaymentRequest::SerializePayload() const
 {
   XmlDocument payloadDoc = XmlDocument::CreateWithRootNode("RequestPaymentConfiguration");
 
-  XmlNode rootNode = payloadDoc.GetRootElement();
-  rootNode.SetAttributeValue("xmlns", "http://s3.amazonaws.com/doc/2006-03-01/");
+  XmlNode parentNode = payloadDoc.GetRootElement();
+  parentNode.SetAttributeValue("xmlns", "http://s3.amazonaws.com/doc/2006-03-01/");
 
-  m_requestPaymentConfiguration.AddToNode(rootNode);
-  if(rootNode.HasChildren())
+  m_requestPaymentConfiguration.AddToNode(parentNode);
+  if(parentNode.HasChildren())
   {
     return payloadDoc.ConvertToString();
   }
@@ -52,11 +53,10 @@ Aws::Http::HeaderValueCollection PutBucketRequestPaymentRequest::GetRequestSpeci
   Aws::StringStream ss;
   if(m_contentMD5HasBeenSet)
   {
-   ss << m_contentMD5;
-   headers.insert(Aws::Http::HeaderValuePair("content-md5", ss.str()));
-   ss.str("");
+    ss << m_contentMD5;
+    headers.insert(Aws::Http::HeaderValuePair("content-md5", ss.str()));
+    ss.str("");
   }
 
-  return std::move(headers);
-
+  return headers;
 }

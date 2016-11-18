@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -14,50 +14,66 @@
 */
 #include <aws/ec2/model/VolumeAttributeName.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
+#include <aws/core/utils/EnumParseOverflowContainer.h>
 
 using namespace Aws::Utils;
 
-static const int autoEnableIO_HASH = HashingUtils::HashString("autoEnableIO");
-static const int productCodes_HASH = HashingUtils::HashString("productCodes");
 
 namespace Aws
 {
-namespace EC2
-{
-namespace Model
-{
-namespace VolumeAttributeNameMapper
-{
-VolumeAttributeName GetVolumeAttributeNameForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-
-  if (hashCode == autoEnableIO_HASH)
+  namespace EC2
   {
-    return VolumeAttributeName::autoEnableIO;
-  }
-  else if (hashCode == productCodes_HASH)
-  {
-    return VolumeAttributeName::productCodes;
-  }
+    namespace Model
+    {
+      namespace VolumeAttributeNameMapper
+      {
 
-  return VolumeAttributeName::NOT_SET;
-}
+        static const int autoEnableIO_HASH = HashingUtils::HashString("autoEnableIO");
+        static const int productCodes_HASH = HashingUtils::HashString("productCodes");
 
-Aws::String GetNameForVolumeAttributeName(VolumeAttributeName value)
-{
-  switch(value)
-  {
-  case VolumeAttributeName::autoEnableIO:
-    return "autoEnableIO";
-  case VolumeAttributeName::productCodes:
-    return "productCodes";
-  default:
-    return "";
-  }
-}
 
-} // namespace VolumeAttributeNameMapper
-} // namespace Model
-} // namespace EC2
+        VolumeAttributeName GetVolumeAttributeNameForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == autoEnableIO_HASH)
+          {
+            return VolumeAttributeName::autoEnableIO;
+          }
+          else if (hashCode == productCodes_HASH)
+          {
+            return VolumeAttributeName::productCodes;
+          }
+          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<VolumeAttributeName>(hashCode);
+          }
+
+          return VolumeAttributeName::NOT_SET;
+        }
+
+        Aws::String GetNameForVolumeAttributeName(VolumeAttributeName enumValue)
+        {
+          switch(enumValue)
+          {
+          case VolumeAttributeName::autoEnableIO:
+            return "autoEnableIO";
+          case VolumeAttributeName::productCodes:
+            return "productCodes";
+          default:
+            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace VolumeAttributeNameMapper
+    } // namespace Model
+  } // namespace EC2
 } // namespace Aws

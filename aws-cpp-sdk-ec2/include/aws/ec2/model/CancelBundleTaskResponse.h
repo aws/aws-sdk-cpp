@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -33,9 +33,9 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
+  /**
+   * <p>Contains the output of CancelBundleTask.</p>
+   */
   class AWS_EC2_API CancelBundleTaskResponse
   {
   public:
@@ -43,29 +43,29 @@ namespace Model
     CancelBundleTaskResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     CancelBundleTaskResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>Information about the bundle task.</p>
-    */
+    /**
+     * <p>Information about the bundle task.</p>
+     */
     inline const BundleTask& GetBundleTask() const{ return m_bundleTask; }
 
-    /*
-     <p>Information about the bundle task.</p>
-    */
+    /**
+     * <p>Information about the bundle task.</p>
+     */
     inline void SetBundleTask(const BundleTask& value) { m_bundleTask = value; }
 
-    /*
-     <p>Information about the bundle task.</p>
-    */
+    /**
+     * <p>Information about the bundle task.</p>
+     */
     inline void SetBundleTask(BundleTask&& value) { m_bundleTask = value; }
 
-    /*
-     <p>Information about the bundle task.</p>
-    */
+    /**
+     * <p>Information about the bundle task.</p>
+     */
     inline CancelBundleTaskResponse& WithBundleTask(const BundleTask& value) { SetBundleTask(value); return *this;}
 
-    /*
-     <p>Information about the bundle task.</p>
-    */
+    /**
+     * <p>Information about the bundle task.</p>
+     */
     inline CancelBundleTaskResponse& WithBundleTask(BundleTask&& value) { SetBundleTask(value); return *this;}
 
     

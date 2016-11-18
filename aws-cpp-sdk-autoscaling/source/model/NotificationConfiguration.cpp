@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace AutoScaling
+{
+namespace Model
+{
 
 NotificationConfiguration::NotificationConfiguration() : 
     m_autoScalingGroupNameHasBeenSet(false),
@@ -73,14 +79,17 @@ void NotificationConfiguration::OutputToStream(Aws::OStream& oStream, const char
   {
       oStream << location << index << locationValue << ".AutoScalingGroupName=" << StringUtils::URLEncode(m_autoScalingGroupName.c_str()) << "&";
   }
+
   if(m_topicARNHasBeenSet)
   {
       oStream << location << index << locationValue << ".TopicARN=" << StringUtils::URLEncode(m_topicARN.c_str()) << "&";
   }
+
   if(m_notificationTypeHasBeenSet)
   {
       oStream << location << index << locationValue << ".NotificationType=" << StringUtils::URLEncode(m_notificationType.c_str()) << "&";
   }
+
 }
 
 void NotificationConfiguration::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -98,3 +107,7 @@ void NotificationConfiguration::OutputToStream(Aws::OStream& oStream, const char
       oStream << location << ".NotificationType=" << StringUtils::URLEncode(m_notificationType.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace AutoScaling
+} // namespace Aws

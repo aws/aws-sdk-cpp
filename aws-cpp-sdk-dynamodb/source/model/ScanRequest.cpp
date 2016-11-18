@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -27,10 +27,13 @@ ScanRequest::ScanRequest() :
     m_attributesToGetHasBeenSet(false),
     m_limit(0),
     m_limitHasBeenSet(false),
+    m_select(Select::NOT_SET),
     m_selectHasBeenSet(false),
     m_scanFilterHasBeenSet(false),
+    m_conditionalOperator(ConditionalOperator::NOT_SET),
     m_conditionalOperatorHasBeenSet(false),
     m_exclusiveStartKeyHasBeenSet(false),
+    m_returnConsumedCapacity(ReturnConsumedCapacity::NOT_SET),
     m_returnConsumedCapacityHasBeenSet(false),
     m_totalSegments(0),
     m_totalSegmentsHasBeenSet(false),
@@ -174,7 +177,7 @@ Aws::Http::HeaderValueCollection ScanRequest::GetRequestSpecificHeaders() const
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "DynamoDB_20120810.Scan"));
-  return std::move(headers);
+  return headers;
 
 }
 

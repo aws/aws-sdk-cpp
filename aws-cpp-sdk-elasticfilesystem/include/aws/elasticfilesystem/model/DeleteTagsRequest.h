@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -25,88 +25,88 @@ namespace EFS
 namespace Model
 {
 
-  /*
-  */
+  /**
+   * <p/>
+   */
   class AWS_EFS_API DeleteTagsRequest : public EFSRequest
   {
   public:
     DeleteTagsRequest();
     Aws::String SerializePayload() const override;
 
-
-    /*
-     <p>String. The ID of the file system whose tags you want to delete.</p>
-    */
+    /**
+     * <p>ID of the file system whose tags you want to delete (String).</p>
+     */
     inline const Aws::String& GetFileSystemId() const{ return m_fileSystemId; }
 
-    /*
-     <p>String. The ID of the file system whose tags you want to delete.</p>
-    */
+    /**
+     * <p>ID of the file system whose tags you want to delete (String).</p>
+     */
     inline void SetFileSystemId(const Aws::String& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = value; }
 
-    /*
-     <p>String. The ID of the file system whose tags you want to delete.</p>
-    */
+    /**
+     * <p>ID of the file system whose tags you want to delete (String).</p>
+     */
     inline void SetFileSystemId(Aws::String&& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = value; }
 
-    /*
-     <p>String. The ID of the file system whose tags you want to delete.</p>
-    */
+    /**
+     * <p>ID of the file system whose tags you want to delete (String).</p>
+     */
     inline void SetFileSystemId(const char* value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId.assign(value); }
 
-    /*
-     <p>String. The ID of the file system whose tags you want to delete.</p>
-    */
+    /**
+     * <p>ID of the file system whose tags you want to delete (String).</p>
+     */
     inline DeleteTagsRequest& WithFileSystemId(const Aws::String& value) { SetFileSystemId(value); return *this;}
 
-    /*
-     <p>String. The ID of the file system whose tags you want to delete.</p>
-    */
+    /**
+     * <p>ID of the file system whose tags you want to delete (String).</p>
+     */
     inline DeleteTagsRequest& WithFileSystemId(Aws::String&& value) { SetFileSystemId(value); return *this;}
 
-    /*
-     <p>String. The ID of the file system whose tags you want to delete.</p>
-    */
+    /**
+     * <p>ID of the file system whose tags you want to delete (String).</p>
+     */
     inline DeleteTagsRequest& WithFileSystemId(const char* value) { SetFileSystemId(value); return *this;}
 
-    /*
-     <p>A list of tag keys to delete.</p>
-    */
+    /**
+     * <p>List of tag keys to delete.</p>
+     */
     inline const Aws::Vector<Aws::String>& GetTagKeys() const{ return m_tagKeys; }
 
-    /*
-     <p>A list of tag keys to delete.</p>
-    */
+    /**
+     * <p>List of tag keys to delete.</p>
+     */
     inline void SetTagKeys(const Aws::Vector<Aws::String>& value) { m_tagKeysHasBeenSet = true; m_tagKeys = value; }
 
-    /*
-     <p>A list of tag keys to delete.</p>
-    */
+    /**
+     * <p>List of tag keys to delete.</p>
+     */
     inline void SetTagKeys(Aws::Vector<Aws::String>&& value) { m_tagKeysHasBeenSet = true; m_tagKeys = value; }
 
-    /*
-     <p>A list of tag keys to delete.</p>
-    */
+    /**
+     * <p>List of tag keys to delete.</p>
+     */
     inline DeleteTagsRequest& WithTagKeys(const Aws::Vector<Aws::String>& value) { SetTagKeys(value); return *this;}
 
-    /*
-     <p>A list of tag keys to delete.</p>
-    */
+    /**
+     * <p>List of tag keys to delete.</p>
+     */
     inline DeleteTagsRequest& WithTagKeys(Aws::Vector<Aws::String>&& value) { SetTagKeys(value); return *this;}
 
-    /*
-     <p>A list of tag keys to delete.</p>
-    */
+    /**
+     * <p>List of tag keys to delete.</p>
+     */
     inline DeleteTagsRequest& AddTagKeys(const Aws::String& value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(value); return *this; }
 
-    /*
-     <p>A list of tag keys to delete.</p>
-    */
+    /**
+     * <p>List of tag keys to delete.</p>
+     */
     inline DeleteTagsRequest& AddTagKeys(Aws::String&& value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(value); return *this; }
 
-    /*
-     <p>A list of tag keys to delete.</p>
-    */
+    /**
+     * <p>List of tag keys to delete.</p>
+     */
     inline DeleteTagsRequest& AddTagKeys(const char* value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(value); return *this; }
 
   private:

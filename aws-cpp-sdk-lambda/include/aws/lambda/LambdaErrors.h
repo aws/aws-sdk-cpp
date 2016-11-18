@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -21,7 +21,7 @@ namespace Aws
 {
 namespace Lambda
 {
-enum class AWS_LAMBDA_API LambdaErrors
+enum class LambdaErrors
 {
   //From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
@@ -44,16 +44,29 @@ enum class AWS_LAMBDA_API LambdaErrors
   RESOURCE_NOT_FOUND = 16,
   UNRECOGNIZED_CLIENT = 17,
   MALFORMED_QUERY_STRING = 18,
+  SLOW_DOWN = 19,
+  REQUEST_TIME_TOO_SKEWED = 20,
+  INVALID_SIGNATURE = 21,
+  SIGNATURE_DOES_NOT_MATCH = 22,
   NETWORK_CONNECTION = 99,
+  
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
   CODE_STORAGE_EXCEEDED= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  E_C2_ACCESS_DENIED,
+  E_C2_THROTTLED,
+  E_C2_UNEXPECTED,
+  E_N_I_LIMIT_REACHED,
   INVALID_REQUEST_CONTENT,
+  INVALID_SECURITY_GROUP_I_D,
+  INVALID_SUBNET_I_D,
+  INVALID_ZIP_FILE,
   POLICY_LENGTH_EXCEEDED,
   REQUEST_TOO_LARGE,
   RESOURCE_CONFLICT,
   SERVICE,
+  SUBNET_I_P_ADDRESS_LIMIT_REACHED,
   TOO_MANY_REQUESTS,
   UNSUPPORTED_MEDIA_TYPE
 };

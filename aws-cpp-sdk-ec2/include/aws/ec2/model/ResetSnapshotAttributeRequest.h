@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -25,88 +25,102 @@ namespace EC2
 namespace Model
 {
 
-  /*
-  */
+  /**
+   * <p>Contains the parameters for ResetSnapshotAttribute.</p>
+   */
   class AWS_EC2_API ResetSnapshotAttributeRequest : public EC2Request
   {
   public:
     ResetSnapshotAttributeRequest();
     Aws::String SerializePayload() const override;
 
-
-    /*
-     <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    */
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
     inline bool GetDryRun() const{ return m_dryRun; }
 
-    /*
-     <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    */
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
 
-    /*
-     <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    */
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
     inline ResetSnapshotAttributeRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
-    /*
-     <p>The ID of the snapshot.</p>
-    */
+    /**
+     * <p>The ID of the snapshot.</p>
+     */
     inline const Aws::String& GetSnapshotId() const{ return m_snapshotId; }
 
-    /*
-     <p>The ID of the snapshot.</p>
-    */
+    /**
+     * <p>The ID of the snapshot.</p>
+     */
     inline void SetSnapshotId(const Aws::String& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = value; }
 
-    /*
-     <p>The ID of the snapshot.</p>
-    */
+    /**
+     * <p>The ID of the snapshot.</p>
+     */
     inline void SetSnapshotId(Aws::String&& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = value; }
 
-    /*
-     <p>The ID of the snapshot.</p>
-    */
+    /**
+     * <p>The ID of the snapshot.</p>
+     */
     inline void SetSnapshotId(const char* value) { m_snapshotIdHasBeenSet = true; m_snapshotId.assign(value); }
 
-    /*
-     <p>The ID of the snapshot.</p>
-    */
+    /**
+     * <p>The ID of the snapshot.</p>
+     */
     inline ResetSnapshotAttributeRequest& WithSnapshotId(const Aws::String& value) { SetSnapshotId(value); return *this;}
 
-    /*
-     <p>The ID of the snapshot.</p>
-    */
+    /**
+     * <p>The ID of the snapshot.</p>
+     */
     inline ResetSnapshotAttributeRequest& WithSnapshotId(Aws::String&& value) { SetSnapshotId(value); return *this;}
 
-    /*
-     <p>The ID of the snapshot.</p>
-    */
+    /**
+     * <p>The ID of the snapshot.</p>
+     */
     inline ResetSnapshotAttributeRequest& WithSnapshotId(const char* value) { SetSnapshotId(value); return *this;}
 
-    /*
-     <p>The attribute to reset. Currently, only the attribute for permission to create volumes can be reset.</p>
-    */
+    /**
+     * <p>The attribute to reset. Currently, only the attribute for permission to
+     * create volumes can be reset.</p>
+     */
     inline const SnapshotAttributeName& GetAttribute() const{ return m_attribute; }
 
-    /*
-     <p>The attribute to reset. Currently, only the attribute for permission to create volumes can be reset.</p>
-    */
+    /**
+     * <p>The attribute to reset. Currently, only the attribute for permission to
+     * create volumes can be reset.</p>
+     */
     inline void SetAttribute(const SnapshotAttributeName& value) { m_attributeHasBeenSet = true; m_attribute = value; }
 
-    /*
-     <p>The attribute to reset. Currently, only the attribute for permission to create volumes can be reset.</p>
-    */
+    /**
+     * <p>The attribute to reset. Currently, only the attribute for permission to
+     * create volumes can be reset.</p>
+     */
     inline void SetAttribute(SnapshotAttributeName&& value) { m_attributeHasBeenSet = true; m_attribute = value; }
 
-    /*
-     <p>The attribute to reset. Currently, only the attribute for permission to create volumes can be reset.</p>
-    */
+    /**
+     * <p>The attribute to reset. Currently, only the attribute for permission to
+     * create volumes can be reset.</p>
+     */
     inline ResetSnapshotAttributeRequest& WithAttribute(const SnapshotAttributeName& value) { SetAttribute(value); return *this;}
 
-    /*
-     <p>The attribute to reset. Currently, only the attribute for permission to create volumes can be reset.</p>
-    */
+    /**
+     * <p>The attribute to reset. Currently, only the attribute for permission to
+     * create volumes can be reset.</p>
+     */
     inline ResetSnapshotAttributeRequest& WithAttribute(SnapshotAttributeName&& value) { SetAttribute(value); return *this;}
 
   private:

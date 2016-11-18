@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -35,9 +35,9 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
+  /**
+   * <p>Contains the output of DescribeSnapshots.</p>
+   */
   class AWS_EC2_API DescribeSnapshotsResponse
   {
   public:
@@ -45,74 +45,102 @@ namespace Model
     DescribeSnapshotsResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     DescribeSnapshotsResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>Information about the snapshots.</p>
-    */
+    /**
+     * <p>Information about the snapshots.</p>
+     */
     inline const Aws::Vector<Snapshot>& GetSnapshots() const{ return m_snapshots; }
 
-    /*
-     <p>Information about the snapshots.</p>
-    */
+    /**
+     * <p>Information about the snapshots.</p>
+     */
     inline void SetSnapshots(const Aws::Vector<Snapshot>& value) { m_snapshots = value; }
 
-    /*
-     <p>Information about the snapshots.</p>
-    */
+    /**
+     * <p>Information about the snapshots.</p>
+     */
     inline void SetSnapshots(Aws::Vector<Snapshot>&& value) { m_snapshots = value; }
 
-    /*
-     <p>Information about the snapshots.</p>
-    */
+    /**
+     * <p>Information about the snapshots.</p>
+     */
     inline DescribeSnapshotsResponse& WithSnapshots(const Aws::Vector<Snapshot>& value) { SetSnapshots(value); return *this;}
 
-    /*
-     <p>Information about the snapshots.</p>
-    */
+    /**
+     * <p>Information about the snapshots.</p>
+     */
     inline DescribeSnapshotsResponse& WithSnapshots(Aws::Vector<Snapshot>&& value) { SetSnapshots(value); return *this;}
 
-    /*
-     <p>Information about the snapshots.</p>
-    */
+    /**
+     * <p>Information about the snapshots.</p>
+     */
     inline DescribeSnapshotsResponse& AddSnapshots(const Snapshot& value) { m_snapshots.push_back(value); return *this; }
 
-    /*
-     <p>Information about the snapshots.</p>
-    */
+    /**
+     * <p>Information about the snapshots.</p>
+     */
     inline DescribeSnapshotsResponse& AddSnapshots(Snapshot&& value) { m_snapshots.push_back(value); return *this; }
 
-    /*
-     <p>The <code>NextToken</code> value to include in a future <code>DescribeSnapshots</code> request. When the results of a <code>DescribeSnapshots</code> request exceed <code>MaxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    */
+    /**
+     * <p>The <code>NextToken</code> value to include in a future
+     * <code>DescribeSnapshots</code> request. When the results of a
+     * <code>DescribeSnapshots</code> request exceed <code>MaxResults</code>, this
+     * value can be used to retrieve the next page of results. This value is
+     * <code>null</code> when there are no more results to return.</p>
+     */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
-    /*
-     <p>The <code>NextToken</code> value to include in a future <code>DescribeSnapshots</code> request. When the results of a <code>DescribeSnapshots</code> request exceed <code>MaxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    */
+    /**
+     * <p>The <code>NextToken</code> value to include in a future
+     * <code>DescribeSnapshots</code> request. When the results of a
+     * <code>DescribeSnapshots</code> request exceed <code>MaxResults</code>, this
+     * value can be used to retrieve the next page of results. This value is
+     * <code>null</code> when there are no more results to return.</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
-    /*
-     <p>The <code>NextToken</code> value to include in a future <code>DescribeSnapshots</code> request. When the results of a <code>DescribeSnapshots</code> request exceed <code>MaxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    */
+    /**
+     * <p>The <code>NextToken</code> value to include in a future
+     * <code>DescribeSnapshots</code> request. When the results of a
+     * <code>DescribeSnapshots</code> request exceed <code>MaxResults</code>, this
+     * value can be used to retrieve the next page of results. This value is
+     * <code>null</code> when there are no more results to return.</p>
+     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
 
-    /*
-     <p>The <code>NextToken</code> value to include in a future <code>DescribeSnapshots</code> request. When the results of a <code>DescribeSnapshots</code> request exceed <code>MaxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    */
+    /**
+     * <p>The <code>NextToken</code> value to include in a future
+     * <code>DescribeSnapshots</code> request. When the results of a
+     * <code>DescribeSnapshots</code> request exceed <code>MaxResults</code>, this
+     * value can be used to retrieve the next page of results. This value is
+     * <code>null</code> when there are no more results to return.</p>
+     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
-    /*
-     <p>The <code>NextToken</code> value to include in a future <code>DescribeSnapshots</code> request. When the results of a <code>DescribeSnapshots</code> request exceed <code>MaxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    */
+    /**
+     * <p>The <code>NextToken</code> value to include in a future
+     * <code>DescribeSnapshots</code> request. When the results of a
+     * <code>DescribeSnapshots</code> request exceed <code>MaxResults</code>, this
+     * value can be used to retrieve the next page of results. This value is
+     * <code>null</code> when there are no more results to return.</p>
+     */
     inline DescribeSnapshotsResponse& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
-    /*
-     <p>The <code>NextToken</code> value to include in a future <code>DescribeSnapshots</code> request. When the results of a <code>DescribeSnapshots</code> request exceed <code>MaxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    */
+    /**
+     * <p>The <code>NextToken</code> value to include in a future
+     * <code>DescribeSnapshots</code> request. When the results of a
+     * <code>DescribeSnapshots</code> request exceed <code>MaxResults</code>, this
+     * value can be used to retrieve the next page of results. This value is
+     * <code>null</code> when there are no more results to return.</p>
+     */
     inline DescribeSnapshotsResponse& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
-    /*
-     <p>The <code>NextToken</code> value to include in a future <code>DescribeSnapshots</code> request. When the results of a <code>DescribeSnapshots</code> request exceed <code>MaxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    */
+    /**
+     * <p>The <code>NextToken</code> value to include in a future
+     * <code>DescribeSnapshots</code> request. When the results of a
+     * <code>DescribeSnapshots</code> request exceed <code>MaxResults</code>, this
+     * value can be used to retrieve the next page of results. This value is
+     * <code>null</code> when there are no more results to return.</p>
+     */
     inline DescribeSnapshotsResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
     

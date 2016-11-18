@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -14,50 +14,66 @@
 */
 #include <aws/dynamodb/model/KeyType.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
+#include <aws/core/utils/EnumParseOverflowContainer.h>
 
 using namespace Aws::Utils;
 
-static const int HASH_HASH = HashingUtils::HashString("HASH");
-static const int RANGE_HASH = HashingUtils::HashString("RANGE");
 
 namespace Aws
 {
-namespace DynamoDB
-{
-namespace Model
-{
-namespace KeyTypeMapper
-{
-KeyType GetKeyTypeForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-
-  if (hashCode == HASH_HASH)
+  namespace DynamoDB
   {
-    return KeyType::HASH;
-  }
-  else if (hashCode == RANGE_HASH)
-  {
-    return KeyType::RANGE;
-  }
+    namespace Model
+    {
+      namespace KeyTypeMapper
+      {
 
-  return KeyType::NOT_SET;
-}
+        static const int HASH_HASH = HashingUtils::HashString("HASH");
+        static const int RANGE_HASH = HashingUtils::HashString("RANGE");
 
-Aws::String GetNameForKeyType(KeyType value)
-{
-  switch(value)
-  {
-  case KeyType::HASH:
-    return "HASH";
-  case KeyType::RANGE:
-    return "RANGE";
-  default:
-    return "";
-  }
-}
 
-} // namespace KeyTypeMapper
-} // namespace Model
-} // namespace DynamoDB
+        KeyType GetKeyTypeForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == HASH_HASH)
+          {
+            return KeyType::HASH;
+          }
+          else if (hashCode == RANGE_HASH)
+          {
+            return KeyType::RANGE;
+          }
+          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<KeyType>(hashCode);
+          }
+
+          return KeyType::NOT_SET;
+        }
+
+        Aws::String GetNameForKeyType(KeyType enumValue)
+        {
+          switch(enumValue)
+          {
+          case KeyType::HASH:
+            return "HASH";
+          case KeyType::RANGE:
+            return "RANGE";
+          default:
+            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace KeyTypeMapper
+    } // namespace Model
+  } // namespace DynamoDB
 } // namespace Aws

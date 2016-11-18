@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -21,6 +21,7 @@ using namespace Aws::Utils;
 
 SetIdentityNotificationTopicRequest::SetIdentityNotificationTopicRequest() : 
     m_identityHasBeenSet(false),
+    m_notificationType(NotificationType::NOT_SET),
     m_notificationTypeHasBeenSet(false),
     m_snsTopicHasBeenSet(false)
 {
@@ -34,14 +35,17 @@ Aws::String SetIdentityNotificationTopicRequest::SerializePayload() const
   {
     ss << "Identity=" << StringUtils::URLEncode(m_identity.c_str()) << "&";
   }
+
   if(m_notificationTypeHasBeenSet)
   {
     ss << "NotificationType=" << NotificationTypeMapper::GetNameForNotificationType(m_notificationType) << "&";
   }
+
   if(m_snsTopicHasBeenSet)
   {
     ss << "SnsTopic=" << StringUtils::URLEncode(m_snsTopic.c_str()) << "&";
   }
+
   ss << "Version=2010-12-01";
   return ss.str();
 }

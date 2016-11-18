@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::EC2::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
 
 InstanceBlockDeviceMappingSpecification::InstanceBlockDeviceMappingSpecification() : 
     m_deviceNameHasBeenSet(false),
@@ -81,20 +87,24 @@ void InstanceBlockDeviceMappingSpecification::OutputToStream(Aws::OStream& oStre
   {
       oStream << location << index << locationValue << ".DeviceName=" << StringUtils::URLEncode(m_deviceName.c_str()) << "&";
   }
+
   if(m_ebsHasBeenSet)
   {
       Aws::StringStream ebsLocationAndMemberSs;
       ebsLocationAndMemberSs << location << index << locationValue << ".Ebs";
       m_ebs.OutputToStream(oStream, ebsLocationAndMemberSs.str().c_str());
   }
+
   if(m_virtualNameHasBeenSet)
   {
       oStream << location << index << locationValue << ".VirtualName=" << StringUtils::URLEncode(m_virtualName.c_str()) << "&";
   }
+
   if(m_noDeviceHasBeenSet)
   {
       oStream << location << index << locationValue << ".NoDevice=" << StringUtils::URLEncode(m_noDevice.c_str()) << "&";
   }
+
 }
 
 void InstanceBlockDeviceMappingSpecification::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -118,3 +128,7 @@ void InstanceBlockDeviceMappingSpecification::OutputToStream(Aws::OStream& oStre
       oStream << location << ".NoDevice=" << StringUtils::URLEncode(m_noDevice.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

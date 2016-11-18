@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::SES::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace SES
+{
+namespace Model
+{
 
 Message::Message() : 
     m_subjectHasBeenSet(false),
@@ -67,12 +73,14 @@ void Message::OutputToStream(Aws::OStream& oStream, const char* location, unsign
       subjectLocationAndMemberSs << location << index << locationValue << ".Subject";
       m_subject.OutputToStream(oStream, subjectLocationAndMemberSs.str().c_str());
   }
+
   if(m_bodyHasBeenSet)
   {
       Aws::StringStream bodyLocationAndMemberSs;
       bodyLocationAndMemberSs << location << index << locationValue << ".Body";
       m_body.OutputToStream(oStream, bodyLocationAndMemberSs.str().c_str());
   }
+
 }
 
 void Message::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -90,3 +98,7 @@ void Message::OutputToStream(Aws::OStream& oStream, const char* location) const
       m_body.OutputToStream(oStream, bodyLocationAndMember.c_str());
   }
 }
+
+} // namespace Model
+} // namespace SES
+} // namespace Aws

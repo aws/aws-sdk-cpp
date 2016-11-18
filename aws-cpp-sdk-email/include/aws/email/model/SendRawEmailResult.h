@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -33,9 +33,9 @@ namespace SES
 {
 namespace Model
 {
-  /*
-    <p>Represents a unique message ID returned from a successful <code>SendRawEmail</code> request. </p>
-  */
+  /**
+   * <p>Represents a unique message ID.</p>
+   */
   class AWS_SES_API SendRawEmailResult
   {
   public:
@@ -43,39 +43,46 @@ namespace Model
     SendRawEmailResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     SendRawEmailResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>The unique message identifier returned from the <code>SendRawEmail</code> action. </p>
-    */
+    /**
+     * <p>The unique message identifier returned from the <code>SendRawEmail</code>
+     * action. </p>
+     */
     inline const Aws::String& GetMessageId() const{ return m_messageId; }
 
-    /*
-     <p>The unique message identifier returned from the <code>SendRawEmail</code> action. </p>
-    */
+    /**
+     * <p>The unique message identifier returned from the <code>SendRawEmail</code>
+     * action. </p>
+     */
     inline void SetMessageId(const Aws::String& value) { m_messageId = value; }
 
-    /*
-     <p>The unique message identifier returned from the <code>SendRawEmail</code> action. </p>
-    */
+    /**
+     * <p>The unique message identifier returned from the <code>SendRawEmail</code>
+     * action. </p>
+     */
     inline void SetMessageId(Aws::String&& value) { m_messageId = value; }
 
-    /*
-     <p>The unique message identifier returned from the <code>SendRawEmail</code> action. </p>
-    */
+    /**
+     * <p>The unique message identifier returned from the <code>SendRawEmail</code>
+     * action. </p>
+     */
     inline void SetMessageId(const char* value) { m_messageId.assign(value); }
 
-    /*
-     <p>The unique message identifier returned from the <code>SendRawEmail</code> action. </p>
-    */
+    /**
+     * <p>The unique message identifier returned from the <code>SendRawEmail</code>
+     * action. </p>
+     */
     inline SendRawEmailResult& WithMessageId(const Aws::String& value) { SetMessageId(value); return *this;}
 
-    /*
-     <p>The unique message identifier returned from the <code>SendRawEmail</code> action. </p>
-    */
+    /**
+     * <p>The unique message identifier returned from the <code>SendRawEmail</code>
+     * action. </p>
+     */
     inline SendRawEmailResult& WithMessageId(Aws::String&& value) { SetMessageId(value); return *this;}
 
-    /*
-     <p>The unique message identifier returned from the <code>SendRawEmail</code> action. </p>
-    */
+    /**
+     * <p>The unique message identifier returned from the <code>SendRawEmail</code>
+     * action. </p>
+     */
     inline SendRawEmailResult& WithMessageId(const char* value) { SetMessageId(value); return *this;}
 
     

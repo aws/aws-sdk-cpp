@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,8 +24,8 @@ namespace CloudWatchLogs
 namespace Model
 {
 
-  /*
-  */
+  /**
+   */
   class AWS_CLOUDWATCHLOGS_API DescribeDestinationsRequest : public CloudWatchLogsRequest
   {
   public:
@@ -34,78 +34,114 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
-    /*
-     <p>Will only return destinations that match the provided destinationNamePrefix. If you don't specify a value, no prefix is applied.</p>
-    */
+    /**
+     * <p>The prefix to match. If you don't specify a value, no prefix filter is
+     * applied.</p>
+     */
     inline const Aws::String& GetDestinationNamePrefix() const{ return m_destinationNamePrefix; }
 
-    /*
-     <p>Will only return destinations that match the provided destinationNamePrefix. If you don't specify a value, no prefix is applied.</p>
-    */
+    /**
+     * <p>The prefix to match. If you don't specify a value, no prefix filter is
+     * applied.</p>
+     */
     inline void SetDestinationNamePrefix(const Aws::String& value) { m_destinationNamePrefixHasBeenSet = true; m_destinationNamePrefix = value; }
 
-    /*
-     <p>Will only return destinations that match the provided destinationNamePrefix. If you don't specify a value, no prefix is applied.</p>
-    */
+    /**
+     * <p>The prefix to match. If you don't specify a value, no prefix filter is
+     * applied.</p>
+     */
     inline void SetDestinationNamePrefix(Aws::String&& value) { m_destinationNamePrefixHasBeenSet = true; m_destinationNamePrefix = value; }
 
-    /*
-     <p>Will only return destinations that match the provided destinationNamePrefix. If you don't specify a value, no prefix is applied.</p>
-    */
+    /**
+     * <p>The prefix to match. If you don't specify a value, no prefix filter is
+     * applied.</p>
+     */
     inline void SetDestinationNamePrefix(const char* value) { m_destinationNamePrefixHasBeenSet = true; m_destinationNamePrefix.assign(value); }
 
-    /*
-     <p>Will only return destinations that match the provided destinationNamePrefix. If you don't specify a value, no prefix is applied.</p>
-    */
+    /**
+     * <p>The prefix to match. If you don't specify a value, no prefix filter is
+     * applied.</p>
+     */
     inline DescribeDestinationsRequest& WithDestinationNamePrefix(const Aws::String& value) { SetDestinationNamePrefix(value); return *this;}
 
-    /*
-     <p>Will only return destinations that match the provided destinationNamePrefix. If you don't specify a value, no prefix is applied.</p>
-    */
+    /**
+     * <p>The prefix to match. If you don't specify a value, no prefix filter is
+     * applied.</p>
+     */
     inline DescribeDestinationsRequest& WithDestinationNamePrefix(Aws::String&& value) { SetDestinationNamePrefix(value); return *this;}
 
-    /*
-     <p>Will only return destinations that match the provided destinationNamePrefix. If you don't specify a value, no prefix is applied.</p>
-    */
+    /**
+     * <p>The prefix to match. If you don't specify a value, no prefix filter is
+     * applied.</p>
+     */
     inline DescribeDestinationsRequest& WithDestinationNamePrefix(const char* value) { SetDestinationNamePrefix(value); return *this;}
 
-    
+    /**
+     * <p>The token for the next set of items to return. (You received this token from
+     * a previous call.)</p>
+     */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
-    
+    /**
+     * <p>The token for the next set of items to return. (You received this token from
+     * a previous call.)</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
-    
+    /**
+     * <p>The token for the next set of items to return. (You received this token from
+     * a previous call.)</p>
+     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
-    
+    /**
+     * <p>The token for the next set of items to return. (You received this token from
+     * a previous call.)</p>
+     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
-    
+    /**
+     * <p>The token for the next set of items to return. (You received this token from
+     * a previous call.)</p>
+     */
     inline DescribeDestinationsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
-    
+    /**
+     * <p>The token for the next set of items to return. (You received this token from
+     * a previous call.)</p>
+     */
     inline DescribeDestinationsRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
-    
+    /**
+     * <p>The token for the next set of items to return. (You received this token from
+     * a previous call.)</p>
+     */
     inline DescribeDestinationsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
-    
-    inline long GetLimit() const{ return m_limit; }
+    /**
+     * <p>The maximum number of items returned. If you don't specify a value, the
+     * default is up to 50 items.</p>
+     */
+    inline int GetLimit() const{ return m_limit; }
 
-    
-    inline void SetLimit(long value) { m_limitHasBeenSet = true; m_limit = value; }
+    /**
+     * <p>The maximum number of items returned. If you don't specify a value, the
+     * default is up to 50 items.</p>
+     */
+    inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
-    
-    inline DescribeDestinationsRequest& WithLimit(long value) { SetLimit(value); return *this;}
+    /**
+     * <p>The maximum number of items returned. If you don't specify a value, the
+     * default is up to 50 items.</p>
+     */
+    inline DescribeDestinationsRequest& WithLimit(int value) { SetLimit(value); return *this;}
 
   private:
     Aws::String m_destinationNamePrefix;
     bool m_destinationNamePrefixHasBeenSet;
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
-    long m_limit;
+    int m_limit;
     bool m_limitHasBeenSet;
   };
 

@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -23,6 +23,7 @@ CreateVpcRequest::CreateVpcRequest() :
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
     m_cidrBlockHasBeenSet(false),
+    m_instanceTenancy(Tenancy::NOT_SET),
     m_instanceTenancyHasBeenSet(false)
 {
 }
@@ -35,15 +36,18 @@ Aws::String CreateVpcRequest::SerializePayload() const
   {
     ss << "DryRun=" << m_dryRun << "&";
   }
+
   if(m_cidrBlockHasBeenSet)
   {
     ss << "CidrBlock=" << StringUtils::URLEncode(m_cidrBlock.c_str()) << "&";
   }
+
   if(m_instanceTenancyHasBeenSet)
   {
     ss << "InstanceTenancy=" << TenancyMapper::GetNameForTenancy(m_instanceTenancy) << "&";
   }
-  ss << "Version=2015-04-15";
+
+  ss << "Version=2015-10-01";
   return ss.str();
 }
 

@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::CloudWatch::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace CloudWatch
+{
+namespace Model
+{
 
 Datapoint::Datapoint() : 
     m_timestampHasBeenSet(false),
@@ -35,6 +41,7 @@ Datapoint::Datapoint() :
     m_minimumHasBeenSet(false),
     m_maximum(0.0),
     m_maximumHasBeenSet(false),
+    m_unit(StandardUnit::NOT_SET),
     m_unitHasBeenSet(false)
 {
 }
@@ -51,6 +58,7 @@ Datapoint::Datapoint(const XmlNode& xmlNode) :
     m_minimumHasBeenSet(false),
     m_maximum(0.0),
     m_maximumHasBeenSet(false),
+    m_unit(StandardUnit::NOT_SET),
     m_unitHasBeenSet(false)
 {
   *this = xmlNode;
@@ -65,7 +73,7 @@ Datapoint& Datapoint::operator =(const XmlNode& xmlNode)
     XmlNode timestampNode = resultNode.FirstChild("Timestamp");
     if(!timestampNode.IsNull())
     {
-      m_timestamp = StringUtils::Trim(timestampNode.GetText().c_str());
+      m_timestamp = DateTime(StringUtils::Trim(timestampNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_timestampHasBeenSet = true;
     }
     XmlNode sampleCountNode = resultNode.FirstChild("SampleCount");
@@ -113,62 +121,73 @@ void Datapoint::OutputToStream(Aws::OStream& oStream, const char* location, unsi
 {
   if(m_timestampHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Timestamp=" << StringUtils::URLEncode(m_timestamp.c_str()) << "&";
+      oStream << location << index << locationValue << ".Timestamp=" << StringUtils::URLEncode(m_timestamp.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_sampleCountHasBeenSet)
   {
-      oStream << location << index << locationValue << ".SampleCount=" << m_sampleCount << "&";
+        oStream << location << index << locationValue << ".SampleCount=" << StringUtils::URLEncode(m_sampleCount) << "&";
   }
+
   if(m_averageHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Average=" << m_average << "&";
+        oStream << location << index << locationValue << ".Average=" << StringUtils::URLEncode(m_average) << "&";
   }
+
   if(m_sumHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Sum=" << m_sum << "&";
+        oStream << location << index << locationValue << ".Sum=" << StringUtils::URLEncode(m_sum) << "&";
   }
+
   if(m_minimumHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Minimum=" << m_minimum << "&";
+        oStream << location << index << locationValue << ".Minimum=" << StringUtils::URLEncode(m_minimum) << "&";
   }
+
   if(m_maximumHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Maximum=" << m_maximum << "&";
+        oStream << location << index << locationValue << ".Maximum=" << StringUtils::URLEncode(m_maximum) << "&";
   }
+
   if(m_unitHasBeenSet)
   {
       oStream << location << index << locationValue << ".Unit=" << StandardUnitMapper::GetNameForStandardUnit(m_unit) << "&";
   }
+
 }
 
 void Datapoint::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
   if(m_timestampHasBeenSet)
   {
-      oStream << location << ".Timestamp=" << StringUtils::URLEncode(m_timestamp.c_str()) << "&";
+      oStream << location << ".Timestamp=" << StringUtils::URLEncode(m_timestamp.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_sampleCountHasBeenSet)
   {
-      oStream << location << ".SampleCount=" << m_sampleCount << "&";
+        oStream << location << ".SampleCount=" << StringUtils::URLEncode(m_sampleCount) << "&";
   }
   if(m_averageHasBeenSet)
   {
-      oStream << location << ".Average=" << m_average << "&";
+        oStream << location << ".Average=" << StringUtils::URLEncode(m_average) << "&";
   }
   if(m_sumHasBeenSet)
   {
-      oStream << location << ".Sum=" << m_sum << "&";
+        oStream << location << ".Sum=" << StringUtils::URLEncode(m_sum) << "&";
   }
   if(m_minimumHasBeenSet)
   {
-      oStream << location << ".Minimum=" << m_minimum << "&";
+        oStream << location << ".Minimum=" << StringUtils::URLEncode(m_minimum) << "&";
   }
   if(m_maximumHasBeenSet)
   {
-      oStream << location << ".Maximum=" << m_maximum << "&";
+        oStream << location << ".Maximum=" << StringUtils::URLEncode(m_maximum) << "&";
   }
   if(m_unitHasBeenSet)
   {
       oStream << location << ".Unit=" << StandardUnitMapper::GetNameForStandardUnit(m_unit) << "&";
   }
 }
+
+} // namespace Model
+} // namespace CloudWatch
+} // namespace Aws

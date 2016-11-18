@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -17,15 +17,20 @@
 
 #include <utility>
 
-using namespace Aws::CognitoIdentity::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace CognitoIdentity
+{
+namespace Model
+{
 
 Credentials::Credentials() : 
     m_accessKeyIdHasBeenSet(false),
     m_secretKeyHasBeenSet(false),
     m_sessionTokenHasBeenSet(false),
-    m_expiration(0.0),
     m_expirationHasBeenSet(false)
 {
 }
@@ -34,7 +39,6 @@ Credentials::Credentials(const JsonValue& jsonValue) :
     m_accessKeyIdHasBeenSet(false),
     m_secretKeyHasBeenSet(false),
     m_sessionTokenHasBeenSet(false),
-    m_expiration(0.0),
     m_expirationHasBeenSet(false)
 {
   *this = jsonValue;
@@ -97,9 +101,12 @@ JsonValue Credentials::Jsonize() const
 
   if(m_expirationHasBeenSet)
   {
-   payload.WithDouble("Expiration", m_expiration);
-
+   payload.WithDouble("Expiration", m_expiration.SecondsWithMSPrecision());
   }
 
-  return std::move(payload);
+  return payload;
 }
+
+} // namespace Model
+} // namespace CognitoIdentity
+} // namespace Aws

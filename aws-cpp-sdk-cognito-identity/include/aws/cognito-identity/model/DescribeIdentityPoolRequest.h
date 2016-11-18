@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,9 +24,9 @@ namespace CognitoIdentity
 namespace Model
 {
 
-  /*
-    Input to the DescribeIdentityPool action.
-  */
+  /**
+   * Input to the DescribeIdentityPool action.
+   */
   class AWS_COGNITOIDENTITY_API DescribeIdentityPoolRequest : public CognitoIdentityRequest
   {
   public:
@@ -35,40 +35,39 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
-    /*
-     An identity pool ID in the format REGION:GUID.
-    */
+    /**
+     * An identity pool ID in the format REGION:GUID.
+     */
     inline const Aws::String& GetIdentityPoolId() const{ return m_identityPoolId; }
 
-    /*
-     An identity pool ID in the format REGION:GUID.
-    */
+    /**
+     * An identity pool ID in the format REGION:GUID.
+     */
     inline void SetIdentityPoolId(const Aws::String& value) { m_identityPoolIdHasBeenSet = true; m_identityPoolId = value; }
 
-    /*
-     An identity pool ID in the format REGION:GUID.
-    */
+    /**
+     * An identity pool ID in the format REGION:GUID.
+     */
     inline void SetIdentityPoolId(Aws::String&& value) { m_identityPoolIdHasBeenSet = true; m_identityPoolId = value; }
 
-    /*
-     An identity pool ID in the format REGION:GUID.
-    */
+    /**
+     * An identity pool ID in the format REGION:GUID.
+     */
     inline void SetIdentityPoolId(const char* value) { m_identityPoolIdHasBeenSet = true; m_identityPoolId.assign(value); }
 
-    /*
-     An identity pool ID in the format REGION:GUID.
-    */
+    /**
+     * An identity pool ID in the format REGION:GUID.
+     */
     inline DescribeIdentityPoolRequest& WithIdentityPoolId(const Aws::String& value) { SetIdentityPoolId(value); return *this;}
 
-    /*
-     An identity pool ID in the format REGION:GUID.
-    */
+    /**
+     * An identity pool ID in the format REGION:GUID.
+     */
     inline DescribeIdentityPoolRequest& WithIdentityPoolId(Aws::String&& value) { SetIdentityPoolId(value); return *this;}
 
-    /*
-     An identity pool ID in the format REGION:GUID.
-    */
+    /**
+     * An identity pool ID in the format REGION:GUID.
+     */
     inline DescribeIdentityPoolRequest& WithIdentityPoolId(const char* value) { SetIdentityPoolId(value); return *this;}
 
   private:

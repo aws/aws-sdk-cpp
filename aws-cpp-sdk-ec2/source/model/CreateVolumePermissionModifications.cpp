@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::EC2::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
 
 CreateVolumePermissionModifications::CreateVolumePermissionModifications() : 
     m_addHasBeenSet(false),
@@ -75,46 +81,52 @@ void CreateVolumePermissionModifications::OutputToStream(Aws::OStream& oStream, 
 {
   if(m_addHasBeenSet)
   {
-      unsigned addIdx = 0;
+      unsigned addIdx = 1;
       for(auto& item : m_add)
       {
-        addIdx++;
         Aws::StringStream addSs;
-        addSs << location << index << locationValue << ".Add." << addIdx;
+        addSs << location << index << locationValue << ".Add." << addIdx++;
         item.OutputToStream(oStream, addSs.str().c_str());
       }
   }
+
   if(m_removeHasBeenSet)
   {
-      unsigned removeIdx = 0;
+      unsigned removeIdx = 1;
       for(auto& item : m_remove)
       {
-        removeIdx++;
         Aws::StringStream removeSs;
-        removeSs << location << index << locationValue << ".Remove." << removeIdx;
+        removeSs << location << index << locationValue << ".Remove." << removeIdx++;
         item.OutputToStream(oStream, removeSs.str().c_str());
       }
   }
+
 }
 
 void CreateVolumePermissionModifications::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
   if(m_addHasBeenSet)
   {
+      unsigned addIdx = 1;
       for(auto& item : m_add)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".item";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream addSs;
+        addSs << location <<  ".item." << addIdx++;
+        item.OutputToStream(oStream, addSs.str().c_str());
       }
   }
   if(m_removeHasBeenSet)
   {
+      unsigned removeIdx = 1;
       for(auto& item : m_remove)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".item";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream removeSs;
+        removeSs << location <<  ".item." << removeIdx++;
+        item.OutputToStream(oStream, removeSs.str().c_str());
       }
   }
 }
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

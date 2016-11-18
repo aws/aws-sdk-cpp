@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::Redshift::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace Redshift
+{
+namespace Model
+{
 
 EventInfoMap::EventInfoMap() : 
     m_eventIdHasBeenSet(false),
@@ -87,21 +93,26 @@ void EventInfoMap::OutputToStream(Aws::OStream& oStream, const char* location, u
   {
       oStream << location << index << locationValue << ".EventId=" << StringUtils::URLEncode(m_eventId.c_str()) << "&";
   }
+
   if(m_eventCategoriesHasBeenSet)
   {
+      unsigned eventCategoriesIdx = 1;
       for(auto& item : m_eventCategories)
       {
-        oStream << location << index << locationValue << ".EventCategory=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << index << locationValue << ".EventCategory." << eventCategoriesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
+
   if(m_eventDescriptionHasBeenSet)
   {
       oStream << location << index << locationValue << ".EventDescription=" << StringUtils::URLEncode(m_eventDescription.c_str()) << "&";
   }
+
   if(m_severityHasBeenSet)
   {
       oStream << location << index << locationValue << ".Severity=" << StringUtils::URLEncode(m_severity.c_str()) << "&";
   }
+
 }
 
 void EventInfoMap::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -112,9 +123,10 @@ void EventInfoMap::OutputToStream(Aws::OStream& oStream, const char* location) c
   }
   if(m_eventCategoriesHasBeenSet)
   {
+      unsigned eventCategoriesIdx = 1;
       for(auto& item : m_eventCategories)
       {
-        oStream << location << ".EventCategory=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << ".EventCategory." << eventCategoriesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
   if(m_eventDescriptionHasBeenSet)
@@ -126,3 +138,7 @@ void EventInfoMap::OutputToStream(Aws::OStream& oStream, const char* location) c
       oStream << location << ".Severity=" << StringUtils::URLEncode(m_severity.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace Redshift
+} // namespace Aws

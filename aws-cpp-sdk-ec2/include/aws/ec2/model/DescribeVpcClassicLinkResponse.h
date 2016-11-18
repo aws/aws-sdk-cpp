@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -34,9 +34,9 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
+  /**
+   * <p>Contains the output of DescribeVpcClassicLink.</p>
+   */
   class AWS_EC2_API DescribeVpcClassicLinkResponse
   {
   public:
@@ -44,39 +44,39 @@ namespace Model
     DescribeVpcClassicLinkResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     DescribeVpcClassicLinkResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>The ClassicLink status of one or more VPCs.</p>
-    */
+    /**
+     * <p>The ClassicLink status of one or more VPCs.</p>
+     */
     inline const Aws::Vector<VpcClassicLink>& GetVpcs() const{ return m_vpcs; }
 
-    /*
-     <p>The ClassicLink status of one or more VPCs.</p>
-    */
+    /**
+     * <p>The ClassicLink status of one or more VPCs.</p>
+     */
     inline void SetVpcs(const Aws::Vector<VpcClassicLink>& value) { m_vpcs = value; }
 
-    /*
-     <p>The ClassicLink status of one or more VPCs.</p>
-    */
+    /**
+     * <p>The ClassicLink status of one or more VPCs.</p>
+     */
     inline void SetVpcs(Aws::Vector<VpcClassicLink>&& value) { m_vpcs = value; }
 
-    /*
-     <p>The ClassicLink status of one or more VPCs.</p>
-    */
+    /**
+     * <p>The ClassicLink status of one or more VPCs.</p>
+     */
     inline DescribeVpcClassicLinkResponse& WithVpcs(const Aws::Vector<VpcClassicLink>& value) { SetVpcs(value); return *this;}
 
-    /*
-     <p>The ClassicLink status of one or more VPCs.</p>
-    */
+    /**
+     * <p>The ClassicLink status of one or more VPCs.</p>
+     */
     inline DescribeVpcClassicLinkResponse& WithVpcs(Aws::Vector<VpcClassicLink>&& value) { SetVpcs(value); return *this;}
 
-    /*
-     <p>The ClassicLink status of one or more VPCs.</p>
-    */
+    /**
+     * <p>The ClassicLink status of one or more VPCs.</p>
+     */
     inline DescribeVpcClassicLinkResponse& AddVpcs(const VpcClassicLink& value) { m_vpcs.push_back(value); return *this; }
 
-    /*
-     <p>The ClassicLink status of one or more VPCs.</p>
-    */
+    /**
+     * <p>The ClassicLink status of one or more VPCs.</p>
+     */
     inline DescribeVpcClassicLinkResponse& AddVpcs(VpcClassicLink&& value) { m_vpcs.push_back(value); return *this; }
 
     

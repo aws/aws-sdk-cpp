@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -37,23 +37,28 @@ Aws::String CreateVpnConnectionRequest::SerializePayload() const
   {
     ss << "DryRun=" << m_dryRun << "&";
   }
+
   if(m_typeHasBeenSet)
   {
     ss << "Type=" << StringUtils::URLEncode(m_type.c_str()) << "&";
   }
+
   if(m_customerGatewayIdHasBeenSet)
   {
     ss << "CustomerGatewayId=" << StringUtils::URLEncode(m_customerGatewayId.c_str()) << "&";
   }
+
   if(m_vpnGatewayIdHasBeenSet)
   {
     ss << "VpnGatewayId=" << StringUtils::URLEncode(m_vpnGatewayId.c_str()) << "&";
   }
+
   if(m_optionsHasBeenSet)
   {
-    m_options.OutputToStream(ss, "Options.");
+    m_options.OutputToStream(ss, "Options");
   }
-  ss << "Version=2015-04-15";
+
+  ss << "Version=2015-10-01";
   return ss.str();
 }
 

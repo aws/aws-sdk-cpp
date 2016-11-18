@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -21,7 +21,7 @@ namespace Aws
 {
 namespace CloudFront
 {
-enum class AWS_CLOUDFRONT_API CloudFrontErrors
+enum class CloudFrontErrors
 {
   //From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
@@ -44,7 +44,12 @@ enum class AWS_CLOUDFRONT_API CloudFrontErrors
   RESOURCE_NOT_FOUND = 16,
   UNRECOGNIZED_CLIENT = 17,
   MALFORMED_QUERY_STRING = 18,
+  SLOW_DOWN = 19,
+  REQUEST_TIME_TOO_SKEWED = 20,
+  INVALID_SIGNATURE = 21,
+  SIGNATURE_DOES_NOT_MATCH = 22,
   NETWORK_CONNECTION = 99,
+  
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -73,6 +78,7 @@ enum class AWS_CLOUDFRONT_API CloudFrontErrors
   INVALID_RESPONSE_CODE,
   INVALID_T_T_L_ORDER,
   INVALID_VIEWER_CERTIFICATE,
+  INVALID_WEB_A_C_L_ID,
   MISSING_BODY,
   NO_SUCH_CLOUD_FRONT_ORIGIN_ACCESS_IDENTITY,
   NO_SUCH_DISTRIBUTION,
@@ -91,6 +97,7 @@ enum class AWS_CLOUDFRONT_API CloudFrontErrors
   TOO_MANY_HEADERS_IN_FORWARDED_VALUES,
   TOO_MANY_INVALIDATIONS_IN_PROGRESS,
   TOO_MANY_ORIGINS,
+  TOO_MANY_ORIGIN_CUSTOM_HEADERS,
   TOO_MANY_STREAMING_DISTRIBUTIONS,
   TOO_MANY_STREAMING_DISTRIBUTION_C_N_A_M_ES,
   TOO_MANY_TRUSTED_SIGNERS,

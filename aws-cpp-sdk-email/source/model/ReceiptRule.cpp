@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,18 +19,22 @@
 
 #include <utility>
 
-using namespace Aws::SES::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace SES
+{
+namespace Model
+{
 
 ReceiptRule::ReceiptRule() : 
     m_nameHasBeenSet(false),
     m_enabled(false),
     m_enabledHasBeenSet(false),
-    m_stop(false),
-    m_stopHasBeenSet(false),
+    m_tlsPolicy(TlsPolicy::NOT_SET),
     m_tlsPolicyHasBeenSet(false),
-    m_domainsHasBeenSet(false),
     m_recipientsHasBeenSet(false),
     m_actionsHasBeenSet(false),
     m_scanEnabled(false),
@@ -42,10 +46,8 @@ ReceiptRule::ReceiptRule(const XmlNode& xmlNode) :
     m_nameHasBeenSet(false),
     m_enabled(false),
     m_enabledHasBeenSet(false),
-    m_stop(false),
-    m_stopHasBeenSet(false),
+    m_tlsPolicy(TlsPolicy::NOT_SET),
     m_tlsPolicyHasBeenSet(false),
-    m_domainsHasBeenSet(false),
     m_recipientsHasBeenSet(false),
     m_actionsHasBeenSet(false),
     m_scanEnabled(false),
@@ -72,29 +74,11 @@ ReceiptRule& ReceiptRule::operator =(const XmlNode& xmlNode)
       m_enabled = StringUtils::ConvertToBool(StringUtils::Trim(enabledNode.GetText().c_str()).c_str());
       m_enabledHasBeenSet = true;
     }
-    XmlNode stopNode = resultNode.FirstChild("Stop");
-    if(!stopNode.IsNull())
-    {
-      m_stop = StringUtils::ConvertToBool(StringUtils::Trim(stopNode.GetText().c_str()).c_str());
-      m_stopHasBeenSet = true;
-    }
     XmlNode tlsPolicyNode = resultNode.FirstChild("TlsPolicy");
     if(!tlsPolicyNode.IsNull())
     {
       m_tlsPolicy = TlsPolicyMapper::GetTlsPolicyForName(StringUtils::Trim(tlsPolicyNode.GetText().c_str()).c_str());
       m_tlsPolicyHasBeenSet = true;
-    }
-    XmlNode domainsNode = resultNode.FirstChild("Domains");
-    if(!domainsNode.IsNull())
-    {
-      XmlNode domainsMember = domainsNode.FirstChild("member");
-      while(!domainsMember.IsNull())
-      {
-        m_domains.push_back(StringUtils::Trim(domainsMember.GetText().c_str()));
-        domainsMember = domainsMember.NextNode("member");
-      }
-
-      m_domainsHasBeenSet = true;
     }
     XmlNode recipientsNode = resultNode.FirstChild("Recipients");
     if(!recipientsNode.IsNull())
@@ -137,45 +121,42 @@ void ReceiptRule::OutputToStream(Aws::OStream& oStream, const char* location, un
   {
       oStream << location << index << locationValue << ".Name=" << StringUtils::URLEncode(m_name.c_str()) << "&";
   }
+
   if(m_enabledHasBeenSet)
   {
       oStream << location << index << locationValue << ".Enabled=" << m_enabled << "&";
   }
-  if(m_stopHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Stop=" << m_stop << "&";
-  }
+
   if(m_tlsPolicyHasBeenSet)
   {
       oStream << location << index << locationValue << ".TlsPolicy=" << TlsPolicyMapper::GetNameForTlsPolicy(m_tlsPolicy) << "&";
   }
-  if(m_domainsHasBeenSet)
-  {
-      for(auto& item : m_domains)
-      {
-        oStream << location << index << locationValue << ".Domains=" << StringUtils::URLEncode(item.c_str()) << "&";
-      }
-  }
+
   if(m_recipientsHasBeenSet)
   {
+      unsigned recipientsIdx = 1;
       for(auto& item : m_recipients)
       {
-        oStream << location << index << locationValue << ".Recipients=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << index << locationValue << ".Recipients.member." << recipientsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
+
   if(m_actionsHasBeenSet)
   {
+      unsigned actionsIdx = 1;
       for(auto& item : m_actions)
       {
         Aws::StringStream actionsSs;
-        actionsSs << location << index << locationValue << ".Actions";
+        actionsSs << location << index << locationValue << ".Actions.member." << actionsIdx++;
         item.OutputToStream(oStream, actionsSs.str().c_str());
       }
   }
+
   if(m_scanEnabledHasBeenSet)
   {
       oStream << location << index << locationValue << ".ScanEnabled=" << m_scanEnabled << "&";
   }
+
 }
 
 void ReceiptRule::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -188,35 +169,26 @@ void ReceiptRule::OutputToStream(Aws::OStream& oStream, const char* location) co
   {
       oStream << location << ".Enabled=" << m_enabled << "&";
   }
-  if(m_stopHasBeenSet)
-  {
-      oStream << location << ".Stop=" << m_stop << "&";
-  }
   if(m_tlsPolicyHasBeenSet)
   {
       oStream << location << ".TlsPolicy=" << TlsPolicyMapper::GetNameForTlsPolicy(m_tlsPolicy) << "&";
   }
-  if(m_domainsHasBeenSet)
-  {
-      for(auto& item : m_domains)
-      {
-        oStream << location << ".Domains=" << StringUtils::URLEncode(item.c_str()) << "&";
-      }
-  }
   if(m_recipientsHasBeenSet)
   {
+      unsigned recipientsIdx = 1;
       for(auto& item : m_recipients)
       {
-        oStream << location << ".Recipients=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << ".Recipients.member." << recipientsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
   if(m_actionsHasBeenSet)
   {
+      unsigned actionsIdx = 1;
       for(auto& item : m_actions)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".Actions";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream actionsSs;
+        actionsSs << location <<  ".Actions.member." << actionsIdx++;
+        item.OutputToStream(oStream, actionsSs.str().c_str());
       }
   }
   if(m_scanEnabledHasBeenSet)
@@ -224,3 +196,7 @@ void ReceiptRule::OutputToStream(Aws::OStream& oStream, const char* location) co
       oStream << location << ".ScanEnabled=" << m_scanEnabled << "&";
   }
 }
+
+} // namespace Model
+} // namespace SES
+} // namespace Aws

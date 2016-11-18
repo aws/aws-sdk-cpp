@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -28,13 +28,17 @@ using namespace Aws;
 
 DescribeAccountLimitsResult::DescribeAccountLimitsResult() : 
     m_maxNumberOfAutoScalingGroups(0),
-    m_maxNumberOfLaunchConfigurations(0)
+    m_maxNumberOfLaunchConfigurations(0),
+    m_numberOfAutoScalingGroups(0),
+    m_numberOfLaunchConfigurations(0)
 {
 }
 
 DescribeAccountLimitsResult::DescribeAccountLimitsResult(const AmazonWebServiceResult<XmlDocument>& result) : 
     m_maxNumberOfAutoScalingGroups(0),
-    m_maxNumberOfLaunchConfigurations(0)
+    m_maxNumberOfLaunchConfigurations(0),
+    m_numberOfAutoScalingGroups(0),
+    m_numberOfLaunchConfigurations(0)
 {
   *this = result;
 }
@@ -60,6 +64,16 @@ DescribeAccountLimitsResult& DescribeAccountLimitsResult::operator =(const Amazo
     if(!maxNumberOfLaunchConfigurationsNode.IsNull())
     {
       m_maxNumberOfLaunchConfigurations = StringUtils::ConvertToInt32(StringUtils::Trim(maxNumberOfLaunchConfigurationsNode.GetText().c_str()).c_str());
+    }
+    XmlNode numberOfAutoScalingGroupsNode = resultNode.FirstChild("NumberOfAutoScalingGroups");
+    if(!numberOfAutoScalingGroupsNode.IsNull())
+    {
+      m_numberOfAutoScalingGroups = StringUtils::ConvertToInt32(StringUtils::Trim(numberOfAutoScalingGroupsNode.GetText().c_str()).c_str());
+    }
+    XmlNode numberOfLaunchConfigurationsNode = resultNode.FirstChild("NumberOfLaunchConfigurations");
+    if(!numberOfLaunchConfigurationsNode.IsNull())
+    {
+      m_numberOfLaunchConfigurations = StringUtils::ConvertToInt32(StringUtils::Trim(numberOfLaunchConfigurationsNode.GetText().c_str()).c_str());
     }
   }
 

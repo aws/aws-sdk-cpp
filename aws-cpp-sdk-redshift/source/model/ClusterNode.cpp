@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::Redshift::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace Redshift
+{
+namespace Model
+{
 
 ClusterNode::ClusterNode() : 
     m_nodeRoleHasBeenSet(false),
@@ -73,14 +79,17 @@ void ClusterNode::OutputToStream(Aws::OStream& oStream, const char* location, un
   {
       oStream << location << index << locationValue << ".NodeRole=" << StringUtils::URLEncode(m_nodeRole.c_str()) << "&";
   }
+
   if(m_privateIPAddressHasBeenSet)
   {
       oStream << location << index << locationValue << ".PrivateIPAddress=" << StringUtils::URLEncode(m_privateIPAddress.c_str()) << "&";
   }
+
   if(m_publicIPAddressHasBeenSet)
   {
       oStream << location << index << locationValue << ".PublicIPAddress=" << StringUtils::URLEncode(m_publicIPAddress.c_str()) << "&";
   }
+
 }
 
 void ClusterNode::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -98,3 +107,7 @@ void ClusterNode::OutputToStream(Aws::OStream& oStream, const char* location) co
       oStream << location << ".PublicIPAddress=" << StringUtils::URLEncode(m_publicIPAddress.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace Redshift
+} // namespace Aws

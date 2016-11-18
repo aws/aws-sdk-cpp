@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -23,9 +23,14 @@ DescribeDBSnapshotsRequest::DescribeDBSnapshotsRequest() :
     m_dBInstanceIdentifierHasBeenSet(false),
     m_dBSnapshotIdentifierHasBeenSet(false),
     m_snapshotTypeHasBeenSet(false),
+    m_filtersHasBeenSet(false),
     m_maxRecords(0),
     m_maxRecordsHasBeenSet(false),
-    m_markerHasBeenSet(false)
+    m_markerHasBeenSet(false),
+    m_includeShared(false),
+    m_includeSharedHasBeenSet(false),
+    m_includePublic(false),
+    m_includePublicHasBeenSet(false)
 {
 }
 
@@ -37,23 +42,48 @@ Aws::String DescribeDBSnapshotsRequest::SerializePayload() const
   {
     ss << "DBInstanceIdentifier=" << StringUtils::URLEncode(m_dBInstanceIdentifier.c_str()) << "&";
   }
+
   if(m_dBSnapshotIdentifierHasBeenSet)
   {
     ss << "DBSnapshotIdentifier=" << StringUtils::URLEncode(m_dBSnapshotIdentifier.c_str()) << "&";
   }
+
   if(m_snapshotTypeHasBeenSet)
   {
     ss << "SnapshotType=" << StringUtils::URLEncode(m_snapshotType.c_str()) << "&";
   }
+
+  if(m_filtersHasBeenSet)
+  {
+    unsigned filtersCount = 1;
+    for(auto& item : m_filters)
+    {
+      item.OutputToStream(ss, "Filters.member.", filtersCount, "");
+      filtersCount++;
+    }
+  }
+
   if(m_maxRecordsHasBeenSet)
   {
     ss << "MaxRecords=" << m_maxRecords << "&";
   }
+
   if(m_markerHasBeenSet)
   {
     ss << "Marker=" << StringUtils::URLEncode(m_marker.c_str()) << "&";
   }
-  ss << "Version=2013-01-10";
+
+  if(m_includeSharedHasBeenSet)
+  {
+    ss << "IncludeShared=" << m_includeShared << "&";
+  }
+
+  if(m_includePublicHasBeenSet)
+  {
+    ss << "IncludePublic=" << m_includePublic << "&";
+  }
+
+  ss << "Version=2014-10-31";
   return ss.str();
 }
 

@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace ElastiCache
+{
+namespace Model
+{
 
 CacheSecurityGroupMembership::CacheSecurityGroupMembership() : 
     m_cacheSecurityGroupNameHasBeenSet(false),
@@ -65,10 +71,12 @@ void CacheSecurityGroupMembership::OutputToStream(Aws::OStream& oStream, const c
   {
       oStream << location << index << locationValue << ".CacheSecurityGroupName=" << StringUtils::URLEncode(m_cacheSecurityGroupName.c_str()) << "&";
   }
+
   if(m_statusHasBeenSet)
   {
       oStream << location << index << locationValue << ".Status=" << StringUtils::URLEncode(m_status.c_str()) << "&";
   }
+
 }
 
 void CacheSecurityGroupMembership::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -82,3 +90,7 @@ void CacheSecurityGroupMembership::OutputToStream(Aws::OStream& oStream, const c
       oStream << location << ".Status=" << StringUtils::URLEncode(m_status.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace ElastiCache
+} // namespace Aws

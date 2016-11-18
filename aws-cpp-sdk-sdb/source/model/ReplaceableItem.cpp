@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::SimpleDB::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace SimpleDB
+{
+namespace Model
+{
 
 ReplaceableItem::ReplaceableItem() : 
     m_nameHasBeenSet(false),
@@ -71,15 +77,18 @@ void ReplaceableItem::OutputToStream(Aws::OStream& oStream, const char* location
   {
       oStream << location << index << locationValue << ".Name=" << StringUtils::URLEncode(m_name.c_str()) << "&";
   }
+
   if(m_attributesHasBeenSet)
   {
+      unsigned attributesIdx = 1;
       for(auto& item : m_attributes)
       {
         Aws::StringStream attributesSs;
-        attributesSs << location << index << locationValue << ".Attribute";
+        attributesSs << location << index << locationValue << ".Attribute." << attributesIdx++;
         item.OutputToStream(oStream, attributesSs.str().c_str());
       }
   }
+
 }
 
 void ReplaceableItem::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -90,11 +99,16 @@ void ReplaceableItem::OutputToStream(Aws::OStream& oStream, const char* location
   }
   if(m_attributesHasBeenSet)
   {
+      unsigned attributesIdx = 1;
       for(auto& item : m_attributes)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".Attribute";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream attributesSs;
+        attributesSs << location <<  ".Attribute." << attributesIdx++;
+        item.OutputToStream(oStream, attributesSs.str().c_str());
       }
   }
 }
+
+} // namespace Model
+} // namespace SimpleDB
+} // namespace Aws

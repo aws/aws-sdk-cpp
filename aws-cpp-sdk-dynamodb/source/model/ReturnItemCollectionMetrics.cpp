@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -14,50 +14,66 @@
 */
 #include <aws/dynamodb/model/ReturnItemCollectionMetrics.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
+#include <aws/core/utils/EnumParseOverflowContainer.h>
 
 using namespace Aws::Utils;
 
-static const int SIZE_HASH = HashingUtils::HashString("SIZE");
-static const int NONE_HASH = HashingUtils::HashString("NONE");
 
 namespace Aws
 {
-namespace DynamoDB
-{
-namespace Model
-{
-namespace ReturnItemCollectionMetricsMapper
-{
-ReturnItemCollectionMetrics GetReturnItemCollectionMetricsForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-
-  if (hashCode == SIZE_HASH)
+  namespace DynamoDB
   {
-    return ReturnItemCollectionMetrics::SIZE;
-  }
-  else if (hashCode == NONE_HASH)
-  {
-    return ReturnItemCollectionMetrics::NONE;
-  }
+    namespace Model
+    {
+      namespace ReturnItemCollectionMetricsMapper
+      {
 
-  return ReturnItemCollectionMetrics::NOT_SET;
-}
+        static const int SIZE_HASH = HashingUtils::HashString("SIZE");
+        static const int NONE_HASH = HashingUtils::HashString("NONE");
 
-Aws::String GetNameForReturnItemCollectionMetrics(ReturnItemCollectionMetrics value)
-{
-  switch(value)
-  {
-  case ReturnItemCollectionMetrics::SIZE:
-    return "SIZE";
-  case ReturnItemCollectionMetrics::NONE:
-    return "NONE";
-  default:
-    return "";
-  }
-}
 
-} // namespace ReturnItemCollectionMetricsMapper
-} // namespace Model
-} // namespace DynamoDB
+        ReturnItemCollectionMetrics GetReturnItemCollectionMetricsForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == SIZE_HASH)
+          {
+            return ReturnItemCollectionMetrics::SIZE;
+          }
+          else if (hashCode == NONE_HASH)
+          {
+            return ReturnItemCollectionMetrics::NONE;
+          }
+          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<ReturnItemCollectionMetrics>(hashCode);
+          }
+
+          return ReturnItemCollectionMetrics::NOT_SET;
+        }
+
+        Aws::String GetNameForReturnItemCollectionMetrics(ReturnItemCollectionMetrics enumValue)
+        {
+          switch(enumValue)
+          {
+          case ReturnItemCollectionMetrics::SIZE:
+            return "SIZE";
+          case ReturnItemCollectionMetrics::NONE:
+            return "NONE";
+          default:
+            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace ReturnItemCollectionMetricsMapper
+    } // namespace Model
+  } // namespace DynamoDB
 } // namespace Aws

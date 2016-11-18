@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,48 +24,48 @@ namespace Redshift
 namespace Model
 {
 
-  /*
-  */
+  /**
+   * <p/>
+   */
   class AWS_REDSHIFT_API DeleteClusterSubnetGroupRequest : public RedshiftRequest
   {
   public:
     DeleteClusterSubnetGroupRequest();
     Aws::String SerializePayload() const override;
 
-
-    /*
-     <p>The name of the cluster subnet group name to be deleted.</p>
-    */
+    /**
+     * <p>The name of the cluster subnet group name to be deleted.</p>
+     */
     inline const Aws::String& GetClusterSubnetGroupName() const{ return m_clusterSubnetGroupName; }
 
-    /*
-     <p>The name of the cluster subnet group name to be deleted.</p>
-    */
+    /**
+     * <p>The name of the cluster subnet group name to be deleted.</p>
+     */
     inline void SetClusterSubnetGroupName(const Aws::String& value) { m_clusterSubnetGroupNameHasBeenSet = true; m_clusterSubnetGroupName = value; }
 
-    /*
-     <p>The name of the cluster subnet group name to be deleted.</p>
-    */
+    /**
+     * <p>The name of the cluster subnet group name to be deleted.</p>
+     */
     inline void SetClusterSubnetGroupName(Aws::String&& value) { m_clusterSubnetGroupNameHasBeenSet = true; m_clusterSubnetGroupName = value; }
 
-    /*
-     <p>The name of the cluster subnet group name to be deleted.</p>
-    */
+    /**
+     * <p>The name of the cluster subnet group name to be deleted.</p>
+     */
     inline void SetClusterSubnetGroupName(const char* value) { m_clusterSubnetGroupNameHasBeenSet = true; m_clusterSubnetGroupName.assign(value); }
 
-    /*
-     <p>The name of the cluster subnet group name to be deleted.</p>
-    */
+    /**
+     * <p>The name of the cluster subnet group name to be deleted.</p>
+     */
     inline DeleteClusterSubnetGroupRequest& WithClusterSubnetGroupName(const Aws::String& value) { SetClusterSubnetGroupName(value); return *this;}
 
-    /*
-     <p>The name of the cluster subnet group name to be deleted.</p>
-    */
+    /**
+     * <p>The name of the cluster subnet group name to be deleted.</p>
+     */
     inline DeleteClusterSubnetGroupRequest& WithClusterSubnetGroupName(Aws::String&& value) { SetClusterSubnetGroupName(value); return *this;}
 
-    /*
-     <p>The name of the cluster subnet group name to be deleted.</p>
-    */
+    /**
+     * <p>The name of the cluster subnet group name to be deleted.</p>
+     */
     inline DeleteClusterSubnetGroupRequest& WithClusterSubnetGroupName(const char* value) { SetClusterSubnetGroupName(value); return *this;}
 
   private:

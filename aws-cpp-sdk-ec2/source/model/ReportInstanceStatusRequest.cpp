@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -23,10 +23,9 @@ ReportInstanceStatusRequest::ReportInstanceStatusRequest() :
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
     m_instancesHasBeenSet(false),
+    m_status(ReportStatusType::NOT_SET),
     m_statusHasBeenSet(false),
-    m_startTime(0.0),
     m_startTimeHasBeenSet(false),
-    m_endTime(0.0),
     m_endTimeHasBeenSet(false),
     m_reasonCodesHasBeenSet(false),
     m_descriptionHasBeenSet(false)
@@ -41,6 +40,7 @@ Aws::String ReportInstanceStatusRequest::SerializePayload() const
   {
     ss << "DryRun=" << m_dryRun << "&";
   }
+
   if(m_instancesHasBeenSet)
   {
     unsigned instancesCount = 1;
@@ -51,18 +51,22 @@ Aws::String ReportInstanceStatusRequest::SerializePayload() const
       instancesCount++;
     }
   }
+
   if(m_statusHasBeenSet)
   {
     ss << "Status=" << ReportStatusTypeMapper::GetNameForReportStatusType(m_status) << "&";
   }
+
   if(m_startTimeHasBeenSet)
   {
-    ss << "StartTime=" << m_startTime << "&";
+    ss << "StartTime=" << StringUtils::URLEncode(m_startTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_endTimeHasBeenSet)
   {
-    ss << "EndTime=" << m_endTime << "&";
+    ss << "EndTime=" << StringUtils::URLEncode(m_endTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_reasonCodesHasBeenSet)
   {
     unsigned reasonCodesCount = 1;
@@ -73,11 +77,13 @@ Aws::String ReportInstanceStatusRequest::SerializePayload() const
       reasonCodesCount++;
     }
   }
+
   if(m_descriptionHasBeenSet)
   {
     ss << "Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
-  ss << "Version=2015-04-15";
+
+  ss << "Version=2015-10-01";
   return ss.str();
 }
 

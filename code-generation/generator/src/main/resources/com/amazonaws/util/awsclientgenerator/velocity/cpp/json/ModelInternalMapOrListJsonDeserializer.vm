@@ -46,11 +46,19 @@
 #set($template.internalCollectionName = $CppViewHelper.computeVariableName($template.currentShape.mapValue.shape.name) + "List")
 #end
 #if(!$template.atBottom)
+#if($template.currentShape.mapKey.shape.enum)
+  ${template.currentSpaces}  ${template.containerVar}[${template.currentShape.mapKey.shape.name}Mapper::Get${template.currentShape.mapKey.shape.name}ForName(${template.lowerCaseVarName}Item.first)] = std::move(${template.internalCollectionName});
+#else
   ${template.currentSpaces}  ${template.containerVar}[${template.lowerCaseVarName}Item.first] = std::move(${template.internalCollectionName});
+#end
 #end
   ${template.currentSpaces}}
 #elseif($template.currentShape.list)
+#if($template.recursionDepth > 1)
+  ${template.currentSpaces}Array<JsonValue> ${template.lowerCaseVarName}JsonList = ${template.jsonValue}.AsArray();
+#else
   ${template.currentSpaces}Array<JsonValue> ${template.lowerCaseVarName}JsonList = ${template.jsonValue}.GetArray("${template.memberKey}");
+#end
 #if($template.recursionDepth > 1)
 #set($template.containerVar = ${template.lowerCaseVarName} + "List")
   ${template.currentSpaces}Aws::Vector<${CppViewHelper.computeCppType($template.currentShape.listMember.shape)}> ${template.lowerCaseVarName}List((size_t)${template.lowerCaseVarName}JsonList.GetLength());
@@ -76,7 +84,7 @@
 #end
 #if($template.currentShape.listMember.shape.map)
 #set($template.internalCollectionName = $CppViewHelper.computeVariableName($template.currentShape.listMember.shape.name) + "Map")
-#elseif($template.currentShape.mapValue.shape.list)
+#elseif($template.currentShape.mapValue.shape.list || $template.currentShape.listMember.shape.list)
 #set($template.internalCollectionName = $CppViewHelper.computeVariableName($template.currentShape.listMember.shape.name) + "List")
 #end
 #if(!$template.atBottom)

@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -25,68 +25,77 @@ namespace EC2
 namespace Model
 {
 
-  /*
-  */
+  /**
+   * <p>Contains the parameters for RebootInstances.</p>
+   */
   class AWS_EC2_API RebootInstancesRequest : public EC2Request
   {
   public:
     RebootInstancesRequest();
     Aws::String SerializePayload() const override;
 
-
-    /*
-     <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    */
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
     inline bool GetDryRun() const{ return m_dryRun; }
 
-    /*
-     <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    */
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
 
-    /*
-     <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    */
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
     inline RebootInstancesRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
-    /*
-     <p>One or more instance IDs.</p>
-    */
+    /**
+     * <p>One or more instance IDs.</p>
+     */
     inline const Aws::Vector<Aws::String>& GetInstanceIds() const{ return m_instanceIds; }
 
-    /*
-     <p>One or more instance IDs.</p>
-    */
+    /**
+     * <p>One or more instance IDs.</p>
+     */
     inline void SetInstanceIds(const Aws::Vector<Aws::String>& value) { m_instanceIdsHasBeenSet = true; m_instanceIds = value; }
 
-    /*
-     <p>One or more instance IDs.</p>
-    */
+    /**
+     * <p>One or more instance IDs.</p>
+     */
     inline void SetInstanceIds(Aws::Vector<Aws::String>&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds = value; }
 
-    /*
-     <p>One or more instance IDs.</p>
-    */
+    /**
+     * <p>One or more instance IDs.</p>
+     */
     inline RebootInstancesRequest& WithInstanceIds(const Aws::Vector<Aws::String>& value) { SetInstanceIds(value); return *this;}
 
-    /*
-     <p>One or more instance IDs.</p>
-    */
+    /**
+     * <p>One or more instance IDs.</p>
+     */
     inline RebootInstancesRequest& WithInstanceIds(Aws::Vector<Aws::String>&& value) { SetInstanceIds(value); return *this;}
 
-    /*
-     <p>One or more instance IDs.</p>
-    */
+    /**
+     * <p>One or more instance IDs.</p>
+     */
     inline RebootInstancesRequest& AddInstanceIds(const Aws::String& value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
 
-    /*
-     <p>One or more instance IDs.</p>
-    */
+    /**
+     * <p>One or more instance IDs.</p>
+     */
     inline RebootInstancesRequest& AddInstanceIds(Aws::String&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
 
-    /*
-     <p>One or more instance IDs.</p>
-    */
+    /**
+     * <p>One or more instance IDs.</p>
+     */
     inline RebootInstancesRequest& AddInstanceIds(const char* value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
 
   private:

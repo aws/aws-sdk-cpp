@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -14,50 +14,73 @@
 */
 #include <aws/s3/model/StorageClass.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
+#include <aws/core/utils/EnumParseOverflowContainer.h>
 
 using namespace Aws::Utils;
 
-static const int STANDARD_HASH = HashingUtils::HashString("STANDARD");
-static const int REDUCED_REDUNDANCY_HASH = HashingUtils::HashString("REDUCED_REDUNDANCY");
 
 namespace Aws
 {
-namespace S3
-{
-namespace Model
-{
-namespace StorageClassMapper
-{
-StorageClass GetStorageClassForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-
-  if (hashCode == STANDARD_HASH)
+  namespace S3
   {
-    return StorageClass::STANDARD;
-  }
-  else if (hashCode == REDUCED_REDUNDANCY_HASH)
-  {
-    return StorageClass::REDUCED_REDUNDANCY;
-  }
+    namespace Model
+    {
+      namespace StorageClassMapper
+      {
 
-  return StorageClass::NOT_SET;
-}
+        static const int STANDARD_HASH = HashingUtils::HashString("STANDARD");
+        static const int REDUCED_REDUNDANCY_HASH = HashingUtils::HashString("REDUCED_REDUNDANCY");
+        static const int STANDARD_IA_HASH = HashingUtils::HashString("STANDARD_IA");
 
-Aws::String GetNameForStorageClass(StorageClass value)
-{
-  switch(value)
-  {
-  case StorageClass::STANDARD:
-    return "STANDARD";
-  case StorageClass::REDUCED_REDUNDANCY:
-    return "REDUCED_REDUNDANCY";
-  default:
-    return "";
-  }
-}
 
-} // namespace StorageClassMapper
-} // namespace Model
-} // namespace S3
+        StorageClass GetStorageClassForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == STANDARD_HASH)
+          {
+            return StorageClass::STANDARD;
+          }
+          else if (hashCode == REDUCED_REDUNDANCY_HASH)
+          {
+            return StorageClass::REDUCED_REDUNDANCY;
+          }
+          else if (hashCode == STANDARD_IA_HASH)
+          {
+            return StorageClass::STANDARD_IA;
+          }
+          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<StorageClass>(hashCode);
+          }
+
+          return StorageClass::NOT_SET;
+        }
+
+        Aws::String GetNameForStorageClass(StorageClass enumValue)
+        {
+          switch(enumValue)
+          {
+          case StorageClass::STANDARD:
+            return "STANDARD";
+          case StorageClass::REDUCED_REDUNDANCY:
+            return "REDUCED_REDUNDANCY";
+          case StorageClass::STANDARD_IA:
+            return "STANDARD_IA";
+          default:
+            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace StorageClassMapper
+    } // namespace Model
+  } // namespace S3
 } // namespace Aws

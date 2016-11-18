@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -33,9 +33,9 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
+  /**
+   * <p>Contains the output for CreateInstanceExportTask.</p>
+   */
   class AWS_EC2_API CreateInstanceExportTaskResponse
   {
   public:
@@ -43,29 +43,29 @@ namespace Model
     CreateInstanceExportTaskResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     CreateInstanceExportTaskResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>Information about the instance export task.</p>
-    */
+    /**
+     * <p>Information about the instance export task.</p>
+     */
     inline const ExportTask& GetExportTask() const{ return m_exportTask; }
 
-    /*
-     <p>Information about the instance export task.</p>
-    */
+    /**
+     * <p>Information about the instance export task.</p>
+     */
     inline void SetExportTask(const ExportTask& value) { m_exportTask = value; }
 
-    /*
-     <p>Information about the instance export task.</p>
-    */
+    /**
+     * <p>Information about the instance export task.</p>
+     */
     inline void SetExportTask(ExportTask&& value) { m_exportTask = value; }
 
-    /*
-     <p>Information about the instance export task.</p>
-    */
+    /**
+     * <p>Information about the instance export task.</p>
+     */
     inline CreateInstanceExportTaskResponse& WithExportTask(const ExportTask& value) { SetExportTask(value); return *this;}
 
-    /*
-     <p>Information about the instance export task.</p>
-    */
+    /**
+     * <p>Information about the instance export task.</p>
+     */
     inline CreateInstanceExportTaskResponse& WithExportTask(ExportTask&& value) { SetExportTask(value); return *this;}
 
     

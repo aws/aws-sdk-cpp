@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -17,14 +17,21 @@
 
 #include <utility>
 
-using namespace Aws::DynamoDB::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace DynamoDB
+{
+namespace Model
+{
 
 GlobalSecondaryIndexDescription::GlobalSecondaryIndexDescription() : 
     m_indexNameHasBeenSet(false),
     m_keySchemaHasBeenSet(false),
     m_projectionHasBeenSet(false),
+    m_indexStatus(IndexStatus::NOT_SET),
     m_indexStatusHasBeenSet(false),
     m_backfilling(false),
     m_backfillingHasBeenSet(false),
@@ -41,6 +48,7 @@ GlobalSecondaryIndexDescription::GlobalSecondaryIndexDescription(const JsonValue
     m_indexNameHasBeenSet(false),
     m_keySchemaHasBeenSet(false),
     m_projectionHasBeenSet(false),
+    m_indexStatus(IndexStatus::NOT_SET),
     m_indexStatusHasBeenSet(false),
     m_backfilling(false),
     m_backfillingHasBeenSet(false),
@@ -187,5 +195,9 @@ JsonValue GlobalSecondaryIndexDescription::Jsonize() const
 
   }
 
-  return std::move(payload);
+  return payload;
 }
+
+} // namespace Model
+} // namespace DynamoDB
+} // namespace Aws

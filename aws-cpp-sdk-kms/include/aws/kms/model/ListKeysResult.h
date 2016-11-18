@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -34,9 +34,6 @@ namespace KMS
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
   class AWS_KMS_API ListKeysResult
   {
   public:
@@ -44,89 +41,109 @@ namespace Model
     ListKeysResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     ListKeysResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p>A list of keys.</p>
-    */
+    /**
+     * <p>A list of keys.</p>
+     */
     inline const Aws::Vector<KeyListEntry>& GetKeys() const{ return m_keys; }
 
-    /*
-     <p>A list of keys.</p>
-    */
+    /**
+     * <p>A list of keys.</p>
+     */
     inline void SetKeys(const Aws::Vector<KeyListEntry>& value) { m_keys = value; }
 
-    /*
-     <p>A list of keys.</p>
-    */
+    /**
+     * <p>A list of keys.</p>
+     */
     inline void SetKeys(Aws::Vector<KeyListEntry>&& value) { m_keys = value; }
 
-    /*
-     <p>A list of keys.</p>
-    */
+    /**
+     * <p>A list of keys.</p>
+     */
     inline ListKeysResult& WithKeys(const Aws::Vector<KeyListEntry>& value) { SetKeys(value); return *this;}
 
-    /*
-     <p>A list of keys.</p>
-    */
+    /**
+     * <p>A list of keys.</p>
+     */
     inline ListKeysResult& WithKeys(Aws::Vector<KeyListEntry>&& value) { SetKeys(value); return *this;}
 
-    /*
-     <p>A list of keys.</p>
-    */
+    /**
+     * <p>A list of keys.</p>
+     */
     inline ListKeysResult& AddKeys(const KeyListEntry& value) { m_keys.push_back(value); return *this; }
 
-    /*
-     <p>A list of keys.</p>
-    */
+    /**
+     * <p>A list of keys.</p>
+     */
     inline ListKeysResult& AddKeys(KeyListEntry&& value) { m_keys.push_back(value); return *this; }
 
-    /*
-     <p>If <code>Truncated</code> is true, this value is present and contains the value to use for the <code>Marker</code> request parameter in a subsequent pagination request. </p>
-    */
+    /**
+     * <p>When <code>Truncated</code> is true, this value is present and contains the
+     * value to use for the <code>Marker</code> parameter in a subsequent pagination
+     * request.</p>
+     */
     inline const Aws::String& GetNextMarker() const{ return m_nextMarker; }
 
-    /*
-     <p>If <code>Truncated</code> is true, this value is present and contains the value to use for the <code>Marker</code> request parameter in a subsequent pagination request. </p>
-    */
+    /**
+     * <p>When <code>Truncated</code> is true, this value is present and contains the
+     * value to use for the <code>Marker</code> parameter in a subsequent pagination
+     * request.</p>
+     */
     inline void SetNextMarker(const Aws::String& value) { m_nextMarker = value; }
 
-    /*
-     <p>If <code>Truncated</code> is true, this value is present and contains the value to use for the <code>Marker</code> request parameter in a subsequent pagination request. </p>
-    */
+    /**
+     * <p>When <code>Truncated</code> is true, this value is present and contains the
+     * value to use for the <code>Marker</code> parameter in a subsequent pagination
+     * request.</p>
+     */
     inline void SetNextMarker(Aws::String&& value) { m_nextMarker = value; }
 
-    /*
-     <p>If <code>Truncated</code> is true, this value is present and contains the value to use for the <code>Marker</code> request parameter in a subsequent pagination request. </p>
-    */
+    /**
+     * <p>When <code>Truncated</code> is true, this value is present and contains the
+     * value to use for the <code>Marker</code> parameter in a subsequent pagination
+     * request.</p>
+     */
     inline void SetNextMarker(const char* value) { m_nextMarker.assign(value); }
 
-    /*
-     <p>If <code>Truncated</code> is true, this value is present and contains the value to use for the <code>Marker</code> request parameter in a subsequent pagination request. </p>
-    */
+    /**
+     * <p>When <code>Truncated</code> is true, this value is present and contains the
+     * value to use for the <code>Marker</code> parameter in a subsequent pagination
+     * request.</p>
+     */
     inline ListKeysResult& WithNextMarker(const Aws::String& value) { SetNextMarker(value); return *this;}
 
-    /*
-     <p>If <code>Truncated</code> is true, this value is present and contains the value to use for the <code>Marker</code> request parameter in a subsequent pagination request. </p>
-    */
+    /**
+     * <p>When <code>Truncated</code> is true, this value is present and contains the
+     * value to use for the <code>Marker</code> parameter in a subsequent pagination
+     * request.</p>
+     */
     inline ListKeysResult& WithNextMarker(Aws::String&& value) { SetNextMarker(value); return *this;}
 
-    /*
-     <p>If <code>Truncated</code> is true, this value is present and contains the value to use for the <code>Marker</code> request parameter in a subsequent pagination request. </p>
-    */
+    /**
+     * <p>When <code>Truncated</code> is true, this value is present and contains the
+     * value to use for the <code>Marker</code> parameter in a subsequent pagination
+     * request.</p>
+     */
     inline ListKeysResult& WithNextMarker(const char* value) { SetNextMarker(value); return *this;}
 
-    /*
-     <p>A flag that indicates whether there are more items in the list. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more keys in the list. </p>
-    */
+    /**
+     * <p>A flag that indicates whether there are more items in the list. If your
+     * results were truncated, you can use the <code>Marker</code> parameter to make a
+     * subsequent pagination request to retrieve more items in the list.</p>
+     */
     inline bool GetTruncated() const{ return m_truncated; }
 
-    /*
-     <p>A flag that indicates whether there are more items in the list. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more keys in the list. </p>
-    */
+    /**
+     * <p>A flag that indicates whether there are more items in the list. If your
+     * results were truncated, you can use the <code>Marker</code> parameter to make a
+     * subsequent pagination request to retrieve more items in the list.</p>
+     */
     inline void SetTruncated(bool value) { m_truncated = value; }
 
-    /*
-     <p>A flag that indicates whether there are more items in the list. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more keys in the list. </p>
-    */
+    /**
+     * <p>A flag that indicates whether there are more items in the list. If your
+     * results were truncated, you can use the <code>Marker</code> parameter to make a
+     * subsequent pagination request to retrieve more items in the list.</p>
+     */
     inline ListKeysResult& WithTruncated(bool value) { SetTruncated(value); return *this;}
 
   private:

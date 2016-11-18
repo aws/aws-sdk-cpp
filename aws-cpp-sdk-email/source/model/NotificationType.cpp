@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -14,57 +14,73 @@
 */
 #include <aws/email/model/NotificationType.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
+#include <aws/core/utils/EnumParseOverflowContainer.h>
 
 using namespace Aws::Utils;
 
-static const int Bounce_HASH = HashingUtils::HashString("Bounce");
-static const int Complaint_HASH = HashingUtils::HashString("Complaint");
-static const int Delivery_HASH = HashingUtils::HashString("Delivery");
 
 namespace Aws
 {
-namespace SES
-{
-namespace Model
-{
-namespace NotificationTypeMapper
-{
-NotificationType GetNotificationTypeForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-
-  if (hashCode == Bounce_HASH)
+  namespace SES
   {
-    return NotificationType::Bounce;
-  }
-  else if (hashCode == Complaint_HASH)
-  {
-    return NotificationType::Complaint;
-  }
-  else if (hashCode == Delivery_HASH)
-  {
-    return NotificationType::Delivery;
-  }
+    namespace Model
+    {
+      namespace NotificationTypeMapper
+      {
 
-  return NotificationType::NOT_SET;
-}
+        static const int Bounce_HASH = HashingUtils::HashString("Bounce");
+        static const int Complaint_HASH = HashingUtils::HashString("Complaint");
+        static const int Delivery_HASH = HashingUtils::HashString("Delivery");
 
-Aws::String GetNameForNotificationType(NotificationType value)
-{
-  switch(value)
-  {
-  case NotificationType::Bounce:
-    return "Bounce";
-  case NotificationType::Complaint:
-    return "Complaint";
-  case NotificationType::Delivery:
-    return "Delivery";
-  default:
-    return "";
-  }
-}
 
-} // namespace NotificationTypeMapper
-} // namespace Model
-} // namespace SES
+        NotificationType GetNotificationTypeForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == Bounce_HASH)
+          {
+            return NotificationType::Bounce;
+          }
+          else if (hashCode == Complaint_HASH)
+          {
+            return NotificationType::Complaint;
+          }
+          else if (hashCode == Delivery_HASH)
+          {
+            return NotificationType::Delivery;
+          }
+          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<NotificationType>(hashCode);
+          }
+
+          return NotificationType::NOT_SET;
+        }
+
+        Aws::String GetNameForNotificationType(NotificationType enumValue)
+        {
+          switch(enumValue)
+          {
+          case NotificationType::Bounce:
+            return "Bounce";
+          case NotificationType::Complaint:
+            return "Complaint";
+          case NotificationType::Delivery:
+            return "Delivery";
+          default:
+            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace NotificationTypeMapper
+    } // namespace Model
+  } // namespace SES
 } // namespace Aws

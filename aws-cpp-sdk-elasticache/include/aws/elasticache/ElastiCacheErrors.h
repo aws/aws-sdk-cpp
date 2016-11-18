@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -21,7 +21,7 @@ namespace Aws
 {
 namespace ElastiCache
 {
-enum class AWS_ELASTICACHE_API ElastiCacheErrors
+enum class ElastiCacheErrors
 {
   //From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
@@ -44,7 +44,12 @@ enum class AWS_ELASTICACHE_API ElastiCacheErrors
   RESOURCE_NOT_FOUND = 16,
   UNRECOGNIZED_CLIENT = 17,
   MALFORMED_QUERY_STRING = 18,
+  SLOW_DOWN = 19,
+  REQUEST_TIME_TOO_SKEWED = 20,
+  INVALID_SIGNATURE = 21,
+  SIGNATURE_DOES_NOT_MATCH = 22,
   NETWORK_CONNECTION = 99,
+  
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -73,6 +78,7 @@ enum class AWS_ELASTICACHE_API ElastiCacheErrors
   INVALID_SNAPSHOT_STATE_FAULT,
   INVALID_SUBNET,
   INVALID_V_P_C_NETWORK_STATE_FAULT,
+  NODE_GROUPS_PER_REPLICATION_GROUP_QUOTA_EXCEEDED_FAULT,
   NODE_QUOTA_FOR_CLUSTER_EXCEEDED_FAULT,
   NODE_QUOTA_FOR_CUSTOMER_EXCEEDED_FAULT,
   REPLICATION_GROUP_ALREADY_EXISTS_FAULT,

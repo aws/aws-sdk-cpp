@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -57,11 +57,6 @@ ListReceiptRuleSetsResult& ListReceiptRuleSetsResult::operator =(const AmazonWeb
         ruleSetsMember = ruleSetsMember.NextNode("member");
       }
 
-    }
-    XmlNode nextPageTokenNode = resultNode.FirstChild("NextPageToken");
-    if(!nextPageTokenNode.IsNull())
-    {
-      m_nextPageToken = StringUtils::Trim(nextPageTokenNode.GetText().c_str());
     }
     XmlNode nextTokenNode = resultNode.FirstChild("NextToken");
     if(!nextTokenNode.IsNull())

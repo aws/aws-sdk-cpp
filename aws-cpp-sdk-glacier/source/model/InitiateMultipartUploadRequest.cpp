@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -41,19 +41,19 @@ Aws::Http::HeaderValueCollection InitiateMultipartUploadRequest::GetRequestSpeci
   Aws::StringStream ss;
   if(m_archiveDescriptionHasBeenSet)
   {
-   ss << m_archiveDescription;
-   headers.insert(Aws::Http::HeaderValuePair("x-amz-archive-description", ss.str()));
-   ss.str("");
+    ss << m_archiveDescription;
+    headers.insert(Aws::Http::HeaderValuePair("x-amz-archive-description", ss.str()));
+    ss.str("");
   }
 
   if(m_partSizeHasBeenSet)
   {
-   ss << m_partSize;
-   headers.insert(Aws::Http::HeaderValuePair("x-amz-part-size", ss.str()));
-   ss.str("");
+    ss << m_partSize;
+    headers.insert(Aws::Http::HeaderValuePair("x-amz-part-size", ss.str()));
+    ss.str("");
   }
 
-  return std::move(headers);
+  return headers;
 
 }
 

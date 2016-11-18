@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::ElasticLoadBalancing::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace ElasticLoadBalancing
+{
+namespace Model
+{
 
 BackendServerDescription::BackendServerDescription() : 
     m_instancePort(0),
@@ -73,13 +79,16 @@ void BackendServerDescription::OutputToStream(Aws::OStream& oStream, const char*
   {
       oStream << location << index << locationValue << ".InstancePort=" << m_instancePort << "&";
   }
+
   if(m_policyNamesHasBeenSet)
   {
+      unsigned policyNamesIdx = 1;
       for(auto& item : m_policyNames)
       {
-        oStream << location << index << locationValue << ".PolicyNames=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << index << locationValue << ".PolicyNames.member." << policyNamesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
+
 }
 
 void BackendServerDescription::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -90,9 +99,14 @@ void BackendServerDescription::OutputToStream(Aws::OStream& oStream, const char*
   }
   if(m_policyNamesHasBeenSet)
   {
+      unsigned policyNamesIdx = 1;
       for(auto& item : m_policyNames)
       {
-        oStream << location << ".PolicyNames=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << ".PolicyNames.member." << policyNamesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
 }
+
+} // namespace Model
+} // namespace ElasticLoadBalancing
+} // namespace Aws

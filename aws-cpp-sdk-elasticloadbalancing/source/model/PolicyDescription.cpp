@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::ElasticLoadBalancing::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace ElasticLoadBalancing
+{
+namespace Model
+{
 
 PolicyDescription::PolicyDescription() : 
     m_policyNameHasBeenSet(false),
@@ -79,19 +85,23 @@ void PolicyDescription::OutputToStream(Aws::OStream& oStream, const char* locati
   {
       oStream << location << index << locationValue << ".PolicyName=" << StringUtils::URLEncode(m_policyName.c_str()) << "&";
   }
+
   if(m_policyTypeNameHasBeenSet)
   {
       oStream << location << index << locationValue << ".PolicyTypeName=" << StringUtils::URLEncode(m_policyTypeName.c_str()) << "&";
   }
+
   if(m_policyAttributeDescriptionsHasBeenSet)
   {
+      unsigned policyAttributeDescriptionsIdx = 1;
       for(auto& item : m_policyAttributeDescriptions)
       {
         Aws::StringStream policyAttributeDescriptionsSs;
-        policyAttributeDescriptionsSs << location << index << locationValue << ".PolicyAttributeDescriptions";
+        policyAttributeDescriptionsSs << location << index << locationValue << ".PolicyAttributeDescriptions.member." << policyAttributeDescriptionsIdx++;
         item.OutputToStream(oStream, policyAttributeDescriptionsSs.str().c_str());
       }
   }
+
 }
 
 void PolicyDescription::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -106,11 +116,16 @@ void PolicyDescription::OutputToStream(Aws::OStream& oStream, const char* locati
   }
   if(m_policyAttributeDescriptionsHasBeenSet)
   {
+      unsigned policyAttributeDescriptionsIdx = 1;
       for(auto& item : m_policyAttributeDescriptions)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".PolicyAttributeDescriptions";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream policyAttributeDescriptionsSs;
+        policyAttributeDescriptionsSs << location <<  ".PolicyAttributeDescriptions.member." << policyAttributeDescriptionsIdx++;
+        item.OutputToStream(oStream, policyAttributeDescriptionsSs.str().c_str());
       }
   }
 }
+
+} // namespace Model
+} // namespace ElasticLoadBalancing
+} // namespace Aws

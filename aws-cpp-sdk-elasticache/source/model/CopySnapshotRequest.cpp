@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -21,7 +21,8 @@ using namespace Aws::Utils;
 
 CopySnapshotRequest::CopySnapshotRequest() : 
     m_sourceSnapshotNameHasBeenSet(false),
-    m_targetSnapshotNameHasBeenSet(false)
+    m_targetSnapshotNameHasBeenSet(false),
+    m_targetBucketHasBeenSet(false)
 {
 }
 
@@ -33,10 +34,17 @@ Aws::String CopySnapshotRequest::SerializePayload() const
   {
     ss << "SourceSnapshotName=" << StringUtils::URLEncode(m_sourceSnapshotName.c_str()) << "&";
   }
+
   if(m_targetSnapshotNameHasBeenSet)
   {
     ss << "TargetSnapshotName=" << StringUtils::URLEncode(m_targetSnapshotName.c_str()) << "&";
   }
+
+  if(m_targetBucketHasBeenSet)
+  {
+    ss << "TargetBucket=" << StringUtils::URLEncode(m_targetBucket.c_str()) << "&";
+  }
+
   ss << "Version=2015-02-02";
   return ss.str();
 }

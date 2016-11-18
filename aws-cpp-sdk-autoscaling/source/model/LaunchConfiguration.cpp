@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace AutoScaling
+{
+namespace Model
+{
 
 LaunchConfiguration::LaunchConfiguration() : 
     m_launchConfigurationNameHasBeenSet(false),
@@ -39,7 +45,6 @@ LaunchConfiguration::LaunchConfiguration() :
     m_instanceMonitoringHasBeenSet(false),
     m_spotPriceHasBeenSet(false),
     m_iamInstanceProfileHasBeenSet(false),
-    m_createdTime(0.0),
     m_createdTimeHasBeenSet(false),
     m_ebsOptimized(false),
     m_ebsOptimizedHasBeenSet(false),
@@ -65,7 +70,6 @@ LaunchConfiguration::LaunchConfiguration(const XmlNode& xmlNode) :
     m_instanceMonitoringHasBeenSet(false),
     m_spotPriceHasBeenSet(false),
     m_iamInstanceProfileHasBeenSet(false),
-    m_createdTime(0.0),
     m_createdTimeHasBeenSet(false),
     m_ebsOptimized(false),
     m_ebsOptimizedHasBeenSet(false),
@@ -193,7 +197,7 @@ LaunchConfiguration& LaunchConfiguration::operator =(const XmlNode& xmlNode)
     XmlNode createdTimeNode = resultNode.FirstChild("CreatedTime");
     if(!createdTimeNode.IsNull())
     {
-      m_createdTime = StringUtils::ConvertToDouble(StringUtils::Trim(createdTimeNode.GetText().c_str()).c_str());
+      m_createdTime = DateTime(StringUtils::Trim(createdTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_createdTimeHasBeenSet = true;
     }
     XmlNode ebsOptimizedNode = resultNode.FirstChild("EbsOptimized");
@@ -225,91 +229,113 @@ void LaunchConfiguration::OutputToStream(Aws::OStream& oStream, const char* loca
   {
       oStream << location << index << locationValue << ".LaunchConfigurationName=" << StringUtils::URLEncode(m_launchConfigurationName.c_str()) << "&";
   }
+
   if(m_launchConfigurationARNHasBeenSet)
   {
       oStream << location << index << locationValue << ".LaunchConfigurationARN=" << StringUtils::URLEncode(m_launchConfigurationARN.c_str()) << "&";
   }
+
   if(m_imageIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".ImageId=" << StringUtils::URLEncode(m_imageId.c_str()) << "&";
   }
+
   if(m_keyNameHasBeenSet)
   {
       oStream << location << index << locationValue << ".KeyName=" << StringUtils::URLEncode(m_keyName.c_str()) << "&";
   }
+
   if(m_securityGroupsHasBeenSet)
   {
+      unsigned securityGroupsIdx = 1;
       for(auto& item : m_securityGroups)
       {
-        oStream << location << index << locationValue << ".SecurityGroups=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << index << locationValue << ".SecurityGroups.member." << securityGroupsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
+
   if(m_classicLinkVPCIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".ClassicLinkVPCId=" << StringUtils::URLEncode(m_classicLinkVPCId.c_str()) << "&";
   }
+
   if(m_classicLinkVPCSecurityGroupsHasBeenSet)
   {
+      unsigned classicLinkVPCSecurityGroupsIdx = 1;
       for(auto& item : m_classicLinkVPCSecurityGroups)
       {
-        oStream << location << index << locationValue << ".ClassicLinkVPCSecurityGroups=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << index << locationValue << ".ClassicLinkVPCSecurityGroups.member." << classicLinkVPCSecurityGroupsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
+
   if(m_userDataHasBeenSet)
   {
       oStream << location << index << locationValue << ".UserData=" << StringUtils::URLEncode(m_userData.c_str()) << "&";
   }
+
   if(m_instanceTypeHasBeenSet)
   {
       oStream << location << index << locationValue << ".InstanceType=" << StringUtils::URLEncode(m_instanceType.c_str()) << "&";
   }
+
   if(m_kernelIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".KernelId=" << StringUtils::URLEncode(m_kernelId.c_str()) << "&";
   }
+
   if(m_ramdiskIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".RamdiskId=" << StringUtils::URLEncode(m_ramdiskId.c_str()) << "&";
   }
+
   if(m_blockDeviceMappingsHasBeenSet)
   {
+      unsigned blockDeviceMappingsIdx = 1;
       for(auto& item : m_blockDeviceMappings)
       {
         Aws::StringStream blockDeviceMappingsSs;
-        blockDeviceMappingsSs << location << index << locationValue << ".BlockDeviceMappings";
+        blockDeviceMappingsSs << location << index << locationValue << ".BlockDeviceMappings.member." << blockDeviceMappingsIdx++;
         item.OutputToStream(oStream, blockDeviceMappingsSs.str().c_str());
       }
   }
+
   if(m_instanceMonitoringHasBeenSet)
   {
       Aws::StringStream instanceMonitoringLocationAndMemberSs;
       instanceMonitoringLocationAndMemberSs << location << index << locationValue << ".InstanceMonitoring";
       m_instanceMonitoring.OutputToStream(oStream, instanceMonitoringLocationAndMemberSs.str().c_str());
   }
+
   if(m_spotPriceHasBeenSet)
   {
       oStream << location << index << locationValue << ".SpotPrice=" << StringUtils::URLEncode(m_spotPrice.c_str()) << "&";
   }
+
   if(m_iamInstanceProfileHasBeenSet)
   {
       oStream << location << index << locationValue << ".IamInstanceProfile=" << StringUtils::URLEncode(m_iamInstanceProfile.c_str()) << "&";
   }
+
   if(m_createdTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".CreatedTime=" << m_createdTime << "&";
+      oStream << location << index << locationValue << ".CreatedTime=" << StringUtils::URLEncode(m_createdTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_ebsOptimizedHasBeenSet)
   {
       oStream << location << index << locationValue << ".EbsOptimized=" << m_ebsOptimized << "&";
   }
+
   if(m_associatePublicIpAddressHasBeenSet)
   {
       oStream << location << index << locationValue << ".AssociatePublicIpAddress=" << m_associatePublicIpAddress << "&";
   }
+
   if(m_placementTenancyHasBeenSet)
   {
       oStream << location << index << locationValue << ".PlacementTenancy=" << StringUtils::URLEncode(m_placementTenancy.c_str()) << "&";
   }
+
 }
 
 void LaunchConfiguration::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -332,9 +358,10 @@ void LaunchConfiguration::OutputToStream(Aws::OStream& oStream, const char* loca
   }
   if(m_securityGroupsHasBeenSet)
   {
+      unsigned securityGroupsIdx = 1;
       for(auto& item : m_securityGroups)
       {
-        oStream << location << ".SecurityGroups=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << ".SecurityGroups.member." << securityGroupsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
   if(m_classicLinkVPCIdHasBeenSet)
@@ -343,9 +370,10 @@ void LaunchConfiguration::OutputToStream(Aws::OStream& oStream, const char* loca
   }
   if(m_classicLinkVPCSecurityGroupsHasBeenSet)
   {
+      unsigned classicLinkVPCSecurityGroupsIdx = 1;
       for(auto& item : m_classicLinkVPCSecurityGroups)
       {
-        oStream << location << ".ClassicLinkVPCSecurityGroups=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << ".ClassicLinkVPCSecurityGroups.member." << classicLinkVPCSecurityGroupsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
   if(m_userDataHasBeenSet)
@@ -366,11 +394,12 @@ void LaunchConfiguration::OutputToStream(Aws::OStream& oStream, const char* loca
   }
   if(m_blockDeviceMappingsHasBeenSet)
   {
+      unsigned blockDeviceMappingsIdx = 1;
       for(auto& item : m_blockDeviceMappings)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".BlockDeviceMappings";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream blockDeviceMappingsSs;
+        blockDeviceMappingsSs << location <<  ".BlockDeviceMappings.member." << blockDeviceMappingsIdx++;
+        item.OutputToStream(oStream, blockDeviceMappingsSs.str().c_str());
       }
   }
   if(m_instanceMonitoringHasBeenSet)
@@ -389,7 +418,7 @@ void LaunchConfiguration::OutputToStream(Aws::OStream& oStream, const char* loca
   }
   if(m_createdTimeHasBeenSet)
   {
-      oStream << location << ".CreatedTime=" << m_createdTime << "&";
+      oStream << location << ".CreatedTime=" << StringUtils::URLEncode(m_createdTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_ebsOptimizedHasBeenSet)
   {
@@ -404,3 +433,7 @@ void LaunchConfiguration::OutputToStream(Aws::OStream& oStream, const char* loca
       oStream << location << ".PlacementTenancy=" << StringUtils::URLEncode(m_placementTenancy.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace AutoScaling
+} // namespace Aws

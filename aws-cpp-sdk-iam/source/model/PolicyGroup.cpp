@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,17 +19,25 @@
 
 #include <utility>
 
-using namespace Aws::IAM::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
+namespace Aws
+{
+namespace IAM
+{
+namespace Model
+{
+
 PolicyGroup::PolicyGroup() : 
-    m_groupNameHasBeenSet(false)
+    m_groupNameHasBeenSet(false),
+    m_groupIdHasBeenSet(false)
 {
 }
 
 PolicyGroup::PolicyGroup(const XmlNode& xmlNode) : 
-    m_groupNameHasBeenSet(false)
+    m_groupNameHasBeenSet(false),
+    m_groupIdHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -46,6 +54,12 @@ PolicyGroup& PolicyGroup::operator =(const XmlNode& xmlNode)
       m_groupName = StringUtils::Trim(groupNameNode.GetText().c_str());
       m_groupNameHasBeenSet = true;
     }
+    XmlNode groupIdNode = resultNode.FirstChild("GroupId");
+    if(!groupIdNode.IsNull())
+    {
+      m_groupId = StringUtils::Trim(groupIdNode.GetText().c_str());
+      m_groupIdHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -57,6 +71,12 @@ void PolicyGroup::OutputToStream(Aws::OStream& oStream, const char* location, un
   {
       oStream << location << index << locationValue << ".GroupName=" << StringUtils::URLEncode(m_groupName.c_str()) << "&";
   }
+
+  if(m_groupIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".GroupId=" << StringUtils::URLEncode(m_groupId.c_str()) << "&";
+  }
+
 }
 
 void PolicyGroup::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -65,4 +85,12 @@ void PolicyGroup::OutputToStream(Aws::OStream& oStream, const char* location) co
   {
       oStream << location << ".GroupName=" << StringUtils::URLEncode(m_groupName.c_str()) << "&";
   }
+  if(m_groupIdHasBeenSet)
+  {
+      oStream << location << ".GroupId=" << StringUtils::URLEncode(m_groupId.c_str()) << "&";
+  }
 }
+
+} // namespace Model
+} // namespace IAM
+} // namespace Aws

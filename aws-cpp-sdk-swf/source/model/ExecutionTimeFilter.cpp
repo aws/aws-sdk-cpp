@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -17,22 +17,24 @@
 
 #include <utility>
 
-using namespace Aws::SWF::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
+namespace Aws
+{
+namespace SWF
+{
+namespace Model
+{
+
 ExecutionTimeFilter::ExecutionTimeFilter() : 
-    m_oldestDate(0.0),
     m_oldestDateHasBeenSet(false),
-    m_latestDate(0.0),
     m_latestDateHasBeenSet(false)
 {
 }
 
 ExecutionTimeFilter::ExecutionTimeFilter(const JsonValue& jsonValue) : 
-    m_oldestDate(0.0),
     m_oldestDateHasBeenSet(false),
-    m_latestDate(0.0),
     m_latestDateHasBeenSet(false)
 {
   *this = jsonValue;
@@ -63,15 +65,17 @@ JsonValue ExecutionTimeFilter::Jsonize() const
 
   if(m_oldestDateHasBeenSet)
   {
-   payload.WithDouble("oldestDate", m_oldestDate);
-
+   payload.WithDouble("oldestDate", m_oldestDate.SecondsWithMSPrecision());
   }
 
   if(m_latestDateHasBeenSet)
   {
-   payload.WithDouble("latestDate", m_latestDate);
-
+   payload.WithDouble("latestDate", m_latestDate.SecondsWithMSPrecision());
   }
 
-  return std::move(payload);
+  return payload;
 }
+
+} // namespace Model
+} // namespace SWF
+} // namespace Aws

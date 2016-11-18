@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,13 +19,20 @@
 
 #include <utility>
 
-using namespace Aws::EC2::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
 
 ImportInstanceTaskDetails::ImportInstanceTaskDetails() : 
     m_volumesHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
+    m_platform(PlatformValues::NOT_SET),
     m_platformHasBeenSet(false),
     m_descriptionHasBeenSet(false)
 {
@@ -34,6 +41,7 @@ ImportInstanceTaskDetails::ImportInstanceTaskDetails() :
 ImportInstanceTaskDetails::ImportInstanceTaskDetails(const XmlNode& xmlNode) : 
     m_volumesHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
+    m_platform(PlatformValues::NOT_SET),
     m_platformHasBeenSet(false),
     m_descriptionHasBeenSet(false)
 {
@@ -85,38 +93,42 @@ void ImportInstanceTaskDetails::OutputToStream(Aws::OStream& oStream, const char
 {
   if(m_volumesHasBeenSet)
   {
-      unsigned volumesIdx = 0;
+      unsigned volumesIdx = 1;
       for(auto& item : m_volumes)
       {
-        volumesIdx++;
         Aws::StringStream volumesSs;
-        volumesSs << location << index << locationValue << ".Volumes." << volumesIdx;
+        volumesSs << location << index << locationValue << ".Volumes." << volumesIdx++;
         item.OutputToStream(oStream, volumesSs.str().c_str());
       }
   }
+
   if(m_instanceIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
   }
+
   if(m_platformHasBeenSet)
   {
       oStream << location << index << locationValue << ".Platform=" << PlatformValuesMapper::GetNameForPlatformValues(m_platform) << "&";
   }
+
   if(m_descriptionHasBeenSet)
   {
       oStream << location << index << locationValue << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
+
 }
 
 void ImportInstanceTaskDetails::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
   if(m_volumesHasBeenSet)
   {
+      unsigned volumesIdx = 1;
       for(auto& item : m_volumes)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".item";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream volumesSs;
+        volumesSs << location <<  ".item." << volumesIdx++;
+        item.OutputToStream(oStream, volumesSs.str().c_str());
       }
   }
   if(m_instanceIdHasBeenSet)
@@ -132,3 +144,7 @@ void ImportInstanceTaskDetails::OutputToStream(Aws::OStream& oStream, const char
       oStream << location << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

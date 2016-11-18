@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::S3::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace S3
+{
+namespace Model
+{
 
 S3KeyFilter::S3KeyFilter() : 
     m_filterRulesHasBeenSet(false)
@@ -40,14 +46,14 @@ S3KeyFilter& S3KeyFilter::operator =(const XmlNode& xmlNode)
 
   if(!resultNode.IsNull())
   {
-    XmlNode filterRulesNode = resultNode.FirstChild("FilterRules");
+    XmlNode filterRulesNode = resultNode.FirstChild("FilterRule");
     if(!filterRulesNode.IsNull())
     {
-      XmlNode filterRulesMember = filterRulesNode;
-      while(!filterRulesMember.IsNull())
+      XmlNode filterRuleMember = filterRulesNode;
+      while(!filterRuleMember.IsNull())
       {
-        m_filterRules.push_back(filterRulesMember);
-        filterRulesMember = filterRulesMember.NextNode("FilterRule");
+        m_filterRules.push_back(filterRuleMember);
+        filterRuleMember = filterRuleMember.NextNode("FilterRule");
       }
 
       m_filterRulesHasBeenSet = true;
@@ -70,3 +76,7 @@ void S3KeyFilter::AddToNode(XmlNode& parentNode) const
   }
 
 }
+
+} // namespace Model
+} // namespace S3
+} // namespace Aws

@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -21,7 +21,7 @@ namespace Aws
 {
 namespace CodeDeploy
 {
-enum class AWS_CODEDEPLOY_API CodeDeployErrors
+enum class CodeDeployErrors
 {
   //From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
@@ -44,14 +44,21 @@ enum class AWS_CODEDEPLOY_API CodeDeployErrors
   RESOURCE_NOT_FOUND = 16,
   UNRECOGNIZED_CLIENT = 17,
   MALFORMED_QUERY_STRING = 18,
+  SLOW_DOWN = 19,
+  REQUEST_TIME_TOO_SKEWED = 20,
+  INVALID_SIGNATURE = 21,
+  SIGNATURE_DOES_NOT_MATCH = 22,
   NETWORK_CONNECTION = 99,
+  
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  APPLICATION_ALREADY_EXISTS= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  ALARMS_LIMIT_EXCEEDED= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  APPLICATION_ALREADY_EXISTS,
   APPLICATION_DOES_NOT_EXIST,
   APPLICATION_LIMIT_EXCEEDED,
   APPLICATION_NAME_REQUIRED,
+  BATCH_LIMIT_EXCEEDED,
   BUCKET_NAME_FILTER_REQUIRED,
   DEPLOYMENT_ALREADY_COMPLETED,
   DEPLOYMENT_CONFIG_ALREADY_EXISTS,
@@ -76,7 +83,9 @@ enum class AWS_CODEDEPLOY_API CodeDeployErrors
   INSTANCE_NAME_ALREADY_REGISTERED,
   INSTANCE_NAME_REQUIRED,
   INSTANCE_NOT_REGISTERED,
+  INVALID_ALARM_CONFIG,
   INVALID_APPLICATION_NAME,
+  INVALID_AUTO_ROLLBACK_CONFIG,
   INVALID_AUTO_SCALING_GROUP,
   INVALID_BUCKET_NAME_FILTER,
   INVALID_DEPLOYED_STATE_FILTER,
@@ -100,11 +109,14 @@ enum class AWS_CODEDEPLOY_API CodeDeployErrors
   INVALID_TAG,
   INVALID_TAG_FILTER,
   INVALID_TIME_RANGE,
+  INVALID_TRIGGER_CONFIG,
+  LIFECYCLE_HOOK_LIMIT_EXCEEDED,
   REVISION_DOES_NOT_EXIST,
   REVISION_REQUIRED,
   ROLE_REQUIRED,
   TAG_LIMIT_EXCEEDED,
-  TAG_REQUIRED
+  TAG_REQUIRED,
+  TRIGGER_TARGETS_LIMIT_EXCEEDED
 };
 namespace CodeDeployErrorMapper
 {

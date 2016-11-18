@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -28,9 +28,9 @@ namespace DataPipeline
 namespace Model
 {
 
-  /*
-    <p>Contains the parameters for ValidatePipelineDefinition.</p>
-  */
+  /**
+   * <p>Contains the parameters for ValidatePipelineDefinition.</p>
+   */
   class AWS_DATAPIPELINE_API ValidatePipelineDefinitionRequest : public DataPipelineRequest
   {
   public:
@@ -39,145 +39,151 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
-    /*
-     <p>The ID of the pipeline.</p>
-    */
+    /**
+     * <p>The ID of the pipeline.</p>
+     */
     inline const Aws::String& GetPipelineId() const{ return m_pipelineId; }
 
-    /*
-     <p>The ID of the pipeline.</p>
-    */
+    /**
+     * <p>The ID of the pipeline.</p>
+     */
     inline void SetPipelineId(const Aws::String& value) { m_pipelineIdHasBeenSet = true; m_pipelineId = value; }
 
-    /*
-     <p>The ID of the pipeline.</p>
-    */
+    /**
+     * <p>The ID of the pipeline.</p>
+     */
     inline void SetPipelineId(Aws::String&& value) { m_pipelineIdHasBeenSet = true; m_pipelineId = value; }
 
-    /*
-     <p>The ID of the pipeline.</p>
-    */
+    /**
+     * <p>The ID of the pipeline.</p>
+     */
     inline void SetPipelineId(const char* value) { m_pipelineIdHasBeenSet = true; m_pipelineId.assign(value); }
 
-    /*
-     <p>The ID of the pipeline.</p>
-    */
+    /**
+     * <p>The ID of the pipeline.</p>
+     */
     inline ValidatePipelineDefinitionRequest& WithPipelineId(const Aws::String& value) { SetPipelineId(value); return *this;}
 
-    /*
-     <p>The ID of the pipeline.</p>
-    */
+    /**
+     * <p>The ID of the pipeline.</p>
+     */
     inline ValidatePipelineDefinitionRequest& WithPipelineId(Aws::String&& value) { SetPipelineId(value); return *this;}
 
-    /*
-     <p>The ID of the pipeline.</p>
-    */
+    /**
+     * <p>The ID of the pipeline.</p>
+     */
     inline ValidatePipelineDefinitionRequest& WithPipelineId(const char* value) { SetPipelineId(value); return *this;}
 
-    /*
-     <p>The objects that define the pipeline changes to validate against the pipeline.</p>
-    */
+    /**
+     * <p>The objects that define the pipeline changes to validate against the
+     * pipeline.</p>
+     */
     inline const Aws::Vector<PipelineObject>& GetPipelineObjects() const{ return m_pipelineObjects; }
 
-    /*
-     <p>The objects that define the pipeline changes to validate against the pipeline.</p>
-    */
+    /**
+     * <p>The objects that define the pipeline changes to validate against the
+     * pipeline.</p>
+     */
     inline void SetPipelineObjects(const Aws::Vector<PipelineObject>& value) { m_pipelineObjectsHasBeenSet = true; m_pipelineObjects = value; }
 
-    /*
-     <p>The objects that define the pipeline changes to validate against the pipeline.</p>
-    */
+    /**
+     * <p>The objects that define the pipeline changes to validate against the
+     * pipeline.</p>
+     */
     inline void SetPipelineObjects(Aws::Vector<PipelineObject>&& value) { m_pipelineObjectsHasBeenSet = true; m_pipelineObjects = value; }
 
-    /*
-     <p>The objects that define the pipeline changes to validate against the pipeline.</p>
-    */
+    /**
+     * <p>The objects that define the pipeline changes to validate against the
+     * pipeline.</p>
+     */
     inline ValidatePipelineDefinitionRequest& WithPipelineObjects(const Aws::Vector<PipelineObject>& value) { SetPipelineObjects(value); return *this;}
 
-    /*
-     <p>The objects that define the pipeline changes to validate against the pipeline.</p>
-    */
+    /**
+     * <p>The objects that define the pipeline changes to validate against the
+     * pipeline.</p>
+     */
     inline ValidatePipelineDefinitionRequest& WithPipelineObjects(Aws::Vector<PipelineObject>&& value) { SetPipelineObjects(value); return *this;}
 
-    /*
-     <p>The objects that define the pipeline changes to validate against the pipeline.</p>
-    */
+    /**
+     * <p>The objects that define the pipeline changes to validate against the
+     * pipeline.</p>
+     */
     inline ValidatePipelineDefinitionRequest& AddPipelineObjects(const PipelineObject& value) { m_pipelineObjectsHasBeenSet = true; m_pipelineObjects.push_back(value); return *this; }
 
-    /*
-     <p>The objects that define the pipeline changes to validate against the pipeline.</p>
-    */
+    /**
+     * <p>The objects that define the pipeline changes to validate against the
+     * pipeline.</p>
+     */
     inline ValidatePipelineDefinitionRequest& AddPipelineObjects(PipelineObject&& value) { m_pipelineObjectsHasBeenSet = true; m_pipelineObjects.push_back(value); return *this; }
 
-    /*
-     <p>The parameter objects used with the pipeline.</p>
-    */
+    /**
+     * <p>The parameter objects used with the pipeline.</p>
+     */
     inline const Aws::Vector<ParameterObject>& GetParameterObjects() const{ return m_parameterObjects; }
 
-    /*
-     <p>The parameter objects used with the pipeline.</p>
-    */
+    /**
+     * <p>The parameter objects used with the pipeline.</p>
+     */
     inline void SetParameterObjects(const Aws::Vector<ParameterObject>& value) { m_parameterObjectsHasBeenSet = true; m_parameterObjects = value; }
 
-    /*
-     <p>The parameter objects used with the pipeline.</p>
-    */
+    /**
+     * <p>The parameter objects used with the pipeline.</p>
+     */
     inline void SetParameterObjects(Aws::Vector<ParameterObject>&& value) { m_parameterObjectsHasBeenSet = true; m_parameterObjects = value; }
 
-    /*
-     <p>The parameter objects used with the pipeline.</p>
-    */
+    /**
+     * <p>The parameter objects used with the pipeline.</p>
+     */
     inline ValidatePipelineDefinitionRequest& WithParameterObjects(const Aws::Vector<ParameterObject>& value) { SetParameterObjects(value); return *this;}
 
-    /*
-     <p>The parameter objects used with the pipeline.</p>
-    */
+    /**
+     * <p>The parameter objects used with the pipeline.</p>
+     */
     inline ValidatePipelineDefinitionRequest& WithParameterObjects(Aws::Vector<ParameterObject>&& value) { SetParameterObjects(value); return *this;}
 
-    /*
-     <p>The parameter objects used with the pipeline.</p>
-    */
+    /**
+     * <p>The parameter objects used with the pipeline.</p>
+     */
     inline ValidatePipelineDefinitionRequest& AddParameterObjects(const ParameterObject& value) { m_parameterObjectsHasBeenSet = true; m_parameterObjects.push_back(value); return *this; }
 
-    /*
-     <p>The parameter objects used with the pipeline.</p>
-    */
+    /**
+     * <p>The parameter objects used with the pipeline.</p>
+     */
     inline ValidatePipelineDefinitionRequest& AddParameterObjects(ParameterObject&& value) { m_parameterObjectsHasBeenSet = true; m_parameterObjects.push_back(value); return *this; }
 
-    /*
-     <p>The parameter values used with the pipeline.</p>
-    */
+    /**
+     * <p>The parameter values used with the pipeline.</p>
+     */
     inline const Aws::Vector<ParameterValue>& GetParameterValues() const{ return m_parameterValues; }
 
-    /*
-     <p>The parameter values used with the pipeline.</p>
-    */
+    /**
+     * <p>The parameter values used with the pipeline.</p>
+     */
     inline void SetParameterValues(const Aws::Vector<ParameterValue>& value) { m_parameterValuesHasBeenSet = true; m_parameterValues = value; }
 
-    /*
-     <p>The parameter values used with the pipeline.</p>
-    */
+    /**
+     * <p>The parameter values used with the pipeline.</p>
+     */
     inline void SetParameterValues(Aws::Vector<ParameterValue>&& value) { m_parameterValuesHasBeenSet = true; m_parameterValues = value; }
 
-    /*
-     <p>The parameter values used with the pipeline.</p>
-    */
+    /**
+     * <p>The parameter values used with the pipeline.</p>
+     */
     inline ValidatePipelineDefinitionRequest& WithParameterValues(const Aws::Vector<ParameterValue>& value) { SetParameterValues(value); return *this;}
 
-    /*
-     <p>The parameter values used with the pipeline.</p>
-    */
+    /**
+     * <p>The parameter values used with the pipeline.</p>
+     */
     inline ValidatePipelineDefinitionRequest& WithParameterValues(Aws::Vector<ParameterValue>&& value) { SetParameterValues(value); return *this;}
 
-    /*
-     <p>The parameter values used with the pipeline.</p>
-    */
+    /**
+     * <p>The parameter values used with the pipeline.</p>
+     */
     inline ValidatePipelineDefinitionRequest& AddParameterValues(const ParameterValue& value) { m_parameterValuesHasBeenSet = true; m_parameterValues.push_back(value); return *this; }
 
-    /*
-     <p>The parameter values used with the pipeline.</p>
-    */
+    /**
+     * <p>The parameter values used with the pipeline.</p>
+     */
     inline ValidatePipelineDefinitionRequest& AddParameterValues(ParameterValue&& value) { m_parameterValuesHasBeenSet = true; m_parameterValues.push_back(value); return *this; }
 
   private:

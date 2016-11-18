@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -17,11 +17,18 @@
 
 #include <utility>
 
-using namespace Aws::ECS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
+namespace Aws
+{
+namespace ECS
+{
+namespace Model
+{
+
 LoadBalancer::LoadBalancer() : 
+    m_targetGroupArnHasBeenSet(false),
     m_loadBalancerNameHasBeenSet(false),
     m_containerNameHasBeenSet(false),
     m_containerPort(0),
@@ -30,6 +37,7 @@ LoadBalancer::LoadBalancer() :
 }
 
 LoadBalancer::LoadBalancer(const JsonValue& jsonValue) : 
+    m_targetGroupArnHasBeenSet(false),
     m_loadBalancerNameHasBeenSet(false),
     m_containerNameHasBeenSet(false),
     m_containerPort(0),
@@ -40,6 +48,13 @@ LoadBalancer::LoadBalancer(const JsonValue& jsonValue) :
 
 LoadBalancer& LoadBalancer::operator =(const JsonValue& jsonValue)
 {
+  if(jsonValue.ValueExists("targetGroupArn"))
+  {
+    m_targetGroupArn = jsonValue.GetString("targetGroupArn");
+
+    m_targetGroupArnHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("loadBalancerName"))
   {
     m_loadBalancerName = jsonValue.GetString("loadBalancerName");
@@ -68,6 +83,12 @@ JsonValue LoadBalancer::Jsonize() const
 {
   JsonValue payload;
 
+  if(m_targetGroupArnHasBeenSet)
+  {
+   payload.WithString("targetGroupArn", m_targetGroupArn);
+
+  }
+
   if(m_loadBalancerNameHasBeenSet)
   {
    payload.WithString("loadBalancerName", m_loadBalancerName);
@@ -86,5 +107,9 @@ JsonValue LoadBalancer::Jsonize() const
 
   }
 
-  return std::move(payload);
+  return payload;
 }
+
+} // namespace Model
+} // namespace ECS
+} // namespace Aws

@@ -1,12 +1,12 @@
 /*
-  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-  * 
+  * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+  *
   * Licensed under the Apache License, Version 2.0 (the "License").
   * You may not use this file except in compliance with the License.
   * A copy of the License is located at
-  * 
+  *
   *  http://aws.amazon.com/apache2.0
-  * 
+  *
   * or in the "license" file accompanying this file. This file is distributed
   * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
   * express or implied. See the License for the specific language governing
@@ -22,42 +22,48 @@
 
 namespace Aws
 {
-namespace Client
-{
-struct ClientConfiguration;
-} // namespace Client
+    namespace Client
+    {
+        struct ClientConfiguration;
+    } // namespace Client
 
-namespace Http
-{
+    namespace Http
+    {
+        class WinINetConnectionPoolMgr;
 
-class WinINetConnectionPoolMgr;
+        /**
+         *WinInet implementation of an http client.
+         */
+        class AWS_CORE_API WinINetSyncHttpClient : public WinSyncHttpClient
+        {
+        public:
+            using Base = WinSyncHttpClient;
 
-//Curl implementation of an http client. Right now it is only synchronous.
-class AWS_CORE_API WinINetSyncHttpClient : public WinSyncHttpClient
-{
-public:
-    using Base = WinSyncHttpClient;
+            /**
+            * Initializes the client with relevant parameters from clientConfig.
+            */
+            WinINetSyncHttpClient(const Aws::Client::ClientConfiguration& clientConfig);
+            ~WinINetSyncHttpClient();
 
-    //Creates client
-    WinINetSyncHttpClient(const Aws::Client::ClientConfiguration& clientConfig);
-    ~WinINetSyncHttpClient();
+            /**
+             * Gets log tag for use in logging in the base class.
+             */
+            const char* GetLogTag() const override { return "WinInetSyncHttpClient"; }
+        private:
 
-    const char* GetLogTag() const override { return "WinInetSyncHttpClient"; }
-private:
+            // WinHttp specific implementations
+            void* OpenRequest(const Aws::Http::HttpRequest& request, void* connection, const Aws::StringStream& ss) const override;
+            void DoAddHeaders(void* hHttpRequest, Aws::String& headerStr) const override;
+            uint64_t DoWriteData(void* hHttpRequest, char* streamBuffer, uint64_t bytesRead) const override;
+            bool DoReceiveResponse(void* hHttpRequest) const override;
+            bool DoQueryHeaders(void* hHttpRequest, std::shared_ptr<Aws::Http::Standard::StandardHttpResponse>& response, Aws::StringStream& ss, uint64_t& read) const override;
+            bool DoSendRequest(void* hHttpRequest) const override;
+            bool DoReadData(void* hHttpRequest, char* body, uint64_t size, uint64_t& read) const override;
+            void* GetClientModule() const override;
 
-    // WinHttp specific implementations
-    void* OpenRequest(const Aws::Http::HttpRequest& request, void* connection, const Aws::StringStream& ss) const override;
-    void DoAddHeaders(void* hHttpRequest, Aws::String& headerStr) const override;
-    uint64_t DoWriteData(void* hHttpRequest, char* streamBuffer, uint64_t bytesRead) const override;
-    bool DoReceiveResponse(void* hHttpRequest) const override;
-    bool DoQueryHeaders(void* hHttpRequest, std::shared_ptr<Aws::Http::Standard::StandardHttpResponse>& response, Aws::StringStream& ss, uint64_t& read) const override;
-    bool DoSendRequest(void* hHttpRequest) const override;
-    bool DoReadData(void* hHttpRequest, char* body, uint64_t size, uint64_t& read) const override;
-    void* GetClientModule() const override;
+            WinINetSyncHttpClient &operator =(const WinINetSyncHttpClient &rhs);
+        };
 
-    WinINetSyncHttpClient &operator =(const WinINetSyncHttpClient &rhs);
-};
-
-} // namespace Http
+    } // namespace Http
 } // namespace Aws
 

@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ DescribeReservedInstancesRequest::DescribeReservedInstancesRequest() :
     m_dryRunHasBeenSet(false),
     m_reservedInstancesIdsHasBeenSet(false),
     m_filtersHasBeenSet(false),
+    m_offeringType(OfferingTypeValues::NOT_SET),
     m_offeringTypeHasBeenSet(false)
 {
 }
@@ -36,6 +37,7 @@ Aws::String DescribeReservedInstancesRequest::SerializePayload() const
   {
     ss << "DryRun=" << m_dryRun << "&";
   }
+
   if(m_reservedInstancesIdsHasBeenSet)
   {
     unsigned reservedInstancesIdsCount = 1;
@@ -46,6 +48,7 @@ Aws::String DescribeReservedInstancesRequest::SerializePayload() const
       reservedInstancesIdsCount++;
     }
   }
+
   if(m_filtersHasBeenSet)
   {
     unsigned filtersCount = 1;
@@ -55,11 +58,13 @@ Aws::String DescribeReservedInstancesRequest::SerializePayload() const
       filtersCount++;
     }
   }
+
   if(m_offeringTypeHasBeenSet)
   {
     ss << "OfferingType=" << OfferingTypeValuesMapper::GetNameForOfferingTypeValues(m_offeringType) << "&";
   }
-  ss << "Version=2015-04-15";
+
+  ss << "Version=2015-10-01";
   return ss.str();
 }
 

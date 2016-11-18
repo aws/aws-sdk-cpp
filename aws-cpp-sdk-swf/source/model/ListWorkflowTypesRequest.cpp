@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ using namespace Aws::Utils;
 ListWorkflowTypesRequest::ListWorkflowTypesRequest() : 
     m_domainHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_registrationStatus(RegistrationStatus::NOT_SET),
     m_registrationStatusHasBeenSet(false),
     m_nextPageTokenHasBeenSet(false),
     m_maximumPageSize(0),
@@ -79,7 +80,7 @@ Aws::Http::HeaderValueCollection ListWorkflowTypesRequest::GetRequestSpecificHea
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "SimpleWorkflowService.ListWorkflowTypes"));
-  return std::move(headers);
+  return headers;
 
 }
 

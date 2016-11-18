@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -33,9 +33,9 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    <p>Contains the output of DescribeSpotDatafeedSubscription.</p>
-  */
+  /**
+   * <p>Contains the output of DescribeSpotDatafeedSubscription.</p>
+   */
   class AWS_EC2_API DescribeSpotDatafeedSubscriptionResponse
   {
   public:
@@ -43,29 +43,29 @@ namespace Model
     DescribeSpotDatafeedSubscriptionResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     DescribeSpotDatafeedSubscriptionResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>The Spot Instance data feed subscription.</p>
-    */
+    /**
+     * <p>The Spot instance data feed subscription.</p>
+     */
     inline const SpotDatafeedSubscription& GetSpotDatafeedSubscription() const{ return m_spotDatafeedSubscription; }
 
-    /*
-     <p>The Spot Instance data feed subscription.</p>
-    */
+    /**
+     * <p>The Spot instance data feed subscription.</p>
+     */
     inline void SetSpotDatafeedSubscription(const SpotDatafeedSubscription& value) { m_spotDatafeedSubscription = value; }
 
-    /*
-     <p>The Spot Instance data feed subscription.</p>
-    */
+    /**
+     * <p>The Spot instance data feed subscription.</p>
+     */
     inline void SetSpotDatafeedSubscription(SpotDatafeedSubscription&& value) { m_spotDatafeedSubscription = value; }
 
-    /*
-     <p>The Spot Instance data feed subscription.</p>
-    */
+    /**
+     * <p>The Spot instance data feed subscription.</p>
+     */
     inline DescribeSpotDatafeedSubscriptionResponse& WithSpotDatafeedSubscription(const SpotDatafeedSubscription& value) { SetSpotDatafeedSubscription(value); return *this;}
 
-    /*
-     <p>The Spot Instance data feed subscription.</p>
-    */
+    /**
+     * <p>The Spot instance data feed subscription.</p>
+     */
     inline DescribeSpotDatafeedSubscriptionResponse& WithSpotDatafeedSubscription(SpotDatafeedSubscription&& value) { SetSpotDatafeedSubscription(value); return *this;}
 
     

@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -14,50 +14,66 @@
 */
 #include <aws/ec2/model/RouteState.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
+#include <aws/core/utils/EnumParseOverflowContainer.h>
 
 using namespace Aws::Utils;
 
-static const int active_HASH = HashingUtils::HashString("active");
-static const int blackhole_HASH = HashingUtils::HashString("blackhole");
 
 namespace Aws
 {
-namespace EC2
-{
-namespace Model
-{
-namespace RouteStateMapper
-{
-RouteState GetRouteStateForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-
-  if (hashCode == active_HASH)
+  namespace EC2
   {
-    return RouteState::active;
-  }
-  else if (hashCode == blackhole_HASH)
-  {
-    return RouteState::blackhole;
-  }
+    namespace Model
+    {
+      namespace RouteStateMapper
+      {
 
-  return RouteState::NOT_SET;
-}
+        static const int active_HASH = HashingUtils::HashString("active");
+        static const int blackhole_HASH = HashingUtils::HashString("blackhole");
 
-Aws::String GetNameForRouteState(RouteState value)
-{
-  switch(value)
-  {
-  case RouteState::active:
-    return "active";
-  case RouteState::blackhole:
-    return "blackhole";
-  default:
-    return "";
-  }
-}
 
-} // namespace RouteStateMapper
-} // namespace Model
-} // namespace EC2
+        RouteState GetRouteStateForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == active_HASH)
+          {
+            return RouteState::active;
+          }
+          else if (hashCode == blackhole_HASH)
+          {
+            return RouteState::blackhole;
+          }
+          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<RouteState>(hashCode);
+          }
+
+          return RouteState::NOT_SET;
+        }
+
+        Aws::String GetNameForRouteState(RouteState enumValue)
+        {
+          switch(enumValue)
+          {
+          case RouteState::active:
+            return "active";
+          case RouteState::blackhole:
+            return "blackhole";
+          default:
+            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace RouteStateMapper
+    } // namespace Model
+  } // namespace EC2
 } // namespace Aws

@@ -17,6 +17,7 @@
 
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/http/HttpClient.h>
+#include <aws/core/http/URI.h>
 #include <aws/core/http/standard/StandardHttpRequest.h>
 #include <aws/core/http/HttpClientFactory.h>
 #include <aws/core/utils/UnreferencedParam.h>
@@ -76,6 +77,14 @@ public:
     }
 
     virtual std::shared_ptr<Aws::Http::HttpRequest> CreateHttpRequest(const Aws::String& uri, Aws::Http::HttpMethod method, const Aws::IOStreamFactory& streamFactory) const override
+    {
+        auto request = Aws::MakeShared<Aws::Http::Standard::StandardHttpRequest>(MockHttpAllocationTag, uri, method);
+        request->SetResponseStreamFactory(streamFactory);
+
+        return request;
+    }
+
+    virtual std::shared_ptr<Aws::Http::HttpRequest> CreateHttpRequest(const Aws::Http::URI& uri, Aws::Http::HttpMethod method, const Aws::IOStreamFactory& streamFactory) const override
     {
         auto request = Aws::MakeShared<Aws::Http::Standard::StandardHttpRequest>(MockHttpAllocationTag, uri, method);
         request->SetResponseStreamFactory(streamFactory);

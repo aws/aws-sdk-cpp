@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,15 +19,21 @@
 
 #include <utility>
 
-using namespace Aws::IAM::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace IAM
+{
+namespace Model
+{
 
 SSHPublicKeyMetadata::SSHPublicKeyMetadata() : 
     m_userNameHasBeenSet(false),
     m_sSHPublicKeyIdHasBeenSet(false),
+    m_status(StatusType::NOT_SET),
     m_statusHasBeenSet(false),
-    m_uploadDate(0.0),
     m_uploadDateHasBeenSet(false)
 {
 }
@@ -35,8 +41,8 @@ SSHPublicKeyMetadata::SSHPublicKeyMetadata() :
 SSHPublicKeyMetadata::SSHPublicKeyMetadata(const XmlNode& xmlNode) : 
     m_userNameHasBeenSet(false),
     m_sSHPublicKeyIdHasBeenSet(false),
+    m_status(StatusType::NOT_SET),
     m_statusHasBeenSet(false),
-    m_uploadDate(0.0),
     m_uploadDateHasBeenSet(false)
 {
   *this = xmlNode;
@@ -69,7 +75,7 @@ SSHPublicKeyMetadata& SSHPublicKeyMetadata::operator =(const XmlNode& xmlNode)
     XmlNode uploadDateNode = resultNode.FirstChild("UploadDate");
     if(!uploadDateNode.IsNull())
     {
-      m_uploadDate = StringUtils::ConvertToDouble(StringUtils::Trim(uploadDateNode.GetText().c_str()).c_str());
+      m_uploadDate = DateTime(StringUtils::Trim(uploadDateNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_uploadDateHasBeenSet = true;
     }
   }
@@ -83,18 +89,22 @@ void SSHPublicKeyMetadata::OutputToStream(Aws::OStream& oStream, const char* loc
   {
       oStream << location << index << locationValue << ".UserName=" << StringUtils::URLEncode(m_userName.c_str()) << "&";
   }
+
   if(m_sSHPublicKeyIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".SSHPublicKeyId=" << StringUtils::URLEncode(m_sSHPublicKeyId.c_str()) << "&";
   }
+
   if(m_statusHasBeenSet)
   {
       oStream << location << index << locationValue << ".Status=" << StatusTypeMapper::GetNameForStatusType(m_status) << "&";
   }
+
   if(m_uploadDateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".UploadDate=" << m_uploadDate << "&";
+      oStream << location << index << locationValue << ".UploadDate=" << StringUtils::URLEncode(m_uploadDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
 }
 
 void SSHPublicKeyMetadata::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -113,6 +123,10 @@ void SSHPublicKeyMetadata::OutputToStream(Aws::OStream& oStream, const char* loc
   }
   if(m_uploadDateHasBeenSet)
   {
-      oStream << location << ".UploadDate=" << m_uploadDate << "&";
+      oStream << location << ".UploadDate=" << StringUtils::URLEncode(m_uploadDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace IAM
+} // namespace Aws

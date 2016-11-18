@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,16 +19,24 @@
 
 #include <utility>
 
-using namespace Aws::EC2::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
+
 Monitoring::Monitoring() : 
+    m_state(MonitoringState::NOT_SET),
     m_stateHasBeenSet(false)
 {
 }
 
 Monitoring::Monitoring(const XmlNode& xmlNode) : 
+    m_state(MonitoringState::NOT_SET),
     m_stateHasBeenSet(false)
 {
   *this = xmlNode;
@@ -57,6 +65,7 @@ void Monitoring::OutputToStream(Aws::OStream& oStream, const char* location, uns
   {
       oStream << location << index << locationValue << ".State=" << MonitoringStateMapper::GetNameForMonitoringState(m_state) << "&";
   }
+
 }
 
 void Monitoring::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -66,3 +75,7 @@ void Monitoring::OutputToStream(Aws::OStream& oStream, const char* location) con
       oStream << location << ".State=" << MonitoringStateMapper::GetNameForMonitoringState(m_state) << "&";
   }
 }
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

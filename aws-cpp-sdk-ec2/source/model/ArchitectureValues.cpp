@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -14,50 +14,66 @@
 */
 #include <aws/ec2/model/ArchitectureValues.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
+#include <aws/core/utils/EnumParseOverflowContainer.h>
 
 using namespace Aws::Utils;
 
-static const int i386_HASH = HashingUtils::HashString("i386");
-static const int x86_64_HASH = HashingUtils::HashString("x86_64");
 
 namespace Aws
 {
-namespace EC2
-{
-namespace Model
-{
-namespace ArchitectureValuesMapper
-{
-ArchitectureValues GetArchitectureValuesForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-
-  if (hashCode == i386_HASH)
+  namespace EC2
   {
-    return ArchitectureValues::i386;
-  }
-  else if (hashCode == x86_64_HASH)
-  {
-    return ArchitectureValues::x86_64;
-  }
+    namespace Model
+    {
+      namespace ArchitectureValuesMapper
+      {
 
-  return ArchitectureValues::NOT_SET;
-}
+        static const int i386_HASH = HashingUtils::HashString("i386");
+        static const int x86_64_HASH = HashingUtils::HashString("x86_64");
 
-Aws::String GetNameForArchitectureValues(ArchitectureValues value)
-{
-  switch(value)
-  {
-  case ArchitectureValues::i386:
-    return "i386";
-  case ArchitectureValues::x86_64:
-    return "x86_64";
-  default:
-    return "";
-  }
-}
 
-} // namespace ArchitectureValuesMapper
-} // namespace Model
-} // namespace EC2
+        ArchitectureValues GetArchitectureValuesForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == i386_HASH)
+          {
+            return ArchitectureValues::i386;
+          }
+          else if (hashCode == x86_64_HASH)
+          {
+            return ArchitectureValues::x86_64;
+          }
+          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<ArchitectureValues>(hashCode);
+          }
+
+          return ArchitectureValues::NOT_SET;
+        }
+
+        Aws::String GetNameForArchitectureValues(ArchitectureValues enumValue)
+        {
+          switch(enumValue)
+          {
+          case ArchitectureValues::i386:
+            return "i386";
+          case ArchitectureValues::x86_64:
+            return "x86_64";
+          default:
+            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace ArchitectureValuesMapper
+    } // namespace Model
+  } // namespace EC2
 } // namespace Aws

@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -17,26 +17,26 @@
 
 #include <utility>
 
-using namespace Aws::EMR::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
+namespace Aws
+{
+namespace EMR
+{
+namespace Model
+{
+
 ClusterTimeline::ClusterTimeline() : 
-    m_creationDateTime(0.0),
     m_creationDateTimeHasBeenSet(false),
-    m_readyDateTime(0.0),
     m_readyDateTimeHasBeenSet(false),
-    m_endDateTime(0.0),
     m_endDateTimeHasBeenSet(false)
 {
 }
 
 ClusterTimeline::ClusterTimeline(const JsonValue& jsonValue) : 
-    m_creationDateTime(0.0),
     m_creationDateTimeHasBeenSet(false),
-    m_readyDateTime(0.0),
     m_readyDateTimeHasBeenSet(false),
-    m_endDateTime(0.0),
     m_endDateTimeHasBeenSet(false)
 {
   *this = jsonValue;
@@ -74,21 +74,22 @@ JsonValue ClusterTimeline::Jsonize() const
 
   if(m_creationDateTimeHasBeenSet)
   {
-   payload.WithDouble("CreationDateTime", m_creationDateTime);
-
+   payload.WithDouble("CreationDateTime", m_creationDateTime.SecondsWithMSPrecision());
   }
 
   if(m_readyDateTimeHasBeenSet)
   {
-   payload.WithDouble("ReadyDateTime", m_readyDateTime);
-
+   payload.WithDouble("ReadyDateTime", m_readyDateTime.SecondsWithMSPrecision());
   }
 
   if(m_endDateTimeHasBeenSet)
   {
-   payload.WithDouble("EndDateTime", m_endDateTime);
-
+   payload.WithDouble("EndDateTime", m_endDateTime.SecondsWithMSPrecision());
   }
 
-  return std::move(payload);
+  return payload;
 }
+
+} // namespace Model
+} // namespace EMR
+} // namespace Aws

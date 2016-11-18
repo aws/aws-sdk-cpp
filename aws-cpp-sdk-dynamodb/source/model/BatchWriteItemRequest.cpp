@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -23,7 +23,9 @@ using namespace Aws::Utils;
 
 BatchWriteItemRequest::BatchWriteItemRequest() : 
     m_requestItemsHasBeenSet(false),
+    m_returnConsumedCapacity(ReturnConsumedCapacity::NOT_SET),
     m_returnConsumedCapacityHasBeenSet(false),
+    m_returnItemCollectionMetrics(ReturnItemCollectionMetrics::NOT_SET),
     m_returnItemCollectionMetricsHasBeenSet(false)
 {
 }
@@ -65,7 +67,7 @@ Aws::Http::HeaderValueCollection BatchWriteItemRequest::GetRequestSpecificHeader
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "DynamoDB_20120810.BatchWriteItem"));
-  return std::move(headers);
+  return headers;
 
 }
 

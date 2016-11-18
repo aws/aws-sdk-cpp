@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -25,14 +25,16 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 CreateFileSystemResult::CreateFileSystemResult() : 
-    m_creationTime(0.0),
-    m_numberOfMountTargets(0)
+    m_lifeCycleState(LifeCycleState::NOT_SET),
+    m_numberOfMountTargets(0),
+    m_performanceMode(PerformanceMode::NOT_SET)
 {
 }
 
 CreateFileSystemResult::CreateFileSystemResult(const AmazonWebServiceResult<JsonValue>& result) : 
-    m_creationTime(0.0),
-    m_numberOfMountTargets(0)
+    m_lifeCycleState(LifeCycleState::NOT_SET),
+    m_numberOfMountTargets(0),
+    m_performanceMode(PerformanceMode::NOT_SET)
 {
   *this = result;
 }
@@ -85,6 +87,12 @@ CreateFileSystemResult& CreateFileSystemResult::operator =(const AmazonWebServic
   if(jsonValue.ValueExists("SizeInBytes"))
   {
     m_sizeInBytes = jsonValue.GetObject("SizeInBytes");
+
+  }
+
+  if(jsonValue.ValueExists("PerformanceMode"))
+  {
+    m_performanceMode = PerformanceModeMapper::GetPerformanceModeForName(jsonValue.GetString("PerformanceMode"));
 
   }
 

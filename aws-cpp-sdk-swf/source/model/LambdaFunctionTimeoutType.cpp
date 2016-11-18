@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -14,43 +14,59 @@
 */
 #include <aws/swf/model/LambdaFunctionTimeoutType.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
+#include <aws/core/utils/EnumParseOverflowContainer.h>
 
 using namespace Aws::Utils;
 
-static const int START_TO_CLOSE_HASH = HashingUtils::HashString("START_TO_CLOSE");
 
 namespace Aws
 {
-namespace SWF
-{
-namespace Model
-{
-namespace LambdaFunctionTimeoutTypeMapper
-{
-LambdaFunctionTimeoutType GetLambdaFunctionTimeoutTypeForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-
-  if (hashCode == START_TO_CLOSE_HASH)
+  namespace SWF
   {
-    return LambdaFunctionTimeoutType::START_TO_CLOSE;
-  }
+    namespace Model
+    {
+      namespace LambdaFunctionTimeoutTypeMapper
+      {
 
-  return LambdaFunctionTimeoutType::NOT_SET;
-}
+        static const int START_TO_CLOSE_HASH = HashingUtils::HashString("START_TO_CLOSE");
 
-Aws::String GetNameForLambdaFunctionTimeoutType(LambdaFunctionTimeoutType value)
-{
-  switch(value)
-  {
-  case LambdaFunctionTimeoutType::START_TO_CLOSE:
-    return "START_TO_CLOSE";
-  default:
-    return "";
-  }
-}
 
-} // namespace LambdaFunctionTimeoutTypeMapper
-} // namespace Model
-} // namespace SWF
+        LambdaFunctionTimeoutType GetLambdaFunctionTimeoutTypeForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == START_TO_CLOSE_HASH)
+          {
+            return LambdaFunctionTimeoutType::START_TO_CLOSE;
+          }
+          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<LambdaFunctionTimeoutType>(hashCode);
+          }
+
+          return LambdaFunctionTimeoutType::NOT_SET;
+        }
+
+        Aws::String GetNameForLambdaFunctionTimeoutType(LambdaFunctionTimeoutType enumValue)
+        {
+          switch(enumValue)
+          {
+          case LambdaFunctionTimeoutType::START_TO_CLOSE:
+            return "START_TO_CLOSE";
+          default:
+            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace LambdaFunctionTimeoutTypeMapper
+    } // namespace Model
+  } // namespace SWF
 } // namespace Aws

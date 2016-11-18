@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -35,14 +35,17 @@ Aws::String CreateLoadBalancerPolicyRequest::SerializePayload() const
   {
     ss << "LoadBalancerName=" << StringUtils::URLEncode(m_loadBalancerName.c_str()) << "&";
   }
+
   if(m_policyNameHasBeenSet)
   {
     ss << "PolicyName=" << StringUtils::URLEncode(m_policyName.c_str()) << "&";
   }
+
   if(m_policyTypeNameHasBeenSet)
   {
     ss << "PolicyTypeName=" << StringUtils::URLEncode(m_policyTypeName.c_str()) << "&";
   }
+
   if(m_policyAttributesHasBeenSet)
   {
     unsigned policyAttributesCount = 1;
@@ -52,6 +55,7 @@ Aws::String CreateLoadBalancerPolicyRequest::SerializePayload() const
       policyAttributesCount++;
     }
   }
+
   ss << "Version=2012-06-01";
   return ss.str();
 }

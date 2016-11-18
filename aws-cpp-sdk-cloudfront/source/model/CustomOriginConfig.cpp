@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,16 +19,24 @@
 
 #include <utility>
 
-using namespace Aws::CloudFront::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace CloudFront
+{
+namespace Model
+{
 
 CustomOriginConfig::CustomOriginConfig() : 
     m_hTTPPort(0),
     m_hTTPPortHasBeenSet(false),
     m_hTTPSPort(0),
     m_hTTPSPortHasBeenSet(false),
-    m_originProtocolPolicyHasBeenSet(false)
+    m_originProtocolPolicy(OriginProtocolPolicy::NOT_SET),
+    m_originProtocolPolicyHasBeenSet(false),
+    m_originSslProtocolsHasBeenSet(false)
 {
 }
 
@@ -37,7 +45,9 @@ CustomOriginConfig::CustomOriginConfig(const XmlNode& xmlNode) :
     m_hTTPPortHasBeenSet(false),
     m_hTTPSPort(0),
     m_hTTPSPortHasBeenSet(false),
-    m_originProtocolPolicyHasBeenSet(false)
+    m_originProtocolPolicy(OriginProtocolPolicy::NOT_SET),
+    m_originProtocolPolicyHasBeenSet(false),
+    m_originSslProtocolsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -65,6 +75,12 @@ CustomOriginConfig& CustomOriginConfig::operator =(const XmlNode& xmlNode)
     {
       m_originProtocolPolicy = OriginProtocolPolicyMapper::GetOriginProtocolPolicyForName(StringUtils::Trim(originProtocolPolicyNode.GetText().c_str()).c_str());
       m_originProtocolPolicyHasBeenSet = true;
+    }
+    XmlNode originSslProtocolsNode = resultNode.FirstChild("OriginSslProtocols");
+    if(!originSslProtocolsNode.IsNull())
+    {
+      m_originSslProtocols = originSslProtocolsNode;
+      m_originSslProtocolsHasBeenSet = true;
     }
   }
 
@@ -96,4 +112,14 @@ void CustomOriginConfig::AddToNode(XmlNode& parentNode) const
    originProtocolPolicyNode.SetText(OriginProtocolPolicyMapper::GetNameForOriginProtocolPolicy(m_originProtocolPolicy));
   }
 
+  if(m_originSslProtocolsHasBeenSet)
+  {
+   XmlNode originSslProtocolsNode = parentNode.CreateChildElement("OriginSslProtocols");
+   m_originSslProtocols.AddToNode(originSslProtocolsNode);
+  }
+
 }
+
+} // namespace Model
+} // namespace CloudFront
+} // namespace Aws

@@ -19,12 +19,14 @@
 
 #include <aws/core/utils/memory/stl/AWSAllocator.h>
 
+#include <functional>
 #include <string>
 
 namespace Aws
 {
 
-#ifdef __ANDROID__
+#if _GLIBCXX_FULLY_DYNAMIC_STRING == 0 && defined(__ANDROID__)
+
 /*
 using std::string with shared libraries is broken on android due to the platform-level decision to set _GLIBCXX_FULLY_DYNAMIC_STRING to 0
 
@@ -101,6 +103,6 @@ using WString = std::basic_string< wchar_t, std::char_traits< wchar_t >, Aws::Al
 #endif // __ANDROID
 
 } // namespace Aws
-/*
-#endif // __ANDROID__
-*/
+
+
+

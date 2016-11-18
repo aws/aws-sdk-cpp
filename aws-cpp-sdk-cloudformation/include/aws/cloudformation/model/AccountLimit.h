@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -30,9 +30,10 @@ namespace CloudFormation
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
+
+  /**
+   * <p>The AccountLimit data type.</p>
+   */
   class AWS_CLOUDFORMATION_API AccountLimit
   {
   public:
@@ -43,40 +44,67 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    
+    /**
+     * <p>The name of the account limit. Currently, the only account limit is
+     * <code>StackLimit</code>.</p>
+     */
     inline const Aws::String& GetName() const{ return m_name; }
 
-    
+    /**
+     * <p>The name of the account limit. Currently, the only account limit is
+     * <code>StackLimit</code>.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
-    
+    /**
+     * <p>The name of the account limit. Currently, the only account limit is
+     * <code>StackLimit</code>.</p>
+     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
 
-    
+    /**
+     * <p>The name of the account limit. Currently, the only account limit is
+     * <code>StackLimit</code>.</p>
+     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
-    
+    /**
+     * <p>The name of the account limit. Currently, the only account limit is
+     * <code>StackLimit</code>.</p>
+     */
     inline AccountLimit& WithName(const Aws::String& value) { SetName(value); return *this;}
 
-    
+    /**
+     * <p>The name of the account limit. Currently, the only account limit is
+     * <code>StackLimit</code>.</p>
+     */
     inline AccountLimit& WithName(Aws::String&& value) { SetName(value); return *this;}
 
-    
+    /**
+     * <p>The name of the account limit. Currently, the only account limit is
+     * <code>StackLimit</code>.</p>
+     */
     inline AccountLimit& WithName(const char* value) { SetName(value); return *this;}
 
-    
-    inline long GetValue() const{ return m_value; }
+    /**
+     * <p>The value that is associated with the account limit name.</p>
+     */
+    inline int GetValue() const{ return m_value; }
 
-    
-    inline void SetValue(long value) { m_valueHasBeenSet = true; m_value = value; }
+    /**
+     * <p>The value that is associated with the account limit name.</p>
+     */
+    inline void SetValue(int value) { m_valueHasBeenSet = true; m_value = value; }
 
-    
-    inline AccountLimit& WithValue(long value) { SetValue(value); return *this;}
+    /**
+     * <p>The value that is associated with the account limit name.</p>
+     */
+    inline AccountLimit& WithValue(int value) { SetValue(value); return *this;}
 
   private:
     Aws::String m_name;
     bool m_nameHasBeenSet;
-    long m_value;
+    int m_value;
     bool m_valueHasBeenSet;
   };
 

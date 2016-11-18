@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,16 +19,22 @@
 
 #include <utility>
 
-using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace CloudFormation
+{
+namespace Model
+{
 
 StackResourceSummary::StackResourceSummary() : 
     m_logicalResourceIdHasBeenSet(false),
     m_physicalResourceIdHasBeenSet(false),
     m_resourceTypeHasBeenSet(false),
-    m_lastUpdatedTimestamp(0.0),
     m_lastUpdatedTimestampHasBeenSet(false),
+    m_resourceStatus(ResourceStatus::NOT_SET),
     m_resourceStatusHasBeenSet(false),
     m_resourceStatusReasonHasBeenSet(false)
 {
@@ -38,8 +44,8 @@ StackResourceSummary::StackResourceSummary(const XmlNode& xmlNode) :
     m_logicalResourceIdHasBeenSet(false),
     m_physicalResourceIdHasBeenSet(false),
     m_resourceTypeHasBeenSet(false),
-    m_lastUpdatedTimestamp(0.0),
     m_lastUpdatedTimestampHasBeenSet(false),
+    m_resourceStatus(ResourceStatus::NOT_SET),
     m_resourceStatusHasBeenSet(false),
     m_resourceStatusReasonHasBeenSet(false)
 {
@@ -73,7 +79,7 @@ StackResourceSummary& StackResourceSummary::operator =(const XmlNode& xmlNode)
     XmlNode lastUpdatedTimestampNode = resultNode.FirstChild("LastUpdatedTimestamp");
     if(!lastUpdatedTimestampNode.IsNull())
     {
-      m_lastUpdatedTimestamp = StringUtils::ConvertToDouble(StringUtils::Trim(lastUpdatedTimestampNode.GetText().c_str()).c_str());
+      m_lastUpdatedTimestamp = DateTime(StringUtils::Trim(lastUpdatedTimestampNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_lastUpdatedTimestampHasBeenSet = true;
     }
     XmlNode resourceStatusNode = resultNode.FirstChild("ResourceStatus");
@@ -99,26 +105,32 @@ void StackResourceSummary::OutputToStream(Aws::OStream& oStream, const char* loc
   {
       oStream << location << index << locationValue << ".LogicalResourceId=" << StringUtils::URLEncode(m_logicalResourceId.c_str()) << "&";
   }
+
   if(m_physicalResourceIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".PhysicalResourceId=" << StringUtils::URLEncode(m_physicalResourceId.c_str()) << "&";
   }
+
   if(m_resourceTypeHasBeenSet)
   {
       oStream << location << index << locationValue << ".ResourceType=" << StringUtils::URLEncode(m_resourceType.c_str()) << "&";
   }
+
   if(m_lastUpdatedTimestampHasBeenSet)
   {
-      oStream << location << index << locationValue << ".LastUpdatedTimestamp=" << m_lastUpdatedTimestamp << "&";
+      oStream << location << index << locationValue << ".LastUpdatedTimestamp=" << StringUtils::URLEncode(m_lastUpdatedTimestamp.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_resourceStatusHasBeenSet)
   {
       oStream << location << index << locationValue << ".ResourceStatus=" << ResourceStatusMapper::GetNameForResourceStatus(m_resourceStatus) << "&";
   }
+
   if(m_resourceStatusReasonHasBeenSet)
   {
       oStream << location << index << locationValue << ".ResourceStatusReason=" << StringUtils::URLEncode(m_resourceStatusReason.c_str()) << "&";
   }
+
 }
 
 void StackResourceSummary::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -137,7 +149,7 @@ void StackResourceSummary::OutputToStream(Aws::OStream& oStream, const char* loc
   }
   if(m_lastUpdatedTimestampHasBeenSet)
   {
-      oStream << location << ".LastUpdatedTimestamp=" << m_lastUpdatedTimestamp << "&";
+      oStream << location << ".LastUpdatedTimestamp=" << StringUtils::URLEncode(m_lastUpdatedTimestamp.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_resourceStatusHasBeenSet)
   {
@@ -148,3 +160,7 @@ void StackResourceSummary::OutputToStream(Aws::OStream& oStream, const char* loc
       oStream << location << ".ResourceStatusReason=" << StringUtils::URLEncode(m_resourceStatusReason.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace CloudFormation
+} // namespace Aws

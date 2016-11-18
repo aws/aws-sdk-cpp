@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::Redshift::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace Redshift
+{
+namespace Model
+{
 
 TaggedResource::TaggedResource() : 
     m_tagHasBeenSet(false),
@@ -75,14 +81,17 @@ void TaggedResource::OutputToStream(Aws::OStream& oStream, const char* location,
       tagLocationAndMemberSs << location << index << locationValue << ".Tag";
       m_tag.OutputToStream(oStream, tagLocationAndMemberSs.str().c_str());
   }
+
   if(m_resourceNameHasBeenSet)
   {
       oStream << location << index << locationValue << ".ResourceName=" << StringUtils::URLEncode(m_resourceName.c_str()) << "&";
   }
+
   if(m_resourceTypeHasBeenSet)
   {
       oStream << location << index << locationValue << ".ResourceType=" << StringUtils::URLEncode(m_resourceType.c_str()) << "&";
   }
+
 }
 
 void TaggedResource::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -102,3 +111,7 @@ void TaggedResource::OutputToStream(Aws::OStream& oStream, const char* location)
       oStream << location << ".ResourceType=" << StringUtils::URLEncode(m_resourceType.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace Redshift
+} // namespace Aws

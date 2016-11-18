@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -27,16 +27,18 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 CreateEnvironmentResult::CreateEnvironmentResult() : 
-    m_dateCreated(0.0),
-    m_dateUpdated(0.0),
-    m_abortableOperationInProgress(false)
+    m_status(EnvironmentStatus::NOT_SET),
+    m_abortableOperationInProgress(false),
+    m_health(EnvironmentHealth::NOT_SET),
+    m_healthStatus(EnvironmentHealthStatus::NOT_SET)
 {
 }
 
 CreateEnvironmentResult::CreateEnvironmentResult(const AmazonWebServiceResult<XmlDocument>& result) : 
-    m_dateCreated(0.0),
-    m_dateUpdated(0.0),
-    m_abortableOperationInProgress(false)
+    m_status(EnvironmentStatus::NOT_SET),
+    m_abortableOperationInProgress(false),
+    m_health(EnvironmentHealth::NOT_SET),
+    m_healthStatus(EnvironmentHealthStatus::NOT_SET)
 {
   *this = result;
 }
@@ -101,12 +103,12 @@ CreateEnvironmentResult& CreateEnvironmentResult::operator =(const AmazonWebServ
     XmlNode dateCreatedNode = resultNode.FirstChild("DateCreated");
     if(!dateCreatedNode.IsNull())
     {
-      m_dateCreated = StringUtils::ConvertToDouble(StringUtils::Trim(dateCreatedNode.GetText().c_str()).c_str());
+      m_dateCreated = DateTime(StringUtils::Trim(dateCreatedNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
     }
     XmlNode dateUpdatedNode = resultNode.FirstChild("DateUpdated");
     if(!dateUpdatedNode.IsNull())
     {
-      m_dateUpdated = StringUtils::ConvertToDouble(StringUtils::Trim(dateUpdatedNode.GetText().c_str()).c_str());
+      m_dateUpdated = DateTime(StringUtils::Trim(dateUpdatedNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
@@ -137,6 +139,17 @@ CreateEnvironmentResult& CreateEnvironmentResult::operator =(const AmazonWebServ
     if(!tierNode.IsNull())
     {
       m_tier = tierNode;
+    }
+    XmlNode environmentLinksNode = resultNode.FirstChild("EnvironmentLinks");
+    if(!environmentLinksNode.IsNull())
+    {
+      XmlNode environmentLinksMember = environmentLinksNode.FirstChild("member");
+      while(!environmentLinksMember.IsNull())
+      {
+        m_environmentLinks.push_back(environmentLinksMember);
+        environmentLinksMember = environmentLinksMember.NextNode("member");
+      }
+
     }
   }
 

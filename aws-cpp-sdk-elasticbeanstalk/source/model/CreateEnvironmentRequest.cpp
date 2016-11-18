@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -22,6 +22,7 @@ using namespace Aws::Utils;
 CreateEnvironmentRequest::CreateEnvironmentRequest() : 
     m_applicationNameHasBeenSet(false),
     m_environmentNameHasBeenSet(false),
+    m_groupNameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_cNAMEPrefixHasBeenSet(false),
     m_tierHasBeenSet(false),
@@ -42,22 +43,32 @@ Aws::String CreateEnvironmentRequest::SerializePayload() const
   {
     ss << "ApplicationName=" << StringUtils::URLEncode(m_applicationName.c_str()) << "&";
   }
+
   if(m_environmentNameHasBeenSet)
   {
     ss << "EnvironmentName=" << StringUtils::URLEncode(m_environmentName.c_str()) << "&";
   }
+
+  if(m_groupNameHasBeenSet)
+  {
+    ss << "GroupName=" << StringUtils::URLEncode(m_groupName.c_str()) << "&";
+  }
+
   if(m_descriptionHasBeenSet)
   {
     ss << "Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
+
   if(m_cNAMEPrefixHasBeenSet)
   {
     ss << "CNAMEPrefix=" << StringUtils::URLEncode(m_cNAMEPrefix.c_str()) << "&";
   }
+
   if(m_tierHasBeenSet)
   {
-    m_tier.OutputToStream(ss, "Tier.");
+    m_tier.OutputToStream(ss, "Tier");
   }
+
   if(m_tagsHasBeenSet)
   {
     unsigned tagsCount = 1;
@@ -67,18 +78,22 @@ Aws::String CreateEnvironmentRequest::SerializePayload() const
       tagsCount++;
     }
   }
+
   if(m_versionLabelHasBeenSet)
   {
     ss << "VersionLabel=" << StringUtils::URLEncode(m_versionLabel.c_str()) << "&";
   }
+
   if(m_templateNameHasBeenSet)
   {
     ss << "TemplateName=" << StringUtils::URLEncode(m_templateName.c_str()) << "&";
   }
+
   if(m_solutionStackNameHasBeenSet)
   {
     ss << "SolutionStackName=" << StringUtils::URLEncode(m_solutionStackName.c_str()) << "&";
   }
+
   if(m_optionSettingsHasBeenSet)
   {
     unsigned optionSettingsCount = 1;
@@ -88,6 +103,7 @@ Aws::String CreateEnvironmentRequest::SerializePayload() const
       optionSettingsCount++;
     }
   }
+
   if(m_optionsToRemoveHasBeenSet)
   {
     unsigned optionsToRemoveCount = 1;
@@ -97,6 +113,7 @@ Aws::String CreateEnvironmentRequest::SerializePayload() const
       optionsToRemoveCount++;
     }
   }
+
   ss << "Version=2010-12-01";
   return ss.str();
 }

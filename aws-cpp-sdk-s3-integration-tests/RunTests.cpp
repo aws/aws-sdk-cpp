@@ -14,21 +14,21 @@
   */
 
 #include <aws/external/gtest.h>
-
-#include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/utils/logging/DefaultLogSystem.h>
-#include <aws/core/utils/logging/AWSLogging.h>
-
-#include <iostream>
+#include <aws/core/Aws.h>
+#include <aws/testing/platform/PlatformTesting.h>
 
 int main(int argc, char** argv)
 {
-    Aws::Utils::Logging::InitializeAWSLogging(
-            Aws::MakeShared<Aws::Utils::Logging::DefaultLogSystem>("S3IntegrationTests", Aws::Utils::Logging::LogLevel::Trace,
-                                                                   "aws_sdk_"));
+    Aws::SDKOptions options;
+
+    Aws::Testing::InitPlatformTest(options);
+
+    Aws::InitAPI(options);
     ::testing::InitGoogleTest(&argc, argv);
     int exitCode = RUN_ALL_TESTS();
-    Aws::Utils::Logging::ShutdownAWSLogging();
+    Aws::ShutdownAPI(options);
+
+    Aws::Testing::ShutdownPlatformTest(options);
     return exitCode;
 }
 

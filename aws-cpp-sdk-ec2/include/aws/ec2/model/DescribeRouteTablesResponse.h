@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -34,9 +34,9 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
+  /**
+   * <p>Contains the output of DescribeRouteTables.</p>
+   */
   class AWS_EC2_API DescribeRouteTablesResponse
   {
   public:
@@ -44,39 +44,39 @@ namespace Model
     DescribeRouteTablesResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     DescribeRouteTablesResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>Information about one or more route tables. </p>
-    */
+    /**
+     * <p>Information about one or more route tables. </p>
+     */
     inline const Aws::Vector<RouteTable>& GetRouteTables() const{ return m_routeTables; }
 
-    /*
-     <p>Information about one or more route tables. </p>
-    */
+    /**
+     * <p>Information about one or more route tables. </p>
+     */
     inline void SetRouteTables(const Aws::Vector<RouteTable>& value) { m_routeTables = value; }
 
-    /*
-     <p>Information about one or more route tables. </p>
-    */
+    /**
+     * <p>Information about one or more route tables. </p>
+     */
     inline void SetRouteTables(Aws::Vector<RouteTable>&& value) { m_routeTables = value; }
 
-    /*
-     <p>Information about one or more route tables. </p>
-    */
+    /**
+     * <p>Information about one or more route tables. </p>
+     */
     inline DescribeRouteTablesResponse& WithRouteTables(const Aws::Vector<RouteTable>& value) { SetRouteTables(value); return *this;}
 
-    /*
-     <p>Information about one or more route tables. </p>
-    */
+    /**
+     * <p>Information about one or more route tables. </p>
+     */
     inline DescribeRouteTablesResponse& WithRouteTables(Aws::Vector<RouteTable>&& value) { SetRouteTables(value); return *this;}
 
-    /*
-     <p>Information about one or more route tables. </p>
-    */
+    /**
+     * <p>Information about one or more route tables. </p>
+     */
     inline DescribeRouteTablesResponse& AddRouteTables(const RouteTable& value) { m_routeTables.push_back(value); return *this; }
 
-    /*
-     <p>Information about one or more route tables. </p>
-    */
+    /**
+     * <p>Information about one or more route tables. </p>
+     */
     inline DescribeRouteTablesResponse& AddRouteTables(RouteTable&& value) { m_routeTables.push_back(value); return *this; }
 
     

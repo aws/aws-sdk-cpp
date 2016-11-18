@@ -63,9 +63,11 @@ namespace Model
 
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderEventTypeDeclarations.vm")
 
-  /*
-    ${serviceModel.documentation}
-  */
+#if($serviceModel.documentation)
+  /**
+   * ${serviceModel.documentation}
+   */
+#end
   class ${CppViewHelper.computeExportValue($metadata.classNamePrefix)} ${className} : public Aws::Client::AWSXMLClient
   {
     public:

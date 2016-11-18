@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -26,83 +26,82 @@ namespace SimpleDB
 namespace Model
 {
 
-  /*
-  */
+  /**
+   */
   class AWS_SIMPLEDB_API BatchDeleteAttributesRequest : public SimpleDBRequest
   {
   public:
     BatchDeleteAttributesRequest();
     Aws::String SerializePayload() const override;
 
-
-    /*
-     The name of the domain in which the attributes are being deleted.
-    */
+    /**
+     * The name of the domain in which the attributes are being deleted.
+     */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
 
-    /*
-     The name of the domain in which the attributes are being deleted.
-    */
+    /**
+     * The name of the domain in which the attributes are being deleted.
+     */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
-    /*
-     The name of the domain in which the attributes are being deleted.
-    */
+    /**
+     * The name of the domain in which the attributes are being deleted.
+     */
     inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
-    /*
-     The name of the domain in which the attributes are being deleted.
-    */
+    /**
+     * The name of the domain in which the attributes are being deleted.
+     */
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
 
-    /*
-     The name of the domain in which the attributes are being deleted.
-    */
+    /**
+     * The name of the domain in which the attributes are being deleted.
+     */
     inline BatchDeleteAttributesRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
 
-    /*
-     The name of the domain in which the attributes are being deleted.
-    */
+    /**
+     * The name of the domain in which the attributes are being deleted.
+     */
     inline BatchDeleteAttributesRequest& WithDomainName(Aws::String&& value) { SetDomainName(value); return *this;}
 
-    /*
-     The name of the domain in which the attributes are being deleted.
-    */
+    /**
+     * The name of the domain in which the attributes are being deleted.
+     */
     inline BatchDeleteAttributesRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
 
-    /*
-     A list of items on which to perform the operation.
-    */
+    /**
+     * A list of items on which to perform the operation.
+     */
     inline const Aws::Vector<DeletableItem>& GetItems() const{ return m_items; }
 
-    /*
-     A list of items on which to perform the operation.
-    */
+    /**
+     * A list of items on which to perform the operation.
+     */
     inline void SetItems(const Aws::Vector<DeletableItem>& value) { m_itemsHasBeenSet = true; m_items = value; }
 
-    /*
-     A list of items on which to perform the operation.
-    */
+    /**
+     * A list of items on which to perform the operation.
+     */
     inline void SetItems(Aws::Vector<DeletableItem>&& value) { m_itemsHasBeenSet = true; m_items = value; }
 
-    /*
-     A list of items on which to perform the operation.
-    */
+    /**
+     * A list of items on which to perform the operation.
+     */
     inline BatchDeleteAttributesRequest& WithItems(const Aws::Vector<DeletableItem>& value) { SetItems(value); return *this;}
 
-    /*
-     A list of items on which to perform the operation.
-    */
+    /**
+     * A list of items on which to perform the operation.
+     */
     inline BatchDeleteAttributesRequest& WithItems(Aws::Vector<DeletableItem>&& value) { SetItems(value); return *this;}
 
-    /*
-     A list of items on which to perform the operation.
-    */
+    /**
+     * A list of items on which to perform the operation.
+     */
     inline BatchDeleteAttributesRequest& AddItems(const DeletableItem& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
 
-    /*
-     A list of items on which to perform the operation.
-    */
+    /**
+     * A list of items on which to perform the operation.
+     */
     inline BatchDeleteAttributesRequest& AddItems(DeletableItem&& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
 
   private:

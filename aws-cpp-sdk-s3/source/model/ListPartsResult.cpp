@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -29,7 +29,9 @@ ListPartsResult::ListPartsResult() :
     m_partNumberMarker(0),
     m_nextPartNumberMarker(0),
     m_maxParts(0),
-    m_isTruncated(false)
+    m_isTruncated(false),
+    m_storageClass(StorageClass::NOT_SET),
+    m_requestCharged(RequestCharged::NOT_SET)
 {
 }
 
@@ -37,7 +39,9 @@ ListPartsResult::ListPartsResult(const AmazonWebServiceResult<XmlDocument>& resu
     m_partNumberMarker(0),
     m_nextPartNumberMarker(0),
     m_maxParts(0),
-    m_isTruncated(false)
+    m_isTruncated(false),
+    m_storageClass(StorageClass::NOT_SET),
+    m_requestCharged(RequestCharged::NOT_SET)
 {
   *this = result;
 }
@@ -84,14 +88,14 @@ ListPartsResult& ListPartsResult::operator =(const AmazonWebServiceResult<XmlDoc
     {
       m_isTruncated = StringUtils::ConvertToBool(StringUtils::Trim(isTruncatedNode.GetText().c_str()).c_str());
     }
-    XmlNode partsNode = resultNode.FirstChild("Parts");
+    XmlNode partsNode = resultNode.FirstChild("Part");
     if(!partsNode.IsNull())
     {
-      XmlNode partsMember = partsNode;
-      while(!partsMember.IsNull())
+      XmlNode partMember = partsNode;
+      while(!partMember.IsNull())
       {
-        m_parts.push_back(partsMember);
-        partsMember = partsMember.NextNode("Part");
+        m_parts.push_back(partMember);
+        partMember = partMember.NextNode("Part");
       }
 
     }
@@ -113,6 +117,18 @@ ListPartsResult& ListPartsResult::operator =(const AmazonWebServiceResult<XmlDoc
   }
 
   const auto& headers = result.GetHeaderValueCollection();
+  const auto& abortDateIter = headers.find("x-amz-abort-date");
+  if(abortDateIter != headers.end())
+  {
+    m_abortDate = DateTime(abortDateIter->second, DateFormat::RFC822);
+  }
+
+  const auto& abortRuleIdIter = headers.find("x-amz-abort-rule-id");
+  if(abortRuleIdIter != headers.end())
+  {
+    m_abortRuleId = abortRuleIdIter->second;
+  }
+
   const auto& requestChargedIter = headers.find("x-amz-request-charged");
   if(requestChargedIter != headers.end())
   {

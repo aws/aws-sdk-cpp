@@ -1757,7 +1757,7 @@ using ::std::tuple_size;
 // pops up a dialog window that cannot be suppressed programmatically.
 #if (GTEST_OS_LINUX || GTEST_OS_CYGWIN || GTEST_OS_SOLARIS || \
      (GTEST_OS_MAC && !GTEST_OS_IOS) || GTEST_OS_IOS_SIMULATOR || \
-     (GTEST_OS_WINDOWS_DESKTOP && _MSC_VER >= 1400) || \
+     (GTEST_OS_WINDOWS_DESKTOP && _MSC_VER >= 1400 && !defined(GTEST_PSEUDO_WINDOWS)) || \
      GTEST_OS_WINDOWS_MINGW || GTEST_OS_AIX || GTEST_OS_HPUX || \
      GTEST_OS_OPENBSD || GTEST_OS_QNX)
 # define GTEST_HAS_DEATH_TEST 1
@@ -1867,7 +1867,7 @@ using ::std::tuple_size;
 
 #endif  // GTEST_HAS_SEH
 
-#ifdef _MSC_VER
+#if defined(_MSC_VER) || defined(OS_WINDOWS_SHARED_LIBRARY_SEMANTICS)
 
 # if GTEST_LINKED_AS_SHARED_LIBRARY
 #  define GTEST_API_ __declspec(dllimport)
@@ -2500,7 +2500,7 @@ class MutexBase {
 // This allows initialization to work whether pthread_t is a scalar or struct.
 // The flag -Wmissing-field-initializers must not be specified for this to work.
 # define GTEST_DEFINE_STATIC_MUTEX_(mutex) \
-    ::testing::internal::MutexBase mutex = { PTHREAD_MUTEX_INITIALIZER, false }
+    ::testing::internal::MutexBase mutex = { PTHREAD_MUTEX_INITIALIZER, false, 0 }
 
 // The Mutex class can only be used for mutexes created at runtime. It
 // shares its API with MutexBase otherwise.
@@ -2852,7 +2852,11 @@ inline bool IsDir(const StatStruct& st) {
 typedef struct stat StatStruct;
 
 inline int FileNo(FILE* file) { return fileno(file); }
+
+#if !defined(OS_NO_ISATTY)
 inline int IsATTY(int fd) { return isatty(fd); }
+#endif // !OS_NO_ISATTY
+
 inline int Stat(const char* path, StatStruct* buf) { return stat(path, buf); }
 inline int StrCaseCmp(const char* s1, const char* s2) {
   return strcasecmp(s1, s2);
@@ -2879,13 +2883,13 @@ inline const char* StrNCpy(char* dest, const char* src, size_t n) {
 // StrError() aren't needed on Windows CE at this time and thus not
 // defined there.
 
-#if !GTEST_OS_WINDOWS_MOBILE
+#if !defined(GTEST_OS_WINDOWS_MOBILE) && !defined(OS_NO_CHDIR)
 inline int ChDir(const char* dir) { return chdir(dir); }
 #endif
 inline FILE* FOpen(const char* path, const char* mode) {
   return fopen(path, mode);
 }
-#if !GTEST_OS_WINDOWS_MOBILE
+#if !GTEST_OS_WINDOWS_MOBILE 
 inline FILE *FReopen(const char* path, const char* mode, FILE* stream) {
   return freopen(path, mode, stream);
 }
@@ -2902,19 +2906,23 @@ inline int Write(int fd, const void* buf, unsigned int count) {
 inline int Close(int fd) { return close(fd); }
 inline const char* StrError(int errnum) { return strerror(errnum); }
 #endif
-inline const char* GetEnv(const char* name) {
-#if GTEST_OS_WINDOWS_MOBILE
-  // We are on Windows CE, which has no environment variables.
+#if GTEST_OS_WINDOWS_MOBILE || OS_NO_ENVIRONMENT_VARIABLES
+inline const char* GetEnv(const char* ) {
+  // We are on a platform which has no environment variables.
   return NULL;
+}
 #elif defined(__BORLANDC__) || defined(__SunOS_5_8) || defined(__SunOS_5_9)
+inline const char* GetEnv(const char* name) {
   // Environment variables which we programmatically clear will be set to the
   // empty string rather than unset (NULL).  Handle that case.
   const char* const env = getenv(name);
   return (env != NULL && env[0] != '\0') ? env : NULL;
-#else
-  return getenv(name);
-#endif
 }
+#else
+inline const char* GetEnv(const char* name) {
+  return getenv(name);
+}
+#endif
 
 #ifdef _MSC_VER
 # pragma warning(pop)  // Restores the warning state.
@@ -18102,7 +18110,7 @@ class GTEST_API_ TestInfo {
   friend class TestCase;
   friend class internal::UnitTestImpl;
   friend class internal::StreamingListenerTest;
-  friend TestInfo* internal::MakeAndRegisterTestInfo(
+  friend GTEST_API_ TestInfo* internal::MakeAndRegisterTestInfo(
       const char* test_case_name,
       const char* name,
       const char* type_param,

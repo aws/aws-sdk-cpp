@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -34,9 +34,10 @@ namespace SES
 {
 namespace Model
 {
-  /*
-    <p>Represents a list of all the email addresses verified for the current user.</p>
-  */
+  /**
+   * <p>A list of email addresses that you have verified with Amazon SES under your
+   * AWS account.</p>
+   */
   class AWS_SES_API ListVerifiedEmailAddressesResult
   {
   public:
@@ -44,44 +45,44 @@ namespace Model
     ListVerifiedEmailAddressesResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     ListVerifiedEmailAddressesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>A list of email addresses that have been verified.</p>
-    */
+    /**
+     * <p>A list of email addresses that have been verified.</p>
+     */
     inline const Aws::Vector<Aws::String>& GetVerifiedEmailAddresses() const{ return m_verifiedEmailAddresses; }
 
-    /*
-     <p>A list of email addresses that have been verified.</p>
-    */
+    /**
+     * <p>A list of email addresses that have been verified.</p>
+     */
     inline void SetVerifiedEmailAddresses(const Aws::Vector<Aws::String>& value) { m_verifiedEmailAddresses = value; }
 
-    /*
-     <p>A list of email addresses that have been verified.</p>
-    */
+    /**
+     * <p>A list of email addresses that have been verified.</p>
+     */
     inline void SetVerifiedEmailAddresses(Aws::Vector<Aws::String>&& value) { m_verifiedEmailAddresses = value; }
 
-    /*
-     <p>A list of email addresses that have been verified.</p>
-    */
+    /**
+     * <p>A list of email addresses that have been verified.</p>
+     */
     inline ListVerifiedEmailAddressesResult& WithVerifiedEmailAddresses(const Aws::Vector<Aws::String>& value) { SetVerifiedEmailAddresses(value); return *this;}
 
-    /*
-     <p>A list of email addresses that have been verified.</p>
-    */
+    /**
+     * <p>A list of email addresses that have been verified.</p>
+     */
     inline ListVerifiedEmailAddressesResult& WithVerifiedEmailAddresses(Aws::Vector<Aws::String>&& value) { SetVerifiedEmailAddresses(value); return *this;}
 
-    /*
-     <p>A list of email addresses that have been verified.</p>
-    */
+    /**
+     * <p>A list of email addresses that have been verified.</p>
+     */
     inline ListVerifiedEmailAddressesResult& AddVerifiedEmailAddresses(const Aws::String& value) { m_verifiedEmailAddresses.push_back(value); return *this; }
 
-    /*
-     <p>A list of email addresses that have been verified.</p>
-    */
+    /**
+     * <p>A list of email addresses that have been verified.</p>
+     */
     inline ListVerifiedEmailAddressesResult& AddVerifiedEmailAddresses(Aws::String&& value) { m_verifiedEmailAddresses.push_back(value); return *this; }
 
-    /*
-     <p>A list of email addresses that have been verified.</p>
-    */
+    /**
+     * <p>A list of email addresses that have been verified.</p>
+     */
     inline ListVerifiedEmailAddressesResult& AddVerifiedEmailAddresses(const char* value) { m_verifiedEmailAddresses.push_back(value); return *this; }
 
     

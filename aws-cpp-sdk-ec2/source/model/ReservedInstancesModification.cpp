@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,19 +19,22 @@
 
 #include <utility>
 
-using namespace Aws::EC2::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
 
 ReservedInstancesModification::ReservedInstancesModification() : 
     m_reservedInstancesModificationIdHasBeenSet(false),
     m_reservedInstancesIdsHasBeenSet(false),
     m_modificationResultsHasBeenSet(false),
-    m_createDate(0.0),
     m_createDateHasBeenSet(false),
-    m_updateDate(0.0),
     m_updateDateHasBeenSet(false),
-    m_effectiveDate(0.0),
     m_effectiveDateHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_statusMessageHasBeenSet(false),
@@ -43,11 +46,8 @@ ReservedInstancesModification::ReservedInstancesModification(const XmlNode& xmlN
     m_reservedInstancesModificationIdHasBeenSet(false),
     m_reservedInstancesIdsHasBeenSet(false),
     m_modificationResultsHasBeenSet(false),
-    m_createDate(0.0),
     m_createDateHasBeenSet(false),
-    m_updateDate(0.0),
     m_updateDateHasBeenSet(false),
-    m_effectiveDate(0.0),
     m_effectiveDateHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_statusMessageHasBeenSet(false),
@@ -95,19 +95,19 @@ ReservedInstancesModification& ReservedInstancesModification::operator =(const X
     XmlNode createDateNode = resultNode.FirstChild("createDate");
     if(!createDateNode.IsNull())
     {
-      m_createDate = StringUtils::ConvertToDouble(StringUtils::Trim(createDateNode.GetText().c_str()).c_str());
+      m_createDate = DateTime(StringUtils::Trim(createDateNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_createDateHasBeenSet = true;
     }
     XmlNode updateDateNode = resultNode.FirstChild("updateDate");
     if(!updateDateNode.IsNull())
     {
-      m_updateDate = StringUtils::ConvertToDouble(StringUtils::Trim(updateDateNode.GetText().c_str()).c_str());
+      m_updateDate = DateTime(StringUtils::Trim(updateDateNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_updateDateHasBeenSet = true;
     }
     XmlNode effectiveDateNode = resultNode.FirstChild("effectiveDate");
     if(!effectiveDateNode.IsNull())
     {
-      m_effectiveDate = StringUtils::ConvertToDouble(StringUtils::Trim(effectiveDateNode.GetText().c_str()).c_str());
+      m_effectiveDate = DateTime(StringUtils::Trim(effectiveDateNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_effectiveDateHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("status");
@@ -139,52 +139,59 @@ void ReservedInstancesModification::OutputToStream(Aws::OStream& oStream, const 
   {
       oStream << location << index << locationValue << ".ReservedInstancesModificationId=" << StringUtils::URLEncode(m_reservedInstancesModificationId.c_str()) << "&";
   }
+
   if(m_reservedInstancesIdsHasBeenSet)
   {
-      unsigned reservedInstancesIdsIdx = 0;
+      unsigned reservedInstancesIdsIdx = 1;
       for(auto& item : m_reservedInstancesIds)
       {
-        reservedInstancesIdsIdx++;
         Aws::StringStream reservedInstancesIdsSs;
-        reservedInstancesIdsSs << location << index << locationValue << ".ReservedInstancesSet." << reservedInstancesIdsIdx;
+        reservedInstancesIdsSs << location << index << locationValue << ".ReservedInstancesSet." << reservedInstancesIdsIdx++;
         item.OutputToStream(oStream, reservedInstancesIdsSs.str().c_str());
       }
   }
+
   if(m_modificationResultsHasBeenSet)
   {
-      unsigned modificationResultsIdx = 0;
+      unsigned modificationResultsIdx = 1;
       for(auto& item : m_modificationResults)
       {
-        modificationResultsIdx++;
         Aws::StringStream modificationResultsSs;
-        modificationResultsSs << location << index << locationValue << ".ModificationResultSet." << modificationResultsIdx;
+        modificationResultsSs << location << index << locationValue << ".ModificationResultSet." << modificationResultsIdx++;
         item.OutputToStream(oStream, modificationResultsSs.str().c_str());
       }
   }
+
   if(m_createDateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".CreateDate=" << m_createDate << "&";
+      oStream << location << index << locationValue << ".CreateDate=" << StringUtils::URLEncode(m_createDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_updateDateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".UpdateDate=" << m_updateDate << "&";
+      oStream << location << index << locationValue << ".UpdateDate=" << StringUtils::URLEncode(m_updateDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_effectiveDateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".EffectiveDate=" << m_effectiveDate << "&";
+      oStream << location << index << locationValue << ".EffectiveDate=" << StringUtils::URLEncode(m_effectiveDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_statusHasBeenSet)
   {
       oStream << location << index << locationValue << ".Status=" << StringUtils::URLEncode(m_status.c_str()) << "&";
   }
+
   if(m_statusMessageHasBeenSet)
   {
       oStream << location << index << locationValue << ".StatusMessage=" << StringUtils::URLEncode(m_statusMessage.c_str()) << "&";
   }
+
   if(m_clientTokenHasBeenSet)
   {
       oStream << location << index << locationValue << ".ClientToken=" << StringUtils::URLEncode(m_clientToken.c_str()) << "&";
   }
+
 }
 
 void ReservedInstancesModification::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -195,33 +202,35 @@ void ReservedInstancesModification::OutputToStream(Aws::OStream& oStream, const 
   }
   if(m_reservedInstancesIdsHasBeenSet)
   {
+      unsigned reservedInstancesIdsIdx = 1;
       for(auto& item : m_reservedInstancesIds)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".item";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream reservedInstancesIdsSs;
+        reservedInstancesIdsSs << location <<  ".item." << reservedInstancesIdsIdx++;
+        item.OutputToStream(oStream, reservedInstancesIdsSs.str().c_str());
       }
   }
   if(m_modificationResultsHasBeenSet)
   {
+      unsigned modificationResultsIdx = 1;
       for(auto& item : m_modificationResults)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".item";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream modificationResultsSs;
+        modificationResultsSs << location <<  ".item." << modificationResultsIdx++;
+        item.OutputToStream(oStream, modificationResultsSs.str().c_str());
       }
   }
   if(m_createDateHasBeenSet)
   {
-      oStream << location << ".CreateDate=" << m_createDate << "&";
+      oStream << location << ".CreateDate=" << StringUtils::URLEncode(m_createDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_updateDateHasBeenSet)
   {
-      oStream << location << ".UpdateDate=" << m_updateDate << "&";
+      oStream << location << ".UpdateDate=" << StringUtils::URLEncode(m_updateDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_effectiveDateHasBeenSet)
   {
-      oStream << location << ".EffectiveDate=" << m_effectiveDate << "&";
+      oStream << location << ".EffectiveDate=" << StringUtils::URLEncode(m_effectiveDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_statusHasBeenSet)
   {
@@ -236,3 +245,7 @@ void ReservedInstancesModification::OutputToStream(Aws::OStream& oStream, const 
       oStream << location << ".ClientToken=" << StringUtils::URLEncode(m_clientToken.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

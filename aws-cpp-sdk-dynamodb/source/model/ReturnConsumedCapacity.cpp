@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -14,57 +14,73 @@
 */
 #include <aws/dynamodb/model/ReturnConsumedCapacity.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
+#include <aws/core/utils/EnumParseOverflowContainer.h>
 
 using namespace Aws::Utils;
 
-static const int INDEXES_HASH = HashingUtils::HashString("INDEXES");
-static const int TOTAL_HASH = HashingUtils::HashString("TOTAL");
-static const int NONE_HASH = HashingUtils::HashString("NONE");
 
 namespace Aws
 {
-namespace DynamoDB
-{
-namespace Model
-{
-namespace ReturnConsumedCapacityMapper
-{
-ReturnConsumedCapacity GetReturnConsumedCapacityForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-
-  if (hashCode == INDEXES_HASH)
+  namespace DynamoDB
   {
-    return ReturnConsumedCapacity::INDEXES;
-  }
-  else if (hashCode == TOTAL_HASH)
-  {
-    return ReturnConsumedCapacity::TOTAL;
-  }
-  else if (hashCode == NONE_HASH)
-  {
-    return ReturnConsumedCapacity::NONE;
-  }
+    namespace Model
+    {
+      namespace ReturnConsumedCapacityMapper
+      {
 
-  return ReturnConsumedCapacity::NOT_SET;
-}
+        static const int INDEXES_HASH = HashingUtils::HashString("INDEXES");
+        static const int TOTAL_HASH = HashingUtils::HashString("TOTAL");
+        static const int NONE_HASH = HashingUtils::HashString("NONE");
 
-Aws::String GetNameForReturnConsumedCapacity(ReturnConsumedCapacity value)
-{
-  switch(value)
-  {
-  case ReturnConsumedCapacity::INDEXES:
-    return "INDEXES";
-  case ReturnConsumedCapacity::TOTAL:
-    return "TOTAL";
-  case ReturnConsumedCapacity::NONE:
-    return "NONE";
-  default:
-    return "";
-  }
-}
 
-} // namespace ReturnConsumedCapacityMapper
-} // namespace Model
-} // namespace DynamoDB
+        ReturnConsumedCapacity GetReturnConsumedCapacityForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == INDEXES_HASH)
+          {
+            return ReturnConsumedCapacity::INDEXES;
+          }
+          else if (hashCode == TOTAL_HASH)
+          {
+            return ReturnConsumedCapacity::TOTAL;
+          }
+          else if (hashCode == NONE_HASH)
+          {
+            return ReturnConsumedCapacity::NONE;
+          }
+          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<ReturnConsumedCapacity>(hashCode);
+          }
+
+          return ReturnConsumedCapacity::NOT_SET;
+        }
+
+        Aws::String GetNameForReturnConsumedCapacity(ReturnConsumedCapacity enumValue)
+        {
+          switch(enumValue)
+          {
+          case ReturnConsumedCapacity::INDEXES:
+            return "INDEXES";
+          case ReturnConsumedCapacity::TOTAL:
+            return "TOTAL";
+          case ReturnConsumedCapacity::NONE:
+            return "NONE";
+          default:
+            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace ReturnConsumedCapacityMapper
+    } // namespace Model
+  } // namespace DynamoDB
 } // namespace Aws

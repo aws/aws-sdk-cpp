@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::Redshift::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace Redshift
+{
+namespace Model
+{
 
 ClusterParameterStatus::ClusterParameterStatus() : 
     m_parameterNameHasBeenSet(false),
@@ -73,14 +79,17 @@ void ClusterParameterStatus::OutputToStream(Aws::OStream& oStream, const char* l
   {
       oStream << location << index << locationValue << ".ParameterName=" << StringUtils::URLEncode(m_parameterName.c_str()) << "&";
   }
+
   if(m_parameterApplyStatusHasBeenSet)
   {
       oStream << location << index << locationValue << ".ParameterApplyStatus=" << StringUtils::URLEncode(m_parameterApplyStatus.c_str()) << "&";
   }
+
   if(m_parameterApplyErrorDescriptionHasBeenSet)
   {
       oStream << location << index << locationValue << ".ParameterApplyErrorDescription=" << StringUtils::URLEncode(m_parameterApplyErrorDescription.c_str()) << "&";
   }
+
 }
 
 void ClusterParameterStatus::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -98,3 +107,7 @@ void ClusterParameterStatus::OutputToStream(Aws::OStream& oStream, const char* l
       oStream << location << ".ParameterApplyErrorDescription=" << StringUtils::URLEncode(m_parameterApplyErrorDescription.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace Redshift
+} // namespace Aws

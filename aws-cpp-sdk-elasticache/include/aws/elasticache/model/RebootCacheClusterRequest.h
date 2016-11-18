@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -25,89 +25,111 @@ namespace ElastiCache
 namespace Model
 {
 
-  /*
-    <p>Represents the input of a <i>RebootCacheCluster</i> action.</p>
-  */
+  /**
+   * <p>Represents the input of a <code>RebootCacheCluster</code> operation.</p>
+   */
   class AWS_ELASTICACHE_API RebootCacheClusterRequest : public ElastiCacheRequest
   {
   public:
     RebootCacheClusterRequest();
     Aws::String SerializePayload() const override;
 
-
-    /*
-     <p>The cache cluster identifier. This parameter is stored as a lowercase string.</p>
-    */
+    /**
+     * <p>The cache cluster identifier. This parameter is stored as a lowercase
+     * string.</p>
+     */
     inline const Aws::String& GetCacheClusterId() const{ return m_cacheClusterId; }
 
-    /*
-     <p>The cache cluster identifier. This parameter is stored as a lowercase string.</p>
-    */
+    /**
+     * <p>The cache cluster identifier. This parameter is stored as a lowercase
+     * string.</p>
+     */
     inline void SetCacheClusterId(const Aws::String& value) { m_cacheClusterIdHasBeenSet = true; m_cacheClusterId = value; }
 
-    /*
-     <p>The cache cluster identifier. This parameter is stored as a lowercase string.</p>
-    */
+    /**
+     * <p>The cache cluster identifier. This parameter is stored as a lowercase
+     * string.</p>
+     */
     inline void SetCacheClusterId(Aws::String&& value) { m_cacheClusterIdHasBeenSet = true; m_cacheClusterId = value; }
 
-    /*
-     <p>The cache cluster identifier. This parameter is stored as a lowercase string.</p>
-    */
+    /**
+     * <p>The cache cluster identifier. This parameter is stored as a lowercase
+     * string.</p>
+     */
     inline void SetCacheClusterId(const char* value) { m_cacheClusterIdHasBeenSet = true; m_cacheClusterId.assign(value); }
 
-    /*
-     <p>The cache cluster identifier. This parameter is stored as a lowercase string.</p>
-    */
+    /**
+     * <p>The cache cluster identifier. This parameter is stored as a lowercase
+     * string.</p>
+     */
     inline RebootCacheClusterRequest& WithCacheClusterId(const Aws::String& value) { SetCacheClusterId(value); return *this;}
 
-    /*
-     <p>The cache cluster identifier. This parameter is stored as a lowercase string.</p>
-    */
+    /**
+     * <p>The cache cluster identifier. This parameter is stored as a lowercase
+     * string.</p>
+     */
     inline RebootCacheClusterRequest& WithCacheClusterId(Aws::String&& value) { SetCacheClusterId(value); return *this;}
 
-    /*
-     <p>The cache cluster identifier. This parameter is stored as a lowercase string.</p>
-    */
+    /**
+     * <p>The cache cluster identifier. This parameter is stored as a lowercase
+     * string.</p>
+     */
     inline RebootCacheClusterRequest& WithCacheClusterId(const char* value) { SetCacheClusterId(value); return *this;}
 
-    /*
-     <p>A list of cache node IDs to reboot. A node ID is a numeric identifier (0001, 0002, etc.). To reboot an entire cache cluster, specify all of the cache node IDs.</p>
-    */
+    /**
+     * <p>A list of cache node IDs to reboot. A node ID is a numeric identifier (0001,
+     * 0002, etc.). To reboot an entire cache cluster, specify all of the cache node
+     * IDs.</p>
+     */
     inline const Aws::Vector<Aws::String>& GetCacheNodeIdsToReboot() const{ return m_cacheNodeIdsToReboot; }
 
-    /*
-     <p>A list of cache node IDs to reboot. A node ID is a numeric identifier (0001, 0002, etc.). To reboot an entire cache cluster, specify all of the cache node IDs.</p>
-    */
+    /**
+     * <p>A list of cache node IDs to reboot. A node ID is a numeric identifier (0001,
+     * 0002, etc.). To reboot an entire cache cluster, specify all of the cache node
+     * IDs.</p>
+     */
     inline void SetCacheNodeIdsToReboot(const Aws::Vector<Aws::String>& value) { m_cacheNodeIdsToRebootHasBeenSet = true; m_cacheNodeIdsToReboot = value; }
 
-    /*
-     <p>A list of cache node IDs to reboot. A node ID is a numeric identifier (0001, 0002, etc.). To reboot an entire cache cluster, specify all of the cache node IDs.</p>
-    */
+    /**
+     * <p>A list of cache node IDs to reboot. A node ID is a numeric identifier (0001,
+     * 0002, etc.). To reboot an entire cache cluster, specify all of the cache node
+     * IDs.</p>
+     */
     inline void SetCacheNodeIdsToReboot(Aws::Vector<Aws::String>&& value) { m_cacheNodeIdsToRebootHasBeenSet = true; m_cacheNodeIdsToReboot = value; }
 
-    /*
-     <p>A list of cache node IDs to reboot. A node ID is a numeric identifier (0001, 0002, etc.). To reboot an entire cache cluster, specify all of the cache node IDs.</p>
-    */
+    /**
+     * <p>A list of cache node IDs to reboot. A node ID is a numeric identifier (0001,
+     * 0002, etc.). To reboot an entire cache cluster, specify all of the cache node
+     * IDs.</p>
+     */
     inline RebootCacheClusterRequest& WithCacheNodeIdsToReboot(const Aws::Vector<Aws::String>& value) { SetCacheNodeIdsToReboot(value); return *this;}
 
-    /*
-     <p>A list of cache node IDs to reboot. A node ID is a numeric identifier (0001, 0002, etc.). To reboot an entire cache cluster, specify all of the cache node IDs.</p>
-    */
+    /**
+     * <p>A list of cache node IDs to reboot. A node ID is a numeric identifier (0001,
+     * 0002, etc.). To reboot an entire cache cluster, specify all of the cache node
+     * IDs.</p>
+     */
     inline RebootCacheClusterRequest& WithCacheNodeIdsToReboot(Aws::Vector<Aws::String>&& value) { SetCacheNodeIdsToReboot(value); return *this;}
 
-    /*
-     <p>A list of cache node IDs to reboot. A node ID is a numeric identifier (0001, 0002, etc.). To reboot an entire cache cluster, specify all of the cache node IDs.</p>
-    */
+    /**
+     * <p>A list of cache node IDs to reboot. A node ID is a numeric identifier (0001,
+     * 0002, etc.). To reboot an entire cache cluster, specify all of the cache node
+     * IDs.</p>
+     */
     inline RebootCacheClusterRequest& AddCacheNodeIdsToReboot(const Aws::String& value) { m_cacheNodeIdsToRebootHasBeenSet = true; m_cacheNodeIdsToReboot.push_back(value); return *this; }
 
-    /*
-     <p>A list of cache node IDs to reboot. A node ID is a numeric identifier (0001, 0002, etc.). To reboot an entire cache cluster, specify all of the cache node IDs.</p>
-    */
+    /**
+     * <p>A list of cache node IDs to reboot. A node ID is a numeric identifier (0001,
+     * 0002, etc.). To reboot an entire cache cluster, specify all of the cache node
+     * IDs.</p>
+     */
     inline RebootCacheClusterRequest& AddCacheNodeIdsToReboot(Aws::String&& value) { m_cacheNodeIdsToRebootHasBeenSet = true; m_cacheNodeIdsToReboot.push_back(value); return *this; }
 
-    /*
-     <p>A list of cache node IDs to reboot. A node ID is a numeric identifier (0001, 0002, etc.). To reboot an entire cache cluster, specify all of the cache node IDs.</p>
-    */
+    /**
+     * <p>A list of cache node IDs to reboot. A node ID is a numeric identifier (0001,
+     * 0002, etc.). To reboot an entire cache cluster, specify all of the cache node
+     * IDs.</p>
+     */
     inline RebootCacheClusterRequest& AddCacheNodeIdsToReboot(const char* value) { m_cacheNodeIdsToRebootHasBeenSet = true; m_cacheNodeIdsToReboot.push_back(value); return *this; }
 
   private:

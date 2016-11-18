@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -14,57 +14,87 @@
 */
 #include <aws/ec2/model/VolumeType.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
+#include <aws/core/utils/EnumParseOverflowContainer.h>
 
 using namespace Aws::Utils;
 
-static const int standard_HASH = HashingUtils::HashString("standard");
-static const int io1_HASH = HashingUtils::HashString("io1");
-static const int gp2_HASH = HashingUtils::HashString("gp2");
 
 namespace Aws
 {
-namespace EC2
-{
-namespace Model
-{
-namespace VolumeTypeMapper
-{
-VolumeType GetVolumeTypeForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-
-  if (hashCode == standard_HASH)
+  namespace EC2
   {
-    return VolumeType::standard;
-  }
-  else if (hashCode == io1_HASH)
-  {
-    return VolumeType::io1;
-  }
-  else if (hashCode == gp2_HASH)
-  {
-    return VolumeType::gp2;
-  }
+    namespace Model
+    {
+      namespace VolumeTypeMapper
+      {
 
-  return VolumeType::NOT_SET;
-}
+        static const int standard_HASH = HashingUtils::HashString("standard");
+        static const int io1_HASH = HashingUtils::HashString("io1");
+        static const int gp2_HASH = HashingUtils::HashString("gp2");
+        static const int sc1_HASH = HashingUtils::HashString("sc1");
+        static const int st1_HASH = HashingUtils::HashString("st1");
 
-Aws::String GetNameForVolumeType(VolumeType value)
-{
-  switch(value)
-  {
-  case VolumeType::standard:
-    return "standard";
-  case VolumeType::io1:
-    return "io1";
-  case VolumeType::gp2:
-    return "gp2";
-  default:
-    return "";
-  }
-}
 
-} // namespace VolumeTypeMapper
-} // namespace Model
-} // namespace EC2
+        VolumeType GetVolumeTypeForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == standard_HASH)
+          {
+            return VolumeType::standard;
+          }
+          else if (hashCode == io1_HASH)
+          {
+            return VolumeType::io1;
+          }
+          else if (hashCode == gp2_HASH)
+          {
+            return VolumeType::gp2;
+          }
+          else if (hashCode == sc1_HASH)
+          {
+            return VolumeType::sc1;
+          }
+          else if (hashCode == st1_HASH)
+          {
+            return VolumeType::st1;
+          }
+          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<VolumeType>(hashCode);
+          }
+
+          return VolumeType::NOT_SET;
+        }
+
+        Aws::String GetNameForVolumeType(VolumeType enumValue)
+        {
+          switch(enumValue)
+          {
+          case VolumeType::standard:
+            return "standard";
+          case VolumeType::io1:
+            return "io1";
+          case VolumeType::gp2:
+            return "gp2";
+          case VolumeType::sc1:
+            return "sc1";
+          case VolumeType::st1:
+            return "st1";
+          default:
+            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace VolumeTypeMapper
+    } // namespace Model
+  } // namespace EC2
 } // namespace Aws

@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,11 +19,18 @@
 
 #include <utility>
 
-using namespace Aws::EC2::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
+
 DiskImageDescription::DiskImageDescription() : 
+    m_format(DiskImageFormat::NOT_SET),
     m_formatHasBeenSet(false),
     m_size(0),
     m_sizeHasBeenSet(false),
@@ -33,6 +40,7 @@ DiskImageDescription::DiskImageDescription() :
 }
 
 DiskImageDescription::DiskImageDescription(const XmlNode& xmlNode) : 
+    m_format(DiskImageFormat::NOT_SET),
     m_formatHasBeenSet(false),
     m_size(0),
     m_sizeHasBeenSet(false),
@@ -83,18 +91,22 @@ void DiskImageDescription::OutputToStream(Aws::OStream& oStream, const char* loc
   {
       oStream << location << index << locationValue << ".Format=" << DiskImageFormatMapper::GetNameForDiskImageFormat(m_format) << "&";
   }
+
   if(m_sizeHasBeenSet)
   {
       oStream << location << index << locationValue << ".Size=" << m_size << "&";
   }
+
   if(m_importManifestUrlHasBeenSet)
   {
       oStream << location << index << locationValue << ".ImportManifestUrl=" << StringUtils::URLEncode(m_importManifestUrl.c_str()) << "&";
   }
+
   if(m_checksumHasBeenSet)
   {
       oStream << location << index << locationValue << ".Checksum=" << StringUtils::URLEncode(m_checksum.c_str()) << "&";
   }
+
 }
 
 void DiskImageDescription::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -116,3 +128,7 @@ void DiskImageDescription::OutputToStream(Aws::OStream& oStream, const char* loc
       oStream << location << ".Checksum=" << StringUtils::URLEncode(m_checksum.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

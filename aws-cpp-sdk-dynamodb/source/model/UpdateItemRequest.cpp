@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -26,9 +26,13 @@ UpdateItemRequest::UpdateItemRequest() :
     m_keyHasBeenSet(false),
     m_attributeUpdatesHasBeenSet(false),
     m_expectedHasBeenSet(false),
+    m_conditionalOperator(ConditionalOperator::NOT_SET),
     m_conditionalOperatorHasBeenSet(false),
+    m_returnValues(ReturnValue::NOT_SET),
     m_returnValuesHasBeenSet(false),
+    m_returnConsumedCapacity(ReturnConsumedCapacity::NOT_SET),
     m_returnConsumedCapacityHasBeenSet(false),
+    m_returnItemCollectionMetrics(ReturnItemCollectionMetrics::NOT_SET),
     m_returnItemCollectionMetricsHasBeenSet(false),
     m_updateExpressionHasBeenSet(false),
     m_conditionExpressionHasBeenSet(false),
@@ -141,7 +145,7 @@ Aws::Http::HeaderValueCollection UpdateItemRequest::GetRequestSpecificHeaders() 
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "DynamoDB_20120810.UpdateItem"));
-  return std::move(headers);
+  return headers;
 
 }
 

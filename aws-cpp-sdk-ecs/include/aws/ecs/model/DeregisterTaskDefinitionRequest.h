@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,8 +24,8 @@ namespace ECS
 namespace Model
 {
 
-  /*
-  */
+  /**
+   */
   class AWS_ECS_API DeregisterTaskDefinitionRequest : public ECSRequest
   {
   public:
@@ -34,40 +34,53 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
-    /*
-     <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task definition that you want to deregister. You must specify a <code>revision</code>.</p>
-    */
+    /**
+     * <p>The <code>family</code> and <code>revision</code>
+     * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task
+     * definition to deregister. You must specify a <code>revision</code>.</p>
+     */
     inline const Aws::String& GetTaskDefinition() const{ return m_taskDefinition; }
 
-    /*
-     <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task definition that you want to deregister. You must specify a <code>revision</code>.</p>
-    */
+    /**
+     * <p>The <code>family</code> and <code>revision</code>
+     * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task
+     * definition to deregister. You must specify a <code>revision</code>.</p>
+     */
     inline void SetTaskDefinition(const Aws::String& value) { m_taskDefinitionHasBeenSet = true; m_taskDefinition = value; }
 
-    /*
-     <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task definition that you want to deregister. You must specify a <code>revision</code>.</p>
-    */
+    /**
+     * <p>The <code>family</code> and <code>revision</code>
+     * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task
+     * definition to deregister. You must specify a <code>revision</code>.</p>
+     */
     inline void SetTaskDefinition(Aws::String&& value) { m_taskDefinitionHasBeenSet = true; m_taskDefinition = value; }
 
-    /*
-     <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task definition that you want to deregister. You must specify a <code>revision</code>.</p>
-    */
+    /**
+     * <p>The <code>family</code> and <code>revision</code>
+     * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task
+     * definition to deregister. You must specify a <code>revision</code>.</p>
+     */
     inline void SetTaskDefinition(const char* value) { m_taskDefinitionHasBeenSet = true; m_taskDefinition.assign(value); }
 
-    /*
-     <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task definition that you want to deregister. You must specify a <code>revision</code>.</p>
-    */
+    /**
+     * <p>The <code>family</code> and <code>revision</code>
+     * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task
+     * definition to deregister. You must specify a <code>revision</code>.</p>
+     */
     inline DeregisterTaskDefinitionRequest& WithTaskDefinition(const Aws::String& value) { SetTaskDefinition(value); return *this;}
 
-    /*
-     <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task definition that you want to deregister. You must specify a <code>revision</code>.</p>
-    */
+    /**
+     * <p>The <code>family</code> and <code>revision</code>
+     * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task
+     * definition to deregister. You must specify a <code>revision</code>.</p>
+     */
     inline DeregisterTaskDefinitionRequest& WithTaskDefinition(Aws::String&& value) { SetTaskDefinition(value); return *this;}
 
-    /*
-     <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task definition that you want to deregister. You must specify a <code>revision</code>.</p>
-    */
+    /**
+     * <p>The <code>family</code> and <code>revision</code>
+     * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task
+     * definition to deregister. You must specify a <code>revision</code>.</p>
+     */
     inline DeregisterTaskDefinitionRequest& WithTaskDefinition(const char* value) { SetTaskDefinition(value); return *this;}
 
   private:

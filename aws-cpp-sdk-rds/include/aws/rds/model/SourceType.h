@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -28,7 +28,9 @@ namespace Model
     db_instance,
     db_parameter_group,
     db_security_group,
-    db_snapshot
+    db_snapshot,
+    db_cluster,
+    db_cluster_snapshot
   };
 
 namespace SourceTypeMapper

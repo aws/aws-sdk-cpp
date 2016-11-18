@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -51,6 +51,17 @@ GetTemplateResult& GetTemplateResult::operator =(const AmazonWebServiceResult<Xm
     if(!templateBodyNode.IsNull())
     {
       m_templateBody = StringUtils::Trim(templateBodyNode.GetText().c_str());
+    }
+    XmlNode stagesAvailableNode = resultNode.FirstChild("StagesAvailable");
+    if(!stagesAvailableNode.IsNull())
+    {
+      XmlNode stagesAvailableMember = stagesAvailableNode.FirstChild("member");
+      while(!stagesAvailableMember.IsNull())
+      {
+        m_stagesAvailable.push_back(TemplateStageMapper::GetTemplateStageForName(StringUtils::Trim(stagesAvailableMember.GetText().c_str())));
+        stagesAvailableMember = stagesAvailableMember.NextNode("member");
+      }
+
     }
   }
 

@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -33,6 +33,7 @@ Aws::String ResumeProcessesRequest::SerializePayload() const
   {
     ss << "AutoScalingGroupName=" << StringUtils::URLEncode(m_autoScalingGroupName.c_str()) << "&";
   }
+
   if(m_scalingProcessesHasBeenSet)
   {
     unsigned scalingProcessesCount = 1;
@@ -43,6 +44,7 @@ Aws::String ResumeProcessesRequest::SerializePayload() const
       scalingProcessesCount++;
     }
   }
+
   ss << "Version=2011-01-01";
   return ss.str();
 }

@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::ElasticBeanstalk::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace ElasticBeanstalk
+{
+namespace Model
+{
 
 ConfigurationSettingsDescription::ConfigurationSettingsDescription() : 
     m_solutionStackNameHasBeenSet(false),
@@ -29,10 +35,9 @@ ConfigurationSettingsDescription::ConfigurationSettingsDescription() :
     m_templateNameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_environmentNameHasBeenSet(false),
+    m_deploymentStatus(ConfigurationDeploymentStatus::NOT_SET),
     m_deploymentStatusHasBeenSet(false),
-    m_dateCreated(0.0),
     m_dateCreatedHasBeenSet(false),
-    m_dateUpdated(0.0),
     m_dateUpdatedHasBeenSet(false),
     m_optionSettingsHasBeenSet(false),
     m_responseMetadataHasBeenSet(false)
@@ -45,10 +50,9 @@ ConfigurationSettingsDescription::ConfigurationSettingsDescription(const XmlNode
     m_templateNameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_environmentNameHasBeenSet(false),
+    m_deploymentStatus(ConfigurationDeploymentStatus::NOT_SET),
     m_deploymentStatusHasBeenSet(false),
-    m_dateCreated(0.0),
     m_dateCreatedHasBeenSet(false),
-    m_dateUpdated(0.0),
     m_dateUpdatedHasBeenSet(false),
     m_optionSettingsHasBeenSet(false),
     m_responseMetadataHasBeenSet(false)
@@ -101,13 +105,13 @@ ConfigurationSettingsDescription& ConfigurationSettingsDescription::operator =(c
     XmlNode dateCreatedNode = resultNode.FirstChild("DateCreated");
     if(!dateCreatedNode.IsNull())
     {
-      m_dateCreated = StringUtils::ConvertToDouble(StringUtils::Trim(dateCreatedNode.GetText().c_str()).c_str());
+      m_dateCreated = DateTime(StringUtils::Trim(dateCreatedNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_dateCreatedHasBeenSet = true;
     }
     XmlNode dateUpdatedNode = resultNode.FirstChild("DateUpdated");
     if(!dateUpdatedNode.IsNull())
     {
-      m_dateUpdated = StringUtils::ConvertToDouble(StringUtils::Trim(dateUpdatedNode.GetText().c_str()).c_str());
+      m_dateUpdated = DateTime(StringUtils::Trim(dateUpdatedNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_dateUpdatedHasBeenSet = true;
     }
     XmlNode optionSettingsNode = resultNode.FirstChild("OptionSettings");
@@ -133,49 +137,60 @@ void ConfigurationSettingsDescription::OutputToStream(Aws::OStream& oStream, con
   {
       oStream << location << index << locationValue << ".SolutionStackName=" << StringUtils::URLEncode(m_solutionStackName.c_str()) << "&";
   }
+
   if(m_applicationNameHasBeenSet)
   {
       oStream << location << index << locationValue << ".ApplicationName=" << StringUtils::URLEncode(m_applicationName.c_str()) << "&";
   }
+
   if(m_templateNameHasBeenSet)
   {
       oStream << location << index << locationValue << ".TemplateName=" << StringUtils::URLEncode(m_templateName.c_str()) << "&";
   }
+
   if(m_descriptionHasBeenSet)
   {
       oStream << location << index << locationValue << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
+
   if(m_environmentNameHasBeenSet)
   {
       oStream << location << index << locationValue << ".EnvironmentName=" << StringUtils::URLEncode(m_environmentName.c_str()) << "&";
   }
+
   if(m_deploymentStatusHasBeenSet)
   {
       oStream << location << index << locationValue << ".DeploymentStatus=" << ConfigurationDeploymentStatusMapper::GetNameForConfigurationDeploymentStatus(m_deploymentStatus) << "&";
   }
+
   if(m_dateCreatedHasBeenSet)
   {
-      oStream << location << index << locationValue << ".DateCreated=" << m_dateCreated << "&";
+      oStream << location << index << locationValue << ".DateCreated=" << StringUtils::URLEncode(m_dateCreated.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_dateUpdatedHasBeenSet)
   {
-      oStream << location << index << locationValue << ".DateUpdated=" << m_dateUpdated << "&";
+      oStream << location << index << locationValue << ".DateUpdated=" << StringUtils::URLEncode(m_dateUpdated.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_optionSettingsHasBeenSet)
   {
+      unsigned optionSettingsIdx = 1;
       for(auto& item : m_optionSettings)
       {
         Aws::StringStream optionSettingsSs;
-        optionSettingsSs << location << index << locationValue << ".OptionSettings";
+        optionSettingsSs << location << index << locationValue << ".OptionSettings.member." << optionSettingsIdx++;
         item.OutputToStream(oStream, optionSettingsSs.str().c_str());
       }
   }
+
   if(m_responseMetadataHasBeenSet)
   {
       Aws::StringStream responseMetadataLocationAndMemberSs;
       responseMetadataLocationAndMemberSs << location << index << locationValue << ".ResponseMetadata";
       m_responseMetadata.OutputToStream(oStream, responseMetadataLocationAndMemberSs.str().c_str());
   }
+
 }
 
 void ConfigurationSettingsDescription::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -206,19 +221,20 @@ void ConfigurationSettingsDescription::OutputToStream(Aws::OStream& oStream, con
   }
   if(m_dateCreatedHasBeenSet)
   {
-      oStream << location << ".DateCreated=" << m_dateCreated << "&";
+      oStream << location << ".DateCreated=" << StringUtils::URLEncode(m_dateCreated.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_dateUpdatedHasBeenSet)
   {
-      oStream << location << ".DateUpdated=" << m_dateUpdated << "&";
+      oStream << location << ".DateUpdated=" << StringUtils::URLEncode(m_dateUpdated.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_optionSettingsHasBeenSet)
   {
+      unsigned optionSettingsIdx = 1;
       for(auto& item : m_optionSettings)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".OptionSettings";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream optionSettingsSs;
+        optionSettingsSs << location <<  ".OptionSettings.member." << optionSettingsIdx++;
+        item.OutputToStream(oStream, optionSettingsSs.str().c_str());
       }
   }
   if(m_responseMetadataHasBeenSet)
@@ -228,3 +244,7 @@ void ConfigurationSettingsDescription::OutputToStream(Aws::OStream& oStream, con
       m_responseMetadata.OutputToStream(oStream, responseMetadataLocationAndMember.c_str());
   }
 }
+
+} // namespace Model
+} // namespace ElasticBeanstalk
+} // namespace Aws

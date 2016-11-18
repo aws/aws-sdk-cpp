@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,9 +24,9 @@ namespace Kinesis
 namespace Model
 {
 
-  /*
-    <p>Represents the input for <code>SplitShard</code>.</p>
-  */
+  /**
+   * <p>Represents the input for <code>SplitShard</code>.</p>
+   */
   class AWS_KINESIS_API SplitShardRequest : public KinesisRequest
   {
   public:
@@ -35,110 +35,151 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
-    /*
-     <p>The name of the stream for the shard split.</p>
-    */
+    /**
+     * <p>The name of the stream for the shard split.</p>
+     */
     inline const Aws::String& GetStreamName() const{ return m_streamName; }
 
-    /*
-     <p>The name of the stream for the shard split.</p>
-    */
+    /**
+     * <p>The name of the stream for the shard split.</p>
+     */
     inline void SetStreamName(const Aws::String& value) { m_streamNameHasBeenSet = true; m_streamName = value; }
 
-    /*
-     <p>The name of the stream for the shard split.</p>
-    */
+    /**
+     * <p>The name of the stream for the shard split.</p>
+     */
     inline void SetStreamName(Aws::String&& value) { m_streamNameHasBeenSet = true; m_streamName = value; }
 
-    /*
-     <p>The name of the stream for the shard split.</p>
-    */
+    /**
+     * <p>The name of the stream for the shard split.</p>
+     */
     inline void SetStreamName(const char* value) { m_streamNameHasBeenSet = true; m_streamName.assign(value); }
 
-    /*
-     <p>The name of the stream for the shard split.</p>
-    */
+    /**
+     * <p>The name of the stream for the shard split.</p>
+     */
     inline SplitShardRequest& WithStreamName(const Aws::String& value) { SetStreamName(value); return *this;}
 
-    /*
-     <p>The name of the stream for the shard split.</p>
-    */
+    /**
+     * <p>The name of the stream for the shard split.</p>
+     */
     inline SplitShardRequest& WithStreamName(Aws::String&& value) { SetStreamName(value); return *this;}
 
-    /*
-     <p>The name of the stream for the shard split.</p>
-    */
+    /**
+     * <p>The name of the stream for the shard split.</p>
+     */
     inline SplitShardRequest& WithStreamName(const char* value) { SetStreamName(value); return *this;}
 
-    /*
-     <p>The shard ID of the shard to split.</p>
-    */
+    /**
+     * <p>The shard ID of the shard to split.</p>
+     */
     inline const Aws::String& GetShardToSplit() const{ return m_shardToSplit; }
 
-    /*
-     <p>The shard ID of the shard to split.</p>
-    */
+    /**
+     * <p>The shard ID of the shard to split.</p>
+     */
     inline void SetShardToSplit(const Aws::String& value) { m_shardToSplitHasBeenSet = true; m_shardToSplit = value; }
 
-    /*
-     <p>The shard ID of the shard to split.</p>
-    */
+    /**
+     * <p>The shard ID of the shard to split.</p>
+     */
     inline void SetShardToSplit(Aws::String&& value) { m_shardToSplitHasBeenSet = true; m_shardToSplit = value; }
 
-    /*
-     <p>The shard ID of the shard to split.</p>
-    */
+    /**
+     * <p>The shard ID of the shard to split.</p>
+     */
     inline void SetShardToSplit(const char* value) { m_shardToSplitHasBeenSet = true; m_shardToSplit.assign(value); }
 
-    /*
-     <p>The shard ID of the shard to split.</p>
-    */
+    /**
+     * <p>The shard ID of the shard to split.</p>
+     */
     inline SplitShardRequest& WithShardToSplit(const Aws::String& value) { SetShardToSplit(value); return *this;}
 
-    /*
-     <p>The shard ID of the shard to split.</p>
-    */
+    /**
+     * <p>The shard ID of the shard to split.</p>
+     */
     inline SplitShardRequest& WithShardToSplit(Aws::String&& value) { SetShardToSplit(value); return *this;}
 
-    /*
-     <p>The shard ID of the shard to split.</p>
-    */
+    /**
+     * <p>The shard ID of the shard to split.</p>
+     */
     inline SplitShardRequest& WithShardToSplit(const char* value) { SetShardToSplit(value); return *this;}
 
-    /*
-     <p>A hash key value for the starting hash key of one of the child shards created by the split. The hash key range for a given shard constitutes a set of ordered contiguous positive integers. The value for <code>NewStartingHashKey</code> must be in the range of hash keys being mapped into the shard. The <code>NewStartingHashKey</code> hash key value and all higher hash key values in hash key range are distributed to one of the child shards. All the lower hash key values in the range are distributed to the other child shard.</p>
-    */
+    /**
+     * <p>A hash key value for the starting hash key of one of the child shards created
+     * by the split. The hash key range for a given shard constitutes a set of ordered
+     * contiguous positive integers. The value for <code>NewStartingHashKey</code> must
+     * be in the range of hash keys being mapped into the shard. The
+     * <code>NewStartingHashKey</code> hash key value and all higher hash key values in
+     * hash key range are distributed to one of the child shards. All the lower hash
+     * key values in the range are distributed to the other child shard.</p>
+     */
     inline const Aws::String& GetNewStartingHashKey() const{ return m_newStartingHashKey; }
 
-    /*
-     <p>A hash key value for the starting hash key of one of the child shards created by the split. The hash key range for a given shard constitutes a set of ordered contiguous positive integers. The value for <code>NewStartingHashKey</code> must be in the range of hash keys being mapped into the shard. The <code>NewStartingHashKey</code> hash key value and all higher hash key values in hash key range are distributed to one of the child shards. All the lower hash key values in the range are distributed to the other child shard.</p>
-    */
+    /**
+     * <p>A hash key value for the starting hash key of one of the child shards created
+     * by the split. The hash key range for a given shard constitutes a set of ordered
+     * contiguous positive integers. The value for <code>NewStartingHashKey</code> must
+     * be in the range of hash keys being mapped into the shard. The
+     * <code>NewStartingHashKey</code> hash key value and all higher hash key values in
+     * hash key range are distributed to one of the child shards. All the lower hash
+     * key values in the range are distributed to the other child shard.</p>
+     */
     inline void SetNewStartingHashKey(const Aws::String& value) { m_newStartingHashKeyHasBeenSet = true; m_newStartingHashKey = value; }
 
-    /*
-     <p>A hash key value for the starting hash key of one of the child shards created by the split. The hash key range for a given shard constitutes a set of ordered contiguous positive integers. The value for <code>NewStartingHashKey</code> must be in the range of hash keys being mapped into the shard. The <code>NewStartingHashKey</code> hash key value and all higher hash key values in hash key range are distributed to one of the child shards. All the lower hash key values in the range are distributed to the other child shard.</p>
-    */
+    /**
+     * <p>A hash key value for the starting hash key of one of the child shards created
+     * by the split. The hash key range for a given shard constitutes a set of ordered
+     * contiguous positive integers. The value for <code>NewStartingHashKey</code> must
+     * be in the range of hash keys being mapped into the shard. The
+     * <code>NewStartingHashKey</code> hash key value and all higher hash key values in
+     * hash key range are distributed to one of the child shards. All the lower hash
+     * key values in the range are distributed to the other child shard.</p>
+     */
     inline void SetNewStartingHashKey(Aws::String&& value) { m_newStartingHashKeyHasBeenSet = true; m_newStartingHashKey = value; }
 
-    /*
-     <p>A hash key value for the starting hash key of one of the child shards created by the split. The hash key range for a given shard constitutes a set of ordered contiguous positive integers. The value for <code>NewStartingHashKey</code> must be in the range of hash keys being mapped into the shard. The <code>NewStartingHashKey</code> hash key value and all higher hash key values in hash key range are distributed to one of the child shards. All the lower hash key values in the range are distributed to the other child shard.</p>
-    */
+    /**
+     * <p>A hash key value for the starting hash key of one of the child shards created
+     * by the split. The hash key range for a given shard constitutes a set of ordered
+     * contiguous positive integers. The value for <code>NewStartingHashKey</code> must
+     * be in the range of hash keys being mapped into the shard. The
+     * <code>NewStartingHashKey</code> hash key value and all higher hash key values in
+     * hash key range are distributed to one of the child shards. All the lower hash
+     * key values in the range are distributed to the other child shard.</p>
+     */
     inline void SetNewStartingHashKey(const char* value) { m_newStartingHashKeyHasBeenSet = true; m_newStartingHashKey.assign(value); }
 
-    /*
-     <p>A hash key value for the starting hash key of one of the child shards created by the split. The hash key range for a given shard constitutes a set of ordered contiguous positive integers. The value for <code>NewStartingHashKey</code> must be in the range of hash keys being mapped into the shard. The <code>NewStartingHashKey</code> hash key value and all higher hash key values in hash key range are distributed to one of the child shards. All the lower hash key values in the range are distributed to the other child shard.</p>
-    */
+    /**
+     * <p>A hash key value for the starting hash key of one of the child shards created
+     * by the split. The hash key range for a given shard constitutes a set of ordered
+     * contiguous positive integers. The value for <code>NewStartingHashKey</code> must
+     * be in the range of hash keys being mapped into the shard. The
+     * <code>NewStartingHashKey</code> hash key value and all higher hash key values in
+     * hash key range are distributed to one of the child shards. All the lower hash
+     * key values in the range are distributed to the other child shard.</p>
+     */
     inline SplitShardRequest& WithNewStartingHashKey(const Aws::String& value) { SetNewStartingHashKey(value); return *this;}
 
-    /*
-     <p>A hash key value for the starting hash key of one of the child shards created by the split. The hash key range for a given shard constitutes a set of ordered contiguous positive integers. The value for <code>NewStartingHashKey</code> must be in the range of hash keys being mapped into the shard. The <code>NewStartingHashKey</code> hash key value and all higher hash key values in hash key range are distributed to one of the child shards. All the lower hash key values in the range are distributed to the other child shard.</p>
-    */
+    /**
+     * <p>A hash key value for the starting hash key of one of the child shards created
+     * by the split. The hash key range for a given shard constitutes a set of ordered
+     * contiguous positive integers. The value for <code>NewStartingHashKey</code> must
+     * be in the range of hash keys being mapped into the shard. The
+     * <code>NewStartingHashKey</code> hash key value and all higher hash key values in
+     * hash key range are distributed to one of the child shards. All the lower hash
+     * key values in the range are distributed to the other child shard.</p>
+     */
     inline SplitShardRequest& WithNewStartingHashKey(Aws::String&& value) { SetNewStartingHashKey(value); return *this;}
 
-    /*
-     <p>A hash key value for the starting hash key of one of the child shards created by the split. The hash key range for a given shard constitutes a set of ordered contiguous positive integers. The value for <code>NewStartingHashKey</code> must be in the range of hash keys being mapped into the shard. The <code>NewStartingHashKey</code> hash key value and all higher hash key values in hash key range are distributed to one of the child shards. All the lower hash key values in the range are distributed to the other child shard.</p>
-    */
+    /**
+     * <p>A hash key value for the starting hash key of one of the child shards created
+     * by the split. The hash key range for a given shard constitutes a set of ordered
+     * contiguous positive integers. The value for <code>NewStartingHashKey</code> must
+     * be in the range of hash keys being mapped into the shard. The
+     * <code>NewStartingHashKey</code> hash key value and all higher hash key values in
+     * hash key range are distributed to one of the child shards. All the lower hash
+     * key values in the range are distributed to the other child shard.</p>
+     */
     inline SplitShardRequest& WithNewStartingHashKey(const char* value) { SetNewStartingHashKey(value); return *this;}
 
   private:

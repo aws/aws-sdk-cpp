@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -14,6 +14,7 @@
 */
 #include <aws/lambda/model/InvokeRequest.h>
 #include <aws/core/AmazonWebServiceResult.h>
+#include <aws/core/http/URI.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/HashingUtils.h>
 
@@ -22,38 +23,52 @@
 using namespace Aws::Lambda::Model;
 using namespace Aws::Utils::Stream;
 using namespace Aws::Utils;
+using namespace Aws::Http;
 using namespace Aws;
 
 InvokeRequest::InvokeRequest() : 
     m_functionNameHasBeenSet(false),
+    m_invocationType(InvocationType::NOT_SET),
     m_invocationTypeHasBeenSet(false),
+    m_logType(LogType::NOT_SET),
     m_logTypeHasBeenSet(false),
-    m_clientContextHasBeenSet(false)
+    m_clientContextHasBeenSet(false),
+    m_qualifierHasBeenSet(false)
 {
 }
 
+void InvokeRequest::AddQueryStringParameters(URI& uri) const
+{
+    Aws::StringStream ss;
+    if(m_qualifierHasBeenSet)
+    {
+      ss << m_qualifier;
+      uri.AddQueryStringParameter("Qualifier", ss.str());
+      ss.str("");
+    }
 
+}
 Aws::Http::HeaderValueCollection InvokeRequest::GetRequestSpecificHeaders() const
 {
   Aws::Http::HeaderValueCollection headers;
   Aws::StringStream ss;
   if(m_invocationTypeHasBeenSet)
   {
-   headers.insert(Aws::Http::HeaderValuePair("x-amz-invocation-type", InvocationTypeMapper::GetNameForInvocationType(m_invocationType)));
+    headers.insert(Aws::Http::HeaderValuePair("x-amz-invocation-type", InvocationTypeMapper::GetNameForInvocationType(m_invocationType)));
   }
 
   if(m_logTypeHasBeenSet)
   {
-   headers.insert(Aws::Http::HeaderValuePair("x-amz-log-type", LogTypeMapper::GetNameForLogType(m_logType)));
+    headers.insert(Aws::Http::HeaderValuePair("x-amz-log-type", LogTypeMapper::GetNameForLogType(m_logType)));
   }
 
   if(m_clientContextHasBeenSet)
   {
-   ss << m_clientContext;
-   headers.insert(Aws::Http::HeaderValuePair("x-amz-client-context", ss.str()));
-   ss.str("");
+    ss << m_clientContext;
+    headers.insert(Aws::Http::HeaderValuePair("x-amz-client-context", ss.str()));
+    ss.str("");
   }
 
-  return std::move(headers);
+  return headers;
 
 }

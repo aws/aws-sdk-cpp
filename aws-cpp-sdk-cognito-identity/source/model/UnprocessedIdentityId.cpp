@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -17,18 +17,26 @@
 
 #include <utility>
 
-using namespace Aws::CognitoIdentity::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
+namespace Aws
+{
+namespace CognitoIdentity
+{
+namespace Model
+{
+
 UnprocessedIdentityId::UnprocessedIdentityId() : 
     m_identityIdHasBeenSet(false),
+    m_errorCode(ErrorCode::NOT_SET),
     m_errorCodeHasBeenSet(false)
 {
 }
 
 UnprocessedIdentityId::UnprocessedIdentityId(const JsonValue& jsonValue) : 
     m_identityIdHasBeenSet(false),
+    m_errorCode(ErrorCode::NOT_SET),
     m_errorCodeHasBeenSet(false)
 {
   *this = jsonValue;
@@ -68,5 +76,9 @@ JsonValue UnprocessedIdentityId::Jsonize() const
    payload.WithString("ErrorCode", ErrorCodeMapper::GetNameForErrorCode(m_errorCode));
   }
 
-  return std::move(payload);
+  return payload;
 }
+
+} // namespace Model
+} // namespace CognitoIdentity
+} // namespace Aws

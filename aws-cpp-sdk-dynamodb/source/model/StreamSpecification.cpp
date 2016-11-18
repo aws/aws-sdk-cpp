@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -17,13 +17,20 @@
 
 #include <utility>
 
-using namespace Aws::DynamoDB::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace DynamoDB
+{
+namespace Model
+{
 
 StreamSpecification::StreamSpecification() : 
     m_streamEnabled(false),
     m_streamEnabledHasBeenSet(false),
+    m_streamViewType(StreamViewType::NOT_SET),
     m_streamViewTypeHasBeenSet(false)
 {
 }
@@ -31,6 +38,7 @@ StreamSpecification::StreamSpecification() :
 StreamSpecification::StreamSpecification(const JsonValue& jsonValue) : 
     m_streamEnabled(false),
     m_streamEnabledHasBeenSet(false),
+    m_streamViewType(StreamViewType::NOT_SET),
     m_streamViewTypeHasBeenSet(false)
 {
   *this = jsonValue;
@@ -70,5 +78,9 @@ JsonValue StreamSpecification::Jsonize() const
    payload.WithString("StreamViewType", StreamViewTypeMapper::GetNameForStreamViewType(m_streamViewType));
   }
 
-  return std::move(payload);
+  return payload;
 }
+
+} // namespace Model
+} // namespace DynamoDB
+} // namespace Aws

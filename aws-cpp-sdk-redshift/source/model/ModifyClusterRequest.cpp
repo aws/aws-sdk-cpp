@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -37,7 +37,12 @@ ModifyClusterRequest::ModifyClusterRequest() :
     m_allowVersionUpgradeHasBeenSet(false),
     m_hsmClientCertificateIdentifierHasBeenSet(false),
     m_hsmConfigurationIdentifierHasBeenSet(false),
-    m_newClusterIdentifierHasBeenSet(false)
+    m_newClusterIdentifierHasBeenSet(false),
+    m_publiclyAccessible(false),
+    m_publiclyAccessibleHasBeenSet(false),
+    m_elasticIpHasBeenSet(false),
+    m_enhancedVpcRouting(false),
+    m_enhancedVpcRoutingHasBeenSet(false)
 {
 }
 
@@ -49,18 +54,22 @@ Aws::String ModifyClusterRequest::SerializePayload() const
   {
     ss << "ClusterIdentifier=" << StringUtils::URLEncode(m_clusterIdentifier.c_str()) << "&";
   }
+
   if(m_clusterTypeHasBeenSet)
   {
     ss << "ClusterType=" << StringUtils::URLEncode(m_clusterType.c_str()) << "&";
   }
+
   if(m_nodeTypeHasBeenSet)
   {
     ss << "NodeType=" << StringUtils::URLEncode(m_nodeType.c_str()) << "&";
   }
+
   if(m_numberOfNodesHasBeenSet)
   {
     ss << "NumberOfNodes=" << m_numberOfNodes << "&";
   }
+
   if(m_clusterSecurityGroupsHasBeenSet)
   {
     unsigned clusterSecurityGroupsCount = 1;
@@ -71,6 +80,7 @@ Aws::String ModifyClusterRequest::SerializePayload() const
       clusterSecurityGroupsCount++;
     }
   }
+
   if(m_vpcSecurityGroupIdsHasBeenSet)
   {
     unsigned vpcSecurityGroupIdsCount = 1;
@@ -81,42 +91,67 @@ Aws::String ModifyClusterRequest::SerializePayload() const
       vpcSecurityGroupIdsCount++;
     }
   }
+
   if(m_masterUserPasswordHasBeenSet)
   {
     ss << "MasterUserPassword=" << StringUtils::URLEncode(m_masterUserPassword.c_str()) << "&";
   }
+
   if(m_clusterParameterGroupNameHasBeenSet)
   {
     ss << "ClusterParameterGroupName=" << StringUtils::URLEncode(m_clusterParameterGroupName.c_str()) << "&";
   }
+
   if(m_automatedSnapshotRetentionPeriodHasBeenSet)
   {
     ss << "AutomatedSnapshotRetentionPeriod=" << m_automatedSnapshotRetentionPeriod << "&";
   }
+
   if(m_preferredMaintenanceWindowHasBeenSet)
   {
     ss << "PreferredMaintenanceWindow=" << StringUtils::URLEncode(m_preferredMaintenanceWindow.c_str()) << "&";
   }
+
   if(m_clusterVersionHasBeenSet)
   {
     ss << "ClusterVersion=" << StringUtils::URLEncode(m_clusterVersion.c_str()) << "&";
   }
+
   if(m_allowVersionUpgradeHasBeenSet)
   {
     ss << "AllowVersionUpgrade=" << m_allowVersionUpgrade << "&";
   }
+
   if(m_hsmClientCertificateIdentifierHasBeenSet)
   {
     ss << "HsmClientCertificateIdentifier=" << StringUtils::URLEncode(m_hsmClientCertificateIdentifier.c_str()) << "&";
   }
+
   if(m_hsmConfigurationIdentifierHasBeenSet)
   {
     ss << "HsmConfigurationIdentifier=" << StringUtils::URLEncode(m_hsmConfigurationIdentifier.c_str()) << "&";
   }
+
   if(m_newClusterIdentifierHasBeenSet)
   {
     ss << "NewClusterIdentifier=" << StringUtils::URLEncode(m_newClusterIdentifier.c_str()) << "&";
   }
+
+  if(m_publiclyAccessibleHasBeenSet)
+  {
+    ss << "PubliclyAccessible=" << m_publiclyAccessible << "&";
+  }
+
+  if(m_elasticIpHasBeenSet)
+  {
+    ss << "ElasticIp=" << StringUtils::URLEncode(m_elasticIp.c_str()) << "&";
+  }
+
+  if(m_enhancedVpcRoutingHasBeenSet)
+  {
+    ss << "EnhancedVpcRouting=" << m_enhancedVpcRouting << "&";
+  }
+
   ss << "Version=2012-12-01";
   return ss.str();
 }

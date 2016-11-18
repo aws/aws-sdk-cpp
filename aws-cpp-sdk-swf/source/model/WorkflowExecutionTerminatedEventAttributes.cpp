@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -17,14 +17,22 @@
 
 #include <utility>
 
-using namespace Aws::SWF::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace SWF
+{
+namespace Model
+{
 
 WorkflowExecutionTerminatedEventAttributes::WorkflowExecutionTerminatedEventAttributes() : 
     m_reasonHasBeenSet(false),
     m_detailsHasBeenSet(false),
+    m_childPolicy(ChildPolicy::NOT_SET),
     m_childPolicyHasBeenSet(false),
+    m_cause(WorkflowExecutionTerminatedCause::NOT_SET),
     m_causeHasBeenSet(false)
 {
 }
@@ -32,7 +40,9 @@ WorkflowExecutionTerminatedEventAttributes::WorkflowExecutionTerminatedEventAttr
 WorkflowExecutionTerminatedEventAttributes::WorkflowExecutionTerminatedEventAttributes(const JsonValue& jsonValue) : 
     m_reasonHasBeenSet(false),
     m_detailsHasBeenSet(false),
+    m_childPolicy(ChildPolicy::NOT_SET),
     m_childPolicyHasBeenSet(false),
+    m_cause(WorkflowExecutionTerminatedCause::NOT_SET),
     m_causeHasBeenSet(false)
 {
   *this = jsonValue;
@@ -97,5 +107,9 @@ JsonValue WorkflowExecutionTerminatedEventAttributes::Jsonize() const
    payload.WithString("cause", WorkflowExecutionTerminatedCauseMapper::GetNameForWorkflowExecutionTerminatedCause(m_cause));
   }
 
-  return std::move(payload);
+  return payload;
 }
+
+} // namespace Model
+} // namespace SWF
+} // namespace Aws

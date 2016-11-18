@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -14,50 +14,66 @@
 */
 #include <aws/ec2/model/ShutdownBehavior.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
+#include <aws/core/utils/EnumParseOverflowContainer.h>
 
 using namespace Aws::Utils;
 
-static const int stop_HASH = HashingUtils::HashString("stop");
-static const int terminate_HASH = HashingUtils::HashString("terminate");
 
 namespace Aws
 {
-namespace EC2
-{
-namespace Model
-{
-namespace ShutdownBehaviorMapper
-{
-ShutdownBehavior GetShutdownBehaviorForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-
-  if (hashCode == stop_HASH)
+  namespace EC2
   {
-    return ShutdownBehavior::stop;
-  }
-  else if (hashCode == terminate_HASH)
-  {
-    return ShutdownBehavior::terminate;
-  }
+    namespace Model
+    {
+      namespace ShutdownBehaviorMapper
+      {
 
-  return ShutdownBehavior::NOT_SET;
-}
+        static const int stop_HASH = HashingUtils::HashString("stop");
+        static const int terminate_HASH = HashingUtils::HashString("terminate");
 
-Aws::String GetNameForShutdownBehavior(ShutdownBehavior value)
-{
-  switch(value)
-  {
-  case ShutdownBehavior::stop:
-    return "stop";
-  case ShutdownBehavior::terminate:
-    return "terminate";
-  default:
-    return "";
-  }
-}
 
-} // namespace ShutdownBehaviorMapper
-} // namespace Model
-} // namespace EC2
+        ShutdownBehavior GetShutdownBehaviorForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == stop_HASH)
+          {
+            return ShutdownBehavior::stop;
+          }
+          else if (hashCode == terminate_HASH)
+          {
+            return ShutdownBehavior::terminate;
+          }
+          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<ShutdownBehavior>(hashCode);
+          }
+
+          return ShutdownBehavior::NOT_SET;
+        }
+
+        Aws::String GetNameForShutdownBehavior(ShutdownBehavior enumValue)
+        {
+          switch(enumValue)
+          {
+          case ShutdownBehavior::stop:
+            return "stop";
+          case ShutdownBehavior::terminate:
+            return "terminate";
+          default:
+            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace ShutdownBehaviorMapper
+    } // namespace Model
+  } // namespace EC2
 } // namespace Aws

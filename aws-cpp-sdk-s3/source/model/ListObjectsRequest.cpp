@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -14,6 +14,7 @@
 */
 #include <aws/s3/model/ListObjectsRequest.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/http/URI.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
@@ -27,11 +28,14 @@ using namespace Aws::Http;
 ListObjectsRequest::ListObjectsRequest() : 
     m_bucketHasBeenSet(false),
     m_delimiterHasBeenSet(false),
+    m_encodingType(EncodingType::NOT_SET),
     m_encodingTypeHasBeenSet(false),
     m_markerHasBeenSet(false),
     m_maxKeys(0),
     m_maxKeysHasBeenSet(false),
-    m_prefixHasBeenSet(false)
+    m_prefixHasBeenSet(false),
+    m_requestPayer(RequestPayer::NOT_SET),
+    m_requestPayerHasBeenSet(false)
 {
 }
 
@@ -45,38 +49,49 @@ void ListObjectsRequest::AddQueryStringParameters(URI& uri) const
     Aws::StringStream ss;
     if(m_delimiterHasBeenSet)
     {
-     ss << m_delimiter;
-     uri.AddQueryStringParameter("delimiter", ss.str());
-     ss.str("");
+      ss << m_delimiter;
+      uri.AddQueryStringParameter("delimiter", ss.str());
+      ss.str("");
     }
 
     if(m_encodingTypeHasBeenSet)
     {
-     ss << EncodingTypeMapper::GetNameForEncodingType(m_encodingType);
-     uri.AddQueryStringParameter("encoding-type", ss.str());
-     ss.str("");
+      ss << EncodingTypeMapper::GetNameForEncodingType(m_encodingType);
+      uri.AddQueryStringParameter("encoding-type", ss.str());
+      ss.str("");
     }
 
     if(m_markerHasBeenSet)
     {
-     ss << m_marker;
-     uri.AddQueryStringParameter("marker", ss.str());
-     ss.str("");
+      ss << m_marker;
+      uri.AddQueryStringParameter("marker", ss.str());
+      ss.str("");
     }
 
     if(m_maxKeysHasBeenSet)
     {
-     ss << m_maxKeys;
-     uri.AddQueryStringParameter("max-keys", ss.str());
-     ss.str("");
+      ss << m_maxKeys;
+      uri.AddQueryStringParameter("max-keys", ss.str());
+      ss.str("");
     }
 
     if(m_prefixHasBeenSet)
     {
-     ss << m_prefix;
-     uri.AddQueryStringParameter("prefix", ss.str());
-     ss.str("");
+      ss << m_prefix;
+      uri.AddQueryStringParameter("prefix", ss.str());
+      ss.str("");
     }
 
 }
 
+Aws::Http::HeaderValueCollection ListObjectsRequest::GetRequestSpecificHeaders() const
+{
+  Aws::Http::HeaderValueCollection headers;
+  Aws::StringStream ss;
+  if(m_requestPayerHasBeenSet)
+  {
+    headers.insert(Aws::Http::HeaderValuePair("x-amz-request-payer", RequestPayerMapper::GetNameForRequestPayer(m_requestPayer)));
+  }
+
+  return headers;
+}

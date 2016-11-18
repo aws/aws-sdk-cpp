@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -17,15 +17,22 @@
 
 #include <utility>
 
-using namespace Aws::SWF::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace SWF
+{
+namespace Model
+{
 
 WorkflowTypeConfiguration::WorkflowTypeConfiguration() : 
     m_defaultTaskStartToCloseTimeoutHasBeenSet(false),
     m_defaultExecutionStartToCloseTimeoutHasBeenSet(false),
     m_defaultTaskListHasBeenSet(false),
     m_defaultTaskPriorityHasBeenSet(false),
+    m_defaultChildPolicy(ChildPolicy::NOT_SET),
     m_defaultChildPolicyHasBeenSet(false),
     m_defaultLambdaRoleHasBeenSet(false)
 {
@@ -36,6 +43,7 @@ WorkflowTypeConfiguration::WorkflowTypeConfiguration(const JsonValue& jsonValue)
     m_defaultExecutionStartToCloseTimeoutHasBeenSet(false),
     m_defaultTaskListHasBeenSet(false),
     m_defaultTaskPriorityHasBeenSet(false),
+    m_defaultChildPolicy(ChildPolicy::NOT_SET),
     m_defaultChildPolicyHasBeenSet(false),
     m_defaultLambdaRoleHasBeenSet(false)
 {
@@ -128,5 +136,9 @@ JsonValue WorkflowTypeConfiguration::Jsonize() const
 
   }
 
-  return std::move(payload);
+  return payload;
 }
+
+} // namespace Model
+} // namespace SWF
+} // namespace Aws

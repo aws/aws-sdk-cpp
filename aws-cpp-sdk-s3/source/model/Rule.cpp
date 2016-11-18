@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,18 +19,26 @@
 
 #include <utility>
 
-using namespace Aws::S3::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace S3
+{
+namespace Model
+{
 
 Rule::Rule() : 
     m_expirationHasBeenSet(false),
     m_iDHasBeenSet(false),
     m_prefixHasBeenSet(false),
+    m_status(ExpirationStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_transitionHasBeenSet(false),
     m_noncurrentVersionTransitionHasBeenSet(false),
-    m_noncurrentVersionExpirationHasBeenSet(false)
+    m_noncurrentVersionExpirationHasBeenSet(false),
+    m_abortIncompleteMultipartUploadHasBeenSet(false)
 {
 }
 
@@ -38,10 +46,12 @@ Rule::Rule(const XmlNode& xmlNode) :
     m_expirationHasBeenSet(false),
     m_iDHasBeenSet(false),
     m_prefixHasBeenSet(false),
+    m_status(ExpirationStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_transitionHasBeenSet(false),
     m_noncurrentVersionTransitionHasBeenSet(false),
-    m_noncurrentVersionExpirationHasBeenSet(false)
+    m_noncurrentVersionExpirationHasBeenSet(false),
+    m_abortIncompleteMultipartUploadHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -94,6 +104,12 @@ Rule& Rule::operator =(const XmlNode& xmlNode)
       m_noncurrentVersionExpiration = noncurrentVersionExpirationNode;
       m_noncurrentVersionExpirationHasBeenSet = true;
     }
+    XmlNode abortIncompleteMultipartUploadNode = resultNode.FirstChild("AbortIncompleteMultipartUpload");
+    if(!abortIncompleteMultipartUploadNode.IsNull())
+    {
+      m_abortIncompleteMultipartUpload = abortIncompleteMultipartUploadNode;
+      m_abortIncompleteMultipartUploadHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -144,4 +160,14 @@ void Rule::AddToNode(XmlNode& parentNode) const
    m_noncurrentVersionExpiration.AddToNode(noncurrentVersionExpirationNode);
   }
 
+  if(m_abortIncompleteMultipartUploadHasBeenSet)
+  {
+   XmlNode abortIncompleteMultipartUploadNode = parentNode.CreateChildElement("AbortIncompleteMultipartUpload");
+   m_abortIncompleteMultipartUpload.AddToNode(abortIncompleteMultipartUploadNode);
+  }
+
 }
+
+} // namespace Model
+} // namespace S3
+} // namespace Aws

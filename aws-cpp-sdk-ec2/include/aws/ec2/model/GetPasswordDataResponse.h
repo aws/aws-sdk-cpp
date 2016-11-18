@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/ec2/model/ResponseMetadata.h>
 
 namespace Aws
@@ -33,9 +34,9 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
+  /**
+   * <p>Contains the output of GetPasswordData.</p>
+   */
   class AWS_EC2_API GetPasswordDataResponse
   {
   public:
@@ -43,89 +44,99 @@ namespace Model
     GetPasswordDataResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     GetPasswordDataResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>The ID of the Windows instance.</p>
-    */
+    /**
+     * <p>The ID of the Windows instance.</p>
+     */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
 
-    /*
-     <p>The ID of the Windows instance.</p>
-    */
+    /**
+     * <p>The ID of the Windows instance.</p>
+     */
     inline void SetInstanceId(const Aws::String& value) { m_instanceId = value; }
 
-    /*
-     <p>The ID of the Windows instance.</p>
-    */
+    /**
+     * <p>The ID of the Windows instance.</p>
+     */
     inline void SetInstanceId(Aws::String&& value) { m_instanceId = value; }
 
-    /*
-     <p>The ID of the Windows instance.</p>
-    */
+    /**
+     * <p>The ID of the Windows instance.</p>
+     */
     inline void SetInstanceId(const char* value) { m_instanceId.assign(value); }
 
-    /*
-     <p>The ID of the Windows instance.</p>
-    */
+    /**
+     * <p>The ID of the Windows instance.</p>
+     */
     inline GetPasswordDataResponse& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
 
-    /*
-     <p>The ID of the Windows instance.</p>
-    */
+    /**
+     * <p>The ID of the Windows instance.</p>
+     */
     inline GetPasswordDataResponse& WithInstanceId(Aws::String&& value) { SetInstanceId(value); return *this;}
 
-    /*
-     <p>The ID of the Windows instance.</p>
-    */
+    /**
+     * <p>The ID of the Windows instance.</p>
+     */
     inline GetPasswordDataResponse& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
-    /*
-     <p>The time the data was last updated.</p>
-    */
-    inline double GetTimestamp() const{ return m_timestamp; }
+    /**
+     * <p>The time the data was last updated.</p>
+     */
+    inline const Aws::Utils::DateTime& GetTimestamp() const{ return m_timestamp; }
 
-    /*
-     <p>The time the data was last updated.</p>
-    */
-    inline void SetTimestamp(double value) { m_timestamp = value; }
+    /**
+     * <p>The time the data was last updated.</p>
+     */
+    inline void SetTimestamp(const Aws::Utils::DateTime& value) { m_timestamp = value; }
 
-    /*
-     <p>The time the data was last updated.</p>
-    */
-    inline GetPasswordDataResponse& WithTimestamp(double value) { SetTimestamp(value); return *this;}
+    /**
+     * <p>The time the data was last updated.</p>
+     */
+    inline void SetTimestamp(Aws::Utils::DateTime&& value) { m_timestamp = value; }
 
-    /*
-     <p>The password of the instance.</p>
-    */
+    /**
+     * <p>The time the data was last updated.</p>
+     */
+    inline GetPasswordDataResponse& WithTimestamp(const Aws::Utils::DateTime& value) { SetTimestamp(value); return *this;}
+
+    /**
+     * <p>The time the data was last updated.</p>
+     */
+    inline GetPasswordDataResponse& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(value); return *this;}
+
+    /**
+     * <p>The password of the instance.</p>
+     */
     inline const Aws::String& GetPasswordData() const{ return m_passwordData; }
 
-    /*
-     <p>The password of the instance.</p>
-    */
+    /**
+     * <p>The password of the instance.</p>
+     */
     inline void SetPasswordData(const Aws::String& value) { m_passwordData = value; }
 
-    /*
-     <p>The password of the instance.</p>
-    */
+    /**
+     * <p>The password of the instance.</p>
+     */
     inline void SetPasswordData(Aws::String&& value) { m_passwordData = value; }
 
-    /*
-     <p>The password of the instance.</p>
-    */
+    /**
+     * <p>The password of the instance.</p>
+     */
     inline void SetPasswordData(const char* value) { m_passwordData.assign(value); }
 
-    /*
-     <p>The password of the instance.</p>
-    */
+    /**
+     * <p>The password of the instance.</p>
+     */
     inline GetPasswordDataResponse& WithPasswordData(const Aws::String& value) { SetPasswordData(value); return *this;}
 
-    /*
-     <p>The password of the instance.</p>
-    */
+    /**
+     * <p>The password of the instance.</p>
+     */
     inline GetPasswordDataResponse& WithPasswordData(Aws::String&& value) { SetPasswordData(value); return *this;}
 
-    /*
-     <p>The password of the instance.</p>
-    */
+    /**
+     * <p>The password of the instance.</p>
+     */
     inline GetPasswordDataResponse& WithPasswordData(const char* value) { SetPasswordData(value); return *this;}
 
     
@@ -145,7 +156,7 @@ namespace Model
 
   private:
     Aws::String m_instanceId;
-    double m_timestamp;
+    Aws::Utils::DateTime m_timestamp;
     Aws::String m_passwordData;
     ResponseMetadata m_responseMetadata;
   };

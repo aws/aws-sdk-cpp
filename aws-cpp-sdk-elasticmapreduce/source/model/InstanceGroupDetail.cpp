@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -17,14 +17,22 @@
 
 #include <utility>
 
-using namespace Aws::EMR::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EMR
+{
+namespace Model
+{
 
 InstanceGroupDetail::InstanceGroupDetail() : 
     m_instanceGroupIdHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_market(MarketType::NOT_SET),
     m_marketHasBeenSet(false),
+    m_instanceRole(InstanceRoleType::NOT_SET),
     m_instanceRoleHasBeenSet(false),
     m_bidPriceHasBeenSet(false),
     m_instanceTypeHasBeenSet(false),
@@ -32,15 +40,12 @@ InstanceGroupDetail::InstanceGroupDetail() :
     m_instanceRequestCountHasBeenSet(false),
     m_instanceRunningCount(0),
     m_instanceRunningCountHasBeenSet(false),
+    m_state(InstanceGroupState::NOT_SET),
     m_stateHasBeenSet(false),
     m_lastStateChangeReasonHasBeenSet(false),
-    m_creationDateTime(0.0),
     m_creationDateTimeHasBeenSet(false),
-    m_startDateTime(0.0),
     m_startDateTimeHasBeenSet(false),
-    m_readyDateTime(0.0),
     m_readyDateTimeHasBeenSet(false),
-    m_endDateTime(0.0),
     m_endDateTimeHasBeenSet(false)
 {
 }
@@ -48,7 +53,9 @@ InstanceGroupDetail::InstanceGroupDetail() :
 InstanceGroupDetail::InstanceGroupDetail(const JsonValue& jsonValue) : 
     m_instanceGroupIdHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_market(MarketType::NOT_SET),
     m_marketHasBeenSet(false),
+    m_instanceRole(InstanceRoleType::NOT_SET),
     m_instanceRoleHasBeenSet(false),
     m_bidPriceHasBeenSet(false),
     m_instanceTypeHasBeenSet(false),
@@ -56,15 +63,12 @@ InstanceGroupDetail::InstanceGroupDetail(const JsonValue& jsonValue) :
     m_instanceRequestCountHasBeenSet(false),
     m_instanceRunningCount(0),
     m_instanceRunningCountHasBeenSet(false),
+    m_state(InstanceGroupState::NOT_SET),
     m_stateHasBeenSet(false),
     m_lastStateChangeReasonHasBeenSet(false),
-    m_creationDateTime(0.0),
     m_creationDateTimeHasBeenSet(false),
-    m_startDateTime(0.0),
     m_startDateTimeHasBeenSet(false),
-    m_readyDateTime(0.0),
     m_readyDateTimeHasBeenSet(false),
-    m_endDateTime(0.0),
     m_endDateTimeHasBeenSet(false)
 {
   *this = jsonValue;
@@ -236,27 +240,27 @@ JsonValue InstanceGroupDetail::Jsonize() const
 
   if(m_creationDateTimeHasBeenSet)
   {
-   payload.WithDouble("CreationDateTime", m_creationDateTime);
-
+   payload.WithDouble("CreationDateTime", m_creationDateTime.SecondsWithMSPrecision());
   }
 
   if(m_startDateTimeHasBeenSet)
   {
-   payload.WithDouble("StartDateTime", m_startDateTime);
-
+   payload.WithDouble("StartDateTime", m_startDateTime.SecondsWithMSPrecision());
   }
 
   if(m_readyDateTimeHasBeenSet)
   {
-   payload.WithDouble("ReadyDateTime", m_readyDateTime);
-
+   payload.WithDouble("ReadyDateTime", m_readyDateTime.SecondsWithMSPrecision());
   }
 
   if(m_endDateTimeHasBeenSet)
   {
-   payload.WithDouble("EndDateTime", m_endDateTime);
-
+   payload.WithDouble("EndDateTime", m_endDateTime.SecondsWithMSPrecision());
   }
 
-  return std::move(payload);
+  return payload;
 }
+
+} // namespace Model
+} // namespace EMR
+} // namespace Aws

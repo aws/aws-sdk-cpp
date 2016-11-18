@@ -110,7 +110,7 @@ public class CppViewHelperTest {
         shape.setType("long");
         assertEquals("long long", CppViewHelper.computeCppType(shape));
         shape.setType("integer");
-        assertEquals("long", CppViewHelper.computeCppType(shape));
+        assertEquals("int", CppViewHelper.computeCppType(shape));
         shape.setType("double");
         assertEquals("double", CppViewHelper.computeCppType(shape));
         shape.setType("float");
@@ -118,7 +118,7 @@ public class CppViewHelperTest {
         shape.setType("boolean");
         assertEquals("bool", CppViewHelper.computeCppType(shape));
         shape.setType("timestamp");
-        assertEquals("double", CppViewHelper.computeCppType(shape));
+        assertEquals("Aws::Utils::DateTime", CppViewHelper.computeCppType(shape));
         shape.setType("blob");
         assertEquals("Aws::Utils::ByteBuffer", CppViewHelper.computeCppType(shape));
 

@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -33,9 +33,10 @@ namespace RDS
 {
 namespace Model
 {
-  /*
-    <p> Contains the result of a successful invocation of the <a>ModifyDBParameterGroup</a> or <a>ResetDBParameterGroup</a> action. </p>
-  */
+  /**
+   * <p> Contains the result of a successful invocation of the
+   * <a>ModifyDBParameterGroup</a> or <a>ResetDBParameterGroup</a> action. </p>
+   */
   class AWS_RDS_API ModifyDBParameterGroupResult
   {
   public:
@@ -43,39 +44,39 @@ namespace Model
     ModifyDBParameterGroupResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     ModifyDBParameterGroupResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p> The name of the DB Parameter Group. </p>
-    */
+    /**
+     * <p>Provides the name of the DB parameter group.</p>
+     */
     inline const Aws::String& GetDBParameterGroupName() const{ return m_dBParameterGroupName; }
 
-    /*
-     <p> The name of the DB Parameter Group. </p>
-    */
+    /**
+     * <p>Provides the name of the DB parameter group.</p>
+     */
     inline void SetDBParameterGroupName(const Aws::String& value) { m_dBParameterGroupName = value; }
 
-    /*
-     <p> The name of the DB Parameter Group. </p>
-    */
+    /**
+     * <p>Provides the name of the DB parameter group.</p>
+     */
     inline void SetDBParameterGroupName(Aws::String&& value) { m_dBParameterGroupName = value; }
 
-    /*
-     <p> The name of the DB Parameter Group. </p>
-    */
+    /**
+     * <p>Provides the name of the DB parameter group.</p>
+     */
     inline void SetDBParameterGroupName(const char* value) { m_dBParameterGroupName.assign(value); }
 
-    /*
-     <p> The name of the DB Parameter Group. </p>
-    */
+    /**
+     * <p>Provides the name of the DB parameter group.</p>
+     */
     inline ModifyDBParameterGroupResult& WithDBParameterGroupName(const Aws::String& value) { SetDBParameterGroupName(value); return *this;}
 
-    /*
-     <p> The name of the DB Parameter Group. </p>
-    */
+    /**
+     * <p>Provides the name of the DB parameter group.</p>
+     */
     inline ModifyDBParameterGroupResult& WithDBParameterGroupName(Aws::String&& value) { SetDBParameterGroupName(value); return *this;}
 
-    /*
-     <p> The name of the DB Parameter Group. </p>
-    */
+    /**
+     * <p>Provides the name of the DB parameter group.</p>
+     */
     inline ModifyDBParameterGroupResult& WithDBParameterGroupName(const char* value) { SetDBParameterGroupName(value); return *this;}
 
     

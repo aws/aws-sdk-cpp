@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -47,30 +47,30 @@ void ListRecordsRequest::AddQueryStringParameters(URI& uri) const
     Aws::StringStream ss;
     if(m_lastSyncCountHasBeenSet)
     {
-     ss << m_lastSyncCount;
-     uri.AddQueryStringParameter("lastSyncCount", ss.str());
-     ss.str("");
+      ss << m_lastSyncCount;
+      uri.AddQueryStringParameter("lastSyncCount", ss.str());
+      ss.str("");
     }
 
     if(m_nextTokenHasBeenSet)
     {
-     ss << m_nextToken;
-     uri.AddQueryStringParameter("nextToken", ss.str());
-     ss.str("");
+      ss << m_nextToken;
+      uri.AddQueryStringParameter("nextToken", ss.str());
+      ss.str("");
     }
 
     if(m_maxResultsHasBeenSet)
     {
-     ss << m_maxResults;
-     uri.AddQueryStringParameter("maxResults", ss.str());
-     ss.str("");
+      ss << m_maxResults;
+      uri.AddQueryStringParameter("maxResults", ss.str());
+      ss.str("");
     }
 
     if(m_syncSessionTokenHasBeenSet)
     {
-     ss << m_syncSessionToken;
-     uri.AddQueryStringParameter("syncSessionToken", ss.str());
-     ss.str("");
+      ss << m_syncSessionToken;
+      uri.AddQueryStringParameter("syncSessionToken", ss.str());
+      ss.str("");
     }
 
 }

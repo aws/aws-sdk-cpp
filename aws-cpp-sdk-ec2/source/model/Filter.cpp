@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::EC2::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
 
 Filter::Filter() : 
     m_nameHasBeenSet(false),
@@ -71,15 +77,16 @@ void Filter::OutputToStream(Aws::OStream& oStream, const char* location, unsigne
   {
       oStream << location << index << locationValue << ".Name=" << StringUtils::URLEncode(m_name.c_str()) << "&";
   }
+
   if(m_valuesHasBeenSet)
   {
-      unsigned valuesIdx = 0;
+      unsigned valuesIdx = 1;
       for(auto& item : m_values)
       {
-        valuesIdx++;
-        oStream << location << index << locationValue << ".Value." << valuesIdx << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << index << locationValue << ".Value." << valuesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
+
 }
 
 void Filter::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -90,9 +97,14 @@ void Filter::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_valuesHasBeenSet)
   {
+      unsigned valuesIdx = 1;
       for(auto& item : m_values)
       {
-        oStream << location << ".item=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << ".item." << valuesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
 }
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

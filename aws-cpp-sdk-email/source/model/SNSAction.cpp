@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,17 +19,27 @@
 
 #include <utility>
 
-using namespace Aws::SES::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
+namespace Aws
+{
+namespace SES
+{
+namespace Model
+{
+
 SNSAction::SNSAction() : 
-    m_topicArnHasBeenSet(false)
+    m_topicArnHasBeenSet(false),
+    m_encoding(SNSActionEncoding::NOT_SET),
+    m_encodingHasBeenSet(false)
 {
 }
 
 SNSAction::SNSAction(const XmlNode& xmlNode) : 
-    m_topicArnHasBeenSet(false)
+    m_topicArnHasBeenSet(false),
+    m_encoding(SNSActionEncoding::NOT_SET),
+    m_encodingHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -46,6 +56,12 @@ SNSAction& SNSAction::operator =(const XmlNode& xmlNode)
       m_topicArn = StringUtils::Trim(topicArnNode.GetText().c_str());
       m_topicArnHasBeenSet = true;
     }
+    XmlNode encodingNode = resultNode.FirstChild("Encoding");
+    if(!encodingNode.IsNull())
+    {
+      m_encoding = SNSActionEncodingMapper::GetSNSActionEncodingForName(StringUtils::Trim(encodingNode.GetText().c_str()).c_str());
+      m_encodingHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -57,6 +73,12 @@ void SNSAction::OutputToStream(Aws::OStream& oStream, const char* location, unsi
   {
       oStream << location << index << locationValue << ".TopicArn=" << StringUtils::URLEncode(m_topicArn.c_str()) << "&";
   }
+
+  if(m_encodingHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Encoding=" << SNSActionEncodingMapper::GetNameForSNSActionEncoding(m_encoding) << "&";
+  }
+
 }
 
 void SNSAction::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -65,4 +87,12 @@ void SNSAction::OutputToStream(Aws::OStream& oStream, const char* location) cons
   {
       oStream << location << ".TopicArn=" << StringUtils::URLEncode(m_topicArn.c_str()) << "&";
   }
+  if(m_encodingHasBeenSet)
+  {
+      oStream << location << ".Encoding=" << SNSActionEncodingMapper::GetNameForSNSActionEncoding(m_encoding) << "&";
+  }
 }
+
+} // namespace Model
+} // namespace SES
+} // namespace Aws

@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -31,6 +31,7 @@ StartWorkflowExecutionRequest::StartWorkflowExecutionRequest() :
     m_executionStartToCloseTimeoutHasBeenSet(false),
     m_tagListHasBeenSet(false),
     m_taskStartToCloseTimeoutHasBeenSet(false),
+    m_childPolicy(ChildPolicy::NOT_SET),
     m_childPolicyHasBeenSet(false),
     m_lambdaRoleHasBeenSet(false)
 {
@@ -117,7 +118,7 @@ Aws::Http::HeaderValueCollection StartWorkflowExecutionRequest::GetRequestSpecif
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "SimpleWorkflowService.StartWorkflowExecution"));
-  return std::move(headers);
+  return headers;
 
 }
 

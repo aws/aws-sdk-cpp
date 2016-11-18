@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::STS::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace STS
+{
+namespace Model
+{
 
 FederatedUser::FederatedUser() : 
     m_federatedUserIdHasBeenSet(false),
@@ -65,10 +71,12 @@ void FederatedUser::OutputToStream(Aws::OStream& oStream, const char* location, 
   {
       oStream << location << index << locationValue << ".FederatedUserId=" << StringUtils::URLEncode(m_federatedUserId.c_str()) << "&";
   }
+
   if(m_arnHasBeenSet)
   {
       oStream << location << index << locationValue << ".Arn=" << StringUtils::URLEncode(m_arn.c_str()) << "&";
   }
+
 }
 
 void FederatedUser::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -82,3 +90,7 @@ void FederatedUser::OutputToStream(Aws::OStream& oStream, const char* location) 
       oStream << location << ".Arn=" << StringUtils::URLEncode(m_arn.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace STS
+} // namespace Aws

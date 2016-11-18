@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,11 +19,18 @@
 
 #include <utility>
 
-using namespace Aws::CloudFront::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
+namespace Aws
+{
+namespace CloudFront
+{
+namespace Model
+{
+
 GeoRestriction::GeoRestriction() : 
+    m_restrictionType(GeoRestrictionType::NOT_SET),
     m_restrictionTypeHasBeenSet(false),
     m_quantity(0),
     m_quantityHasBeenSet(false),
@@ -32,6 +39,7 @@ GeoRestriction::GeoRestriction() :
 }
 
 GeoRestriction::GeoRestriction(const XmlNode& xmlNode) : 
+    m_restrictionType(GeoRestrictionType::NOT_SET),
     m_restrictionTypeHasBeenSet(false),
     m_quantity(0),
     m_quantityHasBeenSet(false),
@@ -103,3 +111,7 @@ void GeoRestriction::AddToNode(XmlNode& parentNode) const
   }
 
 }
+
+} // namespace Model
+} // namespace CloudFront
+} // namespace Aws

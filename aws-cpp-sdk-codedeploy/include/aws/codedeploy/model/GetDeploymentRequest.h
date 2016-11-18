@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,9 +24,9 @@ namespace CodeDeploy
 namespace Model
 {
 
-  /*
-    <p>Represents the input of a get deployment operation.</p>
-  */
+  /**
+   * <p>Represents the input of a get deployment operation.</p>
+   */
   class AWS_CODEDEPLOY_API GetDeploymentRequest : public CodeDeployRequest
   {
   public:
@@ -35,40 +35,39 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
-    /*
-     <p>An existing deployment ID associated with the applicable IAM user or AWS account.</p>
-    */
+    /**
+     * <p>A deployment ID associated with the applicable IAM user or AWS account.</p>
+     */
     inline const Aws::String& GetDeploymentId() const{ return m_deploymentId; }
 
-    /*
-     <p>An existing deployment ID associated with the applicable IAM user or AWS account.</p>
-    */
+    /**
+     * <p>A deployment ID associated with the applicable IAM user or AWS account.</p>
+     */
     inline void SetDeploymentId(const Aws::String& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = value; }
 
-    /*
-     <p>An existing deployment ID associated with the applicable IAM user or AWS account.</p>
-    */
+    /**
+     * <p>A deployment ID associated with the applicable IAM user or AWS account.</p>
+     */
     inline void SetDeploymentId(Aws::String&& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = value; }
 
-    /*
-     <p>An existing deployment ID associated with the applicable IAM user or AWS account.</p>
-    */
+    /**
+     * <p>A deployment ID associated with the applicable IAM user or AWS account.</p>
+     */
     inline void SetDeploymentId(const char* value) { m_deploymentIdHasBeenSet = true; m_deploymentId.assign(value); }
 
-    /*
-     <p>An existing deployment ID associated with the applicable IAM user or AWS account.</p>
-    */
+    /**
+     * <p>A deployment ID associated with the applicable IAM user or AWS account.</p>
+     */
     inline GetDeploymentRequest& WithDeploymentId(const Aws::String& value) { SetDeploymentId(value); return *this;}
 
-    /*
-     <p>An existing deployment ID associated with the applicable IAM user or AWS account.</p>
-    */
+    /**
+     * <p>A deployment ID associated with the applicable IAM user or AWS account.</p>
+     */
     inline GetDeploymentRequest& WithDeploymentId(Aws::String&& value) { SetDeploymentId(value); return *this;}
 
-    /*
-     <p>An existing deployment ID associated with the applicable IAM user or AWS account.</p>
-    */
+    /**
+     * <p>A deployment ID associated with the applicable IAM user or AWS account.</p>
+     */
     inline GetDeploymentRequest& WithDeploymentId(const char* value) { SetDeploymentId(value); return *this;}
 
   private:

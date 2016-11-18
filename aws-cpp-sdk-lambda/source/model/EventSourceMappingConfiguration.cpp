@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::Lambda::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace Lambda
+{
+namespace Model
+{
 
 EventSourceMappingConfiguration::EventSourceMappingConfiguration() : 
     m_uUIDHasBeenSet(false),
@@ -27,7 +33,6 @@ EventSourceMappingConfiguration::EventSourceMappingConfiguration() :
     m_batchSizeHasBeenSet(false),
     m_eventSourceArnHasBeenSet(false),
     m_functionArnHasBeenSet(false),
-    m_lastModified(0.0),
     m_lastModifiedHasBeenSet(false),
     m_lastProcessingResultHasBeenSet(false),
     m_stateHasBeenSet(false),
@@ -41,7 +46,6 @@ EventSourceMappingConfiguration::EventSourceMappingConfiguration(const JsonValue
     m_batchSizeHasBeenSet(false),
     m_eventSourceArnHasBeenSet(false),
     m_functionArnHasBeenSet(false),
-    m_lastModified(0.0),
     m_lastModifiedHasBeenSet(false),
     m_lastProcessingResultHasBeenSet(false),
     m_stateHasBeenSet(false),
@@ -141,8 +145,7 @@ JsonValue EventSourceMappingConfiguration::Jsonize() const
 
   if(m_lastModifiedHasBeenSet)
   {
-   payload.WithDouble("LastModified", m_lastModified);
-
+   payload.WithDouble("LastModified", m_lastModified.SecondsWithMSPrecision());
   }
 
   if(m_lastProcessingResultHasBeenSet)
@@ -163,5 +166,9 @@ JsonValue EventSourceMappingConfiguration::Jsonize() const
 
   }
 
-  return std::move(payload);
+  return payload;
 }
+
+} // namespace Model
+} // namespace Lambda
+} // namespace Aws

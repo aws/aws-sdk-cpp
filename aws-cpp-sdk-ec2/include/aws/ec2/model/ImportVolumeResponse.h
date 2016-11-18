@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -33,9 +33,9 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
+  /**
+   * <p>Contains the output for ImportVolume.</p>
+   */
   class AWS_EC2_API ImportVolumeResponse
   {
   public:
@@ -43,29 +43,29 @@ namespace Model
     ImportVolumeResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     ImportVolumeResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>Information about the conversion task.</p>
-    */
+    /**
+     * <p>Information about the conversion task.</p>
+     */
     inline const ConversionTask& GetConversionTask() const{ return m_conversionTask; }
 
-    /*
-     <p>Information about the conversion task.</p>
-    */
+    /**
+     * <p>Information about the conversion task.</p>
+     */
     inline void SetConversionTask(const ConversionTask& value) { m_conversionTask = value; }
 
-    /*
-     <p>Information about the conversion task.</p>
-    */
+    /**
+     * <p>Information about the conversion task.</p>
+     */
     inline void SetConversionTask(ConversionTask&& value) { m_conversionTask = value; }
 
-    /*
-     <p>Information about the conversion task.</p>
-    */
+    /**
+     * <p>Information about the conversion task.</p>
+     */
     inline ImportVolumeResponse& WithConversionTask(const ConversionTask& value) { SetConversionTask(value); return *this;}
 
-    /*
-     <p>Information about the conversion task.</p>
-    */
+    /**
+     * <p>Information about the conversion task.</p>
+     */
     inline ImportVolumeResponse& WithConversionTask(ConversionTask&& value) { SetConversionTask(value); return *this;}
 
     

@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::Redshift::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace Redshift
+{
+namespace Model
+{
 
 Subnet::Subnet() : 
     m_subnetIdentifierHasBeenSet(false),
@@ -73,16 +79,19 @@ void Subnet::OutputToStream(Aws::OStream& oStream, const char* location, unsigne
   {
       oStream << location << index << locationValue << ".SubnetIdentifier=" << StringUtils::URLEncode(m_subnetIdentifier.c_str()) << "&";
   }
+
   if(m_subnetAvailabilityZoneHasBeenSet)
   {
       Aws::StringStream subnetAvailabilityZoneLocationAndMemberSs;
       subnetAvailabilityZoneLocationAndMemberSs << location << index << locationValue << ".SubnetAvailabilityZone";
       m_subnetAvailabilityZone.OutputToStream(oStream, subnetAvailabilityZoneLocationAndMemberSs.str().c_str());
   }
+
   if(m_subnetStatusHasBeenSet)
   {
       oStream << location << index << locationValue << ".SubnetStatus=" << StringUtils::URLEncode(m_subnetStatus.c_str()) << "&";
   }
+
 }
 
 void Subnet::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -102,3 +111,7 @@ void Subnet::OutputToStream(Aws::OStream& oStream, const char* location) const
       oStream << location << ".SubnetStatus=" << StringUtils::URLEncode(m_subnetStatus.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace Redshift
+} // namespace Aws

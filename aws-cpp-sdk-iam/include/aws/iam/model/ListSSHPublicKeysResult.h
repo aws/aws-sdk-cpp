@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -35,9 +35,9 @@ namespace IAM
 {
 namespace Model
 {
-  /*
-    <p>Contains the response to a successful <a>ListSSHPublicKeys</a> request.</p>
-  */
+  /**
+   * <p>Contains the response to a successful <a>ListSSHPublicKeys</a> request.</p>
+   */
   class AWS_IAM_API ListSSHPublicKeysResult
   {
   public:
@@ -45,89 +45,121 @@ namespace Model
     ListSSHPublicKeysResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     ListSSHPublicKeysResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>A list of SSH public keys.</p>
-    */
+    /**
+     * <p>A list of the SSH public keys assigned to IAM user.</p>
+     */
     inline const Aws::Vector<SSHPublicKeyMetadata>& GetSSHPublicKeys() const{ return m_sSHPublicKeys; }
 
-    /*
-     <p>A list of SSH public keys.</p>
-    */
+    /**
+     * <p>A list of the SSH public keys assigned to IAM user.</p>
+     */
     inline void SetSSHPublicKeys(const Aws::Vector<SSHPublicKeyMetadata>& value) { m_sSHPublicKeys = value; }
 
-    /*
-     <p>A list of SSH public keys.</p>
-    */
+    /**
+     * <p>A list of the SSH public keys assigned to IAM user.</p>
+     */
     inline void SetSSHPublicKeys(Aws::Vector<SSHPublicKeyMetadata>&& value) { m_sSHPublicKeys = value; }
 
-    /*
-     <p>A list of SSH public keys.</p>
-    */
+    /**
+     * <p>A list of the SSH public keys assigned to IAM user.</p>
+     */
     inline ListSSHPublicKeysResult& WithSSHPublicKeys(const Aws::Vector<SSHPublicKeyMetadata>& value) { SetSSHPublicKeys(value); return *this;}
 
-    /*
-     <p>A list of SSH public keys.</p>
-    */
+    /**
+     * <p>A list of the SSH public keys assigned to IAM user.</p>
+     */
     inline ListSSHPublicKeysResult& WithSSHPublicKeys(Aws::Vector<SSHPublicKeyMetadata>&& value) { SetSSHPublicKeys(value); return *this;}
 
-    /*
-     <p>A list of SSH public keys.</p>
-    */
+    /**
+     * <p>A list of the SSH public keys assigned to IAM user.</p>
+     */
     inline ListSSHPublicKeysResult& AddSSHPublicKeys(const SSHPublicKeyMetadata& value) { m_sSHPublicKeys.push_back(value); return *this; }
 
-    /*
-     <p>A list of SSH public keys.</p>
-    */
+    /**
+     * <p>A list of the SSH public keys assigned to IAM user.</p>
+     */
     inline ListSSHPublicKeysResult& AddSSHPublicKeys(SSHPublicKeyMetadata&& value) { m_sSHPublicKeys.push_back(value); return *this; }
 
-    /*
-     <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items.</p>
-    */
+    /**
+     * <p>A flag that indicates whether there are more items to return. If your results
+     * were truncated, you can make a subsequent pagination request using the
+     * <code>Marker</code> request parameter to retrieve more items. Note that IAM
+     * might return fewer than the <code>MaxItems</code> number of results even when
+     * there are more results available. We recommend that you check
+     * <code>IsTruncated</code> after every call to ensure that you receive all of your
+     * results.</p>
+     */
     inline bool GetIsTruncated() const{ return m_isTruncated; }
 
-    /*
-     <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items.</p>
-    */
+    /**
+     * <p>A flag that indicates whether there are more items to return. If your results
+     * were truncated, you can make a subsequent pagination request using the
+     * <code>Marker</code> request parameter to retrieve more items. Note that IAM
+     * might return fewer than the <code>MaxItems</code> number of results even when
+     * there are more results available. We recommend that you check
+     * <code>IsTruncated</code> after every call to ensure that you receive all of your
+     * results.</p>
+     */
     inline void SetIsTruncated(bool value) { m_isTruncated = value; }
 
-    /*
-     <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items.</p>
-    */
+    /**
+     * <p>A flag that indicates whether there are more items to return. If your results
+     * were truncated, you can make a subsequent pagination request using the
+     * <code>Marker</code> request parameter to retrieve more items. Note that IAM
+     * might return fewer than the <code>MaxItems</code> number of results even when
+     * there are more results available. We recommend that you check
+     * <code>IsTruncated</code> after every call to ensure that you receive all of your
+     * results.</p>
+     */
     inline ListSSHPublicKeysResult& WithIsTruncated(bool value) { SetIsTruncated(value); return *this;}
 
-    /*
-     <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
-    */
+    /**
+     * <p>When <code>IsTruncated</code> is <code>true</code>, this element is present
+     * and contains the value to use for the <code>Marker</code> parameter in a
+     * subsequent pagination request.</p>
+     */
     inline const Aws::String& GetMarker() const{ return m_marker; }
 
-    /*
-     <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
-    */
+    /**
+     * <p>When <code>IsTruncated</code> is <code>true</code>, this element is present
+     * and contains the value to use for the <code>Marker</code> parameter in a
+     * subsequent pagination request.</p>
+     */
     inline void SetMarker(const Aws::String& value) { m_marker = value; }
 
-    /*
-     <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
-    */
+    /**
+     * <p>When <code>IsTruncated</code> is <code>true</code>, this element is present
+     * and contains the value to use for the <code>Marker</code> parameter in a
+     * subsequent pagination request.</p>
+     */
     inline void SetMarker(Aws::String&& value) { m_marker = value; }
 
-    /*
-     <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
-    */
+    /**
+     * <p>When <code>IsTruncated</code> is <code>true</code>, this element is present
+     * and contains the value to use for the <code>Marker</code> parameter in a
+     * subsequent pagination request.</p>
+     */
     inline void SetMarker(const char* value) { m_marker.assign(value); }
 
-    /*
-     <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
-    */
+    /**
+     * <p>When <code>IsTruncated</code> is <code>true</code>, this element is present
+     * and contains the value to use for the <code>Marker</code> parameter in a
+     * subsequent pagination request.</p>
+     */
     inline ListSSHPublicKeysResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
 
-    /*
-     <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
-    */
+    /**
+     * <p>When <code>IsTruncated</code> is <code>true</code>, this element is present
+     * and contains the value to use for the <code>Marker</code> parameter in a
+     * subsequent pagination request.</p>
+     */
     inline ListSSHPublicKeysResult& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
 
-    /*
-     <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
-    */
+    /**
+     * <p>When <code>IsTruncated</code> is <code>true</code>, this element is present
+     * and contains the value to use for the <code>Marker</code> parameter in a
+     * subsequent pagination request.</p>
+     */
     inline ListSSHPublicKeysResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
     

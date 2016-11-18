@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,14 +19,19 @@
 
 #include <utility>
 
-using namespace Aws::CloudFront::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace CloudFront
+{
+namespace Model
+{
 
 Invalidation::Invalidation() : 
     m_idHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_createTime(0.0),
     m_createTimeHasBeenSet(false),
     m_invalidationBatchHasBeenSet(false)
 {
@@ -35,7 +40,6 @@ Invalidation::Invalidation() :
 Invalidation::Invalidation(const XmlNode& xmlNode) : 
     m_idHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_createTime(0.0),
     m_createTimeHasBeenSet(false),
     m_invalidationBatchHasBeenSet(false)
 {
@@ -63,7 +67,7 @@ Invalidation& Invalidation::operator =(const XmlNode& xmlNode)
     XmlNode createTimeNode = resultNode.FirstChild("CreateTime");
     if(!createTimeNode.IsNull())
     {
-      m_createTime = StringUtils::ConvertToDouble(StringUtils::Trim(createTimeNode.GetText().c_str()).c_str());
+      m_createTime = DateTime(StringUtils::Trim(createTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_createTimeHasBeenSet = true;
     }
     XmlNode invalidationBatchNode = resultNode.FirstChild("InvalidationBatch");
@@ -94,10 +98,8 @@ void Invalidation::AddToNode(XmlNode& parentNode) const
 
   if(m_createTimeHasBeenSet)
   {
-   XmlNode createTimeNode = parentNode.CreateChildElement("CreateTime");
-  ss << m_createTime;
-   createTimeNode.SetText(ss.str());
-  ss.str("");
+     XmlNode createTimeNode = parentNode.CreateChildElement("CreateTime");
+     createTimeNode.SetText(m_createTime.ToGmtString(DateFormat::ISO_8601));
   }
 
   if(m_invalidationBatchHasBeenSet)
@@ -107,3 +109,7 @@ void Invalidation::AddToNode(XmlNode& parentNode) const
   }
 
 }
+
+} // namespace Model
+} // namespace CloudFront
+} // namespace Aws

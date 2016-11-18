@@ -1773,7 +1773,5 @@
       "type":"list",
       "member":{"shape":"validationMessage"}
     }
-  },
-  "examples":{
   }
 }

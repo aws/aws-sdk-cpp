@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ using namespace Aws::Utils;
 QueryRequest::QueryRequest() : 
     m_tableNameHasBeenSet(false),
     m_indexNameHasBeenSet(false),
+    m_select(Select::NOT_SET),
     m_selectHasBeenSet(false),
     m_attributesToGetHasBeenSet(false),
     m_limit(0),
@@ -32,10 +33,12 @@ QueryRequest::QueryRequest() :
     m_consistentReadHasBeenSet(false),
     m_keyConditionsHasBeenSet(false),
     m_queryFilterHasBeenSet(false),
+    m_conditionalOperator(ConditionalOperator::NOT_SET),
     m_conditionalOperatorHasBeenSet(false),
     m_scanIndexForward(false),
     m_scanIndexForwardHasBeenSet(false),
     m_exclusiveStartKeyHasBeenSet(false),
+    m_returnConsumedCapacity(ReturnConsumedCapacity::NOT_SET),
     m_returnConsumedCapacityHasBeenSet(false),
     m_projectionExpressionHasBeenSet(false),
     m_filterExpressionHasBeenSet(false),
@@ -185,7 +188,7 @@ Aws::Http::HeaderValueCollection QueryRequest::GetRequestSpecificHeaders() const
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "DynamoDB_20120810.Query"));
-  return std::move(headers);
+  return headers;
 
 }
 

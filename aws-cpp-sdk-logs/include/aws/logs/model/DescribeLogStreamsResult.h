@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -34,9 +34,6 @@ namespace CloudWatchLogs
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
   class AWS_CLOUDWATCHLOGS_API DescribeLogStreamsResult
   {
   public:
@@ -44,25 +41,39 @@ namespace Model
     DescribeLogStreamsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     DescribeLogStreamsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    
+    /**
+     * <p>The log streams.</p>
+     */
     inline const Aws::Vector<LogStream>& GetLogStreams() const{ return m_logStreams; }
 
-    
+    /**
+     * <p>The log streams.</p>
+     */
     inline void SetLogStreams(const Aws::Vector<LogStream>& value) { m_logStreams = value; }
 
-    
+    /**
+     * <p>The log streams.</p>
+     */
     inline void SetLogStreams(Aws::Vector<LogStream>&& value) { m_logStreams = value; }
 
-    
+    /**
+     * <p>The log streams.</p>
+     */
     inline DescribeLogStreamsResult& WithLogStreams(const Aws::Vector<LogStream>& value) { SetLogStreams(value); return *this;}
 
-    
+    /**
+     * <p>The log streams.</p>
+     */
     inline DescribeLogStreamsResult& WithLogStreams(Aws::Vector<LogStream>&& value) { SetLogStreams(value); return *this;}
 
-    
+    /**
+     * <p>The log streams.</p>
+     */
     inline DescribeLogStreamsResult& AddLogStreams(const LogStream& value) { m_logStreams.push_back(value); return *this; }
 
-    
+    /**
+     * <p>The log streams.</p>
+     */
     inline DescribeLogStreamsResult& AddLogStreams(LogStream&& value) { m_logStreams.push_back(value); return *this; }
 
     

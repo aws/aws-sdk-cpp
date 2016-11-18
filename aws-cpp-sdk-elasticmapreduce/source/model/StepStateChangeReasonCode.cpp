@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -14,43 +14,59 @@
 */
 #include <aws/elasticmapreduce/model/StepStateChangeReasonCode.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
+#include <aws/core/utils/EnumParseOverflowContainer.h>
 
 using namespace Aws::Utils;
 
-static const int NONE_HASH = HashingUtils::HashString("NONE");
 
 namespace Aws
 {
-namespace EMR
-{
-namespace Model
-{
-namespace StepStateChangeReasonCodeMapper
-{
-StepStateChangeReasonCode GetStepStateChangeReasonCodeForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-
-  if (hashCode == NONE_HASH)
+  namespace EMR
   {
-    return StepStateChangeReasonCode::NONE;
-  }
+    namespace Model
+    {
+      namespace StepStateChangeReasonCodeMapper
+      {
 
-  return StepStateChangeReasonCode::NOT_SET;
-}
+        static const int NONE_HASH = HashingUtils::HashString("NONE");
 
-Aws::String GetNameForStepStateChangeReasonCode(StepStateChangeReasonCode value)
-{
-  switch(value)
-  {
-  case StepStateChangeReasonCode::NONE:
-    return "NONE";
-  default:
-    return "";
-  }
-}
 
-} // namespace StepStateChangeReasonCodeMapper
-} // namespace Model
-} // namespace EMR
+        StepStateChangeReasonCode GetStepStateChangeReasonCodeForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == NONE_HASH)
+          {
+            return StepStateChangeReasonCode::NONE;
+          }
+          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<StepStateChangeReasonCode>(hashCode);
+          }
+
+          return StepStateChangeReasonCode::NOT_SET;
+        }
+
+        Aws::String GetNameForStepStateChangeReasonCode(StepStateChangeReasonCode enumValue)
+        {
+          switch(enumValue)
+          {
+          case StepStateChangeReasonCode::NONE:
+            return "NONE";
+          default:
+            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace StepStateChangeReasonCodeMapper
+    } // namespace Model
+  } // namespace EMR
 } // namespace Aws

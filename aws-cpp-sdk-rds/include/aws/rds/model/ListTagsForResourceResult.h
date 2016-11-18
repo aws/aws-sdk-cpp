@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -34,9 +34,9 @@ namespace RDS
 {
 namespace Model
 {
-  /*
-    <p></p>
-  */
+  /**
+   * <p/>
+   */
   class AWS_RDS_API ListTagsForResourceResult
   {
   public:
@@ -44,39 +44,39 @@ namespace Model
     ListTagsForResourceResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     ListTagsForResourceResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>List of tags returned by the ListTagsForResource operation.</p>
-    */
+    /**
+     * <p>List of tags returned by the ListTagsForResource operation.</p>
+     */
     inline const Aws::Vector<Tag>& GetTagList() const{ return m_tagList; }
 
-    /*
-     <p>List of tags returned by the ListTagsForResource operation.</p>
-    */
+    /**
+     * <p>List of tags returned by the ListTagsForResource operation.</p>
+     */
     inline void SetTagList(const Aws::Vector<Tag>& value) { m_tagList = value; }
 
-    /*
-     <p>List of tags returned by the ListTagsForResource operation.</p>
-    */
+    /**
+     * <p>List of tags returned by the ListTagsForResource operation.</p>
+     */
     inline void SetTagList(Aws::Vector<Tag>&& value) { m_tagList = value; }
 
-    /*
-     <p>List of tags returned by the ListTagsForResource operation.</p>
-    */
+    /**
+     * <p>List of tags returned by the ListTagsForResource operation.</p>
+     */
     inline ListTagsForResourceResult& WithTagList(const Aws::Vector<Tag>& value) { SetTagList(value); return *this;}
 
-    /*
-     <p>List of tags returned by the ListTagsForResource operation.</p>
-    */
+    /**
+     * <p>List of tags returned by the ListTagsForResource operation.</p>
+     */
     inline ListTagsForResourceResult& WithTagList(Aws::Vector<Tag>&& value) { SetTagList(value); return *this;}
 
-    /*
-     <p>List of tags returned by the ListTagsForResource operation.</p>
-    */
+    /**
+     * <p>List of tags returned by the ListTagsForResource operation.</p>
+     */
     inline ListTagsForResourceResult& AddTagList(const Tag& value) { m_tagList.push_back(value); return *this; }
 
-    /*
-     <p>List of tags returned by the ListTagsForResource operation.</p>
-    */
+    /**
+     * <p>List of tags returned by the ListTagsForResource operation.</p>
+     */
     inline ListTagsForResourceResult& AddTagList(Tag&& value) { m_tagList.push_back(value); return *this; }
 
     

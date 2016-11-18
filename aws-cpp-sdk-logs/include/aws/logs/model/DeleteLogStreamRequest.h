@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,8 +24,8 @@ namespace CloudWatchLogs
 namespace Model
 {
 
-  /*
-  */
+  /**
+   */
   class AWS_CLOUDWATCHLOGS_API DeleteLogStreamRequest : public CloudWatchLogsRequest
   {
   public:
@@ -34,75 +34,74 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
-    /*
-     <p>The name of the log group under which the log stream to delete belongs.</p>
-    */
+    /**
+     * <p>The name of the log group.</p>
+     */
     inline const Aws::String& GetLogGroupName() const{ return m_logGroupName; }
 
-    /*
-     <p>The name of the log group under which the log stream to delete belongs.</p>
-    */
+    /**
+     * <p>The name of the log group.</p>
+     */
     inline void SetLogGroupName(const Aws::String& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
 
-    /*
-     <p>The name of the log group under which the log stream to delete belongs.</p>
-    */
+    /**
+     * <p>The name of the log group.</p>
+     */
     inline void SetLogGroupName(Aws::String&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
 
-    /*
-     <p>The name of the log group under which the log stream to delete belongs.</p>
-    */
+    /**
+     * <p>The name of the log group.</p>
+     */
     inline void SetLogGroupName(const char* value) { m_logGroupNameHasBeenSet = true; m_logGroupName.assign(value); }
 
-    /*
-     <p>The name of the log group under which the log stream to delete belongs.</p>
-    */
+    /**
+     * <p>The name of the log group.</p>
+     */
     inline DeleteLogStreamRequest& WithLogGroupName(const Aws::String& value) { SetLogGroupName(value); return *this;}
 
-    /*
-     <p>The name of the log group under which the log stream to delete belongs.</p>
-    */
+    /**
+     * <p>The name of the log group.</p>
+     */
     inline DeleteLogStreamRequest& WithLogGroupName(Aws::String&& value) { SetLogGroupName(value); return *this;}
 
-    /*
-     <p>The name of the log group under which the log stream to delete belongs.</p>
-    */
+    /**
+     * <p>The name of the log group.</p>
+     */
     inline DeleteLogStreamRequest& WithLogGroupName(const char* value) { SetLogGroupName(value); return *this;}
 
-    /*
-     <p>The name of the log stream to delete.</p>
-    */
+    /**
+     * <p>The name of the log stream.</p>
+     */
     inline const Aws::String& GetLogStreamName() const{ return m_logStreamName; }
 
-    /*
-     <p>The name of the log stream to delete.</p>
-    */
+    /**
+     * <p>The name of the log stream.</p>
+     */
     inline void SetLogStreamName(const Aws::String& value) { m_logStreamNameHasBeenSet = true; m_logStreamName = value; }
 
-    /*
-     <p>The name of the log stream to delete.</p>
-    */
+    /**
+     * <p>The name of the log stream.</p>
+     */
     inline void SetLogStreamName(Aws::String&& value) { m_logStreamNameHasBeenSet = true; m_logStreamName = value; }
 
-    /*
-     <p>The name of the log stream to delete.</p>
-    */
+    /**
+     * <p>The name of the log stream.</p>
+     */
     inline void SetLogStreamName(const char* value) { m_logStreamNameHasBeenSet = true; m_logStreamName.assign(value); }
 
-    /*
-     <p>The name of the log stream to delete.</p>
-    */
+    /**
+     * <p>The name of the log stream.</p>
+     */
     inline DeleteLogStreamRequest& WithLogStreamName(const Aws::String& value) { SetLogStreamName(value); return *this;}
 
-    /*
-     <p>The name of the log stream to delete.</p>
-    */
+    /**
+     * <p>The name of the log stream.</p>
+     */
     inline DeleteLogStreamRequest& WithLogStreamName(Aws::String&& value) { SetLogStreamName(value); return *this;}
 
-    /*
-     <p>The name of the log stream to delete.</p>
-    */
+    /**
+     * <p>The name of the log stream.</p>
+     */
     inline DeleteLogStreamRequest& WithLogStreamName(const char* value) { SetLogStreamName(value); return *this;}
 
   private:

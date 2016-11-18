@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::CognitoSync::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace CognitoSync
+{
+namespace Model
+{
 
 IdentityPoolUsage::IdentityPoolUsage() : 
     m_identityPoolIdHasBeenSet(false),
@@ -27,7 +33,6 @@ IdentityPoolUsage::IdentityPoolUsage() :
     m_syncSessionsCountHasBeenSet(false),
     m_dataStorage(0),
     m_dataStorageHasBeenSet(false),
-    m_lastModifiedDate(0.0),
     m_lastModifiedDateHasBeenSet(false)
 {
 }
@@ -38,7 +43,6 @@ IdentityPoolUsage::IdentityPoolUsage(const JsonValue& jsonValue) :
     m_syncSessionsCountHasBeenSet(false),
     m_dataStorage(0),
     m_dataStorageHasBeenSet(false),
-    m_lastModifiedDate(0.0),
     m_lastModifiedDateHasBeenSet(false)
 {
   *this = jsonValue;
@@ -101,9 +105,12 @@ JsonValue IdentityPoolUsage::Jsonize() const
 
   if(m_lastModifiedDateHasBeenSet)
   {
-   payload.WithDouble("LastModifiedDate", m_lastModifiedDate);
-
+   payload.WithDouble("LastModifiedDate", m_lastModifiedDate.SecondsWithMSPrecision());
   }
 
-  return std::move(payload);
+  return payload;
 }
+
+} // namespace Model
+} // namespace CognitoSync
+} // namespace Aws

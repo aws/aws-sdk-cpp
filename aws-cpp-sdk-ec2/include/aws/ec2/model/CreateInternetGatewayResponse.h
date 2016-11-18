@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -33,9 +33,9 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
+  /**
+   * <p>Contains the output of CreateInternetGateway.</p>
+   */
   class AWS_EC2_API CreateInternetGatewayResponse
   {
   public:
@@ -43,29 +43,29 @@ namespace Model
     CreateInternetGatewayResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     CreateInternetGatewayResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>Information about the Internet gateway.</p>
-    */
+    /**
+     * <p>Information about the Internet gateway.</p>
+     */
     inline const InternetGateway& GetInternetGateway() const{ return m_internetGateway; }
 
-    /*
-     <p>Information about the Internet gateway.</p>
-    */
+    /**
+     * <p>Information about the Internet gateway.</p>
+     */
     inline void SetInternetGateway(const InternetGateway& value) { m_internetGateway = value; }
 
-    /*
-     <p>Information about the Internet gateway.</p>
-    */
+    /**
+     * <p>Information about the Internet gateway.</p>
+     */
     inline void SetInternetGateway(InternetGateway&& value) { m_internetGateway = value; }
 
-    /*
-     <p>Information about the Internet gateway.</p>
-    */
+    /**
+     * <p>Information about the Internet gateway.</p>
+     */
     inline CreateInternetGatewayResponse& WithInternetGateway(const InternetGateway& value) { SetInternetGateway(value); return *this;}
 
-    /*
-     <p>Information about the Internet gateway.</p>
-    */
+    /**
+     * <p>Information about the Internet gateway.</p>
+     */
     inline CreateInternetGatewayResponse& WithInternetGateway(InternetGateway&& value) { SetInternetGateway(value); return *this;}
 
     

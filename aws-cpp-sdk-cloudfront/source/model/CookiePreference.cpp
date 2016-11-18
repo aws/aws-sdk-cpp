@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,17 +19,25 @@
 
 #include <utility>
 
-using namespace Aws::CloudFront::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
+namespace Aws
+{
+namespace CloudFront
+{
+namespace Model
+{
+
 CookiePreference::CookiePreference() : 
+    m_forward(ItemSelection::NOT_SET),
     m_forwardHasBeenSet(false),
     m_whitelistedNamesHasBeenSet(false)
 {
 }
 
 CookiePreference::CookiePreference(const XmlNode& xmlNode) : 
+    m_forward(ItemSelection::NOT_SET),
     m_forwardHasBeenSet(false),
     m_whitelistedNamesHasBeenSet(false)
 {
@@ -75,3 +83,7 @@ void CookiePreference::AddToNode(XmlNode& parentNode) const
   }
 
 }
+
+} // namespace Model
+} // namespace CloudFront
+} // namespace Aws

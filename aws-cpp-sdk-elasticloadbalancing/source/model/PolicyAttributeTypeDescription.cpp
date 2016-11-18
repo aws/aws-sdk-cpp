@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::ElasticLoadBalancing::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace ElasticLoadBalancing
+{
+namespace Model
+{
 
 PolicyAttributeTypeDescription::PolicyAttributeTypeDescription() : 
     m_attributeNameHasBeenSet(false),
@@ -89,22 +95,27 @@ void PolicyAttributeTypeDescription::OutputToStream(Aws::OStream& oStream, const
   {
       oStream << location << index << locationValue << ".AttributeName=" << StringUtils::URLEncode(m_attributeName.c_str()) << "&";
   }
+
   if(m_attributeTypeHasBeenSet)
   {
       oStream << location << index << locationValue << ".AttributeType=" << StringUtils::URLEncode(m_attributeType.c_str()) << "&";
   }
+
   if(m_descriptionHasBeenSet)
   {
       oStream << location << index << locationValue << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
+
   if(m_defaultValueHasBeenSet)
   {
       oStream << location << index << locationValue << ".DefaultValue=" << StringUtils::URLEncode(m_defaultValue.c_str()) << "&";
   }
+
   if(m_cardinalityHasBeenSet)
   {
       oStream << location << index << locationValue << ".Cardinality=" << StringUtils::URLEncode(m_cardinality.c_str()) << "&";
   }
+
 }
 
 void PolicyAttributeTypeDescription::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -130,3 +141,7 @@ void PolicyAttributeTypeDescription::OutputToStream(Aws::OStream& oStream, const
       oStream << location << ".Cardinality=" << StringUtils::URLEncode(m_cardinality.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace ElasticLoadBalancing
+} // namespace Aws

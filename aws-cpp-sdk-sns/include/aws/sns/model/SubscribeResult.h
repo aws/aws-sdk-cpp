@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -33,9 +33,9 @@ namespace SNS
 {
 namespace Model
 {
-  /*
-    Response for Subscribe action.
-  */
+  /**
+   * <p>Response for Subscribe action.</p>
+   */
   class AWS_SNS_API SubscribeResult
   {
   public:
@@ -43,39 +43,46 @@ namespace Model
     SubscribeResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     SubscribeResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>The ARN of the subscription, if the service was able to create a subscription immediately (without requiring endpoint owner confirmation).</p>
-    */
+    /**
+     * <p>The ARN of the subscription, if the service was able to create a subscription
+     * immediately (without requiring endpoint owner confirmation).</p>
+     */
     inline const Aws::String& GetSubscriptionArn() const{ return m_subscriptionArn; }
 
-    /*
-     <p>The ARN of the subscription, if the service was able to create a subscription immediately (without requiring endpoint owner confirmation).</p>
-    */
+    /**
+     * <p>The ARN of the subscription, if the service was able to create a subscription
+     * immediately (without requiring endpoint owner confirmation).</p>
+     */
     inline void SetSubscriptionArn(const Aws::String& value) { m_subscriptionArn = value; }
 
-    /*
-     <p>The ARN of the subscription, if the service was able to create a subscription immediately (without requiring endpoint owner confirmation).</p>
-    */
+    /**
+     * <p>The ARN of the subscription, if the service was able to create a subscription
+     * immediately (without requiring endpoint owner confirmation).</p>
+     */
     inline void SetSubscriptionArn(Aws::String&& value) { m_subscriptionArn = value; }
 
-    /*
-     <p>The ARN of the subscription, if the service was able to create a subscription immediately (without requiring endpoint owner confirmation).</p>
-    */
+    /**
+     * <p>The ARN of the subscription, if the service was able to create a subscription
+     * immediately (without requiring endpoint owner confirmation).</p>
+     */
     inline void SetSubscriptionArn(const char* value) { m_subscriptionArn.assign(value); }
 
-    /*
-     <p>The ARN of the subscription, if the service was able to create a subscription immediately (without requiring endpoint owner confirmation).</p>
-    */
+    /**
+     * <p>The ARN of the subscription, if the service was able to create a subscription
+     * immediately (without requiring endpoint owner confirmation).</p>
+     */
     inline SubscribeResult& WithSubscriptionArn(const Aws::String& value) { SetSubscriptionArn(value); return *this;}
 
-    /*
-     <p>The ARN of the subscription, if the service was able to create a subscription immediately (without requiring endpoint owner confirmation).</p>
-    */
+    /**
+     * <p>The ARN of the subscription, if the service was able to create a subscription
+     * immediately (without requiring endpoint owner confirmation).</p>
+     */
     inline SubscribeResult& WithSubscriptionArn(Aws::String&& value) { SetSubscriptionArn(value); return *this;}
 
-    /*
-     <p>The ARN of the subscription, if the service was able to create a subscription immediately (without requiring endpoint owner confirmation).</p>
-    */
+    /**
+     * <p>The ARN of the subscription, if the service was able to create a subscription
+     * immediately (without requiring endpoint owner confirmation).</p>
+     */
     inline SubscribeResult& WithSubscriptionArn(const char* value) { SetSubscriptionArn(value); return *this;}
 
     

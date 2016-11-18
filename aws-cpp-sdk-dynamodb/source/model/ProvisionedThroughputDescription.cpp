@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::DynamoDB::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace DynamoDB
+{
+namespace Model
+{
 
 ProvisionedThroughputDescription::ProvisionedThroughputDescription() : 
     m_lastIncreaseDateTimeHasBeenSet(false),
@@ -50,14 +56,14 @@ ProvisionedThroughputDescription& ProvisionedThroughputDescription::operator =(c
 {
   if(jsonValue.ValueExists("LastIncreaseDateTime"))
   {
-    m_lastIncreaseDateTime = jsonValue.GetString("LastIncreaseDateTime");
+    m_lastIncreaseDateTime = jsonValue.GetDouble("LastIncreaseDateTime");
 
     m_lastIncreaseDateTimeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("LastDecreaseDateTime"))
   {
-    m_lastDecreaseDateTime = jsonValue.GetString("LastDecreaseDateTime");
+    m_lastDecreaseDateTime = jsonValue.GetDouble("LastDecreaseDateTime");
 
     m_lastDecreaseDateTimeHasBeenSet = true;
   }
@@ -92,14 +98,12 @@ JsonValue ProvisionedThroughputDescription::Jsonize() const
 
   if(m_lastIncreaseDateTimeHasBeenSet)
   {
-   payload.WithString("LastIncreaseDateTime", m_lastIncreaseDateTime);
-
+   payload.WithDouble("LastIncreaseDateTime", m_lastIncreaseDateTime.SecondsWithMSPrecision());
   }
 
   if(m_lastDecreaseDateTimeHasBeenSet)
   {
-   payload.WithString("LastDecreaseDateTime", m_lastDecreaseDateTime);
-
+   payload.WithDouble("LastDecreaseDateTime", m_lastDecreaseDateTime.SecondsWithMSPrecision());
   }
 
   if(m_numberOfDecreasesTodayHasBeenSet)
@@ -120,5 +124,9 @@ JsonValue ProvisionedThroughputDescription::Jsonize() const
 
   }
 
-  return std::move(payload);
+  return payload;
 }
+
+} // namespace Model
+} // namespace DynamoDB
+} // namespace Aws

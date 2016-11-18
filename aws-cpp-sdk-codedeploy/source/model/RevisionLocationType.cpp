@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -14,50 +14,66 @@
 */
 #include <aws/codedeploy/model/RevisionLocationType.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
+#include <aws/core/utils/EnumParseOverflowContainer.h>
 
 using namespace Aws::Utils;
 
-static const int S3_HASH = HashingUtils::HashString("S3");
-static const int GitHub_HASH = HashingUtils::HashString("GitHub");
 
 namespace Aws
 {
-namespace CodeDeploy
-{
-namespace Model
-{
-namespace RevisionLocationTypeMapper
-{
-RevisionLocationType GetRevisionLocationTypeForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-
-  if (hashCode == S3_HASH)
+  namespace CodeDeploy
   {
-    return RevisionLocationType::S3;
-  }
-  else if (hashCode == GitHub_HASH)
-  {
-    return RevisionLocationType::GitHub;
-  }
+    namespace Model
+    {
+      namespace RevisionLocationTypeMapper
+      {
 
-  return RevisionLocationType::NOT_SET;
-}
+        static const int S3_HASH = HashingUtils::HashString("S3");
+        static const int GitHub_HASH = HashingUtils::HashString("GitHub");
 
-Aws::String GetNameForRevisionLocationType(RevisionLocationType value)
-{
-  switch(value)
-  {
-  case RevisionLocationType::S3:
-    return "S3";
-  case RevisionLocationType::GitHub:
-    return "GitHub";
-  default:
-    return "";
-  }
-}
 
-} // namespace RevisionLocationTypeMapper
-} // namespace Model
-} // namespace CodeDeploy
+        RevisionLocationType GetRevisionLocationTypeForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == S3_HASH)
+          {
+            return RevisionLocationType::S3;
+          }
+          else if (hashCode == GitHub_HASH)
+          {
+            return RevisionLocationType::GitHub;
+          }
+          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<RevisionLocationType>(hashCode);
+          }
+
+          return RevisionLocationType::NOT_SET;
+        }
+
+        Aws::String GetNameForRevisionLocationType(RevisionLocationType enumValue)
+        {
+          switch(enumValue)
+          {
+          case RevisionLocationType::S3:
+            return "S3";
+          case RevisionLocationType::GitHub:
+            return "GitHub";
+          default:
+            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace RevisionLocationTypeMapper
+    } // namespace Model
+  } // namespace CodeDeploy
 } // namespace Aws

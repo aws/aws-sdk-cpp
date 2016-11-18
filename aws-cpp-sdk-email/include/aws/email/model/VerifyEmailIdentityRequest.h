@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,49 +24,51 @@ namespace SES
 namespace Model
 {
 
-  /*
-    <p>Represents a request instructing the service to begin email address verification.</p>
-  */
+  /**
+   * <p>Represents a request to begin email address verification with Amazon SES. For
+   * information about email address verification, see the <a
+   * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses.html">Amazon
+   * SES Developer Guide</a>.</p>
+   */
   class AWS_SES_API VerifyEmailIdentityRequest : public SESRequest
   {
   public:
     VerifyEmailIdentityRequest();
     Aws::String SerializePayload() const override;
 
-
-    /*
-     <p>The email address to be verified.</p>
-    */
+    /**
+     * <p>The email address to be verified.</p>
+     */
     inline const Aws::String& GetEmailAddress() const{ return m_emailAddress; }
 
-    /*
-     <p>The email address to be verified.</p>
-    */
+    /**
+     * <p>The email address to be verified.</p>
+     */
     inline void SetEmailAddress(const Aws::String& value) { m_emailAddressHasBeenSet = true; m_emailAddress = value; }
 
-    /*
-     <p>The email address to be verified.</p>
-    */
+    /**
+     * <p>The email address to be verified.</p>
+     */
     inline void SetEmailAddress(Aws::String&& value) { m_emailAddressHasBeenSet = true; m_emailAddress = value; }
 
-    /*
-     <p>The email address to be verified.</p>
-    */
+    /**
+     * <p>The email address to be verified.</p>
+     */
     inline void SetEmailAddress(const char* value) { m_emailAddressHasBeenSet = true; m_emailAddress.assign(value); }
 
-    /*
-     <p>The email address to be verified.</p>
-    */
+    /**
+     * <p>The email address to be verified.</p>
+     */
     inline VerifyEmailIdentityRequest& WithEmailAddress(const Aws::String& value) { SetEmailAddress(value); return *this;}
 
-    /*
-     <p>The email address to be verified.</p>
-    */
+    /**
+     * <p>The email address to be verified.</p>
+     */
     inline VerifyEmailIdentityRequest& WithEmailAddress(Aws::String&& value) { SetEmailAddress(value); return *this;}
 
-    /*
-     <p>The email address to be verified.</p>
-    */
+    /**
+     * <p>The email address to be verified.</p>
+     */
     inline VerifyEmailIdentityRequest& WithEmailAddress(const char* value) { SetEmailAddress(value); return *this;}
 
   private:

@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,48 +24,55 @@ namespace SQS
 namespace Model
 {
 
-  /*
-  */
+  /**
+   * <p/>
+   */
   class AWS_SQS_API PurgeQueueRequest : public SQSRequest
   {
   public:
     PurgeQueueRequest();
     Aws::String SerializePayload() const override;
 
-
-    /*
-     <p>The queue URL of the queue to delete the messages from when using the <code>PurgeQueue</code> API.</p>
-    */
+    /**
+     * <p>The queue URL of the queue to delete the messages from when using the
+     * <code>PurgeQueue</code> API.</p> <p>Queue URLs are case-sensitive.</p>
+     */
     inline const Aws::String& GetQueueUrl() const{ return m_queueUrl; }
 
-    /*
-     <p>The queue URL of the queue to delete the messages from when using the <code>PurgeQueue</code> API.</p>
-    */
+    /**
+     * <p>The queue URL of the queue to delete the messages from when using the
+     * <code>PurgeQueue</code> API.</p> <p>Queue URLs are case-sensitive.</p>
+     */
     inline void SetQueueUrl(const Aws::String& value) { m_queueUrlHasBeenSet = true; m_queueUrl = value; }
 
-    /*
-     <p>The queue URL of the queue to delete the messages from when using the <code>PurgeQueue</code> API.</p>
-    */
+    /**
+     * <p>The queue URL of the queue to delete the messages from when using the
+     * <code>PurgeQueue</code> API.</p> <p>Queue URLs are case-sensitive.</p>
+     */
     inline void SetQueueUrl(Aws::String&& value) { m_queueUrlHasBeenSet = true; m_queueUrl = value; }
 
-    /*
-     <p>The queue URL of the queue to delete the messages from when using the <code>PurgeQueue</code> API.</p>
-    */
+    /**
+     * <p>The queue URL of the queue to delete the messages from when using the
+     * <code>PurgeQueue</code> API.</p> <p>Queue URLs are case-sensitive.</p>
+     */
     inline void SetQueueUrl(const char* value) { m_queueUrlHasBeenSet = true; m_queueUrl.assign(value); }
 
-    /*
-     <p>The queue URL of the queue to delete the messages from when using the <code>PurgeQueue</code> API.</p>
-    */
+    /**
+     * <p>The queue URL of the queue to delete the messages from when using the
+     * <code>PurgeQueue</code> API.</p> <p>Queue URLs are case-sensitive.</p>
+     */
     inline PurgeQueueRequest& WithQueueUrl(const Aws::String& value) { SetQueueUrl(value); return *this;}
 
-    /*
-     <p>The queue URL of the queue to delete the messages from when using the <code>PurgeQueue</code> API.</p>
-    */
+    /**
+     * <p>The queue URL of the queue to delete the messages from when using the
+     * <code>PurgeQueue</code> API.</p> <p>Queue URLs are case-sensitive.</p>
+     */
     inline PurgeQueueRequest& WithQueueUrl(Aws::String&& value) { SetQueueUrl(value); return *this;}
 
-    /*
-     <p>The queue URL of the queue to delete the messages from when using the <code>PurgeQueue</code> API.</p>
-    */
+    /**
+     * <p>The queue URL of the queue to delete the messages from when using the
+     * <code>PurgeQueue</code> API.</p> <p>Queue URLs are case-sensitive.</p>
+     */
     inline PurgeQueueRequest& WithQueueUrl(const char* value) { SetQueueUrl(value); return *this;}
 
   private:

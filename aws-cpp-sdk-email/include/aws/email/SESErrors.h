@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -21,7 +21,7 @@ namespace Aws
 {
 namespace SES
 {
-enum class AWS_SES_API SESErrors
+enum class SESErrors
 {
   //From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
@@ -44,16 +44,30 @@ enum class AWS_SES_API SESErrors
   RESOURCE_NOT_FOUND = 16,
   UNRECOGNIZED_CLIENT = 17,
   MALFORMED_QUERY_STRING = 18,
+  SLOW_DOWN = 19,
+  REQUEST_TIME_TOO_SKEWED = 20,
+  INVALID_SIGNATURE = 21,
+  SIGNATURE_DOES_NOT_MATCH = 22,
   NETWORK_CONNECTION = 99,
+  
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
   ALREADY_EXISTS= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   CANNOT_DELETE,
+  CONFIGURATION_SET_ALREADY_EXISTS,
+  CONFIGURATION_SET_DOES_NOT_EXIST,
+  EVENT_DESTINATION_ALREADY_EXISTS,
+  EVENT_DESTINATION_DOES_NOT_EXIST,
+  INVALID_CLOUD_WATCH_DESTINATION,
+  INVALID_CONFIGURATION_SET,
+  INVALID_FIREHOSE_DESTINATION,
+  INVALID_LAMBDA_FUNCTION,
   INVALID_POLICY,
-  INVALID_S3_BUCKET,
+  INVALID_S3_CONFIGURATION,
   INVALID_SNS_TOPIC,
   LIMIT_EXCEEDED,
+  MAIL_FROM_DOMAIN_NOT_VERIFIED,
   MESSAGE_REJECTED,
   RULE_DOES_NOT_EXIST,
   RULE_SET_DOES_NOT_EXIST

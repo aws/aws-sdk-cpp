@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,9 +24,9 @@ namespace CodeDeploy
 namespace Model
 {
 
-  /*
-    <p>Represents the input of a get on-premises instance operation.</p>
-  */
+  /**
+   * <p>Represents the input of a get on-premises instance operation.</p>
+   */
   class AWS_CODEDEPLOY_API GetOnPremisesInstanceRequest : public CodeDeployRequest
   {
   public:
@@ -35,40 +35,39 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
-    /*
-     <p>The name of the on-premises instance to get information about</p>
-    */
+    /**
+     * <p>The name of the on-premises instance about which to get information.</p>
+     */
     inline const Aws::String& GetInstanceName() const{ return m_instanceName; }
 
-    /*
-     <p>The name of the on-premises instance to get information about</p>
-    */
+    /**
+     * <p>The name of the on-premises instance about which to get information.</p>
+     */
     inline void SetInstanceName(const Aws::String& value) { m_instanceNameHasBeenSet = true; m_instanceName = value; }
 
-    /*
-     <p>The name of the on-premises instance to get information about</p>
-    */
+    /**
+     * <p>The name of the on-premises instance about which to get information.</p>
+     */
     inline void SetInstanceName(Aws::String&& value) { m_instanceNameHasBeenSet = true; m_instanceName = value; }
 
-    /*
-     <p>The name of the on-premises instance to get information about</p>
-    */
+    /**
+     * <p>The name of the on-premises instance about which to get information.</p>
+     */
     inline void SetInstanceName(const char* value) { m_instanceNameHasBeenSet = true; m_instanceName.assign(value); }
 
-    /*
-     <p>The name of the on-premises instance to get information about</p>
-    */
+    /**
+     * <p>The name of the on-premises instance about which to get information.</p>
+     */
     inline GetOnPremisesInstanceRequest& WithInstanceName(const Aws::String& value) { SetInstanceName(value); return *this;}
 
-    /*
-     <p>The name of the on-premises instance to get information about</p>
-    */
+    /**
+     * <p>The name of the on-premises instance about which to get information.</p>
+     */
     inline GetOnPremisesInstanceRequest& WithInstanceName(Aws::String&& value) { SetInstanceName(value); return *this;}
 
-    /*
-     <p>The name of the on-premises instance to get information about</p>
-    */
+    /**
+     * <p>The name of the on-premises instance about which to get information.</p>
+     */
     inline GetOnPremisesInstanceRequest& WithInstanceName(const char* value) { SetInstanceName(value); return *this;}
 
   private:

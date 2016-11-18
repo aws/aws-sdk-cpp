@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,18 +19,26 @@
 
 #include <utility>
 
-using namespace Aws::EC2::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
+
 ProductCode::ProductCode() : 
     m_productCodeIdHasBeenSet(false),
+    m_productCodeType(ProductCodeValues::NOT_SET),
     m_productCodeTypeHasBeenSet(false)
 {
 }
 
 ProductCode::ProductCode(const XmlNode& xmlNode) : 
     m_productCodeIdHasBeenSet(false),
+    m_productCodeType(ProductCodeValues::NOT_SET),
     m_productCodeTypeHasBeenSet(false)
 {
   *this = xmlNode;
@@ -65,10 +73,12 @@ void ProductCode::OutputToStream(Aws::OStream& oStream, const char* location, un
   {
       oStream << location << index << locationValue << ".ProductCodeId=" << StringUtils::URLEncode(m_productCodeId.c_str()) << "&";
   }
+
   if(m_productCodeTypeHasBeenSet)
   {
       oStream << location << index << locationValue << ".ProductCodeType=" << ProductCodeValuesMapper::GetNameForProductCodeValues(m_productCodeType) << "&";
   }
+
 }
 
 void ProductCode::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -82,3 +92,7 @@ void ProductCode::OutputToStream(Aws::OStream& oStream, const char* location) co
       oStream << location << ".ProductCodeType=" << ProductCodeValuesMapper::GetNameForProductCodeValues(m_productCodeType) << "&";
   }
 }
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

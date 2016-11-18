@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::EC2::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
 
 EbsInstanceBlockDeviceSpecification::EbsInstanceBlockDeviceSpecification() : 
     m_volumeIdHasBeenSet(false),
@@ -67,10 +73,12 @@ void EbsInstanceBlockDeviceSpecification::OutputToStream(Aws::OStream& oStream, 
   {
       oStream << location << index << locationValue << ".VolumeId=" << StringUtils::URLEncode(m_volumeId.c_str()) << "&";
   }
+
   if(m_deleteOnTerminationHasBeenSet)
   {
       oStream << location << index << locationValue << ".DeleteOnTermination=" << m_deleteOnTermination << "&";
   }
+
 }
 
 void EbsInstanceBlockDeviceSpecification::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -84,3 +92,7 @@ void EbsInstanceBlockDeviceSpecification::OutputToStream(Aws::OStream& oStream, 
       oStream << location << ".DeleteOnTermination=" << m_deleteOnTermination << "&";
   }
 }
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

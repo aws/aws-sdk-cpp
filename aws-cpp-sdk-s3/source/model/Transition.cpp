@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,24 +19,30 @@
 
 #include <utility>
 
-using namespace Aws::S3::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
+namespace Aws
+{
+namespace S3
+{
+namespace Model
+{
+
 Transition::Transition() : 
-    m_date(0.0),
     m_dateHasBeenSet(false),
     m_days(0),
     m_daysHasBeenSet(false),
+    m_storageClass(TransitionStorageClass::NOT_SET),
     m_storageClassHasBeenSet(false)
 {
 }
 
 Transition::Transition(const XmlNode& xmlNode) : 
-    m_date(0.0),
     m_dateHasBeenSet(false),
     m_days(0),
     m_daysHasBeenSet(false),
+    m_storageClass(TransitionStorageClass::NOT_SET),
     m_storageClassHasBeenSet(false)
 {
   *this = xmlNode;
@@ -51,7 +57,7 @@ Transition& Transition::operator =(const XmlNode& xmlNode)
     XmlNode dateNode = resultNode.FirstChild("Date");
     if(!dateNode.IsNull())
     {
-      m_date = StringUtils::ConvertToDouble(StringUtils::Trim(dateNode.GetText().c_str()).c_str());
+      m_date = DateTime(StringUtils::Trim(dateNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_dateHasBeenSet = true;
     }
     XmlNode daysNode = resultNode.FirstChild("Days");
@@ -76,10 +82,8 @@ void Transition::AddToNode(XmlNode& parentNode) const
   Aws::StringStream ss;
   if(m_dateHasBeenSet)
   {
-   XmlNode dateNode = parentNode.CreateChildElement("Date");
-  ss << m_date;
-   dateNode.SetText(ss.str());
-  ss.str("");
+     XmlNode dateNode = parentNode.CreateChildElement("Date");
+     dateNode.SetText(m_date.ToGmtString(DateFormat::ISO_8601));
   }
 
   if(m_daysHasBeenSet)
@@ -97,3 +101,7 @@ void Transition::AddToNode(XmlNode& parentNode) const
   }
 
 }
+
+} // namespace Model
+} // namespace S3
+} // namespace Aws

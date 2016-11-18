@@ -15,6 +15,7 @@
 
 package aws.coretests;
 
+import android.content.Context;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -128,11 +129,7 @@ public class TestActivity extends ActionBarActivity {
                 Log.i("AwsNativeSDK", "Loading common libraries ");
 
                 //System.loadLibrary("c");
-                System.loadLibrary("gnustl_shared");
-                System.loadLibrary("z");
-                System.loadLibrary("crypto");
-                System.loadLibrary("ssl");
-                System.loadLibrary("curl");
+                System.loadLibrary("c++_shared");
                 System.loadLibrary("log");
                 System.loadLibrary("aws-cpp-sdk-core");
                 System.loadLibrary("testing-resources");
@@ -154,7 +151,7 @@ public class TestActivity extends ActionBarActivity {
 
             Log.i("AwsNativeSDK", "Starting  tests");
 
-            boolean success = runTests() == 0;
+            boolean success = runTests((Context)m_source) == 0;
             if(success) {
                 Log.i("AwsNativeSDK", "Tests Succeeded!");
             } else {
@@ -171,7 +168,7 @@ public class TestActivity extends ActionBarActivity {
         }
     }
 
-    public native int runTests();
+    static public native int runTests(Context context);
 
     @Override
     public void onDestroy()
@@ -187,7 +184,7 @@ public class TestActivity extends ActionBarActivity {
 
         String testName = getIntent().getStringExtra("test");
         if(testName == null) {
-            testName = "dynamodb";
+            testName = "unified";
         }
         new TestTask(this).execute(testName);
     }

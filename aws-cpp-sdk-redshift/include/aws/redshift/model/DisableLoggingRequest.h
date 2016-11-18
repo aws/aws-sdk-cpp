@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,49 +24,55 @@ namespace Redshift
 namespace Model
 {
 
-  /*
-    <p> </p>
-  */
+  /**
+   * <p/>
+   */
   class AWS_REDSHIFT_API DisableLoggingRequest : public RedshiftRequest
   {
   public:
     DisableLoggingRequest();
     Aws::String SerializePayload() const override;
 
-
-    /*
-     <p> The identifier of the cluster on which logging is to be stopped. </p> <p>Example: <code>examplecluster</code></p>
-    */
+    /**
+     * <p>The identifier of the cluster on which logging is to be stopped.</p>
+     * <p>Example: <code>examplecluster</code> </p>
+     */
     inline const Aws::String& GetClusterIdentifier() const{ return m_clusterIdentifier; }
 
-    /*
-     <p> The identifier of the cluster on which logging is to be stopped. </p> <p>Example: <code>examplecluster</code></p>
-    */
+    /**
+     * <p>The identifier of the cluster on which logging is to be stopped.</p>
+     * <p>Example: <code>examplecluster</code> </p>
+     */
     inline void SetClusterIdentifier(const Aws::String& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = value; }
 
-    /*
-     <p> The identifier of the cluster on which logging is to be stopped. </p> <p>Example: <code>examplecluster</code></p>
-    */
+    /**
+     * <p>The identifier of the cluster on which logging is to be stopped.</p>
+     * <p>Example: <code>examplecluster</code> </p>
+     */
     inline void SetClusterIdentifier(Aws::String&& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = value; }
 
-    /*
-     <p> The identifier of the cluster on which logging is to be stopped. </p> <p>Example: <code>examplecluster</code></p>
-    */
+    /**
+     * <p>The identifier of the cluster on which logging is to be stopped.</p>
+     * <p>Example: <code>examplecluster</code> </p>
+     */
     inline void SetClusterIdentifier(const char* value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier.assign(value); }
 
-    /*
-     <p> The identifier of the cluster on which logging is to be stopped. </p> <p>Example: <code>examplecluster</code></p>
-    */
+    /**
+     * <p>The identifier of the cluster on which logging is to be stopped.</p>
+     * <p>Example: <code>examplecluster</code> </p>
+     */
     inline DisableLoggingRequest& WithClusterIdentifier(const Aws::String& value) { SetClusterIdentifier(value); return *this;}
 
-    /*
-     <p> The identifier of the cluster on which logging is to be stopped. </p> <p>Example: <code>examplecluster</code></p>
-    */
+    /**
+     * <p>The identifier of the cluster on which logging is to be stopped.</p>
+     * <p>Example: <code>examplecluster</code> </p>
+     */
     inline DisableLoggingRequest& WithClusterIdentifier(Aws::String&& value) { SetClusterIdentifier(value); return *this;}
 
-    /*
-     <p> The identifier of the cluster on which logging is to be stopped. </p> <p>Example: <code>examplecluster</code></p>
-    */
+    /**
+     * <p>The identifier of the cluster on which logging is to be stopped.</p>
+     * <p>Example: <code>examplecluster</code> </p>
+     */
     inline DisableLoggingRequest& WithClusterIdentifier(const char* value) { SetClusterIdentifier(value); return *this;}
 
   private:

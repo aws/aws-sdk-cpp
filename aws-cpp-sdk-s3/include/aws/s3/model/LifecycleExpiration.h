@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -14,6 +14,7 @@
 */
 #pragma once
 #include <aws/s3/S3_EXPORTS.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -28,9 +29,7 @@ namespace S3
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
+
   class AWS_S3_API LifecycleExpiration
   {
   public:
@@ -40,41 +39,85 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
-    /*
-     Indicates at what date the object is to be moved or deleted. Should be in GMT ISO 8601 Format.
-    */
-    inline double GetDate() const{ return m_date; }
+    /**
+     * Indicates at what date the object is to be moved or deleted. Should be in GMT
+     * ISO 8601 Format.
+     */
+    inline const Aws::Utils::DateTime& GetDate() const{ return m_date; }
 
-    /*
-     Indicates at what date the object is to be moved or deleted. Should be in GMT ISO 8601 Format.
-    */
-    inline void SetDate(double value) { m_dateHasBeenSet = true; m_date = value; }
+    /**
+     * Indicates at what date the object is to be moved or deleted. Should be in GMT
+     * ISO 8601 Format.
+     */
+    inline void SetDate(const Aws::Utils::DateTime& value) { m_dateHasBeenSet = true; m_date = value; }
 
-    /*
-     Indicates at what date the object is to be moved or deleted. Should be in GMT ISO 8601 Format.
-    */
-    inline LifecycleExpiration& WithDate(double value) { SetDate(value); return *this;}
+    /**
+     * Indicates at what date the object is to be moved or deleted. Should be in GMT
+     * ISO 8601 Format.
+     */
+    inline void SetDate(Aws::Utils::DateTime&& value) { m_dateHasBeenSet = true; m_date = value; }
 
-    /*
-     Indicates the lifetime, in days, of the objects that are subject to the rule. The value must be a non-zero positive integer.
-    */
-    inline long GetDays() const{ return m_days; }
+    /**
+     * Indicates at what date the object is to be moved or deleted. Should be in GMT
+     * ISO 8601 Format.
+     */
+    inline LifecycleExpiration& WithDate(const Aws::Utils::DateTime& value) { SetDate(value); return *this;}
 
-    /*
-     Indicates the lifetime, in days, of the objects that are subject to the rule. The value must be a non-zero positive integer.
-    */
-    inline void SetDays(long value) { m_daysHasBeenSet = true; m_days = value; }
+    /**
+     * Indicates at what date the object is to be moved or deleted. Should be in GMT
+     * ISO 8601 Format.
+     */
+    inline LifecycleExpiration& WithDate(Aws::Utils::DateTime&& value) { SetDate(value); return *this;}
 
-    /*
-     Indicates the lifetime, in days, of the objects that are subject to the rule. The value must be a non-zero positive integer.
-    */
-    inline LifecycleExpiration& WithDays(long value) { SetDays(value); return *this;}
+    /**
+     * Indicates the lifetime, in days, of the objects that are subject to the rule.
+     * The value must be a non-zero positive integer.
+     */
+    inline int GetDays() const{ return m_days; }
+
+    /**
+     * Indicates the lifetime, in days, of the objects that are subject to the rule.
+     * The value must be a non-zero positive integer.
+     */
+    inline void SetDays(int value) { m_daysHasBeenSet = true; m_days = value; }
+
+    /**
+     * Indicates the lifetime, in days, of the objects that are subject to the rule.
+     * The value must be a non-zero positive integer.
+     */
+    inline LifecycleExpiration& WithDays(int value) { SetDays(value); return *this;}
+
+    /**
+     * Indicates whether Amazon S3 will remove a delete marker with no noncurrent
+     * versions. If set to true, the delete marker will be expired; if set to false the
+     * policy takes no action. This cannot be specified with Days or Date in a
+     * Lifecycle Expiration Policy.
+     */
+    inline bool GetExpiredObjectDeleteMarker() const{ return m_expiredObjectDeleteMarker; }
+
+    /**
+     * Indicates whether Amazon S3 will remove a delete marker with no noncurrent
+     * versions. If set to true, the delete marker will be expired; if set to false the
+     * policy takes no action. This cannot be specified with Days or Date in a
+     * Lifecycle Expiration Policy.
+     */
+    inline void SetExpiredObjectDeleteMarker(bool value) { m_expiredObjectDeleteMarkerHasBeenSet = true; m_expiredObjectDeleteMarker = value; }
+
+    /**
+     * Indicates whether Amazon S3 will remove a delete marker with no noncurrent
+     * versions. If set to true, the delete marker will be expired; if set to false the
+     * policy takes no action. This cannot be specified with Days or Date in a
+     * Lifecycle Expiration Policy.
+     */
+    inline LifecycleExpiration& WithExpiredObjectDeleteMarker(bool value) { SetExpiredObjectDeleteMarker(value); return *this;}
 
   private:
-    double m_date;
+    Aws::Utils::DateTime m_date;
     bool m_dateHasBeenSet;
-    long m_days;
+    int m_days;
     bool m_daysHasBeenSet;
+    bool m_expiredObjectDeleteMarker;
+    bool m_expiredObjectDeleteMarkerHasBeenSet;
   };
 
 } // namespace Model

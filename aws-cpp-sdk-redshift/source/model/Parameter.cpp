@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::Redshift::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace Redshift
+{
+namespace Model
+{
 
 Parameter::Parameter() : 
     m_parameterNameHasBeenSet(false),
@@ -30,6 +36,7 @@ Parameter::Parameter() :
     m_sourceHasBeenSet(false),
     m_dataTypeHasBeenSet(false),
     m_allowedValuesHasBeenSet(false),
+    m_applyType(ParameterApplyType::NOT_SET),
     m_applyTypeHasBeenSet(false),
     m_isModifiable(false),
     m_isModifiableHasBeenSet(false),
@@ -44,6 +51,7 @@ Parameter::Parameter(const XmlNode& xmlNode) :
     m_sourceHasBeenSet(false),
     m_dataTypeHasBeenSet(false),
     m_allowedValuesHasBeenSet(false),
+    m_applyType(ParameterApplyType::NOT_SET),
     m_applyTypeHasBeenSet(false),
     m_isModifiable(false),
     m_isModifiableHasBeenSet(false),
@@ -123,38 +131,47 @@ void Parameter::OutputToStream(Aws::OStream& oStream, const char* location, unsi
   {
       oStream << location << index << locationValue << ".ParameterName=" << StringUtils::URLEncode(m_parameterName.c_str()) << "&";
   }
+
   if(m_parameterValueHasBeenSet)
   {
       oStream << location << index << locationValue << ".ParameterValue=" << StringUtils::URLEncode(m_parameterValue.c_str()) << "&";
   }
+
   if(m_descriptionHasBeenSet)
   {
       oStream << location << index << locationValue << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
+
   if(m_sourceHasBeenSet)
   {
       oStream << location << index << locationValue << ".Source=" << StringUtils::URLEncode(m_source.c_str()) << "&";
   }
+
   if(m_dataTypeHasBeenSet)
   {
       oStream << location << index << locationValue << ".DataType=" << StringUtils::URLEncode(m_dataType.c_str()) << "&";
   }
+
   if(m_allowedValuesHasBeenSet)
   {
       oStream << location << index << locationValue << ".AllowedValues=" << StringUtils::URLEncode(m_allowedValues.c_str()) << "&";
   }
+
   if(m_applyTypeHasBeenSet)
   {
       oStream << location << index << locationValue << ".ApplyType=" << ParameterApplyTypeMapper::GetNameForParameterApplyType(m_applyType) << "&";
   }
+
   if(m_isModifiableHasBeenSet)
   {
       oStream << location << index << locationValue << ".IsModifiable=" << m_isModifiable << "&";
   }
+
   if(m_minimumEngineVersionHasBeenSet)
   {
       oStream << location << index << locationValue << ".MinimumEngineVersion=" << StringUtils::URLEncode(m_minimumEngineVersion.c_str()) << "&";
   }
+
 }
 
 void Parameter::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -196,3 +213,7 @@ void Parameter::OutputToStream(Aws::OStream& oStream, const char* location) cons
       oStream << location << ".MinimumEngineVersion=" << StringUtils::URLEncode(m_minimumEngineVersion.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace Redshift
+} // namespace Aws

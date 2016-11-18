@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::SQS::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace SQS
+{
+namespace Model
+{
 
 BatchResultErrorEntry::BatchResultErrorEntry() : 
     m_idHasBeenSet(false),
@@ -83,18 +89,22 @@ void BatchResultErrorEntry::OutputToStream(Aws::OStream& oStream, const char* lo
   {
       oStream << location << index << locationValue << ".Id=" << StringUtils::URLEncode(m_id.c_str()) << "&";
   }
+
   if(m_senderFaultHasBeenSet)
   {
       oStream << location << index << locationValue << ".SenderFault=" << m_senderFault << "&";
   }
+
   if(m_codeHasBeenSet)
   {
       oStream << location << index << locationValue << ".Code=" << StringUtils::URLEncode(m_code.c_str()) << "&";
   }
+
   if(m_messageHasBeenSet)
   {
       oStream << location << index << locationValue << ".Message=" << StringUtils::URLEncode(m_message.c_str()) << "&";
   }
+
 }
 
 void BatchResultErrorEntry::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -116,3 +126,7 @@ void BatchResultErrorEntry::OutputToStream(Aws::OStream& oStream, const char* lo
       oStream << location << ".Message=" << StringUtils::URLEncode(m_message.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace SQS
+} // namespace Aws

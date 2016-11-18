@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -32,9 +32,6 @@ namespace KMS
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
   class AWS_KMS_API CreateGrantResult
   {
   public:
@@ -42,74 +39,102 @@ namespace Model
     CreateGrantResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     CreateGrantResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p>For more information, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant Tokens</a>. </p>
-    */
+    /**
+     * <p>The grant token.</p> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
+     * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+     */
     inline const Aws::String& GetGrantToken() const{ return m_grantToken; }
 
-    /*
-     <p>For more information, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant Tokens</a>. </p>
-    */
+    /**
+     * <p>The grant token.</p> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
+     * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+     */
     inline void SetGrantToken(const Aws::String& value) { m_grantToken = value; }
 
-    /*
-     <p>For more information, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant Tokens</a>. </p>
-    */
+    /**
+     * <p>The grant token.</p> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
+     * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+     */
     inline void SetGrantToken(Aws::String&& value) { m_grantToken = value; }
 
-    /*
-     <p>For more information, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant Tokens</a>. </p>
-    */
+    /**
+     * <p>The grant token.</p> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
+     * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+     */
     inline void SetGrantToken(const char* value) { m_grantToken.assign(value); }
 
-    /*
-     <p>For more information, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant Tokens</a>. </p>
-    */
+    /**
+     * <p>The grant token.</p> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
+     * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+     */
     inline CreateGrantResult& WithGrantToken(const Aws::String& value) { SetGrantToken(value); return *this;}
 
-    /*
-     <p>For more information, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant Tokens</a>. </p>
-    */
+    /**
+     * <p>The grant token.</p> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
+     * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+     */
     inline CreateGrantResult& WithGrantToken(Aws::String&& value) { SetGrantToken(value); return *this;}
 
-    /*
-     <p>For more information, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant Tokens</a>. </p>
-    */
+    /**
+     * <p>The grant token.</p> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
+     * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+     */
     inline CreateGrantResult& WithGrantToken(const char* value) { SetGrantToken(value); return *this;}
 
-    /*
-     <p>Unique grant identifier. You can use the <i>GrantId</i> value to revoke a grant.</p>
-    */
+    /**
+     * <p>The unique identifier for the grant.</p> <p>You can use the
+     * <code>GrantId</code> in a subsequent <a>RetireGrant</a> or <a>RevokeGrant</a>
+     * operation.</p>
+     */
     inline const Aws::String& GetGrantId() const{ return m_grantId; }
 
-    /*
-     <p>Unique grant identifier. You can use the <i>GrantId</i> value to revoke a grant.</p>
-    */
+    /**
+     * <p>The unique identifier for the grant.</p> <p>You can use the
+     * <code>GrantId</code> in a subsequent <a>RetireGrant</a> or <a>RevokeGrant</a>
+     * operation.</p>
+     */
     inline void SetGrantId(const Aws::String& value) { m_grantId = value; }
 
-    /*
-     <p>Unique grant identifier. You can use the <i>GrantId</i> value to revoke a grant.</p>
-    */
+    /**
+     * <p>The unique identifier for the grant.</p> <p>You can use the
+     * <code>GrantId</code> in a subsequent <a>RetireGrant</a> or <a>RevokeGrant</a>
+     * operation.</p>
+     */
     inline void SetGrantId(Aws::String&& value) { m_grantId = value; }
 
-    /*
-     <p>Unique grant identifier. You can use the <i>GrantId</i> value to revoke a grant.</p>
-    */
+    /**
+     * <p>The unique identifier for the grant.</p> <p>You can use the
+     * <code>GrantId</code> in a subsequent <a>RetireGrant</a> or <a>RevokeGrant</a>
+     * operation.</p>
+     */
     inline void SetGrantId(const char* value) { m_grantId.assign(value); }
 
-    /*
-     <p>Unique grant identifier. You can use the <i>GrantId</i> value to revoke a grant.</p>
-    */
+    /**
+     * <p>The unique identifier for the grant.</p> <p>You can use the
+     * <code>GrantId</code> in a subsequent <a>RetireGrant</a> or <a>RevokeGrant</a>
+     * operation.</p>
+     */
     inline CreateGrantResult& WithGrantId(const Aws::String& value) { SetGrantId(value); return *this;}
 
-    /*
-     <p>Unique grant identifier. You can use the <i>GrantId</i> value to revoke a grant.</p>
-    */
+    /**
+     * <p>The unique identifier for the grant.</p> <p>You can use the
+     * <code>GrantId</code> in a subsequent <a>RetireGrant</a> or <a>RevokeGrant</a>
+     * operation.</p>
+     */
     inline CreateGrantResult& WithGrantId(Aws::String&& value) { SetGrantId(value); return *this;}
 
-    /*
-     <p>Unique grant identifier. You can use the <i>GrantId</i> value to revoke a grant.</p>
-    */
+    /**
+     * <p>The unique identifier for the grant.</p> <p>You can use the
+     * <code>GrantId</code> in a subsequent <a>RetireGrant</a> or <a>RevokeGrant</a>
+     * operation.</p>
+     */
     inline CreateGrantResult& WithGrantId(const char* value) { SetGrantId(value); return *this;}
 
   private:

@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,13 +19,20 @@
 
 #include <utility>
 
-using namespace Aws::S3::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace S3
+{
+namespace Model
+{
 
 ReplicationRule::ReplicationRule() : 
     m_iDHasBeenSet(false),
     m_prefixHasBeenSet(false),
+    m_status(ReplicationRuleStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_destinationHasBeenSet(false)
 {
@@ -34,6 +41,7 @@ ReplicationRule::ReplicationRule() :
 ReplicationRule::ReplicationRule(const XmlNode& xmlNode) : 
     m_iDHasBeenSet(false),
     m_prefixHasBeenSet(false),
+    m_status(ReplicationRuleStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_destinationHasBeenSet(false)
 {
@@ -103,3 +111,7 @@ void ReplicationRule::AddToNode(XmlNode& parentNode) const
   }
 
 }
+
+} // namespace Model
+} // namespace S3
+} // namespace Aws

@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::Redshift::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace Redshift
+{
+namespace Model
+{
 
 ClusterSubnetGroup::ClusterSubnetGroup() : 
     m_clusterSubnetGroupNameHasBeenSet(false),
@@ -109,36 +115,44 @@ void ClusterSubnetGroup::OutputToStream(Aws::OStream& oStream, const char* locat
   {
       oStream << location << index << locationValue << ".ClusterSubnetGroupName=" << StringUtils::URLEncode(m_clusterSubnetGroupName.c_str()) << "&";
   }
+
   if(m_descriptionHasBeenSet)
   {
       oStream << location << index << locationValue << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
+
   if(m_vpcIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
   }
+
   if(m_subnetGroupStatusHasBeenSet)
   {
       oStream << location << index << locationValue << ".SubnetGroupStatus=" << StringUtils::URLEncode(m_subnetGroupStatus.c_str()) << "&";
   }
+
   if(m_subnetsHasBeenSet)
   {
+      unsigned subnetsIdx = 1;
       for(auto& item : m_subnets)
       {
         Aws::StringStream subnetsSs;
-        subnetsSs << location << index << locationValue << ".Subnet";
+        subnetsSs << location << index << locationValue << ".Subnet." << subnetsIdx++;
         item.OutputToStream(oStream, subnetsSs.str().c_str());
       }
   }
+
   if(m_tagsHasBeenSet)
   {
+      unsigned tagsIdx = 1;
       for(auto& item : m_tags)
       {
         Aws::StringStream tagsSs;
-        tagsSs << location << index << locationValue << ".Tag";
+        tagsSs << location << index << locationValue << ".Tag." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
+
 }
 
 void ClusterSubnetGroup::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -161,20 +175,26 @@ void ClusterSubnetGroup::OutputToStream(Aws::OStream& oStream, const char* locat
   }
   if(m_subnetsHasBeenSet)
   {
+      unsigned subnetsIdx = 1;
       for(auto& item : m_subnets)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".Subnet";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream subnetsSs;
+        subnetsSs << location <<  ".Subnet." << subnetsIdx++;
+        item.OutputToStream(oStream, subnetsSs.str().c_str());
       }
   }
   if(m_tagsHasBeenSet)
   {
+      unsigned tagsIdx = 1;
       for(auto& item : m_tags)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".Tag";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream tagsSs;
+        tagsSs << location <<  ".Tag." << tagsIdx++;
+        item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
 }
+
+} // namespace Model
+} // namespace Redshift
+} // namespace Aws

@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::ElasticBeanstalk::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace ElasticBeanstalk
+{
+namespace Model
+{
 
 SystemStatus::SystemStatus() : 
     m_cPUUtilizationHasBeenSet(false),
@@ -73,13 +79,16 @@ void SystemStatus::OutputToStream(Aws::OStream& oStream, const char* location, u
       cPUUtilizationLocationAndMemberSs << location << index << locationValue << ".CPUUtilization";
       m_cPUUtilization.OutputToStream(oStream, cPUUtilizationLocationAndMemberSs.str().c_str());
   }
+
   if(m_loadAverageHasBeenSet)
   {
+      unsigned loadAverageIdx = 1;
       for(auto& item : m_loadAverage)
       {
-        oStream << location << index << locationValue << ".LoadAverage=" << item << "&";
+        oStream << location << index << locationValue << ".LoadAverage.member." << loadAverageIdx++ << "=" << StringUtils::URLEncode(item) << "&";
       }
   }
+
 }
 
 void SystemStatus::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -92,9 +101,14 @@ void SystemStatus::OutputToStream(Aws::OStream& oStream, const char* location) c
   }
   if(m_loadAverageHasBeenSet)
   {
+      unsigned loadAverageIdx = 1;
       for(auto& item : m_loadAverage)
       {
-        oStream << location << ".LoadAverage=" << item << "&";
+          oStream << location << ".LoadAverage.member." << loadAverageIdx++ << "=" << StringUtils::URLEncode(item) << "&";
       }
   }
 }
+
+} // namespace Model
+} // namespace ElasticBeanstalk
+} // namespace Aws

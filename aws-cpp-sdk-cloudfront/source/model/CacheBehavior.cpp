@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,15 +19,22 @@
 
 #include <utility>
 
-using namespace Aws::CloudFront::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace CloudFront
+{
+namespace Model
+{
 
 CacheBehavior::CacheBehavior() : 
     m_pathPatternHasBeenSet(false),
     m_targetOriginIdHasBeenSet(false),
     m_forwardedValuesHasBeenSet(false),
     m_trustedSignersHasBeenSet(false),
+    m_viewerProtocolPolicy(ViewerProtocolPolicy::NOT_SET),
     m_viewerProtocolPolicyHasBeenSet(false),
     m_minTTL(0),
     m_minTTLHasBeenSet(false),
@@ -37,7 +44,9 @@ CacheBehavior::CacheBehavior() :
     m_defaultTTL(0),
     m_defaultTTLHasBeenSet(false),
     m_maxTTL(0),
-    m_maxTTLHasBeenSet(false)
+    m_maxTTLHasBeenSet(false),
+    m_compress(false),
+    m_compressHasBeenSet(false)
 {
 }
 
@@ -46,6 +55,7 @@ CacheBehavior::CacheBehavior(const XmlNode& xmlNode) :
     m_targetOriginIdHasBeenSet(false),
     m_forwardedValuesHasBeenSet(false),
     m_trustedSignersHasBeenSet(false),
+    m_viewerProtocolPolicy(ViewerProtocolPolicy::NOT_SET),
     m_viewerProtocolPolicyHasBeenSet(false),
     m_minTTL(0),
     m_minTTLHasBeenSet(false),
@@ -55,7 +65,9 @@ CacheBehavior::CacheBehavior(const XmlNode& xmlNode) :
     m_defaultTTL(0),
     m_defaultTTLHasBeenSet(false),
     m_maxTTL(0),
-    m_maxTTLHasBeenSet(false)
+    m_maxTTLHasBeenSet(false),
+    m_compress(false),
+    m_compressHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -125,6 +137,12 @@ CacheBehavior& CacheBehavior::operator =(const XmlNode& xmlNode)
     {
       m_maxTTL = StringUtils::ConvertToInt64(StringUtils::Trim(maxTTLNode.GetText().c_str()).c_str());
       m_maxTTLHasBeenSet = true;
+    }
+    XmlNode compressNode = resultNode.FirstChild("Compress");
+    if(!compressNode.IsNull())
+    {
+      m_compress = StringUtils::ConvertToBool(StringUtils::Trim(compressNode.GetText().c_str()).c_str());
+      m_compressHasBeenSet = true;
     }
   }
 
@@ -202,4 +220,16 @@ void CacheBehavior::AddToNode(XmlNode& parentNode) const
   ss.str("");
   }
 
+  if(m_compressHasBeenSet)
+  {
+   XmlNode compressNode = parentNode.CreateChildElement("Compress");
+  ss << m_compress;
+   compressNode.SetText(ss.str());
+  ss.str("");
+  }
+
 }
+
+} // namespace Model
+} // namespace CloudFront
+} // namespace Aws

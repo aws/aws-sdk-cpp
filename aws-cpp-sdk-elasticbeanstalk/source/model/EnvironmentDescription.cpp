@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::ElasticBeanstalk::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace ElasticBeanstalk
+{
+namespace Model
+{
 
 EnvironmentDescription::EnvironmentDescription() : 
     m_environmentNameHasBeenSet(false),
@@ -33,17 +39,19 @@ EnvironmentDescription::EnvironmentDescription() :
     m_descriptionHasBeenSet(false),
     m_endpointURLHasBeenSet(false),
     m_cNAMEHasBeenSet(false),
-    m_dateCreated(0.0),
     m_dateCreatedHasBeenSet(false),
-    m_dateUpdated(0.0),
     m_dateUpdatedHasBeenSet(false),
+    m_status(EnvironmentStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_abortableOperationInProgress(false),
     m_abortableOperationInProgressHasBeenSet(false),
+    m_health(EnvironmentHealth::NOT_SET),
     m_healthHasBeenSet(false),
+    m_healthStatus(EnvironmentHealthStatus::NOT_SET),
     m_healthStatusHasBeenSet(false),
     m_resourcesHasBeenSet(false),
     m_tierHasBeenSet(false),
+    m_environmentLinksHasBeenSet(false),
     m_responseMetadataHasBeenSet(false)
 {
 }
@@ -58,17 +66,19 @@ EnvironmentDescription::EnvironmentDescription(const XmlNode& xmlNode) :
     m_descriptionHasBeenSet(false),
     m_endpointURLHasBeenSet(false),
     m_cNAMEHasBeenSet(false),
-    m_dateCreated(0.0),
     m_dateCreatedHasBeenSet(false),
-    m_dateUpdated(0.0),
     m_dateUpdatedHasBeenSet(false),
+    m_status(EnvironmentStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_abortableOperationInProgress(false),
     m_abortableOperationInProgressHasBeenSet(false),
+    m_health(EnvironmentHealth::NOT_SET),
     m_healthHasBeenSet(false),
+    m_healthStatus(EnvironmentHealthStatus::NOT_SET),
     m_healthStatusHasBeenSet(false),
     m_resourcesHasBeenSet(false),
     m_tierHasBeenSet(false),
+    m_environmentLinksHasBeenSet(false),
     m_responseMetadataHasBeenSet(false)
 {
   *this = xmlNode;
@@ -137,13 +147,13 @@ EnvironmentDescription& EnvironmentDescription::operator =(const XmlNode& xmlNod
     XmlNode dateCreatedNode = resultNode.FirstChild("DateCreated");
     if(!dateCreatedNode.IsNull())
     {
-      m_dateCreated = StringUtils::ConvertToDouble(StringUtils::Trim(dateCreatedNode.GetText().c_str()).c_str());
+      m_dateCreated = DateTime(StringUtils::Trim(dateCreatedNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_dateCreatedHasBeenSet = true;
     }
     XmlNode dateUpdatedNode = resultNode.FirstChild("DateUpdated");
     if(!dateUpdatedNode.IsNull())
     {
-      m_dateUpdated = StringUtils::ConvertToDouble(StringUtils::Trim(dateUpdatedNode.GetText().c_str()).c_str());
+      m_dateUpdated = DateTime(StringUtils::Trim(dateUpdatedNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_dateUpdatedHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
@@ -182,6 +192,18 @@ EnvironmentDescription& EnvironmentDescription::operator =(const XmlNode& xmlNod
       m_tier = tierNode;
       m_tierHasBeenSet = true;
     }
+    XmlNode environmentLinksNode = resultNode.FirstChild("EnvironmentLinks");
+    if(!environmentLinksNode.IsNull())
+    {
+      XmlNode environmentLinksMember = environmentLinksNode.FirstChild("member");
+      while(!environmentLinksMember.IsNull())
+      {
+        m_environmentLinks.push_back(environmentLinksMember);
+        environmentLinksMember = environmentLinksMember.NextNode("member");
+      }
+
+      m_environmentLinksHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -193,80 +215,109 @@ void EnvironmentDescription::OutputToStream(Aws::OStream& oStream, const char* l
   {
       oStream << location << index << locationValue << ".EnvironmentName=" << StringUtils::URLEncode(m_environmentName.c_str()) << "&";
   }
+
   if(m_environmentIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".EnvironmentId=" << StringUtils::URLEncode(m_environmentId.c_str()) << "&";
   }
+
   if(m_applicationNameHasBeenSet)
   {
       oStream << location << index << locationValue << ".ApplicationName=" << StringUtils::URLEncode(m_applicationName.c_str()) << "&";
   }
+
   if(m_versionLabelHasBeenSet)
   {
       oStream << location << index << locationValue << ".VersionLabel=" << StringUtils::URLEncode(m_versionLabel.c_str()) << "&";
   }
+
   if(m_solutionStackNameHasBeenSet)
   {
       oStream << location << index << locationValue << ".SolutionStackName=" << StringUtils::URLEncode(m_solutionStackName.c_str()) << "&";
   }
+
   if(m_templateNameHasBeenSet)
   {
       oStream << location << index << locationValue << ".TemplateName=" << StringUtils::URLEncode(m_templateName.c_str()) << "&";
   }
+
   if(m_descriptionHasBeenSet)
   {
       oStream << location << index << locationValue << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
+
   if(m_endpointURLHasBeenSet)
   {
       oStream << location << index << locationValue << ".EndpointURL=" << StringUtils::URLEncode(m_endpointURL.c_str()) << "&";
   }
+
   if(m_cNAMEHasBeenSet)
   {
       oStream << location << index << locationValue << ".CNAME=" << StringUtils::URLEncode(m_cNAME.c_str()) << "&";
   }
+
   if(m_dateCreatedHasBeenSet)
   {
-      oStream << location << index << locationValue << ".DateCreated=" << m_dateCreated << "&";
+      oStream << location << index << locationValue << ".DateCreated=" << StringUtils::URLEncode(m_dateCreated.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_dateUpdatedHasBeenSet)
   {
-      oStream << location << index << locationValue << ".DateUpdated=" << m_dateUpdated << "&";
+      oStream << location << index << locationValue << ".DateUpdated=" << StringUtils::URLEncode(m_dateUpdated.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_statusHasBeenSet)
   {
       oStream << location << index << locationValue << ".Status=" << EnvironmentStatusMapper::GetNameForEnvironmentStatus(m_status) << "&";
   }
+
   if(m_abortableOperationInProgressHasBeenSet)
   {
       oStream << location << index << locationValue << ".AbortableOperationInProgress=" << m_abortableOperationInProgress << "&";
   }
+
   if(m_healthHasBeenSet)
   {
       oStream << location << index << locationValue << ".Health=" << EnvironmentHealthMapper::GetNameForEnvironmentHealth(m_health) << "&";
   }
+
   if(m_healthStatusHasBeenSet)
   {
       oStream << location << index << locationValue << ".HealthStatus=" << EnvironmentHealthStatusMapper::GetNameForEnvironmentHealthStatus(m_healthStatus) << "&";
   }
+
   if(m_resourcesHasBeenSet)
   {
       Aws::StringStream resourcesLocationAndMemberSs;
       resourcesLocationAndMemberSs << location << index << locationValue << ".Resources";
       m_resources.OutputToStream(oStream, resourcesLocationAndMemberSs.str().c_str());
   }
+
   if(m_tierHasBeenSet)
   {
       Aws::StringStream tierLocationAndMemberSs;
       tierLocationAndMemberSs << location << index << locationValue << ".Tier";
       m_tier.OutputToStream(oStream, tierLocationAndMemberSs.str().c_str());
   }
+
+  if(m_environmentLinksHasBeenSet)
+  {
+      unsigned environmentLinksIdx = 1;
+      for(auto& item : m_environmentLinks)
+      {
+        Aws::StringStream environmentLinksSs;
+        environmentLinksSs << location << index << locationValue << ".EnvironmentLinks.member." << environmentLinksIdx++;
+        item.OutputToStream(oStream, environmentLinksSs.str().c_str());
+      }
+  }
+
   if(m_responseMetadataHasBeenSet)
   {
       Aws::StringStream responseMetadataLocationAndMemberSs;
       responseMetadataLocationAndMemberSs << location << index << locationValue << ".ResponseMetadata";
       m_responseMetadata.OutputToStream(oStream, responseMetadataLocationAndMemberSs.str().c_str());
   }
+
 }
 
 void EnvironmentDescription::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -309,11 +360,11 @@ void EnvironmentDescription::OutputToStream(Aws::OStream& oStream, const char* l
   }
   if(m_dateCreatedHasBeenSet)
   {
-      oStream << location << ".DateCreated=" << m_dateCreated << "&";
+      oStream << location << ".DateCreated=" << StringUtils::URLEncode(m_dateCreated.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_dateUpdatedHasBeenSet)
   {
-      oStream << location << ".DateUpdated=" << m_dateUpdated << "&";
+      oStream << location << ".DateUpdated=" << StringUtils::URLEncode(m_dateUpdated.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_statusHasBeenSet)
   {
@@ -343,6 +394,16 @@ void EnvironmentDescription::OutputToStream(Aws::OStream& oStream, const char* l
       tierLocationAndMember += ".Tier";
       m_tier.OutputToStream(oStream, tierLocationAndMember.c_str());
   }
+  if(m_environmentLinksHasBeenSet)
+  {
+      unsigned environmentLinksIdx = 1;
+      for(auto& item : m_environmentLinks)
+      {
+        Aws::StringStream environmentLinksSs;
+        environmentLinksSs << location <<  ".EnvironmentLinks.member." << environmentLinksIdx++;
+        item.OutputToStream(oStream, environmentLinksSs.str().c_str());
+      }
+  }
   if(m_responseMetadataHasBeenSet)
   {
       Aws::String responseMetadataLocationAndMember(location);
@@ -350,3 +411,7 @@ void EnvironmentDescription::OutputToStream(Aws::OStream& oStream, const char* l
       m_responseMetadata.OutputToStream(oStream, responseMetadataLocationAndMember.c_str());
   }
 }
+
+} // namespace Model
+} // namespace ElasticBeanstalk
+} // namespace Aws

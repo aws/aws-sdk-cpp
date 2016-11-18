@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -32,9 +32,10 @@ namespace SES
 {
 namespace Model
 {
-  /*
-    <p>Represents the user's current activity limits returned from a successful <code>GetSendQuota</code> request. </p>
-  */
+  /**
+   * <p>Represents your Amazon SES daily sending quota, maximum send rate, and the
+   * number of emails you have sent in the last 24 hours.</p>
+   */
   class AWS_SES_API GetSendQuotaResult
   {
   public:
@@ -42,49 +43,58 @@ namespace Model
     GetSendQuotaResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     GetSendQuotaResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>The maximum number of emails the user is allowed to send in a 24-hour interval. A value of -1 signifies an unlimited quota.</p>
-    */
+    /**
+     * <p>The maximum number of emails the user is allowed to send in a 24-hour
+     * interval. A value of -1 signifies an unlimited quota.</p>
+     */
     inline double GetMax24HourSend() const{ return m_max24HourSend; }
 
-    /*
-     <p>The maximum number of emails the user is allowed to send in a 24-hour interval. A value of -1 signifies an unlimited quota.</p>
-    */
+    /**
+     * <p>The maximum number of emails the user is allowed to send in a 24-hour
+     * interval. A value of -1 signifies an unlimited quota.</p>
+     */
     inline void SetMax24HourSend(double value) { m_max24HourSend = value; }
 
-    /*
-     <p>The maximum number of emails the user is allowed to send in a 24-hour interval. A value of -1 signifies an unlimited quota.</p>
-    */
+    /**
+     * <p>The maximum number of emails the user is allowed to send in a 24-hour
+     * interval. A value of -1 signifies an unlimited quota.</p>
+     */
     inline GetSendQuotaResult& WithMax24HourSend(double value) { SetMax24HourSend(value); return *this;}
 
-    /*
-     <p>The maximum number of emails that Amazon SES can accept from the user's account per second.</p> <note>The rate at which Amazon SES accepts the user's messages might be less than the maximum send rate.</note>
-    */
+    /**
+     * <p>The maximum number of emails that Amazon SES can accept from the user's
+     * account per second.</p> <note> <p>The rate at which Amazon SES accepts the
+     * user's messages might be less than the maximum send rate.</p> </note>
+     */
     inline double GetMaxSendRate() const{ return m_maxSendRate; }
 
-    /*
-     <p>The maximum number of emails that Amazon SES can accept from the user's account per second.</p> <note>The rate at which Amazon SES accepts the user's messages might be less than the maximum send rate.</note>
-    */
+    /**
+     * <p>The maximum number of emails that Amazon SES can accept from the user's
+     * account per second.</p> <note> <p>The rate at which Amazon SES accepts the
+     * user's messages might be less than the maximum send rate.</p> </note>
+     */
     inline void SetMaxSendRate(double value) { m_maxSendRate = value; }
 
-    /*
-     <p>The maximum number of emails that Amazon SES can accept from the user's account per second.</p> <note>The rate at which Amazon SES accepts the user's messages might be less than the maximum send rate.</note>
-    */
+    /**
+     * <p>The maximum number of emails that Amazon SES can accept from the user's
+     * account per second.</p> <note> <p>The rate at which Amazon SES accepts the
+     * user's messages might be less than the maximum send rate.</p> </note>
+     */
     inline GetSendQuotaResult& WithMaxSendRate(double value) { SetMaxSendRate(value); return *this;}
 
-    /*
-     <p>The number of emails sent during the previous 24 hours.</p>
-    */
+    /**
+     * <p>The number of emails sent during the previous 24 hours.</p>
+     */
     inline double GetSentLast24Hours() const{ return m_sentLast24Hours; }
 
-    /*
-     <p>The number of emails sent during the previous 24 hours.</p>
-    */
+    /**
+     * <p>The number of emails sent during the previous 24 hours.</p>
+     */
     inline void SetSentLast24Hours(double value) { m_sentLast24Hours = value; }
 
-    /*
-     <p>The number of emails sent during the previous 24 hours.</p>
-    */
+    /**
+     * <p>The number of emails sent during the previous 24 hours.</p>
+     */
     inline GetSendQuotaResult& WithSentLast24Hours(double value) { SetSentLast24Hours(value); return *this;}
 
     

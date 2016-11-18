@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -33,9 +33,9 @@ namespace CodeDeploy
 {
 namespace Model
 {
-  /*
-    <p>Represents the output of an update deployment group operation.</p>
-  */
+  /**
+   * <p>Represents the output of an update deployment group operation.</p>
+   */
   class AWS_CODEDEPLOY_API UpdateDeploymentGroupResult
   {
   public:
@@ -43,39 +43,67 @@ namespace Model
     UpdateDeploymentGroupResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     UpdateDeploymentGroupResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p>If the output contains no data, and the corresponding deployment group contained at least one Auto Scaling group, AWS CodeDeploy successfully removed all corresponding Auto Scaling lifecycle event hooks from the AWS account. If the output does contain data, AWS CodeDeploy could not remove some Auto Scaling lifecycle event hooks from the AWS account.</p>
-    */
+    /**
+     * <p>If the output contains no data, and the corresponding deployment group
+     * contained at least one Auto Scaling group, AWS CodeDeploy successfully removed
+     * all corresponding Auto Scaling lifecycle event hooks from the AWS account. If
+     * the output contains data, AWS CodeDeploy could not remove some Auto Scaling
+     * lifecycle event hooks from the AWS account.</p>
+     */
     inline const Aws::Vector<AutoScalingGroup>& GetHooksNotCleanedUp() const{ return m_hooksNotCleanedUp; }
 
-    /*
-     <p>If the output contains no data, and the corresponding deployment group contained at least one Auto Scaling group, AWS CodeDeploy successfully removed all corresponding Auto Scaling lifecycle event hooks from the AWS account. If the output does contain data, AWS CodeDeploy could not remove some Auto Scaling lifecycle event hooks from the AWS account.</p>
-    */
+    /**
+     * <p>If the output contains no data, and the corresponding deployment group
+     * contained at least one Auto Scaling group, AWS CodeDeploy successfully removed
+     * all corresponding Auto Scaling lifecycle event hooks from the AWS account. If
+     * the output contains data, AWS CodeDeploy could not remove some Auto Scaling
+     * lifecycle event hooks from the AWS account.</p>
+     */
     inline void SetHooksNotCleanedUp(const Aws::Vector<AutoScalingGroup>& value) { m_hooksNotCleanedUp = value; }
 
-    /*
-     <p>If the output contains no data, and the corresponding deployment group contained at least one Auto Scaling group, AWS CodeDeploy successfully removed all corresponding Auto Scaling lifecycle event hooks from the AWS account. If the output does contain data, AWS CodeDeploy could not remove some Auto Scaling lifecycle event hooks from the AWS account.</p>
-    */
+    /**
+     * <p>If the output contains no data, and the corresponding deployment group
+     * contained at least one Auto Scaling group, AWS CodeDeploy successfully removed
+     * all corresponding Auto Scaling lifecycle event hooks from the AWS account. If
+     * the output contains data, AWS CodeDeploy could not remove some Auto Scaling
+     * lifecycle event hooks from the AWS account.</p>
+     */
     inline void SetHooksNotCleanedUp(Aws::Vector<AutoScalingGroup>&& value) { m_hooksNotCleanedUp = value; }
 
-    /*
-     <p>If the output contains no data, and the corresponding deployment group contained at least one Auto Scaling group, AWS CodeDeploy successfully removed all corresponding Auto Scaling lifecycle event hooks from the AWS account. If the output does contain data, AWS CodeDeploy could not remove some Auto Scaling lifecycle event hooks from the AWS account.</p>
-    */
+    /**
+     * <p>If the output contains no data, and the corresponding deployment group
+     * contained at least one Auto Scaling group, AWS CodeDeploy successfully removed
+     * all corresponding Auto Scaling lifecycle event hooks from the AWS account. If
+     * the output contains data, AWS CodeDeploy could not remove some Auto Scaling
+     * lifecycle event hooks from the AWS account.</p>
+     */
     inline UpdateDeploymentGroupResult& WithHooksNotCleanedUp(const Aws::Vector<AutoScalingGroup>& value) { SetHooksNotCleanedUp(value); return *this;}
 
-    /*
-     <p>If the output contains no data, and the corresponding deployment group contained at least one Auto Scaling group, AWS CodeDeploy successfully removed all corresponding Auto Scaling lifecycle event hooks from the AWS account. If the output does contain data, AWS CodeDeploy could not remove some Auto Scaling lifecycle event hooks from the AWS account.</p>
-    */
+    /**
+     * <p>If the output contains no data, and the corresponding deployment group
+     * contained at least one Auto Scaling group, AWS CodeDeploy successfully removed
+     * all corresponding Auto Scaling lifecycle event hooks from the AWS account. If
+     * the output contains data, AWS CodeDeploy could not remove some Auto Scaling
+     * lifecycle event hooks from the AWS account.</p>
+     */
     inline UpdateDeploymentGroupResult& WithHooksNotCleanedUp(Aws::Vector<AutoScalingGroup>&& value) { SetHooksNotCleanedUp(value); return *this;}
 
-    /*
-     <p>If the output contains no data, and the corresponding deployment group contained at least one Auto Scaling group, AWS CodeDeploy successfully removed all corresponding Auto Scaling lifecycle event hooks from the AWS account. If the output does contain data, AWS CodeDeploy could not remove some Auto Scaling lifecycle event hooks from the AWS account.</p>
-    */
+    /**
+     * <p>If the output contains no data, and the corresponding deployment group
+     * contained at least one Auto Scaling group, AWS CodeDeploy successfully removed
+     * all corresponding Auto Scaling lifecycle event hooks from the AWS account. If
+     * the output contains data, AWS CodeDeploy could not remove some Auto Scaling
+     * lifecycle event hooks from the AWS account.</p>
+     */
     inline UpdateDeploymentGroupResult& AddHooksNotCleanedUp(const AutoScalingGroup& value) { m_hooksNotCleanedUp.push_back(value); return *this; }
 
-    /*
-     <p>If the output contains no data, and the corresponding deployment group contained at least one Auto Scaling group, AWS CodeDeploy successfully removed all corresponding Auto Scaling lifecycle event hooks from the AWS account. If the output does contain data, AWS CodeDeploy could not remove some Auto Scaling lifecycle event hooks from the AWS account.</p>
-    */
+    /**
+     * <p>If the output contains no data, and the corresponding deployment group
+     * contained at least one Auto Scaling group, AWS CodeDeploy successfully removed
+     * all corresponding Auto Scaling lifecycle event hooks from the AWS account. If
+     * the output contains data, AWS CodeDeploy could not remove some Auto Scaling
+     * lifecycle event hooks from the AWS account.</p>
+     */
     inline UpdateDeploymentGroupResult& AddHooksNotCleanedUp(AutoScalingGroup&& value) { m_hooksNotCleanedUp.push_back(value); return *this; }
 
   private:

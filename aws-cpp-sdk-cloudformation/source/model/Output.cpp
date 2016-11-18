@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace CloudFormation
+{
+namespace Model
+{
 
 Output::Output() : 
     m_outputKeyHasBeenSet(false),
@@ -73,14 +79,17 @@ void Output::OutputToStream(Aws::OStream& oStream, const char* location, unsigne
   {
       oStream << location << index << locationValue << ".OutputKey=" << StringUtils::URLEncode(m_outputKey.c_str()) << "&";
   }
+
   if(m_outputValueHasBeenSet)
   {
       oStream << location << index << locationValue << ".OutputValue=" << StringUtils::URLEncode(m_outputValue.c_str()) << "&";
   }
+
   if(m_descriptionHasBeenSet)
   {
       oStream << location << index << locationValue << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
+
 }
 
 void Output::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -98,3 +107,7 @@ void Output::OutputToStream(Aws::OStream& oStream, const char* location) const
       oStream << location << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace CloudFormation
+} // namespace Aws

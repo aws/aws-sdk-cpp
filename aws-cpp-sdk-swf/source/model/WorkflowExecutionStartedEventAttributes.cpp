@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -17,14 +17,21 @@
 
 #include <utility>
 
-using namespace Aws::SWF::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace SWF
+{
+namespace Model
+{
 
 WorkflowExecutionStartedEventAttributes::WorkflowExecutionStartedEventAttributes() : 
     m_inputHasBeenSet(false),
     m_executionStartToCloseTimeoutHasBeenSet(false),
     m_taskStartToCloseTimeoutHasBeenSet(false),
+    m_childPolicy(ChildPolicy::NOT_SET),
     m_childPolicyHasBeenSet(false),
     m_taskListHasBeenSet(false),
     m_workflowTypeHasBeenSet(false),
@@ -42,6 +49,7 @@ WorkflowExecutionStartedEventAttributes::WorkflowExecutionStartedEventAttributes
     m_inputHasBeenSet(false),
     m_executionStartToCloseTimeoutHasBeenSet(false),
     m_taskStartToCloseTimeoutHasBeenSet(false),
+    m_childPolicy(ChildPolicy::NOT_SET),
     m_childPolicyHasBeenSet(false),
     m_taskListHasBeenSet(false),
     m_workflowTypeHasBeenSet(false),
@@ -228,5 +236,9 @@ JsonValue WorkflowExecutionStartedEventAttributes::Jsonize() const
 
   }
 
-  return std::move(payload);
+  return payload;
 }
+
+} // namespace Model
+} // namespace SWF
+} // namespace Aws

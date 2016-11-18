@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -33,9 +33,9 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
+  /**
+   * <p>Contains the output of CreateVpnGateway.</p>
+   */
   class AWS_EC2_API CreateVpnGatewayResponse
   {
   public:
@@ -43,29 +43,29 @@ namespace Model
     CreateVpnGatewayResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     CreateVpnGatewayResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>Information about the virtual private gateway.</p>
-    */
+    /**
+     * <p>Information about the virtual private gateway.</p>
+     */
     inline const VpnGateway& GetVpnGateway() const{ return m_vpnGateway; }
 
-    /*
-     <p>Information about the virtual private gateway.</p>
-    */
+    /**
+     * <p>Information about the virtual private gateway.</p>
+     */
     inline void SetVpnGateway(const VpnGateway& value) { m_vpnGateway = value; }
 
-    /*
-     <p>Information about the virtual private gateway.</p>
-    */
+    /**
+     * <p>Information about the virtual private gateway.</p>
+     */
     inline void SetVpnGateway(VpnGateway&& value) { m_vpnGateway = value; }
 
-    /*
-     <p>Information about the virtual private gateway.</p>
-    */
+    /**
+     * <p>Information about the virtual private gateway.</p>
+     */
     inline CreateVpnGatewayResponse& WithVpnGateway(const VpnGateway& value) { SetVpnGateway(value); return *this;}
 
-    /*
-     <p>Information about the virtual private gateway.</p>
-    */
+    /**
+     * <p>Information about the virtual private gateway.</p>
+     */
     inline CreateVpnGatewayResponse& WithVpnGateway(VpnGateway&& value) { SetVpnGateway(value); return *this;}
 
     

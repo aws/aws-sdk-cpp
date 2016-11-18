@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -22,7 +22,8 @@ using namespace Aws::Utils;
 RecordLifecycleActionHeartbeatRequest::RecordLifecycleActionHeartbeatRequest() : 
     m_lifecycleHookNameHasBeenSet(false),
     m_autoScalingGroupNameHasBeenSet(false),
-    m_lifecycleActionTokenHasBeenSet(false)
+    m_lifecycleActionTokenHasBeenSet(false),
+    m_instanceIdHasBeenSet(false)
 {
 }
 
@@ -34,14 +35,22 @@ Aws::String RecordLifecycleActionHeartbeatRequest::SerializePayload() const
   {
     ss << "LifecycleHookName=" << StringUtils::URLEncode(m_lifecycleHookName.c_str()) << "&";
   }
+
   if(m_autoScalingGroupNameHasBeenSet)
   {
     ss << "AutoScalingGroupName=" << StringUtils::URLEncode(m_autoScalingGroupName.c_str()) << "&";
   }
+
   if(m_lifecycleActionTokenHasBeenSet)
   {
     ss << "LifecycleActionToken=" << StringUtils::URLEncode(m_lifecycleActionToken.c_str()) << "&";
   }
+
+  if(m_instanceIdHasBeenSet)
+  {
+    ss << "InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
+  }
+
   ss << "Version=2011-01-01";
   return ss.str();
 }

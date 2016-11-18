@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -23,9 +23,7 @@ DescribeClusterSnapshotsRequest::DescribeClusterSnapshotsRequest() :
     m_clusterIdentifierHasBeenSet(false),
     m_snapshotIdentifierHasBeenSet(false),
     m_snapshotTypeHasBeenSet(false),
-    m_startTime(0.0),
     m_startTimeHasBeenSet(false),
-    m_endTime(0.0),
     m_endTimeHasBeenSet(false),
     m_maxRecords(0),
     m_maxRecordsHasBeenSet(false),
@@ -44,34 +42,42 @@ Aws::String DescribeClusterSnapshotsRequest::SerializePayload() const
   {
     ss << "ClusterIdentifier=" << StringUtils::URLEncode(m_clusterIdentifier.c_str()) << "&";
   }
+
   if(m_snapshotIdentifierHasBeenSet)
   {
     ss << "SnapshotIdentifier=" << StringUtils::URLEncode(m_snapshotIdentifier.c_str()) << "&";
   }
+
   if(m_snapshotTypeHasBeenSet)
   {
     ss << "SnapshotType=" << StringUtils::URLEncode(m_snapshotType.c_str()) << "&";
   }
+
   if(m_startTimeHasBeenSet)
   {
-    ss << "StartTime=" << m_startTime << "&";
+    ss << "StartTime=" << StringUtils::URLEncode(m_startTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_endTimeHasBeenSet)
   {
-    ss << "EndTime=" << m_endTime << "&";
+    ss << "EndTime=" << StringUtils::URLEncode(m_endTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_maxRecordsHasBeenSet)
   {
     ss << "MaxRecords=" << m_maxRecords << "&";
   }
+
   if(m_markerHasBeenSet)
   {
     ss << "Marker=" << StringUtils::URLEncode(m_marker.c_str()) << "&";
   }
+
   if(m_ownerAccountHasBeenSet)
   {
     ss << "OwnerAccount=" << StringUtils::URLEncode(m_ownerAccount.c_str()) << "&";
   }
+
   if(m_tagKeysHasBeenSet)
   {
     unsigned tagKeysCount = 1;
@@ -82,6 +88,7 @@ Aws::String DescribeClusterSnapshotsRequest::SerializePayload() const
       tagKeysCount++;
     }
   }
+
   if(m_tagValuesHasBeenSet)
   {
     unsigned tagValuesCount = 1;
@@ -92,6 +99,7 @@ Aws::String DescribeClusterSnapshotsRequest::SerializePayload() const
       tagValuesCount++;
     }
   }
+
   ss << "Version=2012-12-01";
   return ss.str();
 }

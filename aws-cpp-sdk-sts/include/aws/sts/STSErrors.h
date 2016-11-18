@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -21,7 +21,7 @@ namespace Aws
 {
 namespace STS
 {
-enum class AWS_STS_API STSErrors
+enum class STSErrors
 {
   //From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
@@ -44,7 +44,12 @@ enum class AWS_STS_API STSErrors
   RESOURCE_NOT_FOUND = 16,
   UNRECOGNIZED_CLIENT = 17,
   MALFORMED_QUERY_STRING = 18,
+  SLOW_DOWN = 19,
+  REQUEST_TIME_TOO_SKEWED = 20,
+  INVALID_SIGNATURE = 21,
+  SIGNATURE_DOES_NOT_MATCH = 22,
   NETWORK_CONNECTION = 99,
+  
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -54,7 +59,8 @@ enum class AWS_STS_API STSErrors
   I_D_P_COMMUNICATION_ERROR,
   I_D_P_REJECTED_CLAIM,
   MALFORMED_POLICY_DOCUMENT,
-  PACKED_POLICY_TOO_LARGE
+  PACKED_POLICY_TOO_LARGE,
+  REGION_DISABLED
 };
 namespace STSErrorMapper
 {

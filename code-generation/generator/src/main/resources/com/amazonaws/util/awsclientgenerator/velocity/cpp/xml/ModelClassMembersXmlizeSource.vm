@@ -28,6 +28,9 @@
 #elseif($member.shape.string)
   ${spaces}XmlNode ${lowerCaseVarName}Node = parentNode.CreateChildElement("${serializationName}");
   ${spaces}${lowerCaseVarName}Node.SetText(${memberVarName});
+#elseif($member.shape.timeStamp)
+    ${spaces}XmlNode ${lowerCaseVarName}Node = parentNode.CreateChildElement("${serializationName}");
+    ${spaces}${lowerCaseVarName}Node.SetText(${memberVarName}.ToGmtString(DateFormat::ISO_8601));
 #elseif($member.shape.blob)
   ${spaces}XmlNode ${lowerCaseVarName}Node = parentNode.CreateChildElement("${serializationName}");
   ${spaces}${lowerCaseVarName}Node.SetText(HashingUtils::Base64Encode(${memberVarName}));
@@ -53,6 +56,8 @@
     ss.str("");
 #elseif($member.shape.listMember.shape.string)
     ${spaces}${lowerCaseVarName}Node.SetText(item);
+#elseif($member.shape.listMember.shape.timeStamp)
+    ${spaces}${lowerCaseVarName}Node.SetText(item.ToGmtString(DateFormat::ISO_8601);
 #elseif($member.shape.listMember.shape.blob)
     ${spaces}${lowerCaseVarName}Node.SetText(HashingUtils::Base64Encode(item));
 #elseif($member.shape.listMember.shape.structure)

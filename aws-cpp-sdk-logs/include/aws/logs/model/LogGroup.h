@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -29,9 +29,10 @@ namespace CloudWatchLogs
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
+
+  /**
+   * <p>Represents a log group.</p>
+   */
   class AWS_CLOUDWATCHLOGS_API LogGroup
   {
   public:
@@ -40,82 +41,128 @@ namespace Model
     LogGroup& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
-    
+    /**
+     * <p>The name of the log group.</p>
+     */
     inline const Aws::String& GetLogGroupName() const{ return m_logGroupName; }
 
-    
+    /**
+     * <p>The name of the log group.</p>
+     */
     inline void SetLogGroupName(const Aws::String& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
 
-    
+    /**
+     * <p>The name of the log group.</p>
+     */
     inline void SetLogGroupName(Aws::String&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
 
-    
+    /**
+     * <p>The name of the log group.</p>
+     */
     inline void SetLogGroupName(const char* value) { m_logGroupNameHasBeenSet = true; m_logGroupName.assign(value); }
 
-    
+    /**
+     * <p>The name of the log group.</p>
+     */
     inline LogGroup& WithLogGroupName(const Aws::String& value) { SetLogGroupName(value); return *this;}
 
-    
+    /**
+     * <p>The name of the log group.</p>
+     */
     inline LogGroup& WithLogGroupName(Aws::String&& value) { SetLogGroupName(value); return *this;}
 
-    
+    /**
+     * <p>The name of the log group.</p>
+     */
     inline LogGroup& WithLogGroupName(const char* value) { SetLogGroupName(value); return *this;}
 
-    
+    /**
+     * <p>The creation time of the log group.</p>
+     */
     inline long long GetCreationTime() const{ return m_creationTime; }
 
-    
+    /**
+     * <p>The creation time of the log group.</p>
+     */
     inline void SetCreationTime(long long value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
-    
+    /**
+     * <p>The creation time of the log group.</p>
+     */
     inline LogGroup& WithCreationTime(long long value) { SetCreationTime(value); return *this;}
 
     
-    inline long GetRetentionInDays() const{ return m_retentionInDays; }
+    inline int GetRetentionInDays() const{ return m_retentionInDays; }
 
     
-    inline void SetRetentionInDays(long value) { m_retentionInDaysHasBeenSet = true; m_retentionInDays = value; }
+    inline void SetRetentionInDays(int value) { m_retentionInDaysHasBeenSet = true; m_retentionInDays = value; }
 
     
-    inline LogGroup& WithRetentionInDays(long value) { SetRetentionInDays(value); return *this;}
+    inline LogGroup& WithRetentionInDays(int value) { SetRetentionInDays(value); return *this;}
 
-    
-    inline long GetMetricFilterCount() const{ return m_metricFilterCount; }
+    /**
+     * <p>The number of metric filters.</p>
+     */
+    inline int GetMetricFilterCount() const{ return m_metricFilterCount; }
 
-    
-    inline void SetMetricFilterCount(long value) { m_metricFilterCountHasBeenSet = true; m_metricFilterCount = value; }
+    /**
+     * <p>The number of metric filters.</p>
+     */
+    inline void SetMetricFilterCount(int value) { m_metricFilterCountHasBeenSet = true; m_metricFilterCount = value; }
 
-    
-    inline LogGroup& WithMetricFilterCount(long value) { SetMetricFilterCount(value); return *this;}
+    /**
+     * <p>The number of metric filters.</p>
+     */
+    inline LogGroup& WithMetricFilterCount(int value) { SetMetricFilterCount(value); return *this;}
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) of the log group.</p>
+     */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) of the log group.</p>
+     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) of the log group.</p>
+     */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = value; }
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) of the log group.</p>
+     */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) of the log group.</p>
+     */
     inline LogGroup& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) of the log group.</p>
+     */
     inline LogGroup& WithArn(Aws::String&& value) { SetArn(value); return *this;}
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) of the log group.</p>
+     */
     inline LogGroup& WithArn(const char* value) { SetArn(value); return *this;}
 
-    
+    /**
+     * <p>The number of bytes stored.</p>
+     */
     inline long long GetStoredBytes() const{ return m_storedBytes; }
 
-    
+    /**
+     * <p>The number of bytes stored.</p>
+     */
     inline void SetStoredBytes(long long value) { m_storedBytesHasBeenSet = true; m_storedBytes = value; }
 
-    
+    /**
+     * <p>The number of bytes stored.</p>
+     */
     inline LogGroup& WithStoredBytes(long long value) { SetStoredBytes(value); return *this;}
 
   private:
@@ -123,9 +170,9 @@ namespace Model
     bool m_logGroupNameHasBeenSet;
     long long m_creationTime;
     bool m_creationTimeHasBeenSet;
-    long m_retentionInDays;
+    int m_retentionInDays;
     bool m_retentionInDaysHasBeenSet;
-    long m_metricFilterCount;
+    int m_metricFilterCount;
     bool m_metricFilterCountHasBeenSet;
     Aws::String m_arn;
     bool m_arnHasBeenSet;

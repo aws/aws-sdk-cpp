@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -27,7 +27,8 @@ RegisterContainerInstanceRequest::RegisterContainerInstanceRequest() :
     m_instanceIdentityDocumentSignatureHasBeenSet(false),
     m_totalResourcesHasBeenSet(false),
     m_versionInfoHasBeenSet(false),
-    m_containerInstanceArnHasBeenSet(false)
+    m_containerInstanceArnHasBeenSet(false),
+    m_attributesHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,17 @@ Aws::String RegisterContainerInstanceRequest::SerializePayload() const
 
   }
 
+  if(m_attributesHasBeenSet)
+  {
+   Array<JsonValue> attributesJsonList(m_attributes.size());
+   for(unsigned attributesIndex = 0; attributesIndex < attributesJsonList.GetLength(); ++attributesIndex)
+   {
+     attributesJsonList[attributesIndex].AsObject(m_attributes[attributesIndex].Jsonize());
+   }
+   payload.WithArray("attributes", std::move(attributesJsonList));
+
+  }
+
   return payload.WriteReadable();
 }
 
@@ -83,7 +95,7 @@ Aws::Http::HeaderValueCollection RegisterContainerInstanceRequest::GetRequestSpe
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AmazonEC2ContainerServiceV20141113.RegisterContainerInstance"));
-  return std::move(headers);
+  return headers;
 
 }
 

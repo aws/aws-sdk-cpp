@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -25,9 +25,9 @@ namespace EMR
 namespace Model
 {
 
-  /*
-    <p> Input to the <a>TerminateJobFlows</a> operation. </p>
-  */
+  /**
+   * <p> Input to the <a>TerminateJobFlows</a> operation. </p>
+   */
   class AWS_EMR_API TerminateJobFlowsRequest : public EMRRequest
   {
   public:
@@ -36,45 +36,44 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
-    /*
-     <p>A list of job flows to be shutdown.</p>
-    */
+    /**
+     * <p>A list of job flows to be shutdown.</p>
+     */
     inline const Aws::Vector<Aws::String>& GetJobFlowIds() const{ return m_jobFlowIds; }
 
-    /*
-     <p>A list of job flows to be shutdown.</p>
-    */
+    /**
+     * <p>A list of job flows to be shutdown.</p>
+     */
     inline void SetJobFlowIds(const Aws::Vector<Aws::String>& value) { m_jobFlowIdsHasBeenSet = true; m_jobFlowIds = value; }
 
-    /*
-     <p>A list of job flows to be shutdown.</p>
-    */
+    /**
+     * <p>A list of job flows to be shutdown.</p>
+     */
     inline void SetJobFlowIds(Aws::Vector<Aws::String>&& value) { m_jobFlowIdsHasBeenSet = true; m_jobFlowIds = value; }
 
-    /*
-     <p>A list of job flows to be shutdown.</p>
-    */
+    /**
+     * <p>A list of job flows to be shutdown.</p>
+     */
     inline TerminateJobFlowsRequest& WithJobFlowIds(const Aws::Vector<Aws::String>& value) { SetJobFlowIds(value); return *this;}
 
-    /*
-     <p>A list of job flows to be shutdown.</p>
-    */
+    /**
+     * <p>A list of job flows to be shutdown.</p>
+     */
     inline TerminateJobFlowsRequest& WithJobFlowIds(Aws::Vector<Aws::String>&& value) { SetJobFlowIds(value); return *this;}
 
-    /*
-     <p>A list of job flows to be shutdown.</p>
-    */
+    /**
+     * <p>A list of job flows to be shutdown.</p>
+     */
     inline TerminateJobFlowsRequest& AddJobFlowIds(const Aws::String& value) { m_jobFlowIdsHasBeenSet = true; m_jobFlowIds.push_back(value); return *this; }
 
-    /*
-     <p>A list of job flows to be shutdown.</p>
-    */
+    /**
+     * <p>A list of job flows to be shutdown.</p>
+     */
     inline TerminateJobFlowsRequest& AddJobFlowIds(Aws::String&& value) { m_jobFlowIdsHasBeenSet = true; m_jobFlowIds.push_back(value); return *this; }
 
-    /*
-     <p>A list of job flows to be shutdown.</p>
-    */
+    /**
+     * <p>A list of job flows to be shutdown.</p>
+     */
     inline TerminateJobFlowsRequest& AddJobFlowIds(const char* value) { m_jobFlowIdsHasBeenSet = true; m_jobFlowIds.push_back(value); return *this; }
 
   private:

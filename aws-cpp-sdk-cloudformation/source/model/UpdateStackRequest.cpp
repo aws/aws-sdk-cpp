@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -29,9 +29,12 @@ UpdateStackRequest::UpdateStackRequest() :
     m_stackPolicyDuringUpdateURLHasBeenSet(false),
     m_parametersHasBeenSet(false),
     m_capabilitiesHasBeenSet(false),
+    m_resourceTypesHasBeenSet(false),
+    m_roleARNHasBeenSet(false),
     m_stackPolicyBodyHasBeenSet(false),
     m_stackPolicyURLHasBeenSet(false),
-    m_notificationARNsHasBeenSet(false)
+    m_notificationARNsHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -43,26 +46,32 @@ Aws::String UpdateStackRequest::SerializePayload() const
   {
     ss << "StackName=" << StringUtils::URLEncode(m_stackName.c_str()) << "&";
   }
+
   if(m_templateBodyHasBeenSet)
   {
     ss << "TemplateBody=" << StringUtils::URLEncode(m_templateBody.c_str()) << "&";
   }
+
   if(m_templateURLHasBeenSet)
   {
     ss << "TemplateURL=" << StringUtils::URLEncode(m_templateURL.c_str()) << "&";
   }
+
   if(m_usePreviousTemplateHasBeenSet)
   {
     ss << "UsePreviousTemplate=" << m_usePreviousTemplate << "&";
   }
+
   if(m_stackPolicyDuringUpdateBodyHasBeenSet)
   {
     ss << "StackPolicyDuringUpdateBody=" << StringUtils::URLEncode(m_stackPolicyDuringUpdateBody.c_str()) << "&";
   }
+
   if(m_stackPolicyDuringUpdateURLHasBeenSet)
   {
     ss << "StackPolicyDuringUpdateURL=" << StringUtils::URLEncode(m_stackPolicyDuringUpdateURL.c_str()) << "&";
   }
+
   if(m_parametersHasBeenSet)
   {
     unsigned parametersCount = 1;
@@ -72,6 +81,7 @@ Aws::String UpdateStackRequest::SerializePayload() const
       parametersCount++;
     }
   }
+
   if(m_capabilitiesHasBeenSet)
   {
     unsigned capabilitiesCount = 1;
@@ -82,14 +92,33 @@ Aws::String UpdateStackRequest::SerializePayload() const
       capabilitiesCount++;
     }
   }
+
+  if(m_resourceTypesHasBeenSet)
+  {
+    unsigned resourceTypesCount = 1;
+    for(auto& item : m_resourceTypes)
+    {
+      ss << "ResourceTypes.member." << resourceTypesCount << "="
+          << StringUtils::URLEncode(item.c_str()) << "&";
+      resourceTypesCount++;
+    }
+  }
+
+  if(m_roleARNHasBeenSet)
+  {
+    ss << "RoleARN=" << StringUtils::URLEncode(m_roleARN.c_str()) << "&";
+  }
+
   if(m_stackPolicyBodyHasBeenSet)
   {
     ss << "StackPolicyBody=" << StringUtils::URLEncode(m_stackPolicyBody.c_str()) << "&";
   }
+
   if(m_stackPolicyURLHasBeenSet)
   {
     ss << "StackPolicyURL=" << StringUtils::URLEncode(m_stackPolicyURL.c_str()) << "&";
   }
+
   if(m_notificationARNsHasBeenSet)
   {
     unsigned notificationARNsCount = 1;
@@ -100,6 +129,17 @@ Aws::String UpdateStackRequest::SerializePayload() const
       notificationARNsCount++;
     }
   }
+
+  if(m_tagsHasBeenSet)
+  {
+    unsigned tagsCount = 1;
+    for(auto& item : m_tags)
+    {
+      item.OutputToStream(ss, "Tags.member.", tagsCount, "");
+      tagsCount++;
+    }
+  }
+
   ss << "Version=2010-05-15";
   return ss.str();
 }

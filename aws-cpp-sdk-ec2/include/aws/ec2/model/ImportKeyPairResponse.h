@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -33,9 +33,9 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
+  /**
+   * <p>Contains the output of ImportKeyPair.</p>
+   */
   class AWS_EC2_API ImportKeyPairResponse
   {
   public:
@@ -43,74 +43,74 @@ namespace Model
     ImportKeyPairResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     ImportKeyPairResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>The key pair name you provided.</p>
-    */
+    /**
+     * <p>The key pair name you provided.</p>
+     */
     inline const Aws::String& GetKeyName() const{ return m_keyName; }
 
-    /*
-     <p>The key pair name you provided.</p>
-    */
+    /**
+     * <p>The key pair name you provided.</p>
+     */
     inline void SetKeyName(const Aws::String& value) { m_keyName = value; }
 
-    /*
-     <p>The key pair name you provided.</p>
-    */
+    /**
+     * <p>The key pair name you provided.</p>
+     */
     inline void SetKeyName(Aws::String&& value) { m_keyName = value; }
 
-    /*
-     <p>The key pair name you provided.</p>
-    */
+    /**
+     * <p>The key pair name you provided.</p>
+     */
     inline void SetKeyName(const char* value) { m_keyName.assign(value); }
 
-    /*
-     <p>The key pair name you provided.</p>
-    */
+    /**
+     * <p>The key pair name you provided.</p>
+     */
     inline ImportKeyPairResponse& WithKeyName(const Aws::String& value) { SetKeyName(value); return *this;}
 
-    /*
-     <p>The key pair name you provided.</p>
-    */
+    /**
+     * <p>The key pair name you provided.</p>
+     */
     inline ImportKeyPairResponse& WithKeyName(Aws::String&& value) { SetKeyName(value); return *this;}
 
-    /*
-     <p>The key pair name you provided.</p>
-    */
+    /**
+     * <p>The key pair name you provided.</p>
+     */
     inline ImportKeyPairResponse& WithKeyName(const char* value) { SetKeyName(value); return *this;}
 
-    /*
-     <p>The MD5 public key fingerprint as specified in section 4 of RFC 4716.</p>
-    */
+    /**
+     * <p>The MD5 public key fingerprint as specified in section 4 of RFC 4716.</p>
+     */
     inline const Aws::String& GetKeyFingerprint() const{ return m_keyFingerprint; }
 
-    /*
-     <p>The MD5 public key fingerprint as specified in section 4 of RFC 4716.</p>
-    */
+    /**
+     * <p>The MD5 public key fingerprint as specified in section 4 of RFC 4716.</p>
+     */
     inline void SetKeyFingerprint(const Aws::String& value) { m_keyFingerprint = value; }
 
-    /*
-     <p>The MD5 public key fingerprint as specified in section 4 of RFC 4716.</p>
-    */
+    /**
+     * <p>The MD5 public key fingerprint as specified in section 4 of RFC 4716.</p>
+     */
     inline void SetKeyFingerprint(Aws::String&& value) { m_keyFingerprint = value; }
 
-    /*
-     <p>The MD5 public key fingerprint as specified in section 4 of RFC 4716.</p>
-    */
+    /**
+     * <p>The MD5 public key fingerprint as specified in section 4 of RFC 4716.</p>
+     */
     inline void SetKeyFingerprint(const char* value) { m_keyFingerprint.assign(value); }
 
-    /*
-     <p>The MD5 public key fingerprint as specified in section 4 of RFC 4716.</p>
-    */
+    /**
+     * <p>The MD5 public key fingerprint as specified in section 4 of RFC 4716.</p>
+     */
     inline ImportKeyPairResponse& WithKeyFingerprint(const Aws::String& value) { SetKeyFingerprint(value); return *this;}
 
-    /*
-     <p>The MD5 public key fingerprint as specified in section 4 of RFC 4716.</p>
-    */
+    /**
+     * <p>The MD5 public key fingerprint as specified in section 4 of RFC 4716.</p>
+     */
     inline ImportKeyPairResponse& WithKeyFingerprint(Aws::String&& value) { SetKeyFingerprint(value); return *this;}
 
-    /*
-     <p>The MD5 public key fingerprint as specified in section 4 of RFC 4716.</p>
-    */
+    /**
+     * <p>The MD5 public key fingerprint as specified in section 4 of RFC 4716.</p>
+     */
     inline ImportKeyPairResponse& WithKeyFingerprint(const char* value) { SetKeyFingerprint(value); return *this;}
 
     

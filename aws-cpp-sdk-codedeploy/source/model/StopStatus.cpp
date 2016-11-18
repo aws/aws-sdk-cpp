@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -14,50 +14,66 @@
 */
 #include <aws/codedeploy/model/StopStatus.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
+#include <aws/core/utils/EnumParseOverflowContainer.h>
 
 using namespace Aws::Utils;
 
-static const int Pending_HASH = HashingUtils::HashString("Pending");
-static const int Succeeded_HASH = HashingUtils::HashString("Succeeded");
 
 namespace Aws
 {
-namespace CodeDeploy
-{
-namespace Model
-{
-namespace StopStatusMapper
-{
-StopStatus GetStopStatusForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-
-  if (hashCode == Pending_HASH)
+  namespace CodeDeploy
   {
-    return StopStatus::Pending;
-  }
-  else if (hashCode == Succeeded_HASH)
-  {
-    return StopStatus::Succeeded;
-  }
+    namespace Model
+    {
+      namespace StopStatusMapper
+      {
 
-  return StopStatus::NOT_SET;
-}
+        static const int Pending_HASH = HashingUtils::HashString("Pending");
+        static const int Succeeded_HASH = HashingUtils::HashString("Succeeded");
 
-Aws::String GetNameForStopStatus(StopStatus value)
-{
-  switch(value)
-  {
-  case StopStatus::Pending:
-    return "Pending";
-  case StopStatus::Succeeded:
-    return "Succeeded";
-  default:
-    return "";
-  }
-}
 
-} // namespace StopStatusMapper
-} // namespace Model
-} // namespace CodeDeploy
+        StopStatus GetStopStatusForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == Pending_HASH)
+          {
+            return StopStatus::Pending;
+          }
+          else if (hashCode == Succeeded_HASH)
+          {
+            return StopStatus::Succeeded;
+          }
+          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<StopStatus>(hashCode);
+          }
+
+          return StopStatus::NOT_SET;
+        }
+
+        Aws::String GetNameForStopStatus(StopStatus enumValue)
+        {
+          switch(enumValue)
+          {
+          case StopStatus::Pending:
+            return "Pending";
+          case StopStatus::Succeeded:
+            return "Succeeded";
+          default:
+            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace StopStatusMapper
+    } // namespace Model
+  } // namespace CodeDeploy
 } // namespace Aws

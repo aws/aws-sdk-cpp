@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -33,9 +33,9 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
+  /**
+   * <p>Contains the output of AttachVpnGateway.</p>
+   */
   class AWS_EC2_API AttachVpnGatewayResponse
   {
   public:
@@ -43,29 +43,29 @@ namespace Model
     AttachVpnGatewayResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AttachVpnGatewayResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>Information about the attachment.</p>
-    */
+    /**
+     * <p>Information about the attachment.</p>
+     */
     inline const VpcAttachment& GetVpcAttachment() const{ return m_vpcAttachment; }
 
-    /*
-     <p>Information about the attachment.</p>
-    */
+    /**
+     * <p>Information about the attachment.</p>
+     */
     inline void SetVpcAttachment(const VpcAttachment& value) { m_vpcAttachment = value; }
 
-    /*
-     <p>Information about the attachment.</p>
-    */
+    /**
+     * <p>Information about the attachment.</p>
+     */
     inline void SetVpcAttachment(VpcAttachment&& value) { m_vpcAttachment = value; }
 
-    /*
-     <p>Information about the attachment.</p>
-    */
+    /**
+     * <p>Information about the attachment.</p>
+     */
     inline AttachVpnGatewayResponse& WithVpcAttachment(const VpcAttachment& value) { SetVpcAttachment(value); return *this;}
 
-    /*
-     <p>Information about the attachment.</p>
-    */
+    /**
+     * <p>Information about the attachment.</p>
+     */
     inline AttachVpnGatewayResponse& WithVpcAttachment(VpcAttachment&& value) { SetVpcAttachment(value); return *this;}
 
     

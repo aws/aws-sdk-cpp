@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -17,14 +17,22 @@
 
 #include <utility>
 
-using namespace Aws::OpsWorks::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace OpsWorks
+{
+namespace Model
+{
 
 Instance::Instance() : 
     m_agentVersionHasBeenSet(false),
     m_amiIdHasBeenSet(false),
+    m_architecture(Architecture::NOT_SET),
     m_architectureHasBeenSet(false),
+    m_autoScalingType(AutoScalingType::NOT_SET),
     m_autoScalingTypeHasBeenSet(false),
     m_availabilityZoneHasBeenSet(false),
     m_blockDeviceMappingsHasBeenSet(false),
@@ -53,6 +61,7 @@ Instance::Instance() :
     m_registeredByHasBeenSet(false),
     m_reportedAgentVersionHasBeenSet(false),
     m_reportedOsHasBeenSet(false),
+    m_rootDeviceType(RootDeviceType::NOT_SET),
     m_rootDeviceTypeHasBeenSet(false),
     m_rootDeviceVolumeIdHasBeenSet(false),
     m_securityGroupIdsHasBeenSet(false),
@@ -62,6 +71,8 @@ Instance::Instance() :
     m_stackIdHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
+    m_tenancyHasBeenSet(false),
+    m_virtualizationType(VirtualizationType::NOT_SET),
     m_virtualizationTypeHasBeenSet(false)
 {
 }
@@ -69,7 +80,9 @@ Instance::Instance() :
 Instance::Instance(const JsonValue& jsonValue) : 
     m_agentVersionHasBeenSet(false),
     m_amiIdHasBeenSet(false),
+    m_architecture(Architecture::NOT_SET),
     m_architectureHasBeenSet(false),
+    m_autoScalingType(AutoScalingType::NOT_SET),
     m_autoScalingTypeHasBeenSet(false),
     m_availabilityZoneHasBeenSet(false),
     m_blockDeviceMappingsHasBeenSet(false),
@@ -98,6 +111,7 @@ Instance::Instance(const JsonValue& jsonValue) :
     m_registeredByHasBeenSet(false),
     m_reportedAgentVersionHasBeenSet(false),
     m_reportedOsHasBeenSet(false),
+    m_rootDeviceType(RootDeviceType::NOT_SET),
     m_rootDeviceTypeHasBeenSet(false),
     m_rootDeviceVolumeIdHasBeenSet(false),
     m_securityGroupIdsHasBeenSet(false),
@@ -107,6 +121,8 @@ Instance::Instance(const JsonValue& jsonValue) :
     m_stackIdHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
+    m_tenancyHasBeenSet(false),
+    m_virtualizationType(VirtualizationType::NOT_SET),
     m_virtualizationTypeHasBeenSet(false)
 {
   *this = jsonValue;
@@ -389,6 +405,13 @@ Instance& Instance::operator =(const JsonValue& jsonValue)
     m_subnetIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Tenancy"))
+  {
+    m_tenancy = jsonValue.GetString("Tenancy");
+
+    m_tenancyHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("VirtualizationType"))
   {
     m_virtualizationType = VirtualizationTypeMapper::GetVirtualizationTypeForName(jsonValue.GetString("VirtualizationType"));
@@ -643,10 +666,20 @@ JsonValue Instance::Jsonize() const
 
   }
 
+  if(m_tenancyHasBeenSet)
+  {
+   payload.WithString("Tenancy", m_tenancy);
+
+  }
+
   if(m_virtualizationTypeHasBeenSet)
   {
    payload.WithString("VirtualizationType", VirtualizationTypeMapper::GetNameForVirtualizationType(m_virtualizationType));
   }
 
-  return std::move(payload);
+  return payload;
 }
+
+} // namespace Model
+} // namespace OpsWorks
+} // namespace Aws

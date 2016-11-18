@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,13 +19,18 @@
 
 #include <utility>
 
-using namespace Aws::IAM::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
+namespace Aws
+{
+namespace IAM
+{
+namespace Model
+{
+
 LoginProfile::LoginProfile() : 
     m_userNameHasBeenSet(false),
-    m_createDate(0.0),
     m_createDateHasBeenSet(false),
     m_passwordResetRequired(false),
     m_passwordResetRequiredHasBeenSet(false)
@@ -34,7 +39,6 @@ LoginProfile::LoginProfile() :
 
 LoginProfile::LoginProfile(const XmlNode& xmlNode) : 
     m_userNameHasBeenSet(false),
-    m_createDate(0.0),
     m_createDateHasBeenSet(false),
     m_passwordResetRequired(false),
     m_passwordResetRequiredHasBeenSet(false)
@@ -57,7 +61,7 @@ LoginProfile& LoginProfile::operator =(const XmlNode& xmlNode)
     XmlNode createDateNode = resultNode.FirstChild("CreateDate");
     if(!createDateNode.IsNull())
     {
-      m_createDate = StringUtils::ConvertToDouble(StringUtils::Trim(createDateNode.GetText().c_str()).c_str());
+      m_createDate = DateTime(StringUtils::Trim(createDateNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_createDateHasBeenSet = true;
     }
     XmlNode passwordResetRequiredNode = resultNode.FirstChild("PasswordResetRequired");
@@ -77,14 +81,17 @@ void LoginProfile::OutputToStream(Aws::OStream& oStream, const char* location, u
   {
       oStream << location << index << locationValue << ".UserName=" << StringUtils::URLEncode(m_userName.c_str()) << "&";
   }
+
   if(m_createDateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".CreateDate=" << m_createDate << "&";
+      oStream << location << index << locationValue << ".CreateDate=" << StringUtils::URLEncode(m_createDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_passwordResetRequiredHasBeenSet)
   {
       oStream << location << index << locationValue << ".PasswordResetRequired=" << m_passwordResetRequired << "&";
   }
+
 }
 
 void LoginProfile::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -95,10 +102,14 @@ void LoginProfile::OutputToStream(Aws::OStream& oStream, const char* location) c
   }
   if(m_createDateHasBeenSet)
   {
-      oStream << location << ".CreateDate=" << m_createDate << "&";
+      oStream << location << ".CreateDate=" << StringUtils::URLEncode(m_createDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_passwordResetRequiredHasBeenSet)
   {
       oStream << location << ".PasswordResetRequired=" << m_passwordResetRequired << "&";
   }
 }
+
+} // namespace Model
+} // namespace IAM
+} // namespace Aws

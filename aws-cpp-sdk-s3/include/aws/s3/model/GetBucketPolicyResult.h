@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -26,9 +26,6 @@ namespace S3
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
   class AWS_S3_API GetBucketPolicyResult
   {
   public:
@@ -46,11 +43,16 @@ namespace Model
     GetBucketPolicyResult& operator=(AmazonWebServiceResult<Utils::Stream::ResponseStream>&& result);
 
 
-    /*
-     The bucket policy as a JSON document.
-    */
+    /**
+     * The bucket policy as a JSON document.
+     */
     inline Aws::IOStream& GetPolicy() { return m_policy.GetUnderlyingStream(); }
 
+    /**
+     * The bucket policy as a JSON document.
+     */
+    inline void ReplaceBody(Aws::IOStream* body) { m_policy = Aws::Utils::Stream::ResponseStream(body); }
+    
   private:
     Utils::Stream::ResponseStream m_policy;
   };

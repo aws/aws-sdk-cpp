@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::RDS::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace RDS
+{
+namespace Model
+{
 
 OptionGroup::OptionGroup() : 
     m_optionGroupNameHasBeenSet(false),
@@ -31,7 +37,8 @@ OptionGroup::OptionGroup() :
     m_optionsHasBeenSet(false),
     m_allowsVpcAndNonVpcInstanceMemberships(false),
     m_allowsVpcAndNonVpcInstanceMembershipsHasBeenSet(false),
-    m_vpcIdHasBeenSet(false)
+    m_vpcIdHasBeenSet(false),
+    m_optionGroupArnHasBeenSet(false)
 {
 }
 
@@ -43,7 +50,8 @@ OptionGroup::OptionGroup(const XmlNode& xmlNode) :
     m_optionsHasBeenSet(false),
     m_allowsVpcAndNonVpcInstanceMemberships(false),
     m_allowsVpcAndNonVpcInstanceMembershipsHasBeenSet(false),
-    m_vpcIdHasBeenSet(false)
+    m_vpcIdHasBeenSet(false),
+    m_optionGroupArnHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -102,6 +110,12 @@ OptionGroup& OptionGroup::operator =(const XmlNode& xmlNode)
       m_vpcId = StringUtils::Trim(vpcIdNode.GetText().c_str());
       m_vpcIdHasBeenSet = true;
     }
+    XmlNode optionGroupArnNode = resultNode.FirstChild("OptionGroupArn");
+    if(!optionGroupArnNode.IsNull())
+    {
+      m_optionGroupArn = StringUtils::Trim(optionGroupArnNode.GetText().c_str());
+      m_optionGroupArnHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -113,35 +127,48 @@ void OptionGroup::OutputToStream(Aws::OStream& oStream, const char* location, un
   {
       oStream << location << index << locationValue << ".OptionGroupName=" << StringUtils::URLEncode(m_optionGroupName.c_str()) << "&";
   }
+
   if(m_optionGroupDescriptionHasBeenSet)
   {
       oStream << location << index << locationValue << ".OptionGroupDescription=" << StringUtils::URLEncode(m_optionGroupDescription.c_str()) << "&";
   }
+
   if(m_engineNameHasBeenSet)
   {
       oStream << location << index << locationValue << ".EngineName=" << StringUtils::URLEncode(m_engineName.c_str()) << "&";
   }
+
   if(m_majorEngineVersionHasBeenSet)
   {
       oStream << location << index << locationValue << ".MajorEngineVersion=" << StringUtils::URLEncode(m_majorEngineVersion.c_str()) << "&";
   }
+
   if(m_optionsHasBeenSet)
   {
+      unsigned optionsIdx = 1;
       for(auto& item : m_options)
       {
         Aws::StringStream optionsSs;
-        optionsSs << location << index << locationValue << ".Option";
+        optionsSs << location << index << locationValue << ".Option." << optionsIdx++;
         item.OutputToStream(oStream, optionsSs.str().c_str());
       }
   }
+
   if(m_allowsVpcAndNonVpcInstanceMembershipsHasBeenSet)
   {
       oStream << location << index << locationValue << ".AllowsVpcAndNonVpcInstanceMemberships=" << m_allowsVpcAndNonVpcInstanceMemberships << "&";
   }
+
   if(m_vpcIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
   }
+
+  if(m_optionGroupArnHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".OptionGroupArn=" << StringUtils::URLEncode(m_optionGroupArn.c_str()) << "&";
+  }
+
 }
 
 void OptionGroup::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -164,11 +191,12 @@ void OptionGroup::OutputToStream(Aws::OStream& oStream, const char* location) co
   }
   if(m_optionsHasBeenSet)
   {
+      unsigned optionsIdx = 1;
       for(auto& item : m_options)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".Option";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream optionsSs;
+        optionsSs << location <<  ".Option." << optionsIdx++;
+        item.OutputToStream(oStream, optionsSs.str().c_str());
       }
   }
   if(m_allowsVpcAndNonVpcInstanceMembershipsHasBeenSet)
@@ -179,4 +207,12 @@ void OptionGroup::OutputToStream(Aws::OStream& oStream, const char* location) co
   {
       oStream << location << ".VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
   }
+  if(m_optionGroupArnHasBeenSet)
+  {
+      oStream << location << ".OptionGroupArn=" << StringUtils::URLEncode(m_optionGroupArn.c_str()) << "&";
+  }
 }
+
+} // namespace Model
+} // namespace RDS
+} // namespace Aws

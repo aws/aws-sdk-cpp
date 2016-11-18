@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -34,9 +34,9 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
+  /**
+   * <p>Contains the output of DescribeCustomerGateways.</p>
+   */
   class AWS_EC2_API DescribeCustomerGatewaysResponse
   {
   public:
@@ -44,39 +44,39 @@ namespace Model
     DescribeCustomerGatewaysResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     DescribeCustomerGatewaysResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>Information about one or more customer gateways.</p>
-    */
+    /**
+     * <p>Information about one or more customer gateways.</p>
+     */
     inline const Aws::Vector<CustomerGateway>& GetCustomerGateways() const{ return m_customerGateways; }
 
-    /*
-     <p>Information about one or more customer gateways.</p>
-    */
+    /**
+     * <p>Information about one or more customer gateways.</p>
+     */
     inline void SetCustomerGateways(const Aws::Vector<CustomerGateway>& value) { m_customerGateways = value; }
 
-    /*
-     <p>Information about one or more customer gateways.</p>
-    */
+    /**
+     * <p>Information about one or more customer gateways.</p>
+     */
     inline void SetCustomerGateways(Aws::Vector<CustomerGateway>&& value) { m_customerGateways = value; }
 
-    /*
-     <p>Information about one or more customer gateways.</p>
-    */
+    /**
+     * <p>Information about one or more customer gateways.</p>
+     */
     inline DescribeCustomerGatewaysResponse& WithCustomerGateways(const Aws::Vector<CustomerGateway>& value) { SetCustomerGateways(value); return *this;}
 
-    /*
-     <p>Information about one or more customer gateways.</p>
-    */
+    /**
+     * <p>Information about one or more customer gateways.</p>
+     */
     inline DescribeCustomerGatewaysResponse& WithCustomerGateways(Aws::Vector<CustomerGateway>&& value) { SetCustomerGateways(value); return *this;}
 
-    /*
-     <p>Information about one or more customer gateways.</p>
-    */
+    /**
+     * <p>Information about one or more customer gateways.</p>
+     */
     inline DescribeCustomerGatewaysResponse& AddCustomerGateways(const CustomerGateway& value) { m_customerGateways.push_back(value); return *this; }
 
-    /*
-     <p>Information about one or more customer gateways.</p>
-    */
+    /**
+     * <p>Information about one or more customer gateways.</p>
+     */
     inline DescribeCustomerGatewaysResponse& AddCustomerGateways(CustomerGateway&& value) { m_customerGateways.push_back(value); return *this; }
 
     

@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -34,9 +34,9 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
+  /**
+   * <p>Contains the output of DescribeSecurityGroups.</p>
+   */
   class AWS_EC2_API DescribeSecurityGroupsResponse
   {
   public:
@@ -44,39 +44,39 @@ namespace Model
     DescribeSecurityGroupsResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     DescribeSecurityGroupsResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>Information about one or more security groups.</p>
-    */
+    /**
+     * <p>Information about one or more security groups.</p>
+     */
     inline const Aws::Vector<SecurityGroup>& GetSecurityGroups() const{ return m_securityGroups; }
 
-    /*
-     <p>Information about one or more security groups.</p>
-    */
+    /**
+     * <p>Information about one or more security groups.</p>
+     */
     inline void SetSecurityGroups(const Aws::Vector<SecurityGroup>& value) { m_securityGroups = value; }
 
-    /*
-     <p>Information about one or more security groups.</p>
-    */
+    /**
+     * <p>Information about one or more security groups.</p>
+     */
     inline void SetSecurityGroups(Aws::Vector<SecurityGroup>&& value) { m_securityGroups = value; }
 
-    /*
-     <p>Information about one or more security groups.</p>
-    */
+    /**
+     * <p>Information about one or more security groups.</p>
+     */
     inline DescribeSecurityGroupsResponse& WithSecurityGroups(const Aws::Vector<SecurityGroup>& value) { SetSecurityGroups(value); return *this;}
 
-    /*
-     <p>Information about one or more security groups.</p>
-    */
+    /**
+     * <p>Information about one or more security groups.</p>
+     */
     inline DescribeSecurityGroupsResponse& WithSecurityGroups(Aws::Vector<SecurityGroup>&& value) { SetSecurityGroups(value); return *this;}
 
-    /*
-     <p>Information about one or more security groups.</p>
-    */
+    /**
+     * <p>Information about one or more security groups.</p>
+     */
     inline DescribeSecurityGroupsResponse& AddSecurityGroups(const SecurityGroup& value) { m_securityGroups.push_back(value); return *this; }
 
-    /*
-     <p>Information about one or more security groups.</p>
-    */
+    /**
+     * <p>Information about one or more security groups.</p>
+     */
     inline DescribeSecurityGroupsResponse& AddSecurityGroups(SecurityGroup&& value) { m_securityGroups.push_back(value); return *this; }
 
     

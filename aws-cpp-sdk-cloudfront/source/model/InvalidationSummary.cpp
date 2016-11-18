@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,13 +19,18 @@
 
 #include <utility>
 
-using namespace Aws::CloudFront::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
+namespace Aws
+{
+namespace CloudFront
+{
+namespace Model
+{
+
 InvalidationSummary::InvalidationSummary() : 
     m_idHasBeenSet(false),
-    m_createTime(0.0),
     m_createTimeHasBeenSet(false),
     m_statusHasBeenSet(false)
 {
@@ -33,7 +38,6 @@ InvalidationSummary::InvalidationSummary() :
 
 InvalidationSummary::InvalidationSummary(const XmlNode& xmlNode) : 
     m_idHasBeenSet(false),
-    m_createTime(0.0),
     m_createTimeHasBeenSet(false),
     m_statusHasBeenSet(false)
 {
@@ -55,7 +59,7 @@ InvalidationSummary& InvalidationSummary::operator =(const XmlNode& xmlNode)
     XmlNode createTimeNode = resultNode.FirstChild("CreateTime");
     if(!createTimeNode.IsNull())
     {
-      m_createTime = StringUtils::ConvertToDouble(StringUtils::Trim(createTimeNode.GetText().c_str()).c_str());
+      m_createTime = DateTime(StringUtils::Trim(createTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_createTimeHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
@@ -80,10 +84,8 @@ void InvalidationSummary::AddToNode(XmlNode& parentNode) const
 
   if(m_createTimeHasBeenSet)
   {
-   XmlNode createTimeNode = parentNode.CreateChildElement("CreateTime");
-  ss << m_createTime;
-   createTimeNode.SetText(ss.str());
-  ss.str("");
+     XmlNode createTimeNode = parentNode.CreateChildElement("CreateTime");
+     createTimeNode.SetText(m_createTime.ToGmtString(DateFormat::ISO_8601));
   }
 
   if(m_statusHasBeenSet)
@@ -93,3 +95,7 @@ void InvalidationSummary::AddToNode(XmlNode& parentNode) const
   }
 
 }
+
+} // namespace Model
+} // namespace CloudFront
+} // namespace Aws

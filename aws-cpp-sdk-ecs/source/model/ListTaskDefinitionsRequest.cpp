@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -23,7 +23,9 @@ using namespace Aws::Utils;
 
 ListTaskDefinitionsRequest::ListTaskDefinitionsRequest() : 
     m_familyPrefixHasBeenSet(false),
+    m_status(TaskDefinitionStatus::NOT_SET),
     m_statusHasBeenSet(false),
+    m_sort(SortOrder::NOT_SET),
     m_sortHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
     m_maxResults(0),
@@ -70,7 +72,7 @@ Aws::Http::HeaderValueCollection ListTaskDefinitionsRequest::GetRequestSpecificH
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AmazonEC2ContainerServiceV20141113.ListTaskDefinitions"));
-  return std::move(headers);
+  return headers;
 
 }
 

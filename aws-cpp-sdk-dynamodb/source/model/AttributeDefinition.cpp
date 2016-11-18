@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -17,18 +17,26 @@
 
 #include <utility>
 
-using namespace Aws::DynamoDB::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
+namespace Aws
+{
+namespace DynamoDB
+{
+namespace Model
+{
+
 AttributeDefinition::AttributeDefinition() : 
     m_attributeNameHasBeenSet(false),
+    m_attributeType(ScalarAttributeType::NOT_SET),
     m_attributeTypeHasBeenSet(false)
 {
 }
 
 AttributeDefinition::AttributeDefinition(const JsonValue& jsonValue) : 
     m_attributeNameHasBeenSet(false),
+    m_attributeType(ScalarAttributeType::NOT_SET),
     m_attributeTypeHasBeenSet(false)
 {
   *this = jsonValue;
@@ -68,5 +76,9 @@ JsonValue AttributeDefinition::Jsonize() const
    payload.WithString("AttributeType", ScalarAttributeTypeMapper::GetNameForScalarAttributeType(m_attributeType));
   }
 
-  return std::move(payload);
+  return payload;
 }
+
+} // namespace Model
+} // namespace DynamoDB
+} // namespace Aws

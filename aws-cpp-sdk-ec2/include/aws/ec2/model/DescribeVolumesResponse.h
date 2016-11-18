@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -35,9 +35,9 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
+  /**
+   * <p>Contains the output of DescribeVolumes.</p>
+   */
   class AWS_EC2_API DescribeVolumesResponse
   {
   public:
@@ -45,74 +45,102 @@ namespace Model
     DescribeVolumesResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     DescribeVolumesResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>Information about the volumes.</p>
-    */
+    /**
+     * <p>Information about the volumes.</p>
+     */
     inline const Aws::Vector<Volume>& GetVolumes() const{ return m_volumes; }
 
-    /*
-     <p>Information about the volumes.</p>
-    */
+    /**
+     * <p>Information about the volumes.</p>
+     */
     inline void SetVolumes(const Aws::Vector<Volume>& value) { m_volumes = value; }
 
-    /*
-     <p>Information about the volumes.</p>
-    */
+    /**
+     * <p>Information about the volumes.</p>
+     */
     inline void SetVolumes(Aws::Vector<Volume>&& value) { m_volumes = value; }
 
-    /*
-     <p>Information about the volumes.</p>
-    */
+    /**
+     * <p>Information about the volumes.</p>
+     */
     inline DescribeVolumesResponse& WithVolumes(const Aws::Vector<Volume>& value) { SetVolumes(value); return *this;}
 
-    /*
-     <p>Information about the volumes.</p>
-    */
+    /**
+     * <p>Information about the volumes.</p>
+     */
     inline DescribeVolumesResponse& WithVolumes(Aws::Vector<Volume>&& value) { SetVolumes(value); return *this;}
 
-    /*
-     <p>Information about the volumes.</p>
-    */
+    /**
+     * <p>Information about the volumes.</p>
+     */
     inline DescribeVolumesResponse& AddVolumes(const Volume& value) { m_volumes.push_back(value); return *this; }
 
-    /*
-     <p>Information about the volumes.</p>
-    */
+    /**
+     * <p>Information about the volumes.</p>
+     */
     inline DescribeVolumesResponse& AddVolumes(Volume&& value) { m_volumes.push_back(value); return *this; }
 
-    /*
-     <p>The <code>NextToken</code> value to include in a future <code>DescribeVolumes</code> request. When the results of a <code>DescribeVolumes</code> request exceed <code>MaxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    */
+    /**
+     * <p>The <code>NextToken</code> value to include in a future
+     * <code>DescribeVolumes</code> request. When the results of a
+     * <code>DescribeVolumes</code> request exceed <code>MaxResults</code>, this value
+     * can be used to retrieve the next page of results. This value is
+     * <code>null</code> when there are no more results to return.</p>
+     */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
-    /*
-     <p>The <code>NextToken</code> value to include in a future <code>DescribeVolumes</code> request. When the results of a <code>DescribeVolumes</code> request exceed <code>MaxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    */
+    /**
+     * <p>The <code>NextToken</code> value to include in a future
+     * <code>DescribeVolumes</code> request. When the results of a
+     * <code>DescribeVolumes</code> request exceed <code>MaxResults</code>, this value
+     * can be used to retrieve the next page of results. This value is
+     * <code>null</code> when there are no more results to return.</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
-    /*
-     <p>The <code>NextToken</code> value to include in a future <code>DescribeVolumes</code> request. When the results of a <code>DescribeVolumes</code> request exceed <code>MaxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    */
+    /**
+     * <p>The <code>NextToken</code> value to include in a future
+     * <code>DescribeVolumes</code> request. When the results of a
+     * <code>DescribeVolumes</code> request exceed <code>MaxResults</code>, this value
+     * can be used to retrieve the next page of results. This value is
+     * <code>null</code> when there are no more results to return.</p>
+     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
 
-    /*
-     <p>The <code>NextToken</code> value to include in a future <code>DescribeVolumes</code> request. When the results of a <code>DescribeVolumes</code> request exceed <code>MaxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    */
+    /**
+     * <p>The <code>NextToken</code> value to include in a future
+     * <code>DescribeVolumes</code> request. When the results of a
+     * <code>DescribeVolumes</code> request exceed <code>MaxResults</code>, this value
+     * can be used to retrieve the next page of results. This value is
+     * <code>null</code> when there are no more results to return.</p>
+     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
-    /*
-     <p>The <code>NextToken</code> value to include in a future <code>DescribeVolumes</code> request. When the results of a <code>DescribeVolumes</code> request exceed <code>MaxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    */
+    /**
+     * <p>The <code>NextToken</code> value to include in a future
+     * <code>DescribeVolumes</code> request. When the results of a
+     * <code>DescribeVolumes</code> request exceed <code>MaxResults</code>, this value
+     * can be used to retrieve the next page of results. This value is
+     * <code>null</code> when there are no more results to return.</p>
+     */
     inline DescribeVolumesResponse& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
-    /*
-     <p>The <code>NextToken</code> value to include in a future <code>DescribeVolumes</code> request. When the results of a <code>DescribeVolumes</code> request exceed <code>MaxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    */
+    /**
+     * <p>The <code>NextToken</code> value to include in a future
+     * <code>DescribeVolumes</code> request. When the results of a
+     * <code>DescribeVolumes</code> request exceed <code>MaxResults</code>, this value
+     * can be used to retrieve the next page of results. This value is
+     * <code>null</code> when there are no more results to return.</p>
+     */
     inline DescribeVolumesResponse& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
-    /*
-     <p>The <code>NextToken</code> value to include in a future <code>DescribeVolumes</code> request. When the results of a <code>DescribeVolumes</code> request exceed <code>MaxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    */
+    /**
+     * <p>The <code>NextToken</code> value to include in a future
+     * <code>DescribeVolumes</code> request. When the results of a
+     * <code>DescribeVolumes</code> request exceed <code>MaxResults</code>, this value
+     * can be used to retrieve the next page of results. This value is
+     * <code>null</code> when there are no more results to return.</p>
+     */
     inline DescribeVolumesResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
     

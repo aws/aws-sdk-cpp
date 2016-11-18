@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -32,9 +32,6 @@ namespace ECS
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
   class AWS_ECS_API DeleteServiceResult
   {
   public:
@@ -42,19 +39,29 @@ namespace Model
     DeleteServiceResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     DeleteServiceResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    
+    /**
+     * <p>The full description of the deleted service.</p>
+     */
     inline const Service& GetService() const{ return m_service; }
 
-    
+    /**
+     * <p>The full description of the deleted service.</p>
+     */
     inline void SetService(const Service& value) { m_service = value; }
 
-    
+    /**
+     * <p>The full description of the deleted service.</p>
+     */
     inline void SetService(Service&& value) { m_service = value; }
 
-    
+    /**
+     * <p>The full description of the deleted service.</p>
+     */
     inline DeleteServiceResult& WithService(const Service& value) { SetService(value); return *this;}
 
-    
+    /**
+     * <p>The full description of the deleted service.</p>
+     */
     inline DeleteServiceResult& WithService(Service&& value) { SetService(value); return *this;}
 
   private:

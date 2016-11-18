@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::ElasticBeanstalk::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace ElasticBeanstalk
+{
+namespace Model
+{
 
 EnvironmentResourcesDescription::EnvironmentResourcesDescription() : 
     m_loadBalancerHasBeenSet(false)
@@ -59,6 +65,7 @@ void EnvironmentResourcesDescription::OutputToStream(Aws::OStream& oStream, cons
       loadBalancerLocationAndMemberSs << location << index << locationValue << ".LoadBalancer";
       m_loadBalancer.OutputToStream(oStream, loadBalancerLocationAndMemberSs.str().c_str());
   }
+
 }
 
 void EnvironmentResourcesDescription::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -70,3 +77,7 @@ void EnvironmentResourcesDescription::OutputToStream(Aws::OStream& oStream, cons
       m_loadBalancer.OutputToStream(oStream, loadBalancerLocationAndMember.c_str());
   }
 }
+
+} // namespace Model
+} // namespace ElasticBeanstalk
+} // namespace Aws

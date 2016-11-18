@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,49 +24,55 @@ namespace RDS
 namespace Model
 {
 
-  /*
-    <p> </p>
-  */
+  /**
+   * <p/>
+   */
   class AWS_RDS_API DeleteOptionGroupRequest : public RDSRequest
   {
   public:
     DeleteOptionGroupRequest();
     Aws::String SerializePayload() const override;
 
-
-    /*
-     <p> The name of the option group to be deleted. </p> <note>You cannot delete default Option Groups.</note>
-    */
+    /**
+     * <p>The name of the option group to be deleted.</p> <note> <p>You cannot delete
+     * default option groups.</p> </note>
+     */
     inline const Aws::String& GetOptionGroupName() const{ return m_optionGroupName; }
 
-    /*
-     <p> The name of the option group to be deleted. </p> <note>You cannot delete default Option Groups.</note>
-    */
+    /**
+     * <p>The name of the option group to be deleted.</p> <note> <p>You cannot delete
+     * default option groups.</p> </note>
+     */
     inline void SetOptionGroupName(const Aws::String& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = value; }
 
-    /*
-     <p> The name of the option group to be deleted. </p> <note>You cannot delete default Option Groups.</note>
-    */
+    /**
+     * <p>The name of the option group to be deleted.</p> <note> <p>You cannot delete
+     * default option groups.</p> </note>
+     */
     inline void SetOptionGroupName(Aws::String&& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = value; }
 
-    /*
-     <p> The name of the option group to be deleted. </p> <note>You cannot delete default Option Groups.</note>
-    */
+    /**
+     * <p>The name of the option group to be deleted.</p> <note> <p>You cannot delete
+     * default option groups.</p> </note>
+     */
     inline void SetOptionGroupName(const char* value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName.assign(value); }
 
-    /*
-     <p> The name of the option group to be deleted. </p> <note>You cannot delete default Option Groups.</note>
-    */
+    /**
+     * <p>The name of the option group to be deleted.</p> <note> <p>You cannot delete
+     * default option groups.</p> </note>
+     */
     inline DeleteOptionGroupRequest& WithOptionGroupName(const Aws::String& value) { SetOptionGroupName(value); return *this;}
 
-    /*
-     <p> The name of the option group to be deleted. </p> <note>You cannot delete default Option Groups.</note>
-    */
+    /**
+     * <p>The name of the option group to be deleted.</p> <note> <p>You cannot delete
+     * default option groups.</p> </note>
+     */
     inline DeleteOptionGroupRequest& WithOptionGroupName(Aws::String&& value) { SetOptionGroupName(value); return *this;}
 
-    /*
-     <p> The name of the option group to be deleted. </p> <note>You cannot delete default Option Groups.</note>
-    */
+    /**
+     * <p>The name of the option group to be deleted.</p> <note> <p>You cannot delete
+     * default option groups.</p> </note>
+     */
     inline DeleteOptionGroupRequest& WithOptionGroupName(const char* value) { SetOptionGroupName(value); return *this;}
 
   private:

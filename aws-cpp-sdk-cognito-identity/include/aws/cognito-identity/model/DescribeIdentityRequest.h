@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,9 +24,9 @@ namespace CognitoIdentity
 namespace Model
 {
 
-  /*
-    <p>Input to the <code>DescribeIdentity</code> action.</p>
-  */
+  /**
+   * <p>Input to the <code>DescribeIdentity</code> action.</p>
+   */
   class AWS_COGNITOIDENTITY_API DescribeIdentityRequest : public CognitoIdentityRequest
   {
   public:
@@ -35,40 +35,39 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
-    /*
-     <p>A unique identifier in the format REGION:GUID.</p>
-    */
+    /**
+     * <p>A unique identifier in the format REGION:GUID.</p>
+     */
     inline const Aws::String& GetIdentityId() const{ return m_identityId; }
 
-    /*
-     <p>A unique identifier in the format REGION:GUID.</p>
-    */
+    /**
+     * <p>A unique identifier in the format REGION:GUID.</p>
+     */
     inline void SetIdentityId(const Aws::String& value) { m_identityIdHasBeenSet = true; m_identityId = value; }
 
-    /*
-     <p>A unique identifier in the format REGION:GUID.</p>
-    */
+    /**
+     * <p>A unique identifier in the format REGION:GUID.</p>
+     */
     inline void SetIdentityId(Aws::String&& value) { m_identityIdHasBeenSet = true; m_identityId = value; }
 
-    /*
-     <p>A unique identifier in the format REGION:GUID.</p>
-    */
+    /**
+     * <p>A unique identifier in the format REGION:GUID.</p>
+     */
     inline void SetIdentityId(const char* value) { m_identityIdHasBeenSet = true; m_identityId.assign(value); }
 
-    /*
-     <p>A unique identifier in the format REGION:GUID.</p>
-    */
+    /**
+     * <p>A unique identifier in the format REGION:GUID.</p>
+     */
     inline DescribeIdentityRequest& WithIdentityId(const Aws::String& value) { SetIdentityId(value); return *this;}
 
-    /*
-     <p>A unique identifier in the format REGION:GUID.</p>
-    */
+    /**
+     * <p>A unique identifier in the format REGION:GUID.</p>
+     */
     inline DescribeIdentityRequest& WithIdentityId(Aws::String&& value) { SetIdentityId(value); return *this;}
 
-    /*
-     <p>A unique identifier in the format REGION:GUID.</p>
-    */
+    /**
+     * <p>A unique identifier in the format REGION:GUID.</p>
+     */
     inline DescribeIdentityRequest& WithIdentityId(const char* value) { SetIdentityId(value); return *this;}
 
   private:

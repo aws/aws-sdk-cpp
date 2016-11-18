@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -20,9 +20,15 @@
 
 #include <utility>
 
-using namespace Aws::EC2::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
 
 S3Storage::S3Storage() : 
     m_bucketHasBeenSet(false),
@@ -90,22 +96,27 @@ void S3Storage::OutputToStream(Aws::OStream& oStream, const char* location, unsi
   {
       oStream << location << index << locationValue << ".Bucket=" << StringUtils::URLEncode(m_bucket.c_str()) << "&";
   }
+
   if(m_prefixHasBeenSet)
   {
       oStream << location << index << locationValue << ".Prefix=" << StringUtils::URLEncode(m_prefix.c_str()) << "&";
   }
+
   if(m_aWSAccessKeyIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".AWSAccessKeyId=" << StringUtils::URLEncode(m_aWSAccessKeyId.c_str()) << "&";
   }
+
   if(m_uploadPolicyHasBeenSet)
   {
       oStream << location << index << locationValue << ".UploadPolicy=" << StringUtils::URLEncode(HashingUtils::Base64Encode(m_uploadPolicy).c_str()) << "&";
   }
+
   if(m_uploadPolicySignatureHasBeenSet)
   {
       oStream << location << index << locationValue << ".UploadPolicySignature=" << StringUtils::URLEncode(m_uploadPolicySignature.c_str()) << "&";
   }
+
 }
 
 void S3Storage::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -131,3 +142,7 @@ void S3Storage::OutputToStream(Aws::OStream& oStream, const char* location) cons
       oStream << location << ".UploadPolicySignature=" << StringUtils::URLEncode(m_uploadPolicySignature.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

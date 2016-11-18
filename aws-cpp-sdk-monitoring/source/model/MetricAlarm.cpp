@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::CloudWatch::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace CloudWatch
+{
+namespace Model
+{
 
 MetricAlarm::MetricAlarm() : 
     m_alarmNameHasBeenSet(false),
@@ -33,21 +39,25 @@ MetricAlarm::MetricAlarm() :
     m_oKActionsHasBeenSet(false),
     m_alarmActionsHasBeenSet(false),
     m_insufficientDataActionsHasBeenSet(false),
+    m_stateValue(StateValue::NOT_SET),
     m_stateValueHasBeenSet(false),
     m_stateReasonHasBeenSet(false),
     m_stateReasonDataHasBeenSet(false),
     m_stateUpdatedTimestampHasBeenSet(false),
     m_metricNameHasBeenSet(false),
     m_namespaceHasBeenSet(false),
+    m_statistic(Statistic::NOT_SET),
     m_statisticHasBeenSet(false),
     m_dimensionsHasBeenSet(false),
     m_period(0),
     m_periodHasBeenSet(false),
+    m_unit(StandardUnit::NOT_SET),
     m_unitHasBeenSet(false),
     m_evaluationPeriods(0),
     m_evaluationPeriodsHasBeenSet(false),
     m_threshold(0.0),
     m_thresholdHasBeenSet(false),
+    m_comparisonOperator(ComparisonOperator::NOT_SET),
     m_comparisonOperatorHasBeenSet(false)
 {
 }
@@ -62,21 +72,25 @@ MetricAlarm::MetricAlarm(const XmlNode& xmlNode) :
     m_oKActionsHasBeenSet(false),
     m_alarmActionsHasBeenSet(false),
     m_insufficientDataActionsHasBeenSet(false),
+    m_stateValue(StateValue::NOT_SET),
     m_stateValueHasBeenSet(false),
     m_stateReasonHasBeenSet(false),
     m_stateReasonDataHasBeenSet(false),
     m_stateUpdatedTimestampHasBeenSet(false),
     m_metricNameHasBeenSet(false),
     m_namespaceHasBeenSet(false),
+    m_statistic(Statistic::NOT_SET),
     m_statisticHasBeenSet(false),
     m_dimensionsHasBeenSet(false),
     m_period(0),
     m_periodHasBeenSet(false),
+    m_unit(StandardUnit::NOT_SET),
     m_unitHasBeenSet(false),
     m_evaluationPeriods(0),
     m_evaluationPeriodsHasBeenSet(false),
     m_threshold(0.0),
     m_thresholdHasBeenSet(false),
+    m_comparisonOperator(ComparisonOperator::NOT_SET),
     m_comparisonOperatorHasBeenSet(false)
 {
   *this = xmlNode;
@@ -109,7 +123,7 @@ MetricAlarm& MetricAlarm::operator =(const XmlNode& xmlNode)
     XmlNode alarmConfigurationUpdatedTimestampNode = resultNode.FirstChild("AlarmConfigurationUpdatedTimestamp");
     if(!alarmConfigurationUpdatedTimestampNode.IsNull())
     {
-      m_alarmConfigurationUpdatedTimestamp = StringUtils::Trim(alarmConfigurationUpdatedTimestampNode.GetText().c_str());
+      m_alarmConfigurationUpdatedTimestamp = DateTime(StringUtils::Trim(alarmConfigurationUpdatedTimestampNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_alarmConfigurationUpdatedTimestampHasBeenSet = true;
     }
     XmlNode actionsEnabledNode = resultNode.FirstChild("ActionsEnabled");
@@ -175,7 +189,7 @@ MetricAlarm& MetricAlarm::operator =(const XmlNode& xmlNode)
     XmlNode stateUpdatedTimestampNode = resultNode.FirstChild("StateUpdatedTimestamp");
     if(!stateUpdatedTimestampNode.IsNull())
     {
-      m_stateUpdatedTimestamp = StringUtils::Trim(stateUpdatedTimestampNode.GetText().c_str());
+      m_stateUpdatedTimestamp = DateTime(StringUtils::Trim(stateUpdatedTimestampNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_stateUpdatedTimestampHasBeenSet = true;
     }
     XmlNode metricNameNode = resultNode.FirstChild("MetricName");
@@ -249,100 +263,125 @@ void MetricAlarm::OutputToStream(Aws::OStream& oStream, const char* location, un
   {
       oStream << location << index << locationValue << ".AlarmName=" << StringUtils::URLEncode(m_alarmName.c_str()) << "&";
   }
+
   if(m_alarmArnHasBeenSet)
   {
       oStream << location << index << locationValue << ".AlarmArn=" << StringUtils::URLEncode(m_alarmArn.c_str()) << "&";
   }
+
   if(m_alarmDescriptionHasBeenSet)
   {
       oStream << location << index << locationValue << ".AlarmDescription=" << StringUtils::URLEncode(m_alarmDescription.c_str()) << "&";
   }
+
   if(m_alarmConfigurationUpdatedTimestampHasBeenSet)
   {
-      oStream << location << index << locationValue << ".AlarmConfigurationUpdatedTimestamp=" << StringUtils::URLEncode(m_alarmConfigurationUpdatedTimestamp.c_str()) << "&";
+      oStream << location << index << locationValue << ".AlarmConfigurationUpdatedTimestamp=" << StringUtils::URLEncode(m_alarmConfigurationUpdatedTimestamp.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_actionsEnabledHasBeenSet)
   {
       oStream << location << index << locationValue << ".ActionsEnabled=" << m_actionsEnabled << "&";
   }
+
   if(m_oKActionsHasBeenSet)
   {
+      unsigned oKActionsIdx = 1;
       for(auto& item : m_oKActions)
       {
-        oStream << location << index << locationValue << ".OKActions=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << index << locationValue << ".OKActions.member." << oKActionsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
+
   if(m_alarmActionsHasBeenSet)
   {
+      unsigned alarmActionsIdx = 1;
       for(auto& item : m_alarmActions)
       {
-        oStream << location << index << locationValue << ".AlarmActions=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << index << locationValue << ".AlarmActions.member." << alarmActionsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
+
   if(m_insufficientDataActionsHasBeenSet)
   {
+      unsigned insufficientDataActionsIdx = 1;
       for(auto& item : m_insufficientDataActions)
       {
-        oStream << location << index << locationValue << ".InsufficientDataActions=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << index << locationValue << ".InsufficientDataActions.member." << insufficientDataActionsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
+
   if(m_stateValueHasBeenSet)
   {
       oStream << location << index << locationValue << ".StateValue=" << StateValueMapper::GetNameForStateValue(m_stateValue) << "&";
   }
+
   if(m_stateReasonHasBeenSet)
   {
       oStream << location << index << locationValue << ".StateReason=" << StringUtils::URLEncode(m_stateReason.c_str()) << "&";
   }
+
   if(m_stateReasonDataHasBeenSet)
   {
       oStream << location << index << locationValue << ".StateReasonData=" << StringUtils::URLEncode(m_stateReasonData.c_str()) << "&";
   }
+
   if(m_stateUpdatedTimestampHasBeenSet)
   {
-      oStream << location << index << locationValue << ".StateUpdatedTimestamp=" << StringUtils::URLEncode(m_stateUpdatedTimestamp.c_str()) << "&";
+      oStream << location << index << locationValue << ".StateUpdatedTimestamp=" << StringUtils::URLEncode(m_stateUpdatedTimestamp.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_metricNameHasBeenSet)
   {
       oStream << location << index << locationValue << ".MetricName=" << StringUtils::URLEncode(m_metricName.c_str()) << "&";
   }
+
   if(m_namespaceHasBeenSet)
   {
       oStream << location << index << locationValue << ".Namespace=" << StringUtils::URLEncode(m_namespace.c_str()) << "&";
   }
+
   if(m_statisticHasBeenSet)
   {
       oStream << location << index << locationValue << ".Statistic=" << StatisticMapper::GetNameForStatistic(m_statistic) << "&";
   }
+
   if(m_dimensionsHasBeenSet)
   {
+      unsigned dimensionsIdx = 1;
       for(auto& item : m_dimensions)
       {
         Aws::StringStream dimensionsSs;
-        dimensionsSs << location << index << locationValue << ".Dimensions";
+        dimensionsSs << location << index << locationValue << ".Dimensions.member." << dimensionsIdx++;
         item.OutputToStream(oStream, dimensionsSs.str().c_str());
       }
   }
+
   if(m_periodHasBeenSet)
   {
       oStream << location << index << locationValue << ".Period=" << m_period << "&";
   }
+
   if(m_unitHasBeenSet)
   {
       oStream << location << index << locationValue << ".Unit=" << StandardUnitMapper::GetNameForStandardUnit(m_unit) << "&";
   }
+
   if(m_evaluationPeriodsHasBeenSet)
   {
       oStream << location << index << locationValue << ".EvaluationPeriods=" << m_evaluationPeriods << "&";
   }
+
   if(m_thresholdHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Threshold=" << m_threshold << "&";
+        oStream << location << index << locationValue << ".Threshold=" << StringUtils::URLEncode(m_threshold) << "&";
   }
+
   if(m_comparisonOperatorHasBeenSet)
   {
       oStream << location << index << locationValue << ".ComparisonOperator=" << ComparisonOperatorMapper::GetNameForComparisonOperator(m_comparisonOperator) << "&";
   }
+
 }
 
 void MetricAlarm::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -361,7 +400,7 @@ void MetricAlarm::OutputToStream(Aws::OStream& oStream, const char* location) co
   }
   if(m_alarmConfigurationUpdatedTimestampHasBeenSet)
   {
-      oStream << location << ".AlarmConfigurationUpdatedTimestamp=" << StringUtils::URLEncode(m_alarmConfigurationUpdatedTimestamp.c_str()) << "&";
+      oStream << location << ".AlarmConfigurationUpdatedTimestamp=" << StringUtils::URLEncode(m_alarmConfigurationUpdatedTimestamp.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_actionsEnabledHasBeenSet)
   {
@@ -369,23 +408,26 @@ void MetricAlarm::OutputToStream(Aws::OStream& oStream, const char* location) co
   }
   if(m_oKActionsHasBeenSet)
   {
+      unsigned oKActionsIdx = 1;
       for(auto& item : m_oKActions)
       {
-        oStream << location << ".OKActions=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << ".OKActions.member." << oKActionsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
   if(m_alarmActionsHasBeenSet)
   {
+      unsigned alarmActionsIdx = 1;
       for(auto& item : m_alarmActions)
       {
-        oStream << location << ".AlarmActions=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << ".AlarmActions.member." << alarmActionsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
   if(m_insufficientDataActionsHasBeenSet)
   {
+      unsigned insufficientDataActionsIdx = 1;
       for(auto& item : m_insufficientDataActions)
       {
-        oStream << location << ".InsufficientDataActions=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << ".InsufficientDataActions.member." << insufficientDataActionsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
   if(m_stateValueHasBeenSet)
@@ -402,7 +444,7 @@ void MetricAlarm::OutputToStream(Aws::OStream& oStream, const char* location) co
   }
   if(m_stateUpdatedTimestampHasBeenSet)
   {
-      oStream << location << ".StateUpdatedTimestamp=" << StringUtils::URLEncode(m_stateUpdatedTimestamp.c_str()) << "&";
+      oStream << location << ".StateUpdatedTimestamp=" << StringUtils::URLEncode(m_stateUpdatedTimestamp.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_metricNameHasBeenSet)
   {
@@ -418,11 +460,12 @@ void MetricAlarm::OutputToStream(Aws::OStream& oStream, const char* location) co
   }
   if(m_dimensionsHasBeenSet)
   {
+      unsigned dimensionsIdx = 1;
       for(auto& item : m_dimensions)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".Dimensions";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream dimensionsSs;
+        dimensionsSs << location <<  ".Dimensions.member." << dimensionsIdx++;
+        item.OutputToStream(oStream, dimensionsSs.str().c_str());
       }
   }
   if(m_periodHasBeenSet)
@@ -439,10 +482,14 @@ void MetricAlarm::OutputToStream(Aws::OStream& oStream, const char* location) co
   }
   if(m_thresholdHasBeenSet)
   {
-      oStream << location << ".Threshold=" << m_threshold << "&";
+        oStream << location << ".Threshold=" << StringUtils::URLEncode(m_threshold) << "&";
   }
   if(m_comparisonOperatorHasBeenSet)
   {
       oStream << location << ".ComparisonOperator=" << ComparisonOperatorMapper::GetNameForComparisonOperator(m_comparisonOperator) << "&";
   }
 }
+
+} // namespace Model
+} // namespace CloudWatch
+} // namespace Aws

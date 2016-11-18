@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,12 +19,17 @@
 
 #include <utility>
 
-using namespace Aws::ElasticBeanstalk::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
+namespace Aws
+{
+namespace ElasticBeanstalk
+{
+namespace Model
+{
+
 EventDescription::EventDescription() : 
-    m_eventDate(0.0),
     m_eventDateHasBeenSet(false),
     m_messageHasBeenSet(false),
     m_applicationNameHasBeenSet(false),
@@ -32,12 +37,12 @@ EventDescription::EventDescription() :
     m_templateNameHasBeenSet(false),
     m_environmentNameHasBeenSet(false),
     m_requestIdHasBeenSet(false),
+    m_severity(EventSeverity::NOT_SET),
     m_severityHasBeenSet(false)
 {
 }
 
 EventDescription::EventDescription(const XmlNode& xmlNode) : 
-    m_eventDate(0.0),
     m_eventDateHasBeenSet(false),
     m_messageHasBeenSet(false),
     m_applicationNameHasBeenSet(false),
@@ -45,6 +50,7 @@ EventDescription::EventDescription(const XmlNode& xmlNode) :
     m_templateNameHasBeenSet(false),
     m_environmentNameHasBeenSet(false),
     m_requestIdHasBeenSet(false),
+    m_severity(EventSeverity::NOT_SET),
     m_severityHasBeenSet(false)
 {
   *this = xmlNode;
@@ -59,7 +65,7 @@ EventDescription& EventDescription::operator =(const XmlNode& xmlNode)
     XmlNode eventDateNode = resultNode.FirstChild("EventDate");
     if(!eventDateNode.IsNull())
     {
-      m_eventDate = StringUtils::ConvertToDouble(StringUtils::Trim(eventDateNode.GetText().c_str()).c_str());
+      m_eventDate = DateTime(StringUtils::Trim(eventDateNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_eventDateHasBeenSet = true;
     }
     XmlNode messageNode = resultNode.FirstChild("Message");
@@ -113,43 +119,51 @@ void EventDescription::OutputToStream(Aws::OStream& oStream, const char* locatio
 {
   if(m_eventDateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".EventDate=" << m_eventDate << "&";
+      oStream << location << index << locationValue << ".EventDate=" << StringUtils::URLEncode(m_eventDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_messageHasBeenSet)
   {
       oStream << location << index << locationValue << ".Message=" << StringUtils::URLEncode(m_message.c_str()) << "&";
   }
+
   if(m_applicationNameHasBeenSet)
   {
       oStream << location << index << locationValue << ".ApplicationName=" << StringUtils::URLEncode(m_applicationName.c_str()) << "&";
   }
+
   if(m_versionLabelHasBeenSet)
   {
       oStream << location << index << locationValue << ".VersionLabel=" << StringUtils::URLEncode(m_versionLabel.c_str()) << "&";
   }
+
   if(m_templateNameHasBeenSet)
   {
       oStream << location << index << locationValue << ".TemplateName=" << StringUtils::URLEncode(m_templateName.c_str()) << "&";
   }
+
   if(m_environmentNameHasBeenSet)
   {
       oStream << location << index << locationValue << ".EnvironmentName=" << StringUtils::URLEncode(m_environmentName.c_str()) << "&";
   }
+
   if(m_requestIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".RequestId=" << StringUtils::URLEncode(m_requestId.c_str()) << "&";
   }
+
   if(m_severityHasBeenSet)
   {
       oStream << location << index << locationValue << ".Severity=" << EventSeverityMapper::GetNameForEventSeverity(m_severity) << "&";
   }
+
 }
 
 void EventDescription::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
   if(m_eventDateHasBeenSet)
   {
-      oStream << location << ".EventDate=" << m_eventDate << "&";
+      oStream << location << ".EventDate=" << StringUtils::URLEncode(m_eventDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_messageHasBeenSet)
   {
@@ -180,3 +194,7 @@ void EventDescription::OutputToStream(Aws::OStream& oStream, const char* locatio
       oStream << location << ".Severity=" << EventSeverityMapper::GetNameForEventSeverity(m_severity) << "&";
   }
 }
+
+} // namespace Model
+} // namespace ElasticBeanstalk
+} // namespace Aws

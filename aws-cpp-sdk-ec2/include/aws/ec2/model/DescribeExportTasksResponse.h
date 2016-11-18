@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -34,9 +34,9 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
+  /**
+   * <p>Contains the output for DescribeExportTasks.</p>
+   */
   class AWS_EC2_API DescribeExportTasksResponse
   {
   public:
@@ -44,39 +44,39 @@ namespace Model
     DescribeExportTasksResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     DescribeExportTasksResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>Information about the export tasks.</p>
-    */
+    /**
+     * <p>Information about the export tasks.</p>
+     */
     inline const Aws::Vector<ExportTask>& GetExportTasks() const{ return m_exportTasks; }
 
-    /*
-     <p>Information about the export tasks.</p>
-    */
+    /**
+     * <p>Information about the export tasks.</p>
+     */
     inline void SetExportTasks(const Aws::Vector<ExportTask>& value) { m_exportTasks = value; }
 
-    /*
-     <p>Information about the export tasks.</p>
-    */
+    /**
+     * <p>Information about the export tasks.</p>
+     */
     inline void SetExportTasks(Aws::Vector<ExportTask>&& value) { m_exportTasks = value; }
 
-    /*
-     <p>Information about the export tasks.</p>
-    */
+    /**
+     * <p>Information about the export tasks.</p>
+     */
     inline DescribeExportTasksResponse& WithExportTasks(const Aws::Vector<ExportTask>& value) { SetExportTasks(value); return *this;}
 
-    /*
-     <p>Information about the export tasks.</p>
-    */
+    /**
+     * <p>Information about the export tasks.</p>
+     */
     inline DescribeExportTasksResponse& WithExportTasks(Aws::Vector<ExportTask>&& value) { SetExportTasks(value); return *this;}
 
-    /*
-     <p>Information about the export tasks.</p>
-    */
+    /**
+     * <p>Information about the export tasks.</p>
+     */
     inline DescribeExportTasksResponse& AddExportTasks(const ExportTask& value) { m_exportTasks.push_back(value); return *this; }
 
-    /*
-     <p>Information about the export tasks.</p>
-    */
+    /**
+     * <p>Information about the export tasks.</p>
+     */
     inline DescribeExportTasksResponse& AddExportTasks(ExportTask&& value) { m_exportTasks.push_back(value); return *this; }
 
     

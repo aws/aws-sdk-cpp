@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -14,50 +14,66 @@
 */
 #include <aws/ec2/model/RuleAction.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
+#include <aws/core/utils/EnumParseOverflowContainer.h>
 
 using namespace Aws::Utils;
 
-static const int allow_HASH = HashingUtils::HashString("allow");
-static const int deny_HASH = HashingUtils::HashString("deny");
 
 namespace Aws
 {
-namespace EC2
-{
-namespace Model
-{
-namespace RuleActionMapper
-{
-RuleAction GetRuleActionForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-
-  if (hashCode == allow_HASH)
+  namespace EC2
   {
-    return RuleAction::allow;
-  }
-  else if (hashCode == deny_HASH)
-  {
-    return RuleAction::deny;
-  }
+    namespace Model
+    {
+      namespace RuleActionMapper
+      {
 
-  return RuleAction::NOT_SET;
-}
+        static const int allow_HASH = HashingUtils::HashString("allow");
+        static const int deny_HASH = HashingUtils::HashString("deny");
 
-Aws::String GetNameForRuleAction(RuleAction value)
-{
-  switch(value)
-  {
-  case RuleAction::allow:
-    return "allow";
-  case RuleAction::deny:
-    return "deny";
-  default:
-    return "";
-  }
-}
 
-} // namespace RuleActionMapper
-} // namespace Model
-} // namespace EC2
+        RuleAction GetRuleActionForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == allow_HASH)
+          {
+            return RuleAction::allow;
+          }
+          else if (hashCode == deny_HASH)
+          {
+            return RuleAction::deny;
+          }
+          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<RuleAction>(hashCode);
+          }
+
+          return RuleAction::NOT_SET;
+        }
+
+        Aws::String GetNameForRuleAction(RuleAction enumValue)
+        {
+          switch(enumValue)
+          {
+          case RuleAction::allow:
+            return "allow";
+          case RuleAction::deny:
+            return "deny";
+          default:
+            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace RuleActionMapper
+    } // namespace Model
+  } // namespace EC2
 } // namespace Aws

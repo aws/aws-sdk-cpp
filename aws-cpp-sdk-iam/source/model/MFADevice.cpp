@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,14 +19,19 @@
 
 #include <utility>
 
-using namespace Aws::IAM::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace IAM
+{
+namespace Model
+{
 
 MFADevice::MFADevice() : 
     m_userNameHasBeenSet(false),
     m_serialNumberHasBeenSet(false),
-    m_enableDate(0.0),
     m_enableDateHasBeenSet(false)
 {
 }
@@ -34,7 +39,6 @@ MFADevice::MFADevice() :
 MFADevice::MFADevice(const XmlNode& xmlNode) : 
     m_userNameHasBeenSet(false),
     m_serialNumberHasBeenSet(false),
-    m_enableDate(0.0),
     m_enableDateHasBeenSet(false)
 {
   *this = xmlNode;
@@ -61,7 +65,7 @@ MFADevice& MFADevice::operator =(const XmlNode& xmlNode)
     XmlNode enableDateNode = resultNode.FirstChild("EnableDate");
     if(!enableDateNode.IsNull())
     {
-      m_enableDate = StringUtils::ConvertToDouble(StringUtils::Trim(enableDateNode.GetText().c_str()).c_str());
+      m_enableDate = DateTime(StringUtils::Trim(enableDateNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_enableDateHasBeenSet = true;
     }
   }
@@ -75,14 +79,17 @@ void MFADevice::OutputToStream(Aws::OStream& oStream, const char* location, unsi
   {
       oStream << location << index << locationValue << ".UserName=" << StringUtils::URLEncode(m_userName.c_str()) << "&";
   }
+
   if(m_serialNumberHasBeenSet)
   {
       oStream << location << index << locationValue << ".SerialNumber=" << StringUtils::URLEncode(m_serialNumber.c_str()) << "&";
   }
+
   if(m_enableDateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".EnableDate=" << m_enableDate << "&";
+      oStream << location << index << locationValue << ".EnableDate=" << StringUtils::URLEncode(m_enableDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
 }
 
 void MFADevice::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -97,6 +104,10 @@ void MFADevice::OutputToStream(Aws::OStream& oStream, const char* location) cons
   }
   if(m_enableDateHasBeenSet)
   {
-      oStream << location << ".EnableDate=" << m_enableDate << "&";
+      oStream << location << ".EnableDate=" << StringUtils::URLEncode(m_enableDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace IAM
+} // namespace Aws

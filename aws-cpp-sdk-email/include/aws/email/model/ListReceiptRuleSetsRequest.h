@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,60 +24,62 @@ namespace SES
 namespace Model
 {
 
-  /*
-  */
+  /**
+   * <p>Represents a request to list the receipt rule sets that exist under your AWS
+   * account. You use receipt rule sets to receive email with Amazon SES. For more
+   * information, see the <a
+   * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon
+   * SES Developer Guide</a>.</p>
+   */
   class AWS_SES_API ListReceiptRuleSetsRequest : public SESRequest
   {
   public:
     ListReceiptRuleSetsRequest();
     Aws::String SerializePayload() const override;
 
-
-    
-    inline const Aws::String& GetPageToken() const{ return m_pageToken; }
-
-    
-    inline void SetPageToken(const Aws::String& value) { m_pageTokenHasBeenSet = true; m_pageToken = value; }
-
-    
-    inline void SetPageToken(Aws::String&& value) { m_pageTokenHasBeenSet = true; m_pageToken = value; }
-
-    
-    inline void SetPageToken(const char* value) { m_pageTokenHasBeenSet = true; m_pageToken.assign(value); }
-
-    
-    inline ListReceiptRuleSetsRequest& WithPageToken(const Aws::String& value) { SetPageToken(value); return *this;}
-
-    
-    inline ListReceiptRuleSetsRequest& WithPageToken(Aws::String&& value) { SetPageToken(value); return *this;}
-
-    
-    inline ListReceiptRuleSetsRequest& WithPageToken(const char* value) { SetPageToken(value); return *this;}
-
-    
+    /**
+     * <p>A token returned from a previous call to <code>ListReceiptRuleSets</code> to
+     * indicate the position in the receipt rule set list.</p>
+     */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
-    
+    /**
+     * <p>A token returned from a previous call to <code>ListReceiptRuleSets</code> to
+     * indicate the position in the receipt rule set list.</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
-    
+    /**
+     * <p>A token returned from a previous call to <code>ListReceiptRuleSets</code> to
+     * indicate the position in the receipt rule set list.</p>
+     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
-    
+    /**
+     * <p>A token returned from a previous call to <code>ListReceiptRuleSets</code> to
+     * indicate the position in the receipt rule set list.</p>
+     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
-    
+    /**
+     * <p>A token returned from a previous call to <code>ListReceiptRuleSets</code> to
+     * indicate the position in the receipt rule set list.</p>
+     */
     inline ListReceiptRuleSetsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
-    
+    /**
+     * <p>A token returned from a previous call to <code>ListReceiptRuleSets</code> to
+     * indicate the position in the receipt rule set list.</p>
+     */
     inline ListReceiptRuleSetsRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
-    
+    /**
+     * <p>A token returned from a previous call to <code>ListReceiptRuleSets</code> to
+     * indicate the position in the receipt rule set list.</p>
+     */
     inline ListReceiptRuleSetsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
-    Aws::String m_pageToken;
-    bool m_pageTokenHasBeenSet;
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

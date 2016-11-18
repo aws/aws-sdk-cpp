@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -25,8 +25,8 @@ namespace OpsWorks
 namespace Model
 {
 
-  /*
-  */
+  /**
+   */
   class AWS_OPSWORKS_API DescribeTimeBasedAutoScalingRequest : public OpsWorksRequest
   {
   public:
@@ -35,45 +35,44 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
-    /*
-     <p>An array of instance IDs.</p>
-    */
+    /**
+     * <p>An array of instance IDs.</p>
+     */
     inline const Aws::Vector<Aws::String>& GetInstanceIds() const{ return m_instanceIds; }
 
-    /*
-     <p>An array of instance IDs.</p>
-    */
+    /**
+     * <p>An array of instance IDs.</p>
+     */
     inline void SetInstanceIds(const Aws::Vector<Aws::String>& value) { m_instanceIdsHasBeenSet = true; m_instanceIds = value; }
 
-    /*
-     <p>An array of instance IDs.</p>
-    */
+    /**
+     * <p>An array of instance IDs.</p>
+     */
     inline void SetInstanceIds(Aws::Vector<Aws::String>&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds = value; }
 
-    /*
-     <p>An array of instance IDs.</p>
-    */
+    /**
+     * <p>An array of instance IDs.</p>
+     */
     inline DescribeTimeBasedAutoScalingRequest& WithInstanceIds(const Aws::Vector<Aws::String>& value) { SetInstanceIds(value); return *this;}
 
-    /*
-     <p>An array of instance IDs.</p>
-    */
+    /**
+     * <p>An array of instance IDs.</p>
+     */
     inline DescribeTimeBasedAutoScalingRequest& WithInstanceIds(Aws::Vector<Aws::String>&& value) { SetInstanceIds(value); return *this;}
 
-    /*
-     <p>An array of instance IDs.</p>
-    */
+    /**
+     * <p>An array of instance IDs.</p>
+     */
     inline DescribeTimeBasedAutoScalingRequest& AddInstanceIds(const Aws::String& value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
 
-    /*
-     <p>An array of instance IDs.</p>
-    */
+    /**
+     * <p>An array of instance IDs.</p>
+     */
     inline DescribeTimeBasedAutoScalingRequest& AddInstanceIds(Aws::String&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
 
-    /*
-     <p>An array of instance IDs.</p>
-    */
+    /**
+     * <p>An array of instance IDs.</p>
+     */
     inline DescribeTimeBasedAutoScalingRequest& AddInstanceIds(const char* value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
 
   private:

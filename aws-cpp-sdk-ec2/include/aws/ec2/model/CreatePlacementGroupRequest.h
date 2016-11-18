@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -25,88 +25,104 @@ namespace EC2
 namespace Model
 {
 
-  /*
-  */
+  /**
+   * <p>Contains the parameters for CreatePlacementGroup.</p>
+   */
   class AWS_EC2_API CreatePlacementGroupRequest : public EC2Request
   {
   public:
     CreatePlacementGroupRequest();
     Aws::String SerializePayload() const override;
 
-
-    /*
-     <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    */
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
     inline bool GetDryRun() const{ return m_dryRun; }
 
-    /*
-     <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    */
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
 
-    /*
-     <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    */
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
     inline CreatePlacementGroupRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
-    /*
-     <p>A name for the placement group.</p> <p>Constraints: Up to 255 ASCII characters</p>
-    */
+    /**
+     * <p>A name for the placement group.</p> <p>Constraints: Up to 255 ASCII
+     * characters</p>
+     */
     inline const Aws::String& GetGroupName() const{ return m_groupName; }
 
-    /*
-     <p>A name for the placement group.</p> <p>Constraints: Up to 255 ASCII characters</p>
-    */
+    /**
+     * <p>A name for the placement group.</p> <p>Constraints: Up to 255 ASCII
+     * characters</p>
+     */
     inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
 
-    /*
-     <p>A name for the placement group.</p> <p>Constraints: Up to 255 ASCII characters</p>
-    */
+    /**
+     * <p>A name for the placement group.</p> <p>Constraints: Up to 255 ASCII
+     * characters</p>
+     */
     inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
 
-    /*
-     <p>A name for the placement group.</p> <p>Constraints: Up to 255 ASCII characters</p>
-    */
+    /**
+     * <p>A name for the placement group.</p> <p>Constraints: Up to 255 ASCII
+     * characters</p>
+     */
     inline void SetGroupName(const char* value) { m_groupNameHasBeenSet = true; m_groupName.assign(value); }
 
-    /*
-     <p>A name for the placement group.</p> <p>Constraints: Up to 255 ASCII characters</p>
-    */
+    /**
+     * <p>A name for the placement group.</p> <p>Constraints: Up to 255 ASCII
+     * characters</p>
+     */
     inline CreatePlacementGroupRequest& WithGroupName(const Aws::String& value) { SetGroupName(value); return *this;}
 
-    /*
-     <p>A name for the placement group.</p> <p>Constraints: Up to 255 ASCII characters</p>
-    */
+    /**
+     * <p>A name for the placement group.</p> <p>Constraints: Up to 255 ASCII
+     * characters</p>
+     */
     inline CreatePlacementGroupRequest& WithGroupName(Aws::String&& value) { SetGroupName(value); return *this;}
 
-    /*
-     <p>A name for the placement group.</p> <p>Constraints: Up to 255 ASCII characters</p>
-    */
+    /**
+     * <p>A name for the placement group.</p> <p>Constraints: Up to 255 ASCII
+     * characters</p>
+     */
     inline CreatePlacementGroupRequest& WithGroupName(const char* value) { SetGroupName(value); return *this;}
 
-    /*
-     <p>The placement strategy.</p>
-    */
+    /**
+     * <p>The placement strategy.</p>
+     */
     inline const PlacementStrategy& GetStrategy() const{ return m_strategy; }
 
-    /*
-     <p>The placement strategy.</p>
-    */
+    /**
+     * <p>The placement strategy.</p>
+     */
     inline void SetStrategy(const PlacementStrategy& value) { m_strategyHasBeenSet = true; m_strategy = value; }
 
-    /*
-     <p>The placement strategy.</p>
-    */
+    /**
+     * <p>The placement strategy.</p>
+     */
     inline void SetStrategy(PlacementStrategy&& value) { m_strategyHasBeenSet = true; m_strategy = value; }
 
-    /*
-     <p>The placement strategy.</p>
-    */
+    /**
+     * <p>The placement strategy.</p>
+     */
     inline CreatePlacementGroupRequest& WithStrategy(const PlacementStrategy& value) { SetStrategy(value); return *this;}
 
-    /*
-     <p>The placement strategy.</p>
-    */
+    /**
+     * <p>The placement strategy.</p>
+     */
     inline CreatePlacementGroupRequest& WithStrategy(PlacementStrategy&& value) { SetStrategy(value); return *this;}
 
   private:

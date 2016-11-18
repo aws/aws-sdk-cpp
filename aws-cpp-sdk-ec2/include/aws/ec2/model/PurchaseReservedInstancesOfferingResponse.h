@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -33,9 +33,9 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
+  /**
+   * <p>Contains the output of PurchaseReservedInstancesOffering.</p>
+   */
   class AWS_EC2_API PurchaseReservedInstancesOfferingResponse
   {
   public:
@@ -43,39 +43,39 @@ namespace Model
     PurchaseReservedInstancesOfferingResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     PurchaseReservedInstancesOfferingResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>The IDs of the purchased Reserved Instances.</p>
-    */
+    /**
+     * <p>The IDs of the purchased Reserved Instances.</p>
+     */
     inline const Aws::String& GetReservedInstancesId() const{ return m_reservedInstancesId; }
 
-    /*
-     <p>The IDs of the purchased Reserved Instances.</p>
-    */
+    /**
+     * <p>The IDs of the purchased Reserved Instances.</p>
+     */
     inline void SetReservedInstancesId(const Aws::String& value) { m_reservedInstancesId = value; }
 
-    /*
-     <p>The IDs of the purchased Reserved Instances.</p>
-    */
+    /**
+     * <p>The IDs of the purchased Reserved Instances.</p>
+     */
     inline void SetReservedInstancesId(Aws::String&& value) { m_reservedInstancesId = value; }
 
-    /*
-     <p>The IDs of the purchased Reserved Instances.</p>
-    */
+    /**
+     * <p>The IDs of the purchased Reserved Instances.</p>
+     */
     inline void SetReservedInstancesId(const char* value) { m_reservedInstancesId.assign(value); }
 
-    /*
-     <p>The IDs of the purchased Reserved Instances.</p>
-    */
+    /**
+     * <p>The IDs of the purchased Reserved Instances.</p>
+     */
     inline PurchaseReservedInstancesOfferingResponse& WithReservedInstancesId(const Aws::String& value) { SetReservedInstancesId(value); return *this;}
 
-    /*
-     <p>The IDs of the purchased Reserved Instances.</p>
-    */
+    /**
+     * <p>The IDs of the purchased Reserved Instances.</p>
+     */
     inline PurchaseReservedInstancesOfferingResponse& WithReservedInstancesId(Aws::String&& value) { SetReservedInstancesId(value); return *this;}
 
-    /*
-     <p>The IDs of the purchased Reserved Instances.</p>
-    */
+    /**
+     * <p>The IDs of the purchased Reserved Instances.</p>
+     */
     inline PurchaseReservedInstancesOfferingResponse& WithReservedInstancesId(const char* value) { SetReservedInstancesId(value); return *this;}
 
     

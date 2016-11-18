@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -17,17 +17,22 @@
 
 #include <utility>
 
-using namespace Aws::CodeDeploy::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace CodeDeploy
+{
+namespace Model
+{
 
 LifecycleEvent::LifecycleEvent() : 
     m_lifecycleEventNameHasBeenSet(false),
     m_diagnosticsHasBeenSet(false),
-    m_startTime(0.0),
     m_startTimeHasBeenSet(false),
-    m_endTime(0.0),
     m_endTimeHasBeenSet(false),
+    m_status(LifecycleEventStatus::NOT_SET),
     m_statusHasBeenSet(false)
 {
 }
@@ -35,10 +40,9 @@ LifecycleEvent::LifecycleEvent() :
 LifecycleEvent::LifecycleEvent(const JsonValue& jsonValue) : 
     m_lifecycleEventNameHasBeenSet(false),
     m_diagnosticsHasBeenSet(false),
-    m_startTime(0.0),
     m_startTimeHasBeenSet(false),
-    m_endTime(0.0),
     m_endTimeHasBeenSet(false),
+    m_status(LifecycleEventStatus::NOT_SET),
     m_statusHasBeenSet(false)
 {
   *this = jsonValue;
@@ -102,14 +106,12 @@ JsonValue LifecycleEvent::Jsonize() const
 
   if(m_startTimeHasBeenSet)
   {
-   payload.WithDouble("startTime", m_startTime);
-
+   payload.WithDouble("startTime", m_startTime.SecondsWithMSPrecision());
   }
 
   if(m_endTimeHasBeenSet)
   {
-   payload.WithDouble("endTime", m_endTime);
-
+   payload.WithDouble("endTime", m_endTime.SecondsWithMSPrecision());
   }
 
   if(m_statusHasBeenSet)
@@ -117,5 +119,9 @@ JsonValue LifecycleEvent::Jsonize() const
    payload.WithString("status", LifecycleEventStatusMapper::GetNameForLifecycleEventStatus(m_status));
   }
 
-  return std::move(payload);
+  return payload;
 }
+
+} // namespace Model
+} // namespace CodeDeploy
+} // namespace Aws

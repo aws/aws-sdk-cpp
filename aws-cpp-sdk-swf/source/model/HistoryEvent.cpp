@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -17,13 +17,19 @@
 
 #include <utility>
 
-using namespace Aws::SWF::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
+namespace Aws
+{
+namespace SWF
+{
+namespace Model
+{
+
 HistoryEvent::HistoryEvent() : 
-    m_eventTimestamp(0.0),
     m_eventTimestampHasBeenSet(false),
+    m_eventType(EventType::NOT_SET),
     m_eventTypeHasBeenSet(false),
     m_eventId(0),
     m_eventIdHasBeenSet(false),
@@ -85,8 +91,8 @@ HistoryEvent::HistoryEvent() :
 }
 
 HistoryEvent::HistoryEvent(const JsonValue& jsonValue) : 
-    m_eventTimestamp(0.0),
     m_eventTimestampHasBeenSet(false),
+    m_eventType(EventType::NOT_SET),
     m_eventTypeHasBeenSet(false),
     m_eventId(0),
     m_eventIdHasBeenSet(false),
@@ -558,8 +564,7 @@ JsonValue HistoryEvent::Jsonize() const
 
   if(m_eventTimestampHasBeenSet)
   {
-   payload.WithDouble("eventTimestamp", m_eventTimestamp);
-
+   payload.WithDouble("eventTimestamp", m_eventTimestamp.SecondsWithMSPrecision());
   }
 
   if(m_eventTypeHasBeenSet)
@@ -897,5 +902,9 @@ JsonValue HistoryEvent::Jsonize() const
 
   }
 
-  return std::move(payload);
+  return payload;
 }
+
+} // namespace Model
+} // namespace SWF
+} // namespace Aws

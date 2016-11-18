@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -27,14 +27,12 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 CreateConfigurationTemplateResult::CreateConfigurationTemplateResult() : 
-    m_dateCreated(0.0),
-    m_dateUpdated(0.0)
+    m_deploymentStatus(ConfigurationDeploymentStatus::NOT_SET)
 {
 }
 
 CreateConfigurationTemplateResult::CreateConfigurationTemplateResult(const AmazonWebServiceResult<XmlDocument>& result) : 
-    m_dateCreated(0.0),
-    m_dateUpdated(0.0)
+    m_deploymentStatus(ConfigurationDeploymentStatus::NOT_SET)
 {
   *this = result;
 }
@@ -84,12 +82,12 @@ CreateConfigurationTemplateResult& CreateConfigurationTemplateResult::operator =
     XmlNode dateCreatedNode = resultNode.FirstChild("DateCreated");
     if(!dateCreatedNode.IsNull())
     {
-      m_dateCreated = StringUtils::ConvertToDouble(StringUtils::Trim(dateCreatedNode.GetText().c_str()).c_str());
+      m_dateCreated = DateTime(StringUtils::Trim(dateCreatedNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
     }
     XmlNode dateUpdatedNode = resultNode.FirstChild("DateUpdated");
     if(!dateUpdatedNode.IsNull())
     {
-      m_dateUpdated = StringUtils::ConvertToDouble(StringUtils::Trim(dateUpdatedNode.GetText().c_str()).c_str());
+      m_dateUpdated = DateTime(StringUtils::Trim(dateUpdatedNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
     }
     XmlNode optionSettingsNode = resultNode.FirstChild("OptionSettings");
     if(!optionSettingsNode.IsNull())

@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -32,9 +32,6 @@ namespace CloudWatchLogs
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
   class AWS_CLOUDWATCHLOGS_API PutDestinationResult
   {
   public:
@@ -42,19 +39,29 @@ namespace Model
     PutDestinationResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     PutDestinationResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    
+    /**
+     * <p>The destination.</p>
+     */
     inline const Destination& GetDestination() const{ return m_destination; }
 
-    
+    /**
+     * <p>The destination.</p>
+     */
     inline void SetDestination(const Destination& value) { m_destination = value; }
 
-    
+    /**
+     * <p>The destination.</p>
+     */
     inline void SetDestination(Destination&& value) { m_destination = value; }
 
-    
+    /**
+     * <p>The destination.</p>
+     */
     inline PutDestinationResult& WithDestination(const Destination& value) { SetDestination(value); return *this;}
 
-    
+    /**
+     * <p>The destination.</p>
+     */
     inline PutDestinationResult& WithDestination(Destination&& value) { SetDestination(value); return *this;}
 
   private:

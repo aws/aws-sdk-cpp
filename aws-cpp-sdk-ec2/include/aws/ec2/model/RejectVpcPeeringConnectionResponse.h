@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -32,9 +32,9 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
+  /**
+   * <p>Contains the output of RejectVpcPeeringConnection.</p>
+   */
   class AWS_EC2_API RejectVpcPeeringConnectionResponse
   {
   public:
@@ -42,19 +42,22 @@ namespace Model
     RejectVpcPeeringConnectionResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     RejectVpcPeeringConnectionResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
-    */
+    /**
+     * <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an
+     * error.</p>
+     */
     inline bool GetReturn() const{ return m_return; }
 
-    /*
-     <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
-    */
+    /**
+     * <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an
+     * error.</p>
+     */
     inline void SetReturn(bool value) { m_return = value; }
 
-    /*
-     <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
-    */
+    /**
+     * <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an
+     * error.</p>
+     */
     inline RejectVpcPeeringConnectionResponse& WithReturn(bool value) { SetReturn(value); return *this;}
 
     

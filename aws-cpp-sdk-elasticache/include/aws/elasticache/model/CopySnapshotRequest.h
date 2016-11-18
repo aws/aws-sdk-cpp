@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,91 +24,197 @@ namespace ElastiCache
 namespace Model
 {
 
-  /*
-    <p>Represents the input of a <i>CopySnapshotMessage</i> action.</p>
-  */
+  /**
+   * <p>Represents the input of a <code>CopySnapshotMessage</code> operation.</p>
+   */
   class AWS_ELASTICACHE_API CopySnapshotRequest : public ElastiCacheRequest
   {
   public:
     CopySnapshotRequest();
     Aws::String SerializePayload() const override;
 
-
-    /*
-     <p>The name of an existing snapshot from which to copy.</p>
-    */
+    /**
+     * <p>The name of an existing snapshot from which to make a copy.</p>
+     */
     inline const Aws::String& GetSourceSnapshotName() const{ return m_sourceSnapshotName; }
 
-    /*
-     <p>The name of an existing snapshot from which to copy.</p>
-    */
+    /**
+     * <p>The name of an existing snapshot from which to make a copy.</p>
+     */
     inline void SetSourceSnapshotName(const Aws::String& value) { m_sourceSnapshotNameHasBeenSet = true; m_sourceSnapshotName = value; }
 
-    /*
-     <p>The name of an existing snapshot from which to copy.</p>
-    */
+    /**
+     * <p>The name of an existing snapshot from which to make a copy.</p>
+     */
     inline void SetSourceSnapshotName(Aws::String&& value) { m_sourceSnapshotNameHasBeenSet = true; m_sourceSnapshotName = value; }
 
-    /*
-     <p>The name of an existing snapshot from which to copy.</p>
-    */
+    /**
+     * <p>The name of an existing snapshot from which to make a copy.</p>
+     */
     inline void SetSourceSnapshotName(const char* value) { m_sourceSnapshotNameHasBeenSet = true; m_sourceSnapshotName.assign(value); }
 
-    /*
-     <p>The name of an existing snapshot from which to copy.</p>
-    */
+    /**
+     * <p>The name of an existing snapshot from which to make a copy.</p>
+     */
     inline CopySnapshotRequest& WithSourceSnapshotName(const Aws::String& value) { SetSourceSnapshotName(value); return *this;}
 
-    /*
-     <p>The name of an existing snapshot from which to copy.</p>
-    */
+    /**
+     * <p>The name of an existing snapshot from which to make a copy.</p>
+     */
     inline CopySnapshotRequest& WithSourceSnapshotName(Aws::String&& value) { SetSourceSnapshotName(value); return *this;}
 
-    /*
-     <p>The name of an existing snapshot from which to copy.</p>
-    */
+    /**
+     * <p>The name of an existing snapshot from which to make a copy.</p>
+     */
     inline CopySnapshotRequest& WithSourceSnapshotName(const char* value) { SetSourceSnapshotName(value); return *this;}
 
-    /*
-     <p>A name for the copied snapshot.</p>
-    */
+    /**
+     * <p>A name for the snapshot copy. ElastiCache does not permit overwriting a
+     * snapshot, therefore this name must be unique within its context - ElastiCache or
+     * an Amazon S3 bucket if exporting.</p>
+     */
     inline const Aws::String& GetTargetSnapshotName() const{ return m_targetSnapshotName; }
 
-    /*
-     <p>A name for the copied snapshot.</p>
-    */
+    /**
+     * <p>A name for the snapshot copy. ElastiCache does not permit overwriting a
+     * snapshot, therefore this name must be unique within its context - ElastiCache or
+     * an Amazon S3 bucket if exporting.</p>
+     */
     inline void SetTargetSnapshotName(const Aws::String& value) { m_targetSnapshotNameHasBeenSet = true; m_targetSnapshotName = value; }
 
-    /*
-     <p>A name for the copied snapshot.</p>
-    */
+    /**
+     * <p>A name for the snapshot copy. ElastiCache does not permit overwriting a
+     * snapshot, therefore this name must be unique within its context - ElastiCache or
+     * an Amazon S3 bucket if exporting.</p>
+     */
     inline void SetTargetSnapshotName(Aws::String&& value) { m_targetSnapshotNameHasBeenSet = true; m_targetSnapshotName = value; }
 
-    /*
-     <p>A name for the copied snapshot.</p>
-    */
+    /**
+     * <p>A name for the snapshot copy. ElastiCache does not permit overwriting a
+     * snapshot, therefore this name must be unique within its context - ElastiCache or
+     * an Amazon S3 bucket if exporting.</p>
+     */
     inline void SetTargetSnapshotName(const char* value) { m_targetSnapshotNameHasBeenSet = true; m_targetSnapshotName.assign(value); }
 
-    /*
-     <p>A name for the copied snapshot.</p>
-    */
+    /**
+     * <p>A name for the snapshot copy. ElastiCache does not permit overwriting a
+     * snapshot, therefore this name must be unique within its context - ElastiCache or
+     * an Amazon S3 bucket if exporting.</p>
+     */
     inline CopySnapshotRequest& WithTargetSnapshotName(const Aws::String& value) { SetTargetSnapshotName(value); return *this;}
 
-    /*
-     <p>A name for the copied snapshot.</p>
-    */
+    /**
+     * <p>A name for the snapshot copy. ElastiCache does not permit overwriting a
+     * snapshot, therefore this name must be unique within its context - ElastiCache or
+     * an Amazon S3 bucket if exporting.</p>
+     */
     inline CopySnapshotRequest& WithTargetSnapshotName(Aws::String&& value) { SetTargetSnapshotName(value); return *this;}
 
-    /*
-     <p>A name for the copied snapshot.</p>
-    */
+    /**
+     * <p>A name for the snapshot copy. ElastiCache does not permit overwriting a
+     * snapshot, therefore this name must be unique within its context - ElastiCache or
+     * an Amazon S3 bucket if exporting.</p>
+     */
     inline CopySnapshotRequest& WithTargetSnapshotName(const char* value) { SetTargetSnapshotName(value); return *this;}
+
+    /**
+     * <p>The Amazon S3 bucket to which the snapshot is exported. This parameter is
+     * used only when exporting a snapshot for external access.</p> <p>When using this
+     * parameter to export a snapshot, be sure Amazon ElastiCache has the needed
+     * permissions to this S3 bucket. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Snapshots.Exporting.html#Snapshots.Exporting.GrantAccess">Step
+     * 2: Grant ElastiCache Access to Your Amazon S3 Bucket</a> in the <i>Amazon
+     * ElastiCache User Guide</i>.</p> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Snapshots.Exporting.html">Exporting
+     * a Snapshot</a> in the <i>Amazon ElastiCache User Guide</i>.</p>
+     */
+    inline const Aws::String& GetTargetBucket() const{ return m_targetBucket; }
+
+    /**
+     * <p>The Amazon S3 bucket to which the snapshot is exported. This parameter is
+     * used only when exporting a snapshot for external access.</p> <p>When using this
+     * parameter to export a snapshot, be sure Amazon ElastiCache has the needed
+     * permissions to this S3 bucket. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Snapshots.Exporting.html#Snapshots.Exporting.GrantAccess">Step
+     * 2: Grant ElastiCache Access to Your Amazon S3 Bucket</a> in the <i>Amazon
+     * ElastiCache User Guide</i>.</p> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Snapshots.Exporting.html">Exporting
+     * a Snapshot</a> in the <i>Amazon ElastiCache User Guide</i>.</p>
+     */
+    inline void SetTargetBucket(const Aws::String& value) { m_targetBucketHasBeenSet = true; m_targetBucket = value; }
+
+    /**
+     * <p>The Amazon S3 bucket to which the snapshot is exported. This parameter is
+     * used only when exporting a snapshot for external access.</p> <p>When using this
+     * parameter to export a snapshot, be sure Amazon ElastiCache has the needed
+     * permissions to this S3 bucket. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Snapshots.Exporting.html#Snapshots.Exporting.GrantAccess">Step
+     * 2: Grant ElastiCache Access to Your Amazon S3 Bucket</a> in the <i>Amazon
+     * ElastiCache User Guide</i>.</p> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Snapshots.Exporting.html">Exporting
+     * a Snapshot</a> in the <i>Amazon ElastiCache User Guide</i>.</p>
+     */
+    inline void SetTargetBucket(Aws::String&& value) { m_targetBucketHasBeenSet = true; m_targetBucket = value; }
+
+    /**
+     * <p>The Amazon S3 bucket to which the snapshot is exported. This parameter is
+     * used only when exporting a snapshot for external access.</p> <p>When using this
+     * parameter to export a snapshot, be sure Amazon ElastiCache has the needed
+     * permissions to this S3 bucket. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Snapshots.Exporting.html#Snapshots.Exporting.GrantAccess">Step
+     * 2: Grant ElastiCache Access to Your Amazon S3 Bucket</a> in the <i>Amazon
+     * ElastiCache User Guide</i>.</p> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Snapshots.Exporting.html">Exporting
+     * a Snapshot</a> in the <i>Amazon ElastiCache User Guide</i>.</p>
+     */
+    inline void SetTargetBucket(const char* value) { m_targetBucketHasBeenSet = true; m_targetBucket.assign(value); }
+
+    /**
+     * <p>The Amazon S3 bucket to which the snapshot is exported. This parameter is
+     * used only when exporting a snapshot for external access.</p> <p>When using this
+     * parameter to export a snapshot, be sure Amazon ElastiCache has the needed
+     * permissions to this S3 bucket. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Snapshots.Exporting.html#Snapshots.Exporting.GrantAccess">Step
+     * 2: Grant ElastiCache Access to Your Amazon S3 Bucket</a> in the <i>Amazon
+     * ElastiCache User Guide</i>.</p> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Snapshots.Exporting.html">Exporting
+     * a Snapshot</a> in the <i>Amazon ElastiCache User Guide</i>.</p>
+     */
+    inline CopySnapshotRequest& WithTargetBucket(const Aws::String& value) { SetTargetBucket(value); return *this;}
+
+    /**
+     * <p>The Amazon S3 bucket to which the snapshot is exported. This parameter is
+     * used only when exporting a snapshot for external access.</p> <p>When using this
+     * parameter to export a snapshot, be sure Amazon ElastiCache has the needed
+     * permissions to this S3 bucket. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Snapshots.Exporting.html#Snapshots.Exporting.GrantAccess">Step
+     * 2: Grant ElastiCache Access to Your Amazon S3 Bucket</a> in the <i>Amazon
+     * ElastiCache User Guide</i>.</p> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Snapshots.Exporting.html">Exporting
+     * a Snapshot</a> in the <i>Amazon ElastiCache User Guide</i>.</p>
+     */
+    inline CopySnapshotRequest& WithTargetBucket(Aws::String&& value) { SetTargetBucket(value); return *this;}
+
+    /**
+     * <p>The Amazon S3 bucket to which the snapshot is exported. This parameter is
+     * used only when exporting a snapshot for external access.</p> <p>When using this
+     * parameter to export a snapshot, be sure Amazon ElastiCache has the needed
+     * permissions to this S3 bucket. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Snapshots.Exporting.html#Snapshots.Exporting.GrantAccess">Step
+     * 2: Grant ElastiCache Access to Your Amazon S3 Bucket</a> in the <i>Amazon
+     * ElastiCache User Guide</i>.</p> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Snapshots.Exporting.html">Exporting
+     * a Snapshot</a> in the <i>Amazon ElastiCache User Guide</i>.</p>
+     */
+    inline CopySnapshotRequest& WithTargetBucket(const char* value) { SetTargetBucket(value); return *this;}
 
   private:
     Aws::String m_sourceSnapshotName;
     bool m_sourceSnapshotNameHasBeenSet;
     Aws::String m_targetSnapshotName;
     bool m_targetSnapshotNameHasBeenSet;
+    Aws::String m_targetBucket;
+    bool m_targetBucketHasBeenSet;
   };
 
 } // namespace Model

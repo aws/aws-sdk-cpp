@@ -1,5 +1,7 @@
-cmake_minimum_required(VERSION 2.6)
-project(aws-cpp-sdk-queues)
+add_project(aws-cpp-sdk-queues 
+    "High-level C++ SDK for SQS message passing" 
+    aws-cpp-sdk-sqs 
+    aws-cpp-sdk-core)
 
 file(GLOB AWS_QUEUES_HEADERS
     "include/aws/queues/*.h"
@@ -28,27 +30,25 @@ file(GLOB QUEUES_SRC
 
 set(QUEUES_INCLUDES
     "${CMAKE_CURRENT_SOURCE_DIR}/include/"
-    "${AWS_NATIVE_SDK_ROOT}/aws-cpp-sdk-sqs/include/"
-    "${CORE_DIR}/include/"
   )
 
 include_directories(${QUEUES_INCLUDES})
 
-if(NOT MSVC)
-  add_definitions(-std=c++11)
-endif()
-
-if(MSVC AND BUILD_SHARED_LIBS)
+if(USE_WINDOWS_DLL_SEMANTICS AND BUILD_SHARED_LIBS)
     add_definitions("-DAWS_QUEUES_EXPORTS")
 endif()
 
-add_library(aws-cpp-sdk-queues ${LIBTYPE} ${QUEUES_SRC})
-target_link_libraries(aws-cpp-sdk-queues aws-cpp-sdk-sqs)
+add_library(${PROJECT_NAME} ${LIBTYPE} ${QUEUES_SRC})
+add_library(AWS::${PROJECT_NAME} ALIAS ${PROJECT_NAME})
 
-install (TARGETS aws-cpp-sdk-queues
-         ARCHIVE DESTINATION ${ARCHIVE_DIRECTORY}/${SDK_INSTALL_BINARY_PREFIX}/\${CMAKE_INSTALL_CONFIG_NAME}
-         LIBRARY DESTINATION lib/${SDK_INSTALL_BINARY_PREFIX}/\${CMAKE_INSTALL_CONFIG_NAME}
-         RUNTIME DESTINATION bin/${SDK_INSTALL_BINARY_PREFIX}/\${CMAKE_INSTALL_CONFIG_NAME})
+target_include_directories(${PROJECT_NAME} PUBLIC
+        $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+        $<INSTALL_INTERFACE:include>)
+target_link_libraries(${PROJECT_NAME} ${PROJECT_LIBS})
 
-install (FILES ${AWS_QUEUES_HEADERS} DESTINATION include/aws/queues)
-install (FILES ${AWS_SQS_QUEUES_HEADERS} DESTINATION include/aws/queues/sqs)
+setup_install()
+
+install (FILES ${AWS_QUEUES_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/queues)
+install (FILES ${AWS_SQS_QUEUES_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/queues/sqs)
+
+do_packaging()

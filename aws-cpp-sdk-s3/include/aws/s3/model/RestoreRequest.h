@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -28,9 +28,7 @@ namespace S3
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
+
   class AWS_S3_API RestoreRequest
   {
   public:
@@ -40,23 +38,23 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
-    /*
-     Lifetime of the active copy in days
-    */
-    inline long GetDays() const{ return m_days; }
+    /**
+     * Lifetime of the active copy in days
+     */
+    inline int GetDays() const{ return m_days; }
 
-    /*
-     Lifetime of the active copy in days
-    */
-    inline void SetDays(long value) { m_daysHasBeenSet = true; m_days = value; }
+    /**
+     * Lifetime of the active copy in days
+     */
+    inline void SetDays(int value) { m_daysHasBeenSet = true; m_days = value; }
 
-    /*
-     Lifetime of the active copy in days
-    */
-    inline RestoreRequest& WithDays(long value) { SetDays(value); return *this;}
+    /**
+     * Lifetime of the active copy in days
+     */
+    inline RestoreRequest& WithDays(int value) { SetDays(value); return *this;}
 
   private:
-    long m_days;
+    int m_days;
     bool m_daysHasBeenSet;
   };
 

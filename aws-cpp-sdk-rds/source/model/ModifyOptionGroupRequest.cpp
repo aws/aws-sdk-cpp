@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -36,6 +36,7 @@ Aws::String ModifyOptionGroupRequest::SerializePayload() const
   {
     ss << "OptionGroupName=" << StringUtils::URLEncode(m_optionGroupName.c_str()) << "&";
   }
+
   if(m_optionsToIncludeHasBeenSet)
   {
     unsigned optionsToIncludeCount = 1;
@@ -45,6 +46,7 @@ Aws::String ModifyOptionGroupRequest::SerializePayload() const
       optionsToIncludeCount++;
     }
   }
+
   if(m_optionsToRemoveHasBeenSet)
   {
     unsigned optionsToRemoveCount = 1;
@@ -55,11 +57,13 @@ Aws::String ModifyOptionGroupRequest::SerializePayload() const
       optionsToRemoveCount++;
     }
   }
+
   if(m_applyImmediatelyHasBeenSet)
   {
     ss << "ApplyImmediately=" << m_applyImmediately << "&";
   }
-  ss << "Version=2013-01-10";
+
+  ss << "Version=2014-10-31";
   return ss.str();
 }
 

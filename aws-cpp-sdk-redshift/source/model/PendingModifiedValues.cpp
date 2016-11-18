@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::Redshift::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace Redshift
+{
+namespace Model
+{
 
 PendingModifiedValues::PendingModifiedValues() : 
     m_masterUserPasswordHasBeenSet(false),
@@ -32,7 +38,11 @@ PendingModifiedValues::PendingModifiedValues() :
     m_clusterVersionHasBeenSet(false),
     m_automatedSnapshotRetentionPeriod(0),
     m_automatedSnapshotRetentionPeriodHasBeenSet(false),
-    m_clusterIdentifierHasBeenSet(false)
+    m_clusterIdentifierHasBeenSet(false),
+    m_publiclyAccessible(false),
+    m_publiclyAccessibleHasBeenSet(false),
+    m_enhancedVpcRouting(false),
+    m_enhancedVpcRoutingHasBeenSet(false)
 {
 }
 
@@ -45,7 +55,11 @@ PendingModifiedValues::PendingModifiedValues(const XmlNode& xmlNode) :
     m_clusterVersionHasBeenSet(false),
     m_automatedSnapshotRetentionPeriod(0),
     m_automatedSnapshotRetentionPeriodHasBeenSet(false),
-    m_clusterIdentifierHasBeenSet(false)
+    m_clusterIdentifierHasBeenSet(false),
+    m_publiclyAccessible(false),
+    m_publiclyAccessibleHasBeenSet(false),
+    m_enhancedVpcRouting(false),
+    m_enhancedVpcRoutingHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -98,6 +112,18 @@ PendingModifiedValues& PendingModifiedValues::operator =(const XmlNode& xmlNode)
       m_clusterIdentifier = StringUtils::Trim(clusterIdentifierNode.GetText().c_str());
       m_clusterIdentifierHasBeenSet = true;
     }
+    XmlNode publiclyAccessibleNode = resultNode.FirstChild("PubliclyAccessible");
+    if(!publiclyAccessibleNode.IsNull())
+    {
+      m_publiclyAccessible = StringUtils::ConvertToBool(StringUtils::Trim(publiclyAccessibleNode.GetText().c_str()).c_str());
+      m_publiclyAccessibleHasBeenSet = true;
+    }
+    XmlNode enhancedVpcRoutingNode = resultNode.FirstChild("EnhancedVpcRouting");
+    if(!enhancedVpcRoutingNode.IsNull())
+    {
+      m_enhancedVpcRouting = StringUtils::ConvertToBool(StringUtils::Trim(enhancedVpcRoutingNode.GetText().c_str()).c_str());
+      m_enhancedVpcRoutingHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -109,30 +135,47 @@ void PendingModifiedValues::OutputToStream(Aws::OStream& oStream, const char* lo
   {
       oStream << location << index << locationValue << ".MasterUserPassword=" << StringUtils::URLEncode(m_masterUserPassword.c_str()) << "&";
   }
+
   if(m_nodeTypeHasBeenSet)
   {
       oStream << location << index << locationValue << ".NodeType=" << StringUtils::URLEncode(m_nodeType.c_str()) << "&";
   }
+
   if(m_numberOfNodesHasBeenSet)
   {
       oStream << location << index << locationValue << ".NumberOfNodes=" << m_numberOfNodes << "&";
   }
+
   if(m_clusterTypeHasBeenSet)
   {
       oStream << location << index << locationValue << ".ClusterType=" << StringUtils::URLEncode(m_clusterType.c_str()) << "&";
   }
+
   if(m_clusterVersionHasBeenSet)
   {
       oStream << location << index << locationValue << ".ClusterVersion=" << StringUtils::URLEncode(m_clusterVersion.c_str()) << "&";
   }
+
   if(m_automatedSnapshotRetentionPeriodHasBeenSet)
   {
       oStream << location << index << locationValue << ".AutomatedSnapshotRetentionPeriod=" << m_automatedSnapshotRetentionPeriod << "&";
   }
+
   if(m_clusterIdentifierHasBeenSet)
   {
       oStream << location << index << locationValue << ".ClusterIdentifier=" << StringUtils::URLEncode(m_clusterIdentifier.c_str()) << "&";
   }
+
+  if(m_publiclyAccessibleHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".PubliclyAccessible=" << m_publiclyAccessible << "&";
+  }
+
+  if(m_enhancedVpcRoutingHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".EnhancedVpcRouting=" << m_enhancedVpcRouting << "&";
+  }
+
 }
 
 void PendingModifiedValues::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -165,4 +208,16 @@ void PendingModifiedValues::OutputToStream(Aws::OStream& oStream, const char* lo
   {
       oStream << location << ".ClusterIdentifier=" << StringUtils::URLEncode(m_clusterIdentifier.c_str()) << "&";
   }
+  if(m_publiclyAccessibleHasBeenSet)
+  {
+      oStream << location << ".PubliclyAccessible=" << m_publiclyAccessible << "&";
+  }
+  if(m_enhancedVpcRoutingHasBeenSet)
+  {
+      oStream << location << ".EnhancedVpcRouting=" << m_enhancedVpcRouting << "&";
+  }
 }
+
+} // namespace Model
+} // namespace Redshift
+} // namespace Aws

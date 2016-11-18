@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -14,57 +14,73 @@
 */
 #include <aws/ec2/model/EventType.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
+#include <aws/core/utils/EnumParseOverflowContainer.h>
 
 using namespace Aws::Utils;
 
-static const int instanceChange_HASH = HashingUtils::HashString("instanceChange");
-static const int fleetRequestChange_HASH = HashingUtils::HashString("fleetRequestChange");
-static const int error_HASH = HashingUtils::HashString("error");
 
 namespace Aws
 {
-namespace EC2
-{
-namespace Model
-{
-namespace EventTypeMapper
-{
-EventType GetEventTypeForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-
-  if (hashCode == instanceChange_HASH)
+  namespace EC2
   {
-    return EventType::instanceChange;
-  }
-  else if (hashCode == fleetRequestChange_HASH)
-  {
-    return EventType::fleetRequestChange;
-  }
-  else if (hashCode == error_HASH)
-  {
-    return EventType::error;
-  }
+    namespace Model
+    {
+      namespace EventTypeMapper
+      {
 
-  return EventType::NOT_SET;
-}
+        static const int instanceChange_HASH = HashingUtils::HashString("instanceChange");
+        static const int fleetRequestChange_HASH = HashingUtils::HashString("fleetRequestChange");
+        static const int error_HASH = HashingUtils::HashString("error");
 
-Aws::String GetNameForEventType(EventType value)
-{
-  switch(value)
-  {
-  case EventType::instanceChange:
-    return "instanceChange";
-  case EventType::fleetRequestChange:
-    return "fleetRequestChange";
-  case EventType::error:
-    return "error";
-  default:
-    return "";
-  }
-}
 
-} // namespace EventTypeMapper
-} // namespace Model
-} // namespace EC2
+        EventType GetEventTypeForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == instanceChange_HASH)
+          {
+            return EventType::instanceChange;
+          }
+          else if (hashCode == fleetRequestChange_HASH)
+          {
+            return EventType::fleetRequestChange;
+          }
+          else if (hashCode == error_HASH)
+          {
+            return EventType::error;
+          }
+          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<EventType>(hashCode);
+          }
+
+          return EventType::NOT_SET;
+        }
+
+        Aws::String GetNameForEventType(EventType enumValue)
+        {
+          switch(enumValue)
+          {
+          case EventType::instanceChange:
+            return "instanceChange";
+          case EventType::fleetRequestChange:
+            return "fleetRequestChange";
+          case EventType::error:
+            return "error";
+          default:
+            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace EventTypeMapper
+    } // namespace Model
+  } // namespace EC2
 } // namespace Aws

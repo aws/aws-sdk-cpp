@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,21 +19,29 @@
 
 #include <utility>
 
-using namespace Aws::RDS::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace RDS
+{
+namespace Model
+{
 
 DBParameterGroup::DBParameterGroup() : 
     m_dBParameterGroupNameHasBeenSet(false),
     m_dBParameterGroupFamilyHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_dBParameterGroupArnHasBeenSet(false)
 {
 }
 
 DBParameterGroup::DBParameterGroup(const XmlNode& xmlNode) : 
     m_dBParameterGroupNameHasBeenSet(false),
     m_dBParameterGroupFamilyHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_dBParameterGroupArnHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -62,6 +70,12 @@ DBParameterGroup& DBParameterGroup::operator =(const XmlNode& xmlNode)
       m_description = StringUtils::Trim(descriptionNode.GetText().c_str());
       m_descriptionHasBeenSet = true;
     }
+    XmlNode dBParameterGroupArnNode = resultNode.FirstChild("DBParameterGroupArn");
+    if(!dBParameterGroupArnNode.IsNull())
+    {
+      m_dBParameterGroupArn = StringUtils::Trim(dBParameterGroupArnNode.GetText().c_str());
+      m_dBParameterGroupArnHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -73,14 +87,22 @@ void DBParameterGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
   {
       oStream << location << index << locationValue << ".DBParameterGroupName=" << StringUtils::URLEncode(m_dBParameterGroupName.c_str()) << "&";
   }
+
   if(m_dBParameterGroupFamilyHasBeenSet)
   {
       oStream << location << index << locationValue << ".DBParameterGroupFamily=" << StringUtils::URLEncode(m_dBParameterGroupFamily.c_str()) << "&";
   }
+
   if(m_descriptionHasBeenSet)
   {
       oStream << location << index << locationValue << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
+
+  if(m_dBParameterGroupArnHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".DBParameterGroupArn=" << StringUtils::URLEncode(m_dBParameterGroupArn.c_str()) << "&";
+  }
+
 }
 
 void DBParameterGroup::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -97,4 +119,12 @@ void DBParameterGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
   {
       oStream << location << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
+  if(m_dBParameterGroupArnHasBeenSet)
+  {
+      oStream << location << ".DBParameterGroupArn=" << StringUtils::URLEncode(m_dBParameterGroupArn.c_str()) << "&";
+  }
 }
+
+} // namespace Model
+} // namespace RDS
+} // namespace Aws

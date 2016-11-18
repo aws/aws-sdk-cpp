@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,21 +19,27 @@
 
 #include <utility>
 
-using namespace Aws::EC2::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
+
 HistoryRecord::HistoryRecord() : 
-    m_timestamp(0.0),
     m_timestampHasBeenSet(false),
+    m_eventType(EventType::NOT_SET),
     m_eventTypeHasBeenSet(false),
     m_eventInformationHasBeenSet(false)
 {
 }
 
 HistoryRecord::HistoryRecord(const XmlNode& xmlNode) : 
-    m_timestamp(0.0),
     m_timestampHasBeenSet(false),
+    m_eventType(EventType::NOT_SET),
     m_eventTypeHasBeenSet(false),
     m_eventInformationHasBeenSet(false)
 {
@@ -49,7 +55,7 @@ HistoryRecord& HistoryRecord::operator =(const XmlNode& xmlNode)
     XmlNode timestampNode = resultNode.FirstChild("timestamp");
     if(!timestampNode.IsNull())
     {
-      m_timestamp = StringUtils::ConvertToDouble(StringUtils::Trim(timestampNode.GetText().c_str()).c_str());
+      m_timestamp = DateTime(StringUtils::Trim(timestampNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_timestampHasBeenSet = true;
     }
     XmlNode eventTypeNode = resultNode.FirstChild("eventType");
@@ -73,25 +79,28 @@ void HistoryRecord::OutputToStream(Aws::OStream& oStream, const char* location, 
 {
   if(m_timestampHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Timestamp=" << m_timestamp << "&";
+      oStream << location << index << locationValue << ".Timestamp=" << StringUtils::URLEncode(m_timestamp.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_eventTypeHasBeenSet)
   {
       oStream << location << index << locationValue << ".EventType=" << EventTypeMapper::GetNameForEventType(m_eventType) << "&";
   }
+
   if(m_eventInformationHasBeenSet)
   {
       Aws::StringStream eventInformationLocationAndMemberSs;
       eventInformationLocationAndMemberSs << location << index << locationValue << ".EventInformation";
       m_eventInformation.OutputToStream(oStream, eventInformationLocationAndMemberSs.str().c_str());
   }
+
 }
 
 void HistoryRecord::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
   if(m_timestampHasBeenSet)
   {
-      oStream << location << ".Timestamp=" << m_timestamp << "&";
+      oStream << location << ".Timestamp=" << StringUtils::URLEncode(m_timestamp.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_eventTypeHasBeenSet)
   {
@@ -104,3 +113,7 @@ void HistoryRecord::OutputToStream(Aws::OStream& oStream, const char* location) 
       m_eventInformation.OutputToStream(oStream, eventInformationLocationAndMember.c_str());
   }
 }
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -25,11 +25,13 @@ UpdateInstanceRequest::UpdateInstanceRequest() :
     m_instanceIdHasBeenSet(false),
     m_layerIdsHasBeenSet(false),
     m_instanceTypeHasBeenSet(false),
+    m_autoScalingType(AutoScalingType::NOT_SET),
     m_autoScalingTypeHasBeenSet(false),
     m_hostnameHasBeenSet(false),
     m_osHasBeenSet(false),
     m_amiIdHasBeenSet(false),
     m_sshKeyNameHasBeenSet(false),
+    m_architecture(Architecture::NOT_SET),
     m_architectureHasBeenSet(false),
     m_installUpdatesOnBoot(false),
     m_installUpdatesOnBootHasBeenSet(false),
@@ -125,7 +127,7 @@ Aws::Http::HeaderValueCollection UpdateInstanceRequest::GetRequestSpecificHeader
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "OpsWorks_20130218.UpdateInstance"));
-  return std::move(headers);
+  return headers;
 
 }
 

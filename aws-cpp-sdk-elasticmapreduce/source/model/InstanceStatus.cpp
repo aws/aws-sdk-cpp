@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -17,11 +17,18 @@
 
 #include <utility>
 
-using namespace Aws::EMR::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
+namespace Aws
+{
+namespace EMR
+{
+namespace Model
+{
+
 InstanceStatus::InstanceStatus() : 
+    m_state(InstanceState::NOT_SET),
     m_stateHasBeenSet(false),
     m_stateChangeReasonHasBeenSet(false),
     m_timelineHasBeenSet(false)
@@ -29,6 +36,7 @@ InstanceStatus::InstanceStatus() :
 }
 
 InstanceStatus::InstanceStatus(const JsonValue& jsonValue) : 
+    m_state(InstanceState::NOT_SET),
     m_stateHasBeenSet(false),
     m_stateChangeReasonHasBeenSet(false),
     m_timelineHasBeenSet(false)
@@ -83,5 +91,9 @@ JsonValue InstanceStatus::Jsonize() const
 
   }
 
-  return std::move(payload);
+  return payload;
 }
+
+} // namespace Model
+} // namespace EMR
+} // namespace Aws

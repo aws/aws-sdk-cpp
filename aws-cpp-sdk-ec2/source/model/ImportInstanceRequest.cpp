@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -25,6 +25,7 @@ ImportInstanceRequest::ImportInstanceRequest() :
     m_descriptionHasBeenSet(false),
     m_launchSpecificationHasBeenSet(false),
     m_diskImagesHasBeenSet(false),
+    m_platform(PlatformValues::NOT_SET),
     m_platformHasBeenSet(false)
 {
 }
@@ -37,14 +38,17 @@ Aws::String ImportInstanceRequest::SerializePayload() const
   {
     ss << "DryRun=" << m_dryRun << "&";
   }
+
   if(m_descriptionHasBeenSet)
   {
     ss << "Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
+
   if(m_launchSpecificationHasBeenSet)
   {
-    m_launchSpecification.OutputToStream(ss, "LaunchSpecification.");
+    m_launchSpecification.OutputToStream(ss, "LaunchSpecification");
   }
+
   if(m_diskImagesHasBeenSet)
   {
     unsigned diskImagesCount = 1;
@@ -54,11 +58,13 @@ Aws::String ImportInstanceRequest::SerializePayload() const
       diskImagesCount++;
     }
   }
+
   if(m_platformHasBeenSet)
   {
     ss << "Platform=" << PlatformValuesMapper::GetNameForPlatformValues(m_platform) << "&";
   }
-  ss << "Version=2015-04-15";
+
+  ss << "Version=2015-10-01";
   return ss.str();
 }
 

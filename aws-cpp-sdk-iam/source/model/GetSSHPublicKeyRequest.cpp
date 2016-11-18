@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -22,6 +22,7 @@ using namespace Aws::Utils;
 GetSSHPublicKeyRequest::GetSSHPublicKeyRequest() : 
     m_userNameHasBeenSet(false),
     m_sSHPublicKeyIdHasBeenSet(false),
+    m_encoding(EncodingType::NOT_SET),
     m_encodingHasBeenSet(false)
 {
 }
@@ -34,14 +35,17 @@ Aws::String GetSSHPublicKeyRequest::SerializePayload() const
   {
     ss << "UserName=" << StringUtils::URLEncode(m_userName.c_str()) << "&";
   }
+
   if(m_sSHPublicKeyIdHasBeenSet)
   {
     ss << "SSHPublicKeyId=" << StringUtils::URLEncode(m_sSHPublicKeyId.c_str()) << "&";
   }
+
   if(m_encodingHasBeenSet)
   {
     ss << "Encoding=" << EncodingTypeMapper::GetNameForEncodingType(m_encoding) << "&";
   }
+
   ss << "Version=2010-05-08";
   return ss.str();
 }

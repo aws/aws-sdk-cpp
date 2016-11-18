@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,13 +19,18 @@
 
 #include <utility>
 
-using namespace Aws::EC2::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
+
 VpcPeeringConnection::VpcPeeringConnection() : 
     m_accepterVpcInfoHasBeenSet(false),
-    m_expirationTime(0.0),
     m_expirationTimeHasBeenSet(false),
     m_requesterVpcInfoHasBeenSet(false),
     m_statusHasBeenSet(false),
@@ -36,7 +41,6 @@ VpcPeeringConnection::VpcPeeringConnection() :
 
 VpcPeeringConnection::VpcPeeringConnection(const XmlNode& xmlNode) : 
     m_accepterVpcInfoHasBeenSet(false),
-    m_expirationTime(0.0),
     m_expirationTimeHasBeenSet(false),
     m_requesterVpcInfoHasBeenSet(false),
     m_statusHasBeenSet(false),
@@ -61,7 +65,7 @@ VpcPeeringConnection& VpcPeeringConnection::operator =(const XmlNode& xmlNode)
     XmlNode expirationTimeNode = resultNode.FirstChild("expirationTime");
     if(!expirationTimeNode.IsNull())
     {
-      m_expirationTime = StringUtils::ConvertToDouble(StringUtils::Trim(expirationTimeNode.GetText().c_str()).c_str());
+      m_expirationTime = DateTime(StringUtils::Trim(expirationTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_expirationTimeHasBeenSet = true;
     }
     XmlNode requesterVpcInfoNode = resultNode.FirstChild("requesterVpcInfo");
@@ -107,37 +111,42 @@ void VpcPeeringConnection::OutputToStream(Aws::OStream& oStream, const char* loc
       accepterVpcInfoLocationAndMemberSs << location << index << locationValue << ".AccepterVpcInfo";
       m_accepterVpcInfo.OutputToStream(oStream, accepterVpcInfoLocationAndMemberSs.str().c_str());
   }
+
   if(m_expirationTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ExpirationTime=" << m_expirationTime << "&";
+      oStream << location << index << locationValue << ".ExpirationTime=" << StringUtils::URLEncode(m_expirationTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_requesterVpcInfoHasBeenSet)
   {
       Aws::StringStream requesterVpcInfoLocationAndMemberSs;
       requesterVpcInfoLocationAndMemberSs << location << index << locationValue << ".RequesterVpcInfo";
       m_requesterVpcInfo.OutputToStream(oStream, requesterVpcInfoLocationAndMemberSs.str().c_str());
   }
+
   if(m_statusHasBeenSet)
   {
       Aws::StringStream statusLocationAndMemberSs;
       statusLocationAndMemberSs << location << index << locationValue << ".Status";
       m_status.OutputToStream(oStream, statusLocationAndMemberSs.str().c_str());
   }
+
   if(m_tagsHasBeenSet)
   {
-      unsigned tagsIdx = 0;
+      unsigned tagsIdx = 1;
       for(auto& item : m_tags)
       {
-        tagsIdx++;
         Aws::StringStream tagsSs;
-        tagsSs << location << index << locationValue << ".TagSet." << tagsIdx;
+        tagsSs << location << index << locationValue << ".TagSet." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
+
   if(m_vpcPeeringConnectionIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".VpcPeeringConnectionId=" << StringUtils::URLEncode(m_vpcPeeringConnectionId.c_str()) << "&";
   }
+
 }
 
 void VpcPeeringConnection::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -150,7 +159,7 @@ void VpcPeeringConnection::OutputToStream(Aws::OStream& oStream, const char* loc
   }
   if(m_expirationTimeHasBeenSet)
   {
-      oStream << location << ".ExpirationTime=" << m_expirationTime << "&";
+      oStream << location << ".ExpirationTime=" << StringUtils::URLEncode(m_expirationTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_requesterVpcInfoHasBeenSet)
   {
@@ -166,11 +175,12 @@ void VpcPeeringConnection::OutputToStream(Aws::OStream& oStream, const char* loc
   }
   if(m_tagsHasBeenSet)
   {
+      unsigned tagsIdx = 1;
       for(auto& item : m_tags)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".item";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream tagsSs;
+        tagsSs << location <<  ".item." << tagsIdx++;
+        item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
   if(m_vpcPeeringConnectionIdHasBeenSet)
@@ -178,3 +188,7 @@ void VpcPeeringConnection::OutputToStream(Aws::OStream& oStream, const char* loc
       oStream << location << ".VpcPeeringConnectionId=" << StringUtils::URLEncode(m_vpcPeeringConnectionId.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -25,8 +25,8 @@ namespace OpsWorks
 namespace Model
 {
 
-  /*
-  */
+  /**
+   */
   class AWS_OPSWORKS_API DescribeElasticLoadBalancersRequest : public OpsWorksRequest
   {
   public:
@@ -35,80 +35,94 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
-    /*
-     <p>A stack ID. The action describes the stack's Elastic Load Balancing instances.</p>
-    */
+    /**
+     * <p>A stack ID. The action describes the stack's Elastic Load Balancing
+     * instances.</p>
+     */
     inline const Aws::String& GetStackId() const{ return m_stackId; }
 
-    /*
-     <p>A stack ID. The action describes the stack's Elastic Load Balancing instances.</p>
-    */
+    /**
+     * <p>A stack ID. The action describes the stack's Elastic Load Balancing
+     * instances.</p>
+     */
     inline void SetStackId(const Aws::String& value) { m_stackIdHasBeenSet = true; m_stackId = value; }
 
-    /*
-     <p>A stack ID. The action describes the stack's Elastic Load Balancing instances.</p>
-    */
+    /**
+     * <p>A stack ID. The action describes the stack's Elastic Load Balancing
+     * instances.</p>
+     */
     inline void SetStackId(Aws::String&& value) { m_stackIdHasBeenSet = true; m_stackId = value; }
 
-    /*
-     <p>A stack ID. The action describes the stack's Elastic Load Balancing instances.</p>
-    */
+    /**
+     * <p>A stack ID. The action describes the stack's Elastic Load Balancing
+     * instances.</p>
+     */
     inline void SetStackId(const char* value) { m_stackIdHasBeenSet = true; m_stackId.assign(value); }
 
-    /*
-     <p>A stack ID. The action describes the stack's Elastic Load Balancing instances.</p>
-    */
+    /**
+     * <p>A stack ID. The action describes the stack's Elastic Load Balancing
+     * instances.</p>
+     */
     inline DescribeElasticLoadBalancersRequest& WithStackId(const Aws::String& value) { SetStackId(value); return *this;}
 
-    /*
-     <p>A stack ID. The action describes the stack's Elastic Load Balancing instances.</p>
-    */
+    /**
+     * <p>A stack ID. The action describes the stack's Elastic Load Balancing
+     * instances.</p>
+     */
     inline DescribeElasticLoadBalancersRequest& WithStackId(Aws::String&& value) { SetStackId(value); return *this;}
 
-    /*
-     <p>A stack ID. The action describes the stack's Elastic Load Balancing instances.</p>
-    */
+    /**
+     * <p>A stack ID. The action describes the stack's Elastic Load Balancing
+     * instances.</p>
+     */
     inline DescribeElasticLoadBalancersRequest& WithStackId(const char* value) { SetStackId(value); return *this;}
 
-    /*
-     <p>A list of layer IDs. The action describes the Elastic Load Balancing instances for the specified layers.</p>
-    */
+    /**
+     * <p>A list of layer IDs. The action describes the Elastic Load Balancing
+     * instances for the specified layers.</p>
+     */
     inline const Aws::Vector<Aws::String>& GetLayerIds() const{ return m_layerIds; }
 
-    /*
-     <p>A list of layer IDs. The action describes the Elastic Load Balancing instances for the specified layers.</p>
-    */
+    /**
+     * <p>A list of layer IDs. The action describes the Elastic Load Balancing
+     * instances for the specified layers.</p>
+     */
     inline void SetLayerIds(const Aws::Vector<Aws::String>& value) { m_layerIdsHasBeenSet = true; m_layerIds = value; }
 
-    /*
-     <p>A list of layer IDs. The action describes the Elastic Load Balancing instances for the specified layers.</p>
-    */
+    /**
+     * <p>A list of layer IDs. The action describes the Elastic Load Balancing
+     * instances for the specified layers.</p>
+     */
     inline void SetLayerIds(Aws::Vector<Aws::String>&& value) { m_layerIdsHasBeenSet = true; m_layerIds = value; }
 
-    /*
-     <p>A list of layer IDs. The action describes the Elastic Load Balancing instances for the specified layers.</p>
-    */
+    /**
+     * <p>A list of layer IDs. The action describes the Elastic Load Balancing
+     * instances for the specified layers.</p>
+     */
     inline DescribeElasticLoadBalancersRequest& WithLayerIds(const Aws::Vector<Aws::String>& value) { SetLayerIds(value); return *this;}
 
-    /*
-     <p>A list of layer IDs. The action describes the Elastic Load Balancing instances for the specified layers.</p>
-    */
+    /**
+     * <p>A list of layer IDs. The action describes the Elastic Load Balancing
+     * instances for the specified layers.</p>
+     */
     inline DescribeElasticLoadBalancersRequest& WithLayerIds(Aws::Vector<Aws::String>&& value) { SetLayerIds(value); return *this;}
 
-    /*
-     <p>A list of layer IDs. The action describes the Elastic Load Balancing instances for the specified layers.</p>
-    */
+    /**
+     * <p>A list of layer IDs. The action describes the Elastic Load Balancing
+     * instances for the specified layers.</p>
+     */
     inline DescribeElasticLoadBalancersRequest& AddLayerIds(const Aws::String& value) { m_layerIdsHasBeenSet = true; m_layerIds.push_back(value); return *this; }
 
-    /*
-     <p>A list of layer IDs. The action describes the Elastic Load Balancing instances for the specified layers.</p>
-    */
+    /**
+     * <p>A list of layer IDs. The action describes the Elastic Load Balancing
+     * instances for the specified layers.</p>
+     */
     inline DescribeElasticLoadBalancersRequest& AddLayerIds(Aws::String&& value) { m_layerIdsHasBeenSet = true; m_layerIds.push_back(value); return *this; }
 
-    /*
-     <p>A list of layer IDs. The action describes the Elastic Load Balancing instances for the specified layers.</p>
-    */
+    /**
+     * <p>A list of layer IDs. The action describes the Elastic Load Balancing
+     * instances for the specified layers.</p>
+     */
     inline DescribeElasticLoadBalancersRequest& AddLayerIds(const char* value) { m_layerIdsHasBeenSet = true; m_layerIds.push_back(value); return *this; }
 
   private:

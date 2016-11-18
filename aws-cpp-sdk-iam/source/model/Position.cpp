@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::IAM::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace IAM
+{
+namespace Model
+{
 
 Position::Position() : 
     m_line(0),
@@ -69,10 +75,12 @@ void Position::OutputToStream(Aws::OStream& oStream, const char* location, unsig
   {
       oStream << location << index << locationValue << ".Line=" << m_line << "&";
   }
+
   if(m_columnHasBeenSet)
   {
       oStream << location << index << locationValue << ".Column=" << m_column << "&";
   }
+
 }
 
 void Position::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -86,3 +94,7 @@ void Position::OutputToStream(Aws::OStream& oStream, const char* location) const
       oStream << location << ".Column=" << m_column << "&";
   }
 }
+
+} // namespace Model
+} // namespace IAM
+} // namespace Aws

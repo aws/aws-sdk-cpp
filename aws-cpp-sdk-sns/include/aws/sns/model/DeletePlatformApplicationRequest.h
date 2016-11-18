@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,49 +24,48 @@ namespace SNS
 namespace Model
 {
 
-  /*
-    <p>Input for DeletePlatformApplication action.</p>
-  */
+  /**
+   * <p>Input for DeletePlatformApplication action.</p>
+   */
   class AWS_SNS_API DeletePlatformApplicationRequest : public SNSRequest
   {
   public:
     DeletePlatformApplicationRequest();
     Aws::String SerializePayload() const override;
 
-
-    /*
-     <p>PlatformApplicationArn of platform application object to delete.</p>
-    */
+    /**
+     * <p>PlatformApplicationArn of platform application object to delete.</p>
+     */
     inline const Aws::String& GetPlatformApplicationArn() const{ return m_platformApplicationArn; }
 
-    /*
-     <p>PlatformApplicationArn of platform application object to delete.</p>
-    */
+    /**
+     * <p>PlatformApplicationArn of platform application object to delete.</p>
+     */
     inline void SetPlatformApplicationArn(const Aws::String& value) { m_platformApplicationArnHasBeenSet = true; m_platformApplicationArn = value; }
 
-    /*
-     <p>PlatformApplicationArn of platform application object to delete.</p>
-    */
+    /**
+     * <p>PlatformApplicationArn of platform application object to delete.</p>
+     */
     inline void SetPlatformApplicationArn(Aws::String&& value) { m_platformApplicationArnHasBeenSet = true; m_platformApplicationArn = value; }
 
-    /*
-     <p>PlatformApplicationArn of platform application object to delete.</p>
-    */
+    /**
+     * <p>PlatformApplicationArn of platform application object to delete.</p>
+     */
     inline void SetPlatformApplicationArn(const char* value) { m_platformApplicationArnHasBeenSet = true; m_platformApplicationArn.assign(value); }
 
-    /*
-     <p>PlatformApplicationArn of platform application object to delete.</p>
-    */
+    /**
+     * <p>PlatformApplicationArn of platform application object to delete.</p>
+     */
     inline DeletePlatformApplicationRequest& WithPlatformApplicationArn(const Aws::String& value) { SetPlatformApplicationArn(value); return *this;}
 
-    /*
-     <p>PlatformApplicationArn of platform application object to delete.</p>
-    */
+    /**
+     * <p>PlatformApplicationArn of platform application object to delete.</p>
+     */
     inline DeletePlatformApplicationRequest& WithPlatformApplicationArn(Aws::String&& value) { SetPlatformApplicationArn(value); return *this;}
 
-    /*
-     <p>PlatformApplicationArn of platform application object to delete.</p>
-    */
+    /**
+     * <p>PlatformApplicationArn of platform application object to delete.</p>
+     */
     inline DeletePlatformApplicationRequest& WithPlatformApplicationArn(const char* value) { SetPlatformApplicationArn(value); return *this;}
 
   private:

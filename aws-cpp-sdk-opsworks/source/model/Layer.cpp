@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -17,13 +17,20 @@
 
 #include <utility>
 
-using namespace Aws::OpsWorks::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace OpsWorks
+{
+namespace Model
+{
 
 Layer::Layer() : 
     m_stackIdHasBeenSet(false),
     m_layerIdHasBeenSet(false),
+    m_type(LayerType::NOT_SET),
     m_typeHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_shortnameHasBeenSet(false),
@@ -54,6 +61,7 @@ Layer::Layer() :
 Layer::Layer(const JsonValue& jsonValue) : 
     m_stackIdHasBeenSet(false),
     m_layerIdHasBeenSet(false),
+    m_type(LayerType::NOT_SET),
     m_typeHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_shortnameHasBeenSet(false),
@@ -403,5 +411,9 @@ JsonValue Layer::Jsonize() const
 
   }
 
-  return std::move(payload);
+  return payload;
 }
+
+} // namespace Model
+} // namespace OpsWorks
+} // namespace Aws

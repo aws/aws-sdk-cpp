@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -27,10 +27,13 @@ using namespace Aws;
 
 GetObjectResult::GetObjectResult() : 
     m_deleteMarker(false),
-    m_lastModified(0.0),
     m_contentLength(0),
     m_missingMeta(0),
-    m_expires(0.0)
+    m_serverSideEncryption(ServerSideEncryption::NOT_SET),
+    m_storageClass(StorageClass::NOT_SET),
+    m_requestCharged(RequestCharged::NOT_SET),
+    m_replicationStatus(ReplicationStatus::NOT_SET),
+    m_partsCount(0)
 {
 }
 
@@ -40,7 +43,7 @@ GetObjectResult::GetObjectResult(GetObjectResult&& toMove) :
     m_acceptRanges(std::move(toMove.m_acceptRanges)),
     m_expiration(std::move(toMove.m_expiration)),
     m_restore(std::move(toMove.m_restore)),
-    m_lastModified(toMove.m_lastModified),
+    m_lastModified(std::move(toMove.m_lastModified)),
     m_contentLength(toMove.m_contentLength),
     m_eTag(std::move(toMove.m_eTag)),
     m_missingMeta(toMove.m_missingMeta),
@@ -51,7 +54,7 @@ GetObjectResult::GetObjectResult(GetObjectResult&& toMove) :
     m_contentLanguage(std::move(toMove.m_contentLanguage)),
     m_contentRange(std::move(toMove.m_contentRange)),
     m_contentType(std::move(toMove.m_contentType)),
-    m_expires(toMove.m_expires),
+    m_expires(std::move(toMove.m_expires)),
     m_websiteRedirectLocation(std::move(toMove.m_websiteRedirectLocation)),
     m_serverSideEncryption(toMove.m_serverSideEncryption),
     m_metadata(std::move(toMove.m_metadata)),
@@ -60,7 +63,8 @@ GetObjectResult::GetObjectResult(GetObjectResult&& toMove) :
     m_sSEKMSKeyId(std::move(toMove.m_sSEKMSKeyId)),
     m_storageClass(toMove.m_storageClass),
     m_requestCharged(toMove.m_requestCharged),
-    m_replicationStatus(toMove.m_replicationStatus)
+    m_replicationStatus(toMove.m_replicationStatus),
+    m_partsCount(toMove.m_partsCount)
 {
 }
 
@@ -76,7 +80,7 @@ GetObjectResult& GetObjectResult::operator=(GetObjectResult&& toMove)
    m_acceptRanges = std::move(toMove.m_acceptRanges);
    m_expiration = std::move(toMove.m_expiration);
    m_restore = std::move(toMove.m_restore);
-   m_lastModified = toMove.m_lastModified;
+   m_lastModified = std::move(toMove.m_lastModified);
    m_contentLength = toMove.m_contentLength;
    m_eTag = std::move(toMove.m_eTag);
    m_missingMeta = toMove.m_missingMeta;
@@ -87,7 +91,7 @@ GetObjectResult& GetObjectResult::operator=(GetObjectResult&& toMove)
    m_contentLanguage = std::move(toMove.m_contentLanguage);
    m_contentRange = std::move(toMove.m_contentRange);
    m_contentType = std::move(toMove.m_contentType);
-   m_expires = toMove.m_expires;
+   m_expires = std::move(toMove.m_expires);
    m_websiteRedirectLocation = std::move(toMove.m_websiteRedirectLocation);
    m_serverSideEncryption = toMove.m_serverSideEncryption;
    m_metadata = std::move(toMove.m_metadata);
@@ -97,16 +101,20 @@ GetObjectResult& GetObjectResult::operator=(GetObjectResult&& toMove)
    m_storageClass = toMove.m_storageClass;
    m_requestCharged = toMove.m_requestCharged;
    m_replicationStatus = toMove.m_replicationStatus;
+   m_partsCount = toMove.m_partsCount;
 
    return *this;
 }
 
 GetObjectResult::GetObjectResult(AmazonWebServiceResult<ResponseStream>&& result) : 
     m_deleteMarker(false),
-    m_lastModified(0.0),
     m_contentLength(0),
     m_missingMeta(0),
-    m_expires(0.0)
+    m_serverSideEncryption(ServerSideEncryption::NOT_SET),
+    m_storageClass(StorageClass::NOT_SET),
+    m_requestCharged(RequestCharged::NOT_SET),
+    m_replicationStatus(ReplicationStatus::NOT_SET),
+    m_partsCount(0)
 {
   *this = std::move(result);
 }
@@ -143,13 +151,13 @@ GetObjectResult& GetObjectResult::operator =(AmazonWebServiceResult<ResponseStre
   const auto& lastModifiedIter = headers.find("last-modified");
   if(lastModifiedIter != headers.end())
   {
-     m_lastModified = StringUtils::ConvertToDouble(lastModifiedIter->second.c_str());
+    m_lastModified = DateTime(lastModifiedIter->second, DateFormat::RFC822);
   }
 
   const auto& contentLengthIter = headers.find("content-length");
   if(contentLengthIter != headers.end())
   {
-     m_contentLength = StringUtils::ConvertToInt32(contentLengthIter->second.c_str());
+     m_contentLength = StringUtils::ConvertToInt64(contentLengthIter->second.c_str());
   }
 
   const auto& eTagIter = headers.find("etag");
@@ -209,7 +217,7 @@ GetObjectResult& GetObjectResult::operator =(AmazonWebServiceResult<ResponseStre
   const auto& expiresIter = headers.find("expires");
   if(expiresIter != headers.end())
   {
-     m_expires = StringUtils::ConvertToDouble(expiresIter->second.c_str());
+    m_expires = DateTime(expiresIter->second, DateFormat::RFC822);
   }
 
   const auto& websiteRedirectLocationIter = headers.find("x-amz-website-redirect-location");
@@ -269,6 +277,12 @@ GetObjectResult& GetObjectResult::operator =(AmazonWebServiceResult<ResponseStre
   if(replicationStatusIter != headers.end())
   {
     m_replicationStatus = ReplicationStatusMapper::GetReplicationStatusForName(replicationStatusIter->second);
+  }
+
+  const auto& partsCountIter = headers.find("x-amz-mp-parts-count");
+  if(partsCountIter != headers.end())
+  {
+     m_partsCount = StringUtils::ConvertToInt32(partsCountIter->second.c_str());
   }
 
    return *this;

@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -35,9 +35,9 @@ namespace Redshift
 {
 namespace Model
 {
-  /*
-    <p></p>
-  */
+  /**
+   * <p/>
+   */
   class AWS_REDSHIFT_API DescribeHsmClientCertificatesResult
   {
   public:
@@ -45,74 +45,123 @@ namespace Model
     DescribeHsmClientCertificatesResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     DescribeHsmClientCertificatesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p> A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
-    */
+    /**
+     * <p>A value that indicates the starting point for the next set of response
+     * records in a subsequent request. If a value is returned in a response, you can
+     * retrieve the next set of records by providing this returned marker value in the
+     * <code>Marker</code> parameter and retrying the command. If the
+     * <code>Marker</code> field is empty, all response records have been retrieved for
+     * the request. </p>
+     */
     inline const Aws::String& GetMarker() const{ return m_marker; }
 
-    /*
-     <p> A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
-    */
+    /**
+     * <p>A value that indicates the starting point for the next set of response
+     * records in a subsequent request. If a value is returned in a response, you can
+     * retrieve the next set of records by providing this returned marker value in the
+     * <code>Marker</code> parameter and retrying the command. If the
+     * <code>Marker</code> field is empty, all response records have been retrieved for
+     * the request. </p>
+     */
     inline void SetMarker(const Aws::String& value) { m_marker = value; }
 
-    /*
-     <p> A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
-    */
+    /**
+     * <p>A value that indicates the starting point for the next set of response
+     * records in a subsequent request. If a value is returned in a response, you can
+     * retrieve the next set of records by providing this returned marker value in the
+     * <code>Marker</code> parameter and retrying the command. If the
+     * <code>Marker</code> field is empty, all response records have been retrieved for
+     * the request. </p>
+     */
     inline void SetMarker(Aws::String&& value) { m_marker = value; }
 
-    /*
-     <p> A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
-    */
+    /**
+     * <p>A value that indicates the starting point for the next set of response
+     * records in a subsequent request. If a value is returned in a response, you can
+     * retrieve the next set of records by providing this returned marker value in the
+     * <code>Marker</code> parameter and retrying the command. If the
+     * <code>Marker</code> field is empty, all response records have been retrieved for
+     * the request. </p>
+     */
     inline void SetMarker(const char* value) { m_marker.assign(value); }
 
-    /*
-     <p> A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
-    */
+    /**
+     * <p>A value that indicates the starting point for the next set of response
+     * records in a subsequent request. If a value is returned in a response, you can
+     * retrieve the next set of records by providing this returned marker value in the
+     * <code>Marker</code> parameter and retrying the command. If the
+     * <code>Marker</code> field is empty, all response records have been retrieved for
+     * the request. </p>
+     */
     inline DescribeHsmClientCertificatesResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
 
-    /*
-     <p> A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
-    */
+    /**
+     * <p>A value that indicates the starting point for the next set of response
+     * records in a subsequent request. If a value is returned in a response, you can
+     * retrieve the next set of records by providing this returned marker value in the
+     * <code>Marker</code> parameter and retrying the command. If the
+     * <code>Marker</code> field is empty, all response records have been retrieved for
+     * the request. </p>
+     */
     inline DescribeHsmClientCertificatesResult& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
 
-    /*
-     <p> A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
-    */
+    /**
+     * <p>A value that indicates the starting point for the next set of response
+     * records in a subsequent request. If a value is returned in a response, you can
+     * retrieve the next set of records by providing this returned marker value in the
+     * <code>Marker</code> parameter and retrying the command. If the
+     * <code>Marker</code> field is empty, all response records have been retrieved for
+     * the request. </p>
+     */
     inline DescribeHsmClientCertificatesResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
-    /*
-     <p>A list of the identifiers for one or more HSM client certificates used by Amazon Redshift clusters to store and retrieve database encryption keys in an HSM.</p>
-    */
+    /**
+     * <p>A list of the identifiers for one or more HSM client certificates used by
+     * Amazon Redshift clusters to store and retrieve database encryption keys in an
+     * HSM.</p>
+     */
     inline const Aws::Vector<HsmClientCertificate>& GetHsmClientCertificates() const{ return m_hsmClientCertificates; }
 
-    /*
-     <p>A list of the identifiers for one or more HSM client certificates used by Amazon Redshift clusters to store and retrieve database encryption keys in an HSM.</p>
-    */
+    /**
+     * <p>A list of the identifiers for one or more HSM client certificates used by
+     * Amazon Redshift clusters to store and retrieve database encryption keys in an
+     * HSM.</p>
+     */
     inline void SetHsmClientCertificates(const Aws::Vector<HsmClientCertificate>& value) { m_hsmClientCertificates = value; }
 
-    /*
-     <p>A list of the identifiers for one or more HSM client certificates used by Amazon Redshift clusters to store and retrieve database encryption keys in an HSM.</p>
-    */
+    /**
+     * <p>A list of the identifiers for one or more HSM client certificates used by
+     * Amazon Redshift clusters to store and retrieve database encryption keys in an
+     * HSM.</p>
+     */
     inline void SetHsmClientCertificates(Aws::Vector<HsmClientCertificate>&& value) { m_hsmClientCertificates = value; }
 
-    /*
-     <p>A list of the identifiers for one or more HSM client certificates used by Amazon Redshift clusters to store and retrieve database encryption keys in an HSM.</p>
-    */
+    /**
+     * <p>A list of the identifiers for one or more HSM client certificates used by
+     * Amazon Redshift clusters to store and retrieve database encryption keys in an
+     * HSM.</p>
+     */
     inline DescribeHsmClientCertificatesResult& WithHsmClientCertificates(const Aws::Vector<HsmClientCertificate>& value) { SetHsmClientCertificates(value); return *this;}
 
-    /*
-     <p>A list of the identifiers for one or more HSM client certificates used by Amazon Redshift clusters to store and retrieve database encryption keys in an HSM.</p>
-    */
+    /**
+     * <p>A list of the identifiers for one or more HSM client certificates used by
+     * Amazon Redshift clusters to store and retrieve database encryption keys in an
+     * HSM.</p>
+     */
     inline DescribeHsmClientCertificatesResult& WithHsmClientCertificates(Aws::Vector<HsmClientCertificate>&& value) { SetHsmClientCertificates(value); return *this;}
 
-    /*
-     <p>A list of the identifiers for one or more HSM client certificates used by Amazon Redshift clusters to store and retrieve database encryption keys in an HSM.</p>
-    */
+    /**
+     * <p>A list of the identifiers for one or more HSM client certificates used by
+     * Amazon Redshift clusters to store and retrieve database encryption keys in an
+     * HSM.</p>
+     */
     inline DescribeHsmClientCertificatesResult& AddHsmClientCertificates(const HsmClientCertificate& value) { m_hsmClientCertificates.push_back(value); return *this; }
 
-    /*
-     <p>A list of the identifiers for one or more HSM client certificates used by Amazon Redshift clusters to store and retrieve database encryption keys in an HSM.</p>
-    */
+    /**
+     * <p>A list of the identifiers for one or more HSM client certificates used by
+     * Amazon Redshift clusters to store and retrieve database encryption keys in an
+     * HSM.</p>
+     */
     inline DescribeHsmClientCertificatesResult& AddHsmClientCertificates(HsmClientCertificate&& value) { m_hsmClientCertificates.push_back(value); return *this; }
 
     

@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::EC2::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
 
 NetworkInterface::NetworkInterface() : 
     m_networkInterfaceIdHasBeenSet(false),
@@ -33,6 +39,7 @@ NetworkInterface::NetworkInterface() :
     m_requesterIdHasBeenSet(false),
     m_requesterManaged(false),
     m_requesterManagedHasBeenSet(false),
+    m_status(NetworkInterfaceStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_macAddressHasBeenSet(false),
     m_privateIpAddressHasBeenSet(false),
@@ -43,7 +50,9 @@ NetworkInterface::NetworkInterface() :
     m_attachmentHasBeenSet(false),
     m_associationHasBeenSet(false),
     m_tagSetHasBeenSet(false),
-    m_privateIpAddressesHasBeenSet(false)
+    m_privateIpAddressesHasBeenSet(false),
+    m_interfaceType(NetworkInterfaceType::NOT_SET),
+    m_interfaceTypeHasBeenSet(false)
 {
 }
 
@@ -57,6 +66,7 @@ NetworkInterface::NetworkInterface(const XmlNode& xmlNode) :
     m_requesterIdHasBeenSet(false),
     m_requesterManaged(false),
     m_requesterManagedHasBeenSet(false),
+    m_status(NetworkInterfaceStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_macAddressHasBeenSet(false),
     m_privateIpAddressHasBeenSet(false),
@@ -67,7 +77,9 @@ NetworkInterface::NetworkInterface(const XmlNode& xmlNode) :
     m_attachmentHasBeenSet(false),
     m_associationHasBeenSet(false),
     m_tagSetHasBeenSet(false),
-    m_privateIpAddressesHasBeenSet(false)
+    m_privateIpAddressesHasBeenSet(false),
+    m_interfaceType(NetworkInterfaceType::NOT_SET),
+    m_interfaceTypeHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -204,6 +216,12 @@ NetworkInterface& NetworkInterface::operator =(const XmlNode& xmlNode)
 
       m_privateIpAddressesHasBeenSet = true;
     }
+    XmlNode interfaceTypeNode = resultNode.FirstChild("interfaceType");
+    if(!interfaceTypeNode.IsNull())
+    {
+      m_interfaceType = NetworkInterfaceTypeMapper::GetNetworkInterfaceTypeForName(StringUtils::Trim(interfaceTypeNode.GetText().c_str()).c_str());
+      m_interfaceTypeHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -215,99 +233,119 @@ void NetworkInterface::OutputToStream(Aws::OStream& oStream, const char* locatio
   {
       oStream << location << index << locationValue << ".NetworkInterfaceId=" << StringUtils::URLEncode(m_networkInterfaceId.c_str()) << "&";
   }
+
   if(m_subnetIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".SubnetId=" << StringUtils::URLEncode(m_subnetId.c_str()) << "&";
   }
+
   if(m_vpcIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
   }
+
   if(m_availabilityZoneHasBeenSet)
   {
       oStream << location << index << locationValue << ".AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
   }
+
   if(m_descriptionHasBeenSet)
   {
       oStream << location << index << locationValue << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
+
   if(m_ownerIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".OwnerId=" << StringUtils::URLEncode(m_ownerId.c_str()) << "&";
   }
+
   if(m_requesterIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".RequesterId=" << StringUtils::URLEncode(m_requesterId.c_str()) << "&";
   }
+
   if(m_requesterManagedHasBeenSet)
   {
       oStream << location << index << locationValue << ".RequesterManaged=" << m_requesterManaged << "&";
   }
+
   if(m_statusHasBeenSet)
   {
       oStream << location << index << locationValue << ".Status=" << NetworkInterfaceStatusMapper::GetNameForNetworkInterfaceStatus(m_status) << "&";
   }
+
   if(m_macAddressHasBeenSet)
   {
       oStream << location << index << locationValue << ".MacAddress=" << StringUtils::URLEncode(m_macAddress.c_str()) << "&";
   }
+
   if(m_privateIpAddressHasBeenSet)
   {
       oStream << location << index << locationValue << ".PrivateIpAddress=" << StringUtils::URLEncode(m_privateIpAddress.c_str()) << "&";
   }
+
   if(m_privateDnsNameHasBeenSet)
   {
       oStream << location << index << locationValue << ".PrivateDnsName=" << StringUtils::URLEncode(m_privateDnsName.c_str()) << "&";
   }
+
   if(m_sourceDestCheckHasBeenSet)
   {
       oStream << location << index << locationValue << ".SourceDestCheck=" << m_sourceDestCheck << "&";
   }
+
   if(m_groupsHasBeenSet)
   {
-      unsigned groupsIdx = 0;
+      unsigned groupsIdx = 1;
       for(auto& item : m_groups)
       {
-        groupsIdx++;
         Aws::StringStream groupsSs;
-        groupsSs << location << index << locationValue << ".GroupSet." << groupsIdx;
+        groupsSs << location << index << locationValue << ".GroupSet." << groupsIdx++;
         item.OutputToStream(oStream, groupsSs.str().c_str());
       }
   }
+
   if(m_attachmentHasBeenSet)
   {
       Aws::StringStream attachmentLocationAndMemberSs;
       attachmentLocationAndMemberSs << location << index << locationValue << ".Attachment";
       m_attachment.OutputToStream(oStream, attachmentLocationAndMemberSs.str().c_str());
   }
+
   if(m_associationHasBeenSet)
   {
       Aws::StringStream associationLocationAndMemberSs;
       associationLocationAndMemberSs << location << index << locationValue << ".Association";
       m_association.OutputToStream(oStream, associationLocationAndMemberSs.str().c_str());
   }
+
   if(m_tagSetHasBeenSet)
   {
-      unsigned tagSetIdx = 0;
+      unsigned tagSetIdx = 1;
       for(auto& item : m_tagSet)
       {
-        tagSetIdx++;
         Aws::StringStream tagSetSs;
-        tagSetSs << location << index << locationValue << ".TagSet." << tagSetIdx;
+        tagSetSs << location << index << locationValue << ".TagSet." << tagSetIdx++;
         item.OutputToStream(oStream, tagSetSs.str().c_str());
       }
   }
+
   if(m_privateIpAddressesHasBeenSet)
   {
-      unsigned privateIpAddressesIdx = 0;
+      unsigned privateIpAddressesIdx = 1;
       for(auto& item : m_privateIpAddresses)
       {
-        privateIpAddressesIdx++;
         Aws::StringStream privateIpAddressesSs;
-        privateIpAddressesSs << location << index << locationValue << ".PrivateIpAddressesSet." << privateIpAddressesIdx;
+        privateIpAddressesSs << location << index << locationValue << ".PrivateIpAddressesSet." << privateIpAddressesIdx++;
         item.OutputToStream(oStream, privateIpAddressesSs.str().c_str());
       }
   }
+
+  if(m_interfaceTypeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".InterfaceType=" << NetworkInterfaceTypeMapper::GetNameForNetworkInterfaceType(m_interfaceType) << "&";
+  }
+
 }
 
 void NetworkInterface::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -366,11 +404,12 @@ void NetworkInterface::OutputToStream(Aws::OStream& oStream, const char* locatio
   }
   if(m_groupsHasBeenSet)
   {
+      unsigned groupsIdx = 1;
       for(auto& item : m_groups)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".item";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream groupsSs;
+        groupsSs << location <<  ".item." << groupsIdx++;
+        item.OutputToStream(oStream, groupsSs.str().c_str());
       }
   }
   if(m_attachmentHasBeenSet)
@@ -387,20 +426,30 @@ void NetworkInterface::OutputToStream(Aws::OStream& oStream, const char* locatio
   }
   if(m_tagSetHasBeenSet)
   {
+      unsigned tagSetIdx = 1;
       for(auto& item : m_tagSet)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".item";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream tagSetSs;
+        tagSetSs << location <<  ".item." << tagSetIdx++;
+        item.OutputToStream(oStream, tagSetSs.str().c_str());
       }
   }
   if(m_privateIpAddressesHasBeenSet)
   {
+      unsigned privateIpAddressesIdx = 1;
       for(auto& item : m_privateIpAddresses)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".item";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream privateIpAddressesSs;
+        privateIpAddressesSs << location <<  ".item." << privateIpAddressesIdx++;
+        item.OutputToStream(oStream, privateIpAddressesSs.str().c_str());
       }
   }
+  if(m_interfaceTypeHasBeenSet)
+  {
+      oStream << location << ".InterfaceType=" << NetworkInterfaceTypeMapper::GetNameForNetworkInterfaceType(m_interfaceType) << "&";
+  }
 }
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -13,7 +13,8 @@
 * permissions and limitations under the License.
 */
 #include <aws/iam/IAMEndpoint.h>
-#include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/HashingUtils.h>
 
 using namespace Aws;
 using namespace Aws::IAM;
@@ -24,15 +25,37 @@ namespace IAM
 {
 namespace IAMEndpoint
 {
-  Aws::String ForRegion(Region region)
+  static const int CN_REGION_HASH = Aws::Utils::HashingUtils::HashString("cn-north-1");
+  
+  static const int US_EAST_1_HASH = Aws::Utils::HashingUtils::HashString("us-east-1");
+
+  Aws::String ForRegion(const Aws::String& regionName, bool useDualStack)
   {
-    switch(region)
-    {
-     case Region::US_EAST_1:
+    auto hash = Aws::Utils::HashingUtils::HashString(regionName.c_str());
+    
+    if(!useDualStack)
+    {      
+      if(hash == US_EAST_1_HASH)
+      {
         return "iam.amazonaws.com";
-     default:
-        return "iam.amazonaws.com";
+      }
     }
+    Aws::StringStream ss;
+    ss << "iam" << ".";
+
+    if(useDualStack)
+    {
+      ss << "dualstack.";
+    }
+
+    ss << regionName << ".amazonaws.com";
+    
+    if(hash == CN_REGION_HASH)
+    {
+      ss << ".cn"; 
+    }
+    
+    return ss.str();
   }
 
 } // namespace IAMEndpoint

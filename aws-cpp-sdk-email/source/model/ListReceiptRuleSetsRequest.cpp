@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -20,7 +20,6 @@ using namespace Aws::SES::Model;
 using namespace Aws::Utils;
 
 ListReceiptRuleSetsRequest::ListReceiptRuleSetsRequest() : 
-    m_pageTokenHasBeenSet(false),
     m_nextTokenHasBeenSet(false)
 {
 }
@@ -29,14 +28,11 @@ Aws::String ListReceiptRuleSetsRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=ListReceiptRuleSets&";
-  if(m_pageTokenHasBeenSet)
-  {
-    ss << "PageToken=" << StringUtils::URLEncode(m_pageToken.c_str()) << "&";
-  }
   if(m_nextTokenHasBeenSet)
   {
     ss << "NextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";
   }
+
   ss << "Version=2010-12-01";
   return ss.str();
 }

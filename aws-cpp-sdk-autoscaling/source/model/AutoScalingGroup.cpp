@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace AutoScaling
+{
+namespace Model
+{
 
 AutoScalingGroup::AutoScalingGroup() : 
     m_autoScalingGroupNameHasBeenSet(false),
@@ -37,11 +43,11 @@ AutoScalingGroup::AutoScalingGroup() :
     m_defaultCooldownHasBeenSet(false),
     m_availabilityZonesHasBeenSet(false),
     m_loadBalancerNamesHasBeenSet(false),
+    m_targetGroupARNsHasBeenSet(false),
     m_healthCheckTypeHasBeenSet(false),
     m_healthCheckGracePeriod(0),
     m_healthCheckGracePeriodHasBeenSet(false),
     m_instancesHasBeenSet(false),
-    m_createdTime(0.0),
     m_createdTimeHasBeenSet(false),
     m_suspendedProcessesHasBeenSet(false),
     m_placementGroupHasBeenSet(false),
@@ -49,7 +55,9 @@ AutoScalingGroup::AutoScalingGroup() :
     m_enabledMetricsHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_terminationPoliciesHasBeenSet(false)
+    m_terminationPoliciesHasBeenSet(false),
+    m_newInstancesProtectedFromScaleIn(false),
+    m_newInstancesProtectedFromScaleInHasBeenSet(false)
 {
 }
 
@@ -67,11 +75,11 @@ AutoScalingGroup::AutoScalingGroup(const XmlNode& xmlNode) :
     m_defaultCooldownHasBeenSet(false),
     m_availabilityZonesHasBeenSet(false),
     m_loadBalancerNamesHasBeenSet(false),
+    m_targetGroupARNsHasBeenSet(false),
     m_healthCheckTypeHasBeenSet(false),
     m_healthCheckGracePeriod(0),
     m_healthCheckGracePeriodHasBeenSet(false),
     m_instancesHasBeenSet(false),
-    m_createdTime(0.0),
     m_createdTimeHasBeenSet(false),
     m_suspendedProcessesHasBeenSet(false),
     m_placementGroupHasBeenSet(false),
@@ -79,7 +87,9 @@ AutoScalingGroup::AutoScalingGroup(const XmlNode& xmlNode) :
     m_enabledMetricsHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_terminationPoliciesHasBeenSet(false)
+    m_terminationPoliciesHasBeenSet(false),
+    m_newInstancesProtectedFromScaleIn(false),
+    m_newInstancesProtectedFromScaleInHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -156,6 +166,18 @@ AutoScalingGroup& AutoScalingGroup::operator =(const XmlNode& xmlNode)
 
       m_loadBalancerNamesHasBeenSet = true;
     }
+    XmlNode targetGroupARNsNode = resultNode.FirstChild("TargetGroupARNs");
+    if(!targetGroupARNsNode.IsNull())
+    {
+      XmlNode targetGroupARNsMember = targetGroupARNsNode.FirstChild("member");
+      while(!targetGroupARNsMember.IsNull())
+      {
+        m_targetGroupARNs.push_back(StringUtils::Trim(targetGroupARNsMember.GetText().c_str()));
+        targetGroupARNsMember = targetGroupARNsMember.NextNode("member");
+      }
+
+      m_targetGroupARNsHasBeenSet = true;
+    }
     XmlNode healthCheckTypeNode = resultNode.FirstChild("HealthCheckType");
     if(!healthCheckTypeNode.IsNull())
     {
@@ -183,7 +205,7 @@ AutoScalingGroup& AutoScalingGroup::operator =(const XmlNode& xmlNode)
     XmlNode createdTimeNode = resultNode.FirstChild("CreatedTime");
     if(!createdTimeNode.IsNull())
     {
-      m_createdTime = StringUtils::ConvertToDouble(StringUtils::Trim(createdTimeNode.GetText().c_str()).c_str());
+      m_createdTime = DateTime(StringUtils::Trim(createdTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_createdTimeHasBeenSet = true;
     }
     XmlNode suspendedProcessesNode = resultNode.FirstChild("SuspendedProcesses");
@@ -252,6 +274,12 @@ AutoScalingGroup& AutoScalingGroup::operator =(const XmlNode& xmlNode)
 
       m_terminationPoliciesHasBeenSet = true;
     }
+    XmlNode newInstancesProtectedFromScaleInNode = resultNode.FirstChild("NewInstancesProtectedFromScaleIn");
+    if(!newInstancesProtectedFromScaleInNode.IsNull())
+    {
+      m_newInstancesProtectedFromScaleIn = StringUtils::ConvertToBool(StringUtils::Trim(newInstancesProtectedFromScaleInNode.GetText().c_str()).c_str());
+      m_newInstancesProtectedFromScaleInHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -263,111 +291,152 @@ void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
   {
       oStream << location << index << locationValue << ".AutoScalingGroupName=" << StringUtils::URLEncode(m_autoScalingGroupName.c_str()) << "&";
   }
+
   if(m_autoScalingGroupARNHasBeenSet)
   {
       oStream << location << index << locationValue << ".AutoScalingGroupARN=" << StringUtils::URLEncode(m_autoScalingGroupARN.c_str()) << "&";
   }
+
   if(m_launchConfigurationNameHasBeenSet)
   {
       oStream << location << index << locationValue << ".LaunchConfigurationName=" << StringUtils::URLEncode(m_launchConfigurationName.c_str()) << "&";
   }
+
   if(m_minSizeHasBeenSet)
   {
       oStream << location << index << locationValue << ".MinSize=" << m_minSize << "&";
   }
+
   if(m_maxSizeHasBeenSet)
   {
       oStream << location << index << locationValue << ".MaxSize=" << m_maxSize << "&";
   }
+
   if(m_desiredCapacityHasBeenSet)
   {
       oStream << location << index << locationValue << ".DesiredCapacity=" << m_desiredCapacity << "&";
   }
+
   if(m_defaultCooldownHasBeenSet)
   {
       oStream << location << index << locationValue << ".DefaultCooldown=" << m_defaultCooldown << "&";
   }
+
   if(m_availabilityZonesHasBeenSet)
   {
+      unsigned availabilityZonesIdx = 1;
       for(auto& item : m_availabilityZones)
       {
-        oStream << location << index << locationValue << ".AvailabilityZones=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << index << locationValue << ".AvailabilityZones.member." << availabilityZonesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
+
   if(m_loadBalancerNamesHasBeenSet)
   {
+      unsigned loadBalancerNamesIdx = 1;
       for(auto& item : m_loadBalancerNames)
       {
-        oStream << location << index << locationValue << ".LoadBalancerNames=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << index << locationValue << ".LoadBalancerNames.member." << loadBalancerNamesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
+
+  if(m_targetGroupARNsHasBeenSet)
+  {
+      unsigned targetGroupARNsIdx = 1;
+      for(auto& item : m_targetGroupARNs)
+      {
+        oStream << location << index << locationValue << ".TargetGroupARNs.member." << targetGroupARNsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
+  }
+
   if(m_healthCheckTypeHasBeenSet)
   {
       oStream << location << index << locationValue << ".HealthCheckType=" << StringUtils::URLEncode(m_healthCheckType.c_str()) << "&";
   }
+
   if(m_healthCheckGracePeriodHasBeenSet)
   {
       oStream << location << index << locationValue << ".HealthCheckGracePeriod=" << m_healthCheckGracePeriod << "&";
   }
+
   if(m_instancesHasBeenSet)
   {
+      unsigned instancesIdx = 1;
       for(auto& item : m_instances)
       {
         Aws::StringStream instancesSs;
-        instancesSs << location << index << locationValue << ".Instances";
+        instancesSs << location << index << locationValue << ".Instances.member." << instancesIdx++;
         item.OutputToStream(oStream, instancesSs.str().c_str());
       }
   }
+
   if(m_createdTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".CreatedTime=" << m_createdTime << "&";
+      oStream << location << index << locationValue << ".CreatedTime=" << StringUtils::URLEncode(m_createdTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_suspendedProcessesHasBeenSet)
   {
+      unsigned suspendedProcessesIdx = 1;
       for(auto& item : m_suspendedProcesses)
       {
         Aws::StringStream suspendedProcessesSs;
-        suspendedProcessesSs << location << index << locationValue << ".SuspendedProcesses";
+        suspendedProcessesSs << location << index << locationValue << ".SuspendedProcesses.member." << suspendedProcessesIdx++;
         item.OutputToStream(oStream, suspendedProcessesSs.str().c_str());
       }
   }
+
   if(m_placementGroupHasBeenSet)
   {
       oStream << location << index << locationValue << ".PlacementGroup=" << StringUtils::URLEncode(m_placementGroup.c_str()) << "&";
   }
+
   if(m_vPCZoneIdentifierHasBeenSet)
   {
       oStream << location << index << locationValue << ".VPCZoneIdentifier=" << StringUtils::URLEncode(m_vPCZoneIdentifier.c_str()) << "&";
   }
+
   if(m_enabledMetricsHasBeenSet)
   {
+      unsigned enabledMetricsIdx = 1;
       for(auto& item : m_enabledMetrics)
       {
         Aws::StringStream enabledMetricsSs;
-        enabledMetricsSs << location << index << locationValue << ".EnabledMetrics";
+        enabledMetricsSs << location << index << locationValue << ".EnabledMetrics.member." << enabledMetricsIdx++;
         item.OutputToStream(oStream, enabledMetricsSs.str().c_str());
       }
   }
+
   if(m_statusHasBeenSet)
   {
       oStream << location << index << locationValue << ".Status=" << StringUtils::URLEncode(m_status.c_str()) << "&";
   }
+
   if(m_tagsHasBeenSet)
   {
+      unsigned tagsIdx = 1;
       for(auto& item : m_tags)
       {
         Aws::StringStream tagsSs;
-        tagsSs << location << index << locationValue << ".Tags";
+        tagsSs << location << index << locationValue << ".Tags.member." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
+
   if(m_terminationPoliciesHasBeenSet)
   {
+      unsigned terminationPoliciesIdx = 1;
       for(auto& item : m_terminationPolicies)
       {
-        oStream << location << index << locationValue << ".TerminationPolicies=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << index << locationValue << ".TerminationPolicies.member." << terminationPoliciesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
+
+  if(m_newInstancesProtectedFromScaleInHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".NewInstancesProtectedFromScaleIn=" << m_newInstancesProtectedFromScaleIn << "&";
+  }
+
 }
 
 void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -402,16 +471,26 @@ void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
   }
   if(m_availabilityZonesHasBeenSet)
   {
+      unsigned availabilityZonesIdx = 1;
       for(auto& item : m_availabilityZones)
       {
-        oStream << location << ".AvailabilityZones=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << ".AvailabilityZones.member." << availabilityZonesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
   if(m_loadBalancerNamesHasBeenSet)
   {
+      unsigned loadBalancerNamesIdx = 1;
       for(auto& item : m_loadBalancerNames)
       {
-        oStream << location << ".LoadBalancerNames=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << ".LoadBalancerNames.member." << loadBalancerNamesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
+  }
+  if(m_targetGroupARNsHasBeenSet)
+  {
+      unsigned targetGroupARNsIdx = 1;
+      for(auto& item : m_targetGroupARNs)
+      {
+        oStream << location << ".TargetGroupARNs.member." << targetGroupARNsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
   if(m_healthCheckTypeHasBeenSet)
@@ -424,24 +503,26 @@ void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
   }
   if(m_instancesHasBeenSet)
   {
+      unsigned instancesIdx = 1;
       for(auto& item : m_instances)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".Instances";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream instancesSs;
+        instancesSs << location <<  ".Instances.member." << instancesIdx++;
+        item.OutputToStream(oStream, instancesSs.str().c_str());
       }
   }
   if(m_createdTimeHasBeenSet)
   {
-      oStream << location << ".CreatedTime=" << m_createdTime << "&";
+      oStream << location << ".CreatedTime=" << StringUtils::URLEncode(m_createdTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_suspendedProcessesHasBeenSet)
   {
+      unsigned suspendedProcessesIdx = 1;
       for(auto& item : m_suspendedProcesses)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".SuspendedProcesses";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream suspendedProcessesSs;
+        suspendedProcessesSs << location <<  ".SuspendedProcesses.member." << suspendedProcessesIdx++;
+        item.OutputToStream(oStream, suspendedProcessesSs.str().c_str());
       }
   }
   if(m_placementGroupHasBeenSet)
@@ -454,11 +535,12 @@ void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
   }
   if(m_enabledMetricsHasBeenSet)
   {
+      unsigned enabledMetricsIdx = 1;
       for(auto& item : m_enabledMetrics)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".EnabledMetrics";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream enabledMetricsSs;
+        enabledMetricsSs << location <<  ".EnabledMetrics.member." << enabledMetricsIdx++;
+        item.OutputToStream(oStream, enabledMetricsSs.str().c_str());
       }
   }
   if(m_statusHasBeenSet)
@@ -467,18 +549,28 @@ void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
   }
   if(m_tagsHasBeenSet)
   {
+      unsigned tagsIdx = 1;
       for(auto& item : m_tags)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".Tags";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream tagsSs;
+        tagsSs << location <<  ".Tags.member." << tagsIdx++;
+        item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
   if(m_terminationPoliciesHasBeenSet)
   {
+      unsigned terminationPoliciesIdx = 1;
       for(auto& item : m_terminationPolicies)
       {
-        oStream << location << ".TerminationPolicies=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << ".TerminationPolicies.member." << terminationPoliciesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
+  if(m_newInstancesProtectedFromScaleInHasBeenSet)
+  {
+      oStream << location << ".NewInstancesProtectedFromScaleIn=" << m_newInstancesProtectedFromScaleIn << "&";
+  }
 }
+
+} // namespace Model
+} // namespace AutoScaling
+} // namespace Aws

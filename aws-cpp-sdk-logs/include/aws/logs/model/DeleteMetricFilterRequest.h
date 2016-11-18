@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,8 +24,8 @@ namespace CloudWatchLogs
 namespace Model
 {
 
-  /*
-  */
+  /**
+   */
   class AWS_CLOUDWATCHLOGS_API DeleteMetricFilterRequest : public CloudWatchLogsRequest
   {
   public:
@@ -34,75 +34,74 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
-    /*
-     <p>The name of the log group that is associated with the metric filter to delete.</p>
-    */
+    /**
+     * <p>The name of the log group.</p>
+     */
     inline const Aws::String& GetLogGroupName() const{ return m_logGroupName; }
 
-    /*
-     <p>The name of the log group that is associated with the metric filter to delete.</p>
-    */
+    /**
+     * <p>The name of the log group.</p>
+     */
     inline void SetLogGroupName(const Aws::String& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
 
-    /*
-     <p>The name of the log group that is associated with the metric filter to delete.</p>
-    */
+    /**
+     * <p>The name of the log group.</p>
+     */
     inline void SetLogGroupName(Aws::String&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
 
-    /*
-     <p>The name of the log group that is associated with the metric filter to delete.</p>
-    */
+    /**
+     * <p>The name of the log group.</p>
+     */
     inline void SetLogGroupName(const char* value) { m_logGroupNameHasBeenSet = true; m_logGroupName.assign(value); }
 
-    /*
-     <p>The name of the log group that is associated with the metric filter to delete.</p>
-    */
+    /**
+     * <p>The name of the log group.</p>
+     */
     inline DeleteMetricFilterRequest& WithLogGroupName(const Aws::String& value) { SetLogGroupName(value); return *this;}
 
-    /*
-     <p>The name of the log group that is associated with the metric filter to delete.</p>
-    */
+    /**
+     * <p>The name of the log group.</p>
+     */
     inline DeleteMetricFilterRequest& WithLogGroupName(Aws::String&& value) { SetLogGroupName(value); return *this;}
 
-    /*
-     <p>The name of the log group that is associated with the metric filter to delete.</p>
-    */
+    /**
+     * <p>The name of the log group.</p>
+     */
     inline DeleteMetricFilterRequest& WithLogGroupName(const char* value) { SetLogGroupName(value); return *this;}
 
-    /*
-     <p>The name of the metric filter to delete.</p>
-    */
+    /**
+     * <p>The name of the metric filter.</p>
+     */
     inline const Aws::String& GetFilterName() const{ return m_filterName; }
 
-    /*
-     <p>The name of the metric filter to delete.</p>
-    */
+    /**
+     * <p>The name of the metric filter.</p>
+     */
     inline void SetFilterName(const Aws::String& value) { m_filterNameHasBeenSet = true; m_filterName = value; }
 
-    /*
-     <p>The name of the metric filter to delete.</p>
-    */
+    /**
+     * <p>The name of the metric filter.</p>
+     */
     inline void SetFilterName(Aws::String&& value) { m_filterNameHasBeenSet = true; m_filterName = value; }
 
-    /*
-     <p>The name of the metric filter to delete.</p>
-    */
+    /**
+     * <p>The name of the metric filter.</p>
+     */
     inline void SetFilterName(const char* value) { m_filterNameHasBeenSet = true; m_filterName.assign(value); }
 
-    /*
-     <p>The name of the metric filter to delete.</p>
-    */
+    /**
+     * <p>The name of the metric filter.</p>
+     */
     inline DeleteMetricFilterRequest& WithFilterName(const Aws::String& value) { SetFilterName(value); return *this;}
 
-    /*
-     <p>The name of the metric filter to delete.</p>
-    */
+    /**
+     * <p>The name of the metric filter.</p>
+     */
     inline DeleteMetricFilterRequest& WithFilterName(Aws::String&& value) { SetFilterName(value); return *this;}
 
-    /*
-     <p>The name of the metric filter to delete.</p>
-    */
+    /**
+     * <p>The name of the metric filter.</p>
+     */
     inline DeleteMetricFilterRequest& WithFilterName(const char* value) { SetFilterName(value); return *this;}
 
   private:

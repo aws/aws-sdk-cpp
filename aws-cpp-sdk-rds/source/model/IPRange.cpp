@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::RDS::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace RDS
+{
+namespace Model
+{
 
 IPRange::IPRange() : 
     m_statusHasBeenSet(false),
@@ -65,10 +71,12 @@ void IPRange::OutputToStream(Aws::OStream& oStream, const char* location, unsign
   {
       oStream << location << index << locationValue << ".Status=" << StringUtils::URLEncode(m_status.c_str()) << "&";
   }
+
   if(m_cIDRIPHasBeenSet)
   {
       oStream << location << index << locationValue << ".CIDRIP=" << StringUtils::URLEncode(m_cIDRIP.c_str()) << "&";
   }
+
 }
 
 void IPRange::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -82,3 +90,7 @@ void IPRange::OutputToStream(Aws::OStream& oStream, const char* location) const
       oStream << location << ".CIDRIP=" << StringUtils::URLEncode(m_cIDRIP.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace RDS
+} // namespace Aws

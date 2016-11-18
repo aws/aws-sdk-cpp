@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::SQS::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace SQS
+{
+namespace Model
+{
 
 ChangeMessageVisibilityBatchRequestEntry::ChangeMessageVisibilityBatchRequestEntry() : 
     m_idHasBeenSet(false),
@@ -75,14 +81,17 @@ void ChangeMessageVisibilityBatchRequestEntry::OutputToStream(Aws::OStream& oStr
   {
       oStream << location << index << locationValue << ".Id=" << StringUtils::URLEncode(m_id.c_str()) << "&";
   }
+
   if(m_receiptHandleHasBeenSet)
   {
       oStream << location << index << locationValue << ".ReceiptHandle=" << StringUtils::URLEncode(m_receiptHandle.c_str()) << "&";
   }
+
   if(m_visibilityTimeoutHasBeenSet)
   {
       oStream << location << index << locationValue << ".VisibilityTimeout=" << m_visibilityTimeout << "&";
   }
+
 }
 
 void ChangeMessageVisibilityBatchRequestEntry::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -100,3 +109,7 @@ void ChangeMessageVisibilityBatchRequestEntry::OutputToStream(Aws::OStream& oStr
       oStream << location << ".VisibilityTimeout=" << m_visibilityTimeout << "&";
   }
 }
+
+} // namespace Model
+} // namespace SQS
+} // namespace Aws

@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::ECS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace ECS
+{
+namespace Model
+{
 
 Deployment::Deployment() : 
     m_idHasBeenSet(false),
@@ -31,9 +37,7 @@ Deployment::Deployment() :
     m_pendingCountHasBeenSet(false),
     m_runningCount(0),
     m_runningCountHasBeenSet(false),
-    m_createdAt(0.0),
     m_createdAtHasBeenSet(false),
-    m_updatedAt(0.0),
     m_updatedAtHasBeenSet(false)
 {
 }
@@ -48,9 +52,7 @@ Deployment::Deployment(const JsonValue& jsonValue) :
     m_pendingCountHasBeenSet(false),
     m_runningCount(0),
     m_runningCountHasBeenSet(false),
-    m_createdAt(0.0),
     m_createdAtHasBeenSet(false),
-    m_updatedAt(0.0),
     m_updatedAtHasBeenSet(false)
 {
   *this = jsonValue;
@@ -159,15 +161,17 @@ JsonValue Deployment::Jsonize() const
 
   if(m_createdAtHasBeenSet)
   {
-   payload.WithDouble("createdAt", m_createdAt);
-
+   payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
   }
 
   if(m_updatedAtHasBeenSet)
   {
-   payload.WithDouble("updatedAt", m_updatedAt);
-
+   payload.WithDouble("updatedAt", m_updatedAt.SecondsWithMSPrecision());
   }
 
-  return std::move(payload);
+  return payload;
 }
+
+} // namespace Model
+} // namespace ECS
+} // namespace Aws

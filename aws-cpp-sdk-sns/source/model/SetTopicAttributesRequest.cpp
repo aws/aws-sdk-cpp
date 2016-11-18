@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -34,14 +34,17 @@ Aws::String SetTopicAttributesRequest::SerializePayload() const
   {
     ss << "TopicArn=" << StringUtils::URLEncode(m_topicArn.c_str()) << "&";
   }
+
   if(m_attributeNameHasBeenSet)
   {
     ss << "AttributeName=" << StringUtils::URLEncode(m_attributeName.c_str()) << "&";
   }
+
   if(m_attributeValueHasBeenSet)
   {
     ss << "AttributeValue=" << StringUtils::URLEncode(m_attributeValue.c_str()) << "&";
   }
+
   ss << "Version=2010-03-31";
   return ss.str();
 }

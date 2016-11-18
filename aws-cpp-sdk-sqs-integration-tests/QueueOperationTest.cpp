@@ -41,6 +41,7 @@
 #include <aws/access-management/AccessManagementClient.h>
 #include <aws/iam/IAMClient.h>
 #include <aws/cognito-identity/CognitoIdentityClient.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 using namespace Aws::Http;
 using namespace Aws;
@@ -341,7 +342,9 @@ TEST_F(QueueOperationTest, TestPermissions)
     EXPECT_TRUE(policyString.length() > 0);
     JsonValue policy(policyString);
     EXPECT_EQ(addPermissionRequest.GetLabel(), policy.GetArray("Statement")[0].GetString("Sid"));
-    EXPECT_EQ(m_accountId, policy.GetArray("Statement")[0].GetObject("Principal").GetString("AWS"));
+    Aws::StringStream expectedValue;
+    expectedValue << "arn:aws:iam::" << m_accountId << ":root";
+    EXPECT_EQ(expectedValue.str(), policy.GetArray("Statement")[0].GetObject("Principal").GetString("AWS"));
     EXPECT_EQ("SQS:ReceiveMessage", policy.GetArray("Statement")[0].GetString("Action"));
 
     RemovePermissionRequest removePermissionRequest;
@@ -351,10 +354,8 @@ TEST_F(QueueOperationTest, TestPermissions)
 
     queueAttributesOutcome = sqsClient->GetQueueAttributes(queueAttributesRequest);
     ASSERT_TRUE(queueAttributesOutcome.IsSuccess());
-    policyString = queueAttributesOutcome.GetResult().GetAttributes().find(QueueAttributeName::Policy)->second;
-    EXPECT_TRUE(policyString.length() > 0);
-    JsonValue emptyPolicy(policyString);
-    EXPECT_EQ(0uL, emptyPolicy.GetArray("Statement").GetLength());
+
+    EXPECT_TRUE(queueAttributesOutcome.GetResult().GetAttributes().find(QueueAttributeName::Policy) == queueAttributesOutcome.GetResult().GetAttributes().end());
 
     DeleteQueueRequest deleteQueueRequest;
     deleteQueueRequest.WithQueueUrl(queueUrl);

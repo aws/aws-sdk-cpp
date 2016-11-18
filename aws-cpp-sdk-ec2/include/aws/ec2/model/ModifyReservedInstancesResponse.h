@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -33,9 +33,9 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
+  /**
+   * <p>Contains the output of ModifyReservedInstances.</p>
+   */
   class AWS_EC2_API ModifyReservedInstancesResponse
   {
   public:
@@ -43,39 +43,39 @@ namespace Model
     ModifyReservedInstancesResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     ModifyReservedInstancesResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>The ID for the modification.</p>
-    */
+    /**
+     * <p>The ID for the modification.</p>
+     */
     inline const Aws::String& GetReservedInstancesModificationId() const{ return m_reservedInstancesModificationId; }
 
-    /*
-     <p>The ID for the modification.</p>
-    */
+    /**
+     * <p>The ID for the modification.</p>
+     */
     inline void SetReservedInstancesModificationId(const Aws::String& value) { m_reservedInstancesModificationId = value; }
 
-    /*
-     <p>The ID for the modification.</p>
-    */
+    /**
+     * <p>The ID for the modification.</p>
+     */
     inline void SetReservedInstancesModificationId(Aws::String&& value) { m_reservedInstancesModificationId = value; }
 
-    /*
-     <p>The ID for the modification.</p>
-    */
+    /**
+     * <p>The ID for the modification.</p>
+     */
     inline void SetReservedInstancesModificationId(const char* value) { m_reservedInstancesModificationId.assign(value); }
 
-    /*
-     <p>The ID for the modification.</p>
-    */
+    /**
+     * <p>The ID for the modification.</p>
+     */
     inline ModifyReservedInstancesResponse& WithReservedInstancesModificationId(const Aws::String& value) { SetReservedInstancesModificationId(value); return *this;}
 
-    /*
-     <p>The ID for the modification.</p>
-    */
+    /**
+     * <p>The ID for the modification.</p>
+     */
     inline ModifyReservedInstancesResponse& WithReservedInstancesModificationId(Aws::String&& value) { SetReservedInstancesModificationId(value); return *this;}
 
-    /*
-     <p>The ID for the modification.</p>
-    */
+    /**
+     * <p>The ID for the modification.</p>
+     */
     inline ModifyReservedInstancesResponse& WithReservedInstancesModificationId(const char* value) { SetReservedInstancesModificationId(value); return *this;}
 
     

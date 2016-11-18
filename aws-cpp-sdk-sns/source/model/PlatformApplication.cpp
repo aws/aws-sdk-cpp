@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::SNS::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace SNS
+{
+namespace Model
+{
 
 PlatformApplication::PlatformApplication() : 
     m_platformApplicationArnHasBeenSet(false),
@@ -75,9 +81,20 @@ void PlatformApplication::OutputToStream(Aws::OStream& oStream, const char* loca
   {
       oStream << location << index << locationValue << ".PlatformApplicationArn=" << StringUtils::URLEncode(m_platformApplicationArn.c_str()) << "&";
   }
+
   if(m_attributesHasBeenSet)
   {
+      unsigned attributesIdx = 1;
+      for(auto& item : m_attributes)
+      {
+        oStream << location << index << locationValue << ".Attributes.entry." << attributesIdx << ".key="
+            << StringUtils::URLEncode(item.first.c_str()) << "&";
+        oStream << location << index << locationValue << ".Attributes.entry." << attributesIdx << ".value="
+            << StringUtils::URLEncode(item.second.c_str()) << "&";
+        attributesIdx++;
+      }
   }
+
 }
 
 void PlatformApplication::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -88,5 +105,19 @@ void PlatformApplication::OutputToStream(Aws::OStream& oStream, const char* loca
   }
   if(m_attributesHasBeenSet)
   {
+      unsigned attributesIdx = 1;
+      for(auto& item : m_attributes)
+      {
+        oStream << location << ".Attributes.entry."  << attributesIdx << ".key="
+            << StringUtils::URLEncode(item.first.c_str()) << "&";
+        oStream << location <<  ".Attributes.entry." << attributesIdx << ".value="
+            << StringUtils::URLEncode(item.second.c_str()) << "&";
+        attributesIdx++;
+      }
+
   }
 }
+
+} // namespace Model
+} // namespace SNS
+} // namespace Aws

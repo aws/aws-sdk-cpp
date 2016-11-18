@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -22,9 +22,7 @@ using namespace Aws::Utils;
 DescribeSpotPriceHistoryRequest::DescribeSpotPriceHistoryRequest() : 
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
-    m_startTime(0.0),
     m_startTimeHasBeenSet(false),
-    m_endTime(0.0),
     m_endTimeHasBeenSet(false),
     m_instanceTypesHasBeenSet(false),
     m_productDescriptionsHasBeenSet(false),
@@ -44,14 +42,17 @@ Aws::String DescribeSpotPriceHistoryRequest::SerializePayload() const
   {
     ss << "DryRun=" << m_dryRun << "&";
   }
+
   if(m_startTimeHasBeenSet)
   {
-    ss << "StartTime=" << m_startTime << "&";
+    ss << "StartTime=" << StringUtils::URLEncode(m_startTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_endTimeHasBeenSet)
   {
-    ss << "EndTime=" << m_endTime << "&";
+    ss << "EndTime=" << StringUtils::URLEncode(m_endTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_instanceTypesHasBeenSet)
   {
     unsigned instanceTypesCount = 1;
@@ -62,6 +63,7 @@ Aws::String DescribeSpotPriceHistoryRequest::SerializePayload() const
       instanceTypesCount++;
     }
   }
+
   if(m_productDescriptionsHasBeenSet)
   {
     unsigned productDescriptionsCount = 1;
@@ -72,6 +74,7 @@ Aws::String DescribeSpotPriceHistoryRequest::SerializePayload() const
       productDescriptionsCount++;
     }
   }
+
   if(m_filtersHasBeenSet)
   {
     unsigned filtersCount = 1;
@@ -81,19 +84,23 @@ Aws::String DescribeSpotPriceHistoryRequest::SerializePayload() const
       filtersCount++;
     }
   }
+
   if(m_availabilityZoneHasBeenSet)
   {
     ss << "AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
   }
+
   if(m_maxResultsHasBeenSet)
   {
     ss << "MaxResults=" << m_maxResults << "&";
   }
+
   if(m_nextTokenHasBeenSet)
   {
     ss << "NextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";
   }
-  ss << "Version=2015-04-15";
+
+  ss << "Version=2015-10-01";
   return ss.str();
 }
 

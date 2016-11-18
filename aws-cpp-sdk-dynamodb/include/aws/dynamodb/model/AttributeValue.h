@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -111,7 +111,7 @@ public:
     AttributeValue& AddBItem(const unsigned char* bItem, size_t size);
 
     /// returns the Attribute Map if the value is specialized to this type, otherwise an empty Map
-    const Aws::Map<Aws::String, const std::shared_ptr<AttributeValue>>& GetM();
+    const Aws::Map<Aws::String, const std::shared_ptr<AttributeValue>>& GetM() const;
     /// if already specialized to an Attribute Map, sets to these values
     /// if uninitialized, specializes the type to an Attribute Map with specified values
     /// if already specialized to another type then the behavior is undefined

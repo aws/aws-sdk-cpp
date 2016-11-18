@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -14,50 +14,66 @@
 */
 #include <aws/ec2/model/DatafeedSubscriptionState.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
+#include <aws/core/utils/EnumParseOverflowContainer.h>
 
 using namespace Aws::Utils;
 
-static const int Active_HASH = HashingUtils::HashString("Active");
-static const int Inactive_HASH = HashingUtils::HashString("Inactive");
 
 namespace Aws
 {
-namespace EC2
-{
-namespace Model
-{
-namespace DatafeedSubscriptionStateMapper
-{
-DatafeedSubscriptionState GetDatafeedSubscriptionStateForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-
-  if (hashCode == Active_HASH)
+  namespace EC2
   {
-    return DatafeedSubscriptionState::Active;
-  }
-  else if (hashCode == Inactive_HASH)
-  {
-    return DatafeedSubscriptionState::Inactive;
-  }
+    namespace Model
+    {
+      namespace DatafeedSubscriptionStateMapper
+      {
 
-  return DatafeedSubscriptionState::NOT_SET;
-}
+        static const int Active_HASH = HashingUtils::HashString("Active");
+        static const int Inactive_HASH = HashingUtils::HashString("Inactive");
 
-Aws::String GetNameForDatafeedSubscriptionState(DatafeedSubscriptionState value)
-{
-  switch(value)
-  {
-  case DatafeedSubscriptionState::Active:
-    return "Active";
-  case DatafeedSubscriptionState::Inactive:
-    return "Inactive";
-  default:
-    return "";
-  }
-}
 
-} // namespace DatafeedSubscriptionStateMapper
-} // namespace Model
-} // namespace EC2
+        DatafeedSubscriptionState GetDatafeedSubscriptionStateForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == Active_HASH)
+          {
+            return DatafeedSubscriptionState::Active;
+          }
+          else if (hashCode == Inactive_HASH)
+          {
+            return DatafeedSubscriptionState::Inactive;
+          }
+          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<DatafeedSubscriptionState>(hashCode);
+          }
+
+          return DatafeedSubscriptionState::NOT_SET;
+        }
+
+        Aws::String GetNameForDatafeedSubscriptionState(DatafeedSubscriptionState enumValue)
+        {
+          switch(enumValue)
+          {
+          case DatafeedSubscriptionState::Active:
+            return "Active";
+          case DatafeedSubscriptionState::Inactive:
+            return "Inactive";
+          default:
+            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace DatafeedSubscriptionStateMapper
+    } // namespace Model
+  } // namespace EC2
 } // namespace Aws

@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -21,7 +21,11 @@ using namespace Aws::Utils;
 
 CopyDBSnapshotRequest::CopyDBSnapshotRequest() : 
     m_sourceDBSnapshotIdentifierHasBeenSet(false),
-    m_targetDBSnapshotIdentifierHasBeenSet(false)
+    m_targetDBSnapshotIdentifierHasBeenSet(false),
+    m_kmsKeyIdHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_copyTags(false),
+    m_copyTagsHasBeenSet(false)
 {
 }
 
@@ -33,11 +37,33 @@ Aws::String CopyDBSnapshotRequest::SerializePayload() const
   {
     ss << "SourceDBSnapshotIdentifier=" << StringUtils::URLEncode(m_sourceDBSnapshotIdentifier.c_str()) << "&";
   }
+
   if(m_targetDBSnapshotIdentifierHasBeenSet)
   {
     ss << "TargetDBSnapshotIdentifier=" << StringUtils::URLEncode(m_targetDBSnapshotIdentifier.c_str()) << "&";
   }
-  ss << "Version=2013-01-10";
+
+  if(m_kmsKeyIdHasBeenSet)
+  {
+    ss << "KmsKeyId=" << StringUtils::URLEncode(m_kmsKeyId.c_str()) << "&";
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+    unsigned tagsCount = 1;
+    for(auto& item : m_tags)
+    {
+      item.OutputToStream(ss, "Tags.member.", tagsCount, "");
+      tagsCount++;
+    }
+  }
+
+  if(m_copyTagsHasBeenSet)
+  {
+    ss << "CopyTags=" << m_copyTags << "&";
+  }
+
+  ss << "Version=2014-10-31";
   return ss.str();
 }
 

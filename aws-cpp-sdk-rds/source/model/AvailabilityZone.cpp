@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,21 +19,23 @@
 
 #include <utility>
 
-using namespace Aws::RDS::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
+namespace Aws
+{
+namespace RDS
+{
+namespace Model
+{
+
 AvailabilityZone::AvailabilityZone() : 
-    m_nameHasBeenSet(false),
-    m_provisionedIopsCapable(false),
-    m_provisionedIopsCapableHasBeenSet(false)
+    m_nameHasBeenSet(false)
 {
 }
 
 AvailabilityZone::AvailabilityZone(const XmlNode& xmlNode) : 
-    m_nameHasBeenSet(false),
-    m_provisionedIopsCapable(false),
-    m_provisionedIopsCapableHasBeenSet(false)
+    m_nameHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -50,12 +52,6 @@ AvailabilityZone& AvailabilityZone::operator =(const XmlNode& xmlNode)
       m_name = StringUtils::Trim(nameNode.GetText().c_str());
       m_nameHasBeenSet = true;
     }
-    XmlNode provisionedIopsCapableNode = resultNode.FirstChild("ProvisionedIopsCapable");
-    if(!provisionedIopsCapableNode.IsNull())
-    {
-      m_provisionedIopsCapable = StringUtils::ConvertToBool(StringUtils::Trim(provisionedIopsCapableNode.GetText().c_str()).c_str());
-      m_provisionedIopsCapableHasBeenSet = true;
-    }
   }
 
   return *this;
@@ -67,10 +63,7 @@ void AvailabilityZone::OutputToStream(Aws::OStream& oStream, const char* locatio
   {
       oStream << location << index << locationValue << ".Name=" << StringUtils::URLEncode(m_name.c_str()) << "&";
   }
-  if(m_provisionedIopsCapableHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".ProvisionedIopsCapable=" << m_provisionedIopsCapable << "&";
-  }
+
 }
 
 void AvailabilityZone::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -79,8 +72,8 @@ void AvailabilityZone::OutputToStream(Aws::OStream& oStream, const char* locatio
   {
       oStream << location << ".Name=" << StringUtils::URLEncode(m_name.c_str()) << "&";
   }
-  if(m_provisionedIopsCapableHasBeenSet)
-  {
-      oStream << location << ".ProvisionedIopsCapable=" << m_provisionedIopsCapable << "&";
-  }
 }
+
+} // namespace Model
+} // namespace RDS
+} // namespace Aws

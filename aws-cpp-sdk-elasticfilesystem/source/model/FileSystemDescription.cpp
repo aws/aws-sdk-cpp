@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -17,21 +17,29 @@
 
 #include <utility>
 
-using namespace Aws::EFS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EFS
+{
+namespace Model
+{
 
 FileSystemDescription::FileSystemDescription() : 
     m_ownerIdHasBeenSet(false),
     m_creationTokenHasBeenSet(false),
     m_fileSystemIdHasBeenSet(false),
-    m_creationTime(0.0),
     m_creationTimeHasBeenSet(false),
+    m_lifeCycleState(LifeCycleState::NOT_SET),
     m_lifeCycleStateHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_numberOfMountTargets(0),
     m_numberOfMountTargetsHasBeenSet(false),
-    m_sizeInBytesHasBeenSet(false)
+    m_sizeInBytesHasBeenSet(false),
+    m_performanceMode(PerformanceMode::NOT_SET),
+    m_performanceModeHasBeenSet(false)
 {
 }
 
@@ -39,13 +47,15 @@ FileSystemDescription::FileSystemDescription(const JsonValue& jsonValue) :
     m_ownerIdHasBeenSet(false),
     m_creationTokenHasBeenSet(false),
     m_fileSystemIdHasBeenSet(false),
-    m_creationTime(0.0),
     m_creationTimeHasBeenSet(false),
+    m_lifeCycleState(LifeCycleState::NOT_SET),
     m_lifeCycleStateHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_numberOfMountTargets(0),
     m_numberOfMountTargetsHasBeenSet(false),
-    m_sizeInBytesHasBeenSet(false)
+    m_sizeInBytesHasBeenSet(false),
+    m_performanceMode(PerformanceMode::NOT_SET),
+    m_performanceModeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -108,6 +118,13 @@ FileSystemDescription& FileSystemDescription::operator =(const JsonValue& jsonVa
     m_sizeInBytesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("PerformanceMode"))
+  {
+    m_performanceMode = PerformanceModeMapper::GetPerformanceModeForName(jsonValue.GetString("PerformanceMode"));
+
+    m_performanceModeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -135,8 +152,7 @@ JsonValue FileSystemDescription::Jsonize() const
 
   if(m_creationTimeHasBeenSet)
   {
-   payload.WithDouble("CreationTime", m_creationTime);
-
+   payload.WithDouble("CreationTime", m_creationTime.SecondsWithMSPrecision());
   }
 
   if(m_lifeCycleStateHasBeenSet)
@@ -162,5 +178,14 @@ JsonValue FileSystemDescription::Jsonize() const
 
   }
 
-  return std::move(payload);
+  if(m_performanceModeHasBeenSet)
+  {
+   payload.WithString("PerformanceMode", PerformanceModeMapper::GetNameForPerformanceMode(m_performanceMode));
+  }
+
+  return payload;
 }
+
+} // namespace Model
+} // namespace EFS
+} // namespace Aws

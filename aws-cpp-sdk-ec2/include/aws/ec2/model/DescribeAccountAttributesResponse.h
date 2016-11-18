@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -34,9 +34,9 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
+  /**
+   * <p>Contains the output of DescribeAccountAttributes.</p>
+   */
   class AWS_EC2_API DescribeAccountAttributesResponse
   {
   public:
@@ -44,39 +44,39 @@ namespace Model
     DescribeAccountAttributesResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     DescribeAccountAttributesResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>Information about one or more account attributes.</p>
-    */
+    /**
+     * <p>Information about one or more account attributes.</p>
+     */
     inline const Aws::Vector<AccountAttribute>& GetAccountAttributes() const{ return m_accountAttributes; }
 
-    /*
-     <p>Information about one or more account attributes.</p>
-    */
+    /**
+     * <p>Information about one or more account attributes.</p>
+     */
     inline void SetAccountAttributes(const Aws::Vector<AccountAttribute>& value) { m_accountAttributes = value; }
 
-    /*
-     <p>Information about one or more account attributes.</p>
-    */
+    /**
+     * <p>Information about one or more account attributes.</p>
+     */
     inline void SetAccountAttributes(Aws::Vector<AccountAttribute>&& value) { m_accountAttributes = value; }
 
-    /*
-     <p>Information about one or more account attributes.</p>
-    */
+    /**
+     * <p>Information about one or more account attributes.</p>
+     */
     inline DescribeAccountAttributesResponse& WithAccountAttributes(const Aws::Vector<AccountAttribute>& value) { SetAccountAttributes(value); return *this;}
 
-    /*
-     <p>Information about one or more account attributes.</p>
-    */
+    /**
+     * <p>Information about one or more account attributes.</p>
+     */
     inline DescribeAccountAttributesResponse& WithAccountAttributes(Aws::Vector<AccountAttribute>&& value) { SetAccountAttributes(value); return *this;}
 
-    /*
-     <p>Information about one or more account attributes.</p>
-    */
+    /**
+     * <p>Information about one or more account attributes.</p>
+     */
     inline DescribeAccountAttributesResponse& AddAccountAttributes(const AccountAttribute& value) { m_accountAttributes.push_back(value); return *this; }
 
-    /*
-     <p>Information about one or more account attributes.</p>
-    */
+    /**
+     * <p>Information about one or more account attributes.</p>
+     */
     inline DescribeAccountAttributesResponse& AddAccountAttributes(AccountAttribute&& value) { m_accountAttributes.push_back(value); return *this; }
 
     

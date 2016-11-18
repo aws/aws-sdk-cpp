@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -32,9 +32,10 @@ namespace Redshift
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
+
+  /**
+   * <p>Describes event categories.</p>
+   */
   class AWS_REDSHIFT_API EventCategoriesMap
   {
   public:
@@ -45,74 +46,81 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>The Amazon Redshift source type, such as cluster or cluster-snapshot, that the returned categories belong to.</p>
-    */
+    /**
+     * <p>The source type, such as cluster or cluster-snapshot, that the returned
+     * categories belong to.</p>
+     */
     inline const Aws::String& GetSourceType() const{ return m_sourceType; }
 
-    /*
-     <p>The Amazon Redshift source type, such as cluster or cluster-snapshot, that the returned categories belong to.</p>
-    */
+    /**
+     * <p>The source type, such as cluster or cluster-snapshot, that the returned
+     * categories belong to.</p>
+     */
     inline void SetSourceType(const Aws::String& value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
 
-    /*
-     <p>The Amazon Redshift source type, such as cluster or cluster-snapshot, that the returned categories belong to.</p>
-    */
+    /**
+     * <p>The source type, such as cluster or cluster-snapshot, that the returned
+     * categories belong to.</p>
+     */
     inline void SetSourceType(Aws::String&& value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
 
-    /*
-     <p>The Amazon Redshift source type, such as cluster or cluster-snapshot, that the returned categories belong to.</p>
-    */
+    /**
+     * <p>The source type, such as cluster or cluster-snapshot, that the returned
+     * categories belong to.</p>
+     */
     inline void SetSourceType(const char* value) { m_sourceTypeHasBeenSet = true; m_sourceType.assign(value); }
 
-    /*
-     <p>The Amazon Redshift source type, such as cluster or cluster-snapshot, that the returned categories belong to.</p>
-    */
+    /**
+     * <p>The source type, such as cluster or cluster-snapshot, that the returned
+     * categories belong to.</p>
+     */
     inline EventCategoriesMap& WithSourceType(const Aws::String& value) { SetSourceType(value); return *this;}
 
-    /*
-     <p>The Amazon Redshift source type, such as cluster or cluster-snapshot, that the returned categories belong to.</p>
-    */
+    /**
+     * <p>The source type, such as cluster or cluster-snapshot, that the returned
+     * categories belong to.</p>
+     */
     inline EventCategoriesMap& WithSourceType(Aws::String&& value) { SetSourceType(value); return *this;}
 
-    /*
-     <p>The Amazon Redshift source type, such as cluster or cluster-snapshot, that the returned categories belong to.</p>
-    */
+    /**
+     * <p>The source type, such as cluster or cluster-snapshot, that the returned
+     * categories belong to.</p>
+     */
     inline EventCategoriesMap& WithSourceType(const char* value) { SetSourceType(value); return *this;}
 
-    /*
-     <p>The events in the event category.</p>
-    */
+    /**
+     * <p>The events in the event category.</p>
+     */
     inline const Aws::Vector<EventInfoMap>& GetEvents() const{ return m_events; }
 
-    /*
-     <p>The events in the event category.</p>
-    */
+    /**
+     * <p>The events in the event category.</p>
+     */
     inline void SetEvents(const Aws::Vector<EventInfoMap>& value) { m_eventsHasBeenSet = true; m_events = value; }
 
-    /*
-     <p>The events in the event category.</p>
-    */
+    /**
+     * <p>The events in the event category.</p>
+     */
     inline void SetEvents(Aws::Vector<EventInfoMap>&& value) { m_eventsHasBeenSet = true; m_events = value; }
 
-    /*
-     <p>The events in the event category.</p>
-    */
+    /**
+     * <p>The events in the event category.</p>
+     */
     inline EventCategoriesMap& WithEvents(const Aws::Vector<EventInfoMap>& value) { SetEvents(value); return *this;}
 
-    /*
-     <p>The events in the event category.</p>
-    */
+    /**
+     * <p>The events in the event category.</p>
+     */
     inline EventCategoriesMap& WithEvents(Aws::Vector<EventInfoMap>&& value) { SetEvents(value); return *this;}
 
-    /*
-     <p>The events in the event category.</p>
-    */
+    /**
+     * <p>The events in the event category.</p>
+     */
     inline EventCategoriesMap& AddEvents(const EventInfoMap& value) { m_eventsHasBeenSet = true; m_events.push_back(value); return *this; }
 
-    /*
-     <p>The events in the event category.</p>
-    */
+    /**
+     * <p>The events in the event category.</p>
+     */
     inline EventCategoriesMap& AddEvents(EventInfoMap&& value) { m_eventsHasBeenSet = true; m_events.push_back(value); return *this; }
 
   private:

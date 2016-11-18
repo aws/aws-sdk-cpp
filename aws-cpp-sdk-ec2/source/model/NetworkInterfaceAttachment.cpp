@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::EC2::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
 
 NetworkInterfaceAttachment::NetworkInterfaceAttachment() : 
     m_attachmentIdHasBeenSet(false),
@@ -29,8 +35,8 @@ NetworkInterfaceAttachment::NetworkInterfaceAttachment() :
     m_instanceOwnerIdHasBeenSet(false),
     m_deviceIndex(0),
     m_deviceIndexHasBeenSet(false),
+    m_status(AttachmentStatus::NOT_SET),
     m_statusHasBeenSet(false),
-    m_attachTime(0.0),
     m_attachTimeHasBeenSet(false),
     m_deleteOnTermination(false),
     m_deleteOnTerminationHasBeenSet(false)
@@ -43,8 +49,8 @@ NetworkInterfaceAttachment::NetworkInterfaceAttachment(const XmlNode& xmlNode) :
     m_instanceOwnerIdHasBeenSet(false),
     m_deviceIndex(0),
     m_deviceIndexHasBeenSet(false),
+    m_status(AttachmentStatus::NOT_SET),
     m_statusHasBeenSet(false),
-    m_attachTime(0.0),
     m_attachTimeHasBeenSet(false),
     m_deleteOnTermination(false),
     m_deleteOnTerminationHasBeenSet(false)
@@ -91,7 +97,7 @@ NetworkInterfaceAttachment& NetworkInterfaceAttachment::operator =(const XmlNode
     XmlNode attachTimeNode = resultNode.FirstChild("attachTime");
     if(!attachTimeNode.IsNull())
     {
-      m_attachTime = StringUtils::ConvertToDouble(StringUtils::Trim(attachTimeNode.GetText().c_str()).c_str());
+      m_attachTime = DateTime(StringUtils::Trim(attachTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_attachTimeHasBeenSet = true;
     }
     XmlNode deleteOnTerminationNode = resultNode.FirstChild("deleteOnTermination");
@@ -111,30 +117,37 @@ void NetworkInterfaceAttachment::OutputToStream(Aws::OStream& oStream, const cha
   {
       oStream << location << index << locationValue << ".AttachmentId=" << StringUtils::URLEncode(m_attachmentId.c_str()) << "&";
   }
+
   if(m_instanceIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
   }
+
   if(m_instanceOwnerIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".InstanceOwnerId=" << StringUtils::URLEncode(m_instanceOwnerId.c_str()) << "&";
   }
+
   if(m_deviceIndexHasBeenSet)
   {
       oStream << location << index << locationValue << ".DeviceIndex=" << m_deviceIndex << "&";
   }
+
   if(m_statusHasBeenSet)
   {
       oStream << location << index << locationValue << ".Status=" << AttachmentStatusMapper::GetNameForAttachmentStatus(m_status) << "&";
   }
+
   if(m_attachTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".AttachTime=" << m_attachTime << "&";
+      oStream << location << index << locationValue << ".AttachTime=" << StringUtils::URLEncode(m_attachTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_deleteOnTerminationHasBeenSet)
   {
       oStream << location << index << locationValue << ".DeleteOnTermination=" << m_deleteOnTermination << "&";
   }
+
 }
 
 void NetworkInterfaceAttachment::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -161,10 +174,14 @@ void NetworkInterfaceAttachment::OutputToStream(Aws::OStream& oStream, const cha
   }
   if(m_attachTimeHasBeenSet)
   {
-      oStream << location << ".AttachTime=" << m_attachTime << "&";
+      oStream << location << ".AttachTime=" << StringUtils::URLEncode(m_attachTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_deleteOnTerminationHasBeenSet)
   {
       oStream << location << ".DeleteOnTermination=" << m_deleteOnTermination << "&";
   }
 }
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::CloudWatch::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace CloudWatch
+{
+namespace Model
+{
 
 MetricDatum::MetricDatum() : 
     m_metricNameHasBeenSet(false),
@@ -30,6 +36,7 @@ MetricDatum::MetricDatum() :
     m_value(0.0),
     m_valueHasBeenSet(false),
     m_statisticValuesHasBeenSet(false),
+    m_unit(StandardUnit::NOT_SET),
     m_unitHasBeenSet(false)
 {
 }
@@ -41,6 +48,7 @@ MetricDatum::MetricDatum(const XmlNode& xmlNode) :
     m_value(0.0),
     m_valueHasBeenSet(false),
     m_statisticValuesHasBeenSet(false),
+    m_unit(StandardUnit::NOT_SET),
     m_unitHasBeenSet(false)
 {
   *this = xmlNode;
@@ -73,7 +81,7 @@ MetricDatum& MetricDatum::operator =(const XmlNode& xmlNode)
     XmlNode timestampNode = resultNode.FirstChild("Timestamp");
     if(!timestampNode.IsNull())
     {
-      m_timestamp = StringUtils::Trim(timestampNode.GetText().c_str());
+      m_timestamp = DateTime(StringUtils::Trim(timestampNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_timestampHasBeenSet = true;
     }
     XmlNode valueNode = resultNode.FirstChild("Value");
@@ -105,33 +113,40 @@ void MetricDatum::OutputToStream(Aws::OStream& oStream, const char* location, un
   {
       oStream << location << index << locationValue << ".MetricName=" << StringUtils::URLEncode(m_metricName.c_str()) << "&";
   }
+
   if(m_dimensionsHasBeenSet)
   {
+      unsigned dimensionsIdx = 1;
       for(auto& item : m_dimensions)
       {
         Aws::StringStream dimensionsSs;
-        dimensionsSs << location << index << locationValue << ".Dimensions";
+        dimensionsSs << location << index << locationValue << ".Dimensions.member." << dimensionsIdx++;
         item.OutputToStream(oStream, dimensionsSs.str().c_str());
       }
   }
+
   if(m_timestampHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Timestamp=" << StringUtils::URLEncode(m_timestamp.c_str()) << "&";
+      oStream << location << index << locationValue << ".Timestamp=" << StringUtils::URLEncode(m_timestamp.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_valueHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Value=" << m_value << "&";
+        oStream << location << index << locationValue << ".Value=" << StringUtils::URLEncode(m_value) << "&";
   }
+
   if(m_statisticValuesHasBeenSet)
   {
       Aws::StringStream statisticValuesLocationAndMemberSs;
       statisticValuesLocationAndMemberSs << location << index << locationValue << ".StatisticValues";
       m_statisticValues.OutputToStream(oStream, statisticValuesLocationAndMemberSs.str().c_str());
   }
+
   if(m_unitHasBeenSet)
   {
       oStream << location << index << locationValue << ".Unit=" << StandardUnitMapper::GetNameForStandardUnit(m_unit) << "&";
   }
+
 }
 
 void MetricDatum::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -142,20 +157,21 @@ void MetricDatum::OutputToStream(Aws::OStream& oStream, const char* location) co
   }
   if(m_dimensionsHasBeenSet)
   {
+      unsigned dimensionsIdx = 1;
       for(auto& item : m_dimensions)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".Dimensions";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream dimensionsSs;
+        dimensionsSs << location <<  ".Dimensions.member." << dimensionsIdx++;
+        item.OutputToStream(oStream, dimensionsSs.str().c_str());
       }
   }
   if(m_timestampHasBeenSet)
   {
-      oStream << location << ".Timestamp=" << StringUtils::URLEncode(m_timestamp.c_str()) << "&";
+      oStream << location << ".Timestamp=" << StringUtils::URLEncode(m_timestamp.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_valueHasBeenSet)
   {
-      oStream << location << ".Value=" << m_value << "&";
+        oStream << location << ".Value=" << StringUtils::URLEncode(m_value) << "&";
   }
   if(m_statisticValuesHasBeenSet)
   {
@@ -168,3 +184,7 @@ void MetricDatum::OutputToStream(Aws::OStream& oStream, const char* location) co
       oStream << location << ".Unit=" << StandardUnitMapper::GetNameForStandardUnit(m_unit) << "&";
   }
 }
+
+} // namespace Model
+} // namespace CloudWatch
+} // namespace Aws

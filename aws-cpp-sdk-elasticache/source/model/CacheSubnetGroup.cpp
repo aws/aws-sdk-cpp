@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace ElastiCache
+{
+namespace Model
+{
 
 CacheSubnetGroup::CacheSubnetGroup() : 
     m_cacheSubnetGroupNameHasBeenSet(false),
@@ -87,23 +93,28 @@ void CacheSubnetGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
   {
       oStream << location << index << locationValue << ".CacheSubnetGroupName=" << StringUtils::URLEncode(m_cacheSubnetGroupName.c_str()) << "&";
   }
+
   if(m_cacheSubnetGroupDescriptionHasBeenSet)
   {
       oStream << location << index << locationValue << ".CacheSubnetGroupDescription=" << StringUtils::URLEncode(m_cacheSubnetGroupDescription.c_str()) << "&";
   }
+
   if(m_vpcIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
   }
+
   if(m_subnetsHasBeenSet)
   {
+      unsigned subnetsIdx = 1;
       for(auto& item : m_subnets)
       {
         Aws::StringStream subnetsSs;
-        subnetsSs << location << index << locationValue << ".Subnet";
+        subnetsSs << location << index << locationValue << ".Subnet." << subnetsIdx++;
         item.OutputToStream(oStream, subnetsSs.str().c_str());
       }
   }
+
 }
 
 void CacheSubnetGroup::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -122,11 +133,16 @@ void CacheSubnetGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
   }
   if(m_subnetsHasBeenSet)
   {
+      unsigned subnetsIdx = 1;
       for(auto& item : m_subnets)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".Subnet";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream subnetsSs;
+        subnetsSs << location <<  ".Subnet." << subnetsIdx++;
+        item.OutputToStream(oStream, subnetsSs.str().c_str());
       }
   }
 }
+
+} // namespace Model
+} // namespace ElastiCache
+} // namespace Aws

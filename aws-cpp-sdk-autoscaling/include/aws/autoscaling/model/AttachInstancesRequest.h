@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -25,88 +25,88 @@ namespace AutoScaling
 namespace Model
 {
 
-  /*
-  */
+  /**
+   * <p>Contains the parameters for AttachInstances.</p>
+   */
   class AWS_AUTOSCALING_API AttachInstancesRequest : public AutoScalingRequest
   {
   public:
     AttachInstancesRequest();
     Aws::String SerializePayload() const override;
 
-
-    /*
-     <p>One or more EC2 instance IDs.</p>
-    */
+    /**
+     * <p>One or more instance IDs.</p>
+     */
     inline const Aws::Vector<Aws::String>& GetInstanceIds() const{ return m_instanceIds; }
 
-    /*
-     <p>One or more EC2 instance IDs.</p>
-    */
+    /**
+     * <p>One or more instance IDs.</p>
+     */
     inline void SetInstanceIds(const Aws::Vector<Aws::String>& value) { m_instanceIdsHasBeenSet = true; m_instanceIds = value; }
 
-    /*
-     <p>One or more EC2 instance IDs.</p>
-    */
+    /**
+     * <p>One or more instance IDs.</p>
+     */
     inline void SetInstanceIds(Aws::Vector<Aws::String>&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds = value; }
 
-    /*
-     <p>One or more EC2 instance IDs.</p>
-    */
+    /**
+     * <p>One or more instance IDs.</p>
+     */
     inline AttachInstancesRequest& WithInstanceIds(const Aws::Vector<Aws::String>& value) { SetInstanceIds(value); return *this;}
 
-    /*
-     <p>One or more EC2 instance IDs.</p>
-    */
+    /**
+     * <p>One or more instance IDs.</p>
+     */
     inline AttachInstancesRequest& WithInstanceIds(Aws::Vector<Aws::String>&& value) { SetInstanceIds(value); return *this;}
 
-    /*
-     <p>One or more EC2 instance IDs.</p>
-    */
+    /**
+     * <p>One or more instance IDs.</p>
+     */
     inline AttachInstancesRequest& AddInstanceIds(const Aws::String& value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
 
-    /*
-     <p>One or more EC2 instance IDs.</p>
-    */
+    /**
+     * <p>One or more instance IDs.</p>
+     */
     inline AttachInstancesRequest& AddInstanceIds(Aws::String&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
 
-    /*
-     <p>One or more EC2 instance IDs.</p>
-    */
+    /**
+     * <p>One or more instance IDs.</p>
+     */
     inline AttachInstancesRequest& AddInstanceIds(const char* value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
 
-    /*
-     <p>The name of the group.</p>
-    */
+    /**
+     * <p>The name of the group.</p>
+     */
     inline const Aws::String& GetAutoScalingGroupName() const{ return m_autoScalingGroupName; }
 
-    /*
-     <p>The name of the group.</p>
-    */
+    /**
+     * <p>The name of the group.</p>
+     */
     inline void SetAutoScalingGroupName(const Aws::String& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = value; }
 
-    /*
-     <p>The name of the group.</p>
-    */
+    /**
+     * <p>The name of the group.</p>
+     */
     inline void SetAutoScalingGroupName(Aws::String&& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = value; }
 
-    /*
-     <p>The name of the group.</p>
-    */
+    /**
+     * <p>The name of the group.</p>
+     */
     inline void SetAutoScalingGroupName(const char* value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName.assign(value); }
 
-    /*
-     <p>The name of the group.</p>
-    */
+    /**
+     * <p>The name of the group.</p>
+     */
     inline AttachInstancesRequest& WithAutoScalingGroupName(const Aws::String& value) { SetAutoScalingGroupName(value); return *this;}
 
-    /*
-     <p>The name of the group.</p>
-    */
+    /**
+     * <p>The name of the group.</p>
+     */
     inline AttachInstancesRequest& WithAutoScalingGroupName(Aws::String&& value) { SetAutoScalingGroupName(value); return *this;}
 
-    /*
-     <p>The name of the group.</p>
-    */
+    /**
+     * <p>The name of the group.</p>
+     */
     inline AttachInstancesRequest& WithAutoScalingGroupName(const char* value) { SetAutoScalingGroupName(value); return *this;}
 
   private:

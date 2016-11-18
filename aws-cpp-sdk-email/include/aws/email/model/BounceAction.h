@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -30,9 +30,16 @@ namespace SES
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
+
+  /**
+   * <p>When included in a receipt rule, this action rejects the received email by
+   * returning a bounce response to the sender and, optionally, publishes a
+   * notification to Amazon Simple Notification Service (Amazon SNS).</p> <p>For
+   * information about sending a bounce message in response to a received email, see
+   * the <a
+   * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-action-bounce.html">Amazon
+   * SES Developer Guide</a>.</p>
+   */
   class AWS_SES_API BounceAction
   {
   public:
@@ -43,109 +50,235 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the
+     * bounce action is taken. An example of an Amazon SNS topic ARN is
+     * <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more information
+     * about Amazon SNS topics, see the <a
+     * href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
+     * Developer Guide</a>.</p>
+     */
     inline const Aws::String& GetTopicArn() const{ return m_topicArn; }
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the
+     * bounce action is taken. An example of an Amazon SNS topic ARN is
+     * <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more information
+     * about Amazon SNS topics, see the <a
+     * href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
+     * Developer Guide</a>.</p>
+     */
     inline void SetTopicArn(const Aws::String& value) { m_topicArnHasBeenSet = true; m_topicArn = value; }
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the
+     * bounce action is taken. An example of an Amazon SNS topic ARN is
+     * <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more information
+     * about Amazon SNS topics, see the <a
+     * href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
+     * Developer Guide</a>.</p>
+     */
     inline void SetTopicArn(Aws::String&& value) { m_topicArnHasBeenSet = true; m_topicArn = value; }
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the
+     * bounce action is taken. An example of an Amazon SNS topic ARN is
+     * <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more information
+     * about Amazon SNS topics, see the <a
+     * href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
+     * Developer Guide</a>.</p>
+     */
     inline void SetTopicArn(const char* value) { m_topicArnHasBeenSet = true; m_topicArn.assign(value); }
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the
+     * bounce action is taken. An example of an Amazon SNS topic ARN is
+     * <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more information
+     * about Amazon SNS topics, see the <a
+     * href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
+     * Developer Guide</a>.</p>
+     */
     inline BounceAction& WithTopicArn(const Aws::String& value) { SetTopicArn(value); return *this;}
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the
+     * bounce action is taken. An example of an Amazon SNS topic ARN is
+     * <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more information
+     * about Amazon SNS topics, see the <a
+     * href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
+     * Developer Guide</a>.</p>
+     */
     inline BounceAction& WithTopicArn(Aws::String&& value) { SetTopicArn(value); return *this;}
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the
+     * bounce action is taken. An example of an Amazon SNS topic ARN is
+     * <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more information
+     * about Amazon SNS topics, see the <a
+     * href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
+     * Developer Guide</a>.</p>
+     */
     inline BounceAction& WithTopicArn(const char* value) { SetTopicArn(value); return *this;}
 
-    
+    /**
+     * <p>The SMTP reply code, as defined by <a
+     * href="https://tools.ietf.org/html/rfc5321">RFC 5321</a>.</p>
+     */
     inline const Aws::String& GetSmtpReplyCode() const{ return m_smtpReplyCode; }
 
-    
+    /**
+     * <p>The SMTP reply code, as defined by <a
+     * href="https://tools.ietf.org/html/rfc5321">RFC 5321</a>.</p>
+     */
     inline void SetSmtpReplyCode(const Aws::String& value) { m_smtpReplyCodeHasBeenSet = true; m_smtpReplyCode = value; }
 
-    
+    /**
+     * <p>The SMTP reply code, as defined by <a
+     * href="https://tools.ietf.org/html/rfc5321">RFC 5321</a>.</p>
+     */
     inline void SetSmtpReplyCode(Aws::String&& value) { m_smtpReplyCodeHasBeenSet = true; m_smtpReplyCode = value; }
 
-    
+    /**
+     * <p>The SMTP reply code, as defined by <a
+     * href="https://tools.ietf.org/html/rfc5321">RFC 5321</a>.</p>
+     */
     inline void SetSmtpReplyCode(const char* value) { m_smtpReplyCodeHasBeenSet = true; m_smtpReplyCode.assign(value); }
 
-    
+    /**
+     * <p>The SMTP reply code, as defined by <a
+     * href="https://tools.ietf.org/html/rfc5321">RFC 5321</a>.</p>
+     */
     inline BounceAction& WithSmtpReplyCode(const Aws::String& value) { SetSmtpReplyCode(value); return *this;}
 
-    
+    /**
+     * <p>The SMTP reply code, as defined by <a
+     * href="https://tools.ietf.org/html/rfc5321">RFC 5321</a>.</p>
+     */
     inline BounceAction& WithSmtpReplyCode(Aws::String&& value) { SetSmtpReplyCode(value); return *this;}
 
-    
+    /**
+     * <p>The SMTP reply code, as defined by <a
+     * href="https://tools.ietf.org/html/rfc5321">RFC 5321</a>.</p>
+     */
     inline BounceAction& WithSmtpReplyCode(const char* value) { SetSmtpReplyCode(value); return *this;}
 
-    
+    /**
+     * <p>The SMTP enhanced status code, as defined by <a
+     * href="https://tools.ietf.org/html/rfc3463">RFC 3463</a>.</p>
+     */
     inline const Aws::String& GetStatusCode() const{ return m_statusCode; }
 
-    
+    /**
+     * <p>The SMTP enhanced status code, as defined by <a
+     * href="https://tools.ietf.org/html/rfc3463">RFC 3463</a>.</p>
+     */
     inline void SetStatusCode(const Aws::String& value) { m_statusCodeHasBeenSet = true; m_statusCode = value; }
 
-    
+    /**
+     * <p>The SMTP enhanced status code, as defined by <a
+     * href="https://tools.ietf.org/html/rfc3463">RFC 3463</a>.</p>
+     */
     inline void SetStatusCode(Aws::String&& value) { m_statusCodeHasBeenSet = true; m_statusCode = value; }
 
-    
+    /**
+     * <p>The SMTP enhanced status code, as defined by <a
+     * href="https://tools.ietf.org/html/rfc3463">RFC 3463</a>.</p>
+     */
     inline void SetStatusCode(const char* value) { m_statusCodeHasBeenSet = true; m_statusCode.assign(value); }
 
-    
+    /**
+     * <p>The SMTP enhanced status code, as defined by <a
+     * href="https://tools.ietf.org/html/rfc3463">RFC 3463</a>.</p>
+     */
     inline BounceAction& WithStatusCode(const Aws::String& value) { SetStatusCode(value); return *this;}
 
-    
+    /**
+     * <p>The SMTP enhanced status code, as defined by <a
+     * href="https://tools.ietf.org/html/rfc3463">RFC 3463</a>.</p>
+     */
     inline BounceAction& WithStatusCode(Aws::String&& value) { SetStatusCode(value); return *this;}
 
-    
+    /**
+     * <p>The SMTP enhanced status code, as defined by <a
+     * href="https://tools.ietf.org/html/rfc3463">RFC 3463</a>.</p>
+     */
     inline BounceAction& WithStatusCode(const char* value) { SetStatusCode(value); return *this;}
 
-    
+    /**
+     * <p>Human-readable text to include in the bounce message.</p>
+     */
     inline const Aws::String& GetMessage() const{ return m_message; }
 
-    
+    /**
+     * <p>Human-readable text to include in the bounce message.</p>
+     */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
 
-    
+    /**
+     * <p>Human-readable text to include in the bounce message.</p>
+     */
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = value; }
 
-    
+    /**
+     * <p>Human-readable text to include in the bounce message.</p>
+     */
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
 
-    
+    /**
+     * <p>Human-readable text to include in the bounce message.</p>
+     */
     inline BounceAction& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
 
-    
+    /**
+     * <p>Human-readable text to include in the bounce message.</p>
+     */
     inline BounceAction& WithMessage(Aws::String&& value) { SetMessage(value); return *this;}
 
-    
+    /**
+     * <p>Human-readable text to include in the bounce message.</p>
+     */
     inline BounceAction& WithMessage(const char* value) { SetMessage(value); return *this;}
 
-    
+    /**
+     * <p>The email address of the sender of the bounced email. This is the address
+     * from which the bounce message will be sent.</p>
+     */
     inline const Aws::String& GetSender() const{ return m_sender; }
 
-    
+    /**
+     * <p>The email address of the sender of the bounced email. This is the address
+     * from which the bounce message will be sent.</p>
+     */
     inline void SetSender(const Aws::String& value) { m_senderHasBeenSet = true; m_sender = value; }
 
-    
+    /**
+     * <p>The email address of the sender of the bounced email. This is the address
+     * from which the bounce message will be sent.</p>
+     */
     inline void SetSender(Aws::String&& value) { m_senderHasBeenSet = true; m_sender = value; }
 
-    
+    /**
+     * <p>The email address of the sender of the bounced email. This is the address
+     * from which the bounce message will be sent.</p>
+     */
     inline void SetSender(const char* value) { m_senderHasBeenSet = true; m_sender.assign(value); }
 
-    
+    /**
+     * <p>The email address of the sender of the bounced email. This is the address
+     * from which the bounce message will be sent.</p>
+     */
     inline BounceAction& WithSender(const Aws::String& value) { SetSender(value); return *this;}
 
-    
+    /**
+     * <p>The email address of the sender of the bounced email. This is the address
+     * from which the bounce message will be sent.</p>
+     */
     inline BounceAction& WithSender(Aws::String&& value) { SetSender(value); return *this;}
 
-    
+    /**
+     * <p>The email address of the sender of the bounced email. This is the address
+     * from which the bounce message will be sent.</p>
+     */
     inline BounceAction& WithSender(const char* value) { SetSender(value); return *this;}
 
   private:

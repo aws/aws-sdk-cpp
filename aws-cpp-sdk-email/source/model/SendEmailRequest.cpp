@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -26,7 +26,9 @@ SendEmailRequest::SendEmailRequest() :
     m_replyToAddressesHasBeenSet(false),
     m_returnPathHasBeenSet(false),
     m_sourceArnHasBeenSet(false),
-    m_returnPathArnHasBeenSet(false)
+    m_returnPathArnHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_configurationSetNameHasBeenSet(false)
 {
 }
 
@@ -38,14 +40,17 @@ Aws::String SendEmailRequest::SerializePayload() const
   {
     ss << "Source=" << StringUtils::URLEncode(m_source.c_str()) << "&";
   }
+
   if(m_destinationHasBeenSet)
   {
-    m_destination.OutputToStream(ss, "Destination.");
+    m_destination.OutputToStream(ss, "Destination");
   }
+
   if(m_messageHasBeenSet)
   {
-    m_message.OutputToStream(ss, "Message.");
+    m_message.OutputToStream(ss, "Message");
   }
+
   if(m_replyToAddressesHasBeenSet)
   {
     unsigned replyToAddressesCount = 1;
@@ -56,18 +61,37 @@ Aws::String SendEmailRequest::SerializePayload() const
       replyToAddressesCount++;
     }
   }
+
   if(m_returnPathHasBeenSet)
   {
     ss << "ReturnPath=" << StringUtils::URLEncode(m_returnPath.c_str()) << "&";
   }
+
   if(m_sourceArnHasBeenSet)
   {
     ss << "SourceArn=" << StringUtils::URLEncode(m_sourceArn.c_str()) << "&";
   }
+
   if(m_returnPathArnHasBeenSet)
   {
     ss << "ReturnPathArn=" << StringUtils::URLEncode(m_returnPathArn.c_str()) << "&";
   }
+
+  if(m_tagsHasBeenSet)
+  {
+    unsigned tagsCount = 1;
+    for(auto& item : m_tags)
+    {
+      item.OutputToStream(ss, "Tags.member.", tagsCount, "");
+      tagsCount++;
+    }
+  }
+
+  if(m_configurationSetNameHasBeenSet)
+  {
+    ss << "ConfigurationSetName=" << StringUtils::URLEncode(m_configurationSetName.c_str()) << "&";
+  }
+
   ss << "Version=2010-12-01";
   return ss.str();
 }

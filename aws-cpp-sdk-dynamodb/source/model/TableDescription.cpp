@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -17,14 +17,21 @@
 
 #include <utility>
 
-using namespace Aws::DynamoDB::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace DynamoDB
+{
+namespace Model
+{
 
 TableDescription::TableDescription() : 
     m_attributeDefinitionsHasBeenSet(false),
     m_tableNameHasBeenSet(false),
     m_keySchemaHasBeenSet(false),
+    m_tableStatus(TableStatus::NOT_SET),
     m_tableStatusHasBeenSet(false),
     m_creationDateTimeHasBeenSet(false),
     m_provisionedThroughputHasBeenSet(false),
@@ -45,6 +52,7 @@ TableDescription::TableDescription(const JsonValue& jsonValue) :
     m_attributeDefinitionsHasBeenSet(false),
     m_tableNameHasBeenSet(false),
     m_keySchemaHasBeenSet(false),
+    m_tableStatus(TableStatus::NOT_SET),
     m_tableStatusHasBeenSet(false),
     m_creationDateTimeHasBeenSet(false),
     m_provisionedThroughputHasBeenSet(false),
@@ -100,7 +108,7 @@ TableDescription& TableDescription::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("CreationDateTime"))
   {
-    m_creationDateTime = jsonValue.GetString("CreationDateTime");
+    m_creationDateTime = jsonValue.GetDouble("CreationDateTime");
 
     m_creationDateTimeHasBeenSet = true;
   }
@@ -216,8 +224,7 @@ JsonValue TableDescription::Jsonize() const
 
   if(m_creationDateTimeHasBeenSet)
   {
-   payload.WithString("CreationDateTime", m_creationDateTime);
-
+   payload.WithDouble("CreationDateTime", m_creationDateTime.SecondsWithMSPrecision());
   }
 
   if(m_provisionedThroughputHasBeenSet)
@@ -284,5 +291,9 @@ JsonValue TableDescription::Jsonize() const
 
   }
 
-  return std::move(payload);
+  return payload;
 }
+
+} // namespace Model
+} // namespace DynamoDB
+} // namespace Aws

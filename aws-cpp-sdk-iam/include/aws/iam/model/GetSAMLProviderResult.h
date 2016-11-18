@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/iam/IAM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/iam/model/ResponseMetadata.h>
 
 namespace Aws
@@ -33,9 +34,9 @@ namespace IAM
 {
 namespace Model
 {
-  /*
-    <p>Contains the response to a successful <a>GetSAMLProvider</a> request. </p>
-  */
+  /**
+   * <p>Contains the response to a successful <a>GetSAMLProvider</a> request. </p>
+   */
   class AWS_IAM_API GetSAMLProviderResult
   {
   public:
@@ -43,70 +44,97 @@ namespace Model
     GetSAMLProviderResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     GetSAMLProviderResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>The XML metadata document that includes information about an identity provider.</p>
-    */
+    /**
+     * <p>The XML metadata document that includes information about an identity
+     * provider.</p>
+     */
     inline const Aws::String& GetSAMLMetadataDocument() const{ return m_sAMLMetadataDocument; }
 
-    /*
-     <p>The XML metadata document that includes information about an identity provider.</p>
-    */
+    /**
+     * <p>The XML metadata document that includes information about an identity
+     * provider.</p>
+     */
     inline void SetSAMLMetadataDocument(const Aws::String& value) { m_sAMLMetadataDocument = value; }
 
-    /*
-     <p>The XML metadata document that includes information about an identity provider.</p>
-    */
+    /**
+     * <p>The XML metadata document that includes information about an identity
+     * provider.</p>
+     */
     inline void SetSAMLMetadataDocument(Aws::String&& value) { m_sAMLMetadataDocument = value; }
 
-    /*
-     <p>The XML metadata document that includes information about an identity provider.</p>
-    */
+    /**
+     * <p>The XML metadata document that includes information about an identity
+     * provider.</p>
+     */
     inline void SetSAMLMetadataDocument(const char* value) { m_sAMLMetadataDocument.assign(value); }
 
-    /*
-     <p>The XML metadata document that includes information about an identity provider.</p>
-    */
+    /**
+     * <p>The XML metadata document that includes information about an identity
+     * provider.</p>
+     */
     inline GetSAMLProviderResult& WithSAMLMetadataDocument(const Aws::String& value) { SetSAMLMetadataDocument(value); return *this;}
 
-    /*
-     <p>The XML metadata document that includes information about an identity provider.</p>
-    */
+    /**
+     * <p>The XML metadata document that includes information about an identity
+     * provider.</p>
+     */
     inline GetSAMLProviderResult& WithSAMLMetadataDocument(Aws::String&& value) { SetSAMLMetadataDocument(value); return *this;}
 
-    /*
-     <p>The XML metadata document that includes information about an identity provider.</p>
-    */
+    /**
+     * <p>The XML metadata document that includes information about an identity
+     * provider.</p>
+     */
     inline GetSAMLProviderResult& WithSAMLMetadataDocument(const char* value) { SetSAMLMetadataDocument(value); return *this;}
 
-    /*
-     <p>The date and time when the SAML provider was created.</p>
-    */
-    inline double GetCreateDate() const{ return m_createDate; }
+    /**
+     * <p>The date and time when the SAML provider was created.</p>
+     */
+    inline const Aws::Utils::DateTime& GetCreateDate() const{ return m_createDate; }
 
-    /*
-     <p>The date and time when the SAML provider was created.</p>
-    */
-    inline void SetCreateDate(double value) { m_createDate = value; }
+    /**
+     * <p>The date and time when the SAML provider was created.</p>
+     */
+    inline void SetCreateDate(const Aws::Utils::DateTime& value) { m_createDate = value; }
 
-    /*
-     <p>The date and time when the SAML provider was created.</p>
-    */
-    inline GetSAMLProviderResult& WithCreateDate(double value) { SetCreateDate(value); return *this;}
+    /**
+     * <p>The date and time when the SAML provider was created.</p>
+     */
+    inline void SetCreateDate(Aws::Utils::DateTime&& value) { m_createDate = value; }
 
-    /*
-     <p>The expiration date and time for the SAML provider.</p>
-    */
-    inline double GetValidUntil() const{ return m_validUntil; }
+    /**
+     * <p>The date and time when the SAML provider was created.</p>
+     */
+    inline GetSAMLProviderResult& WithCreateDate(const Aws::Utils::DateTime& value) { SetCreateDate(value); return *this;}
 
-    /*
-     <p>The expiration date and time for the SAML provider.</p>
-    */
-    inline void SetValidUntil(double value) { m_validUntil = value; }
+    /**
+     * <p>The date and time when the SAML provider was created.</p>
+     */
+    inline GetSAMLProviderResult& WithCreateDate(Aws::Utils::DateTime&& value) { SetCreateDate(value); return *this;}
 
-    /*
-     <p>The expiration date and time for the SAML provider.</p>
-    */
-    inline GetSAMLProviderResult& WithValidUntil(double value) { SetValidUntil(value); return *this;}
+    /**
+     * <p>The expiration date and time for the SAML provider.</p>
+     */
+    inline const Aws::Utils::DateTime& GetValidUntil() const{ return m_validUntil; }
+
+    /**
+     * <p>The expiration date and time for the SAML provider.</p>
+     */
+    inline void SetValidUntil(const Aws::Utils::DateTime& value) { m_validUntil = value; }
+
+    /**
+     * <p>The expiration date and time for the SAML provider.</p>
+     */
+    inline void SetValidUntil(Aws::Utils::DateTime&& value) { m_validUntil = value; }
+
+    /**
+     * <p>The expiration date and time for the SAML provider.</p>
+     */
+    inline GetSAMLProviderResult& WithValidUntil(const Aws::Utils::DateTime& value) { SetValidUntil(value); return *this;}
+
+    /**
+     * <p>The expiration date and time for the SAML provider.</p>
+     */
+    inline GetSAMLProviderResult& WithValidUntil(Aws::Utils::DateTime&& value) { SetValidUntil(value); return *this;}
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -125,8 +153,8 @@ namespace Model
 
   private:
     Aws::String m_sAMLMetadataDocument;
-    double m_createDate;
-    double m_validUntil;
+    Aws::Utils::DateTime m_createDate;
+    Aws::Utils::DateTime m_validUntil;
     ResponseMetadata m_responseMetadata;
   };
 

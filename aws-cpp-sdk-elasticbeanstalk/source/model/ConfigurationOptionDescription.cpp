@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::ElasticBeanstalk::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace ElasticBeanstalk
+{
+namespace Model
+{
 
 ConfigurationOptionDescription::ConfigurationOptionDescription() : 
     m_namespaceHasBeenSet(false),
@@ -30,6 +36,7 @@ ConfigurationOptionDescription::ConfigurationOptionDescription() :
     m_changeSeverityHasBeenSet(false),
     m_userDefined(false),
     m_userDefinedHasBeenSet(false),
+    m_valueType(ConfigurationOptionValueType::NOT_SET),
     m_valueTypeHasBeenSet(false),
     m_valueOptionsHasBeenSet(false),
     m_minValue(0),
@@ -49,6 +56,7 @@ ConfigurationOptionDescription::ConfigurationOptionDescription(const XmlNode& xm
     m_changeSeverityHasBeenSet(false),
     m_userDefined(false),
     m_userDefinedHasBeenSet(false),
+    m_valueType(ConfigurationOptionValueType::NOT_SET),
     m_valueTypeHasBeenSet(false),
     m_valueOptionsHasBeenSet(false),
     m_minValue(0),
@@ -151,51 +159,63 @@ void ConfigurationOptionDescription::OutputToStream(Aws::OStream& oStream, const
   {
       oStream << location << index << locationValue << ".Namespace=" << StringUtils::URLEncode(m_namespace.c_str()) << "&";
   }
+
   if(m_nameHasBeenSet)
   {
       oStream << location << index << locationValue << ".Name=" << StringUtils::URLEncode(m_name.c_str()) << "&";
   }
+
   if(m_defaultValueHasBeenSet)
   {
       oStream << location << index << locationValue << ".DefaultValue=" << StringUtils::URLEncode(m_defaultValue.c_str()) << "&";
   }
+
   if(m_changeSeverityHasBeenSet)
   {
       oStream << location << index << locationValue << ".ChangeSeverity=" << StringUtils::URLEncode(m_changeSeverity.c_str()) << "&";
   }
+
   if(m_userDefinedHasBeenSet)
   {
       oStream << location << index << locationValue << ".UserDefined=" << m_userDefined << "&";
   }
+
   if(m_valueTypeHasBeenSet)
   {
       oStream << location << index << locationValue << ".ValueType=" << ConfigurationOptionValueTypeMapper::GetNameForConfigurationOptionValueType(m_valueType) << "&";
   }
+
   if(m_valueOptionsHasBeenSet)
   {
+      unsigned valueOptionsIdx = 1;
       for(auto& item : m_valueOptions)
       {
-        oStream << location << index << locationValue << ".ValueOptions=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << index << locationValue << ".ValueOptions.member." << valueOptionsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
+
   if(m_minValueHasBeenSet)
   {
       oStream << location << index << locationValue << ".MinValue=" << m_minValue << "&";
   }
+
   if(m_maxValueHasBeenSet)
   {
       oStream << location << index << locationValue << ".MaxValue=" << m_maxValue << "&";
   }
+
   if(m_maxLengthHasBeenSet)
   {
       oStream << location << index << locationValue << ".MaxLength=" << m_maxLength << "&";
   }
+
   if(m_regexHasBeenSet)
   {
       Aws::StringStream regexLocationAndMemberSs;
       regexLocationAndMemberSs << location << index << locationValue << ".Regex";
       m_regex.OutputToStream(oStream, regexLocationAndMemberSs.str().c_str());
   }
+
 }
 
 void ConfigurationOptionDescription::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -226,9 +246,10 @@ void ConfigurationOptionDescription::OutputToStream(Aws::OStream& oStream, const
   }
   if(m_valueOptionsHasBeenSet)
   {
+      unsigned valueOptionsIdx = 1;
       for(auto& item : m_valueOptions)
       {
-        oStream << location << ".ValueOptions=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << ".ValueOptions.member." << valueOptionsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
   if(m_minValueHasBeenSet)
@@ -250,3 +271,7 @@ void ConfigurationOptionDescription::OutputToStream(Aws::OStream& oStream, const
       m_regex.OutputToStream(oStream, regexLocationAndMember.c_str());
   }
 }
+
+} // namespace Model
+} // namespace ElasticBeanstalk
+} // namespace Aws

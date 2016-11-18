@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -35,9 +35,9 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
+  /**
+   * <p>Contains the output of DescribeTags.</p>
+   */
   class AWS_EC2_API DescribeTagsResponse
   {
   public:
@@ -45,74 +45,81 @@ namespace Model
     DescribeTagsResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     DescribeTagsResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>A list of tags.</p>
-    */
+    /**
+     * <p>A list of tags.</p>
+     */
     inline const Aws::Vector<TagDescription>& GetTags() const{ return m_tags; }
 
-    /*
-     <p>A list of tags.</p>
-    */
+    /**
+     * <p>A list of tags.</p>
+     */
     inline void SetTags(const Aws::Vector<TagDescription>& value) { m_tags = value; }
 
-    /*
-     <p>A list of tags.</p>
-    */
+    /**
+     * <p>A list of tags.</p>
+     */
     inline void SetTags(Aws::Vector<TagDescription>&& value) { m_tags = value; }
 
-    /*
-     <p>A list of tags.</p>
-    */
+    /**
+     * <p>A list of tags.</p>
+     */
     inline DescribeTagsResponse& WithTags(const Aws::Vector<TagDescription>& value) { SetTags(value); return *this;}
 
-    /*
-     <p>A list of tags.</p>
-    */
+    /**
+     * <p>A list of tags.</p>
+     */
     inline DescribeTagsResponse& WithTags(Aws::Vector<TagDescription>&& value) { SetTags(value); return *this;}
 
-    /*
-     <p>A list of tags.</p>
-    */
+    /**
+     * <p>A list of tags.</p>
+     */
     inline DescribeTagsResponse& AddTags(const TagDescription& value) { m_tags.push_back(value); return *this; }
 
-    /*
-     <p>A list of tags.</p>
-    */
+    /**
+     * <p>A list of tags.</p>
+     */
     inline DescribeTagsResponse& AddTags(TagDescription&& value) { m_tags.push_back(value); return *this; }
 
-    /*
-     <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return..</p>
-    */
+    /**
+     * <p>The token to use to retrieve the next page of results. This value is
+     * <code>null</code> when there are no more results to return..</p>
+     */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
-    /*
-     <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return..</p>
-    */
+    /**
+     * <p>The token to use to retrieve the next page of results. This value is
+     * <code>null</code> when there are no more results to return..</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
-    /*
-     <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return..</p>
-    */
+    /**
+     * <p>The token to use to retrieve the next page of results. This value is
+     * <code>null</code> when there are no more results to return..</p>
+     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
 
-    /*
-     <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return..</p>
-    */
+    /**
+     * <p>The token to use to retrieve the next page of results. This value is
+     * <code>null</code> when there are no more results to return..</p>
+     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
-    /*
-     <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return..</p>
-    */
+    /**
+     * <p>The token to use to retrieve the next page of results. This value is
+     * <code>null</code> when there are no more results to return..</p>
+     */
     inline DescribeTagsResponse& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
-    /*
-     <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return..</p>
-    */
+    /**
+     * <p>The token to use to retrieve the next page of results. This value is
+     * <code>null</code> when there are no more results to return..</p>
+     */
     inline DescribeTagsResponse& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
-    /*
-     <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return..</p>
-    */
+    /**
+     * <p>The token to use to retrieve the next page of results. This value is
+     * <code>null</code> when there are no more results to return..</p>
+     */
     inline DescribeTagsResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
     

@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -38,9 +38,9 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
+  /**
+   * <p>Contains the output of DescribeNetworkInterfaceAttribute.</p>
+   */
   class AWS_EC2_API DescribeNetworkInterfaceAttributeResponse
   {
   public:
@@ -48,149 +48,149 @@ namespace Model
     DescribeNetworkInterfaceAttributeResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     DescribeNetworkInterfaceAttributeResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>The ID of the network interface.</p>
-    */
+    /**
+     * <p>The ID of the network interface.</p>
+     */
     inline const Aws::String& GetNetworkInterfaceId() const{ return m_networkInterfaceId; }
 
-    /*
-     <p>The ID of the network interface.</p>
-    */
+    /**
+     * <p>The ID of the network interface.</p>
+     */
     inline void SetNetworkInterfaceId(const Aws::String& value) { m_networkInterfaceId = value; }
 
-    /*
-     <p>The ID of the network interface.</p>
-    */
+    /**
+     * <p>The ID of the network interface.</p>
+     */
     inline void SetNetworkInterfaceId(Aws::String&& value) { m_networkInterfaceId = value; }
 
-    /*
-     <p>The ID of the network interface.</p>
-    */
+    /**
+     * <p>The ID of the network interface.</p>
+     */
     inline void SetNetworkInterfaceId(const char* value) { m_networkInterfaceId.assign(value); }
 
-    /*
-     <p>The ID of the network interface.</p>
-    */
+    /**
+     * <p>The ID of the network interface.</p>
+     */
     inline DescribeNetworkInterfaceAttributeResponse& WithNetworkInterfaceId(const Aws::String& value) { SetNetworkInterfaceId(value); return *this;}
 
-    /*
-     <p>The ID of the network interface.</p>
-    */
+    /**
+     * <p>The ID of the network interface.</p>
+     */
     inline DescribeNetworkInterfaceAttributeResponse& WithNetworkInterfaceId(Aws::String&& value) { SetNetworkInterfaceId(value); return *this;}
 
-    /*
-     <p>The ID of the network interface.</p>
-    */
+    /**
+     * <p>The ID of the network interface.</p>
+     */
     inline DescribeNetworkInterfaceAttributeResponse& WithNetworkInterfaceId(const char* value) { SetNetworkInterfaceId(value); return *this;}
 
-    /*
-     <p>The description of the network interface.</p>
-    */
+    /**
+     * <p>The description of the network interface.</p>
+     */
     inline const AttributeValue& GetDescription() const{ return m_description; }
 
-    /*
-     <p>The description of the network interface.</p>
-    */
+    /**
+     * <p>The description of the network interface.</p>
+     */
     inline void SetDescription(const AttributeValue& value) { m_description = value; }
 
-    /*
-     <p>The description of the network interface.</p>
-    */
+    /**
+     * <p>The description of the network interface.</p>
+     */
     inline void SetDescription(AttributeValue&& value) { m_description = value; }
 
-    /*
-     <p>The description of the network interface.</p>
-    */
+    /**
+     * <p>The description of the network interface.</p>
+     */
     inline DescribeNetworkInterfaceAttributeResponse& WithDescription(const AttributeValue& value) { SetDescription(value); return *this;}
 
-    /*
-     <p>The description of the network interface.</p>
-    */
+    /**
+     * <p>The description of the network interface.</p>
+     */
     inline DescribeNetworkInterfaceAttributeResponse& WithDescription(AttributeValue&& value) { SetDescription(value); return *this;}
 
-    /*
-     <p>Indicates whether source/destination checking is enabled.</p>
-    */
+    /**
+     * <p>Indicates whether source/destination checking is enabled.</p>
+     */
     inline const AttributeBooleanValue& GetSourceDestCheck() const{ return m_sourceDestCheck; }
 
-    /*
-     <p>Indicates whether source/destination checking is enabled.</p>
-    */
+    /**
+     * <p>Indicates whether source/destination checking is enabled.</p>
+     */
     inline void SetSourceDestCheck(const AttributeBooleanValue& value) { m_sourceDestCheck = value; }
 
-    /*
-     <p>Indicates whether source/destination checking is enabled.</p>
-    */
+    /**
+     * <p>Indicates whether source/destination checking is enabled.</p>
+     */
     inline void SetSourceDestCheck(AttributeBooleanValue&& value) { m_sourceDestCheck = value; }
 
-    /*
-     <p>Indicates whether source/destination checking is enabled.</p>
-    */
+    /**
+     * <p>Indicates whether source/destination checking is enabled.</p>
+     */
     inline DescribeNetworkInterfaceAttributeResponse& WithSourceDestCheck(const AttributeBooleanValue& value) { SetSourceDestCheck(value); return *this;}
 
-    /*
-     <p>Indicates whether source/destination checking is enabled.</p>
-    */
+    /**
+     * <p>Indicates whether source/destination checking is enabled.</p>
+     */
     inline DescribeNetworkInterfaceAttributeResponse& WithSourceDestCheck(AttributeBooleanValue&& value) { SetSourceDestCheck(value); return *this;}
 
-    /*
-     <p>The security groups associated with the network interface.</p>
-    */
+    /**
+     * <p>The security groups associated with the network interface.</p>
+     */
     inline const Aws::Vector<GroupIdentifier>& GetGroups() const{ return m_groups; }
 
-    /*
-     <p>The security groups associated with the network interface.</p>
-    */
+    /**
+     * <p>The security groups associated with the network interface.</p>
+     */
     inline void SetGroups(const Aws::Vector<GroupIdentifier>& value) { m_groups = value; }
 
-    /*
-     <p>The security groups associated with the network interface.</p>
-    */
+    /**
+     * <p>The security groups associated with the network interface.</p>
+     */
     inline void SetGroups(Aws::Vector<GroupIdentifier>&& value) { m_groups = value; }
 
-    /*
-     <p>The security groups associated with the network interface.</p>
-    */
+    /**
+     * <p>The security groups associated with the network interface.</p>
+     */
     inline DescribeNetworkInterfaceAttributeResponse& WithGroups(const Aws::Vector<GroupIdentifier>& value) { SetGroups(value); return *this;}
 
-    /*
-     <p>The security groups associated with the network interface.</p>
-    */
+    /**
+     * <p>The security groups associated with the network interface.</p>
+     */
     inline DescribeNetworkInterfaceAttributeResponse& WithGroups(Aws::Vector<GroupIdentifier>&& value) { SetGroups(value); return *this;}
 
-    /*
-     <p>The security groups associated with the network interface.</p>
-    */
+    /**
+     * <p>The security groups associated with the network interface.</p>
+     */
     inline DescribeNetworkInterfaceAttributeResponse& AddGroups(const GroupIdentifier& value) { m_groups.push_back(value); return *this; }
 
-    /*
-     <p>The security groups associated with the network interface.</p>
-    */
+    /**
+     * <p>The security groups associated with the network interface.</p>
+     */
     inline DescribeNetworkInterfaceAttributeResponse& AddGroups(GroupIdentifier&& value) { m_groups.push_back(value); return *this; }
 
-    /*
-     <p>The attachment (if any) of the network interface.</p>
-    */
+    /**
+     * <p>The attachment (if any) of the network interface.</p>
+     */
     inline const NetworkInterfaceAttachment& GetAttachment() const{ return m_attachment; }
 
-    /*
-     <p>The attachment (if any) of the network interface.</p>
-    */
+    /**
+     * <p>The attachment (if any) of the network interface.</p>
+     */
     inline void SetAttachment(const NetworkInterfaceAttachment& value) { m_attachment = value; }
 
-    /*
-     <p>The attachment (if any) of the network interface.</p>
-    */
+    /**
+     * <p>The attachment (if any) of the network interface.</p>
+     */
     inline void SetAttachment(NetworkInterfaceAttachment&& value) { m_attachment = value; }
 
-    /*
-     <p>The attachment (if any) of the network interface.</p>
-    */
+    /**
+     * <p>The attachment (if any) of the network interface.</p>
+     */
     inline DescribeNetworkInterfaceAttributeResponse& WithAttachment(const NetworkInterfaceAttachment& value) { SetAttachment(value); return *this;}
 
-    /*
-     <p>The attachment (if any) of the network interface.</p>
-    */
+    /**
+     * <p>The attachment (if any) of the network interface.</p>
+     */
     inline DescribeNetworkInterfaceAttributeResponse& WithAttachment(NetworkInterfaceAttachment&& value) { SetAttachment(value); return *this;}
 
     

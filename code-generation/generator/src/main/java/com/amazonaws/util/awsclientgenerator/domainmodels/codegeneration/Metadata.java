@@ -17,17 +17,22 @@ package com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration;
 
 import lombok.Data;
 
+import java.util.Map;
+
 @Data
 public class Metadata {
     private String apiVersion;
+    private String concatAPIVersion;
     private String endpointPrefix;
     private String globalEndpoint;
     private String jsonVersion;
     private String namespace;
     private String serviceFullName;
     private String signatureVersion;
+    private String signingName;
     private String targetPrefix;
     private String protocol;
     private String projectName;
     private String classNamePrefix;
+    private Map<String, String> additionalHeaders;
 }

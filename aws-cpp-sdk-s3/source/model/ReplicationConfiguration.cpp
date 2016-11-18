@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::S3::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace S3
+{
+namespace Model
+{
 
 ReplicationConfiguration::ReplicationConfiguration() : 
     m_roleHasBeenSet(false),
@@ -48,14 +54,14 @@ ReplicationConfiguration& ReplicationConfiguration::operator =(const XmlNode& xm
       m_role = StringUtils::Trim(roleNode.GetText().c_str());
       m_roleHasBeenSet = true;
     }
-    XmlNode rulesNode = resultNode.FirstChild("Rules");
+    XmlNode rulesNode = resultNode.FirstChild("Rule");
     if(!rulesNode.IsNull())
     {
-      XmlNode rulesMember = rulesNode;
-      while(!rulesMember.IsNull())
+      XmlNode ruleMember = rulesNode;
+      while(!ruleMember.IsNull())
       {
-        m_rules.push_back(rulesMember);
-        rulesMember = rulesMember.NextNode("Rule");
+        m_rules.push_back(ruleMember);
+        ruleMember = ruleMember.NextNode("Rule");
       }
 
       m_rulesHasBeenSet = true;
@@ -84,3 +90,7 @@ void ReplicationConfiguration::AddToNode(XmlNode& parentNode) const
   }
 
 }
+
+} // namespace Model
+} // namespace S3
+} // namespace Aws

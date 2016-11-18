@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -30,9 +30,10 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    <p>Describes Spot Instance placement.</p>
-  */
+
+  /**
+   * <p>Describes Spot instance placement.</p>
+   */
   class AWS_EC2_API SpotPlacement
   {
   public:
@@ -43,74 +44,88 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>The Availability Zone.</p>
-    */
+    /**
+     * <p>The Availability Zone.</p> <p>[Spot fleet only] To specify multiple
+     * Availability Zones, separate them using commas; for example, "us-west-2a,
+     * us-west-2b".</p>
+     */
     inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
 
-    /*
-     <p>The Availability Zone.</p>
-    */
+    /**
+     * <p>The Availability Zone.</p> <p>[Spot fleet only] To specify multiple
+     * Availability Zones, separate them using commas; for example, "us-west-2a,
+     * us-west-2b".</p>
+     */
     inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
 
-    /*
-     <p>The Availability Zone.</p>
-    */
+    /**
+     * <p>The Availability Zone.</p> <p>[Spot fleet only] To specify multiple
+     * Availability Zones, separate them using commas; for example, "us-west-2a,
+     * us-west-2b".</p>
+     */
     inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
 
-    /*
-     <p>The Availability Zone.</p>
-    */
+    /**
+     * <p>The Availability Zone.</p> <p>[Spot fleet only] To specify multiple
+     * Availability Zones, separate them using commas; for example, "us-west-2a,
+     * us-west-2b".</p>
+     */
     inline void SetAvailabilityZone(const char* value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone.assign(value); }
 
-    /*
-     <p>The Availability Zone.</p>
-    */
+    /**
+     * <p>The Availability Zone.</p> <p>[Spot fleet only] To specify multiple
+     * Availability Zones, separate them using commas; for example, "us-west-2a,
+     * us-west-2b".</p>
+     */
     inline SpotPlacement& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
 
-    /*
-     <p>The Availability Zone.</p>
-    */
+    /**
+     * <p>The Availability Zone.</p> <p>[Spot fleet only] To specify multiple
+     * Availability Zones, separate them using commas; for example, "us-west-2a,
+     * us-west-2b".</p>
+     */
     inline SpotPlacement& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(value); return *this;}
 
-    /*
-     <p>The Availability Zone.</p>
-    */
+    /**
+     * <p>The Availability Zone.</p> <p>[Spot fleet only] To specify multiple
+     * Availability Zones, separate them using commas; for example, "us-west-2a,
+     * us-west-2b".</p>
+     */
     inline SpotPlacement& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
 
-    /*
-     <p>The name of the placement group (for cluster instances).</p>
-    */
+    /**
+     * <p>The name of the placement group (for cluster instances).</p>
+     */
     inline const Aws::String& GetGroupName() const{ return m_groupName; }
 
-    /*
-     <p>The name of the placement group (for cluster instances).</p>
-    */
+    /**
+     * <p>The name of the placement group (for cluster instances).</p>
+     */
     inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
 
-    /*
-     <p>The name of the placement group (for cluster instances).</p>
-    */
+    /**
+     * <p>The name of the placement group (for cluster instances).</p>
+     */
     inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
 
-    /*
-     <p>The name of the placement group (for cluster instances).</p>
-    */
+    /**
+     * <p>The name of the placement group (for cluster instances).</p>
+     */
     inline void SetGroupName(const char* value) { m_groupNameHasBeenSet = true; m_groupName.assign(value); }
 
-    /*
-     <p>The name of the placement group (for cluster instances).</p>
-    */
+    /**
+     * <p>The name of the placement group (for cluster instances).</p>
+     */
     inline SpotPlacement& WithGroupName(const Aws::String& value) { SetGroupName(value); return *this;}
 
-    /*
-     <p>The name of the placement group (for cluster instances).</p>
-    */
+    /**
+     * <p>The name of the placement group (for cluster instances).</p>
+     */
     inline SpotPlacement& WithGroupName(Aws::String&& value) { SetGroupName(value); return *this;}
 
-    /*
-     <p>The name of the placement group (for cluster instances).</p>
-    */
+    /**
+     * <p>The name of the placement group (for cluster instances).</p>
+     */
     inline SpotPlacement& WithGroupName(const char* value) { SetGroupName(value); return *this;}
 
   private:

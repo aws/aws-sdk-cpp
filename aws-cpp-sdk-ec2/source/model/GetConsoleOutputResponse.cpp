@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -26,13 +26,11 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetConsoleOutputResponse::GetConsoleOutputResponse() : 
-    m_timestamp(0.0)
+GetConsoleOutputResponse::GetConsoleOutputResponse()
 {
 }
 
-GetConsoleOutputResponse::GetConsoleOutputResponse(const AmazonWebServiceResult<XmlDocument>& result) : 
-    m_timestamp(0.0)
+GetConsoleOutputResponse::GetConsoleOutputResponse(const AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
@@ -57,7 +55,7 @@ GetConsoleOutputResponse& GetConsoleOutputResponse::operator =(const AmazonWebSe
     XmlNode timestampNode = resultNode.FirstChild("timestamp");
     if(!timestampNode.IsNull())
     {
-      m_timestamp = StringUtils::ConvertToDouble(StringUtils::Trim(timestampNode.GetText().c_str()).c_str());
+      m_timestamp = DateTime(StringUtils::Trim(timestampNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
     }
     XmlNode outputNode = resultNode.FirstChild("output");
     if(!outputNode.IsNull())

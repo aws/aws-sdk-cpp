@@ -7,6 +7,10 @@ Debug
 Release
 *~
 *#
+*.iml
+
+#compiled python files
+*.pyc
 
 #Vagrant stuff
 Vagrantfile
@@ -15,12 +19,16 @@ Vagrantfile
 #Mac stuff
 .DS_Store
 
+#doxygen
+doxygen/html/
+doxygen/latex/
+
+
 #cmake artifacts
 dependencies
 _build
 build
 _build_*
-cmake/
 
 # Compiled Object files
 *.slo
@@ -58,4 +66,13 @@ external
 openssl
 zlib
 credentials
+toolchains/android/
 
+# codegen
+code-generation/generator/target/
+
+#config output
+aws-cpp-sdk-core/include/aws/core/SDKConfig.h
+
+#nuget
+*.nupkg

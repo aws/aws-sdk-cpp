@@ -37,9 +37,15 @@ Aws::Http::HeaderValueCollection ${typeInfo.className}::GetRequestSpecificHeader
 #if($metadata.targetPrefix)
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "${metadata.targetPrefix}.${CppViewHelper.computeOperationNameFromInputOutputShape($shape.name)}"));
 #end
+#if($metadata.additionalHeaders)
+#foreach($headerEntry in $metadata.additionalHeaders.entrySet())
+  headers.insert(Aws::Http::HeaderValuePair("${headerEntry.key}", "${headerEntry.value}"));
+#end
+
+#end
 #set($useRequiredField = true)
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ModelClassHeaderMembersSource.vm")
-  return std::move(headers);
+  return headers;
 
 }
 #end

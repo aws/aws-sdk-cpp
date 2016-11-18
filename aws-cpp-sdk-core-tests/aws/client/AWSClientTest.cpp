@@ -23,6 +23,7 @@
 #include <aws/core/http/HttpClientFactory.h>
 #include <aws/core/utils/memory/stl/AWSAllocator.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/HashingUtils.h>
 
 using namespace Aws::Client;
 using namespace Aws::Http;
@@ -33,8 +34,8 @@ const char* ALLOCATION_TAG = "AWSClientTest";
 class AccessViolatingAWSClient : public AWSClient
 {
 public:
-    AccessViolatingAWSClient(const char* hostHeaderOverride = nullptr) : AWSClient(MakeShared<HttpClientFactory>(ALLOCATION_TAG),
-        ClientConfiguration(), nullptr, nullptr, hostHeaderOverride)
+    AccessViolatingAWSClient() : AWSClient(
+        ClientConfiguration(), nullptr, nullptr)
     {
     }
 
@@ -56,14 +57,18 @@ protected:
 class AmazonWebServiceRequestMock : public AmazonWebServiceRequest
 {
 public:
+    AmazonWebServiceRequestMock() : m_shouldComputeMd5(false) { }
     std::shared_ptr<Aws::IOStream> GetBody() const override { return m_body; }
     void SetBody(const std::shared_ptr<Aws::IOStream>& body) { m_body = body; }
     HeaderValueCollection GetHeaders() const override { return m_headers; }
     void SetHeaders(const HeaderValueCollection& value) { m_headers = value; }
+    bool ShouldComputeContentMd5() const override { return m_shouldComputeMd5; }
+    void SetComputeContentMd5(bool value) { m_shouldComputeMd5 = value; }
 
 private:
     std::shared_ptr<Aws::IOStream> m_body;
-    HeaderValueCollection m_headers;    
+    HeaderValueCollection m_headers;
+    bool m_shouldComputeMd5;
 };
 
 TEST(AWSClientTest, TestBuildHttpRequestWithHeadersOnly)
@@ -129,6 +134,7 @@ TEST(AWSClientTest, TestBuildHttpRequestWithHeadersAndBody)
 
     AmazonWebServiceRequestMock amazonWebServiceRequest;
     amazonWebServiceRequest.SetHeaders(headerValues);
+    amazonWebServiceRequest.SetComputeContentMd5(true);
 
     std::shared_ptr<Aws::StringStream> ss = Aws::MakeShared<Aws::StringStream>(ALLOCATION_TAG);
     *ss << "test";
@@ -146,39 +152,21 @@ TEST(AWSClientTest, TestBuildHttpRequestWithHeadersAndBody)
     ASSERT_TRUE(httpRequest->HasHeader(Http::USER_AGENT_HEADER));
     ASSERT_TRUE(httpRequest->HasHeader(Http::HOST_HEADER));
     ASSERT_TRUE(httpRequest->HasHeader(Http::CONTENT_LENGTH_HEADER));
+    ASSERT_TRUE(httpRequest->HasHeader(Http::CONTENT_MD5_HEADER));
+
+    auto hashResult = Utils::HashingUtils::Base64Encode(Utils::HashingUtils::CalculateMD5(*ss));
 
     HeaderValueCollection finalHeaders = httpRequest->GetHeaders();
-    ASSERT_EQ(5u, finalHeaders.size());
+    ASSERT_EQ(6u, finalHeaders.size());
     ASSERT_EQ("testValue1", finalHeaders["test1"]);
     ASSERT_EQ("testValue2", finalHeaders["test2"]);
     ASSERT_EQ("www.uri.com", finalHeaders[Http::HOST_HEADER]);
+    ASSERT_EQ(hashResult, finalHeaders[Http::CONTENT_MD5_HEADER]);
     ASSERT_FALSE(finalHeaders[Http::USER_AGENT_HEADER].empty());
 
     Aws::StringStream contentLengthExpected;
     contentLengthExpected << ss->str().length();
     ASSERT_EQ(contentLengthExpected.str(), finalHeaders[Http::CONTENT_LENGTH_HEADER]);  
-
-    AWS_END_MEMORY_TEST
-}
-
-TEST(AWSClientTest, TestHostHeaderOverride)
-{
-    AWS_BEGIN_MEMORY_TEST(16, 10);
-    HeaderValueCollection headerValues;
-
-    AmazonWebServiceRequestMock amazonWebServiceRequest;
-    amazonWebServiceRequest.SetHeaders(headerValues);
-
-    URI uri("http://www.uri.com");
-    std::shared_ptr<Standard::StandardHttpRequest> httpRequest = Aws::MakeShared<Standard::StandardHttpRequest>(ALLOCATION_TAG, uri, HttpMethod::HTTP_GET);
-   
-    //this should cause the host header to be overridden.
-    AccessViolatingAWSClient awsClient("testHost");
-    awsClient.InvokeBuildHttpRequest(amazonWebServiceRequest, httpRequest);
-
-    ASSERT_TRUE(httpRequest->HasHeader(Http::HOST_HEADER));
-    HeaderValueCollection finalHeaders = httpRequest->GetHeaders();
-    ASSERT_EQ("testHost", finalHeaders[Http::HOST_HEADER]);
 
     AWS_END_MEMORY_TEST
 }

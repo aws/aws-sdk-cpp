@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -20,13 +20,11 @@
 namespace Aws
 {
 
-enum class Region;
-
 namespace EFS
 {
 namespace EFSEndpoint
 {
-AWS_EFS_API Aws::String ForRegion(Region region);
+AWS_EFS_API Aws::String ForRegion(const Aws::String& regionName, bool useDualStack = false);
 } // namespace EFSEndpoint
 } // namespace EFS
 } // namespace Aws

@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -33,9 +33,6 @@ namespace ECS
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
   class AWS_ECS_API ListContainerInstancesResult
   {
   public:
@@ -43,79 +40,115 @@ namespace Model
     ListContainerInstancesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     ListContainerInstancesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p>The list of container instance full Amazon Resource Name (ARN) entries for each container instance associated with the specified cluster.</p>
-    */
+    /**
+     * <p>The list of container instances with full Amazon Resource Name (ARN) entries
+     * for each container instance associated with the specified cluster.</p>
+     */
     inline const Aws::Vector<Aws::String>& GetContainerInstanceArns() const{ return m_containerInstanceArns; }
 
-    /*
-     <p>The list of container instance full Amazon Resource Name (ARN) entries for each container instance associated with the specified cluster.</p>
-    */
+    /**
+     * <p>The list of container instances with full Amazon Resource Name (ARN) entries
+     * for each container instance associated with the specified cluster.</p>
+     */
     inline void SetContainerInstanceArns(const Aws::Vector<Aws::String>& value) { m_containerInstanceArns = value; }
 
-    /*
-     <p>The list of container instance full Amazon Resource Name (ARN) entries for each container instance associated with the specified cluster.</p>
-    */
+    /**
+     * <p>The list of container instances with full Amazon Resource Name (ARN) entries
+     * for each container instance associated with the specified cluster.</p>
+     */
     inline void SetContainerInstanceArns(Aws::Vector<Aws::String>&& value) { m_containerInstanceArns = value; }
 
-    /*
-     <p>The list of container instance full Amazon Resource Name (ARN) entries for each container instance associated with the specified cluster.</p>
-    */
+    /**
+     * <p>The list of container instances with full Amazon Resource Name (ARN) entries
+     * for each container instance associated with the specified cluster.</p>
+     */
     inline ListContainerInstancesResult& WithContainerInstanceArns(const Aws::Vector<Aws::String>& value) { SetContainerInstanceArns(value); return *this;}
 
-    /*
-     <p>The list of container instance full Amazon Resource Name (ARN) entries for each container instance associated with the specified cluster.</p>
-    */
+    /**
+     * <p>The list of container instances with full Amazon Resource Name (ARN) entries
+     * for each container instance associated with the specified cluster.</p>
+     */
     inline ListContainerInstancesResult& WithContainerInstanceArns(Aws::Vector<Aws::String>&& value) { SetContainerInstanceArns(value); return *this;}
 
-    /*
-     <p>The list of container instance full Amazon Resource Name (ARN) entries for each container instance associated with the specified cluster.</p>
-    */
+    /**
+     * <p>The list of container instances with full Amazon Resource Name (ARN) entries
+     * for each container instance associated with the specified cluster.</p>
+     */
     inline ListContainerInstancesResult& AddContainerInstanceArns(const Aws::String& value) { m_containerInstanceArns.push_back(value); return *this; }
 
-    /*
-     <p>The list of container instance full Amazon Resource Name (ARN) entries for each container instance associated with the specified cluster.</p>
-    */
+    /**
+     * <p>The list of container instances with full Amazon Resource Name (ARN) entries
+     * for each container instance associated with the specified cluster.</p>
+     */
     inline ListContainerInstancesResult& AddContainerInstanceArns(Aws::String&& value) { m_containerInstanceArns.push_back(value); return *this; }
 
-    /*
-     <p>The list of container instance full Amazon Resource Name (ARN) entries for each container instance associated with the specified cluster.</p>
-    */
+    /**
+     * <p>The list of container instances with full Amazon Resource Name (ARN) entries
+     * for each container instance associated with the specified cluster.</p>
+     */
     inline ListContainerInstancesResult& AddContainerInstanceArns(const char* value) { m_containerInstanceArns.push_back(value); return *this; }
 
-    /*
-     <p>The <code>nextToken</code> value to include in a future <code>ListContainerInstances</code> request. When the results of a <code>ListContainerInstances</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    */
+    /**
+     * <p>The <code>nextToken</code> value to include in a future
+     * <code>ListContainerInstances</code> request. When the results of a
+     * <code>ListContainerInstances</code> request exceed <code>maxResults</code>, this
+     * value can be used to retrieve the next page of results. This value is
+     * <code>null</code> when there are no more results to return.</p>
+     */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
-    /*
-     <p>The <code>nextToken</code> value to include in a future <code>ListContainerInstances</code> request. When the results of a <code>ListContainerInstances</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    */
+    /**
+     * <p>The <code>nextToken</code> value to include in a future
+     * <code>ListContainerInstances</code> request. When the results of a
+     * <code>ListContainerInstances</code> request exceed <code>maxResults</code>, this
+     * value can be used to retrieve the next page of results. This value is
+     * <code>null</code> when there are no more results to return.</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
-    /*
-     <p>The <code>nextToken</code> value to include in a future <code>ListContainerInstances</code> request. When the results of a <code>ListContainerInstances</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    */
+    /**
+     * <p>The <code>nextToken</code> value to include in a future
+     * <code>ListContainerInstances</code> request. When the results of a
+     * <code>ListContainerInstances</code> request exceed <code>maxResults</code>, this
+     * value can be used to retrieve the next page of results. This value is
+     * <code>null</code> when there are no more results to return.</p>
+     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
 
-    /*
-     <p>The <code>nextToken</code> value to include in a future <code>ListContainerInstances</code> request. When the results of a <code>ListContainerInstances</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    */
+    /**
+     * <p>The <code>nextToken</code> value to include in a future
+     * <code>ListContainerInstances</code> request. When the results of a
+     * <code>ListContainerInstances</code> request exceed <code>maxResults</code>, this
+     * value can be used to retrieve the next page of results. This value is
+     * <code>null</code> when there are no more results to return.</p>
+     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
-    /*
-     <p>The <code>nextToken</code> value to include in a future <code>ListContainerInstances</code> request. When the results of a <code>ListContainerInstances</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    */
+    /**
+     * <p>The <code>nextToken</code> value to include in a future
+     * <code>ListContainerInstances</code> request. When the results of a
+     * <code>ListContainerInstances</code> request exceed <code>maxResults</code>, this
+     * value can be used to retrieve the next page of results. This value is
+     * <code>null</code> when there are no more results to return.</p>
+     */
     inline ListContainerInstancesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
-    /*
-     <p>The <code>nextToken</code> value to include in a future <code>ListContainerInstances</code> request. When the results of a <code>ListContainerInstances</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    */
+    /**
+     * <p>The <code>nextToken</code> value to include in a future
+     * <code>ListContainerInstances</code> request. When the results of a
+     * <code>ListContainerInstances</code> request exceed <code>maxResults</code>, this
+     * value can be used to retrieve the next page of results. This value is
+     * <code>null</code> when there are no more results to return.</p>
+     */
     inline ListContainerInstancesResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
-    /*
-     <p>The <code>nextToken</code> value to include in a future <code>ListContainerInstances</code> request. When the results of a <code>ListContainerInstances</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    */
+    /**
+     * <p>The <code>nextToken</code> value to include in a future
+     * <code>ListContainerInstances</code> request. When the results of a
+     * <code>ListContainerInstances</code> request exceed <code>maxResults</code>, this
+     * value can be used to retrieve the next page of results. This value is
+     * <code>null</code> when there are no more results to return.</p>
+     */
     inline ListContainerInstancesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:

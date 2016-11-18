@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::EC2::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
 
 VolumeStatusItem::VolumeStatusItem() : 
     m_volumeIdHasBeenSet(false),
@@ -101,38 +107,41 @@ void VolumeStatusItem::OutputToStream(Aws::OStream& oStream, const char* locatio
   {
       oStream << location << index << locationValue << ".VolumeId=" << StringUtils::URLEncode(m_volumeId.c_str()) << "&";
   }
+
   if(m_availabilityZoneHasBeenSet)
   {
       oStream << location << index << locationValue << ".AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
   }
+
   if(m_volumeStatusHasBeenSet)
   {
       Aws::StringStream volumeStatusLocationAndMemberSs;
       volumeStatusLocationAndMemberSs << location << index << locationValue << ".VolumeStatus";
       m_volumeStatus.OutputToStream(oStream, volumeStatusLocationAndMemberSs.str().c_str());
   }
+
   if(m_eventsHasBeenSet)
   {
-      unsigned eventsIdx = 0;
+      unsigned eventsIdx = 1;
       for(auto& item : m_events)
       {
-        eventsIdx++;
         Aws::StringStream eventsSs;
-        eventsSs << location << index << locationValue << ".EventsSet." << eventsIdx;
+        eventsSs << location << index << locationValue << ".EventsSet." << eventsIdx++;
         item.OutputToStream(oStream, eventsSs.str().c_str());
       }
   }
+
   if(m_actionsHasBeenSet)
   {
-      unsigned actionsIdx = 0;
+      unsigned actionsIdx = 1;
       for(auto& item : m_actions)
       {
-        actionsIdx++;
         Aws::StringStream actionsSs;
-        actionsSs << location << index << locationValue << ".ActionsSet." << actionsIdx;
+        actionsSs << location << index << locationValue << ".ActionsSet." << actionsIdx++;
         item.OutputToStream(oStream, actionsSs.str().c_str());
       }
   }
+
 }
 
 void VolumeStatusItem::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -153,20 +162,26 @@ void VolumeStatusItem::OutputToStream(Aws::OStream& oStream, const char* locatio
   }
   if(m_eventsHasBeenSet)
   {
+      unsigned eventsIdx = 1;
       for(auto& item : m_events)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".item";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream eventsSs;
+        eventsSs << location <<  ".item." << eventsIdx++;
+        item.OutputToStream(oStream, eventsSs.str().c_str());
       }
   }
   if(m_actionsHasBeenSet)
   {
+      unsigned actionsIdx = 1;
       for(auto& item : m_actions)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".item";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream actionsSs;
+        actionsSs << location <<  ".item." << actionsIdx++;
+        item.OutputToStream(oStream, actionsSs.str().c_str());
       }
   }
 }
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

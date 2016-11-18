@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -34,9 +34,6 @@ namespace ECS
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
   class AWS_ECS_API DescribeClustersResult
   {
   public:
@@ -44,60 +41,74 @@ namespace Model
     DescribeClustersResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     DescribeClustersResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p>The list of clusters.</p>
-    */
+    /**
+     * <p>The list of clusters.</p>
+     */
     inline const Aws::Vector<Cluster>& GetClusters() const{ return m_clusters; }
 
-    /*
-     <p>The list of clusters.</p>
-    */
+    /**
+     * <p>The list of clusters.</p>
+     */
     inline void SetClusters(const Aws::Vector<Cluster>& value) { m_clusters = value; }
 
-    /*
-     <p>The list of clusters.</p>
-    */
+    /**
+     * <p>The list of clusters.</p>
+     */
     inline void SetClusters(Aws::Vector<Cluster>&& value) { m_clusters = value; }
 
-    /*
-     <p>The list of clusters.</p>
-    */
+    /**
+     * <p>The list of clusters.</p>
+     */
     inline DescribeClustersResult& WithClusters(const Aws::Vector<Cluster>& value) { SetClusters(value); return *this;}
 
-    /*
-     <p>The list of clusters.</p>
-    */
+    /**
+     * <p>The list of clusters.</p>
+     */
     inline DescribeClustersResult& WithClusters(Aws::Vector<Cluster>&& value) { SetClusters(value); return *this;}
 
-    /*
-     <p>The list of clusters.</p>
-    */
+    /**
+     * <p>The list of clusters.</p>
+     */
     inline DescribeClustersResult& AddClusters(const Cluster& value) { m_clusters.push_back(value); return *this; }
 
-    /*
-     <p>The list of clusters.</p>
-    */
+    /**
+     * <p>The list of clusters.</p>
+     */
     inline DescribeClustersResult& AddClusters(Cluster&& value) { m_clusters.push_back(value); return *this; }
 
-    
+    /**
+     * <p>Any failures associated with the call.</p>
+     */
     inline const Aws::Vector<Failure>& GetFailures() const{ return m_failures; }
 
-    
+    /**
+     * <p>Any failures associated with the call.</p>
+     */
     inline void SetFailures(const Aws::Vector<Failure>& value) { m_failures = value; }
 
-    
+    /**
+     * <p>Any failures associated with the call.</p>
+     */
     inline void SetFailures(Aws::Vector<Failure>&& value) { m_failures = value; }
 
-    
+    /**
+     * <p>Any failures associated with the call.</p>
+     */
     inline DescribeClustersResult& WithFailures(const Aws::Vector<Failure>& value) { SetFailures(value); return *this;}
 
-    
+    /**
+     * <p>Any failures associated with the call.</p>
+     */
     inline DescribeClustersResult& WithFailures(Aws::Vector<Failure>&& value) { SetFailures(value); return *this;}
 
-    
+    /**
+     * <p>Any failures associated with the call.</p>
+     */
     inline DescribeClustersResult& AddFailures(const Failure& value) { m_failures.push_back(value); return *this; }
 
-    
+    /**
+     * <p>Any failures associated with the call.</p>
+     */
     inline DescribeClustersResult& AddFailures(Failure&& value) { m_failures.push_back(value); return *this; }
 
   private:

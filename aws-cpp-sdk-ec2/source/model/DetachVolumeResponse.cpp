@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -27,13 +27,13 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 DetachVolumeResponse::DetachVolumeResponse() : 
-    m_attachTime(0.0),
+    m_state(VolumeAttachmentState::NOT_SET),
     m_deleteOnTermination(false)
 {
 }
 
 DetachVolumeResponse::DetachVolumeResponse(const AmazonWebServiceResult<XmlDocument>& result) : 
-    m_attachTime(0.0),
+    m_state(VolumeAttachmentState::NOT_SET),
     m_deleteOnTermination(false)
 {
   *this = result;
@@ -74,7 +74,7 @@ DetachVolumeResponse& DetachVolumeResponse::operator =(const AmazonWebServiceRes
     XmlNode attachTimeNode = resultNode.FirstChild("attachTime");
     if(!attachTimeNode.IsNull())
     {
-      m_attachTime = StringUtils::ConvertToDouble(StringUtils::Trim(attachTimeNode.GetText().c_str()).c_str());
+      m_attachTime = DateTime(StringUtils::Trim(attachTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
     }
     XmlNode deleteOnTerminationNode = resultNode.FirstChild("deleteOnTermination");
     if(!deleteOnTerminationNode.IsNull())

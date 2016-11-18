@@ -1,5 +1,5 @@
 /*
-  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+  * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
   * 
   * Licensed under the Apache License, Version 2.0 (the "License").
   * You may not use this file except in compliance with the License.
@@ -80,7 +80,7 @@ TEST(HashingUtilsTest, TestBase64Decoding)
     AWS_END_MEMORY_TEST
 }
 
-TEST(HashingUtilsTest, TestHexEncoding)
+TEST(HashingUtilsTest, TestHexEncodingDecoding)
 {
     unsigned char beforeHexEncoding[32] =
     { 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x0A, 0x0B, 0x0C,
@@ -95,10 +95,11 @@ TEST(HashingUtilsTest, TestHexEncoding)
             "0102030405060708090a0b0c0d0e0f1122334455667778695a4b3c2d1e0f1000";
     ASSERT_STREQ(afterEncoding, hexEncodedValue.c_str());
 
+    ByteBuffer hexBuffer(beforeHexEncoding, 32);
+    ASSERT_EQ(hexBuffer, HashingUtils::HexDecode(afterEncoding));
+
     AWS_END_MEMORY_TEST
 }
-
-#ifndef ENABLE_INJECTED_ENCRYPTION
 
 TEST(HashingUtilsTest, TestSHA256HMAC)
 {
@@ -228,4 +229,3 @@ TEST(HashingUtilsTest, TestMD5FromStream)
     AWS_END_MEMORY_TEST
 }
 
-#endif // ENABLE_INJECTED_ENCRYPTION

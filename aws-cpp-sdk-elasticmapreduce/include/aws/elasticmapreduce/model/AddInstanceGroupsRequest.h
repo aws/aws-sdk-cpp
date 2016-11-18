@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -26,9 +26,9 @@ namespace EMR
 namespace Model
 {
 
-  /*
-    <p>Input to an AddInstanceGroups call.</p>
-  */
+  /**
+   * <p>Input to an AddInstanceGroups call.</p>
+   */
   class AWS_EMR_API AddInstanceGroupsRequest : public EMRRequest
   {
   public:
@@ -37,75 +37,74 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
-    /*
-     <p>Instance Groups to add.</p>
-    */
+    /**
+     * <p>Instance Groups to add.</p>
+     */
     inline const Aws::Vector<InstanceGroupConfig>& GetInstanceGroups() const{ return m_instanceGroups; }
 
-    /*
-     <p>Instance Groups to add.</p>
-    */
+    /**
+     * <p>Instance Groups to add.</p>
+     */
     inline void SetInstanceGroups(const Aws::Vector<InstanceGroupConfig>& value) { m_instanceGroupsHasBeenSet = true; m_instanceGroups = value; }
 
-    /*
-     <p>Instance Groups to add.</p>
-    */
+    /**
+     * <p>Instance Groups to add.</p>
+     */
     inline void SetInstanceGroups(Aws::Vector<InstanceGroupConfig>&& value) { m_instanceGroupsHasBeenSet = true; m_instanceGroups = value; }
 
-    /*
-     <p>Instance Groups to add.</p>
-    */
+    /**
+     * <p>Instance Groups to add.</p>
+     */
     inline AddInstanceGroupsRequest& WithInstanceGroups(const Aws::Vector<InstanceGroupConfig>& value) { SetInstanceGroups(value); return *this;}
 
-    /*
-     <p>Instance Groups to add.</p>
-    */
+    /**
+     * <p>Instance Groups to add.</p>
+     */
     inline AddInstanceGroupsRequest& WithInstanceGroups(Aws::Vector<InstanceGroupConfig>&& value) { SetInstanceGroups(value); return *this;}
 
-    /*
-     <p>Instance Groups to add.</p>
-    */
+    /**
+     * <p>Instance Groups to add.</p>
+     */
     inline AddInstanceGroupsRequest& AddInstanceGroups(const InstanceGroupConfig& value) { m_instanceGroupsHasBeenSet = true; m_instanceGroups.push_back(value); return *this; }
 
-    /*
-     <p>Instance Groups to add.</p>
-    */
+    /**
+     * <p>Instance Groups to add.</p>
+     */
     inline AddInstanceGroupsRequest& AddInstanceGroups(InstanceGroupConfig&& value) { m_instanceGroupsHasBeenSet = true; m_instanceGroups.push_back(value); return *this; }
 
-    /*
-     <p>Job flow in which to add the instance groups.</p>
-    */
+    /**
+     * <p>Job flow in which to add the instance groups.</p>
+     */
     inline const Aws::String& GetJobFlowId() const{ return m_jobFlowId; }
 
-    /*
-     <p>Job flow in which to add the instance groups.</p>
-    */
+    /**
+     * <p>Job flow in which to add the instance groups.</p>
+     */
     inline void SetJobFlowId(const Aws::String& value) { m_jobFlowIdHasBeenSet = true; m_jobFlowId = value; }
 
-    /*
-     <p>Job flow in which to add the instance groups.</p>
-    */
+    /**
+     * <p>Job flow in which to add the instance groups.</p>
+     */
     inline void SetJobFlowId(Aws::String&& value) { m_jobFlowIdHasBeenSet = true; m_jobFlowId = value; }
 
-    /*
-     <p>Job flow in which to add the instance groups.</p>
-    */
+    /**
+     * <p>Job flow in which to add the instance groups.</p>
+     */
     inline void SetJobFlowId(const char* value) { m_jobFlowIdHasBeenSet = true; m_jobFlowId.assign(value); }
 
-    /*
-     <p>Job flow in which to add the instance groups.</p>
-    */
+    /**
+     * <p>Job flow in which to add the instance groups.</p>
+     */
     inline AddInstanceGroupsRequest& WithJobFlowId(const Aws::String& value) { SetJobFlowId(value); return *this;}
 
-    /*
-     <p>Job flow in which to add the instance groups.</p>
-    */
+    /**
+     * <p>Job flow in which to add the instance groups.</p>
+     */
     inline AddInstanceGroupsRequest& WithJobFlowId(Aws::String&& value) { SetJobFlowId(value); return *this;}
 
-    /*
-     <p>Job flow in which to add the instance groups.</p>
-    */
+    /**
+     * <p>Job flow in which to add the instance groups.</p>
+     */
     inline AddInstanceGroupsRequest& WithJobFlowId(const char* value) { SetJobFlowId(value); return *this;}
 
   private:

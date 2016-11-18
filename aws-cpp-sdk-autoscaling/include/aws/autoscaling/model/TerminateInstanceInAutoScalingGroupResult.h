@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -33,9 +33,9 @@ namespace AutoScaling
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
+  /**
+   * <p>Contains the output of TerminateInstancesInAutoScalingGroup.</p>
+   */
   class AWS_AUTOSCALING_API TerminateInstanceInAutoScalingGroupResult
   {
   public:
@@ -43,29 +43,29 @@ namespace Model
     TerminateInstanceInAutoScalingGroupResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     TerminateInstanceInAutoScalingGroupResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>A scaling activity.</p>
-    */
+    /**
+     * <p>A scaling activity.</p>
+     */
     inline const Activity& GetActivity() const{ return m_activity; }
 
-    /*
-     <p>A scaling activity.</p>
-    */
+    /**
+     * <p>A scaling activity.</p>
+     */
     inline void SetActivity(const Activity& value) { m_activity = value; }
 
-    /*
-     <p>A scaling activity.</p>
-    */
+    /**
+     * <p>A scaling activity.</p>
+     */
     inline void SetActivity(Activity&& value) { m_activity = value; }
 
-    /*
-     <p>A scaling activity.</p>
-    */
+    /**
+     * <p>A scaling activity.</p>
+     */
     inline TerminateInstanceInAutoScalingGroupResult& WithActivity(const Activity& value) { SetActivity(value); return *this;}
 
-    /*
-     <p>A scaling activity.</p>
-    */
+    /**
+     * <p>A scaling activity.</p>
+     */
     inline TerminateInstanceInAutoScalingGroupResult& WithActivity(Activity&& value) { SetActivity(value); return *this;}
 
     

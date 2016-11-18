@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -17,14 +17,19 @@
 
 #include <utility>
 
-using namespace Aws::EFS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EFS
+{
+namespace Model
+{
 
 FileSystemSize::FileSystemSize() : 
     m_value(0),
     m_valueHasBeenSet(false),
-    m_timestamp(0.0),
     m_timestampHasBeenSet(false)
 {
 }
@@ -32,7 +37,6 @@ FileSystemSize::FileSystemSize() :
 FileSystemSize::FileSystemSize(const JsonValue& jsonValue) : 
     m_value(0),
     m_valueHasBeenSet(false),
-    m_timestamp(0.0),
     m_timestampHasBeenSet(false)
 {
   *this = jsonValue;
@@ -69,9 +73,12 @@ JsonValue FileSystemSize::Jsonize() const
 
   if(m_timestampHasBeenSet)
   {
-   payload.WithDouble("Timestamp", m_timestamp);
-
+   payload.WithDouble("Timestamp", m_timestamp.SecondsWithMSPrecision());
   }
 
-  return std::move(payload);
+  return payload;
 }
+
+} // namespace Model
+} // namespace EFS
+} // namespace Aws

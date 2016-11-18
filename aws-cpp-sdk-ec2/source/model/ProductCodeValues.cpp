@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -14,50 +14,66 @@
 */
 #include <aws/ec2/model/ProductCodeValues.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
+#include <aws/core/utils/EnumParseOverflowContainer.h>
 
 using namespace Aws::Utils;
 
-static const int devpay_HASH = HashingUtils::HashString("devpay");
-static const int marketplace_HASH = HashingUtils::HashString("marketplace");
 
 namespace Aws
 {
-namespace EC2
-{
-namespace Model
-{
-namespace ProductCodeValuesMapper
-{
-ProductCodeValues GetProductCodeValuesForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-
-  if (hashCode == devpay_HASH)
+  namespace EC2
   {
-    return ProductCodeValues::devpay;
-  }
-  else if (hashCode == marketplace_HASH)
-  {
-    return ProductCodeValues::marketplace;
-  }
+    namespace Model
+    {
+      namespace ProductCodeValuesMapper
+      {
 
-  return ProductCodeValues::NOT_SET;
-}
+        static const int devpay_HASH = HashingUtils::HashString("devpay");
+        static const int marketplace_HASH = HashingUtils::HashString("marketplace");
 
-Aws::String GetNameForProductCodeValues(ProductCodeValues value)
-{
-  switch(value)
-  {
-  case ProductCodeValues::devpay:
-    return "devpay";
-  case ProductCodeValues::marketplace:
-    return "marketplace";
-  default:
-    return "";
-  }
-}
 
-} // namespace ProductCodeValuesMapper
-} // namespace Model
-} // namespace EC2
+        ProductCodeValues GetProductCodeValuesForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == devpay_HASH)
+          {
+            return ProductCodeValues::devpay;
+          }
+          else if (hashCode == marketplace_HASH)
+          {
+            return ProductCodeValues::marketplace;
+          }
+          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<ProductCodeValues>(hashCode);
+          }
+
+          return ProductCodeValues::NOT_SET;
+        }
+
+        Aws::String GetNameForProductCodeValues(ProductCodeValues enumValue)
+        {
+          switch(enumValue)
+          {
+          case ProductCodeValues::devpay:
+            return "devpay";
+          case ProductCodeValues::marketplace:
+            return "marketplace";
+          default:
+            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace ProductCodeValuesMapper
+    } // namespace Model
+  } // namespace EC2
 } // namespace Aws

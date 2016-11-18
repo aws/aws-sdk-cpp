@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -22,6 +22,7 @@ using namespace Aws::Utils;
 CreateCustomerGatewayRequest::CreateCustomerGatewayRequest() : 
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
+    m_type(GatewayType::NOT_SET),
     m_typeHasBeenSet(false),
     m_publicIpHasBeenSet(false),
     m_bgpAsn(0),
@@ -37,19 +38,23 @@ Aws::String CreateCustomerGatewayRequest::SerializePayload() const
   {
     ss << "DryRun=" << m_dryRun << "&";
   }
+
   if(m_typeHasBeenSet)
   {
     ss << "Type=" << GatewayTypeMapper::GetNameForGatewayType(m_type) << "&";
   }
+
   if(m_publicIpHasBeenSet)
   {
     ss << "PublicIp=" << StringUtils::URLEncode(m_publicIp.c_str()) << "&";
   }
+
   if(m_bgpAsnHasBeenSet)
   {
     ss << "BgpAsn=" << m_bgpAsn << "&";
   }
-  ss << "Version=2015-04-15";
+
+  ss << "Version=2015-10-01";
   return ss.str();
 }
 

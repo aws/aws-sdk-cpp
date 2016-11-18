@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,9 +24,9 @@ namespace EMR
 namespace Model
 {
 
-  /*
-    <p>This input determines which cluster to describe.</p>
-  */
+  /**
+   * <p>This input determines which cluster to describe.</p>
+   */
   class AWS_EMR_API DescribeClusterRequest : public EMRRequest
   {
   public:
@@ -35,40 +35,39 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
-    /*
-     <p>The identifier of the cluster to describe.</p>
-    */
+    /**
+     * <p>The identifier of the cluster to describe.</p>
+     */
     inline const Aws::String& GetClusterId() const{ return m_clusterId; }
 
-    /*
-     <p>The identifier of the cluster to describe.</p>
-    */
+    /**
+     * <p>The identifier of the cluster to describe.</p>
+     */
     inline void SetClusterId(const Aws::String& value) { m_clusterIdHasBeenSet = true; m_clusterId = value; }
 
-    /*
-     <p>The identifier of the cluster to describe.</p>
-    */
+    /**
+     * <p>The identifier of the cluster to describe.</p>
+     */
     inline void SetClusterId(Aws::String&& value) { m_clusterIdHasBeenSet = true; m_clusterId = value; }
 
-    /*
-     <p>The identifier of the cluster to describe.</p>
-    */
+    /**
+     * <p>The identifier of the cluster to describe.</p>
+     */
     inline void SetClusterId(const char* value) { m_clusterIdHasBeenSet = true; m_clusterId.assign(value); }
 
-    /*
-     <p>The identifier of the cluster to describe.</p>
-    */
+    /**
+     * <p>The identifier of the cluster to describe.</p>
+     */
     inline DescribeClusterRequest& WithClusterId(const Aws::String& value) { SetClusterId(value); return *this;}
 
-    /*
-     <p>The identifier of the cluster to describe.</p>
-    */
+    /**
+     * <p>The identifier of the cluster to describe.</p>
+     */
     inline DescribeClusterRequest& WithClusterId(Aws::String&& value) { SetClusterId(value); return *this;}
 
-    /*
-     <p>The identifier of the cluster to describe.</p>
-    */
+    /**
+     * <p>The identifier of the cluster to describe.</p>
+     */
     inline DescribeClusterRequest& WithClusterId(const char* value) { SetClusterId(value); return *this;}
 
   private:

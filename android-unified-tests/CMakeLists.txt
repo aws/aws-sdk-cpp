@@ -1,4 +1,3 @@
-cmake_minimum_required(VERSION 2.6)
 project(android-unified-tests)
 
 # Headers are included in the source so that they show up in Visual Studio.
@@ -18,10 +17,8 @@ file(GLOB SQS_SRC "${AWS_NATIVE_SDK_ROOT}/aws-cpp-sdk-sqs-integration-tests/Queu
 file(GLOB S3_SRC "${AWS_NATIVE_SDK_ROOT}/aws-cpp-sdk-s3-integration-tests/BucketAndObjectOperationTest.cpp")
 file(GLOB LAMBDA_SRC "${AWS_NATIVE_SDK_ROOT}/aws-cpp-sdk-lambda-integration-tests/FunctionTest.cpp")
 file(GLOB COGNITO_IDENTITY_IDENTITY_POOL_SRC "${AWS_NATIVE_SDK_ROOT}/aws-cpp-sdk-cognitoidentity-integration-tests/IdentityPoolOperationTest.cpp")
-file(GLOB COGNITO_IDENTITY_CREDENTIALS_SRC "${AWS_NATIVE_SDK_ROOT}/aws-cpp-sdk-cognitoidentity-integration-tests/GetCredentialsTest.cpp")
 file(GLOB TRANSFER_RESOURCE_SRC "${AWS_NATIVE_SDK_ROOT}/aws-cpp-sdk-transfer-tests/ResourceTests.cpp")
 file(GLOB TRANSFER_SRC "${AWS_NATIVE_SDK_ROOT}/aws-cpp-sdk-transfer-tests/TransferTests.cpp")
-file(GLOB LOGGING_SRC "${AWS_NATIVE_SDK_ROOT}/aws-cpp-sdk-logging-tests/LoggingTest.cpp")
 file(GLOB IDENTITY_MANAGEMENT_SRC "${AWS_NATIVE_SDK_ROOT}/aws-cpp-sdk-identity-management-tests/auth/*.cpp")
 file(GLOB TEST_SRC "${CMAKE_CURRENT_SOURCE_DIR}/RunTests.cpp")
 
@@ -38,21 +35,15 @@ file(GLOB AWS_UNIFIED_INTEGRATION_TESTS_SRC
     ${CORE_UTILS_RATE_LIMITER_SRC}
     ${CORE_UTILS_XML_SRC}
     ${DYNAMODB_SRC}
-    ${SQS_SRC}
+#    ${SQS_SRC}
 #    ${S3_SRC}
 #    ${LAMBDA_SRC}
 #    ${COGNITO_IDENTITY_IDENTITY_POOL_SRC}
-#    ${COGNITO_IDENTITY_CREDENTIALS_SRC}
-    ${TRANSFER_RESOURCE_SRC}
+#    ${TRANSFER_RESOURCE_SRC}
 #    ${TRANSFER_SRC}
-    ${LOGGING_SRC}
 #    ${IDENTITY_MANAGEMENT_SRC}
     ${TEST_SRC}
 )
-
-if(NOT MSVC)
-    add_definitions(-std=c++0x)
-endif()
 
 set(AWS_UNIFIED_INTEGRATION_TEST_APPLICATION_INCLUDES
     "${AWS_NATIVE_SDK_ROOT}/aws-cpp-sdk-core/include/"
@@ -71,7 +62,13 @@ set(AWS_UNIFIED_INTEGRATION_TEST_APPLICATION_INCLUDES
 )
 
 include_directories(${AWS_UNIFIED_INTEGRATION_TEST_APPLICATION_INCLUDES})
-add_definitions(-DRESOURCES_DIR="${CMAKE_CURRENT_SOURCE_DIR}/resources")
+
+if(PLATFORM_ANDROID)
+  add_definitions(-DRESOURCES_DIR="resources")
+else()
+  add_definitions(-DRESOURCES_DIR="${CMAKE_CURRENT_SOURCE_DIR}/resources")
+endif()
+
 
 SET(LIBTYPE SHARED)
 SET(SUFFIX so)
@@ -79,19 +76,18 @@ SET(SUFFIX so)
 add_library(android-unified-tests ${LIBTYPE} ${AWS_UNIFIED_INTEGRATION_TESTS_SRC})
 target_link_libraries(android-unified-tests 
                       aws-cpp-sdk-dynamodb 
-		      aws-cpp-sdk-sqs 
-		      aws-cpp-sdk-s3 
-		      aws-cpp-sdk-lambda 
-		      aws-cpp-sdk-kinesis
-		      aws-cpp-sdk-cognito-identity
-		      aws-cpp-sdk-transfer
-		      aws-cpp-sdk-logging
+                      aws-cpp-sdk-sqs
+                      aws-cpp-sdk-s3
+                      aws-cpp-sdk-lambda
+                      aws-cpp-sdk-kinesis
+                      aws-cpp-sdk-cognito-identity
+                      aws-cpp-sdk-transfer
                       aws-cpp-sdk-iam
-		      aws-cpp-sdk-identity-management
-		      aws-cpp-sdk-access-management
-		      testing-resources 
-		      aws-cpp-sdk-core 
-		      ${CLIENT_LIBS}
-		      ${PLATFORM_DEP_LIBS})
+                      aws-cpp-sdk-identity-management
+                      aws-cpp-sdk-access-management
+                      testing-resources
+                      aws-cpp-sdk-core
+                      ${CLIENT_LIBS}
+                      ${PLATFORM_DEP_LIBS})
 
 

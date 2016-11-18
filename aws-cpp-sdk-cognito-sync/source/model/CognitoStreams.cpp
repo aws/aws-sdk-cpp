@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -17,13 +17,20 @@
 
 #include <utility>
 
-using namespace Aws::CognitoSync::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace CognitoSync
+{
+namespace Model
+{
 
 CognitoStreams::CognitoStreams() : 
     m_streamNameHasBeenSet(false),
     m_roleArnHasBeenSet(false),
+    m_streamingStatus(StreamingStatus::NOT_SET),
     m_streamingStatusHasBeenSet(false)
 {
 }
@@ -31,6 +38,7 @@ CognitoStreams::CognitoStreams() :
 CognitoStreams::CognitoStreams(const JsonValue& jsonValue) : 
     m_streamNameHasBeenSet(false),
     m_roleArnHasBeenSet(false),
+    m_streamingStatus(StreamingStatus::NOT_SET),
     m_streamingStatusHasBeenSet(false)
 {
   *this = jsonValue;
@@ -83,5 +91,9 @@ JsonValue CognitoStreams::Jsonize() const
    payload.WithString("StreamingStatus", StreamingStatusMapper::GetNameForStreamingStatus(m_streamingStatus));
   }
 
-  return std::move(payload);
+  return payload;
 }
+
+} // namespace Model
+} // namespace CognitoSync
+} // namespace Aws

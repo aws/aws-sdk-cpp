@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -26,7 +26,9 @@ DescribeMetricFiltersRequest::DescribeMetricFiltersRequest() :
     m_filterNamePrefixHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
     m_limit(0),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_metricNameHasBeenSet(false),
+    m_metricNamespaceHasBeenSet(false)
 {
 }
 
@@ -58,6 +60,18 @@ Aws::String DescribeMetricFiltersRequest::SerializePayload() const
 
   }
 
+  if(m_metricNameHasBeenSet)
+  {
+   payload.WithString("metricName", m_metricName);
+
+  }
+
+  if(m_metricNamespaceHasBeenSet)
+  {
+   payload.WithString("metricNamespace", m_metricNamespace);
+
+  }
+
   return payload.WriteReadable();
 }
 
@@ -65,7 +79,7 @@ Aws::Http::HeaderValueCollection DescribeMetricFiltersRequest::GetRequestSpecifi
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "Logs_20140328.DescribeMetricFilters"));
-  return std::move(headers);
+  return headers;
 
 }
 

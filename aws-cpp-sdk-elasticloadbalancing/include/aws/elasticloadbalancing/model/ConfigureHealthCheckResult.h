@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -33,9 +33,9 @@ namespace ElasticLoadBalancing
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
+  /**
+   * <p>Contains the output of ConfigureHealthCheck.</p>
+   */
   class AWS_ELASTICLOADBALANCING_API ConfigureHealthCheckResult
   {
   public:
@@ -43,29 +43,29 @@ namespace Model
     ConfigureHealthCheckResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     ConfigureHealthCheckResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>The updated health check.</p>
-    */
+    /**
+     * <p>The updated health check.</p>
+     */
     inline const HealthCheck& GetHealthCheck() const{ return m_healthCheck; }
 
-    /*
-     <p>The updated health check.</p>
-    */
+    /**
+     * <p>The updated health check.</p>
+     */
     inline void SetHealthCheck(const HealthCheck& value) { m_healthCheck = value; }
 
-    /*
-     <p>The updated health check.</p>
-    */
+    /**
+     * <p>The updated health check.</p>
+     */
     inline void SetHealthCheck(HealthCheck&& value) { m_healthCheck = value; }
 
-    /*
-     <p>The updated health check.</p>
-    */
+    /**
+     * <p>The updated health check.</p>
+     */
     inline ConfigureHealthCheckResult& WithHealthCheck(const HealthCheck& value) { SetHealthCheck(value); return *this;}
 
-    /*
-     <p>The updated health check.</p>
-    */
+    /**
+     * <p>The updated health check.</p>
+     */
     inline ConfigureHealthCheckResult& WithHealthCheck(HealthCheck&& value) { SetHealthCheck(value); return *this;}
 
     

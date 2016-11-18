@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -22,10 +22,10 @@ using namespace Aws::Utils;
 PublishRequest::PublishRequest() : 
     m_topicArnHasBeenSet(false),
     m_targetArnHasBeenSet(false),
+    m_phoneNumberHasBeenSet(false),
     m_messageHasBeenSet(false),
     m_subjectHasBeenSet(false),
     m_messageStructureHasBeenSet(false),
-    m_attributesHasBeenSet(false),
     m_messageAttributesHasBeenSet(false)
 {
 }
@@ -38,34 +38,32 @@ Aws::String PublishRequest::SerializePayload() const
   {
     ss << "TopicArn=" << StringUtils::URLEncode(m_topicArn.c_str()) << "&";
   }
+
   if(m_targetArnHasBeenSet)
   {
     ss << "TargetArn=" << StringUtils::URLEncode(m_targetArn.c_str()) << "&";
   }
+
+  if(m_phoneNumberHasBeenSet)
+  {
+    ss << "PhoneNumber=" << StringUtils::URLEncode(m_phoneNumber.c_str()) << "&";
+  }
+
   if(m_messageHasBeenSet)
   {
     ss << "Message=" << StringUtils::URLEncode(m_message.c_str()) << "&";
   }
+
   if(m_subjectHasBeenSet)
   {
     ss << "Subject=" << StringUtils::URLEncode(m_subject.c_str()) << "&";
   }
+
   if(m_messageStructureHasBeenSet)
   {
     ss << "MessageStructure=" << StringUtils::URLEncode(m_messageStructure.c_str()) << "&";
   }
-  if(m_attributesHasBeenSet)
-  {
-    unsigned attributesCount = 1;
-    for(auto& item : m_attributes)
-    {
-      ss << "Attributes.entry." << attributesCount << ".key="
-          << StringUtils::URLEncode(item.first.c_str()) << "&";
-      ss << "Attributes.entry." << attributesCount << ".value="
-          << StringUtils::URLEncode(item.second.c_str()) << "&";
-      attributesCount++;
-    }
-  }
+
   if(m_messageAttributesHasBeenSet)
   {
     unsigned messageAttributesCount = 1;
@@ -77,6 +75,7 @@ Aws::String PublishRequest::SerializePayload() const
       messageAttributesCount++;
     }
   }
+
   ss << "Version=2010-03-31";
   return ss.str();
 }

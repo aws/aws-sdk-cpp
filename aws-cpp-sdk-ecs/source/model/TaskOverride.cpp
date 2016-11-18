@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -17,17 +17,25 @@
 
 #include <utility>
 
-using namespace Aws::ECS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
+namespace Aws
+{
+namespace ECS
+{
+namespace Model
+{
+
 TaskOverride::TaskOverride() : 
-    m_containerOverridesHasBeenSet(false)
+    m_containerOverridesHasBeenSet(false),
+    m_taskRoleArnHasBeenSet(false)
 {
 }
 
 TaskOverride::TaskOverride(const JsonValue& jsonValue) : 
-    m_containerOverridesHasBeenSet(false)
+    m_containerOverridesHasBeenSet(false),
+    m_taskRoleArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -42,6 +50,13 @@ TaskOverride& TaskOverride::operator =(const JsonValue& jsonValue)
       m_containerOverrides.push_back(containerOverridesJsonList[containerOverridesIndex].AsObject());
     }
     m_containerOverridesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("taskRoleArn"))
+  {
+    m_taskRoleArn = jsonValue.GetString("taskRoleArn");
+
+    m_taskRoleArnHasBeenSet = true;
   }
 
   return *this;
@@ -62,5 +77,15 @@ JsonValue TaskOverride::Jsonize() const
 
   }
 
-  return std::move(payload);
+  if(m_taskRoleArnHasBeenSet)
+  {
+   payload.WithString("taskRoleArn", m_taskRoleArn);
+
+  }
+
+  return payload;
 }
+
+} // namespace Model
+} // namespace ECS
+} // namespace Aws

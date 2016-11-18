@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::ElasticBeanstalk::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace ElasticBeanstalk
+{
+namespace Model
+{
 
 LoadBalancerDescription::LoadBalancerDescription() : 
     m_loadBalancerNameHasBeenSet(false),
@@ -79,19 +85,23 @@ void LoadBalancerDescription::OutputToStream(Aws::OStream& oStream, const char* 
   {
       oStream << location << index << locationValue << ".LoadBalancerName=" << StringUtils::URLEncode(m_loadBalancerName.c_str()) << "&";
   }
+
   if(m_domainHasBeenSet)
   {
       oStream << location << index << locationValue << ".Domain=" << StringUtils::URLEncode(m_domain.c_str()) << "&";
   }
+
   if(m_listenersHasBeenSet)
   {
+      unsigned listenersIdx = 1;
       for(auto& item : m_listeners)
       {
         Aws::StringStream listenersSs;
-        listenersSs << location << index << locationValue << ".Listeners";
+        listenersSs << location << index << locationValue << ".Listeners.member." << listenersIdx++;
         item.OutputToStream(oStream, listenersSs.str().c_str());
       }
   }
+
 }
 
 void LoadBalancerDescription::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -106,11 +116,16 @@ void LoadBalancerDescription::OutputToStream(Aws::OStream& oStream, const char* 
   }
   if(m_listenersHasBeenSet)
   {
+      unsigned listenersIdx = 1;
       for(auto& item : m_listeners)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".Listeners";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream listenersSs;
+        listenersSs << location <<  ".Listeners.member." << listenersIdx++;
+        item.OutputToStream(oStream, listenersSs.str().c_str());
       }
   }
 }
+
+} // namespace Model
+} // namespace ElasticBeanstalk
+} // namespace Aws

@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -20,6 +20,13 @@ using namespace Aws::Client;
 using namespace Aws::EC2;
 using namespace Aws::Utils;
 
+namespace Aws
+{
+namespace EC2
+{
+namespace EC2ErrorMapper
+{
+
 static const int INVALID_ROUTE_TABLE_I_D__NOT_FOUND_HASH = HashingUtils::HashString("InvalidRouteTableID.NotFound");
 static const int INSUFFICIENT_FREE_ADDRESSES_IN_SUBNET_HASH = HashingUtils::HashString("InsufficientFreeAddressesInSubnet");
 static const int INVALID_BUNDLE_I_D__NOT_FOUND_HASH = HashingUtils::HashString("InvalidBundleID.NotFound");
@@ -39,7 +46,6 @@ static const int INVALID_MANIFEST_HASH = HashingUtils::HashString("InvalidManife
 static const int INVALID_SECURITY_GROUP_I_D__NOT_FOUND_HASH = HashingUtils::HashString("InvalidSecurityGroupID.NotFound");
 static const int VPN_CONNECTION_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("VpnConnectionLimitExceeded");
 static const int INVALID_INSTANCE_I_D__NOT_LINKABLE_HASH = HashingUtils::HashString("InvalidInstanceID.NotLinkable");
-static const int SIGNATURE_DOES_NOT_MATCH_HASH = HashingUtils::HashString("SignatureDoesNotMatch");
 static const int INVALID_VPC_I_D__NOT_FOUND_HASH = HashingUtils::HashString("InvalidVpcID.NotFound");
 static const int INVALID_PERMISSION__DUPLICATE_HASH = HashingUtils::HashString("InvalidPermission.Duplicate");
 static const int INVALID_ATTACHMENT_I_D__NOT_FOUND_HASH = HashingUtils::HashString("InvalidAttachmentID.NotFound");
@@ -194,12 +200,6 @@ static const int INVALID_ATTACHMENT__NOT_FOUND_HASH = HashingUtils::HashString("
 static const int SNAPSHOT_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("SnapshotLimitExceeded");
 static const int MAX_SPOT_FLEET_REQUEST_COUNT_EXCEEDED_HASH = HashingUtils::HashString("MaxSpotFleetRequestCountExceeded");
 
-namespace Aws
-{
-namespace EC2
-{
-namespace EC2ErrorMapper
-{
 
 /*
 The if-else chains in this file are converted into a jump table by the compiler,
@@ -207,7 +207,7 @@ which allows constant time lookup. The chain has been broken into helper functio
 because MSVC has a maximum of 122 chained if-else blocks.
 */
 
-bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
+static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
 {
   if (hashCode == INVALID_ROUTE_TABLE_I_D__NOT_FOUND_HASH)
   {
@@ -302,11 +302,6 @@ bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
   else if (hashCode == INVALID_INSTANCE_I_D__NOT_LINKABLE_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_INSTANCE_I_D__NOT_LINKABLE), false);
-    return true;
-  }
-  else if (hashCode == SIGNATURE_DOES_NOT_MATCH_HASH)
-  {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::SIGNATURE_DOES_NOT_MATCH), false);
     return true;
   }
   else if (hashCode == INVALID_VPC_I_D__NOT_FOUND_HASH)
@@ -819,17 +814,17 @@ bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_NETWORK_ACL_I_D__NOT_FOUND), false);
     return true;
   }
-  return false;
-}
-
-bool GetErrorForNameHelper1(int hashCode, AWSError<CoreErrors>& error)
-{
-  if (hashCode == INVALID_VPN_CONNECTION_I_D__NOT_FOUND_HASH)
+  else if (hashCode == INVALID_VPN_CONNECTION_I_D__NOT_FOUND_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_VPN_CONNECTION_I_D__NOT_FOUND), false);
     return true;
   }
-  else if (hashCode == INVALID_NETWORK_INTERFACE_ATTACHMENT_I_D__MALFORMED_HASH)
+  return false;
+}
+
+static bool GetErrorForNameHelper1(int hashCode, AWSError<CoreErrors>& error)
+{
+  if (hashCode == INVALID_NETWORK_INTERFACE_ATTACHMENT_I_D__MALFORMED_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_NETWORK_INTERFACE_ATTACHMENT_I_D__MALFORMED), false);
     return true;
@@ -1090,7 +1085,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return error;
   }
-  if (GetErrorForNameHelper1(hashCode, error))
+  else if (GetErrorForNameHelper1(hashCode, error))
   {
     return error;
   }

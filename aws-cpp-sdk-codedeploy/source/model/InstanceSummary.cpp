@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -17,15 +17,21 @@
 
 #include <utility>
 
-using namespace Aws::CodeDeploy::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace CodeDeploy
+{
+namespace Model
+{
 
 InstanceSummary::InstanceSummary() : 
     m_deploymentIdHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
+    m_status(InstanceStatus::NOT_SET),
     m_statusHasBeenSet(false),
-    m_lastUpdatedAt(0.0),
     m_lastUpdatedAtHasBeenSet(false),
     m_lifecycleEventsHasBeenSet(false)
 {
@@ -34,8 +40,8 @@ InstanceSummary::InstanceSummary() :
 InstanceSummary::InstanceSummary(const JsonValue& jsonValue) : 
     m_deploymentIdHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
+    m_status(InstanceStatus::NOT_SET),
     m_statusHasBeenSet(false),
-    m_lastUpdatedAt(0.0),
     m_lastUpdatedAtHasBeenSet(false),
     m_lifecycleEventsHasBeenSet(false)
 {
@@ -108,8 +114,7 @@ JsonValue InstanceSummary::Jsonize() const
 
   if(m_lastUpdatedAtHasBeenSet)
   {
-   payload.WithDouble("lastUpdatedAt", m_lastUpdatedAt);
-
+   payload.WithDouble("lastUpdatedAt", m_lastUpdatedAt.SecondsWithMSPrecision());
   }
 
   if(m_lifecycleEventsHasBeenSet)
@@ -123,5 +128,9 @@ JsonValue InstanceSummary::Jsonize() const
 
   }
 
-  return std::move(payload);
+  return payload;
 }
+
+} // namespace Model
+} // namespace CodeDeploy
+} // namespace Aws

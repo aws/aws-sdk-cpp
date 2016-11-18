@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -14,6 +14,7 @@
 */
 #include <aws/s3/model/DeleteObjectRequest.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/http/URI.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
@@ -29,6 +30,7 @@ DeleteObjectRequest::DeleteObjectRequest() :
     m_keyHasBeenSet(false),
     m_mFAHasBeenSet(false),
     m_versionIdHasBeenSet(false),
+    m_requestPayer(RequestPayer::NOT_SET),
     m_requestPayerHasBeenSet(false)
 {
 }
@@ -43,9 +45,9 @@ void DeleteObjectRequest::AddQueryStringParameters(URI& uri) const
     Aws::StringStream ss;
     if(m_versionIdHasBeenSet)
     {
-     ss << m_versionId;
-     uri.AddQueryStringParameter("versionId", ss.str());
-     ss.str("");
+      ss << m_versionId;
+      uri.AddQueryStringParameter("versionId", ss.str());
+      ss.str("");
     }
 
 }
@@ -56,16 +58,15 @@ Aws::Http::HeaderValueCollection DeleteObjectRequest::GetRequestSpecificHeaders(
   Aws::StringStream ss;
   if(m_mFAHasBeenSet)
   {
-   ss << m_mFA;
-   headers.insert(Aws::Http::HeaderValuePair("x-amz-mfa", ss.str()));
-   ss.str("");
+    ss << m_mFA;
+    headers.insert(Aws::Http::HeaderValuePair("x-amz-mfa", ss.str()));
+    ss.str("");
   }
 
   if(m_requestPayerHasBeenSet)
   {
-   headers.insert(Aws::Http::HeaderValuePair("x-amz-request-payer", RequestPayerMapper::GetNameForRequestPayer(m_requestPayer)));
+    headers.insert(Aws::Http::HeaderValuePair("x-amz-request-payer", RequestPayerMapper::GetNameForRequestPayer(m_requestPayer)));
   }
 
-  return std::move(headers);
-
+  return headers;
 }

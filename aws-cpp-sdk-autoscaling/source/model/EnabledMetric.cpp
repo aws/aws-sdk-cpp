@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace AutoScaling
+{
+namespace Model
+{
 
 EnabledMetric::EnabledMetric() : 
     m_metricHasBeenSet(false),
@@ -65,10 +71,12 @@ void EnabledMetric::OutputToStream(Aws::OStream& oStream, const char* location, 
   {
       oStream << location << index << locationValue << ".Metric=" << StringUtils::URLEncode(m_metric.c_str()) << "&";
   }
+
   if(m_granularityHasBeenSet)
   {
       oStream << location << index << locationValue << ".Granularity=" << StringUtils::URLEncode(m_granularity.c_str()) << "&";
   }
+
 }
 
 void EnabledMetric::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -82,3 +90,7 @@ void EnabledMetric::OutputToStream(Aws::OStream& oStream, const char* location) 
       oStream << location << ".Granularity=" << StringUtils::URLEncode(m_granularity.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace AutoScaling
+} // namespace Aws

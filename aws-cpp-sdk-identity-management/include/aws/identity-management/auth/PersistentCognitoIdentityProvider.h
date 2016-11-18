@@ -12,6 +12,8 @@
   * express or implied. See the License for the specific language governing
   * permissions and limitations under the License.
   */
+#pragma once
+
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSFunction.h>
@@ -70,15 +72,15 @@ namespace Aws
         class AWS_IDENTITY_MANAGEMENT_API PersistentCognitoIdentityProvider_JsonFileImpl : public PersistentCognitoIdentityProvider
         {
         public:
-            PersistentCognitoIdentityProvider_JsonFileImpl(const Aws::String& identityPoolId, const Aws::String& accountId);
-            PersistentCognitoIdentityProvider_JsonFileImpl(const Aws::String& identityPoolId, const Aws::String& accountId, const char* identitiesFilePath);
+            PersistentCognitoIdentityProvider_JsonFileImpl(const Aws::String& identityPoolId, const Aws::String& accountId, bool disableCaching = false);
+            PersistentCognitoIdentityProvider_JsonFileImpl(const Aws::String& identityPoolId, const Aws::String& accountId, const char* identitiesFilePath, bool disableCaching = false);
 
-            bool HasIdentityId() const override { return !m_identityId.empty(); }
-            bool HasLogins() const override { return !m_logins.empty(); }
-            Aws::String GetIdentityId() const override { return m_identityId; }
-            Aws::Map<Aws::String, LoginAccessTokens> GetLogins() override { return m_logins; }
-            inline Aws::String GetAccountId() const override { return m_accountId; }
-            inline Aws::String GetIdentityPoolId() const override { return m_identityPoolId; }
+            bool HasIdentityId() const override;
+            bool HasLogins() const override;
+            Aws::String GetIdentityId() const override;
+            Aws::Map<Aws::String, LoginAccessTokens> GetLogins() override;
+            Aws::String GetAccountId() const override { return m_accountId; }
+            Aws::String GetIdentityPoolId() const override { return m_identityPoolId; }
             void PersistIdentityId(const Aws::String&) override;
             void PersistLogins(const Aws::Map<Aws::String, LoginAccessTokens>&) override;
 
@@ -87,12 +89,15 @@ namespace Aws
             void PersistChangesToFile(const Utils::Json::JsonValue&) const;
             void LoadAndParseDoc();
 
+            static void BuildLoginsMap(Aws::Map<Aws::String, Aws::Utils::Json::JsonValue>, Aws::Map<Aws::String, LoginAccessTokens>& logins);
+
             std::mutex m_docMutex;
             Aws::String m_identityPoolId;
             Aws::String m_accountId;
             Aws::String m_identityId;
             Aws::Map<Aws::String, LoginAccessTokens> m_logins;
             Aws::String m_identityFilePath;
+            bool m_disableCaching;
         };
 
         typedef PersistentCognitoIdentityProvider_JsonFileImpl DefaultPersistentCognitoIdentityProvider;

@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -27,6 +27,7 @@ GetItemRequest::GetItemRequest() :
     m_attributesToGetHasBeenSet(false),
     m_consistentRead(false),
     m_consistentReadHasBeenSet(false),
+    m_returnConsumedCapacity(ReturnConsumedCapacity::NOT_SET),
     m_returnConsumedCapacityHasBeenSet(false),
     m_projectionExpressionHasBeenSet(false),
     m_expressionAttributeNamesHasBeenSet(false)
@@ -100,7 +101,7 @@ Aws::Http::HeaderValueCollection GetItemRequest::GetRequestSpecificHeaders() con
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "DynamoDB_20120810.GetItem"));
-  return std::move(headers);
+  return headers;
 
 }
 

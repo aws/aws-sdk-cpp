@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -14,50 +14,66 @@
 */
 #include <aws/email/model/IdentityType.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
+#include <aws/core/utils/EnumParseOverflowContainer.h>
 
 using namespace Aws::Utils;
 
-static const int EmailAddress_HASH = HashingUtils::HashString("EmailAddress");
-static const int Domain_HASH = HashingUtils::HashString("Domain");
 
 namespace Aws
 {
-namespace SES
-{
-namespace Model
-{
-namespace IdentityTypeMapper
-{
-IdentityType GetIdentityTypeForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-
-  if (hashCode == EmailAddress_HASH)
+  namespace SES
   {
-    return IdentityType::EmailAddress;
-  }
-  else if (hashCode == Domain_HASH)
-  {
-    return IdentityType::Domain;
-  }
+    namespace Model
+    {
+      namespace IdentityTypeMapper
+      {
 
-  return IdentityType::NOT_SET;
-}
+        static const int EmailAddress_HASH = HashingUtils::HashString("EmailAddress");
+        static const int Domain_HASH = HashingUtils::HashString("Domain");
 
-Aws::String GetNameForIdentityType(IdentityType value)
-{
-  switch(value)
-  {
-  case IdentityType::EmailAddress:
-    return "EmailAddress";
-  case IdentityType::Domain:
-    return "Domain";
-  default:
-    return "";
-  }
-}
 
-} // namespace IdentityTypeMapper
-} // namespace Model
-} // namespace SES
+        IdentityType GetIdentityTypeForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == EmailAddress_HASH)
+          {
+            return IdentityType::EmailAddress;
+          }
+          else if (hashCode == Domain_HASH)
+          {
+            return IdentityType::Domain;
+          }
+          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<IdentityType>(hashCode);
+          }
+
+          return IdentityType::NOT_SET;
+        }
+
+        Aws::String GetNameForIdentityType(IdentityType enumValue)
+        {
+          switch(enumValue)
+          {
+          case IdentityType::EmailAddress:
+            return "EmailAddress";
+          case IdentityType::Domain:
+            return "Domain";
+          default:
+            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace IdentityTypeMapper
+    } // namespace Model
+  } // namespace SES
 } // namespace Aws

@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,20 +19,26 @@
 
 #include <utility>
 
-using namespace Aws::CloudFront::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace CloudFront
+{
+namespace Model
+{
 
 StreamingDistributionSummary::StreamingDistributionSummary() : 
     m_idHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_lastModifiedTime(0.0),
     m_lastModifiedTimeHasBeenSet(false),
     m_domainNameHasBeenSet(false),
     m_s3OriginHasBeenSet(false),
     m_aliasesHasBeenSet(false),
     m_trustedSignersHasBeenSet(false),
     m_commentHasBeenSet(false),
+    m_priceClass(PriceClass::NOT_SET),
     m_priceClassHasBeenSet(false),
     m_enabled(false),
     m_enabledHasBeenSet(false)
@@ -42,13 +48,13 @@ StreamingDistributionSummary::StreamingDistributionSummary() :
 StreamingDistributionSummary::StreamingDistributionSummary(const XmlNode& xmlNode) : 
     m_idHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_lastModifiedTime(0.0),
     m_lastModifiedTimeHasBeenSet(false),
     m_domainNameHasBeenSet(false),
     m_s3OriginHasBeenSet(false),
     m_aliasesHasBeenSet(false),
     m_trustedSignersHasBeenSet(false),
     m_commentHasBeenSet(false),
+    m_priceClass(PriceClass::NOT_SET),
     m_priceClassHasBeenSet(false),
     m_enabled(false),
     m_enabledHasBeenSet(false)
@@ -77,7 +83,7 @@ StreamingDistributionSummary& StreamingDistributionSummary::operator =(const Xml
     XmlNode lastModifiedTimeNode = resultNode.FirstChild("LastModifiedTime");
     if(!lastModifiedTimeNode.IsNull())
     {
-      m_lastModifiedTime = StringUtils::ConvertToDouble(StringUtils::Trim(lastModifiedTimeNode.GetText().c_str()).c_str());
+      m_lastModifiedTime = DateTime(StringUtils::Trim(lastModifiedTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_lastModifiedTimeHasBeenSet = true;
     }
     XmlNode domainNameNode = resultNode.FirstChild("DomainName");
@@ -144,10 +150,8 @@ void StreamingDistributionSummary::AddToNode(XmlNode& parentNode) const
 
   if(m_lastModifiedTimeHasBeenSet)
   {
-   XmlNode lastModifiedTimeNode = parentNode.CreateChildElement("LastModifiedTime");
-  ss << m_lastModifiedTime;
-   lastModifiedTimeNode.SetText(ss.str());
-  ss.str("");
+     XmlNode lastModifiedTimeNode = parentNode.CreateChildElement("LastModifiedTime");
+     lastModifiedTimeNode.SetText(m_lastModifiedTime.ToGmtString(DateFormat::ISO_8601));
   }
 
   if(m_domainNameHasBeenSet)
@@ -195,3 +199,7 @@ void StreamingDistributionSummary::AddToNode(XmlNode& parentNode) const
   }
 
 }
+
+} // namespace Model
+} // namespace CloudFront
+} // namespace Aws

@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -22,7 +22,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 DescribeKeyRequest::DescribeKeyRequest() : 
-    m_keyIdHasBeenSet(false)
+    m_keyIdHasBeenSet(false),
+    m_grantTokensHasBeenSet(false)
 {
 }
 
@@ -36,6 +37,17 @@ Aws::String DescribeKeyRequest::SerializePayload() const
 
   }
 
+  if(m_grantTokensHasBeenSet)
+  {
+   Array<JsonValue> grantTokensJsonList(m_grantTokens.size());
+   for(unsigned grantTokensIndex = 0; grantTokensIndex < grantTokensJsonList.GetLength(); ++grantTokensIndex)
+   {
+     grantTokensJsonList[grantTokensIndex].AsString(m_grantTokens[grantTokensIndex]);
+   }
+   payload.WithArray("GrantTokens", std::move(grantTokensJsonList));
+
+  }
+
   return payload.WriteReadable();
 }
 
@@ -43,7 +55,7 @@ Aws::Http::HeaderValueCollection DescribeKeyRequest::GetRequestSpecificHeaders()
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "TrentService.DescribeKey"));
-  return std::move(headers);
+  return headers;
 
 }
 

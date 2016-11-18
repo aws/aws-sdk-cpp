@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,17 +19,25 @@
 
 #include <utility>
 
-using namespace Aws::SES::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
+namespace Aws
+{
+namespace SES
+{
+namespace Model
+{
+
 IdentityVerificationAttributes::IdentityVerificationAttributes() : 
+    m_verificationStatus(VerificationStatus::NOT_SET),
     m_verificationStatusHasBeenSet(false),
     m_verificationTokenHasBeenSet(false)
 {
 }
 
 IdentityVerificationAttributes::IdentityVerificationAttributes(const XmlNode& xmlNode) : 
+    m_verificationStatus(VerificationStatus::NOT_SET),
     m_verificationStatusHasBeenSet(false),
     m_verificationTokenHasBeenSet(false)
 {
@@ -65,10 +73,12 @@ void IdentityVerificationAttributes::OutputToStream(Aws::OStream& oStream, const
   {
       oStream << location << index << locationValue << ".VerificationStatus=" << VerificationStatusMapper::GetNameForVerificationStatus(m_verificationStatus) << "&";
   }
+
   if(m_verificationTokenHasBeenSet)
   {
       oStream << location << index << locationValue << ".VerificationToken=" << StringUtils::URLEncode(m_verificationToken.c_str()) << "&";
   }
+
 }
 
 void IdentityVerificationAttributes::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -82,3 +92,7 @@ void IdentityVerificationAttributes::OutputToStream(Aws::OStream& oStream, const
       oStream << location << ".VerificationToken=" << StringUtils::URLEncode(m_verificationToken.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace SES
+} // namespace Aws

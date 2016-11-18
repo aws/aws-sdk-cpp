@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -29,7 +29,10 @@ UpdateDeploymentGroupRequest::UpdateDeploymentGroupRequest() :
     m_ec2TagFiltersHasBeenSet(false),
     m_onPremisesInstanceTagFiltersHasBeenSet(false),
     m_autoScalingGroupsHasBeenSet(false),
-    m_serviceRoleArnHasBeenSet(false)
+    m_serviceRoleArnHasBeenSet(false),
+    m_triggerConfigurationsHasBeenSet(false),
+    m_alarmConfigurationHasBeenSet(false),
+    m_autoRollbackConfigurationHasBeenSet(false)
 {
 }
 
@@ -100,6 +103,29 @@ Aws::String UpdateDeploymentGroupRequest::SerializePayload() const
 
   }
 
+  if(m_triggerConfigurationsHasBeenSet)
+  {
+   Array<JsonValue> triggerConfigurationsJsonList(m_triggerConfigurations.size());
+   for(unsigned triggerConfigurationsIndex = 0; triggerConfigurationsIndex < triggerConfigurationsJsonList.GetLength(); ++triggerConfigurationsIndex)
+   {
+     triggerConfigurationsJsonList[triggerConfigurationsIndex].AsObject(m_triggerConfigurations[triggerConfigurationsIndex].Jsonize());
+   }
+   payload.WithArray("triggerConfigurations", std::move(triggerConfigurationsJsonList));
+
+  }
+
+  if(m_alarmConfigurationHasBeenSet)
+  {
+   payload.WithObject("alarmConfiguration", m_alarmConfiguration.Jsonize());
+
+  }
+
+  if(m_autoRollbackConfigurationHasBeenSet)
+  {
+   payload.WithObject("autoRollbackConfiguration", m_autoRollbackConfiguration.Jsonize());
+
+  }
+
   return payload.WriteReadable();
 }
 
@@ -107,7 +133,7 @@ Aws::Http::HeaderValueCollection UpdateDeploymentGroupRequest::GetRequestSpecifi
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "CodeDeploy_20141006.UpdateDeploymentGroup"));
-  return std::move(headers);
+  return headers;
 
 }
 

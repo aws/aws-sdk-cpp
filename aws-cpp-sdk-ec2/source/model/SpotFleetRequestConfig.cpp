@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,21 +19,31 @@
 
 #include <utility>
 
-using namespace Aws::EC2::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
+
 SpotFleetRequestConfig::SpotFleetRequestConfig() : 
     m_spotFleetRequestIdHasBeenSet(false),
+    m_spotFleetRequestState(BatchState::NOT_SET),
     m_spotFleetRequestStateHasBeenSet(false),
-    m_spotFleetRequestConfigHasBeenSet(false)
+    m_spotFleetRequestConfigHasBeenSet(false),
+    m_createTimeHasBeenSet(false)
 {
 }
 
 SpotFleetRequestConfig::SpotFleetRequestConfig(const XmlNode& xmlNode) : 
     m_spotFleetRequestIdHasBeenSet(false),
+    m_spotFleetRequestState(BatchState::NOT_SET),
     m_spotFleetRequestStateHasBeenSet(false),
-    m_spotFleetRequestConfigHasBeenSet(false)
+    m_spotFleetRequestConfigHasBeenSet(false),
+    m_createTimeHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -62,6 +72,12 @@ SpotFleetRequestConfig& SpotFleetRequestConfig::operator =(const XmlNode& xmlNod
       m_spotFleetRequestConfig = spotFleetRequestConfigNode;
       m_spotFleetRequestConfigHasBeenSet = true;
     }
+    XmlNode createTimeNode = resultNode.FirstChild("createTime");
+    if(!createTimeNode.IsNull())
+    {
+      m_createTime = DateTime(StringUtils::Trim(createTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_createTimeHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -73,16 +89,24 @@ void SpotFleetRequestConfig::OutputToStream(Aws::OStream& oStream, const char* l
   {
       oStream << location << index << locationValue << ".SpotFleetRequestId=" << StringUtils::URLEncode(m_spotFleetRequestId.c_str()) << "&";
   }
+
   if(m_spotFleetRequestStateHasBeenSet)
   {
       oStream << location << index << locationValue << ".SpotFleetRequestState=" << BatchStateMapper::GetNameForBatchState(m_spotFleetRequestState) << "&";
   }
+
   if(m_spotFleetRequestConfigHasBeenSet)
   {
       Aws::StringStream spotFleetRequestConfigLocationAndMemberSs;
       spotFleetRequestConfigLocationAndMemberSs << location << index << locationValue << ".SpotFleetRequestConfig";
       m_spotFleetRequestConfig.OutputToStream(oStream, spotFleetRequestConfigLocationAndMemberSs.str().c_str());
   }
+
+  if(m_createTimeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".CreateTime=" << StringUtils::URLEncode(m_createTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+  }
+
 }
 
 void SpotFleetRequestConfig::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -101,4 +125,12 @@ void SpotFleetRequestConfig::OutputToStream(Aws::OStream& oStream, const char* l
       spotFleetRequestConfigLocationAndMember += ".SpotFleetRequestConfig";
       m_spotFleetRequestConfig.OutputToStream(oStream, spotFleetRequestConfigLocationAndMember.c_str());
   }
+  if(m_createTimeHasBeenSet)
+  {
+      oStream << location << ".CreateTime=" << StringUtils::URLEncode(m_createTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+  }
 }
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

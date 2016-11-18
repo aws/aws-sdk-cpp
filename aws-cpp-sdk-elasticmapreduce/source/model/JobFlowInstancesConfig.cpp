@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::EMR::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EMR
+{
+namespace Model
+{
 
 JobFlowInstancesConfig::JobFlowInstancesConfig() : 
     m_masterInstanceTypeHasBeenSet(false),
@@ -37,6 +43,7 @@ JobFlowInstancesConfig::JobFlowInstancesConfig() :
     m_ec2SubnetIdHasBeenSet(false),
     m_emrManagedMasterSecurityGroupHasBeenSet(false),
     m_emrManagedSlaveSecurityGroupHasBeenSet(false),
+    m_serviceAccessSecurityGroupHasBeenSet(false),
     m_additionalMasterSecurityGroupsHasBeenSet(false),
     m_additionalSlaveSecurityGroupsHasBeenSet(false)
 {
@@ -58,6 +65,7 @@ JobFlowInstancesConfig::JobFlowInstancesConfig(const JsonValue& jsonValue) :
     m_ec2SubnetIdHasBeenSet(false),
     m_emrManagedMasterSecurityGroupHasBeenSet(false),
     m_emrManagedSlaveSecurityGroupHasBeenSet(false),
+    m_serviceAccessSecurityGroupHasBeenSet(false),
     m_additionalMasterSecurityGroupsHasBeenSet(false),
     m_additionalSlaveSecurityGroupsHasBeenSet(false)
 {
@@ -151,6 +159,13 @@ JobFlowInstancesConfig& JobFlowInstancesConfig::operator =(const JsonValue& json
     m_emrManagedSlaveSecurityGroup = jsonValue.GetString("EmrManagedSlaveSecurityGroup");
 
     m_emrManagedSlaveSecurityGroupHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ServiceAccessSecurityGroup"))
+  {
+    m_serviceAccessSecurityGroup = jsonValue.GetString("ServiceAccessSecurityGroup");
+
+    m_serviceAccessSecurityGroupHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("AdditionalMasterSecurityGroups"))
@@ -257,6 +272,12 @@ JsonValue JobFlowInstancesConfig::Jsonize() const
 
   }
 
+  if(m_serviceAccessSecurityGroupHasBeenSet)
+  {
+   payload.WithString("ServiceAccessSecurityGroup", m_serviceAccessSecurityGroup);
+
+  }
+
   if(m_additionalMasterSecurityGroupsHasBeenSet)
   {
    Array<JsonValue> additionalMasterSecurityGroupsJsonList(m_additionalMasterSecurityGroups.size());
@@ -279,5 +300,9 @@ JsonValue JobFlowInstancesConfig::Jsonize() const
 
   }
 
-  return std::move(payload);
+  return payload;
 }
+
+} // namespace Model
+} // namespace EMR
+} // namespace Aws

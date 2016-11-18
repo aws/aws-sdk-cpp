@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::EC2::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
 
 ImportSnapshotTask::ImportSnapshotTask() : 
     m_importTaskIdHasBeenSet(false),
@@ -73,16 +79,19 @@ void ImportSnapshotTask::OutputToStream(Aws::OStream& oStream, const char* locat
   {
       oStream << location << index << locationValue << ".ImportTaskId=" << StringUtils::URLEncode(m_importTaskId.c_str()) << "&";
   }
+
   if(m_snapshotTaskDetailHasBeenSet)
   {
       Aws::StringStream snapshotTaskDetailLocationAndMemberSs;
       snapshotTaskDetailLocationAndMemberSs << location << index << locationValue << ".SnapshotTaskDetail";
       m_snapshotTaskDetail.OutputToStream(oStream, snapshotTaskDetailLocationAndMemberSs.str().c_str());
   }
+
   if(m_descriptionHasBeenSet)
   {
       oStream << location << index << locationValue << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
+
 }
 
 void ImportSnapshotTask::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -102,3 +111,7 @@ void ImportSnapshotTask::OutputToStream(Aws::OStream& oStream, const char* locat
       oStream << location << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

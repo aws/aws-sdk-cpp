@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -23,7 +23,9 @@ ModifySnapshotAttributeRequest::ModifySnapshotAttributeRequest() :
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
     m_snapshotIdHasBeenSet(false),
+    m_attribute(SnapshotAttributeName::NOT_SET),
     m_attributeHasBeenSet(false),
+    m_operationType(OperationType::NOT_SET),
     m_operationTypeHasBeenSet(false),
     m_userIdsHasBeenSet(false),
     m_groupNamesHasBeenSet(false),
@@ -39,18 +41,22 @@ Aws::String ModifySnapshotAttributeRequest::SerializePayload() const
   {
     ss << "DryRun=" << m_dryRun << "&";
   }
+
   if(m_snapshotIdHasBeenSet)
   {
     ss << "SnapshotId=" << StringUtils::URLEncode(m_snapshotId.c_str()) << "&";
   }
+
   if(m_attributeHasBeenSet)
   {
     ss << "Attribute=" << SnapshotAttributeNameMapper::GetNameForSnapshotAttributeName(m_attribute) << "&";
   }
+
   if(m_operationTypeHasBeenSet)
   {
     ss << "OperationType=" << OperationTypeMapper::GetNameForOperationType(m_operationType) << "&";
   }
+
   if(m_userIdsHasBeenSet)
   {
     unsigned userIdsCount = 1;
@@ -61,6 +67,7 @@ Aws::String ModifySnapshotAttributeRequest::SerializePayload() const
       userIdsCount++;
     }
   }
+
   if(m_groupNamesHasBeenSet)
   {
     unsigned groupNamesCount = 1;
@@ -71,11 +78,13 @@ Aws::String ModifySnapshotAttributeRequest::SerializePayload() const
       groupNamesCount++;
     }
   }
+
   if(m_createVolumePermissionHasBeenSet)
   {
-    m_createVolumePermission.OutputToStream(ss, "CreateVolumePermission.");
+    m_createVolumePermission.OutputToStream(ss, "CreateVolumePermission");
   }
-  ss << "Version=2015-04-15";
+
+  ss << "Version=2015-10-01";
   return ss.str();
 }
 

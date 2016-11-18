@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -26,7 +26,8 @@ UpdateServiceRequest::UpdateServiceRequest() :
     m_serviceHasBeenSet(false),
     m_desiredCount(0),
     m_desiredCountHasBeenSet(false),
-    m_taskDefinitionHasBeenSet(false)
+    m_taskDefinitionHasBeenSet(false),
+    m_deploymentConfigurationHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,12 @@ Aws::String UpdateServiceRequest::SerializePayload() const
 
   }
 
+  if(m_deploymentConfigurationHasBeenSet)
+  {
+   payload.WithObject("deploymentConfiguration", m_deploymentConfiguration.Jsonize());
+
+  }
+
   return payload.WriteReadable();
 }
 
@@ -65,7 +72,7 @@ Aws::Http::HeaderValueCollection UpdateServiceRequest::GetRequestSpecificHeaders
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AmazonEC2ContainerServiceV20141113.UpdateService"));
-  return std::move(headers);
+  return headers;
 
 }
 

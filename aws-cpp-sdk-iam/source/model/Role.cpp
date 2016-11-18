@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,16 +19,21 @@
 
 #include <utility>
 
-using namespace Aws::IAM::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace IAM
+{
+namespace Model
+{
 
 Role::Role() : 
     m_pathHasBeenSet(false),
     m_roleNameHasBeenSet(false),
     m_roleIdHasBeenSet(false),
     m_arnHasBeenSet(false),
-    m_createDate(0.0),
     m_createDateHasBeenSet(false),
     m_assumeRolePolicyDocumentHasBeenSet(false)
 {
@@ -39,7 +44,6 @@ Role::Role(const XmlNode& xmlNode) :
     m_roleNameHasBeenSet(false),
     m_roleIdHasBeenSet(false),
     m_arnHasBeenSet(false),
-    m_createDate(0.0),
     m_createDateHasBeenSet(false),
     m_assumeRolePolicyDocumentHasBeenSet(false)
 {
@@ -79,7 +83,7 @@ Role& Role::operator =(const XmlNode& xmlNode)
     XmlNode createDateNode = resultNode.FirstChild("CreateDate");
     if(!createDateNode.IsNull())
     {
-      m_createDate = StringUtils::ConvertToDouble(StringUtils::Trim(createDateNode.GetText().c_str()).c_str());
+      m_createDate = DateTime(StringUtils::Trim(createDateNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_createDateHasBeenSet = true;
     }
     XmlNode assumeRolePolicyDocumentNode = resultNode.FirstChild("AssumeRolePolicyDocument");
@@ -99,26 +103,32 @@ void Role::OutputToStream(Aws::OStream& oStream, const char* location, unsigned 
   {
       oStream << location << index << locationValue << ".Path=" << StringUtils::URLEncode(m_path.c_str()) << "&";
   }
+
   if(m_roleNameHasBeenSet)
   {
       oStream << location << index << locationValue << ".RoleName=" << StringUtils::URLEncode(m_roleName.c_str()) << "&";
   }
+
   if(m_roleIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".RoleId=" << StringUtils::URLEncode(m_roleId.c_str()) << "&";
   }
+
   if(m_arnHasBeenSet)
   {
       oStream << location << index << locationValue << ".Arn=" << StringUtils::URLEncode(m_arn.c_str()) << "&";
   }
+
   if(m_createDateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".CreateDate=" << m_createDate << "&";
+      oStream << location << index << locationValue << ".CreateDate=" << StringUtils::URLEncode(m_createDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_assumeRolePolicyDocumentHasBeenSet)
   {
       oStream << location << index << locationValue << ".AssumeRolePolicyDocument=" << StringUtils::URLEncode(m_assumeRolePolicyDocument.c_str()) << "&";
   }
+
 }
 
 void Role::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -141,10 +151,14 @@ void Role::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_createDateHasBeenSet)
   {
-      oStream << location << ".CreateDate=" << m_createDate << "&";
+      oStream << location << ".CreateDate=" << StringUtils::URLEncode(m_createDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_assumeRolePolicyDocumentHasBeenSet)
   {
       oStream << location << ".AssumeRolePolicyDocument=" << StringUtils::URLEncode(m_assumeRolePolicyDocument.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace IAM
+} // namespace Aws

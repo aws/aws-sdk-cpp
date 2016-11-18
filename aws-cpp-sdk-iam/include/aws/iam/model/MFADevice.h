@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@
 #include <aws/iam/IAM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -30,9 +31,11 @@ namespace IAM
 {
 namespace Model
 {
-  /*
-    <p>Contains information about an MFA device.</p> <p>This data type is used as a response element in the <a>ListMFADevices</a> action.</p>
-  */
+
+  /**
+   * <p>Contains information about an MFA device.</p> <p>This data type is used as a
+   * response element in the <a>ListMFADevices</a> action.</p>
+   */
   class AWS_IAM_API MFADevice
   {
   public:
@@ -43,97 +46,114 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>The user with whom the MFA device is associated.</p>
-    */
+    /**
+     * <p>The user with whom the MFA device is associated.</p>
+     */
     inline const Aws::String& GetUserName() const{ return m_userName; }
 
-    /*
-     <p>The user with whom the MFA device is associated.</p>
-    */
+    /**
+     * <p>The user with whom the MFA device is associated.</p>
+     */
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
-    /*
-     <p>The user with whom the MFA device is associated.</p>
-    */
+    /**
+     * <p>The user with whom the MFA device is associated.</p>
+     */
     inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
-    /*
-     <p>The user with whom the MFA device is associated.</p>
-    */
+    /**
+     * <p>The user with whom the MFA device is associated.</p>
+     */
     inline void SetUserName(const char* value) { m_userNameHasBeenSet = true; m_userName.assign(value); }
 
-    /*
-     <p>The user with whom the MFA device is associated.</p>
-    */
+    /**
+     * <p>The user with whom the MFA device is associated.</p>
+     */
     inline MFADevice& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
 
-    /*
-     <p>The user with whom the MFA device is associated.</p>
-    */
+    /**
+     * <p>The user with whom the MFA device is associated.</p>
+     */
     inline MFADevice& WithUserName(Aws::String&& value) { SetUserName(value); return *this;}
 
-    /*
-     <p>The user with whom the MFA device is associated.</p>
-    */
+    /**
+     * <p>The user with whom the MFA device is associated.</p>
+     */
     inline MFADevice& WithUserName(const char* value) { SetUserName(value); return *this;}
 
-    /*
-     <p> The serial number that uniquely identifies the MFA device. For virtual MFA devices, the serial number is the device ARN. </p>
-    */
+    /**
+     * <p>The serial number that uniquely identifies the MFA device. For virtual MFA
+     * devices, the serial number is the device ARN.</p>
+     */
     inline const Aws::String& GetSerialNumber() const{ return m_serialNumber; }
 
-    /*
-     <p> The serial number that uniquely identifies the MFA device. For virtual MFA devices, the serial number is the device ARN. </p>
-    */
+    /**
+     * <p>The serial number that uniquely identifies the MFA device. For virtual MFA
+     * devices, the serial number is the device ARN.</p>
+     */
     inline void SetSerialNumber(const Aws::String& value) { m_serialNumberHasBeenSet = true; m_serialNumber = value; }
 
-    /*
-     <p> The serial number that uniquely identifies the MFA device. For virtual MFA devices, the serial number is the device ARN. </p>
-    */
+    /**
+     * <p>The serial number that uniquely identifies the MFA device. For virtual MFA
+     * devices, the serial number is the device ARN.</p>
+     */
     inline void SetSerialNumber(Aws::String&& value) { m_serialNumberHasBeenSet = true; m_serialNumber = value; }
 
-    /*
-     <p> The serial number that uniquely identifies the MFA device. For virtual MFA devices, the serial number is the device ARN. </p>
-    */
+    /**
+     * <p>The serial number that uniquely identifies the MFA device. For virtual MFA
+     * devices, the serial number is the device ARN.</p>
+     */
     inline void SetSerialNumber(const char* value) { m_serialNumberHasBeenSet = true; m_serialNumber.assign(value); }
 
-    /*
-     <p> The serial number that uniquely identifies the MFA device. For virtual MFA devices, the serial number is the device ARN. </p>
-    */
+    /**
+     * <p>The serial number that uniquely identifies the MFA device. For virtual MFA
+     * devices, the serial number is the device ARN.</p>
+     */
     inline MFADevice& WithSerialNumber(const Aws::String& value) { SetSerialNumber(value); return *this;}
 
-    /*
-     <p> The serial number that uniquely identifies the MFA device. For virtual MFA devices, the serial number is the device ARN. </p>
-    */
+    /**
+     * <p>The serial number that uniquely identifies the MFA device. For virtual MFA
+     * devices, the serial number is the device ARN.</p>
+     */
     inline MFADevice& WithSerialNumber(Aws::String&& value) { SetSerialNumber(value); return *this;}
 
-    /*
-     <p> The serial number that uniquely identifies the MFA device. For virtual MFA devices, the serial number is the device ARN. </p>
-    */
+    /**
+     * <p>The serial number that uniquely identifies the MFA device. For virtual MFA
+     * devices, the serial number is the device ARN.</p>
+     */
     inline MFADevice& WithSerialNumber(const char* value) { SetSerialNumber(value); return *this;}
 
-    /*
-     <p>The date when the MFA device was enabled for the user.</p>
-    */
-    inline double GetEnableDate() const{ return m_enableDate; }
+    /**
+     * <p>The date when the MFA device was enabled for the user.</p>
+     */
+    inline const Aws::Utils::DateTime& GetEnableDate() const{ return m_enableDate; }
 
-    /*
-     <p>The date when the MFA device was enabled for the user.</p>
-    */
-    inline void SetEnableDate(double value) { m_enableDateHasBeenSet = true; m_enableDate = value; }
+    /**
+     * <p>The date when the MFA device was enabled for the user.</p>
+     */
+    inline void SetEnableDate(const Aws::Utils::DateTime& value) { m_enableDateHasBeenSet = true; m_enableDate = value; }
 
-    /*
-     <p>The date when the MFA device was enabled for the user.</p>
-    */
-    inline MFADevice& WithEnableDate(double value) { SetEnableDate(value); return *this;}
+    /**
+     * <p>The date when the MFA device was enabled for the user.</p>
+     */
+    inline void SetEnableDate(Aws::Utils::DateTime&& value) { m_enableDateHasBeenSet = true; m_enableDate = value; }
+
+    /**
+     * <p>The date when the MFA device was enabled for the user.</p>
+     */
+    inline MFADevice& WithEnableDate(const Aws::Utils::DateTime& value) { SetEnableDate(value); return *this;}
+
+    /**
+     * <p>The date when the MFA device was enabled for the user.</p>
+     */
+    inline MFADevice& WithEnableDate(Aws::Utils::DateTime&& value) { SetEnableDate(value); return *this;}
 
   private:
     Aws::String m_userName;
     bool m_userNameHasBeenSet;
     Aws::String m_serialNumber;
     bool m_serialNumberHasBeenSet;
-    double m_enableDate;
+    Aws::Utils::DateTime m_enableDate;
     bool m_enableDateHasBeenSet;
   };
 

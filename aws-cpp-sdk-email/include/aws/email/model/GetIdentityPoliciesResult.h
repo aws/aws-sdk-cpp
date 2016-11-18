@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -34,9 +34,9 @@ namespace SES
 {
 namespace Model
 {
-  /*
-    <p>Represents a map of policy names to policies returned from a successful <code>GetIdentityPolicies</code> request. </p>
-  */
+  /**
+   * <p>Represents the requested sending authorization policies.</p>
+   */
   class AWS_SES_API GetIdentityPoliciesResult
   {
   public:
@@ -44,64 +44,64 @@ namespace Model
     GetIdentityPoliciesResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     GetIdentityPoliciesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>A map of policy names to policies.</p>
-    */
+    /**
+     * <p>A map of policy names to policies.</p>
+     */
     inline const Aws::Map<Aws::String, Aws::String>& GetPolicies() const{ return m_policies; }
 
-    /*
-     <p>A map of policy names to policies.</p>
-    */
+    /**
+     * <p>A map of policy names to policies.</p>
+     */
     inline void SetPolicies(const Aws::Map<Aws::String, Aws::String>& value) { m_policies = value; }
 
-    /*
-     <p>A map of policy names to policies.</p>
-    */
+    /**
+     * <p>A map of policy names to policies.</p>
+     */
     inline void SetPolicies(Aws::Map<Aws::String, Aws::String>&& value) { m_policies = value; }
 
-    /*
-     <p>A map of policy names to policies.</p>
-    */
+    /**
+     * <p>A map of policy names to policies.</p>
+     */
     inline GetIdentityPoliciesResult& WithPolicies(const Aws::Map<Aws::String, Aws::String>& value) { SetPolicies(value); return *this;}
 
-    /*
-     <p>A map of policy names to policies.</p>
-    */
+    /**
+     * <p>A map of policy names to policies.</p>
+     */
     inline GetIdentityPoliciesResult& WithPolicies(Aws::Map<Aws::String, Aws::String>&& value) { SetPolicies(value); return *this;}
 
-    /*
-     <p>A map of policy names to policies.</p>
-    */
+    /**
+     * <p>A map of policy names to policies.</p>
+     */
     inline GetIdentityPoliciesResult& AddPolicies(const Aws::String& key, const Aws::String& value) { m_policies[key] = value; return *this; }
 
-    /*
-     <p>A map of policy names to policies.</p>
-    */
+    /**
+     * <p>A map of policy names to policies.</p>
+     */
     inline GetIdentityPoliciesResult& AddPolicies(Aws::String&& key, const Aws::String& value) { m_policies[key] = value; return *this; }
 
-    /*
-     <p>A map of policy names to policies.</p>
-    */
+    /**
+     * <p>A map of policy names to policies.</p>
+     */
     inline GetIdentityPoliciesResult& AddPolicies(const Aws::String& key, Aws::String&& value) { m_policies[key] = value; return *this; }
 
-    /*
-     <p>A map of policy names to policies.</p>
-    */
+    /**
+     * <p>A map of policy names to policies.</p>
+     */
     inline GetIdentityPoliciesResult& AddPolicies(Aws::String&& key, Aws::String&& value) { m_policies[key] = value; return *this; }
 
-    /*
-     <p>A map of policy names to policies.</p>
-    */
+    /**
+     * <p>A map of policy names to policies.</p>
+     */
     inline GetIdentityPoliciesResult& AddPolicies(const char* key, Aws::String&& value) { m_policies[key] = value; return *this; }
 
-    /*
-     <p>A map of policy names to policies.</p>
-    */
+    /**
+     * <p>A map of policy names to policies.</p>
+     */
     inline GetIdentityPoliciesResult& AddPolicies(Aws::String&& key, const char* value) { m_policies[key] = value; return *this; }
 
-    /*
-     <p>A map of policy names to policies.</p>
-    */
+    /**
+     * <p>A map of policy names to policies.</p>
+     */
     inline GetIdentityPoliciesResult& AddPolicies(const char* key, const char* value) { m_policies[key] = value; return *this; }
 
     

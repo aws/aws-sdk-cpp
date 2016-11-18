@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -28,12 +28,12 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 GetCredentialReportResult::GetCredentialReportResult() : 
-    m_generatedTime(0.0)
+    m_reportFormat(ReportFormatType::NOT_SET)
 {
 }
 
 GetCredentialReportResult::GetCredentialReportResult(const AmazonWebServiceResult<XmlDocument>& result) : 
-    m_generatedTime(0.0)
+    m_reportFormat(ReportFormatType::NOT_SET)
 {
   *this = result;
 }
@@ -63,7 +63,7 @@ GetCredentialReportResult& GetCredentialReportResult::operator =(const AmazonWeb
     XmlNode generatedTimeNode = resultNode.FirstChild("GeneratedTime");
     if(!generatedTimeNode.IsNull())
     {
-      m_generatedTime = StringUtils::ConvertToDouble(StringUtils::Trim(generatedTimeNode.GetText().c_str()).c_str());
+      m_generatedTime = DateTime(StringUtils::Trim(generatedTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
     }
   }
 

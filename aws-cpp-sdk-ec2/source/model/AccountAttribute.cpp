@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::EC2::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
 
 AccountAttribute::AccountAttribute() : 
     m_attributeNameHasBeenSet(false),
@@ -71,17 +77,18 @@ void AccountAttribute::OutputToStream(Aws::OStream& oStream, const char* locatio
   {
       oStream << location << index << locationValue << ".AttributeName=" << StringUtils::URLEncode(m_attributeName.c_str()) << "&";
   }
+
   if(m_attributeValuesHasBeenSet)
   {
-      unsigned attributeValuesIdx = 0;
+      unsigned attributeValuesIdx = 1;
       for(auto& item : m_attributeValues)
       {
-        attributeValuesIdx++;
         Aws::StringStream attributeValuesSs;
-        attributeValuesSs << location << index << locationValue << ".AttributeValueSet." << attributeValuesIdx;
+        attributeValuesSs << location << index << locationValue << ".AttributeValueSet." << attributeValuesIdx++;
         item.OutputToStream(oStream, attributeValuesSs.str().c_str());
       }
   }
+
 }
 
 void AccountAttribute::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -92,11 +99,16 @@ void AccountAttribute::OutputToStream(Aws::OStream& oStream, const char* locatio
   }
   if(m_attributeValuesHasBeenSet)
   {
+      unsigned attributeValuesIdx = 1;
       for(auto& item : m_attributeValues)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".item";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream attributeValuesSs;
+        attributeValuesSs << location <<  ".item." << attributeValuesIdx++;
+        item.OutputToStream(oStream, attributeValuesSs.str().c_str());
       }
   }
 }
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

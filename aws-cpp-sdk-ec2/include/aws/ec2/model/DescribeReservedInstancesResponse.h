@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -34,9 +34,9 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
+  /**
+   * <p>Contains the output for DescribeReservedInstances.</p>
+   */
   class AWS_EC2_API DescribeReservedInstancesResponse
   {
   public:
@@ -44,39 +44,39 @@ namespace Model
     DescribeReservedInstancesResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     DescribeReservedInstancesResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>A list of Reserved Instances.</p>
-    */
+    /**
+     * <p>A list of Reserved Instances.</p>
+     */
     inline const Aws::Vector<ReservedInstances>& GetReservedInstances() const{ return m_reservedInstances; }
 
-    /*
-     <p>A list of Reserved Instances.</p>
-    */
+    /**
+     * <p>A list of Reserved Instances.</p>
+     */
     inline void SetReservedInstances(const Aws::Vector<ReservedInstances>& value) { m_reservedInstances = value; }
 
-    /*
-     <p>A list of Reserved Instances.</p>
-    */
+    /**
+     * <p>A list of Reserved Instances.</p>
+     */
     inline void SetReservedInstances(Aws::Vector<ReservedInstances>&& value) { m_reservedInstances = value; }
 
-    /*
-     <p>A list of Reserved Instances.</p>
-    */
+    /**
+     * <p>A list of Reserved Instances.</p>
+     */
     inline DescribeReservedInstancesResponse& WithReservedInstances(const Aws::Vector<ReservedInstances>& value) { SetReservedInstances(value); return *this;}
 
-    /*
-     <p>A list of Reserved Instances.</p>
-    */
+    /**
+     * <p>A list of Reserved Instances.</p>
+     */
     inline DescribeReservedInstancesResponse& WithReservedInstances(Aws::Vector<ReservedInstances>&& value) { SetReservedInstances(value); return *this;}
 
-    /*
-     <p>A list of Reserved Instances.</p>
-    */
+    /**
+     * <p>A list of Reserved Instances.</p>
+     */
     inline DescribeReservedInstancesResponse& AddReservedInstances(const ReservedInstances& value) { m_reservedInstances.push_back(value); return *this; }
 
-    /*
-     <p>A list of Reserved Instances.</p>
-    */
+    /**
+     * <p>A list of Reserved Instances.</p>
+     */
     inline DescribeReservedInstancesResponse& AddReservedInstances(ReservedInstances&& value) { m_reservedInstances.push_back(value); return *this; }
 
     

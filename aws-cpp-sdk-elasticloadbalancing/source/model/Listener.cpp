@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::ElasticLoadBalancing::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace ElasticLoadBalancing
+{
+namespace Model
+{
 
 Listener::Listener() : 
     m_protocolHasBeenSet(false),
@@ -93,22 +99,27 @@ void Listener::OutputToStream(Aws::OStream& oStream, const char* location, unsig
   {
       oStream << location << index << locationValue << ".Protocol=" << StringUtils::URLEncode(m_protocol.c_str()) << "&";
   }
+
   if(m_loadBalancerPortHasBeenSet)
   {
       oStream << location << index << locationValue << ".LoadBalancerPort=" << m_loadBalancerPort << "&";
   }
+
   if(m_instanceProtocolHasBeenSet)
   {
       oStream << location << index << locationValue << ".InstanceProtocol=" << StringUtils::URLEncode(m_instanceProtocol.c_str()) << "&";
   }
+
   if(m_instancePortHasBeenSet)
   {
       oStream << location << index << locationValue << ".InstancePort=" << m_instancePort << "&";
   }
+
   if(m_sSLCertificateIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".SSLCertificateId=" << StringUtils::URLEncode(m_sSLCertificateId.c_str()) << "&";
   }
+
 }
 
 void Listener::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -134,3 +145,7 @@ void Listener::OutputToStream(Aws::OStream& oStream, const char* location) const
       oStream << location << ".SSLCertificateId=" << StringUtils::URLEncode(m_sSLCertificateId.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace ElasticLoadBalancing
+} // namespace Aws

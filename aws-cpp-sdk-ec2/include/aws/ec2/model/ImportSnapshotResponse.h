@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -34,9 +34,9 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
+  /**
+   * <p>Contains the output for ImportSnapshot.</p>
+   */
   class AWS_EC2_API ImportSnapshotResponse
   {
   public:
@@ -44,99 +44,99 @@ namespace Model
     ImportSnapshotResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     ImportSnapshotResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>The ID of the import snapshot task.</p>
-    */
+    /**
+     * <p>The ID of the import snapshot task.</p>
+     */
     inline const Aws::String& GetImportTaskId() const{ return m_importTaskId; }
 
-    /*
-     <p>The ID of the import snapshot task.</p>
-    */
+    /**
+     * <p>The ID of the import snapshot task.</p>
+     */
     inline void SetImportTaskId(const Aws::String& value) { m_importTaskId = value; }
 
-    /*
-     <p>The ID of the import snapshot task.</p>
-    */
+    /**
+     * <p>The ID of the import snapshot task.</p>
+     */
     inline void SetImportTaskId(Aws::String&& value) { m_importTaskId = value; }
 
-    /*
-     <p>The ID of the import snapshot task.</p>
-    */
+    /**
+     * <p>The ID of the import snapshot task.</p>
+     */
     inline void SetImportTaskId(const char* value) { m_importTaskId.assign(value); }
 
-    /*
-     <p>The ID of the import snapshot task.</p>
-    */
+    /**
+     * <p>The ID of the import snapshot task.</p>
+     */
     inline ImportSnapshotResponse& WithImportTaskId(const Aws::String& value) { SetImportTaskId(value); return *this;}
 
-    /*
-     <p>The ID of the import snapshot task.</p>
-    */
+    /**
+     * <p>The ID of the import snapshot task.</p>
+     */
     inline ImportSnapshotResponse& WithImportTaskId(Aws::String&& value) { SetImportTaskId(value); return *this;}
 
-    /*
-     <p>The ID of the import snapshot task.</p>
-    */
+    /**
+     * <p>The ID of the import snapshot task.</p>
+     */
     inline ImportSnapshotResponse& WithImportTaskId(const char* value) { SetImportTaskId(value); return *this;}
 
-    /*
-     <p>Information about the import snapshot task.</p>
-    */
+    /**
+     * <p>Information about the import snapshot task.</p>
+     */
     inline const SnapshotTaskDetail& GetSnapshotTaskDetail() const{ return m_snapshotTaskDetail; }
 
-    /*
-     <p>Information about the import snapshot task.</p>
-    */
+    /**
+     * <p>Information about the import snapshot task.</p>
+     */
     inline void SetSnapshotTaskDetail(const SnapshotTaskDetail& value) { m_snapshotTaskDetail = value; }
 
-    /*
-     <p>Information about the import snapshot task.</p>
-    */
+    /**
+     * <p>Information about the import snapshot task.</p>
+     */
     inline void SetSnapshotTaskDetail(SnapshotTaskDetail&& value) { m_snapshotTaskDetail = value; }
 
-    /*
-     <p>Information about the import snapshot task.</p>
-    */
+    /**
+     * <p>Information about the import snapshot task.</p>
+     */
     inline ImportSnapshotResponse& WithSnapshotTaskDetail(const SnapshotTaskDetail& value) { SetSnapshotTaskDetail(value); return *this;}
 
-    /*
-     <p>Information about the import snapshot task.</p>
-    */
+    /**
+     * <p>Information about the import snapshot task.</p>
+     */
     inline ImportSnapshotResponse& WithSnapshotTaskDetail(SnapshotTaskDetail&& value) { SetSnapshotTaskDetail(value); return *this;}
 
-    /*
-     <p>A description of the import snapshot task.</p>
-    */
+    /**
+     * <p>A description of the import snapshot task.</p>
+     */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
-    /*
-     <p>A description of the import snapshot task.</p>
-    */
+    /**
+     * <p>A description of the import snapshot task.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_description = value; }
 
-    /*
-     <p>A description of the import snapshot task.</p>
-    */
+    /**
+     * <p>A description of the import snapshot task.</p>
+     */
     inline void SetDescription(Aws::String&& value) { m_description = value; }
 
-    /*
-     <p>A description of the import snapshot task.</p>
-    */
+    /**
+     * <p>A description of the import snapshot task.</p>
+     */
     inline void SetDescription(const char* value) { m_description.assign(value); }
 
-    /*
-     <p>A description of the import snapshot task.</p>
-    */
+    /**
+     * <p>A description of the import snapshot task.</p>
+     */
     inline ImportSnapshotResponse& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
-    /*
-     <p>A description of the import snapshot task.</p>
-    */
+    /**
+     * <p>A description of the import snapshot task.</p>
+     */
     inline ImportSnapshotResponse& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
 
-    /*
-     <p>A description of the import snapshot task.</p>
-    */
+    /**
+     * <p>A description of the import snapshot task.</p>
+     */
     inline ImportSnapshotResponse& WithDescription(const char* value) { SetDescription(value); return *this;}
 
     

@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -73,64 +73,70 @@ namespace Model
         typedef std::future<PutEventsOutcome> PutEventsOutcomeCallable;
 } // namespace Model
 
-    class MobileAnalyticsClient;
+  class MobileAnalyticsClient;
 
     typedef std::function<void(const MobileAnalyticsClient*, const Model::PutEventsRequest&, const Model::PutEventsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutEventsResponseReceivedHandler;
 
-  /*
-    <p>Amazon Mobile Analytics is a service for collecting, visualizing, and understanding app usage data at scale.</p>
-  */
+  /**
+   * <p>Amazon Mobile Analytics is a service for collecting, visualizing, and
+   * understanding app usage data at scale.</p>
+   */
   class AWS_MOBILEANALYTICS_API MobileAnalyticsClient : public Aws::Client::AWSJsonClient
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
 
-            /**
+       /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         MobileAnalyticsClient(const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
 
-        /**
+       /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         MobileAnalyticsClient(const Auth::AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
 
-        /**
+       /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         MobileAnalyticsClient(const std::shared_ptr<Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration(),
-            const std::shared_ptr<Http::HttpClientFactory const>& httpClientFactory = nullptr);
+            const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
 
         virtual ~MobileAnalyticsClient();
-    
-        /*
-            <p>The PutEvents operation records one or more events. You can have up to 1,500 unique custom events per app, any combination of up to 40 attributes and metrics per custom event, and any number of attribute or metric values.</p>
-        */
+
+        /**
+         * <p>The PutEvents operation records one or more events. You can have up to 1,500
+         * unique custom events per app, any combination of up to 40 attributes and metrics
+         * per custom event, and any number of attribute or metric values.</p>
+         */
         virtual Model::PutEventsOutcome PutEvents(const Model::PutEventsRequest& request) const;
 
-        /*
-            <p>The PutEvents operation records one or more events. You can have up to 1,500 unique custom events per app, any combination of up to 40 attributes and metrics per custom event, and any number of attribute or metric values.</p>
-
-        returns a future to the operation so that it can be executed in parallel to other requests.
-        */
+        /**
+         * <p>The PutEvents operation records one or more events. You can have up to 1,500
+         * unique custom events per app, any combination of up to 40 attributes and metrics
+         * per custom event, and any number of attribute or metric values.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
         virtual Model::PutEventsOutcomeCallable PutEventsCallable(const Model::PutEventsRequest& request) const;
 
-        /*
-            <p>The PutEvents operation records one or more events. You can have up to 1,500 unique custom events per app, any combination of up to 40 attributes and metrics per custom event, and any number of attribute or metric values.</p>
-
-        Queues the request into a thread executor and triggers associated callback when operation has finished.
-        */
+        /**
+         * <p>The PutEvents operation records one or more events. You can have up to 1,500
+         * unique custom events per app, any combination of up to 40 attributes and metrics
+         * per custom event, and any number of attribute or metric values.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
         virtual void PutEventsAsync(const Model::PutEventsRequest& request, const PutEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
     private:
       void init(const Client::ClientConfiguration& clientConfiguration);
 
-    /**Async helpers**/
+        /**Async helpers**/
         void PutEventsAsyncHelper(const Model::PutEventsRequest& request, const PutEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;

@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -33,9 +33,9 @@ namespace SES
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
+  /**
+   * <p>Represents a unique message ID.</p>
+   */
   class AWS_SES_API SendBounceResult
   {
   public:
@@ -43,25 +43,39 @@ namespace Model
     SendBounceResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     SendBounceResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    
+    /**
+     * <p>The message ID of the bounce message.</p>
+     */
     inline const Aws::String& GetMessageId() const{ return m_messageId; }
 
-    
+    /**
+     * <p>The message ID of the bounce message.</p>
+     */
     inline void SetMessageId(const Aws::String& value) { m_messageId = value; }
 
-    
+    /**
+     * <p>The message ID of the bounce message.</p>
+     */
     inline void SetMessageId(Aws::String&& value) { m_messageId = value; }
 
-    
+    /**
+     * <p>The message ID of the bounce message.</p>
+     */
     inline void SetMessageId(const char* value) { m_messageId.assign(value); }
 
-    
+    /**
+     * <p>The message ID of the bounce message.</p>
+     */
     inline SendBounceResult& WithMessageId(const Aws::String& value) { SetMessageId(value); return *this;}
 
-    
+    /**
+     * <p>The message ID of the bounce message.</p>
+     */
     inline SendBounceResult& WithMessageId(Aws::String&& value) { SetMessageId(value); return *this;}
 
-    
+    /**
+     * <p>The message ID of the bounce message.</p>
+     */
     inline SendBounceResult& WithMessageId(const char* value) { SetMessageId(value); return *this;}
 
     

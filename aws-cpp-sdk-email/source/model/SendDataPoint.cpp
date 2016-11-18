@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,12 +19,17 @@
 
 #include <utility>
 
-using namespace Aws::SES::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
+namespace Aws
+{
+namespace SES
+{
+namespace Model
+{
+
 SendDataPoint::SendDataPoint() : 
-    m_timestamp(0.0),
     m_timestampHasBeenSet(false),
     m_deliveryAttempts(0),
     m_deliveryAttemptsHasBeenSet(false),
@@ -38,7 +43,6 @@ SendDataPoint::SendDataPoint() :
 }
 
 SendDataPoint::SendDataPoint(const XmlNode& xmlNode) : 
-    m_timestamp(0.0),
     m_timestampHasBeenSet(false),
     m_deliveryAttempts(0),
     m_deliveryAttemptsHasBeenSet(false),
@@ -61,7 +65,7 @@ SendDataPoint& SendDataPoint::operator =(const XmlNode& xmlNode)
     XmlNode timestampNode = resultNode.FirstChild("Timestamp");
     if(!timestampNode.IsNull())
     {
-      m_timestamp = StringUtils::ConvertToDouble(StringUtils::Trim(timestampNode.GetText().c_str()).c_str());
+      m_timestamp = DateTime(StringUtils::Trim(timestampNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_timestampHasBeenSet = true;
     }
     XmlNode deliveryAttemptsNode = resultNode.FirstChild("DeliveryAttempts");
@@ -97,31 +101,36 @@ void SendDataPoint::OutputToStream(Aws::OStream& oStream, const char* location, 
 {
   if(m_timestampHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Timestamp=" << m_timestamp << "&";
+      oStream << location << index << locationValue << ".Timestamp=" << StringUtils::URLEncode(m_timestamp.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_deliveryAttemptsHasBeenSet)
   {
       oStream << location << index << locationValue << ".DeliveryAttempts=" << m_deliveryAttempts << "&";
   }
+
   if(m_bouncesHasBeenSet)
   {
       oStream << location << index << locationValue << ".Bounces=" << m_bounces << "&";
   }
+
   if(m_complaintsHasBeenSet)
   {
       oStream << location << index << locationValue << ".Complaints=" << m_complaints << "&";
   }
+
   if(m_rejectsHasBeenSet)
   {
       oStream << location << index << locationValue << ".Rejects=" << m_rejects << "&";
   }
+
 }
 
 void SendDataPoint::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
   if(m_timestampHasBeenSet)
   {
-      oStream << location << ".Timestamp=" << m_timestamp << "&";
+      oStream << location << ".Timestamp=" << StringUtils::URLEncode(m_timestamp.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_deliveryAttemptsHasBeenSet)
   {
@@ -140,3 +149,7 @@ void SendDataPoint::OutputToStream(Aws::OStream& oStream, const char* location) 
       oStream << location << ".Rejects=" << m_rejects << "&";
   }
 }
+
+} // namespace Model
+} // namespace SES
+} // namespace Aws

@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/TelemetryStatus.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -31,9 +32,10 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    <p>Describes telemetry for a VPN tunnel.</p>
-  */
+
+  /**
+   * <p>Describes telemetry for a VPN tunnel.</p>
+   */
   class AWS_EC2_API VgwTelemetry
   {
   public:
@@ -44,141 +46,158 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>The Internet-routable IP address of the virtual private gateway's outside interface.</p>
-    */
+    /**
+     * <p>The Internet-routable IP address of the virtual private gateway's outside
+     * interface.</p>
+     */
     inline const Aws::String& GetOutsideIpAddress() const{ return m_outsideIpAddress; }
 
-    /*
-     <p>The Internet-routable IP address of the virtual private gateway's outside interface.</p>
-    */
+    /**
+     * <p>The Internet-routable IP address of the virtual private gateway's outside
+     * interface.</p>
+     */
     inline void SetOutsideIpAddress(const Aws::String& value) { m_outsideIpAddressHasBeenSet = true; m_outsideIpAddress = value; }
 
-    /*
-     <p>The Internet-routable IP address of the virtual private gateway's outside interface.</p>
-    */
+    /**
+     * <p>The Internet-routable IP address of the virtual private gateway's outside
+     * interface.</p>
+     */
     inline void SetOutsideIpAddress(Aws::String&& value) { m_outsideIpAddressHasBeenSet = true; m_outsideIpAddress = value; }
 
-    /*
-     <p>The Internet-routable IP address of the virtual private gateway's outside interface.</p>
-    */
+    /**
+     * <p>The Internet-routable IP address of the virtual private gateway's outside
+     * interface.</p>
+     */
     inline void SetOutsideIpAddress(const char* value) { m_outsideIpAddressHasBeenSet = true; m_outsideIpAddress.assign(value); }
 
-    /*
-     <p>The Internet-routable IP address of the virtual private gateway's outside interface.</p>
-    */
+    /**
+     * <p>The Internet-routable IP address of the virtual private gateway's outside
+     * interface.</p>
+     */
     inline VgwTelemetry& WithOutsideIpAddress(const Aws::String& value) { SetOutsideIpAddress(value); return *this;}
 
-    /*
-     <p>The Internet-routable IP address of the virtual private gateway's outside interface.</p>
-    */
+    /**
+     * <p>The Internet-routable IP address of the virtual private gateway's outside
+     * interface.</p>
+     */
     inline VgwTelemetry& WithOutsideIpAddress(Aws::String&& value) { SetOutsideIpAddress(value); return *this;}
 
-    /*
-     <p>The Internet-routable IP address of the virtual private gateway's outside interface.</p>
-    */
+    /**
+     * <p>The Internet-routable IP address of the virtual private gateway's outside
+     * interface.</p>
+     */
     inline VgwTelemetry& WithOutsideIpAddress(const char* value) { SetOutsideIpAddress(value); return *this;}
 
-    /*
-     <p>The status of the VPN tunnel.</p>
-    */
+    /**
+     * <p>The status of the VPN tunnel.</p>
+     */
     inline const TelemetryStatus& GetStatus() const{ return m_status; }
 
-    /*
-     <p>The status of the VPN tunnel.</p>
-    */
+    /**
+     * <p>The status of the VPN tunnel.</p>
+     */
     inline void SetStatus(const TelemetryStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
-    /*
-     <p>The status of the VPN tunnel.</p>
-    */
+    /**
+     * <p>The status of the VPN tunnel.</p>
+     */
     inline void SetStatus(TelemetryStatus&& value) { m_statusHasBeenSet = true; m_status = value; }
 
-    /*
-     <p>The status of the VPN tunnel.</p>
-    */
+    /**
+     * <p>The status of the VPN tunnel.</p>
+     */
     inline VgwTelemetry& WithStatus(const TelemetryStatus& value) { SetStatus(value); return *this;}
 
-    /*
-     <p>The status of the VPN tunnel.</p>
-    */
+    /**
+     * <p>The status of the VPN tunnel.</p>
+     */
     inline VgwTelemetry& WithStatus(TelemetryStatus&& value) { SetStatus(value); return *this;}
 
-    /*
-     <p>The date and time of the last change in status.</p>
-    */
-    inline double GetLastStatusChange() const{ return m_lastStatusChange; }
+    /**
+     * <p>The date and time of the last change in status.</p>
+     */
+    inline const Aws::Utils::DateTime& GetLastStatusChange() const{ return m_lastStatusChange; }
 
-    /*
-     <p>The date and time of the last change in status.</p>
-    */
-    inline void SetLastStatusChange(double value) { m_lastStatusChangeHasBeenSet = true; m_lastStatusChange = value; }
+    /**
+     * <p>The date and time of the last change in status.</p>
+     */
+    inline void SetLastStatusChange(const Aws::Utils::DateTime& value) { m_lastStatusChangeHasBeenSet = true; m_lastStatusChange = value; }
 
-    /*
-     <p>The date and time of the last change in status.</p>
-    */
-    inline VgwTelemetry& WithLastStatusChange(double value) { SetLastStatusChange(value); return *this;}
+    /**
+     * <p>The date and time of the last change in status.</p>
+     */
+    inline void SetLastStatusChange(Aws::Utils::DateTime&& value) { m_lastStatusChangeHasBeenSet = true; m_lastStatusChange = value; }
 
-    /*
-     <p>If an error occurs, a description of the error.</p>
-    */
+    /**
+     * <p>The date and time of the last change in status.</p>
+     */
+    inline VgwTelemetry& WithLastStatusChange(const Aws::Utils::DateTime& value) { SetLastStatusChange(value); return *this;}
+
+    /**
+     * <p>The date and time of the last change in status.</p>
+     */
+    inline VgwTelemetry& WithLastStatusChange(Aws::Utils::DateTime&& value) { SetLastStatusChange(value); return *this;}
+
+    /**
+     * <p>If an error occurs, a description of the error.</p>
+     */
     inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
 
-    /*
-     <p>If an error occurs, a description of the error.</p>
-    */
+    /**
+     * <p>If an error occurs, a description of the error.</p>
+     */
     inline void SetStatusMessage(const Aws::String& value) { m_statusMessageHasBeenSet = true; m_statusMessage = value; }
 
-    /*
-     <p>If an error occurs, a description of the error.</p>
-    */
+    /**
+     * <p>If an error occurs, a description of the error.</p>
+     */
     inline void SetStatusMessage(Aws::String&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = value; }
 
-    /*
-     <p>If an error occurs, a description of the error.</p>
-    */
+    /**
+     * <p>If an error occurs, a description of the error.</p>
+     */
     inline void SetStatusMessage(const char* value) { m_statusMessageHasBeenSet = true; m_statusMessage.assign(value); }
 
-    /*
-     <p>If an error occurs, a description of the error.</p>
-    */
+    /**
+     * <p>If an error occurs, a description of the error.</p>
+     */
     inline VgwTelemetry& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
 
-    /*
-     <p>If an error occurs, a description of the error.</p>
-    */
+    /**
+     * <p>If an error occurs, a description of the error.</p>
+     */
     inline VgwTelemetry& WithStatusMessage(Aws::String&& value) { SetStatusMessage(value); return *this;}
 
-    /*
-     <p>If an error occurs, a description of the error.</p>
-    */
+    /**
+     * <p>If an error occurs, a description of the error.</p>
+     */
     inline VgwTelemetry& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
 
-    /*
-     <p>The number of accepted routes.</p>
-    */
-    inline long GetAcceptedRouteCount() const{ return m_acceptedRouteCount; }
+    /**
+     * <p>The number of accepted routes.</p>
+     */
+    inline int GetAcceptedRouteCount() const{ return m_acceptedRouteCount; }
 
-    /*
-     <p>The number of accepted routes.</p>
-    */
-    inline void SetAcceptedRouteCount(long value) { m_acceptedRouteCountHasBeenSet = true; m_acceptedRouteCount = value; }
+    /**
+     * <p>The number of accepted routes.</p>
+     */
+    inline void SetAcceptedRouteCount(int value) { m_acceptedRouteCountHasBeenSet = true; m_acceptedRouteCount = value; }
 
-    /*
-     <p>The number of accepted routes.</p>
-    */
-    inline VgwTelemetry& WithAcceptedRouteCount(long value) { SetAcceptedRouteCount(value); return *this;}
+    /**
+     * <p>The number of accepted routes.</p>
+     */
+    inline VgwTelemetry& WithAcceptedRouteCount(int value) { SetAcceptedRouteCount(value); return *this;}
 
   private:
     Aws::String m_outsideIpAddress;
     bool m_outsideIpAddressHasBeenSet;
     TelemetryStatus m_status;
     bool m_statusHasBeenSet;
-    double m_lastStatusChange;
+    Aws::Utils::DateTime m_lastStatusChange;
     bool m_lastStatusChangeHasBeenSet;
     Aws::String m_statusMessage;
     bool m_statusMessageHasBeenSet;
-    long m_acceptedRouteCount;
+    int m_acceptedRouteCount;
     bool m_acceptedRouteCountHasBeenSet;
   };
 

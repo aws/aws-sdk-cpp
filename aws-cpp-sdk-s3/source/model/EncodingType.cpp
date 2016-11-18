@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -14,43 +14,59 @@
 */
 #include <aws/s3/model/EncodingType.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
+#include <aws/core/utils/EnumParseOverflowContainer.h>
 
 using namespace Aws::Utils;
 
-static const int url_HASH = HashingUtils::HashString("url");
 
 namespace Aws
 {
-namespace S3
-{
-namespace Model
-{
-namespace EncodingTypeMapper
-{
-EncodingType GetEncodingTypeForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-
-  if (hashCode == url_HASH)
+  namespace S3
   {
-    return EncodingType::url;
-  }
+    namespace Model
+    {
+      namespace EncodingTypeMapper
+      {
 
-  return EncodingType::NOT_SET;
-}
+        static const int url_HASH = HashingUtils::HashString("url");
 
-Aws::String GetNameForEncodingType(EncodingType value)
-{
-  switch(value)
-  {
-  case EncodingType::url:
-    return "url";
-  default:
-    return "";
-  }
-}
 
-} // namespace EncodingTypeMapper
-} // namespace Model
-} // namespace S3
+        EncodingType GetEncodingTypeForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == url_HASH)
+          {
+            return EncodingType::url;
+          }
+          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<EncodingType>(hashCode);
+          }
+
+          return EncodingType::NOT_SET;
+        }
+
+        Aws::String GetNameForEncodingType(EncodingType enumValue)
+        {
+          switch(enumValue)
+          {
+          case EncodingType::url:
+            return "url";
+          default:
+            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace EncodingTypeMapper
+    } // namespace Model
+  } // namespace S3
 } // namespace Aws

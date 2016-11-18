@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -17,15 +17,22 @@
 
 #include <utility>
 
-using namespace Aws::SWF::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace SWF
+{
+namespace Model
+{
 
 LambdaFunctionTimedOutEventAttributes::LambdaFunctionTimedOutEventAttributes() : 
     m_scheduledEventId(0),
     m_scheduledEventIdHasBeenSet(false),
     m_startedEventId(0),
     m_startedEventIdHasBeenSet(false),
+    m_timeoutType(LambdaFunctionTimeoutType::NOT_SET),
     m_timeoutTypeHasBeenSet(false)
 {
 }
@@ -35,6 +42,7 @@ LambdaFunctionTimedOutEventAttributes::LambdaFunctionTimedOutEventAttributes(con
     m_scheduledEventIdHasBeenSet(false),
     m_startedEventId(0),
     m_startedEventIdHasBeenSet(false),
+    m_timeoutType(LambdaFunctionTimeoutType::NOT_SET),
     m_timeoutTypeHasBeenSet(false)
 {
   *this = jsonValue;
@@ -87,5 +95,9 @@ JsonValue LambdaFunctionTimedOutEventAttributes::Jsonize() const
    payload.WithString("timeoutType", LambdaFunctionTimeoutTypeMapper::GetNameForLambdaFunctionTimeoutType(m_timeoutType));
   }
 
-  return std::move(payload);
+  return payload;
 }
+
+} // namespace Model
+} // namespace SWF
+} // namespace Aws

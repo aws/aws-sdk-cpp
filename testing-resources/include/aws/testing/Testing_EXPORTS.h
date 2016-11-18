@@ -15,8 +15,11 @@
 
 #pragma once
 
-#if defined (_MSC_VER)
-    #pragma warning(disable : 4251)
+#if defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)
+    #ifdef _MSC_VER
+        #pragma warning(disable : 4251)
+    #endif // MSVC
+
     #ifdef USE_IMPORT_EXPORT
         #ifdef AWS_TESTING_EXPORTS
             #define  AWS_TESTING_API __declspec(dllexport)
@@ -26,7 +29,7 @@
     #else
         #define AWS_TESTING_API
     #endif // USE_IMPORT_EXPORT
-#else /* defined (_WIN32) */
+#else // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)
     #define AWS_TESTING_API
-#endif
+#endif // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)
 

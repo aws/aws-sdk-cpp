@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -33,9 +33,9 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
+  /**
+   * <p>Contains the output of AssociateAddress.</p>
+   */
   class AWS_EC2_API AssociateAddressResponse
   {
   public:
@@ -43,39 +43,46 @@ namespace Model
     AssociateAddressResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AssociateAddressResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>[EC2-VPC] The ID that represents the association of the Elastic IP address with an instance.</p>
-    */
+    /**
+     * <p>[EC2-VPC] The ID that represents the association of the Elastic IP address
+     * with an instance.</p>
+     */
     inline const Aws::String& GetAssociationId() const{ return m_associationId; }
 
-    /*
-     <p>[EC2-VPC] The ID that represents the association of the Elastic IP address with an instance.</p>
-    */
+    /**
+     * <p>[EC2-VPC] The ID that represents the association of the Elastic IP address
+     * with an instance.</p>
+     */
     inline void SetAssociationId(const Aws::String& value) { m_associationId = value; }
 
-    /*
-     <p>[EC2-VPC] The ID that represents the association of the Elastic IP address with an instance.</p>
-    */
+    /**
+     * <p>[EC2-VPC] The ID that represents the association of the Elastic IP address
+     * with an instance.</p>
+     */
     inline void SetAssociationId(Aws::String&& value) { m_associationId = value; }
 
-    /*
-     <p>[EC2-VPC] The ID that represents the association of the Elastic IP address with an instance.</p>
-    */
+    /**
+     * <p>[EC2-VPC] The ID that represents the association of the Elastic IP address
+     * with an instance.</p>
+     */
     inline void SetAssociationId(const char* value) { m_associationId.assign(value); }
 
-    /*
-     <p>[EC2-VPC] The ID that represents the association of the Elastic IP address with an instance.</p>
-    */
+    /**
+     * <p>[EC2-VPC] The ID that represents the association of the Elastic IP address
+     * with an instance.</p>
+     */
     inline AssociateAddressResponse& WithAssociationId(const Aws::String& value) { SetAssociationId(value); return *this;}
 
-    /*
-     <p>[EC2-VPC] The ID that represents the association of the Elastic IP address with an instance.</p>
-    */
+    /**
+     * <p>[EC2-VPC] The ID that represents the association of the Elastic IP address
+     * with an instance.</p>
+     */
     inline AssociateAddressResponse& WithAssociationId(Aws::String&& value) { SetAssociationId(value); return *this;}
 
-    /*
-     <p>[EC2-VPC] The ID that represents the association of the Elastic IP address with an instance.</p>
-    */
+    /**
+     * <p>[EC2-VPC] The ID that represents the association of the Elastic IP address
+     * with an instance.</p>
+     */
     inline AssociateAddressResponse& WithAssociationId(const char* value) { SetAssociationId(value); return *this;}
 
     

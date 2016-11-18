@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ namespace Model
     eu_west_1,
     us_west_1,
     us_west_2,
+    ap_south_1,
     ap_southeast_1,
     ap_southeast_2,
     ap_northeast_1,

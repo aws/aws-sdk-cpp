@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -49,7 +49,11 @@ CreateClusterRequest::CreateClusterRequest() :
     m_hsmConfigurationIdentifierHasBeenSet(false),
     m_elasticIpHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
+    m_kmsKeyIdHasBeenSet(false),
+    m_enhancedVpcRouting(false),
+    m_enhancedVpcRoutingHasBeenSet(false),
+    m_additionalInfoHasBeenSet(false),
+    m_iamRolesHasBeenSet(false)
 {
 }
 
@@ -61,26 +65,32 @@ Aws::String CreateClusterRequest::SerializePayload() const
   {
     ss << "DBName=" << StringUtils::URLEncode(m_dBName.c_str()) << "&";
   }
+
   if(m_clusterIdentifierHasBeenSet)
   {
     ss << "ClusterIdentifier=" << StringUtils::URLEncode(m_clusterIdentifier.c_str()) << "&";
   }
+
   if(m_clusterTypeHasBeenSet)
   {
     ss << "ClusterType=" << StringUtils::URLEncode(m_clusterType.c_str()) << "&";
   }
+
   if(m_nodeTypeHasBeenSet)
   {
     ss << "NodeType=" << StringUtils::URLEncode(m_nodeType.c_str()) << "&";
   }
+
   if(m_masterUsernameHasBeenSet)
   {
     ss << "MasterUsername=" << StringUtils::URLEncode(m_masterUsername.c_str()) << "&";
   }
+
   if(m_masterUserPasswordHasBeenSet)
   {
     ss << "MasterUserPassword=" << StringUtils::URLEncode(m_masterUserPassword.c_str()) << "&";
   }
+
   if(m_clusterSecurityGroupsHasBeenSet)
   {
     unsigned clusterSecurityGroupsCount = 1;
@@ -91,6 +101,7 @@ Aws::String CreateClusterRequest::SerializePayload() const
       clusterSecurityGroupsCount++;
     }
   }
+
   if(m_vpcSecurityGroupIdsHasBeenSet)
   {
     unsigned vpcSecurityGroupIdsCount = 1;
@@ -101,62 +112,77 @@ Aws::String CreateClusterRequest::SerializePayload() const
       vpcSecurityGroupIdsCount++;
     }
   }
+
   if(m_clusterSubnetGroupNameHasBeenSet)
   {
     ss << "ClusterSubnetGroupName=" << StringUtils::URLEncode(m_clusterSubnetGroupName.c_str()) << "&";
   }
+
   if(m_availabilityZoneHasBeenSet)
   {
     ss << "AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
   }
+
   if(m_preferredMaintenanceWindowHasBeenSet)
   {
     ss << "PreferredMaintenanceWindow=" << StringUtils::URLEncode(m_preferredMaintenanceWindow.c_str()) << "&";
   }
+
   if(m_clusterParameterGroupNameHasBeenSet)
   {
     ss << "ClusterParameterGroupName=" << StringUtils::URLEncode(m_clusterParameterGroupName.c_str()) << "&";
   }
+
   if(m_automatedSnapshotRetentionPeriodHasBeenSet)
   {
     ss << "AutomatedSnapshotRetentionPeriod=" << m_automatedSnapshotRetentionPeriod << "&";
   }
+
   if(m_portHasBeenSet)
   {
     ss << "Port=" << m_port << "&";
   }
+
   if(m_clusterVersionHasBeenSet)
   {
     ss << "ClusterVersion=" << StringUtils::URLEncode(m_clusterVersion.c_str()) << "&";
   }
+
   if(m_allowVersionUpgradeHasBeenSet)
   {
     ss << "AllowVersionUpgrade=" << m_allowVersionUpgrade << "&";
   }
+
   if(m_numberOfNodesHasBeenSet)
   {
     ss << "NumberOfNodes=" << m_numberOfNodes << "&";
   }
+
   if(m_publiclyAccessibleHasBeenSet)
   {
     ss << "PubliclyAccessible=" << m_publiclyAccessible << "&";
   }
+
   if(m_encryptedHasBeenSet)
   {
     ss << "Encrypted=" << m_encrypted << "&";
   }
+
   if(m_hsmClientCertificateIdentifierHasBeenSet)
   {
     ss << "HsmClientCertificateIdentifier=" << StringUtils::URLEncode(m_hsmClientCertificateIdentifier.c_str()) << "&";
   }
+
   if(m_hsmConfigurationIdentifierHasBeenSet)
   {
     ss << "HsmConfigurationIdentifier=" << StringUtils::URLEncode(m_hsmConfigurationIdentifier.c_str()) << "&";
   }
+
   if(m_elasticIpHasBeenSet)
   {
     ss << "ElasticIp=" << StringUtils::URLEncode(m_elasticIp.c_str()) << "&";
   }
+
   if(m_tagsHasBeenSet)
   {
     unsigned tagsCount = 1;
@@ -166,10 +192,33 @@ Aws::String CreateClusterRequest::SerializePayload() const
       tagsCount++;
     }
   }
+
   if(m_kmsKeyIdHasBeenSet)
   {
     ss << "KmsKeyId=" << StringUtils::URLEncode(m_kmsKeyId.c_str()) << "&";
   }
+
+  if(m_enhancedVpcRoutingHasBeenSet)
+  {
+    ss << "EnhancedVpcRouting=" << m_enhancedVpcRouting << "&";
+  }
+
+  if(m_additionalInfoHasBeenSet)
+  {
+    ss << "AdditionalInfo=" << StringUtils::URLEncode(m_additionalInfo.c_str()) << "&";
+  }
+
+  if(m_iamRolesHasBeenSet)
+  {
+    unsigned iamRolesCount = 1;
+    for(auto& item : m_iamRoles)
+    {
+      ss << "IamRoles.member." << iamRolesCount << "="
+          << StringUtils::URLEncode(item.c_str()) << "&";
+      iamRolesCount++;
+    }
+  }
+
   ss << "Version=2012-12-01";
   return ss.str();
 }

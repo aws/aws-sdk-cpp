@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -21,7 +21,7 @@ namespace Aws
 {
 namespace EC2
 {
-enum class AWS_EC2_API EC2Errors
+enum class EC2Errors
 {
   //From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
@@ -44,7 +44,12 @@ enum class AWS_EC2_API EC2Errors
   RESOURCE_NOT_FOUND = 16,
   UNRECOGNIZED_CLIENT = 17,
   MALFORMED_QUERY_STRING = 18,
+  SLOW_DOWN = 19,
+  REQUEST_TIME_TOO_SKEWED = 20,
+  INVALID_SIGNATURE = 21,
+  SIGNATURE_DOES_NOT_MATCH = 22,
   NETWORK_CONNECTION = 99,
+  
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -202,7 +207,6 @@ enum class AWS_EC2_API EC2Errors
   SECURITY_GROUPS_PER_INSTANCE_LIMIT_EXCEEDED,
   SECURITY_GROUPS_PER_INTERFACE_LIMIT_EXCEEDED,
   SECURITY_GROUP_LIMIT_EXCEEDED,
-  SIGNATURE_DOES_NOT_MATCH,
   SNAPSHOT_LIMIT_EXCEEDED,
   SUBNET_LIMIT_EXCEEDED,
   TAG_LIMIT_EXCEEDED,

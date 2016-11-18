@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -26,13 +26,15 @@ using namespace Aws;
 
 ListMultipartUploadsResult::ListMultipartUploadsResult() : 
     m_maxUploads(0),
-    m_isTruncated(false)
+    m_isTruncated(false),
+    m_encodingType(EncodingType::NOT_SET)
 {
 }
 
 ListMultipartUploadsResult::ListMultipartUploadsResult(const AmazonWebServiceResult<XmlDocument>& result) : 
     m_maxUploads(0),
-    m_isTruncated(false)
+    m_isTruncated(false),
+    m_encodingType(EncodingType::NOT_SET)
 {
   *this = result;
 }
@@ -89,14 +91,14 @@ ListMultipartUploadsResult& ListMultipartUploadsResult::operator =(const AmazonW
     {
       m_isTruncated = StringUtils::ConvertToBool(StringUtils::Trim(isTruncatedNode.GetText().c_str()).c_str());
     }
-    XmlNode uploadsNode = resultNode.FirstChild("Uploads");
+    XmlNode uploadsNode = resultNode.FirstChild("Upload");
     if(!uploadsNode.IsNull())
     {
-      XmlNode uploadsMember = uploadsNode;
-      while(!uploadsMember.IsNull())
+      XmlNode uploadMember = uploadsNode;
+      while(!uploadMember.IsNull())
       {
-        m_uploads.push_back(uploadsMember);
-        uploadsMember = uploadsMember.NextNode("Upload");
+        m_uploads.push_back(uploadMember);
+        uploadMember = uploadMember.NextNode("Upload");
       }
 
     }

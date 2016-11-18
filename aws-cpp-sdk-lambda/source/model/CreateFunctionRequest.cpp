@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -23,15 +23,19 @@ using namespace Aws::Utils;
 
 CreateFunctionRequest::CreateFunctionRequest() : 
     m_functionNameHasBeenSet(false),
+    m_runtime(Runtime::NOT_SET),
     m_runtimeHasBeenSet(false),
     m_roleHasBeenSet(false),
     m_handlerHasBeenSet(false),
+    m_codeHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_timeout(0),
     m_timeoutHasBeenSet(false),
     m_memorySize(0),
     m_memorySizeHasBeenSet(false),
-    m_codeHasBeenSet(false)
+    m_publish(false),
+    m_publishHasBeenSet(false),
+    m_vpcConfigHasBeenSet(false)
 {
 }
 
@@ -62,6 +66,12 @@ Aws::String CreateFunctionRequest::SerializePayload() const
 
   }
 
+  if(m_codeHasBeenSet)
+  {
+   payload.WithObject("Code", m_code.Jsonize());
+
+  }
+
   if(m_descriptionHasBeenSet)
   {
    payload.WithString("Description", m_description);
@@ -80,9 +90,15 @@ Aws::String CreateFunctionRequest::SerializePayload() const
 
   }
 
-  if(m_codeHasBeenSet)
+  if(m_publishHasBeenSet)
   {
-   payload.WithObject("Code", m_code.Jsonize());
+   payload.WithBool("Publish", m_publish);
+
+  }
+
+  if(m_vpcConfigHasBeenSet)
+  {
+   payload.WithObject("VpcConfig", m_vpcConfig.Jsonize());
 
   }
 

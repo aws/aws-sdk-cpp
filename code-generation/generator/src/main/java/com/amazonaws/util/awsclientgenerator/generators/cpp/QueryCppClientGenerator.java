@@ -24,6 +24,7 @@ import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.cpp.Cpp
 import org.apache.velocity.Template;
 import org.apache.velocity.VelocityContext;
 
+import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -96,9 +97,9 @@ public class QueryCppClientGenerator extends CppClientGenerator {
             VelocityContext context = createContext(serviceModel);
 
             if (shape.isResult()) {
-                template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/xml/XmlResultHeader.vm");
+                template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/xml/XmlResultHeader.vm", StandardCharsets.UTF_8.name());
             } else if (!shape.isRequest() && shape.isStructure()) {
-                template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/queryxml/QueryXmlSubObjectHeader.vm");
+                template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/queryxml/QueryXmlSubObjectHeader.vm", StandardCharsets.UTF_8.name());
             }
 
             context.put("shape", shape);
@@ -107,7 +108,7 @@ public class QueryCppClientGenerator extends CppClientGenerator {
 
             String fileName = String.format("include/aws/%s/model/%s.h", serviceModel.getMetadata().getProjectName(),
                     shapeEntry.getKey());
-            return makeFile(template, context, fileName);
+            return makeFile(template, context, fileName, true);
         }
 
         return null;
@@ -125,11 +126,11 @@ public class QueryCppClientGenerator extends CppClientGenerator {
 
         if (shape.isStructure() && shape.isReferenced()) {
             if (shape.isRequest()) {
-                template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/queryxml/QueryRequestSource.vm");
+                template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/queryxml/QueryRequestSource.vm", StandardCharsets.UTF_8.name());
             } else if (shape.isResult()) {
-                template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/queryxml/QueryXmlResultSource.vm");
+                template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/queryxml/QueryXmlResultSource.vm", StandardCharsets.UTF_8.name());
             } else {
-                template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/queryxml/QueryXmlSubObjectSource.vm");
+                template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/queryxml/QueryXmlSubObjectSource.vm", StandardCharsets.UTF_8.name());
             }
         }
 
@@ -141,12 +142,12 @@ public class QueryCppClientGenerator extends CppClientGenerator {
         if (template == null)
             return null;
 
-        return makeFile(template, context, fileName);
+        return makeFile(template, context, fileName, true);
     }
 
     @Override
     protected SdkFileEntry generateClientHeaderFile(final ServiceModel serviceModel) throws Exception {
-        Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/xml/XmlServiceClientHeader.vm");
+        Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/xml/XmlServiceClientHeader.vm", StandardCharsets.UTF_8.name());
 
         VelocityContext context = createContext(serviceModel);
         context.put("CppViewHelper", CppViewHelper.class);
@@ -154,18 +155,18 @@ public class QueryCppClientGenerator extends CppClientGenerator {
         String fileName = String.format("include/aws/%s/%sClient.h", serviceModel.getMetadata().getProjectName(),
                 serviceModel.getMetadata().getClassNamePrefix());
 
-        return makeFile(template, context, fileName);
+        return makeFile(template, context, fileName, true);
     }
 
     @Override
     protected SdkFileEntry generateClientSourceFile(final ServiceModel serviceModel) throws Exception {
-        Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/queryxml/QueryXmlServiceClientSource.vm");
+        Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/queryxml/QueryXmlServiceClientSource.vm", StandardCharsets.UTF_8.name());
 
         VelocityContext context = createContext(serviceModel);
         context.put("CppViewHelper", CppViewHelper.class);
 
         String fileName = String.format("source/%sClient.cpp", serviceModel.getMetadata().getClassNamePrefix());
 
-        return makeFile(template, context, fileName);
+        return makeFile(template, context, fileName, true);
     }
 }

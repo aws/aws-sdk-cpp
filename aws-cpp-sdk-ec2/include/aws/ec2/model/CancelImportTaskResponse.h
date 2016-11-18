@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -33,9 +33,9 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
+  /**
+   * <p>Contains the output for CancelImportTask.</p>
+   */
   class AWS_EC2_API CancelImportTaskResponse
   {
   public:
@@ -43,109 +43,109 @@ namespace Model
     CancelImportTaskResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     CancelImportTaskResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>The ID of the task being canceled.</p>
-    */
+    /**
+     * <p>The ID of the task being canceled.</p>
+     */
     inline const Aws::String& GetImportTaskId() const{ return m_importTaskId; }
 
-    /*
-     <p>The ID of the task being canceled.</p>
-    */
+    /**
+     * <p>The ID of the task being canceled.</p>
+     */
     inline void SetImportTaskId(const Aws::String& value) { m_importTaskId = value; }
 
-    /*
-     <p>The ID of the task being canceled.</p>
-    */
+    /**
+     * <p>The ID of the task being canceled.</p>
+     */
     inline void SetImportTaskId(Aws::String&& value) { m_importTaskId = value; }
 
-    /*
-     <p>The ID of the task being canceled.</p>
-    */
+    /**
+     * <p>The ID of the task being canceled.</p>
+     */
     inline void SetImportTaskId(const char* value) { m_importTaskId.assign(value); }
 
-    /*
-     <p>The ID of the task being canceled.</p>
-    */
+    /**
+     * <p>The ID of the task being canceled.</p>
+     */
     inline CancelImportTaskResponse& WithImportTaskId(const Aws::String& value) { SetImportTaskId(value); return *this;}
 
-    /*
-     <p>The ID of the task being canceled.</p>
-    */
+    /**
+     * <p>The ID of the task being canceled.</p>
+     */
     inline CancelImportTaskResponse& WithImportTaskId(Aws::String&& value) { SetImportTaskId(value); return *this;}
 
-    /*
-     <p>The ID of the task being canceled.</p>
-    */
+    /**
+     * <p>The ID of the task being canceled.</p>
+     */
     inline CancelImportTaskResponse& WithImportTaskId(const char* value) { SetImportTaskId(value); return *this;}
 
-    /*
-     <p>The current state of the task being canceled.</p>
-    */
+    /**
+     * <p>The current state of the task being canceled.</p>
+     */
     inline const Aws::String& GetState() const{ return m_state; }
 
-    /*
-     <p>The current state of the task being canceled.</p>
-    */
+    /**
+     * <p>The current state of the task being canceled.</p>
+     */
     inline void SetState(const Aws::String& value) { m_state = value; }
 
-    /*
-     <p>The current state of the task being canceled.</p>
-    */
+    /**
+     * <p>The current state of the task being canceled.</p>
+     */
     inline void SetState(Aws::String&& value) { m_state = value; }
 
-    /*
-     <p>The current state of the task being canceled.</p>
-    */
+    /**
+     * <p>The current state of the task being canceled.</p>
+     */
     inline void SetState(const char* value) { m_state.assign(value); }
 
-    /*
-     <p>The current state of the task being canceled.</p>
-    */
+    /**
+     * <p>The current state of the task being canceled.</p>
+     */
     inline CancelImportTaskResponse& WithState(const Aws::String& value) { SetState(value); return *this;}
 
-    /*
-     <p>The current state of the task being canceled.</p>
-    */
+    /**
+     * <p>The current state of the task being canceled.</p>
+     */
     inline CancelImportTaskResponse& WithState(Aws::String&& value) { SetState(value); return *this;}
 
-    /*
-     <p>The current state of the task being canceled.</p>
-    */
+    /**
+     * <p>The current state of the task being canceled.</p>
+     */
     inline CancelImportTaskResponse& WithState(const char* value) { SetState(value); return *this;}
 
-    /*
-     <p>The current state of the task being canceled.</p>
-    */
+    /**
+     * <p>The current state of the task being canceled.</p>
+     */
     inline const Aws::String& GetPreviousState() const{ return m_previousState; }
 
-    /*
-     <p>The current state of the task being canceled.</p>
-    */
+    /**
+     * <p>The current state of the task being canceled.</p>
+     */
     inline void SetPreviousState(const Aws::String& value) { m_previousState = value; }
 
-    /*
-     <p>The current state of the task being canceled.</p>
-    */
+    /**
+     * <p>The current state of the task being canceled.</p>
+     */
     inline void SetPreviousState(Aws::String&& value) { m_previousState = value; }
 
-    /*
-     <p>The current state of the task being canceled.</p>
-    */
+    /**
+     * <p>The current state of the task being canceled.</p>
+     */
     inline void SetPreviousState(const char* value) { m_previousState.assign(value); }
 
-    /*
-     <p>The current state of the task being canceled.</p>
-    */
+    /**
+     * <p>The current state of the task being canceled.</p>
+     */
     inline CancelImportTaskResponse& WithPreviousState(const Aws::String& value) { SetPreviousState(value); return *this;}
 
-    /*
-     <p>The current state of the task being canceled.</p>
-    */
+    /**
+     * <p>The current state of the task being canceled.</p>
+     */
     inline CancelImportTaskResponse& WithPreviousState(Aws::String&& value) { SetPreviousState(value); return *this;}
 
-    /*
-     <p>The current state of the task being canceled.</p>
-    */
+    /**
+     * <p>The current state of the task being canceled.</p>
+     */
     inline CancelImportTaskResponse& WithPreviousState(const char* value) { SetPreviousState(value); return *this;}
 
     

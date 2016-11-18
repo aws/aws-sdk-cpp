@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -23,6 +23,9 @@ using namespace Aws::Utils;
 
 RegisterTaskDefinitionRequest::RegisterTaskDefinitionRequest() : 
     m_familyHasBeenSet(false),
+    m_taskRoleArnHasBeenSet(false),
+    m_networkMode(NetworkMode::NOT_SET),
+    m_networkModeHasBeenSet(false),
     m_containerDefinitionsHasBeenSet(false),
     m_volumesHasBeenSet(false)
 {
@@ -36,6 +39,17 @@ Aws::String RegisterTaskDefinitionRequest::SerializePayload() const
   {
    payload.WithString("family", m_family);
 
+  }
+
+  if(m_taskRoleArnHasBeenSet)
+  {
+   payload.WithString("taskRoleArn", m_taskRoleArn);
+
+  }
+
+  if(m_networkModeHasBeenSet)
+  {
+   payload.WithString("networkMode", NetworkModeMapper::GetNameForNetworkMode(m_networkMode));
   }
 
   if(m_containerDefinitionsHasBeenSet)
@@ -67,7 +81,7 @@ Aws::Http::HeaderValueCollection RegisterTaskDefinitionRequest::GetRequestSpecif
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AmazonEC2ContainerServiceV20141113.RegisterTaskDefinition"));
-  return std::move(headers);
+  return headers;
 
 }
 

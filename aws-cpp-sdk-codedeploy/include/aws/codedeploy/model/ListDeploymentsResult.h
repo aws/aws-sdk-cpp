@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -33,9 +33,9 @@ namespace CodeDeploy
 {
 namespace Model
 {
-  /*
-    <p>Represents the output of a list deployments operation.</p>
-  */
+  /**
+   * <p>Represents the output of a list deployments operation.</p>
+   */
   class AWS_CODEDEPLOY_API ListDeploymentsResult
   {
   public:
@@ -43,79 +43,93 @@ namespace Model
     ListDeploymentsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     ListDeploymentsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p>A list of deployment IDs.</p>
-    */
+    /**
+     * <p>A list of deployment IDs.</p>
+     */
     inline const Aws::Vector<Aws::String>& GetDeployments() const{ return m_deployments; }
 
-    /*
-     <p>A list of deployment IDs.</p>
-    */
+    /**
+     * <p>A list of deployment IDs.</p>
+     */
     inline void SetDeployments(const Aws::Vector<Aws::String>& value) { m_deployments = value; }
 
-    /*
-     <p>A list of deployment IDs.</p>
-    */
+    /**
+     * <p>A list of deployment IDs.</p>
+     */
     inline void SetDeployments(Aws::Vector<Aws::String>&& value) { m_deployments = value; }
 
-    /*
-     <p>A list of deployment IDs.</p>
-    */
+    /**
+     * <p>A list of deployment IDs.</p>
+     */
     inline ListDeploymentsResult& WithDeployments(const Aws::Vector<Aws::String>& value) { SetDeployments(value); return *this;}
 
-    /*
-     <p>A list of deployment IDs.</p>
-    */
+    /**
+     * <p>A list of deployment IDs.</p>
+     */
     inline ListDeploymentsResult& WithDeployments(Aws::Vector<Aws::String>&& value) { SetDeployments(value); return *this;}
 
-    /*
-     <p>A list of deployment IDs.</p>
-    */
+    /**
+     * <p>A list of deployment IDs.</p>
+     */
     inline ListDeploymentsResult& AddDeployments(const Aws::String& value) { m_deployments.push_back(value); return *this; }
 
-    /*
-     <p>A list of deployment IDs.</p>
-    */
+    /**
+     * <p>A list of deployment IDs.</p>
+     */
     inline ListDeploymentsResult& AddDeployments(Aws::String&& value) { m_deployments.push_back(value); return *this; }
 
-    /*
-     <p>A list of deployment IDs.</p>
-    */
+    /**
+     * <p>A list of deployment IDs.</p>
+     */
     inline ListDeploymentsResult& AddDeployments(const char* value) { m_deployments.push_back(value); return *this; }
 
-    /*
-     <p>If the amount of information that is returned is significantly large, an identifier will also be returned, which can be used in a subsequent list deployments call to return the next set of deployments in the list.</p>
-    */
+    /**
+     * <p>If a large amount of information is returned, an identifier is also returned.
+     * It can be used in a subsequent list deployments call to return the next set of
+     * deployments in the list.</p>
+     */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
-    /*
-     <p>If the amount of information that is returned is significantly large, an identifier will also be returned, which can be used in a subsequent list deployments call to return the next set of deployments in the list.</p>
-    */
+    /**
+     * <p>If a large amount of information is returned, an identifier is also returned.
+     * It can be used in a subsequent list deployments call to return the next set of
+     * deployments in the list.</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
-    /*
-     <p>If the amount of information that is returned is significantly large, an identifier will also be returned, which can be used in a subsequent list deployments call to return the next set of deployments in the list.</p>
-    */
+    /**
+     * <p>If a large amount of information is returned, an identifier is also returned.
+     * It can be used in a subsequent list deployments call to return the next set of
+     * deployments in the list.</p>
+     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
 
-    /*
-     <p>If the amount of information that is returned is significantly large, an identifier will also be returned, which can be used in a subsequent list deployments call to return the next set of deployments in the list.</p>
-    */
+    /**
+     * <p>If a large amount of information is returned, an identifier is also returned.
+     * It can be used in a subsequent list deployments call to return the next set of
+     * deployments in the list.</p>
+     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
-    /*
-     <p>If the amount of information that is returned is significantly large, an identifier will also be returned, which can be used in a subsequent list deployments call to return the next set of deployments in the list.</p>
-    */
+    /**
+     * <p>If a large amount of information is returned, an identifier is also returned.
+     * It can be used in a subsequent list deployments call to return the next set of
+     * deployments in the list.</p>
+     */
     inline ListDeploymentsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
-    /*
-     <p>If the amount of information that is returned is significantly large, an identifier will also be returned, which can be used in a subsequent list deployments call to return the next set of deployments in the list.</p>
-    */
+    /**
+     * <p>If a large amount of information is returned, an identifier is also returned.
+     * It can be used in a subsequent list deployments call to return the next set of
+     * deployments in the list.</p>
+     */
     inline ListDeploymentsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
-    /*
-     <p>If the amount of information that is returned is significantly large, an identifier will also be returned, which can be used in a subsequent list deployments call to return the next set of deployments in the list.</p>
-    */
+    /**
+     * <p>If a large amount of information is returned, an identifier is also returned.
+     * It can be used in a subsequent list deployments call to return the next set of
+     * deployments in the list.</p>
+     */
     inline ListDeploymentsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:

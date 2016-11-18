@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -25,138 +25,146 @@ namespace SimpleDB
 namespace Model
 {
 
-  /*
-  */
+  /**
+   */
   class AWS_SIMPLEDB_API GetAttributesRequest : public SimpleDBRequest
   {
   public:
     GetAttributesRequest();
     Aws::String SerializePayload() const override;
 
-
-    /*
-     The name of the domain in which to perform the operation.
-    */
+    /**
+     * The name of the domain in which to perform the operation.
+     */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
 
-    /*
-     The name of the domain in which to perform the operation.
-    */
+    /**
+     * The name of the domain in which to perform the operation.
+     */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
-    /*
-     The name of the domain in which to perform the operation.
-    */
+    /**
+     * The name of the domain in which to perform the operation.
+     */
     inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
-    /*
-     The name of the domain in which to perform the operation.
-    */
+    /**
+     * The name of the domain in which to perform the operation.
+     */
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
 
-    /*
-     The name of the domain in which to perform the operation.
-    */
+    /**
+     * The name of the domain in which to perform the operation.
+     */
     inline GetAttributesRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
 
-    /*
-     The name of the domain in which to perform the operation.
-    */
+    /**
+     * The name of the domain in which to perform the operation.
+     */
     inline GetAttributesRequest& WithDomainName(Aws::String&& value) { SetDomainName(value); return *this;}
 
-    /*
-     The name of the domain in which to perform the operation.
-    */
+    /**
+     * The name of the domain in which to perform the operation.
+     */
     inline GetAttributesRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
 
-    /*
-     The name of the item.
-    */
+    /**
+     * The name of the item.
+     */
     inline const Aws::String& GetItemName() const{ return m_itemName; }
 
-    /*
-     The name of the item.
-    */
+    /**
+     * The name of the item.
+     */
     inline void SetItemName(const Aws::String& value) { m_itemNameHasBeenSet = true; m_itemName = value; }
 
-    /*
-     The name of the item.
-    */
+    /**
+     * The name of the item.
+     */
     inline void SetItemName(Aws::String&& value) { m_itemNameHasBeenSet = true; m_itemName = value; }
 
-    /*
-     The name of the item.
-    */
+    /**
+     * The name of the item.
+     */
     inline void SetItemName(const char* value) { m_itemNameHasBeenSet = true; m_itemName.assign(value); }
 
-    /*
-     The name of the item.
-    */
+    /**
+     * The name of the item.
+     */
     inline GetAttributesRequest& WithItemName(const Aws::String& value) { SetItemName(value); return *this;}
 
-    /*
-     The name of the item.
-    */
+    /**
+     * The name of the item.
+     */
     inline GetAttributesRequest& WithItemName(Aws::String&& value) { SetItemName(value); return *this;}
 
-    /*
-     The name of the item.
-    */
+    /**
+     * The name of the item.
+     */
     inline GetAttributesRequest& WithItemName(const char* value) { SetItemName(value); return *this;}
 
-    /*
-     The names of the attributes.
-    */
+    /**
+     * The names of the attributes.
+     */
     inline const Aws::Vector<Aws::String>& GetAttributeNames() const{ return m_attributeNames; }
 
-    /*
-     The names of the attributes.
-    */
+    /**
+     * The names of the attributes.
+     */
     inline void SetAttributeNames(const Aws::Vector<Aws::String>& value) { m_attributeNamesHasBeenSet = true; m_attributeNames = value; }
 
-    /*
-     The names of the attributes.
-    */
+    /**
+     * The names of the attributes.
+     */
     inline void SetAttributeNames(Aws::Vector<Aws::String>&& value) { m_attributeNamesHasBeenSet = true; m_attributeNames = value; }
 
-    /*
-     The names of the attributes.
-    */
+    /**
+     * The names of the attributes.
+     */
     inline GetAttributesRequest& WithAttributeNames(const Aws::Vector<Aws::String>& value) { SetAttributeNames(value); return *this;}
 
-    /*
-     The names of the attributes.
-    */
+    /**
+     * The names of the attributes.
+     */
     inline GetAttributesRequest& WithAttributeNames(Aws::Vector<Aws::String>&& value) { SetAttributeNames(value); return *this;}
 
-    /*
-     The names of the attributes.
-    */
+    /**
+     * The names of the attributes.
+     */
     inline GetAttributesRequest& AddAttributeNames(const Aws::String& value) { m_attributeNamesHasBeenSet = true; m_attributeNames.push_back(value); return *this; }
 
-    /*
-     The names of the attributes.
-    */
+    /**
+     * The names of the attributes.
+     */
     inline GetAttributesRequest& AddAttributeNames(Aws::String&& value) { m_attributeNamesHasBeenSet = true; m_attributeNames.push_back(value); return *this; }
 
-    /*
-     The names of the attributes.
-    */
+    /**
+     * The names of the attributes.
+     */
     inline GetAttributesRequest& AddAttributeNames(const char* value) { m_attributeNamesHasBeenSet = true; m_attributeNames.push_back(value); return *this; }
 
-    /*
-     Determines whether or not strong consistency should be enforced when data is read from SimpleDB. If <code>true</code>, any data previously written to SimpleDB will be returned. Otherwise, results will be consistent eventually, and the client may not see data that was written immediately before your read.
-    */
+    /**
+     * Determines whether or not strong consistency should be enforced when data is
+     * read from SimpleDB. If <code>true</code>, any data previously written to
+     * SimpleDB will be returned. Otherwise, results will be consistent eventually, and
+     * the client may not see data that was written immediately before your read.
+     */
     inline bool GetConsistentRead() const{ return m_consistentRead; }
 
-    /*
-     Determines whether or not strong consistency should be enforced when data is read from SimpleDB. If <code>true</code>, any data previously written to SimpleDB will be returned. Otherwise, results will be consistent eventually, and the client may not see data that was written immediately before your read.
-    */
+    /**
+     * Determines whether or not strong consistency should be enforced when data is
+     * read from SimpleDB. If <code>true</code>, any data previously written to
+     * SimpleDB will be returned. Otherwise, results will be consistent eventually, and
+     * the client may not see data that was written immediately before your read.
+     */
     inline void SetConsistentRead(bool value) { m_consistentReadHasBeenSet = true; m_consistentRead = value; }
 
-    /*
-     Determines whether or not strong consistency should be enforced when data is read from SimpleDB. If <code>true</code>, any data previously written to SimpleDB will be returned. Otherwise, results will be consistent eventually, and the client may not see data that was written immediately before your read.
-    */
+    /**
+     * Determines whether or not strong consistency should be enforced when data is
+     * read from SimpleDB. If <code>true</code>, any data previously written to
+     * SimpleDB will be returned. Otherwise, results will be consistent eventually, and
+     * the client may not see data that was written immediately before your read.
+     */
     inline GetAttributesRequest& WithConsistentRead(bool value) { SetConsistentRead(value); return *this;}
 
   private:

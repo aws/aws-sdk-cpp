@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::EC2::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
 
 DhcpConfiguration::DhcpConfiguration() : 
     m_keyHasBeenSet(false),
@@ -71,17 +77,18 @@ void DhcpConfiguration::OutputToStream(Aws::OStream& oStream, const char* locati
   {
       oStream << location << index << locationValue << ".Key=" << StringUtils::URLEncode(m_key.c_str()) << "&";
   }
+
   if(m_valuesHasBeenSet)
   {
-      unsigned valuesIdx = 0;
+      unsigned valuesIdx = 1;
       for(auto& item : m_values)
       {
-        valuesIdx++;
         Aws::StringStream valuesSs;
-        valuesSs << location << index << locationValue << ".ValueSet." << valuesIdx;
+        valuesSs << location << index << locationValue << ".ValueSet." << valuesIdx++;
         item.OutputToStream(oStream, valuesSs.str().c_str());
       }
   }
+
 }
 
 void DhcpConfiguration::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -92,11 +99,16 @@ void DhcpConfiguration::OutputToStream(Aws::OStream& oStream, const char* locati
   }
   if(m_valuesHasBeenSet)
   {
+      unsigned valuesIdx = 1;
       for(auto& item : m_values)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".item";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream valuesSs;
+        valuesSs << location <<  ".item." << valuesIdx++;
+        item.OutputToStream(oStream, valuesSs.str().c_str());
       }
   }
 }
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

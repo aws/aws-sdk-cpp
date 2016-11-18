@@ -26,6 +26,7 @@ import java.util.LinkedList;
 import java.util.Map;
 import java.util.Queue;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 public class CppViewHelper {
     private static final Map<String, String> CORAL_TO_CPP_TYPE_MAPPING = new HashMap<>();
@@ -36,9 +37,9 @@ public class CppViewHelper {
 
     static {
         CORAL_TO_CPP_TYPE_MAPPING.put("long", "long long");
-        CORAL_TO_CPP_TYPE_MAPPING.put("integer", "long");
+        CORAL_TO_CPP_TYPE_MAPPING.put("integer", "int");
         CORAL_TO_CPP_TYPE_MAPPING.put("string", "Aws::String");
-        CORAL_TO_CPP_TYPE_MAPPING.put("timestamp", "double");
+        CORAL_TO_CPP_TYPE_MAPPING.put("timestamp", "Aws::Utils::DateTime");
         CORAL_TO_CPP_TYPE_MAPPING.put("boolean", "bool");
         CORAL_TO_CPP_TYPE_MAPPING.put("double", "double");
         CORAL_TO_CPP_TYPE_MAPPING.put("float", "double");
@@ -60,7 +61,6 @@ public class CppViewHelper {
         CORAL_TO_XML_CONVERSION_MAPPING.put("integer", "StringUtils::ConvertToInt32");
         CORAL_TO_XML_CONVERSION_MAPPING.put("boolean", "StringUtils::ConvertToBool");
         CORAL_TO_XML_CONVERSION_MAPPING.put("double", "StringUtils::ConvertToDouble");
-        CORAL_TO_XML_CONVERSION_MAPPING.put("timestamp", "StringUtils::ConvertToDouble");
         CORAL_TO_XML_CONVERSION_MAPPING.put("float", "StringUtils::ConvertToDouble");
 
 
@@ -68,7 +68,6 @@ public class CppViewHelper {
         CORAL_TYPE_TO_DEFAULT_VALUES.put("integer", "0");
         CORAL_TYPE_TO_DEFAULT_VALUES.put("boolean", "false");
         CORAL_TYPE_TO_DEFAULT_VALUES.put("double", "0.0");
-        CORAL_TYPE_TO_DEFAULT_VALUES.put("timestamp", "0.0");
         CORAL_TYPE_TO_DEFAULT_VALUES.put("float", "0.0");
 
         CORAL_TO_CONTENT_TYPE_MAPPING.put("json", "AMZN_JSON_CONTENT_TYPE_1_1");
@@ -172,10 +171,7 @@ public class CppViewHelper {
     public static Set<String> computeHeaderIncludes(String projectName, Shape shape) {
         Set<String> headers = new LinkedHashSet<>();
         Set<String> visited = new LinkedHashSet<>();
-        Queue<Shape> toVisit = new LinkedList<>();
-        for (ShapeMember member : shape.getMembers().values()) {
-            toVisit.add(member.getShape());
-        }
+        Queue<Shape> toVisit = shape.getMembers().values().stream().map(ShapeMember::getShape).collect(Collectors.toCollection(() -> new LinkedList<>()));
 
         while(!toVisit.isEmpty()) {
             Shape next = toVisit.remove();
@@ -199,6 +195,8 @@ public class CppViewHelper {
                 headers.add(formatModelIncludeName(projectName, next));
             }
         }
+
+        headers.addAll(shape.getMembers().values().stream().filter(member -> member.isIdempotencyToken()).map(member -> "<aws/core/utils/UUID.h>").collect(Collectors.toList()));
         return headers;
     }
 
@@ -215,6 +213,9 @@ public class CppViewHelper {
         }
         else if(shape.isString()) {
             return "<aws/core/utils/memory/stl/AWSString.h>";
+        }
+        else if(shape.isTimeStamp()) {
+            return "<aws/core/utils/DateTime.h>";
         }
         else if(shape.isBlob()) {
             return "<aws/core/utils/Array.h>";

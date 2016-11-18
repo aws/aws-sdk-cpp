@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::ECS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace ECS
+{
+namespace Model
+{
 
 Service::Service() : 
     m_serviceArnHasBeenSet(false),
@@ -34,9 +40,11 @@ Service::Service() :
     m_pendingCount(0),
     m_pendingCountHasBeenSet(false),
     m_taskDefinitionHasBeenSet(false),
+    m_deploymentConfigurationHasBeenSet(false),
     m_deploymentsHasBeenSet(false),
     m_roleArnHasBeenSet(false),
-    m_eventsHasBeenSet(false)
+    m_eventsHasBeenSet(false),
+    m_createdAtHasBeenSet(false)
 {
 }
 
@@ -53,9 +61,11 @@ Service::Service(const JsonValue& jsonValue) :
     m_pendingCount(0),
     m_pendingCountHasBeenSet(false),
     m_taskDefinitionHasBeenSet(false),
+    m_deploymentConfigurationHasBeenSet(false),
     m_deploymentsHasBeenSet(false),
     m_roleArnHasBeenSet(false),
-    m_eventsHasBeenSet(false)
+    m_eventsHasBeenSet(false),
+    m_createdAtHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -128,6 +138,13 @@ Service& Service::operator =(const JsonValue& jsonValue)
     m_taskDefinitionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("deploymentConfiguration"))
+  {
+    m_deploymentConfiguration = jsonValue.GetObject("deploymentConfiguration");
+
+    m_deploymentConfigurationHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("deployments"))
   {
     Array<JsonValue> deploymentsJsonList = jsonValue.GetArray("deployments");
@@ -153,6 +170,13 @@ Service& Service::operator =(const JsonValue& jsonValue)
       m_events.push_back(eventsJsonList[eventsIndex].AsObject());
     }
     m_eventsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("createdAt"))
+  {
+    m_createdAt = jsonValue.GetDouble("createdAt");
+
+    m_createdAtHasBeenSet = true;
   }
 
   return *this;
@@ -221,6 +245,12 @@ JsonValue Service::Jsonize() const
 
   }
 
+  if(m_deploymentConfigurationHasBeenSet)
+  {
+   payload.WithObject("deploymentConfiguration", m_deploymentConfiguration.Jsonize());
+
+  }
+
   if(m_deploymentsHasBeenSet)
   {
    Array<JsonValue> deploymentsJsonList(m_deployments.size());
@@ -249,5 +279,14 @@ JsonValue Service::Jsonize() const
 
   }
 
-  return std::move(payload);
+  if(m_createdAtHasBeenSet)
+  {
+   payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
+  }
+
+  return payload;
 }
+
+} // namespace Model
+} // namespace ECS
+} // namespace Aws

@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::CloudFront::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace CloudFront
+{
+namespace Model
+{
 
 DistributionConfig::DistributionConfig() : 
     m_callerReferenceHasBeenSet(false),
@@ -33,11 +39,13 @@ DistributionConfig::DistributionConfig() :
     m_customErrorResponsesHasBeenSet(false),
     m_commentHasBeenSet(false),
     m_loggingHasBeenSet(false),
+    m_priceClass(PriceClass::NOT_SET),
     m_priceClassHasBeenSet(false),
     m_enabled(false),
     m_enabledHasBeenSet(false),
     m_viewerCertificateHasBeenSet(false),
-    m_restrictionsHasBeenSet(false)
+    m_restrictionsHasBeenSet(false),
+    m_webACLIdHasBeenSet(false)
 {
 }
 
@@ -51,11 +59,13 @@ DistributionConfig::DistributionConfig(const XmlNode& xmlNode) :
     m_customErrorResponsesHasBeenSet(false),
     m_commentHasBeenSet(false),
     m_loggingHasBeenSet(false),
+    m_priceClass(PriceClass::NOT_SET),
     m_priceClassHasBeenSet(false),
     m_enabled(false),
     m_enabledHasBeenSet(false),
     m_viewerCertificateHasBeenSet(false),
-    m_restrictionsHasBeenSet(false)
+    m_restrictionsHasBeenSet(false),
+    m_webACLIdHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -143,6 +153,12 @@ DistributionConfig& DistributionConfig::operator =(const XmlNode& xmlNode)
     {
       m_restrictions = restrictionsNode;
       m_restrictionsHasBeenSet = true;
+    }
+    XmlNode webACLIdNode = resultNode.FirstChild("WebACLId");
+    if(!webACLIdNode.IsNull())
+    {
+      m_webACLId = StringUtils::Trim(webACLIdNode.GetText().c_str());
+      m_webACLIdHasBeenSet = true;
     }
   }
 
@@ -232,4 +248,14 @@ void DistributionConfig::AddToNode(XmlNode& parentNode) const
    m_restrictions.AddToNode(restrictionsNode);
   }
 
+  if(m_webACLIdHasBeenSet)
+  {
+   XmlNode webACLIdNode = parentNode.CreateChildElement("WebACLId");
+   webACLIdNode.SetText(m_webACLId);
+  }
+
 }
+
+} // namespace Model
+} // namespace CloudFront
+} // namespace Aws

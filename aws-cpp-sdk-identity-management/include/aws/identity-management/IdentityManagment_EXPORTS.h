@@ -15,18 +15,21 @@
 
 #pragma once
 
-#if defined (_MSC_VER)
-    #pragma warning(disable : 4251)
+#if defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)
+    #ifdef _MSC_VER
+        #pragma warning(disable : 4251)
+    #endif // _MSC_VER
+
     #ifdef USE_IMPORT_EXPORT
         #ifdef AWS_IDENTITY_MANAGEMENT_EXPORTS
             #define  AWS_IDENTITY_MANAGEMENT_API __declspec(dllexport)
-        #else
+        #else // AWS_IDENTITY_MANAGEMENT_EXPORTS
             #define  AWS_IDENTITY_MANAGEMENT_API __declspec(dllimport)
-        #endif /* AWS_CORE_EXPORTS */
-    #else
+        #endif // AWS_IDENTITY_MANAGEMENT_EXPORTS
+    #else // USE_IMPORT_EXPORT
         #define AWS_IDENTITY_MANAGEMENT_API
     #endif // USE_IMPORT_EXPORT
-#else /* defined (_WIN32) */
+#else // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)
     #define AWS_IDENTITY_MANAGEMENT_API
-#endif
+#endif // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)
 

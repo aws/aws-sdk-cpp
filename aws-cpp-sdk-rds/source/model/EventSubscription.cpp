@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,12 +19,17 @@
 
 #include <utility>
 
-using namespace Aws::RDS::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
+namespace Aws
+{
+namespace RDS
+{
+namespace Model
+{
+
 EventSubscription::EventSubscription() : 
-    m_idHasBeenSet(false),
     m_customerAwsIdHasBeenSet(false),
     m_custSubscriptionIdHasBeenSet(false),
     m_snsTopicArnHasBeenSet(false),
@@ -34,12 +39,12 @@ EventSubscription::EventSubscription() :
     m_sourceIdsListHasBeenSet(false),
     m_eventCategoriesListHasBeenSet(false),
     m_enabled(false),
-    m_enabledHasBeenSet(false)
+    m_enabledHasBeenSet(false),
+    m_eventSubscriptionArnHasBeenSet(false)
 {
 }
 
 EventSubscription::EventSubscription(const XmlNode& xmlNode) : 
-    m_idHasBeenSet(false),
     m_customerAwsIdHasBeenSet(false),
     m_custSubscriptionIdHasBeenSet(false),
     m_snsTopicArnHasBeenSet(false),
@@ -49,7 +54,8 @@ EventSubscription::EventSubscription(const XmlNode& xmlNode) :
     m_sourceIdsListHasBeenSet(false),
     m_eventCategoriesListHasBeenSet(false),
     m_enabled(false),
-    m_enabledHasBeenSet(false)
+    m_enabledHasBeenSet(false),
+    m_eventSubscriptionArnHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -60,12 +66,6 @@ EventSubscription& EventSubscription::operator =(const XmlNode& xmlNode)
 
   if(!resultNode.IsNull())
   {
-    XmlNode idNode = resultNode.FirstChild("Id");
-    if(!idNode.IsNull())
-    {
-      m_id = StringUtils::Trim(idNode.GetText().c_str());
-      m_idHasBeenSet = true;
-    }
     XmlNode customerAwsIdNode = resultNode.FirstChild("CustomerAwsId");
     if(!customerAwsIdNode.IsNull())
     {
@@ -132,6 +132,12 @@ EventSubscription& EventSubscription::operator =(const XmlNode& xmlNode)
       m_enabled = StringUtils::ConvertToBool(StringUtils::Trim(enabledNode.GetText().c_str()).c_str());
       m_enabledHasBeenSet = true;
     }
+    XmlNode eventSubscriptionArnNode = resultNode.FirstChild("EventSubscriptionArn");
+    if(!eventSubscriptionArnNode.IsNull())
+    {
+      m_eventSubscriptionArn = StringUtils::Trim(eventSubscriptionArnNode.GetText().c_str());
+      m_eventSubscriptionArnHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -139,60 +145,68 @@ EventSubscription& EventSubscription::operator =(const XmlNode& xmlNode)
 
 void EventSubscription::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  if(m_idHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Id=" << StringUtils::URLEncode(m_id.c_str()) << "&";
-  }
   if(m_customerAwsIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".CustomerAwsId=" << StringUtils::URLEncode(m_customerAwsId.c_str()) << "&";
   }
+
   if(m_custSubscriptionIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".CustSubscriptionId=" << StringUtils::URLEncode(m_custSubscriptionId.c_str()) << "&";
   }
+
   if(m_snsTopicArnHasBeenSet)
   {
       oStream << location << index << locationValue << ".SnsTopicArn=" << StringUtils::URLEncode(m_snsTopicArn.c_str()) << "&";
   }
+
   if(m_statusHasBeenSet)
   {
       oStream << location << index << locationValue << ".Status=" << StringUtils::URLEncode(m_status.c_str()) << "&";
   }
+
   if(m_subscriptionCreationTimeHasBeenSet)
   {
       oStream << location << index << locationValue << ".SubscriptionCreationTime=" << StringUtils::URLEncode(m_subscriptionCreationTime.c_str()) << "&";
   }
+
   if(m_sourceTypeHasBeenSet)
   {
       oStream << location << index << locationValue << ".SourceType=" << StringUtils::URLEncode(m_sourceType.c_str()) << "&";
   }
+
   if(m_sourceIdsListHasBeenSet)
   {
+      unsigned sourceIdsListIdx = 1;
       for(auto& item : m_sourceIdsList)
       {
-        oStream << location << index << locationValue << ".SourceId=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << index << locationValue << ".SourceId." << sourceIdsListIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
+
   if(m_eventCategoriesListHasBeenSet)
   {
+      unsigned eventCategoriesListIdx = 1;
       for(auto& item : m_eventCategoriesList)
       {
-        oStream << location << index << locationValue << ".EventCategory=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << index << locationValue << ".EventCategory." << eventCategoriesListIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
+
   if(m_enabledHasBeenSet)
   {
       oStream << location << index << locationValue << ".Enabled=" << m_enabled << "&";
   }
+
+  if(m_eventSubscriptionArnHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".EventSubscriptionArn=" << StringUtils::URLEncode(m_eventSubscriptionArn.c_str()) << "&";
+  }
+
 }
 
 void EventSubscription::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
-  if(m_idHasBeenSet)
-  {
-      oStream << location << ".Id=" << StringUtils::URLEncode(m_id.c_str()) << "&";
-  }
   if(m_customerAwsIdHasBeenSet)
   {
       oStream << location << ".CustomerAwsId=" << StringUtils::URLEncode(m_customerAwsId.c_str()) << "&";
@@ -219,20 +233,30 @@ void EventSubscription::OutputToStream(Aws::OStream& oStream, const char* locati
   }
   if(m_sourceIdsListHasBeenSet)
   {
+      unsigned sourceIdsListIdx = 1;
       for(auto& item : m_sourceIdsList)
       {
-        oStream << location << ".SourceId=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << ".SourceId." << sourceIdsListIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
   if(m_eventCategoriesListHasBeenSet)
   {
+      unsigned eventCategoriesListIdx = 1;
       for(auto& item : m_eventCategoriesList)
       {
-        oStream << location << ".EventCategory=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << ".EventCategory." << eventCategoriesListIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
   if(m_enabledHasBeenSet)
   {
       oStream << location << ".Enabled=" << m_enabled << "&";
   }
+  if(m_eventSubscriptionArnHasBeenSet)
+  {
+      oStream << location << ".EventSubscriptionArn=" << StringUtils::URLEncode(m_eventSubscriptionArn.c_str()) << "&";
+  }
 }
+
+} // namespace Model
+} // namespace RDS
+} // namespace Aws

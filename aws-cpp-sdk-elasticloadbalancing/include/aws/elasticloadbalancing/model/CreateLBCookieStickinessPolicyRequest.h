@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,98 +24,121 @@ namespace ElasticLoadBalancing
 namespace Model
 {
 
-  /*
-  */
+  /**
+   * <p>Contains the parameters for CreateLBCookieStickinessPolicy.</p>
+   */
   class AWS_ELASTICLOADBALANCING_API CreateLBCookieStickinessPolicyRequest : public ElasticLoadBalancingRequest
   {
   public:
     CreateLBCookieStickinessPolicyRequest();
     Aws::String SerializePayload() const override;
 
-
-    /*
-     <p>The name of the load balancer.</p>
-    */
+    /**
+     * <p>The name of the load balancer.</p>
+     */
     inline const Aws::String& GetLoadBalancerName() const{ return m_loadBalancerName; }
 
-    /*
-     <p>The name of the load balancer.</p>
-    */
+    /**
+     * <p>The name of the load balancer.</p>
+     */
     inline void SetLoadBalancerName(const Aws::String& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = value; }
 
-    /*
-     <p>The name of the load balancer.</p>
-    */
+    /**
+     * <p>The name of the load balancer.</p>
+     */
     inline void SetLoadBalancerName(Aws::String&& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = value; }
 
-    /*
-     <p>The name of the load balancer.</p>
-    */
+    /**
+     * <p>The name of the load balancer.</p>
+     */
     inline void SetLoadBalancerName(const char* value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName.assign(value); }
 
-    /*
-     <p>The name of the load balancer.</p>
-    */
+    /**
+     * <p>The name of the load balancer.</p>
+     */
     inline CreateLBCookieStickinessPolicyRequest& WithLoadBalancerName(const Aws::String& value) { SetLoadBalancerName(value); return *this;}
 
-    /*
-     <p>The name of the load balancer.</p>
-    */
+    /**
+     * <p>The name of the load balancer.</p>
+     */
     inline CreateLBCookieStickinessPolicyRequest& WithLoadBalancerName(Aws::String&& value) { SetLoadBalancerName(value); return *this;}
 
-    /*
-     <p>The name of the load balancer.</p>
-    */
+    /**
+     * <p>The name of the load balancer.</p>
+     */
     inline CreateLBCookieStickinessPolicyRequest& WithLoadBalancerName(const char* value) { SetLoadBalancerName(value); return *this;}
 
-    /*
-     <p>The name of the policy being created. This name must be unique within the set of policies for this load balancer.</p>
-    */
+    /**
+     * <p>The name of the policy being created. Policy names must consist of
+     * alphanumeric characters and dashes (-). This name must be unique within the set
+     * of policies for this load balancer.</p>
+     */
     inline const Aws::String& GetPolicyName() const{ return m_policyName; }
 
-    /*
-     <p>The name of the policy being created. This name must be unique within the set of policies for this load balancer.</p>
-    */
+    /**
+     * <p>The name of the policy being created. Policy names must consist of
+     * alphanumeric characters and dashes (-). This name must be unique within the set
+     * of policies for this load balancer.</p>
+     */
     inline void SetPolicyName(const Aws::String& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
 
-    /*
-     <p>The name of the policy being created. This name must be unique within the set of policies for this load balancer.</p>
-    */
+    /**
+     * <p>The name of the policy being created. Policy names must consist of
+     * alphanumeric characters and dashes (-). This name must be unique within the set
+     * of policies for this load balancer.</p>
+     */
     inline void SetPolicyName(Aws::String&& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
 
-    /*
-     <p>The name of the policy being created. This name must be unique within the set of policies for this load balancer.</p>
-    */
+    /**
+     * <p>The name of the policy being created. Policy names must consist of
+     * alphanumeric characters and dashes (-). This name must be unique within the set
+     * of policies for this load balancer.</p>
+     */
     inline void SetPolicyName(const char* value) { m_policyNameHasBeenSet = true; m_policyName.assign(value); }
 
-    /*
-     <p>The name of the policy being created. This name must be unique within the set of policies for this load balancer.</p>
-    */
+    /**
+     * <p>The name of the policy being created. Policy names must consist of
+     * alphanumeric characters and dashes (-). This name must be unique within the set
+     * of policies for this load balancer.</p>
+     */
     inline CreateLBCookieStickinessPolicyRequest& WithPolicyName(const Aws::String& value) { SetPolicyName(value); return *this;}
 
-    /*
-     <p>The name of the policy being created. This name must be unique within the set of policies for this load balancer.</p>
-    */
+    /**
+     * <p>The name of the policy being created. Policy names must consist of
+     * alphanumeric characters and dashes (-). This name must be unique within the set
+     * of policies for this load balancer.</p>
+     */
     inline CreateLBCookieStickinessPolicyRequest& WithPolicyName(Aws::String&& value) { SetPolicyName(value); return *this;}
 
-    /*
-     <p>The name of the policy being created. This name must be unique within the set of policies for this load balancer.</p>
-    */
+    /**
+     * <p>The name of the policy being created. Policy names must consist of
+     * alphanumeric characters and dashes (-). This name must be unique within the set
+     * of policies for this load balancer.</p>
+     */
     inline CreateLBCookieStickinessPolicyRequest& WithPolicyName(const char* value) { SetPolicyName(value); return *this;}
 
-    /*
-     <p>The time period, in seconds, after which the cookie should be considered stale. If you do not specify this parameter, the sticky session lasts for the duration of the browser session.</p>
-    */
+    /**
+     * <p>The time period, in seconds, after which the cookie should be considered
+     * stale. If you do not specify this parameter, the default value is 0, which
+     * indicates that the sticky session should last for the duration of the browser
+     * session.</p>
+     */
     inline long long GetCookieExpirationPeriod() const{ return m_cookieExpirationPeriod; }
 
-    /*
-     <p>The time period, in seconds, after which the cookie should be considered stale. If you do not specify this parameter, the sticky session lasts for the duration of the browser session.</p>
-    */
+    /**
+     * <p>The time period, in seconds, after which the cookie should be considered
+     * stale. If you do not specify this parameter, the default value is 0, which
+     * indicates that the sticky session should last for the duration of the browser
+     * session.</p>
+     */
     inline void SetCookieExpirationPeriod(long long value) { m_cookieExpirationPeriodHasBeenSet = true; m_cookieExpirationPeriod = value; }
 
-    /*
-     <p>The time period, in seconds, after which the cookie should be considered stale. If you do not specify this parameter, the sticky session lasts for the duration of the browser session.</p>
-    */
+    /**
+     * <p>The time period, in seconds, after which the cookie should be considered
+     * stale. If you do not specify this parameter, the default value is 0, which
+     * indicates that the sticky session should last for the duration of the browser
+     * session.</p>
+     */
     inline CreateLBCookieStickinessPolicyRequest& WithCookieExpirationPeriod(long long value) { SetCookieExpirationPeriod(value); return *this;}
 
   private:

@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -14,43 +14,59 @@
 */
 #include <aws/ec2/model/StatusName.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
+#include <aws/core/utils/EnumParseOverflowContainer.h>
 
 using namespace Aws::Utils;
 
-static const int reachability_HASH = HashingUtils::HashString("reachability");
 
 namespace Aws
 {
-namespace EC2
-{
-namespace Model
-{
-namespace StatusNameMapper
-{
-StatusName GetStatusNameForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-
-  if (hashCode == reachability_HASH)
+  namespace EC2
   {
-    return StatusName::reachability;
-  }
+    namespace Model
+    {
+      namespace StatusNameMapper
+      {
 
-  return StatusName::NOT_SET;
-}
+        static const int reachability_HASH = HashingUtils::HashString("reachability");
 
-Aws::String GetNameForStatusName(StatusName value)
-{
-  switch(value)
-  {
-  case StatusName::reachability:
-    return "reachability";
-  default:
-    return "";
-  }
-}
 
-} // namespace StatusNameMapper
-} // namespace Model
-} // namespace EC2
+        StatusName GetStatusNameForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == reachability_HASH)
+          {
+            return StatusName::reachability;
+          }
+          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<StatusName>(hashCode);
+          }
+
+          return StatusName::NOT_SET;
+        }
+
+        Aws::String GetNameForStatusName(StatusName enumValue)
+        {
+          switch(enumValue)
+          {
+          case StatusName::reachability:
+            return "reachability";
+          default:
+            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace StatusNameMapper
+    } // namespace Model
+  } // namespace EC2
 } // namespace Aws

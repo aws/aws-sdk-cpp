@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::EC2::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
 
 InstancePrivateIpAddress::InstancePrivateIpAddress() : 
     m_privateIpAddressHasBeenSet(false),
@@ -83,20 +89,24 @@ void InstancePrivateIpAddress::OutputToStream(Aws::OStream& oStream, const char*
   {
       oStream << location << index << locationValue << ".PrivateIpAddress=" << StringUtils::URLEncode(m_privateIpAddress.c_str()) << "&";
   }
+
   if(m_privateDnsNameHasBeenSet)
   {
       oStream << location << index << locationValue << ".PrivateDnsName=" << StringUtils::URLEncode(m_privateDnsName.c_str()) << "&";
   }
+
   if(m_primaryHasBeenSet)
   {
       oStream << location << index << locationValue << ".Primary=" << m_primary << "&";
   }
+
   if(m_associationHasBeenSet)
   {
       Aws::StringStream associationLocationAndMemberSs;
       associationLocationAndMemberSs << location << index << locationValue << ".Association";
       m_association.OutputToStream(oStream, associationLocationAndMemberSs.str().c_str());
   }
+
 }
 
 void InstancePrivateIpAddress::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -120,3 +130,7 @@ void InstancePrivateIpAddress::OutputToStream(Aws::OStream& oStream, const char*
       m_association.OutputToStream(oStream, associationLocationAndMember.c_str());
   }
 }
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::SES::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace SES
+{
+namespace Model
+{
 
 BounceAction::BounceAction() : 
     m_topicArnHasBeenSet(false),
@@ -89,22 +95,27 @@ void BounceAction::OutputToStream(Aws::OStream& oStream, const char* location, u
   {
       oStream << location << index << locationValue << ".TopicArn=" << StringUtils::URLEncode(m_topicArn.c_str()) << "&";
   }
+
   if(m_smtpReplyCodeHasBeenSet)
   {
       oStream << location << index << locationValue << ".SmtpReplyCode=" << StringUtils::URLEncode(m_smtpReplyCode.c_str()) << "&";
   }
+
   if(m_statusCodeHasBeenSet)
   {
       oStream << location << index << locationValue << ".StatusCode=" << StringUtils::URLEncode(m_statusCode.c_str()) << "&";
   }
+
   if(m_messageHasBeenSet)
   {
       oStream << location << index << locationValue << ".Message=" << StringUtils::URLEncode(m_message.c_str()) << "&";
   }
+
   if(m_senderHasBeenSet)
   {
       oStream << location << index << locationValue << ".Sender=" << StringUtils::URLEncode(m_sender.c_str()) << "&";
   }
+
 }
 
 void BounceAction::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -130,3 +141,7 @@ void BounceAction::OutputToStream(Aws::OStream& oStream, const char* location) c
       oStream << location << ".Sender=" << StringUtils::URLEncode(m_sender.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace SES
+} // namespace Aws

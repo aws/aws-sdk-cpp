@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -29,7 +29,10 @@ UpdateFunctionConfigurationRequest::UpdateFunctionConfigurationRequest() :
     m_timeout(0),
     m_timeoutHasBeenSet(false),
     m_memorySize(0),
-    m_memorySizeHasBeenSet(false)
+    m_memorySizeHasBeenSet(false),
+    m_vpcConfigHasBeenSet(false),
+    m_runtime(Runtime::NOT_SET),
+    m_runtimeHasBeenSet(false)
 {
 }
 
@@ -65,6 +68,17 @@ Aws::String UpdateFunctionConfigurationRequest::SerializePayload() const
   {
    payload.WithInteger("MemorySize", m_memorySize);
 
+  }
+
+  if(m_vpcConfigHasBeenSet)
+  {
+   payload.WithObject("VpcConfig", m_vpcConfig.Jsonize());
+
+  }
+
+  if(m_runtimeHasBeenSet)
+  {
+   payload.WithString("Runtime", RuntimeMapper::GetNameForRuntime(m_runtime));
   }
 
   return payload.WriteReadable();

@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -23,14 +23,18 @@ namespace SES
 namespace Model
 {
 
-  /*
-  */
+  /**
+   * <p>Represents a request to list the IP address filters that exist under your AWS
+   * account. You use IP address filters when you receive email with Amazon SES. For
+   * more information, see the <a
+   * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon
+   * SES Developer Guide</a>.</p>
+   */
   class AWS_SES_API ListReceiptFiltersRequest : public SESRequest
   {
   public:
     ListReceiptFiltersRequest();
     Aws::String SerializePayload() const override;
-
 
   };
 

@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -25,7 +25,8 @@ using namespace Aws::Utils::Stream;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetObjectTorrentResult::GetObjectTorrentResult()
+GetObjectTorrentResult::GetObjectTorrentResult() : 
+    m_requestCharged(RequestCharged::NOT_SET)
 {
 }
 
@@ -48,7 +49,8 @@ GetObjectTorrentResult& GetObjectTorrentResult::operator=(GetObjectTorrentResult
    return *this;
 }
 
-GetObjectTorrentResult::GetObjectTorrentResult(AmazonWebServiceResult<ResponseStream>&& result)
+GetObjectTorrentResult::GetObjectTorrentResult(AmazonWebServiceResult<ResponseStream>&& result) : 
+    m_requestCharged(RequestCharged::NOT_SET)
 {
   *this = std::move(result);
 }

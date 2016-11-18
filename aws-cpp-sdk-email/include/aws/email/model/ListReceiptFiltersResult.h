@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -34,9 +34,9 @@ namespace SES
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
+  /**
+   * <p>A list of IP address filters that exist under your AWS account.</p>
+   */
   class AWS_SES_API ListReceiptFiltersResult
   {
   public:
@@ -44,25 +44,46 @@ namespace Model
     ListReceiptFiltersResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     ListReceiptFiltersResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    
+    /**
+     * <p>A list of IP address filter data structures, which each consist of a name, an
+     * IP address range, and whether to allow or block mail from it.</p>
+     */
     inline const Aws::Vector<ReceiptFilter>& GetFilters() const{ return m_filters; }
 
-    
+    /**
+     * <p>A list of IP address filter data structures, which each consist of a name, an
+     * IP address range, and whether to allow or block mail from it.</p>
+     */
     inline void SetFilters(const Aws::Vector<ReceiptFilter>& value) { m_filters = value; }
 
-    
+    /**
+     * <p>A list of IP address filter data structures, which each consist of a name, an
+     * IP address range, and whether to allow or block mail from it.</p>
+     */
     inline void SetFilters(Aws::Vector<ReceiptFilter>&& value) { m_filters = value; }
 
-    
+    /**
+     * <p>A list of IP address filter data structures, which each consist of a name, an
+     * IP address range, and whether to allow or block mail from it.</p>
+     */
     inline ListReceiptFiltersResult& WithFilters(const Aws::Vector<ReceiptFilter>& value) { SetFilters(value); return *this;}
 
-    
+    /**
+     * <p>A list of IP address filter data structures, which each consist of a name, an
+     * IP address range, and whether to allow or block mail from it.</p>
+     */
     inline ListReceiptFiltersResult& WithFilters(Aws::Vector<ReceiptFilter>&& value) { SetFilters(value); return *this;}
 
-    
+    /**
+     * <p>A list of IP address filter data structures, which each consist of a name, an
+     * IP address range, and whether to allow or block mail from it.</p>
+     */
     inline ListReceiptFiltersResult& AddFilters(const ReceiptFilter& value) { m_filters.push_back(value); return *this; }
 
-    
+    /**
+     * <p>A list of IP address filter data structures, which each consist of a name, an
+     * IP address range, and whether to allow or block mail from it.</p>
+     */
     inline ListReceiptFiltersResult& AddFilters(ReceiptFilter&& value) { m_filters.push_back(value); return *this; }
 
     

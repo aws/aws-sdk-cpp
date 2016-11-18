@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -34,9 +34,9 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
+  /**
+   * <p>Contains the output of DescribeAddresses.</p>
+   */
   class AWS_EC2_API DescribeAddressesResponse
   {
   public:
@@ -44,39 +44,39 @@ namespace Model
     DescribeAddressesResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     DescribeAddressesResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>Information about one or more Elastic IP addresses.</p>
-    */
+    /**
+     * <p>Information about one or more Elastic IP addresses.</p>
+     */
     inline const Aws::Vector<Address>& GetAddresses() const{ return m_addresses; }
 
-    /*
-     <p>Information about one or more Elastic IP addresses.</p>
-    */
+    /**
+     * <p>Information about one or more Elastic IP addresses.</p>
+     */
     inline void SetAddresses(const Aws::Vector<Address>& value) { m_addresses = value; }
 
-    /*
-     <p>Information about one or more Elastic IP addresses.</p>
-    */
+    /**
+     * <p>Information about one or more Elastic IP addresses.</p>
+     */
     inline void SetAddresses(Aws::Vector<Address>&& value) { m_addresses = value; }
 
-    /*
-     <p>Information about one or more Elastic IP addresses.</p>
-    */
+    /**
+     * <p>Information about one or more Elastic IP addresses.</p>
+     */
     inline DescribeAddressesResponse& WithAddresses(const Aws::Vector<Address>& value) { SetAddresses(value); return *this;}
 
-    /*
-     <p>Information about one or more Elastic IP addresses.</p>
-    */
+    /**
+     * <p>Information about one or more Elastic IP addresses.</p>
+     */
     inline DescribeAddressesResponse& WithAddresses(Aws::Vector<Address>&& value) { SetAddresses(value); return *this;}
 
-    /*
-     <p>Information about one or more Elastic IP addresses.</p>
-    */
+    /**
+     * <p>Information about one or more Elastic IP addresses.</p>
+     */
     inline DescribeAddressesResponse& AddAddresses(const Address& value) { m_addresses.push_back(value); return *this; }
 
-    /*
-     <p>Information about one or more Elastic IP addresses.</p>
-    */
+    /**
+     * <p>Information about one or more Elastic IP addresses.</p>
+     */
     inline DescribeAddressesResponse& AddAddresses(Address&& value) { m_addresses.push_back(value); return *this; }
 
     

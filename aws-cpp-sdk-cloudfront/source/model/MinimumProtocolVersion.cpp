@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -14,50 +14,66 @@
 */
 #include <aws/cloudfront/model/MinimumProtocolVersion.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
+#include <aws/core/utils/EnumParseOverflowContainer.h>
 
 using namespace Aws::Utils;
 
-static const int SSLv3_HASH = HashingUtils::HashString("SSLv3");
-static const int TLSv1_HASH = HashingUtils::HashString("TLSv1");
 
 namespace Aws
 {
-namespace CloudFront
-{
-namespace Model
-{
-namespace MinimumProtocolVersionMapper
-{
-MinimumProtocolVersion GetMinimumProtocolVersionForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-
-  if (hashCode == SSLv3_HASH)
+  namespace CloudFront
   {
-    return MinimumProtocolVersion::SSLv3;
-  }
-  else if (hashCode == TLSv1_HASH)
-  {
-    return MinimumProtocolVersion::TLSv1;
-  }
+    namespace Model
+    {
+      namespace MinimumProtocolVersionMapper
+      {
 
-  return MinimumProtocolVersion::NOT_SET;
-}
+        static const int SSLv3_HASH = HashingUtils::HashString("SSLv3");
+        static const int TLSv1_HASH = HashingUtils::HashString("TLSv1");
 
-Aws::String GetNameForMinimumProtocolVersion(MinimumProtocolVersion value)
-{
-  switch(value)
-  {
-  case MinimumProtocolVersion::SSLv3:
-    return "SSLv3";
-  case MinimumProtocolVersion::TLSv1:
-    return "TLSv1";
-  default:
-    return "";
-  }
-}
 
-} // namespace MinimumProtocolVersionMapper
-} // namespace Model
-} // namespace CloudFront
+        MinimumProtocolVersion GetMinimumProtocolVersionForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == SSLv3_HASH)
+          {
+            return MinimumProtocolVersion::SSLv3;
+          }
+          else if (hashCode == TLSv1_HASH)
+          {
+            return MinimumProtocolVersion::TLSv1;
+          }
+          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<MinimumProtocolVersion>(hashCode);
+          }
+
+          return MinimumProtocolVersion::NOT_SET;
+        }
+
+        Aws::String GetNameForMinimumProtocolVersion(MinimumProtocolVersion enumValue)
+        {
+          switch(enumValue)
+          {
+          case MinimumProtocolVersion::SSLv3:
+            return "SSLv3";
+          case MinimumProtocolVersion::TLSv1:
+            return "TLSv1";
+          default:
+            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace MinimumProtocolVersionMapper
+    } // namespace Model
+  } // namespace CloudFront
 } // namespace Aws

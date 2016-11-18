@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -14,64 +14,80 @@
 */
 #include <aws/kinesis/model/StreamStatus.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
+#include <aws/core/utils/EnumParseOverflowContainer.h>
 
 using namespace Aws::Utils;
 
-static const int CREATING_HASH = HashingUtils::HashString("CREATING");
-static const int DELETING_HASH = HashingUtils::HashString("DELETING");
-static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
-static const int UPDATING_HASH = HashingUtils::HashString("UPDATING");
 
 namespace Aws
 {
-namespace Kinesis
-{
-namespace Model
-{
-namespace StreamStatusMapper
-{
-StreamStatus GetStreamStatusForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
+  namespace Kinesis
+  {
+    namespace Model
+    {
+      namespace StreamStatusMapper
+      {
 
-  if (hashCode == CREATING_HASH)
-  {
-    return StreamStatus::CREATING;
-  }
-  else if (hashCode == DELETING_HASH)
-  {
-    return StreamStatus::DELETING;
-  }
-  else if (hashCode == ACTIVE_HASH)
-  {
-    return StreamStatus::ACTIVE;
-  }
-  else if (hashCode == UPDATING_HASH)
-  {
-    return StreamStatus::UPDATING;
-  }
+        static const int CREATING_HASH = HashingUtils::HashString("CREATING");
+        static const int DELETING_HASH = HashingUtils::HashString("DELETING");
+        static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
+        static const int UPDATING_HASH = HashingUtils::HashString("UPDATING");
 
-  return StreamStatus::NOT_SET;
-}
 
-Aws::String GetNameForStreamStatus(StreamStatus value)
-{
-  switch(value)
-  {
-  case StreamStatus::CREATING:
-    return "CREATING";
-  case StreamStatus::DELETING:
-    return "DELETING";
-  case StreamStatus::ACTIVE:
-    return "ACTIVE";
-  case StreamStatus::UPDATING:
-    return "UPDATING";
-  default:
-    return "";
-  }
-}
+        StreamStatus GetStreamStatusForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == CREATING_HASH)
+          {
+            return StreamStatus::CREATING;
+          }
+          else if (hashCode == DELETING_HASH)
+          {
+            return StreamStatus::DELETING;
+          }
+          else if (hashCode == ACTIVE_HASH)
+          {
+            return StreamStatus::ACTIVE;
+          }
+          else if (hashCode == UPDATING_HASH)
+          {
+            return StreamStatus::UPDATING;
+          }
+          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<StreamStatus>(hashCode);
+          }
 
-} // namespace StreamStatusMapper
-} // namespace Model
-} // namespace Kinesis
+          return StreamStatus::NOT_SET;
+        }
+
+        Aws::String GetNameForStreamStatus(StreamStatus enumValue)
+        {
+          switch(enumValue)
+          {
+          case StreamStatus::CREATING:
+            return "CREATING";
+          case StreamStatus::DELETING:
+            return "DELETING";
+          case StreamStatus::ACTIVE:
+            return "ACTIVE";
+          case StreamStatus::UPDATING:
+            return "UPDATING";
+          default:
+            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace StreamStatusMapper
+    } // namespace Model
+  } // namespace Kinesis
 } // namespace Aws

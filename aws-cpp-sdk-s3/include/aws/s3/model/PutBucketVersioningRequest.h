@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -25,8 +25,8 @@ namespace S3
 namespace Model
 {
 
-  /*
-  */
+  /**
+   */
   class AWS_S3_API PutBucketVersioningRequest : public S3Request
   {
   public:
@@ -34,7 +34,6 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
-
 
     
     inline const Aws::String& GetBucket() const{ return m_bucket; }
@@ -78,39 +77,46 @@ namespace Model
     
     inline PutBucketVersioningRequest& WithContentMD5(const char* value) { SetContentMD5(value); return *this;}
 
-    /*
-     The concatenation of the authentication device's serial number, a space, and the value that is displayed on your authentication device.
-    */
+    /**
+     * The concatenation of the authentication device's serial number, a space, and the
+     * value that is displayed on your authentication device.
+     */
     inline const Aws::String& GetMFA() const{ return m_mFA; }
 
-    /*
-     The concatenation of the authentication device's serial number, a space, and the value that is displayed on your authentication device.
-    */
+    /**
+     * The concatenation of the authentication device's serial number, a space, and the
+     * value that is displayed on your authentication device.
+     */
     inline void SetMFA(const Aws::String& value) { m_mFAHasBeenSet = true; m_mFA = value; }
 
-    /*
-     The concatenation of the authentication device's serial number, a space, and the value that is displayed on your authentication device.
-    */
+    /**
+     * The concatenation of the authentication device's serial number, a space, and the
+     * value that is displayed on your authentication device.
+     */
     inline void SetMFA(Aws::String&& value) { m_mFAHasBeenSet = true; m_mFA = value; }
 
-    /*
-     The concatenation of the authentication device's serial number, a space, and the value that is displayed on your authentication device.
-    */
+    /**
+     * The concatenation of the authentication device's serial number, a space, and the
+     * value that is displayed on your authentication device.
+     */
     inline void SetMFA(const char* value) { m_mFAHasBeenSet = true; m_mFA.assign(value); }
 
-    /*
-     The concatenation of the authentication device's serial number, a space, and the value that is displayed on your authentication device.
-    */
+    /**
+     * The concatenation of the authentication device's serial number, a space, and the
+     * value that is displayed on your authentication device.
+     */
     inline PutBucketVersioningRequest& WithMFA(const Aws::String& value) { SetMFA(value); return *this;}
 
-    /*
-     The concatenation of the authentication device's serial number, a space, and the value that is displayed on your authentication device.
-    */
+    /**
+     * The concatenation of the authentication device's serial number, a space, and the
+     * value that is displayed on your authentication device.
+     */
     inline PutBucketVersioningRequest& WithMFA(Aws::String&& value) { SetMFA(value); return *this;}
 
-    /*
-     The concatenation of the authentication device's serial number, a space, and the value that is displayed on your authentication device.
-    */
+    /**
+     * The concatenation of the authentication device's serial number, a space, and the
+     * value that is displayed on your authentication device.
+     */
     inline PutBucketVersioningRequest& WithMFA(const char* value) { SetMFA(value); return *this;}
 
     

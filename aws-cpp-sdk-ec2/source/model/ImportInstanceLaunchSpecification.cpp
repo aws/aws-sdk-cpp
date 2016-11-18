@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,37 +19,49 @@
 
 #include <utility>
 
-using namespace Aws::EC2::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
+
 ImportInstanceLaunchSpecification::ImportInstanceLaunchSpecification() : 
+    m_architecture(ArchitectureValues::NOT_SET),
     m_architectureHasBeenSet(false),
     m_groupNamesHasBeenSet(false),
     m_groupIdsHasBeenSet(false),
     m_additionalInfoHasBeenSet(false),
     m_userDataHasBeenSet(false),
+    m_instanceType(InstanceType::NOT_SET),
     m_instanceTypeHasBeenSet(false),
     m_placementHasBeenSet(false),
     m_monitoring(false),
     m_monitoringHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
+    m_instanceInitiatedShutdownBehavior(ShutdownBehavior::NOT_SET),
     m_instanceInitiatedShutdownBehaviorHasBeenSet(false),
     m_privateIpAddressHasBeenSet(false)
 {
 }
 
 ImportInstanceLaunchSpecification::ImportInstanceLaunchSpecification(const XmlNode& xmlNode) : 
+    m_architecture(ArchitectureValues::NOT_SET),
     m_architectureHasBeenSet(false),
     m_groupNamesHasBeenSet(false),
     m_groupIdsHasBeenSet(false),
     m_additionalInfoHasBeenSet(false),
     m_userDataHasBeenSet(false),
+    m_instanceType(InstanceType::NOT_SET),
     m_instanceTypeHasBeenSet(false),
     m_placementHasBeenSet(false),
     m_monitoring(false),
     m_monitoringHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
+    m_instanceInitiatedShutdownBehavior(ShutdownBehavior::NOT_SET),
     m_instanceInitiatedShutdownBehaviorHasBeenSet(false),
     m_privateIpAddressHasBeenSet(false)
 {
@@ -151,60 +163,69 @@ void ImportInstanceLaunchSpecification::OutputToStream(Aws::OStream& oStream, co
   {
       oStream << location << index << locationValue << ".Architecture=" << ArchitectureValuesMapper::GetNameForArchitectureValues(m_architecture) << "&";
   }
+
   if(m_groupNamesHasBeenSet)
   {
-      unsigned groupNamesIdx = 0;
+      unsigned groupNamesIdx = 1;
       for(auto& item : m_groupNames)
       {
-        groupNamesIdx++;
-        oStream << location << index << locationValue << ".GroupName." << groupNamesIdx << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << index << locationValue << ".GroupName." << groupNamesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
+
   if(m_groupIdsHasBeenSet)
   {
-      unsigned groupIdsIdx = 0;
+      unsigned groupIdsIdx = 1;
       for(auto& item : m_groupIds)
       {
-        groupIdsIdx++;
-        oStream << location << index << locationValue << ".GroupId." << groupIdsIdx << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << index << locationValue << ".GroupId." << groupIdsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
+
   if(m_additionalInfoHasBeenSet)
   {
       oStream << location << index << locationValue << ".AdditionalInfo=" << StringUtils::URLEncode(m_additionalInfo.c_str()) << "&";
   }
+
   if(m_userDataHasBeenSet)
   {
       Aws::StringStream userDataLocationAndMemberSs;
       userDataLocationAndMemberSs << location << index << locationValue << ".UserData";
       m_userData.OutputToStream(oStream, userDataLocationAndMemberSs.str().c_str());
   }
+
   if(m_instanceTypeHasBeenSet)
   {
       oStream << location << index << locationValue << ".InstanceType=" << InstanceTypeMapper::GetNameForInstanceType(m_instanceType) << "&";
   }
+
   if(m_placementHasBeenSet)
   {
       Aws::StringStream placementLocationAndMemberSs;
       placementLocationAndMemberSs << location << index << locationValue << ".Placement";
       m_placement.OutputToStream(oStream, placementLocationAndMemberSs.str().c_str());
   }
+
   if(m_monitoringHasBeenSet)
   {
       oStream << location << index << locationValue << ".Monitoring=" << m_monitoring << "&";
   }
+
   if(m_subnetIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".SubnetId=" << StringUtils::URLEncode(m_subnetId.c_str()) << "&";
   }
+
   if(m_instanceInitiatedShutdownBehaviorHasBeenSet)
   {
       oStream << location << index << locationValue << ".InstanceInitiatedShutdownBehavior=" << ShutdownBehaviorMapper::GetNameForShutdownBehavior(m_instanceInitiatedShutdownBehavior) << "&";
   }
+
   if(m_privateIpAddressHasBeenSet)
   {
       oStream << location << index << locationValue << ".PrivateIpAddress=" << StringUtils::URLEncode(m_privateIpAddress.c_str()) << "&";
   }
+
 }
 
 void ImportInstanceLaunchSpecification::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -215,16 +236,18 @@ void ImportInstanceLaunchSpecification::OutputToStream(Aws::OStream& oStream, co
   }
   if(m_groupNamesHasBeenSet)
   {
+      unsigned groupNamesIdx = 1;
       for(auto& item : m_groupNames)
       {
-        oStream << location << ".SecurityGroup=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << ".SecurityGroup." << groupNamesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
   if(m_groupIdsHasBeenSet)
   {
+      unsigned groupIdsIdx = 1;
       for(auto& item : m_groupIds)
       {
-        oStream << location << ".SecurityGroupId=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << ".SecurityGroupId." << groupIdsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
   if(m_additionalInfoHasBeenSet)
@@ -264,3 +287,7 @@ void ImportInstanceLaunchSpecification::OutputToStream(Aws::OStream& oStream, co
       oStream << location << ".PrivateIpAddress=" << StringUtils::URLEncode(m_privateIpAddress.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

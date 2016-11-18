@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -33,9 +33,9 @@ namespace CodeDeploy
 {
 namespace Model
 {
-  /*
-    <p>Represents the output of a stop deployment operation.</p>
-  */
+  /**
+   * <p>Represents the output of a stop deployment operation.</p>
+   */
   class AWS_CODEDEPLOY_API StopDeploymentResult
   {
   public:
@@ -43,64 +43,74 @@ namespace Model
     StopDeploymentResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     StopDeploymentResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    /*
-     <p>The status of the stop deployment operation:</p> <ul> <li>Pending: The stop operation is pending.</li> <li>Succeeded: The stop operation succeeded.</li> </ul>
-    */
+    /**
+     * <p>The status of the stop deployment operation:</p> <ul> <li> <p>Pending: The
+     * stop operation is pending.</p> </li> <li> <p>Succeeded: The stop operation was
+     * successful.</p> </li> </ul>
+     */
     inline const StopStatus& GetStatus() const{ return m_status; }
 
-    /*
-     <p>The status of the stop deployment operation:</p> <ul> <li>Pending: The stop operation is pending.</li> <li>Succeeded: The stop operation succeeded.</li> </ul>
-    */
+    /**
+     * <p>The status of the stop deployment operation:</p> <ul> <li> <p>Pending: The
+     * stop operation is pending.</p> </li> <li> <p>Succeeded: The stop operation was
+     * successful.</p> </li> </ul>
+     */
     inline void SetStatus(const StopStatus& value) { m_status = value; }
 
-    /*
-     <p>The status of the stop deployment operation:</p> <ul> <li>Pending: The stop operation is pending.</li> <li>Succeeded: The stop operation succeeded.</li> </ul>
-    */
+    /**
+     * <p>The status of the stop deployment operation:</p> <ul> <li> <p>Pending: The
+     * stop operation is pending.</p> </li> <li> <p>Succeeded: The stop operation was
+     * successful.</p> </li> </ul>
+     */
     inline void SetStatus(StopStatus&& value) { m_status = value; }
 
-    /*
-     <p>The status of the stop deployment operation:</p> <ul> <li>Pending: The stop operation is pending.</li> <li>Succeeded: The stop operation succeeded.</li> </ul>
-    */
+    /**
+     * <p>The status of the stop deployment operation:</p> <ul> <li> <p>Pending: The
+     * stop operation is pending.</p> </li> <li> <p>Succeeded: The stop operation was
+     * successful.</p> </li> </ul>
+     */
     inline StopDeploymentResult& WithStatus(const StopStatus& value) { SetStatus(value); return *this;}
 
-    /*
-     <p>The status of the stop deployment operation:</p> <ul> <li>Pending: The stop operation is pending.</li> <li>Succeeded: The stop operation succeeded.</li> </ul>
-    */
+    /**
+     * <p>The status of the stop deployment operation:</p> <ul> <li> <p>Pending: The
+     * stop operation is pending.</p> </li> <li> <p>Succeeded: The stop operation was
+     * successful.</p> </li> </ul>
+     */
     inline StopDeploymentResult& WithStatus(StopStatus&& value) { SetStatus(value); return *this;}
 
-    /*
-     <p>An accompanying status message.</p>
-    */
+    /**
+     * <p>An accompanying status message.</p>
+     */
     inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
 
-    /*
-     <p>An accompanying status message.</p>
-    */
+    /**
+     * <p>An accompanying status message.</p>
+     */
     inline void SetStatusMessage(const Aws::String& value) { m_statusMessage = value; }
 
-    /*
-     <p>An accompanying status message.</p>
-    */
+    /**
+     * <p>An accompanying status message.</p>
+     */
     inline void SetStatusMessage(Aws::String&& value) { m_statusMessage = value; }
 
-    /*
-     <p>An accompanying status message.</p>
-    */
+    /**
+     * <p>An accompanying status message.</p>
+     */
     inline void SetStatusMessage(const char* value) { m_statusMessage.assign(value); }
 
-    /*
-     <p>An accompanying status message.</p>
-    */
+    /**
+     * <p>An accompanying status message.</p>
+     */
     inline StopDeploymentResult& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
 
-    /*
-     <p>An accompanying status message.</p>
-    */
+    /**
+     * <p>An accompanying status message.</p>
+     */
     inline StopDeploymentResult& WithStatusMessage(Aws::String&& value) { SetStatusMessage(value); return *this;}
 
-    /*
-     <p>An accompanying status message.</p>
-    */
+    /**
+     * <p>An accompanying status message.</p>
+     */
     inline StopDeploymentResult& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
 
   private:

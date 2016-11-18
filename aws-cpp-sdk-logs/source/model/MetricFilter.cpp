@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -17,16 +17,23 @@
 
 #include <utility>
 
-using namespace Aws::CloudWatchLogs::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace CloudWatchLogs
+{
+namespace Model
+{
 
 MetricFilter::MetricFilter() : 
     m_filterNameHasBeenSet(false),
     m_filterPatternHasBeenSet(false),
     m_metricTransformationsHasBeenSet(false),
     m_creationTime(0),
-    m_creationTimeHasBeenSet(false)
+    m_creationTimeHasBeenSet(false),
+    m_logGroupNameHasBeenSet(false)
 {
 }
 
@@ -35,7 +42,8 @@ MetricFilter::MetricFilter(const JsonValue& jsonValue) :
     m_filterPatternHasBeenSet(false),
     m_metricTransformationsHasBeenSet(false),
     m_creationTime(0),
-    m_creationTimeHasBeenSet(false)
+    m_creationTimeHasBeenSet(false),
+    m_logGroupNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -71,6 +79,13 @@ MetricFilter& MetricFilter::operator =(const JsonValue& jsonValue)
     m_creationTime = jsonValue.GetInt64("creationTime");
 
     m_creationTimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("logGroupName"))
+  {
+    m_logGroupName = jsonValue.GetString("logGroupName");
+
+    m_logGroupNameHasBeenSet = true;
   }
 
   return *this;
@@ -109,5 +124,15 @@ JsonValue MetricFilter::Jsonize() const
 
   }
 
-  return std::move(payload);
+  if(m_logGroupNameHasBeenSet)
+  {
+   payload.WithString("logGroupName", m_logGroupName);
+
+  }
+
+  return payload;
 }
+
+} // namespace Model
+} // namespace CloudWatchLogs
+} // namespace Aws

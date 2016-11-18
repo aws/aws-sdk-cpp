@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::CodeDeploy::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace CodeDeploy
+{
+namespace Model
+{
 
 DeploymentInfo::DeploymentInfo() : 
     m_applicationNameHasBeenSet(false),
@@ -27,19 +33,22 @@ DeploymentInfo::DeploymentInfo() :
     m_deploymentConfigNameHasBeenSet(false),
     m_deploymentIdHasBeenSet(false),
     m_revisionHasBeenSet(false),
+    m_status(DeploymentStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_errorInformationHasBeenSet(false),
-    m_createTime(0.0),
     m_createTimeHasBeenSet(false),
-    m_startTime(0.0),
     m_startTimeHasBeenSet(false),
-    m_completeTime(0.0),
     m_completeTimeHasBeenSet(false),
     m_deploymentOverviewHasBeenSet(false),
     m_descriptionHasBeenSet(false),
+    m_creator(DeploymentCreator::NOT_SET),
     m_creatorHasBeenSet(false),
     m_ignoreApplicationStopFailures(false),
-    m_ignoreApplicationStopFailuresHasBeenSet(false)
+    m_ignoreApplicationStopFailuresHasBeenSet(false),
+    m_autoRollbackConfigurationHasBeenSet(false),
+    m_updateOutdatedInstancesOnly(false),
+    m_updateOutdatedInstancesOnlyHasBeenSet(false),
+    m_rollbackInfoHasBeenSet(false)
 {
 }
 
@@ -49,19 +58,22 @@ DeploymentInfo::DeploymentInfo(const JsonValue& jsonValue) :
     m_deploymentConfigNameHasBeenSet(false),
     m_deploymentIdHasBeenSet(false),
     m_revisionHasBeenSet(false),
+    m_status(DeploymentStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_errorInformationHasBeenSet(false),
-    m_createTime(0.0),
     m_createTimeHasBeenSet(false),
-    m_startTime(0.0),
     m_startTimeHasBeenSet(false),
-    m_completeTime(0.0),
     m_completeTimeHasBeenSet(false),
     m_deploymentOverviewHasBeenSet(false),
     m_descriptionHasBeenSet(false),
+    m_creator(DeploymentCreator::NOT_SET),
     m_creatorHasBeenSet(false),
     m_ignoreApplicationStopFailures(false),
-    m_ignoreApplicationStopFailuresHasBeenSet(false)
+    m_ignoreApplicationStopFailuresHasBeenSet(false),
+    m_autoRollbackConfigurationHasBeenSet(false),
+    m_updateOutdatedInstancesOnly(false),
+    m_updateOutdatedInstancesOnlyHasBeenSet(false),
+    m_rollbackInfoHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -166,6 +178,27 @@ DeploymentInfo& DeploymentInfo::operator =(const JsonValue& jsonValue)
     m_ignoreApplicationStopFailuresHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("autoRollbackConfiguration"))
+  {
+    m_autoRollbackConfiguration = jsonValue.GetObject("autoRollbackConfiguration");
+
+    m_autoRollbackConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("updateOutdatedInstancesOnly"))
+  {
+    m_updateOutdatedInstancesOnly = jsonValue.GetBool("updateOutdatedInstancesOnly");
+
+    m_updateOutdatedInstancesOnlyHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("rollbackInfo"))
+  {
+    m_rollbackInfo = jsonValue.GetObject("rollbackInfo");
+
+    m_rollbackInfoHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -216,20 +249,17 @@ JsonValue DeploymentInfo::Jsonize() const
 
   if(m_createTimeHasBeenSet)
   {
-   payload.WithDouble("createTime", m_createTime);
-
+   payload.WithDouble("createTime", m_createTime.SecondsWithMSPrecision());
   }
 
   if(m_startTimeHasBeenSet)
   {
-   payload.WithDouble("startTime", m_startTime);
-
+   payload.WithDouble("startTime", m_startTime.SecondsWithMSPrecision());
   }
 
   if(m_completeTimeHasBeenSet)
   {
-   payload.WithDouble("completeTime", m_completeTime);
-
+   payload.WithDouble("completeTime", m_completeTime.SecondsWithMSPrecision());
   }
 
   if(m_deploymentOverviewHasBeenSet)
@@ -255,5 +285,27 @@ JsonValue DeploymentInfo::Jsonize() const
 
   }
 
-  return std::move(payload);
+  if(m_autoRollbackConfigurationHasBeenSet)
+  {
+   payload.WithObject("autoRollbackConfiguration", m_autoRollbackConfiguration.Jsonize());
+
+  }
+
+  if(m_updateOutdatedInstancesOnlyHasBeenSet)
+  {
+   payload.WithBool("updateOutdatedInstancesOnly", m_updateOutdatedInstancesOnly);
+
+  }
+
+  if(m_rollbackInfoHasBeenSet)
+  {
+   payload.WithObject("rollbackInfo", m_rollbackInfo.Jsonize());
+
+  }
+
+  return payload;
 }
+
+} // namespace Model
+} // namespace CodeDeploy
+} // namespace Aws

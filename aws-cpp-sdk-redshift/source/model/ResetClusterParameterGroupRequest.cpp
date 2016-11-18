@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -35,10 +35,12 @@ Aws::String ResetClusterParameterGroupRequest::SerializePayload() const
   {
     ss << "ParameterGroupName=" << StringUtils::URLEncode(m_parameterGroupName.c_str()) << "&";
   }
+
   if(m_resetAllParametersHasBeenSet)
   {
     ss << "ResetAllParameters=" << m_resetAllParameters << "&";
   }
+
   if(m_parametersHasBeenSet)
   {
     unsigned parametersCount = 1;
@@ -48,6 +50,7 @@ Aws::String ResetClusterParameterGroupRequest::SerializePayload() const
       parametersCount++;
     }
   }
+
   ss << "Version=2012-12-01";
   return ss.str();
 }

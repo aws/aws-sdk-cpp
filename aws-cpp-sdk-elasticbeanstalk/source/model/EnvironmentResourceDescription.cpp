@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::ElasticBeanstalk::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace ElasticBeanstalk
+{
+namespace Model
+{
 
 EnvironmentResourceDescription::EnvironmentResourceDescription() : 
     m_environmentNameHasBeenSet(false),
@@ -141,60 +147,73 @@ void EnvironmentResourceDescription::OutputToStream(Aws::OStream& oStream, const
   {
       oStream << location << index << locationValue << ".EnvironmentName=" << StringUtils::URLEncode(m_environmentName.c_str()) << "&";
   }
+
   if(m_autoScalingGroupsHasBeenSet)
   {
+      unsigned autoScalingGroupsIdx = 1;
       for(auto& item : m_autoScalingGroups)
       {
         Aws::StringStream autoScalingGroupsSs;
-        autoScalingGroupsSs << location << index << locationValue << ".AutoScalingGroups";
+        autoScalingGroupsSs << location << index << locationValue << ".AutoScalingGroups.member." << autoScalingGroupsIdx++;
         item.OutputToStream(oStream, autoScalingGroupsSs.str().c_str());
       }
   }
+
   if(m_instancesHasBeenSet)
   {
+      unsigned instancesIdx = 1;
       for(auto& item : m_instances)
       {
         Aws::StringStream instancesSs;
-        instancesSs << location << index << locationValue << ".Instances";
+        instancesSs << location << index << locationValue << ".Instances.member." << instancesIdx++;
         item.OutputToStream(oStream, instancesSs.str().c_str());
       }
   }
+
   if(m_launchConfigurationsHasBeenSet)
   {
+      unsigned launchConfigurationsIdx = 1;
       for(auto& item : m_launchConfigurations)
       {
         Aws::StringStream launchConfigurationsSs;
-        launchConfigurationsSs << location << index << locationValue << ".LaunchConfigurations";
+        launchConfigurationsSs << location << index << locationValue << ".LaunchConfigurations.member." << launchConfigurationsIdx++;
         item.OutputToStream(oStream, launchConfigurationsSs.str().c_str());
       }
   }
+
   if(m_loadBalancersHasBeenSet)
   {
+      unsigned loadBalancersIdx = 1;
       for(auto& item : m_loadBalancers)
       {
         Aws::StringStream loadBalancersSs;
-        loadBalancersSs << location << index << locationValue << ".LoadBalancers";
+        loadBalancersSs << location << index << locationValue << ".LoadBalancers.member." << loadBalancersIdx++;
         item.OutputToStream(oStream, loadBalancersSs.str().c_str());
       }
   }
+
   if(m_triggersHasBeenSet)
   {
+      unsigned triggersIdx = 1;
       for(auto& item : m_triggers)
       {
         Aws::StringStream triggersSs;
-        triggersSs << location << index << locationValue << ".Triggers";
+        triggersSs << location << index << locationValue << ".Triggers.member." << triggersIdx++;
         item.OutputToStream(oStream, triggersSs.str().c_str());
       }
   }
+
   if(m_queuesHasBeenSet)
   {
+      unsigned queuesIdx = 1;
       for(auto& item : m_queues)
       {
         Aws::StringStream queuesSs;
-        queuesSs << location << index << locationValue << ".Queues";
+        queuesSs << location << index << locationValue << ".Queues.member." << queuesIdx++;
         item.OutputToStream(oStream, queuesSs.str().c_str());
       }
   }
+
 }
 
 void EnvironmentResourceDescription::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -205,56 +224,66 @@ void EnvironmentResourceDescription::OutputToStream(Aws::OStream& oStream, const
   }
   if(m_autoScalingGroupsHasBeenSet)
   {
+      unsigned autoScalingGroupsIdx = 1;
       for(auto& item : m_autoScalingGroups)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".AutoScalingGroups";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream autoScalingGroupsSs;
+        autoScalingGroupsSs << location <<  ".AutoScalingGroups.member." << autoScalingGroupsIdx++;
+        item.OutputToStream(oStream, autoScalingGroupsSs.str().c_str());
       }
   }
   if(m_instancesHasBeenSet)
   {
+      unsigned instancesIdx = 1;
       for(auto& item : m_instances)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".Instances";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream instancesSs;
+        instancesSs << location <<  ".Instances.member." << instancesIdx++;
+        item.OutputToStream(oStream, instancesSs.str().c_str());
       }
   }
   if(m_launchConfigurationsHasBeenSet)
   {
+      unsigned launchConfigurationsIdx = 1;
       for(auto& item : m_launchConfigurations)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".LaunchConfigurations";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream launchConfigurationsSs;
+        launchConfigurationsSs << location <<  ".LaunchConfigurations.member." << launchConfigurationsIdx++;
+        item.OutputToStream(oStream, launchConfigurationsSs.str().c_str());
       }
   }
   if(m_loadBalancersHasBeenSet)
   {
+      unsigned loadBalancersIdx = 1;
       for(auto& item : m_loadBalancers)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".LoadBalancers";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream loadBalancersSs;
+        loadBalancersSs << location <<  ".LoadBalancers.member." << loadBalancersIdx++;
+        item.OutputToStream(oStream, loadBalancersSs.str().c_str());
       }
   }
   if(m_triggersHasBeenSet)
   {
+      unsigned triggersIdx = 1;
       for(auto& item : m_triggers)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".Triggers";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream triggersSs;
+        triggersSs << location <<  ".Triggers.member." << triggersIdx++;
+        item.OutputToStream(oStream, triggersSs.str().c_str());
       }
   }
   if(m_queuesHasBeenSet)
   {
+      unsigned queuesIdx = 1;
       for(auto& item : m_queues)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".Queues";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream queuesSs;
+        queuesSs << location <<  ".Queues.member." << queuesIdx++;
+        item.OutputToStream(oStream, queuesSs.str().c_str());
       }
   }
 }
+
+} // namespace Model
+} // namespace ElasticBeanstalk
+} // namespace Aws

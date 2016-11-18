@@ -21,6 +21,8 @@ import re
 import subprocess
 import os
 import zipfile
+import io
+import codecs
 from subprocess import PIPE, STDOUT, Popen
 from os import listdir
 from os.path import isfile, join
@@ -72,18 +74,20 @@ def PrepareGenerator(generatorPath):
 
 def GenerateSdk(generatorPath, sdk, outputDir):
     try:
-       with open(sdk['filePath'], 'r') as api_definition:
+       with codecs.open(sdk['filePath'], 'rb', 'utf-8') as api_definition:
             api_content = api_definition.read()
             jar_path = join(generatorPath, 'target/aws-client-generator-1.0-SNAPSHOT-jar-with-dependencies.jar')
             process = Popen(['java', '-jar', jar_path, '--service', sdk['serviceName'], '--version', sdk['apiVersion'], '--language-binding', 'cpp', '--arbitrary'],stdout=PIPE,  stdin=PIPE, stderr=STDOUT )
-            process.stdin.write(api_content)
+            writer = codecs.getwriter('utf-8')
+            stdInWriter = writer(process.stdin)
+            stdInWriter.write(api_content)
             process.stdin.close()
             output = process.stdout.read()
             if output:
-                 with zipfile.ZipFile(output.strip(), 'r') as zip:
+                 with zipfile.ZipFile(output.strip().decode('utf-8'), 'r') as zip:
                      zip.extractall(outputDir)
     except EnvironmentError as  ex:
-        print 'Error generating sdk {} with error {}'.format(sdk, ex)
+        print('Error generating sdk {} with error {}'.format(sdk, ex))
 
 def Main():
     arguments = ParseArguments()
@@ -95,10 +99,10 @@ def Main():
     
     if arguments['listAll']:
         for key, value in sdks.iteritems():
-            print value
+            print(value)
 
     if arguments['serviceName']:
-        print 'Generating {} api version {}.'.format(arguments['serviceName'], arguments['apiVersion'])
+        print('Generating {} api version {}.'.format(arguments['serviceName'], arguments['apiVersion']))
         key = '{}-{}'.format(arguments['serviceName'], arguments['apiVersion'])
         GenerateSdk(arguments['pathToGenerator'], sdks[key], arguments['outputLocation'])
 

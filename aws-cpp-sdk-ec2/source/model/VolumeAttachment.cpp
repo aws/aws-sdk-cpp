@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,16 +19,22 @@
 
 #include <utility>
 
-using namespace Aws::EC2::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
 
 VolumeAttachment::VolumeAttachment() : 
     m_volumeIdHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
     m_deviceHasBeenSet(false),
+    m_state(VolumeAttachmentState::NOT_SET),
     m_stateHasBeenSet(false),
-    m_attachTime(0.0),
     m_attachTimeHasBeenSet(false),
     m_deleteOnTermination(false),
     m_deleteOnTerminationHasBeenSet(false),
@@ -40,8 +46,8 @@ VolumeAttachment::VolumeAttachment(const XmlNode& xmlNode) :
     m_volumeIdHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
     m_deviceHasBeenSet(false),
+    m_state(VolumeAttachmentState::NOT_SET),
     m_stateHasBeenSet(false),
-    m_attachTime(0.0),
     m_attachTimeHasBeenSet(false),
     m_deleteOnTermination(false),
     m_deleteOnTerminationHasBeenSet(false),
@@ -83,7 +89,7 @@ VolumeAttachment& VolumeAttachment::operator =(const XmlNode& xmlNode)
     XmlNode attachTimeNode = resultNode.FirstChild("attachTime");
     if(!attachTimeNode.IsNull())
     {
-      m_attachTime = StringUtils::ConvertToDouble(StringUtils::Trim(attachTimeNode.GetText().c_str()).c_str());
+      m_attachTime = DateTime(StringUtils::Trim(attachTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_attachTimeHasBeenSet = true;
     }
     XmlNode deleteOnTerminationNode = resultNode.FirstChild("deleteOnTermination");
@@ -103,32 +109,39 @@ void VolumeAttachment::OutputToStream(Aws::OStream& oStream, const char* locatio
   {
       oStream << location << index << locationValue << ".VolumeId=" << StringUtils::URLEncode(m_volumeId.c_str()) << "&";
   }
+
   if(m_instanceIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
   }
+
   if(m_deviceHasBeenSet)
   {
       oStream << location << index << locationValue << ".Device=" << StringUtils::URLEncode(m_device.c_str()) << "&";
   }
+
   if(m_stateHasBeenSet)
   {
       oStream << location << index << locationValue << ".State=" << VolumeAttachmentStateMapper::GetNameForVolumeAttachmentState(m_state) << "&";
   }
+
   if(m_attachTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".AttachTime=" << m_attachTime << "&";
+      oStream << location << index << locationValue << ".AttachTime=" << StringUtils::URLEncode(m_attachTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_deleteOnTerminationHasBeenSet)
   {
       oStream << location << index << locationValue << ".DeleteOnTermination=" << m_deleteOnTermination << "&";
   }
+
   if(m_responseMetadataHasBeenSet)
   {
       Aws::StringStream responseMetadataLocationAndMemberSs;
       responseMetadataLocationAndMemberSs << location << index << locationValue << ".ResponseMetadata";
       m_responseMetadata.OutputToStream(oStream, responseMetadataLocationAndMemberSs.str().c_str());
   }
+
 }
 
 void VolumeAttachment::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -151,7 +164,7 @@ void VolumeAttachment::OutputToStream(Aws::OStream& oStream, const char* locatio
   }
   if(m_attachTimeHasBeenSet)
   {
-      oStream << location << ".AttachTime=" << m_attachTime << "&";
+      oStream << location << ".AttachTime=" << StringUtils::URLEncode(m_attachTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_deleteOnTerminationHasBeenSet)
   {
@@ -164,3 +177,7 @@ void VolumeAttachment::OutputToStream(Aws::OStream& oStream, const char* locatio
       m_responseMetadata.OutputToStream(oStream, responseMetadataLocationAndMember.c_str());
   }
 }
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

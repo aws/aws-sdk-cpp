@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,9 +24,9 @@ namespace CodeDeploy
 namespace Model
 {
 
-  /*
-    <p>Represents the input of a get deployment group operation.</p>
-  */
+  /**
+   * <p>Represents the input of a get deployment group operation.</p>
+   */
   class AWS_CODEDEPLOY_API GetDeploymentGroupRequest : public CodeDeployRequest
   {
   public:
@@ -35,75 +35,81 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
-    /*
-     <p>The name of an existing AWS CodeDeploy application associated with the applicable IAM user or AWS account.</p>
-    */
+    /**
+     * <p>The name of an AWS CodeDeploy application associated with the applicable IAM
+     * user or AWS account.</p>
+     */
     inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
 
-    /*
-     <p>The name of an existing AWS CodeDeploy application associated with the applicable IAM user or AWS account.</p>
-    */
+    /**
+     * <p>The name of an AWS CodeDeploy application associated with the applicable IAM
+     * user or AWS account.</p>
+     */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
-    /*
-     <p>The name of an existing AWS CodeDeploy application associated with the applicable IAM user or AWS account.</p>
-    */
+    /**
+     * <p>The name of an AWS CodeDeploy application associated with the applicable IAM
+     * user or AWS account.</p>
+     */
     inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
-    /*
-     <p>The name of an existing AWS CodeDeploy application associated with the applicable IAM user or AWS account.</p>
-    */
+    /**
+     * <p>The name of an AWS CodeDeploy application associated with the applicable IAM
+     * user or AWS account.</p>
+     */
     inline void SetApplicationName(const char* value) { m_applicationNameHasBeenSet = true; m_applicationName.assign(value); }
 
-    /*
-     <p>The name of an existing AWS CodeDeploy application associated with the applicable IAM user or AWS account.</p>
-    */
+    /**
+     * <p>The name of an AWS CodeDeploy application associated with the applicable IAM
+     * user or AWS account.</p>
+     */
     inline GetDeploymentGroupRequest& WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
 
-    /*
-     <p>The name of an existing AWS CodeDeploy application associated with the applicable IAM user or AWS account.</p>
-    */
+    /**
+     * <p>The name of an AWS CodeDeploy application associated with the applicable IAM
+     * user or AWS account.</p>
+     */
     inline GetDeploymentGroupRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(value); return *this;}
 
-    /*
-     <p>The name of an existing AWS CodeDeploy application associated with the applicable IAM user or AWS account.</p>
-    */
+    /**
+     * <p>The name of an AWS CodeDeploy application associated with the applicable IAM
+     * user or AWS account.</p>
+     */
     inline GetDeploymentGroupRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
 
-    /*
-     <p>The name of an existing deployment group for the specified application.</p>
-    */
+    /**
+     * <p>The name of an existing deployment group for the specified application.</p>
+     */
     inline const Aws::String& GetDeploymentGroupName() const{ return m_deploymentGroupName; }
 
-    /*
-     <p>The name of an existing deployment group for the specified application.</p>
-    */
+    /**
+     * <p>The name of an existing deployment group for the specified application.</p>
+     */
     inline void SetDeploymentGroupName(const Aws::String& value) { m_deploymentGroupNameHasBeenSet = true; m_deploymentGroupName = value; }
 
-    /*
-     <p>The name of an existing deployment group for the specified application.</p>
-    */
+    /**
+     * <p>The name of an existing deployment group for the specified application.</p>
+     */
     inline void SetDeploymentGroupName(Aws::String&& value) { m_deploymentGroupNameHasBeenSet = true; m_deploymentGroupName = value; }
 
-    /*
-     <p>The name of an existing deployment group for the specified application.</p>
-    */
+    /**
+     * <p>The name of an existing deployment group for the specified application.</p>
+     */
     inline void SetDeploymentGroupName(const char* value) { m_deploymentGroupNameHasBeenSet = true; m_deploymentGroupName.assign(value); }
 
-    /*
-     <p>The name of an existing deployment group for the specified application.</p>
-    */
+    /**
+     * <p>The name of an existing deployment group for the specified application.</p>
+     */
     inline GetDeploymentGroupRequest& WithDeploymentGroupName(const Aws::String& value) { SetDeploymentGroupName(value); return *this;}
 
-    /*
-     <p>The name of an existing deployment group for the specified application.</p>
-    */
+    /**
+     * <p>The name of an existing deployment group for the specified application.</p>
+     */
     inline GetDeploymentGroupRequest& WithDeploymentGroupName(Aws::String&& value) { SetDeploymentGroupName(value); return *this;}
 
-    /*
-     <p>The name of an existing deployment group for the specified application.</p>
-    */
+    /**
+     * <p>The name of an existing deployment group for the specified application.</p>
+     */
     inline GetDeploymentGroupRequest& WithDeploymentGroupName(const char* value) { SetDeploymentGroupName(value); return *this;}
 
   private:

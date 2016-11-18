@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,16 +19,22 @@
 
 #include <utility>
 
-using namespace Aws::EC2::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
+
 FlowLog::FlowLog() : 
-    m_creationTime(0.0),
     m_creationTimeHasBeenSet(false),
     m_flowLogIdHasBeenSet(false),
     m_flowLogStatusHasBeenSet(false),
     m_resourceIdHasBeenSet(false),
+    m_trafficType(TrafficType::NOT_SET),
     m_trafficTypeHasBeenSet(false),
     m_logGroupNameHasBeenSet(false),
     m_deliverLogsStatusHasBeenSet(false),
@@ -38,11 +44,11 @@ FlowLog::FlowLog() :
 }
 
 FlowLog::FlowLog(const XmlNode& xmlNode) : 
-    m_creationTime(0.0),
     m_creationTimeHasBeenSet(false),
     m_flowLogIdHasBeenSet(false),
     m_flowLogStatusHasBeenSet(false),
     m_resourceIdHasBeenSet(false),
+    m_trafficType(TrafficType::NOT_SET),
     m_trafficTypeHasBeenSet(false),
     m_logGroupNameHasBeenSet(false),
     m_deliverLogsStatusHasBeenSet(false),
@@ -61,7 +67,7 @@ FlowLog& FlowLog::operator =(const XmlNode& xmlNode)
     XmlNode creationTimeNode = resultNode.FirstChild("creationTime");
     if(!creationTimeNode.IsNull())
     {
-      m_creationTime = StringUtils::ConvertToDouble(StringUtils::Trim(creationTimeNode.GetText().c_str()).c_str());
+      m_creationTime = DateTime(StringUtils::Trim(creationTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_creationTimeHasBeenSet = true;
     }
     XmlNode flowLogIdNode = resultNode.FirstChild("flowLogId");
@@ -121,47 +127,56 @@ void FlowLog::OutputToStream(Aws::OStream& oStream, const char* location, unsign
 {
   if(m_creationTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".CreationTime=" << m_creationTime << "&";
+      oStream << location << index << locationValue << ".CreationTime=" << StringUtils::URLEncode(m_creationTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_flowLogIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".FlowLogId=" << StringUtils::URLEncode(m_flowLogId.c_str()) << "&";
   }
+
   if(m_flowLogStatusHasBeenSet)
   {
       oStream << location << index << locationValue << ".FlowLogStatus=" << StringUtils::URLEncode(m_flowLogStatus.c_str()) << "&";
   }
+
   if(m_resourceIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".ResourceId=" << StringUtils::URLEncode(m_resourceId.c_str()) << "&";
   }
+
   if(m_trafficTypeHasBeenSet)
   {
       oStream << location << index << locationValue << ".TrafficType=" << TrafficTypeMapper::GetNameForTrafficType(m_trafficType) << "&";
   }
+
   if(m_logGroupNameHasBeenSet)
   {
       oStream << location << index << locationValue << ".LogGroupName=" << StringUtils::URLEncode(m_logGroupName.c_str()) << "&";
   }
+
   if(m_deliverLogsStatusHasBeenSet)
   {
       oStream << location << index << locationValue << ".DeliverLogsStatus=" << StringUtils::URLEncode(m_deliverLogsStatus.c_str()) << "&";
   }
+
   if(m_deliverLogsErrorMessageHasBeenSet)
   {
       oStream << location << index << locationValue << ".DeliverLogsErrorMessage=" << StringUtils::URLEncode(m_deliverLogsErrorMessage.c_str()) << "&";
   }
+
   if(m_deliverLogsPermissionArnHasBeenSet)
   {
       oStream << location << index << locationValue << ".DeliverLogsPermissionArn=" << StringUtils::URLEncode(m_deliverLogsPermissionArn.c_str()) << "&";
   }
+
 }
 
 void FlowLog::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
   if(m_creationTimeHasBeenSet)
   {
-      oStream << location << ".CreationTime=" << m_creationTime << "&";
+      oStream << location << ".CreationTime=" << StringUtils::URLEncode(m_creationTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_flowLogIdHasBeenSet)
   {
@@ -196,3 +211,7 @@ void FlowLog::OutputToStream(Aws::OStream& oStream, const char* location) const
       oStream << location << ".DeliverLogsPermissionArn=" << StringUtils::URLEncode(m_deliverLogsPermissionArn.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

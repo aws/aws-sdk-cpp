@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,7 +24,6 @@ using namespace Aws::Utils;
 ActivatePipelineRequest::ActivatePipelineRequest() : 
     m_pipelineIdHasBeenSet(false),
     m_parameterValuesHasBeenSet(false),
-    m_startTimestamp(0.0),
     m_startTimestampHasBeenSet(false)
 {
 }
@@ -52,8 +51,7 @@ Aws::String ActivatePipelineRequest::SerializePayload() const
 
   if(m_startTimestampHasBeenSet)
   {
-   payload.WithDouble("startTimestamp", m_startTimestamp);
-
+   payload.WithDouble("startTimestamp", m_startTimestamp.SecondsWithMSPrecision());
   }
 
   return payload.WriteReadable();
@@ -63,7 +61,7 @@ Aws::Http::HeaderValueCollection ActivatePipelineRequest::GetRequestSpecificHead
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "DataPipeline.ActivatePipeline"));
-  return std::move(headers);
+  return headers;
 
 }
 

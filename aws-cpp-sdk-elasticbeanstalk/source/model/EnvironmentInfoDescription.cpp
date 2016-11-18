@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,23 +19,29 @@
 
 #include <utility>
 
-using namespace Aws::ElasticBeanstalk::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
+namespace Aws
+{
+namespace ElasticBeanstalk
+{
+namespace Model
+{
+
 EnvironmentInfoDescription::EnvironmentInfoDescription() : 
+    m_infoType(EnvironmentInfoType::NOT_SET),
     m_infoTypeHasBeenSet(false),
     m_ec2InstanceIdHasBeenSet(false),
-    m_sampleTimestamp(0.0),
     m_sampleTimestampHasBeenSet(false),
     m_messageHasBeenSet(false)
 {
 }
 
 EnvironmentInfoDescription::EnvironmentInfoDescription(const XmlNode& xmlNode) : 
+    m_infoType(EnvironmentInfoType::NOT_SET),
     m_infoTypeHasBeenSet(false),
     m_ec2InstanceIdHasBeenSet(false),
-    m_sampleTimestamp(0.0),
     m_sampleTimestampHasBeenSet(false),
     m_messageHasBeenSet(false)
 {
@@ -63,7 +69,7 @@ EnvironmentInfoDescription& EnvironmentInfoDescription::operator =(const XmlNode
     XmlNode sampleTimestampNode = resultNode.FirstChild("SampleTimestamp");
     if(!sampleTimestampNode.IsNull())
     {
-      m_sampleTimestamp = StringUtils::ConvertToDouble(StringUtils::Trim(sampleTimestampNode.GetText().c_str()).c_str());
+      m_sampleTimestamp = DateTime(StringUtils::Trim(sampleTimestampNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_sampleTimestampHasBeenSet = true;
     }
     XmlNode messageNode = resultNode.FirstChild("Message");
@@ -83,18 +89,22 @@ void EnvironmentInfoDescription::OutputToStream(Aws::OStream& oStream, const cha
   {
       oStream << location << index << locationValue << ".InfoType=" << EnvironmentInfoTypeMapper::GetNameForEnvironmentInfoType(m_infoType) << "&";
   }
+
   if(m_ec2InstanceIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".Ec2InstanceId=" << StringUtils::URLEncode(m_ec2InstanceId.c_str()) << "&";
   }
+
   if(m_sampleTimestampHasBeenSet)
   {
-      oStream << location << index << locationValue << ".SampleTimestamp=" << m_sampleTimestamp << "&";
+      oStream << location << index << locationValue << ".SampleTimestamp=" << StringUtils::URLEncode(m_sampleTimestamp.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_messageHasBeenSet)
   {
       oStream << location << index << locationValue << ".Message=" << StringUtils::URLEncode(m_message.c_str()) << "&";
   }
+
 }
 
 void EnvironmentInfoDescription::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -109,10 +119,14 @@ void EnvironmentInfoDescription::OutputToStream(Aws::OStream& oStream, const cha
   }
   if(m_sampleTimestampHasBeenSet)
   {
-      oStream << location << ".SampleTimestamp=" << m_sampleTimestamp << "&";
+      oStream << location << ".SampleTimestamp=" << StringUtils::URLEncode(m_sampleTimestamp.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_messageHasBeenSet)
   {
       oStream << location << ".Message=" << StringUtils::URLEncode(m_message.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace ElasticBeanstalk
+} // namespace Aws

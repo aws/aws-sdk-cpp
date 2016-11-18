@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::RDS::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace RDS
+{
+namespace Model
+{
 
 OrderableDBInstanceOption::OrderableDBInstanceOption() : 
     m_engineHasBeenSet(false),
@@ -34,7 +40,14 @@ OrderableDBInstanceOption::OrderableDBInstanceOption() :
     m_readReplicaCapable(false),
     m_readReplicaCapableHasBeenSet(false),
     m_vpc(false),
-    m_vpcHasBeenSet(false)
+    m_vpcHasBeenSet(false),
+    m_supportsStorageEncryption(false),
+    m_supportsStorageEncryptionHasBeenSet(false),
+    m_storageTypeHasBeenSet(false),
+    m_supportsIops(false),
+    m_supportsIopsHasBeenSet(false),
+    m_supportsEnhancedMonitoring(false),
+    m_supportsEnhancedMonitoringHasBeenSet(false)
 {
 }
 
@@ -49,7 +62,14 @@ OrderableDBInstanceOption::OrderableDBInstanceOption(const XmlNode& xmlNode) :
     m_readReplicaCapable(false),
     m_readReplicaCapableHasBeenSet(false),
     m_vpc(false),
-    m_vpcHasBeenSet(false)
+    m_vpcHasBeenSet(false),
+    m_supportsStorageEncryption(false),
+    m_supportsStorageEncryptionHasBeenSet(false),
+    m_storageTypeHasBeenSet(false),
+    m_supportsIops(false),
+    m_supportsIopsHasBeenSet(false),
+    m_supportsEnhancedMonitoring(false),
+    m_supportsEnhancedMonitoringHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -114,6 +134,30 @@ OrderableDBInstanceOption& OrderableDBInstanceOption::operator =(const XmlNode& 
       m_vpc = StringUtils::ConvertToBool(StringUtils::Trim(vpcNode.GetText().c_str()).c_str());
       m_vpcHasBeenSet = true;
     }
+    XmlNode supportsStorageEncryptionNode = resultNode.FirstChild("SupportsStorageEncryption");
+    if(!supportsStorageEncryptionNode.IsNull())
+    {
+      m_supportsStorageEncryption = StringUtils::ConvertToBool(StringUtils::Trim(supportsStorageEncryptionNode.GetText().c_str()).c_str());
+      m_supportsStorageEncryptionHasBeenSet = true;
+    }
+    XmlNode storageTypeNode = resultNode.FirstChild("StorageType");
+    if(!storageTypeNode.IsNull())
+    {
+      m_storageType = StringUtils::Trim(storageTypeNode.GetText().c_str());
+      m_storageTypeHasBeenSet = true;
+    }
+    XmlNode supportsIopsNode = resultNode.FirstChild("SupportsIops");
+    if(!supportsIopsNode.IsNull())
+    {
+      m_supportsIops = StringUtils::ConvertToBool(StringUtils::Trim(supportsIopsNode.GetText().c_str()).c_str());
+      m_supportsIopsHasBeenSet = true;
+    }
+    XmlNode supportsEnhancedMonitoringNode = resultNode.FirstChild("SupportsEnhancedMonitoring");
+    if(!supportsEnhancedMonitoringNode.IsNull())
+    {
+      m_supportsEnhancedMonitoring = StringUtils::ConvertToBool(StringUtils::Trim(supportsEnhancedMonitoringNode.GetText().c_str()).c_str());
+      m_supportsEnhancedMonitoringHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -125,39 +169,68 @@ void OrderableDBInstanceOption::OutputToStream(Aws::OStream& oStream, const char
   {
       oStream << location << index << locationValue << ".Engine=" << StringUtils::URLEncode(m_engine.c_str()) << "&";
   }
+
   if(m_engineVersionHasBeenSet)
   {
       oStream << location << index << locationValue << ".EngineVersion=" << StringUtils::URLEncode(m_engineVersion.c_str()) << "&";
   }
+
   if(m_dBInstanceClassHasBeenSet)
   {
       oStream << location << index << locationValue << ".DBInstanceClass=" << StringUtils::URLEncode(m_dBInstanceClass.c_str()) << "&";
   }
+
   if(m_licenseModelHasBeenSet)
   {
       oStream << location << index << locationValue << ".LicenseModel=" << StringUtils::URLEncode(m_licenseModel.c_str()) << "&";
   }
+
   if(m_availabilityZonesHasBeenSet)
   {
+      unsigned availabilityZonesIdx = 1;
       for(auto& item : m_availabilityZones)
       {
         Aws::StringStream availabilityZonesSs;
-        availabilityZonesSs << location << index << locationValue << ".AvailabilityZone";
+        availabilityZonesSs << location << index << locationValue << ".AvailabilityZone." << availabilityZonesIdx++;
         item.OutputToStream(oStream, availabilityZonesSs.str().c_str());
       }
   }
+
   if(m_multiAZCapableHasBeenSet)
   {
       oStream << location << index << locationValue << ".MultiAZCapable=" << m_multiAZCapable << "&";
   }
+
   if(m_readReplicaCapableHasBeenSet)
   {
       oStream << location << index << locationValue << ".ReadReplicaCapable=" << m_readReplicaCapable << "&";
   }
+
   if(m_vpcHasBeenSet)
   {
       oStream << location << index << locationValue << ".Vpc=" << m_vpc << "&";
   }
+
+  if(m_supportsStorageEncryptionHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".SupportsStorageEncryption=" << m_supportsStorageEncryption << "&";
+  }
+
+  if(m_storageTypeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".StorageType=" << StringUtils::URLEncode(m_storageType.c_str()) << "&";
+  }
+
+  if(m_supportsIopsHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".SupportsIops=" << m_supportsIops << "&";
+  }
+
+  if(m_supportsEnhancedMonitoringHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".SupportsEnhancedMonitoring=" << m_supportsEnhancedMonitoring << "&";
+  }
+
 }
 
 void OrderableDBInstanceOption::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -180,11 +253,12 @@ void OrderableDBInstanceOption::OutputToStream(Aws::OStream& oStream, const char
   }
   if(m_availabilityZonesHasBeenSet)
   {
+      unsigned availabilityZonesIdx = 1;
       for(auto& item : m_availabilityZones)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".AvailabilityZone";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream availabilityZonesSs;
+        availabilityZonesSs << location <<  ".AvailabilityZone." << availabilityZonesIdx++;
+        item.OutputToStream(oStream, availabilityZonesSs.str().c_str());
       }
   }
   if(m_multiAZCapableHasBeenSet)
@@ -199,4 +273,24 @@ void OrderableDBInstanceOption::OutputToStream(Aws::OStream& oStream, const char
   {
       oStream << location << ".Vpc=" << m_vpc << "&";
   }
+  if(m_supportsStorageEncryptionHasBeenSet)
+  {
+      oStream << location << ".SupportsStorageEncryption=" << m_supportsStorageEncryption << "&";
+  }
+  if(m_storageTypeHasBeenSet)
+  {
+      oStream << location << ".StorageType=" << StringUtils::URLEncode(m_storageType.c_str()) << "&";
+  }
+  if(m_supportsIopsHasBeenSet)
+  {
+      oStream << location << ".SupportsIops=" << m_supportsIops << "&";
+  }
+  if(m_supportsEnhancedMonitoringHasBeenSet)
+  {
+      oStream << location << ".SupportsEnhancedMonitoring=" << m_supportsEnhancedMonitoring << "&";
+  }
 }
+
+} // namespace Model
+} // namespace RDS
+} // namespace Aws

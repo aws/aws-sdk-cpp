@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -30,6 +30,7 @@ RegisterWorkflowTypeRequest::RegisterWorkflowTypeRequest() :
     m_defaultExecutionStartToCloseTimeoutHasBeenSet(false),
     m_defaultTaskListHasBeenSet(false),
     m_defaultTaskPriorityHasBeenSet(false),
+    m_defaultChildPolicy(ChildPolicy::NOT_SET),
     m_defaultChildPolicyHasBeenSet(false),
     m_defaultLambdaRoleHasBeenSet(false)
 {
@@ -105,7 +106,7 @@ Aws::Http::HeaderValueCollection RegisterWorkflowTypeRequest::GetRequestSpecific
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "SimpleWorkflowService.RegisterWorkflowType"));
-  return std::move(headers);
+  return headers;
 
 }
 

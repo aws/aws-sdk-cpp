@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,12 +19,17 @@
 
 #include <utility>
 
-using namespace Aws::IAM::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
+namespace Aws
+{
+namespace IAM
+{
+namespace Model
+{
+
 AccessKeyLastUsed::AccessKeyLastUsed() : 
-    m_lastUsedDate(0.0),
     m_lastUsedDateHasBeenSet(false),
     m_serviceNameHasBeenSet(false),
     m_regionHasBeenSet(false)
@@ -32,7 +37,6 @@ AccessKeyLastUsed::AccessKeyLastUsed() :
 }
 
 AccessKeyLastUsed::AccessKeyLastUsed(const XmlNode& xmlNode) : 
-    m_lastUsedDate(0.0),
     m_lastUsedDateHasBeenSet(false),
     m_serviceNameHasBeenSet(false),
     m_regionHasBeenSet(false)
@@ -49,7 +53,7 @@ AccessKeyLastUsed& AccessKeyLastUsed::operator =(const XmlNode& xmlNode)
     XmlNode lastUsedDateNode = resultNode.FirstChild("LastUsedDate");
     if(!lastUsedDateNode.IsNull())
     {
-      m_lastUsedDate = StringUtils::ConvertToDouble(StringUtils::Trim(lastUsedDateNode.GetText().c_str()).c_str());
+      m_lastUsedDate = DateTime(StringUtils::Trim(lastUsedDateNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_lastUsedDateHasBeenSet = true;
     }
     XmlNode serviceNameNode = resultNode.FirstChild("ServiceName");
@@ -73,23 +77,26 @@ void AccessKeyLastUsed::OutputToStream(Aws::OStream& oStream, const char* locati
 {
   if(m_lastUsedDateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".LastUsedDate=" << m_lastUsedDate << "&";
+      oStream << location << index << locationValue << ".LastUsedDate=" << StringUtils::URLEncode(m_lastUsedDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_serviceNameHasBeenSet)
   {
       oStream << location << index << locationValue << ".ServiceName=" << StringUtils::URLEncode(m_serviceName.c_str()) << "&";
   }
+
   if(m_regionHasBeenSet)
   {
       oStream << location << index << locationValue << ".Region=" << StringUtils::URLEncode(m_region.c_str()) << "&";
   }
+
 }
 
 void AccessKeyLastUsed::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
   if(m_lastUsedDateHasBeenSet)
   {
-      oStream << location << ".LastUsedDate=" << m_lastUsedDate << "&";
+      oStream << location << ".LastUsedDate=" << StringUtils::URLEncode(m_lastUsedDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_serviceNameHasBeenSet)
   {
@@ -100,3 +107,7 @@ void AccessKeyLastUsed::OutputToStream(Aws::OStream& oStream, const char* locati
       oStream << location << ".Region=" << StringUtils::URLEncode(m_region.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace IAM
+} // namespace Aws

@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,48 +24,48 @@ namespace EC2
 namespace Model
 {
 
-  /*
-  */
+  /**
+   * <p>Contains the parameters for CancelReservedInstancesListing.</p>
+   */
   class AWS_EC2_API CancelReservedInstancesListingRequest : public EC2Request
   {
   public:
     CancelReservedInstancesListingRequest();
     Aws::String SerializePayload() const override;
 
-
-    /*
-     <p>The ID of the Reserved Instance listing.</p>
-    */
+    /**
+     * <p>The ID of the Reserved Instance listing.</p>
+     */
     inline const Aws::String& GetReservedInstancesListingId() const{ return m_reservedInstancesListingId; }
 
-    /*
-     <p>The ID of the Reserved Instance listing.</p>
-    */
+    /**
+     * <p>The ID of the Reserved Instance listing.</p>
+     */
     inline void SetReservedInstancesListingId(const Aws::String& value) { m_reservedInstancesListingIdHasBeenSet = true; m_reservedInstancesListingId = value; }
 
-    /*
-     <p>The ID of the Reserved Instance listing.</p>
-    */
+    /**
+     * <p>The ID of the Reserved Instance listing.</p>
+     */
     inline void SetReservedInstancesListingId(Aws::String&& value) { m_reservedInstancesListingIdHasBeenSet = true; m_reservedInstancesListingId = value; }
 
-    /*
-     <p>The ID of the Reserved Instance listing.</p>
-    */
+    /**
+     * <p>The ID of the Reserved Instance listing.</p>
+     */
     inline void SetReservedInstancesListingId(const char* value) { m_reservedInstancesListingIdHasBeenSet = true; m_reservedInstancesListingId.assign(value); }
 
-    /*
-     <p>The ID of the Reserved Instance listing.</p>
-    */
+    /**
+     * <p>The ID of the Reserved Instance listing.</p>
+     */
     inline CancelReservedInstancesListingRequest& WithReservedInstancesListingId(const Aws::String& value) { SetReservedInstancesListingId(value); return *this;}
 
-    /*
-     <p>The ID of the Reserved Instance listing.</p>
-    */
+    /**
+     * <p>The ID of the Reserved Instance listing.</p>
+     */
     inline CancelReservedInstancesListingRequest& WithReservedInstancesListingId(Aws::String&& value) { SetReservedInstancesListingId(value); return *this;}
 
-    /*
-     <p>The ID of the Reserved Instance listing.</p>
-    */
+    /**
+     * <p>The ID of the Reserved Instance listing.</p>
+     */
     inline CancelReservedInstancesListingRequest& WithReservedInstancesListingId(const char* value) { SetReservedInstancesListingId(value); return *this;}
 
   private:

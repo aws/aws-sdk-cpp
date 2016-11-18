@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,15 +19,22 @@
 
 #include <utility>
 
-using namespace Aws::EC2::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
 
 PriceSchedule::PriceSchedule() : 
     m_term(0),
     m_termHasBeenSet(false),
     m_price(0.0),
     m_priceHasBeenSet(false),
+    m_currencyCode(CurrencyCodeValues::NOT_SET),
     m_currencyCodeHasBeenSet(false),
     m_active(false),
     m_activeHasBeenSet(false)
@@ -39,6 +46,7 @@ PriceSchedule::PriceSchedule(const XmlNode& xmlNode) :
     m_termHasBeenSet(false),
     m_price(0.0),
     m_priceHasBeenSet(false),
+    m_currencyCode(CurrencyCodeValues::NOT_SET),
     m_currencyCodeHasBeenSet(false),
     m_active(false),
     m_activeHasBeenSet(false)
@@ -87,18 +95,22 @@ void PriceSchedule::OutputToStream(Aws::OStream& oStream, const char* location, 
   {
       oStream << location << index << locationValue << ".Term=" << m_term << "&";
   }
+
   if(m_priceHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Price=" << m_price << "&";
+        oStream << location << index << locationValue << ".Price=" << StringUtils::URLEncode(m_price) << "&";
   }
+
   if(m_currencyCodeHasBeenSet)
   {
       oStream << location << index << locationValue << ".CurrencyCode=" << CurrencyCodeValuesMapper::GetNameForCurrencyCodeValues(m_currencyCode) << "&";
   }
+
   if(m_activeHasBeenSet)
   {
       oStream << location << index << locationValue << ".Active=" << m_active << "&";
   }
+
 }
 
 void PriceSchedule::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -109,7 +121,7 @@ void PriceSchedule::OutputToStream(Aws::OStream& oStream, const char* location) 
   }
   if(m_priceHasBeenSet)
   {
-      oStream << location << ".Price=" << m_price << "&";
+        oStream << location << ".Price=" << StringUtils::URLEncode(m_price) << "&";
   }
   if(m_currencyCodeHasBeenSet)
   {
@@ -120,3 +132,7 @@ void PriceSchedule::OutputToStream(Aws::OStream& oStream, const char* location) 
       oStream << location << ".Active=" << m_active << "&";
   }
 }
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

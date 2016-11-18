@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,13 +19,20 @@
 
 #include <utility>
 
-using namespace Aws::CloudWatch::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace CloudWatch
+{
+namespace Model
+{
 
 AlarmHistoryItem::AlarmHistoryItem() : 
     m_alarmNameHasBeenSet(false),
     m_timestampHasBeenSet(false),
+    m_historyItemType(HistoryItemType::NOT_SET),
     m_historyItemTypeHasBeenSet(false),
     m_historySummaryHasBeenSet(false),
     m_historyDataHasBeenSet(false)
@@ -35,6 +42,7 @@ AlarmHistoryItem::AlarmHistoryItem() :
 AlarmHistoryItem::AlarmHistoryItem(const XmlNode& xmlNode) : 
     m_alarmNameHasBeenSet(false),
     m_timestampHasBeenSet(false),
+    m_historyItemType(HistoryItemType::NOT_SET),
     m_historyItemTypeHasBeenSet(false),
     m_historySummaryHasBeenSet(false),
     m_historyDataHasBeenSet(false)
@@ -57,7 +65,7 @@ AlarmHistoryItem& AlarmHistoryItem::operator =(const XmlNode& xmlNode)
     XmlNode timestampNode = resultNode.FirstChild("Timestamp");
     if(!timestampNode.IsNull())
     {
-      m_timestamp = StringUtils::Trim(timestampNode.GetText().c_str());
+      m_timestamp = DateTime(StringUtils::Trim(timestampNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_timestampHasBeenSet = true;
     }
     XmlNode historyItemTypeNode = resultNode.FirstChild("HistoryItemType");
@@ -89,22 +97,27 @@ void AlarmHistoryItem::OutputToStream(Aws::OStream& oStream, const char* locatio
   {
       oStream << location << index << locationValue << ".AlarmName=" << StringUtils::URLEncode(m_alarmName.c_str()) << "&";
   }
+
   if(m_timestampHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Timestamp=" << StringUtils::URLEncode(m_timestamp.c_str()) << "&";
+      oStream << location << index << locationValue << ".Timestamp=" << StringUtils::URLEncode(m_timestamp.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_historyItemTypeHasBeenSet)
   {
       oStream << location << index << locationValue << ".HistoryItemType=" << HistoryItemTypeMapper::GetNameForHistoryItemType(m_historyItemType) << "&";
   }
+
   if(m_historySummaryHasBeenSet)
   {
       oStream << location << index << locationValue << ".HistorySummary=" << StringUtils::URLEncode(m_historySummary.c_str()) << "&";
   }
+
   if(m_historyDataHasBeenSet)
   {
       oStream << location << index << locationValue << ".HistoryData=" << StringUtils::URLEncode(m_historyData.c_str()) << "&";
   }
+
 }
 
 void AlarmHistoryItem::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -115,7 +128,7 @@ void AlarmHistoryItem::OutputToStream(Aws::OStream& oStream, const char* locatio
   }
   if(m_timestampHasBeenSet)
   {
-      oStream << location << ".Timestamp=" << StringUtils::URLEncode(m_timestamp.c_str()) << "&";
+      oStream << location << ".Timestamp=" << StringUtils::URLEncode(m_timestamp.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_historyItemTypeHasBeenSet)
   {
@@ -130,3 +143,7 @@ void AlarmHistoryItem::OutputToStream(Aws::OStream& oStream, const char* locatio
       oStream << location << ".HistoryData=" << StringUtils::URLEncode(m_historyData.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace CloudWatch
+} // namespace Aws

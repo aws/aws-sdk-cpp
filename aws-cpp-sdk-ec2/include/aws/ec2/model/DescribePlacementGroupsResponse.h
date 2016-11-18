@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -34,9 +34,9 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
+  /**
+   * <p>Contains the output of DescribePlacementGroups.</p>
+   */
   class AWS_EC2_API DescribePlacementGroupsResponse
   {
   public:
@@ -44,39 +44,39 @@ namespace Model
     DescribePlacementGroupsResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     DescribePlacementGroupsResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>One or more placement groups.</p>
-    */
+    /**
+     * <p>One or more placement groups.</p>
+     */
     inline const Aws::Vector<PlacementGroup>& GetPlacementGroups() const{ return m_placementGroups; }
 
-    /*
-     <p>One or more placement groups.</p>
-    */
+    /**
+     * <p>One or more placement groups.</p>
+     */
     inline void SetPlacementGroups(const Aws::Vector<PlacementGroup>& value) { m_placementGroups = value; }
 
-    /*
-     <p>One or more placement groups.</p>
-    */
+    /**
+     * <p>One or more placement groups.</p>
+     */
     inline void SetPlacementGroups(Aws::Vector<PlacementGroup>&& value) { m_placementGroups = value; }
 
-    /*
-     <p>One or more placement groups.</p>
-    */
+    /**
+     * <p>One or more placement groups.</p>
+     */
     inline DescribePlacementGroupsResponse& WithPlacementGroups(const Aws::Vector<PlacementGroup>& value) { SetPlacementGroups(value); return *this;}
 
-    /*
-     <p>One or more placement groups.</p>
-    */
+    /**
+     * <p>One or more placement groups.</p>
+     */
     inline DescribePlacementGroupsResponse& WithPlacementGroups(Aws::Vector<PlacementGroup>&& value) { SetPlacementGroups(value); return *this;}
 
-    /*
-     <p>One or more placement groups.</p>
-    */
+    /**
+     * <p>One or more placement groups.</p>
+     */
     inline DescribePlacementGroupsResponse& AddPlacementGroups(const PlacementGroup& value) { m_placementGroups.push_back(value); return *this; }
 
-    /*
-     <p>One or more placement groups.</p>
-    */
+    /**
+     * <p>One or more placement groups.</p>
+     */
     inline DescribePlacementGroupsResponse& AddPlacementGroups(PlacementGroup&& value) { m_placementGroups.push_back(value); return *this; }
 
     

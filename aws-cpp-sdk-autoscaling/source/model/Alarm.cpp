@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace AutoScaling
+{
+namespace Model
+{
 
 Alarm::Alarm() : 
     m_alarmNameHasBeenSet(false),
@@ -65,10 +71,12 @@ void Alarm::OutputToStream(Aws::OStream& oStream, const char* location, unsigned
   {
       oStream << location << index << locationValue << ".AlarmName=" << StringUtils::URLEncode(m_alarmName.c_str()) << "&";
   }
+
   if(m_alarmARNHasBeenSet)
   {
       oStream << location << index << locationValue << ".AlarmARN=" << StringUtils::URLEncode(m_alarmARN.c_str()) << "&";
   }
+
 }
 
 void Alarm::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -82,3 +90,7 @@ void Alarm::OutputToStream(Aws::OStream& oStream, const char* location) const
       oStream << location << ".AlarmARN=" << StringUtils::URLEncode(m_alarmARN.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace AutoScaling
+} // namespace Aws

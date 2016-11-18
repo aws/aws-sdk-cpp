@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::ElasticLoadBalancing::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace ElasticLoadBalancing
+{
+namespace Model
+{
 
 Policies::Policies() : 
     m_appCookieStickinessPoliciesHasBeenSet(false),
@@ -89,56 +95,69 @@ void Policies::OutputToStream(Aws::OStream& oStream, const char* location, unsig
 {
   if(m_appCookieStickinessPoliciesHasBeenSet)
   {
+      unsigned appCookieStickinessPoliciesIdx = 1;
       for(auto& item : m_appCookieStickinessPolicies)
       {
         Aws::StringStream appCookieStickinessPoliciesSs;
-        appCookieStickinessPoliciesSs << location << index << locationValue << ".AppCookieStickinessPolicies";
+        appCookieStickinessPoliciesSs << location << index << locationValue << ".AppCookieStickinessPolicies.member." << appCookieStickinessPoliciesIdx++;
         item.OutputToStream(oStream, appCookieStickinessPoliciesSs.str().c_str());
       }
   }
+
   if(m_lBCookieStickinessPoliciesHasBeenSet)
   {
+      unsigned lBCookieStickinessPoliciesIdx = 1;
       for(auto& item : m_lBCookieStickinessPolicies)
       {
         Aws::StringStream lBCookieStickinessPoliciesSs;
-        lBCookieStickinessPoliciesSs << location << index << locationValue << ".LBCookieStickinessPolicies";
+        lBCookieStickinessPoliciesSs << location << index << locationValue << ".LBCookieStickinessPolicies.member." << lBCookieStickinessPoliciesIdx++;
         item.OutputToStream(oStream, lBCookieStickinessPoliciesSs.str().c_str());
       }
   }
+
   if(m_otherPoliciesHasBeenSet)
   {
+      unsigned otherPoliciesIdx = 1;
       for(auto& item : m_otherPolicies)
       {
-        oStream << location << index << locationValue << ".OtherPolicies=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << index << locationValue << ".OtherPolicies.member." << otherPoliciesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
+
 }
 
 void Policies::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
   if(m_appCookieStickinessPoliciesHasBeenSet)
   {
+      unsigned appCookieStickinessPoliciesIdx = 1;
       for(auto& item : m_appCookieStickinessPolicies)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".AppCookieStickinessPolicies";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream appCookieStickinessPoliciesSs;
+        appCookieStickinessPoliciesSs << location <<  ".AppCookieStickinessPolicies.member." << appCookieStickinessPoliciesIdx++;
+        item.OutputToStream(oStream, appCookieStickinessPoliciesSs.str().c_str());
       }
   }
   if(m_lBCookieStickinessPoliciesHasBeenSet)
   {
+      unsigned lBCookieStickinessPoliciesIdx = 1;
       for(auto& item : m_lBCookieStickinessPolicies)
       {
-        Aws::String locationAndListMember(location);
-        locationAndListMember += ".LBCookieStickinessPolicies";
-        item.OutputToStream(oStream, locationAndListMember.c_str());
+        Aws::StringStream lBCookieStickinessPoliciesSs;
+        lBCookieStickinessPoliciesSs << location <<  ".LBCookieStickinessPolicies.member." << lBCookieStickinessPoliciesIdx++;
+        item.OutputToStream(oStream, lBCookieStickinessPoliciesSs.str().c_str());
       }
   }
   if(m_otherPoliciesHasBeenSet)
   {
+      unsigned otherPoliciesIdx = 1;
       for(auto& item : m_otherPolicies)
       {
-        oStream << location << ".OtherPolicies=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << ".OtherPolicies.member." << otherPoliciesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
 }
+
+} // namespace Model
+} // namespace ElasticLoadBalancing
+} // namespace Aws

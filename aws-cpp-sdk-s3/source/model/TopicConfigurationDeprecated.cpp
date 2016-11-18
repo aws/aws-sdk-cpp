@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::S3::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace S3
+{
+namespace Model
+{
 
 TopicConfigurationDeprecated::TopicConfigurationDeprecated() : 
     m_idHasBeenSet(false),
@@ -50,14 +56,14 @@ TopicConfigurationDeprecated& TopicConfigurationDeprecated::operator =(const Xml
       m_id = StringUtils::Trim(idNode.GetText().c_str());
       m_idHasBeenSet = true;
     }
-    XmlNode eventsNode = resultNode.FirstChild("Events");
+    XmlNode eventsNode = resultNode.FirstChild("Event");
     if(!eventsNode.IsNull())
     {
-      XmlNode eventsMember = eventsNode;
-      while(!eventsMember.IsNull())
+      XmlNode eventMember = eventsNode;
+      while(!eventMember.IsNull())
       {
-        m_events.push_back(EventMapper::GetEventForName(StringUtils::Trim(eventsMember.GetText().c_str())));
-        eventsMember = eventsMember.NextNode("Event");
+        m_events.push_back(EventMapper::GetEventForName(StringUtils::Trim(eventMember.GetText().c_str())));
+        eventMember = eventMember.NextNode("Event");
       }
 
       m_eventsHasBeenSet = true;
@@ -98,3 +104,7 @@ void TopicConfigurationDeprecated::AddToNode(XmlNode& parentNode) const
   }
 
 }
+
+} // namespace Model
+} // namespace S3
+} // namespace Aws

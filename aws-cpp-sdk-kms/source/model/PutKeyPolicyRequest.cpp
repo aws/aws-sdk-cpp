@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -24,7 +24,9 @@ using namespace Aws::Utils;
 PutKeyPolicyRequest::PutKeyPolicyRequest() : 
     m_keyIdHasBeenSet(false),
     m_policyNameHasBeenSet(false),
-    m_policyHasBeenSet(false)
+    m_policyHasBeenSet(false),
+    m_bypassPolicyLockoutSafetyCheck(false),
+    m_bypassPolicyLockoutSafetyCheckHasBeenSet(false)
 {
 }
 
@@ -50,6 +52,12 @@ Aws::String PutKeyPolicyRequest::SerializePayload() const
 
   }
 
+  if(m_bypassPolicyLockoutSafetyCheckHasBeenSet)
+  {
+   payload.WithBool("BypassPolicyLockoutSafetyCheck", m_bypassPolicyLockoutSafetyCheck);
+
+  }
+
   return payload.WriteReadable();
 }
 
@@ -57,7 +65,7 @@ Aws::Http::HeaderValueCollection PutKeyPolicyRequest::GetRequestSpecificHeaders(
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "TrentService.PutKeyPolicy"));
-  return std::move(headers);
+  return headers;
 
 }
 

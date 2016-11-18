@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -30,9 +31,10 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    <p>Describes a volume status event.</p>
-  */
+
+  /**
+   * <p>Describes a volume status event.</p>
+   */
   class AWS_EC2_API VolumeStatusEvent
   {
   public:
@@ -43,139 +45,159 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    /*
-     <p>The type of this event.</p>
-    */
+    /**
+     * <p>The type of this event.</p>
+     */
     inline const Aws::String& GetEventType() const{ return m_eventType; }
 
-    /*
-     <p>The type of this event.</p>
-    */
+    /**
+     * <p>The type of this event.</p>
+     */
     inline void SetEventType(const Aws::String& value) { m_eventTypeHasBeenSet = true; m_eventType = value; }
 
-    /*
-     <p>The type of this event.</p>
-    */
+    /**
+     * <p>The type of this event.</p>
+     */
     inline void SetEventType(Aws::String&& value) { m_eventTypeHasBeenSet = true; m_eventType = value; }
 
-    /*
-     <p>The type of this event.</p>
-    */
+    /**
+     * <p>The type of this event.</p>
+     */
     inline void SetEventType(const char* value) { m_eventTypeHasBeenSet = true; m_eventType.assign(value); }
 
-    /*
-     <p>The type of this event.</p>
-    */
+    /**
+     * <p>The type of this event.</p>
+     */
     inline VolumeStatusEvent& WithEventType(const Aws::String& value) { SetEventType(value); return *this;}
 
-    /*
-     <p>The type of this event.</p>
-    */
+    /**
+     * <p>The type of this event.</p>
+     */
     inline VolumeStatusEvent& WithEventType(Aws::String&& value) { SetEventType(value); return *this;}
 
-    /*
-     <p>The type of this event.</p>
-    */
+    /**
+     * <p>The type of this event.</p>
+     */
     inline VolumeStatusEvent& WithEventType(const char* value) { SetEventType(value); return *this;}
 
-    /*
-     <p>A description of the event.</p>
-    */
+    /**
+     * <p>A description of the event.</p>
+     */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
-    /*
-     <p>A description of the event.</p>
-    */
+    /**
+     * <p>A description of the event.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
-    /*
-     <p>A description of the event.</p>
-    */
+    /**
+     * <p>A description of the event.</p>
+     */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
-    /*
-     <p>A description of the event.</p>
-    */
+    /**
+     * <p>A description of the event.</p>
+     */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
-    /*
-     <p>A description of the event.</p>
-    */
+    /**
+     * <p>A description of the event.</p>
+     */
     inline VolumeStatusEvent& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
-    /*
-     <p>A description of the event.</p>
-    */
+    /**
+     * <p>A description of the event.</p>
+     */
     inline VolumeStatusEvent& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
 
-    /*
-     <p>A description of the event.</p>
-    */
+    /**
+     * <p>A description of the event.</p>
+     */
     inline VolumeStatusEvent& WithDescription(const char* value) { SetDescription(value); return *this;}
 
-    /*
-     <p>The earliest start time of the event.</p>
-    */
-    inline double GetNotBefore() const{ return m_notBefore; }
+    /**
+     * <p>The earliest start time of the event.</p>
+     */
+    inline const Aws::Utils::DateTime& GetNotBefore() const{ return m_notBefore; }
 
-    /*
-     <p>The earliest start time of the event.</p>
-    */
-    inline void SetNotBefore(double value) { m_notBeforeHasBeenSet = true; m_notBefore = value; }
+    /**
+     * <p>The earliest start time of the event.</p>
+     */
+    inline void SetNotBefore(const Aws::Utils::DateTime& value) { m_notBeforeHasBeenSet = true; m_notBefore = value; }
 
-    /*
-     <p>The earliest start time of the event.</p>
-    */
-    inline VolumeStatusEvent& WithNotBefore(double value) { SetNotBefore(value); return *this;}
+    /**
+     * <p>The earliest start time of the event.</p>
+     */
+    inline void SetNotBefore(Aws::Utils::DateTime&& value) { m_notBeforeHasBeenSet = true; m_notBefore = value; }
 
-    /*
-     <p>The latest end time of the event.</p>
-    */
-    inline double GetNotAfter() const{ return m_notAfter; }
+    /**
+     * <p>The earliest start time of the event.</p>
+     */
+    inline VolumeStatusEvent& WithNotBefore(const Aws::Utils::DateTime& value) { SetNotBefore(value); return *this;}
 
-    /*
-     <p>The latest end time of the event.</p>
-    */
-    inline void SetNotAfter(double value) { m_notAfterHasBeenSet = true; m_notAfter = value; }
+    /**
+     * <p>The earliest start time of the event.</p>
+     */
+    inline VolumeStatusEvent& WithNotBefore(Aws::Utils::DateTime&& value) { SetNotBefore(value); return *this;}
 
-    /*
-     <p>The latest end time of the event.</p>
-    */
-    inline VolumeStatusEvent& WithNotAfter(double value) { SetNotAfter(value); return *this;}
+    /**
+     * <p>The latest end time of the event.</p>
+     */
+    inline const Aws::Utils::DateTime& GetNotAfter() const{ return m_notAfter; }
 
-    /*
-     <p>The ID of this event.</p>
-    */
+    /**
+     * <p>The latest end time of the event.</p>
+     */
+    inline void SetNotAfter(const Aws::Utils::DateTime& value) { m_notAfterHasBeenSet = true; m_notAfter = value; }
+
+    /**
+     * <p>The latest end time of the event.</p>
+     */
+    inline void SetNotAfter(Aws::Utils::DateTime&& value) { m_notAfterHasBeenSet = true; m_notAfter = value; }
+
+    /**
+     * <p>The latest end time of the event.</p>
+     */
+    inline VolumeStatusEvent& WithNotAfter(const Aws::Utils::DateTime& value) { SetNotAfter(value); return *this;}
+
+    /**
+     * <p>The latest end time of the event.</p>
+     */
+    inline VolumeStatusEvent& WithNotAfter(Aws::Utils::DateTime&& value) { SetNotAfter(value); return *this;}
+
+    /**
+     * <p>The ID of this event.</p>
+     */
     inline const Aws::String& GetEventId() const{ return m_eventId; }
 
-    /*
-     <p>The ID of this event.</p>
-    */
+    /**
+     * <p>The ID of this event.</p>
+     */
     inline void SetEventId(const Aws::String& value) { m_eventIdHasBeenSet = true; m_eventId = value; }
 
-    /*
-     <p>The ID of this event.</p>
-    */
+    /**
+     * <p>The ID of this event.</p>
+     */
     inline void SetEventId(Aws::String&& value) { m_eventIdHasBeenSet = true; m_eventId = value; }
 
-    /*
-     <p>The ID of this event.</p>
-    */
+    /**
+     * <p>The ID of this event.</p>
+     */
     inline void SetEventId(const char* value) { m_eventIdHasBeenSet = true; m_eventId.assign(value); }
 
-    /*
-     <p>The ID of this event.</p>
-    */
+    /**
+     * <p>The ID of this event.</p>
+     */
     inline VolumeStatusEvent& WithEventId(const Aws::String& value) { SetEventId(value); return *this;}
 
-    /*
-     <p>The ID of this event.</p>
-    */
+    /**
+     * <p>The ID of this event.</p>
+     */
     inline VolumeStatusEvent& WithEventId(Aws::String&& value) { SetEventId(value); return *this;}
 
-    /*
-     <p>The ID of this event.</p>
-    */
+    /**
+     * <p>The ID of this event.</p>
+     */
     inline VolumeStatusEvent& WithEventId(const char* value) { SetEventId(value); return *this;}
 
   private:
@@ -183,9 +205,9 @@ namespace Model
     bool m_eventTypeHasBeenSet;
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
-    double m_notBefore;
+    Aws::Utils::DateTime m_notBefore;
     bool m_notBeforeHasBeenSet;
-    double m_notAfter;
+    Aws::Utils::DateTime m_notAfter;
     bool m_notAfterHasBeenSet;
     Aws::String m_eventId;
     bool m_eventIdHasBeenSet;

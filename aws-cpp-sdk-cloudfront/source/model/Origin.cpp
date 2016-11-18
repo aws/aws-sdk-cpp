@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -19,14 +19,21 @@
 
 #include <utility>
 
-using namespace Aws::CloudFront::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace CloudFront
+{
+namespace Model
+{
 
 Origin::Origin() : 
     m_idHasBeenSet(false),
     m_domainNameHasBeenSet(false),
     m_originPathHasBeenSet(false),
+    m_customHeadersHasBeenSet(false),
     m_s3OriginConfigHasBeenSet(false),
     m_customOriginConfigHasBeenSet(false)
 {
@@ -36,6 +43,7 @@ Origin::Origin(const XmlNode& xmlNode) :
     m_idHasBeenSet(false),
     m_domainNameHasBeenSet(false),
     m_originPathHasBeenSet(false),
+    m_customHeadersHasBeenSet(false),
     m_s3OriginConfigHasBeenSet(false),
     m_customOriginConfigHasBeenSet(false)
 {
@@ -65,6 +73,12 @@ Origin& Origin::operator =(const XmlNode& xmlNode)
     {
       m_originPath = StringUtils::Trim(originPathNode.GetText().c_str());
       m_originPathHasBeenSet = true;
+    }
+    XmlNode customHeadersNode = resultNode.FirstChild("CustomHeaders");
+    if(!customHeadersNode.IsNull())
+    {
+      m_customHeaders = customHeadersNode;
+      m_customHeadersHasBeenSet = true;
     }
     XmlNode s3OriginConfigNode = resultNode.FirstChild("S3OriginConfig");
     if(!s3OriginConfigNode.IsNull())
@@ -104,6 +118,12 @@ void Origin::AddToNode(XmlNode& parentNode) const
    originPathNode.SetText(m_originPath);
   }
 
+  if(m_customHeadersHasBeenSet)
+  {
+   XmlNode customHeadersNode = parentNode.CreateChildElement("CustomHeaders");
+   m_customHeaders.AddToNode(customHeadersNode);
+  }
+
   if(m_s3OriginConfigHasBeenSet)
   {
    XmlNode s3OriginConfigNode = parentNode.CreateChildElement("S3OriginConfig");
@@ -117,3 +137,7 @@ void Origin::AddToNode(XmlNode& parentNode) const
   }
 
 }
+
+} // namespace Model
+} // namespace CloudFront
+} // namespace Aws

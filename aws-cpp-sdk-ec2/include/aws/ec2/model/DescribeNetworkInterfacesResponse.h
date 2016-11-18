@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -34,9 +34,9 @@ namespace EC2
 {
 namespace Model
 {
-  /*
-    $shape.documentation
-  */
+  /**
+   * <p>Contains the output of DescribeNetworkInterfaces.</p>
+   */
   class AWS_EC2_API DescribeNetworkInterfacesResponse
   {
   public:
@@ -44,39 +44,39 @@ namespace Model
     DescribeNetworkInterfacesResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     DescribeNetworkInterfacesResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    /*
-     <p>Information about one or more network interfaces.</p>
-    */
+    /**
+     * <p>Information about one or more network interfaces.</p>
+     */
     inline const Aws::Vector<NetworkInterface>& GetNetworkInterfaces() const{ return m_networkInterfaces; }
 
-    /*
-     <p>Information about one or more network interfaces.</p>
-    */
+    /**
+     * <p>Information about one or more network interfaces.</p>
+     */
     inline void SetNetworkInterfaces(const Aws::Vector<NetworkInterface>& value) { m_networkInterfaces = value; }
 
-    /*
-     <p>Information about one or more network interfaces.</p>
-    */
+    /**
+     * <p>Information about one or more network interfaces.</p>
+     */
     inline void SetNetworkInterfaces(Aws::Vector<NetworkInterface>&& value) { m_networkInterfaces = value; }
 
-    /*
-     <p>Information about one or more network interfaces.</p>
-    */
+    /**
+     * <p>Information about one or more network interfaces.</p>
+     */
     inline DescribeNetworkInterfacesResponse& WithNetworkInterfaces(const Aws::Vector<NetworkInterface>& value) { SetNetworkInterfaces(value); return *this;}
 
-    /*
-     <p>Information about one or more network interfaces.</p>
-    */
+    /**
+     * <p>Information about one or more network interfaces.</p>
+     */
     inline DescribeNetworkInterfacesResponse& WithNetworkInterfaces(Aws::Vector<NetworkInterface>&& value) { SetNetworkInterfaces(value); return *this;}
 
-    /*
-     <p>Information about one or more network interfaces.</p>
-    */
+    /**
+     * <p>Information about one or more network interfaces.</p>
+     */
     inline DescribeNetworkInterfacesResponse& AddNetworkInterfaces(const NetworkInterface& value) { m_networkInterfaces.push_back(value); return *this; }
 
-    /*
-     <p>Information about one or more network interfaces.</p>
-    */
+    /**
+     * <p>Information about one or more network interfaces.</p>
+     */
     inline DescribeNetworkInterfacesResponse& AddNetworkInterfaces(NetworkInterface&& value) { m_networkInterfaces.push_back(value); return *this; }
 
     

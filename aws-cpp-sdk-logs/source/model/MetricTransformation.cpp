@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -17,21 +17,31 @@
 
 #include <utility>
 
-using namespace Aws::CloudWatchLogs::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace CloudWatchLogs
+{
+namespace Model
+{
 
 MetricTransformation::MetricTransformation() : 
     m_metricNameHasBeenSet(false),
     m_metricNamespaceHasBeenSet(false),
-    m_metricValueHasBeenSet(false)
+    m_metricValueHasBeenSet(false),
+    m_defaultValue(0.0),
+    m_defaultValueHasBeenSet(false)
 {
 }
 
 MetricTransformation::MetricTransformation(const JsonValue& jsonValue) : 
     m_metricNameHasBeenSet(false),
     m_metricNamespaceHasBeenSet(false),
-    m_metricValueHasBeenSet(false)
+    m_metricValueHasBeenSet(false),
+    m_defaultValue(0.0),
+    m_defaultValueHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -59,6 +69,13 @@ MetricTransformation& MetricTransformation::operator =(const JsonValue& jsonValu
     m_metricValueHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("defaultValue"))
+  {
+    m_defaultValue = jsonValue.GetDouble("defaultValue");
+
+    m_defaultValueHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -84,5 +101,15 @@ JsonValue MetricTransformation::Jsonize() const
 
   }
 
-  return std::move(payload);
+  if(m_defaultValueHasBeenSet)
+  {
+   payload.WithDouble("defaultValue", m_defaultValue);
+
+  }
+
+  return payload;
 }
+
+} // namespace Model
+} // namespace CloudWatchLogs
+} // namespace Aws

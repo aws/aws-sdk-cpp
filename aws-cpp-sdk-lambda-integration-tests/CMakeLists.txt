@@ -1,5 +1,12 @@
-cmake_minimum_required(VERSION 2.6)
-project(aws-cpp-sdk-lambda-integration-tests)
+add_project(aws-cpp-sdk-lambda-integration-tests
+    "Tests for the AWS Lambda C++ SDK"
+    aws-cpp-sdk-access-management
+    aws-cpp-sdk-cognito-identity
+    aws-cpp-sdk-iam
+    aws-cpp-sdk-lambda
+    aws-cpp-sdk-kinesis
+    testing-resources
+    aws-cpp-sdk-core)
 
 # Headers are included in the source so that they show up in Visual Studio.
 # They are included elsewhere for consistency.
@@ -12,25 +19,13 @@ project(aws-cpp-sdk-lambda-integration-tests)
     ${AWS_LAMBDA_SRC}
   )
 
-if(NOT MSVC)
-  add_definitions(-std=c++0x)
+if(PLATFORM_ANDROID)
+  add_definitions(-DRESOURCES_DIR="resources")
+elseif(COMMAND add_custom_lambda_resources_directory_definition)
+  add_custom_lambda_resources_directory_definition()
+else()
+  add_definitions(-DRESOURCES_DIR="${CMAKE_CURRENT_SOURCE_DIR}/resources")
 endif()
-
-
-set(AWS_LAMBDA_INTEGRATION_TEST_APPLICATION_INCLUDES
-  "${AWS_NATIVE_SDK_ROOT}/aws-cpp-sdk-core/include/"
-  "${AWS_NATIVE_SDK_ROOT}/aws-cpp-sdk-iam/include/"
-  "${AWS_NATIVE_SDK_ROOT}/aws-cpp-sdk-cognito-identity/include/"
-  "${AWS_NATIVE_SDK_ROOT}/aws-cpp-sdk-access-management/include/"
-  "${AWS_NATIVE_SDK_ROOT}/aws-cpp-sdk-lambda/include/"
-  "${AWS_NATIVE_SDK_ROOT}/aws-cpp-sdk-kinesis/include/"
-  "${AWS_NATIVE_SDK_ROOT}/testing-resources/include/"
-)
-
-project(${PROJECT_NAME})
-
-include_directories(${AWS_LAMBDA_INTEGRATION_TEST_APPLICATION_INCLUDES})
-add_definitions(-DRESOURCES_DIR="${CMAKE_CURRENT_SOURCE_DIR}/resources")
 
 if(MSVC AND BUILD_SHARED_LIBS)
     add_definitions(-DGTEST_LINKED_AS_SHARED_LIBRARY=1)
@@ -39,10 +34,14 @@ endif()
 enable_testing()
 
 if(PLATFORM_ANDROID AND BUILD_SHARED_LIBS)
-    add_library(runLambdaIntegrationTests ${LIBTYPE} ${AWS_LAMBDA_INTEGRATION_TESTS_SRC})
+    add_library(${PROJECT_NAME} ${LIBTYPE} ${AWS_LAMBDA_INTEGRATION_TESTS_SRC})
 else()
-    add_executable(runLambdaIntegrationTests ${AWS_LAMBDA_INTEGRATION_TESTS_SRC})
+    add_executable(${PROJECT_NAME} ${AWS_LAMBDA_INTEGRATION_TESTS_SRC})
 endif()
 
-target_link_libraries(runLambdaIntegrationTests aws-cpp-sdk-kinesis aws-cpp-sdk-lambda aws-cpp-sdk-cognito-identity aws-cpp-sdk-access-management aws-cpp-sdk-iam testing-resources)
-copyDlls(runLambdaIntegrationTests aws-cpp-sdk-core aws-cpp-sdk-kinesis aws-cpp-sdk-lambda aws-cpp-sdk-cognito-identity aws-cpp-sdk-access-management aws-cpp-sdk-iam testing-resources)
+target_link_libraries(${PROJECT_NAME} ${PROJECT_LIBS})
+copyDlls(${PROJECT_NAME} ${PROJECT_LIBS})
+
+if(COMMAND copy_lambda_testing_resources)
+  copy_lambda_testing_resources()
+endif()

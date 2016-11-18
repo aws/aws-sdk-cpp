@@ -1,5 +1,5 @@
-/*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -28,7 +28,9 @@ UpdateIdentityPoolRequest::UpdateIdentityPoolRequest() :
     m_allowUnauthenticatedIdentitiesHasBeenSet(false),
     m_supportedLoginProvidersHasBeenSet(false),
     m_developerProviderNameHasBeenSet(false),
-    m_openIdConnectProviderARNsHasBeenSet(false)
+    m_openIdConnectProviderARNsHasBeenSet(false),
+    m_cognitoIdentityProvidersHasBeenSet(false),
+    m_samlProviderARNsHasBeenSet(false)
 {
 }
 
@@ -82,6 +84,28 @@ Aws::String UpdateIdentityPoolRequest::SerializePayload() const
 
   }
 
+  if(m_cognitoIdentityProvidersHasBeenSet)
+  {
+   Array<JsonValue> cognitoIdentityProvidersJsonList(m_cognitoIdentityProviders.size());
+   for(unsigned cognitoIdentityProvidersIndex = 0; cognitoIdentityProvidersIndex < cognitoIdentityProvidersJsonList.GetLength(); ++cognitoIdentityProvidersIndex)
+   {
+     cognitoIdentityProvidersJsonList[cognitoIdentityProvidersIndex].AsObject(m_cognitoIdentityProviders[cognitoIdentityProvidersIndex].Jsonize());
+   }
+   payload.WithArray("CognitoIdentityProviders", std::move(cognitoIdentityProvidersJsonList));
+
+  }
+
+  if(m_samlProviderARNsHasBeenSet)
+  {
+   Array<JsonValue> samlProviderARNsJsonList(m_samlProviderARNs.size());
+   for(unsigned samlProviderARNsIndex = 0; samlProviderARNsIndex < samlProviderARNsJsonList.GetLength(); ++samlProviderARNsIndex)
+   {
+     samlProviderARNsJsonList[samlProviderARNsIndex].AsString(m_samlProviderARNs[samlProviderARNsIndex]);
+   }
+   payload.WithArray("SamlProviderARNs", std::move(samlProviderARNsJsonList));
+
+  }
+
   return payload.WriteReadable();
 }
 
@@ -89,7 +113,7 @@ Aws::Http::HeaderValueCollection UpdateIdentityPoolRequest::GetRequestSpecificHe
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSCognitoIdentityService.UpdateIdentityPool"));
-  return std::move(headers);
+  return headers;
 
 }
 
