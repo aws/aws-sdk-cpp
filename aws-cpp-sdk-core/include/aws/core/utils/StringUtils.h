@@ -133,6 +133,7 @@ namespace Aws
              */
             static double ConvertToDouble(const char* source);
 
+
 #ifdef _WIN32
             /**
             * Converts a string to wstring.

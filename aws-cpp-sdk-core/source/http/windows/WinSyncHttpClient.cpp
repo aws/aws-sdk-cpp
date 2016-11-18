@@ -221,22 +221,22 @@ std::shared_ptr<HttpResponse> WinSyncHttpClient::BuildSuccessResponse(const Aws:
 
         while (success && DoReadData(hHttpRequest, body, bodySize, read) && read > 0)
         {
-            //detect failure writing to response body
-	    	if(response->GetResponseBody().write(body, read).fail())
-		    {
-			    success = false;
-			    break;
-		    }
-            numBytesResponseReceived += read;
-            if (readLimiter != nullptr)
+            if(response->GetResponseBody().write(body, read).fail()) //check fail and badbit after write
             {
-                readLimiter->ApplyAndPayForCost(read);
+                numBytesResponseReceived += read;
+                if (readLimiter != nullptr)
+                {
+                    readLimiter->ApplyAndPayForCost(read);
+                }
+                auto& receivedHandler = request.GetDataReceivedEventHandler();
+                if (receivedHandler)
+                {
+                    receivedHandler(&request, response.get(), (long long)read);
+                }
             }
-            auto& receivedHandler = request.GetDataReceivedEventHandler();
-            if (receivedHandler)
-            {
-                receivedHandler(&request, response.get(), (long long)read);
-            }
+            else
+                success = false;
+
             success = success && ContinueRequest(request) && IsRequestProcessingEnabled();
         }
 
