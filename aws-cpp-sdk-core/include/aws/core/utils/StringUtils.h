@@ -133,9 +133,6 @@ namespace Aws
              */
             static double ConvertToDouble(const char* source);
 
-    static double ConvertHeaderToDoubleDate(const char* source);
-    static double ConvertXmlToDoubleDate(const char* source);
-
 #ifdef _WIN32
             /**
             * Converts a string to wstring.

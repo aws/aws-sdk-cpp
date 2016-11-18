@@ -34,7 +34,7 @@ using namespace Aws::Http::Standard;
 using namespace Aws::Utils;
 using namespace Aws::Utils::Logging;
 
-static const uint32_t HTTP_REQUEST_WRITE_BUFFER_LENGTH = 4096;
+static const uint32_t HTTP_REQUEST_WRITE_BUFFER_LENGTH = 8192;
 
 WinSyncHttpClient::~WinSyncHttpClient()
 {
@@ -109,6 +109,7 @@ bool WinSyncHttpClient::StreamPayloadToRequest(const HttpRequest& request, void*
         {            
             payloadStream->read(streamBuffer, HTTP_REQUEST_WRITE_BUFFER_LENGTH);
             std::streamsize bytesRead = payloadStream->gcount();
+            //use fail as it detects either bad bit or fail bit
             success = !payloadStream->fail();
             
             uint64_t bytesWritten = 0;
@@ -131,6 +132,7 @@ bool WinSyncHttpClient::StreamPayloadToRequest(const HttpRequest& request, void*
                 sentHandler(&request, (long long)bytesWritten);
             }
 
+            //only eof should result in leaving success true and setting done to true
             if(payloadStream->eof())
             {
                 done = true;
@@ -139,12 +141,10 @@ bool WinSyncHttpClient::StreamPayloadToRequest(const HttpRequest& request, void*
             success = success && ContinueRequest(request) && IsRequestProcessingEnabled();
         }        
 
-        //is stream seekable?
+        payloadStream->clear();
+        //is stream seekable? if not, don't try to seek
         if(startingPos >= 0)
-        {
-            payloadStream->clear();
             payloadStream->seekg(startingPos, payloadStream->beg);
-        }
     }
 
     if(success)
@@ -221,23 +221,21 @@ std::shared_ptr<HttpResponse> WinSyncHttpClient::BuildSuccessResponse(const Aws:
 
         while (success && DoReadData(hHttpRequest, body, bodySize, read) && read > 0)
         {
-            if (read > 0)
-            {
+            //detect failure writing to response body
 	    	if(response->GetResponseBody().write(body, read).fail())
-		{
-			success = false;
-			continue;
-		}
-                numBytesResponseReceived += read;
-                if (readLimiter != nullptr)
-                {
-                    readLimiter->ApplyAndPayForCost(read);
-                }
-                auto& receivedHandler = request.GetDataReceivedEventHandler();
-                if (receivedHandler)
-                {
-                    receivedHandler(&request, response.get(), (long long)read);
-                }
+		    {
+			    success = false;
+			    break;
+		    }
+            numBytesResponseReceived += read;
+            if (readLimiter != nullptr)
+            {
+                readLimiter->ApplyAndPayForCost(read);
+            }
+            auto& receivedHandler = request.GetDataReceivedEventHandler();
+            if (receivedHandler)
+            {
+                receivedHandler(&request, response.get(), (long long)read);
             }
             success = success && ContinueRequest(request) && IsRequestProcessingEnabled();
         }
@@ -252,7 +250,6 @@ std::shared_ptr<HttpResponse> WinSyncHttpClient::BuildSuccessResponse(const Aws:
                 success = false;
                 AWS_LOG_ERROR(GetLogTag(), "Response body length doesn't match the content-length header.");
             }
->>>>>>> refs/remotes/aws/master
         }
 
         if(!success)
