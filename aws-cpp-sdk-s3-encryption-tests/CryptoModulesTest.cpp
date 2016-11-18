@@ -52,10 +52,10 @@ namespace
     static size_t const CBC_IV_SIZE_BYTES = 16u;
 
 #ifndef ENABLE_COMMONCRYPTO_ENCRYPTION
-#ifndef NDEBUG
+#if !defined(NDEBUG) && !defined(GTEST_PSEUDO_WINDOWS)
     static const char* const BYTES_SPECIFIER = "bytes=0-10";
     static const char* const ASSERTION_FAILED = "Assertion .*";
-#endif // NDEBUG
+#endif // !defined(NDEBUG) && !defined(GTEST_PSEUDO_WINDOWS)
     static const char* const GET_RANGE_SPECIFIER = "bytes=20-40";
     static const char* const GET_RANGE_OUTPUT = "ge for encryption and";
     static size_t const GCM_TAG_LENGTH = 128u;
@@ -714,7 +714,7 @@ namespace
         ASSERT_EQ(kmsClient->m_decryptCalledCount, 1u);
     }
 
-#ifndef NDEBUG
+#if !defined(NDEBUG) && !defined(GTEST_PSEUDO_WINDOWS)
     TEST_F(CryptoModulesTest, StrictAERangeGet)
     {
         SimpleEncryptionMaterials materials(Aws::Utils::Crypto::SymmetricCipher::GenerateKey());
@@ -829,7 +829,7 @@ namespace
         auto getObjectFunction = [&s3Client](Aws::S3::Model::GetObjectRequest getRequest) -> Aws::S3::Model::GetObjectOutcome { return s3Client.GetObject(getRequest); };
         ASSERT_DEATH({ decryptionModule->GetObjectSecurely(getRequest, headOutcome.GetResult(), contentCryptoMaterial, getObjectFunction); }, ASSERTION_FAILED);
     }
-#endif // NDEBUG
+#endif // !defined(NDEBUG) && !defined(GTEST_PSEUDO_WINDOWS)
 #endif
 
     TEST_F(CryptoModulesTest, RangeParserSuccess)
