@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-s3-encryption-integration-tests 
+add_project(aws-cpp-sdk-s3-encryption
     "Amazon S3 Encryption Client"
     aws-cpp-sdk-core 
     aws-cpp-sdk-s3 
@@ -55,30 +55,23 @@ set(S3ENCRYPTION_INCLUDES
 
 include_directories(${S3ENCRYPTION_INCLUDES})
 
-if(MSVC AND BUILD_SHARED_LIBS)
+if(USE_WINDOWS_DLL_SEMANTICS AND BUILD_SHARED_LIBS)
     add_definitions("-DAWS_S3ENCRYPTION_EXPORTS")
 endif()
 
-add_library(aws-cpp-sdk-s3-encryption ${LIBTYPE} ${ALL_S3ENCRYPTION})
+add_library(${PROJECT_NAME} ${LIBTYPE} ${ALL_S3ENCRYPTION})
+add_library(AWS::${PROJECT_NAME} ALIAS ${PROJECT_NAME})
 
-target_include_directories(aws-cpp-sdk-s3-encryption PUBLIC
+target_include_directories(${PROJECT_NAME} PUBLIC
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
         $<INSTALL_INTERFACE:include>)
-target_link_libraries(aws-cpp-sdk-s3-encryption ${PROJECT_LIBS})
+target_link_libraries(${PROJECT_NAME} ${PROJECT_LIBS})
 
-if(SIMPLE_INSTALL)
-    install (TARGETS aws-cpp-sdk-s3-encryption
-            ARCHIVE DESTINATION ${ARCHIVE_DIRECTORY}
-            LIBRARY DESTINATION lib
-            RUNTIME DESTINATION bin)
-else()
-    install (TARGETS aws-cpp-sdk-s3-encryption
-             ARCHIVE DESTINATION ${ARCHIVE_DIRECTORY}/${SDK_INSTALL_BINARY_PREFIX}/${PLATFORM_INSTALL_QUALIFIER}/\${CMAKE_INSTALL_CONFIG_NAME}
-             LIBRARY DESTINATION lib/${SDK_INSTALL_BINARY_PREFIX}/${PLATFORM_INSTALL_QUALIFIER}/\${CMAKE_INSTALL_CONFIG_NAME}
-             RUNTIME DESTINATION bin/${SDK_INSTALL_BINARY_PREFIX}/${PLATFORM_INSTALL_QUALIFIER}/\${CMAKE_INSTALL_CONFIG_NAME})
-endif()
+setup_install()
 
 install (FILES ${S3ENCRYPTION_HEADERS} DESTINATION include/aws/s3-encryption)
 install (FILES ${S3ENCRYPTION_MATERIALS_HEADERS} DESTINATION include/aws/s3-encryption/materials)
 install (FILES ${S3ENCRYPTION_HANDLERS_HEADERS} DESTINATION include/aws/s3-encryption/handlers)
 install (FILES ${S3ENCRYPTION_MODULES_HEADERS} DESTINATION include/aws/s3-encryption/modules)
+
+do_packaging()
