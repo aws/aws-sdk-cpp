@@ -12,24 +12,23 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
+
 #pragma once
 
-#ifdef _WIN32
-//disable windows complaining about max template size.
-#pragma warning (disable : 4503)
-#endif
+#if defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)
+    #ifdef _MSC_VER
+        #pragma warning(disable : 4251)
+    #endif // _MSC_VER
+    #ifdef USE_IMPORT_EXPORT
+        #ifdef AWS_S3ENCRYPTION_EXPORTS
+            #define  AWS_S3ENCRYPTION_API __declspec(dllexport)
+        #else // AWS_S3ENCRYPTION_EXPORTS
+            #define  AWS_S3ENCRYPTION_API __declspec(dllimport)
+        #endif // AWS_S3ENCRYPTION_EXPORTS
+    #else // USE_IMPORT_EXPORT
+        #define AWS_S3ENCRYPTION_API
+    #endif // USE_IMPORT_EXPORT
+#else // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)
+    #define AWS_S3ENCRYPTION_API
+#endif // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)
 
-#if defined (_MSC_VER)
-#pragma warning(disable : 4251)
-	#ifdef USE_IMPORT_EXPORT
-		#ifdef AWS_S3ENCRYPTION_EXPORTS
-			#define AWS_S3ENCRYPTION_API __declspec(dllexport)
-		#else
-			#define AWS_S3ENCRYPTION_API __declspec(dllimport)
-		#endif /* AWS_S3ENCRYPTION_EXPORTS */
-	#else
-		#define AWS_S3ENCRYPTION_API
-	#endif //
-#else /* defined (_WIN32) */
-	#define AWS_S3ENCRYPTION_API
-#endif
