@@ -17,18 +17,16 @@ package com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.cpp;
 
 import lombok.Data;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
+import java.util.*;
 
 @Data
 public class EnumModel {
     private String name;
-    private List<EnumMemberModel> members;
+    private Set<EnumMemberModel> members;
 
     public EnumModel(String enumName, Collection<String> enumMembers) {
         name = enumName;
-        members = new ArrayList<>(enumMembers.size());
+        members = new LinkedHashSet<>(enumMembers.size());
         for (String enumMember : enumMembers) {
            members.add(new EnumMemberModel(PlatformAndKeywordSanitizer.fixEnumValue(enumMember), enumMember));
         }
