@@ -42,7 +42,6 @@ public class SQSQueryXmlCppClientGenerator extends QueryCppClientGenerator {
         //but backwards compatibility and all that...
         //anyways, add the missing values here.
         if(queueAttributeNameShape != null) {
-            queueAttributeNameShape.getEnumValues().add(0, "All");
             queueAttributeNameShape.getEnumValues().add("SentTimestamp");
             queueAttributeNameShape.getEnumValues().add("ApproximateFirstReceiveTimestamp");
             queueAttributeNameShape.getEnumValues().add("ApproximateReceiveCount");
