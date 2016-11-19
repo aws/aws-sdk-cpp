@@ -43,49 +43,49 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p>EBS volume specifications such as volume type, IOPS, and size(GiB) that will
+     * <p>EBS volume specifications such as volume type, IOPS, and size (GiB) that will
      * be requested for the EBS volume attached to an EC2 instance in the cluster.</p>
      */
     inline const VolumeSpecification& GetVolumeSpecification() const{ return m_volumeSpecification; }
 
     /**
-     * <p>EBS volume specifications such as volume type, IOPS, and size(GiB) that will
+     * <p>EBS volume specifications such as volume type, IOPS, and size (GiB) that will
      * be requested for the EBS volume attached to an EC2 instance in the cluster.</p>
      */
     inline void SetVolumeSpecification(const VolumeSpecification& value) { m_volumeSpecificationHasBeenSet = true; m_volumeSpecification = value; }
 
     /**
-     * <p>EBS volume specifications such as volume type, IOPS, and size(GiB) that will
+     * <p>EBS volume specifications such as volume type, IOPS, and size (GiB) that will
      * be requested for the EBS volume attached to an EC2 instance in the cluster.</p>
      */
     inline void SetVolumeSpecification(VolumeSpecification&& value) { m_volumeSpecificationHasBeenSet = true; m_volumeSpecification = value; }
 
     /**
-     * <p>EBS volume specifications such as volume type, IOPS, and size(GiB) that will
+     * <p>EBS volume specifications such as volume type, IOPS, and size (GiB) that will
      * be requested for the EBS volume attached to an EC2 instance in the cluster.</p>
      */
     inline EbsBlockDeviceConfig& WithVolumeSpecification(const VolumeSpecification& value) { SetVolumeSpecification(value); return *this;}
 
     /**
-     * <p>EBS volume specifications such as volume type, IOPS, and size(GiB) that will
+     * <p>EBS volume specifications such as volume type, IOPS, and size (GiB) that will
      * be requested for the EBS volume attached to an EC2 instance in the cluster.</p>
      */
     inline EbsBlockDeviceConfig& WithVolumeSpecification(VolumeSpecification&& value) { SetVolumeSpecification(value); return *this;}
 
     /**
-     * <p>Number of EBS volumes with specific volume configuration, that will be
+     * <p>Number of EBS volumes with a specific volume configuration that will be
      * associated with every instance in the instance group</p>
      */
     inline int GetVolumesPerInstance() const{ return m_volumesPerInstance; }
 
     /**
-     * <p>Number of EBS volumes with specific volume configuration, that will be
+     * <p>Number of EBS volumes with a specific volume configuration that will be
      * associated with every instance in the instance group</p>
      */
     inline void SetVolumesPerInstance(int value) { m_volumesPerInstanceHasBeenSet = true; m_volumesPerInstance = value; }
 
     /**
-     * <p>Number of EBS volumes with specific volume configuration, that will be
+     * <p>Number of EBS volumes with a specific volume configuration that will be
      * associated with every instance in the instance group</p>
      */
     inline EbsBlockDeviceConfig& WithVolumesPerInstance(int value) { SetVolumesPerInstance(value); return *this;}

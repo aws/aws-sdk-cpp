@@ -32,7 +32,8 @@ RestApi::RestApi() :
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_createdDateHasBeenSet(false),
-    m_warningsHasBeenSet(false)
+    m_warningsHasBeenSet(false),
+    m_binaryMediaTypesHasBeenSet(false)
 {
 }
 
@@ -41,7 +42,8 @@ RestApi::RestApi(const JsonValue& jsonValue) :
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_createdDateHasBeenSet(false),
-    m_warningsHasBeenSet(false)
+    m_warningsHasBeenSet(false),
+    m_binaryMediaTypesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -86,6 +88,16 @@ RestApi& RestApi::operator =(const JsonValue& jsonValue)
     m_warningsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("binaryMediaTypes"))
+  {
+    Array<JsonValue> binaryMediaTypesJsonList = jsonValue.GetArray("binaryMediaTypes");
+    for(unsigned binaryMediaTypesIndex = 0; binaryMediaTypesIndex < binaryMediaTypesJsonList.GetLength(); ++binaryMediaTypesIndex)
+    {
+      m_binaryMediaTypes.push_back(binaryMediaTypesJsonList[binaryMediaTypesIndex].AsString());
+    }
+    m_binaryMediaTypesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -124,6 +136,17 @@ JsonValue RestApi::Jsonize() const
      warningsJsonList[warningsIndex].AsString(m_warnings[warningsIndex]);
    }
    payload.WithArray("warnings", std::move(warningsJsonList));
+
+  }
+
+  if(m_binaryMediaTypesHasBeenSet)
+  {
+   Array<JsonValue> binaryMediaTypesJsonList(m_binaryMediaTypes.size());
+   for(unsigned binaryMediaTypesIndex = 0; binaryMediaTypesIndex < binaryMediaTypesJsonList.GetLength(); ++binaryMediaTypesIndex)
+   {
+     binaryMediaTypesJsonList[binaryMediaTypesIndex].AsString(m_binaryMediaTypes[binaryMediaTypesIndex]);
+   }
+   payload.WithArray("binaryMediaTypes", std::move(binaryMediaTypesJsonList));
 
   }
 

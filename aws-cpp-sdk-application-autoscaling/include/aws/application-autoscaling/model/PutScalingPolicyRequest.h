@@ -74,244 +74,267 @@ namespace Model
     inline PutScalingPolicyRequest& WithPolicyName(const char* value) { SetPolicyName(value); return *this;}
 
     /**
-     * <p>The AWS service namespace of the scalable target that this scaling policy
-     * applies to. For more information, see <a
+     * <p>The namespace of the AWS service. For more information, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
-     * Service Namespaces</a> in the Amazon Web Services General Reference.</p>
+     * Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
      */
     inline const ServiceNamespace& GetServiceNamespace() const{ return m_serviceNamespace; }
 
     /**
-     * <p>The AWS service namespace of the scalable target that this scaling policy
-     * applies to. For more information, see <a
+     * <p>The namespace of the AWS service. For more information, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
-     * Service Namespaces</a> in the Amazon Web Services General Reference.</p>
+     * Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
      */
     inline void SetServiceNamespace(const ServiceNamespace& value) { m_serviceNamespaceHasBeenSet = true; m_serviceNamespace = value; }
 
     /**
-     * <p>The AWS service namespace of the scalable target that this scaling policy
-     * applies to. For more information, see <a
+     * <p>The namespace of the AWS service. For more information, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
-     * Service Namespaces</a> in the Amazon Web Services General Reference.</p>
+     * Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
      */
     inline void SetServiceNamespace(ServiceNamespace&& value) { m_serviceNamespaceHasBeenSet = true; m_serviceNamespace = value; }
 
     /**
-     * <p>The AWS service namespace of the scalable target that this scaling policy
-     * applies to. For more information, see <a
+     * <p>The namespace of the AWS service. For more information, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
-     * Service Namespaces</a> in the Amazon Web Services General Reference.</p>
+     * Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
      */
     inline PutScalingPolicyRequest& WithServiceNamespace(const ServiceNamespace& value) { SetServiceNamespace(value); return *this;}
 
     /**
-     * <p>The AWS service namespace of the scalable target that this scaling policy
-     * applies to. For more information, see <a
+     * <p>The namespace of the AWS service. For more information, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
-     * Service Namespaces</a> in the Amazon Web Services General Reference.</p>
+     * Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
      */
     inline PutScalingPolicyRequest& WithServiceNamespace(ServiceNamespace&& value) { SetServiceNamespace(value); return *this;}
 
     /**
-     * <p>The unique resource identifier string for the scalable target that this
-     * scaling policy applies to. For Amazon ECS services, the resource type is
-     * <code>services</code>, and the identifier is the cluster name and service name;
-     * for example, <code>service/default/sample-webapp</code>. For Amazon EC2 Spot
-     * fleet requests, the resource type is <code>spot-fleet-request</code>, and the
-     * identifier is the Spot fleet request ID; for example,
+     * <p>The identifier of the resource associated with the scaling policy. This
+     * string consists of the resource type and unique identifier.</p> <ul> <li> <p>ECS
+     * service - The resource type is <code>service</code> and the unique identifier is
+     * the cluster name and service name. Example:
+     * <code>service/default/sample-webapp</code>.</p> </li> <li> <p>Spot fleet request
+     * - The resource type is <code>spot-fleet-request</code> and the unique identifier
+     * is the Spot fleet request ID. Example:
      * <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p>
+     * </li> <li> <p>EMR cluster - The resource type is <code>instancegroup</code> and
+     * the unique identifier is the cluster ID and instance group ID. Example:
+     * <code>instancegroup/j-2EEZNYKUA1NTV/ig-1791Y4E1L8YI0</code>.</p> </li> </ul>
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
 
     /**
-     * <p>The unique resource identifier string for the scalable target that this
-     * scaling policy applies to. For Amazon ECS services, the resource type is
-     * <code>services</code>, and the identifier is the cluster name and service name;
-     * for example, <code>service/default/sample-webapp</code>. For Amazon EC2 Spot
-     * fleet requests, the resource type is <code>spot-fleet-request</code>, and the
-     * identifier is the Spot fleet request ID; for example,
+     * <p>The identifier of the resource associated with the scaling policy. This
+     * string consists of the resource type and unique identifier.</p> <ul> <li> <p>ECS
+     * service - The resource type is <code>service</code> and the unique identifier is
+     * the cluster name and service name. Example:
+     * <code>service/default/sample-webapp</code>.</p> </li> <li> <p>Spot fleet request
+     * - The resource type is <code>spot-fleet-request</code> and the unique identifier
+     * is the Spot fleet request ID. Example:
      * <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p>
+     * </li> <li> <p>EMR cluster - The resource type is <code>instancegroup</code> and
+     * the unique identifier is the cluster ID and instance group ID. Example:
+     * <code>instancegroup/j-2EEZNYKUA1NTV/ig-1791Y4E1L8YI0</code>.</p> </li> </ul>
      */
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
 
     /**
-     * <p>The unique resource identifier string for the scalable target that this
-     * scaling policy applies to. For Amazon ECS services, the resource type is
-     * <code>services</code>, and the identifier is the cluster name and service name;
-     * for example, <code>service/default/sample-webapp</code>. For Amazon EC2 Spot
-     * fleet requests, the resource type is <code>spot-fleet-request</code>, and the
-     * identifier is the Spot fleet request ID; for example,
+     * <p>The identifier of the resource associated with the scaling policy. This
+     * string consists of the resource type and unique identifier.</p> <ul> <li> <p>ECS
+     * service - The resource type is <code>service</code> and the unique identifier is
+     * the cluster name and service name. Example:
+     * <code>service/default/sample-webapp</code>.</p> </li> <li> <p>Spot fleet request
+     * - The resource type is <code>spot-fleet-request</code> and the unique identifier
+     * is the Spot fleet request ID. Example:
      * <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p>
+     * </li> <li> <p>EMR cluster - The resource type is <code>instancegroup</code> and
+     * the unique identifier is the cluster ID and instance group ID. Example:
+     * <code>instancegroup/j-2EEZNYKUA1NTV/ig-1791Y4E1L8YI0</code>.</p> </li> </ul>
      */
     inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
 
     /**
-     * <p>The unique resource identifier string for the scalable target that this
-     * scaling policy applies to. For Amazon ECS services, the resource type is
-     * <code>services</code>, and the identifier is the cluster name and service name;
-     * for example, <code>service/default/sample-webapp</code>. For Amazon EC2 Spot
-     * fleet requests, the resource type is <code>spot-fleet-request</code>, and the
-     * identifier is the Spot fleet request ID; for example,
+     * <p>The identifier of the resource associated with the scaling policy. This
+     * string consists of the resource type and unique identifier.</p> <ul> <li> <p>ECS
+     * service - The resource type is <code>service</code> and the unique identifier is
+     * the cluster name and service name. Example:
+     * <code>service/default/sample-webapp</code>.</p> </li> <li> <p>Spot fleet request
+     * - The resource type is <code>spot-fleet-request</code> and the unique identifier
+     * is the Spot fleet request ID. Example:
      * <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p>
+     * </li> <li> <p>EMR cluster - The resource type is <code>instancegroup</code> and
+     * the unique identifier is the cluster ID and instance group ID. Example:
+     * <code>instancegroup/j-2EEZNYKUA1NTV/ig-1791Y4E1L8YI0</code>.</p> </li> </ul>
      */
     inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
 
     /**
-     * <p>The unique resource identifier string for the scalable target that this
-     * scaling policy applies to. For Amazon ECS services, the resource type is
-     * <code>services</code>, and the identifier is the cluster name and service name;
-     * for example, <code>service/default/sample-webapp</code>. For Amazon EC2 Spot
-     * fleet requests, the resource type is <code>spot-fleet-request</code>, and the
-     * identifier is the Spot fleet request ID; for example,
+     * <p>The identifier of the resource associated with the scaling policy. This
+     * string consists of the resource type and unique identifier.</p> <ul> <li> <p>ECS
+     * service - The resource type is <code>service</code> and the unique identifier is
+     * the cluster name and service name. Example:
+     * <code>service/default/sample-webapp</code>.</p> </li> <li> <p>Spot fleet request
+     * - The resource type is <code>spot-fleet-request</code> and the unique identifier
+     * is the Spot fleet request ID. Example:
      * <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p>
+     * </li> <li> <p>EMR cluster - The resource type is <code>instancegroup</code> and
+     * the unique identifier is the cluster ID and instance group ID. Example:
+     * <code>instancegroup/j-2EEZNYKUA1NTV/ig-1791Y4E1L8YI0</code>.</p> </li> </ul>
      */
     inline PutScalingPolicyRequest& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
 
     /**
-     * <p>The unique resource identifier string for the scalable target that this
-     * scaling policy applies to. For Amazon ECS services, the resource type is
-     * <code>services</code>, and the identifier is the cluster name and service name;
-     * for example, <code>service/default/sample-webapp</code>. For Amazon EC2 Spot
-     * fleet requests, the resource type is <code>spot-fleet-request</code>, and the
-     * identifier is the Spot fleet request ID; for example,
+     * <p>The identifier of the resource associated with the scaling policy. This
+     * string consists of the resource type and unique identifier.</p> <ul> <li> <p>ECS
+     * service - The resource type is <code>service</code> and the unique identifier is
+     * the cluster name and service name. Example:
+     * <code>service/default/sample-webapp</code>.</p> </li> <li> <p>Spot fleet request
+     * - The resource type is <code>spot-fleet-request</code> and the unique identifier
+     * is the Spot fleet request ID. Example:
      * <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p>
+     * </li> <li> <p>EMR cluster - The resource type is <code>instancegroup</code> and
+     * the unique identifier is the cluster ID and instance group ID. Example:
+     * <code>instancegroup/j-2EEZNYKUA1NTV/ig-1791Y4E1L8YI0</code>.</p> </li> </ul>
      */
     inline PutScalingPolicyRequest& WithResourceId(Aws::String&& value) { SetResourceId(value); return *this;}
 
     /**
-     * <p>The unique resource identifier string for the scalable target that this
-     * scaling policy applies to. For Amazon ECS services, the resource type is
-     * <code>services</code>, and the identifier is the cluster name and service name;
-     * for example, <code>service/default/sample-webapp</code>. For Amazon EC2 Spot
-     * fleet requests, the resource type is <code>spot-fleet-request</code>, and the
-     * identifier is the Spot fleet request ID; for example,
+     * <p>The identifier of the resource associated with the scaling policy. This
+     * string consists of the resource type and unique identifier.</p> <ul> <li> <p>ECS
+     * service - The resource type is <code>service</code> and the unique identifier is
+     * the cluster name and service name. Example:
+     * <code>service/default/sample-webapp</code>.</p> </li> <li> <p>Spot fleet request
+     * - The resource type is <code>spot-fleet-request</code> and the unique identifier
+     * is the Spot fleet request ID. Example:
      * <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p>
+     * </li> <li> <p>EMR cluster - The resource type is <code>instancegroup</code> and
+     * the unique identifier is the cluster ID and instance group ID. Example:
+     * <code>instancegroup/j-2EEZNYKUA1NTV/ig-1791Y4E1L8YI0</code>.</p> </li> </ul>
      */
     inline PutScalingPolicyRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
 
     /**
-     * <p>The scalable dimension of the scalable target that this scaling policy
-     * applies to. The scalable dimension contains the service namespace, resource
-     * type, and scaling property, such as <code>ecs:service:DesiredCount</code> for
-     * the desired task count of an Amazon ECS service, or
-     * <code>ec2:spot-fleet-request:TargetCapacity</code> for the target capacity of an
-     * Amazon EC2 Spot fleet request.</p>
+     * <p>The scalable dimension. This string consists of the service namespace,
+     * resource type, and scaling property.</p> <ul> <li> <p>
+     * <code>ecs:service:DesiredCount</code> - The desired task count of an ECS
+     * service.</p> </li> <li> <p> <code>ec2:spot-fleet-request:TargetCapacity</code> -
+     * The target capacity of a Spot fleet request.</p> </li> <li> <p>
+     * <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count
+     * of an EMR Instance Group.</p> </li> </ul>
      */
     inline const ScalableDimension& GetScalableDimension() const{ return m_scalableDimension; }
 
     /**
-     * <p>The scalable dimension of the scalable target that this scaling policy
-     * applies to. The scalable dimension contains the service namespace, resource
-     * type, and scaling property, such as <code>ecs:service:DesiredCount</code> for
-     * the desired task count of an Amazon ECS service, or
-     * <code>ec2:spot-fleet-request:TargetCapacity</code> for the target capacity of an
-     * Amazon EC2 Spot fleet request.</p>
+     * <p>The scalable dimension. This string consists of the service namespace,
+     * resource type, and scaling property.</p> <ul> <li> <p>
+     * <code>ecs:service:DesiredCount</code> - The desired task count of an ECS
+     * service.</p> </li> <li> <p> <code>ec2:spot-fleet-request:TargetCapacity</code> -
+     * The target capacity of a Spot fleet request.</p> </li> <li> <p>
+     * <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count
+     * of an EMR Instance Group.</p> </li> </ul>
      */
     inline void SetScalableDimension(const ScalableDimension& value) { m_scalableDimensionHasBeenSet = true; m_scalableDimension = value; }
 
     /**
-     * <p>The scalable dimension of the scalable target that this scaling policy
-     * applies to. The scalable dimension contains the service namespace, resource
-     * type, and scaling property, such as <code>ecs:service:DesiredCount</code> for
-     * the desired task count of an Amazon ECS service, or
-     * <code>ec2:spot-fleet-request:TargetCapacity</code> for the target capacity of an
-     * Amazon EC2 Spot fleet request.</p>
+     * <p>The scalable dimension. This string consists of the service namespace,
+     * resource type, and scaling property.</p> <ul> <li> <p>
+     * <code>ecs:service:DesiredCount</code> - The desired task count of an ECS
+     * service.</p> </li> <li> <p> <code>ec2:spot-fleet-request:TargetCapacity</code> -
+     * The target capacity of a Spot fleet request.</p> </li> <li> <p>
+     * <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count
+     * of an EMR Instance Group.</p> </li> </ul>
      */
     inline void SetScalableDimension(ScalableDimension&& value) { m_scalableDimensionHasBeenSet = true; m_scalableDimension = value; }
 
     /**
-     * <p>The scalable dimension of the scalable target that this scaling policy
-     * applies to. The scalable dimension contains the service namespace, resource
-     * type, and scaling property, such as <code>ecs:service:DesiredCount</code> for
-     * the desired task count of an Amazon ECS service, or
-     * <code>ec2:spot-fleet-request:TargetCapacity</code> for the target capacity of an
-     * Amazon EC2 Spot fleet request.</p>
+     * <p>The scalable dimension. This string consists of the service namespace,
+     * resource type, and scaling property.</p> <ul> <li> <p>
+     * <code>ecs:service:DesiredCount</code> - The desired task count of an ECS
+     * service.</p> </li> <li> <p> <code>ec2:spot-fleet-request:TargetCapacity</code> -
+     * The target capacity of a Spot fleet request.</p> </li> <li> <p>
+     * <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count
+     * of an EMR Instance Group.</p> </li> </ul>
      */
     inline PutScalingPolicyRequest& WithScalableDimension(const ScalableDimension& value) { SetScalableDimension(value); return *this;}
 
     /**
-     * <p>The scalable dimension of the scalable target that this scaling policy
-     * applies to. The scalable dimension contains the service namespace, resource
-     * type, and scaling property, such as <code>ecs:service:DesiredCount</code> for
-     * the desired task count of an Amazon ECS service, or
-     * <code>ec2:spot-fleet-request:TargetCapacity</code> for the target capacity of an
-     * Amazon EC2 Spot fleet request.</p>
+     * <p>The scalable dimension. This string consists of the service namespace,
+     * resource type, and scaling property.</p> <ul> <li> <p>
+     * <code>ecs:service:DesiredCount</code> - The desired task count of an ECS
+     * service.</p> </li> <li> <p> <code>ec2:spot-fleet-request:TargetCapacity</code> -
+     * The target capacity of a Spot fleet request.</p> </li> <li> <p>
+     * <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count
+     * of an EMR Instance Group.</p> </li> </ul>
      */
     inline PutScalingPolicyRequest& WithScalableDimension(ScalableDimension&& value) { SetScalableDimension(value); return *this;}
 
     /**
      * <p>The policy type. If you are creating a new policy, this parameter is
-     * required. If you are updating an existing policy, this parameter is not
-     * required.</p>
+     * required. If you are updating a policy, this parameter is not required.</p>
      */
     inline const PolicyType& GetPolicyType() const{ return m_policyType; }
 
     /**
      * <p>The policy type. If you are creating a new policy, this parameter is
-     * required. If you are updating an existing policy, this parameter is not
-     * required.</p>
+     * required. If you are updating a policy, this parameter is not required.</p>
      */
     inline void SetPolicyType(const PolicyType& value) { m_policyTypeHasBeenSet = true; m_policyType = value; }
 
     /**
      * <p>The policy type. If you are creating a new policy, this parameter is
-     * required. If you are updating an existing policy, this parameter is not
-     * required.</p>
+     * required. If you are updating a policy, this parameter is not required.</p>
      */
     inline void SetPolicyType(PolicyType&& value) { m_policyTypeHasBeenSet = true; m_policyType = value; }
 
     /**
      * <p>The policy type. If you are creating a new policy, this parameter is
-     * required. If you are updating an existing policy, this parameter is not
-     * required.</p>
+     * required. If you are updating a policy, this parameter is not required.</p>
      */
     inline PutScalingPolicyRequest& WithPolicyType(const PolicyType& value) { SetPolicyType(value); return *this;}
 
     /**
      * <p>The policy type. If you are creating a new policy, this parameter is
-     * required. If you are updating an existing policy, this parameter is not
-     * required.</p>
+     * required. If you are updating a policy, this parameter is not required.</p>
      */
     inline PutScalingPolicyRequest& WithPolicyType(PolicyType&& value) { SetPolicyType(value); return *this;}
 
     /**
      * <p>The configuration for the step scaling policy. If you are creating a new
-     * policy, this parameter is required. If you are updating an existing policy, this
-     * parameter is not required. For more information, see
-     * <a>StepScalingPolicyConfiguration</a> and <a>StepAdjustment</a>.</p>
+     * policy, this parameter is required. If you are updating a policy, this parameter
+     * is not required. For more information, see <a>StepScalingPolicyConfiguration</a>
+     * and <a>StepAdjustment</a>.</p>
      */
     inline const StepScalingPolicyConfiguration& GetStepScalingPolicyConfiguration() const{ return m_stepScalingPolicyConfiguration; }
 
     /**
      * <p>The configuration for the step scaling policy. If you are creating a new
-     * policy, this parameter is required. If you are updating an existing policy, this
-     * parameter is not required. For more information, see
-     * <a>StepScalingPolicyConfiguration</a> and <a>StepAdjustment</a>.</p>
+     * policy, this parameter is required. If you are updating a policy, this parameter
+     * is not required. For more information, see <a>StepScalingPolicyConfiguration</a>
+     * and <a>StepAdjustment</a>.</p>
      */
     inline void SetStepScalingPolicyConfiguration(const StepScalingPolicyConfiguration& value) { m_stepScalingPolicyConfigurationHasBeenSet = true; m_stepScalingPolicyConfiguration = value; }
 
     /**
      * <p>The configuration for the step scaling policy. If you are creating a new
-     * policy, this parameter is required. If you are updating an existing policy, this
-     * parameter is not required. For more information, see
-     * <a>StepScalingPolicyConfiguration</a> and <a>StepAdjustment</a>.</p>
+     * policy, this parameter is required. If you are updating a policy, this parameter
+     * is not required. For more information, see <a>StepScalingPolicyConfiguration</a>
+     * and <a>StepAdjustment</a>.</p>
      */
     inline void SetStepScalingPolicyConfiguration(StepScalingPolicyConfiguration&& value) { m_stepScalingPolicyConfigurationHasBeenSet = true; m_stepScalingPolicyConfiguration = value; }
 
     /**
      * <p>The configuration for the step scaling policy. If you are creating a new
-     * policy, this parameter is required. If you are updating an existing policy, this
-     * parameter is not required. For more information, see
-     * <a>StepScalingPolicyConfiguration</a> and <a>StepAdjustment</a>.</p>
+     * policy, this parameter is required. If you are updating a policy, this parameter
+     * is not required. For more information, see <a>StepScalingPolicyConfiguration</a>
+     * and <a>StepAdjustment</a>.</p>
      */
     inline PutScalingPolicyRequest& WithStepScalingPolicyConfiguration(const StepScalingPolicyConfiguration& value) { SetStepScalingPolicyConfiguration(value); return *this;}
 
     /**
      * <p>The configuration for the step scaling policy. If you are creating a new
-     * policy, this parameter is required. If you are updating an existing policy, this
-     * parameter is not required. For more information, see
-     * <a>StepScalingPolicyConfiguration</a> and <a>StepAdjustment</a>.</p>
+     * policy, this parameter is required. If you are updating a policy, this parameter
+     * is not required. For more information, see <a>StepScalingPolicyConfiguration</a>
+     * and <a>StepAdjustment</a>.</p>
      */
     inline PutScalingPolicyRequest& WithStepScalingPolicyConfiguration(StepScalingPolicyConfiguration&& value) { SetStepScalingPolicyConfiguration(value); return *this;}
 

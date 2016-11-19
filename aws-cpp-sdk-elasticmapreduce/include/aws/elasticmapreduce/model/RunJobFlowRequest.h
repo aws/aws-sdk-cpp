@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/elasticmapreduce/model/JobFlowInstancesConfig.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/elasticmapreduce/model/ScaleDownBehavior.h>
 #include <aws/elasticmapreduce/model/StepConfig.h>
 #include <aws/elasticmapreduce/model/BootstrapActionConfig.h>
 #include <aws/elasticmapreduce/model/SupportedProductConfig.h>
@@ -165,10 +166,14 @@ namespace Model
      * can use the <a>JobFlowInstancesConfig</a> <code>HadoopVersion</code> parameter
      * to modify the version of Hadoop from the defaults shown above.</p> <p>For
      * details about the AMI versions currently supported by Amazon Elastic MapReduce,
-     * go to <a
+     * see <a
      * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
      * Versions Supported in Elastic MapReduce</a> in the <i>Amazon Elastic MapReduce
-     * Developer's Guide.</i> </p>
+     * Developer Guide.</i> </p> <note> <p>Previously, the EMR AMI version API
+     * parameter options allowed you to use latest for the latest AMI version rather
+     * than specify a numerical value. Some regions no longer support this deprecated
+     * option as they only have a newer release label version of EMR, which requires
+     * you to specify an EMR release label release (EMR 4.x or later).</p> </note>
      */
     inline const Aws::String& GetAmiVersion() const{ return m_amiVersion; }
 
@@ -182,10 +187,14 @@ namespace Model
      * can use the <a>JobFlowInstancesConfig</a> <code>HadoopVersion</code> parameter
      * to modify the version of Hadoop from the defaults shown above.</p> <p>For
      * details about the AMI versions currently supported by Amazon Elastic MapReduce,
-     * go to <a
+     * see <a
      * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
      * Versions Supported in Elastic MapReduce</a> in the <i>Amazon Elastic MapReduce
-     * Developer's Guide.</i> </p>
+     * Developer Guide.</i> </p> <note> <p>Previously, the EMR AMI version API
+     * parameter options allowed you to use latest for the latest AMI version rather
+     * than specify a numerical value. Some regions no longer support this deprecated
+     * option as they only have a newer release label version of EMR, which requires
+     * you to specify an EMR release label release (EMR 4.x or later).</p> </note>
      */
     inline void SetAmiVersion(const Aws::String& value) { m_amiVersionHasBeenSet = true; m_amiVersion = value; }
 
@@ -199,10 +208,14 @@ namespace Model
      * can use the <a>JobFlowInstancesConfig</a> <code>HadoopVersion</code> parameter
      * to modify the version of Hadoop from the defaults shown above.</p> <p>For
      * details about the AMI versions currently supported by Amazon Elastic MapReduce,
-     * go to <a
+     * see <a
      * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
      * Versions Supported in Elastic MapReduce</a> in the <i>Amazon Elastic MapReduce
-     * Developer's Guide.</i> </p>
+     * Developer Guide.</i> </p> <note> <p>Previously, the EMR AMI version API
+     * parameter options allowed you to use latest for the latest AMI version rather
+     * than specify a numerical value. Some regions no longer support this deprecated
+     * option as they only have a newer release label version of EMR, which requires
+     * you to specify an EMR release label release (EMR 4.x or later).</p> </note>
      */
     inline void SetAmiVersion(Aws::String&& value) { m_amiVersionHasBeenSet = true; m_amiVersion = value; }
 
@@ -216,10 +229,14 @@ namespace Model
      * can use the <a>JobFlowInstancesConfig</a> <code>HadoopVersion</code> parameter
      * to modify the version of Hadoop from the defaults shown above.</p> <p>For
      * details about the AMI versions currently supported by Amazon Elastic MapReduce,
-     * go to <a
+     * see <a
      * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
      * Versions Supported in Elastic MapReduce</a> in the <i>Amazon Elastic MapReduce
-     * Developer's Guide.</i> </p>
+     * Developer Guide.</i> </p> <note> <p>Previously, the EMR AMI version API
+     * parameter options allowed you to use latest for the latest AMI version rather
+     * than specify a numerical value. Some regions no longer support this deprecated
+     * option as they only have a newer release label version of EMR, which requires
+     * you to specify an EMR release label release (EMR 4.x or later).</p> </note>
      */
     inline void SetAmiVersion(const char* value) { m_amiVersionHasBeenSet = true; m_amiVersion.assign(value); }
 
@@ -233,10 +250,14 @@ namespace Model
      * can use the <a>JobFlowInstancesConfig</a> <code>HadoopVersion</code> parameter
      * to modify the version of Hadoop from the defaults shown above.</p> <p>For
      * details about the AMI versions currently supported by Amazon Elastic MapReduce,
-     * go to <a
+     * see <a
      * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
      * Versions Supported in Elastic MapReduce</a> in the <i>Amazon Elastic MapReduce
-     * Developer's Guide.</i> </p>
+     * Developer Guide.</i> </p> <note> <p>Previously, the EMR AMI version API
+     * parameter options allowed you to use latest for the latest AMI version rather
+     * than specify a numerical value. Some regions no longer support this deprecated
+     * option as they only have a newer release label version of EMR, which requires
+     * you to specify an EMR release label release (EMR 4.x or later).</p> </note>
      */
     inline RunJobFlowRequest& WithAmiVersion(const Aws::String& value) { SetAmiVersion(value); return *this;}
 
@@ -250,10 +271,14 @@ namespace Model
      * can use the <a>JobFlowInstancesConfig</a> <code>HadoopVersion</code> parameter
      * to modify the version of Hadoop from the defaults shown above.</p> <p>For
      * details about the AMI versions currently supported by Amazon Elastic MapReduce,
-     * go to <a
+     * see <a
      * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
      * Versions Supported in Elastic MapReduce</a> in the <i>Amazon Elastic MapReduce
-     * Developer's Guide.</i> </p>
+     * Developer Guide.</i> </p> <note> <p>Previously, the EMR AMI version API
+     * parameter options allowed you to use latest for the latest AMI version rather
+     * than specify a numerical value. Some regions no longer support this deprecated
+     * option as they only have a newer release label version of EMR, which requires
+     * you to specify an EMR release label release (EMR 4.x or later).</p> </note>
      */
     inline RunJobFlowRequest& WithAmiVersion(Aws::String&& value) { SetAmiVersion(value); return *this;}
 
@@ -267,10 +292,14 @@ namespace Model
      * can use the <a>JobFlowInstancesConfig</a> <code>HadoopVersion</code> parameter
      * to modify the version of Hadoop from the defaults shown above.</p> <p>For
      * details about the AMI versions currently supported by Amazon Elastic MapReduce,
-     * go to <a
+     * see <a
      * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
      * Versions Supported in Elastic MapReduce</a> in the <i>Amazon Elastic MapReduce
-     * Developer's Guide.</i> </p>
+     * Developer Guide.</i> </p> <note> <p>Previously, the EMR AMI version API
+     * parameter options allowed you to use latest for the latest AMI version rather
+     * than specify a numerical value. Some regions no longer support this deprecated
+     * option as they only have a newer release label version of EMR, which requires
+     * you to specify an EMR release label release (EMR 4.x or later).</p> </note>
      */
     inline RunJobFlowRequest& WithAmiVersion(const char* value) { SetAmiVersion(value); return *this;}
 
@@ -433,7 +462,7 @@ namespace Model
     /**
      * <note> <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and
      * greater, use Applications.</p> </note> <p>A list of strings that indicates
-     * third-party software to use with the job flow. For more information, go to <a
+     * third-party software to use with the job flow. For more information, see <a
      * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-supported-products.html">Use
      * Third Party Applications with Amazon EMR</a>. Currently supported values
      * are:</p> <ul> <li> <p>"mapr-m3" - launch the job flow using MapR M3 Edition.</p>
@@ -445,7 +474,7 @@ namespace Model
     /**
      * <note> <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and
      * greater, use Applications.</p> </note> <p>A list of strings that indicates
-     * third-party software to use with the job flow. For more information, go to <a
+     * third-party software to use with the job flow. For more information, see <a
      * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-supported-products.html">Use
      * Third Party Applications with Amazon EMR</a>. Currently supported values
      * are:</p> <ul> <li> <p>"mapr-m3" - launch the job flow using MapR M3 Edition.</p>
@@ -457,7 +486,7 @@ namespace Model
     /**
      * <note> <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and
      * greater, use Applications.</p> </note> <p>A list of strings that indicates
-     * third-party software to use with the job flow. For more information, go to <a
+     * third-party software to use with the job flow. For more information, see <a
      * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-supported-products.html">Use
      * Third Party Applications with Amazon EMR</a>. Currently supported values
      * are:</p> <ul> <li> <p>"mapr-m3" - launch the job flow using MapR M3 Edition.</p>
@@ -469,7 +498,7 @@ namespace Model
     /**
      * <note> <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and
      * greater, use Applications.</p> </note> <p>A list of strings that indicates
-     * third-party software to use with the job flow. For more information, go to <a
+     * third-party software to use with the job flow. For more information, see <a
      * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-supported-products.html">Use
      * Third Party Applications with Amazon EMR</a>. Currently supported values
      * are:</p> <ul> <li> <p>"mapr-m3" - launch the job flow using MapR M3 Edition.</p>
@@ -481,7 +510,7 @@ namespace Model
     /**
      * <note> <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and
      * greater, use Applications.</p> </note> <p>A list of strings that indicates
-     * third-party software to use with the job flow. For more information, go to <a
+     * third-party software to use with the job flow. For more information, see <a
      * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-supported-products.html">Use
      * Third Party Applications with Amazon EMR</a>. Currently supported values
      * are:</p> <ul> <li> <p>"mapr-m3" - launch the job flow using MapR M3 Edition.</p>
@@ -493,7 +522,7 @@ namespace Model
     /**
      * <note> <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and
      * greater, use Applications.</p> </note> <p>A list of strings that indicates
-     * third-party software to use with the job flow. For more information, go to <a
+     * third-party software to use with the job flow. For more information, see <a
      * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-supported-products.html">Use
      * Third Party Applications with Amazon EMR</a>. Currently supported values
      * are:</p> <ul> <li> <p>"mapr-m3" - launch the job flow using MapR M3 Edition.</p>
@@ -505,7 +534,7 @@ namespace Model
     /**
      * <note> <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and
      * greater, use Applications.</p> </note> <p>A list of strings that indicates
-     * third-party software to use with the job flow. For more information, go to <a
+     * third-party software to use with the job flow. For more information, see <a
      * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-supported-products.html">Use
      * Third Party Applications with Amazon EMR</a>. Currently supported values
      * are:</p> <ul> <li> <p>"mapr-m3" - launch the job flow using MapR M3 Edition.</p>
@@ -517,7 +546,7 @@ namespace Model
     /**
      * <note> <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and
      * greater, use Applications.</p> </note> <p>A list of strings that indicates
-     * third-party software to use with the job flow. For more information, go to <a
+     * third-party software to use with the job flow. For more information, see <a
      * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-supported-products.html">Use
      * Third Party Applications with Amazon EMR</a>. Currently supported values
      * are:</p> <ul> <li> <p>"mapr-m3" - launch the job flow using MapR M3 Edition.</p>
@@ -966,6 +995,147 @@ namespace Model
      */
     inline RunJobFlowRequest& WithSecurityConfiguration(const char* value) { SetSecurityConfiguration(value); return *this;}
 
+    /**
+     * <p>An IAM role for automatic scaling policies. The default role is
+     * <code>EMR_AutoScaling_DefaultRole</code>. The IAM role provides permissions that
+     * the automatic scaling feature requires to launch and terminate EC2 instances in
+     * an instance group.</p>
+     */
+    inline const Aws::String& GetAutoScalingRole() const{ return m_autoScalingRole; }
+
+    /**
+     * <p>An IAM role for automatic scaling policies. The default role is
+     * <code>EMR_AutoScaling_DefaultRole</code>. The IAM role provides permissions that
+     * the automatic scaling feature requires to launch and terminate EC2 instances in
+     * an instance group.</p>
+     */
+    inline void SetAutoScalingRole(const Aws::String& value) { m_autoScalingRoleHasBeenSet = true; m_autoScalingRole = value; }
+
+    /**
+     * <p>An IAM role for automatic scaling policies. The default role is
+     * <code>EMR_AutoScaling_DefaultRole</code>. The IAM role provides permissions that
+     * the automatic scaling feature requires to launch and terminate EC2 instances in
+     * an instance group.</p>
+     */
+    inline void SetAutoScalingRole(Aws::String&& value) { m_autoScalingRoleHasBeenSet = true; m_autoScalingRole = value; }
+
+    /**
+     * <p>An IAM role for automatic scaling policies. The default role is
+     * <code>EMR_AutoScaling_DefaultRole</code>. The IAM role provides permissions that
+     * the automatic scaling feature requires to launch and terminate EC2 instances in
+     * an instance group.</p>
+     */
+    inline void SetAutoScalingRole(const char* value) { m_autoScalingRoleHasBeenSet = true; m_autoScalingRole.assign(value); }
+
+    /**
+     * <p>An IAM role for automatic scaling policies. The default role is
+     * <code>EMR_AutoScaling_DefaultRole</code>. The IAM role provides permissions that
+     * the automatic scaling feature requires to launch and terminate EC2 instances in
+     * an instance group.</p>
+     */
+    inline RunJobFlowRequest& WithAutoScalingRole(const Aws::String& value) { SetAutoScalingRole(value); return *this;}
+
+    /**
+     * <p>An IAM role for automatic scaling policies. The default role is
+     * <code>EMR_AutoScaling_DefaultRole</code>. The IAM role provides permissions that
+     * the automatic scaling feature requires to launch and terminate EC2 instances in
+     * an instance group.</p>
+     */
+    inline RunJobFlowRequest& WithAutoScalingRole(Aws::String&& value) { SetAutoScalingRole(value); return *this;}
+
+    /**
+     * <p>An IAM role for automatic scaling policies. The default role is
+     * <code>EMR_AutoScaling_DefaultRole</code>. The IAM role provides permissions that
+     * the automatic scaling feature requires to launch and terminate EC2 instances in
+     * an instance group.</p>
+     */
+    inline RunJobFlowRequest& WithAutoScalingRole(const char* value) { SetAutoScalingRole(value); return *this;}
+
+    /**
+     * <p>Specifies the way that individual Amazon EC2 instances terminate when an
+     * automatic scale-in activity occurs or an instance group is resized.
+     * <code>TERMINATE_AT_INSTANCE_HOUR</code> indicates that Amazon EMR terminates
+     * nodes at the instance-hour boundary, regardless of when the request to terminate
+     * the instance was submitted. This option is only available with Amazon EMR 5.1.0
+     * and later and is the default for clusters created using that version.
+     * <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR blacklists
+     * and drains tasks from nodes before terminating the Amazon EC2 instances,
+     * regardless of the instance-hour boundary. With either behavior, Amazon EMR
+     * removes the least active nodes first and blocks instance termination if it could
+     * lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> available
+     * only in Amazon EMR version 4.1.0 and later, and is the default for versions of
+     * Amazon EMR earlier than 5.1.0.</p>
+     */
+    inline const ScaleDownBehavior& GetScaleDownBehavior() const{ return m_scaleDownBehavior; }
+
+    /**
+     * <p>Specifies the way that individual Amazon EC2 instances terminate when an
+     * automatic scale-in activity occurs or an instance group is resized.
+     * <code>TERMINATE_AT_INSTANCE_HOUR</code> indicates that Amazon EMR terminates
+     * nodes at the instance-hour boundary, regardless of when the request to terminate
+     * the instance was submitted. This option is only available with Amazon EMR 5.1.0
+     * and later and is the default for clusters created using that version.
+     * <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR blacklists
+     * and drains tasks from nodes before terminating the Amazon EC2 instances,
+     * regardless of the instance-hour boundary. With either behavior, Amazon EMR
+     * removes the least active nodes first and blocks instance termination if it could
+     * lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> available
+     * only in Amazon EMR version 4.1.0 and later, and is the default for versions of
+     * Amazon EMR earlier than 5.1.0.</p>
+     */
+    inline void SetScaleDownBehavior(const ScaleDownBehavior& value) { m_scaleDownBehaviorHasBeenSet = true; m_scaleDownBehavior = value; }
+
+    /**
+     * <p>Specifies the way that individual Amazon EC2 instances terminate when an
+     * automatic scale-in activity occurs or an instance group is resized.
+     * <code>TERMINATE_AT_INSTANCE_HOUR</code> indicates that Amazon EMR terminates
+     * nodes at the instance-hour boundary, regardless of when the request to terminate
+     * the instance was submitted. This option is only available with Amazon EMR 5.1.0
+     * and later and is the default for clusters created using that version.
+     * <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR blacklists
+     * and drains tasks from nodes before terminating the Amazon EC2 instances,
+     * regardless of the instance-hour boundary. With either behavior, Amazon EMR
+     * removes the least active nodes first and blocks instance termination if it could
+     * lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> available
+     * only in Amazon EMR version 4.1.0 and later, and is the default for versions of
+     * Amazon EMR earlier than 5.1.0.</p>
+     */
+    inline void SetScaleDownBehavior(ScaleDownBehavior&& value) { m_scaleDownBehaviorHasBeenSet = true; m_scaleDownBehavior = value; }
+
+    /**
+     * <p>Specifies the way that individual Amazon EC2 instances terminate when an
+     * automatic scale-in activity occurs or an instance group is resized.
+     * <code>TERMINATE_AT_INSTANCE_HOUR</code> indicates that Amazon EMR terminates
+     * nodes at the instance-hour boundary, regardless of when the request to terminate
+     * the instance was submitted. This option is only available with Amazon EMR 5.1.0
+     * and later and is the default for clusters created using that version.
+     * <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR blacklists
+     * and drains tasks from nodes before terminating the Amazon EC2 instances,
+     * regardless of the instance-hour boundary. With either behavior, Amazon EMR
+     * removes the least active nodes first and blocks instance termination if it could
+     * lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> available
+     * only in Amazon EMR version 4.1.0 and later, and is the default for versions of
+     * Amazon EMR earlier than 5.1.0.</p>
+     */
+    inline RunJobFlowRequest& WithScaleDownBehavior(const ScaleDownBehavior& value) { SetScaleDownBehavior(value); return *this;}
+
+    /**
+     * <p>Specifies the way that individual Amazon EC2 instances terminate when an
+     * automatic scale-in activity occurs or an instance group is resized.
+     * <code>TERMINATE_AT_INSTANCE_HOUR</code> indicates that Amazon EMR terminates
+     * nodes at the instance-hour boundary, regardless of when the request to terminate
+     * the instance was submitted. This option is only available with Amazon EMR 5.1.0
+     * and later and is the default for clusters created using that version.
+     * <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR blacklists
+     * and drains tasks from nodes before terminating the Amazon EC2 instances,
+     * regardless of the instance-hour boundary. With either behavior, Amazon EMR
+     * removes the least active nodes first and blocks instance termination if it could
+     * lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> available
+     * only in Amazon EMR version 4.1.0 and later, and is the default for versions of
+     * Amazon EMR earlier than 5.1.0.</p>
+     */
+    inline RunJobFlowRequest& WithScaleDownBehavior(ScaleDownBehavior&& value) { SetScaleDownBehavior(value); return *this;}
+
   private:
     Aws::String m_name;
     bool m_nameHasBeenSet;
@@ -1001,6 +1171,10 @@ namespace Model
     bool m_tagsHasBeenSet;
     Aws::String m_securityConfiguration;
     bool m_securityConfigurationHasBeenSet;
+    Aws::String m_autoScalingRole;
+    bool m_autoScalingRoleHasBeenSet;
+    ScaleDownBehavior m_scaleDownBehavior;
+    bool m_scaleDownBehaviorHasBeenSet;
   };
 
 } // namespace Model

@@ -43,32 +43,32 @@ namespace Model
     CreateJobResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * <p> A section of the response body that provides information about the job that
-     * is created. </p>
+     * <p>A section of the response body that provides information about the job that
+     * is created.</p>
      */
     inline const Job& GetJob() const{ return m_job; }
 
     /**
-     * <p> A section of the response body that provides information about the job that
-     * is created. </p>
+     * <p>A section of the response body that provides information about the job that
+     * is created.</p>
      */
     inline void SetJob(const Job& value) { m_job = value; }
 
     /**
-     * <p> A section of the response body that provides information about the job that
-     * is created. </p>
+     * <p>A section of the response body that provides information about the job that
+     * is created.</p>
      */
     inline void SetJob(Job&& value) { m_job = value; }
 
     /**
-     * <p> A section of the response body that provides information about the job that
-     * is created. </p>
+     * <p>A section of the response body that provides information about the job that
+     * is created.</p>
      */
     inline CreateJobResult& WithJob(const Job& value) { SetJob(value); return *this;}
 
     /**
-     * <p> A section of the response body that provides information about the job that
-     * is created. </p>
+     * <p>A section of the response body that provides information about the job that
+     * is created.</p>
      */
     inline CreateJobResult& WithJob(Job&& value) { SetJob(value); return *this;}
 

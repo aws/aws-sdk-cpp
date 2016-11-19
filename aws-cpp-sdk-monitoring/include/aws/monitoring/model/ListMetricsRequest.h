@@ -27,7 +27,6 @@ namespace Model
 {
 
   /**
-   * <p>Describes the inputs for ListMetrics.</p>
    */
   class AWS_CLOUDWATCH_API ListMetricsRequest : public CloudWatchRequest
   {
@@ -106,37 +105,37 @@ namespace Model
     inline ListMetricsRequest& WithMetricName(const char* value) { SetMetricName(value); return *this;}
 
     /**
-     * <p>A list of dimensions to filter against.</p>
+     * <p>The dimensions to filter against.</p>
      */
     inline const Aws::Vector<DimensionFilter>& GetDimensions() const{ return m_dimensions; }
 
     /**
-     * <p>A list of dimensions to filter against.</p>
+     * <p>The dimensions to filter against.</p>
      */
     inline void SetDimensions(const Aws::Vector<DimensionFilter>& value) { m_dimensionsHasBeenSet = true; m_dimensions = value; }
 
     /**
-     * <p>A list of dimensions to filter against.</p>
+     * <p>The dimensions to filter against.</p>
      */
     inline void SetDimensions(Aws::Vector<DimensionFilter>&& value) { m_dimensionsHasBeenSet = true; m_dimensions = value; }
 
     /**
-     * <p>A list of dimensions to filter against.</p>
+     * <p>The dimensions to filter against.</p>
      */
     inline ListMetricsRequest& WithDimensions(const Aws::Vector<DimensionFilter>& value) { SetDimensions(value); return *this;}
 
     /**
-     * <p>A list of dimensions to filter against.</p>
+     * <p>The dimensions to filter against.</p>
      */
     inline ListMetricsRequest& WithDimensions(Aws::Vector<DimensionFilter>&& value) { SetDimensions(value); return *this;}
 
     /**
-     * <p>A list of dimensions to filter against.</p>
+     * <p>The dimensions to filter against.</p>
      */
     inline ListMetricsRequest& AddDimensions(const DimensionFilter& value) { m_dimensionsHasBeenSet = true; m_dimensions.push_back(value); return *this; }
 
     /**
-     * <p>A list of dimensions to filter against.</p>
+     * <p>The dimensions to filter against.</p>
      */
     inline ListMetricsRequest& AddDimensions(DimensionFilter&& value) { m_dimensionsHasBeenSet = true; m_dimensions.push_back(value); return *this; }
 

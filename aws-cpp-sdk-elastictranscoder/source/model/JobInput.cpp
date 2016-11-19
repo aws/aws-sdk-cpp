@@ -35,6 +35,8 @@ JobInput::JobInput() :
     m_interlacedHasBeenSet(false),
     m_containerHasBeenSet(false),
     m_encryptionHasBeenSet(false),
+    m_timeSpanHasBeenSet(false),
+    m_inputCaptionsHasBeenSet(false),
     m_detectedPropertiesHasBeenSet(false)
 {
 }
@@ -47,6 +49,8 @@ JobInput::JobInput(const JsonValue& jsonValue) :
     m_interlacedHasBeenSet(false),
     m_containerHasBeenSet(false),
     m_encryptionHasBeenSet(false),
+    m_timeSpanHasBeenSet(false),
+    m_inputCaptionsHasBeenSet(false),
     m_detectedPropertiesHasBeenSet(false)
 {
   *this = jsonValue;
@@ -103,6 +107,20 @@ JobInput& JobInput::operator =(const JsonValue& jsonValue)
     m_encryptionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("TimeSpan"))
+  {
+    m_timeSpan = jsonValue.GetObject("TimeSpan");
+
+    m_timeSpanHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("InputCaptions"))
+  {
+    m_inputCaptions = jsonValue.GetObject("InputCaptions");
+
+    m_inputCaptionsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("DetectedProperties"))
   {
     m_detectedProperties = jsonValue.GetObject("DetectedProperties");
@@ -156,6 +174,18 @@ JsonValue JobInput::Jsonize() const
   if(m_encryptionHasBeenSet)
   {
    payload.WithObject("Encryption", m_encryption.Jsonize());
+
+  }
+
+  if(m_timeSpanHasBeenSet)
+  {
+   payload.WithObject("TimeSpan", m_timeSpan.Jsonize());
+
+  }
+
+  if(m_inputCaptionsHasBeenSet)
+  {
+   payload.WithObject("InputCaptions", m_inputCaptions.Jsonize());
 
   }
 

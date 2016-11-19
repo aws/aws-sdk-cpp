@@ -31,9 +31,7 @@ namespace Model
 {
 
   /**
-   * <p> The <code>StatisticSet</code> data type describes the
-   * <code>StatisticValues</code> component of <a>MetricDatum</a>, and represents a
-   * set of statistics that describes a specific metric. </p>
+   * <p>Represents a set of statistics that describes a specific metric. </p>
    */
   class AWS_CLOUDWATCH_API StatisticSet
   {

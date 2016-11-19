@@ -734,10 +734,12 @@ namespace Model
         virtual void GetPolicyAsync(const Model::GetPolicyRequest& request, const GetPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Invokes a specific Lambda function.</p> <p>If you are using the versioning
-         * feature, you can invoke the specific function version by providing function
-         * version or alias name that is pointing to the function version using the
-         * <code>Qualifier</code> parameter in the request. If you don't provide the
+         * <p>Invokes a specific Lambda function. For an example, see <a
+         * href="http://docs.aws.amazon.com/lambda/latest/dg/with-dynamodb-create-function.html#with-dbb-invoke-manually">Create
+         * the Lambda Function and Test It Manually</a>. </p> <p>If you are using the
+         * versioning feature, you can invoke the specific function version by providing
+         * function version or alias name that is pointing to the function version using
+         * the <code>Qualifier</code> parameter in the request. If you don't provide the
          * <code>Qualifier</code> parameter, the <code>$LATEST</code> version of the Lambda
          * function is invoked. Invocations occur at least once in response to an event and
          * functions must be idempotent to handle this. For information about the
@@ -749,10 +751,12 @@ namespace Model
         virtual Model::InvokeOutcome Invoke(const Model::InvokeRequest& request) const;
 
         /**
-         * <p>Invokes a specific Lambda function.</p> <p>If you are using the versioning
-         * feature, you can invoke the specific function version by providing function
-         * version or alias name that is pointing to the function version using the
-         * <code>Qualifier</code> parameter in the request. If you don't provide the
+         * <p>Invokes a specific Lambda function. For an example, see <a
+         * href="http://docs.aws.amazon.com/lambda/latest/dg/with-dynamodb-create-function.html#with-dbb-invoke-manually">Create
+         * the Lambda Function and Test It Manually</a>. </p> <p>If you are using the
+         * versioning feature, you can invoke the specific function version by providing
+         * function version or alias name that is pointing to the function version using
+         * the <code>Qualifier</code> parameter in the request. If you don't provide the
          * <code>Qualifier</code> parameter, the <code>$LATEST</code> version of the Lambda
          * function is invoked. Invocations occur at least once in response to an event and
          * functions must be idempotent to handle this. For information about the
@@ -766,10 +770,12 @@ namespace Model
         virtual Model::InvokeOutcomeCallable InvokeCallable(const Model::InvokeRequest& request) const;
 
         /**
-         * <p>Invokes a specific Lambda function.</p> <p>If you are using the versioning
-         * feature, you can invoke the specific function version by providing function
-         * version or alias name that is pointing to the function version using the
-         * <code>Qualifier</code> parameter in the request. If you don't provide the
+         * <p>Invokes a specific Lambda function. For an example, see <a
+         * href="http://docs.aws.amazon.com/lambda/latest/dg/with-dynamodb-create-function.html#with-dbb-invoke-manually">Create
+         * the Lambda Function and Test It Manually</a>. </p> <p>If you are using the
+         * versioning feature, you can invoke the specific function version by providing
+         * function version or alias name that is pointing to the function version using
+         * the <code>Qualifier</code> parameter in the request. If you don't provide the
          * <code>Qualifier</code> parameter, the <code>$LATEST</code> version of the Lambda
          * function is invoked. Invocations occur at least once in response to an event and
          * functions must be idempotent to handle this. For information about the

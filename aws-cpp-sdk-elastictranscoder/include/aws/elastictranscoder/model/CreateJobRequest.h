@@ -17,8 +17,8 @@
 #include <aws/elastictranscoder/ElasticTranscoderRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/elastictranscoder/model/JobInput.h>
-#include <aws/elastictranscoder/model/CreateJobOutput.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/elastictranscoder/model/CreateJobOutput.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/elastictranscoder/model/CreateJobPlaylist.h>
 
@@ -124,19 +124,81 @@ namespace Model
      */
     inline CreateJobRequest& WithInput(JobInput&& value) { SetInput(value); return *this;}
 
-    
+    /**
+     * <p>A section of the request body that provides information about the files that
+     * are being transcoded.</p>
+     */
+    inline const Aws::Vector<JobInput>& GetInputs() const{ return m_inputs; }
+
+    /**
+     * <p>A section of the request body that provides information about the files that
+     * are being transcoded.</p>
+     */
+    inline void SetInputs(const Aws::Vector<JobInput>& value) { m_inputsHasBeenSet = true; m_inputs = value; }
+
+    /**
+     * <p>A section of the request body that provides information about the files that
+     * are being transcoded.</p>
+     */
+    inline void SetInputs(Aws::Vector<JobInput>&& value) { m_inputsHasBeenSet = true; m_inputs = value; }
+
+    /**
+     * <p>A section of the request body that provides information about the files that
+     * are being transcoded.</p>
+     */
+    inline CreateJobRequest& WithInputs(const Aws::Vector<JobInput>& value) { SetInputs(value); return *this;}
+
+    /**
+     * <p>A section of the request body that provides information about the files that
+     * are being transcoded.</p>
+     */
+    inline CreateJobRequest& WithInputs(Aws::Vector<JobInput>&& value) { SetInputs(value); return *this;}
+
+    /**
+     * <p>A section of the request body that provides information about the files that
+     * are being transcoded.</p>
+     */
+    inline CreateJobRequest& AddInputs(const JobInput& value) { m_inputsHasBeenSet = true; m_inputs.push_back(value); return *this; }
+
+    /**
+     * <p>A section of the request body that provides information about the files that
+     * are being transcoded.</p>
+     */
+    inline CreateJobRequest& AddInputs(JobInput&& value) { m_inputsHasBeenSet = true; m_inputs.push_back(value); return *this; }
+
+    /**
+     * <p> A section of the request body that provides information about the transcoded
+     * (target) file. We strongly recommend that you use the <code>Outputs</code>
+     * syntax instead of the <code>Output</code> syntax. </p>
+     */
     inline const CreateJobOutput& GetOutput() const{ return m_output; }
 
-    
+    /**
+     * <p> A section of the request body that provides information about the transcoded
+     * (target) file. We strongly recommend that you use the <code>Outputs</code>
+     * syntax instead of the <code>Output</code> syntax. </p>
+     */
     inline void SetOutput(const CreateJobOutput& value) { m_outputHasBeenSet = true; m_output = value; }
 
-    
+    /**
+     * <p> A section of the request body that provides information about the transcoded
+     * (target) file. We strongly recommend that you use the <code>Outputs</code>
+     * syntax instead of the <code>Output</code> syntax. </p>
+     */
     inline void SetOutput(CreateJobOutput&& value) { m_outputHasBeenSet = true; m_output = value; }
 
-    
+    /**
+     * <p> A section of the request body that provides information about the transcoded
+     * (target) file. We strongly recommend that you use the <code>Outputs</code>
+     * syntax instead of the <code>Output</code> syntax. </p>
+     */
     inline CreateJobRequest& WithOutput(const CreateJobOutput& value) { SetOutput(value); return *this;}
 
-    
+    /**
+     * <p> A section of the request body that provides information about the transcoded
+     * (target) file. We strongly recommend that you use the <code>Outputs</code>
+     * syntax instead of the <code>Output</code> syntax. </p>
+     */
     inline CreateJobRequest& WithOutput(CreateJobOutput&& value) { SetOutput(value); return *this;}
 
     /**
@@ -297,8 +359,8 @@ namespace Model
      * <p>User-defined metadata that you want to associate with an Elastic Transcoder
      * job. You specify metadata in <code>key/value</code> pairs, and you can add up to
      * 10 <code>key/value</code> pairs per job. Elastic Transcoder does not guarantee
-     * that <code>key/value</code> pairs will be returned in the same order in which
-     * you specify them.</p>
+     * that <code>key/value</code> pairs are returned in the same order in which you
+     * specify them.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetUserMetadata() const{ return m_userMetadata; }
 
@@ -306,8 +368,8 @@ namespace Model
      * <p>User-defined metadata that you want to associate with an Elastic Transcoder
      * job. You specify metadata in <code>key/value</code> pairs, and you can add up to
      * 10 <code>key/value</code> pairs per job. Elastic Transcoder does not guarantee
-     * that <code>key/value</code> pairs will be returned in the same order in which
-     * you specify them.</p>
+     * that <code>key/value</code> pairs are returned in the same order in which you
+     * specify them.</p>
      */
     inline void SetUserMetadata(const Aws::Map<Aws::String, Aws::String>& value) { m_userMetadataHasBeenSet = true; m_userMetadata = value; }
 
@@ -315,8 +377,8 @@ namespace Model
      * <p>User-defined metadata that you want to associate with an Elastic Transcoder
      * job. You specify metadata in <code>key/value</code> pairs, and you can add up to
      * 10 <code>key/value</code> pairs per job. Elastic Transcoder does not guarantee
-     * that <code>key/value</code> pairs will be returned in the same order in which
-     * you specify them.</p>
+     * that <code>key/value</code> pairs are returned in the same order in which you
+     * specify them.</p>
      */
     inline void SetUserMetadata(Aws::Map<Aws::String, Aws::String>&& value) { m_userMetadataHasBeenSet = true; m_userMetadata = value; }
 
@@ -324,8 +386,8 @@ namespace Model
      * <p>User-defined metadata that you want to associate with an Elastic Transcoder
      * job. You specify metadata in <code>key/value</code> pairs, and you can add up to
      * 10 <code>key/value</code> pairs per job. Elastic Transcoder does not guarantee
-     * that <code>key/value</code> pairs will be returned in the same order in which
-     * you specify them.</p>
+     * that <code>key/value</code> pairs are returned in the same order in which you
+     * specify them.</p>
      */
     inline CreateJobRequest& WithUserMetadata(const Aws::Map<Aws::String, Aws::String>& value) { SetUserMetadata(value); return *this;}
 
@@ -333,8 +395,8 @@ namespace Model
      * <p>User-defined metadata that you want to associate with an Elastic Transcoder
      * job. You specify metadata in <code>key/value</code> pairs, and you can add up to
      * 10 <code>key/value</code> pairs per job. Elastic Transcoder does not guarantee
-     * that <code>key/value</code> pairs will be returned in the same order in which
-     * you specify them.</p>
+     * that <code>key/value</code> pairs are returned in the same order in which you
+     * specify them.</p>
      */
     inline CreateJobRequest& WithUserMetadata(Aws::Map<Aws::String, Aws::String>&& value) { SetUserMetadata(value); return *this;}
 
@@ -342,8 +404,8 @@ namespace Model
      * <p>User-defined metadata that you want to associate with an Elastic Transcoder
      * job. You specify metadata in <code>key/value</code> pairs, and you can add up to
      * 10 <code>key/value</code> pairs per job. Elastic Transcoder does not guarantee
-     * that <code>key/value</code> pairs will be returned in the same order in which
-     * you specify them.</p>
+     * that <code>key/value</code> pairs are returned in the same order in which you
+     * specify them.</p>
      */
     inline CreateJobRequest& AddUserMetadata(const Aws::String& key, const Aws::String& value) { m_userMetadataHasBeenSet = true; m_userMetadata[key] = value; return *this; }
 
@@ -351,8 +413,8 @@ namespace Model
      * <p>User-defined metadata that you want to associate with an Elastic Transcoder
      * job. You specify metadata in <code>key/value</code> pairs, and you can add up to
      * 10 <code>key/value</code> pairs per job. Elastic Transcoder does not guarantee
-     * that <code>key/value</code> pairs will be returned in the same order in which
-     * you specify them.</p>
+     * that <code>key/value</code> pairs are returned in the same order in which you
+     * specify them.</p>
      */
     inline CreateJobRequest& AddUserMetadata(Aws::String&& key, const Aws::String& value) { m_userMetadataHasBeenSet = true; m_userMetadata[key] = value; return *this; }
 
@@ -360,8 +422,8 @@ namespace Model
      * <p>User-defined metadata that you want to associate with an Elastic Transcoder
      * job. You specify metadata in <code>key/value</code> pairs, and you can add up to
      * 10 <code>key/value</code> pairs per job. Elastic Transcoder does not guarantee
-     * that <code>key/value</code> pairs will be returned in the same order in which
-     * you specify them.</p>
+     * that <code>key/value</code> pairs are returned in the same order in which you
+     * specify them.</p>
      */
     inline CreateJobRequest& AddUserMetadata(const Aws::String& key, Aws::String&& value) { m_userMetadataHasBeenSet = true; m_userMetadata[key] = value; return *this; }
 
@@ -369,8 +431,8 @@ namespace Model
      * <p>User-defined metadata that you want to associate with an Elastic Transcoder
      * job. You specify metadata in <code>key/value</code> pairs, and you can add up to
      * 10 <code>key/value</code> pairs per job. Elastic Transcoder does not guarantee
-     * that <code>key/value</code> pairs will be returned in the same order in which
-     * you specify them.</p>
+     * that <code>key/value</code> pairs are returned in the same order in which you
+     * specify them.</p>
      */
     inline CreateJobRequest& AddUserMetadata(Aws::String&& key, Aws::String&& value) { m_userMetadataHasBeenSet = true; m_userMetadata[key] = value; return *this; }
 
@@ -378,8 +440,8 @@ namespace Model
      * <p>User-defined metadata that you want to associate with an Elastic Transcoder
      * job. You specify metadata in <code>key/value</code> pairs, and you can add up to
      * 10 <code>key/value</code> pairs per job. Elastic Transcoder does not guarantee
-     * that <code>key/value</code> pairs will be returned in the same order in which
-     * you specify them.</p>
+     * that <code>key/value</code> pairs are returned in the same order in which you
+     * specify them.</p>
      */
     inline CreateJobRequest& AddUserMetadata(const char* key, Aws::String&& value) { m_userMetadataHasBeenSet = true; m_userMetadata[key] = value; return *this; }
 
@@ -387,8 +449,8 @@ namespace Model
      * <p>User-defined metadata that you want to associate with an Elastic Transcoder
      * job. You specify metadata in <code>key/value</code> pairs, and you can add up to
      * 10 <code>key/value</code> pairs per job. Elastic Transcoder does not guarantee
-     * that <code>key/value</code> pairs will be returned in the same order in which
-     * you specify them.</p>
+     * that <code>key/value</code> pairs are returned in the same order in which you
+     * specify them.</p>
      */
     inline CreateJobRequest& AddUserMetadata(Aws::String&& key, const char* value) { m_userMetadataHasBeenSet = true; m_userMetadata[key] = value; return *this; }
 
@@ -396,8 +458,8 @@ namespace Model
      * <p>User-defined metadata that you want to associate with an Elastic Transcoder
      * job. You specify metadata in <code>key/value</code> pairs, and you can add up to
      * 10 <code>key/value</code> pairs per job. Elastic Transcoder does not guarantee
-     * that <code>key/value</code> pairs will be returned in the same order in which
-     * you specify them.</p>
+     * that <code>key/value</code> pairs are returned in the same order in which you
+     * specify them.</p>
      */
     inline CreateJobRequest& AddUserMetadata(const char* key, const char* value) { m_userMetadataHasBeenSet = true; m_userMetadata[key] = value; return *this; }
 
@@ -406,6 +468,8 @@ namespace Model
     bool m_pipelineIdHasBeenSet;
     JobInput m_input;
     bool m_inputHasBeenSet;
+    Aws::Vector<JobInput> m_inputs;
+    bool m_inputsHasBeenSet;
     CreateJobOutput m_output;
     bool m_outputHasBeenSet;
     Aws::Vector<CreateJobOutput> m_outputs;

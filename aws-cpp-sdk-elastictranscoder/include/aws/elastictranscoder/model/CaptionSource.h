@@ -86,58 +86,72 @@ namespace Model
     inline CaptionSource& WithKey(const char* value) { SetKey(value); return *this;}
 
     /**
-     * <p>A string that specifies the language of the caption. Specify this as one
-     * of:</p> <ul> <li><p>2-character ISO 639-1 code</p></li> <li><p>3-character ISO
-     * 639-2 code</p></li> </ul> <p>For more information on ISO language codes and
-     * language names, see the List of ISO 639-1 codes.</p>
+     * <p>A string that specifies the language of the caption. If you specified
+     * multiple inputs with captions, the caption language must match in order to be
+     * included in the output. Specify this as one of:</p> <ul> <li> <p>2-character ISO
+     * 639-1 code</p> </li> <li> <p>3-character ISO 639-2 code</p> </li> </ul> <p>For
+     * more information on ISO language codes and language names, see the List of ISO
+     * 639-1 codes.</p>
      */
     inline const Aws::String& GetLanguage() const{ return m_language; }
 
     /**
-     * <p>A string that specifies the language of the caption. Specify this as one
-     * of:</p> <ul> <li><p>2-character ISO 639-1 code</p></li> <li><p>3-character ISO
-     * 639-2 code</p></li> </ul> <p>For more information on ISO language codes and
-     * language names, see the List of ISO 639-1 codes.</p>
+     * <p>A string that specifies the language of the caption. If you specified
+     * multiple inputs with captions, the caption language must match in order to be
+     * included in the output. Specify this as one of:</p> <ul> <li> <p>2-character ISO
+     * 639-1 code</p> </li> <li> <p>3-character ISO 639-2 code</p> </li> </ul> <p>For
+     * more information on ISO language codes and language names, see the List of ISO
+     * 639-1 codes.</p>
      */
     inline void SetLanguage(const Aws::String& value) { m_languageHasBeenSet = true; m_language = value; }
 
     /**
-     * <p>A string that specifies the language of the caption. Specify this as one
-     * of:</p> <ul> <li><p>2-character ISO 639-1 code</p></li> <li><p>3-character ISO
-     * 639-2 code</p></li> </ul> <p>For more information on ISO language codes and
-     * language names, see the List of ISO 639-1 codes.</p>
+     * <p>A string that specifies the language of the caption. If you specified
+     * multiple inputs with captions, the caption language must match in order to be
+     * included in the output. Specify this as one of:</p> <ul> <li> <p>2-character ISO
+     * 639-1 code</p> </li> <li> <p>3-character ISO 639-2 code</p> </li> </ul> <p>For
+     * more information on ISO language codes and language names, see the List of ISO
+     * 639-1 codes.</p>
      */
     inline void SetLanguage(Aws::String&& value) { m_languageHasBeenSet = true; m_language = value; }
 
     /**
-     * <p>A string that specifies the language of the caption. Specify this as one
-     * of:</p> <ul> <li><p>2-character ISO 639-1 code</p></li> <li><p>3-character ISO
-     * 639-2 code</p></li> </ul> <p>For more information on ISO language codes and
-     * language names, see the List of ISO 639-1 codes.</p>
+     * <p>A string that specifies the language of the caption. If you specified
+     * multiple inputs with captions, the caption language must match in order to be
+     * included in the output. Specify this as one of:</p> <ul> <li> <p>2-character ISO
+     * 639-1 code</p> </li> <li> <p>3-character ISO 639-2 code</p> </li> </ul> <p>For
+     * more information on ISO language codes and language names, see the List of ISO
+     * 639-1 codes.</p>
      */
     inline void SetLanguage(const char* value) { m_languageHasBeenSet = true; m_language.assign(value); }
 
     /**
-     * <p>A string that specifies the language of the caption. Specify this as one
-     * of:</p> <ul> <li><p>2-character ISO 639-1 code</p></li> <li><p>3-character ISO
-     * 639-2 code</p></li> </ul> <p>For more information on ISO language codes and
-     * language names, see the List of ISO 639-1 codes.</p>
+     * <p>A string that specifies the language of the caption. If you specified
+     * multiple inputs with captions, the caption language must match in order to be
+     * included in the output. Specify this as one of:</p> <ul> <li> <p>2-character ISO
+     * 639-1 code</p> </li> <li> <p>3-character ISO 639-2 code</p> </li> </ul> <p>For
+     * more information on ISO language codes and language names, see the List of ISO
+     * 639-1 codes.</p>
      */
     inline CaptionSource& WithLanguage(const Aws::String& value) { SetLanguage(value); return *this;}
 
     /**
-     * <p>A string that specifies the language of the caption. Specify this as one
-     * of:</p> <ul> <li><p>2-character ISO 639-1 code</p></li> <li><p>3-character ISO
-     * 639-2 code</p></li> </ul> <p>For more information on ISO language codes and
-     * language names, see the List of ISO 639-1 codes.</p>
+     * <p>A string that specifies the language of the caption. If you specified
+     * multiple inputs with captions, the caption language must match in order to be
+     * included in the output. Specify this as one of:</p> <ul> <li> <p>2-character ISO
+     * 639-1 code</p> </li> <li> <p>3-character ISO 639-2 code</p> </li> </ul> <p>For
+     * more information on ISO language codes and language names, see the List of ISO
+     * 639-1 codes.</p>
      */
     inline CaptionSource& WithLanguage(Aws::String&& value) { SetLanguage(value); return *this;}
 
     /**
-     * <p>A string that specifies the language of the caption. Specify this as one
-     * of:</p> <ul> <li><p>2-character ISO 639-1 code</p></li> <li><p>3-character ISO
-     * 639-2 code</p></li> </ul> <p>For more information on ISO language codes and
-     * language names, see the List of ISO 639-1 codes.</p>
+     * <p>A string that specifies the language of the caption. If you specified
+     * multiple inputs with captions, the caption language must match in order to be
+     * included in the output. Specify this as one of:</p> <ul> <li> <p>2-character ISO
+     * 639-1 code</p> </li> <li> <p>3-character ISO 639-2 code</p> </li> </ul> <p>For
+     * more information on ISO language codes and language names, see the List of ISO
+     * 639-1 codes.</p>
      */
     inline CaptionSource& WithLanguage(const char* value) { SetLanguage(value); return *this;}
 
@@ -247,32 +261,37 @@ namespace Model
     inline CaptionSource& WithLabel(const char* value) { SetLabel(value); return *this;}
 
     /**
-     * <p>The encryption settings, if any, that you want Elastic Transcoder to apply to
-     * your caption sources.</p>
+     * <p>The encryption settings, if any, that Elastic Transcoder needs to decyrpt
+     * your caption sources, or that you want Elastic Transcoder to apply to your
+     * caption sources.</p>
      */
     inline const Encryption& GetEncryption() const{ return m_encryption; }
 
     /**
-     * <p>The encryption settings, if any, that you want Elastic Transcoder to apply to
-     * your caption sources.</p>
+     * <p>The encryption settings, if any, that Elastic Transcoder needs to decyrpt
+     * your caption sources, or that you want Elastic Transcoder to apply to your
+     * caption sources.</p>
      */
     inline void SetEncryption(const Encryption& value) { m_encryptionHasBeenSet = true; m_encryption = value; }
 
     /**
-     * <p>The encryption settings, if any, that you want Elastic Transcoder to apply to
-     * your caption sources.</p>
+     * <p>The encryption settings, if any, that Elastic Transcoder needs to decyrpt
+     * your caption sources, or that you want Elastic Transcoder to apply to your
+     * caption sources.</p>
      */
     inline void SetEncryption(Encryption&& value) { m_encryptionHasBeenSet = true; m_encryption = value; }
 
     /**
-     * <p>The encryption settings, if any, that you want Elastic Transcoder to apply to
-     * your caption sources.</p>
+     * <p>The encryption settings, if any, that Elastic Transcoder needs to decyrpt
+     * your caption sources, or that you want Elastic Transcoder to apply to your
+     * caption sources.</p>
      */
     inline CaptionSource& WithEncryption(const Encryption& value) { SetEncryption(value); return *this;}
 
     /**
-     * <p>The encryption settings, if any, that you want Elastic Transcoder to apply to
-     * your caption sources.</p>
+     * <p>The encryption settings, if any, that Elastic Transcoder needs to decyrpt
+     * your caption sources, or that you want Elastic Transcoder to apply to your
+     * caption sources.</p>
      */
     inline CaptionSource& WithEncryption(Encryption&& value) { SetEncryption(value); return *this;}
 

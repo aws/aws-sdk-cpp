@@ -131,6 +131,27 @@ namespace Model
      */
     inline GetApiKeysRequest& WithNameQuery(const char* value) { SetNameQuery(value); return *this;}
 
+    
+    inline const Aws::String& GetCustomerId() const{ return m_customerId; }
+
+    
+    inline void SetCustomerId(const Aws::String& value) { m_customerIdHasBeenSet = true; m_customerId = value; }
+
+    
+    inline void SetCustomerId(Aws::String&& value) { m_customerIdHasBeenSet = true; m_customerId = value; }
+
+    
+    inline void SetCustomerId(const char* value) { m_customerIdHasBeenSet = true; m_customerId.assign(value); }
+
+    
+    inline GetApiKeysRequest& WithCustomerId(const Aws::String& value) { SetCustomerId(value); return *this;}
+
+    
+    inline GetApiKeysRequest& WithCustomerId(Aws::String&& value) { SetCustomerId(value); return *this;}
+
+    
+    inline GetApiKeysRequest& WithCustomerId(const char* value) { SetCustomerId(value); return *this;}
+
     /**
      * <p>A boolean flag to specify whether (<code>true</code>) or not
      * (<code>false</code>) the result contains key values.</p>
@@ -156,6 +177,8 @@ namespace Model
     bool m_limitHasBeenSet;
     Aws::String m_nameQuery;
     bool m_nameQueryHasBeenSet;
+    Aws::String m_customerId;
+    bool m_customerIdHasBeenSet;
     bool m_includeValues;
     bool m_includeValuesHasBeenSet;
   };

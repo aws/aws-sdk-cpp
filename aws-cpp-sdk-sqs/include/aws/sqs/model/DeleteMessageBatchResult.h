@@ -38,7 +38,7 @@ namespace Model
   /**
    * <p> For each message in the batch, the response contains a
    * <a>DeleteMessageBatchResultEntry</a> tag if the message is deleted or a
-   * <a>BatchResultErrorEntry</a> tag if the message cannot be deleted. </p>
+   * <a>BatchResultErrorEntry</a> tag if the message can't be deleted. </p>
    */
   class AWS_SQS_API DeleteMessageBatchResult
   {

@@ -18,6 +18,7 @@
 #include <aws/elasticmapreduce/model/ClusterStatus.h>
 #include <aws/elasticmapreduce/model/Ec2InstanceAttributes.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/elasticmapreduce/model/ScaleDownBehavior.h>
 #include <aws/elasticmapreduce/model/Application.h>
 #include <aws/elasticmapreduce/model/Tag.h>
 #include <aws/elasticmapreduce/model/Configuration.h>
@@ -142,19 +143,34 @@ namespace Model
      */
     inline Cluster& WithStatus(ClusterStatus&& value) { SetStatus(value); return *this;}
 
-    
+    /**
+     * <p>Provides information about the EC2 instances in a cluster grouped by
+     * category. For example, key name, subnet ID, IAM instance profile, and so on.</p>
+     */
     inline const Ec2InstanceAttributes& GetEc2InstanceAttributes() const{ return m_ec2InstanceAttributes; }
 
-    
+    /**
+     * <p>Provides information about the EC2 instances in a cluster grouped by
+     * category. For example, key name, subnet ID, IAM instance profile, and so on.</p>
+     */
     inline void SetEc2InstanceAttributes(const Ec2InstanceAttributes& value) { m_ec2InstanceAttributesHasBeenSet = true; m_ec2InstanceAttributes = value; }
 
-    
+    /**
+     * <p>Provides information about the EC2 instances in a cluster grouped by
+     * category. For example, key name, subnet ID, IAM instance profile, and so on.</p>
+     */
     inline void SetEc2InstanceAttributes(Ec2InstanceAttributes&& value) { m_ec2InstanceAttributesHasBeenSet = true; m_ec2InstanceAttributes = value; }
 
-    
+    /**
+     * <p>Provides information about the EC2 instances in a cluster grouped by
+     * category. For example, key name, subnet ID, IAM instance profile, and so on.</p>
+     */
     inline Cluster& WithEc2InstanceAttributes(const Ec2InstanceAttributes& value) { SetEc2InstanceAttributes(value); return *this;}
 
-    
+    /**
+     * <p>Provides information about the EC2 instances in a cluster grouped by
+     * category. For example, key name, subnet ID, IAM instance profile, and so on.</p>
+     */
     inline Cluster& WithEc2InstanceAttributes(Ec2InstanceAttributes&& value) { SetEc2InstanceAttributes(value); return *this;}
 
     /**
@@ -634,6 +650,147 @@ namespace Model
      */
     inline Cluster& WithSecurityConfiguration(const char* value) { SetSecurityConfiguration(value); return *this;}
 
+    /**
+     * <p>An IAM role for automatic scaling policies. The default role is
+     * <code>EMR_AutoScaling_DefaultRole</code>. The IAM role provides permissions that
+     * the automatic scaling feature requires to launch and terminate EC2 instances in
+     * an instance group.</p>
+     */
+    inline const Aws::String& GetAutoScalingRole() const{ return m_autoScalingRole; }
+
+    /**
+     * <p>An IAM role for automatic scaling policies. The default role is
+     * <code>EMR_AutoScaling_DefaultRole</code>. The IAM role provides permissions that
+     * the automatic scaling feature requires to launch and terminate EC2 instances in
+     * an instance group.</p>
+     */
+    inline void SetAutoScalingRole(const Aws::String& value) { m_autoScalingRoleHasBeenSet = true; m_autoScalingRole = value; }
+
+    /**
+     * <p>An IAM role for automatic scaling policies. The default role is
+     * <code>EMR_AutoScaling_DefaultRole</code>. The IAM role provides permissions that
+     * the automatic scaling feature requires to launch and terminate EC2 instances in
+     * an instance group.</p>
+     */
+    inline void SetAutoScalingRole(Aws::String&& value) { m_autoScalingRoleHasBeenSet = true; m_autoScalingRole = value; }
+
+    /**
+     * <p>An IAM role for automatic scaling policies. The default role is
+     * <code>EMR_AutoScaling_DefaultRole</code>. The IAM role provides permissions that
+     * the automatic scaling feature requires to launch and terminate EC2 instances in
+     * an instance group.</p>
+     */
+    inline void SetAutoScalingRole(const char* value) { m_autoScalingRoleHasBeenSet = true; m_autoScalingRole.assign(value); }
+
+    /**
+     * <p>An IAM role for automatic scaling policies. The default role is
+     * <code>EMR_AutoScaling_DefaultRole</code>. The IAM role provides permissions that
+     * the automatic scaling feature requires to launch and terminate EC2 instances in
+     * an instance group.</p>
+     */
+    inline Cluster& WithAutoScalingRole(const Aws::String& value) { SetAutoScalingRole(value); return *this;}
+
+    /**
+     * <p>An IAM role for automatic scaling policies. The default role is
+     * <code>EMR_AutoScaling_DefaultRole</code>. The IAM role provides permissions that
+     * the automatic scaling feature requires to launch and terminate EC2 instances in
+     * an instance group.</p>
+     */
+    inline Cluster& WithAutoScalingRole(Aws::String&& value) { SetAutoScalingRole(value); return *this;}
+
+    /**
+     * <p>An IAM role for automatic scaling policies. The default role is
+     * <code>EMR_AutoScaling_DefaultRole</code>. The IAM role provides permissions that
+     * the automatic scaling feature requires to launch and terminate EC2 instances in
+     * an instance group.</p>
+     */
+    inline Cluster& WithAutoScalingRole(const char* value) { SetAutoScalingRole(value); return *this;}
+
+    /**
+     * <p>The way that individual Amazon EC2 instances terminate when an automatic
+     * scale-in activity occurs or an instance group is resized.
+     * <code>TERMINATE_AT_INSTANCE_HOUR</code> indicates that Amazon EMR terminates
+     * nodes at the instance-hour boundary, regardless of when the request to terminate
+     * the instance was submitted. This option is only available with Amazon EMR 5.1.0
+     * and later and is the default for clusters created using that version.
+     * <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR blacklists
+     * and drains tasks from nodes before terminating the Amazon EC2 instances,
+     * regardless of the instance-hour boundary. With either behavior, Amazon EMR
+     * removes the least active nodes first and blocks instance termination if it could
+     * lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> is available
+     * only in Amazon EMR version 4.1.0 and later, and is the default for versions of
+     * Amazon EMR earlier than 5.1.0.</p>
+     */
+    inline const ScaleDownBehavior& GetScaleDownBehavior() const{ return m_scaleDownBehavior; }
+
+    /**
+     * <p>The way that individual Amazon EC2 instances terminate when an automatic
+     * scale-in activity occurs or an instance group is resized.
+     * <code>TERMINATE_AT_INSTANCE_HOUR</code> indicates that Amazon EMR terminates
+     * nodes at the instance-hour boundary, regardless of when the request to terminate
+     * the instance was submitted. This option is only available with Amazon EMR 5.1.0
+     * and later and is the default for clusters created using that version.
+     * <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR blacklists
+     * and drains tasks from nodes before terminating the Amazon EC2 instances,
+     * regardless of the instance-hour boundary. With either behavior, Amazon EMR
+     * removes the least active nodes first and blocks instance termination if it could
+     * lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> is available
+     * only in Amazon EMR version 4.1.0 and later, and is the default for versions of
+     * Amazon EMR earlier than 5.1.0.</p>
+     */
+    inline void SetScaleDownBehavior(const ScaleDownBehavior& value) { m_scaleDownBehaviorHasBeenSet = true; m_scaleDownBehavior = value; }
+
+    /**
+     * <p>The way that individual Amazon EC2 instances terminate when an automatic
+     * scale-in activity occurs or an instance group is resized.
+     * <code>TERMINATE_AT_INSTANCE_HOUR</code> indicates that Amazon EMR terminates
+     * nodes at the instance-hour boundary, regardless of when the request to terminate
+     * the instance was submitted. This option is only available with Amazon EMR 5.1.0
+     * and later and is the default for clusters created using that version.
+     * <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR blacklists
+     * and drains tasks from nodes before terminating the Amazon EC2 instances,
+     * regardless of the instance-hour boundary. With either behavior, Amazon EMR
+     * removes the least active nodes first and blocks instance termination if it could
+     * lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> is available
+     * only in Amazon EMR version 4.1.0 and later, and is the default for versions of
+     * Amazon EMR earlier than 5.1.0.</p>
+     */
+    inline void SetScaleDownBehavior(ScaleDownBehavior&& value) { m_scaleDownBehaviorHasBeenSet = true; m_scaleDownBehavior = value; }
+
+    /**
+     * <p>The way that individual Amazon EC2 instances terminate when an automatic
+     * scale-in activity occurs or an instance group is resized.
+     * <code>TERMINATE_AT_INSTANCE_HOUR</code> indicates that Amazon EMR terminates
+     * nodes at the instance-hour boundary, regardless of when the request to terminate
+     * the instance was submitted. This option is only available with Amazon EMR 5.1.0
+     * and later and is the default for clusters created using that version.
+     * <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR blacklists
+     * and drains tasks from nodes before terminating the Amazon EC2 instances,
+     * regardless of the instance-hour boundary. With either behavior, Amazon EMR
+     * removes the least active nodes first and blocks instance termination if it could
+     * lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> is available
+     * only in Amazon EMR version 4.1.0 and later, and is the default for versions of
+     * Amazon EMR earlier than 5.1.0.</p>
+     */
+    inline Cluster& WithScaleDownBehavior(const ScaleDownBehavior& value) { SetScaleDownBehavior(value); return *this;}
+
+    /**
+     * <p>The way that individual Amazon EC2 instances terminate when an automatic
+     * scale-in activity occurs or an instance group is resized.
+     * <code>TERMINATE_AT_INSTANCE_HOUR</code> indicates that Amazon EMR terminates
+     * nodes at the instance-hour boundary, regardless of when the request to terminate
+     * the instance was submitted. This option is only available with Amazon EMR 5.1.0
+     * and later and is the default for clusters created using that version.
+     * <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR blacklists
+     * and drains tasks from nodes before terminating the Amazon EC2 instances,
+     * regardless of the instance-hour boundary. With either behavior, Amazon EMR
+     * removes the least active nodes first and blocks instance termination if it could
+     * lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> is available
+     * only in Amazon EMR version 4.1.0 and later, and is the default for versions of
+     * Amazon EMR earlier than 5.1.0.</p>
+     */
+    inline Cluster& WithScaleDownBehavior(ScaleDownBehavior&& value) { SetScaleDownBehavior(value); return *this;}
+
   private:
     Aws::String m_id;
     bool m_idHasBeenSet;
@@ -671,6 +828,10 @@ namespace Model
     bool m_configurationsHasBeenSet;
     Aws::String m_securityConfiguration;
     bool m_securityConfigurationHasBeenSet;
+    Aws::String m_autoScalingRole;
+    bool m_autoScalingRoleHasBeenSet;
+    ScaleDownBehavior m_scaleDownBehavior;
+    bool m_scaleDownBehaviorHasBeenSet;
   };
 
 } // namespace Model

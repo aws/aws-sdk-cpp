@@ -54,9 +54,12 @@ enum class MarketplaceMeteringErrors
   ///////////////////////////////////////////////////////////////////////////////////////////
 
   DUPLICATE_REQUEST= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  EXPIRED_TOKEN,
   INTERNAL_SERVICE_ERROR,
+  INVALID_CUSTOMER_IDENTIFIER,
   INVALID_ENDPOINT_REGION,
   INVALID_PRODUCT_CODE,
+  INVALID_TOKEN,
   INVALID_USAGE_DIMENSION,
   TIMESTAMP_OUT_OF_BOUNDS
 };

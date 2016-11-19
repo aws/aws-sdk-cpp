@@ -24,6 +24,7 @@ DescribeAlarmsForMetricRequest::DescribeAlarmsForMetricRequest() :
     m_namespaceHasBeenSet(false),
     m_statistic(Statistic::NOT_SET),
     m_statisticHasBeenSet(false),
+    m_extendedStatisticHasBeenSet(false),
     m_dimensionsHasBeenSet(false),
     m_period(0),
     m_periodHasBeenSet(false),
@@ -49,6 +50,11 @@ Aws::String DescribeAlarmsForMetricRequest::SerializePayload() const
   if(m_statisticHasBeenSet)
   {
     ss << "Statistic=" << StatisticMapper::GetNameForStatistic(m_statistic) << "&";
+  }
+
+  if(m_extendedStatisticHasBeenSet)
+  {
+    ss << "ExtendedStatistic=" << StringUtils::URLEncode(m_extendedStatistic.c_str()) << "&";
   }
 
   if(m_dimensionsHasBeenSet)

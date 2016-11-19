@@ -33,8 +33,8 @@ namespace ElasticTranscoder
 namespace Model
 {
   /**
-   * When you update status for a pipeline, Elastic Transcoder returns the values
-   * that you specified in the request.
+   * <p>When you update status for a pipeline, Elastic Transcoder returns the values
+   * that you specified in the request.</p>
    */
   class AWS_ELASTICTRANSCODER_API UpdatePipelineStatusResult
   {

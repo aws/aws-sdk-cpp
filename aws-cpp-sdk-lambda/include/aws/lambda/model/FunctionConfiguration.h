@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/lambda/model/Runtime.h>
 #include <aws/lambda/model/VpcConfigResponse.h>
+#include <aws/lambda/model/EnvironmentResponse.h>
 
 namespace Aws
 {
@@ -451,6 +452,85 @@ namespace Model
      */
     inline FunctionConfiguration& WithVpcConfig(VpcConfigResponse&& value) { SetVpcConfig(value); return *this;}
 
+    /**
+     * <p>The parent object that contains your environment's configuration
+     * settings.</p>
+     */
+    inline const EnvironmentResponse& GetEnvironment() const{ return m_environment; }
+
+    /**
+     * <p>The parent object that contains your environment's configuration
+     * settings.</p>
+     */
+    inline void SetEnvironment(const EnvironmentResponse& value) { m_environmentHasBeenSet = true; m_environment = value; }
+
+    /**
+     * <p>The parent object that contains your environment's configuration
+     * settings.</p>
+     */
+    inline void SetEnvironment(EnvironmentResponse&& value) { m_environmentHasBeenSet = true; m_environment = value; }
+
+    /**
+     * <p>The parent object that contains your environment's configuration
+     * settings.</p>
+     */
+    inline FunctionConfiguration& WithEnvironment(const EnvironmentResponse& value) { SetEnvironment(value); return *this;}
+
+    /**
+     * <p>The parent object that contains your environment's configuration
+     * settings.</p>
+     */
+    inline FunctionConfiguration& WithEnvironment(EnvironmentResponse&& value) { SetEnvironment(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt your function's
+     * environment variables. If empty, it means you are using the AWS Lambda default
+     * service key.</p>
+     */
+    inline const Aws::String& GetKMSKeyArn() const{ return m_kMSKeyArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt your function's
+     * environment variables. If empty, it means you are using the AWS Lambda default
+     * service key.</p>
+     */
+    inline void SetKMSKeyArn(const Aws::String& value) { m_kMSKeyArnHasBeenSet = true; m_kMSKeyArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt your function's
+     * environment variables. If empty, it means you are using the AWS Lambda default
+     * service key.</p>
+     */
+    inline void SetKMSKeyArn(Aws::String&& value) { m_kMSKeyArnHasBeenSet = true; m_kMSKeyArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt your function's
+     * environment variables. If empty, it means you are using the AWS Lambda default
+     * service key.</p>
+     */
+    inline void SetKMSKeyArn(const char* value) { m_kMSKeyArnHasBeenSet = true; m_kMSKeyArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt your function's
+     * environment variables. If empty, it means you are using the AWS Lambda default
+     * service key.</p>
+     */
+    inline FunctionConfiguration& WithKMSKeyArn(const Aws::String& value) { SetKMSKeyArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt your function's
+     * environment variables. If empty, it means you are using the AWS Lambda default
+     * service key.</p>
+     */
+    inline FunctionConfiguration& WithKMSKeyArn(Aws::String&& value) { SetKMSKeyArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt your function's
+     * environment variables. If empty, it means you are using the AWS Lambda default
+     * service key.</p>
+     */
+    inline FunctionConfiguration& WithKMSKeyArn(const char* value) { SetKMSKeyArn(value); return *this;}
+
   private:
     Aws::String m_functionName;
     bool m_functionNameHasBeenSet;
@@ -478,6 +558,10 @@ namespace Model
     bool m_versionHasBeenSet;
     VpcConfigResponse m_vpcConfig;
     bool m_vpcConfigHasBeenSet;
+    EnvironmentResponse m_environment;
+    bool m_environmentHasBeenSet;
+    Aws::String m_kMSKeyArn;
+    bool m_kMSKeyArnHasBeenSet;
   };
 
 } // namespace Model

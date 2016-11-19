@@ -34,12 +34,7 @@ namespace Model
 {
 
   /**
-   * <p> The <code>Metric</code> data type contains information about a specific
-   * metric. If you call <a>ListMetrics</a>, Amazon CloudWatch returns information
-   * contained by this data type. </p> <p>The example in the Examples section
-   * publishes two metrics named buffers and latency. Both metrics are in the
-   * examples namespace. Both metrics have two dimensions, InstanceID and
-   * InstanceType.</p>
+   * <p>Represents a specific metric.</p>
    */
   class AWS_CLOUDWATCH_API Metric
   {
@@ -122,37 +117,37 @@ namespace Model
     inline Metric& WithMetricName(const char* value) { SetMetricName(value); return *this;}
 
     /**
-     * <p>A list of dimensions associated with the metric.</p>
+     * <p>The dimensions for the metric.</p>
      */
     inline const Aws::Vector<Dimension>& GetDimensions() const{ return m_dimensions; }
 
     /**
-     * <p>A list of dimensions associated with the metric.</p>
+     * <p>The dimensions for the metric.</p>
      */
     inline void SetDimensions(const Aws::Vector<Dimension>& value) { m_dimensionsHasBeenSet = true; m_dimensions = value; }
 
     /**
-     * <p>A list of dimensions associated with the metric.</p>
+     * <p>The dimensions for the metric.</p>
      */
     inline void SetDimensions(Aws::Vector<Dimension>&& value) { m_dimensionsHasBeenSet = true; m_dimensions = value; }
 
     /**
-     * <p>A list of dimensions associated with the metric.</p>
+     * <p>The dimensions for the metric.</p>
      */
     inline Metric& WithDimensions(const Aws::Vector<Dimension>& value) { SetDimensions(value); return *this;}
 
     /**
-     * <p>A list of dimensions associated with the metric.</p>
+     * <p>The dimensions for the metric.</p>
      */
     inline Metric& WithDimensions(Aws::Vector<Dimension>&& value) { SetDimensions(value); return *this;}
 
     /**
-     * <p>A list of dimensions associated with the metric.</p>
+     * <p>The dimensions for the metric.</p>
      */
     inline Metric& AddDimensions(const Dimension& value) { m_dimensionsHasBeenSet = true; m_dimensions.push_back(value); return *this; }
 
     /**
-     * <p>A list of dimensions associated with the metric.</p>
+     * <p>The dimensions for the metric.</p>
      */
     inline Metric& AddDimensions(Dimension&& value) { m_dimensionsHasBeenSet = true; m_dimensions.push_back(value); return *this; }
 

@@ -39,7 +39,10 @@ RunJobFlowRequest::RunJobFlowRequest() :
     m_jobFlowRoleHasBeenSet(false),
     m_serviceRoleHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_securityConfigurationHasBeenSet(false)
+    m_securityConfigurationHasBeenSet(false),
+    m_autoScalingRoleHasBeenSet(false),
+    m_scaleDownBehavior(ScaleDownBehavior::NOT_SET),
+    m_scaleDownBehaviorHasBeenSet(false)
 {
 }
 
@@ -182,6 +185,17 @@ Aws::String RunJobFlowRequest::SerializePayload() const
   {
    payload.WithString("SecurityConfiguration", m_securityConfiguration);
 
+  }
+
+  if(m_autoScalingRoleHasBeenSet)
+  {
+   payload.WithString("AutoScalingRole", m_autoScalingRole);
+
+  }
+
+  if(m_scaleDownBehaviorHasBeenSet)
+  {
+   payload.WithString("ScaleDownBehavior", ScaleDownBehaviorMapper::GetNameForScaleDownBehavior(m_scaleDownBehavior));
   }
 
   return payload.WriteReadable();

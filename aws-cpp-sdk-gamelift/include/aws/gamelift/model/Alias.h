@@ -172,61 +172,61 @@ namespace Model
 
     /**
      * <p>Time stamp indicating when this data object was created. Format is a number
-     * expressed in Unix time as milliseconds (ex: "1469498468.057".</p>
+     * expressed in Unix time as milliseconds (ex: "1469498468.057").</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
 
     /**
      * <p>Time stamp indicating when this data object was created. Format is a number
-     * expressed in Unix time as milliseconds (ex: "1469498468.057".</p>
+     * expressed in Unix time as milliseconds (ex: "1469498468.057").</p>
      */
     inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
      * <p>Time stamp indicating when this data object was created. Format is a number
-     * expressed in Unix time as milliseconds (ex: "1469498468.057".</p>
+     * expressed in Unix time as milliseconds (ex: "1469498468.057").</p>
      */
     inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
      * <p>Time stamp indicating when this data object was created. Format is a number
-     * expressed in Unix time as milliseconds (ex: "1469498468.057".</p>
+     * expressed in Unix time as milliseconds (ex: "1469498468.057").</p>
      */
     inline Alias& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
 
     /**
      * <p>Time stamp indicating when this data object was created. Format is a number
-     * expressed in Unix time as milliseconds (ex: "1469498468.057".</p>
+     * expressed in Unix time as milliseconds (ex: "1469498468.057").</p>
      */
     inline Alias& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(value); return *this;}
 
     /**
      * <p>Time stamp indicating when this data object was last modified. Format is a
-     * number expressed in Unix time as milliseconds (ex: "1469498468.057".</p>
+     * number expressed in Unix time as milliseconds (ex: "1469498468.057").</p>
      */
     inline const Aws::Utils::DateTime& GetLastUpdatedTime() const{ return m_lastUpdatedTime; }
 
     /**
      * <p>Time stamp indicating when this data object was last modified. Format is a
-     * number expressed in Unix time as milliseconds (ex: "1469498468.057".</p>
+     * number expressed in Unix time as milliseconds (ex: "1469498468.057").</p>
      */
     inline void SetLastUpdatedTime(const Aws::Utils::DateTime& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = value; }
 
     /**
      * <p>Time stamp indicating when this data object was last modified. Format is a
-     * number expressed in Unix time as milliseconds (ex: "1469498468.057".</p>
+     * number expressed in Unix time as milliseconds (ex: "1469498468.057").</p>
      */
     inline void SetLastUpdatedTime(Aws::Utils::DateTime&& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = value; }
 
     /**
      * <p>Time stamp indicating when this data object was last modified. Format is a
-     * number expressed in Unix time as milliseconds (ex: "1469498468.057".</p>
+     * number expressed in Unix time as milliseconds (ex: "1469498468.057").</p>
      */
     inline Alias& WithLastUpdatedTime(const Aws::Utils::DateTime& value) { SetLastUpdatedTime(value); return *this;}
 
     /**
      * <p>Time stamp indicating when this data object was last modified. Format is a
-     * number expressed in Unix time as milliseconds (ex: "1469498468.057".</p>
+     * number expressed in Unix time as milliseconds (ex: "1469498468.057").</p>
      */
     inline Alias& WithLastUpdatedTime(Aws::Utils::DateTime&& value) { SetLastUpdatedTime(value); return *this;}
 

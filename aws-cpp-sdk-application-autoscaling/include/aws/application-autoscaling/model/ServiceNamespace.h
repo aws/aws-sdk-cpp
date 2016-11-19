@@ -26,6 +26,7 @@ namespace Model
   {
     NOT_SET,
     ecs,
+    elasticmapreduce,
     ec2
   };
 

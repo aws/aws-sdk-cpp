@@ -34,10 +34,7 @@ namespace Model
 {
 
   /**
-   * <p> The <code>AlarmHistoryItem</code> data type contains descriptive information
-   * about the history of a specific alarm. If you call <a>DescribeAlarmHistory</a>,
-   * Amazon CloudWatch returns this data type as part of the
-   * DescribeAlarmHistoryResult data type. </p>
+   * <p>Represents the history of a specific alarm.</p>
    */
   class AWS_CLOUDWATCH_API AlarmHistoryItem
   {
@@ -135,72 +132,72 @@ namespace Model
     inline AlarmHistoryItem& WithHistoryItemType(HistoryItemType&& value) { SetHistoryItemType(value); return *this;}
 
     /**
-     * <p>A human-readable summary of the alarm history.</p>
+     * <p>A summary of the alarm history, in text format.</p>
      */
     inline const Aws::String& GetHistorySummary() const{ return m_historySummary; }
 
     /**
-     * <p>A human-readable summary of the alarm history.</p>
+     * <p>A summary of the alarm history, in text format.</p>
      */
     inline void SetHistorySummary(const Aws::String& value) { m_historySummaryHasBeenSet = true; m_historySummary = value; }
 
     /**
-     * <p>A human-readable summary of the alarm history.</p>
+     * <p>A summary of the alarm history, in text format.</p>
      */
     inline void SetHistorySummary(Aws::String&& value) { m_historySummaryHasBeenSet = true; m_historySummary = value; }
 
     /**
-     * <p>A human-readable summary of the alarm history.</p>
+     * <p>A summary of the alarm history, in text format.</p>
      */
     inline void SetHistorySummary(const char* value) { m_historySummaryHasBeenSet = true; m_historySummary.assign(value); }
 
     /**
-     * <p>A human-readable summary of the alarm history.</p>
+     * <p>A summary of the alarm history, in text format.</p>
      */
     inline AlarmHistoryItem& WithHistorySummary(const Aws::String& value) { SetHistorySummary(value); return *this;}
 
     /**
-     * <p>A human-readable summary of the alarm history.</p>
+     * <p>A summary of the alarm history, in text format.</p>
      */
     inline AlarmHistoryItem& WithHistorySummary(Aws::String&& value) { SetHistorySummary(value); return *this;}
 
     /**
-     * <p>A human-readable summary of the alarm history.</p>
+     * <p>A summary of the alarm history, in text format.</p>
      */
     inline AlarmHistoryItem& WithHistorySummary(const char* value) { SetHistorySummary(value); return *this;}
 
     /**
-     * <p>Machine-readable data about the alarm in JSON format.</p>
+     * <p>Data about the alarm, in JSON format.</p>
      */
     inline const Aws::String& GetHistoryData() const{ return m_historyData; }
 
     /**
-     * <p>Machine-readable data about the alarm in JSON format.</p>
+     * <p>Data about the alarm, in JSON format.</p>
      */
     inline void SetHistoryData(const Aws::String& value) { m_historyDataHasBeenSet = true; m_historyData = value; }
 
     /**
-     * <p>Machine-readable data about the alarm in JSON format.</p>
+     * <p>Data about the alarm, in JSON format.</p>
      */
     inline void SetHistoryData(Aws::String&& value) { m_historyDataHasBeenSet = true; m_historyData = value; }
 
     /**
-     * <p>Machine-readable data about the alarm in JSON format.</p>
+     * <p>Data about the alarm, in JSON format.</p>
      */
     inline void SetHistoryData(const char* value) { m_historyDataHasBeenSet = true; m_historyData.assign(value); }
 
     /**
-     * <p>Machine-readable data about the alarm in JSON format.</p>
+     * <p>Data about the alarm, in JSON format.</p>
      */
     inline AlarmHistoryItem& WithHistoryData(const Aws::String& value) { SetHistoryData(value); return *this;}
 
     /**
-     * <p>Machine-readable data about the alarm in JSON format.</p>
+     * <p>Data about the alarm, in JSON format.</p>
      */
     inline AlarmHistoryItem& WithHistoryData(Aws::String&& value) { SetHistoryData(value); return *this;}
 
     /**
-     * <p>Machine-readable data about the alarm in JSON format.</p>
+     * <p>Data about the alarm, in JSON format.</p>
      */
     inline AlarmHistoryItem& WithHistoryData(const char* value) { SetHistoryData(value); return *this;}
 

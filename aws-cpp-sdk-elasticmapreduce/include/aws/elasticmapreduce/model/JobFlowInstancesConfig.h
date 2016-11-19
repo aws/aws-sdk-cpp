@@ -119,17 +119,17 @@ namespace Model
     inline JobFlowInstancesConfig& WithSlaveInstanceType(const char* value) { SetSlaveInstanceType(value); return *this;}
 
     /**
-     * <p>The number of Amazon EC2 instances used to execute the job flow.</p>
+     * <p>The number of EC2 instances used to execute the job flow.</p>
      */
     inline int GetInstanceCount() const{ return m_instanceCount; }
 
     /**
-     * <p>The number of Amazon EC2 instances used to execute the job flow.</p>
+     * <p>The number of EC2 instances used to execute the job flow.</p>
      */
     inline void SetInstanceCount(int value) { m_instanceCountHasBeenSet = true; m_instanceCount = value; }
 
     /**
-     * <p>The number of Amazon EC2 instances used to execute the job flow.</p>
+     * <p>The number of EC2 instances used to execute the job flow.</p>
      */
     inline JobFlowInstancesConfig& WithInstanceCount(int value) { SetInstanceCount(value); return *this;}
 
@@ -169,44 +169,44 @@ namespace Model
     inline JobFlowInstancesConfig& AddInstanceGroups(InstanceGroupConfig&& value) { m_instanceGroupsHasBeenSet = true; m_instanceGroups.push_back(value); return *this; }
 
     /**
-     * <p>The name of the Amazon EC2 key pair that can be used to ssh to the master
-     * node as the user called "hadoop."</p>
+     * <p>The name of the EC2 key pair that can be used to ssh to the master node as
+     * the user called "hadoop."</p>
      */
     inline const Aws::String& GetEc2KeyName() const{ return m_ec2KeyName; }
 
     /**
-     * <p>The name of the Amazon EC2 key pair that can be used to ssh to the master
-     * node as the user called "hadoop."</p>
+     * <p>The name of the EC2 key pair that can be used to ssh to the master node as
+     * the user called "hadoop."</p>
      */
     inline void SetEc2KeyName(const Aws::String& value) { m_ec2KeyNameHasBeenSet = true; m_ec2KeyName = value; }
 
     /**
-     * <p>The name of the Amazon EC2 key pair that can be used to ssh to the master
-     * node as the user called "hadoop."</p>
+     * <p>The name of the EC2 key pair that can be used to ssh to the master node as
+     * the user called "hadoop."</p>
      */
     inline void SetEc2KeyName(Aws::String&& value) { m_ec2KeyNameHasBeenSet = true; m_ec2KeyName = value; }
 
     /**
-     * <p>The name of the Amazon EC2 key pair that can be used to ssh to the master
-     * node as the user called "hadoop."</p>
+     * <p>The name of the EC2 key pair that can be used to ssh to the master node as
+     * the user called "hadoop."</p>
      */
     inline void SetEc2KeyName(const char* value) { m_ec2KeyNameHasBeenSet = true; m_ec2KeyName.assign(value); }
 
     /**
-     * <p>The name of the Amazon EC2 key pair that can be used to ssh to the master
-     * node as the user called "hadoop."</p>
+     * <p>The name of the EC2 key pair that can be used to ssh to the master node as
+     * the user called "hadoop."</p>
      */
     inline JobFlowInstancesConfig& WithEc2KeyName(const Aws::String& value) { SetEc2KeyName(value); return *this;}
 
     /**
-     * <p>The name of the Amazon EC2 key pair that can be used to ssh to the master
-     * node as the user called "hadoop."</p>
+     * <p>The name of the EC2 key pair that can be used to ssh to the master node as
+     * the user called "hadoop."</p>
      */
     inline JobFlowInstancesConfig& WithEc2KeyName(Aws::String&& value) { SetEc2KeyName(value); return *this;}
 
     /**
-     * <p>The name of the Amazon EC2 key pair that can be used to ssh to the master
-     * node as the user called "hadoop."</p>
+     * <p>The name of the EC2 key pair that can be used to ssh to the master node as
+     * the user called "hadoop."</p>
      */
     inline JobFlowInstancesConfig& WithEc2KeyName(const char* value) { SetEc2KeyName(value); return *this;}
 

@@ -45,120 +45,120 @@ namespace Model
 
     /**
      * <p> The Amazon S3 bucket in which you want Elastic Transcoder to save the
-     * transcoded files. Specify this value when all of the following are true: <ul>
-     * <li>You want to save transcoded files, thumbnails (if any), and playlists (if
-     * any) together in one bucket.</li> <li>You do not want to specify the users or
-     * groups who have access to the transcoded files, thumbnails, and playlists.</li>
-     * <li>You do not want to specify the permissions that Elastic Transcoder grants to
-     * the files. </li> <li>You want to associate the transcoded files and thumbnails
-     * with the Amazon S3 Standard storage class.</li> </ul> If you want to save
-     * transcoded files and playlists in one bucket and thumbnails in another bucket,
-     * specify which users can access the transcoded files or the permissions the users
-     * have, or change the Amazon S3 storage class, omit OutputBucket and specify
-     * values for <code>ContentConfig</code> and <code>ThumbnailConfig</code> instead.
-     * </p>
+     * transcoded files. Specify this value when all of the following are true:</p>
+     * <ul> <li> <p>You want to save transcoded files, thumbnails (if any), and
+     * playlists (if any) together in one bucket.</p> </li> <li> <p>You do not want to
+     * specify the users or groups who have access to the transcoded files, thumbnails,
+     * and playlists.</p> </li> <li> <p>You do not want to specify the permissions that
+     * Elastic Transcoder grants to the files.</p> </li> <li> <p>You want to associate
+     * the transcoded files and thumbnails with the Amazon S3 Standard storage
+     * class.</p> </li> </ul> <p>If you want to save transcoded files and playlists in
+     * one bucket and thumbnails in another bucket, specify which users can access the
+     * transcoded files or the permissions the users have, or change the Amazon S3
+     * storage class, omit OutputBucket and specify values for
+     * <code>ContentConfig</code> and <code>ThumbnailConfig</code> instead. </p>
      */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
     /**
      * <p> The Amazon S3 bucket in which you want Elastic Transcoder to save the
-     * transcoded files. Specify this value when all of the following are true: <ul>
-     * <li>You want to save transcoded files, thumbnails (if any), and playlists (if
-     * any) together in one bucket.</li> <li>You do not want to specify the users or
-     * groups who have access to the transcoded files, thumbnails, and playlists.</li>
-     * <li>You do not want to specify the permissions that Elastic Transcoder grants to
-     * the files. </li> <li>You want to associate the transcoded files and thumbnails
-     * with the Amazon S3 Standard storage class.</li> </ul> If you want to save
-     * transcoded files and playlists in one bucket and thumbnails in another bucket,
-     * specify which users can access the transcoded files or the permissions the users
-     * have, or change the Amazon S3 storage class, omit OutputBucket and specify
-     * values for <code>ContentConfig</code> and <code>ThumbnailConfig</code> instead.
-     * </p>
+     * transcoded files. Specify this value when all of the following are true:</p>
+     * <ul> <li> <p>You want to save transcoded files, thumbnails (if any), and
+     * playlists (if any) together in one bucket.</p> </li> <li> <p>You do not want to
+     * specify the users or groups who have access to the transcoded files, thumbnails,
+     * and playlists.</p> </li> <li> <p>You do not want to specify the permissions that
+     * Elastic Transcoder grants to the files.</p> </li> <li> <p>You want to associate
+     * the transcoded files and thumbnails with the Amazon S3 Standard storage
+     * class.</p> </li> </ul> <p>If you want to save transcoded files and playlists in
+     * one bucket and thumbnails in another bucket, specify which users can access the
+     * transcoded files or the permissions the users have, or change the Amazon S3
+     * storage class, omit OutputBucket and specify values for
+     * <code>ContentConfig</code> and <code>ThumbnailConfig</code> instead. </p>
      */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     /**
      * <p> The Amazon S3 bucket in which you want Elastic Transcoder to save the
-     * transcoded files. Specify this value when all of the following are true: <ul>
-     * <li>You want to save transcoded files, thumbnails (if any), and playlists (if
-     * any) together in one bucket.</li> <li>You do not want to specify the users or
-     * groups who have access to the transcoded files, thumbnails, and playlists.</li>
-     * <li>You do not want to specify the permissions that Elastic Transcoder grants to
-     * the files. </li> <li>You want to associate the transcoded files and thumbnails
-     * with the Amazon S3 Standard storage class.</li> </ul> If you want to save
-     * transcoded files and playlists in one bucket and thumbnails in another bucket,
-     * specify which users can access the transcoded files or the permissions the users
-     * have, or change the Amazon S3 storage class, omit OutputBucket and specify
-     * values for <code>ContentConfig</code> and <code>ThumbnailConfig</code> instead.
-     * </p>
+     * transcoded files. Specify this value when all of the following are true:</p>
+     * <ul> <li> <p>You want to save transcoded files, thumbnails (if any), and
+     * playlists (if any) together in one bucket.</p> </li> <li> <p>You do not want to
+     * specify the users or groups who have access to the transcoded files, thumbnails,
+     * and playlists.</p> </li> <li> <p>You do not want to specify the permissions that
+     * Elastic Transcoder grants to the files.</p> </li> <li> <p>You want to associate
+     * the transcoded files and thumbnails with the Amazon S3 Standard storage
+     * class.</p> </li> </ul> <p>If you want to save transcoded files and playlists in
+     * one bucket and thumbnails in another bucket, specify which users can access the
+     * transcoded files or the permissions the users have, or change the Amazon S3
+     * storage class, omit OutputBucket and specify values for
+     * <code>ContentConfig</code> and <code>ThumbnailConfig</code> instead. </p>
      */
     inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     /**
      * <p> The Amazon S3 bucket in which you want Elastic Transcoder to save the
-     * transcoded files. Specify this value when all of the following are true: <ul>
-     * <li>You want to save transcoded files, thumbnails (if any), and playlists (if
-     * any) together in one bucket.</li> <li>You do not want to specify the users or
-     * groups who have access to the transcoded files, thumbnails, and playlists.</li>
-     * <li>You do not want to specify the permissions that Elastic Transcoder grants to
-     * the files. </li> <li>You want to associate the transcoded files and thumbnails
-     * with the Amazon S3 Standard storage class.</li> </ul> If you want to save
-     * transcoded files and playlists in one bucket and thumbnails in another bucket,
-     * specify which users can access the transcoded files or the permissions the users
-     * have, or change the Amazon S3 storage class, omit OutputBucket and specify
-     * values for <code>ContentConfig</code> and <code>ThumbnailConfig</code> instead.
-     * </p>
+     * transcoded files. Specify this value when all of the following are true:</p>
+     * <ul> <li> <p>You want to save transcoded files, thumbnails (if any), and
+     * playlists (if any) together in one bucket.</p> </li> <li> <p>You do not want to
+     * specify the users or groups who have access to the transcoded files, thumbnails,
+     * and playlists.</p> </li> <li> <p>You do not want to specify the permissions that
+     * Elastic Transcoder grants to the files.</p> </li> <li> <p>You want to associate
+     * the transcoded files and thumbnails with the Amazon S3 Standard storage
+     * class.</p> </li> </ul> <p>If you want to save transcoded files and playlists in
+     * one bucket and thumbnails in another bucket, specify which users can access the
+     * transcoded files or the permissions the users have, or change the Amazon S3
+     * storage class, omit OutputBucket and specify values for
+     * <code>ContentConfig</code> and <code>ThumbnailConfig</code> instead. </p>
      */
     inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
 
     /**
      * <p> The Amazon S3 bucket in which you want Elastic Transcoder to save the
-     * transcoded files. Specify this value when all of the following are true: <ul>
-     * <li>You want to save transcoded files, thumbnails (if any), and playlists (if
-     * any) together in one bucket.</li> <li>You do not want to specify the users or
-     * groups who have access to the transcoded files, thumbnails, and playlists.</li>
-     * <li>You do not want to specify the permissions that Elastic Transcoder grants to
-     * the files. </li> <li>You want to associate the transcoded files and thumbnails
-     * with the Amazon S3 Standard storage class.</li> </ul> If you want to save
-     * transcoded files and playlists in one bucket and thumbnails in another bucket,
-     * specify which users can access the transcoded files or the permissions the users
-     * have, or change the Amazon S3 storage class, omit OutputBucket and specify
-     * values for <code>ContentConfig</code> and <code>ThumbnailConfig</code> instead.
-     * </p>
+     * transcoded files. Specify this value when all of the following are true:</p>
+     * <ul> <li> <p>You want to save transcoded files, thumbnails (if any), and
+     * playlists (if any) together in one bucket.</p> </li> <li> <p>You do not want to
+     * specify the users or groups who have access to the transcoded files, thumbnails,
+     * and playlists.</p> </li> <li> <p>You do not want to specify the permissions that
+     * Elastic Transcoder grants to the files.</p> </li> <li> <p>You want to associate
+     * the transcoded files and thumbnails with the Amazon S3 Standard storage
+     * class.</p> </li> </ul> <p>If you want to save transcoded files and playlists in
+     * one bucket and thumbnails in another bucket, specify which users can access the
+     * transcoded files or the permissions the users have, or change the Amazon S3
+     * storage class, omit OutputBucket and specify values for
+     * <code>ContentConfig</code> and <code>ThumbnailConfig</code> instead. </p>
      */
     inline PipelineOutputConfig& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
 
     /**
      * <p> The Amazon S3 bucket in which you want Elastic Transcoder to save the
-     * transcoded files. Specify this value when all of the following are true: <ul>
-     * <li>You want to save transcoded files, thumbnails (if any), and playlists (if
-     * any) together in one bucket.</li> <li>You do not want to specify the users or
-     * groups who have access to the transcoded files, thumbnails, and playlists.</li>
-     * <li>You do not want to specify the permissions that Elastic Transcoder grants to
-     * the files. </li> <li>You want to associate the transcoded files and thumbnails
-     * with the Amazon S3 Standard storage class.</li> </ul> If you want to save
-     * transcoded files and playlists in one bucket and thumbnails in another bucket,
-     * specify which users can access the transcoded files or the permissions the users
-     * have, or change the Amazon S3 storage class, omit OutputBucket and specify
-     * values for <code>ContentConfig</code> and <code>ThumbnailConfig</code> instead.
-     * </p>
+     * transcoded files. Specify this value when all of the following are true:</p>
+     * <ul> <li> <p>You want to save transcoded files, thumbnails (if any), and
+     * playlists (if any) together in one bucket.</p> </li> <li> <p>You do not want to
+     * specify the users or groups who have access to the transcoded files, thumbnails,
+     * and playlists.</p> </li> <li> <p>You do not want to specify the permissions that
+     * Elastic Transcoder grants to the files.</p> </li> <li> <p>You want to associate
+     * the transcoded files and thumbnails with the Amazon S3 Standard storage
+     * class.</p> </li> </ul> <p>If you want to save transcoded files and playlists in
+     * one bucket and thumbnails in another bucket, specify which users can access the
+     * transcoded files or the permissions the users have, or change the Amazon S3
+     * storage class, omit OutputBucket and specify values for
+     * <code>ContentConfig</code> and <code>ThumbnailConfig</code> instead. </p>
      */
     inline PipelineOutputConfig& WithBucket(Aws::String&& value) { SetBucket(value); return *this;}
 
     /**
      * <p> The Amazon S3 bucket in which you want Elastic Transcoder to save the
-     * transcoded files. Specify this value when all of the following are true: <ul>
-     * <li>You want to save transcoded files, thumbnails (if any), and playlists (if
-     * any) together in one bucket.</li> <li>You do not want to specify the users or
-     * groups who have access to the transcoded files, thumbnails, and playlists.</li>
-     * <li>You do not want to specify the permissions that Elastic Transcoder grants to
-     * the files. </li> <li>You want to associate the transcoded files and thumbnails
-     * with the Amazon S3 Standard storage class.</li> </ul> If you want to save
-     * transcoded files and playlists in one bucket and thumbnails in another bucket,
-     * specify which users can access the transcoded files or the permissions the users
-     * have, or change the Amazon S3 storage class, omit OutputBucket and specify
-     * values for <code>ContentConfig</code> and <code>ThumbnailConfig</code> instead.
-     * </p>
+     * transcoded files. Specify this value when all of the following are true:</p>
+     * <ul> <li> <p>You want to save transcoded files, thumbnails (if any), and
+     * playlists (if any) together in one bucket.</p> </li> <li> <p>You do not want to
+     * specify the users or groups who have access to the transcoded files, thumbnails,
+     * and playlists.</p> </li> <li> <p>You do not want to specify the permissions that
+     * Elastic Transcoder grants to the files.</p> </li> <li> <p>You want to associate
+     * the transcoded files and thumbnails with the Amazon S3 Standard storage
+     * class.</p> </li> </ul> <p>If you want to save transcoded files and playlists in
+     * one bucket and thumbnails in another bucket, specify which users can access the
+     * transcoded files or the permissions the users have, or change the Amazon S3
+     * storage class, omit OutputBucket and specify values for
+     * <code>ContentConfig</code> and <code>ThumbnailConfig</code> instead. </p>
      */
     inline PipelineOutputConfig& WithBucket(const char* value) { SetBucket(value); return *this;}
 

@@ -36,7 +36,6 @@ CreateJobOutput::CreateJobOutput() :
     m_segmentDurationHasBeenSet(false),
     m_watermarksHasBeenSet(false),
     m_albumArtHasBeenSet(false),
-    m_compositionHasBeenSet(false),
     m_captionsHasBeenSet(false),
     m_encryptionHasBeenSet(false)
 {
@@ -51,7 +50,6 @@ CreateJobOutput::CreateJobOutput(const JsonValue& jsonValue) :
     m_segmentDurationHasBeenSet(false),
     m_watermarksHasBeenSet(false),
     m_albumArtHasBeenSet(false),
-    m_compositionHasBeenSet(false),
     m_captionsHasBeenSet(false),
     m_encryptionHasBeenSet(false)
 {
@@ -117,16 +115,6 @@ CreateJobOutput& CreateJobOutput::operator =(const JsonValue& jsonValue)
     m_albumArt = jsonValue.GetObject("AlbumArt");
 
     m_albumArtHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("Composition"))
-  {
-    Array<JsonValue> compositionJsonList = jsonValue.GetArray("Composition");
-    for(unsigned compositionIndex = 0; compositionIndex < compositionJsonList.GetLength(); ++compositionIndex)
-    {
-      m_composition.push_back(compositionJsonList[compositionIndex].AsObject());
-    }
-    m_compositionHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Captions"))
@@ -200,17 +188,6 @@ JsonValue CreateJobOutput::Jsonize() const
   if(m_albumArtHasBeenSet)
   {
    payload.WithObject("AlbumArt", m_albumArt.Jsonize());
-
-  }
-
-  if(m_compositionHasBeenSet)
-  {
-   Array<JsonValue> compositionJsonList(m_composition.size());
-   for(unsigned compositionIndex = 0; compositionIndex < compositionJsonList.GetLength(); ++compositionIndex)
-   {
-     compositionJsonList[compositionIndex].AsObject(m_composition[compositionIndex].Jsonize());
-   }
-   payload.WithArray("Composition", std::move(compositionJsonList));
 
   }
 

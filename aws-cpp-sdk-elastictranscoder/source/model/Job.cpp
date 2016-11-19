@@ -32,6 +32,7 @@ Job::Job() :
     m_arnHasBeenSet(false),
     m_pipelineIdHasBeenSet(false),
     m_inputHasBeenSet(false),
+    m_inputsHasBeenSet(false),
     m_outputHasBeenSet(false),
     m_outputsHasBeenSet(false),
     m_outputKeyPrefixHasBeenSet(false),
@@ -47,6 +48,7 @@ Job::Job(const JsonValue& jsonValue) :
     m_arnHasBeenSet(false),
     m_pipelineIdHasBeenSet(false),
     m_inputHasBeenSet(false),
+    m_inputsHasBeenSet(false),
     m_outputHasBeenSet(false),
     m_outputsHasBeenSet(false),
     m_outputKeyPrefixHasBeenSet(false),
@@ -86,6 +88,16 @@ Job& Job::operator =(const JsonValue& jsonValue)
     m_input = jsonValue.GetObject("Input");
 
     m_inputHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Inputs"))
+  {
+    Array<JsonValue> inputsJsonList = jsonValue.GetArray("Inputs");
+    for(unsigned inputsIndex = 0; inputsIndex < inputsJsonList.GetLength(); ++inputsIndex)
+    {
+      m_inputs.push_back(inputsJsonList[inputsIndex].AsObject());
+    }
+    m_inputsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Output"))
@@ -174,6 +186,17 @@ JsonValue Job::Jsonize() const
   if(m_inputHasBeenSet)
   {
    payload.WithObject("Input", m_input.Jsonize());
+
+  }
+
+  if(m_inputsHasBeenSet)
+  {
+   Array<JsonValue> inputsJsonList(m_inputs.size());
+   for(unsigned inputsIndex = 0; inputsIndex < inputsJsonList.GetLength(); ++inputsIndex)
+   {
+     inputsJsonList[inputsIndex].AsObject(m_inputs[inputsIndex].Jsonize());
+   }
+   payload.WithArray("Inputs", std::move(inputsJsonList));
 
   }
 

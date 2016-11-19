@@ -161,61 +161,61 @@ namespace Model
 
     /**
      * <p>Time stamp indicating when this data object was created. Format is a number
-     * expressed in Unix time as milliseconds (ex: "1469498468.057".</p>
+     * expressed in Unix time as milliseconds (ex: "1469498468.057").</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
 
     /**
      * <p>Time stamp indicating when this data object was created. Format is a number
-     * expressed in Unix time as milliseconds (ex: "1469498468.057".</p>
+     * expressed in Unix time as milliseconds (ex: "1469498468.057").</p>
      */
     inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
      * <p>Time stamp indicating when this data object was created. Format is a number
-     * expressed in Unix time as milliseconds (ex: "1469498468.057".</p>
+     * expressed in Unix time as milliseconds (ex: "1469498468.057").</p>
      */
     inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
      * <p>Time stamp indicating when this data object was created. Format is a number
-     * expressed in Unix time as milliseconds (ex: "1469498468.057".</p>
+     * expressed in Unix time as milliseconds (ex: "1469498468.057").</p>
      */
     inline FleetAttributes& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
 
     /**
      * <p>Time stamp indicating when this data object was created. Format is a number
-     * expressed in Unix time as milliseconds (ex: "1469498468.057".</p>
+     * expressed in Unix time as milliseconds (ex: "1469498468.057").</p>
      */
     inline FleetAttributes& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(value); return *this;}
 
     /**
      * <p>Time stamp indicating when this data object was terminated. Format is a
-     * number expressed in Unix time as milliseconds (ex: "1469498468.057".</p>
+     * number expressed in Unix time as milliseconds (ex: "1469498468.057").</p>
      */
     inline const Aws::Utils::DateTime& GetTerminationTime() const{ return m_terminationTime; }
 
     /**
      * <p>Time stamp indicating when this data object was terminated. Format is a
-     * number expressed in Unix time as milliseconds (ex: "1469498468.057".</p>
+     * number expressed in Unix time as milliseconds (ex: "1469498468.057").</p>
      */
     inline void SetTerminationTime(const Aws::Utils::DateTime& value) { m_terminationTimeHasBeenSet = true; m_terminationTime = value; }
 
     /**
      * <p>Time stamp indicating when this data object was terminated. Format is a
-     * number expressed in Unix time as milliseconds (ex: "1469498468.057".</p>
+     * number expressed in Unix time as milliseconds (ex: "1469498468.057").</p>
      */
     inline void SetTerminationTime(Aws::Utils::DateTime&& value) { m_terminationTimeHasBeenSet = true; m_terminationTime = value; }
 
     /**
      * <p>Time stamp indicating when this data object was terminated. Format is a
-     * number expressed in Unix time as milliseconds (ex: "1469498468.057".</p>
+     * number expressed in Unix time as milliseconds (ex: "1469498468.057").</p>
      */
     inline FleetAttributes& WithTerminationTime(const Aws::Utils::DateTime& value) { SetTerminationTime(value); return *this;}
 
     /**
      * <p>Time stamp indicating when this data object was terminated. Format is a
-     * number expressed in Unix time as milliseconds (ex: "1469498468.057".</p>
+     * number expressed in Unix time as milliseconds (ex: "1469498468.057").</p>
      */
     inline FleetAttributes& WithTerminationTime(Aws::Utils::DateTime&& value) { SetTerminationTime(value); return *this;}
 
@@ -442,8 +442,9 @@ namespace Model
      * addition to game session logs; see more on game session logs in the <a
      * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-api-server-code">Amazon
      * GameLift Developer Guide</a>. If no default log path for a fleet is specified,
-     * GameLift will automatically upload logs stored on each instance at
-     * <code>C:\game\logs</code>. Use the GameLift console to access stored logs. </p>
+     * GameLift will automatically upload logs that are stored on each instance at
+     * <code>C:\game\logs</code> (for Windows) or <code>/local/game/logs</code> (for
+     * Linux). Use the GameLift console to access stored logs. </p>
      */
     inline const Aws::Vector<Aws::String>& GetLogPaths() const{ return m_logPaths; }
 
@@ -453,8 +454,9 @@ namespace Model
      * addition to game session logs; see more on game session logs in the <a
      * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-api-server-code">Amazon
      * GameLift Developer Guide</a>. If no default log path for a fleet is specified,
-     * GameLift will automatically upload logs stored on each instance at
-     * <code>C:\game\logs</code>. Use the GameLift console to access stored logs. </p>
+     * GameLift will automatically upload logs that are stored on each instance at
+     * <code>C:\game\logs</code> (for Windows) or <code>/local/game/logs</code> (for
+     * Linux). Use the GameLift console to access stored logs. </p>
      */
     inline void SetLogPaths(const Aws::Vector<Aws::String>& value) { m_logPathsHasBeenSet = true; m_logPaths = value; }
 
@@ -464,8 +466,9 @@ namespace Model
      * addition to game session logs; see more on game session logs in the <a
      * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-api-server-code">Amazon
      * GameLift Developer Guide</a>. If no default log path for a fleet is specified,
-     * GameLift will automatically upload logs stored on each instance at
-     * <code>C:\game\logs</code>. Use the GameLift console to access stored logs. </p>
+     * GameLift will automatically upload logs that are stored on each instance at
+     * <code>C:\game\logs</code> (for Windows) or <code>/local/game/logs</code> (for
+     * Linux). Use the GameLift console to access stored logs. </p>
      */
     inline void SetLogPaths(Aws::Vector<Aws::String>&& value) { m_logPathsHasBeenSet = true; m_logPaths = value; }
 
@@ -475,8 +478,9 @@ namespace Model
      * addition to game session logs; see more on game session logs in the <a
      * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-api-server-code">Amazon
      * GameLift Developer Guide</a>. If no default log path for a fleet is specified,
-     * GameLift will automatically upload logs stored on each instance at
-     * <code>C:\game\logs</code>. Use the GameLift console to access stored logs. </p>
+     * GameLift will automatically upload logs that are stored on each instance at
+     * <code>C:\game\logs</code> (for Windows) or <code>/local/game/logs</code> (for
+     * Linux). Use the GameLift console to access stored logs. </p>
      */
     inline FleetAttributes& WithLogPaths(const Aws::Vector<Aws::String>& value) { SetLogPaths(value); return *this;}
 
@@ -486,8 +490,9 @@ namespace Model
      * addition to game session logs; see more on game session logs in the <a
      * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-api-server-code">Amazon
      * GameLift Developer Guide</a>. If no default log path for a fleet is specified,
-     * GameLift will automatically upload logs stored on each instance at
-     * <code>C:\game\logs</code>. Use the GameLift console to access stored logs. </p>
+     * GameLift will automatically upload logs that are stored on each instance at
+     * <code>C:\game\logs</code> (for Windows) or <code>/local/game/logs</code> (for
+     * Linux). Use the GameLift console to access stored logs. </p>
      */
     inline FleetAttributes& WithLogPaths(Aws::Vector<Aws::String>&& value) { SetLogPaths(value); return *this;}
 
@@ -497,8 +502,9 @@ namespace Model
      * addition to game session logs; see more on game session logs in the <a
      * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-api-server-code">Amazon
      * GameLift Developer Guide</a>. If no default log path for a fleet is specified,
-     * GameLift will automatically upload logs stored on each instance at
-     * <code>C:\game\logs</code>. Use the GameLift console to access stored logs. </p>
+     * GameLift will automatically upload logs that are stored on each instance at
+     * <code>C:\game\logs</code> (for Windows) or <code>/local/game/logs</code> (for
+     * Linux). Use the GameLift console to access stored logs. </p>
      */
     inline FleetAttributes& AddLogPaths(const Aws::String& value) { m_logPathsHasBeenSet = true; m_logPaths.push_back(value); return *this; }
 
@@ -508,8 +514,9 @@ namespace Model
      * addition to game session logs; see more on game session logs in the <a
      * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-api-server-code">Amazon
      * GameLift Developer Guide</a>. If no default log path for a fleet is specified,
-     * GameLift will automatically upload logs stored on each instance at
-     * <code>C:\game\logs</code>. Use the GameLift console to access stored logs. </p>
+     * GameLift will automatically upload logs that are stored on each instance at
+     * <code>C:\game\logs</code> (for Windows) or <code>/local/game/logs</code> (for
+     * Linux). Use the GameLift console to access stored logs. </p>
      */
     inline FleetAttributes& AddLogPaths(Aws::String&& value) { m_logPathsHasBeenSet = true; m_logPaths.push_back(value); return *this; }
 
@@ -519,8 +526,9 @@ namespace Model
      * addition to game session logs; see more on game session logs in the <a
      * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-api-server-code">Amazon
      * GameLift Developer Guide</a>. If no default log path for a fleet is specified,
-     * GameLift will automatically upload logs stored on each instance at
-     * <code>C:\game\logs</code>. Use the GameLift console to access stored logs. </p>
+     * GameLift will automatically upload logs that are stored on each instance at
+     * <code>C:\game\logs</code> (for Windows) or <code>/local/game/logs</code> (for
+     * Linux). Use the GameLift console to access stored logs. </p>
      */
     inline FleetAttributes& AddLogPaths(const char* value) { m_logPathsHasBeenSet = true; m_logPaths.push_back(value); return *this; }
 

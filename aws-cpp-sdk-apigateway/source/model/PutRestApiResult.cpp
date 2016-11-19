@@ -69,6 +69,15 @@ PutRestApiResult& PutRestApiResult::operator =(const AmazonWebServiceResult<Json
     }
   }
 
+  if(jsonValue.ValueExists("binaryMediaTypes"))
+  {
+    Array<JsonValue> binaryMediaTypesJsonList = jsonValue.GetArray("binaryMediaTypes");
+    for(unsigned binaryMediaTypesIndex = 0; binaryMediaTypesIndex < binaryMediaTypesJsonList.GetLength(); ++binaryMediaTypesIndex)
+    {
+      m_binaryMediaTypes.push_back(binaryMediaTypesJsonList[binaryMediaTypesIndex].AsString());
+    }
+  }
+
 
 
   return *this;

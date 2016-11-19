@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/elasticmapreduce/EMR_EXPORTS.h>
 #include <aws/elasticmapreduce/EMRRequest.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticmapreduce/model/InstanceGroupModifyConfig.h>
 
@@ -35,6 +36,41 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+    /**
+     * <p>The ID of the cluster to which the instance group belongs.</p>
+     */
+    inline const Aws::String& GetClusterId() const{ return m_clusterId; }
+
+    /**
+     * <p>The ID of the cluster to which the instance group belongs.</p>
+     */
+    inline void SetClusterId(const Aws::String& value) { m_clusterIdHasBeenSet = true; m_clusterId = value; }
+
+    /**
+     * <p>The ID of the cluster to which the instance group belongs.</p>
+     */
+    inline void SetClusterId(Aws::String&& value) { m_clusterIdHasBeenSet = true; m_clusterId = value; }
+
+    /**
+     * <p>The ID of the cluster to which the instance group belongs.</p>
+     */
+    inline void SetClusterId(const char* value) { m_clusterIdHasBeenSet = true; m_clusterId.assign(value); }
+
+    /**
+     * <p>The ID of the cluster to which the instance group belongs.</p>
+     */
+    inline ModifyInstanceGroupsRequest& WithClusterId(const Aws::String& value) { SetClusterId(value); return *this;}
+
+    /**
+     * <p>The ID of the cluster to which the instance group belongs.</p>
+     */
+    inline ModifyInstanceGroupsRequest& WithClusterId(Aws::String&& value) { SetClusterId(value); return *this;}
+
+    /**
+     * <p>The ID of the cluster to which the instance group belongs.</p>
+     */
+    inline ModifyInstanceGroupsRequest& WithClusterId(const char* value) { SetClusterId(value); return *this;}
 
     /**
      * <p>Instance groups to change.</p>
@@ -72,6 +108,8 @@ namespace Model
     inline ModifyInstanceGroupsRequest& AddInstanceGroups(InstanceGroupModifyConfig&& value) { m_instanceGroupsHasBeenSet = true; m_instanceGroups.push_back(value); return *this; }
 
   private:
+    Aws::String m_clusterId;
+    bool m_clusterIdHasBeenSet;
     Aws::Vector<InstanceGroupModifyConfig> m_instanceGroups;
     bool m_instanceGroupsHasBeenSet;
   };

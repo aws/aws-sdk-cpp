@@ -38,37 +38,37 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * <p>Instance Groups to add.</p>
+     * <p>Instance groups to add.</p>
      */
     inline const Aws::Vector<InstanceGroupConfig>& GetInstanceGroups() const{ return m_instanceGroups; }
 
     /**
-     * <p>Instance Groups to add.</p>
+     * <p>Instance groups to add.</p>
      */
     inline void SetInstanceGroups(const Aws::Vector<InstanceGroupConfig>& value) { m_instanceGroupsHasBeenSet = true; m_instanceGroups = value; }
 
     /**
-     * <p>Instance Groups to add.</p>
+     * <p>Instance groups to add.</p>
      */
     inline void SetInstanceGroups(Aws::Vector<InstanceGroupConfig>&& value) { m_instanceGroupsHasBeenSet = true; m_instanceGroups = value; }
 
     /**
-     * <p>Instance Groups to add.</p>
+     * <p>Instance groups to add.</p>
      */
     inline AddInstanceGroupsRequest& WithInstanceGroups(const Aws::Vector<InstanceGroupConfig>& value) { SetInstanceGroups(value); return *this;}
 
     /**
-     * <p>Instance Groups to add.</p>
+     * <p>Instance groups to add.</p>
      */
     inline AddInstanceGroupsRequest& WithInstanceGroups(Aws::Vector<InstanceGroupConfig>&& value) { SetInstanceGroups(value); return *this;}
 
     /**
-     * <p>Instance Groups to add.</p>
+     * <p>Instance groups to add.</p>
      */
     inline AddInstanceGroupsRequest& AddInstanceGroups(const InstanceGroupConfig& value) { m_instanceGroupsHasBeenSet = true; m_instanceGroups.push_back(value); return *this; }
 
     /**
-     * <p>Instance Groups to add.</p>
+     * <p>Instance groups to add.</p>
      */
     inline AddInstanceGroupsRequest& AddInstanceGroups(InstanceGroupConfig&& value) { m_instanceGroupsHasBeenSet = true; m_instanceGroups.push_back(value); return *this; }
 

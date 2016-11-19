@@ -50,35 +50,35 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p>Maximum number of game sessions an individual can create during the policy
-     * period. </p>
+     * <p>Maximum number of game sessions that an individual can create during the
+     * policy period. </p>
      */
     inline int GetNewGameSessionsPerCreator() const{ return m_newGameSessionsPerCreator; }
 
     /**
-     * <p>Maximum number of game sessions an individual can create during the policy
-     * period. </p>
+     * <p>Maximum number of game sessions that an individual can create during the
+     * policy period. </p>
      */
     inline void SetNewGameSessionsPerCreator(int value) { m_newGameSessionsPerCreatorHasBeenSet = true; m_newGameSessionsPerCreator = value; }
 
     /**
-     * <p>Maximum number of game sessions an individual can create during the policy
-     * period. </p>
+     * <p>Maximum number of game sessions that an individual can create during the
+     * policy period. </p>
      */
     inline ResourceCreationLimitPolicy& WithNewGameSessionsPerCreator(int value) { SetNewGameSessionsPerCreator(value); return *this;}
 
     /**
-     * <p>Time span used to evaluate the resource creation limit policy. </p>
+     * <p>Time span used in evaluating the resource creation limit policy. </p>
      */
     inline int GetPolicyPeriodInMinutes() const{ return m_policyPeriodInMinutes; }
 
     /**
-     * <p>Time span used to evaluate the resource creation limit policy. </p>
+     * <p>Time span used in evaluating the resource creation limit policy. </p>
      */
     inline void SetPolicyPeriodInMinutes(int value) { m_policyPeriodInMinutesHasBeenSet = true; m_policyPeriodInMinutes = value; }
 
     /**
-     * <p>Time span used to evaluate the resource creation limit policy. </p>
+     * <p>Time span used in evaluating the resource creation limit policy. </p>
      */
     inline ResourceCreationLimitPolicy& WithPolicyPeriodInMinutes(int value) { SetPolicyPeriodInMinutes(value); return *this;}
 

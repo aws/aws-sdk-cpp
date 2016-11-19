@@ -29,6 +29,7 @@ GetApiKeysRequest::GetApiKeysRequest() :
     m_limit(0),
     m_limitHasBeenSet(false),
     m_nameQueryHasBeenSet(false),
+    m_customerIdHasBeenSet(false),
     m_includeValues(false),
     m_includeValuesHasBeenSet(false)
 {
@@ -60,6 +61,13 @@ void GetApiKeysRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << m_nameQuery;
       uri.AddQueryStringParameter("name", ss.str());
+      ss.str("");
+    }
+
+    if(m_customerIdHasBeenSet)
+    {
+      ss << m_customerId;
+      uri.AddQueryStringParameter("customerId", ss.str());
       ss.str("");
     }
 

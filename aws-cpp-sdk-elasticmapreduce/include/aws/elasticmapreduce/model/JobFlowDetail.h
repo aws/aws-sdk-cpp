@@ -18,6 +18,7 @@
 #include <aws/elasticmapreduce/model/JobFlowExecutionStatusDetail.h>
 #include <aws/elasticmapreduce/model/JobFlowInstancesDetail.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/elasticmapreduce/model/ScaleDownBehavior.h>
 #include <aws/elasticmapreduce/model/StepDetail.h>
 #include <aws/elasticmapreduce/model/BootstrapActionDetail.h>
 
@@ -153,71 +154,57 @@ namespace Model
 
     /**
      * <p>The version of the AMI used to initialize Amazon EC2 instances in the job
-     * flow. For a list of AMI versions currently supported by Amazon ElasticMapReduce,
-     * go to <a
+     * flow. For a list of AMI versions currently supported by Amazon EMR, see <a
      * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
-     * Versions Supported in Elastic MapReduce</a> in the <i>Amazon Elastic MapReduce
-     * Developer Guide.</i> </p>
+     * Versions Supported in EMR</a> in the <i>Amazon EMR Developer Guide.</i> </p>
      */
     inline const Aws::String& GetAmiVersion() const{ return m_amiVersion; }
 
     /**
      * <p>The version of the AMI used to initialize Amazon EC2 instances in the job
-     * flow. For a list of AMI versions currently supported by Amazon ElasticMapReduce,
-     * go to <a
+     * flow. For a list of AMI versions currently supported by Amazon EMR, see <a
      * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
-     * Versions Supported in Elastic MapReduce</a> in the <i>Amazon Elastic MapReduce
-     * Developer Guide.</i> </p>
+     * Versions Supported in EMR</a> in the <i>Amazon EMR Developer Guide.</i> </p>
      */
     inline void SetAmiVersion(const Aws::String& value) { m_amiVersionHasBeenSet = true; m_amiVersion = value; }
 
     /**
      * <p>The version of the AMI used to initialize Amazon EC2 instances in the job
-     * flow. For a list of AMI versions currently supported by Amazon ElasticMapReduce,
-     * go to <a
+     * flow. For a list of AMI versions currently supported by Amazon EMR, see <a
      * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
-     * Versions Supported in Elastic MapReduce</a> in the <i>Amazon Elastic MapReduce
-     * Developer Guide.</i> </p>
+     * Versions Supported in EMR</a> in the <i>Amazon EMR Developer Guide.</i> </p>
      */
     inline void SetAmiVersion(Aws::String&& value) { m_amiVersionHasBeenSet = true; m_amiVersion = value; }
 
     /**
      * <p>The version of the AMI used to initialize Amazon EC2 instances in the job
-     * flow. For a list of AMI versions currently supported by Amazon ElasticMapReduce,
-     * go to <a
+     * flow. For a list of AMI versions currently supported by Amazon EMR, see <a
      * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
-     * Versions Supported in Elastic MapReduce</a> in the <i>Amazon Elastic MapReduce
-     * Developer Guide.</i> </p>
+     * Versions Supported in EMR</a> in the <i>Amazon EMR Developer Guide.</i> </p>
      */
     inline void SetAmiVersion(const char* value) { m_amiVersionHasBeenSet = true; m_amiVersion.assign(value); }
 
     /**
      * <p>The version of the AMI used to initialize Amazon EC2 instances in the job
-     * flow. For a list of AMI versions currently supported by Amazon ElasticMapReduce,
-     * go to <a
+     * flow. For a list of AMI versions currently supported by Amazon EMR, see <a
      * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
-     * Versions Supported in Elastic MapReduce</a> in the <i>Amazon Elastic MapReduce
-     * Developer Guide.</i> </p>
+     * Versions Supported in EMR</a> in the <i>Amazon EMR Developer Guide.</i> </p>
      */
     inline JobFlowDetail& WithAmiVersion(const Aws::String& value) { SetAmiVersion(value); return *this;}
 
     /**
      * <p>The version of the AMI used to initialize Amazon EC2 instances in the job
-     * flow. For a list of AMI versions currently supported by Amazon ElasticMapReduce,
-     * go to <a
+     * flow. For a list of AMI versions currently supported by Amazon EMR, see <a
      * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
-     * Versions Supported in Elastic MapReduce</a> in the <i>Amazon Elastic MapReduce
-     * Developer Guide.</i> </p>
+     * Versions Supported in EMR</a> in the <i>Amazon EMR Developer Guide.</i> </p>
      */
     inline JobFlowDetail& WithAmiVersion(Aws::String&& value) { SetAmiVersion(value); return *this;}
 
     /**
      * <p>The version of the AMI used to initialize Amazon EC2 instances in the job
-     * flow. For a list of AMI versions currently supported by Amazon ElasticMapReduce,
-     * go to <a
+     * flow. For a list of AMI versions currently supported by Amazon EMR, see <a
      * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
-     * Versions Supported in Elastic MapReduce</a> in the <i>Amazon Elastic MapReduce
-     * Developer Guide.</i> </p>
+     * Versions Supported in EMR</a> in the <i>Amazon EMR Developer Guide.</i> </p>
      */
     inline JobFlowDetail& WithAmiVersion(const char* value) { SetAmiVersion(value); return *this;}
 
@@ -511,6 +498,147 @@ namespace Model
      */
     inline JobFlowDetail& WithServiceRole(const char* value) { SetServiceRole(value); return *this;}
 
+    /**
+     * <p>An IAM role for automatic scaling policies. The default role is
+     * <code>EMR_AutoScaling_DefaultRole</code>. The IAM role provides a way for the
+     * automatic scaling feature to get the required permissions it needs to launch and
+     * terminate EC2 instances in an instance group.</p>
+     */
+    inline const Aws::String& GetAutoScalingRole() const{ return m_autoScalingRole; }
+
+    /**
+     * <p>An IAM role for automatic scaling policies. The default role is
+     * <code>EMR_AutoScaling_DefaultRole</code>. The IAM role provides a way for the
+     * automatic scaling feature to get the required permissions it needs to launch and
+     * terminate EC2 instances in an instance group.</p>
+     */
+    inline void SetAutoScalingRole(const Aws::String& value) { m_autoScalingRoleHasBeenSet = true; m_autoScalingRole = value; }
+
+    /**
+     * <p>An IAM role for automatic scaling policies. The default role is
+     * <code>EMR_AutoScaling_DefaultRole</code>. The IAM role provides a way for the
+     * automatic scaling feature to get the required permissions it needs to launch and
+     * terminate EC2 instances in an instance group.</p>
+     */
+    inline void SetAutoScalingRole(Aws::String&& value) { m_autoScalingRoleHasBeenSet = true; m_autoScalingRole = value; }
+
+    /**
+     * <p>An IAM role for automatic scaling policies. The default role is
+     * <code>EMR_AutoScaling_DefaultRole</code>. The IAM role provides a way for the
+     * automatic scaling feature to get the required permissions it needs to launch and
+     * terminate EC2 instances in an instance group.</p>
+     */
+    inline void SetAutoScalingRole(const char* value) { m_autoScalingRoleHasBeenSet = true; m_autoScalingRole.assign(value); }
+
+    /**
+     * <p>An IAM role for automatic scaling policies. The default role is
+     * <code>EMR_AutoScaling_DefaultRole</code>. The IAM role provides a way for the
+     * automatic scaling feature to get the required permissions it needs to launch and
+     * terminate EC2 instances in an instance group.</p>
+     */
+    inline JobFlowDetail& WithAutoScalingRole(const Aws::String& value) { SetAutoScalingRole(value); return *this;}
+
+    /**
+     * <p>An IAM role for automatic scaling policies. The default role is
+     * <code>EMR_AutoScaling_DefaultRole</code>. The IAM role provides a way for the
+     * automatic scaling feature to get the required permissions it needs to launch and
+     * terminate EC2 instances in an instance group.</p>
+     */
+    inline JobFlowDetail& WithAutoScalingRole(Aws::String&& value) { SetAutoScalingRole(value); return *this;}
+
+    /**
+     * <p>An IAM role for automatic scaling policies. The default role is
+     * <code>EMR_AutoScaling_DefaultRole</code>. The IAM role provides a way for the
+     * automatic scaling feature to get the required permissions it needs to launch and
+     * terminate EC2 instances in an instance group.</p>
+     */
+    inline JobFlowDetail& WithAutoScalingRole(const char* value) { SetAutoScalingRole(value); return *this;}
+
+    /**
+     * <p>The way that individual Amazon EC2 instances terminate when an automatic
+     * scale-in activity occurs or an instance group is resized.
+     * <code>TERMINATE_AT_INSTANCE_HOUR</code> indicates that Amazon EMR terminates
+     * nodes at the instance-hour boundary, regardless of when the request to terminate
+     * the instance was submitted. This option is only available with Amazon EMR 5.1.0
+     * and later and is the default for clusters created using that version.
+     * <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR blacklists
+     * and drains tasks from nodes before terminating the Amazon EC2 instances,
+     * regardless of the instance-hour boundary. With either behavior, Amazon EMR
+     * removes the least active nodes first and blocks instance termination if it could
+     * lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> available
+     * only in Amazon EMR version 4.1.0 and later, and is the default for versions of
+     * Amazon EMR earlier than 5.1.0.</p>
+     */
+    inline const ScaleDownBehavior& GetScaleDownBehavior() const{ return m_scaleDownBehavior; }
+
+    /**
+     * <p>The way that individual Amazon EC2 instances terminate when an automatic
+     * scale-in activity occurs or an instance group is resized.
+     * <code>TERMINATE_AT_INSTANCE_HOUR</code> indicates that Amazon EMR terminates
+     * nodes at the instance-hour boundary, regardless of when the request to terminate
+     * the instance was submitted. This option is only available with Amazon EMR 5.1.0
+     * and later and is the default for clusters created using that version.
+     * <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR blacklists
+     * and drains tasks from nodes before terminating the Amazon EC2 instances,
+     * regardless of the instance-hour boundary. With either behavior, Amazon EMR
+     * removes the least active nodes first and blocks instance termination if it could
+     * lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> available
+     * only in Amazon EMR version 4.1.0 and later, and is the default for versions of
+     * Amazon EMR earlier than 5.1.0.</p>
+     */
+    inline void SetScaleDownBehavior(const ScaleDownBehavior& value) { m_scaleDownBehaviorHasBeenSet = true; m_scaleDownBehavior = value; }
+
+    /**
+     * <p>The way that individual Amazon EC2 instances terminate when an automatic
+     * scale-in activity occurs or an instance group is resized.
+     * <code>TERMINATE_AT_INSTANCE_HOUR</code> indicates that Amazon EMR terminates
+     * nodes at the instance-hour boundary, regardless of when the request to terminate
+     * the instance was submitted. This option is only available with Amazon EMR 5.1.0
+     * and later and is the default for clusters created using that version.
+     * <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR blacklists
+     * and drains tasks from nodes before terminating the Amazon EC2 instances,
+     * regardless of the instance-hour boundary. With either behavior, Amazon EMR
+     * removes the least active nodes first and blocks instance termination if it could
+     * lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> available
+     * only in Amazon EMR version 4.1.0 and later, and is the default for versions of
+     * Amazon EMR earlier than 5.1.0.</p>
+     */
+    inline void SetScaleDownBehavior(ScaleDownBehavior&& value) { m_scaleDownBehaviorHasBeenSet = true; m_scaleDownBehavior = value; }
+
+    /**
+     * <p>The way that individual Amazon EC2 instances terminate when an automatic
+     * scale-in activity occurs or an instance group is resized.
+     * <code>TERMINATE_AT_INSTANCE_HOUR</code> indicates that Amazon EMR terminates
+     * nodes at the instance-hour boundary, regardless of when the request to terminate
+     * the instance was submitted. This option is only available with Amazon EMR 5.1.0
+     * and later and is the default for clusters created using that version.
+     * <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR blacklists
+     * and drains tasks from nodes before terminating the Amazon EC2 instances,
+     * regardless of the instance-hour boundary. With either behavior, Amazon EMR
+     * removes the least active nodes first and blocks instance termination if it could
+     * lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> available
+     * only in Amazon EMR version 4.1.0 and later, and is the default for versions of
+     * Amazon EMR earlier than 5.1.0.</p>
+     */
+    inline JobFlowDetail& WithScaleDownBehavior(const ScaleDownBehavior& value) { SetScaleDownBehavior(value); return *this;}
+
+    /**
+     * <p>The way that individual Amazon EC2 instances terminate when an automatic
+     * scale-in activity occurs or an instance group is resized.
+     * <code>TERMINATE_AT_INSTANCE_HOUR</code> indicates that Amazon EMR terminates
+     * nodes at the instance-hour boundary, regardless of when the request to terminate
+     * the instance was submitted. This option is only available with Amazon EMR 5.1.0
+     * and later and is the default for clusters created using that version.
+     * <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR blacklists
+     * and drains tasks from nodes before terminating the Amazon EC2 instances,
+     * regardless of the instance-hour boundary. With either behavior, Amazon EMR
+     * removes the least active nodes first and blocks instance termination if it could
+     * lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> available
+     * only in Amazon EMR version 4.1.0 and later, and is the default for versions of
+     * Amazon EMR earlier than 5.1.0.</p>
+     */
+    inline JobFlowDetail& WithScaleDownBehavior(ScaleDownBehavior&& value) { SetScaleDownBehavior(value); return *this;}
+
   private:
     Aws::String m_jobFlowId;
     bool m_jobFlowIdHasBeenSet;
@@ -536,6 +664,10 @@ namespace Model
     bool m_jobFlowRoleHasBeenSet;
     Aws::String m_serviceRole;
     bool m_serviceRoleHasBeenSet;
+    Aws::String m_autoScalingRole;
+    bool m_autoScalingRoleHasBeenSet;
+    ScaleDownBehavior m_scaleDownBehavior;
+    bool m_scaleDownBehaviorHasBeenSet;
   };
 
 } // namespace Model

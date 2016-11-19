@@ -25,12 +25,14 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 GetIntegrationResult::GetIntegrationResult() : 
-    m_type(IntegrationType::NOT_SET)
+    m_type(IntegrationType::NOT_SET),
+    m_contentHandling(ContentHandlingStrategy::NOT_SET)
 {
 }
 
 GetIntegrationResult::GetIntegrationResult(const AmazonWebServiceResult<JsonValue>& result) : 
-    m_type(IntegrationType::NOT_SET)
+    m_type(IntegrationType::NOT_SET),
+    m_contentHandling(ContentHandlingStrategy::NOT_SET)
 {
   *this = result;
 }
@@ -83,6 +85,12 @@ GetIntegrationResult& GetIntegrationResult::operator =(const AmazonWebServiceRes
   if(jsonValue.ValueExists("passthroughBehavior"))
   {
     m_passthroughBehavior = jsonValue.GetString("passthroughBehavior");
+
+  }
+
+  if(jsonValue.ValueExists("contentHandling"))
+  {
+    m_contentHandling = ContentHandlingStrategyMapper::GetContentHandlingStrategyForName(jsonValue.GetString("contentHandling"));
 
   }
 
