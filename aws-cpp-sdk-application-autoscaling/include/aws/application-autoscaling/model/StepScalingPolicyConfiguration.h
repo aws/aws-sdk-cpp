@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>An object representing a step scaling policy configuration.</p>
+   * <p>Represents a step scaling policy configuration.</p>
    */
   class AWS_APPLICATIONAUTOSCALING_API StepScalingPolicyConfiguration
   {

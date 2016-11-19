@@ -44,31 +44,31 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p>EBS volume specifications such as volume type, IOPS, and size(GiB) that will
+     * <p>EBS volume specifications such as volume type, IOPS, and size (GiB) that will
      * be requested for the EBS volume attached to an EC2 instance in the cluster.</p>
      */
     inline const VolumeSpecification& GetVolumeSpecification() const{ return m_volumeSpecification; }
 
     /**
-     * <p>EBS volume specifications such as volume type, IOPS, and size(GiB) that will
+     * <p>EBS volume specifications such as volume type, IOPS, and size (GiB) that will
      * be requested for the EBS volume attached to an EC2 instance in the cluster.</p>
      */
     inline void SetVolumeSpecification(const VolumeSpecification& value) { m_volumeSpecificationHasBeenSet = true; m_volumeSpecification = value; }
 
     /**
-     * <p>EBS volume specifications such as volume type, IOPS, and size(GiB) that will
+     * <p>EBS volume specifications such as volume type, IOPS, and size (GiB) that will
      * be requested for the EBS volume attached to an EC2 instance in the cluster.</p>
      */
     inline void SetVolumeSpecification(VolumeSpecification&& value) { m_volumeSpecificationHasBeenSet = true; m_volumeSpecification = value; }
 
     /**
-     * <p>EBS volume specifications such as volume type, IOPS, and size(GiB) that will
+     * <p>EBS volume specifications such as volume type, IOPS, and size (GiB) that will
      * be requested for the EBS volume attached to an EC2 instance in the cluster.</p>
      */
     inline EbsBlockDevice& WithVolumeSpecification(const VolumeSpecification& value) { SetVolumeSpecification(value); return *this;}
 
     /**
-     * <p>EBS volume specifications such as volume type, IOPS, and size(GiB) that will
+     * <p>EBS volume specifications such as volume type, IOPS, and size (GiB) that will
      * be requested for the EBS volume attached to an EC2 instance in the cluster.</p>
      */
     inline EbsBlockDevice& WithVolumeSpecification(VolumeSpecification&& value) { SetVolumeSpecification(value); return *this;}

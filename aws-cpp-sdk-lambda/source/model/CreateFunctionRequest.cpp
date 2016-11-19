@@ -35,7 +35,9 @@ CreateFunctionRequest::CreateFunctionRequest() :
     m_memorySizeHasBeenSet(false),
     m_publish(false),
     m_publishHasBeenSet(false),
-    m_vpcConfigHasBeenSet(false)
+    m_vpcConfigHasBeenSet(false),
+    m_environmentHasBeenSet(false),
+    m_kMSKeyArnHasBeenSet(false)
 {
 }
 
@@ -99,6 +101,18 @@ Aws::String CreateFunctionRequest::SerializePayload() const
   if(m_vpcConfigHasBeenSet)
   {
    payload.WithObject("VpcConfig", m_vpcConfig.Jsonize());
+
+  }
+
+  if(m_environmentHasBeenSet)
+  {
+   payload.WithObject("Environment", m_environment.Jsonize());
+
+  }
+
+  if(m_kMSKeyArnHasBeenSet)
+  {
+   payload.WithString("KMSKeyArn", m_kMSKeyArn);
 
   }
 

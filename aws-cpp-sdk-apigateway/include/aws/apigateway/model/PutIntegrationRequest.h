@@ -19,6 +19,7 @@
 #include <aws/apigateway/model/IntegrationType.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/apigateway/model/ContentHandlingStrategy.h>
 
 namespace Aws
 {
@@ -740,6 +741,76 @@ namespace Model
      */
     inline PutIntegrationRequest& AddCacheKeyParameters(const char* value) { m_cacheKeyParametersHasBeenSet = true; m_cacheKeyParameters.push_back(value); return *this; }
 
+    /**
+     * <p>Specifies how to handle request payload content type conversions. Supported
+     * values are <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with
+     * the following behaviors:</p> <ul> <li><p><code>CONVERT_TO_BINARY</code>:
+     * Converts a request payload from a Base64-encoded string to the corresponding
+     * binary blob.</p></li> <li><p><code>CONVERT_TO_TEXT</code>: Converts a request
+     * payload from a binary blob to a Base64-encoded string.</p></li> </ul> <p>If this
+     * property is not defined, the request payload will be passed through from the
+     * method request to integration request without modification, provided that the
+     * <code>passthroughBehaviors</code> is configured to support payload
+     * pass-through.</p>
+     */
+    inline const ContentHandlingStrategy& GetContentHandling() const{ return m_contentHandling; }
+
+    /**
+     * <p>Specifies how to handle request payload content type conversions. Supported
+     * values are <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with
+     * the following behaviors:</p> <ul> <li><p><code>CONVERT_TO_BINARY</code>:
+     * Converts a request payload from a Base64-encoded string to the corresponding
+     * binary blob.</p></li> <li><p><code>CONVERT_TO_TEXT</code>: Converts a request
+     * payload from a binary blob to a Base64-encoded string.</p></li> </ul> <p>If this
+     * property is not defined, the request payload will be passed through from the
+     * method request to integration request without modification, provided that the
+     * <code>passthroughBehaviors</code> is configured to support payload
+     * pass-through.</p>
+     */
+    inline void SetContentHandling(const ContentHandlingStrategy& value) { m_contentHandlingHasBeenSet = true; m_contentHandling = value; }
+
+    /**
+     * <p>Specifies how to handle request payload content type conversions. Supported
+     * values are <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with
+     * the following behaviors:</p> <ul> <li><p><code>CONVERT_TO_BINARY</code>:
+     * Converts a request payload from a Base64-encoded string to the corresponding
+     * binary blob.</p></li> <li><p><code>CONVERT_TO_TEXT</code>: Converts a request
+     * payload from a binary blob to a Base64-encoded string.</p></li> </ul> <p>If this
+     * property is not defined, the request payload will be passed through from the
+     * method request to integration request without modification, provided that the
+     * <code>passthroughBehaviors</code> is configured to support payload
+     * pass-through.</p>
+     */
+    inline void SetContentHandling(ContentHandlingStrategy&& value) { m_contentHandlingHasBeenSet = true; m_contentHandling = value; }
+
+    /**
+     * <p>Specifies how to handle request payload content type conversions. Supported
+     * values are <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with
+     * the following behaviors:</p> <ul> <li><p><code>CONVERT_TO_BINARY</code>:
+     * Converts a request payload from a Base64-encoded string to the corresponding
+     * binary blob.</p></li> <li><p><code>CONVERT_TO_TEXT</code>: Converts a request
+     * payload from a binary blob to a Base64-encoded string.</p></li> </ul> <p>If this
+     * property is not defined, the request payload will be passed through from the
+     * method request to integration request without modification, provided that the
+     * <code>passthroughBehaviors</code> is configured to support payload
+     * pass-through.</p>
+     */
+    inline PutIntegrationRequest& WithContentHandling(const ContentHandlingStrategy& value) { SetContentHandling(value); return *this;}
+
+    /**
+     * <p>Specifies how to handle request payload content type conversions. Supported
+     * values are <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with
+     * the following behaviors:</p> <ul> <li><p><code>CONVERT_TO_BINARY</code>:
+     * Converts a request payload from a Base64-encoded string to the corresponding
+     * binary blob.</p></li> <li><p><code>CONVERT_TO_TEXT</code>: Converts a request
+     * payload from a binary blob to a Base64-encoded string.</p></li> </ul> <p>If this
+     * property is not defined, the request payload will be passed through from the
+     * method request to integration request without modification, provided that the
+     * <code>passthroughBehaviors</code> is configured to support payload
+     * pass-through.</p>
+     */
+    inline PutIntegrationRequest& WithContentHandling(ContentHandlingStrategy&& value) { SetContentHandling(value); return *this;}
+
   private:
     Aws::String m_restApiId;
     bool m_restApiIdHasBeenSet;
@@ -765,6 +836,8 @@ namespace Model
     bool m_cacheNamespaceHasBeenSet;
     Aws::Vector<Aws::String> m_cacheKeyParameters;
     bool m_cacheKeyParametersHasBeenSet;
+    ContentHandlingStrategy m_contentHandling;
+    bool m_contentHandlingHasBeenSet;
   };
 
 } // namespace Model

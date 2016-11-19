@@ -242,31 +242,31 @@ namespace Model
 
     /**
      * <p>An approximation of the cost of the job flow, represented in m1.small/hours.
-     * This value is incremented once for every hour an m1.small runs. Larger instances
-     * are weighted more, so an Amazon EC2 instance that is roughly four times more
-     * expensive would result in the normalized instance hours being incremented by
-     * four. This result is only an approximation and does not reflect the actual
-     * billing rate.</p>
+     * This value is incremented one time for every hour that an m1.small runs. Larger
+     * instances are weighted more, so an Amazon EC2 instance that is roughly four
+     * times more expensive would result in the normalized instance hours being
+     * incremented by four. This result is only an approximation and does not reflect
+     * the actual billing rate.</p>
      */
     inline int GetNormalizedInstanceHours() const{ return m_normalizedInstanceHours; }
 
     /**
      * <p>An approximation of the cost of the job flow, represented in m1.small/hours.
-     * This value is incremented once for every hour an m1.small runs. Larger instances
-     * are weighted more, so an Amazon EC2 instance that is roughly four times more
-     * expensive would result in the normalized instance hours being incremented by
-     * four. This result is only an approximation and does not reflect the actual
-     * billing rate.</p>
+     * This value is incremented one time for every hour that an m1.small runs. Larger
+     * instances are weighted more, so an Amazon EC2 instance that is roughly four
+     * times more expensive would result in the normalized instance hours being
+     * incremented by four. This result is only an approximation and does not reflect
+     * the actual billing rate.</p>
      */
     inline void SetNormalizedInstanceHours(int value) { m_normalizedInstanceHoursHasBeenSet = true; m_normalizedInstanceHours = value; }
 
     /**
      * <p>An approximation of the cost of the job flow, represented in m1.small/hours.
-     * This value is incremented once for every hour an m1.small runs. Larger instances
-     * are weighted more, so an Amazon EC2 instance that is roughly four times more
-     * expensive would result in the normalized instance hours being incremented by
-     * four. This result is only an approximation and does not reflect the actual
-     * billing rate.</p>
+     * This value is incremented one time for every hour that an m1.small runs. Larger
+     * instances are weighted more, so an Amazon EC2 instance that is roughly four
+     * times more expensive would result in the normalized instance hours being
+     * incremented by four. This result is only an approximation and does not reflect
+     * the actual billing rate.</p>
      */
     inline JobFlowInstancesDetail& WithNormalizedInstanceHours(int value) { SetNormalizedInstanceHours(value); return *this;}
 

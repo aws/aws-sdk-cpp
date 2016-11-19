@@ -108,22 +108,27 @@ namespace Model
     typedef std::function<void(const ApplicationAutoScalingClient*, const Model::RegisterScalableTargetRequest&, const Model::RegisterScalableTargetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterScalableTargetResponseReceivedHandler;
 
   /**
-   * <p>Application Auto Scaling is a general purpose Auto Scaling service for
-   * supported elastic AWS resources. With Application Auto Scaling, you can
-   * automatically scale your AWS resources, with an experience similar to that of
-   * Auto Scaling.</p> <p>Application Auto Scaling supports scaling the following AWS
-   * resources:</p> <ul> <li> <p>Amazon ECS services</p> </li> <li> <p>Amazon EC2
-   * Spot fleet instances</p> </li> </ul> <p>You can use Application Auto Scaling to
-   * accomplish the following tasks:</p> <ul> <li> <p>Define scaling policies for
-   * automatically adjusting your AWS resources</p> </li> <li> <p>Scale your
-   * resources in response to CloudWatch alarms</p> </li> <li> <p>View history of
-   * your scaling events </p> </li> </ul> <p>Application Auto Scaling is available in
-   * the following regions:</p> <ul> <li> <p> <code>us-east-1</code> </p> </li> <li>
-   * <p> <code>us-west-1</code> </p> </li> <li> <p> <code>us-west-2</code> </p> </li>
-   * <li> <p> <code>ap-southeast-1</code> </p> </li> <li> <p>
-   * <code>ap-southeast-2</code> </p> </li> <li> <p> <code>ap-northeast-1</code> </p>
-   * </li> <li> <p> <code>eu-central-1</code> </p> </li> <li> <p>
-   * <code>eu-west-1</code> </p> </li> </ul>
+   * <p>With Application Auto Scaling, you can automatically scale your AWS
+   * resources. The experience similar to that of <a
+   * href="https://aws.amazon.com/autoscaling/">Auto Scaling</a>. You can use
+   * Application Auto Scaling to accomplish the following tasks:</p> <ul> <li>
+   * <p>Define scaling policies to automatically scale your AWS resources</p> </li>
+   * <li> <p>Scale your resources in response to CloudWatch alarms</p> </li> <li>
+   * <p>View the history of your scaling events</p> </li> </ul> <p>Application Auto
+   * Scaling can scale the following AWS resources:</p> <ul> <li> <p>Amazon ECS
+   * services. For more information, see <a
+   * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-auto-scaling.html">Service
+   * Auto Scaling</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.</p>
+   * </li> <li> <p>Amazon EC2 Spot fleets. For more information, see <a
+   * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/fleet-auto-scaling.html">Automatic
+   * Scaling for Spot Fleet</a> in the <i>Amazon EC2 User Guide</i>.</p> </li> <li>
+   * <p>Amazon EMR clusters. For more information, see <a
+   * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/ManagementGuide/emr-automatic-scaling.html">Using
+   * Automatic Scaling in Amazon EMR</a> in the <i>Amazon EMR Management
+   * Guide</i>.</p> </li> </ul> <p>For a list of supported regions, see <a
+   * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#as-app_region">AWS
+   * Regions and Endpoints: Application Auto Scaling</a> in the <i>AWS General
+   * Reference</i>.</p>
    */
   class AWS_APPLICATIONAUTOSCALING_API ApplicationAutoScalingClient : public Aws::Client::AWSJsonClient
   {
@@ -152,222 +157,210 @@ namespace Model
         virtual ~ApplicationAutoScalingClient();
 
         /**
-         * <p>Deletes an Application Auto Scaling scaling policy that was previously
-         * created. If you are no longer using a scaling policy, you can delete it with
-         * this operation.</p> <p>Deleting a policy deletes the underlying alarm action,
-         * but does not delete the CloudWatch alarm associated with the scaling policy,
-         * even if it no longer has an associated action.</p> <p>To create a new scaling
-         * policy or update an existing one, see <a>PutScalingPolicy</a>.</p>
+         * <p>Deletes the specified Application Auto Scaling scaling policy.</p>
+         * <p>Deleting a policy deletes the underlying alarm action, but does not delete
+         * the CloudWatch alarm associated with the scaling policy, even if it no longer
+         * has an associated action.</p> <p>To create a scaling policy or update an
+         * existing one, see <a>PutScalingPolicy</a>.</p>
          */
         virtual Model::DeleteScalingPolicyOutcome DeleteScalingPolicy(const Model::DeleteScalingPolicyRequest& request) const;
 
         /**
-         * <p>Deletes an Application Auto Scaling scaling policy that was previously
-         * created. If you are no longer using a scaling policy, you can delete it with
-         * this operation.</p> <p>Deleting a policy deletes the underlying alarm action,
-         * but does not delete the CloudWatch alarm associated with the scaling policy,
-         * even if it no longer has an associated action.</p> <p>To create a new scaling
-         * policy or update an existing one, see <a>PutScalingPolicy</a>.</p>
+         * <p>Deletes the specified Application Auto Scaling scaling policy.</p>
+         * <p>Deleting a policy deletes the underlying alarm action, but does not delete
+         * the CloudWatch alarm associated with the scaling policy, even if it no longer
+         * has an associated action.</p> <p>To create a scaling policy or update an
+         * existing one, see <a>PutScalingPolicy</a>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteScalingPolicyOutcomeCallable DeleteScalingPolicyCallable(const Model::DeleteScalingPolicyRequest& request) const;
 
         /**
-         * <p>Deletes an Application Auto Scaling scaling policy that was previously
-         * created. If you are no longer using a scaling policy, you can delete it with
-         * this operation.</p> <p>Deleting a policy deletes the underlying alarm action,
-         * but does not delete the CloudWatch alarm associated with the scaling policy,
-         * even if it no longer has an associated action.</p> <p>To create a new scaling
-         * policy or update an existing one, see <a>PutScalingPolicy</a>.</p>
+         * <p>Deletes the specified Application Auto Scaling scaling policy.</p>
+         * <p>Deleting a policy deletes the underlying alarm action, but does not delete
+         * the CloudWatch alarm associated with the scaling policy, even if it no longer
+         * has an associated action.</p> <p>To create a scaling policy or update an
+         * existing one, see <a>PutScalingPolicy</a>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteScalingPolicyAsync(const Model::DeleteScalingPolicyRequest& request, const DeleteScalingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deregisters a scalable target that was previously registered. If you are no
-         * longer using a scalable target, you can delete it with this operation. When you
-         * deregister a scalable target, all of the scaling policies that are associated
-         * with that scalable target are deleted.</p> <p>To create a new scalable target or
-         * update an existing one, see <a>RegisterScalableTarget</a>.</p>
+         * <p>Deregisters a scalable target.</p> <p>Deregistering a scalable target deletes
+         * the scaling policies that are associated with it.</p> <p>To create a scalable
+         * target or update an existing one, see <a>RegisterScalableTarget</a>.</p>
          */
         virtual Model::DeregisterScalableTargetOutcome DeregisterScalableTarget(const Model::DeregisterScalableTargetRequest& request) const;
 
         /**
-         * <p>Deregisters a scalable target that was previously registered. If you are no
-         * longer using a scalable target, you can delete it with this operation. When you
-         * deregister a scalable target, all of the scaling policies that are associated
-         * with that scalable target are deleted.</p> <p>To create a new scalable target or
-         * update an existing one, see <a>RegisterScalableTarget</a>.</p>
+         * <p>Deregisters a scalable target.</p> <p>Deregistering a scalable target deletes
+         * the scaling policies that are associated with it.</p> <p>To create a scalable
+         * target or update an existing one, see <a>RegisterScalableTarget</a>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeregisterScalableTargetOutcomeCallable DeregisterScalableTargetCallable(const Model::DeregisterScalableTargetRequest& request) const;
 
         /**
-         * <p>Deregisters a scalable target that was previously registered. If you are no
-         * longer using a scalable target, you can delete it with this operation. When you
-         * deregister a scalable target, all of the scaling policies that are associated
-         * with that scalable target are deleted.</p> <p>To create a new scalable target or
-         * update an existing one, see <a>RegisterScalableTarget</a>.</p>
+         * <p>Deregisters a scalable target.</p> <p>Deregistering a scalable target deletes
+         * the scaling policies that are associated with it.</p> <p>To create a scalable
+         * target or update an existing one, see <a>RegisterScalableTarget</a>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeregisterScalableTargetAsync(const Model::DeregisterScalableTargetRequest& request, const DeregisterScalableTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Provides descriptive information for scalable targets with a specified
-         * service namespace.</p> <p>You can filter the results in a service namespace with
-         * the <code>ResourceIds</code> and <code>ScalableDimension</code> parameters.</p>
-         * <p>To create a new scalable target or update an existing one, see
-         * <a>RegisterScalableTarget</a>. If you are no longer using a scalable target, you
-         * can deregister it with <a>DeregisterScalableTarget</a>.</p>
+         * <p>Provides descriptive information about the scalable targets in the specified
+         * namespace.</p> <p>You can filter the results using the <code>ResourceIds</code>
+         * and <code>ScalableDimension</code> parameters.</p> <p>To create a scalable
+         * target or update an existing one, see <a>RegisterScalableTarget</a>. If you are
+         * no longer using a scalable target, you can deregister it using
+         * <a>DeregisterScalableTarget</a>.</p>
          */
         virtual Model::DescribeScalableTargetsOutcome DescribeScalableTargets(const Model::DescribeScalableTargetsRequest& request) const;
 
         /**
-         * <p>Provides descriptive information for scalable targets with a specified
-         * service namespace.</p> <p>You can filter the results in a service namespace with
-         * the <code>ResourceIds</code> and <code>ScalableDimension</code> parameters.</p>
-         * <p>To create a new scalable target or update an existing one, see
-         * <a>RegisterScalableTarget</a>. If you are no longer using a scalable target, you
-         * can deregister it with <a>DeregisterScalableTarget</a>.</p>
+         * <p>Provides descriptive information about the scalable targets in the specified
+         * namespace.</p> <p>You can filter the results using the <code>ResourceIds</code>
+         * and <code>ScalableDimension</code> parameters.</p> <p>To create a scalable
+         * target or update an existing one, see <a>RegisterScalableTarget</a>. If you are
+         * no longer using a scalable target, you can deregister it using
+         * <a>DeregisterScalableTarget</a>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeScalableTargetsOutcomeCallable DescribeScalableTargetsCallable(const Model::DescribeScalableTargetsRequest& request) const;
 
         /**
-         * <p>Provides descriptive information for scalable targets with a specified
-         * service namespace.</p> <p>You can filter the results in a service namespace with
-         * the <code>ResourceIds</code> and <code>ScalableDimension</code> parameters.</p>
-         * <p>To create a new scalable target or update an existing one, see
-         * <a>RegisterScalableTarget</a>. If you are no longer using a scalable target, you
-         * can deregister it with <a>DeregisterScalableTarget</a>.</p>
+         * <p>Provides descriptive information about the scalable targets in the specified
+         * namespace.</p> <p>You can filter the results using the <code>ResourceIds</code>
+         * and <code>ScalableDimension</code> parameters.</p> <p>To create a scalable
+         * target or update an existing one, see <a>RegisterScalableTarget</a>. If you are
+         * no longer using a scalable target, you can deregister it using
+         * <a>DeregisterScalableTarget</a>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeScalableTargetsAsync(const Model::DescribeScalableTargetsRequest& request, const DescribeScalableTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Provides descriptive information for scaling activities with a specified
-         * service namespace for the previous six weeks.</p> <p>You can filter the results
-         * in a service namespace with the <code>ResourceId</code> and
-         * <code>ScalableDimension</code> parameters.</p> <p>Scaling activities are
-         * triggered by CloudWatch alarms that are associated with scaling policies. To
-         * view the existing scaling policies for a service namespace, see
-         * <a>DescribeScalingPolicies</a>. To create a new scaling policy or update an
-         * existing one, see <a>PutScalingPolicy</a>.</p>
+         * <p>Provides descriptive information about the scaling activities in the
+         * specified namespace from the previous six weeks.</p> <p>You can filter the
+         * results using the <code>ResourceId</code> and <code>ScalableDimension</code>
+         * parameters.</p> <p>Scaling activities are triggered by CloudWatch alarms that
+         * are associated with scaling policies. To view the scaling policies for a service
+         * namespace, see <a>DescribeScalingPolicies</a>. To create a scaling policy or
+         * update an existing one, see <a>PutScalingPolicy</a>.</p>
          */
         virtual Model::DescribeScalingActivitiesOutcome DescribeScalingActivities(const Model::DescribeScalingActivitiesRequest& request) const;
 
         /**
-         * <p>Provides descriptive information for scaling activities with a specified
-         * service namespace for the previous six weeks.</p> <p>You can filter the results
-         * in a service namespace with the <code>ResourceId</code> and
-         * <code>ScalableDimension</code> parameters.</p> <p>Scaling activities are
-         * triggered by CloudWatch alarms that are associated with scaling policies. To
-         * view the existing scaling policies for a service namespace, see
-         * <a>DescribeScalingPolicies</a>. To create a new scaling policy or update an
-         * existing one, see <a>PutScalingPolicy</a>.</p>
+         * <p>Provides descriptive information about the scaling activities in the
+         * specified namespace from the previous six weeks.</p> <p>You can filter the
+         * results using the <code>ResourceId</code> and <code>ScalableDimension</code>
+         * parameters.</p> <p>Scaling activities are triggered by CloudWatch alarms that
+         * are associated with scaling policies. To view the scaling policies for a service
+         * namespace, see <a>DescribeScalingPolicies</a>. To create a scaling policy or
+         * update an existing one, see <a>PutScalingPolicy</a>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeScalingActivitiesOutcomeCallable DescribeScalingActivitiesCallable(const Model::DescribeScalingActivitiesRequest& request) const;
 
         /**
-         * <p>Provides descriptive information for scaling activities with a specified
-         * service namespace for the previous six weeks.</p> <p>You can filter the results
-         * in a service namespace with the <code>ResourceId</code> and
-         * <code>ScalableDimension</code> parameters.</p> <p>Scaling activities are
-         * triggered by CloudWatch alarms that are associated with scaling policies. To
-         * view the existing scaling policies for a service namespace, see
-         * <a>DescribeScalingPolicies</a>. To create a new scaling policy or update an
-         * existing one, see <a>PutScalingPolicy</a>.</p>
+         * <p>Provides descriptive information about the scaling activities in the
+         * specified namespace from the previous six weeks.</p> <p>You can filter the
+         * results using the <code>ResourceId</code> and <code>ScalableDimension</code>
+         * parameters.</p> <p>Scaling activities are triggered by CloudWatch alarms that
+         * are associated with scaling policies. To view the scaling policies for a service
+         * namespace, see <a>DescribeScalingPolicies</a>. To create a scaling policy or
+         * update an existing one, see <a>PutScalingPolicy</a>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeScalingActivitiesAsync(const Model::DescribeScalingActivitiesRequest& request, const DescribeScalingActivitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Provides descriptive information for scaling policies with a specified
-         * service namespace.</p> <p>You can filter the results in a service namespace with
-         * the <code>ResourceId</code>, <code>ScalableDimension</code>, and
-         * <code>PolicyNames</code> parameters.</p> <p>To create a new scaling policy or
-         * update an existing one, see <a>PutScalingPolicy</a>. If you are no longer using
-         * a scaling policy, you can delete it with <a>DeleteScalingPolicy</a>.</p>
+         * <p>Provides descriptive information about the scaling policies in the specified
+         * namespace.</p> <p>You can filter the results using the <code>ResourceId</code>,
+         * <code>ScalableDimension</code>, and <code>PolicyNames</code> parameters.</p>
+         * <p>To create a scaling policy or update an existing one, see
+         * <a>PutScalingPolicy</a>. If you are no longer using a scaling policy, you can
+         * delete it using <a>DeleteScalingPolicy</a>.</p>
          */
         virtual Model::DescribeScalingPoliciesOutcome DescribeScalingPolicies(const Model::DescribeScalingPoliciesRequest& request) const;
 
         /**
-         * <p>Provides descriptive information for scaling policies with a specified
-         * service namespace.</p> <p>You can filter the results in a service namespace with
-         * the <code>ResourceId</code>, <code>ScalableDimension</code>, and
-         * <code>PolicyNames</code> parameters.</p> <p>To create a new scaling policy or
-         * update an existing one, see <a>PutScalingPolicy</a>. If you are no longer using
-         * a scaling policy, you can delete it with <a>DeleteScalingPolicy</a>.</p>
+         * <p>Provides descriptive information about the scaling policies in the specified
+         * namespace.</p> <p>You can filter the results using the <code>ResourceId</code>,
+         * <code>ScalableDimension</code>, and <code>PolicyNames</code> parameters.</p>
+         * <p>To create a scaling policy or update an existing one, see
+         * <a>PutScalingPolicy</a>. If you are no longer using a scaling policy, you can
+         * delete it using <a>DeleteScalingPolicy</a>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeScalingPoliciesOutcomeCallable DescribeScalingPoliciesCallable(const Model::DescribeScalingPoliciesRequest& request) const;
 
         /**
-         * <p>Provides descriptive information for scaling policies with a specified
-         * service namespace.</p> <p>You can filter the results in a service namespace with
-         * the <code>ResourceId</code>, <code>ScalableDimension</code>, and
-         * <code>PolicyNames</code> parameters.</p> <p>To create a new scaling policy or
-         * update an existing one, see <a>PutScalingPolicy</a>. If you are no longer using
-         * a scaling policy, you can delete it with <a>DeleteScalingPolicy</a>.</p>
+         * <p>Provides descriptive information about the scaling policies in the specified
+         * namespace.</p> <p>You can filter the results using the <code>ResourceId</code>,
+         * <code>ScalableDimension</code>, and <code>PolicyNames</code> parameters.</p>
+         * <p>To create a scaling policy or update an existing one, see
+         * <a>PutScalingPolicy</a>. If you are no longer using a scaling policy, you can
+         * delete it using <a>DeleteScalingPolicy</a>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeScalingPoliciesAsync(const Model::DescribeScalingPoliciesRequest& request, const DescribeScalingPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates or updates a policy for an existing Application Auto Scaling scalable
-         * target. Each scalable target is identified by service namespace, a resource ID,
-         * and a scalable dimension, and a scaling policy applies to a scalable target that
-         * is identified by those three attributes. You cannot create a scaling policy
-         * without first registering a scalable target with
-         * <a>RegisterScalableTarget</a>.</p> <p>To update an existing policy, use the
-         * existing policy name and set the parameters you want to change. Any existing
-         * parameter not changed in an update to an existing policy is not changed in this
-         * update request.</p> <p>You can view the existing scaling policies for a service
-         * namespace with <a>DescribeScalingPolicies</a>. If you are no longer using a
-         * scaling policy, you can delete it with <a>DeleteScalingPolicy</a>.</p>
+         * <p>Creates or updates a policy for an Application Auto Scaling scalable
+         * target.</p> <p>Each scalable target is identified by a service namespace,
+         * resource ID, and scalable dimension. A scaling policy applies to the scalable
+         * target identified by those three attributes. You cannot create a scaling policy
+         * without first registering a scalable target using
+         * <a>RegisterScalableTarget</a>.</p> <p>To update a policy, specify its policy
+         * name and the parameters that you want to change. Any parameters that you don't
+         * specify are not changed by this update request.</p> <p>You can view the scaling
+         * policies for a service namespace using <a>DescribeScalingPolicies</a>. If you
+         * are no longer using a scaling policy, you can delete it using
+         * <a>DeleteScalingPolicy</a>.</p>
          */
         virtual Model::PutScalingPolicyOutcome PutScalingPolicy(const Model::PutScalingPolicyRequest& request) const;
 
         /**
-         * <p>Creates or updates a policy for an existing Application Auto Scaling scalable
-         * target. Each scalable target is identified by service namespace, a resource ID,
-         * and a scalable dimension, and a scaling policy applies to a scalable target that
-         * is identified by those three attributes. You cannot create a scaling policy
-         * without first registering a scalable target with
-         * <a>RegisterScalableTarget</a>.</p> <p>To update an existing policy, use the
-         * existing policy name and set the parameters you want to change. Any existing
-         * parameter not changed in an update to an existing policy is not changed in this
-         * update request.</p> <p>You can view the existing scaling policies for a service
-         * namespace with <a>DescribeScalingPolicies</a>. If you are no longer using a
-         * scaling policy, you can delete it with <a>DeleteScalingPolicy</a>.</p>
+         * <p>Creates or updates a policy for an Application Auto Scaling scalable
+         * target.</p> <p>Each scalable target is identified by a service namespace,
+         * resource ID, and scalable dimension. A scaling policy applies to the scalable
+         * target identified by those three attributes. You cannot create a scaling policy
+         * without first registering a scalable target using
+         * <a>RegisterScalableTarget</a>.</p> <p>To update a policy, specify its policy
+         * name and the parameters that you want to change. Any parameters that you don't
+         * specify are not changed by this update request.</p> <p>You can view the scaling
+         * policies for a service namespace using <a>DescribeScalingPolicies</a>. If you
+         * are no longer using a scaling policy, you can delete it using
+         * <a>DeleteScalingPolicy</a>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::PutScalingPolicyOutcomeCallable PutScalingPolicyCallable(const Model::PutScalingPolicyRequest& request) const;
 
         /**
-         * <p>Creates or updates a policy for an existing Application Auto Scaling scalable
-         * target. Each scalable target is identified by service namespace, a resource ID,
-         * and a scalable dimension, and a scaling policy applies to a scalable target that
-         * is identified by those three attributes. You cannot create a scaling policy
-         * without first registering a scalable target with
-         * <a>RegisterScalableTarget</a>.</p> <p>To update an existing policy, use the
-         * existing policy name and set the parameters you want to change. Any existing
-         * parameter not changed in an update to an existing policy is not changed in this
-         * update request.</p> <p>You can view the existing scaling policies for a service
-         * namespace with <a>DescribeScalingPolicies</a>. If you are no longer using a
-         * scaling policy, you can delete it with <a>DeleteScalingPolicy</a>.</p>
+         * <p>Creates or updates a policy for an Application Auto Scaling scalable
+         * target.</p> <p>Each scalable target is identified by a service namespace,
+         * resource ID, and scalable dimension. A scaling policy applies to the scalable
+         * target identified by those three attributes. You cannot create a scaling policy
+         * without first registering a scalable target using
+         * <a>RegisterScalableTarget</a>.</p> <p>To update a policy, specify its policy
+         * name and the parameters that you want to change. Any parameters that you don't
+         * specify are not changed by this update request.</p> <p>You can view the scaling
+         * policies for a service namespace using <a>DescribeScalingPolicies</a>. If you
+         * are no longer using a scaling policy, you can delete it using
+         * <a>DeleteScalingPolicy</a>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -375,27 +368,25 @@ namespace Model
 
         /**
          * <p>Registers or updates a scalable target. A scalable target is a resource that
-         * can be scaled out or in with Application Auto Scaling. After you have registered
-         * a scalable target, you can use this operation to update the minimum and maximum
-         * values for your scalable dimension.</p> <p>After you register a scalable target
-         * with Application Auto Scaling, you can create and apply scaling policies to it
-         * with <a>PutScalingPolicy</a>. You can view the existing scaling policies for a
-         * service namespace with <a>DescribeScalableTargets</a>. If you are no longer
-         * using a scalable target, you can deregister it with
-         * <a>DeregisterScalableTarget</a>.</p>
+         * Application Auto Scaling can scale out or scale in. After you have registered a
+         * scalable target, you can use this operation to update the minimum and maximum
+         * values for your scalable dimension.</p> <p>After you register a scalable target,
+         * you can create and apply scaling policies using <a>PutScalingPolicy</a>. You can
+         * view the scaling policies for a service namespace using
+         * <a>DescribeScalableTargets</a>. If you are no longer using a scalable target,
+         * you can deregister it using <a>DeregisterScalableTarget</a>.</p>
          */
         virtual Model::RegisterScalableTargetOutcome RegisterScalableTarget(const Model::RegisterScalableTargetRequest& request) const;
 
         /**
          * <p>Registers or updates a scalable target. A scalable target is a resource that
-         * can be scaled out or in with Application Auto Scaling. After you have registered
-         * a scalable target, you can use this operation to update the minimum and maximum
-         * values for your scalable dimension.</p> <p>After you register a scalable target
-         * with Application Auto Scaling, you can create and apply scaling policies to it
-         * with <a>PutScalingPolicy</a>. You can view the existing scaling policies for a
-         * service namespace with <a>DescribeScalableTargets</a>. If you are no longer
-         * using a scalable target, you can deregister it with
-         * <a>DeregisterScalableTarget</a>.</p>
+         * Application Auto Scaling can scale out or scale in. After you have registered a
+         * scalable target, you can use this operation to update the minimum and maximum
+         * values for your scalable dimension.</p> <p>After you register a scalable target,
+         * you can create and apply scaling policies using <a>PutScalingPolicy</a>. You can
+         * view the scaling policies for a service namespace using
+         * <a>DescribeScalableTargets</a>. If you are no longer using a scalable target,
+         * you can deregister it using <a>DeregisterScalableTarget</a>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -403,14 +394,13 @@ namespace Model
 
         /**
          * <p>Registers or updates a scalable target. A scalable target is a resource that
-         * can be scaled out or in with Application Auto Scaling. After you have registered
-         * a scalable target, you can use this operation to update the minimum and maximum
-         * values for your scalable dimension.</p> <p>After you register a scalable target
-         * with Application Auto Scaling, you can create and apply scaling policies to it
-         * with <a>PutScalingPolicy</a>. You can view the existing scaling policies for a
-         * service namespace with <a>DescribeScalableTargets</a>. If you are no longer
-         * using a scalable target, you can deregister it with
-         * <a>DeregisterScalableTarget</a>.</p>
+         * Application Auto Scaling can scale out or scale in. After you have registered a
+         * scalable target, you can use this operation to update the minimum and maximum
+         * values for your scalable dimension.</p> <p>After you register a scalable target,
+         * you can create and apply scaling policies using <a>PutScalingPolicy</a>. You can
+         * view the scaling policies for a service namespace using
+         * <a>DescribeScalableTargets</a>. If you are no longer using a scalable target,
+         * you can deregister it using <a>DeregisterScalableTarget</a>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */

@@ -51,6 +51,7 @@
 #include <aws/gamelift/model/DescribeRuntimeConfigurationRequest.h>
 #include <aws/gamelift/model/DescribeScalingPoliciesRequest.h>
 #include <aws/gamelift/model/GetGameSessionLogUrlRequest.h>
+#include <aws/gamelift/model/GetInstanceAccessRequest.h>
 #include <aws/gamelift/model/ListAliasesRequest.h>
 #include <aws/gamelift/model/ListBuildsRequest.h>
 #include <aws/gamelift/model/ListFleetsRequest.h>
@@ -978,6 +979,40 @@ void GameLiftClient::GetGameSessionLogUrlAsync(const GetGameSessionLogUrlRequest
 void GameLiftClient::GetGameSessionLogUrlAsyncHelper(const GetGameSessionLogUrlRequest& request, const GetGameSessionLogUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetGameSessionLogUrl(request), context);
+}
+
+GetInstanceAccessOutcome GameLiftClient::GetInstanceAccess(const GetInstanceAccessRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return GetInstanceAccessOutcome(GetInstanceAccessResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetInstanceAccessOutcome(outcome.GetError());
+  }
+}
+
+GetInstanceAccessOutcomeCallable GameLiftClient::GetInstanceAccessCallable(const GetInstanceAccessRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetInstanceAccessOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetInstanceAccess(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GameLiftClient::GetInstanceAccessAsync(const GetInstanceAccessRequest& request, const GetInstanceAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetInstanceAccessAsyncHelper( request, handler, context ); } );
+}
+
+void GameLiftClient::GetInstanceAccessAsyncHelper(const GetInstanceAccessRequest& request, const GetInstanceAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetInstanceAccess(request), context);
 }
 
 ListAliasesOutcome GameLiftClient::ListAliases(const ListAliasesRequest& request) const

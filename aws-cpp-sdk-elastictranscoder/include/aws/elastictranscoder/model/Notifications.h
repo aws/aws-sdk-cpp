@@ -32,8 +32,8 @@ namespace Model
 
   /**
    * <p>The Amazon Simple Notification Service (Amazon SNS) topic or topics to notify
-   * in order to report job status.</p> <important>To receive notifications, you must
-   * also subscribe to the new topic in the Amazon SNS console.</important>
+   * in order to report job status.</p> <important> <p>To receive notifications, you
+   * must also subscribe to the new topic in the Amazon SNS console.</p> </important>
    */
   class AWS_ELASTICTRANSCODER_API Notifications
   {

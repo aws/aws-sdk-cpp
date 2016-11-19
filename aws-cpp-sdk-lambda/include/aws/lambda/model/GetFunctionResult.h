@@ -34,7 +34,8 @@ namespace Lambda
 namespace Model
 {
   /**
-   * <p>This response contains the object for the Lambda function location (see .</p>
+   * <p>This response contains the object for the Lambda function location (see
+   * <a>FunctionCodeLocation</a>.</p>
    */
   class AWS_LAMBDA_API GetFunctionResult
   {

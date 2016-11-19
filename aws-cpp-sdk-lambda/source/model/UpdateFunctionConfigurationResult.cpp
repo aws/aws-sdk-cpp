@@ -122,6 +122,18 @@ UpdateFunctionConfigurationResult& UpdateFunctionConfigurationResult::operator =
 
   }
 
+  if(jsonValue.ValueExists("Environment"))
+  {
+    m_environment = jsonValue.GetObject("Environment");
+
+  }
+
+  if(jsonValue.ValueExists("KMSKeyArn"))
+  {
+    m_kMSKeyArn = jsonValue.GetString("KMSKeyArn");
+
+  }
+
 
 
   return *this;

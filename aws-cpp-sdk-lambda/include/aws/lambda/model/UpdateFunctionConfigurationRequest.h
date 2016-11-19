@@ -17,6 +17,7 @@
 #include <aws/lambda/LambdaRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/lambda/model/VpcConfig.h>
+#include <aws/lambda/model/Environment.h>
 #include <aws/lambda/model/Runtime.h>
 
 namespace Aws
@@ -312,6 +313,85 @@ namespace Model
     inline UpdateFunctionConfigurationRequest& WithVpcConfig(VpcConfig&& value) { SetVpcConfig(value); return *this;}
 
     /**
+     * <p>The parent object that contains your environment's configuration
+     * settings.</p>
+     */
+    inline const Environment& GetEnvironment() const{ return m_environment; }
+
+    /**
+     * <p>The parent object that contains your environment's configuration
+     * settings.</p>
+     */
+    inline void SetEnvironment(const Environment& value) { m_environmentHasBeenSet = true; m_environment = value; }
+
+    /**
+     * <p>The parent object that contains your environment's configuration
+     * settings.</p>
+     */
+    inline void SetEnvironment(Environment&& value) { m_environmentHasBeenSet = true; m_environment = value; }
+
+    /**
+     * <p>The parent object that contains your environment's configuration
+     * settings.</p>
+     */
+    inline UpdateFunctionConfigurationRequest& WithEnvironment(const Environment& value) { SetEnvironment(value); return *this;}
+
+    /**
+     * <p>The parent object that contains your environment's configuration
+     * settings.</p>
+     */
+    inline UpdateFunctionConfigurationRequest& WithEnvironment(Environment&& value) { SetEnvironment(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt your function's
+     * environment variables. If you elect to use the AWS Lambda default service key,
+     * pass in an empty string ("") for this parameter.</p>
+     */
+    inline const Aws::String& GetKMSKeyArn() const{ return m_kMSKeyArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt your function's
+     * environment variables. If you elect to use the AWS Lambda default service key,
+     * pass in an empty string ("") for this parameter.</p>
+     */
+    inline void SetKMSKeyArn(const Aws::String& value) { m_kMSKeyArnHasBeenSet = true; m_kMSKeyArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt your function's
+     * environment variables. If you elect to use the AWS Lambda default service key,
+     * pass in an empty string ("") for this parameter.</p>
+     */
+    inline void SetKMSKeyArn(Aws::String&& value) { m_kMSKeyArnHasBeenSet = true; m_kMSKeyArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt your function's
+     * environment variables. If you elect to use the AWS Lambda default service key,
+     * pass in an empty string ("") for this parameter.</p>
+     */
+    inline void SetKMSKeyArn(const char* value) { m_kMSKeyArnHasBeenSet = true; m_kMSKeyArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt your function's
+     * environment variables. If you elect to use the AWS Lambda default service key,
+     * pass in an empty string ("") for this parameter.</p>
+     */
+    inline UpdateFunctionConfigurationRequest& WithKMSKeyArn(const Aws::String& value) { SetKMSKeyArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt your function's
+     * environment variables. If you elect to use the AWS Lambda default service key,
+     * pass in an empty string ("") for this parameter.</p>
+     */
+    inline UpdateFunctionConfigurationRequest& WithKMSKeyArn(Aws::String&& value) { SetKMSKeyArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt your function's
+     * environment variables. If you elect to use the AWS Lambda default service key,
+     * pass in an empty string ("") for this parameter.</p>
+     */
+    inline UpdateFunctionConfigurationRequest& WithKMSKeyArn(const char* value) { SetKMSKeyArn(value); return *this;}
+
+    /**
      * <p>The runtime environment for the Lambda function.</p> <p>To use the Node.js
      * runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42),
      * set the value to "nodejs".</p>
@@ -361,6 +441,10 @@ namespace Model
     bool m_memorySizeHasBeenSet;
     VpcConfig m_vpcConfig;
     bool m_vpcConfigHasBeenSet;
+    Environment m_environment;
+    bool m_environmentHasBeenSet;
+    Aws::String m_kMSKeyArn;
+    bool m_kMSKeyArnHasBeenSet;
     Runtime m_runtime;
     bool m_runtimeHasBeenSet;
   };

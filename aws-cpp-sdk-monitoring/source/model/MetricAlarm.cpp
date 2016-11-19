@@ -48,6 +48,7 @@ MetricAlarm::MetricAlarm() :
     m_namespaceHasBeenSet(false),
     m_statistic(Statistic::NOT_SET),
     m_statisticHasBeenSet(false),
+    m_extendedStatisticHasBeenSet(false),
     m_dimensionsHasBeenSet(false),
     m_period(0),
     m_periodHasBeenSet(false),
@@ -81,6 +82,7 @@ MetricAlarm::MetricAlarm(const XmlNode& xmlNode) :
     m_namespaceHasBeenSet(false),
     m_statistic(Statistic::NOT_SET),
     m_statisticHasBeenSet(false),
+    m_extendedStatisticHasBeenSet(false),
     m_dimensionsHasBeenSet(false),
     m_period(0),
     m_periodHasBeenSet(false),
@@ -209,6 +211,12 @@ MetricAlarm& MetricAlarm::operator =(const XmlNode& xmlNode)
     {
       m_statistic = StatisticMapper::GetStatisticForName(StringUtils::Trim(statisticNode.GetText().c_str()).c_str());
       m_statisticHasBeenSet = true;
+    }
+    XmlNode extendedStatisticNode = resultNode.FirstChild("ExtendedStatistic");
+    if(!extendedStatisticNode.IsNull())
+    {
+      m_extendedStatistic = StringUtils::Trim(extendedStatisticNode.GetText().c_str());
+      m_extendedStatisticHasBeenSet = true;
     }
     XmlNode dimensionsNode = resultNode.FirstChild("Dimensions");
     if(!dimensionsNode.IsNull())
@@ -346,6 +354,11 @@ void MetricAlarm::OutputToStream(Aws::OStream& oStream, const char* location, un
       oStream << location << index << locationValue << ".Statistic=" << StatisticMapper::GetNameForStatistic(m_statistic) << "&";
   }
 
+  if(m_extendedStatisticHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ExtendedStatistic=" << StringUtils::URLEncode(m_extendedStatistic.c_str()) << "&";
+  }
+
   if(m_dimensionsHasBeenSet)
   {
       unsigned dimensionsIdx = 1;
@@ -457,6 +470,10 @@ void MetricAlarm::OutputToStream(Aws::OStream& oStream, const char* location) co
   if(m_statisticHasBeenSet)
   {
       oStream << location << ".Statistic=" << StatisticMapper::GetNameForStatistic(m_statistic) << "&";
+  }
+  if(m_extendedStatisticHasBeenSet)
+  {
+      oStream << location << ".ExtendedStatistic=" << StringUtils::URLEncode(m_extendedStatistic.c_str()) << "&";
   }
   if(m_dimensionsHasBeenSet)
   {

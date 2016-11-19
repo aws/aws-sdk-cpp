@@ -1,0 +1,138 @@
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+#pragma once
+#include <aws/elasticmapreduce/EMR_EXPORTS.h>
+#include <aws/elasticmapreduce/EMRRequest.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+
+namespace Aws
+{
+namespace EMR
+{
+namespace Model
+{
+
+  /**
+   * <p>The input argument to the <a>CancelSteps</a> operation.</p>
+   */
+  class AWS_EMR_API CancelStepsRequest : public EMRRequest
+  {
+  public:
+    CancelStepsRequest();
+    Aws::String SerializePayload() const override;
+
+    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+    /**
+     * <p>The <code>ClusterID</code> for which specified steps will be canceled. Use
+     * <a>RunJobFlow</a> and <a>ListClusters</a> to get ClusterIDs. </p>
+     */
+    inline const Aws::String& GetClusterId() const{ return m_clusterId; }
+
+    /**
+     * <p>The <code>ClusterID</code> for which specified steps will be canceled. Use
+     * <a>RunJobFlow</a> and <a>ListClusters</a> to get ClusterIDs. </p>
+     */
+    inline void SetClusterId(const Aws::String& value) { m_clusterIdHasBeenSet = true; m_clusterId = value; }
+
+    /**
+     * <p>The <code>ClusterID</code> for which specified steps will be canceled. Use
+     * <a>RunJobFlow</a> and <a>ListClusters</a> to get ClusterIDs. </p>
+     */
+    inline void SetClusterId(Aws::String&& value) { m_clusterIdHasBeenSet = true; m_clusterId = value; }
+
+    /**
+     * <p>The <code>ClusterID</code> for which specified steps will be canceled. Use
+     * <a>RunJobFlow</a> and <a>ListClusters</a> to get ClusterIDs. </p>
+     */
+    inline void SetClusterId(const char* value) { m_clusterIdHasBeenSet = true; m_clusterId.assign(value); }
+
+    /**
+     * <p>The <code>ClusterID</code> for which specified steps will be canceled. Use
+     * <a>RunJobFlow</a> and <a>ListClusters</a> to get ClusterIDs. </p>
+     */
+    inline CancelStepsRequest& WithClusterId(const Aws::String& value) { SetClusterId(value); return *this;}
+
+    /**
+     * <p>The <code>ClusterID</code> for which specified steps will be canceled. Use
+     * <a>RunJobFlow</a> and <a>ListClusters</a> to get ClusterIDs. </p>
+     */
+    inline CancelStepsRequest& WithClusterId(Aws::String&& value) { SetClusterId(value); return *this;}
+
+    /**
+     * <p>The <code>ClusterID</code> for which specified steps will be canceled. Use
+     * <a>RunJobFlow</a> and <a>ListClusters</a> to get ClusterIDs. </p>
+     */
+    inline CancelStepsRequest& WithClusterId(const char* value) { SetClusterId(value); return *this;}
+
+    /**
+     * <p>The list of <code>StepIDs</code> to cancel. Use <a>ListSteps</a> to get steps
+     * and their states for the specified cluster.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetStepIds() const{ return m_stepIds; }
+
+    /**
+     * <p>The list of <code>StepIDs</code> to cancel. Use <a>ListSteps</a> to get steps
+     * and their states for the specified cluster.</p>
+     */
+    inline void SetStepIds(const Aws::Vector<Aws::String>& value) { m_stepIdsHasBeenSet = true; m_stepIds = value; }
+
+    /**
+     * <p>The list of <code>StepIDs</code> to cancel. Use <a>ListSteps</a> to get steps
+     * and their states for the specified cluster.</p>
+     */
+    inline void SetStepIds(Aws::Vector<Aws::String>&& value) { m_stepIdsHasBeenSet = true; m_stepIds = value; }
+
+    /**
+     * <p>The list of <code>StepIDs</code> to cancel. Use <a>ListSteps</a> to get steps
+     * and their states for the specified cluster.</p>
+     */
+    inline CancelStepsRequest& WithStepIds(const Aws::Vector<Aws::String>& value) { SetStepIds(value); return *this;}
+
+    /**
+     * <p>The list of <code>StepIDs</code> to cancel. Use <a>ListSteps</a> to get steps
+     * and their states for the specified cluster.</p>
+     */
+    inline CancelStepsRequest& WithStepIds(Aws::Vector<Aws::String>&& value) { SetStepIds(value); return *this;}
+
+    /**
+     * <p>The list of <code>StepIDs</code> to cancel. Use <a>ListSteps</a> to get steps
+     * and their states for the specified cluster.</p>
+     */
+    inline CancelStepsRequest& AddStepIds(const Aws::String& value) { m_stepIdsHasBeenSet = true; m_stepIds.push_back(value); return *this; }
+
+    /**
+     * <p>The list of <code>StepIDs</code> to cancel. Use <a>ListSteps</a> to get steps
+     * and their states for the specified cluster.</p>
+     */
+    inline CancelStepsRequest& AddStepIds(Aws::String&& value) { m_stepIdsHasBeenSet = true; m_stepIds.push_back(value); return *this; }
+
+    /**
+     * <p>The list of <code>StepIDs</code> to cancel. Use <a>ListSteps</a> to get steps
+     * and their states for the specified cluster.</p>
+     */
+    inline CancelStepsRequest& AddStepIds(const char* value) { m_stepIdsHasBeenSet = true; m_stepIds.push_back(value); return *this; }
+
+  private:
+    Aws::String m_clusterId;
+    bool m_clusterIdHasBeenSet;
+    Aws::Vector<Aws::String> m_stepIds;
+    bool m_stepIdsHasBeenSet;
+  };
+
+} // namespace Model
+} // namespace EMR
+} // namespace Aws

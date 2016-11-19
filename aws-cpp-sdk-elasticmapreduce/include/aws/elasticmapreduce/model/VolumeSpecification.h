@@ -31,7 +31,7 @@ namespace Model
 {
 
   /**
-   * <p>EBS volume specifications such as volume type, IOPS, and size(GiB) that will
+   * <p>EBS volume specifications such as volume type, IOPS, and size (GiB) that will
    * be requested for the EBS volume attached to an EC2 instance in the cluster.</p>
    */
   class AWS_EMR_API VolumeSpecification

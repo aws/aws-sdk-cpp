@@ -16,6 +16,7 @@
 #include <aws/apigateway/APIGateway_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/apigateway/model/ContentHandlingStrategy.h>
 
 namespace Aws
 {
@@ -448,6 +449,66 @@ namespace Model
      */
     inline IntegrationResponse& AddResponseTemplates(const char* key, const char* value) { m_responseTemplatesHasBeenSet = true; m_responseTemplates[key] = value; return *this; }
 
+    /**
+     * <p>Specifies how to handle response payload content type conversions. Supported
+     * values are <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with
+     * the following behaviors:</p> <ul> <li><p><code>CONVERT_TO_BINARY</code>:
+     * Converts a response payload from a Base64-encoded string to the corresponding
+     * binary blob.</p></li> <li><p><code>CONVERT_TO_TEXT</code>: Converts a response
+     * payload from a binary blob to a Base64-encoded string.</p></li> </ul> <p>If this
+     * property is not defined, the response payload will be passed through from the
+     * integration response to the method response without modification.</p>
+     */
+    inline const ContentHandlingStrategy& GetContentHandling() const{ return m_contentHandling; }
+
+    /**
+     * <p>Specifies how to handle response payload content type conversions. Supported
+     * values are <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with
+     * the following behaviors:</p> <ul> <li><p><code>CONVERT_TO_BINARY</code>:
+     * Converts a response payload from a Base64-encoded string to the corresponding
+     * binary blob.</p></li> <li><p><code>CONVERT_TO_TEXT</code>: Converts a response
+     * payload from a binary blob to a Base64-encoded string.</p></li> </ul> <p>If this
+     * property is not defined, the response payload will be passed through from the
+     * integration response to the method response without modification.</p>
+     */
+    inline void SetContentHandling(const ContentHandlingStrategy& value) { m_contentHandlingHasBeenSet = true; m_contentHandling = value; }
+
+    /**
+     * <p>Specifies how to handle response payload content type conversions. Supported
+     * values are <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with
+     * the following behaviors:</p> <ul> <li><p><code>CONVERT_TO_BINARY</code>:
+     * Converts a response payload from a Base64-encoded string to the corresponding
+     * binary blob.</p></li> <li><p><code>CONVERT_TO_TEXT</code>: Converts a response
+     * payload from a binary blob to a Base64-encoded string.</p></li> </ul> <p>If this
+     * property is not defined, the response payload will be passed through from the
+     * integration response to the method response without modification.</p>
+     */
+    inline void SetContentHandling(ContentHandlingStrategy&& value) { m_contentHandlingHasBeenSet = true; m_contentHandling = value; }
+
+    /**
+     * <p>Specifies how to handle response payload content type conversions. Supported
+     * values are <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with
+     * the following behaviors:</p> <ul> <li><p><code>CONVERT_TO_BINARY</code>:
+     * Converts a response payload from a Base64-encoded string to the corresponding
+     * binary blob.</p></li> <li><p><code>CONVERT_TO_TEXT</code>: Converts a response
+     * payload from a binary blob to a Base64-encoded string.</p></li> </ul> <p>If this
+     * property is not defined, the response payload will be passed through from the
+     * integration response to the method response without modification.</p>
+     */
+    inline IntegrationResponse& WithContentHandling(const ContentHandlingStrategy& value) { SetContentHandling(value); return *this;}
+
+    /**
+     * <p>Specifies how to handle response payload content type conversions. Supported
+     * values are <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with
+     * the following behaviors:</p> <ul> <li><p><code>CONVERT_TO_BINARY</code>:
+     * Converts a response payload from a Base64-encoded string to the corresponding
+     * binary blob.</p></li> <li><p><code>CONVERT_TO_TEXT</code>: Converts a response
+     * payload from a binary blob to a Base64-encoded string.</p></li> </ul> <p>If this
+     * property is not defined, the response payload will be passed through from the
+     * integration response to the method response without modification.</p>
+     */
+    inline IntegrationResponse& WithContentHandling(ContentHandlingStrategy&& value) { SetContentHandling(value); return *this;}
+
   private:
     Aws::String m_statusCode;
     bool m_statusCodeHasBeenSet;
@@ -457,6 +518,8 @@ namespace Model
     bool m_responseParametersHasBeenSet;
     Aws::Map<Aws::String, Aws::String> m_responseTemplates;
     bool m_responseTemplatesHasBeenSet;
+    ContentHandlingStrategy m_contentHandling;
+    bool m_contentHandlingHasBeenSet;
   };
 
 } // namespace Model

@@ -19,6 +19,7 @@
 #include <aws/elasticmapreduce/model/InstanceRoleType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticmapreduce/model/EbsConfiguration.h>
+#include <aws/elasticmapreduce/model/AutoScalingPolicy.h>
 #include <aws/elasticmapreduce/model/Configuration.h>
 
 namespace Aws
@@ -82,27 +83,27 @@ namespace Model
     inline InstanceGroupConfig& WithName(const char* value) { SetName(value); return *this;}
 
     /**
-     * <p>Market type of the Amazon EC2 instances used to create a cluster node.</p>
+     * <p>Market type of the EC2 instances used to create a cluster node.</p>
      */
     inline const MarketType& GetMarket() const{ return m_market; }
 
     /**
-     * <p>Market type of the Amazon EC2 instances used to create a cluster node.</p>
+     * <p>Market type of the EC2 instances used to create a cluster node.</p>
      */
     inline void SetMarket(const MarketType& value) { m_marketHasBeenSet = true; m_market = value; }
 
     /**
-     * <p>Market type of the Amazon EC2 instances used to create a cluster node.</p>
+     * <p>Market type of the EC2 instances used to create a cluster node.</p>
      */
     inline void SetMarket(MarketType&& value) { m_marketHasBeenSet = true; m_market = value; }
 
     /**
-     * <p>Market type of the Amazon EC2 instances used to create a cluster node.</p>
+     * <p>Market type of the EC2 instances used to create a cluster node.</p>
      */
     inline InstanceGroupConfig& WithMarket(const MarketType& value) { SetMarket(value); return *this;}
 
     /**
-     * <p>Market type of the Amazon EC2 instances used to create a cluster node.</p>
+     * <p>Market type of the EC2 instances used to create a cluster node.</p>
      */
     inline InstanceGroupConfig& WithMarket(MarketType&& value) { SetMarket(value); return *this;}
 
@@ -132,79 +133,79 @@ namespace Model
     inline InstanceGroupConfig& WithInstanceRole(InstanceRoleType&& value) { SetInstanceRole(value); return *this;}
 
     /**
-     * <p>Bid price for each Amazon EC2 instance in the instance group when launching
-     * nodes as Spot Instances, expressed in USD.</p>
+     * <p>Bid price for each EC2 instance in the instance group when launching nodes as
+     * Spot Instances, expressed in USD.</p>
      */
     inline const Aws::String& GetBidPrice() const{ return m_bidPrice; }
 
     /**
-     * <p>Bid price for each Amazon EC2 instance in the instance group when launching
-     * nodes as Spot Instances, expressed in USD.</p>
+     * <p>Bid price for each EC2 instance in the instance group when launching nodes as
+     * Spot Instances, expressed in USD.</p>
      */
     inline void SetBidPrice(const Aws::String& value) { m_bidPriceHasBeenSet = true; m_bidPrice = value; }
 
     /**
-     * <p>Bid price for each Amazon EC2 instance in the instance group when launching
-     * nodes as Spot Instances, expressed in USD.</p>
+     * <p>Bid price for each EC2 instance in the instance group when launching nodes as
+     * Spot Instances, expressed in USD.</p>
      */
     inline void SetBidPrice(Aws::String&& value) { m_bidPriceHasBeenSet = true; m_bidPrice = value; }
 
     /**
-     * <p>Bid price for each Amazon EC2 instance in the instance group when launching
-     * nodes as Spot Instances, expressed in USD.</p>
+     * <p>Bid price for each EC2 instance in the instance group when launching nodes as
+     * Spot Instances, expressed in USD.</p>
      */
     inline void SetBidPrice(const char* value) { m_bidPriceHasBeenSet = true; m_bidPrice.assign(value); }
 
     /**
-     * <p>Bid price for each Amazon EC2 instance in the instance group when launching
-     * nodes as Spot Instances, expressed in USD.</p>
+     * <p>Bid price for each EC2 instance in the instance group when launching nodes as
+     * Spot Instances, expressed in USD.</p>
      */
     inline InstanceGroupConfig& WithBidPrice(const Aws::String& value) { SetBidPrice(value); return *this;}
 
     /**
-     * <p>Bid price for each Amazon EC2 instance in the instance group when launching
-     * nodes as Spot Instances, expressed in USD.</p>
+     * <p>Bid price for each EC2 instance in the instance group when launching nodes as
+     * Spot Instances, expressed in USD.</p>
      */
     inline InstanceGroupConfig& WithBidPrice(Aws::String&& value) { SetBidPrice(value); return *this;}
 
     /**
-     * <p>Bid price for each Amazon EC2 instance in the instance group when launching
-     * nodes as Spot Instances, expressed in USD.</p>
+     * <p>Bid price for each EC2 instance in the instance group when launching nodes as
+     * Spot Instances, expressed in USD.</p>
      */
     inline InstanceGroupConfig& WithBidPrice(const char* value) { SetBidPrice(value); return *this;}
 
     /**
-     * <p>The Amazon EC2 instance type for all instances in the instance group.</p>
+     * <p>The EC2 instance type for all instances in the instance group.</p>
      */
     inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
 
     /**
-     * <p>The Amazon EC2 instance type for all instances in the instance group.</p>
+     * <p>The EC2 instance type for all instances in the instance group.</p>
      */
     inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
     /**
-     * <p>The Amazon EC2 instance type for all instances in the instance group.</p>
+     * <p>The EC2 instance type for all instances in the instance group.</p>
      */
     inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
     /**
-     * <p>The Amazon EC2 instance type for all instances in the instance group.</p>
+     * <p>The EC2 instance type for all instances in the instance group.</p>
      */
     inline void SetInstanceType(const char* value) { m_instanceTypeHasBeenSet = true; m_instanceType.assign(value); }
 
     /**
-     * <p>The Amazon EC2 instance type for all instances in the instance group.</p>
+     * <p>The EC2 instance type for all instances in the instance group.</p>
      */
     inline InstanceGroupConfig& WithInstanceType(const Aws::String& value) { SetInstanceType(value); return *this;}
 
     /**
-     * <p>The Amazon EC2 instance type for all instances in the instance group.</p>
+     * <p>The EC2 instance type for all instances in the instance group.</p>
      */
     inline InstanceGroupConfig& WithInstanceType(Aws::String&& value) { SetInstanceType(value); return *this;}
 
     /**
-     * <p>The Amazon EC2 instance type for all instances in the instance group.</p>
+     * <p>The EC2 instance type for all instances in the instance group.</p>
      */
     inline InstanceGroupConfig& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
 
@@ -273,34 +274,74 @@ namespace Model
     inline InstanceGroupConfig& AddConfigurations(Configuration&& value) { m_configurationsHasBeenSet = true; m_configurations.push_back(value); return *this; }
 
     /**
-     * <p>EBS configurations that will be attached to each Amazon EC2 instance in the
-     * instance group.</p>
+     * <p>EBS configurations that will be attached to each EC2 instance in the instance
+     * group.</p>
      */
     inline const EbsConfiguration& GetEbsConfiguration() const{ return m_ebsConfiguration; }
 
     /**
-     * <p>EBS configurations that will be attached to each Amazon EC2 instance in the
-     * instance group.</p>
+     * <p>EBS configurations that will be attached to each EC2 instance in the instance
+     * group.</p>
      */
     inline void SetEbsConfiguration(const EbsConfiguration& value) { m_ebsConfigurationHasBeenSet = true; m_ebsConfiguration = value; }
 
     /**
-     * <p>EBS configurations that will be attached to each Amazon EC2 instance in the
-     * instance group.</p>
+     * <p>EBS configurations that will be attached to each EC2 instance in the instance
+     * group.</p>
      */
     inline void SetEbsConfiguration(EbsConfiguration&& value) { m_ebsConfigurationHasBeenSet = true; m_ebsConfiguration = value; }
 
     /**
-     * <p>EBS configurations that will be attached to each Amazon EC2 instance in the
-     * instance group.</p>
+     * <p>EBS configurations that will be attached to each EC2 instance in the instance
+     * group.</p>
      */
     inline InstanceGroupConfig& WithEbsConfiguration(const EbsConfiguration& value) { SetEbsConfiguration(value); return *this;}
 
     /**
-     * <p>EBS configurations that will be attached to each Amazon EC2 instance in the
-     * instance group.</p>
+     * <p>EBS configurations that will be attached to each EC2 instance in the instance
+     * group.</p>
      */
     inline InstanceGroupConfig& WithEbsConfiguration(EbsConfiguration&& value) { SetEbsConfiguration(value); return *this;}
+
+    /**
+     * <p>An automatic scaling policy for a core instance group or task instance group
+     * in an Amazon EMR cluster. The automatic scaling policy defines how an instance
+     * group dynamically adds and terminates EC2 instances in response to the value of
+     * a CloudWatch metric. See <a>PutAutoScalingPolicy</a>.</p>
+     */
+    inline const AutoScalingPolicy& GetAutoScalingPolicy() const{ return m_autoScalingPolicy; }
+
+    /**
+     * <p>An automatic scaling policy for a core instance group or task instance group
+     * in an Amazon EMR cluster. The automatic scaling policy defines how an instance
+     * group dynamically adds and terminates EC2 instances in response to the value of
+     * a CloudWatch metric. See <a>PutAutoScalingPolicy</a>.</p>
+     */
+    inline void SetAutoScalingPolicy(const AutoScalingPolicy& value) { m_autoScalingPolicyHasBeenSet = true; m_autoScalingPolicy = value; }
+
+    /**
+     * <p>An automatic scaling policy for a core instance group or task instance group
+     * in an Amazon EMR cluster. The automatic scaling policy defines how an instance
+     * group dynamically adds and terminates EC2 instances in response to the value of
+     * a CloudWatch metric. See <a>PutAutoScalingPolicy</a>.</p>
+     */
+    inline void SetAutoScalingPolicy(AutoScalingPolicy&& value) { m_autoScalingPolicyHasBeenSet = true; m_autoScalingPolicy = value; }
+
+    /**
+     * <p>An automatic scaling policy for a core instance group or task instance group
+     * in an Amazon EMR cluster. The automatic scaling policy defines how an instance
+     * group dynamically adds and terminates EC2 instances in response to the value of
+     * a CloudWatch metric. See <a>PutAutoScalingPolicy</a>.</p>
+     */
+    inline InstanceGroupConfig& WithAutoScalingPolicy(const AutoScalingPolicy& value) { SetAutoScalingPolicy(value); return *this;}
+
+    /**
+     * <p>An automatic scaling policy for a core instance group or task instance group
+     * in an Amazon EMR cluster. The automatic scaling policy defines how an instance
+     * group dynamically adds and terminates EC2 instances in response to the value of
+     * a CloudWatch metric. See <a>PutAutoScalingPolicy</a>.</p>
+     */
+    inline InstanceGroupConfig& WithAutoScalingPolicy(AutoScalingPolicy&& value) { SetAutoScalingPolicy(value); return *this;}
 
   private:
     Aws::String m_name;
@@ -319,6 +360,8 @@ namespace Model
     bool m_configurationsHasBeenSet;
     EbsConfiguration m_ebsConfiguration;
     bool m_ebsConfigurationHasBeenSet;
+    AutoScalingPolicy m_autoScalingPolicy;
+    bool m_autoScalingPolicyHasBeenSet;
   };
 
 } // namespace Model

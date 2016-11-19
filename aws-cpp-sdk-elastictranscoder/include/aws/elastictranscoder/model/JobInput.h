@@ -16,6 +16,8 @@
 #include <aws/elastictranscoder/ElasticTranscoder_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/elastictranscoder/model/Encryption.h>
+#include <aws/elastictranscoder/model/TimeSpan.h>
+#include <aws/elastictranscoder/model/InputCaptions.h>
 #include <aws/elastictranscoder/model/DetectedProperties.h>
 
 namespace Aws
@@ -327,9 +329,9 @@ namespace Model
      * <p>Whether the input file is interlaced. If you want Elastic Transcoder to
      * automatically detect whether the input file is interlaced, specify
      * <code>auto</code>. If you want to specify whether the input file is interlaced,
-     * enter one of the following values:</p> <p><code>true</code>,
-     * <code>false</code></p> <p>If you specify a value other than <code>auto</code>,
-     * Elastic Transcoder disables automatic detection of interlacing.</p>
+     * enter one of the following values:</p> <p> <code>true</code>, <code>false</code>
+     * </p> <p>If you specify a value other than <code>auto</code>, Elastic Transcoder
+     * disables automatic detection of interlacing.</p>
      */
     inline const Aws::String& GetInterlaced() const{ return m_interlaced; }
 
@@ -337,9 +339,9 @@ namespace Model
      * <p>Whether the input file is interlaced. If you want Elastic Transcoder to
      * automatically detect whether the input file is interlaced, specify
      * <code>auto</code>. If you want to specify whether the input file is interlaced,
-     * enter one of the following values:</p> <p><code>true</code>,
-     * <code>false</code></p> <p>If you specify a value other than <code>auto</code>,
-     * Elastic Transcoder disables automatic detection of interlacing.</p>
+     * enter one of the following values:</p> <p> <code>true</code>, <code>false</code>
+     * </p> <p>If you specify a value other than <code>auto</code>, Elastic Transcoder
+     * disables automatic detection of interlacing.</p>
      */
     inline void SetInterlaced(const Aws::String& value) { m_interlacedHasBeenSet = true; m_interlaced = value; }
 
@@ -347,9 +349,9 @@ namespace Model
      * <p>Whether the input file is interlaced. If you want Elastic Transcoder to
      * automatically detect whether the input file is interlaced, specify
      * <code>auto</code>. If you want to specify whether the input file is interlaced,
-     * enter one of the following values:</p> <p><code>true</code>,
-     * <code>false</code></p> <p>If you specify a value other than <code>auto</code>,
-     * Elastic Transcoder disables automatic detection of interlacing.</p>
+     * enter one of the following values:</p> <p> <code>true</code>, <code>false</code>
+     * </p> <p>If you specify a value other than <code>auto</code>, Elastic Transcoder
+     * disables automatic detection of interlacing.</p>
      */
     inline void SetInterlaced(Aws::String&& value) { m_interlacedHasBeenSet = true; m_interlaced = value; }
 
@@ -357,9 +359,9 @@ namespace Model
      * <p>Whether the input file is interlaced. If you want Elastic Transcoder to
      * automatically detect whether the input file is interlaced, specify
      * <code>auto</code>. If you want to specify whether the input file is interlaced,
-     * enter one of the following values:</p> <p><code>true</code>,
-     * <code>false</code></p> <p>If you specify a value other than <code>auto</code>,
-     * Elastic Transcoder disables automatic detection of interlacing.</p>
+     * enter one of the following values:</p> <p> <code>true</code>, <code>false</code>
+     * </p> <p>If you specify a value other than <code>auto</code>, Elastic Transcoder
+     * disables automatic detection of interlacing.</p>
      */
     inline void SetInterlaced(const char* value) { m_interlacedHasBeenSet = true; m_interlaced.assign(value); }
 
@@ -367,9 +369,9 @@ namespace Model
      * <p>Whether the input file is interlaced. If you want Elastic Transcoder to
      * automatically detect whether the input file is interlaced, specify
      * <code>auto</code>. If you want to specify whether the input file is interlaced,
-     * enter one of the following values:</p> <p><code>true</code>,
-     * <code>false</code></p> <p>If you specify a value other than <code>auto</code>,
-     * Elastic Transcoder disables automatic detection of interlacing.</p>
+     * enter one of the following values:</p> <p> <code>true</code>, <code>false</code>
+     * </p> <p>If you specify a value other than <code>auto</code>, Elastic Transcoder
+     * disables automatic detection of interlacing.</p>
      */
     inline JobInput& WithInterlaced(const Aws::String& value) { SetInterlaced(value); return *this;}
 
@@ -377,9 +379,9 @@ namespace Model
      * <p>Whether the input file is interlaced. If you want Elastic Transcoder to
      * automatically detect whether the input file is interlaced, specify
      * <code>auto</code>. If you want to specify whether the input file is interlaced,
-     * enter one of the following values:</p> <p><code>true</code>,
-     * <code>false</code></p> <p>If you specify a value other than <code>auto</code>,
-     * Elastic Transcoder disables automatic detection of interlacing.</p>
+     * enter one of the following values:</p> <p> <code>true</code>, <code>false</code>
+     * </p> <p>If you specify a value other than <code>auto</code>, Elastic Transcoder
+     * disables automatic detection of interlacing.</p>
      */
     inline JobInput& WithInterlaced(Aws::String&& value) { SetInterlaced(value); return *this;}
 
@@ -387,9 +389,9 @@ namespace Model
      * <p>Whether the input file is interlaced. If you want Elastic Transcoder to
      * automatically detect whether the input file is interlaced, specify
      * <code>auto</code>. If you want to specify whether the input file is interlaced,
-     * enter one of the following values:</p> <p><code>true</code>,
-     * <code>false</code></p> <p>If you specify a value other than <code>auto</code>,
-     * Elastic Transcoder disables automatic detection of interlacing.</p>
+     * enter one of the following values:</p> <p> <code>true</code>, <code>false</code>
+     * </p> <p>If you specify a value other than <code>auto</code>, Elastic Transcoder
+     * disables automatic detection of interlacing.</p>
      */
     inline JobInput& WithInterlaced(const char* value) { SetInterlaced(value); return *this;}
 
@@ -487,37 +489,242 @@ namespace Model
     /**
      * <p>The encryption settings, if any, that are used for decrypting your input
      * files. If your input file is encrypted, you must specify the mode that Elastic
-     * Transcoder will use to decrypt your file.</p>
+     * Transcoder uses to decrypt your file.</p>
      */
     inline const Encryption& GetEncryption() const{ return m_encryption; }
 
     /**
      * <p>The encryption settings, if any, that are used for decrypting your input
      * files. If your input file is encrypted, you must specify the mode that Elastic
-     * Transcoder will use to decrypt your file.</p>
+     * Transcoder uses to decrypt your file.</p>
      */
     inline void SetEncryption(const Encryption& value) { m_encryptionHasBeenSet = true; m_encryption = value; }
 
     /**
      * <p>The encryption settings, if any, that are used for decrypting your input
      * files. If your input file is encrypted, you must specify the mode that Elastic
-     * Transcoder will use to decrypt your file.</p>
+     * Transcoder uses to decrypt your file.</p>
      */
     inline void SetEncryption(Encryption&& value) { m_encryptionHasBeenSet = true; m_encryption = value; }
 
     /**
      * <p>The encryption settings, if any, that are used for decrypting your input
      * files. If your input file is encrypted, you must specify the mode that Elastic
-     * Transcoder will use to decrypt your file.</p>
+     * Transcoder uses to decrypt your file.</p>
      */
     inline JobInput& WithEncryption(const Encryption& value) { SetEncryption(value); return *this;}
 
     /**
      * <p>The encryption settings, if any, that are used for decrypting your input
      * files. If your input file is encrypted, you must specify the mode that Elastic
-     * Transcoder will use to decrypt your file.</p>
+     * Transcoder uses to decrypt your file.</p>
      */
     inline JobInput& WithEncryption(Encryption&& value) { SetEncryption(value); return *this;}
+
+    /**
+     * <p>Settings for clipping an input. Each input can have different clip
+     * settings.</p>
+     */
+    inline const TimeSpan& GetTimeSpan() const{ return m_timeSpan; }
+
+    /**
+     * <p>Settings for clipping an input. Each input can have different clip
+     * settings.</p>
+     */
+    inline void SetTimeSpan(const TimeSpan& value) { m_timeSpanHasBeenSet = true; m_timeSpan = value; }
+
+    /**
+     * <p>Settings for clipping an input. Each input can have different clip
+     * settings.</p>
+     */
+    inline void SetTimeSpan(TimeSpan&& value) { m_timeSpanHasBeenSet = true; m_timeSpan = value; }
+
+    /**
+     * <p>Settings for clipping an input. Each input can have different clip
+     * settings.</p>
+     */
+    inline JobInput& WithTimeSpan(const TimeSpan& value) { SetTimeSpan(value); return *this;}
+
+    /**
+     * <p>Settings for clipping an input. Each input can have different clip
+     * settings.</p>
+     */
+    inline JobInput& WithTimeSpan(TimeSpan&& value) { SetTimeSpan(value); return *this;}
+
+    /**
+     * <p>You can configure Elastic Transcoder to transcode captions, or subtitles,
+     * from one format to another. All captions must be in UTF-8. Elastic Transcoder
+     * supports two types of captions:</p> <ul> <li> <p> <b>Embedded:</b> Embedded
+     * captions are included in the same file as the audio and video. Elastic
+     * Transcoder supports only one embedded caption per language, to a maximum of 300
+     * embedded captions per file.</p> <p>Valid input values include: <code>CEA-608
+     * (EIA-608</code>, first non-empty channel only), <code>CEA-708 (EIA-708</code>,
+     * first non-empty channel only), and <code>mov-text</code> </p> <p>Valid outputs
+     * include: <code>mov-text</code> </p> <p>Elastic Transcoder supports a maximum of
+     * one embedded format per output.</p> </li> <li> <p> <b>Sidecar:</b> Sidecar
+     * captions are kept in a separate metadata file from the audio and video data.
+     * Sidecar captions require a player that is capable of understanding the
+     * relationship between the video file and the sidecar file. Elastic Transcoder
+     * supports only one sidecar caption per language, to a maximum of 20 sidecar
+     * captions per file.</p> <p>Valid input values include: <code>dfxp</code> (first
+     * div element only), <code>ebu-tt</code>, <code>scc</code>, <code>smpt</code>,
+     * <code>srt</code>, <code>ttml</code> (first div element only), and
+     * <code>webvtt</code> </p> <p>Valid outputs include: <code>dfxp</code> (first div
+     * element only), <code>scc</code>, <code>srt</code>, and <code>webvtt</code>.</p>
+     * </li> </ul> <p>If you want ttml or smpte-tt compatible captions, specify dfxp as
+     * your output format.</p> <p>Elastic Transcoder does not support OCR (Optical
+     * Character Recognition), does not accept pictures as a valid input for captions,
+     * and is not available for audio-only transcoding. Elastic Transcoder does not
+     * preserve text formatting (for example, italics) during the transcoding
+     * process.</p> <p>To remove captions or leave the captions empty, set
+     * <code>Captions</code> to null. To pass through existing captions unchanged, set
+     * the <code>MergePolicy</code> to <code>MergeRetain</code>, and pass in a null
+     * <code>CaptionSources</code> array.</p> <p>For more information on embedded
+     * files, see the Subtitles Wikipedia page.</p> <p>For more information on sidecar
+     * files, see the Extensible Metadata Platform and Sidecar file Wikipedia
+     * pages.</p>
+     */
+    inline const InputCaptions& GetInputCaptions() const{ return m_inputCaptions; }
+
+    /**
+     * <p>You can configure Elastic Transcoder to transcode captions, or subtitles,
+     * from one format to another. All captions must be in UTF-8. Elastic Transcoder
+     * supports two types of captions:</p> <ul> <li> <p> <b>Embedded:</b> Embedded
+     * captions are included in the same file as the audio and video. Elastic
+     * Transcoder supports only one embedded caption per language, to a maximum of 300
+     * embedded captions per file.</p> <p>Valid input values include: <code>CEA-608
+     * (EIA-608</code>, first non-empty channel only), <code>CEA-708 (EIA-708</code>,
+     * first non-empty channel only), and <code>mov-text</code> </p> <p>Valid outputs
+     * include: <code>mov-text</code> </p> <p>Elastic Transcoder supports a maximum of
+     * one embedded format per output.</p> </li> <li> <p> <b>Sidecar:</b> Sidecar
+     * captions are kept in a separate metadata file from the audio and video data.
+     * Sidecar captions require a player that is capable of understanding the
+     * relationship between the video file and the sidecar file. Elastic Transcoder
+     * supports only one sidecar caption per language, to a maximum of 20 sidecar
+     * captions per file.</p> <p>Valid input values include: <code>dfxp</code> (first
+     * div element only), <code>ebu-tt</code>, <code>scc</code>, <code>smpt</code>,
+     * <code>srt</code>, <code>ttml</code> (first div element only), and
+     * <code>webvtt</code> </p> <p>Valid outputs include: <code>dfxp</code> (first div
+     * element only), <code>scc</code>, <code>srt</code>, and <code>webvtt</code>.</p>
+     * </li> </ul> <p>If you want ttml or smpte-tt compatible captions, specify dfxp as
+     * your output format.</p> <p>Elastic Transcoder does not support OCR (Optical
+     * Character Recognition), does not accept pictures as a valid input for captions,
+     * and is not available for audio-only transcoding. Elastic Transcoder does not
+     * preserve text formatting (for example, italics) during the transcoding
+     * process.</p> <p>To remove captions or leave the captions empty, set
+     * <code>Captions</code> to null. To pass through existing captions unchanged, set
+     * the <code>MergePolicy</code> to <code>MergeRetain</code>, and pass in a null
+     * <code>CaptionSources</code> array.</p> <p>For more information on embedded
+     * files, see the Subtitles Wikipedia page.</p> <p>For more information on sidecar
+     * files, see the Extensible Metadata Platform and Sidecar file Wikipedia
+     * pages.</p>
+     */
+    inline void SetInputCaptions(const InputCaptions& value) { m_inputCaptionsHasBeenSet = true; m_inputCaptions = value; }
+
+    /**
+     * <p>You can configure Elastic Transcoder to transcode captions, or subtitles,
+     * from one format to another. All captions must be in UTF-8. Elastic Transcoder
+     * supports two types of captions:</p> <ul> <li> <p> <b>Embedded:</b> Embedded
+     * captions are included in the same file as the audio and video. Elastic
+     * Transcoder supports only one embedded caption per language, to a maximum of 300
+     * embedded captions per file.</p> <p>Valid input values include: <code>CEA-608
+     * (EIA-608</code>, first non-empty channel only), <code>CEA-708 (EIA-708</code>,
+     * first non-empty channel only), and <code>mov-text</code> </p> <p>Valid outputs
+     * include: <code>mov-text</code> </p> <p>Elastic Transcoder supports a maximum of
+     * one embedded format per output.</p> </li> <li> <p> <b>Sidecar:</b> Sidecar
+     * captions are kept in a separate metadata file from the audio and video data.
+     * Sidecar captions require a player that is capable of understanding the
+     * relationship between the video file and the sidecar file. Elastic Transcoder
+     * supports only one sidecar caption per language, to a maximum of 20 sidecar
+     * captions per file.</p> <p>Valid input values include: <code>dfxp</code> (first
+     * div element only), <code>ebu-tt</code>, <code>scc</code>, <code>smpt</code>,
+     * <code>srt</code>, <code>ttml</code> (first div element only), and
+     * <code>webvtt</code> </p> <p>Valid outputs include: <code>dfxp</code> (first div
+     * element only), <code>scc</code>, <code>srt</code>, and <code>webvtt</code>.</p>
+     * </li> </ul> <p>If you want ttml or smpte-tt compatible captions, specify dfxp as
+     * your output format.</p> <p>Elastic Transcoder does not support OCR (Optical
+     * Character Recognition), does not accept pictures as a valid input for captions,
+     * and is not available for audio-only transcoding. Elastic Transcoder does not
+     * preserve text formatting (for example, italics) during the transcoding
+     * process.</p> <p>To remove captions or leave the captions empty, set
+     * <code>Captions</code> to null. To pass through existing captions unchanged, set
+     * the <code>MergePolicy</code> to <code>MergeRetain</code>, and pass in a null
+     * <code>CaptionSources</code> array.</p> <p>For more information on embedded
+     * files, see the Subtitles Wikipedia page.</p> <p>For more information on sidecar
+     * files, see the Extensible Metadata Platform and Sidecar file Wikipedia
+     * pages.</p>
+     */
+    inline void SetInputCaptions(InputCaptions&& value) { m_inputCaptionsHasBeenSet = true; m_inputCaptions = value; }
+
+    /**
+     * <p>You can configure Elastic Transcoder to transcode captions, or subtitles,
+     * from one format to another. All captions must be in UTF-8. Elastic Transcoder
+     * supports two types of captions:</p> <ul> <li> <p> <b>Embedded:</b> Embedded
+     * captions are included in the same file as the audio and video. Elastic
+     * Transcoder supports only one embedded caption per language, to a maximum of 300
+     * embedded captions per file.</p> <p>Valid input values include: <code>CEA-608
+     * (EIA-608</code>, first non-empty channel only), <code>CEA-708 (EIA-708</code>,
+     * first non-empty channel only), and <code>mov-text</code> </p> <p>Valid outputs
+     * include: <code>mov-text</code> </p> <p>Elastic Transcoder supports a maximum of
+     * one embedded format per output.</p> </li> <li> <p> <b>Sidecar:</b> Sidecar
+     * captions are kept in a separate metadata file from the audio and video data.
+     * Sidecar captions require a player that is capable of understanding the
+     * relationship between the video file and the sidecar file. Elastic Transcoder
+     * supports only one sidecar caption per language, to a maximum of 20 sidecar
+     * captions per file.</p> <p>Valid input values include: <code>dfxp</code> (first
+     * div element only), <code>ebu-tt</code>, <code>scc</code>, <code>smpt</code>,
+     * <code>srt</code>, <code>ttml</code> (first div element only), and
+     * <code>webvtt</code> </p> <p>Valid outputs include: <code>dfxp</code> (first div
+     * element only), <code>scc</code>, <code>srt</code>, and <code>webvtt</code>.</p>
+     * </li> </ul> <p>If you want ttml or smpte-tt compatible captions, specify dfxp as
+     * your output format.</p> <p>Elastic Transcoder does not support OCR (Optical
+     * Character Recognition), does not accept pictures as a valid input for captions,
+     * and is not available for audio-only transcoding. Elastic Transcoder does not
+     * preserve text formatting (for example, italics) during the transcoding
+     * process.</p> <p>To remove captions or leave the captions empty, set
+     * <code>Captions</code> to null. To pass through existing captions unchanged, set
+     * the <code>MergePolicy</code> to <code>MergeRetain</code>, and pass in a null
+     * <code>CaptionSources</code> array.</p> <p>For more information on embedded
+     * files, see the Subtitles Wikipedia page.</p> <p>For more information on sidecar
+     * files, see the Extensible Metadata Platform and Sidecar file Wikipedia
+     * pages.</p>
+     */
+    inline JobInput& WithInputCaptions(const InputCaptions& value) { SetInputCaptions(value); return *this;}
+
+    /**
+     * <p>You can configure Elastic Transcoder to transcode captions, or subtitles,
+     * from one format to another. All captions must be in UTF-8. Elastic Transcoder
+     * supports two types of captions:</p> <ul> <li> <p> <b>Embedded:</b> Embedded
+     * captions are included in the same file as the audio and video. Elastic
+     * Transcoder supports only one embedded caption per language, to a maximum of 300
+     * embedded captions per file.</p> <p>Valid input values include: <code>CEA-608
+     * (EIA-608</code>, first non-empty channel only), <code>CEA-708 (EIA-708</code>,
+     * first non-empty channel only), and <code>mov-text</code> </p> <p>Valid outputs
+     * include: <code>mov-text</code> </p> <p>Elastic Transcoder supports a maximum of
+     * one embedded format per output.</p> </li> <li> <p> <b>Sidecar:</b> Sidecar
+     * captions are kept in a separate metadata file from the audio and video data.
+     * Sidecar captions require a player that is capable of understanding the
+     * relationship between the video file and the sidecar file. Elastic Transcoder
+     * supports only one sidecar caption per language, to a maximum of 20 sidecar
+     * captions per file.</p> <p>Valid input values include: <code>dfxp</code> (first
+     * div element only), <code>ebu-tt</code>, <code>scc</code>, <code>smpt</code>,
+     * <code>srt</code>, <code>ttml</code> (first div element only), and
+     * <code>webvtt</code> </p> <p>Valid outputs include: <code>dfxp</code> (first div
+     * element only), <code>scc</code>, <code>srt</code>, and <code>webvtt</code>.</p>
+     * </li> </ul> <p>If you want ttml or smpte-tt compatible captions, specify dfxp as
+     * your output format.</p> <p>Elastic Transcoder does not support OCR (Optical
+     * Character Recognition), does not accept pictures as a valid input for captions,
+     * and is not available for audio-only transcoding. Elastic Transcoder does not
+     * preserve text formatting (for example, italics) during the transcoding
+     * process.</p> <p>To remove captions or leave the captions empty, set
+     * <code>Captions</code> to null. To pass through existing captions unchanged, set
+     * the <code>MergePolicy</code> to <code>MergeRetain</code>, and pass in a null
+     * <code>CaptionSources</code> array.</p> <p>For more information on embedded
+     * files, see the Subtitles Wikipedia page.</p> <p>For more information on sidecar
+     * files, see the Extensible Metadata Platform and Sidecar file Wikipedia
+     * pages.</p>
+     */
+    inline JobInput& WithInputCaptions(InputCaptions&& value) { SetInputCaptions(value); return *this;}
 
     /**
      * <p>The detected properties of the input file.</p>
@@ -559,6 +766,10 @@ namespace Model
     bool m_containerHasBeenSet;
     Encryption m_encryption;
     bool m_encryptionHasBeenSet;
+    TimeSpan m_timeSpan;
+    bool m_timeSpanHasBeenSet;
+    InputCaptions m_inputCaptions;
+    bool m_inputCaptionsHasBeenSet;
     DetectedProperties m_detectedProperties;
     bool m_detectedPropertiesHasBeenSet;
   };

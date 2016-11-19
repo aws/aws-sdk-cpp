@@ -240,6 +240,54 @@ namespace Model
      */
     inline RestApi& AddWarnings(const char* value) { m_warningsHasBeenSet = true; m_warnings.push_back(value); return *this; }
 
+    /**
+     * <p>The list of binary media types supported by the <a>RestApi</a>. By default,
+     * the <a>RestApi</a> supports only UTF-8-encoded text payloads.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetBinaryMediaTypes() const{ return m_binaryMediaTypes; }
+
+    /**
+     * <p>The list of binary media types supported by the <a>RestApi</a>. By default,
+     * the <a>RestApi</a> supports only UTF-8-encoded text payloads.</p>
+     */
+    inline void SetBinaryMediaTypes(const Aws::Vector<Aws::String>& value) { m_binaryMediaTypesHasBeenSet = true; m_binaryMediaTypes = value; }
+
+    /**
+     * <p>The list of binary media types supported by the <a>RestApi</a>. By default,
+     * the <a>RestApi</a> supports only UTF-8-encoded text payloads.</p>
+     */
+    inline void SetBinaryMediaTypes(Aws::Vector<Aws::String>&& value) { m_binaryMediaTypesHasBeenSet = true; m_binaryMediaTypes = value; }
+
+    /**
+     * <p>The list of binary media types supported by the <a>RestApi</a>. By default,
+     * the <a>RestApi</a> supports only UTF-8-encoded text payloads.</p>
+     */
+    inline RestApi& WithBinaryMediaTypes(const Aws::Vector<Aws::String>& value) { SetBinaryMediaTypes(value); return *this;}
+
+    /**
+     * <p>The list of binary media types supported by the <a>RestApi</a>. By default,
+     * the <a>RestApi</a> supports only UTF-8-encoded text payloads.</p>
+     */
+    inline RestApi& WithBinaryMediaTypes(Aws::Vector<Aws::String>&& value) { SetBinaryMediaTypes(value); return *this;}
+
+    /**
+     * <p>The list of binary media types supported by the <a>RestApi</a>. By default,
+     * the <a>RestApi</a> supports only UTF-8-encoded text payloads.</p>
+     */
+    inline RestApi& AddBinaryMediaTypes(const Aws::String& value) { m_binaryMediaTypesHasBeenSet = true; m_binaryMediaTypes.push_back(value); return *this; }
+
+    /**
+     * <p>The list of binary media types supported by the <a>RestApi</a>. By default,
+     * the <a>RestApi</a> supports only UTF-8-encoded text payloads.</p>
+     */
+    inline RestApi& AddBinaryMediaTypes(Aws::String&& value) { m_binaryMediaTypesHasBeenSet = true; m_binaryMediaTypes.push_back(value); return *this; }
+
+    /**
+     * <p>The list of binary media types supported by the <a>RestApi</a>. By default,
+     * the <a>RestApi</a> supports only UTF-8-encoded text payloads.</p>
+     */
+    inline RestApi& AddBinaryMediaTypes(const char* value) { m_binaryMediaTypesHasBeenSet = true; m_binaryMediaTypes.push_back(value); return *this; }
+
   private:
     Aws::String m_id;
     bool m_idHasBeenSet;
@@ -251,6 +299,8 @@ namespace Model
     bool m_createdDateHasBeenSet;
     Aws::Vector<Aws::String> m_warnings;
     bool m_warningsHasBeenSet;
+    Aws::Vector<Aws::String> m_binaryMediaTypes;
+    bool m_binaryMediaTypesHasBeenSet;
   };
 
 } // namespace Model

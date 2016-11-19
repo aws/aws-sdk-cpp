@@ -32,8 +32,7 @@ namespace Model
 {
 
   /**
-   * <p> The <code>DimensionFilter</code> data type is used to filter
-   * <a>ListMetrics</a> results. </p>
+   * <p>Represents filters for a dimension.</p>
    */
   class AWS_CLOUDWATCH_API DimensionFilter
   {
@@ -81,51 +80,37 @@ namespace Model
     inline DimensionFilter& WithName(const char* value) { SetName(value); return *this;}
 
     /**
-     * <p>The value of the dimension to be matched.</p> <note> <p>Specifying a
-     * <code>Name</code> without specifying a <code>Value</code> returns all values
-     * associated with that <code>Name</code>.</p> </note>
+     * <p>The value of the dimension to be matched.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
 
     /**
-     * <p>The value of the dimension to be matched.</p> <note> <p>Specifying a
-     * <code>Name</code> without specifying a <code>Value</code> returns all values
-     * associated with that <code>Name</code>.</p> </note>
+     * <p>The value of the dimension to be matched.</p>
      */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
-     * <p>The value of the dimension to be matched.</p> <note> <p>Specifying a
-     * <code>Name</code> without specifying a <code>Value</code> returns all values
-     * associated with that <code>Name</code>.</p> </note>
+     * <p>The value of the dimension to be matched.</p>
      */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
-     * <p>The value of the dimension to be matched.</p> <note> <p>Specifying a
-     * <code>Name</code> without specifying a <code>Value</code> returns all values
-     * associated with that <code>Name</code>.</p> </note>
+     * <p>The value of the dimension to be matched.</p>
      */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
 
     /**
-     * <p>The value of the dimension to be matched.</p> <note> <p>Specifying a
-     * <code>Name</code> without specifying a <code>Value</code> returns all values
-     * associated with that <code>Name</code>.</p> </note>
+     * <p>The value of the dimension to be matched.</p>
      */
     inline DimensionFilter& WithValue(const Aws::String& value) { SetValue(value); return *this;}
 
     /**
-     * <p>The value of the dimension to be matched.</p> <note> <p>Specifying a
-     * <code>Name</code> without specifying a <code>Value</code> returns all values
-     * associated with that <code>Name</code>.</p> </note>
+     * <p>The value of the dimension to be matched.</p>
      */
     inline DimensionFilter& WithValue(Aws::String&& value) { SetValue(value); return *this;}
 
     /**
-     * <p>The value of the dimension to be matched.</p> <note> <p>Specifying a
-     * <code>Name</code> without specifying a <code>Value</code> returns all values
-     * associated with that <code>Name</code>.</p> </note>
+     * <p>The value of the dimension to be matched.</p>
      */
     inline DimensionFilter& WithValue(const char* value) { SetValue(value); return *this;}
 

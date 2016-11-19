@@ -38,7 +38,8 @@ InstanceGroupConfig::InstanceGroupConfig() :
     m_instanceCount(0),
     m_instanceCountHasBeenSet(false),
     m_configurationsHasBeenSet(false),
-    m_ebsConfigurationHasBeenSet(false)
+    m_ebsConfigurationHasBeenSet(false),
+    m_autoScalingPolicyHasBeenSet(false)
 {
 }
 
@@ -53,7 +54,8 @@ InstanceGroupConfig::InstanceGroupConfig(const JsonValue& jsonValue) :
     m_instanceCount(0),
     m_instanceCountHasBeenSet(false),
     m_configurationsHasBeenSet(false),
-    m_ebsConfigurationHasBeenSet(false)
+    m_ebsConfigurationHasBeenSet(false),
+    m_autoScalingPolicyHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -119,6 +121,13 @@ InstanceGroupConfig& InstanceGroupConfig::operator =(const JsonValue& jsonValue)
     m_ebsConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AutoScalingPolicy"))
+  {
+    m_autoScalingPolicy = jsonValue.GetObject("AutoScalingPolicy");
+
+    m_autoScalingPolicyHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -174,6 +183,12 @@ JsonValue InstanceGroupConfig::Jsonize() const
   if(m_ebsConfigurationHasBeenSet)
   {
    payload.WithObject("EbsConfiguration", m_ebsConfiguration.Jsonize());
+
+  }
+
+  if(m_autoScalingPolicyHasBeenSet)
+  {
+   payload.WithObject("AutoScalingPolicy", m_autoScalingPolicy.Jsonize());
 
   }
 

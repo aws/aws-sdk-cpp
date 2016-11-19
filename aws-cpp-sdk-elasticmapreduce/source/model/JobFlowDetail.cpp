@@ -40,7 +40,10 @@ JobFlowDetail::JobFlowDetail() :
     m_visibleToAllUsers(false),
     m_visibleToAllUsersHasBeenSet(false),
     m_jobFlowRoleHasBeenSet(false),
-    m_serviceRoleHasBeenSet(false)
+    m_serviceRoleHasBeenSet(false),
+    m_autoScalingRoleHasBeenSet(false),
+    m_scaleDownBehavior(ScaleDownBehavior::NOT_SET),
+    m_scaleDownBehaviorHasBeenSet(false)
 {
 }
 
@@ -57,7 +60,10 @@ JobFlowDetail::JobFlowDetail(const JsonValue& jsonValue) :
     m_visibleToAllUsers(false),
     m_visibleToAllUsersHasBeenSet(false),
     m_jobFlowRoleHasBeenSet(false),
-    m_serviceRoleHasBeenSet(false)
+    m_serviceRoleHasBeenSet(false),
+    m_autoScalingRoleHasBeenSet(false),
+    m_scaleDownBehavior(ScaleDownBehavior::NOT_SET),
+    m_scaleDownBehaviorHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -157,6 +163,20 @@ JobFlowDetail& JobFlowDetail::operator =(const JsonValue& jsonValue)
     m_serviceRoleHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AutoScalingRole"))
+  {
+    m_autoScalingRole = jsonValue.GetString("AutoScalingRole");
+
+    m_autoScalingRoleHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ScaleDownBehavior"))
+  {
+    m_scaleDownBehavior = ScaleDownBehaviorMapper::GetScaleDownBehaviorForName(jsonValue.GetString("ScaleDownBehavior"));
+
+    m_scaleDownBehaviorHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -249,6 +269,17 @@ JsonValue JobFlowDetail::Jsonize() const
   {
    payload.WithString("ServiceRole", m_serviceRole);
 
+  }
+
+  if(m_autoScalingRoleHasBeenSet)
+  {
+   payload.WithString("AutoScalingRole", m_autoScalingRole);
+
+  }
+
+  if(m_scaleDownBehaviorHasBeenSet)
+  {
+   payload.WithString("ScaleDownBehavior", ScaleDownBehaviorMapper::GetNameForScaleDownBehavior(m_scaleDownBehavior));
   }
 
   return payload;

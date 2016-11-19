@@ -35,7 +35,8 @@ namespace Lambda
 namespace Model
 {
   /**
-   * <p>Contains a list of event sources (see )</p>
+   * <p>Contains a list of event sources (see
+   * <a>EventSourceMappingConfiguration</a>)</p>
    */
   class AWS_LAMBDA_API ListEventSourceMappingsResult
   {

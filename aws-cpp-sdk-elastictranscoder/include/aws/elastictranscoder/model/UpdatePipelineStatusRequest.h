@@ -69,51 +69,51 @@ namespace Model
     inline UpdatePipelineStatusRequest& WithId(const char* value) { SetId(value); return *this;}
 
     /**
-     * <p>The desired status of the pipeline:</p> <ul> <li> <code>Active</code>: The
-     * pipeline is processing jobs.</li> <li> <code>Paused</code>: The pipeline is not
-     * currently processing jobs.</li> </ul>
+     * <p>The desired status of the pipeline:</p> <ul> <li> <p> <code>Active</code>:
+     * The pipeline is processing jobs.</p> </li> <li> <p> <code>Paused</code>: The
+     * pipeline is not currently processing jobs.</p> </li> </ul>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The desired status of the pipeline:</p> <ul> <li> <code>Active</code>: The
-     * pipeline is processing jobs.</li> <li> <code>Paused</code>: The pipeline is not
-     * currently processing jobs.</li> </ul>
+     * <p>The desired status of the pipeline:</p> <ul> <li> <p> <code>Active</code>:
+     * The pipeline is processing jobs.</p> </li> <li> <p> <code>Paused</code>: The
+     * pipeline is not currently processing jobs.</p> </li> </ul>
      */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The desired status of the pipeline:</p> <ul> <li> <code>Active</code>: The
-     * pipeline is processing jobs.</li> <li> <code>Paused</code>: The pipeline is not
-     * currently processing jobs.</li> </ul>
+     * <p>The desired status of the pipeline:</p> <ul> <li> <p> <code>Active</code>:
+     * The pipeline is processing jobs.</p> </li> <li> <p> <code>Paused</code>: The
+     * pipeline is not currently processing jobs.</p> </li> </ul>
      */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The desired status of the pipeline:</p> <ul> <li> <code>Active</code>: The
-     * pipeline is processing jobs.</li> <li> <code>Paused</code>: The pipeline is not
-     * currently processing jobs.</li> </ul>
+     * <p>The desired status of the pipeline:</p> <ul> <li> <p> <code>Active</code>:
+     * The pipeline is processing jobs.</p> </li> <li> <p> <code>Paused</code>: The
+     * pipeline is not currently processing jobs.</p> </li> </ul>
      */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
 
     /**
-     * <p>The desired status of the pipeline:</p> <ul> <li> <code>Active</code>: The
-     * pipeline is processing jobs.</li> <li> <code>Paused</code>: The pipeline is not
-     * currently processing jobs.</li> </ul>
+     * <p>The desired status of the pipeline:</p> <ul> <li> <p> <code>Active</code>:
+     * The pipeline is processing jobs.</p> </li> <li> <p> <code>Paused</code>: The
+     * pipeline is not currently processing jobs.</p> </li> </ul>
      */
     inline UpdatePipelineStatusRequest& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The desired status of the pipeline:</p> <ul> <li> <code>Active</code>: The
-     * pipeline is processing jobs.</li> <li> <code>Paused</code>: The pipeline is not
-     * currently processing jobs.</li> </ul>
+     * <p>The desired status of the pipeline:</p> <ul> <li> <p> <code>Active</code>:
+     * The pipeline is processing jobs.</p> </li> <li> <p> <code>Paused</code>: The
+     * pipeline is not currently processing jobs.</p> </li> </ul>
      */
     inline UpdatePipelineStatusRequest& WithStatus(Aws::String&& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The desired status of the pipeline:</p> <ul> <li> <code>Active</code>: The
-     * pipeline is processing jobs.</li> <li> <code>Paused</code>: The pipeline is not
-     * currently processing jobs.</li> </ul>
+     * <p>The desired status of the pipeline:</p> <ul> <li> <p> <code>Active</code>:
+     * The pipeline is processing jobs.</p> </li> <li> <p> <code>Paused</code>: The
+     * pipeline is not currently processing jobs.</p> </li> </ul>
      */
     inline UpdatePipelineStatusRequest& WithStatus(const char* value) { SetStatus(value); return *this;}
 

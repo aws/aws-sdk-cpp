@@ -24,7 +24,8 @@ using namespace Aws::Utils;
 CreateRestApiRequest::CreateRestApiRequest() : 
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_cloneFromHasBeenSet(false)
+    m_cloneFromHasBeenSet(false),
+    m_binaryMediaTypesHasBeenSet(false)
 {
 }
 
@@ -47,6 +48,17 @@ Aws::String CreateRestApiRequest::SerializePayload() const
   if(m_cloneFromHasBeenSet)
   {
    payload.WithString("cloneFrom", m_cloneFrom);
+
+  }
+
+  if(m_binaryMediaTypesHasBeenSet)
+  {
+   Array<JsonValue> binaryMediaTypesJsonList(m_binaryMediaTypes.size());
+   for(unsigned binaryMediaTypesIndex = 0; binaryMediaTypesIndex < binaryMediaTypesJsonList.GetLength(); ++binaryMediaTypesIndex)
+   {
+     binaryMediaTypesJsonList[binaryMediaTypesIndex].AsString(m_binaryMediaTypes[binaryMediaTypesIndex]);
+   }
+   payload.WithArray("binaryMediaTypes", std::move(binaryMediaTypesJsonList));
 
   }
 

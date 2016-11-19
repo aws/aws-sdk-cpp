@@ -286,7 +286,8 @@ namespace Model
      * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-api-server-code">Amazon
      * GameLift Developer Guide</a>. If no default log path for a fleet is specified,
      * GameLift will automatically upload logs stored on each instance at
-     * <code>C:\game\logs</code>. Use the GameLift console to access stored logs. </p>
+     * <code>C:\game\logs</code> (for Windows) or <code>/local/game/logs</code> (for
+     * Linux). Use the GameLift console to access stored logs. </p>
      */
     inline const Aws::Vector<Aws::String>& GetLogPaths() const{ return m_logPaths; }
 
@@ -297,7 +298,8 @@ namespace Model
      * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-api-server-code">Amazon
      * GameLift Developer Guide</a>. If no default log path for a fleet is specified,
      * GameLift will automatically upload logs stored on each instance at
-     * <code>C:\game\logs</code>. Use the GameLift console to access stored logs. </p>
+     * <code>C:\game\logs</code> (for Windows) or <code>/local/game/logs</code> (for
+     * Linux). Use the GameLift console to access stored logs. </p>
      */
     inline void SetLogPaths(const Aws::Vector<Aws::String>& value) { m_logPathsHasBeenSet = true; m_logPaths = value; }
 
@@ -308,7 +310,8 @@ namespace Model
      * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-api-server-code">Amazon
      * GameLift Developer Guide</a>. If no default log path for a fleet is specified,
      * GameLift will automatically upload logs stored on each instance at
-     * <code>C:\game\logs</code>. Use the GameLift console to access stored logs. </p>
+     * <code>C:\game\logs</code> (for Windows) or <code>/local/game/logs</code> (for
+     * Linux). Use the GameLift console to access stored logs. </p>
      */
     inline void SetLogPaths(Aws::Vector<Aws::String>&& value) { m_logPathsHasBeenSet = true; m_logPaths = value; }
 
@@ -319,7 +322,8 @@ namespace Model
      * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-api-server-code">Amazon
      * GameLift Developer Guide</a>. If no default log path for a fleet is specified,
      * GameLift will automatically upload logs stored on each instance at
-     * <code>C:\game\logs</code>. Use the GameLift console to access stored logs. </p>
+     * <code>C:\game\logs</code> (for Windows) or <code>/local/game/logs</code> (for
+     * Linux). Use the GameLift console to access stored logs. </p>
      */
     inline CreateFleetRequest& WithLogPaths(const Aws::Vector<Aws::String>& value) { SetLogPaths(value); return *this;}
 
@@ -330,7 +334,8 @@ namespace Model
      * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-api-server-code">Amazon
      * GameLift Developer Guide</a>. If no default log path for a fleet is specified,
      * GameLift will automatically upload logs stored on each instance at
-     * <code>C:\game\logs</code>. Use the GameLift console to access stored logs. </p>
+     * <code>C:\game\logs</code> (for Windows) or <code>/local/game/logs</code> (for
+     * Linux). Use the GameLift console to access stored logs. </p>
      */
     inline CreateFleetRequest& WithLogPaths(Aws::Vector<Aws::String>&& value) { SetLogPaths(value); return *this;}
 
@@ -341,7 +346,8 @@ namespace Model
      * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-api-server-code">Amazon
      * GameLift Developer Guide</a>. If no default log path for a fleet is specified,
      * GameLift will automatically upload logs stored on each instance at
-     * <code>C:\game\logs</code>. Use the GameLift console to access stored logs. </p>
+     * <code>C:\game\logs</code> (for Windows) or <code>/local/game/logs</code> (for
+     * Linux). Use the GameLift console to access stored logs. </p>
      */
     inline CreateFleetRequest& AddLogPaths(const Aws::String& value) { m_logPathsHasBeenSet = true; m_logPaths.push_back(value); return *this; }
 
@@ -352,7 +358,8 @@ namespace Model
      * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-api-server-code">Amazon
      * GameLift Developer Guide</a>. If no default log path for a fleet is specified,
      * GameLift will automatically upload logs stored on each instance at
-     * <code>C:\game\logs</code>. Use the GameLift console to access stored logs. </p>
+     * <code>C:\game\logs</code> (for Windows) or <code>/local/game/logs</code> (for
+     * Linux). Use the GameLift console to access stored logs. </p>
      */
     inline CreateFleetRequest& AddLogPaths(Aws::String&& value) { m_logPathsHasBeenSet = true; m_logPaths.push_back(value); return *this; }
 
@@ -363,7 +370,8 @@ namespace Model
      * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-api-server-code">Amazon
      * GameLift Developer Guide</a>. If no default log path for a fleet is specified,
      * GameLift will automatically upload logs stored on each instance at
-     * <code>C:\game\logs</code>. Use the GameLift console to access stored logs. </p>
+     * <code>C:\game\logs</code> (for Windows) or <code>/local/game/logs</code> (for
+     * Linux). Use the GameLift console to access stored logs. </p>
      */
     inline CreateFleetRequest& AddLogPaths(const char* value) { m_logPathsHasBeenSet = true; m_logPaths.push_back(value); return *this; }
 

@@ -41,6 +41,7 @@
 #include <aws/gamelift/model/DescribeRuntimeConfigurationResult.h>
 #include <aws/gamelift/model/DescribeScalingPoliciesResult.h>
 #include <aws/gamelift/model/GetGameSessionLogUrlResult.h>
+#include <aws/gamelift/model/GetInstanceAccessResult.h>
 #include <aws/gamelift/model/ListAliasesResult.h>
 #include <aws/gamelift/model/ListBuildsResult.h>
 #include <aws/gamelift/model/ListFleetsResult.h>
@@ -126,6 +127,7 @@ namespace Model
         class DescribeRuntimeConfigurationRequest;
         class DescribeScalingPoliciesRequest;
         class GetGameSessionLogUrlRequest;
+        class GetInstanceAccessRequest;
         class ListAliasesRequest;
         class ListBuildsRequest;
         class ListFleetsRequest;
@@ -166,6 +168,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeRuntimeConfigurationResult, Aws::Client::AWSError<GameLiftErrors>> DescribeRuntimeConfigurationOutcome;
         typedef Aws::Utils::Outcome<DescribeScalingPoliciesResult, Aws::Client::AWSError<GameLiftErrors>> DescribeScalingPoliciesOutcome;
         typedef Aws::Utils::Outcome<GetGameSessionLogUrlResult, Aws::Client::AWSError<GameLiftErrors>> GetGameSessionLogUrlOutcome;
+        typedef Aws::Utils::Outcome<GetInstanceAccessResult, Aws::Client::AWSError<GameLiftErrors>> GetInstanceAccessOutcome;
         typedef Aws::Utils::Outcome<ListAliasesResult, Aws::Client::AWSError<GameLiftErrors>> ListAliasesOutcome;
         typedef Aws::Utils::Outcome<ListBuildsResult, Aws::Client::AWSError<GameLiftErrors>> ListBuildsOutcome;
         typedef Aws::Utils::Outcome<ListFleetsResult, Aws::Client::AWSError<GameLiftErrors>> ListFleetsOutcome;
@@ -206,6 +209,7 @@ namespace Model
         typedef std::future<DescribeRuntimeConfigurationOutcome> DescribeRuntimeConfigurationOutcomeCallable;
         typedef std::future<DescribeScalingPoliciesOutcome> DescribeScalingPoliciesOutcomeCallable;
         typedef std::future<GetGameSessionLogUrlOutcome> GetGameSessionLogUrlOutcomeCallable;
+        typedef std::future<GetInstanceAccessOutcome> GetInstanceAccessOutcomeCallable;
         typedef std::future<ListAliasesOutcome> ListAliasesOutcomeCallable;
         typedef std::future<ListBuildsOutcome> ListBuildsOutcomeCallable;
         typedef std::future<ListFleetsOutcome> ListFleetsOutcomeCallable;
@@ -249,6 +253,7 @@ namespace Model
     typedef std::function<void(const GameLiftClient*, const Model::DescribeRuntimeConfigurationRequest&, const Model::DescribeRuntimeConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeRuntimeConfigurationResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::DescribeScalingPoliciesRequest&, const Model::DescribeScalingPoliciesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeScalingPoliciesResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::GetGameSessionLogUrlRequest&, const Model::GetGameSessionLogUrlOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetGameSessionLogUrlResponseReceivedHandler;
+    typedef std::function<void(const GameLiftClient*, const Model::GetInstanceAccessRequest&, const Model::GetInstanceAccessOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetInstanceAccessResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::ListAliasesRequest&, const Model::ListAliasesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAliasesResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::ListBuildsRequest&, const Model::ListBuildsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBuildsResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::ListFleetsRequest&, const Model::ListFleetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFleetsResponseReceivedHandler;
@@ -317,14 +322,16 @@ namespace Model
    * <li> <p> <a>UpdateFleetCapacity</a> </p> </li> <li> <p>
    * <a>UpdateFleetPortSettings</a> </p> </li> <li> <p>
    * <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li> <li> <p>
-   * <a>DeleteFleet</a> </p> </li> </ul> </li> <li> <p> <b>Manage fleet aliases:</b>
-   * </p> <ul> <li> <p> <a>ListAliases</a> </p> </li> <li> <p> <a>CreateAlias</a>
-   * </p> </li> <li> <p> <a>DescribeAlias</a> </p> </li> <li> <p> <a>UpdateAlias</a>
-   * </p> </li> <li> <p> <a>DeleteAlias</a> </p> </li> <li> <p> <a>ResolveAlias</a>
-   * </p> </li> </ul> </li> <li> <p> <b>Manage autoscaling:</b> </p> <ul> <li> <p>
-   * <a>PutScalingPolicy</a> </p> </li> <li> <p> <a>DescribeScalingPolicies</a> </p>
-   * </li> <li> <p> <a>DeleteScalingPolicy</a> </p> </li> </ul> </li> </ul> <p>To
-   * view changes to the API, see the GameLift <a
+   * <a>DeleteFleet</a> </p> </li> </ul> </li> <li> <p> <b>Manage your instances:</b>
+   * </p> <ul> <li> <p> <a>DescribeInstances</a> </p> </li> <li> <p>
+   * <a>GetInstanceAccess</a> </p> </li> </ul> </li> <li> <p> <b>Manage fleet
+   * aliases:</b> </p> <ul> <li> <p> <a>ListAliases</a> </p> </li> <li> <p>
+   * <a>CreateAlias</a> </p> </li> <li> <p> <a>DescribeAlias</a> </p> </li> <li> <p>
+   * <a>UpdateAlias</a> </p> </li> <li> <p> <a>DeleteAlias</a> </p> </li> <li> <p>
+   * <a>ResolveAlias</a> </p> </li> </ul> </li> <li> <p> <b>Manage autoscaling:</b>
+   * </p> <ul> <li> <p> <a>PutScalingPolicy</a> </p> </li> <li> <p>
+   * <a>DescribeScalingPolicies</a> </p> </li> <li> <p> <a>DeleteScalingPolicy</a>
+   * </p> </li> </ul> </li> </ul> <p>To view changes to the API, see the GameLift <a
    * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/doc-history.html">Document
    * History</a> page.</p>
    */
@@ -590,31 +597,35 @@ namespace Model
 
         /**
          * <p>Creates a multiplayer game session for players. This action creates a game
-         * session record and assigns the new session to an instance in the specified
-         * fleet, which initializes a new server process to host the game session. A fleet
-         * must be in an <code>ACTIVE</code> status before a game session can be created in
-         * it.</p> <p>To create a game session, specify either a fleet ID or an alias ID
-         * and indicate the maximum number of players the game session allows. You can also
-         * provide a name and a set of properties for your game (optional). If successful,
-         * a <a>GameSession</a> object is returned containing session properties, including
-         * an IP address. By default, newly created game sessions are set to accept adding
-         * any new players to the game session. Use <a>UpdateGameSession</a> to change the
-         * creation policy.</p>
+         * session record and assigns an available server process in the specified fleet to
+         * host the game session. A fleet must be in an <code>ACTIVE</code> status before a
+         * game session can be created in it.</p> <p>To create a game session, specify
+         * either fleet ID or alias ID, and indicate a maximum number of players to allow
+         * in the game session. You can also provide a name and game-specific properties
+         * for this game session. If successful, a <a>GameSession</a> object is returned
+         * containing session properties, including an IP address. By default, newly
+         * created game sessions allow new players to join. Use <a>UpdateGameSession</a> to
+         * change the game sessions player session creation policy.</p> <p>When creating a
+         * game session on a fleet with a resource limit creation policy, the request
+         * should include a creator ID. If none is provided, GameLift does not evaluate the
+         * fleet's resource limit creation policy.</p>
          */
         virtual Model::CreateGameSessionOutcome CreateGameSession(const Model::CreateGameSessionRequest& request) const;
 
         /**
          * <p>Creates a multiplayer game session for players. This action creates a game
-         * session record and assigns the new session to an instance in the specified
-         * fleet, which initializes a new server process to host the game session. A fleet
-         * must be in an <code>ACTIVE</code> status before a game session can be created in
-         * it.</p> <p>To create a game session, specify either a fleet ID or an alias ID
-         * and indicate the maximum number of players the game session allows. You can also
-         * provide a name and a set of properties for your game (optional). If successful,
-         * a <a>GameSession</a> object is returned containing session properties, including
-         * an IP address. By default, newly created game sessions are set to accept adding
-         * any new players to the game session. Use <a>UpdateGameSession</a> to change the
-         * creation policy.</p>
+         * session record and assigns an available server process in the specified fleet to
+         * host the game session. A fleet must be in an <code>ACTIVE</code> status before a
+         * game session can be created in it.</p> <p>To create a game session, specify
+         * either fleet ID or alias ID, and indicate a maximum number of players to allow
+         * in the game session. You can also provide a name and game-specific properties
+         * for this game session. If successful, a <a>GameSession</a> object is returned
+         * containing session properties, including an IP address. By default, newly
+         * created game sessions allow new players to join. Use <a>UpdateGameSession</a> to
+         * change the game sessions player session creation policy.</p> <p>When creating a
+         * game session on a fleet with a resource limit creation policy, the request
+         * should include a creator ID. If none is provided, GameLift does not evaluate the
+         * fleet's resource limit creation policy.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -622,16 +633,18 @@ namespace Model
 
         /**
          * <p>Creates a multiplayer game session for players. This action creates a game
-         * session record and assigns the new session to an instance in the specified
-         * fleet, which initializes a new server process to host the game session. A fleet
-         * must be in an <code>ACTIVE</code> status before a game session can be created in
-         * it.</p> <p>To create a game session, specify either a fleet ID or an alias ID
-         * and indicate the maximum number of players the game session allows. You can also
-         * provide a name and a set of properties for your game (optional). If successful,
-         * a <a>GameSession</a> object is returned containing session properties, including
-         * an IP address. By default, newly created game sessions are set to accept adding
-         * any new players to the game session. Use <a>UpdateGameSession</a> to change the
-         * creation policy.</p>
+         * session record and assigns an available server process in the specified fleet to
+         * host the game session. A fleet must be in an <code>ACTIVE</code> status before a
+         * game session can be created in it.</p> <p>To create a game session, specify
+         * either fleet ID or alias ID, and indicate a maximum number of players to allow
+         * in the game session. You can also provide a name and game-specific properties
+         * for this game session. If successful, a <a>GameSession</a> object is returned
+         * containing session properties, including an IP address. By default, newly
+         * created game sessions allow new players to join. Use <a>UpdateGameSession</a> to
+         * change the game sessions player session creation policy.</p> <p>When creating a
+         * game session on a fleet with a resource limit creation policy, the request
+         * should include a creator ID. If none is provided, GameLift does not evaluate the
+         * fleet's resource limit creation policy.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1191,18 +1204,20 @@ namespace Model
         virtual void DescribeGameSessionsAsync(const Model::DescribeGameSessionsRequest& request, const DescribeGameSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves information about instances in a fleet.</p> <p>To get information
-         * on a specific instance, specify both a fleet ID and instance ID. To get
-         * information for all instances in a fleet, specify a fleet ID only. Use the
+         * <p>Retrieves information about a fleet's instances, including instance IDs. Use
+         * this action to get details on all instances in the fleet or get details on one
+         * specific instance.</p> <p>To get a specific instance, specify fleet ID and
+         * instance ID. To get all instances in a fleet, specify a fleet ID only. Use the
          * pagination parameters to retrieve results as a set of sequential pages. If
          * successful, an <a>Instance</a> object is returned for each result.</p>
          */
         virtual Model::DescribeInstancesOutcome DescribeInstances(const Model::DescribeInstancesRequest& request) const;
 
         /**
-         * <p>Retrieves information about instances in a fleet.</p> <p>To get information
-         * on a specific instance, specify both a fleet ID and instance ID. To get
-         * information for all instances in a fleet, specify a fleet ID only. Use the
+         * <p>Retrieves information about a fleet's instances, including instance IDs. Use
+         * this action to get details on all instances in the fleet or get details on one
+         * specific instance.</p> <p>To get a specific instance, specify fleet ID and
+         * instance ID. To get all instances in a fleet, specify a fleet ID only. Use the
          * pagination parameters to retrieve results as a set of sequential pages. If
          * successful, an <a>Instance</a> object is returned for each result.</p>
          *
@@ -1211,9 +1226,10 @@ namespace Model
         virtual Model::DescribeInstancesOutcomeCallable DescribeInstancesCallable(const Model::DescribeInstancesRequest& request) const;
 
         /**
-         * <p>Retrieves information about instances in a fleet.</p> <p>To get information
-         * on a specific instance, specify both a fleet ID and instance ID. To get
-         * information for all instances in a fleet, specify a fleet ID only. Use the
+         * <p>Retrieves information about a fleet's instances, including instance IDs. Use
+         * this action to get details on all instances in the fleet or get details on one
+         * specific instance.</p> <p>To get a specific instance, specify fleet ID and
+         * instance ID. To get all instances in a fleet, specify a fleet ID only. Use the
          * pagination parameters to retrieve results as a set of sequential pages. If
          * successful, an <a>Instance</a> object is returned for each result.</p>
          *
@@ -1362,6 +1378,67 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetGameSessionLogUrlAsync(const Model::GetGameSessionLogUrlRequest& request, const GetGameSessionLogUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Requests remote access to a fleet instance. Remote access is useful for
+         * debugging, gathering benchmarking data, or watching activity in real time. </p>
+         * <p>Access requires credentials that match the operating system of the instance.
+         * For a Windows instance, GameLift returns a username and password as strings for
+         * use with a Windows Remote Desktop client. For a Linux instance, GameLift returns
+         * a username and RSA private key, also as strings, for use with an SSH client. The
+         * private key must be saved in the proper format to a .pem file before using. If
+         * you're making this request using the AWS CLI, saving the secret can be handled
+         * as part of the GetInstanceAccess request (see the example later in this topic).
+         * For more information on remote access, see <a
+         * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-remote-access.html">Remotely
+         * Accessing an Instance</a>.</p> <p>To request access to a specific instance,
+         * specify the IDs of the instance and the fleet it belongs to. If successful, an
+         * <a>InstanceAccess</a> object is returned containing the instance's IP address
+         * and a set of credentials.</p>
+         */
+        virtual Model::GetInstanceAccessOutcome GetInstanceAccess(const Model::GetInstanceAccessRequest& request) const;
+
+        /**
+         * <p>Requests remote access to a fleet instance. Remote access is useful for
+         * debugging, gathering benchmarking data, or watching activity in real time. </p>
+         * <p>Access requires credentials that match the operating system of the instance.
+         * For a Windows instance, GameLift returns a username and password as strings for
+         * use with a Windows Remote Desktop client. For a Linux instance, GameLift returns
+         * a username and RSA private key, also as strings, for use with an SSH client. The
+         * private key must be saved in the proper format to a .pem file before using. If
+         * you're making this request using the AWS CLI, saving the secret can be handled
+         * as part of the GetInstanceAccess request (see the example later in this topic).
+         * For more information on remote access, see <a
+         * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-remote-access.html">Remotely
+         * Accessing an Instance</a>.</p> <p>To request access to a specific instance,
+         * specify the IDs of the instance and the fleet it belongs to. If successful, an
+         * <a>InstanceAccess</a> object is returned containing the instance's IP address
+         * and a set of credentials.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetInstanceAccessOutcomeCallable GetInstanceAccessCallable(const Model::GetInstanceAccessRequest& request) const;
+
+        /**
+         * <p>Requests remote access to a fleet instance. Remote access is useful for
+         * debugging, gathering benchmarking data, or watching activity in real time. </p>
+         * <p>Access requires credentials that match the operating system of the instance.
+         * For a Windows instance, GameLift returns a username and password as strings for
+         * use with a Windows Remote Desktop client. For a Linux instance, GameLift returns
+         * a username and RSA private key, also as strings, for use with an SSH client. The
+         * private key must be saved in the proper format to a .pem file before using. If
+         * you're making this request using the AWS CLI, saving the secret can be handled
+         * as part of the GetInstanceAccess request (see the example later in this topic).
+         * For more information on remote access, see <a
+         * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-remote-access.html">Remotely
+         * Accessing an Instance</a>.</p> <p>To request access to a specific instance,
+         * specify the IDs of the instance and the fleet it belongs to. If successful, an
+         * <a>InstanceAccess</a> object is returned containing the instance's IP address
+         * and a set of credentials.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetInstanceAccessAsync(const Model::GetInstanceAccessRequest& request, const GetInstanceAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves a collection of alias records for this AWS account. You can filter
@@ -1524,7 +1601,7 @@ namespace Model
          * <p>Retrieves a fresh set of upload credentials and the assigned Amazon S3
          * storage location for a specific build. Valid credentials are required to upload
          * your game build files to Amazon S3.</p> <important> <p>Call this action only if
-         * you need credentials for a build created with <code> <a>CreateBuild</a> </code>.
+         * you need credentials for a build created with<code> <a>CreateBuild</a> </code>.
          * This is a rare situation; in most cases, builds are created using the CLI
          * command <code>upload-build</code>, which creates a build record and also uploads
          * build files. </p> </important> <p>Upload credentials are returned when you
@@ -1539,7 +1616,7 @@ namespace Model
          * <p>Retrieves a fresh set of upload credentials and the assigned Amazon S3
          * storage location for a specific build. Valid credentials are required to upload
          * your game build files to Amazon S3.</p> <important> <p>Call this action only if
-         * you need credentials for a build created with <code> <a>CreateBuild</a> </code>.
+         * you need credentials for a build created with<code> <a>CreateBuild</a> </code>.
          * This is a rare situation; in most cases, builds are created using the CLI
          * command <code>upload-build</code>, which creates a build record and also uploads
          * build files. </p> </important> <p>Upload credentials are returned when you
@@ -1556,7 +1633,7 @@ namespace Model
          * <p>Retrieves a fresh set of upload credentials and the assigned Amazon S3
          * storage location for a specific build. Valid credentials are required to upload
          * your game build files to Amazon S3.</p> <important> <p>Call this action only if
-         * you need credentials for a build created with <code> <a>CreateBuild</a> </code>.
+         * you need credentials for a build created with<code> <a>CreateBuild</a> </code>.
          * This is a rare situation; in most cases, builds are created using the CLI
          * command <code>upload-build</code>, which creates a build record and also uploads
          * build files. </p> </important> <p>Upload credentials are returned when you
@@ -1998,6 +2075,7 @@ namespace Model
         void DescribeRuntimeConfigurationAsyncHelper(const Model::DescribeRuntimeConfigurationRequest& request, const DescribeRuntimeConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeScalingPoliciesAsyncHelper(const Model::DescribeScalingPoliciesRequest& request, const DescribeScalingPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetGameSessionLogUrlAsyncHelper(const Model::GetGameSessionLogUrlRequest& request, const GetGameSessionLogUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetInstanceAccessAsyncHelper(const Model::GetInstanceAccessRequest& request, const GetInstanceAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListAliasesAsyncHelper(const Model::ListAliasesRequest& request, const ListAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListBuildsAsyncHelper(const Model::ListBuildsRequest& request, const ListBuildsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListFleetsAsyncHelper(const Model::ListFleetsRequest& request, const ListFleetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

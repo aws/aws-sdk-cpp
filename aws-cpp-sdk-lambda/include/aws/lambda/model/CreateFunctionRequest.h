@@ -19,6 +19,7 @@
 #include <aws/lambda/model/Runtime.h>
 #include <aws/lambda/model/FunctionCode.h>
 #include <aws/lambda/model/VpcConfig.h>
+#include <aws/lambda/model/Environment.h>
 
 namespace Aws
 {
@@ -436,6 +437,70 @@ namespace Model
      */
     inline CreateFunctionRequest& WithVpcConfig(VpcConfig&& value) { SetVpcConfig(value); return *this;}
 
+    
+    inline const Environment& GetEnvironment() const{ return m_environment; }
+
+    
+    inline void SetEnvironment(const Environment& value) { m_environmentHasBeenSet = true; m_environment = value; }
+
+    
+    inline void SetEnvironment(Environment&& value) { m_environmentHasBeenSet = true; m_environment = value; }
+
+    
+    inline CreateFunctionRequest& WithEnvironment(const Environment& value) { SetEnvironment(value); return *this;}
+
+    
+    inline CreateFunctionRequest& WithEnvironment(Environment&& value) { SetEnvironment(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt your function's
+     * environment variables. If not provided, AWS Lambda will use a default service
+     * key.</p>
+     */
+    inline const Aws::String& GetKMSKeyArn() const{ return m_kMSKeyArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt your function's
+     * environment variables. If not provided, AWS Lambda will use a default service
+     * key.</p>
+     */
+    inline void SetKMSKeyArn(const Aws::String& value) { m_kMSKeyArnHasBeenSet = true; m_kMSKeyArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt your function's
+     * environment variables. If not provided, AWS Lambda will use a default service
+     * key.</p>
+     */
+    inline void SetKMSKeyArn(Aws::String&& value) { m_kMSKeyArnHasBeenSet = true; m_kMSKeyArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt your function's
+     * environment variables. If not provided, AWS Lambda will use a default service
+     * key.</p>
+     */
+    inline void SetKMSKeyArn(const char* value) { m_kMSKeyArnHasBeenSet = true; m_kMSKeyArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt your function's
+     * environment variables. If not provided, AWS Lambda will use a default service
+     * key.</p>
+     */
+    inline CreateFunctionRequest& WithKMSKeyArn(const Aws::String& value) { SetKMSKeyArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt your function's
+     * environment variables. If not provided, AWS Lambda will use a default service
+     * key.</p>
+     */
+    inline CreateFunctionRequest& WithKMSKeyArn(Aws::String&& value) { SetKMSKeyArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt your function's
+     * environment variables. If not provided, AWS Lambda will use a default service
+     * key.</p>
+     */
+    inline CreateFunctionRequest& WithKMSKeyArn(const char* value) { SetKMSKeyArn(value); return *this;}
+
   private:
     Aws::String m_functionName;
     bool m_functionNameHasBeenSet;
@@ -457,6 +522,10 @@ namespace Model
     bool m_publishHasBeenSet;
     VpcConfig m_vpcConfig;
     bool m_vpcConfigHasBeenSet;
+    Environment m_environment;
+    bool m_environmentHasBeenSet;
+    Aws::String m_kMSKeyArn;
+    bool m_kMSKeyArnHasBeenSet;
   };
 
 } // namespace Model

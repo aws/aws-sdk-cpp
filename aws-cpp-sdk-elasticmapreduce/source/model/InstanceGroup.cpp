@@ -45,7 +45,8 @@ InstanceGroup::InstanceGroup() :
     m_ebsBlockDevicesHasBeenSet(false),
     m_ebsOptimized(false),
     m_ebsOptimizedHasBeenSet(false),
-    m_shrinkPolicyHasBeenSet(false)
+    m_shrinkPolicyHasBeenSet(false),
+    m_autoScalingPolicyHasBeenSet(false)
 {
 }
 
@@ -67,7 +68,8 @@ InstanceGroup::InstanceGroup(const JsonValue& jsonValue) :
     m_ebsBlockDevicesHasBeenSet(false),
     m_ebsOptimized(false),
     m_ebsOptimizedHasBeenSet(false),
-    m_shrinkPolicyHasBeenSet(false)
+    m_shrinkPolicyHasBeenSet(false),
+    m_autoScalingPolicyHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -171,6 +173,13 @@ InstanceGroup& InstanceGroup::operator =(const JsonValue& jsonValue)
     m_shrinkPolicyHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AutoScalingPolicy"))
+  {
+    m_autoScalingPolicy = jsonValue.GetObject("AutoScalingPolicy");
+
+    m_autoScalingPolicyHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -261,6 +270,12 @@ JsonValue InstanceGroup::Jsonize() const
   if(m_shrinkPolicyHasBeenSet)
   {
    payload.WithObject("ShrinkPolicy", m_shrinkPolicy.Jsonize());
+
+  }
+
+  if(m_autoScalingPolicyHasBeenSet)
+  {
+   payload.WithObject("AutoScalingPolicy", m_autoScalingPolicy.Jsonize());
 
   }
 

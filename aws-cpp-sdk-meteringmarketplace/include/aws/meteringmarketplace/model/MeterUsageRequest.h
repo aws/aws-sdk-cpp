@@ -86,72 +86,72 @@ namespace Model
 
     /**
      * <p>Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions
-     * of the timestamp will be ignored. </p>
+     * of the timestamp will be ignored.</p>
      */
     inline const Aws::Utils::DateTime& GetTimestamp() const{ return m_timestamp; }
 
     /**
      * <p>Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions
-     * of the timestamp will be ignored. </p>
+     * of the timestamp will be ignored.</p>
      */
     inline void SetTimestamp(const Aws::Utils::DateTime& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
 
     /**
      * <p>Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions
-     * of the timestamp will be ignored. </p>
+     * of the timestamp will be ignored.</p>
      */
     inline void SetTimestamp(Aws::Utils::DateTime&& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
 
     /**
      * <p>Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions
-     * of the timestamp will be ignored. </p>
+     * of the timestamp will be ignored.</p>
      */
     inline MeterUsageRequest& WithTimestamp(const Aws::Utils::DateTime& value) { SetTimestamp(value); return *this;}
 
     /**
      * <p>Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions
-     * of the timestamp will be ignored. </p>
+     * of the timestamp will be ignored.</p>
      */
     inline MeterUsageRequest& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(value); return *this;}
 
     /**
-     * <p>It will be one of the 'fcp dimension name' provided during the publishing of
+     * <p>It will be one of the fcp dimension name provided during the publishing of
      * the product.</p>
      */
     inline const Aws::String& GetUsageDimension() const{ return m_usageDimension; }
 
     /**
-     * <p>It will be one of the 'fcp dimension name' provided during the publishing of
+     * <p>It will be one of the fcp dimension name provided during the publishing of
      * the product.</p>
      */
     inline void SetUsageDimension(const Aws::String& value) { m_usageDimensionHasBeenSet = true; m_usageDimension = value; }
 
     /**
-     * <p>It will be one of the 'fcp dimension name' provided during the publishing of
+     * <p>It will be one of the fcp dimension name provided during the publishing of
      * the product.</p>
      */
     inline void SetUsageDimension(Aws::String&& value) { m_usageDimensionHasBeenSet = true; m_usageDimension = value; }
 
     /**
-     * <p>It will be one of the 'fcp dimension name' provided during the publishing of
+     * <p>It will be one of the fcp dimension name provided during the publishing of
      * the product.</p>
      */
     inline void SetUsageDimension(const char* value) { m_usageDimensionHasBeenSet = true; m_usageDimension.assign(value); }
 
     /**
-     * <p>It will be one of the 'fcp dimension name' provided during the publishing of
+     * <p>It will be one of the fcp dimension name provided during the publishing of
      * the product.</p>
      */
     inline MeterUsageRequest& WithUsageDimension(const Aws::String& value) { SetUsageDimension(value); return *this;}
 
     /**
-     * <p>It will be one of the 'fcp dimension name' provided during the publishing of
+     * <p>It will be one of the fcp dimension name provided during the publishing of
      * the product.</p>
      */
     inline MeterUsageRequest& WithUsageDimension(Aws::String&& value) { SetUsageDimension(value); return *this;}
 
     /**
-     * <p>It will be one of the 'fcp dimension name' provided during the publishing of
+     * <p>It will be one of the fcp dimension name provided during the publishing of
      * the product.</p>
      */
     inline MeterUsageRequest& WithUsageDimension(const char* value) { SetUsageDimension(value); return *this;}
@@ -174,21 +174,21 @@ namespace Model
     /**
      * <p>Checks whether you have the permissions required for the action, but does not
      * make the request. If you have the permissions, the request returns
-     * DryRunOperation; otherwise, it returns UnauthorizedException. </p>
+     * DryRunOperation; otherwise, it returns UnauthorizedException.</p>
      */
     inline bool GetDryRun() const{ return m_dryRun; }
 
     /**
      * <p>Checks whether you have the permissions required for the action, but does not
      * make the request. If you have the permissions, the request returns
-     * DryRunOperation; otherwise, it returns UnauthorizedException. </p>
+     * DryRunOperation; otherwise, it returns UnauthorizedException.</p>
      */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
 
     /**
      * <p>Checks whether you have the permissions required for the action, but does not
      * make the request. If you have the permissions, the request returns
-     * DryRunOperation; otherwise, it returns UnauthorizedException. </p>
+     * DryRunOperation; otherwise, it returns UnauthorizedException.</p>
      */
     inline MeterUsageRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 

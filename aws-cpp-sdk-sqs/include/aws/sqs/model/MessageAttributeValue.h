@@ -36,12 +36,10 @@ namespace Model
   /**
    * <p>The user-specified message attribute value. For string data types, the value
    * attribute has the same restrictions on the content as the message body. For more
-   * information, see <a
-   * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SendMessage.html">SendMessage</a>.</p>
-   * <p>Name, type, and value must not be empty or null. In addition, the message
-   * body should not be empty or null. All parts of the message attribute, including
-   * name, type, and value, are included in the message size restriction, which is
-   * currently 256 KB (262,144 bytes).</p>
+   * information, see <a>SendMessage</a>.</p> <p>Name, type, and value must not be
+   * empty or null. In addition, the message body should not be empty or null. All
+   * parts of the message attribute, including name, type, and value, are included in
+   * the message size restriction, which is currently 256 KB (262,144 bytes).</p>
    */
   class AWS_SQS_API MessageAttributeValue
   {
@@ -55,50 +53,50 @@ namespace Model
 
     /**
      * <p>Strings are Unicode with UTF8 binary encoding. For a list of code values, see
-     * <a
-     * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.</p>
+     * <a href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">ASCII
+     * Printable Characters</a>.</p>
      */
     inline const Aws::String& GetStringValue() const{ return m_stringValue; }
 
     /**
      * <p>Strings are Unicode with UTF8 binary encoding. For a list of code values, see
-     * <a
-     * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.</p>
+     * <a href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">ASCII
+     * Printable Characters</a>.</p>
      */
     inline void SetStringValue(const Aws::String& value) { m_stringValueHasBeenSet = true; m_stringValue = value; }
 
     /**
      * <p>Strings are Unicode with UTF8 binary encoding. For a list of code values, see
-     * <a
-     * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.</p>
+     * <a href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">ASCII
+     * Printable Characters</a>.</p>
      */
     inline void SetStringValue(Aws::String&& value) { m_stringValueHasBeenSet = true; m_stringValue = value; }
 
     /**
      * <p>Strings are Unicode with UTF8 binary encoding. For a list of code values, see
-     * <a
-     * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.</p>
+     * <a href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">ASCII
+     * Printable Characters</a>.</p>
      */
     inline void SetStringValue(const char* value) { m_stringValueHasBeenSet = true; m_stringValue.assign(value); }
 
     /**
      * <p>Strings are Unicode with UTF8 binary encoding. For a list of code values, see
-     * <a
-     * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.</p>
+     * <a href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">ASCII
+     * Printable Characters</a>.</p>
      */
     inline MessageAttributeValue& WithStringValue(const Aws::String& value) { SetStringValue(value); return *this;}
 
     /**
      * <p>Strings are Unicode with UTF8 binary encoding. For a list of code values, see
-     * <a
-     * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.</p>
+     * <a href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">ASCII
+     * Printable Characters</a>.</p>
      */
     inline MessageAttributeValue& WithStringValue(Aws::String&& value) { SetStringValue(value); return *this;}
 
     /**
      * <p>Strings are Unicode with UTF8 binary encoding. For a list of code values, see
-     * <a
-     * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.</p>
+     * <a href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">ASCII
+     * Printable Characters</a>.</p>
      */
     inline MessageAttributeValue& WithStringValue(const char* value) { SetStringValue(value); return *this;}
 
@@ -212,7 +210,7 @@ namespace Model
      * Binary. For the Number data type, you must use StringValue.</p> <p>You can also
      * append custom labels. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributes.DataTypes">Message
-     * Attribute Data Types</a>.</p>
+     * Attribute Data Types</a> in the <i>Amazon SQS Developer Guide</i>.</p>
      */
     inline const Aws::String& GetDataType() const{ return m_dataType; }
 
@@ -221,7 +219,7 @@ namespace Model
      * Binary. For the Number data type, you must use StringValue.</p> <p>You can also
      * append custom labels. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributes.DataTypes">Message
-     * Attribute Data Types</a>.</p>
+     * Attribute Data Types</a> in the <i>Amazon SQS Developer Guide</i>.</p>
      */
     inline void SetDataType(const Aws::String& value) { m_dataTypeHasBeenSet = true; m_dataType = value; }
 
@@ -230,7 +228,7 @@ namespace Model
      * Binary. For the Number data type, you must use StringValue.</p> <p>You can also
      * append custom labels. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributes.DataTypes">Message
-     * Attribute Data Types</a>.</p>
+     * Attribute Data Types</a> in the <i>Amazon SQS Developer Guide</i>.</p>
      */
     inline void SetDataType(Aws::String&& value) { m_dataTypeHasBeenSet = true; m_dataType = value; }
 
@@ -239,7 +237,7 @@ namespace Model
      * Binary. For the Number data type, you must use StringValue.</p> <p>You can also
      * append custom labels. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributes.DataTypes">Message
-     * Attribute Data Types</a>.</p>
+     * Attribute Data Types</a> in the <i>Amazon SQS Developer Guide</i>.</p>
      */
     inline void SetDataType(const char* value) { m_dataTypeHasBeenSet = true; m_dataType.assign(value); }
 
@@ -248,7 +246,7 @@ namespace Model
      * Binary. For the Number data type, you must use StringValue.</p> <p>You can also
      * append custom labels. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributes.DataTypes">Message
-     * Attribute Data Types</a>.</p>
+     * Attribute Data Types</a> in the <i>Amazon SQS Developer Guide</i>.</p>
      */
     inline MessageAttributeValue& WithDataType(const Aws::String& value) { SetDataType(value); return *this;}
 
@@ -257,7 +255,7 @@ namespace Model
      * Binary. For the Number data type, you must use StringValue.</p> <p>You can also
      * append custom labels. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributes.DataTypes">Message
-     * Attribute Data Types</a>.</p>
+     * Attribute Data Types</a> in the <i>Amazon SQS Developer Guide</i>.</p>
      */
     inline MessageAttributeValue& WithDataType(Aws::String&& value) { SetDataType(value); return *this;}
 
@@ -266,7 +264,7 @@ namespace Model
      * Binary. For the Number data type, you must use StringValue.</p> <p>You can also
      * append custom labels. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributes.DataTypes">Message
-     * Attribute Data Types</a>.</p>
+     * Attribute Data Types</a> in the <i>Amazon SQS Developer Guide</i>.</p>
      */
     inline MessageAttributeValue& WithDataType(const char* value) { SetDataType(value); return *this;}
 

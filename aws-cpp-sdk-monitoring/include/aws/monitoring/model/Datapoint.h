@@ -17,6 +17,8 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/monitoring/model/StandardUnit.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 
 namespace Aws
 {
@@ -33,8 +35,8 @@ namespace Model
 {
 
   /**
-   * <p> The <code>Datapoint</code> data type encapsulates the statistical data that
-   * Amazon CloudWatch computes from metric data. </p>
+   * <p>Encapsulates the statistical data that Amazon CloudWatch computes from metric
+   * data.</p>
    */
   class AWS_CLOUDWATCH_API Datapoint
   {
@@ -47,132 +49,172 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     /**
-     * <p>The time stamp used for the datapoint.</p>
+     * <p>The time stamp used for the data point.</p>
      */
     inline const Aws::Utils::DateTime& GetTimestamp() const{ return m_timestamp; }
 
     /**
-     * <p>The time stamp used for the datapoint.</p>
+     * <p>The time stamp used for the data point.</p>
      */
     inline void SetTimestamp(const Aws::Utils::DateTime& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
 
     /**
-     * <p>The time stamp used for the datapoint.</p>
+     * <p>The time stamp used for the data point.</p>
      */
     inline void SetTimestamp(Aws::Utils::DateTime&& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
 
     /**
-     * <p>The time stamp used for the datapoint.</p>
+     * <p>The time stamp used for the data point.</p>
      */
     inline Datapoint& WithTimestamp(const Aws::Utils::DateTime& value) { SetTimestamp(value); return *this;}
 
     /**
-     * <p>The time stamp used for the datapoint.</p>
+     * <p>The time stamp used for the data point.</p>
      */
     inline Datapoint& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(value); return *this;}
 
     /**
      * <p>The number of metric values that contributed to the aggregate value of this
-     * datapoint.</p>
+     * data point.</p>
      */
     inline double GetSampleCount() const{ return m_sampleCount; }
 
     /**
      * <p>The number of metric values that contributed to the aggregate value of this
-     * datapoint.</p>
+     * data point.</p>
      */
     inline void SetSampleCount(double value) { m_sampleCountHasBeenSet = true; m_sampleCount = value; }
 
     /**
      * <p>The number of metric values that contributed to the aggregate value of this
-     * datapoint.</p>
+     * data point.</p>
      */
     inline Datapoint& WithSampleCount(double value) { SetSampleCount(value); return *this;}
 
     /**
-     * <p>The average of metric values that correspond to the datapoint.</p>
+     * <p>The average of the metric values that correspond to the data point.</p>
      */
     inline double GetAverage() const{ return m_average; }
 
     /**
-     * <p>The average of metric values that correspond to the datapoint.</p>
+     * <p>The average of the metric values that correspond to the data point.</p>
      */
     inline void SetAverage(double value) { m_averageHasBeenSet = true; m_average = value; }
 
     /**
-     * <p>The average of metric values that correspond to the datapoint.</p>
+     * <p>The average of the metric values that correspond to the data point.</p>
      */
     inline Datapoint& WithAverage(double value) { SetAverage(value); return *this;}
 
     /**
-     * <p>The sum of metric values used for the datapoint.</p>
+     * <p>The sum of the metric values for the data point.</p>
      */
     inline double GetSum() const{ return m_sum; }
 
     /**
-     * <p>The sum of metric values used for the datapoint.</p>
+     * <p>The sum of the metric values for the data point.</p>
      */
     inline void SetSum(double value) { m_sumHasBeenSet = true; m_sum = value; }
 
     /**
-     * <p>The sum of metric values used for the datapoint.</p>
+     * <p>The sum of the metric values for the data point.</p>
      */
     inline Datapoint& WithSum(double value) { SetSum(value); return *this;}
 
     /**
-     * <p>The minimum metric value used for the datapoint.</p>
+     * <p>The minimum metric value for the data point.</p>
      */
     inline double GetMinimum() const{ return m_minimum; }
 
     /**
-     * <p>The minimum metric value used for the datapoint.</p>
+     * <p>The minimum metric value for the data point.</p>
      */
     inline void SetMinimum(double value) { m_minimumHasBeenSet = true; m_minimum = value; }
 
     /**
-     * <p>The minimum metric value used for the datapoint.</p>
+     * <p>The minimum metric value for the data point.</p>
      */
     inline Datapoint& WithMinimum(double value) { SetMinimum(value); return *this;}
 
     /**
-     * <p>The maximum of the metric value used for the datapoint.</p>
+     * <p>The maximum metric value for the data point.</p>
      */
     inline double GetMaximum() const{ return m_maximum; }
 
     /**
-     * <p>The maximum of the metric value used for the datapoint.</p>
+     * <p>The maximum metric value for the data point.</p>
      */
     inline void SetMaximum(double value) { m_maximumHasBeenSet = true; m_maximum = value; }
 
     /**
-     * <p>The maximum of the metric value used for the datapoint.</p>
+     * <p>The maximum metric value for the data point.</p>
      */
     inline Datapoint& WithMaximum(double value) { SetMaximum(value); return *this;}
 
     /**
-     * <p>The standard unit used for the datapoint.</p>
+     * <p>The standard unit for the data point.</p>
      */
     inline const StandardUnit& GetUnit() const{ return m_unit; }
 
     /**
-     * <p>The standard unit used for the datapoint.</p>
+     * <p>The standard unit for the data point.</p>
      */
     inline void SetUnit(const StandardUnit& value) { m_unitHasBeenSet = true; m_unit = value; }
 
     /**
-     * <p>The standard unit used for the datapoint.</p>
+     * <p>The standard unit for the data point.</p>
      */
     inline void SetUnit(StandardUnit&& value) { m_unitHasBeenSet = true; m_unit = value; }
 
     /**
-     * <p>The standard unit used for the datapoint.</p>
+     * <p>The standard unit for the data point.</p>
      */
     inline Datapoint& WithUnit(const StandardUnit& value) { SetUnit(value); return *this;}
 
     /**
-     * <p>The standard unit used for the datapoint.</p>
+     * <p>The standard unit for the data point.</p>
      */
     inline Datapoint& WithUnit(StandardUnit&& value) { SetUnit(value); return *this;}
+
+    /**
+     * <p>The percentile statistic for the data point.</p>
+     */
+    inline const Aws::Map<Aws::String, double>& GetExtendedStatistics() const{ return m_extendedStatistics; }
+
+    /**
+     * <p>The percentile statistic for the data point.</p>
+     */
+    inline void SetExtendedStatistics(const Aws::Map<Aws::String, double>& value) { m_extendedStatisticsHasBeenSet = true; m_extendedStatistics = value; }
+
+    /**
+     * <p>The percentile statistic for the data point.</p>
+     */
+    inline void SetExtendedStatistics(Aws::Map<Aws::String, double>&& value) { m_extendedStatisticsHasBeenSet = true; m_extendedStatistics = value; }
+
+    /**
+     * <p>The percentile statistic for the data point.</p>
+     */
+    inline Datapoint& WithExtendedStatistics(const Aws::Map<Aws::String, double>& value) { SetExtendedStatistics(value); return *this;}
+
+    /**
+     * <p>The percentile statistic for the data point.</p>
+     */
+    inline Datapoint& WithExtendedStatistics(Aws::Map<Aws::String, double>&& value) { SetExtendedStatistics(value); return *this;}
+
+    /**
+     * <p>The percentile statistic for the data point.</p>
+     */
+    inline Datapoint& AddExtendedStatistics(const Aws::String& key, double value) { m_extendedStatisticsHasBeenSet = true; m_extendedStatistics[key] = value; return *this; }
+
+    /**
+     * <p>The percentile statistic for the data point.</p>
+     */
+    inline Datapoint& AddExtendedStatistics(Aws::String&& key, double value) { m_extendedStatisticsHasBeenSet = true; m_extendedStatistics[key] = value; return *this; }
+
+    /**
+     * <p>The percentile statistic for the data point.</p>
+     */
+    inline Datapoint& AddExtendedStatistics(const char* key, double value) { m_extendedStatisticsHasBeenSet = true; m_extendedStatistics[key] = value; return *this; }
 
   private:
     Aws::Utils::DateTime m_timestamp;
@@ -189,6 +231,8 @@ namespace Model
     bool m_maximumHasBeenSet;
     StandardUnit m_unit;
     bool m_unitHasBeenSet;
+    Aws::Map<Aws::String, double> m_extendedStatistics;
+    bool m_extendedStatisticsHasBeenSet;
   };
 
 } // namespace Model

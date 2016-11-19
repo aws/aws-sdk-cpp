@@ -12,42 +12,36 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
-#include <aws/elastictranscoder/model/TestRoleResult.h>
+#include <aws/elasticmapreduce/model/CancelStepsResult.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/UnreferencedParam.h>
 
 #include <utility>
 
-using namespace Aws::ElasticTranscoder::Model;
+using namespace Aws::EMR::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-TestRoleResult::TestRoleResult()
+CancelStepsResult::CancelStepsResult()
 {
 }
 
-TestRoleResult::TestRoleResult(const AmazonWebServiceResult<JsonValue>& result)
+CancelStepsResult::CancelStepsResult(const AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-TestRoleResult& TestRoleResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CancelStepsResult& CancelStepsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
-  if(jsonValue.ValueExists("Success"))
+  if(jsonValue.ValueExists("CancelStepsInfoList"))
   {
-    m_success = jsonValue.GetString("Success");
-
-  }
-
-  if(jsonValue.ValueExists("Messages"))
-  {
-    Array<JsonValue> messagesJsonList = jsonValue.GetArray("Messages");
-    for(unsigned messagesIndex = 0; messagesIndex < messagesJsonList.GetLength(); ++messagesIndex)
+    Array<JsonValue> cancelStepsInfoListJsonList = jsonValue.GetArray("CancelStepsInfoList");
+    for(unsigned cancelStepsInfoListIndex = 0; cancelStepsInfoListIndex < cancelStepsInfoListJsonList.GetLength(); ++cancelStepsInfoListIndex)
     {
-      m_messages.push_back(messagesJsonList[messagesIndex].AsString());
+      m_cancelStepsInfoList.push_back(cancelStepsInfoListJsonList[cancelStepsInfoListIndex].AsObject());
     }
   }
 

@@ -20,7 +20,9 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/meteringmarketplace/model/BatchMeterUsageResult.h>
 #include <aws/meteringmarketplace/model/MeterUsageResult.h>
+#include <aws/meteringmarketplace/model/ResolveCustomerResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
 #include <future>
@@ -66,24 +68,40 @@ namespace MarketplaceMetering
 
 namespace Model
 {
+        class BatchMeterUsageRequest;
         class MeterUsageRequest;
+        class ResolveCustomerRequest;
 
+        typedef Aws::Utils::Outcome<BatchMeterUsageResult, Aws::Client::AWSError<MarketplaceMeteringErrors>> BatchMeterUsageOutcome;
         typedef Aws::Utils::Outcome<MeterUsageResult, Aws::Client::AWSError<MarketplaceMeteringErrors>> MeterUsageOutcome;
+        typedef Aws::Utils::Outcome<ResolveCustomerResult, Aws::Client::AWSError<MarketplaceMeteringErrors>> ResolveCustomerOutcome;
 
+        typedef std::future<BatchMeterUsageOutcome> BatchMeterUsageOutcomeCallable;
         typedef std::future<MeterUsageOutcome> MeterUsageOutcomeCallable;
+        typedef std::future<ResolveCustomerOutcome> ResolveCustomerOutcomeCallable;
 } // namespace Model
 
   class MarketplaceMeteringClient;
 
+    typedef std::function<void(const MarketplaceMeteringClient*, const Model::BatchMeterUsageRequest&, const Model::BatchMeterUsageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchMeterUsageResponseReceivedHandler;
     typedef std::function<void(const MarketplaceMeteringClient*, const Model::MeterUsageRequest&, const Model::MeterUsageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > MeterUsageResponseReceivedHandler;
+    typedef std::function<void(const MarketplaceMeteringClient*, const Model::ResolveCustomerRequest&, const Model::ResolveCustomerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResolveCustomerResponseReceivedHandler;
 
   /**
    * <fullname>AWS Marketplace Metering Service</fullname> <p>This reference provides
-   * descriptions of the low-level AWS Marketplace Metering Service API. </p> <p>AWS
+   * descriptions of the low-level AWS Marketplace Metering Service API.</p> <p>AWS
    * Marketplace sellers can use this API to submit usage data for custom usage
-   * dimensions.</p> <p><b>Submitting Metering Records</b></p> <ul> <li>
-   * <p><i>MeterUsage</i>- Submits the metering record for a Marketplace product.</p>
-   * </li> </ul>
+   * dimensions.</p> <p> <b>Submitting Metering Records</b> </p> <ul> <li> <p>
+   * <i>MeterUsage</i>- Submits the metering record for a Marketplace product.
+   * MeterUsage is called from an EC2 instance.</p> </li> <li> <p>
+   * <i>BatchMeterUsage</i>- Submits the metering record for a set of customers.
+   * BatchMeterUsage is called from a software-as-a-service (SaaS) application.</p>
+   * </li> </ul> <p> <b>Accepting New Customers</b> </p> <ul> <li> <p>
+   * <i>ResolveCustomer</i>- Called by a SaaS application during the registration
+   * process. When a buyer visits your website during the registration process, the
+   * buyer submits a Registration Token through the browser. The Registration Token
+   * is resolved through this API to obtain a CustomerIdentifier and Product
+   * Code.</p> </li> </ul>
    */
   class AWS_MARKETPLACEMETERING_API MarketplaceMeteringClient : public Aws::Client::AWSJsonClient
   {
@@ -112,14 +130,55 @@ namespace Model
         virtual ~MarketplaceMeteringClient();
 
         /**
+         * <p>BatchMeterUsage is called from a SaaS application listed on the AWS
+         * Marketplace to post metering records for a set of customers.</p> <p>For
+         * identical requests, the API is idempotent; requests can be retried with the same
+         * records or a subset of the input records.</p> <p>Every request to
+         * BatchMeterUsage is for one product. If you need to meter usage for multiple
+         * products, you must make multiple calls to BatchMeterUsage.</p>
+         * <p>BatchMeterUsage can process up to 25 UsageRecords at a time.</p>
+         */
+        virtual Model::BatchMeterUsageOutcome BatchMeterUsage(const Model::BatchMeterUsageRequest& request) const;
+
+        /**
+         * <p>BatchMeterUsage is called from a SaaS application listed on the AWS
+         * Marketplace to post metering records for a set of customers.</p> <p>For
+         * identical requests, the API is idempotent; requests can be retried with the same
+         * records or a subset of the input records.</p> <p>Every request to
+         * BatchMeterUsage is for one product. If you need to meter usage for multiple
+         * products, you must make multiple calls to BatchMeterUsage.</p>
+         * <p>BatchMeterUsage can process up to 25 UsageRecords at a time.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::BatchMeterUsageOutcomeCallable BatchMeterUsageCallable(const Model::BatchMeterUsageRequest& request) const;
+
+        /**
+         * <p>BatchMeterUsage is called from a SaaS application listed on the AWS
+         * Marketplace to post metering records for a set of customers.</p> <p>For
+         * identical requests, the API is idempotent; requests can be retried with the same
+         * records or a subset of the input records.</p> <p>Every request to
+         * BatchMeterUsage is for one product. If you need to meter usage for multiple
+         * products, you must make multiple calls to BatchMeterUsage.</p>
+         * <p>BatchMeterUsage can process up to 25 UsageRecords at a time.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void BatchMeterUsageAsync(const Model::BatchMeterUsageRequest& request, const BatchMeterUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>API to emit metering records. For identical requests, the API is idempotent.
-         * It simply returns the metering record ID. </p>
+         * It simply returns the metering record ID.</p> <p>MeterUsage is authenticated on
+         * the buyer's AWS account, generally when running from an EC2 instance on the AWS
+         * Marketplace.</p>
          */
         virtual Model::MeterUsageOutcome MeterUsage(const Model::MeterUsageRequest& request) const;
 
         /**
          * <p>API to emit metering records. For identical requests, the API is idempotent.
-         * It simply returns the metering record ID. </p>
+         * It simply returns the metering record ID.</p> <p>MeterUsage is authenticated on
+         * the buyer's AWS account, generally when running from an EC2 instance on the AWS
+         * Marketplace.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -127,18 +186,53 @@ namespace Model
 
         /**
          * <p>API to emit metering records. For identical requests, the API is idempotent.
-         * It simply returns the metering record ID. </p>
+         * It simply returns the metering record ID.</p> <p>MeterUsage is authenticated on
+         * the buyer's AWS account, generally when running from an EC2 instance on the AWS
+         * Marketplace.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void MeterUsageAsync(const Model::MeterUsageRequest& request, const MeterUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>ResolveCustomer is called by a SaaS application during the registration
+         * process. When a buyer visits your website during the registration process, the
+         * buyer submits a registration token through their browser. The registration token
+         * is resolved through this API to obtain a CustomerIdentifier and product
+         * code.</p>
+         */
+        virtual Model::ResolveCustomerOutcome ResolveCustomer(const Model::ResolveCustomerRequest& request) const;
+
+        /**
+         * <p>ResolveCustomer is called by a SaaS application during the registration
+         * process. When a buyer visits your website during the registration process, the
+         * buyer submits a registration token through their browser. The registration token
+         * is resolved through this API to obtain a CustomerIdentifier and product
+         * code.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ResolveCustomerOutcomeCallable ResolveCustomerCallable(const Model::ResolveCustomerRequest& request) const;
+
+        /**
+         * <p>ResolveCustomer is called by a SaaS application during the registration
+         * process. When a buyer visits your website during the registration process, the
+         * buyer submits a registration token through their browser. The registration token
+         * is resolved through this API to obtain a CustomerIdentifier and product
+         * code.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ResolveCustomerAsync(const Model::ResolveCustomerRequest& request, const ResolveCustomerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
     private:
       void init(const Client::ClientConfiguration& clientConfiguration);
 
         /**Async helpers**/
+        void BatchMeterUsageAsyncHelper(const Model::BatchMeterUsageRequest& request, const BatchMeterUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void MeterUsageAsyncHelper(const Model::MeterUsageRequest& request, const MeterUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ResolveCustomerAsyncHelper(const Model::ResolveCustomerRequest& request, const ResolveCustomerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       std::shared_ptr<Utils::Threading::Executor> m_executor;

@@ -34,7 +34,9 @@ SendMessageBatchRequestEntry::SendMessageBatchRequestEntry() :
     m_messageBodyHasBeenSet(false),
     m_delaySeconds(0),
     m_delaySecondsHasBeenSet(false),
-    m_messageAttributesHasBeenSet(false)
+    m_messageAttributesHasBeenSet(false),
+    m_messageDeduplicationIdHasBeenSet(false),
+    m_messageGroupIdHasBeenSet(false)
 {
 }
 
@@ -43,7 +45,9 @@ SendMessageBatchRequestEntry::SendMessageBatchRequestEntry(const XmlNode& xmlNod
     m_messageBodyHasBeenSet(false),
     m_delaySeconds(0),
     m_delaySecondsHasBeenSet(false),
-    m_messageAttributesHasBeenSet(false)
+    m_messageAttributesHasBeenSet(false),
+    m_messageDeduplicationIdHasBeenSet(false),
+    m_messageGroupIdHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -87,6 +91,18 @@ SendMessageBatchRequestEntry& SendMessageBatchRequestEntry::operator =(const Xml
 
       m_messageAttributesHasBeenSet = true;
     }
+    XmlNode messageDeduplicationIdNode = resultNode.FirstChild("MessageDeduplicationId");
+    if(!messageDeduplicationIdNode.IsNull())
+    {
+      m_messageDeduplicationId = StringUtils::Trim(messageDeduplicationIdNode.GetText().c_str());
+      m_messageDeduplicationIdHasBeenSet = true;
+    }
+    XmlNode messageGroupIdNode = resultNode.FirstChild("MessageGroupId");
+    if(!messageGroupIdNode.IsNull())
+    {
+      m_messageGroupId = StringUtils::Trim(messageGroupIdNode.GetText().c_str());
+      m_messageGroupIdHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -123,6 +139,16 @@ void SendMessageBatchRequestEntry::OutputToStream(Aws::OStream& oStream, const c
       }
   }
 
+  if(m_messageDeduplicationIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".MessageDeduplicationId=" << StringUtils::URLEncode(m_messageDeduplicationId.c_str()) << "&";
+  }
+
+  if(m_messageGroupIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".MessageGroupId=" << StringUtils::URLEncode(m_messageGroupId.c_str()) << "&";
+  }
+
 }
 
 void SendMessageBatchRequestEntry::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -152,6 +178,14 @@ void SendMessageBatchRequestEntry::OutputToStream(Aws::OStream& oStream, const c
         messageAttributesIdx++;
       }
 
+  }
+  if(m_messageDeduplicationIdHasBeenSet)
+  {
+      oStream << location << ".MessageDeduplicationId=" << StringUtils::URLEncode(m_messageDeduplicationId.c_str()) << "&";
+  }
+  if(m_messageGroupIdHasBeenSet)
+  {
+      oStream << location << ".MessageGroupId=" << StringUtils::URLEncode(m_messageGroupId.c_str()) << "&";
   }
 }
 

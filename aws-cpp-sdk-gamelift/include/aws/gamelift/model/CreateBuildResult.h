@@ -72,7 +72,7 @@ namespace Model
     /**
      * <p>AWS credentials required when uploading a game build to the storage location.
      * These credentials have a limited lifespan and are valid only for the build they
-     * were issued for. If you need to get fresh credentials, call <code>
+     * were issued for. If you need to get fresh credentials, call<code>
      * <a>RequestUploadCredentials</a> </code>.</p>
      */
     inline const AwsCredentials& GetUploadCredentials() const{ return m_uploadCredentials; }
@@ -80,7 +80,7 @@ namespace Model
     /**
      * <p>AWS credentials required when uploading a game build to the storage location.
      * These credentials have a limited lifespan and are valid only for the build they
-     * were issued for. If you need to get fresh credentials, call <code>
+     * were issued for. If you need to get fresh credentials, call<code>
      * <a>RequestUploadCredentials</a> </code>.</p>
      */
     inline void SetUploadCredentials(const AwsCredentials& value) { m_uploadCredentials = value; }
@@ -88,7 +88,7 @@ namespace Model
     /**
      * <p>AWS credentials required when uploading a game build to the storage location.
      * These credentials have a limited lifespan and are valid only for the build they
-     * were issued for. If you need to get fresh credentials, call <code>
+     * were issued for. If you need to get fresh credentials, call<code>
      * <a>RequestUploadCredentials</a> </code>.</p>
      */
     inline void SetUploadCredentials(AwsCredentials&& value) { m_uploadCredentials = value; }
@@ -96,7 +96,7 @@ namespace Model
     /**
      * <p>AWS credentials required when uploading a game build to the storage location.
      * These credentials have a limited lifespan and are valid only for the build they
-     * were issued for. If you need to get fresh credentials, call <code>
+     * were issued for. If you need to get fresh credentials, call<code>
      * <a>RequestUploadCredentials</a> </code>.</p>
      */
     inline CreateBuildResult& WithUploadCredentials(const AwsCredentials& value) { SetUploadCredentials(value); return *this;}
@@ -104,7 +104,7 @@ namespace Model
     /**
      * <p>AWS credentials required when uploading a game build to the storage location.
      * These credentials have a limited lifespan and are valid only for the build they
-     * were issued for. If you need to get fresh credentials, call <code>
+     * were issued for. If you need to get fresh credentials, call<code>
      * <a>RequestUploadCredentials</a> </code>.</p>
      */
     inline CreateBuildResult& WithUploadCredentials(AwsCredentials&& value) { SetUploadCredentials(value); return *this;}

@@ -32,9 +32,7 @@ namespace Model
 {
 
   /**
-   * <p> The <code>Dimension</code> data type further expands on the identity of a
-   * metric using a Name, Value pair. </p> <p>For examples that use one or more
-   * dimensions, see <a>PutMetricData</a>.</p>
+   * <p>Expands the identity of a metric.</p>
    */
   class AWS_CLOUDWATCH_API Dimension
   {
@@ -82,37 +80,37 @@ namespace Model
     inline Dimension& WithName(const char* value) { SetName(value); return *this;}
 
     /**
-     * <p>The value representing the dimension measurement</p>
+     * <p>The value representing the dimension measurement.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
 
     /**
-     * <p>The value representing the dimension measurement</p>
+     * <p>The value representing the dimension measurement.</p>
      */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
-     * <p>The value representing the dimension measurement</p>
+     * <p>The value representing the dimension measurement.</p>
      */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
-     * <p>The value representing the dimension measurement</p>
+     * <p>The value representing the dimension measurement.</p>
      */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
 
     /**
-     * <p>The value representing the dimension measurement</p>
+     * <p>The value representing the dimension measurement.</p>
      */
     inline Dimension& WithValue(const Aws::String& value) { SetValue(value); return *this;}
 
     /**
-     * <p>The value representing the dimension measurement</p>
+     * <p>The value representing the dimension measurement.</p>
      */
     inline Dimension& WithValue(Aws::String&& value) { SetValue(value); return *this;}
 
     /**
-     * <p>The value representing the dimension measurement</p>
+     * <p>The value representing the dimension measurement.</p>
      */
     inline Dimension& WithValue(const char* value) { SetValue(value); return *this;}
 

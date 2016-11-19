@@ -36,37 +36,37 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * <p>The cluster identifier for the bootstrap actions to list .</p>
+     * <p>The cluster identifier for the bootstrap actions to list.</p>
      */
     inline const Aws::String& GetClusterId() const{ return m_clusterId; }
 
     /**
-     * <p>The cluster identifier for the bootstrap actions to list .</p>
+     * <p>The cluster identifier for the bootstrap actions to list.</p>
      */
     inline void SetClusterId(const Aws::String& value) { m_clusterIdHasBeenSet = true; m_clusterId = value; }
 
     /**
-     * <p>The cluster identifier for the bootstrap actions to list .</p>
+     * <p>The cluster identifier for the bootstrap actions to list.</p>
      */
     inline void SetClusterId(Aws::String&& value) { m_clusterIdHasBeenSet = true; m_clusterId = value; }
 
     /**
-     * <p>The cluster identifier for the bootstrap actions to list .</p>
+     * <p>The cluster identifier for the bootstrap actions to list.</p>
      */
     inline void SetClusterId(const char* value) { m_clusterIdHasBeenSet = true; m_clusterId.assign(value); }
 
     /**
-     * <p>The cluster identifier for the bootstrap actions to list .</p>
+     * <p>The cluster identifier for the bootstrap actions to list.</p>
      */
     inline ListBootstrapActionsRequest& WithClusterId(const Aws::String& value) { SetClusterId(value); return *this;}
 
     /**
-     * <p>The cluster identifier for the bootstrap actions to list .</p>
+     * <p>The cluster identifier for the bootstrap actions to list.</p>
      */
     inline ListBootstrapActionsRequest& WithClusterId(Aws::String&& value) { SetClusterId(value); return *this;}
 
     /**
-     * <p>The cluster identifier for the bootstrap actions to list .</p>
+     * <p>The cluster identifier for the bootstrap actions to list.</p>
      */
     inline ListBootstrapActionsRequest& WithClusterId(const char* value) { SetClusterId(value); return *this;}
 

@@ -40,52 +40,52 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * <p>The creation date and time beginning value filter for listing clusters .</p>
+     * <p>The creation date and time beginning value filter for listing clusters.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAfter() const{ return m_createdAfter; }
 
     /**
-     * <p>The creation date and time beginning value filter for listing clusters .</p>
+     * <p>The creation date and time beginning value filter for listing clusters.</p>
      */
     inline void SetCreatedAfter(const Aws::Utils::DateTime& value) { m_createdAfterHasBeenSet = true; m_createdAfter = value; }
 
     /**
-     * <p>The creation date and time beginning value filter for listing clusters .</p>
+     * <p>The creation date and time beginning value filter for listing clusters.</p>
      */
     inline void SetCreatedAfter(Aws::Utils::DateTime&& value) { m_createdAfterHasBeenSet = true; m_createdAfter = value; }
 
     /**
-     * <p>The creation date and time beginning value filter for listing clusters .</p>
+     * <p>The creation date and time beginning value filter for listing clusters.</p>
      */
     inline ListClustersRequest& WithCreatedAfter(const Aws::Utils::DateTime& value) { SetCreatedAfter(value); return *this;}
 
     /**
-     * <p>The creation date and time beginning value filter for listing clusters .</p>
+     * <p>The creation date and time beginning value filter for listing clusters.</p>
      */
     inline ListClustersRequest& WithCreatedAfter(Aws::Utils::DateTime&& value) { SetCreatedAfter(value); return *this;}
 
     /**
-     * <p>The creation date and time end value filter for listing clusters .</p>
+     * <p>The creation date and time end value filter for listing clusters.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedBefore() const{ return m_createdBefore; }
 
     /**
-     * <p>The creation date and time end value filter for listing clusters .</p>
+     * <p>The creation date and time end value filter for listing clusters.</p>
      */
     inline void SetCreatedBefore(const Aws::Utils::DateTime& value) { m_createdBeforeHasBeenSet = true; m_createdBefore = value; }
 
     /**
-     * <p>The creation date and time end value filter for listing clusters .</p>
+     * <p>The creation date and time end value filter for listing clusters.</p>
      */
     inline void SetCreatedBefore(Aws::Utils::DateTime&& value) { m_createdBeforeHasBeenSet = true; m_createdBefore = value; }
 
     /**
-     * <p>The creation date and time end value filter for listing clusters .</p>
+     * <p>The creation date and time end value filter for listing clusters.</p>
      */
     inline ListClustersRequest& WithCreatedBefore(const Aws::Utils::DateTime& value) { SetCreatedBefore(value); return *this;}
 
     /**
-     * <p>The creation date and time end value filter for listing clusters .</p>
+     * <p>The creation date and time end value filter for listing clusters.</p>
      */
     inline ListClustersRequest& WithCreatedBefore(Aws::Utils::DateTime&& value) { SetCreatedBefore(value); return *this;}
 

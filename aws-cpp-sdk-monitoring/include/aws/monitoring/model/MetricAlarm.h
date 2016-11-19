@@ -39,8 +39,7 @@ namespace Model
 {
 
   /**
-   * <p> The <a>MetricAlarm</a> data type represents an alarm. You can use
-   * <a>PutMetricAlarm</a> to create or update an alarm. </p>
+   * <p>Represents an alarm.</p>
    */
   class AWS_CLOUDWATCH_API MetricAlarm
   {
@@ -123,37 +122,37 @@ namespace Model
     inline MetricAlarm& WithAlarmArn(const char* value) { SetAlarmArn(value); return *this;}
 
     /**
-     * <p>The description for the alarm.</p>
+     * <p>The description of the alarm.</p>
      */
     inline const Aws::String& GetAlarmDescription() const{ return m_alarmDescription; }
 
     /**
-     * <p>The description for the alarm.</p>
+     * <p>The description of the alarm.</p>
      */
     inline void SetAlarmDescription(const Aws::String& value) { m_alarmDescriptionHasBeenSet = true; m_alarmDescription = value; }
 
     /**
-     * <p>The description for the alarm.</p>
+     * <p>The description of the alarm.</p>
      */
     inline void SetAlarmDescription(Aws::String&& value) { m_alarmDescriptionHasBeenSet = true; m_alarmDescription = value; }
 
     /**
-     * <p>The description for the alarm.</p>
+     * <p>The description of the alarm.</p>
      */
     inline void SetAlarmDescription(const char* value) { m_alarmDescriptionHasBeenSet = true; m_alarmDescription.assign(value); }
 
     /**
-     * <p>The description for the alarm.</p>
+     * <p>The description of the alarm.</p>
      */
     inline MetricAlarm& WithAlarmDescription(const Aws::String& value) { SetAlarmDescription(value); return *this;}
 
     /**
-     * <p>The description for the alarm.</p>
+     * <p>The description of the alarm.</p>
      */
     inline MetricAlarm& WithAlarmDescription(Aws::String&& value) { SetAlarmDescription(value); return *this;}
 
     /**
-     * <p>The description for the alarm.</p>
+     * <p>The description of the alarm.</p>
      */
     inline MetricAlarm& WithAlarmDescription(const char* value) { SetAlarmDescription(value); return *this;}
 
@@ -183,196 +182,188 @@ namespace Model
     inline MetricAlarm& WithAlarmConfigurationUpdatedTimestamp(Aws::Utils::DateTime&& value) { SetAlarmConfigurationUpdatedTimestamp(value); return *this;}
 
     /**
-     * <p>Indicates whether actions should be executed during any changes to the
-     * alarm's state.</p>
+     * <p>Indicates whether actions should be executed during any changes to the alarm
+     * state.</p>
      */
     inline bool GetActionsEnabled() const{ return m_actionsEnabled; }
 
     /**
-     * <p>Indicates whether actions should be executed during any changes to the
-     * alarm's state.</p>
+     * <p>Indicates whether actions should be executed during any changes to the alarm
+     * state.</p>
      */
     inline void SetActionsEnabled(bool value) { m_actionsEnabledHasBeenSet = true; m_actionsEnabled = value; }
 
     /**
-     * <p>Indicates whether actions should be executed during any changes to the
-     * alarm's state.</p>
+     * <p>Indicates whether actions should be executed during any changes to the alarm
+     * state.</p>
      */
     inline MetricAlarm& WithActionsEnabled(bool value) { SetActionsEnabled(value); return *this;}
 
     /**
-     * <p> The list of actions to execute when this alarm transitions into an
-     * <code>OK</code> state from any other state. Each action is specified as an
-     * Amazon Resource Name (ARN). </p>
+     * <p>The actions to execute when this alarm transitions to the <code>OK</code>
+     * state from any other state. Each action is specified as an Amazon Resource Name
+     * (ARN).</p>
      */
     inline const Aws::Vector<Aws::String>& GetOKActions() const{ return m_oKActions; }
 
     /**
-     * <p> The list of actions to execute when this alarm transitions into an
-     * <code>OK</code> state from any other state. Each action is specified as an
-     * Amazon Resource Name (ARN). </p>
+     * <p>The actions to execute when this alarm transitions to the <code>OK</code>
+     * state from any other state. Each action is specified as an Amazon Resource Name
+     * (ARN).</p>
      */
     inline void SetOKActions(const Aws::Vector<Aws::String>& value) { m_oKActionsHasBeenSet = true; m_oKActions = value; }
 
     /**
-     * <p> The list of actions to execute when this alarm transitions into an
-     * <code>OK</code> state from any other state. Each action is specified as an
-     * Amazon Resource Name (ARN). </p>
+     * <p>The actions to execute when this alarm transitions to the <code>OK</code>
+     * state from any other state. Each action is specified as an Amazon Resource Name
+     * (ARN).</p>
      */
     inline void SetOKActions(Aws::Vector<Aws::String>&& value) { m_oKActionsHasBeenSet = true; m_oKActions = value; }
 
     /**
-     * <p> The list of actions to execute when this alarm transitions into an
-     * <code>OK</code> state from any other state. Each action is specified as an
-     * Amazon Resource Name (ARN). </p>
+     * <p>The actions to execute when this alarm transitions to the <code>OK</code>
+     * state from any other state. Each action is specified as an Amazon Resource Name
+     * (ARN).</p>
      */
     inline MetricAlarm& WithOKActions(const Aws::Vector<Aws::String>& value) { SetOKActions(value); return *this;}
 
     /**
-     * <p> The list of actions to execute when this alarm transitions into an
-     * <code>OK</code> state from any other state. Each action is specified as an
-     * Amazon Resource Name (ARN). </p>
+     * <p>The actions to execute when this alarm transitions to the <code>OK</code>
+     * state from any other state. Each action is specified as an Amazon Resource Name
+     * (ARN).</p>
      */
     inline MetricAlarm& WithOKActions(Aws::Vector<Aws::String>&& value) { SetOKActions(value); return *this;}
 
     /**
-     * <p> The list of actions to execute when this alarm transitions into an
-     * <code>OK</code> state from any other state. Each action is specified as an
-     * Amazon Resource Name (ARN). </p>
+     * <p>The actions to execute when this alarm transitions to the <code>OK</code>
+     * state from any other state. Each action is specified as an Amazon Resource Name
+     * (ARN).</p>
      */
     inline MetricAlarm& AddOKActions(const Aws::String& value) { m_oKActionsHasBeenSet = true; m_oKActions.push_back(value); return *this; }
 
     /**
-     * <p> The list of actions to execute when this alarm transitions into an
-     * <code>OK</code> state from any other state. Each action is specified as an
-     * Amazon Resource Name (ARN). </p>
+     * <p>The actions to execute when this alarm transitions to the <code>OK</code>
+     * state from any other state. Each action is specified as an Amazon Resource Name
+     * (ARN).</p>
      */
     inline MetricAlarm& AddOKActions(Aws::String&& value) { m_oKActionsHasBeenSet = true; m_oKActions.push_back(value); return *this; }
 
     /**
-     * <p> The list of actions to execute when this alarm transitions into an
-     * <code>OK</code> state from any other state. Each action is specified as an
-     * Amazon Resource Name (ARN). </p>
+     * <p>The actions to execute when this alarm transitions to the <code>OK</code>
+     * state from any other state. Each action is specified as an Amazon Resource Name
+     * (ARN).</p>
      */
     inline MetricAlarm& AddOKActions(const char* value) { m_oKActionsHasBeenSet = true; m_oKActions.push_back(value); return *this; }
 
     /**
-     * <p> The list of actions to execute when this alarm transitions into an
-     * <code>ALARM</code> state from any other state. Each action is specified as an
-     * Amazon Resource Name (ARN). </p>
+     * <p>The actions to execute when this alarm transitions to the <code>ALARM</code>
+     * state from any other state. Each action is specified as an Amazon Resource Name
+     * (ARN).</p>
      */
     inline const Aws::Vector<Aws::String>& GetAlarmActions() const{ return m_alarmActions; }
 
     /**
-     * <p> The list of actions to execute when this alarm transitions into an
-     * <code>ALARM</code> state from any other state. Each action is specified as an
-     * Amazon Resource Name (ARN). </p>
+     * <p>The actions to execute when this alarm transitions to the <code>ALARM</code>
+     * state from any other state. Each action is specified as an Amazon Resource Name
+     * (ARN).</p>
      */
     inline void SetAlarmActions(const Aws::Vector<Aws::String>& value) { m_alarmActionsHasBeenSet = true; m_alarmActions = value; }
 
     /**
-     * <p> The list of actions to execute when this alarm transitions into an
-     * <code>ALARM</code> state from any other state. Each action is specified as an
-     * Amazon Resource Name (ARN). </p>
+     * <p>The actions to execute when this alarm transitions to the <code>ALARM</code>
+     * state from any other state. Each action is specified as an Amazon Resource Name
+     * (ARN).</p>
      */
     inline void SetAlarmActions(Aws::Vector<Aws::String>&& value) { m_alarmActionsHasBeenSet = true; m_alarmActions = value; }
 
     /**
-     * <p> The list of actions to execute when this alarm transitions into an
-     * <code>ALARM</code> state from any other state. Each action is specified as an
-     * Amazon Resource Name (ARN). </p>
+     * <p>The actions to execute when this alarm transitions to the <code>ALARM</code>
+     * state from any other state. Each action is specified as an Amazon Resource Name
+     * (ARN).</p>
      */
     inline MetricAlarm& WithAlarmActions(const Aws::Vector<Aws::String>& value) { SetAlarmActions(value); return *this;}
 
     /**
-     * <p> The list of actions to execute when this alarm transitions into an
-     * <code>ALARM</code> state from any other state. Each action is specified as an
-     * Amazon Resource Name (ARN). </p>
+     * <p>The actions to execute when this alarm transitions to the <code>ALARM</code>
+     * state from any other state. Each action is specified as an Amazon Resource Name
+     * (ARN).</p>
      */
     inline MetricAlarm& WithAlarmActions(Aws::Vector<Aws::String>&& value) { SetAlarmActions(value); return *this;}
 
     /**
-     * <p> The list of actions to execute when this alarm transitions into an
-     * <code>ALARM</code> state from any other state. Each action is specified as an
-     * Amazon Resource Name (ARN). </p>
+     * <p>The actions to execute when this alarm transitions to the <code>ALARM</code>
+     * state from any other state. Each action is specified as an Amazon Resource Name
+     * (ARN).</p>
      */
     inline MetricAlarm& AddAlarmActions(const Aws::String& value) { m_alarmActionsHasBeenSet = true; m_alarmActions.push_back(value); return *this; }
 
     /**
-     * <p> The list of actions to execute when this alarm transitions into an
-     * <code>ALARM</code> state from any other state. Each action is specified as an
-     * Amazon Resource Name (ARN). </p>
+     * <p>The actions to execute when this alarm transitions to the <code>ALARM</code>
+     * state from any other state. Each action is specified as an Amazon Resource Name
+     * (ARN).</p>
      */
     inline MetricAlarm& AddAlarmActions(Aws::String&& value) { m_alarmActionsHasBeenSet = true; m_alarmActions.push_back(value); return *this; }
 
     /**
-     * <p> The list of actions to execute when this alarm transitions into an
-     * <code>ALARM</code> state from any other state. Each action is specified as an
-     * Amazon Resource Name (ARN). </p>
+     * <p>The actions to execute when this alarm transitions to the <code>ALARM</code>
+     * state from any other state. Each action is specified as an Amazon Resource Name
+     * (ARN).</p>
      */
     inline MetricAlarm& AddAlarmActions(const char* value) { m_alarmActionsHasBeenSet = true; m_alarmActions.push_back(value); return *this; }
 
     /**
-     * <p> The list of actions to execute when this alarm transitions into an
+     * <p>The actions to execute when this alarm transitions to the
      * <code>INSUFFICIENT_DATA</code> state from any other state. Each action is
-     * specified as an Amazon Resource Name (ARN). </p> <important> <p>The current WSDL
-     * lists this attribute as <code>UnknownActions</code>.</p> </important>
+     * specified as an Amazon Resource Name (ARN).</p>
      */
     inline const Aws::Vector<Aws::String>& GetInsufficientDataActions() const{ return m_insufficientDataActions; }
 
     /**
-     * <p> The list of actions to execute when this alarm transitions into an
+     * <p>The actions to execute when this alarm transitions to the
      * <code>INSUFFICIENT_DATA</code> state from any other state. Each action is
-     * specified as an Amazon Resource Name (ARN). </p> <important> <p>The current WSDL
-     * lists this attribute as <code>UnknownActions</code>.</p> </important>
+     * specified as an Amazon Resource Name (ARN).</p>
      */
     inline void SetInsufficientDataActions(const Aws::Vector<Aws::String>& value) { m_insufficientDataActionsHasBeenSet = true; m_insufficientDataActions = value; }
 
     /**
-     * <p> The list of actions to execute when this alarm transitions into an
+     * <p>The actions to execute when this alarm transitions to the
      * <code>INSUFFICIENT_DATA</code> state from any other state. Each action is
-     * specified as an Amazon Resource Name (ARN). </p> <important> <p>The current WSDL
-     * lists this attribute as <code>UnknownActions</code>.</p> </important>
+     * specified as an Amazon Resource Name (ARN).</p>
      */
     inline void SetInsufficientDataActions(Aws::Vector<Aws::String>&& value) { m_insufficientDataActionsHasBeenSet = true; m_insufficientDataActions = value; }
 
     /**
-     * <p> The list of actions to execute when this alarm transitions into an
+     * <p>The actions to execute when this alarm transitions to the
      * <code>INSUFFICIENT_DATA</code> state from any other state. Each action is
-     * specified as an Amazon Resource Name (ARN). </p> <important> <p>The current WSDL
-     * lists this attribute as <code>UnknownActions</code>.</p> </important>
+     * specified as an Amazon Resource Name (ARN).</p>
      */
     inline MetricAlarm& WithInsufficientDataActions(const Aws::Vector<Aws::String>& value) { SetInsufficientDataActions(value); return *this;}
 
     /**
-     * <p> The list of actions to execute when this alarm transitions into an
+     * <p>The actions to execute when this alarm transitions to the
      * <code>INSUFFICIENT_DATA</code> state from any other state. Each action is
-     * specified as an Amazon Resource Name (ARN). </p> <important> <p>The current WSDL
-     * lists this attribute as <code>UnknownActions</code>.</p> </important>
+     * specified as an Amazon Resource Name (ARN).</p>
      */
     inline MetricAlarm& WithInsufficientDataActions(Aws::Vector<Aws::String>&& value) { SetInsufficientDataActions(value); return *this;}
 
     /**
-     * <p> The list of actions to execute when this alarm transitions into an
+     * <p>The actions to execute when this alarm transitions to the
      * <code>INSUFFICIENT_DATA</code> state from any other state. Each action is
-     * specified as an Amazon Resource Name (ARN). </p> <important> <p>The current WSDL
-     * lists this attribute as <code>UnknownActions</code>.</p> </important>
+     * specified as an Amazon Resource Name (ARN).</p>
      */
     inline MetricAlarm& AddInsufficientDataActions(const Aws::String& value) { m_insufficientDataActionsHasBeenSet = true; m_insufficientDataActions.push_back(value); return *this; }
 
     /**
-     * <p> The list of actions to execute when this alarm transitions into an
+     * <p>The actions to execute when this alarm transitions to the
      * <code>INSUFFICIENT_DATA</code> state from any other state. Each action is
-     * specified as an Amazon Resource Name (ARN). </p> <important> <p>The current WSDL
-     * lists this attribute as <code>UnknownActions</code>.</p> </important>
+     * specified as an Amazon Resource Name (ARN).</p>
      */
     inline MetricAlarm& AddInsufficientDataActions(Aws::String&& value) { m_insufficientDataActionsHasBeenSet = true; m_insufficientDataActions.push_back(value); return *this; }
 
     /**
-     * <p> The list of actions to execute when this alarm transitions into an
+     * <p>The actions to execute when this alarm transitions to the
      * <code>INSUFFICIENT_DATA</code> state from any other state. Each action is
-     * specified as an Amazon Resource Name (ARN). </p> <important> <p>The current WSDL
-     * lists this attribute as <code>UnknownActions</code>.</p> </important>
+     * specified as an Amazon Resource Name (ARN).</p>
      */
     inline MetricAlarm& AddInsufficientDataActions(const char* value) { m_insufficientDataActionsHasBeenSet = true; m_insufficientDataActions.push_back(value); return *this; }
 
@@ -402,267 +393,314 @@ namespace Model
     inline MetricAlarm& WithStateValue(StateValue&& value) { SetStateValue(value); return *this;}
 
     /**
-     * <p>A human-readable explanation for the alarm's state.</p>
+     * <p>An explanation for the alarm state, in text format.</p>
      */
     inline const Aws::String& GetStateReason() const{ return m_stateReason; }
 
     /**
-     * <p>A human-readable explanation for the alarm's state.</p>
+     * <p>An explanation for the alarm state, in text format.</p>
      */
     inline void SetStateReason(const Aws::String& value) { m_stateReasonHasBeenSet = true; m_stateReason = value; }
 
     /**
-     * <p>A human-readable explanation for the alarm's state.</p>
+     * <p>An explanation for the alarm state, in text format.</p>
      */
     inline void SetStateReason(Aws::String&& value) { m_stateReasonHasBeenSet = true; m_stateReason = value; }
 
     /**
-     * <p>A human-readable explanation for the alarm's state.</p>
+     * <p>An explanation for the alarm state, in text format.</p>
      */
     inline void SetStateReason(const char* value) { m_stateReasonHasBeenSet = true; m_stateReason.assign(value); }
 
     /**
-     * <p>A human-readable explanation for the alarm's state.</p>
+     * <p>An explanation for the alarm state, in text format.</p>
      */
     inline MetricAlarm& WithStateReason(const Aws::String& value) { SetStateReason(value); return *this;}
 
     /**
-     * <p>A human-readable explanation for the alarm's state.</p>
+     * <p>An explanation for the alarm state, in text format.</p>
      */
     inline MetricAlarm& WithStateReason(Aws::String&& value) { SetStateReason(value); return *this;}
 
     /**
-     * <p>A human-readable explanation for the alarm's state.</p>
+     * <p>An explanation for the alarm state, in text format.</p>
      */
     inline MetricAlarm& WithStateReason(const char* value) { SetStateReason(value); return *this;}
 
     /**
-     * <p>An explanation for the alarm's state in machine-readable JSON format</p>
+     * <p>An explanation for the alarm state, in JSON format.</p>
      */
     inline const Aws::String& GetStateReasonData() const{ return m_stateReasonData; }
 
     /**
-     * <p>An explanation for the alarm's state in machine-readable JSON format</p>
+     * <p>An explanation for the alarm state, in JSON format.</p>
      */
     inline void SetStateReasonData(const Aws::String& value) { m_stateReasonDataHasBeenSet = true; m_stateReasonData = value; }
 
     /**
-     * <p>An explanation for the alarm's state in machine-readable JSON format</p>
+     * <p>An explanation for the alarm state, in JSON format.</p>
      */
     inline void SetStateReasonData(Aws::String&& value) { m_stateReasonDataHasBeenSet = true; m_stateReasonData = value; }
 
     /**
-     * <p>An explanation for the alarm's state in machine-readable JSON format</p>
+     * <p>An explanation for the alarm state, in JSON format.</p>
      */
     inline void SetStateReasonData(const char* value) { m_stateReasonDataHasBeenSet = true; m_stateReasonData.assign(value); }
 
     /**
-     * <p>An explanation for the alarm's state in machine-readable JSON format</p>
+     * <p>An explanation for the alarm state, in JSON format.</p>
      */
     inline MetricAlarm& WithStateReasonData(const Aws::String& value) { SetStateReasonData(value); return *this;}
 
     /**
-     * <p>An explanation for the alarm's state in machine-readable JSON format</p>
+     * <p>An explanation for the alarm state, in JSON format.</p>
      */
     inline MetricAlarm& WithStateReasonData(Aws::String&& value) { SetStateReasonData(value); return *this;}
 
     /**
-     * <p>An explanation for the alarm's state in machine-readable JSON format</p>
+     * <p>An explanation for the alarm state, in JSON format.</p>
      */
     inline MetricAlarm& WithStateReasonData(const char* value) { SetStateReasonData(value); return *this;}
 
     /**
-     * <p>The time stamp of the last update to the alarm's state.</p>
+     * <p>The time stamp of the last update to the alarm state.</p>
      */
     inline const Aws::Utils::DateTime& GetStateUpdatedTimestamp() const{ return m_stateUpdatedTimestamp; }
 
     /**
-     * <p>The time stamp of the last update to the alarm's state.</p>
+     * <p>The time stamp of the last update to the alarm state.</p>
      */
     inline void SetStateUpdatedTimestamp(const Aws::Utils::DateTime& value) { m_stateUpdatedTimestampHasBeenSet = true; m_stateUpdatedTimestamp = value; }
 
     /**
-     * <p>The time stamp of the last update to the alarm's state.</p>
+     * <p>The time stamp of the last update to the alarm state.</p>
      */
     inline void SetStateUpdatedTimestamp(Aws::Utils::DateTime&& value) { m_stateUpdatedTimestampHasBeenSet = true; m_stateUpdatedTimestamp = value; }
 
     /**
-     * <p>The time stamp of the last update to the alarm's state.</p>
+     * <p>The time stamp of the last update to the alarm state.</p>
      */
     inline MetricAlarm& WithStateUpdatedTimestamp(const Aws::Utils::DateTime& value) { SetStateUpdatedTimestamp(value); return *this;}
 
     /**
-     * <p>The time stamp of the last update to the alarm's state.</p>
+     * <p>The time stamp of the last update to the alarm state.</p>
      */
     inline MetricAlarm& WithStateUpdatedTimestamp(Aws::Utils::DateTime&& value) { SetStateUpdatedTimestamp(value); return *this;}
 
     /**
-     * <p>The name of the alarm's metric.</p>
+     * <p>The name of the metric associated with the alarm.</p>
      */
     inline const Aws::String& GetMetricName() const{ return m_metricName; }
 
     /**
-     * <p>The name of the alarm's metric.</p>
+     * <p>The name of the metric associated with the alarm.</p>
      */
     inline void SetMetricName(const Aws::String& value) { m_metricNameHasBeenSet = true; m_metricName = value; }
 
     /**
-     * <p>The name of the alarm's metric.</p>
+     * <p>The name of the metric associated with the alarm.</p>
      */
     inline void SetMetricName(Aws::String&& value) { m_metricNameHasBeenSet = true; m_metricName = value; }
 
     /**
-     * <p>The name of the alarm's metric.</p>
+     * <p>The name of the metric associated with the alarm.</p>
      */
     inline void SetMetricName(const char* value) { m_metricNameHasBeenSet = true; m_metricName.assign(value); }
 
     /**
-     * <p>The name of the alarm's metric.</p>
+     * <p>The name of the metric associated with the alarm.</p>
      */
     inline MetricAlarm& WithMetricName(const Aws::String& value) { SetMetricName(value); return *this;}
 
     /**
-     * <p>The name of the alarm's metric.</p>
+     * <p>The name of the metric associated with the alarm.</p>
      */
     inline MetricAlarm& WithMetricName(Aws::String&& value) { SetMetricName(value); return *this;}
 
     /**
-     * <p>The name of the alarm's metric.</p>
+     * <p>The name of the metric associated with the alarm.</p>
      */
     inline MetricAlarm& WithMetricName(const char* value) { SetMetricName(value); return *this;}
 
     /**
-     * <p>The namespace of alarm's associated metric.</p>
+     * <p>The namespace of the metric associated with the alarm.</p>
      */
     inline const Aws::String& GetNamespace() const{ return m_namespace; }
 
     /**
-     * <p>The namespace of alarm's associated metric.</p>
+     * <p>The namespace of the metric associated with the alarm.</p>
      */
     inline void SetNamespace(const Aws::String& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
 
     /**
-     * <p>The namespace of alarm's associated metric.</p>
+     * <p>The namespace of the metric associated with the alarm.</p>
      */
     inline void SetNamespace(Aws::String&& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
 
     /**
-     * <p>The namespace of alarm's associated metric.</p>
+     * <p>The namespace of the metric associated with the alarm.</p>
      */
     inline void SetNamespace(const char* value) { m_namespaceHasBeenSet = true; m_namespace.assign(value); }
 
     /**
-     * <p>The namespace of alarm's associated metric.</p>
+     * <p>The namespace of the metric associated with the alarm.</p>
      */
     inline MetricAlarm& WithNamespace(const Aws::String& value) { SetNamespace(value); return *this;}
 
     /**
-     * <p>The namespace of alarm's associated metric.</p>
+     * <p>The namespace of the metric associated with the alarm.</p>
      */
     inline MetricAlarm& WithNamespace(Aws::String&& value) { SetNamespace(value); return *this;}
 
     /**
-     * <p>The namespace of alarm's associated metric.</p>
+     * <p>The namespace of the metric associated with the alarm.</p>
      */
     inline MetricAlarm& WithNamespace(const char* value) { SetNamespace(value); return *this;}
 
     /**
-     * <p>The statistic to apply to the alarm's associated metric.</p>
+     * <p>The statistic for the metric associated with the alarm, other than
+     * percentile. For percentile statistics, use <code>ExtendedStatistic</code>.</p>
      */
     inline const Statistic& GetStatistic() const{ return m_statistic; }
 
     /**
-     * <p>The statistic to apply to the alarm's associated metric.</p>
+     * <p>The statistic for the metric associated with the alarm, other than
+     * percentile. For percentile statistics, use <code>ExtendedStatistic</code>.</p>
      */
     inline void SetStatistic(const Statistic& value) { m_statisticHasBeenSet = true; m_statistic = value; }
 
     /**
-     * <p>The statistic to apply to the alarm's associated metric.</p>
+     * <p>The statistic for the metric associated with the alarm, other than
+     * percentile. For percentile statistics, use <code>ExtendedStatistic</code>.</p>
      */
     inline void SetStatistic(Statistic&& value) { m_statisticHasBeenSet = true; m_statistic = value; }
 
     /**
-     * <p>The statistic to apply to the alarm's associated metric.</p>
+     * <p>The statistic for the metric associated with the alarm, other than
+     * percentile. For percentile statistics, use <code>ExtendedStatistic</code>.</p>
      */
     inline MetricAlarm& WithStatistic(const Statistic& value) { SetStatistic(value); return *this;}
 
     /**
-     * <p>The statistic to apply to the alarm's associated metric.</p>
+     * <p>The statistic for the metric associated with the alarm, other than
+     * percentile. For percentile statistics, use <code>ExtendedStatistic</code>.</p>
      */
     inline MetricAlarm& WithStatistic(Statistic&& value) { SetStatistic(value); return *this;}
 
     /**
-     * <p>The list of dimensions associated with the alarm's associated metric.</p>
+     * <p>The percentile statistic for the metric associated with the alarm. Specify a
+     * value between p0.0 and p100.</p>
+     */
+    inline const Aws::String& GetExtendedStatistic() const{ return m_extendedStatistic; }
+
+    /**
+     * <p>The percentile statistic for the metric associated with the alarm. Specify a
+     * value between p0.0 and p100.</p>
+     */
+    inline void SetExtendedStatistic(const Aws::String& value) { m_extendedStatisticHasBeenSet = true; m_extendedStatistic = value; }
+
+    /**
+     * <p>The percentile statistic for the metric associated with the alarm. Specify a
+     * value between p0.0 and p100.</p>
+     */
+    inline void SetExtendedStatistic(Aws::String&& value) { m_extendedStatisticHasBeenSet = true; m_extendedStatistic = value; }
+
+    /**
+     * <p>The percentile statistic for the metric associated with the alarm. Specify a
+     * value between p0.0 and p100.</p>
+     */
+    inline void SetExtendedStatistic(const char* value) { m_extendedStatisticHasBeenSet = true; m_extendedStatistic.assign(value); }
+
+    /**
+     * <p>The percentile statistic for the metric associated with the alarm. Specify a
+     * value between p0.0 and p100.</p>
+     */
+    inline MetricAlarm& WithExtendedStatistic(const Aws::String& value) { SetExtendedStatistic(value); return *this;}
+
+    /**
+     * <p>The percentile statistic for the metric associated with the alarm. Specify a
+     * value between p0.0 and p100.</p>
+     */
+    inline MetricAlarm& WithExtendedStatistic(Aws::String&& value) { SetExtendedStatistic(value); return *this;}
+
+    /**
+     * <p>The percentile statistic for the metric associated with the alarm. Specify a
+     * value between p0.0 and p100.</p>
+     */
+    inline MetricAlarm& WithExtendedStatistic(const char* value) { SetExtendedStatistic(value); return *this;}
+
+    /**
+     * <p>The dimensions for the metric associated with the alarm.</p>
      */
     inline const Aws::Vector<Dimension>& GetDimensions() const{ return m_dimensions; }
 
     /**
-     * <p>The list of dimensions associated with the alarm's associated metric.</p>
+     * <p>The dimensions for the metric associated with the alarm.</p>
      */
     inline void SetDimensions(const Aws::Vector<Dimension>& value) { m_dimensionsHasBeenSet = true; m_dimensions = value; }
 
     /**
-     * <p>The list of dimensions associated with the alarm's associated metric.</p>
+     * <p>The dimensions for the metric associated with the alarm.</p>
      */
     inline void SetDimensions(Aws::Vector<Dimension>&& value) { m_dimensionsHasBeenSet = true; m_dimensions = value; }
 
     /**
-     * <p>The list of dimensions associated with the alarm's associated metric.</p>
+     * <p>The dimensions for the metric associated with the alarm.</p>
      */
     inline MetricAlarm& WithDimensions(const Aws::Vector<Dimension>& value) { SetDimensions(value); return *this;}
 
     /**
-     * <p>The list of dimensions associated with the alarm's associated metric.</p>
+     * <p>The dimensions for the metric associated with the alarm.</p>
      */
     inline MetricAlarm& WithDimensions(Aws::Vector<Dimension>&& value) { SetDimensions(value); return *this;}
 
     /**
-     * <p>The list of dimensions associated with the alarm's associated metric.</p>
+     * <p>The dimensions for the metric associated with the alarm.</p>
      */
     inline MetricAlarm& AddDimensions(const Dimension& value) { m_dimensionsHasBeenSet = true; m_dimensions.push_back(value); return *this; }
 
     /**
-     * <p>The list of dimensions associated with the alarm's associated metric.</p>
+     * <p>The dimensions for the metric associated with the alarm.</p>
      */
     inline MetricAlarm& AddDimensions(Dimension&& value) { m_dimensionsHasBeenSet = true; m_dimensions.push_back(value); return *this; }
 
     /**
-     * <p>The period in seconds over which the statistic is applied.</p>
+     * <p>The period, in seconds, over which the statistic is applied.</p>
      */
     inline int GetPeriod() const{ return m_period; }
 
     /**
-     * <p>The period in seconds over which the statistic is applied.</p>
+     * <p>The period, in seconds, over which the statistic is applied.</p>
      */
     inline void SetPeriod(int value) { m_periodHasBeenSet = true; m_period = value; }
 
     /**
-     * <p>The period in seconds over which the statistic is applied.</p>
+     * <p>The period, in seconds, over which the statistic is applied.</p>
      */
     inline MetricAlarm& WithPeriod(int value) { SetPeriod(value); return *this;}
 
     /**
-     * <p>The unit of the alarm's associated metric.</p>
+     * <p>The unit of the metric associated with the alarm.</p>
      */
     inline const StandardUnit& GetUnit() const{ return m_unit; }
 
     /**
-     * <p>The unit of the alarm's associated metric.</p>
+     * <p>The unit of the metric associated with the alarm.</p>
      */
     inline void SetUnit(const StandardUnit& value) { m_unitHasBeenSet = true; m_unit = value; }
 
     /**
-     * <p>The unit of the alarm's associated metric.</p>
+     * <p>The unit of the metric associated with the alarm.</p>
      */
     inline void SetUnit(StandardUnit&& value) { m_unitHasBeenSet = true; m_unit = value; }
 
     /**
-     * <p>The unit of the alarm's associated metric.</p>
+     * <p>The unit of the metric associated with the alarm.</p>
      */
     inline MetricAlarm& WithUnit(const StandardUnit& value) { SetUnit(value); return *this;}
 
     /**
-     * <p>The unit of the alarm's associated metric.</p>
+     * <p>The unit of the metric associated with the alarm.</p>
      */
     inline MetricAlarm& WithUnit(StandardUnit&& value) { SetUnit(value); return *this;}
 
@@ -685,52 +723,47 @@ namespace Model
     inline MetricAlarm& WithEvaluationPeriods(int value) { SetEvaluationPeriods(value); return *this;}
 
     /**
-     * <p>The value against which the specified statistic is compared.</p>
+     * <p>The value to compare with the specified statistic.</p>
      */
     inline double GetThreshold() const{ return m_threshold; }
 
     /**
-     * <p>The value against which the specified statistic is compared.</p>
+     * <p>The value to compare with the specified statistic.</p>
      */
     inline void SetThreshold(double value) { m_thresholdHasBeenSet = true; m_threshold = value; }
 
     /**
-     * <p>The value against which the specified statistic is compared.</p>
+     * <p>The value to compare with the specified statistic.</p>
      */
     inline MetricAlarm& WithThreshold(double value) { SetThreshold(value); return *this;}
 
     /**
-     * <p> The arithmetic operation to use when comparing the specified
-     * <code>Statistic</code> and <code>Threshold</code>. The specified
-     * <code>Statistic</code> value is used as the first operand. </p>
+     * <p>The arithmetic operation to use when comparing the specified statistic and
+     * threshold. The specified statistic value is used as the first operand.</p>
      */
     inline const ComparisonOperator& GetComparisonOperator() const{ return m_comparisonOperator; }
 
     /**
-     * <p> The arithmetic operation to use when comparing the specified
-     * <code>Statistic</code> and <code>Threshold</code>. The specified
-     * <code>Statistic</code> value is used as the first operand. </p>
+     * <p>The arithmetic operation to use when comparing the specified statistic and
+     * threshold. The specified statistic value is used as the first operand.</p>
      */
     inline void SetComparisonOperator(const ComparisonOperator& value) { m_comparisonOperatorHasBeenSet = true; m_comparisonOperator = value; }
 
     /**
-     * <p> The arithmetic operation to use when comparing the specified
-     * <code>Statistic</code> and <code>Threshold</code>. The specified
-     * <code>Statistic</code> value is used as the first operand. </p>
+     * <p>The arithmetic operation to use when comparing the specified statistic and
+     * threshold. The specified statistic value is used as the first operand.</p>
      */
     inline void SetComparisonOperator(ComparisonOperator&& value) { m_comparisonOperatorHasBeenSet = true; m_comparisonOperator = value; }
 
     /**
-     * <p> The arithmetic operation to use when comparing the specified
-     * <code>Statistic</code> and <code>Threshold</code>. The specified
-     * <code>Statistic</code> value is used as the first operand. </p>
+     * <p>The arithmetic operation to use when comparing the specified statistic and
+     * threshold. The specified statistic value is used as the first operand.</p>
      */
     inline MetricAlarm& WithComparisonOperator(const ComparisonOperator& value) { SetComparisonOperator(value); return *this;}
 
     /**
-     * <p> The arithmetic operation to use when comparing the specified
-     * <code>Statistic</code> and <code>Threshold</code>. The specified
-     * <code>Statistic</code> value is used as the first operand. </p>
+     * <p>The arithmetic operation to use when comparing the specified statistic and
+     * threshold. The specified statistic value is used as the first operand.</p>
      */
     inline MetricAlarm& WithComparisonOperator(ComparisonOperator&& value) { SetComparisonOperator(value); return *this;}
 
@@ -765,6 +798,8 @@ namespace Model
     bool m_namespaceHasBeenSet;
     Statistic m_statistic;
     bool m_statisticHasBeenSet;
+    Aws::String m_extendedStatistic;
+    bool m_extendedStatisticHasBeenSet;
     Aws::Vector<Dimension> m_dimensions;
     bool m_dimensionsHasBeenSet;
     int m_period;

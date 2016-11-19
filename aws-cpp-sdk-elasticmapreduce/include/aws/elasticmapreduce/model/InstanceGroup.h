@@ -20,6 +20,7 @@
 #include <aws/elasticmapreduce/model/InstanceGroupStatus.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticmapreduce/model/ShrinkPolicy.h>
+#include <aws/elasticmapreduce/model/AutoScalingPolicyDescription.h>
 #include <aws/elasticmapreduce/model/Configuration.h>
 #include <aws/elasticmapreduce/model/EbsBlockDevice.h>
 
@@ -436,6 +437,46 @@ namespace Model
      */
     inline InstanceGroup& WithShrinkPolicy(ShrinkPolicy&& value) { SetShrinkPolicy(value); return *this;}
 
+    /**
+     * <p>An automatic scaling policy for a core instance group or task instance group
+     * in an Amazon EMR cluster. The automatic scaling policy defines how an instance
+     * group dynamically adds and terminates EC2 instances in response to the value of
+     * a CloudWatch metric. See PutAutoScalingPolicy.</p>
+     */
+    inline const AutoScalingPolicyDescription& GetAutoScalingPolicy() const{ return m_autoScalingPolicy; }
+
+    /**
+     * <p>An automatic scaling policy for a core instance group or task instance group
+     * in an Amazon EMR cluster. The automatic scaling policy defines how an instance
+     * group dynamically adds and terminates EC2 instances in response to the value of
+     * a CloudWatch metric. See PutAutoScalingPolicy.</p>
+     */
+    inline void SetAutoScalingPolicy(const AutoScalingPolicyDescription& value) { m_autoScalingPolicyHasBeenSet = true; m_autoScalingPolicy = value; }
+
+    /**
+     * <p>An automatic scaling policy for a core instance group or task instance group
+     * in an Amazon EMR cluster. The automatic scaling policy defines how an instance
+     * group dynamically adds and terminates EC2 instances in response to the value of
+     * a CloudWatch metric. See PutAutoScalingPolicy.</p>
+     */
+    inline void SetAutoScalingPolicy(AutoScalingPolicyDescription&& value) { m_autoScalingPolicyHasBeenSet = true; m_autoScalingPolicy = value; }
+
+    /**
+     * <p>An automatic scaling policy for a core instance group or task instance group
+     * in an Amazon EMR cluster. The automatic scaling policy defines how an instance
+     * group dynamically adds and terminates EC2 instances in response to the value of
+     * a CloudWatch metric. See PutAutoScalingPolicy.</p>
+     */
+    inline InstanceGroup& WithAutoScalingPolicy(const AutoScalingPolicyDescription& value) { SetAutoScalingPolicy(value); return *this;}
+
+    /**
+     * <p>An automatic scaling policy for a core instance group or task instance group
+     * in an Amazon EMR cluster. The automatic scaling policy defines how an instance
+     * group dynamically adds and terminates EC2 instances in response to the value of
+     * a CloudWatch metric. See PutAutoScalingPolicy.</p>
+     */
+    inline InstanceGroup& WithAutoScalingPolicy(AutoScalingPolicyDescription&& value) { SetAutoScalingPolicy(value); return *this;}
+
   private:
     Aws::String m_id;
     bool m_idHasBeenSet;
@@ -463,6 +504,8 @@ namespace Model
     bool m_ebsOptimizedHasBeenSet;
     ShrinkPolicy m_shrinkPolicy;
     bool m_shrinkPolicyHasBeenSet;
+    AutoScalingPolicyDescription m_autoScalingPolicy;
+    bool m_autoScalingPolicyHasBeenSet;
   };
 
 } // namespace Model

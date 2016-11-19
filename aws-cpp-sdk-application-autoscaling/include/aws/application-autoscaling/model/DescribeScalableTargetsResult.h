@@ -77,65 +77,44 @@ namespace Model
     inline DescribeScalableTargetsResult& AddScalableTargets(ScalableTarget&& value) { m_scalableTargets.push_back(value); return *this; }
 
     /**
-     * <p>The <code>NextToken</code> value to include in a future
-     * <code>DescribeScalableTargets</code> request. When the results of a
-     * <code>DescribeScalableTargets</code> request exceed <code>MaxResults</code>,
-     * this value can be used to retrieve the next page of results. This value is
-     * <code>null</code> when there are no more results to return.</p>
+     * <p>The token required to get the next set of results. This value is
+     * <code>null</code> if there are no more results to return.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>The <code>NextToken</code> value to include in a future
-     * <code>DescribeScalableTargets</code> request. When the results of a
-     * <code>DescribeScalableTargets</code> request exceed <code>MaxResults</code>,
-     * this value can be used to retrieve the next page of results. This value is
-     * <code>null</code> when there are no more results to return.</p>
+     * <p>The token required to get the next set of results. This value is
+     * <code>null</code> if there are no more results to return.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p>The <code>NextToken</code> value to include in a future
-     * <code>DescribeScalableTargets</code> request. When the results of a
-     * <code>DescribeScalableTargets</code> request exceed <code>MaxResults</code>,
-     * this value can be used to retrieve the next page of results. This value is
-     * <code>null</code> when there are no more results to return.</p>
+     * <p>The token required to get the next set of results. This value is
+     * <code>null</code> if there are no more results to return.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
 
     /**
-     * <p>The <code>NextToken</code> value to include in a future
-     * <code>DescribeScalableTargets</code> request. When the results of a
-     * <code>DescribeScalableTargets</code> request exceed <code>MaxResults</code>,
-     * this value can be used to retrieve the next page of results. This value is
-     * <code>null</code> when there are no more results to return.</p>
+     * <p>The token required to get the next set of results. This value is
+     * <code>null</code> if there are no more results to return.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p>The <code>NextToken</code> value to include in a future
-     * <code>DescribeScalableTargets</code> request. When the results of a
-     * <code>DescribeScalableTargets</code> request exceed <code>MaxResults</code>,
-     * this value can be used to retrieve the next page of results. This value is
-     * <code>null</code> when there are no more results to return.</p>
+     * <p>The token required to get the next set of results. This value is
+     * <code>null</code> if there are no more results to return.</p>
      */
     inline DescribeScalableTargetsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>The <code>NextToken</code> value to include in a future
-     * <code>DescribeScalableTargets</code> request. When the results of a
-     * <code>DescribeScalableTargets</code> request exceed <code>MaxResults</code>,
-     * this value can be used to retrieve the next page of results. This value is
-     * <code>null</code> when there are no more results to return.</p>
+     * <p>The token required to get the next set of results. This value is
+     * <code>null</code> if there are no more results to return.</p>
      */
     inline DescribeScalableTargetsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>The <code>NextToken</code> value to include in a future
-     * <code>DescribeScalableTargets</code> request. When the results of a
-     * <code>DescribeScalableTargets</code> request exceed <code>MaxResults</code>,
-     * this value can be used to retrieve the next page of results. This value is
-     * <code>null</code> when there are no more results to return.</p>
+     * <p>The token required to get the next set of results. This value is
+     * <code>null</code> if there are no more results to return.</p>
      */
     inline DescribeScalableTargetsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

@@ -116,27 +116,27 @@ namespace Model
     inline InstanceGroupDetail& WithName(const char* value) { SetName(value); return *this;}
 
     /**
-     * <p>Market type of the Amazon EC2 instances used to create a cluster node.</p>
+     * <p>Market type of the EC2 instances used to create a cluster node.</p>
      */
     inline const MarketType& GetMarket() const{ return m_market; }
 
     /**
-     * <p>Market type of the Amazon EC2 instances used to create a cluster node.</p>
+     * <p>Market type of the EC2 instances used to create a cluster node.</p>
      */
     inline void SetMarket(const MarketType& value) { m_marketHasBeenSet = true; m_market = value; }
 
     /**
-     * <p>Market type of the Amazon EC2 instances used to create a cluster node.</p>
+     * <p>Market type of the EC2 instances used to create a cluster node.</p>
      */
     inline void SetMarket(MarketType&& value) { m_marketHasBeenSet = true; m_market = value; }
 
     /**
-     * <p>Market type of the Amazon EC2 instances used to create a cluster node.</p>
+     * <p>Market type of the EC2 instances used to create a cluster node.</p>
      */
     inline InstanceGroupDetail& WithMarket(const MarketType& value) { SetMarket(value); return *this;}
 
     /**
-     * <p>Market type of the Amazon EC2 instances used to create a cluster node.</p>
+     * <p>Market type of the EC2 instances used to create a cluster node.</p>
      */
     inline InstanceGroupDetail& WithMarket(MarketType&& value) { SetMarket(value); return *this;}
 
@@ -208,37 +208,37 @@ namespace Model
     inline InstanceGroupDetail& WithBidPrice(const char* value) { SetBidPrice(value); return *this;}
 
     /**
-     * <p>Amazon EC2 Instance type.</p>
+     * <p>EC2 instance type.</p>
      */
     inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
 
     /**
-     * <p>Amazon EC2 Instance type.</p>
+     * <p>EC2 instance type.</p>
      */
     inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
     /**
-     * <p>Amazon EC2 Instance type.</p>
+     * <p>EC2 instance type.</p>
      */
     inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
     /**
-     * <p>Amazon EC2 Instance type.</p>
+     * <p>EC2 instance type.</p>
      */
     inline void SetInstanceType(const char* value) { m_instanceTypeHasBeenSet = true; m_instanceType.assign(value); }
 
     /**
-     * <p>Amazon EC2 Instance type.</p>
+     * <p>EC2 instance type.</p>
      */
     inline InstanceGroupDetail& WithInstanceType(const Aws::String& value) { SetInstanceType(value); return *this;}
 
     /**
-     * <p>Amazon EC2 Instance type.</p>
+     * <p>EC2 instance type.</p>
      */
     inline InstanceGroupDetail& WithInstanceType(Aws::String&& value) { SetInstanceType(value); return *this;}
 
     /**
-     * <p>Amazon EC2 Instance type.</p>
+     * <p>EC2 instance type.</p>
      */
     inline InstanceGroupDetail& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
 
