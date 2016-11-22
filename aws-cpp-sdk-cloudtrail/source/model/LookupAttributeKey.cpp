@@ -34,6 +34,7 @@ namespace Aws
         static const int Username_HASH = HashingUtils::HashString("Username");
         static const int ResourceType_HASH = HashingUtils::HashString("ResourceType");
         static const int ResourceName_HASH = HashingUtils::HashString("ResourceName");
+        static const int EventSource_HASH = HashingUtils::HashString("EventSource");
 
 
         LookupAttributeKey GetLookupAttributeKeyForName(const Aws::String& name)
@@ -59,6 +60,10 @@ namespace Aws
           {
             return LookupAttributeKey::ResourceName;
           }
+          else if (hashCode == EventSource_HASH)
+          {
+            return LookupAttributeKey::EventSource;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -83,6 +88,8 @@ namespace Aws
             return "ResourceType";
           case LookupAttributeKey::ResourceName:
             return "ResourceName";
+          case LookupAttributeKey::EventSource:
+            return "EventSource";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
