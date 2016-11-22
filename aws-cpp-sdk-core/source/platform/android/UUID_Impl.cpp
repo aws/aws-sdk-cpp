@@ -15,6 +15,9 @@
 
 #include <aws/core/utils/UUID.h>
 
+#include <aws/core/utils/logging/LogMacros.h>
+#include <cerrno>
+
 namespace Aws
 {
     namespace Utils
@@ -28,9 +31,14 @@ namespace Aws
 
             if(fd)
             {
-                fread(uuid, sizeof(uuid), sizeof(uuid), fd);
+                fread(uuid, sizeof(uuid[0]), sizeof(uuid), fd);
                 fclose(fd);
             }
+	    else
+	    {
+		AWS_LOGSTREAM_ERROR("UUID", "Attempt to read system uuid file resulted in error " << errno);
+	    }
+
             Aws::String uuidStr(uuid);
             return UUID(uuidStr);
         }

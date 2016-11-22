@@ -23,9 +23,9 @@ extern "C" {
 #endif // __cplusplus
 
 JNIEXPORT jint JNICALL
-Java_aws_coretests_TestActivity_linkTest( JNIEnv* env, jobject classRef, jobject context )
+Java_aws_androidsdktesting_RunSDKTests_linkTest( JNIEnv* env, jobject classRef, jobject context )
 {
-    return Java_aws_coretests_TestActivity_runTests(env, classRef, context);
+    return Java_aws_androidsdktesting_RunSDKTests_runTests(env, classRef, context);
 }
 
 #ifdef __cplusplus
