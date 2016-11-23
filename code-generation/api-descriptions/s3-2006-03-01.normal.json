@@ -2612,6 +2612,16 @@
         }
       }
     },
+    "GlacierJobParameters":{
+      "type":"structure",
+      "required":["Tier"],
+      "members":{
+        "Tier":{
+          "shape":"Tier",
+          "documentation":"Glacier retrieval tier at which the restore will be processed."
+        }
+      }
+    },
     "Grant":{
       "type":"structure",
       "members":{
@@ -4766,6 +4776,10 @@
         "Days":{
           "shape":"Days",
           "documentation":"Lifetime of the active copy in days"
+        },
+        "GlacierJobParameters":{
+          "shape":"GlacierJobParameters",
+          "documentation":"Glacier related prameters pertaining to this job."
         }
       }
     },
@@ -4910,6 +4924,14 @@
       }
     },
     "TargetPrefix":{"type":"string"},
+    "Tier":{
+      "type":"string",
+      "enum":[
+        "Standard",
+        "Bulk",
+        "Expedited"
+      ]
+    },
     "Token":{"type":"string"},
     "TopicArn":{"type":"string"},
     "TopicConfiguration":{

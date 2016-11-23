@@ -31,7 +31,7 @@ namespace Model
 {
 
   /**
-   * <p>Contains the vault access policy. </p>
+   * <p>Contains the vault access policy.</p>
    */
   class AWS_GLACIER_API VaultAccessPolicy
   {

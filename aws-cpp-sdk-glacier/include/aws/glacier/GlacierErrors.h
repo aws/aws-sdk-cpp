@@ -53,7 +53,8 @@ enum class GlacierErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  LIMIT_EXCEEDED= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  INSUFFICIENT_CAPACITY= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  LIMIT_EXCEEDED,
   MISSING_PARAMETER_VALUE,
   POLICY_ENFORCED,
   REQUEST_TIMEOUT
