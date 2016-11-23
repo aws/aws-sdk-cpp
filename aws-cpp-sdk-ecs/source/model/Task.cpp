@@ -37,6 +37,8 @@ Task::Task() :
     m_desiredStatusHasBeenSet(false),
     m_containersHasBeenSet(false),
     m_startedByHasBeenSet(false),
+    m_version(0),
+    m_versionHasBeenSet(false),
     m_stoppedReasonHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_startedAtHasBeenSet(false),
@@ -54,6 +56,8 @@ Task::Task(const JsonValue& jsonValue) :
     m_desiredStatusHasBeenSet(false),
     m_containersHasBeenSet(false),
     m_startedByHasBeenSet(false),
+    m_version(0),
+    m_versionHasBeenSet(false),
     m_stoppedReasonHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_startedAtHasBeenSet(false),
@@ -128,6 +132,13 @@ Task& Task::operator =(const JsonValue& jsonValue)
     m_startedBy = jsonValue.GetString("startedBy");
 
     m_startedByHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("version"))
+  {
+    m_version = jsonValue.GetInt64("version");
+
+    m_versionHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("stoppedReason"))
@@ -221,6 +232,12 @@ JsonValue Task::Jsonize() const
   if(m_startedByHasBeenSet)
   {
    payload.WithString("startedBy", m_startedBy);
+
+  }
+
+  if(m_versionHasBeenSet)
+  {
+   payload.WithInt64("version", m_version);
 
   }
 

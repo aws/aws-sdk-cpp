@@ -39,19 +39,29 @@ namespace Model
     StopTaskResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     StopTaskResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    
+    /**
+     * <p>The task that was stopped.</p>
+     */
     inline const Task& GetTask() const{ return m_task; }
 
-    
+    /**
+     * <p>The task that was stopped.</p>
+     */
     inline void SetTask(const Task& value) { m_task = value; }
 
-    
+    /**
+     * <p>The task that was stopped.</p>
+     */
     inline void SetTask(Task&& value) { m_task = value; }
 
-    
+    /**
+     * <p>The task that was stopped.</p>
+     */
     inline StopTaskResult& WithTask(const Task& value) { SetTask(value); return *this;}
 
-    
+    /**
+     * <p>The task that was stopped.</p>
+     */
     inline StopTaskResult& WithTask(Task&& value) { SetTask(value); return *this;}
 
   private:

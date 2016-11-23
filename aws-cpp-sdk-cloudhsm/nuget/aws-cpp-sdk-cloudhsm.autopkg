@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-CloudHSM;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : @RUNTIME_MAJOR_VERSION@.20140530.@RUNTIME_MINOR_VERSION@;
+        version : 1.0.20140530.33;
 
         // Display name for package.
         title: AWS SDK for C++ (Amazon CloudHSM);
@@ -48,7 +48,7 @@ nuget {
 
     dependencies {
        packages: {
-            AWSSDKCPP-Core/@RUNTIME_MAJOR_VERSION@.1
+            AWSSDKCPP-Core/1.0.1
        }
     }
 
