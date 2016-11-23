@@ -32,9 +32,9 @@ namespace Aws
 
         STSAssumeRoleCredentialsProvider::STSAssumeRoleCredentialsProvider(const Aws::String& roleArn, const Aws::String& sessionName,
             const Aws::String& externalId, int loadFrequency, const std::shared_ptr<Aws::STS::STSClient>& stsClient) :
+            m_stsClient(stsClient == nullptr ? Aws::MakeShared<Aws::STS::STSClient>(CLASS_TAG) : stsClient),
             m_roleArn(roleArn), m_sessionName(sessionName), m_externalId(externalId),
-            m_expiry(0), m_loadFrequency(loadFrequency),
-            m_stsClient(stsClient == nullptr ? Aws::MakeShared<Aws::STS::STSClient>(CLASS_TAG) : stsClient)
+            m_expiry(0), m_loadFrequency(loadFrequency)            
         {
             if (sessionName.empty())
             {   
