@@ -50,7 +50,7 @@ nuget {
        packages: {
             AWSSDKCPP-Core/1.0,
             AWSSDKCPP-CognitoIdentity/1.0.20140630,
-			AWSSDKCPP-STS/1.0.20110615
+            AWSSDKCPP-STS/1.0.20110615
        }
     }
 

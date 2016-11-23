@@ -15,6 +15,7 @@
 
 #include <aws/identity-management/auth/STSAssumeRoleCredentialsProvider.h>
 #include <aws/sts/model/AssumeRoleRequest.h>
+#include <aws/sts/STSClient.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/Outcome.h>
 

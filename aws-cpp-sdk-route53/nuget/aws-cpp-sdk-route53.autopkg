@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-Route53;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 1.0.20130401.32;
+        version : @RUNTIME_MAJOR_VERSION@.20130401.@RUNTIME_MINOR_VERSION@;
 
         // Display name for package.
         title: AWS SDK for C++ (Amazon Route 53);
@@ -48,7 +48,7 @@ nuget {
 
     dependencies {
        packages: {
-            AWSSDKCPP-Core/1.0.1
+            AWSSDKCPP-Core/@RUNTIME_MAJOR_VERSION@.1
        }
     }
 

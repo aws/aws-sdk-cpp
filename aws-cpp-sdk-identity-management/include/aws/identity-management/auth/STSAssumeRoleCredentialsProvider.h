@@ -17,13 +17,18 @@
 
 #include <aws/identity-management/IdentityManagment_EXPORTS.h>
 #include <aws/core/auth/AWSCredentialsProvider.h>
-#include <aws/sts/STSClient.h>
 
 #include <memory>
 #include <mutex>
+#include <atomic>
 
 namespace Aws
 {
+    namespace STS
+    {
+        class STSClient;
+    }
+
     namespace Auth
     {
         /**
