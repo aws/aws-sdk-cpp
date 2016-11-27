@@ -37,7 +37,7 @@ list(APPEND C2J_LIST "dms:2016-01-01")
 list(APPEND C2J_LIST "ds:2015-04-16")
 list(APPEND C2J_LIST "dynamodb:2012-08-10")
 if(NOT PLATFORM_ANDROID OR NOT CMAKE_HOST_WIN32)  # ec2 isn't building for android on windows atm due to an internal compiler error, TODO: investigate further
-    list(APPEND C2J_LIST "ec2:2015-10-01")
+    list(APPEND C2J_LIST "ec2:2016-09-15")
 endif()
 list(APPEND C2J_LIST "ecr:2015-09-21")
 list(APPEND C2J_LIST "ecs:2014-11-13")
