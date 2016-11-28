@@ -65,6 +65,7 @@ namespace Aws
             const Aws::Map<Aws::String, Aws::String>& metadata)
         {
             auto fileStream = Aws::MakeShared<Aws::FStream>(CLASS_TAG, fileName.c_str(), std::ios_base::in | std::ios_base::binary);
+
             fileStream->seekg(0, std::ios_base::end);
             size_t length = static_cast<size_t>(fileStream->tellg());
             fileStream->seekg(0, std::ios_base::beg);
@@ -72,16 +73,21 @@ namespace Aws
             handle->SetContentType(contentType);
             handle->SetMetadata(metadata);
 
-            AWS_LOGSTREAM_ERROR( "Transfer", "UploadFile " << fileName << " of size " << length );
-
-            if (length > m_transferConfig.bufferSize)
-            {
-                m_transferConfig.transferExecutor->Submit([this, fileStream, handle] { DoMultipartUpload(fileStream, handle); });
-            }
-            else
-            {
-                m_transferConfig.transferExecutor->Submit([this, fileStream, handle] { DoSinglePartUpload(fileStream, handle); });
-            }
+	    if(fileStream->good())
+	    {
+		if (length > m_transferConfig.bufferSize)
+		{
+		    m_transferConfig.transferExecutor->Submit([this, fileStream, handle] { DoMultipartUpload(fileStream, handle); });
+		}
+		else
+		{
+		    m_transferConfig.transferExecutor->Submit([this, fileStream, handle] { DoSinglePartUpload(fileStream, handle); });
+		}
+	    }
+	    else
+	    {
+		handle->UpdateStatus(Aws::Transfer::TransferStatus::FAILED);
+	    }
 
             return handle;
         }
@@ -96,14 +102,21 @@ namespace Aws
             handle->SetContentType(contentType);
             handle->SetMetadata(metadata);
 
-            if (length > m_transferConfig.bufferSize)
-            {
-                m_transferConfig.transferExecutor->Submit([this, fileStream, handle] { DoMultipartUpload(fileStream, handle); });
-            }
-            else
-            {
-                m_transferConfig.transferExecutor->Submit([this, fileStream, handle] { DoSinglePartUpload(fileStream, handle); });
-            }
+	    if(fileStream->good())
+	    {
+		if (length > m_transferConfig.bufferSize)
+		{
+		    m_transferConfig.transferExecutor->Submit([this, fileStream, handle] { DoMultipartUpload(fileStream, handle); });
+		}
+		else
+		{
+		    m_transferConfig.transferExecutor->Submit([this, fileStream, handle] { DoSinglePartUpload(fileStream, handle); });
+		}
+	    }
+	    else
+	    {
+		handle->UpdateStatus(Aws::Transfer::TransferStatus::FAILED);
+	    }
 
             return handle;
         }
