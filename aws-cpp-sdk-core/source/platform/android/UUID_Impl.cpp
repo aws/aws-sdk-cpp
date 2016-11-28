@@ -21,14 +21,14 @@ namespace Aws
     {
         UUID UUID::RandomUUID()
         {
-            char uuid[UUID_STR_SIZE];
+            char uuid[UUID_STR_SIZE + 1];
             memset(uuid, 0, sizeof(uuid));
 
             FILE* fd = fopen("/proc/sys/kernel/random/uuid", "r");
 
             if(fd)
             {
-                fread(uuid, sizeof(uuid), sizeof(uuid), fd);
+                fread(uuid, UUID_STR_SIZE, 1, fd);
                 fclose(fd);
             }
             Aws::String uuidStr(uuid);
