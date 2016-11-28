@@ -224,7 +224,7 @@ def BuildNative(abi, clean, buildDir, jniDir, installDir, buildType, buildShared
                                  "-DCMAKE_BUILD_TYPE=" + buildType,
                                  "-DENABLE_UNITY_BUILD=ON",
                                  '-DTEST_CERT_PATH="/data/data/aws.' + TestLowerName + '/certs"',
-                                 '-DBUILD_ONLY=dynamodb;sqs;s3;lambda;kinesis;cognito-identity;transfer;iam;identity-management;access-management',
+                                 '-DBUILD_ONLY=dynamodb;sqs;s3;lambda;kinesis;cognito-identity;transfer;iam;identity-management;access-management;s3-encryption',
                                  ".."] )
     else:
         os.chdir( buildDir )

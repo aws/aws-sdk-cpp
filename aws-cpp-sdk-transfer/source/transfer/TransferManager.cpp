@@ -26,6 +26,8 @@
 #include <fstream>
 #include <algorithm>
 
+#include <aws/core/utils/logging/LogMacros.h>
+
 namespace Aws
 {
     namespace Transfer
@@ -69,6 +71,8 @@ namespace Aws
             auto handle = Aws::MakeShared<TransferHandle>(CLASS_TAG, bucketName, keyName, length, fileName);
             handle->SetContentType(contentType);
             handle->SetMetadata(metadata);
+
+            AWS_LOGSTREAM_ERROR( "Transfer", "UploadFile " << fileName << " of size " << length );
 
             if (length > m_transferConfig.bufferSize)
             {

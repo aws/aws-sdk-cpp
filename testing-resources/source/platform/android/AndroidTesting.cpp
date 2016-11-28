@@ -196,7 +196,7 @@ static jint RunAndroidTestsInternal()
   Aws::SDKOptions options;
   Aws::InitAPI(options);
 
-  Aws::Utils::Logging::InitializeAWSLogging(Aws::MakeShared<Aws::Utils::Logging::LogcatLogSystem>(ALLOCATION_TAG, Aws::Utils::Logging::LogLevel::Debug));
+  Aws::Utils::Logging::InitializeAWSLogging(Aws::MakeShared<Aws::Utils::Logging::LogcatLogSystem>(ALLOCATION_TAG, Aws::Utils::Logging::LogLevel::Error));
   ::testing::InitGoogleTest(&dummy, &dummy2);
   auto result = RUN_ALL_TESTS();
 
