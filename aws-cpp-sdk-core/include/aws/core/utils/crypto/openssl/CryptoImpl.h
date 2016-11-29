@@ -191,7 +191,8 @@ namespace Aws
 
                 virtual size_t GetKeyLengthBits() const = 0;
 
-                EVP_CIPHER_CTX m_ctx;
+                EVP_CIPHER_CTX *m_ctx;
+                EVP_CIPHER_CTX _m_ctx;
 
                 void CheckInitEncryptor();
                 void CheckInitDecryptor();
