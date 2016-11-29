@@ -1,0 +1,416 @@
+{
+    "version": "2.0",
+    "metadata": {
+        "apiVersion": "2016-11-23",
+        "endpointPrefix": "h6wguq9ghl.execute-api.us-east-1.amazonaws.com/prod",
+        "protocol": "rest-json",
+        "serviceFullName": "VitalServices"
+    },
+    "operations": {
+        "getLoggedInUser": {
+            "name": "getLoggedInUser",
+            "http": {
+                "method": "POST",
+                "requestUri": "/get-logged-in-user",
+                "responseCode": 200
+            },
+            "input": {
+                "shape": "VitalServicesRequest"
+            },
+            "output": {
+                "shape": "ClientUser"
+            }
+        }
+    },
+    "shapes": {
+        "VitalServicesRequest_appointmentId": {
+            "type": "string"
+        },
+        "VitalServicesRequest_appointmentIdsItem": {
+            "type": "string"
+        },
+        "VitalServicesRequest_appointmentIds": {
+            "type": "list",
+            "member": {
+                "shape": "VitalServicesRequest_appointmentIdsItem"
+            }
+        },
+        "VitalServicesRequest_latitude": {
+            "type": "double"
+        },
+        "VitalServicesRequest_suite": {
+            "type": "string"
+        },
+        "VitalServicesRequest_lastName": {
+            "type": "string"
+        },
+        "VitalServicesRequest_firstTime": {
+            "type": "string"
+        },
+        "VitalServicesRequest_serviceIdsItem": {
+            "type": "string"
+        },
+        "VitalServicesRequest_serviceIds": {
+            "type": "list",
+            "member": {
+                "shape": "VitalServicesRequest_serviceIdsItem"
+            }
+        },
+        "VitalServicesRequest_birthdateDay": {
+            "type": "string"
+        },
+        "VitalServicesRequest_operation": {
+            "type": "string"
+        },
+        "VitalServicesRequest_doctorId": {
+            "type": "string"
+        },
+        "VitalServicesRequest_city": {
+            "type": "string"
+        },
+        "VitalServicesRequest_ssnLast4": {
+            "type": "string"
+        },
+        "VitalServicesRequest_mobileNumber": {
+            "type": "string"
+        },
+        "VitalServicesRequest_getPatients": {
+            "type": "boolean"
+        },
+        "VitalServicesRequest_patientId": {
+            "type": "string"
+        },
+        "VitalServicesRequest_unavailableTimeSlotsItem": {
+            "type": "string"
+        },
+        "VitalServicesRequest_unavailableTimeSlots": {
+            "type": "list",
+            "member": {
+                "shape": "VitalServicesRequest_unavailableTimeSlotsItem"
+            }
+        },
+        "VitalServicesRequest_doctorIdsItem": {
+            "type": "string"
+        },
+        "VitalServicesRequest_doctorIds": {
+            "type": "list",
+            "member": {
+                "shape": "VitalServicesRequest_doctorIdsItem"
+            }
+        },
+        "VitalServicesRequest_postalCode": {
+            "type": "string"
+        },
+        "VitalServicesRequest_billVersion": {
+            "type": "string"
+        },
+        "VitalServicesRequest_specialtyId": {
+            "type": "string"
+        },
+        "VitalServicesRequest_employerIdentificationNumber": {
+            "type": "string"
+        },
+        "VitalServicesRequest_string1": {
+            "type": "string"
+        },
+        "VitalServicesRequest_getDoctors": {
+            "type": "boolean"
+        },
+        "VitalServicesRequest_startTime": {
+            "type": "string"
+        },
+        "VitalServicesRequest_birthdateYear": {
+            "type": "string"
+        },
+        "VitalServicesRequest_firstName": {
+            "type": "string"
+        },
+        "VitalServicesRequest_lateCancellation": {
+            "type": "boolean"
+        },
+        "VitalServicesRequest_longitude": {
+            "type": "double"
+        },
+        "VitalServicesRequest_state": {
+            "type": "string"
+        },
+        "VitalServicesRequest_birthdateMonth": {
+            "type": "string"
+        },
+        "VitalServicesRequest_durationMinutes": {
+            "type": "string"
+        },
+        "VitalServicesRequest_cardToken": {
+            "type": "string"
+        },
+        "VitalServicesRequest_serviceId": {
+            "type": "string"
+        },
+        "VitalServicesRequest_string4": {
+            "type": "string"
+        },
+        "VitalServicesRequest_streetNumberAndName": {
+            "type": "string"
+        },
+        "VitalServicesRequest_sourceId": {
+            "type": "string"
+        },
+        "VitalServicesRequest_priceDollars": {
+            "type": "string"
+        },
+        "VitalServicesRequest_file": {
+            "type": "string"
+        },
+        "VitalServicesRequest_officeNumber": {
+            "type": "string"
+        },
+        "VitalServicesRequest_string3": {
+            "type": "string"
+        },
+        "VitalServicesRequest_pictureUrl": {
+            "type": "string"
+        },
+        "VitalServicesRequest_businessName": {
+            "type": "string"
+        },
+        "VitalServicesRequest_patientIdsItem": {
+            "type": "string"
+        },
+        "VitalServicesRequest_patientIds": {
+            "type": "list",
+            "member": {
+                "shape": "VitalServicesRequest_patientIdsItem"
+            }
+        },
+        "VitalServicesRequest_availableTimeSlotsItem": {
+            "type": "string"
+        },
+        "VitalServicesRequest_availableTimeSlots": {
+            "type": "list",
+            "member": {
+                "shape": "VitalServicesRequest_availableTimeSlotsItem"
+            }
+        },
+        "VitalServicesRequest_lastTime": {
+            "type": "string"
+        },
+        "VitalServicesRequest_httpMethod": {
+            "type": "string"
+        },
+        "VitalServicesRequest_string2": {
+            "type": "string"
+        },
+        "VitalServicesRequest_email": {
+            "type": "string"
+        },
+        "VitalServicesRequest_bankAccountToken": {
+            "type": "string"
+        },
+        "VitalServicesRequest": {
+            "type": "structure",
+            "required": [],
+            "members": {
+                "appointmentId": {
+                    "shape": "VitalServicesRequest_appointmentId"
+                },
+                "appointmentIds": {
+                    "shape": "VitalServicesRequest_appointmentIds"
+                },
+                "latitude": {
+                    "shape": "VitalServicesRequest_latitude"
+                },
+                "suite": {
+                    "shape": "VitalServicesRequest_suite"
+                },
+                "lastName": {
+                    "shape": "VitalServicesRequest_lastName"
+                },
+                "firstTime": {
+                    "shape": "VitalServicesRequest_firstTime"
+                },
+                "serviceIds": {
+                    "shape": "VitalServicesRequest_serviceIds"
+                },
+                "birthdateDay": {
+                    "shape": "VitalServicesRequest_birthdateDay"
+                },
+                "operation": {
+                    "shape": "VitalServicesRequest_operation"
+                },
+                "doctorId": {
+                    "shape": "VitalServicesRequest_doctorId"
+                },
+                "city": {
+                    "shape": "VitalServicesRequest_city"
+                },
+                "ssnLast4": {
+                    "shape": "VitalServicesRequest_ssnLast4"
+                },
+                "mobileNumber": {
+                    "shape": "VitalServicesRequest_mobileNumber"
+                },
+                "getPatients": {
+                    "shape": "VitalServicesRequest_getPatients"
+                },
+                "patientId": {
+                    "shape": "VitalServicesRequest_patientId"
+                },
+                "unavailableTimeSlots": {
+                    "shape": "VitalServicesRequest_unavailableTimeSlots"
+                },
+                "doctorIds": {
+                    "shape": "VitalServicesRequest_doctorIds"
+                },
+                "postalCode": {
+                    "shape": "VitalServicesRequest_postalCode"
+                },
+                "billVersion": {
+                    "shape": "VitalServicesRequest_billVersion"
+                },
+                "specialtyId": {
+                    "shape": "VitalServicesRequest_specialtyId"
+                },
+                "employerIdentificationNumber": {
+                    "shape": "VitalServicesRequest_employerIdentificationNumber"
+                },
+                "string1": {
+                    "shape": "VitalServicesRequest_string1"
+                },
+                "getDoctors": {
+                    "shape": "VitalServicesRequest_getDoctors"
+                },
+                "startTime": {
+                    "shape": "VitalServicesRequest_startTime"
+                },
+                "birthdateYear": {
+                    "shape": "VitalServicesRequest_birthdateYear"
+                },
+                "firstName": {
+                    "shape": "VitalServicesRequest_firstName"
+                },
+                "lateCancellation": {
+                    "shape": "VitalServicesRequest_lateCancellation"
+                },
+                "longitude": {
+                    "shape": "VitalServicesRequest_longitude"
+                },
+                "state": {
+                    "shape": "VitalServicesRequest_state"
+                },
+                "birthdateMonth": {
+                    "shape": "VitalServicesRequest_birthdateMonth"
+                },
+                "durationMinutes": {
+                    "shape": "VitalServicesRequest_durationMinutes"
+                },
+                "cardToken": {
+                    "shape": "VitalServicesRequest_cardToken"
+                },
+                "serviceId": {
+                    "shape": "VitalServicesRequest_serviceId"
+                },
+                "string4": {
+                    "shape": "VitalServicesRequest_string4"
+                },
+                "streetNumberAndName": {
+                    "shape": "VitalServicesRequest_streetNumberAndName"
+                },
+                "sourceId": {
+                    "shape": "VitalServicesRequest_sourceId"
+                },
+                "priceDollars": {
+                    "shape": "VitalServicesRequest_priceDollars"
+                },
+                "file": {
+                    "shape": "VitalServicesRequest_file"
+                },
+                "officeNumber": {
+                    "shape": "VitalServicesRequest_officeNumber"
+                },
+                "string3": {
+                    "shape": "VitalServicesRequest_string3"
+                },
+                "pictureUrl": {
+                    "shape": "VitalServicesRequest_pictureUrl"
+                },
+                "businessName": {
+                    "shape": "VitalServicesRequest_businessName"
+                },
+                "patientIds": {
+                    "shape": "VitalServicesRequest_patientIds"
+                },
+                "availableTimeSlots": {
+                    "shape": "VitalServicesRequest_availableTimeSlots"
+                },
+                "lastTime": {
+                    "shape": "VitalServicesRequest_lastTime"
+                },
+                "httpMethod": {
+                    "shape": "VitalServicesRequest_httpMethod"
+                },
+                "string2": {
+                    "shape": "VitalServicesRequest_string2"
+                },
+                "email": {
+                    "shape": "VitalServicesRequest_email"
+                },
+                "bankAccountToken": {
+                    "shape": "VitalServicesRequest_bankAccountToken"
+                }
+            }
+        },
+        "ClientUser_lastName": {
+            "type": "string"
+        },
+        "ClientUser_doctorId": {
+            "type": "string"
+        },
+        "ClientUser_email": {
+            "type": "string"
+        },
+        "ClientUser_id": {
+            "type": "string"
+        },
+        "ClientUser_profilePhotoUrl": {
+            "type": "string"
+        },
+        "ClientUser_mobileNumber": {
+            "type": "string"
+        },
+        "ClientUser_firstName": {
+            "type": "string"
+        },
+        "ClientUser": {
+            "type": "structure",
+            "required": [
+                "email",
+                "firstName",
+                "id",
+                "lastName"
+            ],
+            "members": {
+                "lastName": {
+                    "shape": "ClientUser_lastName"
+                },
+                "doctorId": {
+                    "shape": "ClientUser_doctorId"
+                },
+                "email": {
+                    "shape": "ClientUser_email"
+                },
+                "id": {
+                    "shape": "ClientUser_id"
+                },
+                "profilePhotoUrl": {
+                    "shape": "ClientUser_profilePhotoUrl"
+                },
+                "mobileNumber": {
+                    "shape": "ClientUser_mobileNumber"
+                },
+                "firstName": {
+                    "shape": "ClientUser_firstName"
+                }
+            }
+        }
+    }
+}
