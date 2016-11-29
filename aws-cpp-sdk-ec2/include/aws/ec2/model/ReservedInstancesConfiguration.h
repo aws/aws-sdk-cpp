@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/InstanceType.h>
+#include <aws/ec2/model/Scope.h>
 
 namespace Aws
 {
@@ -162,6 +163,36 @@ namespace Model
      */
     inline ReservedInstancesConfiguration& WithInstanceType(InstanceType&& value) { SetInstanceType(value); return *this;}
 
+    /**
+     * <p>Whether the Reserved Instance is <code>standard</code> or
+     * <code>convertible</code>.</p>
+     */
+    inline const Scope& GetScope() const{ return m_scope; }
+
+    /**
+     * <p>Whether the Reserved Instance is <code>standard</code> or
+     * <code>convertible</code>.</p>
+     */
+    inline void SetScope(const Scope& value) { m_scopeHasBeenSet = true; m_scope = value; }
+
+    /**
+     * <p>Whether the Reserved Instance is <code>standard</code> or
+     * <code>convertible</code>.</p>
+     */
+    inline void SetScope(Scope&& value) { m_scopeHasBeenSet = true; m_scope = value; }
+
+    /**
+     * <p>Whether the Reserved Instance is <code>standard</code> or
+     * <code>convertible</code>.</p>
+     */
+    inline ReservedInstancesConfiguration& WithScope(const Scope& value) { SetScope(value); return *this;}
+
+    /**
+     * <p>Whether the Reserved Instance is <code>standard</code> or
+     * <code>convertible</code>.</p>
+     */
+    inline ReservedInstancesConfiguration& WithScope(Scope&& value) { SetScope(value); return *this;}
+
   private:
     Aws::String m_availabilityZone;
     bool m_availabilityZoneHasBeenSet;
@@ -171,6 +202,8 @@ namespace Model
     bool m_instanceCountHasBeenSet;
     InstanceType m_instanceType;
     bool m_instanceTypeHasBeenSet;
+    Scope m_scope;
+    bool m_scopeHasBeenSet;
   };
 
 } // namespace Model

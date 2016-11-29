@@ -146,37 +146,51 @@ namespace Model
     inline RequestSpotLaunchSpecification& AddSecurityGroups(const char* value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(value); return *this; }
 
     /**
-     * <p>The Base64-encoded MIME user data to make available to the instances.</p>
+     * <p>The user data to make available to the instances. If you are using an AWS SDK
+     * or command line tool, Base64-encoding is performed for you, and you can load the
+     * text from a file. Otherwise, you must provide Base64-encoded text.</p>
      */
     inline const Aws::String& GetUserData() const{ return m_userData; }
 
     /**
-     * <p>The Base64-encoded MIME user data to make available to the instances.</p>
+     * <p>The user data to make available to the instances. If you are using an AWS SDK
+     * or command line tool, Base64-encoding is performed for you, and you can load the
+     * text from a file. Otherwise, you must provide Base64-encoded text.</p>
      */
     inline void SetUserData(const Aws::String& value) { m_userDataHasBeenSet = true; m_userData = value; }
 
     /**
-     * <p>The Base64-encoded MIME user data to make available to the instances.</p>
+     * <p>The user data to make available to the instances. If you are using an AWS SDK
+     * or command line tool, Base64-encoding is performed for you, and you can load the
+     * text from a file. Otherwise, you must provide Base64-encoded text.</p>
      */
     inline void SetUserData(Aws::String&& value) { m_userDataHasBeenSet = true; m_userData = value; }
 
     /**
-     * <p>The Base64-encoded MIME user data to make available to the instances.</p>
+     * <p>The user data to make available to the instances. If you are using an AWS SDK
+     * or command line tool, Base64-encoding is performed for you, and you can load the
+     * text from a file. Otherwise, you must provide Base64-encoded text.</p>
      */
     inline void SetUserData(const char* value) { m_userDataHasBeenSet = true; m_userData.assign(value); }
 
     /**
-     * <p>The Base64-encoded MIME user data to make available to the instances.</p>
+     * <p>The user data to make available to the instances. If you are using an AWS SDK
+     * or command line tool, Base64-encoding is performed for you, and you can load the
+     * text from a file. Otherwise, you must provide Base64-encoded text.</p>
      */
     inline RequestSpotLaunchSpecification& WithUserData(const Aws::String& value) { SetUserData(value); return *this;}
 
     /**
-     * <p>The Base64-encoded MIME user data to make available to the instances.</p>
+     * <p>The user data to make available to the instances. If you are using an AWS SDK
+     * or command line tool, Base64-encoding is performed for you, and you can load the
+     * text from a file. Otherwise, you must provide Base64-encoded text.</p>
      */
     inline RequestSpotLaunchSpecification& WithUserData(Aws::String&& value) { SetUserData(value); return *this;}
 
     /**
-     * <p>The Base64-encoded MIME user data to make available to the instances.</p>
+     * <p>The user data to make available to the instances. If you are using an AWS SDK
+     * or command line tool, Base64-encoding is performed for you, and you can load the
+     * text from a file. Otherwise, you must provide Base64-encoded text.</p>
      */
     inline RequestSpotLaunchSpecification& WithUserData(const char* value) { SetUserData(value); return *this;}
 
@@ -484,7 +498,7 @@ namespace Model
      * provides dedicated throughput to Amazon EBS and an optimized configuration stack
      * to provide optimal EBS I/O performance. This optimization isn't available with
      * all instance types. Additional usage charges apply when using an EBS Optimized
-     * instance.</p> <p>Default: <code>false</code></p>
+     * instance.</p> <p>Default: <code>false</code> </p>
      */
     inline bool GetEbsOptimized() const{ return m_ebsOptimized; }
 
@@ -493,7 +507,7 @@ namespace Model
      * provides dedicated throughput to Amazon EBS and an optimized configuration stack
      * to provide optimal EBS I/O performance. This optimization isn't available with
      * all instance types. Additional usage charges apply when using an EBS Optimized
-     * instance.</p> <p>Default: <code>false</code></p>
+     * instance.</p> <p>Default: <code>false</code> </p>
      */
     inline void SetEbsOptimized(bool value) { m_ebsOptimizedHasBeenSet = true; m_ebsOptimized = value; }
 
@@ -502,7 +516,7 @@ namespace Model
      * provides dedicated throughput to Amazon EBS and an optimized configuration stack
      * to provide optimal EBS I/O performance. This optimization isn't available with
      * all instance types. Additional usage charges apply when using an EBS Optimized
-     * instance.</p> <p>Default: <code>false</code></p>
+     * instance.</p> <p>Default: <code>false</code> </p>
      */
     inline RequestSpotLaunchSpecification& WithEbsOptimized(bool value) { SetEbsOptimized(value); return *this;}
 

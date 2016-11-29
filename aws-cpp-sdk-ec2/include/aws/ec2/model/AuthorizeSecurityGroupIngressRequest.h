@@ -280,7 +280,9 @@ namespace Model
      * <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>)
      * or number (see <a
      * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
-     * Numbers</a>). (VPC only) Use <code>-1</code> to specify all.</p>
+     * Numbers</a>). (VPC only) Use <code>-1</code> to specify all traffic. If you
+     * specify <code>-1</code>, traffic on all ports is allowed, regardless of any
+     * ports you specify.</p>
      */
     inline const Aws::String& GetIpProtocol() const{ return m_ipProtocol; }
 
@@ -288,7 +290,9 @@ namespace Model
      * <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>)
      * or number (see <a
      * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
-     * Numbers</a>). (VPC only) Use <code>-1</code> to specify all.</p>
+     * Numbers</a>). (VPC only) Use <code>-1</code> to specify all traffic. If you
+     * specify <code>-1</code>, traffic on all ports is allowed, regardless of any
+     * ports you specify.</p>
      */
     inline void SetIpProtocol(const Aws::String& value) { m_ipProtocolHasBeenSet = true; m_ipProtocol = value; }
 
@@ -296,7 +300,9 @@ namespace Model
      * <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>)
      * or number (see <a
      * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
-     * Numbers</a>). (VPC only) Use <code>-1</code> to specify all.</p>
+     * Numbers</a>). (VPC only) Use <code>-1</code> to specify all traffic. If you
+     * specify <code>-1</code>, traffic on all ports is allowed, regardless of any
+     * ports you specify.</p>
      */
     inline void SetIpProtocol(Aws::String&& value) { m_ipProtocolHasBeenSet = true; m_ipProtocol = value; }
 
@@ -304,7 +310,9 @@ namespace Model
      * <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>)
      * or number (see <a
      * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
-     * Numbers</a>). (VPC only) Use <code>-1</code> to specify all.</p>
+     * Numbers</a>). (VPC only) Use <code>-1</code> to specify all traffic. If you
+     * specify <code>-1</code>, traffic on all ports is allowed, regardless of any
+     * ports you specify.</p>
      */
     inline void SetIpProtocol(const char* value) { m_ipProtocolHasBeenSet = true; m_ipProtocol.assign(value); }
 
@@ -312,7 +320,9 @@ namespace Model
      * <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>)
      * or number (see <a
      * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
-     * Numbers</a>). (VPC only) Use <code>-1</code> to specify all.</p>
+     * Numbers</a>). (VPC only) Use <code>-1</code> to specify all traffic. If you
+     * specify <code>-1</code>, traffic on all ports is allowed, regardless of any
+     * ports you specify.</p>
      */
     inline AuthorizeSecurityGroupIngressRequest& WithIpProtocol(const Aws::String& value) { SetIpProtocol(value); return *this;}
 
@@ -320,7 +330,9 @@ namespace Model
      * <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>)
      * or number (see <a
      * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
-     * Numbers</a>). (VPC only) Use <code>-1</code> to specify all.</p>
+     * Numbers</a>). (VPC only) Use <code>-1</code> to specify all traffic. If you
+     * specify <code>-1</code>, traffic on all ports is allowed, regardless of any
+     * ports you specify.</p>
      */
     inline AuthorizeSecurityGroupIngressRequest& WithIpProtocol(Aws::String&& value) { SetIpProtocol(value); return *this;}
 
@@ -328,7 +340,9 @@ namespace Model
      * <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>)
      * or number (see <a
      * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
-     * Numbers</a>). (VPC only) Use <code>-1</code> to specify all.</p>
+     * Numbers</a>). (VPC only) Use <code>-1</code> to specify all traffic. If you
+     * specify <code>-1</code>, traffic on all ports is allowed, regardless of any
+     * ports you specify.</p>
      */
     inline AuthorizeSecurityGroupIngressRequest& WithIpProtocol(const char* value) { SetIpProtocol(value); return *this;}
 
@@ -418,43 +432,43 @@ namespace Model
 
     /**
      * <p>A set of IP permissions. Can be used to specify multiple rules in a single
-     * command. </p>
+     * command.</p>
      */
     inline const Aws::Vector<IpPermission>& GetIpPermissions() const{ return m_ipPermissions; }
 
     /**
      * <p>A set of IP permissions. Can be used to specify multiple rules in a single
-     * command. </p>
+     * command.</p>
      */
     inline void SetIpPermissions(const Aws::Vector<IpPermission>& value) { m_ipPermissionsHasBeenSet = true; m_ipPermissions = value; }
 
     /**
      * <p>A set of IP permissions. Can be used to specify multiple rules in a single
-     * command. </p>
+     * command.</p>
      */
     inline void SetIpPermissions(Aws::Vector<IpPermission>&& value) { m_ipPermissionsHasBeenSet = true; m_ipPermissions = value; }
 
     /**
      * <p>A set of IP permissions. Can be used to specify multiple rules in a single
-     * command. </p>
+     * command.</p>
      */
     inline AuthorizeSecurityGroupIngressRequest& WithIpPermissions(const Aws::Vector<IpPermission>& value) { SetIpPermissions(value); return *this;}
 
     /**
      * <p>A set of IP permissions. Can be used to specify multiple rules in a single
-     * command. </p>
+     * command.</p>
      */
     inline AuthorizeSecurityGroupIngressRequest& WithIpPermissions(Aws::Vector<IpPermission>&& value) { SetIpPermissions(value); return *this;}
 
     /**
      * <p>A set of IP permissions. Can be used to specify multiple rules in a single
-     * command. </p>
+     * command.</p>
      */
     inline AuthorizeSecurityGroupIngressRequest& AddIpPermissions(const IpPermission& value) { m_ipPermissionsHasBeenSet = true; m_ipPermissions.push_back(value); return *this; }
 
     /**
      * <p>A set of IP permissions. Can be used to specify multiple rules in a single
-     * command. </p>
+     * command.</p>
      */
     inline AuthorizeSecurityGroupIngressRequest& AddIpPermissions(IpPermission&& value) { m_ipPermissionsHasBeenSet = true; m_ipPermissions.push_back(value); return *this; }
 

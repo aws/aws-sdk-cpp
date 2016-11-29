@@ -44,17 +44,17 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     /**
-     * <p>Enables monitoring for the instance.</p> <p>Default: <code>false</code></p>
+     * <p>Enables monitoring for the instance.</p> <p>Default: <code>false</code> </p>
      */
     inline bool GetEnabled() const{ return m_enabled; }
 
     /**
-     * <p>Enables monitoring for the instance.</p> <p>Default: <code>false</code></p>
+     * <p>Enables monitoring for the instance.</p> <p>Default: <code>false</code> </p>
      */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /**
-     * <p>Enables monitoring for the instance.</p> <p>Default: <code>false</code></p>
+     * <p>Enables monitoring for the instance.</p> <p>Default: <code>false</code> </p>
      */
     inline SpotFleetMonitoring& WithEnabled(bool value) { SetEnabled(value); return *this;}
 

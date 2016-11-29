@@ -625,27 +625,27 @@ namespace Model
     inline NetworkInterface& AddPrivateIpAddresses(NetworkInterfacePrivateIpAddress&& value) { m_privateIpAddressesHasBeenSet = true; m_privateIpAddresses.push_back(value); return *this; }
 
     /**
-     * <p>The type of interface. </p>
+     * <p>The type of interface.</p>
      */
     inline const NetworkInterfaceType& GetInterfaceType() const{ return m_interfaceType; }
 
     /**
-     * <p>The type of interface. </p>
+     * <p>The type of interface.</p>
      */
     inline void SetInterfaceType(const NetworkInterfaceType& value) { m_interfaceTypeHasBeenSet = true; m_interfaceType = value; }
 
     /**
-     * <p>The type of interface. </p>
+     * <p>The type of interface.</p>
      */
     inline void SetInterfaceType(NetworkInterfaceType&& value) { m_interfaceTypeHasBeenSet = true; m_interfaceType = value; }
 
     /**
-     * <p>The type of interface. </p>
+     * <p>The type of interface.</p>
      */
     inline NetworkInterface& WithInterfaceType(const NetworkInterfaceType& value) { SetInterfaceType(value); return *this;}
 
     /**
-     * <p>The type of interface. </p>
+     * <p>The type of interface.</p>
      */
     inline NetworkInterface& WithInterfaceType(NetworkInterfaceType&& value) { SetInterfaceType(value); return *this;}
 

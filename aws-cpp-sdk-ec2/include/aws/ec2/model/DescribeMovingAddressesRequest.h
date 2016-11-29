@@ -135,50 +135,50 @@ namespace Model
     inline DescribeMovingAddressesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p><code>moving-status</code> - The status
-     * of the Elastic IP address (<code>MovingToVpc</code> |
+     * <p>One or more filters.</p> <ul> <li> <p> <code>moving-status</code> - The
+     * status of the Elastic IP address (<code>MovingToVpc</code> |
      * <code>RestoringToClassic</code>).</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p><code>moving-status</code> - The status
-     * of the Elastic IP address (<code>MovingToVpc</code> |
+     * <p>One or more filters.</p> <ul> <li> <p> <code>moving-status</code> - The
+     * status of the Elastic IP address (<code>MovingToVpc</code> |
      * <code>RestoringToClassic</code>).</p> </li> </ul>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p><code>moving-status</code> - The status
-     * of the Elastic IP address (<code>MovingToVpc</code> |
+     * <p>One or more filters.</p> <ul> <li> <p> <code>moving-status</code> - The
+     * status of the Elastic IP address (<code>MovingToVpc</code> |
      * <code>RestoringToClassic</code>).</p> </li> </ul>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p><code>moving-status</code> - The status
-     * of the Elastic IP address (<code>MovingToVpc</code> |
+     * <p>One or more filters.</p> <ul> <li> <p> <code>moving-status</code> - The
+     * status of the Elastic IP address (<code>MovingToVpc</code> |
      * <code>RestoringToClassic</code>).</p> </li> </ul>
      */
     inline DescribeMovingAddressesRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p><code>moving-status</code> - The status
-     * of the Elastic IP address (<code>MovingToVpc</code> |
+     * <p>One or more filters.</p> <ul> <li> <p> <code>moving-status</code> - The
+     * status of the Elastic IP address (<code>MovingToVpc</code> |
      * <code>RestoringToClassic</code>).</p> </li> </ul>
      */
     inline DescribeMovingAddressesRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p><code>moving-status</code> - The status
-     * of the Elastic IP address (<code>MovingToVpc</code> |
+     * <p>One or more filters.</p> <ul> <li> <p> <code>moving-status</code> - The
+     * status of the Elastic IP address (<code>MovingToVpc</code> |
      * <code>RestoringToClassic</code>).</p> </li> </ul>
      */
     inline DescribeMovingAddressesRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p><code>moving-status</code> - The status
-     * of the Elastic IP address (<code>MovingToVpc</code> |
+     * <p>One or more filters.</p> <ul> <li> <p> <code>moving-status</code> - The
+     * status of the Elastic IP address (<code>MovingToVpc</code> |
      * <code>RestoringToClassic</code>).</p> </li> </ul>
      */
     inline DescribeMovingAddressesRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }

@@ -46,7 +46,7 @@ Aws::String DetachClassicLinkVpcRequest::SerializePayload() const
     ss << "VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
   }
 
-  ss << "Version=2015-10-01";
+  ss << "Version=2016-09-15";
   return ss.str();
 }
 

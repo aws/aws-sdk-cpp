@@ -93,37 +93,37 @@ namespace Model
     inline DetachClassicLinkVpcRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
     /**
-     * <p> The ID of the VPC to which the instance is linked.</p>
+     * <p>The ID of the VPC to which the instance is linked.</p>
      */
     inline const Aws::String& GetVpcId() const{ return m_vpcId; }
 
     /**
-     * <p> The ID of the VPC to which the instance is linked.</p>
+     * <p>The ID of the VPC to which the instance is linked.</p>
      */
     inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
 
     /**
-     * <p> The ID of the VPC to which the instance is linked.</p>
+     * <p>The ID of the VPC to which the instance is linked.</p>
      */
     inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
 
     /**
-     * <p> The ID of the VPC to which the instance is linked.</p>
+     * <p>The ID of the VPC to which the instance is linked.</p>
      */
     inline void SetVpcId(const char* value) { m_vpcIdHasBeenSet = true; m_vpcId.assign(value); }
 
     /**
-     * <p> The ID of the VPC to which the instance is linked.</p>
+     * <p>The ID of the VPC to which the instance is linked.</p>
      */
     inline DetachClassicLinkVpcRequest& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
 
     /**
-     * <p> The ID of the VPC to which the instance is linked.</p>
+     * <p>The ID of the VPC to which the instance is linked.</p>
      */
     inline DetachClassicLinkVpcRequest& WithVpcId(Aws::String&& value) { SetVpcId(value); return *this;}
 
     /**
-     * <p> The ID of the VPC to which the instance is linked.</p>
+     * <p>The ID of the VPC to which the instance is linked.</p>
      */
     inline DetachClassicLinkVpcRequest& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 

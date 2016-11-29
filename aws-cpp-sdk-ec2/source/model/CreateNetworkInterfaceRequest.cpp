@@ -82,7 +82,7 @@ Aws::String CreateNetworkInterfaceRequest::SerializePayload() const
     ss << "DryRun=" << m_dryRun << "&";
   }
 
-  ss << "Version=2015-10-01";
+  ss << "Version=2016-09-15";
   return ss.str();
 }
 

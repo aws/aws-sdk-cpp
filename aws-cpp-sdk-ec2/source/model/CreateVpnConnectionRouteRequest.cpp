@@ -39,7 +39,7 @@ Aws::String CreateVpnConnectionRouteRequest::SerializePayload() const
     ss << "DestinationCidrBlock=" << StringUtils::URLEncode(m_destinationCidrBlock.c_str()) << "&";
   }
 
-  ss << "Version=2015-10-01";
+  ss << "Version=2016-09-15";
   return ss.str();
 }
 

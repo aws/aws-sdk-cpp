@@ -46,7 +46,7 @@ Aws::String ModifyHostsRequest::SerializePayload() const
     ss << "AutoPlacement=" << AutoPlacementMapper::GetNameForAutoPlacement(m_autoPlacement) << "&";
   }
 
-  ss << "Version=2015-10-01";
+  ss << "Version=2016-09-15";
   return ss.str();
 }
 

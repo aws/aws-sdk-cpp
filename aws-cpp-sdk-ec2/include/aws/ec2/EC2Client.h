@@ -20,6 +20,7 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/ec2/model/AcceptReservedInstancesExchangeQuoteResponse.h>
 #include <aws/ec2/model/AcceptVpcPeeringConnectionResponse.h>
 #include <aws/ec2/model/AllocateAddressResponse.h>
 #include <aws/ec2/model/AllocateHostsResponse.h>
@@ -75,8 +76,11 @@
 #include <aws/ec2/model/DescribeDhcpOptionsResponse.h>
 #include <aws/ec2/model/DescribeExportTasksResponse.h>
 #include <aws/ec2/model/DescribeFlowLogsResponse.h>
+#include <aws/ec2/model/DescribeHostReservationOfferingsResponse.h>
+#include <aws/ec2/model/DescribeHostReservationsResponse.h>
 #include <aws/ec2/model/DescribeHostsResponse.h>
 #include <aws/ec2/model/DescribeIdFormatResponse.h>
+#include <aws/ec2/model/DescribeIdentityIdFormatResponse.h>
 #include <aws/ec2/model/DescribeImageAttributeResponse.h>
 #include <aws/ec2/model/DescribeImagesResponse.h>
 #include <aws/ec2/model/DescribeImportImageTasksResponse.h>
@@ -134,7 +138,9 @@
 #include <aws/ec2/model/EnableVpcClassicLinkDnsSupportResponse.h>
 #include <aws/ec2/model/GetConsoleOutputResponse.h>
 #include <aws/ec2/model/GetConsoleScreenshotResponse.h>
+#include <aws/ec2/model/GetHostReservationPurchasePreviewResponse.h>
 #include <aws/ec2/model/GetPasswordDataResponse.h>
+#include <aws/ec2/model/GetReservedInstancesExchangeQuoteResponse.h>
 #include <aws/ec2/model/ImportImageResponse.h>
 #include <aws/ec2/model/ImportInstanceResponse.h>
 #include <aws/ec2/model/ImportKeyPairResponse.h>
@@ -148,6 +154,7 @@
 #include <aws/ec2/model/ModifyVpcPeeringConnectionOptionsResponse.h>
 #include <aws/ec2/model/MonitorInstancesResponse.h>
 #include <aws/ec2/model/MoveAddressToVpcResponse.h>
+#include <aws/ec2/model/PurchaseHostReservationResponse.h>
 #include <aws/ec2/model/PurchaseReservedInstancesOfferingResponse.h>
 #include <aws/ec2/model/PurchaseScheduledInstancesResponse.h>
 #include <aws/ec2/model/RegisterImageResponse.h>
@@ -210,6 +217,7 @@ namespace EC2
 
 namespace Model
 {
+        class AcceptReservedInstancesExchangeQuoteRequest;
         class AcceptVpcPeeringConnectionRequest;
         class AllocateAddressRequest;
         class AllocateHostsRequest;
@@ -297,8 +305,11 @@ namespace Model
         class DescribeDhcpOptionsRequest;
         class DescribeExportTasksRequest;
         class DescribeFlowLogsRequest;
+        class DescribeHostReservationOfferingsRequest;
+        class DescribeHostReservationsRequest;
         class DescribeHostsRequest;
         class DescribeIdFormatRequest;
+        class DescribeIdentityIdFormatRequest;
         class DescribeImageAttributeRequest;
         class DescribeImagesRequest;
         class DescribeImportImageTasksRequest;
@@ -364,7 +375,9 @@ namespace Model
         class EnableVpcClassicLinkDnsSupportRequest;
         class GetConsoleOutputRequest;
         class GetConsoleScreenshotRequest;
+        class GetHostReservationPurchasePreviewRequest;
         class GetPasswordDataRequest;
+        class GetReservedInstancesExchangeQuoteRequest;
         class ImportImageRequest;
         class ImportInstanceRequest;
         class ImportKeyPairRequest;
@@ -372,6 +385,7 @@ namespace Model
         class ImportVolumeRequest;
         class ModifyHostsRequest;
         class ModifyIdFormatRequest;
+        class ModifyIdentityIdFormatRequest;
         class ModifyImageAttributeRequest;
         class ModifyInstanceAttributeRequest;
         class ModifyInstancePlacementRequest;
@@ -386,6 +400,7 @@ namespace Model
         class ModifyVpcPeeringConnectionOptionsRequest;
         class MonitorInstancesRequest;
         class MoveAddressToVpcRequest;
+        class PurchaseHostReservationRequest;
         class PurchaseReservedInstancesOfferingRequest;
         class PurchaseScheduledInstancesRequest;
         class RebootInstancesRequest;
@@ -415,6 +430,7 @@ namespace Model
         class UnassignPrivateIpAddressesRequest;
         class UnmonitorInstancesRequest;
 
+        typedef Aws::Utils::Outcome<AcceptReservedInstancesExchangeQuoteResponse, Aws::Client::AWSError<EC2Errors>> AcceptReservedInstancesExchangeQuoteOutcome;
         typedef Aws::Utils::Outcome<AcceptVpcPeeringConnectionResponse, Aws::Client::AWSError<EC2Errors>> AcceptVpcPeeringConnectionOutcome;
         typedef Aws::Utils::Outcome<AllocateAddressResponse, Aws::Client::AWSError<EC2Errors>> AllocateAddressOutcome;
         typedef Aws::Utils::Outcome<AllocateHostsResponse, Aws::Client::AWSError<EC2Errors>> AllocateHostsOutcome;
@@ -502,8 +518,11 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeDhcpOptionsResponse, Aws::Client::AWSError<EC2Errors>> DescribeDhcpOptionsOutcome;
         typedef Aws::Utils::Outcome<DescribeExportTasksResponse, Aws::Client::AWSError<EC2Errors>> DescribeExportTasksOutcome;
         typedef Aws::Utils::Outcome<DescribeFlowLogsResponse, Aws::Client::AWSError<EC2Errors>> DescribeFlowLogsOutcome;
+        typedef Aws::Utils::Outcome<DescribeHostReservationOfferingsResponse, Aws::Client::AWSError<EC2Errors>> DescribeHostReservationOfferingsOutcome;
+        typedef Aws::Utils::Outcome<DescribeHostReservationsResponse, Aws::Client::AWSError<EC2Errors>> DescribeHostReservationsOutcome;
         typedef Aws::Utils::Outcome<DescribeHostsResponse, Aws::Client::AWSError<EC2Errors>> DescribeHostsOutcome;
         typedef Aws::Utils::Outcome<DescribeIdFormatResponse, Aws::Client::AWSError<EC2Errors>> DescribeIdFormatOutcome;
+        typedef Aws::Utils::Outcome<DescribeIdentityIdFormatResponse, Aws::Client::AWSError<EC2Errors>> DescribeIdentityIdFormatOutcome;
         typedef Aws::Utils::Outcome<DescribeImageAttributeResponse, Aws::Client::AWSError<EC2Errors>> DescribeImageAttributeOutcome;
         typedef Aws::Utils::Outcome<DescribeImagesResponse, Aws::Client::AWSError<EC2Errors>> DescribeImagesOutcome;
         typedef Aws::Utils::Outcome<DescribeImportImageTasksResponse, Aws::Client::AWSError<EC2Errors>> DescribeImportImageTasksOutcome;
@@ -569,7 +588,9 @@ namespace Model
         typedef Aws::Utils::Outcome<EnableVpcClassicLinkDnsSupportResponse, Aws::Client::AWSError<EC2Errors>> EnableVpcClassicLinkDnsSupportOutcome;
         typedef Aws::Utils::Outcome<GetConsoleOutputResponse, Aws::Client::AWSError<EC2Errors>> GetConsoleOutputOutcome;
         typedef Aws::Utils::Outcome<GetConsoleScreenshotResponse, Aws::Client::AWSError<EC2Errors>> GetConsoleScreenshotOutcome;
+        typedef Aws::Utils::Outcome<GetHostReservationPurchasePreviewResponse, Aws::Client::AWSError<EC2Errors>> GetHostReservationPurchasePreviewOutcome;
         typedef Aws::Utils::Outcome<GetPasswordDataResponse, Aws::Client::AWSError<EC2Errors>> GetPasswordDataOutcome;
+        typedef Aws::Utils::Outcome<GetReservedInstancesExchangeQuoteResponse, Aws::Client::AWSError<EC2Errors>> GetReservedInstancesExchangeQuoteOutcome;
         typedef Aws::Utils::Outcome<ImportImageResponse, Aws::Client::AWSError<EC2Errors>> ImportImageOutcome;
         typedef Aws::Utils::Outcome<ImportInstanceResponse, Aws::Client::AWSError<EC2Errors>> ImportInstanceOutcome;
         typedef Aws::Utils::Outcome<ImportKeyPairResponse, Aws::Client::AWSError<EC2Errors>> ImportKeyPairOutcome;
@@ -577,6 +598,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ImportVolumeResponse, Aws::Client::AWSError<EC2Errors>> ImportVolumeOutcome;
         typedef Aws::Utils::Outcome<ModifyHostsResponse, Aws::Client::AWSError<EC2Errors>> ModifyHostsOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EC2Errors>> ModifyIdFormatOutcome;
+        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EC2Errors>> ModifyIdentityIdFormatOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EC2Errors>> ModifyImageAttributeOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EC2Errors>> ModifyInstanceAttributeOutcome;
         typedef Aws::Utils::Outcome<ModifyInstancePlacementResponse, Aws::Client::AWSError<EC2Errors>> ModifyInstancePlacementOutcome;
@@ -591,6 +613,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ModifyVpcPeeringConnectionOptionsResponse, Aws::Client::AWSError<EC2Errors>> ModifyVpcPeeringConnectionOptionsOutcome;
         typedef Aws::Utils::Outcome<MonitorInstancesResponse, Aws::Client::AWSError<EC2Errors>> MonitorInstancesOutcome;
         typedef Aws::Utils::Outcome<MoveAddressToVpcResponse, Aws::Client::AWSError<EC2Errors>> MoveAddressToVpcOutcome;
+        typedef Aws::Utils::Outcome<PurchaseHostReservationResponse, Aws::Client::AWSError<EC2Errors>> PurchaseHostReservationOutcome;
         typedef Aws::Utils::Outcome<PurchaseReservedInstancesOfferingResponse, Aws::Client::AWSError<EC2Errors>> PurchaseReservedInstancesOfferingOutcome;
         typedef Aws::Utils::Outcome<PurchaseScheduledInstancesResponse, Aws::Client::AWSError<EC2Errors>> PurchaseScheduledInstancesOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EC2Errors>> RebootInstancesOutcome;
@@ -620,6 +643,7 @@ namespace Model
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EC2Errors>> UnassignPrivateIpAddressesOutcome;
         typedef Aws::Utils::Outcome<UnmonitorInstancesResponse, Aws::Client::AWSError<EC2Errors>> UnmonitorInstancesOutcome;
 
+        typedef std::future<AcceptReservedInstancesExchangeQuoteOutcome> AcceptReservedInstancesExchangeQuoteOutcomeCallable;
         typedef std::future<AcceptVpcPeeringConnectionOutcome> AcceptVpcPeeringConnectionOutcomeCallable;
         typedef std::future<AllocateAddressOutcome> AllocateAddressOutcomeCallable;
         typedef std::future<AllocateHostsOutcome> AllocateHostsOutcomeCallable;
@@ -707,8 +731,11 @@ namespace Model
         typedef std::future<DescribeDhcpOptionsOutcome> DescribeDhcpOptionsOutcomeCallable;
         typedef std::future<DescribeExportTasksOutcome> DescribeExportTasksOutcomeCallable;
         typedef std::future<DescribeFlowLogsOutcome> DescribeFlowLogsOutcomeCallable;
+        typedef std::future<DescribeHostReservationOfferingsOutcome> DescribeHostReservationOfferingsOutcomeCallable;
+        typedef std::future<DescribeHostReservationsOutcome> DescribeHostReservationsOutcomeCallable;
         typedef std::future<DescribeHostsOutcome> DescribeHostsOutcomeCallable;
         typedef std::future<DescribeIdFormatOutcome> DescribeIdFormatOutcomeCallable;
+        typedef std::future<DescribeIdentityIdFormatOutcome> DescribeIdentityIdFormatOutcomeCallable;
         typedef std::future<DescribeImageAttributeOutcome> DescribeImageAttributeOutcomeCallable;
         typedef std::future<DescribeImagesOutcome> DescribeImagesOutcomeCallable;
         typedef std::future<DescribeImportImageTasksOutcome> DescribeImportImageTasksOutcomeCallable;
@@ -774,7 +801,9 @@ namespace Model
         typedef std::future<EnableVpcClassicLinkDnsSupportOutcome> EnableVpcClassicLinkDnsSupportOutcomeCallable;
         typedef std::future<GetConsoleOutputOutcome> GetConsoleOutputOutcomeCallable;
         typedef std::future<GetConsoleScreenshotOutcome> GetConsoleScreenshotOutcomeCallable;
+        typedef std::future<GetHostReservationPurchasePreviewOutcome> GetHostReservationPurchasePreviewOutcomeCallable;
         typedef std::future<GetPasswordDataOutcome> GetPasswordDataOutcomeCallable;
+        typedef std::future<GetReservedInstancesExchangeQuoteOutcome> GetReservedInstancesExchangeQuoteOutcomeCallable;
         typedef std::future<ImportImageOutcome> ImportImageOutcomeCallable;
         typedef std::future<ImportInstanceOutcome> ImportInstanceOutcomeCallable;
         typedef std::future<ImportKeyPairOutcome> ImportKeyPairOutcomeCallable;
@@ -782,6 +811,7 @@ namespace Model
         typedef std::future<ImportVolumeOutcome> ImportVolumeOutcomeCallable;
         typedef std::future<ModifyHostsOutcome> ModifyHostsOutcomeCallable;
         typedef std::future<ModifyIdFormatOutcome> ModifyIdFormatOutcomeCallable;
+        typedef std::future<ModifyIdentityIdFormatOutcome> ModifyIdentityIdFormatOutcomeCallable;
         typedef std::future<ModifyImageAttributeOutcome> ModifyImageAttributeOutcomeCallable;
         typedef std::future<ModifyInstanceAttributeOutcome> ModifyInstanceAttributeOutcomeCallable;
         typedef std::future<ModifyInstancePlacementOutcome> ModifyInstancePlacementOutcomeCallable;
@@ -796,6 +826,7 @@ namespace Model
         typedef std::future<ModifyVpcPeeringConnectionOptionsOutcome> ModifyVpcPeeringConnectionOptionsOutcomeCallable;
         typedef std::future<MonitorInstancesOutcome> MonitorInstancesOutcomeCallable;
         typedef std::future<MoveAddressToVpcOutcome> MoveAddressToVpcOutcomeCallable;
+        typedef std::future<PurchaseHostReservationOutcome> PurchaseHostReservationOutcomeCallable;
         typedef std::future<PurchaseReservedInstancesOfferingOutcome> PurchaseReservedInstancesOfferingOutcomeCallable;
         typedef std::future<PurchaseScheduledInstancesOutcome> PurchaseScheduledInstancesOutcomeCallable;
         typedef std::future<RebootInstancesOutcome> RebootInstancesOutcomeCallable;
@@ -828,6 +859,7 @@ namespace Model
 
   class EC2Client;
 
+    typedef std::function<void(const EC2Client*, const Model::AcceptReservedInstancesExchangeQuoteRequest&, const Model::AcceptReservedInstancesExchangeQuoteOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AcceptReservedInstancesExchangeQuoteResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::AcceptVpcPeeringConnectionRequest&, const Model::AcceptVpcPeeringConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AcceptVpcPeeringConnectionResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::AllocateAddressRequest&, const Model::AllocateAddressOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AllocateAddressResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::AllocateHostsRequest&, const Model::AllocateHostsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AllocateHostsResponseReceivedHandler;
@@ -915,8 +947,11 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::DescribeDhcpOptionsRequest&, const Model::DescribeDhcpOptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDhcpOptionsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeExportTasksRequest&, const Model::DescribeExportTasksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeExportTasksResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeFlowLogsRequest&, const Model::DescribeFlowLogsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFlowLogsResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DescribeHostReservationOfferingsRequest&, const Model::DescribeHostReservationOfferingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeHostReservationOfferingsResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DescribeHostReservationsRequest&, const Model::DescribeHostReservationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeHostReservationsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeHostsRequest&, const Model::DescribeHostsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeHostsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeIdFormatRequest&, const Model::DescribeIdFormatOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeIdFormatResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DescribeIdentityIdFormatRequest&, const Model::DescribeIdentityIdFormatOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeIdentityIdFormatResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeImageAttributeRequest&, const Model::DescribeImageAttributeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeImageAttributeResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeImagesRequest&, const Model::DescribeImagesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeImagesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeImportImageTasksRequest&, const Model::DescribeImportImageTasksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeImportImageTasksResponseReceivedHandler;
@@ -982,7 +1017,9 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::EnableVpcClassicLinkDnsSupportRequest&, const Model::EnableVpcClassicLinkDnsSupportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableVpcClassicLinkDnsSupportResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::GetConsoleOutputRequest&, const Model::GetConsoleOutputOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetConsoleOutputResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::GetConsoleScreenshotRequest&, const Model::GetConsoleScreenshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetConsoleScreenshotResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::GetHostReservationPurchasePreviewRequest&, const Model::GetHostReservationPurchasePreviewOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetHostReservationPurchasePreviewResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::GetPasswordDataRequest&, const Model::GetPasswordDataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPasswordDataResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::GetReservedInstancesExchangeQuoteRequest&, const Model::GetReservedInstancesExchangeQuoteOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetReservedInstancesExchangeQuoteResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ImportImageRequest&, const Model::ImportImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ImportImageResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ImportInstanceRequest&, const Model::ImportInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ImportInstanceResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ImportKeyPairRequest&, const Model::ImportKeyPairOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ImportKeyPairResponseReceivedHandler;
@@ -990,6 +1027,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::ImportVolumeRequest&, const Model::ImportVolumeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ImportVolumeResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifyHostsRequest&, const Model::ModifyHostsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyHostsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifyIdFormatRequest&, const Model::ModifyIdFormatOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyIdFormatResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::ModifyIdentityIdFormatRequest&, const Model::ModifyIdentityIdFormatOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyIdentityIdFormatResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifyImageAttributeRequest&, const Model::ModifyImageAttributeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyImageAttributeResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifyInstanceAttributeRequest&, const Model::ModifyInstanceAttributeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyInstanceAttributeResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifyInstancePlacementRequest&, const Model::ModifyInstancePlacementOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyInstancePlacementResponseReceivedHandler;
@@ -1004,6 +1042,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::ModifyVpcPeeringConnectionOptionsRequest&, const Model::ModifyVpcPeeringConnectionOptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyVpcPeeringConnectionOptionsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::MonitorInstancesRequest&, const Model::MonitorInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > MonitorInstancesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::MoveAddressToVpcRequest&, const Model::MoveAddressToVpcOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > MoveAddressToVpcResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::PurchaseHostReservationRequest&, const Model::PurchaseHostReservationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PurchaseHostReservationResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::PurchaseReservedInstancesOfferingRequest&, const Model::PurchaseReservedInstancesOfferingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PurchaseReservedInstancesOfferingResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::PurchaseScheduledInstancesRequest&, const Model::PurchaseScheduledInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PurchaseScheduledInstancesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::RebootInstancesRequest&, const Model::RebootInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RebootInstancesResponseReceivedHandler;
@@ -1066,6 +1105,28 @@ namespace Model
         virtual ~EC2Client();
 
         /**
+         * <p>Purchases Convertible Reserved Instance offerings described in the
+         * <a>GetReservedInstancesExchangeQuote</a> call.</p>
+         */
+        virtual Model::AcceptReservedInstancesExchangeQuoteOutcome AcceptReservedInstancesExchangeQuote(const Model::AcceptReservedInstancesExchangeQuoteRequest& request) const;
+
+        /**
+         * <p>Purchases Convertible Reserved Instance offerings described in the
+         * <a>GetReservedInstancesExchangeQuote</a> call.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::AcceptReservedInstancesExchangeQuoteOutcomeCallable AcceptReservedInstancesExchangeQuoteCallable(const Model::AcceptReservedInstancesExchangeQuoteRequest& request) const;
+
+        /**
+         * <p>Purchases Convertible Reserved Instance offerings described in the
+         * <a>GetReservedInstancesExchangeQuote</a> call.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void AcceptReservedInstancesExchangeQuoteAsync(const Model::AcceptReservedInstancesExchangeQuoteRequest& request, const AcceptReservedInstancesExchangeQuoteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Accept a VPC peering connection request. To accept a request, the VPC peering
          * connection must be in the <code>pending-acceptance</code> state, and you must be
          * the owner of the peer VPC. Use the <code>DescribeVpcPeeringConnections</code>
@@ -1122,14 +1183,14 @@ namespace Model
         virtual void AllocateAddressAsync(const Model::AllocateAddressRequest& request, const AllocateAddressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Allocates a Dedicated host to your account. At minimum you need to specify
+         * <p>Allocates a Dedicated Host to your account. At minimum you need to specify
          * the instance size type, Availability Zone, and quantity of hosts you want to
          * allocate.</p>
          */
         virtual Model::AllocateHostsOutcome AllocateHosts(const Model::AllocateHostsRequest& request) const;
 
         /**
-         * <p>Allocates a Dedicated host to your account. At minimum you need to specify
+         * <p>Allocates a Dedicated Host to your account. At minimum you need to specify
          * the instance size type, Availability Zone, and quantity of hosts you want to
          * allocate.</p>
          *
@@ -1138,7 +1199,7 @@ namespace Model
         virtual Model::AllocateHostsOutcomeCallable AllocateHostsCallable(const Model::AllocateHostsRequest& request) const;
 
         /**
-         * <p>Allocates a Dedicated host to your account. At minimum you need to specify
+         * <p>Allocates a Dedicated Host to your account. At minimum you need to specify
          * the instance size type, Availability Zone, and quantity of hosts you want to
          * allocate.</p>
          *
@@ -1210,9 +1271,12 @@ namespace Model
          * EC2-Classic account] If you don't specify a private IP address, the Elastic IP
          * address is associated with the primary IP address. If the Elastic IP address is
          * already associated with a different instance or a network interface, you get an
-         * error unless you allow reassociation.</p> <p>This is an idempotent operation. If
-         * you perform the operation more than once, Amazon EC2 doesn't return an
-         * error.</p>
+         * error unless you allow reassociation.</p> <important> <p>This is an idempotent
+         * operation. If you perform the operation more than once, Amazon EC2 doesn't
+         * return an error, and you may be charged for each time the Elastic IP address is
+         * remapped to the same instance. For more information, see the <i>Elastic IP
+         * Addresses</i> section of <a href="http://aws.amazon.com/ec2/pricing/">Amazon EC2
+         * Pricing</a>.</p> </important>
          */
         virtual Model::AssociateAddressOutcome AssociateAddress(const Model::AssociateAddressRequest& request) const;
 
@@ -1228,9 +1292,12 @@ namespace Model
          * EC2-Classic account] If you don't specify a private IP address, the Elastic IP
          * address is associated with the primary IP address. If the Elastic IP address is
          * already associated with a different instance or a network interface, you get an
-         * error unless you allow reassociation.</p> <p>This is an idempotent operation. If
-         * you perform the operation more than once, Amazon EC2 doesn't return an
-         * error.</p>
+         * error unless you allow reassociation.</p> <important> <p>This is an idempotent
+         * operation. If you perform the operation more than once, Amazon EC2 doesn't
+         * return an error, and you may be charged for each time the Elastic IP address is
+         * remapped to the same instance. For more information, see the <i>Elastic IP
+         * Addresses</i> section of <a href="http://aws.amazon.com/ec2/pricing/">Amazon EC2
+         * Pricing</a>.</p> </important>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1248,9 +1315,12 @@ namespace Model
          * EC2-Classic account] If you don't specify a private IP address, the Elastic IP
          * address is associated with the primary IP address. If the Elastic IP address is
          * already associated with a different instance or a network interface, you get an
-         * error unless you allow reassociation.</p> <p>This is an idempotent operation. If
-         * you perform the operation more than once, Amazon EC2 doesn't return an
-         * error.</p>
+         * error unless you allow reassociation.</p> <important> <p>This is an idempotent
+         * operation. If you perform the operation more than once, Amazon EC2 doesn't
+         * return an error, and you may be charged for each time the Elastic IP address is
+         * remapped to the same instance. For more information, see the <i>Elastic IP
+         * Addresses</i> section of <a href="http://aws.amazon.com/ec2/pricing/">Amazon EC2
+         * Pricing</a>.</p> </important>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1350,7 +1420,7 @@ namespace Model
          * when it's stopped - you can link it to the VPC again when you restart it.</p>
          * <p>After you've linked an instance, you cannot change the VPC security groups
          * that are associated with it. To change the security groups, you must first
-         * unlink the instance, and then link it again. </p> <p>Linking your instance to a
+         * unlink the instance, and then link it again.</p> <p>Linking your instance to a
          * VPC is sometimes referred to as <i>attaching</i> your instance.</p>
          */
         virtual Model::AttachClassicLinkVpcOutcome AttachClassicLinkVpc(const Model::AttachClassicLinkVpcRequest& request) const;
@@ -1363,7 +1433,7 @@ namespace Model
          * when it's stopped - you can link it to the VPC again when you restart it.</p>
          * <p>After you've linked an instance, you cannot change the VPC security groups
          * that are associated with it. To change the security groups, you must first
-         * unlink the instance, and then link it again. </p> <p>Linking your instance to a
+         * unlink the instance, and then link it again.</p> <p>Linking your instance to a
          * VPC is sometimes referred to as <i>attaching</i> your instance.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -1378,7 +1448,7 @@ namespace Model
          * when it's stopped - you can link it to the VPC again when you restart it.</p>
          * <p>After you've linked an instance, you cannot change the VPC security groups
          * that are associated with it. To change the security groups, you must first
-         * unlink the instance, and then link it again. </p> <p>Linking your instance to a
+         * unlink the instance, and then link it again.</p> <p>Linking your instance to a
          * VPC is sometimes referred to as <i>attaching</i> your instance.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -1729,9 +1799,8 @@ namespace Model
          * partially uploaded volume or instance. If the conversion is complete or is in
          * the process of transferring the final disk image, the command fails and returns
          * an exception.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html">Using
-         * the Command Line Tools to Import Your Virtual Machine to Amazon EC2</a> in the
-         * <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/CommandLineReference/ec2-cli-vmimport-export.html">Importing
+         * a Virtual Machine Using the Amazon EC2 CLI</a>.</p>
          */
         virtual Model::CancelConversionTaskOutcome CancelConversionTask(const Model::CancelConversionTaskRequest& request) const;
 
@@ -1741,9 +1810,8 @@ namespace Model
          * partially uploaded volume or instance. If the conversion is complete or is in
          * the process of transferring the final disk image, the command fails and returns
          * an exception.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html">Using
-         * the Command Line Tools to Import Your Virtual Machine to Amazon EC2</a> in the
-         * <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/CommandLineReference/ec2-cli-vmimport-export.html">Importing
+         * a Virtual Machine Using the Amazon EC2 CLI</a>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1755,9 +1823,8 @@ namespace Model
          * partially uploaded volume or instance. If the conversion is complete or is in
          * the process of transferring the final disk image, the command fails and returns
          * an exception.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html">Using
-         * the Command Line Tools to Import Your Virtual Machine to Amazon EC2</a> in the
-         * <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/CommandLineReference/ec2-cli-vmimport-export.html">Importing
+         * a Virtual Machine Using the Amazon EC2 CLI</a>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1990,7 +2057,11 @@ namespace Model
          * is specified during the snapshot copy operation. By default, encrypted snapshot
          * copies use the default AWS Key Management Service (AWS KMS) customer master key
          * (CMK); however, you can specify a non-default CMK with the <code>KmsKeyId</code>
-         * parameter.</p> <p>For more information, see <a
+         * parameter. </p> <note> <p>To copy an encrypted snapshot that has been shared
+         * from another account, you must have permissions for the CMK used to encrypt the
+         * snapshot.</p> </note> <note> <p>Snapshots created by the CopySnapshot action
+         * have an arbitrary volume ID that should not be used for any purpose.</p> </note>
+         * <p>For more information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-copy-snapshot.html">Copying
          * an Amazon EBS Snapshot</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p>
@@ -2007,7 +2078,11 @@ namespace Model
          * is specified during the snapshot copy operation. By default, encrypted snapshot
          * copies use the default AWS Key Management Service (AWS KMS) customer master key
          * (CMK); however, you can specify a non-default CMK with the <code>KmsKeyId</code>
-         * parameter.</p> <p>For more information, see <a
+         * parameter. </p> <note> <p>To copy an encrypted snapshot that has been shared
+         * from another account, you must have permissions for the CMK used to encrypt the
+         * snapshot.</p> </note> <note> <p>Snapshots created by the CopySnapshot action
+         * have an arbitrary volume ID that should not be used for any purpose.</p> </note>
+         * <p>For more information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-copy-snapshot.html">Copying
          * an Amazon EBS Snapshot</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p>
@@ -2026,7 +2101,11 @@ namespace Model
          * is specified during the snapshot copy operation. By default, encrypted snapshot
          * copies use the default AWS Key Management Service (AWS KMS) customer master key
          * (CMK); however, you can specify a non-default CMK with the <code>KmsKeyId</code>
-         * parameter.</p> <p>For more information, see <a
+         * parameter. </p> <note> <p>To copy an encrypted snapshot that has been shared
+         * from another account, you must have permissions for the CMK used to encrypt the
+         * snapshot.</p> </note> <note> <p>Snapshots created by the CopySnapshot action
+         * have an arbitrary volume ID that should not be used for any purpose.</p> </note>
+         * <p>For more information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-copy-snapshot.html">Copying
          * an Amazon EBS Snapshot</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p>
@@ -2056,7 +2135,7 @@ namespace Model
          * values. If you run an identical request more than one time, the first request
          * creates the customer gateway, and subsequent requests return information about
          * the existing customer gateway. The subsequent requests do not create new
-         * customer gateway resources. </p> </important>
+         * customer gateway resources.</p> </important>
          */
         virtual Model::CreateCustomerGatewayOutcome CreateCustomerGateway(const Model::CreateCustomerGatewayRequest& request) const;
 
@@ -2081,7 +2160,7 @@ namespace Model
          * values. If you run an identical request more than one time, the first request
          * creates the customer gateway, and subsequent requests return information about
          * the existing customer gateway. The subsequent requests do not create new
-         * customer gateway resources. </p> </important>
+         * customer gateway resources.</p> </important>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2108,7 +2187,7 @@ namespace Model
          * values. If you run an identical request more than one time, the first request
          * creates the customer gateway, and subsequent requests return information about
          * the existing customer gateway. The subsequent requests do not create new
-         * customer gateway resources. </p> </important>
+         * customer gateway resources.</p> </important>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2119,33 +2198,36 @@ namespace Model
          * associate it with the VPC, causing all existing and new instances that you
          * launch in the VPC to use this set of DHCP options. The following are the
          * individual DHCP options you can specify. For more information about the options,
-         * see <a href="http://www.ietf.org/rfc/rfc2132.txt">RFC 2132</a>.</p> <ul>
-         * <li><p><code>domain-name-servers</code> - The IP addresses of up to four domain
+         * see <a href="http://www.ietf.org/rfc/rfc2132.txt">RFC 2132</a>.</p> <ul> <li>
+         * <p> <code>domain-name-servers</code> - The IP addresses of up to four domain
          * name servers, or AmazonProvidedDNS. The default DHCP option set specifies
          * AmazonProvidedDNS. If specifying more than one domain name server, specify the
-         * IP addresses in a single parameter, separated by commas.</p></li>
-         * <li><p><code>domain-name</code> - If you're using AmazonProvidedDNS in
-         * "us-east-1", specify "ec2.internal". If you're using AmazonProvidedDNS in
-         * another region, specify "region.compute.internal" (for example,
-         * "ap-northeast-1.compute.internal"). Otherwise, specify a domain name (for
-         * example, "MyCompany.com"). <b>Important</b>: Some Linux operating systems accept
-         * multiple domain names separated by spaces. However, Windows and other Linux
-         * operating systems treat the value as a single domain, which results in
-         * unexpected behavior. If your DHCP options set is associated with a VPC that has
-         * instances with multiple operating systems, specify only one domain
-         * name.</p></li> <li><p><code>ntp-servers</code> - The IP addresses of up to four
-         * Network Time Protocol (NTP) servers.</p></li>
-         * <li><p><code>netbios-name-servers</code> - The IP addresses of up to four
-         * NetBIOS name servers.</p></li> <li><p><code>netbios-node-type</code> - The
-         * NetBIOS node type (1, 2, 4, or 8). We recommend that you specify 2 (broadcast
-         * and multicast are not currently supported). For more information about these
-         * node types, see <a href="http://www.ietf.org/rfc/rfc2132.txt">RFC
-         * 2132</a>.</p></li> </ul> <p>Your VPC automatically starts out with a set of DHCP
-         * options that includes only a DNS server that we provide (AmazonProvidedDNS). If
-         * you create a set of options, and if your VPC has an Internet gateway, make sure
-         * to set the <code>domain-name-servers</code> option either to
-         * <code>AmazonProvidedDNS</code> or to a domain name server of your choice. For
-         * more information about DHCP options, see <a
+         * IP addresses in a single parameter, separated by commas. If you want your
+         * instance to receive a custom DNS hostname as specified in
+         * <code>domain-name</code>, you must set <code>domain-name-servers</code> to a
+         * custom DNS server.</p> </li> <li> <p> <code>domain-name</code> - If you're using
+         * AmazonProvidedDNS in "us-east-1", specify "ec2.internal". If you're using
+         * AmazonProvidedDNS in another region, specify "region.compute.internal" (for
+         * example, "ap-northeast-1.compute.internal"). Otherwise, specify a domain name
+         * (for example, "MyCompany.com"). This value is used to complete unqualified DNS
+         * hostnames. <b>Important</b>: Some Linux operating systems accept multiple domain
+         * names separated by spaces. However, Windows and other Linux operating systems
+         * treat the value as a single domain, which results in unexpected behavior. If
+         * your DHCP options set is associated with a VPC that has instances with multiple
+         * operating systems, specify only one domain name.</p> </li> <li> <p>
+         * <code>ntp-servers</code> - The IP addresses of up to four Network Time Protocol
+         * (NTP) servers.</p> </li> <li> <p> <code>netbios-name-servers</code> - The IP
+         * addresses of up to four NetBIOS name servers.</p> </li> <li> <p>
+         * <code>netbios-node-type</code> - The NetBIOS node type (1, 2, 4, or 8). We
+         * recommend that you specify 2 (broadcast and multicast are not currently
+         * supported). For more information about these node types, see <a
+         * href="http://www.ietf.org/rfc/rfc2132.txt">RFC 2132</a>.</p> </li> </ul> <p>Your
+         * VPC automatically starts out with a set of DHCP options that includes only a DNS
+         * server that we provide (AmazonProvidedDNS). If you create a set of options, and
+         * if your VPC has an Internet gateway, make sure to set the
+         * <code>domain-name-servers</code> option either to <code>AmazonProvidedDNS</code>
+         * or to a domain name server of your choice. For more information about DHCP
+         * options, see <a
          * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html">DHCP
          * Options Sets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
          */
@@ -2156,33 +2238,36 @@ namespace Model
          * associate it with the VPC, causing all existing and new instances that you
          * launch in the VPC to use this set of DHCP options. The following are the
          * individual DHCP options you can specify. For more information about the options,
-         * see <a href="http://www.ietf.org/rfc/rfc2132.txt">RFC 2132</a>.</p> <ul>
-         * <li><p><code>domain-name-servers</code> - The IP addresses of up to four domain
+         * see <a href="http://www.ietf.org/rfc/rfc2132.txt">RFC 2132</a>.</p> <ul> <li>
+         * <p> <code>domain-name-servers</code> - The IP addresses of up to four domain
          * name servers, or AmazonProvidedDNS. The default DHCP option set specifies
          * AmazonProvidedDNS. If specifying more than one domain name server, specify the
-         * IP addresses in a single parameter, separated by commas.</p></li>
-         * <li><p><code>domain-name</code> - If you're using AmazonProvidedDNS in
-         * "us-east-1", specify "ec2.internal". If you're using AmazonProvidedDNS in
-         * another region, specify "region.compute.internal" (for example,
-         * "ap-northeast-1.compute.internal"). Otherwise, specify a domain name (for
-         * example, "MyCompany.com"). <b>Important</b>: Some Linux operating systems accept
-         * multiple domain names separated by spaces. However, Windows and other Linux
-         * operating systems treat the value as a single domain, which results in
-         * unexpected behavior. If your DHCP options set is associated with a VPC that has
-         * instances with multiple operating systems, specify only one domain
-         * name.</p></li> <li><p><code>ntp-servers</code> - The IP addresses of up to four
-         * Network Time Protocol (NTP) servers.</p></li>
-         * <li><p><code>netbios-name-servers</code> - The IP addresses of up to four
-         * NetBIOS name servers.</p></li> <li><p><code>netbios-node-type</code> - The
-         * NetBIOS node type (1, 2, 4, or 8). We recommend that you specify 2 (broadcast
-         * and multicast are not currently supported). For more information about these
-         * node types, see <a href="http://www.ietf.org/rfc/rfc2132.txt">RFC
-         * 2132</a>.</p></li> </ul> <p>Your VPC automatically starts out with a set of DHCP
-         * options that includes only a DNS server that we provide (AmazonProvidedDNS). If
-         * you create a set of options, and if your VPC has an Internet gateway, make sure
-         * to set the <code>domain-name-servers</code> option either to
-         * <code>AmazonProvidedDNS</code> or to a domain name server of your choice. For
-         * more information about DHCP options, see <a
+         * IP addresses in a single parameter, separated by commas. If you want your
+         * instance to receive a custom DNS hostname as specified in
+         * <code>domain-name</code>, you must set <code>domain-name-servers</code> to a
+         * custom DNS server.</p> </li> <li> <p> <code>domain-name</code> - If you're using
+         * AmazonProvidedDNS in "us-east-1", specify "ec2.internal". If you're using
+         * AmazonProvidedDNS in another region, specify "region.compute.internal" (for
+         * example, "ap-northeast-1.compute.internal"). Otherwise, specify a domain name
+         * (for example, "MyCompany.com"). This value is used to complete unqualified DNS
+         * hostnames. <b>Important</b>: Some Linux operating systems accept multiple domain
+         * names separated by spaces. However, Windows and other Linux operating systems
+         * treat the value as a single domain, which results in unexpected behavior. If
+         * your DHCP options set is associated with a VPC that has instances with multiple
+         * operating systems, specify only one domain name.</p> </li> <li> <p>
+         * <code>ntp-servers</code> - The IP addresses of up to four Network Time Protocol
+         * (NTP) servers.</p> </li> <li> <p> <code>netbios-name-servers</code> - The IP
+         * addresses of up to four NetBIOS name servers.</p> </li> <li> <p>
+         * <code>netbios-node-type</code> - The NetBIOS node type (1, 2, 4, or 8). We
+         * recommend that you specify 2 (broadcast and multicast are not currently
+         * supported). For more information about these node types, see <a
+         * href="http://www.ietf.org/rfc/rfc2132.txt">RFC 2132</a>.</p> </li> </ul> <p>Your
+         * VPC automatically starts out with a set of DHCP options that includes only a DNS
+         * server that we provide (AmazonProvidedDNS). If you create a set of options, and
+         * if your VPC has an Internet gateway, make sure to set the
+         * <code>domain-name-servers</code> option either to <code>AmazonProvidedDNS</code>
+         * or to a domain name server of your choice. For more information about DHCP
+         * options, see <a
          * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html">DHCP
          * Options Sets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
          *
@@ -2195,33 +2280,36 @@ namespace Model
          * associate it with the VPC, causing all existing and new instances that you
          * launch in the VPC to use this set of DHCP options. The following are the
          * individual DHCP options you can specify. For more information about the options,
-         * see <a href="http://www.ietf.org/rfc/rfc2132.txt">RFC 2132</a>.</p> <ul>
-         * <li><p><code>domain-name-servers</code> - The IP addresses of up to four domain
+         * see <a href="http://www.ietf.org/rfc/rfc2132.txt">RFC 2132</a>.</p> <ul> <li>
+         * <p> <code>domain-name-servers</code> - The IP addresses of up to four domain
          * name servers, or AmazonProvidedDNS. The default DHCP option set specifies
          * AmazonProvidedDNS. If specifying more than one domain name server, specify the
-         * IP addresses in a single parameter, separated by commas.</p></li>
-         * <li><p><code>domain-name</code> - If you're using AmazonProvidedDNS in
-         * "us-east-1", specify "ec2.internal". If you're using AmazonProvidedDNS in
-         * another region, specify "region.compute.internal" (for example,
-         * "ap-northeast-1.compute.internal"). Otherwise, specify a domain name (for
-         * example, "MyCompany.com"). <b>Important</b>: Some Linux operating systems accept
-         * multiple domain names separated by spaces. However, Windows and other Linux
-         * operating systems treat the value as a single domain, which results in
-         * unexpected behavior. If your DHCP options set is associated with a VPC that has
-         * instances with multiple operating systems, specify only one domain
-         * name.</p></li> <li><p><code>ntp-servers</code> - The IP addresses of up to four
-         * Network Time Protocol (NTP) servers.</p></li>
-         * <li><p><code>netbios-name-servers</code> - The IP addresses of up to four
-         * NetBIOS name servers.</p></li> <li><p><code>netbios-node-type</code> - The
-         * NetBIOS node type (1, 2, 4, or 8). We recommend that you specify 2 (broadcast
-         * and multicast are not currently supported). For more information about these
-         * node types, see <a href="http://www.ietf.org/rfc/rfc2132.txt">RFC
-         * 2132</a>.</p></li> </ul> <p>Your VPC automatically starts out with a set of DHCP
-         * options that includes only a DNS server that we provide (AmazonProvidedDNS). If
-         * you create a set of options, and if your VPC has an Internet gateway, make sure
-         * to set the <code>domain-name-servers</code> option either to
-         * <code>AmazonProvidedDNS</code> or to a domain name server of your choice. For
-         * more information about DHCP options, see <a
+         * IP addresses in a single parameter, separated by commas. If you want your
+         * instance to receive a custom DNS hostname as specified in
+         * <code>domain-name</code>, you must set <code>domain-name-servers</code> to a
+         * custom DNS server.</p> </li> <li> <p> <code>domain-name</code> - If you're using
+         * AmazonProvidedDNS in "us-east-1", specify "ec2.internal". If you're using
+         * AmazonProvidedDNS in another region, specify "region.compute.internal" (for
+         * example, "ap-northeast-1.compute.internal"). Otherwise, specify a domain name
+         * (for example, "MyCompany.com"). This value is used to complete unqualified DNS
+         * hostnames. <b>Important</b>: Some Linux operating systems accept multiple domain
+         * names separated by spaces. However, Windows and other Linux operating systems
+         * treat the value as a single domain, which results in unexpected behavior. If
+         * your DHCP options set is associated with a VPC that has instances with multiple
+         * operating systems, specify only one domain name.</p> </li> <li> <p>
+         * <code>ntp-servers</code> - The IP addresses of up to four Network Time Protocol
+         * (NTP) servers.</p> </li> <li> <p> <code>netbios-name-servers</code> - The IP
+         * addresses of up to four NetBIOS name servers.</p> </li> <li> <p>
+         * <code>netbios-node-type</code> - The NetBIOS node type (1, 2, 4, or 8). We
+         * recommend that you specify 2 (broadcast and multicast are not currently
+         * supported). For more information about these node types, see <a
+         * href="http://www.ietf.org/rfc/rfc2132.txt">RFC 2132</a>.</p> </li> </ul> <p>Your
+         * VPC automatically starts out with a set of DHCP options that includes only a DNS
+         * server that we provide (AmazonProvidedDNS). If you create a set of options, and
+         * if your VPC has an Internet gateway, make sure to set the
+         * <code>domain-name-servers</code> option either to <code>AmazonProvidedDNS</code>
+         * or to a domain name server of your choice. For more information about DHCP
+         * options, see <a
          * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html">DHCP
          * Options Sets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
          *
@@ -2236,7 +2324,7 @@ namespace Model
          * stream is created in CloudWatch Logs for each network interface in the subnet or
          * VPC. Log streams can include information about accepted and rejected traffic to
          * a network interface. You can view the data in your log streams using Amazon
-         * CloudWatch Logs. </p> <p>In your request, you must also specify an IAM role that
+         * CloudWatch Logs.</p> <p>In your request, you must also specify an IAM role that
          * has permission to publish logs to CloudWatch Logs.</p>
          */
         virtual Model::CreateFlowLogsOutcome CreateFlowLogs(const Model::CreateFlowLogsRequest& request) const;
@@ -2248,7 +2336,7 @@ namespace Model
          * stream is created in CloudWatch Logs for each network interface in the subnet or
          * VPC. Log streams can include information about accepted and rejected traffic to
          * a network interface. You can view the data in your log streams using Amazon
-         * CloudWatch Logs. </p> <p>In your request, you must also specify an IAM role that
+         * CloudWatch Logs.</p> <p>In your request, you must also specify an IAM role that
          * has permission to publish logs to CloudWatch Logs.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -2262,7 +2350,7 @@ namespace Model
          * stream is created in CloudWatch Logs for each network interface in the subnet or
          * VPC. Log streams can include information about accepted and rejected traffic to
          * a network interface. You can view the data in your log streams using Amazon
-         * CloudWatch Logs. </p> <p>In your request, you must also specify an IAM role that
+         * CloudWatch Logs.</p> <p>In your request, you must also specify an IAM role that
          * has permission to publish logs to CloudWatch Logs.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -2316,8 +2404,9 @@ namespace Model
          * <p>Exports a running or stopped instance to an S3 bucket.</p> <p>For information
          * about the supported operating systems, image formats, and known limitations for
          * the types of instances you can export, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ExportingEC2Instances.html">Exporting
-         * EC2 Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+         * href="http://docs.aws.amazon.com/vm-import/latest/userguide/vmexport.html">Exporting
+         * an Instance as a VM Using VM Import/Export</a> in the <i>VM Import/Export User
+         * Guide</i>.</p>
          */
         virtual Model::CreateInstanceExportTaskOutcome CreateInstanceExportTask(const Model::CreateInstanceExportTaskRequest& request) const;
 
@@ -2325,8 +2414,9 @@ namespace Model
          * <p>Exports a running or stopped instance to an S3 bucket.</p> <p>For information
          * about the supported operating systems, image formats, and known limitations for
          * the types of instances you can export, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ExportingEC2Instances.html">Exporting
-         * EC2 Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+         * href="http://docs.aws.amazon.com/vm-import/latest/userguide/vmexport.html">Exporting
+         * an Instance as a VM Using VM Import/Export</a> in the <i>VM Import/Export User
+         * Guide</i>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2336,8 +2426,9 @@ namespace Model
          * <p>Exports a running or stopped instance to an S3 bucket.</p> <p>For information
          * about the supported operating systems, image formats, and known limitations for
          * the types of instances you can export, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ExportingEC2Instances.html">Exporting
-         * EC2 Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+         * href="http://docs.aws.amazon.com/vm-import/latest/userguide/vmexport.html">Exporting
+         * an Instance as a VM Using VM Import/Export</a> in the <i>VM Import/Export User
+         * Guide</i>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2606,21 +2697,22 @@ namespace Model
         virtual void CreatePlacementGroupAsync(const Model::CreatePlacementGroupRequest& request, const CreatePlacementGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a listing for Amazon EC2 Reserved Instances to be sold in the
-         * Reserved Instance Marketplace. You can submit one Reserved Instance listing at a
-         * time. To get a list of your Reserved Instances, you can use the
-         * <a>DescribeReservedInstances</a> operation.</p> <p>The Reserved Instance
-         * Marketplace matches sellers who want to resell Reserved Instance capacity that
-         * they no longer need with buyers who want to purchase additional capacity.
-         * Reserved Instances bought and sold through the Reserved Instance Marketplace
-         * work like any other Reserved Instances.</p> <p>To sell your Reserved Instances,
-         * you must first register as a seller in the Reserved Instance Marketplace. After
-         * completing the registration process, you can create a Reserved Instance
-         * Marketplace listing of some or all of your Reserved Instances, and specify the
-         * upfront price to receive for them. Your Reserved Instance listings then become
-         * available for purchase. To view the details of your Reserved Instance listing,
-         * you can use the <a>DescribeReservedInstancesListings</a> operation.</p> <p>For
-         * more information, see <a
+         * <p>Creates a listing for Amazon EC2 Standard Reserved Instances to be sold in
+         * the Reserved Instance Marketplace. You can submit one Standard Reserved Instance
+         * listing at a time. To get a list of your Standard Reserved Instances, you can
+         * use the <a>DescribeReservedInstances</a> operation.</p> <p>The Reserved Instance
+         * Marketplace matches sellers who want to resell Standard Reserved Instance
+         * capacity that they no longer need with buyers who want to purchase additional
+         * capacity. Reserved Instances bought and sold through the Reserved Instance
+         * Marketplace work like any other Reserved Instances.</p> <p>To sell your Standard
+         * Reserved Instances, you must first register as a seller in the Reserved Instance
+         * Marketplace. After completing the registration process, you can create a
+         * Reserved Instance Marketplace listing of some or all of your Standard Reserved
+         * Instances, and specify the upfront price to receive for them. Your Standard
+         * Reserved Instance listings then become available for purchase. To view the
+         * details of your Standard Reserved Instance listing, you can use the
+         * <a>DescribeReservedInstancesListings</a> operation.</p> <p>For more information,
+         * see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
          * Instance Marketplace</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p>
@@ -2628,21 +2720,22 @@ namespace Model
         virtual Model::CreateReservedInstancesListingOutcome CreateReservedInstancesListing(const Model::CreateReservedInstancesListingRequest& request) const;
 
         /**
-         * <p>Creates a listing for Amazon EC2 Reserved Instances to be sold in the
-         * Reserved Instance Marketplace. You can submit one Reserved Instance listing at a
-         * time. To get a list of your Reserved Instances, you can use the
-         * <a>DescribeReservedInstances</a> operation.</p> <p>The Reserved Instance
-         * Marketplace matches sellers who want to resell Reserved Instance capacity that
-         * they no longer need with buyers who want to purchase additional capacity.
-         * Reserved Instances bought and sold through the Reserved Instance Marketplace
-         * work like any other Reserved Instances.</p> <p>To sell your Reserved Instances,
-         * you must first register as a seller in the Reserved Instance Marketplace. After
-         * completing the registration process, you can create a Reserved Instance
-         * Marketplace listing of some or all of your Reserved Instances, and specify the
-         * upfront price to receive for them. Your Reserved Instance listings then become
-         * available for purchase. To view the details of your Reserved Instance listing,
-         * you can use the <a>DescribeReservedInstancesListings</a> operation.</p> <p>For
-         * more information, see <a
+         * <p>Creates a listing for Amazon EC2 Standard Reserved Instances to be sold in
+         * the Reserved Instance Marketplace. You can submit one Standard Reserved Instance
+         * listing at a time. To get a list of your Standard Reserved Instances, you can
+         * use the <a>DescribeReservedInstances</a> operation.</p> <p>The Reserved Instance
+         * Marketplace matches sellers who want to resell Standard Reserved Instance
+         * capacity that they no longer need with buyers who want to purchase additional
+         * capacity. Reserved Instances bought and sold through the Reserved Instance
+         * Marketplace work like any other Reserved Instances.</p> <p>To sell your Standard
+         * Reserved Instances, you must first register as a seller in the Reserved Instance
+         * Marketplace. After completing the registration process, you can create a
+         * Reserved Instance Marketplace listing of some or all of your Standard Reserved
+         * Instances, and specify the upfront price to receive for them. Your Standard
+         * Reserved Instance listings then become available for purchase. To view the
+         * details of your Standard Reserved Instance listing, you can use the
+         * <a>DescribeReservedInstancesListings</a> operation.</p> <p>For more information,
+         * see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
          * Instance Marketplace</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p>
@@ -2652,21 +2745,22 @@ namespace Model
         virtual Model::CreateReservedInstancesListingOutcomeCallable CreateReservedInstancesListingCallable(const Model::CreateReservedInstancesListingRequest& request) const;
 
         /**
-         * <p>Creates a listing for Amazon EC2 Reserved Instances to be sold in the
-         * Reserved Instance Marketplace. You can submit one Reserved Instance listing at a
-         * time. To get a list of your Reserved Instances, you can use the
-         * <a>DescribeReservedInstances</a> operation.</p> <p>The Reserved Instance
-         * Marketplace matches sellers who want to resell Reserved Instance capacity that
-         * they no longer need with buyers who want to purchase additional capacity.
-         * Reserved Instances bought and sold through the Reserved Instance Marketplace
-         * work like any other Reserved Instances.</p> <p>To sell your Reserved Instances,
-         * you must first register as a seller in the Reserved Instance Marketplace. After
-         * completing the registration process, you can create a Reserved Instance
-         * Marketplace listing of some or all of your Reserved Instances, and specify the
-         * upfront price to receive for them. Your Reserved Instance listings then become
-         * available for purchase. To view the details of your Reserved Instance listing,
-         * you can use the <a>DescribeReservedInstancesListings</a> operation.</p> <p>For
-         * more information, see <a
+         * <p>Creates a listing for Amazon EC2 Standard Reserved Instances to be sold in
+         * the Reserved Instance Marketplace. You can submit one Standard Reserved Instance
+         * listing at a time. To get a list of your Standard Reserved Instances, you can
+         * use the <a>DescribeReservedInstances</a> operation.</p> <p>The Reserved Instance
+         * Marketplace matches sellers who want to resell Standard Reserved Instance
+         * capacity that they no longer need with buyers who want to purchase additional
+         * capacity. Reserved Instances bought and sold through the Reserved Instance
+         * Marketplace work like any other Reserved Instances.</p> <p>To sell your Standard
+         * Reserved Instances, you must first register as a seller in the Reserved Instance
+         * Marketplace. After completing the registration process, you can create a
+         * Reserved Instance Marketplace listing of some or all of your Standard Reserved
+         * Instances, and specify the upfront price to receive for them. Your Standard
+         * Reserved Instance listings then become available for purchase. To view the
+         * details of your Standard Reserved Instance listing, you can use the
+         * <a>DescribeReservedInstancesListings</a> operation.</p> <p>For more information,
+         * see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
          * Instance Marketplace</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p>
@@ -2681,13 +2775,13 @@ namespace Model
          * instance, NAT gateway, VPC peering connection, or network interface.</p> <p>When
          * determining how to route traffic, we use the route with the most specific match.
          * For example, let's say the traffic is destined for <code>192.0.2.3</code>, and
-         * the route table includes the following two routes:</p> <ul> <li>
-         * <p><code>192.0.2.0/24</code> (goes to some target A)</p> </li> <li>
-         * <p><code>192.0.2.0/28</code> (goes to some target B)</p> </li> </ul> <p>Both
-         * routes apply to the traffic destined for <code>192.0.2.3</code>. However, the
-         * second route in the list covers a smaller number of IP addresses and is
-         * therefore more specific, so we use that route to determine where to target the
-         * traffic.</p> <p>For more information about route tables, see <a
+         * the route table includes the following two routes:</p> <ul> <li> <p>
+         * <code>192.0.2.0/24</code> (goes to some target A)</p> </li> <li> <p>
+         * <code>192.0.2.0/28</code> (goes to some target B)</p> </li> </ul> <p>Both routes
+         * apply to the traffic destined for <code>192.0.2.3</code>. However, the second
+         * route in the list covers a smaller number of IP addresses and is therefore more
+         * specific, so we use that route to determine where to target the traffic.</p>
+         * <p>For more information about route tables, see <a
          * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route
          * Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
          */
@@ -2699,13 +2793,13 @@ namespace Model
          * instance, NAT gateway, VPC peering connection, or network interface.</p> <p>When
          * determining how to route traffic, we use the route with the most specific match.
          * For example, let's say the traffic is destined for <code>192.0.2.3</code>, and
-         * the route table includes the following two routes:</p> <ul> <li>
-         * <p><code>192.0.2.0/24</code> (goes to some target A)</p> </li> <li>
-         * <p><code>192.0.2.0/28</code> (goes to some target B)</p> </li> </ul> <p>Both
-         * routes apply to the traffic destined for <code>192.0.2.3</code>. However, the
-         * second route in the list covers a smaller number of IP addresses and is
-         * therefore more specific, so we use that route to determine where to target the
-         * traffic.</p> <p>For more information about route tables, see <a
+         * the route table includes the following two routes:</p> <ul> <li> <p>
+         * <code>192.0.2.0/24</code> (goes to some target A)</p> </li> <li> <p>
+         * <code>192.0.2.0/28</code> (goes to some target B)</p> </li> </ul> <p>Both routes
+         * apply to the traffic destined for <code>192.0.2.3</code>. However, the second
+         * route in the list covers a smaller number of IP addresses and is therefore more
+         * specific, so we use that route to determine where to target the traffic.</p>
+         * <p>For more information about route tables, see <a
          * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route
          * Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
          *
@@ -2719,13 +2813,13 @@ namespace Model
          * instance, NAT gateway, VPC peering connection, or network interface.</p> <p>When
          * determining how to route traffic, we use the route with the most specific match.
          * For example, let's say the traffic is destined for <code>192.0.2.3</code>, and
-         * the route table includes the following two routes:</p> <ul> <li>
-         * <p><code>192.0.2.0/24</code> (goes to some target A)</p> </li> <li>
-         * <p><code>192.0.2.0/28</code> (goes to some target B)</p> </li> </ul> <p>Both
-         * routes apply to the traffic destined for <code>192.0.2.3</code>. However, the
-         * second route in the list covers a smaller number of IP addresses and is
-         * therefore more specific, so we use that route to determine where to target the
-         * traffic.</p> <p>For more information about route tables, see <a
+         * the route table includes the following two routes:</p> <ul> <li> <p>
+         * <code>192.0.2.0/24</code> (goes to some target A)</p> </li> <li> <p>
+         * <code>192.0.2.0/28</code> (goes to some target B)</p> </li> </ul> <p>Both routes
+         * apply to the traffic destined for <code>192.0.2.3</code>. However, the second
+         * route in the list covers a smaller number of IP addresses and is therefore more
+         * specific, so we use that route to determine where to target the traffic.</p>
+         * <p>For more information about route tables, see <a
          * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route
          * Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
          *
@@ -3040,7 +3134,7 @@ namespace Model
 
         /**
          * <p>Adds or overwrites one or more tags for the specified Amazon EC2 resource or
-         * resources. Each resource can have a maximum of 10 tags. Each tag consists of a
+         * resources. Each resource can have a maximum of 50 tags. Each tag consists of a
          * key and optional value. Tag keys must be unique per resource.</p> <p>For more
          * information about tags, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
@@ -3055,7 +3149,7 @@ namespace Model
 
         /**
          * <p>Adds or overwrites one or more tags for the specified Amazon EC2 resource or
-         * resources. Each resource can have a maximum of 10 tags. Each tag consists of a
+         * resources. Each resource can have a maximum of 50 tags. Each tag consists of a
          * key and optional value. Tag keys must be unique per resource.</p> <p>For more
          * information about tags, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
@@ -3072,7 +3166,7 @@ namespace Model
 
         /**
          * <p>Adds or overwrites one or more tags for the specified Amazon EC2 resource or
-         * resources. Each resource can have a maximum of 10 tags. Each tag consists of a
+         * resources. Each resource can have a maximum of 50 tags. Each tag consists of a
          * key and optional value. Tag keys must be unique per resource.</p> <p>For more
          * information about tags, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
@@ -3543,14 +3637,14 @@ namespace Model
         /**
          * <p>Deletes the specified NAT gateway. Deleting a NAT gateway disassociates its
          * Elastic IP address, but does not release the address from your account. Deleting
-         * a NAT gateway does not delete any NAT gateway routes in your route tables. </p>
+         * a NAT gateway does not delete any NAT gateway routes in your route tables.</p>
          */
         virtual Model::DeleteNatGatewayOutcome DeleteNatGateway(const Model::DeleteNatGatewayRequest& request) const;
 
         /**
          * <p>Deletes the specified NAT gateway. Deleting a NAT gateway disassociates its
          * Elastic IP address, but does not release the address from your account. Deleting
-         * a NAT gateway does not delete any NAT gateway routes in your route tables. </p>
+         * a NAT gateway does not delete any NAT gateway routes in your route tables.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -3559,7 +3653,7 @@ namespace Model
         /**
          * <p>Deletes the specified NAT gateway. Deleting a NAT gateway disassociates its
          * Elastic IP address, but does not release the address from your account. Deleting
-         * a NAT gateway does not delete any NAT gateway routes in your route tables. </p>
+         * a NAT gateway does not delete any NAT gateway routes in your route tables.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -4099,35 +4193,33 @@ namespace Model
 
         /**
          * <p>Describes attributes of your AWS account. The following are the supported
-         * account attributes:</p> <ul> <li> <p><code>supported-platforms</code>: Indicates
-         * whether your account can launch instances into EC2-Classic and EC2-VPC, or only
-         * into EC2-VPC.</p> </li> <li> <p><code>default-vpc</code>: The ID of the default
-         * VPC for your account, or <code>none</code>.</p> </li> <li>
-         * <p><code>max-instances</code>: The maximum number of On-Demand instances that
-         * you can run.</p> </li> <li>
-         * <p><code>vpc-max-security-groups-per-interface</code>: The maximum number of
-         * security groups that you can assign to a network interface.</p> </li> <li>
-         * <p><code>max-elastic-ips</code>: The maximum number of Elastic IP addresses that
-         * you can allocate for use with EC2-Classic. </p> </li> <li>
-         * <p><code>vpc-max-elastic-ips</code>: The maximum number of Elastic IP addresses
-         * that you can allocate for use with EC2-VPC.</p> </li> </ul>
+         * account attributes:</p> <ul> <li> <p> <code>supported-platforms</code>:
+         * Indicates whether your account can launch instances into EC2-Classic and
+         * EC2-VPC, or only into EC2-VPC.</p> </li> <li> <p> <code>default-vpc</code>: The
+         * ID of the default VPC for your account, or <code>none</code>.</p> </li> <li> <p>
+         * <code>max-instances</code>: The maximum number of On-Demand instances that you
+         * can run.</p> </li> <li> <p> <code>vpc-max-security-groups-per-interface</code>:
+         * The maximum number of security groups that you can assign to a network
+         * interface.</p> </li> <li> <p> <code>max-elastic-ips</code>: The maximum number
+         * of Elastic IP addresses that you can allocate for use with EC2-Classic. </p>
+         * </li> <li> <p> <code>vpc-max-elastic-ips</code>: The maximum number of Elastic
+         * IP addresses that you can allocate for use with EC2-VPC.</p> </li> </ul>
          */
         virtual Model::DescribeAccountAttributesOutcome DescribeAccountAttributes(const Model::DescribeAccountAttributesRequest& request) const;
 
         /**
          * <p>Describes attributes of your AWS account. The following are the supported
-         * account attributes:</p> <ul> <li> <p><code>supported-platforms</code>: Indicates
-         * whether your account can launch instances into EC2-Classic and EC2-VPC, or only
-         * into EC2-VPC.</p> </li> <li> <p><code>default-vpc</code>: The ID of the default
-         * VPC for your account, or <code>none</code>.</p> </li> <li>
-         * <p><code>max-instances</code>: The maximum number of On-Demand instances that
-         * you can run.</p> </li> <li>
-         * <p><code>vpc-max-security-groups-per-interface</code>: The maximum number of
-         * security groups that you can assign to a network interface.</p> </li> <li>
-         * <p><code>max-elastic-ips</code>: The maximum number of Elastic IP addresses that
-         * you can allocate for use with EC2-Classic. </p> </li> <li>
-         * <p><code>vpc-max-elastic-ips</code>: The maximum number of Elastic IP addresses
-         * that you can allocate for use with EC2-VPC.</p> </li> </ul>
+         * account attributes:</p> <ul> <li> <p> <code>supported-platforms</code>:
+         * Indicates whether your account can launch instances into EC2-Classic and
+         * EC2-VPC, or only into EC2-VPC.</p> </li> <li> <p> <code>default-vpc</code>: The
+         * ID of the default VPC for your account, or <code>none</code>.</p> </li> <li> <p>
+         * <code>max-instances</code>: The maximum number of On-Demand instances that you
+         * can run.</p> </li> <li> <p> <code>vpc-max-security-groups-per-interface</code>:
+         * The maximum number of security groups that you can assign to a network
+         * interface.</p> </li> <li> <p> <code>max-elastic-ips</code>: The maximum number
+         * of Elastic IP addresses that you can allocate for use with EC2-Classic. </p>
+         * </li> <li> <p> <code>vpc-max-elastic-ips</code>: The maximum number of Elastic
+         * IP addresses that you can allocate for use with EC2-VPC.</p> </li> </ul>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -4135,18 +4227,17 @@ namespace Model
 
         /**
          * <p>Describes attributes of your AWS account. The following are the supported
-         * account attributes:</p> <ul> <li> <p><code>supported-platforms</code>: Indicates
-         * whether your account can launch instances into EC2-Classic and EC2-VPC, or only
-         * into EC2-VPC.</p> </li> <li> <p><code>default-vpc</code>: The ID of the default
-         * VPC for your account, or <code>none</code>.</p> </li> <li>
-         * <p><code>max-instances</code>: The maximum number of On-Demand instances that
-         * you can run.</p> </li> <li>
-         * <p><code>vpc-max-security-groups-per-interface</code>: The maximum number of
-         * security groups that you can assign to a network interface.</p> </li> <li>
-         * <p><code>max-elastic-ips</code>: The maximum number of Elastic IP addresses that
-         * you can allocate for use with EC2-Classic. </p> </li> <li>
-         * <p><code>vpc-max-elastic-ips</code>: The maximum number of Elastic IP addresses
-         * that you can allocate for use with EC2-VPC.</p> </li> </ul>
+         * account attributes:</p> <ul> <li> <p> <code>supported-platforms</code>:
+         * Indicates whether your account can launch instances into EC2-Classic and
+         * EC2-VPC, or only into EC2-VPC.</p> </li> <li> <p> <code>default-vpc</code>: The
+         * ID of the default VPC for your account, or <code>none</code>.</p> </li> <li> <p>
+         * <code>max-instances</code>: The maximum number of On-Demand instances that you
+         * can run.</p> </li> <li> <p> <code>vpc-max-security-groups-per-interface</code>:
+         * The maximum number of security groups that you can assign to a network
+         * interface.</p> </li> <li> <p> <code>max-elastic-ips</code>: The maximum number
+         * of Elastic IP addresses that you can allocate for use with EC2-Classic. </p>
+         * </li> <li> <p> <code>vpc-max-elastic-ips</code>: The maximum number of Elastic
+         * IP addresses that you can allocate for use with EC2-VPC.</p> </li> </ul>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -4224,31 +4315,31 @@ namespace Model
         virtual void DescribeAvailabilityZonesAsync(const Model::DescribeAvailabilityZonesRequest& request, const DescribeAvailabilityZonesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes one or more of your bundling tasks.</p> <note><p>Completed bundle
+         * <p>Describes one or more of your bundling tasks.</p> <note> <p>Completed bundle
          * tasks are listed for only a limited time. If your bundle task is no longer in
          * the list, you can still register an AMI from it. Just use
          * <code>RegisterImage</code> with the Amazon S3 bucket name and image manifest
-         * name you provided to the bundle task.</p></note>
+         * name you provided to the bundle task.</p> </note>
          */
         virtual Model::DescribeBundleTasksOutcome DescribeBundleTasks(const Model::DescribeBundleTasksRequest& request) const;
 
         /**
-         * <p>Describes one or more of your bundling tasks.</p> <note><p>Completed bundle
+         * <p>Describes one or more of your bundling tasks.</p> <note> <p>Completed bundle
          * tasks are listed for only a limited time. If your bundle task is no longer in
          * the list, you can still register an AMI from it. Just use
          * <code>RegisterImage</code> with the Amazon S3 bucket name and image manifest
-         * name you provided to the bundle task.</p></note>
+         * name you provided to the bundle task.</p> </note>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeBundleTasksOutcomeCallable DescribeBundleTasksCallable(const Model::DescribeBundleTasksRequest& request) const;
 
         /**
-         * <p>Describes one or more of your bundling tasks.</p> <note><p>Completed bundle
+         * <p>Describes one or more of your bundling tasks.</p> <note> <p>Completed bundle
          * tasks are listed for only a limited time. If your bundle task is no longer in
          * the list, you can still register an AMI from it. Just use
          * <code>RegisterImage</code> with the Amazon S3 bucket name and image manifest
-         * name you provided to the bundle task.</p></note>
+         * name you provided to the bundle task.</p> </note>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -4283,22 +4374,20 @@ namespace Model
         virtual void DescribeClassicLinkInstancesAsync(const Model::DescribeClassicLinkInstancesRequest& request, const DescribeClassicLinkInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes one or more of your conversion tasks. For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html">Using
-         * the Command Line Tools to Import Your Virtual Machine to Amazon EC2</a> in the
-         * <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>For information about the
-         * import manifest referenced by this API action, see <a
+         * <p>Describes one or more of your conversion tasks. For more information, see the
+         * <a href="http://docs.aws.amazon.com/vm-import/latest/userguide/">VM
+         * Import/Export User Guide</a>.</p> <p>For information about the import manifest
+         * referenced by this API action, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM
          * Import Manifest</a>.</p>
          */
         virtual Model::DescribeConversionTasksOutcome DescribeConversionTasks(const Model::DescribeConversionTasksRequest& request) const;
 
         /**
-         * <p>Describes one or more of your conversion tasks. For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html">Using
-         * the Command Line Tools to Import Your Virtual Machine to Amazon EC2</a> in the
-         * <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>For information about the
-         * import manifest referenced by this API action, see <a
+         * <p>Describes one or more of your conversion tasks. For more information, see the
+         * <a href="http://docs.aws.amazon.com/vm-import/latest/userguide/">VM
+         * Import/Export User Guide</a>.</p> <p>For information about the import manifest
+         * referenced by this API action, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM
          * Import Manifest</a>.</p>
          *
@@ -4307,11 +4396,10 @@ namespace Model
         virtual Model::DescribeConversionTasksOutcomeCallable DescribeConversionTasksCallable(const Model::DescribeConversionTasksRequest& request) const;
 
         /**
-         * <p>Describes one or more of your conversion tasks. For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html">Using
-         * the Command Line Tools to Import Your Virtual Machine to Amazon EC2</a> in the
-         * <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>For information about the
-         * import manifest referenced by this API action, see <a
+         * <p>Describes one or more of your conversion tasks. For more information, see the
+         * <a href="http://docs.aws.amazon.com/vm-import/latest/userguide/">VM
+         * Import/Export User Guide</a>.</p> <p>For information about the import manifest
+         * referenced by this API action, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM
          * Import Manifest</a>.</p>
          *
@@ -4423,17 +4511,79 @@ namespace Model
         virtual void DescribeFlowLogsAsync(const Model::DescribeFlowLogsRequest& request, const DescribeFlowLogsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes one or more of your Dedicated hosts.</p> <p>The results describe
-         * only the Dedicated hosts in the region you're currently using. All listed
-         * instances consume capacity on your Dedicated host. Dedicated hosts that have
+         * <p>Describes the Dedicated Host Reservations that are available to purchase.</p>
+         * <p>The results describe all the Dedicated Host Reservation offerings, including
+         * offerings that may not match the instance family and region of your Dedicated
+         * Hosts. When purchasing an offering, ensure that the the instance family and
+         * region of the offering matches that of the Dedicated Host/s it will be
+         * associated with. For an overview of supported instance types, see <a
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-overview.html">Dedicated
+         * Hosts Overview</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. </p>
+         */
+        virtual Model::DescribeHostReservationOfferingsOutcome DescribeHostReservationOfferings(const Model::DescribeHostReservationOfferingsRequest& request) const;
+
+        /**
+         * <p>Describes the Dedicated Host Reservations that are available to purchase.</p>
+         * <p>The results describe all the Dedicated Host Reservation offerings, including
+         * offerings that may not match the instance family and region of your Dedicated
+         * Hosts. When purchasing an offering, ensure that the the instance family and
+         * region of the offering matches that of the Dedicated Host/s it will be
+         * associated with. For an overview of supported instance types, see <a
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-overview.html">Dedicated
+         * Hosts Overview</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. </p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeHostReservationOfferingsOutcomeCallable DescribeHostReservationOfferingsCallable(const Model::DescribeHostReservationOfferingsRequest& request) const;
+
+        /**
+         * <p>Describes the Dedicated Host Reservations that are available to purchase.</p>
+         * <p>The results describe all the Dedicated Host Reservation offerings, including
+         * offerings that may not match the instance family and region of your Dedicated
+         * Hosts. When purchasing an offering, ensure that the the instance family and
+         * region of the offering matches that of the Dedicated Host/s it will be
+         * associated with. For an overview of supported instance types, see <a
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-overview.html">Dedicated
+         * Hosts Overview</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. </p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeHostReservationOfferingsAsync(const Model::DescribeHostReservationOfferingsRequest& request, const DescribeHostReservationOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Describes Dedicated Host Reservations which are associated with Dedicated
+         * Hosts in your account.</p>
+         */
+        virtual Model::DescribeHostReservationsOutcome DescribeHostReservations(const Model::DescribeHostReservationsRequest& request) const;
+
+        /**
+         * <p>Describes Dedicated Host Reservations which are associated with Dedicated
+         * Hosts in your account.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeHostReservationsOutcomeCallable DescribeHostReservationsCallable(const Model::DescribeHostReservationsRequest& request) const;
+
+        /**
+         * <p>Describes Dedicated Host Reservations which are associated with Dedicated
+         * Hosts in your account.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeHostReservationsAsync(const Model::DescribeHostReservationsRequest& request, const DescribeHostReservationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Describes one or more of your Dedicated Hosts.</p> <p>The results describe
+         * only the Dedicated Hosts in the region you're currently using. All listed
+         * instances consume capacity on your Dedicated Host. Dedicated Hosts that have
          * recently been released will be listed with the state <code>released</code>.</p>
          */
         virtual Model::DescribeHostsOutcome DescribeHosts(const Model::DescribeHostsRequest& request) const;
 
         /**
-         * <p>Describes one or more of your Dedicated hosts.</p> <p>The results describe
-         * only the Dedicated hosts in the region you're currently using. All listed
-         * instances consume capacity on your Dedicated host. Dedicated hosts that have
+         * <p>Describes one or more of your Dedicated Hosts.</p> <p>The results describe
+         * only the Dedicated Hosts in the region you're currently using. All listed
+         * instances consume capacity on your Dedicated Host. Dedicated Hosts that have
          * recently been released will be listed with the state <code>released</code>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -4441,9 +4591,9 @@ namespace Model
         virtual Model::DescribeHostsOutcomeCallable DescribeHostsCallable(const Model::DescribeHostsRequest& request) const;
 
         /**
-         * <p>Describes one or more of your Dedicated hosts.</p> <p>The results describe
-         * only the Dedicated hosts in the region you're currently using. All listed
-         * instances consume capacity on your Dedicated host. Dedicated hosts that have
+         * <p>Describes one or more of your Dedicated Hosts.</p> <p>The results describe
+         * only the Dedicated Hosts in the region you're currently using. All listed
+         * instances consume capacity on your Dedicated Host. Dedicated Hosts that have
          * recently been released will be listed with the state <code>released</code>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -4454,7 +4604,7 @@ namespace Model
          * <p>Describes the ID format settings for your resources on a per-region basis,
          * for example, to view which resource types are enabled for longer IDs. This
          * request only returns information about resource types whose ID formats can be
-         * modified; it does not return information about other resource types. </p> <p>The
+         * modified; it does not return information about other resource types.</p> <p>The
          * following resource types support longer IDs: <code>instance</code> |
          * <code>reservation</code> | <code>snapshot</code> | <code>volume</code>. </p>
          * <p>These settings apply to the IAM user who makes the request; they do not apply
@@ -4471,7 +4621,7 @@ namespace Model
          * <p>Describes the ID format settings for your resources on a per-region basis,
          * for example, to view which resource types are enabled for longer IDs. This
          * request only returns information about resource types whose ID formats can be
-         * modified; it does not return information about other resource types. </p> <p>The
+         * modified; it does not return information about other resource types.</p> <p>The
          * following resource types support longer IDs: <code>instance</code> |
          * <code>reservation</code> | <code>snapshot</code> | <code>volume</code>. </p>
          * <p>These settings apply to the IAM user who makes the request; they do not apply
@@ -4490,7 +4640,7 @@ namespace Model
          * <p>Describes the ID format settings for your resources on a per-region basis,
          * for example, to view which resource types are enabled for longer IDs. This
          * request only returns information about resource types whose ID formats can be
-         * modified; it does not return information about other resource types. </p> <p>The
+         * modified; it does not return information about other resource types.</p> <p>The
          * following resource types support longer IDs: <code>instance</code> |
          * <code>reservation</code> | <code>snapshot</code> | <code>volume</code>. </p>
          * <p>These settings apply to the IAM user who makes the request; they do not apply
@@ -4504,6 +4654,55 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeIdFormatAsync(const Model::DescribeIdFormatRequest& request, const DescribeIdFormatResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Describes the ID format settings for resources for the specified IAM user,
+         * IAM role, or root user. For example, you can view the resource types that are
+         * enabled for longer IDs. This request only returns information about resource
+         * types whose ID formats can be modified; it does not return information about
+         * other resource types. For more information, see <a
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/resource-ids.html">Resource
+         * IDs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. </p> <p>The
+         * following resource types support longer IDs: <code>instance</code> |
+         * <code>reservation</code> | <code>snapshot</code> | <code>volume</code>. </p>
+         * <p>These settings apply to the principal specified in the request. They do not
+         * apply to the principal that makes the request.</p>
+         */
+        virtual Model::DescribeIdentityIdFormatOutcome DescribeIdentityIdFormat(const Model::DescribeIdentityIdFormatRequest& request) const;
+
+        /**
+         * <p>Describes the ID format settings for resources for the specified IAM user,
+         * IAM role, or root user. For example, you can view the resource types that are
+         * enabled for longer IDs. This request only returns information about resource
+         * types whose ID formats can be modified; it does not return information about
+         * other resource types. For more information, see <a
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/resource-ids.html">Resource
+         * IDs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. </p> <p>The
+         * following resource types support longer IDs: <code>instance</code> |
+         * <code>reservation</code> | <code>snapshot</code> | <code>volume</code>. </p>
+         * <p>These settings apply to the principal specified in the request. They do not
+         * apply to the principal that makes the request.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeIdentityIdFormatOutcomeCallable DescribeIdentityIdFormatCallable(const Model::DescribeIdentityIdFormatRequest& request) const;
+
+        /**
+         * <p>Describes the ID format settings for resources for the specified IAM user,
+         * IAM role, or root user. For example, you can view the resource types that are
+         * enabled for longer IDs. This request only returns information about resource
+         * types whose ID formats can be modified; it does not return information about
+         * other resource types. For more information, see <a
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/resource-ids.html">Resource
+         * IDs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. </p> <p>The
+         * following resource types support longer IDs: <code>instance</code> |
+         * <code>reservation</code> | <code>snapshot</code> | <code>volume</code>. </p>
+         * <p>These settings apply to the principal specified in the request. They do not
+         * apply to the principal that makes the request.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeIdentityIdFormatAsync(const Model::DescribeIdentityIdFormatRequest& request, const DescribeIdentityIdFormatResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the specified attribute of the specified AMI. You can specify only
@@ -4531,8 +4730,8 @@ namespace Model
          * <p>Describes one or more of the images (AMIs, AKIs, and ARIs) available to you.
          * Images available to you include public images, private images that you own, and
          * private images owned by other AWS accounts but for which you have explicit
-         * launch permissions.</p> <note><p>Deregistered images are included in the
-         * returned results for an unspecified interval after deregistration.</p></note>
+         * launch permissions.</p> <note> <p>Deregistered images are included in the
+         * returned results for an unspecified interval after deregistration.</p> </note>
          */
         virtual Model::DescribeImagesOutcome DescribeImages(const Model::DescribeImagesRequest& request) const;
 
@@ -4540,8 +4739,8 @@ namespace Model
          * <p>Describes one or more of the images (AMIs, AKIs, and ARIs) available to you.
          * Images available to you include public images, private images that you own, and
          * private images owned by other AWS accounts but for which you have explicit
-         * launch permissions.</p> <note><p>Deregistered images are included in the
-         * returned results for an unspecified interval after deregistration.</p></note>
+         * launch permissions.</p> <note> <p>Deregistered images are included in the
+         * returned results for an unspecified interval after deregistration.</p> </note>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -4551,8 +4750,8 @@ namespace Model
          * <p>Describes one or more of the images (AMIs, AKIs, and ARIs) available to you.
          * Images available to you include public images, private images that you own, and
          * private images owned by other AWS accounts but for which you have explicit
-         * launch permissions.</p> <note><p>Deregistered images are included in the
-         * returned results for an unspecified interval after deregistration.</p></note>
+         * launch permissions.</p> <note> <p>Deregistered images are included in the
+         * returned results for an unspecified interval after deregistration.</p> </note>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -4607,7 +4806,7 @@ namespace Model
          * <code>instanceInitiatedShutdownBehavior</code> | <code>rootDeviceName</code> |
          * <code>blockDeviceMapping</code> | <code>productCodes</code> |
          * <code>sourceDestCheck</code> | <code>groupSet</code> | <code>ebsOptimized</code>
-         * | <code>sriovNetSupport</code></p>
+         * | <code>sriovNetSupport</code> </p>
          */
         virtual Model::DescribeInstanceAttributeOutcome DescribeInstanceAttribute(const Model::DescribeInstanceAttributeRequest& request) const;
 
@@ -4619,7 +4818,7 @@ namespace Model
          * <code>instanceInitiatedShutdownBehavior</code> | <code>rootDeviceName</code> |
          * <code>blockDeviceMapping</code> | <code>productCodes</code> |
          * <code>sourceDestCheck</code> | <code>groupSet</code> | <code>ebsOptimized</code>
-         * | <code>sriovNetSupport</code></p>
+         * | <code>sriovNetSupport</code> </p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -4633,7 +4832,7 @@ namespace Model
          * <code>instanceInitiatedShutdownBehavior</code> | <code>rootDeviceName</code> |
          * <code>blockDeviceMapping</code> | <code>productCodes</code> |
          * <code>sourceDestCheck</code> | <code>groupSet</code> | <code>ebsOptimized</code>
-         * | <code>sriovNetSupport</code></p>
+         * | <code>sriovNetSupport</code> </p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -4642,20 +4841,20 @@ namespace Model
         /**
          * <p>Describes the status of one or more instances. By default, only running
          * instances are described, unless specified otherwise.</p> <p>Instance status
-         * includes the following components:</p> <ul> <li> <p><b>Status checks</b> -
+         * includes the following components:</p> <ul> <li> <p> <b>Status checks</b> -
          * Amazon EC2 performs status checks on running EC2 instances to identify hardware
          * and software issues. For more information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-system-instance-status-check.html">Status
          * Checks for Your Instances</a> and <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstances.html">Troubleshooting
          * Instances with Failed Status Checks</a> in the <i>Amazon Elastic Compute Cloud
-         * User Guide</i>.</p></li> <li> <p><b>Scheduled events</b> - Amazon EC2 can
+         * User Guide</i>.</p> </li> <li> <p> <b>Scheduled events</b> - Amazon EC2 can
          * schedule events (such as reboot, stop, or terminate) for your instances related
          * to hardware issues, software updates, or system maintenance. For more
          * information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-instances-status-check_sched.html">Scheduled
          * Events for Your Instances</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p> </li> <li> <p><b>Instance state</b> - You can manage your
+         * Guide</i>.</p> </li> <li> <p> <b>Instance state</b> - You can manage your
          * instances from the moment you launch them through their termination. For more
          * information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
@@ -4667,20 +4866,20 @@ namespace Model
         /**
          * <p>Describes the status of one or more instances. By default, only running
          * instances are described, unless specified otherwise.</p> <p>Instance status
-         * includes the following components:</p> <ul> <li> <p><b>Status checks</b> -
+         * includes the following components:</p> <ul> <li> <p> <b>Status checks</b> -
          * Amazon EC2 performs status checks on running EC2 instances to identify hardware
          * and software issues. For more information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-system-instance-status-check.html">Status
          * Checks for Your Instances</a> and <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstances.html">Troubleshooting
          * Instances with Failed Status Checks</a> in the <i>Amazon Elastic Compute Cloud
-         * User Guide</i>.</p></li> <li> <p><b>Scheduled events</b> - Amazon EC2 can
+         * User Guide</i>.</p> </li> <li> <p> <b>Scheduled events</b> - Amazon EC2 can
          * schedule events (such as reboot, stop, or terminate) for your instances related
          * to hardware issues, software updates, or system maintenance. For more
          * information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-instances-status-check_sched.html">Scheduled
          * Events for Your Instances</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p> </li> <li> <p><b>Instance state</b> - You can manage your
+         * Guide</i>.</p> </li> <li> <p> <b>Instance state</b> - You can manage your
          * instances from the moment you launch them through their termination. For more
          * information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
@@ -4694,20 +4893,20 @@ namespace Model
         /**
          * <p>Describes the status of one or more instances. By default, only running
          * instances are described, unless specified otherwise.</p> <p>Instance status
-         * includes the following components:</p> <ul> <li> <p><b>Status checks</b> -
+         * includes the following components:</p> <ul> <li> <p> <b>Status checks</b> -
          * Amazon EC2 performs status checks on running EC2 instances to identify hardware
          * and software issues. For more information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-system-instance-status-check.html">Status
          * Checks for Your Instances</a> and <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstances.html">Troubleshooting
          * Instances with Failed Status Checks</a> in the <i>Amazon Elastic Compute Cloud
-         * User Guide</i>.</p></li> <li> <p><b>Scheduled events</b> - Amazon EC2 can
+         * User Guide</i>.</p> </li> <li> <p> <b>Scheduled events</b> - Amazon EC2 can
          * schedule events (such as reboot, stop, or terminate) for your instances related
          * to hardware issues, software updates, or system maintenance. For more
          * information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-instances-status-check_sched.html">Scheduled
          * Events for Your Instances</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p> </li> <li> <p><b>Instance state</b> - You can manage your
+         * Guide</i>.</p> </li> <li> <p> <b>Instance state</b> - You can manage your
          * instances from the moment you launch them through their termination. For more
          * information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
@@ -4725,7 +4924,12 @@ namespace Model
          * If you specify an instance ID that is not valid, an error is returned. If you
          * specify an instance that you do not own, it is not included in the returned
          * results.</p> <p>Recently terminated instances might appear in the returned
-         * results. This interval is usually less than one hour.</p>
+         * results. This interval is usually less than one hour.</p> <p>If you describe
+         * instances in the rare case where an Availability Zone is experiencing a service
+         * disruption and you specify instance IDs that are in the affected zone, or do not
+         * specify any instance IDs at all, the call fails. If you describe instances and
+         * specify only instance IDs that are in an unaffected zone, the call works
+         * normally.</p>
          */
         virtual Model::DescribeInstancesOutcome DescribeInstances(const Model::DescribeInstancesRequest& request) const;
 
@@ -4736,7 +4940,12 @@ namespace Model
          * If you specify an instance ID that is not valid, an error is returned. If you
          * specify an instance that you do not own, it is not included in the returned
          * results.</p> <p>Recently terminated instances might appear in the returned
-         * results. This interval is usually less than one hour.</p>
+         * results. This interval is usually less than one hour.</p> <p>If you describe
+         * instances in the rare case where an Availability Zone is experiencing a service
+         * disruption and you specify instance IDs that are in the affected zone, or do not
+         * specify any instance IDs at all, the call fails. If you describe instances and
+         * specify only instance IDs that are in an unaffected zone, the call works
+         * normally.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -4749,7 +4958,12 @@ namespace Model
          * If you specify an instance ID that is not valid, an error is returned. If you
          * specify an instance that you do not own, it is not included in the returned
          * results.</p> <p>Recently terminated instances might appear in the returned
-         * results. This interval is usually less than one hour.</p>
+         * results. This interval is usually less than one hour.</p> <p>If you describe
+         * instances in the rare case where an Availability Zone is experiencing a service
+         * disruption and you specify instance IDs that are in the affected zone, or do not
+         * specify any instance IDs at all, the call fails. If you describe instances and
+         * specify only instance IDs that are in an unaffected zone, the call works
+         * normally.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -5038,16 +5252,16 @@ namespace Model
          * Marketplace.</p> <p>The Reserved Instance Marketplace matches sellers who want
          * to resell Reserved Instance capacity that they no longer need with buyers who
          * want to purchase additional capacity. Reserved Instances bought and sold through
-         * the Reserved Instance Marketplace work like any other Reserved Instances. </p>
+         * the Reserved Instance Marketplace work like any other Reserved Instances.</p>
          * <p>As a seller, you choose to list some or all of your Reserved Instances, and
          * you specify the upfront price to receive for them. Your Reserved Instances are
-         * then listed in the Reserved Instance Marketplace and are available for purchase.
-         * </p> <p>As a buyer, you specify the configuration of the Reserved Instance to
-         * purchase, and the Marketplace matches what you're searching for with what's
-         * available. The Marketplace first sells the lowest priced Reserved Instances to
-         * you, and continues to sell available Reserved Instance listings to you until
-         * your demand is met. You are charged based on the total price of all of the
-         * listings that you purchase.</p> <p>For more information, see <a
+         * then listed in the Reserved Instance Marketplace and are available for
+         * purchase.</p> <p>As a buyer, you specify the configuration of the Reserved
+         * Instance to purchase, and the Marketplace matches what you're searching for with
+         * what's available. The Marketplace first sells the lowest priced Reserved
+         * Instances to you, and continues to sell available Reserved Instance listings to
+         * you until your demand is met. You are charged based on the total price of all of
+         * the listings that you purchase.</p> <p>For more information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
          * Instance Marketplace</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p>
@@ -5059,16 +5273,16 @@ namespace Model
          * Marketplace.</p> <p>The Reserved Instance Marketplace matches sellers who want
          * to resell Reserved Instance capacity that they no longer need with buyers who
          * want to purchase additional capacity. Reserved Instances bought and sold through
-         * the Reserved Instance Marketplace work like any other Reserved Instances. </p>
+         * the Reserved Instance Marketplace work like any other Reserved Instances.</p>
          * <p>As a seller, you choose to list some or all of your Reserved Instances, and
          * you specify the upfront price to receive for them. Your Reserved Instances are
-         * then listed in the Reserved Instance Marketplace and are available for purchase.
-         * </p> <p>As a buyer, you specify the configuration of the Reserved Instance to
-         * purchase, and the Marketplace matches what you're searching for with what's
-         * available. The Marketplace first sells the lowest priced Reserved Instances to
-         * you, and continues to sell available Reserved Instance listings to you until
-         * your demand is met. You are charged based on the total price of all of the
-         * listings that you purchase.</p> <p>For more information, see <a
+         * then listed in the Reserved Instance Marketplace and are available for
+         * purchase.</p> <p>As a buyer, you specify the configuration of the Reserved
+         * Instance to purchase, and the Marketplace matches what you're searching for with
+         * what's available. The Marketplace first sells the lowest priced Reserved
+         * Instances to you, and continues to sell available Reserved Instance listings to
+         * you until your demand is met. You are charged based on the total price of all of
+         * the listings that you purchase.</p> <p>For more information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
          * Instance Marketplace</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p>
@@ -5082,16 +5296,16 @@ namespace Model
          * Marketplace.</p> <p>The Reserved Instance Marketplace matches sellers who want
          * to resell Reserved Instance capacity that they no longer need with buyers who
          * want to purchase additional capacity. Reserved Instances bought and sold through
-         * the Reserved Instance Marketplace work like any other Reserved Instances. </p>
+         * the Reserved Instance Marketplace work like any other Reserved Instances.</p>
          * <p>As a seller, you choose to list some or all of your Reserved Instances, and
          * you specify the upfront price to receive for them. Your Reserved Instances are
-         * then listed in the Reserved Instance Marketplace and are available for purchase.
-         * </p> <p>As a buyer, you specify the configuration of the Reserved Instance to
-         * purchase, and the Marketplace matches what you're searching for with what's
-         * available. The Marketplace first sells the lowest priced Reserved Instances to
-         * you, and continues to sell available Reserved Instance listings to you until
-         * your demand is met. You are charged based on the total price of all of the
-         * listings that you purchase.</p> <p>For more information, see <a
+         * then listed in the Reserved Instance Marketplace and are available for
+         * purchase.</p> <p>As a buyer, you specify the configuration of the Reserved
+         * Instance to purchase, and the Marketplace matches what you're searching for with
+         * what's available. The Marketplace first sells the lowest priced Reserved
+         * Instances to you, and continues to sell available Reserved Instance listings to
+         * you until your demand is met. You are charged based on the total price of all of
+         * the listings that you purchase.</p> <p>For more information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
          * Instance Marketplace</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p>
@@ -5184,7 +5398,7 @@ namespace Model
         virtual void DescribeReservedInstancesOfferingsAsync(const Model::DescribeReservedInstancesOfferingsRequest& request, const DescribeReservedInstancesOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes one or more of your route tables. </p> <p>Each subnet in your VPC
+         * <p>Describes one or more of your route tables.</p> <p>Each subnet in your VPC
          * must be associated with a route table. If a subnet is not explicitly associated
          * with any route table, it is implicitly associated with the main route table.
          * This command does not return the subnet ID for implicit associations.</p> <p>For
@@ -5195,7 +5409,7 @@ namespace Model
         virtual Model::DescribeRouteTablesOutcome DescribeRouteTables(const Model::DescribeRouteTablesRequest& request) const;
 
         /**
-         * <p>Describes one or more of your route tables. </p> <p>Each subnet in your VPC
+         * <p>Describes one or more of your route tables.</p> <p>Each subnet in your VPC
          * must be associated with a route table. If a subnet is not explicitly associated
          * with any route table, it is implicitly associated with the main route table.
          * This command does not return the subnet ID for implicit associations.</p> <p>For
@@ -5208,7 +5422,7 @@ namespace Model
         virtual Model::DescribeRouteTablesOutcomeCallable DescribeRouteTablesCallable(const Model::DescribeRouteTablesRequest& request) const;
 
         /**
-         * <p>Describes one or more of your route tables. </p> <p>Each subnet in your VPC
+         * <p>Describes one or more of your route tables.</p> <p>Each subnet in your VPC
          * must be associated with a route table. If a subnet is not explicitly associated
          * with any route table, it is implicitly associated with the main route table.
          * This command does not return the subnet ID for implicit associations.</p> <p>For
@@ -5279,14 +5493,14 @@ namespace Model
         /**
          * <p>[EC2-VPC only] Describes the VPCs on the other side of a VPC peering
          * connection that are referencing the security groups you've specified in this
-         * request. </p>
+         * request.</p>
          */
         virtual Model::DescribeSecurityGroupReferencesOutcome DescribeSecurityGroupReferences(const Model::DescribeSecurityGroupReferencesRequest& request) const;
 
         /**
          * <p>[EC2-VPC only] Describes the VPCs on the other side of a VPC peering
          * connection that are referencing the security groups you've specified in this
-         * request. </p>
+         * request.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -5295,7 +5509,7 @@ namespace Model
         /**
          * <p>[EC2-VPC only] Describes the VPCs on the other side of a VPC peering
          * connection that are referencing the security groups you've specified in this
-         * request. </p>
+         * request.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -5348,7 +5562,7 @@ namespace Model
          * <p>Describes the specified attribute of the specified snapshot. You can specify
          * only one attribute at a time.</p> <p>For more information about EBS snapshots,
          * see <a
-         * href='http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html'>Amazon
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html">Amazon
          * EBS Snapshots</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
          */
         virtual Model::DescribeSnapshotAttributeOutcome DescribeSnapshotAttribute(const Model::DescribeSnapshotAttributeRequest& request) const;
@@ -5357,7 +5571,7 @@ namespace Model
          * <p>Describes the specified attribute of the specified snapshot. You can specify
          * only one attribute at a time.</p> <p>For more information about EBS snapshots,
          * see <a
-         * href='http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html'>Amazon
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html">Amazon
          * EBS Snapshots</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -5368,7 +5582,7 @@ namespace Model
          * <p>Describes the specified attribute of the specified snapshot. You can specify
          * only one attribute at a time.</p> <p>For more information about EBS snapshots,
          * see <a
-         * href='http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html'>Amazon
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html">Amazon
          * EBS Snapshots</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -5381,11 +5595,11 @@ namespace Model
          * private snapshots that you own, and private snapshots owned by another AWS
          * account but for which you've been given explicit create volume permissions.</p>
          * <p>The create volume permissions fall into the following categories:</p> <ul>
-         * <li> <p><i>public</i>: The owner of the snapshot granted create volume
+         * <li> <p> <i>public</i>: The owner of the snapshot granted create volume
          * permissions for the snapshot to the <code>all</code> group. All AWS accounts
-         * have create volume permissions for these snapshots.</p> </li> <li>
-         * <p><i>explicit</i>: The owner of the snapshot granted create volume permissions
-         * to a specific AWS account.</p> </li> <li> <p><i>implicit</i>: An AWS account has
+         * have create volume permissions for these snapshots.</p> </li> <li> <p>
+         * <i>explicit</i>: The owner of the snapshot granted create volume permissions to
+         * a specific AWS account.</p> </li> <li> <p> <i>implicit</i>: An AWS account has
          * implicit create volume permissions for all snapshots it owns.</p> </li> </ul>
          * <p>The list of snapshots returned can be modified by specifying snapshot IDs,
          * snapshot owners, or AWS accounts with create volume permissions. If no options
@@ -5394,22 +5608,22 @@ namespace Model
          * have the specified IDs are returned. If you specify an invalid snapshot ID, an
          * error is returned. If you specify a snapshot ID for which you do not have
          * access, it is not included in the returned results.</p> <p>If you specify one or
-         * more snapshot owners, only snapshots from the specified owners and for which you
-         * have access are returned. The results can include the AWS account IDs of the
-         * specified owners, <code>amazon</code> for snapshots owned by Amazon, or
-         * <code>self</code> for snapshots that you own.</p> <p>If you specify a list of
-         * restorable users, only snapshots with create snapshot permissions for those
-         * users are returned. You can specify AWS account IDs (if you own the snapshots),
-         * <code>self</code> for snapshots for which you own or have explicit permissions,
-         * or <code>all</code> for public snapshots.</p> <p>If you are describing a long
-         * list of snapshots, you can paginate the output to make the list more manageable.
-         * The <code>MaxResults</code> parameter sets the maximum number of results
-         * returned in a single page. If the list of results exceeds your
-         * <code>MaxResults</code> value, then that number of results is returned along
-         * with a <code>NextToken</code> value that can be passed to a subsequent
-         * <code>DescribeSnapshots</code> request to retrieve the remaining results.</p>
-         * <p>For more information about EBS snapshots, see <a
-         * href='http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html'>Amazon
+         * more snapshot owners using the <code>OwnerIds</code> option, only snapshots from
+         * the specified owners and for which you have access are returned. The results can
+         * include the AWS account IDs of the specified owners, <code>amazon</code> for
+         * snapshots owned by Amazon, or <code>self</code> for snapshots that you own.</p>
+         * <p>If you specify a list of restorable users, only snapshots with create
+         * snapshot permissions for those users are returned. You can specify AWS account
+         * IDs (if you own the snapshots), <code>self</code> for snapshots for which you
+         * own or have explicit permissions, or <code>all</code> for public snapshots.</p>
+         * <p>If you are describing a long list of snapshots, you can paginate the output
+         * to make the list more manageable. The <code>MaxResults</code> parameter sets the
+         * maximum number of results returned in a single page. If the list of results
+         * exceeds your <code>MaxResults</code> value, then that number of results is
+         * returned along with a <code>NextToken</code> value that can be passed to a
+         * subsequent <code>DescribeSnapshots</code> request to retrieve the remaining
+         * results.</p> <p>For more information about EBS snapshots, see <a
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html">Amazon
          * EBS Snapshots</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
          */
         virtual Model::DescribeSnapshotsOutcome DescribeSnapshots(const Model::DescribeSnapshotsRequest& request) const;
@@ -5420,11 +5634,11 @@ namespace Model
          * private snapshots that you own, and private snapshots owned by another AWS
          * account but for which you've been given explicit create volume permissions.</p>
          * <p>The create volume permissions fall into the following categories:</p> <ul>
-         * <li> <p><i>public</i>: The owner of the snapshot granted create volume
+         * <li> <p> <i>public</i>: The owner of the snapshot granted create volume
          * permissions for the snapshot to the <code>all</code> group. All AWS accounts
-         * have create volume permissions for these snapshots.</p> </li> <li>
-         * <p><i>explicit</i>: The owner of the snapshot granted create volume permissions
-         * to a specific AWS account.</p> </li> <li> <p><i>implicit</i>: An AWS account has
+         * have create volume permissions for these snapshots.</p> </li> <li> <p>
+         * <i>explicit</i>: The owner of the snapshot granted create volume permissions to
+         * a specific AWS account.</p> </li> <li> <p> <i>implicit</i>: An AWS account has
          * implicit create volume permissions for all snapshots it owns.</p> </li> </ul>
          * <p>The list of snapshots returned can be modified by specifying snapshot IDs,
          * snapshot owners, or AWS accounts with create volume permissions. If no options
@@ -5433,22 +5647,22 @@ namespace Model
          * have the specified IDs are returned. If you specify an invalid snapshot ID, an
          * error is returned. If you specify a snapshot ID for which you do not have
          * access, it is not included in the returned results.</p> <p>If you specify one or
-         * more snapshot owners, only snapshots from the specified owners and for which you
-         * have access are returned. The results can include the AWS account IDs of the
-         * specified owners, <code>amazon</code> for snapshots owned by Amazon, or
-         * <code>self</code> for snapshots that you own.</p> <p>If you specify a list of
-         * restorable users, only snapshots with create snapshot permissions for those
-         * users are returned. You can specify AWS account IDs (if you own the snapshots),
-         * <code>self</code> for snapshots for which you own or have explicit permissions,
-         * or <code>all</code> for public snapshots.</p> <p>If you are describing a long
-         * list of snapshots, you can paginate the output to make the list more manageable.
-         * The <code>MaxResults</code> parameter sets the maximum number of results
-         * returned in a single page. If the list of results exceeds your
-         * <code>MaxResults</code> value, then that number of results is returned along
-         * with a <code>NextToken</code> value that can be passed to a subsequent
-         * <code>DescribeSnapshots</code> request to retrieve the remaining results.</p>
-         * <p>For more information about EBS snapshots, see <a
-         * href='http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html'>Amazon
+         * more snapshot owners using the <code>OwnerIds</code> option, only snapshots from
+         * the specified owners and for which you have access are returned. The results can
+         * include the AWS account IDs of the specified owners, <code>amazon</code> for
+         * snapshots owned by Amazon, or <code>self</code> for snapshots that you own.</p>
+         * <p>If you specify a list of restorable users, only snapshots with create
+         * snapshot permissions for those users are returned. You can specify AWS account
+         * IDs (if you own the snapshots), <code>self</code> for snapshots for which you
+         * own or have explicit permissions, or <code>all</code> for public snapshots.</p>
+         * <p>If you are describing a long list of snapshots, you can paginate the output
+         * to make the list more manageable. The <code>MaxResults</code> parameter sets the
+         * maximum number of results returned in a single page. If the list of results
+         * exceeds your <code>MaxResults</code> value, then that number of results is
+         * returned along with a <code>NextToken</code> value that can be passed to a
+         * subsequent <code>DescribeSnapshots</code> request to retrieve the remaining
+         * results.</p> <p>For more information about EBS snapshots, see <a
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html">Amazon
          * EBS Snapshots</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -5461,11 +5675,11 @@ namespace Model
          * private snapshots that you own, and private snapshots owned by another AWS
          * account but for which you've been given explicit create volume permissions.</p>
          * <p>The create volume permissions fall into the following categories:</p> <ul>
-         * <li> <p><i>public</i>: The owner of the snapshot granted create volume
+         * <li> <p> <i>public</i>: The owner of the snapshot granted create volume
          * permissions for the snapshot to the <code>all</code> group. All AWS accounts
-         * have create volume permissions for these snapshots.</p> </li> <li>
-         * <p><i>explicit</i>: The owner of the snapshot granted create volume permissions
-         * to a specific AWS account.</p> </li> <li> <p><i>implicit</i>: An AWS account has
+         * have create volume permissions for these snapshots.</p> </li> <li> <p>
+         * <i>explicit</i>: The owner of the snapshot granted create volume permissions to
+         * a specific AWS account.</p> </li> <li> <p> <i>implicit</i>: An AWS account has
          * implicit create volume permissions for all snapshots it owns.</p> </li> </ul>
          * <p>The list of snapshots returned can be modified by specifying snapshot IDs,
          * snapshot owners, or AWS accounts with create volume permissions. If no options
@@ -5474,22 +5688,22 @@ namespace Model
          * have the specified IDs are returned. If you specify an invalid snapshot ID, an
          * error is returned. If you specify a snapshot ID for which you do not have
          * access, it is not included in the returned results.</p> <p>If you specify one or
-         * more snapshot owners, only snapshots from the specified owners and for which you
-         * have access are returned. The results can include the AWS account IDs of the
-         * specified owners, <code>amazon</code> for snapshots owned by Amazon, or
-         * <code>self</code> for snapshots that you own.</p> <p>If you specify a list of
-         * restorable users, only snapshots with create snapshot permissions for those
-         * users are returned. You can specify AWS account IDs (if you own the snapshots),
-         * <code>self</code> for snapshots for which you own or have explicit permissions,
-         * or <code>all</code> for public snapshots.</p> <p>If you are describing a long
-         * list of snapshots, you can paginate the output to make the list more manageable.
-         * The <code>MaxResults</code> parameter sets the maximum number of results
-         * returned in a single page. If the list of results exceeds your
-         * <code>MaxResults</code> value, then that number of results is returned along
-         * with a <code>NextToken</code> value that can be passed to a subsequent
-         * <code>DescribeSnapshots</code> request to retrieve the remaining results.</p>
-         * <p>For more information about EBS snapshots, see <a
-         * href='http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html'>Amazon
+         * more snapshot owners using the <code>OwnerIds</code> option, only snapshots from
+         * the specified owners and for which you have access are returned. The results can
+         * include the AWS account IDs of the specified owners, <code>amazon</code> for
+         * snapshots owned by Amazon, or <code>self</code> for snapshots that you own.</p>
+         * <p>If you specify a list of restorable users, only snapshots with create
+         * snapshot permissions for those users are returned. You can specify AWS account
+         * IDs (if you own the snapshots), <code>self</code> for snapshots for which you
+         * own or have explicit permissions, or <code>all</code> for public snapshots.</p>
+         * <p>If you are describing a long list of snapshots, you can paginate the output
+         * to make the list more manageable. The <code>MaxResults</code> parameter sets the
+         * maximum number of results returned in a single page. If the list of results
+         * exceeds your <code>MaxResults</code> value, then that number of results is
+         * returned along with a <code>NextToken</code> value that can be passed to a
+         * subsequent <code>DescribeSnapshots</code> request to retrieve the remaining
+         * results.</p> <p>For more information about EBS snapshots, see <a
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html">Amazon
          * EBS Snapshots</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -5572,19 +5786,22 @@ namespace Model
         virtual void DescribeSpotFleetRequestHistoryAsync(const Model::DescribeSpotFleetRequestHistoryRequest& request, const DescribeSpotFleetRequestHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes your Spot fleet requests.</p>
+         * <p>Describes your Spot fleet requests.</p> <p>Spot fleet requests are deleted 48
+         * hours after they are canceled and their instances are terminated.</p>
          */
         virtual Model::DescribeSpotFleetRequestsOutcome DescribeSpotFleetRequests(const Model::DescribeSpotFleetRequestsRequest& request) const;
 
         /**
-         * <p>Describes your Spot fleet requests.</p>
+         * <p>Describes your Spot fleet requests.</p> <p>Spot fleet requests are deleted 48
+         * hours after they are canceled and their instances are terminated.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeSpotFleetRequestsOutcomeCallable DescribeSpotFleetRequestsCallable(const Model::DescribeSpotFleetRequestsRequest& request) const;
 
         /**
-         * <p>Describes your Spot fleet requests.</p>
+         * <p>Describes your Spot fleet requests.</p> <p>Spot fleet requests are deleted 48
+         * hours after they are canceled and their instances are terminated.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -5603,7 +5820,8 @@ namespace Model
          * <code>fulfilled</code>, the instance ID appears in the response and contains the
          * identifier of the instance. Alternatively, you can use <a>DescribeInstances</a>
          * with a filter to look for instances where the instance lifecycle is
-         * <code>spot</code>.</p>
+         * <code>spot</code>.</p> <p>Spot instance requests are deleted 4 hours after they
+         * are canceled and their instances are terminated.</p>
          */
         virtual Model::DescribeSpotInstanceRequestsOutcome DescribeSpotInstanceRequests(const Model::DescribeSpotInstanceRequestsRequest& request) const;
 
@@ -5620,7 +5838,8 @@ namespace Model
          * <code>fulfilled</code>, the instance ID appears in the response and contains the
          * identifier of the instance. Alternatively, you can use <a>DescribeInstances</a>
          * with a filter to look for instances where the instance lifecycle is
-         * <code>spot</code>.</p>
+         * <code>spot</code>.</p> <p>Spot instance requests are deleted 4 hours after they
+         * are canceled and their instances are terminated.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -5639,7 +5858,8 @@ namespace Model
          * <code>fulfilled</code>, the instance ID appears in the response and contains the
          * identifier of the instance. Alternatively, you can use <a>DescribeInstances</a>
          * with a filter to look for instances where the instance lifecycle is
-         * <code>spot</code>.</p>
+         * <code>spot</code>.</p> <p>Spot instance requests are deleted 4 hours after they
+         * are canceled and their instances are terminated.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -5695,7 +5915,7 @@ namespace Model
          * <p>[EC2-VPC only] Describes the stale security group rules for security groups
          * in a specified VPC. Rules are stale when they reference a deleted security group
          * in a peer VPC, or a security group in a peer VPC for which the VPC peering
-         * connection has been deleted. </p>
+         * connection has been deleted.</p>
          */
         virtual Model::DescribeStaleSecurityGroupsOutcome DescribeStaleSecurityGroups(const Model::DescribeStaleSecurityGroupsRequest& request) const;
 
@@ -5703,7 +5923,7 @@ namespace Model
          * <p>[EC2-VPC only] Describes the stale security group rules for security groups
          * in a specified VPC. Rules are stale when they reference a deleted security group
          * in a peer VPC, or a security group in a peer VPC for which the VPC peering
-         * connection has been deleted. </p>
+         * connection has been deleted.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -5713,7 +5933,7 @@ namespace Model
          * <p>[EC2-VPC only] Describes the stale security group rules for security groups
          * in a specified VPC. Rules are stale when they reference a deleted security group
          * in a peer VPC, or a security group in a peer VPC for which the VPC peering
-         * connection has been deleted. </p>
+         * connection has been deleted.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -5779,7 +5999,7 @@ namespace Model
          * <p>Describes the specified attribute of the specified volume. You can specify
          * only one attribute at a time.</p> <p>For more information about EBS volumes, see
          * <a
-         * href='http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html'>Amazon
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html">Amazon
          * EBS Volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
          */
         virtual Model::DescribeVolumeAttributeOutcome DescribeVolumeAttribute(const Model::DescribeVolumeAttributeRequest& request) const;
@@ -5788,7 +6008,7 @@ namespace Model
          * <p>Describes the specified attribute of the specified volume. You can specify
          * only one attribute at a time.</p> <p>For more information about EBS volumes, see
          * <a
-         * href='http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html'>Amazon
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html">Amazon
          * EBS Volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -5799,7 +6019,7 @@ namespace Model
          * <p>Describes the specified attribute of the specified volume. You can specify
          * only one attribute at a time.</p> <p>For more information about EBS volumes, see
          * <a
-         * href='http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html'>Amazon
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html">Amazon
          * EBS Volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -5816,20 +6036,20 @@ namespace Model
          * notify you if this occurs. Volume actions notify you if any action needs to be
          * taken in response to the event.</p> <p>The <code>DescribeVolumeStatus</code>
          * operation provides the following information about the specified volumes:</p>
-         * <p><i>Status</i>: Reflects the current status of the volume. The possible values
-         * are <code>ok</code>, <code>impaired</code> , <code>warning</code>, or
+         * <p> <i>Status</i>: Reflects the current status of the volume. The possible
+         * values are <code>ok</code>, <code>impaired</code> , <code>warning</code>, or
          * <code>insufficient-data</code>. If all checks pass, the overall status of the
          * volume is <code>ok</code>. If the check fails, the overall status is
          * <code>impaired</code>. If the status is <code>insufficient-data</code>, then the
          * checks may still be taking place on your volume at the time. We recommend that
          * you retry the request. For more information on volume status, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-volume-status.html">Monitoring
-         * the Status of Your Volumes</a>.</p> <p><i>Events</i>: Reflect the cause of a
+         * the Status of Your Volumes</a>.</p> <p> <i>Events</i>: Reflect the cause of a
          * volume status and may require you to take action. For example, if your volume
          * returns an <code>impaired</code> status, then the volume event might be
          * <code>potential-data-inconsistency</code>. This means that your volume has been
          * affected by an issue with the underlying host, has all I/O operations disabled,
-         * and may have inconsistent data.</p> <p><i>Actions</i>: Reflect the actions you
+         * and may have inconsistent data.</p> <p> <i>Actions</i>: Reflect the actions you
          * may have to take in response to an event. For example, if the status of the
          * volume is <code>impaired</code> and the volume event shows
          * <code>potential-data-inconsistency</code>, then the action shows
@@ -5852,20 +6072,20 @@ namespace Model
          * notify you if this occurs. Volume actions notify you if any action needs to be
          * taken in response to the event.</p> <p>The <code>DescribeVolumeStatus</code>
          * operation provides the following information about the specified volumes:</p>
-         * <p><i>Status</i>: Reflects the current status of the volume. The possible values
-         * are <code>ok</code>, <code>impaired</code> , <code>warning</code>, or
+         * <p> <i>Status</i>: Reflects the current status of the volume. The possible
+         * values are <code>ok</code>, <code>impaired</code> , <code>warning</code>, or
          * <code>insufficient-data</code>. If all checks pass, the overall status of the
          * volume is <code>ok</code>. If the check fails, the overall status is
          * <code>impaired</code>. If the status is <code>insufficient-data</code>, then the
          * checks may still be taking place on your volume at the time. We recommend that
          * you retry the request. For more information on volume status, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-volume-status.html">Monitoring
-         * the Status of Your Volumes</a>.</p> <p><i>Events</i>: Reflect the cause of a
+         * the Status of Your Volumes</a>.</p> <p> <i>Events</i>: Reflect the cause of a
          * volume status and may require you to take action. For example, if your volume
          * returns an <code>impaired</code> status, then the volume event might be
          * <code>potential-data-inconsistency</code>. This means that your volume has been
          * affected by an issue with the underlying host, has all I/O operations disabled,
-         * and may have inconsistent data.</p> <p><i>Actions</i>: Reflect the actions you
+         * and may have inconsistent data.</p> <p> <i>Actions</i>: Reflect the actions you
          * may have to take in response to an event. For example, if the status of the
          * volume is <code>impaired</code> and the volume event shows
          * <code>potential-data-inconsistency</code>, then the action shows
@@ -5890,20 +6110,20 @@ namespace Model
          * notify you if this occurs. Volume actions notify you if any action needs to be
          * taken in response to the event.</p> <p>The <code>DescribeVolumeStatus</code>
          * operation provides the following information about the specified volumes:</p>
-         * <p><i>Status</i>: Reflects the current status of the volume. The possible values
-         * are <code>ok</code>, <code>impaired</code> , <code>warning</code>, or
+         * <p> <i>Status</i>: Reflects the current status of the volume. The possible
+         * values are <code>ok</code>, <code>impaired</code> , <code>warning</code>, or
          * <code>insufficient-data</code>. If all checks pass, the overall status of the
          * volume is <code>ok</code>. If the check fails, the overall status is
          * <code>impaired</code>. If the status is <code>insufficient-data</code>, then the
          * checks may still be taking place on your volume at the time. We recommend that
          * you retry the request. For more information on volume status, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-volume-status.html">Monitoring
-         * the Status of Your Volumes</a>.</p> <p><i>Events</i>: Reflect the cause of a
+         * the Status of Your Volumes</a>.</p> <p> <i>Events</i>: Reflect the cause of a
          * volume status and may require you to take action. For example, if your volume
          * returns an <code>impaired</code> status, then the volume event might be
          * <code>potential-data-inconsistency</code>. This means that your volume has been
          * affected by an issue with the underlying host, has all I/O operations disabled,
-         * and may have inconsistent data.</p> <p><i>Actions</i>: Reflect the actions you
+         * and may have inconsistent data.</p> <p> <i>Actions</i>: Reflect the actions you
          * may have to take in response to an event. For example, if the status of the
          * volume is <code>impaired</code> and the volume event shows
          * <code>potential-data-inconsistency</code>, then the action shows
@@ -5927,7 +6147,7 @@ namespace Model
          * <code>NextToken</code> value that can be passed to a subsequent
          * <code>DescribeVolumes</code> request to retrieve the remaining results.</p>
          * <p>For more information about EBS volumes, see <a
-         * href='http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html'>Amazon
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html">Amazon
          * EBS Volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
          */
         virtual Model::DescribeVolumesOutcome DescribeVolumes(const Model::DescribeVolumesRequest& request) const;
@@ -5941,7 +6161,7 @@ namespace Model
          * <code>NextToken</code> value that can be passed to a subsequent
          * <code>DescribeVolumes</code> request to retrieve the remaining results.</p>
          * <p>For more information about EBS volumes, see <a
-         * href='http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html'>Amazon
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html">Amazon
          * EBS Volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -5957,7 +6177,7 @@ namespace Model
          * <code>NextToken</code> value that can be passed to a subsequent
          * <code>DescribeVolumes</code> request to retrieve the remaining results.</p>
          * <p>For more information about EBS volumes, see <a
-         * href='http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html'>Amazon
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html">Amazon
          * EBS Volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -5987,19 +6207,19 @@ namespace Model
         virtual void DescribeVpcAttributeAsync(const Model::DescribeVpcAttributeRequest& request, const DescribeVpcAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes the ClassicLink status of one or more VPCs. </p>
+         * <p>Describes the ClassicLink status of one or more VPCs.</p>
          */
         virtual Model::DescribeVpcClassicLinkOutcome DescribeVpcClassicLink(const Model::DescribeVpcClassicLinkRequest& request) const;
 
         /**
-         * <p>Describes the ClassicLink status of one or more VPCs. </p>
+         * <p>Describes the ClassicLink status of one or more VPCs.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeVpcClassicLinkOutcomeCallable DescribeVpcClassicLinkCallable(const Model::DescribeVpcClassicLinkRequest& request) const;
 
         /**
-         * <p>Describes the ClassicLink status of one or more VPCs. </p>
+         * <p>Describes the ClassicLink status of one or more VPCs.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -6258,8 +6478,10 @@ namespace Model
         /**
          * <p>Detaches an EBS volume from an instance. Make sure to unmount any file
          * systems on the device within your operating system before detaching the volume.
-         * Failure to do so results in the volume being stuck in a busy state while
-         * detaching.</p> <p>If an Amazon EBS volume is the root device of an instance, it
+         * Failure to do so can result in the volume becoming stuck in the
+         * <code>busy</code> state while detaching. If this happens, detachment can be
+         * delayed indefinitely until you unmount the volume, force detachment, reboot the
+         * instance, or all three. If an EBS volume is the root device of an instance, it
          * can't be detached while the instance is running. To detach the root volume, stop
          * the instance first.</p> <p>When a volume with an AWS Marketplace product code is
          * detached from an instance, the product code is no longer associated with the
@@ -6273,8 +6495,10 @@ namespace Model
         /**
          * <p>Detaches an EBS volume from an instance. Make sure to unmount any file
          * systems on the device within your operating system before detaching the volume.
-         * Failure to do so results in the volume being stuck in a busy state while
-         * detaching.</p> <p>If an Amazon EBS volume is the root device of an instance, it
+         * Failure to do so can result in the volume becoming stuck in the
+         * <code>busy</code> state while detaching. If this happens, detachment can be
+         * delayed indefinitely until you unmount the volume, force detachment, reboot the
+         * instance, or all three. If an EBS volume is the root device of an instance, it
          * can't be detached while the instance is running. To detach the root volume, stop
          * the instance first.</p> <p>When a volume with an AWS Marketplace product code is
          * detached from an instance, the product code is no longer associated with the
@@ -6290,8 +6514,10 @@ namespace Model
         /**
          * <p>Detaches an EBS volume from an instance. Make sure to unmount any file
          * systems on the device within your operating system before detaching the volume.
-         * Failure to do so results in the volume being stuck in a busy state while
-         * detaching.</p> <p>If an Amazon EBS volume is the root device of an instance, it
+         * Failure to do so can result in the volume becoming stuck in the
+         * <code>busy</code> state while detaching. If this happens, detachment can be
+         * delayed indefinitely until you unmount the volume, force detachment, reboot the
+         * instance, or all three. If an EBS volume is the root device of an instance, it
          * can't be detached while the instance is running. To detach the root volume, stop
          * the instance first.</p> <p>When a volume with an AWS Marketplace product code is
          * detached from an instance, the product code is no longer associated with the
@@ -6671,13 +6897,13 @@ namespace Model
 
         /**
          * <p>Retrieve a JPG-format screenshot of a running instance to help with
-         * troubleshooting.</p> <p>The returned content is base64-encoded.</p>
+         * troubleshooting.</p> <p>The returned content is Base64-encoded.</p>
          */
         virtual Model::GetConsoleScreenshotOutcome GetConsoleScreenshot(const Model::GetConsoleScreenshotRequest& request) const;
 
         /**
          * <p>Retrieve a JPG-format screenshot of a running instance to help with
-         * troubleshooting.</p> <p>The returned content is base64-encoded.</p>
+         * troubleshooting.</p> <p>The returned content is Base64-encoded.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -6685,11 +6911,42 @@ namespace Model
 
         /**
          * <p>Retrieve a JPG-format screenshot of a running instance to help with
-         * troubleshooting.</p> <p>The returned content is base64-encoded.</p>
+         * troubleshooting.</p> <p>The returned content is Base64-encoded.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetConsoleScreenshotAsync(const Model::GetConsoleScreenshotRequest& request, const GetConsoleScreenshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Preview a reservation purchase with configurations that match those of your
+         * Dedicated Host. You must have active Dedicated Hosts in your account before you
+         * purchase a reservation.</p> <p>This is a preview of the
+         * <a>PurchaseHostReservation</a> action and does not result in the offering being
+         * purchased.</p>
+         */
+        virtual Model::GetHostReservationPurchasePreviewOutcome GetHostReservationPurchasePreview(const Model::GetHostReservationPurchasePreviewRequest& request) const;
+
+        /**
+         * <p>Preview a reservation purchase with configurations that match those of your
+         * Dedicated Host. You must have active Dedicated Hosts in your account before you
+         * purchase a reservation.</p> <p>This is a preview of the
+         * <a>PurchaseHostReservation</a> action and does not result in the offering being
+         * purchased.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetHostReservationPurchasePreviewOutcomeCallable GetHostReservationPurchasePreviewCallable(const Model::GetHostReservationPurchasePreviewRequest& request) const;
+
+        /**
+         * <p>Preview a reservation purchase with configurations that match those of your
+         * Dedicated Host. You must have active Dedicated Hosts in your account before you
+         * purchase a reservation.</p> <p>This is a preview of the
+         * <a>PurchaseHostReservation</a> action and does not result in the offering being
+         * purchased.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetHostReservationPurchasePreviewAsync(const Model::GetHostReservationPurchasePreviewRequest& request, const GetHostReservationPurchasePreviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the encrypted administrator password for an instance running
@@ -6741,14 +6998,45 @@ namespace Model
         virtual void GetPasswordDataAsync(const Model::GetPasswordDataRequest& request, const GetPasswordDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns details about the values and term of your specified Convertible
+         * Reserved Instances. When an offering ID is specified it returns information
+         * about whether the exchange is valid and can be performed.</p>
+         */
+        virtual Model::GetReservedInstancesExchangeQuoteOutcome GetReservedInstancesExchangeQuote(const Model::GetReservedInstancesExchangeQuoteRequest& request) const;
+
+        /**
+         * <p>Returns details about the values and term of your specified Convertible
+         * Reserved Instances. When an offering ID is specified it returns information
+         * about whether the exchange is valid and can be performed.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetReservedInstancesExchangeQuoteOutcomeCallable GetReservedInstancesExchangeQuoteCallable(const Model::GetReservedInstancesExchangeQuoteRequest& request) const;
+
+        /**
+         * <p>Returns details about the values and term of your specified Convertible
+         * Reserved Instances. When an offering ID is specified it returns information
+         * about whether the exchange is valid and can be performed.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetReservedInstancesExchangeQuoteAsync(const Model::GetReservedInstancesExchangeQuoteRequest& request, const GetReservedInstancesExchangeQuoteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Import single or multi-volume disk images or EBS snapshots into an Amazon
-         * Machine Image (AMI).</p>
+         * Machine Image (AMI). For more information, see <a
+         * href="http://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html">Importing
+         * a VM as an Image Using VM Import/Export</a> in the <i>VM Import/Export User
+         * Guide</i>.</p>
          */
         virtual Model::ImportImageOutcome ImportImage(const Model::ImportImageRequest& request) const;
 
         /**
          * <p>Import single or multi-volume disk images or EBS snapshots into an Amazon
-         * Machine Image (AMI).</p>
+         * Machine Image (AMI). For more information, see <a
+         * href="http://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html">Importing
+         * a VM as an Image Using VM Import/Export</a> in the <i>VM Import/Export User
+         * Guide</i>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -6756,7 +7044,10 @@ namespace Model
 
         /**
          * <p>Import single or multi-volume disk images or EBS snapshots into an Amazon
-         * Machine Image (AMI).</p>
+         * Machine Image (AMI). For more information, see <a
+         * href="http://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html">Importing
+         * a VM as an Image Using VM Import/Export</a> in the <i>VM Import/Export User
+         * Guide</i>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -6765,12 +7056,9 @@ namespace Model
         /**
          * <p>Creates an import instance task using metadata from the specified disk image.
          * <code>ImportInstance</code> only supports single-volume VMs. To import
-         * multi-volume VMs, use <a>ImportImage</a>. After importing the image, you then
-         * upload it using the <code>ec2-import-volume</code> command in the EC2 command
-         * line tools. For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html">Using
-         * the Command Line Tools to Import Your Virtual Machine to Amazon EC2</a> in the
-         * <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>For information about the
+         * multi-volume VMs, use <a>ImportImage</a>. For more information, see <a
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/CommandLineReference/ec2-cli-vmimport-export.html">Importing
+         * a Virtual Machine Using the Amazon EC2 CLI</a>.</p> <p>For information about the
          * import manifest referenced by this API action, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM
          * Import Manifest</a>.</p>
@@ -6780,12 +7068,9 @@ namespace Model
         /**
          * <p>Creates an import instance task using metadata from the specified disk image.
          * <code>ImportInstance</code> only supports single-volume VMs. To import
-         * multi-volume VMs, use <a>ImportImage</a>. After importing the image, you then
-         * upload it using the <code>ec2-import-volume</code> command in the EC2 command
-         * line tools. For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html">Using
-         * the Command Line Tools to Import Your Virtual Machine to Amazon EC2</a> in the
-         * <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>For information about the
+         * multi-volume VMs, use <a>ImportImage</a>. For more information, see <a
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/CommandLineReference/ec2-cli-vmimport-export.html">Importing
+         * a Virtual Machine Using the Amazon EC2 CLI</a>.</p> <p>For information about the
          * import manifest referenced by this API action, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM
          * Import Manifest</a>.</p>
@@ -6797,12 +7082,9 @@ namespace Model
         /**
          * <p>Creates an import instance task using metadata from the specified disk image.
          * <code>ImportInstance</code> only supports single-volume VMs. To import
-         * multi-volume VMs, use <a>ImportImage</a>. After importing the image, you then
-         * upload it using the <code>ec2-import-volume</code> command in the EC2 command
-         * line tools. For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html">Using
-         * the Command Line Tools to Import Your Virtual Machine to Amazon EC2</a> in the
-         * <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>For information about the
+         * multi-volume VMs, use <a>ImportImage</a>. For more information, see <a
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/CommandLineReference/ec2-cli-vmimport-export.html">Importing
+         * a Virtual Machine Using the Amazon EC2 CLI</a>.</p> <p>For information about the
          * import manifest referenced by this API action, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM
          * Import Manifest</a>.</p>
@@ -6871,28 +7153,22 @@ namespace Model
         virtual void ImportSnapshotAsync(const Model::ImportSnapshotRequest& request, const ImportSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates an import volume task using metadata from the specified disk image.
-         * After importing the image, you then upload it using the
-         * <code>ec2-import-volume</code> command in the Amazon EC2 command-line interface
-         * (CLI) tools. For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html">Using
-         * the Command Line Tools to Import Your Virtual Machine to Amazon EC2</a> in the
-         * <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>For information about the
-         * import manifest referenced by this API action, see <a
+         * <p>Creates an import volume task using metadata from the specified disk
+         * image.For more information, see <a
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/CommandLineReference/importing-your-volumes-into-amazon-ebs.html">Importing
+         * Disks to Amazon EBS</a>.</p> <p>For information about the import manifest
+         * referenced by this API action, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM
          * Import Manifest</a>.</p>
          */
         virtual Model::ImportVolumeOutcome ImportVolume(const Model::ImportVolumeRequest& request) const;
 
         /**
-         * <p>Creates an import volume task using metadata from the specified disk image.
-         * After importing the image, you then upload it using the
-         * <code>ec2-import-volume</code> command in the Amazon EC2 command-line interface
-         * (CLI) tools. For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html">Using
-         * the Command Line Tools to Import Your Virtual Machine to Amazon EC2</a> in the
-         * <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>For information about the
-         * import manifest referenced by this API action, see <a
+         * <p>Creates an import volume task using metadata from the specified disk
+         * image.For more information, see <a
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/CommandLineReference/importing-your-volumes-into-amazon-ebs.html">Importing
+         * Disks to Amazon EBS</a>.</p> <p>For information about the import manifest
+         * referenced by this API action, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM
          * Import Manifest</a>.</p>
          *
@@ -6901,14 +7177,11 @@ namespace Model
         virtual Model::ImportVolumeOutcomeCallable ImportVolumeCallable(const Model::ImportVolumeRequest& request) const;
 
         /**
-         * <p>Creates an import volume task using metadata from the specified disk image.
-         * After importing the image, you then upload it using the
-         * <code>ec2-import-volume</code> command in the Amazon EC2 command-line interface
-         * (CLI) tools. For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html">Using
-         * the Command Line Tools to Import Your Virtual Machine to Amazon EC2</a> in the
-         * <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>For information about the
-         * import manifest referenced by this API action, see <a
+         * <p>Creates an import volume task using metadata from the specified disk
+         * image.For more information, see <a
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/CommandLineReference/importing-your-volumes-into-amazon-ebs.html">Importing
+         * Disks to Amazon EBS</a>.</p> <p>For information about the import manifest
+         * referenced by this API action, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM
          * Import Manifest</a>.</p>
          *
@@ -6917,10 +7190,10 @@ namespace Model
         virtual void ImportVolumeAsync(const Model::ImportVolumeRequest& request, const ImportVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Modify the auto-placement setting of a Dedicated host. When auto-placement is
+         * <p>Modify the auto-placement setting of a Dedicated Host. When auto-placement is
          * enabled, AWS will place instances that you launch with a tenancy of
          * <code>host</code>, but without targeting a specific host ID, onto any available
-         * Dedicated host in your account which has auto-placement enabled. When
+         * Dedicated Host in your account which has auto-placement enabled. When
          * auto-placement is disabled, you need to provide a host ID if you want the
          * instance to launch onto a specific host. If no host ID is provided, the instance
          * will be launched onto a suitable host which has auto-placement enabled.</p>
@@ -6928,10 +7201,10 @@ namespace Model
         virtual Model::ModifyHostsOutcome ModifyHosts(const Model::ModifyHostsRequest& request) const;
 
         /**
-         * <p>Modify the auto-placement setting of a Dedicated host. When auto-placement is
+         * <p>Modify the auto-placement setting of a Dedicated Host. When auto-placement is
          * enabled, AWS will place instances that you launch with a tenancy of
          * <code>host</code>, but without targeting a specific host ID, onto any available
-         * Dedicated host in your account which has auto-placement enabled. When
+         * Dedicated Host in your account which has auto-placement enabled. When
          * auto-placement is disabled, you need to provide a host ID if you want the
          * instance to launch onto a specific host. If no host ID is provided, the instance
          * will be launched onto a suitable host which has auto-placement enabled.</p>
@@ -6941,10 +7214,10 @@ namespace Model
         virtual Model::ModifyHostsOutcomeCallable ModifyHostsCallable(const Model::ModifyHostsRequest& request) const;
 
         /**
-         * <p>Modify the auto-placement setting of a Dedicated host. When auto-placement is
+         * <p>Modify the auto-placement setting of a Dedicated Host. When auto-placement is
          * enabled, AWS will place instances that you launch with a tenancy of
          * <code>host</code>, but without targeting a specific host ID, onto any available
-         * Dedicated host in your account which has auto-placement enabled. When
+         * Dedicated Host in your account which has auto-placement enabled. When
          * auto-placement is disabled, you need to provide a host ID if you want the
          * instance to launch onto a specific host. If no host ID is provided, the instance
          * will be launched onto a suitable host which has auto-placement enabled.</p>
@@ -6961,14 +7234,14 @@ namespace Model
          * <code>volume</code>.</p> <p>This setting applies to the IAM user who makes the
          * request; it does not apply to the entire AWS account. By default, an IAM user
          * defaults to the same settings as the root user. If you're using this action as
-         * the root user or as an IAM role that has permission to use this action, then
-         * these settings apply to the entire account, unless an IAM user explicitly
-         * overrides these settings for themselves. For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/resource-ids.html#resource-ids-access">Controlling
-         * Access to Longer ID Settings</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>. </p> <p>Resources created with longer IDs are visible to all IAM
-         * users, regardless of these settings and provided that they have permission to
-         * use the relevant <code>Describe</code> command for the resource type.</p>
+         * the root user, then these settings apply to the entire account, unless an IAM
+         * user explicitly overrides these settings for themselves. For more information,
+         * see <a
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/resource-ids.html">Resource
+         * IDs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. </p> <p>Resources
+         * created with longer IDs are visible to all IAM roles and users, regardless of
+         * these settings and provided that they have permission to use the relevant
+         * <code>Describe</code> command for the resource type.</p>
          */
         virtual Model::ModifyIdFormatOutcome ModifyIdFormat(const Model::ModifyIdFormatRequest& request) const;
 
@@ -6980,14 +7253,14 @@ namespace Model
          * <code>volume</code>.</p> <p>This setting applies to the IAM user who makes the
          * request; it does not apply to the entire AWS account. By default, an IAM user
          * defaults to the same settings as the root user. If you're using this action as
-         * the root user or as an IAM role that has permission to use this action, then
-         * these settings apply to the entire account, unless an IAM user explicitly
-         * overrides these settings for themselves. For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/resource-ids.html#resource-ids-access">Controlling
-         * Access to Longer ID Settings</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>. </p> <p>Resources created with longer IDs are visible to all IAM
-         * users, regardless of these settings and provided that they have permission to
-         * use the relevant <code>Describe</code> command for the resource type.</p>
+         * the root user, then these settings apply to the entire account, unless an IAM
+         * user explicitly overrides these settings for themselves. For more information,
+         * see <a
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/resource-ids.html">Resource
+         * IDs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. </p> <p>Resources
+         * created with longer IDs are visible to all IAM roles and users, regardless of
+         * these settings and provided that they have permission to use the relevant
+         * <code>Describe</code> command for the resource type.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -7001,32 +7274,93 @@ namespace Model
          * <code>volume</code>.</p> <p>This setting applies to the IAM user who makes the
          * request; it does not apply to the entire AWS account. By default, an IAM user
          * defaults to the same settings as the root user. If you're using this action as
-         * the root user or as an IAM role that has permission to use this action, then
-         * these settings apply to the entire account, unless an IAM user explicitly
-         * overrides these settings for themselves. For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/resource-ids.html#resource-ids-access">Controlling
-         * Access to Longer ID Settings</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>. </p> <p>Resources created with longer IDs are visible to all IAM
-         * users, regardless of these settings and provided that they have permission to
-         * use the relevant <code>Describe</code> command for the resource type.</p>
+         * the root user, then these settings apply to the entire account, unless an IAM
+         * user explicitly overrides these settings for themselves. For more information,
+         * see <a
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/resource-ids.html">Resource
+         * IDs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. </p> <p>Resources
+         * created with longer IDs are visible to all IAM roles and users, regardless of
+         * these settings and provided that they have permission to use the relevant
+         * <code>Describe</code> command for the resource type.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ModifyIdFormatAsync(const Model::ModifyIdFormatRequest& request, const ModifyIdFormatResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Modifies the ID format of a resource for a specified IAM user, IAM role, or
+         * the root user for an account; or all IAM users, IAM roles, and the root user for
+         * an account. You can specify that resources should receive longer IDs
+         * (17-character IDs) when they are created. </p> <p>The following resource types
+         * support longer IDs: <code>instance</code> | <code>reservation</code> |
+         * <code>snapshot</code> | <code>volume</code>. For more information, see <a
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/resource-ids.html">Resource
+         * IDs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. </p> <p>This
+         * setting applies to the principal specified in the request; it does not apply to
+         * the principal that makes the request. </p> <p>Resources created with longer IDs
+         * are visible to all IAM roles and users, regardless of these settings and
+         * provided that they have permission to use the relevant <code>Describe</code>
+         * command for the resource type.</p>
+         */
+        virtual Model::ModifyIdentityIdFormatOutcome ModifyIdentityIdFormat(const Model::ModifyIdentityIdFormatRequest& request) const;
+
+        /**
+         * <p>Modifies the ID format of a resource for a specified IAM user, IAM role, or
+         * the root user for an account; or all IAM users, IAM roles, and the root user for
+         * an account. You can specify that resources should receive longer IDs
+         * (17-character IDs) when they are created. </p> <p>The following resource types
+         * support longer IDs: <code>instance</code> | <code>reservation</code> |
+         * <code>snapshot</code> | <code>volume</code>. For more information, see <a
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/resource-ids.html">Resource
+         * IDs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. </p> <p>This
+         * setting applies to the principal specified in the request; it does not apply to
+         * the principal that makes the request. </p> <p>Resources created with longer IDs
+         * are visible to all IAM roles and users, regardless of these settings and
+         * provided that they have permission to use the relevant <code>Describe</code>
+         * command for the resource type.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ModifyIdentityIdFormatOutcomeCallable ModifyIdentityIdFormatCallable(const Model::ModifyIdentityIdFormatRequest& request) const;
+
+        /**
+         * <p>Modifies the ID format of a resource for a specified IAM user, IAM role, or
+         * the root user for an account; or all IAM users, IAM roles, and the root user for
+         * an account. You can specify that resources should receive longer IDs
+         * (17-character IDs) when they are created. </p> <p>The following resource types
+         * support longer IDs: <code>instance</code> | <code>reservation</code> |
+         * <code>snapshot</code> | <code>volume</code>. For more information, see <a
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/resource-ids.html">Resource
+         * IDs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. </p> <p>This
+         * setting applies to the principal specified in the request; it does not apply to
+         * the principal that makes the request. </p> <p>Resources created with longer IDs
+         * are visible to all IAM roles and users, regardless of these settings and
+         * provided that they have permission to use the relevant <code>Describe</code>
+         * command for the resource type.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ModifyIdentityIdFormatAsync(const Model::ModifyIdentityIdFormatRequest& request, const ModifyIdentityIdFormatResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Modifies the specified attribute of the specified AMI. You can specify only
-         * one attribute at a time.</p> <note><p>AWS Marketplace product codes cannot be
-         * modified. Images with an AWS Marketplace product code cannot be made
-         * public.</p></note>
+         * one attribute at a time.</p> <note> <p>AWS Marketplace product codes cannot be
+         * modified. Images with an AWS Marketplace product code cannot be made public.</p>
+         * </note> <note> <p>The SriovNetSupport enhanced networking attribute cannot be
+         * changed using this command. Instead, enable SriovNetSupport on an instance and
+         * create an AMI from the instance. This will result in an image with
+         * SriovNetSupport enabled.</p> </note>
          */
         virtual Model::ModifyImageAttributeOutcome ModifyImageAttribute(const Model::ModifyImageAttributeRequest& request) const;
 
         /**
          * <p>Modifies the specified attribute of the specified AMI. You can specify only
-         * one attribute at a time.</p> <note><p>AWS Marketplace product codes cannot be
-         * modified. Images with an AWS Marketplace product code cannot be made
-         * public.</p></note>
+         * one attribute at a time.</p> <note> <p>AWS Marketplace product codes cannot be
+         * modified. Images with an AWS Marketplace product code cannot be made public.</p>
+         * </note> <note> <p>The SriovNetSupport enhanced networking attribute cannot be
+         * changed using this command. Instead, enable SriovNetSupport on an instance and
+         * create an AMI from the instance. This will result in an image with
+         * SriovNetSupport enabled.</p> </note>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -7034,9 +7368,12 @@ namespace Model
 
         /**
          * <p>Modifies the specified attribute of the specified AMI. You can specify only
-         * one attribute at a time.</p> <note><p>AWS Marketplace product codes cannot be
-         * modified. Images with an AWS Marketplace product code cannot be made
-         * public.</p></note>
+         * one attribute at a time.</p> <note> <p>AWS Marketplace product codes cannot be
+         * modified. Images with an AWS Marketplace product code cannot be made public.</p>
+         * </note> <note> <p>The SriovNetSupport enhanced networking attribute cannot be
+         * changed using this command. Instead, enable SriovNetSupport on an instance and
+         * create an AMI from the instance. This will result in an image with
+         * SriovNetSupport enabled.</p> </note>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -7080,7 +7417,7 @@ namespace Model
          * <p>Set the instance affinity value for a specific stopped instance and modify
          * the instance tenancy setting.</p> <p>Instance affinity is disabled by default.
          * When instance affinity is <code>host</code> and it is not associated with a
-         * specific Dedicated host, the next time it is launched it will automatically be
+         * specific Dedicated Host, the next time it is launched it will automatically be
          * associated with the host it lands on. This relationship will persist if the
          * instance is stopped/started, or rebooted.</p> <p>You can modify the host ID
          * associated with a stopped instance. If a stopped instance has a new host ID
@@ -7097,7 +7434,7 @@ namespace Model
          * <p>Set the instance affinity value for a specific stopped instance and modify
          * the instance tenancy setting.</p> <p>Instance affinity is disabled by default.
          * When instance affinity is <code>host</code> and it is not associated with a
-         * specific Dedicated host, the next time it is launched it will automatically be
+         * specific Dedicated Host, the next time it is launched it will automatically be
          * associated with the host it lands on. This relationship will persist if the
          * instance is stopped/started, or rebooted.</p> <p>You can modify the host ID
          * associated with a stopped instance. If a stopped instance has a new host ID
@@ -7116,7 +7453,7 @@ namespace Model
          * <p>Set the instance affinity value for a specific stopped instance and modify
          * the instance tenancy setting.</p> <p>Instance affinity is disabled by default.
          * When instance affinity is <code>host</code> and it is not associated with a
-         * specific Dedicated host, the next time it is launched it will automatically be
+         * specific Dedicated Host, the next time it is launched it will automatically be
          * associated with the host it lands on. This relationship will persist if the
          * instance is stopped/started, or rebooted.</p> <p>You can modify the host ID
          * associated with a stopped instance. If a stopped instance has a new host ID
@@ -7155,9 +7492,9 @@ namespace Model
 
         /**
          * <p>Modifies the Availability Zone, instance count, instance type, or network
-         * platform (EC2-Classic or EC2-VPC) of your Reserved Instances. The Reserved
-         * Instances to be modified must be identical, except for Availability Zone,
-         * network platform, and instance type.</p> <p>For more information, see <a
+         * platform (EC2-Classic or EC2-VPC) of your Standard Reserved Instances. The
+         * Reserved Instances to be modified must be identical, except for Availability
+         * Zone, network platform, and instance type.</p> <p>For more information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-modifying.html">Modifying
          * Reserved Instances</a> in the Amazon Elastic Compute Cloud User Guide.</p>
          */
@@ -7165,9 +7502,9 @@ namespace Model
 
         /**
          * <p>Modifies the Availability Zone, instance count, instance type, or network
-         * platform (EC2-Classic or EC2-VPC) of your Reserved Instances. The Reserved
-         * Instances to be modified must be identical, except for Availability Zone,
-         * network platform, and instance type.</p> <p>For more information, see <a
+         * platform (EC2-Classic or EC2-VPC) of your Standard Reserved Instances. The
+         * Reserved Instances to be modified must be identical, except for Availability
+         * Zone, network platform, and instance type.</p> <p>For more information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-modifying.html">Modifying
          * Reserved Instances</a> in the Amazon Elastic Compute Cloud User Guide.</p>
          *
@@ -7177,9 +7514,9 @@ namespace Model
 
         /**
          * <p>Modifies the Availability Zone, instance count, instance type, or network
-         * platform (EC2-Classic or EC2-VPC) of your Reserved Instances. The Reserved
-         * Instances to be modified must be identical, except for Availability Zone,
-         * network platform, and instance type.</p> <p>For more information, see <a
+         * platform (EC2-Classic or EC2-VPC) of your Standard Reserved Instances. The
+         * Reserved Instances to be modified must be identical, except for Availability
+         * Zone, network platform, and instance type.</p> <p>For more information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-modifying.html">Modifying
          * Reserved Instances</a> in the Amazon Elastic Compute Cloud User Guide.</p>
          *
@@ -7192,11 +7529,12 @@ namespace Model
          * or remove specified AWS account IDs from a snapshot's list of create volume
          * permissions, but you cannot do both in a single API call. If you need to both
          * add and remove account IDs for a snapshot, you must use multiple API calls.</p>
-         * <p>For more information on modifying snapshot permissions, see <a
+         * <note> <p>Encrypted snapshots and snapshots with AWS Marketplace product codes
+         * cannot be made public. Snapshots encrypted with your default CMK cannot be
+         * shared with other accounts.</p> </note> <p>For more information on modifying
+         * snapshot permissions, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modifying-snapshot-permissions.html">Sharing
-         * Snapshots</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <note>
-         * <p>Snapshots with AWS Marketplace product codes cannot be made public.</p>
-         * </note>
+         * Snapshots</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
          */
         virtual Model::ModifySnapshotAttributeOutcome ModifySnapshotAttribute(const Model::ModifySnapshotAttributeRequest& request) const;
 
@@ -7205,11 +7543,12 @@ namespace Model
          * or remove specified AWS account IDs from a snapshot's list of create volume
          * permissions, but you cannot do both in a single API call. If you need to both
          * add and remove account IDs for a snapshot, you must use multiple API calls.</p>
-         * <p>For more information on modifying snapshot permissions, see <a
+         * <note> <p>Encrypted snapshots and snapshots with AWS Marketplace product codes
+         * cannot be made public. Snapshots encrypted with your default CMK cannot be
+         * shared with other accounts.</p> </note> <p>For more information on modifying
+         * snapshot permissions, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modifying-snapshot-permissions.html">Sharing
-         * Snapshots</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <note>
-         * <p>Snapshots with AWS Marketplace product codes cannot be made public.</p>
-         * </note>
+         * Snapshots</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -7220,11 +7559,12 @@ namespace Model
          * or remove specified AWS account IDs from a snapshot's list of create volume
          * permissions, but you cannot do both in a single API call. If you need to both
          * add and remove account IDs for a snapshot, you must use multiple API calls.</p>
-         * <p>For more information on modifying snapshot permissions, see <a
+         * <note> <p>Encrypted snapshots and snapshots with AWS Marketplace product codes
+         * cannot be made public. Snapshots encrypted with your default CMK cannot be
+         * shared with other accounts.</p> </note> <p>For more information on modifying
+         * snapshot permissions, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modifying-snapshot-permissions.html">Sharing
-         * Snapshots</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <note>
-         * <p>Snapshots with AWS Marketplace product codes cannot be made public.</p>
-         * </note>
+         * Snapshots</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -7399,34 +7739,38 @@ namespace Model
 
         /**
          * <p>Modifies the VPC peering connection options on one side of a VPC peering
-         * connection. You can do the following:</p> <ul> <li><p>Enable/disable
+         * connection. You can do the following:</p> <ul> <li> <p>Enable/disable
          * communication over the peering connection between an EC2-Classic instance that's
-         * linked to your VPC (using ClassicLink) and instances in the peer VPC. </p></li>
-         * <li><p>Enable/disable communication over the peering connection between
+         * linked to your VPC (using ClassicLink) and instances in the peer VPC.</p> </li>
+         * <li> <p>Enable/disable communication over the peering connection between
          * instances in your VPC and an EC2-Classic instance that's linked to the peer
-         * VPC.</p></li> </ul> <p>If the peered VPCs are in different accounts, each owner
-         * must initiate a separate request to enable or disable communication in either
-         * direction, depending on whether their VPC was the requester or accepter for the
-         * VPC peering connection. If the peered VPCs are in the same account, you can
-         * modify the requester and accepter options in the same request. To confirm which
-         * VPC is the accepter and requester for a VPC peering connection, use the
+         * VPC.</p> </li> <li> <p>Enable/disable a local VPC to resolve public DNS
+         * hostnames to private IP addresses when queried from instances in the peer
+         * VPC.</p> </li> </ul> <p>If the peered VPCs are in different accounts, each owner
+         * must initiate a separate request to modify the peering connection options,
+         * depending on whether their VPC was the requester or accepter for the VPC peering
+         * connection. If the peered VPCs are in the same account, you can modify the
+         * requester and accepter options in the same request. To confirm which VPC is the
+         * accepter and requester for a VPC peering connection, use the
          * <a>DescribeVpcPeeringConnections</a> command.</p>
          */
         virtual Model::ModifyVpcPeeringConnectionOptionsOutcome ModifyVpcPeeringConnectionOptions(const Model::ModifyVpcPeeringConnectionOptionsRequest& request) const;
 
         /**
          * <p>Modifies the VPC peering connection options on one side of a VPC peering
-         * connection. You can do the following:</p> <ul> <li><p>Enable/disable
+         * connection. You can do the following:</p> <ul> <li> <p>Enable/disable
          * communication over the peering connection between an EC2-Classic instance that's
-         * linked to your VPC (using ClassicLink) and instances in the peer VPC. </p></li>
-         * <li><p>Enable/disable communication over the peering connection between
+         * linked to your VPC (using ClassicLink) and instances in the peer VPC.</p> </li>
+         * <li> <p>Enable/disable communication over the peering connection between
          * instances in your VPC and an EC2-Classic instance that's linked to the peer
-         * VPC.</p></li> </ul> <p>If the peered VPCs are in different accounts, each owner
-         * must initiate a separate request to enable or disable communication in either
-         * direction, depending on whether their VPC was the requester or accepter for the
-         * VPC peering connection. If the peered VPCs are in the same account, you can
-         * modify the requester and accepter options in the same request. To confirm which
-         * VPC is the accepter and requester for a VPC peering connection, use the
+         * VPC.</p> </li> <li> <p>Enable/disable a local VPC to resolve public DNS
+         * hostnames to private IP addresses when queried from instances in the peer
+         * VPC.</p> </li> </ul> <p>If the peered VPCs are in different accounts, each owner
+         * must initiate a separate request to modify the peering connection options,
+         * depending on whether their VPC was the requester or accepter for the VPC peering
+         * connection. If the peered VPCs are in the same account, you can modify the
+         * requester and accepter options in the same request. To confirm which VPC is the
+         * accepter and requester for a VPC peering connection, use the
          * <a>DescribeVpcPeeringConnections</a> command.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -7435,17 +7779,19 @@ namespace Model
 
         /**
          * <p>Modifies the VPC peering connection options on one side of a VPC peering
-         * connection. You can do the following:</p> <ul> <li><p>Enable/disable
+         * connection. You can do the following:</p> <ul> <li> <p>Enable/disable
          * communication over the peering connection between an EC2-Classic instance that's
-         * linked to your VPC (using ClassicLink) and instances in the peer VPC. </p></li>
-         * <li><p>Enable/disable communication over the peering connection between
+         * linked to your VPC (using ClassicLink) and instances in the peer VPC.</p> </li>
+         * <li> <p>Enable/disable communication over the peering connection between
          * instances in your VPC and an EC2-Classic instance that's linked to the peer
-         * VPC.</p></li> </ul> <p>If the peered VPCs are in different accounts, each owner
-         * must initiate a separate request to enable or disable communication in either
-         * direction, depending on whether their VPC was the requester or accepter for the
-         * VPC peering connection. If the peered VPCs are in the same account, you can
-         * modify the requester and accepter options in the same request. To confirm which
-         * VPC is the accepter and requester for a VPC peering connection, use the
+         * VPC.</p> </li> <li> <p>Enable/disable a local VPC to resolve public DNS
+         * hostnames to private IP addresses when queried from instances in the peer
+         * VPC.</p> </li> </ul> <p>If the peered VPCs are in different accounts, each owner
+         * must initiate a separate request to modify the peering connection options,
+         * depending on whether their VPC was the requester or accepter for the VPC peering
+         * connection. If the peered VPCs are in the same account, you can modify the
+         * requester and accepter options in the same request. To confirm which VPC is the
+         * accepter and requester for a VPC peering connection, use the
          * <a>DescribeVpcPeeringConnections</a> command.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -7521,13 +7867,39 @@ namespace Model
         virtual void MoveAddressToVpcAsync(const Model::MoveAddressToVpcRequest& request, const MoveAddressToVpcResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Purchase a reservation with configurations that match those of your Dedicated
+         * Host. You must have active Dedicated Hosts in your account before you purchase a
+         * reservation. This action results in the specified reservation being purchased
+         * and charged to your account.</p>
+         */
+        virtual Model::PurchaseHostReservationOutcome PurchaseHostReservation(const Model::PurchaseHostReservationRequest& request) const;
+
+        /**
+         * <p>Purchase a reservation with configurations that match those of your Dedicated
+         * Host. You must have active Dedicated Hosts in your account before you purchase a
+         * reservation. This action results in the specified reservation being purchased
+         * and charged to your account.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PurchaseHostReservationOutcomeCallable PurchaseHostReservationCallable(const Model::PurchaseHostReservationRequest& request) const;
+
+        /**
+         * <p>Purchase a reservation with configurations that match those of your Dedicated
+         * Host. You must have active Dedicated Hosts in your account before you purchase a
+         * reservation. This action results in the specified reservation being purchased
+         * and charged to your account.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PurchaseHostReservationAsync(const Model::PurchaseHostReservationRequest& request, const PurchaseHostReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Purchases a Reserved Instance for use with your account. With Reserved
-         * Instances, you obtain a capacity reservation for a certain instance
-         * configuration over a specified period of time and pay a lower hourly rate
-         * compared to On-Demand instance pricing.</p> <p>Use
-         * <a>DescribeReservedInstancesOfferings</a> to get a list of Reserved Instance
-         * offerings that match your specifications. After you've purchased a Reserved
-         * Instance, you can check for your new Reserved Instance with
+         * Instances, you pay a lower hourly rate compared to On-Demand instance
+         * pricing.</p> <p>Use <a>DescribeReservedInstancesOfferings</a> to get a list of
+         * Reserved Instance offerings that match your specifications. After you've
+         * purchased a Reserved Instance, you can check for your new Reserved Instance with
          * <a>DescribeReservedInstances</a>.</p> <p>For more information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-on-demand-reserved-instances.html">Reserved
          * Instances</a> and <a
@@ -7539,12 +7911,10 @@ namespace Model
 
         /**
          * <p>Purchases a Reserved Instance for use with your account. With Reserved
-         * Instances, you obtain a capacity reservation for a certain instance
-         * configuration over a specified period of time and pay a lower hourly rate
-         * compared to On-Demand instance pricing.</p> <p>Use
-         * <a>DescribeReservedInstancesOfferings</a> to get a list of Reserved Instance
-         * offerings that match your specifications. After you've purchased a Reserved
-         * Instance, you can check for your new Reserved Instance with
+         * Instances, you pay a lower hourly rate compared to On-Demand instance
+         * pricing.</p> <p>Use <a>DescribeReservedInstancesOfferings</a> to get a list of
+         * Reserved Instance offerings that match your specifications. After you've
+         * purchased a Reserved Instance, you can check for your new Reserved Instance with
          * <a>DescribeReservedInstances</a>.</p> <p>For more information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-on-demand-reserved-instances.html">Reserved
          * Instances</a> and <a
@@ -7558,12 +7928,10 @@ namespace Model
 
         /**
          * <p>Purchases a Reserved Instance for use with your account. With Reserved
-         * Instances, you obtain a capacity reservation for a certain instance
-         * configuration over a specified period of time and pay a lower hourly rate
-         * compared to On-Demand instance pricing.</p> <p>Use
-         * <a>DescribeReservedInstancesOfferings</a> to get a list of Reserved Instance
-         * offerings that match your specifications. After you've purchased a Reserved
-         * Instance, you can check for your new Reserved Instance with
+         * Instances, you pay a lower hourly rate compared to On-Demand instance
+         * pricing.</p> <p>Use <a>DescribeReservedInstancesOfferings</a> to get a list of
+         * Reserved Instance offerings that match your specifications. After you've
+         * purchased a Reserved Instance, you can check for your new Reserved Instance with
          * <a>DescribeReservedInstances</a>.</p> <p>For more information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-on-demand-reserved-instances.html">Reserved
          * Instances</a> and <a
@@ -7664,10 +8032,10 @@ namespace Model
          * information about creating AMIs, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami.html">Creating
          * Your Own AMIs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-         * <note><p>For Amazon EBS-backed instances, <a>CreateImage</a> creates and
+         * <note> <p>For Amazon EBS-backed instances, <a>CreateImage</a> creates and
          * registers the AMI in a single request, so you don't have to register the AMI
-         * yourself.</p></note> <p>You can also use <code>RegisterImage</code> to create an
-         * Amazon EBS-backed Linux AMI from a snapshot of a root device volume. For more
+         * yourself.</p> </note> <p>You can also use <code>RegisterImage</code> to create
+         * an Amazon EBS-backed Linux AMI from a snapshot of a root device volume. For more
          * information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_LaunchingInstanceFromSnapshot.html">Launching
          * an Instance from a Snapshot</a> in the <i>Amazon Elastic Compute Cloud User
@@ -7683,9 +8051,9 @@ namespace Model
          * see <a>CreateImage</a>.</p> </important> <p>If needed, you can deregister an AMI
          * at any time. Any modifications you make to an AMI backed by an instance store
          * volume invalidates its registration. If you make changes to an image, deregister
-         * the previous image and register the new image.</p> <note><p>You can't register
+         * the previous image and register the new image.</p> <note> <p>You can't register
          * an image where a secondary (non-root) snapshot has AWS Marketplace product
-         * codes.</p></note>
+         * codes.</p> </note>
          */
         virtual Model::RegisterImageOutcome RegisterImage(const Model::RegisterImageRequest& request) const;
 
@@ -7695,10 +8063,10 @@ namespace Model
          * information about creating AMIs, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami.html">Creating
          * Your Own AMIs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-         * <note><p>For Amazon EBS-backed instances, <a>CreateImage</a> creates and
+         * <note> <p>For Amazon EBS-backed instances, <a>CreateImage</a> creates and
          * registers the AMI in a single request, so you don't have to register the AMI
-         * yourself.</p></note> <p>You can also use <code>RegisterImage</code> to create an
-         * Amazon EBS-backed Linux AMI from a snapshot of a root device volume. For more
+         * yourself.</p> </note> <p>You can also use <code>RegisterImage</code> to create
+         * an Amazon EBS-backed Linux AMI from a snapshot of a root device volume. For more
          * information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_LaunchingInstanceFromSnapshot.html">Launching
          * an Instance from a Snapshot</a> in the <i>Amazon Elastic Compute Cloud User
@@ -7714,9 +8082,9 @@ namespace Model
          * see <a>CreateImage</a>.</p> </important> <p>If needed, you can deregister an AMI
          * at any time. Any modifications you make to an AMI backed by an instance store
          * volume invalidates its registration. If you make changes to an image, deregister
-         * the previous image and register the new image.</p> <note><p>You can't register
+         * the previous image and register the new image.</p> <note> <p>You can't register
          * an image where a secondary (non-root) snapshot has AWS Marketplace product
-         * codes.</p></note>
+         * codes.</p> </note>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -7728,10 +8096,10 @@ namespace Model
          * information about creating AMIs, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami.html">Creating
          * Your Own AMIs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-         * <note><p>For Amazon EBS-backed instances, <a>CreateImage</a> creates and
+         * <note> <p>For Amazon EBS-backed instances, <a>CreateImage</a> creates and
          * registers the AMI in a single request, so you don't have to register the AMI
-         * yourself.</p></note> <p>You can also use <code>RegisterImage</code> to create an
-         * Amazon EBS-backed Linux AMI from a snapshot of a root device volume. For more
+         * yourself.</p> </note> <p>You can also use <code>RegisterImage</code> to create
+         * an Amazon EBS-backed Linux AMI from a snapshot of a root device volume. For more
          * information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_LaunchingInstanceFromSnapshot.html">Launching
          * an Instance from a Snapshot</a> in the <i>Amazon Elastic Compute Cloud User
@@ -7747,9 +8115,9 @@ namespace Model
          * see <a>CreateImage</a>.</p> </important> <p>If needed, you can deregister an AMI
          * at any time. Any modifications you make to an AMI backed by an instance store
          * volume invalidates its registration. If you make changes to an image, deregister
-         * the previous image and register the new image.</p> <note><p>You can't register
+         * the previous image and register the new image.</p> <note> <p>You can't register
          * an image where a secondary (non-root) snapshot has AWS Marketplace product
-         * codes.</p></note>
+         * codes.</p> </note>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -7842,43 +8210,43 @@ namespace Model
         virtual void ReleaseAddressAsync(const Model::ReleaseAddressRequest& request, const ReleaseAddressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>When you no longer want to use a Dedicated host it can be released. On-Demand
-         * billing is stopped and the host goes into <code>released</code> state. The host
-         * ID of Dedicated hosts that have been released can no longer be specified in
-         * another request, e.g., ModifyHosts. You must stop or terminate all instances on
-         * a host before it can be released.</p> <p>When Dedicated hosts are released, it
-         * make take some time for them to stop counting toward your limit and you may
-         * receive capacity errors when trying to allocate new Dedicated hosts. Try waiting
-         * a few minutes, and then try again. </p> <p>Released hosts will still appear in a
-         * DescribeHosts response.</p>
+         * <p>When you no longer want to use an On-Demand Dedicated Host it can be
+         * released. On-Demand billing is stopped and the host goes into
+         * <code>released</code> state. The host ID of Dedicated Hosts that have been
+         * released can no longer be specified in another request, e.g., ModifyHosts. You
+         * must stop or terminate all instances on a host before it can be released.</p>
+         * <p>When Dedicated Hosts are released, it make take some time for them to stop
+         * counting toward your limit and you may receive capacity errors when trying to
+         * allocate new Dedicated hosts. Try waiting a few minutes, and then try again.</p>
+         * <p>Released hosts will still appear in a <a>DescribeHosts</a> response.</p>
          */
         virtual Model::ReleaseHostsOutcome ReleaseHosts(const Model::ReleaseHostsRequest& request) const;
 
         /**
-         * <p>When you no longer want to use a Dedicated host it can be released. On-Demand
-         * billing is stopped and the host goes into <code>released</code> state. The host
-         * ID of Dedicated hosts that have been released can no longer be specified in
-         * another request, e.g., ModifyHosts. You must stop or terminate all instances on
-         * a host before it can be released.</p> <p>When Dedicated hosts are released, it
-         * make take some time for them to stop counting toward your limit and you may
-         * receive capacity errors when trying to allocate new Dedicated hosts. Try waiting
-         * a few minutes, and then try again. </p> <p>Released hosts will still appear in a
-         * DescribeHosts response.</p>
+         * <p>When you no longer want to use an On-Demand Dedicated Host it can be
+         * released. On-Demand billing is stopped and the host goes into
+         * <code>released</code> state. The host ID of Dedicated Hosts that have been
+         * released can no longer be specified in another request, e.g., ModifyHosts. You
+         * must stop or terminate all instances on a host before it can be released.</p>
+         * <p>When Dedicated Hosts are released, it make take some time for them to stop
+         * counting toward your limit and you may receive capacity errors when trying to
+         * allocate new Dedicated hosts. Try waiting a few minutes, and then try again.</p>
+         * <p>Released hosts will still appear in a <a>DescribeHosts</a> response.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ReleaseHostsOutcomeCallable ReleaseHostsCallable(const Model::ReleaseHostsRequest& request) const;
 
         /**
-         * <p>When you no longer want to use a Dedicated host it can be released. On-Demand
-         * billing is stopped and the host goes into <code>released</code> state. The host
-         * ID of Dedicated hosts that have been released can no longer be specified in
-         * another request, e.g., ModifyHosts. You must stop or terminate all instances on
-         * a host before it can be released.</p> <p>When Dedicated hosts are released, it
-         * make take some time for them to stop counting toward your limit and you may
-         * receive capacity errors when trying to allocate new Dedicated hosts. Try waiting
-         * a few minutes, and then try again. </p> <p>Released hosts will still appear in a
-         * DescribeHosts response.</p>
+         * <p>When you no longer want to use an On-Demand Dedicated Host it can be
+         * released. On-Demand billing is stopped and the host goes into
+         * <code>released</code> state. The host ID of Dedicated Hosts that have been
+         * released can no longer be specified in another request, e.g., ModifyHosts. You
+         * must stop or terminate all instances on a host before it can be released.</p>
+         * <p>When Dedicated Hosts are released, it make take some time for them to stop
+         * counting toward your limit and you may receive capacity errors when trying to
+         * allocate new Dedicated hosts. Try waiting a few minutes, and then try again.</p>
+         * <p>Released hosts will still appear in a <a>DescribeHosts</a> response.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -8141,22 +8509,22 @@ namespace Model
         virtual void RequestSpotInstancesAsync(const Model::RequestSpotInstancesRequest& request, const RequestSpotInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Resets an attribute of an AMI to its default value.</p> <note><p> The
-         * productCodes attribute can't be reset. </p></note>
+         * <p>Resets an attribute of an AMI to its default value.</p> <note> <p>The
+         * productCodes attribute can't be reset.</p> </note>
          */
         virtual Model::ResetImageAttributeOutcome ResetImageAttribute(const Model::ResetImageAttributeRequest& request) const;
 
         /**
-         * <p>Resets an attribute of an AMI to its default value.</p> <note><p> The
-         * productCodes attribute can't be reset. </p></note>
+         * <p>Resets an attribute of an AMI to its default value.</p> <note> <p>The
+         * productCodes attribute can't be reset.</p> </note>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ResetImageAttributeOutcomeCallable ResetImageAttributeCallable(const Model::ResetImageAttributeRequest& request) const;
 
         /**
-         * <p>Resets an attribute of an AMI to its default value.</p> <note><p> The
-         * productCodes attribute can't be reset. </p></note>
+         * <p>Resets an attribute of an AMI to its default value.</p> <note> <p>The
+         * productCodes attribute can't be reset.</p> </note>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -8262,7 +8630,7 @@ namespace Model
          * <p>Restores an Elastic IP address that was previously moved to the EC2-VPC
          * platform back to the EC2-Classic platform. You cannot move an Elastic IP address
          * that was originally allocated for use in EC2-VPC. The Elastic IP address must
-         * not be associated with an instance or network interface. </p>
+         * not be associated with an instance or network interface.</p>
          */
         virtual Model::RestoreAddressToClassicOutcome RestoreAddressToClassic(const Model::RestoreAddressToClassicRequest& request) const;
 
@@ -8270,7 +8638,7 @@ namespace Model
          * <p>Restores an Elastic IP address that was previously moved to the EC2-VPC
          * platform back to the EC2-Classic platform. You cannot move an Elastic IP address
          * that was originally allocated for use in EC2-VPC. The Elastic IP address must
-         * not be associated with an instance or network interface. </p>
+         * not be associated with an instance or network interface.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -8280,7 +8648,7 @@ namespace Model
          * <p>Restores an Elastic IP address that was previously moved to the EC2-VPC
          * platform back to the EC2-Classic platform. You cannot move an Elastic IP address
          * that was originally allocated for use in EC2-VPC. The Elastic IP address must
-         * not be associated with an instance or network interface. </p>
+         * not be associated with an instance or network interface.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -8387,7 +8755,7 @@ namespace Model
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Security
          * Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
          * <p>[EC2-VPC only accounts] If you don't specify a subnet in the request, we
-         * choose a default subnet from your default VPC for you. </p> <p>[EC2-Classic
+         * choose a default subnet from your default VPC for you.</p> <p>[EC2-Classic
          * accounts] If you're launching into EC2-Classic and you don't specify an
          * Availability Zone, we choose one for you.</p> <p>Linux instances have access to
          * the public key of the key pair at boot. You can use this key to provide secure
@@ -8433,7 +8801,7 @@ namespace Model
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Security
          * Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
          * <p>[EC2-VPC only accounts] If you don't specify a subnet in the request, we
-         * choose a default subnet from your default VPC for you. </p> <p>[EC2-Classic
+         * choose a default subnet from your default VPC for you.</p> <p>[EC2-Classic
          * accounts] If you're launching into EC2-Classic and you don't specify an
          * Availability Zone, we choose one for you.</p> <p>Linux instances have access to
          * the public key of the key pair at boot. You can use this key to provide secure
@@ -8481,7 +8849,7 @@ namespace Model
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Security
          * Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
          * <p>[EC2-VPC only accounts] If you don't specify a subnet in the request, we
-         * choose a default subnet from your default VPC for you. </p> <p>[EC2-Classic
+         * choose a default subnet from your default VPC for you.</p> <p>[EC2-Classic
          * accounts] If you're launching into EC2-Classic and you don't specify an
          * Availability Zone, we choose one for you.</p> <p>Linux instances have access to
          * the public key of the key pair at boot. You can use this key to provide secure
@@ -8613,7 +8981,7 @@ namespace Model
         virtual void StartInstancesAsync(const Model::StartInstancesRequest& request, const StartInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Stops an Amazon EBS-backed instance. </p> <p>We don't charge hourly usage for
+         * <p>Stops an Amazon EBS-backed instance.</p> <p>We don't charge hourly usage for
          * a stopped instance, or data transfer fees; however, your root partition Amazon
          * EBS volume remains, continues to persist your data, and you are charged for
          * Amazon EBS volume usage. Each time you transition an instance from stopped to
@@ -8642,7 +9010,7 @@ namespace Model
         virtual Model::StopInstancesOutcome StopInstances(const Model::StopInstancesRequest& request) const;
 
         /**
-         * <p>Stops an Amazon EBS-backed instance. </p> <p>We don't charge hourly usage for
+         * <p>Stops an Amazon EBS-backed instance.</p> <p>We don't charge hourly usage for
          * a stopped instance, or data transfer fees; however, your root partition Amazon
          * EBS volume remains, continues to persist your data, and you are charged for
          * Amazon EBS volume usage. Each time you transition an instance from stopped to
@@ -8673,7 +9041,7 @@ namespace Model
         virtual Model::StopInstancesOutcomeCallable StopInstancesCallable(const Model::StopInstancesRequest& request) const;
 
         /**
-         * <p>Stops an Amazon EBS-backed instance. </p> <p>We don't charge hourly usage for
+         * <p>Stops an Amazon EBS-backed instance.</p> <p>We don't charge hourly usage for
          * a stopped instance, or data transfer fees; however, your root partition Amazon
          * EBS volume remains, continues to persist your data, and you are charged for
          * Amazon EBS volume usage. Each time you transition an instance from stopped to
@@ -8705,7 +9073,9 @@ namespace Model
 
         /**
          * <p>Shuts down one or more instances. This operation is idempotent; if you
-         * terminate an instance more than once, each call succeeds.</p> <p>Terminated
+         * terminate an instance more than once, each call succeeds. </p> <p>If you specify
+         * multiple instances and the request fails (for example, because of a single
+         * incorrect instance ID), none of the instances are terminated.</p> <p>Terminated
          * instances remain visible after termination (for approximately one hour).</p>
          * <p>By default, Amazon EC2 deletes all EBS volumes that were attached when the
          * instance launched. Volumes attached after instance launch continue running.</p>
@@ -8728,7 +9098,9 @@ namespace Model
 
         /**
          * <p>Shuts down one or more instances. This operation is idempotent; if you
-         * terminate an instance more than once, each call succeeds.</p> <p>Terminated
+         * terminate an instance more than once, each call succeeds. </p> <p>If you specify
+         * multiple instances and the request fails (for example, because of a single
+         * incorrect instance ID), none of the instances are terminated.</p> <p>Terminated
          * instances remain visible after termination (for approximately one hour).</p>
          * <p>By default, Amazon EC2 deletes all EBS volumes that were attached when the
          * instance launched. Volumes attached after instance launch continue running.</p>
@@ -8753,7 +9125,9 @@ namespace Model
 
         /**
          * <p>Shuts down one or more instances. This operation is idempotent; if you
-         * terminate an instance more than once, each call succeeds.</p> <p>Terminated
+         * terminate an instance more than once, each call succeeds. </p> <p>If you specify
+         * multiple instances and the request fails (for example, because of a single
+         * incorrect instance ID), none of the instances are terminated.</p> <p>Terminated
          * instances remain visible after termination (for approximately one hour).</p>
          * <p>By default, Amazon EC2 deletes all EBS volumes that were attached when the
          * instance launched. Volumes attached after instance launch continue running.</p>
@@ -8834,6 +9208,7 @@ namespace Model
     void init(const Client::ClientConfiguration& clientConfiguration);
 
         /**Async helpers**/
+        void AcceptReservedInstancesExchangeQuoteAsyncHelper(const Model::AcceptReservedInstancesExchangeQuoteRequest& request, const AcceptReservedInstancesExchangeQuoteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AcceptVpcPeeringConnectionAsyncHelper(const Model::AcceptVpcPeeringConnectionRequest& request, const AcceptVpcPeeringConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AllocateAddressAsyncHelper(const Model::AllocateAddressRequest& request, const AllocateAddressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AllocateHostsAsyncHelper(const Model::AllocateHostsRequest& request, const AllocateHostsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -8921,8 +9296,11 @@ namespace Model
         void DescribeDhcpOptionsAsyncHelper(const Model::DescribeDhcpOptionsRequest& request, const DescribeDhcpOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeExportTasksAsyncHelper(const Model::DescribeExportTasksRequest& request, const DescribeExportTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeFlowLogsAsyncHelper(const Model::DescribeFlowLogsRequest& request, const DescribeFlowLogsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeHostReservationOfferingsAsyncHelper(const Model::DescribeHostReservationOfferingsRequest& request, const DescribeHostReservationOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeHostReservationsAsyncHelper(const Model::DescribeHostReservationsRequest& request, const DescribeHostReservationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeHostsAsyncHelper(const Model::DescribeHostsRequest& request, const DescribeHostsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeIdFormatAsyncHelper(const Model::DescribeIdFormatRequest& request, const DescribeIdFormatResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeIdentityIdFormatAsyncHelper(const Model::DescribeIdentityIdFormatRequest& request, const DescribeIdentityIdFormatResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeImageAttributeAsyncHelper(const Model::DescribeImageAttributeRequest& request, const DescribeImageAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeImagesAsyncHelper(const Model::DescribeImagesRequest& request, const DescribeImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeImportImageTasksAsyncHelper(const Model::DescribeImportImageTasksRequest& request, const DescribeImportImageTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -8988,7 +9366,9 @@ namespace Model
         void EnableVpcClassicLinkDnsSupportAsyncHelper(const Model::EnableVpcClassicLinkDnsSupportRequest& request, const EnableVpcClassicLinkDnsSupportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetConsoleOutputAsyncHelper(const Model::GetConsoleOutputRequest& request, const GetConsoleOutputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetConsoleScreenshotAsyncHelper(const Model::GetConsoleScreenshotRequest& request, const GetConsoleScreenshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetHostReservationPurchasePreviewAsyncHelper(const Model::GetHostReservationPurchasePreviewRequest& request, const GetHostReservationPurchasePreviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetPasswordDataAsyncHelper(const Model::GetPasswordDataRequest& request, const GetPasswordDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetReservedInstancesExchangeQuoteAsyncHelper(const Model::GetReservedInstancesExchangeQuoteRequest& request, const GetReservedInstancesExchangeQuoteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ImportImageAsyncHelper(const Model::ImportImageRequest& request, const ImportImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ImportInstanceAsyncHelper(const Model::ImportInstanceRequest& request, const ImportInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ImportKeyPairAsyncHelper(const Model::ImportKeyPairRequest& request, const ImportKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -8996,6 +9376,7 @@ namespace Model
         void ImportVolumeAsyncHelper(const Model::ImportVolumeRequest& request, const ImportVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyHostsAsyncHelper(const Model::ModifyHostsRequest& request, const ModifyHostsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyIdFormatAsyncHelper(const Model::ModifyIdFormatRequest& request, const ModifyIdFormatResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ModifyIdentityIdFormatAsyncHelper(const Model::ModifyIdentityIdFormatRequest& request, const ModifyIdentityIdFormatResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyImageAttributeAsyncHelper(const Model::ModifyImageAttributeRequest& request, const ModifyImageAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyInstanceAttributeAsyncHelper(const Model::ModifyInstanceAttributeRequest& request, const ModifyInstanceAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyInstancePlacementAsyncHelper(const Model::ModifyInstancePlacementRequest& request, const ModifyInstancePlacementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -9010,6 +9391,7 @@ namespace Model
         void ModifyVpcPeeringConnectionOptionsAsyncHelper(const Model::ModifyVpcPeeringConnectionOptionsRequest& request, const ModifyVpcPeeringConnectionOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void MonitorInstancesAsyncHelper(const Model::MonitorInstancesRequest& request, const MonitorInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void MoveAddressToVpcAsyncHelper(const Model::MoveAddressToVpcRequest& request, const MoveAddressToVpcResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PurchaseHostReservationAsyncHelper(const Model::PurchaseHostReservationRequest& request, const PurchaseHostReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PurchaseReservedInstancesOfferingAsyncHelper(const Model::PurchaseReservedInstancesOfferingRequest& request, const PurchaseReservedInstancesOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PurchaseScheduledInstancesAsyncHelper(const Model::PurchaseScheduledInstancesRequest& request, const PurchaseScheduledInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RebootInstancesAsyncHelper(const Model::RebootInstancesRequest& request, const RebootInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

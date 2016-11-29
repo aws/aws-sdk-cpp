@@ -46,37 +46,37 @@ namespace Model
     DescribeHostsResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
     /**
-     * <p>Information about the Dedicated hosts.</p>
+     * <p>Information about the Dedicated Hosts.</p>
      */
     inline const Aws::Vector<Host>& GetHosts() const{ return m_hosts; }
 
     /**
-     * <p>Information about the Dedicated hosts.</p>
+     * <p>Information about the Dedicated Hosts.</p>
      */
     inline void SetHosts(const Aws::Vector<Host>& value) { m_hosts = value; }
 
     /**
-     * <p>Information about the Dedicated hosts.</p>
+     * <p>Information about the Dedicated Hosts.</p>
      */
     inline void SetHosts(Aws::Vector<Host>&& value) { m_hosts = value; }
 
     /**
-     * <p>Information about the Dedicated hosts.</p>
+     * <p>Information about the Dedicated Hosts.</p>
      */
     inline DescribeHostsResponse& WithHosts(const Aws::Vector<Host>& value) { SetHosts(value); return *this;}
 
     /**
-     * <p>Information about the Dedicated hosts.</p>
+     * <p>Information about the Dedicated Hosts.</p>
      */
     inline DescribeHostsResponse& WithHosts(Aws::Vector<Host>&& value) { SetHosts(value); return *this;}
 
     /**
-     * <p>Information about the Dedicated hosts.</p>
+     * <p>Information about the Dedicated Hosts.</p>
      */
     inline DescribeHostsResponse& AddHosts(const Host& value) { m_hosts.push_back(value); return *this; }
 
     /**
-     * <p>Information about the Dedicated hosts.</p>
+     * <p>Information about the Dedicated Hosts.</p>
      */
     inline DescribeHostsResponse& AddHosts(Host&& value) { m_hosts.push_back(value); return *this; }
 

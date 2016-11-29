@@ -121,37 +121,37 @@ namespace Model
     inline ModifyInstancePlacementRequest& WithAffinity(Affinity&& value) { SetAffinity(value); return *this;}
 
     /**
-     * <p>The ID of the Dedicated host that the instance will have affinity with.</p>
+     * <p>The ID of the Dedicated Host that the instance will have affinity with.</p>
      */
     inline const Aws::String& GetHostId() const{ return m_hostId; }
 
     /**
-     * <p>The ID of the Dedicated host that the instance will have affinity with.</p>
+     * <p>The ID of the Dedicated Host that the instance will have affinity with.</p>
      */
     inline void SetHostId(const Aws::String& value) { m_hostIdHasBeenSet = true; m_hostId = value; }
 
     /**
-     * <p>The ID of the Dedicated host that the instance will have affinity with.</p>
+     * <p>The ID of the Dedicated Host that the instance will have affinity with.</p>
      */
     inline void SetHostId(Aws::String&& value) { m_hostIdHasBeenSet = true; m_hostId = value; }
 
     /**
-     * <p>The ID of the Dedicated host that the instance will have affinity with.</p>
+     * <p>The ID of the Dedicated Host that the instance will have affinity with.</p>
      */
     inline void SetHostId(const char* value) { m_hostIdHasBeenSet = true; m_hostId.assign(value); }
 
     /**
-     * <p>The ID of the Dedicated host that the instance will have affinity with.</p>
+     * <p>The ID of the Dedicated Host that the instance will have affinity with.</p>
      */
     inline ModifyInstancePlacementRequest& WithHostId(const Aws::String& value) { SetHostId(value); return *this;}
 
     /**
-     * <p>The ID of the Dedicated host that the instance will have affinity with.</p>
+     * <p>The ID of the Dedicated Host that the instance will have affinity with.</p>
      */
     inline ModifyInstancePlacementRequest& WithHostId(Aws::String&& value) { SetHostId(value); return *this;}
 
     /**
-     * <p>The ID of the Dedicated host that the instance will have affinity with.</p>
+     * <p>The ID of the Dedicated Host that the instance will have affinity with.</p>
      */
     inline ModifyInstancePlacementRequest& WithHostId(const char* value) { SetHostId(value); return *this;}
 

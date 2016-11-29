@@ -77,47 +77,47 @@ namespace Model
     inline HistoryRecord& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(value); return *this;}
 
     /**
-     * <p>The event type.</p> <ul> <li> <p><code>error</code> - Indicates an error with
-     * the Spot fleet request.</p> </li> <li> <p><code>fleetRequestChange</code> -
-     * Indicates a change in the status or configuration of the Spot fleet request.</p>
-     * </li> <li> <p><code>instanceChange</code> - Indicates that an instance was
-     * launched or terminated.</p> </li> </ul>
+     * <p>The event type.</p> <ul> <li> <p> <code>error</code> - Indicates an error
+     * with the Spot fleet request.</p> </li> <li> <p> <code>fleetRequestChange</code>
+     * - Indicates a change in the status or configuration of the Spot fleet
+     * request.</p> </li> <li> <p> <code>instanceChange</code> - Indicates that an
+     * instance was launched or terminated.</p> </li> </ul>
      */
     inline const EventType& GetEventType() const{ return m_eventType; }
 
     /**
-     * <p>The event type.</p> <ul> <li> <p><code>error</code> - Indicates an error with
-     * the Spot fleet request.</p> </li> <li> <p><code>fleetRequestChange</code> -
-     * Indicates a change in the status or configuration of the Spot fleet request.</p>
-     * </li> <li> <p><code>instanceChange</code> - Indicates that an instance was
-     * launched or terminated.</p> </li> </ul>
+     * <p>The event type.</p> <ul> <li> <p> <code>error</code> - Indicates an error
+     * with the Spot fleet request.</p> </li> <li> <p> <code>fleetRequestChange</code>
+     * - Indicates a change in the status or configuration of the Spot fleet
+     * request.</p> </li> <li> <p> <code>instanceChange</code> - Indicates that an
+     * instance was launched or terminated.</p> </li> </ul>
      */
     inline void SetEventType(const EventType& value) { m_eventTypeHasBeenSet = true; m_eventType = value; }
 
     /**
-     * <p>The event type.</p> <ul> <li> <p><code>error</code> - Indicates an error with
-     * the Spot fleet request.</p> </li> <li> <p><code>fleetRequestChange</code> -
-     * Indicates a change in the status or configuration of the Spot fleet request.</p>
-     * </li> <li> <p><code>instanceChange</code> - Indicates that an instance was
-     * launched or terminated.</p> </li> </ul>
+     * <p>The event type.</p> <ul> <li> <p> <code>error</code> - Indicates an error
+     * with the Spot fleet request.</p> </li> <li> <p> <code>fleetRequestChange</code>
+     * - Indicates a change in the status or configuration of the Spot fleet
+     * request.</p> </li> <li> <p> <code>instanceChange</code> - Indicates that an
+     * instance was launched or terminated.</p> </li> </ul>
      */
     inline void SetEventType(EventType&& value) { m_eventTypeHasBeenSet = true; m_eventType = value; }
 
     /**
-     * <p>The event type.</p> <ul> <li> <p><code>error</code> - Indicates an error with
-     * the Spot fleet request.</p> </li> <li> <p><code>fleetRequestChange</code> -
-     * Indicates a change in the status or configuration of the Spot fleet request.</p>
-     * </li> <li> <p><code>instanceChange</code> - Indicates that an instance was
-     * launched or terminated.</p> </li> </ul>
+     * <p>The event type.</p> <ul> <li> <p> <code>error</code> - Indicates an error
+     * with the Spot fleet request.</p> </li> <li> <p> <code>fleetRequestChange</code>
+     * - Indicates a change in the status or configuration of the Spot fleet
+     * request.</p> </li> <li> <p> <code>instanceChange</code> - Indicates that an
+     * instance was launched or terminated.</p> </li> </ul>
      */
     inline HistoryRecord& WithEventType(const EventType& value) { SetEventType(value); return *this;}
 
     /**
-     * <p>The event type.</p> <ul> <li> <p><code>error</code> - Indicates an error with
-     * the Spot fleet request.</p> </li> <li> <p><code>fleetRequestChange</code> -
-     * Indicates a change in the status or configuration of the Spot fleet request.</p>
-     * </li> <li> <p><code>instanceChange</code> - Indicates that an instance was
-     * launched or terminated.</p> </li> </ul>
+     * <p>The event type.</p> <ul> <li> <p> <code>error</code> - Indicates an error
+     * with the Spot fleet request.</p> </li> <li> <p> <code>fleetRequestChange</code>
+     * - Indicates a change in the status or configuration of the Spot fleet
+     * request.</p> </li> <li> <p> <code>instanceChange</code> - Indicates that an
+     * instance was launched or terminated.</p> </li> </ul>
      */
     inline HistoryRecord& WithEventType(EventType&& value) { SetEventType(value); return *this;}
 

@@ -106,79 +106,79 @@ namespace Model
     inline DescribeReservedInstancesListingsRequest& WithReservedInstancesListingId(const char* value) { SetReservedInstancesListingId(value); return *this;}
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p><code>reserved-instances-id</code> -
-     * The ID of the Reserved Instances.</p> </li> <li>
-     * <p><code>reserved-instances-listing-id</code> - The ID of the Reserved Instances
-     * listing.</p> </li> <li> <p><code>status</code> - The status of the Reserved
+     * <p>One or more filters.</p> <ul> <li> <p> <code>reserved-instances-id</code> -
+     * The ID of the Reserved Instances.</p> </li> <li> <p>
+     * <code>reserved-instances-listing-id</code> - The ID of the Reserved Instances
+     * listing.</p> </li> <li> <p> <code>status</code> - The status of the Reserved
      * Instance listing (<code>pending</code> | <code>active</code> |
-     * <code>cancelled</code> | <code>closed</code>).</p> </li> <li>
-     * <p><code>status-message</code> - The reason for the status.</p> </li> </ul>
+     * <code>cancelled</code> | <code>closed</code>).</p> </li> <li> <p>
+     * <code>status-message</code> - The reason for the status.</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p><code>reserved-instances-id</code> -
-     * The ID of the Reserved Instances.</p> </li> <li>
-     * <p><code>reserved-instances-listing-id</code> - The ID of the Reserved Instances
-     * listing.</p> </li> <li> <p><code>status</code> - The status of the Reserved
+     * <p>One or more filters.</p> <ul> <li> <p> <code>reserved-instances-id</code> -
+     * The ID of the Reserved Instances.</p> </li> <li> <p>
+     * <code>reserved-instances-listing-id</code> - The ID of the Reserved Instances
+     * listing.</p> </li> <li> <p> <code>status</code> - The status of the Reserved
      * Instance listing (<code>pending</code> | <code>active</code> |
-     * <code>cancelled</code> | <code>closed</code>).</p> </li> <li>
-     * <p><code>status-message</code> - The reason for the status.</p> </li> </ul>
+     * <code>cancelled</code> | <code>closed</code>).</p> </li> <li> <p>
+     * <code>status-message</code> - The reason for the status.</p> </li> </ul>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p><code>reserved-instances-id</code> -
-     * The ID of the Reserved Instances.</p> </li> <li>
-     * <p><code>reserved-instances-listing-id</code> - The ID of the Reserved Instances
-     * listing.</p> </li> <li> <p><code>status</code> - The status of the Reserved
+     * <p>One or more filters.</p> <ul> <li> <p> <code>reserved-instances-id</code> -
+     * The ID of the Reserved Instances.</p> </li> <li> <p>
+     * <code>reserved-instances-listing-id</code> - The ID of the Reserved Instances
+     * listing.</p> </li> <li> <p> <code>status</code> - The status of the Reserved
      * Instance listing (<code>pending</code> | <code>active</code> |
-     * <code>cancelled</code> | <code>closed</code>).</p> </li> <li>
-     * <p><code>status-message</code> - The reason for the status.</p> </li> </ul>
+     * <code>cancelled</code> | <code>closed</code>).</p> </li> <li> <p>
+     * <code>status-message</code> - The reason for the status.</p> </li> </ul>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p><code>reserved-instances-id</code> -
-     * The ID of the Reserved Instances.</p> </li> <li>
-     * <p><code>reserved-instances-listing-id</code> - The ID of the Reserved Instances
-     * listing.</p> </li> <li> <p><code>status</code> - The status of the Reserved
+     * <p>One or more filters.</p> <ul> <li> <p> <code>reserved-instances-id</code> -
+     * The ID of the Reserved Instances.</p> </li> <li> <p>
+     * <code>reserved-instances-listing-id</code> - The ID of the Reserved Instances
+     * listing.</p> </li> <li> <p> <code>status</code> - The status of the Reserved
      * Instance listing (<code>pending</code> | <code>active</code> |
-     * <code>cancelled</code> | <code>closed</code>).</p> </li> <li>
-     * <p><code>status-message</code> - The reason for the status.</p> </li> </ul>
+     * <code>cancelled</code> | <code>closed</code>).</p> </li> <li> <p>
+     * <code>status-message</code> - The reason for the status.</p> </li> </ul>
      */
     inline DescribeReservedInstancesListingsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p><code>reserved-instances-id</code> -
-     * The ID of the Reserved Instances.</p> </li> <li>
-     * <p><code>reserved-instances-listing-id</code> - The ID of the Reserved Instances
-     * listing.</p> </li> <li> <p><code>status</code> - The status of the Reserved
+     * <p>One or more filters.</p> <ul> <li> <p> <code>reserved-instances-id</code> -
+     * The ID of the Reserved Instances.</p> </li> <li> <p>
+     * <code>reserved-instances-listing-id</code> - The ID of the Reserved Instances
+     * listing.</p> </li> <li> <p> <code>status</code> - The status of the Reserved
      * Instance listing (<code>pending</code> | <code>active</code> |
-     * <code>cancelled</code> | <code>closed</code>).</p> </li> <li>
-     * <p><code>status-message</code> - The reason for the status.</p> </li> </ul>
+     * <code>cancelled</code> | <code>closed</code>).</p> </li> <li> <p>
+     * <code>status-message</code> - The reason for the status.</p> </li> </ul>
      */
     inline DescribeReservedInstancesListingsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p><code>reserved-instances-id</code> -
-     * The ID of the Reserved Instances.</p> </li> <li>
-     * <p><code>reserved-instances-listing-id</code> - The ID of the Reserved Instances
-     * listing.</p> </li> <li> <p><code>status</code> - The status of the Reserved
+     * <p>One or more filters.</p> <ul> <li> <p> <code>reserved-instances-id</code> -
+     * The ID of the Reserved Instances.</p> </li> <li> <p>
+     * <code>reserved-instances-listing-id</code> - The ID of the Reserved Instances
+     * listing.</p> </li> <li> <p> <code>status</code> - The status of the Reserved
      * Instance listing (<code>pending</code> | <code>active</code> |
-     * <code>cancelled</code> | <code>closed</code>).</p> </li> <li>
-     * <p><code>status-message</code> - The reason for the status.</p> </li> </ul>
+     * <code>cancelled</code> | <code>closed</code>).</p> </li> <li> <p>
+     * <code>status-message</code> - The reason for the status.</p> </li> </ul>
      */
     inline DescribeReservedInstancesListingsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p><code>reserved-instances-id</code> -
-     * The ID of the Reserved Instances.</p> </li> <li>
-     * <p><code>reserved-instances-listing-id</code> - The ID of the Reserved Instances
-     * listing.</p> </li> <li> <p><code>status</code> - The status of the Reserved
+     * <p>One or more filters.</p> <ul> <li> <p> <code>reserved-instances-id</code> -
+     * The ID of the Reserved Instances.</p> </li> <li> <p>
+     * <code>reserved-instances-listing-id</code> - The ID of the Reserved Instances
+     * listing.</p> </li> <li> <p> <code>status</code> - The status of the Reserved
      * Instance listing (<code>pending</code> | <code>active</code> |
-     * <code>cancelled</code> | <code>closed</code>).</p> </li> <li>
-     * <p><code>status-message</code> - The reason for the status.</p> </li> </ul>
+     * <code>cancelled</code> | <code>closed</code>).</p> </li> <li> <p>
+     * <code>status-message</code> - The reason for the status.</p> </li> </ul>
      */
     inline DescribeReservedInstancesListingsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 

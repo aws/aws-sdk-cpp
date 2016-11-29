@@ -194,7 +194,7 @@ Aws::String RunInstancesRequest::SerializePayload() const
     ss << "EbsOptimized=" << m_ebsOptimized << "&";
   }
 
-  ss << "Version=2015-10-01";
+  ss << "Version=2016-09-15";
   return ss.str();
 }
 

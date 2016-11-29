@@ -66,7 +66,7 @@ Aws::String DescribeSpotFleetRequestHistoryRequest::SerializePayload() const
     ss << "MaxResults=" << m_maxResults << "&";
   }
 
-  ss << "Version=2015-10-01";
+  ss << "Version=2016-09-15";
   return ss.str();
 }
 

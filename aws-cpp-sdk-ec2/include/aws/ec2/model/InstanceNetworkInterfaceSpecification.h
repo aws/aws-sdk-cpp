@@ -188,43 +188,50 @@ namespace Model
 
     /**
      * <p>The private IP address of the network interface. Applies only if creating a
-     * network interface when launching an instance.</p>
+     * network interface when launching an instance. You cannot specify this option if
+     * you're launching more than one instance in a <a>RunInstances</a> request.</p>
      */
     inline const Aws::String& GetPrivateIpAddress() const{ return m_privateIpAddress; }
 
     /**
      * <p>The private IP address of the network interface. Applies only if creating a
-     * network interface when launching an instance.</p>
+     * network interface when launching an instance. You cannot specify this option if
+     * you're launching more than one instance in a <a>RunInstances</a> request.</p>
      */
     inline void SetPrivateIpAddress(const Aws::String& value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress = value; }
 
     /**
      * <p>The private IP address of the network interface. Applies only if creating a
-     * network interface when launching an instance.</p>
+     * network interface when launching an instance. You cannot specify this option if
+     * you're launching more than one instance in a <a>RunInstances</a> request.</p>
      */
     inline void SetPrivateIpAddress(Aws::String&& value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress = value; }
 
     /**
      * <p>The private IP address of the network interface. Applies only if creating a
-     * network interface when launching an instance.</p>
+     * network interface when launching an instance. You cannot specify this option if
+     * you're launching more than one instance in a <a>RunInstances</a> request.</p>
      */
     inline void SetPrivateIpAddress(const char* value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress.assign(value); }
 
     /**
      * <p>The private IP address of the network interface. Applies only if creating a
-     * network interface when launching an instance.</p>
+     * network interface when launching an instance. You cannot specify this option if
+     * you're launching more than one instance in a <a>RunInstances</a> request.</p>
      */
     inline InstanceNetworkInterfaceSpecification& WithPrivateIpAddress(const Aws::String& value) { SetPrivateIpAddress(value); return *this;}
 
     /**
      * <p>The private IP address of the network interface. Applies only if creating a
-     * network interface when launching an instance.</p>
+     * network interface when launching an instance. You cannot specify this option if
+     * you're launching more than one instance in a <a>RunInstances</a> request.</p>
      */
     inline InstanceNetworkInterfaceSpecification& WithPrivateIpAddress(Aws::String&& value) { SetPrivateIpAddress(value); return *this;}
 
     /**
      * <p>The private IP address of the network interface. Applies only if creating a
-     * network interface when launching an instance.</p>
+     * network interface when launching an instance. You cannot specify this option if
+     * you're launching more than one instance in a <a>RunInstances</a> request.</p>
      */
     inline InstanceNetworkInterfaceSpecification& WithPrivateIpAddress(const char* value) { SetPrivateIpAddress(value); return *this;}
 
@@ -299,64 +306,74 @@ namespace Model
 
     /**
      * <p>One or more private IP addresses to assign to the network interface. Only one
-     * private IP address can be designated as primary.</p>
+     * private IP address can be designated as primary. You cannot specify this option
+     * if you're launching more than one instance in a <a>RunInstances</a> request.</p>
      */
     inline const Aws::Vector<PrivateIpAddressSpecification>& GetPrivateIpAddresses() const{ return m_privateIpAddresses; }
 
     /**
      * <p>One or more private IP addresses to assign to the network interface. Only one
-     * private IP address can be designated as primary.</p>
+     * private IP address can be designated as primary. You cannot specify this option
+     * if you're launching more than one instance in a <a>RunInstances</a> request.</p>
      */
     inline void SetPrivateIpAddresses(const Aws::Vector<PrivateIpAddressSpecification>& value) { m_privateIpAddressesHasBeenSet = true; m_privateIpAddresses = value; }
 
     /**
      * <p>One or more private IP addresses to assign to the network interface. Only one
-     * private IP address can be designated as primary.</p>
+     * private IP address can be designated as primary. You cannot specify this option
+     * if you're launching more than one instance in a <a>RunInstances</a> request.</p>
      */
     inline void SetPrivateIpAddresses(Aws::Vector<PrivateIpAddressSpecification>&& value) { m_privateIpAddressesHasBeenSet = true; m_privateIpAddresses = value; }
 
     /**
      * <p>One or more private IP addresses to assign to the network interface. Only one
-     * private IP address can be designated as primary.</p>
+     * private IP address can be designated as primary. You cannot specify this option
+     * if you're launching more than one instance in a <a>RunInstances</a> request.</p>
      */
     inline InstanceNetworkInterfaceSpecification& WithPrivateIpAddresses(const Aws::Vector<PrivateIpAddressSpecification>& value) { SetPrivateIpAddresses(value); return *this;}
 
     /**
      * <p>One or more private IP addresses to assign to the network interface. Only one
-     * private IP address can be designated as primary.</p>
+     * private IP address can be designated as primary. You cannot specify this option
+     * if you're launching more than one instance in a <a>RunInstances</a> request.</p>
      */
     inline InstanceNetworkInterfaceSpecification& WithPrivateIpAddresses(Aws::Vector<PrivateIpAddressSpecification>&& value) { SetPrivateIpAddresses(value); return *this;}
 
     /**
      * <p>One or more private IP addresses to assign to the network interface. Only one
-     * private IP address can be designated as primary.</p>
+     * private IP address can be designated as primary. You cannot specify this option
+     * if you're launching more than one instance in a <a>RunInstances</a> request.</p>
      */
     inline InstanceNetworkInterfaceSpecification& AddPrivateIpAddresses(const PrivateIpAddressSpecification& value) { m_privateIpAddressesHasBeenSet = true; m_privateIpAddresses.push_back(value); return *this; }
 
     /**
      * <p>One or more private IP addresses to assign to the network interface. Only one
-     * private IP address can be designated as primary.</p>
+     * private IP address can be designated as primary. You cannot specify this option
+     * if you're launching more than one instance in a <a>RunInstances</a> request.</p>
      */
     inline InstanceNetworkInterfaceSpecification& AddPrivateIpAddresses(PrivateIpAddressSpecification&& value) { m_privateIpAddressesHasBeenSet = true; m_privateIpAddresses.push_back(value); return *this; }
 
     /**
      * <p>The number of secondary private IP addresses. You can't specify this option
      * and specify more than one private IP address using the private IP addresses
-     * option.</p>
+     * option. You cannot specify this option if you're launching more than one
+     * instance in a <a>RunInstances</a> request.</p>
      */
     inline int GetSecondaryPrivateIpAddressCount() const{ return m_secondaryPrivateIpAddressCount; }
 
     /**
      * <p>The number of secondary private IP addresses. You can't specify this option
      * and specify more than one private IP address using the private IP addresses
-     * option.</p>
+     * option. You cannot specify this option if you're launching more than one
+     * instance in a <a>RunInstances</a> request.</p>
      */
     inline void SetSecondaryPrivateIpAddressCount(int value) { m_secondaryPrivateIpAddressCountHasBeenSet = true; m_secondaryPrivateIpAddressCount = value; }
 
     /**
      * <p>The number of secondary private IP addresses. You can't specify this option
      * and specify more than one private IP address using the private IP addresses
-     * option.</p>
+     * option. You cannot specify this option if you're launching more than one
+     * instance in a <a>RunInstances</a> request.</p>
      */
     inline InstanceNetworkInterfaceSpecification& WithSecondaryPrivateIpAddressCount(int value) { SetSecondaryPrivateIpAddressCount(value); return *this;}
 

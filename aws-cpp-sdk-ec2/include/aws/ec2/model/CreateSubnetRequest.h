@@ -137,49 +137,49 @@ namespace Model
     /**
      * <p>The Availability Zone for the subnet.</p> <p>Default: AWS selects one for
      * you. If you create more than one subnet in your VPC, we may not necessarily
-     * select a different zone for each subnet. </p>
+     * select a different zone for each subnet.</p>
      */
     inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
 
     /**
      * <p>The Availability Zone for the subnet.</p> <p>Default: AWS selects one for
      * you. If you create more than one subnet in your VPC, we may not necessarily
-     * select a different zone for each subnet. </p>
+     * select a different zone for each subnet.</p>
      */
     inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
 
     /**
      * <p>The Availability Zone for the subnet.</p> <p>Default: AWS selects one for
      * you. If you create more than one subnet in your VPC, we may not necessarily
-     * select a different zone for each subnet. </p>
+     * select a different zone for each subnet.</p>
      */
     inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
 
     /**
      * <p>The Availability Zone for the subnet.</p> <p>Default: AWS selects one for
      * you. If you create more than one subnet in your VPC, we may not necessarily
-     * select a different zone for each subnet. </p>
+     * select a different zone for each subnet.</p>
      */
     inline void SetAvailabilityZone(const char* value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone.assign(value); }
 
     /**
      * <p>The Availability Zone for the subnet.</p> <p>Default: AWS selects one for
      * you. If you create more than one subnet in your VPC, we may not necessarily
-     * select a different zone for each subnet. </p>
+     * select a different zone for each subnet.</p>
      */
     inline CreateSubnetRequest& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
 
     /**
      * <p>The Availability Zone for the subnet.</p> <p>Default: AWS selects one for
      * you. If you create more than one subnet in your VPC, we may not necessarily
-     * select a different zone for each subnet. </p>
+     * select a different zone for each subnet.</p>
      */
     inline CreateSubnetRequest& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(value); return *this;}
 
     /**
      * <p>The Availability Zone for the subnet.</p> <p>Default: AWS selects one for
      * you. If you create more than one subnet in your VPC, we may not necessarily
-     * select a different zone for each subnet. </p>
+     * select a different zone for each subnet.</p>
      */
     inline CreateSubnetRequest& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
 

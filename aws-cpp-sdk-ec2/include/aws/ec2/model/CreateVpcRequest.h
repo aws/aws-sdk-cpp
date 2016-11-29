@@ -106,10 +106,10 @@ namespace Model
      * can launch instances with any tenancy into a shared tenancy VPC. For
      * <code>dedicated</code>, instances are launched as dedicated tenancy instances by
      * default. You can only launch instances with a tenancy of <code>dedicated</code>
-     * or <code>host</code> into a dedicated tenancy VPC. </p> <p><b>Important:</b> The
-     * <code>host</code> value cannot be used with this parameter. Use the
+     * or <code>host</code> into a dedicated tenancy VPC. </p> <p> <b>Important:</b>
+     * The <code>host</code> value cannot be used with this parameter. Use the
      * <code>default</code> or <code>dedicated</code> values only.</p> <p>Default:
-     * <code>default</code></p>
+     * <code>default</code> </p>
      */
     inline const Tenancy& GetInstanceTenancy() const{ return m_instanceTenancy; }
 
@@ -119,10 +119,10 @@ namespace Model
      * can launch instances with any tenancy into a shared tenancy VPC. For
      * <code>dedicated</code>, instances are launched as dedicated tenancy instances by
      * default. You can only launch instances with a tenancy of <code>dedicated</code>
-     * or <code>host</code> into a dedicated tenancy VPC. </p> <p><b>Important:</b> The
-     * <code>host</code> value cannot be used with this parameter. Use the
+     * or <code>host</code> into a dedicated tenancy VPC. </p> <p> <b>Important:</b>
+     * The <code>host</code> value cannot be used with this parameter. Use the
      * <code>default</code> or <code>dedicated</code> values only.</p> <p>Default:
-     * <code>default</code></p>
+     * <code>default</code> </p>
      */
     inline void SetInstanceTenancy(const Tenancy& value) { m_instanceTenancyHasBeenSet = true; m_instanceTenancy = value; }
 
@@ -132,10 +132,10 @@ namespace Model
      * can launch instances with any tenancy into a shared tenancy VPC. For
      * <code>dedicated</code>, instances are launched as dedicated tenancy instances by
      * default. You can only launch instances with a tenancy of <code>dedicated</code>
-     * or <code>host</code> into a dedicated tenancy VPC. </p> <p><b>Important:</b> The
-     * <code>host</code> value cannot be used with this parameter. Use the
+     * or <code>host</code> into a dedicated tenancy VPC. </p> <p> <b>Important:</b>
+     * The <code>host</code> value cannot be used with this parameter. Use the
      * <code>default</code> or <code>dedicated</code> values only.</p> <p>Default:
-     * <code>default</code></p>
+     * <code>default</code> </p>
      */
     inline void SetInstanceTenancy(Tenancy&& value) { m_instanceTenancyHasBeenSet = true; m_instanceTenancy = value; }
 
@@ -145,10 +145,10 @@ namespace Model
      * can launch instances with any tenancy into a shared tenancy VPC. For
      * <code>dedicated</code>, instances are launched as dedicated tenancy instances by
      * default. You can only launch instances with a tenancy of <code>dedicated</code>
-     * or <code>host</code> into a dedicated tenancy VPC. </p> <p><b>Important:</b> The
-     * <code>host</code> value cannot be used with this parameter. Use the
+     * or <code>host</code> into a dedicated tenancy VPC. </p> <p> <b>Important:</b>
+     * The <code>host</code> value cannot be used with this parameter. Use the
      * <code>default</code> or <code>dedicated</code> values only.</p> <p>Default:
-     * <code>default</code></p>
+     * <code>default</code> </p>
      */
     inline CreateVpcRequest& WithInstanceTenancy(const Tenancy& value) { SetInstanceTenancy(value); return *this;}
 
@@ -158,10 +158,10 @@ namespace Model
      * can launch instances with any tenancy into a shared tenancy VPC. For
      * <code>dedicated</code>, instances are launched as dedicated tenancy instances by
      * default. You can only launch instances with a tenancy of <code>dedicated</code>
-     * or <code>host</code> into a dedicated tenancy VPC. </p> <p><b>Important:</b> The
-     * <code>host</code> value cannot be used with this parameter. Use the
+     * or <code>host</code> into a dedicated tenancy VPC. </p> <p> <b>Important:</b>
+     * The <code>host</code> value cannot be used with this parameter. Use the
      * <code>default</code> or <code>dedicated</code> values only.</p> <p>Default:
-     * <code>default</code></p>
+     * <code>default</code> </p>
      */
     inline CreateVpcRequest& WithInstanceTenancy(Tenancy&& value) { SetInstanceTenancy(value); return *this;}
 
