@@ -17,7 +17,6 @@
 #include <aws/core/utils/crypto/Factories.h>
 #include <aws/core/utils/crypto/Hash.h>
 #include <aws/core/utils/crypto/HMAC.h>
-#include <atomic>
 
 #if ENABLE_BCRYPT_ENCRYPTION
     #include <aws/core/utils/crypto/bcrypt/CryptoImpl.h>
@@ -638,13 +637,15 @@ void Aws::Utils::Crypto::InitCrypto()
 
     if(s_SecureRandomFactory)
     {
-        s_SecureRandomFactory->InitStaticState();
+        s_SecureRandomFactory->InitStaticState();       
     }
     else
     {
         s_SecureRandomFactory = Aws::MakeShared<DefaultSecureRandFactory>(s_allocationTag);
         s_SecureRandomFactory->InitStaticState();
-    }   
+    }  
+    
+    s_SecureRandom = s_SecureRandomFactory->CreateImplementation();
 }
 
 void Aws::Utils::Crypto::CleanupCrypto()
@@ -845,10 +846,5 @@ std::shared_ptr<SymmetricCipher> Aws::Utils::Crypto::CreateAES_KeyWrapImplementa
 
 std::shared_ptr<SecureRandomBytes> Aws::Utils::Crypto::CreateSecureRandomBytesImplementation()
 {
-    if (!std::atomic_load(&s_SecureRandom))
-    {        
-        std::atomic_store(&s_SecureRandom, s_SecureRandomFactory->CreateImplementation());    
-    }
-
     return s_SecureRandom;
 }
