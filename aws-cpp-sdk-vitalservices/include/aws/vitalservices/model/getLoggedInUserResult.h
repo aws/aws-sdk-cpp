@@ -40,6 +40,111 @@ namespace Model
     getLoggedInUserResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     
+    inline const Aws::String& GetEmail() const{ return m_email; }
+
+    
+    inline void SetEmail(const Aws::String& value) { m_email = value; }
+
+    
+    inline void SetEmail(Aws::String&& value) { m_email = value; }
+
+    
+    inline void SetEmail(const char* value) { m_email.assign(value); }
+
+    
+    inline getLoggedInUserResult& WithEmail(const Aws::String& value) { SetEmail(value); return *this;}
+
+    
+    inline getLoggedInUserResult& WithEmail(Aws::String&& value) { SetEmail(value); return *this;}
+
+    
+    inline getLoggedInUserResult& WithEmail(const char* value) { SetEmail(value); return *this;}
+
+    
+    inline const Aws::String& GetFirstName() const{ return m_firstName; }
+
+    
+    inline void SetFirstName(const Aws::String& value) { m_firstName = value; }
+
+    
+    inline void SetFirstName(Aws::String&& value) { m_firstName = value; }
+
+    
+    inline void SetFirstName(const char* value) { m_firstName.assign(value); }
+
+    
+    inline getLoggedInUserResult& WithFirstName(const Aws::String& value) { SetFirstName(value); return *this;}
+
+    
+    inline getLoggedInUserResult& WithFirstName(Aws::String&& value) { SetFirstName(value); return *this;}
+
+    
+    inline getLoggedInUserResult& WithFirstName(const char* value) { SetFirstName(value); return *this;}
+
+    
+    inline const Aws::String& GetMobileNumber() const{ return m_mobileNumber; }
+
+    
+    inline void SetMobileNumber(const Aws::String& value) { m_mobileNumber = value; }
+
+    
+    inline void SetMobileNumber(Aws::String&& value) { m_mobileNumber = value; }
+
+    
+    inline void SetMobileNumber(const char* value) { m_mobileNumber.assign(value); }
+
+    
+    inline getLoggedInUserResult& WithMobileNumber(const Aws::String& value) { SetMobileNumber(value); return *this;}
+
+    
+    inline getLoggedInUserResult& WithMobileNumber(Aws::String&& value) { SetMobileNumber(value); return *this;}
+
+    
+    inline getLoggedInUserResult& WithMobileNumber(const char* value) { SetMobileNumber(value); return *this;}
+
+    
+    inline const Aws::String& GetProfilePhotoUrl() const{ return m_profilePhotoUrl; }
+
+    
+    inline void SetProfilePhotoUrl(const Aws::String& value) { m_profilePhotoUrl = value; }
+
+    
+    inline void SetProfilePhotoUrl(Aws::String&& value) { m_profilePhotoUrl = value; }
+
+    
+    inline void SetProfilePhotoUrl(const char* value) { m_profilePhotoUrl.assign(value); }
+
+    
+    inline getLoggedInUserResult& WithProfilePhotoUrl(const Aws::String& value) { SetProfilePhotoUrl(value); return *this;}
+
+    
+    inline getLoggedInUserResult& WithProfilePhotoUrl(Aws::String&& value) { SetProfilePhotoUrl(value); return *this;}
+
+    
+    inline getLoggedInUserResult& WithProfilePhotoUrl(const char* value) { SetProfilePhotoUrl(value); return *this;}
+
+    
+    inline const Aws::String& GetId() const{ return m_id; }
+
+    
+    inline void SetId(const Aws::String& value) { m_id = value; }
+
+    
+    inline void SetId(Aws::String&& value) { m_id = value; }
+
+    
+    inline void SetId(const char* value) { m_id.assign(value); }
+
+    
+    inline getLoggedInUserResult& WithId(const Aws::String& value) { SetId(value); return *this;}
+
+    
+    inline getLoggedInUserResult& WithId(Aws::String&& value) { SetId(value); return *this;}
+
+    
+    inline getLoggedInUserResult& WithId(const char* value) { SetId(value); return *this;}
+
+    
     inline const Aws::String& GetLastName() const{ return m_lastName; }
 
     
@@ -81,119 +186,14 @@ namespace Model
     
     inline getLoggedInUserResult& WithDoctorId(const char* value) { SetDoctorId(value); return *this;}
 
-    
-    inline const Aws::String& GetEmail() const{ return m_email; }
-
-    
-    inline void SetEmail(const Aws::String& value) { m_email = value; }
-
-    
-    inline void SetEmail(Aws::String&& value) { m_email = value; }
-
-    
-    inline void SetEmail(const char* value) { m_email.assign(value); }
-
-    
-    inline getLoggedInUserResult& WithEmail(const Aws::String& value) { SetEmail(value); return *this;}
-
-    
-    inline getLoggedInUserResult& WithEmail(Aws::String&& value) { SetEmail(value); return *this;}
-
-    
-    inline getLoggedInUserResult& WithEmail(const char* value) { SetEmail(value); return *this;}
-
-    
-    inline const Aws::String& GetId() const{ return m_id; }
-
-    
-    inline void SetId(const Aws::String& value) { m_id = value; }
-
-    
-    inline void SetId(Aws::String&& value) { m_id = value; }
-
-    
-    inline void SetId(const char* value) { m_id.assign(value); }
-
-    
-    inline getLoggedInUserResult& WithId(const Aws::String& value) { SetId(value); return *this;}
-
-    
-    inline getLoggedInUserResult& WithId(Aws::String&& value) { SetId(value); return *this;}
-
-    
-    inline getLoggedInUserResult& WithId(const char* value) { SetId(value); return *this;}
-
-    
-    inline const Aws::String& GetProfilePhotoUrl() const{ return m_profilePhotoUrl; }
-
-    
-    inline void SetProfilePhotoUrl(const Aws::String& value) { m_profilePhotoUrl = value; }
-
-    
-    inline void SetProfilePhotoUrl(Aws::String&& value) { m_profilePhotoUrl = value; }
-
-    
-    inline void SetProfilePhotoUrl(const char* value) { m_profilePhotoUrl.assign(value); }
-
-    
-    inline getLoggedInUserResult& WithProfilePhotoUrl(const Aws::String& value) { SetProfilePhotoUrl(value); return *this;}
-
-    
-    inline getLoggedInUserResult& WithProfilePhotoUrl(Aws::String&& value) { SetProfilePhotoUrl(value); return *this;}
-
-    
-    inline getLoggedInUserResult& WithProfilePhotoUrl(const char* value) { SetProfilePhotoUrl(value); return *this;}
-
-    
-    inline const Aws::String& GetMobileNumber() const{ return m_mobileNumber; }
-
-    
-    inline void SetMobileNumber(const Aws::String& value) { m_mobileNumber = value; }
-
-    
-    inline void SetMobileNumber(Aws::String&& value) { m_mobileNumber = value; }
-
-    
-    inline void SetMobileNumber(const char* value) { m_mobileNumber.assign(value); }
-
-    
-    inline getLoggedInUserResult& WithMobileNumber(const Aws::String& value) { SetMobileNumber(value); return *this;}
-
-    
-    inline getLoggedInUserResult& WithMobileNumber(Aws::String&& value) { SetMobileNumber(value); return *this;}
-
-    
-    inline getLoggedInUserResult& WithMobileNumber(const char* value) { SetMobileNumber(value); return *this;}
-
-    
-    inline const Aws::String& GetFirstName() const{ return m_firstName; }
-
-    
-    inline void SetFirstName(const Aws::String& value) { m_firstName = value; }
-
-    
-    inline void SetFirstName(Aws::String&& value) { m_firstName = value; }
-
-    
-    inline void SetFirstName(const char* value) { m_firstName.assign(value); }
-
-    
-    inline getLoggedInUserResult& WithFirstName(const Aws::String& value) { SetFirstName(value); return *this;}
-
-    
-    inline getLoggedInUserResult& WithFirstName(Aws::String&& value) { SetFirstName(value); return *this;}
-
-    
-    inline getLoggedInUserResult& WithFirstName(const char* value) { SetFirstName(value); return *this;}
-
   private:
+    Aws::String m_email;
+    Aws::String m_firstName;
+    Aws::String m_mobileNumber;
+    Aws::String m_profilePhotoUrl;
+    Aws::String m_id;
     Aws::String m_lastName;
     Aws::String m_doctorId;
-    Aws::String m_email;
-    Aws::String m_id;
-    Aws::String m_profilePhotoUrl;
-    Aws::String m_mobileNumber;
-    Aws::String m_firstName;
   };
 
 } // namespace Model
