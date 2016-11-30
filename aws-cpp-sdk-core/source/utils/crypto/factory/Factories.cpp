@@ -17,6 +17,7 @@
 #include <aws/core/utils/crypto/Factories.h>
 #include <aws/core/utils/crypto/Hash.h>
 #include <aws/core/utils/crypto/HMAC.h>
+#include <atomic>
 
 #if ENABLE_BCRYPT_ENCRYPTION
     #include <aws/core/utils/crypto/bcrypt/CryptoImpl.h>
@@ -49,6 +50,7 @@ static std::shared_ptr<SymmetricCipherFactory> s_AES_GCMFactory(nullptr);
 static std::shared_ptr<SymmetricCipherFactory> s_AES_KeyWrapFactory(nullptr);
 
 static std::shared_ptr<SecureRandomFactory> s_SecureRandomFactory(nullptr);
+static std::shared_ptr<SecureRandomBytes> s_SecureRandom(nullptr);
 
 static bool s_InitCleanupOpenSSLFlag(false);
 
@@ -691,6 +693,7 @@ void Aws::Utils::Crypto::CleanupCrypto()
 
     if(s_SecureRandomFactory)
     {
+        s_SecureRandom = nullptr;
         s_SecureRandomFactory->CleanupStaticState();
         s_SecureRandomFactory = nullptr;
     }   
@@ -842,5 +845,10 @@ std::shared_ptr<SymmetricCipher> Aws::Utils::Crypto::CreateAES_KeyWrapImplementa
 
 std::shared_ptr<SecureRandomBytes> Aws::Utils::Crypto::CreateSecureRandomBytesImplementation()
 {
-    return s_SecureRandomFactory->CreateImplementation();
+    if (!std::atomic_load(&s_SecureRandom))
+    {        
+        std::atomic_store(&s_SecureRandom, s_SecureRandomFactory->CreateImplementation());    
+    }
+
+    return s_SecureRandom;
 }
