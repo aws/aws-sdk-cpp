@@ -152,7 +152,6 @@ nuget {
         Libraries += wininet.lib;
         Libraries += bcrypt.lib;
         Libraries += userenv.lib;
-        Libraries += Rpcrt4.lib;
         Libraries += Version.lib;
     }
 }    
