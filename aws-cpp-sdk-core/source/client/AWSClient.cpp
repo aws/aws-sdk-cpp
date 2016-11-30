@@ -592,6 +592,14 @@ AWSError<CoreErrors> AWSXMLClient::BuildAWSError(const std::shared_ptr<Http::Htt
             {
                 errorNode = doc.GetRootElement().FirstChild("Error");
             }
+            if (errorNode.IsNull())
+            {
+                errorNode = doc.GetRootElement().FirstChild("Errors");
+                if(!errorNode.IsNull())
+                {
+                    errorNode = errorNode.FirstChild("Error");
+                }
+            }
 
             if (!errorNode.IsNull())
             {
