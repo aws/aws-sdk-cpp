@@ -54,12 +54,12 @@ protected:
         Nonexistent
     };
 
-    std::shared_ptr<Aws::EC2::EC2Client> m_EC2Client;
+    static std::shared_ptr<Aws::EC2::EC2Client> m_EC2Client;
 
-    Aws::String m_vpcId;
+    static Aws::String m_vpcId;
 
 
-    virtual void SetUp()
+    static void SetUpTestCase()
     {
         ClientConfiguration config;
         config.scheme = Scheme::HTTPS;
@@ -68,7 +68,7 @@ protected:
         m_EC2Client = Aws::MakeShared<Aws::EC2::EC2Client>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG), config);
         
         Aws::EC2::Model::CreateVpcRequest createVpcRequest;
-        createVpcRequest.SetCidrBlock("0.0.0.0/0");
+        createVpcRequest.SetCidrBlock("10.0.0.0/16");
         createVpcRequest.SetInstanceTenancy(Aws::EC2::Model::Tenancy::default_);
 
         auto createOutcome = m_EC2Client->CreateVpc(createVpcRequest);
@@ -80,7 +80,7 @@ protected:
         DeleteSecurityGroup(SECURITY_GROUP_NAME);
     }
 
-    virtual void TearDown()
+    static void TearDownTestCase()
     {
         DeleteSecurityGroup(SECURITY_GROUP_NAME);
         DeleteVpc(m_vpcId);
@@ -88,7 +88,7 @@ protected:
         m_EC2Client = nullptr;
     }
 
-    void DeleteSecurityGroup(const Aws::String& groupName)
+    static void DeleteSecurityGroup(const Aws::String& groupName)
     {
         Aws::EC2::Model::DeleteSecurityGroupRequest deleteRequest;
         deleteRequest.SetGroupName(groupName);
@@ -97,7 +97,7 @@ protected:
         WaitOnSecurityGroupState(groupName, ObjectState::Nonexistent);
     }
 
-    void WaitOnSecurityGroupState(const Aws::String& groupName, ObjectState objectState)
+    static void WaitOnSecurityGroupState(const Aws::String& groupName, ObjectState objectState)
     {
         Aws::EC2::Model::DescribeSecurityGroupsRequest describeRequest;
         describeRequest.AddGroupNames(groupName);
@@ -124,7 +124,7 @@ protected:
         }
     }
 
-    void DeleteVpc(const Aws::String vpcId)
+    static void DeleteVpc(const Aws::String vpcId)
     {
         Aws::EC2::Model::DeleteVpcRequest deleteVpcRequest;
         deleteVpcRequest.SetVpcId(vpcId);
@@ -135,7 +135,7 @@ protected:
         WaitOnVpcState(vpcId, ObjectState::Nonexistent);
     }
 
-    void WaitOnVpcState(const Aws::String& vpcId, ObjectState objectState)
+    static void WaitOnVpcState(const Aws::String& vpcId, ObjectState objectState)
     {
         Aws::EC2::Model::DescribeVpcsRequest describeRequest;
         describeRequest.AddVpcIds(vpcId);
@@ -161,8 +161,11 @@ protected:
             }
         }
     }
-
 };
+
+std::shared_ptr<Aws::EC2::EC2Client> EC2OperationTest::m_EC2Client(nullptr);
+Aws::String EC2OperationTest::m_vpcId;
+
 } // anonymous namespace
 
 TEST_F(EC2OperationTest, DescribeSpotFleet)
@@ -181,6 +184,9 @@ TEST_F(EC2OperationTest, CreateSecurityGroup)
 
     auto createOutcome = m_EC2Client->CreateSecurityGroup(createRequest);
     ASSERT_TRUE(createOutcome.IsSuccess());
+
+    WaitOnSecurityGroupState(SECURITY_GROUP_NAME, ObjectState::Ready);
+    DeleteSecurityGroup(SECURITY_GROUP_NAME);
 }
 
 
