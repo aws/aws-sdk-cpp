@@ -36,7 +36,7 @@ using namespace Aws::VitalServices::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "h6wguq9ghl.execute-api.us-east-1.amazonaws.com/prod";
+static const char* SERVICE_NAME = "execute-api";
 static const char* ALLOCATION_TAG = "VitalServicesClient";
 
 
@@ -95,7 +95,7 @@ void VitalServicesClient::init(const ClientConfiguration& config)
 getLoggedInUserOutcome VitalServicesClient::getLoggedInUser(const getLoggedInUserRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/get-logged-in-user";
+  ss << m_uri << "/prod/get-logged-in-user";
 
   JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())

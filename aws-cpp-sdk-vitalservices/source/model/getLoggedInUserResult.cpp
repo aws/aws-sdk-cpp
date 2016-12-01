@@ -36,27 +36,9 @@ getLoggedInUserResult::getLoggedInUserResult(const AmazonWebServiceResult<JsonVa
 getLoggedInUserResult& getLoggedInUserResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
-  if(jsonValue.ValueExists("email"))
-  {
-    m_email = jsonValue.GetString("email");
-
-  }
-
   if(jsonValue.ValueExists("firstName"))
   {
     m_firstName = jsonValue.GetString("firstName");
-
-  }
-
-  if(jsonValue.ValueExists("mobileNumber"))
-  {
-    m_mobileNumber = jsonValue.GetString("mobileNumber");
-
-  }
-
-  if(jsonValue.ValueExists("profilePhotoUrl"))
-  {
-    m_profilePhotoUrl = jsonValue.GetString("profilePhotoUrl");
 
   }
 
@@ -66,15 +48,33 @@ getLoggedInUserResult& getLoggedInUserResult::operator =(const AmazonWebServiceR
 
   }
 
+  if(jsonValue.ValueExists("profilePhotoUrl"))
+  {
+    m_profilePhotoUrl = jsonValue.GetString("profilePhotoUrl");
+
+  }
+
   if(jsonValue.ValueExists("lastName"))
   {
     m_lastName = jsonValue.GetString("lastName");
 
   }
 
+  if(jsonValue.ValueExists("mobileNumber"))
+  {
+    m_mobileNumber = jsonValue.GetString("mobileNumber");
+
+  }
+
   if(jsonValue.ValueExists("doctorId"))
   {
     m_doctorId = jsonValue.GetString("doctorId");
+
+  }
+
+  if(jsonValue.ValueExists("email"))
+  {
+    m_email = jsonValue.GetString("email");
 
   }
 
