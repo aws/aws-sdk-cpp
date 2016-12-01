@@ -104,24 +104,29 @@ namespace Model
         virtual ~VitalServicesClient();
 
         /**
-         * 
+         *
          */
         virtual Model::getLoggedInUserOutcome getLoggedInUser(const Model::getLoggedInUserRequest& request) const;
 
         /**
-         * 
+         *
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::getLoggedInUserOutcomeCallable getLoggedInUserCallable(const Model::getLoggedInUserRequest& request) const;
 
         /**
-         * 
+         *
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void getLoggedInUserAsync(const Model::getLoggedInUserRequest& request, const getLoggedInUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
+        virtual void BuildHttpRequest(const Aws::AmazonWebServiceRequest& request, const std::shared_ptr<Http::HttpRequest>& httpRequest) const override
+        {
+            BASECLASS::BuildHttpRequest(request, httpRequest);
+            httpRequest->SetContentType("application/json");
+        }
 
     private:
       void init(const Client::ClientConfiguration& clientConfiguration);
