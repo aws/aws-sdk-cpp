@@ -85,7 +85,9 @@ namespace Model
     d2_xlarge,
     d2_2xlarge,
     d2_4xlarge,
-    d2_8xlarge
+    d2_8xlarge,
+    f1_2xlarge,
+    f1_16xlarge
   };
 
 namespace InstanceTypeMapper

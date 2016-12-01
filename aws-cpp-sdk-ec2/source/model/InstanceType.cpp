@@ -90,6 +90,8 @@ namespace Aws
         static const int d2_2xlarge_HASH = HashingUtils::HashString("d2.2xlarge");
         static const int d2_4xlarge_HASH = HashingUtils::HashString("d2.4xlarge");
         static const int d2_8xlarge_HASH = HashingUtils::HashString("d2.8xlarge");
+        static const int f1_2xlarge_HASH = HashingUtils::HashString("f1.2xlarge");
+        static const int f1_16xlarge_HASH = HashingUtils::HashString("f1.16xlarge");
 
 
         InstanceType GetInstanceTypeForName(const Aws::String& name)
@@ -339,6 +341,14 @@ namespace Aws
           {
             return InstanceType::d2_8xlarge;
           }
+          else if (hashCode == f1_2xlarge_HASH)
+          {
+            return InstanceType::f1_2xlarge;
+          }
+          else if (hashCode == f1_16xlarge_HASH)
+          {
+            return InstanceType::f1_16xlarge;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -475,6 +485,10 @@ namespace Aws
             return "d2.4xlarge";
           case InstanceType::d2_8xlarge:
             return "d2.8xlarge";
+          case InstanceType::f1_2xlarge:
+            return "f1.2xlarge";
+          case InstanceType::f1_16xlarge:
+            return "f1.16xlarge";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

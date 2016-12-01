@@ -40,7 +40,7 @@ Aws::String RestoreAddressToClassicRequest::SerializePayload() const
     ss << "PublicIp=" << StringUtils::URLEncode(m_publicIp.c_str()) << "&";
   }
 
-  ss << "Version=2016-09-15";
+  ss << "Version=2016-11-15";
   return ss.str();
 }
 

@@ -53,7 +53,7 @@ Aws::String ModifyInstancePlacementRequest::SerializePayload() const
     ss << "HostId=" << StringUtils::URLEncode(m_hostId.c_str()) << "&";
   }
 
-  ss << "Version=2016-09-15";
+  ss << "Version=2016-11-15";
   return ss.str();
 }
 

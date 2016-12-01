@@ -26,10 +26,12 @@
 #include <aws/directconnect/model/ConfirmConnectionResult.h>
 #include <aws/directconnect/model/ConfirmPrivateVirtualInterfaceResult.h>
 #include <aws/directconnect/model/ConfirmPublicVirtualInterfaceResult.h>
+#include <aws/directconnect/model/CreateBGPPeerResult.h>
 #include <aws/directconnect/model/CreateConnectionResult.h>
 #include <aws/directconnect/model/CreateInterconnectResult.h>
 #include <aws/directconnect/model/CreatePrivateVirtualInterfaceResult.h>
 #include <aws/directconnect/model/CreatePublicVirtualInterfaceResult.h>
+#include <aws/directconnect/model/DeleteBGPPeerResult.h>
 #include <aws/directconnect/model/DeleteConnectionResult.h>
 #include <aws/directconnect/model/DeleteInterconnectResult.h>
 #include <aws/directconnect/model/DeleteVirtualInterfaceResult.h>
@@ -95,10 +97,12 @@ namespace Model
         class ConfirmConnectionRequest;
         class ConfirmPrivateVirtualInterfaceRequest;
         class ConfirmPublicVirtualInterfaceRequest;
+        class CreateBGPPeerRequest;
         class CreateConnectionRequest;
         class CreateInterconnectRequest;
         class CreatePrivateVirtualInterfaceRequest;
         class CreatePublicVirtualInterfaceRequest;
+        class DeleteBGPPeerRequest;
         class DeleteConnectionRequest;
         class DeleteInterconnectRequest;
         class DeleteVirtualInterfaceRequest;
@@ -118,10 +122,12 @@ namespace Model
         typedef Aws::Utils::Outcome<ConfirmConnectionResult, Aws::Client::AWSError<DirectConnectErrors>> ConfirmConnectionOutcome;
         typedef Aws::Utils::Outcome<ConfirmPrivateVirtualInterfaceResult, Aws::Client::AWSError<DirectConnectErrors>> ConfirmPrivateVirtualInterfaceOutcome;
         typedef Aws::Utils::Outcome<ConfirmPublicVirtualInterfaceResult, Aws::Client::AWSError<DirectConnectErrors>> ConfirmPublicVirtualInterfaceOutcome;
+        typedef Aws::Utils::Outcome<CreateBGPPeerResult, Aws::Client::AWSError<DirectConnectErrors>> CreateBGPPeerOutcome;
         typedef Aws::Utils::Outcome<CreateConnectionResult, Aws::Client::AWSError<DirectConnectErrors>> CreateConnectionOutcome;
         typedef Aws::Utils::Outcome<CreateInterconnectResult, Aws::Client::AWSError<DirectConnectErrors>> CreateInterconnectOutcome;
         typedef Aws::Utils::Outcome<CreatePrivateVirtualInterfaceResult, Aws::Client::AWSError<DirectConnectErrors>> CreatePrivateVirtualInterfaceOutcome;
         typedef Aws::Utils::Outcome<CreatePublicVirtualInterfaceResult, Aws::Client::AWSError<DirectConnectErrors>> CreatePublicVirtualInterfaceOutcome;
+        typedef Aws::Utils::Outcome<DeleteBGPPeerResult, Aws::Client::AWSError<DirectConnectErrors>> DeleteBGPPeerOutcome;
         typedef Aws::Utils::Outcome<DeleteConnectionResult, Aws::Client::AWSError<DirectConnectErrors>> DeleteConnectionOutcome;
         typedef Aws::Utils::Outcome<DeleteInterconnectResult, Aws::Client::AWSError<DirectConnectErrors>> DeleteInterconnectOutcome;
         typedef Aws::Utils::Outcome<DeleteVirtualInterfaceResult, Aws::Client::AWSError<DirectConnectErrors>> DeleteVirtualInterfaceOutcome;
@@ -143,10 +149,12 @@ namespace Model
         typedef std::future<ConfirmConnectionOutcome> ConfirmConnectionOutcomeCallable;
         typedef std::future<ConfirmPrivateVirtualInterfaceOutcome> ConfirmPrivateVirtualInterfaceOutcomeCallable;
         typedef std::future<ConfirmPublicVirtualInterfaceOutcome> ConfirmPublicVirtualInterfaceOutcomeCallable;
+        typedef std::future<CreateBGPPeerOutcome> CreateBGPPeerOutcomeCallable;
         typedef std::future<CreateConnectionOutcome> CreateConnectionOutcomeCallable;
         typedef std::future<CreateInterconnectOutcome> CreateInterconnectOutcomeCallable;
         typedef std::future<CreatePrivateVirtualInterfaceOutcome> CreatePrivateVirtualInterfaceOutcomeCallable;
         typedef std::future<CreatePublicVirtualInterfaceOutcome> CreatePublicVirtualInterfaceOutcomeCallable;
+        typedef std::future<DeleteBGPPeerOutcome> DeleteBGPPeerOutcomeCallable;
         typedef std::future<DeleteConnectionOutcome> DeleteConnectionOutcomeCallable;
         typedef std::future<DeleteInterconnectOutcome> DeleteInterconnectOutcomeCallable;
         typedef std::future<DeleteVirtualInterfaceOutcome> DeleteVirtualInterfaceOutcomeCallable;
@@ -171,10 +179,12 @@ namespace Model
     typedef std::function<void(const DirectConnectClient*, const Model::ConfirmConnectionRequest&, const Model::ConfirmConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ConfirmConnectionResponseReceivedHandler;
     typedef std::function<void(const DirectConnectClient*, const Model::ConfirmPrivateVirtualInterfaceRequest&, const Model::ConfirmPrivateVirtualInterfaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ConfirmPrivateVirtualInterfaceResponseReceivedHandler;
     typedef std::function<void(const DirectConnectClient*, const Model::ConfirmPublicVirtualInterfaceRequest&, const Model::ConfirmPublicVirtualInterfaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ConfirmPublicVirtualInterfaceResponseReceivedHandler;
+    typedef std::function<void(const DirectConnectClient*, const Model::CreateBGPPeerRequest&, const Model::CreateBGPPeerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateBGPPeerResponseReceivedHandler;
     typedef std::function<void(const DirectConnectClient*, const Model::CreateConnectionRequest&, const Model::CreateConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateConnectionResponseReceivedHandler;
     typedef std::function<void(const DirectConnectClient*, const Model::CreateInterconnectRequest&, const Model::CreateInterconnectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateInterconnectResponseReceivedHandler;
     typedef std::function<void(const DirectConnectClient*, const Model::CreatePrivateVirtualInterfaceRequest&, const Model::CreatePrivateVirtualInterfaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreatePrivateVirtualInterfaceResponseReceivedHandler;
     typedef std::function<void(const DirectConnectClient*, const Model::CreatePublicVirtualInterfaceRequest&, const Model::CreatePublicVirtualInterfaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreatePublicVirtualInterfaceResponseReceivedHandler;
+    typedef std::function<void(const DirectConnectClient*, const Model::DeleteBGPPeerRequest&, const Model::DeleteBGPPeerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteBGPPeerResponseReceivedHandler;
     typedef std::function<void(const DirectConnectClient*, const Model::DeleteConnectionRequest&, const Model::DeleteConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteConnectionResponseReceivedHandler;
     typedef std::function<void(const DirectConnectClient*, const Model::DeleteInterconnectRequest&, const Model::DeleteInterconnectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteInterconnectResponseReceivedHandler;
     typedef std::function<void(const DirectConnectClient*, const Model::DeleteVirtualInterfaceRequest&, const Model::DeleteVirtualInterfaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteVirtualInterfaceResponseReceivedHandler;
@@ -302,7 +312,10 @@ namespace Model
          * <p>Virtual interfaces created using this function must be confirmed by the
          * virtual interface owner by calling ConfirmPublicVirtualInterface. Until this
          * step has been completed, the virtual interface will be in 'Confirming' state,
-         * and will not be available for handling traffic.</p>
+         * and will not be available for handling traffic.</p> <p>When creating an IPv6
+         * public virtual interface (addressFamily is 'ipv6'), the customer and amazon
+         * address fields should be left blank to use auto-assigned IPv6 space. Custom IPv6
+         * Addresses are currently not supported.</p>
          */
         virtual Model::AllocatePublicVirtualInterfaceOutcome AllocatePublicVirtualInterface(const Model::AllocatePublicVirtualInterfaceRequest& request) const;
 
@@ -313,7 +326,10 @@ namespace Model
          * <p>Virtual interfaces created using this function must be confirmed by the
          * virtual interface owner by calling ConfirmPublicVirtualInterface. Until this
          * step has been completed, the virtual interface will be in 'Confirming' state,
-         * and will not be available for handling traffic.</p>
+         * and will not be available for handling traffic.</p> <p>When creating an IPv6
+         * public virtual interface (addressFamily is 'ipv6'), the customer and amazon
+         * address fields should be left blank to use auto-assigned IPv6 space. Custom IPv6
+         * Addresses are currently not supported.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -326,7 +342,10 @@ namespace Model
          * <p>Virtual interfaces created using this function must be confirmed by the
          * virtual interface owner by calling ConfirmPublicVirtualInterface. Until this
          * step has been completed, the virtual interface will be in 'Confirming' state,
-         * and will not be available for handling traffic.</p>
+         * and will not be available for handling traffic.</p> <p>When creating an IPv6
+         * public virtual interface (addressFamily is 'ipv6'), the customer and amazon
+         * address fields should be left blank to use auto-assigned IPv6 space. Custom IPv6
+         * Addresses are currently not supported.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -415,6 +434,49 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ConfirmPublicVirtualInterfaceAsync(const Model::ConfirmPublicVirtualInterfaceRequest& request, const ConfirmPublicVirtualInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates a new BGP peer on a specified virtual interface. The BGP peer cannot
+         * be in the same address family (IPv4/IPv6) of an existing BGP peer on the virtual
+         * interface.</p> <p>You must create a BGP peer for the corresponding address
+         * family in order to access AWS resources that also use that address family.</p>
+         * <p>When creating a IPv6 BGP peer, the Amazon address and customer address fields
+         * must be left blank. IPv6 addresses are automatically assigned from Amazon's pool
+         * of IPv6 addresses; you cannot specify custom IPv6 addresses.</p> <p>For a public
+         * virtual interface, the Autonomous System Number (ASN) must be private or already
+         * whitelisted for the virtual interface.</p>
+         */
+        virtual Model::CreateBGPPeerOutcome CreateBGPPeer(const Model::CreateBGPPeerRequest& request) const;
+
+        /**
+         * <p>Creates a new BGP peer on a specified virtual interface. The BGP peer cannot
+         * be in the same address family (IPv4/IPv6) of an existing BGP peer on the virtual
+         * interface.</p> <p>You must create a BGP peer for the corresponding address
+         * family in order to access AWS resources that also use that address family.</p>
+         * <p>When creating a IPv6 BGP peer, the Amazon address and customer address fields
+         * must be left blank. IPv6 addresses are automatically assigned from Amazon's pool
+         * of IPv6 addresses; you cannot specify custom IPv6 addresses.</p> <p>For a public
+         * virtual interface, the Autonomous System Number (ASN) must be private or already
+         * whitelisted for the virtual interface.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateBGPPeerOutcomeCallable CreateBGPPeerCallable(const Model::CreateBGPPeerRequest& request) const;
+
+        /**
+         * <p>Creates a new BGP peer on a specified virtual interface. The BGP peer cannot
+         * be in the same address family (IPv4/IPv6) of an existing BGP peer on the virtual
+         * interface.</p> <p>You must create a BGP peer for the corresponding address
+         * family in order to access AWS resources that also use that address family.</p>
+         * <p>When creating a IPv6 BGP peer, the Amazon address and customer address fields
+         * must be left blank. IPv6 addresses are automatically assigned from Amazon's pool
+         * of IPv6 addresses; you cannot specify custom IPv6 addresses.</p> <p>For a public
+         * virtual interface, the Autonomous System Number (ASN) must be private or already
+         * whitelisted for the virtual interface.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateBGPPeerAsync(const Model::CreateBGPPeerRequest& request, const CreateBGPPeerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new connection between the customer network and a specific AWS
@@ -543,7 +605,10 @@ namespace Model
          * <p>Creates a new public virtual interface. A virtual interface is the VLAN that
          * transports AWS Direct Connect traffic. A public virtual interface supports
          * sending traffic to public services of AWS such as Amazon Simple Storage Service
-         * (Amazon S3).</p>
+         * (Amazon S3).</p> <p>When creating an IPv6 public virtual interface
+         * (addressFamily is 'ipv6'), the customer and amazon address fields should be left
+         * blank to use auto-assigned IPv6 space. Custom IPv6 Addresses are currently not
+         * supported.</p>
          */
         virtual Model::CreatePublicVirtualInterfaceOutcome CreatePublicVirtualInterface(const Model::CreatePublicVirtualInterfaceRequest& request) const;
 
@@ -551,7 +616,10 @@ namespace Model
          * <p>Creates a new public virtual interface. A virtual interface is the VLAN that
          * transports AWS Direct Connect traffic. A public virtual interface supports
          * sending traffic to public services of AWS such as Amazon Simple Storage Service
-         * (Amazon S3).</p>
+         * (Amazon S3).</p> <p>When creating an IPv6 public virtual interface
+         * (addressFamily is 'ipv6'), the customer and amazon address fields should be left
+         * blank to use auto-assigned IPv6 space. Custom IPv6 Addresses are currently not
+         * supported.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -561,11 +629,39 @@ namespace Model
          * <p>Creates a new public virtual interface. A virtual interface is the VLAN that
          * transports AWS Direct Connect traffic. A public virtual interface supports
          * sending traffic to public services of AWS such as Amazon Simple Storage Service
-         * (Amazon S3).</p>
+         * (Amazon S3).</p> <p>When creating an IPv6 public virtual interface
+         * (addressFamily is 'ipv6'), the customer and amazon address fields should be left
+         * blank to use auto-assigned IPv6 space. Custom IPv6 Addresses are currently not
+         * supported.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreatePublicVirtualInterfaceAsync(const Model::CreatePublicVirtualInterfaceRequest& request, const CreatePublicVirtualInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes a BGP peer on the specified virtual interface that matches the
+         * specified customer address and ASN. You cannot delete the last BGP peer from a
+         * virtual interface.</p>
+         */
+        virtual Model::DeleteBGPPeerOutcome DeleteBGPPeer(const Model::DeleteBGPPeerRequest& request) const;
+
+        /**
+         * <p>Deletes a BGP peer on the specified virtual interface that matches the
+         * specified customer address and ASN. You cannot delete the last BGP peer from a
+         * virtual interface.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteBGPPeerOutcomeCallable DeleteBGPPeerCallable(const Model::DeleteBGPPeerRequest& request) const;
+
+        /**
+         * <p>Deletes a BGP peer on the specified virtual interface that matches the
+         * specified customer address and ASN. You cannot delete the last BGP peer from a
+         * virtual interface.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteBGPPeerAsync(const Model::DeleteBGPPeerRequest& request, const DeleteBGPPeerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the connection.</p> <p>Deleting a connection only stops the AWS
@@ -962,10 +1058,12 @@ namespace Model
         void ConfirmConnectionAsyncHelper(const Model::ConfirmConnectionRequest& request, const ConfirmConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ConfirmPrivateVirtualInterfaceAsyncHelper(const Model::ConfirmPrivateVirtualInterfaceRequest& request, const ConfirmPrivateVirtualInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ConfirmPublicVirtualInterfaceAsyncHelper(const Model::ConfirmPublicVirtualInterfaceRequest& request, const ConfirmPublicVirtualInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateBGPPeerAsyncHelper(const Model::CreateBGPPeerRequest& request, const CreateBGPPeerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateConnectionAsyncHelper(const Model::CreateConnectionRequest& request, const CreateConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateInterconnectAsyncHelper(const Model::CreateInterconnectRequest& request, const CreateInterconnectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreatePrivateVirtualInterfaceAsyncHelper(const Model::CreatePrivateVirtualInterfaceRequest& request, const CreatePrivateVirtualInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreatePublicVirtualInterfaceAsyncHelper(const Model::CreatePublicVirtualInterfaceRequest& request, const CreatePublicVirtualInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteBGPPeerAsyncHelper(const Model::DeleteBGPPeerRequest& request, const DeleteBGPPeerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteConnectionAsyncHelper(const Model::DeleteConnectionRequest& request, const DeleteConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteInterconnectAsyncHelper(const Model::DeleteInterconnectRequest& request, const DeleteInterconnectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteVirtualInterfaceAsyncHelper(const Model::DeleteVirtualInterfaceRequest& request, const DeleteVirtualInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

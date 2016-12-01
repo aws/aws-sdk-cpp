@@ -71,7 +71,7 @@ Aws::String DescribeReservedInstancesRequest::SerializePayload() const
     ss << "OfferingClass=" << OfferingClassTypeMapper::GetNameForOfferingClassType(m_offeringClass) << "&";
   }
 
-  ss << "Version=2016-09-15";
+  ss << "Version=2016-11-15";
   return ss.str();
 }
 

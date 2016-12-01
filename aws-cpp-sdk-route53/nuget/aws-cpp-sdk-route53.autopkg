@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-Route53;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 1.0.20130401.36;
+        version : 1.0.20130401.37;
 
         // Display name for package.
         title: AWS SDK for C++ (Amazon Route 53);

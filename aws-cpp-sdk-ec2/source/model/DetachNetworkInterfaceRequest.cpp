@@ -47,7 +47,7 @@ Aws::String DetachNetworkInterfaceRequest::SerializePayload() const
     ss << "Force=" << m_force << "&";
   }
 
-  ss << "Version=2016-09-15";
+  ss << "Version=2016-11-15";
   return ss.str();
 }
 

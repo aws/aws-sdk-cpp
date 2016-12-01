@@ -639,22 +639,19 @@ namespace Model
         virtual void DeleteEnvironmentConfigurationAsync(const Model::DeleteEnvironmentConfigurationRequest& request, const DeleteEnvironmentConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieve a list of application versions stored in your AWS Elastic Beanstalk
-         * storage bucket.</p>
+         * <p>Retrieve a list of application versions.</p>
          */
         virtual Model::DescribeApplicationVersionsOutcome DescribeApplicationVersions(const Model::DescribeApplicationVersionsRequest& request) const;
 
         /**
-         * <p>Retrieve a list of application versions stored in your AWS Elastic Beanstalk
-         * storage bucket.</p>
+         * <p>Retrieve a list of application versions.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeApplicationVersionsOutcomeCallable DescribeApplicationVersionsCallable(const Model::DescribeApplicationVersionsRequest& request) const;
 
         /**
-         * <p>Retrieve a list of application versions stored in your AWS Elastic Beanstalk
-         * storage bucket.</p>
+         * <p>Retrieve a list of application versions.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -877,28 +874,28 @@ namespace Model
         virtual void DescribeEventsAsync(const Model::DescribeEventsRequest& request, const DescribeEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns more detailed information about the health of the specified instances
-         * (for example, CPU utilization, load average, and causes). The
-         * <b>DescribeInstancesHealth</b> operation is only available with AWS Elastic
-         * Beanstalk Enhanced Health.</p>
+         * <p>Retrives detailed information about the health of instances in your AWS
+         * Elastic Beanstalk. This operation requires <a
+         * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced.html">enhanced
+         * health reporting</a>.</p>
          */
         virtual Model::DescribeInstancesHealthOutcome DescribeInstancesHealth(const Model::DescribeInstancesHealthRequest& request) const;
 
         /**
-         * <p>Returns more detailed information about the health of the specified instances
-         * (for example, CPU utilization, load average, and causes). The
-         * <b>DescribeInstancesHealth</b> operation is only available with AWS Elastic
-         * Beanstalk Enhanced Health.</p>
+         * <p>Retrives detailed information about the health of instances in your AWS
+         * Elastic Beanstalk. This operation requires <a
+         * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced.html">enhanced
+         * health reporting</a>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeInstancesHealthOutcomeCallable DescribeInstancesHealthCallable(const Model::DescribeInstancesHealthRequest& request) const;
 
         /**
-         * <p>Returns more detailed information about the health of the specified instances
-         * (for example, CPU utilization, load average, and causes). The
-         * <b>DescribeInstancesHealth</b> operation is only available with AWS Elastic
-         * Beanstalk Enhanced Health.</p>
+         * <p>Retrives detailed information about the health of instances in your AWS
+         * Elastic Beanstalk. This operation requires <a
+         * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced.html">enhanced
+         * health reporting</a>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */

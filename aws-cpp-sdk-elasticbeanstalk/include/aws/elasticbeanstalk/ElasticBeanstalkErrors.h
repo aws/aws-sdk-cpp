@@ -53,7 +53,8 @@ enum class ElasticBeanstalkErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  ELASTIC_BEANSTALK_SERVICE= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CODE_BUILD_NOT_IN_SERVICE_REGION= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  ELASTIC_BEANSTALK_SERVICE,
   INSUFFICIENT_PRIVILEGES,
   INVALID_REQUEST,
   MANAGED_ACTION_INVALID_STATE,

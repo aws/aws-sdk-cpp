@@ -33,6 +33,8 @@ namespace Aws
         static const int nodejs4_3_HASH = HashingUtils::HashString("nodejs4.3");
         static const int java8_HASH = HashingUtils::HashString("java8");
         static const int python2_7_HASH = HashingUtils::HashString("python2.7");
+        static const int dotnetcore1_0_HASH = HashingUtils::HashString("dotnetcore1.0");
+        static const int nodejs4_3_edge_HASH = HashingUtils::HashString("nodejs4.3-edge");
 
 
         Runtime GetRuntimeForName(const Aws::String& name)
@@ -53,6 +55,14 @@ namespace Aws
           else if (hashCode == python2_7_HASH)
           {
             return Runtime::python2_7;
+          }
+          else if (hashCode == dotnetcore1_0_HASH)
+          {
+            return Runtime::dotnetcore1_0;
+          }
+          else if (hashCode == nodejs4_3_edge_HASH)
+          {
+            return Runtime::nodejs4_3_edge;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -76,6 +86,10 @@ namespace Aws
             return "java8";
           case Runtime::python2_7:
             return "python2.7";
+          case Runtime::dotnetcore1_0:
+            return "dotnetcore1.0";
+          case Runtime::nodejs4_3_edge:
+            return "nodejs4.3-edge";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -27,7 +27,8 @@ namespace Model
     NOT_SET,
     Name,
     Owner,
-    PlatformTypes
+    PlatformTypes,
+    DocumentType
   };
 
 namespace DocumentFilterKeyMapper

@@ -33,8 +33,7 @@ namespace Model
 {
 
   /**
-   * <p>Represents CPU utilization and load average information for applications
-   * running in the specified environment.</p>
+   * <p>CPU utilization and load average metrics for an Amazon EC2 instance.</p>
    */
   class AWS_ELASTICBEANSTALK_API SystemStatus
   {
@@ -46,19 +45,29 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    
+    /**
+     * <p>CPU utilization metrics for the instance.</p>
+     */
     inline const CPUUtilization& GetCPUUtilization() const{ return m_cPUUtilization; }
 
-    
+    /**
+     * <p>CPU utilization metrics for the instance.</p>
+     */
     inline void SetCPUUtilization(const CPUUtilization& value) { m_cPUUtilizationHasBeenSet = true; m_cPUUtilization = value; }
 
-    
+    /**
+     * <p>CPU utilization metrics for the instance.</p>
+     */
     inline void SetCPUUtilization(CPUUtilization&& value) { m_cPUUtilizationHasBeenSet = true; m_cPUUtilization = value; }
 
-    
+    /**
+     * <p>CPU utilization metrics for the instance.</p>
+     */
     inline SystemStatus& WithCPUUtilization(const CPUUtilization& value) { SetCPUUtilization(value); return *this;}
 
-    
+    /**
+     * <p>CPU utilization metrics for the instance.</p>
+     */
     inline SystemStatus& WithCPUUtilization(CPUUtilization&& value) { SetCPUUtilization(value); return *this;}
 
     /**

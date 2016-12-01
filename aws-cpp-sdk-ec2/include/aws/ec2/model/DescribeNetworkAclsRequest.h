@@ -115,14 +115,15 @@ namespace Model
      * <code>association.subnet-id</code> - The ID of the subnet involved in the
      * association.</p> </li> <li> <p> <code>default</code> - Indicates whether the ACL
      * is the default network ACL for the VPC.</p> </li> <li> <p>
-     * <code>entry.cidr</code> - The CIDR range specified in the entry.</p> </li> <li>
-     * <p> <code>entry.egress</code> - Indicates whether the entry applies to egress
-     * traffic.</p> </li> <li> <p> <code>entry.icmp.code</code> - The ICMP code
+     * <code>entry.cidr</code> - The IPv4 CIDR range specified in the entry.</p> </li>
+     * <li> <p> <code>entry.egress</code> - Indicates whether the entry applies to
+     * egress traffic.</p> </li> <li> <p> <code>entry.icmp.code</code> - The ICMP code
      * specified in the entry, if any.</p> </li> <li> <p> <code>entry.icmp.type</code>
      * - The ICMP type specified in the entry, if any.</p> </li> <li> <p>
-     * <code>entry.port-range.from</code> - The start of the port range specified in
-     * the entry. </p> </li> <li> <p> <code>entry.port-range.to</code> - The end of the
-     * port range specified in the entry. </p> </li> <li> <p>
+     * <code>entry.ipv6-cidr</code> - The IPv6 CIDR range specified in the entry.</p>
+     * </li> <li> <p> <code>entry.port-range.from</code> - The start of the port range
+     * specified in the entry. </p> </li> <li> <p> <code>entry.port-range.to</code> -
+     * The end of the port range specified in the entry. </p> </li> <li> <p>
      * <code>entry.protocol</code> - The protocol specified in the entry
      * (<code>tcp</code> | <code>udp</code> | <code>icmp</code> or a protocol
      * number).</p> </li> <li> <p> <code>entry.rule-action</code> - Allows or denies
@@ -153,14 +154,15 @@ namespace Model
      * <code>association.subnet-id</code> - The ID of the subnet involved in the
      * association.</p> </li> <li> <p> <code>default</code> - Indicates whether the ACL
      * is the default network ACL for the VPC.</p> </li> <li> <p>
-     * <code>entry.cidr</code> - The CIDR range specified in the entry.</p> </li> <li>
-     * <p> <code>entry.egress</code> - Indicates whether the entry applies to egress
-     * traffic.</p> </li> <li> <p> <code>entry.icmp.code</code> - The ICMP code
+     * <code>entry.cidr</code> - The IPv4 CIDR range specified in the entry.</p> </li>
+     * <li> <p> <code>entry.egress</code> - Indicates whether the entry applies to
+     * egress traffic.</p> </li> <li> <p> <code>entry.icmp.code</code> - The ICMP code
      * specified in the entry, if any.</p> </li> <li> <p> <code>entry.icmp.type</code>
      * - The ICMP type specified in the entry, if any.</p> </li> <li> <p>
-     * <code>entry.port-range.from</code> - The start of the port range specified in
-     * the entry. </p> </li> <li> <p> <code>entry.port-range.to</code> - The end of the
-     * port range specified in the entry. </p> </li> <li> <p>
+     * <code>entry.ipv6-cidr</code> - The IPv6 CIDR range specified in the entry.</p>
+     * </li> <li> <p> <code>entry.port-range.from</code> - The start of the port range
+     * specified in the entry. </p> </li> <li> <p> <code>entry.port-range.to</code> -
+     * The end of the port range specified in the entry. </p> </li> <li> <p>
      * <code>entry.protocol</code> - The protocol specified in the entry
      * (<code>tcp</code> | <code>udp</code> | <code>icmp</code> or a protocol
      * number).</p> </li> <li> <p> <code>entry.rule-action</code> - Allows or denies
@@ -191,14 +193,15 @@ namespace Model
      * <code>association.subnet-id</code> - The ID of the subnet involved in the
      * association.</p> </li> <li> <p> <code>default</code> - Indicates whether the ACL
      * is the default network ACL for the VPC.</p> </li> <li> <p>
-     * <code>entry.cidr</code> - The CIDR range specified in the entry.</p> </li> <li>
-     * <p> <code>entry.egress</code> - Indicates whether the entry applies to egress
-     * traffic.</p> </li> <li> <p> <code>entry.icmp.code</code> - The ICMP code
+     * <code>entry.cidr</code> - The IPv4 CIDR range specified in the entry.</p> </li>
+     * <li> <p> <code>entry.egress</code> - Indicates whether the entry applies to
+     * egress traffic.</p> </li> <li> <p> <code>entry.icmp.code</code> - The ICMP code
      * specified in the entry, if any.</p> </li> <li> <p> <code>entry.icmp.type</code>
      * - The ICMP type specified in the entry, if any.</p> </li> <li> <p>
-     * <code>entry.port-range.from</code> - The start of the port range specified in
-     * the entry. </p> </li> <li> <p> <code>entry.port-range.to</code> - The end of the
-     * port range specified in the entry. </p> </li> <li> <p>
+     * <code>entry.ipv6-cidr</code> - The IPv6 CIDR range specified in the entry.</p>
+     * </li> <li> <p> <code>entry.port-range.from</code> - The start of the port range
+     * specified in the entry. </p> </li> <li> <p> <code>entry.port-range.to</code> -
+     * The end of the port range specified in the entry. </p> </li> <li> <p>
      * <code>entry.protocol</code> - The protocol specified in the entry
      * (<code>tcp</code> | <code>udp</code> | <code>icmp</code> or a protocol
      * number).</p> </li> <li> <p> <code>entry.rule-action</code> - Allows or denies
@@ -229,14 +232,15 @@ namespace Model
      * <code>association.subnet-id</code> - The ID of the subnet involved in the
      * association.</p> </li> <li> <p> <code>default</code> - Indicates whether the ACL
      * is the default network ACL for the VPC.</p> </li> <li> <p>
-     * <code>entry.cidr</code> - The CIDR range specified in the entry.</p> </li> <li>
-     * <p> <code>entry.egress</code> - Indicates whether the entry applies to egress
-     * traffic.</p> </li> <li> <p> <code>entry.icmp.code</code> - The ICMP code
+     * <code>entry.cidr</code> - The IPv4 CIDR range specified in the entry.</p> </li>
+     * <li> <p> <code>entry.egress</code> - Indicates whether the entry applies to
+     * egress traffic.</p> </li> <li> <p> <code>entry.icmp.code</code> - The ICMP code
      * specified in the entry, if any.</p> </li> <li> <p> <code>entry.icmp.type</code>
      * - The ICMP type specified in the entry, if any.</p> </li> <li> <p>
-     * <code>entry.port-range.from</code> - The start of the port range specified in
-     * the entry. </p> </li> <li> <p> <code>entry.port-range.to</code> - The end of the
-     * port range specified in the entry. </p> </li> <li> <p>
+     * <code>entry.ipv6-cidr</code> - The IPv6 CIDR range specified in the entry.</p>
+     * </li> <li> <p> <code>entry.port-range.from</code> - The start of the port range
+     * specified in the entry. </p> </li> <li> <p> <code>entry.port-range.to</code> -
+     * The end of the port range specified in the entry. </p> </li> <li> <p>
      * <code>entry.protocol</code> - The protocol specified in the entry
      * (<code>tcp</code> | <code>udp</code> | <code>icmp</code> or a protocol
      * number).</p> </li> <li> <p> <code>entry.rule-action</code> - Allows or denies
@@ -267,14 +271,15 @@ namespace Model
      * <code>association.subnet-id</code> - The ID of the subnet involved in the
      * association.</p> </li> <li> <p> <code>default</code> - Indicates whether the ACL
      * is the default network ACL for the VPC.</p> </li> <li> <p>
-     * <code>entry.cidr</code> - The CIDR range specified in the entry.</p> </li> <li>
-     * <p> <code>entry.egress</code> - Indicates whether the entry applies to egress
-     * traffic.</p> </li> <li> <p> <code>entry.icmp.code</code> - The ICMP code
+     * <code>entry.cidr</code> - The IPv4 CIDR range specified in the entry.</p> </li>
+     * <li> <p> <code>entry.egress</code> - Indicates whether the entry applies to
+     * egress traffic.</p> </li> <li> <p> <code>entry.icmp.code</code> - The ICMP code
      * specified in the entry, if any.</p> </li> <li> <p> <code>entry.icmp.type</code>
      * - The ICMP type specified in the entry, if any.</p> </li> <li> <p>
-     * <code>entry.port-range.from</code> - The start of the port range specified in
-     * the entry. </p> </li> <li> <p> <code>entry.port-range.to</code> - The end of the
-     * port range specified in the entry. </p> </li> <li> <p>
+     * <code>entry.ipv6-cidr</code> - The IPv6 CIDR range specified in the entry.</p>
+     * </li> <li> <p> <code>entry.port-range.from</code> - The start of the port range
+     * specified in the entry. </p> </li> <li> <p> <code>entry.port-range.to</code> -
+     * The end of the port range specified in the entry. </p> </li> <li> <p>
      * <code>entry.protocol</code> - The protocol specified in the entry
      * (<code>tcp</code> | <code>udp</code> | <code>icmp</code> or a protocol
      * number).</p> </li> <li> <p> <code>entry.rule-action</code> - Allows or denies
@@ -305,14 +310,15 @@ namespace Model
      * <code>association.subnet-id</code> - The ID of the subnet involved in the
      * association.</p> </li> <li> <p> <code>default</code> - Indicates whether the ACL
      * is the default network ACL for the VPC.</p> </li> <li> <p>
-     * <code>entry.cidr</code> - The CIDR range specified in the entry.</p> </li> <li>
-     * <p> <code>entry.egress</code> - Indicates whether the entry applies to egress
-     * traffic.</p> </li> <li> <p> <code>entry.icmp.code</code> - The ICMP code
+     * <code>entry.cidr</code> - The IPv4 CIDR range specified in the entry.</p> </li>
+     * <li> <p> <code>entry.egress</code> - Indicates whether the entry applies to
+     * egress traffic.</p> </li> <li> <p> <code>entry.icmp.code</code> - The ICMP code
      * specified in the entry, if any.</p> </li> <li> <p> <code>entry.icmp.type</code>
      * - The ICMP type specified in the entry, if any.</p> </li> <li> <p>
-     * <code>entry.port-range.from</code> - The start of the port range specified in
-     * the entry. </p> </li> <li> <p> <code>entry.port-range.to</code> - The end of the
-     * port range specified in the entry. </p> </li> <li> <p>
+     * <code>entry.ipv6-cidr</code> - The IPv6 CIDR range specified in the entry.</p>
+     * </li> <li> <p> <code>entry.port-range.from</code> - The start of the port range
+     * specified in the entry. </p> </li> <li> <p> <code>entry.port-range.to</code> -
+     * The end of the port range specified in the entry. </p> </li> <li> <p>
      * <code>entry.protocol</code> - The protocol specified in the entry
      * (<code>tcp</code> | <code>udp</code> | <code>icmp</code> or a protocol
      * number).</p> </li> <li> <p> <code>entry.rule-action</code> - Allows or denies
@@ -343,14 +349,15 @@ namespace Model
      * <code>association.subnet-id</code> - The ID of the subnet involved in the
      * association.</p> </li> <li> <p> <code>default</code> - Indicates whether the ACL
      * is the default network ACL for the VPC.</p> </li> <li> <p>
-     * <code>entry.cidr</code> - The CIDR range specified in the entry.</p> </li> <li>
-     * <p> <code>entry.egress</code> - Indicates whether the entry applies to egress
-     * traffic.</p> </li> <li> <p> <code>entry.icmp.code</code> - The ICMP code
+     * <code>entry.cidr</code> - The IPv4 CIDR range specified in the entry.</p> </li>
+     * <li> <p> <code>entry.egress</code> - Indicates whether the entry applies to
+     * egress traffic.</p> </li> <li> <p> <code>entry.icmp.code</code> - The ICMP code
      * specified in the entry, if any.</p> </li> <li> <p> <code>entry.icmp.type</code>
      * - The ICMP type specified in the entry, if any.</p> </li> <li> <p>
-     * <code>entry.port-range.from</code> - The start of the port range specified in
-     * the entry. </p> </li> <li> <p> <code>entry.port-range.to</code> - The end of the
-     * port range specified in the entry. </p> </li> <li> <p>
+     * <code>entry.ipv6-cidr</code> - The IPv6 CIDR range specified in the entry.</p>
+     * </li> <li> <p> <code>entry.port-range.from</code> - The start of the port range
+     * specified in the entry. </p> </li> <li> <p> <code>entry.port-range.to</code> -
+     * The end of the port range specified in the entry. </p> </li> <li> <p>
      * <code>entry.protocol</code> - The protocol specified in the entry
      * (<code>tcp</code> | <code>udp</code> | <code>icmp</code> or a protocol
      * number).</p> </li> <li> <p> <code>entry.rule-action</code> - Allows or denies

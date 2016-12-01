@@ -117,12 +117,17 @@ namespace Model
      * <code>association.main</code> - Indicates whether the route table is the main
      * route table for the VPC (<code>true</code> | <code>false</code>).</p> </li> <li>
      * <p> <code>route-table-id</code> - The ID of the route table.</p> </li> <li> <p>
-     * <code>route.destination-cidr-block</code> - The CIDR range specified in a route
-     * in the table.</p> </li> <li> <p> <code>route.destination-prefix-list-id</code> -
-     * The ID (prefix) of the AWS service specified in a route in the table.</p> </li>
-     * <li> <p> <code>route.gateway-id</code> - The ID of a gateway specified in a
-     * route in the table.</p> </li> <li> <p> <code>route.instance-id</code> - The ID
-     * of an instance specified in a route in the table.</p> </li> <li> <p>
+     * <code>route.destination-cidr-block</code> - The IPv4 CIDR range specified in a
+     * route in the table.</p> </li> <li> <p>
+     * <code>route.destination-ipv6-cidr-block</code> - The IPv6 CIDR range specified
+     * in a route in the route table.</p> </li> <li> <p>
+     * <code>route.destination-prefix-list-id</code> - The ID (prefix) of the AWS
+     * service specified in a route in the table.</p> </li> <li> <p>
+     * <code>route.egress-only-internet-gateway-id</code> - The ID of an egress-only
+     * Internet gateway specified in a route in the route table.</p> </li> <li> <p>
+     * <code>route.gateway-id</code> - The ID of a gateway specified in a route in the
+     * table.</p> </li> <li> <p> <code>route.instance-id</code> - The ID of an instance
+     * specified in a route in the table.</p> </li> <li> <p>
      * <code>route.nat-gateway-id</code> - The ID of a NAT gateway.</p> </li> <li> <p>
      * <code>route.origin</code> - Describes how the route was created.
      * <code>CreateRouteTable</code> indicates that the route was automatically created
@@ -161,12 +166,17 @@ namespace Model
      * <code>association.main</code> - Indicates whether the route table is the main
      * route table for the VPC (<code>true</code> | <code>false</code>).</p> </li> <li>
      * <p> <code>route-table-id</code> - The ID of the route table.</p> </li> <li> <p>
-     * <code>route.destination-cidr-block</code> - The CIDR range specified in a route
-     * in the table.</p> </li> <li> <p> <code>route.destination-prefix-list-id</code> -
-     * The ID (prefix) of the AWS service specified in a route in the table.</p> </li>
-     * <li> <p> <code>route.gateway-id</code> - The ID of a gateway specified in a
-     * route in the table.</p> </li> <li> <p> <code>route.instance-id</code> - The ID
-     * of an instance specified in a route in the table.</p> </li> <li> <p>
+     * <code>route.destination-cidr-block</code> - The IPv4 CIDR range specified in a
+     * route in the table.</p> </li> <li> <p>
+     * <code>route.destination-ipv6-cidr-block</code> - The IPv6 CIDR range specified
+     * in a route in the route table.</p> </li> <li> <p>
+     * <code>route.destination-prefix-list-id</code> - The ID (prefix) of the AWS
+     * service specified in a route in the table.</p> </li> <li> <p>
+     * <code>route.egress-only-internet-gateway-id</code> - The ID of an egress-only
+     * Internet gateway specified in a route in the route table.</p> </li> <li> <p>
+     * <code>route.gateway-id</code> - The ID of a gateway specified in a route in the
+     * table.</p> </li> <li> <p> <code>route.instance-id</code> - The ID of an instance
+     * specified in a route in the table.</p> </li> <li> <p>
      * <code>route.nat-gateway-id</code> - The ID of a NAT gateway.</p> </li> <li> <p>
      * <code>route.origin</code> - Describes how the route was created.
      * <code>CreateRouteTable</code> indicates that the route was automatically created
@@ -205,12 +215,17 @@ namespace Model
      * <code>association.main</code> - Indicates whether the route table is the main
      * route table for the VPC (<code>true</code> | <code>false</code>).</p> </li> <li>
      * <p> <code>route-table-id</code> - The ID of the route table.</p> </li> <li> <p>
-     * <code>route.destination-cidr-block</code> - The CIDR range specified in a route
-     * in the table.</p> </li> <li> <p> <code>route.destination-prefix-list-id</code> -
-     * The ID (prefix) of the AWS service specified in a route in the table.</p> </li>
-     * <li> <p> <code>route.gateway-id</code> - The ID of a gateway specified in a
-     * route in the table.</p> </li> <li> <p> <code>route.instance-id</code> - The ID
-     * of an instance specified in a route in the table.</p> </li> <li> <p>
+     * <code>route.destination-cidr-block</code> - The IPv4 CIDR range specified in a
+     * route in the table.</p> </li> <li> <p>
+     * <code>route.destination-ipv6-cidr-block</code> - The IPv6 CIDR range specified
+     * in a route in the route table.</p> </li> <li> <p>
+     * <code>route.destination-prefix-list-id</code> - The ID (prefix) of the AWS
+     * service specified in a route in the table.</p> </li> <li> <p>
+     * <code>route.egress-only-internet-gateway-id</code> - The ID of an egress-only
+     * Internet gateway specified in a route in the route table.</p> </li> <li> <p>
+     * <code>route.gateway-id</code> - The ID of a gateway specified in a route in the
+     * table.</p> </li> <li> <p> <code>route.instance-id</code> - The ID of an instance
+     * specified in a route in the table.</p> </li> <li> <p>
      * <code>route.nat-gateway-id</code> - The ID of a NAT gateway.</p> </li> <li> <p>
      * <code>route.origin</code> - Describes how the route was created.
      * <code>CreateRouteTable</code> indicates that the route was automatically created
@@ -249,12 +264,17 @@ namespace Model
      * <code>association.main</code> - Indicates whether the route table is the main
      * route table for the VPC (<code>true</code> | <code>false</code>).</p> </li> <li>
      * <p> <code>route-table-id</code> - The ID of the route table.</p> </li> <li> <p>
-     * <code>route.destination-cidr-block</code> - The CIDR range specified in a route
-     * in the table.</p> </li> <li> <p> <code>route.destination-prefix-list-id</code> -
-     * The ID (prefix) of the AWS service specified in a route in the table.</p> </li>
-     * <li> <p> <code>route.gateway-id</code> - The ID of a gateway specified in a
-     * route in the table.</p> </li> <li> <p> <code>route.instance-id</code> - The ID
-     * of an instance specified in a route in the table.</p> </li> <li> <p>
+     * <code>route.destination-cidr-block</code> - The IPv4 CIDR range specified in a
+     * route in the table.</p> </li> <li> <p>
+     * <code>route.destination-ipv6-cidr-block</code> - The IPv6 CIDR range specified
+     * in a route in the route table.</p> </li> <li> <p>
+     * <code>route.destination-prefix-list-id</code> - The ID (prefix) of the AWS
+     * service specified in a route in the table.</p> </li> <li> <p>
+     * <code>route.egress-only-internet-gateway-id</code> - The ID of an egress-only
+     * Internet gateway specified in a route in the route table.</p> </li> <li> <p>
+     * <code>route.gateway-id</code> - The ID of a gateway specified in a route in the
+     * table.</p> </li> <li> <p> <code>route.instance-id</code> - The ID of an instance
+     * specified in a route in the table.</p> </li> <li> <p>
      * <code>route.nat-gateway-id</code> - The ID of a NAT gateway.</p> </li> <li> <p>
      * <code>route.origin</code> - Describes how the route was created.
      * <code>CreateRouteTable</code> indicates that the route was automatically created
@@ -293,12 +313,17 @@ namespace Model
      * <code>association.main</code> - Indicates whether the route table is the main
      * route table for the VPC (<code>true</code> | <code>false</code>).</p> </li> <li>
      * <p> <code>route-table-id</code> - The ID of the route table.</p> </li> <li> <p>
-     * <code>route.destination-cidr-block</code> - The CIDR range specified in a route
-     * in the table.</p> </li> <li> <p> <code>route.destination-prefix-list-id</code> -
-     * The ID (prefix) of the AWS service specified in a route in the table.</p> </li>
-     * <li> <p> <code>route.gateway-id</code> - The ID of a gateway specified in a
-     * route in the table.</p> </li> <li> <p> <code>route.instance-id</code> - The ID
-     * of an instance specified in a route in the table.</p> </li> <li> <p>
+     * <code>route.destination-cidr-block</code> - The IPv4 CIDR range specified in a
+     * route in the table.</p> </li> <li> <p>
+     * <code>route.destination-ipv6-cidr-block</code> - The IPv6 CIDR range specified
+     * in a route in the route table.</p> </li> <li> <p>
+     * <code>route.destination-prefix-list-id</code> - The ID (prefix) of the AWS
+     * service specified in a route in the table.</p> </li> <li> <p>
+     * <code>route.egress-only-internet-gateway-id</code> - The ID of an egress-only
+     * Internet gateway specified in a route in the route table.</p> </li> <li> <p>
+     * <code>route.gateway-id</code> - The ID of a gateway specified in a route in the
+     * table.</p> </li> <li> <p> <code>route.instance-id</code> - The ID of an instance
+     * specified in a route in the table.</p> </li> <li> <p>
      * <code>route.nat-gateway-id</code> - The ID of a NAT gateway.</p> </li> <li> <p>
      * <code>route.origin</code> - Describes how the route was created.
      * <code>CreateRouteTable</code> indicates that the route was automatically created
@@ -337,12 +362,17 @@ namespace Model
      * <code>association.main</code> - Indicates whether the route table is the main
      * route table for the VPC (<code>true</code> | <code>false</code>).</p> </li> <li>
      * <p> <code>route-table-id</code> - The ID of the route table.</p> </li> <li> <p>
-     * <code>route.destination-cidr-block</code> - The CIDR range specified in a route
-     * in the table.</p> </li> <li> <p> <code>route.destination-prefix-list-id</code> -
-     * The ID (prefix) of the AWS service specified in a route in the table.</p> </li>
-     * <li> <p> <code>route.gateway-id</code> - The ID of a gateway specified in a
-     * route in the table.</p> </li> <li> <p> <code>route.instance-id</code> - The ID
-     * of an instance specified in a route in the table.</p> </li> <li> <p>
+     * <code>route.destination-cidr-block</code> - The IPv4 CIDR range specified in a
+     * route in the table.</p> </li> <li> <p>
+     * <code>route.destination-ipv6-cidr-block</code> - The IPv6 CIDR range specified
+     * in a route in the route table.</p> </li> <li> <p>
+     * <code>route.destination-prefix-list-id</code> - The ID (prefix) of the AWS
+     * service specified in a route in the table.</p> </li> <li> <p>
+     * <code>route.egress-only-internet-gateway-id</code> - The ID of an egress-only
+     * Internet gateway specified in a route in the route table.</p> </li> <li> <p>
+     * <code>route.gateway-id</code> - The ID of a gateway specified in a route in the
+     * table.</p> </li> <li> <p> <code>route.instance-id</code> - The ID of an instance
+     * specified in a route in the table.</p> </li> <li> <p>
      * <code>route.nat-gateway-id</code> - The ID of a NAT gateway.</p> </li> <li> <p>
      * <code>route.origin</code> - Describes how the route was created.
      * <code>CreateRouteTable</code> indicates that the route was automatically created
@@ -381,12 +411,17 @@ namespace Model
      * <code>association.main</code> - Indicates whether the route table is the main
      * route table for the VPC (<code>true</code> | <code>false</code>).</p> </li> <li>
      * <p> <code>route-table-id</code> - The ID of the route table.</p> </li> <li> <p>
-     * <code>route.destination-cidr-block</code> - The CIDR range specified in a route
-     * in the table.</p> </li> <li> <p> <code>route.destination-prefix-list-id</code> -
-     * The ID (prefix) of the AWS service specified in a route in the table.</p> </li>
-     * <li> <p> <code>route.gateway-id</code> - The ID of a gateway specified in a
-     * route in the table.</p> </li> <li> <p> <code>route.instance-id</code> - The ID
-     * of an instance specified in a route in the table.</p> </li> <li> <p>
+     * <code>route.destination-cidr-block</code> - The IPv4 CIDR range specified in a
+     * route in the table.</p> </li> <li> <p>
+     * <code>route.destination-ipv6-cidr-block</code> - The IPv6 CIDR range specified
+     * in a route in the route table.</p> </li> <li> <p>
+     * <code>route.destination-prefix-list-id</code> - The ID (prefix) of the AWS
+     * service specified in a route in the table.</p> </li> <li> <p>
+     * <code>route.egress-only-internet-gateway-id</code> - The ID of an egress-only
+     * Internet gateway specified in a route in the route table.</p> </li> <li> <p>
+     * <code>route.gateway-id</code> - The ID of a gateway specified in a route in the
+     * table.</p> </li> <li> <p> <code>route.instance-id</code> - The ID of an instance
+     * specified in a route in the table.</p> </li> <li> <p>
      * <code>route.nat-gateway-id</code> - The ID of a NAT gateway.</p> </li> <li> <p>
      * <code>route.origin</code> - Describes how the route was created.
      * <code>CreateRouteTable</code> indicates that the route was automatically created

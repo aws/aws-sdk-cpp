@@ -23,7 +23,9 @@ using namespace Aws::Utils;
 
 CreateDocumentRequest::CreateDocumentRequest() : 
     m_contentHasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_documentType(DocumentType::NOT_SET),
+    m_documentTypeHasBeenSet(false)
 {
 }
 
@@ -41,6 +43,11 @@ Aws::String CreateDocumentRequest::SerializePayload() const
   {
    payload.WithString("Name", m_name);
 
+  }
+
+  if(m_documentTypeHasBeenSet)
+  {
+   payload.WithString("DocumentType", DocumentTypeMapper::GetNameForDocumentType(m_documentType));
   }
 
   return payload.WriteReadable();

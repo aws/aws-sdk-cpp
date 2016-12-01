@@ -60,84 +60,84 @@ namespace Model
     inline GetReservedInstancesExchangeQuoteRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
     /**
-     * <p>The ID/s of the Convertible Reserved Instances you want to exchange.</p>
+     * <p>The IDs of the Convertible Reserved Instances to exchange.</p>
      */
     inline const Aws::Vector<Aws::String>& GetReservedInstanceIds() const{ return m_reservedInstanceIds; }
 
     /**
-     * <p>The ID/s of the Convertible Reserved Instances you want to exchange.</p>
+     * <p>The IDs of the Convertible Reserved Instances to exchange.</p>
      */
     inline void SetReservedInstanceIds(const Aws::Vector<Aws::String>& value) { m_reservedInstanceIdsHasBeenSet = true; m_reservedInstanceIds = value; }
 
     /**
-     * <p>The ID/s of the Convertible Reserved Instances you want to exchange.</p>
+     * <p>The IDs of the Convertible Reserved Instances to exchange.</p>
      */
     inline void SetReservedInstanceIds(Aws::Vector<Aws::String>&& value) { m_reservedInstanceIdsHasBeenSet = true; m_reservedInstanceIds = value; }
 
     /**
-     * <p>The ID/s of the Convertible Reserved Instances you want to exchange.</p>
+     * <p>The IDs of the Convertible Reserved Instances to exchange.</p>
      */
     inline GetReservedInstancesExchangeQuoteRequest& WithReservedInstanceIds(const Aws::Vector<Aws::String>& value) { SetReservedInstanceIds(value); return *this;}
 
     /**
-     * <p>The ID/s of the Convertible Reserved Instances you want to exchange.</p>
+     * <p>The IDs of the Convertible Reserved Instances to exchange.</p>
      */
     inline GetReservedInstancesExchangeQuoteRequest& WithReservedInstanceIds(Aws::Vector<Aws::String>&& value) { SetReservedInstanceIds(value); return *this;}
 
     /**
-     * <p>The ID/s of the Convertible Reserved Instances you want to exchange.</p>
+     * <p>The IDs of the Convertible Reserved Instances to exchange.</p>
      */
     inline GetReservedInstancesExchangeQuoteRequest& AddReservedInstanceIds(const Aws::String& value) { m_reservedInstanceIdsHasBeenSet = true; m_reservedInstanceIds.push_back(value); return *this; }
 
     /**
-     * <p>The ID/s of the Convertible Reserved Instances you want to exchange.</p>
+     * <p>The IDs of the Convertible Reserved Instances to exchange.</p>
      */
     inline GetReservedInstancesExchangeQuoteRequest& AddReservedInstanceIds(Aws::String&& value) { m_reservedInstanceIdsHasBeenSet = true; m_reservedInstanceIds.push_back(value); return *this; }
 
     /**
-     * <p>The ID/s of the Convertible Reserved Instances you want to exchange.</p>
+     * <p>The IDs of the Convertible Reserved Instances to exchange.</p>
      */
     inline GetReservedInstancesExchangeQuoteRequest& AddReservedInstanceIds(const char* value) { m_reservedInstanceIdsHasBeenSet = true; m_reservedInstanceIds.push_back(value); return *this; }
 
     /**
-     * <p>The configuration requirements of the Convertible Reserved Instances you want
-     * in exchange for your current Convertible Reserved Instances.</p>
+     * <p>The configuration requirements of the Convertible Reserved Instances to
+     * exchange for your current Convertible Reserved Instances.</p>
      */
     inline const Aws::Vector<TargetConfigurationRequest>& GetTargetConfigurations() const{ return m_targetConfigurations; }
 
     /**
-     * <p>The configuration requirements of the Convertible Reserved Instances you want
-     * in exchange for your current Convertible Reserved Instances.</p>
+     * <p>The configuration requirements of the Convertible Reserved Instances to
+     * exchange for your current Convertible Reserved Instances.</p>
      */
     inline void SetTargetConfigurations(const Aws::Vector<TargetConfigurationRequest>& value) { m_targetConfigurationsHasBeenSet = true; m_targetConfigurations = value; }
 
     /**
-     * <p>The configuration requirements of the Convertible Reserved Instances you want
-     * in exchange for your current Convertible Reserved Instances.</p>
+     * <p>The configuration requirements of the Convertible Reserved Instances to
+     * exchange for your current Convertible Reserved Instances.</p>
      */
     inline void SetTargetConfigurations(Aws::Vector<TargetConfigurationRequest>&& value) { m_targetConfigurationsHasBeenSet = true; m_targetConfigurations = value; }
 
     /**
-     * <p>The configuration requirements of the Convertible Reserved Instances you want
-     * in exchange for your current Convertible Reserved Instances.</p>
+     * <p>The configuration requirements of the Convertible Reserved Instances to
+     * exchange for your current Convertible Reserved Instances.</p>
      */
     inline GetReservedInstancesExchangeQuoteRequest& WithTargetConfigurations(const Aws::Vector<TargetConfigurationRequest>& value) { SetTargetConfigurations(value); return *this;}
 
     /**
-     * <p>The configuration requirements of the Convertible Reserved Instances you want
-     * in exchange for your current Convertible Reserved Instances.</p>
+     * <p>The configuration requirements of the Convertible Reserved Instances to
+     * exchange for your current Convertible Reserved Instances.</p>
      */
     inline GetReservedInstancesExchangeQuoteRequest& WithTargetConfigurations(Aws::Vector<TargetConfigurationRequest>&& value) { SetTargetConfigurations(value); return *this;}
 
     /**
-     * <p>The configuration requirements of the Convertible Reserved Instances you want
-     * in exchange for your current Convertible Reserved Instances.</p>
+     * <p>The configuration requirements of the Convertible Reserved Instances to
+     * exchange for your current Convertible Reserved Instances.</p>
      */
     inline GetReservedInstancesExchangeQuoteRequest& AddTargetConfigurations(const TargetConfigurationRequest& value) { m_targetConfigurationsHasBeenSet = true; m_targetConfigurations.push_back(value); return *this; }
 
     /**
-     * <p>The configuration requirements of the Convertible Reserved Instances you want
-     * in exchange for your current Convertible Reserved Instances.</p>
+     * <p>The configuration requirements of the Convertible Reserved Instances to
+     * exchange for your current Convertible Reserved Instances.</p>
      */
     inline GetReservedInstancesExchangeQuoteRequest& AddTargetConfigurations(TargetConfigurationRequest&& value) { m_targetConfigurationsHasBeenSet = true; m_targetConfigurations.push_back(value); return *this; }
 

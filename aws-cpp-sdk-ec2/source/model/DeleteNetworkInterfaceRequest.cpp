@@ -40,7 +40,7 @@ Aws::String DeleteNetworkInterfaceRequest::SerializePayload() const
     ss << "NetworkInterfaceId=" << StringUtils::URLEncode(m_networkInterfaceId.c_str()) << "&";
   }
 
-  ss << "Version=2016-09-15";
+  ss << "Version=2016-11-15";
   return ss.str();
 }
 

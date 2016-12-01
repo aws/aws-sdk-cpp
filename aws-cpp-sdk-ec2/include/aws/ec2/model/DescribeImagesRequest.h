@@ -249,13 +249,15 @@ namespace Model
      * volume (<code>gp2</code> | <code>io1</code> | <code>st1 </code>|
      * <code>sc1</code> | <code>standard</code>).</p> </li> <li> <p>
      * <code>description</code> - The description of the image (provided during image
-     * creation).</p> </li> <li> <p> <code>hypervisor</code> - The hypervisor type
-     * (<code>ovm</code> | <code>xen</code>).</p> </li> <li> <p> <code>image-id</code>
-     * - The ID of the image.</p> </li> <li> <p> <code>image-type</code> - The image
-     * type (<code>machine</code> | <code>kernel</code> | <code>ramdisk</code>).</p>
-     * </li> <li> <p> <code>is-public</code> - A Boolean that indicates whether the
-     * image is public.</p> </li> <li> <p> <code>kernel-id</code> - The kernel ID.</p>
-     * </li> <li> <p> <code>manifest-location</code> - The location of the image
+     * creation).</p> </li> <li> <p> <code>ena-support</code> - A Boolean that
+     * indicates whether enhanced networking with ENA is enabled.</p> </li> <li> <p>
+     * <code>hypervisor</code> - The hypervisor type (<code>ovm</code> |
+     * <code>xen</code>).</p> </li> <li> <p> <code>image-id</code> - The ID of the
+     * image.</p> </li> <li> <p> <code>image-type</code> - The image type
+     * (<code>machine</code> | <code>kernel</code> | <code>ramdisk</code>).</p> </li>
+     * <li> <p> <code>is-public</code> - A Boolean that indicates whether the image is
+     * public.</p> </li> <li> <p> <code>kernel-id</code> - The kernel ID.</p> </li>
+     * <li> <p> <code>manifest-location</code> - The location of the image
      * manifest.</p> </li> <li> <p> <code>name</code> - The name of the AMI (provided
      * during image creation).</p> </li> <li> <p> <code>owner-alias</code> - String
      * value from an Amazon-maintained list (<code>amazon</code> |
@@ -305,13 +307,15 @@ namespace Model
      * volume (<code>gp2</code> | <code>io1</code> | <code>st1 </code>|
      * <code>sc1</code> | <code>standard</code>).</p> </li> <li> <p>
      * <code>description</code> - The description of the image (provided during image
-     * creation).</p> </li> <li> <p> <code>hypervisor</code> - The hypervisor type
-     * (<code>ovm</code> | <code>xen</code>).</p> </li> <li> <p> <code>image-id</code>
-     * - The ID of the image.</p> </li> <li> <p> <code>image-type</code> - The image
-     * type (<code>machine</code> | <code>kernel</code> | <code>ramdisk</code>).</p>
-     * </li> <li> <p> <code>is-public</code> - A Boolean that indicates whether the
-     * image is public.</p> </li> <li> <p> <code>kernel-id</code> - The kernel ID.</p>
-     * </li> <li> <p> <code>manifest-location</code> - The location of the image
+     * creation).</p> </li> <li> <p> <code>ena-support</code> - A Boolean that
+     * indicates whether enhanced networking with ENA is enabled.</p> </li> <li> <p>
+     * <code>hypervisor</code> - The hypervisor type (<code>ovm</code> |
+     * <code>xen</code>).</p> </li> <li> <p> <code>image-id</code> - The ID of the
+     * image.</p> </li> <li> <p> <code>image-type</code> - The image type
+     * (<code>machine</code> | <code>kernel</code> | <code>ramdisk</code>).</p> </li>
+     * <li> <p> <code>is-public</code> - A Boolean that indicates whether the image is
+     * public.</p> </li> <li> <p> <code>kernel-id</code> - The kernel ID.</p> </li>
+     * <li> <p> <code>manifest-location</code> - The location of the image
      * manifest.</p> </li> <li> <p> <code>name</code> - The name of the AMI (provided
      * during image creation).</p> </li> <li> <p> <code>owner-alias</code> - String
      * value from an Amazon-maintained list (<code>amazon</code> |
@@ -361,13 +365,15 @@ namespace Model
      * volume (<code>gp2</code> | <code>io1</code> | <code>st1 </code>|
      * <code>sc1</code> | <code>standard</code>).</p> </li> <li> <p>
      * <code>description</code> - The description of the image (provided during image
-     * creation).</p> </li> <li> <p> <code>hypervisor</code> - The hypervisor type
-     * (<code>ovm</code> | <code>xen</code>).</p> </li> <li> <p> <code>image-id</code>
-     * - The ID of the image.</p> </li> <li> <p> <code>image-type</code> - The image
-     * type (<code>machine</code> | <code>kernel</code> | <code>ramdisk</code>).</p>
-     * </li> <li> <p> <code>is-public</code> - A Boolean that indicates whether the
-     * image is public.</p> </li> <li> <p> <code>kernel-id</code> - The kernel ID.</p>
-     * </li> <li> <p> <code>manifest-location</code> - The location of the image
+     * creation).</p> </li> <li> <p> <code>ena-support</code> - A Boolean that
+     * indicates whether enhanced networking with ENA is enabled.</p> </li> <li> <p>
+     * <code>hypervisor</code> - The hypervisor type (<code>ovm</code> |
+     * <code>xen</code>).</p> </li> <li> <p> <code>image-id</code> - The ID of the
+     * image.</p> </li> <li> <p> <code>image-type</code> - The image type
+     * (<code>machine</code> | <code>kernel</code> | <code>ramdisk</code>).</p> </li>
+     * <li> <p> <code>is-public</code> - A Boolean that indicates whether the image is
+     * public.</p> </li> <li> <p> <code>kernel-id</code> - The kernel ID.</p> </li>
+     * <li> <p> <code>manifest-location</code> - The location of the image
      * manifest.</p> </li> <li> <p> <code>name</code> - The name of the AMI (provided
      * during image creation).</p> </li> <li> <p> <code>owner-alias</code> - String
      * value from an Amazon-maintained list (<code>amazon</code> |
@@ -417,13 +423,15 @@ namespace Model
      * volume (<code>gp2</code> | <code>io1</code> | <code>st1 </code>|
      * <code>sc1</code> | <code>standard</code>).</p> </li> <li> <p>
      * <code>description</code> - The description of the image (provided during image
-     * creation).</p> </li> <li> <p> <code>hypervisor</code> - The hypervisor type
-     * (<code>ovm</code> | <code>xen</code>).</p> </li> <li> <p> <code>image-id</code>
-     * - The ID of the image.</p> </li> <li> <p> <code>image-type</code> - The image
-     * type (<code>machine</code> | <code>kernel</code> | <code>ramdisk</code>).</p>
-     * </li> <li> <p> <code>is-public</code> - A Boolean that indicates whether the
-     * image is public.</p> </li> <li> <p> <code>kernel-id</code> - The kernel ID.</p>
-     * </li> <li> <p> <code>manifest-location</code> - The location of the image
+     * creation).</p> </li> <li> <p> <code>ena-support</code> - A Boolean that
+     * indicates whether enhanced networking with ENA is enabled.</p> </li> <li> <p>
+     * <code>hypervisor</code> - The hypervisor type (<code>ovm</code> |
+     * <code>xen</code>).</p> </li> <li> <p> <code>image-id</code> - The ID of the
+     * image.</p> </li> <li> <p> <code>image-type</code> - The image type
+     * (<code>machine</code> | <code>kernel</code> | <code>ramdisk</code>).</p> </li>
+     * <li> <p> <code>is-public</code> - A Boolean that indicates whether the image is
+     * public.</p> </li> <li> <p> <code>kernel-id</code> - The kernel ID.</p> </li>
+     * <li> <p> <code>manifest-location</code> - The location of the image
      * manifest.</p> </li> <li> <p> <code>name</code> - The name of the AMI (provided
      * during image creation).</p> </li> <li> <p> <code>owner-alias</code> - String
      * value from an Amazon-maintained list (<code>amazon</code> |
@@ -473,13 +481,15 @@ namespace Model
      * volume (<code>gp2</code> | <code>io1</code> | <code>st1 </code>|
      * <code>sc1</code> | <code>standard</code>).</p> </li> <li> <p>
      * <code>description</code> - The description of the image (provided during image
-     * creation).</p> </li> <li> <p> <code>hypervisor</code> - The hypervisor type
-     * (<code>ovm</code> | <code>xen</code>).</p> </li> <li> <p> <code>image-id</code>
-     * - The ID of the image.</p> </li> <li> <p> <code>image-type</code> - The image
-     * type (<code>machine</code> | <code>kernel</code> | <code>ramdisk</code>).</p>
-     * </li> <li> <p> <code>is-public</code> - A Boolean that indicates whether the
-     * image is public.</p> </li> <li> <p> <code>kernel-id</code> - The kernel ID.</p>
-     * </li> <li> <p> <code>manifest-location</code> - The location of the image
+     * creation).</p> </li> <li> <p> <code>ena-support</code> - A Boolean that
+     * indicates whether enhanced networking with ENA is enabled.</p> </li> <li> <p>
+     * <code>hypervisor</code> - The hypervisor type (<code>ovm</code> |
+     * <code>xen</code>).</p> </li> <li> <p> <code>image-id</code> - The ID of the
+     * image.</p> </li> <li> <p> <code>image-type</code> - The image type
+     * (<code>machine</code> | <code>kernel</code> | <code>ramdisk</code>).</p> </li>
+     * <li> <p> <code>is-public</code> - A Boolean that indicates whether the image is
+     * public.</p> </li> <li> <p> <code>kernel-id</code> - The kernel ID.</p> </li>
+     * <li> <p> <code>manifest-location</code> - The location of the image
      * manifest.</p> </li> <li> <p> <code>name</code> - The name of the AMI (provided
      * during image creation).</p> </li> <li> <p> <code>owner-alias</code> - String
      * value from an Amazon-maintained list (<code>amazon</code> |
@@ -529,13 +539,15 @@ namespace Model
      * volume (<code>gp2</code> | <code>io1</code> | <code>st1 </code>|
      * <code>sc1</code> | <code>standard</code>).</p> </li> <li> <p>
      * <code>description</code> - The description of the image (provided during image
-     * creation).</p> </li> <li> <p> <code>hypervisor</code> - The hypervisor type
-     * (<code>ovm</code> | <code>xen</code>).</p> </li> <li> <p> <code>image-id</code>
-     * - The ID of the image.</p> </li> <li> <p> <code>image-type</code> - The image
-     * type (<code>machine</code> | <code>kernel</code> | <code>ramdisk</code>).</p>
-     * </li> <li> <p> <code>is-public</code> - A Boolean that indicates whether the
-     * image is public.</p> </li> <li> <p> <code>kernel-id</code> - The kernel ID.</p>
-     * </li> <li> <p> <code>manifest-location</code> - The location of the image
+     * creation).</p> </li> <li> <p> <code>ena-support</code> - A Boolean that
+     * indicates whether enhanced networking with ENA is enabled.</p> </li> <li> <p>
+     * <code>hypervisor</code> - The hypervisor type (<code>ovm</code> |
+     * <code>xen</code>).</p> </li> <li> <p> <code>image-id</code> - The ID of the
+     * image.</p> </li> <li> <p> <code>image-type</code> - The image type
+     * (<code>machine</code> | <code>kernel</code> | <code>ramdisk</code>).</p> </li>
+     * <li> <p> <code>is-public</code> - A Boolean that indicates whether the image is
+     * public.</p> </li> <li> <p> <code>kernel-id</code> - The kernel ID.</p> </li>
+     * <li> <p> <code>manifest-location</code> - The location of the image
      * manifest.</p> </li> <li> <p> <code>name</code> - The name of the AMI (provided
      * during image creation).</p> </li> <li> <p> <code>owner-alias</code> - String
      * value from an Amazon-maintained list (<code>amazon</code> |
@@ -585,13 +597,15 @@ namespace Model
      * volume (<code>gp2</code> | <code>io1</code> | <code>st1 </code>|
      * <code>sc1</code> | <code>standard</code>).</p> </li> <li> <p>
      * <code>description</code> - The description of the image (provided during image
-     * creation).</p> </li> <li> <p> <code>hypervisor</code> - The hypervisor type
-     * (<code>ovm</code> | <code>xen</code>).</p> </li> <li> <p> <code>image-id</code>
-     * - The ID of the image.</p> </li> <li> <p> <code>image-type</code> - The image
-     * type (<code>machine</code> | <code>kernel</code> | <code>ramdisk</code>).</p>
-     * </li> <li> <p> <code>is-public</code> - A Boolean that indicates whether the
-     * image is public.</p> </li> <li> <p> <code>kernel-id</code> - The kernel ID.</p>
-     * </li> <li> <p> <code>manifest-location</code> - The location of the image
+     * creation).</p> </li> <li> <p> <code>ena-support</code> - A Boolean that
+     * indicates whether enhanced networking with ENA is enabled.</p> </li> <li> <p>
+     * <code>hypervisor</code> - The hypervisor type (<code>ovm</code> |
+     * <code>xen</code>).</p> </li> <li> <p> <code>image-id</code> - The ID of the
+     * image.</p> </li> <li> <p> <code>image-type</code> - The image type
+     * (<code>machine</code> | <code>kernel</code> | <code>ramdisk</code>).</p> </li>
+     * <li> <p> <code>is-public</code> - A Boolean that indicates whether the image is
+     * public.</p> </li> <li> <p> <code>kernel-id</code> - The kernel ID.</p> </li>
+     * <li> <p> <code>manifest-location</code> - The location of the image
      * manifest.</p> </li> <li> <p> <code>name</code> - The name of the AMI (provided
      * during image creation).</p> </li> <li> <p> <code>owner-alias</code> - String
      * value from an Amazon-maintained list (<code>amazon</code> |

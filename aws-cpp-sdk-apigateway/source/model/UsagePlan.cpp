@@ -33,7 +33,8 @@ UsagePlan::UsagePlan() :
     m_descriptionHasBeenSet(false),
     m_apiStagesHasBeenSet(false),
     m_throttleHasBeenSet(false),
-    m_quotaHasBeenSet(false)
+    m_quotaHasBeenSet(false),
+    m_productCodeHasBeenSet(false)
 {
 }
 
@@ -43,7 +44,8 @@ UsagePlan::UsagePlan(const JsonValue& jsonValue) :
     m_descriptionHasBeenSet(false),
     m_apiStagesHasBeenSet(false),
     m_throttleHasBeenSet(false),
-    m_quotaHasBeenSet(false)
+    m_quotaHasBeenSet(false),
+    m_productCodeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -95,6 +97,13 @@ UsagePlan& UsagePlan::operator =(const JsonValue& jsonValue)
     m_quotaHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("productCode"))
+  {
+    m_productCode = jsonValue.GetString("productCode");
+
+    m_productCodeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -140,6 +149,12 @@ JsonValue UsagePlan::Jsonize() const
   if(m_quotaHasBeenSet)
   {
    payload.WithObject("quota", m_quota.Jsonize());
+
+  }
+
+  if(m_productCodeHasBeenSet)
+  {
+   payload.WithString("productCode", m_productCode);
 
   }
 

@@ -32,6 +32,7 @@ namespace Aws
         static const int Name_HASH = HashingUtils::HashString("Name");
         static const int Owner_HASH = HashingUtils::HashString("Owner");
         static const int PlatformTypes_HASH = HashingUtils::HashString("PlatformTypes");
+        static const int DocumentType_HASH = HashingUtils::HashString("DocumentType");
 
 
         DocumentFilterKey GetDocumentFilterKeyForName(const Aws::String& name)
@@ -48,6 +49,10 @@ namespace Aws
           else if (hashCode == PlatformTypes_HASH)
           {
             return DocumentFilterKey::PlatformTypes;
+          }
+          else if (hashCode == DocumentType_HASH)
+          {
+            return DocumentFilterKey::DocumentType;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -69,6 +74,8 @@ namespace Aws
             return "Owner";
           case DocumentFilterKey::PlatformTypes:
             return "PlatformTypes";
+          case DocumentFilterKey::DocumentType:
+            return "DocumentType";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

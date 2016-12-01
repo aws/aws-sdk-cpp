@@ -23,6 +23,7 @@
 #include <aws/ec2/model/ShutdownBehavior.h>
 #include <aws/ec2/model/IamInstanceProfileSpecification.h>
 #include <aws/ec2/model/BlockDeviceMapping.h>
+#include <aws/ec2/model/InstanceIpv6Address.h>
 #include <aws/ec2/model/InstanceNetworkInterfaceSpecification.h>
 
 namespace Aws
@@ -737,10 +738,8 @@ namespace Model
 
     /**
      * <p>If you set this parameter to <code>true</code>, you can't terminate the
-     * instance using the Amazon EC2 console, CLI, or API; otherwise, you can. If you
-     * set this parameter to <code>true</code> and then later want to be able to
-     * terminate the instance, you must first change the value of the
-     * <code>disableApiTermination</code> attribute to <code>false</code> using
+     * instance using the Amazon EC2 console, CLI, or API; otherwise, you can. To
+     * change this attribute to <code>false</code> after launch, use
      * <a>ModifyInstanceAttribute</a>. Alternatively, if you set
      * <code>InstanceInitiatedShutdownBehavior</code> to <code>terminate</code>, you
      * can terminate the instance by running the shutdown command from the
@@ -750,10 +749,8 @@ namespace Model
 
     /**
      * <p>If you set this parameter to <code>true</code>, you can't terminate the
-     * instance using the Amazon EC2 console, CLI, or API; otherwise, you can. If you
-     * set this parameter to <code>true</code> and then later want to be able to
-     * terminate the instance, you must first change the value of the
-     * <code>disableApiTermination</code> attribute to <code>false</code> using
+     * instance using the Amazon EC2 console, CLI, or API; otherwise, you can. To
+     * change this attribute to <code>false</code> after launch, use
      * <a>ModifyInstanceAttribute</a>. Alternatively, if you set
      * <code>InstanceInitiatedShutdownBehavior</code> to <code>terminate</code>, you
      * can terminate the instance by running the shutdown command from the
@@ -763,10 +760,8 @@ namespace Model
 
     /**
      * <p>If you set this parameter to <code>true</code>, you can't terminate the
-     * instance using the Amazon EC2 console, CLI, or API; otherwise, you can. If you
-     * set this parameter to <code>true</code> and then later want to be able to
-     * terminate the instance, you must first change the value of the
-     * <code>disableApiTermination</code> attribute to <code>false</code> using
+     * instance using the Amazon EC2 console, CLI, or API; otherwise, you can. To
+     * change this attribute to <code>false</code> after launch, use
      * <a>ModifyInstanceAttribute</a>. Alternatively, if you set
      * <code>InstanceInitiatedShutdownBehavior</code> to <code>terminate</code>, you
      * can terminate the instance by running the shutdown command from the
@@ -810,88 +805,164 @@ namespace Model
     inline RunInstancesRequest& WithInstanceInitiatedShutdownBehavior(ShutdownBehavior&& value) { SetInstanceInitiatedShutdownBehavior(value); return *this;}
 
     /**
-     * <p>[EC2-VPC] The primary IP address. You must specify a value from the IP
+     * <p>[EC2-VPC] The primary IPv4 address. You must specify a value from the IPv4
      * address range of the subnet.</p> <p>Only one private IP address can be
-     * designated as primary. Therefore, you can't specify this parameter if
-     * <code>PrivateIpAddresses.n.Primary</code> is set to <code>true</code> and
-     * <code>PrivateIpAddresses.n.PrivateIpAddress</code> is set to an IP address. </p>
-     * <p>You cannot specify this option if you're launching more than one instance in
-     * the request.</p> <p>Default: We select an IP address from the IP address range
-     * of the subnet.</p>
+     * designated as primary. You can't specify this option if you've specified the
+     * option to designate a private IP address as the primary IP address in a network
+     * interface specification. You cannot specify this option if you're launching more
+     * than one instance in the request.</p>
      */
     inline const Aws::String& GetPrivateIpAddress() const{ return m_privateIpAddress; }
 
     /**
-     * <p>[EC2-VPC] The primary IP address. You must specify a value from the IP
+     * <p>[EC2-VPC] The primary IPv4 address. You must specify a value from the IPv4
      * address range of the subnet.</p> <p>Only one private IP address can be
-     * designated as primary. Therefore, you can't specify this parameter if
-     * <code>PrivateIpAddresses.n.Primary</code> is set to <code>true</code> and
-     * <code>PrivateIpAddresses.n.PrivateIpAddress</code> is set to an IP address. </p>
-     * <p>You cannot specify this option if you're launching more than one instance in
-     * the request.</p> <p>Default: We select an IP address from the IP address range
-     * of the subnet.</p>
+     * designated as primary. You can't specify this option if you've specified the
+     * option to designate a private IP address as the primary IP address in a network
+     * interface specification. You cannot specify this option if you're launching more
+     * than one instance in the request.</p>
      */
     inline void SetPrivateIpAddress(const Aws::String& value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress = value; }
 
     /**
-     * <p>[EC2-VPC] The primary IP address. You must specify a value from the IP
+     * <p>[EC2-VPC] The primary IPv4 address. You must specify a value from the IPv4
      * address range of the subnet.</p> <p>Only one private IP address can be
-     * designated as primary. Therefore, you can't specify this parameter if
-     * <code>PrivateIpAddresses.n.Primary</code> is set to <code>true</code> and
-     * <code>PrivateIpAddresses.n.PrivateIpAddress</code> is set to an IP address. </p>
-     * <p>You cannot specify this option if you're launching more than one instance in
-     * the request.</p> <p>Default: We select an IP address from the IP address range
-     * of the subnet.</p>
+     * designated as primary. You can't specify this option if you've specified the
+     * option to designate a private IP address as the primary IP address in a network
+     * interface specification. You cannot specify this option if you're launching more
+     * than one instance in the request.</p>
      */
     inline void SetPrivateIpAddress(Aws::String&& value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress = value; }
 
     /**
-     * <p>[EC2-VPC] The primary IP address. You must specify a value from the IP
+     * <p>[EC2-VPC] The primary IPv4 address. You must specify a value from the IPv4
      * address range of the subnet.</p> <p>Only one private IP address can be
-     * designated as primary. Therefore, you can't specify this parameter if
-     * <code>PrivateIpAddresses.n.Primary</code> is set to <code>true</code> and
-     * <code>PrivateIpAddresses.n.PrivateIpAddress</code> is set to an IP address. </p>
-     * <p>You cannot specify this option if you're launching more than one instance in
-     * the request.</p> <p>Default: We select an IP address from the IP address range
-     * of the subnet.</p>
+     * designated as primary. You can't specify this option if you've specified the
+     * option to designate a private IP address as the primary IP address in a network
+     * interface specification. You cannot specify this option if you're launching more
+     * than one instance in the request.</p>
      */
     inline void SetPrivateIpAddress(const char* value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress.assign(value); }
 
     /**
-     * <p>[EC2-VPC] The primary IP address. You must specify a value from the IP
+     * <p>[EC2-VPC] The primary IPv4 address. You must specify a value from the IPv4
      * address range of the subnet.</p> <p>Only one private IP address can be
-     * designated as primary. Therefore, you can't specify this parameter if
-     * <code>PrivateIpAddresses.n.Primary</code> is set to <code>true</code> and
-     * <code>PrivateIpAddresses.n.PrivateIpAddress</code> is set to an IP address. </p>
-     * <p>You cannot specify this option if you're launching more than one instance in
-     * the request.</p> <p>Default: We select an IP address from the IP address range
-     * of the subnet.</p>
+     * designated as primary. You can't specify this option if you've specified the
+     * option to designate a private IP address as the primary IP address in a network
+     * interface specification. You cannot specify this option if you're launching more
+     * than one instance in the request.</p>
      */
     inline RunInstancesRequest& WithPrivateIpAddress(const Aws::String& value) { SetPrivateIpAddress(value); return *this;}
 
     /**
-     * <p>[EC2-VPC] The primary IP address. You must specify a value from the IP
+     * <p>[EC2-VPC] The primary IPv4 address. You must specify a value from the IPv4
      * address range of the subnet.</p> <p>Only one private IP address can be
-     * designated as primary. Therefore, you can't specify this parameter if
-     * <code>PrivateIpAddresses.n.Primary</code> is set to <code>true</code> and
-     * <code>PrivateIpAddresses.n.PrivateIpAddress</code> is set to an IP address. </p>
-     * <p>You cannot specify this option if you're launching more than one instance in
-     * the request.</p> <p>Default: We select an IP address from the IP address range
-     * of the subnet.</p>
+     * designated as primary. You can't specify this option if you've specified the
+     * option to designate a private IP address as the primary IP address in a network
+     * interface specification. You cannot specify this option if you're launching more
+     * than one instance in the request.</p>
      */
     inline RunInstancesRequest& WithPrivateIpAddress(Aws::String&& value) { SetPrivateIpAddress(value); return *this;}
 
     /**
-     * <p>[EC2-VPC] The primary IP address. You must specify a value from the IP
+     * <p>[EC2-VPC] The primary IPv4 address. You must specify a value from the IPv4
      * address range of the subnet.</p> <p>Only one private IP address can be
-     * designated as primary. Therefore, you can't specify this parameter if
-     * <code>PrivateIpAddresses.n.Primary</code> is set to <code>true</code> and
-     * <code>PrivateIpAddresses.n.PrivateIpAddress</code> is set to an IP address. </p>
-     * <p>You cannot specify this option if you're launching more than one instance in
-     * the request.</p> <p>Default: We select an IP address from the IP address range
-     * of the subnet.</p>
+     * designated as primary. You can't specify this option if you've specified the
+     * option to designate a private IP address as the primary IP address in a network
+     * interface specification. You cannot specify this option if you're launching more
+     * than one instance in the request.</p>
      */
     inline RunInstancesRequest& WithPrivateIpAddress(const char* value) { SetPrivateIpAddress(value); return *this;}
+
+    /**
+     * <p>[EC2-VPC] Specify one or more IPv6 addresses from the range of the subnet to
+     * associate with the primary network interface. You cannot specify this option and
+     * the option to assign a number of IPv6 addresses in the same request. You cannot
+     * specify this option if you've specified a minimum number of instances to
+     * launch.</p>
+     */
+    inline const Aws::Vector<InstanceIpv6Address>& GetIpv6Addresses() const{ return m_ipv6Addresses; }
+
+    /**
+     * <p>[EC2-VPC] Specify one or more IPv6 addresses from the range of the subnet to
+     * associate with the primary network interface. You cannot specify this option and
+     * the option to assign a number of IPv6 addresses in the same request. You cannot
+     * specify this option if you've specified a minimum number of instances to
+     * launch.</p>
+     */
+    inline void SetIpv6Addresses(const Aws::Vector<InstanceIpv6Address>& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses = value; }
+
+    /**
+     * <p>[EC2-VPC] Specify one or more IPv6 addresses from the range of the subnet to
+     * associate with the primary network interface. You cannot specify this option and
+     * the option to assign a number of IPv6 addresses in the same request. You cannot
+     * specify this option if you've specified a minimum number of instances to
+     * launch.</p>
+     */
+    inline void SetIpv6Addresses(Aws::Vector<InstanceIpv6Address>&& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses = value; }
+
+    /**
+     * <p>[EC2-VPC] Specify one or more IPv6 addresses from the range of the subnet to
+     * associate with the primary network interface. You cannot specify this option and
+     * the option to assign a number of IPv6 addresses in the same request. You cannot
+     * specify this option if you've specified a minimum number of instances to
+     * launch.</p>
+     */
+    inline RunInstancesRequest& WithIpv6Addresses(const Aws::Vector<InstanceIpv6Address>& value) { SetIpv6Addresses(value); return *this;}
+
+    /**
+     * <p>[EC2-VPC] Specify one or more IPv6 addresses from the range of the subnet to
+     * associate with the primary network interface. You cannot specify this option and
+     * the option to assign a number of IPv6 addresses in the same request. You cannot
+     * specify this option if you've specified a minimum number of instances to
+     * launch.</p>
+     */
+    inline RunInstancesRequest& WithIpv6Addresses(Aws::Vector<InstanceIpv6Address>&& value) { SetIpv6Addresses(value); return *this;}
+
+    /**
+     * <p>[EC2-VPC] Specify one or more IPv6 addresses from the range of the subnet to
+     * associate with the primary network interface. You cannot specify this option and
+     * the option to assign a number of IPv6 addresses in the same request. You cannot
+     * specify this option if you've specified a minimum number of instances to
+     * launch.</p>
+     */
+    inline RunInstancesRequest& AddIpv6Addresses(const InstanceIpv6Address& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses.push_back(value); return *this; }
+
+    /**
+     * <p>[EC2-VPC] Specify one or more IPv6 addresses from the range of the subnet to
+     * associate with the primary network interface. You cannot specify this option and
+     * the option to assign a number of IPv6 addresses in the same request. You cannot
+     * specify this option if you've specified a minimum number of instances to
+     * launch.</p>
+     */
+    inline RunInstancesRequest& AddIpv6Addresses(InstanceIpv6Address&& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses.push_back(value); return *this; }
+
+    /**
+     * <p>[EC2-VPC] A number of IPv6 addresses to associate with the primary network
+     * interface. Amazon EC2 chooses the IPv6 addresses from the range of your subnet.
+     * You cannot specify this option and the option to assign specific IPv6 addresses
+     * in the same request. You can specify this option if you've specified a minimum
+     * number of instances to launch.</p>
+     */
+    inline int GetIpv6AddressCount() const{ return m_ipv6AddressCount; }
+
+    /**
+     * <p>[EC2-VPC] A number of IPv6 addresses to associate with the primary network
+     * interface. Amazon EC2 chooses the IPv6 addresses from the range of your subnet.
+     * You cannot specify this option and the option to assign specific IPv6 addresses
+     * in the same request. You can specify this option if you've specified a minimum
+     * number of instances to launch.</p>
+     */
+    inline void SetIpv6AddressCount(int value) { m_ipv6AddressCountHasBeenSet = true; m_ipv6AddressCount = value; }
+
+    /**
+     * <p>[EC2-VPC] A number of IPv6 addresses to associate with the primary network
+     * interface. Amazon EC2 chooses the IPv6 addresses from the range of your subnet.
+     * You cannot specify this option and the option to assign specific IPv6 addresses
+     * in the same request. You can specify this option if you've specified a minimum
+     * number of instances to launch.</p>
+     */
+    inline RunInstancesRequest& WithIpv6AddressCount(int value) { SetIpv6AddressCount(value); return *this;}
 
     /**
      * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
@@ -1108,6 +1179,10 @@ namespace Model
     bool m_instanceInitiatedShutdownBehaviorHasBeenSet;
     Aws::String m_privateIpAddress;
     bool m_privateIpAddressHasBeenSet;
+    Aws::Vector<InstanceIpv6Address> m_ipv6Addresses;
+    bool m_ipv6AddressesHasBeenSet;
+    int m_ipv6AddressCount;
+    bool m_ipv6AddressCountHasBeenSet;
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet;
     Aws::String m_additionalInfo;

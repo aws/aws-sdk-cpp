@@ -53,7 +53,7 @@ Aws::String CancelSpotFleetRequestsRequest::SerializePayload() const
     ss << "TerminateInstances=" << m_terminateInstances << "&";
   }
 
-  ss << "Version=2016-09-15";
+  ss << "Version=2016-11-15";
   return ss.str();
 }
 

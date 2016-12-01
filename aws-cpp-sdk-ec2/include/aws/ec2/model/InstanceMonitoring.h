@@ -33,7 +33,7 @@ namespace Model
 {
 
   /**
-   * <p>Describes the monitoring information of the instance.</p>
+   * <p>Describes the monitoring of an instance.</p>
    */
   class AWS_EC2_API InstanceMonitoring
   {
@@ -81,27 +81,27 @@ namespace Model
     inline InstanceMonitoring& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
     /**
-     * <p>The monitoring information.</p>
+     * <p>The monitoring for the instance.</p>
      */
     inline const Monitoring& GetMonitoring() const{ return m_monitoring; }
 
     /**
-     * <p>The monitoring information.</p>
+     * <p>The monitoring for the instance.</p>
      */
     inline void SetMonitoring(const Monitoring& value) { m_monitoringHasBeenSet = true; m_monitoring = value; }
 
     /**
-     * <p>The monitoring information.</p>
+     * <p>The monitoring for the instance.</p>
      */
     inline void SetMonitoring(Monitoring&& value) { m_monitoringHasBeenSet = true; m_monitoring = value; }
 
     /**
-     * <p>The monitoring information.</p>
+     * <p>The monitoring for the instance.</p>
      */
     inline InstanceMonitoring& WithMonitoring(const Monitoring& value) { SetMonitoring(value); return *this;}
 
     /**
-     * <p>The monitoring information.</p>
+     * <p>The monitoring for the instance.</p>
      */
     inline InstanceMonitoring& WithMonitoring(Monitoring&& value) { SetMonitoring(value); return *this;}
 

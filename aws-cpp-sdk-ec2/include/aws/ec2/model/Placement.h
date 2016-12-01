@@ -33,7 +33,7 @@ namespace Model
 {
 
   /**
-   * <p>Describes the placement for the instance.</p>
+   * <p>Describes the placement of an instance.</p>
    */
   class AWS_EC2_API Placement
   {

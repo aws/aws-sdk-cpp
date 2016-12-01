@@ -103,15 +103,21 @@ namespace Model
      * <p>One or more filters.</p> <ul> <li> <p> <code>availabilityZone</code> - The
      * Availability Zone for the subnet. You can also use
      * <code>availability-zone</code> as the filter name.</p> </li> <li> <p>
-     * <code>available-ip-address-count</code> - The number of IP addresses in the
-     * subnet that are available.</p> </li> <li> <p> <code>cidrBlock</code> - The CIDR
-     * block of the subnet. The CIDR block you specify must exactly match the subnet's
-     * CIDR block for information to be returned for the subnet. You can also use
-     * <code>cidr</code> or <code>cidr-block</code> as the filter names.</p> </li> <li>
-     * <p> <code>defaultForAz</code> - Indicates whether this is the default subnet for
-     * the Availability Zone. You can also use <code>default-for-az</code> as the
-     * filter name.</p> </li> <li> <p> <code>state</code> - The state of the subnet
-     * (<code>pending</code> | <code>available</code>).</p> </li> <li> <p>
+     * <code>available-ip-address-count</code> - The number of IPv4 addresses in the
+     * subnet that are available.</p> </li> <li> <p> <code>cidrBlock</code> - The IPv4
+     * CIDR block of the subnet. The CIDR block you specify must exactly match the
+     * subnet's CIDR block for information to be returned for the subnet. You can also
+     * use <code>cidr</code> or <code>cidr-block</code> as the filter names.</p> </li>
+     * <li> <p> <code>defaultForAz</code> - Indicates whether this is the default
+     * subnet for the Availability Zone. You can also use <code>default-for-az</code>
+     * as the filter name.</p> </li> <li> <p>
+     * <code>ipv6-cidr-block-association.ipv6-cidr-block</code> - An IPv6 CIDR block
+     * associated with the subnet.</p> </li> <li> <p>
+     * <code>ipv6-cidr-block-association.association-id</code> - An association ID for
+     * an IPv6 CIDR block associated with the subnet.</p> </li> <li> <p>
+     * <code>ipv6-cidr-block-association.state</code> - The state of an IPv6 CIDR block
+     * associated with the subnet.</p> </li> <li> <p> <code>state</code> - The state of
+     * the subnet (<code>pending</code> | <code>available</code>).</p> </li> <li> <p>
      * <code>subnet-id</code> - The ID of the subnet.</p> </li> <li> <p>
      * <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag
      * assigned to the resource.</p> </li> <li> <p> <code>tag-key</code> - The key of a
@@ -132,15 +138,21 @@ namespace Model
      * <p>One or more filters.</p> <ul> <li> <p> <code>availabilityZone</code> - The
      * Availability Zone for the subnet. You can also use
      * <code>availability-zone</code> as the filter name.</p> </li> <li> <p>
-     * <code>available-ip-address-count</code> - The number of IP addresses in the
-     * subnet that are available.</p> </li> <li> <p> <code>cidrBlock</code> - The CIDR
-     * block of the subnet. The CIDR block you specify must exactly match the subnet's
-     * CIDR block for information to be returned for the subnet. You can also use
-     * <code>cidr</code> or <code>cidr-block</code> as the filter names.</p> </li> <li>
-     * <p> <code>defaultForAz</code> - Indicates whether this is the default subnet for
-     * the Availability Zone. You can also use <code>default-for-az</code> as the
-     * filter name.</p> </li> <li> <p> <code>state</code> - The state of the subnet
-     * (<code>pending</code> | <code>available</code>).</p> </li> <li> <p>
+     * <code>available-ip-address-count</code> - The number of IPv4 addresses in the
+     * subnet that are available.</p> </li> <li> <p> <code>cidrBlock</code> - The IPv4
+     * CIDR block of the subnet. The CIDR block you specify must exactly match the
+     * subnet's CIDR block for information to be returned for the subnet. You can also
+     * use <code>cidr</code> or <code>cidr-block</code> as the filter names.</p> </li>
+     * <li> <p> <code>defaultForAz</code> - Indicates whether this is the default
+     * subnet for the Availability Zone. You can also use <code>default-for-az</code>
+     * as the filter name.</p> </li> <li> <p>
+     * <code>ipv6-cidr-block-association.ipv6-cidr-block</code> - An IPv6 CIDR block
+     * associated with the subnet.</p> </li> <li> <p>
+     * <code>ipv6-cidr-block-association.association-id</code> - An association ID for
+     * an IPv6 CIDR block associated with the subnet.</p> </li> <li> <p>
+     * <code>ipv6-cidr-block-association.state</code> - The state of an IPv6 CIDR block
+     * associated with the subnet.</p> </li> <li> <p> <code>state</code> - The state of
+     * the subnet (<code>pending</code> | <code>available</code>).</p> </li> <li> <p>
      * <code>subnet-id</code> - The ID of the subnet.</p> </li> <li> <p>
      * <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag
      * assigned to the resource.</p> </li> <li> <p> <code>tag-key</code> - The key of a
@@ -161,15 +173,21 @@ namespace Model
      * <p>One or more filters.</p> <ul> <li> <p> <code>availabilityZone</code> - The
      * Availability Zone for the subnet. You can also use
      * <code>availability-zone</code> as the filter name.</p> </li> <li> <p>
-     * <code>available-ip-address-count</code> - The number of IP addresses in the
-     * subnet that are available.</p> </li> <li> <p> <code>cidrBlock</code> - The CIDR
-     * block of the subnet. The CIDR block you specify must exactly match the subnet's
-     * CIDR block for information to be returned for the subnet. You can also use
-     * <code>cidr</code> or <code>cidr-block</code> as the filter names.</p> </li> <li>
-     * <p> <code>defaultForAz</code> - Indicates whether this is the default subnet for
-     * the Availability Zone. You can also use <code>default-for-az</code> as the
-     * filter name.</p> </li> <li> <p> <code>state</code> - The state of the subnet
-     * (<code>pending</code> | <code>available</code>).</p> </li> <li> <p>
+     * <code>available-ip-address-count</code> - The number of IPv4 addresses in the
+     * subnet that are available.</p> </li> <li> <p> <code>cidrBlock</code> - The IPv4
+     * CIDR block of the subnet. The CIDR block you specify must exactly match the
+     * subnet's CIDR block for information to be returned for the subnet. You can also
+     * use <code>cidr</code> or <code>cidr-block</code> as the filter names.</p> </li>
+     * <li> <p> <code>defaultForAz</code> - Indicates whether this is the default
+     * subnet for the Availability Zone. You can also use <code>default-for-az</code>
+     * as the filter name.</p> </li> <li> <p>
+     * <code>ipv6-cidr-block-association.ipv6-cidr-block</code> - An IPv6 CIDR block
+     * associated with the subnet.</p> </li> <li> <p>
+     * <code>ipv6-cidr-block-association.association-id</code> - An association ID for
+     * an IPv6 CIDR block associated with the subnet.</p> </li> <li> <p>
+     * <code>ipv6-cidr-block-association.state</code> - The state of an IPv6 CIDR block
+     * associated with the subnet.</p> </li> <li> <p> <code>state</code> - The state of
+     * the subnet (<code>pending</code> | <code>available</code>).</p> </li> <li> <p>
      * <code>subnet-id</code> - The ID of the subnet.</p> </li> <li> <p>
      * <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag
      * assigned to the resource.</p> </li> <li> <p> <code>tag-key</code> - The key of a
@@ -190,15 +208,21 @@ namespace Model
      * <p>One or more filters.</p> <ul> <li> <p> <code>availabilityZone</code> - The
      * Availability Zone for the subnet. You can also use
      * <code>availability-zone</code> as the filter name.</p> </li> <li> <p>
-     * <code>available-ip-address-count</code> - The number of IP addresses in the
-     * subnet that are available.</p> </li> <li> <p> <code>cidrBlock</code> - The CIDR
-     * block of the subnet. The CIDR block you specify must exactly match the subnet's
-     * CIDR block for information to be returned for the subnet. You can also use
-     * <code>cidr</code> or <code>cidr-block</code> as the filter names.</p> </li> <li>
-     * <p> <code>defaultForAz</code> - Indicates whether this is the default subnet for
-     * the Availability Zone. You can also use <code>default-for-az</code> as the
-     * filter name.</p> </li> <li> <p> <code>state</code> - The state of the subnet
-     * (<code>pending</code> | <code>available</code>).</p> </li> <li> <p>
+     * <code>available-ip-address-count</code> - The number of IPv4 addresses in the
+     * subnet that are available.</p> </li> <li> <p> <code>cidrBlock</code> - The IPv4
+     * CIDR block of the subnet. The CIDR block you specify must exactly match the
+     * subnet's CIDR block for information to be returned for the subnet. You can also
+     * use <code>cidr</code> or <code>cidr-block</code> as the filter names.</p> </li>
+     * <li> <p> <code>defaultForAz</code> - Indicates whether this is the default
+     * subnet for the Availability Zone. You can also use <code>default-for-az</code>
+     * as the filter name.</p> </li> <li> <p>
+     * <code>ipv6-cidr-block-association.ipv6-cidr-block</code> - An IPv6 CIDR block
+     * associated with the subnet.</p> </li> <li> <p>
+     * <code>ipv6-cidr-block-association.association-id</code> - An association ID for
+     * an IPv6 CIDR block associated with the subnet.</p> </li> <li> <p>
+     * <code>ipv6-cidr-block-association.state</code> - The state of an IPv6 CIDR block
+     * associated with the subnet.</p> </li> <li> <p> <code>state</code> - The state of
+     * the subnet (<code>pending</code> | <code>available</code>).</p> </li> <li> <p>
      * <code>subnet-id</code> - The ID of the subnet.</p> </li> <li> <p>
      * <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag
      * assigned to the resource.</p> </li> <li> <p> <code>tag-key</code> - The key of a
@@ -219,15 +243,21 @@ namespace Model
      * <p>One or more filters.</p> <ul> <li> <p> <code>availabilityZone</code> - The
      * Availability Zone for the subnet. You can also use
      * <code>availability-zone</code> as the filter name.</p> </li> <li> <p>
-     * <code>available-ip-address-count</code> - The number of IP addresses in the
-     * subnet that are available.</p> </li> <li> <p> <code>cidrBlock</code> - The CIDR
-     * block of the subnet. The CIDR block you specify must exactly match the subnet's
-     * CIDR block for information to be returned for the subnet. You can also use
-     * <code>cidr</code> or <code>cidr-block</code> as the filter names.</p> </li> <li>
-     * <p> <code>defaultForAz</code> - Indicates whether this is the default subnet for
-     * the Availability Zone. You can also use <code>default-for-az</code> as the
-     * filter name.</p> </li> <li> <p> <code>state</code> - The state of the subnet
-     * (<code>pending</code> | <code>available</code>).</p> </li> <li> <p>
+     * <code>available-ip-address-count</code> - The number of IPv4 addresses in the
+     * subnet that are available.</p> </li> <li> <p> <code>cidrBlock</code> - The IPv4
+     * CIDR block of the subnet. The CIDR block you specify must exactly match the
+     * subnet's CIDR block for information to be returned for the subnet. You can also
+     * use <code>cidr</code> or <code>cidr-block</code> as the filter names.</p> </li>
+     * <li> <p> <code>defaultForAz</code> - Indicates whether this is the default
+     * subnet for the Availability Zone. You can also use <code>default-for-az</code>
+     * as the filter name.</p> </li> <li> <p>
+     * <code>ipv6-cidr-block-association.ipv6-cidr-block</code> - An IPv6 CIDR block
+     * associated with the subnet.</p> </li> <li> <p>
+     * <code>ipv6-cidr-block-association.association-id</code> - An association ID for
+     * an IPv6 CIDR block associated with the subnet.</p> </li> <li> <p>
+     * <code>ipv6-cidr-block-association.state</code> - The state of an IPv6 CIDR block
+     * associated with the subnet.</p> </li> <li> <p> <code>state</code> - The state of
+     * the subnet (<code>pending</code> | <code>available</code>).</p> </li> <li> <p>
      * <code>subnet-id</code> - The ID of the subnet.</p> </li> <li> <p>
      * <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag
      * assigned to the resource.</p> </li> <li> <p> <code>tag-key</code> - The key of a
@@ -248,15 +278,21 @@ namespace Model
      * <p>One or more filters.</p> <ul> <li> <p> <code>availabilityZone</code> - The
      * Availability Zone for the subnet. You can also use
      * <code>availability-zone</code> as the filter name.</p> </li> <li> <p>
-     * <code>available-ip-address-count</code> - The number of IP addresses in the
-     * subnet that are available.</p> </li> <li> <p> <code>cidrBlock</code> - The CIDR
-     * block of the subnet. The CIDR block you specify must exactly match the subnet's
-     * CIDR block for information to be returned for the subnet. You can also use
-     * <code>cidr</code> or <code>cidr-block</code> as the filter names.</p> </li> <li>
-     * <p> <code>defaultForAz</code> - Indicates whether this is the default subnet for
-     * the Availability Zone. You can also use <code>default-for-az</code> as the
-     * filter name.</p> </li> <li> <p> <code>state</code> - The state of the subnet
-     * (<code>pending</code> | <code>available</code>).</p> </li> <li> <p>
+     * <code>available-ip-address-count</code> - The number of IPv4 addresses in the
+     * subnet that are available.</p> </li> <li> <p> <code>cidrBlock</code> - The IPv4
+     * CIDR block of the subnet. The CIDR block you specify must exactly match the
+     * subnet's CIDR block for information to be returned for the subnet. You can also
+     * use <code>cidr</code> or <code>cidr-block</code> as the filter names.</p> </li>
+     * <li> <p> <code>defaultForAz</code> - Indicates whether this is the default
+     * subnet for the Availability Zone. You can also use <code>default-for-az</code>
+     * as the filter name.</p> </li> <li> <p>
+     * <code>ipv6-cidr-block-association.ipv6-cidr-block</code> - An IPv6 CIDR block
+     * associated with the subnet.</p> </li> <li> <p>
+     * <code>ipv6-cidr-block-association.association-id</code> - An association ID for
+     * an IPv6 CIDR block associated with the subnet.</p> </li> <li> <p>
+     * <code>ipv6-cidr-block-association.state</code> - The state of an IPv6 CIDR block
+     * associated with the subnet.</p> </li> <li> <p> <code>state</code> - The state of
+     * the subnet (<code>pending</code> | <code>available</code>).</p> </li> <li> <p>
      * <code>subnet-id</code> - The ID of the subnet.</p> </li> <li> <p>
      * <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag
      * assigned to the resource.</p> </li> <li> <p> <code>tag-key</code> - The key of a
@@ -277,15 +313,21 @@ namespace Model
      * <p>One or more filters.</p> <ul> <li> <p> <code>availabilityZone</code> - The
      * Availability Zone for the subnet. You can also use
      * <code>availability-zone</code> as the filter name.</p> </li> <li> <p>
-     * <code>available-ip-address-count</code> - The number of IP addresses in the
-     * subnet that are available.</p> </li> <li> <p> <code>cidrBlock</code> - The CIDR
-     * block of the subnet. The CIDR block you specify must exactly match the subnet's
-     * CIDR block for information to be returned for the subnet. You can also use
-     * <code>cidr</code> or <code>cidr-block</code> as the filter names.</p> </li> <li>
-     * <p> <code>defaultForAz</code> - Indicates whether this is the default subnet for
-     * the Availability Zone. You can also use <code>default-for-az</code> as the
-     * filter name.</p> </li> <li> <p> <code>state</code> - The state of the subnet
-     * (<code>pending</code> | <code>available</code>).</p> </li> <li> <p>
+     * <code>available-ip-address-count</code> - The number of IPv4 addresses in the
+     * subnet that are available.</p> </li> <li> <p> <code>cidrBlock</code> - The IPv4
+     * CIDR block of the subnet. The CIDR block you specify must exactly match the
+     * subnet's CIDR block for information to be returned for the subnet. You can also
+     * use <code>cidr</code> or <code>cidr-block</code> as the filter names.</p> </li>
+     * <li> <p> <code>defaultForAz</code> - Indicates whether this is the default
+     * subnet for the Availability Zone. You can also use <code>default-for-az</code>
+     * as the filter name.</p> </li> <li> <p>
+     * <code>ipv6-cidr-block-association.ipv6-cidr-block</code> - An IPv6 CIDR block
+     * associated with the subnet.</p> </li> <li> <p>
+     * <code>ipv6-cidr-block-association.association-id</code> - An association ID for
+     * an IPv6 CIDR block associated with the subnet.</p> </li> <li> <p>
+     * <code>ipv6-cidr-block-association.state</code> - The state of an IPv6 CIDR block
+     * associated with the subnet.</p> </li> <li> <p> <code>state</code> - The state of
+     * the subnet (<code>pending</code> | <code>available</code>).</p> </li> <li> <p>
      * <code>subnet-id</code> - The ID of the subnet.</p> </li> <li> <p>
      * <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag
      * assigned to the resource.</p> </li> <li> <p> <code>tag-key</code> - The key of a

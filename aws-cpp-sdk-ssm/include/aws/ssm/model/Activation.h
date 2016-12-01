@@ -46,37 +46,37 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p>The ID created by SSM when you submitted the activation.</p>
+     * <p>The ID created by Systems Manager when you submitted the activation.</p>
      */
     inline const Aws::String& GetActivationId() const{ return m_activationId; }
 
     /**
-     * <p>The ID created by SSM when you submitted the activation.</p>
+     * <p>The ID created by Systems Manager when you submitted the activation.</p>
      */
     inline void SetActivationId(const Aws::String& value) { m_activationIdHasBeenSet = true; m_activationId = value; }
 
     /**
-     * <p>The ID created by SSM when you submitted the activation.</p>
+     * <p>The ID created by Systems Manager when you submitted the activation.</p>
      */
     inline void SetActivationId(Aws::String&& value) { m_activationIdHasBeenSet = true; m_activationId = value; }
 
     /**
-     * <p>The ID created by SSM when you submitted the activation.</p>
+     * <p>The ID created by Systems Manager when you submitted the activation.</p>
      */
     inline void SetActivationId(const char* value) { m_activationIdHasBeenSet = true; m_activationId.assign(value); }
 
     /**
-     * <p>The ID created by SSM when you submitted the activation.</p>
+     * <p>The ID created by Systems Manager when you submitted the activation.</p>
      */
     inline Activation& WithActivationId(const Aws::String& value) { SetActivationId(value); return *this;}
 
     /**
-     * <p>The ID created by SSM when you submitted the activation.</p>
+     * <p>The ID created by Systems Manager when you submitted the activation.</p>
      */
     inline Activation& WithActivationId(Aws::String&& value) { SetActivationId(value); return *this;}
 
     /**
-     * <p>The ID created by SSM when you submitted the activation.</p>
+     * <p>The ID created by Systems Manager when you submitted the activation.</p>
      */
     inline Activation& WithActivationId(const char* value) { SetActivationId(value); return *this;}
 

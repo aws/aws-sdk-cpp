@@ -30,7 +30,8 @@ CreateStageRequest::CreateStageRequest() :
     m_cacheClusterEnabledHasBeenSet(false),
     m_cacheClusterSize(CacheClusterSize::NOT_SET),
     m_cacheClusterSizeHasBeenSet(false),
-    m_variablesHasBeenSet(false)
+    m_variablesHasBeenSet(false),
+    m_documentationVersionHasBeenSet(false)
 {
 }
 
@@ -75,6 +76,12 @@ Aws::String CreateStageRequest::SerializePayload() const
      variablesJsonMap.WithString(variablesItem.first, variablesItem.second);
    }
    payload.WithObject("variables", std::move(variablesJsonMap));
+
+  }
+
+  if(m_documentationVersionHasBeenSet)
+  {
+   payload.WithString("documentationVersion", m_documentationVersion);
 
   }
 

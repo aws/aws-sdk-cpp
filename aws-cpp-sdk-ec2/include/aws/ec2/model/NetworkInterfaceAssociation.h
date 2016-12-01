@@ -32,7 +32,7 @@ namespace Model
 {
 
   /**
-   * <p>Describes association information for an Elastic IP address.</p>
+   * <p>Describes association information for an Elastic IP address (IPv4 only).</p>
    */
   class AWS_EC2_API NetworkInterfaceAssociation
   {

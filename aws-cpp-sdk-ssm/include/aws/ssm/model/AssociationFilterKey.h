@@ -26,7 +26,11 @@ namespace Model
   {
     NOT_SET,
     InstanceId,
-    Name
+    Name,
+    AssociationId,
+    AssociationStatusName,
+    LastExecutedBefore,
+    LastExecutedAfter
   };
 
 namespace AssociationFilterKeyMapper

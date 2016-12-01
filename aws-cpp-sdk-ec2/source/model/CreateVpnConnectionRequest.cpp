@@ -58,7 +58,7 @@ Aws::String CreateVpnConnectionRequest::SerializePayload() const
     m_options.OutputToStream(ss, "Options");
   }
 
-  ss << "Version=2016-09-15";
+  ss << "Version=2016-11-15";
   return ss.str();
 }
 
