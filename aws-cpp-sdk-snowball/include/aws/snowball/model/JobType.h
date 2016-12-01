@@ -26,7 +26,8 @@ namespace Model
   {
     NOT_SET,
     IMPORT,
-    EXPORT
+    EXPORT,
+    LOCAL_USE
   };
 
 namespace JobTypeMapper
