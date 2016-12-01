@@ -75,6 +75,7 @@ protected:
         ASSERT_TRUE(createOutcome.IsSuccess());
 
         m_vpcId = createOutcome.GetResult().GetVpc().GetVpcId();
+        WaitOnVpcState(m_vpcId, ObjectState::Ready);
 
         DeleteSecurityGroup(SECURITY_GROUP_NAME);
     }
@@ -110,6 +111,10 @@ protected:
                 const Aws::Vector< Aws::EC2::Model::SecurityGroup >& groups = describeOutcome.GetResult().GetSecurityGroups();
                 bool exists = std::find_if(groups.cbegin(), groups.cend(), [](const Aws::EC2::Model::SecurityGroup& group){ return group.GetGroupName() == SECURITY_GROUP_NAME; }) != groups.cend();
                 finished = (objectState == ObjectState::Nonexistent && !exists) || (objectState == ObjectState::Ready && exists);
+            } 
+            else if (describeOutcome.GetError().GetErrorType() == Aws::EC2::EC2Errors::INVALID_GROUP__NOT_FOUND)
+            {
+                finished = objectState == ObjectState::Nonexistent;
             }
 
             if (!finished)
@@ -144,6 +149,10 @@ protected:
                 const Aws::Vector< Aws::EC2::Model::Vpc >& vpcs = describeOutcome.GetResult().GetVpcs();
                 bool exists = std::find_if(vpcs.cbegin(), vpcs.cend(), [vpcId](const Aws::EC2::Model::Vpc& vpc){ return vpc.GetVpcId() == vpcId; }) != vpcs.cend();
                 finished = (objectState == ObjectState::Nonexistent && !exists) || (objectState == ObjectState::Ready && exists);
+            }
+            else if (describeOutcome.GetError().GetErrorType() == Aws::EC2::EC2Errors::INVALID_VPC_I_D__NOT_FOUND)
+            {
+                finished = objectState == ObjectState::Nonexistent;
             }
 
             if (!finished)
