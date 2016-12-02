@@ -123,6 +123,9 @@ namespace
             mockHttpClient = nullptr;
             mockHttpClientFactory = nullptr;
             mockIdentityRepository = nullptr;
+
+            CleanupHttp();
+            InitHttp();
         }
 
         void AddMockGetIdResultToStream(Aws::IOStream& stream, const char* identity = IDENTITY_1)
