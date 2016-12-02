@@ -36,7 +36,8 @@ ModifyInstanceAttributeRequest::ModifyInstanceAttributeRequest() :
     m_instanceInitiatedShutdownBehaviorHasBeenSet(false),
     m_groupsHasBeenSet(false),
     m_ebsOptimizedHasBeenSet(false),
-    m_sriovNetSupportHasBeenSet(false)
+    m_sriovNetSupportHasBeenSet(false),
+    m_enaSupportHasBeenSet(false)
 {
 }
 
@@ -130,7 +131,12 @@ Aws::String ModifyInstanceAttributeRequest::SerializePayload() const
     m_sriovNetSupport.OutputToStream(ss, "SriovNetSupport");
   }
 
-  ss << "Version=2015-10-01";
+  if(m_enaSupportHasBeenSet)
+  {
+    m_enaSupport.OutputToStream(ss, "EnaSupport");
+  }
+
+  ss << "Version=2016-11-15";
   return ss.str();
 }
 

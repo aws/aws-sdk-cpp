@@ -166,27 +166,32 @@ namespace Model
     inline RunScheduledInstancesRequest& WithScheduledInstanceId(const char* value) { SetScheduledInstanceId(value); return *this;}
 
     /**
-     * <p>The launch specification.</p>
+     * <p>The launch specification. You must match the instance type, Availability
+     * Zone, network, and platform of the schedule that you purchased.</p>
      */
     inline const ScheduledInstancesLaunchSpecification& GetLaunchSpecification() const{ return m_launchSpecification; }
 
     /**
-     * <p>The launch specification.</p>
+     * <p>The launch specification. You must match the instance type, Availability
+     * Zone, network, and platform of the schedule that you purchased.</p>
      */
     inline void SetLaunchSpecification(const ScheduledInstancesLaunchSpecification& value) { m_launchSpecificationHasBeenSet = true; m_launchSpecification = value; }
 
     /**
-     * <p>The launch specification.</p>
+     * <p>The launch specification. You must match the instance type, Availability
+     * Zone, network, and platform of the schedule that you purchased.</p>
      */
     inline void SetLaunchSpecification(ScheduledInstancesLaunchSpecification&& value) { m_launchSpecificationHasBeenSet = true; m_launchSpecification = value; }
 
     /**
-     * <p>The launch specification.</p>
+     * <p>The launch specification. You must match the instance type, Availability
+     * Zone, network, and platform of the schedule that you purchased.</p>
      */
     inline RunScheduledInstancesRequest& WithLaunchSpecification(const ScheduledInstancesLaunchSpecification& value) { SetLaunchSpecification(value); return *this;}
 
     /**
-     * <p>The launch specification.</p>
+     * <p>The launch specification. You must match the instance type, Availability
+     * Zone, network, and platform of the schedule that you purchased.</p>
      */
     inline RunScheduledInstancesRequest& WithLaunchSpecification(ScheduledInstancesLaunchSpecification&& value) { SetLaunchSpecification(value); return *this;}
 

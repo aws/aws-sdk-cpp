@@ -27,6 +27,7 @@ namespace Model
     NOT_SET,
     Creating,
     Active,
+    Updating,
     Deleting
   };
 

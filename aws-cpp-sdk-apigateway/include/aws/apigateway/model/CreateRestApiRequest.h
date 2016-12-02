@@ -105,6 +105,41 @@ namespace Model
     inline CreateRestApiRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
     /**
+     * <p>A version identifier for the API.</p>
+     */
+    inline const Aws::String& GetVersion() const{ return m_version; }
+
+    /**
+     * <p>A version identifier for the API.</p>
+     */
+    inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
+
+    /**
+     * <p>A version identifier for the API.</p>
+     */
+    inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = value; }
+
+    /**
+     * <p>A version identifier for the API.</p>
+     */
+    inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
+
+    /**
+     * <p>A version identifier for the API.</p>
+     */
+    inline CreateRestApiRequest& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
+
+    /**
+     * <p>A version identifier for the API.</p>
+     */
+    inline CreateRestApiRequest& WithVersion(Aws::String&& value) { SetVersion(value); return *this;}
+
+    /**
+     * <p>A version identifier for the API.</p>
+     */
+    inline CreateRestApiRequest& WithVersion(const char* value) { SetVersion(value); return *this;}
+
+    /**
      * <p>The ID of the <a>RestApi</a> that you want to clone from.</p>
      */
     inline const Aws::String& GetCloneFrom() const{ return m_cloneFrom; }
@@ -192,6 +227,8 @@ namespace Model
     bool m_nameHasBeenSet;
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+    Aws::String m_version;
+    bool m_versionHasBeenSet;
     Aws::String m_cloneFrom;
     bool m_cloneFromHasBeenSet;
     Aws::Vector<Aws::String> m_binaryMediaTypes;

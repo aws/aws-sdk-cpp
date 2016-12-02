@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/directconnect/DirectConnect_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/directconnect/model/AddressFamily.h>
 
 namespace Aws
 {
@@ -144,6 +145,21 @@ namespace Model
     inline NewPrivateVirtualInterface& WithCustomerAddress(const char* value) { SetCustomerAddress(value); return *this;}
 
     
+    inline const AddressFamily& GetAddressFamily() const{ return m_addressFamily; }
+
+    
+    inline void SetAddressFamily(const AddressFamily& value) { m_addressFamilyHasBeenSet = true; m_addressFamily = value; }
+
+    
+    inline void SetAddressFamily(AddressFamily&& value) { m_addressFamilyHasBeenSet = true; m_addressFamily = value; }
+
+    
+    inline NewPrivateVirtualInterface& WithAddressFamily(const AddressFamily& value) { SetAddressFamily(value); return *this;}
+
+    
+    inline NewPrivateVirtualInterface& WithAddressFamily(AddressFamily&& value) { SetAddressFamily(value); return *this;}
+
+    
     inline const Aws::String& GetVirtualGatewayId() const{ return m_virtualGatewayId; }
 
     
@@ -177,6 +193,8 @@ namespace Model
     bool m_amazonAddressHasBeenSet;
     Aws::String m_customerAddress;
     bool m_customerAddressHasBeenSet;
+    AddressFamily m_addressFamily;
+    bool m_addressFamilyHasBeenSet;
     Aws::String m_virtualGatewayId;
     bool m_virtualGatewayIdHasBeenSet;
   };

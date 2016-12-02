@@ -33,6 +33,7 @@ VpcPeeringConnectionVpcInfo::VpcPeeringConnectionVpcInfo() :
     m_cidrBlockHasBeenSet(false),
     m_ownerIdHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
+    m_ipv6CidrBlockSetHasBeenSet(false),
     m_peeringOptionsHasBeenSet(false)
 {
 }
@@ -41,6 +42,7 @@ VpcPeeringConnectionVpcInfo::VpcPeeringConnectionVpcInfo(const XmlNode& xmlNode)
     m_cidrBlockHasBeenSet(false),
     m_ownerIdHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
+    m_ipv6CidrBlockSetHasBeenSet(false),
     m_peeringOptionsHasBeenSet(false)
 {
   *this = xmlNode;
@@ -70,6 +72,18 @@ VpcPeeringConnectionVpcInfo& VpcPeeringConnectionVpcInfo::operator =(const XmlNo
       m_vpcId = StringUtils::Trim(vpcIdNode.GetText().c_str());
       m_vpcIdHasBeenSet = true;
     }
+    XmlNode ipv6CidrBlockSetNode = resultNode.FirstChild("ipv6CidrBlockSet");
+    if(!ipv6CidrBlockSetNode.IsNull())
+    {
+      XmlNode ipv6CidrBlockSetMember = ipv6CidrBlockSetNode.FirstChild("item");
+      while(!ipv6CidrBlockSetMember.IsNull())
+      {
+        m_ipv6CidrBlockSet.push_back(ipv6CidrBlockSetMember);
+        ipv6CidrBlockSetMember = ipv6CidrBlockSetMember.NextNode("item");
+      }
+
+      m_ipv6CidrBlockSetHasBeenSet = true;
+    }
     XmlNode peeringOptionsNode = resultNode.FirstChild("peeringOptions");
     if(!peeringOptionsNode.IsNull())
     {
@@ -98,6 +112,17 @@ void VpcPeeringConnectionVpcInfo::OutputToStream(Aws::OStream& oStream, const ch
       oStream << location << index << locationValue << ".VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
   }
 
+  if(m_ipv6CidrBlockSetHasBeenSet)
+  {
+      unsigned ipv6CidrBlockSetIdx = 1;
+      for(auto& item : m_ipv6CidrBlockSet)
+      {
+        Aws::StringStream ipv6CidrBlockSetSs;
+        ipv6CidrBlockSetSs << location << index << locationValue << ".Ipv6CidrBlockSet." << ipv6CidrBlockSetIdx++;
+        item.OutputToStream(oStream, ipv6CidrBlockSetSs.str().c_str());
+      }
+  }
+
   if(m_peeringOptionsHasBeenSet)
   {
       Aws::StringStream peeringOptionsLocationAndMemberSs;
@@ -120,6 +145,16 @@ void VpcPeeringConnectionVpcInfo::OutputToStream(Aws::OStream& oStream, const ch
   if(m_vpcIdHasBeenSet)
   {
       oStream << location << ".VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
+  }
+  if(m_ipv6CidrBlockSetHasBeenSet)
+  {
+      unsigned ipv6CidrBlockSetIdx = 1;
+      for(auto& item : m_ipv6CidrBlockSet)
+      {
+        Aws::StringStream ipv6CidrBlockSetSs;
+        ipv6CidrBlockSetSs << location <<  ".item." << ipv6CidrBlockSetIdx++;
+        item.OutputToStream(oStream, ipv6CidrBlockSetSs.str().c_str());
+      }
   }
   if(m_peeringOptionsHasBeenSet)
   {

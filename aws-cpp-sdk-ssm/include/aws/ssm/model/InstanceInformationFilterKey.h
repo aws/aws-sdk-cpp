@@ -31,7 +31,8 @@ namespace Model
     PlatformTypes,
     ActivationIds,
     IamRole,
-    ResourceType
+    ResourceType,
+    AssociationStatus
   };
 
 namespace InstanceInformationFilterKeyMapper

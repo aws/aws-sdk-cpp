@@ -1,6 +1,7 @@
 add_project(aws-cpp-sdk-identity-management 
     "High-level C++ SDK for identity management against AWS" 
     aws-cpp-sdk-cognito-identity 
+    aws-cpp-sdk-sts
     aws-cpp-sdk-core)
 
 file(GLOB AWS_IDENTITY_PROVIDER_HEADERS

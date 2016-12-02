@@ -33,6 +33,9 @@ namespace ElasticBeanstalk
 namespace Model
 {
 
+  /**
+   * <p>Location of the source code for an application version.</p>
+   */
   class AWS_ELASTICBEANSTALK_API SourceBuildInformation
   {
   public:
@@ -43,55 +46,96 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    
+    /**
+     * <p>The type of repository, such as <code>Git</code>.</p>
+     */
     inline const SourceType& GetSourceType() const{ return m_sourceType; }
 
-    
+    /**
+     * <p>The type of repository, such as <code>Git</code>.</p>
+     */
     inline void SetSourceType(const SourceType& value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
 
-    
+    /**
+     * <p>The type of repository, such as <code>Git</code>.</p>
+     */
     inline void SetSourceType(SourceType&& value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
 
-    
+    /**
+     * <p>The type of repository, such as <code>Git</code>.</p>
+     */
     inline SourceBuildInformation& WithSourceType(const SourceType& value) { SetSourceType(value); return *this;}
 
-    
+    /**
+     * <p>The type of repository, such as <code>Git</code>.</p>
+     */
     inline SourceBuildInformation& WithSourceType(SourceType&& value) { SetSourceType(value); return *this;}
 
-    
+    /**
+     * <p>Location where the repository is stored, such as <code>CodeCommit</code>.</p>
+     */
     inline const SourceRepository& GetSourceRepository() const{ return m_sourceRepository; }
 
-    
+    /**
+     * <p>Location where the repository is stored, such as <code>CodeCommit</code>.</p>
+     */
     inline void SetSourceRepository(const SourceRepository& value) { m_sourceRepositoryHasBeenSet = true; m_sourceRepository = value; }
 
-    
+    /**
+     * <p>Location where the repository is stored, such as <code>CodeCommit</code>.</p>
+     */
     inline void SetSourceRepository(SourceRepository&& value) { m_sourceRepositoryHasBeenSet = true; m_sourceRepository = value; }
 
-    
+    /**
+     * <p>Location where the repository is stored, such as <code>CodeCommit</code>.</p>
+     */
     inline SourceBuildInformation& WithSourceRepository(const SourceRepository& value) { SetSourceRepository(value); return *this;}
 
-    
+    /**
+     * <p>Location where the repository is stored, such as <code>CodeCommit</code>.</p>
+     */
     inline SourceBuildInformation& WithSourceRepository(SourceRepository&& value) { SetSourceRepository(value); return *this;}
 
-    
+    /**
+     * <p>The repository name and commit ID, separated by a forward slash. For example,
+     * <code>my-repo/265cfa0cf6af46153527f55d6503ec030551f57a</code>.</p>
+     */
     inline const Aws::String& GetSourceLocation() const{ return m_sourceLocation; }
 
-    
+    /**
+     * <p>The repository name and commit ID, separated by a forward slash. For example,
+     * <code>my-repo/265cfa0cf6af46153527f55d6503ec030551f57a</code>.</p>
+     */
     inline void SetSourceLocation(const Aws::String& value) { m_sourceLocationHasBeenSet = true; m_sourceLocation = value; }
 
-    
+    /**
+     * <p>The repository name and commit ID, separated by a forward slash. For example,
+     * <code>my-repo/265cfa0cf6af46153527f55d6503ec030551f57a</code>.</p>
+     */
     inline void SetSourceLocation(Aws::String&& value) { m_sourceLocationHasBeenSet = true; m_sourceLocation = value; }
 
-    
+    /**
+     * <p>The repository name and commit ID, separated by a forward slash. For example,
+     * <code>my-repo/265cfa0cf6af46153527f55d6503ec030551f57a</code>.</p>
+     */
     inline void SetSourceLocation(const char* value) { m_sourceLocationHasBeenSet = true; m_sourceLocation.assign(value); }
 
-    
+    /**
+     * <p>The repository name and commit ID, separated by a forward slash. For example,
+     * <code>my-repo/265cfa0cf6af46153527f55d6503ec030551f57a</code>.</p>
+     */
     inline SourceBuildInformation& WithSourceLocation(const Aws::String& value) { SetSourceLocation(value); return *this;}
 
-    
+    /**
+     * <p>The repository name and commit ID, separated by a forward slash. For example,
+     * <code>my-repo/265cfa0cf6af46153527f55d6503ec030551f57a</code>.</p>
+     */
     inline SourceBuildInformation& WithSourceLocation(Aws::String&& value) { SetSourceLocation(value); return *this;}
 
-    
+    /**
+     * <p>The repository name and commit ID, separated by a forward slash. For example,
+     * <code>my-repo/265cfa0cf6af46153527f55d6503ec030551f57a</code>.</p>
+     */
     inline SourceBuildInformation& WithSourceLocation(const char* value) { SetSourceLocation(value); return *this;}
 
   private:

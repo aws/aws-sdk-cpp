@@ -512,6 +512,21 @@ namespace Model
      */
     inline Trail& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
+    /**
+     * <p>Specifies if the trail has custom event selectors.</p>
+     */
+    inline bool GetHasCustomEventSelectors() const{ return m_hasCustomEventSelectors; }
+
+    /**
+     * <p>Specifies if the trail has custom event selectors.</p>
+     */
+    inline void SetHasCustomEventSelectors(bool value) { m_hasCustomEventSelectorsHasBeenSet = true; m_hasCustomEventSelectors = value; }
+
+    /**
+     * <p>Specifies if the trail has custom event selectors.</p>
+     */
+    inline Trail& WithHasCustomEventSelectors(bool value) { SetHasCustomEventSelectors(value); return *this;}
+
   private:
     Aws::String m_name;
     bool m_nameHasBeenSet;
@@ -537,6 +552,8 @@ namespace Model
     bool m_cloudWatchLogsRoleArnHasBeenSet;
     Aws::String m_kmsKeyId;
     bool m_kmsKeyIdHasBeenSet;
+    bool m_hasCustomEventSelectors;
+    bool m_hasCustomEventSelectorsHasBeenSet;
   };
 
 } // namespace Model

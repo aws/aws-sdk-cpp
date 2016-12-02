@@ -277,44 +277,44 @@ namespace Model
     inline AuthorizeSecurityGroupEgressRequest& WithToPort(int value) { SetToPort(value); return *this;}
 
     /**
-     * <p>The CIDR IP address range. We recommend that you specify the CIDR range in a
-     * set of IP permissions instead.</p>
+     * <p>The CIDR IPv4 address range. We recommend that you specify the CIDR range in
+     * a set of IP permissions instead.</p>
      */
     inline const Aws::String& GetCidrIp() const{ return m_cidrIp; }
 
     /**
-     * <p>The CIDR IP address range. We recommend that you specify the CIDR range in a
-     * set of IP permissions instead.</p>
+     * <p>The CIDR IPv4 address range. We recommend that you specify the CIDR range in
+     * a set of IP permissions instead.</p>
      */
     inline void SetCidrIp(const Aws::String& value) { m_cidrIpHasBeenSet = true; m_cidrIp = value; }
 
     /**
-     * <p>The CIDR IP address range. We recommend that you specify the CIDR range in a
-     * set of IP permissions instead.</p>
+     * <p>The CIDR IPv4 address range. We recommend that you specify the CIDR range in
+     * a set of IP permissions instead.</p>
      */
     inline void SetCidrIp(Aws::String&& value) { m_cidrIpHasBeenSet = true; m_cidrIp = value; }
 
     /**
-     * <p>The CIDR IP address range. We recommend that you specify the CIDR range in a
-     * set of IP permissions instead.</p>
+     * <p>The CIDR IPv4 address range. We recommend that you specify the CIDR range in
+     * a set of IP permissions instead.</p>
      */
     inline void SetCidrIp(const char* value) { m_cidrIpHasBeenSet = true; m_cidrIp.assign(value); }
 
     /**
-     * <p>The CIDR IP address range. We recommend that you specify the CIDR range in a
-     * set of IP permissions instead.</p>
+     * <p>The CIDR IPv4 address range. We recommend that you specify the CIDR range in
+     * a set of IP permissions instead.</p>
      */
     inline AuthorizeSecurityGroupEgressRequest& WithCidrIp(const Aws::String& value) { SetCidrIp(value); return *this;}
 
     /**
-     * <p>The CIDR IP address range. We recommend that you specify the CIDR range in a
-     * set of IP permissions instead.</p>
+     * <p>The CIDR IPv4 address range. We recommend that you specify the CIDR range in
+     * a set of IP permissions instead.</p>
      */
     inline AuthorizeSecurityGroupEgressRequest& WithCidrIp(Aws::String&& value) { SetCidrIp(value); return *this;}
 
     /**
-     * <p>The CIDR IP address range. We recommend that you specify the CIDR range in a
-     * set of IP permissions instead.</p>
+     * <p>The CIDR IPv4 address range. We recommend that you specify the CIDR range in
+     * a set of IP permissions instead.</p>
      */
     inline AuthorizeSecurityGroupEgressRequest& WithCidrIp(const char* value) { SetCidrIp(value); return *this;}
 

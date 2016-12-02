@@ -94,7 +94,7 @@ namespace Model
     inline DescribeImageAttributeRequest& WithImageId(const char* value) { SetImageId(value); return *this;}
 
     /**
-     * <p>The AMI attribute.</p> <p><b>Note</b>: Depending on your account privileges,
+     * <p>The AMI attribute.</p> <p> <b>Note</b>: Depending on your account privileges,
      * the <code>blockDeviceMapping</code> attribute may return a
      * <code>Client.AuthFailure</code> error. If this happens, use
      * <a>DescribeImages</a> to get information about the block device mapping for the
@@ -103,7 +103,7 @@ namespace Model
     inline const ImageAttributeName& GetAttribute() const{ return m_attribute; }
 
     /**
-     * <p>The AMI attribute.</p> <p><b>Note</b>: Depending on your account privileges,
+     * <p>The AMI attribute.</p> <p> <b>Note</b>: Depending on your account privileges,
      * the <code>blockDeviceMapping</code> attribute may return a
      * <code>Client.AuthFailure</code> error. If this happens, use
      * <a>DescribeImages</a> to get information about the block device mapping for the
@@ -112,7 +112,7 @@ namespace Model
     inline void SetAttribute(const ImageAttributeName& value) { m_attributeHasBeenSet = true; m_attribute = value; }
 
     /**
-     * <p>The AMI attribute.</p> <p><b>Note</b>: Depending on your account privileges,
+     * <p>The AMI attribute.</p> <p> <b>Note</b>: Depending on your account privileges,
      * the <code>blockDeviceMapping</code> attribute may return a
      * <code>Client.AuthFailure</code> error. If this happens, use
      * <a>DescribeImages</a> to get information about the block device mapping for the
@@ -121,7 +121,7 @@ namespace Model
     inline void SetAttribute(ImageAttributeName&& value) { m_attributeHasBeenSet = true; m_attribute = value; }
 
     /**
-     * <p>The AMI attribute.</p> <p><b>Note</b>: Depending on your account privileges,
+     * <p>The AMI attribute.</p> <p> <b>Note</b>: Depending on your account privileges,
      * the <code>blockDeviceMapping</code> attribute may return a
      * <code>Client.AuthFailure</code> error. If this happens, use
      * <a>DescribeImages</a> to get information about the block device mapping for the
@@ -130,7 +130,7 @@ namespace Model
     inline DescribeImageAttributeRequest& WithAttribute(const ImageAttributeName& value) { SetAttribute(value); return *this;}
 
     /**
-     * <p>The AMI attribute.</p> <p><b>Note</b>: Depending on your account privileges,
+     * <p>The AMI attribute.</p> <p> <b>Note</b>: Depending on your account privileges,
      * the <code>blockDeviceMapping</code> attribute may return a
      * <code>Client.AuthFailure</code> error. If this happens, use
      * <a>DescribeImages</a> to get information about the block device mapping for the

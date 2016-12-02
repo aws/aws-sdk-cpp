@@ -442,39 +442,61 @@ namespace Model
     inline Image& WithPlatform(PlatformValues&& value) { SetPlatform(value); return *this;}
 
     /**
-     * <p>Specifies whether enhanced networking is enabled.</p>
+     * <p>Specifies whether enhanced networking with the Intel 82599 Virtual Function
+     * interface is enabled.</p>
      */
     inline const Aws::String& GetSriovNetSupport() const{ return m_sriovNetSupport; }
 
     /**
-     * <p>Specifies whether enhanced networking is enabled.</p>
+     * <p>Specifies whether enhanced networking with the Intel 82599 Virtual Function
+     * interface is enabled.</p>
      */
     inline void SetSriovNetSupport(const Aws::String& value) { m_sriovNetSupportHasBeenSet = true; m_sriovNetSupport = value; }
 
     /**
-     * <p>Specifies whether enhanced networking is enabled.</p>
+     * <p>Specifies whether enhanced networking with the Intel 82599 Virtual Function
+     * interface is enabled.</p>
      */
     inline void SetSriovNetSupport(Aws::String&& value) { m_sriovNetSupportHasBeenSet = true; m_sriovNetSupport = value; }
 
     /**
-     * <p>Specifies whether enhanced networking is enabled.</p>
+     * <p>Specifies whether enhanced networking with the Intel 82599 Virtual Function
+     * interface is enabled.</p>
      */
     inline void SetSriovNetSupport(const char* value) { m_sriovNetSupportHasBeenSet = true; m_sriovNetSupport.assign(value); }
 
     /**
-     * <p>Specifies whether enhanced networking is enabled.</p>
+     * <p>Specifies whether enhanced networking with the Intel 82599 Virtual Function
+     * interface is enabled.</p>
      */
     inline Image& WithSriovNetSupport(const Aws::String& value) { SetSriovNetSupport(value); return *this;}
 
     /**
-     * <p>Specifies whether enhanced networking is enabled.</p>
+     * <p>Specifies whether enhanced networking with the Intel 82599 Virtual Function
+     * interface is enabled.</p>
      */
     inline Image& WithSriovNetSupport(Aws::String&& value) { SetSriovNetSupport(value); return *this;}
 
     /**
-     * <p>Specifies whether enhanced networking is enabled.</p>
+     * <p>Specifies whether enhanced networking with the Intel 82599 Virtual Function
+     * interface is enabled.</p>
      */
     inline Image& WithSriovNetSupport(const char* value) { SetSriovNetSupport(value); return *this;}
+
+    /**
+     * <p>Specifies whether enhanced networking with ENA is enabled.</p>
+     */
+    inline bool GetEnaSupport() const{ return m_enaSupport; }
+
+    /**
+     * <p>Specifies whether enhanced networking with ENA is enabled.</p>
+     */
+    inline void SetEnaSupport(bool value) { m_enaSupportHasBeenSet = true; m_enaSupport = value; }
+
+    /**
+     * <p>Specifies whether enhanced networking with ENA is enabled.</p>
+     */
+    inline Image& WithEnaSupport(bool value) { SetEnaSupport(value); return *this;}
 
     /**
      * <p>The reason for the state change.</p>
@@ -832,6 +854,8 @@ namespace Model
     bool m_platformHasBeenSet;
     Aws::String m_sriovNetSupport;
     bool m_sriovNetSupportHasBeenSet;
+    bool m_enaSupport;
+    bool m_enaSupportHasBeenSet;
     StateReason m_stateReason;
     bool m_stateReasonHasBeenSet;
     Aws::String m_imageOwnerAlias;

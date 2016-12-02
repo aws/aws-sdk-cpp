@@ -488,7 +488,7 @@ namespace Model
      * provides dedicated throughput to Amazon EBS and an optimized configuration stack
      * to provide optimal EBS I/O performance. This optimization isn't available with
      * all instance types. Additional usage charges apply when using an EBS-optimized
-     * instance.</p> <p>Default: <code>false</code></p>
+     * instance.</p> <p>Default: <code>false</code> </p>
      */
     inline bool GetEbsOptimized() const{ return m_ebsOptimized; }
 
@@ -497,7 +497,7 @@ namespace Model
      * provides dedicated throughput to Amazon EBS and an optimized configuration stack
      * to provide optimal EBS I/O performance. This optimization isn't available with
      * all instance types. Additional usage charges apply when using an EBS-optimized
-     * instance.</p> <p>Default: <code>false</code></p>
+     * instance.</p> <p>Default: <code>false</code> </p>
      */
     inline void SetEbsOptimized(bool value) { m_ebsOptimizedHasBeenSet = true; m_ebsOptimized = value; }
 
@@ -506,7 +506,7 @@ namespace Model
      * provides dedicated throughput to Amazon EBS and an optimized configuration stack
      * to provide optimal EBS I/O performance. This optimization isn't available with
      * all instance types. Additional usage charges apply when using an EBS-optimized
-     * instance.</p> <p>Default: <code>false</code></p>
+     * instance.</p> <p>Default: <code>false</code> </p>
      */
     inline ScheduledInstancesLaunchSpecification& WithEbsOptimized(bool value) { SetEbsOptimized(value); return *this;}
 

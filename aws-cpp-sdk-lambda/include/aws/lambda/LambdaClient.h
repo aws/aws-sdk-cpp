@@ -25,6 +25,7 @@
 #include <aws/lambda/model/CreateEventSourceMappingResult.h>
 #include <aws/lambda/model/CreateFunctionResult.h>
 #include <aws/lambda/model/DeleteEventSourceMappingResult.h>
+#include <aws/lambda/model/GetAccountSettingsResult.h>
 #include <aws/lambda/model/GetAliasResult.h>
 #include <aws/lambda/model/GetEventSourceMappingResult.h>
 #include <aws/lambda/model/GetFunctionResult.h>
@@ -93,6 +94,7 @@ namespace Model
         class DeleteAliasRequest;
         class DeleteEventSourceMappingRequest;
         class DeleteFunctionRequest;
+        class GetAccountSettingsRequest;
         class GetAliasRequest;
         class GetEventSourceMappingRequest;
         class GetFunctionRequest;
@@ -117,6 +119,7 @@ namespace Model
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<LambdaErrors>> DeleteAliasOutcome;
         typedef Aws::Utils::Outcome<DeleteEventSourceMappingResult, Aws::Client::AWSError<LambdaErrors>> DeleteEventSourceMappingOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<LambdaErrors>> DeleteFunctionOutcome;
+        typedef Aws::Utils::Outcome<GetAccountSettingsResult, Aws::Client::AWSError<LambdaErrors>> GetAccountSettingsOutcome;
         typedef Aws::Utils::Outcome<GetAliasResult, Aws::Client::AWSError<LambdaErrors>> GetAliasOutcome;
         typedef Aws::Utils::Outcome<GetEventSourceMappingResult, Aws::Client::AWSError<LambdaErrors>> GetEventSourceMappingOutcome;
         typedef Aws::Utils::Outcome<GetFunctionResult, Aws::Client::AWSError<LambdaErrors>> GetFunctionOutcome;
@@ -141,6 +144,7 @@ namespace Model
         typedef std::future<DeleteAliasOutcome> DeleteAliasOutcomeCallable;
         typedef std::future<DeleteEventSourceMappingOutcome> DeleteEventSourceMappingOutcomeCallable;
         typedef std::future<DeleteFunctionOutcome> DeleteFunctionOutcomeCallable;
+        typedef std::future<GetAccountSettingsOutcome> GetAccountSettingsOutcomeCallable;
         typedef std::future<GetAliasOutcome> GetAliasOutcomeCallable;
         typedef std::future<GetEventSourceMappingOutcome> GetEventSourceMappingOutcomeCallable;
         typedef std::future<GetFunctionOutcome> GetFunctionOutcomeCallable;
@@ -168,6 +172,7 @@ namespace Model
     typedef std::function<void(const LambdaClient*, const Model::DeleteAliasRequest&, const Model::DeleteAliasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAliasResponseReceivedHandler;
     typedef std::function<void(const LambdaClient*, const Model::DeleteEventSourceMappingRequest&, const Model::DeleteEventSourceMappingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEventSourceMappingResponseReceivedHandler;
     typedef std::function<void(const LambdaClient*, const Model::DeleteFunctionRequest&, const Model::DeleteFunctionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFunctionResponseReceivedHandler;
+    typedef std::function<void(const LambdaClient*, const Model::GetAccountSettingsRequest&, const Model::GetAccountSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAccountSettingsResponseReceivedHandler;
     typedef std::function<void(const LambdaClient*, const Model::GetAliasRequest&, const Model::GetAliasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAliasResponseReceivedHandler;
     typedef std::function<void(const LambdaClient*, const Model::GetEventSourceMappingRequest&, const Model::GetEventSourceMappingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEventSourceMappingResponseReceivedHandler;
     typedef std::function<void(const LambdaClient*, const Model::GetFunctionRequest&, const Model::GetFunctionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetFunctionResponseReceivedHandler;
@@ -532,6 +537,40 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteFunctionAsync(const Model::DeleteFunctionRequest& request, const DeleteFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns a customer's account settings.</p> <p>You can use this operation to
+         * retrieve Lambda limit information such as code size and concurrency limits. For
+         * more information on limits, see <a
+         * href="http://docs.aws.amazon.com/lambda/latest/dg/limits.html">AWS Lambda
+         * Limits</a>. You can also retrieve resource usage statistics such as code storage
+         * usage and function count.</p>
+         */
+        virtual Model::GetAccountSettingsOutcome GetAccountSettings(const Model::GetAccountSettingsRequest& request) const;
+
+        /**
+         * <p>Returns a customer's account settings.</p> <p>You can use this operation to
+         * retrieve Lambda limit information such as code size and concurrency limits. For
+         * more information on limits, see <a
+         * href="http://docs.aws.amazon.com/lambda/latest/dg/limits.html">AWS Lambda
+         * Limits</a>. You can also retrieve resource usage statistics such as code storage
+         * usage and function count.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetAccountSettingsOutcomeCallable GetAccountSettingsCallable(const Model::GetAccountSettingsRequest& request) const;
+
+        /**
+         * <p>Returns a customer's account settings.</p> <p>You can use this operation to
+         * retrieve Lambda limit information such as code size and concurrency limits. For
+         * more information on limits, see <a
+         * href="http://docs.aws.amazon.com/lambda/latest/dg/limits.html">AWS Lambda
+         * Limits</a>. You can also retrieve resource usage statistics such as code storage
+         * usage and function count.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetAccountSettingsAsync(const Model::GetAccountSettingsRequest& request, const GetAccountSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the specified alias information such as the alias ARN, description,
@@ -1212,6 +1251,7 @@ namespace Model
         void DeleteAliasAsyncHelper(const Model::DeleteAliasRequest& request, const DeleteAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteEventSourceMappingAsyncHelper(const Model::DeleteEventSourceMappingRequest& request, const DeleteEventSourceMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteFunctionAsyncHelper(const Model::DeleteFunctionRequest& request, const DeleteFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetAccountSettingsAsyncHelper(const Model::GetAccountSettingsRequest& request, const GetAccountSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetAliasAsyncHelper(const Model::GetAliasRequest& request, const GetAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetEventSourceMappingAsyncHelper(const Model::GetEventSourceMappingRequest& request, const GetEventSourceMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetFunctionAsyncHelper(const Model::GetFunctionRequest& request, const GetFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

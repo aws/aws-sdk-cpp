@@ -24,6 +24,7 @@ using namespace Aws::Utils;
 CreateRestApiRequest::CreateRestApiRequest() : 
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
+    m_versionHasBeenSet(false),
     m_cloneFromHasBeenSet(false),
     m_binaryMediaTypesHasBeenSet(false)
 {
@@ -42,6 +43,12 @@ Aws::String CreateRestApiRequest::SerializePayload() const
   if(m_descriptionHasBeenSet)
   {
    payload.WithString("description", m_description);
+
+  }
+
+  if(m_versionHasBeenSet)
+  {
+   payload.WithString("version", m_version);
 
   }
 

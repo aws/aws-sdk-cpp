@@ -28,12 +28,14 @@ namespace Model
 {
 
 JobResource::JobResource() : 
-    m_s3ResourcesHasBeenSet(false)
+    m_s3ResourcesHasBeenSet(false),
+    m_lambdaResourcesHasBeenSet(false)
 {
 }
 
 JobResource::JobResource(const JsonValue& jsonValue) : 
-    m_s3ResourcesHasBeenSet(false)
+    m_s3ResourcesHasBeenSet(false),
+    m_lambdaResourcesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -48,6 +50,16 @@ JobResource& JobResource::operator =(const JsonValue& jsonValue)
       m_s3Resources.push_back(s3ResourcesJsonList[s3ResourcesIndex].AsObject());
     }
     m_s3ResourcesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("LambdaResources"))
+  {
+    Array<JsonValue> lambdaResourcesJsonList = jsonValue.GetArray("LambdaResources");
+    for(unsigned lambdaResourcesIndex = 0; lambdaResourcesIndex < lambdaResourcesJsonList.GetLength(); ++lambdaResourcesIndex)
+    {
+      m_lambdaResources.push_back(lambdaResourcesJsonList[lambdaResourcesIndex].AsObject());
+    }
+    m_lambdaResourcesHasBeenSet = true;
   }
 
   return *this;
@@ -65,6 +77,17 @@ JsonValue JobResource::Jsonize() const
      s3ResourcesJsonList[s3ResourcesIndex].AsObject(m_s3Resources[s3ResourcesIndex].Jsonize());
    }
    payload.WithArray("S3Resources", std::move(s3ResourcesJsonList));
+
+  }
+
+  if(m_lambdaResourcesHasBeenSet)
+  {
+   Array<JsonValue> lambdaResourcesJsonList(m_lambdaResources.size());
+   for(unsigned lambdaResourcesIndex = 0; lambdaResourcesIndex < lambdaResourcesJsonList.GetLength(); ++lambdaResourcesIndex)
+   {
+     lambdaResourcesJsonList[lambdaResourcesIndex].AsObject(m_lambdaResources[lambdaResourcesIndex].Jsonize());
+   }
+   payload.WithArray("LambdaResources", std::move(lambdaResourcesJsonList));
 
   }
 

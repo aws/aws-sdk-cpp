@@ -94,27 +94,32 @@ namespace Model
     inline DescribeInstanceAttributeRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
     /**
-     * <p>The instance attribute.</p>
+     * <p>The instance attribute.</p> <p>Note: The <code>enaSupport</code> attribute is
+     * not supported at this time.</p>
      */
     inline const InstanceAttributeName& GetAttribute() const{ return m_attribute; }
 
     /**
-     * <p>The instance attribute.</p>
+     * <p>The instance attribute.</p> <p>Note: The <code>enaSupport</code> attribute is
+     * not supported at this time.</p>
      */
     inline void SetAttribute(const InstanceAttributeName& value) { m_attributeHasBeenSet = true; m_attribute = value; }
 
     /**
-     * <p>The instance attribute.</p>
+     * <p>The instance attribute.</p> <p>Note: The <code>enaSupport</code> attribute is
+     * not supported at this time.</p>
      */
     inline void SetAttribute(InstanceAttributeName&& value) { m_attributeHasBeenSet = true; m_attribute = value; }
 
     /**
-     * <p>The instance attribute.</p>
+     * <p>The instance attribute.</p> <p>Note: The <code>enaSupport</code> attribute is
+     * not supported at this time.</p>
      */
     inline DescribeInstanceAttributeRequest& WithAttribute(const InstanceAttributeName& value) { SetAttribute(value); return *this;}
 
     /**
-     * <p>The instance attribute.</p>
+     * <p>The instance attribute.</p> <p>Note: The <code>enaSupport</code> attribute is
+     * not supported at this time.</p>
      */
     inline DescribeInstanceAttributeRequest& WithAttribute(InstanceAttributeName&& value) { SetAttribute(value); return *this;}
 

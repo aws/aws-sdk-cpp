@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/lambda/model/Runtime.h>
 #include <aws/lambda/model/VpcConfigResponse.h>
+#include <aws/lambda/model/DeadLetterConfig.h>
 #include <aws/lambda/model/EnvironmentResponse.h>
 
 namespace Aws
@@ -454,6 +455,36 @@ namespace Model
     inline PublishVersionResult& WithVpcConfig(VpcConfigResponse&& value) { SetVpcConfig(value); return *this;}
 
     /**
+     * <p>The parent object that contains the target ARN (Amazon Resource Name) of an
+     * Amazon SQS queue or Amazon SNS topic.</p>
+     */
+    inline const DeadLetterConfig& GetDeadLetterConfig() const{ return m_deadLetterConfig; }
+
+    /**
+     * <p>The parent object that contains the target ARN (Amazon Resource Name) of an
+     * Amazon SQS queue or Amazon SNS topic.</p>
+     */
+    inline void SetDeadLetterConfig(const DeadLetterConfig& value) { m_deadLetterConfig = value; }
+
+    /**
+     * <p>The parent object that contains the target ARN (Amazon Resource Name) of an
+     * Amazon SQS queue or Amazon SNS topic.</p>
+     */
+    inline void SetDeadLetterConfig(DeadLetterConfig&& value) { m_deadLetterConfig = value; }
+
+    /**
+     * <p>The parent object that contains the target ARN (Amazon Resource Name) of an
+     * Amazon SQS queue or Amazon SNS topic.</p>
+     */
+    inline PublishVersionResult& WithDeadLetterConfig(const DeadLetterConfig& value) { SetDeadLetterConfig(value); return *this;}
+
+    /**
+     * <p>The parent object that contains the target ARN (Amazon Resource Name) of an
+     * Amazon SQS queue or Amazon SNS topic.</p>
+     */
+    inline PublishVersionResult& WithDeadLetterConfig(DeadLetterConfig&& value) { SetDeadLetterConfig(value); return *this;}
+
+    /**
      * <p>The parent object that contains your environment's configuration
      * settings.</p>
      */
@@ -546,6 +577,7 @@ namespace Model
     Aws::String m_codeSha256;
     Aws::String m_version;
     VpcConfigResponse m_vpcConfig;
+    DeadLetterConfig m_deadLetterConfig;
     EnvironmentResponse m_environment;
     Aws::String m_kMSKeyArn;
   };

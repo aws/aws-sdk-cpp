@@ -60,6 +60,12 @@ CreateRestApiResult& CreateRestApiResult::operator =(const AmazonWebServiceResul
 
   }
 
+  if(jsonValue.ValueExists("version"))
+  {
+    m_version = jsonValue.GetString("version");
+
+  }
+
   if(jsonValue.ValueExists("warnings"))
   {
     Array<JsonValue> warningsJsonList = jsonValue.GetArray("warnings");

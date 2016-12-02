@@ -228,19 +228,34 @@ namespace Model
      */
     inline DescribeImageAttributeResponse& WithDescription(AttributeValue&& value) { SetDescription(value); return *this;}
 
-    
+    /**
+     * <p>Indicates whether enhanced networking with the Intel 82599 Virtual Function
+     * interface is enabled.</p>
+     */
     inline const AttributeValue& GetSriovNetSupport() const{ return m_sriovNetSupport; }
 
-    
+    /**
+     * <p>Indicates whether enhanced networking with the Intel 82599 Virtual Function
+     * interface is enabled.</p>
+     */
     inline void SetSriovNetSupport(const AttributeValue& value) { m_sriovNetSupport = value; }
 
-    
+    /**
+     * <p>Indicates whether enhanced networking with the Intel 82599 Virtual Function
+     * interface is enabled.</p>
+     */
     inline void SetSriovNetSupport(AttributeValue&& value) { m_sriovNetSupport = value; }
 
-    
+    /**
+     * <p>Indicates whether enhanced networking with the Intel 82599 Virtual Function
+     * interface is enabled.</p>
+     */
     inline DescribeImageAttributeResponse& WithSriovNetSupport(const AttributeValue& value) { SetSriovNetSupport(value); return *this;}
 
-    
+    /**
+     * <p>Indicates whether enhanced networking with the Intel 82599 Virtual Function
+     * interface is enabled.</p>
+     */
     inline DescribeImageAttributeResponse& WithSriovNetSupport(AttributeValue&& value) { SetSriovNetSupport(value); return *this;}
 
     /**

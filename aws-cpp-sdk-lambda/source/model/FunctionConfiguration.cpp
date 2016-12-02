@@ -45,6 +45,7 @@ FunctionConfiguration::FunctionConfiguration() :
     m_codeSha256HasBeenSet(false),
     m_versionHasBeenSet(false),
     m_vpcConfigHasBeenSet(false),
+    m_deadLetterConfigHasBeenSet(false),
     m_environmentHasBeenSet(false),
     m_kMSKeyArnHasBeenSet(false)
 {
@@ -68,6 +69,7 @@ FunctionConfiguration::FunctionConfiguration(const JsonValue& jsonValue) :
     m_codeSha256HasBeenSet(false),
     m_versionHasBeenSet(false),
     m_vpcConfigHasBeenSet(false),
+    m_deadLetterConfigHasBeenSet(false),
     m_environmentHasBeenSet(false),
     m_kMSKeyArnHasBeenSet(false)
 {
@@ -167,6 +169,13 @@ FunctionConfiguration& FunctionConfiguration::operator =(const JsonValue& jsonVa
     m_vpcConfigHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DeadLetterConfig"))
+  {
+    m_deadLetterConfig = jsonValue.GetObject("DeadLetterConfig");
+
+    m_deadLetterConfigHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Environment"))
   {
     m_environment = jsonValue.GetObject("Environment");
@@ -262,6 +271,12 @@ JsonValue FunctionConfiguration::Jsonize() const
   if(m_vpcConfigHasBeenSet)
   {
    payload.WithObject("VpcConfig", m_vpcConfig.Jsonize());
+
+  }
+
+  if(m_deadLetterConfigHasBeenSet)
+  {
+   payload.WithObject("DeadLetterConfig", m_deadLetterConfig.Jsonize());
 
   }
 

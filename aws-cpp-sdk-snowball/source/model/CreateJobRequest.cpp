@@ -33,7 +33,10 @@ CreateJobRequest::CreateJobRequest() :
     m_snowballCapacityPreferenceHasBeenSet(false),
     m_shippingOption(ShippingOption::NOT_SET),
     m_shippingOptionHasBeenSet(false),
-    m_notificationHasBeenSet(false)
+    m_notificationHasBeenSet(false),
+    m_clusterIdHasBeenSet(false),
+    m_snowballType(SnowballType::NOT_SET),
+    m_snowballTypeHasBeenSet(false)
 {
 }
 
@@ -90,6 +93,17 @@ Aws::String CreateJobRequest::SerializePayload() const
   {
    payload.WithObject("Notification", m_notification.Jsonize());
 
+  }
+
+  if(m_clusterIdHasBeenSet)
+  {
+   payload.WithString("ClusterId", m_clusterId);
+
+  }
+
+  if(m_snowballTypeHasBeenSet)
+  {
+   payload.WithString("SnowballType", SnowballTypeMapper::GetNameForSnowballType(m_snowballType));
   }
 
   return payload.WriteReadable();

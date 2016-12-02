@@ -35,6 +35,8 @@ NewPrivateVirtualInterfaceAllocation::NewPrivateVirtualInterfaceAllocation() :
     m_asnHasBeenSet(false),
     m_authKeyHasBeenSet(false),
     m_amazonAddressHasBeenSet(false),
+    m_addressFamily(AddressFamily::NOT_SET),
+    m_addressFamilyHasBeenSet(false),
     m_customerAddressHasBeenSet(false)
 {
 }
@@ -47,6 +49,8 @@ NewPrivateVirtualInterfaceAllocation::NewPrivateVirtualInterfaceAllocation(const
     m_asnHasBeenSet(false),
     m_authKeyHasBeenSet(false),
     m_amazonAddressHasBeenSet(false),
+    m_addressFamily(AddressFamily::NOT_SET),
+    m_addressFamilyHasBeenSet(false),
     m_customerAddressHasBeenSet(false)
 {
   *this = jsonValue;
@@ -87,6 +91,13 @@ NewPrivateVirtualInterfaceAllocation& NewPrivateVirtualInterfaceAllocation::oper
     m_amazonAddress = jsonValue.GetString("amazonAddress");
 
     m_amazonAddressHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("addressFamily"))
+  {
+    m_addressFamily = AddressFamilyMapper::GetAddressFamilyForName(jsonValue.GetString("addressFamily"));
+
+    m_addressFamilyHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("customerAddress"))
@@ -131,6 +142,11 @@ JsonValue NewPrivateVirtualInterfaceAllocation::Jsonize() const
   {
    payload.WithString("amazonAddress", m_amazonAddress);
 
+  }
+
+  if(m_addressFamilyHasBeenSet)
+  {
+   payload.WithString("addressFamily", AddressFamilyMapper::GetNameForAddressFamily(m_addressFamily));
   }
 
   if(m_customerAddressHasBeenSet)

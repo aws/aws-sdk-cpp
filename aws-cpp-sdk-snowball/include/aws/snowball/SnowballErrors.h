@@ -53,7 +53,9 @@ enum class SnowballErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  INVALID_ADDRESS= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CLUSTER_LIMIT_EXCEEDED= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  INVALID_ADDRESS,
+  INVALID_INPUT_COMBINATION,
   INVALID_JOB_STATE,
   INVALID_RESOURCE,
   K_M_S_REQUEST_FAILED,

@@ -45,37 +45,37 @@ namespace Model
     MonitorInstancesResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
     /**
-     * <p>Monitoring information for one or more instances.</p>
+     * <p>The monitoring information.</p>
      */
     inline const Aws::Vector<InstanceMonitoring>& GetInstanceMonitorings() const{ return m_instanceMonitorings; }
 
     /**
-     * <p>Monitoring information for one or more instances.</p>
+     * <p>The monitoring information.</p>
      */
     inline void SetInstanceMonitorings(const Aws::Vector<InstanceMonitoring>& value) { m_instanceMonitorings = value; }
 
     /**
-     * <p>Monitoring information for one or more instances.</p>
+     * <p>The monitoring information.</p>
      */
     inline void SetInstanceMonitorings(Aws::Vector<InstanceMonitoring>&& value) { m_instanceMonitorings = value; }
 
     /**
-     * <p>Monitoring information for one or more instances.</p>
+     * <p>The monitoring information.</p>
      */
     inline MonitorInstancesResponse& WithInstanceMonitorings(const Aws::Vector<InstanceMonitoring>& value) { SetInstanceMonitorings(value); return *this;}
 
     /**
-     * <p>Monitoring information for one or more instances.</p>
+     * <p>The monitoring information.</p>
      */
     inline MonitorInstancesResponse& WithInstanceMonitorings(Aws::Vector<InstanceMonitoring>&& value) { SetInstanceMonitorings(value); return *this;}
 
     /**
-     * <p>Monitoring information for one or more instances.</p>
+     * <p>The monitoring information.</p>
      */
     inline MonitorInstancesResponse& AddInstanceMonitorings(const InstanceMonitoring& value) { m_instanceMonitorings.push_back(value); return *this; }
 
     /**
-     * <p>Monitoring information for one or more instances.</p>
+     * <p>The monitoring information.</p>
      */
     inline MonitorInstancesResponse& AddInstanceMonitorings(InstanceMonitoring&& value) { m_instanceMonitorings.push_back(value); return *this; }
 

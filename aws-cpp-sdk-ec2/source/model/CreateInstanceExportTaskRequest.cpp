@@ -52,7 +52,7 @@ Aws::String CreateInstanceExportTaskRequest::SerializePayload() const
     m_exportToS3Task.OutputToStream(ss, "ExportToS3Task");
   }
 
-  ss << "Version=2015-10-01";
+  ss << "Version=2016-11-15";
   return ss.str();
 }
 

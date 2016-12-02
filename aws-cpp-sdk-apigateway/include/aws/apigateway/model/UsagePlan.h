@@ -241,6 +241,48 @@ namespace Model
      */
     inline UsagePlan& WithQuota(QuotaSettings&& value) { SetQuota(value); return *this;}
 
+    /**
+     * <p>The AWS Markeplace product identifier to associate with the usage plan as a
+     * SaaS product on AWS Marketplace.</p>
+     */
+    inline const Aws::String& GetProductCode() const{ return m_productCode; }
+
+    /**
+     * <p>The AWS Markeplace product identifier to associate with the usage plan as a
+     * SaaS product on AWS Marketplace.</p>
+     */
+    inline void SetProductCode(const Aws::String& value) { m_productCodeHasBeenSet = true; m_productCode = value; }
+
+    /**
+     * <p>The AWS Markeplace product identifier to associate with the usage plan as a
+     * SaaS product on AWS Marketplace.</p>
+     */
+    inline void SetProductCode(Aws::String&& value) { m_productCodeHasBeenSet = true; m_productCode = value; }
+
+    /**
+     * <p>The AWS Markeplace product identifier to associate with the usage plan as a
+     * SaaS product on AWS Marketplace.</p>
+     */
+    inline void SetProductCode(const char* value) { m_productCodeHasBeenSet = true; m_productCode.assign(value); }
+
+    /**
+     * <p>The AWS Markeplace product identifier to associate with the usage plan as a
+     * SaaS product on AWS Marketplace.</p>
+     */
+    inline UsagePlan& WithProductCode(const Aws::String& value) { SetProductCode(value); return *this;}
+
+    /**
+     * <p>The AWS Markeplace product identifier to associate with the usage plan as a
+     * SaaS product on AWS Marketplace.</p>
+     */
+    inline UsagePlan& WithProductCode(Aws::String&& value) { SetProductCode(value); return *this;}
+
+    /**
+     * <p>The AWS Markeplace product identifier to associate with the usage plan as a
+     * SaaS product on AWS Marketplace.</p>
+     */
+    inline UsagePlan& WithProductCode(const char* value) { SetProductCode(value); return *this;}
+
   private:
     Aws::String m_id;
     bool m_idHasBeenSet;
@@ -254,6 +296,8 @@ namespace Model
     bool m_throttleHasBeenSet;
     QuotaSettings m_quota;
     bool m_quotaHasBeenSet;
+    Aws::String m_productCode;
+    bool m_productCodeHasBeenSet;
   };
 
 } // namespace Model

@@ -16,6 +16,7 @@
 #include <aws/snowball/Snowball_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/snowball/model/S3Resource.h>
+#include <aws/snowball/model/LambdaResource.h>
 
 namespace Aws
 {
@@ -79,9 +80,46 @@ namespace Model
      */
     inline JobResource& AddS3Resources(S3Resource&& value) { m_s3ResourcesHasBeenSet = true; m_s3Resources.push_back(value); return *this; }
 
+    /**
+     * <p>The Python-language Lambda functions for this job.</p>
+     */
+    inline const Aws::Vector<LambdaResource>& GetLambdaResources() const{ return m_lambdaResources; }
+
+    /**
+     * <p>The Python-language Lambda functions for this job.</p>
+     */
+    inline void SetLambdaResources(const Aws::Vector<LambdaResource>& value) { m_lambdaResourcesHasBeenSet = true; m_lambdaResources = value; }
+
+    /**
+     * <p>The Python-language Lambda functions for this job.</p>
+     */
+    inline void SetLambdaResources(Aws::Vector<LambdaResource>&& value) { m_lambdaResourcesHasBeenSet = true; m_lambdaResources = value; }
+
+    /**
+     * <p>The Python-language Lambda functions for this job.</p>
+     */
+    inline JobResource& WithLambdaResources(const Aws::Vector<LambdaResource>& value) { SetLambdaResources(value); return *this;}
+
+    /**
+     * <p>The Python-language Lambda functions for this job.</p>
+     */
+    inline JobResource& WithLambdaResources(Aws::Vector<LambdaResource>&& value) { SetLambdaResources(value); return *this;}
+
+    /**
+     * <p>The Python-language Lambda functions for this job.</p>
+     */
+    inline JobResource& AddLambdaResources(const LambdaResource& value) { m_lambdaResourcesHasBeenSet = true; m_lambdaResources.push_back(value); return *this; }
+
+    /**
+     * <p>The Python-language Lambda functions for this job.</p>
+     */
+    inline JobResource& AddLambdaResources(LambdaResource&& value) { m_lambdaResourcesHasBeenSet = true; m_lambdaResources.push_back(value); return *this; }
+
   private:
     Aws::Vector<S3Resource> m_s3Resources;
     bool m_s3ResourcesHasBeenSet;
+    Aws::Vector<LambdaResource> m_lambdaResources;
+    bool m_lambdaResourcesHasBeenSet;
   };
 
 } // namespace Model

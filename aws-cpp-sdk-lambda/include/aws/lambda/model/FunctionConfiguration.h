@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/lambda/model/Runtime.h>
 #include <aws/lambda/model/VpcConfigResponse.h>
+#include <aws/lambda/model/DeadLetterConfig.h>
 #include <aws/lambda/model/EnvironmentResponse.h>
 
 namespace Aws
@@ -453,6 +454,36 @@ namespace Model
     inline FunctionConfiguration& WithVpcConfig(VpcConfigResponse&& value) { SetVpcConfig(value); return *this;}
 
     /**
+     * <p>The parent object that contains the target ARN (Amazon Resource Name) of an
+     * Amazon SQS queue or Amazon SNS topic.</p>
+     */
+    inline const DeadLetterConfig& GetDeadLetterConfig() const{ return m_deadLetterConfig; }
+
+    /**
+     * <p>The parent object that contains the target ARN (Amazon Resource Name) of an
+     * Amazon SQS queue or Amazon SNS topic.</p>
+     */
+    inline void SetDeadLetterConfig(const DeadLetterConfig& value) { m_deadLetterConfigHasBeenSet = true; m_deadLetterConfig = value; }
+
+    /**
+     * <p>The parent object that contains the target ARN (Amazon Resource Name) of an
+     * Amazon SQS queue or Amazon SNS topic.</p>
+     */
+    inline void SetDeadLetterConfig(DeadLetterConfig&& value) { m_deadLetterConfigHasBeenSet = true; m_deadLetterConfig = value; }
+
+    /**
+     * <p>The parent object that contains the target ARN (Amazon Resource Name) of an
+     * Amazon SQS queue or Amazon SNS topic.</p>
+     */
+    inline FunctionConfiguration& WithDeadLetterConfig(const DeadLetterConfig& value) { SetDeadLetterConfig(value); return *this;}
+
+    /**
+     * <p>The parent object that contains the target ARN (Amazon Resource Name) of an
+     * Amazon SQS queue or Amazon SNS topic.</p>
+     */
+    inline FunctionConfiguration& WithDeadLetterConfig(DeadLetterConfig&& value) { SetDeadLetterConfig(value); return *this;}
+
+    /**
      * <p>The parent object that contains your environment's configuration
      * settings.</p>
      */
@@ -558,6 +589,8 @@ namespace Model
     bool m_versionHasBeenSet;
     VpcConfigResponse m_vpcConfig;
     bool m_vpcConfigHasBeenSet;
+    DeadLetterConfig m_deadLetterConfig;
+    bool m_deadLetterConfigHasBeenSet;
     EnvironmentResponse m_environment;
     bool m_environmentHasBeenSet;
     Aws::String m_kMSKeyArn;

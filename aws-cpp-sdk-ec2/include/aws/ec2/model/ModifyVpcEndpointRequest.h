@@ -113,43 +113,43 @@ namespace Model
 
     /**
      * <p>A policy document to attach to the endpoint. The policy must be in valid JSON
-     * format. </p>
+     * format.</p>
      */
     inline const Aws::String& GetPolicyDocument() const{ return m_policyDocument; }
 
     /**
      * <p>A policy document to attach to the endpoint. The policy must be in valid JSON
-     * format. </p>
+     * format.</p>
      */
     inline void SetPolicyDocument(const Aws::String& value) { m_policyDocumentHasBeenSet = true; m_policyDocument = value; }
 
     /**
      * <p>A policy document to attach to the endpoint. The policy must be in valid JSON
-     * format. </p>
+     * format.</p>
      */
     inline void SetPolicyDocument(Aws::String&& value) { m_policyDocumentHasBeenSet = true; m_policyDocument = value; }
 
     /**
      * <p>A policy document to attach to the endpoint. The policy must be in valid JSON
-     * format. </p>
+     * format.</p>
      */
     inline void SetPolicyDocument(const char* value) { m_policyDocumentHasBeenSet = true; m_policyDocument.assign(value); }
 
     /**
      * <p>A policy document to attach to the endpoint. The policy must be in valid JSON
-     * format. </p>
+     * format.</p>
      */
     inline ModifyVpcEndpointRequest& WithPolicyDocument(const Aws::String& value) { SetPolicyDocument(value); return *this;}
 
     /**
      * <p>A policy document to attach to the endpoint. The policy must be in valid JSON
-     * format. </p>
+     * format.</p>
      */
     inline ModifyVpcEndpointRequest& WithPolicyDocument(Aws::String&& value) { SetPolicyDocument(value); return *this;}
 
     /**
      * <p>A policy document to attach to the endpoint. The policy must be in valid JSON
-     * format. </p>
+     * format.</p>
      */
     inline ModifyVpcEndpointRequest& WithPolicyDocument(const char* value) { SetPolicyDocument(value); return *this;}
 

@@ -24,7 +24,9 @@ CreateVpcRequest::CreateVpcRequest() :
     m_dryRunHasBeenSet(false),
     m_cidrBlockHasBeenSet(false),
     m_instanceTenancy(Tenancy::NOT_SET),
-    m_instanceTenancyHasBeenSet(false)
+    m_instanceTenancyHasBeenSet(false),
+    m_amazonProvidedIpv6CidrBlock(false),
+    m_amazonProvidedIpv6CidrBlockHasBeenSet(false)
 {
 }
 
@@ -47,7 +49,12 @@ Aws::String CreateVpcRequest::SerializePayload() const
     ss << "InstanceTenancy=" << TenancyMapper::GetNameForTenancy(m_instanceTenancy) << "&";
   }
 
-  ss << "Version=2015-10-01";
+  if(m_amazonProvidedIpv6CidrBlockHasBeenSet)
+  {
+    ss << "AmazonProvidedIpv6CidrBlock=" << m_amazonProvidedIpv6CidrBlock << "&";
+  }
+
+  ss << "Version=2016-11-15";
   return ss.str();
 }
 

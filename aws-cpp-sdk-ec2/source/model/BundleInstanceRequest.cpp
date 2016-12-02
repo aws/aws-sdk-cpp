@@ -46,7 +46,7 @@ Aws::String BundleInstanceRequest::SerializePayload() const
     m_storage.OutputToStream(ss, "Storage");
   }
 
-  ss << "Version=2015-10-01";
+  ss << "Version=2016-11-15";
   return ss.str();
 }
 

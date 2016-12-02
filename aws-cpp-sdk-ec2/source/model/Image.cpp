@@ -48,6 +48,8 @@ Image::Image() :
     m_platform(PlatformValues::NOT_SET),
     m_platformHasBeenSet(false),
     m_sriovNetSupportHasBeenSet(false),
+    m_enaSupport(false),
+    m_enaSupportHasBeenSet(false),
     m_stateReasonHasBeenSet(false),
     m_imageOwnerAliasHasBeenSet(false),
     m_nameHasBeenSet(false),
@@ -83,6 +85,8 @@ Image::Image(const XmlNode& xmlNode) :
     m_platform(PlatformValues::NOT_SET),
     m_platformHasBeenSet(false),
     m_sriovNetSupportHasBeenSet(false),
+    m_enaSupport(false),
+    m_enaSupportHasBeenSet(false),
     m_stateReasonHasBeenSet(false),
     m_imageOwnerAliasHasBeenSet(false),
     m_nameHasBeenSet(false),
@@ -189,6 +193,12 @@ Image& Image::operator =(const XmlNode& xmlNode)
     {
       m_sriovNetSupport = StringUtils::Trim(sriovNetSupportNode.GetText().c_str());
       m_sriovNetSupportHasBeenSet = true;
+    }
+    XmlNode enaSupportNode = resultNode.FirstChild("enaSupport");
+    if(!enaSupportNode.IsNull())
+    {
+      m_enaSupport = StringUtils::ConvertToBool(StringUtils::Trim(enaSupportNode.GetText().c_str()).c_str());
+      m_enaSupportHasBeenSet = true;
     }
     XmlNode stateReasonNode = resultNode.FirstChild("stateReason");
     if(!stateReasonNode.IsNull())
@@ -340,6 +350,11 @@ void Image::OutputToStream(Aws::OStream& oStream, const char* location, unsigned
       oStream << location << index << locationValue << ".SriovNetSupport=" << StringUtils::URLEncode(m_sriovNetSupport.c_str()) << "&";
   }
 
+  if(m_enaSupportHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".EnaSupport=" << m_enaSupport << "&";
+  }
+
   if(m_stateReasonHasBeenSet)
   {
       Aws::StringStream stateReasonLocationAndMemberSs;
@@ -465,6 +480,10 @@ void Image::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_sriovNetSupportHasBeenSet)
   {
       oStream << location << ".SriovNetSupport=" << StringUtils::URLEncode(m_sriovNetSupport.c_str()) << "&";
+  }
+  if(m_enaSupportHasBeenSet)
+  {
+      oStream << location << ".EnaSupport=" << m_enaSupport << "&";
   }
   if(m_stateReasonHasBeenSet)
   {

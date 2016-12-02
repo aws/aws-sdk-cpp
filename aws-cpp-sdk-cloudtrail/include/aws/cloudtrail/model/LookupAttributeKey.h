@@ -29,7 +29,8 @@ namespace Model
     EventName,
     Username,
     ResourceType,
-    ResourceName
+    ResourceName,
+    EventSource
   };
 
 namespace LookupAttributeKeyMapper

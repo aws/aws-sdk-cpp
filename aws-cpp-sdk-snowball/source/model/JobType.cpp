@@ -31,6 +31,7 @@ namespace Aws
 
         static const int IMPORT_HASH = HashingUtils::HashString("IMPORT");
         static const int EXPORT_HASH = HashingUtils::HashString("EXPORT");
+        static const int LOCAL_USE_HASH = HashingUtils::HashString("LOCAL_USE");
 
 
         JobType GetJobTypeForName(const Aws::String& name)
@@ -43,6 +44,10 @@ namespace Aws
           else if (hashCode == EXPORT_HASH)
           {
             return JobType::EXPORT;
+          }
+          else if (hashCode == LOCAL_USE_HASH)
+          {
+            return JobType::LOCAL_USE;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -62,6 +67,8 @@ namespace Aws
             return "IMPORT";
           case JobType::EXPORT:
             return "EXPORT";
+          case JobType::LOCAL_USE:
+            return "LOCAL_USE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

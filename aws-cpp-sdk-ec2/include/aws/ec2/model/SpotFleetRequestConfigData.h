@@ -433,7 +433,7 @@ namespace Model
      * alternative Spot pools if capacity is not available. When you want to
      * <code>maintain</code> a certain target capacity, fleet will place the required
      * bids to meet this target capacity. It will also automatically replenish any
-     * interrupted instances. Default: <code>maintain</code>. </p>
+     * interrupted instances. Default: <code>maintain</code>.</p>
      */
     inline const FleetType& GetType() const{ return m_type; }
 
@@ -446,7 +446,7 @@ namespace Model
      * alternative Spot pools if capacity is not available. When you want to
      * <code>maintain</code> a certain target capacity, fleet will place the required
      * bids to meet this target capacity. It will also automatically replenish any
-     * interrupted instances. Default: <code>maintain</code>. </p>
+     * interrupted instances. Default: <code>maintain</code>.</p>
      */
     inline void SetType(const FleetType& value) { m_typeHasBeenSet = true; m_type = value; }
 
@@ -459,7 +459,7 @@ namespace Model
      * alternative Spot pools if capacity is not available. When you want to
      * <code>maintain</code> a certain target capacity, fleet will place the required
      * bids to meet this target capacity. It will also automatically replenish any
-     * interrupted instances. Default: <code>maintain</code>. </p>
+     * interrupted instances. Default: <code>maintain</code>.</p>
      */
     inline void SetType(FleetType&& value) { m_typeHasBeenSet = true; m_type = value; }
 
@@ -472,7 +472,7 @@ namespace Model
      * alternative Spot pools if capacity is not available. When you want to
      * <code>maintain</code> a certain target capacity, fleet will place the required
      * bids to meet this target capacity. It will also automatically replenish any
-     * interrupted instances. Default: <code>maintain</code>. </p>
+     * interrupted instances. Default: <code>maintain</code>.</p>
      */
     inline SpotFleetRequestConfigData& WithType(const FleetType& value) { SetType(value); return *this;}
 
@@ -485,7 +485,7 @@ namespace Model
      * alternative Spot pools if capacity is not available. When you want to
      * <code>maintain</code> a certain target capacity, fleet will place the required
      * bids to meet this target capacity. It will also automatically replenish any
-     * interrupted instances. Default: <code>maintain</code>. </p>
+     * interrupted instances. Default: <code>maintain</code>.</p>
      */
     inline SpotFleetRequestConfigData& WithType(FleetType&& value) { SetType(value); return *this;}
 

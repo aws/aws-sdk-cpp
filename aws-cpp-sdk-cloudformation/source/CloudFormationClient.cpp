@@ -45,6 +45,7 @@
 #include <aws/cloudformation/model/GetTemplateSummaryRequest.h>
 #include <aws/cloudformation/model/ListChangeSetsRequest.h>
 #include <aws/cloudformation/model/ListExportsRequest.h>
+#include <aws/cloudformation/model/ListImportsRequest.h>
 #include <aws/cloudformation/model/ListStackResourcesRequest.h>
 #include <aws/cloudformation/model/ListStacksRequest.h>
 #include <aws/cloudformation/model/SetStackPolicyRequest.h>
@@ -742,6 +743,39 @@ void CloudFormationClient::ListExportsAsync(const ListExportsRequest& request, c
 void CloudFormationClient::ListExportsAsyncHelper(const ListExportsRequest& request, const ListExportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListExports(request), context);
+}
+
+ListImportsOutcome CloudFormationClient::ListImports(const ListImportsRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return ListImportsOutcome(ListImportsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListImportsOutcome(outcome.GetError());
+  }
+}
+
+ListImportsOutcomeCallable CloudFormationClient::ListImportsCallable(const ListImportsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListImportsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListImports(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudFormationClient::ListImportsAsync(const ListImportsRequest& request, const ListImportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListImportsAsyncHelper( request, handler, context ); } );
+}
+
+void CloudFormationClient::ListImportsAsyncHelper(const ListImportsRequest& request, const ListImportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListImports(request), context);
 }
 
 ListStackResourcesOutcome CloudFormationClient::ListStackResources(const ListStackResourcesRequest& request) const

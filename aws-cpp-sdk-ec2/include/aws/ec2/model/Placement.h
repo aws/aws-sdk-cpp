@@ -33,7 +33,7 @@ namespace Model
 {
 
   /**
-   * <p>Describes the placement for the instance.</p>
+   * <p>Describes the placement of an instance.</p>
    */
   class AWS_EC2_API Placement
   {
@@ -205,43 +205,43 @@ namespace Model
     inline Placement& WithHostId(const char* value) { SetHostId(value); return *this;}
 
     /**
-     * <p>The affinity setting for the instance on the Dedicated host. This parameter
+     * <p>The affinity setting for the instance on the Dedicated Host. This parameter
      * is not supported for the <a>ImportInstance</a> command.</p>
      */
     inline const Aws::String& GetAffinity() const{ return m_affinity; }
 
     /**
-     * <p>The affinity setting for the instance on the Dedicated host. This parameter
+     * <p>The affinity setting for the instance on the Dedicated Host. This parameter
      * is not supported for the <a>ImportInstance</a> command.</p>
      */
     inline void SetAffinity(const Aws::String& value) { m_affinityHasBeenSet = true; m_affinity = value; }
 
     /**
-     * <p>The affinity setting for the instance on the Dedicated host. This parameter
+     * <p>The affinity setting for the instance on the Dedicated Host. This parameter
      * is not supported for the <a>ImportInstance</a> command.</p>
      */
     inline void SetAffinity(Aws::String&& value) { m_affinityHasBeenSet = true; m_affinity = value; }
 
     /**
-     * <p>The affinity setting for the instance on the Dedicated host. This parameter
+     * <p>The affinity setting for the instance on the Dedicated Host. This parameter
      * is not supported for the <a>ImportInstance</a> command.</p>
      */
     inline void SetAffinity(const char* value) { m_affinityHasBeenSet = true; m_affinity.assign(value); }
 
     /**
-     * <p>The affinity setting for the instance on the Dedicated host. This parameter
+     * <p>The affinity setting for the instance on the Dedicated Host. This parameter
      * is not supported for the <a>ImportInstance</a> command.</p>
      */
     inline Placement& WithAffinity(const Aws::String& value) { SetAffinity(value); return *this;}
 
     /**
-     * <p>The affinity setting for the instance on the Dedicated host. This parameter
+     * <p>The affinity setting for the instance on the Dedicated Host. This parameter
      * is not supported for the <a>ImportInstance</a> command.</p>
      */
     inline Placement& WithAffinity(Aws::String&& value) { SetAffinity(value); return *this;}
 
     /**
-     * <p>The affinity setting for the instance on the Dedicated host. This parameter
+     * <p>The affinity setting for the instance on the Dedicated Host. This parameter
      * is not supported for the <a>ImportInstance</a> command.</p>
      */
     inline Placement& WithAffinity(const char* value) { SetAffinity(value); return *this;}

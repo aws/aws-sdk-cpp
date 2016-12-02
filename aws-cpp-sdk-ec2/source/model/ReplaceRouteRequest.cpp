@@ -25,6 +25,8 @@ ReplaceRouteRequest::ReplaceRouteRequest() :
     m_routeTableIdHasBeenSet(false),
     m_destinationCidrBlockHasBeenSet(false),
     m_gatewayIdHasBeenSet(false),
+    m_destinationIpv6CidrBlockHasBeenSet(false),
+    m_egressOnlyInternetGatewayIdHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
     m_networkInterfaceIdHasBeenSet(false),
     m_vpcPeeringConnectionIdHasBeenSet(false),
@@ -56,6 +58,16 @@ Aws::String ReplaceRouteRequest::SerializePayload() const
     ss << "GatewayId=" << StringUtils::URLEncode(m_gatewayId.c_str()) << "&";
   }
 
+  if(m_destinationIpv6CidrBlockHasBeenSet)
+  {
+    ss << "DestinationIpv6CidrBlock=" << StringUtils::URLEncode(m_destinationIpv6CidrBlock.c_str()) << "&";
+  }
+
+  if(m_egressOnlyInternetGatewayIdHasBeenSet)
+  {
+    ss << "EgressOnlyInternetGatewayId=" << StringUtils::URLEncode(m_egressOnlyInternetGatewayId.c_str()) << "&";
+  }
+
   if(m_instanceIdHasBeenSet)
   {
     ss << "InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
@@ -76,7 +88,7 @@ Aws::String ReplaceRouteRequest::SerializePayload() const
     ss << "NatGatewayId=" << StringUtils::URLEncode(m_natGatewayId.c_str()) << "&";
   }
 
-  ss << "Version=2015-10-01";
+  ss << "Version=2016-11-15";
   return ss.str();
 }
 

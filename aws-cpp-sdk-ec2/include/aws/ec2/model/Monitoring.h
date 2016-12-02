@@ -32,7 +32,7 @@ namespace Model
 {
 
   /**
-   * <p>Describes the monitoring for the instance.</p>
+   * <p>Describes the monitoring of an instance.</p>
    */
   class AWS_EC2_API Monitoring
   {
@@ -45,27 +45,32 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     /**
-     * <p>Indicates whether monitoring is enabled for the instance.</p>
+     * <p>Indicates whether detailed monitoring is enabled. Otherwise, basic monitoring
+     * is enabled.</p>
      */
     inline const MonitoringState& GetState() const{ return m_state; }
 
     /**
-     * <p>Indicates whether monitoring is enabled for the instance.</p>
+     * <p>Indicates whether detailed monitoring is enabled. Otherwise, basic monitoring
+     * is enabled.</p>
      */
     inline void SetState(const MonitoringState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
-     * <p>Indicates whether monitoring is enabled for the instance.</p>
+     * <p>Indicates whether detailed monitoring is enabled. Otherwise, basic monitoring
+     * is enabled.</p>
      */
     inline void SetState(MonitoringState&& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
-     * <p>Indicates whether monitoring is enabled for the instance.</p>
+     * <p>Indicates whether detailed monitoring is enabled. Otherwise, basic monitoring
+     * is enabled.</p>
      */
     inline Monitoring& WithState(const MonitoringState& value) { SetState(value); return *this;}
 
     /**
-     * <p>Indicates whether monitoring is enabled for the instance.</p>
+     * <p>Indicates whether detailed monitoring is enabled. Otherwise, basic monitoring
+     * is enabled.</p>
      */
     inline Monitoring& WithState(MonitoringState&& value) { SetState(value); return *this;}
 

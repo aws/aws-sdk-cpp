@@ -160,6 +160,39 @@ namespace Model
     inline ContainerInstance& WithEc2InstanceId(const char* value) { SetEc2InstanceId(value); return *this;}
 
     /**
+     * <p>The version counter for the container instance. Every time a container
+     * instance experiences a change that triggers a CloudWatch event, the version
+     * counter is incremented. If you are replicating your Amazon ECS container
+     * instance state with CloudWatch events, you can compare the version of a
+     * container instance reported by the Amazon ECS APIs with the version reported in
+     * CloudWatch events for the container instance (inside the <code>detail</code>
+     * object) to verify that the version in your event stream is current.</p>
+     */
+    inline long long GetVersion() const{ return m_version; }
+
+    /**
+     * <p>The version counter for the container instance. Every time a container
+     * instance experiences a change that triggers a CloudWatch event, the version
+     * counter is incremented. If you are replicating your Amazon ECS container
+     * instance state with CloudWatch events, you can compare the version of a
+     * container instance reported by the Amazon ECS APIs with the version reported in
+     * CloudWatch events for the container instance (inside the <code>detail</code>
+     * object) to verify that the version in your event stream is current.</p>
+     */
+    inline void SetVersion(long long value) { m_versionHasBeenSet = true; m_version = value; }
+
+    /**
+     * <p>The version counter for the container instance. Every time a container
+     * instance experiences a change that triggers a CloudWatch event, the version
+     * counter is incremented. If you are replicating your Amazon ECS container
+     * instance state with CloudWatch events, you can compare the version of a
+     * container instance reported by the Amazon ECS APIs with the version reported in
+     * CloudWatch events for the container instance (inside the <code>detail</code>
+     * object) to verify that the version in your event stream is current.</p>
+     */
+    inline ContainerInstance& WithVersion(long long value) { SetVersion(value); return *this;}
+
+    /**
      * <p>The version information for the Amazon ECS container agent and Docker daemon
      * running on the container instance.</p>
      */
@@ -494,6 +527,8 @@ namespace Model
     bool m_containerInstanceArnHasBeenSet;
     Aws::String m_ec2InstanceId;
     bool m_ec2InstanceIdHasBeenSet;
+    long long m_version;
+    bool m_versionHasBeenSet;
     VersionInfo m_versionInfo;
     bool m_versionInfoHasBeenSet;
     Aws::Vector<Resource> m_remainingResources;

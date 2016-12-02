@@ -59,42 +59,50 @@ namespace Model
     inline TerminateInstancesRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
     /**
-     * <p>One or more instance IDs.</p>
+     * <p>One or more instance IDs.</p> <p>Constraints: Up to 1000 instance IDs. We
+     * recommend breaking up this request into smaller batches.</p>
      */
     inline const Aws::Vector<Aws::String>& GetInstanceIds() const{ return m_instanceIds; }
 
     /**
-     * <p>One or more instance IDs.</p>
+     * <p>One or more instance IDs.</p> <p>Constraints: Up to 1000 instance IDs. We
+     * recommend breaking up this request into smaller batches.</p>
      */
     inline void SetInstanceIds(const Aws::Vector<Aws::String>& value) { m_instanceIdsHasBeenSet = true; m_instanceIds = value; }
 
     /**
-     * <p>One or more instance IDs.</p>
+     * <p>One or more instance IDs.</p> <p>Constraints: Up to 1000 instance IDs. We
+     * recommend breaking up this request into smaller batches.</p>
      */
     inline void SetInstanceIds(Aws::Vector<Aws::String>&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds = value; }
 
     /**
-     * <p>One or more instance IDs.</p>
+     * <p>One or more instance IDs.</p> <p>Constraints: Up to 1000 instance IDs. We
+     * recommend breaking up this request into smaller batches.</p>
      */
     inline TerminateInstancesRequest& WithInstanceIds(const Aws::Vector<Aws::String>& value) { SetInstanceIds(value); return *this;}
 
     /**
-     * <p>One or more instance IDs.</p>
+     * <p>One or more instance IDs.</p> <p>Constraints: Up to 1000 instance IDs. We
+     * recommend breaking up this request into smaller batches.</p>
      */
     inline TerminateInstancesRequest& WithInstanceIds(Aws::Vector<Aws::String>&& value) { SetInstanceIds(value); return *this;}
 
     /**
-     * <p>One or more instance IDs.</p>
+     * <p>One or more instance IDs.</p> <p>Constraints: Up to 1000 instance IDs. We
+     * recommend breaking up this request into smaller batches.</p>
      */
     inline TerminateInstancesRequest& AddInstanceIds(const Aws::String& value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
 
     /**
-     * <p>One or more instance IDs.</p>
+     * <p>One or more instance IDs.</p> <p>Constraints: Up to 1000 instance IDs. We
+     * recommend breaking up this request into smaller batches.</p>
      */
     inline TerminateInstancesRequest& AddInstanceIds(Aws::String&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
 
     /**
-     * <p>One or more instance IDs.</p>
+     * <p>One or more instance IDs.</p> <p>Constraints: Up to 1000 instance IDs. We
+     * recommend breaking up this request into smaller batches.</p>
      */
     inline TerminateInstancesRequest& AddInstanceIds(const char* value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
 

@@ -24,10 +24,12 @@
 #include <aws/cloudtrail/model/CreateTrailResult.h>
 #include <aws/cloudtrail/model/DeleteTrailResult.h>
 #include <aws/cloudtrail/model/DescribeTrailsResult.h>
+#include <aws/cloudtrail/model/GetEventSelectorsResult.h>
 #include <aws/cloudtrail/model/GetTrailStatusResult.h>
 #include <aws/cloudtrail/model/ListPublicKeysResult.h>
 #include <aws/cloudtrail/model/ListTagsResult.h>
 #include <aws/cloudtrail/model/LookupEventsResult.h>
+#include <aws/cloudtrail/model/PutEventSelectorsResult.h>
 #include <aws/cloudtrail/model/RemoveTagsResult.h>
 #include <aws/cloudtrail/model/StartLoggingResult.h>
 #include <aws/cloudtrail/model/StopLoggingResult.h>
@@ -81,10 +83,12 @@ namespace Model
         class CreateTrailRequest;
         class DeleteTrailRequest;
         class DescribeTrailsRequest;
+        class GetEventSelectorsRequest;
         class GetTrailStatusRequest;
         class ListPublicKeysRequest;
         class ListTagsRequest;
         class LookupEventsRequest;
+        class PutEventSelectorsRequest;
         class RemoveTagsRequest;
         class StartLoggingRequest;
         class StopLoggingRequest;
@@ -94,10 +98,12 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateTrailResult, Aws::Client::AWSError<CloudTrailErrors>> CreateTrailOutcome;
         typedef Aws::Utils::Outcome<DeleteTrailResult, Aws::Client::AWSError<CloudTrailErrors>> DeleteTrailOutcome;
         typedef Aws::Utils::Outcome<DescribeTrailsResult, Aws::Client::AWSError<CloudTrailErrors>> DescribeTrailsOutcome;
+        typedef Aws::Utils::Outcome<GetEventSelectorsResult, Aws::Client::AWSError<CloudTrailErrors>> GetEventSelectorsOutcome;
         typedef Aws::Utils::Outcome<GetTrailStatusResult, Aws::Client::AWSError<CloudTrailErrors>> GetTrailStatusOutcome;
         typedef Aws::Utils::Outcome<ListPublicKeysResult, Aws::Client::AWSError<CloudTrailErrors>> ListPublicKeysOutcome;
         typedef Aws::Utils::Outcome<ListTagsResult, Aws::Client::AWSError<CloudTrailErrors>> ListTagsOutcome;
         typedef Aws::Utils::Outcome<LookupEventsResult, Aws::Client::AWSError<CloudTrailErrors>> LookupEventsOutcome;
+        typedef Aws::Utils::Outcome<PutEventSelectorsResult, Aws::Client::AWSError<CloudTrailErrors>> PutEventSelectorsOutcome;
         typedef Aws::Utils::Outcome<RemoveTagsResult, Aws::Client::AWSError<CloudTrailErrors>> RemoveTagsOutcome;
         typedef Aws::Utils::Outcome<StartLoggingResult, Aws::Client::AWSError<CloudTrailErrors>> StartLoggingOutcome;
         typedef Aws::Utils::Outcome<StopLoggingResult, Aws::Client::AWSError<CloudTrailErrors>> StopLoggingOutcome;
@@ -107,10 +113,12 @@ namespace Model
         typedef std::future<CreateTrailOutcome> CreateTrailOutcomeCallable;
         typedef std::future<DeleteTrailOutcome> DeleteTrailOutcomeCallable;
         typedef std::future<DescribeTrailsOutcome> DescribeTrailsOutcomeCallable;
+        typedef std::future<GetEventSelectorsOutcome> GetEventSelectorsOutcomeCallable;
         typedef std::future<GetTrailStatusOutcome> GetTrailStatusOutcomeCallable;
         typedef std::future<ListPublicKeysOutcome> ListPublicKeysOutcomeCallable;
         typedef std::future<ListTagsOutcome> ListTagsOutcomeCallable;
         typedef std::future<LookupEventsOutcome> LookupEventsOutcomeCallable;
+        typedef std::future<PutEventSelectorsOutcome> PutEventSelectorsOutcomeCallable;
         typedef std::future<RemoveTagsOutcome> RemoveTagsOutcomeCallable;
         typedef std::future<StartLoggingOutcome> StartLoggingOutcomeCallable;
         typedef std::future<StopLoggingOutcome> StopLoggingOutcomeCallable;
@@ -123,10 +131,12 @@ namespace Model
     typedef std::function<void(const CloudTrailClient*, const Model::CreateTrailRequest&, const Model::CreateTrailOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTrailResponseReceivedHandler;
     typedef std::function<void(const CloudTrailClient*, const Model::DeleteTrailRequest&, const Model::DeleteTrailOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTrailResponseReceivedHandler;
     typedef std::function<void(const CloudTrailClient*, const Model::DescribeTrailsRequest&, const Model::DescribeTrailsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTrailsResponseReceivedHandler;
+    typedef std::function<void(const CloudTrailClient*, const Model::GetEventSelectorsRequest&, const Model::GetEventSelectorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEventSelectorsResponseReceivedHandler;
     typedef std::function<void(const CloudTrailClient*, const Model::GetTrailStatusRequest&, const Model::GetTrailStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTrailStatusResponseReceivedHandler;
     typedef std::function<void(const CloudTrailClient*, const Model::ListPublicKeysRequest&, const Model::ListPublicKeysOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPublicKeysResponseReceivedHandler;
     typedef std::function<void(const CloudTrailClient*, const Model::ListTagsRequest&, const Model::ListTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsResponseReceivedHandler;
     typedef std::function<void(const CloudTrailClient*, const Model::LookupEventsRequest&, const Model::LookupEventsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > LookupEventsResponseReceivedHandler;
+    typedef std::function<void(const CloudTrailClient*, const Model::PutEventSelectorsRequest&, const Model::PutEventSelectorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutEventSelectorsResponseReceivedHandler;
     typedef std::function<void(const CloudTrailClient*, const Model::RemoveTagsRequest&, const Model::RemoveTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveTagsResponseReceivedHandler;
     typedef std::function<void(const CloudTrailClient*, const Model::StartLoggingRequest&, const Model::StartLoggingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartLoggingResponseReceivedHandler;
     typedef std::function<void(const CloudTrailClient*, const Model::StopLoggingRequest&, const Model::StopLoggingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopLoggingResponseReceivedHandler;
@@ -147,8 +157,10 @@ namespace Model
    * requests, managing errors, and retrying requests automatically. For information
    * about the AWS SDKs, including how to download and install them, see the <a
    * href="http://aws.amazon.com/tools/">Tools for Amazon Web Services page</a>.</p>
-   * </note> <p>See the CloudTrail User Guide for information about the data that is
-   * included with each AWS API call listed in the log files.</p>
+   * </note> <p>See the <a
+   * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-user-guide.html">AWS
+   * CloudTrail User Guide</a> for information about the data that is included with
+   * each AWS API call listed in the log files.</p>
    */
   class AWS_CLOUDTRAIL_API CloudTrailClient : public Aws::Client::AWSJsonClient
   {
@@ -177,7 +189,7 @@ namespace Model
         virtual ~CloudTrailClient();
 
         /**
-         * <p>Adds one or more tags to a trail, up to a limit of 10. Tags must be unique
+         * <p>Adds one or more tags to a trail, up to a limit of 50. Tags must be unique
          * per trail. Overwrites an existing tag's value when a new value is specified for
          * an existing tag key. If you specify a key without a value, the tag will be
          * created with the specified key and a value of null. You can tag a trail that
@@ -187,7 +199,7 @@ namespace Model
         virtual Model::AddTagsOutcome AddTags(const Model::AddTagsRequest& request) const;
 
         /**
-         * <p>Adds one or more tags to a trail, up to a limit of 10. Tags must be unique
+         * <p>Adds one or more tags to a trail, up to a limit of 50. Tags must be unique
          * per trail. Overwrites an existing tag's value when a new value is specified for
          * an existing tag key. If you specify a key without a value, the tag will be
          * created with the specified key and a value of null. You can tag a trail that
@@ -199,7 +211,7 @@ namespace Model
         virtual Model::AddTagsOutcomeCallable AddTagsCallable(const Model::AddTagsRequest& request) const;
 
         /**
-         * <p>Adds one or more tags to a trail, up to a limit of 10. Tags must be unique
+         * <p>Adds one or more tags to a trail, up to a limit of 50. Tags must be unique
          * per trail. Overwrites an existing tag's value when a new value is specified for
          * an existing tag key. If you specify a key without a value, the tag will be
          * created with the specified key and a value of null. You can tag a trail that
@@ -284,6 +296,46 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeTrailsAsync(const Model::DescribeTrailsRequest& request, const DescribeTrailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Describes the settings for the event selectors that you configured for your
+         * trail. The information returned for your event selectors includes the
+         * following:</p> <ul> <li> <p>The S3 objects that you are logging for data
+         * events.</p> </li> <li> <p>If your event selector includes management events.</p>
+         * </li> <li> <p>If your event selector includes read-only events, write-only
+         * events, or all. </p> </li> </ul> <p>For more information, see <a
+         * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create-event-selectors-for-a-trail.html">Configuring
+         * Event Selectors for Trails</a> in the <i>AWS CloudTrail User Guide</i>.</p>
+         */
+        virtual Model::GetEventSelectorsOutcome GetEventSelectors(const Model::GetEventSelectorsRequest& request) const;
+
+        /**
+         * <p>Describes the settings for the event selectors that you configured for your
+         * trail. The information returned for your event selectors includes the
+         * following:</p> <ul> <li> <p>The S3 objects that you are logging for data
+         * events.</p> </li> <li> <p>If your event selector includes management events.</p>
+         * </li> <li> <p>If your event selector includes read-only events, write-only
+         * events, or all. </p> </li> </ul> <p>For more information, see <a
+         * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create-event-selectors-for-a-trail.html">Configuring
+         * Event Selectors for Trails</a> in the <i>AWS CloudTrail User Guide</i>.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetEventSelectorsOutcomeCallable GetEventSelectorsCallable(const Model::GetEventSelectorsRequest& request) const;
+
+        /**
+         * <p>Describes the settings for the event selectors that you configured for your
+         * trail. The information returned for your event selectors includes the
+         * following:</p> <ul> <li> <p>The S3 objects that you are logging for data
+         * events.</p> </li> <li> <p>If your event selector includes management events.</p>
+         * </li> <li> <p>If your event selector includes read-only events, write-only
+         * events, or all. </p> </li> </ul> <p>For more information, see <a
+         * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create-event-selectors-for-a-trail.html">Configuring
+         * Event Selectors for Trails</a> in the <i>AWS CloudTrail User Guide</i>.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetEventSelectorsAsync(const Model::GetEventSelectorsRequest& request, const GetEventSelectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a JSON-formatted list of information about the specified trail.
@@ -376,17 +428,16 @@ namespace Model
          * <p>Looks up API activity events captured by CloudTrail that create, update, or
          * delete resources in your account. Events for a region can be looked up for the
          * times in which you had CloudTrail turned on in that region during the last seven
-         * days. Lookup supports five different attributes: time range (defined by a start
-         * time and end time), user name, event name, resource type, and resource name. All
-         * attributes are optional. The maximum number of attributes that can be specified
-         * in any one lookup request are time range and one other attribute. The default
-         * number of results returned is 10, with a maximum of 50 possible. The response
-         * includes a token that you can use to get the next page of results.</p>
-         * <important> <p>The rate of lookup requests is limited to one per second per
-         * account. If this limit is exceeded, a throttling error occurs.</p> </important>
-         * <important> <p>Events that occurred during the selected time range will not be
-         * available for lookup if CloudTrail logging was not enabled when the events
-         * occurred.</p> </important>
+         * days. Lookup supports the following attributes:</p> <ul> <li> <p>Event ID</p>
+         * </li> <li> <p>Event name</p> </li> <li> <p>Resource name</p> </li> <li>
+         * <p>Resource type</p> </li> <li> <p>User name</p> </li> </ul> <p>All attributes
+         * are optional. The default number of results returned is 10, with a maximum of 50
+         * possible. The response includes a token that you can use to get the next page of
+         * results.</p> <important> <p>The rate of lookup requests is limited to one per
+         * second per account. If this limit is exceeded, a throttling error occurs.</p>
+         * </important> <important> <p>Events that occurred during the selected time range
+         * will not be available for lookup if CloudTrail logging was not enabled when the
+         * events occurred.</p> </important>
          */
         virtual Model::LookupEventsOutcome LookupEvents(const Model::LookupEventsRequest& request) const;
 
@@ -394,17 +445,16 @@ namespace Model
          * <p>Looks up API activity events captured by CloudTrail that create, update, or
          * delete resources in your account. Events for a region can be looked up for the
          * times in which you had CloudTrail turned on in that region during the last seven
-         * days. Lookup supports five different attributes: time range (defined by a start
-         * time and end time), user name, event name, resource type, and resource name. All
-         * attributes are optional. The maximum number of attributes that can be specified
-         * in any one lookup request are time range and one other attribute. The default
-         * number of results returned is 10, with a maximum of 50 possible. The response
-         * includes a token that you can use to get the next page of results.</p>
-         * <important> <p>The rate of lookup requests is limited to one per second per
-         * account. If this limit is exceeded, a throttling error occurs.</p> </important>
-         * <important> <p>Events that occurred during the selected time range will not be
-         * available for lookup if CloudTrail logging was not enabled when the events
-         * occurred.</p> </important>
+         * days. Lookup supports the following attributes:</p> <ul> <li> <p>Event ID</p>
+         * </li> <li> <p>Event name</p> </li> <li> <p>Resource name</p> </li> <li>
+         * <p>Resource type</p> </li> <li> <p>User name</p> </li> </ul> <p>All attributes
+         * are optional. The default number of results returned is 10, with a maximum of 50
+         * possible. The response includes a token that you can use to get the next page of
+         * results.</p> <important> <p>The rate of lookup requests is limited to one per
+         * second per account. If this limit is exceeded, a throttling error occurs.</p>
+         * </important> <important> <p>Events that occurred during the selected time range
+         * will not be available for lookup if CloudTrail logging was not enabled when the
+         * events occurred.</p> </important>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -414,21 +464,93 @@ namespace Model
          * <p>Looks up API activity events captured by CloudTrail that create, update, or
          * delete resources in your account. Events for a region can be looked up for the
          * times in which you had CloudTrail turned on in that region during the last seven
-         * days. Lookup supports five different attributes: time range (defined by a start
-         * time and end time), user name, event name, resource type, and resource name. All
-         * attributes are optional. The maximum number of attributes that can be specified
-         * in any one lookup request are time range and one other attribute. The default
-         * number of results returned is 10, with a maximum of 50 possible. The response
-         * includes a token that you can use to get the next page of results.</p>
-         * <important> <p>The rate of lookup requests is limited to one per second per
-         * account. If this limit is exceeded, a throttling error occurs.</p> </important>
-         * <important> <p>Events that occurred during the selected time range will not be
-         * available for lookup if CloudTrail logging was not enabled when the events
-         * occurred.</p> </important>
+         * days. Lookup supports the following attributes:</p> <ul> <li> <p>Event ID</p>
+         * </li> <li> <p>Event name</p> </li> <li> <p>Resource name</p> </li> <li>
+         * <p>Resource type</p> </li> <li> <p>User name</p> </li> </ul> <p>All attributes
+         * are optional. The default number of results returned is 10, with a maximum of 50
+         * possible. The response includes a token that you can use to get the next page of
+         * results.</p> <important> <p>The rate of lookup requests is limited to one per
+         * second per account. If this limit is exceeded, a throttling error occurs.</p>
+         * </important> <important> <p>Events that occurred during the selected time range
+         * will not be available for lookup if CloudTrail logging was not enabled when the
+         * events occurred.</p> </important>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void LookupEventsAsync(const Model::LookupEventsRequest& request, const LookupEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Configures an event selector for your trail. Use event selectors to specify
+         * the type of events that you want your trail to log. When an event occurs in your
+         * account, CloudTrail evaluates the event selectors in all trails. For each trail,
+         * if the event matches any event selector, the trail processes and logs the event.
+         * If the event doesn't match any event selector, the trail doesn't log the event.
+         * </p> <p>Example</p> <ol> <li> <p>You create an event selector for a trail and
+         * specify that you want write-only events.</p> </li> <li> <p>The EC2
+         * <code>GetConsoleOutput</code> and <code>RunInstances</code> API operations occur
+         * in your account.</p> </li> <li> <p>CloudTrail evaluates whether the events match
+         * your event selectors.</p> </li> <li> <p>The <code>RunInstances</code> is a
+         * write-only event and it matches your event selector. The trail logs the
+         * event.</p> </li> <li> <p>The <code>GetConsoleOutput</code> is a read-only event
+         * but it doesn't match your event selector. The trail doesn't log the event. </p>
+         * </li> </ol> <p>The <code>PutEventSelectors</code> operation must be called from
+         * the region in which the trail was created; otherwise, an
+         * <code>InvalidHomeRegionException</code> is thrown.</p> <p>You can configure up
+         * to five event selectors for each trail. For more information, see <a
+         * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create-event-selectors-for-a-trail.html">Configuring
+         * Event Selectors for Trails</a> in the <i>AWS CloudTrail User Guide</i>.</p>
+         */
+        virtual Model::PutEventSelectorsOutcome PutEventSelectors(const Model::PutEventSelectorsRequest& request) const;
+
+        /**
+         * <p>Configures an event selector for your trail. Use event selectors to specify
+         * the type of events that you want your trail to log. When an event occurs in your
+         * account, CloudTrail evaluates the event selectors in all trails. For each trail,
+         * if the event matches any event selector, the trail processes and logs the event.
+         * If the event doesn't match any event selector, the trail doesn't log the event.
+         * </p> <p>Example</p> <ol> <li> <p>You create an event selector for a trail and
+         * specify that you want write-only events.</p> </li> <li> <p>The EC2
+         * <code>GetConsoleOutput</code> and <code>RunInstances</code> API operations occur
+         * in your account.</p> </li> <li> <p>CloudTrail evaluates whether the events match
+         * your event selectors.</p> </li> <li> <p>The <code>RunInstances</code> is a
+         * write-only event and it matches your event selector. The trail logs the
+         * event.</p> </li> <li> <p>The <code>GetConsoleOutput</code> is a read-only event
+         * but it doesn't match your event selector. The trail doesn't log the event. </p>
+         * </li> </ol> <p>The <code>PutEventSelectors</code> operation must be called from
+         * the region in which the trail was created; otherwise, an
+         * <code>InvalidHomeRegionException</code> is thrown.</p> <p>You can configure up
+         * to five event selectors for each trail. For more information, see <a
+         * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create-event-selectors-for-a-trail.html">Configuring
+         * Event Selectors for Trails</a> in the <i>AWS CloudTrail User Guide</i>.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutEventSelectorsOutcomeCallable PutEventSelectorsCallable(const Model::PutEventSelectorsRequest& request) const;
+
+        /**
+         * <p>Configures an event selector for your trail. Use event selectors to specify
+         * the type of events that you want your trail to log. When an event occurs in your
+         * account, CloudTrail evaluates the event selectors in all trails. For each trail,
+         * if the event matches any event selector, the trail processes and logs the event.
+         * If the event doesn't match any event selector, the trail doesn't log the event.
+         * </p> <p>Example</p> <ol> <li> <p>You create an event selector for a trail and
+         * specify that you want write-only events.</p> </li> <li> <p>The EC2
+         * <code>GetConsoleOutput</code> and <code>RunInstances</code> API operations occur
+         * in your account.</p> </li> <li> <p>CloudTrail evaluates whether the events match
+         * your event selectors.</p> </li> <li> <p>The <code>RunInstances</code> is a
+         * write-only event and it matches your event selector. The trail logs the
+         * event.</p> </li> <li> <p>The <code>GetConsoleOutput</code> is a read-only event
+         * but it doesn't match your event selector. The trail doesn't log the event. </p>
+         * </li> </ol> <p>The <code>PutEventSelectors</code> operation must be called from
+         * the region in which the trail was created; otherwise, an
+         * <code>InvalidHomeRegionException</code> is thrown.</p> <p>You can configure up
+         * to five event selectors for each trail. For more information, see <a
+         * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create-event-selectors-for-a-trail.html">Configuring
+         * Event Selectors for Trails</a> in the <i>AWS CloudTrail User Guide</i>.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutEventSelectorsAsync(const Model::PutEventSelectorsRequest& request, const PutEventSelectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes the specified tags from a trail.</p>
@@ -563,10 +685,12 @@ namespace Model
         void CreateTrailAsyncHelper(const Model::CreateTrailRequest& request, const CreateTrailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteTrailAsyncHelper(const Model::DeleteTrailRequest& request, const DeleteTrailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeTrailsAsyncHelper(const Model::DescribeTrailsRequest& request, const DescribeTrailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetEventSelectorsAsyncHelper(const Model::GetEventSelectorsRequest& request, const GetEventSelectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetTrailStatusAsyncHelper(const Model::GetTrailStatusRequest& request, const GetTrailStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListPublicKeysAsyncHelper(const Model::ListPublicKeysRequest& request, const ListPublicKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsAsyncHelper(const Model::ListTagsRequest& request, const ListTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void LookupEventsAsyncHelper(const Model::LookupEventsRequest& request, const LookupEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PutEventSelectorsAsyncHelper(const Model::PutEventSelectorsRequest& request, const PutEventSelectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RemoveTagsAsyncHelper(const Model::RemoveTagsRequest& request, const RemoveTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartLoggingAsyncHelper(const Model::StartLoggingRequest& request, const StartLoggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopLoggingAsyncHelper(const Model::StopLoggingRequest& request, const StopLoggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

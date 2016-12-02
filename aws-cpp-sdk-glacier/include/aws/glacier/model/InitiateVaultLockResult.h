@@ -43,37 +43,37 @@ namespace Model
     InitiateVaultLockResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * <p> The lock ID, which is used to complete the vault locking process.</p>
+     * <p>The lock ID, which is used to complete the vault locking process.</p>
      */
     inline const Aws::String& GetLockId() const{ return m_lockId; }
 
     /**
-     * <p> The lock ID, which is used to complete the vault locking process.</p>
+     * <p>The lock ID, which is used to complete the vault locking process.</p>
      */
     inline void SetLockId(const Aws::String& value) { m_lockId = value; }
 
     /**
-     * <p> The lock ID, which is used to complete the vault locking process.</p>
+     * <p>The lock ID, which is used to complete the vault locking process.</p>
      */
     inline void SetLockId(Aws::String&& value) { m_lockId = value; }
 
     /**
-     * <p> The lock ID, which is used to complete the vault locking process.</p>
+     * <p>The lock ID, which is used to complete the vault locking process.</p>
      */
     inline void SetLockId(const char* value) { m_lockId.assign(value); }
 
     /**
-     * <p> The lock ID, which is used to complete the vault locking process.</p>
+     * <p>The lock ID, which is used to complete the vault locking process.</p>
      */
     inline InitiateVaultLockResult& WithLockId(const Aws::String& value) { SetLockId(value); return *this;}
 
     /**
-     * <p> The lock ID, which is used to complete the vault locking process.</p>
+     * <p>The lock ID, which is used to complete the vault locking process.</p>
      */
     inline InitiateVaultLockResult& WithLockId(Aws::String&& value) { SetLockId(value); return *this;}
 
     /**
-     * <p> The lock ID, which is used to complete the vault locking process.</p>
+     * <p>The lock ID, which is used to complete the vault locking process.</p>
      */
     inline InitiateVaultLockResult& WithLockId(const char* value) { SetLockId(value); return *this;}
 

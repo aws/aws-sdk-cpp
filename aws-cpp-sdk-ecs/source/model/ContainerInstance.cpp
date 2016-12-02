@@ -30,6 +30,8 @@ namespace Model
 ContainerInstance::ContainerInstance() : 
     m_containerInstanceArnHasBeenSet(false),
     m_ec2InstanceIdHasBeenSet(false),
+    m_version(0),
+    m_versionHasBeenSet(false),
     m_versionInfoHasBeenSet(false),
     m_remainingResourcesHasBeenSet(false),
     m_registeredResourcesHasBeenSet(false),
@@ -49,6 +51,8 @@ ContainerInstance::ContainerInstance() :
 ContainerInstance::ContainerInstance(const JsonValue& jsonValue) : 
     m_containerInstanceArnHasBeenSet(false),
     m_ec2InstanceIdHasBeenSet(false),
+    m_version(0),
+    m_versionHasBeenSet(false),
     m_versionInfoHasBeenSet(false),
     m_remainingResourcesHasBeenSet(false),
     m_registeredResourcesHasBeenSet(false),
@@ -80,6 +84,13 @@ ContainerInstance& ContainerInstance::operator =(const JsonValue& jsonValue)
     m_ec2InstanceId = jsonValue.GetString("ec2InstanceId");
 
     m_ec2InstanceIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("version"))
+  {
+    m_version = jsonValue.GetInt64("version");
+
+    m_versionHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("versionInfo"))
@@ -170,6 +181,12 @@ JsonValue ContainerInstance::Jsonize() const
   if(m_ec2InstanceIdHasBeenSet)
   {
    payload.WithString("ec2InstanceId", m_ec2InstanceId);
+
+  }
+
+  if(m_versionHasBeenSet)
+  {
+   payload.WithInt64("version", m_version);
 
   }
 

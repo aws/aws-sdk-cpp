@@ -141,6 +141,41 @@ namespace Model
     inline Event& WithEventTime(Aws::Utils::DateTime&& value) { SetEventTime(value); return *this;}
 
     /**
+     * <p>The AWS service that the request was made to.</p>
+     */
+    inline const Aws::String& GetEventSource() const{ return m_eventSource; }
+
+    /**
+     * <p>The AWS service that the request was made to.</p>
+     */
+    inline void SetEventSource(const Aws::String& value) { m_eventSourceHasBeenSet = true; m_eventSource = value; }
+
+    /**
+     * <p>The AWS service that the request was made to.</p>
+     */
+    inline void SetEventSource(Aws::String&& value) { m_eventSourceHasBeenSet = true; m_eventSource = value; }
+
+    /**
+     * <p>The AWS service that the request was made to.</p>
+     */
+    inline void SetEventSource(const char* value) { m_eventSourceHasBeenSet = true; m_eventSource.assign(value); }
+
+    /**
+     * <p>The AWS service that the request was made to.</p>
+     */
+    inline Event& WithEventSource(const Aws::String& value) { SetEventSource(value); return *this;}
+
+    /**
+     * <p>The AWS service that the request was made to.</p>
+     */
+    inline Event& WithEventSource(Aws::String&& value) { SetEventSource(value); return *this;}
+
+    /**
+     * <p>The AWS service that the request was made to.</p>
+     */
+    inline Event& WithEventSource(const char* value) { SetEventSource(value); return *this;}
+
+    /**
      * <p>A user name or role name of the requester that called the API in the event
      * returned.</p>
      */
@@ -259,6 +294,8 @@ namespace Model
     bool m_eventNameHasBeenSet;
     Aws::Utils::DateTime m_eventTime;
     bool m_eventTimeHasBeenSet;
+    Aws::String m_eventSource;
+    bool m_eventSourceHasBeenSet;
     Aws::String m_username;
     bool m_usernameHasBeenSet;
     Aws::Vector<Resource> m_resources;

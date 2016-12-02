@@ -27,6 +27,9 @@ CreateNetworkInterfaceRequest::CreateNetworkInterfaceRequest() :
     m_privateIpAddressesHasBeenSet(false),
     m_secondaryPrivateIpAddressCount(0),
     m_secondaryPrivateIpAddressCountHasBeenSet(false),
+    m_ipv6AddressesHasBeenSet(false),
+    m_ipv6AddressCount(0),
+    m_ipv6AddressCountHasBeenSet(false),
     m_dryRun(false),
     m_dryRunHasBeenSet(false)
 {
@@ -77,12 +80,27 @@ Aws::String CreateNetworkInterfaceRequest::SerializePayload() const
     ss << "SecondaryPrivateIpAddressCount=" << m_secondaryPrivateIpAddressCount << "&";
   }
 
+  if(m_ipv6AddressesHasBeenSet)
+  {
+    unsigned ipv6AddressesCount = 1;
+    for(auto& item : m_ipv6Addresses)
+    {
+      item.OutputToStream(ss, "Ipv6Addresses.", ipv6AddressesCount, "");
+      ipv6AddressesCount++;
+    }
+  }
+
+  if(m_ipv6AddressCountHasBeenSet)
+  {
+    ss << "Ipv6AddressCount=" << m_ipv6AddressCount << "&";
+  }
+
   if(m_dryRunHasBeenSet)
   {
     ss << "DryRun=" << m_dryRun << "&";
   }
 
-  ss << "Version=2015-10-01";
+  ss << "Version=2016-11-15";
   return ss.str();
 }
 

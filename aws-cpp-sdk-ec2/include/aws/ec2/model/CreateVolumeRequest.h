@@ -176,7 +176,7 @@ namespace Model
      * <p>The volume type. This can be <code>gp2</code> for General Purpose SSD,
      * <code>io1</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput
      * Optimized HDD, <code>sc1</code> for Cold HDD, or <code>standard</code> for
-     * Magnetic volumes.</p> <p>Default: <code>standard</code></p>
+     * Magnetic volumes.</p> <p>Default: <code>standard</code> </p>
      */
     inline const VolumeType& GetVolumeType() const{ return m_volumeType; }
 
@@ -184,7 +184,7 @@ namespace Model
      * <p>The volume type. This can be <code>gp2</code> for General Purpose SSD,
      * <code>io1</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput
      * Optimized HDD, <code>sc1</code> for Cold HDD, or <code>standard</code> for
-     * Magnetic volumes.</p> <p>Default: <code>standard</code></p>
+     * Magnetic volumes.</p> <p>Default: <code>standard</code> </p>
      */
     inline void SetVolumeType(const VolumeType& value) { m_volumeTypeHasBeenSet = true; m_volumeType = value; }
 
@@ -192,7 +192,7 @@ namespace Model
      * <p>The volume type. This can be <code>gp2</code> for General Purpose SSD,
      * <code>io1</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput
      * Optimized HDD, <code>sc1</code> for Cold HDD, or <code>standard</code> for
-     * Magnetic volumes.</p> <p>Default: <code>standard</code></p>
+     * Magnetic volumes.</p> <p>Default: <code>standard</code> </p>
      */
     inline void SetVolumeType(VolumeType&& value) { m_volumeTypeHasBeenSet = true; m_volumeType = value; }
 
@@ -200,7 +200,7 @@ namespace Model
      * <p>The volume type. This can be <code>gp2</code> for General Purpose SSD,
      * <code>io1</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput
      * Optimized HDD, <code>sc1</code> for Cold HDD, or <code>standard</code> for
-     * Magnetic volumes.</p> <p>Default: <code>standard</code></p>
+     * Magnetic volumes.</p> <p>Default: <code>standard</code> </p>
      */
     inline CreateVolumeRequest& WithVolumeType(const VolumeType& value) { SetVolumeType(value); return *this;}
 
@@ -208,13 +208,13 @@ namespace Model
      * <p>The volume type. This can be <code>gp2</code> for General Purpose SSD,
      * <code>io1</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput
      * Optimized HDD, <code>sc1</code> for Cold HDD, or <code>standard</code> for
-     * Magnetic volumes.</p> <p>Default: <code>standard</code></p>
+     * Magnetic volumes.</p> <p>Default: <code>standard</code> </p>
      */
     inline CreateVolumeRequest& WithVolumeType(VolumeType&& value) { SetVolumeType(value); return *this;}
 
     /**
      * <p>Only valid for Provisioned IOPS SSD volumes. The number of I/O operations per
-     * second (IOPS) to provision for the volume, with a maximum ratio of 30
+     * second (IOPS) to provision for the volume, with a maximum ratio of 50
      * IOPS/GiB.</p> <p>Constraint: Range is 100 to 20000 for Provisioned IOPS SSD
      * volumes </p>
      */
@@ -222,7 +222,7 @@ namespace Model
 
     /**
      * <p>Only valid for Provisioned IOPS SSD volumes. The number of I/O operations per
-     * second (IOPS) to provision for the volume, with a maximum ratio of 30
+     * second (IOPS) to provision for the volume, with a maximum ratio of 50
      * IOPS/GiB.</p> <p>Constraint: Range is 100 to 20000 for Provisioned IOPS SSD
      * volumes </p>
      */
@@ -230,7 +230,7 @@ namespace Model
 
     /**
      * <p>Only valid for Provisioned IOPS SSD volumes. The number of I/O operations per
-     * second (IOPS) to provision for the volume, with a maximum ratio of 30
+     * second (IOPS) to provision for the volume, with a maximum ratio of 50
      * IOPS/GiB.</p> <p>Constraint: Range is 100 to 20000 for Provisioned IOPS SSD
      * volumes </p>
      */
