@@ -16,12 +16,11 @@
 #pragma once
 
 #include <aws/polly-to-output/PollyToOutput_EXPORTS.h>
+#include <aws/polly-to-output/PCMOutputDriver.h>
 #include <aws/polly/PollyClient.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <functional>
 #include <mutex>
-
-#include <Windows.h>
 
 namespace Aws
 {
@@ -36,14 +35,16 @@ namespace Aws
             ~TextToSpeechManager();
             void SendTextToOutputDevice(const char* text, SendTextCompletedHandler);
 
+            Aws::Vector<DeviceInfo> EnumerateDevices() const;
+            void SetActiveDevice(const DeviceInfo&, const CapabilityInfo&);
+
         private:
             void OnPollySynthSpeechOutcomeRecieved(const Polly::PollyClient*, const Polly::Model::SynthesizeSpeechRequest&, 
                 const Polly::Model::SynthesizeSpeechOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) const;
             
             std::shared_ptr<Polly::PollyClient> m_pollyClient;
-
-            HWAVEOUT m_waveOut;
-            bool m_isInit;
+            std::shared_ptr<PCMOutputDriver> m_driver;
+            CapabilityInfo m_selectedCaps;
         };
     }
 }

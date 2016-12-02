@@ -5,19 +5,27 @@ add_project(aws-cpp-sdk-polly-to-output
 
 file( GLOB POLLY_OUT_HEADERS "include/aws/polly-to-output/*.h" )
 
+file( GLOB POLLY_OUT_PLATFORM_HEADERS "include/aws/polly-to-output/windows/*.h" )
+
 file( GLOB POLLY_OUT_SOURCE "source/polly-to-output/*.cpp" )
+
+file( GLOB POLLY_OUT_PLATFORM_SOURCE "source/polly-to-output/windows/*.cpp" )
 
 if(MSVC)
     source_group("Header Files\\aws\\polly-to-output" FILES ${POLLY_OUT_HEADERS})
+    source_group("Header Files\\aws\\polly-to-output\\windows" FILES ${POLLY_OUT_PLATFORM_HEADERS})
     source_group("Source Files\\polly-to-output" FILES ${POLLY_OUT_SOURCE})
+    source_group("Source Files\\polly-to-output\\windows" FILES ${POLLY_OUT_PLATFORM_SOURCE})
 endif()
 
 file(GLOB ALL_POLLY_OUT_HEADERS
     ${POLLY_OUT_HEADERS}
+    ${POLLY_OUT_PLATFORM_HEADERS}
 )
 
 file(GLOB ALL_POLLY_OUT_SOURCE
     ${POLLY_OUT_SOURCE}
+    ${POLLY_OUT_PLATFORM_SOURCE}
 )
 
 file(GLOB ALL_POLLY_OUT

@@ -17,30 +17,16 @@
 #include <aws/polly/model/SynthesizeSpeechRequest.h>
 #include <aws/polly/model/DescribeVoicesRequest.h>
 #include <aws/core/utils/Outcome.h>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/polly-to-output/windows/WaveOutPCMOutputDriver.h>
 #include <windows.h>
+
+#include <iostream>
+
 
 using namespace Aws::Polly;
 using namespace Aws::Polly::Model;
-
-static void CALLBACK waveOutProc(HWAVEOUT waveOut, UINT uMsg, DWORD_PTR, DWORD_PTR dwParam1, DWORD_PTR)
-{
-    switch (uMsg)
-    {
-    case WOM_CLOSE:
-        return;
-    case WOM_DONE:
-        waveOutUnprepareHeader(waveOut, (WAVEHDR*)dwParam1, sizeof(WAVEHDR));
-        Aws::DeleteArray(((WAVEHDR*)dwParam1)->lpData);
-        Aws::Delete((WAVEHDR*)dwParam1);
-        return;
-    case WOM_OPEN:
-        return;
-    default:
-        return;
-
-    }
-}
-
+using namespace Aws::Utils;
 
 namespace Aws
 {
@@ -51,45 +37,37 @@ namespace Aws
 
         TextToSpeechManager::TextToSpeechManager(const std::shared_ptr<Polly::PollyClient>& pollyClient) : m_pollyClient(pollyClient)
         {
-            WAVEFORMATEX format;
-            format.nChannels = 1;
-            format.nSamplesPerSec = 16000;
-            format.wBitsPerSample = 16;
-            format.wFormatTag = WAVE_FORMAT_PCM;
-            format.nBlockAlign = (format.nChannels * format.wBitsPerSample) / 8;
-            format.cbSize = 0;
-            format.nAvgBytesPerSec = format.nSamplesPerSec * format.nBlockAlign;
-
-            auto res = waveOutOpen(&m_waveOut, WAVE_MAPPER, &format, (DWORD_PTR)&waveOutProc, NULL, CALLBACK_FUNCTION | WAVE_ALLOWSYNC | WAVE_MAPPED_DEFAULT_COMMUNICATION_DEVICE | WAVE_ALLOWSYNC);
-            m_isInit = !res;
+            //temporary
+            m_driver = Aws::MakeShared<WaveOutPCMOutputDriver>(CLASS_TAG);
         }
 
         TextToSpeechManager::~TextToSpeechManager()
         {
-            waveOutClose(m_waveOut);
         }
 
         void TextToSpeechManager::SendTextToOutputDevice(const char* text, SendTextCompletedHandler)
         {
-            DescribeVoicesRequest describeVocies;
-            describeVocies.WithLanguageCode(LanguageCode::en_US);
+            SynthesizeSpeechRequest synthesizeSpeechRequest;
+            synthesizeSpeechRequest.WithOutputFormat(OutputFormat::pcm)
+                .WithSampleRate(StringUtils::to_string(m_selectedCaps.sampleRate))
+                .WithTextType(TextType::text)
+                .WithText(text)
+                .WithVoiceId(VoiceId::Salli);
 
-            auto outcome = m_pollyClient->DescribeVoices(describeVocies);
+            m_pollyClient->SynthesizeSpeechAsync(synthesizeSpeechRequest, [this](const Polly::PollyClient* client, const Polly::Model::SynthesizeSpeechRequest& request,
+                const Polly::Model::SynthesizeSpeechOutcome& speechOutcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
+            {OnPollySynthSpeechOutcomeRecieved(client, request, speechOutcome, context);});
+        }
 
-            if (outcome.IsSuccess())
-            {
-                SynthesizeSpeechRequest synthesizeSpeechRequest;
-                synthesizeSpeechRequest.WithOutputFormat(OutputFormat::pcm)
-                    .WithSampleRate("16000")
-                    .WithTextType(TextType::text)
-                    .WithText(text)
-                    .WithVoiceId(outcome.GetResult().GetVoices()[1].GetId());
+        Aws::Vector<DeviceInfo> TextToSpeechManager::EnumerateDevices() const
+        {
+            return m_driver->EnumerateDevices();
+        }
 
-                m_pollyClient->SynthesizeSpeechAsync(synthesizeSpeechRequest, [this](const Polly::PollyClient* client, const Polly::Model::SynthesizeSpeechRequest& request,
-                    const Polly::Model::SynthesizeSpeechOutcome& speechOutcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
-                {OnPollySynthSpeechOutcomeRecieved(client, request, speechOutcome, context);});
-            }
-
+        void TextToSpeechManager::SetActiveDevice(const DeviceInfo& device, const CapabilityInfo& caps)
+        {
+            m_driver->SetActiveDevice(device, caps);
+            m_selectedCaps = caps;
         }
 
         void TextToSpeechManager::OnPollySynthSpeechOutcomeRecieved(const Polly::PollyClient*, const Polly::Model::SynthesizeSpeechRequest&,
@@ -98,26 +76,15 @@ namespace Aws
             auto result = const_cast<Polly::Model::SynthesizeSpeechOutcome&>(outcome).GetResultWithOwnership();
             auto& stream = result.GetAudioStream();
 
-            if (m_isInit)
+            std::streamsize amountRead(0);
+            unsigned char buffer[BUFF_SIZE];
+
+            while (stream)
             {
-                std::streamsize amountRead(0);
-                while (stream)
-                {
-                    char* buffer = Aws::NewArray<char>(BUFF_SIZE, CLASS_TAG);
-                    stream.read(buffer, BUFF_SIZE);
-                    auto read = stream.gcount();
-                    WAVEHDR* waveHdr = Aws::New<WAVEHDR>(CLASS_TAG);
-                    waveHdr->lpData = buffer;
-                    waveHdr->dwBufferLength = static_cast<DWORD>(read);
-                    waveHdr->dwFlags = 0;
-                    waveHdr->dwLoops = 0;
-                    waveHdr->dwUser = NULL;
-
-                    auto res = waveOutPrepareHeader(m_waveOut, waveHdr, sizeof(WAVEHDR));
-
-                    res = waveOutWrite(m_waveOut, waveHdr, sizeof(WAVEHDR));
-                    amountRead += read;
-                }
+                stream.read((char*)buffer, BUFF_SIZE);
+                auto read = stream.gcount();
+                m_driver->WriteBufferToDevice(buffer, read);
+                amountRead += read;
             }
         }
     }
