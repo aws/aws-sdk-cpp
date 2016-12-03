@@ -46,6 +46,15 @@ namespace Aws
             virtual void WriteBufferToDevice(const unsigned char*, size_t) = 0;
             virtual Aws::Vector<DeviceInfo> EnumerateDevices() const = 0;
             virtual void SetActiveDevice(const DeviceInfo&, const CapabilityInfo&) = 0;
+            virtual const char* GetName() const = 0;
         };
+
+        class AWS_POLLY_OUT_API PCMOutputDriverFactory
+        {
+        public:
+            virtual Aws::Vector<std::shared_ptr<PCMOutputDriver>> LoadDrivers() const = 0;
+        };
+
+        AWS_POLLY_OUT_API std::shared_ptr<PCMOutputDriverFactory> DefaultPCMOutputDriverFactoryInitFn();
     }
 }

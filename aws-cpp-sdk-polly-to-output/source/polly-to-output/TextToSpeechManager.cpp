@@ -35,10 +35,10 @@ namespace Aws
         static const char* CLASS_TAG = "TextToSpeechManager";
         static const size_t BUFF_SIZE = 1024;
 
-        TextToSpeechManager::TextToSpeechManager(const std::shared_ptr<Polly::PollyClient>& pollyClient) : m_pollyClient(pollyClient)
+        TextToSpeechManager::TextToSpeechManager(const std::shared_ptr<Polly::PollyClient>& pollyClient, const std::shared_ptr<PCMOutputDriverFactory>& driverFactory) 
+            : m_pollyClient(pollyClient)
         {
-            //temporary
-            m_driver = Aws::MakeShared<WaveOutPCMOutputDriver>(CLASS_TAG);
+            m_drivers = (driverFactory ? driverFactory : DefaultPCMOutputDriverFactoryInitFn())->LoadDrivers();
         }
 
         TextToSpeechManager::~TextToSpeechManager()
@@ -47,6 +47,14 @@ namespace Aws
 
         void TextToSpeechManager::SendTextToOutputDevice(const char* text, SendTextCompletedHandler)
         {
+            if (!m_activeDriver)
+            {
+                auto&& devices = EnumerateDevices();
+                assert(devices.size() > 0);
+
+                SetActiveDevice(devices.front().second, devices.front().first, devices.front().first.capabilities.front());
+            }
+
             SynthesizeSpeechRequest synthesizeSpeechRequest;
             synthesizeSpeechRequest.WithOutputFormat(OutputFormat::pcm)
                 .WithSampleRate(StringUtils::to_string(m_selectedCaps.sampleRate))
@@ -59,20 +67,32 @@ namespace Aws
             {OnPollySynthSpeechOutcomeRecieved(client, request, speechOutcome, context);});
         }
 
-        Aws::Vector<DeviceInfo> TextToSpeechManager::EnumerateDevices() const
+        Aws::Vector<std::pair<DeviceInfo, std::shared_ptr<PCMOutputDriver>>> TextToSpeechManager::EnumerateDevices() const
         {
-            return m_driver->EnumerateDevices();
+            Aws::Vector<std::pair<DeviceInfo, std::shared_ptr<PCMOutputDriver>>> deviceDriverList;
+
+            for (auto& driver : m_drivers)
+            {
+                for (auto& deviceInfo : driver->EnumerateDevices())
+                {
+                    std::pair<DeviceInfo, std::shared_ptr<PCMOutputDriver>> device(deviceInfo, driver);
+                    deviceDriverList.push_back(device);
+                }
+            }
+            
+            return deviceDriverList;
         }
 
-        void TextToSpeechManager::SetActiveDevice(const DeviceInfo& device, const CapabilityInfo& caps)
+        void TextToSpeechManager::SetActiveDevice(const std::shared_ptr<PCMOutputDriver>& driver, const DeviceInfo& device, const CapabilityInfo& caps)
         {
-            m_driver->SetActiveDevice(device, caps);
+            driver->SetActiveDevice(device, caps);
+            m_activeDriver = driver;
             m_selectedCaps = caps;
         }
 
         void TextToSpeechManager::OnPollySynthSpeechOutcomeRecieved(const Polly::PollyClient*, const Polly::Model::SynthesizeSpeechRequest&,
             const Polly::Model::SynthesizeSpeechOutcome& outcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) const
-        {
+        {            
             auto result = const_cast<Polly::Model::SynthesizeSpeechOutcome&>(outcome).GetResultWithOwnership();
             auto& stream = result.GetAudioStream();
 
@@ -83,7 +103,7 @@ namespace Aws
             {
                 stream.read((char*)buffer, BUFF_SIZE);
                 auto read = stream.gcount();
-                m_driver->WriteBufferToDevice(buffer, read);
+                m_activeDriver->WriteBufferToDevice(buffer, read);
                 amountRead += read;
             }
         }

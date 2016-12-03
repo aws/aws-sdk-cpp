@@ -31,19 +31,20 @@ namespace Aws
         class AWS_POLLY_OUT_API TextToSpeechManager
         {
         public:
-            TextToSpeechManager(const std::shared_ptr<Polly::PollyClient>& pollyClient);
+            TextToSpeechManager(const std::shared_ptr<Polly::PollyClient>& pollyClient, const std::shared_ptr<PCMOutputDriverFactory>& driverFactory = nullptr);
             ~TextToSpeechManager();
             void SendTextToOutputDevice(const char* text, SendTextCompletedHandler);
 
-            Aws::Vector<DeviceInfo> EnumerateDevices() const;
-            void SetActiveDevice(const DeviceInfo&, const CapabilityInfo&);
+            Aws::Vector<std::pair<DeviceInfo, std::shared_ptr<PCMOutputDriver>>> EnumerateDevices() const;
+            void SetActiveDevice(const std::shared_ptr<PCMOutputDriver>&, const DeviceInfo&, const CapabilityInfo&);
 
         private:
             void OnPollySynthSpeechOutcomeRecieved(const Polly::PollyClient*, const Polly::Model::SynthesizeSpeechRequest&, 
                 const Polly::Model::SynthesizeSpeechOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) const;
             
             std::shared_ptr<Polly::PollyClient> m_pollyClient;
-            std::shared_ptr<PCMOutputDriver> m_driver;
+            std::shared_ptr<PCMOutputDriver> m_activeDriver;
+            Aws::Vector<std::shared_ptr<PCMOutputDriver>> m_drivers;
             CapabilityInfo m_selectedCaps;
         };
     }

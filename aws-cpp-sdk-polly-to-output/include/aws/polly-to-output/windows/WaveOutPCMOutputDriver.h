@@ -31,6 +31,7 @@ namespace Aws
             virtual void WriteBufferToDevice(const unsigned char*, size_t) override;
             virtual Aws::Vector<DeviceInfo> EnumerateDevices() const override;
             virtual void SetActiveDevice(const DeviceInfo& device, const CapabilityInfo& caps) override; 
+            const char* GetName() const override;
 
         private:
             void InitDevice();

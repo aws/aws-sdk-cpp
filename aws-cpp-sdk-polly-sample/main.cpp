@@ -19,7 +19,7 @@ int main()
 
     for (auto& device : devices)
     {
-        std::cout << "[" << device.deviceId << "] " << device.deviceName << std::endl;
+        std::cout << "[" << device.first.deviceId << "] " << device.first.deviceName << "   Driver: " << device.second->GetName() << std::endl;
     }
 
     std::cout << "plese select deviceid to play output to:" << std::endl;
@@ -29,9 +29,9 @@ int main()
 
     for (auto& device : devices)
     {
-        if (device.deviceId == deviceId)
+        if (device.first.deviceId == deviceId)
         {
-            manager.SetActiveDevice(device, device.capabilities[1]);
+            manager.SetActiveDevice(device.second, device.first, device.first.capabilities[1]);
         }
     }
 

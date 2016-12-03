@@ -65,6 +65,11 @@ namespace Aws
             res = waveOutWrite(m_waveOut, waveHdr, sizeof(WAVEHDR));
         }
 
+        const char* WaveOutPCMOutputDriver::GetName() const
+        {
+            return "Win32 WaveOut";
+        }
+
         void WaveOutPCMOutputDriver::InitDevice()
         {
             if (!m_isInit)
