@@ -26,6 +26,7 @@
 #include <aws/vitalservices/VitalServicesClient.h>
 #include <aws/vitalservices/VitalServicesEndpoint.h>
 #include <aws/vitalservices/VitalServicesErrorMarshaller.h>
+#include <aws/vitalservices/model/getAppointmentsWithUserRequest.h>
 #include <aws/vitalservices/model/getLoggedInUserRequest.h>
 
 using namespace Aws;
@@ -90,6 +91,40 @@ void VitalServicesClient::init(const ClientConfiguration& config)
   }
 
   m_uri = ss.str();
+}
+
+getAppointmentsWithUserOutcome VitalServicesClient::getAppointmentsWithUser(const getAppointmentsWithUserRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/prod/get-appointments-with-user";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return getAppointmentsWithUserOutcome(getAppointmentsWithUserResult(outcome.GetResult()));
+  }
+  else
+  {
+    return getAppointmentsWithUserOutcome(outcome.GetError());
+  }
+}
+
+getAppointmentsWithUserOutcomeCallable VitalServicesClient::getAppointmentsWithUserCallable(const getAppointmentsWithUserRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< getAppointmentsWithUserOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->getAppointmentsWithUser(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void VitalServicesClient::getAppointmentsWithUserAsync(const getAppointmentsWithUserRequest& request, const getAppointmentsWithUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->getAppointmentsWithUserAsyncHelper( request, handler, context ); } );
+}
+
+void VitalServicesClient::getAppointmentsWithUserAsyncHelper(const getAppointmentsWithUserRequest& request, const getAppointmentsWithUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, getAppointmentsWithUser(request), context);
 }
 
 getLoggedInUserOutcome VitalServicesClient::getLoggedInUser(const getLoggedInUserRequest& request) const

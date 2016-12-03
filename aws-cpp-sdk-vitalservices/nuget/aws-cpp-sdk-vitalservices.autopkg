@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-VitalServices;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : @RUNTIME_MAJOR_VERSION@.20161123.@RUNTIME_MINOR_VERSION@;
+        version : @RUNTIME_MAJOR_VERSION@.20161203.@RUNTIME_MINOR_VERSION@;
 
         // Display name for package.
         title: AWS SDK for C++ (VitalServices);

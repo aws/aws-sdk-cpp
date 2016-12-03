@@ -20,6 +20,7 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/vitalservices/model/getAppointmentsWithUserResult.h>
 #include <aws/vitalservices/model/getLoggedInUserResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
@@ -66,15 +67,19 @@ namespace VitalServices
 
 namespace Model
 {
+        class getAppointmentsWithUserRequest;
         class getLoggedInUserRequest;
 
+        typedef Aws::Utils::Outcome<getAppointmentsWithUserResult, Aws::Client::AWSError<VitalServicesErrors>> getAppointmentsWithUserOutcome;
         typedef Aws::Utils::Outcome<getLoggedInUserResult, Aws::Client::AWSError<VitalServicesErrors>> getLoggedInUserOutcome;
 
+        typedef std::future<getAppointmentsWithUserOutcome> getAppointmentsWithUserOutcomeCallable;
         typedef std::future<getLoggedInUserOutcome> getLoggedInUserOutcomeCallable;
 } // namespace Model
 
   class VitalServicesClient;
 
+    typedef std::function<void(const VitalServicesClient*, const Model::getAppointmentsWithUserRequest&, const Model::getAppointmentsWithUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > getAppointmentsWithUserResponseReceivedHandler;
     typedef std::function<void(const VitalServicesClient*, const Model::getLoggedInUserRequest&, const Model::getLoggedInUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > getLoggedInUserResponseReceivedHandler;
 
   class AWS_VITALSERVICES_API VitalServicesClient : public Aws::Client::AWSJsonClient
@@ -106,6 +111,25 @@ namespace Model
         /**
          *
          */
+        virtual Model::getAppointmentsWithUserOutcome getAppointmentsWithUser(const Model::getAppointmentsWithUserRequest& request) const;
+
+        /**
+         *
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::getAppointmentsWithUserOutcomeCallable getAppointmentsWithUserCallable(const Model::getAppointmentsWithUserRequest& request) const;
+
+        /**
+         *
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void getAppointmentsWithUserAsync(const Model::getAppointmentsWithUserRequest& request, const getAppointmentsWithUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         *
+         */
         virtual Model::getLoggedInUserOutcome getLoggedInUser(const Model::getLoggedInUserRequest& request) const;
 
         /**
@@ -132,6 +156,7 @@ namespace Model
       void init(const Client::ClientConfiguration& clientConfiguration);
 
         /**Async helpers**/
+        void getAppointmentsWithUserAsyncHelper(const Model::getAppointmentsWithUserRequest& request, const getAppointmentsWithUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void getLoggedInUserAsyncHelper(const Model::getLoggedInUserRequest& request, const getLoggedInUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
