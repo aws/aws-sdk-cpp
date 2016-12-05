@@ -196,7 +196,7 @@ static jint RunAndroidTestsInternal()
   Aws::SDKOptions options;
   Aws::InitAPI(options);
 
-  Aws::Utils::Logging::InitializeAWSLogging(Aws::MakeShared<Aws::Utils::Logging::LogcatLogSystem>(ALLOCATION_TAG, Aws::Utils::Logging::LogLevel::Trace));
+  Aws::Utils::Logging::InitializeAWSLogging(Aws::MakeShared<Aws::Utils::Logging::LogcatLogSystem>(ALLOCATION_TAG, Aws::Utils::Logging::LogLevel::Error));
   ::testing::InitGoogleTest(&dummy, &dummy2);
   auto result = RUN_ALL_TESTS();
 
@@ -215,18 +215,86 @@ void CacheFile(const Aws::String &fileName, const Aws::String& directory)
     Aws::String destDirectory = Aws::Platform::GetCacheDirectory() + directory;
     Aws::FileSystem::CreateDirectoryIfNotExists(destDirectory.c_str());
 
-    Aws::String sourceFileName = "/data/data/aws.coretests/" + directory + Aws::String( "/" ) + fileName;
+    Aws::String sourceFileName = "/data/data/aws.androidsdktesting/" + directory + Aws::String( "/" ) + fileName;
     Aws::String destFileName = destDirectory + Aws::String( "/" ) + fileName;
+
+    Aws::String logLine = sourceFileName + " -> " + destFileName;
+    __android_log_write(ANDROID_LOG_DEBUG, "Caching ", logLine.c_str());
 
     CopyFile(sourceFileName.c_str(), destFileName.c_str());
 }
+
+static const char* s_SigV4TestNames[] = 
+{
+    "get-header-key-duplicate",
+    "get-header-value-multiline",
+    "get-header-value-order",
+    "get-header-value-trim",
+    "get-relative",
+    "get-relative-relative",
+    "get-slash",
+    "get-slash-dot-slash",
+    "get-slash-pointless-dot",
+    "get-slashes",
+    "get-space",
+    "get-unreserved",
+    "get-utf8",
+    "get-vanilla",
+    "get-vanilla-empty-query-key",
+    "get-vanilla-query",
+    "get-vanilla-query-order-key-case",
+    "get-vanilla-query-unreserved",
+    "get-vanilla-utf8-query",
+    "normalize-path",
+    "post-header-key-case",
+    "post-header-key-sort",
+    "post-header-value-case",
+    "post-sts-header-after",
+    "post-sts-header-before",
+    "post-sts-token",
+    "post-vanilla",
+    "post-vanilla-empty-query-value",
+    "post-vanilla-query",
+    "post-vanilla-query-nonunreserved",
+    "post-vanilla-query-space",
+    "post-x-www-form-urlencoded",
+    "post-x-www-form-urlencoded-parameters"
+};
+
+static const char* s_SigV4TestSuffixes[] = {
+    "authz",
+    "creq",
+    "req",
+    "sreq",
+    "sts"
+};
+
+void CacheSigV4Tests(const Aws::String& baseDirectory)
+{
+    uint32_t sigV4TestCount = sizeof(s_SigV4TestNames) / sizeof(s_SigV4TestNames[0]);
+
+    for(uint32_t i = 0; i < sigV4TestCount; ++i)
+    {
+	Aws::String testName(s_SigV4TestNames[i]);
+	Aws::String destDirectory = baseDirectory + Aws::FileSystem::PATH_DELIM + testName;
+	
+	uint32_t testFileCount = sizeof(s_SigV4TestSuffixes) / sizeof(s_SigV4TestSuffixes[0]);
+	for(uint32_t j = 0; j < testFileCount; ++j)
+	{
+	    Aws::String testFileName = testName + Aws::String(".") + Aws::String(s_SigV4TestSuffixes[j]);
+	    CacheFile(testFileName, destDirectory);
+	}
+    }
+}
+
+static const char * s_resourceDirectory = "resources";
 
 #ifdef __cplusplus
 extern "C" {
 #endif // __cplusplus
 
 JNIEXPORT jint JNICALL
-Java_aws_coretests_TestActivity_runTests( JNIEnv* env, jobject classRef, jobject context )
+Java_aws_androidsdktesting_RunSDKTests_runTests( JNIEnv* env, jobject classRef, jobject context )
 {
   Aws::Platform::InitAndroid(env, context);
 
@@ -238,9 +306,10 @@ Java_aws_coretests_TestActivity_runTests( JNIEnv* env, jobject classRef, jobject
   // Real development should be done via the Cognito/PersistentIdentity credentials providers, where this is not as much
   // a problem
   CacheFile("credentials", ".aws");
-  CacheFile("handled.zip", "resources");
-  CacheFile("succeed.zip", "resources");
-  CacheFile("unhandled.zip", "resources");
+  CacheFile("handled.zip", s_resourceDirectory);
+  CacheFile("succeed.zip", s_resourceDirectory);
+  CacheFile("unhandled.zip", s_resourceDirectory);
+  CacheSigV4Tests(s_resourceDirectory);
 
   jint result = 0;
   AWS_UNREFERENCED_PARAM(classRef);
