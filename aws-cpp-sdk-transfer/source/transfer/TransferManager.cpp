@@ -73,21 +73,22 @@ namespace Aws
             handle->SetContentType(contentType);
             handle->SetMetadata(metadata);
 
-	    if(fileStream->good())
-	    {
-		if (length > m_transferConfig.bufferSize)
-		{
-		    m_transferConfig.transferExecutor->Submit([this, fileStream, handle] { DoMultipartUpload(fileStream, handle); });
-		}
-		else
-		{
-		    m_transferConfig.transferExecutor->Submit([this, fileStream, handle] { DoSinglePartUpload(fileStream, handle); });
-		}
-	    }
-	    else
-	    {
-		handle->UpdateStatus(Aws::Transfer::TransferStatus::FAILED);
-	    }
+            if(fileStream->good())
+            {
+                if (length > m_transferConfig.bufferSize)
+                {
+                    m_transferConfig.transferExecutor->Submit([this, fileStream, handle] { DoMultipartUpload(fileStream, handle); });
+                }
+                else
+                {
+                    m_transferConfig.transferExecutor->Submit([this, fileStream, handle] { DoSinglePartUpload(fileStream, handle); });
+                }
+            }
+            else
+            {
+                handle->SetError(Aws::Client::AWSError<Aws::Client::CoreErrors>(static_cast<Aws::Client::CoreErrors>(Aws::S3::S3Errors::NO_SUCH_UPLOAD), "NoSuchUpload", "The requested file could not be opened.", false));
+                handle->UpdateStatus(Aws::Transfer::TransferStatus::FAILED);
+            }
 
             return handle;
         }
@@ -102,21 +103,22 @@ namespace Aws
             handle->SetContentType(contentType);
             handle->SetMetadata(metadata);
 
-	    if(fileStream->good())
-	    {
-		if (length > m_transferConfig.bufferSize)
-		{
-		    m_transferConfig.transferExecutor->Submit([this, fileStream, handle] { DoMultipartUpload(fileStream, handle); });
-		}
-		else
-		{
-		    m_transferConfig.transferExecutor->Submit([this, fileStream, handle] { DoSinglePartUpload(fileStream, handle); });
-		}
-	    }
-	    else
-	    {
-		handle->UpdateStatus(Aws::Transfer::TransferStatus::FAILED);
-	    }
+            if(fileStream->good())
+            {
+                if (length > m_transferConfig.bufferSize)
+                {
+                    m_transferConfig.transferExecutor->Submit([this, fileStream, handle] { DoMultipartUpload(fileStream, handle); });
+                }
+                else
+                {
+                    m_transferConfig.transferExecutor->Submit([this, fileStream, handle] { DoSinglePartUpload(fileStream, handle); });
+                }
+            }
+            else
+            {
+                handle->SetError(Aws::Client::AWSError<Aws::Client::CoreErrors>(static_cast<Aws::Client::CoreErrors>(Aws::S3::S3Errors::NO_SUCH_UPLOAD), "NoSuchUpload", "The requested file could not be opened.", false));
+                handle->UpdateStatus(Aws::Transfer::TransferStatus::FAILED);
+            }
 
             return handle;
         }

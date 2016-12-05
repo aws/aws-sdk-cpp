@@ -124,6 +124,8 @@ namespace
             mockHttpClientFactory = nullptr;
             mockIdentityRepository = nullptr;
 
+            // On Android we run all integration tests within a single process, which means we need to be careful with any testing setup that modifies global state.  
+            // We override the global http factory in Setup() here, so reset back to the default state as we leave this test suite.
             CleanupHttp();
             InitHttp();
         }
