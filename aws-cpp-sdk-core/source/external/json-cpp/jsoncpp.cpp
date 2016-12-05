@@ -3070,8 +3070,11 @@ Value& Path::make(Value& root) const {
 // recognized in your jurisdiction.
 // See file LICENSE for detail or copy at http://jsoncpp.sourceforge.net/LICENSE
 
+#ifdef NDK_13_HACK
+#include <cmath>
+#else
 #include <math.h>
-//#include <cmath>
+#endif
 
 #if !defined(AWS_JSON_IS_AMALGAMATION)
 #include <json/writer.h>
@@ -3099,11 +3102,11 @@ Value& Path::make(Value& root) const {
 
 #else
 
-#ifdef isfinite
-#define IS_FINITE isfinite
-#else
+#if defined(NDK_13_HACK) || !defined(isfinite)
 #define IS_FINITE std::isfinite
-#endif 
+#else
+#define IS_FINITE isfinite
+#endif
 
 #endif
 
