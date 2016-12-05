@@ -35,9 +35,11 @@ namespace Aws
         {
             namespace OpenSSL
             {
+#if OPENSSL_VERSION_NUMBER < 0x10100003L
                 static const char* OPENSSL_INTERNALS_TAG = "OpenSSLCallbackState";
                 static std::mutex* locks(nullptr);
 
+#endif
                 GetTheLights getTheLights;
 
                 void init_static_state()
@@ -45,6 +47,7 @@ namespace Aws
                     ERR_load_CRYPTO_strings();
                     OPENSSL_add_all_algorithms_noconf();
 
+#if OPENSSL_VERSION_NUMBER < 0x10100003L
                     if (!CRYPTO_get_locking_callback())
                     {
                         locks = Aws::NewArray<std::mutex>(static_cast<size_t>(CRYPTO_num_locks()),
@@ -56,12 +59,14 @@ namespace Aws
                     {
                         CRYPTO_set_id_callback(&id_fn);
                     }
+#endif
 
                     RAND_poll();
                 }
 
                 void cleanup_static_state()
                 {
+#if OPENSSL_VERSION_NUMBER < 0x10100003L
                     if (CRYPTO_get_locking_callback() == &locking_fn)
                     {
                         CRYPTO_set_id_callback(nullptr);
@@ -74,8 +79,10 @@ namespace Aws
                     {
                         CRYPTO_set_locking_callback(nullptr);
                     }
+#endif
                 }
 
+#if OPENSSL_VERSION_NUMBER < 0x10100003L
                 void locking_fn(int mode, int n, const char*, int)
                 {
                     if (mode & CRYPTO_LOCK)
@@ -92,6 +99,7 @@ namespace Aws
                 {
                     return static_cast<unsigned long>(std::hash<std::thread::id>()(std::this_thread::get_id()));
                 }
+#endif
             }
 
             void SecureRandomBytes_OpenSSLImpl::GetBytes(unsigned char* buffer, size_t bufferSize)
@@ -205,15 +213,23 @@ namespace Aws
                 memset(digest.GetUnderlyingData(), 0, length);
 
                 HMAC_CTX *ctx;
+#if OPENSSL_VERSION_NUMBER < 0x10100003L
                 HMAC_CTX _ctx;
                 ctx = &_ctx;
                 HMAC_CTX_init(ctx);
+#else
+                ctx=HMAC_CTX_new();
+#endif
 
                 HMAC_Init_ex(ctx, secret.GetUnderlyingData(), static_cast<int>(secret.GetLength()), EVP_sha256(),
                              NULL);
                 HMAC_Update(ctx, toSign.GetUnderlyingData(), toSign.GetLength());
                 HMAC_Final(ctx, digest.GetUnderlyingData(), &length);
+#if OPENSSL_VERSION_NUMBER < 0x10100003L
                 HMAC_CTX_cleanup(ctx);
+#else
+                HMAC_CTX_free(ctx);
+#endif
 
                 return HashResult(std::move(digest));
             }
@@ -270,8 +286,13 @@ namespace Aws
 
             void OpenSSLCipher::Init()
             {
+#if OPENSSL_VERSION_NUMBER < 0x10100003L
                 m_ctx = &_m_ctx;
                 EVP_CIPHER_CTX_init(m_ctx);
+#else
+                m_ctx = EVP_CIPHER_CTX_new();
+                EVP_CIPHER_CTX_init(m_ctx);
+#endif
             }
 
             void OpenSSLCipher::CheckInitEncryptor()
@@ -411,7 +432,11 @@ namespace Aws
                 m_encryptionMode = false;
                 m_decryptionMode = false;
 
+#if OPENSSL_VERSION_NUMBER < 0x10100003L
                 EVP_CIPHER_CTX_cleanup(m_ctx);
+#else
+                EVP_CIPHER_CTX_free(m_ctx);
+#endif
 
                 m_ctx = nullptr;
             }
