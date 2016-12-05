@@ -241,7 +241,18 @@ public class CppViewHelper {
     }
 
     public static String computeOperationNameFromInputOutputShape(String shapeName) {
-        return shapeName.replace("Request", "").replace("Result", "");
+        String requestString = "Request";
+        String resultString = "Result";
+        int length = shapeName.length();
+        int suffixIndex = length;
+
+        if(shapeName.endsWith(requestString)) {
+            suffixIndex = length - requestString.length();
+        } else if (shapeName.endsWith(resultString)) {
+            suffixIndex = length - resultString.length();
+        }
+
+        return shapeName.substring(0, suffixIndex);
     }
 
     public static String capitalizeFirstChar(final String str) {
