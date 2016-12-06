@@ -17,12 +17,6 @@
 #include <aws/polly/model/SynthesizeSpeechRequest.h>
 #include <aws/polly/model/DescribeVoicesRequest.h>
 #include <aws/core/utils/Outcome.h>
-#include <aws/core/utils/StringUtils.h>
-#include <aws/polly-to-output/windows/WaveOutPCMOutputDriver.h>
-#include <windows.h>
-
-#include <iostream>
-
 
 using namespace Aws::Polly;
 using namespace Aws::Polly::Model;
@@ -32,8 +26,7 @@ namespace Aws
 {
     namespace PollyToOutput
     {
-        static const char* CLASS_TAG = "TextToSpeechManager";
-        static const size_t BUFF_SIZE = 1024;
+        static const size_t BUFF_SIZE = 8192;
 
         TextToSpeechManager::TextToSpeechManager(const std::shared_ptr<Polly::PollyClient>& pollyClient, const std::shared_ptr<PCMOutputDriverFactory>& driverFactory) 
             : m_pollyClient(pollyClient)

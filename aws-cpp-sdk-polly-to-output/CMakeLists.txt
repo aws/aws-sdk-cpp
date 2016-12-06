@@ -5,11 +5,19 @@ add_project(aws-cpp-sdk-polly-to-output
 
 file( GLOB POLLY_OUT_HEADERS "include/aws/polly-to-output/*.h" )
 
-file( GLOB POLLY_OUT_PLATFORM_HEADERS "include/aws/polly-to-output/windows/*.h" )
+if(PLATFORM_WINDOWS)
+    file( GLOB POLLY_OUT_PLATFORM_HEADERS "include/aws/polly-to-output/windows/*.h" )
+elseif(PLATFORM_LINUX)
+    file( GLOB POLLY_OUT_PLATFORM_HEADERS "include/aws/polly-to-output/linux/*.h" )
+endif()
 
 file( GLOB POLLY_OUT_SOURCE "source/polly-to-output/*.cpp" )
 
-file( GLOB POLLY_OUT_PLATFORM_SOURCE "source/polly-to-output/windows/*.cpp" )
+if(PLATFORM_WINDOWS)
+    file( GLOB POLLY_OUT_PLATFORM_SOURCE "source/polly-to-output/windows/*.cpp" )
+elseif(PLATFORM_LINUX)
+    file( GLOB POLLY_OUT_PLATFORM_SOURCE "source/polly-to-output/linux/*.cpp" )
+endif()
 
 if(MSVC)
     source_group("Header Files\\aws\\polly-to-output" FILES ${POLLY_OUT_HEADERS})
@@ -41,6 +49,14 @@ include_directories(${POLLY_OUT_INCLUDES})
 
 if(USE_WINDOWS_DLL_SEMANTICS AND BUILD_SHARED_LIBS)
     add_definitions("-DAWS_POLLY_OUT_EXPORTS")
+endif()
+
+if(PLATFORM_WINDOWS)
+    add_definitions("-DWAVE_OUT")
+    list(APPEND ${PROJECT_LIBS} Winmm)
+elseif(PLATFORM_LINUX)
+    add_definitions("-DPULSE")
+    list(APPEND ${PROJECT_LIBS} pulse-simple)
 endif()
 
 add_library(${PROJECT_NAME} ${LIBTYPE} ${ALL_POLLY_OUT})

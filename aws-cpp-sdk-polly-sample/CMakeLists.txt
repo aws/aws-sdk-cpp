@@ -10,5 +10,5 @@ file(GLOB AWS_SAMPLE_SRC
 
 add_executable(${PROJECT_NAME} ${AWS_SAMPLE_SRC})
 
-target_link_libraries(${PROJECT_NAME} ${PROJECT_LIBS} Winmm)
+target_link_libraries(${PROJECT_NAME} ${PROJECT_LIBS} pulse-simple)
 copyDlls(${PROJECT_NAME} ${PROJECT_LIBS})

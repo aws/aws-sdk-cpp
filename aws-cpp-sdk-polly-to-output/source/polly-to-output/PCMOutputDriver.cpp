@@ -14,7 +14,12 @@
 */
 
 #include <aws/polly-to-output/PCMOutputDriver.h>
+
+#ifdef WAVE_OUT
 #include <aws/polly-to-output/windows/WaveOutPCMOutputDriver.h>
+#elif PULSE
+#include <aws/polly-to-output/linux/PulseAudioPCMOutputDriver.h>
+#endif
 
 namespace Aws
 {
@@ -28,7 +33,11 @@ namespace Aws
             Aws::Vector<std::shared_ptr<PCMOutputDriver>> LoadDrivers() const
             {
                 Aws::Vector<std::shared_ptr<PCMOutputDriver>> drivers;
+#ifdef WAVE_OUT
                 drivers.push_back(Aws::MakeShared<WaveOutPCMOutputDriver>(CLASS_TAG));
+#elif PULSE
+                drivers.push_back(Aws::MakeShared<PulseAudioPCMOutputDriver>(CLASS_TAG));
+#endif
                 return drivers;
             }
         };
