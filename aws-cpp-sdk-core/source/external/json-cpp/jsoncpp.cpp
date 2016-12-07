@@ -3071,7 +3071,6 @@ Value& Path::make(Value& root) const {
 // See file LICENSE for detail or copy at http://jsoncpp.sourceforge.net/LICENSE
 
 #include <math.h>
-//#include <cmath>
 
 #if !defined(AWS_JSON_IS_AMALGAMATION)
 #include <json/writer.h>
@@ -3103,7 +3102,7 @@ Value& Path::make(Value& root) const {
 #define IS_FINITE isfinite
 #else
 #define IS_FINITE std::isfinite
-#endif 
+#endif
 
 #endif
 
