@@ -53,7 +53,7 @@ namespace Aws
                 .WithSampleRate(StringUtils::to_string(m_selectedCaps.sampleRate))
                 .WithTextType(TextType::text)
                 .WithText(text)
-                .WithVoiceId(VoiceId::Salli);
+                .WithVoiceId(VoiceId::Brian);
 
             m_pollyClient->SynthesizeSpeechAsync(synthesizeSpeechRequest, [this](const Polly::PollyClient* client, const Polly::Model::SynthesizeSpeechRequest& request,
                 const Polly::Model::SynthesizeSpeechOutcome& speechOutcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
@@ -78,6 +78,7 @@ namespace Aws
 
         void TextToSpeechManager::SetActiveDevice(const std::shared_ptr<PCMOutputDriver>& driver, const DeviceInfo& device, const CapabilityInfo& caps)
         {
+            std::lock_guard<std::mutex> m(m_driverLock);
             driver->SetActiveDevice(device, caps);
             m_activeDriver = driver;
             m_selectedCaps = caps;
@@ -85,19 +86,27 @@ namespace Aws
 
         void TextToSpeechManager::OnPollySynthSpeechOutcomeRecieved(const Polly::PollyClient*, const Polly::Model::SynthesizeSpeechRequest&,
             const Polly::Model::SynthesizeSpeechOutcome& outcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) const
-        {            
-            auto result = const_cast<Polly::Model::SynthesizeSpeechOutcome&>(outcome).GetResultWithOwnership();
-            auto& stream = result.GetAudioStream();
-
-            std::streamsize amountRead(0);
-            unsigned char buffer[BUFF_SIZE];
-
-            while (stream)
+        {
+            if(outcome.IsSuccess())
             {
-                stream.read((char*)buffer, BUFF_SIZE);
-                auto read = stream.gcount();
-                m_activeDriver->WriteBufferToDevice(buffer, read);
-                amountRead += read;
+                auto result = const_cast<Polly::Model::SynthesizeSpeechOutcome&>(outcome).GetResultWithOwnership();
+                auto& stream = result.GetAudioStream();
+
+                std::streamsize amountRead(0);
+                unsigned char buffer[BUFF_SIZE];
+
+                std::lock_guard<std::mutex> m(m_driverLock);
+                m_activeDriver->Prime();
+
+                while (stream)
+                {
+                    stream.read((char*) buffer, BUFF_SIZE);
+                    auto read = stream.gcount();
+                    m_activeDriver->WriteBufferToDevice(buffer, read);
+                    amountRead += read;
+                }
+
+                m_activeDriver->Flush();
             }
         }
     }

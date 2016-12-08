@@ -47,6 +47,8 @@ namespace Aws
             virtual Aws::Vector<DeviceInfo> EnumerateDevices() const = 0;
             virtual void SetActiveDevice(const DeviceInfo&, const CapabilityInfo&) = 0;
             virtual const char* GetName() const = 0;
+            virtual void Prime() {};
+            virtual void Flush() {};
         };
 
         class AWS_POLLY_OUT_API PCMOutputDriverFactory

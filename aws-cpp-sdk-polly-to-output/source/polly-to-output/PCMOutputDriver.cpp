@@ -19,6 +19,8 @@
 #include <aws/polly-to-output/windows/WaveOutPCMOutputDriver.h>
 #elif PULSE
 #include <aws/polly-to-output/linux/PulseAudioPCMOutputDriver.h>
+#elif CORE_AUDIO
+#include <aws/polly-to-output/apple/CoreAudioPCMOutputDriver.h>
 #endif
 
 namespace Aws
@@ -37,6 +39,8 @@ namespace Aws
                 drivers.push_back(Aws::MakeShared<WaveOutPCMOutputDriver>(CLASS_TAG));
 #elif PULSE
                 drivers.push_back(Aws::MakeShared<PulseAudioPCMOutputDriver>(CLASS_TAG));
+#elif CORE_AUDIO
+                drivers.push_back(Aws::MakeShared<CoreAudioPCMOutputDriver>(CLASS_TAG));
 #endif
                 return drivers;
             }

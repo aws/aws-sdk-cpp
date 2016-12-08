@@ -46,6 +46,7 @@ namespace Aws
             std::shared_ptr<PCMOutputDriver> m_activeDriver;
             Aws::Vector<std::shared_ptr<PCMOutputDriver>> m_drivers;
             CapabilityInfo m_selectedCaps;
+            mutable std::mutex m_driverLock;
         };
     }
 }
