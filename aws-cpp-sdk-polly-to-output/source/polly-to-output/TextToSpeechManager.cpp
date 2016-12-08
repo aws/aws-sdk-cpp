@@ -29,7 +29,7 @@ namespace Aws
         static const size_t BUFF_SIZE = 8192;
 
         TextToSpeechManager::TextToSpeechManager(const std::shared_ptr<Polly::PollyClient>& pollyClient, const std::shared_ptr<PCMOutputDriverFactory>& driverFactory) 
-            : m_pollyClient(pollyClient)
+            : m_pollyClient(pollyClient), m_activeVoice(VoiceId::Kimberly)
         {
             m_drivers = (driverFactory ? driverFactory : DefaultPCMOutputDriverFactoryInitFn())->LoadDrivers();
         }
@@ -53,7 +53,7 @@ namespace Aws
                 .WithSampleRate(StringUtils::to_string(m_selectedCaps.sampleRate))
                 .WithTextType(TextType::text)
                 .WithText(text)
-                .WithVoiceId(VoiceId::Brian);
+                .WithVoiceId(m_activeVoice);
 
             m_pollyClient->SynthesizeSpeechAsync(synthesizeSpeechRequest, [this](const Polly::PollyClient* client, const Polly::Model::SynthesizeSpeechRequest& request,
                 const Polly::Model::SynthesizeSpeechOutcome& speechOutcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
@@ -82,6 +82,29 @@ namespace Aws
             driver->SetActiveDevice(device, caps);
             m_activeDriver = driver;
             m_selectedCaps = caps;
+        }
+
+        Aws::Vector<std::pair<Aws::String, Aws::String>> TextToSpeechManager::ListAvailableVoices() const
+        {
+            Aws::Vector<std::pair<Aws::String, Aws::String>> m_voices;
+
+            DescribeVoicesRequest describeVoices;
+            
+            auto voicesOutcome = m_pollyClient->DescribeVoices(describeVoices);
+            if (voicesOutcome.IsSuccess())
+            {
+                for (auto& voice : voicesOutcome.GetResult().GetVoices())
+                {
+                    m_voices.push_back(std::pair<Aws::String, Aws::String>(voice.GetName(), voice.GetLanguageName()));
+                }
+            }
+
+            return m_voices;
+        }
+
+        void TextToSpeechManager::SetActiveVoice(const Aws::String& voice)
+        {
+            m_activeVoice = VoiceIdMapper::GetVoiceIdForName(voice);
         }
 
         void TextToSpeechManager::OnPollySynthSpeechOutcomeRecieved(const Polly::PollyClient*, const Polly::Model::SynthesizeSpeechRequest&,

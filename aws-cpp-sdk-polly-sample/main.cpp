@@ -36,6 +36,18 @@ int main()
             }
         }
 
+        std::cout << "available voices are: " << std::endl;
+        for (auto& voice : manager.ListAvailableVoices())
+        {
+            std::cout << voice.first << "    language: " << voice.second << std::endl;
+        }
+
+        std::cout << "please select voice you would like me to render." << std::endl;
+
+        Aws::String voice;
+        std::getline(std::cin, voice);
+        manager.SetActiveVoice(voice);
+
         SendTextCompletedHandler handler;
 
         std::cout << "What would you like me to say?" << std::endl;

@@ -38,6 +38,9 @@ namespace Aws
             Aws::Vector<std::pair<DeviceInfo, std::shared_ptr<PCMOutputDriver>>> EnumerateDevices() const;
             void SetActiveDevice(const std::shared_ptr<PCMOutputDriver>&, const DeviceInfo&, const CapabilityInfo&);
 
+            Aws::Vector<std::pair<Aws::String, Aws::String>> ListAvailableVoices() const;
+            void SetActiveVoice(const Aws::String& voice);
+
         private:
             void OnPollySynthSpeechOutcomeRecieved(const Polly::PollyClient*, const Polly::Model::SynthesizeSpeechRequest&, 
                 const Polly::Model::SynthesizeSpeechOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) const;
@@ -45,6 +48,7 @@ namespace Aws
             std::shared_ptr<Polly::PollyClient> m_pollyClient;
             std::shared_ptr<PCMOutputDriver> m_activeDriver;
             Aws::Vector<std::shared_ptr<PCMOutputDriver>> m_drivers;
+            Polly::Model::VoiceId m_activeVoice;
             CapabilityInfo m_selectedCaps;
             mutable std::mutex m_driverLock;
         };
