@@ -132,13 +132,15 @@ macro(initialize_toolchain)
             message(FATAL_ERROR "NDK versions less than 10 currently not supported")
         endif()
 
-        set(STANDALONE_TOOLCHAIN_DIR "${CMAKE_CURRENT_SOURCE_DIR}/toolchains/android/${ANDROID_ABI}-${ANDROID_TOOLCHAIN_NAME}-${ANDROID_NATIVE_API_LEVEL}-${ANDROID_STL}-${NDK_RELEASE_NUMBER}")
+        set(TOOLCHAIN_ROOT "${CMAKE_CURRENT_BINARY_DIR}/toolchains/android")
+
+        if( NOT EXISTS ${TOOLCHAIN_ROOT})
+            file(MAKE_DIRECTORY ${TOOLCHAIN_ROOT})
+        endif()
+
+        set(STANDALONE_TOOLCHAIN_DIR "${TOOLCHAIN_ROOT}/${ANDROID_ABI}-${ANDROID_TOOLCHAIN_NAME}-${ANDROID_NATIVE_API_LEVEL}-${ANDROID_STL}-${NDK_RELEASE_NUMBER}")
         if( NOT EXISTS ${STANDALONE_TOOLCHAIN_DIR} )
             message(STATUS "Could not find an appropriate standalone toolchain.  Generating one into ${STANDALONE_TOOLCHAIN_DIR}")
-
-            if(CMAKE_HOST_WIN32)
-
-            endif()
 
             set(__MAKE_TOOLCHAIN_OPTIONS "--stl=${STANDALONE_TOOLCHAIN_STL} --install-dir=${STANDALONE_TOOLCHAIN_DIR}")
 
