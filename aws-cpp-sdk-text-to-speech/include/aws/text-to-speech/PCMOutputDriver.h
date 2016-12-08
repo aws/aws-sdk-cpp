@@ -15,14 +15,14 @@
 
 #pragma once
 
-#include <aws/polly-to-output/PollyToOutput_EXPORTS.h>
+#include <aws/text-to-speech/TextToSpeech_EXPORTS.h>
 #include <aws/core/utils/Array.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
 namespace Aws
 {
-    namespace PollyToOutput
+    namespace TextToSpeech
     {
         struct CapabilityInfo
         {
@@ -40,7 +40,7 @@ namespace Aws
             Aws::Vector<CapabilityInfo> capabilities;
         };
 
-        class AWS_POLLY_OUT_API PCMOutputDriver
+        class AWS_TEXT_TO_SPEECH_API PCMOutputDriver
         {
         public:
             virtual void WriteBufferToDevice(const unsigned char*, size_t) = 0;
@@ -51,12 +51,12 @@ namespace Aws
             virtual void Flush() {};
         };
 
-        class AWS_POLLY_OUT_API PCMOutputDriverFactory
+        class AWS_TEXT_TO_SPEECH_API PCMOutputDriverFactory
         {
         public:
             virtual Aws::Vector<std::shared_ptr<PCMOutputDriver>> LoadDrivers() const = 0;
         };
 
-        AWS_POLLY_OUT_API std::shared_ptr<PCMOutputDriverFactory> DefaultPCMOutputDriverFactoryInitFn();
+        AWS_TEXT_TO_SPEECH_API std::shared_ptr<PCMOutputDriverFactory> DefaultPCMOutputDriverFactoryInitFn();
     }
 }

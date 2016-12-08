@@ -15,12 +15,12 @@
 
 #pragma once
 
-#include <aws/polly-to-output/PCMOutputDriver.h>
+#include <aws/text-to-speech/PCMOutputDriver.h>
 #include <pulse/simple.h>
 
 namespace Aws
 {
-    namespace PollyToOutput
+    namespace TextToSpeech
     {
         class PulseAudioPCMOutputDriver : public PCMOutputDriver
         {

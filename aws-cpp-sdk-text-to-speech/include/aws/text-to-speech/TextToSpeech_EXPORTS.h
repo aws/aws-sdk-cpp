@@ -25,14 +25,14 @@
     #endif // _MSC_VER
 
     #ifdef USE_IMPORT_EXPORT
-      #ifdef AWS_POLLY_OUT_EXPORTS
-        #define AWS_POLLY_OUT_API __declspec(dllexport)
+      #ifdef AWS_TEXT_TO_SPEECH_EXPORTS
+        #define AWS_TEXT_TO_SPEECH_API __declspec(dllexport)
       #else
-        #define AWS_POLLY_OUT_API __declspec(dllimport)
-      #endif // AWS_POLLY_OUT_EXPORTS
+        #define AWS_TEXT_TO_SPEECH_API __declspec(dllimport)
+      #endif // AWS_TEXT_TO_SPEECH_EXPORTS
     #else // USE_IMPORT_EXPORT
-       #define AWS_POLLY_OUT_API
+       #define AWS_TEXT_TO_SPEECH_API
     #endif // USE_IMPORT_EXPORT
 #else // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)
-    #define AWS_POLLY_OUT_API
+    #define AWS_TEXT_TO_SPEECH_API
 #endif // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)

@@ -13,12 +13,12 @@
 * permissions and limitations under the License.
 */
 
-#include <aws/polly-to-output/apple/CoreAudioPCMOutputDriver.h>
+#include <aws/text-to-speech/apple/CoreAudioPCMOutputDriver.h>
 #include <iostream>
 
 namespace Aws
 {
-    namespace PollyToOutput
+    namespace TextToSpeech
     {
 
         CoreAudioPCMOutputDriver::CoreAudioPCMOutputDriver() : m_audioQueue(nullptr), m_maxBufferSize(4096), m_bufferCount(3)

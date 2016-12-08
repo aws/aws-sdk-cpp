@@ -13,7 +13,7 @@
 * permissions and limitations under the License.
 */
 
-#include <aws/polly-to-output/windows/WaveOutPCMOutputDriver.h>
+#include <aws/text-to-speech/windows/WaveOutPCMOutputDriver.h>
 #include <aws/core/utils/StringUtils.h>
 
 #include <windows.h>
@@ -41,7 +41,7 @@ static void CALLBACK waveOutProc(HWAVEOUT waveOut, UINT uMsg, DWORD_PTR, DWORD_P
 
 namespace Aws
 {
-    namespace PollyToOutput
+    namespace TextToSpeech
     {
         static const char* CLASS_TAG = "WaveOutPCMOutputDriver";
 

@@ -13,7 +13,7 @@
 * permissions and limitations under the License.
 */
 
-#include <aws/polly-to-output/TextToSpeechManager.h>
+#include <aws/text-to-speech/TextToSpeechManager.h>
 #include <aws/polly/model/SynthesizeSpeechRequest.h>
 #include <aws/polly/model/DescribeVoicesRequest.h>
 #include <aws/core/utils/Outcome.h>
@@ -24,7 +24,7 @@ using namespace Aws::Utils;
 
 namespace Aws
 {
-    namespace PollyToOutput
+    namespace TextToSpeech
     {
         static const size_t BUFF_SIZE = 8192;
 

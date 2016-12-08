@@ -1,10 +1,10 @@
 
 #include <aws/core/Aws.h>
-#include <aws/polly-to-output/TextToSpeechManager.h>
+#include <aws/text-to-speech/TextToSpeechManager.h>
 #include <iostream>
 
 using namespace Aws::Polly;
-using namespace Aws::PollyToOutput;
+using namespace Aws::TextToSpeech;
 
 int main()
 {
@@ -63,6 +63,7 @@ int main()
             std::cout << "Anything else?" << std::endl;
         }
     }
+
     end:
     Aws::ShutdownAPI(options);
     return 0;

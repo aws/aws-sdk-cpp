@@ -15,7 +15,7 @@
 
 #pragma once
 
-#include <aws/polly-to-output/PCMOutputDriver.h>
+#include <aws/text-to-speech/PCMOutputDriver.h>
 #include <aws/core/utils/memory/stl/AWSQueue.h>
 #include <aws/core/utils/Array.h>
 #include <CoreAudio.h>
@@ -26,7 +26,7 @@
 
 namespace Aws
 {
-    namespace PollyToOutput
+    namespace TextToSpeech
     {
         class CoreAudioPCMOutputDriver : public PCMOutputDriver
         {

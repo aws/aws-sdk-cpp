@@ -15,8 +15,8 @@
 
 #pragma once
 
-#include <aws/polly-to-output/PollyToOutput_EXPORTS.h>
-#include <aws/polly-to-output/PCMOutputDriver.h>
+#include <aws/text-to-speech/TextToSpeech_EXPORTS.h>
+#include <aws/text-to-speech/PCMOutputDriver.h>
 #include <aws/polly/PollyClient.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <functional>
@@ -24,11 +24,11 @@
 
 namespace Aws
 {
-    namespace PollyToOutput
+    namespace TextToSpeech
     {
         typedef std::function<void(const char*, std::shared_ptr<Client::AsyncCallerContext>)> SendTextCompletedHandler;
 
-        class AWS_POLLY_OUT_API TextToSpeechManager
+        class AWS_TEXT_TO_SPEECH_API TextToSpeechManager
         {
         public:
             TextToSpeechManager(const std::shared_ptr<Polly::PollyClient>& pollyClient, const std::shared_ptr<PCMOutputDriverFactory>& driverFactory = nullptr);

@@ -1,6 +1,6 @@
 add_project(polly_sample
     "Sample driver app for polly app."
-    aws-cpp-sdk-polly-to-output
+    aws-cpp-sdk-text-to-speech
     aws-cpp-sdk-polly    
     aws-cpp-sdk-core)
 

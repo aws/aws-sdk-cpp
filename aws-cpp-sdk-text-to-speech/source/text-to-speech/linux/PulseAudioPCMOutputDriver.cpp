@@ -13,7 +13,7 @@
 * permissions and limitations under the License.
 */
 
-#include <aws/polly-to-output/linux/PulseAudioPCMOutputDriver.h>
+#include <aws/text-to-speech/linux/PulseAudioPCMOutputDriver.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <pulse/error.h>
@@ -22,7 +22,7 @@ using namespace Aws::Utils;
 
 namespace Aws
 {
-    namespace PollyToOutput
+    namespace TextToSpeech
     {
         static const char* APP_NAME = "Aws::Polly::TextToSpeech";
         static const char* CLASS_NAME = "PulseAudioPCMOutputDriver";

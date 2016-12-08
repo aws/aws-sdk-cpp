@@ -13,19 +13,19 @@
 * permissions and limitations under the License.
 */
 
-#include <aws/polly-to-output/PCMOutputDriver.h>
+#include <aws/text-to-speech/PCMOutputDriver.h>
 
 #ifdef WAVE_OUT
-#include <aws/polly-to-output/windows/WaveOutPCMOutputDriver.h>
+#include <aws/text-to-speech/windows/WaveOutPCMOutputDriver.h>
 #elif PULSE
-#include <aws/polly-to-output/linux/PulseAudioPCMOutputDriver.h>
+#include <aws/text-to-speech/linux/PulseAudioPCMOutputDriver.h>
 #elif CORE_AUDIO
-#include <aws/polly-to-output/apple/CoreAudioPCMOutputDriver.h>
+#include <aws/text-to-speech/apple/CoreAudioPCMOutputDriver.h>
 #endif
 
 namespace Aws
 {
-    namespace PollyToOutput
+    namespace TextToSpeech
     {
         static const char* CLASS_TAG = "DefaultPCMOutputDriverFactory";
 
