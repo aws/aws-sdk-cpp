@@ -14,6 +14,7 @@
 */
 
 #include <aws/text-to-speech/PCMOutputDriver.h>
+#include <aws/core/utils/logging/LogMacros.h>
 
 #ifdef WAVE_OUT
 #include <aws/text-to-speech/windows/WaveOutPCMOutputDriver.h>
@@ -27,6 +28,8 @@ namespace Aws
 {
     namespace TextToSpeech
     {
+        PCMOutputDriver::~PCMOutputDriver() {}
+
         static const char* CLASS_TAG = "DefaultPCMOutputDriverFactory";
 
         class DefaultPCMOutputDriverFactory : public PCMOutputDriverFactory
@@ -36,10 +39,13 @@ namespace Aws
             {
                 Aws::Vector<std::shared_ptr<PCMOutputDriver>> drivers;
 #ifdef WAVE_OUT
+                AWS_LOGSTREAM_INFO(CLASS_TAG, "Adding WaveOut Audio Driver.");
                 drivers.push_back(Aws::MakeShared<WaveOutPCMOutputDriver>(CLASS_TAG));
 #elif PULSE
+                AWS_LOGSTREAM_INFO(CLASS_TAG, "Adding PulseAudio Audio Driver.");
                 drivers.push_back(Aws::MakeShared<PulseAudioPCMOutputDriver>(CLASS_TAG));
 #elif CORE_AUDIO
+                AWS_LOGSTREAM_INFO(CLASS_TAG, "Adding CoreAudio Audio Driver.");
                 drivers.push_back(Aws::MakeShared<CoreAudioPCMOutputDriver>(CLASS_TAG));
 #endif
                 return drivers;

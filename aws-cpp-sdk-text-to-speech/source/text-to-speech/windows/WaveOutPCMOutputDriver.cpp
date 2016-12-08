@@ -15,6 +15,7 @@
 
 #include <aws/text-to-speech/windows/WaveOutPCMOutputDriver.h>
 #include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/logging/LogMacros.h>
 
 #include <windows.h>
 
@@ -61,8 +62,16 @@ namespace Aws
             waveHdr->dwUser = NULL;
 
             auto res = waveOutPrepareHeader(m_waveOut, waveHdr, sizeof(WAVEHDR));
+            if (res != MMSYSERR_NOERROR)
+            {
+                AWS_LOGSTREAM_ERROR(CLASS_TAG, "Error code " << res << " returned from waveOutPrepareHeader");
+            }
 
             res = waveOutWrite(m_waveOut, waveHdr, sizeof(WAVEHDR));
+            if (res != MMSYSERR_NOERROR)
+            {
+                AWS_LOGSTREAM_ERROR(CLASS_TAG, "Error code " << res << " returned from waveOutWrite");
+            }
         }
 
         const char* WaveOutPCMOutputDriver::GetName() const
@@ -74,8 +83,11 @@ namespace Aws
         {
             if (!m_isInit)
             {
+                AWS_LOGSTREAM_INFO(CLASS_TAG, "Initializing device " << m_activeDevice.deviceName);
+
                 if (m_waveOut)
                 {
+                    AWS_LOGSTREAM_TRACE(CLASS_TAG, "Cleaning up current device ");
                     waveOutClose(m_waveOut);
                     m_waveOut = nullptr;
                 }
@@ -91,6 +103,8 @@ namespace Aws
 
                 if (m_activeDevice.deviceId.empty())
                 {
+                    AWS_LOGSTREAM_INFO(CLASS_TAG, "No device configured, letting windows figure out the best default.");
+
                     auto res = waveOutOpen(&m_waveOut, WAVE_MAPPER, &format, (DWORD_PTR)&waveOutProc, NULL, 
                         CALLBACK_FUNCTION | WAVE_ALLOWSYNC | WAVE_MAPPED_DEFAULT_COMMUNICATION_DEVICE | WAVE_ALLOWSYNC);
                     m_isInit = !res;
@@ -101,6 +115,11 @@ namespace Aws
                     auto res = waveOutOpen(&m_waveOut, id, &format, (DWORD_PTR)&waveOutProc, NULL,
                         CALLBACK_FUNCTION | WAVE_ALLOWSYNC | WAVE_ALLOWSYNC);
                     m_isInit = !res;
+                }
+
+                if (!m_isInit)
+                {
+                    AWS_LOGSTREAM_ERROR(CLASS_TAG, "Failed to initialize device");
                 }
             }
         }

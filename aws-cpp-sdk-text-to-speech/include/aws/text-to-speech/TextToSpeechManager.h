@@ -26,19 +26,66 @@ namespace Aws
 {
     namespace TextToSpeech
     {
-        typedef std::function<void(const char*, std::shared_ptr<Client::AsyncCallerContext>)> SendTextCompletedHandler;
+        /**
+         * Callback for handling notifications that the SendTextToOutputDevice operation has finished.
+         * @arg1 the text that was sent
+         * @arg2 the outcome of the operation from the polly service.
+         * @arg3 whether or not the audio stream was successfully sent to the audio driver. 
+         */
+        typedef std::function<void(const char*, const Polly::Model::SynthesizeSpeechOutcome&, bool)> SendTextCompletedHandler;
 
+        /**
+         * Manager for rendering text to the Polly service and then sending directly to an audio driver.
+         * By default this uses our best guess at the correct drivers for you operating system.
+         * On windows, this is the WaveOut API.
+         * On Linux, this is PulseAudio
+         * On Apple, this is CoreAudio.
+         *
+         * The drivers used can be arbitrarily overridden to send the stream anywhere you want. Simply provide your own driverFactory implementation.
+         */
         class AWS_TEXT_TO_SPEECH_API TextToSpeechManager
         {
         public:
+            /**
+             * Initializes a TextToSpeechManager with a polly client and a driver factory.
+             * If driver factory is nullptr, we will create a default implementation for your operating system.
+             */
             TextToSpeechManager(const std::shared_ptr<Polly::PollyClient>& pollyClient, const std::shared_ptr<PCMOutputDriverFactory>& driverFactory = nullptr);
+            
             ~TextToSpeechManager();
-            void SendTextToOutputDevice(const char* text, SendTextCompletedHandler);
+            TextToSpeechManager(const TextToSpeechManager&) = delete;
+            TextToSpeechManager& operator=(const TextToSpeechManager&) = delete;
+            TextToSpeechManager(TextToSpeechManager&&) = delete;
+            TextToSpeechManager& operator=(TextToSpeechManager&&) = delete;
+            
+            /**
+             * Sends @text to the Polly Service, once the audio stream is returned, the audio stream is sent to your audio driver.
+             * @callback will be invoked once the entire operation has finished.
+             */
+            void SendTextToOutputDevice(const char* text, SendTextCompletedHandler callback);
 
+            /**
+             * Enumerate all devices and their capabilities from the installed drivers. On some operating systems,
+             * the ability to choose devices is limited. On windows, this will be more detailed. Call this function
+             * to determine what to pass to SetActiveDevice().
+             */
             Aws::Vector<std::pair<DeviceInfo, std::shared_ptr<PCMOutputDriver>>> EnumerateDevices() const;
+
+            /**
+             * Sets the active driver (if there are multiple possbilities), the device to use for that driver, and the 
+             * audio format to configure the device for. This format will also be used for calls to the Polly service.
+             */
             void SetActiveDevice(const std::shared_ptr<PCMOutputDriver>&, const DeviceInfo&, const CapabilityInfo&);
 
+            /**
+             * Lists all available voices and their language. You can use this function to determine what to pass to the  SetActiveVoice()
+             * function. The first member of the pair is the voice, the second is the language.
+             */
             Aws::Vector<std::pair<Aws::String, Aws::String>> ListAvailableVoices() const;
+
+            /**
+             * Sets the active voice for use with the Polly Service.
+             */
             void SetActiveVoice(const Aws::String& voice);
 
         private:
