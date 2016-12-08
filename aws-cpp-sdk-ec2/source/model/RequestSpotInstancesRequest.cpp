@@ -41,7 +41,7 @@ RequestSpotInstancesRequest::RequestSpotInstancesRequest() :
 Aws::String RequestSpotInstancesRequest::SerializePayload() const
 {
   Aws::StringStream ss;
-  ss << "Action=SpotInstances&";
+  ss << "Action=RequestSpotInstances&";
   if(m_dryRunHasBeenSet)
   {
     ss << "DryRun=" << m_dryRun << "&";

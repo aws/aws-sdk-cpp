@@ -134,7 +134,8 @@ TraceSummary& TraceSummary::operator =(const JsonValue& jsonValue)
     for(auto& annotationsItem : annotationsJsonMap)
     {
       Array<JsonValue> valuesWithServiceIdsJsonList = annotationsItem.second.AsArray();
-      Aws::Vector<ValueWithServiceIds> valuesWithServiceIdsList((size_t)valuesWithServiceIdsJsonList.GetLength());
+      Aws::Vector<ValueWithServiceIds> valuesWithServiceIdsList;
+      valuesWithServiceIdsList.reserve((size_t)valuesWithServiceIdsJsonList.GetLength());
       for(unsigned valuesWithServiceIdsIndex = 0; valuesWithServiceIdsIndex < valuesWithServiceIdsJsonList.GetLength(); ++valuesWithServiceIdsIndex)
       {
         valuesWithServiceIdsList.push_back(valuesWithServiceIdsJsonList[valuesWithServiceIdsIndex].AsObject());

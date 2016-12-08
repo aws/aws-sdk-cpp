@@ -3043,8 +3043,7 @@
       "type":"structure",
       "required":[
         "Bucket",
-        "Key",
-        "VersionId"
+        "Key"
       ],
       "members":{
         "Bucket":{
@@ -3059,8 +3058,8 @@
         },
         "VersionId":{
           "shape":"ObjectVersionId",
-          "location":"uri",
-          "locationName":"VersionId"
+          "location":"querystring",
+          "locationName":"versionId"
         }
       }
     },
@@ -5485,8 +5484,7 @@
       "required":[
         "Bucket",
         "Key",
-        "Tagging",
-        "VersionId"
+        "Tagging"
       ],
       "members":{
         "Bucket":{
@@ -5501,8 +5499,8 @@
         },
         "VersionId":{
           "shape":"ObjectVersionId",
-          "location":"uri",
-          "locationName":"VersionId"
+          "location":"querystring",
+          "locationName":"versionId"
         },
         "ContentMD5":{
           "shape":"ContentMD5",

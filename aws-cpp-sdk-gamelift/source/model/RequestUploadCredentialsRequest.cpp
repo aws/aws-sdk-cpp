@@ -42,7 +42,7 @@ Aws::String RequestUploadCredentialsRequest::SerializePayload() const
 Aws::Http::HeaderValueCollection RequestUploadCredentialsRequest::GetRequestSpecificHeaders() const
 {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "GameLift.UploadCredentials"));
+  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "GameLift.RequestUploadCredentials"));
   return headers;
 
 }

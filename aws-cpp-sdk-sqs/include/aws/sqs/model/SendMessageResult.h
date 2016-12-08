@@ -158,7 +158,7 @@ namespace Model
     /**
      * <p>An element containing the message ID of the message sent to the queue. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/ImportantIdentifiers.html">Queue
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-message-identifiers.html">Queue
      * and Message Identifiers</a> in the <i>Amazon SQS Developer Guide</i>. </p>
      */
     inline const Aws::String& GetMessageId() const{ return m_messageId; }
@@ -166,7 +166,7 @@ namespace Model
     /**
      * <p>An element containing the message ID of the message sent to the queue. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/ImportantIdentifiers.html">Queue
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-message-identifiers.html">Queue
      * and Message Identifiers</a> in the <i>Amazon SQS Developer Guide</i>. </p>
      */
     inline void SetMessageId(const Aws::String& value) { m_messageId = value; }
@@ -174,7 +174,7 @@ namespace Model
     /**
      * <p>An element containing the message ID of the message sent to the queue. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/ImportantIdentifiers.html">Queue
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-message-identifiers.html">Queue
      * and Message Identifiers</a> in the <i>Amazon SQS Developer Guide</i>. </p>
      */
     inline void SetMessageId(Aws::String&& value) { m_messageId = value; }
@@ -182,7 +182,7 @@ namespace Model
     /**
      * <p>An element containing the message ID of the message sent to the queue. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/ImportantIdentifiers.html">Queue
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-message-identifiers.html">Queue
      * and Message Identifiers</a> in the <i>Amazon SQS Developer Guide</i>. </p>
      */
     inline void SetMessageId(const char* value) { m_messageId.assign(value); }
@@ -190,7 +190,7 @@ namespace Model
     /**
      * <p>An element containing the message ID of the message sent to the queue. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/ImportantIdentifiers.html">Queue
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-message-identifiers.html">Queue
      * and Message Identifiers</a> in the <i>Amazon SQS Developer Guide</i>. </p>
      */
     inline SendMessageResult& WithMessageId(const Aws::String& value) { SetMessageId(value); return *this;}
@@ -198,7 +198,7 @@ namespace Model
     /**
      * <p>An element containing the message ID of the message sent to the queue. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/ImportantIdentifiers.html">Queue
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-message-identifiers.html">Queue
      * and Message Identifiers</a> in the <i>Amazon SQS Developer Guide</i>. </p>
      */
     inline SendMessageResult& WithMessageId(Aws::String&& value) { SetMessageId(value); return *this;}
@@ -206,7 +206,7 @@ namespace Model
     /**
      * <p>An element containing the message ID of the message sent to the queue. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/ImportantIdentifiers.html">Queue
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-message-identifiers.html">Queue
      * and Message Identifiers</a> in the <i>Amazon SQS Developer Guide</i>. </p>
      */
     inline SendMessageResult& WithMessageId(const char* value) { SetMessageId(value); return *this;}

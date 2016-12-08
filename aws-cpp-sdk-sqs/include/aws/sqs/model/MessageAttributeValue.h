@@ -209,8 +209,9 @@ namespace Model
      * <p>Amazon SQS supports the following logical data types: String, Number, and
      * Binary. For the Number data type, you must use StringValue.</p> <p>You can also
      * append custom labels. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributes.DataTypes">Message
-     * Attribute Data Types</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-data-types-validation">Message
+     * Attribute Data Types and Validation</a> in the <i>Amazon SQS Developer
+     * Guide</i>.</p>
      */
     inline const Aws::String& GetDataType() const{ return m_dataType; }
 
@@ -218,8 +219,9 @@ namespace Model
      * <p>Amazon SQS supports the following logical data types: String, Number, and
      * Binary. For the Number data type, you must use StringValue.</p> <p>You can also
      * append custom labels. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributes.DataTypes">Message
-     * Attribute Data Types</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-data-types-validation">Message
+     * Attribute Data Types and Validation</a> in the <i>Amazon SQS Developer
+     * Guide</i>.</p>
      */
     inline void SetDataType(const Aws::String& value) { m_dataTypeHasBeenSet = true; m_dataType = value; }
 
@@ -227,8 +229,9 @@ namespace Model
      * <p>Amazon SQS supports the following logical data types: String, Number, and
      * Binary. For the Number data type, you must use StringValue.</p> <p>You can also
      * append custom labels. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributes.DataTypes">Message
-     * Attribute Data Types</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-data-types-validation">Message
+     * Attribute Data Types and Validation</a> in the <i>Amazon SQS Developer
+     * Guide</i>.</p>
      */
     inline void SetDataType(Aws::String&& value) { m_dataTypeHasBeenSet = true; m_dataType = value; }
 
@@ -236,8 +239,9 @@ namespace Model
      * <p>Amazon SQS supports the following logical data types: String, Number, and
      * Binary. For the Number data type, you must use StringValue.</p> <p>You can also
      * append custom labels. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributes.DataTypes">Message
-     * Attribute Data Types</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-data-types-validation">Message
+     * Attribute Data Types and Validation</a> in the <i>Amazon SQS Developer
+     * Guide</i>.</p>
      */
     inline void SetDataType(const char* value) { m_dataTypeHasBeenSet = true; m_dataType.assign(value); }
 
@@ -245,8 +249,9 @@ namespace Model
      * <p>Amazon SQS supports the following logical data types: String, Number, and
      * Binary. For the Number data type, you must use StringValue.</p> <p>You can also
      * append custom labels. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributes.DataTypes">Message
-     * Attribute Data Types</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-data-types-validation">Message
+     * Attribute Data Types and Validation</a> in the <i>Amazon SQS Developer
+     * Guide</i>.</p>
      */
     inline MessageAttributeValue& WithDataType(const Aws::String& value) { SetDataType(value); return *this;}
 
@@ -254,8 +259,9 @@ namespace Model
      * <p>Amazon SQS supports the following logical data types: String, Number, and
      * Binary. For the Number data type, you must use StringValue.</p> <p>You can also
      * append custom labels. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributes.DataTypes">Message
-     * Attribute Data Types</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-data-types-validation">Message
+     * Attribute Data Types and Validation</a> in the <i>Amazon SQS Developer
+     * Guide</i>.</p>
      */
     inline MessageAttributeValue& WithDataType(Aws::String&& value) { SetDataType(value); return *this;}
 
@@ -263,8 +269,9 @@ namespace Model
      * <p>Amazon SQS supports the following logical data types: String, Number, and
      * Binary. For the Number data type, you must use StringValue.</p> <p>You can also
      * append custom labels. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributes.DataTypes">Message
-     * Attribute Data Types</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-data-types-validation">Message
+     * Attribute Data Types and Validation</a> in the <i>Amazon SQS Developer
+     * Guide</i>.</p>
      */
     inline MessageAttributeValue& WithDataType(const char* value) { SetDataType(value); return *this;}
 

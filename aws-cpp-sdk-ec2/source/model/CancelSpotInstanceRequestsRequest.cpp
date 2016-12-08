@@ -29,7 +29,7 @@ CancelSpotInstanceRequestsRequest::CancelSpotInstanceRequestsRequest() :
 Aws::String CancelSpotInstanceRequestsRequest::SerializePayload() const
 {
   Aws::StringStream ss;
-  ss << "Action=CancelSpotInstances&";
+  ss << "Action=CancelSpotInstanceRequests&";
   if(m_dryRunHasBeenSet)
   {
     ss << "DryRun=" << m_dryRun << "&";

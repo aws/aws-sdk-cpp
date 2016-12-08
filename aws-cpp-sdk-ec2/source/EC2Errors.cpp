@@ -85,6 +85,7 @@ static const int INVALID_POLICY_DOCUMENT_HASH = HashingUtils::HashString("Invali
 static const int VPC_ENDPOINT_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("VpcEndpointLimitExceeded");
 static const int MAX_SPOT_INSTANCE_COUNT_EXCEEDED_HASH = HashingUtils::HashString("MaxSpotInstanceCountExceeded");
 static const int VPN_GATEWAY_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("VpnGatewayLimitExceeded");
+static const int INVALID_VPC__RANGE_HASH = HashingUtils::HashString("InvalidVpc.Range");
 static const int INVALID_INSTANCE_I_D_HASH = HashingUtils::HashString("InvalidInstanceID");
 static const int INVALID_OPTION__CONFLICT_HASH = HashingUtils::HashString("InvalidOption.Conflict");
 static const int CUSTOMER_GATEWAY_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("CustomerGatewayLimitExceeded");
@@ -104,7 +105,6 @@ static const int INVALID_SUBNET_I_D__NOT_FOUND_HASH = HashingUtils::HashString("
 static const int INVALID_VOLUME_I_D__MALFORMED_HASH = HashingUtils::HashString("InvalidVolumeID.Malformed");
 static const int INVALID_REQUEST_HASH = HashingUtils::HashString("InvalidRequest");
 static const int INVALID_ROUTE__MALFORMED_HASH = HashingUtils::HashString("InvalidRoute.Malformed");
-static const int INVALID_VPC_RANGE_HASH = HashingUtils::HashString("InvalidVpcRange");
 static const int SECURITY_GROUPS_PER_INTERFACE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("SecurityGroupsPerInterfaceLimitExceeded");
 static const int INVALID_SECURITY__REQUEST_HAS_EXPIRED_HASH = HashingUtils::HashString("InvalidSecurity.RequestHasExpired");
 static const int INVALID_VPC_ENDPOINT_ID__MALFORMED_HASH = HashingUtils::HashString("InvalidVpcEndpointId.Malformed");
@@ -499,6 +499,11 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::VPN_GATEWAY_LIMIT_EXCEEDED), false);
     return true;
   }
+  else if (hashCode == INVALID_VPC__RANGE_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_VPC__RANGE), false);
+    return true;
+  }
   else if (hashCode == INVALID_INSTANCE_I_D_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_INSTANCE_I_D), false);
@@ -592,11 +597,6 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
   else if (hashCode == INVALID_ROUTE__MALFORMED_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_ROUTE__MALFORMED), false);
-    return true;
-  }
-  else if (hashCode == INVALID_VPC_RANGE_HASH)
-  {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_VPC_RANGE), false);
     return true;
   }
   else if (hashCode == SECURITY_GROUPS_PER_INTERFACE_LIMIT_EXCEEDED_HASH)

@@ -946,8 +946,10 @@ namespace Model
          * <code>ConfigRuleName</code>, <code>ConfigRuleId</code>, or
          * <code>ConfigRuleArn</code> in the <code>ConfigRule</code> data type that you use
          * in this request.</p> <p>The maximum number of rules that AWS Config supports is
-         * 25.</p> <p>For more information about developing and using AWS Config rules, see
-         * <a
+         * 50.</p> <p>For more information about requesting a rule limit increase, see <a
+         * href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">AWS
+         * Config Limits</a> in the <i>AWS General Reference Guide</i>.</p> <p>For more
+         * information about developing and using AWS Config rules, see <a
          * href="http://docs.aws.amazon.com/config/latest/developerguide/evaluate-config.html">Evaluating
          * AWS Resource Configurations with AWS Config</a> in the <i>AWS Config Developer
          * Guide</i>.</p>
@@ -978,8 +980,10 @@ namespace Model
          * <code>ConfigRuleName</code>, <code>ConfigRuleId</code>, or
          * <code>ConfigRuleArn</code> in the <code>ConfigRule</code> data type that you use
          * in this request.</p> <p>The maximum number of rules that AWS Config supports is
-         * 25.</p> <p>For more information about developing and using AWS Config rules, see
-         * <a
+         * 50.</p> <p>For more information about requesting a rule limit increase, see <a
+         * href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">AWS
+         * Config Limits</a> in the <i>AWS General Reference Guide</i>.</p> <p>For more
+         * information about developing and using AWS Config rules, see <a
          * href="http://docs.aws.amazon.com/config/latest/developerguide/evaluate-config.html">Evaluating
          * AWS Resource Configurations with AWS Config</a> in the <i>AWS Config Developer
          * Guide</i>.</p>
@@ -1012,8 +1016,10 @@ namespace Model
          * <code>ConfigRuleName</code>, <code>ConfigRuleId</code>, or
          * <code>ConfigRuleArn</code> in the <code>ConfigRule</code> data type that you use
          * in this request.</p> <p>The maximum number of rules that AWS Config supports is
-         * 25.</p> <p>For more information about developing and using AWS Config rules, see
-         * <a
+         * 50.</p> <p>For more information about requesting a rule limit increase, see <a
+         * href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">AWS
+         * Config Limits</a> in the <i>AWS General Reference Guide</i>.</p> <p>For more
+         * information about developing and using AWS Config rules, see <a
          * href="http://docs.aws.amazon.com/config/latest/developerguide/evaluate-config.html">Evaluating
          * AWS Resource Configurations with AWS Config</a> in the <i>AWS Config Developer
          * Guide</i>.</p>
@@ -1137,45 +1143,57 @@ namespace Model
         virtual void PutEvaluationsAsync(const Model::PutEvaluationsRequest& request, const PutEvaluationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Evaluates your resources against the specified Config rules. You can specify
-         * up to 25 Config rules per request.</p> <p>An existing
-         * <a>StartConfigRulesEvaluation</a> call must complete for the specified rules
-         * before you can call the API again. If you chose to have AWS Config stream to an
-         * Amazon SNS topic, you will receive a <code>ConfigRuleEvaluationStarted</code>
-         * notification when the evaluation starts.</p> <note> <p>You don't need to call
-         * the <code>StartConfigRulesEvaluation</code> API to run an evaluation for a new
-         * rule. When you create a new rule, AWS Config automatically evaluates your
-         * resources against the rule. </p> </note> <p>The
-         * <code>StartConfigRulesEvaluation</code> API is useful if you want to run
-         * on-demand evaluations, such as the following example:</p> <ol> <li> <p>You have
-         * a custom rule that evaluates your IAM resources every 24 hours.</p> </li> <li>
-         * <p>You update your Lambda function to add additional conditions to your
-         * rule.</p> </li> <li> <p>Instead of waiting for the next periodic evaluation, you
-         * call the <code>StartConfigRulesEvaluation</code> API.</p> </li> <li> <p>AWS
-         * Config invokes your Lambda function and evaluates your IAM resources.</p> </li>
-         * <li> <p>Your custom rule will still run periodic evaluations every 24 hours.</p>
+         * <p>Runs an on-demand evaluation for the specified Config rules against the last
+         * known configuration state of the resources. Use
+         * <code>StartConfigRulesEvaluation</code> when you want to test a rule that you
+         * updated is working as expected. <code>StartConfigRulesEvaluation</code> does not
+         * re-record the latest configuration state for your resources; it re-runs an
+         * evaluation against the last known state of your resources. </p> <p>You can
+         * specify up to 25 Config rules per request. </p> <p>An existing
+         * <code>StartConfigRulesEvaluation</code> call must complete for the specified
+         * rules before you can call the API again. If you chose to have AWS Config stream
+         * to an Amazon SNS topic, you will receive a
+         * <code>ConfigRuleEvaluationStarted</code> notification when the evaluation
+         * starts.</p> <note> <p>You don't need to call the
+         * <code>StartConfigRulesEvaluation</code> API to run an evaluation for a new rule.
+         * When you create a new rule, AWS Config automatically evaluates your resources
+         * against the rule. </p> </note> <p>The <code>StartConfigRulesEvaluation</code>
+         * API is useful if you want to run on-demand evaluations, such as the following
+         * example:</p> <ol> <li> <p>You have a custom rule that evaluates your IAM
+         * resources every 24 hours.</p> </li> <li> <p>You update your Lambda function to
+         * add additional conditions to your rule.</p> </li> <li> <p>Instead of waiting for
+         * the next periodic evaluation, you call the
+         * <code>StartConfigRulesEvaluation</code> API.</p> </li> <li> <p>AWS Config
+         * invokes your Lambda function and evaluates your IAM resources.</p> </li> <li>
+         * <p>Your custom rule will still run periodic evaluations every 24 hours.</p>
          * </li> </ol>
          */
         virtual Model::StartConfigRulesEvaluationOutcome StartConfigRulesEvaluation(const Model::StartConfigRulesEvaluationRequest& request) const;
 
         /**
-         * <p>Evaluates your resources against the specified Config rules. You can specify
-         * up to 25 Config rules per request.</p> <p>An existing
-         * <a>StartConfigRulesEvaluation</a> call must complete for the specified rules
-         * before you can call the API again. If you chose to have AWS Config stream to an
-         * Amazon SNS topic, you will receive a <code>ConfigRuleEvaluationStarted</code>
-         * notification when the evaluation starts.</p> <note> <p>You don't need to call
-         * the <code>StartConfigRulesEvaluation</code> API to run an evaluation for a new
-         * rule. When you create a new rule, AWS Config automatically evaluates your
-         * resources against the rule. </p> </note> <p>The
-         * <code>StartConfigRulesEvaluation</code> API is useful if you want to run
-         * on-demand evaluations, such as the following example:</p> <ol> <li> <p>You have
-         * a custom rule that evaluates your IAM resources every 24 hours.</p> </li> <li>
-         * <p>You update your Lambda function to add additional conditions to your
-         * rule.</p> </li> <li> <p>Instead of waiting for the next periodic evaluation, you
-         * call the <code>StartConfigRulesEvaluation</code> API.</p> </li> <li> <p>AWS
-         * Config invokes your Lambda function and evaluates your IAM resources.</p> </li>
-         * <li> <p>Your custom rule will still run periodic evaluations every 24 hours.</p>
+         * <p>Runs an on-demand evaluation for the specified Config rules against the last
+         * known configuration state of the resources. Use
+         * <code>StartConfigRulesEvaluation</code> when you want to test a rule that you
+         * updated is working as expected. <code>StartConfigRulesEvaluation</code> does not
+         * re-record the latest configuration state for your resources; it re-runs an
+         * evaluation against the last known state of your resources. </p> <p>You can
+         * specify up to 25 Config rules per request. </p> <p>An existing
+         * <code>StartConfigRulesEvaluation</code> call must complete for the specified
+         * rules before you can call the API again. If you chose to have AWS Config stream
+         * to an Amazon SNS topic, you will receive a
+         * <code>ConfigRuleEvaluationStarted</code> notification when the evaluation
+         * starts.</p> <note> <p>You don't need to call the
+         * <code>StartConfigRulesEvaluation</code> API to run an evaluation for a new rule.
+         * When you create a new rule, AWS Config automatically evaluates your resources
+         * against the rule. </p> </note> <p>The <code>StartConfigRulesEvaluation</code>
+         * API is useful if you want to run on-demand evaluations, such as the following
+         * example:</p> <ol> <li> <p>You have a custom rule that evaluates your IAM
+         * resources every 24 hours.</p> </li> <li> <p>You update your Lambda function to
+         * add additional conditions to your rule.</p> </li> <li> <p>Instead of waiting for
+         * the next periodic evaluation, you call the
+         * <code>StartConfigRulesEvaluation</code> API.</p> </li> <li> <p>AWS Config
+         * invokes your Lambda function and evaluates your IAM resources.</p> </li> <li>
+         * <p>Your custom rule will still run periodic evaluations every 24 hours.</p>
          * </li> </ol>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -1183,23 +1201,29 @@ namespace Model
         virtual Model::StartConfigRulesEvaluationOutcomeCallable StartConfigRulesEvaluationCallable(const Model::StartConfigRulesEvaluationRequest& request) const;
 
         /**
-         * <p>Evaluates your resources against the specified Config rules. You can specify
-         * up to 25 Config rules per request.</p> <p>An existing
-         * <a>StartConfigRulesEvaluation</a> call must complete for the specified rules
-         * before you can call the API again. If you chose to have AWS Config stream to an
-         * Amazon SNS topic, you will receive a <code>ConfigRuleEvaluationStarted</code>
-         * notification when the evaluation starts.</p> <note> <p>You don't need to call
-         * the <code>StartConfigRulesEvaluation</code> API to run an evaluation for a new
-         * rule. When you create a new rule, AWS Config automatically evaluates your
-         * resources against the rule. </p> </note> <p>The
-         * <code>StartConfigRulesEvaluation</code> API is useful if you want to run
-         * on-demand evaluations, such as the following example:</p> <ol> <li> <p>You have
-         * a custom rule that evaluates your IAM resources every 24 hours.</p> </li> <li>
-         * <p>You update your Lambda function to add additional conditions to your
-         * rule.</p> </li> <li> <p>Instead of waiting for the next periodic evaluation, you
-         * call the <code>StartConfigRulesEvaluation</code> API.</p> </li> <li> <p>AWS
-         * Config invokes your Lambda function and evaluates your IAM resources.</p> </li>
-         * <li> <p>Your custom rule will still run periodic evaluations every 24 hours.</p>
+         * <p>Runs an on-demand evaluation for the specified Config rules against the last
+         * known configuration state of the resources. Use
+         * <code>StartConfigRulesEvaluation</code> when you want to test a rule that you
+         * updated is working as expected. <code>StartConfigRulesEvaluation</code> does not
+         * re-record the latest configuration state for your resources; it re-runs an
+         * evaluation against the last known state of your resources. </p> <p>You can
+         * specify up to 25 Config rules per request. </p> <p>An existing
+         * <code>StartConfigRulesEvaluation</code> call must complete for the specified
+         * rules before you can call the API again. If you chose to have AWS Config stream
+         * to an Amazon SNS topic, you will receive a
+         * <code>ConfigRuleEvaluationStarted</code> notification when the evaluation
+         * starts.</p> <note> <p>You don't need to call the
+         * <code>StartConfigRulesEvaluation</code> API to run an evaluation for a new rule.
+         * When you create a new rule, AWS Config automatically evaluates your resources
+         * against the rule. </p> </note> <p>The <code>StartConfigRulesEvaluation</code>
+         * API is useful if you want to run on-demand evaluations, such as the following
+         * example:</p> <ol> <li> <p>You have a custom rule that evaluates your IAM
+         * resources every 24 hours.</p> </li> <li> <p>You update your Lambda function to
+         * add additional conditions to your rule.</p> </li> <li> <p>Instead of waiting for
+         * the next periodic evaluation, you call the
+         * <code>StartConfigRulesEvaluation</code> API.</p> </li> <li> <p>AWS Config
+         * invokes your Lambda function and evaluates your IAM resources.</p> </li> <li>
+         * <p>Your custom rule will still run periodic evaluations every 24 hours.</p>
          * </li> </ol>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
