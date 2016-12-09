@@ -37,7 +37,7 @@ namespace Aws
             }
         }
 
-        void PulseAudioPCMOutputDriver::WriteBufferToDevice(const unsigned char* buffer, size_t size)
+        bool PulseAudioPCMOutputDriver::WriteBufferToDevice(const unsigned char* buffer, size_t size)
         {
             InitDevice();
 
@@ -47,8 +47,13 @@ namespace Aws
                 if(pa_simple_write(m_driver, buffer, size, &error) < 0)
                 {
                     AWS_LOGSTREAM_ERROR(CLASS_NAME, " error writing buffer to output device " << pa_strerror(error));
+                    return false;
                 }
+
+                return true;
             }
+
+            return false;
         }
 
         Aws::Vector<DeviceInfo> PulseAudioPCMOutputDriver::EnumerateDevices() const

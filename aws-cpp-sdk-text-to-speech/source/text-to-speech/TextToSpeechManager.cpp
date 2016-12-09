@@ -145,16 +145,16 @@ namespace Aws
 
                 std::lock_guard<std::mutex> m(m_driverLock);
                 m_activeDriver->Prime();
-
-                while (stream)
+                bool successfullyPlayed(true);
+                while (stream && successfullyPlayed)
                 {
                     stream.read((char*) buffer, BUFF_SIZE);
                     auto read = stream.gcount();
                     AWS_LOGSTREAM_TRACE(CLASS_TAG, "Writing " << read << " bytes to device.");
 
-                    m_activeDriver->WriteBufferToDevice(buffer, read);
+                    successfullyPlayed = m_activeDriver->WriteBufferToDevice(buffer, read);
                     amountRead += read;
-                    played = true;
+                    played = successfullyPlayed;
                 }
 
                 m_activeDriver->Flush();

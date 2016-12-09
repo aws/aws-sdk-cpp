@@ -30,13 +30,14 @@ namespace Aws
             CleanUp();
         }
 
-        void CoreAudioPCMOutputDriver::WriteBufferToDevice(const unsigned char* buffer , size_t size)
+        bool CoreAudioPCMOutputDriver::WriteBufferToDevice(const unsigned char* buffer , size_t size)
         {
             InitDevice();
+            bool success(true);
 
             if(m_audioQueue)
             {
-                for(size_t i = 0; i < size; i += m_maxBufferSize)
+                for(size_t i = 0; i < size && success; i += m_maxBufferSize)
                 {
                     std::unique_lock<std::mutex> m(m_queueBufferLock);
                     while(m_bufferQueue.size() == 0)
@@ -52,10 +53,16 @@ namespace Aws
                         auto toCpy = std::min(m_maxBufferSize, size - i);
                         memcpy(audioBuffer->mAudioData, buffer + i, toCpy);
                         audioBuffer->mAudioDataByteSize = static_cast<UInt32>(toCpy);
-                        AudioQueueEnqueueBuffer(m_audioQueue, audioBuffer, 0, nullptr);
+                        success = !AudioQueueEnqueueBuffer(m_audioQueue, audioBuffer, 0, nullptr);
                     }
                 }
             }
+            else
+            {
+                return false;
+            }
+
+            return success;
         }
 
         Aws::Vector<DeviceInfo> CoreAudioPCMOutputDriver::EnumerateDevices() const

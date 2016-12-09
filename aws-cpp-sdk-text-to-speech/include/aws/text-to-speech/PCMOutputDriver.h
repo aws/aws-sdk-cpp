@@ -50,8 +50,9 @@ namespace Aws
 
             /**
              * Write a buffer of audio data to a device. The format of this data will be set in the SetActiveDevice function.
+             * returns true if audio was successfully written to the device, false otherwise.
              */
-            virtual void WriteBufferToDevice(const unsigned char*, size_t) = 0;
+            virtual bool WriteBufferToDevice(const unsigned char*, size_t) = 0;
             /**
              * Enumerate all devices and their capabilities. The device id and the capability will be returned to you
              * when a user calls SetActiveDevice();

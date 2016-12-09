@@ -48,8 +48,18 @@ namespace Aws
 
         WaveOutPCMOutputDriver::WaveOutPCMOutputDriver() : m_waveOut(nullptr) {}
 
-        void WaveOutPCMOutputDriver::WriteBufferToDevice(const unsigned char* buffer, size_t size)
+        WaveOutPCMOutputDriver::~WaveOutPCMOutputDriver()
         {
+            if (m_waveOut)
+            {
+                waveOutClose(m_waveOut);
+                m_waveOut = nullptr;
+            }
+        }
+
+        bool WaveOutPCMOutputDriver::WriteBufferToDevice(const unsigned char* buffer, size_t size)
+        {
+            std::lock_guard<std::mutex> m(m_driverLock);
             InitDevice();
 
             WAVEHDR* waveHdr = Aws::New<WAVEHDR>(CLASS_TAG);
@@ -65,13 +75,17 @@ namespace Aws
             if (res != MMSYSERR_NOERROR)
             {
                 AWS_LOGSTREAM_ERROR(CLASS_TAG, "Error code " << res << " returned from waveOutPrepareHeader");
+                return false;
             }
 
             res = waveOutWrite(m_waveOut, waveHdr, sizeof(WAVEHDR));
             if (res != MMSYSERR_NOERROR)
             {
                 AWS_LOGSTREAM_ERROR(CLASS_TAG, "Error code " << res << " returned from waveOutWrite");
+                return false;
             }
+
+            return true;
         }
 
         const char* WaveOutPCMOutputDriver::GetName() const
@@ -126,6 +140,7 @@ namespace Aws
 
         void WaveOutPCMOutputDriver::SetActiveDevice(const DeviceInfo& device, const CapabilityInfo& caps)
         { 
+            std::lock_guard<std::mutex> m(m_driverLock);
             m_activeDevice = device; 
             m_selectedCaps = caps; 
             m_isInit = false; 

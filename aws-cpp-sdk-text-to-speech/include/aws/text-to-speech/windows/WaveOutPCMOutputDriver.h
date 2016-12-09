@@ -18,6 +18,8 @@
 #include <aws/text-to-speech/TextToSpeech_EXPORTS.h>
 #include <aws/text-to-speech/PCMOutputDriver.h>
 
+#include <mutex>
+
 #include <Windows.h>
 
 namespace Aws
@@ -28,7 +30,14 @@ namespace Aws
         {
         public:
             WaveOutPCMOutputDriver();
-            virtual void WriteBufferToDevice(const unsigned char*, size_t) override;
+            virtual ~WaveOutPCMOutputDriver();
+
+            WaveOutPCMOutputDriver(const WaveOutPCMOutputDriver&) = delete;
+            WaveOutPCMOutputDriver& operator=(const WaveOutPCMOutputDriver&) = delete;
+            WaveOutPCMOutputDriver(WaveOutPCMOutputDriver&&) = delete;
+            WaveOutPCMOutputDriver& operator=(WaveOutPCMOutputDriver&&) = delete;
+
+            virtual bool WriteBufferToDevice(const unsigned char*, size_t) override;
             virtual Aws::Vector<DeviceInfo> EnumerateDevices() const override;
             virtual void SetActiveDevice(const DeviceInfo& device, const CapabilityInfo& caps) override; 
             const char* GetName() const override;
@@ -40,6 +49,7 @@ namespace Aws
             CapabilityInfo m_selectedCaps;
             HWAVEOUT m_waveOut;
             bool m_isInit;
+            std::mutex m_driverLock;
         };
     }
 }

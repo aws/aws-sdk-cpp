@@ -26,8 +26,14 @@ namespace Aws
         {
         public:
             PulseAudioPCMOutputDriver();
-            ~PulseAudioPCMOutputDriver();
-            void WriteBufferToDevice(const unsigned char*, size_t) override;
+            virtual ~PulseAudioPCMOutputDriver();
+
+            PulseAudioPCMOutputDriver(const PulseAudioPCMOutputDriver&) = delete;
+            PulseAudioPCMOutputDriver& operator=(const PulseAudioPCMOutputDriver&) = delete;
+            PulseAudioPCMOutputDriver(PulseAudioPCMOutputDriver&&) = delete;
+            PulseAudioPCMOutputDriver& operator=(PulseAudioPCMOutputDriver&&) = delete;
+
+            bool WriteBufferToDevice(const unsigned char*, size_t) override;
             Aws::Vector<DeviceInfo> EnumerateDevices() const override;
             void SetActiveDevice(const DeviceInfo&, const CapabilityInfo&) override;
             const char* GetName() const override;

@@ -32,9 +32,14 @@ namespace Aws
         {
         public:
             CoreAudioPCMOutputDriver();
-            ~CoreAudioPCMOutputDriver();
+            virtual ~CoreAudioPCMOutputDriver();
 
-            void WriteBufferToDevice(const unsigned char*, size_t) override;
+            CoreAudioPCMOutputDriver(const CoreAudioPCMOutputDriver&) = delete;
+            CoreAudioPCMOutputDriver& operator=(const CoreAudioPCMOutputDriver&) = delete;
+            CoreAudioPCMOutputDriver(CoreAudioPCMOutputDriver&&) = delete;
+            CoreAudioPCMOutputDriver& operator=(CoreAudioPCMOutputDriver&&) = delete;
+
+            bool WriteBufferToDevice(const unsigned char*, size_t) override;
             Aws::Vector<DeviceInfo> EnumerateDevices() const override;
             void SetActiveDevice(const DeviceInfo&, const CapabilityInfo&) override;
             const char* GetName() const override;
