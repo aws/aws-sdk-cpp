@@ -38,15 +38,16 @@ namespace Model
     /**
      * <p>The identifier for the source DB snapshot.</p> <p>If you are copying from a
      * shared manual DB snapshot, this must be the ARN of the shared DB snapshot.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must specify a valid system snapshot in the
-     * "available" state.</p> </li> <li> <p>If the source snapshot is in the same
-     * region as the copy, specify a valid DB snapshot identifier.</p> </li> <li> <p>If
-     * the source snapshot is in a different region than the copy, specify a valid DB
-     * snapshot ARN. For more information, go to <a
+     * <p>You cannot copy an encrypted, shared DB snapshot from one AWS region to
+     * another.</p> <p>Constraints:</p> <ul> <li> <p>Must specify a valid system
+     * snapshot in the "available" state.</p> </li> <li> <p>If the source snapshot is
+     * in the same region as the copy, specify a valid DB snapshot identifier.</p>
+     * </li> <li> <p>If the source snapshot is in a different region than the copy,
+     * specify a valid DB snapshot ARN. For more information, go to <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html">
      * Copying a DB Snapshot</a>.</p> </li> </ul> <p>Example:
      * <code>rds:mydb-2012-04-02-00-01</code> </p> <p>Example:
-     * <code>arn:aws:rds:rr-regn-1:123456789012:snapshot:mysql-instance1-snapshot-20130805</code>
+     * <code>arn:aws:rds:us-west-2:123456789012:snapshot:mysql-instance1-snapshot-20130805</code>
      * </p>
      */
     inline const Aws::String& GetSourceDBSnapshotIdentifier() const{ return m_sourceDBSnapshotIdentifier; }
@@ -54,15 +55,16 @@ namespace Model
     /**
      * <p>The identifier for the source DB snapshot.</p> <p>If you are copying from a
      * shared manual DB snapshot, this must be the ARN of the shared DB snapshot.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must specify a valid system snapshot in the
-     * "available" state.</p> </li> <li> <p>If the source snapshot is in the same
-     * region as the copy, specify a valid DB snapshot identifier.</p> </li> <li> <p>If
-     * the source snapshot is in a different region than the copy, specify a valid DB
-     * snapshot ARN. For more information, go to <a
+     * <p>You cannot copy an encrypted, shared DB snapshot from one AWS region to
+     * another.</p> <p>Constraints:</p> <ul> <li> <p>Must specify a valid system
+     * snapshot in the "available" state.</p> </li> <li> <p>If the source snapshot is
+     * in the same region as the copy, specify a valid DB snapshot identifier.</p>
+     * </li> <li> <p>If the source snapshot is in a different region than the copy,
+     * specify a valid DB snapshot ARN. For more information, go to <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html">
      * Copying a DB Snapshot</a>.</p> </li> </ul> <p>Example:
      * <code>rds:mydb-2012-04-02-00-01</code> </p> <p>Example:
-     * <code>arn:aws:rds:rr-regn-1:123456789012:snapshot:mysql-instance1-snapshot-20130805</code>
+     * <code>arn:aws:rds:us-west-2:123456789012:snapshot:mysql-instance1-snapshot-20130805</code>
      * </p>
      */
     inline void SetSourceDBSnapshotIdentifier(const Aws::String& value) { m_sourceDBSnapshotIdentifierHasBeenSet = true; m_sourceDBSnapshotIdentifier = value; }
@@ -70,15 +72,16 @@ namespace Model
     /**
      * <p>The identifier for the source DB snapshot.</p> <p>If you are copying from a
      * shared manual DB snapshot, this must be the ARN of the shared DB snapshot.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must specify a valid system snapshot in the
-     * "available" state.</p> </li> <li> <p>If the source snapshot is in the same
-     * region as the copy, specify a valid DB snapshot identifier.</p> </li> <li> <p>If
-     * the source snapshot is in a different region than the copy, specify a valid DB
-     * snapshot ARN. For more information, go to <a
+     * <p>You cannot copy an encrypted, shared DB snapshot from one AWS region to
+     * another.</p> <p>Constraints:</p> <ul> <li> <p>Must specify a valid system
+     * snapshot in the "available" state.</p> </li> <li> <p>If the source snapshot is
+     * in the same region as the copy, specify a valid DB snapshot identifier.</p>
+     * </li> <li> <p>If the source snapshot is in a different region than the copy,
+     * specify a valid DB snapshot ARN. For more information, go to <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html">
      * Copying a DB Snapshot</a>.</p> </li> </ul> <p>Example:
      * <code>rds:mydb-2012-04-02-00-01</code> </p> <p>Example:
-     * <code>arn:aws:rds:rr-regn-1:123456789012:snapshot:mysql-instance1-snapshot-20130805</code>
+     * <code>arn:aws:rds:us-west-2:123456789012:snapshot:mysql-instance1-snapshot-20130805</code>
      * </p>
      */
     inline void SetSourceDBSnapshotIdentifier(Aws::String&& value) { m_sourceDBSnapshotIdentifierHasBeenSet = true; m_sourceDBSnapshotIdentifier = value; }
@@ -86,15 +89,16 @@ namespace Model
     /**
      * <p>The identifier for the source DB snapshot.</p> <p>If you are copying from a
      * shared manual DB snapshot, this must be the ARN of the shared DB snapshot.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must specify a valid system snapshot in the
-     * "available" state.</p> </li> <li> <p>If the source snapshot is in the same
-     * region as the copy, specify a valid DB snapshot identifier.</p> </li> <li> <p>If
-     * the source snapshot is in a different region than the copy, specify a valid DB
-     * snapshot ARN. For more information, go to <a
+     * <p>You cannot copy an encrypted, shared DB snapshot from one AWS region to
+     * another.</p> <p>Constraints:</p> <ul> <li> <p>Must specify a valid system
+     * snapshot in the "available" state.</p> </li> <li> <p>If the source snapshot is
+     * in the same region as the copy, specify a valid DB snapshot identifier.</p>
+     * </li> <li> <p>If the source snapshot is in a different region than the copy,
+     * specify a valid DB snapshot ARN. For more information, go to <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html">
      * Copying a DB Snapshot</a>.</p> </li> </ul> <p>Example:
      * <code>rds:mydb-2012-04-02-00-01</code> </p> <p>Example:
-     * <code>arn:aws:rds:rr-regn-1:123456789012:snapshot:mysql-instance1-snapshot-20130805</code>
+     * <code>arn:aws:rds:us-west-2:123456789012:snapshot:mysql-instance1-snapshot-20130805</code>
      * </p>
      */
     inline void SetSourceDBSnapshotIdentifier(const char* value) { m_sourceDBSnapshotIdentifierHasBeenSet = true; m_sourceDBSnapshotIdentifier.assign(value); }
@@ -102,15 +106,16 @@ namespace Model
     /**
      * <p>The identifier for the source DB snapshot.</p> <p>If you are copying from a
      * shared manual DB snapshot, this must be the ARN of the shared DB snapshot.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must specify a valid system snapshot in the
-     * "available" state.</p> </li> <li> <p>If the source snapshot is in the same
-     * region as the copy, specify a valid DB snapshot identifier.</p> </li> <li> <p>If
-     * the source snapshot is in a different region than the copy, specify a valid DB
-     * snapshot ARN. For more information, go to <a
+     * <p>You cannot copy an encrypted, shared DB snapshot from one AWS region to
+     * another.</p> <p>Constraints:</p> <ul> <li> <p>Must specify a valid system
+     * snapshot in the "available" state.</p> </li> <li> <p>If the source snapshot is
+     * in the same region as the copy, specify a valid DB snapshot identifier.</p>
+     * </li> <li> <p>If the source snapshot is in a different region than the copy,
+     * specify a valid DB snapshot ARN. For more information, go to <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html">
      * Copying a DB Snapshot</a>.</p> </li> </ul> <p>Example:
      * <code>rds:mydb-2012-04-02-00-01</code> </p> <p>Example:
-     * <code>arn:aws:rds:rr-regn-1:123456789012:snapshot:mysql-instance1-snapshot-20130805</code>
+     * <code>arn:aws:rds:us-west-2:123456789012:snapshot:mysql-instance1-snapshot-20130805</code>
      * </p>
      */
     inline CopyDBSnapshotRequest& WithSourceDBSnapshotIdentifier(const Aws::String& value) { SetSourceDBSnapshotIdentifier(value); return *this;}
@@ -118,15 +123,16 @@ namespace Model
     /**
      * <p>The identifier for the source DB snapshot.</p> <p>If you are copying from a
      * shared manual DB snapshot, this must be the ARN of the shared DB snapshot.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must specify a valid system snapshot in the
-     * "available" state.</p> </li> <li> <p>If the source snapshot is in the same
-     * region as the copy, specify a valid DB snapshot identifier.</p> </li> <li> <p>If
-     * the source snapshot is in a different region than the copy, specify a valid DB
-     * snapshot ARN. For more information, go to <a
+     * <p>You cannot copy an encrypted, shared DB snapshot from one AWS region to
+     * another.</p> <p>Constraints:</p> <ul> <li> <p>Must specify a valid system
+     * snapshot in the "available" state.</p> </li> <li> <p>If the source snapshot is
+     * in the same region as the copy, specify a valid DB snapshot identifier.</p>
+     * </li> <li> <p>If the source snapshot is in a different region than the copy,
+     * specify a valid DB snapshot ARN. For more information, go to <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html">
      * Copying a DB Snapshot</a>.</p> </li> </ul> <p>Example:
      * <code>rds:mydb-2012-04-02-00-01</code> </p> <p>Example:
-     * <code>arn:aws:rds:rr-regn-1:123456789012:snapshot:mysql-instance1-snapshot-20130805</code>
+     * <code>arn:aws:rds:us-west-2:123456789012:snapshot:mysql-instance1-snapshot-20130805</code>
      * </p>
      */
     inline CopyDBSnapshotRequest& WithSourceDBSnapshotIdentifier(Aws::String&& value) { SetSourceDBSnapshotIdentifier(value); return *this;}
@@ -134,15 +140,16 @@ namespace Model
     /**
      * <p>The identifier for the source DB snapshot.</p> <p>If you are copying from a
      * shared manual DB snapshot, this must be the ARN of the shared DB snapshot.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must specify a valid system snapshot in the
-     * "available" state.</p> </li> <li> <p>If the source snapshot is in the same
-     * region as the copy, specify a valid DB snapshot identifier.</p> </li> <li> <p>If
-     * the source snapshot is in a different region than the copy, specify a valid DB
-     * snapshot ARN. For more information, go to <a
+     * <p>You cannot copy an encrypted, shared DB snapshot from one AWS region to
+     * another.</p> <p>Constraints:</p> <ul> <li> <p>Must specify a valid system
+     * snapshot in the "available" state.</p> </li> <li> <p>If the source snapshot is
+     * in the same region as the copy, specify a valid DB snapshot identifier.</p>
+     * </li> <li> <p>If the source snapshot is in a different region than the copy,
+     * specify a valid DB snapshot ARN. For more information, go to <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html">
      * Copying a DB Snapshot</a>.</p> </li> </ul> <p>Example:
      * <code>rds:mydb-2012-04-02-00-01</code> </p> <p>Example:
-     * <code>arn:aws:rds:rr-regn-1:123456789012:snapshot:mysql-instance1-snapshot-20130805</code>
+     * <code>arn:aws:rds:us-west-2:123456789012:snapshot:mysql-instance1-snapshot-20130805</code>
      * </p>
      */
     inline CopyDBSnapshotRequest& WithSourceDBSnapshotIdentifier(const char* value) { SetSourceDBSnapshotIdentifier(value); return *this;}
@@ -211,107 +218,107 @@ namespace Model
     inline CopyDBSnapshotRequest& WithTargetDBSnapshotIdentifier(const char* value) { SetTargetDBSnapshotIdentifier(value); return *this;}
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) key identifier for an encrypted DB
-     * snapshot. The KMS key identifier is the Amazon Resource Name (ARN) or the KMS
-     * key alias for the KMS encryption key.</p> <p>If you copy an unencrypted DB
-     * snapshot and specify a value for the <code>KmsKeyId</code> parameter, Amazon RDS
-     * encrypts the target DB snapshot using the specified KMS encryption key.</p>
-     * <p>If you copy an encrypted DB snapshot from your AWS account, you can specify a
-     * value for <code>KmsKeyId</code> to encrypt the copy with a new KMS encryption
-     * key. If you don't specify a value for <code>KmsKeyId</code> then the copy of the
-     * DB snapshot is encrypted with the same KMS key as the source DB snapshot. </p>
+     * <p>The AWS KMS key ID for an encrypted DB snapshot. The KMS key ID is the Amazon
+     * Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS
+     * encryption key. </p> <p>If you copy an unencrypted DB snapshot and specify a
+     * value for the <code>KmsKeyId</code> parameter, Amazon RDS encrypts the target DB
+     * snapshot using the specified KMS encryption key. </p> <p>If you copy an
+     * encrypted DB snapshot from your AWS account, you can specify a value for
+     * <code>KmsKeyId</code> to encrypt the copy with a new KMS encryption key. If you
+     * don't specify a value for <code>KmsKeyId</code>, then the copy of the DB
+     * snapshot is encrypted with the same KMS key as the source DB snapshot. </p>
      * <p>If you copy an encrypted DB snapshot that is shared from another AWS account,
-     * then you must specify a value for <code>KmsKeyId</code>.</p>
+     * then you must specify a value for <code>KmsKeyId</code>. </p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) key identifier for an encrypted DB
-     * snapshot. The KMS key identifier is the Amazon Resource Name (ARN) or the KMS
-     * key alias for the KMS encryption key.</p> <p>If you copy an unencrypted DB
-     * snapshot and specify a value for the <code>KmsKeyId</code> parameter, Amazon RDS
-     * encrypts the target DB snapshot using the specified KMS encryption key.</p>
-     * <p>If you copy an encrypted DB snapshot from your AWS account, you can specify a
-     * value for <code>KmsKeyId</code> to encrypt the copy with a new KMS encryption
-     * key. If you don't specify a value for <code>KmsKeyId</code> then the copy of the
-     * DB snapshot is encrypted with the same KMS key as the source DB snapshot. </p>
+     * <p>The AWS KMS key ID for an encrypted DB snapshot. The KMS key ID is the Amazon
+     * Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS
+     * encryption key. </p> <p>If you copy an unencrypted DB snapshot and specify a
+     * value for the <code>KmsKeyId</code> parameter, Amazon RDS encrypts the target DB
+     * snapshot using the specified KMS encryption key. </p> <p>If you copy an
+     * encrypted DB snapshot from your AWS account, you can specify a value for
+     * <code>KmsKeyId</code> to encrypt the copy with a new KMS encryption key. If you
+     * don't specify a value for <code>KmsKeyId</code>, then the copy of the DB
+     * snapshot is encrypted with the same KMS key as the source DB snapshot. </p>
      * <p>If you copy an encrypted DB snapshot that is shared from another AWS account,
-     * then you must specify a value for <code>KmsKeyId</code>.</p>
+     * then you must specify a value for <code>KmsKeyId</code>. </p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) key identifier for an encrypted DB
-     * snapshot. The KMS key identifier is the Amazon Resource Name (ARN) or the KMS
-     * key alias for the KMS encryption key.</p> <p>If you copy an unencrypted DB
-     * snapshot and specify a value for the <code>KmsKeyId</code> parameter, Amazon RDS
-     * encrypts the target DB snapshot using the specified KMS encryption key.</p>
-     * <p>If you copy an encrypted DB snapshot from your AWS account, you can specify a
-     * value for <code>KmsKeyId</code> to encrypt the copy with a new KMS encryption
-     * key. If you don't specify a value for <code>KmsKeyId</code> then the copy of the
-     * DB snapshot is encrypted with the same KMS key as the source DB snapshot. </p>
+     * <p>The AWS KMS key ID for an encrypted DB snapshot. The KMS key ID is the Amazon
+     * Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS
+     * encryption key. </p> <p>If you copy an unencrypted DB snapshot and specify a
+     * value for the <code>KmsKeyId</code> parameter, Amazon RDS encrypts the target DB
+     * snapshot using the specified KMS encryption key. </p> <p>If you copy an
+     * encrypted DB snapshot from your AWS account, you can specify a value for
+     * <code>KmsKeyId</code> to encrypt the copy with a new KMS encryption key. If you
+     * don't specify a value for <code>KmsKeyId</code>, then the copy of the DB
+     * snapshot is encrypted with the same KMS key as the source DB snapshot. </p>
      * <p>If you copy an encrypted DB snapshot that is shared from another AWS account,
-     * then you must specify a value for <code>KmsKeyId</code>.</p>
+     * then you must specify a value for <code>KmsKeyId</code>. </p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) key identifier for an encrypted DB
-     * snapshot. The KMS key identifier is the Amazon Resource Name (ARN) or the KMS
-     * key alias for the KMS encryption key.</p> <p>If you copy an unencrypted DB
-     * snapshot and specify a value for the <code>KmsKeyId</code> parameter, Amazon RDS
-     * encrypts the target DB snapshot using the specified KMS encryption key.</p>
-     * <p>If you copy an encrypted DB snapshot from your AWS account, you can specify a
-     * value for <code>KmsKeyId</code> to encrypt the copy with a new KMS encryption
-     * key. If you don't specify a value for <code>KmsKeyId</code> then the copy of the
-     * DB snapshot is encrypted with the same KMS key as the source DB snapshot. </p>
+     * <p>The AWS KMS key ID for an encrypted DB snapshot. The KMS key ID is the Amazon
+     * Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS
+     * encryption key. </p> <p>If you copy an unencrypted DB snapshot and specify a
+     * value for the <code>KmsKeyId</code> parameter, Amazon RDS encrypts the target DB
+     * snapshot using the specified KMS encryption key. </p> <p>If you copy an
+     * encrypted DB snapshot from your AWS account, you can specify a value for
+     * <code>KmsKeyId</code> to encrypt the copy with a new KMS encryption key. If you
+     * don't specify a value for <code>KmsKeyId</code>, then the copy of the DB
+     * snapshot is encrypted with the same KMS key as the source DB snapshot. </p>
      * <p>If you copy an encrypted DB snapshot that is shared from another AWS account,
-     * then you must specify a value for <code>KmsKeyId</code>.</p>
+     * then you must specify a value for <code>KmsKeyId</code>. </p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) key identifier for an encrypted DB
-     * snapshot. The KMS key identifier is the Amazon Resource Name (ARN) or the KMS
-     * key alias for the KMS encryption key.</p> <p>If you copy an unencrypted DB
-     * snapshot and specify a value for the <code>KmsKeyId</code> parameter, Amazon RDS
-     * encrypts the target DB snapshot using the specified KMS encryption key.</p>
-     * <p>If you copy an encrypted DB snapshot from your AWS account, you can specify a
-     * value for <code>KmsKeyId</code> to encrypt the copy with a new KMS encryption
-     * key. If you don't specify a value for <code>KmsKeyId</code> then the copy of the
-     * DB snapshot is encrypted with the same KMS key as the source DB snapshot. </p>
+     * <p>The AWS KMS key ID for an encrypted DB snapshot. The KMS key ID is the Amazon
+     * Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS
+     * encryption key. </p> <p>If you copy an unencrypted DB snapshot and specify a
+     * value for the <code>KmsKeyId</code> parameter, Amazon RDS encrypts the target DB
+     * snapshot using the specified KMS encryption key. </p> <p>If you copy an
+     * encrypted DB snapshot from your AWS account, you can specify a value for
+     * <code>KmsKeyId</code> to encrypt the copy with a new KMS encryption key. If you
+     * don't specify a value for <code>KmsKeyId</code>, then the copy of the DB
+     * snapshot is encrypted with the same KMS key as the source DB snapshot. </p>
      * <p>If you copy an encrypted DB snapshot that is shared from another AWS account,
-     * then you must specify a value for <code>KmsKeyId</code>.</p>
+     * then you must specify a value for <code>KmsKeyId</code>. </p>
      */
     inline CopyDBSnapshotRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) key identifier for an encrypted DB
-     * snapshot. The KMS key identifier is the Amazon Resource Name (ARN) or the KMS
-     * key alias for the KMS encryption key.</p> <p>If you copy an unencrypted DB
-     * snapshot and specify a value for the <code>KmsKeyId</code> parameter, Amazon RDS
-     * encrypts the target DB snapshot using the specified KMS encryption key.</p>
-     * <p>If you copy an encrypted DB snapshot from your AWS account, you can specify a
-     * value for <code>KmsKeyId</code> to encrypt the copy with a new KMS encryption
-     * key. If you don't specify a value for <code>KmsKeyId</code> then the copy of the
-     * DB snapshot is encrypted with the same KMS key as the source DB snapshot. </p>
+     * <p>The AWS KMS key ID for an encrypted DB snapshot. The KMS key ID is the Amazon
+     * Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS
+     * encryption key. </p> <p>If you copy an unencrypted DB snapshot and specify a
+     * value for the <code>KmsKeyId</code> parameter, Amazon RDS encrypts the target DB
+     * snapshot using the specified KMS encryption key. </p> <p>If you copy an
+     * encrypted DB snapshot from your AWS account, you can specify a value for
+     * <code>KmsKeyId</code> to encrypt the copy with a new KMS encryption key. If you
+     * don't specify a value for <code>KmsKeyId</code>, then the copy of the DB
+     * snapshot is encrypted with the same KMS key as the source DB snapshot. </p>
      * <p>If you copy an encrypted DB snapshot that is shared from another AWS account,
-     * then you must specify a value for <code>KmsKeyId</code>.</p>
+     * then you must specify a value for <code>KmsKeyId</code>. </p>
      */
     inline CopyDBSnapshotRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) key identifier for an encrypted DB
-     * snapshot. The KMS key identifier is the Amazon Resource Name (ARN) or the KMS
-     * key alias for the KMS encryption key.</p> <p>If you copy an unencrypted DB
-     * snapshot and specify a value for the <code>KmsKeyId</code> parameter, Amazon RDS
-     * encrypts the target DB snapshot using the specified KMS encryption key.</p>
-     * <p>If you copy an encrypted DB snapshot from your AWS account, you can specify a
-     * value for <code>KmsKeyId</code> to encrypt the copy with a new KMS encryption
-     * key. If you don't specify a value for <code>KmsKeyId</code> then the copy of the
-     * DB snapshot is encrypted with the same KMS key as the source DB snapshot. </p>
+     * <p>The AWS KMS key ID for an encrypted DB snapshot. The KMS key ID is the Amazon
+     * Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS
+     * encryption key. </p> <p>If you copy an unencrypted DB snapshot and specify a
+     * value for the <code>KmsKeyId</code> parameter, Amazon RDS encrypts the target DB
+     * snapshot using the specified KMS encryption key. </p> <p>If you copy an
+     * encrypted DB snapshot from your AWS account, you can specify a value for
+     * <code>KmsKeyId</code> to encrypt the copy with a new KMS encryption key. If you
+     * don't specify a value for <code>KmsKeyId</code>, then the copy of the DB
+     * snapshot is encrypted with the same KMS key as the source DB snapshot. </p>
      * <p>If you copy an encrypted DB snapshot that is shared from another AWS account,
-     * then you must specify a value for <code>KmsKeyId</code>.</p>
+     * then you must specify a value for <code>KmsKeyId</code>. </p>
      */
     inline CopyDBSnapshotRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 

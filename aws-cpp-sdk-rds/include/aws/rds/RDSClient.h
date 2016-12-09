@@ -789,17 +789,19 @@ namespace Model
 
         /**
          * <p>Copies the specified DB snapshot. The source DB snapshot must be in the
-         * "available" state.</p> <p>If you are copying from a shared manual DB snapshot,
-         * the <code>SourceDBSnapshotIdentifier</code> must be the ARN of the shared DB
-         * snapshot.</p>
+         * "available" state.</p> <p>To copy a DB snapshot from a shared manual DB
+         * snapshot, <code>SourceDBSnapshotIdentifier</code> must be the Amazon Resource
+         * Name (ARN) of the shared DB snapshot.</p> <p>You can not copy an encrypted DB
+         * snapshot from another AWS region.</p>
          */
         virtual Model::CopyDBSnapshotOutcome CopyDBSnapshot(const Model::CopyDBSnapshotRequest& request) const;
 
         /**
          * <p>Copies the specified DB snapshot. The source DB snapshot must be in the
-         * "available" state.</p> <p>If you are copying from a shared manual DB snapshot,
-         * the <code>SourceDBSnapshotIdentifier</code> must be the ARN of the shared DB
-         * snapshot.</p>
+         * "available" state.</p> <p>To copy a DB snapshot from a shared manual DB
+         * snapshot, <code>SourceDBSnapshotIdentifier</code> must be the Amazon Resource
+         * Name (ARN) of the shared DB snapshot.</p> <p>You can not copy an encrypted DB
+         * snapshot from another AWS region.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -807,9 +809,10 @@ namespace Model
 
         /**
          * <p>Copies the specified DB snapshot. The source DB snapshot must be in the
-         * "available" state.</p> <p>If you are copying from a shared manual DB snapshot,
-         * the <code>SourceDBSnapshotIdentifier</code> must be the ARN of the shared DB
-         * snapshot.</p>
+         * "available" state.</p> <p>To copy a DB snapshot from a shared manual DB
+         * snapshot, <code>SourceDBSnapshotIdentifier</code> must be the Amazon Resource
+         * Name (ARN) of the shared DB snapshot.</p> <p>You can not copy an encrypted DB
+         * snapshot from another AWS region.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2317,14 +2320,14 @@ namespace Model
 
         /**
          * <p>Forces a failover for a DB cluster.</p> <p>A failover for a DB cluster
-         * promotes one of the read-only instances in the DB cluster to the master DB
-         * instance (the cluster writer) and deletes the current primary instance.</p>
-         * <p>Amazon Aurora will automatically fail over to a read-only instance, if one
-         * exists, when the primary instance fails. You can force a failover when you want
-         * to simulate a failure of a DB instance for testing. Because each instance in a
-         * DB cluster has its own endpoint address, you will need to clean up and
-         * re-establish any existing connections that use those endpoint addresses when the
-         * failover is complete.</p> <p>For more information on Amazon Aurora, see <a
+         * promotes one of the Aurora Replicas (read-only instances) in the DB cluster to
+         * be the primary instance (the cluster writer).</p> <p>Amazon Aurora will
+         * automatically fail over to an Aurora Replica, if one exists, when the primary
+         * instance fails. You can force a failover when you want to simulate a failure of
+         * a primary instance for testing. Because each instance in a DB cluster has its
+         * own endpoint address, you will need to clean up and re-establish any existing
+         * connections that use those endpoint addresses when the failover is complete.</p>
+         * <p>For more information on Amazon Aurora, see <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
          * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
          */
@@ -2332,14 +2335,14 @@ namespace Model
 
         /**
          * <p>Forces a failover for a DB cluster.</p> <p>A failover for a DB cluster
-         * promotes one of the read-only instances in the DB cluster to the master DB
-         * instance (the cluster writer) and deletes the current primary instance.</p>
-         * <p>Amazon Aurora will automatically fail over to a read-only instance, if one
-         * exists, when the primary instance fails. You can force a failover when you want
-         * to simulate a failure of a DB instance for testing. Because each instance in a
-         * DB cluster has its own endpoint address, you will need to clean up and
-         * re-establish any existing connections that use those endpoint addresses when the
-         * failover is complete.</p> <p>For more information on Amazon Aurora, see <a
+         * promotes one of the Aurora Replicas (read-only instances) in the DB cluster to
+         * be the primary instance (the cluster writer).</p> <p>Amazon Aurora will
+         * automatically fail over to an Aurora Replica, if one exists, when the primary
+         * instance fails. You can force a failover when you want to simulate a failure of
+         * a primary instance for testing. Because each instance in a DB cluster has its
+         * own endpoint address, you will need to clean up and re-establish any existing
+         * connections that use those endpoint addresses when the failover is complete.</p>
+         * <p>For more information on Amazon Aurora, see <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
          * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
          *
@@ -2349,14 +2352,14 @@ namespace Model
 
         /**
          * <p>Forces a failover for a DB cluster.</p> <p>A failover for a DB cluster
-         * promotes one of the read-only instances in the DB cluster to the master DB
-         * instance (the cluster writer) and deletes the current primary instance.</p>
-         * <p>Amazon Aurora will automatically fail over to a read-only instance, if one
-         * exists, when the primary instance fails. You can force a failover when you want
-         * to simulate a failure of a DB instance for testing. Because each instance in a
-         * DB cluster has its own endpoint address, you will need to clean up and
-         * re-establish any existing connections that use those endpoint addresses when the
-         * failover is complete.</p> <p>For more information on Amazon Aurora, see <a
+         * promotes one of the Aurora Replicas (read-only instances) in the DB cluster to
+         * be the primary instance (the cluster writer).</p> <p>Amazon Aurora will
+         * automatically fail over to an Aurora Replica, if one exists, when the primary
+         * instance fails. You can force a failover when you want to simulate a failure of
+         * a primary instance for testing. Because each instance in a DB cluster has its
+         * own endpoint address, you will need to clean up and re-establish any existing
+         * connections that use those endpoint addresses when the failover is complete.</p>
+         * <p>For more information on Amazon Aurora, see <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
          * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
          *
