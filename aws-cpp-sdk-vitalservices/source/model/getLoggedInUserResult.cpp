@@ -24,11 +24,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-getLoggedInUserResult::getLoggedInUserResult()
+getLoggedInUserResult::getLoggedInUserResult() : 
+    m_userExists(false)
 {
 }
 
-getLoggedInUserResult::getLoggedInUserResult(const AmazonWebServiceResult<JsonValue>& result)
+getLoggedInUserResult::getLoggedInUserResult(const AmazonWebServiceResult<JsonValue>& result) : 
+    m_userExists(false)
 {
   *this = result;
 }
@@ -36,45 +38,15 @@ getLoggedInUserResult::getLoggedInUserResult(const AmazonWebServiceResult<JsonVa
 getLoggedInUserResult& getLoggedInUserResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
-  if(jsonValue.ValueExists("firstName"))
+  if(jsonValue.ValueExists("user"))
   {
-    m_firstName = jsonValue.GetString("firstName");
+    m_user = jsonValue.GetObject("user");
 
   }
 
-  if(jsonValue.ValueExists("doctorId"))
+  if(jsonValue.ValueExists("userExists"))
   {
-    m_doctorId = jsonValue.GetString("doctorId");
-
-  }
-
-  if(jsonValue.ValueExists("lastName"))
-  {
-    m_lastName = jsonValue.GetString("lastName");
-
-  }
-
-  if(jsonValue.ValueExists("profilePhotoUrl"))
-  {
-    m_profilePhotoUrl = jsonValue.GetString("profilePhotoUrl");
-
-  }
-
-  if(jsonValue.ValueExists("email"))
-  {
-    m_email = jsonValue.GetString("email");
-
-  }
-
-  if(jsonValue.ValueExists("id"))
-  {
-    m_id = jsonValue.GetString("id");
-
-  }
-
-  if(jsonValue.ValueExists("mobileNumber"))
-  {
-    m_mobileNumber = jsonValue.GetString("mobileNumber");
+    m_userExists = jsonValue.GetBool("userExists");
 
   }
 

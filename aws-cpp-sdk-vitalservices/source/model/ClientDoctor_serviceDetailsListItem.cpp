@@ -29,17 +29,17 @@ namespace Model
 
 ClientDoctor_serviceDetailsListItem::ClientDoctor_serviceDetailsListItem() : 
     m_doctorIdHasBeenSet(false),
-    m_durationSecondsHasBeenSet(false),
+    m_serviceIdHasBeenSet(false),
     m_priceDollarsHasBeenSet(false),
-    m_serviceIdHasBeenSet(false)
+    m_durationSecondsHasBeenSet(false)
 {
 }
 
 ClientDoctor_serviceDetailsListItem::ClientDoctor_serviceDetailsListItem(const JsonValue& jsonValue) : 
     m_doctorIdHasBeenSet(false),
-    m_durationSecondsHasBeenSet(false),
+    m_serviceIdHasBeenSet(false),
     m_priceDollarsHasBeenSet(false),
-    m_serviceIdHasBeenSet(false)
+    m_durationSecondsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -53,11 +53,11 @@ ClientDoctor_serviceDetailsListItem& ClientDoctor_serviceDetailsListItem::operat
     m_doctorIdHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("durationSeconds"))
+  if(jsonValue.ValueExists("serviceId"))
   {
-    m_durationSeconds = jsonValue.GetString("durationSeconds");
+    m_serviceId = jsonValue.GetString("serviceId");
 
-    m_durationSecondsHasBeenSet = true;
+    m_serviceIdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("priceDollars"))
@@ -67,11 +67,11 @@ ClientDoctor_serviceDetailsListItem& ClientDoctor_serviceDetailsListItem::operat
     m_priceDollarsHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("serviceId"))
+  if(jsonValue.ValueExists("durationSeconds"))
   {
-    m_serviceId = jsonValue.GetString("serviceId");
+    m_durationSeconds = jsonValue.GetString("durationSeconds");
 
-    m_serviceIdHasBeenSet = true;
+    m_durationSecondsHasBeenSet = true;
   }
 
   return *this;
@@ -87,9 +87,9 @@ JsonValue ClientDoctor_serviceDetailsListItem::Jsonize() const
 
   }
 
-  if(m_durationSecondsHasBeenSet)
+  if(m_serviceIdHasBeenSet)
   {
-   payload.WithString("durationSeconds", m_durationSeconds);
+   payload.WithString("serviceId", m_serviceId);
 
   }
 
@@ -99,9 +99,9 @@ JsonValue ClientDoctor_serviceDetailsListItem::Jsonize() const
 
   }
 
-  if(m_serviceIdHasBeenSet)
+  if(m_durationSecondsHasBeenSet)
   {
-   payload.WithString("serviceId", m_serviceId);
+   payload.WithString("durationSeconds", m_durationSeconds);
 
   }
 
