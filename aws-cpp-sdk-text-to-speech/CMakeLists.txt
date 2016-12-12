@@ -3,15 +3,23 @@ add_project(aws-cpp-sdk-text-to-speech
     aws-cpp-sdk-polly
     aws-cpp-sdk-core)
 
+include(CheckIncludeFiles)
+
 file( GLOB TEXT_TO_SPEECH_HEADERS "include/aws/text-to-speech/*.h" )
 
 set(PLATFORM_LIBS "")
 
+check_include_files("pulse/simple.h" HAVE_PULSE)
+
 if(PLATFORM_WINDOWS)
     file( GLOB TEXT_TO_SPEECH_PLATFORM_HEADERS "include/aws/text-to-speech/windows/*.h" )
-elseif(PLATFORM_LINUX)
+endif()
+
+if(HAVE_PULSE)
     file( GLOB TEXT_TO_SPEECH_PLATFORM_HEADERS "include/aws/text-to-speech/linux/*.h" )
-elseif(PLATFORM_APPLE)
+endif()
+
+if(PLATFORM_APPLE)
     file( GLOB TEXT_TO_SPEECH_PLATFORM_HEADERS "include/aws/text-to-speech/apple/*.h" )
 endif()
 
@@ -19,9 +27,13 @@ file( GLOB TEXT_TO_SPEECH_SOURCE "source/text-to-speech/*.cpp" )
 
 if(PLATFORM_WINDOWS)
     file( GLOB TEXT_TO_SPEECH_PLATFORM_SOURCE "source/text-to-speech/windows/*.cpp" )
-elseif(PLATFORM_LINUX)
+endif()
+
+if(HAVE_PULSE)
     file( GLOB TEXT_TO_SPEECH_PLATFORM_SOURCE "source/text-to-speech/linux/*.cpp" )
-elseif(PLATFORM_APPLE)
+endif()
+
+if(PLATFORM_APPLE)
     file( GLOB TEXT_TO_SPEECH_PLATFORM_SOURCE "source/text-to-speech/apple/*.cpp" )
 endif()
 
@@ -60,10 +72,20 @@ endif()
 if(PLATFORM_WINDOWS)
     add_definitions("-DWAVE_OUT")
     set(PLATFORM_LIBS ${PLATFORM_LIBS} Winmm)
-elseif(PLATFORM_LINUX)
+endif()
+
+if(HAVE_PULSE)
+    message(STATUS "Pulse audio header files have been detected, included pulse audio as a possible sound driver implementation.")
     add_definitions("-DPULSE")
     set(PLATFORM_LIBS ${PLATFORM_LIBS} pulse-simple)
-elseif(PLATFORM_APPLE)
+elseif(PLATFORM_LINUX)
+    message(WARNING "We've detected that you are building on linux, but the header files for pulseaudio are not available.\
+                    If you are providing your own audio implementation or you will not be using the text-to-speech library, this is fine.\
+                    However, if you are not providing your own implemenation and you want to use text-to-speech, you need to install the dev files for pulseudio.\
+                    e.g. apt-get install libpulse-dev or yum install pulseaudio-libs-devel. Currently, no audio implementation will be built into this library.")
+endif()
+
+if(PLATFORM_APPLE)
     find_library(COREAUDIO_LIBRARY CoreAudio)
     find_path(COREAUDIO_INCLUDE_DIR CoreAudioTypes.h)
 

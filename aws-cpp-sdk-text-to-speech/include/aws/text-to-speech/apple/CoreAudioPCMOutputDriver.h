@@ -28,6 +28,9 @@ namespace Aws
 {
     namespace TextToSpeech
     {
+        /**
+         * Apple implementation for PCM output.
+         */
         class CoreAudioPCMOutputDriver : public PCMOutputDriver
         {
         public:

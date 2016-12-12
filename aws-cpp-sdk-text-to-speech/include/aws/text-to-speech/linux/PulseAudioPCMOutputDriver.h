@@ -22,6 +22,9 @@ namespace Aws
 {
     namespace TextToSpeech
     {
+        /**
+         * PulseAudio implementation for PCM output.
+         */
         class PulseAudioPCMOutputDriver : public PCMOutputDriver
         {
         public:

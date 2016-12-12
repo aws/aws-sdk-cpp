@@ -26,6 +26,9 @@ namespace Aws
 {
     namespace TextToSpeech
     {
+        /**
+         * Win32 implementation for PCM output.
+         */
         class AWS_TEXT_TO_SPEECH_API WaveOutPCMOutputDriver : public PCMOutputDriver
         {
         public:
