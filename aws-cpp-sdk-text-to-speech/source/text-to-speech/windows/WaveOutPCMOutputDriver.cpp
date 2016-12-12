@@ -120,14 +120,14 @@ namespace Aws
                     AWS_LOGSTREAM_INFO(CLASS_TAG, "No device configured, letting windows figure out the best default.");
 
                     auto res = waveOutOpen(&m_waveOut, WAVE_MAPPER, &format, (DWORD_PTR)&waveOutProc, NULL, 
-                        CALLBACK_FUNCTION | WAVE_ALLOWSYNC | WAVE_MAPPED_DEFAULT_COMMUNICATION_DEVICE | WAVE_ALLOWSYNC);
+                        CALLBACK_FUNCTION | WAVE_ALLOWSYNC | WAVE_MAPPED_DEFAULT_COMMUNICATION_DEVICE);
                     m_isInit = !res;
                 }
                 else
                 {
                     unsigned id = static_cast<unsigned>(StringUtils::ConvertToInt32(m_activeDevice.deviceId.c_str()));
                     auto res = waveOutOpen(&m_waveOut, id, &format, (DWORD_PTR)&waveOutProc, NULL,
-                        CALLBACK_FUNCTION | WAVE_ALLOWSYNC | WAVE_ALLOWSYNC);
+                        CALLBACK_FUNCTION | WAVE_ALLOWSYNC);
                     m_isInit = !res;
                 }
 
