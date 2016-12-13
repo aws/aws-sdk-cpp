@@ -17,6 +17,8 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
+#include <cassert>
+
 namespace Aws
 {
 namespace FileSystem
@@ -42,6 +44,12 @@ namespace FileSystem
     AWS_CORE_API bool CreateDirectoryIfNotExists(const char* path);
 
     /**
+    * Creates directory if it doesn't exist. Returns true if the directory was created
+    * or already exists. False for failure.
+    */
+    AWS_CORE_API bool RemoveDirectoryIfExists(const char* path);
+
+    /**
     * Deletes file if it exists. Returns true if file doesn't exist or on success.
     */
     AWS_CORE_API bool RemoveFileIfExists(const char* fileName);
@@ -60,7 +68,7 @@ namespace FileSystem
      * Opens a directory for traversal.
      * User is responsible for the returned allocated memory. Call Aws::Delete();
      */
-    AWS_CORE_API Directory* OpenDirectory(const DirectoryEntry& directoryEntry);
+    AWS_CORE_API Directory* OpenDirectory(const Aws::String& path);
 
     enum class FileType
     {
@@ -84,7 +92,17 @@ namespace FileSystem
     class AWS_CORE_API Directory
     {
     public:
-        Directory(const Aws::String& path) { m_directoryEntry.path = path; }
+        Directory(const Aws::String& path) 
+        { 
+            if(path[path.length() - 1] == PATH_DELIM)
+            {
+                m_directoryEntry.path = path.substr(0, path.length() - 1); 
+            }
+            else
+            {
+                m_directoryEntry.path = path;
+            }
+        }
 
         virtual ~Directory()
         {
@@ -105,9 +123,10 @@ namespace FileSystem
 
         Directory& Descend(const DirectoryEntry& directoryEntry)
         {
-            Directory* openDir = OpenDirectory(directoryEntry);
+            assert(directoryEntry.fileType != FileType::File);
+            Directory* openDir = OpenDirectory(directoryEntry.path);
             m_openDirectories.push_back(openDir);
-            return *this;
+            return *openDir;
         }
 
     protected:

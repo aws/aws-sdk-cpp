@@ -30,6 +30,89 @@ TEST(FileTest, HomeDirectory)
     ASSERT_TRUE(homeDirectory.size() > 0);
 }
 
+TEST(FileTest, TestInvalidDirectoryPath)
+{
+    Aws::FileSystem::Directory* badDir = Aws::FileSystem::OpenDirectory("boogieMan");
+    ASSERT_FALSE(badDir->operator bool());
+    Aws::Delete(badDir);
+}
+
+TEST(FileTest, TestDirectoryTraversal)
+{
+    auto homeDirectory = Aws::FileSystem::GetHomeDirectory();
+    ASSERT_FALSE(homeDirectory.empty());
+        
+    auto dir1 = homeDirectory + Aws::FileSystem::PATH_DELIM + "dir1";    
+    auto dir2 = dir1 + Aws::FileSystem::PATH_DELIM + "dir2";
+
+    auto file1 = dir1 + Aws::FileSystem::PATH_DELIM + "file1";
+    auto file2 = dir2 + Aws::FileSystem::PATH_DELIM + "file2";
+
+    bool dir1Created = Aws::FileSystem::CreateDirectoryIfNotExists(dir1.c_str());
+    ASSERT_TRUE(dir1Created);
+
+    bool dir2Created = Aws::FileSystem::CreateDirectoryIfNotExists(dir2.c_str());
+    ASSERT_TRUE(dir2Created);
+
+    size_t file1Size;
+    {
+        Aws::OFStream file1Stream(file1);
+        ASSERT_TRUE(file1Stream.good());
+        file1Stream << "Test Data1" << std::endl;
+        file1Stream.seekp(0, std::ios_base::end);
+        file1Size = file1Stream.tellp();
+    }
+
+    size_t file2Size;
+
+    {
+        Aws::OFStream file2Stream(file2);
+        ASSERT_TRUE(file2Stream.good());
+        file2Stream << "Test Data2" << std::endl;
+        file2Stream.seekp(0, std::ios_base::end);
+        file2Size = file2Stream.tellp();
+    }
+
+    //let one have the delimiter after it just to make sure both paths get handled.
+    auto dir1WithExtraDelimiter = dir1 + Aws::FileSystem::PATH_DELIM;
+    Aws::FileSystem::Directory* dir = Aws::FileSystem::OpenDirectory(dir1WithExtraDelimiter);
+
+    ASSERT_STREQ(dir1.c_str(), dir->GetPath().c_str());
+    ASSERT_TRUE(dir->operator bool());
+
+    auto entry = dir->Next();
+
+    ASSERT_EQ(Aws::FileSystem::FileType::Directory, entry.fileType);
+    ASSERT_STREQ(dir2.c_str(), entry.path.c_str());
+
+    auto& nextDir = dir->Descend(entry);
+    ASSERT_STREQ(dir2.c_str(), nextDir.GetPath().c_str());
+    
+    entry = nextDir.Next();
+    ASSERT_EQ(Aws::FileSystem::FileType::File, entry.fileType);
+    ASSERT_STREQ(file2.c_str(), entry.path.c_str());
+    ASSERT_EQ(file2Size, entry.fileSize);
+    ASSERT_TRUE(entry.operator bool());
+
+    entry = nextDir.Next();
+    ASSERT_FALSE(entry.operator bool());
+
+    entry = dir->Next();
+    ASSERT_EQ(Aws::FileSystem::FileType::File, entry.fileType);
+    ASSERT_STREQ(file1.c_str(), entry.path.c_str());
+    ASSERT_EQ(file1Size, entry.fileSize);
+    ASSERT_TRUE(entry.operator bool());
+
+    entry = dir->Next();
+    ASSERT_FALSE(entry.operator bool());
+
+    Aws::Delete(dir);
+    Aws::FileSystem::RemoveFileIfExists(file1.c_str());
+    Aws::FileSystem::RemoveFileIfExists(file2.c_str());
+    Aws::FileSystem::RemoveDirectoryIfExists(dir2.c_str());
+    Aws::FileSystem::RemoveDirectoryIfExists(dir1.c_str());
+}
+
 TEST(FileTest, TempFile)
 {
     Aws::String filePath; 
