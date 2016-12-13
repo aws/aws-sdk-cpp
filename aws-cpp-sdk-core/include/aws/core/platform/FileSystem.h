@@ -14,13 +14,15 @@
   */
 #pragma once
 #include <aws/core/Core_EXPORTS.h>
-
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 namespace Aws
 {
 namespace FileSystem
 {
+    struct DirectoryEntry;
+    class Directory;
 
     #ifdef _WIN32
         static const char PATH_DELIM = '\\';
@@ -53,6 +55,67 @@ namespace FileSystem
     * Computes a unique tmp file path
     */
     AWS_CORE_API Aws::String CreateTempFilePath();
+
+    /**
+     * Opens a directory for traversal.
+     * User is responsible for the returned allocated memory. Call Aws::Delete();
+     */
+    AWS_CORE_API Directory* OpenDirectory(const DirectoryEntry& directoryEntry);
+
+    enum class FileType
+    {
+        None,
+        File,
+        Symlink,
+        Directory
+    };
+
+    struct DirectoryEntry
+    {
+        DirectoryEntry() : fileType(FileType::None), fileSize(0) {}
+
+        operator bool() const { return !path.empty() && fileType != FileType::None; }
+
+        Aws::String path;
+        FileType fileType;
+        int64_t fileSize;
+    };
+
+    class AWS_CORE_API Directory
+    {
+    public:
+        Directory(const Aws::String& path) { m_directoryEntry.path = path; }
+
+        virtual ~Directory()
+        {
+            for (auto directory : m_openDirectories)
+            {
+                Aws::Delete(directory);
+            }
+
+            m_openDirectories.clear();
+        }
+
+        operator bool() const { return m_directoryEntry.operator bool(); }
+
+        const DirectoryEntry GetDirectoryEntry() const { return m_directoryEntry; }
+        const Aws::String GetPath() const { return m_directoryEntry.path; }
+
+        virtual DirectoryEntry Next() = 0;
+
+        Directory& Descend(const DirectoryEntry& directoryEntry)
+        {
+            Directory* openDir = OpenDirectory(directoryEntry);
+            m_openDirectories.push_back(openDir);
+            return *this;
+        }
+
+    protected:
+        DirectoryEntry m_directoryEntry;
+
+    private:
+        Aws::Vector<Directory*> m_openDirectories;
+    };
 
 } // namespace FileSystem
 } // namespace Aws

@@ -17,6 +17,7 @@
 #include <aws/core/platform/Environment.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/StringUtils.h>
+#include <cassert>
 
 #include <Userenv.h>
 
@@ -28,6 +29,65 @@ namespace FileSystem
 {
 
 static const char* FILE_SYSTEM_UTILS_LOG_TAG = "FileSystem";
+
+class User32Directory : public Directory
+{
+public:
+    User32Directory(const Aws::String& path) : Directory(path), m_find(INVALID_HANDLE_VALUE)
+    {
+        WIN32_FIND_DATAA ffd;
+        m_find = FindFirstFileA(m_directoryEntry.path.c_str(), &ffd);
+        if (m_find != INVALID_HANDLE_VALUE)
+        {
+            m_directoryEntry = ParseFileInfo(ffd);
+        }
+    }
+
+    ~User32Directory()
+    {
+        if (m_find != INVALID_HANDLE_VALUE)
+        {
+            FindClose(m_find);
+        }
+    }
+
+    DirectoryEntry Next() override
+    {
+        assert(m_find != INVALID_HANDLE_VALUE);
+        DirectoryEntry entry;
+        WIN32_FIND_DATAA ffd;
+        if (FindNextFileA(m_find, &ffd))
+        {
+            entry = ParseFileInfo(ffd);
+        }
+
+        return entry;
+    }
+
+private:
+    DirectoryEntry ParseFileInfo(WIN32_FIND_DATAA& ffd)
+    {
+        DirectoryEntry entry;
+        LARGE_INTEGER fileSize;
+        fileSize.HighPart = ffd.nFileSizeHigh;
+        fileSize.LowPart = ffd.nFileSizeLow;
+        entry.fileSize = static_cast<int64_t>(fileSize.QuadPart);
+
+        if (ffd.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY)
+        {
+            entry.fileType = FileType::Directory;
+        }
+        else
+        {
+            entry.fileType = FileType::File;
+        }
+
+        entry.path = ffd.cFileName;
+        return entry;
+    }
+
+    HANDLE m_find;
+};
 
 Aws::String GetHomeDirectory()
 {
@@ -144,6 +204,12 @@ Aws::String CreateTempFilePath()
 
 
     return s_tempName;
+}
+
+Directory* OpenDirectory(const DirectoryEntry& directoryEntry)
+{
+    assert(directoryEntry.fileType == FileType::Directory);
+    return Aws::New<User32Directory>(FILE_SYSTEM_UTILS_LOG_TAG, directoryEntry.path);
 }
 
 } // namespace FileSystem
