@@ -1,5 +1,5 @@
 /*
-  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+  * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
   *
   * Licensed under the Apache License, Version 2.0 (the "License").
   * You may not use this file except in compliance with the License.
@@ -16,8 +16,7 @@
 #include <aws/core/Core_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-
-#include <cassert>
+#include <functional>
 
 namespace Aws
 {
@@ -92,27 +91,8 @@ namespace FileSystem
     class AWS_CORE_API Directory
     {
     public:
-        Directory(const Aws::String& path) 
-        { 
-            if(path[path.length() - 1] == PATH_DELIM)
-            {
-                m_directoryEntry.path = path.substr(0, path.length() - 1); 
-            }
-            else
-            {
-                m_directoryEntry.path = path;
-            }
-        }
-
-        virtual ~Directory()
-        {
-            for (auto directory : m_openDirectories)
-            {
-                Aws::Delete(directory);
-            }
-
-            m_openDirectories.clear();
-        }
+        Directory(const Aws::String& path);
+        virtual ~Directory();
 
         operator bool() const { return m_directoryEntry.operator bool(); }
 
@@ -121,19 +101,31 @@ namespace FileSystem
 
         virtual DirectoryEntry Next() = 0;
 
-        Directory& Descend(const DirectoryEntry& directoryEntry)
-        {
-            assert(directoryEntry.fileType != FileType::File);
-            Directory* openDir = OpenDirectory(directoryEntry.path);
-            m_openDirectories.push_back(openDir);
-            return *openDir;
-        }
+        Directory& Descend(const DirectoryEntry& directoryEntry);
 
     protected:
         DirectoryEntry m_directoryEntry;
 
     private:
         Aws::Vector<Directory*> m_openDirectories;
+    };
+
+    class DirectoryTree;
+    typedef std::function<void(const DirectoryTree*, const DirectoryEntry&)> DirectoryEntryVisitor;
+
+    class DirectoryTree
+    {
+    public:
+        DirectoryTree(const Aws::String& path);
+        ~DirectoryTree();
+
+        operator bool() const;
+        void Traverse(const DirectoryEntryVisitor& visitor);
+
+    private:
+        void Traverse(Directory& dir, const DirectoryEntryVisitor& visitor);
+
+        Directory* m_dir;
     };
 
 } // namespace FileSystem
