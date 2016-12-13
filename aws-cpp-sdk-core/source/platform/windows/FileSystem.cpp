@@ -208,7 +208,7 @@ Aws::String CreateTempFilePath()
 
 Directory* OpenDirectory(const DirectoryEntry& directoryEntry)
 {
-    assert(directoryEntry.fileType == FileType::Directory);
+    assert(directoryEntry.fileType != FileType::File);
     return Aws::New<User32Directory>(FILE_SYSTEM_UTILS_LOG_TAG, directoryEntry.path);
 }
 

@@ -23,6 +23,9 @@
 #include <unistd.h>
 #include <pwd.h>
 #include <sys/stat.h>
+#include <dirent.h>
+
+#include <cassert>
 
 namespace Aws
 {
@@ -30,6 +33,78 @@ namespace FileSystem
 {
 
 static const char* FILE_SYSTEM_UTILS_LOG_TAG = "FileSystemUtils";
+
+    class PosixDirectory : public Directory
+    {
+    public:
+        PosixDirectory(const Aws::String& path) : Directory(path), m_dir(nullptr)
+        {
+            if((m_dir = opendir(path.c_str())))
+            {
+                dirent* entry;
+                if((entry = readdir(m_dir)))
+                {
+                    m_directoryEntry = ParseFileInfo(entry);
+                }
+            }
+        }
+
+        ~PosixDirectory()
+        {
+            if (m_dir)
+            {
+                closedir(m_dir);
+            }
+        }
+
+        DirectoryEntry Next() override
+        {
+            assert(m_dir);
+            DirectoryEntry entry;
+
+            dirent* dirEntry;
+            if ((dirEntry = readdir(m_dir)))
+            {
+                entry = ParseFileInfo(dirEntry);
+            }
+
+            return entry;
+        }
+
+    private:
+        DirectoryEntry ParseFileInfo(dirent* dirEnt)
+        {
+            DirectoryEntry entry;
+            entry.path = dirEnt->d_name;
+
+            if(dirEnt->d_type == DT_DIR)
+            {
+                entry.fileType = FileType::Directory;
+            }
+            else if(dirEnt->d_type == DT_LNK)
+            {
+                entry.fileType = FileType::Symlink;
+            }
+            else
+            {
+                entry.fileType = FileType::File;
+                FILE* fp = fopen(dirEnt->d_name, "r");
+                if(fp)
+                {
+                    auto pos = ftell(fp);
+                    fseek(fp, 0, SEEK_END);
+                    auto end = ftell(fp);
+                    fseek(fp, pos, SEEK_SET);
+                    entry.fileSize = static_cast<int64_t>(end);
+                    fclose(fp);
+                }
+            }
+
+            return entry;
+        }
+
+        DIR* m_dir;
+    };
 
 Aws::String GetHomeDirectory()
 {
@@ -110,6 +185,12 @@ Aws::String CreateTempFilePath()
     AWS_LOGSTREAM_DEBUG(FILE_SYSTEM_UTILS_LOG_TAG, "CreateTempFilePath generated: " << tempFile);
 
     return tempFile;
+}
+
+Directory* OpenDirectory(const DirectoryEntry& directoryEntry)
+{
+    assert(directoryEntry.fileType != FileType::File);
+    return Aws::New<PosixDirectory>(FILE_SYSTEM_UTILS_LOG_TAG, directoryEntry.path);
 }
 
 } // namespace FileSystem
