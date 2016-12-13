@@ -39,13 +39,11 @@ static const char* FILE_SYSTEM_UTILS_LOG_TAG = "FileSystemUtils";
     public:
         PosixDirectory(const Aws::String& path) : Directory(path), m_dir(nullptr)
         {
-            if((m_dir = opendir(path.c_str())))
+            m_dir = opendir(m_directoryEntry.path.c_str());
+
+            if(m_dir)
             {
-                dirent* entry;
-                if((entry = readdir(m_dir)))
-                {
-                    m_directoryEntry = ParseFileInfo(entry);
-                }
+                m_directoryEntry.fileType = FileType::Directory;
             }
         }
 
@@ -63,19 +61,43 @@ static const char* FILE_SYSTEM_UTILS_LOG_TAG = "FileSystemUtils";
             DirectoryEntry entry;
 
             dirent* dirEntry;
-            if ((dirEntry = readdir(m_dir)))
+            bool garbage(true);
+
+            while(garbage)
             {
-                entry = ParseFileInfo(dirEntry);
+                if ((dirEntry = readdir(m_dir)))
+                {
+                    Aws::String entryName = dirEntry->d_name;
+                    if(entryName != ".." && entryName != ".")
+                    {
+                        entry = ParseFileInfo(dirEntry, true);
+                        garbage = false;
+                    }
+                }
+                else
+                {
+                    break;
+                }
             }
 
             return entry;
         }
 
     private:
-        DirectoryEntry ParseFileInfo(dirent* dirEnt)
+        DirectoryEntry ParseFileInfo(dirent* dirEnt, bool computePath)
         {
             DirectoryEntry entry;
-            entry.path = dirEnt->d_name;
+
+            if(computePath)
+            {
+                Aws::StringStream ss;
+                ss << m_directoryEntry.path << PATH_DELIM << dirEnt->d_name;
+                entry.path = ss.str();
+            }
+            else
+            {
+                entry.path = m_directoryEntry.path;
+            }
 
             if(dirEnt->d_type == DT_DIR)
             {
@@ -88,7 +110,7 @@ static const char* FILE_SYSTEM_UTILS_LOG_TAG = "FileSystemUtils";
             else
             {
                 entry.fileType = FileType::File;
-                FILE* fp = fopen(dirEnt->d_name, "r");
+                FILE* fp = fopen(entry.path.c_str(), "r");
                 if(fp)
                 {
                     auto pos = ftell(fp);
@@ -165,6 +187,14 @@ bool RemoveFileIfExists(const char* path)
     return errorCode == 0 || errno == ENOENT;
 }
 
+bool RemoveDirectoryIfExists(const char* path)
+{
+    AWS_LOGSTREAM_INFO(FILE_SYSTEM_UTILS_LOG_TAG, "Deleting directory: " << path);
+    int errorCode = rmdir(path);
+    AWS_LOGSTREAM_DEBUG(FILE_SYSTEM_UTILS_LOG_TAG, "Deletion of directory: " << path << " Returned error code: " << errno);
+    return errorCode == 0 || errno == ENOTDIR || errno == ENOENT;
+}
+
 bool RelocateFileOrDirectory(const char* from, const char* to)
 {
     AWS_LOGSTREAM_INFO(FILE_SYSTEM_UTILS_LOG_TAG, "Moving file at " << from << " to " << to);
@@ -187,10 +217,9 @@ Aws::String CreateTempFilePath()
     return tempFile;
 }
 
-Directory* OpenDirectory(const DirectoryEntry& directoryEntry)
+Directory* OpenDirectory(const Aws::String& path)
 {
-    assert(directoryEntry.fileType != FileType::File);
-    return Aws::New<PosixDirectory>(FILE_SYSTEM_UTILS_LOG_TAG, directoryEntry.path);
+    return Aws::New<PosixDirectory>(FILE_SYSTEM_UTILS_LOG_TAG, path);
 }
 
 } // namespace FileSystem

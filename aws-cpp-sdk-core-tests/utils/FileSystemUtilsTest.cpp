@@ -33,7 +33,8 @@ TEST(FileTest, HomeDirectory)
 TEST(FileTest, TestInvalidDirectoryPath)
 {
     Aws::FileSystem::Directory* badDir = Aws::FileSystem::OpenDirectory("boogieMan");
-    ASSERT_FALSE(badDir->operator bool());
+    bool dirGood = *badDir;
+    ASSERT_FALSE(dirGood);
     Aws::Delete(badDir);
 }
 
@@ -56,21 +57,21 @@ TEST(FileTest, TestDirectoryTraversal)
 
     size_t file1Size;
     {
-        Aws::OFStream file1Stream(file1);
+        Aws::OFStream file1Stream(file1.c_str());
         ASSERT_TRUE(file1Stream.good());
         file1Stream << "Test Data1" << std::endl;
         file1Stream.seekp(0, std::ios_base::end);
-        file1Size = file1Stream.tellp();
+        file1Size = static_cast<size_t>(file1Stream.tellp());
     }
 
     size_t file2Size;
 
     {
-        Aws::OFStream file2Stream(file2);
+        Aws::OFStream file2Stream(file2.c_str());
         ASSERT_TRUE(file2Stream.good());
         file2Stream << "Test Data2" << std::endl;
         file2Stream.seekp(0, std::ios_base::end);
-        file2Size = file2Stream.tellp();
+        file2Size = static_cast<size_t>(file2Stream.tellp());
     }
 
     //let one have the delimiter after it just to make sure both paths get handled.
@@ -81,27 +82,39 @@ TEST(FileTest, TestDirectoryTraversal)
     ASSERT_TRUE(dir->operator bool());
 
     auto entry = dir->Next();
+    Aws::FileSystem::DirectoryEntry dir2Entry;
+    Aws::FileSystem::DirectoryEntry file1Entry;
 
-    ASSERT_EQ(Aws::FileSystem::FileType::Directory, entry.fileType);
-    ASSERT_STREQ(dir2.c_str(), entry.path.c_str());
+    if(entry.fileType == Aws::FileSystem::FileType::File)
+    {
+        file1Entry = entry;
+        dir2Entry = dir->Next();
+    }
+    else
+    {
+        dir2Entry = entry;
+        file1Entry = dir->Next();
+    }
 
-    auto& nextDir = dir->Descend(entry);
+    ASSERT_EQ(Aws::FileSystem::FileType::Directory, dir2Entry.fileType);
+    ASSERT_STREQ(dir2.c_str(), dir2Entry.path.c_str());
+
+    auto& nextDir = dir->Descend(dir2Entry);
     ASSERT_STREQ(dir2.c_str(), nextDir.GetPath().c_str());
     
     entry = nextDir.Next();
     ASSERT_EQ(Aws::FileSystem::FileType::File, entry.fileType);
     ASSERT_STREQ(file2.c_str(), entry.path.c_str());
-    ASSERT_EQ(file2Size, entry.fileSize);
+    ASSERT_EQ(static_cast<int64_t>(file2Size), entry.fileSize);
     ASSERT_TRUE(entry.operator bool());
 
     entry = nextDir.Next();
     ASSERT_FALSE(entry.operator bool());
 
-    entry = dir->Next();
-    ASSERT_EQ(Aws::FileSystem::FileType::File, entry.fileType);
-    ASSERT_STREQ(file1.c_str(), entry.path.c_str());
-    ASSERT_EQ(file1Size, entry.fileSize);
-    ASSERT_TRUE(entry.operator bool());
+    ASSERT_EQ(Aws::FileSystem::FileType::File, file1Entry.fileType);
+    ASSERT_STREQ(file1.c_str(), file1Entry.path.c_str());
+    ASSERT_EQ(static_cast<int64_t>(file1Size), file1Entry.fileSize);
+    ASSERT_TRUE(file1Entry.operator bool());
 
     entry = dir->Next();
     ASSERT_FALSE(entry.operator bool());
