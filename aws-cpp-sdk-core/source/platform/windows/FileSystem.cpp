@@ -33,7 +33,7 @@ static const char* FILE_SYSTEM_UTILS_LOG_TAG = "FileSystem";
 class User32Directory : public Directory
 {
 public:
-    User32Directory(const Aws::String& path) : Directory(path), m_find(INVALID_HANDLE_VALUE), m_lastError(0)
+    User32Directory(const Aws::String& path, const Aws::String& relativePath) : Directory(path, relativePath), m_find(INVALID_HANDLE_VALUE), m_lastError(0)
     {
         WIN32_FIND_DATAA ffd;
         AWS_LOGSTREAM_TRACE(FILE_SYSTEM_UTILS_LOG_TAG, "Entering directory " << m_directoryEntry.path);
@@ -115,10 +115,12 @@ private:
         if(computePath)
         {
             entry.path = m_directoryEntry.path + PATH_DELIM + ffd.cFileName;
+            entry.relativePath = m_directoryEntry.relativePath.empty() ? ffd.cFileName : m_directoryEntry.relativePath + PATH_DELIM + ffd.cFileName;
         }
         else
         {
             entry.path = m_directoryEntry.path;
+            entry.relativePath = m_directoryEntry.relativePath;
         }
 
         return entry;
@@ -275,9 +277,9 @@ Aws::String CreateTempFilePath()
     return s_tempName;
 }
 
-Directory* OpenDirectory(const Aws::String& path)
+Directory* OpenDirectory(const Aws::String& path, const Aws::String& relativePath)
 {
-    return Aws::New<User32Directory>(FILE_SYSTEM_UTILS_LOG_TAG, path);
+    return Aws::New<User32Directory>(FILE_SYSTEM_UTILS_LOG_TAG, path, relativePath);
 }
 
 } // namespace FileSystem

@@ -14,22 +14,25 @@
 */
 
 #include <aws/core/platform/FileSystem.h>
+#include <aws/core/utils/memory/stl/AWSQueue.h>
 #include <cassert>
 
 namespace Aws
 {
     namespace FileSystem
     {
-        Directory::Directory(const Aws::String& path)
+        Directory::Directory(const Aws::String& path, const Aws::String& relativePath)
         {
             if (path[path.length() - 1] == PATH_DELIM)
             {
-                m_directoryEntry.path = path.substr(0, path.length() - 1);
+                m_directoryEntry.path = path.substr(0, path.length() - 1);                
             }
             else
             {
                 m_directoryEntry.path = path;
-            }
+            }     
+            
+            m_directoryEntry.relativePath = relativePath;      
         }
 
         Directory::~Directory()
@@ -45,7 +48,7 @@ namespace Aws
         Directory& Directory::Descend(const DirectoryEntry& directoryEntry)
         {
             assert(directoryEntry.fileType != FileType::File);
-            Directory* openDir = OpenDirectory(directoryEntry.path);
+            Directory* openDir = OpenDirectory(directoryEntry.path, directoryEntry.relativePath);
             m_openDirectories.push_back(openDir);
             return *openDir;
         }
@@ -68,28 +71,77 @@ namespace Aws
             return m_dir->operator bool();
         }
 
-        void DirectoryTree::Traverse(const DirectoryEntryVisitor& visitor)
+        void DirectoryTree::TraverseDepthFirst(const DirectoryEntryVisitor& visitor)
         {
-            Traverse(*m_dir, visitor);
+            TraverseDepthFirst(*m_dir, visitor);
         }
 
+        void DirectoryTree::TraverseBreadthFirst(const DirectoryEntryVisitor& visitor)
+        {
+            TraverseBreadthFirst(*m_dir, visitor);
+        }
 
-        void DirectoryTree::Traverse(Directory& dir, const DirectoryEntryVisitor& visitor)
+         
+        void DirectoryTree::TraverseBreadthFirst(Directory& dir, const DirectoryEntryVisitor& visitor)
         {
             if (!dir)
             {
                 return;
             }
 
+            Aws::Queue<DirectoryEntry> queue;
             while (DirectoryEntry&& entry = dir.Next())
             {
-                visitor(this, entry);
+                queue.push(std::move(entry));
+            }
+
+            while (queue.size() > 0)
+            {
+                auto entry = queue.front();
+                queue.pop();
+                if(visitor(this, entry))               
+                {
+                    if(entry.fileType == FileType::Directory)
+                    {
+                        auto& currentDir = dir.Descend(entry);
+
+                        while (DirectoryEntry&& dirEntry = currentDir.Next())
+                        {
+                            queue.push(std::move(dirEntry));
+                        }
+                    }
+                }
+                else
+                {
+                    return;
+                }
+            }
+        }
+
+        bool DirectoryTree::TraverseDepthFirst(Directory& dir, const DirectoryEntryVisitor& visitor)
+        {
+            if (!dir)
+            {
+                return true;
+            }
+
+            bool exitTraversal(false);
+            DirectoryEntry entry;
+
+            while ((entry = dir.Next()) && !exitTraversal)
+            {
+                if(!visitor(this, entry))
+                {                    
+                    return false;
+                }
 
                 if (entry.fileType == FileType::Directory)
                 {
-                    Traverse(dir.Descend(entry), visitor);
+                    exitTraversal = !TraverseDepthFirst(dir.Descend(entry), visitor);
                 }                
             }
+
+            return !exitTraversal;
         }
 
     }

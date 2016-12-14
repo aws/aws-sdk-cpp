@@ -18,6 +18,7 @@
 #include <aws/core/utils/stream/PreallocatedStreamBuf.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/platform/FileSystem.h>
 #include <aws/s3/S3Client.h>
 #include <aws/s3/model/HeadObjectRequest.h>
 #include <aws/s3/model/GetObjectRequest.h>
@@ -180,6 +181,32 @@ namespace Aws
 
             inProgressHandle->Cancel();
             m_transferConfig.transferExecutor->Submit([this, inProgressHandle] { WaitForCancellationAndAbortUpload(inProgressHandle); });
+        }
+
+        void TransferManager::UploadDirectory(const Aws::String& directory, const Aws::String& bucketName, const Aws::String& prefix, const Aws::Map<Aws::String, Aws::String>& metadata)
+        {
+            assert(m_transferConfig.transferInitiatedCallback);
+
+            using namespace Aws::FileSystem;
+            using namespace Aws::Utils;
+
+            auto visitor = [this, bucketName, prefix, metadata](const DirectoryTree*, const DirectoryEntry& entry)
+            {
+                if (entry)
+                {
+                    Aws::StringStream ssKey;
+                    Aws::String relativePath = entry.relativePath;
+                    char delimiter[] = { PATH_DELIM, 0 };
+                    StringUtils::Replace(relativePath, delimiter, "/");
+
+                    ssKey << prefix << "/" << relativePath;
+                    Aws::String keyName = ssKey.str();
+                    
+                    m_transferConfig.transferInitiatedCallback(this, UploadFile(entry.path, bucketName, keyName, DEFAULT_CONTENT_TYPE, metadata));
+                }
+            };
+            
+            m_transferConfig.transferExecutor->Submit([directory, visitor]() { DirectoryTree dir(directory); dir.TraverseDepthFirst(visitor); });
         }
 
         void TransferManager::DoMultipartUpload(const std::shared_ptr<Aws::IOStream>& streamToPut, const std::shared_ptr<TransferHandle>& handle)

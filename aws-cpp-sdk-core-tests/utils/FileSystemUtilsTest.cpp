@@ -15,6 +15,7 @@
 
 #include <aws/core/platform/FileSystem.h>
 #include <aws/core/utils/FileSystemUtils.h>
+#include <aws/core/utils/memory/stl/AWSSet.h>
 #include <aws/external/gtest.h>
 #include <aws/testing/MemoryTesting.h>
 
@@ -36,94 +37,6 @@ TEST(FileTest, TestInvalidDirectoryPath)
     bool dirGood = *badDir;
     ASSERT_FALSE(dirGood);
     Aws::Delete(badDir);
-}
-
-TEST(FileTest, TestDirectoryTraversal)
-{
-    auto homeDirectory = Aws::FileSystem::GetHomeDirectory();
-    ASSERT_FALSE(homeDirectory.empty());
-        
-    auto dir1 = homeDirectory + Aws::FileSystem::PATH_DELIM + "dir1";    
-    auto dir2 = dir1 + Aws::FileSystem::PATH_DELIM + "dir2";
-
-    auto file1 = dir1 + Aws::FileSystem::PATH_DELIM + "file1";
-    auto file2 = dir2 + Aws::FileSystem::PATH_DELIM + "file2";
-
-    bool dir1Created = Aws::FileSystem::CreateDirectoryIfNotExists(dir1.c_str());
-    ASSERT_TRUE(dir1Created);
-
-    bool dir2Created = Aws::FileSystem::CreateDirectoryIfNotExists(dir2.c_str());
-    ASSERT_TRUE(dir2Created);
-
-    size_t file1Size;
-    {
-        Aws::OFStream file1Stream(file1.c_str());
-        ASSERT_TRUE(file1Stream.good());
-        file1Stream << "Test Data1" << std::endl;
-        file1Stream.seekp(0, std::ios_base::end);
-        file1Size = static_cast<size_t>(file1Stream.tellp());
-    }
-
-    size_t file2Size;
-
-    {
-        Aws::OFStream file2Stream(file2.c_str());
-        ASSERT_TRUE(file2Stream.good());
-        file2Stream << "Test Data2" << std::endl;
-        file2Stream.seekp(0, std::ios_base::end);
-        file2Size = static_cast<size_t>(file2Stream.tellp());
-    }
-
-    //let one have the delimiter after it just to make sure both paths get handled.
-    auto dir1WithExtraDelimiter = dir1 + Aws::FileSystem::PATH_DELIM;
-    Aws::FileSystem::Directory* dir = Aws::FileSystem::OpenDirectory(dir1WithExtraDelimiter);
-
-    ASSERT_STREQ(dir1.c_str(), dir->GetPath().c_str());
-    ASSERT_TRUE(dir->operator bool());
-
-    auto entry = dir->Next();
-    Aws::FileSystem::DirectoryEntry dir2Entry;
-    Aws::FileSystem::DirectoryEntry file1Entry;
-
-    if(entry.fileType == Aws::FileSystem::FileType::File)
-    {
-        file1Entry = entry;
-        dir2Entry = dir->Next();
-    }
-    else
-    {
-        dir2Entry = entry;
-        file1Entry = dir->Next();
-    }
-
-    ASSERT_EQ(Aws::FileSystem::FileType::Directory, dir2Entry.fileType);
-    ASSERT_STREQ(dir2.c_str(), dir2Entry.path.c_str());
-
-    auto& nextDir = dir->Descend(dir2Entry);
-    ASSERT_STREQ(dir2.c_str(), nextDir.GetPath().c_str());
-    
-    entry = nextDir.Next();
-    ASSERT_EQ(Aws::FileSystem::FileType::File, entry.fileType);
-    ASSERT_STREQ(file2.c_str(), entry.path.c_str());
-    ASSERT_EQ(static_cast<int64_t>(file2Size), entry.fileSize);
-    ASSERT_TRUE(entry.operator bool());
-
-    entry = nextDir.Next();
-    ASSERT_FALSE(entry.operator bool());
-
-    ASSERT_EQ(Aws::FileSystem::FileType::File, file1Entry.fileType);
-    ASSERT_STREQ(file1.c_str(), file1Entry.path.c_str());
-    ASSERT_EQ(static_cast<int64_t>(file1Size), file1Entry.fileSize);
-    ASSERT_TRUE(file1Entry.operator bool());
-
-    entry = dir->Next();
-    ASSERT_FALSE(entry.operator bool());
-
-    Aws::Delete(dir);
-    Aws::FileSystem::RemoveFileIfExists(file1.c_str());
-    Aws::FileSystem::RemoveFileIfExists(file2.c_str());
-    Aws::FileSystem::RemoveDirectoryIfExists(dir2.c_str());
-    Aws::FileSystem::RemoveDirectoryIfExists(dir1.c_str());
 }
 
 TEST(FileTest, TempFile)
@@ -150,4 +63,132 @@ TEST(FileTest, TempFile)
 
     std::ifstream testIn(filePath.c_str());
     ASSERT_FALSE(testIn.good());
+}
+
+class DirectoryTreeTest : public ::testing::Test
+{
+public:
+    Aws::String dir1, dir2, file1, file2;
+    bool dir1Created, dir2Created;
+    size_t file1Size, file2Size;
+
+    DirectoryTreeTest() : dir1Created(false), dir2Created(false), file1Size(0), file2Size(0) {}
+
+    void SetUp() override
+    {
+        auto homeDirectory = Aws::FileSystem::GetHomeDirectory();
+        ASSERT_FALSE(homeDirectory.empty());
+
+        dir1 = homeDirectory + Aws::FileSystem::PATH_DELIM + "dir1";
+        dir2 = dir1 + Aws::FileSystem::PATH_DELIM + "dir2";
+
+        file1 = dir1 + Aws::FileSystem::PATH_DELIM + "file1";
+        file2 = dir2 + Aws::FileSystem::PATH_DELIM + "file2";
+
+        dir1Created = Aws::FileSystem::CreateDirectoryIfNotExists(dir1.c_str());
+        ASSERT_TRUE(dir1Created);
+
+        dir2Created = Aws::FileSystem::CreateDirectoryIfNotExists(dir2.c_str());
+        ASSERT_TRUE(dir2Created);
+        
+        {
+            Aws::OFStream file1Stream(file1.c_str());
+            ASSERT_TRUE(file1Stream.good());
+            file1Stream << "Test Data1" << std::endl;
+            file1Stream.seekp(0, std::ios_base::end);
+            file1Size = static_cast<size_t>(file1Stream.tellp());
+        }
+        
+        {
+            Aws::OFStream file2Stream(file2.c_str());
+            ASSERT_TRUE(file2Stream.good());
+            file2Stream << "Test Data2" << std::endl;
+            file2Stream.seekp(0, std::ios_base::end);
+            file2Size = static_cast<size_t>(file2Stream.tellp());
+        }
+    }
+
+    void TearDown() override
+    {
+        Aws::FileSystem::RemoveFileIfExists(file1.c_str());
+        Aws::FileSystem::RemoveFileIfExists(file2.c_str());
+        Aws::FileSystem::RemoveDirectoryIfExists(dir2.c_str());
+        Aws::FileSystem::RemoveDirectoryIfExists(dir1.c_str());
+    }
+};
+
+TEST_F(DirectoryTreeTest, TestManualDirectoryTraversal)
+{
+    //let one have the delimiter after it just to make sure both paths get handled.
+    auto dir1WithExtraDelimiter = dir1 + Aws::FileSystem::PATH_DELIM;
+    Aws::FileSystem::Directory* dir = Aws::FileSystem::OpenDirectory(dir1WithExtraDelimiter);
+
+    ASSERT_STREQ(dir1.c_str(), dir->GetPath().c_str());
+    ASSERT_TRUE(dir->operator bool());
+
+    auto entry = dir->Next();
+    Aws::FileSystem::DirectoryEntry dir2Entry;
+    Aws::FileSystem::DirectoryEntry file1Entry;
+
+    if (entry.fileType == Aws::FileSystem::FileType::File)
+    {
+        file1Entry = entry;
+        dir2Entry = dir->Next();
+    }
+    else
+    {
+        dir2Entry = entry;
+        file1Entry = dir->Next();
+    }
+
+    ASSERT_EQ(Aws::FileSystem::FileType::Directory, dir2Entry.fileType);
+    ASSERT_STREQ(dir2.c_str(), dir2Entry.path.c_str());
+
+    auto& nextDir = dir->Descend(dir2Entry);
+    ASSERT_STREQ(dir2.c_str(), nextDir.GetPath().c_str());
+
+    entry = nextDir.Next();
+    ASSERT_EQ(Aws::FileSystem::FileType::File, entry.fileType);
+    ASSERT_STREQ(file2.c_str(), entry.path.c_str());
+    ASSERT_EQ(static_cast<int64_t>(file2Size), entry.fileSize);
+    ASSERT_TRUE(entry.operator bool());
+
+    entry = nextDir.Next();
+    ASSERT_FALSE(entry.operator bool());
+
+    ASSERT_EQ(Aws::FileSystem::FileType::File, file1Entry.fileType);
+    ASSERT_STREQ(file1.c_str(), file1Entry.path.c_str());
+    ASSERT_EQ(static_cast<int64_t>(file1Size), file1Entry.fileSize);
+    ASSERT_TRUE(file1Entry.operator bool());
+
+    entry = dir->Next();
+    ASSERT_FALSE(entry.operator bool());
+
+    Aws::Delete(dir);    
+}
+
+TEST_F(DirectoryTreeTest, TestDirectoryTreeDepthFirstTraversal)
+{
+    Aws::FileSystem::DirectoryTree tree(dir1);
+
+    Aws::Set<Aws::String> paths({dir2, file1, file2});
+   
+    auto visitor = [&](const Aws::FileSystem::DirectoryTree*, const Aws::FileSystem::DirectoryEntry& entry) { paths.erase(entry.path); return true; };
+
+    tree.TraverseDepthFirst(visitor);
+
+    ASSERT_TRUE(paths.empty());
+}
+
+TEST_F(DirectoryTreeTest, TestDirectoryTreeBreadthFirstTraversal)
+{
+    Aws::FileSystem::DirectoryTree tree(dir1);
+
+    Aws::Set<Aws::String> paths({ dir2, file1, file2 });
+
+    auto visitor = [&](const Aws::FileSystem::DirectoryTree*, const Aws::FileSystem::DirectoryEntry& entry) { paths.erase(entry.path); return true; };
+
+    tree.TraverseBreadthFirst(visitor);
+
+    ASSERT_TRUE(paths.empty());
 }

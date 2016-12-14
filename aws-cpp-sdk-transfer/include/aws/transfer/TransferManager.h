@@ -35,6 +35,7 @@ namespace Aws
         typedef std::function<void(const TransferManager*, const TransferHandle&)> DownloadProgressCallback;
         typedef std::function<void(const TransferManager*, const TransferHandle&)> TransferStatusUpdatedCallback;
         typedef std::function<void(const TransferManager*, const TransferHandle&, const Aws::Client::AWSError<Aws::S3::S3Errors>&)> ErrorCallback;
+        typedef std::function<void(const TransferManager*, const std::shared_ptr<TransferHandle>&)> TransferInitiatedCallback;
         typedef std::function<Aws::IOStream*(void)> CreateDownloadStreamCallback;
 
         const uint64_t MB5 = 5 * 1024 * 1024;
@@ -108,6 +109,10 @@ namespace Aws
              */
             TransferStatusUpdatedCallback transferStatusUpdatedCallback;
             /**
+             * Callback to receive initiated transfers for the directory operations.
+             */
+            TransferInitiatedCallback transferInitiatedCallback;
+            /**
              * Callback to receive all errors that are thrown over the course of a transfer.
              */
             ErrorCallback errorCallback;
@@ -167,6 +172,8 @@ namespace Aws
              * intend to retry it.
              */
             void AbortMultipartUpload(const std::shared_ptr<TransferHandle>& inProgressHandle);
+
+            void UploadDirectory(const Aws::String& directory, const Aws::String& bucketName, const Aws::String& prefix, const Aws::Map<Aws::String, Aws::String>& metadata);
 
         private:
             void DoMultipartUpload(const std::shared_ptr<Aws::IOStream>& streamToPut, const std::shared_ptr<TransferHandle>& handle);

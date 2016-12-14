@@ -13,6 +13,7 @@
   * permissions and limitations under the License.
   */
 #pragma once
+
 #include <aws/core/Core_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -20,6 +21,7 @@
 
 namespace Aws
 {
+
 namespace FileSystem
 {
     struct DirectoryEntry;
@@ -67,8 +69,11 @@ namespace FileSystem
      * Opens a directory for traversal.
      * User is responsible for the returned allocated memory. Call Aws::Delete();
      */
-    AWS_CORE_API Directory* OpenDirectory(const Aws::String& path);
+    AWS_CORE_API Directory* OpenDirectory(const Aws::String& path, const Aws::String& relativePath = "");
 
+    /**
+     * Type of directory entry encountered.
+     */
     enum class FileType
     {
         None,
@@ -84,23 +89,48 @@ namespace FileSystem
         operator bool() const { return !path.empty() && fileType != FileType::None; }
 
         Aws::String path;
+        Aws::String relativePath;
         FileType fileType;
         int64_t fileSize;
     };
 
+    /**
+     * Base level representation of a directory. Provides the ability to iterate all entries in a directory and to descend into directories.
+     * We don't recommend you use this class directly. Instead see DirectoryTree.
+     */
     class AWS_CORE_API Directory
     {
     public:
-        Directory(const Aws::String& path);
+        /**
+         * Initialize a directory with it's absolute path. If the path is invalid, the bool operator will return false.
+         */
+        Directory(const Aws::String& path, const Aws::String& relativePath);
         virtual ~Directory();
 
+        /**
+         * If this directory is valid for use.
+         */
         operator bool() const { return m_directoryEntry.operator bool(); }
 
+        /**
+         * Get the entry representing this current directory object.
+         */
         const DirectoryEntry GetDirectoryEntry() const { return m_directoryEntry; }
+
+        /**
+         * Get the current path of this directory object.
+         */
         const Aws::String GetPath() const { return m_directoryEntry.path; }
 
+        /**
+         * Get the next entry inside this directory.
+         */
         virtual DirectoryEntry Next() = 0;
 
+        /**
+         * Descend into a directory if it is a directory. Returns a reference to a Directory object which you can then call Next() and Descend on.
+         * The original Directory object you use is responsible for the memory this method allocates, so do not attempt to delete the return value.
+         */
         Directory& Descend(const DirectoryEntry& directoryEntry);
 
     protected:
@@ -110,20 +140,44 @@ namespace FileSystem
         Aws::Vector<Directory*> m_openDirectories;
     };
 
-    class DirectoryTree;
-    typedef std::function<void(const DirectoryTree*, const DirectoryEntry&)> DirectoryEntryVisitor;
+    class AWS_CORE_API DirectoryTree;
 
+    /**
+     * Visitor for a Directory Tree traversal. Return true to continue the traversal, false to exit the traversal immediately.
+     */
+    typedef std::function<bool(const DirectoryTree*, const DirectoryEntry&)> DirectoryEntryVisitor;
+
+    /**
+     * Wrapper around directory. Currently provides a Depth-first and Breadth-first traversal of the provided path. This is most likely the class you are 
+     * looking for.
+     */
     class DirectoryTree
     {
     public:
+        /**
+         * Create a directory object for use with traversal using the provided path.
+         */
         DirectoryTree(const Aws::String& path);
         ~DirectoryTree();
 
+        /**
+         * If the object is valid for use: true. Otherwise: false.
+         */
         operator bool() const;
-        void Traverse(const DirectoryEntryVisitor& visitor);
+
+        /**
+         * Performs a depth-first traversal of the directory tree. Upon encountering an entry, visitor will be invoked.
+         */
+        void TraverseDepthFirst(const DirectoryEntryVisitor& visitor);
+
+        /**
+         * Performs a breadth-first traversal of the directory tree. Upon encountering an entry, visitor will be invoked.
+         */
+        void TraverseBreadthFirst(const DirectoryEntryVisitor& visitor);
 
     private:
-        void Traverse(Directory& dir, const DirectoryEntryVisitor& visitor);
+        bool TraverseDepthFirst(Directory& dir, const DirectoryEntryVisitor& visitor);
+        void TraverseBreadthFirst(Directory& dir, const DirectoryEntryVisitor& visitor);
 
         Directory* m_dir;
     };
