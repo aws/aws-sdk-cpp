@@ -1433,26 +1433,29 @@ namespace Model
      * these AWS regions: ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-west-1,
      * sa-east-1, us-east-1, us-gov-west-1, us-west-1, us-west-2):</b> <code> 5.5.40 |
      * 5.5.40a</code> </p> </li> </ul> <p/> <p> <b>Oracle 12c</b> </p> <ul> <li> <p>
-     * <code>12.1.0.2.v5</code> (supported for EE in all AWS regions, and SE2 in all
-     * AWS regions except us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v4</code>
+     * <code>12.1.0.2.v6</code> (supported for EE in all AWS regions, and SE2 in all
+     * AWS regions except us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v5</code>
      * (supported for EE in all AWS regions, and SE2 in all AWS regions except
-     * us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v3</code> (supported for EE in
+     * us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v4</code> (supported for EE in
      * all AWS regions, and SE2 in all AWS regions except us-gov-west-1)</p> </li> <li>
-     * <p> <code>12.1.0.2.v2</code> (supported for EE in all AWS regions, and SE2 in
+     * <p> <code>12.1.0.2.v3</code> (supported for EE in all AWS regions, and SE2 in
      * all AWS regions except us-gov-west-1)</p> </li> <li> <p>
-     * <code>12.1.0.2.v1</code> (supported for EE in all AWS regions, and SE2 in all
-     * AWS regions except us-gov-west-1)</p> </li> </ul> <p/> <ul> <li> <p>
-     * <code>12.1.0.1.v6</code> (supported for EE, SE1, and SE, in all AWS regions
-     * except ap-south-1, ap-northeast-2)</p> </li> <li> <p> <code>12.1.0.1.v5</code>
+     * <code>12.1.0.2.v2</code> (supported for EE in all AWS regions, and SE2 in all
+     * AWS regions except us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v1</code>
+     * (supported for EE in all AWS regions, and SE2 in all AWS regions except
+     * us-gov-west-1)</p> </li> </ul> <p/> <ul> <li> <p> <code>12.1.0.1.v6</code>
      * (supported for EE, SE1, and SE, in all AWS regions except ap-south-1,
-     * ap-northeast-2)</p> </li> <li> <p> <code>12.1.0.1.v4</code> (supported for EE,
+     * ap-northeast-2)</p> </li> <li> <p> <code>12.1.0.1.v5</code> (supported for EE,
      * SE1, and SE, in all AWS regions except ap-south-1, ap-northeast-2)</p> </li>
-     * <li> <p> <code>12.1.0.1.v3</code> (supported for EE, SE1, and SE, in all AWS
+     * <li> <p> <code>12.1.0.1.v4</code> (supported for EE, SE1, and SE, in all AWS
      * regions except ap-south-1, ap-northeast-2)</p> </li> <li> <p>
-     * <code>12.1.0.1.v2</code> (supported for EE, SE1, and SE, in all AWS regions
-     * except ap-south-1, ap-northeast-2)</p> </li> <li> <p> <code>12.1.0.1.v1</code>
+     * <code>12.1.0.1.v3</code> (supported for EE, SE1, and SE, in all AWS regions
+     * except ap-south-1, ap-northeast-2)</p> </li> <li> <p> <code>12.1.0.1.v2</code>
      * (supported for EE, SE1, and SE, in all AWS regions except ap-south-1,
-     * ap-northeast-2)</p> </li> </ul> <p> <b>Oracle 11g</b> </p> <ul> <li> <p>
+     * ap-northeast-2)</p> </li> <li> <p> <code>12.1.0.1.v1</code> (supported for EE,
+     * SE1, and SE, in all AWS regions except ap-south-1, ap-northeast-2)</p> </li>
+     * </ul> <p> <b>Oracle 11g</b> </p> <ul> <li> <p> <code>11.2.0.4.v10</code>
+     * (supported for EE, SE1, and SE, in all AWS regions)</p> </li> <li> <p>
      * <code>11.2.0.4.v9</code> (supported for EE, SE1, and SE, in all AWS regions)</p>
      * </li> <li> <p> <code>11.2.0.4.v8</code> (supported for EE, SE1, and SE, in all
      * AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v7</code> (supported for EE, SE1,
@@ -1556,26 +1559,29 @@ namespace Model
      * these AWS regions: ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-west-1,
      * sa-east-1, us-east-1, us-gov-west-1, us-west-1, us-west-2):</b> <code> 5.5.40 |
      * 5.5.40a</code> </p> </li> </ul> <p/> <p> <b>Oracle 12c</b> </p> <ul> <li> <p>
-     * <code>12.1.0.2.v5</code> (supported for EE in all AWS regions, and SE2 in all
-     * AWS regions except us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v4</code>
+     * <code>12.1.0.2.v6</code> (supported for EE in all AWS regions, and SE2 in all
+     * AWS regions except us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v5</code>
      * (supported for EE in all AWS regions, and SE2 in all AWS regions except
-     * us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v3</code> (supported for EE in
+     * us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v4</code> (supported for EE in
      * all AWS regions, and SE2 in all AWS regions except us-gov-west-1)</p> </li> <li>
-     * <p> <code>12.1.0.2.v2</code> (supported for EE in all AWS regions, and SE2 in
+     * <p> <code>12.1.0.2.v3</code> (supported for EE in all AWS regions, and SE2 in
      * all AWS regions except us-gov-west-1)</p> </li> <li> <p>
-     * <code>12.1.0.2.v1</code> (supported for EE in all AWS regions, and SE2 in all
-     * AWS regions except us-gov-west-1)</p> </li> </ul> <p/> <ul> <li> <p>
-     * <code>12.1.0.1.v6</code> (supported for EE, SE1, and SE, in all AWS regions
-     * except ap-south-1, ap-northeast-2)</p> </li> <li> <p> <code>12.1.0.1.v5</code>
+     * <code>12.1.0.2.v2</code> (supported for EE in all AWS regions, and SE2 in all
+     * AWS regions except us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v1</code>
+     * (supported for EE in all AWS regions, and SE2 in all AWS regions except
+     * us-gov-west-1)</p> </li> </ul> <p/> <ul> <li> <p> <code>12.1.0.1.v6</code>
      * (supported for EE, SE1, and SE, in all AWS regions except ap-south-1,
-     * ap-northeast-2)</p> </li> <li> <p> <code>12.1.0.1.v4</code> (supported for EE,
+     * ap-northeast-2)</p> </li> <li> <p> <code>12.1.0.1.v5</code> (supported for EE,
      * SE1, and SE, in all AWS regions except ap-south-1, ap-northeast-2)</p> </li>
-     * <li> <p> <code>12.1.0.1.v3</code> (supported for EE, SE1, and SE, in all AWS
+     * <li> <p> <code>12.1.0.1.v4</code> (supported for EE, SE1, and SE, in all AWS
      * regions except ap-south-1, ap-northeast-2)</p> </li> <li> <p>
-     * <code>12.1.0.1.v2</code> (supported for EE, SE1, and SE, in all AWS regions
-     * except ap-south-1, ap-northeast-2)</p> </li> <li> <p> <code>12.1.0.1.v1</code>
+     * <code>12.1.0.1.v3</code> (supported for EE, SE1, and SE, in all AWS regions
+     * except ap-south-1, ap-northeast-2)</p> </li> <li> <p> <code>12.1.0.1.v2</code>
      * (supported for EE, SE1, and SE, in all AWS regions except ap-south-1,
-     * ap-northeast-2)</p> </li> </ul> <p> <b>Oracle 11g</b> </p> <ul> <li> <p>
+     * ap-northeast-2)</p> </li> <li> <p> <code>12.1.0.1.v1</code> (supported for EE,
+     * SE1, and SE, in all AWS regions except ap-south-1, ap-northeast-2)</p> </li>
+     * </ul> <p> <b>Oracle 11g</b> </p> <ul> <li> <p> <code>11.2.0.4.v10</code>
+     * (supported for EE, SE1, and SE, in all AWS regions)</p> </li> <li> <p>
      * <code>11.2.0.4.v9</code> (supported for EE, SE1, and SE, in all AWS regions)</p>
      * </li> <li> <p> <code>11.2.0.4.v8</code> (supported for EE, SE1, and SE, in all
      * AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v7</code> (supported for EE, SE1,
@@ -1679,26 +1685,29 @@ namespace Model
      * these AWS regions: ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-west-1,
      * sa-east-1, us-east-1, us-gov-west-1, us-west-1, us-west-2):</b> <code> 5.5.40 |
      * 5.5.40a</code> </p> </li> </ul> <p/> <p> <b>Oracle 12c</b> </p> <ul> <li> <p>
-     * <code>12.1.0.2.v5</code> (supported for EE in all AWS regions, and SE2 in all
-     * AWS regions except us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v4</code>
+     * <code>12.1.0.2.v6</code> (supported for EE in all AWS regions, and SE2 in all
+     * AWS regions except us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v5</code>
      * (supported for EE in all AWS regions, and SE2 in all AWS regions except
-     * us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v3</code> (supported for EE in
+     * us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v4</code> (supported for EE in
      * all AWS regions, and SE2 in all AWS regions except us-gov-west-1)</p> </li> <li>
-     * <p> <code>12.1.0.2.v2</code> (supported for EE in all AWS regions, and SE2 in
+     * <p> <code>12.1.0.2.v3</code> (supported for EE in all AWS regions, and SE2 in
      * all AWS regions except us-gov-west-1)</p> </li> <li> <p>
-     * <code>12.1.0.2.v1</code> (supported for EE in all AWS regions, and SE2 in all
-     * AWS regions except us-gov-west-1)</p> </li> </ul> <p/> <ul> <li> <p>
-     * <code>12.1.0.1.v6</code> (supported for EE, SE1, and SE, in all AWS regions
-     * except ap-south-1, ap-northeast-2)</p> </li> <li> <p> <code>12.1.0.1.v5</code>
+     * <code>12.1.0.2.v2</code> (supported for EE in all AWS regions, and SE2 in all
+     * AWS regions except us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v1</code>
+     * (supported for EE in all AWS regions, and SE2 in all AWS regions except
+     * us-gov-west-1)</p> </li> </ul> <p/> <ul> <li> <p> <code>12.1.0.1.v6</code>
      * (supported for EE, SE1, and SE, in all AWS regions except ap-south-1,
-     * ap-northeast-2)</p> </li> <li> <p> <code>12.1.0.1.v4</code> (supported for EE,
+     * ap-northeast-2)</p> </li> <li> <p> <code>12.1.0.1.v5</code> (supported for EE,
      * SE1, and SE, in all AWS regions except ap-south-1, ap-northeast-2)</p> </li>
-     * <li> <p> <code>12.1.0.1.v3</code> (supported for EE, SE1, and SE, in all AWS
+     * <li> <p> <code>12.1.0.1.v4</code> (supported for EE, SE1, and SE, in all AWS
      * regions except ap-south-1, ap-northeast-2)</p> </li> <li> <p>
-     * <code>12.1.0.1.v2</code> (supported for EE, SE1, and SE, in all AWS regions
-     * except ap-south-1, ap-northeast-2)</p> </li> <li> <p> <code>12.1.0.1.v1</code>
+     * <code>12.1.0.1.v3</code> (supported for EE, SE1, and SE, in all AWS regions
+     * except ap-south-1, ap-northeast-2)</p> </li> <li> <p> <code>12.1.0.1.v2</code>
      * (supported for EE, SE1, and SE, in all AWS regions except ap-south-1,
-     * ap-northeast-2)</p> </li> </ul> <p> <b>Oracle 11g</b> </p> <ul> <li> <p>
+     * ap-northeast-2)</p> </li> <li> <p> <code>12.1.0.1.v1</code> (supported for EE,
+     * SE1, and SE, in all AWS regions except ap-south-1, ap-northeast-2)</p> </li>
+     * </ul> <p> <b>Oracle 11g</b> </p> <ul> <li> <p> <code>11.2.0.4.v10</code>
+     * (supported for EE, SE1, and SE, in all AWS regions)</p> </li> <li> <p>
      * <code>11.2.0.4.v9</code> (supported for EE, SE1, and SE, in all AWS regions)</p>
      * </li> <li> <p> <code>11.2.0.4.v8</code> (supported for EE, SE1, and SE, in all
      * AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v7</code> (supported for EE, SE1,
@@ -1802,26 +1811,29 @@ namespace Model
      * these AWS regions: ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-west-1,
      * sa-east-1, us-east-1, us-gov-west-1, us-west-1, us-west-2):</b> <code> 5.5.40 |
      * 5.5.40a</code> </p> </li> </ul> <p/> <p> <b>Oracle 12c</b> </p> <ul> <li> <p>
-     * <code>12.1.0.2.v5</code> (supported for EE in all AWS regions, and SE2 in all
-     * AWS regions except us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v4</code>
+     * <code>12.1.0.2.v6</code> (supported for EE in all AWS regions, and SE2 in all
+     * AWS regions except us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v5</code>
      * (supported for EE in all AWS regions, and SE2 in all AWS regions except
-     * us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v3</code> (supported for EE in
+     * us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v4</code> (supported for EE in
      * all AWS regions, and SE2 in all AWS regions except us-gov-west-1)</p> </li> <li>
-     * <p> <code>12.1.0.2.v2</code> (supported for EE in all AWS regions, and SE2 in
+     * <p> <code>12.1.0.2.v3</code> (supported for EE in all AWS regions, and SE2 in
      * all AWS regions except us-gov-west-1)</p> </li> <li> <p>
-     * <code>12.1.0.2.v1</code> (supported for EE in all AWS regions, and SE2 in all
-     * AWS regions except us-gov-west-1)</p> </li> </ul> <p/> <ul> <li> <p>
-     * <code>12.1.0.1.v6</code> (supported for EE, SE1, and SE, in all AWS regions
-     * except ap-south-1, ap-northeast-2)</p> </li> <li> <p> <code>12.1.0.1.v5</code>
+     * <code>12.1.0.2.v2</code> (supported for EE in all AWS regions, and SE2 in all
+     * AWS regions except us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v1</code>
+     * (supported for EE in all AWS regions, and SE2 in all AWS regions except
+     * us-gov-west-1)</p> </li> </ul> <p/> <ul> <li> <p> <code>12.1.0.1.v6</code>
      * (supported for EE, SE1, and SE, in all AWS regions except ap-south-1,
-     * ap-northeast-2)</p> </li> <li> <p> <code>12.1.0.1.v4</code> (supported for EE,
+     * ap-northeast-2)</p> </li> <li> <p> <code>12.1.0.1.v5</code> (supported for EE,
      * SE1, and SE, in all AWS regions except ap-south-1, ap-northeast-2)</p> </li>
-     * <li> <p> <code>12.1.0.1.v3</code> (supported for EE, SE1, and SE, in all AWS
+     * <li> <p> <code>12.1.0.1.v4</code> (supported for EE, SE1, and SE, in all AWS
      * regions except ap-south-1, ap-northeast-2)</p> </li> <li> <p>
-     * <code>12.1.0.1.v2</code> (supported for EE, SE1, and SE, in all AWS regions
-     * except ap-south-1, ap-northeast-2)</p> </li> <li> <p> <code>12.1.0.1.v1</code>
+     * <code>12.1.0.1.v3</code> (supported for EE, SE1, and SE, in all AWS regions
+     * except ap-south-1, ap-northeast-2)</p> </li> <li> <p> <code>12.1.0.1.v2</code>
      * (supported for EE, SE1, and SE, in all AWS regions except ap-south-1,
-     * ap-northeast-2)</p> </li> </ul> <p> <b>Oracle 11g</b> </p> <ul> <li> <p>
+     * ap-northeast-2)</p> </li> <li> <p> <code>12.1.0.1.v1</code> (supported for EE,
+     * SE1, and SE, in all AWS regions except ap-south-1, ap-northeast-2)</p> </li>
+     * </ul> <p> <b>Oracle 11g</b> </p> <ul> <li> <p> <code>11.2.0.4.v10</code>
+     * (supported for EE, SE1, and SE, in all AWS regions)</p> </li> <li> <p>
      * <code>11.2.0.4.v9</code> (supported for EE, SE1, and SE, in all AWS regions)</p>
      * </li> <li> <p> <code>11.2.0.4.v8</code> (supported for EE, SE1, and SE, in all
      * AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v7</code> (supported for EE, SE1,
@@ -1925,26 +1937,29 @@ namespace Model
      * these AWS regions: ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-west-1,
      * sa-east-1, us-east-1, us-gov-west-1, us-west-1, us-west-2):</b> <code> 5.5.40 |
      * 5.5.40a</code> </p> </li> </ul> <p/> <p> <b>Oracle 12c</b> </p> <ul> <li> <p>
-     * <code>12.1.0.2.v5</code> (supported for EE in all AWS regions, and SE2 in all
-     * AWS regions except us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v4</code>
+     * <code>12.1.0.2.v6</code> (supported for EE in all AWS regions, and SE2 in all
+     * AWS regions except us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v5</code>
      * (supported for EE in all AWS regions, and SE2 in all AWS regions except
-     * us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v3</code> (supported for EE in
+     * us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v4</code> (supported for EE in
      * all AWS regions, and SE2 in all AWS regions except us-gov-west-1)</p> </li> <li>
-     * <p> <code>12.1.0.2.v2</code> (supported for EE in all AWS regions, and SE2 in
+     * <p> <code>12.1.0.2.v3</code> (supported for EE in all AWS regions, and SE2 in
      * all AWS regions except us-gov-west-1)</p> </li> <li> <p>
-     * <code>12.1.0.2.v1</code> (supported for EE in all AWS regions, and SE2 in all
-     * AWS regions except us-gov-west-1)</p> </li> </ul> <p/> <ul> <li> <p>
-     * <code>12.1.0.1.v6</code> (supported for EE, SE1, and SE, in all AWS regions
-     * except ap-south-1, ap-northeast-2)</p> </li> <li> <p> <code>12.1.0.1.v5</code>
+     * <code>12.1.0.2.v2</code> (supported for EE in all AWS regions, and SE2 in all
+     * AWS regions except us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v1</code>
+     * (supported for EE in all AWS regions, and SE2 in all AWS regions except
+     * us-gov-west-1)</p> </li> </ul> <p/> <ul> <li> <p> <code>12.1.0.1.v6</code>
      * (supported for EE, SE1, and SE, in all AWS regions except ap-south-1,
-     * ap-northeast-2)</p> </li> <li> <p> <code>12.1.0.1.v4</code> (supported for EE,
+     * ap-northeast-2)</p> </li> <li> <p> <code>12.1.0.1.v5</code> (supported for EE,
      * SE1, and SE, in all AWS regions except ap-south-1, ap-northeast-2)</p> </li>
-     * <li> <p> <code>12.1.0.1.v3</code> (supported for EE, SE1, and SE, in all AWS
+     * <li> <p> <code>12.1.0.1.v4</code> (supported for EE, SE1, and SE, in all AWS
      * regions except ap-south-1, ap-northeast-2)</p> </li> <li> <p>
-     * <code>12.1.0.1.v2</code> (supported for EE, SE1, and SE, in all AWS regions
-     * except ap-south-1, ap-northeast-2)</p> </li> <li> <p> <code>12.1.0.1.v1</code>
+     * <code>12.1.0.1.v3</code> (supported for EE, SE1, and SE, in all AWS regions
+     * except ap-south-1, ap-northeast-2)</p> </li> <li> <p> <code>12.1.0.1.v2</code>
      * (supported for EE, SE1, and SE, in all AWS regions except ap-south-1,
-     * ap-northeast-2)</p> </li> </ul> <p> <b>Oracle 11g</b> </p> <ul> <li> <p>
+     * ap-northeast-2)</p> </li> <li> <p> <code>12.1.0.1.v1</code> (supported for EE,
+     * SE1, and SE, in all AWS regions except ap-south-1, ap-northeast-2)</p> </li>
+     * </ul> <p> <b>Oracle 11g</b> </p> <ul> <li> <p> <code>11.2.0.4.v10</code>
+     * (supported for EE, SE1, and SE, in all AWS regions)</p> </li> <li> <p>
      * <code>11.2.0.4.v9</code> (supported for EE, SE1, and SE, in all AWS regions)</p>
      * </li> <li> <p> <code>11.2.0.4.v8</code> (supported for EE, SE1, and SE, in all
      * AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v7</code> (supported for EE, SE1,
@@ -2048,26 +2063,29 @@ namespace Model
      * these AWS regions: ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-west-1,
      * sa-east-1, us-east-1, us-gov-west-1, us-west-1, us-west-2):</b> <code> 5.5.40 |
      * 5.5.40a</code> </p> </li> </ul> <p/> <p> <b>Oracle 12c</b> </p> <ul> <li> <p>
-     * <code>12.1.0.2.v5</code> (supported for EE in all AWS regions, and SE2 in all
-     * AWS regions except us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v4</code>
+     * <code>12.1.0.2.v6</code> (supported for EE in all AWS regions, and SE2 in all
+     * AWS regions except us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v5</code>
      * (supported for EE in all AWS regions, and SE2 in all AWS regions except
-     * us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v3</code> (supported for EE in
+     * us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v4</code> (supported for EE in
      * all AWS regions, and SE2 in all AWS regions except us-gov-west-1)</p> </li> <li>
-     * <p> <code>12.1.0.2.v2</code> (supported for EE in all AWS regions, and SE2 in
+     * <p> <code>12.1.0.2.v3</code> (supported for EE in all AWS regions, and SE2 in
      * all AWS regions except us-gov-west-1)</p> </li> <li> <p>
-     * <code>12.1.0.2.v1</code> (supported for EE in all AWS regions, and SE2 in all
-     * AWS regions except us-gov-west-1)</p> </li> </ul> <p/> <ul> <li> <p>
-     * <code>12.1.0.1.v6</code> (supported for EE, SE1, and SE, in all AWS regions
-     * except ap-south-1, ap-northeast-2)</p> </li> <li> <p> <code>12.1.0.1.v5</code>
+     * <code>12.1.0.2.v2</code> (supported for EE in all AWS regions, and SE2 in all
+     * AWS regions except us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v1</code>
+     * (supported for EE in all AWS regions, and SE2 in all AWS regions except
+     * us-gov-west-1)</p> </li> </ul> <p/> <ul> <li> <p> <code>12.1.0.1.v6</code>
      * (supported for EE, SE1, and SE, in all AWS regions except ap-south-1,
-     * ap-northeast-2)</p> </li> <li> <p> <code>12.1.0.1.v4</code> (supported for EE,
+     * ap-northeast-2)</p> </li> <li> <p> <code>12.1.0.1.v5</code> (supported for EE,
      * SE1, and SE, in all AWS regions except ap-south-1, ap-northeast-2)</p> </li>
-     * <li> <p> <code>12.1.0.1.v3</code> (supported for EE, SE1, and SE, in all AWS
+     * <li> <p> <code>12.1.0.1.v4</code> (supported for EE, SE1, and SE, in all AWS
      * regions except ap-south-1, ap-northeast-2)</p> </li> <li> <p>
-     * <code>12.1.0.1.v2</code> (supported for EE, SE1, and SE, in all AWS regions
-     * except ap-south-1, ap-northeast-2)</p> </li> <li> <p> <code>12.1.0.1.v1</code>
+     * <code>12.1.0.1.v3</code> (supported for EE, SE1, and SE, in all AWS regions
+     * except ap-south-1, ap-northeast-2)</p> </li> <li> <p> <code>12.1.0.1.v2</code>
      * (supported for EE, SE1, and SE, in all AWS regions except ap-south-1,
-     * ap-northeast-2)</p> </li> </ul> <p> <b>Oracle 11g</b> </p> <ul> <li> <p>
+     * ap-northeast-2)</p> </li> <li> <p> <code>12.1.0.1.v1</code> (supported for EE,
+     * SE1, and SE, in all AWS regions except ap-south-1, ap-northeast-2)</p> </li>
+     * </ul> <p> <b>Oracle 11g</b> </p> <ul> <li> <p> <code>11.2.0.4.v10</code>
+     * (supported for EE, SE1, and SE, in all AWS regions)</p> </li> <li> <p>
      * <code>11.2.0.4.v9</code> (supported for EE, SE1, and SE, in all AWS regions)</p>
      * </li> <li> <p> <code>11.2.0.4.v8</code> (supported for EE, SE1, and SE, in all
      * AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v7</code> (supported for EE, SE1,
@@ -2171,26 +2189,29 @@ namespace Model
      * these AWS regions: ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-west-1,
      * sa-east-1, us-east-1, us-gov-west-1, us-west-1, us-west-2):</b> <code> 5.5.40 |
      * 5.5.40a</code> </p> </li> </ul> <p/> <p> <b>Oracle 12c</b> </p> <ul> <li> <p>
-     * <code>12.1.0.2.v5</code> (supported for EE in all AWS regions, and SE2 in all
-     * AWS regions except us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v4</code>
+     * <code>12.1.0.2.v6</code> (supported for EE in all AWS regions, and SE2 in all
+     * AWS regions except us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v5</code>
      * (supported for EE in all AWS regions, and SE2 in all AWS regions except
-     * us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v3</code> (supported for EE in
+     * us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v4</code> (supported for EE in
      * all AWS regions, and SE2 in all AWS regions except us-gov-west-1)</p> </li> <li>
-     * <p> <code>12.1.0.2.v2</code> (supported for EE in all AWS regions, and SE2 in
+     * <p> <code>12.1.0.2.v3</code> (supported for EE in all AWS regions, and SE2 in
      * all AWS regions except us-gov-west-1)</p> </li> <li> <p>
-     * <code>12.1.0.2.v1</code> (supported for EE in all AWS regions, and SE2 in all
-     * AWS regions except us-gov-west-1)</p> </li> </ul> <p/> <ul> <li> <p>
-     * <code>12.1.0.1.v6</code> (supported for EE, SE1, and SE, in all AWS regions
-     * except ap-south-1, ap-northeast-2)</p> </li> <li> <p> <code>12.1.0.1.v5</code>
+     * <code>12.1.0.2.v2</code> (supported for EE in all AWS regions, and SE2 in all
+     * AWS regions except us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v1</code>
+     * (supported for EE in all AWS regions, and SE2 in all AWS regions except
+     * us-gov-west-1)</p> </li> </ul> <p/> <ul> <li> <p> <code>12.1.0.1.v6</code>
      * (supported for EE, SE1, and SE, in all AWS regions except ap-south-1,
-     * ap-northeast-2)</p> </li> <li> <p> <code>12.1.0.1.v4</code> (supported for EE,
+     * ap-northeast-2)</p> </li> <li> <p> <code>12.1.0.1.v5</code> (supported for EE,
      * SE1, and SE, in all AWS regions except ap-south-1, ap-northeast-2)</p> </li>
-     * <li> <p> <code>12.1.0.1.v3</code> (supported for EE, SE1, and SE, in all AWS
+     * <li> <p> <code>12.1.0.1.v4</code> (supported for EE, SE1, and SE, in all AWS
      * regions except ap-south-1, ap-northeast-2)</p> </li> <li> <p>
-     * <code>12.1.0.1.v2</code> (supported for EE, SE1, and SE, in all AWS regions
-     * except ap-south-1, ap-northeast-2)</p> </li> <li> <p> <code>12.1.0.1.v1</code>
+     * <code>12.1.0.1.v3</code> (supported for EE, SE1, and SE, in all AWS regions
+     * except ap-south-1, ap-northeast-2)</p> </li> <li> <p> <code>12.1.0.1.v2</code>
      * (supported for EE, SE1, and SE, in all AWS regions except ap-south-1,
-     * ap-northeast-2)</p> </li> </ul> <p> <b>Oracle 11g</b> </p> <ul> <li> <p>
+     * ap-northeast-2)</p> </li> <li> <p> <code>12.1.0.1.v1</code> (supported for EE,
+     * SE1, and SE, in all AWS regions except ap-south-1, ap-northeast-2)</p> </li>
+     * </ul> <p> <b>Oracle 11g</b> </p> <ul> <li> <p> <code>11.2.0.4.v10</code>
+     * (supported for EE, SE1, and SE, in all AWS regions)</p> </li> <li> <p>
      * <code>11.2.0.4.v9</code> (supported for EE, SE1, and SE, in all AWS regions)</p>
      * </li> <li> <p> <code>11.2.0.4.v8</code> (supported for EE, SE1, and SE, in all
      * AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v7</code> (supported for EE, SE1,

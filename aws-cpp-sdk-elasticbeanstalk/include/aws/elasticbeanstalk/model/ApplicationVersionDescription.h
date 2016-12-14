@@ -183,25 +183,39 @@ namespace Model
      */
     inline ApplicationVersionDescription& WithSourceBuildInformation(SourceBuildInformation&& value) { SetSourceBuildInformation(value); return *this;}
 
-    
+    /**
+     * <p>Reference to the artifact from the AWS CodeBuild build.</p>
+     */
     inline const Aws::String& GetBuildArn() const{ return m_buildArn; }
 
-    
+    /**
+     * <p>Reference to the artifact from the AWS CodeBuild build.</p>
+     */
     inline void SetBuildArn(const Aws::String& value) { m_buildArnHasBeenSet = true; m_buildArn = value; }
 
-    
+    /**
+     * <p>Reference to the artifact from the AWS CodeBuild build.</p>
+     */
     inline void SetBuildArn(Aws::String&& value) { m_buildArnHasBeenSet = true; m_buildArn = value; }
 
-    
+    /**
+     * <p>Reference to the artifact from the AWS CodeBuild build.</p>
+     */
     inline void SetBuildArn(const char* value) { m_buildArnHasBeenSet = true; m_buildArn.assign(value); }
 
-    
+    /**
+     * <p>Reference to the artifact from the AWS CodeBuild build.</p>
+     */
     inline ApplicationVersionDescription& WithBuildArn(const Aws::String& value) { SetBuildArn(value); return *this;}
 
-    
+    /**
+     * <p>Reference to the artifact from the AWS CodeBuild build.</p>
+     */
     inline ApplicationVersionDescription& WithBuildArn(Aws::String&& value) { SetBuildArn(value); return *this;}
 
-    
+    /**
+     * <p>Reference to the artifact from the AWS CodeBuild build.</p>
+     */
     inline ApplicationVersionDescription& WithBuildArn(const char* value) { SetBuildArn(value); return *this;}
 
     /**

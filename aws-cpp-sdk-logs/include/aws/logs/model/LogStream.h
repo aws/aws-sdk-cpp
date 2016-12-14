@@ -93,32 +93,38 @@ namespace Model
     inline LogStream& WithCreationTime(long long value) { SetCreationTime(value); return *this;}
 
     /**
-     * <p>The time of the first event.</p>
+     * <p>The time of the first event, expressed as the number of milliseconds since
+     * Jan 1, 1970 00:00:00 UTC.</p>
      */
     inline long long GetFirstEventTimestamp() const{ return m_firstEventTimestamp; }
 
     /**
-     * <p>The time of the first event.</p>
+     * <p>The time of the first event, expressed as the number of milliseconds since
+     * Jan 1, 1970 00:00:00 UTC.</p>
      */
     inline void SetFirstEventTimestamp(long long value) { m_firstEventTimestampHasBeenSet = true; m_firstEventTimestamp = value; }
 
     /**
-     * <p>The time of the first event.</p>
+     * <p>The time of the first event, expressed as the number of milliseconds since
+     * Jan 1, 1970 00:00:00 UTC.</p>
      */
     inline LogStream& WithFirstEventTimestamp(long long value) { SetFirstEventTimestamp(value); return *this;}
 
     /**
-     * <p>The time of the last event.</p>
+     * <p>The time of the last event, expressed as the number of milliseconds since Jan
+     * 1, 1970 00:00:00 UTC.</p>
      */
     inline long long GetLastEventTimestamp() const{ return m_lastEventTimestamp; }
 
     /**
-     * <p>The time of the last event.</p>
+     * <p>The time of the last event, expressed as the number of milliseconds since Jan
+     * 1, 1970 00:00:00 UTC.</p>
      */
     inline void SetLastEventTimestamp(long long value) { m_lastEventTimestampHasBeenSet = true; m_lastEventTimestamp = value; }
 
     /**
-     * <p>The time of the last event.</p>
+     * <p>The time of the last event, expressed as the number of milliseconds since Jan
+     * 1, 1970 00:00:00 UTC.</p>
      */
     inline LogStream& WithLastEventTimestamp(long long value) { SetLastEventTimestamp(value); return *this;}
 

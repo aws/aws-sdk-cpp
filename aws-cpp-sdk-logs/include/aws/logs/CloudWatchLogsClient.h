@@ -29,6 +29,7 @@
 #include <aws/logs/model/DescribeSubscriptionFiltersResult.h>
 #include <aws/logs/model/FilterLogEventsResult.h>
 #include <aws/logs/model/GetLogEventsResult.h>
+#include <aws/logs/model/ListTagsLogGroupResult.h>
 #include <aws/logs/model/PutDestinationResult.h>
 #include <aws/logs/model/PutLogEventsResult.h>
 #include <aws/logs/model/TestMetricFilterResult.h>
@@ -96,13 +97,16 @@ namespace Model
         class DescribeSubscriptionFiltersRequest;
         class FilterLogEventsRequest;
         class GetLogEventsRequest;
+        class ListTagsLogGroupRequest;
         class PutDestinationRequest;
         class PutDestinationPolicyRequest;
         class PutLogEventsRequest;
         class PutMetricFilterRequest;
         class PutRetentionPolicyRequest;
         class PutSubscriptionFilterRequest;
+        class TagLogGroupRequest;
         class TestMetricFilterRequest;
+        class UntagLogGroupRequest;
 
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<CloudWatchLogsErrors>> CancelExportTaskOutcome;
         typedef Aws::Utils::Outcome<CreateExportTaskResult, Aws::Client::AWSError<CloudWatchLogsErrors>> CreateExportTaskOutcome;
@@ -122,13 +126,16 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeSubscriptionFiltersResult, Aws::Client::AWSError<CloudWatchLogsErrors>> DescribeSubscriptionFiltersOutcome;
         typedef Aws::Utils::Outcome<FilterLogEventsResult, Aws::Client::AWSError<CloudWatchLogsErrors>> FilterLogEventsOutcome;
         typedef Aws::Utils::Outcome<GetLogEventsResult, Aws::Client::AWSError<CloudWatchLogsErrors>> GetLogEventsOutcome;
+        typedef Aws::Utils::Outcome<ListTagsLogGroupResult, Aws::Client::AWSError<CloudWatchLogsErrors>> ListTagsLogGroupOutcome;
         typedef Aws::Utils::Outcome<PutDestinationResult, Aws::Client::AWSError<CloudWatchLogsErrors>> PutDestinationOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<CloudWatchLogsErrors>> PutDestinationPolicyOutcome;
         typedef Aws::Utils::Outcome<PutLogEventsResult, Aws::Client::AWSError<CloudWatchLogsErrors>> PutLogEventsOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<CloudWatchLogsErrors>> PutMetricFilterOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<CloudWatchLogsErrors>> PutRetentionPolicyOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<CloudWatchLogsErrors>> PutSubscriptionFilterOutcome;
+        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<CloudWatchLogsErrors>> TagLogGroupOutcome;
         typedef Aws::Utils::Outcome<TestMetricFilterResult, Aws::Client::AWSError<CloudWatchLogsErrors>> TestMetricFilterOutcome;
+        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<CloudWatchLogsErrors>> UntagLogGroupOutcome;
 
         typedef std::future<CancelExportTaskOutcome> CancelExportTaskOutcomeCallable;
         typedef std::future<CreateExportTaskOutcome> CreateExportTaskOutcomeCallable;
@@ -148,13 +155,16 @@ namespace Model
         typedef std::future<DescribeSubscriptionFiltersOutcome> DescribeSubscriptionFiltersOutcomeCallable;
         typedef std::future<FilterLogEventsOutcome> FilterLogEventsOutcomeCallable;
         typedef std::future<GetLogEventsOutcome> GetLogEventsOutcomeCallable;
+        typedef std::future<ListTagsLogGroupOutcome> ListTagsLogGroupOutcomeCallable;
         typedef std::future<PutDestinationOutcome> PutDestinationOutcomeCallable;
         typedef std::future<PutDestinationPolicyOutcome> PutDestinationPolicyOutcomeCallable;
         typedef std::future<PutLogEventsOutcome> PutLogEventsOutcomeCallable;
         typedef std::future<PutMetricFilterOutcome> PutMetricFilterOutcomeCallable;
         typedef std::future<PutRetentionPolicyOutcome> PutRetentionPolicyOutcomeCallable;
         typedef std::future<PutSubscriptionFilterOutcome> PutSubscriptionFilterOutcomeCallable;
+        typedef std::future<TagLogGroupOutcome> TagLogGroupOutcomeCallable;
         typedef std::future<TestMetricFilterOutcome> TestMetricFilterOutcomeCallable;
+        typedef std::future<UntagLogGroupOutcome> UntagLogGroupOutcomeCallable;
 } // namespace Model
 
   class CloudWatchLogsClient;
@@ -177,13 +187,16 @@ namespace Model
     typedef std::function<void(const CloudWatchLogsClient*, const Model::DescribeSubscriptionFiltersRequest&, const Model::DescribeSubscriptionFiltersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSubscriptionFiltersResponseReceivedHandler;
     typedef std::function<void(const CloudWatchLogsClient*, const Model::FilterLogEventsRequest&, const Model::FilterLogEventsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > FilterLogEventsResponseReceivedHandler;
     typedef std::function<void(const CloudWatchLogsClient*, const Model::GetLogEventsRequest&, const Model::GetLogEventsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLogEventsResponseReceivedHandler;
+    typedef std::function<void(const CloudWatchLogsClient*, const Model::ListTagsLogGroupRequest&, const Model::ListTagsLogGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsLogGroupResponseReceivedHandler;
     typedef std::function<void(const CloudWatchLogsClient*, const Model::PutDestinationRequest&, const Model::PutDestinationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutDestinationResponseReceivedHandler;
     typedef std::function<void(const CloudWatchLogsClient*, const Model::PutDestinationPolicyRequest&, const Model::PutDestinationPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutDestinationPolicyResponseReceivedHandler;
     typedef std::function<void(const CloudWatchLogsClient*, const Model::PutLogEventsRequest&, const Model::PutLogEventsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutLogEventsResponseReceivedHandler;
     typedef std::function<void(const CloudWatchLogsClient*, const Model::PutMetricFilterRequest&, const Model::PutMetricFilterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutMetricFilterResponseReceivedHandler;
     typedef std::function<void(const CloudWatchLogsClient*, const Model::PutRetentionPolicyRequest&, const Model::PutRetentionPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutRetentionPolicyResponseReceivedHandler;
     typedef std::function<void(const CloudWatchLogsClient*, const Model::PutSubscriptionFilterRequest&, const Model::PutSubscriptionFilterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutSubscriptionFilterResponseReceivedHandler;
+    typedef std::function<void(const CloudWatchLogsClient*, const Model::TagLogGroupRequest&, const Model::TagLogGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagLogGroupResponseReceivedHandler;
     typedef std::function<void(const CloudWatchLogsClient*, const Model::TestMetricFilterRequest&, const Model::TestMetricFilterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TestMetricFilterResponseReceivedHandler;
+    typedef std::function<void(const CloudWatchLogsClient*, const Model::UntagLogGroupRequest&, const Model::UntagLogGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagLogGroupResponseReceivedHandler;
 
   /**
    * <p>You can use Amazon CloudWatch Logs to monitor, store, and access your log
@@ -604,14 +617,14 @@ namespace Model
 
         /**
          * <p>Lists the specified metric filters. You can list all the metric filters or
-         * filter the results by log name, prefix, metric name, or metric namespace. The
+         * filter the results by log name, prefix, metric name, and metric namespace. The
          * results are ASCII-sorted by filter name.</p>
          */
         virtual Model::DescribeMetricFiltersOutcome DescribeMetricFilters(const Model::DescribeMetricFiltersRequest& request) const;
 
         /**
          * <p>Lists the specified metric filters. You can list all the metric filters or
-         * filter the results by log name, prefix, metric name, or metric namespace. The
+         * filter the results by log name, prefix, metric name, and metric namespace. The
          * results are ASCII-sorted by filter name.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -620,7 +633,7 @@ namespace Model
 
         /**
          * <p>Lists the specified metric filters. You can list all the metric filters or
-         * filter the results by log name, prefix, metric name, or metric namespace. The
+         * filter the results by log name, prefix, metric name, and metric namespace. The
          * results are ASCII-sorted by filter name.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -724,6 +737,28 @@ namespace Model
         virtual void GetLogEventsAsync(const Model::GetLogEventsRequest& request, const GetLogEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Lists the tags for the specified log group.</p> <p>To add tags, use
+         * <a>TagLogGroup</a>. To remove tags, use <a>UntagLogGroup</a>.</p>
+         */
+        virtual Model::ListTagsLogGroupOutcome ListTagsLogGroup(const Model::ListTagsLogGroupRequest& request) const;
+
+        /**
+         * <p>Lists the tags for the specified log group.</p> <p>To add tags, use
+         * <a>TagLogGroup</a>. To remove tags, use <a>UntagLogGroup</a>.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListTagsLogGroupOutcomeCallable ListTagsLogGroupCallable(const Model::ListTagsLogGroupRequest& request) const;
+
+        /**
+         * <p>Lists the tags for the specified log group.</p> <p>To add tags, use
+         * <a>TagLogGroup</a>. To remove tags, use <a>UntagLogGroup</a>.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListTagsLogGroupAsync(const Model::ListTagsLogGroupRequest& request, const ListTagsLogGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Creates or updates a destination. A destination encapsulates a physical
          * resource (such as a Kinesis stream) and enables you to subscribe to a real-time
          * stream of log events of a different account, ingested using <a>PutLogEvents</a>.
@@ -814,10 +849,11 @@ namespace Model
          * <p>None of the log events in the batch can be more than 2 hours in the
          * future.</p> </li> <li> <p>None of the log events in the batch can be older than
          * 14 days or the retention period of the log group.</p> </li> <li> <p>The log
-         * events in the batch must be in chronological ordered by their timestamp.</p>
-         * </li> <li> <p>The maximum number of log events in a batch is 10,000.</p> </li>
-         * <li> <p>A batch of log events in a single PutLogEvents request cannot span more
-         * than 24 hours. Otherwise, the PutLogEvents operation will fail.</p> </li> </ul>
+         * events in the batch must be in chronological ordered by their timestamp (the
+         * time the event occurred, expressed as the number of milliseconds since Jan 1,
+         * 1970 00:00:00 UTC).</p> </li> <li> <p>The maximum number of log events in a
+         * batch is 10,000.</p> </li> <li> <p>A batch of log events in a single request
+         * cannot span more than 24 hours. Otherwise, the operation fails.</p> </li> </ul>
          */
         virtual Model::PutLogEventsOutcome PutLogEvents(const Model::PutLogEventsRequest& request) const;
 
@@ -832,10 +868,11 @@ namespace Model
          * <p>None of the log events in the batch can be more than 2 hours in the
          * future.</p> </li> <li> <p>None of the log events in the batch can be older than
          * 14 days or the retention period of the log group.</p> </li> <li> <p>The log
-         * events in the batch must be in chronological ordered by their timestamp.</p>
-         * </li> <li> <p>The maximum number of log events in a batch is 10,000.</p> </li>
-         * <li> <p>A batch of log events in a single PutLogEvents request cannot span more
-         * than 24 hours. Otherwise, the PutLogEvents operation will fail.</p> </li> </ul>
+         * events in the batch must be in chronological ordered by their timestamp (the
+         * time the event occurred, expressed as the number of milliseconds since Jan 1,
+         * 1970 00:00:00 UTC).</p> </li> <li> <p>The maximum number of log events in a
+         * batch is 10,000.</p> </li> <li> <p>A batch of log events in a single request
+         * cannot span more than 24 hours. Otherwise, the operation fails.</p> </li> </ul>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -852,10 +889,11 @@ namespace Model
          * <p>None of the log events in the batch can be more than 2 hours in the
          * future.</p> </li> <li> <p>None of the log events in the batch can be older than
          * 14 days or the retention period of the log group.</p> </li> <li> <p>The log
-         * events in the batch must be in chronological ordered by their timestamp.</p>
-         * </li> <li> <p>The maximum number of log events in a batch is 10,000.</p> </li>
-         * <li> <p>A batch of log events in a single PutLogEvents request cannot span more
-         * than 24 hours. Otherwise, the PutLogEvents operation will fail.</p> </li> </ul>
+         * events in the batch must be in chronological ordered by their timestamp (the
+         * time the event occurred, expressed as the number of milliseconds since Jan 1,
+         * 1970 00:00:00 UTC).</p> </li> <li> <p>The maximum number of log events in a
+         * batch is 10,000.</p> </li> <li> <p>A batch of log events in a single request
+         * cannot span more than 24 hours. Otherwise, the operation fails.</p> </li> </ul>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -967,6 +1005,40 @@ namespace Model
         virtual void PutSubscriptionFilterAsync(const Model::PutSubscriptionFilterRequest& request, const PutSubscriptionFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Adds or updates the specified tags for the specified log group.</p> <p>To
+         * list the tags for a log group, use <a>ListTagsLogGroup</a>. To remove tags, use
+         * <a>UntagLogGroup</a>.</p> <p>For more information about tags, see <a
+         * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/log-group-tagging.html">Tag
+         * Log Groups in Amazon CloudWatch Logs</a> in the <i>Amazon CloudWatch Logs User
+         * Guide</i>.</p>
+         */
+        virtual Model::TagLogGroupOutcome TagLogGroup(const Model::TagLogGroupRequest& request) const;
+
+        /**
+         * <p>Adds or updates the specified tags for the specified log group.</p> <p>To
+         * list the tags for a log group, use <a>ListTagsLogGroup</a>. To remove tags, use
+         * <a>UntagLogGroup</a>.</p> <p>For more information about tags, see <a
+         * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/log-group-tagging.html">Tag
+         * Log Groups in Amazon CloudWatch Logs</a> in the <i>Amazon CloudWatch Logs User
+         * Guide</i>.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::TagLogGroupOutcomeCallable TagLogGroupCallable(const Model::TagLogGroupRequest& request) const;
+
+        /**
+         * <p>Adds or updates the specified tags for the specified log group.</p> <p>To
+         * list the tags for a log group, use <a>ListTagsLogGroup</a>. To remove tags, use
+         * <a>UntagLogGroup</a>.</p> <p>For more information about tags, see <a
+         * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/log-group-tagging.html">Tag
+         * Log Groups in Amazon CloudWatch Logs</a> in the <i>Amazon CloudWatch Logs User
+         * Guide</i>.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void TagLogGroupAsync(const Model::TagLogGroupRequest& request, const TagLogGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Tests the filter pattern of a metric filter against a sample of log event
          * messages. You can use this operation to validate the correctness of a metric
          * filter pattern.</p>
@@ -991,6 +1063,31 @@ namespace Model
          */
         virtual void TestMetricFilterAsync(const Model::TestMetricFilterRequest& request, const TestMetricFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
+        /**
+         * <p>Removes the specified tags from the specified log group.</p> <p>To list the
+         * tags for a log group, use <a>ListTagsLogGroup</a>. To add tags, use
+         * <a>UntagLogGroup</a>.</p>
+         */
+        virtual Model::UntagLogGroupOutcome UntagLogGroup(const Model::UntagLogGroupRequest& request) const;
+
+        /**
+         * <p>Removes the specified tags from the specified log group.</p> <p>To list the
+         * tags for a log group, use <a>ListTagsLogGroup</a>. To add tags, use
+         * <a>UntagLogGroup</a>.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UntagLogGroupOutcomeCallable UntagLogGroupCallable(const Model::UntagLogGroupRequest& request) const;
+
+        /**
+         * <p>Removes the specified tags from the specified log group.</p> <p>To list the
+         * tags for a log group, use <a>ListTagsLogGroup</a>. To add tags, use
+         * <a>UntagLogGroup</a>.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UntagLogGroupAsync(const Model::UntagLogGroupRequest& request, const UntagLogGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
 
     private:
       void init(const Client::ClientConfiguration& clientConfiguration);
@@ -1014,13 +1111,16 @@ namespace Model
         void DescribeSubscriptionFiltersAsyncHelper(const Model::DescribeSubscriptionFiltersRequest& request, const DescribeSubscriptionFiltersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void FilterLogEventsAsyncHelper(const Model::FilterLogEventsRequest& request, const FilterLogEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetLogEventsAsyncHelper(const Model::GetLogEventsRequest& request, const GetLogEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListTagsLogGroupAsyncHelper(const Model::ListTagsLogGroupRequest& request, const ListTagsLogGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutDestinationAsyncHelper(const Model::PutDestinationRequest& request, const PutDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutDestinationPolicyAsyncHelper(const Model::PutDestinationPolicyRequest& request, const PutDestinationPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutLogEventsAsyncHelper(const Model::PutLogEventsRequest& request, const PutLogEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutMetricFilterAsyncHelper(const Model::PutMetricFilterRequest& request, const PutMetricFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutRetentionPolicyAsyncHelper(const Model::PutRetentionPolicyRequest& request, const PutRetentionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutSubscriptionFilterAsyncHelper(const Model::PutSubscriptionFilterRequest& request, const PutSubscriptionFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void TagLogGroupAsyncHelper(const Model::TagLogGroupRequest& request, const TagLogGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TestMetricFilterAsyncHelper(const Model::TestMetricFilterRequest& request, const TestMetricFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UntagLogGroupAsyncHelper(const Model::UntagLogGroupRequest& request, const UntagLogGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       std::shared_ptr<Utils::Threading::Executor> m_executor;

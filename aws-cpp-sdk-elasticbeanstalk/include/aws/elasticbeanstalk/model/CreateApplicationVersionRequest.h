@@ -178,112 +178,112 @@ namespace Model
 
     /**
      * <p>Specify a commit in an AWS CodeCommit Git repository to use as the source
-     * code for the application version.</p> <p>Specify a commit in an AWS CodeCommit
-     * repository or a source bundle in S3 (with <code>SourceBundle</code>), but not
-     * both. If neither <code>SourceBundle</code> nor
-     * <code>SourceBuildInformation</code> are provided, Elastic Beanstalk uses a
-     * sample application.</p>
+     * code for the application version.</p>
      */
     inline const SourceBuildInformation& GetSourceBuildInformation() const{ return m_sourceBuildInformation; }
 
     /**
      * <p>Specify a commit in an AWS CodeCommit Git repository to use as the source
-     * code for the application version.</p> <p>Specify a commit in an AWS CodeCommit
-     * repository or a source bundle in S3 (with <code>SourceBundle</code>), but not
-     * both. If neither <code>SourceBundle</code> nor
-     * <code>SourceBuildInformation</code> are provided, Elastic Beanstalk uses a
-     * sample application.</p>
+     * code for the application version.</p>
      */
     inline void SetSourceBuildInformation(const SourceBuildInformation& value) { m_sourceBuildInformationHasBeenSet = true; m_sourceBuildInformation = value; }
 
     /**
      * <p>Specify a commit in an AWS CodeCommit Git repository to use as the source
-     * code for the application version.</p> <p>Specify a commit in an AWS CodeCommit
-     * repository or a source bundle in S3 (with <code>SourceBundle</code>), but not
-     * both. If neither <code>SourceBundle</code> nor
-     * <code>SourceBuildInformation</code> are provided, Elastic Beanstalk uses a
-     * sample application.</p>
+     * code for the application version.</p>
      */
     inline void SetSourceBuildInformation(SourceBuildInformation&& value) { m_sourceBuildInformationHasBeenSet = true; m_sourceBuildInformation = value; }
 
     /**
      * <p>Specify a commit in an AWS CodeCommit Git repository to use as the source
-     * code for the application version.</p> <p>Specify a commit in an AWS CodeCommit
-     * repository or a source bundle in S3 (with <code>SourceBundle</code>), but not
-     * both. If neither <code>SourceBundle</code> nor
-     * <code>SourceBuildInformation</code> are provided, Elastic Beanstalk uses a
-     * sample application.</p>
+     * code for the application version.</p>
      */
     inline CreateApplicationVersionRequest& WithSourceBuildInformation(const SourceBuildInformation& value) { SetSourceBuildInformation(value); return *this;}
 
     /**
      * <p>Specify a commit in an AWS CodeCommit Git repository to use as the source
-     * code for the application version.</p> <p>Specify a commit in an AWS CodeCommit
-     * repository or a source bundle in S3 (with <code>SourceBundle</code>), but not
-     * both. If neither <code>SourceBundle</code> nor
-     * <code>SourceBuildInformation</code> are provided, Elastic Beanstalk uses a
-     * sample application.</p>
+     * code for the application version.</p>
      */
     inline CreateApplicationVersionRequest& WithSourceBuildInformation(SourceBuildInformation&& value) { SetSourceBuildInformation(value); return *this;}
 
     /**
      * <p>The Amazon S3 bucket and key that identify the location of the source bundle
-     * for this version.</p> <p>Specify a source bundle in S3 or a commit in an AWS
-     * CodeCommit repository (with <code>SourceBuildInformation</code>), but not both.
-     * If neither <code>SourceBundle</code> nor <code>SourceBuildInformation</code> are
-     * provided, Elastic Beanstalk uses a sample application.</p>
+     * for this version.</p> <note> <p>The Amazon S3 bucket must be in the same region
+     * as the environment.</p> </note> <p>Specify a source bundle in S3 or a commit in
+     * an AWS CodeCommit repository (with <code>SourceBuildInformation</code>), but not
+     * both. If neither <code>SourceBundle</code> nor
+     * <code>SourceBuildInformation</code> are provided, Elastic Beanstalk uses a
+     * sample application.</p>
      */
     inline const S3Location& GetSourceBundle() const{ return m_sourceBundle; }
 
     /**
      * <p>The Amazon S3 bucket and key that identify the location of the source bundle
-     * for this version.</p> <p>Specify a source bundle in S3 or a commit in an AWS
-     * CodeCommit repository (with <code>SourceBuildInformation</code>), but not both.
-     * If neither <code>SourceBundle</code> nor <code>SourceBuildInformation</code> are
-     * provided, Elastic Beanstalk uses a sample application.</p>
+     * for this version.</p> <note> <p>The Amazon S3 bucket must be in the same region
+     * as the environment.</p> </note> <p>Specify a source bundle in S3 or a commit in
+     * an AWS CodeCommit repository (with <code>SourceBuildInformation</code>), but not
+     * both. If neither <code>SourceBundle</code> nor
+     * <code>SourceBuildInformation</code> are provided, Elastic Beanstalk uses a
+     * sample application.</p>
      */
     inline void SetSourceBundle(const S3Location& value) { m_sourceBundleHasBeenSet = true; m_sourceBundle = value; }
 
     /**
      * <p>The Amazon S3 bucket and key that identify the location of the source bundle
-     * for this version.</p> <p>Specify a source bundle in S3 or a commit in an AWS
-     * CodeCommit repository (with <code>SourceBuildInformation</code>), but not both.
-     * If neither <code>SourceBundle</code> nor <code>SourceBuildInformation</code> are
-     * provided, Elastic Beanstalk uses a sample application.</p>
+     * for this version.</p> <note> <p>The Amazon S3 bucket must be in the same region
+     * as the environment.</p> </note> <p>Specify a source bundle in S3 or a commit in
+     * an AWS CodeCommit repository (with <code>SourceBuildInformation</code>), but not
+     * both. If neither <code>SourceBundle</code> nor
+     * <code>SourceBuildInformation</code> are provided, Elastic Beanstalk uses a
+     * sample application.</p>
      */
     inline void SetSourceBundle(S3Location&& value) { m_sourceBundleHasBeenSet = true; m_sourceBundle = value; }
 
     /**
      * <p>The Amazon S3 bucket and key that identify the location of the source bundle
-     * for this version.</p> <p>Specify a source bundle in S3 or a commit in an AWS
-     * CodeCommit repository (with <code>SourceBuildInformation</code>), but not both.
-     * If neither <code>SourceBundle</code> nor <code>SourceBuildInformation</code> are
-     * provided, Elastic Beanstalk uses a sample application.</p>
+     * for this version.</p> <note> <p>The Amazon S3 bucket must be in the same region
+     * as the environment.</p> </note> <p>Specify a source bundle in S3 or a commit in
+     * an AWS CodeCommit repository (with <code>SourceBuildInformation</code>), but not
+     * both. If neither <code>SourceBundle</code> nor
+     * <code>SourceBuildInformation</code> are provided, Elastic Beanstalk uses a
+     * sample application.</p>
      */
     inline CreateApplicationVersionRequest& WithSourceBundle(const S3Location& value) { SetSourceBundle(value); return *this;}
 
     /**
      * <p>The Amazon S3 bucket and key that identify the location of the source bundle
-     * for this version.</p> <p>Specify a source bundle in S3 or a commit in an AWS
-     * CodeCommit repository (with <code>SourceBuildInformation</code>), but not both.
-     * If neither <code>SourceBundle</code> nor <code>SourceBuildInformation</code> are
-     * provided, Elastic Beanstalk uses a sample application.</p>
+     * for this version.</p> <note> <p>The Amazon S3 bucket must be in the same region
+     * as the environment.</p> </note> <p>Specify a source bundle in S3 or a commit in
+     * an AWS CodeCommit repository (with <code>SourceBuildInformation</code>), but not
+     * both. If neither <code>SourceBundle</code> nor
+     * <code>SourceBuildInformation</code> are provided, Elastic Beanstalk uses a
+     * sample application.</p>
      */
     inline CreateApplicationVersionRequest& WithSourceBundle(S3Location&& value) { SetSourceBundle(value); return *this;}
 
-    
+    /**
+     * <p>Settings for an AWS CodeBuild build.</p>
+     */
     inline const BuildConfiguration& GetBuildConfiguration() const{ return m_buildConfiguration; }
 
-    
+    /**
+     * <p>Settings for an AWS CodeBuild build.</p>
+     */
     inline void SetBuildConfiguration(const BuildConfiguration& value) { m_buildConfigurationHasBeenSet = true; m_buildConfiguration = value; }
 
-    
+    /**
+     * <p>Settings for an AWS CodeBuild build.</p>
+     */
     inline void SetBuildConfiguration(BuildConfiguration&& value) { m_buildConfigurationHasBeenSet = true; m_buildConfiguration = value; }
 
-    
+    /**
+     * <p>Settings for an AWS CodeBuild build.</p>
+     */
     inline CreateApplicationVersionRequest& WithBuildConfiguration(const BuildConfiguration& value) { SetBuildConfiguration(value); return *this;}
 
-    
+    /**
+     * <p>Settings for an AWS CodeBuild build.</p>
+     */
     inline CreateApplicationVersionRequest& WithBuildConfiguration(BuildConfiguration&& value) { SetBuildConfiguration(value); return *this;}
 
     /**

@@ -36,10 +36,10 @@ namespace Model
      * <p>The name of the federated user. The name is used as an identifier for the
      * temporary security credentials (such as <code>Bob</code>). For example, you can
      * reference the federated user name in a resource-based policy, such as in an
-     * Amazon S3 bucket policy.</p> <p>The format for this parameter, as described by
-     * its regex pattern, is a string of characters consisting of upper- and lower-case
-     * alphanumeric characters with no spaces. You can also include underscores or any
-     * of the following characters: =,.@-</p>
+     * Amazon S3 bucket policy.</p> <p>The regex used to validate this parameter is a
+     * string of characters consisting of upper- and lower-case alphanumeric characters
+     * with no spaces. You can also include underscores or any of the following
+     * characters: =,.@-</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
@@ -47,10 +47,10 @@ namespace Model
      * <p>The name of the federated user. The name is used as an identifier for the
      * temporary security credentials (such as <code>Bob</code>). For example, you can
      * reference the federated user name in a resource-based policy, such as in an
-     * Amazon S3 bucket policy.</p> <p>The format for this parameter, as described by
-     * its regex pattern, is a string of characters consisting of upper- and lower-case
-     * alphanumeric characters with no spaces. You can also include underscores or any
-     * of the following characters: =,.@-</p>
+     * Amazon S3 bucket policy.</p> <p>The regex used to validate this parameter is a
+     * string of characters consisting of upper- and lower-case alphanumeric characters
+     * with no spaces. You can also include underscores or any of the following
+     * characters: =,.@-</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
@@ -58,10 +58,10 @@ namespace Model
      * <p>The name of the federated user. The name is used as an identifier for the
      * temporary security credentials (such as <code>Bob</code>). For example, you can
      * reference the federated user name in a resource-based policy, such as in an
-     * Amazon S3 bucket policy.</p> <p>The format for this parameter, as described by
-     * its regex pattern, is a string of characters consisting of upper- and lower-case
-     * alphanumeric characters with no spaces. You can also include underscores or any
-     * of the following characters: =,.@-</p>
+     * Amazon S3 bucket policy.</p> <p>The regex used to validate this parameter is a
+     * string of characters consisting of upper- and lower-case alphanumeric characters
+     * with no spaces. You can also include underscores or any of the following
+     * characters: =,.@-</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
 
@@ -69,10 +69,10 @@ namespace Model
      * <p>The name of the federated user. The name is used as an identifier for the
      * temporary security credentials (such as <code>Bob</code>). For example, you can
      * reference the federated user name in a resource-based policy, such as in an
-     * Amazon S3 bucket policy.</p> <p>The format for this parameter, as described by
-     * its regex pattern, is a string of characters consisting of upper- and lower-case
-     * alphanumeric characters with no spaces. You can also include underscores or any
-     * of the following characters: =,.@-</p>
+     * Amazon S3 bucket policy.</p> <p>The regex used to validate this parameter is a
+     * string of characters consisting of upper- and lower-case alphanumeric characters
+     * with no spaces. You can also include underscores or any of the following
+     * characters: =,.@-</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
@@ -80,10 +80,10 @@ namespace Model
      * <p>The name of the federated user. The name is used as an identifier for the
      * temporary security credentials (such as <code>Bob</code>). For example, you can
      * reference the federated user name in a resource-based policy, such as in an
-     * Amazon S3 bucket policy.</p> <p>The format for this parameter, as described by
-     * its regex pattern, is a string of characters consisting of upper- and lower-case
-     * alphanumeric characters with no spaces. You can also include underscores or any
-     * of the following characters: =,.@-</p>
+     * Amazon S3 bucket policy.</p> <p>The regex used to validate this parameter is a
+     * string of characters consisting of upper- and lower-case alphanumeric characters
+     * with no spaces. You can also include underscores or any of the following
+     * characters: =,.@-</p>
      */
     inline GetFederationTokenRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
@@ -91,10 +91,10 @@ namespace Model
      * <p>The name of the federated user. The name is used as an identifier for the
      * temporary security credentials (such as <code>Bob</code>). For example, you can
      * reference the federated user name in a resource-based policy, such as in an
-     * Amazon S3 bucket policy.</p> <p>The format for this parameter, as described by
-     * its regex pattern, is a string of characters consisting of upper- and lower-case
-     * alphanumeric characters with no spaces. You can also include underscores or any
-     * of the following characters: =,.@-</p>
+     * Amazon S3 bucket policy.</p> <p>The regex used to validate this parameter is a
+     * string of characters consisting of upper- and lower-case alphanumeric characters
+     * with no spaces. You can also include underscores or any of the following
+     * characters: =,.@-</p>
      */
     inline GetFederationTokenRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
 
@@ -102,10 +102,10 @@ namespace Model
      * <p>The name of the federated user. The name is used as an identifier for the
      * temporary security credentials (such as <code>Bob</code>). For example, you can
      * reference the federated user name in a resource-based policy, such as in an
-     * Amazon S3 bucket policy.</p> <p>The format for this parameter, as described by
-     * its regex pattern, is a string of characters consisting of upper- and lower-case
-     * alphanumeric characters with no spaces. You can also include underscores or any
-     * of the following characters: =,.@-</p>
+     * Amazon S3 bucket policy.</p> <p>The regex used to validate this parameter is a
+     * string of characters consisting of upper- and lower-case alphanumeric characters
+     * with no spaces. You can also include underscores or any of the following
+     * characters: =,.@-</p>
      */
     inline GetFederationTokenRequest& WithName(const char* value) { SetName(value); return *this;}
 

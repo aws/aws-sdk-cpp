@@ -16,6 +16,7 @@
 #include <aws/dms/DatabaseMigrationService_EXPORTS.h>
 #include <aws/dms/DatabaseMigrationServiceRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/Array.h>
 
 namespace Aws
 {
@@ -35,87 +36,114 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * <p>The customer-assigned name of the certificate. Valid characters are
-     * [A-z_0-9].</p>
+     * <p>The customer-assigned name of the certificate. Valid characters are A-z and
+     * 0-9.</p>
      */
     inline const Aws::String& GetCertificateIdentifier() const{ return m_certificateIdentifier; }
 
     /**
-     * <p>The customer-assigned name of the certificate. Valid characters are
-     * [A-z_0-9].</p>
+     * <p>The customer-assigned name of the certificate. Valid characters are A-z and
+     * 0-9.</p>
      */
     inline void SetCertificateIdentifier(const Aws::String& value) { m_certificateIdentifierHasBeenSet = true; m_certificateIdentifier = value; }
 
     /**
-     * <p>The customer-assigned name of the certificate. Valid characters are
-     * [A-z_0-9].</p>
+     * <p>The customer-assigned name of the certificate. Valid characters are A-z and
+     * 0-9.</p>
      */
     inline void SetCertificateIdentifier(Aws::String&& value) { m_certificateIdentifierHasBeenSet = true; m_certificateIdentifier = value; }
 
     /**
-     * <p>The customer-assigned name of the certificate. Valid characters are
-     * [A-z_0-9].</p>
+     * <p>The customer-assigned name of the certificate. Valid characters are A-z and
+     * 0-9.</p>
      */
     inline void SetCertificateIdentifier(const char* value) { m_certificateIdentifierHasBeenSet = true; m_certificateIdentifier.assign(value); }
 
     /**
-     * <p>The customer-assigned name of the certificate. Valid characters are
-     * [A-z_0-9].</p>
+     * <p>The customer-assigned name of the certificate. Valid characters are A-z and
+     * 0-9.</p>
      */
     inline ImportCertificateRequest& WithCertificateIdentifier(const Aws::String& value) { SetCertificateIdentifier(value); return *this;}
 
     /**
-     * <p>The customer-assigned name of the certificate. Valid characters are
-     * [A-z_0-9].</p>
+     * <p>The customer-assigned name of the certificate. Valid characters are A-z and
+     * 0-9.</p>
      */
     inline ImportCertificateRequest& WithCertificateIdentifier(Aws::String&& value) { SetCertificateIdentifier(value); return *this;}
 
     /**
-     * <p>The customer-assigned name of the certificate. Valid characters are
-     * [A-z_0-9].</p>
+     * <p>The customer-assigned name of the certificate. Valid characters are A-z and
+     * 0-9.</p>
      */
     inline ImportCertificateRequest& WithCertificateIdentifier(const char* value) { SetCertificateIdentifier(value); return *this;}
 
     /**
-     * <p>The contents of the .pem X.509 certificate file.</p>
+     * <p>The contents of the .pem X.509 certificate file for the certificate.</p>
      */
     inline const Aws::String& GetCertificatePem() const{ return m_certificatePem; }
 
     /**
-     * <p>The contents of the .pem X.509 certificate file.</p>
+     * <p>The contents of the .pem X.509 certificate file for the certificate.</p>
      */
     inline void SetCertificatePem(const Aws::String& value) { m_certificatePemHasBeenSet = true; m_certificatePem = value; }
 
     /**
-     * <p>The contents of the .pem X.509 certificate file.</p>
+     * <p>The contents of the .pem X.509 certificate file for the certificate.</p>
      */
     inline void SetCertificatePem(Aws::String&& value) { m_certificatePemHasBeenSet = true; m_certificatePem = value; }
 
     /**
-     * <p>The contents of the .pem X.509 certificate file.</p>
+     * <p>The contents of the .pem X.509 certificate file for the certificate.</p>
      */
     inline void SetCertificatePem(const char* value) { m_certificatePemHasBeenSet = true; m_certificatePem.assign(value); }
 
     /**
-     * <p>The contents of the .pem X.509 certificate file.</p>
+     * <p>The contents of the .pem X.509 certificate file for the certificate.</p>
      */
     inline ImportCertificateRequest& WithCertificatePem(const Aws::String& value) { SetCertificatePem(value); return *this;}
 
     /**
-     * <p>The contents of the .pem X.509 certificate file.</p>
+     * <p>The contents of the .pem X.509 certificate file for the certificate.</p>
      */
     inline ImportCertificateRequest& WithCertificatePem(Aws::String&& value) { SetCertificatePem(value); return *this;}
 
     /**
-     * <p>The contents of the .pem X.509 certificate file.</p>
+     * <p>The contents of the .pem X.509 certificate file for the certificate.</p>
      */
     inline ImportCertificateRequest& WithCertificatePem(const char* value) { SetCertificatePem(value); return *this;}
+
+    /**
+     * <p>The location of the imported Oracle Wallet certificate for use with SSL.</p>
+     */
+    inline const Aws::Utils::ByteBuffer& GetCertificateWallet() const{ return m_certificateWallet; }
+
+    /**
+     * <p>The location of the imported Oracle Wallet certificate for use with SSL.</p>
+     */
+    inline void SetCertificateWallet(const Aws::Utils::ByteBuffer& value) { m_certificateWalletHasBeenSet = true; m_certificateWallet = value; }
+
+    /**
+     * <p>The location of the imported Oracle Wallet certificate for use with SSL.</p>
+     */
+    inline void SetCertificateWallet(Aws::Utils::ByteBuffer&& value) { m_certificateWalletHasBeenSet = true; m_certificateWallet = value; }
+
+    /**
+     * <p>The location of the imported Oracle Wallet certificate for use with SSL.</p>
+     */
+    inline ImportCertificateRequest& WithCertificateWallet(const Aws::Utils::ByteBuffer& value) { SetCertificateWallet(value); return *this;}
+
+    /**
+     * <p>The location of the imported Oracle Wallet certificate for use with SSL.</p>
+     */
+    inline ImportCertificateRequest& WithCertificateWallet(Aws::Utils::ByteBuffer&& value) { SetCertificateWallet(value); return *this;}
 
   private:
     Aws::String m_certificateIdentifier;
     bool m_certificateIdentifierHasBeenSet;
     Aws::String m_certificatePem;
     bool m_certificatePemHasBeenSet;
+    Aws::Utils::ByteBuffer m_certificateWallet;
+    bool m_certificateWalletHasBeenSet;
   };
 
 } // namespace Model

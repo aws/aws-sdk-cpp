@@ -40,27 +40,27 @@ namespace Model
     DeleteCertificateResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * <p>The SSL certificate.</p>
+     * <p>The Secure Sockets Layer (SSL) certificate.</p>
      */
     inline const Certificate& GetCertificate() const{ return m_certificate; }
 
     /**
-     * <p>The SSL certificate.</p>
+     * <p>The Secure Sockets Layer (SSL) certificate.</p>
      */
     inline void SetCertificate(const Certificate& value) { m_certificate = value; }
 
     /**
-     * <p>The SSL certificate.</p>
+     * <p>The Secure Sockets Layer (SSL) certificate.</p>
      */
     inline void SetCertificate(Certificate&& value) { m_certificate = value; }
 
     /**
-     * <p>The SSL certificate.</p>
+     * <p>The Secure Sockets Layer (SSL) certificate.</p>
      */
     inline DeleteCertificateResult& WithCertificate(const Certificate& value) { SetCertificate(value); return *this;}
 
     /**
-     * <p>The SSL certificate.</p>
+     * <p>The Secure Sockets Layer (SSL) certificate.</p>
      */
     inline DeleteCertificateResult& WithCertificate(Certificate&& value) { SetCertificate(value); return *this;}
 

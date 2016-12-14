@@ -35,37 +35,37 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * <p>the Amazon Resource Name (ARN) of the deleted certificate.</p>
+     * <p>The Amazon Resource Name (ARN) of the deleted certificate.</p>
      */
     inline const Aws::String& GetCertificateArn() const{ return m_certificateArn; }
 
     /**
-     * <p>the Amazon Resource Name (ARN) of the deleted certificate.</p>
+     * <p>The Amazon Resource Name (ARN) of the deleted certificate.</p>
      */
     inline void SetCertificateArn(const Aws::String& value) { m_certificateArnHasBeenSet = true; m_certificateArn = value; }
 
     /**
-     * <p>the Amazon Resource Name (ARN) of the deleted certificate.</p>
+     * <p>The Amazon Resource Name (ARN) of the deleted certificate.</p>
      */
     inline void SetCertificateArn(Aws::String&& value) { m_certificateArnHasBeenSet = true; m_certificateArn = value; }
 
     /**
-     * <p>the Amazon Resource Name (ARN) of the deleted certificate.</p>
+     * <p>The Amazon Resource Name (ARN) of the deleted certificate.</p>
      */
     inline void SetCertificateArn(const char* value) { m_certificateArnHasBeenSet = true; m_certificateArn.assign(value); }
 
     /**
-     * <p>the Amazon Resource Name (ARN) of the deleted certificate.</p>
+     * <p>The Amazon Resource Name (ARN) of the deleted certificate.</p>
      */
     inline DeleteCertificateRequest& WithCertificateArn(const Aws::String& value) { SetCertificateArn(value); return *this;}
 
     /**
-     * <p>the Amazon Resource Name (ARN) of the deleted certificate.</p>
+     * <p>The Amazon Resource Name (ARN) of the deleted certificate.</p>
      */
     inline DeleteCertificateRequest& WithCertificateArn(Aws::String&& value) { SetCertificateArn(value); return *this;}
 
     /**
-     * <p>the Amazon Resource Name (ARN) of the deleted certificate.</p>
+     * <p>The Amazon Resource Name (ARN) of the deleted certificate.</p>
      */
     inline DeleteCertificateRequest& WithCertificateArn(const char* value) { SetCertificateArn(value); return *this;}
 
