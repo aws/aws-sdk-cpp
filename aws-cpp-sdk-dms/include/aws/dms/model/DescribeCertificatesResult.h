@@ -77,37 +77,44 @@ namespace Model
     inline DescribeCertificatesResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
     /**
-     * <p>The SSL certificates associated with the replication instance.</p>
+     * <p>The Secure Sockets Layer (SSL) certificates associated with the replication
+     * instance.</p>
      */
     inline const Aws::Vector<Certificate>& GetCertificates() const{ return m_certificates; }
 
     /**
-     * <p>The SSL certificates associated with the replication instance.</p>
+     * <p>The Secure Sockets Layer (SSL) certificates associated with the replication
+     * instance.</p>
      */
     inline void SetCertificates(const Aws::Vector<Certificate>& value) { m_certificates = value; }
 
     /**
-     * <p>The SSL certificates associated with the replication instance.</p>
+     * <p>The Secure Sockets Layer (SSL) certificates associated with the replication
+     * instance.</p>
      */
     inline void SetCertificates(Aws::Vector<Certificate>&& value) { m_certificates = value; }
 
     /**
-     * <p>The SSL certificates associated with the replication instance.</p>
+     * <p>The Secure Sockets Layer (SSL) certificates associated with the replication
+     * instance.</p>
      */
     inline DescribeCertificatesResult& WithCertificates(const Aws::Vector<Certificate>& value) { SetCertificates(value); return *this;}
 
     /**
-     * <p>The SSL certificates associated with the replication instance.</p>
+     * <p>The Secure Sockets Layer (SSL) certificates associated with the replication
+     * instance.</p>
      */
     inline DescribeCertificatesResult& WithCertificates(Aws::Vector<Certificate>&& value) { SetCertificates(value); return *this;}
 
     /**
-     * <p>The SSL certificates associated with the replication instance.</p>
+     * <p>The Secure Sockets Layer (SSL) certificates associated with the replication
+     * instance.</p>
      */
     inline DescribeCertificatesResult& AddCertificates(const Certificate& value) { m_certificates.push_back(value); return *this; }
 
     /**
-     * <p>The SSL certificates associated with the replication instance.</p>
+     * <p>The Secure Sockets Layer (SSL) certificates associated with the replication
+     * instance.</p>
      */
     inline DescribeCertificatesResult& AddCertificates(Certificate&& value) { m_certificates.push_back(value); return *this; }
 

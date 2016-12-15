@@ -30,7 +30,7 @@ DescribeSpotInstanceRequestsRequest::DescribeSpotInstanceRequestsRequest() :
 Aws::String DescribeSpotInstanceRequestsRequest::SerializePayload() const
 {
   Aws::StringStream ss;
-  ss << "Action=DescribeSpotInstances&";
+  ss << "Action=DescribeSpotInstanceRequests&";
   if(m_dryRunHasBeenSet)
   {
     ss << "DryRun=" << m_dryRun << "&";

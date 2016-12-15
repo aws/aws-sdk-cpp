@@ -159,15 +159,13 @@ namespace Model
    * travel between computers. By using Amazon SQS, you can move data between
    * distributed components of your applications that perform different tasks without
    * losing messages or requiring each component to be always available.</p> <p>
-   * <b>Topics</b> </p> <ul> <li> <p> </p> </li> <li> <p> </p> </li> <li> <p>
-   * <a>CommonParameters</a> </p> </li> <li> <p> <a>CommonErrors</a> </p> </li> </ul>
-   * <p> <b>Helpful Links</b> </p> <ul> <li> <p> <a
+   * <b>Helpful Links</b> </p> <ul> <li> <p> <a
    * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/MakingRequestsArticle.html">Making
    * API Requests</a> </p> </li> <li> <p> <a href="http://aws.amazon.com/sqs/">Amazon
    * SQS product page</a> </p> </li> <li> <p> <a
-   * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html">Using
+   * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html">Using
    * Amazon SQS Message Attributes</a> </p> </li> <li> <p> <a
-   * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSDeadLetterQueue.html">Using
+   * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
    * Amazon SQS Dead Letter Queues</a> </p> </li> <li> <p> <a
    * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#sqs_region">Regions
    * and Endpoints</a> </p> </li> </ul> <p>We also provide SDKs that enable you to
@@ -280,7 +278,7 @@ namespace Model
          * This means you can't extend the timeout of a message in an existing queue to
          * more than a total visibility timeout of 12 hours. (For more information
          * visibility timeout, see <a
-         * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html">Visibility
+         * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
          * Timeout</a> in the <i>Amazon SQS Developer Guide</i>.)</p> <p>For example, let's
          * say you have a message and its default message visibility timeout is 5 minutes.
          * After 3 minutes, you call <code>ChangeMessageVisiblity</code> with a timeout of
@@ -289,22 +287,24 @@ namespace Model
          * total visibility timeout of 13 minutes. You can continue to call
          * ChangeMessageVisibility to extend the visibility timeout to a maximum of 12
          * hours. If you try to extend beyond 12 hours, the request will be rejected.</p>
-         * <note> <p>There is a 120,000 limit for the number of inflight messages per
-         * queue. Messages are inflight after they have been received from the queue by a
-         * consuming component, but have not yet been deleted from the queue. If you reach
-         * the 120,000 limit, you will receive an OverLimit error message from Amazon SQS.
-         * To help avoid reaching the limit, you should delete the messages from the queue
-         * after they have been processed. You can also increase the number of queues you
-         * use to process the messages.</p> </note> <important> <p>If you attempt to set
-         * the <code>VisibilityTimeout</code> to an amount more than the maximum time left,
+         * <p>A message is considered to be <i>in flight</i> after it's received from a
+         * queue by a consumer, but not yet deleted from the queue.</p> <p>For standard
+         * queues, there can be a maximum of 120,000 inflight messages per queue. If you
+         * reach this limit, Amazon SQS returns the <code>OverLimit</code> error message.
+         * To avoid reaching the limit, you should delete messages from the queue after
+         * they're processed. You can also increase the number of queues you use to process
+         * your messages.</p> <p>For FIFO queues, there can be a maximum of 20,000 inflight
+         * messages per queue. If you reach this limit, Amazon SQS returns no error
+         * messages.</p> <important> <p>If you attempt to set the
+         * <code>VisibilityTimeout</code> to an amount more than the maximum time left,
          * Amazon SQS returns an error. It will not automatically recalculate and increase
-         * the timeout to the maximum time remaining.</p> </important> <important>
-         * <p>Unlike with a queue, when you change the visibility timeout for a specific
-         * message, that timeout value is applied immediately but is not saved in memory
-         * for that message. If you don't delete a message after it is received, the
-         * visibility timeout for the message the next time it is received reverts to the
-         * original timeout value, not the value you set with the
-         * <code>ChangeMessageVisibility</code> action.</p> </important>
+         * the timeout to the maximum time remaining.</p> <p>Unlike with a queue, when you
+         * change the visibility timeout for a specific message, that timeout value is
+         * applied immediately but is not saved in memory for that message. If you don't
+         * delete a message after it is received, the visibility timeout for the message
+         * the next time it is received reverts to the original timeout value, not the
+         * value you set with the <code>ChangeMessageVisibility</code> action.</p>
+         * </important>
          */
         virtual Model::ChangeMessageVisibilityOutcome ChangeMessageVisibility(const Model::ChangeMessageVisibilityRequest& request) const;
 
@@ -314,7 +314,7 @@ namespace Model
          * This means you can't extend the timeout of a message in an existing queue to
          * more than a total visibility timeout of 12 hours. (For more information
          * visibility timeout, see <a
-         * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html">Visibility
+         * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
          * Timeout</a> in the <i>Amazon SQS Developer Guide</i>.)</p> <p>For example, let's
          * say you have a message and its default message visibility timeout is 5 minutes.
          * After 3 minutes, you call <code>ChangeMessageVisiblity</code> with a timeout of
@@ -323,22 +323,24 @@ namespace Model
          * total visibility timeout of 13 minutes. You can continue to call
          * ChangeMessageVisibility to extend the visibility timeout to a maximum of 12
          * hours. If you try to extend beyond 12 hours, the request will be rejected.</p>
-         * <note> <p>There is a 120,000 limit for the number of inflight messages per
-         * queue. Messages are inflight after they have been received from the queue by a
-         * consuming component, but have not yet been deleted from the queue. If you reach
-         * the 120,000 limit, you will receive an OverLimit error message from Amazon SQS.
-         * To help avoid reaching the limit, you should delete the messages from the queue
-         * after they have been processed. You can also increase the number of queues you
-         * use to process the messages.</p> </note> <important> <p>If you attempt to set
-         * the <code>VisibilityTimeout</code> to an amount more than the maximum time left,
+         * <p>A message is considered to be <i>in flight</i> after it's received from a
+         * queue by a consumer, but not yet deleted from the queue.</p> <p>For standard
+         * queues, there can be a maximum of 120,000 inflight messages per queue. If you
+         * reach this limit, Amazon SQS returns the <code>OverLimit</code> error message.
+         * To avoid reaching the limit, you should delete messages from the queue after
+         * they're processed. You can also increase the number of queues you use to process
+         * your messages.</p> <p>For FIFO queues, there can be a maximum of 20,000 inflight
+         * messages per queue. If you reach this limit, Amazon SQS returns no error
+         * messages.</p> <important> <p>If you attempt to set the
+         * <code>VisibilityTimeout</code> to an amount more than the maximum time left,
          * Amazon SQS returns an error. It will not automatically recalculate and increase
-         * the timeout to the maximum time remaining.</p> </important> <important>
-         * <p>Unlike with a queue, when you change the visibility timeout for a specific
-         * message, that timeout value is applied immediately but is not saved in memory
-         * for that message. If you don't delete a message after it is received, the
-         * visibility timeout for the message the next time it is received reverts to the
-         * original timeout value, not the value you set with the
-         * <code>ChangeMessageVisibility</code> action.</p> </important>
+         * the timeout to the maximum time remaining.</p> <p>Unlike with a queue, when you
+         * change the visibility timeout for a specific message, that timeout value is
+         * applied immediately but is not saved in memory for that message. If you don't
+         * delete a message after it is received, the visibility timeout for the message
+         * the next time it is received reverts to the original timeout value, not the
+         * value you set with the <code>ChangeMessageVisibility</code> action.</p>
+         * </important>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -350,7 +352,7 @@ namespace Model
          * This means you can't extend the timeout of a message in an existing queue to
          * more than a total visibility timeout of 12 hours. (For more information
          * visibility timeout, see <a
-         * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html">Visibility
+         * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
          * Timeout</a> in the <i>Amazon SQS Developer Guide</i>.)</p> <p>For example, let's
          * say you have a message and its default message visibility timeout is 5 minutes.
          * After 3 minutes, you call <code>ChangeMessageVisiblity</code> with a timeout of
@@ -359,22 +361,24 @@ namespace Model
          * total visibility timeout of 13 minutes. You can continue to call
          * ChangeMessageVisibility to extend the visibility timeout to a maximum of 12
          * hours. If you try to extend beyond 12 hours, the request will be rejected.</p>
-         * <note> <p>There is a 120,000 limit for the number of inflight messages per
-         * queue. Messages are inflight after they have been received from the queue by a
-         * consuming component, but have not yet been deleted from the queue. If you reach
-         * the 120,000 limit, you will receive an OverLimit error message from Amazon SQS.
-         * To help avoid reaching the limit, you should delete the messages from the queue
-         * after they have been processed. You can also increase the number of queues you
-         * use to process the messages.</p> </note> <important> <p>If you attempt to set
-         * the <code>VisibilityTimeout</code> to an amount more than the maximum time left,
+         * <p>A message is considered to be <i>in flight</i> after it's received from a
+         * queue by a consumer, but not yet deleted from the queue.</p> <p>For standard
+         * queues, there can be a maximum of 120,000 inflight messages per queue. If you
+         * reach this limit, Amazon SQS returns the <code>OverLimit</code> error message.
+         * To avoid reaching the limit, you should delete messages from the queue after
+         * they're processed. You can also increase the number of queues you use to process
+         * your messages.</p> <p>For FIFO queues, there can be a maximum of 20,000 inflight
+         * messages per queue. If you reach this limit, Amazon SQS returns no error
+         * messages.</p> <important> <p>If you attempt to set the
+         * <code>VisibilityTimeout</code> to an amount more than the maximum time left,
          * Amazon SQS returns an error. It will not automatically recalculate and increase
-         * the timeout to the maximum time remaining.</p> </important> <important>
-         * <p>Unlike with a queue, when you change the visibility timeout for a specific
-         * message, that timeout value is applied immediately but is not saved in memory
-         * for that message. If you don't delete a message after it is received, the
-         * visibility timeout for the message the next time it is received reverts to the
-         * original timeout value, not the value you set with the
-         * <code>ChangeMessageVisibility</code> action.</p> </important>
+         * the timeout to the maximum time remaining.</p> <p>Unlike with a queue, when you
+         * change the visibility timeout for a specific message, that timeout value is
+         * applied immediately but is not saved in memory for that message. If you don't
+         * delete a message after it is received, the visibility timeout for the message
+         * the next time it is received reverts to the original timeout value, not the
+         * value you set with the <code>ChangeMessageVisibility</code> action.</p>
+         * </important>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -443,7 +447,7 @@ namespace Model
          * it and you can't convert an existing standard queue into a FIFO queue. You must
          * either create a new FIFO queue for your application or delete your existing
          * standard queue and recreate it as a FIFO queue. For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-moving.html">
+         * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-moving">
          * Moving From a Standard Queue to a FIFO Queue</a> in the <i>Amazon SQS Developer
          * Guide</i>. </p> </note> </li> <li> <p>If you don't provide a value for an
          * attribute, the queue is created with the default value for the attribute.</p>
@@ -474,7 +478,7 @@ namespace Model
          * it and you can't convert an existing standard queue into a FIFO queue. You must
          * either create a new FIFO queue for your application or delete your existing
          * standard queue and recreate it as a FIFO queue. For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-moving.html">
+         * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-moving">
          * Moving From a Standard Queue to a FIFO Queue</a> in the <i>Amazon SQS Developer
          * Guide</i>. </p> </note> </li> <li> <p>If you don't provide a value for an
          * attribute, the queue is created with the default value for the attribute.</p>
@@ -507,7 +511,7 @@ namespace Model
          * it and you can't convert an existing standard queue into a FIFO queue. You must
          * either create a new FIFO queue for your application or delete your existing
          * standard queue and recreate it as a FIFO queue. For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-moving.html">
+         * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-moving">
          * Moving From a Standard Queue to a FIFO Queue</a> in the <i>Amazon SQS Developer
          * Guide</i>. </p> </note> </li> <li> <p>If you don't provide a value for an
          * attribute, the queue is created with the default value for the attribute.</p>
@@ -663,7 +667,7 @@ namespace Model
          * Also, when you delete a queue, you must wait at least 60 seconds before creating
          * a queue with the same name. </p> <p>We reserve the right to delete queues that
          * have had no activity for more than 30 days. For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSConcepts.html">How
+         * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-how-it-works.html">How
          * Amazon SQS Queues Work</a> in the <i>Amazon SQS Developer Guide</i>. </p>
          */
         virtual Model::DeleteQueueOutcome DeleteQueue(const Model::DeleteQueueRequest& request) const;
@@ -680,7 +684,7 @@ namespace Model
          * Also, when you delete a queue, you must wait at least 60 seconds before creating
          * a queue with the same name. </p> <p>We reserve the right to delete queues that
          * have had no activity for more than 30 days. For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSConcepts.html">How
+         * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-how-it-works.html">How
          * Amazon SQS Queues Work</a> in the <i>Amazon SQS Developer Guide</i>. </p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -699,7 +703,7 @@ namespace Model
          * Also, when you delete a queue, you must wait at least 60 seconds before creating
          * a queue with the same name. </p> <p>We reserve the right to delete queues that
          * have had no activity for more than 30 days. For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSConcepts.html">How
+         * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-how-it-works.html">How
          * Amazon SQS Queues Work</a> in the <i>Amazon SQS Developer Guide</i>. </p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -784,7 +788,7 @@ namespace Model
          * <p>Returns a list of your queues that have the RedrivePolicy queue attribute
          * configured with a dead letter queue.</p> <p>For more information about using
          * dead letter queues, see <a
-         * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSDeadLetterQueue.html">Using
+         * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
          * Amazon SQS Dead Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.</p>
          */
         virtual Model::ListDeadLetterSourceQueuesOutcome ListDeadLetterSourceQueues(const Model::ListDeadLetterSourceQueuesRequest& request) const;
@@ -793,7 +797,7 @@ namespace Model
          * <p>Returns a list of your queues that have the RedrivePolicy queue attribute
          * configured with a dead letter queue.</p> <p>For more information about using
          * dead letter queues, see <a
-         * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSDeadLetterQueue.html">Using
+         * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
          * Amazon SQS Dead Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -804,7 +808,7 @@ namespace Model
          * <p>Returns a list of your queues that have the RedrivePolicy queue attribute
          * configured with a dead letter queue.</p> <p>For more information about using
          * dead letter queues, see <a
-         * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSDeadLetterQueue.html">Using
+         * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
          * Amazon SQS Dead Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -884,12 +888,12 @@ namespace Model
          * specified queue. Long poll support is enabled by using the
          * <code>WaitTimeSeconds</code> parameter. For more information, see <a
          * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-long-polling.html">Amazon
-         * SQS Long Poll</a> in the <i>Amazon SQS Developer Guide</i>. </p> <p> Short poll
-         * is the default behavior where a weighted random set of machines is sampled on a
-         * <code>ReceiveMessage</code> call. This means only the messages on the sampled
-         * machines are returned. If the number of messages in the queue is small (less
-         * than 1000), it is likely you will get fewer messages than you requested per
-         * <code>ReceiveMessage</code> call. If the number of messages in the queue is
+         * SQS Long Polling</a> in the <i>Amazon SQS Developer Guide</i>. </p> <p> Short
+         * poll is the default behavior where a weighted random set of machines is sampled
+         * on a <code>ReceiveMessage</code> call. This means only the messages on the
+         * sampled machines are returned. If the number of messages in the queue is small
+         * (less than 1000), it is likely you will get fewer messages than you requested
+         * per <code>ReceiveMessage</code> call. If the number of messages in the queue is
          * extremely small, you might not receive any messages in a particular
          * <code>ReceiveMessage</code> response; in which case you should repeat the
          * request. </p> <p>For each message returned, the response includes the
@@ -901,13 +905,13 @@ namespace Model
          * <p>MD5 digest of the message attributes.</p> </li> </ul> <p> The receipt handle
          * is the identifier you must provide when deleting the message. For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/ImportantIdentifiers.html">Queue
+         * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-message-identifiers.html">Queue
          * and Message Identifiers</a> in the <i>Amazon SQS Developer Guide</i>. </p> <p>
          * You can provide the <code>VisibilityTimeout</code> parameter in your request,
          * which will be applied to the messages that Amazon SQS returns in the response.
          * If you don't include the parameter, the overall visibility timeout for the queue
          * is used for the returned messages. For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html">Visibility
+         * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
          * Timeout</a> in the <i>Amazon SQS Developer Guide</i>. </p> <p> A message that is
          * not deleted or a message whose visibility is not extended before the visibility
          * timeout expires counts as a failed receive. Depending on the configuration of
@@ -923,12 +927,12 @@ namespace Model
          * specified queue. Long poll support is enabled by using the
          * <code>WaitTimeSeconds</code> parameter. For more information, see <a
          * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-long-polling.html">Amazon
-         * SQS Long Poll</a> in the <i>Amazon SQS Developer Guide</i>. </p> <p> Short poll
-         * is the default behavior where a weighted random set of machines is sampled on a
-         * <code>ReceiveMessage</code> call. This means only the messages on the sampled
-         * machines are returned. If the number of messages in the queue is small (less
-         * than 1000), it is likely you will get fewer messages than you requested per
-         * <code>ReceiveMessage</code> call. If the number of messages in the queue is
+         * SQS Long Polling</a> in the <i>Amazon SQS Developer Guide</i>. </p> <p> Short
+         * poll is the default behavior where a weighted random set of machines is sampled
+         * on a <code>ReceiveMessage</code> call. This means only the messages on the
+         * sampled machines are returned. If the number of messages in the queue is small
+         * (less than 1000), it is likely you will get fewer messages than you requested
+         * per <code>ReceiveMessage</code> call. If the number of messages in the queue is
          * extremely small, you might not receive any messages in a particular
          * <code>ReceiveMessage</code> response; in which case you should repeat the
          * request. </p> <p>For each message returned, the response includes the
@@ -940,13 +944,13 @@ namespace Model
          * <p>MD5 digest of the message attributes.</p> </li> </ul> <p> The receipt handle
          * is the identifier you must provide when deleting the message. For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/ImportantIdentifiers.html">Queue
+         * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-message-identifiers.html">Queue
          * and Message Identifiers</a> in the <i>Amazon SQS Developer Guide</i>. </p> <p>
          * You can provide the <code>VisibilityTimeout</code> parameter in your request,
          * which will be applied to the messages that Amazon SQS returns in the response.
          * If you don't include the parameter, the overall visibility timeout for the queue
          * is used for the returned messages. For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html">Visibility
+         * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
          * Timeout</a> in the <i>Amazon SQS Developer Guide</i>. </p> <p> A message that is
          * not deleted or a message whose visibility is not extended before the visibility
          * timeout expires counts as a failed receive. Depending on the configuration of
@@ -964,12 +968,12 @@ namespace Model
          * specified queue. Long poll support is enabled by using the
          * <code>WaitTimeSeconds</code> parameter. For more information, see <a
          * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-long-polling.html">Amazon
-         * SQS Long Poll</a> in the <i>Amazon SQS Developer Guide</i>. </p> <p> Short poll
-         * is the default behavior where a weighted random set of machines is sampled on a
-         * <code>ReceiveMessage</code> call. This means only the messages on the sampled
-         * machines are returned. If the number of messages in the queue is small (less
-         * than 1000), it is likely you will get fewer messages than you requested per
-         * <code>ReceiveMessage</code> call. If the number of messages in the queue is
+         * SQS Long Polling</a> in the <i>Amazon SQS Developer Guide</i>. </p> <p> Short
+         * poll is the default behavior where a weighted random set of machines is sampled
+         * on a <code>ReceiveMessage</code> call. This means only the messages on the
+         * sampled machines are returned. If the number of messages in the queue is small
+         * (less than 1000), it is likely you will get fewer messages than you requested
+         * per <code>ReceiveMessage</code> call. If the number of messages in the queue is
          * extremely small, you might not receive any messages in a particular
          * <code>ReceiveMessage</code> response; in which case you should repeat the
          * request. </p> <p>For each message returned, the response includes the
@@ -981,13 +985,13 @@ namespace Model
          * <p>MD5 digest of the message attributes.</p> </li> </ul> <p> The receipt handle
          * is the identifier you must provide when deleting the message. For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/ImportantIdentifiers.html">Queue
+         * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-message-identifiers.html">Queue
          * and Message Identifiers</a> in the <i>Amazon SQS Developer Guide</i>. </p> <p>
          * You can provide the <code>VisibilityTimeout</code> parameter in your request,
          * which will be applied to the messages that Amazon SQS returns in the response.
          * If you don't include the parameter, the overall visibility timeout for the queue
          * is used for the returned messages. For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html">Visibility
+         * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
          * Timeout</a> in the <i>Amazon SQS Developer Guide</i>. </p> <p> A message that is
          * not deleted or a message whose visibility is not extended before the visibility
          * timeout expires counts as a failed receive. Depending on the configuration of

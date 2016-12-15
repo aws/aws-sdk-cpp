@@ -120,7 +120,8 @@ AutomationExecutionMetadata& AutomationExecutionMetadata::operator =(const JsonV
     for(auto& outputsItem : outputsJsonMap)
     {
       Array<JsonValue> automationParameterValueListJsonList = outputsItem.second.AsArray();
-      Aws::Vector<Aws::String> automationParameterValueListList((size_t)automationParameterValueListJsonList.GetLength());
+      Aws::Vector<Aws::String> automationParameterValueListList;
+      automationParameterValueListList.reserve((size_t)automationParameterValueListJsonList.GetLength());
       for(unsigned automationParameterValueListIndex = 0; automationParameterValueListIndex < automationParameterValueListJsonList.GetLength(); ++automationParameterValueListIndex)
       {
         automationParameterValueListList.push_back(automationParameterValueListJsonList[automationParameterValueListIndex].AsString());

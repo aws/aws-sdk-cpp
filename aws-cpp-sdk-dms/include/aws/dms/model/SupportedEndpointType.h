@@ -43,37 +43,44 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p>The database engine name.</p>
+     * <p>The database engine name. Valid values include MYSQL, ORACLE, POSTGRES,
+     * MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.</p>
      */
     inline const Aws::String& GetEngineName() const{ return m_engineName; }
 
     /**
-     * <p>The database engine name.</p>
+     * <p>The database engine name. Valid values include MYSQL, ORACLE, POSTGRES,
+     * MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.</p>
      */
     inline void SetEngineName(const Aws::String& value) { m_engineNameHasBeenSet = true; m_engineName = value; }
 
     /**
-     * <p>The database engine name.</p>
+     * <p>The database engine name. Valid values include MYSQL, ORACLE, POSTGRES,
+     * MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.</p>
      */
     inline void SetEngineName(Aws::String&& value) { m_engineNameHasBeenSet = true; m_engineName = value; }
 
     /**
-     * <p>The database engine name.</p>
+     * <p>The database engine name. Valid values include MYSQL, ORACLE, POSTGRES,
+     * MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.</p>
      */
     inline void SetEngineName(const char* value) { m_engineNameHasBeenSet = true; m_engineName.assign(value); }
 
     /**
-     * <p>The database engine name.</p>
+     * <p>The database engine name. Valid values include MYSQL, ORACLE, POSTGRES,
+     * MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.</p>
      */
     inline SupportedEndpointType& WithEngineName(const Aws::String& value) { SetEngineName(value); return *this;}
 
     /**
-     * <p>The database engine name.</p>
+     * <p>The database engine name. Valid values include MYSQL, ORACLE, POSTGRES,
+     * MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.</p>
      */
     inline SupportedEndpointType& WithEngineName(Aws::String&& value) { SetEngineName(value); return *this;}
 
     /**
-     * <p>The database engine name.</p>
+     * <p>The database engine name. Valid values include MYSQL, ORACLE, POSTGRES,
+     * MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.</p>
      */
     inline SupportedEndpointType& WithEngineName(const char* value) { SetEngineName(value); return *this;}
 

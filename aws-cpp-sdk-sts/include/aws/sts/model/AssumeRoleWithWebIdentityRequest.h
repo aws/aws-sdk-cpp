@@ -73,10 +73,9 @@ namespace Model
      * way, the temporary security credentials that your application will use are
      * associated with that user. This session name is included as part of the ARN and
      * assumed role ID in the <code>AssumedRoleUser</code> response element.</p> <p>The
-     * format for this parameter, as described by its regex pattern, is a string of
-     * characters consisting of upper- and lower-case alphanumeric characters with no
-     * spaces. You can also include underscores or any of the following characters:
-     * =,.@-</p>
+     * regex used to validate this parameter is a string of characters consisting of
+     * upper- and lower-case alphanumeric characters with no spaces. You can also
+     * include underscores or any of the following characters: =,.@-</p>
      */
     inline const Aws::String& GetRoleSessionName() const{ return m_roleSessionName; }
 
@@ -86,10 +85,9 @@ namespace Model
      * way, the temporary security credentials that your application will use are
      * associated with that user. This session name is included as part of the ARN and
      * assumed role ID in the <code>AssumedRoleUser</code> response element.</p> <p>The
-     * format for this parameter, as described by its regex pattern, is a string of
-     * characters consisting of upper- and lower-case alphanumeric characters with no
-     * spaces. You can also include underscores or any of the following characters:
-     * =,.@-</p>
+     * regex used to validate this parameter is a string of characters consisting of
+     * upper- and lower-case alphanumeric characters with no spaces. You can also
+     * include underscores or any of the following characters: =,.@-</p>
      */
     inline void SetRoleSessionName(const Aws::String& value) { m_roleSessionNameHasBeenSet = true; m_roleSessionName = value; }
 
@@ -99,10 +97,9 @@ namespace Model
      * way, the temporary security credentials that your application will use are
      * associated with that user. This session name is included as part of the ARN and
      * assumed role ID in the <code>AssumedRoleUser</code> response element.</p> <p>The
-     * format for this parameter, as described by its regex pattern, is a string of
-     * characters consisting of upper- and lower-case alphanumeric characters with no
-     * spaces. You can also include underscores or any of the following characters:
-     * =,.@-</p>
+     * regex used to validate this parameter is a string of characters consisting of
+     * upper- and lower-case alphanumeric characters with no spaces. You can also
+     * include underscores or any of the following characters: =,.@-</p>
      */
     inline void SetRoleSessionName(Aws::String&& value) { m_roleSessionNameHasBeenSet = true; m_roleSessionName = value; }
 
@@ -112,10 +109,9 @@ namespace Model
      * way, the temporary security credentials that your application will use are
      * associated with that user. This session name is included as part of the ARN and
      * assumed role ID in the <code>AssumedRoleUser</code> response element.</p> <p>The
-     * format for this parameter, as described by its regex pattern, is a string of
-     * characters consisting of upper- and lower-case alphanumeric characters with no
-     * spaces. You can also include underscores or any of the following characters:
-     * =,.@-</p>
+     * regex used to validate this parameter is a string of characters consisting of
+     * upper- and lower-case alphanumeric characters with no spaces. You can also
+     * include underscores or any of the following characters: =,.@-</p>
      */
     inline void SetRoleSessionName(const char* value) { m_roleSessionNameHasBeenSet = true; m_roleSessionName.assign(value); }
 
@@ -125,10 +121,9 @@ namespace Model
      * way, the temporary security credentials that your application will use are
      * associated with that user. This session name is included as part of the ARN and
      * assumed role ID in the <code>AssumedRoleUser</code> response element.</p> <p>The
-     * format for this parameter, as described by its regex pattern, is a string of
-     * characters consisting of upper- and lower-case alphanumeric characters with no
-     * spaces. You can also include underscores or any of the following characters:
-     * =,.@-</p>
+     * regex used to validate this parameter is a string of characters consisting of
+     * upper- and lower-case alphanumeric characters with no spaces. You can also
+     * include underscores or any of the following characters: =,.@-</p>
      */
     inline AssumeRoleWithWebIdentityRequest& WithRoleSessionName(const Aws::String& value) { SetRoleSessionName(value); return *this;}
 
@@ -138,10 +133,9 @@ namespace Model
      * way, the temporary security credentials that your application will use are
      * associated with that user. This session name is included as part of the ARN and
      * assumed role ID in the <code>AssumedRoleUser</code> response element.</p> <p>The
-     * format for this parameter, as described by its regex pattern, is a string of
-     * characters consisting of upper- and lower-case alphanumeric characters with no
-     * spaces. You can also include underscores or any of the following characters:
-     * =,.@-</p>
+     * regex used to validate this parameter is a string of characters consisting of
+     * upper- and lower-case alphanumeric characters with no spaces. You can also
+     * include underscores or any of the following characters: =,.@-</p>
      */
     inline AssumeRoleWithWebIdentityRequest& WithRoleSessionName(Aws::String&& value) { SetRoleSessionName(value); return *this;}
 
@@ -151,10 +145,9 @@ namespace Model
      * way, the temporary security credentials that your application will use are
      * associated with that user. This session name is included as part of the ARN and
      * assumed role ID in the <code>AssumedRoleUser</code> response element.</p> <p>The
-     * format for this parameter, as described by its regex pattern, is a string of
-     * characters consisting of upper- and lower-case alphanumeric characters with no
-     * spaces. You can also include underscores or any of the following characters:
-     * =,.@-</p>
+     * regex used to validate this parameter is a string of characters consisting of
+     * upper- and lower-case alphanumeric characters with no spaces. You can also
+     * include underscores or any of the following characters: =,.@-</p>
      */
     inline AssumeRoleWithWebIdentityRequest& WithRoleSessionName(const char* value) { SetRoleSessionName(value); return *this;}
 

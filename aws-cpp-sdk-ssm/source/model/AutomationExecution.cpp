@@ -118,7 +118,8 @@ AutomationExecution& AutomationExecution::operator =(const JsonValue& jsonValue)
     for(auto& parametersItem : parametersJsonMap)
     {
       Array<JsonValue> automationParameterValueListJsonList = parametersItem.second.AsArray();
-      Aws::Vector<Aws::String> automationParameterValueListList((size_t)automationParameterValueListJsonList.GetLength());
+      Aws::Vector<Aws::String> automationParameterValueListList;
+      automationParameterValueListList.reserve((size_t)automationParameterValueListJsonList.GetLength());
       for(unsigned automationParameterValueListIndex = 0; automationParameterValueListIndex < automationParameterValueListJsonList.GetLength(); ++automationParameterValueListIndex)
       {
         automationParameterValueListList.push_back(automationParameterValueListJsonList[automationParameterValueListIndex].AsString());
@@ -134,7 +135,8 @@ AutomationExecution& AutomationExecution::operator =(const JsonValue& jsonValue)
     for(auto& outputsItem : outputsJsonMap)
     {
       Array<JsonValue> automationParameterValueListJsonList = outputsItem.second.AsArray();
-      Aws::Vector<Aws::String> automationParameterValueListList((size_t)automationParameterValueListJsonList.GetLength());
+      Aws::Vector<Aws::String> automationParameterValueListList;
+      automationParameterValueListList.reserve((size_t)automationParameterValueListJsonList.GetLength());
       for(unsigned automationParameterValueListIndex = 0; automationParameterValueListIndex < automationParameterValueListJsonList.GetLength(); ++automationParameterValueListIndex)
       {
         automationParameterValueListList.push_back(automationParameterValueListJsonList[automationParameterValueListIndex].AsString());

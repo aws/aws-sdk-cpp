@@ -31,7 +31,7 @@ CancelSpotFleetRequestsRequest::CancelSpotFleetRequestsRequest() :
 Aws::String CancelSpotFleetRequestsRequest::SerializePayload() const
 {
   Aws::StringStream ss;
-  ss << "Action=CancelSpotFleets&";
+  ss << "Action=CancelSpotFleetRequests&";
   if(m_dryRunHasBeenSet)
   {
     ss << "DryRun=" << m_dryRun << "&";

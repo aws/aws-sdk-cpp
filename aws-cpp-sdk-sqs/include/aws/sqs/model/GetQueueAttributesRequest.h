@@ -85,14 +85,14 @@ namespace Model
      * supported:</p> <ul> <li> <p> <code>All</code> - Returns all values. </p> </li>
      * <li> <p> <code>ApproximateNumberOfMessages</code> - Returns the approximate
      * number of visible messages in a queue. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/ApproximateNumber.html">Resources
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-resources-required-process-messages.html">Resources
      * Required to Process Messages</a> in the <i>Amazon SQS Developer Guide</i>. </p>
      * </li> <li> <p> <code>ApproximateNumberOfMessagesDelayed</code> - Returns the
      * approximate number of messages that are waiting to be added to the queue. </p>
      * </li> <li> <p> <code>ApproximateNumberOfMessagesNotVisible</code> - Returns the
      * approximate number of messages that have not timed-out and are not deleted. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/ApproximateNumber.html">Resources
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-resources-required-process-messages.html">Resources
      * Required to Process Messages</a> in the <i>Amazon SQS Developer Guide</i>. </p>
      * </li> <li> <p> <code>CreatedTimestamp</code> - Returns the time when the queue
      * was created in seconds (epoch time).</p> </li> <li> <p>
@@ -110,11 +110,11 @@ namespace Model
      * <code>RedrivePolicy</code> - Returns the parameters for dead letter queue
      * functionality of the source queue. For more information about the redrive policy
      * and dead letter queues, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSDeadLetterQueue.html">Using
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
      * Amazon SQS Dead Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>. </p>
      * </li> <li> <p> <code>VisibilityTimeout</code> - Returns the visibility timeout
      * for the queue. For more information about the visibility timeout, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html">Visibility
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
      * Timeout</a> in the <i>Amazon SQS Developer Guide</i>. </p> </li> </ul> <p>The
      * following attributes apply only to <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO
@@ -137,14 +137,14 @@ namespace Model
      * supported:</p> <ul> <li> <p> <code>All</code> - Returns all values. </p> </li>
      * <li> <p> <code>ApproximateNumberOfMessages</code> - Returns the approximate
      * number of visible messages in a queue. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/ApproximateNumber.html">Resources
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-resources-required-process-messages.html">Resources
      * Required to Process Messages</a> in the <i>Amazon SQS Developer Guide</i>. </p>
      * </li> <li> <p> <code>ApproximateNumberOfMessagesDelayed</code> - Returns the
      * approximate number of messages that are waiting to be added to the queue. </p>
      * </li> <li> <p> <code>ApproximateNumberOfMessagesNotVisible</code> - Returns the
      * approximate number of messages that have not timed-out and are not deleted. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/ApproximateNumber.html">Resources
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-resources-required-process-messages.html">Resources
      * Required to Process Messages</a> in the <i>Amazon SQS Developer Guide</i>. </p>
      * </li> <li> <p> <code>CreatedTimestamp</code> - Returns the time when the queue
      * was created in seconds (epoch time).</p> </li> <li> <p>
@@ -162,11 +162,11 @@ namespace Model
      * <code>RedrivePolicy</code> - Returns the parameters for dead letter queue
      * functionality of the source queue. For more information about the redrive policy
      * and dead letter queues, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSDeadLetterQueue.html">Using
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
      * Amazon SQS Dead Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>. </p>
      * </li> <li> <p> <code>VisibilityTimeout</code> - Returns the visibility timeout
      * for the queue. For more information about the visibility timeout, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html">Visibility
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
      * Timeout</a> in the <i>Amazon SQS Developer Guide</i>. </p> </li> </ul> <p>The
      * following attributes apply only to <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO
@@ -189,14 +189,14 @@ namespace Model
      * supported:</p> <ul> <li> <p> <code>All</code> - Returns all values. </p> </li>
      * <li> <p> <code>ApproximateNumberOfMessages</code> - Returns the approximate
      * number of visible messages in a queue. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/ApproximateNumber.html">Resources
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-resources-required-process-messages.html">Resources
      * Required to Process Messages</a> in the <i>Amazon SQS Developer Guide</i>. </p>
      * </li> <li> <p> <code>ApproximateNumberOfMessagesDelayed</code> - Returns the
      * approximate number of messages that are waiting to be added to the queue. </p>
      * </li> <li> <p> <code>ApproximateNumberOfMessagesNotVisible</code> - Returns the
      * approximate number of messages that have not timed-out and are not deleted. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/ApproximateNumber.html">Resources
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-resources-required-process-messages.html">Resources
      * Required to Process Messages</a> in the <i>Amazon SQS Developer Guide</i>. </p>
      * </li> <li> <p> <code>CreatedTimestamp</code> - Returns the time when the queue
      * was created in seconds (epoch time).</p> </li> <li> <p>
@@ -214,11 +214,11 @@ namespace Model
      * <code>RedrivePolicy</code> - Returns the parameters for dead letter queue
      * functionality of the source queue. For more information about the redrive policy
      * and dead letter queues, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSDeadLetterQueue.html">Using
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
      * Amazon SQS Dead Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>. </p>
      * </li> <li> <p> <code>VisibilityTimeout</code> - Returns the visibility timeout
      * for the queue. For more information about the visibility timeout, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html">Visibility
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
      * Timeout</a> in the <i>Amazon SQS Developer Guide</i>. </p> </li> </ul> <p>The
      * following attributes apply only to <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO
@@ -241,14 +241,14 @@ namespace Model
      * supported:</p> <ul> <li> <p> <code>All</code> - Returns all values. </p> </li>
      * <li> <p> <code>ApproximateNumberOfMessages</code> - Returns the approximate
      * number of visible messages in a queue. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/ApproximateNumber.html">Resources
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-resources-required-process-messages.html">Resources
      * Required to Process Messages</a> in the <i>Amazon SQS Developer Guide</i>. </p>
      * </li> <li> <p> <code>ApproximateNumberOfMessagesDelayed</code> - Returns the
      * approximate number of messages that are waiting to be added to the queue. </p>
      * </li> <li> <p> <code>ApproximateNumberOfMessagesNotVisible</code> - Returns the
      * approximate number of messages that have not timed-out and are not deleted. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/ApproximateNumber.html">Resources
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-resources-required-process-messages.html">Resources
      * Required to Process Messages</a> in the <i>Amazon SQS Developer Guide</i>. </p>
      * </li> <li> <p> <code>CreatedTimestamp</code> - Returns the time when the queue
      * was created in seconds (epoch time).</p> </li> <li> <p>
@@ -266,11 +266,11 @@ namespace Model
      * <code>RedrivePolicy</code> - Returns the parameters for dead letter queue
      * functionality of the source queue. For more information about the redrive policy
      * and dead letter queues, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSDeadLetterQueue.html">Using
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
      * Amazon SQS Dead Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>. </p>
      * </li> <li> <p> <code>VisibilityTimeout</code> - Returns the visibility timeout
      * for the queue. For more information about the visibility timeout, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html">Visibility
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
      * Timeout</a> in the <i>Amazon SQS Developer Guide</i>. </p> </li> </ul> <p>The
      * following attributes apply only to <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO
@@ -293,14 +293,14 @@ namespace Model
      * supported:</p> <ul> <li> <p> <code>All</code> - Returns all values. </p> </li>
      * <li> <p> <code>ApproximateNumberOfMessages</code> - Returns the approximate
      * number of visible messages in a queue. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/ApproximateNumber.html">Resources
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-resources-required-process-messages.html">Resources
      * Required to Process Messages</a> in the <i>Amazon SQS Developer Guide</i>. </p>
      * </li> <li> <p> <code>ApproximateNumberOfMessagesDelayed</code> - Returns the
      * approximate number of messages that are waiting to be added to the queue. </p>
      * </li> <li> <p> <code>ApproximateNumberOfMessagesNotVisible</code> - Returns the
      * approximate number of messages that have not timed-out and are not deleted. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/ApproximateNumber.html">Resources
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-resources-required-process-messages.html">Resources
      * Required to Process Messages</a> in the <i>Amazon SQS Developer Guide</i>. </p>
      * </li> <li> <p> <code>CreatedTimestamp</code> - Returns the time when the queue
      * was created in seconds (epoch time).</p> </li> <li> <p>
@@ -318,11 +318,11 @@ namespace Model
      * <code>RedrivePolicy</code> - Returns the parameters for dead letter queue
      * functionality of the source queue. For more information about the redrive policy
      * and dead letter queues, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSDeadLetterQueue.html">Using
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
      * Amazon SQS Dead Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>. </p>
      * </li> <li> <p> <code>VisibilityTimeout</code> - Returns the visibility timeout
      * for the queue. For more information about the visibility timeout, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html">Visibility
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
      * Timeout</a> in the <i>Amazon SQS Developer Guide</i>. </p> </li> </ul> <p>The
      * following attributes apply only to <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO
@@ -345,14 +345,14 @@ namespace Model
      * supported:</p> <ul> <li> <p> <code>All</code> - Returns all values. </p> </li>
      * <li> <p> <code>ApproximateNumberOfMessages</code> - Returns the approximate
      * number of visible messages in a queue. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/ApproximateNumber.html">Resources
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-resources-required-process-messages.html">Resources
      * Required to Process Messages</a> in the <i>Amazon SQS Developer Guide</i>. </p>
      * </li> <li> <p> <code>ApproximateNumberOfMessagesDelayed</code> - Returns the
      * approximate number of messages that are waiting to be added to the queue. </p>
      * </li> <li> <p> <code>ApproximateNumberOfMessagesNotVisible</code> - Returns the
      * approximate number of messages that have not timed-out and are not deleted. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/ApproximateNumber.html">Resources
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-resources-required-process-messages.html">Resources
      * Required to Process Messages</a> in the <i>Amazon SQS Developer Guide</i>. </p>
      * </li> <li> <p> <code>CreatedTimestamp</code> - Returns the time when the queue
      * was created in seconds (epoch time).</p> </li> <li> <p>
@@ -370,11 +370,11 @@ namespace Model
      * <code>RedrivePolicy</code> - Returns the parameters for dead letter queue
      * functionality of the source queue. For more information about the redrive policy
      * and dead letter queues, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSDeadLetterQueue.html">Using
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
      * Amazon SQS Dead Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>. </p>
      * </li> <li> <p> <code>VisibilityTimeout</code> - Returns the visibility timeout
      * for the queue. For more information about the visibility timeout, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html">Visibility
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
      * Timeout</a> in the <i>Amazon SQS Developer Guide</i>. </p> </li> </ul> <p>The
      * following attributes apply only to <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO
@@ -397,14 +397,14 @@ namespace Model
      * supported:</p> <ul> <li> <p> <code>All</code> - Returns all values. </p> </li>
      * <li> <p> <code>ApproximateNumberOfMessages</code> - Returns the approximate
      * number of visible messages in a queue. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/ApproximateNumber.html">Resources
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-resources-required-process-messages.html">Resources
      * Required to Process Messages</a> in the <i>Amazon SQS Developer Guide</i>. </p>
      * </li> <li> <p> <code>ApproximateNumberOfMessagesDelayed</code> - Returns the
      * approximate number of messages that are waiting to be added to the queue. </p>
      * </li> <li> <p> <code>ApproximateNumberOfMessagesNotVisible</code> - Returns the
      * approximate number of messages that have not timed-out and are not deleted. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/ApproximateNumber.html">Resources
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-resources-required-process-messages.html">Resources
      * Required to Process Messages</a> in the <i>Amazon SQS Developer Guide</i>. </p>
      * </li> <li> <p> <code>CreatedTimestamp</code> - Returns the time when the queue
      * was created in seconds (epoch time).</p> </li> <li> <p>
@@ -422,11 +422,11 @@ namespace Model
      * <code>RedrivePolicy</code> - Returns the parameters for dead letter queue
      * functionality of the source queue. For more information about the redrive policy
      * and dead letter queues, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSDeadLetterQueue.html">Using
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
      * Amazon SQS Dead Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>. </p>
      * </li> <li> <p> <code>VisibilityTimeout</code> - Returns the visibility timeout
      * for the queue. For more information about the visibility timeout, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html">Visibility
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
      * Timeout</a> in the <i>Amazon SQS Developer Guide</i>. </p> </li> </ul> <p>The
      * following attributes apply only to <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO

@@ -121,7 +121,8 @@ AssociationDescription& AssociationDescription::operator =(const JsonValue& json
     for(auto& parametersItem : parametersJsonMap)
     {
       Array<JsonValue> parameterValueListJsonList = parametersItem.second.AsArray();
-      Aws::Vector<Aws::String> parameterValueListList((size_t)parameterValueListJsonList.GetLength());
+      Aws::Vector<Aws::String> parameterValueListList;
+      parameterValueListList.reserve((size_t)parameterValueListJsonList.GetLength());
       for(unsigned parameterValueListIndex = 0; parameterValueListIndex < parameterValueListJsonList.GetLength(); ++parameterValueListIndex)
       {
         parameterValueListList.push_back(parameterValueListJsonList[parameterValueListIndex].AsString());

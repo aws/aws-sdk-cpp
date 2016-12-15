@@ -29,7 +29,7 @@ RequestSpotFleetRequest::RequestSpotFleetRequest() :
 Aws::String RequestSpotFleetRequest::SerializePayload() const
 {
   Aws::StringStream ss;
-  ss << "Action=SpotFleet&";
+  ss << "Action=RequestSpotFleet&";
   if(m_dryRunHasBeenSet)
   {
     ss << "DryRun=" << m_dryRun << "&";

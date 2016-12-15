@@ -99,14 +99,14 @@ namespace Model
      * <code>RedrivePolicy</code> - The parameters for the dead letter queue
      * functionality of the source queue. For more information about the redrive policy
      * and dead letter queues, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSDeadLetterQueue.html">Using
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
      * Amazon SQS Dead Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>. </p>
      * <note> <p>The dead letter queue of a FIFO queue must also be a FIFO queue.
      * Similarly, the dead letter queue of a standard queue must also be a standard
      * queue.</p> </note> </li> <li> <p> <code>VisibilityTimeout</code> - The
      * visibility timeout for the queue. An integer from 0 to 43200 (12 hours). The
      * default is 30. For more information about the visibility timeout, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html">Visibility
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
      * Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p> </li> </ul> <p>The
      * following attribute applies only to <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO
@@ -166,14 +166,14 @@ namespace Model
      * <code>RedrivePolicy</code> - The parameters for the dead letter queue
      * functionality of the source queue. For more information about the redrive policy
      * and dead letter queues, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSDeadLetterQueue.html">Using
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
      * Amazon SQS Dead Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>. </p>
      * <note> <p>The dead letter queue of a FIFO queue must also be a FIFO queue.
      * Similarly, the dead letter queue of a standard queue must also be a standard
      * queue.</p> </note> </li> <li> <p> <code>VisibilityTimeout</code> - The
      * visibility timeout for the queue. An integer from 0 to 43200 (12 hours). The
      * default is 30. For more information about the visibility timeout, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html">Visibility
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
      * Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p> </li> </ul> <p>The
      * following attribute applies only to <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO
@@ -233,14 +233,14 @@ namespace Model
      * <code>RedrivePolicy</code> - The parameters for the dead letter queue
      * functionality of the source queue. For more information about the redrive policy
      * and dead letter queues, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSDeadLetterQueue.html">Using
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
      * Amazon SQS Dead Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>. </p>
      * <note> <p>The dead letter queue of a FIFO queue must also be a FIFO queue.
      * Similarly, the dead letter queue of a standard queue must also be a standard
      * queue.</p> </note> </li> <li> <p> <code>VisibilityTimeout</code> - The
      * visibility timeout for the queue. An integer from 0 to 43200 (12 hours). The
      * default is 30. For more information about the visibility timeout, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html">Visibility
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
      * Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p> </li> </ul> <p>The
      * following attribute applies only to <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO
@@ -300,14 +300,14 @@ namespace Model
      * <code>RedrivePolicy</code> - The parameters for the dead letter queue
      * functionality of the source queue. For more information about the redrive policy
      * and dead letter queues, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSDeadLetterQueue.html">Using
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
      * Amazon SQS Dead Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>. </p>
      * <note> <p>The dead letter queue of a FIFO queue must also be a FIFO queue.
      * Similarly, the dead letter queue of a standard queue must also be a standard
      * queue.</p> </note> </li> <li> <p> <code>VisibilityTimeout</code> - The
      * visibility timeout for the queue. An integer from 0 to 43200 (12 hours). The
      * default is 30. For more information about the visibility timeout, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html">Visibility
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
      * Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p> </li> </ul> <p>The
      * following attribute applies only to <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO
@@ -367,14 +367,14 @@ namespace Model
      * <code>RedrivePolicy</code> - The parameters for the dead letter queue
      * functionality of the source queue. For more information about the redrive policy
      * and dead letter queues, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSDeadLetterQueue.html">Using
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
      * Amazon SQS Dead Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>. </p>
      * <note> <p>The dead letter queue of a FIFO queue must also be a FIFO queue.
      * Similarly, the dead letter queue of a standard queue must also be a standard
      * queue.</p> </note> </li> <li> <p> <code>VisibilityTimeout</code> - The
      * visibility timeout for the queue. An integer from 0 to 43200 (12 hours). The
      * default is 30. For more information about the visibility timeout, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html">Visibility
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
      * Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p> </li> </ul> <p>The
      * following attribute applies only to <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO
@@ -434,14 +434,14 @@ namespace Model
      * <code>RedrivePolicy</code> - The parameters for the dead letter queue
      * functionality of the source queue. For more information about the redrive policy
      * and dead letter queues, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSDeadLetterQueue.html">Using
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
      * Amazon SQS Dead Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>. </p>
      * <note> <p>The dead letter queue of a FIFO queue must also be a FIFO queue.
      * Similarly, the dead letter queue of a standard queue must also be a standard
      * queue.</p> </note> </li> <li> <p> <code>VisibilityTimeout</code> - The
      * visibility timeout for the queue. An integer from 0 to 43200 (12 hours). The
      * default is 30. For more information about the visibility timeout, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html">Visibility
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
      * Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p> </li> </ul> <p>The
      * following attribute applies only to <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO
@@ -501,14 +501,14 @@ namespace Model
      * <code>RedrivePolicy</code> - The parameters for the dead letter queue
      * functionality of the source queue. For more information about the redrive policy
      * and dead letter queues, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSDeadLetterQueue.html">Using
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
      * Amazon SQS Dead Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>. </p>
      * <note> <p>The dead letter queue of a FIFO queue must also be a FIFO queue.
      * Similarly, the dead letter queue of a standard queue must also be a standard
      * queue.</p> </note> </li> <li> <p> <code>VisibilityTimeout</code> - The
      * visibility timeout for the queue. An integer from 0 to 43200 (12 hours). The
      * default is 30. For more information about the visibility timeout, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html">Visibility
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
      * Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p> </li> </ul> <p>The
      * following attribute applies only to <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO
@@ -568,14 +568,14 @@ namespace Model
      * <code>RedrivePolicy</code> - The parameters for the dead letter queue
      * functionality of the source queue. For more information about the redrive policy
      * and dead letter queues, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSDeadLetterQueue.html">Using
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
      * Amazon SQS Dead Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>. </p>
      * <note> <p>The dead letter queue of a FIFO queue must also be a FIFO queue.
      * Similarly, the dead letter queue of a standard queue must also be a standard
      * queue.</p> </note> </li> <li> <p> <code>VisibilityTimeout</code> - The
      * visibility timeout for the queue. An integer from 0 to 43200 (12 hours). The
      * default is 30. For more information about the visibility timeout, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html">Visibility
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
      * Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p> </li> </ul> <p>The
      * following attribute applies only to <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO
@@ -635,14 +635,14 @@ namespace Model
      * <code>RedrivePolicy</code> - The parameters for the dead letter queue
      * functionality of the source queue. For more information about the redrive policy
      * and dead letter queues, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSDeadLetterQueue.html">Using
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
      * Amazon SQS Dead Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>. </p>
      * <note> <p>The dead letter queue of a FIFO queue must also be a FIFO queue.
      * Similarly, the dead letter queue of a standard queue must also be a standard
      * queue.</p> </note> </li> <li> <p> <code>VisibilityTimeout</code> - The
      * visibility timeout for the queue. An integer from 0 to 43200 (12 hours). The
      * default is 30. For more information about the visibility timeout, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html">Visibility
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
      * Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p> </li> </ul> <p>The
      * following attribute applies only to <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO
@@ -702,14 +702,14 @@ namespace Model
      * <code>RedrivePolicy</code> - The parameters for the dead letter queue
      * functionality of the source queue. For more information about the redrive policy
      * and dead letter queues, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSDeadLetterQueue.html">Using
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
      * Amazon SQS Dead Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>. </p>
      * <note> <p>The dead letter queue of a FIFO queue must also be a FIFO queue.
      * Similarly, the dead letter queue of a standard queue must also be a standard
      * queue.</p> </note> </li> <li> <p> <code>VisibilityTimeout</code> - The
      * visibility timeout for the queue. An integer from 0 to 43200 (12 hours). The
      * default is 30. For more information about the visibility timeout, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html">Visibility
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
      * Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p> </li> </ul> <p>The
      * following attribute applies only to <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO
@@ -769,14 +769,14 @@ namespace Model
      * <code>RedrivePolicy</code> - The parameters for the dead letter queue
      * functionality of the source queue. For more information about the redrive policy
      * and dead letter queues, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSDeadLetterQueue.html">Using
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
      * Amazon SQS Dead Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>. </p>
      * <note> <p>The dead letter queue of a FIFO queue must also be a FIFO queue.
      * Similarly, the dead letter queue of a standard queue must also be a standard
      * queue.</p> </note> </li> <li> <p> <code>VisibilityTimeout</code> - The
      * visibility timeout for the queue. An integer from 0 to 43200 (12 hours). The
      * default is 30. For more information about the visibility timeout, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html">Visibility
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
      * Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p> </li> </ul> <p>The
      * following attribute applies only to <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO

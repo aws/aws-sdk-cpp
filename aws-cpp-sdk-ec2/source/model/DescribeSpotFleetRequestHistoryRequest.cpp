@@ -35,7 +35,7 @@ DescribeSpotFleetRequestHistoryRequest::DescribeSpotFleetRequestHistoryRequest()
 Aws::String DescribeSpotFleetRequestHistoryRequest::SerializePayload() const
 {
   Aws::StringStream ss;
-  ss << "Action=DescribeSpotFleetHistory&";
+  ss << "Action=DescribeSpotFleetRequestHistory&";
   if(m_dryRunHasBeenSet)
   {
     ss << "DryRun=" << m_dryRun << "&";

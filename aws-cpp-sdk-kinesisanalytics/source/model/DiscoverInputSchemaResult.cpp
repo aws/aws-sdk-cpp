@@ -48,7 +48,8 @@ DiscoverInputSchemaResult& DiscoverInputSchemaResult::operator =(const AmazonWeb
     for(unsigned parsedInputRecordsIndex = 0; parsedInputRecordsIndex < parsedInputRecordsJsonList.GetLength(); ++parsedInputRecordsIndex)
     {
       Array<JsonValue> parsedInputRecordJsonList = parsedInputRecordsJsonList[parsedInputRecordsIndex].AsArray();
-      Aws::Vector<Aws::String> parsedInputRecordList((size_t)parsedInputRecordJsonList.GetLength());
+      Aws::Vector<Aws::String> parsedInputRecordList;
+      parsedInputRecordList.reserve((size_t)parsedInputRecordJsonList.GetLength());
       for(unsigned parsedInputRecordIndex = 0; parsedInputRecordIndex < parsedInputRecordJsonList.GetLength(); ++parsedInputRecordIndex)
       {
         parsedInputRecordList.push_back(parsedInputRecordJsonList[parsedInputRecordIndex].AsString());

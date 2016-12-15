@@ -46,7 +46,7 @@ Aws::String CreateCustomerGatewayRequest::SerializePayload() const
 
   if(m_publicIpHasBeenSet)
   {
-    ss << "PublicIp=" << StringUtils::URLEncode(m_publicIp.c_str()) << "&";
+    ss << "IpAddress=" << StringUtils::URLEncode(m_publicIp.c_str()) << "&";
   }
 
   if(m_bgpAsnHasBeenSet)

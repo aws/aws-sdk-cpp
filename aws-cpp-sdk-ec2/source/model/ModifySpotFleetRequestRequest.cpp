@@ -31,7 +31,7 @@ ModifySpotFleetRequestRequest::ModifySpotFleetRequestRequest() :
 Aws::String ModifySpotFleetRequestRequest::SerializePayload() const
 {
   Aws::StringStream ss;
-  ss << "Action=ModifySpotFleet&";
+  ss << "Action=ModifySpotFleetRequest&";
   if(m_spotFleetRequestIdHasBeenSet)
   {
     ss << "SpotFleetRequestId=" << StringUtils::URLEncode(m_spotFleetRequestId.c_str()) << "&";

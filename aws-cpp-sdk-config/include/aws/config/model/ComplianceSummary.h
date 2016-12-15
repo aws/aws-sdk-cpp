@@ -33,7 +33,7 @@ namespace Model
 
   /**
    * <p>The number of AWS Config rules or AWS resources that are compliant and
-   * noncompliant, up to a maximum.</p>
+   * noncompliant.</p>
    */
   class AWS_CONFIGSERVICE_API ComplianceSummary
   {

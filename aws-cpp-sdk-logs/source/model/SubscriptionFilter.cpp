@@ -33,6 +33,8 @@ SubscriptionFilter::SubscriptionFilter() :
     m_filterPatternHasBeenSet(false),
     m_destinationArnHasBeenSet(false),
     m_roleArnHasBeenSet(false),
+    m_distribution(Distribution::NOT_SET),
+    m_distributionHasBeenSet(false),
     m_creationTime(0),
     m_creationTimeHasBeenSet(false)
 {
@@ -44,6 +46,8 @@ SubscriptionFilter::SubscriptionFilter(const JsonValue& jsonValue) :
     m_filterPatternHasBeenSet(false),
     m_destinationArnHasBeenSet(false),
     m_roleArnHasBeenSet(false),
+    m_distribution(Distribution::NOT_SET),
+    m_distributionHasBeenSet(false),
     m_creationTime(0),
     m_creationTimeHasBeenSet(false)
 {
@@ -85,6 +89,13 @@ SubscriptionFilter& SubscriptionFilter::operator =(const JsonValue& jsonValue)
     m_roleArn = jsonValue.GetString("roleArn");
 
     m_roleArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("distribution"))
+  {
+    m_distribution = DistributionMapper::GetDistributionForName(jsonValue.GetString("distribution"));
+
+    m_distributionHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("creationTime"))
@@ -129,6 +140,11 @@ JsonValue SubscriptionFilter::Jsonize() const
   {
    payload.WithString("roleArn", m_roleArn);
 
+  }
+
+  if(m_distributionHasBeenSet)
+  {
+   payload.WithString("distribution", DistributionMapper::GetNameForDistribution(m_distribution));
   }
 
   if(m_creationTimeHasBeenSet)

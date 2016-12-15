@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-SQS;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 1.0.20121105.37;
+        version : 1.0.20121105.40;
 
         // Display name for package.
         title: AWS SDK for C++ (Amazon Simple Queue Service);

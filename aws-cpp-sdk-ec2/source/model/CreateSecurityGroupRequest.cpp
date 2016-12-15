@@ -44,7 +44,7 @@ Aws::String CreateSecurityGroupRequest::SerializePayload() const
 
   if(m_descriptionHasBeenSet)
   {
-    ss << "Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
+    ss << "GroupDescription=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
 
   if(m_vpcIdHasBeenSet)
