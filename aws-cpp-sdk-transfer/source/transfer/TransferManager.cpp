@@ -634,7 +634,7 @@ namespace Aws
                 //notify user if list objects failed.
                 if (m_transferConfig.errorCallback)
                 {
-                    auto handle = Aws::MakeShared<TransferHandle>(CLASS_TAG);
+                    auto handle = Aws::MakeShared<TransferHandle>(CLASS_TAG, request.GetBucket(), "");
                     m_transferConfig.errorCallback(this, *handle, outcome.GetError());
                 }
             }

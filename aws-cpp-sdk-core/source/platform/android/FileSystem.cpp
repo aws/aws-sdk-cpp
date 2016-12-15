@@ -36,7 +36,7 @@ static const char* FILE_SYSTEM_UTILS_LOG_TAG = "FileSystem";
     class PosixDirectory : public Directory
     {
     public:
-        PosixDirectory(const Aws::String& path) : Directory(path), m_dir(nullptr)
+        PosixDirectory(const Aws::String& path, const Aws::String& relativePath) : Directory(path, relativePath), m_dir(nullptr)
         {
             m_dir = opendir(m_directoryEntry.path.c_str());
 
@@ -92,10 +92,22 @@ static const char* FILE_SYSTEM_UTILS_LOG_TAG = "FileSystem";
                 Aws::StringStream ss;
                 ss << m_directoryEntry.path << PATH_DELIM << dirEnt->d_name;
                 entry.path = ss.str();
+
+                ss.str("");
+                if(m_directoryEntry.relativePath.empty())
+                {
+                    ss << dirEnt->d_name;
+                }
+                else
+                {
+                    ss << m_directoryEntry.relativePath << PATH_DELIM << dirEnt->d_name;
+                }
+                entry.relativePath = ss.str();
             }
             else
             {
                 entry.path = m_directoryEntry.path;
+                entry.relativePath = m_directoryEntry.relativePath;
             }
 
             if(dirEnt->d_type == DT_DIR)
@@ -185,10 +197,10 @@ Aws::String CreateTempFilePath()
     return pathStream.str();
 }
 
-Directory* OpenDirectory(const DirectoryEntry& directoryEntry)
+Directory* OpenDirectory(const Aws::String& path, const Aws::String& relativePath)
 {
     assert(directoryEntry.fileType != FileType::File);
-    return Aws::New<AndroidDirectory>(FILE_SYSTEM_UTILS_LOG_TAG, directoryEntry.path);
+    return Aws::New<AndroidDirectory>(FILE_SYSTEM_UTILS_LOG_TAG, path, relativePath);
 }
 
 } // namespace FileSystem
