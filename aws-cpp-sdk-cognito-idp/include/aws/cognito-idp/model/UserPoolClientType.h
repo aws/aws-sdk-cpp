@@ -235,17 +235,17 @@ namespace Model
     inline UserPoolClientType& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(value); return *this;}
 
     /**
-     * <p>The validity of the refresh token.</p>
+     * <p>The validity of the refresh token, in days.</p>
      */
     inline int GetRefreshTokenValidity() const{ return m_refreshTokenValidity; }
 
     /**
-     * <p>The validity of the refresh token.</p>
+     * <p>The validity of the refresh token, in days.</p>
      */
     inline void SetRefreshTokenValidity(int value) { m_refreshTokenValidityHasBeenSet = true; m_refreshTokenValidity = value; }
 
     /**
-     * <p>The validity of the refresh token.</p>
+     * <p>The validity of the refresh token, in days.</p>
      */
     inline UserPoolClientType& WithRefreshTokenValidity(int value) { SetRefreshTokenValidity(value); return *this;}
 

@@ -62,21 +62,24 @@ namespace Model
     /**
      * <p>The user account expiration limit, in days, after which the account is no
      * longer usable. To reset the account after that time limit, you must call
-     * AdminCreateUser again, specifying "RESEND" for the MessageAction parameter.</p>
+     * AdminCreateUser again, specifying "RESEND" for the MessageAction parameter. The
+     * default value for this paameter is 7.</p>
      */
     inline int GetUnusedAccountValidityDays() const{ return m_unusedAccountValidityDays; }
 
     /**
      * <p>The user account expiration limit, in days, after which the account is no
      * longer usable. To reset the account after that time limit, you must call
-     * AdminCreateUser again, specifying "RESEND" for the MessageAction parameter.</p>
+     * AdminCreateUser again, specifying "RESEND" for the MessageAction parameter. The
+     * default value for this paameter is 7.</p>
      */
     inline void SetUnusedAccountValidityDays(int value) { m_unusedAccountValidityDaysHasBeenSet = true; m_unusedAccountValidityDays = value; }
 
     /**
      * <p>The user account expiration limit, in days, after which the account is no
      * longer usable. To reset the account after that time limit, you must call
-     * AdminCreateUser again, specifying "RESEND" for the MessageAction parameter.</p>
+     * AdminCreateUser again, specifying "RESEND" for the MessageAction parameter. The
+     * default value for this paameter is 7.</p>
      */
     inline AdminCreateUserConfigType& WithUnusedAccountValidityDays(int value) { SetUnusedAccountValidityDays(value); return *this;}
 

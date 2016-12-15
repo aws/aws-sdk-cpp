@@ -31,7 +31,7 @@ namespace Model
 {
 
   /**
-   * <p>The description of the user poool client.</p>
+   * <p>The description of the user pool client.</p>
    */
   class AWS_COGNITOIDENTITYPROVIDER_API UserPoolClientDescription
   {
