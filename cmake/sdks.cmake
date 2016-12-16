@@ -119,6 +119,7 @@ list(APPEND SDK_DEPENDENCY_LIST "transfer:s3,core")
 list(APPEND SDK_DEPENDENCY_LIST "s3-encryption:s3,kms,core")
 
 set(TEST_DEPENDENCY_LIST "")
+list(APPEND TEST_DEPENDENCY_LIST "cognito-identity:access-management,iam,core")
 list(APPEND TEST_DEPENDENCY_LIST "identity-management:cognito-identity,sts,core")
 list(APPEND TEST_DEPENDENCY_LIST "lambda:access-management,cognito-identity,iam,kinesis,core")
 list(APPEND TEST_DEPENDENCY_LIST "sqs:access-management,cognito-identity,iam,core")
