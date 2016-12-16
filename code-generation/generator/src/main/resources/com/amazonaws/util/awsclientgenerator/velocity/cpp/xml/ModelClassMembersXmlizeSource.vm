@@ -4,10 +4,10 @@
 #set($spaces = '')
 #set($memberName = $entry.key)
 #set($serializationName = $memberName)
+#set($member = $entry.value)
 #if($member.locationName)
 #set($serializationName = $member.locationName)
 #end
-#set($member = $entry.value)
 #if($member.usedForPayload)
 #set($lowerCaseVarName = $CppViewHelper.computeVariableName($memberName))
 #set($memberVarName = $CppViewHelper.computeMemberVariableName($memberName))
