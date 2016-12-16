@@ -50,6 +50,7 @@ UserPoolType::UserPoolType() :
     m_estimatedNumberOfUsersHasBeenSet(false),
     m_emailConfigurationHasBeenSet(false),
     m_smsConfigurationHasBeenSet(false),
+    m_userPoolTagsHasBeenSet(false),
     m_smsConfigurationFailureHasBeenSet(false),
     m_emailConfigurationFailureHasBeenSet(false),
     m_adminCreateUserConfigHasBeenSet(false)
@@ -79,6 +80,7 @@ UserPoolType::UserPoolType(const JsonValue& jsonValue) :
     m_estimatedNumberOfUsersHasBeenSet(false),
     m_emailConfigurationHasBeenSet(false),
     m_smsConfigurationHasBeenSet(false),
+    m_userPoolTagsHasBeenSet(false),
     m_smsConfigurationFailureHasBeenSet(false),
     m_emailConfigurationFailureHasBeenSet(false),
     m_adminCreateUserConfigHasBeenSet(false)
@@ -228,6 +230,16 @@ UserPoolType& UserPoolType::operator =(const JsonValue& jsonValue)
     m_smsConfiguration = jsonValue.GetObject("SmsConfiguration");
 
     m_smsConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("UserPoolTags"))
+  {
+    Aws::Map<Aws::String, JsonValue> userPoolTagsJsonMap = jsonValue.GetObject("UserPoolTags").GetAllObjects();
+    for(auto& userPoolTagsItem : userPoolTagsJsonMap)
+    {
+      m_userPoolTags[userPoolTagsItem.first] = userPoolTagsItem.second.AsString();
+    }
+    m_userPoolTagsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("SmsConfigurationFailure"))
@@ -380,6 +392,17 @@ JsonValue UserPoolType::Jsonize() const
   if(m_smsConfigurationHasBeenSet)
   {
    payload.WithObject("SmsConfiguration", m_smsConfiguration.Jsonize());
+
+  }
+
+  if(m_userPoolTagsHasBeenSet)
+  {
+   JsonValue userPoolTagsJsonMap;
+   for(auto& userPoolTagsItem : m_userPoolTags)
+   {
+     userPoolTagsJsonMap.WithString(userPoolTagsItem.first, userPoolTagsItem.second);
+   }
+   payload.WithObject("UserPoolTags", std::move(userPoolTagsJsonMap));
 
   }
 

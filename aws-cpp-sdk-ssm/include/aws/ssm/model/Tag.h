@@ -31,7 +31,7 @@ namespace Model
 {
 
   /**
-   * <p> Metadata that you assign to your managed instances. Tags enable you to
+   * <p>Metadata that you assign to your managed instances. Tags enable you to
    * categorize your managed instances in different ways, for example, by purpose,
    * owner, or environment.</p>
    */

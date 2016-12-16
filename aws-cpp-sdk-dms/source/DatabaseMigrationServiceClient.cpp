@@ -53,6 +53,7 @@
 #include <aws/dms/model/ModifyEndpointRequest.h>
 #include <aws/dms/model/ModifyReplicationInstanceRequest.h>
 #include <aws/dms/model/ModifyReplicationSubnetGroupRequest.h>
+#include <aws/dms/model/ModifyReplicationTaskRequest.h>
 #include <aws/dms/model/RefreshSchemasRequest.h>
 #include <aws/dms/model/RemoveTagsFromResourceRequest.h>
 #include <aws/dms/model/StartReplicationTaskRequest.h>
@@ -1039,6 +1040,40 @@ void DatabaseMigrationServiceClient::ModifyReplicationSubnetGroupAsync(const Mod
 void DatabaseMigrationServiceClient::ModifyReplicationSubnetGroupAsyncHelper(const ModifyReplicationSubnetGroupRequest& request, const ModifyReplicationSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ModifyReplicationSubnetGroup(request), context);
+}
+
+ModifyReplicationTaskOutcome DatabaseMigrationServiceClient::ModifyReplicationTask(const ModifyReplicationTaskRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return ModifyReplicationTaskOutcome(ModifyReplicationTaskResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ModifyReplicationTaskOutcome(outcome.GetError());
+  }
+}
+
+ModifyReplicationTaskOutcomeCallable DatabaseMigrationServiceClient::ModifyReplicationTaskCallable(const ModifyReplicationTaskRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ModifyReplicationTaskOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ModifyReplicationTask(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DatabaseMigrationServiceClient::ModifyReplicationTaskAsync(const ModifyReplicationTaskRequest& request, const ModifyReplicationTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ModifyReplicationTaskAsyncHelper( request, handler, context ); } );
+}
+
+void DatabaseMigrationServiceClient::ModifyReplicationTaskAsyncHelper(const ModifyReplicationTaskRequest& request, const ModifyReplicationTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ModifyReplicationTask(request), context);
 }
 
 RefreshSchemasOutcome DatabaseMigrationServiceClient::RefreshSchemas(const RefreshSchemasRequest& request) const

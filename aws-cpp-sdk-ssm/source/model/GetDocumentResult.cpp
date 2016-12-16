@@ -24,11 +24,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetDocumentResult::GetDocumentResult()
+GetDocumentResult::GetDocumentResult() : 
+    m_documentType(DocumentType::NOT_SET)
 {
 }
 
-GetDocumentResult::GetDocumentResult(const AmazonWebServiceResult<JsonValue>& result)
+GetDocumentResult::GetDocumentResult(const AmazonWebServiceResult<JsonValue>& result) : 
+    m_documentType(DocumentType::NOT_SET)
 {
   *this = result;
 }
@@ -42,9 +44,21 @@ GetDocumentResult& GetDocumentResult::operator =(const AmazonWebServiceResult<Js
 
   }
 
+  if(jsonValue.ValueExists("DocumentVersion"))
+  {
+    m_documentVersion = jsonValue.GetString("DocumentVersion");
+
+  }
+
   if(jsonValue.ValueExists("Content"))
   {
     m_content = jsonValue.GetString("Content");
+
+  }
+
+  if(jsonValue.ValueExists("DocumentType"))
+  {
+    m_documentType = DocumentTypeMapper::GetDocumentTypeForName(jsonValue.GetString("DocumentType"));
 
   }
 

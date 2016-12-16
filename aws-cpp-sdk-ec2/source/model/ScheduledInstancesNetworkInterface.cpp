@@ -43,7 +43,10 @@ ScheduledInstancesNetworkInterface::ScheduledInstancesNetworkInterface() :
     m_associatePublicIpAddressHasBeenSet(false),
     m_groupsHasBeenSet(false),
     m_deleteOnTermination(false),
-    m_deleteOnTerminationHasBeenSet(false)
+    m_deleteOnTerminationHasBeenSet(false),
+    m_ipv6AddressesHasBeenSet(false),
+    m_ipv6AddressCount(0),
+    m_ipv6AddressCountHasBeenSet(false)
 {
 }
 
@@ -61,7 +64,10 @@ ScheduledInstancesNetworkInterface::ScheduledInstancesNetworkInterface(const Xml
     m_associatePublicIpAddressHasBeenSet(false),
     m_groupsHasBeenSet(false),
     m_deleteOnTermination(false),
-    m_deleteOnTerminationHasBeenSet(false)
+    m_deleteOnTerminationHasBeenSet(false),
+    m_ipv6AddressesHasBeenSet(false),
+    m_ipv6AddressCount(0),
+    m_ipv6AddressCountHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -144,6 +150,24 @@ ScheduledInstancesNetworkInterface& ScheduledInstancesNetworkInterface::operator
       m_deleteOnTermination = StringUtils::ConvertToBool(StringUtils::Trim(deleteOnTerminationNode.GetText().c_str()).c_str());
       m_deleteOnTerminationHasBeenSet = true;
     }
+    XmlNode ipv6AddressesNode = resultNode.FirstChild("Ipv6Address");
+    if(!ipv6AddressesNode.IsNull())
+    {
+      XmlNode ipv6AddressesMember = ipv6AddressesNode.FirstChild("Ipv6Address");
+      while(!ipv6AddressesMember.IsNull())
+      {
+        m_ipv6Addresses.push_back(ipv6AddressesMember);
+        ipv6AddressesMember = ipv6AddressesMember.NextNode("Ipv6Address");
+      }
+
+      m_ipv6AddressesHasBeenSet = true;
+    }
+    XmlNode ipv6AddressCountNode = resultNode.FirstChild("Ipv6AddressCount");
+    if(!ipv6AddressCountNode.IsNull())
+    {
+      m_ipv6AddressCount = StringUtils::ConvertToInt32(StringUtils::Trim(ipv6AddressCountNode.GetText().c_str()).c_str());
+      m_ipv6AddressCountHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -211,6 +235,22 @@ void ScheduledInstancesNetworkInterface::OutputToStream(Aws::OStream& oStream, c
       oStream << location << index << locationValue << ".DeleteOnTermination=" << m_deleteOnTermination << "&";
   }
 
+  if(m_ipv6AddressesHasBeenSet)
+  {
+      unsigned ipv6AddressesIdx = 1;
+      for(auto& item : m_ipv6Addresses)
+      {
+        Aws::StringStream ipv6AddressesSs;
+        ipv6AddressesSs << location << index << locationValue << ".Ipv6Address." << ipv6AddressesIdx++;
+        item.OutputToStream(oStream, ipv6AddressesSs.str().c_str());
+      }
+  }
+
+  if(m_ipv6AddressCountHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Ipv6AddressCount=" << m_ipv6AddressCount << "&";
+  }
+
 }
 
 void ScheduledInstancesNetworkInterface::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -264,6 +304,20 @@ void ScheduledInstancesNetworkInterface::OutputToStream(Aws::OStream& oStream, c
   if(m_deleteOnTerminationHasBeenSet)
   {
       oStream << location << ".DeleteOnTermination=" << m_deleteOnTermination << "&";
+  }
+  if(m_ipv6AddressesHasBeenSet)
+  {
+      unsigned ipv6AddressesIdx = 1;
+      for(auto& item : m_ipv6Addresses)
+      {
+        Aws::StringStream ipv6AddressesSs;
+        ipv6AddressesSs << location <<  ".Ipv6Address." << ipv6AddressesIdx++;
+        item.OutputToStream(oStream, ipv6AddressesSs.str().c_str());
+      }
+  }
+  if(m_ipv6AddressCountHasBeenSet)
+  {
+      oStream << location << ".Ipv6AddressCount=" << m_ipv6AddressCount << "&";
   }
 }
 

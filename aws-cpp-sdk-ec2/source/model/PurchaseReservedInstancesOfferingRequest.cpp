@@ -53,7 +53,7 @@ Aws::String PurchaseReservedInstancesOfferingRequest::SerializePayload() const
     m_limitPrice.OutputToStream(ss, "LimitPrice");
   }
 
-  ss << "Version=2016-09-15";
+  ss << "Version=2016-11-15";
   return ss.str();
 }
 

@@ -59,43 +59,43 @@ namespace Model
     inline CreateVpcRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
     /**
-     * <p>The network range for the VPC, in CIDR notation. For example,
+     * <p>The IPv4 network range for the VPC, in CIDR notation. For example,
      * <code>10.0.0.0/16</code>.</p>
      */
     inline const Aws::String& GetCidrBlock() const{ return m_cidrBlock; }
 
     /**
-     * <p>The network range for the VPC, in CIDR notation. For example,
+     * <p>The IPv4 network range for the VPC, in CIDR notation. For example,
      * <code>10.0.0.0/16</code>.</p>
      */
     inline void SetCidrBlock(const Aws::String& value) { m_cidrBlockHasBeenSet = true; m_cidrBlock = value; }
 
     /**
-     * <p>The network range for the VPC, in CIDR notation. For example,
+     * <p>The IPv4 network range for the VPC, in CIDR notation. For example,
      * <code>10.0.0.0/16</code>.</p>
      */
     inline void SetCidrBlock(Aws::String&& value) { m_cidrBlockHasBeenSet = true; m_cidrBlock = value; }
 
     /**
-     * <p>The network range for the VPC, in CIDR notation. For example,
+     * <p>The IPv4 network range for the VPC, in CIDR notation. For example,
      * <code>10.0.0.0/16</code>.</p>
      */
     inline void SetCidrBlock(const char* value) { m_cidrBlockHasBeenSet = true; m_cidrBlock.assign(value); }
 
     /**
-     * <p>The network range for the VPC, in CIDR notation. For example,
+     * <p>The IPv4 network range for the VPC, in CIDR notation. For example,
      * <code>10.0.0.0/16</code>.</p>
      */
     inline CreateVpcRequest& WithCidrBlock(const Aws::String& value) { SetCidrBlock(value); return *this;}
 
     /**
-     * <p>The network range for the VPC, in CIDR notation. For example,
+     * <p>The IPv4 network range for the VPC, in CIDR notation. For example,
      * <code>10.0.0.0/16</code>.</p>
      */
     inline CreateVpcRequest& WithCidrBlock(Aws::String&& value) { SetCidrBlock(value); return *this;}
 
     /**
-     * <p>The network range for the VPC, in CIDR notation. For example,
+     * <p>The IPv4 network range for the VPC, in CIDR notation. For example,
      * <code>10.0.0.0/16</code>.</p>
      */
     inline CreateVpcRequest& WithCidrBlock(const char* value) { SetCidrBlock(value); return *this;}
@@ -165,6 +165,27 @@ namespace Model
      */
     inline CreateVpcRequest& WithInstanceTenancy(Tenancy&& value) { SetInstanceTenancy(value); return *this;}
 
+    /**
+     * <p>Requests an Amazon-provided IPv6 CIDR block with a /56 prefix length for the
+     * VPC. You cannot specify the range of IP addresses, or the size of the CIDR
+     * block.</p>
+     */
+    inline bool GetAmazonProvidedIpv6CidrBlock() const{ return m_amazonProvidedIpv6CidrBlock; }
+
+    /**
+     * <p>Requests an Amazon-provided IPv6 CIDR block with a /56 prefix length for the
+     * VPC. You cannot specify the range of IP addresses, or the size of the CIDR
+     * block.</p>
+     */
+    inline void SetAmazonProvidedIpv6CidrBlock(bool value) { m_amazonProvidedIpv6CidrBlockHasBeenSet = true; m_amazonProvidedIpv6CidrBlock = value; }
+
+    /**
+     * <p>Requests an Amazon-provided IPv6 CIDR block with a /56 prefix length for the
+     * VPC. You cannot specify the range of IP addresses, or the size of the CIDR
+     * block.</p>
+     */
+    inline CreateVpcRequest& WithAmazonProvidedIpv6CidrBlock(bool value) { SetAmazonProvidedIpv6CidrBlock(value); return *this;}
+
   private:
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
@@ -172,6 +193,8 @@ namespace Model
     bool m_cidrBlockHasBeenSet;
     Tenancy m_instanceTenancy;
     bool m_instanceTenancyHasBeenSet;
+    bool m_amazonProvidedIpv6CidrBlock;
+    bool m_amazonProvidedIpv6CidrBlockHasBeenSet;
   };
 
 } // namespace Model

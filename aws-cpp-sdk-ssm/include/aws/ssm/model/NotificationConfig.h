@@ -46,43 +46,43 @@ namespace Model
 
     /**
      * <p>An Amazon Resource Name (ARN) for a Simple Notification Service (SNS) topic.
-     * SSM pushes notifications about command status changes to this topic.</p>
+     * Run Command pushes notifications about command status changes to this topic.</p>
      */
     inline const Aws::String& GetNotificationArn() const{ return m_notificationArn; }
 
     /**
      * <p>An Amazon Resource Name (ARN) for a Simple Notification Service (SNS) topic.
-     * SSM pushes notifications about command status changes to this topic.</p>
+     * Run Command pushes notifications about command status changes to this topic.</p>
      */
     inline void SetNotificationArn(const Aws::String& value) { m_notificationArnHasBeenSet = true; m_notificationArn = value; }
 
     /**
      * <p>An Amazon Resource Name (ARN) for a Simple Notification Service (SNS) topic.
-     * SSM pushes notifications about command status changes to this topic.</p>
+     * Run Command pushes notifications about command status changes to this topic.</p>
      */
     inline void SetNotificationArn(Aws::String&& value) { m_notificationArnHasBeenSet = true; m_notificationArn = value; }
 
     /**
      * <p>An Amazon Resource Name (ARN) for a Simple Notification Service (SNS) topic.
-     * SSM pushes notifications about command status changes to this topic.</p>
+     * Run Command pushes notifications about command status changes to this topic.</p>
      */
     inline void SetNotificationArn(const char* value) { m_notificationArnHasBeenSet = true; m_notificationArn.assign(value); }
 
     /**
      * <p>An Amazon Resource Name (ARN) for a Simple Notification Service (SNS) topic.
-     * SSM pushes notifications about command status changes to this topic.</p>
+     * Run Command pushes notifications about command status changes to this topic.</p>
      */
     inline NotificationConfig& WithNotificationArn(const Aws::String& value) { SetNotificationArn(value); return *this;}
 
     /**
      * <p>An Amazon Resource Name (ARN) for a Simple Notification Service (SNS) topic.
-     * SSM pushes notifications about command status changes to this topic.</p>
+     * Run Command pushes notifications about command status changes to this topic.</p>
      */
     inline NotificationConfig& WithNotificationArn(Aws::String&& value) { SetNotificationArn(value); return *this;}
 
     /**
      * <p>An Amazon Resource Name (ARN) for a Simple Notification Service (SNS) topic.
-     * SSM pushes notifications about command status changes to this topic.</p>
+     * Run Command pushes notifications about command status changes to this topic.</p>
      */
     inline NotificationConfig& WithNotificationArn(const char* value) { SetNotificationArn(value); return *this;}
 

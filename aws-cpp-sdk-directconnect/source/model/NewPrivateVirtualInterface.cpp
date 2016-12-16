@@ -36,6 +36,8 @@ NewPrivateVirtualInterface::NewPrivateVirtualInterface() :
     m_authKeyHasBeenSet(false),
     m_amazonAddressHasBeenSet(false),
     m_customerAddressHasBeenSet(false),
+    m_addressFamily(AddressFamily::NOT_SET),
+    m_addressFamilyHasBeenSet(false),
     m_virtualGatewayIdHasBeenSet(false)
 {
 }
@@ -49,6 +51,8 @@ NewPrivateVirtualInterface::NewPrivateVirtualInterface(const JsonValue& jsonValu
     m_authKeyHasBeenSet(false),
     m_amazonAddressHasBeenSet(false),
     m_customerAddressHasBeenSet(false),
+    m_addressFamily(AddressFamily::NOT_SET),
+    m_addressFamilyHasBeenSet(false),
     m_virtualGatewayIdHasBeenSet(false)
 {
   *this = jsonValue;
@@ -96,6 +100,13 @@ NewPrivateVirtualInterface& NewPrivateVirtualInterface::operator =(const JsonVal
     m_customerAddress = jsonValue.GetString("customerAddress");
 
     m_customerAddressHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("addressFamily"))
+  {
+    m_addressFamily = AddressFamilyMapper::GetAddressFamilyForName(jsonValue.GetString("addressFamily"));
+
+    m_addressFamilyHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("virtualGatewayId"))
@@ -146,6 +157,11 @@ JsonValue NewPrivateVirtualInterface::Jsonize() const
   {
    payload.WithString("customerAddress", m_customerAddress);
 
+  }
+
+  if(m_addressFamilyHasBeenSet)
+  {
+   payload.WithString("addressFamily", AddressFamilyMapper::GetNameForAddressFamily(m_addressFamily));
   }
 
   if(m_virtualGatewayIdHasBeenSet)

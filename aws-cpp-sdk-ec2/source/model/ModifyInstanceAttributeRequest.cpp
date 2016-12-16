@@ -136,7 +136,7 @@ Aws::String ModifyInstanceAttributeRequest::SerializePayload() const
     m_enaSupport.OutputToStream(ss, "EnaSupport");
   }
 
-  ss << "Version=2016-09-15";
+  ss << "Version=2016-11-15";
   return ss.str();
 }
 

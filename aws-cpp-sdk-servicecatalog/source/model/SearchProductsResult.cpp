@@ -51,7 +51,8 @@ SearchProductsResult& SearchProductsResult::operator =(const AmazonWebServiceRes
     for(auto& productViewAggregationsItem : productViewAggregationsJsonMap)
     {
       Array<JsonValue> productViewAggregationValuesJsonList = productViewAggregationsItem.second.AsArray();
-      Aws::Vector<ProductViewAggregationValue> productViewAggregationValuesList((size_t)productViewAggregationValuesJsonList.GetLength());
+      Aws::Vector<ProductViewAggregationValue> productViewAggregationValuesList;
+      productViewAggregationValuesList.reserve((size_t)productViewAggregationValuesJsonList.GetLength());
       for(unsigned productViewAggregationValuesIndex = 0; productViewAggregationValuesIndex < productViewAggregationValuesJsonList.GetLength(); ++productViewAggregationValuesIndex)
       {
         productViewAggregationValuesList.push_back(productViewAggregationValuesJsonList[productViewAggregationValuesIndex].AsObject());

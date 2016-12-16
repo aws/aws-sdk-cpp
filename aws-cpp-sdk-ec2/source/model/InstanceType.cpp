@@ -35,6 +35,8 @@ namespace Aws
         static const int t2_small_HASH = HashingUtils::HashString("t2.small");
         static const int t2_medium_HASH = HashingUtils::HashString("t2.medium");
         static const int t2_large_HASH = HashingUtils::HashString("t2.large");
+        static const int t2_xlarge_HASH = HashingUtils::HashString("t2.xlarge");
+        static const int t2_2xlarge_HASH = HashingUtils::HashString("t2.2xlarge");
         static const int m1_small_HASH = HashingUtils::HashString("m1.small");
         static const int m1_medium_HASH = HashingUtils::HashString("m1.medium");
         static const int m1_large_HASH = HashingUtils::HashString("m1.large");
@@ -58,6 +60,12 @@ namespace Aws
         static const int r3_2xlarge_HASH = HashingUtils::HashString("r3.2xlarge");
         static const int r3_4xlarge_HASH = HashingUtils::HashString("r3.4xlarge");
         static const int r3_8xlarge_HASH = HashingUtils::HashString("r3.8xlarge");
+        static const int r4_large_HASH = HashingUtils::HashString("r4.large");
+        static const int r4_xlarge_HASH = HashingUtils::HashString("r4.xlarge");
+        static const int r4_2xlarge_HASH = HashingUtils::HashString("r4.2xlarge");
+        static const int r4_4xlarge_HASH = HashingUtils::HashString("r4.4xlarge");
+        static const int r4_8xlarge_HASH = HashingUtils::HashString("r4.8xlarge");
+        static const int r4_16xlarge_HASH = HashingUtils::HashString("r4.16xlarge");
         static const int x1_16xlarge_HASH = HashingUtils::HashString("x1.16xlarge");
         static const int x1_32xlarge_HASH = HashingUtils::HashString("x1.32xlarge");
         static const int i2_xlarge_HASH = HashingUtils::HashString("i2.xlarge");
@@ -90,6 +98,8 @@ namespace Aws
         static const int d2_2xlarge_HASH = HashingUtils::HashString("d2.2xlarge");
         static const int d2_4xlarge_HASH = HashingUtils::HashString("d2.4xlarge");
         static const int d2_8xlarge_HASH = HashingUtils::HashString("d2.8xlarge");
+        static const int f1_2xlarge_HASH = HashingUtils::HashString("f1.2xlarge");
+        static const int f1_16xlarge_HASH = HashingUtils::HashString("f1.16xlarge");
 
 
         InstanceType GetInstanceTypeForName(const Aws::String& name)
@@ -118,6 +128,14 @@ namespace Aws
           else if (hashCode == t2_large_HASH)
           {
             return InstanceType::t2_large;
+          }
+          else if (hashCode == t2_xlarge_HASH)
+          {
+            return InstanceType::t2_xlarge;
+          }
+          else if (hashCode == t2_2xlarge_HASH)
+          {
+            return InstanceType::t2_2xlarge;
           }
           else if (hashCode == m1_small_HASH)
           {
@@ -210,6 +228,30 @@ namespace Aws
           else if (hashCode == r3_8xlarge_HASH)
           {
             return InstanceType::r3_8xlarge;
+          }
+          else if (hashCode == r4_large_HASH)
+          {
+            return InstanceType::r4_large;
+          }
+          else if (hashCode == r4_xlarge_HASH)
+          {
+            return InstanceType::r4_xlarge;
+          }
+          else if (hashCode == r4_2xlarge_HASH)
+          {
+            return InstanceType::r4_2xlarge;
+          }
+          else if (hashCode == r4_4xlarge_HASH)
+          {
+            return InstanceType::r4_4xlarge;
+          }
+          else if (hashCode == r4_8xlarge_HASH)
+          {
+            return InstanceType::r4_8xlarge;
+          }
+          else if (hashCode == r4_16xlarge_HASH)
+          {
+            return InstanceType::r4_16xlarge;
           }
           else if (hashCode == x1_16xlarge_HASH)
           {
@@ -339,6 +381,14 @@ namespace Aws
           {
             return InstanceType::d2_8xlarge;
           }
+          else if (hashCode == f1_2xlarge_HASH)
+          {
+            return InstanceType::f1_2xlarge;
+          }
+          else if (hashCode == f1_16xlarge_HASH)
+          {
+            return InstanceType::f1_16xlarge;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -365,6 +415,10 @@ namespace Aws
             return "t2.medium";
           case InstanceType::t2_large:
             return "t2.large";
+          case InstanceType::t2_xlarge:
+            return "t2.xlarge";
+          case InstanceType::t2_2xlarge:
+            return "t2.2xlarge";
           case InstanceType::m1_small:
             return "m1.small";
           case InstanceType::m1_medium:
@@ -411,6 +465,18 @@ namespace Aws
             return "r3.4xlarge";
           case InstanceType::r3_8xlarge:
             return "r3.8xlarge";
+          case InstanceType::r4_large:
+            return "r4.large";
+          case InstanceType::r4_xlarge:
+            return "r4.xlarge";
+          case InstanceType::r4_2xlarge:
+            return "r4.2xlarge";
+          case InstanceType::r4_4xlarge:
+            return "r4.4xlarge";
+          case InstanceType::r4_8xlarge:
+            return "r4.8xlarge";
+          case InstanceType::r4_16xlarge:
+            return "r4.16xlarge";
           case InstanceType::x1_16xlarge:
             return "x1.16xlarge";
           case InstanceType::x1_32xlarge:
@@ -475,6 +541,10 @@ namespace Aws
             return "d2.4xlarge";
           case InstanceType::d2_8xlarge:
             return "d2.8xlarge";
+          case InstanceType::f1_2xlarge:
+            return "f1.2xlarge";
+          case InstanceType::f1_16xlarge:
+            return "f1.16xlarge";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

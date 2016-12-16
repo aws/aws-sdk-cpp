@@ -75,6 +75,12 @@ CreateUsagePlanResult& CreateUsagePlanResult::operator =(const AmazonWebServiceR
 
   }
 
+  if(jsonValue.ValueExists("productCode"))
+  {
+    m_productCode = jsonValue.GetString("productCode");
+
+  }
+
 
 
   return *this;

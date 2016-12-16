@@ -30,14 +30,22 @@ namespace Model
 CreateAssociationBatchRequestEntry::CreateAssociationBatchRequestEntry() : 
     m_nameHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
-    m_parametersHasBeenSet(false)
+    m_parametersHasBeenSet(false),
+    m_documentVersionHasBeenSet(false),
+    m_targetsHasBeenSet(false),
+    m_scheduleExpressionHasBeenSet(false),
+    m_outputLocationHasBeenSet(false)
 {
 }
 
 CreateAssociationBatchRequestEntry::CreateAssociationBatchRequestEntry(const JsonValue& jsonValue) : 
     m_nameHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
-    m_parametersHasBeenSet(false)
+    m_parametersHasBeenSet(false),
+    m_documentVersionHasBeenSet(false),
+    m_targetsHasBeenSet(false),
+    m_scheduleExpressionHasBeenSet(false),
+    m_outputLocationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -64,7 +72,8 @@ CreateAssociationBatchRequestEntry& CreateAssociationBatchRequestEntry::operator
     for(auto& parametersItem : parametersJsonMap)
     {
       Array<JsonValue> parameterValueListJsonList = parametersItem.second.AsArray();
-      Aws::Vector<Aws::String> parameterValueListList((size_t)parameterValueListJsonList.GetLength());
+      Aws::Vector<Aws::String> parameterValueListList;
+      parameterValueListList.reserve((size_t)parameterValueListJsonList.GetLength());
       for(unsigned parameterValueListIndex = 0; parameterValueListIndex < parameterValueListJsonList.GetLength(); ++parameterValueListIndex)
       {
         parameterValueListList.push_back(parameterValueListJsonList[parameterValueListIndex].AsString());
@@ -72,6 +81,37 @@ CreateAssociationBatchRequestEntry& CreateAssociationBatchRequestEntry::operator
       m_parameters[parametersItem.first] = std::move(parameterValueListList);
     }
     m_parametersHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DocumentVersion"))
+  {
+    m_documentVersion = jsonValue.GetString("DocumentVersion");
+
+    m_documentVersionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Targets"))
+  {
+    Array<JsonValue> targetsJsonList = jsonValue.GetArray("Targets");
+    for(unsigned targetsIndex = 0; targetsIndex < targetsJsonList.GetLength(); ++targetsIndex)
+    {
+      m_targets.push_back(targetsJsonList[targetsIndex].AsObject());
+    }
+    m_targetsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ScheduleExpression"))
+  {
+    m_scheduleExpression = jsonValue.GetString("ScheduleExpression");
+
+    m_scheduleExpressionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("OutputLocation"))
+  {
+    m_outputLocation = jsonValue.GetObject("OutputLocation");
+
+    m_outputLocationHasBeenSet = true;
   }
 
   return *this;
@@ -106,6 +146,35 @@ JsonValue CreateAssociationBatchRequestEntry::Jsonize() const
      parametersJsonMap.WithArray(parametersItem.first, std::move(parameterValueListJsonList));
    }
    payload.WithObject("Parameters", std::move(parametersJsonMap));
+
+  }
+
+  if(m_documentVersionHasBeenSet)
+  {
+   payload.WithString("DocumentVersion", m_documentVersion);
+
+  }
+
+  if(m_targetsHasBeenSet)
+  {
+   Array<JsonValue> targetsJsonList(m_targets.size());
+   for(unsigned targetsIndex = 0; targetsIndex < targetsJsonList.GetLength(); ++targetsIndex)
+   {
+     targetsJsonList[targetsIndex].AsObject(m_targets[targetsIndex].Jsonize());
+   }
+   payload.WithArray("Targets", std::move(targetsJsonList));
+
+  }
+
+  if(m_scheduleExpressionHasBeenSet)
+  {
+   payload.WithString("ScheduleExpression", m_scheduleExpression);
+
+  }
+
+  if(m_outputLocationHasBeenSet)
+  {
+   payload.WithObject("OutputLocation", m_outputLocation.Jsonize());
 
   }
 

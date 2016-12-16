@@ -45,6 +45,8 @@ DBCluster::DBCluster() :
     m_earliestRestorableTimeHasBeenSet(false),
     m_endpointHasBeenSet(false),
     m_readerEndpointHasBeenSet(false),
+    m_multiAZ(false),
+    m_multiAZHasBeenSet(false),
     m_engineHasBeenSet(false),
     m_engineVersionHasBeenSet(false),
     m_latestRestorableTimeHasBeenSet(false),
@@ -64,7 +66,8 @@ DBCluster::DBCluster() :
     m_kmsKeyIdHasBeenSet(false),
     m_dbClusterResourceIdHasBeenSet(false),
     m_dBClusterArnHasBeenSet(false),
-    m_associatedRolesHasBeenSet(false)
+    m_associatedRolesHasBeenSet(false),
+    m_clusterCreateTimeHasBeenSet(false)
 {
 }
 
@@ -84,6 +87,8 @@ DBCluster::DBCluster(const XmlNode& xmlNode) :
     m_earliestRestorableTimeHasBeenSet(false),
     m_endpointHasBeenSet(false),
     m_readerEndpointHasBeenSet(false),
+    m_multiAZ(false),
+    m_multiAZHasBeenSet(false),
     m_engineHasBeenSet(false),
     m_engineVersionHasBeenSet(false),
     m_latestRestorableTimeHasBeenSet(false),
@@ -103,7 +108,8 @@ DBCluster::DBCluster(const XmlNode& xmlNode) :
     m_kmsKeyIdHasBeenSet(false),
     m_dbClusterResourceIdHasBeenSet(false),
     m_dBClusterArnHasBeenSet(false),
-    m_associatedRolesHasBeenSet(false)
+    m_associatedRolesHasBeenSet(false),
+    m_clusterCreateTimeHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -197,6 +203,12 @@ DBCluster& DBCluster::operator =(const XmlNode& xmlNode)
     {
       m_readerEndpoint = StringUtils::Trim(readerEndpointNode.GetText().c_str());
       m_readerEndpointHasBeenSet = true;
+    }
+    XmlNode multiAZNode = resultNode.FirstChild("MultiAZ");
+    if(!multiAZNode.IsNull())
+    {
+      m_multiAZ = StringUtils::ConvertToBool(StringUtils::Trim(multiAZNode.GetText().c_str()).c_str());
+      m_multiAZHasBeenSet = true;
     }
     XmlNode engineNode = resultNode.FirstChild("Engine");
     if(!engineNode.IsNull())
@@ -336,6 +348,12 @@ DBCluster& DBCluster::operator =(const XmlNode& xmlNode)
 
       m_associatedRolesHasBeenSet = true;
     }
+    XmlNode clusterCreateTimeNode = resultNode.FirstChild("ClusterCreateTime");
+    if(!clusterCreateTimeNode.IsNull())
+    {
+      m_clusterCreateTime = DateTime(StringUtils::Trim(clusterCreateTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_clusterCreateTimeHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -410,6 +428,11 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location, unsi
   if(m_readerEndpointHasBeenSet)
   {
       oStream << location << index << locationValue << ".ReaderEndpoint=" << StringUtils::URLEncode(m_readerEndpoint.c_str()) << "&";
+  }
+
+  if(m_multiAZHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".MultiAZ=" << m_multiAZ << "&";
   }
 
   if(m_engineHasBeenSet)
@@ -530,6 +553,11 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location, unsi
       }
   }
 
+  if(m_clusterCreateTimeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ClusterCreateTime=" << StringUtils::URLEncode(m_clusterCreateTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+  }
+
 }
 
 void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -589,6 +617,10 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) cons
   if(m_readerEndpointHasBeenSet)
   {
       oStream << location << ".ReaderEndpoint=" << StringUtils::URLEncode(m_readerEndpoint.c_str()) << "&";
+  }
+  if(m_multiAZHasBeenSet)
+  {
+      oStream << location << ".MultiAZ=" << m_multiAZ << "&";
   }
   if(m_engineHasBeenSet)
   {
@@ -689,6 +721,10 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) cons
         associatedRolesSs << location <<  ".DBClusterRole." << associatedRolesIdx++;
         item.OutputToStream(oStream, associatedRolesSs.str().c_str());
       }
+  }
+  if(m_clusterCreateTimeHasBeenSet)
+  {
+      oStream << location << ".ClusterCreateTime=" << StringUtils::URLEncode(m_clusterCreateTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
 }
 

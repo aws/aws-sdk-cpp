@@ -533,7 +533,7 @@ namespace Model
      * return the same messages and receipt handles. If a retry occurs within the
      * deduplication interval, it resets the visibility timeout. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html">Visibility
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
      * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
      * <important> <p>If a caller of the <code>ReceiveMessage</code> action is still
      * processing messages when the visibility timeout expires and messages become
@@ -584,7 +584,7 @@ namespace Model
      * return the same messages and receipt handles. If a retry occurs within the
      * deduplication interval, it resets the visibility timeout. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html">Visibility
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
      * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
      * <important> <p>If a caller of the <code>ReceiveMessage</code> action is still
      * processing messages when the visibility timeout expires and messages become
@@ -635,7 +635,7 @@ namespace Model
      * return the same messages and receipt handles. If a retry occurs within the
      * deduplication interval, it resets the visibility timeout. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html">Visibility
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
      * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
      * <important> <p>If a caller of the <code>ReceiveMessage</code> action is still
      * processing messages when the visibility timeout expires and messages become
@@ -686,7 +686,7 @@ namespace Model
      * return the same messages and receipt handles. If a retry occurs within the
      * deduplication interval, it resets the visibility timeout. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html">Visibility
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
      * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
      * <important> <p>If a caller of the <code>ReceiveMessage</code> action is still
      * processing messages when the visibility timeout expires and messages become
@@ -737,7 +737,7 @@ namespace Model
      * return the same messages and receipt handles. If a retry occurs within the
      * deduplication interval, it resets the visibility timeout. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html">Visibility
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
      * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
      * <important> <p>If a caller of the <code>ReceiveMessage</code> action is still
      * processing messages when the visibility timeout expires and messages become
@@ -788,7 +788,7 @@ namespace Model
      * return the same messages and receipt handles. If a retry occurs within the
      * deduplication interval, it resets the visibility timeout. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html">Visibility
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
      * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
      * <important> <p>If a caller of the <code>ReceiveMessage</code> action is still
      * processing messages when the visibility timeout expires and messages become
@@ -839,7 +839,7 @@ namespace Model
      * return the same messages and receipt handles. If a retry occurs within the
      * deduplication interval, it resets the visibility timeout. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html">Visibility
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
      * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
      * <important> <p>If a caller of the <code>ReceiveMessage</code> action is still
      * processing messages when the visibility timeout expires and messages become

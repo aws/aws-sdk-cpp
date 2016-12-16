@@ -61,7 +61,8 @@
 #end
 #if($template.recursionDepth > 1)
 #set($template.containerVar = ${template.lowerCaseVarName} + "List")
-  ${template.currentSpaces}Aws::Vector<${CppViewHelper.computeCppType($template.currentShape.listMember.shape)}> ${template.lowerCaseVarName}List((size_t)${template.lowerCaseVarName}JsonList.GetLength());
+  ${template.currentSpaces}Aws::Vector<${CppViewHelper.computeCppType($template.currentShape.listMember.shape)}> ${template.lowerCaseVarName}List;
+  ${template.currentSpaces}${template.lowerCaseVarName}List.reserve((size_t)${template.lowerCaseVarName}JsonList.GetLength());
 #end
   ${template.currentSpaces}for(unsigned ${template.lowerCaseVarName}Index = 0; ${template.lowerCaseVarName}Index < ${template.lowerCaseVarName}JsonList.GetLength(); ++${template.lowerCaseVarName}Index)
   ${template.currentSpaces}{

@@ -31,6 +31,7 @@ ApiKey::ApiKey() :
     m_idHasBeenSet(false),
     m_valueHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_customerIdHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_enabled(false),
     m_enabledHasBeenSet(false),
@@ -44,6 +45,7 @@ ApiKey::ApiKey(const JsonValue& jsonValue) :
     m_idHasBeenSet(false),
     m_valueHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_customerIdHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_enabled(false),
     m_enabledHasBeenSet(false),
@@ -75,6 +77,13 @@ ApiKey& ApiKey::operator =(const JsonValue& jsonValue)
     m_name = jsonValue.GetString("name");
 
     m_nameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("customerId"))
+  {
+    m_customerId = jsonValue.GetString("customerId");
+
+    m_customerIdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("description"))
@@ -137,6 +146,12 @@ JsonValue ApiKey::Jsonize() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("name", m_name);
+
+  }
+
+  if(m_customerIdHasBeenSet)
+  {
+   payload.WithString("customerId", m_customerId);
 
   }
 

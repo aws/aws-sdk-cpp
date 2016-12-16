@@ -35,6 +35,9 @@ Subnet::Subnet() :
     m_stateHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
     m_cidrBlockHasBeenSet(false),
+    m_ipv6CidrBlockAssociationSetHasBeenSet(false),
+    m_assignIpv6AddressOnCreation(false),
+    m_assignIpv6AddressOnCreationHasBeenSet(false),
     m_availableIpAddressCount(0),
     m_availableIpAddressCountHasBeenSet(false),
     m_availabilityZoneHasBeenSet(false),
@@ -52,6 +55,9 @@ Subnet::Subnet(const XmlNode& xmlNode) :
     m_stateHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
     m_cidrBlockHasBeenSet(false),
+    m_ipv6CidrBlockAssociationSetHasBeenSet(false),
+    m_assignIpv6AddressOnCreation(false),
+    m_assignIpv6AddressOnCreationHasBeenSet(false),
     m_availableIpAddressCount(0),
     m_availableIpAddressCountHasBeenSet(false),
     m_availabilityZoneHasBeenSet(false),
@@ -93,6 +99,24 @@ Subnet& Subnet::operator =(const XmlNode& xmlNode)
     {
       m_cidrBlock = StringUtils::Trim(cidrBlockNode.GetText().c_str());
       m_cidrBlockHasBeenSet = true;
+    }
+    XmlNode ipv6CidrBlockAssociationSetNode = resultNode.FirstChild("ipv6CidrBlockAssociationSet");
+    if(!ipv6CidrBlockAssociationSetNode.IsNull())
+    {
+      XmlNode ipv6CidrBlockAssociationSetMember = ipv6CidrBlockAssociationSetNode.FirstChild("item");
+      while(!ipv6CidrBlockAssociationSetMember.IsNull())
+      {
+        m_ipv6CidrBlockAssociationSet.push_back(ipv6CidrBlockAssociationSetMember);
+        ipv6CidrBlockAssociationSetMember = ipv6CidrBlockAssociationSetMember.NextNode("item");
+      }
+
+      m_ipv6CidrBlockAssociationSetHasBeenSet = true;
+    }
+    XmlNode assignIpv6AddressOnCreationNode = resultNode.FirstChild("assignIpv6AddressOnCreation");
+    if(!assignIpv6AddressOnCreationNode.IsNull())
+    {
+      m_assignIpv6AddressOnCreation = StringUtils::ConvertToBool(StringUtils::Trim(assignIpv6AddressOnCreationNode.GetText().c_str()).c_str());
+      m_assignIpv6AddressOnCreationHasBeenSet = true;
     }
     XmlNode availableIpAddressCountNode = resultNode.FirstChild("availableIpAddressCount");
     if(!availableIpAddressCountNode.IsNull())
@@ -157,6 +181,22 @@ void Subnet::OutputToStream(Aws::OStream& oStream, const char* location, unsigne
       oStream << location << index << locationValue << ".CidrBlock=" << StringUtils::URLEncode(m_cidrBlock.c_str()) << "&";
   }
 
+  if(m_ipv6CidrBlockAssociationSetHasBeenSet)
+  {
+      unsigned ipv6CidrBlockAssociationSetIdx = 1;
+      for(auto& item : m_ipv6CidrBlockAssociationSet)
+      {
+        Aws::StringStream ipv6CidrBlockAssociationSetSs;
+        ipv6CidrBlockAssociationSetSs << location << index << locationValue << ".Ipv6CidrBlockAssociationSet." << ipv6CidrBlockAssociationSetIdx++;
+        item.OutputToStream(oStream, ipv6CidrBlockAssociationSetSs.str().c_str());
+      }
+  }
+
+  if(m_assignIpv6AddressOnCreationHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".AssignIpv6AddressOnCreation=" << m_assignIpv6AddressOnCreation << "&";
+  }
+
   if(m_availableIpAddressCountHasBeenSet)
   {
       oStream << location << index << locationValue << ".AvailableIpAddressCount=" << m_availableIpAddressCount << "&";
@@ -207,6 +247,20 @@ void Subnet::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_cidrBlockHasBeenSet)
   {
       oStream << location << ".CidrBlock=" << StringUtils::URLEncode(m_cidrBlock.c_str()) << "&";
+  }
+  if(m_ipv6CidrBlockAssociationSetHasBeenSet)
+  {
+      unsigned ipv6CidrBlockAssociationSetIdx = 1;
+      for(auto& item : m_ipv6CidrBlockAssociationSet)
+      {
+        Aws::StringStream ipv6CidrBlockAssociationSetSs;
+        ipv6CidrBlockAssociationSetSs << location <<  ".item." << ipv6CidrBlockAssociationSetIdx++;
+        item.OutputToStream(oStream, ipv6CidrBlockAssociationSetSs.str().c_str());
+      }
+  }
+  if(m_assignIpv6AddressOnCreationHasBeenSet)
+  {
+      oStream << location << ".AssignIpv6AddressOnCreation=" << m_assignIpv6AddressOnCreation << "&";
   }
   if(m_availableIpAddressCountHasBeenSet)
   {

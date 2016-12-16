@@ -38,6 +38,7 @@ ReplicationTask::ReplicationTask() :
     m_replicationTaskSettingsHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_lastFailureMessageHasBeenSet(false),
+    m_stopReasonHasBeenSet(false),
     m_replicationTaskCreationDateHasBeenSet(false),
     m_replicationTaskStartDateHasBeenSet(false),
     m_replicationTaskArnHasBeenSet(false),
@@ -56,6 +57,7 @@ ReplicationTask::ReplicationTask(const JsonValue& jsonValue) :
     m_replicationTaskSettingsHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_lastFailureMessageHasBeenSet(false),
+    m_stopReasonHasBeenSet(false),
     m_replicationTaskCreationDateHasBeenSet(false),
     m_replicationTaskStartDateHasBeenSet(false),
     m_replicationTaskArnHasBeenSet(false),
@@ -127,6 +129,13 @@ ReplicationTask& ReplicationTask::operator =(const JsonValue& jsonValue)
     m_lastFailureMessage = jsonValue.GetString("LastFailureMessage");
 
     m_lastFailureMessageHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("StopReason"))
+  {
+    m_stopReason = jsonValue.GetString("StopReason");
+
+    m_stopReasonHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("ReplicationTaskCreationDate"))
@@ -214,6 +223,12 @@ JsonValue ReplicationTask::Jsonize() const
   if(m_lastFailureMessageHasBeenSet)
   {
    payload.WithString("LastFailureMessage", m_lastFailureMessage);
+
+  }
+
+  if(m_stopReasonHasBeenSet)
+  {
+   payload.WithString("StopReason", m_stopReason);
 
   }
 

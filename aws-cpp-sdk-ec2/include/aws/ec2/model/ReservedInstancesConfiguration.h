@@ -164,32 +164,32 @@ namespace Model
     inline ReservedInstancesConfiguration& WithInstanceType(InstanceType&& value) { SetInstanceType(value); return *this;}
 
     /**
-     * <p>Whether the Reserved Instance is <code>standard</code> or
-     * <code>convertible</code>.</p>
+     * <p>Whether the Reserved Instance is applied to instances in a region or
+     * instances in a specific Availability Zone.</p>
      */
     inline const Scope& GetScope() const{ return m_scope; }
 
     /**
-     * <p>Whether the Reserved Instance is <code>standard</code> or
-     * <code>convertible</code>.</p>
+     * <p>Whether the Reserved Instance is applied to instances in a region or
+     * instances in a specific Availability Zone.</p>
      */
     inline void SetScope(const Scope& value) { m_scopeHasBeenSet = true; m_scope = value; }
 
     /**
-     * <p>Whether the Reserved Instance is <code>standard</code> or
-     * <code>convertible</code>.</p>
+     * <p>Whether the Reserved Instance is applied to instances in a region or
+     * instances in a specific Availability Zone.</p>
      */
     inline void SetScope(Scope&& value) { m_scopeHasBeenSet = true; m_scope = value; }
 
     /**
-     * <p>Whether the Reserved Instance is <code>standard</code> or
-     * <code>convertible</code>.</p>
+     * <p>Whether the Reserved Instance is applied to instances in a region or
+     * instances in a specific Availability Zone.</p>
      */
     inline ReservedInstancesConfiguration& WithScope(const Scope& value) { SetScope(value); return *this;}
 
     /**
-     * <p>Whether the Reserved Instance is <code>standard</code> or
-     * <code>convertible</code>.</p>
+     * <p>Whether the Reserved Instance is applied to instances in a region or
+     * instances in a specific Availability Zone.</p>
      */
     inline ReservedInstancesConfiguration& WithScope(Scope&& value) { SetScope(value); return *this;}
 

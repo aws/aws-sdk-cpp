@@ -263,10 +263,13 @@ namespace Model
     typedef std::function<void(const WAFClient*, const Model::UpdateXssMatchSetRequest&, const Model::UpdateXssMatchSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateXssMatchSetResponseReceivedHandler;
 
   /**
-   * <p>This is the <i>AWS WAF API Reference</i>. This guide is for developers who
-   * need detailed information about the AWS WAF API actions, data types, and errors.
-   * For detailed information about AWS WAF features and an overview of how to use
-   * the AWS WAF API, see the <a
+   * <p>This is the <i>AWS WAF API Reference</i> for using AWS WAF with Amazon
+   * CloudFront. The AWS WAF actions and data types listed in the reference are
+   * available for protecting Amazon CloudFront distributions. You can use these
+   * actions and data types via the endpoint <i>waf.amazonaws.com</i>. This guide is
+   * for developers who need detailed information about the AWS WAF API actions, data
+   * types, and errors. For detailed information about AWS WAF features and an
+   * overview of how to use the AWS WAF API, see the <a
    * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
    * Guide</a>.</p>
    */
@@ -1708,16 +1711,20 @@ namespace Model
          * </p> <ul> <li> <p>Whether to insert or delete the object from the array. If you
          * want to change an <code>IPSetDescriptor</code> object, you delete the existing
          * object and add a new one.</p> </li> <li> <p>The IP address version,
-         * <code>IPv4</code>. </p> </li> <li> <p>The IP address in CIDR notation, for
-         * example, <code>192.0.2.0/24</code> (for the range of IP addresses from
-         * <code>192.0.2.0</code> to <code>192.0.2.255</code>) or
+         * <code>IPv4</code> or <code>IPv6</code>. </p> </li> <li> <p>The IP address in
+         * CIDR notation, for example, <code>192.0.2.0/24</code> (for the range of IP
+         * addresses from <code>192.0.2.0</code> to <code>192.0.2.255</code>) or
          * <code>192.0.2.44/32</code> (for the individual IP address
          * <code>192.0.2.44</code>). </p> </li> </ul> <p>AWS WAF supports /8, /16, /24, and
-         * /32 IP address ranges. For more information about CIDR notation, see the
-         * Wikipedia entry <a
+         * /32 IP address ranges for IPv4, and /24, /32, /48, /56, /64 and /128 for IPv6.
+         * For more information about CIDR notation, see the Wikipedia entry <a
          * href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless
-         * Inter-Domain Routing</a>.</p> <p>You use an <code>IPSet</code> to specify which
-         * web requests you want to allow or block based on the IP addresses that the
+         * Inter-Domain Routing</a>.</p> <p>IPv6 addresses can be represented using any of
+         * the following formats:</p> <ul> <li>
+         * <p>1111:0000:0000:0000:0000:0000:0000:0111/128</p> </li> <li>
+         * <p>1111:0:0:0:0:0:0:0111/128</p> </li> <li> <p>1111::0111/128</p> </li> <li>
+         * <p>1111::111/128</p> </li> </ul> <p>You use an <code>IPSet</code> to specify
+         * which web requests you want to allow or block based on the IP addresses that the
          * requests originated from. For example, if you're receiving a lot of requests
          * from one or a small number of IP addresses and you want to block the requests,
          * you can create an <code>IPSet</code> that specifies those IP addresses, and then
@@ -1743,16 +1750,20 @@ namespace Model
          * </p> <ul> <li> <p>Whether to insert or delete the object from the array. If you
          * want to change an <code>IPSetDescriptor</code> object, you delete the existing
          * object and add a new one.</p> </li> <li> <p>The IP address version,
-         * <code>IPv4</code>. </p> </li> <li> <p>The IP address in CIDR notation, for
-         * example, <code>192.0.2.0/24</code> (for the range of IP addresses from
-         * <code>192.0.2.0</code> to <code>192.0.2.255</code>) or
+         * <code>IPv4</code> or <code>IPv6</code>. </p> </li> <li> <p>The IP address in
+         * CIDR notation, for example, <code>192.0.2.0/24</code> (for the range of IP
+         * addresses from <code>192.0.2.0</code> to <code>192.0.2.255</code>) or
          * <code>192.0.2.44/32</code> (for the individual IP address
          * <code>192.0.2.44</code>). </p> </li> </ul> <p>AWS WAF supports /8, /16, /24, and
-         * /32 IP address ranges. For more information about CIDR notation, see the
-         * Wikipedia entry <a
+         * /32 IP address ranges for IPv4, and /24, /32, /48, /56, /64 and /128 for IPv6.
+         * For more information about CIDR notation, see the Wikipedia entry <a
          * href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless
-         * Inter-Domain Routing</a>.</p> <p>You use an <code>IPSet</code> to specify which
-         * web requests you want to allow or block based on the IP addresses that the
+         * Inter-Domain Routing</a>.</p> <p>IPv6 addresses can be represented using any of
+         * the following formats:</p> <ul> <li>
+         * <p>1111:0000:0000:0000:0000:0000:0000:0111/128</p> </li> <li>
+         * <p>1111:0:0:0:0:0:0:0111/128</p> </li> <li> <p>1111::0111/128</p> </li> <li>
+         * <p>1111::111/128</p> </li> </ul> <p>You use an <code>IPSet</code> to specify
+         * which web requests you want to allow or block based on the IP addresses that the
          * requests originated from. For example, if you're receiving a lot of requests
          * from one or a small number of IP addresses and you want to block the requests,
          * you can create an <code>IPSet</code> that specifies those IP addresses, and then
@@ -1780,16 +1791,20 @@ namespace Model
          * </p> <ul> <li> <p>Whether to insert or delete the object from the array. If you
          * want to change an <code>IPSetDescriptor</code> object, you delete the existing
          * object and add a new one.</p> </li> <li> <p>The IP address version,
-         * <code>IPv4</code>. </p> </li> <li> <p>The IP address in CIDR notation, for
-         * example, <code>192.0.2.0/24</code> (for the range of IP addresses from
-         * <code>192.0.2.0</code> to <code>192.0.2.255</code>) or
+         * <code>IPv4</code> or <code>IPv6</code>. </p> </li> <li> <p>The IP address in
+         * CIDR notation, for example, <code>192.0.2.0/24</code> (for the range of IP
+         * addresses from <code>192.0.2.0</code> to <code>192.0.2.255</code>) or
          * <code>192.0.2.44/32</code> (for the individual IP address
          * <code>192.0.2.44</code>). </p> </li> </ul> <p>AWS WAF supports /8, /16, /24, and
-         * /32 IP address ranges. For more information about CIDR notation, see the
-         * Wikipedia entry <a
+         * /32 IP address ranges for IPv4, and /24, /32, /48, /56, /64 and /128 for IPv6.
+         * For more information about CIDR notation, see the Wikipedia entry <a
          * href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless
-         * Inter-Domain Routing</a>.</p> <p>You use an <code>IPSet</code> to specify which
-         * web requests you want to allow or block based on the IP addresses that the
+         * Inter-Domain Routing</a>.</p> <p>IPv6 addresses can be represented using any of
+         * the following formats:</p> <ul> <li>
+         * <p>1111:0000:0000:0000:0000:0000:0000:0111/128</p> </li> <li>
+         * <p>1111:0:0:0:0:0:0:0111/128</p> </li> <li> <p>1111::0111/128</p> </li> <li>
+         * <p>1111::111/128</p> </li> </ul> <p>You use an <code>IPSet</code> to specify
+         * which web requests you want to allow or block based on the IP addresses that the
          * requests originated from. For example, if you're receiving a lot of requests
          * from one or a small number of IP addresses and you want to block the requests,
          * you can create an <code>IPSet</code> that specifies those IP addresses, and then

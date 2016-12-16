@@ -215,6 +215,48 @@ namespace Model
      */
     inline CreateApiKeyRequest& AddStageKeys(StageKey&& value) { m_stageKeysHasBeenSet = true; m_stageKeys.push_back(value); return *this; }
 
+    /**
+     * <p>An AWS Marketplace customer identifier , when integrating with the AWS SaaS
+     * Marketplace.</p>
+     */
+    inline const Aws::String& GetCustomerId() const{ return m_customerId; }
+
+    /**
+     * <p>An AWS Marketplace customer identifier , when integrating with the AWS SaaS
+     * Marketplace.</p>
+     */
+    inline void SetCustomerId(const Aws::String& value) { m_customerIdHasBeenSet = true; m_customerId = value; }
+
+    /**
+     * <p>An AWS Marketplace customer identifier , when integrating with the AWS SaaS
+     * Marketplace.</p>
+     */
+    inline void SetCustomerId(Aws::String&& value) { m_customerIdHasBeenSet = true; m_customerId = value; }
+
+    /**
+     * <p>An AWS Marketplace customer identifier , when integrating with the AWS SaaS
+     * Marketplace.</p>
+     */
+    inline void SetCustomerId(const char* value) { m_customerIdHasBeenSet = true; m_customerId.assign(value); }
+
+    /**
+     * <p>An AWS Marketplace customer identifier , when integrating with the AWS SaaS
+     * Marketplace.</p>
+     */
+    inline CreateApiKeyRequest& WithCustomerId(const Aws::String& value) { SetCustomerId(value); return *this;}
+
+    /**
+     * <p>An AWS Marketplace customer identifier , when integrating with the AWS SaaS
+     * Marketplace.</p>
+     */
+    inline CreateApiKeyRequest& WithCustomerId(Aws::String&& value) { SetCustomerId(value); return *this;}
+
+    /**
+     * <p>An AWS Marketplace customer identifier , when integrating with the AWS SaaS
+     * Marketplace.</p>
+     */
+    inline CreateApiKeyRequest& WithCustomerId(const char* value) { SetCustomerId(value); return *this;}
+
   private:
     Aws::String m_name;
     bool m_nameHasBeenSet;
@@ -228,6 +270,8 @@ namespace Model
     bool m_valueHasBeenSet;
     Aws::Vector<StageKey> m_stageKeys;
     bool m_stageKeysHasBeenSet;
+    Aws::String m_customerId;
+    bool m_customerIdHasBeenSet;
   };
 
 } // namespace Model

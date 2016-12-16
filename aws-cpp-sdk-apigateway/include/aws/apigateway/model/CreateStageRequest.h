@@ -313,6 +313,41 @@ namespace Model
      */
     inline CreateStageRequest& AddVariables(const char* key, const char* value) { m_variablesHasBeenSet = true; m_variables[key] = value; return *this; }
 
+    /**
+     * <p>The version of the associated API documentation.</p>
+     */
+    inline const Aws::String& GetDocumentationVersion() const{ return m_documentationVersion; }
+
+    /**
+     * <p>The version of the associated API documentation.</p>
+     */
+    inline void SetDocumentationVersion(const Aws::String& value) { m_documentationVersionHasBeenSet = true; m_documentationVersion = value; }
+
+    /**
+     * <p>The version of the associated API documentation.</p>
+     */
+    inline void SetDocumentationVersion(Aws::String&& value) { m_documentationVersionHasBeenSet = true; m_documentationVersion = value; }
+
+    /**
+     * <p>The version of the associated API documentation.</p>
+     */
+    inline void SetDocumentationVersion(const char* value) { m_documentationVersionHasBeenSet = true; m_documentationVersion.assign(value); }
+
+    /**
+     * <p>The version of the associated API documentation.</p>
+     */
+    inline CreateStageRequest& WithDocumentationVersion(const Aws::String& value) { SetDocumentationVersion(value); return *this;}
+
+    /**
+     * <p>The version of the associated API documentation.</p>
+     */
+    inline CreateStageRequest& WithDocumentationVersion(Aws::String&& value) { SetDocumentationVersion(value); return *this;}
+
+    /**
+     * <p>The version of the associated API documentation.</p>
+     */
+    inline CreateStageRequest& WithDocumentationVersion(const char* value) { SetDocumentationVersion(value); return *this;}
+
   private:
     Aws::String m_restApiId;
     bool m_restApiIdHasBeenSet;
@@ -328,6 +363,8 @@ namespace Model
     bool m_cacheClusterSizeHasBeenSet;
     Aws::Map<Aws::String, Aws::String> m_variables;
     bool m_variablesHasBeenSet;
+    Aws::String m_documentationVersion;
+    bool m_documentationVersionHasBeenSet;
   };
 
 } // namespace Model

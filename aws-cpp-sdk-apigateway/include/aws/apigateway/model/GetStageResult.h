@@ -435,6 +435,41 @@ namespace Model
     inline GetStageResult& AddVariables(const char* key, const char* value) { m_variables[key] = value; return *this; }
 
     /**
+     * <p>The version of the associated API documentation.</p>
+     */
+    inline const Aws::String& GetDocumentationVersion() const{ return m_documentationVersion; }
+
+    /**
+     * <p>The version of the associated API documentation.</p>
+     */
+    inline void SetDocumentationVersion(const Aws::String& value) { m_documentationVersion = value; }
+
+    /**
+     * <p>The version of the associated API documentation.</p>
+     */
+    inline void SetDocumentationVersion(Aws::String&& value) { m_documentationVersion = value; }
+
+    /**
+     * <p>The version of the associated API documentation.</p>
+     */
+    inline void SetDocumentationVersion(const char* value) { m_documentationVersion.assign(value); }
+
+    /**
+     * <p>The version of the associated API documentation.</p>
+     */
+    inline GetStageResult& WithDocumentationVersion(const Aws::String& value) { SetDocumentationVersion(value); return *this;}
+
+    /**
+     * <p>The version of the associated API documentation.</p>
+     */
+    inline GetStageResult& WithDocumentationVersion(Aws::String&& value) { SetDocumentationVersion(value); return *this;}
+
+    /**
+     * <p>The version of the associated API documentation.</p>
+     */
+    inline GetStageResult& WithDocumentationVersion(const char* value) { SetDocumentationVersion(value); return *this;}
+
+    /**
      * <p>The date and time that the stage was created, in <a
      * href="http://www.iso.org/iso/home/standards/iso8601.htm" target="_blank">ISO
      * 8601 format</a>.</p>
@@ -514,6 +549,7 @@ namespace Model
     CacheClusterStatus m_cacheClusterStatus;
     Aws::Map<Aws::String, MethodSetting> m_methodSettings;
     Aws::Map<Aws::String, Aws::String> m_variables;
+    Aws::String m_documentationVersion;
     Aws::Utils::DateTime m_createdDate;
     Aws::Utils::DateTime m_lastUpdatedDate;
   };

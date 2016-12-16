@@ -25,6 +25,7 @@ CreateApplicationVersionRequest::CreateApplicationVersionRequest() :
     m_descriptionHasBeenSet(false),
     m_sourceBuildInformationHasBeenSet(false),
     m_sourceBundleHasBeenSet(false),
+    m_buildConfigurationHasBeenSet(false),
     m_autoCreateApplication(false),
     m_autoCreateApplicationHasBeenSet(false),
     m_process(false),
@@ -59,6 +60,11 @@ Aws::String CreateApplicationVersionRequest::SerializePayload() const
   if(m_sourceBundleHasBeenSet)
   {
     m_sourceBundle.OutputToStream(ss, "SourceBundle");
+  }
+
+  if(m_buildConfigurationHasBeenSet)
+  {
+    m_buildConfiguration.OutputToStream(ss, "BuildConfiguration");
   }
 
   if(m_autoCreateApplicationHasBeenSet)

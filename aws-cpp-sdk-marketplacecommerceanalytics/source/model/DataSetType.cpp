@@ -47,6 +47,7 @@ namespace Aws
         static const int customer_profile_by_industry_HASH = HashingUtils::HashString("customer_profile_by_industry");
         static const int customer_profile_by_revenue_HASH = HashingUtils::HashString("customer_profile_by_revenue");
         static const int customer_profile_by_geography_HASH = HashingUtils::HashString("customer_profile_by_geography");
+        static const int sales_compensation_billed_revenue_HASH = HashingUtils::HashString("sales_compensation_billed_revenue");
 
 
         DataSetType GetDataSetTypeForName(const Aws::String& name)
@@ -124,6 +125,10 @@ namespace Aws
           {
             return DataSetType::customer_profile_by_geography;
           }
+          else if (hashCode == sales_compensation_billed_revenue_HASH)
+          {
+            return DataSetType::sales_compensation_billed_revenue;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -174,6 +179,8 @@ namespace Aws
             return "customer_profile_by_revenue";
           case DataSetType::customer_profile_by_geography:
             return "customer_profile_by_geography";
+          case DataSetType::sales_compensation_billed_revenue:
+            return "sales_compensation_billed_revenue";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

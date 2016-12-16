@@ -27,7 +27,7 @@ extern "C" {
 #endif // __cplusplus
 
 JNIEXPORT jint JNICALL
-AWS_TESTING_API Java_aws_coretests_TestActivity_runTests( JNIEnv* env, jobject classRef, jobject context );
+AWS_TESTING_API Java_aws_androidsdktesting_RunSDKTests_runTests( JNIEnv* env, jobject classRef, jobject context );
 
 #ifdef __cplusplus
 }

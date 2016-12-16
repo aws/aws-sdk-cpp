@@ -37,15 +37,7 @@ Aws::String ${typeInfo.className}::SerializePayload() const
   {
 #set($spaces = "  ")
 #end
-#if($member.value.shape.blob)
-  ${spaces}ss << "${member.key}=" << HashingUtils::Base64Encode(${memberVarName}) << "&";
-#elseif($member.value.shape.timeStamp)
-  ${spaces}ss << "${member.key}=" << StringUtils::URLEncode(${memberVarName}.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
-#elseif($member.value.shape.string)
-  ${spaces}ss << "${member.key}=" << StringUtils::URLEncode(${memberVarName}.c_str()) << "&";
-#elseif($member.value.shape.enum)
-  ${spaces}ss << "${member.key}=" << ${member.value.shape.name}Mapper::GetNameFor${member.value.shape.name}(${memberVarName}) << "&";
-#elseif($member.value.shape.list)
+#if($member.value.shape.list)
   ${spaces}unsigned ${varName}Count = 1;
   ${spaces}for(auto& item : $memberVarName)
   ${spaces}{
@@ -134,12 +126,30 @@ Aws::String ${typeInfo.className}::SerializePayload() const
 #end
   ${spaces}  ${varName}Count++;
   ${spaces}}
-#elseif($member.value.shape.structure)
-  ${spaces}${memberVarName}.OutputToStream(ss, "${member.key}");
-#elseif($member.value.shape.double)
-  ${spaces}ss << "${member.key}=" << StringUtils::URLEncode(${memberVarName}) << "&";
 #else
-  ${spaces}ss << "${member.key}=" << ${memberVarName} << "&";
+#if($member.value.locationName)
+#set($location = $member.value.locationName)
+#else
+#set($location = $member.key)
+#end
+#if($metadata.protocol == "ec2")
+#set($location = $CppViewHelper.capitalizeFirstChar($location))
+#end
+#if($member.value.shape.blob)
+  ${spaces}ss << "${location}=" << HashingUtils::Base64Encode(${memberVarName}) << "&";
+#elseif($member.value.shape.timeStamp)
+  ${spaces}ss << "${location}=" << StringUtils::URLEncode(${memberVarName}.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+#elseif($member.value.shape.string)
+  ${spaces}ss << "${location}=" << StringUtils::URLEncode(${memberVarName}.c_str()) << "&";
+#elseif($member.value.shape.enum)
+  ${spaces}ss << "${location}=" << ${member.value.shape.name}Mapper::GetNameFor${member.value.shape.name}(${memberVarName}) << "&";
+#elseif($member.value.shape.structure)
+  ${spaces}${memberVarName}.OutputToStream(ss, "${location}");
+#elseif($member.value.shape.double)
+  ${spaces}ss << "${location}=" << StringUtils::URLEncode(${memberVarName}) << "&";
+#else
+  ${spaces}ss << "${location}=" << ${memberVarName} << "&";
+#end
 #end
 #if(!$member.value.required)
   }

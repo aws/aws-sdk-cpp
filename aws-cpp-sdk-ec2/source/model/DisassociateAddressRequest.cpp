@@ -46,7 +46,7 @@ Aws::String DisassociateAddressRequest::SerializePayload() const
     ss << "AssociationId=" << StringUtils::URLEncode(m_associationId.c_str()) << "&";
   }
 
-  ss << "Version=2016-09-15";
+  ss << "Version=2016-11-15";
   return ss.str();
 }
 

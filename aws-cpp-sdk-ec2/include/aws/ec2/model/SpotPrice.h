@@ -49,27 +49,27 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     /**
-     * <p>The instance type.</p>
+     * <p>The instance type. Note that T2 and HS1 instance types are not supported.</p>
      */
     inline const InstanceType& GetInstanceType() const{ return m_instanceType; }
 
     /**
-     * <p>The instance type.</p>
+     * <p>The instance type. Note that T2 and HS1 instance types are not supported.</p>
      */
     inline void SetInstanceType(const InstanceType& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
     /**
-     * <p>The instance type.</p>
+     * <p>The instance type. Note that T2 and HS1 instance types are not supported.</p>
      */
     inline void SetInstanceType(InstanceType&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
     /**
-     * <p>The instance type.</p>
+     * <p>The instance type. Note that T2 and HS1 instance types are not supported.</p>
      */
     inline SpotPrice& WithInstanceType(const InstanceType& value) { SetInstanceType(value); return *this;}
 
     /**
-     * <p>The instance type.</p>
+     * <p>The instance type. Note that T2 and HS1 instance types are not supported.</p>
      */
     inline SpotPrice& WithInstanceType(InstanceType&& value) { SetInstanceType(value); return *this;}
 

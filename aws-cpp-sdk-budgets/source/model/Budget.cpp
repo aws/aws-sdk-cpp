@@ -78,7 +78,8 @@ Budget& Budget::operator =(const JsonValue& jsonValue)
     for(auto& costFiltersItem : costFiltersJsonMap)
     {
       Array<JsonValue> dimensionValuesJsonList = costFiltersItem.second.AsArray();
-      Aws::Vector<Aws::String> dimensionValuesList((size_t)dimensionValuesJsonList.GetLength());
+      Aws::Vector<Aws::String> dimensionValuesList;
+      dimensionValuesList.reserve((size_t)dimensionValuesJsonList.GetLength());
       for(unsigned dimensionValuesIndex = 0; dimensionValuesIndex < dimensionValuesJsonList.GetLength(); ++dimensionValuesIndex)
       {
         dimensionValuesList.push_back(dimensionValuesJsonList[dimensionValuesIndex].AsString());

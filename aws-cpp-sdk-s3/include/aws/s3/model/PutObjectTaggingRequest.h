@@ -20,6 +20,10 @@
 
 namespace Aws
 {
+namespace Http
+{
+    class URI;
+} //namespace Http
 namespace S3
 {
 namespace Model
@@ -32,6 +36,8 @@ namespace Model
   public:
     PutObjectTaggingRequest();
     Aws::String SerializePayload() const override;
+
+    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 

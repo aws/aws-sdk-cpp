@@ -32,7 +32,7 @@ namespace Model
 {
 
   /**
-   * <p>A specification of a location in Amazon S3.</p>
+   * <p>The bucket and key of an item stored in Amazon S3.</p>
    */
   class AWS_ELASTICBEANSTALK_API S3Location
   {

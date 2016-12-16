@@ -73,7 +73,7 @@ Aws::String RequestCertificateRequest::SerializePayload() const
 Aws::Http::HeaderValueCollection RequestCertificateRequest::GetRequestSpecificHeaders() const
 {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "CertificateManager.Certificate"));
+  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "CertificateManager.RequestCertificate"));
   return headers;
 
 }

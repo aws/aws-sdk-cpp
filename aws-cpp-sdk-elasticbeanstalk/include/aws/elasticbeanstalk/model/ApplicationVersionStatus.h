@@ -28,7 +28,8 @@ namespace Model
     Processed,
     Unprocessed,
     Failed,
-    Processing
+    Processing,
+    Building
   };
 
 namespace ApplicationVersionStatusMapper

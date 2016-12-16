@@ -242,6 +242,48 @@ namespace Model
      */
     inline UpdateUsagePlanResult& WithQuota(QuotaSettings&& value) { SetQuota(value); return *this;}
 
+    /**
+     * <p>The AWS Markeplace product identifier to associate with the usage plan as a
+     * SaaS product on AWS Marketplace.</p>
+     */
+    inline const Aws::String& GetProductCode() const{ return m_productCode; }
+
+    /**
+     * <p>The AWS Markeplace product identifier to associate with the usage plan as a
+     * SaaS product on AWS Marketplace.</p>
+     */
+    inline void SetProductCode(const Aws::String& value) { m_productCode = value; }
+
+    /**
+     * <p>The AWS Markeplace product identifier to associate with the usage plan as a
+     * SaaS product on AWS Marketplace.</p>
+     */
+    inline void SetProductCode(Aws::String&& value) { m_productCode = value; }
+
+    /**
+     * <p>The AWS Markeplace product identifier to associate with the usage plan as a
+     * SaaS product on AWS Marketplace.</p>
+     */
+    inline void SetProductCode(const char* value) { m_productCode.assign(value); }
+
+    /**
+     * <p>The AWS Markeplace product identifier to associate with the usage plan as a
+     * SaaS product on AWS Marketplace.</p>
+     */
+    inline UpdateUsagePlanResult& WithProductCode(const Aws::String& value) { SetProductCode(value); return *this;}
+
+    /**
+     * <p>The AWS Markeplace product identifier to associate with the usage plan as a
+     * SaaS product on AWS Marketplace.</p>
+     */
+    inline UpdateUsagePlanResult& WithProductCode(Aws::String&& value) { SetProductCode(value); return *this;}
+
+    /**
+     * <p>The AWS Markeplace product identifier to associate with the usage plan as a
+     * SaaS product on AWS Marketplace.</p>
+     */
+    inline UpdateUsagePlanResult& WithProductCode(const char* value) { SetProductCode(value); return *this;}
+
   private:
     Aws::String m_id;
     Aws::String m_name;
@@ -249,6 +291,7 @@ namespace Model
     Aws::Vector<ApiStage> m_apiStages;
     ThrottleSettings m_throttle;
     QuotaSettings m_quota;
+    Aws::String m_productCode;
   };
 
 } // namespace Model

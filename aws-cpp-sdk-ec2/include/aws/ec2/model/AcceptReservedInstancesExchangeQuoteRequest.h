@@ -60,92 +60,92 @@ namespace Model
     inline AcceptReservedInstancesExchangeQuoteRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
     /**
-     * <p>The IDs of the Convertible Reserved Instances that you want to exchange for
-     * other Convertible Reserved Instances of the same or higher value.</p>
+     * <p>The IDs of the Convertible Reserved Instances to exchange for other
+     * Convertible Reserved Instances of the same or higher value.</p>
      */
     inline const Aws::Vector<Aws::String>& GetReservedInstanceIds() const{ return m_reservedInstanceIds; }
 
     /**
-     * <p>The IDs of the Convertible Reserved Instances that you want to exchange for
-     * other Convertible Reserved Instances of the same or higher value.</p>
+     * <p>The IDs of the Convertible Reserved Instances to exchange for other
+     * Convertible Reserved Instances of the same or higher value.</p>
      */
     inline void SetReservedInstanceIds(const Aws::Vector<Aws::String>& value) { m_reservedInstanceIdsHasBeenSet = true; m_reservedInstanceIds = value; }
 
     /**
-     * <p>The IDs of the Convertible Reserved Instances that you want to exchange for
-     * other Convertible Reserved Instances of the same or higher value.</p>
+     * <p>The IDs of the Convertible Reserved Instances to exchange for other
+     * Convertible Reserved Instances of the same or higher value.</p>
      */
     inline void SetReservedInstanceIds(Aws::Vector<Aws::String>&& value) { m_reservedInstanceIdsHasBeenSet = true; m_reservedInstanceIds = value; }
 
     /**
-     * <p>The IDs of the Convertible Reserved Instances that you want to exchange for
-     * other Convertible Reserved Instances of the same or higher value.</p>
+     * <p>The IDs of the Convertible Reserved Instances to exchange for other
+     * Convertible Reserved Instances of the same or higher value.</p>
      */
     inline AcceptReservedInstancesExchangeQuoteRequest& WithReservedInstanceIds(const Aws::Vector<Aws::String>& value) { SetReservedInstanceIds(value); return *this;}
 
     /**
-     * <p>The IDs of the Convertible Reserved Instances that you want to exchange for
-     * other Convertible Reserved Instances of the same or higher value.</p>
+     * <p>The IDs of the Convertible Reserved Instances to exchange for other
+     * Convertible Reserved Instances of the same or higher value.</p>
      */
     inline AcceptReservedInstancesExchangeQuoteRequest& WithReservedInstanceIds(Aws::Vector<Aws::String>&& value) { SetReservedInstanceIds(value); return *this;}
 
     /**
-     * <p>The IDs of the Convertible Reserved Instances that you want to exchange for
-     * other Convertible Reserved Instances of the same or higher value.</p>
+     * <p>The IDs of the Convertible Reserved Instances to exchange for other
+     * Convertible Reserved Instances of the same or higher value.</p>
      */
     inline AcceptReservedInstancesExchangeQuoteRequest& AddReservedInstanceIds(const Aws::String& value) { m_reservedInstanceIdsHasBeenSet = true; m_reservedInstanceIds.push_back(value); return *this; }
 
     /**
-     * <p>The IDs of the Convertible Reserved Instances that you want to exchange for
-     * other Convertible Reserved Instances of the same or higher value.</p>
+     * <p>The IDs of the Convertible Reserved Instances to exchange for other
+     * Convertible Reserved Instances of the same or higher value.</p>
      */
     inline AcceptReservedInstancesExchangeQuoteRequest& AddReservedInstanceIds(Aws::String&& value) { m_reservedInstanceIdsHasBeenSet = true; m_reservedInstanceIds.push_back(value); return *this; }
 
     /**
-     * <p>The IDs of the Convertible Reserved Instances that you want to exchange for
-     * other Convertible Reserved Instances of the same or higher value.</p>
+     * <p>The IDs of the Convertible Reserved Instances to exchange for other
+     * Convertible Reserved Instances of the same or higher value.</p>
      */
     inline AcceptReservedInstancesExchangeQuoteRequest& AddReservedInstanceIds(const char* value) { m_reservedInstanceIdsHasBeenSet = true; m_reservedInstanceIds.push_back(value); return *this; }
 
     /**
-     * <p>The configurations of the Convertible Reserved Instance offerings you are
-     * purchasing in this exchange.</p>
+     * <p>The configurations of the Convertible Reserved Instance offerings that you
+     * are purchasing in this exchange.</p>
      */
     inline const Aws::Vector<TargetConfigurationRequest>& GetTargetConfigurations() const{ return m_targetConfigurations; }
 
     /**
-     * <p>The configurations of the Convertible Reserved Instance offerings you are
-     * purchasing in this exchange.</p>
+     * <p>The configurations of the Convertible Reserved Instance offerings that you
+     * are purchasing in this exchange.</p>
      */
     inline void SetTargetConfigurations(const Aws::Vector<TargetConfigurationRequest>& value) { m_targetConfigurationsHasBeenSet = true; m_targetConfigurations = value; }
 
     /**
-     * <p>The configurations of the Convertible Reserved Instance offerings you are
-     * purchasing in this exchange.</p>
+     * <p>The configurations of the Convertible Reserved Instance offerings that you
+     * are purchasing in this exchange.</p>
      */
     inline void SetTargetConfigurations(Aws::Vector<TargetConfigurationRequest>&& value) { m_targetConfigurationsHasBeenSet = true; m_targetConfigurations = value; }
 
     /**
-     * <p>The configurations of the Convertible Reserved Instance offerings you are
-     * purchasing in this exchange.</p>
+     * <p>The configurations of the Convertible Reserved Instance offerings that you
+     * are purchasing in this exchange.</p>
      */
     inline AcceptReservedInstancesExchangeQuoteRequest& WithTargetConfigurations(const Aws::Vector<TargetConfigurationRequest>& value) { SetTargetConfigurations(value); return *this;}
 
     /**
-     * <p>The configurations of the Convertible Reserved Instance offerings you are
-     * purchasing in this exchange.</p>
+     * <p>The configurations of the Convertible Reserved Instance offerings that you
+     * are purchasing in this exchange.</p>
      */
     inline AcceptReservedInstancesExchangeQuoteRequest& WithTargetConfigurations(Aws::Vector<TargetConfigurationRequest>&& value) { SetTargetConfigurations(value); return *this;}
 
     /**
-     * <p>The configurations of the Convertible Reserved Instance offerings you are
-     * purchasing in this exchange.</p>
+     * <p>The configurations of the Convertible Reserved Instance offerings that you
+     * are purchasing in this exchange.</p>
      */
     inline AcceptReservedInstancesExchangeQuoteRequest& AddTargetConfigurations(const TargetConfigurationRequest& value) { m_targetConfigurationsHasBeenSet = true; m_targetConfigurations.push_back(value); return *this; }
 
     /**
-     * <p>The configurations of the Convertible Reserved Instance offerings you are
-     * purchasing in this exchange.</p>
+     * <p>The configurations of the Convertible Reserved Instance offerings that you
+     * are purchasing in this exchange.</p>
      */
     inline AcceptReservedInstancesExchangeQuoteRequest& AddTargetConfigurations(TargetConfigurationRequest&& value) { m_targetConfigurationsHasBeenSet = true; m_targetConfigurations.push_back(value); return *this; }
 

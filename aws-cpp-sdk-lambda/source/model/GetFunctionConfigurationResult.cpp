@@ -122,6 +122,12 @@ GetFunctionConfigurationResult& GetFunctionConfigurationResult::operator =(const
 
   }
 
+  if(jsonValue.ValueExists("DeadLetterConfig"))
+  {
+    m_deadLetterConfig = jsonValue.GetObject("DeadLetterConfig");
+
+  }
+
   if(jsonValue.ValueExists("Environment"))
   {
     m_environment = jsonValue.GetObject("Environment");

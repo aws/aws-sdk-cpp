@@ -24,8 +24,11 @@
 #include <aws/ec2/model/AcceptVpcPeeringConnectionResponse.h>
 #include <aws/ec2/model/AllocateAddressResponse.h>
 #include <aws/ec2/model/AllocateHostsResponse.h>
+#include <aws/ec2/model/AssignIpv6AddressesResponse.h>
 #include <aws/ec2/model/AssociateAddressResponse.h>
 #include <aws/ec2/model/AssociateRouteTableResponse.h>
+#include <aws/ec2/model/AssociateSubnetCidrBlockResponse.h>
+#include <aws/ec2/model/AssociateVpcCidrBlockResponse.h>
 #include <aws/ec2/model/AttachClassicLinkVpcResponse.h>
 #include <aws/ec2/model/AttachNetworkInterfaceResponse.h>
 #include <aws/ec2/model/AttachVolumeResponse.h>
@@ -41,6 +44,7 @@
 #include <aws/ec2/model/CopySnapshotResponse.h>
 #include <aws/ec2/model/CreateCustomerGatewayResponse.h>
 #include <aws/ec2/model/CreateDhcpOptionsResponse.h>
+#include <aws/ec2/model/CreateEgressOnlyInternetGatewayResponse.h>
 #include <aws/ec2/model/CreateFlowLogsResponse.h>
 #include <aws/ec2/model/CreateImageResponse.h>
 #include <aws/ec2/model/CreateInstanceExportTaskResponse.h>
@@ -62,6 +66,7 @@
 #include <aws/ec2/model/CreateVpcPeeringConnectionResponse.h>
 #include <aws/ec2/model/CreateVpnConnectionResponse.h>
 #include <aws/ec2/model/CreateVpnGatewayResponse.h>
+#include <aws/ec2/model/DeleteEgressOnlyInternetGatewayResponse.h>
 #include <aws/ec2/model/DeleteFlowLogsResponse.h>
 #include <aws/ec2/model/DeleteNatGatewayResponse.h>
 #include <aws/ec2/model/DeleteVpcEndpointsResponse.h>
@@ -74,6 +79,7 @@
 #include <aws/ec2/model/DescribeConversionTasksResponse.h>
 #include <aws/ec2/model/DescribeCustomerGatewaysResponse.h>
 #include <aws/ec2/model/DescribeDhcpOptionsResponse.h>
+#include <aws/ec2/model/DescribeEgressOnlyInternetGatewaysResponse.h>
 #include <aws/ec2/model/DescribeExportTasksResponse.h>
 #include <aws/ec2/model/DescribeFlowLogsResponse.h>
 #include <aws/ec2/model/DescribeHostReservationOfferingsResponse.h>
@@ -134,6 +140,8 @@
 #include <aws/ec2/model/DetachVolumeResponse.h>
 #include <aws/ec2/model/DisableVpcClassicLinkResponse.h>
 #include <aws/ec2/model/DisableVpcClassicLinkDnsSupportResponse.h>
+#include <aws/ec2/model/DisassociateSubnetCidrBlockResponse.h>
+#include <aws/ec2/model/DisassociateVpcCidrBlockResponse.h>
 #include <aws/ec2/model/EnableVpcClassicLinkResponse.h>
 #include <aws/ec2/model/EnableVpcClassicLinkDnsSupportResponse.h>
 #include <aws/ec2/model/GetConsoleOutputResponse.h>
@@ -170,6 +178,7 @@
 #include <aws/ec2/model/StartInstancesResponse.h>
 #include <aws/ec2/model/StopInstancesResponse.h>
 #include <aws/ec2/model/TerminateInstancesResponse.h>
+#include <aws/ec2/model/UnassignIpv6AddressesResponse.h>
 #include <aws/ec2/model/UnmonitorInstancesResponse.h>
 #include <aws/core/NoResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
@@ -221,10 +230,13 @@ namespace Model
         class AcceptVpcPeeringConnectionRequest;
         class AllocateAddressRequest;
         class AllocateHostsRequest;
+        class AssignIpv6AddressesRequest;
         class AssignPrivateIpAddressesRequest;
         class AssociateAddressRequest;
         class AssociateDhcpOptionsRequest;
         class AssociateRouteTableRequest;
+        class AssociateSubnetCidrBlockRequest;
+        class AssociateVpcCidrBlockRequest;
         class AttachClassicLinkVpcRequest;
         class AttachInternetGatewayRequest;
         class AttachNetworkInterfaceRequest;
@@ -245,6 +257,7 @@ namespace Model
         class CopySnapshotRequest;
         class CreateCustomerGatewayRequest;
         class CreateDhcpOptionsRequest;
+        class CreateEgressOnlyInternetGatewayRequest;
         class CreateFlowLogsRequest;
         class CreateImageRequest;
         class CreateInstanceExportTaskRequest;
@@ -272,6 +285,7 @@ namespace Model
         class CreateVpnGatewayRequest;
         class DeleteCustomerGatewayRequest;
         class DeleteDhcpOptionsRequest;
+        class DeleteEgressOnlyInternetGatewayRequest;
         class DeleteFlowLogsRequest;
         class DeleteInternetGatewayRequest;
         class DeleteKeyPairRequest;
@@ -303,6 +317,7 @@ namespace Model
         class DescribeConversionTasksRequest;
         class DescribeCustomerGatewaysRequest;
         class DescribeDhcpOptionsRequest;
+        class DescribeEgressOnlyInternetGatewaysRequest;
         class DescribeExportTasksRequest;
         class DescribeFlowLogsRequest;
         class DescribeHostReservationOfferingsRequest;
@@ -369,6 +384,8 @@ namespace Model
         class DisableVpcClassicLinkDnsSupportRequest;
         class DisassociateAddressRequest;
         class DisassociateRouteTableRequest;
+        class DisassociateSubnetCidrBlockRequest;
+        class DisassociateVpcCidrBlockRequest;
         class EnableVgwRoutePropagationRequest;
         class EnableVolumeIORequest;
         class EnableVpcClassicLinkRequest;
@@ -427,6 +444,7 @@ namespace Model
         class StartInstancesRequest;
         class StopInstancesRequest;
         class TerminateInstancesRequest;
+        class UnassignIpv6AddressesRequest;
         class UnassignPrivateIpAddressesRequest;
         class UnmonitorInstancesRequest;
 
@@ -434,10 +452,13 @@ namespace Model
         typedef Aws::Utils::Outcome<AcceptVpcPeeringConnectionResponse, Aws::Client::AWSError<EC2Errors>> AcceptVpcPeeringConnectionOutcome;
         typedef Aws::Utils::Outcome<AllocateAddressResponse, Aws::Client::AWSError<EC2Errors>> AllocateAddressOutcome;
         typedef Aws::Utils::Outcome<AllocateHostsResponse, Aws::Client::AWSError<EC2Errors>> AllocateHostsOutcome;
+        typedef Aws::Utils::Outcome<AssignIpv6AddressesResponse, Aws::Client::AWSError<EC2Errors>> AssignIpv6AddressesOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EC2Errors>> AssignPrivateIpAddressesOutcome;
         typedef Aws::Utils::Outcome<AssociateAddressResponse, Aws::Client::AWSError<EC2Errors>> AssociateAddressOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EC2Errors>> AssociateDhcpOptionsOutcome;
         typedef Aws::Utils::Outcome<AssociateRouteTableResponse, Aws::Client::AWSError<EC2Errors>> AssociateRouteTableOutcome;
+        typedef Aws::Utils::Outcome<AssociateSubnetCidrBlockResponse, Aws::Client::AWSError<EC2Errors>> AssociateSubnetCidrBlockOutcome;
+        typedef Aws::Utils::Outcome<AssociateVpcCidrBlockResponse, Aws::Client::AWSError<EC2Errors>> AssociateVpcCidrBlockOutcome;
         typedef Aws::Utils::Outcome<AttachClassicLinkVpcResponse, Aws::Client::AWSError<EC2Errors>> AttachClassicLinkVpcOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EC2Errors>> AttachInternetGatewayOutcome;
         typedef Aws::Utils::Outcome<AttachNetworkInterfaceResponse, Aws::Client::AWSError<EC2Errors>> AttachNetworkInterfaceOutcome;
@@ -458,6 +479,7 @@ namespace Model
         typedef Aws::Utils::Outcome<CopySnapshotResponse, Aws::Client::AWSError<EC2Errors>> CopySnapshotOutcome;
         typedef Aws::Utils::Outcome<CreateCustomerGatewayResponse, Aws::Client::AWSError<EC2Errors>> CreateCustomerGatewayOutcome;
         typedef Aws::Utils::Outcome<CreateDhcpOptionsResponse, Aws::Client::AWSError<EC2Errors>> CreateDhcpOptionsOutcome;
+        typedef Aws::Utils::Outcome<CreateEgressOnlyInternetGatewayResponse, Aws::Client::AWSError<EC2Errors>> CreateEgressOnlyInternetGatewayOutcome;
         typedef Aws::Utils::Outcome<CreateFlowLogsResponse, Aws::Client::AWSError<EC2Errors>> CreateFlowLogsOutcome;
         typedef Aws::Utils::Outcome<CreateImageResponse, Aws::Client::AWSError<EC2Errors>> CreateImageOutcome;
         typedef Aws::Utils::Outcome<CreateInstanceExportTaskResponse, Aws::Client::AWSError<EC2Errors>> CreateInstanceExportTaskOutcome;
@@ -485,6 +507,7 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateVpnGatewayResponse, Aws::Client::AWSError<EC2Errors>> CreateVpnGatewayOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EC2Errors>> DeleteCustomerGatewayOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EC2Errors>> DeleteDhcpOptionsOutcome;
+        typedef Aws::Utils::Outcome<DeleteEgressOnlyInternetGatewayResponse, Aws::Client::AWSError<EC2Errors>> DeleteEgressOnlyInternetGatewayOutcome;
         typedef Aws::Utils::Outcome<DeleteFlowLogsResponse, Aws::Client::AWSError<EC2Errors>> DeleteFlowLogsOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EC2Errors>> DeleteInternetGatewayOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EC2Errors>> DeleteKeyPairOutcome;
@@ -516,6 +539,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeConversionTasksResponse, Aws::Client::AWSError<EC2Errors>> DescribeConversionTasksOutcome;
         typedef Aws::Utils::Outcome<DescribeCustomerGatewaysResponse, Aws::Client::AWSError<EC2Errors>> DescribeCustomerGatewaysOutcome;
         typedef Aws::Utils::Outcome<DescribeDhcpOptionsResponse, Aws::Client::AWSError<EC2Errors>> DescribeDhcpOptionsOutcome;
+        typedef Aws::Utils::Outcome<DescribeEgressOnlyInternetGatewaysResponse, Aws::Client::AWSError<EC2Errors>> DescribeEgressOnlyInternetGatewaysOutcome;
         typedef Aws::Utils::Outcome<DescribeExportTasksResponse, Aws::Client::AWSError<EC2Errors>> DescribeExportTasksOutcome;
         typedef Aws::Utils::Outcome<DescribeFlowLogsResponse, Aws::Client::AWSError<EC2Errors>> DescribeFlowLogsOutcome;
         typedef Aws::Utils::Outcome<DescribeHostReservationOfferingsResponse, Aws::Client::AWSError<EC2Errors>> DescribeHostReservationOfferingsOutcome;
@@ -582,6 +606,8 @@ namespace Model
         typedef Aws::Utils::Outcome<DisableVpcClassicLinkDnsSupportResponse, Aws::Client::AWSError<EC2Errors>> DisableVpcClassicLinkDnsSupportOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EC2Errors>> DisassociateAddressOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EC2Errors>> DisassociateRouteTableOutcome;
+        typedef Aws::Utils::Outcome<DisassociateSubnetCidrBlockResponse, Aws::Client::AWSError<EC2Errors>> DisassociateSubnetCidrBlockOutcome;
+        typedef Aws::Utils::Outcome<DisassociateVpcCidrBlockResponse, Aws::Client::AWSError<EC2Errors>> DisassociateVpcCidrBlockOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EC2Errors>> EnableVgwRoutePropagationOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EC2Errors>> EnableVolumeIOOutcome;
         typedef Aws::Utils::Outcome<EnableVpcClassicLinkResponse, Aws::Client::AWSError<EC2Errors>> EnableVpcClassicLinkOutcome;
@@ -640,6 +666,7 @@ namespace Model
         typedef Aws::Utils::Outcome<StartInstancesResponse, Aws::Client::AWSError<EC2Errors>> StartInstancesOutcome;
         typedef Aws::Utils::Outcome<StopInstancesResponse, Aws::Client::AWSError<EC2Errors>> StopInstancesOutcome;
         typedef Aws::Utils::Outcome<TerminateInstancesResponse, Aws::Client::AWSError<EC2Errors>> TerminateInstancesOutcome;
+        typedef Aws::Utils::Outcome<UnassignIpv6AddressesResponse, Aws::Client::AWSError<EC2Errors>> UnassignIpv6AddressesOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EC2Errors>> UnassignPrivateIpAddressesOutcome;
         typedef Aws::Utils::Outcome<UnmonitorInstancesResponse, Aws::Client::AWSError<EC2Errors>> UnmonitorInstancesOutcome;
 
@@ -647,10 +674,13 @@ namespace Model
         typedef std::future<AcceptVpcPeeringConnectionOutcome> AcceptVpcPeeringConnectionOutcomeCallable;
         typedef std::future<AllocateAddressOutcome> AllocateAddressOutcomeCallable;
         typedef std::future<AllocateHostsOutcome> AllocateHostsOutcomeCallable;
+        typedef std::future<AssignIpv6AddressesOutcome> AssignIpv6AddressesOutcomeCallable;
         typedef std::future<AssignPrivateIpAddressesOutcome> AssignPrivateIpAddressesOutcomeCallable;
         typedef std::future<AssociateAddressOutcome> AssociateAddressOutcomeCallable;
         typedef std::future<AssociateDhcpOptionsOutcome> AssociateDhcpOptionsOutcomeCallable;
         typedef std::future<AssociateRouteTableOutcome> AssociateRouteTableOutcomeCallable;
+        typedef std::future<AssociateSubnetCidrBlockOutcome> AssociateSubnetCidrBlockOutcomeCallable;
+        typedef std::future<AssociateVpcCidrBlockOutcome> AssociateVpcCidrBlockOutcomeCallable;
         typedef std::future<AttachClassicLinkVpcOutcome> AttachClassicLinkVpcOutcomeCallable;
         typedef std::future<AttachInternetGatewayOutcome> AttachInternetGatewayOutcomeCallable;
         typedef std::future<AttachNetworkInterfaceOutcome> AttachNetworkInterfaceOutcomeCallable;
@@ -671,6 +701,7 @@ namespace Model
         typedef std::future<CopySnapshotOutcome> CopySnapshotOutcomeCallable;
         typedef std::future<CreateCustomerGatewayOutcome> CreateCustomerGatewayOutcomeCallable;
         typedef std::future<CreateDhcpOptionsOutcome> CreateDhcpOptionsOutcomeCallable;
+        typedef std::future<CreateEgressOnlyInternetGatewayOutcome> CreateEgressOnlyInternetGatewayOutcomeCallable;
         typedef std::future<CreateFlowLogsOutcome> CreateFlowLogsOutcomeCallable;
         typedef std::future<CreateImageOutcome> CreateImageOutcomeCallable;
         typedef std::future<CreateInstanceExportTaskOutcome> CreateInstanceExportTaskOutcomeCallable;
@@ -698,6 +729,7 @@ namespace Model
         typedef std::future<CreateVpnGatewayOutcome> CreateVpnGatewayOutcomeCallable;
         typedef std::future<DeleteCustomerGatewayOutcome> DeleteCustomerGatewayOutcomeCallable;
         typedef std::future<DeleteDhcpOptionsOutcome> DeleteDhcpOptionsOutcomeCallable;
+        typedef std::future<DeleteEgressOnlyInternetGatewayOutcome> DeleteEgressOnlyInternetGatewayOutcomeCallable;
         typedef std::future<DeleteFlowLogsOutcome> DeleteFlowLogsOutcomeCallable;
         typedef std::future<DeleteInternetGatewayOutcome> DeleteInternetGatewayOutcomeCallable;
         typedef std::future<DeleteKeyPairOutcome> DeleteKeyPairOutcomeCallable;
@@ -729,6 +761,7 @@ namespace Model
         typedef std::future<DescribeConversionTasksOutcome> DescribeConversionTasksOutcomeCallable;
         typedef std::future<DescribeCustomerGatewaysOutcome> DescribeCustomerGatewaysOutcomeCallable;
         typedef std::future<DescribeDhcpOptionsOutcome> DescribeDhcpOptionsOutcomeCallable;
+        typedef std::future<DescribeEgressOnlyInternetGatewaysOutcome> DescribeEgressOnlyInternetGatewaysOutcomeCallable;
         typedef std::future<DescribeExportTasksOutcome> DescribeExportTasksOutcomeCallable;
         typedef std::future<DescribeFlowLogsOutcome> DescribeFlowLogsOutcomeCallable;
         typedef std::future<DescribeHostReservationOfferingsOutcome> DescribeHostReservationOfferingsOutcomeCallable;
@@ -795,6 +828,8 @@ namespace Model
         typedef std::future<DisableVpcClassicLinkDnsSupportOutcome> DisableVpcClassicLinkDnsSupportOutcomeCallable;
         typedef std::future<DisassociateAddressOutcome> DisassociateAddressOutcomeCallable;
         typedef std::future<DisassociateRouteTableOutcome> DisassociateRouteTableOutcomeCallable;
+        typedef std::future<DisassociateSubnetCidrBlockOutcome> DisassociateSubnetCidrBlockOutcomeCallable;
+        typedef std::future<DisassociateVpcCidrBlockOutcome> DisassociateVpcCidrBlockOutcomeCallable;
         typedef std::future<EnableVgwRoutePropagationOutcome> EnableVgwRoutePropagationOutcomeCallable;
         typedef std::future<EnableVolumeIOOutcome> EnableVolumeIOOutcomeCallable;
         typedef std::future<EnableVpcClassicLinkOutcome> EnableVpcClassicLinkOutcomeCallable;
@@ -853,6 +888,7 @@ namespace Model
         typedef std::future<StartInstancesOutcome> StartInstancesOutcomeCallable;
         typedef std::future<StopInstancesOutcome> StopInstancesOutcomeCallable;
         typedef std::future<TerminateInstancesOutcome> TerminateInstancesOutcomeCallable;
+        typedef std::future<UnassignIpv6AddressesOutcome> UnassignIpv6AddressesOutcomeCallable;
         typedef std::future<UnassignPrivateIpAddressesOutcome> UnassignPrivateIpAddressesOutcomeCallable;
         typedef std::future<UnmonitorInstancesOutcome> UnmonitorInstancesOutcomeCallable;
 } // namespace Model
@@ -863,10 +899,13 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::AcceptVpcPeeringConnectionRequest&, const Model::AcceptVpcPeeringConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AcceptVpcPeeringConnectionResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::AllocateAddressRequest&, const Model::AllocateAddressOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AllocateAddressResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::AllocateHostsRequest&, const Model::AllocateHostsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AllocateHostsResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::AssignIpv6AddressesRequest&, const Model::AssignIpv6AddressesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssignIpv6AddressesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::AssignPrivateIpAddressesRequest&, const Model::AssignPrivateIpAddressesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssignPrivateIpAddressesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::AssociateAddressRequest&, const Model::AssociateAddressOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateAddressResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::AssociateDhcpOptionsRequest&, const Model::AssociateDhcpOptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateDhcpOptionsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::AssociateRouteTableRequest&, const Model::AssociateRouteTableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateRouteTableResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::AssociateSubnetCidrBlockRequest&, const Model::AssociateSubnetCidrBlockOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateSubnetCidrBlockResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::AssociateVpcCidrBlockRequest&, const Model::AssociateVpcCidrBlockOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateVpcCidrBlockResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::AttachClassicLinkVpcRequest&, const Model::AttachClassicLinkVpcOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AttachClassicLinkVpcResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::AttachInternetGatewayRequest&, const Model::AttachInternetGatewayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AttachInternetGatewayResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::AttachNetworkInterfaceRequest&, const Model::AttachNetworkInterfaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AttachNetworkInterfaceResponseReceivedHandler;
@@ -887,6 +926,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::CopySnapshotRequest&, const Model::CopySnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CopySnapshotResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateCustomerGatewayRequest&, const Model::CreateCustomerGatewayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCustomerGatewayResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateDhcpOptionsRequest&, const Model::CreateDhcpOptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDhcpOptionsResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::CreateEgressOnlyInternetGatewayRequest&, const Model::CreateEgressOnlyInternetGatewayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateEgressOnlyInternetGatewayResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateFlowLogsRequest&, const Model::CreateFlowLogsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateFlowLogsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateImageRequest&, const Model::CreateImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateImageResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateInstanceExportTaskRequest&, const Model::CreateInstanceExportTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateInstanceExportTaskResponseReceivedHandler;
@@ -914,6 +954,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::CreateVpnGatewayRequest&, const Model::CreateVpnGatewayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateVpnGatewayResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeleteCustomerGatewayRequest&, const Model::DeleteCustomerGatewayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteCustomerGatewayResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeleteDhcpOptionsRequest&, const Model::DeleteDhcpOptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDhcpOptionsResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DeleteEgressOnlyInternetGatewayRequest&, const Model::DeleteEgressOnlyInternetGatewayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEgressOnlyInternetGatewayResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeleteFlowLogsRequest&, const Model::DeleteFlowLogsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFlowLogsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeleteInternetGatewayRequest&, const Model::DeleteInternetGatewayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteInternetGatewayResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeleteKeyPairRequest&, const Model::DeleteKeyPairOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteKeyPairResponseReceivedHandler;
@@ -945,6 +986,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::DescribeConversionTasksRequest&, const Model::DescribeConversionTasksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeConversionTasksResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeCustomerGatewaysRequest&, const Model::DescribeCustomerGatewaysOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCustomerGatewaysResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeDhcpOptionsRequest&, const Model::DescribeDhcpOptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDhcpOptionsResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DescribeEgressOnlyInternetGatewaysRequest&, const Model::DescribeEgressOnlyInternetGatewaysOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEgressOnlyInternetGatewaysResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeExportTasksRequest&, const Model::DescribeExportTasksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeExportTasksResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeFlowLogsRequest&, const Model::DescribeFlowLogsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFlowLogsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeHostReservationOfferingsRequest&, const Model::DescribeHostReservationOfferingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeHostReservationOfferingsResponseReceivedHandler;
@@ -1011,6 +1053,8 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::DisableVpcClassicLinkDnsSupportRequest&, const Model::DisableVpcClassicLinkDnsSupportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableVpcClassicLinkDnsSupportResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DisassociateAddressRequest&, const Model::DisassociateAddressOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateAddressResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DisassociateRouteTableRequest&, const Model::DisassociateRouteTableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateRouteTableResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DisassociateSubnetCidrBlockRequest&, const Model::DisassociateSubnetCidrBlockOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateSubnetCidrBlockResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DisassociateVpcCidrBlockRequest&, const Model::DisassociateVpcCidrBlockOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateVpcCidrBlockResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::EnableVgwRoutePropagationRequest&, const Model::EnableVgwRoutePropagationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableVgwRoutePropagationResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::EnableVolumeIORequest&, const Model::EnableVolumeIOOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableVolumeIOResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::EnableVpcClassicLinkRequest&, const Model::EnableVpcClassicLinkOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableVpcClassicLinkResponseReceivedHandler;
@@ -1069,6 +1113,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::StartInstancesRequest&, const Model::StartInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartInstancesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::StopInstancesRequest&, const Model::StopInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopInstancesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::TerminateInstancesRequest&, const Model::TerminateInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TerminateInstancesResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::UnassignIpv6AddressesRequest&, const Model::UnassignIpv6AddressesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UnassignIpv6AddressesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::UnassignPrivateIpAddressesRequest&, const Model::UnassignPrivateIpAddressesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UnassignPrivateIpAddressesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::UnmonitorInstancesRequest&, const Model::UnmonitorInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UnmonitorInstancesResponseReceivedHandler;
 
@@ -1105,13 +1150,13 @@ namespace Model
         virtual ~EC2Client();
 
         /**
-         * <p>Purchases Convertible Reserved Instance offerings described in the
+         * <p>Accepts the Convertible Reserved Instance exchange quote described in the
          * <a>GetReservedInstancesExchangeQuote</a> call.</p>
          */
         virtual Model::AcceptReservedInstancesExchangeQuoteOutcome AcceptReservedInstancesExchangeQuote(const Model::AcceptReservedInstancesExchangeQuoteRequest& request) const;
 
         /**
-         * <p>Purchases Convertible Reserved Instance offerings described in the
+         * <p>Accepts the Convertible Reserved Instance exchange quote described in the
          * <a>GetReservedInstancesExchangeQuote</a> call.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -1119,7 +1164,7 @@ namespace Model
         virtual Model::AcceptReservedInstancesExchangeQuoteOutcomeCallable AcceptReservedInstancesExchangeQuoteCallable(const Model::AcceptReservedInstancesExchangeQuoteRequest& request) const;
 
         /**
-         * <p>Purchases Convertible Reserved Instance offerings described in the
+         * <p>Accepts the Convertible Reserved Instance exchange quote described in the
          * <a>GetReservedInstancesExchangeQuote</a> call.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -1206,6 +1251,49 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void AllocateHostsAsync(const Model::AllocateHostsRequest& request, const AllocateHostsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Assigns one or more IPv6 addresses to the specified network interface. You
+         * can specify one or more specific IPv6 addresses, or you can specify the number
+         * of IPv6 addresses to be automatically assigned from within the subnet's IPv6
+         * CIDR block range. You can assign as many IPv6 addresses to a network interface
+         * as you can assign private IPv4 addresses, and the limit varies per instance
+         * type. For information, see <a
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html#AvailableIpPerENI">IP
+         * Addresses Per Network Interface Per Instance Type</a> in the <i>Amazon Elastic
+         * Compute Cloud User Guide</i>.</p>
+         */
+        virtual Model::AssignIpv6AddressesOutcome AssignIpv6Addresses(const Model::AssignIpv6AddressesRequest& request) const;
+
+        /**
+         * <p>Assigns one or more IPv6 addresses to the specified network interface. You
+         * can specify one or more specific IPv6 addresses, or you can specify the number
+         * of IPv6 addresses to be automatically assigned from within the subnet's IPv6
+         * CIDR block range. You can assign as many IPv6 addresses to a network interface
+         * as you can assign private IPv4 addresses, and the limit varies per instance
+         * type. For information, see <a
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html#AvailableIpPerENI">IP
+         * Addresses Per Network Interface Per Instance Type</a> in the <i>Amazon Elastic
+         * Compute Cloud User Guide</i>.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::AssignIpv6AddressesOutcomeCallable AssignIpv6AddressesCallable(const Model::AssignIpv6AddressesRequest& request) const;
+
+        /**
+         * <p>Assigns one or more IPv6 addresses to the specified network interface. You
+         * can specify one or more specific IPv6 addresses, or you can specify the number
+         * of IPv6 addresses to be automatically assigned from within the subnet's IPv6
+         * CIDR block range. You can assign as many IPv6 addresses to a network interface
+         * as you can assign private IPv4 addresses, and the limit varies per instance
+         * type. For information, see <a
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html#AvailableIpPerENI">IP
+         * Addresses Per Network Interface Per Instance Type</a> in the <i>Amazon Elastic
+         * Compute Cloud User Guide</i>.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void AssignIpv6AddressesAsync(const Model::AssignIpv6AddressesRequest& request, const AssignIpv6AddressesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Assigns one or more secondary private IP addresses to the specified network
@@ -1411,6 +1499,56 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void AssociateRouteTableAsync(const Model::AssociateRouteTableRequest& request, const AssociateRouteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Associates a CIDR block with your subnet. You can only associate a single
+         * IPv6 CIDR block with your subnet. An IPv6 CIDR block must have a prefix length
+         * of /64.</p>
+         */
+        virtual Model::AssociateSubnetCidrBlockOutcome AssociateSubnetCidrBlock(const Model::AssociateSubnetCidrBlockRequest& request) const;
+
+        /**
+         * <p>Associates a CIDR block with your subnet. You can only associate a single
+         * IPv6 CIDR block with your subnet. An IPv6 CIDR block must have a prefix length
+         * of /64.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::AssociateSubnetCidrBlockOutcomeCallable AssociateSubnetCidrBlockCallable(const Model::AssociateSubnetCidrBlockRequest& request) const;
+
+        /**
+         * <p>Associates a CIDR block with your subnet. You can only associate a single
+         * IPv6 CIDR block with your subnet. An IPv6 CIDR block must have a prefix length
+         * of /64.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void AssociateSubnetCidrBlockAsync(const Model::AssociateSubnetCidrBlockRequest& request, const AssociateSubnetCidrBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Associates a CIDR block with your VPC. You can only associate a single
+         * Amazon-provided IPv6 CIDR block with your VPC. The IPv6 CIDR block size is fixed
+         * at /56.</p>
+         */
+        virtual Model::AssociateVpcCidrBlockOutcome AssociateVpcCidrBlock(const Model::AssociateVpcCidrBlockRequest& request) const;
+
+        /**
+         * <p>Associates a CIDR block with your VPC. You can only associate a single
+         * Amazon-provided IPv6 CIDR block with your VPC. The IPv6 CIDR block size is fixed
+         * at /56.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::AssociateVpcCidrBlockOutcomeCallable AssociateVpcCidrBlockCallable(const Model::AssociateVpcCidrBlockRequest& request) const;
+
+        /**
+         * <p>Associates a CIDR block with your VPC. You can only associate a single
+         * Amazon-provided IPv6 CIDR block with your VPC. The IPv6 CIDR block size is fixed
+         * at /56.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void AssociateVpcCidrBlockAsync(const Model::AssociateVpcCidrBlockRequest& request, const AssociateVpcCidrBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Links an EC2-Classic instance to a ClassicLink-enabled VPC through one or
@@ -1621,38 +1759,38 @@ namespace Model
         /**
          * <p>[EC2-VPC only] Adds one or more egress rules to a security group for use with
          * a VPC. Specifically, this action permits instances to send traffic to one or
-         * more destination CIDR IP address ranges, or to one or more destination security
-         * groups for the same VPC. This action doesn't apply to security groups for use in
-         * EC2-Classic. For more information, see <a
+         * more destination IPv4 or IPv6 CIDR address ranges, or to one or more destination
+         * security groups for the same VPC. This action doesn't apply to security groups
+         * for use in EC2-Classic. For more information, see <a
          * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security
-         * Groups for Your VPC</a> in the <i>Amazon Virtual Private Cloud User
-         * Guide</i>.</p> <important> <p>You can have up to 50 rules per security group
-         * (covering both ingress and egress rules).</p> </important> <p>Each rule consists
-         * of the protocol (for example, TCP), plus either a CIDR range or a source group.
-         * For the TCP and UDP protocols, you must also specify the destination port or
-         * port range. For the ICMP protocol, you must also specify the ICMP type and code.
-         * You can use -1 for the type or code to mean all types or all codes.</p> <p>Rule
-         * changes are propagated to affected instances as quickly as possible. However, a
-         * small delay might occur.</p>
+         * Groups for Your VPC</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+         * For more information about security group limits, see <a
+         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Appendix_Limits.html">Amazon
+         * VPC Limits</a>.</p> <p>Each rule consists of the protocol (for example, TCP),
+         * plus either a CIDR range or a source group. For the TCP and UDP protocols, you
+         * must also specify the destination port or port range. For the ICMP protocol, you
+         * must also specify the ICMP type and code. You can use -1 for the type or code to
+         * mean all types or all codes.</p> <p>Rule changes are propagated to affected
+         * instances as quickly as possible. However, a small delay might occur.</p>
          */
         virtual Model::AuthorizeSecurityGroupEgressOutcome AuthorizeSecurityGroupEgress(const Model::AuthorizeSecurityGroupEgressRequest& request) const;
 
         /**
          * <p>[EC2-VPC only] Adds one or more egress rules to a security group for use with
          * a VPC. Specifically, this action permits instances to send traffic to one or
-         * more destination CIDR IP address ranges, or to one or more destination security
-         * groups for the same VPC. This action doesn't apply to security groups for use in
-         * EC2-Classic. For more information, see <a
+         * more destination IPv4 or IPv6 CIDR address ranges, or to one or more destination
+         * security groups for the same VPC. This action doesn't apply to security groups
+         * for use in EC2-Classic. For more information, see <a
          * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security
-         * Groups for Your VPC</a> in the <i>Amazon Virtual Private Cloud User
-         * Guide</i>.</p> <important> <p>You can have up to 50 rules per security group
-         * (covering both ingress and egress rules).</p> </important> <p>Each rule consists
-         * of the protocol (for example, TCP), plus either a CIDR range or a source group.
-         * For the TCP and UDP protocols, you must also specify the destination port or
-         * port range. For the ICMP protocol, you must also specify the ICMP type and code.
-         * You can use -1 for the type or code to mean all types or all codes.</p> <p>Rule
-         * changes are propagated to affected instances as quickly as possible. However, a
-         * small delay might occur.</p>
+         * Groups for Your VPC</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+         * For more information about security group limits, see <a
+         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Appendix_Limits.html">Amazon
+         * VPC Limits</a>.</p> <p>Each rule consists of the protocol (for example, TCP),
+         * plus either a CIDR range or a source group. For the TCP and UDP protocols, you
+         * must also specify the destination port or port range. For the ICMP protocol, you
+         * must also specify the ICMP type and code. You can use -1 for the type or code to
+         * mean all types or all codes.</p> <p>Rule changes are propagated to affected
+         * instances as quickly as possible. However, a small delay might occur.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1661,74 +1799,80 @@ namespace Model
         /**
          * <p>[EC2-VPC only] Adds one or more egress rules to a security group for use with
          * a VPC. Specifically, this action permits instances to send traffic to one or
-         * more destination CIDR IP address ranges, or to one or more destination security
-         * groups for the same VPC. This action doesn't apply to security groups for use in
-         * EC2-Classic. For more information, see <a
+         * more destination IPv4 or IPv6 CIDR address ranges, or to one or more destination
+         * security groups for the same VPC. This action doesn't apply to security groups
+         * for use in EC2-Classic. For more information, see <a
          * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security
-         * Groups for Your VPC</a> in the <i>Amazon Virtual Private Cloud User
-         * Guide</i>.</p> <important> <p>You can have up to 50 rules per security group
-         * (covering both ingress and egress rules).</p> </important> <p>Each rule consists
-         * of the protocol (for example, TCP), plus either a CIDR range or a source group.
-         * For the TCP and UDP protocols, you must also specify the destination port or
-         * port range. For the ICMP protocol, you must also specify the ICMP type and code.
-         * You can use -1 for the type or code to mean all types or all codes.</p> <p>Rule
-         * changes are propagated to affected instances as quickly as possible. However, a
-         * small delay might occur.</p>
+         * Groups for Your VPC</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+         * For more information about security group limits, see <a
+         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Appendix_Limits.html">Amazon
+         * VPC Limits</a>.</p> <p>Each rule consists of the protocol (for example, TCP),
+         * plus either a CIDR range or a source group. For the TCP and UDP protocols, you
+         * must also specify the destination port or port range. For the ICMP protocol, you
+         * must also specify the ICMP type and code. You can use -1 for the type or code to
+         * mean all types or all codes.</p> <p>Rule changes are propagated to affected
+         * instances as quickly as possible. However, a small delay might occur.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void AuthorizeSecurityGroupEgressAsync(const Model::AuthorizeSecurityGroupEgressRequest& request, const AuthorizeSecurityGroupEgressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Adds one or more ingress rules to a security group.</p> <important>
-         * <p>EC2-Classic: You can have up to 100 rules per group.</p> <p>EC2-VPC: You can
-         * have up to 50 rules per group (covering both ingress and egress rules).</p>
-         * </important> <p>Rule changes are propagated to instances within the security
-         * group as quickly as possible. However, a small delay might occur.</p>
-         * <p>[EC2-Classic] This action gives one or more CIDR IP address ranges permission
-         * to access a security group in your account, or gives one or more security groups
-         * (called the <i>source groups</i>) permission to access a security group for your
-         * account. A source group can be for your own AWS account, or another.</p>
-         * <p>[EC2-VPC] This action gives one or more CIDR IP address ranges permission to
-         * access a security group in your VPC, or gives one or more other security groups
-         * (called the <i>source groups</i>) permission to access a security group for your
-         * VPC. The security groups must all be for the same VPC.</p>
+         * <p>Adds one or more ingress rules to a security group.</p> <p>Rule changes are
+         * propagated to instances within the security group as quickly as possible.
+         * However, a small delay might occur.</p> <p>[EC2-Classic] This action gives one
+         * or more IPv4 CIDR address ranges permission to access a security group in your
+         * account, or gives one or more security groups (called the <i>source groups</i>)
+         * permission to access a security group for your account. A source group can be
+         * for your own AWS account, or another. You can have up to 100 rules per
+         * group.</p> <p>[EC2-VPC] This action gives one or more IPv4 or IPv6 CIDR address
+         * ranges permission to access a security group in your VPC, or gives one or more
+         * other security groups (called the <i>source groups</i>) permission to access a
+         * security group for your VPC. The security groups must all be for the same VPC or
+         * a peer VPC in a VPC peering connection. For more information about VPC security
+         * group limits, see <a
+         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Appendix_Limits.html">Amazon
+         * VPC Limits</a>.</p>
          */
         virtual Model::AuthorizeSecurityGroupIngressOutcome AuthorizeSecurityGroupIngress(const Model::AuthorizeSecurityGroupIngressRequest& request) const;
 
         /**
-         * <p>Adds one or more ingress rules to a security group.</p> <important>
-         * <p>EC2-Classic: You can have up to 100 rules per group.</p> <p>EC2-VPC: You can
-         * have up to 50 rules per group (covering both ingress and egress rules).</p>
-         * </important> <p>Rule changes are propagated to instances within the security
-         * group as quickly as possible. However, a small delay might occur.</p>
-         * <p>[EC2-Classic] This action gives one or more CIDR IP address ranges permission
-         * to access a security group in your account, or gives one or more security groups
-         * (called the <i>source groups</i>) permission to access a security group for your
-         * account. A source group can be for your own AWS account, or another.</p>
-         * <p>[EC2-VPC] This action gives one or more CIDR IP address ranges permission to
-         * access a security group in your VPC, or gives one or more other security groups
-         * (called the <i>source groups</i>) permission to access a security group for your
-         * VPC. The security groups must all be for the same VPC.</p>
+         * <p>Adds one or more ingress rules to a security group.</p> <p>Rule changes are
+         * propagated to instances within the security group as quickly as possible.
+         * However, a small delay might occur.</p> <p>[EC2-Classic] This action gives one
+         * or more IPv4 CIDR address ranges permission to access a security group in your
+         * account, or gives one or more security groups (called the <i>source groups</i>)
+         * permission to access a security group for your account. A source group can be
+         * for your own AWS account, or another. You can have up to 100 rules per
+         * group.</p> <p>[EC2-VPC] This action gives one or more IPv4 or IPv6 CIDR address
+         * ranges permission to access a security group in your VPC, or gives one or more
+         * other security groups (called the <i>source groups</i>) permission to access a
+         * security group for your VPC. The security groups must all be for the same VPC or
+         * a peer VPC in a VPC peering connection. For more information about VPC security
+         * group limits, see <a
+         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Appendix_Limits.html">Amazon
+         * VPC Limits</a>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::AuthorizeSecurityGroupIngressOutcomeCallable AuthorizeSecurityGroupIngressCallable(const Model::AuthorizeSecurityGroupIngressRequest& request) const;
 
         /**
-         * <p>Adds one or more ingress rules to a security group.</p> <important>
-         * <p>EC2-Classic: You can have up to 100 rules per group.</p> <p>EC2-VPC: You can
-         * have up to 50 rules per group (covering both ingress and egress rules).</p>
-         * </important> <p>Rule changes are propagated to instances within the security
-         * group as quickly as possible. However, a small delay might occur.</p>
-         * <p>[EC2-Classic] This action gives one or more CIDR IP address ranges permission
-         * to access a security group in your account, or gives one or more security groups
-         * (called the <i>source groups</i>) permission to access a security group for your
-         * account. A source group can be for your own AWS account, or another.</p>
-         * <p>[EC2-VPC] This action gives one or more CIDR IP address ranges permission to
-         * access a security group in your VPC, or gives one or more other security groups
-         * (called the <i>source groups</i>) permission to access a security group for your
-         * VPC. The security groups must all be for the same VPC.</p>
+         * <p>Adds one or more ingress rules to a security group.</p> <p>Rule changes are
+         * propagated to instances within the security group as quickly as possible.
+         * However, a small delay might occur.</p> <p>[EC2-Classic] This action gives one
+         * or more IPv4 CIDR address ranges permission to access a security group in your
+         * account, or gives one or more security groups (called the <i>source groups</i>)
+         * permission to access a security group for your account. A source group can be
+         * for your own AWS account, or another. You can have up to 100 rules per
+         * group.</p> <p>[EC2-VPC] This action gives one or more IPv4 or IPv6 CIDR address
+         * ranges permission to access a security group in your VPC, or gives one or more
+         * other security groups (called the <i>source groups</i>) permission to access a
+         * security group for your VPC. The security groups must all be for the same VPC or
+         * a peer VPC in a VPC peering connection. For more information about VPC security
+         * group limits, see <a
+         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Appendix_Limits.html">Amazon
+         * VPC Limits</a>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2318,6 +2462,34 @@ namespace Model
         virtual void CreateDhcpOptionsAsync(const Model::CreateDhcpOptionsRequest& request, const CreateDhcpOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>[IPv6 only] Creates an egress-only Internet gateway for your VPC. An
+         * egress-only Internet gateway is used to enable outbound communication over IPv6
+         * from instances in your VPC to the Internet, and prevents hosts outside of your
+         * VPC from initiating an IPv6 connection with your instance.</p>
+         */
+        virtual Model::CreateEgressOnlyInternetGatewayOutcome CreateEgressOnlyInternetGateway(const Model::CreateEgressOnlyInternetGatewayRequest& request) const;
+
+        /**
+         * <p>[IPv6 only] Creates an egress-only Internet gateway for your VPC. An
+         * egress-only Internet gateway is used to enable outbound communication over IPv6
+         * from instances in your VPC to the Internet, and prevents hosts outside of your
+         * VPC from initiating an IPv6 connection with your instance.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateEgressOnlyInternetGatewayOutcomeCallable CreateEgressOnlyInternetGatewayCallable(const Model::CreateEgressOnlyInternetGatewayRequest& request) const;
+
+        /**
+         * <p>[IPv6 only] Creates an egress-only Internet gateway for your VPC. An
+         * egress-only Internet gateway is used to enable outbound communication over IPv6
+         * from instances in your VPC to the Internet, and prevents hosts outside of your
+         * VPC from initiating an IPv6 connection with your instance.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateEgressOnlyInternetGatewayAsync(const Model::CreateEgressOnlyInternetGatewayRequest& request, const CreateEgressOnlyInternetGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Creates one or more flow logs to capture IP traffic for a specific network
          * interface, subnet, or VPC. Flow logs are delivered to a specified log group in
          * Amazon CloudWatch Logs. If you specify a VPC or subnet in the request, a log
@@ -2638,7 +2810,7 @@ namespace Model
          * <p>Creates a network interface in the specified subnet.</p> <p>For more
          * information about network interfaces, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html">Elastic
-         * Network Interfaces</a> in the <i>Amazon Elastic Compute Cloud User
+         * Network Interfaces</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p>
          */
         virtual Model::CreateNetworkInterfaceOutcome CreateNetworkInterface(const Model::CreateNetworkInterfaceRequest& request) const;
@@ -2647,7 +2819,7 @@ namespace Model
          * <p>Creates a network interface in the specified subnet.</p> <p>For more
          * information about network interfaces, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html">Elastic
-         * Network Interfaces</a> in the <i>Amazon Elastic Compute Cloud User
+         * Network Interfaces</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -2658,7 +2830,7 @@ namespace Model
          * <p>Creates a network interface in the specified subnet.</p> <p>For more
          * information about network interfaces, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html">Elastic
-         * Network Interfaces</a> in the <i>Amazon Elastic Compute Cloud User
+         * Network Interfaces</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -2772,16 +2944,17 @@ namespace Model
         /**
          * <p>Creates a route in a route table within a VPC.</p> <p>You must specify one of
          * the following targets: Internet gateway or virtual private gateway, NAT
-         * instance, NAT gateway, VPC peering connection, or network interface.</p> <p>When
-         * determining how to route traffic, we use the route with the most specific match.
-         * For example, let's say the traffic is destined for <code>192.0.2.3</code>, and
-         * the route table includes the following two routes:</p> <ul> <li> <p>
-         * <code>192.0.2.0/24</code> (goes to some target A)</p> </li> <li> <p>
-         * <code>192.0.2.0/28</code> (goes to some target B)</p> </li> </ul> <p>Both routes
-         * apply to the traffic destined for <code>192.0.2.3</code>. However, the second
-         * route in the list covers a smaller number of IP addresses and is therefore more
-         * specific, so we use that route to determine where to target the traffic.</p>
-         * <p>For more information about route tables, see <a
+         * instance, NAT gateway, VPC peering connection, network interface, or egress-only
+         * Internet gateway.</p> <p>When determining how to route traffic, we use the route
+         * with the most specific match. For example, traffic is destined for the IPv4
+         * address <code>192.0.2.3</code>, and the route table includes the following two
+         * IPv4 routes:</p> <ul> <li> <p> <code>192.0.2.0/24</code> (goes to some target
+         * A)</p> </li> <li> <p> <code>192.0.2.0/28</code> (goes to some target B)</p>
+         * </li> </ul> <p>Both routes apply to the traffic destined for
+         * <code>192.0.2.3</code>. However, the second route in the list covers a smaller
+         * number of IP addresses and is therefore more specific, so we use that route to
+         * determine where to target the traffic.</p> <p>For more information about route
+         * tables, see <a
          * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route
          * Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
          */
@@ -2790,16 +2963,17 @@ namespace Model
         /**
          * <p>Creates a route in a route table within a VPC.</p> <p>You must specify one of
          * the following targets: Internet gateway or virtual private gateway, NAT
-         * instance, NAT gateway, VPC peering connection, or network interface.</p> <p>When
-         * determining how to route traffic, we use the route with the most specific match.
-         * For example, let's say the traffic is destined for <code>192.0.2.3</code>, and
-         * the route table includes the following two routes:</p> <ul> <li> <p>
-         * <code>192.0.2.0/24</code> (goes to some target A)</p> </li> <li> <p>
-         * <code>192.0.2.0/28</code> (goes to some target B)</p> </li> </ul> <p>Both routes
-         * apply to the traffic destined for <code>192.0.2.3</code>. However, the second
-         * route in the list covers a smaller number of IP addresses and is therefore more
-         * specific, so we use that route to determine where to target the traffic.</p>
-         * <p>For more information about route tables, see <a
+         * instance, NAT gateway, VPC peering connection, network interface, or egress-only
+         * Internet gateway.</p> <p>When determining how to route traffic, we use the route
+         * with the most specific match. For example, traffic is destined for the IPv4
+         * address <code>192.0.2.3</code>, and the route table includes the following two
+         * IPv4 routes:</p> <ul> <li> <p> <code>192.0.2.0/24</code> (goes to some target
+         * A)</p> </li> <li> <p> <code>192.0.2.0/28</code> (goes to some target B)</p>
+         * </li> </ul> <p>Both routes apply to the traffic destined for
+         * <code>192.0.2.3</code>. However, the second route in the list covers a smaller
+         * number of IP addresses and is therefore more specific, so we use that route to
+         * determine where to target the traffic.</p> <p>For more information about route
+         * tables, see <a
          * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route
          * Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
          *
@@ -2810,16 +2984,17 @@ namespace Model
         /**
          * <p>Creates a route in a route table within a VPC.</p> <p>You must specify one of
          * the following targets: Internet gateway or virtual private gateway, NAT
-         * instance, NAT gateway, VPC peering connection, or network interface.</p> <p>When
-         * determining how to route traffic, we use the route with the most specific match.
-         * For example, let's say the traffic is destined for <code>192.0.2.3</code>, and
-         * the route table includes the following two routes:</p> <ul> <li> <p>
-         * <code>192.0.2.0/24</code> (goes to some target A)</p> </li> <li> <p>
-         * <code>192.0.2.0/28</code> (goes to some target B)</p> </li> </ul> <p>Both routes
-         * apply to the traffic destined for <code>192.0.2.3</code>. However, the second
-         * route in the list covers a smaller number of IP addresses and is therefore more
-         * specific, so we use that route to determine where to target the traffic.</p>
-         * <p>For more information about route tables, see <a
+         * instance, NAT gateway, VPC peering connection, network interface, or egress-only
+         * Internet gateway.</p> <p>When determining how to route traffic, we use the route
+         * with the most specific match. For example, traffic is destined for the IPv4
+         * address <code>192.0.2.3</code>, and the route table includes the following two
+         * IPv4 routes:</p> <ul> <li> <p> <code>192.0.2.0/24</code> (goes to some target
+         * A)</p> </li> <li> <p> <code>192.0.2.0/28</code> (goes to some target B)</p>
+         * </li> </ul> <p>Both routes apply to the traffic destined for
+         * <code>192.0.2.3</code>. However, the second route in the list covers a smaller
+         * number of IP addresses and is therefore more specific, so we use that route to
+         * determine where to target the traffic.</p> <p>For more information about route
+         * tables, see <a
          * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route
          * Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
          *
@@ -3062,16 +3237,18 @@ namespace Model
         /**
          * <p>Creates a subnet in an existing VPC.</p> <p>When you create each subnet, you
          * provide the VPC ID and the CIDR block you want for the subnet. After you create
-         * a subnet, you can't change its CIDR block. The subnet's CIDR block can be the
-         * same as the VPC's CIDR block (assuming you want only a single subnet in the
-         * VPC), or a subset of the VPC's CIDR block. If you create more than one subnet in
-         * a VPC, the subnets' CIDR blocks must not overlap. The smallest subnet (and VPC)
-         * you can create uses a /28 netmask (16 IP addresses), and the largest uses a /16
-         * netmask (65,536 IP addresses).</p> <important> <p>AWS reserves both the first
-         * four and the last IP address in each subnet's CIDR block. They're not available
-         * for use.</p> </important> <p>If you add more than one subnet to a VPC, they're
-         * set up in a star topology with a logical router in the middle.</p> <p>If you
-         * launch an instance in a VPC using an Amazon EBS-backed AMI, the IP address
+         * a subnet, you can't change its CIDR block. The subnet's IPv4 CIDR block can be
+         * the same as the VPC's IPv4 CIDR block (assuming you want only a single subnet in
+         * the VPC), or a subset of the VPC's IPv4 CIDR block. If you create more than one
+         * subnet in a VPC, the subnets' CIDR blocks must not overlap. The smallest IPv4
+         * subnet (and VPC) you can create uses a /28 netmask (16 IPv4 addresses), and the
+         * largest uses a /16 netmask (65,536 IPv4 addresses).</p> <p>If you've associated
+         * an IPv6 CIDR block with your VPC, you can create a subnet with an IPv6 CIDR
+         * block that uses a /64 prefix length. </p> <important> <p>AWS reserves both the
+         * first four and the last IP address in each subnet's CIDR block. They're not
+         * available for use.</p> </important> <p>If you add more than one subnet to a VPC,
+         * they're set up in a star topology with a logical router in the middle.</p> <p>If
+         * you launch an instance in a VPC using an Amazon EBS-backed AMI, the IP address
          * doesn't change if you stop and restart the instance (unlike a similar instance
          * launched outside a VPC, which gets a new IP address when restarted). It's
          * therefore possible to have a subnet with no running instances (they're all
@@ -3085,16 +3262,18 @@ namespace Model
         /**
          * <p>Creates a subnet in an existing VPC.</p> <p>When you create each subnet, you
          * provide the VPC ID and the CIDR block you want for the subnet. After you create
-         * a subnet, you can't change its CIDR block. The subnet's CIDR block can be the
-         * same as the VPC's CIDR block (assuming you want only a single subnet in the
-         * VPC), or a subset of the VPC's CIDR block. If you create more than one subnet in
-         * a VPC, the subnets' CIDR blocks must not overlap. The smallest subnet (and VPC)
-         * you can create uses a /28 netmask (16 IP addresses), and the largest uses a /16
-         * netmask (65,536 IP addresses).</p> <important> <p>AWS reserves both the first
-         * four and the last IP address in each subnet's CIDR block. They're not available
-         * for use.</p> </important> <p>If you add more than one subnet to a VPC, they're
-         * set up in a star topology with a logical router in the middle.</p> <p>If you
-         * launch an instance in a VPC using an Amazon EBS-backed AMI, the IP address
+         * a subnet, you can't change its CIDR block. The subnet's IPv4 CIDR block can be
+         * the same as the VPC's IPv4 CIDR block (assuming you want only a single subnet in
+         * the VPC), or a subset of the VPC's IPv4 CIDR block. If you create more than one
+         * subnet in a VPC, the subnets' CIDR blocks must not overlap. The smallest IPv4
+         * subnet (and VPC) you can create uses a /28 netmask (16 IPv4 addresses), and the
+         * largest uses a /16 netmask (65,536 IPv4 addresses).</p> <p>If you've associated
+         * an IPv6 CIDR block with your VPC, you can create a subnet with an IPv6 CIDR
+         * block that uses a /64 prefix length. </p> <important> <p>AWS reserves both the
+         * first four and the last IP address in each subnet's CIDR block. They're not
+         * available for use.</p> </important> <p>If you add more than one subnet to a VPC,
+         * they're set up in a star topology with a logical router in the middle.</p> <p>If
+         * you launch an instance in a VPC using an Amazon EBS-backed AMI, the IP address
          * doesn't change if you stop and restart the instance (unlike a similar instance
          * launched outside a VPC, which gets a new IP address when restarted). It's
          * therefore possible to have a subnet with no running instances (they're all
@@ -3110,16 +3289,18 @@ namespace Model
         /**
          * <p>Creates a subnet in an existing VPC.</p> <p>When you create each subnet, you
          * provide the VPC ID and the CIDR block you want for the subnet. After you create
-         * a subnet, you can't change its CIDR block. The subnet's CIDR block can be the
-         * same as the VPC's CIDR block (assuming you want only a single subnet in the
-         * VPC), or a subset of the VPC's CIDR block. If you create more than one subnet in
-         * a VPC, the subnets' CIDR blocks must not overlap. The smallest subnet (and VPC)
-         * you can create uses a /28 netmask (16 IP addresses), and the largest uses a /16
-         * netmask (65,536 IP addresses).</p> <important> <p>AWS reserves both the first
-         * four and the last IP address in each subnet's CIDR block. They're not available
-         * for use.</p> </important> <p>If you add more than one subnet to a VPC, they're
-         * set up in a star topology with a logical router in the middle.</p> <p>If you
-         * launch an instance in a VPC using an Amazon EBS-backed AMI, the IP address
+         * a subnet, you can't change its CIDR block. The subnet's IPv4 CIDR block can be
+         * the same as the VPC's IPv4 CIDR block (assuming you want only a single subnet in
+         * the VPC), or a subset of the VPC's IPv4 CIDR block. If you create more than one
+         * subnet in a VPC, the subnets' CIDR blocks must not overlap. The smallest IPv4
+         * subnet (and VPC) you can create uses a /28 netmask (16 IPv4 addresses), and the
+         * largest uses a /16 netmask (65,536 IPv4 addresses).</p> <p>If you've associated
+         * an IPv6 CIDR block with your VPC, you can create a subnet with an IPv6 CIDR
+         * block that uses a /64 prefix length. </p> <important> <p>AWS reserves both the
+         * first four and the last IP address in each subnet's CIDR block. They're not
+         * available for use.</p> </important> <p>If you add more than one subnet to a VPC,
+         * they're set up in a star topology with a logical router in the middle.</p> <p>If
+         * you launch an instance in a VPC using an Amazon EBS-backed AMI, the IP address
          * doesn't change if you stop and restart the instance (unlike a similar instance
          * launched outside a VPC, which gets a new IP address when restarted). It's
          * therefore possible to have a subnet with no running instances (they're all
@@ -3249,14 +3430,18 @@ namespace Model
         virtual void CreateVolumeAsync(const Model::CreateVolumeRequest& request, const CreateVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a VPC with the specified CIDR block.</p> <p>The smallest VPC you can
-         * create uses a /28 netmask (16 IP addresses), and the largest uses a /16 netmask
-         * (65,536 IP addresses). To help you decide how big to make your VPC, see <a
+         * <p>Creates a VPC with the specified IPv4 CIDR block. The smallest VPC you can
+         * create uses a /28 netmask (16 IPv4 addresses), and the largest uses a /16
+         * netmask (65,536 IPv4 addresses). To help you decide how big to make your VPC,
+         * see <a
          * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">Your
          * VPC and Subnets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
-         * <p>By default, each instance you launch in the VPC has the default DHCP options,
-         * which includes only a default DNS server that we provide (AmazonProvidedDNS).
-         * For more information about DHCP options, see <a
+         * <p>You can optionally request an Amazon-provided IPv6 CIDR block for the VPC.
+         * The IPv6 CIDR block uses a /56 prefix length, and is allocated from Amazon's
+         * pool of IPv6 addresses. You cannot choose the IPv6 range for your VPC.</p> <p>By
+         * default, each instance you launch in the VPC has the default DHCP options, which
+         * includes only a default DNS server that we provide (AmazonProvidedDNS). For more
+         * information about DHCP options, see <a
          * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html">DHCP
          * Options Sets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
          * <p>You can specify the instance tenancy value for the VPC when you create it.
@@ -3268,14 +3453,18 @@ namespace Model
         virtual Model::CreateVpcOutcome CreateVpc(const Model::CreateVpcRequest& request) const;
 
         /**
-         * <p>Creates a VPC with the specified CIDR block.</p> <p>The smallest VPC you can
-         * create uses a /28 netmask (16 IP addresses), and the largest uses a /16 netmask
-         * (65,536 IP addresses). To help you decide how big to make your VPC, see <a
+         * <p>Creates a VPC with the specified IPv4 CIDR block. The smallest VPC you can
+         * create uses a /28 netmask (16 IPv4 addresses), and the largest uses a /16
+         * netmask (65,536 IPv4 addresses). To help you decide how big to make your VPC,
+         * see <a
          * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">Your
          * VPC and Subnets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
-         * <p>By default, each instance you launch in the VPC has the default DHCP options,
-         * which includes only a default DNS server that we provide (AmazonProvidedDNS).
-         * For more information about DHCP options, see <a
+         * <p>You can optionally request an Amazon-provided IPv6 CIDR block for the VPC.
+         * The IPv6 CIDR block uses a /56 prefix length, and is allocated from Amazon's
+         * pool of IPv6 addresses. You cannot choose the IPv6 range for your VPC.</p> <p>By
+         * default, each instance you launch in the VPC has the default DHCP options, which
+         * includes only a default DNS server that we provide (AmazonProvidedDNS). For more
+         * information about DHCP options, see <a
          * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html">DHCP
          * Options Sets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
          * <p>You can specify the instance tenancy value for the VPC when you create it.
@@ -3289,14 +3478,18 @@ namespace Model
         virtual Model::CreateVpcOutcomeCallable CreateVpcCallable(const Model::CreateVpcRequest& request) const;
 
         /**
-         * <p>Creates a VPC with the specified CIDR block.</p> <p>The smallest VPC you can
-         * create uses a /28 netmask (16 IP addresses), and the largest uses a /16 netmask
-         * (65,536 IP addresses). To help you decide how big to make your VPC, see <a
+         * <p>Creates a VPC with the specified IPv4 CIDR block. The smallest VPC you can
+         * create uses a /28 netmask (16 IPv4 addresses), and the largest uses a /16
+         * netmask (65,536 IPv4 addresses). To help you decide how big to make your VPC,
+         * see <a
          * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">Your
          * VPC and Subnets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
-         * <p>By default, each instance you launch in the VPC has the default DHCP options,
-         * which includes only a default DNS server that we provide (AmazonProvidedDNS).
-         * For more information about DHCP options, see <a
+         * <p>You can optionally request an Amazon-provided IPv6 CIDR block for the VPC.
+         * The IPv6 CIDR block uses a /56 prefix length, and is allocated from Amazon's
+         * pool of IPv6 addresses. You cannot choose the IPv6 range for your VPC.</p> <p>By
+         * default, each instance you launch in the VPC has the default DHCP options, which
+         * includes only a default DNS server that we provide (AmazonProvidedDNS). For more
+         * information about DHCP options, see <a
          * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html">DHCP
          * Options Sets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
          * <p>You can specify the instance tenancy value for the VPC when you create it.
@@ -3570,6 +3763,25 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteDhcpOptionsAsync(const Model::DeleteDhcpOptionsRequest& request, const DeleteDhcpOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes an egress-only Internet gateway.</p>
+         */
+        virtual Model::DeleteEgressOnlyInternetGatewayOutcome DeleteEgressOnlyInternetGateway(const Model::DeleteEgressOnlyInternetGatewayRequest& request) const;
+
+        /**
+         * <p>Deletes an egress-only Internet gateway.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteEgressOnlyInternetGatewayOutcomeCallable DeleteEgressOnlyInternetGatewayCallable(const Model::DeleteEgressOnlyInternetGatewayRequest& request) const;
+
+        /**
+         * <p>Deletes an egress-only Internet gateway.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteEgressOnlyInternetGatewayAsync(const Model::DeleteEgressOnlyInternetGatewayRequest& request, const DeleteEgressOnlyInternetGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes one or more flow logs.</p>
@@ -4465,6 +4677,25 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeDhcpOptionsAsync(const Model::DescribeDhcpOptionsRequest& request, const DescribeDhcpOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Describes one or more of your egress-only Internet gateways.</p>
+         */
+        virtual Model::DescribeEgressOnlyInternetGatewaysOutcome DescribeEgressOnlyInternetGateways(const Model::DescribeEgressOnlyInternetGatewaysRequest& request) const;
+
+        /**
+         * <p>Describes one or more of your egress-only Internet gateways.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeEgressOnlyInternetGatewaysOutcomeCallable DescribeEgressOnlyInternetGatewaysCallable(const Model::DescribeEgressOnlyInternetGatewaysRequest& request) const;
+
+        /**
+         * <p>Describes one or more of your egress-only Internet gateways.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeEgressOnlyInternetGatewaysAsync(const Model::DescribeEgressOnlyInternetGatewaysRequest& request, const DescribeEgressOnlyInternetGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes one or more of your export tasks.</p>
@@ -5866,9 +6097,7 @@ namespace Model
         virtual void DescribeSpotInstanceRequestsAsync(const Model::DescribeSpotInstanceRequestsRequest& request, const DescribeSpotInstanceRequestsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes the Spot price history. The prices returned are listed in
-         * chronological order, from the oldest to the most recent, for up to the past 90
-         * days. For more information, see <a
+         * <p>Describes the Spot price history. For more information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances-history.html">Spot
          * Instance Pricing History</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p> <p>When you specify a start and end time, this operation returns
@@ -5880,9 +6109,7 @@ namespace Model
         virtual Model::DescribeSpotPriceHistoryOutcome DescribeSpotPriceHistory(const Model::DescribeSpotPriceHistoryRequest& request) const;
 
         /**
-         * <p>Describes the Spot price history. The prices returned are listed in
-         * chronological order, from the oldest to the most recent, for up to the past 90
-         * days. For more information, see <a
+         * <p>Describes the Spot price history. For more information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances-history.html">Spot
          * Instance Pricing History</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p> <p>When you specify a start and end time, this operation returns
@@ -5896,9 +6123,7 @@ namespace Model
         virtual Model::DescribeSpotPriceHistoryOutcomeCallable DescribeSpotPriceHistoryCallable(const Model::DescribeSpotPriceHistoryRequest& request) const;
 
         /**
-         * <p>Describes the Spot price history. The prices returned are listed in
-         * chronological order, from the oldest to the most recent, for up to the past 90
-         * days. For more information, see <a
+         * <p>Describes the Spot price history. For more information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances-history.html">Spot
          * Instance Pricing History</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p> <p>When you specify a start and end time, this operation returns
@@ -6717,6 +6942,56 @@ namespace Model
         virtual void DisassociateRouteTableAsync(const Model::DisassociateRouteTableRequest& request, const DisassociateRouteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Disassociates a CIDR block from a subnet. Currently, you can disassociate an
+         * IPv6 CIDR block only. You must detach or delete all gateways and resources that
+         * are associated with the CIDR block before you can disassociate it. </p>
+         */
+        virtual Model::DisassociateSubnetCidrBlockOutcome DisassociateSubnetCidrBlock(const Model::DisassociateSubnetCidrBlockRequest& request) const;
+
+        /**
+         * <p>Disassociates a CIDR block from a subnet. Currently, you can disassociate an
+         * IPv6 CIDR block only. You must detach or delete all gateways and resources that
+         * are associated with the CIDR block before you can disassociate it. </p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DisassociateSubnetCidrBlockOutcomeCallable DisassociateSubnetCidrBlockCallable(const Model::DisassociateSubnetCidrBlockRequest& request) const;
+
+        /**
+         * <p>Disassociates a CIDR block from a subnet. Currently, you can disassociate an
+         * IPv6 CIDR block only. You must detach or delete all gateways and resources that
+         * are associated with the CIDR block before you can disassociate it. </p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DisassociateSubnetCidrBlockAsync(const Model::DisassociateSubnetCidrBlockRequest& request, const DisassociateSubnetCidrBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Disassociates a CIDR block from a VPC. Currently, you can disassociate an
+         * IPv6 CIDR block only. You must detach or delete all gateways and resources that
+         * are associated with the CIDR block before you can disassociate it. </p>
+         */
+        virtual Model::DisassociateVpcCidrBlockOutcome DisassociateVpcCidrBlock(const Model::DisassociateVpcCidrBlockRequest& request) const;
+
+        /**
+         * <p>Disassociates a CIDR block from a VPC. Currently, you can disassociate an
+         * IPv6 CIDR block only. You must detach or delete all gateways and resources that
+         * are associated with the CIDR block before you can disassociate it. </p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DisassociateVpcCidrBlockOutcomeCallable DisassociateVpcCidrBlockCallable(const Model::DisassociateVpcCidrBlockRequest& request) const;
+
+        /**
+         * <p>Disassociates a CIDR block from a VPC. Currently, you can disassociate an
+         * IPv6 CIDR block only. You must detach or delete all gateways and resources that
+         * are associated with the CIDR block before you can disassociate it. </p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DisassociateVpcCidrBlockAsync(const Model::DisassociateVpcCidrBlockRequest& request, const DisassociateVpcCidrBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Enables a virtual private gateway (VGW) to propagate routes to the specified
          * route table of a VPC.</p>
          */
@@ -6808,7 +7083,7 @@ namespace Model
          * address when addressed from a linked EC2-Classic instance. For more information
          * about ClassicLink, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-         * in the Amazon Elastic Compute Cloud User Guide.</p>
+         * in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
          */
         virtual Model::EnableVpcClassicLinkDnsSupportOutcome EnableVpcClassicLinkDnsSupport(const Model::EnableVpcClassicLinkDnsSupportRequest& request) const;
 
@@ -6820,7 +7095,7 @@ namespace Model
          * address when addressed from a linked EC2-Classic instance. For more information
          * about ClassicLink, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-         * in the Amazon Elastic Compute Cloud User Guide.</p>
+         * in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -6834,7 +7109,7 @@ namespace Model
          * address when addressed from a linked EC2-Classic instance. For more information
          * about ClassicLink, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-         * in the Amazon Elastic Compute Cloud User Guide.</p>
+         * in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -6999,15 +7274,15 @@ namespace Model
 
         /**
          * <p>Returns details about the values and term of your specified Convertible
-         * Reserved Instances. When an offering ID is specified it returns information
-         * about whether the exchange is valid and can be performed.</p>
+         * Reserved Instances. When a target configuration is specified, it returns
+         * information about whether the exchange is valid and can be performed.</p>
          */
         virtual Model::GetReservedInstancesExchangeQuoteOutcome GetReservedInstancesExchangeQuote(const Model::GetReservedInstancesExchangeQuoteRequest& request) const;
 
         /**
          * <p>Returns details about the values and term of your specified Convertible
-         * Reserved Instances. When an offering ID is specified it returns information
-         * about whether the exchange is valid and can be performed.</p>
+         * Reserved Instances. When a target configuration is specified, it returns
+         * information about whether the exchange is valid and can be performed.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -7015,8 +7290,8 @@ namespace Model
 
         /**
          * <p>Returns details about the values and term of your specified Convertible
-         * Reserved Instances. When an offering ID is specified it returns information
-         * about whether the exchange is valid and can be performed.</p>
+         * Reserved Instances. When a target configuration is specified, it returns
+         * information about whether the exchange is valid and can be performed.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -7638,19 +7913,19 @@ namespace Model
         virtual void ModifySpotFleetRequestAsync(const Model::ModifySpotFleetRequestRequest& request, const ModifySpotFleetRequestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Modifies a subnet attribute.</p>
+         * <p>Modifies a subnet attribute. You can only modify one attribute at a time.</p>
          */
         virtual Model::ModifySubnetAttributeOutcome ModifySubnetAttribute(const Model::ModifySubnetAttributeRequest& request) const;
 
         /**
-         * <p>Modifies a subnet attribute.</p>
+         * <p>Modifies a subnet attribute. You can only modify one attribute at a time.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ModifySubnetAttributeOutcomeCallable ModifySubnetAttributeCallable(const Model::ModifySubnetAttributeRequest& request) const;
 
         /**
-         * <p>Modifies a subnet attribute.</p>
+         * <p>Modifies a subnet attribute. You can only modify one attribute at a time.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -7799,31 +8074,31 @@ namespace Model
         virtual void ModifyVpcPeeringConnectionOptionsAsync(const Model::ModifyVpcPeeringConnectionOptionsRequest& request, const ModifyVpcPeeringConnectionOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Enables monitoring for a running instance. For more information about
-         * monitoring instances, see <a
+         * <p>Enables detailed monitoring for a running instance. Otherwise, basic
+         * monitoring is enabled. For more information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html">Monitoring
          * Your Instances and Volumes</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p>
+         * Guide</i>.</p> <p>To disable detailed monitoring, see .</p>
          */
         virtual Model::MonitorInstancesOutcome MonitorInstances(const Model::MonitorInstancesRequest& request) const;
 
         /**
-         * <p>Enables monitoring for a running instance. For more information about
-         * monitoring instances, see <a
+         * <p>Enables detailed monitoring for a running instance. Otherwise, basic
+         * monitoring is enabled. For more information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html">Monitoring
          * Your Instances and Volumes</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p>
+         * Guide</i>.</p> <p>To disable detailed monitoring, see .</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::MonitorInstancesOutcomeCallable MonitorInstancesCallable(const Model::MonitorInstancesRequest& request) const;
 
         /**
-         * <p>Enables monitoring for a running instance. For more information about
-         * monitoring instances, see <a
+         * <p>Enables detailed monitoring for a running instance. Otherwise, basic
+         * monitoring is enabled. For more information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html">Monitoring
          * Your Instances and Volumes</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p>
+         * Guide</i>.</p> <p>To disable detailed monitoring, see .</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -8314,8 +8589,8 @@ namespace Model
         /**
          * <p>Replaces an existing route within a route table in a VPC. You must provide
          * only one of the following: Internet gateway or virtual private gateway, NAT
-         * instance, NAT gateway, VPC peering connection, or network interface.</p> <p>For
-         * more information about route tables, see <a
+         * instance, NAT gateway, VPC peering connection, network interface, or egress-only
+         * Internet gateway.</p> <p>For more information about route tables, see <a
          * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route
          * Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
          */
@@ -8324,8 +8599,8 @@ namespace Model
         /**
          * <p>Replaces an existing route within a route table in a VPC. You must provide
          * only one of the following: Internet gateway or virtual private gateway, NAT
-         * instance, NAT gateway, VPC peering connection, or network interface.</p> <p>For
-         * more information about route tables, see <a
+         * instance, NAT gateway, VPC peering connection, network interface, or egress-only
+         * Internet gateway.</p> <p>For more information about route tables, see <a
          * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route
          * Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
          *
@@ -8336,8 +8611,8 @@ namespace Model
         /**
          * <p>Replaces an existing route within a route table in a VPC. You must provide
          * only one of the following: Internet gateway or virtual private gateway, NAT
-         * instance, NAT gateway, VPC peering connection, or network interface.</p> <p>For
-         * more information about route tables, see <a
+         * instance, NAT gateway, VPC peering connection, network interface, or egress-only
+         * Internet gateway.</p> <p>For more information about route tables, see <a
          * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route
          * Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
          *
@@ -8659,11 +8934,11 @@ namespace Model
          * EC2-VPC. This action doesn't apply to security groups for use in EC2-Classic.
          * The values that you specify in the revoke request (for example, ports) must
          * match the existing rule's values for the rule to be revoked.</p> <p>Each rule
-         * consists of the protocol and the CIDR range or source security group. For the
-         * TCP and UDP protocols, you must also specify the destination port or range of
-         * ports. For the ICMP protocol, you must also specify the ICMP type and code.</p>
-         * <p>Rule changes are propagated to instances within the security group as quickly
-         * as possible. However, a small delay might occur.</p>
+         * consists of the protocol and the IPv4 or IPv6 CIDR range or source security
+         * group. For the TCP and UDP protocols, you must also specify the destination port
+         * or range of ports. For the ICMP protocol, you must also specify the ICMP type
+         * and code.</p> <p>Rule changes are propagated to instances within the security
+         * group as quickly as possible. However, a small delay might occur.</p>
          */
         virtual Model::RevokeSecurityGroupEgressOutcome RevokeSecurityGroupEgress(const Model::RevokeSecurityGroupEgressRequest& request) const;
 
@@ -8672,11 +8947,11 @@ namespace Model
          * EC2-VPC. This action doesn't apply to security groups for use in EC2-Classic.
          * The values that you specify in the revoke request (for example, ports) must
          * match the existing rule's values for the rule to be revoked.</p> <p>Each rule
-         * consists of the protocol and the CIDR range or source security group. For the
-         * TCP and UDP protocols, you must also specify the destination port or range of
-         * ports. For the ICMP protocol, you must also specify the ICMP type and code.</p>
-         * <p>Rule changes are propagated to instances within the security group as quickly
-         * as possible. However, a small delay might occur.</p>
+         * consists of the protocol and the IPv4 or IPv6 CIDR range or source security
+         * group. For the TCP and UDP protocols, you must also specify the destination port
+         * or range of ports. For the ICMP protocol, you must also specify the ICMP type
+         * and code.</p> <p>Rule changes are propagated to instances within the security
+         * group as quickly as possible. However, a small delay might occur.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -8687,11 +8962,11 @@ namespace Model
          * EC2-VPC. This action doesn't apply to security groups for use in EC2-Classic.
          * The values that you specify in the revoke request (for example, ports) must
          * match the existing rule's values for the rule to be revoked.</p> <p>Each rule
-         * consists of the protocol and the CIDR range or source security group. For the
-         * TCP and UDP protocols, you must also specify the destination port or range of
-         * ports. For the ICMP protocol, you must also specify the ICMP type and code.</p>
-         * <p>Rule changes are propagated to instances within the security group as quickly
-         * as possible. However, a small delay might occur.</p>
+         * consists of the protocol and the IPv4 or IPv6 CIDR range or source security
+         * group. For the TCP and UDP protocols, you must also specify the destination port
+         * or range of ports. For the ICMP protocol, you must also specify the ICMP type
+         * and code.</p> <p>Rule changes are propagated to instances within the security
+         * group as quickly as possible. However, a small delay might occur.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -8739,41 +9014,39 @@ namespace Model
 
         /**
          * <p>Launches the specified number of instances using an AMI for which you have
-         * permissions.</p> <p>When you launch an instance, it enters the
-         * <code>pending</code> state. After the instance is ready for you, it enters the
-         * <code>running</code> state. To check the state of your instance, call
-         * <a>DescribeInstances</a>.</p> <p>To ensure faster instance launches, break up
-         * large requests into smaller batches. For example, create five separate launch
-         * requests for 100 instances each instead of one launch request for 500
-         * instances.</p> <p>To tag your instance, ensure that it is <code>running</code>
-         * as <a>CreateTags</a> requires a resource ID. For more information about tagging,
-         * see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
-         * Your Amazon EC2 Resources</a>.</p> <p>If you don't specify a security group when
-         * launching an instance, Amazon EC2 uses the default security group. For more
-         * information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Security
-         * Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-         * <p>[EC2-VPC only accounts] If you don't specify a subnet in the request, we
-         * choose a default subnet from your default VPC for you.</p> <p>[EC2-Classic
-         * accounts] If you're launching into EC2-Classic and you don't specify an
-         * Availability Zone, we choose one for you.</p> <p>Linux instances have access to
-         * the public key of the key pair at boot. You can use this key to provide secure
-         * access to the instance. Amazon EC2 public images use this feature to provide
-         * secure access without passwords. For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Key
-         * Pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>You can
-         * provide optional user data when launching an instance. For more information, see
-         * <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html">Instance
-         * Metadata</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>If
-         * any of the AMIs have a product code attached for which the user has not
-         * subscribed, <code>RunInstances</code> fails.</p> <p>Some instance types can only
-         * be launched into a VPC. If you do not have a default VPC, or if you do not
-         * specify a subnet ID in the request, <code>RunInstances</code> fails. For more
-         * information, see <a
+         * permissions. </p> <p>You can specify a number of options, or leave the default
+         * options. The following rules apply:</p> <ul> <li> <p>[EC2-VPC] If you don't
+         * specify a subnet ID, we choose a default subnet from your default VPC for you.
+         * If you don't have a default VPC, you must specify a subnet ID in the
+         * request.</p> </li> <li> <p>[EC2-Classic] If don't specify an Availability Zone,
+         * we choose one for you.</p> </li> <li> <p>Some instance types must be launched
+         * into a VPC. If you do not have a default VPC, or if you do not specify a subnet
+         * ID, the request fails. For more information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-vpc.html#vpc-only-instance-types">Instance
-         * Types Available Only in a VPC</a>.</p> <p>For more information about
+         * Types Available Only in a VPC</a>.</p> </li> <li> <p>[EC2-VPC] All instances
+         * have a network interface with a primary private IPv4 address. If you don't
+         * specify this address, we choose one from the IPv4 range of your subnet.</p>
+         * </li> <li> <p>Not all instance types support IPv6 addresses. For more
+         * information, see <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2
+         * Instance Types</a>.</p> </li> <li> <p>If you don't specify a security group ID,
+         * we use the default security group. For more information, see <a
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Security
+         * Groups</a>.</p> </li> <li> <p>If any of the AMIs have a product code attached
+         * for which the user has not subscribed, the request fails.</p> </li> </ul> <p>To
+         * ensure faster instance launches, break up large requests into smaller batches.
+         * For example, create 5 separate launch requests for 100 instances each instead of
+         * 1 launch request for 500 instances.</p> <p>An instance is ready for you to use
+         * when it's in the <code>running</code> state. You can check the state of your
+         * instance using <a>DescribeInstances</a>. After launch, you can apply tags to
+         * your running instance (requires a resource ID). For more information, see
+         * <a>CreateTags</a> and <a
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
+         * Your Amazon EC2 Resources</a>.</p> <p>Linux instances have access to the public
+         * key of the key pair at boot. You can use this key to provide secure access to
+         * the instance. Amazon EC2 public images use this feature to provide secure access
+         * without passwords. For more information, see <a
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Key
+         * Pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>For
          * troubleshooting, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_InstanceStraightToTerminated.html">What
          * To Do If An Instance Immediately Terminates</a>, and <a
@@ -8785,41 +9058,39 @@ namespace Model
 
         /**
          * <p>Launches the specified number of instances using an AMI for which you have
-         * permissions.</p> <p>When you launch an instance, it enters the
-         * <code>pending</code> state. After the instance is ready for you, it enters the
-         * <code>running</code> state. To check the state of your instance, call
-         * <a>DescribeInstances</a>.</p> <p>To ensure faster instance launches, break up
-         * large requests into smaller batches. For example, create five separate launch
-         * requests for 100 instances each instead of one launch request for 500
-         * instances.</p> <p>To tag your instance, ensure that it is <code>running</code>
-         * as <a>CreateTags</a> requires a resource ID. For more information about tagging,
-         * see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
-         * Your Amazon EC2 Resources</a>.</p> <p>If you don't specify a security group when
-         * launching an instance, Amazon EC2 uses the default security group. For more
-         * information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Security
-         * Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-         * <p>[EC2-VPC only accounts] If you don't specify a subnet in the request, we
-         * choose a default subnet from your default VPC for you.</p> <p>[EC2-Classic
-         * accounts] If you're launching into EC2-Classic and you don't specify an
-         * Availability Zone, we choose one for you.</p> <p>Linux instances have access to
-         * the public key of the key pair at boot. You can use this key to provide secure
-         * access to the instance. Amazon EC2 public images use this feature to provide
-         * secure access without passwords. For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Key
-         * Pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>You can
-         * provide optional user data when launching an instance. For more information, see
-         * <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html">Instance
-         * Metadata</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>If
-         * any of the AMIs have a product code attached for which the user has not
-         * subscribed, <code>RunInstances</code> fails.</p> <p>Some instance types can only
-         * be launched into a VPC. If you do not have a default VPC, or if you do not
-         * specify a subnet ID in the request, <code>RunInstances</code> fails. For more
-         * information, see <a
+         * permissions. </p> <p>You can specify a number of options, or leave the default
+         * options. The following rules apply:</p> <ul> <li> <p>[EC2-VPC] If you don't
+         * specify a subnet ID, we choose a default subnet from your default VPC for you.
+         * If you don't have a default VPC, you must specify a subnet ID in the
+         * request.</p> </li> <li> <p>[EC2-Classic] If don't specify an Availability Zone,
+         * we choose one for you.</p> </li> <li> <p>Some instance types must be launched
+         * into a VPC. If you do not have a default VPC, or if you do not specify a subnet
+         * ID, the request fails. For more information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-vpc.html#vpc-only-instance-types">Instance
-         * Types Available Only in a VPC</a>.</p> <p>For more information about
+         * Types Available Only in a VPC</a>.</p> </li> <li> <p>[EC2-VPC] All instances
+         * have a network interface with a primary private IPv4 address. If you don't
+         * specify this address, we choose one from the IPv4 range of your subnet.</p>
+         * </li> <li> <p>Not all instance types support IPv6 addresses. For more
+         * information, see <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2
+         * Instance Types</a>.</p> </li> <li> <p>If you don't specify a security group ID,
+         * we use the default security group. For more information, see <a
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Security
+         * Groups</a>.</p> </li> <li> <p>If any of the AMIs have a product code attached
+         * for which the user has not subscribed, the request fails.</p> </li> </ul> <p>To
+         * ensure faster instance launches, break up large requests into smaller batches.
+         * For example, create 5 separate launch requests for 100 instances each instead of
+         * 1 launch request for 500 instances.</p> <p>An instance is ready for you to use
+         * when it's in the <code>running</code> state. You can check the state of your
+         * instance using <a>DescribeInstances</a>. After launch, you can apply tags to
+         * your running instance (requires a resource ID). For more information, see
+         * <a>CreateTags</a> and <a
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
+         * Your Amazon EC2 Resources</a>.</p> <p>Linux instances have access to the public
+         * key of the key pair at boot. You can use this key to provide secure access to
+         * the instance. Amazon EC2 public images use this feature to provide secure access
+         * without passwords. For more information, see <a
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Key
+         * Pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>For
          * troubleshooting, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_InstanceStraightToTerminated.html">What
          * To Do If An Instance Immediately Terminates</a>, and <a
@@ -8833,41 +9104,39 @@ namespace Model
 
         /**
          * <p>Launches the specified number of instances using an AMI for which you have
-         * permissions.</p> <p>When you launch an instance, it enters the
-         * <code>pending</code> state. After the instance is ready for you, it enters the
-         * <code>running</code> state. To check the state of your instance, call
-         * <a>DescribeInstances</a>.</p> <p>To ensure faster instance launches, break up
-         * large requests into smaller batches. For example, create five separate launch
-         * requests for 100 instances each instead of one launch request for 500
-         * instances.</p> <p>To tag your instance, ensure that it is <code>running</code>
-         * as <a>CreateTags</a> requires a resource ID. For more information about tagging,
-         * see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
-         * Your Amazon EC2 Resources</a>.</p> <p>If you don't specify a security group when
-         * launching an instance, Amazon EC2 uses the default security group. For more
-         * information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Security
-         * Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-         * <p>[EC2-VPC only accounts] If you don't specify a subnet in the request, we
-         * choose a default subnet from your default VPC for you.</p> <p>[EC2-Classic
-         * accounts] If you're launching into EC2-Classic and you don't specify an
-         * Availability Zone, we choose one for you.</p> <p>Linux instances have access to
-         * the public key of the key pair at boot. You can use this key to provide secure
-         * access to the instance. Amazon EC2 public images use this feature to provide
-         * secure access without passwords. For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Key
-         * Pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>You can
-         * provide optional user data when launching an instance. For more information, see
-         * <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html">Instance
-         * Metadata</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>If
-         * any of the AMIs have a product code attached for which the user has not
-         * subscribed, <code>RunInstances</code> fails.</p> <p>Some instance types can only
-         * be launched into a VPC. If you do not have a default VPC, or if you do not
-         * specify a subnet ID in the request, <code>RunInstances</code> fails. For more
-         * information, see <a
+         * permissions. </p> <p>You can specify a number of options, or leave the default
+         * options. The following rules apply:</p> <ul> <li> <p>[EC2-VPC] If you don't
+         * specify a subnet ID, we choose a default subnet from your default VPC for you.
+         * If you don't have a default VPC, you must specify a subnet ID in the
+         * request.</p> </li> <li> <p>[EC2-Classic] If don't specify an Availability Zone,
+         * we choose one for you.</p> </li> <li> <p>Some instance types must be launched
+         * into a VPC. If you do not have a default VPC, or if you do not specify a subnet
+         * ID, the request fails. For more information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-vpc.html#vpc-only-instance-types">Instance
-         * Types Available Only in a VPC</a>.</p> <p>For more information about
+         * Types Available Only in a VPC</a>.</p> </li> <li> <p>[EC2-VPC] All instances
+         * have a network interface with a primary private IPv4 address. If you don't
+         * specify this address, we choose one from the IPv4 range of your subnet.</p>
+         * </li> <li> <p>Not all instance types support IPv6 addresses. For more
+         * information, see <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2
+         * Instance Types</a>.</p> </li> <li> <p>If you don't specify a security group ID,
+         * we use the default security group. For more information, see <a
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Security
+         * Groups</a>.</p> </li> <li> <p>If any of the AMIs have a product code attached
+         * for which the user has not subscribed, the request fails.</p> </li> </ul> <p>To
+         * ensure faster instance launches, break up large requests into smaller batches.
+         * For example, create 5 separate launch requests for 100 instances each instead of
+         * 1 launch request for 500 instances.</p> <p>An instance is ready for you to use
+         * when it's in the <code>running</code> state. You can check the state of your
+         * instance using <a>DescribeInstances</a>. After launch, you can apply tags to
+         * your running instance (requires a resource ID). For more information, see
+         * <a>CreateTags</a> and <a
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
+         * Your Amazon EC2 Resources</a>.</p> <p>Linux instances have access to the public
+         * key of the key pair at boot. You can use this key to provide secure access to
+         * the instance. Amazon EC2 public images use this feature to provide secure access
+         * without passwords. For more information, see <a
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Key
+         * Pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>For
          * troubleshooting, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_InstanceStraightToTerminated.html">What
          * To Do If An Instance Immediately Terminates</a>, and <a
@@ -9151,6 +9420,25 @@ namespace Model
         virtual void TerminateInstancesAsync(const Model::TerminateInstancesRequest& request, const TerminateInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Unassigns one or more IPv6 addresses from a network interface.</p>
+         */
+        virtual Model::UnassignIpv6AddressesOutcome UnassignIpv6Addresses(const Model::UnassignIpv6AddressesRequest& request) const;
+
+        /**
+         * <p>Unassigns one or more IPv6 addresses from a network interface.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UnassignIpv6AddressesOutcomeCallable UnassignIpv6AddressesCallable(const Model::UnassignIpv6AddressesRequest& request) const;
+
+        /**
+         * <p>Unassigns one or more IPv6 addresses from a network interface.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UnassignIpv6AddressesAsync(const Model::UnassignIpv6AddressesRequest& request, const UnassignIpv6AddressesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Unassigns one or more secondary private IP addresses from a network
          * interface.</p>
          */
@@ -9173,8 +9461,8 @@ namespace Model
         virtual void UnassignPrivateIpAddressesAsync(const Model::UnassignPrivateIpAddressesRequest& request, const UnassignPrivateIpAddressesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Disables monitoring for a running instance. For more information about
-         * monitoring instances, see <a
+         * <p>Disables detailed monitoring for a running instance. For more information,
+         * see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html">Monitoring
          * Your Instances and Volumes</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p>
@@ -9182,8 +9470,8 @@ namespace Model
         virtual Model::UnmonitorInstancesOutcome UnmonitorInstances(const Model::UnmonitorInstancesRequest& request) const;
 
         /**
-         * <p>Disables monitoring for a running instance. For more information about
-         * monitoring instances, see <a
+         * <p>Disables detailed monitoring for a running instance. For more information,
+         * see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html">Monitoring
          * Your Instances and Volumes</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p>
@@ -9193,8 +9481,8 @@ namespace Model
         virtual Model::UnmonitorInstancesOutcomeCallable UnmonitorInstancesCallable(const Model::UnmonitorInstancesRequest& request) const;
 
         /**
-         * <p>Disables monitoring for a running instance. For more information about
-         * monitoring instances, see <a
+         * <p>Disables detailed monitoring for a running instance. For more information,
+         * see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html">Monitoring
          * Your Instances and Volumes</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p>
@@ -9212,10 +9500,13 @@ namespace Model
         void AcceptVpcPeeringConnectionAsyncHelper(const Model::AcceptVpcPeeringConnectionRequest& request, const AcceptVpcPeeringConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AllocateAddressAsyncHelper(const Model::AllocateAddressRequest& request, const AllocateAddressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AllocateHostsAsyncHelper(const Model::AllocateHostsRequest& request, const AllocateHostsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void AssignIpv6AddressesAsyncHelper(const Model::AssignIpv6AddressesRequest& request, const AssignIpv6AddressesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AssignPrivateIpAddressesAsyncHelper(const Model::AssignPrivateIpAddressesRequest& request, const AssignPrivateIpAddressesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AssociateAddressAsyncHelper(const Model::AssociateAddressRequest& request, const AssociateAddressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AssociateDhcpOptionsAsyncHelper(const Model::AssociateDhcpOptionsRequest& request, const AssociateDhcpOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AssociateRouteTableAsyncHelper(const Model::AssociateRouteTableRequest& request, const AssociateRouteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void AssociateSubnetCidrBlockAsyncHelper(const Model::AssociateSubnetCidrBlockRequest& request, const AssociateSubnetCidrBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void AssociateVpcCidrBlockAsyncHelper(const Model::AssociateVpcCidrBlockRequest& request, const AssociateVpcCidrBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AttachClassicLinkVpcAsyncHelper(const Model::AttachClassicLinkVpcRequest& request, const AttachClassicLinkVpcResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AttachInternetGatewayAsyncHelper(const Model::AttachInternetGatewayRequest& request, const AttachInternetGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AttachNetworkInterfaceAsyncHelper(const Model::AttachNetworkInterfaceRequest& request, const AttachNetworkInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -9236,6 +9527,7 @@ namespace Model
         void CopySnapshotAsyncHelper(const Model::CopySnapshotRequest& request, const CopySnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateCustomerGatewayAsyncHelper(const Model::CreateCustomerGatewayRequest& request, const CreateCustomerGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateDhcpOptionsAsyncHelper(const Model::CreateDhcpOptionsRequest& request, const CreateDhcpOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateEgressOnlyInternetGatewayAsyncHelper(const Model::CreateEgressOnlyInternetGatewayRequest& request, const CreateEgressOnlyInternetGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateFlowLogsAsyncHelper(const Model::CreateFlowLogsRequest& request, const CreateFlowLogsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateImageAsyncHelper(const Model::CreateImageRequest& request, const CreateImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateInstanceExportTaskAsyncHelper(const Model::CreateInstanceExportTaskRequest& request, const CreateInstanceExportTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -9263,6 +9555,7 @@ namespace Model
         void CreateVpnGatewayAsyncHelper(const Model::CreateVpnGatewayRequest& request, const CreateVpnGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteCustomerGatewayAsyncHelper(const Model::DeleteCustomerGatewayRequest& request, const DeleteCustomerGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteDhcpOptionsAsyncHelper(const Model::DeleteDhcpOptionsRequest& request, const DeleteDhcpOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteEgressOnlyInternetGatewayAsyncHelper(const Model::DeleteEgressOnlyInternetGatewayRequest& request, const DeleteEgressOnlyInternetGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteFlowLogsAsyncHelper(const Model::DeleteFlowLogsRequest& request, const DeleteFlowLogsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteInternetGatewayAsyncHelper(const Model::DeleteInternetGatewayRequest& request, const DeleteInternetGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteKeyPairAsyncHelper(const Model::DeleteKeyPairRequest& request, const DeleteKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -9294,6 +9587,7 @@ namespace Model
         void DescribeConversionTasksAsyncHelper(const Model::DescribeConversionTasksRequest& request, const DescribeConversionTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeCustomerGatewaysAsyncHelper(const Model::DescribeCustomerGatewaysRequest& request, const DescribeCustomerGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeDhcpOptionsAsyncHelper(const Model::DescribeDhcpOptionsRequest& request, const DescribeDhcpOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeEgressOnlyInternetGatewaysAsyncHelper(const Model::DescribeEgressOnlyInternetGatewaysRequest& request, const DescribeEgressOnlyInternetGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeExportTasksAsyncHelper(const Model::DescribeExportTasksRequest& request, const DescribeExportTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeFlowLogsAsyncHelper(const Model::DescribeFlowLogsRequest& request, const DescribeFlowLogsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeHostReservationOfferingsAsyncHelper(const Model::DescribeHostReservationOfferingsRequest& request, const DescribeHostReservationOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -9360,6 +9654,8 @@ namespace Model
         void DisableVpcClassicLinkDnsSupportAsyncHelper(const Model::DisableVpcClassicLinkDnsSupportRequest& request, const DisableVpcClassicLinkDnsSupportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateAddressAsyncHelper(const Model::DisassociateAddressRequest& request, const DisassociateAddressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateRouteTableAsyncHelper(const Model::DisassociateRouteTableRequest& request, const DisassociateRouteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DisassociateSubnetCidrBlockAsyncHelper(const Model::DisassociateSubnetCidrBlockRequest& request, const DisassociateSubnetCidrBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DisassociateVpcCidrBlockAsyncHelper(const Model::DisassociateVpcCidrBlockRequest& request, const DisassociateVpcCidrBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void EnableVgwRoutePropagationAsyncHelper(const Model::EnableVgwRoutePropagationRequest& request, const EnableVgwRoutePropagationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void EnableVolumeIOAsyncHelper(const Model::EnableVolumeIORequest& request, const EnableVolumeIOResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void EnableVpcClassicLinkAsyncHelper(const Model::EnableVpcClassicLinkRequest& request, const EnableVpcClassicLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -9418,6 +9714,7 @@ namespace Model
         void StartInstancesAsyncHelper(const Model::StartInstancesRequest& request, const StartInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopInstancesAsyncHelper(const Model::StopInstancesRequest& request, const StopInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TerminateInstancesAsyncHelper(const Model::TerminateInstancesRequest& request, const TerminateInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UnassignIpv6AddressesAsyncHelper(const Model::UnassignIpv6AddressesRequest& request, const UnassignIpv6AddressesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UnassignPrivateIpAddressesAsyncHelper(const Model::UnassignPrivateIpAddressesRequest& request, const UnassignPrivateIpAddressesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UnmonitorInstancesAsyncHelper(const Model::UnmonitorInstancesRequest& request, const UnmonitorInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 

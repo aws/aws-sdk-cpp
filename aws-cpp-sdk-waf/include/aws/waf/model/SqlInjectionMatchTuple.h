@@ -44,19 +44,34 @@ namespace Model
     SqlInjectionMatchTuple& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
-    
+    /**
+     * <p>Specifies where in a web request to look for snippets of malicious SQL
+     * code.</p>
+     */
     inline const FieldToMatch& GetFieldToMatch() const{ return m_fieldToMatch; }
 
-    
+    /**
+     * <p>Specifies where in a web request to look for snippets of malicious SQL
+     * code.</p>
+     */
     inline void SetFieldToMatch(const FieldToMatch& value) { m_fieldToMatchHasBeenSet = true; m_fieldToMatch = value; }
 
-    
+    /**
+     * <p>Specifies where in a web request to look for snippets of malicious SQL
+     * code.</p>
+     */
     inline void SetFieldToMatch(FieldToMatch&& value) { m_fieldToMatchHasBeenSet = true; m_fieldToMatch = value; }
 
-    
+    /**
+     * <p>Specifies where in a web request to look for snippets of malicious SQL
+     * code.</p>
+     */
     inline SqlInjectionMatchTuple& WithFieldToMatch(const FieldToMatch& value) { SetFieldToMatch(value); return *this;}
 
-    
+    /**
+     * <p>Specifies where in a web request to look for snippets of malicious SQL
+     * code.</p>
+     */
     inline SqlInjectionMatchTuple& WithFieldToMatch(FieldToMatch&& value) { SetFieldToMatch(value); return *this;}
 
     /**

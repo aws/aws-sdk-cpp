@@ -60,7 +60,7 @@ Aws::String RunScheduledInstancesRequest::SerializePayload() const
     m_launchSpecification.OutputToStream(ss, "LaunchSpecification");
   }
 
-  ss << "Version=2016-09-15";
+  ss << "Version=2016-11-15";
   return ss.str();
 }
 

@@ -33,7 +33,8 @@ namespace Model
 {
 
   /**
-   * <p>Describes the attachment of a VPC to an Internet gateway.</p>
+   * <p>Describes the attachment of a VPC to an Internet gateway or an egress-only
+   * Internet gateway.</p>
    */
   class AWS_EC2_API InternetGatewayAttachment
   {

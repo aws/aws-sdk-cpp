@@ -154,6 +154,48 @@ namespace Model
     inline ApiKey& WithName(const char* value) { SetName(value); return *this;}
 
     /**
+     * <p>An AWS Marketplace customer identifier , when integrating with the AWS SaaS
+     * Marketplace.</p>
+     */
+    inline const Aws::String& GetCustomerId() const{ return m_customerId; }
+
+    /**
+     * <p>An AWS Marketplace customer identifier , when integrating with the AWS SaaS
+     * Marketplace.</p>
+     */
+    inline void SetCustomerId(const Aws::String& value) { m_customerIdHasBeenSet = true; m_customerId = value; }
+
+    /**
+     * <p>An AWS Marketplace customer identifier , when integrating with the AWS SaaS
+     * Marketplace.</p>
+     */
+    inline void SetCustomerId(Aws::String&& value) { m_customerIdHasBeenSet = true; m_customerId = value; }
+
+    /**
+     * <p>An AWS Marketplace customer identifier , when integrating with the AWS SaaS
+     * Marketplace.</p>
+     */
+    inline void SetCustomerId(const char* value) { m_customerIdHasBeenSet = true; m_customerId.assign(value); }
+
+    /**
+     * <p>An AWS Marketplace customer identifier , when integrating with the AWS SaaS
+     * Marketplace.</p>
+     */
+    inline ApiKey& WithCustomerId(const Aws::String& value) { SetCustomerId(value); return *this;}
+
+    /**
+     * <p>An AWS Marketplace customer identifier , when integrating with the AWS SaaS
+     * Marketplace.</p>
+     */
+    inline ApiKey& WithCustomerId(Aws::String&& value) { SetCustomerId(value); return *this;}
+
+    /**
+     * <p>An AWS Marketplace customer identifier , when integrating with the AWS SaaS
+     * Marketplace.</p>
+     */
+    inline ApiKey& WithCustomerId(const char* value) { SetCustomerId(value); return *this;}
+
+    /**
      * <p>The description of the API Key.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
@@ -318,6 +360,8 @@ namespace Model
     bool m_valueHasBeenSet;
     Aws::String m_name;
     bool m_nameHasBeenSet;
+    Aws::String m_customerId;
+    bool m_customerIdHasBeenSet;
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
     bool m_enabled;

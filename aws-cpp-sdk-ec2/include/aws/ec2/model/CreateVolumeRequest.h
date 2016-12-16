@@ -214,7 +214,7 @@ namespace Model
 
     /**
      * <p>Only valid for Provisioned IOPS SSD volumes. The number of I/O operations per
-     * second (IOPS) to provision for the volume, with a maximum ratio of 30
+     * second (IOPS) to provision for the volume, with a maximum ratio of 50
      * IOPS/GiB.</p> <p>Constraint: Range is 100 to 20000 for Provisioned IOPS SSD
      * volumes </p>
      */
@@ -222,7 +222,7 @@ namespace Model
 
     /**
      * <p>Only valid for Provisioned IOPS SSD volumes. The number of I/O operations per
-     * second (IOPS) to provision for the volume, with a maximum ratio of 30
+     * second (IOPS) to provision for the volume, with a maximum ratio of 50
      * IOPS/GiB.</p> <p>Constraint: Range is 100 to 20000 for Provisioned IOPS SSD
      * volumes </p>
      */
@@ -230,7 +230,7 @@ namespace Model
 
     /**
      * <p>Only valid for Provisioned IOPS SSD volumes. The number of I/O operations per
-     * second (IOPS) to provision for the volume, with a maximum ratio of 30
+     * second (IOPS) to provision for the volume, with a maximum ratio of 50
      * IOPS/GiB.</p> <p>Constraint: Range is 100 to 20000 for Provisioned IOPS SSD
      * volumes </p>
      */

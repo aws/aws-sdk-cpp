@@ -47,6 +47,7 @@
 #include <aws/dms/model/ModifyEndpointResult.h>
 #include <aws/dms/model/ModifyReplicationInstanceResult.h>
 #include <aws/dms/model/ModifyReplicationSubnetGroupResult.h>
+#include <aws/dms/model/ModifyReplicationTaskResult.h>
 #include <aws/dms/model/RefreshSchemasResult.h>
 #include <aws/dms/model/RemoveTagsFromResourceResult.h>
 #include <aws/dms/model/StartReplicationTaskResult.h>
@@ -124,6 +125,7 @@ namespace Model
         class ModifyEndpointRequest;
         class ModifyReplicationInstanceRequest;
         class ModifyReplicationSubnetGroupRequest;
+        class ModifyReplicationTaskRequest;
         class RefreshSchemasRequest;
         class RemoveTagsFromResourceRequest;
         class StartReplicationTaskRequest;
@@ -157,6 +159,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ModifyEndpointResult, Aws::Client::AWSError<DatabaseMigrationServiceErrors>> ModifyEndpointOutcome;
         typedef Aws::Utils::Outcome<ModifyReplicationInstanceResult, Aws::Client::AWSError<DatabaseMigrationServiceErrors>> ModifyReplicationInstanceOutcome;
         typedef Aws::Utils::Outcome<ModifyReplicationSubnetGroupResult, Aws::Client::AWSError<DatabaseMigrationServiceErrors>> ModifyReplicationSubnetGroupOutcome;
+        typedef Aws::Utils::Outcome<ModifyReplicationTaskResult, Aws::Client::AWSError<DatabaseMigrationServiceErrors>> ModifyReplicationTaskOutcome;
         typedef Aws::Utils::Outcome<RefreshSchemasResult, Aws::Client::AWSError<DatabaseMigrationServiceErrors>> RefreshSchemasOutcome;
         typedef Aws::Utils::Outcome<RemoveTagsFromResourceResult, Aws::Client::AWSError<DatabaseMigrationServiceErrors>> RemoveTagsFromResourceOutcome;
         typedef Aws::Utils::Outcome<StartReplicationTaskResult, Aws::Client::AWSError<DatabaseMigrationServiceErrors>> StartReplicationTaskOutcome;
@@ -190,6 +193,7 @@ namespace Model
         typedef std::future<ModifyEndpointOutcome> ModifyEndpointOutcomeCallable;
         typedef std::future<ModifyReplicationInstanceOutcome> ModifyReplicationInstanceOutcomeCallable;
         typedef std::future<ModifyReplicationSubnetGroupOutcome> ModifyReplicationSubnetGroupOutcomeCallable;
+        typedef std::future<ModifyReplicationTaskOutcome> ModifyReplicationTaskOutcomeCallable;
         typedef std::future<RefreshSchemasOutcome> RefreshSchemasOutcomeCallable;
         typedef std::future<RemoveTagsFromResourceOutcome> RemoveTagsFromResourceOutcomeCallable;
         typedef std::future<StartReplicationTaskOutcome> StartReplicationTaskOutcomeCallable;
@@ -226,6 +230,7 @@ namespace Model
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::ModifyEndpointRequest&, const Model::ModifyEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyEndpointResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::ModifyReplicationInstanceRequest&, const Model::ModifyReplicationInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyReplicationInstanceResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::ModifyReplicationSubnetGroupRequest&, const Model::ModifyReplicationSubnetGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyReplicationSubnetGroupResponseReceivedHandler;
+    typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::ModifyReplicationTaskRequest&, const Model::ModifyReplicationTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyReplicationTaskResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::RefreshSchemasRequest&, const Model::RefreshSchemasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RefreshSchemasResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::RemoveTagsFromResourceRequest&, const Model::RemoveTagsFromResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveTagsFromResourceResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::StartReplicationTaskRequest&, const Model::StartReplicationTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartReplicationTaskResponseReceivedHandler;
@@ -236,10 +241,10 @@ namespace Model
    * <fullname>AWS Database Migration Service</fullname> <p>AWS Database Migration
    * Service (AWS DMS) can migrate your data to and from the most widely used
    * commercial and open-source databases such as Oracle, PostgreSQL, Microsoft SQL
-   * Server, Amazon Redshift, MariaDB, Amazon Aurora, and MySQL. The service supports
-   * homogeneous migrations such as Oracle to Oracle, as well as heterogeneous
-   * migrations between different database platforms, such as Oracle to MySQL or SQL
-   * Server to PostgreSQL.</p>
+   * Server, Amazon Redshift, MariaDB, Amazon Aurora, MySQL, and SAP Adaptive Server
+   * Enterprise (ASE). The service supports homogeneous migrations such as Oracle to
+   * Oracle, as well as heterogeneous migrations between different database
+   * platforms, such as Oracle to MySQL or SQL Server to PostgreSQL.</p>
    */
   class AWS_DATABASEMIGRATIONSERVICE_API DatabaseMigrationServiceClient : public Aws::Client::AWSJsonClient
   {
@@ -844,6 +849,28 @@ namespace Model
         virtual void ModifyReplicationSubnetGroupAsync(const Model::ModifyReplicationSubnetGroupRequest& request, const ModifyReplicationSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Modifies the specified replication task.</p> <p>You can't modify the task
+         * endpoints. The task must be stopped before you can modify it. </p>
+         */
+        virtual Model::ModifyReplicationTaskOutcome ModifyReplicationTask(const Model::ModifyReplicationTaskRequest& request) const;
+
+        /**
+         * <p>Modifies the specified replication task.</p> <p>You can't modify the task
+         * endpoints. The task must be stopped before you can modify it. </p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ModifyReplicationTaskOutcomeCallable ModifyReplicationTaskCallable(const Model::ModifyReplicationTaskRequest& request) const;
+
+        /**
+         * <p>Modifies the specified replication task.</p> <p>You can't modify the task
+         * endpoints. The task must be stopped before you can modify it. </p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ModifyReplicationTaskAsync(const Model::ModifyReplicationTaskRequest& request, const ModifyReplicationTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Populates the schema for the specified endpoint. This is an asynchronous
          * operation and can take several minutes. You can check the status of this
          * operation by calling the DescribeRefreshSchemasStatus operation.</p>
@@ -976,6 +1003,7 @@ namespace Model
         void ModifyEndpointAsyncHelper(const Model::ModifyEndpointRequest& request, const ModifyEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyReplicationInstanceAsyncHelper(const Model::ModifyReplicationInstanceRequest& request, const ModifyReplicationInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyReplicationSubnetGroupAsyncHelper(const Model::ModifyReplicationSubnetGroupRequest& request, const ModifyReplicationSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ModifyReplicationTaskAsyncHelper(const Model::ModifyReplicationTaskRequest& request, const ModifyReplicationTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RefreshSchemasAsyncHelper(const Model::RefreshSchemasRequest& request, const RefreshSchemasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RemoveTagsFromResourceAsyncHelper(const Model::RemoveTagsFromResourceRequest& request, const RemoveTagsFromResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartReplicationTaskAsyncHelper(const Model::StartReplicationTaskRequest& request, const StartReplicationTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

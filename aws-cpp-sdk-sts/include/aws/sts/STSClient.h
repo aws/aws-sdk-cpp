@@ -705,7 +705,7 @@ namespace Model
          * how to use web identity federation and the
          * <code>AssumeRoleWithWebIdentity</code> API, see the following resources: </p>
          * <ul> <li> <p> <a
-         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_oidc_manual">Using
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_oidc_manual.html">Using
          * Web Identity Federation APIs for Mobile Apps</a> and <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_assumerolewithwebidentity">Federation
          * Through a Web-based Identity Provider</a>. </p> </li> <li> <p> <a
@@ -793,7 +793,7 @@ namespace Model
          * how to use web identity federation and the
          * <code>AssumeRoleWithWebIdentity</code> API, see the following resources: </p>
          * <ul> <li> <p> <a
-         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_oidc_manual">Using
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_oidc_manual.html">Using
          * Web Identity Federation APIs for Mobile Apps</a> and <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_assumerolewithwebidentity">Federation
          * Through a Web-based Identity Provider</a>. </p> </li> <li> <p> <a
@@ -883,7 +883,7 @@ namespace Model
          * how to use web identity federation and the
          * <code>AssumeRoleWithWebIdentity</code> API, see the following resources: </p>
          * <ul> <li> <p> <a
-         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_oidc_manual">Using
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_oidc_manual.html">Using
          * Web Identity Federation APIs for Mobile Apps</a> and <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_assumerolewithwebidentity">Federation
          * Through a Web-based Identity Provider</a>. </p> </li> <li> <p> <a
@@ -1029,7 +1029,7 @@ namespace Model
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html">Requesting
          * Temporary Security Credentials</a> and <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#stsapi_comparison">Comparing
-         * the AWS STS APIs</a> in the <i>IAM User Guide</i>.</p> <note> <p> If you are
+         * the AWS STS APIs</a> in the <i>IAM User Guide</i>.</p> <note> <p>If you are
          * creating a mobile-based or browser-based app that can authenticate users using a
          * web identity provider like Login with Amazon, Facebook, Google, or an OpenID
          * Connect-compatible identity provider, we recommend that you use <a
@@ -1054,32 +1054,33 @@ namespace Model
          * credentials created by <code>GetFederationToken</code> can be used to make API
          * calls to any AWS service with the following exceptions:</p> <ul> <li> <p>You
          * cannot use these credentials to call any IAM APIs.</p> </li> <li> <p>You cannot
-         * call any STS APIs.</p> </li> </ul> <p> <b>Permissions</b> </p> <p>The
-         * permissions for the temporary security credentials returned by
-         * <code>GetFederationToken</code> are determined by a combination of the
-         * following: </p> <ul> <li> <p>The policy or policies that are attached to the IAM
-         * user whose credentials are used to call <code>GetFederationToken</code>.</p>
-         * </li> <li> <p>The policy that is passed as a parameter in the call.</p> </li>
-         * </ul> <p>The passed policy is attached to the temporary security credentials
-         * that result from the <code>GetFederationToken</code> API call--that is, to the
-         * <i>federated user</i>. When the federated user makes an AWS request, AWS
-         * evaluates the policy attached to the federated user in combination with the
-         * policy or policies attached to the IAM user whose credentials were used to call
-         * <code>GetFederationToken</code>. AWS allows the federated user's request only
-         * when both the federated user <i> <b>and</b> </i> the IAM user are explicitly
-         * allowed to perform the requested action. The passed policy cannot grant more
-         * permissions than those that are defined in the IAM user policy.</p> <p>A typical
-         * use case is that the permissions of the IAM user whose credentials are used to
-         * call <code>GetFederationToken</code> are designed to allow access to all the
-         * actions and resources that any federated user will need. Then, for individual
-         * users, you pass a policy to the operation that scopes down the permissions to a
-         * level that's appropriate to that individual user, using a policy that allows
-         * only a subset of permissions that are granted to the IAM user. </p> <p>If you do
-         * not pass a policy, the resulting temporary security credentials have no
-         * effective permissions. The only exception is when the temporary security
-         * credentials are used to access a resource that has a resource-based policy that
-         * specifically allows the federated user to access the resource.</p> <p>For more
-         * information about how permissions work, see <a
+         * call any STS APIs except <code>GetCallerIdentity</code>.</p> </li> </ul> <p>
+         * <b>Permissions</b> </p> <p>The permissions for the temporary security
+         * credentials returned by <code>GetFederationToken</code> are determined by a
+         * combination of the following: </p> <ul> <li> <p>The policy or policies that are
+         * attached to the IAM user whose credentials are used to call
+         * <code>GetFederationToken</code>.</p> </li> <li> <p>The policy that is passed as
+         * a parameter in the call.</p> </li> </ul> <p>The passed policy is attached to the
+         * temporary security credentials that result from the
+         * <code>GetFederationToken</code> API call--that is, to the <i>federated user</i>.
+         * When the federated user makes an AWS request, AWS evaluates the policy attached
+         * to the federated user in combination with the policy or policies attached to the
+         * IAM user whose credentials were used to call <code>GetFederationToken</code>.
+         * AWS allows the federated user's request only when both the federated user <i>
+         * <b>and</b> </i> the IAM user are explicitly allowed to perform the requested
+         * action. The passed policy cannot grant more permissions than those that are
+         * defined in the IAM user policy.</p> <p>A typical use case is that the
+         * permissions of the IAM user whose credentials are used to call
+         * <code>GetFederationToken</code> are designed to allow access to all the actions
+         * and resources that any federated user will need. Then, for individual users, you
+         * pass a policy to the operation that scopes down the permissions to a level
+         * that's appropriate to that individual user, using a policy that allows only a
+         * subset of permissions that are granted to the IAM user. </p> <p>If you do not
+         * pass a policy, the resulting temporary security credentials have no effective
+         * permissions. The only exception is when the temporary security credentials are
+         * used to access a resource that has a resource-based policy that specifically
+         * allows the federated user to access the resource.</p> <p>For more information
+         * about how permissions work, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_getfederationtoken.html">Permissions
          * for GetFederationToken</a>. For information about using
          * <code>GetFederationToken</code> to create temporary security credentials, see <a
@@ -1101,7 +1102,7 @@ namespace Model
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html">Requesting
          * Temporary Security Credentials</a> and <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#stsapi_comparison">Comparing
-         * the AWS STS APIs</a> in the <i>IAM User Guide</i>.</p> <note> <p> If you are
+         * the AWS STS APIs</a> in the <i>IAM User Guide</i>.</p> <note> <p>If you are
          * creating a mobile-based or browser-based app that can authenticate users using a
          * web identity provider like Login with Amazon, Facebook, Google, or an OpenID
          * Connect-compatible identity provider, we recommend that you use <a
@@ -1126,32 +1127,33 @@ namespace Model
          * credentials created by <code>GetFederationToken</code> can be used to make API
          * calls to any AWS service with the following exceptions:</p> <ul> <li> <p>You
          * cannot use these credentials to call any IAM APIs.</p> </li> <li> <p>You cannot
-         * call any STS APIs.</p> </li> </ul> <p> <b>Permissions</b> </p> <p>The
-         * permissions for the temporary security credentials returned by
-         * <code>GetFederationToken</code> are determined by a combination of the
-         * following: </p> <ul> <li> <p>The policy or policies that are attached to the IAM
-         * user whose credentials are used to call <code>GetFederationToken</code>.</p>
-         * </li> <li> <p>The policy that is passed as a parameter in the call.</p> </li>
-         * </ul> <p>The passed policy is attached to the temporary security credentials
-         * that result from the <code>GetFederationToken</code> API call--that is, to the
-         * <i>federated user</i>. When the federated user makes an AWS request, AWS
-         * evaluates the policy attached to the federated user in combination with the
-         * policy or policies attached to the IAM user whose credentials were used to call
-         * <code>GetFederationToken</code>. AWS allows the federated user's request only
-         * when both the federated user <i> <b>and</b> </i> the IAM user are explicitly
-         * allowed to perform the requested action. The passed policy cannot grant more
-         * permissions than those that are defined in the IAM user policy.</p> <p>A typical
-         * use case is that the permissions of the IAM user whose credentials are used to
-         * call <code>GetFederationToken</code> are designed to allow access to all the
-         * actions and resources that any federated user will need. Then, for individual
-         * users, you pass a policy to the operation that scopes down the permissions to a
-         * level that's appropriate to that individual user, using a policy that allows
-         * only a subset of permissions that are granted to the IAM user. </p> <p>If you do
-         * not pass a policy, the resulting temporary security credentials have no
-         * effective permissions. The only exception is when the temporary security
-         * credentials are used to access a resource that has a resource-based policy that
-         * specifically allows the federated user to access the resource.</p> <p>For more
-         * information about how permissions work, see <a
+         * call any STS APIs except <code>GetCallerIdentity</code>.</p> </li> </ul> <p>
+         * <b>Permissions</b> </p> <p>The permissions for the temporary security
+         * credentials returned by <code>GetFederationToken</code> are determined by a
+         * combination of the following: </p> <ul> <li> <p>The policy or policies that are
+         * attached to the IAM user whose credentials are used to call
+         * <code>GetFederationToken</code>.</p> </li> <li> <p>The policy that is passed as
+         * a parameter in the call.</p> </li> </ul> <p>The passed policy is attached to the
+         * temporary security credentials that result from the
+         * <code>GetFederationToken</code> API call--that is, to the <i>federated user</i>.
+         * When the federated user makes an AWS request, AWS evaluates the policy attached
+         * to the federated user in combination with the policy or policies attached to the
+         * IAM user whose credentials were used to call <code>GetFederationToken</code>.
+         * AWS allows the federated user's request only when both the federated user <i>
+         * <b>and</b> </i> the IAM user are explicitly allowed to perform the requested
+         * action. The passed policy cannot grant more permissions than those that are
+         * defined in the IAM user policy.</p> <p>A typical use case is that the
+         * permissions of the IAM user whose credentials are used to call
+         * <code>GetFederationToken</code> are designed to allow access to all the actions
+         * and resources that any federated user will need. Then, for individual users, you
+         * pass a policy to the operation that scopes down the permissions to a level
+         * that's appropriate to that individual user, using a policy that allows only a
+         * subset of permissions that are granted to the IAM user. </p> <p>If you do not
+         * pass a policy, the resulting temporary security credentials have no effective
+         * permissions. The only exception is when the temporary security credentials are
+         * used to access a resource that has a resource-based policy that specifically
+         * allows the federated user to access the resource.</p> <p>For more information
+         * about how permissions work, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_getfederationtoken.html">Permissions
          * for GetFederationToken</a>. For information about using
          * <code>GetFederationToken</code> to create temporary security credentials, see <a
@@ -1175,7 +1177,7 @@ namespace Model
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html">Requesting
          * Temporary Security Credentials</a> and <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#stsapi_comparison">Comparing
-         * the AWS STS APIs</a> in the <i>IAM User Guide</i>.</p> <note> <p> If you are
+         * the AWS STS APIs</a> in the <i>IAM User Guide</i>.</p> <note> <p>If you are
          * creating a mobile-based or browser-based app that can authenticate users using a
          * web identity provider like Login with Amazon, Facebook, Google, or an OpenID
          * Connect-compatible identity provider, we recommend that you use <a
@@ -1200,32 +1202,33 @@ namespace Model
          * credentials created by <code>GetFederationToken</code> can be used to make API
          * calls to any AWS service with the following exceptions:</p> <ul> <li> <p>You
          * cannot use these credentials to call any IAM APIs.</p> </li> <li> <p>You cannot
-         * call any STS APIs.</p> </li> </ul> <p> <b>Permissions</b> </p> <p>The
-         * permissions for the temporary security credentials returned by
-         * <code>GetFederationToken</code> are determined by a combination of the
-         * following: </p> <ul> <li> <p>The policy or policies that are attached to the IAM
-         * user whose credentials are used to call <code>GetFederationToken</code>.</p>
-         * </li> <li> <p>The policy that is passed as a parameter in the call.</p> </li>
-         * </ul> <p>The passed policy is attached to the temporary security credentials
-         * that result from the <code>GetFederationToken</code> API call--that is, to the
-         * <i>federated user</i>. When the federated user makes an AWS request, AWS
-         * evaluates the policy attached to the federated user in combination with the
-         * policy or policies attached to the IAM user whose credentials were used to call
-         * <code>GetFederationToken</code>. AWS allows the federated user's request only
-         * when both the federated user <i> <b>and</b> </i> the IAM user are explicitly
-         * allowed to perform the requested action. The passed policy cannot grant more
-         * permissions than those that are defined in the IAM user policy.</p> <p>A typical
-         * use case is that the permissions of the IAM user whose credentials are used to
-         * call <code>GetFederationToken</code> are designed to allow access to all the
-         * actions and resources that any federated user will need. Then, for individual
-         * users, you pass a policy to the operation that scopes down the permissions to a
-         * level that's appropriate to that individual user, using a policy that allows
-         * only a subset of permissions that are granted to the IAM user. </p> <p>If you do
-         * not pass a policy, the resulting temporary security credentials have no
-         * effective permissions. The only exception is when the temporary security
-         * credentials are used to access a resource that has a resource-based policy that
-         * specifically allows the federated user to access the resource.</p> <p>For more
-         * information about how permissions work, see <a
+         * call any STS APIs except <code>GetCallerIdentity</code>.</p> </li> </ul> <p>
+         * <b>Permissions</b> </p> <p>The permissions for the temporary security
+         * credentials returned by <code>GetFederationToken</code> are determined by a
+         * combination of the following: </p> <ul> <li> <p>The policy or policies that are
+         * attached to the IAM user whose credentials are used to call
+         * <code>GetFederationToken</code>.</p> </li> <li> <p>The policy that is passed as
+         * a parameter in the call.</p> </li> </ul> <p>The passed policy is attached to the
+         * temporary security credentials that result from the
+         * <code>GetFederationToken</code> API call--that is, to the <i>federated user</i>.
+         * When the federated user makes an AWS request, AWS evaluates the policy attached
+         * to the federated user in combination with the policy or policies attached to the
+         * IAM user whose credentials were used to call <code>GetFederationToken</code>.
+         * AWS allows the federated user's request only when both the federated user <i>
+         * <b>and</b> </i> the IAM user are explicitly allowed to perform the requested
+         * action. The passed policy cannot grant more permissions than those that are
+         * defined in the IAM user policy.</p> <p>A typical use case is that the
+         * permissions of the IAM user whose credentials are used to call
+         * <code>GetFederationToken</code> are designed to allow access to all the actions
+         * and resources that any federated user will need. Then, for individual users, you
+         * pass a policy to the operation that scopes down the permissions to a level
+         * that's appropriate to that individual user, using a policy that allows only a
+         * subset of permissions that are granted to the IAM user. </p> <p>If you do not
+         * pass a policy, the resulting temporary security credentials have no effective
+         * permissions. The only exception is when the temporary security credentials are
+         * used to access a resource that has a resource-based policy that specifically
+         * allows the federated user to access the resource.</p> <p>For more information
+         * about how permissions work, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_getfederationtoken.html">Permissions
          * for GetFederationToken</a>. For information about using
          * <code>GetFederationToken</code> to create temporary security credentials, see <a
@@ -1263,9 +1266,9 @@ namespace Model
          * calls to any AWS service with the following exceptions:</p> <ul> <li> <p>You
          * cannot call any IAM APIs unless MFA authentication information is included in
          * the request.</p> </li> <li> <p>You cannot call any STS API <i>except</i>
-         * <code>AssumeRole</code>.</p> </li> </ul> <note> <p>We recommend that you do not
-         * call <code>GetSessionToken</code> with root account credentials. Instead, follow
-         * our <a
+         * <code>AssumeRole</code> or <code>GetCallerIdentity</code>.</p> </li> </ul>
+         * <note> <p>We recommend that you do not call <code>GetSessionToken</code> with
+         * root account credentials. Instead, follow our <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html#create-iam-users">best
          * practices</a> by creating one or more IAM users, giving them the necessary
          * permissions, and using IAM users for everyday interaction with AWS. </p> </note>
@@ -1311,9 +1314,9 @@ namespace Model
          * calls to any AWS service with the following exceptions:</p> <ul> <li> <p>You
          * cannot call any IAM APIs unless MFA authentication information is included in
          * the request.</p> </li> <li> <p>You cannot call any STS API <i>except</i>
-         * <code>AssumeRole</code>.</p> </li> </ul> <note> <p>We recommend that you do not
-         * call <code>GetSessionToken</code> with root account credentials. Instead, follow
-         * our <a
+         * <code>AssumeRole</code> or <code>GetCallerIdentity</code>.</p> </li> </ul>
+         * <note> <p>We recommend that you do not call <code>GetSessionToken</code> with
+         * root account credentials. Instead, follow our <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html#create-iam-users">best
          * practices</a> by creating one or more IAM users, giving them the necessary
          * permissions, and using IAM users for everyday interaction with AWS. </p> </note>
@@ -1361,9 +1364,9 @@ namespace Model
          * calls to any AWS service with the following exceptions:</p> <ul> <li> <p>You
          * cannot call any IAM APIs unless MFA authentication information is included in
          * the request.</p> </li> <li> <p>You cannot call any STS API <i>except</i>
-         * <code>AssumeRole</code>.</p> </li> </ul> <note> <p>We recommend that you do not
-         * call <code>GetSessionToken</code> with root account credentials. Instead, follow
-         * our <a
+         * <code>AssumeRole</code> or <code>GetCallerIdentity</code>.</p> </li> </ul>
+         * <note> <p>We recommend that you do not call <code>GetSessionToken</code> with
+         * root account credentials. Instead, follow our <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html#create-iam-users">best
          * practices</a> by creating one or more IAM users, giving them the necessary
          * permissions, and using IAM users for everyday interaction with AWS. </p> </note>

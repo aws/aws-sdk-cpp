@@ -22,7 +22,10 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 DescribeConfigRuleEvaluationStatusRequest::DescribeConfigRuleEvaluationStatusRequest() : 
-    m_configRuleNamesHasBeenSet(false)
+    m_configRuleNamesHasBeenSet(false),
+    m_nextTokenHasBeenSet(false),
+    m_limit(0),
+    m_limitHasBeenSet(false)
 {
 }
 
@@ -38,6 +41,18 @@ Aws::String DescribeConfigRuleEvaluationStatusRequest::SerializePayload() const
      configRuleNamesJsonList[configRuleNamesIndex].AsString(m_configRuleNames[configRuleNamesIndex]);
    }
    payload.WithArray("ConfigRuleNames", std::move(configRuleNamesJsonList));
+
+  }
+
+  if(m_nextTokenHasBeenSet)
+  {
+   payload.WithString("NextToken", m_nextToken);
+
+  }
+
+  if(m_limitHasBeenSet)
+  {
+   payload.WithInteger("Limit", m_limit);
 
   }
 

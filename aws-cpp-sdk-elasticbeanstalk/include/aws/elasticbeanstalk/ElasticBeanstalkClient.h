@@ -412,7 +412,15 @@ namespace Model
         virtual void CreateApplicationAsync(const Model::CreateApplicationRequest& request, const CreateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates an application version for the specified application.</p> <note>
+         * <p>Creates an application version for the specified application. You can create
+         * an application version from a source bundle in Amazon S3, a commit in AWS
+         * CodeCommit, or the output of an AWS CodeBuild build as follows:</p> <p>Specify a
+         * commit in an AWS CodeCommit repository with
+         * <code>SourceBuildInformation</code>.</p> <p>Specify a build in an AWS CodeBuild
+         * with <code>SourceBuildInformation</code> and
+         * <code>BuildConfiguration</code>.</p> <p>Specify a source bundle in S3 with
+         * <code>SourceBundle</code> </p> <p>Omit both <code>SourceBuildInformation</code>
+         * and <code>SourceBundle</code> to use the default sample application.</p> <note>
          * <p>Once you create an application version with a specified Amazon S3 bucket and
          * key location, you cannot change that Amazon S3 location. If you change the
          * Amazon S3 location, you receive an exception when you attempt to launch an
@@ -421,7 +429,15 @@ namespace Model
         virtual Model::CreateApplicationVersionOutcome CreateApplicationVersion(const Model::CreateApplicationVersionRequest& request) const;
 
         /**
-         * <p>Creates an application version for the specified application.</p> <note>
+         * <p>Creates an application version for the specified application. You can create
+         * an application version from a source bundle in Amazon S3, a commit in AWS
+         * CodeCommit, or the output of an AWS CodeBuild build as follows:</p> <p>Specify a
+         * commit in an AWS CodeCommit repository with
+         * <code>SourceBuildInformation</code>.</p> <p>Specify a build in an AWS CodeBuild
+         * with <code>SourceBuildInformation</code> and
+         * <code>BuildConfiguration</code>.</p> <p>Specify a source bundle in S3 with
+         * <code>SourceBundle</code> </p> <p>Omit both <code>SourceBuildInformation</code>
+         * and <code>SourceBundle</code> to use the default sample application.</p> <note>
          * <p>Once you create an application version with a specified Amazon S3 bucket and
          * key location, you cannot change that Amazon S3 location. If you change the
          * Amazon S3 location, you receive an exception when you attempt to launch an
@@ -432,7 +448,15 @@ namespace Model
         virtual Model::CreateApplicationVersionOutcomeCallable CreateApplicationVersionCallable(const Model::CreateApplicationVersionRequest& request) const;
 
         /**
-         * <p>Creates an application version for the specified application.</p> <note>
+         * <p>Creates an application version for the specified application. You can create
+         * an application version from a source bundle in Amazon S3, a commit in AWS
+         * CodeCommit, or the output of an AWS CodeBuild build as follows:</p> <p>Specify a
+         * commit in an AWS CodeCommit repository with
+         * <code>SourceBuildInformation</code>.</p> <p>Specify a build in an AWS CodeBuild
+         * with <code>SourceBuildInformation</code> and
+         * <code>BuildConfiguration</code>.</p> <p>Specify a source bundle in S3 with
+         * <code>SourceBundle</code> </p> <p>Omit both <code>SourceBuildInformation</code>
+         * and <code>SourceBundle</code> to use the default sample application.</p> <note>
          * <p>Once you create an application version with a specified Amazon S3 bucket and
          * key location, you cannot change that Amazon S3 location. If you change the
          * Amazon S3 location, you receive an exception when you attempt to launch an
@@ -639,22 +663,19 @@ namespace Model
         virtual void DeleteEnvironmentConfigurationAsync(const Model::DeleteEnvironmentConfigurationRequest& request, const DeleteEnvironmentConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieve a list of application versions stored in your AWS Elastic Beanstalk
-         * storage bucket.</p>
+         * <p>Retrieve a list of application versions.</p>
          */
         virtual Model::DescribeApplicationVersionsOutcome DescribeApplicationVersions(const Model::DescribeApplicationVersionsRequest& request) const;
 
         /**
-         * <p>Retrieve a list of application versions stored in your AWS Elastic Beanstalk
-         * storage bucket.</p>
+         * <p>Retrieve a list of application versions.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeApplicationVersionsOutcomeCallable DescribeApplicationVersionsCallable(const Model::DescribeApplicationVersionsRequest& request) const;
 
         /**
-         * <p>Retrieve a list of application versions stored in your AWS Elastic Beanstalk
-         * storage bucket.</p>
+         * <p>Retrieve a list of application versions.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -877,28 +898,28 @@ namespace Model
         virtual void DescribeEventsAsync(const Model::DescribeEventsRequest& request, const DescribeEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns more detailed information about the health of the specified instances
-         * (for example, CPU utilization, load average, and causes). The
-         * <b>DescribeInstancesHealth</b> operation is only available with AWS Elastic
-         * Beanstalk Enhanced Health.</p>
+         * <p>Retrives detailed information about the health of instances in your AWS
+         * Elastic Beanstalk. This operation requires <a
+         * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced.html">enhanced
+         * health reporting</a>.</p>
          */
         virtual Model::DescribeInstancesHealthOutcome DescribeInstancesHealth(const Model::DescribeInstancesHealthRequest& request) const;
 
         /**
-         * <p>Returns more detailed information about the health of the specified instances
-         * (for example, CPU utilization, load average, and causes). The
-         * <b>DescribeInstancesHealth</b> operation is only available with AWS Elastic
-         * Beanstalk Enhanced Health.</p>
+         * <p>Retrives detailed information about the health of instances in your AWS
+         * Elastic Beanstalk. This operation requires <a
+         * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced.html">enhanced
+         * health reporting</a>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeInstancesHealthOutcomeCallable DescribeInstancesHealthCallable(const Model::DescribeInstancesHealthRequest& request) const;
 
         /**
-         * <p>Returns more detailed information about the health of the specified instances
-         * (for example, CPU utilization, load average, and causes). The
-         * <b>DescribeInstancesHealth</b> operation is only available with AWS Elastic
-         * Beanstalk Enhanced Health.</p>
+         * <p>Retrives detailed information about the health of instances in your AWS
+         * Elastic Beanstalk. This operation requires <a
+         * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced.html">enhanced
+         * health reporting</a>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */

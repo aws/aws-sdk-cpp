@@ -198,19 +198,39 @@ namespace Model
      */
     inline UpdateWebACLRequest& AddUpdates(WebACLUpdate&& value) { m_updatesHasBeenSet = true; m_updates.push_back(value); return *this; }
 
-    
+    /**
+     * <p>A default action for the web ACL, either ALLOW or BLOCK. AWS WAF performs the
+     * default action if a request doesn't match the criteria in any of the rules in a
+     * web ACL.</p>
+     */
     inline const WafAction& GetDefaultAction() const{ return m_defaultAction; }
 
-    
+    /**
+     * <p>A default action for the web ACL, either ALLOW or BLOCK. AWS WAF performs the
+     * default action if a request doesn't match the criteria in any of the rules in a
+     * web ACL.</p>
+     */
     inline void SetDefaultAction(const WafAction& value) { m_defaultActionHasBeenSet = true; m_defaultAction = value; }
 
-    
+    /**
+     * <p>A default action for the web ACL, either ALLOW or BLOCK. AWS WAF performs the
+     * default action if a request doesn't match the criteria in any of the rules in a
+     * web ACL.</p>
+     */
     inline void SetDefaultAction(WafAction&& value) { m_defaultActionHasBeenSet = true; m_defaultAction = value; }
 
-    
+    /**
+     * <p>A default action for the web ACL, either ALLOW or BLOCK. AWS WAF performs the
+     * default action if a request doesn't match the criteria in any of the rules in a
+     * web ACL.</p>
+     */
     inline UpdateWebACLRequest& WithDefaultAction(const WafAction& value) { SetDefaultAction(value); return *this;}
 
-    
+    /**
+     * <p>A default action for the web ACL, either ALLOW or BLOCK. AWS WAF performs the
+     * default action if a request doesn't match the criteria in any of the rules in a
+     * web ACL.</p>
+     */
     inline UpdateWebACLRequest& WithDefaultAction(WafAction&& value) { SetDefaultAction(value); return *this;}
 
   private:

@@ -24,6 +24,8 @@
 #include <aws/apigateway/model/CreateAuthorizerResult.h>
 #include <aws/apigateway/model/CreateBasePathMappingResult.h>
 #include <aws/apigateway/model/CreateDeploymentResult.h>
+#include <aws/apigateway/model/CreateDocumentationPartResult.h>
+#include <aws/apigateway/model/CreateDocumentationVersionResult.h>
 #include <aws/apigateway/model/CreateDomainNameResult.h>
 #include <aws/apigateway/model/CreateModelResult.h>
 #include <aws/apigateway/model/CreateResourceResult.h>
@@ -43,6 +45,10 @@
 #include <aws/apigateway/model/GetClientCertificatesResult.h>
 #include <aws/apigateway/model/GetDeploymentResult.h>
 #include <aws/apigateway/model/GetDeploymentsResult.h>
+#include <aws/apigateway/model/GetDocumentationPartResult.h>
+#include <aws/apigateway/model/GetDocumentationPartsResult.h>
+#include <aws/apigateway/model/GetDocumentationVersionResult.h>
+#include <aws/apigateway/model/GetDocumentationVersionsResult.h>
 #include <aws/apigateway/model/GetDomainNameResult.h>
 #include <aws/apigateway/model/GetDomainNamesResult.h>
 #include <aws/apigateway/model/GetExportResult.h>
@@ -66,6 +72,7 @@
 #include <aws/apigateway/model/GetUsagePlanKeysResult.h>
 #include <aws/apigateway/model/GetUsagePlansResult.h>
 #include <aws/apigateway/model/ImportApiKeysResult.h>
+#include <aws/apigateway/model/ImportDocumentationPartsResult.h>
 #include <aws/apigateway/model/ImportRestApiResult.h>
 #include <aws/apigateway/model/PutIntegrationResult.h>
 #include <aws/apigateway/model/PutIntegrationResponseResult.h>
@@ -80,6 +87,8 @@
 #include <aws/apigateway/model/UpdateBasePathMappingResult.h>
 #include <aws/apigateway/model/UpdateClientCertificateResult.h>
 #include <aws/apigateway/model/UpdateDeploymentResult.h>
+#include <aws/apigateway/model/UpdateDocumentationPartResult.h>
+#include <aws/apigateway/model/UpdateDocumentationVersionResult.h>
 #include <aws/apigateway/model/UpdateDomainNameResult.h>
 #include <aws/apigateway/model/UpdateIntegrationResult.h>
 #include <aws/apigateway/model/UpdateIntegrationResponseResult.h>
@@ -141,6 +150,8 @@ namespace Model
         class CreateAuthorizerRequest;
         class CreateBasePathMappingRequest;
         class CreateDeploymentRequest;
+        class CreateDocumentationPartRequest;
+        class CreateDocumentationVersionRequest;
         class CreateDomainNameRequest;
         class CreateModelRequest;
         class CreateResourceRequest;
@@ -153,6 +164,8 @@ namespace Model
         class DeleteBasePathMappingRequest;
         class DeleteClientCertificateRequest;
         class DeleteDeploymentRequest;
+        class DeleteDocumentationPartRequest;
+        class DeleteDocumentationVersionRequest;
         class DeleteDomainNameRequest;
         class DeleteIntegrationRequest;
         class DeleteIntegrationResponseRequest;
@@ -178,6 +191,10 @@ namespace Model
         class GetClientCertificatesRequest;
         class GetDeploymentRequest;
         class GetDeploymentsRequest;
+        class GetDocumentationPartRequest;
+        class GetDocumentationPartsRequest;
+        class GetDocumentationVersionRequest;
+        class GetDocumentationVersionsRequest;
         class GetDomainNameRequest;
         class GetDomainNamesRequest;
         class GetExportRequest;
@@ -201,6 +218,7 @@ namespace Model
         class GetUsagePlanKeysRequest;
         class GetUsagePlansRequest;
         class ImportApiKeysRequest;
+        class ImportDocumentationPartsRequest;
         class ImportRestApiRequest;
         class PutIntegrationRequest;
         class PutIntegrationResponseRequest;
@@ -215,6 +233,8 @@ namespace Model
         class UpdateBasePathMappingRequest;
         class UpdateClientCertificateRequest;
         class UpdateDeploymentRequest;
+        class UpdateDocumentationPartRequest;
+        class UpdateDocumentationVersionRequest;
         class UpdateDomainNameRequest;
         class UpdateIntegrationRequest;
         class UpdateIntegrationResponseRequest;
@@ -231,6 +251,8 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateAuthorizerResult, Aws::Client::AWSError<APIGatewayErrors>> CreateAuthorizerOutcome;
         typedef Aws::Utils::Outcome<CreateBasePathMappingResult, Aws::Client::AWSError<APIGatewayErrors>> CreateBasePathMappingOutcome;
         typedef Aws::Utils::Outcome<CreateDeploymentResult, Aws::Client::AWSError<APIGatewayErrors>> CreateDeploymentOutcome;
+        typedef Aws::Utils::Outcome<CreateDocumentationPartResult, Aws::Client::AWSError<APIGatewayErrors>> CreateDocumentationPartOutcome;
+        typedef Aws::Utils::Outcome<CreateDocumentationVersionResult, Aws::Client::AWSError<APIGatewayErrors>> CreateDocumentationVersionOutcome;
         typedef Aws::Utils::Outcome<CreateDomainNameResult, Aws::Client::AWSError<APIGatewayErrors>> CreateDomainNameOutcome;
         typedef Aws::Utils::Outcome<CreateModelResult, Aws::Client::AWSError<APIGatewayErrors>> CreateModelOutcome;
         typedef Aws::Utils::Outcome<CreateResourceResult, Aws::Client::AWSError<APIGatewayErrors>> CreateResourceOutcome;
@@ -243,6 +265,8 @@ namespace Model
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<APIGatewayErrors>> DeleteBasePathMappingOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<APIGatewayErrors>> DeleteClientCertificateOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<APIGatewayErrors>> DeleteDeploymentOutcome;
+        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<APIGatewayErrors>> DeleteDocumentationPartOutcome;
+        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<APIGatewayErrors>> DeleteDocumentationVersionOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<APIGatewayErrors>> DeleteDomainNameOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<APIGatewayErrors>> DeleteIntegrationOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<APIGatewayErrors>> DeleteIntegrationResponseOutcome;
@@ -268,6 +292,10 @@ namespace Model
         typedef Aws::Utils::Outcome<GetClientCertificatesResult, Aws::Client::AWSError<APIGatewayErrors>> GetClientCertificatesOutcome;
         typedef Aws::Utils::Outcome<GetDeploymentResult, Aws::Client::AWSError<APIGatewayErrors>> GetDeploymentOutcome;
         typedef Aws::Utils::Outcome<GetDeploymentsResult, Aws::Client::AWSError<APIGatewayErrors>> GetDeploymentsOutcome;
+        typedef Aws::Utils::Outcome<GetDocumentationPartResult, Aws::Client::AWSError<APIGatewayErrors>> GetDocumentationPartOutcome;
+        typedef Aws::Utils::Outcome<GetDocumentationPartsResult, Aws::Client::AWSError<APIGatewayErrors>> GetDocumentationPartsOutcome;
+        typedef Aws::Utils::Outcome<GetDocumentationVersionResult, Aws::Client::AWSError<APIGatewayErrors>> GetDocumentationVersionOutcome;
+        typedef Aws::Utils::Outcome<GetDocumentationVersionsResult, Aws::Client::AWSError<APIGatewayErrors>> GetDocumentationVersionsOutcome;
         typedef Aws::Utils::Outcome<GetDomainNameResult, Aws::Client::AWSError<APIGatewayErrors>> GetDomainNameOutcome;
         typedef Aws::Utils::Outcome<GetDomainNamesResult, Aws::Client::AWSError<APIGatewayErrors>> GetDomainNamesOutcome;
         typedef Aws::Utils::Outcome<GetExportResult, Aws::Client::AWSError<APIGatewayErrors>> GetExportOutcome;
@@ -291,6 +319,7 @@ namespace Model
         typedef Aws::Utils::Outcome<GetUsagePlanKeysResult, Aws::Client::AWSError<APIGatewayErrors>> GetUsagePlanKeysOutcome;
         typedef Aws::Utils::Outcome<GetUsagePlansResult, Aws::Client::AWSError<APIGatewayErrors>> GetUsagePlansOutcome;
         typedef Aws::Utils::Outcome<ImportApiKeysResult, Aws::Client::AWSError<APIGatewayErrors>> ImportApiKeysOutcome;
+        typedef Aws::Utils::Outcome<ImportDocumentationPartsResult, Aws::Client::AWSError<APIGatewayErrors>> ImportDocumentationPartsOutcome;
         typedef Aws::Utils::Outcome<ImportRestApiResult, Aws::Client::AWSError<APIGatewayErrors>> ImportRestApiOutcome;
         typedef Aws::Utils::Outcome<PutIntegrationResult, Aws::Client::AWSError<APIGatewayErrors>> PutIntegrationOutcome;
         typedef Aws::Utils::Outcome<PutIntegrationResponseResult, Aws::Client::AWSError<APIGatewayErrors>> PutIntegrationResponseOutcome;
@@ -305,6 +334,8 @@ namespace Model
         typedef Aws::Utils::Outcome<UpdateBasePathMappingResult, Aws::Client::AWSError<APIGatewayErrors>> UpdateBasePathMappingOutcome;
         typedef Aws::Utils::Outcome<UpdateClientCertificateResult, Aws::Client::AWSError<APIGatewayErrors>> UpdateClientCertificateOutcome;
         typedef Aws::Utils::Outcome<UpdateDeploymentResult, Aws::Client::AWSError<APIGatewayErrors>> UpdateDeploymentOutcome;
+        typedef Aws::Utils::Outcome<UpdateDocumentationPartResult, Aws::Client::AWSError<APIGatewayErrors>> UpdateDocumentationPartOutcome;
+        typedef Aws::Utils::Outcome<UpdateDocumentationVersionResult, Aws::Client::AWSError<APIGatewayErrors>> UpdateDocumentationVersionOutcome;
         typedef Aws::Utils::Outcome<UpdateDomainNameResult, Aws::Client::AWSError<APIGatewayErrors>> UpdateDomainNameOutcome;
         typedef Aws::Utils::Outcome<UpdateIntegrationResult, Aws::Client::AWSError<APIGatewayErrors>> UpdateIntegrationOutcome;
         typedef Aws::Utils::Outcome<UpdateIntegrationResponseResult, Aws::Client::AWSError<APIGatewayErrors>> UpdateIntegrationResponseOutcome;
@@ -321,6 +352,8 @@ namespace Model
         typedef std::future<CreateAuthorizerOutcome> CreateAuthorizerOutcomeCallable;
         typedef std::future<CreateBasePathMappingOutcome> CreateBasePathMappingOutcomeCallable;
         typedef std::future<CreateDeploymentOutcome> CreateDeploymentOutcomeCallable;
+        typedef std::future<CreateDocumentationPartOutcome> CreateDocumentationPartOutcomeCallable;
+        typedef std::future<CreateDocumentationVersionOutcome> CreateDocumentationVersionOutcomeCallable;
         typedef std::future<CreateDomainNameOutcome> CreateDomainNameOutcomeCallable;
         typedef std::future<CreateModelOutcome> CreateModelOutcomeCallable;
         typedef std::future<CreateResourceOutcome> CreateResourceOutcomeCallable;
@@ -333,6 +366,8 @@ namespace Model
         typedef std::future<DeleteBasePathMappingOutcome> DeleteBasePathMappingOutcomeCallable;
         typedef std::future<DeleteClientCertificateOutcome> DeleteClientCertificateOutcomeCallable;
         typedef std::future<DeleteDeploymentOutcome> DeleteDeploymentOutcomeCallable;
+        typedef std::future<DeleteDocumentationPartOutcome> DeleteDocumentationPartOutcomeCallable;
+        typedef std::future<DeleteDocumentationVersionOutcome> DeleteDocumentationVersionOutcomeCallable;
         typedef std::future<DeleteDomainNameOutcome> DeleteDomainNameOutcomeCallable;
         typedef std::future<DeleteIntegrationOutcome> DeleteIntegrationOutcomeCallable;
         typedef std::future<DeleteIntegrationResponseOutcome> DeleteIntegrationResponseOutcomeCallable;
@@ -358,6 +393,10 @@ namespace Model
         typedef std::future<GetClientCertificatesOutcome> GetClientCertificatesOutcomeCallable;
         typedef std::future<GetDeploymentOutcome> GetDeploymentOutcomeCallable;
         typedef std::future<GetDeploymentsOutcome> GetDeploymentsOutcomeCallable;
+        typedef std::future<GetDocumentationPartOutcome> GetDocumentationPartOutcomeCallable;
+        typedef std::future<GetDocumentationPartsOutcome> GetDocumentationPartsOutcomeCallable;
+        typedef std::future<GetDocumentationVersionOutcome> GetDocumentationVersionOutcomeCallable;
+        typedef std::future<GetDocumentationVersionsOutcome> GetDocumentationVersionsOutcomeCallable;
         typedef std::future<GetDomainNameOutcome> GetDomainNameOutcomeCallable;
         typedef std::future<GetDomainNamesOutcome> GetDomainNamesOutcomeCallable;
         typedef std::future<GetExportOutcome> GetExportOutcomeCallable;
@@ -381,6 +420,7 @@ namespace Model
         typedef std::future<GetUsagePlanKeysOutcome> GetUsagePlanKeysOutcomeCallable;
         typedef std::future<GetUsagePlansOutcome> GetUsagePlansOutcomeCallable;
         typedef std::future<ImportApiKeysOutcome> ImportApiKeysOutcomeCallable;
+        typedef std::future<ImportDocumentationPartsOutcome> ImportDocumentationPartsOutcomeCallable;
         typedef std::future<ImportRestApiOutcome> ImportRestApiOutcomeCallable;
         typedef std::future<PutIntegrationOutcome> PutIntegrationOutcomeCallable;
         typedef std::future<PutIntegrationResponseOutcome> PutIntegrationResponseOutcomeCallable;
@@ -395,6 +435,8 @@ namespace Model
         typedef std::future<UpdateBasePathMappingOutcome> UpdateBasePathMappingOutcomeCallable;
         typedef std::future<UpdateClientCertificateOutcome> UpdateClientCertificateOutcomeCallable;
         typedef std::future<UpdateDeploymentOutcome> UpdateDeploymentOutcomeCallable;
+        typedef std::future<UpdateDocumentationPartOutcome> UpdateDocumentationPartOutcomeCallable;
+        typedef std::future<UpdateDocumentationVersionOutcome> UpdateDocumentationVersionOutcomeCallable;
         typedef std::future<UpdateDomainNameOutcome> UpdateDomainNameOutcomeCallable;
         typedef std::future<UpdateIntegrationOutcome> UpdateIntegrationOutcomeCallable;
         typedef std::future<UpdateIntegrationResponseOutcome> UpdateIntegrationResponseOutcomeCallable;
@@ -414,6 +456,8 @@ namespace Model
     typedef std::function<void(const APIGatewayClient*, const Model::CreateAuthorizerRequest&, const Model::CreateAuthorizerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAuthorizerResponseReceivedHandler;
     typedef std::function<void(const APIGatewayClient*, const Model::CreateBasePathMappingRequest&, const Model::CreateBasePathMappingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateBasePathMappingResponseReceivedHandler;
     typedef std::function<void(const APIGatewayClient*, const Model::CreateDeploymentRequest&, const Model::CreateDeploymentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDeploymentResponseReceivedHandler;
+    typedef std::function<void(const APIGatewayClient*, const Model::CreateDocumentationPartRequest&, const Model::CreateDocumentationPartOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDocumentationPartResponseReceivedHandler;
+    typedef std::function<void(const APIGatewayClient*, const Model::CreateDocumentationVersionRequest&, const Model::CreateDocumentationVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDocumentationVersionResponseReceivedHandler;
     typedef std::function<void(const APIGatewayClient*, const Model::CreateDomainNameRequest&, const Model::CreateDomainNameOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDomainNameResponseReceivedHandler;
     typedef std::function<void(const APIGatewayClient*, const Model::CreateModelRequest&, const Model::CreateModelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateModelResponseReceivedHandler;
     typedef std::function<void(const APIGatewayClient*, const Model::CreateResourceRequest&, const Model::CreateResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateResourceResponseReceivedHandler;
@@ -426,6 +470,8 @@ namespace Model
     typedef std::function<void(const APIGatewayClient*, const Model::DeleteBasePathMappingRequest&, const Model::DeleteBasePathMappingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteBasePathMappingResponseReceivedHandler;
     typedef std::function<void(const APIGatewayClient*, const Model::DeleteClientCertificateRequest&, const Model::DeleteClientCertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteClientCertificateResponseReceivedHandler;
     typedef std::function<void(const APIGatewayClient*, const Model::DeleteDeploymentRequest&, const Model::DeleteDeploymentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDeploymentResponseReceivedHandler;
+    typedef std::function<void(const APIGatewayClient*, const Model::DeleteDocumentationPartRequest&, const Model::DeleteDocumentationPartOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDocumentationPartResponseReceivedHandler;
+    typedef std::function<void(const APIGatewayClient*, const Model::DeleteDocumentationVersionRequest&, const Model::DeleteDocumentationVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDocumentationVersionResponseReceivedHandler;
     typedef std::function<void(const APIGatewayClient*, const Model::DeleteDomainNameRequest&, const Model::DeleteDomainNameOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDomainNameResponseReceivedHandler;
     typedef std::function<void(const APIGatewayClient*, const Model::DeleteIntegrationRequest&, const Model::DeleteIntegrationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteIntegrationResponseReceivedHandler;
     typedef std::function<void(const APIGatewayClient*, const Model::DeleteIntegrationResponseRequest&, const Model::DeleteIntegrationResponseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteIntegrationResponseResponseReceivedHandler;
@@ -451,6 +497,10 @@ namespace Model
     typedef std::function<void(const APIGatewayClient*, const Model::GetClientCertificatesRequest&, const Model::GetClientCertificatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetClientCertificatesResponseReceivedHandler;
     typedef std::function<void(const APIGatewayClient*, const Model::GetDeploymentRequest&, const Model::GetDeploymentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDeploymentResponseReceivedHandler;
     typedef std::function<void(const APIGatewayClient*, const Model::GetDeploymentsRequest&, const Model::GetDeploymentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDeploymentsResponseReceivedHandler;
+    typedef std::function<void(const APIGatewayClient*, const Model::GetDocumentationPartRequest&, const Model::GetDocumentationPartOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDocumentationPartResponseReceivedHandler;
+    typedef std::function<void(const APIGatewayClient*, const Model::GetDocumentationPartsRequest&, const Model::GetDocumentationPartsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDocumentationPartsResponseReceivedHandler;
+    typedef std::function<void(const APIGatewayClient*, const Model::GetDocumentationVersionRequest&, const Model::GetDocumentationVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDocumentationVersionResponseReceivedHandler;
+    typedef std::function<void(const APIGatewayClient*, const Model::GetDocumentationVersionsRequest&, const Model::GetDocumentationVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDocumentationVersionsResponseReceivedHandler;
     typedef std::function<void(const APIGatewayClient*, const Model::GetDomainNameRequest&, const Model::GetDomainNameOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDomainNameResponseReceivedHandler;
     typedef std::function<void(const APIGatewayClient*, const Model::GetDomainNamesRequest&, const Model::GetDomainNamesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDomainNamesResponseReceivedHandler;
     typedef std::function<void(const APIGatewayClient*, const Model::GetExportRequest&, const Model::GetExportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetExportResponseReceivedHandler;
@@ -474,6 +524,7 @@ namespace Model
     typedef std::function<void(const APIGatewayClient*, const Model::GetUsagePlanKeysRequest&, const Model::GetUsagePlanKeysOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetUsagePlanKeysResponseReceivedHandler;
     typedef std::function<void(const APIGatewayClient*, const Model::GetUsagePlansRequest&, const Model::GetUsagePlansOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetUsagePlansResponseReceivedHandler;
     typedef std::function<void(const APIGatewayClient*, const Model::ImportApiKeysRequest&, const Model::ImportApiKeysOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ImportApiKeysResponseReceivedHandler;
+    typedef std::function<void(const APIGatewayClient*, const Model::ImportDocumentationPartsRequest&, const Model::ImportDocumentationPartsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ImportDocumentationPartsResponseReceivedHandler;
     typedef std::function<void(const APIGatewayClient*, const Model::ImportRestApiRequest&, const Model::ImportRestApiOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ImportRestApiResponseReceivedHandler;
     typedef std::function<void(const APIGatewayClient*, const Model::PutIntegrationRequest&, const Model::PutIntegrationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutIntegrationResponseReceivedHandler;
     typedef std::function<void(const APIGatewayClient*, const Model::PutIntegrationResponseRequest&, const Model::PutIntegrationResponseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutIntegrationResponseResponseReceivedHandler;
@@ -488,6 +539,8 @@ namespace Model
     typedef std::function<void(const APIGatewayClient*, const Model::UpdateBasePathMappingRequest&, const Model::UpdateBasePathMappingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateBasePathMappingResponseReceivedHandler;
     typedef std::function<void(const APIGatewayClient*, const Model::UpdateClientCertificateRequest&, const Model::UpdateClientCertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateClientCertificateResponseReceivedHandler;
     typedef std::function<void(const APIGatewayClient*, const Model::UpdateDeploymentRequest&, const Model::UpdateDeploymentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDeploymentResponseReceivedHandler;
+    typedef std::function<void(const APIGatewayClient*, const Model::UpdateDocumentationPartRequest&, const Model::UpdateDocumentationPartOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDocumentationPartResponseReceivedHandler;
+    typedef std::function<void(const APIGatewayClient*, const Model::UpdateDocumentationVersionRequest&, const Model::UpdateDocumentationVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDocumentationVersionResponseReceivedHandler;
     typedef std::function<void(const APIGatewayClient*, const Model::UpdateDomainNameRequest&, const Model::UpdateDomainNameOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDomainNameResponseReceivedHandler;
     typedef std::function<void(const APIGatewayClient*, const Model::UpdateIntegrationRequest&, const Model::UpdateIntegrationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateIntegrationResponseReceivedHandler;
     typedef std::function<void(const APIGatewayClient*, const Model::UpdateIntegrationResponseRequest&, const Model::UpdateIntegrationResponseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateIntegrationResponseResponseReceivedHandler;
@@ -626,6 +679,44 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateDeploymentAsync(const Model::CreateDeploymentRequest& request, const CreateDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * 
+         */
+        virtual Model::CreateDocumentationPartOutcome CreateDocumentationPart(const Model::CreateDocumentationPartRequest& request) const;
+
+        /**
+         * 
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateDocumentationPartOutcomeCallable CreateDocumentationPartCallable(const Model::CreateDocumentationPartRequest& request) const;
+
+        /**
+         * 
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateDocumentationPartAsync(const Model::CreateDocumentationPartRequest& request, const CreateDocumentationPartResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * 
+         */
+        virtual Model::CreateDocumentationVersionOutcome CreateDocumentationVersion(const Model::CreateDocumentationVersionRequest& request) const;
+
+        /**
+         * 
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateDocumentationVersionOutcomeCallable CreateDocumentationVersionCallable(const Model::CreateDocumentationVersionRequest& request) const;
+
+        /**
+         * 
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateDocumentationVersionAsync(const Model::CreateDocumentationVersionRequest& request, const CreateDocumentationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new domain name.</p>
@@ -869,6 +960,44 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteDeploymentAsync(const Model::DeleteDeploymentRequest& request, const DeleteDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * 
+         */
+        virtual Model::DeleteDocumentationPartOutcome DeleteDocumentationPart(const Model::DeleteDocumentationPartRequest& request) const;
+
+        /**
+         * 
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteDocumentationPartOutcomeCallable DeleteDocumentationPartCallable(const Model::DeleteDocumentationPartRequest& request) const;
+
+        /**
+         * 
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteDocumentationPartAsync(const Model::DeleteDocumentationPartRequest& request, const DeleteDocumentationPartResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * 
+         */
+        virtual Model::DeleteDocumentationVersionOutcome DeleteDocumentationVersion(const Model::DeleteDocumentationVersionRequest& request) const;
+
+        /**
+         * 
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteDocumentationVersionOutcomeCallable DeleteDocumentationVersionCallable(const Model::DeleteDocumentationVersionRequest& request) const;
+
+        /**
+         * 
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteDocumentationVersionAsync(const Model::DeleteDocumentationVersionRequest& request, const DeleteDocumentationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the <a>DomainName</a> resource.</p>
@@ -1361,6 +1490,82 @@ namespace Model
         virtual void GetDeploymentsAsync(const Model::GetDeploymentsRequest& request, const GetDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * 
+         */
+        virtual Model::GetDocumentationPartOutcome GetDocumentationPart(const Model::GetDocumentationPartRequest& request) const;
+
+        /**
+         * 
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetDocumentationPartOutcomeCallable GetDocumentationPartCallable(const Model::GetDocumentationPartRequest& request) const;
+
+        /**
+         * 
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetDocumentationPartAsync(const Model::GetDocumentationPartRequest& request, const GetDocumentationPartResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * 
+         */
+        virtual Model::GetDocumentationPartsOutcome GetDocumentationParts(const Model::GetDocumentationPartsRequest& request) const;
+
+        /**
+         * 
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetDocumentationPartsOutcomeCallable GetDocumentationPartsCallable(const Model::GetDocumentationPartsRequest& request) const;
+
+        /**
+         * 
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetDocumentationPartsAsync(const Model::GetDocumentationPartsRequest& request, const GetDocumentationPartsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * 
+         */
+        virtual Model::GetDocumentationVersionOutcome GetDocumentationVersion(const Model::GetDocumentationVersionRequest& request) const;
+
+        /**
+         * 
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetDocumentationVersionOutcomeCallable GetDocumentationVersionCallable(const Model::GetDocumentationVersionRequest& request) const;
+
+        /**
+         * 
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetDocumentationVersionAsync(const Model::GetDocumentationVersionRequest& request, const GetDocumentationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * 
+         */
+        virtual Model::GetDocumentationVersionsOutcome GetDocumentationVersions(const Model::GetDocumentationVersionsRequest& request) const;
+
+        /**
+         * 
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetDocumentationVersionsOutcomeCallable GetDocumentationVersionsCallable(const Model::GetDocumentationVersionsRequest& request) const;
+
+        /**
+         * 
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetDocumentationVersionsAsync(const Model::GetDocumentationVersionsRequest& request, const GetDocumentationVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Represents a domain name that is contained in a simpler, more intuitive URL
          * that can be called.</p>
          */
@@ -1807,6 +2012,25 @@ namespace Model
         virtual void ImportApiKeysAsync(const Model::ImportApiKeysRequest& request, const ImportApiKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * 
+         */
+        virtual Model::ImportDocumentationPartsOutcome ImportDocumentationParts(const Model::ImportDocumentationPartsRequest& request) const;
+
+        /**
+         * 
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ImportDocumentationPartsOutcomeCallable ImportDocumentationPartsCallable(const Model::ImportDocumentationPartsRequest& request) const;
+
+        /**
+         * 
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ImportDocumentationPartsAsync(const Model::ImportDocumentationPartsRequest& request, const ImportDocumentationPartsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>A feature of the Amazon API Gateway control service for creating a new API
          * from an external API definition file.</p>
          */
@@ -2103,6 +2327,44 @@ namespace Model
         virtual void UpdateDeploymentAsync(const Model::UpdateDeploymentRequest& request, const UpdateDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * 
+         */
+        virtual Model::UpdateDocumentationPartOutcome UpdateDocumentationPart(const Model::UpdateDocumentationPartRequest& request) const;
+
+        /**
+         * 
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateDocumentationPartOutcomeCallable UpdateDocumentationPartCallable(const Model::UpdateDocumentationPartRequest& request) const;
+
+        /**
+         * 
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateDocumentationPartAsync(const Model::UpdateDocumentationPartRequest& request, const UpdateDocumentationPartResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * 
+         */
+        virtual Model::UpdateDocumentationVersionOutcome UpdateDocumentationVersion(const Model::UpdateDocumentationVersionRequest& request) const;
+
+        /**
+         * 
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateDocumentationVersionOutcomeCallable UpdateDocumentationVersionCallable(const Model::UpdateDocumentationVersionRequest& request) const;
+
+        /**
+         * 
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateDocumentationVersionAsync(const Model::UpdateDocumentationVersionRequest& request, const UpdateDocumentationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Changes information about the <a>DomainName</a> resource.</p>
          */
         virtual Model::UpdateDomainNameOutcome UpdateDomainName(const Model::UpdateDomainNameRequest& request) const;
@@ -2323,6 +2585,8 @@ namespace Model
         void CreateAuthorizerAsyncHelper(const Model::CreateAuthorizerRequest& request, const CreateAuthorizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateBasePathMappingAsyncHelper(const Model::CreateBasePathMappingRequest& request, const CreateBasePathMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateDeploymentAsyncHelper(const Model::CreateDeploymentRequest& request, const CreateDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateDocumentationPartAsyncHelper(const Model::CreateDocumentationPartRequest& request, const CreateDocumentationPartResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateDocumentationVersionAsyncHelper(const Model::CreateDocumentationVersionRequest& request, const CreateDocumentationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateDomainNameAsyncHelper(const Model::CreateDomainNameRequest& request, const CreateDomainNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateModelAsyncHelper(const Model::CreateModelRequest& request, const CreateModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateResourceAsyncHelper(const Model::CreateResourceRequest& request, const CreateResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2335,6 +2599,8 @@ namespace Model
         void DeleteBasePathMappingAsyncHelper(const Model::DeleteBasePathMappingRequest& request, const DeleteBasePathMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteClientCertificateAsyncHelper(const Model::DeleteClientCertificateRequest& request, const DeleteClientCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteDeploymentAsyncHelper(const Model::DeleteDeploymentRequest& request, const DeleteDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteDocumentationPartAsyncHelper(const Model::DeleteDocumentationPartRequest& request, const DeleteDocumentationPartResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteDocumentationVersionAsyncHelper(const Model::DeleteDocumentationVersionRequest& request, const DeleteDocumentationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteDomainNameAsyncHelper(const Model::DeleteDomainNameRequest& request, const DeleteDomainNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteIntegrationAsyncHelper(const Model::DeleteIntegrationRequest& request, const DeleteIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteIntegrationResponseAsyncHelper(const Model::DeleteIntegrationResponseRequest& request, const DeleteIntegrationResponseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2360,6 +2626,10 @@ namespace Model
         void GetClientCertificatesAsyncHelper(const Model::GetClientCertificatesRequest& request, const GetClientCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDeploymentAsyncHelper(const Model::GetDeploymentRequest& request, const GetDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDeploymentsAsyncHelper(const Model::GetDeploymentsRequest& request, const GetDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetDocumentationPartAsyncHelper(const Model::GetDocumentationPartRequest& request, const GetDocumentationPartResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetDocumentationPartsAsyncHelper(const Model::GetDocumentationPartsRequest& request, const GetDocumentationPartsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetDocumentationVersionAsyncHelper(const Model::GetDocumentationVersionRequest& request, const GetDocumentationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetDocumentationVersionsAsyncHelper(const Model::GetDocumentationVersionsRequest& request, const GetDocumentationVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDomainNameAsyncHelper(const Model::GetDomainNameRequest& request, const GetDomainNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDomainNamesAsyncHelper(const Model::GetDomainNamesRequest& request, const GetDomainNamesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetExportAsyncHelper(const Model::GetExportRequest& request, const GetExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2383,6 +2653,7 @@ namespace Model
         void GetUsagePlanKeysAsyncHelper(const Model::GetUsagePlanKeysRequest& request, const GetUsagePlanKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetUsagePlansAsyncHelper(const Model::GetUsagePlansRequest& request, const GetUsagePlansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ImportApiKeysAsyncHelper(const Model::ImportApiKeysRequest& request, const ImportApiKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ImportDocumentationPartsAsyncHelper(const Model::ImportDocumentationPartsRequest& request, const ImportDocumentationPartsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ImportRestApiAsyncHelper(const Model::ImportRestApiRequest& request, const ImportRestApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutIntegrationAsyncHelper(const Model::PutIntegrationRequest& request, const PutIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutIntegrationResponseAsyncHelper(const Model::PutIntegrationResponseRequest& request, const PutIntegrationResponseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2397,6 +2668,8 @@ namespace Model
         void UpdateBasePathMappingAsyncHelper(const Model::UpdateBasePathMappingRequest& request, const UpdateBasePathMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateClientCertificateAsyncHelper(const Model::UpdateClientCertificateRequest& request, const UpdateClientCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateDeploymentAsyncHelper(const Model::UpdateDeploymentRequest& request, const UpdateDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateDocumentationPartAsyncHelper(const Model::UpdateDocumentationPartRequest& request, const UpdateDocumentationPartResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateDocumentationVersionAsyncHelper(const Model::UpdateDocumentationVersionRequest& request, const UpdateDocumentationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateDomainNameAsyncHelper(const Model::UpdateDomainNameRequest& request, const UpdateDomainNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateIntegrationAsyncHelper(const Model::UpdateIntegrationRequest& request, const UpdateIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateIntegrationResponseAsyncHelper(const Model::UpdateIntegrationResponseRequest& request, const UpdateIntegrationResponseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

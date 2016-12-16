@@ -46,7 +46,7 @@ Aws::String CreateCustomerGatewayRequest::SerializePayload() const
 
   if(m_publicIpHasBeenSet)
   {
-    ss << "PublicIp=" << StringUtils::URLEncode(m_publicIp.c_str()) << "&";
+    ss << "IpAddress=" << StringUtils::URLEncode(m_publicIp.c_str()) << "&";
   }
 
   if(m_bgpAsnHasBeenSet)
@@ -54,7 +54,7 @@ Aws::String CreateCustomerGatewayRequest::SerializePayload() const
     ss << "BgpAsn=" << m_bgpAsn << "&";
   }
 
-  ss << "Version=2016-09-15";
+  ss << "Version=2016-11-15";
   return ss.str();
 }
 

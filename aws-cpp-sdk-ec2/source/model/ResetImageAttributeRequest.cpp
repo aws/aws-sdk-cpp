@@ -47,7 +47,7 @@ Aws::String ResetImageAttributeRequest::SerializePayload() const
     ss << "Attribute=" << ResetImageAttributeNameMapper::GetNameForResetImageAttributeName(m_attribute) << "&";
   }
 
-  ss << "Version=2016-09-15";
+  ss << "Version=2016-11-15";
   return ss.str();
 }
 

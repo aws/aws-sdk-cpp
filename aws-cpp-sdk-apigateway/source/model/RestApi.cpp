@@ -32,6 +32,7 @@ RestApi::RestApi() :
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_createdDateHasBeenSet(false),
+    m_versionHasBeenSet(false),
     m_warningsHasBeenSet(false),
     m_binaryMediaTypesHasBeenSet(false)
 {
@@ -42,6 +43,7 @@ RestApi::RestApi(const JsonValue& jsonValue) :
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_createdDateHasBeenSet(false),
+    m_versionHasBeenSet(false),
     m_warningsHasBeenSet(false),
     m_binaryMediaTypesHasBeenSet(false)
 {
@@ -76,6 +78,13 @@ RestApi& RestApi::operator =(const JsonValue& jsonValue)
     m_createdDate = jsonValue.GetDouble("createdDate");
 
     m_createdDateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("version"))
+  {
+    m_version = jsonValue.GetString("version");
+
+    m_versionHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("warnings"))
@@ -126,6 +135,12 @@ JsonValue RestApi::Jsonize() const
   if(m_createdDateHasBeenSet)
   {
    payload.WithDouble("createdDate", m_createdDate.SecondsWithMSPrecision());
+  }
+
+  if(m_versionHasBeenSet)
+  {
+   payload.WithString("version", m_version);
+
   }
 
   if(m_warningsHasBeenSet)

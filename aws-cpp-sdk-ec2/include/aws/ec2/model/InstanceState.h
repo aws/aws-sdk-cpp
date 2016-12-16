@@ -32,7 +32,7 @@ namespace Model
 {
 
   /**
-   * <p>Describes the current state of the instance.</p>
+   * <p>Describes the current state of an instance.</p>
    */
   class AWS_EC2_API InstanceState
   {
