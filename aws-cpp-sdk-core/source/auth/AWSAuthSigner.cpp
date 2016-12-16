@@ -129,6 +129,7 @@ AWSAuthV4Signer::AWSAuthV4Signer(const std::shared_ptr<Auth::AWSCredentialsProvi
     m_region(region),
     m_hash(Aws::MakeUnique<Aws::Utils::Crypto::Sha256>(v4LogTag)),
     m_HMAC(Aws::MakeUnique<Aws::Utils::Crypto::Sha256HMAC>(v4LogTag)),
+    m_unsignedHeaders({"user-agent", "x-amzn-trace-id"}),
     m_signPayloads(signPayloads),
     m_urlEscapePath(urlEscapePath)
 {
@@ -141,10 +142,10 @@ AWSAuthV4Signer::~AWSAuthV4Signer()
     // empty destructor in .cpp file to keep from needing the implementation of (AWSCredentialsProvider, Sha256, Sha256HMAC) in the header file 
 }
 
-// If this ever grows, convert to a static hash set initialized on InitAPI
-bool AWSAuthV4Signer::ShouldSignHeader(const Aws::String& header)
+
+bool AWSAuthV4Signer::ShouldSignHeader(const Aws::String& header) const
 {
-    return Aws::Utils::StringUtils::ToLower(header.c_str()) != Aws::String("x-amzn-trace-id");
+    return m_unsignedHeaders.find(Aws::Utils::StringUtils::ToLower(header.c_str())) == m_unsignedHeaders.cend();
 }
 
 bool AWSAuthV4Signer::SignRequest(Aws::Http::HttpRequest& request) const
