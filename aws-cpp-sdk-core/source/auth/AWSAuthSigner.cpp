@@ -141,6 +141,12 @@ AWSAuthV4Signer::~AWSAuthV4Signer()
     // empty destructor in .cpp file to keep from needing the implementation of (AWSCredentialsProvider, Sha256, Sha256HMAC) in the header file 
 }
 
+// If this ever grows, convert to a static hash set initialized on InitAPI
+bool AWSAuthV4Signer::ShouldSignHeader(const Aws::String& header)
+{
+    return Aws::Utils::StringUtils::ToLower(header.c_str()) != Aws::String("x-amzn-trace-id");
+}
+
 bool AWSAuthV4Signer::SignRequest(Aws::Http::HttpRequest& request) const
 {
     AWSCredentials credentials = m_credentialsProvider->GetAWSCredentials();
@@ -186,8 +192,11 @@ bool AWSAuthV4Signer::SignRequest(Aws::Http::HttpRequest& request) const
 
     for (const auto& header : CanonicalizeHeaders(request.GetHeaders()))
     {
-        headersStream << header.first.c_str() << ":" << header.second.c_str() << NEWLINE;
-        signedHeadersStream << header.first.c_str() << ";";
+        if(ShouldSignHeader(header.first))
+        {
+            headersStream << header.first.c_str() << ":" << header.second.c_str() << NEWLINE;
+            signedHeadersStream << header.first.c_str() << ";";
+        }
     }
 
     Aws::String canonicalHeadersString = headersStream.str();
