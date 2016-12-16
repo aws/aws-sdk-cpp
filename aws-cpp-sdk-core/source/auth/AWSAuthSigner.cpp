@@ -250,6 +250,11 @@ bool AWSAuthV4Signer::SignRequest(Aws::Http::HttpRequest& request) const
 
 bool AWSAuthV4Signer::PresignRequest(Aws::Http::HttpRequest& request, long long expirationTimeInSeconds) const
 {
+    return PresignRequest(request, m_region.c_str(), expirationTimeInSeconds);
+}
+
+bool AWSAuthV4Signer::PresignRequest(Aws::Http::HttpRequest& request, const char* region, long long expirationTimeInSeconds) const
+{
     AWSCredentials credentials = m_credentialsProvider->GetAWSCredentials();
 
     //don't sign anonymous requests
@@ -260,11 +265,11 @@ bool AWSAuthV4Signer::PresignRequest(Aws::Http::HttpRequest& request, long long 
 
     Aws::StringStream intConversionStream;
     intConversionStream << expirationTimeInSeconds;
-    request.AddQueryStringParameter(Http::X_AMZ_EXPIRES_HEADER, intConversionStream.str());   
+    request.AddQueryStringParameter(Http::X_AMZ_EXPIRES_HEADER, intConversionStream.str());
 
     if (!credentials.GetSessionToken().empty())
     {
-        request.AddQueryStringParameter(Http::AWS_SECURITY_TOKEN, credentials.GetSessionToken());       
+        request.AddQueryStringParameter(Http::AWS_SECURITY_TOKEN, credentials.GetSessionToken());
     }
 
     //calculate date header to use in internal signature (this also goes into date header).
@@ -282,12 +287,12 @@ bool AWSAuthV4Signer::PresignRequest(Aws::Http::HttpRequest& request, long long 
     //calculate signed headers parameter
     Aws::String signedHeadersValue(Http::HOST_HEADER);
     request.AddQueryStringParameter(X_AMZ_SIGNED_HEADERS, signedHeadersValue);
-    
+
     AWS_LOGSTREAM_DEBUG(v4LogTag, "Signed Headers value: " << signedHeadersValue);
 
     Aws::String simpleDate = now.ToGmtString(SIMPLE_DATE_FORMAT_STR);
     ss << credentials.GetAWSAccessKeyId() << "/" << simpleDate
-        << "/" << m_region << "/" << m_serviceName << "/" << AWS4_REQUEST;
+        << "/" << region << "/" << m_serviceName << "/" << AWS4_REQUEST;
 
     request.AddQueryStringParameter(X_AMZ_ALGORITHM, AWS_HMAC_SHA256);
     request.AddQueryStringParameter(X_AMZ_CREDENTIAL, ss.str());
@@ -313,7 +318,7 @@ bool AWSAuthV4Signer::PresignRequest(Aws::Http::HttpRequest& request, long long 
     }
 
     auto sha256Digest = hashResult.GetResult();
-    auto cannonicalRequestHash = HashingUtils::HexEncode(sha256Digest);   
+    auto cannonicalRequestHash = HashingUtils::HexEncode(sha256Digest);
 
     auto stringToSign = GenerateStringToSign(dateQueryValue, simpleDate, cannonicalRequestHash);
 

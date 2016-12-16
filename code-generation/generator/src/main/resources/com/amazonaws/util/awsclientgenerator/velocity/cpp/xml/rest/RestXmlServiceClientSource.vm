@@ -33,4 +33,18 @@ static const char* ALLOCATION_TAG = "${className}";
 
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientSourceInit.vm")
 
+#if($metadata.protocol == "query")
+Aws::String ${className}::ConvertRequestToPresignedUrl(const AmazonSerializableWebServiceRequest& requestToConvert, const char* region) const
+{
+  Aws::StringStream ss;
+  ss << "https://" << ${metadata.classNamePrefix}Endpoint::ForRegion(region);
+  ss << "?" << requestToConvert.SerializePayload();
+
+  URI uri(ss.str());
+  return GeneratePresignedUrl(uri, HttpMethod::HTTP_GET, region, 3600);
+}
+
+#end
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/xml/rest/RestXmlServiceClientOperations.vm")
+
+
