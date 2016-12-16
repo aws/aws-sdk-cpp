@@ -19,6 +19,7 @@
 
 #include <aws/core/Region.h>
 #include <aws/core/utils/memory/AWSMemory.h>
+#include <aws/core/utils/memory/stl/AWSSet.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/Array.h>
 
@@ -130,11 +131,16 @@ namespace Aws
             Aws::String GenerateStringToSign(const Aws::String& dateValue, const Aws::String& simpleDate, const Aws::String& canonicalRequestHash) const;
             const Aws::Utils::ByteBuffer& ComputeLongLivedHash(const Aws::String& secretKey, const Aws::String& simpleDate) const;
 
+            bool ShouldSignHeader(const Aws::String& header) const;
+
             std::shared_ptr<Auth::AWSCredentialsProvider> m_credentialsProvider;
             Aws::String m_serviceName;
             Aws::String m_region;
             Aws::UniquePtr<Aws::Utils::Crypto::Sha256> m_hash;
             Aws::UniquePtr<Aws::Utils::Crypto::Sha256HMAC> m_HMAC;
+
+            Aws::Set<Aws::String> m_unsignedHeaders;
+
             //these next four fields are ONLY for caching purposes and do not change
             //the logical state of the signer. They are marked mutable so the
             //interface can remain const.

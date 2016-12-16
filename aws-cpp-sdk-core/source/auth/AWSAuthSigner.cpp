@@ -129,6 +129,7 @@ AWSAuthV4Signer::AWSAuthV4Signer(const std::shared_ptr<Auth::AWSCredentialsProvi
     m_region(region),
     m_hash(Aws::MakeUnique<Aws::Utils::Crypto::Sha256>(v4LogTag)),
     m_HMAC(Aws::MakeUnique<Aws::Utils::Crypto::Sha256HMAC>(v4LogTag)),
+    m_unsignedHeaders({"user-agent", "x-amzn-trace-id"}),
     m_signPayloads(signPayloads),
     m_urlEscapePath(urlEscapePath)
 {
@@ -139,6 +140,12 @@ AWSAuthV4Signer::AWSAuthV4Signer(const std::shared_ptr<Auth::AWSCredentialsProvi
 AWSAuthV4Signer::~AWSAuthV4Signer()
 {
     // empty destructor in .cpp file to keep from needing the implementation of (AWSCredentialsProvider, Sha256, Sha256HMAC) in the header file 
+}
+
+
+bool AWSAuthV4Signer::ShouldSignHeader(const Aws::String& header) const
+{
+    return m_unsignedHeaders.find(Aws::Utils::StringUtils::ToLower(header.c_str())) == m_unsignedHeaders.cend();
 }
 
 bool AWSAuthV4Signer::SignRequest(Aws::Http::HttpRequest& request) const
@@ -186,8 +193,11 @@ bool AWSAuthV4Signer::SignRequest(Aws::Http::HttpRequest& request) const
 
     for (const auto& header : CanonicalizeHeaders(request.GetHeaders()))
     {
-        headersStream << header.first.c_str() << ":" << header.second.c_str() << NEWLINE;
-        signedHeadersStream << header.first.c_str() << ";";
+        if(ShouldSignHeader(header.first))
+        {
+            headersStream << header.first.c_str() << ":" << header.second.c_str() << NEWLINE;
+            signedHeadersStream << header.first.c_str() << ";";
+        }
     }
 
     Aws::String canonicalHeadersString = headersStream.str();
