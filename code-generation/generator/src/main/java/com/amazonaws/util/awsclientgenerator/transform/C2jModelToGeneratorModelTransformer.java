@@ -65,7 +65,7 @@ public class C2jModelToGeneratorModelTransformer {
     }
 
     String addDocCrossLinks(final String documentation, final String uid, final String shapeOrOperationName) {
-        if(documentation != null) {
+        if(documentation != null && uid != null) {
             String seeAlsoRef = String.format("<p><h3>See Also:</h3>   <a href=\"http://docs.aws.amazon.com/goto/WebAPI/%s/%s\">AWS API Reference</a></p>",
                      uid, shapeOrOperationName);
 
