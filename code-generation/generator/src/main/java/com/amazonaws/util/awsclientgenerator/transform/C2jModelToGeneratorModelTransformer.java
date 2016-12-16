@@ -71,7 +71,7 @@ public class C2jModelToGeneratorModelTransformer {
 
             return documentation + seeAlsoRef;
         }
-        return null;
+        return documentation;
     }
 
     void removeUnreferencedShapes() {
