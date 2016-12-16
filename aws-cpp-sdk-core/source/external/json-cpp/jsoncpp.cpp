@@ -75,7 +75,10 @@ This file has been modified from its original version by Amazon:
 // //////////////////////////////////////////////////////////////////////
 
 
-
+#if defined(_MSC_VER) && _MSC_VER >= 1500 // MSVC 2008
+#pragma warning(disable : 4267)
+#pragma warning(disable : 4512)
+#endif
 
 
 
