@@ -100,6 +100,8 @@ This file has been modified from its original version by Amazon:
  * It is an internal header that must not be exposed.
  */
 
+#include <cmath>
+
 namespace Aws {
 namespace External {
 namespace Json {
