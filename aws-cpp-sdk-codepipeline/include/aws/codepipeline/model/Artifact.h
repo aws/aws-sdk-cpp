@@ -33,7 +33,9 @@ namespace Model
 
   /**
    * <p>Represents information about an artifact that will be worked upon by actions
-   * in the pipeline.</p>
+   * in the pipeline.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/Artifact">AWS
+   * API Reference</a></p>
    */
   class AWS_CODEPIPELINE_API Artifact
   {

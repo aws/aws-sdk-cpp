@@ -26,7 +26,9 @@ namespace Model
 
   /**
    * <p>Requests Amazon API Gateway to create a new <a>BasePathMapping</a>
-   * resource.</p>
+   * resource.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateBasePathMappingRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_APIGATEWAY_API CreateBasePathMappingRequest : public APIGatewayRequest
   {

@@ -33,7 +33,10 @@ namespace Model
 {
 
   /**
-   * <p>Represents the message to be sent, composed of a subject and a body.</p>
+   * <p>Represents the message to be sent, composed of a subject and a
+   * body.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/Message">AWS API
+   * Reference</a></p>
    */
   class AWS_SES_API Message
   {

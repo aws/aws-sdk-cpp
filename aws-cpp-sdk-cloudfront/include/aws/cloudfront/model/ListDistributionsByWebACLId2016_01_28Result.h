@@ -34,7 +34,9 @@ namespace Model
 {
   /**
    * The response to a request to list the distributions that are associated with a
-   * specified AWS WAF web ACL.
+   * specified AWS WAF web ACL.<p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/ListDistributionsByWebACLIdResult">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API ListDistributionsByWebACLId2016_01_28Result
   {

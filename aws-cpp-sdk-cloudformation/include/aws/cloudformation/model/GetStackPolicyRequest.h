@@ -25,7 +25,9 @@ namespace Model
 {
 
   /**
-   * <p>The input for the <a>GetStackPolicy</a> action.</p>
+   * <p>The input for the <a>GetStackPolicy</a> action.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/GetStackPolicyInput">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDFORMATION_API GetStackPolicyRequest : public CloudFormationRequest
   {

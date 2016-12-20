@@ -26,7 +26,10 @@ namespace Model
 {
 
   /**
-   * <p>The result of the <code>DescribeSnapshotCopyGrants</code> action.</p>
+   * <p>The result of the <code>DescribeSnapshotCopyGrants</code>
+   * action.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeSnapshotCopyGrantsMessage">AWS
+   * API Reference</a></p>
    */
   class AWS_REDSHIFT_API DescribeSnapshotCopyGrantsRequest : public RedshiftRequest
   {

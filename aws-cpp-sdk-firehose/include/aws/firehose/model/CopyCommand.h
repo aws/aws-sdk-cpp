@@ -31,7 +31,10 @@ namespace Model
 {
 
   /**
-   * <p>Describes a <code>COPY</code> command for Amazon Redshift.</p>
+   * <p>Describes a <code>COPY</code> command for Amazon Redshift.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/CopyCommand">AWS
+   * API Reference</a></p>
    */
   class AWS_FIREHOSE_API CopyCommand
   {

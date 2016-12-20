@@ -239,7 +239,10 @@ namespace Model
          * more information about versioning, see <a
          * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
          * Lambda Function Versioning and Aliases</a>. </p> <p>This operation requires
-         * permission for the <code>lambda:AddPermission</code> action.</p>
+         * permission for the <code>lambda:AddPermission</code> action.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/AddPermission">AWS
+         * API Reference</a></p>
          */
         virtual Model::AddPermissionOutcome AddPermission(const Model::AddPermissionRequest& request) const;
 
@@ -257,7 +260,10 @@ namespace Model
          * more information about versioning, see <a
          * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
          * Lambda Function Versioning and Aliases</a>. </p> <p>This operation requires
-         * permission for the <code>lambda:AddPermission</code> action.</p>
+         * permission for the <code>lambda:AddPermission</code> action.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/AddPermission">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -277,7 +283,10 @@ namespace Model
          * more information about versioning, see <a
          * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
          * Lambda Function Versioning and Aliases</a>. </p> <p>This operation requires
-         * permission for the <code>lambda:AddPermission</code> action.</p>
+         * permission for the <code>lambda:AddPermission</code> action.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/AddPermission">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -288,7 +297,10 @@ namespace Model
          * more information, see <a
          * href="http://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">Introduction
          * to AWS Lambda Aliases</a>.</p> <p>Alias names are unique for a given function.
-         * This requires permission for the lambda:CreateAlias action.</p>
+         * This requires permission for the lambda:CreateAlias action.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateAlias">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateAliasOutcome CreateAlias(const Model::CreateAliasRequest& request) const;
 
@@ -297,7 +309,10 @@ namespace Model
          * more information, see <a
          * href="http://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">Introduction
          * to AWS Lambda Aliases</a>.</p> <p>Alias names are unique for a given function.
-         * This requires permission for the lambda:CreateAlias action.</p>
+         * This requires permission for the lambda:CreateAlias action.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateAlias">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -308,7 +323,10 @@ namespace Model
          * more information, see <a
          * href="http://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">Introduction
          * to AWS Lambda Aliases</a>.</p> <p>Alias names are unique for a given function.
-         * This requires permission for the lambda:CreateAlias action.</p>
+         * This requires permission for the lambda:CreateAlias action.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateAlias">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -333,7 +351,10 @@ namespace Model
          * For more information about versioning, see <a
          * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
          * Lambda Function Versioning and Aliases</a>. </p> <p>This operation requires
-         * permission for the <code>lambda:CreateEventSourceMapping</code> action.</p>
+         * permission for the <code>lambda:CreateEventSourceMapping</code>
+         * action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateEventSourceMapping">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateEventSourceMappingOutcome CreateEventSourceMapping(const Model::CreateEventSourceMappingRequest& request) const;
 
@@ -356,7 +377,10 @@ namespace Model
          * For more information about versioning, see <a
          * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
          * Lambda Function Versioning and Aliases</a>. </p> <p>This operation requires
-         * permission for the <code>lambda:CreateEventSourceMapping</code> action.</p>
+         * permission for the <code>lambda:CreateEventSourceMapping</code>
+         * action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateEventSourceMapping">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -381,7 +405,10 @@ namespace Model
          * For more information about versioning, see <a
          * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
          * Lambda Function Versioning and Aliases</a>. </p> <p>This operation requires
-         * permission for the <code>lambda:CreateEventSourceMapping</code> action.</p>
+         * permission for the <code>lambda:CreateEventSourceMapping</code>
+         * action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateEventSourceMapping">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -397,7 +424,10 @@ namespace Model
          * versioning, see <a
          * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
          * Lambda Function Versioning and Aliases</a>. </p> <p>This operation requires
-         * permission for the <code>lambda:CreateFunction</code> action.</p>
+         * permission for the <code>lambda:CreateFunction</code> action.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateFunction">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateFunctionOutcome CreateFunction(const Model::CreateFunctionRequest& request) const;
 
@@ -411,7 +441,10 @@ namespace Model
          * versioning, see <a
          * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
          * Lambda Function Versioning and Aliases</a>. </p> <p>This operation requires
-         * permission for the <code>lambda:CreateFunction</code> action.</p>
+         * permission for the <code>lambda:CreateFunction</code> action.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateFunction">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -427,7 +460,10 @@ namespace Model
          * versioning, see <a
          * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
          * Lambda Function Versioning and Aliases</a>. </p> <p>This operation requires
-         * permission for the <code>lambda:CreateFunction</code> action.</p>
+         * permission for the <code>lambda:CreateFunction</code> action.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateFunction">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -437,7 +473,9 @@ namespace Model
          * <p>Deletes the specified Lambda function alias. For more information, see <a
          * href="http://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">Introduction
          * to AWS Lambda Aliases</a>.</p> <p>This requires permission for the
-         * lambda:DeleteAlias action.</p>
+         * lambda:DeleteAlias action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteAlias">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteAliasOutcome DeleteAlias(const Model::DeleteAliasRequest& request) const;
 
@@ -445,7 +483,9 @@ namespace Model
          * <p>Deletes the specified Lambda function alias. For more information, see <a
          * href="http://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">Introduction
          * to AWS Lambda Aliases</a>.</p> <p>This requires permission for the
-         * lambda:DeleteAlias action.</p>
+         * lambda:DeleteAlias action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteAlias">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -455,7 +495,9 @@ namespace Model
          * <p>Deletes the specified Lambda function alias. For more information, see <a
          * href="http://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">Introduction
          * to AWS Lambda Aliases</a>.</p> <p>This requires permission for the
-         * lambda:DeleteAlias action.</p>
+         * lambda:DeleteAlias action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteAlias">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -464,14 +506,20 @@ namespace Model
         /**
          * <p>Removes an event source mapping. This means AWS Lambda will no longer invoke
          * the function for events in the associated source.</p> <p>This operation requires
-         * permission for the <code>lambda:DeleteEventSourceMapping</code> action.</p>
+         * permission for the <code>lambda:DeleteEventSourceMapping</code>
+         * action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteEventSourceMapping">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteEventSourceMappingOutcome DeleteEventSourceMapping(const Model::DeleteEventSourceMappingRequest& request) const;
 
         /**
          * <p>Removes an event source mapping. This means AWS Lambda will no longer invoke
          * the function for events in the associated source.</p> <p>This operation requires
-         * permission for the <code>lambda:DeleteEventSourceMapping</code> action.</p>
+         * permission for the <code>lambda:DeleteEventSourceMapping</code>
+         * action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteEventSourceMapping">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -480,7 +528,10 @@ namespace Model
         /**
          * <p>Removes an event source mapping. This means AWS Lambda will no longer invoke
          * the function for events in the associated source.</p> <p>This operation requires
-         * permission for the <code>lambda:DeleteEventSourceMapping</code> action.</p>
+         * permission for the <code>lambda:DeleteEventSourceMapping</code>
+         * action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteEventSourceMapping">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -498,7 +549,9 @@ namespace Model
          * Lambda Function Versioning and Aliases</a>. </p> <p>When you delete a function
          * the associated resource policy is also deleted. You will need to delete the
          * event source mappings explicitly.</p> <p>This operation requires permission for
-         * the <code>lambda:DeleteFunction</code> action.</p>
+         * the <code>lambda:DeleteFunction</code> action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunction">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteFunctionOutcome DeleteFunction(const Model::DeleteFunctionRequest& request) const;
 
@@ -514,7 +567,9 @@ namespace Model
          * Lambda Function Versioning and Aliases</a>. </p> <p>When you delete a function
          * the associated resource policy is also deleted. You will need to delete the
          * event source mappings explicitly.</p> <p>This operation requires permission for
-         * the <code>lambda:DeleteFunction</code> action.</p>
+         * the <code>lambda:DeleteFunction</code> action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunction">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -532,7 +587,9 @@ namespace Model
          * Lambda Function Versioning and Aliases</a>. </p> <p>When you delete a function
          * the associated resource policy is also deleted. You will need to delete the
          * event source mappings explicitly.</p> <p>This operation requires permission for
-         * the <code>lambda:DeleteFunction</code> action.</p>
+         * the <code>lambda:DeleteFunction</code> action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunction">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -544,7 +601,9 @@ namespace Model
          * more information on limits, see <a
          * href="http://docs.aws.amazon.com/lambda/latest/dg/limits.html">AWS Lambda
          * Limits</a>. You can also retrieve resource usage statistics such as code storage
-         * usage and function count.</p>
+         * usage and function count.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetAccountSettings">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetAccountSettingsOutcome GetAccountSettings(const Model::GetAccountSettingsRequest& request) const;
 
@@ -554,7 +613,9 @@ namespace Model
          * more information on limits, see <a
          * href="http://docs.aws.amazon.com/lambda/latest/dg/limits.html">AWS Lambda
          * Limits</a>. You can also retrieve resource usage statistics such as code storage
-         * usage and function count.</p>
+         * usage and function count.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetAccountSettings">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -566,7 +627,9 @@ namespace Model
          * more information on limits, see <a
          * href="http://docs.aws.amazon.com/lambda/latest/dg/limits.html">AWS Lambda
          * Limits</a>. You can also retrieve resource usage statistics such as code storage
-         * usage and function count.</p>
+         * usage and function count.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetAccountSettings">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -577,7 +640,9 @@ namespace Model
          * and function version it is pointing to. For more information, see <a
          * href="http://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">Introduction
          * to AWS Lambda Aliases</a>.</p> <p>This requires permission for the
-         * <code>lambda:GetAlias</code> action.</p>
+         * <code>lambda:GetAlias</code> action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetAlias">AWS API
+         * Reference</a></p>
          */
         virtual Model::GetAliasOutcome GetAlias(const Model::GetAliasRequest& request) const;
 
@@ -586,7 +651,9 @@ namespace Model
          * and function version it is pointing to. For more information, see <a
          * href="http://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">Introduction
          * to AWS Lambda Aliases</a>.</p> <p>This requires permission for the
-         * <code>lambda:GetAlias</code> action.</p>
+         * <code>lambda:GetAlias</code> action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetAlias">AWS API
+         * Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -597,7 +664,9 @@ namespace Model
          * and function version it is pointing to. For more information, see <a
          * href="http://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">Introduction
          * to AWS Lambda Aliases</a>.</p> <p>This requires permission for the
-         * <code>lambda:GetAlias</code> action.</p>
+         * <code>lambda:GetAlias</code> action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetAlias">AWS API
+         * Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -606,14 +675,20 @@ namespace Model
         /**
          * <p>Returns configuration information for the specified event source mapping (see
          * <a>CreateEventSourceMapping</a>).</p> <p>This operation requires permission for
-         * the <code>lambda:GetEventSourceMapping</code> action.</p>
+         * the <code>lambda:GetEventSourceMapping</code> action.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetEventSourceMapping">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetEventSourceMappingOutcome GetEventSourceMapping(const Model::GetEventSourceMappingRequest& request) const;
 
         /**
          * <p>Returns configuration information for the specified event source mapping (see
          * <a>CreateEventSourceMapping</a>).</p> <p>This operation requires permission for
-         * the <code>lambda:GetEventSourceMapping</code> action.</p>
+         * the <code>lambda:GetEventSourceMapping</code> action.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetEventSourceMapping">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -622,7 +697,10 @@ namespace Model
         /**
          * <p>Returns configuration information for the specified event source mapping (see
          * <a>CreateEventSourceMapping</a>).</p> <p>This operation requires permission for
-         * the <code>lambda:GetEventSourceMapping</code> action.</p>
+         * the <code>lambda:GetEventSourceMapping</code> action.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetEventSourceMapping">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -640,7 +718,10 @@ namespace Model
          * the Lambda function. For more information, see <a
          * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
          * Lambda Function Versioning and Aliases</a>.</p> <p>This operation requires
-         * permission for the <code>lambda:GetFunction</code> action.</p>
+         * permission for the <code>lambda:GetFunction</code> action.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunction">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetFunctionOutcome GetFunction(const Model::GetFunctionRequest& request) const;
 
@@ -656,7 +737,10 @@ namespace Model
          * the Lambda function. For more information, see <a
          * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
          * Lambda Function Versioning and Aliases</a>.</p> <p>This operation requires
-         * permission for the <code>lambda:GetFunction</code> action.</p>
+         * permission for the <code>lambda:GetFunction</code> action.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunction">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -674,7 +758,10 @@ namespace Model
          * the Lambda function. For more information, see <a
          * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
          * Lambda Function Versioning and Aliases</a>.</p> <p>This operation requires
-         * permission for the <code>lambda:GetFunction</code> action.</p>
+         * permission for the <code>lambda:GetFunction</code> action.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunction">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -691,7 +778,10 @@ namespace Model
          * <a
          * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
          * Lambda Function Versioning and Aliases</a>.</p> <p>This operation requires
-         * permission for the <code>lambda:GetFunctionConfiguration</code> operation.</p>
+         * permission for the <code>lambda:GetFunctionConfiguration</code>
+         * operation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionConfiguration">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetFunctionConfigurationOutcome GetFunctionConfiguration(const Model::GetFunctionConfigurationRequest& request) const;
 
@@ -706,7 +796,10 @@ namespace Model
          * <a
          * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
          * Lambda Function Versioning and Aliases</a>.</p> <p>This operation requires
-         * permission for the <code>lambda:GetFunctionConfiguration</code> operation.</p>
+         * permission for the <code>lambda:GetFunctionConfiguration</code>
+         * operation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionConfiguration">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -723,7 +816,10 @@ namespace Model
          * <a
          * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
          * Lambda Function Versioning and Aliases</a>.</p> <p>This operation requires
-         * permission for the <code>lambda:GetFunctionConfiguration</code> operation.</p>
+         * permission for the <code>lambda:GetFunctionConfiguration</code>
+         * operation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionConfiguration">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -738,7 +834,9 @@ namespace Model
          * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
          * Lambda Function Versioning and Aliases</a>. </p> <p>For information about adding
          * permissions, see <a>AddPermission</a>.</p> <p>You need permission for the
-         * <code>lambda:GetPolicy action.</code> </p>
+         * <code>lambda:GetPolicy action.</code> </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetPolicy">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetPolicyOutcome GetPolicy(const Model::GetPolicyRequest& request) const;
 
@@ -751,7 +849,9 @@ namespace Model
          * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
          * Lambda Function Versioning and Aliases</a>. </p> <p>For information about adding
          * permissions, see <a>AddPermission</a>.</p> <p>You need permission for the
-         * <code>lambda:GetPolicy action.</code> </p>
+         * <code>lambda:GetPolicy action.</code> </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetPolicy">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -766,7 +866,9 @@ namespace Model
          * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
          * Lambda Function Versioning and Aliases</a>. </p> <p>For information about adding
          * permissions, see <a>AddPermission</a>.</p> <p>You need permission for the
-         * <code>lambda:GetPolicy action.</code> </p>
+         * <code>lambda:GetPolicy action.</code> </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetPolicy">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -785,7 +887,10 @@ namespace Model
          * versioning feature, see <a
          * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
          * Lambda Function Versioning and Aliases</a>. </p> <p>This operation requires
-         * permission for the <code>lambda:InvokeFunction</code> action.</p>
+         * permission for the <code>lambda:InvokeFunction</code> action.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/Invoke">AWS API
+         * Reference</a></p>
          */
         virtual Model::InvokeOutcome Invoke(const Model::InvokeRequest& request) const;
 
@@ -802,7 +907,10 @@ namespace Model
          * versioning feature, see <a
          * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
          * Lambda Function Versioning and Aliases</a>. </p> <p>This operation requires
-         * permission for the <code>lambda:InvokeFunction</code> action.</p>
+         * permission for the <code>lambda:InvokeFunction</code> action.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/Invoke">AWS API
+         * Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -821,7 +929,10 @@ namespace Model
          * versioning feature, see <a
          * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
          * Lambda Function Versioning and Aliases</a>. </p> <p>This operation requires
-         * permission for the <code>lambda:InvokeFunction</code> action.</p>
+         * permission for the <code>lambda:InvokeFunction</code> action.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/Invoke">AWS API
+         * Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -833,7 +944,9 @@ namespace Model
          * and the function version to which it points. For more information, see <a
          * href="http://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">Introduction
          * to AWS Lambda Aliases</a>.</p> <p>This requires permission for the
-         * lambda:ListAliases action.</p>
+         * lambda:ListAliases action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListAliases">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListAliasesOutcome ListAliases(const Model::ListAliasesRequest& request) const;
 
@@ -843,7 +956,9 @@ namespace Model
          * and the function version to which it points. For more information, see <a
          * href="http://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">Introduction
          * to AWS Lambda Aliases</a>.</p> <p>This requires permission for the
-         * lambda:ListAliases action.</p>
+         * lambda:ListAliases action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListAliases">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -855,7 +970,9 @@ namespace Model
          * and the function version to which it points. For more information, see <a
          * href="http://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">Introduction
          * to AWS Lambda Aliases</a>.</p> <p>This requires permission for the
-         * lambda:ListAliases action.</p>
+         * lambda:ListAliases action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListAliases">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -872,7 +989,10 @@ namespace Model
          * feature, see <a
          * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
          * Lambda Function Versioning and Aliases</a>. </p> <p>This operation requires
-         * permission for the <code>lambda:ListEventSourceMappings</code> action.</p>
+         * permission for the <code>lambda:ListEventSourceMappings</code>
+         * action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListEventSourceMappings">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListEventSourceMappingsOutcome ListEventSourceMappings(const Model::ListEventSourceMappingsRequest& request) const;
 
@@ -887,7 +1007,10 @@ namespace Model
          * feature, see <a
          * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
          * Lambda Function Versioning and Aliases</a>. </p> <p>This operation requires
-         * permission for the <code>lambda:ListEventSourceMappings</code> action.</p>
+         * permission for the <code>lambda:ListEventSourceMappings</code>
+         * action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListEventSourceMappings">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -904,7 +1027,10 @@ namespace Model
          * feature, see <a
          * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
          * Lambda Function Versioning and Aliases</a>. </p> <p>This operation requires
-         * permission for the <code>lambda:ListEventSourceMappings</code> action.</p>
+         * permission for the <code>lambda:ListEventSourceMappings</code>
+         * action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListEventSourceMappings">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -918,7 +1044,9 @@ namespace Model
          * using versioning feature, the response returns list of $LATEST versions of your
          * functions. For information about the versioning feature, see <a
          * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
-         * Lambda Function Versioning and Aliases</a>. </p>
+         * Lambda Function Versioning and Aliases</a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListFunctions">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListFunctionsOutcome ListFunctions(const Model::ListFunctionsRequest& request) const;
 
@@ -930,7 +1058,9 @@ namespace Model
          * using versioning feature, the response returns list of $LATEST versions of your
          * functions. For information about the versioning feature, see <a
          * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
-         * Lambda Function Versioning and Aliases</a>. </p>
+         * Lambda Function Versioning and Aliases</a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListFunctions">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -944,7 +1074,9 @@ namespace Model
          * using versioning feature, the response returns list of $LATEST versions of your
          * functions. For information about the versioning feature, see <a
          * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
-         * Lambda Function Versioning and Aliases</a>. </p>
+         * Lambda Function Versioning and Aliases</a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListFunctions">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -954,7 +1086,9 @@ namespace Model
          * <p>List all versions of a function. For information about the versioning
          * feature, see <a
          * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
-         * Lambda Function Versioning and Aliases</a>. </p>
+         * Lambda Function Versioning and Aliases</a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListVersionsByFunction">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListVersionsByFunctionOutcome ListVersionsByFunction(const Model::ListVersionsByFunctionRequest& request) const;
 
@@ -962,7 +1096,9 @@ namespace Model
          * <p>List all versions of a function. For information about the versioning
          * feature, see <a
          * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
-         * Lambda Function Versioning and Aliases</a>. </p>
+         * Lambda Function Versioning and Aliases</a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListVersionsByFunction">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -972,7 +1108,9 @@ namespace Model
          * <p>List all versions of a function. For information about the versioning
          * feature, see <a
          * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
-         * Lambda Function Versioning and Aliases</a>. </p>
+         * Lambda Function Versioning and Aliases</a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListVersionsByFunction">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -985,7 +1123,9 @@ namespace Model
          * cannot be modified after publication. For information about the versioning
          * feature, see <a
          * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
-         * Lambda Function Versioning and Aliases</a>. </p>
+         * Lambda Function Versioning and Aliases</a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PublishVersion">AWS
+         * API Reference</a></p>
          */
         virtual Model::PublishVersionOutcome PublishVersion(const Model::PublishVersionRequest& request) const;
 
@@ -996,7 +1136,9 @@ namespace Model
          * cannot be modified after publication. For information about the versioning
          * feature, see <a
          * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
-         * Lambda Function Versioning and Aliases</a>. </p>
+         * Lambda Function Versioning and Aliases</a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PublishVersion">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1009,7 +1151,9 @@ namespace Model
          * cannot be modified after publication. For information about the versioning
          * feature, see <a
          * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
-         * Lambda Function Versioning and Aliases</a>. </p>
+         * Lambda Function Versioning and Aliases</a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PublishVersion">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1026,7 +1170,9 @@ namespace Model
          * Lambda Function Versioning and Aliases</a>. </p> <p>Note that removal of a
          * permission will cause an active event source to lose permission to the
          * function.</p> <p>You need permission for the
-         * <code>lambda:RemovePermission</code> action.</p>
+         * <code>lambda:RemovePermission</code> action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/RemovePermission">AWS
+         * API Reference</a></p>
          */
         virtual Model::RemovePermissionOutcome RemovePermission(const Model::RemovePermissionRequest& request) const;
 
@@ -1041,7 +1187,9 @@ namespace Model
          * Lambda Function Versioning and Aliases</a>. </p> <p>Note that removal of a
          * permission will cause an active event source to lose permission to the
          * function.</p> <p>You need permission for the
-         * <code>lambda:RemovePermission</code> action.</p>
+         * <code>lambda:RemovePermission</code> action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/RemovePermission">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1058,7 +1206,9 @@ namespace Model
          * Lambda Function Versioning and Aliases</a>. </p> <p>Note that removal of a
          * permission will cause an active event source to lose permission to the
          * function.</p> <p>You need permission for the
-         * <code>lambda:RemovePermission</code> action.</p>
+         * <code>lambda:RemovePermission</code> action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/RemovePermission">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1069,7 +1219,9 @@ namespace Model
          * and the alias description. For more information, see <a
          * href="http://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">Introduction
          * to AWS Lambda Aliases</a>.</p> <p>This requires permission for the
-         * lambda:UpdateAlias action.</p>
+         * lambda:UpdateAlias action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateAlias">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateAliasOutcome UpdateAlias(const Model::UpdateAliasRequest& request) const;
 
@@ -1078,7 +1230,9 @@ namespace Model
          * and the alias description. For more information, see <a
          * href="http://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">Introduction
          * to AWS Lambda Aliases</a>.</p> <p>This requires permission for the
-         * lambda:UpdateAlias action.</p>
+         * lambda:UpdateAlias action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateAlias">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1089,7 +1243,9 @@ namespace Model
          * and the alias description. For more information, see <a
          * href="http://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">Introduction
          * to AWS Lambda Aliases</a>.</p> <p>This requires permission for the
-         * lambda:UpdateAlias action.</p>
+         * lambda:UpdateAlias action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateAlias">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1110,7 +1266,10 @@ namespace Model
          * polling from the time it had stopped polling, so you don't lose processing of
          * any records. However, if you delete event source mapping and create it again, it
          * will reset.</p> <p>This operation requires permission for the
-         * <code>lambda:UpdateEventSourceMapping</code> action.</p>
+         * <code>lambda:UpdateEventSourceMapping</code> action.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateEventSourceMapping">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateEventSourceMappingOutcome UpdateEventSourceMapping(const Model::UpdateEventSourceMappingRequest& request) const;
 
@@ -1129,7 +1288,10 @@ namespace Model
          * polling from the time it had stopped polling, so you don't lose processing of
          * any records. However, if you delete event source mapping and create it again, it
          * will reset.</p> <p>This operation requires permission for the
-         * <code>lambda:UpdateEventSourceMapping</code> action.</p>
+         * <code>lambda:UpdateEventSourceMapping</code> action.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateEventSourceMapping">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1150,7 +1312,10 @@ namespace Model
          * polling from the time it had stopped polling, so you don't lose processing of
          * any records. However, if you delete event source mapping and create it again, it
          * will reset.</p> <p>This operation requires permission for the
-         * <code>lambda:UpdateEventSourceMapping</code> action.</p>
+         * <code>lambda:UpdateEventSourceMapping</code> action.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateEventSourceMapping">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1164,7 +1329,10 @@ namespace Model
          * about the versioning feature, see <a
          * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
          * Lambda Function Versioning and Aliases</a>. </p> <p>This operation requires
-         * permission for the <code>lambda:UpdateFunctionCode</code> action.</p>
+         * permission for the <code>lambda:UpdateFunctionCode</code> action.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateFunctionCode">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateFunctionCodeOutcome UpdateFunctionCode(const Model::UpdateFunctionCodeRequest& request) const;
 
@@ -1176,7 +1344,10 @@ namespace Model
          * about the versioning feature, see <a
          * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
          * Lambda Function Versioning and Aliases</a>. </p> <p>This operation requires
-         * permission for the <code>lambda:UpdateFunctionCode</code> action.</p>
+         * permission for the <code>lambda:UpdateFunctionCode</code> action.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateFunctionCode">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1190,7 +1361,10 @@ namespace Model
          * about the versioning feature, see <a
          * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
          * Lambda Function Versioning and Aliases</a>. </p> <p>This operation requires
-         * permission for the <code>lambda:UpdateFunctionCode</code> action.</p>
+         * permission for the <code>lambda:UpdateFunctionCode</code> action.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateFunctionCode">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1205,7 +1379,10 @@ namespace Model
          * Lambda function. For information about the versioning feature, see <a
          * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
          * Lambda Function Versioning and Aliases</a>. </p> <p>This operation requires
-         * permission for the <code>lambda:UpdateFunctionConfiguration</code> action.</p>
+         * permission for the <code>lambda:UpdateFunctionConfiguration</code>
+         * action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateFunctionConfiguration">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateFunctionConfigurationOutcome UpdateFunctionConfiguration(const Model::UpdateFunctionConfigurationRequest& request) const;
 
@@ -1218,7 +1395,10 @@ namespace Model
          * Lambda function. For information about the versioning feature, see <a
          * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
          * Lambda Function Versioning and Aliases</a>. </p> <p>This operation requires
-         * permission for the <code>lambda:UpdateFunctionConfiguration</code> action.</p>
+         * permission for the <code>lambda:UpdateFunctionConfiguration</code>
+         * action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateFunctionConfiguration">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1233,7 +1413,10 @@ namespace Model
          * Lambda function. For information about the versioning feature, see <a
          * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
          * Lambda Function Versioning and Aliases</a>. </p> <p>This operation requires
-         * permission for the <code>lambda:UpdateFunctionConfiguration</code> action.</p>
+         * permission for the <code>lambda:UpdateFunctionConfiguration</code>
+         * action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateFunctionConfiguration">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */

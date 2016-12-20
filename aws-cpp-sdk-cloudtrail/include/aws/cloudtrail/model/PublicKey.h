@@ -33,7 +33,10 @@ namespace Model
 {
 
   /**
-   * <p>Contains information about a returned public key.</p>
+   * <p>Contains information about a returned public key.</p><p><h3>See Also:</h3>  
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/PublicKey">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDTRAIL_API PublicKey
   {

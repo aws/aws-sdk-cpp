@@ -34,7 +34,9 @@ namespace Model
    * Directory. This would allow you to provide users and groups access to resources
    * in either domain, with a single set of credentials.</p> <p>This action initiates
    * the creation of the AWS side of a trust relationship between a Microsoft AD in
-   * the AWS cloud and an external domain.</p>
+   * the AWS cloud and an external domain.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateTrustRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_DIRECTORYSERVICE_API CreateTrustRequest : public DirectoryServiceRequest
   {

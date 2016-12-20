@@ -26,7 +26,9 @@ namespace Model
 
   /**
    * <p>Provides options for deleting a vault notification configuration from an
-   * Amazon Glacier vault.</p>
+   * Amazon Glacier vault.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/DeleteVaultNotificationsInput">AWS
+   * API Reference</a></p>
    */
   class AWS_GLACIER_API DeleteVaultNotificationsRequest : public GlacierRequest
   {

@@ -32,7 +32,10 @@ namespace Model
 {
 
   /**
-   * <p>Describes a secondary private IPv4 address for a network interface.</p>
+   * <p>Describes a secondary private IPv4 address for a network
+   * interface.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/PrivateIpAddressSpecification">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API PrivateIpAddressSpecification
   {

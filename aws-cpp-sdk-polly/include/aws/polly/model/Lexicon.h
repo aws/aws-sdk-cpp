@@ -34,7 +34,9 @@ namespace Model
    * <p>Provides lexicon name and lexicon content in string format. For more
    * information, see <a
    * href="https://www.w3.org/TR/pronunciation-lexicon/">Pronunciation Lexicon
-   * Specification (PLS) Version 1.0</a>.</p>
+   * Specification (PLS) Version 1.0</a>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/Lexicon">AWS API
+   * Reference</a></p>
    */
   class AWS_POLLY_API Lexicon
   {

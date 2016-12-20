@@ -31,7 +31,9 @@ namespace Model
 {
 
   /**
-   * <p>Represents a log event.</p>
+   * <p>Represents a log event.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/OutputLogEvent">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDWATCHLOGS_API OutputLogEvent
   {

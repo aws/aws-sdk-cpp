@@ -119,7 +119,9 @@ namespace Model
    * helper function.</p> </div> <div class="seeAlso"> <a>MethodResponse</a>,
    * <a>Integration</a>, <a>IntegrationResponse</a>, <a>Resource</a>, <a
    * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-method-settings.html">Set
-   * up an API's method</a> </div>
+   * up an API's method</a> </div><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/Method">AWS
+   * API Reference</a></p>
    */
   class AWS_APIGATEWAY_API Method
   {

@@ -33,7 +33,9 @@ namespace Model
 {
   /**
    * <p>The response from the server that results from a user's request to retrieve a
-   * forgotten password.</p>
+   * forgotten password.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ConfirmForgotPasswordResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_COGNITOIDENTITYPROVIDER_API ConfirmForgotPasswordResult
   {

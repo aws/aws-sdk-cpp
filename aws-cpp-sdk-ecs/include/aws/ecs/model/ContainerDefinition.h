@@ -41,7 +41,9 @@ namespace Model
 
   /**
    * <p>Container definitions are used in task definitions to describe the different
-   * containers that are launched as part of a task.</p>
+   * containers that are launched as part of a task.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ContainerDefinition">AWS
+   * API Reference</a></p>
    */
   class AWS_ECS_API ContainerDefinition
   {

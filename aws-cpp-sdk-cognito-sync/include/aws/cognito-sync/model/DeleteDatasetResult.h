@@ -33,7 +33,9 @@ namespace CognitoSync
 namespace Model
 {
   /**
-   * Response to a successful DeleteDataset request.
+   * Response to a successful DeleteDataset request.<p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/DeleteDatasetResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_COGNITOSYNC_API DeleteDatasetResult
   {

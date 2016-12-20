@@ -33,7 +33,10 @@ namespace Model
 
   /**
    * <p>Describes the face properties such as the bounding box, face ID, image ID of
-   * the source image, and external image ID that you assigned. </p>
+   * the source image, and external image ID that you assigned. </p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/Face">AWS
+   * API Reference</a></p>
    */
   class AWS_REKOGNITION_API Face
   {

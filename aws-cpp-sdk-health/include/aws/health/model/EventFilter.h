@@ -37,7 +37,9 @@ namespace Model
 
   /**
    * <p>The values to use to filter results from the <a>DescribeEvents</a> and
-   * <a>DescribeEventAggregates</a> operations.</p>
+   * <a>DescribeEventAggregates</a> operations.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/EventFilter">AWS
+   * API Reference</a></p>
    */
   class AWS_HEALTH_API EventFilter
   {

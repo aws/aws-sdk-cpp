@@ -37,7 +37,9 @@ namespace Model
   /**
    * <p>A JSON object containing the following fields:</p> <ul> <li> <p>
    * <a>ListTapesOutput$Marker</a> </p> </li> <li> <p>
-   * <a>ListTapesOutput$VolumeInfos</a> </p> </li> </ul>
+   * <a>ListTapesOutput$VolumeInfos</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListTapesOutput">AWS
+   * API Reference</a></p>
    */
   class AWS_STORAGEGATEWAY_API ListTapesResult
   {

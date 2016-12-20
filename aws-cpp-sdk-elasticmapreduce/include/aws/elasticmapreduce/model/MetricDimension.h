@@ -37,7 +37,10 @@ namespace Model
    * <code>Value</code> is a variable representing the cluster ID, which is
    * <code>${emr:cluster_id}</code>. This enables the rule to bootstrap when the
    * cluster ID becomes available, and also enables a single automatic scaling policy
-   * to be reused for multiple clusters and instance groups.</p>
+   * to be reused for multiple clusters and instance groups.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/MetricDimension">AWS
+   * API Reference</a></p>
    */
   class AWS_EMR_API MetricDimension
   {

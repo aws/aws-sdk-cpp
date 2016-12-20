@@ -32,7 +32,9 @@ namespace Model
 
   /**
    * <p>Contains the resource id (<code>rid</code>) and the time it took to process
-   * the request (<code>timems</code>).</p>
+   * the request (<code>timems</code>).</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearchdomain-2013-01-01/SearchStatus">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDSEARCHDOMAIN_API SearchStatus
   {

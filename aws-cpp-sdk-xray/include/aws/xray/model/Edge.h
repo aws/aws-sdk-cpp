@@ -35,7 +35,9 @@ namespace Model
 {
 
   /**
-   * <p>Information about a connection between two services.</p>
+   * <p>Information about a connection between two services.</p><p><h3>See Also:</h3>
+   * <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/Edge">AWS API
+   * Reference</a></p>
    */
   class AWS_XRAY_API Edge
   {

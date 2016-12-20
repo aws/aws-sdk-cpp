@@ -37,7 +37,9 @@ namespace Model
    * index to be added to an existing table.</p> </li> <li> <p>New provisioned
    * throughput parameters for an existing global secondary index.</p> </li> <li>
    * <p>An existing global secondary index to be removed from an existing table.</p>
-   * </li> </ul>
+   * </li> </ul><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/GlobalSecondaryIndexUpdate">AWS
+   * API Reference</a></p>
    */
   class AWS_DYNAMODB_API GlobalSecondaryIndexUpdate
   {

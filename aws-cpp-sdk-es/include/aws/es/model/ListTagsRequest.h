@@ -31,7 +31,9 @@ namespace Model
   /**
    * <p>Container for the parameters to the <code><a>ListTags</a></code> operation.
    * Specify the <code>ARN</code> for the Elasticsearch domain to which the tags are
-   * attached that you want to view are attached.</p>
+   * attached that you want to view are attached.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/ListTagsRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICSEARCHSERVICE_API ListTagsRequest : public ElasticsearchServiceRequest
   {

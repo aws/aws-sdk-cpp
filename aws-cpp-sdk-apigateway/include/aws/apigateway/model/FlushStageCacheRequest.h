@@ -25,7 +25,10 @@ namespace Model
 {
 
   /**
-   * <p>Requests Amazon API Gateway to flush a stage's cache.</p>
+   * <p>Requests Amazon API Gateway to flush a stage's cache.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/FlushStageCacheRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_APIGATEWAY_API FlushStageCacheRequest : public APIGatewayRequest
   {

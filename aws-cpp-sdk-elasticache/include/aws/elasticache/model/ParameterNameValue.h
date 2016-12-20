@@ -33,7 +33,9 @@ namespace Model
 
   /**
    * <p>Describes a name-value pair that is used to update the value of a
-   * parameter.</p>
+   * parameter.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ParameterNameValue">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICACHE_API ParameterNameValue
   {

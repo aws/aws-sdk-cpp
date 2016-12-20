@@ -35,7 +35,9 @@ namespace Model
   /**
    * <p>Metric filters express how CloudWatch Logs would extract metric observations
    * from ingested log events and transform them into metric data in a CloudWatch
-   * metric.</p>
+   * metric.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/MetricFilter">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDWATCHLOGS_API MetricFilter
   {

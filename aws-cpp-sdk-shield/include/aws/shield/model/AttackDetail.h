@@ -36,7 +36,9 @@ namespace Model
 {
 
   /**
-   * <p>The details of a DDoS attack.</p>
+   * <p>The details of a DDoS attack.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/AttackDetail">AWS
+   * API Reference</a></p>
    */
   class AWS_SHIELD_API AttackDetail
   {

@@ -26,7 +26,9 @@ namespace Model
 
   /**
    * <p>A request to list the <a>SqlInjectionMatchSet</a> objects created by the
-   * current AWS account.</p>
+   * current AWS account.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListSqlInjectionMatchSetsRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_WAF_API ListSqlInjectionMatchSetsRequest : public WAFRequest
   {

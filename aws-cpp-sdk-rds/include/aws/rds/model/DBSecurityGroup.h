@@ -40,7 +40,10 @@ namespace Model
    * <a>AuthorizeDBSecurityGroupIngress</a> </p> </li> <li> <p>
    * <a>CreateDBSecurityGroup</a> </p> </li> <li> <p>
    * <a>RevokeDBSecurityGroupIngress</a> </p> </li> </ul> <p>This data type is used
-   * as a response element in the <a>DescribeDBSecurityGroups</a> action.</p>
+   * as a response element in the <a>DescribeDBSecurityGroups</a>
+   * action.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DBSecurityGroup">AWS
+   * API Reference</a></p>
    */
   class AWS_RDS_API DBSecurityGroup
   {

@@ -26,7 +26,9 @@ namespace Model
 
   /**
    * <p>Request to delete an existing model in an existing <a>RestApi</a>
-   * resource.</p>
+   * resource.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteModelRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_APIGATEWAY_API DeleteModelRequest : public APIGatewayRequest
   {

@@ -36,7 +36,9 @@ namespace Model
    * approval state of the patch in a particular patch baseline. The approval state
    * includes information about whether the patch is currently approved, due to be
    * approved by a rule, explicitly approved, or explicitly rejected and the date the
-   * patch was or will be approved.</p>
+   * patch was or will be approved.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/EffectivePatch">AWS
+   * API Reference</a></p>
    */
   class AWS_SSM_API EffectivePatch
   {

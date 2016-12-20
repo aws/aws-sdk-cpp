@@ -25,7 +25,10 @@ namespace Model
 {
 
   /**
-   * <p>A request to generate a <a>ClientCertificate</a> resource.</p>
+   * <p>A request to generate a <a>ClientCertificate</a> resource.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GenerateClientCertificateRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_APIGATEWAY_API GenerateClientCertificateRequest : public APIGatewayRequest
   {

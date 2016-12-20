@@ -26,7 +26,10 @@ namespace Model
 
   /**
    * <p>Container for the parameters to the
-   * <code><a>DescribeElasticsearchDomain</a></code> operation.</p>
+   * <code><a>DescribeElasticsearchDomain</a></code> operation.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DescribeElasticsearchDomainRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICSEARCHSERVICE_API DescribeElasticsearchDomainRequest : public ElasticsearchServiceRequest
   {

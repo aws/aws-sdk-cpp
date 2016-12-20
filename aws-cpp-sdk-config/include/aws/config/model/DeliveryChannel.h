@@ -33,7 +33,9 @@ namespace Model
 
   /**
    * <p>The channel through which AWS Config delivers notifications and updated
-   * configuration states.</p>
+   * configuration states.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeliveryChannel">AWS
+   * API Reference</a></p>
    */
   class AWS_CONFIGSERVICE_API DeliveryChannel
   {

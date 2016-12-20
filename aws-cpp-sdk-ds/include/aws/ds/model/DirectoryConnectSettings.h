@@ -33,7 +33,9 @@ namespace Model
 
   /**
    * <p>Contains information for the <a>ConnectDirectory</a> operation when an AD
-   * Connector directory is being created.</p>
+   * Connector directory is being created.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DirectoryConnectSettings">AWS
+   * API Reference</a></p>
    */
   class AWS_DIRECTORYSERVICE_API DirectoryConnectSettings
   {

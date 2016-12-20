@@ -32,7 +32,10 @@ namespace Model
 {
 
   /**
-   * <p>Information about the priorities for the rules for a listener.</p>
+   * <p>Information about the priorities for the rules for a listener.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/RulePriorityPair">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICLOADBALANCINGV2_API RulePriorityPair
   {

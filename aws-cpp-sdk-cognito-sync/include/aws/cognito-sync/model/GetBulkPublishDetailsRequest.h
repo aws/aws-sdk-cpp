@@ -25,7 +25,9 @@ namespace Model
 {
 
   /**
-   * The input for the GetBulkPublishDetails operation.
+   * The input for the GetBulkPublishDetails operation.<p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/GetBulkPublishDetailsRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_COGNITOSYNC_API GetBulkPublishDetailsRequest : public CognitoSyncRequest
   {

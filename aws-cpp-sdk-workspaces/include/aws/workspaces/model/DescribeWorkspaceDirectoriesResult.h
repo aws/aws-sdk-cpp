@@ -36,7 +36,9 @@ namespace Model
 {
   /**
    * <p>Contains the results of the <a>DescribeWorkspaceDirectories</a>
-   * operation.</p>
+   * operation.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaceDirectoriesResult">AWS
+   * API Reference</a></p>
    */
   class AWS_WORKSPACES_API DescribeWorkspaceDirectoriesResult
   {

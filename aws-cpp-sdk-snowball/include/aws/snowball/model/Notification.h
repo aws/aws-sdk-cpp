@@ -40,7 +40,9 @@ namespace Model
    * defined during job creation, you can choose to notify based on a specific set of
    * job states using the <code>JobStatesToNotify</code> array of strings, or you can
    * specify that you want to have Amazon SNS notifications sent out for all job
-   * states with <code>NotifyAll</code> set to true.</p>
+   * states with <code>NotifyAll</code> set to true.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/Notification">AWS
+   * API Reference</a></p>
    */
   class AWS_SNOWBALL_API Notification
   {

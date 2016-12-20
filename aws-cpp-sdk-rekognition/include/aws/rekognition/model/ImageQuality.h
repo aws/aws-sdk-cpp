@@ -30,7 +30,9 @@ namespace Model
 {
 
   /**
-   * <p>Identifies image brightness and sharpness. </p>
+   * <p>Identifies image brightness and sharpness. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ImageQuality">AWS
+   * API Reference</a></p>
    */
   class AWS_REKOGNITION_API ImageQuality
   {

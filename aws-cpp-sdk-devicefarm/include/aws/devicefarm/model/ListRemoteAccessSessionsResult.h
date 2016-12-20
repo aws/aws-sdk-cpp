@@ -36,7 +36,10 @@ namespace Model
 {
   /**
    * <p>Represents the response from the server after AWS Device Farm makes a request
-   * to return information about the remote access session.</p>
+   * to return information about the remote access session.</p><p><h3>See Also:</h3> 
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListRemoteAccessSessionsResult">AWS
+   * API Reference</a></p>
    */
   class AWS_DEVICEFARM_API ListRemoteAccessSessionsResult
   {

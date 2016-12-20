@@ -32,7 +32,10 @@ namespace Model
 {
 
   /**
-   * <p> Status of the EBS options for the specified Elasticsearch domain.</p>
+   * <p> Status of the EBS options for the specified Elasticsearch
+   * domain.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/EBSOptionsStatus">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICSEARCHSERVICE_API EBSOptionsStatus
   {

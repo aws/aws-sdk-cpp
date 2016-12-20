@@ -31,7 +31,9 @@ namespace Model
 {
 
   /**
-   * <p>Information about a problem detail.</p>
+   * <p>Information about a problem detail.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ProblemDetail">AWS
+   * API Reference</a></p>
    */
   class AWS_DEVICEFARM_API ProblemDetail
   {

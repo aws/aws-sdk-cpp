@@ -31,7 +31,10 @@ namespace Model
 {
 
   /**
-   * <p>An Amazon S3 bucket where you want to store the results of this request.</p>
+   * <p>An Amazon S3 bucket where you want to store the results of this
+   * request.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/InstanceAssociationOutputLocation">AWS
+   * API Reference</a></p>
    */
   class AWS_SSM_API InstanceAssociationOutputLocation
   {

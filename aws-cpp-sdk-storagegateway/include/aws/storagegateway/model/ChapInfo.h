@@ -32,7 +32,10 @@ namespace Model
 
   /**
    * <p>Describes Challenge-Handshake Authentication Protocol (CHAP) information that
-   * supports authentication between your gateway and iSCSI initiators.</p>
+   * supports authentication between your gateway and iSCSI initiators.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ChapInfo">AWS
+   * API Reference</a></p>
    */
   class AWS_STORAGEGATEWAY_API ChapInfo
   {

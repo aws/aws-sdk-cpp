@@ -33,7 +33,9 @@ namespace Model
 
   /**
    * <p>Specifies the type of update to perform to an <a>IPSet</a> with
-   * <a>UpdateIPSet</a>.</p>
+   * <a>UpdateIPSet</a>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/IPSetUpdate">AWS API
+   * Reference</a></p>
    */
   class AWS_WAF_API IPSetUpdate
   {

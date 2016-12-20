@@ -36,7 +36,9 @@ namespace Model
 {
 
   /**
-   * <p>Properties describing a game session.</p>
+   * <p>Properties describing a game session.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GameSession">AWS
+   * API Reference</a></p>
    */
   class AWS_GAMELIFT_API GameSession
   {

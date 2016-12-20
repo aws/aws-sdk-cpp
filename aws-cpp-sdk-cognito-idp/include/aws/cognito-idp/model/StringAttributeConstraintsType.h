@@ -31,7 +31,10 @@ namespace Model
 {
 
   /**
-   * <p>The type of constraints associated with an attribute of the string type.</p>
+   * <p>The type of constraints associated with an attribute of the string
+   * type.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/StringAttributeConstraintsType">AWS
+   * API Reference</a></p>
    */
   class AWS_COGNITOIDENTITYPROVIDER_API StringAttributeConstraintsType
   {

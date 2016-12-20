@@ -34,7 +34,9 @@ namespace Model
 {
 
   /**
-   * <p>Detailed information about an activity type.</p>
+   * <p>Detailed information about an activity type.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ActivityTypeInfo">AWS
+   * API Reference</a></p>
    */
   class AWS_SWF_API ActivityTypeInfo
   {

@@ -32,7 +32,9 @@ namespace Model
 
   /**
    * <p>Creates the configuration settings for a remote access session, including the
-   * device model and type.</p>
+   * device model and type.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateRemoteAccessSessionConfiguration">AWS
+   * API Reference</a></p>
    */
   class AWS_DEVICEFARM_API CreateRemoteAccessSessionConfiguration
   {

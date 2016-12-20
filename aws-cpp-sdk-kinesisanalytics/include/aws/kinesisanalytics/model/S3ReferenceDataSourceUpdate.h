@@ -33,7 +33,9 @@ namespace Model
   /**
    * <p>Describes the S3 bucket name, object key name, and IAM role that Amazon
    * Kinesis Analytics can assume to read the Amazon S3 object on your behalf and
-   * populate the in-application reference table.</p>
+   * populate the in-application reference table.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/S3ReferenceDataSourceUpdate">AWS
+   * API Reference</a></p>
    */
   class AWS_KINESISANALYTICS_API S3ReferenceDataSourceUpdate
   {

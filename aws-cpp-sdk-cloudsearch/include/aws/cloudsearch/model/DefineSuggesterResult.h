@@ -35,7 +35,9 @@ namespace Model
 {
   /**
    * <p>The result of a <code>DefineSuggester</code> request. Contains the status of
-   * the newly-configured suggester.</p>
+   * the newly-configured suggester.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DefineSuggesterResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDSEARCH_API DefineSuggesterResult
   {

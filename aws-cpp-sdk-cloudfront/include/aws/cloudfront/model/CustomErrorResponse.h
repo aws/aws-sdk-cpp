@@ -40,7 +40,10 @@ namespace Model
    * existing distribution, update the distribution configuration and include only an
    * empty CustomErrorResponses element. To add, change, or remove one or more custom
    * error responses, update the distribution configuration and specify all of the
-   * custom error responses that you want to include in the updated distribution.
+   * custom error responses that you want to include in the updated
+   * distribution.<p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/CustomErrorResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API CustomErrorResponse
   {

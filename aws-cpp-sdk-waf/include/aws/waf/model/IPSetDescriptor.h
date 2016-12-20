@@ -33,7 +33,10 @@ namespace Model
 
   /**
    * <p>Specifies the IP address type (<code>IPV4</code> or <code>IPV6</code>) and
-   * the IP address range (in CIDR format) that web requests originate from.</p>
+   * the IP address range (in CIDR format) that web requests originate
+   * from.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/IPSetDescriptor">AWS
+   * API Reference</a></p>
    */
   class AWS_WAF_API IPSetDescriptor
   {

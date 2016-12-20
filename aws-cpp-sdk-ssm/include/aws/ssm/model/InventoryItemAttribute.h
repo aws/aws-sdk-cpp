@@ -33,7 +33,9 @@ namespace Model
 
   /**
    * <p>Attributes are the entries within the inventory item content. It contains
-   * name and value.</p>
+   * name and value.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/InventoryItemAttribute">AWS
+   * API Reference</a></p>
    */
   class AWS_SSM_API InventoryItemAttribute
   {

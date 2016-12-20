@@ -36,7 +36,10 @@ namespace Model
 {
 
   /**
-   * <p>Represents the output for <a>DescribeStream</a>.</p>
+   * <p>Represents the output for <a>DescribeStream</a>.</p><p><h3>See Also:</h3>  
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/StreamDescription">AWS
+   * API Reference</a></p>
    */
   class AWS_KINESIS_API StreamDescription
   {

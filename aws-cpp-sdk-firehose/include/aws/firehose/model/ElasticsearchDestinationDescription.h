@@ -37,7 +37,9 @@ namespace Model
 {
 
   /**
-   * <p>The destination description in Amazon ES.</p>
+   * <p>The destination description in Amazon ES.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/ElasticsearchDestinationDescription">AWS
+   * API Reference</a></p>
    */
   class AWS_FIREHOSE_API ElasticsearchDestinationDescription
   {

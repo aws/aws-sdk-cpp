@@ -33,7 +33,10 @@ namespace CloudHSM
 namespace Model
 {
   /**
-   * <p>Contains the output of the <a>DeleteHapg</a> action.</p>
+   * <p>Contains the output of the <a>DeleteHapg</a> action.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DeleteHapgResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDHSM_API DeleteHapgResult
   {

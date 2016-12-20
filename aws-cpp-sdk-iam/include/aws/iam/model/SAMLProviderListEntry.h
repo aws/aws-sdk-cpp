@@ -33,7 +33,10 @@ namespace Model
 {
 
   /**
-   * <p>Contains the list of SAML providers for this account.</p>
+   * <p>Contains the list of SAML providers for this account.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/SAMLProviderListEntry">AWS
+   * API Reference</a></p>
    */
   class AWS_IAM_API SAMLProviderListEntry
   {

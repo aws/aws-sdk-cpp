@@ -34,7 +34,9 @@ namespace Model
 {
 
   /**
-   * <p>Describes the data feed for a Spot instance.</p>
+   * <p>Describes the data feed for a Spot instance.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SpotDatafeedSubscription">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API SpotDatafeedSubscription
   {

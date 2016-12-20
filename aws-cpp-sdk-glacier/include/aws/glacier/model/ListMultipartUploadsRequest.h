@@ -30,7 +30,9 @@ namespace Model
 
   /**
    * <p>Provides options for retrieving list of in-progress multipart uploads for an
-   * Amazon Glacier vault.</p>
+   * Amazon Glacier vault.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/ListMultipartUploadsInput">AWS
+   * API Reference</a></p>
    */
   class AWS_GLACIER_API ListMultipartUploadsRequest : public GlacierRequest
   {

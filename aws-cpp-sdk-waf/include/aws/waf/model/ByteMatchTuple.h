@@ -36,7 +36,9 @@ namespace Model
   /**
    * <p>The bytes (typically a string that corresponds with ASCII characters) that
    * you want AWS WAF to search for in web requests, the location in requests that
-   * you want AWS WAF to search, and other settings.</p>
+   * you want AWS WAF to search, and other settings.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ByteMatchTuple">AWS
+   * API Reference</a></p>
    */
   class AWS_WAF_API ByteMatchTuple
   {

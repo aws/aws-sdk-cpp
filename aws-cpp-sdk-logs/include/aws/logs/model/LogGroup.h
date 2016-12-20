@@ -31,7 +31,9 @@ namespace Model
 {
 
   /**
-   * <p>Represents a log group.</p>
+   * <p>Represents a log group.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/LogGroup">AWS API
+   * Reference</a></p>
    */
   class AWS_CLOUDWATCHLOGS_API LogGroup
   {

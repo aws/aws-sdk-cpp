@@ -32,7 +32,9 @@ namespace Model
 {
 
   /**
-   * <p>The group type.</p>
+   * <p>The group type.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GroupType">AWS
+   * API Reference</a></p>
    */
   class AWS_COGNITOIDENTITYPROVIDER_API GroupType
   {

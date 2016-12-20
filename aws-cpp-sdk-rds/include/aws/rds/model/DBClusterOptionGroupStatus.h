@@ -32,7 +32,10 @@ namespace Model
 {
 
   /**
-   * <p>Contains status information for a DB cluster option group.</p>
+   * <p>Contains status information for a DB cluster option group.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DBClusterOptionGroupStatus">AWS
+   * API Reference</a></p>
    */
   class AWS_RDS_API DBClusterOptionGroupStatus
   {

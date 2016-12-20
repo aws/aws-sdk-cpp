@@ -25,7 +25,9 @@ namespace Model
 {
 
   /**
-   * <p>Specifies the settings for each trail.</p>
+   * <p>Specifies the settings for each trail.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/CreateTrailRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDTRAIL_API CreateTrailRequest : public CloudTrailRequest
   {

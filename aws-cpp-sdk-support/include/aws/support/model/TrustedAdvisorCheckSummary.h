@@ -34,7 +34,9 @@ namespace Model
 
   /**
    * <p>A summary of a Trusted Advisor check result, including the alert status, last
-   * refresh, and number of resources examined.</p>
+   * refresh, and number of resources examined.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/TrustedAdvisorCheckSummary">AWS
+   * API Reference</a></p>
    */
   class AWS_SUPPORT_API TrustedAdvisorCheckSummary
   {

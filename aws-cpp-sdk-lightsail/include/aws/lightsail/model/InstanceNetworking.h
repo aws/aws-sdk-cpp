@@ -34,7 +34,9 @@ namespace Model
 
   /**
    * <p>Describes monthly data transfer rates and port information for an
-   * instance.</p>
+   * instance.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/InstanceNetworking">AWS
+   * API Reference</a></p>
    */
   class AWS_LIGHTSAIL_API InstanceNetworking
   {

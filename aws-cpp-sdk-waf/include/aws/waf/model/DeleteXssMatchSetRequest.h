@@ -25,7 +25,10 @@ namespace Model
 {
 
   /**
-   * <p>A request to delete an <a>XssMatchSet</a> from AWS WAF.</p>
+   * <p>A request to delete an <a>XssMatchSet</a> from AWS WAF.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteXssMatchSetRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_WAF_API DeleteXssMatchSetRequest : public WAFRequest
   {

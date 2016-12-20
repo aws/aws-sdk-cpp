@@ -30,7 +30,9 @@ namespace Model
 
   /**
    * <p>Provides options for retrieving a list of parts of an archive that have been
-   * uploaded in a specific multipart upload.</p>
+   * uploaded in a specific multipart upload.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/ListPartsInput">AWS
+   * API Reference</a></p>
    */
   class AWS_GLACIER_API ListPartsRequest : public GlacierRequest
   {

@@ -182,7 +182,10 @@ namespace Model
          * permissions that allows the service to deliver the data. For more information,
          * see <a
          * href="http://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Amazon
-         * S3 Bucket Access</a> in the <i>Amazon Kinesis Firehose Developer Guide</i>.</p>
+         * S3 Bucket Access</a> in the <i>Amazon Kinesis Firehose Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/CreateDeliveryStream">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateDeliveryStreamOutcome CreateDeliveryStream(const Model::CreateDeliveryStreamRequest& request) const;
 
@@ -229,7 +232,10 @@ namespace Model
          * permissions that allows the service to deliver the data. For more information,
          * see <a
          * href="http://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Amazon
-         * S3 Bucket Access</a> in the <i>Amazon Kinesis Firehose Developer Guide</i>.</p>
+         * S3 Bucket Access</a> in the <i>Amazon Kinesis Firehose Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/CreateDeliveryStream">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -278,7 +284,10 @@ namespace Model
          * permissions that allows the service to deliver the data. For more information,
          * see <a
          * href="http://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Amazon
-         * S3 Bucket Access</a> in the <i>Amazon Kinesis Firehose Developer Guide</i>.</p>
+         * S3 Bucket Access</a> in the <i>Amazon Kinesis Firehose Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/CreateDeliveryStream">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -294,7 +303,9 @@ namespace Model
          * continue to accept the records, but the service doesn't make any guarantees with
          * respect to delivering the data. Therefore, as a best practice, you should first
          * stop any applications that are sending records before deleting a delivery
-         * stream.</p>
+         * stream.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/DeleteDeliveryStream">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteDeliveryStreamOutcome DeleteDeliveryStream(const Model::DeleteDeliveryStreamRequest& request) const;
 
@@ -308,7 +319,9 @@ namespace Model
          * continue to accept the records, but the service doesn't make any guarantees with
          * respect to delivering the data. Therefore, as a best practice, you should first
          * stop any applications that are sending records before deleting a delivery
-         * stream.</p>
+         * stream.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/DeleteDeliveryStream">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -324,7 +337,9 @@ namespace Model
          * continue to accept the records, but the service doesn't make any guarantees with
          * respect to delivering the data. Therefore, as a best practice, you should first
          * stop any applications that are sending records before deleting a delivery
-         * stream.</p>
+         * stream.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/DeleteDeliveryStream">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -334,7 +349,9 @@ namespace Model
          * <p>Describes the specified delivery stream and gets the status. For example,
          * after your delivery stream is created, call <a>DescribeDeliveryStream</a> to see
          * if the delivery stream is <code>ACTIVE</code> and therefore ready for data to be
-         * sent to it.</p>
+         * sent to it.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/DescribeDeliveryStream">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeDeliveryStreamOutcome DescribeDeliveryStream(const Model::DescribeDeliveryStreamRequest& request) const;
 
@@ -342,7 +359,9 @@ namespace Model
          * <p>Describes the specified delivery stream and gets the status. For example,
          * after your delivery stream is created, call <a>DescribeDeliveryStream</a> to see
          * if the delivery stream is <code>ACTIVE</code> and therefore ready for data to be
-         * sent to it.</p>
+         * sent to it.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/DescribeDeliveryStream">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -352,7 +371,9 @@ namespace Model
          * <p>Describes the specified delivery stream and gets the status. For example,
          * after your delivery stream is created, call <a>DescribeDeliveryStream</a> to see
          * if the delivery stream is <code>ACTIVE</code> and therefore ready for data to be
-         * sent to it.</p>
+         * sent to it.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/DescribeDeliveryStream">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -366,7 +387,9 @@ namespace Model
          * <b>HasMoreDeliveryStreams</b> in the output. If there are more delivery streams
          * to list, you can request them by specifying the name of the last delivery stream
          * returned in the call in the <b>ExclusiveStartDeliveryStreamName</b> parameter of
-         * a subsequent call.</p>
+         * a subsequent call.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/ListDeliveryStreams">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListDeliveryStreamsOutcome ListDeliveryStreams(const Model::ListDeliveryStreamsRequest& request) const;
 
@@ -378,7 +401,9 @@ namespace Model
          * <b>HasMoreDeliveryStreams</b> in the output. If there are more delivery streams
          * to list, you can request them by specifying the name of the last delivery stream
          * returned in the call in the <b>ExclusiveStartDeliveryStreamName</b> parameter of
-         * a subsequent call.</p>
+         * a subsequent call.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/ListDeliveryStreams">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -392,7 +417,9 @@ namespace Model
          * <b>HasMoreDeliveryStreams</b> in the output. If there are more delivery streams
          * to list, you can request them by specifying the name of the last delivery stream
          * returned in the call in the <b>ExclusiveStartDeliveryStreamName</b> parameter of
-         * a subsequent call.</p>
+         * a subsequent call.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/ListDeliveryStreams">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -425,7 +452,10 @@ namespace Model
          * exceeded for the delivery stream. </p> <p>Data records sent to Firehose are
          * stored for 24 hours from the time they are added to a delivery stream as it
          * attempts to send the records to the destination. If the destination is
-         * unreachable for more than 24 hours, the data is no longer available.</p>
+         * unreachable for more than 24 hours, the data is no longer
+         * available.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/PutRecord">AWS
+         * API Reference</a></p>
          */
         virtual Model::PutRecordOutcome PutRecord(const Model::PutRecordRequest& request) const;
 
@@ -456,7 +486,10 @@ namespace Model
          * exceeded for the delivery stream. </p> <p>Data records sent to Firehose are
          * stored for 24 hours from the time they are added to a delivery stream as it
          * attempts to send the records to the destination. If the destination is
-         * unreachable for more than 24 hours, the data is no longer available.</p>
+         * unreachable for more than 24 hours, the data is no longer
+         * available.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/PutRecord">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -489,7 +522,10 @@ namespace Model
          * exceeded for the delivery stream. </p> <p>Data records sent to Firehose are
          * stored for 24 hours from the time they are added to a delivery stream as it
          * attempts to send the records to the destination. If the destination is
-         * unreachable for more than 24 hours, the data is no longer available.</p>
+         * unreachable for more than 24 hours, the data is no longer
+         * available.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/PutRecord">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -545,7 +581,9 @@ namespace Model
          * records sent to Firehose are stored for 24 hours from the time they are added to
          * a delivery stream as it attempts to send the records to the destination. If the
          * destination is unreachable for more than 24 hours, the data is no longer
-         * available.</p>
+         * available.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/PutRecordBatch">AWS
+         * API Reference</a></p>
          */
         virtual Model::PutRecordBatchOutcome PutRecordBatch(const Model::PutRecordBatchRequest& request) const;
 
@@ -599,7 +637,9 @@ namespace Model
          * records sent to Firehose are stored for 24 hours from the time they are added to
          * a delivery stream as it attempts to send the records to the destination. If the
          * destination is unreachable for more than 24 hours, the data is no longer
-         * available.</p>
+         * available.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/PutRecordBatch">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -655,7 +695,9 @@ namespace Model
          * records sent to Firehose are stored for 24 hours from the time they are added to
          * a delivery stream as it attempts to send the records to the destination. If the
          * destination is unreachable for more than 24 hours, the data is no longer
-         * available.</p>
+         * available.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/PutRecordBatch">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -689,7 +731,9 @@ namespace Model
          * is updated, which can be retrieved with the <a>DescribeDeliveryStream</a>
          * operation. The new <b>VersionId</b> should be uses to set
          * <b>CurrentDeliveryStreamVersionId</b> in the next <a>UpdateDestination</a>
-         * operation.</p>
+         * operation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/UpdateDestination">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateDestinationOutcome UpdateDestination(const Model::UpdateDestinationRequest& request) const;
 
@@ -721,7 +765,9 @@ namespace Model
          * is updated, which can be retrieved with the <a>DescribeDeliveryStream</a>
          * operation. The new <b>VersionId</b> should be uses to set
          * <b>CurrentDeliveryStreamVersionId</b> in the next <a>UpdateDestination</a>
-         * operation.</p>
+         * operation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/UpdateDestination">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -755,7 +801,9 @@ namespace Model
          * is updated, which can be retrieved with the <a>DescribeDeliveryStream</a>
          * operation. The new <b>VersionId</b> should be uses to set
          * <b>CurrentDeliveryStreamVersionId</b> in the next <a>UpdateDestination</a>
-         * operation.</p>
+         * operation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/UpdateDestination">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */

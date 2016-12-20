@@ -41,7 +41,10 @@ namespace Model
    * specify the .png or .jpg graphics that you want Elastic Transcoder to include in
    * the transcoded videos. You can specify fewer graphics in the job than you
    * specify watermark settings in the preset, which allows you to use the same
-   * preset for up to four watermarks that have different dimensions.</p>
+   * preset for up to four watermarks that have different dimensions.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/PresetWatermark">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICTRANSCODER_API PresetWatermark
   {

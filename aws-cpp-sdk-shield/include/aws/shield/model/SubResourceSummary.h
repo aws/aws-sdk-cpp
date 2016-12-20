@@ -35,7 +35,10 @@ namespace Model
 {
 
   /**
-   * <p>The attack information for the specified SubResource.</p>
+   * <p>The attack information for the specified SubResource.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/SubResourceSummary">AWS
+   * API Reference</a></p>
    */
   class AWS_SHIELD_API SubResourceSummary
   {

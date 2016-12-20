@@ -34,7 +34,9 @@ namespace Model
 
   /**
    * <p>A set of Docker images that are related by programming language and are
-   * managed by AWS CodeBuild.</p>
+   * managed by AWS CodeBuild.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/EnvironmentLanguage">AWS
+   * API Reference</a></p>
    */
   class AWS_CODEBUILD_API EnvironmentLanguage
   {

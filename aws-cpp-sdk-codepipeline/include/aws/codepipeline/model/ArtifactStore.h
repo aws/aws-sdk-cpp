@@ -36,7 +36,10 @@ namespace Model
    * <p>The Amazon S3 location where artifacts are stored for the pipeline. If this
    * Amazon S3 bucket is created manually, it must meet the requirements for AWS
    * CodePipeline. For more information, see the <a
-   * href="http://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#CPS3Bucket">Concepts</a>.</p>
+   * href="http://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#CPS3Bucket">Concepts</a>.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ArtifactStore">AWS
+   * API Reference</a></p>
    */
   class AWS_CODEPIPELINE_API ArtifactStore
   {

@@ -35,7 +35,9 @@ namespace Model
   /**
    * This is used in a Lifecycle Rule Filter to apply a logical AND to two or more
    * predicates. The Lifecycle Rule will apply to any object matching all of the
-   * predicates configured inside the And operator.
+   * predicates configured inside the And operator.<p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/LifecycleRuleAndOperator">AWS
+   * API Reference</a></p>
    */
   class AWS_S3_API LifecycleRuleAndOperator
   {

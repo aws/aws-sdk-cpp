@@ -27,7 +27,9 @@ namespace Model
 {
 
   /**
-   * <p>A <code>PutRecords</code> request.</p>
+   * <p>A <code>PutRecords</code> request.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/PutRecordsInput">AWS
+   * API Reference</a></p>
    */
   class AWS_KINESIS_API PutRecordsRequest : public KinesisRequest
   {

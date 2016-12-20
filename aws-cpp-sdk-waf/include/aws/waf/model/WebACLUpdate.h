@@ -33,7 +33,9 @@ namespace Model
 
   /**
    * <p>Specifies whether to insert a <code>Rule</code> into or delete a
-   * <code>Rule</code> from a <code>WebACL</code>.</p>
+   * <code>Rule</code> from a <code>WebACL</code>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/WebACLUpdate">AWS
+   * API Reference</a></p>
    */
   class AWS_WAF_API WebACLUpdate
   {

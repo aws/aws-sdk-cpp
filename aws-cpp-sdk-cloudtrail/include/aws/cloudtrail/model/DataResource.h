@@ -45,7 +45,9 @@ namespace Model
    * another image file to a different S3 bucket named
    * <code>arn:aws:s3:::bucket-2</code>.</p> </li> <li> <p>The event occurs on an
    * object in an S3 bucket that you didn't specify in the event selector. The trail
-   * doesn’t log the event.</p> </li> </ol>
+   * doesn’t log the event.</p> </li> </ol><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DataResource">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDTRAIL_API DataResource
   {

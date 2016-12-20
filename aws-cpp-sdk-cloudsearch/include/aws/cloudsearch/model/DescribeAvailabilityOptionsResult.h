@@ -36,7 +36,9 @@ namespace Model
   /**
    * <p>The result of a <code>DescribeAvailabilityOptions</code> request. Indicates
    * whether or not the Multi-AZ option is enabled for the domain specified in the
-   * request. </p>
+   * request. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DescribeAvailabilityOptionsResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDSEARCH_API DescribeAvailabilityOptionsResult
   {

@@ -35,7 +35,10 @@ namespace WAF
 namespace Model
 {
   /**
-   * <p>The response to a <a>ListXssMatchSets</a> request.</p>
+   * <p>The response to a <a>ListXssMatchSets</a> request.</p><p><h3>See Also:</h3>  
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListXssMatchSetsResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_WAF_API ListXssMatchSetsResult
   {

@@ -35,7 +35,10 @@ namespace Model
   /**
    * <p>A communication associated with an AWS Support case. The communication
    * consists of the case ID, the message body, attachment information, the account
-   * email address, and the date and time of the communication.</p>
+   * email address, and the date and time of the communication.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/Communication">AWS
+   * API Reference</a></p>
    */
   class AWS_SUPPORT_API Communication
   {

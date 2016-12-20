@@ -31,7 +31,9 @@ namespace Model
 {
 
   /**
-   * <p>Provides the S3 bucket name and object name.</p>
+   * <p>Provides the S3 bucket name and object name.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/S3Object">AWS
+   * API Reference</a></p>
    */
   class AWS_REKOGNITION_API S3Object
   {

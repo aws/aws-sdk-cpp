@@ -32,7 +32,10 @@ namespace Model
 {
 
   /**
-   * <p>Represents information about an action configuration property.</p>
+   * <p>Represents information about an action configuration property.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ActionConfigurationProperty">AWS
+   * API Reference</a></p>
    */
   class AWS_CODEPIPELINE_API ActionConfigurationProperty
   {

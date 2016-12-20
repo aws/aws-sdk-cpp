@@ -33,7 +33,10 @@ namespace Model
 {
 
   /**
-   * <p>Information about the state of the load balancer.</p>
+   * <p>Information about the state of the load balancer.</p><p><h3>See Also:</h3>  
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/LoadBalancerState">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICLOADBALANCINGV2_API LoadBalancerState
   {

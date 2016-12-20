@@ -34,7 +34,10 @@ namespace APIGateway
 namespace Model
 {
   /**
-   * <p>The identifier of an <a>ApiKey</a> used in a <a>UsagePlan</a>.</p>
+   * <p>The identifier of an <a>ApiKey</a> used in a <a>UsagePlan</a>.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/ApiKeyIds">AWS
+   * API Reference</a></p>
    */
   class AWS_APIGATEWAY_API ImportApiKeysResult
   {

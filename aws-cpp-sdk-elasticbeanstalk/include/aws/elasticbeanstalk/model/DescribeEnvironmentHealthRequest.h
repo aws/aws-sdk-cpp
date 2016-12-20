@@ -27,7 +27,10 @@ namespace Model
 {
 
   /**
-   * <p>See the example below to learn how to create a request body.</p>
+   * <p>See the example below to learn how to create a request body.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEnvironmentHealthRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICBEANSTALK_API DescribeEnvironmentHealthRequest : public ElasticBeanstalkRequest
   {

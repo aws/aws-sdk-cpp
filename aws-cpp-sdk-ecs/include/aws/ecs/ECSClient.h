@@ -250,7 +250,9 @@ namespace Model
          * <p>Creates a new Amazon ECS cluster. By default, your account receives a
          * <code>default</code> cluster when you launch your first container instance.
          * However, you can create your own cluster with a unique name with the
-         * <code>CreateCluster</code> action.</p>
+         * <code>CreateCluster</code> action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateCluster">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateClusterOutcome CreateCluster(const Model::CreateClusterRequest& request) const;
 
@@ -258,7 +260,9 @@ namespace Model
          * <p>Creates a new Amazon ECS cluster. By default, your account receives a
          * <code>default</code> cluster when you launch your first container instance.
          * However, you can create your own cluster with a unique name with the
-         * <code>CreateCluster</code> action.</p>
+         * <code>CreateCluster</code> action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateCluster">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -268,7 +272,9 @@ namespace Model
          * <p>Creates a new Amazon ECS cluster. By default, your account receives a
          * <code>default</code> cluster when you launch your first container instance.
          * However, you can create your own cluster with a unique name with the
-         * <code>CreateCluster</code> action.</p>
+         * <code>CreateCluster</code> action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateCluster">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -324,7 +330,9 @@ namespace Model
          * optimal for placement.</p> </li> <li> <p>Place the new service task on a valid
          * container instance in an optimal Availability Zone (based on the previous
          * steps), favoring container instances with the fewest number of running tasks for
-         * this service.</p> </li> </ul>
+         * this service.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateService">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateServiceOutcome CreateService(const Model::CreateServiceRequest& request) const;
 
@@ -378,7 +386,9 @@ namespace Model
          * optimal for placement.</p> </li> <li> <p>Place the new service task on a valid
          * container instance in an optimal Availability Zone (based on the previous
          * steps), favoring container instances with the fewest number of running tasks for
-         * this service.</p> </li> </ul>
+         * this service.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateService">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -434,7 +444,9 @@ namespace Model
          * optimal for placement.</p> </li> <li> <p>Place the new service task on a valid
          * container instance in an optimal Availability Zone (based on the previous
          * steps), favoring container instances with the fewest number of running tasks for
-         * this service.</p> </li> </ul>
+         * this service.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateService">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -444,7 +456,9 @@ namespace Model
          * <p>Deletes the specified cluster. You must deregister all container instances
          * from this cluster before you may delete it. You can list the container instances
          * in a cluster with <a>ListContainerInstances</a> and deregister them with
-         * <a>DeregisterContainerInstance</a>.</p>
+         * <a>DeregisterContainerInstance</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteCluster">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteClusterOutcome DeleteCluster(const Model::DeleteClusterRequest& request) const;
 
@@ -452,7 +466,9 @@ namespace Model
          * <p>Deletes the specified cluster. You must deregister all container instances
          * from this cluster before you may delete it. You can list the container instances
          * in a cluster with <a>ListContainerInstances</a> and deregister them with
-         * <a>DeregisterContainerInstance</a>.</p>
+         * <a>DeregisterContainerInstance</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteCluster">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -462,7 +478,9 @@ namespace Model
          * <p>Deletes the specified cluster. You must deregister all container instances
          * from this cluster before you may delete it. You can list the container instances
          * in a cluster with <a>ListContainerInstances</a> and deregister them with
-         * <a>DeregisterContainerInstance</a>.</p>
+         * <a>DeregisterContainerInstance</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteCluster">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -483,7 +501,10 @@ namespace Model
          * API operations; however, in the future, <code>INACTIVE</code> services may be
          * cleaned up and purged from Amazon ECS record keeping, and
          * <a>DescribeServices</a> API operations on those services will return a
-         * <code>ServiceNotFoundException</code> error.</p> </note>
+         * <code>ServiceNotFoundException</code> error.</p> </note><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteService">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteServiceOutcome DeleteService(const Model::DeleteServiceRequest& request) const;
 
@@ -502,7 +523,10 @@ namespace Model
          * API operations; however, in the future, <code>INACTIVE</code> services may be
          * cleaned up and purged from Amazon ECS record keeping, and
          * <a>DescribeServices</a> API operations on those services will return a
-         * <code>ServiceNotFoundException</code> error.</p> </note>
+         * <code>ServiceNotFoundException</code> error.</p> </note><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteService">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -523,7 +547,10 @@ namespace Model
          * API operations; however, in the future, <code>INACTIVE</code> services may be
          * cleaned up and purged from Amazon ECS record keeping, and
          * <a>DescribeServices</a> API operations on those services will return a
-         * <code>ServiceNotFoundException</code> error.</p> </note>
+         * <code>ServiceNotFoundException</code> error.</p> </note><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteService">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -541,7 +568,9 @@ namespace Model
          * terminate a running container instance, Amazon ECS automatically deregisters the
          * instance from your cluster (stopped container instances or instances with
          * disconnected agents are not automatically deregistered when terminated).</p>
-         * </note>
+         * </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeregisterContainerInstance">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeregisterContainerInstanceOutcome DeregisterContainerInstance(const Model::DeregisterContainerInstanceRequest& request) const;
 
@@ -557,7 +586,9 @@ namespace Model
          * terminate a running container instance, Amazon ECS automatically deregisters the
          * instance from your cluster (stopped container instances or instances with
          * disconnected agents are not automatically deregistered when terminated).</p>
-         * </note>
+         * </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeregisterContainerInstance">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -575,7 +606,9 @@ namespace Model
          * terminate a running container instance, Amazon ECS automatically deregisters the
          * instance from your cluster (stopped container instances or instances with
          * disconnected agents are not automatically deregistered when terminated).</p>
-         * </note>
+         * </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeregisterContainerInstance">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -591,7 +624,9 @@ namespace Model
          * definition to run new tasks or create new services, and you cannot update an
          * existing service to reference an <code>INACTIVE</code> task definition (although
          * there may be up to a 10 minute window following deregistration where these
-         * restrictions have not yet taken effect).</p>
+         * restrictions have not yet taken effect).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeregisterTaskDefinition">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeregisterTaskDefinitionOutcome DeregisterTaskDefinition(const Model::DeregisterTaskDefinitionRequest& request) const;
 
@@ -605,7 +640,9 @@ namespace Model
          * definition to run new tasks or create new services, and you cannot update an
          * existing service to reference an <code>INACTIVE</code> task definition (although
          * there may be up to a 10 minute window following deregistration where these
-         * restrictions have not yet taken effect).</p>
+         * restrictions have not yet taken effect).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeregisterTaskDefinition">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -621,26 +658,34 @@ namespace Model
          * definition to run new tasks or create new services, and you cannot update an
          * existing service to reference an <code>INACTIVE</code> task definition (although
          * there may be up to a 10 minute window following deregistration where these
-         * restrictions have not yet taken effect).</p>
+         * restrictions have not yet taken effect).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeregisterTaskDefinition">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeregisterTaskDefinitionAsync(const Model::DeregisterTaskDefinitionRequest& request, const DeregisterTaskDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes one or more of your clusters.</p>
+         * <p>Describes one or more of your clusters.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeClusters">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeClustersOutcome DescribeClusters(const Model::DescribeClustersRequest& request) const;
 
         /**
-         * <p>Describes one or more of your clusters.</p>
+         * <p>Describes one or more of your clusters.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeClusters">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeClustersOutcomeCallable DescribeClustersCallable(const Model::DescribeClustersRequest& request) const;
 
         /**
-         * <p>Describes one or more of your clusters.</p>
+         * <p>Describes one or more of your clusters.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeClusters">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -649,14 +694,18 @@ namespace Model
         /**
          * <p>Describes Amazon EC2 Container Service container instances. Returns metadata
          * about registered and remaining resources on each container instance
-         * requested.</p>
+         * requested.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeContainerInstances">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeContainerInstancesOutcome DescribeContainerInstances(const Model::DescribeContainerInstancesRequest& request) const;
 
         /**
          * <p>Describes Amazon EC2 Container Service container instances. Returns metadata
          * about registered and remaining resources on each container instance
-         * requested.</p>
+         * requested.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeContainerInstances">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -665,26 +714,37 @@ namespace Model
         /**
          * <p>Describes Amazon EC2 Container Service container instances. Returns metadata
          * about registered and remaining resources on each container instance
-         * requested.</p>
+         * requested.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeContainerInstances">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeContainerInstancesAsync(const Model::DescribeContainerInstancesRequest& request, const DescribeContainerInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes the specified services running in your cluster.</p>
+         * <p>Describes the specified services running in your cluster.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeServices">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeServicesOutcome DescribeServices(const Model::DescribeServicesRequest& request) const;
 
         /**
-         * <p>Describes the specified services running in your cluster.</p>
+         * <p>Describes the specified services running in your cluster.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeServices">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeServicesOutcomeCallable DescribeServicesCallable(const Model::DescribeServicesRequest& request) const;
 
         /**
-         * <p>Describes the specified services running in your cluster.</p>
+         * <p>Describes the specified services running in your cluster.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeServices">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -696,7 +756,9 @@ namespace Model
          * you can simply specify the family to find the latest <code>ACTIVE</code>
          * revision in that family.</p> <note> <p>You can only describe
          * <code>INACTIVE</code> task definitions while an active task or service
-         * references them.</p> </note>
+         * references them.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeTaskDefinition">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeTaskDefinitionOutcome DescribeTaskDefinition(const Model::DescribeTaskDefinitionRequest& request) const;
 
@@ -706,7 +768,9 @@ namespace Model
          * you can simply specify the family to find the latest <code>ACTIVE</code>
          * revision in that family.</p> <note> <p>You can only describe
          * <code>INACTIVE</code> task definitions while an active task or service
-         * references them.</p> </note>
+         * references them.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeTaskDefinition">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -718,26 +782,34 @@ namespace Model
          * you can simply specify the family to find the latest <code>ACTIVE</code>
          * revision in that family.</p> <note> <p>You can only describe
          * <code>INACTIVE</code> task definitions while an active task or service
-         * references them.</p> </note>
+         * references them.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeTaskDefinition">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeTaskDefinitionAsync(const Model::DescribeTaskDefinitionRequest& request, const DescribeTaskDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes a specified task or tasks.</p>
+         * <p>Describes a specified task or tasks.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeTasks">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeTasksOutcome DescribeTasks(const Model::DescribeTasksRequest& request) const;
 
         /**
-         * <p>Describes a specified task or tasks.</p>
+         * <p>Describes a specified task or tasks.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeTasks">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeTasksOutcomeCallable DescribeTasksCallable(const Model::DescribeTasksRequest& request) const;
 
         /**
-         * <p>Describes a specified task or tasks.</p>
+         * <p>Describes a specified task or tasks.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeTasks">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -746,14 +818,20 @@ namespace Model
         /**
          * <note> <p>This action is only used by the Amazon EC2 Container Service agent,
          * and it is not intended for use outside of the agent.</p> </note> <p>Returns an
-         * endpoint for the Amazon EC2 Container Service agent to poll for updates.</p>
+         * endpoint for the Amazon EC2 Container Service agent to poll for
+         * updates.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DiscoverPollEndpoint">AWS
+         * API Reference</a></p>
          */
         virtual Model::DiscoverPollEndpointOutcome DiscoverPollEndpoint(const Model::DiscoverPollEndpointRequest& request) const;
 
         /**
          * <note> <p>This action is only used by the Amazon EC2 Container Service agent,
          * and it is not intended for use outside of the agent.</p> </note> <p>Returns an
-         * endpoint for the Amazon EC2 Container Service agent to poll for updates.</p>
+         * endpoint for the Amazon EC2 Container Service agent to poll for
+         * updates.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DiscoverPollEndpoint">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -762,64 +840,91 @@ namespace Model
         /**
          * <note> <p>This action is only used by the Amazon EC2 Container Service agent,
          * and it is not intended for use outside of the agent.</p> </note> <p>Returns an
-         * endpoint for the Amazon EC2 Container Service agent to poll for updates.</p>
+         * endpoint for the Amazon EC2 Container Service agent to poll for
+         * updates.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DiscoverPollEndpoint">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DiscoverPollEndpointAsync(const Model::DiscoverPollEndpointRequest& request, const DiscoverPollEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns a list of existing clusters.</p>
+         * <p>Returns a list of existing clusters.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListClusters">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListClustersOutcome ListClusters(const Model::ListClustersRequest& request) const;
 
         /**
-         * <p>Returns a list of existing clusters.</p>
+         * <p>Returns a list of existing clusters.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListClusters">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListClustersOutcomeCallable ListClustersCallable(const Model::ListClustersRequest& request) const;
 
         /**
-         * <p>Returns a list of existing clusters.</p>
+         * <p>Returns a list of existing clusters.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListClusters">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListClustersAsync(const Model::ListClustersRequest& request, const ListClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns a list of container instances in a specified cluster.</p>
+         * <p>Returns a list of container instances in a specified cluster.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListContainerInstances">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListContainerInstancesOutcome ListContainerInstances(const Model::ListContainerInstancesRequest& request) const;
 
         /**
-         * <p>Returns a list of container instances in a specified cluster.</p>
+         * <p>Returns a list of container instances in a specified cluster.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListContainerInstances">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListContainerInstancesOutcomeCallable ListContainerInstancesCallable(const Model::ListContainerInstancesRequest& request) const;
 
         /**
-         * <p>Returns a list of container instances in a specified cluster.</p>
+         * <p>Returns a list of container instances in a specified cluster.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListContainerInstances">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListContainerInstancesAsync(const Model::ListContainerInstancesRequest& request, const ListContainerInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the services that are running in a specified cluster.</p>
+         * <p>Lists the services that are running in a specified cluster.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListServices">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListServicesOutcome ListServices(const Model::ListServicesRequest& request) const;
 
         /**
-         * <p>Lists the services that are running in a specified cluster.</p>
+         * <p>Lists the services that are running in a specified cluster.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListServices">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListServicesOutcomeCallable ListServicesCallable(const Model::ListServicesRequest& request) const;
 
         /**
-         * <p>Lists the services that are running in a specified cluster.</p>
+         * <p>Lists the services that are running in a specified cluster.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListServices">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -832,7 +937,9 @@ namespace Model
          * definition families that do not contain any <code>ACTIVE</code> task definition
          * revisions by setting the <code>status</code> parameter to <code>ACTIVE</code>.
          * You can also filter the results with the <code>familyPrefix</code>
-         * parameter.</p>
+         * parameter.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTaskDefinitionFamilies">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListTaskDefinitionFamiliesOutcome ListTaskDefinitionFamilies(const Model::ListTaskDefinitionFamiliesRequest& request) const;
 
@@ -843,7 +950,9 @@ namespace Model
          * definition families that do not contain any <code>ACTIVE</code> task definition
          * revisions by setting the <code>status</code> parameter to <code>ACTIVE</code>.
          * You can also filter the results with the <code>familyPrefix</code>
-         * parameter.</p>
+         * parameter.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTaskDefinitionFamilies">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -856,7 +965,9 @@ namespace Model
          * definition families that do not contain any <code>ACTIVE</code> task definition
          * revisions by setting the <code>status</code> parameter to <code>ACTIVE</code>.
          * You can also filter the results with the <code>familyPrefix</code>
-         * parameter.</p>
+         * parameter.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTaskDefinitionFamilies">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -865,14 +976,20 @@ namespace Model
         /**
          * <p>Returns a list of task definitions that are registered to your account. You
          * can filter the results by family name with the <code>familyPrefix</code>
-         * parameter or by status with the <code>status</code> parameter.</p>
+         * parameter or by status with the <code>status</code> parameter.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTaskDefinitions">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListTaskDefinitionsOutcome ListTaskDefinitions(const Model::ListTaskDefinitionsRequest& request) const;
 
         /**
          * <p>Returns a list of task definitions that are registered to your account. You
          * can filter the results by family name with the <code>familyPrefix</code>
-         * parameter or by status with the <code>status</code> parameter.</p>
+         * parameter or by status with the <code>status</code> parameter.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTaskDefinitions">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -881,7 +998,10 @@ namespace Model
         /**
          * <p>Returns a list of task definitions that are registered to your account. You
          * can filter the results by family name with the <code>familyPrefix</code>
-         * parameter or by status with the <code>status</code> parameter.</p>
+         * parameter or by status with the <code>status</code> parameter.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTaskDefinitions">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -893,7 +1013,9 @@ namespace Model
          * the task with the <code>family</code>, <code>containerInstance</code>, and
          * <code>desiredStatus</code> parameters.</p> <p>Recently-stopped tasks might
          * appear in the returned results. Currently, stopped tasks appear in the returned
-         * results for at least one hour. </p>
+         * results for at least one hour. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTasks">AWS API
+         * Reference</a></p>
          */
         virtual Model::ListTasksOutcome ListTasks(const Model::ListTasksRequest& request) const;
 
@@ -903,7 +1025,9 @@ namespace Model
          * the task with the <code>family</code>, <code>containerInstance</code>, and
          * <code>desiredStatus</code> parameters.</p> <p>Recently-stopped tasks might
          * appear in the returned results. Currently, stopped tasks appear in the returned
-         * results for at least one hour. </p>
+         * results for at least one hour. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTasks">AWS API
+         * Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -915,7 +1039,9 @@ namespace Model
          * the task with the <code>family</code>, <code>containerInstance</code>, and
          * <code>desiredStatus</code> parameters.</p> <p>Recently-stopped tasks might
          * appear in the returned results. Currently, stopped tasks appear in the returned
-         * results for at least one hour. </p>
+         * results for at least one hour. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTasks">AWS API
+         * Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -925,7 +1051,9 @@ namespace Model
          * <note> <p>This action is only used by the Amazon EC2 Container Service agent,
          * and it is not intended for use outside of the agent.</p> </note> <p>Registers an
          * EC2 instance into the specified cluster. This instance becomes available to
-         * place containers on.</p>
+         * place containers on.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/RegisterContainerInstance">AWS
+         * API Reference</a></p>
          */
         virtual Model::RegisterContainerInstanceOutcome RegisterContainerInstance(const Model::RegisterContainerInstanceRequest& request) const;
 
@@ -933,7 +1061,9 @@ namespace Model
          * <note> <p>This action is only used by the Amazon EC2 Container Service agent,
          * and it is not intended for use outside of the agent.</p> </note> <p>Registers an
          * EC2 instance into the specified cluster. This instance becomes available to
-         * place containers on.</p>
+         * place containers on.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/RegisterContainerInstance">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -943,7 +1073,9 @@ namespace Model
          * <note> <p>This action is only used by the Amazon EC2 Container Service agent,
          * and it is not intended for use outside of the agent.</p> </note> <p>Registers an
          * EC2 instance into the specified cluster. This instance becomes available to
-         * place containers on.</p>
+         * place containers on.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/RegisterContainerInstance">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -967,7 +1099,9 @@ namespace Model
          * your task definition with the <code>networkMode</code> parameter. The available
          * network modes correspond to those described in <a
          * href="https://docs.docker.com/engine/reference/run/#/network-settings">Network
-         * settings</a> in the Docker run reference.</p>
+         * settings</a> in the Docker run reference.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/RegisterTaskDefinition">AWS
+         * API Reference</a></p>
          */
         virtual Model::RegisterTaskDefinitionOutcome RegisterTaskDefinition(const Model::RegisterTaskDefinitionRequest& request) const;
 
@@ -989,7 +1123,9 @@ namespace Model
          * your task definition with the <code>networkMode</code> parameter. The available
          * network modes correspond to those described in <a
          * href="https://docs.docker.com/engine/reference/run/#/network-settings">Network
-         * settings</a> in the Docker run reference.</p>
+         * settings</a> in the Docker run reference.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/RegisterTaskDefinition">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1013,7 +1149,9 @@ namespace Model
          * your task definition with the <code>networkMode</code> parameter. The available
          * network modes correspond to those described in <a
          * href="https://docs.docker.com/engine/reference/run/#/network-settings">Network
-         * settings</a> in the Docker run reference.</p>
+         * settings</a> in the Docker run reference.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/RegisterTaskDefinition">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1023,7 +1161,9 @@ namespace Model
          * <p>Start a task using random placement and the default Amazon ECS scheduler. To
          * use your own scheduler or place a task on a specific container instance, use
          * <code>StartTask</code> instead.</p> <important> <p>The <code>count</code>
-         * parameter is limited to 10 tasks per call.</p> </important>
+         * parameter is limited to 10 tasks per call.</p> </important><p><h3>See Also:</h3>
+         * <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/RunTask">AWS API
+         * Reference</a></p>
          */
         virtual Model::RunTaskOutcome RunTask(const Model::RunTaskRequest& request) const;
 
@@ -1031,7 +1171,9 @@ namespace Model
          * <p>Start a task using random placement and the default Amazon ECS scheduler. To
          * use your own scheduler or place a task on a specific container instance, use
          * <code>StartTask</code> instead.</p> <important> <p>The <code>count</code>
-         * parameter is limited to 10 tasks per call.</p> </important>
+         * parameter is limited to 10 tasks per call.</p> </important><p><h3>See Also:</h3>
+         * <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/RunTask">AWS API
+         * Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1041,7 +1183,9 @@ namespace Model
          * <p>Start a task using random placement and the default Amazon ECS scheduler. To
          * use your own scheduler or place a task on a specific container instance, use
          * <code>StartTask</code> instead.</p> <important> <p>The <code>count</code>
-         * parameter is limited to 10 tasks per call.</p> </important>
+         * parameter is limited to 10 tasks per call.</p> </important><p><h3>See Also:</h3>
+         * <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/RunTask">AWS API
+         * Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1051,7 +1195,10 @@ namespace Model
          * <p>Starts a new task from the specified task definition on the specified
          * container instance or instances. To use the default Amazon ECS scheduler to
          * place your task, use <code>RunTask</code> instead.</p> <important> <p>The list
-         * of container instances to start tasks on is limited to 10.</p> </important>
+         * of container instances to start tasks on is limited to 10.</p>
+         * </important><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/StartTask">AWS API
+         * Reference</a></p>
          */
         virtual Model::StartTaskOutcome StartTask(const Model::StartTaskRequest& request) const;
 
@@ -1059,7 +1206,10 @@ namespace Model
          * <p>Starts a new task from the specified task definition on the specified
          * container instance or instances. To use the default Amazon ECS scheduler to
          * place your task, use <code>RunTask</code> instead.</p> <important> <p>The list
-         * of container instances to start tasks on is limited to 10.</p> </important>
+         * of container instances to start tasks on is limited to 10.</p>
+         * </important><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/StartTask">AWS API
+         * Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1069,7 +1219,10 @@ namespace Model
          * <p>Starts a new task from the specified task definition on the specified
          * container instance or instances. To use the default Amazon ECS scheduler to
          * place your task, use <code>RunTask</code> instead.</p> <important> <p>The list
-         * of container instances to start tasks on is limited to 10.</p> </important>
+         * of container instances to start tasks on is limited to 10.</p>
+         * </important><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/StartTask">AWS API
+         * Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1081,7 +1234,10 @@ namespace Model
          * the task. This results in a <code>SIGTERM</code> and a 30-second timeout, after
          * which <code>SIGKILL</code> is sent and the containers are forcibly stopped. If
          * the container handles the <code>SIGTERM</code> gracefully and exits within 30
-         * seconds from receiving it, no <code>SIGKILL</code> is sent.</p>
+         * seconds from receiving it, no <code>SIGKILL</code> is sent.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/StopTask">AWS API
+         * Reference</a></p>
          */
         virtual Model::StopTaskOutcome StopTask(const Model::StopTaskRequest& request) const;
 
@@ -1091,7 +1247,10 @@ namespace Model
          * the task. This results in a <code>SIGTERM</code> and a 30-second timeout, after
          * which <code>SIGKILL</code> is sent and the containers are forcibly stopped. If
          * the container handles the <code>SIGTERM</code> gracefully and exits within 30
-         * seconds from receiving it, no <code>SIGKILL</code> is sent.</p>
+         * seconds from receiving it, no <code>SIGKILL</code> is sent.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/StopTask">AWS API
+         * Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1103,7 +1262,10 @@ namespace Model
          * the task. This results in a <code>SIGTERM</code> and a 30-second timeout, after
          * which <code>SIGKILL</code> is sent and the containers are forcibly stopped. If
          * the container handles the <code>SIGTERM</code> gracefully and exits within 30
-         * seconds from receiving it, no <code>SIGKILL</code> is sent.</p>
+         * seconds from receiving it, no <code>SIGKILL</code> is sent.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/StopTask">AWS API
+         * Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1112,14 +1274,18 @@ namespace Model
         /**
          * <note> <p>This action is only used by the Amazon EC2 Container Service agent,
          * and it is not intended for use outside of the agent.</p> </note> <p>Sent to
-         * acknowledge that a container changed states.</p>
+         * acknowledge that a container changed states.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/SubmitContainerStateChange">AWS
+         * API Reference</a></p>
          */
         virtual Model::SubmitContainerStateChangeOutcome SubmitContainerStateChange(const Model::SubmitContainerStateChangeRequest& request) const;
 
         /**
          * <note> <p>This action is only used by the Amazon EC2 Container Service agent,
          * and it is not intended for use outside of the agent.</p> </note> <p>Sent to
-         * acknowledge that a container changed states.</p>
+         * acknowledge that a container changed states.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/SubmitContainerStateChange">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1128,7 +1294,9 @@ namespace Model
         /**
          * <note> <p>This action is only used by the Amazon EC2 Container Service agent,
          * and it is not intended for use outside of the agent.</p> </note> <p>Sent to
-         * acknowledge that a container changed states.</p>
+         * acknowledge that a container changed states.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/SubmitContainerStateChange">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1137,14 +1305,18 @@ namespace Model
         /**
          * <note> <p>This action is only used by the Amazon EC2 Container Service agent,
          * and it is not intended for use outside of the agent.</p> </note> <p>Sent to
-         * acknowledge that a task changed states.</p>
+         * acknowledge that a task changed states.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/SubmitTaskStateChange">AWS
+         * API Reference</a></p>
          */
         virtual Model::SubmitTaskStateChangeOutcome SubmitTaskStateChange(const Model::SubmitTaskStateChangeRequest& request) const;
 
         /**
          * <note> <p>This action is only used by the Amazon EC2 Container Service agent,
          * and it is not intended for use outside of the agent.</p> </note> <p>Sent to
-         * acknowledge that a task changed states.</p>
+         * acknowledge that a task changed states.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/SubmitTaskStateChange">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1153,7 +1325,9 @@ namespace Model
         /**
          * <note> <p>This action is only used by the Amazon EC2 Container Service agent,
          * and it is not intended for use outside of the agent.</p> </note> <p>Sent to
-         * acknowledge that a task changed states.</p>
+         * acknowledge that a task changed states.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/SubmitTaskStateChange">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1170,7 +1344,9 @@ namespace Model
          * help updating the Amazon ECS container agent on other operating systems, see <a
          * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html#manually_update_agent">Manually
          * Updating the Amazon ECS Container Agent</a> in the <i>Amazon EC2 Container
-         * Service Developer Guide</i>.</p>
+         * Service Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateContainerAgent">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateContainerAgentOutcome UpdateContainerAgent(const Model::UpdateContainerAgentRequest& request) const;
 
@@ -1185,7 +1361,9 @@ namespace Model
          * help updating the Amazon ECS container agent on other operating systems, see <a
          * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html#manually_update_agent">Manually
          * Updating the Amazon ECS Container Agent</a> in the <i>Amazon EC2 Container
-         * Service Developer Guide</i>.</p>
+         * Service Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateContainerAgent">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1202,7 +1380,9 @@ namespace Model
          * help updating the Amazon ECS container agent on other operating systems, see <a
          * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html#manually_update_agent">Manually
          * Updating the Amazon ECS Container Agent</a> in the <i>Amazon EC2 Container
-         * Service Developer Guide</i>.</p>
+         * Service Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateContainerAgent">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1251,7 +1431,10 @@ namespace Model
          * in either zone B or C are considered optimal for placement.</p> </li> <li>
          * <p>Place the new service task on a valid container instance in an optimal
          * Availability Zone (based on the previous steps), favoring container instances
-         * with the fewest number of running tasks for this service.</p> </li> </ul>
+         * with the fewest number of running tasks for this service.</p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateService">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateServiceOutcome UpdateService(const Model::UpdateServiceRequest& request) const;
 
@@ -1298,7 +1481,10 @@ namespace Model
          * in either zone B or C are considered optimal for placement.</p> </li> <li>
          * <p>Place the new service task on a valid container instance in an optimal
          * Availability Zone (based on the previous steps), favoring container instances
-         * with the fewest number of running tasks for this service.</p> </li> </ul>
+         * with the fewest number of running tasks for this service.</p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateService">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1347,7 +1533,10 @@ namespace Model
          * in either zone B or C are considered optimal for placement.</p> </li> <li>
          * <p>Place the new service task on a valid container instance in an optimal
          * Availability Zone (based on the previous steps), favoring container instances
-         * with the fewest number of running tasks for this service.</p> </li> </ul>
+         * with the fewest number of running tasks for this service.</p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateService">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */

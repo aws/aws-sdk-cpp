@@ -26,7 +26,9 @@ namespace Model
 {
 
   /**
-   * <p>A request to RegisterDevice.</p>
+   * <p>A request to RegisterDevice.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/RegisterDeviceRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_COGNITOSYNC_API RegisterDeviceRequest : public CognitoSyncRequest
   {

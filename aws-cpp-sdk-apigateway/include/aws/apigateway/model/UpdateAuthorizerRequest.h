@@ -27,7 +27,10 @@ namespace Model
 {
 
   /**
-   * <p>Request to update an existing <a>Authorizer</a> resource.</p>
+   * <p>Request to update an existing <a>Authorizer</a> resource.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateAuthorizerRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_APIGATEWAY_API UpdateAuthorizerRequest : public APIGatewayRequest
   {

@@ -32,7 +32,9 @@ namespace Model
 
   /**
    * <p>Describes an action that writes data to an Amazon Kinesis Firehose
-   * stream.</p>
+   * stream.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/FirehoseAction">AWS
+   * API Reference</a></p>
    */
   class AWS_IOT_API FirehoseAction
   {

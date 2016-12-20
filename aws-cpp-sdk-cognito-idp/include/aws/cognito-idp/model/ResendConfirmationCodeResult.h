@@ -34,7 +34,9 @@ namespace Model
 {
   /**
    * <p>The response from the server when the Amazon Cognito Your User Pools service
-   * makes the request to resend a confirmation code.</p>
+   * makes the request to resend a confirmation code.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ResendConfirmationCodeResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_COGNITOIDENTITYPROVIDER_API ResendConfirmationCodeResult
   {

@@ -31,7 +31,10 @@ namespace Model
 {
 
   /**
-   * <p>Describes an action to republish to another topic.</p>
+   * <p>Describes an action to republish to another topic.</p><p><h3>See Also:</h3>  
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/RepublishAction">AWS
+   * API Reference</a></p>
    */
   class AWS_IOT_API RepublishAction
   {

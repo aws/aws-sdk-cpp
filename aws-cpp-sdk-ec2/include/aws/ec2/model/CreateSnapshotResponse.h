@@ -38,7 +38,9 @@ namespace EC2
 namespace Model
 {
   /**
-   * <p>Describes a snapshot.</p>
+   * <p>Describes a snapshot.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/Snapshot">AWS API
+   * Reference</a></p>
    */
   class AWS_EC2_API CreateSnapshotResponse
   {

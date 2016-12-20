@@ -36,7 +36,9 @@ namespace Model
    * <p>Contains information about an IAM role.</p> <p>This data type is used as a
    * response element in the following actions:</p> <ul> <li> <p> <a>CreateRole</a>
    * </p> </li> <li> <p> <a>GetRole</a> </p> </li> <li> <p> <a>ListRoles</a> </p>
-   * </li> </ul>
+   * </li> </ul><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/Role">AWS API
+   * Reference</a></p>
    */
   class AWS_IAM_API Role
   {

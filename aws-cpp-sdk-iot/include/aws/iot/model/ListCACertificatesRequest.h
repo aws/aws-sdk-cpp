@@ -29,7 +29,9 @@ namespace Model
 {
 
   /**
-   * <p>Input for the ListCACertificates operation.</p>
+   * <p>Input for the ListCACertificates operation.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListCACertificatesRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_IOT_API ListCACertificatesRequest : public IoTRequest
   {

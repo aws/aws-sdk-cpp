@@ -38,7 +38,9 @@ namespace Model
    * available to be connected. Generally, these are colocation hubs where many
    * network providers have equipment, and where cross connects can be delivered.
    * Locations include a name and facility code, and must be provided when creating a
-   * connection.</p>
+   * connection.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/Locations">AWS
+   * API Reference</a></p>
    */
   class AWS_DIRECTCONNECT_API DescribeLocationsResult
   {

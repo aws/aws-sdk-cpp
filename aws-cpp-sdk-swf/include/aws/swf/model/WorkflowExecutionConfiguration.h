@@ -36,7 +36,9 @@ namespace Model
    * <p>The configuration settings for a workflow execution including timeout values,
    * tasklist etc. These configuration settings are determined from the defaults
    * specified when registering the workflow type and those specified when starting
-   * the workflow execution.</p>
+   * the workflow execution.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/WorkflowExecutionConfiguration">AWS
+   * API Reference</a></p>
    */
   class AWS_SWF_API WorkflowExecutionConfiguration
   {

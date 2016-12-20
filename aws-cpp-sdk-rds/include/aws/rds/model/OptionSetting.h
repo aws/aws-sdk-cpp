@@ -35,7 +35,10 @@ namespace Model
    * <p>Option settings are the actual settings being applied or configured for that
    * option. It is used when you modify an option group or describe option groups.
    * For example, the NATIVE_NETWORK_ENCRYPTION option has a setting called
-   * SQLNET.ENCRYPTION_SERVER that can have several different values.</p>
+   * SQLNET.ENCRYPTION_SERVER that can have several different values.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/OptionSetting">AWS
+   * API Reference</a></p>
    */
   class AWS_RDS_API OptionSetting
   {

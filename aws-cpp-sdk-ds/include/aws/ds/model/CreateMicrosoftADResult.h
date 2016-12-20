@@ -33,7 +33,9 @@ namespace DirectoryService
 namespace Model
 {
   /**
-   * <p>Result of a CreateMicrosoftAD request.</p>
+   * <p>Result of a CreateMicrosoftAD request.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateMicrosoftADResult">AWS
+   * API Reference</a></p>
    */
   class AWS_DIRECTORYSERVICE_API CreateMicrosoftADResult
   {

@@ -36,7 +36,9 @@ namespace Model
   /**
    * <p>A document that contains additional information about the authorization
    * status of a request from an encoded message that is returned in response to an
-   * AWS request.</p>
+   * AWS request.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/DecodeAuthorizationMessageResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_STS_API DecodeAuthorizationMessageResult
   {

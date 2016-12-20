@@ -141,6 +141,16 @@ void SESClient::init(const ClientConfiguration& config)
   m_uri = ss.str();
 }
 
+Aws::String SESClient::ConvertRequestToPresignedUrl(const AmazonSerializableWebServiceRequest& requestToConvert, const char* region) const
+{
+  Aws::StringStream ss;
+  ss << "https://" << SESEndpoint::ForRegion(region);
+  ss << "?" << requestToConvert.SerializePayload();
+
+  URI uri(ss.str());
+  return GeneratePresignedUrl(uri, HttpMethod::HTTP_GET, region, 3600);
+}
+
 CloneReceiptRuleSetOutcome SESClient::CloneReceiptRuleSet(const CloneReceiptRuleSetRequest& request) const
 {
   Aws::StringStream ss;
@@ -1757,4 +1767,6 @@ void SESClient::VerifyEmailIdentityAsyncHelper(const VerifyEmailIdentityRequest&
 {
   handler(this, request, VerifyEmailIdentity(request), context);
 }
+
+
 

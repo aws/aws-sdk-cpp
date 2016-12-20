@@ -34,7 +34,9 @@ namespace Model
 {
   /**
    * <p>A complex type that contains the response to the
-   * UpdateHostedZoneCommentRequest.</p>
+   * UpdateHostedZoneCommentRequest.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/UpdateHostedZoneCommentResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_ROUTE53_API UpdateHostedZoneCommentResult
   {

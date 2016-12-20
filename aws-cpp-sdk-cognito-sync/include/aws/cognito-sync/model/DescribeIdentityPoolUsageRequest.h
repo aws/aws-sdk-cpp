@@ -25,7 +25,10 @@ namespace Model
 {
 
   /**
-   * A request for usage information about the identity pool.
+   * A request for usage information about the identity pool.<p><h3>See Also:</h3>  
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/DescribeIdentityPoolUsageRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_COGNITOSYNC_API DescribeIdentityPoolUsageRequest : public CognitoSyncRequest
   {

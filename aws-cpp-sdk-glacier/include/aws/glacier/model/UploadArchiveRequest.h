@@ -26,7 +26,9 @@ namespace Model
 {
 
   /**
-   * <p>Provides options to add an archive to a vault.</p>
+   * <p>Provides options to add an archive to a vault.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/UploadArchiveInput">AWS
+   * API Reference</a></p>
    */
   class AWS_GLACIER_API UploadArchiveRequest : public StreamingGlacierRequest
   {

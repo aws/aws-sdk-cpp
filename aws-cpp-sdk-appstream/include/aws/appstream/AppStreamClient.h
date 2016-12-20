@@ -193,57 +193,75 @@ namespace Model
         virtual ~AppStreamClient();
 
         /**
-         * <p>Associate a fleet to a stack.</p>
+         * <p>Associate a fleet to a stack.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/AssociateFleet">AWS
+         * API Reference</a></p>
          */
         virtual Model::AssociateFleetOutcome AssociateFleet(const Model::AssociateFleetRequest& request) const;
 
         /**
-         * <p>Associate a fleet to a stack.</p>
+         * <p>Associate a fleet to a stack.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/AssociateFleet">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::AssociateFleetOutcomeCallable AssociateFleetCallable(const Model::AssociateFleetRequest& request) const;
 
         /**
-         * <p>Associate a fleet to a stack.</p>
+         * <p>Associate a fleet to a stack.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/AssociateFleet">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void AssociateFleetAsync(const Model::AssociateFleetRequest& request, const AssociateFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a new fleet.</p>
+         * <p>Creates a new fleet.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateFleet">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateFleetOutcome CreateFleet(const Model::CreateFleetRequest& request) const;
 
         /**
-         * <p>Creates a new fleet.</p>
+         * <p>Creates a new fleet.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateFleet">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateFleetOutcomeCallable CreateFleetCallable(const Model::CreateFleetRequest& request) const;
 
         /**
-         * <p>Creates a new fleet.</p>
+         * <p>Creates a new fleet.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateFleet">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateFleetAsync(const Model::CreateFleetRequest& request, const CreateFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Create a new stack.</p>
+         * <p>Create a new stack.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateStack">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateStackOutcome CreateStack(const Model::CreateStackRequest& request) const;
 
         /**
-         * <p>Create a new stack.</p>
+         * <p>Create a new stack.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateStack">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateStackOutcomeCallable CreateStackCallable(const Model::CreateStackRequest& request) const;
 
         /**
-         * <p>Create a new stack.</p>
+         * <p>Create a new stack.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateStack">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -252,14 +270,18 @@ namespace Model
         /**
          * <p>Creates a URL to start an AppStream 2.0 streaming session for a user. By
          * default, the URL is valid only for 1 minute from the time that it is
-         * generated.</p>
+         * generated.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateStreamingURL">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateStreamingURLOutcome CreateStreamingURL(const Model::CreateStreamingURLRequest& request) const;
 
         /**
          * <p>Creates a URL to start an AppStream 2.0 streaming session for a user. By
          * default, the URL is valid only for 1 minute from the time that it is
-         * generated.</p>
+         * generated.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateStreamingURL">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -268,26 +290,34 @@ namespace Model
         /**
          * <p>Creates a URL to start an AppStream 2.0 streaming session for a user. By
          * default, the URL is valid only for 1 minute from the time that it is
-         * generated.</p>
+         * generated.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateStreamingURL">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateStreamingURLAsync(const Model::CreateStreamingURLRequest& request, const CreateStreamingURLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a fleet.</p>
+         * <p>Deletes a fleet.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteFleet">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteFleetOutcome DeleteFleet(const Model::DeleteFleetRequest& request) const;
 
         /**
-         * <p>Deletes a fleet.</p>
+         * <p>Deletes a fleet.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteFleet">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteFleetOutcomeCallable DeleteFleetCallable(const Model::DeleteFleetRequest& request) const;
 
         /**
-         * <p>Deletes a fleet.</p>
+         * <p>Deletes a fleet.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteFleet">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -295,13 +325,19 @@ namespace Model
 
         /**
          * <p>Deletes the stack. After this operation completes, the environment can no
-         * longer be activated, and any reservations made for the stack are released.</p>
+         * longer be activated, and any reservations made for the stack are
+         * released.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteStack">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteStackOutcome DeleteStack(const Model::DeleteStackRequest& request) const;
 
         /**
          * <p>Deletes the stack. After this operation completes, the environment can no
-         * longer be activated, and any reservations made for the stack are released.</p>
+         * longer be activated, and any reservations made for the stack are
+         * released.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteStack">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -309,7 +345,10 @@ namespace Model
 
         /**
          * <p>Deletes the stack. After this operation completes, the environment can no
-         * longer be activated, and any reservations made for the stack are released.</p>
+         * longer be activated, and any reservations made for the stack are
+         * released.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteStack">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -317,13 +356,19 @@ namespace Model
 
         /**
          * <p>If fleet names are provided, this operation describes the specified fleets;
-         * otherwise, all the fleets in the account are described.</p>
+         * otherwise, all the fleets in the account are described.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeFleets">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeFleetsOutcome DescribeFleets(const Model::DescribeFleetsRequest& request) const;
 
         /**
          * <p>If fleet names are provided, this operation describes the specified fleets;
-         * otherwise, all the fleets in the account are described.</p>
+         * otherwise, all the fleets in the account are described.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeFleets">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -331,7 +376,10 @@ namespace Model
 
         /**
          * <p>If fleet names are provided, this operation describes the specified fleets;
-         * otherwise, all the fleets in the account are described.</p>
+         * otherwise, all the fleets in the account are described.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeFleets">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -339,13 +387,19 @@ namespace Model
 
         /**
          * <p>Describes the images. If a list of names is not provided, all images in your
-         * account are returned. This operation does not return a paginated result.</p>
+         * account are returned. This operation does not return a paginated
+         * result.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeImages">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeImagesOutcome DescribeImages(const Model::DescribeImagesRequest& request) const;
 
         /**
          * <p>Describes the images. If a list of names is not provided, all images in your
-         * account are returned. This operation does not return a paginated result.</p>
+         * account are returned. This operation does not return a paginated
+         * result.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeImages">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -353,7 +407,10 @@ namespace Model
 
         /**
          * <p>Describes the images. If a list of names is not provided, all images in your
-         * account are returned. This operation does not return a paginated result.</p>
+         * account are returned. This operation does not return a paginated
+         * result.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeImages">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -363,7 +420,9 @@ namespace Model
          * <p>Describes the streaming sessions for a stack and a fleet. If a user ID is
          * provided, this operation returns streaming sessions for only that user. Pass
          * this value for the <code>nextToken</code> parameter in a subsequent call to this
-         * operation to retrieve the next set of items.</p>
+         * operation to retrieve the next set of items.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeSessions">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeSessionsOutcome DescribeSessions(const Model::DescribeSessionsRequest& request) const;
 
@@ -371,7 +430,9 @@ namespace Model
          * <p>Describes the streaming sessions for a stack and a fleet. If a user ID is
          * provided, this operation returns streaming sessions for only that user. Pass
          * this value for the <code>nextToken</code> parameter in a subsequent call to this
-         * operation to retrieve the next set of items.</p>
+         * operation to retrieve the next set of items.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeSessions">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -381,7 +442,9 @@ namespace Model
          * <p>Describes the streaming sessions for a stack and a fleet. If a user ID is
          * provided, this operation returns streaming sessions for only that user. Pass
          * this value for the <code>nextToken</code> parameter in a subsequent call to this
-         * operation to retrieve the next set of items.</p>
+         * operation to retrieve the next set of items.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeSessions">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -391,7 +454,9 @@ namespace Model
          * <p>If stack names are not provided, this operation describes the specified
          * stacks; otherwise, all stacks in the account are described. Pass the
          * <code>nextToken</code> value in a subsequent call to this operation to retrieve
-         * the next set of items.</p>
+         * the next set of items.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeStacks">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeStacksOutcome DescribeStacks(const Model::DescribeStacksRequest& request) const;
 
@@ -399,7 +464,9 @@ namespace Model
          * <p>If stack names are not provided, this operation describes the specified
          * stacks; otherwise, all stacks in the account are described. Pass the
          * <code>nextToken</code> value in a subsequent call to this operation to retrieve
-         * the next set of items.</p>
+         * the next set of items.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeStacks">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -409,121 +476,165 @@ namespace Model
          * <p>If stack names are not provided, this operation describes the specified
          * stacks; otherwise, all stacks in the account are described. Pass the
          * <code>nextToken</code> value in a subsequent call to this operation to retrieve
-         * the next set of items.</p>
+         * the next set of items.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeStacks">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeStacksAsync(const Model::DescribeStacksRequest& request, const DescribeStacksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Disassociates a fleet from a stack.</p>
+         * <p>Disassociates a fleet from a stack.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DisassociateFleet">AWS
+         * API Reference</a></p>
          */
         virtual Model::DisassociateFleetOutcome DisassociateFleet(const Model::DisassociateFleetRequest& request) const;
 
         /**
-         * <p>Disassociates a fleet from a stack.</p>
+         * <p>Disassociates a fleet from a stack.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DisassociateFleet">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DisassociateFleetOutcomeCallable DisassociateFleetCallable(const Model::DisassociateFleetRequest& request) const;
 
         /**
-         * <p>Disassociates a fleet from a stack.</p>
+         * <p>Disassociates a fleet from a stack.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DisassociateFleet">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DisassociateFleetAsync(const Model::DisassociateFleetRequest& request, const DisassociateFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>This operation immediately stops a streaming session.</p>
+         * <p>This operation immediately stops a streaming session.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ExpireSession">AWS
+         * API Reference</a></p>
          */
         virtual Model::ExpireSessionOutcome ExpireSession(const Model::ExpireSessionRequest& request) const;
 
         /**
-         * <p>This operation immediately stops a streaming session.</p>
+         * <p>This operation immediately stops a streaming session.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ExpireSession">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ExpireSessionOutcomeCallable ExpireSessionCallable(const Model::ExpireSessionRequest& request) const;
 
         /**
-         * <p>This operation immediately stops a streaming session.</p>
+         * <p>This operation immediately stops a streaming session.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ExpireSession">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ExpireSessionAsync(const Model::ExpireSessionRequest& request, const ExpireSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists all fleets associated with the stack.</p>
+         * <p>Lists all fleets associated with the stack.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ListAssociatedFleets">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListAssociatedFleetsOutcome ListAssociatedFleets(const Model::ListAssociatedFleetsRequest& request) const;
 
         /**
-         * <p>Lists all fleets associated with the stack.</p>
+         * <p>Lists all fleets associated with the stack.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ListAssociatedFleets">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListAssociatedFleetsOutcomeCallable ListAssociatedFleetsCallable(const Model::ListAssociatedFleetsRequest& request) const;
 
         /**
-         * <p>Lists all fleets associated with the stack.</p>
+         * <p>Lists all fleets associated with the stack.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ListAssociatedFleets">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListAssociatedFleetsAsync(const Model::ListAssociatedFleetsRequest& request, const ListAssociatedFleetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists all stacks to which the specified fleet is associated.</p>
+         * <p>Lists all stacks to which the specified fleet is associated.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ListAssociatedStacks">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListAssociatedStacksOutcome ListAssociatedStacks(const Model::ListAssociatedStacksRequest& request) const;
 
         /**
-         * <p>Lists all stacks to which the specified fleet is associated.</p>
+         * <p>Lists all stacks to which the specified fleet is associated.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ListAssociatedStacks">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListAssociatedStacksOutcomeCallable ListAssociatedStacksCallable(const Model::ListAssociatedStacksRequest& request) const;
 
         /**
-         * <p>Lists all stacks to which the specified fleet is associated.</p>
+         * <p>Lists all stacks to which the specified fleet is associated.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ListAssociatedStacks">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListAssociatedStacksAsync(const Model::ListAssociatedStacksRequest& request, const ListAssociatedStacksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Starts a fleet.</p>
+         * <p>Starts a fleet.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StartFleet">AWS
+         * API Reference</a></p>
          */
         virtual Model::StartFleetOutcome StartFleet(const Model::StartFleetRequest& request) const;
 
         /**
-         * <p>Starts a fleet.</p>
+         * <p>Starts a fleet.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StartFleet">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::StartFleetOutcomeCallable StartFleetCallable(const Model::StartFleetRequest& request) const;
 
         /**
-         * <p>Starts a fleet.</p>
+         * <p>Starts a fleet.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StartFleet">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void StartFleetAsync(const Model::StartFleetRequest& request, const StartFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Stops a fleet.</p>
+         * <p>Stops a fleet.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StopFleet">AWS
+         * API Reference</a></p>
          */
         virtual Model::StopFleetOutcome StopFleet(const Model::StopFleetRequest& request) const;
 
         /**
-         * <p>Stops a fleet.</p>
+         * <p>Stops a fleet.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StopFleet">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::StopFleetOutcomeCallable StopFleetCallable(const Model::StopFleetRequest& request) const;
 
         /**
-         * <p>Stops a fleet.</p>
+         * <p>Stops a fleet.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StopFleet">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -532,14 +643,20 @@ namespace Model
         /**
          * <p>Updates an existing fleet. All the attributes except the fleet name can be
          * updated in the <b>STOPPED</b> state. Only <b>ComputeCapacity</b> and
-         * <b>ImageName</b> can be updated in any other state. </p>
+         * <b>ImageName</b> can be updated in any other state. </p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateFleet">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateFleetOutcome UpdateFleet(const Model::UpdateFleetRequest& request) const;
 
         /**
          * <p>Updates an existing fleet. All the attributes except the fleet name can be
          * updated in the <b>STOPPED</b> state. Only <b>ComputeCapacity</b> and
-         * <b>ImageName</b> can be updated in any other state. </p>
+         * <b>ImageName</b> can be updated in any other state. </p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateFleet">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -548,26 +665,38 @@ namespace Model
         /**
          * <p>Updates an existing fleet. All the attributes except the fleet name can be
          * updated in the <b>STOPPED</b> state. Only <b>ComputeCapacity</b> and
-         * <b>ImageName</b> can be updated in any other state. </p>
+         * <b>ImageName</b> can be updated in any other state. </p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateFleet">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateFleetAsync(const Model::UpdateFleetRequest& request, const UpdateFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates the specified fields in the stack with the specified name.</p>
+         * <p>Updates the specified fields in the stack with the specified
+         * name.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateStack">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateStackOutcome UpdateStack(const Model::UpdateStackRequest& request) const;
 
         /**
-         * <p>Updates the specified fields in the stack with the specified name.</p>
+         * <p>Updates the specified fields in the stack with the specified
+         * name.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateStack">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateStackOutcomeCallable UpdateStackCallable(const Model::UpdateStackRequest& request) const;
 
         /**
-         * <p>Updates the specified fields in the stack with the specified name.</p>
+         * <p>Updates the specified fields in the stack with the specified
+         * name.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateStack">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */

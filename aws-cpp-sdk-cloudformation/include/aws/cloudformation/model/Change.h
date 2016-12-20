@@ -34,7 +34,9 @@ namespace Model
 
   /**
    * <p>The <code>Change</code> structure describes the changes AWS CloudFormation
-   * will perform if you execute the change set.</p>
+   * will perform if you execute the change set.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/Change">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDFORMATION_API Change
   {

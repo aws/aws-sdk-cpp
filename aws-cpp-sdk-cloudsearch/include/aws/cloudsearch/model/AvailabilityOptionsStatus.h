@@ -32,7 +32,10 @@ namespace Model
 {
 
   /**
-   * <p>The status and configuration of the domain's availability options.</p>
+   * <p>The status and configuration of the domain's availability
+   * options.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/AvailabilityOptionsStatus">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDSEARCH_API AvailabilityOptionsStatus
   {

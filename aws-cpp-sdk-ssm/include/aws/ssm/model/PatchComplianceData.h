@@ -34,7 +34,9 @@ namespace Model
 
   /**
    * <p>Information about the state of a patch on a particular instance as it relates
-   * to the patch baseline used to patch the instance.</p>
+   * to the patch baseline used to patch the instance.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PatchComplianceData">AWS
+   * API Reference</a></p>
    */
   class AWS_SSM_API PatchComplianceData
   {

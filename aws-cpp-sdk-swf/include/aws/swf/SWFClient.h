@@ -276,7 +276,9 @@ namespace Model
          * event attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED.
          * For details and example IAM policies, see <a
          * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
-         * IAM to Manage Access to Amazon SWF Workflows</a>.</p>
+         * IAM to Manage Access to Amazon SWF Workflows</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/CountClosedWorkflowExecutions">AWS
+         * API Reference</a></p>
          */
         virtual Model::CountClosedWorkflowExecutionsOutcome CountClosedWorkflowExecutions(const Model::CountClosedWorkflowExecutionsRequest& request) const;
 
@@ -300,7 +302,9 @@ namespace Model
          * event attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED.
          * For details and example IAM policies, see <a
          * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
-         * IAM to Manage Access to Amazon SWF Workflows</a>.</p>
+         * IAM to Manage Access to Amazon SWF Workflows</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/CountClosedWorkflowExecutions">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -326,7 +330,9 @@ namespace Model
          * event attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED.
          * For details and example IAM policies, see <a
          * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
-         * IAM to Manage Access to Amazon SWF Workflows</a>.</p>
+         * IAM to Manage Access to Amazon SWF Workflows</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/CountClosedWorkflowExecutions">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -352,7 +358,9 @@ namespace Model
          * event attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED.
          * For details and example IAM policies, see <a
          * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
-         * IAM to Manage Access to Amazon SWF Workflows</a>.</p>
+         * IAM to Manage Access to Amazon SWF Workflows</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/CountOpenWorkflowExecutions">AWS
+         * API Reference</a></p>
          */
         virtual Model::CountOpenWorkflowExecutionsOutcome CountOpenWorkflowExecutions(const Model::CountOpenWorkflowExecutionsRequest& request) const;
 
@@ -376,7 +384,9 @@ namespace Model
          * event attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED.
          * For details and example IAM policies, see <a
          * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
-         * IAM to Manage Access to Amazon SWF Workflows</a>.</p>
+         * IAM to Manage Access to Amazon SWF Workflows</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/CountOpenWorkflowExecutions">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -402,7 +412,9 @@ namespace Model
          * event attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED.
          * For details and example IAM policies, see <a
          * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
-         * IAM to Manage Access to Amazon SWF Workflows</a>.</p>
+         * IAM to Manage Access to Amazon SWF Workflows</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/CountOpenWorkflowExecutions">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -425,7 +437,9 @@ namespace Model
          * <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For details and
          * example IAM policies, see <a
          * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
-         * IAM to Manage Access to Amazon SWF Workflows</a>.</p>
+         * IAM to Manage Access to Amazon SWF Workflows</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/CountPendingActivityTasks">AWS
+         * API Reference</a></p>
          */
         virtual Model::CountPendingActivityTasksOutcome CountPendingActivityTasks(const Model::CountPendingActivityTasksRequest& request) const;
 
@@ -446,7 +460,9 @@ namespace Model
          * <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For details and
          * example IAM policies, see <a
          * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
-         * IAM to Manage Access to Amazon SWF Workflows</a>.</p>
+         * IAM to Manage Access to Amazon SWF Workflows</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/CountPendingActivityTasks">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -469,7 +485,9 @@ namespace Model
          * <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For details and
          * example IAM policies, see <a
          * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
-         * IAM to Manage Access to Amazon SWF Workflows</a>.</p>
+         * IAM to Manage Access to Amazon SWF Workflows</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/CountPendingActivityTasks">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -492,7 +510,9 @@ namespace Model
          * <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For details and
          * example IAM policies, see <a
          * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
-         * IAM to Manage Access to Amazon SWF Workflows</a>.</p>
+         * IAM to Manage Access to Amazon SWF Workflows</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/CountPendingDecisionTasks">AWS
+         * API Reference</a></p>
          */
         virtual Model::CountPendingDecisionTasksOutcome CountPendingDecisionTasks(const Model::CountPendingDecisionTasksRequest& request) const;
 
@@ -513,7 +533,9 @@ namespace Model
          * <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For details and
          * example IAM policies, see <a
          * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
-         * IAM to Manage Access to Amazon SWF Workflows</a>.</p>
+         * IAM to Manage Access to Amazon SWF Workflows</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/CountPendingDecisionTasks">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -536,7 +558,9 @@ namespace Model
          * <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For details and
          * example IAM policies, see <a
          * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
-         * IAM to Manage Access to Amazon SWF Workflows</a>.</p>
+         * IAM to Manage Access to Amazon SWF Workflows</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/CountPendingDecisionTasks">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -562,7 +586,9 @@ namespace Model
          * action fails. The associated event attribute's <b>cause</b> parameter will be
          * set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see <a
          * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
-         * IAM to Manage Access to Amazon SWF Workflows</a>.</p>
+         * IAM to Manage Access to Amazon SWF Workflows</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DeprecateActivityType">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeprecateActivityTypeOutcome DeprecateActivityType(const Model::DeprecateActivityTypeRequest& request) const;
 
@@ -586,7 +612,9 @@ namespace Model
          * action fails. The associated event attribute's <b>cause</b> parameter will be
          * set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see <a
          * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
-         * IAM to Manage Access to Amazon SWF Workflows</a>.</p>
+         * IAM to Manage Access to Amazon SWF Workflows</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DeprecateActivityType">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -612,7 +640,9 @@ namespace Model
          * action fails. The associated event attribute's <b>cause</b> parameter will be
          * set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see <a
          * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
-         * IAM to Manage Access to Amazon SWF Workflows</a>.</p>
+         * IAM to Manage Access to Amazon SWF Workflows</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DeprecateActivityType">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -637,7 +667,9 @@ namespace Model
          * parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM
          * policies, see <a
          * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
-         * IAM to Manage Access to Amazon SWF Workflows</a>.</p>
+         * IAM to Manage Access to Amazon SWF Workflows</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DeprecateDomain">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeprecateDomainOutcome DeprecateDomain(const Model::DeprecateDomainRequest& request) const;
 
@@ -660,7 +692,9 @@ namespace Model
          * parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM
          * policies, see <a
          * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
-         * IAM to Manage Access to Amazon SWF Workflows</a>.</p>
+         * IAM to Manage Access to Amazon SWF Workflows</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DeprecateDomain">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -685,7 +719,9 @@ namespace Model
          * parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM
          * policies, see <a
          * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
-         * IAM to Manage Access to Amazon SWF Workflows</a>.</p>
+         * IAM to Manage Access to Amazon SWF Workflows</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DeprecateDomain">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -712,7 +748,9 @@ namespace Model
          * action fails. The associated event attribute's <b>cause</b> parameter will be
          * set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see <a
          * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
-         * IAM to Manage Access to Amazon SWF Workflows</a>.</p>
+         * IAM to Manage Access to Amazon SWF Workflows</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DeprecateWorkflowType">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeprecateWorkflowTypeOutcome DeprecateWorkflowType(const Model::DeprecateWorkflowTypeRequest& request) const;
 
@@ -737,7 +775,9 @@ namespace Model
          * action fails. The associated event attribute's <b>cause</b> parameter will be
          * set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see <a
          * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
-         * IAM to Manage Access to Amazon SWF Workflows</a>.</p>
+         * IAM to Manage Access to Amazon SWF Workflows</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DeprecateWorkflowType">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -764,7 +804,9 @@ namespace Model
          * action fails. The associated event attribute's <b>cause</b> parameter will be
          * set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see <a
          * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
-         * IAM to Manage Access to Amazon SWF Workflows</a>.</p>
+         * IAM to Manage Access to Amazon SWF Workflows</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DeprecateWorkflowType">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -787,7 +829,9 @@ namespace Model
          * action fails. The associated event attribute's <b>cause</b> parameter will be
          * set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see <a
          * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
-         * IAM to Manage Access to Amazon SWF Workflows</a>.</p>
+         * IAM to Manage Access to Amazon SWF Workflows</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DescribeActivityType">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeActivityTypeOutcome DescribeActivityType(const Model::DescribeActivityTypeRequest& request) const;
 
@@ -808,7 +852,9 @@ namespace Model
          * action fails. The associated event attribute's <b>cause</b> parameter will be
          * set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see <a
          * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
-         * IAM to Manage Access to Amazon SWF Workflows</a>.</p>
+         * IAM to Manage Access to Amazon SWF Workflows</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DescribeActivityType">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -831,7 +877,9 @@ namespace Model
          * action fails. The associated event attribute's <b>cause</b> parameter will be
          * set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see <a
          * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
-         * IAM to Manage Access to Amazon SWF Workflows</a>.</p>
+         * IAM to Manage Access to Amazon SWF Workflows</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DescribeActivityType">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -850,7 +898,9 @@ namespace Model
          * attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For
          * details and example IAM policies, see <a
          * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
-         * IAM to Manage Access to Amazon SWF Workflows</a>.</p>
+         * IAM to Manage Access to Amazon SWF Workflows</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DescribeDomain">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeDomainOutcome DescribeDomain(const Model::DescribeDomainRequest& request) const;
 
@@ -867,7 +917,9 @@ namespace Model
          * attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For
          * details and example IAM policies, see <a
          * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
-         * IAM to Manage Access to Amazon SWF Workflows</a>.</p>
+         * IAM to Manage Access to Amazon SWF Workflows</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DescribeDomain">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -886,7 +938,9 @@ namespace Model
          * attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For
          * details and example IAM policies, see <a
          * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
-         * IAM to Manage Access to Amazon SWF Workflows</a>.</p>
+         * IAM to Manage Access to Amazon SWF Workflows</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DescribeDomain">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -907,7 +961,9 @@ namespace Model
          * attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For
          * details and example IAM policies, see <a
          * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
-         * IAM to Manage Access to Amazon SWF Workflows</a>.</p>
+         * IAM to Manage Access to Amazon SWF Workflows</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DescribeWorkflowExecution">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeWorkflowExecutionOutcome DescribeWorkflowExecution(const Model::DescribeWorkflowExecutionRequest& request) const;
 
@@ -926,7 +982,9 @@ namespace Model
          * attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For
          * details and example IAM policies, see <a
          * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
-         * IAM to Manage Access to Amazon SWF Workflows</a>.</p>
+         * IAM to Manage Access to Amazon SWF Workflows</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DescribeWorkflowExecution">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -947,7 +1005,9 @@ namespace Model
          * attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For
          * details and example IAM policies, see <a
          * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
-         * IAM to Manage Access to Amazon SWF Workflows</a>.</p>
+         * IAM to Manage Access to Amazon SWF Workflows</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DescribeWorkflowExecution">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -971,7 +1031,9 @@ namespace Model
          * action fails. The associated event attribute's <b>cause</b> parameter will be
          * set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see <a
          * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
-         * IAM to Manage Access to Amazon SWF Workflows</a>.</p>
+         * IAM to Manage Access to Amazon SWF Workflows</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DescribeWorkflowType">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeWorkflowTypeOutcome DescribeWorkflowType(const Model::DescribeWorkflowTypeRequest& request) const;
 
@@ -993,7 +1055,9 @@ namespace Model
          * action fails. The associated event attribute's <b>cause</b> parameter will be
          * set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see <a
          * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
-         * IAM to Manage Access to Amazon SWF Workflows</a>.</p>
+         * IAM to Manage Access to Amazon SWF Workflows</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DescribeWorkflowType">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1017,7 +1081,9 @@ namespace Model
          * action fails. The associated event attribute's <b>cause</b> parameter will be
          * set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see <a
          * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
-         * IAM to Manage Access to Amazon SWF Workflows</a>.</p>
+         * IAM to Manage Access to Amazon SWF Workflows</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DescribeWorkflowType">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1040,7 +1106,9 @@ namespace Model
          * parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM
          * policies, see <a
          * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
-         * IAM to Manage Access to Amazon SWF Workflows</a>.</p>
+         * IAM to Manage Access to Amazon SWF Workflows</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/GetWorkflowExecutionHistory">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetWorkflowExecutionHistoryOutcome GetWorkflowExecutionHistory(const Model::GetWorkflowExecutionHistoryRequest& request) const;
 
@@ -1061,7 +1129,9 @@ namespace Model
          * parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM
          * policies, see <a
          * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
-         * IAM to Manage Access to Amazon SWF Workflows</a>.</p>
+         * IAM to Manage Access to Amazon SWF Workflows</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/GetWorkflowExecutionHistory">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1084,7 +1154,9 @@ namespace Model
          * parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM
          * policies, see <a
          * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
-         * IAM to Manage Access to Amazon SWF Workflows</a>.</p>
+         * IAM to Manage Access to Amazon SWF Workflows</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/GetWorkflowExecutionHistory">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1107,7 +1179,9 @@ namespace Model
          * attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For
          * details and example IAM policies, see <a
          * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
-         * IAM to Manage Access to Amazon SWF Workflows</a>.</p>
+         * IAM to Manage Access to Amazon SWF Workflows</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ListActivityTypes">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListActivityTypesOutcome ListActivityTypes(const Model::ListActivityTypesRequest& request) const;
 
@@ -1128,7 +1202,9 @@ namespace Model
          * attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For
          * details and example IAM policies, see <a
          * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
-         * IAM to Manage Access to Amazon SWF Workflows</a>.</p>
+         * IAM to Manage Access to Amazon SWF Workflows</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ListActivityTypes">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1151,7 +1227,9 @@ namespace Model
          * attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For
          * details and example IAM policies, see <a
          * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
-         * IAM to Manage Access to Amazon SWF Workflows</a>.</p>
+         * IAM to Manage Access to Amazon SWF Workflows</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ListActivityTypes">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1179,7 +1257,9 @@ namespace Model
          * event attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED.
          * For details and example IAM policies, see <a
          * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
-         * IAM to Manage Access to Amazon SWF Workflows</a>.</p>
+         * IAM to Manage Access to Amazon SWF Workflows</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ListClosedWorkflowExecutions">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListClosedWorkflowExecutionsOutcome ListClosedWorkflowExecutions(const Model::ListClosedWorkflowExecutionsRequest& request) const;
 
@@ -1205,7 +1285,9 @@ namespace Model
          * event attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED.
          * For details and example IAM policies, see <a
          * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
-         * IAM to Manage Access to Amazon SWF Workflows</a>.</p>
+         * IAM to Manage Access to Amazon SWF Workflows</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ListClosedWorkflowExecutions">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1233,7 +1315,9 @@ namespace Model
          * event attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED.
          * For details and example IAM policies, see <a
          * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
-         * IAM to Manage Access to Amazon SWF Workflows</a>.</p>
+         * IAM to Manage Access to Amazon SWF Workflows</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ListClosedWorkflowExecutions">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1257,7 +1341,9 @@ namespace Model
          * attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For
          * details and example IAM policies, see <a
          * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
-         * IAM to Manage Access to Amazon SWF Workflows</a>.</p>
+         * IAM to Manage Access to Amazon SWF Workflows</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ListDomains">AWS API
+         * Reference</a></p>
          */
         virtual Model::ListDomainsOutcome ListDomains(const Model::ListDomainsRequest& request) const;
 
@@ -1279,7 +1365,9 @@ namespace Model
          * attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For
          * details and example IAM policies, see <a
          * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
-         * IAM to Manage Access to Amazon SWF Workflows</a>.</p>
+         * IAM to Manage Access to Amazon SWF Workflows</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ListDomains">AWS API
+         * Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1303,7 +1391,9 @@ namespace Model
          * attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For
          * details and example IAM policies, see <a
          * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
-         * IAM to Manage Access to Amazon SWF Workflows</a>.</p>
+         * IAM to Manage Access to Amazon SWF Workflows</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ListDomains">AWS API
+         * Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1331,7 +1421,9 @@ namespace Model
          * event attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED.
          * For details and example IAM policies, see <a
          * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
-         * IAM to Manage Access to Amazon SWF Workflows</a>.</p>
+         * IAM to Manage Access to Amazon SWF Workflows</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ListOpenWorkflowExecutions">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListOpenWorkflowExecutionsOutcome ListOpenWorkflowExecutions(const Model::ListOpenWorkflowExecutionsRequest& request) const;
 
@@ -1357,7 +1449,9 @@ namespace Model
          * event attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED.
          * For details and example IAM policies, see <a
          * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
-         * IAM to Manage Access to Amazon SWF Workflows</a>.</p>
+         * IAM to Manage Access to Amazon SWF Workflows</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ListOpenWorkflowExecutions">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1385,7 +1479,9 @@ namespace Model
          * event attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED.
          * For details and example IAM policies, see <a
          * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
-         * IAM to Manage Access to Amazon SWF Workflows</a>.</p>
+         * IAM to Manage Access to Amazon SWF Workflows</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ListOpenWorkflowExecutions">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1405,7 +1501,9 @@ namespace Model
          * attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For
          * details and example IAM policies, see <a
          * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
-         * IAM to Manage Access to Amazon SWF Workflows</a>.</p>
+         * IAM to Manage Access to Amazon SWF Workflows</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ListWorkflowTypes">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListWorkflowTypesOutcome ListWorkflowTypes(const Model::ListWorkflowTypesRequest& request) const;
 
@@ -1423,7 +1521,9 @@ namespace Model
          * attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For
          * details and example IAM policies, see <a
          * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
-         * IAM to Manage Access to Amazon SWF Workflows</a>.</p>
+         * IAM to Manage Access to Amazon SWF Workflows</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ListWorkflowTypes">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1443,7 +1543,9 @@ namespace Model
          * attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For
          * details and example IAM policies, see <a
          * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
-         * IAM to Manage Access to Amazon SWF Workflows</a>.</p>
+         * IAM to Manage Access to Amazon SWF Workflows</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ListWorkflowTypes">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1473,7 +1575,9 @@ namespace Model
          * <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For details and
          * example IAM policies, see <a
          * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
-         * IAM to Manage Access to Amazon SWF Workflows</a>.</p>
+         * IAM to Manage Access to Amazon SWF Workflows</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/PollForActivityTask">AWS
+         * API Reference</a></p>
          */
         virtual Model::PollForActivityTaskOutcome PollForActivityTask(const Model::PollForActivityTaskRequest& request) const;
 
@@ -1501,7 +1605,9 @@ namespace Model
          * <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For details and
          * example IAM policies, see <a
          * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
-         * IAM to Manage Access to Amazon SWF Workflows</a>.</p>
+         * IAM to Manage Access to Amazon SWF Workflows</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/PollForActivityTask">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1531,7 +1637,9 @@ namespace Model
          * <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For details and
          * example IAM policies, see <a
          * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
-         * IAM to Manage Access to Amazon SWF Workflows</a>.</p>
+         * IAM to Manage Access to Amazon SWF Workflows</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/PollForActivityTask">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1569,7 +1677,9 @@ namespace Model
          * attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For
          * details and example IAM policies, see <a
          * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
-         * IAM to Manage Access to Amazon SWF Workflows</a>.</p>
+         * IAM to Manage Access to Amazon SWF Workflows</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/PollForDecisionTask">AWS
+         * API Reference</a></p>
          */
         virtual Model::PollForDecisionTaskOutcome PollForDecisionTask(const Model::PollForDecisionTaskRequest& request) const;
 
@@ -1605,7 +1715,9 @@ namespace Model
          * attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For
          * details and example IAM policies, see <a
          * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
-         * IAM to Manage Access to Amazon SWF Workflows</a>.</p>
+         * IAM to Manage Access to Amazon SWF Workflows</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/PollForDecisionTask">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1643,7 +1755,9 @@ namespace Model
          * attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For
          * details and example IAM policies, see <a
          * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
-         * IAM to Manage Access to Amazon SWF Workflows</a>.</p>
+         * IAM to Manage Access to Amazon SWF Workflows</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/PollForDecisionTask">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1686,7 +1800,9 @@ namespace Model
          * attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For
          * details and example IAM policies, see <a
          * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
-         * IAM to Manage Access to Amazon SWF Workflows</a>.</p>
+         * IAM to Manage Access to Amazon SWF Workflows</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RecordActivityTaskHeartbeat">AWS
+         * API Reference</a></p>
          */
         virtual Model::RecordActivityTaskHeartbeatOutcome RecordActivityTaskHeartbeat(const Model::RecordActivityTaskHeartbeatRequest& request) const;
 
@@ -1727,7 +1843,9 @@ namespace Model
          * attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For
          * details and example IAM policies, see <a
          * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
-         * IAM to Manage Access to Amazon SWF Workflows</a>.</p>
+         * IAM to Manage Access to Amazon SWF Workflows</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RecordActivityTaskHeartbeat">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1770,7 +1888,9 @@ namespace Model
          * attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For
          * details and example IAM policies, see <a
          * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
-         * IAM to Manage Access to Amazon SWF Workflows</a>.</p>
+         * IAM to Manage Access to Amazon SWF Workflows</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RecordActivityTaskHeartbeat">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1797,7 +1917,9 @@ namespace Model
          * The associated event attribute's <b>cause</b> parameter will be set to
          * OPERATION_NOT_PERMITTED. For details and example IAM policies, see <a
          * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
-         * IAM to Manage Access to Amazon SWF Workflows</a>.</p>
+         * IAM to Manage Access to Amazon SWF Workflows</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RegisterActivityType">AWS
+         * API Reference</a></p>
          */
         virtual Model::RegisterActivityTypeOutcome RegisterActivityType(const Model::RegisterActivityTypeRequest& request) const;
 
@@ -1822,7 +1944,9 @@ namespace Model
          * The associated event attribute's <b>cause</b> parameter will be set to
          * OPERATION_NOT_PERMITTED. For details and example IAM policies, see <a
          * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
-         * IAM to Manage Access to Amazon SWF Workflows</a>.</p>
+         * IAM to Manage Access to Amazon SWF Workflows</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RegisterActivityType">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1849,7 +1973,9 @@ namespace Model
          * The associated event attribute's <b>cause</b> parameter will be set to
          * OPERATION_NOT_PERMITTED. For details and example IAM policies, see <a
          * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
-         * IAM to Manage Access to Amazon SWF Workflows</a>.</p>
+         * IAM to Manage Access to Amazon SWF Workflows</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RegisterActivityType">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1868,7 +1994,9 @@ namespace Model
          * <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For details and
          * example IAM policies, see <a
          * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
-         * IAM to Manage Access to Amazon SWF Workflows</a>.</p>
+         * IAM to Manage Access to Amazon SWF Workflows</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RegisterDomain">AWS
+         * API Reference</a></p>
          */
         virtual Model::RegisterDomainOutcome RegisterDomain(const Model::RegisterDomainRequest& request) const;
 
@@ -1885,7 +2013,9 @@ namespace Model
          * <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For details and
          * example IAM policies, see <a
          * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
-         * IAM to Manage Access to Amazon SWF Workflows</a>.</p>
+         * IAM to Manage Access to Amazon SWF Workflows</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RegisterDomain">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1904,7 +2034,9 @@ namespace Model
          * <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For details and
          * example IAM policies, see <a
          * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
-         * IAM to Manage Access to Amazon SWF Workflows</a>.</p>
+         * IAM to Manage Access to Amazon SWF Workflows</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RegisterDomain">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1932,7 +2064,9 @@ namespace Model
          * The associated event attribute's <b>cause</b> parameter will be set to
          * OPERATION_NOT_PERMITTED. For details and example IAM policies, see <a
          * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
-         * IAM to Manage Access to Amazon SWF Workflows</a>.</p>
+         * IAM to Manage Access to Amazon SWF Workflows</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RegisterWorkflowType">AWS
+         * API Reference</a></p>
          */
         virtual Model::RegisterWorkflowTypeOutcome RegisterWorkflowType(const Model::RegisterWorkflowTypeRequest& request) const;
 
@@ -1958,7 +2092,9 @@ namespace Model
          * The associated event attribute's <b>cause</b> parameter will be set to
          * OPERATION_NOT_PERMITTED. For details and example IAM policies, see <a
          * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
-         * IAM to Manage Access to Amazon SWF Workflows</a>.</p>
+         * IAM to Manage Access to Amazon SWF Workflows</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RegisterWorkflowType">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1986,7 +2122,9 @@ namespace Model
          * The associated event attribute's <b>cause</b> parameter will be set to
          * OPERATION_NOT_PERMITTED. For details and example IAM policies, see <a
          * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
-         * IAM to Manage Access to Amazon SWF Workflows</a>.</p>
+         * IAM to Manage Access to Amazon SWF Workflows</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RegisterWorkflowType">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2014,7 +2152,9 @@ namespace Model
          * parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM
          * policies, see <a
          * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
-         * IAM to Manage Access to Amazon SWF Workflows</a>.</p>
+         * IAM to Manage Access to Amazon SWF Workflows</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RequestCancelWorkflowExecution">AWS
+         * API Reference</a></p>
          */
         virtual Model::RequestCancelWorkflowExecutionOutcome RequestCancelWorkflowExecution(const Model::RequestCancelWorkflowExecutionRequest& request) const;
 
@@ -2040,7 +2180,9 @@ namespace Model
          * parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM
          * policies, see <a
          * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
-         * IAM to Manage Access to Amazon SWF Workflows</a>.</p>
+         * IAM to Manage Access to Amazon SWF Workflows</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RequestCancelWorkflowExecution">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2068,7 +2210,9 @@ namespace Model
          * parameter will be set to OPERATION_NOT_PERMITTED. For details and example IAM
          * policies, see <a
          * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
-         * IAM to Manage Access to Amazon SWF Workflows</a>.</p>
+         * IAM to Manage Access to Amazon SWF Workflows</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RequestCancelWorkflowExecution">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2100,7 +2244,9 @@ namespace Model
          * attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For
          * details and example IAM policies, see <a
          * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
-         * IAM to Manage Access to Amazon SWF Workflows</a>.</p>
+         * IAM to Manage Access to Amazon SWF Workflows</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RespondActivityTaskCanceled">AWS
+         * API Reference</a></p>
          */
         virtual Model::RespondActivityTaskCanceledOutcome RespondActivityTaskCanceled(const Model::RespondActivityTaskCanceledRequest& request) const;
 
@@ -2130,7 +2276,9 @@ namespace Model
          * attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For
          * details and example IAM policies, see <a
          * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
-         * IAM to Manage Access to Amazon SWF Workflows</a>.</p>
+         * IAM to Manage Access to Amazon SWF Workflows</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RespondActivityTaskCanceled">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2162,7 +2310,9 @@ namespace Model
          * attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For
          * details and example IAM policies, see <a
          * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
-         * IAM to Manage Access to Amazon SWF Workflows</a>.</p>
+         * IAM to Manage Access to Amazon SWF Workflows</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RespondActivityTaskCanceled">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2195,7 +2345,9 @@ namespace Model
          * attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For
          * details and example IAM policies, see <a
          * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
-         * IAM to Manage Access to Amazon SWF Workflows</a>.</p>
+         * IAM to Manage Access to Amazon SWF Workflows</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RespondActivityTaskCompleted">AWS
+         * API Reference</a></p>
          */
         virtual Model::RespondActivityTaskCompletedOutcome RespondActivityTaskCompleted(const Model::RespondActivityTaskCompletedRequest& request) const;
 
@@ -2226,7 +2378,9 @@ namespace Model
          * attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For
          * details and example IAM policies, see <a
          * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
-         * IAM to Manage Access to Amazon SWF Workflows</a>.</p>
+         * IAM to Manage Access to Amazon SWF Workflows</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RespondActivityTaskCompleted">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2259,7 +2413,9 @@ namespace Model
          * attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For
          * details and example IAM policies, see <a
          * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
-         * IAM to Manage Access to Amazon SWF Workflows</a>.</p>
+         * IAM to Manage Access to Amazon SWF Workflows</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RespondActivityTaskCompleted">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2287,7 +2443,9 @@ namespace Model
          * attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For
          * details and example IAM policies, see <a
          * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
-         * IAM to Manage Access to Amazon SWF Workflows</a>.</p>
+         * IAM to Manage Access to Amazon SWF Workflows</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RespondActivityTaskFailed">AWS
+         * API Reference</a></p>
          */
         virtual Model::RespondActivityTaskFailedOutcome RespondActivityTaskFailed(const Model::RespondActivityTaskFailedRequest& request) const;
 
@@ -2313,7 +2471,9 @@ namespace Model
          * attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For
          * details and example IAM policies, see <a
          * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
-         * IAM to Manage Access to Amazon SWF Workflows</a>.</p>
+         * IAM to Manage Access to Amazon SWF Workflows</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RespondActivityTaskFailed">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2341,7 +2501,9 @@ namespace Model
          * attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For
          * details and example IAM policies, see <a
          * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
-         * IAM to Manage Access to Amazon SWF Workflows</a>.</p>
+         * IAM to Manage Access to Amazon SWF Workflows</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RespondActivityTaskFailed">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2362,7 +2524,9 @@ namespace Model
          * they were actual API calls, including applying conditions to some parameters.
          * For more information, see <a
          * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
-         * IAM to Manage Access to Amazon SWF Workflows</a>.</p>
+         * IAM to Manage Access to Amazon SWF Workflows</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RespondDecisionTaskCompleted">AWS
+         * API Reference</a></p>
          */
         virtual Model::RespondDecisionTaskCompletedOutcome RespondDecisionTaskCompleted(const Model::RespondDecisionTaskCompletedRequest& request) const;
 
@@ -2381,7 +2545,9 @@ namespace Model
          * they were actual API calls, including applying conditions to some parameters.
          * For more information, see <a
          * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
-         * IAM to Manage Access to Amazon SWF Workflows</a>.</p>
+         * IAM to Manage Access to Amazon SWF Workflows</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RespondDecisionTaskCompleted">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2402,7 +2568,9 @@ namespace Model
          * they were actual API calls, including applying conditions to some parameters.
          * For more information, see <a
          * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
-         * IAM to Manage Access to Amazon SWF Workflows</a>.</p>
+         * IAM to Manage Access to Amazon SWF Workflows</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RespondDecisionTaskCompleted">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2428,7 +2596,9 @@ namespace Model
          * attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For
          * details and example IAM policies, see <a
          * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
-         * IAM to Manage Access to Amazon SWF Workflows</a>.</p>
+         * IAM to Manage Access to Amazon SWF Workflows</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/SignalWorkflowExecution">AWS
+         * API Reference</a></p>
          */
         virtual Model::SignalWorkflowExecutionOutcome SignalWorkflowExecution(const Model::SignalWorkflowExecutionRequest& request) const;
 
@@ -2452,7 +2622,9 @@ namespace Model
          * attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For
          * details and example IAM policies, see <a
          * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
-         * IAM to Manage Access to Amazon SWF Workflows</a>.</p>
+         * IAM to Manage Access to Amazon SWF Workflows</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/SignalWorkflowExecution">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2478,7 +2650,9 @@ namespace Model
          * attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For
          * details and example IAM policies, see <a
          * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
-         * IAM to Manage Access to Amazon SWF Workflows</a>.</p>
+         * IAM to Manage Access to Amazon SWF Workflows</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/SignalWorkflowExecution">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2511,7 +2685,9 @@ namespace Model
          * action fails. The associated event attribute's <b>cause</b> parameter will be
          * set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see <a
          * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
-         * IAM to Manage Access to Amazon SWF Workflows</a>.</p>
+         * IAM to Manage Access to Amazon SWF Workflows</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/StartWorkflowExecution">AWS
+         * API Reference</a></p>
          */
         virtual Model::StartWorkflowExecutionOutcome StartWorkflowExecution(const Model::StartWorkflowExecutionRequest& request) const;
 
@@ -2542,7 +2718,9 @@ namespace Model
          * action fails. The associated event attribute's <b>cause</b> parameter will be
          * set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see <a
          * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
-         * IAM to Manage Access to Amazon SWF Workflows</a>.</p>
+         * IAM to Manage Access to Amazon SWF Workflows</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/StartWorkflowExecution">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2575,7 +2753,9 @@ namespace Model
          * action fails. The associated event attribute's <b>cause</b> parameter will be
          * set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see <a
          * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
-         * IAM to Manage Access to Amazon SWF Workflows</a>.</p>
+         * IAM to Manage Access to Amazon SWF Workflows</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/StartWorkflowExecution">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2604,7 +2784,9 @@ namespace Model
          * attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For
          * details and example IAM policies, see <a
          * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
-         * IAM to Manage Access to Amazon SWF Workflows</a>.</p>
+         * IAM to Manage Access to Amazon SWF Workflows</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/TerminateWorkflowExecution">AWS
+         * API Reference</a></p>
          */
         virtual Model::TerminateWorkflowExecutionOutcome TerminateWorkflowExecution(const Model::TerminateWorkflowExecutionRequest& request) const;
 
@@ -2631,7 +2813,9 @@ namespace Model
          * attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For
          * details and example IAM policies, see <a
          * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
-         * IAM to Manage Access to Amazon SWF Workflows</a>.</p>
+         * IAM to Manage Access to Amazon SWF Workflows</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/TerminateWorkflowExecution">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2660,7 +2844,9 @@ namespace Model
          * attribute's <b>cause</b> parameter will be set to OPERATION_NOT_PERMITTED. For
          * details and example IAM policies, see <a
          * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
-         * IAM to Manage Access to Amazon SWF Workflows</a>.</p>
+         * IAM to Manage Access to Amazon SWF Workflows</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/TerminateWorkflowExecution">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */

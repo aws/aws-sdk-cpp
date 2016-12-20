@@ -38,7 +38,9 @@ namespace Model
   /**
    * <p>The definition of a CloudWatch metric alarm, which determines when an
    * automatic scaling activity is triggered. When the defined alarm conditions are
-   * satisfied, scaling activity begins.</p>
+   * satisfied, scaling activity begins.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/CloudWatchAlarmDefinition">AWS
+   * API Reference</a></p>
    */
   class AWS_EMR_API CloudWatchAlarmDefinition
   {

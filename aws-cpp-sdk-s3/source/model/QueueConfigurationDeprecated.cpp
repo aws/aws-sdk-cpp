@@ -99,7 +99,7 @@ void QueueConfigurationDeprecated::AddToNode(XmlNode& parentNode) const
 
   if(m_queueHasBeenSet)
   {
-   XmlNode queueNode = parentNode.CreateChildElement("Event");
+   XmlNode queueNode = parentNode.CreateChildElement("Queue");
    queueNode.SetText(m_queue);
   }
 

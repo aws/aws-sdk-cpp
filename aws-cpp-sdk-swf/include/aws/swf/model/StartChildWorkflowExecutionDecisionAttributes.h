@@ -53,7 +53,9 @@ namespace Model
    * action fails. The associated event attribute's <b>cause</b> parameter will be
    * set to OPERATION_NOT_PERMITTED. For details and example IAM policies, see <a
    * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
-   * IAM to Manage Access to Amazon SWF Workflows</a>.</p>
+   * IAM to Manage Access to Amazon SWF Workflows</a>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/StartChildWorkflowExecutionDecisionAttributes">AWS
+   * API Reference</a></p>
    */
   class AWS_SWF_API StartChildWorkflowExecutionDecisionAttributes
   {

@@ -32,7 +32,10 @@ namespace Model
 {
 
   /**
-   * <p>Describes the storage location for an instance store-backed AMI.</p>
+   * <p>Describes the storage location for an instance store-backed
+   * AMI.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/Storage">AWS API
+   * Reference</a></p>
    */
   class AWS_EC2_API Storage
   {

@@ -34,7 +34,9 @@ namespace Model
 
   /**
    * <p>Contains information about a Remote Authentication Dial In User Service
-   * (RADIUS) server.</p>
+   * (RADIUS) server.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RadiusSettings">AWS
+   * API Reference</a></p>
    */
   class AWS_DIRECTORYSERVICE_API RadiusSettings
   {

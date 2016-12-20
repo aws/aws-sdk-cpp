@@ -34,7 +34,9 @@ namespace Model
 {
   /**
    * <p>The content and file name of the attachment returned by the
-   * <a>DescribeAttachment</a> operation.</p>
+   * <a>DescribeAttachment</a> operation.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeAttachmentResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_SUPPORT_API DescribeAttachmentResult
   {

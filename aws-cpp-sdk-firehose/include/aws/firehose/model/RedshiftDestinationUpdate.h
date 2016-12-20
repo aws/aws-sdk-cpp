@@ -35,7 +35,10 @@ namespace Model
 {
 
   /**
-   * <p>Describes an update for a destination in Amazon Redshift.</p>
+   * <p>Describes an update for a destination in Amazon Redshift.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/RedshiftDestinationUpdate">AWS
+   * API Reference</a></p>
    */
   class AWS_FIREHOSE_API RedshiftDestinationUpdate
   {

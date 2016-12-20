@@ -32,7 +32,10 @@ namespace Model
 {
 
   /**
-   * <p>An entry for a single application in the application catalog.</p>
+   * <p>An entry for a single application in the application catalog.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/Application">AWS
+   * API Reference</a></p>
    */
   class AWS_APPSTREAM_API Application
   {

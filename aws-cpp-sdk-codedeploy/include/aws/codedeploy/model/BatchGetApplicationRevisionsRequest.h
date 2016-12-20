@@ -27,7 +27,10 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input of a batch get application revisions operation.</p>
+   * <p>Represents the input of a batch get application revisions
+   * operation.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetApplicationRevisionsInput">AWS
+   * API Reference</a></p>
    */
   class AWS_CODEDEPLOY_API BatchGetApplicationRevisionsRequest : public CodeDeployRequest
   {

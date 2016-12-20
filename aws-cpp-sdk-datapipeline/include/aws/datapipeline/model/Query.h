@@ -32,7 +32,9 @@ namespace Model
 {
 
   /**
-   * <p>Defines the query to run against an object.</p>
+   * <p>Defines the query to run against an object.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/Query">AWS
+   * API Reference</a></p>
    */
   class AWS_DATAPIPELINE_API Query
   {

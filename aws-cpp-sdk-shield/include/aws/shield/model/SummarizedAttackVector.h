@@ -33,7 +33,9 @@ namespace Model
 {
 
   /**
-   * <p>A summary of information about the attack.</p>
+   * <p>A summary of information about the attack.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/SummarizedAttackVector">AWS
+   * API Reference</a></p>
    */
   class AWS_SHIELD_API SummarizedAttackVector
   {

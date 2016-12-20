@@ -32,7 +32,9 @@ namespace Model
 {
 
   /**
-   * <p>A data volume used in a task definition.</p>
+   * <p>A data volume used in a task definition.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/Volume">AWS API
+   * Reference</a></p>
    */
   class AWS_ECS_API Volume
   {

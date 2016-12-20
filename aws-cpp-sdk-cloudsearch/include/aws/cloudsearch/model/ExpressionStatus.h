@@ -33,7 +33,10 @@ namespace Model
 {
 
   /**
-   * <p>The value of an <code>Expression</code> and its current status.</p>
+   * <p>The value of an <code>Expression</code> and its current status.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/ExpressionStatus">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDSEARCH_API ExpressionStatus
   {

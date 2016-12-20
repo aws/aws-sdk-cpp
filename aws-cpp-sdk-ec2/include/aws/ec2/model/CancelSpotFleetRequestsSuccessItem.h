@@ -33,7 +33,10 @@ namespace Model
 {
 
   /**
-   * <p>Describes a Spot fleet request that was successfully canceled.</p>
+   * <p>Describes a Spot fleet request that was successfully canceled.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelSpotFleetRequestsSuccessItem">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API CancelSpotFleetRequestsSuccessItem
   {

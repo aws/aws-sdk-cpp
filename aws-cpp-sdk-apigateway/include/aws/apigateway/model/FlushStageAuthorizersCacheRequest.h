@@ -25,7 +25,10 @@ namespace Model
 {
 
   /**
-   * <p>Request to flush authorizer cache entries on a specified stage.</p>
+   * <p>Request to flush authorizer cache entries on a specified stage.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/FlushStageAuthorizersCacheRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_APIGATEWAY_API FlushStageAuthorizersCacheRequest : public APIGatewayRequest
   {

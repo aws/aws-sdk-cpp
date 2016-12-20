@@ -34,7 +34,9 @@ namespace Model
 {
 
   /**
-   * <p>Describes a reserved node offering.</p>
+   * <p>Describes a reserved node offering.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ReservedNodeOffering">AWS
+   * API Reference</a></p>
    */
   class AWS_REDSHIFT_API ReservedNodeOffering
   {

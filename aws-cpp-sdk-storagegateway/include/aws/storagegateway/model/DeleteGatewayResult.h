@@ -33,7 +33,10 @@ namespace StorageGateway
 namespace Model
 {
   /**
-   * <p>A JSON object containing the id of the deleted gateway.</p>
+   * <p>A JSON object containing the id of the deleted gateway.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteGatewayOutput">AWS
+   * API Reference</a></p>
    */
   class AWS_STORAGEGATEWAY_API DeleteGatewayResult
   {

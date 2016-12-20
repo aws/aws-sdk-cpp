@@ -35,7 +35,9 @@ namespace Model
    * A complex type that lists the AWS accounts, if any, that you included in the
    * TrustedSigners complex type for the default cache behavior or for any of the
    * other cache behaviors for this distribution. These are accounts that you want to
-   * allow to create signed URLs for private content.
+   * allow to create signed URLs for private content.<p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/ActiveTrustedSigners">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API ActiveTrustedSigners
   {

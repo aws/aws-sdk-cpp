@@ -31,7 +31,10 @@ namespace Model
 {
 
   /**
-   * <p>The statistics for a field calculated in the request.</p>
+   * <p>The statistics for a field calculated in the request.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearchdomain-2013-01-01/FieldStats">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDSEARCHDOMAIN_API FieldStats
   {

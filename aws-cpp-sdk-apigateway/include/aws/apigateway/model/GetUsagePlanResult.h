@@ -43,7 +43,9 @@ namespace Model
    * the specified API. You add plan customers by adding API keys to the plan. </p>
    * </div> <div class="seeAlso"> <a
    * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-api-usage-plans.html">Create
-   * and Use Usage Plans</a> </div>
+   * and Use Usage Plans</a> </div><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UsagePlan">AWS
+   * API Reference</a></p>
    */
   class AWS_APIGATEWAY_API GetUsagePlanResult
   {

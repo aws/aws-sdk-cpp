@@ -32,7 +32,9 @@ namespace Model
 {
 
   /**
-   * <p>The result type of the authentication result.</p>
+   * <p>The result type of the authentication result.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AuthenticationResultType">AWS
+   * API Reference</a></p>
    */
   class AWS_COGNITOIDENTITYPROVIDER_API AuthenticationResultType
   {

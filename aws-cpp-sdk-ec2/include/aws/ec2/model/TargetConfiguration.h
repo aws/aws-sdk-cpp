@@ -32,7 +32,10 @@ namespace Model
 {
 
   /**
-   * <p>Information about the Convertible Reserved Instance offering.</p>
+   * <p>Information about the Convertible Reserved Instance offering.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/TargetConfiguration">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API TargetConfiguration
   {

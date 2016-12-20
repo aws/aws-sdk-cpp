@@ -33,7 +33,9 @@ namespace ElasticLoadBalancing
 namespace Model
 {
   /**
-   * <p>Contains the output of RemoveTags.</p>
+   * <p>Contains the output of RemoveTags.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/RemoveTagsOutput">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICLOADBALANCING_API RemoveTagsResult
   {

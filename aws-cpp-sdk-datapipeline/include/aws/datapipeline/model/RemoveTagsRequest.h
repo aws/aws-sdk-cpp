@@ -26,7 +26,9 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for RemoveTags.</p>
+   * <p>Contains the parameters for RemoveTags.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/RemoveTagsInput">AWS
+   * API Reference</a></p>
    */
   class AWS_DATAPIPELINE_API RemoveTagsRequest : public DataPipelineRequest
   {

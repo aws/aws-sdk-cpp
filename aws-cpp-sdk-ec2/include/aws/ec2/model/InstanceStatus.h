@@ -36,7 +36,9 @@ namespace Model
 {
 
   /**
-   * <p>Describes the status of an instance.</p>
+   * <p>Describes the status of an instance.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/InstanceStatus">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API InstanceStatus
   {

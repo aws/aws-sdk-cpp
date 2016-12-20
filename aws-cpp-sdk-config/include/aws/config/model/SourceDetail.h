@@ -37,7 +37,9 @@ namespace Model
    * your AWS resources against a rule. It also provides the frequency with which you
    * want AWS Config to run evaluations for the rule if the trigger type is periodic.
    * You can specify the parameter values for <code>SourceDetail</code> only for
-   * custom rules. </p>
+   * custom rules. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/SourceDetail">AWS
+   * API Reference</a></p>
    */
   class AWS_CONFIGSERVICE_API SourceDetail
   {

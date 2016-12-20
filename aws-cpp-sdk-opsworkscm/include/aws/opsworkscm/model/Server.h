@@ -36,7 +36,9 @@ namespace Model
 {
 
   /**
-   * <p>Describes a configuration management server. </p>
+   * <p>Describes a configuration management server. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/Server">AWS
+   * API Reference</a></p>
    */
   class AWS_OPSWORKSCM_API Server
   {

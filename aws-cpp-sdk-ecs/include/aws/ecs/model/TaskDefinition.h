@@ -37,7 +37,9 @@ namespace Model
 {
 
   /**
-   * <p>Details of a task definition.</p>
+   * <p>Details of a task definition.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/TaskDefinition">AWS
+   * API Reference</a></p>
    */
   class AWS_ECS_API TaskDefinition
   {

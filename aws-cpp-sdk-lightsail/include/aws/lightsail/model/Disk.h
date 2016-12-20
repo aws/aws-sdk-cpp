@@ -34,7 +34,9 @@ namespace Model
 {
 
   /**
-   * <p>Describes the hard disk (an SSD).</p>
+   * <p>Describes the hard disk (an SSD).</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/Disk">AWS API
+   * Reference</a></p>
    */
   class AWS_LIGHTSAIL_API Disk
   {

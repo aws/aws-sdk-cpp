@@ -35,7 +35,10 @@ namespace Model
 
   /**
    * Container for specifying the configuration when you want Amazon S3 to publish
-   * events to an Amazon Simple Notification Service (Amazon SNS) topic.
+   * events to an Amazon Simple Notification Service (Amazon SNS) topic.<p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/TopicConfiguration">AWS
+   * API Reference</a></p>
    */
   class AWS_S3_API TopicConfiguration
   {

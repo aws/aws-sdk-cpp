@@ -32,7 +32,9 @@ namespace Route53
 namespace Model
 {
   /**
-   * <p>An empty element.</p>
+   * <p>An empty element.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteHealthCheckResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_ROUTE53_API DeleteHealthCheckResult
   {

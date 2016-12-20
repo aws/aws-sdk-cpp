@@ -34,7 +34,9 @@ namespace Model
 
   /**
    * <p>The status of a specified delivery channel.</p> <p>Valid values:
-   * <code>Success</code> | <code>Failure</code> </p>
+   * <code>Success</code> | <code>Failure</code> </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeliveryChannelStatus">AWS
+   * API Reference</a></p>
    */
   class AWS_CONFIGSERVICE_API DeliveryChannelStatus
   {

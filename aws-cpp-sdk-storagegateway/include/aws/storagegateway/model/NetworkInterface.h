@@ -31,7 +31,9 @@ namespace Model
 {
 
   /**
-   * <p>Describes a gateway's network interface.</p>
+   * <p>Describes a gateway's network interface.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/NetworkInterface">AWS
+   * API Reference</a></p>
    */
   class AWS_STORAGEGATEWAY_API NetworkInterface
   {

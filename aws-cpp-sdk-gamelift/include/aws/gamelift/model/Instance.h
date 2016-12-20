@@ -36,7 +36,10 @@ namespace Model
 
   /**
    * <p>Properties that describe an instance of a virtual computing resource that
-   * hosts one or more game servers. A fleet contains zero or more instances.</p>
+   * hosts one or more game servers. A fleet contains zero or more
+   * instances.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/Instance">AWS
+   * API Reference</a></p>
    */
   class AWS_GAMELIFT_API Instance
   {

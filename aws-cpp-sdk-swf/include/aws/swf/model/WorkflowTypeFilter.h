@@ -32,7 +32,10 @@ namespace Model
 
   /**
    * <p>Used to filter workflow execution query results by type. Each parameter, if
-   * specified, defines a rule that must be satisfied by each returned result.</p>
+   * specified, defines a rule that must be satisfied by each returned
+   * result.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/WorkflowTypeFilter">AWS
+   * API Reference</a></p>
    */
   class AWS_SWF_API WorkflowTypeFilter
   {

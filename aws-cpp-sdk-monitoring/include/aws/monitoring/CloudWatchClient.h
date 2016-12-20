@@ -17,6 +17,7 @@
 #include <aws/monitoring/CloudWatchErrors.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -163,15 +164,25 @@ namespace Model
 
         virtual ~CloudWatchClient();
 
+       /**
+        * Converts any request object to a presigned URL with the GET method, using region for the signer and a timeout of 15 minutes.
+        */
+        Aws::String ConvertRequestToPresignedUrl(const AmazonSerializableWebServiceRequest& requestToConvert, const char* region) const;
+
+
         /**
          * <p>Deletes the specified alarms. In the event of an error, no alarms are
-         * deleted.</p>
+         * deleted.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DeleteAlarms">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteAlarmsOutcome DeleteAlarms(const Model::DeleteAlarmsRequest& request) const;
 
         /**
          * <p>Deletes the specified alarms. In the event of an error, no alarms are
-         * deleted.</p>
+         * deleted.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DeleteAlarms">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -179,7 +190,9 @@ namespace Model
 
         /**
          * <p>Deletes the specified alarms. In the event of an error, no alarms are
-         * deleted.</p>
+         * deleted.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DeleteAlarms">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -189,7 +202,9 @@ namespace Model
          * <p>Retrieves the history for the specified alarm. You can filter the results by
          * date range or item type. If an alarm name is not specified, the histories for
          * all alarms are returned.</p> <p>Note that Amazon CloudWatch retains the history
-         * of an alarm even if you delete the alarm.</p>
+         * of an alarm even if you delete the alarm.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeAlarmHistory">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeAlarmHistoryOutcome DescribeAlarmHistory(const Model::DescribeAlarmHistoryRequest& request) const;
 
@@ -197,7 +212,9 @@ namespace Model
          * <p>Retrieves the history for the specified alarm. You can filter the results by
          * date range or item type. If an alarm name is not specified, the histories for
          * all alarms are returned.</p> <p>Note that Amazon CloudWatch retains the history
-         * of an alarm even if you delete the alarm.</p>
+         * of an alarm even if you delete the alarm.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeAlarmHistory">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -207,7 +224,9 @@ namespace Model
          * <p>Retrieves the history for the specified alarm. You can filter the results by
          * date range or item type. If an alarm name is not specified, the histories for
          * all alarms are returned.</p> <p>Note that Amazon CloudWatch retains the history
-         * of an alarm even if you delete the alarm.</p>
+         * of an alarm even if you delete the alarm.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeAlarmHistory">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -216,14 +235,18 @@ namespace Model
         /**
          * <p>Retrieves the specified alarms. If no alarms are specified, all alarms are
          * returned. Alarms can be retrieved by using only a prefix for the alarm name, the
-         * alarm state, or a prefix for any action.</p>
+         * alarm state, or a prefix for any action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeAlarms">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeAlarmsOutcome DescribeAlarms(const Model::DescribeAlarmsRequest& request) const;
 
         /**
          * <p>Retrieves the specified alarms. If no alarms are specified, all alarms are
          * returned. Alarms can be retrieved by using only a prefix for the alarm name, the
-         * alarm state, or a prefix for any action.</p>
+         * alarm state, or a prefix for any action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeAlarms">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -232,7 +255,9 @@ namespace Model
         /**
          * <p>Retrieves the specified alarms. If no alarms are specified, all alarms are
          * returned. Alarms can be retrieved by using only a prefix for the alarm name, the
-         * alarm state, or a prefix for any action.</p>
+         * alarm state, or a prefix for any action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeAlarms">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -240,13 +265,17 @@ namespace Model
 
         /**
          * <p>Retrieves the alarms for the specified metric. Specify a statistic, period,
-         * or unit to filter the results.</p>
+         * or unit to filter the results.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeAlarmsForMetric">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeAlarmsForMetricOutcome DescribeAlarmsForMetric(const Model::DescribeAlarmsForMetricRequest& request) const;
 
         /**
          * <p>Retrieves the alarms for the specified metric. Specify a statistic, period,
-         * or unit to filter the results.</p>
+         * or unit to filter the results.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeAlarmsForMetric">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -254,7 +283,9 @@ namespace Model
 
         /**
          * <p>Retrieves the alarms for the specified metric. Specify a statistic, period,
-         * or unit to filter the results.</p>
+         * or unit to filter the results.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeAlarmsForMetric">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -262,13 +293,19 @@ namespace Model
 
         /**
          * <p>Disables the actions for the specified alarms. When an alarm's actions are
-         * disabled, the alarm actions do not execute when the alarm state changes.</p>
+         * disabled, the alarm actions do not execute when the alarm state
+         * changes.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DisableAlarmActions">AWS
+         * API Reference</a></p>
          */
         virtual Model::DisableAlarmActionsOutcome DisableAlarmActions(const Model::DisableAlarmActionsRequest& request) const;
 
         /**
          * <p>Disables the actions for the specified alarms. When an alarm's actions are
-         * disabled, the alarm actions do not execute when the alarm state changes.</p>
+         * disabled, the alarm actions do not execute when the alarm state
+         * changes.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DisableAlarmActions">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -276,26 +313,35 @@ namespace Model
 
         /**
          * <p>Disables the actions for the specified alarms. When an alarm's actions are
-         * disabled, the alarm actions do not execute when the alarm state changes.</p>
+         * disabled, the alarm actions do not execute when the alarm state
+         * changes.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DisableAlarmActions">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DisableAlarmActionsAsync(const Model::DisableAlarmActionsRequest& request, const DisableAlarmActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Enables the actions for the specified alarms.</p>
+         * <p>Enables the actions for the specified alarms.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/EnableAlarmActions">AWS
+         * API Reference</a></p>
          */
         virtual Model::EnableAlarmActionsOutcome EnableAlarmActions(const Model::EnableAlarmActionsRequest& request) const;
 
         /**
-         * <p>Enables the actions for the specified alarms.</p>
+         * <p>Enables the actions for the specified alarms.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/EnableAlarmActions">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::EnableAlarmActionsOutcomeCallable EnableAlarmActionsCallable(const Model::EnableAlarmActionsRequest& request) const;
 
         /**
-         * <p>Enables the actions for the specified alarms.</p>
+         * <p>Enables the actions for the specified alarms.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/EnableAlarmActions">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -323,7 +369,9 @@ namespace Model
          * see the <a
          * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CW_Support_For_AWS.html">Amazon
          * CloudWatch Metrics and Dimensions Reference</a> in the <i>Amazon CloudWatch User
-         * Guide</i>.</p>
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetMetricStatistics">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetMetricStatisticsOutcome GetMetricStatistics(const Model::GetMetricStatisticsRequest& request) const;
 
@@ -349,7 +397,9 @@ namespace Model
          * see the <a
          * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CW_Support_For_AWS.html">Amazon
          * CloudWatch Metrics and Dimensions Reference</a> in the <i>Amazon CloudWatch User
-         * Guide</i>.</p>
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetMetricStatistics">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -377,7 +427,9 @@ namespace Model
          * see the <a
          * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CW_Support_For_AWS.html">Amazon
          * CloudWatch Metrics and Dimensions Reference</a> in the <i>Amazon CloudWatch User
-         * Guide</i>.</p>
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetMetricStatistics">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -389,7 +441,10 @@ namespace Model
          * are returned for any one call. To retrieve additional results, use the returned
          * token with subsequent calls.</p> <p>After you create a metric, allow up to
          * fifteen minutes before the metric appears. Statistics about the metric, however,
-         * are available sooner using <a>GetMetricStatistics</a>.</p>
+         * are available sooner using <a>GetMetricStatistics</a>.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/ListMetrics">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListMetricsOutcome ListMetrics(const Model::ListMetricsRequest& request) const;
 
@@ -399,7 +454,10 @@ namespace Model
          * are returned for any one call. To retrieve additional results, use the returned
          * token with subsequent calls.</p> <p>After you create a metric, allow up to
          * fifteen minutes before the metric appears. Statistics about the metric, however,
-         * are available sooner using <a>GetMetricStatistics</a>.</p>
+         * are available sooner using <a>GetMetricStatistics</a>.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/ListMetrics">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -411,7 +469,10 @@ namespace Model
          * are returned for any one call. To retrieve additional results, use the returned
          * token with subsequent calls.</p> <p>After you create a metric, allow up to
          * fifteen minutes before the metric appears. Statistics about the metric, however,
-         * are available sooner using <a>GetMetricStatistics</a>.</p>
+         * are available sooner using <a>GetMetricStatistics</a>.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/ListMetrics">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -446,7 +507,9 @@ namespace Model
          * create at least one stop, terminate, or reboot alarm using the Amazon EC2 or
          * CloudWatch console to create the <b>EC2ActionsAccess</b> IAM role. After this
          * IAM role is created, you can create stop, terminate, or reboot alarms using a
-         * command-line interface or an API.</p>
+         * command-line interface or an API.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutMetricAlarm">AWS
+         * API Reference</a></p>
          */
         virtual Model::PutMetricAlarmOutcome PutMetricAlarm(const Model::PutMetricAlarmRequest& request) const;
 
@@ -479,7 +542,9 @@ namespace Model
          * create at least one stop, terminate, or reboot alarm using the Amazon EC2 or
          * CloudWatch console to create the <b>EC2ActionsAccess</b> IAM role. After this
          * IAM role is created, you can create stop, terminate, or reboot alarms using a
-         * command-line interface or an API.</p>
+         * command-line interface or an API.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutMetricAlarm">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -514,7 +579,9 @@ namespace Model
          * create at least one stop, terminate, or reboot alarm using the Amazon EC2 or
          * CloudWatch console to create the <b>EC2ActionsAccess</b> IAM role. After this
          * IAM role is created, you can create stop, terminate, or reboot alarms using a
-         * command-line interface or an API.</p>
+         * command-line interface or an API.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutMetricAlarm">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -533,7 +600,10 @@ namespace Model
          * 1.174271e+108 (Base 10) or 2e-360 to 2e360 (Base 2). In addition, special values
          * (e.g., NaN, +Infinity, -Infinity) are not supported.</p> <p>Data points with
          * time stamps from 24 hours ago or longer can take at least 48 hours to become
-         * available for <a>GetMetricStatistics</a> from the time they are submitted.</p>
+         * available for <a>GetMetricStatistics</a> from the time they are
+         * submitted.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutMetricData">AWS
+         * API Reference</a></p>
          */
         virtual Model::PutMetricDataOutcome PutMetricData(const Model::PutMetricDataRequest& request) const;
 
@@ -550,7 +620,10 @@ namespace Model
          * 1.174271e+108 (Base 10) or 2e-360 to 2e360 (Base 2). In addition, special values
          * (e.g., NaN, +Infinity, -Infinity) are not supported.</p> <p>Data points with
          * time stamps from 24 hours ago or longer can take at least 48 hours to become
-         * available for <a>GetMetricStatistics</a> from the time they are submitted.</p>
+         * available for <a>GetMetricStatistics</a> from the time they are
+         * submitted.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutMetricData">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -569,7 +642,10 @@ namespace Model
          * 1.174271e+108 (Base 10) or 2e-360 to 2e360 (Base 2). In addition, special values
          * (e.g., NaN, +Infinity, -Infinity) are not supported.</p> <p>Data points with
          * time stamps from 24 hours ago or longer can take at least 48 hours to become
-         * available for <a>GetMetricStatistics</a> from the time they are submitted.</p>
+         * available for <a>GetMetricStatistics</a> from the time they are
+         * submitted.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutMetricData">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -583,7 +659,10 @@ namespace Model
          * <code>ALARM</code> sends an Amazon SNS message. The alarm returns to its actual
          * state (often within seconds). Because the alarm state change happens very
          * quickly, it is typically only visible in the alarm's <b>History</b> tab in the
-         * Amazon CloudWatch console or through <a>DescribeAlarmHistory</a>.</p>
+         * Amazon CloudWatch console or through <a>DescribeAlarmHistory</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/SetAlarmState">AWS
+         * API Reference</a></p>
          */
         virtual Model::SetAlarmStateOutcome SetAlarmState(const Model::SetAlarmStateRequest& request) const;
 
@@ -595,7 +674,10 @@ namespace Model
          * <code>ALARM</code> sends an Amazon SNS message. The alarm returns to its actual
          * state (often within seconds). Because the alarm state change happens very
          * quickly, it is typically only visible in the alarm's <b>History</b> tab in the
-         * Amazon CloudWatch console or through <a>DescribeAlarmHistory</a>.</p>
+         * Amazon CloudWatch console or through <a>DescribeAlarmHistory</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/SetAlarmState">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -609,7 +691,10 @@ namespace Model
          * <code>ALARM</code> sends an Amazon SNS message. The alarm returns to its actual
          * state (often within seconds). Because the alarm state change happens very
          * quickly, it is typically only visible in the alarm's <b>History</b> tab in the
-         * Amazon CloudWatch console or through <a>DescribeAlarmHistory</a>.</p>
+         * Amazon CloudWatch console or through <a>DescribeAlarmHistory</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/SetAlarmState">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */

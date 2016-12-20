@@ -31,7 +31,10 @@ namespace Model
 {
 
   /**
-   * <p>Represents the timeline of the cluster's lifecycle.</p>
+   * <p>Represents the timeline of the cluster's lifecycle.</p><p><h3>See Also:</h3> 
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ClusterTimeline">AWS
+   * API Reference</a></p>
    */
   class AWS_EMR_API ClusterTimeline
   {

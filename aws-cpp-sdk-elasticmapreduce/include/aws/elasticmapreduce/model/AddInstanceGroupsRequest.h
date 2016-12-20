@@ -27,7 +27,9 @@ namespace Model
 {
 
   /**
-   * <p>Input to an AddInstanceGroups call.</p>
+   * <p>Input to an AddInstanceGroups call.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/AddInstanceGroupsInput">AWS
+   * API Reference</a></p>
    */
   class AWS_EMR_API AddInstanceGroupsRequest : public EMRRequest
   {

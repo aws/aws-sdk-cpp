@@ -37,7 +37,10 @@ namespace Model
    * is an acknowledgement that Amazon ML received the request.</p> <p>The
    * <code>CreateBatchPrediction</code> operation is asynchronous. You can poll for
    * status updates by using the <code>&gt;GetBatchPrediction</code> operation and
-   * checking the <code>Status</code> parameter of the result. </p>
+   * checking the <code>Status</code> parameter of the result. </p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/CreateBatchPredictionOutput">AWS
+   * API Reference</a></p>
    */
   class AWS_MACHINELEARNING_API CreateBatchPredictionResult
   {

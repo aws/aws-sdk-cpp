@@ -27,7 +27,9 @@ namespace Model
 
   /**
    * <p>Request to retrieve logs from an environment and store them in your Elastic
-   * Beanstalk storage bucket.</p>
+   * Beanstalk storage bucket.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/RequestEnvironmentInfoMessage">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICBEANSTALK_API RequestEnvironmentInfoRequest : public ElasticBeanstalkRequest
   {

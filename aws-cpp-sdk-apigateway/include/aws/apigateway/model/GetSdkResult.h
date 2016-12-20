@@ -29,7 +29,9 @@ namespace Model
 {
   /**
    * <p>The binary blob response to <a>GetSdk</a>, which contains the generated
-   * SDK.</p>
+   * SDK.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/SdkResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_APIGATEWAY_API GetSdkResult
   {

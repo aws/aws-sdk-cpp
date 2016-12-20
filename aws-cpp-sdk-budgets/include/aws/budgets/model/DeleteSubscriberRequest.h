@@ -27,7 +27,9 @@ namespace Model
 {
 
   /**
-   * Request of DeleteSubscriber
+   * Request of DeleteSubscriber<p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DeleteSubscriberRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_BUDGETS_API DeleteSubscriberRequest : public BudgetsRequest
   {

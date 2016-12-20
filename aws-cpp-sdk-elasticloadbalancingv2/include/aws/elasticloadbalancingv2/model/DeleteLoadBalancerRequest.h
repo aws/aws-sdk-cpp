@@ -25,7 +25,9 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for DeleteLoadBalancer.</p>
+   * <p>Contains the parameters for DeleteLoadBalancer.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DeleteLoadBalancerInput">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICLOADBALANCINGV2_API DeleteLoadBalancerRequest : public ElasticLoadBalancingv2Request
   {

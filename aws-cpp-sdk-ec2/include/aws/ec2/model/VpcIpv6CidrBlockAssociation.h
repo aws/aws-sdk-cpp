@@ -33,7 +33,10 @@ namespace Model
 {
 
   /**
-   * <p>Describes an IPv6 CIDR block associated with a VPC.</p>
+   * <p>Describes an IPv6 CIDR block associated with a VPC.</p><p><h3>See Also:</h3> 
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/VpcIpv6CidrBlockAssociation">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API VpcIpv6CidrBlockAssociation
   {

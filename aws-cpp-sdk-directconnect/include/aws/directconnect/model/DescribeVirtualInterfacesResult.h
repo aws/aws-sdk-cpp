@@ -34,7 +34,10 @@ namespace DirectConnect
 namespace Model
 {
   /**
-   * <p>A structure containing a list of virtual interfaces.</p>
+   * <p>A structure containing a list of virtual interfaces.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/VirtualInterfaces">AWS
+   * API Reference</a></p>
    */
   class AWS_DIRECTCONNECT_API DescribeVirtualInterfacesResult
   {

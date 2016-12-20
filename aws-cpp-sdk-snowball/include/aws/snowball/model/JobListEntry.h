@@ -37,7 +37,9 @@ namespace Model
   /**
    * <p>Each <code>JobListEntry</code> object contains a job's state, a job's ID, and
    * a value that indicates whether the job is a job part, in the case of an export
-   * job.</p>
+   * job.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/JobListEntry">AWS
+   * API Reference</a></p>
    */
   class AWS_SNOWBALL_API JobListEntry
   {

@@ -33,7 +33,9 @@ namespace Model
 
   /**
    * <p>Describes the AWS resources in use by this environment. This data is not live
-   * data.</p>
+   * data.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/EnvironmentResourcesDescription">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICBEANSTALK_API EnvironmentResourcesDescription
   {

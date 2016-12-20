@@ -34,7 +34,9 @@ namespace Model
 
   /**
    * <p>The SSL certificate that can be used to encrypt connections between the
-   * endpoints and the replication instance.</p>
+   * endpoints and the replication instance.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/Certificate">AWS API
+   * Reference</a></p>
    */
   class AWS_DATABASEMIGRATIONSERVICE_API Certificate
   {

@@ -144,6 +144,16 @@ void AutoScalingClient::init(const ClientConfiguration& config)
   m_uri = ss.str();
 }
 
+Aws::String AutoScalingClient::ConvertRequestToPresignedUrl(const AmazonSerializableWebServiceRequest& requestToConvert, const char* region) const
+{
+  Aws::StringStream ss;
+  ss << "https://" << AutoScalingEndpoint::ForRegion(region);
+  ss << "?" << requestToConvert.SerializePayload();
+
+  URI uri(ss.str());
+  return GeneratePresignedUrl(uri, HttpMethod::HTTP_GET, region, 3600);
+}
+
 AttachInstancesOutcome AutoScalingClient::AttachInstances(const AttachInstancesRequest& request) const
 {
   Aws::StringStream ss;
@@ -1859,4 +1869,6 @@ void AutoScalingClient::UpdateAutoScalingGroupAsyncHelper(const UpdateAutoScalin
 {
   handler(this, request, UpdateAutoScalingGroup(request), context);
 }
+
+
 

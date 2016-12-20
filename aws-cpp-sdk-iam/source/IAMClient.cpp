@@ -205,6 +205,16 @@ void IAMClient::init(const ClientConfiguration& config)
   m_uri = ss.str();
 }
 
+Aws::String IAMClient::ConvertRequestToPresignedUrl(const AmazonSerializableWebServiceRequest& requestToConvert, const char* region) const
+{
+  Aws::StringStream ss;
+  ss << "https://" << IAMEndpoint::ForRegion(region);
+  ss << "?" << requestToConvert.SerializePayload();
+
+  URI uri(ss.str());
+  return GeneratePresignedUrl(uri, HttpMethod::HTTP_GET, region, 3600);
+}
+
 AddClientIDToOpenIDConnectProviderOutcome IAMClient::AddClientIDToOpenIDConnectProvider(const AddClientIDToOpenIDConnectProviderRequest& request) const
 {
   Aws::StringStream ss;
@@ -3933,4 +3943,6 @@ void IAMClient::UploadSigningCertificateAsyncHelper(const UploadSigningCertifica
 {
   handler(this, request, UploadSigningCertificate(request), context);
 }
+
+
 

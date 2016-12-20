@@ -34,7 +34,10 @@ namespace Model
 {
 
   /**
-   * <p>The information retrieved from the Amazon EC2 instances.</p>
+   * <p>The information retrieved from the Amazon EC2 instances.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/EnvironmentInfoDescription">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICBEANSTALK_API EnvironmentInfoDescription
   {

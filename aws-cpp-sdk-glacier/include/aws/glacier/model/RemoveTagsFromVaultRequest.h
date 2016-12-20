@@ -26,7 +26,10 @@ namespace Model
 {
 
   /**
-   * <p>The input value for <code>RemoveTagsFromVaultInput</code>.</p>
+   * <p>The input value for <code>RemoveTagsFromVaultInput</code>.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/RemoveTagsFromVaultInput">AWS
+   * API Reference</a></p>
    */
   class AWS_GLACIER_API RemoveTagsFromVaultRequest : public GlacierRequest
   {

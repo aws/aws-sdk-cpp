@@ -33,7 +33,10 @@ namespace Model
 {
 
   /**
-   * <p>CPU utilization and load average metrics for an Amazon EC2 instance.</p>
+   * <p>CPU utilization and load average metrics for an Amazon EC2
+   * instance.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/SystemStatus">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICBEANSTALK_API SystemStatus
   {

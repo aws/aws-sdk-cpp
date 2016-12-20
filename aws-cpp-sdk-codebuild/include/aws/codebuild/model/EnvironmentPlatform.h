@@ -34,7 +34,9 @@ namespace Model
 
   /**
    * <p>A set of Docker images that are related by platform and are managed by AWS
-   * CodeBuild.</p>
+   * CodeBuild.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/EnvironmentPlatform">AWS
+   * API Reference</a></p>
    */
   class AWS_CODEBUILD_API EnvironmentPlatform
   {

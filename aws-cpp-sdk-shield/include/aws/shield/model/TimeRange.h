@@ -31,7 +31,9 @@ namespace Model
 {
 
   /**
-   * <p>The time range.</p>
+   * <p>The time range.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/TimeRange">AWS
+   * API Reference</a></p>
    */
   class AWS_SHIELD_API TimeRange
   {

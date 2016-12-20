@@ -156,7 +156,7 @@ void CORSRule::AddToNode(XmlNode& parentNode) const
 
   if(m_maxAgeSecondsHasBeenSet)
   {
-   XmlNode maxAgeSecondsNode = parentNode.CreateChildElement("ExposeHeader");
+   XmlNode maxAgeSecondsNode = parentNode.CreateChildElement("MaxAgeSeconds");
   ss << m_maxAgeSeconds;
    maxAgeSecondsNode.SetText(ss.str());
   ss.str("");

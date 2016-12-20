@@ -31,7 +31,9 @@ namespace Model
 {
 
   /**
-   * <p>Information about a tag.</p>
+   * <p>Information about a tag.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/Tag">AWS API
+   * Reference</a></p>
    */
   class AWS_CODEDEPLOY_API Tag
   {

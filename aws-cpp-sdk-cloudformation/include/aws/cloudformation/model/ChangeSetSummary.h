@@ -36,7 +36,9 @@ namespace Model
 
   /**
    * <p>The <code>ChangeSetSummary</code> structure describes a change set, its
-   * status, and the stack with which it's associated.</p>
+   * status, and the stack with which it's associated.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ChangeSetSummary">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDFORMATION_API ChangeSetSummary
   {

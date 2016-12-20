@@ -29,7 +29,10 @@ namespace Model
    * <p> <a>UpdateSnapshotScheduleInput$Description</a> </p> </li> <li> <p>
    * <a>UpdateSnapshotScheduleInput$RecurrenceInHours</a> </p> </li> <li> <p>
    * <a>UpdateSnapshotScheduleInput$StartAt</a> </p> </li> <li> <p>
-   * <a>UpdateSnapshotScheduleInput$VolumeARN</a> </p> </li> </ul>
+   * <a>UpdateSnapshotScheduleInput$VolumeARN</a> </p> </li> </ul><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateSnapshotScheduleInput">AWS
+   * API Reference</a></p>
    */
   class AWS_STORAGEGATEWAY_API UpdateSnapshotScheduleRequest : public StorageGatewayRequest
   {

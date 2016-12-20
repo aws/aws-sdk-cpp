@@ -34,7 +34,10 @@ namespace Model
 {
 
   /**
-   * <p>A structure containing information about a BGP peer.</p>
+   * <p>A structure containing information about a BGP peer.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/BGPPeer">AWS
+   * API Reference</a></p>
    */
   class AWS_DIRECTCONNECT_API BGPPeer
   {

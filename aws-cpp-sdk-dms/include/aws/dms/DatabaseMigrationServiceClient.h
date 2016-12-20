@@ -276,7 +276,9 @@ namespace Model
          * <p>Adds metadata tags to a DMS resource, including replication instance,
          * endpoint, security group, and migration task. These tags can also be used with
          * cost allocation reporting to track cost associated with DMS resources, or used
-         * in a Condition statement in an IAM policy for DMS.</p>
+         * in a Condition statement in an IAM policy for DMS.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/AddTagsToResource">AWS
+         * API Reference</a></p>
          */
         virtual Model::AddTagsToResourceOutcome AddTagsToResource(const Model::AddTagsToResourceRequest& request) const;
 
@@ -284,7 +286,9 @@ namespace Model
          * <p>Adds metadata tags to a DMS resource, including replication instance,
          * endpoint, security group, and migration task. These tags can also be used with
          * cost allocation reporting to track cost associated with DMS resources, or used
-         * in a Condition statement in an IAM policy for DMS.</p>
+         * in a Condition statement in an IAM policy for DMS.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/AddTagsToResource">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -294,45 +298,65 @@ namespace Model
          * <p>Adds metadata tags to a DMS resource, including replication instance,
          * endpoint, security group, and migration task. These tags can also be used with
          * cost allocation reporting to track cost associated with DMS resources, or used
-         * in a Condition statement in an IAM policy for DMS.</p>
+         * in a Condition statement in an IAM policy for DMS.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/AddTagsToResource">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void AddTagsToResourceAsync(const Model::AddTagsToResourceRequest& request, const AddTagsToResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates an endpoint using the provided settings.</p>
+         * <p>Creates an endpoint using the provided settings.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateEndpoint">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateEndpointOutcome CreateEndpoint(const Model::CreateEndpointRequest& request) const;
 
         /**
-         * <p>Creates an endpoint using the provided settings.</p>
+         * <p>Creates an endpoint using the provided settings.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateEndpoint">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateEndpointOutcomeCallable CreateEndpointCallable(const Model::CreateEndpointRequest& request) const;
 
         /**
-         * <p>Creates an endpoint using the provided settings.</p>
+         * <p>Creates an endpoint using the provided settings.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateEndpoint">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateEndpointAsync(const Model::CreateEndpointRequest& request, const CreateEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates the replication instance using the specified parameters.</p>
+         * <p>Creates the replication instance using the specified
+         * parameters.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateReplicationInstance">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateReplicationInstanceOutcome CreateReplicationInstance(const Model::CreateReplicationInstanceRequest& request) const;
 
         /**
-         * <p>Creates the replication instance using the specified parameters.</p>
+         * <p>Creates the replication instance using the specified
+         * parameters.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateReplicationInstance">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateReplicationInstanceOutcomeCallable CreateReplicationInstanceCallable(const Model::CreateReplicationInstanceRequest& request) const;
 
         /**
-         * <p>Creates the replication instance using the specified parameters.</p>
+         * <p>Creates the replication instance using the specified
+         * parameters.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateReplicationInstance">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -340,13 +364,17 @@ namespace Model
 
         /**
          * <p>Creates a replication subnet group given a list of the subnet IDs in a
-         * VPC.</p>
+         * VPC.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateReplicationSubnetGroup">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateReplicationSubnetGroupOutcome CreateReplicationSubnetGroup(const Model::CreateReplicationSubnetGroupRequest& request) const;
 
         /**
          * <p>Creates a replication subnet group given a list of the subnet IDs in a
-         * VPC.</p>
+         * VPC.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateReplicationSubnetGroup">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -354,45 +382,62 @@ namespace Model
 
         /**
          * <p>Creates a replication subnet group given a list of the subnet IDs in a
-         * VPC.</p>
+         * VPC.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateReplicationSubnetGroup">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateReplicationSubnetGroupAsync(const Model::CreateReplicationSubnetGroupRequest& request, const CreateReplicationSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a replication task using the specified parameters.</p>
+         * <p>Creates a replication task using the specified parameters.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateReplicationTask">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateReplicationTaskOutcome CreateReplicationTask(const Model::CreateReplicationTaskRequest& request) const;
 
         /**
-         * <p>Creates a replication task using the specified parameters.</p>
+         * <p>Creates a replication task using the specified parameters.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateReplicationTask">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateReplicationTaskOutcomeCallable CreateReplicationTaskCallable(const Model::CreateReplicationTaskRequest& request) const;
 
         /**
-         * <p>Creates a replication task using the specified parameters.</p>
+         * <p>Creates a replication task using the specified parameters.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateReplicationTask">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateReplicationTaskAsync(const Model::CreateReplicationTaskRequest& request, const CreateReplicationTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the specified certificate. </p>
+         * <p>Deletes the specified certificate. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteCertificate">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteCertificateOutcome DeleteCertificate(const Model::DeleteCertificateRequest& request) const;
 
         /**
-         * <p>Deletes the specified certificate. </p>
+         * <p>Deletes the specified certificate. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteCertificate">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteCertificateOutcomeCallable DeleteCertificateCallable(const Model::DeleteCertificateRequest& request) const;
 
         /**
-         * <p>Deletes the specified certificate. </p>
+         * <p>Deletes the specified certificate. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteCertificate">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -400,13 +445,19 @@ namespace Model
 
         /**
          * <p>Deletes the specified endpoint.</p> <note> <p>All tasks associated with the
-         * endpoint must be deleted before you can delete the endpoint.</p> </note> <p/>
+         * endpoint must be deleted before you can delete the endpoint.</p> </note>
+         * <p/><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteEndpoint">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteEndpointOutcome DeleteEndpoint(const Model::DeleteEndpointRequest& request) const;
 
         /**
          * <p>Deletes the specified endpoint.</p> <note> <p>All tasks associated with the
-         * endpoint must be deleted before you can delete the endpoint.</p> </note> <p/>
+         * endpoint must be deleted before you can delete the endpoint.</p> </note>
+         * <p/><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteEndpoint">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -414,7 +465,10 @@ namespace Model
 
         /**
          * <p>Deletes the specified endpoint.</p> <note> <p>All tasks associated with the
-         * endpoint must be deleted before you can delete the endpoint.</p> </note> <p/>
+         * endpoint must be deleted before you can delete the endpoint.</p> </note>
+         * <p/><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteEndpoint">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -423,14 +477,18 @@ namespace Model
         /**
          * <p>Deletes the specified replication instance.</p> <note> <p>You must delete any
          * migration tasks that are associated with the replication instance before you can
-         * delete it.</p> </note> <p/>
+         * delete it.</p> </note> <p/><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteReplicationInstance">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteReplicationInstanceOutcome DeleteReplicationInstance(const Model::DeleteReplicationInstanceRequest& request) const;
 
         /**
          * <p>Deletes the specified replication instance.</p> <note> <p>You must delete any
          * migration tasks that are associated with the replication instance before you can
-         * delete it.</p> </note> <p/>
+         * delete it.</p> </note> <p/><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteReplicationInstance">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -439,45 +497,59 @@ namespace Model
         /**
          * <p>Deletes the specified replication instance.</p> <note> <p>You must delete any
          * migration tasks that are associated with the replication instance before you can
-         * delete it.</p> </note> <p/>
+         * delete it.</p> </note> <p/><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteReplicationInstance">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteReplicationInstanceAsync(const Model::DeleteReplicationInstanceRequest& request, const DeleteReplicationInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a subnet group.</p>
+         * <p>Deletes a subnet group.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteReplicationSubnetGroup">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteReplicationSubnetGroupOutcome DeleteReplicationSubnetGroup(const Model::DeleteReplicationSubnetGroupRequest& request) const;
 
         /**
-         * <p>Deletes a subnet group.</p>
+         * <p>Deletes a subnet group.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteReplicationSubnetGroup">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteReplicationSubnetGroupOutcomeCallable DeleteReplicationSubnetGroupCallable(const Model::DeleteReplicationSubnetGroupRequest& request) const;
 
         /**
-         * <p>Deletes a subnet group.</p>
+         * <p>Deletes a subnet group.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteReplicationSubnetGroup">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteReplicationSubnetGroupAsync(const Model::DeleteReplicationSubnetGroupRequest& request, const DeleteReplicationSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the specified replication task.</p>
+         * <p>Deletes the specified replication task.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteReplicationTask">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteReplicationTaskOutcome DeleteReplicationTask(const Model::DeleteReplicationTaskRequest& request) const;
 
         /**
-         * <p>Deletes the specified replication task.</p>
+         * <p>Deletes the specified replication task.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteReplicationTask">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteReplicationTaskOutcomeCallable DeleteReplicationTaskCallable(const Model::DeleteReplicationTaskRequest& request) const;
 
         /**
-         * <p>Deletes the specified replication task.</p>
+         * <p>Deletes the specified replication task.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteReplicationTask">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -488,7 +560,9 @@ namespace Model
          * include AWS DMS quotas for the account, such as the number of replication
          * instances allowed. The description for a quota includes the quota name, current
          * usage toward that quota, and the quota's maximum value.</p> <p>This command does
-         * not take any parameters.</p>
+         * not take any parameters.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeAccountAttributes">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeAccountAttributesOutcome DescribeAccountAttributes(const Model::DescribeAccountAttributesRequest& request) const;
 
@@ -497,7 +571,9 @@ namespace Model
          * include AWS DMS quotas for the account, such as the number of replication
          * instances allowed. The description for a quota includes the quota name, current
          * usage toward that quota, and the quota's maximum value.</p> <p>This command does
-         * not take any parameters.</p>
+         * not take any parameters.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeAccountAttributes">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -508,26 +584,34 @@ namespace Model
          * include AWS DMS quotas for the account, such as the number of replication
          * instances allowed. The description for a quota includes the quota name, current
          * usage toward that quota, and the quota's maximum value.</p> <p>This command does
-         * not take any parameters.</p>
+         * not take any parameters.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeAccountAttributes">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeAccountAttributesAsync(const Model::DescribeAccountAttributesRequest& request, const DescribeAccountAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Provides a description of the certificate.</p>
+         * <p>Provides a description of the certificate.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeCertificates">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeCertificatesOutcome DescribeCertificates(const Model::DescribeCertificatesRequest& request) const;
 
         /**
-         * <p>Provides a description of the certificate.</p>
+         * <p>Provides a description of the certificate.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeCertificates">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeCertificatesOutcomeCallable DescribeCertificatesCallable(const Model::DescribeCertificatesRequest& request) const;
 
         /**
-         * <p>Provides a description of the certificate.</p>
+         * <p>Provides a description of the certificate.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeCertificates">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -536,14 +620,18 @@ namespace Model
         /**
          * <p>Describes the status of the connections that have been made between the
          * replication instance and an endpoint. Connections are created when you test an
-         * endpoint.</p>
+         * endpoint.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeConnections">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeConnectionsOutcome DescribeConnections(const Model::DescribeConnectionsRequest& request) const;
 
         /**
          * <p>Describes the status of the connections that have been made between the
          * replication instance and an endpoint. Connections are created when you test an
-         * endpoint.</p>
+         * endpoint.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeConnections">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -552,26 +640,37 @@ namespace Model
         /**
          * <p>Describes the status of the connections that have been made between the
          * replication instance and an endpoint. Connections are created when you test an
-         * endpoint.</p>
+         * endpoint.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeConnections">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeConnectionsAsync(const Model::DescribeConnectionsRequest& request, const DescribeConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns information about the type of endpoints available.</p>
+         * <p>Returns information about the type of endpoints available.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeEndpointTypes">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeEndpointTypesOutcome DescribeEndpointTypes(const Model::DescribeEndpointTypesRequest& request) const;
 
         /**
-         * <p>Returns information about the type of endpoints available.</p>
+         * <p>Returns information about the type of endpoints available.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeEndpointTypes">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeEndpointTypesOutcomeCallable DescribeEndpointTypesCallable(const Model::DescribeEndpointTypesRequest& request) const;
 
         /**
-         * <p>Returns information about the type of endpoints available.</p>
+         * <p>Returns information about the type of endpoints available.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeEndpointTypes">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -579,13 +678,17 @@ namespace Model
 
         /**
          * <p>Returns information about the endpoints for your account in the current
-         * region.</p>
+         * region.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeEndpoints">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeEndpointsOutcome DescribeEndpoints(const Model::DescribeEndpointsRequest& request) const;
 
         /**
          * <p>Returns information about the endpoints for your account in the current
-         * region.</p>
+         * region.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeEndpoints">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -593,7 +696,9 @@ namespace Model
 
         /**
          * <p>Returns information about the endpoints for your account in the current
-         * region.</p>
+         * region.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeEndpoints">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -601,13 +706,17 @@ namespace Model
 
         /**
          * <p>Returns information about the replication instance types that can be created
-         * in the specified region.</p>
+         * in the specified region.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeOrderableReplicationInstances">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeOrderableReplicationInstancesOutcome DescribeOrderableReplicationInstances(const Model::DescribeOrderableReplicationInstancesRequest& request) const;
 
         /**
          * <p>Returns information about the replication instance types that can be created
-         * in the specified region.</p>
+         * in the specified region.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeOrderableReplicationInstances">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -615,26 +724,37 @@ namespace Model
 
         /**
          * <p>Returns information about the replication instance types that can be created
-         * in the specified region.</p>
+         * in the specified region.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeOrderableReplicationInstances">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeOrderableReplicationInstancesAsync(const Model::DescribeOrderableReplicationInstancesRequest& request, const DescribeOrderableReplicationInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns the status of the RefreshSchemas operation.</p>
+         * <p>Returns the status of the RefreshSchemas operation.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeRefreshSchemasStatus">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeRefreshSchemasStatusOutcome DescribeRefreshSchemasStatus(const Model::DescribeRefreshSchemasStatusRequest& request) const;
 
         /**
-         * <p>Returns the status of the RefreshSchemas operation.</p>
+         * <p>Returns the status of the RefreshSchemas operation.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeRefreshSchemasStatus">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeRefreshSchemasStatusOutcomeCallable DescribeRefreshSchemasStatusCallable(const Model::DescribeRefreshSchemasStatusRequest& request) const;
 
         /**
-         * <p>Returns the status of the RefreshSchemas operation.</p>
+         * <p>Returns the status of the RefreshSchemas operation.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeRefreshSchemasStatus">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -642,13 +762,17 @@ namespace Model
 
         /**
          * <p>Returns information about replication instances for your account in the
-         * current region.</p>
+         * current region.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplicationInstances">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeReplicationInstancesOutcome DescribeReplicationInstances(const Model::DescribeReplicationInstancesRequest& request) const;
 
         /**
          * <p>Returns information about replication instances for your account in the
-         * current region.</p>
+         * current region.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplicationInstances">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -656,26 +780,37 @@ namespace Model
 
         /**
          * <p>Returns information about replication instances for your account in the
-         * current region.</p>
+         * current region.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplicationInstances">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeReplicationInstancesAsync(const Model::DescribeReplicationInstancesRequest& request, const DescribeReplicationInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns information about the replication subnet groups.</p>
+         * <p>Returns information about the replication subnet groups.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplicationSubnetGroups">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeReplicationSubnetGroupsOutcome DescribeReplicationSubnetGroups(const Model::DescribeReplicationSubnetGroupsRequest& request) const;
 
         /**
-         * <p>Returns information about the replication subnet groups.</p>
+         * <p>Returns information about the replication subnet groups.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplicationSubnetGroups">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeReplicationSubnetGroupsOutcomeCallable DescribeReplicationSubnetGroupsCallable(const Model::DescribeReplicationSubnetGroupsRequest& request) const;
 
         /**
-         * <p>Returns information about the replication subnet groups.</p>
+         * <p>Returns information about the replication subnet groups.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplicationSubnetGroups">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -683,13 +818,17 @@ namespace Model
 
         /**
          * <p>Returns information about replication tasks for your account in the current
-         * region.</p>
+         * region.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplicationTasks">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeReplicationTasksOutcome DescribeReplicationTasks(const Model::DescribeReplicationTasksRequest& request) const;
 
         /**
          * <p>Returns information about replication tasks for your account in the current
-         * region.</p>
+         * region.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplicationTasks">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -697,26 +836,37 @@ namespace Model
 
         /**
          * <p>Returns information about replication tasks for your account in the current
-         * region.</p>
+         * region.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplicationTasks">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeReplicationTasksAsync(const Model::DescribeReplicationTasksRequest& request, const DescribeReplicationTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns information about the schema for the specified endpoint.</p> <p/>
+         * <p>Returns information about the schema for the specified endpoint.</p>
+         * <p/><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeSchemas">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeSchemasOutcome DescribeSchemas(const Model::DescribeSchemasRequest& request) const;
 
         /**
-         * <p>Returns information about the schema for the specified endpoint.</p> <p/>
+         * <p>Returns information about the schema for the specified endpoint.</p>
+         * <p/><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeSchemas">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeSchemasOutcomeCallable DescribeSchemasCallable(const Model::DescribeSchemasRequest& request) const;
 
         /**
-         * <p>Returns information about the schema for the specified endpoint.</p> <p/>
+         * <p>Returns information about the schema for the specified endpoint.</p>
+         * <p/><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeSchemas">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -724,13 +874,19 @@ namespace Model
 
         /**
          * <p>Returns table statistics on the database migration task, including table
-         * name, rows inserted, rows updated, and rows deleted.</p>
+         * name, rows inserted, rows updated, and rows deleted.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeTableStatistics">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeTableStatisticsOutcome DescribeTableStatistics(const Model::DescribeTableStatisticsRequest& request) const;
 
         /**
          * <p>Returns table statistics on the database migration task, including table
-         * name, rows inserted, rows updated, and rows deleted.</p>
+         * name, rows inserted, rows updated, and rows deleted.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeTableStatistics">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -738,64 +894,85 @@ namespace Model
 
         /**
          * <p>Returns table statistics on the database migration task, including table
-         * name, rows inserted, rows updated, and rows deleted.</p>
+         * name, rows inserted, rows updated, and rows deleted.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeTableStatistics">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeTableStatisticsAsync(const Model::DescribeTableStatisticsRequest& request, const DescribeTableStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Uploads the specified certificate.</p>
+         * <p>Uploads the specified certificate.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ImportCertificate">AWS
+         * API Reference</a></p>
          */
         virtual Model::ImportCertificateOutcome ImportCertificate(const Model::ImportCertificateRequest& request) const;
 
         /**
-         * <p>Uploads the specified certificate.</p>
+         * <p>Uploads the specified certificate.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ImportCertificate">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ImportCertificateOutcomeCallable ImportCertificateCallable(const Model::ImportCertificateRequest& request) const;
 
         /**
-         * <p>Uploads the specified certificate.</p>
+         * <p>Uploads the specified certificate.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ImportCertificate">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ImportCertificateAsync(const Model::ImportCertificateRequest& request, const ImportCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists all tags for an AWS DMS resource.</p>
+         * <p>Lists all tags for an AWS DMS resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ListTagsForResource">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p>Lists all tags for an AWS DMS resource.</p>
+         * <p>Lists all tags for an AWS DMS resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ListTagsForResource">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p>Lists all tags for an AWS DMS resource.</p>
+         * <p>Lists all tags for an AWS DMS resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ListTagsForResource">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Modifies the specified endpoint.</p>
+         * <p>Modifies the specified endpoint.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyEndpoint">AWS
+         * API Reference</a></p>
          */
         virtual Model::ModifyEndpointOutcome ModifyEndpoint(const Model::ModifyEndpointRequest& request) const;
 
         /**
-         * <p>Modifies the specified endpoint.</p>
+         * <p>Modifies the specified endpoint.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyEndpoint">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ModifyEndpointOutcomeCallable ModifyEndpointCallable(const Model::ModifyEndpointRequest& request) const;
 
         /**
-         * <p>Modifies the specified endpoint.</p>
+         * <p>Modifies the specified endpoint.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyEndpoint">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -805,7 +982,9 @@ namespace Model
          * <p>Modifies the replication instance to apply new settings. You can change one
          * or more parameters by specifying these parameters and the new values in the
          * request.</p> <p>Some settings are applied during the maintenance window.</p>
-         * <p/>
+         * <p/><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyReplicationInstance">AWS
+         * API Reference</a></p>
          */
         virtual Model::ModifyReplicationInstanceOutcome ModifyReplicationInstance(const Model::ModifyReplicationInstanceRequest& request) const;
 
@@ -813,7 +992,9 @@ namespace Model
          * <p>Modifies the replication instance to apply new settings. You can change one
          * or more parameters by specifying these parameters and the new values in the
          * request.</p> <p>Some settings are applied during the maintenance window.</p>
-         * <p/>
+         * <p/><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyReplicationInstance">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -823,26 +1004,37 @@ namespace Model
          * <p>Modifies the replication instance to apply new settings. You can change one
          * or more parameters by specifying these parameters and the new values in the
          * request.</p> <p>Some settings are applied during the maintenance window.</p>
-         * <p/>
+         * <p/><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyReplicationInstance">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ModifyReplicationInstanceAsync(const Model::ModifyReplicationInstanceRequest& request, const ModifyReplicationInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Modifies the settings for the specified replication subnet group.</p>
+         * <p>Modifies the settings for the specified replication subnet
+         * group.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyReplicationSubnetGroup">AWS
+         * API Reference</a></p>
          */
         virtual Model::ModifyReplicationSubnetGroupOutcome ModifyReplicationSubnetGroup(const Model::ModifyReplicationSubnetGroupRequest& request) const;
 
         /**
-         * <p>Modifies the settings for the specified replication subnet group.</p>
+         * <p>Modifies the settings for the specified replication subnet
+         * group.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyReplicationSubnetGroup">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ModifyReplicationSubnetGroupOutcomeCallable ModifyReplicationSubnetGroupCallable(const Model::ModifyReplicationSubnetGroupRequest& request) const;
 
         /**
-         * <p>Modifies the settings for the specified replication subnet group.</p>
+         * <p>Modifies the settings for the specified replication subnet
+         * group.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyReplicationSubnetGroup">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -850,13 +1042,19 @@ namespace Model
 
         /**
          * <p>Modifies the specified replication task.</p> <p>You can't modify the task
-         * endpoints. The task must be stopped before you can modify it. </p>
+         * endpoints. The task must be stopped before you can modify it. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyReplicationTask">AWS
+         * API Reference</a></p>
          */
         virtual Model::ModifyReplicationTaskOutcome ModifyReplicationTask(const Model::ModifyReplicationTaskRequest& request) const;
 
         /**
          * <p>Modifies the specified replication task.</p> <p>You can't modify the task
-         * endpoints. The task must be stopped before you can modify it. </p>
+         * endpoints. The task must be stopped before you can modify it. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyReplicationTask">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -864,7 +1062,10 @@ namespace Model
 
         /**
          * <p>Modifies the specified replication task.</p> <p>You can't modify the task
-         * endpoints. The task must be stopped before you can modify it. </p>
+         * endpoints. The task must be stopped before you can modify it. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyReplicationTask">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -873,14 +1074,20 @@ namespace Model
         /**
          * <p>Populates the schema for the specified endpoint. This is an asynchronous
          * operation and can take several minutes. You can check the status of this
-         * operation by calling the DescribeRefreshSchemasStatus operation.</p>
+         * operation by calling the DescribeRefreshSchemasStatus operation.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/RefreshSchemas">AWS
+         * API Reference</a></p>
          */
         virtual Model::RefreshSchemasOutcome RefreshSchemas(const Model::RefreshSchemasRequest& request) const;
 
         /**
          * <p>Populates the schema for the specified endpoint. This is an asynchronous
          * operation and can take several minutes. You can check the status of this
-         * operation by calling the DescribeRefreshSchemasStatus operation.</p>
+         * operation by calling the DescribeRefreshSchemasStatus operation.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/RefreshSchemas">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -889,83 +1096,113 @@ namespace Model
         /**
          * <p>Populates the schema for the specified endpoint. This is an asynchronous
          * operation and can take several minutes. You can check the status of this
-         * operation by calling the DescribeRefreshSchemasStatus operation.</p>
+         * operation by calling the DescribeRefreshSchemasStatus operation.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/RefreshSchemas">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void RefreshSchemasAsync(const Model::RefreshSchemasRequest& request, const RefreshSchemasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Removes metadata tags from a DMS resource.</p>
+         * <p>Removes metadata tags from a DMS resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/RemoveTagsFromResource">AWS
+         * API Reference</a></p>
          */
         virtual Model::RemoveTagsFromResourceOutcome RemoveTagsFromResource(const Model::RemoveTagsFromResourceRequest& request) const;
 
         /**
-         * <p>Removes metadata tags from a DMS resource.</p>
+         * <p>Removes metadata tags from a DMS resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/RemoveTagsFromResource">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::RemoveTagsFromResourceOutcomeCallable RemoveTagsFromResourceCallable(const Model::RemoveTagsFromResourceRequest& request) const;
 
         /**
-         * <p>Removes metadata tags from a DMS resource.</p>
+         * <p>Removes metadata tags from a DMS resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/RemoveTagsFromResource">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void RemoveTagsFromResourceAsync(const Model::RemoveTagsFromResourceRequest& request, const RemoveTagsFromResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Starts the replication task.</p>
+         * <p>Starts the replication task.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartReplicationTask">AWS
+         * API Reference</a></p>
          */
         virtual Model::StartReplicationTaskOutcome StartReplicationTask(const Model::StartReplicationTaskRequest& request) const;
 
         /**
-         * <p>Starts the replication task.</p>
+         * <p>Starts the replication task.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartReplicationTask">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::StartReplicationTaskOutcomeCallable StartReplicationTaskCallable(const Model::StartReplicationTaskRequest& request) const;
 
         /**
-         * <p>Starts the replication task.</p>
+         * <p>Starts the replication task.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartReplicationTask">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void StartReplicationTaskAsync(const Model::StartReplicationTaskRequest& request, const StartReplicationTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Stops the replication task.</p> <p/>
+         * <p>Stops the replication task.</p> <p/><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StopReplicationTask">AWS
+         * API Reference</a></p>
          */
         virtual Model::StopReplicationTaskOutcome StopReplicationTask(const Model::StopReplicationTaskRequest& request) const;
 
         /**
-         * <p>Stops the replication task.</p> <p/>
+         * <p>Stops the replication task.</p> <p/><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StopReplicationTask">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::StopReplicationTaskOutcomeCallable StopReplicationTaskCallable(const Model::StopReplicationTaskRequest& request) const;
 
         /**
-         * <p>Stops the replication task.</p> <p/>
+         * <p>Stops the replication task.</p> <p/><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StopReplicationTask">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void StopReplicationTaskAsync(const Model::StopReplicationTaskRequest& request, const StopReplicationTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Tests the connection between the replication instance and the endpoint.</p>
+         * <p>Tests the connection between the replication instance and the
+         * endpoint.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/TestConnection">AWS
+         * API Reference</a></p>
          */
         virtual Model::TestConnectionOutcome TestConnection(const Model::TestConnectionRequest& request) const;
 
         /**
-         * <p>Tests the connection between the replication instance and the endpoint.</p>
+         * <p>Tests the connection between the replication instance and the
+         * endpoint.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/TestConnection">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::TestConnectionOutcomeCallable TestConnectionCallable(const Model::TestConnectionRequest& request) const;
 
         /**
-         * <p>Tests the connection between the replication instance and the endpoint.</p>
+         * <p>Tests the connection between the replication instance and the
+         * endpoint.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/TestConnection">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */

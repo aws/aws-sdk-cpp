@@ -43,7 +43,9 @@ namespace Model
    * <code>/16</code>, or <code>/8</code> CIDR. For more information about CIDR
    * notation, see the Wikipedia entry <a
    * href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless
-   * Inter-Domain Routing</a>. </p>
+   * Inter-Domain Routing</a>. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/IPSet">AWS API
+   * Reference</a></p>
    */
   class AWS_WAF_API IPSet
   {

@@ -25,7 +25,10 @@ namespace Model
 {
 
   /**
-   * <p>Container for the parameters to the <a>DeleteRule</a> operation.</p>
+   * <p>Container for the parameters to the <a>DeleteRule</a>
+   * operation.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DeleteRuleRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDWATCHEVENTS_API DeleteRuleRequest : public CloudWatchEventsRequest
   {

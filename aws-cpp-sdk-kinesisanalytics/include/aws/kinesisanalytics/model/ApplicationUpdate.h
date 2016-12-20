@@ -35,7 +35,10 @@ namespace Model
 {
 
   /**
-   * <p>Describes updates to apply to an existing Kinesis Analytics application.</p>
+   * <p>Describes updates to apply to an existing Kinesis Analytics
+   * application.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/ApplicationUpdate">AWS
+   * API Reference</a></p>
    */
   class AWS_KINESISANALYTICS_API ApplicationUpdate
   {

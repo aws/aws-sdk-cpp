@@ -26,7 +26,9 @@ namespace Model
 
   /**
    * <p>Result message containing all of the configuration settings for a specified
-   * solution stack or configuration template.</p>
+   * solution stack or configuration template.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeConfigurationSettingsMessage">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICBEANSTALK_API DescribeConfigurationSettingsRequest : public ElasticBeanstalkRequest
   {

@@ -33,7 +33,9 @@ namespace Model
 
   /**
    * <p>Describes the <code>DataSource</code> details specific to Amazon
-   * Redshift.</p>
+   * Redshift.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/RedshiftMetadata">AWS
+   * API Reference</a></p>
    */
   class AWS_MACHINELEARNING_API RedshiftMetadata
   {

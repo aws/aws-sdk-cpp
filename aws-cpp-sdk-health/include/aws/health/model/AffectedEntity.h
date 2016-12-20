@@ -34,7 +34,10 @@ namespace Model
 {
 
   /**
-   * <p>Information about an entity that is affected by a Health event.</p>
+   * <p>Information about an entity that is affected by a Health event.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/AffectedEntity">AWS
+   * API Reference</a></p>
    */
   class AWS_HEALTH_API AffectedEntity
   {

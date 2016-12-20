@@ -25,7 +25,10 @@ namespace Model
 {
 
   /**
-   * <p>The request to CloudTrail to start logging AWS API calls for an account.</p>
+   * <p>The request to CloudTrail to start logging AWS API calls for an
+   * account.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StartLoggingRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDTRAIL_API StartLoggingRequest : public CloudTrailRequest
   {

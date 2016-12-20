@@ -33,7 +33,9 @@ namespace Model
 {
   /**
    * <p>Whether or not the command was successfully canceled. There is no guarantee
-   * that a request can be canceled.</p>
+   * that a request can be canceled.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CancelCommandResult">AWS
+   * API Reference</a></p>
    */
   class AWS_SSM_API CancelCommandResult
   {

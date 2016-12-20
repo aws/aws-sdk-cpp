@@ -34,7 +34,9 @@ namespace Model
 {
   /**
    * <p>The verification code response returned by the server response to get the
-   * user attribute verification code.</p>
+   * user attribute verification code.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetUserAttributeVerificationCodeResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_COGNITOIDENTITYPROVIDER_API GetUserAttributeVerificationCodeResult
   {

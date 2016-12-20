@@ -34,7 +34,9 @@ namespace Model
 
   /**
    * <p>The values to use to filter results from the <a>DescribeEventTypes</a>
-   * operation.</p>
+   * operation.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/EventTypeFilter">AWS
+   * API Reference</a></p>
    */
   class AWS_HEALTH_API EventTypeFilter
   {

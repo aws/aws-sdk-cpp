@@ -32,7 +32,10 @@ namespace Model
 {
 
   /**
-   * <p>The version of the database engine that a DB instance can be upgraded to.</p>
+   * <p>The version of the database engine that a DB instance can be upgraded
+   * to.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/UpgradeTarget">AWS
+   * API Reference</a></p>
    */
   class AWS_RDS_API UpgradeTarget
   {

@@ -35,7 +35,9 @@ namespace IoT
 namespace Model
 {
   /**
-   * <p>The output of the ListCertificates operation.</p>
+   * <p>The output of the ListCertificates operation.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListCertificatesResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_IOT_API ListCertificatesResult
   {

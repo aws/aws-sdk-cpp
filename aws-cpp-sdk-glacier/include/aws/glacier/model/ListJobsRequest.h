@@ -29,7 +29,10 @@ namespace Model
 {
 
   /**
-   * <p>Provides options for retrieving a job list for an Amazon Glacier vault.</p>
+   * <p>Provides options for retrieving a job list for an Amazon Glacier
+   * vault.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/ListJobsInput">AWS
+   * API Reference</a></p>
    */
   class AWS_GLACIER_API ListJobsRequest : public GlacierRequest
   {

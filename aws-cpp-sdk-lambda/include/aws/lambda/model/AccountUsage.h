@@ -31,7 +31,9 @@ namespace Model
 
   /**
    * <p>Provides code size usage and function count associated with the current
-   * account and region.</p>
+   * account and region.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/AccountUsage">AWS
+   * API Reference</a></p>
    */
   class AWS_LAMBDA_API AccountUsage
   {

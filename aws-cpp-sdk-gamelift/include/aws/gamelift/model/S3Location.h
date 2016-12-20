@@ -35,7 +35,9 @@ namespace Model
    * are stored. This location is assigned in response to a <a>CreateBuild</a> call,
    * and is always in the same region as the service used to create the build. For
    * more details see the <a href="http://aws.amazon.com/documentation/s3/">Amazon S3
-   * documentation</a>.</p>
+   * documentation</a>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/S3Location">AWS
+   * API Reference</a></p>
    */
   class AWS_GAMELIFT_API S3Location
   {

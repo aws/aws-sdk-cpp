@@ -25,7 +25,10 @@ namespace Model
 {
 
   /**
-   * <p>Request to add a new <a>Model</a> to an existing <a>RestApi</a> resource.</p>
+   * <p>Request to add a new <a>Model</a> to an existing <a>RestApi</a>
+   * resource.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateModelRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_APIGATEWAY_API CreateModelRequest : public APIGatewayRequest
   {

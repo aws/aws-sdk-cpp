@@ -33,7 +33,10 @@ namespace CodeCommit
 namespace Model
 {
   /**
-   * <p>Represents the output of a put repository triggers operation. </p>
+   * <p>Represents the output of a put repository triggers operation. </p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/PutRepositoryTriggersOutput">AWS
+   * API Reference</a></p>
    */
   class AWS_CODECOMMIT_API PutRepositoryTriggersResult
   {

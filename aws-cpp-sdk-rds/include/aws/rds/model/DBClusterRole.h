@@ -33,7 +33,9 @@ namespace Model
 
   /**
    * <p>Describes an AWS Identity and Access Management (IAM) role that is associated
-   * with a DB cluster.</p>
+   * with a DB cluster.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DBClusterRole">AWS
+   * API Reference</a></p>
    */
   class AWS_RDS_API DBClusterRole
   {

@@ -29,7 +29,9 @@ namespace Model
 {
 
   /**
-   * A request for a list of records.
+   * A request for a list of records.<p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/ListRecordsRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_COGNITOSYNC_API ListRecordsRequest : public CognitoSyncRequest
   {

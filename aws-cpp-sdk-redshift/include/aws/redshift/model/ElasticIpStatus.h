@@ -32,7 +32,10 @@ namespace Model
 {
 
   /**
-   * <p>Describes the status of the elastic IP (EIP) address.</p>
+   * <p>Describes the status of the elastic IP (EIP) address.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ElasticIpStatus">AWS
+   * API Reference</a></p>
    */
   class AWS_REDSHIFT_API ElasticIpStatus
   {

@@ -33,7 +33,9 @@ namespace Model
 
   /**
    * <p>The mapping between a patch group and the patch baseline the patch group is
-   * registered with.</p>
+   * registered with.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PatchGroupPatchBaselineMapping">AWS
+   * API Reference</a></p>
    */
   class AWS_SSM_API PatchGroupPatchBaselineMapping
   {

@@ -38,7 +38,9 @@ namespace Model
   /**
    * <p>Information about an application that processed requests, users that made
    * requests, or downstream services, resources and applications that an application
-   * used.</p>
+   * used.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/Service">AWS API
+   * Reference</a></p>
    */
   class AWS_XRAY_API Service
   {

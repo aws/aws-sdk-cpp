@@ -34,7 +34,9 @@ namespace Model
   /**
    * <p>Specifies a <code>Predicate</code> (such as an <code>IPSet</code>) and
    * indicates whether you want to add it to a <code>Rule</code> or delete it from a
-   * <code>Rule</code>.</p>
+   * <code>Rule</code>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/RuleUpdate">AWS API
+   * Reference</a></p>
    */
   class AWS_WAF_API RuleUpdate
   {

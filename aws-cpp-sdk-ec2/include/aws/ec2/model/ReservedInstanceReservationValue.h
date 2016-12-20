@@ -33,7 +33,10 @@ namespace Model
 {
 
   /**
-   * <p>The total value of the Convertible Reserved Instance.</p>
+   * <p>The total value of the Convertible Reserved Instance.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReservedInstanceReservationValue">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API ReservedInstanceReservationValue
   {

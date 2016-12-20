@@ -99,6 +99,16 @@ void STSClient::init(const ClientConfiguration& config)
   m_uri = ss.str();
 }
 
+Aws::String STSClient::ConvertRequestToPresignedUrl(const AmazonSerializableWebServiceRequest& requestToConvert, const char* region) const
+{
+  Aws::StringStream ss;
+  ss << "https://" << STSEndpoint::ForRegion(region);
+  ss << "?" << requestToConvert.SerializePayload();
+
+  URI uri(ss.str());
+  return GeneratePresignedUrl(uri, HttpMethod::HTTP_GET, region, 3600);
+}
+
 AssumeRoleOutcome STSClient::AssumeRole(const AssumeRoleRequest& request) const
 {
   Aws::StringStream ss;
@@ -329,4 +339,6 @@ void STSClient::GetSessionTokenAsyncHelper(const GetSessionTokenRequest& request
 {
   handler(this, request, GetSessionToken(request), context);
 }
+
+
 

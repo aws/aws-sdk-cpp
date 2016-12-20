@@ -16,6 +16,7 @@
 #include <aws/cognito-identity/CognitoIdentity_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/cognito-identity/model/RoleMapping.h>
 
 namespace Aws
 {
@@ -35,7 +36,9 @@ namespace Model
 {
   /**
    * <p>Returned in response to a successful <code>GetIdentityPoolRoles</code>
-   * operation.</p>
+   * operation.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetIdentityPoolRolesResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_COGNITOIDENTITY_API GetIdentityPoolRolesResult
   {
@@ -151,9 +154,98 @@ namespace Model
      */
     inline GetIdentityPoolRolesResult& AddRoles(const char* key, const char* value) { m_roles[key] = value; return *this; }
 
+    /**
+     * <p>How users for a specific identity provider are to mapped to roles. This is a
+     * String-to-<a>RoleMapping</a> object map. The string identifies the identity
+     * provider, for example, "graph.facebook.com" or
+     * "cognito-idp-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".</p>
+     */
+    inline const Aws::Map<Aws::String, RoleMapping>& GetRoleMappings() const{ return m_roleMappings; }
+
+    /**
+     * <p>How users for a specific identity provider are to mapped to roles. This is a
+     * String-to-<a>RoleMapping</a> object map. The string identifies the identity
+     * provider, for example, "graph.facebook.com" or
+     * "cognito-idp-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".</p>
+     */
+    inline void SetRoleMappings(const Aws::Map<Aws::String, RoleMapping>& value) { m_roleMappings = value; }
+
+    /**
+     * <p>How users for a specific identity provider are to mapped to roles. This is a
+     * String-to-<a>RoleMapping</a> object map. The string identifies the identity
+     * provider, for example, "graph.facebook.com" or
+     * "cognito-idp-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".</p>
+     */
+    inline void SetRoleMappings(Aws::Map<Aws::String, RoleMapping>&& value) { m_roleMappings = value; }
+
+    /**
+     * <p>How users for a specific identity provider are to mapped to roles. This is a
+     * String-to-<a>RoleMapping</a> object map. The string identifies the identity
+     * provider, for example, "graph.facebook.com" or
+     * "cognito-idp-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".</p>
+     */
+    inline GetIdentityPoolRolesResult& WithRoleMappings(const Aws::Map<Aws::String, RoleMapping>& value) { SetRoleMappings(value); return *this;}
+
+    /**
+     * <p>How users for a specific identity provider are to mapped to roles. This is a
+     * String-to-<a>RoleMapping</a> object map. The string identifies the identity
+     * provider, for example, "graph.facebook.com" or
+     * "cognito-idp-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".</p>
+     */
+    inline GetIdentityPoolRolesResult& WithRoleMappings(Aws::Map<Aws::String, RoleMapping>&& value) { SetRoleMappings(value); return *this;}
+
+    /**
+     * <p>How users for a specific identity provider are to mapped to roles. This is a
+     * String-to-<a>RoleMapping</a> object map. The string identifies the identity
+     * provider, for example, "graph.facebook.com" or
+     * "cognito-idp-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".</p>
+     */
+    inline GetIdentityPoolRolesResult& AddRoleMappings(const Aws::String& key, const RoleMapping& value) { m_roleMappings[key] = value; return *this; }
+
+    /**
+     * <p>How users for a specific identity provider are to mapped to roles. This is a
+     * String-to-<a>RoleMapping</a> object map. The string identifies the identity
+     * provider, for example, "graph.facebook.com" or
+     * "cognito-idp-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".</p>
+     */
+    inline GetIdentityPoolRolesResult& AddRoleMappings(Aws::String&& key, const RoleMapping& value) { m_roleMappings[key] = value; return *this; }
+
+    /**
+     * <p>How users for a specific identity provider are to mapped to roles. This is a
+     * String-to-<a>RoleMapping</a> object map. The string identifies the identity
+     * provider, for example, "graph.facebook.com" or
+     * "cognito-idp-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".</p>
+     */
+    inline GetIdentityPoolRolesResult& AddRoleMappings(const Aws::String& key, RoleMapping&& value) { m_roleMappings[key] = value; return *this; }
+
+    /**
+     * <p>How users for a specific identity provider are to mapped to roles. This is a
+     * String-to-<a>RoleMapping</a> object map. The string identifies the identity
+     * provider, for example, "graph.facebook.com" or
+     * "cognito-idp-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".</p>
+     */
+    inline GetIdentityPoolRolesResult& AddRoleMappings(Aws::String&& key, RoleMapping&& value) { m_roleMappings[key] = value; return *this; }
+
+    /**
+     * <p>How users for a specific identity provider are to mapped to roles. This is a
+     * String-to-<a>RoleMapping</a> object map. The string identifies the identity
+     * provider, for example, "graph.facebook.com" or
+     * "cognito-idp-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".</p>
+     */
+    inline GetIdentityPoolRolesResult& AddRoleMappings(const char* key, RoleMapping&& value) { m_roleMappings[key] = value; return *this; }
+
+    /**
+     * <p>How users for a specific identity provider are to mapped to roles. This is a
+     * String-to-<a>RoleMapping</a> object map. The string identifies the identity
+     * provider, for example, "graph.facebook.com" or
+     * "cognito-idp-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".</p>
+     */
+    inline GetIdentityPoolRolesResult& AddRoleMappings(const char* key, const RoleMapping& value) { m_roleMappings[key] = value; return *this; }
+
   private:
     Aws::String m_identityPoolId;
     Aws::Map<Aws::String, Aws::String> m_roles;
+    Aws::Map<Aws::String, RoleMapping> m_roleMappings;
   };
 
 } // namespace Model

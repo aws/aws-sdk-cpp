@@ -25,7 +25,10 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for DescribeTargetGroupAttributes.</p>
+   * <p>Contains the parameters for DescribeTargetGroupAttributes.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeTargetGroupAttributesInput">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICLOADBALANCINGV2_API DescribeTargetGroupAttributesRequest : public ElasticLoadBalancingv2Request
   {

@@ -35,7 +35,10 @@ namespace Model
 {
 
   /**
-   * <p>Contains information about an entry in a list of grants.</p>
+   * <p>Contains information about an entry in a list of grants.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GrantListEntry">AWS
+   * API Reference</a></p>
    */
   class AWS_KMS_API GrantListEntry
   {

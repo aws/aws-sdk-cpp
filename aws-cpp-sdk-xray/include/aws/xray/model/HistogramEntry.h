@@ -32,7 +32,9 @@ namespace Model
   /**
    * <p>An entry in a histogram for a statistic. A histogram maps the range of
    * observed values on the X axis, and the prevalence of each value on the Y
-   * axis.</p>
+   * axis.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/HistogramEntry">AWS
+   * API Reference</a></p>
    */
   class AWS_XRAY_API HistogramEntry
   {

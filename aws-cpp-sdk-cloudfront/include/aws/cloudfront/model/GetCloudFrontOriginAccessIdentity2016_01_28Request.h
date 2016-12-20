@@ -25,7 +25,10 @@ namespace Model
 {
 
   /**
-   * The request to get an origin access identity's information.
+   * The request to get an origin access identity's information.<p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/GetCloudFrontOriginAccessIdentityRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API GetCloudFrontOriginAccessIdentity2016_01_28Request : public CloudFrontRequest
   {

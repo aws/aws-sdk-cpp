@@ -31,7 +31,9 @@ namespace Model
 {
 
   /**
-   * <p>Contains information about an alias.</p>
+   * <p>Contains information about an alias.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/AliasListEntry">AWS
+   * API Reference</a></p>
    */
   class AWS_KMS_API AliasListEntry
   {

@@ -26,7 +26,10 @@ namespace Model
 {
 
   /**
-   * <p>Represents the request to update the device status.</p>
+   * <p>Represents the request to update the device status.</p><p><h3>See Also:</h3> 
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateDeviceStatusRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_COGNITOIDENTITYPROVIDER_API UpdateDeviceStatusRequest : public CognitoIdentityProviderRequest
   {

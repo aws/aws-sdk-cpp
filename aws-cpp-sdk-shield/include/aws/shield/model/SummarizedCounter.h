@@ -31,7 +31,9 @@ namespace Model
 {
 
   /**
-   * <p>The counter that describes a DDoS attack.</p>
+   * <p>The counter that describes a DDoS attack.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/SummarizedCounter">AWS
+   * API Reference</a></p>
    */
   class AWS_SHIELD_API SummarizedCounter
   {

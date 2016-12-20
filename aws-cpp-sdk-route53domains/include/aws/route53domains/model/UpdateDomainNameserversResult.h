@@ -33,7 +33,10 @@ namespace Route53Domains
 namespace Model
 {
   /**
-   * <p>The UpdateDomainNameservers response includes the following element.</p>
+   * <p>The UpdateDomainNameservers response includes the following
+   * element.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/UpdateDomainNameserversResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_ROUTE53DOMAINS_API UpdateDomainNameserversResult
   {

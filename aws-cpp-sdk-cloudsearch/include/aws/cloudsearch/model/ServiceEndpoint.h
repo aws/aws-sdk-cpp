@@ -32,7 +32,10 @@ namespace Model
 {
 
   /**
-   * <p>The endpoint to which service requests can be submitted.</p>
+   * <p>The endpoint to which service requests can be submitted.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/ServiceEndpoint">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDSEARCH_API ServiceEndpoint
   {

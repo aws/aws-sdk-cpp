@@ -17,6 +17,7 @@
 #include <aws/cloudfront/CloudFrontErrors.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -207,418 +208,562 @@ namespace Model
         virtual ~CloudFrontClient();
 
         /**
-         * Create a new origin access identity.
+         * Create a new origin access identity.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/CreateCloudFrontOriginAccessIdentity2016_01_28">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateCloudFrontOriginAccessIdentity2016_01_28Outcome CreateCloudFrontOriginAccessIdentity2016_01_28(const Model::CreateCloudFrontOriginAccessIdentity2016_01_28Request& request) const;
 
         /**
-         * Create a new origin access identity.
+         * Create a new origin access identity.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/CreateCloudFrontOriginAccessIdentity2016_01_28">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateCloudFrontOriginAccessIdentity2016_01_28OutcomeCallable CreateCloudFrontOriginAccessIdentity2016_01_28Callable(const Model::CreateCloudFrontOriginAccessIdentity2016_01_28Request& request) const;
 
         /**
-         * Create a new origin access identity.
+         * Create a new origin access identity.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/CreateCloudFrontOriginAccessIdentity2016_01_28">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateCloudFrontOriginAccessIdentity2016_01_28Async(const Model::CreateCloudFrontOriginAccessIdentity2016_01_28Request& request, const CreateCloudFrontOriginAccessIdentity2016_01_28ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Create a new distribution.
+         * Create a new distribution.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/CreateDistribution2016_01_28">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateDistribution2016_01_28Outcome CreateDistribution2016_01_28(const Model::CreateDistribution2016_01_28Request& request) const;
 
         /**
-         * Create a new distribution.
+         * Create a new distribution.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/CreateDistribution2016_01_28">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateDistribution2016_01_28OutcomeCallable CreateDistribution2016_01_28Callable(const Model::CreateDistribution2016_01_28Request& request) const;
 
         /**
-         * Create a new distribution.
+         * Create a new distribution.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/CreateDistribution2016_01_28">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateDistribution2016_01_28Async(const Model::CreateDistribution2016_01_28Request& request, const CreateDistribution2016_01_28ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Create a new invalidation.
+         * Create a new invalidation.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/CreateInvalidation2016_01_28">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateInvalidation2016_01_28Outcome CreateInvalidation2016_01_28(const Model::CreateInvalidation2016_01_28Request& request) const;
 
         /**
-         * Create a new invalidation.
+         * Create a new invalidation.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/CreateInvalidation2016_01_28">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateInvalidation2016_01_28OutcomeCallable CreateInvalidation2016_01_28Callable(const Model::CreateInvalidation2016_01_28Request& request) const;
 
         /**
-         * Create a new invalidation.
+         * Create a new invalidation.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/CreateInvalidation2016_01_28">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateInvalidation2016_01_28Async(const Model::CreateInvalidation2016_01_28Request& request, const CreateInvalidation2016_01_28ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Create a new streaming distribution.
+         * Create a new streaming distribution.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/CreateStreamingDistribution2016_01_28">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateStreamingDistribution2016_01_28Outcome CreateStreamingDistribution2016_01_28(const Model::CreateStreamingDistribution2016_01_28Request& request) const;
 
         /**
-         * Create a new streaming distribution.
+         * Create a new streaming distribution.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/CreateStreamingDistribution2016_01_28">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateStreamingDistribution2016_01_28OutcomeCallable CreateStreamingDistribution2016_01_28Callable(const Model::CreateStreamingDistribution2016_01_28Request& request) const;
 
         /**
-         * Create a new streaming distribution.
+         * Create a new streaming distribution.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/CreateStreamingDistribution2016_01_28">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateStreamingDistribution2016_01_28Async(const Model::CreateStreamingDistribution2016_01_28Request& request, const CreateStreamingDistribution2016_01_28ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Delete an origin access identity.
+         * Delete an origin access identity.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/DeleteCloudFrontOriginAccessIdentity2016_01_28">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteCloudFrontOriginAccessIdentity2016_01_28Outcome DeleteCloudFrontOriginAccessIdentity2016_01_28(const Model::DeleteCloudFrontOriginAccessIdentity2016_01_28Request& request) const;
 
         /**
-         * Delete an origin access identity.
+         * Delete an origin access identity.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/DeleteCloudFrontOriginAccessIdentity2016_01_28">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteCloudFrontOriginAccessIdentity2016_01_28OutcomeCallable DeleteCloudFrontOriginAccessIdentity2016_01_28Callable(const Model::DeleteCloudFrontOriginAccessIdentity2016_01_28Request& request) const;
 
         /**
-         * Delete an origin access identity.
+         * Delete an origin access identity.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/DeleteCloudFrontOriginAccessIdentity2016_01_28">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteCloudFrontOriginAccessIdentity2016_01_28Async(const Model::DeleteCloudFrontOriginAccessIdentity2016_01_28Request& request, const DeleteCloudFrontOriginAccessIdentity2016_01_28ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Delete a distribution.
+         * Delete a distribution.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/DeleteDistribution2016_01_28">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteDistribution2016_01_28Outcome DeleteDistribution2016_01_28(const Model::DeleteDistribution2016_01_28Request& request) const;
 
         /**
-         * Delete a distribution.
+         * Delete a distribution.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/DeleteDistribution2016_01_28">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteDistribution2016_01_28OutcomeCallable DeleteDistribution2016_01_28Callable(const Model::DeleteDistribution2016_01_28Request& request) const;
 
         /**
-         * Delete a distribution.
+         * Delete a distribution.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/DeleteDistribution2016_01_28">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteDistribution2016_01_28Async(const Model::DeleteDistribution2016_01_28Request& request, const DeleteDistribution2016_01_28ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Delete a streaming distribution.
+         * Delete a streaming distribution.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/DeleteStreamingDistribution2016_01_28">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteStreamingDistribution2016_01_28Outcome DeleteStreamingDistribution2016_01_28(const Model::DeleteStreamingDistribution2016_01_28Request& request) const;
 
         /**
-         * Delete a streaming distribution.
+         * Delete a streaming distribution.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/DeleteStreamingDistribution2016_01_28">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteStreamingDistribution2016_01_28OutcomeCallable DeleteStreamingDistribution2016_01_28Callable(const Model::DeleteStreamingDistribution2016_01_28Request& request) const;
 
         /**
-         * Delete a streaming distribution.
+         * Delete a streaming distribution.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/DeleteStreamingDistribution2016_01_28">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteStreamingDistribution2016_01_28Async(const Model::DeleteStreamingDistribution2016_01_28Request& request, const DeleteStreamingDistribution2016_01_28ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Get the information about an origin access identity.
+         * Get the information about an origin access identity.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/GetCloudFrontOriginAccessIdentity2016_01_28">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetCloudFrontOriginAccessIdentity2016_01_28Outcome GetCloudFrontOriginAccessIdentity2016_01_28(const Model::GetCloudFrontOriginAccessIdentity2016_01_28Request& request) const;
 
         /**
-         * Get the information about an origin access identity.
+         * Get the information about an origin access identity.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/GetCloudFrontOriginAccessIdentity2016_01_28">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetCloudFrontOriginAccessIdentity2016_01_28OutcomeCallable GetCloudFrontOriginAccessIdentity2016_01_28Callable(const Model::GetCloudFrontOriginAccessIdentity2016_01_28Request& request) const;
 
         /**
-         * Get the information about an origin access identity.
+         * Get the information about an origin access identity.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/GetCloudFrontOriginAccessIdentity2016_01_28">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetCloudFrontOriginAccessIdentity2016_01_28Async(const Model::GetCloudFrontOriginAccessIdentity2016_01_28Request& request, const GetCloudFrontOriginAccessIdentity2016_01_28ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Get the configuration information about an origin access identity.
+         * Get the configuration information about an origin access identity.<p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/GetCloudFrontOriginAccessIdentityConfig2016_01_28">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetCloudFrontOriginAccessIdentityConfig2016_01_28Outcome GetCloudFrontOriginAccessIdentityConfig2016_01_28(const Model::GetCloudFrontOriginAccessIdentityConfig2016_01_28Request& request) const;
 
         /**
-         * Get the configuration information about an origin access identity.
+         * Get the configuration information about an origin access identity.<p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/GetCloudFrontOriginAccessIdentityConfig2016_01_28">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetCloudFrontOriginAccessIdentityConfig2016_01_28OutcomeCallable GetCloudFrontOriginAccessIdentityConfig2016_01_28Callable(const Model::GetCloudFrontOriginAccessIdentityConfig2016_01_28Request& request) const;
 
         /**
-         * Get the configuration information about an origin access identity.
+         * Get the configuration information about an origin access identity.<p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/GetCloudFrontOriginAccessIdentityConfig2016_01_28">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetCloudFrontOriginAccessIdentityConfig2016_01_28Async(const Model::GetCloudFrontOriginAccessIdentityConfig2016_01_28Request& request, const GetCloudFrontOriginAccessIdentityConfig2016_01_28ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Get the information about a distribution.
+         * Get the information about a distribution.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/GetDistribution2016_01_28">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetDistribution2016_01_28Outcome GetDistribution2016_01_28(const Model::GetDistribution2016_01_28Request& request) const;
 
         /**
-         * Get the information about a distribution.
+         * Get the information about a distribution.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/GetDistribution2016_01_28">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetDistribution2016_01_28OutcomeCallable GetDistribution2016_01_28Callable(const Model::GetDistribution2016_01_28Request& request) const;
 
         /**
-         * Get the information about a distribution.
+         * Get the information about a distribution.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/GetDistribution2016_01_28">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetDistribution2016_01_28Async(const Model::GetDistribution2016_01_28Request& request, const GetDistribution2016_01_28ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Get the configuration information about a distribution.
+         * Get the configuration information about a distribution.<p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/GetDistributionConfig2016_01_28">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetDistributionConfig2016_01_28Outcome GetDistributionConfig2016_01_28(const Model::GetDistributionConfig2016_01_28Request& request) const;
 
         /**
-         * Get the configuration information about a distribution.
+         * Get the configuration information about a distribution.<p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/GetDistributionConfig2016_01_28">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetDistributionConfig2016_01_28OutcomeCallable GetDistributionConfig2016_01_28Callable(const Model::GetDistributionConfig2016_01_28Request& request) const;
 
         /**
-         * Get the configuration information about a distribution.
+         * Get the configuration information about a distribution.<p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/GetDistributionConfig2016_01_28">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetDistributionConfig2016_01_28Async(const Model::GetDistributionConfig2016_01_28Request& request, const GetDistributionConfig2016_01_28ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Get the information about an invalidation.
+         * Get the information about an invalidation.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/GetInvalidation2016_01_28">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetInvalidation2016_01_28Outcome GetInvalidation2016_01_28(const Model::GetInvalidation2016_01_28Request& request) const;
 
         /**
-         * Get the information about an invalidation.
+         * Get the information about an invalidation.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/GetInvalidation2016_01_28">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetInvalidation2016_01_28OutcomeCallable GetInvalidation2016_01_28Callable(const Model::GetInvalidation2016_01_28Request& request) const;
 
         /**
-         * Get the information about an invalidation.
+         * Get the information about an invalidation.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/GetInvalidation2016_01_28">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetInvalidation2016_01_28Async(const Model::GetInvalidation2016_01_28Request& request, const GetInvalidation2016_01_28ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Get the information about a streaming distribution.
+         * Get the information about a streaming distribution.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/GetStreamingDistribution2016_01_28">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetStreamingDistribution2016_01_28Outcome GetStreamingDistribution2016_01_28(const Model::GetStreamingDistribution2016_01_28Request& request) const;
 
         /**
-         * Get the information about a streaming distribution.
+         * Get the information about a streaming distribution.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/GetStreamingDistribution2016_01_28">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetStreamingDistribution2016_01_28OutcomeCallable GetStreamingDistribution2016_01_28Callable(const Model::GetStreamingDistribution2016_01_28Request& request) const;
 
         /**
-         * Get the information about a streaming distribution.
+         * Get the information about a streaming distribution.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/GetStreamingDistribution2016_01_28">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetStreamingDistribution2016_01_28Async(const Model::GetStreamingDistribution2016_01_28Request& request, const GetStreamingDistribution2016_01_28ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Get the configuration information about a streaming distribution.
+         * Get the configuration information about a streaming distribution.<p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/GetStreamingDistributionConfig2016_01_28">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetStreamingDistributionConfig2016_01_28Outcome GetStreamingDistributionConfig2016_01_28(const Model::GetStreamingDistributionConfig2016_01_28Request& request) const;
 
         /**
-         * Get the configuration information about a streaming distribution.
+         * Get the configuration information about a streaming distribution.<p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/GetStreamingDistributionConfig2016_01_28">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetStreamingDistributionConfig2016_01_28OutcomeCallable GetStreamingDistributionConfig2016_01_28Callable(const Model::GetStreamingDistributionConfig2016_01_28Request& request) const;
 
         /**
-         * Get the configuration information about a streaming distribution.
+         * Get the configuration information about a streaming distribution.<p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/GetStreamingDistributionConfig2016_01_28">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetStreamingDistributionConfig2016_01_28Async(const Model::GetStreamingDistributionConfig2016_01_28Request& request, const GetStreamingDistributionConfig2016_01_28ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * List origin access identities.
+         * List origin access identities.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/ListCloudFrontOriginAccessIdentities2016_01_28">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListCloudFrontOriginAccessIdentities2016_01_28Outcome ListCloudFrontOriginAccessIdentities2016_01_28(const Model::ListCloudFrontOriginAccessIdentities2016_01_28Request& request) const;
 
         /**
-         * List origin access identities.
+         * List origin access identities.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/ListCloudFrontOriginAccessIdentities2016_01_28">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListCloudFrontOriginAccessIdentities2016_01_28OutcomeCallable ListCloudFrontOriginAccessIdentities2016_01_28Callable(const Model::ListCloudFrontOriginAccessIdentities2016_01_28Request& request) const;
 
         /**
-         * List origin access identities.
+         * List origin access identities.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/ListCloudFrontOriginAccessIdentities2016_01_28">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListCloudFrontOriginAccessIdentities2016_01_28Async(const Model::ListCloudFrontOriginAccessIdentities2016_01_28Request& request, const ListCloudFrontOriginAccessIdentities2016_01_28ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * List distributions.
+         * List distributions.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/ListDistributions2016_01_28">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListDistributions2016_01_28Outcome ListDistributions2016_01_28(const Model::ListDistributions2016_01_28Request& request) const;
 
         /**
-         * List distributions.
+         * List distributions.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/ListDistributions2016_01_28">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListDistributions2016_01_28OutcomeCallable ListDistributions2016_01_28Callable(const Model::ListDistributions2016_01_28Request& request) const;
 
         /**
-         * List distributions.
+         * List distributions.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/ListDistributions2016_01_28">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListDistributions2016_01_28Async(const Model::ListDistributions2016_01_28Request& request, const ListDistributions2016_01_28ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * List the distributions that are associated with a specified AWS WAF web ACL.
+         * List the distributions that are associated with a specified AWS WAF web
+         * ACL.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/ListDistributionsByWebACLId2016_01_28">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListDistributionsByWebACLId2016_01_28Outcome ListDistributionsByWebACLId2016_01_28(const Model::ListDistributionsByWebACLId2016_01_28Request& request) const;
 
         /**
-         * List the distributions that are associated with a specified AWS WAF web ACL.
+         * List the distributions that are associated with a specified AWS WAF web
+         * ACL.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/ListDistributionsByWebACLId2016_01_28">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListDistributionsByWebACLId2016_01_28OutcomeCallable ListDistributionsByWebACLId2016_01_28Callable(const Model::ListDistributionsByWebACLId2016_01_28Request& request) const;
 
         /**
-         * List the distributions that are associated with a specified AWS WAF web ACL.
+         * List the distributions that are associated with a specified AWS WAF web
+         * ACL.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/ListDistributionsByWebACLId2016_01_28">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListDistributionsByWebACLId2016_01_28Async(const Model::ListDistributionsByWebACLId2016_01_28Request& request, const ListDistributionsByWebACLId2016_01_28ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * List invalidation batches.
+         * List invalidation batches.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/ListInvalidations2016_01_28">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListInvalidations2016_01_28Outcome ListInvalidations2016_01_28(const Model::ListInvalidations2016_01_28Request& request) const;
 
         /**
-         * List invalidation batches.
+         * List invalidation batches.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/ListInvalidations2016_01_28">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListInvalidations2016_01_28OutcomeCallable ListInvalidations2016_01_28Callable(const Model::ListInvalidations2016_01_28Request& request) const;
 
         /**
-         * List invalidation batches.
+         * List invalidation batches.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/ListInvalidations2016_01_28">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListInvalidations2016_01_28Async(const Model::ListInvalidations2016_01_28Request& request, const ListInvalidations2016_01_28ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * List streaming distributions.
+         * List streaming distributions.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/ListStreamingDistributions2016_01_28">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListStreamingDistributions2016_01_28Outcome ListStreamingDistributions2016_01_28(const Model::ListStreamingDistributions2016_01_28Request& request) const;
 
         /**
-         * List streaming distributions.
+         * List streaming distributions.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/ListStreamingDistributions2016_01_28">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListStreamingDistributions2016_01_28OutcomeCallable ListStreamingDistributions2016_01_28Callable(const Model::ListStreamingDistributions2016_01_28Request& request) const;
 
         /**
-         * List streaming distributions.
+         * List streaming distributions.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/ListStreamingDistributions2016_01_28">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListStreamingDistributions2016_01_28Async(const Model::ListStreamingDistributions2016_01_28Request& request, const ListStreamingDistributions2016_01_28ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Update an origin access identity.
+         * Update an origin access identity.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/UpdateCloudFrontOriginAccessIdentity2016_01_28">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateCloudFrontOriginAccessIdentity2016_01_28Outcome UpdateCloudFrontOriginAccessIdentity2016_01_28(const Model::UpdateCloudFrontOriginAccessIdentity2016_01_28Request& request) const;
 
         /**
-         * Update an origin access identity.
+         * Update an origin access identity.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/UpdateCloudFrontOriginAccessIdentity2016_01_28">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateCloudFrontOriginAccessIdentity2016_01_28OutcomeCallable UpdateCloudFrontOriginAccessIdentity2016_01_28Callable(const Model::UpdateCloudFrontOriginAccessIdentity2016_01_28Request& request) const;
 
         /**
-         * Update an origin access identity.
+         * Update an origin access identity.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/UpdateCloudFrontOriginAccessIdentity2016_01_28">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateCloudFrontOriginAccessIdentity2016_01_28Async(const Model::UpdateCloudFrontOriginAccessIdentity2016_01_28Request& request, const UpdateCloudFrontOriginAccessIdentity2016_01_28ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Update a distribution.
+         * Update a distribution.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/UpdateDistribution2016_01_28">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateDistribution2016_01_28Outcome UpdateDistribution2016_01_28(const Model::UpdateDistribution2016_01_28Request& request) const;
 
         /**
-         * Update a distribution.
+         * Update a distribution.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/UpdateDistribution2016_01_28">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateDistribution2016_01_28OutcomeCallable UpdateDistribution2016_01_28Callable(const Model::UpdateDistribution2016_01_28Request& request) const;
 
         /**
-         * Update a distribution.
+         * Update a distribution.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/UpdateDistribution2016_01_28">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateDistribution2016_01_28Async(const Model::UpdateDistribution2016_01_28Request& request, const UpdateDistribution2016_01_28ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Update a streaming distribution.
+         * Update a streaming distribution.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/UpdateStreamingDistribution2016_01_28">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateStreamingDistribution2016_01_28Outcome UpdateStreamingDistribution2016_01_28(const Model::UpdateStreamingDistribution2016_01_28Request& request) const;
 
         /**
-         * Update a streaming distribution.
+         * Update a streaming distribution.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/UpdateStreamingDistribution2016_01_28">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateStreamingDistribution2016_01_28OutcomeCallable UpdateStreamingDistribution2016_01_28Callable(const Model::UpdateStreamingDistribution2016_01_28Request& request) const;
 
         /**
-         * Update a streaming distribution.
+         * Update a streaming distribution.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/UpdateStreamingDistribution2016_01_28">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */

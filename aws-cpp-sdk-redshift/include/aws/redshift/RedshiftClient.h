@@ -17,6 +17,7 @@
 #include <aws/redshift/RedshiftErrors.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -424,6 +425,12 @@ namespace Model
 
         virtual ~RedshiftClient();
 
+       /**
+        * Converts any request object to a presigned URL with the GET method, using region for the signer and a timeout of 15 minutes.
+        */
+        Aws::String ConvertRequestToPresignedUrl(const AmazonSerializableWebServiceRequest& requestToConvert, const char* region) const;
+
+
         /**
          * <p>Adds an inbound (ingress) rule to an Amazon Redshift security group.
          * Depending on whether the application accessing your cluster is running on the
@@ -443,7 +450,9 @@ namespace Model
          * security groups, go to <a
          * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html">Working
          * with Security Groups</a> in the <i>Amazon Redshift Cluster Management
-         * Guide</i>.</p>
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/AuthorizeClusterSecurityGroupIngress">AWS
+         * API Reference</a></p>
          */
         virtual Model::AuthorizeClusterSecurityGroupIngressOutcome AuthorizeClusterSecurityGroupIngress(const Model::AuthorizeClusterSecurityGroupIngressRequest& request) const;
 
@@ -466,7 +475,9 @@ namespace Model
          * security groups, go to <a
          * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html">Working
          * with Security Groups</a> in the <i>Amazon Redshift Cluster Management
-         * Guide</i>.</p>
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/AuthorizeClusterSecurityGroupIngress">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -491,7 +502,9 @@ namespace Model
          * security groups, go to <a
          * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html">Working
          * with Security Groups</a> in the <i>Amazon Redshift Cluster Management
-         * Guide</i>.</p>
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/AuthorizeClusterSecurityGroupIngress">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -502,7 +515,9 @@ namespace Model
          * snapshot.</p> <p> For more information about working with snapshots, go to <a
          * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon
          * Redshift Snapshots</a> in the <i>Amazon Redshift Cluster Management
-         * Guide</i>.</p>
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/AuthorizeSnapshotAccess">AWS
+         * API Reference</a></p>
          */
         virtual Model::AuthorizeSnapshotAccessOutcome AuthorizeSnapshotAccess(const Model::AuthorizeSnapshotAccessRequest& request) const;
 
@@ -511,7 +526,9 @@ namespace Model
          * snapshot.</p> <p> For more information about working with snapshots, go to <a
          * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon
          * Redshift Snapshots</a> in the <i>Amazon Redshift Cluster Management
-         * Guide</i>.</p>
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/AuthorizeSnapshotAccess">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -522,7 +539,9 @@ namespace Model
          * snapshot.</p> <p> For more information about working with snapshots, go to <a
          * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon
          * Redshift Snapshots</a> in the <i>Amazon Redshift Cluster Management
-         * Guide</i>.</p>
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/AuthorizeSnapshotAccess">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -539,7 +558,9 @@ namespace Model
          * information about working with snapshots, go to <a
          * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon
          * Redshift Snapshots</a> in the <i>Amazon Redshift Cluster Management
-         * Guide</i>.</p>
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CopyClusterSnapshot">AWS
+         * API Reference</a></p>
          */
         virtual Model::CopyClusterSnapshotOutcome CopyClusterSnapshot(const Model::CopyClusterSnapshotRequest& request) const;
 
@@ -554,7 +575,9 @@ namespace Model
          * information about working with snapshots, go to <a
          * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon
          * Redshift Snapshots</a> in the <i>Amazon Redshift Cluster Management
-         * Guide</i>.</p>
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CopyClusterSnapshot">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -571,7 +594,9 @@ namespace Model
          * information about working with snapshots, go to <a
          * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon
          * Redshift Snapshots</a> in the <i>Amazon Redshift Cluster Management
-         * Guide</i>.</p>
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CopyClusterSnapshot">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -584,7 +609,9 @@ namespace Model
          * cluster. For more information about managing clusters, go to <a
          * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
          * Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management
-         * Guide</i>.</p>
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateCluster">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateClusterOutcome CreateCluster(const Model::CreateClusterRequest& request) const;
 
@@ -595,7 +622,9 @@ namespace Model
          * cluster. For more information about managing clusters, go to <a
          * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
          * Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management
-         * Guide</i>.</p>
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateCluster">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -608,7 +637,9 @@ namespace Model
          * cluster. For more information about managing clusters, go to <a
          * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
          * Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management
-         * Guide</i>.</p>
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateCluster">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -624,7 +655,9 @@ namespace Model
          * information about parameters and parameter groups, go to <a
          * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
          * Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management
-         * Guide</i>.</p>
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateClusterParameterGroup">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateClusterParameterGroupOutcome CreateClusterParameterGroup(const Model::CreateClusterParameterGroupRequest& request) const;
 
@@ -638,7 +671,9 @@ namespace Model
          * information about parameters and parameter groups, go to <a
          * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
          * Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management
-         * Guide</i>.</p>
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateClusterParameterGroup">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -654,7 +689,9 @@ namespace Model
          * information about parameters and parameter groups, go to <a
          * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
          * Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management
-         * Guide</i>.</p>
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateClusterParameterGroup">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -666,7 +703,9 @@ namespace Model
          * security groups, go to <a
          * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html">Amazon
          * Redshift Cluster Security Groups</a> in the <i>Amazon Redshift Cluster
-         * Management Guide</i>.</p>
+         * Management Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateClusterSecurityGroup">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateClusterSecurityGroupOutcome CreateClusterSecurityGroup(const Model::CreateClusterSecurityGroupRequest& request) const;
 
@@ -676,7 +715,9 @@ namespace Model
          * security groups, go to <a
          * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html">Amazon
          * Redshift Cluster Security Groups</a> in the <i>Amazon Redshift Cluster
-         * Management Guide</i>.</p>
+         * Management Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateClusterSecurityGroup">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -688,7 +729,9 @@ namespace Model
          * security groups, go to <a
          * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html">Amazon
          * Redshift Cluster Security Groups</a> in the <i>Amazon Redshift Cluster
-         * Management Guide</i>.</p>
+         * Management Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateClusterSecurityGroup">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -700,7 +743,9 @@ namespace Model
          * with snapshots, go to <a
          * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon
          * Redshift Snapshots</a> in the <i>Amazon Redshift Cluster Management
-         * Guide</i>.</p>
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateClusterSnapshot">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateClusterSnapshotOutcome CreateClusterSnapshot(const Model::CreateClusterSnapshotRequest& request) const;
 
@@ -710,7 +755,9 @@ namespace Model
          * with snapshots, go to <a
          * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon
          * Redshift Snapshots</a> in the <i>Amazon Redshift Cluster Management
-         * Guide</i>.</p>
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateClusterSnapshot">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -722,7 +769,9 @@ namespace Model
          * with snapshots, go to <a
          * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon
          * Redshift Snapshots</a> in the <i>Amazon Redshift Cluster Management
-         * Guide</i>.</p>
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateClusterSnapshot">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -735,7 +784,9 @@ namespace Model
          * groups, go to <a
          * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-cluster-subnet-groups.html">Amazon
          * Redshift Cluster Subnet Groups</a> in the <i>Amazon Redshift Cluster Management
-         * Guide</i>.</p>
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateClusterSubnetGroup">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateClusterSubnetGroupOutcome CreateClusterSubnetGroup(const Model::CreateClusterSubnetGroupRequest& request) const;
 
@@ -746,7 +797,9 @@ namespace Model
          * groups, go to <a
          * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-cluster-subnet-groups.html">Amazon
          * Redshift Cluster Subnet Groups</a> in the <i>Amazon Redshift Cluster Management
-         * Guide</i>.</p>
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateClusterSubnetGroup">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -759,7 +812,9 @@ namespace Model
          * groups, go to <a
          * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-cluster-subnet-groups.html">Amazon
          * Redshift Cluster Subnet Groups</a> in the <i>Amazon Redshift Cluster Management
-         * Guide</i>.</p>
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateClusterSubnetGroup">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -784,7 +839,10 @@ namespace Model
          * notice of the events for the objects of that type in your AWS account. If you do
          * not specify either the SourceType nor the SourceIdentifier, you will be notified
          * of events generated from all Amazon Redshift sources belonging to your AWS
-         * account. You must specify a source type if you specify a source ID.</p>
+         * account. You must specify a source type if you specify a source
+         * ID.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateEventSubscription">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateEventSubscriptionOutcome CreateEventSubscription(const Model::CreateEventSubscriptionRequest& request) const;
 
@@ -807,7 +865,10 @@ namespace Model
          * notice of the events for the objects of that type in your AWS account. If you do
          * not specify either the SourceType nor the SourceIdentifier, you will be notified
          * of events generated from all Amazon Redshift sources belonging to your AWS
-         * account. You must specify a source type if you specify a source ID.</p>
+         * account. You must specify a source type if you specify a source
+         * ID.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateEventSubscription">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -832,7 +893,10 @@ namespace Model
          * notice of the events for the objects of that type in your AWS account. If you do
          * not specify either the SourceType nor the SourceIdentifier, you will be notified
          * of events generated from all Amazon Redshift sources belonging to your AWS
-         * account. You must specify a source type if you specify a source ID.</p>
+         * account. You must specify a source type if you specify a source
+         * ID.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateEventSubscription">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -847,7 +911,10 @@ namespace Model
          * information needed to store and use encryption keys in the HSM. For more
          * information, go to <a
          * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-HSM.html">Hardware
-         * Security Modules</a> in the Amazon Redshift Cluster Management Guide.</p>
+         * Security Modules</a> in the Amazon Redshift Cluster Management
+         * Guide.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateHsmClientCertificate">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateHsmClientCertificateOutcome CreateHsmClientCertificate(const Model::CreateHsmClientCertificateRequest& request) const;
 
@@ -860,7 +927,10 @@ namespace Model
          * information needed to store and use encryption keys in the HSM. For more
          * information, go to <a
          * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-HSM.html">Hardware
-         * Security Modules</a> in the Amazon Redshift Cluster Management Guide.</p>
+         * Security Modules</a> in the Amazon Redshift Cluster Management
+         * Guide.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateHsmClientCertificate">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -875,7 +945,10 @@ namespace Model
          * information needed to store and use encryption keys in the HSM. For more
          * information, go to <a
          * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-HSM.html">Hardware
-         * Security Modules</a> in the Amazon Redshift Cluster Management Guide.</p>
+         * Security Modules</a> in the Amazon Redshift Cluster Management
+         * Guide.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateHsmClientCertificate">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -889,7 +962,10 @@ namespace Model
          * encryption keys in the HSM.</p> <p>In addition to creating an HSM configuration,
          * you must also create an HSM client certificate. For more information, go to <a
          * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-HSM.html">Hardware
-         * Security Modules</a> in the Amazon Redshift Cluster Management Guide.</p>
+         * Security Modules</a> in the Amazon Redshift Cluster Management
+         * Guide.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateHsmConfiguration">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateHsmConfigurationOutcome CreateHsmConfiguration(const Model::CreateHsmConfigurationRequest& request) const;
 
@@ -901,7 +977,10 @@ namespace Model
          * encryption keys in the HSM.</p> <p>In addition to creating an HSM configuration,
          * you must also create an HSM client certificate. For more information, go to <a
          * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-HSM.html">Hardware
-         * Security Modules</a> in the Amazon Redshift Cluster Management Guide.</p>
+         * Security Modules</a> in the Amazon Redshift Cluster Management
+         * Guide.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateHsmConfiguration">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -915,7 +994,10 @@ namespace Model
          * encryption keys in the HSM.</p> <p>In addition to creating an HSM configuration,
          * you must also create an HSM client certificate. For more information, go to <a
          * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-HSM.html">Hardware
-         * Security Modules</a> in the Amazon Redshift Cluster Management Guide.</p>
+         * Security Modules</a> in the Amazon Redshift Cluster Management
+         * Guide.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateHsmConfiguration">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -928,7 +1010,9 @@ namespace Model
          * snapshot copy grants, go to <a
          * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html">Amazon
          * Redshift Database Encryption</a> in the <i>Amazon Redshift Cluster Management
-         * Guide</i>. </p>
+         * Guide</i>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateSnapshotCopyGrant">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateSnapshotCopyGrantOutcome CreateSnapshotCopyGrant(const Model::CreateSnapshotCopyGrantRequest& request) const;
 
@@ -939,7 +1023,9 @@ namespace Model
          * snapshot copy grants, go to <a
          * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html">Amazon
          * Redshift Database Encryption</a> in the <i>Amazon Redshift Cluster Management
-         * Guide</i>. </p>
+         * Guide</i>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateSnapshotCopyGrant">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -952,7 +1038,9 @@ namespace Model
          * snapshot copy grants, go to <a
          * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html">Amazon
          * Redshift Database Encryption</a> in the <i>Amazon Redshift Cluster Management
-         * Guide</i>. </p>
+         * Guide</i>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateSnapshotCopyGrant">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -963,7 +1051,9 @@ namespace Model
          * to 10 tags. If you try to create more than 10 tags for a resource, you will
          * receive an error and the attempt will fail.</p> <p>If you specify a key that
          * already exists for the resource, the value for that key will be updated with the
-         * new value.</p>
+         * new value.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateTags">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateTagsOutcome CreateTags(const Model::CreateTagsRequest& request) const;
 
@@ -972,7 +1062,9 @@ namespace Model
          * to 10 tags. If you try to create more than 10 tags for a resource, you will
          * receive an error and the attempt will fail.</p> <p>If you specify a key that
          * already exists for the resource, the value for that key will be updated with the
-         * new value.</p>
+         * new value.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateTags">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -983,7 +1075,9 @@ namespace Model
          * to 10 tags. If you try to create more than 10 tags for a resource, you will
          * receive an error and the attempt will fail.</p> <p>If you specify a key that
          * already exists for the resource, the value for that key will be updated with the
-         * new value.</p>
+         * new value.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateTags">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1006,7 +1100,9 @@ namespace Model
          * </p> <p> For more information about managing clusters, go to <a
          * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
          * Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management
-         * Guide</i>.</p>
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteCluster">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteClusterOutcome DeleteCluster(const Model::DeleteClusterRequest& request) const;
 
@@ -1027,7 +1123,9 @@ namespace Model
          * </p> <p> For more information about managing clusters, go to <a
          * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
          * Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management
-         * Guide</i>.</p>
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteCluster">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1050,7 +1148,9 @@ namespace Model
          * </p> <p> For more information about managing clusters, go to <a
          * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
          * Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management
-         * Guide</i>.</p>
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteCluster">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1058,13 +1158,19 @@ namespace Model
 
         /**
          * <p>Deletes a specified Amazon Redshift parameter group.</p> <note> <p>You cannot
-         * delete a parameter group if it is associated with a cluster.</p> </note>
+         * delete a parameter group if it is associated with a cluster.</p>
+         * </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteClusterParameterGroup">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteClusterParameterGroupOutcome DeleteClusterParameterGroup(const Model::DeleteClusterParameterGroupRequest& request) const;
 
         /**
          * <p>Deletes a specified Amazon Redshift parameter group.</p> <note> <p>You cannot
-         * delete a parameter group if it is associated with a cluster.</p> </note>
+         * delete a parameter group if it is associated with a cluster.</p>
+         * </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteClusterParameterGroup">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1072,7 +1178,10 @@ namespace Model
 
         /**
          * <p>Deletes a specified Amazon Redshift parameter group.</p> <note> <p>You cannot
-         * delete a parameter group if it is associated with a cluster.</p> </note>
+         * delete a parameter group if it is associated with a cluster.</p>
+         * </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteClusterParameterGroup">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1085,7 +1194,9 @@ namespace Model
          * groups, go to <a
          * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html">Amazon
          * Redshift Cluster Security Groups</a> in the <i>Amazon Redshift Cluster
-         * Management Guide</i>.</p>
+         * Management Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteClusterSecurityGroup">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteClusterSecurityGroupOutcome DeleteClusterSecurityGroup(const Model::DeleteClusterSecurityGroupRequest& request) const;
 
@@ -1096,7 +1207,9 @@ namespace Model
          * groups, go to <a
          * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html">Amazon
          * Redshift Cluster Security Groups</a> in the <i>Amazon Redshift Cluster
-         * Management Guide</i>.</p>
+         * Management Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteClusterSecurityGroup">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1109,7 +1222,9 @@ namespace Model
          * groups, go to <a
          * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html">Amazon
          * Redshift Cluster Security Groups</a> in the <i>Amazon Redshift Cluster
-         * Management Guide</i>.</p>
+         * Management Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteClusterSecurityGroup">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1122,7 +1237,10 @@ namespace Model
          * after you delete your cluster. Amazon Redshift does not delete your manual
          * snapshots. You must delete manual snapshot explicitly to avoid getting charged.
          * If other accounts are authorized to access the snapshot, you must revoke all of
-         * the authorizations before you can delete the snapshot.</p>
+         * the authorizations before you can delete the snapshot.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteClusterSnapshot">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteClusterSnapshotOutcome DeleteClusterSnapshot(const Model::DeleteClusterSnapshotRequest& request) const;
 
@@ -1133,7 +1251,10 @@ namespace Model
          * after you delete your cluster. Amazon Redshift does not delete your manual
          * snapshots. You must delete manual snapshot explicitly to avoid getting charged.
          * If other accounts are authorized to access the snapshot, you must revoke all of
-         * the authorizations before you can delete the snapshot.</p>
+         * the authorizations before you can delete the snapshot.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteClusterSnapshot">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1146,102 +1267,141 @@ namespace Model
          * after you delete your cluster. Amazon Redshift does not delete your manual
          * snapshots. You must delete manual snapshot explicitly to avoid getting charged.
          * If other accounts are authorized to access the snapshot, you must revoke all of
-         * the authorizations before you can delete the snapshot.</p>
+         * the authorizations before you can delete the snapshot.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteClusterSnapshot">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteClusterSnapshotAsync(const Model::DeleteClusterSnapshotRequest& request, const DeleteClusterSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the specified cluster subnet group.</p>
+         * <p>Deletes the specified cluster subnet group.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteClusterSubnetGroup">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteClusterSubnetGroupOutcome DeleteClusterSubnetGroup(const Model::DeleteClusterSubnetGroupRequest& request) const;
 
         /**
-         * <p>Deletes the specified cluster subnet group.</p>
+         * <p>Deletes the specified cluster subnet group.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteClusterSubnetGroup">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteClusterSubnetGroupOutcomeCallable DeleteClusterSubnetGroupCallable(const Model::DeleteClusterSubnetGroupRequest& request) const;
 
         /**
-         * <p>Deletes the specified cluster subnet group.</p>
+         * <p>Deletes the specified cluster subnet group.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteClusterSubnetGroup">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteClusterSubnetGroupAsync(const Model::DeleteClusterSubnetGroupRequest& request, const DeleteClusterSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes an Amazon Redshift event notification subscription.</p>
+         * <p>Deletes an Amazon Redshift event notification subscription.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteEventSubscription">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteEventSubscriptionOutcome DeleteEventSubscription(const Model::DeleteEventSubscriptionRequest& request) const;
 
         /**
-         * <p>Deletes an Amazon Redshift event notification subscription.</p>
+         * <p>Deletes an Amazon Redshift event notification subscription.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteEventSubscription">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteEventSubscriptionOutcomeCallable DeleteEventSubscriptionCallable(const Model::DeleteEventSubscriptionRequest& request) const;
 
         /**
-         * <p>Deletes an Amazon Redshift event notification subscription.</p>
+         * <p>Deletes an Amazon Redshift event notification subscription.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteEventSubscription">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteEventSubscriptionAsync(const Model::DeleteEventSubscriptionRequest& request, const DeleteEventSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the specified HSM client certificate.</p>
+         * <p>Deletes the specified HSM client certificate.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteHsmClientCertificate">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteHsmClientCertificateOutcome DeleteHsmClientCertificate(const Model::DeleteHsmClientCertificateRequest& request) const;
 
         /**
-         * <p>Deletes the specified HSM client certificate.</p>
+         * <p>Deletes the specified HSM client certificate.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteHsmClientCertificate">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteHsmClientCertificateOutcomeCallable DeleteHsmClientCertificateCallable(const Model::DeleteHsmClientCertificateRequest& request) const;
 
         /**
-         * <p>Deletes the specified HSM client certificate.</p>
+         * <p>Deletes the specified HSM client certificate.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteHsmClientCertificate">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteHsmClientCertificateAsync(const Model::DeleteHsmClientCertificateRequest& request, const DeleteHsmClientCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the specified Amazon Redshift HSM configuration.</p>
+         * <p>Deletes the specified Amazon Redshift HSM configuration.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteHsmConfiguration">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteHsmConfigurationOutcome DeleteHsmConfiguration(const Model::DeleteHsmConfigurationRequest& request) const;
 
         /**
-         * <p>Deletes the specified Amazon Redshift HSM configuration.</p>
+         * <p>Deletes the specified Amazon Redshift HSM configuration.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteHsmConfiguration">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteHsmConfigurationOutcomeCallable DeleteHsmConfigurationCallable(const Model::DeleteHsmConfigurationRequest& request) const;
 
         /**
-         * <p>Deletes the specified Amazon Redshift HSM configuration.</p>
+         * <p>Deletes the specified Amazon Redshift HSM configuration.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteHsmConfiguration">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteHsmConfigurationAsync(const Model::DeleteHsmConfigurationRequest& request, const DeleteHsmConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the specified snapshot copy grant.</p>
+         * <p>Deletes the specified snapshot copy grant.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteSnapshotCopyGrant">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteSnapshotCopyGrantOutcome DeleteSnapshotCopyGrant(const Model::DeleteSnapshotCopyGrantRequest& request) const;
 
         /**
-         * <p>Deletes the specified snapshot copy grant.</p>
+         * <p>Deletes the specified snapshot copy grant.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteSnapshotCopyGrant">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteSnapshotCopyGrantOutcomeCallable DeleteSnapshotCopyGrantCallable(const Model::DeleteSnapshotCopyGrantRequest& request) const;
 
         /**
-         * <p>Deletes the specified snapshot copy grant.</p>
+         * <p>Deletes the specified snapshot copy grant.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteSnapshotCopyGrant">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1249,13 +1409,19 @@ namespace Model
 
         /**
          * <p>Deletes a tag or tags from a resource. You must provide the ARN of the
-         * resource from which you want to delete the tag or tags.</p>
+         * resource from which you want to delete the tag or tags.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteTags">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteTagsOutcome DeleteTags(const Model::DeleteTagsRequest& request) const;
 
         /**
          * <p>Deletes a tag or tags from a resource. You must provide the ARN of the
-         * resource from which you want to delete the tag or tags.</p>
+         * resource from which you want to delete the tag or tags.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteTags">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1263,7 +1429,10 @@ namespace Model
 
         /**
          * <p>Deletes a tag or tags from a resource. You must provide the ARN of the
-         * resource from which you want to delete the tag or tags.</p>
+         * resource from which you want to delete the tag or tags.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteTags">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1285,7 +1454,9 @@ namespace Model
          * <code>test</code> for tag values, all parameter groups that have any combination
          * of those values are returned.</p> <p>If both tag keys and values are omitted
          * from the request, parameter groups are returned regardless of whether they have
-         * tag keys or values associated with them.</p>
+         * tag keys or values associated with them.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterParameterGroups">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeClusterParameterGroupsOutcome DescribeClusterParameterGroups(const Model::DescribeClusterParameterGroupsRequest& request) const;
 
@@ -1305,7 +1476,9 @@ namespace Model
          * <code>test</code> for tag values, all parameter groups that have any combination
          * of those values are returned.</p> <p>If both tag keys and values are omitted
          * from the request, parameter groups are returned regardless of whether they have
-         * tag keys or values associated with them.</p>
+         * tag keys or values associated with them.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterParameterGroups">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1327,7 +1500,9 @@ namespace Model
          * <code>test</code> for tag values, all parameter groups that have any combination
          * of those values are returned.</p> <p>If both tag keys and values are omitted
          * from the request, parameter groups are returned regardless of whether they have
-         * tag keys or values associated with them.</p>
+         * tag keys or values associated with them.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterParameterGroups">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1345,7 +1520,9 @@ namespace Model
          * go to <a
          * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
          * Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management
-         * Guide</i>.</p>
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterParameters">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeClusterParametersOutcome DescribeClusterParameters(const Model::DescribeClusterParametersRequest& request) const;
 
@@ -1361,7 +1538,9 @@ namespace Model
          * go to <a
          * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
          * Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management
-         * Guide</i>.</p>
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterParameters">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1379,7 +1558,9 @@ namespace Model
          * go to <a
          * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
          * Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management
-         * Guide</i>.</p>
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterParameters">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1399,7 +1580,10 @@ namespace Model
          * <code>admin</code> and <code>test</code> for tag values, all security groups
          * that have any combination of those values are returned.</p> <p>If both tag keys
          * and values are omitted from the request, security groups are returned regardless
-         * of whether they have tag keys or values associated with them.</p>
+         * of whether they have tag keys or values associated with them.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterSecurityGroups">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeClusterSecurityGroupsOutcome DescribeClusterSecurityGroups(const Model::DescribeClusterSecurityGroupsRequest& request) const;
 
@@ -1417,7 +1601,10 @@ namespace Model
          * <code>admin</code> and <code>test</code> for tag values, all security groups
          * that have any combination of those values are returned.</p> <p>If both tag keys
          * and values are omitted from the request, security groups are returned regardless
-         * of whether they have tag keys or values associated with them.</p>
+         * of whether they have tag keys or values associated with them.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterSecurityGroups">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1437,7 +1624,10 @@ namespace Model
          * <code>admin</code> and <code>test</code> for tag values, all security groups
          * that have any combination of those values are returned.</p> <p>If both tag keys
          * and values are omitted from the request, security groups are returned regardless
-         * of whether they have tag keys or values associated with them.</p>
+         * of whether they have tag keys or values associated with them.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterSecurityGroups">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1457,7 +1647,9 @@ namespace Model
          * response; shared snapshots are not returned with the tag key and tag value
          * request parameters.</p> <p>If both tag keys and values are omitted from the
          * request, snapshots are returned regardless of whether they have tag keys or
-         * values associated with them.</p>
+         * values associated with them.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterSnapshots">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeClusterSnapshotsOutcome DescribeClusterSnapshots(const Model::DescribeClusterSnapshotsRequest& request) const;
 
@@ -1475,7 +1667,9 @@ namespace Model
          * response; shared snapshots are not returned with the tag key and tag value
          * request parameters.</p> <p>If both tag keys and values are omitted from the
          * request, snapshots are returned regardless of whether they have tag keys or
-         * values associated with them.</p>
+         * values associated with them.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterSnapshots">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1495,7 +1689,9 @@ namespace Model
          * response; shared snapshots are not returned with the tag key and tag value
          * request parameters.</p> <p>If both tag keys and values are omitted from the
          * request, snapshots are returned regardless of whether they have tag keys or
-         * values associated with them.</p>
+         * values associated with them.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterSnapshots">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1512,7 +1708,9 @@ namespace Model
          * subnet groups that have any combination of those values are returned.</p> <p>If
          * both tag keys and values are omitted from the request, subnet groups are
          * returned regardless of whether they have tag keys or values associated with
-         * them.</p>
+         * them.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterSubnetGroups">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeClusterSubnetGroupsOutcome DescribeClusterSubnetGroups(const Model::DescribeClusterSubnetGroupsRequest& request) const;
 
@@ -1527,7 +1725,9 @@ namespace Model
          * subnet groups that have any combination of those values are returned.</p> <p>If
          * both tag keys and values are omitted from the request, subnet groups are
          * returned regardless of whether they have tag keys or values associated with
-         * them.</p>
+         * them.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterSubnetGroups">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1544,7 +1744,9 @@ namespace Model
          * subnet groups that have any combination of those values are returned.</p> <p>If
          * both tag keys and values are omitted from the request, subnet groups are
          * returned regardless of whether they have tag keys or values associated with
-         * them.</p>
+         * them.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterSubnetGroups">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1557,7 +1759,9 @@ namespace Model
          * to <a
          * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
          * Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management
-         * Guide</i>.</p>
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterVersions">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeClusterVersionsOutcome DescribeClusterVersions(const Model::DescribeClusterVersionsRequest& request) const;
 
@@ -1568,7 +1772,9 @@ namespace Model
          * to <a
          * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
          * Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management
-         * Guide</i>.</p>
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterVersions">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1581,7 +1787,9 @@ namespace Model
          * to <a
          * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
          * Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management
-         * Guide</i>.</p>
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterVersions">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1601,7 +1809,9 @@ namespace Model
          * <code>test</code> for tag values, all clusters that have any combination of
          * those values are returned.</p> <p>If both tag keys and values are omitted from
          * the request, clusters are returned regardless of whether they have tag keys or
-         * values associated with them.</p>
+         * values associated with them.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusters">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeClustersOutcome DescribeClusters(const Model::DescribeClustersRequest& request) const;
 
@@ -1619,7 +1829,9 @@ namespace Model
          * <code>test</code> for tag values, all clusters that have any combination of
          * those values are returned.</p> <p>If both tag keys and values are omitted from
          * the request, clusters are returned regardless of whether they have tag keys or
-         * values associated with them.</p>
+         * values associated with them.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusters">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1639,7 +1851,9 @@ namespace Model
          * <code>test</code> for tag values, all clusters that have any combination of
          * those values are returned.</p> <p>If both tag keys and values are omitted from
          * the request, clusters are returned regardless of whether they have tag keys or
-         * values associated with them.</p>
+         * values associated with them.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusters">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1651,7 +1865,9 @@ namespace Model
          * to <a
          * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
          * Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management
-         * Guide</i>.</p>
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeDefaultClusterParameters">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeDefaultClusterParametersOutcome DescribeDefaultClusterParameters(const Model::DescribeDefaultClusterParametersRequest& request) const;
 
@@ -1661,7 +1877,9 @@ namespace Model
          * to <a
          * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
          * Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management
-         * Guide</i>.</p>
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeDefaultClusterParameters">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1673,7 +1891,9 @@ namespace Model
          * to <a
          * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
          * Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management
-         * Guide</i>.</p>
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeDefaultClusterParameters">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1684,7 +1904,9 @@ namespace Model
          * specified source type. For a list of the event categories and source types, go
          * to <a
          * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-event-notifications.html">Amazon
-         * Redshift Event Notifications</a>.</p>
+         * Redshift Event Notifications</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeEventCategories">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeEventCategoriesOutcome DescribeEventCategories(const Model::DescribeEventCategoriesRequest& request) const;
 
@@ -1693,7 +1915,9 @@ namespace Model
          * specified source type. For a list of the event categories and source types, go
          * to <a
          * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-event-notifications.html">Amazon
-         * Redshift Event Notifications</a>.</p>
+         * Redshift Event Notifications</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeEventCategories">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1704,7 +1928,9 @@ namespace Model
          * specified source type. For a list of the event categories and source types, go
          * to <a
          * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-event-notifications.html">Amazon
-         * Redshift Event Notifications</a>.</p>
+         * Redshift Event Notifications</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeEventCategories">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1713,14 +1939,18 @@ namespace Model
         /**
          * <p>Lists descriptions of all the Amazon Redshift event notifications
          * subscription for a customer account. If you specify a subscription name, lists
-         * the description for that subscription.</p>
+         * the description for that subscription.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeEventSubscriptions">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeEventSubscriptionsOutcome DescribeEventSubscriptions(const Model::DescribeEventSubscriptionsRequest& request) const;
 
         /**
          * <p>Lists descriptions of all the Amazon Redshift event notifications
          * subscription for a customer account. If you specify a subscription name, lists
-         * the description for that subscription.</p>
+         * the description for that subscription.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeEventSubscriptions">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1729,7 +1959,9 @@ namespace Model
         /**
          * <p>Lists descriptions of all the Amazon Redshift event notifications
          * subscription for a customer account. If you specify a subscription name, lists
-         * the description for that subscription.</p>
+         * the description for that subscription.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeEventSubscriptions">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1739,7 +1971,10 @@ namespace Model
          * <p>Returns events related to clusters, security groups, snapshots, and parameter
          * groups for the past 14 days. Events specific to a particular cluster, security
          * group, snapshot or parameter group can be obtained by providing the name as a
-         * parameter. By default, the past hour of events are returned.</p>
+         * parameter. By default, the past hour of events are returned.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeEvents">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeEventsOutcome DescribeEvents(const Model::DescribeEventsRequest& request) const;
 
@@ -1747,7 +1982,10 @@ namespace Model
          * <p>Returns events related to clusters, security groups, snapshots, and parameter
          * groups for the past 14 days. Events specific to a particular cluster, security
          * group, snapshot or parameter group can be obtained by providing the name as a
-         * parameter. By default, the past hour of events are returned.</p>
+         * parameter. By default, the past hour of events are returned.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeEvents">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1757,7 +1995,10 @@ namespace Model
          * <p>Returns events related to clusters, security groups, snapshots, and parameter
          * groups for the past 14 days. Events specific to a particular cluster, security
          * group, snapshot or parameter group can be obtained by providing the name as a
-         * parameter. By default, the past hour of events are returned.</p>
+         * parameter. By default, the past hour of events are returned.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeEvents">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1774,7 +2015,9 @@ namespace Model
          * certificates that have any combination of those values are returned.</p> <p>If
          * both tag keys and values are omitted from the request, HSM client certificates
          * are returned regardless of whether they have tag keys or values associated with
-         * them.</p>
+         * them.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeHsmClientCertificates">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeHsmClientCertificatesOutcome DescribeHsmClientCertificates(const Model::DescribeHsmClientCertificatesRequest& request) const;
 
@@ -1789,7 +2032,9 @@ namespace Model
          * certificates that have any combination of those values are returned.</p> <p>If
          * both tag keys and values are omitted from the request, HSM client certificates
          * are returned regardless of whether they have tag keys or values associated with
-         * them.</p>
+         * them.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeHsmClientCertificates">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1806,7 +2051,9 @@ namespace Model
          * certificates that have any combination of those values are returned.</p> <p>If
          * both tag keys and values are omitted from the request, HSM client certificates
          * are returned regardless of whether they have tag keys or values associated with
-         * them.</p>
+         * them.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeHsmClientCertificates">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1823,7 +2070,9 @@ namespace Model
          * connections that have any combination of those values are returned.</p> <p>If
          * both tag keys and values are omitted from the request, HSM connections are
          * returned regardless of whether they have tag keys or values associated with
-         * them.</p>
+         * them.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeHsmConfigurations">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeHsmConfigurationsOutcome DescribeHsmConfigurations(const Model::DescribeHsmConfigurationsRequest& request) const;
 
@@ -1838,7 +2087,9 @@ namespace Model
          * connections that have any combination of those values are returned.</p> <p>If
          * both tag keys and values are omitted from the request, HSM connections are
          * returned regardless of whether they have tag keys or values associated with
-         * them.</p>
+         * them.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeHsmConfigurations">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1855,7 +2106,9 @@ namespace Model
          * connections that have any combination of those values are returned.</p> <p>If
          * both tag keys and values are omitted from the request, HSM connections are
          * returned regardless of whether they have tag keys or values associated with
-         * them.</p>
+         * them.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeHsmConfigurations">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1863,13 +2116,19 @@ namespace Model
 
         /**
          * <p>Describes whether information, such as queries and connection attempts, is
-         * being logged for the specified Amazon Redshift cluster.</p>
+         * being logged for the specified Amazon Redshift cluster.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeLoggingStatus">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeLoggingStatusOutcome DescribeLoggingStatus(const Model::DescribeLoggingStatusRequest& request) const;
 
         /**
          * <p>Describes whether information, such as queries and connection attempts, is
-         * being logged for the specified Amazon Redshift cluster.</p>
+         * being logged for the specified Amazon Redshift cluster.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeLoggingStatus">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1877,7 +2136,10 @@ namespace Model
 
         /**
          * <p>Describes whether information, such as queries and connection attempts, is
-         * being logged for the specified Amazon Redshift cluster.</p>
+         * being logged for the specified Amazon Redshift cluster.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeLoggingStatus">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1893,7 +2155,9 @@ namespace Model
          * more information about managing clusters, go to <a
          * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
          * Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management
-         * Guide</i>.</p>
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeOrderableClusterOptions">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeOrderableClusterOptionsOutcome DescribeOrderableClusterOptions(const Model::DescribeOrderableClusterOptionsRequest& request) const;
 
@@ -1907,7 +2171,9 @@ namespace Model
          * more information about managing clusters, go to <a
          * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
          * Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management
-         * Guide</i>.</p>
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeOrderableClusterOptions">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1923,7 +2189,9 @@ namespace Model
          * more information about managing clusters, go to <a
          * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
          * Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management
-         * Guide</i>.</p>
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeOrderableClusterOptions">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1939,7 +2207,10 @@ namespace Model
          * Redshift cluster. </p> <p> For more information about reserved node offerings,
          * go to <a
          * href="http://docs.aws.amazon.com/redshift/latest/mgmt/purchase-reserved-node-instance.html">Purchasing
-         * Reserved Nodes</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
+         * Reserved Nodes</a> in the <i>Amazon Redshift Cluster Management
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeReservedNodeOfferings">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeReservedNodeOfferingsOutcome DescribeReservedNodeOfferings(const Model::DescribeReservedNodeOfferingsRequest& request) const;
 
@@ -1953,7 +2224,10 @@ namespace Model
          * Redshift cluster. </p> <p> For more information about reserved node offerings,
          * go to <a
          * href="http://docs.aws.amazon.com/redshift/latest/mgmt/purchase-reserved-node-instance.html">Purchasing
-         * Reserved Nodes</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
+         * Reserved Nodes</a> in the <i>Amazon Redshift Cluster Management
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeReservedNodeOfferings">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1969,26 +2243,35 @@ namespace Model
          * Redshift cluster. </p> <p> For more information about reserved node offerings,
          * go to <a
          * href="http://docs.aws.amazon.com/redshift/latest/mgmt/purchase-reserved-node-instance.html">Purchasing
-         * Reserved Nodes</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
+         * Reserved Nodes</a> in the <i>Amazon Redshift Cluster Management
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeReservedNodeOfferings">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeReservedNodeOfferingsAsync(const Model::DescribeReservedNodeOfferingsRequest& request, const DescribeReservedNodeOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns the descriptions of the reserved nodes.</p>
+         * <p>Returns the descriptions of the reserved nodes.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeReservedNodes">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeReservedNodesOutcome DescribeReservedNodes(const Model::DescribeReservedNodesRequest& request) const;
 
         /**
-         * <p>Returns the descriptions of the reserved nodes.</p>
+         * <p>Returns the descriptions of the reserved nodes.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeReservedNodes">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeReservedNodesOutcomeCallable DescribeReservedNodesCallable(const Model::DescribeReservedNodesRequest& request) const;
 
         /**
-         * <p>Returns the descriptions of the reserved nodes.</p>
+         * <p>Returns the descriptions of the reserved nodes.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeReservedNodes">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2001,7 +2284,9 @@ namespace Model
          * initiated and completed, the status of the resize remains as
          * <code>SUCCEEDED</code> until the next resize. </p> <p>A resize operation can be
          * requested using <a>ModifyCluster</a> and specifying a different number or type
-         * of nodes for the cluster. </p>
+         * of nodes for the cluster. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeResize">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeResizeOutcome DescribeResize(const Model::DescribeResizeRequest& request) const;
 
@@ -2012,7 +2297,9 @@ namespace Model
          * initiated and completed, the status of the resize remains as
          * <code>SUCCEEDED</code> until the next resize. </p> <p>A resize operation can be
          * requested using <a>ModifyCluster</a> and specifying a different number or type
-         * of nodes for the cluster. </p>
+         * of nodes for the cluster. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeResize">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2025,7 +2312,9 @@ namespace Model
          * initiated and completed, the status of the resize remains as
          * <code>SUCCEEDED</code> until the next resize. </p> <p>A resize operation can be
          * requested using <a>ModifyCluster</a> and specifying a different number or type
-         * of nodes for the cluster. </p>
+         * of nodes for the cluster. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeResize">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2037,7 +2326,9 @@ namespace Model
          * grants, go to <a
          * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html">Amazon
          * Redshift Database Encryption</a> in the <i>Amazon Redshift Cluster Management
-         * Guide</i>. </p>
+         * Guide</i>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeSnapshotCopyGrants">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeSnapshotCopyGrantsOutcome DescribeSnapshotCopyGrants(const Model::DescribeSnapshotCopyGrantsRequest& request) const;
 
@@ -2047,7 +2338,9 @@ namespace Model
          * grants, go to <a
          * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html">Amazon
          * Redshift Database Encryption</a> in the <i>Amazon Redshift Cluster Management
-         * Guide</i>. </p>
+         * Guide</i>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeSnapshotCopyGrants">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2059,7 +2352,9 @@ namespace Model
          * grants, go to <a
          * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html">Amazon
          * Redshift Database Encryption</a> in the <i>Amazon Redshift Cluster Management
-         * Guide</i>. </p>
+         * Guide</i>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeSnapshotCopyGrants">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2072,7 +2367,10 @@ namespace Model
          * <code>DescribeTableRestoreStatus</code> returns the status of all table restore
          * requests ordered by the date and time of the request in ascending order.
          * Otherwise <code>DescribeTableRestoreStatus</code> returns the status of the
-         * table specified by <code>TableRestoreRequestId</code>.</p>
+         * table specified by <code>TableRestoreRequestId</code>.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeTableRestoreStatus">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeTableRestoreStatusOutcome DescribeTableRestoreStatus(const Model::DescribeTableRestoreStatusRequest& request) const;
 
@@ -2083,7 +2381,10 @@ namespace Model
          * <code>DescribeTableRestoreStatus</code> returns the status of all table restore
          * requests ordered by the date and time of the request in ascending order.
          * Otherwise <code>DescribeTableRestoreStatus</code> returns the status of the
-         * table specified by <code>TableRestoreRequestId</code>.</p>
+         * table specified by <code>TableRestoreRequestId</code>.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeTableRestoreStatus">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2096,7 +2397,10 @@ namespace Model
          * <code>DescribeTableRestoreStatus</code> returns the status of all table restore
          * requests ordered by the date and time of the request in ascending order.
          * Otherwise <code>DescribeTableRestoreStatus</code> returns the status of the
-         * table specified by <code>TableRestoreRequestId</code>.</p>
+         * table specified by <code>TableRestoreRequestId</code>.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeTableRestoreStatus">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2117,7 +2421,10 @@ namespace Model
          * for tag keys, and <code>admin</code> and <code>test</code> for tag values, all
          * resources that have any combination of those values are returned.</p> <p>If both
          * tag keys and values are omitted from the request, resources are returned
-         * regardless of whether they have tag keys or values associated with them.</p>
+         * regardless of whether they have tag keys or values associated with
+         * them.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeTags">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeTagsOutcome DescribeTags(const Model::DescribeTagsRequest& request) const;
 
@@ -2136,7 +2443,10 @@ namespace Model
          * for tag keys, and <code>admin</code> and <code>test</code> for tag values, all
          * resources that have any combination of those values are returned.</p> <p>If both
          * tag keys and values are omitted from the request, resources are returned
-         * regardless of whether they have tag keys or values associated with them.</p>
+         * regardless of whether they have tag keys or values associated with
+         * them.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeTags">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2157,7 +2467,10 @@ namespace Model
          * for tag keys, and <code>admin</code> and <code>test</code> for tag values, all
          * resources that have any combination of those values are returned.</p> <p>If both
          * tag keys and values are omitted from the request, resources are returned
-         * regardless of whether they have tag keys or values associated with them.</p>
+         * regardless of whether they have tag keys or values associated with
+         * them.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeTags">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2165,13 +2478,17 @@ namespace Model
 
         /**
          * <p>Stops logging information, such as queries and connection attempts, for the
-         * specified Amazon Redshift cluster.</p>
+         * specified Amazon Redshift cluster.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DisableLogging">AWS
+         * API Reference</a></p>
          */
         virtual Model::DisableLoggingOutcome DisableLogging(const Model::DisableLoggingRequest& request) const;
 
         /**
          * <p>Stops logging information, such as queries and connection attempts, for the
-         * specified Amazon Redshift cluster.</p>
+         * specified Amazon Redshift cluster.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DisableLogging">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2179,7 +2496,9 @@ namespace Model
 
         /**
          * <p>Stops logging information, such as queries and connection attempts, for the
-         * specified Amazon Redshift cluster.</p>
+         * specified Amazon Redshift cluster.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DisableLogging">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2190,7 +2509,9 @@ namespace Model
          * for a specified cluster.</p> <p>If your cluster and its snapshots are encrypted
          * using a customer master key (CMK) from AWS KMS, use
          * <a>DeleteSnapshotCopyGrant</a> to delete the grant that grants Amazon Redshift
-         * permission to the CMK in the destination region. </p>
+         * permission to the CMK in the destination region. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DisableSnapshotCopy">AWS
+         * API Reference</a></p>
          */
         virtual Model::DisableSnapshotCopyOutcome DisableSnapshotCopy(const Model::DisableSnapshotCopyRequest& request) const;
 
@@ -2199,7 +2520,9 @@ namespace Model
          * for a specified cluster.</p> <p>If your cluster and its snapshots are encrypted
          * using a customer master key (CMK) from AWS KMS, use
          * <a>DeleteSnapshotCopyGrant</a> to delete the grant that grants Amazon Redshift
-         * permission to the CMK in the destination region. </p>
+         * permission to the CMK in the destination region. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DisableSnapshotCopy">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2210,7 +2533,9 @@ namespace Model
          * for a specified cluster.</p> <p>If your cluster and its snapshots are encrypted
          * using a customer master key (CMK) from AWS KMS, use
          * <a>DeleteSnapshotCopyGrant</a> to delete the grant that grants Amazon Redshift
-         * permission to the CMK in the destination region. </p>
+         * permission to the CMK in the destination region. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DisableSnapshotCopy">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2218,13 +2543,17 @@ namespace Model
 
         /**
          * <p>Starts logging information, such as queries and connection attempts, for the
-         * specified Amazon Redshift cluster.</p>
+         * specified Amazon Redshift cluster.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/EnableLogging">AWS
+         * API Reference</a></p>
          */
         virtual Model::EnableLoggingOutcome EnableLogging(const Model::EnableLoggingRequest& request) const;
 
         /**
          * <p>Starts logging information, such as queries and connection attempts, for the
-         * specified Amazon Redshift cluster.</p>
+         * specified Amazon Redshift cluster.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/EnableLogging">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2232,7 +2561,9 @@ namespace Model
 
         /**
          * <p>Starts logging information, such as queries and connection attempts, for the
-         * specified Amazon Redshift cluster.</p>
+         * specified Amazon Redshift cluster.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/EnableLogging">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2240,13 +2571,17 @@ namespace Model
 
         /**
          * <p>Enables the automatic copy of snapshots from one region to another region for
-         * a specified cluster.</p>
+         * a specified cluster.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/EnableSnapshotCopy">AWS
+         * API Reference</a></p>
          */
         virtual Model::EnableSnapshotCopyOutcome EnableSnapshotCopy(const Model::EnableSnapshotCopyRequest& request) const;
 
         /**
          * <p>Enables the automatic copy of snapshots from one region to another region for
-         * a specified cluster.</p>
+         * a specified cluster.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/EnableSnapshotCopy">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2254,7 +2589,9 @@ namespace Model
 
         /**
          * <p>Enables the automatic copy of snapshots from one region to another region for
-         * a specified cluster.</p>
+         * a specified cluster.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/EnableSnapshotCopy">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2272,7 +2609,9 @@ namespace Model
          * Guide</i>.</p> <p>You can also change node type and the number of nodes to scale
          * up or down the cluster. When resizing a cluster, you must specify both the
          * number of nodes and the node type even if one of the parameters does not
-         * change.</p>
+         * change.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyCluster">AWS
+         * API Reference</a></p>
          */
         virtual Model::ModifyClusterOutcome ModifyCluster(const Model::ModifyClusterRequest& request) const;
 
@@ -2288,7 +2627,9 @@ namespace Model
          * Guide</i>.</p> <p>You can also change node type and the number of nodes to scale
          * up or down the cluster. When resizing a cluster, you must specify both the
          * number of nodes and the node type even if one of the parameters does not
-         * change.</p>
+         * change.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyCluster">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2306,7 +2647,9 @@ namespace Model
          * Guide</i>.</p> <p>You can also change node type and the number of nodes to scale
          * up or down the cluster. When resizing a cluster, you must specify both the
          * number of nodes and the node type even if one of the parameters does not
-         * change.</p>
+         * change.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyCluster">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2315,14 +2658,18 @@ namespace Model
         /**
          * <p>Modifies the list of AWS Identity and Access Management (IAM) roles that can
          * be used by the cluster to access other AWS services.</p> <p>A cluster can have
-         * up to 10 IAM roles associated at any time.</p>
+         * up to 10 IAM roles associated at any time.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyClusterIamRoles">AWS
+         * API Reference</a></p>
          */
         virtual Model::ModifyClusterIamRolesOutcome ModifyClusterIamRoles(const Model::ModifyClusterIamRolesRequest& request) const;
 
         /**
          * <p>Modifies the list of AWS Identity and Access Management (IAM) roles that can
          * be used by the cluster to access other AWS services.</p> <p>A cluster can have
-         * up to 10 IAM roles associated at any time.</p>
+         * up to 10 IAM roles associated at any time.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyClusterIamRoles">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2331,7 +2678,9 @@ namespace Model
         /**
          * <p>Modifies the list of AWS Identity and Access Management (IAM) roles that can
          * be used by the cluster to access other AWS services.</p> <p>A cluster can have
-         * up to 10 IAM roles associated at any time.</p>
+         * up to 10 IAM roles associated at any time.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyClusterIamRoles">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2342,7 +2691,9 @@ namespace Model
          * about parameters and parameter groups, go to <a
          * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
          * Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management
-         * Guide</i>.</p>
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyClusterParameterGroup">AWS
+         * API Reference</a></p>
          */
         virtual Model::ModifyClusterParameterGroupOutcome ModifyClusterParameterGroup(const Model::ModifyClusterParameterGroupRequest& request) const;
 
@@ -2351,7 +2702,9 @@ namespace Model
          * about parameters and parameter groups, go to <a
          * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
          * Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management
-         * Guide</i>.</p>
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyClusterParameterGroup">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2362,7 +2715,9 @@ namespace Model
          * about parameters and parameter groups, go to <a
          * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
          * Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management
-         * Guide</i>.</p>
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyClusterParameterGroup">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2371,14 +2726,18 @@ namespace Model
         /**
          * <p>Modifies a cluster subnet group to include the specified list of VPC subnets.
          * The operation replaces the existing list of subnets with the new list of
-         * subnets.</p>
+         * subnets.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyClusterSubnetGroup">AWS
+         * API Reference</a></p>
          */
         virtual Model::ModifyClusterSubnetGroupOutcome ModifyClusterSubnetGroup(const Model::ModifyClusterSubnetGroupRequest& request) const;
 
         /**
          * <p>Modifies a cluster subnet group to include the specified list of VPC subnets.
          * The operation replaces the existing list of subnets with the new list of
-         * subnets.</p>
+         * subnets.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyClusterSubnetGroup">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2387,26 +2746,37 @@ namespace Model
         /**
          * <p>Modifies a cluster subnet group to include the specified list of VPC subnets.
          * The operation replaces the existing list of subnets with the new list of
-         * subnets.</p>
+         * subnets.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyClusterSubnetGroup">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ModifyClusterSubnetGroupAsync(const Model::ModifyClusterSubnetGroupRequest& request, const ModifyClusterSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Modifies an existing Amazon Redshift event notification subscription.</p>
+         * <p>Modifies an existing Amazon Redshift event notification
+         * subscription.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyEventSubscription">AWS
+         * API Reference</a></p>
          */
         virtual Model::ModifyEventSubscriptionOutcome ModifyEventSubscription(const Model::ModifyEventSubscriptionRequest& request) const;
 
         /**
-         * <p>Modifies an existing Amazon Redshift event notification subscription.</p>
+         * <p>Modifies an existing Amazon Redshift event notification
+         * subscription.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyEventSubscription">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ModifyEventSubscriptionOutcomeCallable ModifyEventSubscriptionCallable(const Model::ModifyEventSubscriptionRequest& request) const;
 
         /**
-         * <p>Modifies an existing Amazon Redshift event notification subscription.</p>
+         * <p>Modifies an existing Amazon Redshift event notification
+         * subscription.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyEventSubscription">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2414,13 +2784,19 @@ namespace Model
 
         /**
          * <p>Modifies the number of days to retain automated snapshots in the destination
-         * region after they are copied from the source region.</p>
+         * region after they are copied from the source region.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifySnapshotCopyRetentionPeriod">AWS
+         * API Reference</a></p>
          */
         virtual Model::ModifySnapshotCopyRetentionPeriodOutcome ModifySnapshotCopyRetentionPeriod(const Model::ModifySnapshotCopyRetentionPeriodRequest& request) const;
 
         /**
          * <p>Modifies the number of days to retain automated snapshots in the destination
-         * region after they are copied from the source region.</p>
+         * region after they are copied from the source region.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifySnapshotCopyRetentionPeriod">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2428,7 +2804,10 @@ namespace Model
 
         /**
          * <p>Modifies the number of days to retain automated snapshots in the destination
-         * region after they are copied from the source region.</p>
+         * region after they are copied from the source region.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifySnapshotCopyRetentionPeriod">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2442,7 +2821,10 @@ namespace Model
          * reserved node offering and the number of nodes you want to reserve. </p> <p> For
          * more information about reserved node offerings, go to <a
          * href="http://docs.aws.amazon.com/redshift/latest/mgmt/purchase-reserved-node-instance.html">Purchasing
-         * Reserved Nodes</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
+         * Reserved Nodes</a> in the <i>Amazon Redshift Cluster Management
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/PurchaseReservedNodeOffering">AWS
+         * API Reference</a></p>
          */
         virtual Model::PurchaseReservedNodeOfferingOutcome PurchaseReservedNodeOffering(const Model::PurchaseReservedNodeOfferingRequest& request) const;
 
@@ -2454,7 +2836,10 @@ namespace Model
          * reserved node offering and the number of nodes you want to reserve. </p> <p> For
          * more information about reserved node offerings, go to <a
          * href="http://docs.aws.amazon.com/redshift/latest/mgmt/purchase-reserved-node-instance.html">Purchasing
-         * Reserved Nodes</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
+         * Reserved Nodes</a> in the <i>Amazon Redshift Cluster Management
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/PurchaseReservedNodeOffering">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2468,7 +2853,10 @@ namespace Model
          * reserved node offering and the number of nodes you want to reserve. </p> <p> For
          * more information about reserved node offerings, go to <a
          * href="http://docs.aws.amazon.com/redshift/latest/mgmt/purchase-reserved-node-instance.html">Purchasing
-         * Reserved Nodes</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
+         * Reserved Nodes</a> in the <i>Amazon Redshift Cluster Management
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/PurchaseReservedNodeOffering">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2482,7 +2870,9 @@ namespace Model
          * reboot. For more information about managing clusters, go to <a
          * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
          * Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
-         * </p>
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RebootCluster">AWS
+         * API Reference</a></p>
          */
         virtual Model::RebootClusterOutcome RebootCluster(const Model::RebootClusterRequest& request) const;
 
@@ -2494,7 +2884,9 @@ namespace Model
          * reboot. For more information about managing clusters, go to <a
          * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
          * Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
-         * </p>
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RebootCluster">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2508,7 +2900,9 @@ namespace Model
          * reboot. For more information about managing clusters, go to <a
          * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
          * Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
-         * </p>
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RebootCluster">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2519,7 +2913,9 @@ namespace Model
          * values and sets the source values of the parameters to "engine-default". To
          * reset the entire parameter group specify the <i>ResetAllParameters</i>
          * parameter. For parameter changes to take effect you must reboot any associated
-         * clusters. </p>
+         * clusters. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ResetClusterParameterGroup">AWS
+         * API Reference</a></p>
          */
         virtual Model::ResetClusterParameterGroupOutcome ResetClusterParameterGroup(const Model::ResetClusterParameterGroupRequest& request) const;
 
@@ -2528,7 +2924,9 @@ namespace Model
          * values and sets the source values of the parameters to "engine-default". To
          * reset the entire parameter group specify the <i>ResetAllParameters</i>
          * parameter. For parameter changes to take effect you must reboot any associated
-         * clusters. </p>
+         * clusters. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ResetClusterParameterGroup">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2539,7 +2937,9 @@ namespace Model
          * values and sets the source values of the parameters to "engine-default". To
          * reset the entire parameter group specify the <i>ResetAllParameters</i>
          * parameter. For parameter changes to take effect you must reboot any associated
-         * clusters. </p>
+         * clusters. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ResetClusterParameterGroup">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2558,7 +2958,9 @@ namespace Model
          * For more information about working with snapshots, go to <a
          * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon
          * Redshift Snapshots</a> in the <i>Amazon Redshift Cluster Management
-         * Guide</i>.</p>
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RestoreFromClusterSnapshot">AWS
+         * API Reference</a></p>
          */
         virtual Model::RestoreFromClusterSnapshotOutcome RestoreFromClusterSnapshot(const Model::RestoreFromClusterSnapshotRequest& request) const;
 
@@ -2575,7 +2977,9 @@ namespace Model
          * For more information about working with snapshots, go to <a
          * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon
          * Redshift Snapshots</a> in the <i>Amazon Redshift Cluster Management
-         * Guide</i>.</p>
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RestoreFromClusterSnapshot">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2594,7 +2998,9 @@ namespace Model
          * For more information about working with snapshots, go to <a
          * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon
          * Redshift Snapshots</a> in the <i>Amazon Redshift Cluster Management
-         * Guide</i>.</p>
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RestoreFromClusterSnapshot">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2612,7 +3018,10 @@ namespace Model
          * When you have renamed your original table, then you can pass the original name
          * of the table as the <code>NewTableName</code> parameter value in the call to
          * <code>RestoreTableFromClusterSnapshot</code>. This way, you can replace the
-         * original table with the table created from the snapshot.</p>
+         * original table with the table created from the snapshot.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RestoreTableFromClusterSnapshot">AWS
+         * API Reference</a></p>
          */
         virtual Model::RestoreTableFromClusterSnapshotOutcome RestoreTableFromClusterSnapshot(const Model::RestoreTableFromClusterSnapshotRequest& request) const;
 
@@ -2628,7 +3037,10 @@ namespace Model
          * When you have renamed your original table, then you can pass the original name
          * of the table as the <code>NewTableName</code> parameter value in the call to
          * <code>RestoreTableFromClusterSnapshot</code>. This way, you can replace the
-         * original table with the table created from the snapshot.</p>
+         * original table with the table created from the snapshot.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RestoreTableFromClusterSnapshot">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2646,7 +3058,10 @@ namespace Model
          * When you have renamed your original table, then you can pass the original name
          * of the table as the <code>NewTableName</code> parameter value in the call to
          * <code>RestoreTableFromClusterSnapshot</code>. This way, you can replace the
-         * original table with the table created from the snapshot.</p>
+         * original table with the table created from the snapshot.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RestoreTableFromClusterSnapshot">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2659,7 +3074,9 @@ namespace Model
          * security groups, go to <a
          * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html">Amazon
          * Redshift Cluster Security Groups</a> in the <i>Amazon Redshift Cluster
-         * Management Guide</i>. </p>
+         * Management Guide</i>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RevokeClusterSecurityGroupIngress">AWS
+         * API Reference</a></p>
          */
         virtual Model::RevokeClusterSecurityGroupIngressOutcome RevokeClusterSecurityGroupIngress(const Model::RevokeClusterSecurityGroupIngressRequest& request) const;
 
@@ -2670,7 +3087,9 @@ namespace Model
          * security groups, go to <a
          * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html">Amazon
          * Redshift Cluster Security Groups</a> in the <i>Amazon Redshift Cluster
-         * Management Guide</i>. </p>
+         * Management Guide</i>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RevokeClusterSecurityGroupIngress">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2683,7 +3102,9 @@ namespace Model
          * security groups, go to <a
          * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html">Amazon
          * Redshift Cluster Security Groups</a> in the <i>Amazon Redshift Cluster
-         * Management Guide</i>. </p>
+         * Management Guide</i>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RevokeClusterSecurityGroupIngress">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2696,7 +3117,9 @@ namespace Model
          * snapshots, go to <a
          * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon
          * Redshift Snapshots</a> in the <i>Amazon Redshift Cluster Management
-         * Guide</i>.</p>
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RevokeSnapshotAccess">AWS
+         * API Reference</a></p>
          */
         virtual Model::RevokeSnapshotAccessOutcome RevokeSnapshotAccess(const Model::RevokeSnapshotAccessRequest& request) const;
 
@@ -2707,7 +3130,9 @@ namespace Model
          * snapshots, go to <a
          * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon
          * Redshift Snapshots</a> in the <i>Amazon Redshift Cluster Management
-         * Guide</i>.</p>
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RevokeSnapshotAccess">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2720,26 +3145,34 @@ namespace Model
          * snapshots, go to <a
          * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon
          * Redshift Snapshots</a> in the <i>Amazon Redshift Cluster Management
-         * Guide</i>.</p>
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RevokeSnapshotAccess">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void RevokeSnapshotAccessAsync(const Model::RevokeSnapshotAccessRequest& request, const RevokeSnapshotAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Rotates the encryption keys for a cluster.</p>
+         * <p>Rotates the encryption keys for a cluster.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RotateEncryptionKey">AWS
+         * API Reference</a></p>
          */
         virtual Model::RotateEncryptionKeyOutcome RotateEncryptionKey(const Model::RotateEncryptionKeyRequest& request) const;
 
         /**
-         * <p>Rotates the encryption keys for a cluster.</p>
+         * <p>Rotates the encryption keys for a cluster.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RotateEncryptionKey">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::RotateEncryptionKeyOutcomeCallable RotateEncryptionKeyCallable(const Model::RotateEncryptionKeyRequest& request) const;
 
         /**
-         * <p>Rotates the encryption keys for a cluster.</p>
+         * <p>Rotates the encryption keys for a cluster.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RotateEncryptionKey">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */

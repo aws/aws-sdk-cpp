@@ -29,7 +29,9 @@ namespace Model
    * <p>A complex type that contains information about the request to authorize
    * associating a VPC with your private hosted zone. Authorization is only required
    * when a private hosted zone and a VPC were created by using different
-   * accounts.</p>
+   * accounts.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateVPCAssociationAuthorizationRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_ROUTE53_API CreateVPCAssociationAuthorizationRequest : public Route53Request
   {

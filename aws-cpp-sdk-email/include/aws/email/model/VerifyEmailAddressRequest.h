@@ -28,7 +28,9 @@ namespace Model
    * <p>Represents a request to begin email address verification with Amazon SES. For
    * information about email address verification, see the <a
    * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses.html">Amazon
-   * SES Developer Guide</a>.</p>
+   * SES Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/VerifyEmailAddressRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_SES_API VerifyEmailAddressRequest : public SESRequest
   {

@@ -42,7 +42,9 @@ namespace Model
    * hosted zone is unsupported.</p> </li> <li> <p>For information about creating
    * failover resource record sets in a private hosted zone, see <a
    * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">Configuring
-   * Failover in a Private Hosted Zone</a>.</p> </li> </ul>
+   * Failover in a Private Hosted Zone</a>.</p> </li> </ul><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/AliasTarget">AWS
+   * API Reference</a></p>
    */
   class AWS_ROUTE53_API AliasTarget
   {
