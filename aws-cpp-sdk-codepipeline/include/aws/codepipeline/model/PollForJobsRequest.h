@@ -27,7 +27,9 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input of a poll for jobs action.</p>
+   * <p>Represents the input of a poll for jobs action.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PollForJobsInput">AWS
+   * API Reference</a></p>
    */
   class AWS_CODEPIPELINE_API PollForJobsRequest : public CodePipelineRequest
   {

@@ -34,7 +34,10 @@ namespace Model
 {
 
   /**
-   * <p>Information about the build project's build output artifacts.</p>
+   * <p>Information about the build project's build output artifacts.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ProjectArtifacts">AWS
+   * API Reference</a></p>
    */
   class AWS_CODEBUILD_API ProjectArtifacts
   {

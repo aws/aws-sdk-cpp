@@ -35,7 +35,10 @@ namespace Model
 {
 
   /**
-   * <p>Describes the configuration of a destination in Amazon Redshift.</p>
+   * <p>Describes the configuration of a destination in Amazon
+   * Redshift.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/RedshiftDestinationConfiguration">AWS
+   * API Reference</a></p>
    */
   class AWS_FIREHOSE_API RedshiftDestinationConfiguration
   {

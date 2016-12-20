@@ -35,7 +35,9 @@ namespace SQS
 namespace Model
 {
   /**
-   * <p>A list of your queues.</p>
+   * <p>A list of your queues.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ListQueuesResult">AWS
+   * API Reference</a></p>
    */
   class AWS_SQS_API ListQueuesResult
   {
@@ -45,42 +47,42 @@ namespace Model
     ListQueuesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
     /**
-     * <p>A list of queue URLs, up to 1000 entries.</p>
+     * <p>A list of queue URLs, up to 1,000 entries.</p>
      */
     inline const Aws::Vector<Aws::String>& GetQueueUrls() const{ return m_queueUrls; }
 
     /**
-     * <p>A list of queue URLs, up to 1000 entries.</p>
+     * <p>A list of queue URLs, up to 1,000 entries.</p>
      */
     inline void SetQueueUrls(const Aws::Vector<Aws::String>& value) { m_queueUrls = value; }
 
     /**
-     * <p>A list of queue URLs, up to 1000 entries.</p>
+     * <p>A list of queue URLs, up to 1,000 entries.</p>
      */
     inline void SetQueueUrls(Aws::Vector<Aws::String>&& value) { m_queueUrls = value; }
 
     /**
-     * <p>A list of queue URLs, up to 1000 entries.</p>
+     * <p>A list of queue URLs, up to 1,000 entries.</p>
      */
     inline ListQueuesResult& WithQueueUrls(const Aws::Vector<Aws::String>& value) { SetQueueUrls(value); return *this;}
 
     /**
-     * <p>A list of queue URLs, up to 1000 entries.</p>
+     * <p>A list of queue URLs, up to 1,000 entries.</p>
      */
     inline ListQueuesResult& WithQueueUrls(Aws::Vector<Aws::String>&& value) { SetQueueUrls(value); return *this;}
 
     /**
-     * <p>A list of queue URLs, up to 1000 entries.</p>
+     * <p>A list of queue URLs, up to 1,000 entries.</p>
      */
     inline ListQueuesResult& AddQueueUrls(const Aws::String& value) { m_queueUrls.push_back(value); return *this; }
 
     /**
-     * <p>A list of queue URLs, up to 1000 entries.</p>
+     * <p>A list of queue URLs, up to 1,000 entries.</p>
      */
     inline ListQueuesResult& AddQueueUrls(Aws::String&& value) { m_queueUrls.push_back(value); return *this; }
 
     /**
-     * <p>A list of queue URLs, up to 1000 entries.</p>
+     * <p>A list of queue URLs, up to 1,000 entries.</p>
      */
     inline ListQueuesResult& AddQueueUrls(const char* value) { m_queueUrls.push_back(value); return *this; }
 

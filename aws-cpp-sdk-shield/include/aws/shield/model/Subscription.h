@@ -31,7 +31,10 @@ namespace Model
 {
 
   /**
-   * <p>Information about the AWS Shield Advanced subscription for an account.</p>
+   * <p>Information about the AWS Shield Advanced subscription for an
+   * account.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/Subscription">AWS
+   * API Reference</a></p>
    */
   class AWS_SHIELD_API Subscription
   {

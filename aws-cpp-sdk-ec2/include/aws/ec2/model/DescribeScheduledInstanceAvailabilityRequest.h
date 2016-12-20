@@ -29,7 +29,10 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for DescribeScheduledInstanceAvailability.</p>
+   * <p>Contains the parameters for
+   * DescribeScheduledInstanceAvailability.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeScheduledInstanceAvailabilityRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API DescribeScheduledInstanceAvailabilityRequest : public EC2Request
   {

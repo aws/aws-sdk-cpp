@@ -31,7 +31,10 @@ namespace Model
 {
 
   /**
-   * <p>The attributes applicable to a container instance when it is registered.</p>
+   * <p>The attributes applicable to a container instance when it is
+   * registered.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/Attribute">AWS API
+   * Reference</a></p>
    */
   class AWS_ECS_API Attribute
   {

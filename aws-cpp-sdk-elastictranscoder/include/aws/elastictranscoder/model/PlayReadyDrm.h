@@ -35,7 +35,9 @@ namespace Model
    * to the output files associated with this playlist.</p> <p>PlayReady DRM encrypts
    * your media files using <code>AES-CTR</code> encryption.</p> <p>If you use DRM
    * for an <code>HLSv3</code> playlist, your outputs must have a master
-   * playlist.</p>
+   * playlist.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/PlayReadyDrm">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICTRANSCODER_API PlayReadyDrm
   {

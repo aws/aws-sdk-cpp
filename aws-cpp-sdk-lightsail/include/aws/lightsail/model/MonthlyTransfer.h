@@ -31,7 +31,9 @@ namespace Model
 
   /**
    * <p>Describes the monthly data transfer in and out of your virtual private server
-   * (or <i>instance</i>).</p>
+   * (or <i>instance</i>).</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/MonthlyTransfer">AWS
+   * API Reference</a></p>
    */
   class AWS_LIGHTSAIL_API MonthlyTransfer
   {

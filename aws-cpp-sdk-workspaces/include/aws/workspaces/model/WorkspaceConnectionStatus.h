@@ -33,7 +33,9 @@ namespace Model
 {
 
   /**
-   * <p>Describes the connection status of a WorkSpace.</p>
+   * <p>Describes the connection status of a WorkSpace.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/WorkspaceConnectionStatus">AWS
+   * API Reference</a></p>
    */
   class AWS_WORKSPACES_API WorkspaceConnectionStatus
   {

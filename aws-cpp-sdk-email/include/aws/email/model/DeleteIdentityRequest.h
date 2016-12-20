@@ -26,7 +26,9 @@ namespace Model
 
   /**
    * <p>Represents a request to delete one of your Amazon SES identities (an email
-   * address or domain).</p>
+   * address or domain).</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteIdentityRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_SES_API DeleteIdentityRequest : public SESRequest
   {

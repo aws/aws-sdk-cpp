@@ -32,7 +32,10 @@ namespace Model
 {
 
   /**
-   * <p>Contains information about an instance that is part of a DB cluster.</p>
+   * <p>Contains information about an instance that is part of a DB
+   * cluster.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DBClusterMember">AWS
+   * API Reference</a></p>
    */
   class AWS_RDS_API DBClusterMember
   {

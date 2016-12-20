@@ -33,7 +33,9 @@ namespace Model
 {
 
   /**
-   * An update operation for a record.
+   * An update operation for a record.<p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/RecordPatch">AWS
+   * API Reference</a></p>
    */
   class AWS_COGNITOSYNC_API RecordPatch
   {

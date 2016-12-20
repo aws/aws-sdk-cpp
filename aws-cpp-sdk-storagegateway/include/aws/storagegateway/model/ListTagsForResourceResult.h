@@ -35,7 +35,9 @@ namespace StorageGateway
 namespace Model
 {
   /**
-   * <p>ListTagsForResourceOutput</p>
+   * <p>ListTagsForResourceOutput</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListTagsForResourceOutput">AWS
+   * API Reference</a></p>
    */
   class AWS_STORAGEGATEWAY_API ListTagsForResourceResult
   {

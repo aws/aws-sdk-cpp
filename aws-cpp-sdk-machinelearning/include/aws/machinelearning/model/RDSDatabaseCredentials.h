@@ -31,7 +31,10 @@ namespace Model
 {
 
   /**
-   * <p>The database credentials to connect to a database on an RDS DB instance.</p>
+   * <p>The database credentials to connect to a database on an RDS DB
+   * instance.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/RDSDatabaseCredentials">AWS
+   * API Reference</a></p>
    */
   class AWS_MACHINELEARNING_API RDSDatabaseCredentials
   {

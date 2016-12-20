@@ -33,7 +33,9 @@ namespace Model
 
   /**
    * <p>Represents a virtual tape that is archived in the virtual tape shelf
-   * (VTS).</p>
+   * (VTS).</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/TapeArchive">AWS
+   * API Reference</a></p>
    */
   class AWS_STORAGEGATEWAY_API TapeArchive
   {

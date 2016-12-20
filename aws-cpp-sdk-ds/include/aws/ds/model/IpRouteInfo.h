@@ -33,7 +33,9 @@ namespace Model
 {
 
   /**
-   * <p>Information about one or more IP address blocks.</p>
+   * <p>Information about one or more IP address blocks.</p><p><h3>See Also:</h3>  
+   * <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/IpRouteInfo">AWS
+   * API Reference</a></p>
    */
   class AWS_DIRECTORYSERVICE_API IpRouteInfo
   {

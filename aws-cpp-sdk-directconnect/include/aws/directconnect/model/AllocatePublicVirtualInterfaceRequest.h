@@ -27,7 +27,9 @@ namespace Model
 
   /**
    * <p>Container for the parameters to the AllocatePublicVirtualInterface
-   * operation.</p>
+   * operation.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AllocatePublicVirtualInterfaceRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_DIRECTCONNECT_API AllocatePublicVirtualInterfaceRequest : public DirectConnectRequest
   {

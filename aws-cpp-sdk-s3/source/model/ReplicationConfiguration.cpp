@@ -76,7 +76,7 @@ void ReplicationConfiguration::AddToNode(XmlNode& parentNode) const
   Aws::StringStream ss;
   if(m_roleHasBeenSet)
   {
-   XmlNode roleNode = parentNode.CreateChildElement("Rule");
+   XmlNode roleNode = parentNode.CreateChildElement("Role");
    roleNode.SetText(m_role);
   }
 

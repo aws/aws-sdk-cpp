@@ -35,7 +35,9 @@ namespace Model
    * faces in the target. This contains a bounding box for the selected face and
    * confidence level that the bounding box contains a face. Note that Amazon
    * Rekognition selects the largest face in the source image for this comparison.
-   * </p>
+   * </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ComparedSourceImageFace">AWS
+   * API Reference</a></p>
    */
   class AWS_REKOGNITION_API ComparedSourceImageFace
   {

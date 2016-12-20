@@ -39,7 +39,9 @@ namespace Model
    * well as resource-based authorization.</p> <note><p>For gateways activated prior
    * to September 02, 2015 the gateway ARN contains the gateway name rather than the
    * gateway id. Changing the name of the gateway has no effect on the gateway
-   * ARN.</p> </note>
+   * ARN.</p> </note><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ActivateGatewayOutput">AWS
+   * API Reference</a></p>
    */
   class AWS_STORAGEGATEWAY_API ActivateGatewayResult
   {

@@ -34,7 +34,9 @@ namespace Model
 
   /**
    * <p>The parameters for gaining temporary access to one of your Amazon Lightsail
-   * instances.</p>
+   * instances.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/InstanceAccessDetails">AWS
+   * API Reference</a></p>
    */
   class AWS_LIGHTSAIL_API InstanceAccessDetails
   {

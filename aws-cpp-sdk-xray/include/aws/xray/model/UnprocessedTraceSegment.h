@@ -31,7 +31,10 @@ namespace Model
 {
 
   /**
-   * <p>Information about a segment that failed processing.</p>
+   * <p>Information about a segment that failed processing.</p><p><h3>See Also:</h3> 
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/UnprocessedTraceSegment">AWS
+   * API Reference</a></p>
    */
   class AWS_XRAY_API UnprocessedTraceSegment
   {

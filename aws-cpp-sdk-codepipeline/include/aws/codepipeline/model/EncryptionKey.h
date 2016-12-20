@@ -33,7 +33,10 @@ namespace Model
 
   /**
    * <p>Represents information about the key used to encrypt data in the artifact
-   * store, such as an AWS Key Management Service (AWS KMS) key.</p>
+   * store, such as an AWS Key Management Service (AWS KMS) key.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/EncryptionKey">AWS
+   * API Reference</a></p>
    */
   class AWS_CODEPIPELINE_API EncryptionKey
   {

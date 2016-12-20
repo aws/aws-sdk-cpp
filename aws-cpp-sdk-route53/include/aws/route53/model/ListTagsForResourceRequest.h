@@ -27,7 +27,9 @@ namespace Model
 
   /**
    * <p>A complex type containing information about a request for a list of the tags
-   * that are associated with an individual resource.</p>
+   * that are associated with an individual resource.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTagsForResourceRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_ROUTE53_API ListTagsForResourceRequest : public Route53Request
   {

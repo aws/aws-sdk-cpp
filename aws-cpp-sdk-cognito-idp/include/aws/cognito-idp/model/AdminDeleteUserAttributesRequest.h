@@ -26,7 +26,10 @@ namespace Model
 {
 
   /**
-   * <p>Represents the request to delete user attributes as an administrator.</p>
+   * <p>Represents the request to delete user attributes as an
+   * administrator.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminDeleteUserAttributesRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_COGNITOIDENTITYPROVIDER_API AdminDeleteUserAttributesRequest : public CognitoIdentityProviderRequest
   {

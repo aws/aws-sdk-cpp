@@ -29,7 +29,9 @@ namespace Model
 
   /**
    * <p>Represents a request to send a bounce message to the sender of an email you
-   * received through Amazon SES.</p>
+   * received through Amazon SES.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SendBounceRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_SES_API SendBounceRequest : public SESRequest
   {

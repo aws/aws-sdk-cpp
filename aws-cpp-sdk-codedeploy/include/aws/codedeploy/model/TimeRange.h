@@ -31,7 +31,9 @@ namespace Model
 {
 
   /**
-   * <p>Information about a time range.</p>
+   * <p>Information about a time range.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/TimeRange">AWS
+   * API Reference</a></p>
    */
   class AWS_CODEDEPLOY_API TimeRange
   {

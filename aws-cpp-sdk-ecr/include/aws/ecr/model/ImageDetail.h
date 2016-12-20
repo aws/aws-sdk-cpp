@@ -34,7 +34,9 @@ namespace Model
 
   /**
    * <p>An object that describes an image returned by a <a>DescribeImages</a>
-   * operation.</p>
+   * operation.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/ImageDetail">AWS API
+   * Reference</a></p>
    */
   class AWS_ECR_API ImageDetail
   {

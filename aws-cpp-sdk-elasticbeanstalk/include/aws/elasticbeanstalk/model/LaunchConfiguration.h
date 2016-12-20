@@ -32,7 +32,9 @@ namespace Model
 {
 
   /**
-   * <p>Describes an Auto Scaling launch configuration.</p>
+   * <p>Describes an Auto Scaling launch configuration.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/LaunchConfiguration">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICBEANSTALK_API LaunchConfiguration
   {

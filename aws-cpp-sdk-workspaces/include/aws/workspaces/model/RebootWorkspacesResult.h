@@ -34,7 +34,10 @@ namespace WorkSpaces
 namespace Model
 {
   /**
-   * <p>Contains the results of the <a>RebootWorkspaces</a> operation.</p>
+   * <p>Contains the results of the <a>RebootWorkspaces</a> operation.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/RebootWorkspacesResult">AWS
+   * API Reference</a></p>
    */
   class AWS_WORKSPACES_API RebootWorkspacesResult
   {

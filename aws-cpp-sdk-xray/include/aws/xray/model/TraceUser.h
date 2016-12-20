@@ -33,7 +33,10 @@ namespace Model
 {
 
   /**
-   * <p>Information about a user recorded in segment documents.</p>
+   * <p>Information about a user recorded in segment documents.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/TraceUser">AWS API
+   * Reference</a></p>
    */
   class AWS_XRAY_API TraceUser
   {

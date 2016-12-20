@@ -32,7 +32,10 @@ namespace Model
 {
 
   /**
-   * <p>A complex type that describes the name servers for this hosted zone.</p>
+   * <p>A complex type that describes the name servers for this hosted
+   * zone.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DelegationSet">AWS
+   * API Reference</a></p>
    */
   class AWS_ROUTE53_API DelegationSet
   {

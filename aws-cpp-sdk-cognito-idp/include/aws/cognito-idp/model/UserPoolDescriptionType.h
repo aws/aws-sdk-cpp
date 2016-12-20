@@ -34,7 +34,9 @@ namespace Model
 {
 
   /**
-   * <p>A user pool description.</p>
+   * <p>A user pool description.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UserPoolDescriptionType">AWS
+   * API Reference</a></p>
    */
   class AWS_COGNITOIDENTITYPROVIDER_API UserPoolDescriptionType
   {

@@ -44,7 +44,9 @@ namespace Model
    * data. By default, this setting is unbounded.</li> </ul> <p>For more information,
    * see <a
    * href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options">Configuring
-   * Advanced Options</a>.</p>
+   * Advanced Options</a>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/AdvancedOptionsStatus">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICSEARCHSERVICE_API AdvancedOptionsStatus
   {

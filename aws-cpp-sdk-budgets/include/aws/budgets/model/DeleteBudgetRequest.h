@@ -25,7 +25,9 @@ namespace Model
 {
 
   /**
-   * Request of DeleteBudget
+   * Request of DeleteBudget<p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DeleteBudgetRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_BUDGETS_API DeleteBudgetRequest : public BudgetsRequest
   {

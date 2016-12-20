@@ -35,7 +35,9 @@ namespace Model
   /**
    * <p>Represents attributes that are copied (projected) from the table into an
    * index. These are in addition to the primary key attributes and index key
-   * attributes, which are automatically projected.</p>
+   * attributes, which are automatically projected.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/Projection">AWS
+   * API Reference</a></p>
    */
   class AWS_DYNAMODB_API Projection
   {

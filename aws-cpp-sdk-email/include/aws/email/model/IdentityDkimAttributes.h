@@ -34,7 +34,10 @@ namespace Model
 {
 
   /**
-   * <p>Represents the DKIM attributes of a verified email address or a domain.</p>
+   * <p>Represents the DKIM attributes of a verified email address or a
+   * domain.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/IdentityDkimAttributes">AWS
+   * API Reference</a></p>
    */
   class AWS_SES_API IdentityDkimAttributes
   {

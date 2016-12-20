@@ -34,7 +34,10 @@ namespace Model
 {
 
   /**
-   * <p>A structure containing information about a new public virtual interface.</p>
+   * <p>A structure containing information about a new public virtual
+   * interface.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/NewPublicVirtualInterface">AWS
+   * API Reference</a></p>
    */
   class AWS_DIRECTCONNECT_API NewPublicVirtualInterface
   {

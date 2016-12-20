@@ -51,6 +51,15 @@ GetIdentityPoolRolesResult& GetIdentityPoolRolesResult::operator =(const AmazonW
     }
   }
 
+  if(jsonValue.ValueExists("RoleMappings"))
+  {
+    Aws::Map<Aws::String, JsonValue> roleMappingsJsonMap = jsonValue.GetObject("RoleMappings").GetAllObjects();
+    for(auto& roleMappingsItem : roleMappingsJsonMap)
+    {
+      m_roleMappings[roleMappingsItem.first] = roleMappingsItem.second.AsObject();
+    }
+  }
+
 
 
   return *this;

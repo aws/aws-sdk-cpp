@@ -34,7 +34,9 @@ namespace Model
 
   /**
    * <p>A group of settings that are applied to the cache cluster in the future, or
-   * that are currently being applied.</p>
+   * that are currently being applied.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/PendingModifiedValues">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICACHE_API PendingModifiedValues
   {

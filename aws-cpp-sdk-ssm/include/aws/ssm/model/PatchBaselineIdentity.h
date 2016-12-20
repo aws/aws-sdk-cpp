@@ -31,7 +31,10 @@ namespace Model
 {
 
   /**
-   * <p>Defines the basic information about a patch baseline.</p>
+   * <p>Defines the basic information about a patch baseline.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PatchBaselineIdentity">AWS
+   * API Reference</a></p>
    */
   class AWS_SSM_API PatchBaselineIdentity
   {

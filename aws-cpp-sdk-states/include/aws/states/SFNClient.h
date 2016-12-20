@@ -201,57 +201,75 @@ namespace Model
         virtual ~SFNClient();
 
         /**
-         * <p>Creates an activity.</p>
+         * <p>Creates an activity.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/CreateActivity">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateActivityOutcome CreateActivity(const Model::CreateActivityRequest& request) const;
 
         /**
-         * <p>Creates an activity.</p>
+         * <p>Creates an activity.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/CreateActivity">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateActivityOutcomeCallable CreateActivityCallable(const Model::CreateActivityRequest& request) const;
 
         /**
-         * <p>Creates an activity.</p>
+         * <p>Creates an activity.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/CreateActivity">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateActivityAsync(const Model::CreateActivityRequest& request, const CreateActivityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a state machine.</p>
+         * <p>Creates a state machine.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/CreateStateMachine">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateStateMachineOutcome CreateStateMachine(const Model::CreateStateMachineRequest& request) const;
 
         /**
-         * <p>Creates a state machine.</p>
+         * <p>Creates a state machine.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/CreateStateMachine">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateStateMachineOutcomeCallable CreateStateMachineCallable(const Model::CreateStateMachineRequest& request) const;
 
         /**
-         * <p>Creates a state machine.</p>
+         * <p>Creates a state machine.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/CreateStateMachine">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateStateMachineAsync(const Model::CreateStateMachineRequest& request, const CreateStateMachineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes an activity.</p>
+         * <p>Deletes an activity.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DeleteActivity">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteActivityOutcome DeleteActivity(const Model::DeleteActivityRequest& request) const;
 
         /**
-         * <p>Deletes an activity.</p>
+         * <p>Deletes an activity.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DeleteActivity">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteActivityOutcomeCallable DeleteActivityCallable(const Model::DeleteActivityRequest& request) const;
 
         /**
-         * <p>Deletes an activity.</p>
+         * <p>Deletes an activity.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DeleteActivity">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -259,13 +277,19 @@ namespace Model
 
         /**
          * <p>Deletes a state machine. This is an asynchronous operation-- it sets the
-         * state machine's status to "DELETING" and begins the delete process.</p>
+         * state machine's status to "DELETING" and begins the delete
+         * process.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DeleteStateMachine">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteStateMachineOutcome DeleteStateMachine(const Model::DeleteStateMachineRequest& request) const;
 
         /**
          * <p>Deletes a state machine. This is an asynchronous operation-- it sets the
-         * state machine's status to "DELETING" and begins the delete process.</p>
+         * state machine's status to "DELETING" and begins the delete
+         * process.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DeleteStateMachine">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -273,64 +297,85 @@ namespace Model
 
         /**
          * <p>Deletes a state machine. This is an asynchronous operation-- it sets the
-         * state machine's status to "DELETING" and begins the delete process.</p>
+         * state machine's status to "DELETING" and begins the delete
+         * process.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DeleteStateMachine">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteStateMachineAsync(const Model::DeleteStateMachineRequest& request, const DeleteStateMachineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes an activity.</p>
+         * <p>Describes an activity.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DescribeActivity">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeActivityOutcome DescribeActivity(const Model::DescribeActivityRequest& request) const;
 
         /**
-         * <p>Describes an activity.</p>
+         * <p>Describes an activity.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DescribeActivity">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeActivityOutcomeCallable DescribeActivityCallable(const Model::DescribeActivityRequest& request) const;
 
         /**
-         * <p>Describes an activity.</p>
+         * <p>Describes an activity.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DescribeActivity">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeActivityAsync(const Model::DescribeActivityRequest& request, const DescribeActivityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes an execution.</p>
+         * <p>Describes an execution.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DescribeExecution">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeExecutionOutcome DescribeExecution(const Model::DescribeExecutionRequest& request) const;
 
         /**
-         * <p>Describes an execution.</p>
+         * <p>Describes an execution.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DescribeExecution">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeExecutionOutcomeCallable DescribeExecutionCallable(const Model::DescribeExecutionRequest& request) const;
 
         /**
-         * <p>Describes an execution.</p>
+         * <p>Describes an execution.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DescribeExecution">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeExecutionAsync(const Model::DescribeExecutionRequest& request, const DescribeExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes a state machine.</p>
+         * <p>Describes a state machine.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DescribeStateMachine">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeStateMachineOutcome DescribeStateMachine(const Model::DescribeStateMachineRequest& request) const;
 
         /**
-         * <p>Describes a state machine.</p>
+         * <p>Describes a state machine.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DescribeStateMachine">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeStateMachineOutcomeCallable DescribeStateMachineCallable(const Model::DescribeStateMachineRequest& request) const;
 
         /**
-         * <p>Describes a state machine.</p>
+         * <p>Describes a state machine.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DescribeStateMachine">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -346,7 +391,9 @@ namespace Model
          * empty result, that is, the <code>taskToken</code> returned is an empty
          * string.</p> <important> <p>Workers should set their client side socket timeout
          * to at least 65 seconds (5 seconds higher than the maximum time the service may
-         * hold the poll request).</p> </important>
+         * hold the poll request).</p> </important><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/GetActivityTask">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetActivityTaskOutcome GetActivityTask(const Model::GetActivityTaskRequest& request) const;
 
@@ -360,7 +407,9 @@ namespace Model
          * empty result, that is, the <code>taskToken</code> returned is an empty
          * string.</p> <important> <p>Workers should set their client side socket timeout
          * to at least 65 seconds (5 seconds higher than the maximum time the service may
-         * hold the poll request).</p> </important>
+         * hold the poll request).</p> </important><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/GetActivityTask">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -376,7 +425,9 @@ namespace Model
          * empty result, that is, the <code>taskToken</code> returned is an empty
          * string.</p> <important> <p>Workers should set their client side socket timeout
          * to at least 65 seconds (5 seconds higher than the maximum time the service may
-         * hold the poll request).</p> </important>
+         * hold the poll request).</p> </important><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/GetActivityTask">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -388,7 +439,10 @@ namespace Model
          * <code>timeStamp</code> of the events. Use the <code>reverseOrder</code>
          * parameter to get the latest events first. The results may be split into multiple
          * pages. To retrieve subsequent pages, make the call again using the
-         * <code>nextToken</code> returned by the previous call.</p>
+         * <code>nextToken</code> returned by the previous call.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/GetExecutionHistory">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetExecutionHistoryOutcome GetExecutionHistory(const Model::GetExecutionHistoryRequest& request) const;
 
@@ -398,7 +452,10 @@ namespace Model
          * <code>timeStamp</code> of the events. Use the <code>reverseOrder</code>
          * parameter to get the latest events first. The results may be split into multiple
          * pages. To retrieve subsequent pages, make the call again using the
-         * <code>nextToken</code> returned by the previous call.</p>
+         * <code>nextToken</code> returned by the previous call.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/GetExecutionHistory">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -410,7 +467,10 @@ namespace Model
          * <code>timeStamp</code> of the events. Use the <code>reverseOrder</code>
          * parameter to get the latest events first. The results may be split into multiple
          * pages. To retrieve subsequent pages, make the call again using the
-         * <code>nextToken</code> returned by the previous call.</p>
+         * <code>nextToken</code> returned by the previous call.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/GetExecutionHistory">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -419,14 +479,20 @@ namespace Model
         /**
          * <p>Lists the existing activities. The results may be split into multiple pages.
          * To retrieve subsequent pages, make the call again using the
-         * <code>nextToken</code> returned by the previous call.</p>
+         * <code>nextToken</code> returned by the previous call.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ListActivities">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListActivitiesOutcome ListActivities(const Model::ListActivitiesRequest& request) const;
 
         /**
          * <p>Lists the existing activities. The results may be split into multiple pages.
          * To retrieve subsequent pages, make the call again using the
-         * <code>nextToken</code> returned by the previous call.</p>
+         * <code>nextToken</code> returned by the previous call.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ListActivities">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -435,7 +501,10 @@ namespace Model
         /**
          * <p>Lists the existing activities. The results may be split into multiple pages.
          * To retrieve subsequent pages, make the call again using the
-         * <code>nextToken</code> returned by the previous call.</p>
+         * <code>nextToken</code> returned by the previous call.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ListActivities">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -444,14 +513,20 @@ namespace Model
         /**
          * <p>Lists the executions of a state machine that meet the filtering criteria. The
          * results may be split into multiple pages. To retrieve subsequent pages, make the
-         * call again using the <code>nextToken</code> returned by the previous call.</p>
+         * call again using the <code>nextToken</code> returned by the previous
+         * call.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ListExecutions">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListExecutionsOutcome ListExecutions(const Model::ListExecutionsRequest& request) const;
 
         /**
          * <p>Lists the executions of a state machine that meet the filtering criteria. The
          * results may be split into multiple pages. To retrieve subsequent pages, make the
-         * call again using the <code>nextToken</code> returned by the previous call.</p>
+         * call again using the <code>nextToken</code> returned by the previous
+         * call.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ListExecutions">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -460,7 +535,10 @@ namespace Model
         /**
          * <p>Lists the executions of a state machine that meet the filtering criteria. The
          * results may be split into multiple pages. To retrieve subsequent pages, make the
-         * call again using the <code>nextToken</code> returned by the previous call.</p>
+         * call again using the <code>nextToken</code> returned by the previous
+         * call.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ListExecutions">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -469,14 +547,20 @@ namespace Model
         /**
          * <p>Lists the existing state machines. The results may be split into multiple
          * pages. To retrieve subsequent pages, make the call again using the
-         * <code>nextToken</code> returned by the previous call.</p>
+         * <code>nextToken</code> returned by the previous call.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ListStateMachines">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListStateMachinesOutcome ListStateMachines(const Model::ListStateMachinesRequest& request) const;
 
         /**
          * <p>Lists the existing state machines. The results may be split into multiple
          * pages. To retrieve subsequent pages, make the call again using the
-         * <code>nextToken</code> returned by the previous call.</p>
+         * <code>nextToken</code> returned by the previous call.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ListStateMachines">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -485,7 +569,10 @@ namespace Model
         /**
          * <p>Lists the existing state machines. The results may be split into multiple
          * pages. To retrieve subsequent pages, make the call again using the
-         * <code>nextToken</code> returned by the previous call.</p>
+         * <code>nextToken</code> returned by the previous call.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ListStateMachines">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -493,13 +580,17 @@ namespace Model
 
         /**
          * <p>Used by workers to report that the task identified by the
-         * <code>taskToken</code> failed.</p>
+         * <code>taskToken</code> failed.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/SendTaskFailure">AWS
+         * API Reference</a></p>
          */
         virtual Model::SendTaskFailureOutcome SendTaskFailure(const Model::SendTaskFailureRequest& request) const;
 
         /**
          * <p>Used by workers to report that the task identified by the
-         * <code>taskToken</code> failed.</p>
+         * <code>taskToken</code> failed.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/SendTaskFailure">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -507,7 +598,9 @@ namespace Model
 
         /**
          * <p>Used by workers to report that the task identified by the
-         * <code>taskToken</code> failed.</p>
+         * <code>taskToken</code> failed.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/SendTaskFailure">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -524,7 +617,10 @@ namespace Model
          * task, defined in the state machine's Amazon States Language definition, is its
          * maximum allowed duration, regardless of the number of <a>SendTaskHeartbeat</a>
          * requests received.</p> </note> <note> <p>This operation is only useful for
-         * long-lived tasks to report the liveliness of the task.</p> </note>
+         * long-lived tasks to report the liveliness of the task.</p> </note><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/SendTaskHeartbeat">AWS
+         * API Reference</a></p>
          */
         virtual Model::SendTaskHeartbeatOutcome SendTaskHeartbeat(const Model::SendTaskHeartbeatRequest& request) const;
 
@@ -539,7 +635,10 @@ namespace Model
          * task, defined in the state machine's Amazon States Language definition, is its
          * maximum allowed duration, regardless of the number of <a>SendTaskHeartbeat</a>
          * requests received.</p> </note> <note> <p>This operation is only useful for
-         * long-lived tasks to report the liveliness of the task.</p> </note>
+         * long-lived tasks to report the liveliness of the task.</p> </note><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/SendTaskHeartbeat">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -556,7 +655,10 @@ namespace Model
          * task, defined in the state machine's Amazon States Language definition, is its
          * maximum allowed duration, regardless of the number of <a>SendTaskHeartbeat</a>
          * requests received.</p> </note> <note> <p>This operation is only useful for
-         * long-lived tasks to report the liveliness of the task.</p> </note>
+         * long-lived tasks to report the liveliness of the task.</p> </note><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/SendTaskHeartbeat">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -564,13 +666,17 @@ namespace Model
 
         /**
          * <p>Used by workers to report that the task identified by the
-         * <code>taskToken</code> completed successfully.</p>
+         * <code>taskToken</code> completed successfully.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/SendTaskSuccess">AWS
+         * API Reference</a></p>
          */
         virtual Model::SendTaskSuccessOutcome SendTaskSuccess(const Model::SendTaskSuccessRequest& request) const;
 
         /**
          * <p>Used by workers to report that the task identified by the
-         * <code>taskToken</code> completed successfully.</p>
+         * <code>taskToken</code> completed successfully.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/SendTaskSuccess">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -578,45 +684,59 @@ namespace Model
 
         /**
          * <p>Used by workers to report that the task identified by the
-         * <code>taskToken</code> completed successfully.</p>
+         * <code>taskToken</code> completed successfully.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/SendTaskSuccess">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void SendTaskSuccessAsync(const Model::SendTaskSuccessRequest& request, const SendTaskSuccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Starts a state machine execution.</p>
+         * <p>Starts a state machine execution.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/StartExecution">AWS
+         * API Reference</a></p>
          */
         virtual Model::StartExecutionOutcome StartExecution(const Model::StartExecutionRequest& request) const;
 
         /**
-         * <p>Starts a state machine execution.</p>
+         * <p>Starts a state machine execution.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/StartExecution">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::StartExecutionOutcomeCallable StartExecutionCallable(const Model::StartExecutionRequest& request) const;
 
         /**
-         * <p>Starts a state machine execution.</p>
+         * <p>Starts a state machine execution.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/StartExecution">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void StartExecutionAsync(const Model::StartExecutionRequest& request, const StartExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Stops an execution.</p>
+         * <p>Stops an execution.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/StopExecution">AWS
+         * API Reference</a></p>
          */
         virtual Model::StopExecutionOutcome StopExecution(const Model::StopExecutionRequest& request) const;
 
         /**
-         * <p>Stops an execution.</p>
+         * <p>Stops an execution.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/StopExecution">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::StopExecutionOutcomeCallable StopExecutionCallable(const Model::StopExecutionRequest& request) const;
 
         /**
-         * <p>Stops an execution.</p>
+         * <p>Stops an execution.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/StopExecution">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */

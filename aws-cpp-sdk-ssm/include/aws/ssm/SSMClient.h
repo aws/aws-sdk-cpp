@@ -531,7 +531,10 @@ namespace Model
          * interpreted strictly as a string of characters. </p> <p>For more information
          * about tags, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
-         * Your Amazon EC2 Resources</a> in the Amazon EC2 User Guide. </p>
+         * Your Amazon EC2 Resources</a> in the Amazon EC2 User Guide. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/AddTagsToResource">AWS
+         * API Reference</a></p>
          */
         virtual Model::AddTagsToResourceOutcome AddTagsToResource(const Model::AddTagsToResourceRequest& request) const;
 
@@ -551,7 +554,10 @@ namespace Model
          * interpreted strictly as a string of characters. </p> <p>For more information
          * about tags, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
-         * Your Amazon EC2 Resources</a> in the Amazon EC2 User Guide. </p>
+         * Your Amazon EC2 Resources</a> in the Amazon EC2 User Guide. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/AddTagsToResource">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -573,7 +579,10 @@ namespace Model
          * interpreted strictly as a string of characters. </p> <p>For more information
          * about tags, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
-         * Your Amazon EC2 Resources</a> in the Amazon EC2 User Guide. </p>
+         * Your Amazon EC2 Resources</a> in the Amazon EC2 User Guide. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/AddTagsToResource">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -582,14 +591,18 @@ namespace Model
         /**
          * <p>Attempts to cancel the command specified by the Command ID. There is no
          * guarantee that the command will be terminated and the underlying process
-         * stopped.</p>
+         * stopped.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CancelCommand">AWS
+         * API Reference</a></p>
          */
         virtual Model::CancelCommandOutcome CancelCommand(const Model::CancelCommandRequest& request) const;
 
         /**
          * <p>Attempts to cancel the command specified by the Command ID. There is no
          * guarantee that the command will be terminated and the underlying process
-         * stopped.</p>
+         * stopped.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CancelCommand">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -598,7 +611,9 @@ namespace Model
         /**
          * <p>Attempts to cancel the command specified by the Command ID. There is no
          * guarantee that the command will be terminated and the underlying process
-         * stopped.</p>
+         * stopped.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CancelCommand">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -612,7 +627,10 @@ namespace Model
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/managed-instances.html">Setting
          * Up Managed Instances (Linux)</a> or <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/managed-instances.html">Setting
-         * Up Managed Instances (Windows)</a> in the Amazon EC2 User Guide. </p>
+         * Up Managed Instances (Windows)</a> in the Amazon EC2 User Guide. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateActivation">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateActivationOutcome CreateActivation(const Model::CreateActivationRequest& request) const;
 
@@ -624,7 +642,10 @@ namespace Model
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/managed-instances.html">Setting
          * Up Managed Instances (Linux)</a> or <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/managed-instances.html">Setting
-         * Up Managed Instances (Windows)</a> in the Amazon EC2 User Guide. </p>
+         * Up Managed Instances (Windows)</a> in the Amazon EC2 User Guide. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateActivation">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -638,7 +659,10 @@ namespace Model
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/managed-instances.html">Setting
          * Up Managed Instances (Linux)</a> or <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/managed-instances.html">Setting
-         * Up Managed Instances (Windows)</a> in the Amazon EC2 User Guide. </p>
+         * Up Managed Instances (Windows)</a> in the Amazon EC2 User Guide. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateActivation">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -650,7 +674,9 @@ namespace Model
          * using instance IDs or tags, the SSM agent running on the instance processes the
          * document and configures the instance as specified.</p> <p>If you associate a
          * document with an instance that already has an associated document, the system
-         * throws the AssociationAlreadyExists exception.</p>
+         * throws the AssociationAlreadyExists exception.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateAssociation">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateAssociationOutcome CreateAssociation(const Model::CreateAssociationRequest& request) const;
 
@@ -660,7 +686,9 @@ namespace Model
          * using instance IDs or tags, the SSM agent running on the instance processes the
          * document and configures the instance as specified.</p> <p>If you associate a
          * document with an instance that already has an associated document, the system
-         * throws the AssociationAlreadyExists exception.</p>
+         * throws the AssociationAlreadyExists exception.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateAssociation">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -672,7 +700,9 @@ namespace Model
          * using instance IDs or tags, the SSM agent running on the instance processes the
          * document and configures the instance as specified.</p> <p>If you associate a
          * document with an instance that already has an associated document, the system
-         * throws the AssociationAlreadyExists exception.</p>
+         * throws the AssociationAlreadyExists exception.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateAssociation">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -684,7 +714,9 @@ namespace Model
          * using instance IDs or tags, the SSM agent running on the instance processes the
          * document and configures the instance as specified.</p> <p>If you associate a
          * document with an instance that already has an associated document, the system
-         * throws the AssociationAlreadyExists exception.</p>
+         * throws the AssociationAlreadyExists exception.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateAssociationBatch">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateAssociationBatchOutcome CreateAssociationBatch(const Model::CreateAssociationBatchRequest& request) const;
 
@@ -694,7 +726,9 @@ namespace Model
          * using instance IDs or tags, the SSM agent running on the instance processes the
          * document and configures the instance as specified.</p> <p>If you associate a
          * document with an instance that already has an associated document, the system
-         * throws the AssociationAlreadyExists exception.</p>
+         * throws the AssociationAlreadyExists exception.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateAssociationBatch">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -706,7 +740,9 @@ namespace Model
          * using instance IDs or tags, the SSM agent running on the instance processes the
          * document and configures the instance as specified.</p> <p>If you associate a
          * document with an instance that already has an associated document, the system
-         * throws the AssociationAlreadyExists exception.</p>
+         * throws the AssociationAlreadyExists exception.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateAssociationBatch">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -714,13 +750,19 @@ namespace Model
 
         /**
          * <p>Creates an SSM document.</p> <p>After you create an SSM document, you can use
-         * CreateAssociation to associate it with one or more running instances.</p>
+         * CreateAssociation to associate it with one or more running
+         * instances.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateDocument">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateDocumentOutcome CreateDocument(const Model::CreateDocumentRequest& request) const;
 
         /**
          * <p>Creates an SSM document.</p> <p>After you create an SSM document, you can use
-         * CreateAssociation to associate it with one or more running instances.</p>
+         * CreateAssociation to associate it with one or more running
+         * instances.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateDocument">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -728,45 +770,60 @@ namespace Model
 
         /**
          * <p>Creates an SSM document.</p> <p>After you create an SSM document, you can use
-         * CreateAssociation to associate it with one or more running instances.</p>
+         * CreateAssociation to associate it with one or more running
+         * instances.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateDocument">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateDocumentAsync(const Model::CreateDocumentRequest& request, const CreateDocumentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a new Maintenance Window.</p>
+         * <p>Creates a new Maintenance Window.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateMaintenanceWindow">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateMaintenanceWindowOutcome CreateMaintenanceWindow(const Model::CreateMaintenanceWindowRequest& request) const;
 
         /**
-         * <p>Creates a new Maintenance Window.</p>
+         * <p>Creates a new Maintenance Window.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateMaintenanceWindow">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateMaintenanceWindowOutcomeCallable CreateMaintenanceWindowCallable(const Model::CreateMaintenanceWindowRequest& request) const;
 
         /**
-         * <p>Creates a new Maintenance Window.</p>
+         * <p>Creates a new Maintenance Window.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateMaintenanceWindow">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateMaintenanceWindowAsync(const Model::CreateMaintenanceWindowRequest& request, const CreateMaintenanceWindowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a patch baseline.</p>
+         * <p>Creates a patch baseline.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreatePatchBaseline">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreatePatchBaselineOutcome CreatePatchBaseline(const Model::CreatePatchBaselineRequest& request) const;
 
         /**
-         * <p>Creates a patch baseline.</p>
+         * <p>Creates a patch baseline.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreatePatchBaseline">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreatePatchBaselineOutcomeCallable CreatePatchBaselineCallable(const Model::CreatePatchBaselineRequest& request) const;
 
         /**
-         * <p>Creates a patch baseline.</p>
+         * <p>Creates a patch baseline.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreatePatchBaseline">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -776,7 +833,9 @@ namespace Model
          * <p>Deletes an activation. You are not required to delete an activation. If you
          * delete an activation, you can no longer use it to register additional managed
          * instances. Deleting an activation does not de-register managed instances. You
-         * must manually de-register managed instances.</p>
+         * must manually de-register managed instances.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteActivation">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteActivationOutcome DeleteActivation(const Model::DeleteActivationRequest& request) const;
 
@@ -784,7 +843,9 @@ namespace Model
          * <p>Deletes an activation. You are not required to delete an activation. If you
          * delete an activation, you can no longer use it to register additional managed
          * instances. Deleting an activation does not de-register managed instances. You
-         * must manually de-register managed instances.</p>
+         * must manually de-register managed instances.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteActivation">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -794,7 +855,9 @@ namespace Model
          * <p>Deletes an activation. You are not required to delete an activation. If you
          * delete an activation, you can no longer use it to register additional managed
          * instances. Deleting an activation does not de-register managed instances. You
-         * must manually de-register managed instances.</p>
+         * must manually de-register managed instances.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteActivation">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -805,7 +868,10 @@ namespace Model
          * <p>When you disassociate an SSM document from an instance, it does not change
          * the configuration of the instance. To change the configuration state of an
          * instance after you disassociate a document, you must create a new document with
-         * the desired configuration and associate it with the instance.</p>
+         * the desired configuration and associate it with the instance.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteAssociation">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteAssociationOutcome DeleteAssociation(const Model::DeleteAssociationRequest& request) const;
 
@@ -814,7 +880,10 @@ namespace Model
          * <p>When you disassociate an SSM document from an instance, it does not change
          * the configuration of the instance. To change the configuration state of an
          * instance after you disassociate a document, you must create a new document with
-         * the desired configuration and associate it with the instance.</p>
+         * the desired configuration and associate it with the instance.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteAssociation">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -825,7 +894,10 @@ namespace Model
          * <p>When you disassociate an SSM document from an instance, it does not change
          * the configuration of the instance. To change the configuration state of an
          * instance after you disassociate a document, you must create a new document with
-         * the desired configuration and associate it with the instance.</p>
+         * the desired configuration and associate it with the instance.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteAssociation">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -835,7 +907,9 @@ namespace Model
          * <p>Deletes the SSM document and all instance associations to the document.</p>
          * <p>Before you delete the SSM document, we recommend that you use
          * DeleteAssociation to disassociate all instances that are associated with the
-         * document.</p>
+         * document.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteDocument">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteDocumentOutcome DeleteDocument(const Model::DeleteDocumentRequest& request) const;
 
@@ -843,7 +917,9 @@ namespace Model
          * <p>Deletes the SSM document and all instance associations to the document.</p>
          * <p>Before you delete the SSM document, we recommend that you use
          * DeleteAssociation to disassociate all instances that are associated with the
-         * document.</p>
+         * document.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteDocument">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -853,64 +929,84 @@ namespace Model
          * <p>Deletes the SSM document and all instance associations to the document.</p>
          * <p>Before you delete the SSM document, we recommend that you use
          * DeleteAssociation to disassociate all instances that are associated with the
-         * document.</p>
+         * document.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteDocument">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteDocumentAsync(const Model::DeleteDocumentRequest& request, const DeleteDocumentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a Maintenance Window.</p>
+         * <p>Deletes a Maintenance Window.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteMaintenanceWindow">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteMaintenanceWindowOutcome DeleteMaintenanceWindow(const Model::DeleteMaintenanceWindowRequest& request) const;
 
         /**
-         * <p>Deletes a Maintenance Window.</p>
+         * <p>Deletes a Maintenance Window.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteMaintenanceWindow">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteMaintenanceWindowOutcomeCallable DeleteMaintenanceWindowCallable(const Model::DeleteMaintenanceWindowRequest& request) const;
 
         /**
-         * <p>Deletes a Maintenance Window.</p>
+         * <p>Deletes a Maintenance Window.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteMaintenanceWindow">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteMaintenanceWindowAsync(const Model::DeleteMaintenanceWindowRequest& request, const DeleteMaintenanceWindowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Delete a parameter from the system.</p>
+         * <p>Delete a parameter from the system.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteParameter">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteParameterOutcome DeleteParameter(const Model::DeleteParameterRequest& request) const;
 
         /**
-         * <p>Delete a parameter from the system.</p>
+         * <p>Delete a parameter from the system.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteParameter">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteParameterOutcomeCallable DeleteParameterCallable(const Model::DeleteParameterRequest& request) const;
 
         /**
-         * <p>Delete a parameter from the system.</p>
+         * <p>Delete a parameter from the system.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteParameter">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteParameterAsync(const Model::DeleteParameterRequest& request, const DeleteParameterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a patch baseline.</p>
+         * <p>Deletes a patch baseline.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeletePatchBaseline">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeletePatchBaselineOutcome DeletePatchBaseline(const Model::DeletePatchBaselineRequest& request) const;
 
         /**
-         * <p>Deletes a patch baseline.</p>
+         * <p>Deletes a patch baseline.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeletePatchBaseline">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeletePatchBaselineOutcomeCallable DeletePatchBaselineCallable(const Model::DeletePatchBaselineRequest& request) const;
 
         /**
-         * <p>Deletes a patch baseline.</p>
+         * <p>Deletes a patch baseline.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeletePatchBaseline">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -919,14 +1015,20 @@ namespace Model
         /**
          * <p>Removes the server or virtual machine from the list of registered servers.
          * You can reregister the instance again at any time. If you don’t plan to use Run
-         * Command on the server, we suggest uninstalling the SSM agent first.</p>
+         * Command on the server, we suggest uninstalling the SSM agent
+         * first.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeregisterManagedInstance">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeregisterManagedInstanceOutcome DeregisterManagedInstance(const Model::DeregisterManagedInstanceRequest& request) const;
 
         /**
          * <p>Removes the server or virtual machine from the list of registered servers.
          * You can reregister the instance again at any time. If you don’t plan to use Run
-         * Command on the server, we suggest uninstalling the SSM agent first.</p>
+         * Command on the server, we suggest uninstalling the SSM agent
+         * first.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeregisterManagedInstance">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -935,64 +1037,85 @@ namespace Model
         /**
          * <p>Removes the server or virtual machine from the list of registered servers.
          * You can reregister the instance again at any time. If you don’t plan to use Run
-         * Command on the server, we suggest uninstalling the SSM agent first.</p>
+         * Command on the server, we suggest uninstalling the SSM agent
+         * first.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeregisterManagedInstance">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeregisterManagedInstanceAsync(const Model::DeregisterManagedInstanceRequest& request, const DeregisterManagedInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Removes a patch group from a patch baseline.</p>
+         * <p>Removes a patch group from a patch baseline.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeregisterPatchBaselineForPatchGroup">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeregisterPatchBaselineForPatchGroupOutcome DeregisterPatchBaselineForPatchGroup(const Model::DeregisterPatchBaselineForPatchGroupRequest& request) const;
 
         /**
-         * <p>Removes a patch group from a patch baseline.</p>
+         * <p>Removes a patch group from a patch baseline.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeregisterPatchBaselineForPatchGroup">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeregisterPatchBaselineForPatchGroupOutcomeCallable DeregisterPatchBaselineForPatchGroupCallable(const Model::DeregisterPatchBaselineForPatchGroupRequest& request) const;
 
         /**
-         * <p>Removes a patch group from a patch baseline.</p>
+         * <p>Removes a patch group from a patch baseline.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeregisterPatchBaselineForPatchGroup">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeregisterPatchBaselineForPatchGroupAsync(const Model::DeregisterPatchBaselineForPatchGroupRequest& request, const DeregisterPatchBaselineForPatchGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Removes a target from a Maintenance Window.</p>
+         * <p>Removes a target from a Maintenance Window.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeregisterTargetFromMaintenanceWindow">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeregisterTargetFromMaintenanceWindowOutcome DeregisterTargetFromMaintenanceWindow(const Model::DeregisterTargetFromMaintenanceWindowRequest& request) const;
 
         /**
-         * <p>Removes a target from a Maintenance Window.</p>
+         * <p>Removes a target from a Maintenance Window.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeregisterTargetFromMaintenanceWindow">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeregisterTargetFromMaintenanceWindowOutcomeCallable DeregisterTargetFromMaintenanceWindowCallable(const Model::DeregisterTargetFromMaintenanceWindowRequest& request) const;
 
         /**
-         * <p>Removes a target from a Maintenance Window.</p>
+         * <p>Removes a target from a Maintenance Window.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeregisterTargetFromMaintenanceWindow">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeregisterTargetFromMaintenanceWindowAsync(const Model::DeregisterTargetFromMaintenanceWindowRequest& request, const DeregisterTargetFromMaintenanceWindowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Removes a task from a Maintenance Window.</p>
+         * <p>Removes a task from a Maintenance Window.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeregisterTaskFromMaintenanceWindow">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeregisterTaskFromMaintenanceWindowOutcome DeregisterTaskFromMaintenanceWindow(const Model::DeregisterTaskFromMaintenanceWindowRequest& request) const;
 
         /**
-         * <p>Removes a task from a Maintenance Window.</p>
+         * <p>Removes a task from a Maintenance Window.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeregisterTaskFromMaintenanceWindow">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeregisterTaskFromMaintenanceWindowOutcomeCallable DeregisterTaskFromMaintenanceWindowCallable(const Model::DeregisterTaskFromMaintenanceWindowRequest& request) const;
 
         /**
-         * <p>Removes a task from a Maintenance Window.</p>
+         * <p>Removes a task from a Maintenance Window.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeregisterTaskFromMaintenanceWindow">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1001,14 +1124,20 @@ namespace Model
         /**
          * <p>Details about the activation, including: the date and time the activation was
          * created, the expiration date, the IAM role assigned to the instances in the
-         * activation, and the number of instances activated by this registration.</p>
+         * activation, and the number of instances activated by this
+         * registration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeActivations">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeActivationsOutcome DescribeActivations(const Model::DescribeActivationsRequest& request) const;
 
         /**
          * <p>Details about the activation, including: the date and time the activation was
          * created, the expiration date, the IAM role assigned to the instances in the
-         * activation, and the number of instances activated by this registration.</p>
+         * activation, and the number of instances activated by this
+         * registration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeActivations">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1017,83 +1146,119 @@ namespace Model
         /**
          * <p>Details about the activation, including: the date and time the activation was
          * created, the expiration date, the IAM role assigned to the instances in the
-         * activation, and the number of instances activated by this registration.</p>
+         * activation, and the number of instances activated by this
+         * registration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeActivations">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeActivationsAsync(const Model::DescribeActivationsRequest& request, const DescribeActivationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes the associations for the specified SSM document or instance.</p>
+         * <p>Describes the associations for the specified SSM document or
+         * instance.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAssociation">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeAssociationOutcome DescribeAssociation(const Model::DescribeAssociationRequest& request) const;
 
         /**
-         * <p>Describes the associations for the specified SSM document or instance.</p>
+         * <p>Describes the associations for the specified SSM document or
+         * instance.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAssociation">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeAssociationOutcomeCallable DescribeAssociationCallable(const Model::DescribeAssociationRequest& request) const;
 
         /**
-         * <p>Describes the associations for the specified SSM document or instance.</p>
+         * <p>Describes the associations for the specified SSM document or
+         * instance.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAssociation">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeAssociationAsync(const Model::DescribeAssociationRequest& request, const DescribeAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Provides details about all active and terminated Automation executions.</p>
+         * <p>Provides details about all active and terminated Automation
+         * executions.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAutomationExecutions">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeAutomationExecutionsOutcome DescribeAutomationExecutions(const Model::DescribeAutomationExecutionsRequest& request) const;
 
         /**
-         * <p>Provides details about all active and terminated Automation executions.</p>
+         * <p>Provides details about all active and terminated Automation
+         * executions.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAutomationExecutions">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeAutomationExecutionsOutcomeCallable DescribeAutomationExecutionsCallable(const Model::DescribeAutomationExecutionsRequest& request) const;
 
         /**
-         * <p>Provides details about all active and terminated Automation executions.</p>
+         * <p>Provides details about all active and terminated Automation
+         * executions.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAutomationExecutions">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeAutomationExecutionsAsync(const Model::DescribeAutomationExecutionsRequest& request, const DescribeAutomationExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists all patches that could possibly be included in a patch baseline.</p>
+         * <p>Lists all patches that could possibly be included in a patch
+         * baseline.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAvailablePatches">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeAvailablePatchesOutcome DescribeAvailablePatches(const Model::DescribeAvailablePatchesRequest& request) const;
 
         /**
-         * <p>Lists all patches that could possibly be included in a patch baseline.</p>
+         * <p>Lists all patches that could possibly be included in a patch
+         * baseline.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAvailablePatches">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeAvailablePatchesOutcomeCallable DescribeAvailablePatchesCallable(const Model::DescribeAvailablePatchesRequest& request) const;
 
         /**
-         * <p>Lists all patches that could possibly be included in a patch baseline.</p>
+         * <p>Lists all patches that could possibly be included in a patch
+         * baseline.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAvailablePatches">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeAvailablePatchesAsync(const Model::DescribeAvailablePatchesRequest& request, const DescribeAvailablePatchesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes the specified SSM document.</p>
+         * <p>Describes the specified SSM document.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeDocument">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeDocumentOutcome DescribeDocument(const Model::DescribeDocumentRequest& request) const;
 
         /**
-         * <p>Describes the specified SSM document.</p>
+         * <p>Describes the specified SSM document.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeDocument">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeDocumentOutcomeCallable DescribeDocumentCallable(const Model::DescribeDocumentRequest& request) const;
 
         /**
-         * <p>Describes the specified SSM document.</p>
+         * <p>Describes the specified SSM document.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeDocument">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1102,14 +1267,20 @@ namespace Model
         /**
          * <p>Describes the permissions for an SSM document. If you created the document,
          * you are the owner. If a document is shared, it can either be shared privately
-         * (by specifying a user’s AWS account ID) or publicly (<i>All</i>). </p>
+         * (by specifying a user’s AWS account ID) or publicly (<i>All</i>). </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeDocumentPermission">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeDocumentPermissionOutcome DescribeDocumentPermission(const Model::DescribeDocumentPermissionRequest& request) const;
 
         /**
          * <p>Describes the permissions for an SSM document. If you created the document,
          * you are the owner. If a document is shared, it can either be shared privately
-         * (by specifying a user’s AWS account ID) or publicly (<i>All</i>). </p>
+         * (by specifying a user’s AWS account ID) or publicly (<i>All</i>). </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeDocumentPermission">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1118,26 +1289,35 @@ namespace Model
         /**
          * <p>Describes the permissions for an SSM document. If you created the document,
          * you are the owner. If a document is shared, it can either be shared privately
-         * (by specifying a user’s AWS account ID) or publicly (<i>All</i>). </p>
+         * (by specifying a user’s AWS account ID) or publicly (<i>All</i>). </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeDocumentPermission">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeDocumentPermissionAsync(const Model::DescribeDocumentPermissionRequest& request, const DescribeDocumentPermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>All associations for the instance(s).</p>
+         * <p>All associations for the instance(s).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeEffectiveInstanceAssociations">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeEffectiveInstanceAssociationsOutcome DescribeEffectiveInstanceAssociations(const Model::DescribeEffectiveInstanceAssociationsRequest& request) const;
 
         /**
-         * <p>All associations for the instance(s).</p>
+         * <p>All associations for the instance(s).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeEffectiveInstanceAssociations">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeEffectiveInstanceAssociationsOutcomeCallable DescribeEffectiveInstanceAssociationsCallable(const Model::DescribeEffectiveInstanceAssociationsRequest& request) const;
 
         /**
-         * <p>All associations for the instance(s).</p>
+         * <p>All associations for the instance(s).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeEffectiveInstanceAssociations">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1145,13 +1325,17 @@ namespace Model
 
         /**
          * <p>Retrieves the current effective patches (the patch and the approval state)
-         * for the specified patch baseline.</p>
+         * for the specified patch baseline.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeEffectivePatchesForPatchBaseline">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeEffectivePatchesForPatchBaselineOutcome DescribeEffectivePatchesForPatchBaseline(const Model::DescribeEffectivePatchesForPatchBaselineRequest& request) const;
 
         /**
          * <p>Retrieves the current effective patches (the patch and the approval state)
-         * for the specified patch baseline.</p>
+         * for the specified patch baseline.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeEffectivePatchesForPatchBaseline">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1159,26 +1343,37 @@ namespace Model
 
         /**
          * <p>Retrieves the current effective patches (the patch and the approval state)
-         * for the specified patch baseline.</p>
+         * for the specified patch baseline.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeEffectivePatchesForPatchBaseline">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeEffectivePatchesForPatchBaselineAsync(const Model::DescribeEffectivePatchesForPatchBaselineRequest& request, const DescribeEffectivePatchesForPatchBaselineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>The status of the associations for the instance(s).</p>
+         * <p>The status of the associations for the instance(s).</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstanceAssociationsStatus">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeInstanceAssociationsStatusOutcome DescribeInstanceAssociationsStatus(const Model::DescribeInstanceAssociationsStatusRequest& request) const;
 
         /**
-         * <p>The status of the associations for the instance(s).</p>
+         * <p>The status of the associations for the instance(s).</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstanceAssociationsStatus">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeInstanceAssociationsStatusOutcomeCallable DescribeInstanceAssociationsStatusCallable(const Model::DescribeInstanceAssociationsStatusRequest& request) const;
 
         /**
-         * <p>The status of the associations for the instance(s).</p>
+         * <p>The status of the associations for the instance(s).</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstanceAssociationsStatus">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1190,7 +1385,10 @@ namespace Model
          * (Linux), status etc. If you specify one or more instance IDs, it returns
          * information for those instances. If you do not specify instance IDs, it returns
          * information for all your instances. If you specify an instance ID that is not
-         * valid or an instance that you do not own, you receive an error. </p>
+         * valid or an instance that you do not own, you receive an error. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstanceInformation">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeInstanceInformationOutcome DescribeInstanceInformation(const Model::DescribeInstanceInformationRequest& request) const;
 
@@ -1200,7 +1398,10 @@ namespace Model
          * (Linux), status etc. If you specify one or more instance IDs, it returns
          * information for those instances. If you do not specify instance IDs, it returns
          * information for all your instances. If you specify an instance ID that is not
-         * valid or an instance that you do not own, you receive an error. </p>
+         * valid or an instance that you do not own, you receive an error. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstanceInformation">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1212,26 +1413,38 @@ namespace Model
          * (Linux), status etc. If you specify one or more instance IDs, it returns
          * information for those instances. If you do not specify instance IDs, it returns
          * information for all your instances. If you specify an instance ID that is not
-         * valid or an instance that you do not own, you receive an error. </p>
+         * valid or an instance that you do not own, you receive an error. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstanceInformation">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeInstanceInformationAsync(const Model::DescribeInstanceInformationRequest& request, const DescribeInstanceInformationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves the high-level patch state of one or more instances.</p>
+         * <p>Retrieves the high-level patch state of one or more instances.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstancePatchStates">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeInstancePatchStatesOutcome DescribeInstancePatchStates(const Model::DescribeInstancePatchStatesRequest& request) const;
 
         /**
-         * <p>Retrieves the high-level patch state of one or more instances.</p>
+         * <p>Retrieves the high-level patch state of one or more instances.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstancePatchStates">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeInstancePatchStatesOutcomeCallable DescribeInstancePatchStatesCallable(const Model::DescribeInstancePatchStatesRequest& request) const;
 
         /**
-         * <p>Retrieves the high-level patch state of one or more instances.</p>
+         * <p>Retrieves the high-level patch state of one or more instances.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstancePatchStates">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1239,13 +1452,17 @@ namespace Model
 
         /**
          * <p>Retrieves the high-level patch state for the instances in the specified patch
-         * group.</p>
+         * group.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstancePatchStatesForPatchGroup">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeInstancePatchStatesForPatchGroupOutcome DescribeInstancePatchStatesForPatchGroup(const Model::DescribeInstancePatchStatesForPatchGroupRequest& request) const;
 
         /**
          * <p>Retrieves the high-level patch state for the instances in the specified patch
-         * group.</p>
+         * group.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstancePatchStatesForPatchGroup">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1253,7 +1470,9 @@ namespace Model
 
         /**
          * <p>Retrieves the high-level patch state for the instances in the specified patch
-         * group.</p>
+         * group.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstancePatchStatesForPatchGroup">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1261,13 +1480,19 @@ namespace Model
 
         /**
          * <p>Retrieves information about the patches on the specified instance and their
-         * state relative to the patch baseline being used for the instance.</p>
+         * state relative to the patch baseline being used for the instance.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstancePatches">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeInstancePatchesOutcome DescribeInstancePatches(const Model::DescribeInstancePatchesRequest& request) const;
 
         /**
          * <p>Retrieves information about the patches on the specified instance and their
-         * state relative to the patch baseline being used for the instance.</p>
+         * state relative to the patch baseline being used for the instance.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstancePatches">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1275,7 +1500,10 @@ namespace Model
 
         /**
          * <p>Retrieves information about the patches on the specified instance and their
-         * state relative to the patch baseline being used for the instance.</p>
+         * state relative to the patch baseline being used for the instance.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstancePatches">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1283,13 +1511,19 @@ namespace Model
 
         /**
          * <p>Retrieves the individual task executions (one per target) for a particular
-         * task executed as part of a Maintenance Window execution.</p>
+         * task executed as part of a Maintenance Window execution.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowExecutionTaskInvocations">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeMaintenanceWindowExecutionTaskInvocationsOutcome DescribeMaintenanceWindowExecutionTaskInvocations(const Model::DescribeMaintenanceWindowExecutionTaskInvocationsRequest& request) const;
 
         /**
          * <p>Retrieves the individual task executions (one per target) for a particular
-         * task executed as part of a Maintenance Window execution.</p>
+         * task executed as part of a Maintenance Window execution.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowExecutionTaskInvocations">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1297,7 +1531,10 @@ namespace Model
 
         /**
          * <p>Retrieves the individual task executions (one per target) for a particular
-         * task executed as part of a Maintenance Window execution.</p>
+         * task executed as part of a Maintenance Window execution.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowExecutionTaskInvocations">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1305,13 +1542,17 @@ namespace Model
 
         /**
          * <p>For a given Maintenance Window execution, lists the tasks that were
-         * executed.</p>
+         * executed.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowExecutionTasks">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeMaintenanceWindowExecutionTasksOutcome DescribeMaintenanceWindowExecutionTasks(const Model::DescribeMaintenanceWindowExecutionTasksRequest& request) const;
 
         /**
          * <p>For a given Maintenance Window execution, lists the tasks that were
-         * executed.</p>
+         * executed.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowExecutionTasks">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1319,7 +1560,9 @@ namespace Model
 
         /**
          * <p>For a given Maintenance Window execution, lists the tasks that were
-         * executed.</p>
+         * executed.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowExecutionTasks">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1328,14 +1571,18 @@ namespace Model
         /**
          * <p>Lists the executions of a Maintenance Window (meaning, information about when
          * the Maintenance Window was scheduled to be active and information about tasks
-         * registered and run with the Maintenance Window).</p>
+         * registered and run with the Maintenance Window).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowExecutions">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeMaintenanceWindowExecutionsOutcome DescribeMaintenanceWindowExecutions(const Model::DescribeMaintenanceWindowExecutionsRequest& request) const;
 
         /**
          * <p>Lists the executions of a Maintenance Window (meaning, information about when
          * the Maintenance Window was scheduled to be active and information about tasks
-         * registered and run with the Maintenance Window).</p>
+         * registered and run with the Maintenance Window).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowExecutions">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1344,159 +1591,224 @@ namespace Model
         /**
          * <p>Lists the executions of a Maintenance Window (meaning, information about when
          * the Maintenance Window was scheduled to be active and information about tasks
-         * registered and run with the Maintenance Window).</p>
+         * registered and run with the Maintenance Window).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowExecutions">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeMaintenanceWindowExecutionsAsync(const Model::DescribeMaintenanceWindowExecutionsRequest& request, const DescribeMaintenanceWindowExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the targets registered with the Maintenance Window.</p>
+         * <p>Lists the targets registered with the Maintenance Window.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowTargets">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeMaintenanceWindowTargetsOutcome DescribeMaintenanceWindowTargets(const Model::DescribeMaintenanceWindowTargetsRequest& request) const;
 
         /**
-         * <p>Lists the targets registered with the Maintenance Window.</p>
+         * <p>Lists the targets registered with the Maintenance Window.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowTargets">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeMaintenanceWindowTargetsOutcomeCallable DescribeMaintenanceWindowTargetsCallable(const Model::DescribeMaintenanceWindowTargetsRequest& request) const;
 
         /**
-         * <p>Lists the targets registered with the Maintenance Window.</p>
+         * <p>Lists the targets registered with the Maintenance Window.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowTargets">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeMaintenanceWindowTargetsAsync(const Model::DescribeMaintenanceWindowTargetsRequest& request, const DescribeMaintenanceWindowTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the tasks in a Maintenance Window.</p>
+         * <p>Lists the tasks in a Maintenance Window.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowTasks">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeMaintenanceWindowTasksOutcome DescribeMaintenanceWindowTasks(const Model::DescribeMaintenanceWindowTasksRequest& request) const;
 
         /**
-         * <p>Lists the tasks in a Maintenance Window.</p>
+         * <p>Lists the tasks in a Maintenance Window.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowTasks">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeMaintenanceWindowTasksOutcomeCallable DescribeMaintenanceWindowTasksCallable(const Model::DescribeMaintenanceWindowTasksRequest& request) const;
 
         /**
-         * <p>Lists the tasks in a Maintenance Window.</p>
+         * <p>Lists the tasks in a Maintenance Window.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowTasks">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeMaintenanceWindowTasksAsync(const Model::DescribeMaintenanceWindowTasksRequest& request, const DescribeMaintenanceWindowTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves the Maintenance Windows in an AWS account.</p>
+         * <p>Retrieves the Maintenance Windows in an AWS account.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindows">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeMaintenanceWindowsOutcome DescribeMaintenanceWindows(const Model::DescribeMaintenanceWindowsRequest& request) const;
 
         /**
-         * <p>Retrieves the Maintenance Windows in an AWS account.</p>
+         * <p>Retrieves the Maintenance Windows in an AWS account.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindows">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeMaintenanceWindowsOutcomeCallable DescribeMaintenanceWindowsCallable(const Model::DescribeMaintenanceWindowsRequest& request) const;
 
         /**
-         * <p>Retrieves the Maintenance Windows in an AWS account.</p>
+         * <p>Retrieves the Maintenance Windows in an AWS account.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindows">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeMaintenanceWindowsAsync(const Model::DescribeMaintenanceWindowsRequest& request, const DescribeMaintenanceWindowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Get information about a parameter.</p>
+         * <p>Get information about a parameter.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeParameters">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeParametersOutcome DescribeParameters(const Model::DescribeParametersRequest& request) const;
 
         /**
-         * <p>Get information about a parameter.</p>
+         * <p>Get information about a parameter.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeParameters">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeParametersOutcomeCallable DescribeParametersCallable(const Model::DescribeParametersRequest& request) const;
 
         /**
-         * <p>Get information about a parameter.</p>
+         * <p>Get information about a parameter.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeParameters">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeParametersAsync(const Model::DescribeParametersRequest& request, const DescribeParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the patch baselines in your AWS account.</p>
+         * <p>Lists the patch baselines in your AWS account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribePatchBaselines">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribePatchBaselinesOutcome DescribePatchBaselines(const Model::DescribePatchBaselinesRequest& request) const;
 
         /**
-         * <p>Lists the patch baselines in your AWS account.</p>
+         * <p>Lists the patch baselines in your AWS account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribePatchBaselines">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribePatchBaselinesOutcomeCallable DescribePatchBaselinesCallable(const Model::DescribePatchBaselinesRequest& request) const;
 
         /**
-         * <p>Lists the patch baselines in your AWS account.</p>
+         * <p>Lists the patch baselines in your AWS account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribePatchBaselines">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribePatchBaselinesAsync(const Model::DescribePatchBaselinesRequest& request, const DescribePatchBaselinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns high-level aggregated patch compliance state for a patch group.</p>
+         * <p>Returns high-level aggregated patch compliance state for a patch
+         * group.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribePatchGroupState">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribePatchGroupStateOutcome DescribePatchGroupState(const Model::DescribePatchGroupStateRequest& request) const;
 
         /**
-         * <p>Returns high-level aggregated patch compliance state for a patch group.</p>
+         * <p>Returns high-level aggregated patch compliance state for a patch
+         * group.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribePatchGroupState">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribePatchGroupStateOutcomeCallable DescribePatchGroupStateCallable(const Model::DescribePatchGroupStateRequest& request) const;
 
         /**
-         * <p>Returns high-level aggregated patch compliance state for a patch group.</p>
+         * <p>Returns high-level aggregated patch compliance state for a patch
+         * group.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribePatchGroupState">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribePatchGroupStateAsync(const Model::DescribePatchGroupStateRequest& request, const DescribePatchGroupStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists all patch groups that have been registered with patch baselines.</p>
+         * <p>Lists all patch groups that have been registered with patch
+         * baselines.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribePatchGroups">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribePatchGroupsOutcome DescribePatchGroups(const Model::DescribePatchGroupsRequest& request) const;
 
         /**
-         * <p>Lists all patch groups that have been registered with patch baselines.</p>
+         * <p>Lists all patch groups that have been registered with patch
+         * baselines.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribePatchGroups">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribePatchGroupsOutcomeCallable DescribePatchGroupsCallable(const Model::DescribePatchGroupsRequest& request) const;
 
         /**
-         * <p>Lists all patch groups that have been registered with patch baselines.</p>
+         * <p>Lists all patch groups that have been registered with patch
+         * baselines.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribePatchGroups">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribePatchGroupsAsync(const Model::DescribePatchGroupsRequest& request, const DescribePatchGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Get detailed information about a particular Automation execution.</p>
+         * <p>Get detailed information about a particular Automation
+         * execution.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetAutomationExecution">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetAutomationExecutionOutcome GetAutomationExecution(const Model::GetAutomationExecutionRequest& request) const;
 
         /**
-         * <p>Get detailed information about a particular Automation execution.</p>
+         * <p>Get detailed information about a particular Automation
+         * execution.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetAutomationExecution">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetAutomationExecutionOutcomeCallable GetAutomationExecutionCallable(const Model::GetAutomationExecutionRequest& request) const;
 
         /**
-         * <p>Get detailed information about a particular Automation execution.</p>
+         * <p>Get detailed information about a particular Automation
+         * execution.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetAutomationExecution">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1504,13 +1816,17 @@ namespace Model
 
         /**
          * <p>Returns detailed information about command execution for an invocation or
-         * plugin. </p>
+         * plugin. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetCommandInvocation">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetCommandInvocationOutcome GetCommandInvocation(const Model::GetCommandInvocationRequest& request) const;
 
         /**
          * <p>Returns detailed information about command execution for an invocation or
-         * plugin. </p>
+         * plugin. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetCommandInvocation">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1518,26 +1834,34 @@ namespace Model
 
         /**
          * <p>Returns detailed information about command execution for an invocation or
-         * plugin. </p>
+         * plugin. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetCommandInvocation">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetCommandInvocationAsync(const Model::GetCommandInvocationRequest& request, const GetCommandInvocationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves the default patch baseline.</p>
+         * <p>Retrieves the default patch baseline.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetDefaultPatchBaseline">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetDefaultPatchBaselineOutcome GetDefaultPatchBaseline(const Model::GetDefaultPatchBaselineRequest& request) const;
 
         /**
-         * <p>Retrieves the default patch baseline.</p>
+         * <p>Retrieves the default patch baseline.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetDefaultPatchBaseline">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetDefaultPatchBaselineOutcomeCallable GetDefaultPatchBaselineCallable(const Model::GetDefaultPatchBaselineRequest& request) const;
 
         /**
-         * <p>Retrieves the default patch baseline.</p>
+         * <p>Retrieves the default patch baseline.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetDefaultPatchBaseline">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1546,14 +1870,18 @@ namespace Model
         /**
          * <p>Retrieves the current snapshot for the patch baseline the instance uses. This
          * API is primarily used by the AWS-ApplyPatchBaseline Systems Manager document.
-         * </p>
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetDeployablePatchSnapshotForInstance">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetDeployablePatchSnapshotForInstanceOutcome GetDeployablePatchSnapshotForInstance(const Model::GetDeployablePatchSnapshotForInstanceRequest& request) const;
 
         /**
          * <p>Retrieves the current snapshot for the patch baseline the instance uses. This
          * API is primarily used by the AWS-ApplyPatchBaseline Systems Manager document.
-         * </p>
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetDeployablePatchSnapshotForInstance">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1562,45 +1890,59 @@ namespace Model
         /**
          * <p>Retrieves the current snapshot for the patch baseline the instance uses. This
          * API is primarily used by the AWS-ApplyPatchBaseline Systems Manager document.
-         * </p>
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetDeployablePatchSnapshotForInstance">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetDeployablePatchSnapshotForInstanceAsync(const Model::GetDeployablePatchSnapshotForInstanceRequest& request, const GetDeployablePatchSnapshotForInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets the contents of the specified SSM document.</p>
+         * <p>Gets the contents of the specified SSM document.</p><p><h3>See Also:</h3>  
+         * <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetDocument">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetDocumentOutcome GetDocument(const Model::GetDocumentRequest& request) const;
 
         /**
-         * <p>Gets the contents of the specified SSM document.</p>
+         * <p>Gets the contents of the specified SSM document.</p><p><h3>See Also:</h3>  
+         * <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetDocument">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetDocumentOutcomeCallable GetDocumentCallable(const Model::GetDocumentRequest& request) const;
 
         /**
-         * <p>Gets the contents of the specified SSM document.</p>
+         * <p>Gets the contents of the specified SSM document.</p><p><h3>See Also:</h3>  
+         * <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetDocument">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetDocumentAsync(const Model::GetDocumentRequest& request, const GetDocumentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Query inventory information.</p>
+         * <p>Query inventory information.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetInventory">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetInventoryOutcome GetInventory(const Model::GetInventoryRequest& request) const;
 
         /**
-         * <p>Query inventory information.</p>
+         * <p>Query inventory information.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetInventory">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetInventoryOutcomeCallable GetInventoryCallable(const Model::GetInventoryRequest& request) const;
 
         /**
-         * <p>Query inventory information.</p>
+         * <p>Query inventory information.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetInventory">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1608,13 +1950,19 @@ namespace Model
 
         /**
          * <p>Return a list of inventory type names for the account, or return a list of
-         * attribute names for a specific Inventory item type. </p>
+         * attribute names for a specific Inventory item type. </p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetInventorySchema">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetInventorySchemaOutcome GetInventorySchema(const Model::GetInventorySchemaRequest& request) const;
 
         /**
          * <p>Return a list of inventory type names for the account, or return a list of
-         * attribute names for a specific Inventory item type. </p>
+         * attribute names for a specific Inventory item type. </p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetInventorySchema">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1622,26 +1970,35 @@ namespace Model
 
         /**
          * <p>Return a list of inventory type names for the account, or return a list of
-         * attribute names for a specific Inventory item type. </p>
+         * attribute names for a specific Inventory item type. </p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetInventorySchema">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetInventorySchemaAsync(const Model::GetInventorySchemaRequest& request, const GetInventorySchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves a Maintenance Window.</p>
+         * <p>Retrieves a Maintenance Window.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindow">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetMaintenanceWindowOutcome GetMaintenanceWindow(const Model::GetMaintenanceWindowRequest& request) const;
 
         /**
-         * <p>Retrieves a Maintenance Window.</p>
+         * <p>Retrieves a Maintenance Window.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindow">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetMaintenanceWindowOutcomeCallable GetMaintenanceWindowCallable(const Model::GetMaintenanceWindowRequest& request) const;
 
         /**
-         * <p>Retrieves a Maintenance Window.</p>
+         * <p>Retrieves a Maintenance Window.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindow">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1649,13 +2006,17 @@ namespace Model
 
         /**
          * <p>Retrieves details about a specific task executed as part of a Maintenance
-         * Window execution.</p>
+         * Window execution.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindowExecution">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetMaintenanceWindowExecutionOutcome GetMaintenanceWindowExecution(const Model::GetMaintenanceWindowExecutionRequest& request) const;
 
         /**
          * <p>Retrieves details about a specific task executed as part of a Maintenance
-         * Window execution.</p>
+         * Window execution.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindowExecution">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1663,7 +2024,9 @@ namespace Model
 
         /**
          * <p>Retrieves details about a specific task executed as part of a Maintenance
-         * Window execution.</p>
+         * Window execution.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindowExecution">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1671,13 +2034,17 @@ namespace Model
 
         /**
          * <p>Retrieves the details about a specific task executed as part of a Maintenance
-         * Window execution.</p>
+         * Window execution.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindowExecutionTask">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetMaintenanceWindowExecutionTaskOutcome GetMaintenanceWindowExecutionTask(const Model::GetMaintenanceWindowExecutionTaskRequest& request) const;
 
         /**
          * <p>Retrieves the details about a specific task executed as part of a Maintenance
-         * Window execution.</p>
+         * Window execution.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindowExecutionTask">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1685,64 +2052,90 @@ namespace Model
 
         /**
          * <p>Retrieves the details about a specific task executed as part of a Maintenance
-         * Window execution.</p>
+         * Window execution.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindowExecutionTask">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetMaintenanceWindowExecutionTaskAsync(const Model::GetMaintenanceWindowExecutionTaskRequest& request, const GetMaintenanceWindowExecutionTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Query a list of all parameters used by the AWS account.</p>
+         * <p>Query a list of all parameters used by the AWS account.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParameterHistory">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetParameterHistoryOutcome GetParameterHistory(const Model::GetParameterHistoryRequest& request) const;
 
         /**
-         * <p>Query a list of all parameters used by the AWS account.</p>
+         * <p>Query a list of all parameters used by the AWS account.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParameterHistory">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetParameterHistoryOutcomeCallable GetParameterHistoryCallable(const Model::GetParameterHistoryRequest& request) const;
 
         /**
-         * <p>Query a list of all parameters used by the AWS account.</p>
+         * <p>Query a list of all parameters used by the AWS account.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParameterHistory">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetParameterHistoryAsync(const Model::GetParameterHistoryRequest& request, const GetParameterHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Get a list of parameters used by the AWS account.&gt;</p>
+         * <p>Get a list of parameters used by the AWS account.&gt;</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParameters">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetParametersOutcome GetParameters(const Model::GetParametersRequest& request) const;
 
         /**
-         * <p>Get a list of parameters used by the AWS account.&gt;</p>
+         * <p>Get a list of parameters used by the AWS account.&gt;</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParameters">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetParametersOutcomeCallable GetParametersCallable(const Model::GetParametersRequest& request) const;
 
         /**
-         * <p>Get a list of parameters used by the AWS account.&gt;</p>
+         * <p>Get a list of parameters used by the AWS account.&gt;</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParameters">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetParametersAsync(const Model::GetParametersRequest& request, const GetParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves information about a patch baseline.</p>
+         * <p>Retrieves information about a patch baseline.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetPatchBaseline">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetPatchBaselineOutcome GetPatchBaseline(const Model::GetPatchBaselineRequest& request) const;
 
         /**
-         * <p>Retrieves information about a patch baseline.</p>
+         * <p>Retrieves information about a patch baseline.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetPatchBaseline">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetPatchBaselineOutcomeCallable GetPatchBaselineCallable(const Model::GetPatchBaselineRequest& request) const;
 
         /**
-         * <p>Retrieves information about a patch baseline.</p>
+         * <p>Retrieves information about a patch baseline.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetPatchBaseline">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1750,13 +2143,17 @@ namespace Model
 
         /**
          * <p>Retrieves the patch baseline that should be used for the specified patch
-         * group.</p>
+         * group.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetPatchBaselineForPatchGroup">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetPatchBaselineForPatchGroupOutcome GetPatchBaselineForPatchGroup(const Model::GetPatchBaselineForPatchGroupRequest& request) const;
 
         /**
          * <p>Retrieves the patch baseline that should be used for the specified patch
-         * group.</p>
+         * group.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetPatchBaselineForPatchGroup">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1764,26 +2161,37 @@ namespace Model
 
         /**
          * <p>Retrieves the patch baseline that should be used for the specified patch
-         * group.</p>
+         * group.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetPatchBaselineForPatchGroup">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetPatchBaselineForPatchGroupAsync(const Model::GetPatchBaselineForPatchGroupRequest& request, const GetPatchBaselineForPatchGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the associations for the specified SSM document or instance.</p>
+         * <p>Lists the associations for the specified SSM document or
+         * instance.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListAssociations">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListAssociationsOutcome ListAssociations(const Model::ListAssociationsRequest& request) const;
 
         /**
-         * <p>Lists the associations for the specified SSM document or instance.</p>
+         * <p>Lists the associations for the specified SSM document or
+         * instance.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListAssociations">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListAssociationsOutcomeCallable ListAssociationsCallable(const Model::ListAssociationsRequest& request) const;
 
         /**
-         * <p>Lists the associations for the specified SSM document or instance.</p>
+         * <p>Lists the associations for the specified SSM document or
+         * instance.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListAssociations">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1794,7 +2202,10 @@ namespace Model
          * apply to one or more instances. A command invocation applies to one instance.
          * For example, if a user executes SendCommand against three instances, then a
          * command invocation is created for each requested instance ID.
-         * ListCommandInvocations provide status about command execution.</p>
+         * ListCommandInvocations provide status about command execution.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListCommandInvocations">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListCommandInvocationsOutcome ListCommandInvocations(const Model::ListCommandInvocationsRequest& request) const;
 
@@ -1803,7 +2214,10 @@ namespace Model
          * apply to one or more instances. A command invocation applies to one instance.
          * For example, if a user executes SendCommand against three instances, then a
          * command invocation is created for each requested instance ID.
-         * ListCommandInvocations provide status about command execution.</p>
+         * ListCommandInvocations provide status about command execution.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListCommandInvocations">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1814,102 +2228,144 @@ namespace Model
          * apply to one or more instances. A command invocation applies to one instance.
          * For example, if a user executes SendCommand against three instances, then a
          * command invocation is created for each requested instance ID.
-         * ListCommandInvocations provide status about command execution.</p>
+         * ListCommandInvocations provide status about command execution.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListCommandInvocations">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListCommandInvocationsAsync(const Model::ListCommandInvocationsRequest& request, const ListCommandInvocationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the commands requested by users of the AWS account.</p>
+         * <p>Lists the commands requested by users of the AWS account.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListCommands">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListCommandsOutcome ListCommands(const Model::ListCommandsRequest& request) const;
 
         /**
-         * <p>Lists the commands requested by users of the AWS account.</p>
+         * <p>Lists the commands requested by users of the AWS account.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListCommands">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListCommandsOutcomeCallable ListCommandsCallable(const Model::ListCommandsRequest& request) const;
 
         /**
-         * <p>Lists the commands requested by users of the AWS account.</p>
+         * <p>Lists the commands requested by users of the AWS account.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListCommands">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListCommandsAsync(const Model::ListCommandsRequest& request, const ListCommandsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>List all versions for a document.</p>
+         * <p>List all versions for a document.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListDocumentVersions">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListDocumentVersionsOutcome ListDocumentVersions(const Model::ListDocumentVersionsRequest& request) const;
 
         /**
-         * <p>List all versions for a document.</p>
+         * <p>List all versions for a document.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListDocumentVersions">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListDocumentVersionsOutcomeCallable ListDocumentVersionsCallable(const Model::ListDocumentVersionsRequest& request) const;
 
         /**
-         * <p>List all versions for a document.</p>
+         * <p>List all versions for a document.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListDocumentVersions">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListDocumentVersionsAsync(const Model::ListDocumentVersionsRequest& request, const ListDocumentVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes one or more of your SSM documents.</p>
+         * <p>Describes one or more of your SSM documents.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListDocuments">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListDocumentsOutcome ListDocuments(const Model::ListDocumentsRequest& request) const;
 
         /**
-         * <p>Describes one or more of your SSM documents.</p>
+         * <p>Describes one or more of your SSM documents.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListDocuments">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListDocumentsOutcomeCallable ListDocumentsCallable(const Model::ListDocumentsRequest& request) const;
 
         /**
-         * <p>Describes one or more of your SSM documents.</p>
+         * <p>Describes one or more of your SSM documents.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListDocuments">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListDocumentsAsync(const Model::ListDocumentsRequest& request, const ListDocumentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>A list of inventory items returned by the request.</p>
+         * <p>A list of inventory items returned by the request.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListInventoryEntries">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListInventoryEntriesOutcome ListInventoryEntries(const Model::ListInventoryEntriesRequest& request) const;
 
         /**
-         * <p>A list of inventory items returned by the request.</p>
+         * <p>A list of inventory items returned by the request.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListInventoryEntries">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListInventoryEntriesOutcomeCallable ListInventoryEntriesCallable(const Model::ListInventoryEntriesRequest& request) const;
 
         /**
-         * <p>A list of inventory items returned by the request.</p>
+         * <p>A list of inventory items returned by the request.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListInventoryEntries">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListInventoryEntriesAsync(const Model::ListInventoryEntriesRequest& request, const ListInventoryEntriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns a list of the tags assigned to the specified resource.</p>
+         * <p>Returns a list of the tags assigned to the specified resource.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListTagsForResource">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p>Returns a list of the tags assigned to the specified resource.</p>
+         * <p>Returns a list of the tags assigned to the specified resource.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListTagsForResource">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p>Returns a list of the tags assigned to the specified resource.</p>
+         * <p>Returns a list of the tags assigned to the specified resource.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListTagsForResource">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1919,7 +2375,9 @@ namespace Model
          * <p>Share a document publicly or privately. If you share a document privately,
          * you must specify the AWS user account IDs for those people who can use the
          * document. If you share a document publicly, you must specify <i>All</i> as the
-         * account ID.</p>
+         * account ID.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ModifyDocumentPermission">AWS
+         * API Reference</a></p>
          */
         virtual Model::ModifyDocumentPermissionOutcome ModifyDocumentPermission(const Model::ModifyDocumentPermissionRequest& request) const;
 
@@ -1927,7 +2385,9 @@ namespace Model
          * <p>Share a document publicly or privately. If you share a document privately,
          * you must specify the AWS user account IDs for those people who can use the
          * document. If you share a document publicly, you must specify <i>All</i> as the
-         * account ID.</p>
+         * account ID.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ModifyDocumentPermission">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1937,7 +2397,9 @@ namespace Model
          * <p>Share a document publicly or privately. If you share a document privately,
          * you must specify the AWS user account IDs for those people who can use the
          * document. If you share a document publicly, you must specify <i>All</i> as the
-         * account ID.</p>
+         * account ID.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ModifyDocumentPermission">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1946,14 +2408,18 @@ namespace Model
         /**
          * <p>Bulk update custom inventory items on one more instance. The request adds an
          * inventory item, if it doesn't already exist, or updates an inventory item, if it
-         * does exist.</p>
+         * does exist.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PutInventory">AWS
+         * API Reference</a></p>
          */
         virtual Model::PutInventoryOutcome PutInventory(const Model::PutInventoryRequest& request) const;
 
         /**
          * <p>Bulk update custom inventory items on one more instance. The request adds an
          * inventory item, if it doesn't already exist, or updates an inventory item, if it
-         * does exist.</p>
+         * does exist.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PutInventory">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1962,178 +2428,234 @@ namespace Model
         /**
          * <p>Bulk update custom inventory items on one more instance. The request adds an
          * inventory item, if it doesn't already exist, or updates an inventory item, if it
-         * does exist.</p>
+         * does exist.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PutInventory">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void PutInventoryAsync(const Model::PutInventoryRequest& request, const PutInventoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Add one or more paramaters to the system.</p>
+         * <p>Add one or more paramaters to the system.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PutParameter">AWS
+         * API Reference</a></p>
          */
         virtual Model::PutParameterOutcome PutParameter(const Model::PutParameterRequest& request) const;
 
         /**
-         * <p>Add one or more paramaters to the system.</p>
+         * <p>Add one or more paramaters to the system.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PutParameter">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::PutParameterOutcomeCallable PutParameterCallable(const Model::PutParameterRequest& request) const;
 
         /**
-         * <p>Add one or more paramaters to the system.</p>
+         * <p>Add one or more paramaters to the system.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PutParameter">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void PutParameterAsync(const Model::PutParameterRequest& request, const PutParameterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Defines the default patch baseline.</p>
+         * <p>Defines the default patch baseline.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RegisterDefaultPatchBaseline">AWS
+         * API Reference</a></p>
          */
         virtual Model::RegisterDefaultPatchBaselineOutcome RegisterDefaultPatchBaseline(const Model::RegisterDefaultPatchBaselineRequest& request) const;
 
         /**
-         * <p>Defines the default patch baseline.</p>
+         * <p>Defines the default patch baseline.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RegisterDefaultPatchBaseline">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::RegisterDefaultPatchBaselineOutcomeCallable RegisterDefaultPatchBaselineCallable(const Model::RegisterDefaultPatchBaselineRequest& request) const;
 
         /**
-         * <p>Defines the default patch baseline.</p>
+         * <p>Defines the default patch baseline.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RegisterDefaultPatchBaseline">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void RegisterDefaultPatchBaselineAsync(const Model::RegisterDefaultPatchBaselineRequest& request, const RegisterDefaultPatchBaselineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Registers a patch baseline for a patch group.</p>
+         * <p>Registers a patch baseline for a patch group.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RegisterPatchBaselineForPatchGroup">AWS
+         * API Reference</a></p>
          */
         virtual Model::RegisterPatchBaselineForPatchGroupOutcome RegisterPatchBaselineForPatchGroup(const Model::RegisterPatchBaselineForPatchGroupRequest& request) const;
 
         /**
-         * <p>Registers a patch baseline for a patch group.</p>
+         * <p>Registers a patch baseline for a patch group.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RegisterPatchBaselineForPatchGroup">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::RegisterPatchBaselineForPatchGroupOutcomeCallable RegisterPatchBaselineForPatchGroupCallable(const Model::RegisterPatchBaselineForPatchGroupRequest& request) const;
 
         /**
-         * <p>Registers a patch baseline for a patch group.</p>
+         * <p>Registers a patch baseline for a patch group.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RegisterPatchBaselineForPatchGroup">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void RegisterPatchBaselineForPatchGroupAsync(const Model::RegisterPatchBaselineForPatchGroupRequest& request, const RegisterPatchBaselineForPatchGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Registers a target with a Maintenance Window.</p>
+         * <p>Registers a target with a Maintenance Window.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RegisterTargetWithMaintenanceWindow">AWS
+         * API Reference</a></p>
          */
         virtual Model::RegisterTargetWithMaintenanceWindowOutcome RegisterTargetWithMaintenanceWindow(const Model::RegisterTargetWithMaintenanceWindowRequest& request) const;
 
         /**
-         * <p>Registers a target with a Maintenance Window.</p>
+         * <p>Registers a target with a Maintenance Window.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RegisterTargetWithMaintenanceWindow">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::RegisterTargetWithMaintenanceWindowOutcomeCallable RegisterTargetWithMaintenanceWindowCallable(const Model::RegisterTargetWithMaintenanceWindowRequest& request) const;
 
         /**
-         * <p>Registers a target with a Maintenance Window.</p>
+         * <p>Registers a target with a Maintenance Window.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RegisterTargetWithMaintenanceWindow">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void RegisterTargetWithMaintenanceWindowAsync(const Model::RegisterTargetWithMaintenanceWindowRequest& request, const RegisterTargetWithMaintenanceWindowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Adds a new task to a Maintenance Window.</p>
+         * <p>Adds a new task to a Maintenance Window.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RegisterTaskWithMaintenanceWindow">AWS
+         * API Reference</a></p>
          */
         virtual Model::RegisterTaskWithMaintenanceWindowOutcome RegisterTaskWithMaintenanceWindow(const Model::RegisterTaskWithMaintenanceWindowRequest& request) const;
 
         /**
-         * <p>Adds a new task to a Maintenance Window.</p>
+         * <p>Adds a new task to a Maintenance Window.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RegisterTaskWithMaintenanceWindow">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::RegisterTaskWithMaintenanceWindowOutcomeCallable RegisterTaskWithMaintenanceWindowCallable(const Model::RegisterTaskWithMaintenanceWindowRequest& request) const;
 
         /**
-         * <p>Adds a new task to a Maintenance Window.</p>
+         * <p>Adds a new task to a Maintenance Window.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RegisterTaskWithMaintenanceWindow">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void RegisterTaskWithMaintenanceWindowAsync(const Model::RegisterTaskWithMaintenanceWindowRequest& request, const RegisterTaskWithMaintenanceWindowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Removes all tags from the specified resource.</p>
+         * <p>Removes all tags from the specified resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RemoveTagsFromResource">AWS
+         * API Reference</a></p>
          */
         virtual Model::RemoveTagsFromResourceOutcome RemoveTagsFromResource(const Model::RemoveTagsFromResourceRequest& request) const;
 
         /**
-         * <p>Removes all tags from the specified resource.</p>
+         * <p>Removes all tags from the specified resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RemoveTagsFromResource">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::RemoveTagsFromResourceOutcomeCallable RemoveTagsFromResourceCallable(const Model::RemoveTagsFromResourceRequest& request) const;
 
         /**
-         * <p>Removes all tags from the specified resource.</p>
+         * <p>Removes all tags from the specified resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RemoveTagsFromResource">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void RemoveTagsFromResourceAsync(const Model::RemoveTagsFromResourceRequest& request, const RemoveTagsFromResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Executes commands on one or more remote instances.</p>
+         * <p>Executes commands on one or more remote instances.</p><p><h3>See Also:</h3>  
+         * <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/SendCommand">AWS
+         * API Reference</a></p>
          */
         virtual Model::SendCommandOutcome SendCommand(const Model::SendCommandRequest& request) const;
 
         /**
-         * <p>Executes commands on one or more remote instances.</p>
+         * <p>Executes commands on one or more remote instances.</p><p><h3>See Also:</h3>  
+         * <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/SendCommand">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::SendCommandOutcomeCallable SendCommandCallable(const Model::SendCommandRequest& request) const;
 
         /**
-         * <p>Executes commands on one or more remote instances.</p>
+         * <p>Executes commands on one or more remote instances.</p><p><h3>See Also:</h3>  
+         * <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/SendCommand">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void SendCommandAsync(const Model::SendCommandRequest& request, const SendCommandResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Initiates execution of an Automation document.</p>
+         * <p>Initiates execution of an Automation document.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartAutomationExecution">AWS
+         * API Reference</a></p>
          */
         virtual Model::StartAutomationExecutionOutcome StartAutomationExecution(const Model::StartAutomationExecutionRequest& request) const;
 
         /**
-         * <p>Initiates execution of an Automation document.</p>
+         * <p>Initiates execution of an Automation document.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartAutomationExecution">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::StartAutomationExecutionOutcomeCallable StartAutomationExecutionCallable(const Model::StartAutomationExecutionRequest& request) const;
 
         /**
-         * <p>Initiates execution of an Automation document.</p>
+         * <p>Initiates execution of an Automation document.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartAutomationExecution">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void StartAutomationExecutionAsync(const Model::StartAutomationExecutionRequest& request, const StartAutomationExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Stop an Automation that is currently executing.</p>
+         * <p>Stop an Automation that is currently executing.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StopAutomationExecution">AWS
+         * API Reference</a></p>
          */
         virtual Model::StopAutomationExecutionOutcome StopAutomationExecution(const Model::StopAutomationExecutionRequest& request) const;
 
         /**
-         * <p>Stop an Automation that is currently executing.</p>
+         * <p>Stop an Automation that is currently executing.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StopAutomationExecution">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::StopAutomationExecutionOutcomeCallable StopAutomationExecutionCallable(const Model::StopAutomationExecutionRequest& request) const;
 
         /**
-         * <p>Stop an Automation that is currently executing.</p>
+         * <p>Stop an Automation that is currently executing.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StopAutomationExecution">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2141,13 +2663,19 @@ namespace Model
 
         /**
          * <p>Updates an association. You can only update the document version, schedule,
-         * parameters, and Amazon S3 output of an association.</p>
+         * parameters, and Amazon S3 output of an association.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateAssociation">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateAssociationOutcome UpdateAssociation(const Model::UpdateAssociationRequest& request) const;
 
         /**
          * <p>Updates an association. You can only update the document version, schedule,
-         * parameters, and Amazon S3 output of an association.</p>
+         * parameters, and Amazon S3 output of an association.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateAssociation">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2155,7 +2683,10 @@ namespace Model
 
         /**
          * <p>Updates an association. You can only update the document version, schedule,
-         * parameters, and Amazon S3 output of an association.</p>
+         * parameters, and Amazon S3 output of an association.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateAssociation">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2163,13 +2694,17 @@ namespace Model
 
         /**
          * <p>Updates the status of the SSM document associated with the specified
-         * instance.</p>
+         * instance.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateAssociationStatus">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateAssociationStatusOutcome UpdateAssociationStatus(const Model::UpdateAssociationStatusRequest& request) const;
 
         /**
          * <p>Updates the status of the SSM document associated with the specified
-         * instance.</p>
+         * instance.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateAssociationStatus">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2177,45 +2712,59 @@ namespace Model
 
         /**
          * <p>Updates the status of the SSM document associated with the specified
-         * instance.</p>
+         * instance.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateAssociationStatus">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateAssociationStatusAsync(const Model::UpdateAssociationStatusRequest& request, const UpdateAssociationStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>The document you want to update.</p>
+         * <p>The document you want to update.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateDocument">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateDocumentOutcome UpdateDocument(const Model::UpdateDocumentRequest& request) const;
 
         /**
-         * <p>The document you want to update.</p>
+         * <p>The document you want to update.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateDocument">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateDocumentOutcomeCallable UpdateDocumentCallable(const Model::UpdateDocumentRequest& request) const;
 
         /**
-         * <p>The document you want to update.</p>
+         * <p>The document you want to update.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateDocument">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateDocumentAsync(const Model::UpdateDocumentRequest& request, const UpdateDocumentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Set the default version of a document. </p>
+         * <p>Set the default version of a document. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateDocumentDefaultVersion">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateDocumentDefaultVersionOutcome UpdateDocumentDefaultVersion(const Model::UpdateDocumentDefaultVersionRequest& request) const;
 
         /**
-         * <p>Set the default version of a document. </p>
+         * <p>Set the default version of a document. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateDocumentDefaultVersion">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateDocumentDefaultVersionOutcomeCallable UpdateDocumentDefaultVersionCallable(const Model::UpdateDocumentDefaultVersionRequest& request) const;
 
         /**
-         * <p>Set the default version of a document. </p>
+         * <p>Set the default version of a document. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateDocumentDefaultVersion">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2223,13 +2772,17 @@ namespace Model
 
         /**
          * <p>Updates an existing Maintenance Window. Only specified parameters are
-         * modified.</p>
+         * modified.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateMaintenanceWindow">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateMaintenanceWindowOutcome UpdateMaintenanceWindow(const Model::UpdateMaintenanceWindowRequest& request) const;
 
         /**
          * <p>Updates an existing Maintenance Window. Only specified parameters are
-         * modified.</p>
+         * modified.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateMaintenanceWindow">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2237,7 +2790,9 @@ namespace Model
 
         /**
          * <p>Updates an existing Maintenance Window. Only specified parameters are
-         * modified.</p>
+         * modified.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateMaintenanceWindow">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2245,13 +2800,17 @@ namespace Model
 
         /**
          * <p>Assigns or changes an Amazon Identity and Access Management (IAM) role to the
-         * managed instance.</p>
+         * managed instance.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateManagedInstanceRole">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateManagedInstanceRoleOutcome UpdateManagedInstanceRole(const Model::UpdateManagedInstanceRoleRequest& request) const;
 
         /**
          * <p>Assigns or changes an Amazon Identity and Access Management (IAM) role to the
-         * managed instance.</p>
+         * managed instance.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateManagedInstanceRole">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2259,7 +2818,9 @@ namespace Model
 
         /**
          * <p>Assigns or changes an Amazon Identity and Access Management (IAM) role to the
-         * managed instance.</p>
+         * managed instance.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateManagedInstanceRole">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2267,13 +2828,17 @@ namespace Model
 
         /**
          * <p>Modifies an existing patch baseline. Fields not specified in the request are
-         * left unchanged.</p>
+         * left unchanged.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdatePatchBaseline">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdatePatchBaselineOutcome UpdatePatchBaseline(const Model::UpdatePatchBaselineRequest& request) const;
 
         /**
          * <p>Modifies an existing patch baseline. Fields not specified in the request are
-         * left unchanged.</p>
+         * left unchanged.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdatePatchBaseline">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2281,7 +2846,9 @@ namespace Model
 
         /**
          * <p>Modifies an existing patch baseline. Fields not specified in the request are
-         * left unchanged.</p>
+         * left unchanged.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdatePatchBaseline">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */

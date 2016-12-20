@@ -34,7 +34,9 @@ namespace Model
 
   /**
    * <p>A complex type that contains the last failure reason as reported by one
-   * Amazon Route 53 health checker.</p>
+   * Amazon Route 53 health checker.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/HealthCheckObservation">AWS
+   * API Reference</a></p>
    */
   class AWS_ROUTE53_API HealthCheckObservation
   {

@@ -32,7 +32,10 @@ namespace Model
 {
 
   /**
-   * <p>Provides information on the option groups the DB instance is a member of.</p>
+   * <p>Provides information on the option groups the DB instance is a member
+   * of.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/OptionGroupMembership">AWS
+   * API Reference</a></p>
    */
   class AWS_RDS_API OptionGroupMembership
   {

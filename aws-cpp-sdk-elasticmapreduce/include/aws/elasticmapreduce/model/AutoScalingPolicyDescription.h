@@ -37,7 +37,10 @@ namespace Model
    * <p>An automatic scaling policy for a core instance group or task instance group
    * in an Amazon EMR cluster. The automatic scaling policy defines how an instance
    * group dynamically adds and terminates EC2 instances in response to the value of
-   * a CloudWatch metric. See <a>PutAutoScalingPolicy</a>.</p>
+   * a CloudWatch metric. See <a>PutAutoScalingPolicy</a>.</p><p><h3>See Also:</h3>  
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/AutoScalingPolicyDescription">AWS
+   * API Reference</a></p>
    */
   class AWS_EMR_API AutoScalingPolicyDescription
   {

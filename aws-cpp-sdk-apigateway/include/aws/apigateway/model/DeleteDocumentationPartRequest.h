@@ -25,7 +25,10 @@ namespace Model
 {
 
   /**
-   * <p>Deletes an existing documentation part of an API.</p>
+   * <p>Deletes an existing documentation part of an API.</p><p><h3>See Also:</h3>  
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteDocumentationPartRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_APIGATEWAY_API DeleteDocumentationPartRequest : public APIGatewayRequest
   {

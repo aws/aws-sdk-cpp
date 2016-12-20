@@ -31,7 +31,9 @@ namespace Model
 
   /**
    * <p>Contains the counts of open tasks, child workflow executions and timers for a
-   * workflow execution.</p>
+   * workflow execution.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/WorkflowExecutionOpenCounts">AWS
+   * API Reference</a></p>
    */
   class AWS_SWF_API WorkflowExecutionOpenCounts
   {

@@ -30,7 +30,9 @@ namespace Model
 
   /**
    * <p>The GET request to get the usage data of a usage plan in a specified time
-   * interval.</p>
+   * interval.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetUsageRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_APIGATEWAY_API GetUsageRequest : public APIGatewayRequest
   {

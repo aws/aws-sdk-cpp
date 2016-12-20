@@ -26,7 +26,10 @@ namespace Model
 {
 
   /**
-   * <p>Input for SetPlatformApplicationAttributes action.</p>
+   * <p>Input for SetPlatformApplicationAttributes action.</p><p><h3>See Also:</h3>  
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetPlatformApplicationAttributesInput">AWS
+   * API Reference</a></p>
    */
   class AWS_SNS_API SetPlatformApplicationAttributesRequest : public SNSRequest
   {

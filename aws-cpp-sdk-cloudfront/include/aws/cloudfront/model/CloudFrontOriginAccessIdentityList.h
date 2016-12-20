@@ -33,7 +33,9 @@ namespace Model
 {
 
   /**
-   * The CloudFrontOriginAccessIdentityList type.
+   * The CloudFrontOriginAccessIdentityList type.<p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/CloudFrontOriginAccessIdentityList">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API CloudFrontOriginAccessIdentityList
   {

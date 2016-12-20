@@ -34,7 +34,9 @@ namespace Model
 
   /**
    * <p> Describes the real-time endpoint information for an
-   * <code>MLModel</code>.</p>
+   * <code>MLModel</code>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/RealtimeEndpointInfo">AWS
+   * API Reference</a></p>
    */
   class AWS_MACHINELEARNING_API RealtimeEndpointInfo
   {

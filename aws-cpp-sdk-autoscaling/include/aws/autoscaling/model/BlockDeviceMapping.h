@@ -33,7 +33,9 @@ namespace Model
 {
 
   /**
-   * <p>Describes a block device mapping.</p>
+   * <p>Describes a block device mapping.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/BlockDeviceMapping">AWS
+   * API Reference</a></p>
    */
   class AWS_AUTOSCALING_API BlockDeviceMapping
   {

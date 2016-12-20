@@ -41,7 +41,9 @@ namespace Model
    * <p>Describes the launch specification for a Scheduled Instance.</p> <p>If you
    * are launching the Scheduled Instance in EC2-VPC, you must specify the ID of the
    * subnet. You can specify the subnet using either <code>SubnetId</code> or
-   * <code>NetworkInterface</code>.</p>
+   * <code>NetworkInterface</code>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ScheduledInstancesLaunchSpecification">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API ScheduledInstancesLaunchSpecification
   {

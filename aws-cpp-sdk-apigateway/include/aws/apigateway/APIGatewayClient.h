@@ -589,14 +589,18 @@ namespace Model
         /**
          * <p>Create an <a>ApiKey</a> resource. </p> <div class="seeAlso"><a
          * href="http://docs.aws.amazon.com/cli/latest/reference/apigateway/create-api-key.html">AWS
-         * CLI</a></div>
+         * CLI</a></div><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateApiKey">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateApiKeyOutcome CreateApiKey(const Model::CreateApiKeyRequest& request) const;
 
         /**
          * <p>Create an <a>ApiKey</a> resource. </p> <div class="seeAlso"><a
          * href="http://docs.aws.amazon.com/cli/latest/reference/apigateway/create-api-key.html">AWS
-         * CLI</a></div>
+         * CLI</a></div><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateApiKey">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -605,7 +609,9 @@ namespace Model
         /**
          * <p>Create an <a>ApiKey</a> resource. </p> <div class="seeAlso"><a
          * href="http://docs.aws.amazon.com/cli/latest/reference/apigateway/create-api-key.html">AWS
-         * CLI</a></div>
+         * CLI</a></div><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateApiKey">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -615,7 +621,9 @@ namespace Model
          * <p>Adds a new <a>Authorizer</a> resource to an existing <a>RestApi</a>
          * resource.</p> <div class="seeAlso"><a
          * href="http://docs.aws.amazon.com/cli/latest/reference/apigateway/create-authorizer.html">AWS
-         * CLI</a></div>
+         * CLI</a></div><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateAuthorizer">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateAuthorizerOutcome CreateAuthorizer(const Model::CreateAuthorizerRequest& request) const;
 
@@ -623,7 +631,9 @@ namespace Model
          * <p>Adds a new <a>Authorizer</a> resource to an existing <a>RestApi</a>
          * resource.</p> <div class="seeAlso"><a
          * href="http://docs.aws.amazon.com/cli/latest/reference/apigateway/create-authorizer.html">AWS
-         * CLI</a></div>
+         * CLI</a></div><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateAuthorizer">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -633,26 +643,34 @@ namespace Model
          * <p>Adds a new <a>Authorizer</a> resource to an existing <a>RestApi</a>
          * resource.</p> <div class="seeAlso"><a
          * href="http://docs.aws.amazon.com/cli/latest/reference/apigateway/create-authorizer.html">AWS
-         * CLI</a></div>
+         * CLI</a></div><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateAuthorizer">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateAuthorizerAsync(const Model::CreateAuthorizerRequest& request, const CreateAuthorizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a new <a>BasePathMapping</a> resource.</p>
+         * <p>Creates a new <a>BasePathMapping</a> resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateBasePathMapping">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateBasePathMappingOutcome CreateBasePathMapping(const Model::CreateBasePathMappingRequest& request) const;
 
         /**
-         * <p>Creates a new <a>BasePathMapping</a> resource.</p>
+         * <p>Creates a new <a>BasePathMapping</a> resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateBasePathMapping">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateBasePathMappingOutcomeCallable CreateBasePathMappingCallable(const Model::CreateBasePathMappingRequest& request) const;
 
         /**
-         * <p>Creates a new <a>BasePathMapping</a> resource.</p>
+         * <p>Creates a new <a>BasePathMapping</a> resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateBasePathMapping">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -660,13 +678,17 @@ namespace Model
 
         /**
          * <p>Creates a <a>Deployment</a> resource, which makes a specified <a>RestApi</a>
-         * callable over the internet.</p>
+         * callable over the internet.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateDeployment">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateDeploymentOutcome CreateDeployment(const Model::CreateDeploymentRequest& request) const;
 
         /**
          * <p>Creates a <a>Deployment</a> resource, which makes a specified <a>RestApi</a>
-         * callable over the internet.</p>
+         * callable over the internet.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateDeployment">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -674,7 +696,9 @@ namespace Model
 
         /**
          * <p>Creates a <a>Deployment</a> resource, which makes a specified <a>RestApi</a>
-         * callable over the internet.</p>
+         * callable over the internet.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateDeployment">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -719,76 +743,103 @@ namespace Model
         virtual void CreateDocumentationVersionAsync(const Model::CreateDocumentationVersionRequest& request, const CreateDocumentationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a new domain name.</p>
+         * <p>Creates a new domain name.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateDomainName">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateDomainNameOutcome CreateDomainName(const Model::CreateDomainNameRequest& request) const;
 
         /**
-         * <p>Creates a new domain name.</p>
+         * <p>Creates a new domain name.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateDomainName">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateDomainNameOutcomeCallable CreateDomainNameCallable(const Model::CreateDomainNameRequest& request) const;
 
         /**
-         * <p>Creates a new domain name.</p>
+         * <p>Creates a new domain name.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateDomainName">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateDomainNameAsync(const Model::CreateDomainNameRequest& request, const CreateDomainNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Adds a new <a>Model</a> resource to an existing <a>RestApi</a> resource.</p>
+         * <p>Adds a new <a>Model</a> resource to an existing <a>RestApi</a>
+         * resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateModel">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateModelOutcome CreateModel(const Model::CreateModelRequest& request) const;
 
         /**
-         * <p>Adds a new <a>Model</a> resource to an existing <a>RestApi</a> resource.</p>
+         * <p>Adds a new <a>Model</a> resource to an existing <a>RestApi</a>
+         * resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateModel">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateModelOutcomeCallable CreateModelCallable(const Model::CreateModelRequest& request) const;
 
         /**
-         * <p>Adds a new <a>Model</a> resource to an existing <a>RestApi</a> resource.</p>
+         * <p>Adds a new <a>Model</a> resource to an existing <a>RestApi</a>
+         * resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateModel">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateModelAsync(const Model::CreateModelRequest& request, const CreateModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a <a>Resource</a> resource.</p>
+         * <p>Creates a <a>Resource</a> resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateResource">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateResourceOutcome CreateResource(const Model::CreateResourceRequest& request) const;
 
         /**
-         * <p>Creates a <a>Resource</a> resource.</p>
+         * <p>Creates a <a>Resource</a> resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateResource">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateResourceOutcomeCallable CreateResourceCallable(const Model::CreateResourceRequest& request) const;
 
         /**
-         * <p>Creates a <a>Resource</a> resource.</p>
+         * <p>Creates a <a>Resource</a> resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateResource">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateResourceAsync(const Model::CreateResourceRequest& request, const CreateResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a new <a>RestApi</a> resource.</p>
+         * <p>Creates a new <a>RestApi</a> resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateRestApi">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateRestApiOutcome CreateRestApi(const Model::CreateRestApiRequest& request) const;
 
         /**
-         * <p>Creates a new <a>RestApi</a> resource.</p>
+         * <p>Creates a new <a>RestApi</a> resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateRestApi">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateRestApiOutcomeCallable CreateRestApiCallable(const Model::CreateRestApiRequest& request) const;
 
         /**
-         * <p>Creates a new <a>RestApi</a> resource.</p>
+         * <p>Creates a new <a>RestApi</a> resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateRestApi">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -796,13 +847,17 @@ namespace Model
 
         /**
          * <p>Creates a new <a>Stage</a> resource that references a pre-existing
-         * <a>Deployment</a> for the API. </p>
+         * <a>Deployment</a> for the API. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateStage">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateStageOutcome CreateStage(const Model::CreateStageRequest& request) const;
 
         /**
          * <p>Creates a new <a>Stage</a> resource that references a pre-existing
-         * <a>Deployment</a> for the API. </p>
+         * <a>Deployment</a> for the API. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateStage">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -810,7 +865,9 @@ namespace Model
 
         /**
          * <p>Creates a new <a>Stage</a> resource that references a pre-existing
-         * <a>Deployment</a> for the API. </p>
+         * <a>Deployment</a> for the API. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateStage">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -818,13 +875,17 @@ namespace Model
 
         /**
          * <p>Creates a usage plan with the throttle and quota limits, as well as the
-         * associated API stages, specified in the payload. </p>
+         * associated API stages, specified in the payload. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateUsagePlan">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateUsagePlanOutcome CreateUsagePlan(const Model::CreateUsagePlanRequest& request) const;
 
         /**
          * <p>Creates a usage plan with the throttle and quota limits, as well as the
-         * associated API stages, specified in the payload. </p>
+         * associated API stages, specified in the payload. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateUsagePlan">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -832,45 +893,62 @@ namespace Model
 
         /**
          * <p>Creates a usage plan with the throttle and quota limits, as well as the
-         * associated API stages, specified in the payload. </p>
+         * associated API stages, specified in the payload. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateUsagePlan">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateUsagePlanAsync(const Model::CreateUsagePlanRequest& request, const CreateUsagePlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a usage plan key for adding an existing API key to a usage plan.</p>
+         * <p>Creates a usage plan key for adding an existing API key to a usage
+         * plan.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateUsagePlanKey">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateUsagePlanKeyOutcome CreateUsagePlanKey(const Model::CreateUsagePlanKeyRequest& request) const;
 
         /**
-         * <p>Creates a usage plan key for adding an existing API key to a usage plan.</p>
+         * <p>Creates a usage plan key for adding an existing API key to a usage
+         * plan.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateUsagePlanKey">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateUsagePlanKeyOutcomeCallable CreateUsagePlanKeyCallable(const Model::CreateUsagePlanKeyRequest& request) const;
 
         /**
-         * <p>Creates a usage plan key for adding an existing API key to a usage plan.</p>
+         * <p>Creates a usage plan key for adding an existing API key to a usage
+         * plan.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateUsagePlanKey">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateUsagePlanKeyAsync(const Model::CreateUsagePlanKeyRequest& request, const CreateUsagePlanKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the <a>ApiKey</a> resource.</p>
+         * <p>Deletes the <a>ApiKey</a> resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteApiKey">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteApiKeyOutcome DeleteApiKey(const Model::DeleteApiKeyRequest& request) const;
 
         /**
-         * <p>Deletes the <a>ApiKey</a> resource.</p>
+         * <p>Deletes the <a>ApiKey</a> resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteApiKey">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteApiKeyOutcomeCallable DeleteApiKeyCallable(const Model::DeleteApiKeyRequest& request) const;
 
         /**
-         * <p>Deletes the <a>ApiKey</a> resource.</p>
+         * <p>Deletes the <a>ApiKey</a> resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteApiKey">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -879,14 +957,18 @@ namespace Model
         /**
          * <p>Deletes an existing <a>Authorizer</a> resource.</p> <div class="seeAlso"><a
          * href="http://docs.aws.amazon.com/cli/latest/reference/apigateway/delete-authorizer.html">AWS
-         * CLI</a></div>
+         * CLI</a></div><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteAuthorizer">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteAuthorizerOutcome DeleteAuthorizer(const Model::DeleteAuthorizerRequest& request) const;
 
         /**
          * <p>Deletes an existing <a>Authorizer</a> resource.</p> <div class="seeAlso"><a
          * href="http://docs.aws.amazon.com/cli/latest/reference/apigateway/delete-authorizer.html">AWS
-         * CLI</a></div>
+         * CLI</a></div><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteAuthorizer">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -895,45 +977,59 @@ namespace Model
         /**
          * <p>Deletes an existing <a>Authorizer</a> resource.</p> <div class="seeAlso"><a
          * href="http://docs.aws.amazon.com/cli/latest/reference/apigateway/delete-authorizer.html">AWS
-         * CLI</a></div>
+         * CLI</a></div><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteAuthorizer">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteAuthorizerAsync(const Model::DeleteAuthorizerRequest& request, const DeleteAuthorizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the <a>BasePathMapping</a> resource.</p>
+         * <p>Deletes the <a>BasePathMapping</a> resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteBasePathMapping">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteBasePathMappingOutcome DeleteBasePathMapping(const Model::DeleteBasePathMappingRequest& request) const;
 
         /**
-         * <p>Deletes the <a>BasePathMapping</a> resource.</p>
+         * <p>Deletes the <a>BasePathMapping</a> resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteBasePathMapping">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteBasePathMappingOutcomeCallable DeleteBasePathMappingCallable(const Model::DeleteBasePathMappingRequest& request) const;
 
         /**
-         * <p>Deletes the <a>BasePathMapping</a> resource.</p>
+         * <p>Deletes the <a>BasePathMapping</a> resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteBasePathMapping">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteBasePathMappingAsync(const Model::DeleteBasePathMappingRequest& request, const DeleteBasePathMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the <a>ClientCertificate</a> resource.</p>
+         * <p>Deletes the <a>ClientCertificate</a> resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteClientCertificate">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteClientCertificateOutcome DeleteClientCertificate(const Model::DeleteClientCertificateRequest& request) const;
 
         /**
-         * <p>Deletes the <a>ClientCertificate</a> resource.</p>
+         * <p>Deletes the <a>ClientCertificate</a> resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteClientCertificate">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteClientCertificateOutcomeCallable DeleteClientCertificateCallable(const Model::DeleteClientCertificateRequest& request) const;
 
         /**
-         * <p>Deletes the <a>ClientCertificate</a> resource.</p>
+         * <p>Deletes the <a>ClientCertificate</a> resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteClientCertificate">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -941,13 +1037,19 @@ namespace Model
 
         /**
          * <p>Deletes a <a>Deployment</a> resource. Deleting a deployment will only succeed
-         * if there are no <a>Stage</a> resources associated with it.</p>
+         * if there are no <a>Stage</a> resources associated with it.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteDeployment">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteDeploymentOutcome DeleteDeployment(const Model::DeleteDeploymentRequest& request) const;
 
         /**
          * <p>Deletes a <a>Deployment</a> resource. Deleting a deployment will only succeed
-         * if there are no <a>Stage</a> resources associated with it.</p>
+         * if there are no <a>Stage</a> resources associated with it.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteDeployment">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -955,7 +1057,10 @@ namespace Model
 
         /**
          * <p>Deletes a <a>Deployment</a> resource. Deleting a deployment will only succeed
-         * if there are no <a>Stage</a> resources associated with it.</p>
+         * if there are no <a>Stage</a> resources associated with it.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteDeployment">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1000,190 +1105,253 @@ namespace Model
         virtual void DeleteDocumentationVersionAsync(const Model::DeleteDocumentationVersionRequest& request, const DeleteDocumentationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the <a>DomainName</a> resource.</p>
+         * <p>Deletes the <a>DomainName</a> resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteDomainName">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteDomainNameOutcome DeleteDomainName(const Model::DeleteDomainNameRequest& request) const;
 
         /**
-         * <p>Deletes the <a>DomainName</a> resource.</p>
+         * <p>Deletes the <a>DomainName</a> resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteDomainName">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteDomainNameOutcomeCallable DeleteDomainNameCallable(const Model::DeleteDomainNameRequest& request) const;
 
         /**
-         * <p>Deletes the <a>DomainName</a> resource.</p>
+         * <p>Deletes the <a>DomainName</a> resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteDomainName">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteDomainNameAsync(const Model::DeleteDomainNameRequest& request, const DeleteDomainNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Represents a delete integration.</p>
+         * <p>Represents a delete integration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteIntegration">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteIntegrationOutcome DeleteIntegration(const Model::DeleteIntegrationRequest& request) const;
 
         /**
-         * <p>Represents a delete integration.</p>
+         * <p>Represents a delete integration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteIntegration">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteIntegrationOutcomeCallable DeleteIntegrationCallable(const Model::DeleteIntegrationRequest& request) const;
 
         /**
-         * <p>Represents a delete integration.</p>
+         * <p>Represents a delete integration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteIntegration">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteIntegrationAsync(const Model::DeleteIntegrationRequest& request, const DeleteIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Represents a delete integration response.</p>
+         * <p>Represents a delete integration response.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteIntegrationResponse">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteIntegrationResponseOutcome DeleteIntegrationResponse(const Model::DeleteIntegrationResponseRequest& request) const;
 
         /**
-         * <p>Represents a delete integration response.</p>
+         * <p>Represents a delete integration response.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteIntegrationResponse">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteIntegrationResponseOutcomeCallable DeleteIntegrationResponseCallable(const Model::DeleteIntegrationResponseRequest& request) const;
 
         /**
-         * <p>Represents a delete integration response.</p>
+         * <p>Represents a delete integration response.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteIntegrationResponse">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteIntegrationResponseAsync(const Model::DeleteIntegrationResponseRequest& request, const DeleteIntegrationResponseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes an existing <a>Method</a> resource.</p>
+         * <p>Deletes an existing <a>Method</a> resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteMethod">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteMethodOutcome DeleteMethod(const Model::DeleteMethodRequest& request) const;
 
         /**
-         * <p>Deletes an existing <a>Method</a> resource.</p>
+         * <p>Deletes an existing <a>Method</a> resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteMethod">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteMethodOutcomeCallable DeleteMethodCallable(const Model::DeleteMethodRequest& request) const;
 
         /**
-         * <p>Deletes an existing <a>Method</a> resource.</p>
+         * <p>Deletes an existing <a>Method</a> resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteMethod">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteMethodAsync(const Model::DeleteMethodRequest& request, const DeleteMethodResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes an existing <a>MethodResponse</a> resource.</p>
+         * <p>Deletes an existing <a>MethodResponse</a> resource.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteMethodResponse">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteMethodResponseOutcome DeleteMethodResponse(const Model::DeleteMethodResponseRequest& request) const;
 
         /**
-         * <p>Deletes an existing <a>MethodResponse</a> resource.</p>
+         * <p>Deletes an existing <a>MethodResponse</a> resource.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteMethodResponse">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteMethodResponseOutcomeCallable DeleteMethodResponseCallable(const Model::DeleteMethodResponseRequest& request) const;
 
         /**
-         * <p>Deletes an existing <a>MethodResponse</a> resource.</p>
+         * <p>Deletes an existing <a>MethodResponse</a> resource.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteMethodResponse">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteMethodResponseAsync(const Model::DeleteMethodResponseRequest& request, const DeleteMethodResponseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a model.</p>
+         * <p>Deletes a model.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteModel">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteModelOutcome DeleteModel(const Model::DeleteModelRequest& request) const;
 
         /**
-         * <p>Deletes a model.</p>
+         * <p>Deletes a model.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteModel">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteModelOutcomeCallable DeleteModelCallable(const Model::DeleteModelRequest& request) const;
 
         /**
-         * <p>Deletes a model.</p>
+         * <p>Deletes a model.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteModel">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteModelAsync(const Model::DeleteModelRequest& request, const DeleteModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a <a>Resource</a> resource.</p>
+         * <p>Deletes a <a>Resource</a> resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteResource">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteResourceOutcome DeleteResource(const Model::DeleteResourceRequest& request) const;
 
         /**
-         * <p>Deletes a <a>Resource</a> resource.</p>
+         * <p>Deletes a <a>Resource</a> resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteResource">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteResourceOutcomeCallable DeleteResourceCallable(const Model::DeleteResourceRequest& request) const;
 
         /**
-         * <p>Deletes a <a>Resource</a> resource.</p>
+         * <p>Deletes a <a>Resource</a> resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteResource">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteResourceAsync(const Model::DeleteResourceRequest& request, const DeleteResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the specified API.</p>
+         * <p>Deletes the specified API.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteRestApi">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteRestApiOutcome DeleteRestApi(const Model::DeleteRestApiRequest& request) const;
 
         /**
-         * <p>Deletes the specified API.</p>
+         * <p>Deletes the specified API.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteRestApi">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteRestApiOutcomeCallable DeleteRestApiCallable(const Model::DeleteRestApiRequest& request) const;
 
         /**
-         * <p>Deletes the specified API.</p>
+         * <p>Deletes the specified API.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteRestApi">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteRestApiAsync(const Model::DeleteRestApiRequest& request, const DeleteRestApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a <a>Stage</a> resource.</p>
+         * <p>Deletes a <a>Stage</a> resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteStage">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteStageOutcome DeleteStage(const Model::DeleteStageRequest& request) const;
 
         /**
-         * <p>Deletes a <a>Stage</a> resource.</p>
+         * <p>Deletes a <a>Stage</a> resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteStage">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteStageOutcomeCallable DeleteStageCallable(const Model::DeleteStageRequest& request) const;
 
         /**
-         * <p>Deletes a <a>Stage</a> resource.</p>
+         * <p>Deletes a <a>Stage</a> resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteStage">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteStageAsync(const Model::DeleteStageRequest& request, const DeleteStageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a usage plan of a given plan Id.</p>
+         * <p>Deletes a usage plan of a given plan Id.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteUsagePlan">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteUsagePlanOutcome DeleteUsagePlan(const Model::DeleteUsagePlanRequest& request) const;
 
         /**
-         * <p>Deletes a usage plan of a given plan Id.</p>
+         * <p>Deletes a usage plan of a given plan Id.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteUsagePlan">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteUsagePlanOutcomeCallable DeleteUsagePlanCallable(const Model::DeleteUsagePlanRequest& request) const;
 
         /**
-         * <p>Deletes a usage plan of a given plan Id.</p>
+         * <p>Deletes a usage plan of a given plan Id.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteUsagePlan">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1191,13 +1359,17 @@ namespace Model
 
         /**
          * <p>Deletes a usage plan key and remove the underlying API key from the
-         * associated usage plan.</p>
+         * associated usage plan.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteUsagePlanKey">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteUsagePlanKeyOutcome DeleteUsagePlanKey(const Model::DeleteUsagePlanKeyRequest& request) const;
 
         /**
          * <p>Deletes a usage plan key and remove the underlying API key from the
-         * associated usage plan.</p>
+         * associated usage plan.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteUsagePlanKey">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1205,121 +1377,171 @@ namespace Model
 
         /**
          * <p>Deletes a usage plan key and remove the underlying API key from the
-         * associated usage plan.</p>
+         * associated usage plan.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteUsagePlanKey">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteUsagePlanKeyAsync(const Model::DeleteUsagePlanKeyRequest& request, const DeleteUsagePlanKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Flushes all authorizer cache entries on a stage.</p>
+         * <p>Flushes all authorizer cache entries on a stage.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/FlushStageAuthorizersCache">AWS
+         * API Reference</a></p>
          */
         virtual Model::FlushStageAuthorizersCacheOutcome FlushStageAuthorizersCache(const Model::FlushStageAuthorizersCacheRequest& request) const;
 
         /**
-         * <p>Flushes all authorizer cache entries on a stage.</p>
+         * <p>Flushes all authorizer cache entries on a stage.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/FlushStageAuthorizersCache">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::FlushStageAuthorizersCacheOutcomeCallable FlushStageAuthorizersCacheCallable(const Model::FlushStageAuthorizersCacheRequest& request) const;
 
         /**
-         * <p>Flushes all authorizer cache entries on a stage.</p>
+         * <p>Flushes all authorizer cache entries on a stage.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/FlushStageAuthorizersCache">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void FlushStageAuthorizersCacheAsync(const Model::FlushStageAuthorizersCacheRequest& request, const FlushStageAuthorizersCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Flushes a stage's cache.</p>
+         * <p>Flushes a stage's cache.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/FlushStageCache">AWS
+         * API Reference</a></p>
          */
         virtual Model::FlushStageCacheOutcome FlushStageCache(const Model::FlushStageCacheRequest& request) const;
 
         /**
-         * <p>Flushes a stage's cache.</p>
+         * <p>Flushes a stage's cache.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/FlushStageCache">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::FlushStageCacheOutcomeCallable FlushStageCacheCallable(const Model::FlushStageCacheRequest& request) const;
 
         /**
-         * <p>Flushes a stage's cache.</p>
+         * <p>Flushes a stage's cache.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/FlushStageCache">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void FlushStageCacheAsync(const Model::FlushStageCacheRequest& request, const FlushStageCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Generates a <a>ClientCertificate</a> resource.</p>
+         * <p>Generates a <a>ClientCertificate</a> resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GenerateClientCertificate">AWS
+         * API Reference</a></p>
          */
         virtual Model::GenerateClientCertificateOutcome GenerateClientCertificate(const Model::GenerateClientCertificateRequest& request) const;
 
         /**
-         * <p>Generates a <a>ClientCertificate</a> resource.</p>
+         * <p>Generates a <a>ClientCertificate</a> resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GenerateClientCertificate">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GenerateClientCertificateOutcomeCallable GenerateClientCertificateCallable(const Model::GenerateClientCertificateRequest& request) const;
 
         /**
-         * <p>Generates a <a>ClientCertificate</a> resource.</p>
+         * <p>Generates a <a>ClientCertificate</a> resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GenerateClientCertificate">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GenerateClientCertificateAsync(const Model::GenerateClientCertificateRequest& request, const GenerateClientCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets information about the current <a>Account</a> resource.</p>
+         * <p>Gets information about the current <a>Account</a> resource.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetAccount">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetAccountOutcome GetAccount(const Model::GetAccountRequest& request) const;
 
         /**
-         * <p>Gets information about the current <a>Account</a> resource.</p>
+         * <p>Gets information about the current <a>Account</a> resource.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetAccount">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetAccountOutcomeCallable GetAccountCallable(const Model::GetAccountRequest& request) const;
 
         /**
-         * <p>Gets information about the current <a>Account</a> resource.</p>
+         * <p>Gets information about the current <a>Account</a> resource.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetAccount">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetAccountAsync(const Model::GetAccountRequest& request, const GetAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets information about the current <a>ApiKey</a> resource.</p>
+         * <p>Gets information about the current <a>ApiKey</a> resource.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetApiKey">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetApiKeyOutcome GetApiKey(const Model::GetApiKeyRequest& request) const;
 
         /**
-         * <p>Gets information about the current <a>ApiKey</a> resource.</p>
+         * <p>Gets information about the current <a>ApiKey</a> resource.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetApiKey">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetApiKeyOutcomeCallable GetApiKeyCallable(const Model::GetApiKeyRequest& request) const;
 
         /**
-         * <p>Gets information about the current <a>ApiKey</a> resource.</p>
+         * <p>Gets information about the current <a>ApiKey</a> resource.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetApiKey">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetApiKeyAsync(const Model::GetApiKeyRequest& request, const GetApiKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets information about the current <a>ApiKeys</a> resource.</p>
+         * <p>Gets information about the current <a>ApiKeys</a> resource.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetApiKeys">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetApiKeysOutcome GetApiKeys(const Model::GetApiKeysRequest& request) const;
 
         /**
-         * <p>Gets information about the current <a>ApiKeys</a> resource.</p>
+         * <p>Gets information about the current <a>ApiKeys</a> resource.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetApiKeys">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetApiKeysOutcomeCallable GetApiKeysCallable(const Model::GetApiKeysRequest& request) const;
 
         /**
-         * <p>Gets information about the current <a>ApiKeys</a> resource.</p>
+         * <p>Gets information about the current <a>ApiKeys</a> resource.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetApiKeys">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1328,14 +1550,18 @@ namespace Model
         /**
          * <p>Describe an existing <a>Authorizer</a> resource.</p> <div class="seeAlso"><a
          * href="http://docs.aws.amazon.com/cli/latest/reference/apigateway/get-authorizer.html">AWS
-         * CLI</a></div>
+         * CLI</a></div><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetAuthorizer">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetAuthorizerOutcome GetAuthorizer(const Model::GetAuthorizerRequest& request) const;
 
         /**
          * <p>Describe an existing <a>Authorizer</a> resource.</p> <div class="seeAlso"><a
          * href="http://docs.aws.amazon.com/cli/latest/reference/apigateway/get-authorizer.html">AWS
-         * CLI</a></div>
+         * CLI</a></div><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetAuthorizer">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1344,7 +1570,9 @@ namespace Model
         /**
          * <p>Describe an existing <a>Authorizer</a> resource.</p> <div class="seeAlso"><a
          * href="http://docs.aws.amazon.com/cli/latest/reference/apigateway/get-authorizer.html">AWS
-         * CLI</a></div>
+         * CLI</a></div><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetAuthorizer">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1353,14 +1581,18 @@ namespace Model
         /**
          * <p>Describe an existing <a>Authorizers</a> resource.</p> <div class="seeAlso"><a
          * href="http://docs.aws.amazon.com/cli/latest/reference/apigateway/get-authorizers.html">AWS
-         * CLI</a></div>
+         * CLI</a></div><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetAuthorizers">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetAuthorizersOutcome GetAuthorizers(const Model::GetAuthorizersRequest& request) const;
 
         /**
          * <p>Describe an existing <a>Authorizers</a> resource.</p> <div class="seeAlso"><a
          * href="http://docs.aws.amazon.com/cli/latest/reference/apigateway/get-authorizers.html">AWS
-         * CLI</a></div>
+         * CLI</a></div><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetAuthorizers">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1369,121 +1601,174 @@ namespace Model
         /**
          * <p>Describe an existing <a>Authorizers</a> resource.</p> <div class="seeAlso"><a
          * href="http://docs.aws.amazon.com/cli/latest/reference/apigateway/get-authorizers.html">AWS
-         * CLI</a></div>
+         * CLI</a></div><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetAuthorizers">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetAuthorizersAsync(const Model::GetAuthorizersRequest& request, const GetAuthorizersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describe a <a>BasePathMapping</a> resource.</p>
+         * <p>Describe a <a>BasePathMapping</a> resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetBasePathMapping">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetBasePathMappingOutcome GetBasePathMapping(const Model::GetBasePathMappingRequest& request) const;
 
         /**
-         * <p>Describe a <a>BasePathMapping</a> resource.</p>
+         * <p>Describe a <a>BasePathMapping</a> resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetBasePathMapping">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetBasePathMappingOutcomeCallable GetBasePathMappingCallable(const Model::GetBasePathMappingRequest& request) const;
 
         /**
-         * <p>Describe a <a>BasePathMapping</a> resource.</p>
+         * <p>Describe a <a>BasePathMapping</a> resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetBasePathMapping">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetBasePathMappingAsync(const Model::GetBasePathMappingRequest& request, const GetBasePathMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Represents a collection of <a>BasePathMapping</a> resources.</p>
+         * <p>Represents a collection of <a>BasePathMapping</a> resources.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetBasePathMappings">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetBasePathMappingsOutcome GetBasePathMappings(const Model::GetBasePathMappingsRequest& request) const;
 
         /**
-         * <p>Represents a collection of <a>BasePathMapping</a> resources.</p>
+         * <p>Represents a collection of <a>BasePathMapping</a> resources.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetBasePathMappings">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetBasePathMappingsOutcomeCallable GetBasePathMappingsCallable(const Model::GetBasePathMappingsRequest& request) const;
 
         /**
-         * <p>Represents a collection of <a>BasePathMapping</a> resources.</p>
+         * <p>Represents a collection of <a>BasePathMapping</a> resources.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetBasePathMappings">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetBasePathMappingsAsync(const Model::GetBasePathMappingsRequest& request, const GetBasePathMappingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets information about the current <a>ClientCertificate</a> resource.</p>
+         * <p>Gets information about the current <a>ClientCertificate</a>
+         * resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetClientCertificate">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetClientCertificateOutcome GetClientCertificate(const Model::GetClientCertificateRequest& request) const;
 
         /**
-         * <p>Gets information about the current <a>ClientCertificate</a> resource.</p>
+         * <p>Gets information about the current <a>ClientCertificate</a>
+         * resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetClientCertificate">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetClientCertificateOutcomeCallable GetClientCertificateCallable(const Model::GetClientCertificateRequest& request) const;
 
         /**
-         * <p>Gets information about the current <a>ClientCertificate</a> resource.</p>
+         * <p>Gets information about the current <a>ClientCertificate</a>
+         * resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetClientCertificate">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetClientCertificateAsync(const Model::GetClientCertificateRequest& request, const GetClientCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets a collection of <a>ClientCertificate</a> resources.</p>
+         * <p>Gets a collection of <a>ClientCertificate</a> resources.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetClientCertificates">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetClientCertificatesOutcome GetClientCertificates(const Model::GetClientCertificatesRequest& request) const;
 
         /**
-         * <p>Gets a collection of <a>ClientCertificate</a> resources.</p>
+         * <p>Gets a collection of <a>ClientCertificate</a> resources.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetClientCertificates">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetClientCertificatesOutcomeCallable GetClientCertificatesCallable(const Model::GetClientCertificatesRequest& request) const;
 
         /**
-         * <p>Gets a collection of <a>ClientCertificate</a> resources.</p>
+         * <p>Gets a collection of <a>ClientCertificate</a> resources.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetClientCertificates">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetClientCertificatesAsync(const Model::GetClientCertificatesRequest& request, const GetClientCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets information about a <a>Deployment</a> resource.</p>
+         * <p>Gets information about a <a>Deployment</a> resource.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetDeployment">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetDeploymentOutcome GetDeployment(const Model::GetDeploymentRequest& request) const;
 
         /**
-         * <p>Gets information about a <a>Deployment</a> resource.</p>
+         * <p>Gets information about a <a>Deployment</a> resource.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetDeployment">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetDeploymentOutcomeCallable GetDeploymentCallable(const Model::GetDeploymentRequest& request) const;
 
         /**
-         * <p>Gets information about a <a>Deployment</a> resource.</p>
+         * <p>Gets information about a <a>Deployment</a> resource.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetDeployment">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetDeploymentAsync(const Model::GetDeploymentRequest& request, const GetDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets information about a <a>Deployments</a> collection.</p>
+         * <p>Gets information about a <a>Deployments</a> collection.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetDeployments">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetDeploymentsOutcome GetDeployments(const Model::GetDeploymentsRequest& request) const;
 
         /**
-         * <p>Gets information about a <a>Deployments</a> collection.</p>
+         * <p>Gets information about a <a>Deployments</a> collection.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetDeployments">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetDeploymentsOutcomeCallable GetDeploymentsCallable(const Model::GetDeploymentsRequest& request) const;
 
         /**
-         * <p>Gets information about a <a>Deployments</a> collection.</p>
+         * <p>Gets information about a <a>Deployments</a> collection.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetDeployments">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1567,13 +1852,17 @@ namespace Model
 
         /**
          * <p>Represents a domain name that is contained in a simpler, more intuitive URL
-         * that can be called.</p>
+         * that can be called.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetDomainName">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetDomainNameOutcome GetDomainName(const Model::GetDomainNameRequest& request) const;
 
         /**
          * <p>Represents a domain name that is contained in a simpler, more intuitive URL
-         * that can be called.</p>
+         * that can be called.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetDomainName">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1581,140 +1870,193 @@ namespace Model
 
         /**
          * <p>Represents a domain name that is contained in a simpler, more intuitive URL
-         * that can be called.</p>
+         * that can be called.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetDomainName">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetDomainNameAsync(const Model::GetDomainNameRequest& request, const GetDomainNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Represents a collection of <a>DomainName</a> resources.</p>
+         * <p>Represents a collection of <a>DomainName</a> resources.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetDomainNames">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetDomainNamesOutcome GetDomainNames(const Model::GetDomainNamesRequest& request) const;
 
         /**
-         * <p>Represents a collection of <a>DomainName</a> resources.</p>
+         * <p>Represents a collection of <a>DomainName</a> resources.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetDomainNames">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetDomainNamesOutcomeCallable GetDomainNamesCallable(const Model::GetDomainNamesRequest& request) const;
 
         /**
-         * <p>Represents a collection of <a>DomainName</a> resources.</p>
+         * <p>Represents a collection of <a>DomainName</a> resources.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetDomainNames">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetDomainNamesAsync(const Model::GetDomainNamesRequest& request, const GetDomainNamesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Exports a deployed version of a <a>RestApi</a> in a specified format.</p>
+         * <p>Exports a deployed version of a <a>RestApi</a> in a specified
+         * format.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetExport">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetExportOutcome GetExport(const Model::GetExportRequest& request) const;
 
         /**
-         * <p>Exports a deployed version of a <a>RestApi</a> in a specified format.</p>
+         * <p>Exports a deployed version of a <a>RestApi</a> in a specified
+         * format.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetExport">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetExportOutcomeCallable GetExportCallable(const Model::GetExportRequest& request) const;
 
         /**
-         * <p>Exports a deployed version of a <a>RestApi</a> in a specified format.</p>
+         * <p>Exports a deployed version of a <a>RestApi</a> in a specified
+         * format.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetExport">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetExportAsync(const Model::GetExportRequest& request, const GetExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Represents a get integration.</p>
+         * <p>Represents a get integration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetIntegration">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetIntegrationOutcome GetIntegration(const Model::GetIntegrationRequest& request) const;
 
         /**
-         * <p>Represents a get integration.</p>
+         * <p>Represents a get integration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetIntegration">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetIntegrationOutcomeCallable GetIntegrationCallable(const Model::GetIntegrationRequest& request) const;
 
         /**
-         * <p>Represents a get integration.</p>
+         * <p>Represents a get integration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetIntegration">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetIntegrationAsync(const Model::GetIntegrationRequest& request, const GetIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Represents a get integration response.</p>
+         * <p>Represents a get integration response.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetIntegrationResponse">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetIntegrationResponseOutcome GetIntegrationResponse(const Model::GetIntegrationResponseRequest& request) const;
 
         /**
-         * <p>Represents a get integration response.</p>
+         * <p>Represents a get integration response.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetIntegrationResponse">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetIntegrationResponseOutcomeCallable GetIntegrationResponseCallable(const Model::GetIntegrationResponseRequest& request) const;
 
         /**
-         * <p>Represents a get integration response.</p>
+         * <p>Represents a get integration response.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetIntegrationResponse">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetIntegrationResponseAsync(const Model::GetIntegrationResponseRequest& request, const GetIntegrationResponseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describe an existing <a>Method</a> resource.</p>
+         * <p>Describe an existing <a>Method</a> resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetMethod">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetMethodOutcome GetMethod(const Model::GetMethodRequest& request) const;
 
         /**
-         * <p>Describe an existing <a>Method</a> resource.</p>
+         * <p>Describe an existing <a>Method</a> resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetMethod">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetMethodOutcomeCallable GetMethodCallable(const Model::GetMethodRequest& request) const;
 
         /**
-         * <p>Describe an existing <a>Method</a> resource.</p>
+         * <p>Describe an existing <a>Method</a> resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetMethod">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetMethodAsync(const Model::GetMethodRequest& request, const GetMethodResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes a <a>MethodResponse</a> resource.</p>
+         * <p>Describes a <a>MethodResponse</a> resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetMethodResponse">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetMethodResponseOutcome GetMethodResponse(const Model::GetMethodResponseRequest& request) const;
 
         /**
-         * <p>Describes a <a>MethodResponse</a> resource.</p>
+         * <p>Describes a <a>MethodResponse</a> resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetMethodResponse">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetMethodResponseOutcomeCallable GetMethodResponseCallable(const Model::GetMethodResponseRequest& request) const;
 
         /**
-         * <p>Describes a <a>MethodResponse</a> resource.</p>
+         * <p>Describes a <a>MethodResponse</a> resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetMethodResponse">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetMethodResponseAsync(const Model::GetMethodResponseRequest& request, const GetMethodResponseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes an existing model defined for a <a>RestApi</a> resource.</p>
+         * <p>Describes an existing model defined for a <a>RestApi</a>
+         * resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetModel">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetModelOutcome GetModel(const Model::GetModelRequest& request) const;
 
         /**
-         * <p>Describes an existing model defined for a <a>RestApi</a> resource.</p>
+         * <p>Describes an existing model defined for a <a>RestApi</a>
+         * resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetModel">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetModelOutcomeCallable GetModelCallable(const Model::GetModelRequest& request) const;
 
         /**
-         * <p>Describes an existing model defined for a <a>RestApi</a> resource.</p>
+         * <p>Describes an existing model defined for a <a>RestApi</a>
+         * resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetModel">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1722,13 +2064,17 @@ namespace Model
 
         /**
          * <p>Generates a sample mapping template that can be used to transform a payload
-         * into the structure of a model.</p>
+         * into the structure of a model.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetModelTemplate">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetModelTemplateOutcome GetModelTemplate(const Model::GetModelTemplateRequest& request) const;
 
         /**
          * <p>Generates a sample mapping template that can be used to transform a payload
-         * into the structure of a model.</p>
+         * into the structure of a model.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetModelTemplate">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1736,216 +2082,308 @@ namespace Model
 
         /**
          * <p>Generates a sample mapping template that can be used to transform a payload
-         * into the structure of a model.</p>
+         * into the structure of a model.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetModelTemplate">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetModelTemplateAsync(const Model::GetModelTemplateRequest& request, const GetModelTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes existing <a>Models</a> defined for a <a>RestApi</a> resource.</p>
+         * <p>Describes existing <a>Models</a> defined for a <a>RestApi</a>
+         * resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetModels">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetModelsOutcome GetModels(const Model::GetModelsRequest& request) const;
 
         /**
-         * <p>Describes existing <a>Models</a> defined for a <a>RestApi</a> resource.</p>
+         * <p>Describes existing <a>Models</a> defined for a <a>RestApi</a>
+         * resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetModels">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetModelsOutcomeCallable GetModelsCallable(const Model::GetModelsRequest& request) const;
 
         /**
-         * <p>Describes existing <a>Models</a> defined for a <a>RestApi</a> resource.</p>
+         * <p>Describes existing <a>Models</a> defined for a <a>RestApi</a>
+         * resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetModels">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetModelsAsync(const Model::GetModelsRequest& request, const GetModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists information about a resource.</p>
+         * <p>Lists information about a resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetResource">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetResourceOutcome GetResource(const Model::GetResourceRequest& request) const;
 
         /**
-         * <p>Lists information about a resource.</p>
+         * <p>Lists information about a resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetResource">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetResourceOutcomeCallable GetResourceCallable(const Model::GetResourceRequest& request) const;
 
         /**
-         * <p>Lists information about a resource.</p>
+         * <p>Lists information about a resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetResource">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetResourceAsync(const Model::GetResourceRequest& request, const GetResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists information about a collection of <a>Resource</a> resources.</p>
+         * <p>Lists information about a collection of <a>Resource</a>
+         * resources.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetResources">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetResourcesOutcome GetResources(const Model::GetResourcesRequest& request) const;
 
         /**
-         * <p>Lists information about a collection of <a>Resource</a> resources.</p>
+         * <p>Lists information about a collection of <a>Resource</a>
+         * resources.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetResources">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetResourcesOutcomeCallable GetResourcesCallable(const Model::GetResourcesRequest& request) const;
 
         /**
-         * <p>Lists information about a collection of <a>Resource</a> resources.</p>
+         * <p>Lists information about a collection of <a>Resource</a>
+         * resources.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetResources">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetResourcesAsync(const Model::GetResourcesRequest& request, const GetResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the <a>RestApi</a> resource in the collection.</p>
+         * <p>Lists the <a>RestApi</a> resource in the collection.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetRestApi">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetRestApiOutcome GetRestApi(const Model::GetRestApiRequest& request) const;
 
         /**
-         * <p>Lists the <a>RestApi</a> resource in the collection.</p>
+         * <p>Lists the <a>RestApi</a> resource in the collection.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetRestApi">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetRestApiOutcomeCallable GetRestApiCallable(const Model::GetRestApiRequest& request) const;
 
         /**
-         * <p>Lists the <a>RestApi</a> resource in the collection.</p>
+         * <p>Lists the <a>RestApi</a> resource in the collection.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetRestApi">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetRestApiAsync(const Model::GetRestApiRequest& request, const GetRestApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the <a>RestApis</a> resources for your collection.</p>
+         * <p>Lists the <a>RestApis</a> resources for your collection.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetRestApis">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetRestApisOutcome GetRestApis(const Model::GetRestApisRequest& request) const;
 
         /**
-         * <p>Lists the <a>RestApis</a> resources for your collection.</p>
+         * <p>Lists the <a>RestApis</a> resources for your collection.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetRestApis">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetRestApisOutcomeCallable GetRestApisCallable(const Model::GetRestApisRequest& request) const;
 
         /**
-         * <p>Lists the <a>RestApis</a> resources for your collection.</p>
+         * <p>Lists the <a>RestApis</a> resources for your collection.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetRestApis">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetRestApisAsync(const Model::GetRestApisRequest& request, const GetRestApisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Generates a client SDK for a <a>RestApi</a> and <a>Stage</a>.</p>
+         * <p>Generates a client SDK for a <a>RestApi</a> and <a>Stage</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetSdk">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetSdkOutcome GetSdk(const Model::GetSdkRequest& request) const;
 
         /**
-         * <p>Generates a client SDK for a <a>RestApi</a> and <a>Stage</a>.</p>
+         * <p>Generates a client SDK for a <a>RestApi</a> and <a>Stage</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetSdk">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetSdkOutcomeCallable GetSdkCallable(const Model::GetSdkRequest& request) const;
 
         /**
-         * <p>Generates a client SDK for a <a>RestApi</a> and <a>Stage</a>.</p>
+         * <p>Generates a client SDK for a <a>RestApi</a> and <a>Stage</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetSdk">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetSdkAsync(const Model::GetSdkRequest& request, const GetSdkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets information about a <a>Stage</a> resource.</p>
+         * <p>Gets information about a <a>Stage</a> resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetStage">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetStageOutcome GetStage(const Model::GetStageRequest& request) const;
 
         /**
-         * <p>Gets information about a <a>Stage</a> resource.</p>
+         * <p>Gets information about a <a>Stage</a> resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetStage">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetStageOutcomeCallable GetStageCallable(const Model::GetStageRequest& request) const;
 
         /**
-         * <p>Gets information about a <a>Stage</a> resource.</p>
+         * <p>Gets information about a <a>Stage</a> resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetStage">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetStageAsync(const Model::GetStageRequest& request, const GetStageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets information about one or more <a>Stage</a> resources.</p>
+         * <p>Gets information about one or more <a>Stage</a> resources.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetStages">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetStagesOutcome GetStages(const Model::GetStagesRequest& request) const;
 
         /**
-         * <p>Gets information about one or more <a>Stage</a> resources.</p>
+         * <p>Gets information about one or more <a>Stage</a> resources.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetStages">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetStagesOutcomeCallable GetStagesCallable(const Model::GetStagesRequest& request) const;
 
         /**
-         * <p>Gets information about one or more <a>Stage</a> resources.</p>
+         * <p>Gets information about one or more <a>Stage</a> resources.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetStages">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetStagesAsync(const Model::GetStagesRequest& request, const GetStagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets the usage data of a usage plan in a specified time interval.</p>
+         * <p>Gets the usage data of a usage plan in a specified time
+         * interval.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetUsage">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetUsageOutcome GetUsage(const Model::GetUsageRequest& request) const;
 
         /**
-         * <p>Gets the usage data of a usage plan in a specified time interval.</p>
+         * <p>Gets the usage data of a usage plan in a specified time
+         * interval.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetUsage">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetUsageOutcomeCallable GetUsageCallable(const Model::GetUsageRequest& request) const;
 
         /**
-         * <p>Gets the usage data of a usage plan in a specified time interval.</p>
+         * <p>Gets the usage data of a usage plan in a specified time
+         * interval.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetUsage">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetUsageAsync(const Model::GetUsageRequest& request, const GetUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets a usage plan of a given plan identifier.</p>
+         * <p>Gets a usage plan of a given plan identifier.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetUsagePlan">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetUsagePlanOutcome GetUsagePlan(const Model::GetUsagePlanRequest& request) const;
 
         /**
-         * <p>Gets a usage plan of a given plan identifier.</p>
+         * <p>Gets a usage plan of a given plan identifier.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetUsagePlan">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetUsagePlanOutcomeCallable GetUsagePlanCallable(const Model::GetUsagePlanRequest& request) const;
 
         /**
-         * <p>Gets a usage plan of a given plan identifier.</p>
+         * <p>Gets a usage plan of a given plan identifier.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetUsagePlan">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetUsagePlanAsync(const Model::GetUsagePlanRequest& request, const GetUsagePlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets a usage plan key of a given key identifier.</p>
+         * <p>Gets a usage plan key of a given key identifier.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetUsagePlanKey">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetUsagePlanKeyOutcome GetUsagePlanKey(const Model::GetUsagePlanKeyRequest& request) const;
 
         /**
-         * <p>Gets a usage plan key of a given key identifier.</p>
+         * <p>Gets a usage plan key of a given key identifier.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetUsagePlanKey">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetUsagePlanKeyOutcomeCallable GetUsagePlanKeyCallable(const Model::GetUsagePlanKeyRequest& request) const;
 
         /**
-         * <p>Gets a usage plan key of a given key identifier.</p>
+         * <p>Gets a usage plan key of a given key identifier.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetUsagePlanKey">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1953,13 +2391,17 @@ namespace Model
 
         /**
          * <p>Gets all the usage plan keys representing the API keys added to a specified
-         * usage plan.</p>
+         * usage plan.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetUsagePlanKeys">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetUsagePlanKeysOutcome GetUsagePlanKeys(const Model::GetUsagePlanKeysRequest& request) const;
 
         /**
          * <p>Gets all the usage plan keys representing the API keys added to a specified
-         * usage plan.</p>
+         * usage plan.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetUsagePlanKeys">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1967,45 +2409,65 @@ namespace Model
 
         /**
          * <p>Gets all the usage plan keys representing the API keys added to a specified
-         * usage plan.</p>
+         * usage plan.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetUsagePlanKeys">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetUsagePlanKeysAsync(const Model::GetUsagePlanKeysRequest& request, const GetUsagePlanKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets all the usage plans of the caller's account.</p>
+         * <p>Gets all the usage plans of the caller's account.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetUsagePlans">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetUsagePlansOutcome GetUsagePlans(const Model::GetUsagePlansRequest& request) const;
 
         /**
-         * <p>Gets all the usage plans of the caller's account.</p>
+         * <p>Gets all the usage plans of the caller's account.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetUsagePlans">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetUsagePlansOutcomeCallable GetUsagePlansCallable(const Model::GetUsagePlansRequest& request) const;
 
         /**
-         * <p>Gets all the usage plans of the caller's account.</p>
+         * <p>Gets all the usage plans of the caller's account.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetUsagePlans">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetUsagePlansAsync(const Model::GetUsagePlansRequest& request, const GetUsagePlansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Import API keys from an external source, such as a CSV-formatted file.</p>
+         * <p>Import API keys from an external source, such as a CSV-formatted
+         * file.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/ImportApiKeys">AWS
+         * API Reference</a></p>
          */
         virtual Model::ImportApiKeysOutcome ImportApiKeys(const Model::ImportApiKeysRequest& request) const;
 
         /**
-         * <p>Import API keys from an external source, such as a CSV-formatted file.</p>
+         * <p>Import API keys from an external source, such as a CSV-formatted
+         * file.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/ImportApiKeys">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ImportApiKeysOutcomeCallable ImportApiKeysCallable(const Model::ImportApiKeysRequest& request) const;
 
         /**
-         * <p>Import API keys from an external source, such as a CSV-formatted file.</p>
+         * <p>Import API keys from an external source, such as a CSV-formatted
+         * file.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/ImportApiKeys">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2032,13 +2494,17 @@ namespace Model
 
         /**
          * <p>A feature of the Amazon API Gateway control service for creating a new API
-         * from an external API definition file.</p>
+         * from an external API definition file.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/ImportRestApi">AWS
+         * API Reference</a></p>
          */
         virtual Model::ImportRestApiOutcome ImportRestApi(const Model::ImportRestApiRequest& request) const;
 
         /**
          * <p>A feature of the Amazon API Gateway control service for creating a new API
-         * from an external API definition file.</p>
+         * from an external API definition file.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/ImportRestApi">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2046,83 +2512,115 @@ namespace Model
 
         /**
          * <p>A feature of the Amazon API Gateway control service for creating a new API
-         * from an external API definition file.</p>
+         * from an external API definition file.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/ImportRestApi">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ImportRestApiAsync(const Model::ImportRestApiRequest& request, const ImportRestApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Represents a put integration.</p>
+         * <p>Represents a put integration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/PutIntegration">AWS
+         * API Reference</a></p>
          */
         virtual Model::PutIntegrationOutcome PutIntegration(const Model::PutIntegrationRequest& request) const;
 
         /**
-         * <p>Represents a put integration.</p>
+         * <p>Represents a put integration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/PutIntegration">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::PutIntegrationOutcomeCallable PutIntegrationCallable(const Model::PutIntegrationRequest& request) const;
 
         /**
-         * <p>Represents a put integration.</p>
+         * <p>Represents a put integration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/PutIntegration">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void PutIntegrationAsync(const Model::PutIntegrationRequest& request, const PutIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Represents a put integration.</p>
+         * <p>Represents a put integration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/PutIntegrationResponse">AWS
+         * API Reference</a></p>
          */
         virtual Model::PutIntegrationResponseOutcome PutIntegrationResponse(const Model::PutIntegrationResponseRequest& request) const;
 
         /**
-         * <p>Represents a put integration.</p>
+         * <p>Represents a put integration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/PutIntegrationResponse">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::PutIntegrationResponseOutcomeCallable PutIntegrationResponseCallable(const Model::PutIntegrationResponseRequest& request) const;
 
         /**
-         * <p>Represents a put integration.</p>
+         * <p>Represents a put integration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/PutIntegrationResponse">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void PutIntegrationResponseAsync(const Model::PutIntegrationResponseRequest& request, const PutIntegrationResponseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Add a method to an existing <a>Resource</a> resource.</p>
+         * <p>Add a method to an existing <a>Resource</a> resource.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/PutMethod">AWS
+         * API Reference</a></p>
          */
         virtual Model::PutMethodOutcome PutMethod(const Model::PutMethodRequest& request) const;
 
         /**
-         * <p>Add a method to an existing <a>Resource</a> resource.</p>
+         * <p>Add a method to an existing <a>Resource</a> resource.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/PutMethod">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::PutMethodOutcomeCallable PutMethodCallable(const Model::PutMethodRequest& request) const;
 
         /**
-         * <p>Add a method to an existing <a>Resource</a> resource.</p>
+         * <p>Add a method to an existing <a>Resource</a> resource.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/PutMethod">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void PutMethodAsync(const Model::PutMethodRequest& request, const PutMethodResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Adds a <a>MethodResponse</a> to an existing <a>Method</a> resource.</p>
+         * <p>Adds a <a>MethodResponse</a> to an existing <a>Method</a>
+         * resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/PutMethodResponse">AWS
+         * API Reference</a></p>
          */
         virtual Model::PutMethodResponseOutcome PutMethodResponse(const Model::PutMethodResponseRequest& request) const;
 
         /**
-         * <p>Adds a <a>MethodResponse</a> to an existing <a>Method</a> resource.</p>
+         * <p>Adds a <a>MethodResponse</a> to an existing <a>Method</a>
+         * resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/PutMethodResponse">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::PutMethodResponseOutcomeCallable PutMethodResponseCallable(const Model::PutMethodResponseRequest& request) const;
 
         /**
-         * <p>Adds a <a>MethodResponse</a> to an existing <a>Method</a> resource.</p>
+         * <p>Adds a <a>MethodResponse</a> to an existing <a>Method</a>
+         * resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/PutMethodResponse">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2132,7 +2630,9 @@ namespace Model
          * <p>A feature of the Amazon API Gateway control service for updating an existing
          * API with an input of external API definitions. The update can take the form of
          * merging the supplied definition into the existing API or overwriting the
-         * existing API.</p>
+         * existing API.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/PutRestApi">AWS
+         * API Reference</a></p>
          */
         virtual Model::PutRestApiOutcome PutRestApi(const Model::PutRestApiRequest& request) const;
 
@@ -2140,7 +2640,9 @@ namespace Model
          * <p>A feature of the Amazon API Gateway control service for updating an existing
          * API with an input of external API definitions. The update can take the form of
          * merging the supplied definition into the existing API or overwriting the
-         * existing API.</p>
+         * existing API.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/PutRestApi">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2150,7 +2652,9 @@ namespace Model
          * <p>A feature of the Amazon API Gateway control service for updating an existing
          * API with an input of external API definitions. The update can take the form of
          * merging the supplied definition into the existing API or overwriting the
-         * existing API.</p>
+         * existing API.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/PutRestApi">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2160,7 +2664,9 @@ namespace Model
          * <p>Simulate the execution of an <a>Authorizer</a> in your <a>RestApi</a> with
          * headers, parameters, and an incoming request body.</p> <div class="seeAlso"> <a
          * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/use-custom-authorizer.html">Enable
-         * custom authorizers</a> </div>
+         * custom authorizers</a> </div><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/TestInvokeAuthorizer">AWS
+         * API Reference</a></p>
          */
         virtual Model::TestInvokeAuthorizerOutcome TestInvokeAuthorizer(const Model::TestInvokeAuthorizerRequest& request) const;
 
@@ -2168,7 +2674,9 @@ namespace Model
          * <p>Simulate the execution of an <a>Authorizer</a> in your <a>RestApi</a> with
          * headers, parameters, and an incoming request body.</p> <div class="seeAlso"> <a
          * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/use-custom-authorizer.html">Enable
-         * custom authorizers</a> </div>
+         * custom authorizers</a> </div><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/TestInvokeAuthorizer">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2178,7 +2686,9 @@ namespace Model
          * <p>Simulate the execution of an <a>Authorizer</a> in your <a>RestApi</a> with
          * headers, parameters, and an incoming request body.</p> <div class="seeAlso"> <a
          * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/use-custom-authorizer.html">Enable
-         * custom authorizers</a> </div>
+         * custom authorizers</a> </div><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/TestInvokeAuthorizer">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2186,13 +2696,17 @@ namespace Model
 
         /**
          * <p>Simulate the execution of a <a>Method</a> in your <a>RestApi</a> with
-         * headers, parameters, and an incoming request body.</p>
+         * headers, parameters, and an incoming request body.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/TestInvokeMethod">AWS
+         * API Reference</a></p>
          */
         virtual Model::TestInvokeMethodOutcome TestInvokeMethod(const Model::TestInvokeMethodRequest& request) const;
 
         /**
          * <p>Simulate the execution of a <a>Method</a> in your <a>RestApi</a> with
-         * headers, parameters, and an incoming request body.</p>
+         * headers, parameters, and an incoming request body.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/TestInvokeMethod">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2200,45 +2714,65 @@ namespace Model
 
         /**
          * <p>Simulate the execution of a <a>Method</a> in your <a>RestApi</a> with
-         * headers, parameters, and an incoming request body.</p>
+         * headers, parameters, and an incoming request body.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/TestInvokeMethod">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void TestInvokeMethodAsync(const Model::TestInvokeMethodRequest& request, const TestInvokeMethodResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Changes information about the current <a>Account</a> resource.</p>
+         * <p>Changes information about the current <a>Account</a> resource.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateAccount">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateAccountOutcome UpdateAccount(const Model::UpdateAccountRequest& request) const;
 
         /**
-         * <p>Changes information about the current <a>Account</a> resource.</p>
+         * <p>Changes information about the current <a>Account</a> resource.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateAccount">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateAccountOutcomeCallable UpdateAccountCallable(const Model::UpdateAccountRequest& request) const;
 
         /**
-         * <p>Changes information about the current <a>Account</a> resource.</p>
+         * <p>Changes information about the current <a>Account</a> resource.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateAccount">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateAccountAsync(const Model::UpdateAccountRequest& request, const UpdateAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Changes information about an <a>ApiKey</a> resource.</p>
+         * <p>Changes information about an <a>ApiKey</a> resource.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateApiKey">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateApiKeyOutcome UpdateApiKey(const Model::UpdateApiKeyRequest& request) const;
 
         /**
-         * <p>Changes information about an <a>ApiKey</a> resource.</p>
+         * <p>Changes information about an <a>ApiKey</a> resource.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateApiKey">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateApiKeyOutcomeCallable UpdateApiKeyCallable(const Model::UpdateApiKeyRequest& request) const;
 
         /**
-         * <p>Changes information about an <a>ApiKey</a> resource.</p>
+         * <p>Changes information about an <a>ApiKey</a> resource.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateApiKey">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2247,14 +2781,18 @@ namespace Model
         /**
          * <p>Updates an existing <a>Authorizer</a> resource.</p> <div class="seeAlso"><a
          * href="http://docs.aws.amazon.com/cli/latest/reference/apigateway/update-authorizer.html">AWS
-         * CLI</a></div>
+         * CLI</a></div><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateAuthorizer">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateAuthorizerOutcome UpdateAuthorizer(const Model::UpdateAuthorizerRequest& request) const;
 
         /**
          * <p>Updates an existing <a>Authorizer</a> resource.</p> <div class="seeAlso"><a
          * href="http://docs.aws.amazon.com/cli/latest/reference/apigateway/update-authorizer.html">AWS
-         * CLI</a></div>
+         * CLI</a></div><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateAuthorizer">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2263,64 +2801,93 @@ namespace Model
         /**
          * <p>Updates an existing <a>Authorizer</a> resource.</p> <div class="seeAlso"><a
          * href="http://docs.aws.amazon.com/cli/latest/reference/apigateway/update-authorizer.html">AWS
-         * CLI</a></div>
+         * CLI</a></div><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateAuthorizer">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateAuthorizerAsync(const Model::UpdateAuthorizerRequest& request, const UpdateAuthorizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Changes information about the <a>BasePathMapping</a> resource.</p>
+         * <p>Changes information about the <a>BasePathMapping</a> resource.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateBasePathMapping">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateBasePathMappingOutcome UpdateBasePathMapping(const Model::UpdateBasePathMappingRequest& request) const;
 
         /**
-         * <p>Changes information about the <a>BasePathMapping</a> resource.</p>
+         * <p>Changes information about the <a>BasePathMapping</a> resource.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateBasePathMapping">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateBasePathMappingOutcomeCallable UpdateBasePathMappingCallable(const Model::UpdateBasePathMappingRequest& request) const;
 
         /**
-         * <p>Changes information about the <a>BasePathMapping</a> resource.</p>
+         * <p>Changes information about the <a>BasePathMapping</a> resource.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateBasePathMapping">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateBasePathMappingAsync(const Model::UpdateBasePathMappingRequest& request, const UpdateBasePathMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Changes information about an <a>ClientCertificate</a> resource.</p>
+         * <p>Changes information about an <a>ClientCertificate</a> resource.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateClientCertificate">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateClientCertificateOutcome UpdateClientCertificate(const Model::UpdateClientCertificateRequest& request) const;
 
         /**
-         * <p>Changes information about an <a>ClientCertificate</a> resource.</p>
+         * <p>Changes information about an <a>ClientCertificate</a> resource.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateClientCertificate">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateClientCertificateOutcomeCallable UpdateClientCertificateCallable(const Model::UpdateClientCertificateRequest& request) const;
 
         /**
-         * <p>Changes information about an <a>ClientCertificate</a> resource.</p>
+         * <p>Changes information about an <a>ClientCertificate</a> resource.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateClientCertificate">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateClientCertificateAsync(const Model::UpdateClientCertificateRequest& request, const UpdateClientCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Changes information about a <a>Deployment</a> resource.</p>
+         * <p>Changes information about a <a>Deployment</a> resource.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateDeployment">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateDeploymentOutcome UpdateDeployment(const Model::UpdateDeploymentRequest& request) const;
 
         /**
-         * <p>Changes information about a <a>Deployment</a> resource.</p>
+         * <p>Changes information about a <a>Deployment</a> resource.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateDeployment">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateDeploymentOutcomeCallable UpdateDeploymentCallable(const Model::UpdateDeploymentRequest& request) const;
 
         /**
-         * <p>Changes information about a <a>Deployment</a> resource.</p>
+         * <p>Changes information about a <a>Deployment</a> resource.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateDeployment">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2365,171 +2932,237 @@ namespace Model
         virtual void UpdateDocumentationVersionAsync(const Model::UpdateDocumentationVersionRequest& request, const UpdateDocumentationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Changes information about the <a>DomainName</a> resource.</p>
+         * <p>Changes information about the <a>DomainName</a> resource.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateDomainName">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateDomainNameOutcome UpdateDomainName(const Model::UpdateDomainNameRequest& request) const;
 
         /**
-         * <p>Changes information about the <a>DomainName</a> resource.</p>
+         * <p>Changes information about the <a>DomainName</a> resource.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateDomainName">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateDomainNameOutcomeCallable UpdateDomainNameCallable(const Model::UpdateDomainNameRequest& request) const;
 
         /**
-         * <p>Changes information about the <a>DomainName</a> resource.</p>
+         * <p>Changes information about the <a>DomainName</a> resource.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateDomainName">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateDomainNameAsync(const Model::UpdateDomainNameRequest& request, const UpdateDomainNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Represents an update integration.</p>
+         * <p>Represents an update integration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateIntegration">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateIntegrationOutcome UpdateIntegration(const Model::UpdateIntegrationRequest& request) const;
 
         /**
-         * <p>Represents an update integration.</p>
+         * <p>Represents an update integration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateIntegration">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateIntegrationOutcomeCallable UpdateIntegrationCallable(const Model::UpdateIntegrationRequest& request) const;
 
         /**
-         * <p>Represents an update integration.</p>
+         * <p>Represents an update integration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateIntegration">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateIntegrationAsync(const Model::UpdateIntegrationRequest& request, const UpdateIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Represents an update integration response.</p>
+         * <p>Represents an update integration response.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateIntegrationResponse">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateIntegrationResponseOutcome UpdateIntegrationResponse(const Model::UpdateIntegrationResponseRequest& request) const;
 
         /**
-         * <p>Represents an update integration response.</p>
+         * <p>Represents an update integration response.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateIntegrationResponse">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateIntegrationResponseOutcomeCallable UpdateIntegrationResponseCallable(const Model::UpdateIntegrationResponseRequest& request) const;
 
         /**
-         * <p>Represents an update integration response.</p>
+         * <p>Represents an update integration response.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateIntegrationResponse">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateIntegrationResponseAsync(const Model::UpdateIntegrationResponseRequest& request, const UpdateIntegrationResponseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates an existing <a>Method</a> resource.</p>
+         * <p>Updates an existing <a>Method</a> resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateMethod">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateMethodOutcome UpdateMethod(const Model::UpdateMethodRequest& request) const;
 
         /**
-         * <p>Updates an existing <a>Method</a> resource.</p>
+         * <p>Updates an existing <a>Method</a> resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateMethod">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateMethodOutcomeCallable UpdateMethodCallable(const Model::UpdateMethodRequest& request) const;
 
         /**
-         * <p>Updates an existing <a>Method</a> resource.</p>
+         * <p>Updates an existing <a>Method</a> resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateMethod">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateMethodAsync(const Model::UpdateMethodRequest& request, const UpdateMethodResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates an existing <a>MethodResponse</a> resource.</p>
+         * <p>Updates an existing <a>MethodResponse</a> resource.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateMethodResponse">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateMethodResponseOutcome UpdateMethodResponse(const Model::UpdateMethodResponseRequest& request) const;
 
         /**
-         * <p>Updates an existing <a>MethodResponse</a> resource.</p>
+         * <p>Updates an existing <a>MethodResponse</a> resource.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateMethodResponse">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateMethodResponseOutcomeCallable UpdateMethodResponseCallable(const Model::UpdateMethodResponseRequest& request) const;
 
         /**
-         * <p>Updates an existing <a>MethodResponse</a> resource.</p>
+         * <p>Updates an existing <a>MethodResponse</a> resource.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateMethodResponse">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateMethodResponseAsync(const Model::UpdateMethodResponseRequest& request, const UpdateMethodResponseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Changes information about a model.</p>
+         * <p>Changes information about a model.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateModel">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateModelOutcome UpdateModel(const Model::UpdateModelRequest& request) const;
 
         /**
-         * <p>Changes information about a model.</p>
+         * <p>Changes information about a model.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateModel">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateModelOutcomeCallable UpdateModelCallable(const Model::UpdateModelRequest& request) const;
 
         /**
-         * <p>Changes information about a model.</p>
+         * <p>Changes information about a model.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateModel">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateModelAsync(const Model::UpdateModelRequest& request, const UpdateModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Changes information about a <a>Resource</a> resource.</p>
+         * <p>Changes information about a <a>Resource</a> resource.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateResource">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateResourceOutcome UpdateResource(const Model::UpdateResourceRequest& request) const;
 
         /**
-         * <p>Changes information about a <a>Resource</a> resource.</p>
+         * <p>Changes information about a <a>Resource</a> resource.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateResource">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateResourceOutcomeCallable UpdateResourceCallable(const Model::UpdateResourceRequest& request) const;
 
         /**
-         * <p>Changes information about a <a>Resource</a> resource.</p>
+         * <p>Changes information about a <a>Resource</a> resource.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateResource">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateResourceAsync(const Model::UpdateResourceRequest& request, const UpdateResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Changes information about the specified API.</p>
+         * <p>Changes information about the specified API.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateRestApi">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateRestApiOutcome UpdateRestApi(const Model::UpdateRestApiRequest& request) const;
 
         /**
-         * <p>Changes information about the specified API.</p>
+         * <p>Changes information about the specified API.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateRestApi">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateRestApiOutcomeCallable UpdateRestApiCallable(const Model::UpdateRestApiRequest& request) const;
 
         /**
-         * <p>Changes information about the specified API.</p>
+         * <p>Changes information about the specified API.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateRestApi">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateRestApiAsync(const Model::UpdateRestApiRequest& request, const UpdateRestApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Changes information about a <a>Stage</a> resource.</p>
+         * <p>Changes information about a <a>Stage</a> resource.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateStage">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateStageOutcome UpdateStage(const Model::UpdateStageRequest& request) const;
 
         /**
-         * <p>Changes information about a <a>Stage</a> resource.</p>
+         * <p>Changes information about a <a>Stage</a> resource.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateStage">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateStageOutcomeCallable UpdateStageCallable(const Model::UpdateStageRequest& request) const;
 
         /**
-         * <p>Changes information about a <a>Stage</a> resource.</p>
+         * <p>Changes information about a <a>Stage</a> resource.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateStage">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2537,13 +3170,17 @@ namespace Model
 
         /**
          * <p>Grants a temporary extension to the reamining quota of a usage plan
-         * associated with a specified API key.</p>
+         * associated with a specified API key.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateUsage">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateUsageOutcome UpdateUsage(const Model::UpdateUsageRequest& request) const;
 
         /**
          * <p>Grants a temporary extension to the reamining quota of a usage plan
-         * associated with a specified API key.</p>
+         * associated with a specified API key.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateUsage">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2551,26 +3188,34 @@ namespace Model
 
         /**
          * <p>Grants a temporary extension to the reamining quota of a usage plan
-         * associated with a specified API key.</p>
+         * associated with a specified API key.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateUsage">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateUsageAsync(const Model::UpdateUsageRequest& request, const UpdateUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates a usage plan of a given plan Id.</p>
+         * <p>Updates a usage plan of a given plan Id.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateUsagePlan">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateUsagePlanOutcome UpdateUsagePlan(const Model::UpdateUsagePlanRequest& request) const;
 
         /**
-         * <p>Updates a usage plan of a given plan Id.</p>
+         * <p>Updates a usage plan of a given plan Id.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateUsagePlan">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateUsagePlanOutcomeCallable UpdateUsagePlanCallable(const Model::UpdateUsagePlanRequest& request) const;
 
         /**
-         * <p>Updates a usage plan of a given plan Id.</p>
+         * <p>Updates a usage plan of a given plan Id.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateUsagePlan">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */

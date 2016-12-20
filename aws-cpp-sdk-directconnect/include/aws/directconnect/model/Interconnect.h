@@ -41,7 +41,10 @@ namespace Model
    * customers, thereby providing the end customers with connectivity to AWS
    * services.</p> <p>The resources of the interconnect, including bandwidth and VLAN
    * numbers, are shared by all of the hosted connections on the interconnect, and
-   * the owner of the interconnect determines how these resources are assigned.</p>
+   * the owner of the interconnect determines how these resources are
+   * assigned.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/Interconnect">AWS
+   * API Reference</a></p>
    */
   class AWS_DIRECTCONNECT_API Interconnect
   {

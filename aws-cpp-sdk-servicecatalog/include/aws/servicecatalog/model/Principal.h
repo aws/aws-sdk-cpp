@@ -32,7 +32,9 @@ namespace Model
 {
 
   /**
-   * <p>A principal's ARN and type.</p>
+   * <p>A principal's ARN and type.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/Principal">AWS
+   * API Reference</a></p>
    */
   class AWS_SERVICECATALOG_API Principal
   {

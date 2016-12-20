@@ -32,7 +32,9 @@ namespace Model
 
   /**
    * <p>Describes a quota for an AWS account, for example, the number of replication
-   * instances allowed.</p>
+   * instances allowed.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/AccountQuota">AWS
+   * API Reference</a></p>
    */
   class AWS_DATABASEMIGRATIONSERVICE_API AccountQuota
   {

@@ -32,7 +32,9 @@ namespace Model
 {
 
   /**
-   * <p>Contains information about the directory.</p>
+   * <p>Contains information about the directory.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DirectoryVpcSettingsDescription">AWS
+   * API Reference</a></p>
    */
   class AWS_DIRECTORYSERVICE_API DirectoryVpcSettingsDescription
   {

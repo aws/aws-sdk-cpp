@@ -25,7 +25,9 @@ namespace Model
 {
 
   /**
-   * <p>Swaps the CNAMEs of two environments.</p>
+   * <p>Swaps the CNAMEs of two environments.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/SwapEnvironmentCNAMEsMessage">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICBEANSTALK_API SwapEnvironmentCNAMEsRequest : public ElasticBeanstalkRequest
   {

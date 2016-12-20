@@ -35,7 +35,10 @@ namespace Model
 {
 
   /**
-   * <p>Information about the build project's build environment.</p>
+   * <p>Information about the build project's build environment.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ProjectEnvironment">AWS
+   * API Reference</a></p>
    */
   class AWS_CODEBUILD_API ProjectEnvironment
   {

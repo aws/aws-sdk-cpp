@@ -471,7 +471,9 @@ namespace Model
          * level for the stack or an attached policy that explicitly grants permissions.
          * For more information on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/AssignInstance">AWS
+         * API Reference</a></p>
          */
         virtual Model::AssignInstanceOutcome AssignInstance(const Model::AssignInstanceRequest& request) const;
 
@@ -485,7 +487,9 @@ namespace Model
          * level for the stack or an attached policy that explicitly grants permissions.
          * For more information on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/AssignInstance">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -501,7 +505,9 @@ namespace Model
          * level for the stack or an attached policy that explicitly grants permissions.
          * For more information on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/AssignInstance">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -519,7 +525,9 @@ namespace Model
          * that explicitly grants permissions. For more information on user permissions,
          * see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/AssignVolume">AWS
+         * API Reference</a></p>
          */
         virtual Model::AssignVolumeOutcome AssignVolume(const Model::AssignVolumeRequest& request) const;
 
@@ -535,7 +543,9 @@ namespace Model
          * that explicitly grants permissions. For more information on user permissions,
          * see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/AssignVolume">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -553,7 +563,9 @@ namespace Model
          * that explicitly grants permissions. For more information on user permissions,
          * see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/AssignVolume">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -569,7 +581,9 @@ namespace Model
          * that explicitly grants permissions. For more information on user permissions,
          * see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/AssociateElasticIp">AWS
+         * API Reference</a></p>
          */
         virtual Model::AssociateElasticIpOutcome AssociateElasticIp(const Model::AssociateElasticIpRequest& request) const;
 
@@ -583,7 +597,9 @@ namespace Model
          * that explicitly grants permissions. For more information on user permissions,
          * see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/AssociateElasticIp">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -599,7 +615,9 @@ namespace Model
          * that explicitly grants permissions. For more information on user permissions,
          * see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/AssociateElasticIp">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -618,7 +636,9 @@ namespace Model
          * level for the stack, or an attached policy that explicitly grants permissions.
          * For more information on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/AttachElasticLoadBalancer">AWS
+         * API Reference</a></p>
          */
         virtual Model::AttachElasticLoadBalancerOutcome AttachElasticLoadBalancer(const Model::AttachElasticLoadBalancerRequest& request) const;
 
@@ -635,7 +655,9 @@ namespace Model
          * level for the stack, or an attached policy that explicitly grants permissions.
          * For more information on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/AttachElasticLoadBalancer">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -654,7 +676,9 @@ namespace Model
          * level for the stack, or an attached policy that explicitly grants permissions.
          * For more information on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/AttachElasticLoadBalancer">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -668,7 +692,9 @@ namespace Model
          * have an attached policy that explicitly grants permissions. For more information
          * on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/CloneStack">AWS
+         * API Reference</a></p>
          */
         virtual Model::CloneStackOutcome CloneStack(const Model::CloneStackRequest& request) const;
 
@@ -680,7 +706,9 @@ namespace Model
          * have an attached policy that explicitly grants permissions. For more information
          * on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/CloneStack">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -694,7 +722,9 @@ namespace Model
          * have an attached policy that explicitly grants permissions. For more information
          * on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/CloneStack">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -707,7 +737,9 @@ namespace Model
          * must have a Manage permissions level for the stack, or an attached policy that
          * explicitly grants permissions. For more information on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/CreateApp">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateAppOutcome CreateApp(const Model::CreateAppRequest& request) const;
 
@@ -718,7 +750,9 @@ namespace Model
          * must have a Manage permissions level for the stack, or an attached policy that
          * explicitly grants permissions. For more information on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/CreateApp">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -731,7 +765,9 @@ namespace Model
          * must have a Manage permissions level for the stack, or an attached policy that
          * explicitly grants permissions. For more information on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/CreateApp">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -747,7 +783,9 @@ namespace Model
          * attached policy that explicitly grants permissions. For more information on user
          * permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/CreateDeployment">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateDeploymentOutcome CreateDeployment(const Model::CreateDeploymentRequest& request) const;
 
@@ -761,7 +799,9 @@ namespace Model
          * attached policy that explicitly grants permissions. For more information on user
          * permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/CreateDeployment">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -777,7 +817,9 @@ namespace Model
          * attached policy that explicitly grants permissions. For more information on user
          * permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/CreateDeployment">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -791,7 +833,9 @@ namespace Model
          * attached policy that explicitly grants permissions. For more information on user
          * permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/CreateInstance">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateInstanceOutcome CreateInstance(const Model::CreateInstanceRequest& request) const;
 
@@ -803,7 +847,9 @@ namespace Model
          * attached policy that explicitly grants permissions. For more information on user
          * permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/CreateInstance">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -817,7 +863,9 @@ namespace Model
          * attached policy that explicitly grants permissions. For more information on user
          * permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/CreateInstance">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -836,7 +884,9 @@ namespace Model
          * Manage permissions level for the stack, or an attached policy that explicitly
          * grants permissions. For more information on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/CreateLayer">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateLayerOutcome CreateLayer(const Model::CreateLayerRequest& request) const;
 
@@ -853,7 +903,9 @@ namespace Model
          * Manage permissions level for the stack, or an attached policy that explicitly
          * grants permissions. For more information on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/CreateLayer">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -872,7 +924,9 @@ namespace Model
          * Manage permissions level for the stack, or an attached policy that explicitly
          * grants permissions. For more information on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/CreateLayer">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -885,7 +939,9 @@ namespace Model
          * user must have an attached policy that explicitly grants permissions. For more
          * information on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/CreateStack">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateStackOutcome CreateStack(const Model::CreateStackRequest& request) const;
 
@@ -896,7 +952,9 @@ namespace Model
          * user must have an attached policy that explicitly grants permissions. For more
          * information on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/CreateStack">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -909,7 +967,9 @@ namespace Model
          * user must have an attached policy that explicitly grants permissions. For more
          * information on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/CreateStack">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -920,7 +980,9 @@ namespace Model
          * action, an IAM user must have an attached policy that explicitly grants
          * permissions. For more information on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/CreateUserProfile">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateUserProfileOutcome CreateUserProfile(const Model::CreateUserProfileRequest& request) const;
 
@@ -929,7 +991,9 @@ namespace Model
          * action, an IAM user must have an attached policy that explicitly grants
          * permissions. For more information on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/CreateUserProfile">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -940,7 +1004,9 @@ namespace Model
          * action, an IAM user must have an attached policy that explicitly grants
          * permissions. For more information on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/CreateUserProfile">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -952,7 +1018,9 @@ namespace Model
          * attached policy that explicitly grants permissions. For more information on user
          * permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeleteApp">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteAppOutcome DeleteApp(const Model::DeleteAppRequest& request) const;
 
@@ -962,7 +1030,9 @@ namespace Model
          * attached policy that explicitly grants permissions. For more information on user
          * permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeleteApp">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -974,7 +1044,9 @@ namespace Model
          * attached policy that explicitly grants permissions. For more information on user
          * permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeleteApp">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -990,7 +1062,9 @@ namespace Model
          * that explicitly grants permissions. For more information on user permissions,
          * see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeleteInstance">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteInstanceOutcome DeleteInstance(const Model::DeleteInstanceRequest& request) const;
 
@@ -1004,7 +1078,9 @@ namespace Model
          * that explicitly grants permissions. For more information on user permissions,
          * see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeleteInstance">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1020,7 +1096,9 @@ namespace Model
          * that explicitly grants permissions. For more information on user permissions,
          * see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeleteInstance">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1035,7 +1113,9 @@ namespace Model
          * policy that explicitly grants permissions. For more information on user
          * permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeleteLayer">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteLayerOutcome DeleteLayer(const Model::DeleteLayerRequest& request) const;
 
@@ -1048,7 +1128,9 @@ namespace Model
          * policy that explicitly grants permissions. For more information on user
          * permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeleteLayer">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1063,7 +1145,9 @@ namespace Model
          * policy that explicitly grants permissions. For more information on user
          * permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeleteLayer">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1078,7 +1162,9 @@ namespace Model
          * policy that explicitly grants permissions. For more information on user
          * permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeleteStack">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteStackOutcome DeleteStack(const Model::DeleteStackRequest& request) const;
 
@@ -1091,7 +1177,9 @@ namespace Model
          * policy that explicitly grants permissions. For more information on user
          * permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeleteStack">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1106,7 +1194,9 @@ namespace Model
          * policy that explicitly grants permissions. For more information on user
          * permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeleteStack">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1117,7 +1207,9 @@ namespace Model
          * action, an IAM user must have an attached policy that explicitly grants
          * permissions. For more information on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeleteUserProfile">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteUserProfileOutcome DeleteUserProfile(const Model::DeleteUserProfileRequest& request) const;
 
@@ -1126,7 +1218,9 @@ namespace Model
          * action, an IAM user must have an attached policy that explicitly grants
          * permissions. For more information on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeleteUserProfile">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1137,7 +1231,9 @@ namespace Model
          * action, an IAM user must have an attached policy that explicitly grants
          * permissions. For more information on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeleteUserProfile">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1151,7 +1247,10 @@ namespace Model
          * action, an IAM user must have a Manage permissions level for the stack or an
          * attached policy that explicitly grants permissions. For more information on user
          * permissions, see <a
-         * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html</a>.</p>
+         * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeregisterEcsCluster">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeregisterEcsClusterOutcome DeregisterEcsCluster(const Model::DeregisterEcsClusterRequest& request) const;
 
@@ -1163,7 +1262,10 @@ namespace Model
          * action, an IAM user must have a Manage permissions level for the stack or an
          * attached policy that explicitly grants permissions. For more information on user
          * permissions, see <a
-         * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html</a>.</p>
+         * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeregisterEcsCluster">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1177,7 +1279,10 @@ namespace Model
          * action, an IAM user must have a Manage permissions level for the stack or an
          * attached policy that explicitly grants permissions. For more information on user
          * permissions, see <a
-         * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html</a>.</p>
+         * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeregisterEcsCluster">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1192,7 +1297,9 @@ namespace Model
          * that explicitly grants permissions. For more information on user permissions,
          * see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeregisterElasticIp">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeregisterElasticIpOutcome DeregisterElasticIp(const Model::DeregisterElasticIpRequest& request) const;
 
@@ -1205,7 +1312,9 @@ namespace Model
          * that explicitly grants permissions. For more information on user permissions,
          * see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeregisterElasticIp">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1220,7 +1329,9 @@ namespace Model
          * that explicitly grants permissions. For more information on user permissions,
          * see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeregisterElasticIp">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1234,7 +1345,9 @@ namespace Model
          * permissions level for the stack or an attached policy that explicitly grants
          * permissions. For more information on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeregisterInstance">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeregisterInstanceOutcome DeregisterInstance(const Model::DeregisterInstanceRequest& request) const;
 
@@ -1246,7 +1359,9 @@ namespace Model
          * permissions level for the stack or an attached policy that explicitly grants
          * permissions. For more information on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeregisterInstance">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1260,7 +1375,9 @@ namespace Model
          * permissions level for the stack or an attached policy that explicitly grants
          * permissions. For more information on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeregisterInstance">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1272,7 +1389,9 @@ namespace Model
          * or an attached policy that explicitly grants permissions. For more information
          * on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeregisterRdsDbInstance">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeregisterRdsDbInstanceOutcome DeregisterRdsDbInstance(const Model::DeregisterRdsDbInstanceRequest& request) const;
 
@@ -1282,7 +1401,9 @@ namespace Model
          * or an attached policy that explicitly grants permissions. For more information
          * on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeregisterRdsDbInstance">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1294,7 +1415,9 @@ namespace Model
          * or an attached policy that explicitly grants permissions. For more information
          * on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeregisterRdsDbInstance">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1309,7 +1432,9 @@ namespace Model
          * that explicitly grants permissions. For more information on user permissions,
          * see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeregisterVolume">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeregisterVolumeOutcome DeregisterVolume(const Model::DeregisterVolumeRequest& request) const;
 
@@ -1322,7 +1447,9 @@ namespace Model
          * that explicitly grants permissions. For more information on user permissions,
          * see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeregisterVolume">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1337,7 +1464,9 @@ namespace Model
          * that explicitly grants permissions. For more information on user permissions,
          * see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeregisterVolume">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1347,7 +1476,9 @@ namespace Model
          * <p>Describes the available AWS OpsWorks agent versions. You must specify a stack
          * ID or a configuration manager. <code>DescribeAgentVersions</code> returns a list
          * of available agent versions for the specified stack or configuration
-         * manager.</p>
+         * manager.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeAgentVersions">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeAgentVersionsOutcome DescribeAgentVersions(const Model::DescribeAgentVersionsRequest& request) const;
 
@@ -1355,7 +1486,9 @@ namespace Model
          * <p>Describes the available AWS OpsWorks agent versions. You must specify a stack
          * ID or a configuration manager. <code>DescribeAgentVersions</code> returns a list
          * of available agent versions for the specified stack or configuration
-         * manager.</p>
+         * manager.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeAgentVersions">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1365,7 +1498,9 @@ namespace Model
          * <p>Describes the available AWS OpsWorks agent versions. You must specify a stack
          * ID or a configuration manager. <code>DescribeAgentVersions</code> returns a list
          * of available agent versions for the specified stack or configuration
-         * manager.</p>
+         * manager.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeAgentVersions">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1378,7 +1513,9 @@ namespace Model
          * Manage permissions level for the stack, or an attached policy that explicitly
          * grants permissions. For more information on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeApps">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeAppsOutcome DescribeApps(const Model::DescribeAppsRequest& request) const;
 
@@ -1389,7 +1526,9 @@ namespace Model
          * Manage permissions level for the stack, or an attached policy that explicitly
          * grants permissions. For more information on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeApps">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1402,7 +1541,9 @@ namespace Model
          * Manage permissions level for the stack, or an attached policy that explicitly
          * grants permissions. For more information on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeApps">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1415,7 +1556,9 @@ namespace Model
          * level for the stack, or an attached policy that explicitly grants permissions.
          * For more information on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeCommands">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeCommandsOutcome DescribeCommands(const Model::DescribeCommandsRequest& request) const;
 
@@ -1426,7 +1569,9 @@ namespace Model
          * level for the stack, or an attached policy that explicitly grants permissions.
          * For more information on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeCommands">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1439,7 +1584,9 @@ namespace Model
          * level for the stack, or an attached policy that explicitly grants permissions.
          * For more information on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeCommands">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1452,7 +1599,9 @@ namespace Model
          * Manage permissions level for the stack, or an attached policy that explicitly
          * grants permissions. For more information on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeDeployments">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeDeploymentsOutcome DescribeDeployments(const Model::DescribeDeploymentsRequest& request) const;
 
@@ -1463,7 +1612,9 @@ namespace Model
          * Manage permissions level for the stack, or an attached policy that explicitly
          * grants permissions. For more information on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeDeployments">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1476,7 +1627,9 @@ namespace Model
          * Manage permissions level for the stack, or an attached policy that explicitly
          * grants permissions. For more information on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeDeployments">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1492,7 +1645,9 @@ namespace Model
          * or an attached policy that explicitly grants permission. For more information on
          * user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeEcsClusters">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeEcsClustersOutcome DescribeEcsClusters(const Model::DescribeEcsClustersRequest& request) const;
 
@@ -1506,7 +1661,9 @@ namespace Model
          * or an attached policy that explicitly grants permission. For more information on
          * user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeEcsClusters">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1522,7 +1679,9 @@ namespace Model
          * or an attached policy that explicitly grants permission. For more information on
          * user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeEcsClusters">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1537,7 +1696,9 @@ namespace Model
          * an attached policy that explicitly grants permissions. For more information on
          * user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeElasticIps">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeElasticIpsOutcome DescribeElasticIps(const Model::DescribeElasticIpsRequest& request) const;
 
@@ -1550,7 +1711,9 @@ namespace Model
          * an attached policy that explicitly grants permissions. For more information on
          * user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeElasticIps">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1565,7 +1728,9 @@ namespace Model
          * an attached policy that explicitly grants permissions. For more information on
          * user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeElasticIps">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1578,7 +1743,9 @@ namespace Model
          * Manage permissions level for the stack, or an attached policy that explicitly
          * grants permissions. For more information on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeElasticLoadBalancers">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeElasticLoadBalancersOutcome DescribeElasticLoadBalancers(const Model::DescribeElasticLoadBalancersRequest& request) const;
 
@@ -1589,7 +1756,9 @@ namespace Model
          * Manage permissions level for the stack, or an attached policy that explicitly
          * grants permissions. For more information on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeElasticLoadBalancers">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1602,7 +1771,9 @@ namespace Model
          * Manage permissions level for the stack, or an attached policy that explicitly
          * grants permissions. For more information on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeElasticLoadBalancers">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1615,7 +1786,9 @@ namespace Model
          * level for the stack, or an attached policy that explicitly grants permissions.
          * For more information on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeInstances">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeInstancesOutcome DescribeInstances(const Model::DescribeInstancesRequest& request) const;
 
@@ -1626,7 +1799,9 @@ namespace Model
          * level for the stack, or an attached policy that explicitly grants permissions.
          * For more information on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeInstances">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1639,7 +1814,9 @@ namespace Model
          * level for the stack, or an attached policy that explicitly grants permissions.
          * For more information on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeInstances">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1652,7 +1829,9 @@ namespace Model
          * Manage permissions level for the stack, or an attached policy that explicitly
          * grants permissions. For more information on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeLayers">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeLayersOutcome DescribeLayers(const Model::DescribeLayersRequest& request) const;
 
@@ -1663,7 +1842,9 @@ namespace Model
          * Manage permissions level for the stack, or an attached policy that explicitly
          * grants permissions. For more information on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeLayers">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1676,7 +1857,9 @@ namespace Model
          * Manage permissions level for the stack, or an attached policy that explicitly
          * grants permissions. For more information on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeLayers">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1689,7 +1872,9 @@ namespace Model
          * Deploy, or Manage permissions level for the stack, or an attached policy that
          * explicitly grants permissions. For more information on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeLoadBasedAutoScaling">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeLoadBasedAutoScalingOutcome DescribeLoadBasedAutoScaling(const Model::DescribeLoadBasedAutoScalingRequest& request) const;
 
@@ -1700,7 +1885,9 @@ namespace Model
          * Deploy, or Manage permissions level for the stack, or an attached policy that
          * explicitly grants permissions. For more information on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeLoadBasedAutoScaling">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1713,7 +1900,9 @@ namespace Model
          * Deploy, or Manage permissions level for the stack, or an attached policy that
          * explicitly grants permissions. For more information on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeLoadBasedAutoScaling">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1725,7 +1914,9 @@ namespace Model
          * policy that explicitly grants permissions. For more information on user
          * permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeMyUserProfile">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeMyUserProfileOutcome DescribeMyUserProfile() const;
 
@@ -1735,7 +1926,9 @@ namespace Model
          * policy that explicitly grants permissions. For more information on user
          * permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeMyUserProfile">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1747,7 +1940,9 @@ namespace Model
          * policy that explicitly grants permissions. For more information on user
          * permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeMyUserProfile">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1758,7 +1953,9 @@ namespace Model
          * level for the stack, or an attached policy that explicitly grants permissions.
          * For more information on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribePermissions">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribePermissionsOutcome DescribePermissions(const Model::DescribePermissionsRequest& request) const;
 
@@ -1768,7 +1965,9 @@ namespace Model
          * level for the stack, or an attached policy that explicitly grants permissions.
          * For more information on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribePermissions">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1780,7 +1979,9 @@ namespace Model
          * level for the stack, or an attached policy that explicitly grants permissions.
          * For more information on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribePermissions">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1793,7 +1994,9 @@ namespace Model
          * the stack, or an attached policy that explicitly grants permissions. For more
          * information on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeRaidArrays">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeRaidArraysOutcome DescribeRaidArrays(const Model::DescribeRaidArraysRequest& request) const;
 
@@ -1804,7 +2007,9 @@ namespace Model
          * the stack, or an attached policy that explicitly grants permissions. For more
          * information on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeRaidArrays">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1817,7 +2022,9 @@ namespace Model
          * the stack, or an attached policy that explicitly grants permissions. For more
          * information on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeRaidArrays">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1829,7 +2036,9 @@ namespace Model
          * for the stack, or an attached policy that explicitly grants permissions. For
          * more information on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeRdsDbInstances">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeRdsDbInstancesOutcome DescribeRdsDbInstances(const Model::DescribeRdsDbInstancesRequest& request) const;
 
@@ -1839,7 +2048,9 @@ namespace Model
          * for the stack, or an attached policy that explicitly grants permissions. For
          * more information on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeRdsDbInstances">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1851,7 +2062,9 @@ namespace Model
          * for the stack, or an attached policy that explicitly grants permissions. For
          * more information on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeRdsDbInstances">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1863,7 +2076,9 @@ namespace Model
          * level for the stack, or an attached policy that explicitly grants permissions.
          * For more information on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeServiceErrors">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeServiceErrorsOutcome DescribeServiceErrors(const Model::DescribeServiceErrorsRequest& request) const;
 
@@ -1873,7 +2088,9 @@ namespace Model
          * level for the stack, or an attached policy that explicitly grants permissions.
          * For more information on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeServiceErrors">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1885,7 +2102,9 @@ namespace Model
          * level for the stack, or an attached policy that explicitly grants permissions.
          * For more information on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeServiceErrors">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1897,7 +2116,9 @@ namespace Model
          * Deploy, or Manage permissions level for the stack or an attached policy that
          * explicitly grants permissions. For more information on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeStackProvisioningParameters">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeStackProvisioningParametersOutcome DescribeStackProvisioningParameters(const Model::DescribeStackProvisioningParametersRequest& request) const;
 
@@ -1907,7 +2128,9 @@ namespace Model
          * Deploy, or Manage permissions level for the stack or an attached policy that
          * explicitly grants permissions. For more information on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeStackProvisioningParameters">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1919,7 +2142,9 @@ namespace Model
          * Deploy, or Manage permissions level for the stack or an attached policy that
          * explicitly grants permissions. For more information on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeStackProvisioningParameters">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1933,7 +2158,9 @@ namespace Model
          * an attached policy that explicitly grants permissions. For more information on
          * user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeStackSummary">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeStackSummaryOutcome DescribeStackSummary(const Model::DescribeStackSummaryRequest& request) const;
 
@@ -1945,7 +2172,9 @@ namespace Model
          * an attached policy that explicitly grants permissions. For more information on
          * user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeStackSummary">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1959,7 +2188,9 @@ namespace Model
          * an attached policy that explicitly grants permissions. For more information on
          * user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeStackSummary">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1971,7 +2202,9 @@ namespace Model
          * Manage permissions level for the stack, or an attached policy that explicitly
          * grants permissions. For more information on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeStacks">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeStacksOutcome DescribeStacks(const Model::DescribeStacksRequest& request) const;
 
@@ -1981,7 +2214,9 @@ namespace Model
          * Manage permissions level for the stack, or an attached policy that explicitly
          * grants permissions. For more information on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeStacks">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1993,7 +2228,9 @@ namespace Model
          * Manage permissions level for the stack, or an attached policy that explicitly
          * grants permissions. For more information on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeStacks">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2006,7 +2243,9 @@ namespace Model
          * Deploy, or Manage permissions level for the stack, or an attached policy that
          * explicitly grants permissions. For more information on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeTimeBasedAutoScaling">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeTimeBasedAutoScalingOutcome DescribeTimeBasedAutoScaling(const Model::DescribeTimeBasedAutoScalingRequest& request) const;
 
@@ -2017,7 +2256,9 @@ namespace Model
          * Deploy, or Manage permissions level for the stack, or an attached policy that
          * explicitly grants permissions. For more information on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeTimeBasedAutoScaling">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2030,7 +2271,9 @@ namespace Model
          * Deploy, or Manage permissions level for the stack, or an attached policy that
          * explicitly grants permissions. For more information on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeTimeBasedAutoScaling">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2041,7 +2284,9 @@ namespace Model
          * action, an IAM user must have an attached policy that explicitly grants
          * permissions. For more information on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeUserProfiles">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeUserProfilesOutcome DescribeUserProfiles(const Model::DescribeUserProfilesRequest& request) const;
 
@@ -2050,7 +2295,9 @@ namespace Model
          * action, an IAM user must have an attached policy that explicitly grants
          * permissions. For more information on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeUserProfiles">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2061,7 +2308,9 @@ namespace Model
          * action, an IAM user must have an attached policy that explicitly grants
          * permissions. For more information on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeUserProfiles">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2074,7 +2323,9 @@ namespace Model
          * for the stack, or an attached policy that explicitly grants permissions. For
          * more information on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeVolumes">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeVolumesOutcome DescribeVolumes(const Model::DescribeVolumesRequest& request) const;
 
@@ -2085,7 +2336,9 @@ namespace Model
          * for the stack, or an attached policy that explicitly grants permissions. For
          * more information on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeVolumes">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2098,7 +2351,9 @@ namespace Model
          * for the stack, or an attached policy that explicitly grants permissions. For
          * more information on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeVolumes">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2110,7 +2365,9 @@ namespace Model
          * permissions level for the stack, or an attached policy that explicitly grants
          * permissions. For more information on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DetachElasticLoadBalancer">AWS
+         * API Reference</a></p>
          */
         virtual Model::DetachElasticLoadBalancerOutcome DetachElasticLoadBalancer(const Model::DetachElasticLoadBalancerRequest& request) const;
 
@@ -2120,7 +2377,9 @@ namespace Model
          * permissions level for the stack, or an attached policy that explicitly grants
          * permissions. For more information on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DetachElasticLoadBalancer">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2132,7 +2391,9 @@ namespace Model
          * permissions level for the stack, or an attached policy that explicitly grants
          * permissions. For more information on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DetachElasticLoadBalancer">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2147,7 +2408,9 @@ namespace Model
          * that explicitly grants permissions. For more information on user permissions,
          * see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DisassociateElasticIp">AWS
+         * API Reference</a></p>
          */
         virtual Model::DisassociateElasticIpOutcome DisassociateElasticIp(const Model::DisassociateElasticIpRequest& request) const;
 
@@ -2160,7 +2423,9 @@ namespace Model
          * that explicitly grants permissions. For more information on user permissions,
          * see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DisassociateElasticIp">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2175,7 +2440,9 @@ namespace Model
          * that explicitly grants permissions. For more information on user permissions,
          * see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DisassociateElasticIp">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2187,7 +2454,9 @@ namespace Model
          * must have a Manage permissions level for the stack, or an attached policy that
          * explicitly grants permissions. For more information on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/GetHostnameSuggestion">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetHostnameSuggestionOutcome GetHostnameSuggestion(const Model::GetHostnameSuggestionRequest& request) const;
 
@@ -2197,7 +2466,9 @@ namespace Model
          * must have a Manage permissions level for the stack, or an attached policy that
          * explicitly grants permissions. For more information on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/GetHostnameSuggestion">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2209,7 +2480,9 @@ namespace Model
          * must have a Manage permissions level for the stack, or an attached policy that
          * explicitly grants permissions. For more information on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/GetHostnameSuggestion">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2217,13 +2490,19 @@ namespace Model
 
         /**
          * <note> <p>This action can be used only with Windows stacks.</p> </note>
-         * <p>Grants RDP access to a Windows instance for a specified time period.</p>
+         * <p>Grants RDP access to a Windows instance for a specified time
+         * period.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/GrantAccess">AWS
+         * API Reference</a></p>
          */
         virtual Model::GrantAccessOutcome GrantAccess(const Model::GrantAccessRequest& request) const;
 
         /**
          * <note> <p>This action can be used only with Windows stacks.</p> </note>
-         * <p>Grants RDP access to a Windows instance for a specified time period.</p>
+         * <p>Grants RDP access to a Windows instance for a specified time
+         * period.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/GrantAccess">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2231,7 +2510,10 @@ namespace Model
 
         /**
          * <note> <p>This action can be used only with Windows stacks.</p> </note>
-         * <p>Grants RDP access to a Windows instance for a specified time period.</p>
+         * <p>Grants RDP access to a Windows instance for a specified time
+         * period.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/GrantAccess">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2245,7 +2527,9 @@ namespace Model
          * or an attached policy that explicitly grants permissions. For more information
          * on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/RebootInstance">AWS
+         * API Reference</a></p>
          */
         virtual Model::RebootInstanceOutcome RebootInstance(const Model::RebootInstanceRequest& request) const;
 
@@ -2257,7 +2541,9 @@ namespace Model
          * or an attached policy that explicitly grants permissions. For more information
          * on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/RebootInstance">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2271,7 +2557,9 @@ namespace Model
          * or an attached policy that explicitly grants permissions. For more information
          * on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/RebootInstance">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2287,7 +2575,9 @@ namespace Model
          * attached policy that explicitly grants permissions. For more information on user
          * permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
-         * Managing User Permissions</a>.</p>
+         * Managing User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/RegisterEcsCluster">AWS
+         * API Reference</a></p>
          */
         virtual Model::RegisterEcsClusterOutcome RegisterEcsCluster(const Model::RegisterEcsClusterRequest& request) const;
 
@@ -2301,7 +2591,9 @@ namespace Model
          * attached policy that explicitly grants permissions. For more information on user
          * permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
-         * Managing User Permissions</a>.</p>
+         * Managing User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/RegisterEcsCluster">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2317,7 +2609,9 @@ namespace Model
          * attached policy that explicitly grants permissions. For more information on user
          * permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
-         * Managing User Permissions</a>.</p>
+         * Managing User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/RegisterEcsCluster">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2334,7 +2628,9 @@ namespace Model
          * that explicitly grants permissions. For more information on user permissions,
          * see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/RegisterElasticIp">AWS
+         * API Reference</a></p>
          */
         virtual Model::RegisterElasticIpOutcome RegisterElasticIp(const Model::RegisterElasticIpRequest& request) const;
 
@@ -2349,7 +2645,9 @@ namespace Model
          * that explicitly grants permissions. For more information on user permissions,
          * see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/RegisterElasticIp">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2366,7 +2664,9 @@ namespace Model
          * that explicitly grants permissions. For more information on user permissions,
          * see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/RegisterElasticIp">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2386,7 +2686,9 @@ namespace Model
          * permissions level for the stack or an attached policy that explicitly grants
          * permissions. For more information on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/RegisterInstance">AWS
+         * API Reference</a></p>
          */
         virtual Model::RegisterInstanceOutcome RegisterInstance(const Model::RegisterInstanceRequest& request) const;
 
@@ -2404,7 +2706,9 @@ namespace Model
          * permissions level for the stack or an attached policy that explicitly grants
          * permissions. For more information on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/RegisterInstance">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2424,7 +2728,9 @@ namespace Model
          * permissions level for the stack or an attached policy that explicitly grants
          * permissions. For more information on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/RegisterInstance">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2436,7 +2742,9 @@ namespace Model
          * level for the stack, or an attached policy that explicitly grants permissions.
          * For more information on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/RegisterRdsDbInstance">AWS
+         * API Reference</a></p>
          */
         virtual Model::RegisterRdsDbInstanceOutcome RegisterRdsDbInstance(const Model::RegisterRdsDbInstanceRequest& request) const;
 
@@ -2446,7 +2754,9 @@ namespace Model
          * level for the stack, or an attached policy that explicitly grants permissions.
          * For more information on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/RegisterRdsDbInstance">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2458,7 +2768,9 @@ namespace Model
          * level for the stack, or an attached policy that explicitly grants permissions.
          * For more information on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/RegisterRdsDbInstance">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2475,7 +2787,9 @@ namespace Model
          * that explicitly grants permissions. For more information on user permissions,
          * see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/RegisterVolume">AWS
+         * API Reference</a></p>
          */
         virtual Model::RegisterVolumeOutcome RegisterVolume(const Model::RegisterVolumeRequest& request) const;
 
@@ -2490,7 +2804,9 @@ namespace Model
          * that explicitly grants permissions. For more information on user permissions,
          * see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/RegisterVolume">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2507,7 +2823,9 @@ namespace Model
          * that explicitly grants permissions. For more information on user permissions,
          * see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/RegisterVolume">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2526,7 +2844,9 @@ namespace Model
          * attached policy that explicitly grants permissions. For more information on user
          * permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/SetLoadBasedAutoScaling">AWS
+         * API Reference</a></p>
          */
         virtual Model::SetLoadBasedAutoScalingOutcome SetLoadBasedAutoScaling(const Model::SetLoadBasedAutoScalingRequest& request) const;
 
@@ -2543,7 +2863,9 @@ namespace Model
          * attached policy that explicitly grants permissions. For more information on user
          * permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/SetLoadBasedAutoScaling">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2562,7 +2884,9 @@ namespace Model
          * attached policy that explicitly grants permissions. For more information on user
          * permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/SetLoadBasedAutoScaling">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2576,7 +2900,9 @@ namespace Model
          * policy that explicitly grants permissions. For more information on user
          * permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/SetPermission">AWS
+         * API Reference</a></p>
          */
         virtual Model::SetPermissionOutcome SetPermission(const Model::SetPermissionRequest& request) const;
 
@@ -2588,7 +2914,9 @@ namespace Model
          * policy that explicitly grants permissions. For more information on user
          * permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/SetPermission">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2602,7 +2930,9 @@ namespace Model
          * policy that explicitly grants permissions. For more information on user
          * permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/SetPermission">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2617,7 +2947,9 @@ namespace Model
          * level for the stack, or an attached policy that explicitly grants permissions.
          * For more information on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/SetTimeBasedAutoScaling">AWS
+         * API Reference</a></p>
          */
         virtual Model::SetTimeBasedAutoScalingOutcome SetTimeBasedAutoScaling(const Model::SetTimeBasedAutoScalingRequest& request) const;
 
@@ -2630,7 +2962,9 @@ namespace Model
          * level for the stack, or an attached policy that explicitly grants permissions.
          * For more information on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/SetTimeBasedAutoScaling">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2645,7 +2979,9 @@ namespace Model
          * level for the stack, or an attached policy that explicitly grants permissions.
          * For more information on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/SetTimeBasedAutoScaling">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2659,7 +2995,9 @@ namespace Model
          * or an attached policy that explicitly grants permissions. For more information
          * on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/StartInstance">AWS
+         * API Reference</a></p>
          */
         virtual Model::StartInstanceOutcome StartInstance(const Model::StartInstanceRequest& request) const;
 
@@ -2671,7 +3009,9 @@ namespace Model
          * or an attached policy that explicitly grants permissions. For more information
          * on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/StartInstance">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2685,7 +3025,9 @@ namespace Model
          * or an attached policy that explicitly grants permissions. For more information
          * on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/StartInstance">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2697,7 +3039,9 @@ namespace Model
          * attached policy that explicitly grants permissions. For more information on user
          * permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/StartStack">AWS
+         * API Reference</a></p>
          */
         virtual Model::StartStackOutcome StartStack(const Model::StartStackRequest& request) const;
 
@@ -2707,7 +3051,9 @@ namespace Model
          * attached policy that explicitly grants permissions. For more information on user
          * permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/StartStack">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2719,7 +3065,9 @@ namespace Model
          * attached policy that explicitly grants permissions. For more information on user
          * permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/StartStack">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2735,7 +3083,9 @@ namespace Model
          * or an attached policy that explicitly grants permissions. For more information
          * on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/StopInstance">AWS
+         * API Reference</a></p>
          */
         virtual Model::StopInstanceOutcome StopInstance(const Model::StopInstanceRequest& request) const;
 
@@ -2749,7 +3099,9 @@ namespace Model
          * or an attached policy that explicitly grants permissions. For more information
          * on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/StopInstance">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2765,7 +3117,9 @@ namespace Model
          * or an attached policy that explicitly grants permissions. For more information
          * on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/StopInstance">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2777,7 +3131,9 @@ namespace Model
          * attached policy that explicitly grants permissions. For more information on user
          * permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/StopStack">AWS
+         * API Reference</a></p>
          */
         virtual Model::StopStackOutcome StopStack(const Model::StopStackRequest& request) const;
 
@@ -2787,7 +3143,9 @@ namespace Model
          * attached policy that explicitly grants permissions. For more information on user
          * permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/StopStack">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2799,7 +3157,9 @@ namespace Model
          * attached policy that explicitly grants permissions. For more information on user
          * permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/StopStack">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2813,7 +3173,9 @@ namespace Model
          * must have a Manage permissions level for the stack or an attached policy that
          * explicitly grants permissions. For more information on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UnassignInstance">AWS
+         * API Reference</a></p>
          */
         virtual Model::UnassignInstanceOutcome UnassignInstance(const Model::UnassignInstanceRequest& request) const;
 
@@ -2825,7 +3187,9 @@ namespace Model
          * must have a Manage permissions level for the stack or an attached policy that
          * explicitly grants permissions. For more information on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UnassignInstance">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2839,7 +3203,9 @@ namespace Model
          * must have a Manage permissions level for the stack or an attached policy that
          * explicitly grants permissions. For more information on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UnassignInstance">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2854,7 +3220,9 @@ namespace Model
          * that explicitly grants permissions. For more information on user permissions,
          * see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UnassignVolume">AWS
+         * API Reference</a></p>
          */
         virtual Model::UnassignVolumeOutcome UnassignVolume(const Model::UnassignVolumeRequest& request) const;
 
@@ -2867,7 +3235,9 @@ namespace Model
          * that explicitly grants permissions. For more information on user permissions,
          * see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UnassignVolume">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2882,7 +3252,9 @@ namespace Model
          * that explicitly grants permissions. For more information on user permissions,
          * see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UnassignVolume">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2894,7 +3266,9 @@ namespace Model
          * stack, or an attached policy that explicitly grants permissions. For more
          * information on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateApp">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateAppOutcome UpdateApp(const Model::UpdateAppRequest& request) const;
 
@@ -2904,7 +3278,9 @@ namespace Model
          * stack, or an attached policy that explicitly grants permissions. For more
          * information on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateApp">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2916,7 +3292,9 @@ namespace Model
          * stack, or an attached policy that explicitly grants permissions. For more
          * information on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateApp">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2930,7 +3308,9 @@ namespace Model
          * that explicitly grants permissions. For more information on user permissions,
          * see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateElasticIp">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateElasticIpOutcome UpdateElasticIp(const Model::UpdateElasticIpRequest& request) const;
 
@@ -2942,7 +3322,9 @@ namespace Model
          * that explicitly grants permissions. For more information on user permissions,
          * see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateElasticIp">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2956,7 +3338,9 @@ namespace Model
          * that explicitly grants permissions. For more information on user permissions,
          * see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateElasticIp">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2968,7 +3352,9 @@ namespace Model
          * an attached policy that explicitly grants permissions. For more information on
          * user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateInstance">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateInstanceOutcome UpdateInstance(const Model::UpdateInstanceRequest& request) const;
 
@@ -2978,7 +3364,9 @@ namespace Model
          * an attached policy that explicitly grants permissions. For more information on
          * user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateInstance">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2990,7 +3378,9 @@ namespace Model
          * an attached policy that explicitly grants permissions. For more information on
          * user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateInstance">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -3002,7 +3392,9 @@ namespace Model
          * attached policy that explicitly grants permissions. For more information on user
          * permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateLayer">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateLayerOutcome UpdateLayer(const Model::UpdateLayerRequest& request) const;
 
@@ -3012,7 +3404,9 @@ namespace Model
          * attached policy that explicitly grants permissions. For more information on user
          * permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateLayer">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -3024,7 +3418,9 @@ namespace Model
          * attached policy that explicitly grants permissions. For more information on user
          * permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateLayer">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -3036,7 +3432,9 @@ namespace Model
          * that explicitly grants permissions. For more information on user permissions,
          * see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateMyUserProfile">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateMyUserProfileOutcome UpdateMyUserProfile(const Model::UpdateMyUserProfileRequest& request) const;
 
@@ -3046,7 +3444,9 @@ namespace Model
          * that explicitly grants permissions. For more information on user permissions,
          * see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateMyUserProfile">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -3058,7 +3458,9 @@ namespace Model
          * that explicitly grants permissions. For more information on user permissions,
          * see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateMyUserProfile">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -3070,7 +3472,9 @@ namespace Model
          * an attached policy that explicitly grants permissions. For more information on
          * user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateRdsDbInstance">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateRdsDbInstanceOutcome UpdateRdsDbInstance(const Model::UpdateRdsDbInstanceRequest& request) const;
 
@@ -3080,7 +3484,9 @@ namespace Model
          * an attached policy that explicitly grants permissions. For more information on
          * user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateRdsDbInstance">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -3092,7 +3498,9 @@ namespace Model
          * an attached policy that explicitly grants permissions. For more information on
          * user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateRdsDbInstance">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -3104,7 +3512,9 @@ namespace Model
          * attached policy that explicitly grants permissions. For more information on user
          * permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateStack">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateStackOutcome UpdateStack(const Model::UpdateStackRequest& request) const;
 
@@ -3114,7 +3524,9 @@ namespace Model
          * attached policy that explicitly grants permissions. For more information on user
          * permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateStack">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -3126,7 +3538,9 @@ namespace Model
          * attached policy that explicitly grants permissions. For more information on user
          * permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateStack">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -3137,7 +3551,9 @@ namespace Model
          * this action, an IAM user must have an attached policy that explicitly grants
          * permissions. For more information on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateUserProfile">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateUserProfileOutcome UpdateUserProfile(const Model::UpdateUserProfileRequest& request) const;
 
@@ -3146,7 +3562,9 @@ namespace Model
          * this action, an IAM user must have an attached policy that explicitly grants
          * permissions. For more information on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateUserProfile">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -3157,7 +3575,9 @@ namespace Model
          * this action, an IAM user must have an attached policy that explicitly grants
          * permissions. For more information on user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateUserProfile">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -3172,7 +3592,9 @@ namespace Model
          * that explicitly grants permissions. For more information on user permissions,
          * see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateVolume">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateVolumeOutcome UpdateVolume(const Model::UpdateVolumeRequest& request) const;
 
@@ -3185,7 +3607,9 @@ namespace Model
          * that explicitly grants permissions. For more information on user permissions,
          * see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateVolume">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -3200,7 +3624,9 @@ namespace Model
          * that explicitly grants permissions. For more information on user permissions,
          * see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
-         * User Permissions</a>.</p>
+         * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateVolume">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */

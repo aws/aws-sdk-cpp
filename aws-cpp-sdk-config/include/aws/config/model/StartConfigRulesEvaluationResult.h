@@ -32,7 +32,10 @@ namespace ConfigService
 namespace Model
 {
   /**
-   * <p>The output when you start the evaluation for the specified Config rule.</p>
+   * <p>The output when you start the evaluation for the specified Config
+   * rule.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/StartConfigRulesEvaluationResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_CONFIGSERVICE_API StartConfigRulesEvaluationResult
   {

@@ -25,7 +25,9 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for DetachVolume.</p>
+   * <p>Contains the parameters for DetachVolume.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DetachVolumeRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API DetachVolumeRequest : public EC2Request
   {

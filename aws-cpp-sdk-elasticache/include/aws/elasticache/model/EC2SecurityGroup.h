@@ -33,7 +33,9 @@ namespace Model
 
   /**
    * <p>Provides ownership and status information for an Amazon EC2 security
-   * group.</p>
+   * group.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/EC2SecurityGroup">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICACHE_API EC2SecurityGroup
   {

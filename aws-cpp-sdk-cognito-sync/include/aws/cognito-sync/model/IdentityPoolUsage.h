@@ -32,7 +32,9 @@ namespace Model
 {
 
   /**
-   * Usage information for the identity pool.
+   * Usage information for the identity pool.<p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/IdentityPoolUsage">AWS
+   * API Reference</a></p>
    */
   class AWS_COGNITOSYNC_API IdentityPoolUsage
   {

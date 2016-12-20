@@ -35,7 +35,9 @@ namespace ElasticLoadBalancing
 namespace Model
 {
   /**
-   * <p>Contains the output for DescribeTags.</p>
+   * <p>Contains the output for DescribeTags.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DescribeTagsOutput">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICLOADBALANCING_API DescribeTagsResult
   {

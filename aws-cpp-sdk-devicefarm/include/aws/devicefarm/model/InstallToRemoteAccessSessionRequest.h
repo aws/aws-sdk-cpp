@@ -26,7 +26,10 @@ namespace Model
 
   /**
    * <p>Represents the request to install an Android application (in .apk format) or
-   * an iOS application (in .ipa format) as part of a remote access session.</p>
+   * an iOS application (in .ipa format) as part of a remote access
+   * session.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/InstallToRemoteAccessSessionRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_DEVICEFARM_API InstallToRemoteAccessSessionRequest : public DeviceFarmRequest
   {

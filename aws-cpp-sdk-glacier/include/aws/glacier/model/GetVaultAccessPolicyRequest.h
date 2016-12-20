@@ -25,7 +25,9 @@ namespace Model
 {
 
   /**
-   * <p>Input for GetVaultAccessPolicy.</p>
+   * <p>Input for GetVaultAccessPolicy.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/GetVaultAccessPolicyInput">AWS
+   * API Reference</a></p>
    */
   class AWS_GLACIER_API GetVaultAccessPolicyRequest : public GlacierRequest
   {

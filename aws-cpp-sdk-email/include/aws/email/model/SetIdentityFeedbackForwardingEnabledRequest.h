@@ -29,7 +29,9 @@ namespace Model
    * bounce and complaint notifications through email. For information about email
    * feedback forwarding, see the <a
    * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications-via-email.html">Amazon
-   * SES Developer Guide</a>.</p>
+   * SES Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SetIdentityFeedbackForwardingEnabledRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_SES_API SetIdentityFeedbackForwardingEnabledRequest : public SESRequest
   {

@@ -128,6 +128,16 @@ void ElasticBeanstalkClient::init(const ClientConfiguration& config)
   m_uri = ss.str();
 }
 
+Aws::String ElasticBeanstalkClient::ConvertRequestToPresignedUrl(const AmazonSerializableWebServiceRequest& requestToConvert, const char* region) const
+{
+  Aws::StringStream ss;
+  ss << "https://" << ElasticBeanstalkEndpoint::ForRegion(region);
+  ss << "?" << requestToConvert.SerializePayload();
+
+  URI uri(ss.str());
+  return GeneratePresignedUrl(uri, HttpMethod::HTTP_GET, region, 3600);
+}
+
 AbortEnvironmentUpdateOutcome ElasticBeanstalkClient::AbortEnvironmentUpdate(const AbortEnvironmentUpdateRequest& request) const
 {
   Aws::StringStream ss;
@@ -1315,4 +1325,6 @@ void ElasticBeanstalkClient::ValidateConfigurationSettingsAsyncHelper(const Vali
 {
   handler(this, request, ValidateConfigurationSettings(request), context);
 }
+
+
 

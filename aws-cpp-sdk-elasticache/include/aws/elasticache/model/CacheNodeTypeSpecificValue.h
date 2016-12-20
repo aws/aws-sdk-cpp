@@ -32,7 +32,10 @@ namespace Model
 {
 
   /**
-   * <p>A value that applies only to a certain cache node type.</p>
+   * <p>A value that applies only to a certain cache node type.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CacheNodeTypeSpecificValue">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICACHE_API CacheNodeTypeSpecificValue
   {

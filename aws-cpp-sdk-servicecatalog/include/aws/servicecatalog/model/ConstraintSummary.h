@@ -32,7 +32,9 @@ namespace Model
 
   /**
    * <p>An administrator-specified constraint to apply when provisioning a
-   * product.</p>
+   * product.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ConstraintSummary">AWS
+   * API Reference</a></p>
    */
   class AWS_SERVICECATALOG_API ConstraintSummary
   {

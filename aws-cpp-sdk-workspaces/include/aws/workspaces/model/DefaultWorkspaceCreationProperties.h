@@ -31,7 +31,10 @@ namespace Model
 {
 
   /**
-   * <p>Contains default WorkSpace creation information.</p>
+   * <p>Contains default WorkSpace creation information.</p><p><h3>See Also:</h3>  
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DefaultWorkspaceCreationProperties">AWS
+   * API Reference</a></p>
    */
   class AWS_WORKSPACES_API DefaultWorkspaceCreationProperties
   {

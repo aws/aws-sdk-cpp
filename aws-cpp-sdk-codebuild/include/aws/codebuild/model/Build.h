@@ -39,7 +39,9 @@ namespace Model
 {
 
   /**
-   * <p>Information about a build.</p>
+   * <p>Information about a build.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/Build">AWS API
+   * Reference</a></p>
    */
   class AWS_CODEBUILD_API Build
   {

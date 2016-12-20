@@ -32,7 +32,9 @@ namespace Model
 
   /**
    * <p>Represents the average latency for the slowest X percent of requests over the
-   * last 10 seconds.</p>
+   * last 10 seconds.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/Latency">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICBEANSTALK_API Latency
   {

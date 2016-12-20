@@ -34,7 +34,9 @@ namespace Model
    * <p>Represents the percentage of requests over the last 10 seconds that resulted
    * in each type of status code response. For more information, see <a
    * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html">Status Code
-   * Definitions</a>.</p>
+   * Definitions</a>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/StatusCodes">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICBEANSTALK_API StatusCodes
   {

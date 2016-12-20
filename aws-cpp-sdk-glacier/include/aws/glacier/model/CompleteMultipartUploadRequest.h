@@ -29,7 +29,9 @@ namespace Model
    * Amazon Glacier that all the archive parts have been uploaded and Amazon Glacier
    * can now assemble the archive from the uploaded parts. After assembling and
    * saving the archive to the vault, Amazon Glacier returns the URI path of the
-   * newly created archive resource.</p>
+   * newly created archive resource.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/CompleteMultipartUploadInput">AWS
+   * API Reference</a></p>
    */
   class AWS_GLACIER_API CompleteMultipartUploadRequest : public GlacierRequest
   {

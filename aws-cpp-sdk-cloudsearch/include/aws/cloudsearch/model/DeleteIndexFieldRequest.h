@@ -27,7 +27,9 @@ namespace Model
   /**
    * <p>Container for the parameters to the <code><a>DeleteIndexField</a></code>
    * operation. Specifies the name of the domain you want to update and the name of
-   * the index field you want to delete.</p>
+   * the index field you want to delete.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DeleteIndexFieldRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDSEARCH_API DeleteIndexFieldRequest : public CloudSearchRequest
   {

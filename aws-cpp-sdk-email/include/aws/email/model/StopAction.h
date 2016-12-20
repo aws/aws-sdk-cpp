@@ -38,7 +38,9 @@ namespace Model
    * Notification Service (Amazon SNS).</p> <p>For information about setting a stop
    * action in a receipt rule, see the <a
    * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-action-stop.html">Amazon
-   * SES Developer Guide</a>.</p>
+   * SES Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/StopAction">AWS
+   * API Reference</a></p>
    */
   class AWS_SES_API StopAction
   {

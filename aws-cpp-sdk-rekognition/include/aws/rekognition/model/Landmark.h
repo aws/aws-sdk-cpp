@@ -31,7 +31,10 @@ namespace Model
 {
 
   /**
-   * <p>Indicates the location of the landmark on the face.</p>
+   * <p>Indicates the location of the landmark on the face.</p><p><h3>See Also:</h3> 
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/Landmark">AWS
+   * API Reference</a></p>
    */
   class AWS_REKOGNITION_API Landmark
   {

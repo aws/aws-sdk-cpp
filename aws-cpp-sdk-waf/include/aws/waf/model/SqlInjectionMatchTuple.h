@@ -34,7 +34,9 @@ namespace Model
   /**
    * <p>Specifies the part of a web request that you want AWS WAF to inspect for
    * snippets of malicious SQL code and, if you want AWS WAF to inspect a header, the
-   * name of the header.</p>
+   * name of the header.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/SqlInjectionMatchTuple">AWS
+   * API Reference</a></p>
    */
   class AWS_WAF_API SqlInjectionMatchTuple
   {

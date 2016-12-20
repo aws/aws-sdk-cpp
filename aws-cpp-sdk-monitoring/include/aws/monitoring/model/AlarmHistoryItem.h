@@ -34,7 +34,9 @@ namespace Model
 {
 
   /**
-   * <p>Represents the history of a specific alarm.</p>
+   * <p>Represents the history of a specific alarm.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/AlarmHistoryItem">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDWATCH_API AlarmHistoryItem
   {

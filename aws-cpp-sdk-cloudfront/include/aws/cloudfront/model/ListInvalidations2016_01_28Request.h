@@ -29,7 +29,9 @@ namespace Model
 {
 
   /**
-   * The request to list invalidations.
+   * The request to list invalidations.<p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/ListInvalidationsRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API ListInvalidations2016_01_28Request : public CloudFrontRequest
   {

@@ -40,7 +40,9 @@ namespace Model
    * that your AWS resource receives during the specified time period. If your
    * resource receives more than 5,000 requests during that period, AWS WAF stops
    * sampling after the 5,000th request. In that case, <code>EndTime</code> is the
-   * time that AWS WAF received the 5,000th request. </p>
+   * time that AWS WAF received the 5,000th request. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/TimeWindow">AWS API
+   * Reference</a></p>
    */
   class AWS_WAF_API TimeWindow
   {

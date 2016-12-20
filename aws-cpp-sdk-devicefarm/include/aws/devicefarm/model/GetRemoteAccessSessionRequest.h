@@ -26,7 +26,9 @@ namespace Model
 
   /**
    * <p>Represents the request to get information about the specified remote access
-   * session.</p>
+   * session.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetRemoteAccessSessionRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_DEVICEFARM_API GetRemoteAccessSessionRequest : public DeviceFarmRequest
   {

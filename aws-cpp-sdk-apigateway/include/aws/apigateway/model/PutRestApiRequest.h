@@ -33,7 +33,9 @@ namespace Model
 
   /**
    * <p>A PUT request to update an existing API, with external API definitions
-   * specified as the request body.</p>
+   * specified as the request body.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/PutRestApiRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_APIGATEWAY_API PutRestApiRequest : public StreamingAPIGatewayRequest
   {

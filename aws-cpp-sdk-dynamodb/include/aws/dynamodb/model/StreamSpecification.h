@@ -31,7 +31,10 @@ namespace Model
 {
 
   /**
-   * <p>Represents the DynamoDB Streams configuration for a table in DynamoDB.</p>
+   * <p>Represents the DynamoDB Streams configuration for a table in
+   * DynamoDB.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/StreamSpecification">AWS
+   * API Reference</a></p>
    */
   class AWS_DYNAMODB_API StreamSpecification
   {

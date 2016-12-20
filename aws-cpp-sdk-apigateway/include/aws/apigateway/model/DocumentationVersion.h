@@ -38,7 +38,10 @@ namespace Model
    * documentation to an external (e.g., Swagger) file.</p></div> <div
    * class="seeAlso"> <a
    * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-documenting-api.html">Documenting
-   * an API</a>, <a>DocumentationPart</a>, <a>DocumentationVersions</a> </div>
+   * an API</a>, <a>DocumentationPart</a>, <a>DocumentationVersions</a>
+   * </div><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DocumentationVersion">AWS
+   * API Reference</a></p>
    */
   class AWS_APIGATEWAY_API DocumentationVersion
   {

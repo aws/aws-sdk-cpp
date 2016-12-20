@@ -33,7 +33,9 @@ namespace Model
 
   /**
    * <p>A job's shipping information, including inbound and outbound tracking numbers
-   * and shipping speed options.</p>
+   * and shipping speed options.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ShippingDetails">AWS
+   * API Reference</a></p>
    */
   class AWS_SNOWBALL_API ShippingDetails
   {

@@ -34,7 +34,9 @@ namespace Model
 {
   /**
    * <p>Represents the response from the server to the request to start the user
-   * import job.</p>
+   * import job.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/StartUserImportJobResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_COGNITOIDENTITYPROVIDER_API StartUserImportJobResult
   {

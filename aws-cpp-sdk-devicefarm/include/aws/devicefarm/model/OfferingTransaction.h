@@ -34,7 +34,10 @@ namespace Model
 {
 
   /**
-   * <p>Represents the metadata of an offering transaction.</p>
+   * <p>Represents the metadata of an offering transaction.</p><p><h3>See Also:</h3> 
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/OfferingTransaction">AWS
+   * API Reference</a></p>
    */
   class AWS_DEVICEFARM_API OfferingTransaction
   {

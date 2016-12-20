@@ -26,7 +26,9 @@ namespace Model
 {
 
   /**
-   * <p>Updates a conditional forwarder.</p>
+   * <p>Updates a conditional forwarder.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UpdateConditionalForwarderRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_DIRECTORYSERVICE_API UpdateConditionalForwarderRequest : public DirectoryServiceRequest
   {

@@ -31,7 +31,9 @@ namespace Model
 
   /**
    * <p>A request for the traffic policy instances that you created in a specified
-   * hosted zone.</p>
+   * hosted zone.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTrafficPolicyInstancesByHostedZoneRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_ROUTE53_API ListTrafficPolicyInstancesByHostedZoneRequest : public Route53Request
   {

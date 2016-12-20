@@ -33,7 +33,10 @@ namespace Route53Domains
 namespace Model
 {
   /**
-   * <p>The RegisterDomain response includes the following element.</p>
+   * <p>The RegisterDomain response includes the following element.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/RegisterDomainResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_ROUTE53DOMAINS_API RegisterDomainResult
   {

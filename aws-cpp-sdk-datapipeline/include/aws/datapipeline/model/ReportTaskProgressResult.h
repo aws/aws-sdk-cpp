@@ -32,7 +32,9 @@ namespace DataPipeline
 namespace Model
 {
   /**
-   * <p>Contains the output of ReportTaskProgress.</p>
+   * <p>Contains the output of ReportTaskProgress.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/ReportTaskProgressOutput">AWS
+   * API Reference</a></p>
    */
   class AWS_DATAPIPELINE_API ReportTaskProgressResult
   {

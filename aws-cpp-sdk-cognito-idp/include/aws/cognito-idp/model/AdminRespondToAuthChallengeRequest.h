@@ -28,7 +28,9 @@ namespace Model
 
   /**
    * <p>The request to respond to the authentication challenge, as an
-   * administrator.</p>
+   * administrator.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminRespondToAuthChallengeRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_COGNITOIDENTITYPROVIDER_API AdminRespondToAuthChallengeRequest : public CognitoIdentityProviderRequest
   {

@@ -31,7 +31,10 @@ namespace Model
 {
 
   /**
-   * <p>Contains the identifier and the name of the <code>IPSet</code>.</p>
+   * <p>Contains the identifier and the name of the <code>IPSet</code>.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/IPSetSummary">AWS
+   * API Reference</a></p>
    */
   class AWS_WAF_API IPSetSummary
   {

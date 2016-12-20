@@ -31,7 +31,9 @@ namespace Model
 {
 
   /**
-   * <p>Information about an HTTP request.</p>
+   * <p>Information about an HTTP request.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/Http">AWS API
+   * Reference</a></p>
    */
   class AWS_XRAY_API Http
   {

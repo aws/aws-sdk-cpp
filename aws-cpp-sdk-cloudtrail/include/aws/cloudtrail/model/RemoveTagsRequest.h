@@ -27,7 +27,9 @@ namespace Model
 {
 
   /**
-   * <p>Specifies the tags to remove from a trail.</p>
+   * <p>Specifies the tags to remove from a trail.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/RemoveTagsRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDTRAIL_API RemoveTagsRequest : public CloudTrailRequest
   {

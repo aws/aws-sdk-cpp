@@ -33,7 +33,9 @@ namespace Model
 {
   /**
    * <p>The response from the server when a request is made to delete the remote
-   * access session.</p>
+   * access session.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteRemoteAccessSessionResult">AWS
+   * API Reference</a></p>
    */
   class AWS_DEVICEFARM_API DeleteRemoteAccessSessionResult
   {

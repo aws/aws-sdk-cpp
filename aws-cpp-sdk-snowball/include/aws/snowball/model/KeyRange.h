@@ -34,7 +34,10 @@ namespace Model
    * <p>Contains a key range. For export jobs, a <code>S3Resource</code> object can
    * have an optional <code>KeyRange</code> value. The length of the range is defined
    * at job creation, and has either an inclusive <code>BeginMarker</code>, an
-   * inclusive <code>EndMarker</code>, or both. Ranges are UTF-8 binary sorted.</p>
+   * inclusive <code>EndMarker</code>, or both. Ranges are UTF-8 binary
+   * sorted.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/KeyRange">AWS
+   * API Reference</a></p>
    */
   class AWS_SNOWBALL_API KeyRange
   {

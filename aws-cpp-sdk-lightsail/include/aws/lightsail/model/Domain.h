@@ -36,7 +36,10 @@ namespace Model
 {
 
   /**
-   * <p>Describes a domain where you are storing recordsets in Lightsail.</p>
+   * <p>Describes a domain where you are storing recordsets in
+   * Lightsail.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/Domain">AWS
+   * API Reference</a></p>
    */
   class AWS_LIGHTSAIL_API Domain
   {

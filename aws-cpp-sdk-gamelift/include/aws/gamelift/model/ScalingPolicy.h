@@ -36,7 +36,10 @@ namespace Model
 
   /**
    * <p>Rule that controls how a fleet is scaled. Scaling policies are uniquely
-   * identified by the combination of name and fleet ID.</p>
+   * identified by the combination of name and fleet ID.</p><p><h3>See Also:</h3>  
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ScalingPolicy">AWS
+   * API Reference</a></p>
    */
   class AWS_GAMELIFT_API ScalingPolicy
   {

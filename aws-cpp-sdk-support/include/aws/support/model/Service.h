@@ -34,7 +34,9 @@ namespace Model
 
   /**
    * <p>Information about an AWS service returned by the <a>DescribeServices</a>
-   * operation. </p>
+   * operation. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/Service">AWS API
+   * Reference</a></p>
    */
   class AWS_SUPPORT_API Service
   {

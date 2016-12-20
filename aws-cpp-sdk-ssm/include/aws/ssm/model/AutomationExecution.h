@@ -37,7 +37,9 @@ namespace Model
 
   /**
    * <p>Detailed information about the current state of an individual Automation
-   * execution.</p>
+   * execution.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/AutomationExecution">AWS
+   * API Reference</a></p>
    */
   class AWS_SSM_API AutomationExecution
   {

@@ -36,7 +36,9 @@ namespace Model
 {
   /**
    * <p>A connection represents the physical network connection between the AWS
-   * Direct Connect location and the customer.</p>
+   * Direct Connect location and the customer.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/Connection">AWS
+   * API Reference</a></p>
    */
   class AWS_DIRECTCONNECT_API CreateConnectionResult
   {

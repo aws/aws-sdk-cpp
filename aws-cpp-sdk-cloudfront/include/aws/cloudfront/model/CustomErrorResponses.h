@@ -32,7 +32,10 @@ namespace Model
 {
 
   /**
-   * A complex type that contains zero or more CustomErrorResponse elements.
+   * A complex type that contains zero or more CustomErrorResponse
+   * elements.<p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/CustomErrorResponses">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API CustomErrorResponses
   {

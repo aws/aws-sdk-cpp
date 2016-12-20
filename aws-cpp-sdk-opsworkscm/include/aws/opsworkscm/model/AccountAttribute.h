@@ -31,7 +31,9 @@ namespace Model
 {
 
   /**
-   * <p>Stores account attributes. </p>
+   * <p>Stores account attributes. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/AccountAttribute">AWS
+   * API Reference</a></p>
    */
   class AWS_OPSWORKSCM_API AccountAttribute
   {

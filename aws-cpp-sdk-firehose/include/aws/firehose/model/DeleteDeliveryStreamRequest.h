@@ -25,7 +25,10 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for <a>DeleteDeliveryStream</a>.</p>
+   * <p>Contains the parameters for <a>DeleteDeliveryStream</a>.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/DeleteDeliveryStreamInput">AWS
+   * API Reference</a></p>
    */
   class AWS_FIREHOSE_API DeleteDeliveryStreamRequest : public FirehoseRequest
   {

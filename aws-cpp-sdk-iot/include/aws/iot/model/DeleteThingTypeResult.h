@@ -32,7 +32,9 @@ namespace IoT
 namespace Model
 {
   /**
-   * <p>The output for the DeleteThingType operation.</p>
+   * <p>The output for the DeleteThingType operation.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteThingTypeResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_IOT_API DeleteThingTypeResult
   {

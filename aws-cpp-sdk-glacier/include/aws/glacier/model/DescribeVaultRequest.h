@@ -26,7 +26,9 @@ namespace Model
 
   /**
    * <p>Provides options for retrieving metadata for a specific vault in Amazon
-   * Glacier.</p>
+   * Glacier.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/DescribeVaultInput">AWS
+   * API Reference</a></p>
    */
   class AWS_GLACIER_API DescribeVaultRequest : public GlacierRequest
   {

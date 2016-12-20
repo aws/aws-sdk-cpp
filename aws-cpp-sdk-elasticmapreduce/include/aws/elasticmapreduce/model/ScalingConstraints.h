@@ -32,7 +32,10 @@ namespace Model
   /**
    * <p>The upper and lower EC2 instance limits for an automatic scaling policy.
    * Automatic scaling activities triggered by automatic scaling rules will not cause
-   * an instance group to grow above or below these limits.</p>
+   * an instance group to grow above or below these limits.</p><p><h3>See Also:</h3> 
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ScalingConstraints">AWS
+   * API Reference</a></p>
    */
   class AWS_EMR_API ScalingConstraints
   {

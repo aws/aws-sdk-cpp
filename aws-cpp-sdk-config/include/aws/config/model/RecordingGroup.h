@@ -56,7 +56,9 @@ namespace Model
    * href="http://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources">Supported
    * resource types</a>.</p> <p>For more information, see <a
    * href="http://docs.aws.amazon.com/config/latest/developerguide/select-resources.html">Selecting
-   * Which Resources AWS Config Records</a>.</p>
+   * Which Resources AWS Config Records</a>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/RecordingGroup">AWS
+   * API Reference</a></p>
    */
   class AWS_CONFIGSERVICE_API RecordingGroup
   {

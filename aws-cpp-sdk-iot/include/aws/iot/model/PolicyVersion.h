@@ -32,7 +32,9 @@ namespace Model
 {
 
   /**
-   * <p>Describes a policy version.</p>
+   * <p>Describes a policy version.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/PolicyVersion">AWS
+   * API Reference</a></p>
    */
   class AWS_IOT_API PolicyVersion
   {

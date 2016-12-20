@@ -40,7 +40,10 @@ namespace Model
 {
 
   /**
-   * <p>Contains information about an AWS Directory Service directory.</p>
+   * <p>Contains information about an AWS Directory Service directory.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DirectoryDescription">AWS
+   * API Reference</a></p>
    */
   class AWS_DIRECTORYSERVICE_API DirectoryDescription
   {

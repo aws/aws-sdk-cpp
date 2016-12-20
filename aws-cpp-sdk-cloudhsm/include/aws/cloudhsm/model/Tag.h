@@ -32,7 +32,9 @@ namespace Model
 
   /**
    * <p>A key-value pair that identifies or specifies metadata about an AWS CloudHSM
-   * resource.</p>
+   * resource.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/Tag">AWS API
+   * Reference</a></p>
    */
   class AWS_CLOUDHSM_API Tag
   {

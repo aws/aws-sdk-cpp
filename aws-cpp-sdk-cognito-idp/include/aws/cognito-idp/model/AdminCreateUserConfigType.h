@@ -31,7 +31,10 @@ namespace Model
 {
 
   /**
-   * <p>The type of configuration for creating a new user profile.</p>
+   * <p>The type of configuration for creating a new user profile.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminCreateUserConfigType">AWS
+   * API Reference</a></p>
    */
   class AWS_COGNITOIDENTITYPROVIDER_API AdminCreateUserConfigType
   {

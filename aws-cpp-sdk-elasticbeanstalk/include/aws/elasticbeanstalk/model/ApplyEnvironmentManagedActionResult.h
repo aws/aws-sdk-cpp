@@ -35,7 +35,10 @@ namespace ElasticBeanstalk
 namespace Model
 {
   /**
-   * <p>The result message containing information about the managed action.</p>
+   * <p>The result message containing information about the managed
+   * action.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ApplyEnvironmentManagedActionResult">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICBEANSTALK_API ApplyEnvironmentManagedActionResult
   {

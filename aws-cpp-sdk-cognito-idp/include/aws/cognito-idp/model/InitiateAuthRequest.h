@@ -27,7 +27,9 @@ namespace Model
 {
 
   /**
-   * <p>Initiates the authentication request.</p>
+   * <p>Initiates the authentication request.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/InitiateAuthRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_COGNITOIDENTITYPROVIDER_API InitiateAuthRequest : public CognitoIdentityProviderRequest
   {

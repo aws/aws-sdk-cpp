@@ -31,7 +31,10 @@ namespace Model
 {
 
   /**
-   * A time period indicated the start date and end date of a budget.
+   * A time period indicated the start date and end date of a budget.<p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/TimePeriod">AWS
+   * API Reference</a></p>
    */
   class AWS_BUDGETS_API TimePeriod
   {

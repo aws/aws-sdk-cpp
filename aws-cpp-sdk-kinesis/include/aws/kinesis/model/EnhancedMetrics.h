@@ -32,7 +32,9 @@ namespace Model
 {
 
   /**
-   * <p>Represents enhanced metrics types.</p>
+   * <p>Represents enhanced metrics types.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/EnhancedMetrics">AWS
+   * API Reference</a></p>
    */
   class AWS_KINESIS_API EnhancedMetrics
   {

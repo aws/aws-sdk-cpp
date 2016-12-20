@@ -29,7 +29,10 @@ namespace Model
    * <p> <a>UpdateChapCredentialsInput$InitiatorName</a> </p> </li> <li> <p>
    * <a>UpdateChapCredentialsInput$SecretToAuthenticateInitiator</a> </p> </li> <li>
    * <p> <a>UpdateChapCredentialsInput$SecretToAuthenticateTarget</a> </p> </li> <li>
-   * <p> <a>UpdateChapCredentialsInput$TargetARN</a> </p> </li> </ul>
+   * <p> <a>UpdateChapCredentialsInput$TargetARN</a> </p> </li> </ul><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateChapCredentialsInput">AWS
+   * API Reference</a></p>
    */
   class AWS_STORAGEGATEWAY_API UpdateChapCredentialsRequest : public StorageGatewayRequest
   {

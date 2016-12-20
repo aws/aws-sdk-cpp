@@ -26,7 +26,9 @@ namespace Model
 {
 
   /**
-   * Input structure for the UpateJob operation.
+   * Input structure for the UpateJob operation.<p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/importexport-2010-06-01/UpdateJobInput">AWS
+   * API Reference</a></p>
    */
   class AWS_IMPORTEXPORT_API UpdateJobRequest : public ImportExportRequest
   {

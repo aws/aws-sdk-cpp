@@ -25,7 +25,9 @@ namespace Model
 {
 
   /**
-   * <p>Request to delete an application version.</p>
+   * <p>Request to delete an application version.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeleteApplicationVersionMessage">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICBEANSTALK_API DeleteApplicationVersionRequest : public ElasticBeanstalkRequest
   {

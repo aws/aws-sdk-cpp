@@ -33,7 +33,9 @@ namespace Model
 
   /**
    * <p>The file format of the output captions. If you leave this value blank,
-   * Elastic Transcoder returns an error.</p>
+   * Elastic Transcoder returns an error.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/CaptionFormat">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICTRANSCODER_API CaptionFormat
   {

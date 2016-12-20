@@ -31,7 +31,10 @@ namespace Model
 {
 
   /**
-   * <p>Represents a CloudWatch alarm associated with a scaling policy.</p>
+   * <p>Represents a CloudWatch alarm associated with a scaling policy.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/Alarm">AWS
+   * API Reference</a></p>
    */
   class AWS_APPLICATIONAUTOSCALING_API Alarm
   {

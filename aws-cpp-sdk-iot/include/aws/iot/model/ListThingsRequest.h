@@ -29,7 +29,9 @@ namespace Model
 {
 
   /**
-   * <p>The input for the ListThings operation.</p>
+   * <p>The input for the ListThings operation.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListThingsRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_IOT_API ListThingsRequest : public IoTRequest
   {

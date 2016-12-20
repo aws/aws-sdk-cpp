@@ -35,7 +35,10 @@ namespace Model
 
   /**
    * <p>The field that AWS CloudFormation will change, such as the name of a
-   * resource's property, and whether the resource will be recreated.</p>
+   * resource's property, and whether the resource will be recreated.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ResourceTargetDefinition">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDFORMATION_API ResourceTargetDefinition
   {

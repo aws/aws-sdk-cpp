@@ -32,7 +32,10 @@ namespace Model
 {
 
   /**
-   * <p>A container for the calculated facet values and counts.</p>
+   * <p>A container for the calculated facet values and counts.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearchdomain-2013-01-01/BucketInfo">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDSEARCHDOMAIN_API BucketInfo
   {

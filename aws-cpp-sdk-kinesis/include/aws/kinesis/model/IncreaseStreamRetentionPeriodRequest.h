@@ -25,7 +25,10 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input for <a>IncreaseStreamRetentionPeriod</a>.</p>
+   * <p>Represents the input for <a>IncreaseStreamRetentionPeriod</a>.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/IncreaseStreamRetentionPeriodInput">AWS
+   * API Reference</a></p>
    */
   class AWS_KINESIS_API IncreaseStreamRetentionPeriodRequest : public KinesisRequest
   {

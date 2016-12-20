@@ -32,7 +32,9 @@ namespace Model
 {
 
   /**
-   * <p>Describes a recurring charge.</p>
+   * <p>Describes a recurring charge.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RecurringCharge">AWS
+   * API Reference</a></p>
    */
   class AWS_REDSHIFT_API RecurringCharge
   {

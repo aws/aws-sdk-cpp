@@ -34,7 +34,9 @@ namespace Model
 {
 
   /**
-   * <p>Describes a scheduled event for an instance.</p>
+   * <p>Describes a scheduled event for an instance.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/InstanceStatusEvent">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API InstanceStatusEvent
   {

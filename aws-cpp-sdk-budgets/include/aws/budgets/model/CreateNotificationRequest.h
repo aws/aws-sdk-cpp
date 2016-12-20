@@ -28,7 +28,9 @@ namespace Model
 {
 
   /**
-   * Request of CreateNotification
+   * Request of CreateNotification<p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/CreateNotificationRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_BUDGETS_API CreateNotificationRequest : public BudgetsRequest
   {

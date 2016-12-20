@@ -32,7 +32,10 @@ namespace Model
 {
 
   /**
-   * <p>The filters to describe or get information about your managed instances.</p>
+   * <p>The filters to describe or get information about your managed
+   * instances.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/InstanceInformationStringFilter">AWS
+   * API Reference</a></p>
    */
   class AWS_SSM_API InstanceInformationStringFilter
   {

@@ -27,7 +27,9 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for DescribeTags.</p>
+   * <p>Contains the parameters for DescribeTags.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeTagsType">AWS
+   * API Reference</a></p>
    */
   class AWS_AUTOSCALING_API DescribeTagsRequest : public AutoScalingRequest
   {

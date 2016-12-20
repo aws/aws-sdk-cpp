@@ -43,7 +43,9 @@ namespace Model
    * <code>MLModel</code> uses the F1 score technique to measure performance. </p>
    * </li> </ul> <p> For more information about performance metrics, please see the
    * <a href="http://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine
-   * Learning Developer Guide</a>. </p>
+   * Learning Developer Guide</a>. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/PerformanceMetrics">AWS
+   * API Reference</a></p>
    */
   class AWS_MACHINELEARNING_API PerformanceMetrics
   {

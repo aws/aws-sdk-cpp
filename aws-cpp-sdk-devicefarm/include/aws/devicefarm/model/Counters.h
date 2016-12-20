@@ -30,7 +30,9 @@ namespace Model
 {
 
   /**
-   * <p>Represents entity counters.</p>
+   * <p>Represents entity counters.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/Counters">AWS
+   * API Reference</a></p>
    */
   class AWS_DEVICEFARM_API Counters
   {

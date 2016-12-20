@@ -30,7 +30,10 @@ namespace Model
 
   /**
    * <p>A complex type that contains the information about the request to list the
-   * traffic policies that are associated with the current AWS account.</p>
+   * traffic policies that are associated with the current AWS account.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTrafficPoliciesRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_ROUTE53_API ListTrafficPoliciesRequest : public Route53Request
   {

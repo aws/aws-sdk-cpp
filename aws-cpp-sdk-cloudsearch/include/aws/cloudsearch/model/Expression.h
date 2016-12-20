@@ -34,7 +34,9 @@ namespace Model
   /**
    * <p>A named expression that can be evaluated at search time. Can be used to sort
    * the search results, define other expressions, or return computed information in
-   * the search results. </p>
+   * the search results. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/Expression">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDSEARCH_API Expression
   {

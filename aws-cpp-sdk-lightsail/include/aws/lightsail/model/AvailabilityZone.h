@@ -31,7 +31,9 @@ namespace Model
 {
 
   /**
-   * <p>Describes an Availability Zone.</p>
+   * <p>Describes an Availability Zone.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/AvailabilityZone">AWS
+   * API Reference</a></p>
    */
   class AWS_LIGHTSAIL_API AvailabilityZone
   {

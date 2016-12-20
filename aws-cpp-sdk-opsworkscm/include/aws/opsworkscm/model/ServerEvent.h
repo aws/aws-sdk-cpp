@@ -33,7 +33,9 @@ namespace Model
 
   /**
    * <p>An event that is related to the server, such as the start of maintenance or
-   * backup. </p>
+   * backup. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/ServerEvent">AWS
+   * API Reference</a></p>
    */
   class AWS_OPSWORKSCM_API ServerEvent
   {

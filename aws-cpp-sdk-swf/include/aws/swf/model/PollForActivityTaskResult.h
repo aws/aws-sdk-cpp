@@ -35,7 +35,9 @@ namespace SWF
 namespace Model
 {
   /**
-   * <p>Unit of work sent to an activity worker.</p>
+   * <p>Unit of work sent to an activity worker.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ActivityTask">AWS
+   * API Reference</a></p>
    */
   class AWS_SWF_API PollForActivityTaskResult
   {

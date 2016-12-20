@@ -35,7 +35,9 @@ namespace Model
    * <p>An activation registers one or more on-premises servers or virtual machines
    * (VMs) with AWS so that you can configure those servers or VMs using Run Command.
    * A server or VM that has been registered with AWS is called a managed
-   * instance.</p>
+   * instance.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/Activation">AWS API
+   * Reference</a></p>
    */
   class AWS_SSM_API Activation
   {

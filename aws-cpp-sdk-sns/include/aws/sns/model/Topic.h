@@ -33,7 +33,10 @@ namespace Model
 
   /**
    * <p>A wrapper type for the topic's Amazon Resource Name (ARN). To retrieve a
-   * topic's attributes, use <code>GetTopicAttributes</code>.</p>
+   * topic's attributes, use <code>GetTopicAttributes</code>.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Topic">AWS API
+   * Reference</a></p>
    */
   class AWS_SNS_API Topic
   {

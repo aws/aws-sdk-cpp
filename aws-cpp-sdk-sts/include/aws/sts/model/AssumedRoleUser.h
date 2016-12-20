@@ -33,7 +33,9 @@ namespace Model
 
   /**
    * <p>The identifiers for the temporary security credentials that the operation
-   * returns.</p>
+   * returns.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/AssumedRoleUser">AWS
+   * API Reference</a></p>
    */
   class AWS_STS_API AssumedRoleUser
   {

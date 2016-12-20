@@ -30,7 +30,9 @@ namespace Model
 {
 
   /**
-   * <p> The API request rate limits.</p>
+   * <p> The API request rate limits.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/ThrottleSettings">AWS
+   * API Reference</a></p>
    */
   class AWS_APIGATEWAY_API ThrottleSettings
   {

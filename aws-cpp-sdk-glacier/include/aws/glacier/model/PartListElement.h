@@ -31,7 +31,10 @@ namespace Model
 {
 
   /**
-   * <p>A list of the part sizes of the multipart upload.</p>
+   * <p>A list of the part sizes of the multipart upload.</p><p><h3>See Also:</h3>  
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/PartListElement">AWS
+   * API Reference</a></p>
    */
   class AWS_GLACIER_API PartListElement
   {

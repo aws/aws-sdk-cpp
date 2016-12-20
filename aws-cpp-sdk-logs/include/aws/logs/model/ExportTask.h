@@ -33,7 +33,9 @@ namespace Model
 {
 
   /**
-   * <p>Represents an export task.</p>
+   * <p>Represents an export task.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/ExportTask">AWS API
+   * Reference</a></p>
    */
   class AWS_CLOUDWATCHLOGS_API ExportTask
   {

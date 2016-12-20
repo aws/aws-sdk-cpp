@@ -26,7 +26,9 @@ namespace Model
 
   /**
    * <p>Provides options for initiating a multipart upload to an Amazon Glacier
-   * vault.</p>
+   * vault.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/InitiateMultipartUploadInput">AWS
+   * API Reference</a></p>
    */
   class AWS_GLACIER_API InitiateMultipartUploadRequest : public GlacierRequest
   {

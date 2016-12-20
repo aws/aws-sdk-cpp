@@ -36,7 +36,9 @@ namespace Model
 
   /**
    * <p>Describes the maximum hourly price (bid) for any Spot instance launched to
-   * fulfill the request.</p>
+   * fulfill the request.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SpotPrice">AWS API
+   * Reference</a></p>
    */
   class AWS_EC2_API SpotPrice
   {

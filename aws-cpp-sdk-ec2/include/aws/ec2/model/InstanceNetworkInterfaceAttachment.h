@@ -34,7 +34,9 @@ namespace Model
 {
 
   /**
-   * <p>Describes a network interface attachment.</p>
+   * <p>Describes a network interface attachment.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/InstanceNetworkInterfaceAttachment">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API InstanceNetworkInterfaceAttachment
   {

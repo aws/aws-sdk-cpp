@@ -32,7 +32,9 @@ namespace Model
 {
 
   /**
-   * <p>Information about an application revision.</p>
+   * <p>Information about an application revision.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/RevisionInfo">AWS
+   * API Reference</a></p>
    */
   class AWS_CODEDEPLOY_API RevisionInfo
   {

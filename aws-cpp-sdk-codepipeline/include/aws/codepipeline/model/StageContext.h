@@ -31,7 +31,10 @@ namespace Model
 {
 
   /**
-   * <p>Represents information about a stage to a job worker.</p>
+   * <p>Represents information about a stage to a job worker.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/StageContext">AWS
+   * API Reference</a></p>
    */
   class AWS_CODEPIPELINE_API StageContext
   {

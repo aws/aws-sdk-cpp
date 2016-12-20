@@ -32,7 +32,9 @@ namespace Model
 
   /**
    * <p>Represents a summary of a <a>Method</a> resource, given a particular date and
-   * time.</p>
+   * time.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/MethodSnapshot">AWS
+   * API Reference</a></p>
    */
   class AWS_APIGATEWAY_API MethodSnapshot
   {

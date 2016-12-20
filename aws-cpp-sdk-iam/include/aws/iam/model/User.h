@@ -36,7 +36,9 @@ namespace Model
    * <p>Contains information about an IAM user entity.</p> <p>This data type is used
    * as a response element in the following actions:</p> <ul> <li> <p>
    * <a>CreateUser</a> </p> </li> <li> <p> <a>GetUser</a> </p> </li> <li> <p>
-   * <a>ListUsers</a> </p> </li> </ul>
+   * <a>ListUsers</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/User">AWS API
+   * Reference</a></p>
    */
   class AWS_IAM_API User
   {

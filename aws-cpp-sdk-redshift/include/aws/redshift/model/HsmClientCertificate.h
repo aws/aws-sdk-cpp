@@ -36,7 +36,9 @@ namespace Model
   /**
    * <p>Returns information about an HSM client certificate. The certificate is
    * stored in a secure Hardware Storage Module (HSM), and used by the Amazon
-   * Redshift cluster to encrypt data files.</p>
+   * Redshift cluster to encrypt data files.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/HsmClientCertificate">AWS
+   * API Reference</a></p>
    */
   class AWS_REDSHIFT_API HsmClientCertificate
   {

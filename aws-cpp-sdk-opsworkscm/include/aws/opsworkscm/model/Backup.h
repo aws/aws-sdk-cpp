@@ -35,7 +35,9 @@ namespace Model
 {
 
   /**
-   * <p>Describes a single backup. </p>
+   * <p>Describes a single backup. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/Backup">AWS
+   * API Reference</a></p>
    */
   class AWS_OPSWORKSCM_API Backup
   {

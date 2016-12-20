@@ -34,7 +34,9 @@ namespace Model
 
   /**
    * <p>Contains information about a pipeline task that is assigned to a task
-   * runner.</p>
+   * runner.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/TaskObject">AWS
+   * API Reference</a></p>
    */
   class AWS_DATAPIPELINE_API TaskObject
   {

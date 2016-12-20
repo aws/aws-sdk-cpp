@@ -27,7 +27,10 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input of a list repositories operation.</p>
+   * <p>Represents the input of a list repositories operation.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/ListRepositoriesInput">AWS
+   * API Reference</a></p>
    */
   class AWS_CODECOMMIT_API ListRepositoriesRequest : public CodeCommitRequest
   {

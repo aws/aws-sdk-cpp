@@ -33,7 +33,9 @@ namespace Model
 
   /**
    * <p>The type of adjustment the automatic scaling activity makes when triggered,
-   * and the periodicity of the adjustment.</p>
+   * and the periodicity of the adjustment.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ScalingAction">AWS
+   * API Reference</a></p>
    */
   class AWS_EMR_API ScalingAction
   {

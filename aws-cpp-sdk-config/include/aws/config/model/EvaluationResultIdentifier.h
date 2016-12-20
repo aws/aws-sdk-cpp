@@ -32,7 +32,9 @@ namespace Model
 {
 
   /**
-   * <p>Uniquely identifies an evaluation result.</p>
+   * <p>Uniquely identifies an evaluation result.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/EvaluationResultIdentifier">AWS
+   * API Reference</a></p>
    */
   class AWS_CONFIGSERVICE_API EvaluationResultIdentifier
   {

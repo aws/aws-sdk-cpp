@@ -34,7 +34,10 @@ namespace Model
 {
 
   /**
-   * <p>Summarizes all DDoS attacks for a specified time period.</p>
+   * <p>Summarizes all DDoS attacks for a specified time period.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/AttackSummary">AWS
+   * API Reference</a></p>
    */
   class AWS_SHIELD_API AttackSummary
   {

@@ -25,7 +25,9 @@ namespace Model
 {
 
   /**
-   * The request to delete a distribution.
+   * The request to delete a distribution.<p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/DeleteDistributionRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API DeleteDistribution2016_01_28Request : public CloudFrontRequest
   {

@@ -37,7 +37,9 @@ namespace Model
    * <p>Describes the application output configuration, which includes the
    * in-application stream name and the destination where the stream data is written.
    * The destination can be an Amazon Kinesis stream or an Amazon Kinesis Firehose
-   * delivery stream. </p>
+   * delivery stream. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/OutputDescription">AWS
+   * API Reference</a></p>
    */
   class AWS_KINESISANALYTICS_API OutputDescription
   {

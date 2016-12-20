@@ -35,7 +35,9 @@ namespace Model
    * <p>Describes an Amazon EBS volume. This data type maps directly to the Amazon
    * EC2 <a
    * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>
-   * data type.</p>
+   * data type.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/EbsBlockDevice">AWS
+   * API Reference</a></p>
    */
   class AWS_OPSWORKS_API EbsBlockDevice
   {

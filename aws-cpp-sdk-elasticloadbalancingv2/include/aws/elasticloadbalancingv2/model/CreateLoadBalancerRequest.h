@@ -28,7 +28,9 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for CreateLoadBalancer.</p>
+   * <p>Contains the parameters for CreateLoadBalancer.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/CreateLoadBalancerInput">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICLOADBALANCINGV2_API CreateLoadBalancerRequest : public ElasticLoadBalancingv2Request
   {

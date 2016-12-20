@@ -33,7 +33,9 @@ namespace Model
   /**
    * <p>The file name and ID of an attachment to a case communication. You can use
    * the ID to retrieve the attachment with the <a>DescribeAttachment</a>
-   * operation.</p>
+   * operation.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/AttachmentDetails">AWS
+   * API Reference</a></p>
    */
   class AWS_SUPPORT_API AttachmentDetails
   {

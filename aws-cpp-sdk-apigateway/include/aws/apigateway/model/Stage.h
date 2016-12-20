@@ -39,7 +39,9 @@ namespace Model
    * <p>Represents a unique identifier for a version of a deployed <a>RestApi</a>
    * that is callable by users.</p> <div class="seeAlso"> <a
    * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-deploy-api.html">Deploy
-   * an API</a> </div>
+   * an API</a> </div><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/Stage">AWS
+   * API Reference</a></p>
    */
   class AWS_APIGATEWAY_API Stage
   {

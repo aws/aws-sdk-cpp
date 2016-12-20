@@ -33,7 +33,9 @@ namespace Model
 
   /**
    * <p>Diagnostic information about executable scripts that are part of a
-   * deployment.</p>
+   * deployment.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/Diagnostics">AWS
+   * API Reference</a></p>
    */
   class AWS_CODEDEPLOY_API Diagnostics
   {

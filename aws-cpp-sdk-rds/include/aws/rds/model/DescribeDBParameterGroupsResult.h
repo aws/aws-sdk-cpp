@@ -37,7 +37,9 @@ namespace Model
 {
   /**
    * <p> Contains the result of a successful invocation of the
-   * <a>DescribeDBParameterGroups</a> action. </p>
+   * <a>DescribeDBParameterGroups</a> action. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DBParameterGroupsMessage">AWS
+   * API Reference</a></p>
    */
   class AWS_RDS_API DescribeDBParameterGroupsResult
   {

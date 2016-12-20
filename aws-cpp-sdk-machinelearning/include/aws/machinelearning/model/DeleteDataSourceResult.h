@@ -33,7 +33,10 @@ namespace MachineLearning
 namespace Model
 {
   /**
-   * <p> Represents the output of a <code>DeleteDataSource</code> operation.</p>
+   * <p> Represents the output of a <code>DeleteDataSource</code>
+   * operation.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DeleteDataSourceOutput">AWS
+   * API Reference</a></p>
    */
   class AWS_MACHINELEARNING_API DeleteDataSourceResult
   {

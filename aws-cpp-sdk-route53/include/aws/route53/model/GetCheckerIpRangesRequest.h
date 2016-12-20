@@ -24,7 +24,9 @@ namespace Model
 {
 
   /**
-   * <p>Empty request.</p>
+   * <p>Empty request.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetCheckerIpRangesRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_ROUTE53_API GetCheckerIpRangesRequest : public Route53Request
   {

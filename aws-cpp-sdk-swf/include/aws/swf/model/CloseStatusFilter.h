@@ -32,7 +32,9 @@ namespace Model
 
   /**
    * <p>Used to filter the closed workflow executions in visibility APIs by their
-   * close status.</p>
+   * close status.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/CloseStatusFilter">AWS
+   * API Reference</a></p>
    */
   class AWS_SWF_API CloseStatusFilter
   {

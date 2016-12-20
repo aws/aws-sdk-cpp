@@ -32,7 +32,9 @@ namespace Model
 
   /**
    * <p>Additional information about a build phase that has an error, which you can
-   * use to help troubleshoot a failed build.</p>
+   * use to help troubleshoot a failed build.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/PhaseContext">AWS
+   * API Reference</a></p>
    */
   class AWS_CODEBUILD_API PhaseContext
   {

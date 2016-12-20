@@ -25,7 +25,9 @@ namespace Model
 {
 
   /**
-   * The input for the BulkPublish operation.
+   * The input for the BulkPublish operation.<p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/BulkPublishRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_COGNITOSYNC_API BulkPublishRequest : public CognitoSyncRequest
   {

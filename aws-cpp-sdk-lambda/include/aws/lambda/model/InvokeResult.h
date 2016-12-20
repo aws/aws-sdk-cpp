@@ -28,7 +28,10 @@ namespace Lambda
 namespace Model
 {
   /**
-   * <p>Upon success, returns an empty response. Otherwise, throws an exception.</p>
+   * <p>Upon success, returns an empty response. Otherwise, throws an
+   * exception.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/InvocationResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_LAMBDA_API InvokeResult
   {

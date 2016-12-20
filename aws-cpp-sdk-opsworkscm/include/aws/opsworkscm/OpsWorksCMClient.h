@@ -230,7 +230,9 @@ namespace Model
          * the server is not in any of RUNNING, HEALTHY, UNHEALTHY. A
          * <code>ResourceNotFoundException</code> is thrown when the server is not found. A
          * <code>ValidationException</code> is thrown when parameters of the request are
-         * not valid. </p>
+         * not valid. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/CreateBackup">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateBackupOutcome CreateBackup(const Model::CreateBackupRequest& request) const;
 
@@ -245,7 +247,9 @@ namespace Model
          * the server is not in any of RUNNING, HEALTHY, UNHEALTHY. A
          * <code>ResourceNotFoundException</code> is thrown when the server is not found. A
          * <code>ValidationException</code> is thrown when parameters of the request are
-         * not valid. </p>
+         * not valid. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/CreateBackup">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -262,7 +266,9 @@ namespace Model
          * the server is not in any of RUNNING, HEALTHY, UNHEALTHY. A
          * <code>ResourceNotFoundException</code> is thrown when the server is not found. A
          * <code>ValidationException</code> is thrown when parameters of the request are
-         * not valid. </p>
+         * not valid. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/CreateBackup">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -286,7 +292,9 @@ namespace Model
          * Chef Server is accessible from any IP address. We recommend that you update your
          * security group rules to allow access from known IP addresses and address ranges
          * only. To edit security group rules, open Security Groups in the navigation pane
-         * of the EC2 management console. </p>
+         * of the EC2 management console. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/CreateServer">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateServerOutcome CreateServer(const Model::CreateServerRequest& request) const;
 
@@ -308,7 +316,9 @@ namespace Model
          * Chef Server is accessible from any IP address. We recommend that you update your
          * security group rules to allow access from known IP addresses and address ranges
          * only. To edit security group rules, open Security Groups in the navigation pane
-         * of the EC2 management console. </p>
+         * of the EC2 management console. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/CreateServer">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -332,7 +342,9 @@ namespace Model
          * Chef Server is accessible from any IP address. We recommend that you update your
          * security group rules to allow access from known IP addresses and address ranges
          * only. To edit security group rules, open Security Groups in the navigation pane
-         * of the EC2 management console. </p>
+         * of the EC2 management console. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/CreateServer">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -344,7 +356,9 @@ namespace Model
          * thrown then a backup is already deleting. A
          * <code>ResourceNotFoundException</code> is thrown when the backup does not exist.
          * A <code>ValidationException</code> is thrown when parameters of the request are
-         * not valid. </p>
+         * not valid. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/DeleteBackup">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteBackupOutcome DeleteBackup(const Model::DeleteBackupRequest& request) const;
 
@@ -354,7 +368,9 @@ namespace Model
          * thrown then a backup is already deleting. A
          * <code>ResourceNotFoundException</code> is thrown when the backup does not exist.
          * A <code>ValidationException</code> is thrown when parameters of the request are
-         * not valid. </p>
+         * not valid. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/DeleteBackup">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -366,7 +382,9 @@ namespace Model
          * thrown then a backup is already deleting. A
          * <code>ResourceNotFoundException</code> is thrown when the backup does not exist.
          * A <code>ValidationException</code> is thrown when parameters of the request are
-         * not valid. </p>
+         * not valid. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/DeleteBackup">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -381,7 +399,9 @@ namespace Model
          * </p> <p> A <code>InvalidStateException</code> is thrown then a server is already
          * deleting. A <code>ResourceNotFoundException</code> is thrown when the server
          * does not exist. A <code>ValidationException</code> is raised when parameters of
-         * the request are invalid. </p> <p> </p>
+         * the request are invalid. </p> <p> </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/DeleteServer">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteServerOutcome DeleteServer(const Model::DeleteServerRequest& request) const;
 
@@ -394,7 +414,9 @@ namespace Model
          * </p> <p> A <code>InvalidStateException</code> is thrown then a server is already
          * deleting. A <code>ResourceNotFoundException</code> is thrown when the server
          * does not exist. A <code>ValidationException</code> is raised when parameters of
-         * the request are invalid. </p> <p> </p>
+         * the request are invalid. </p> <p> </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/DeleteServer">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -409,7 +431,9 @@ namespace Model
          * </p> <p> A <code>InvalidStateException</code> is thrown then a server is already
          * deleting. A <code>ResourceNotFoundException</code> is thrown when the server
          * does not exist. A <code>ValidationException</code> is raised when parameters of
-         * the request are invalid. </p> <p> </p>
+         * the request are invalid. </p> <p> </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/DeleteServer">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -418,14 +442,18 @@ namespace Model
         /**
          * <p> Describes your account attributes, and creates requests to increase limits
          * before they are reached or exceeded. </p> <p> This operation is synchronous.
-         * </p>
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/DescribeAccountAttributes">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeAccountAttributesOutcome DescribeAccountAttributes(const Model::DescribeAccountAttributesRequest& request) const;
 
         /**
          * <p> Describes your account attributes, and creates requests to increase limits
          * before they are reached or exceeded. </p> <p> This operation is synchronous.
-         * </p>
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/DescribeAccountAttributes">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -434,7 +462,9 @@ namespace Model
         /**
          * <p> Describes your account attributes, and creates requests to increase limits
          * before they are reached or exceeded. </p> <p> This operation is synchronous.
-         * </p>
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/DescribeAccountAttributes">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -446,7 +476,9 @@ namespace Model
          * backups. </p> <p> This operation is synchronous. </p> <p> A
          * <code>ResourceNotFoundException</code> is thrown when the backup does not exist.
          * A <code>ValidationException</code> is raised when parameters of the request are
-         * invalid. </p>
+         * invalid. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/DescribeBackups">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeBackupsOutcome DescribeBackups(const Model::DescribeBackupsRequest& request) const;
 
@@ -456,7 +488,9 @@ namespace Model
          * backups. </p> <p> This operation is synchronous. </p> <p> A
          * <code>ResourceNotFoundException</code> is thrown when the backup does not exist.
          * A <code>ValidationException</code> is raised when parameters of the request are
-         * invalid. </p>
+         * invalid. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/DescribeBackups">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -468,7 +502,9 @@ namespace Model
          * backups. </p> <p> This operation is synchronous. </p> <p> A
          * <code>ResourceNotFoundException</code> is thrown when the backup does not exist.
          * A <code>ValidationException</code> is raised when parameters of the request are
-         * invalid. </p>
+         * invalid. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/DescribeBackups">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -479,7 +515,9 @@ namespace Model
          * newest events first. </p> <p> This operation is synchronous. </p> <p> A
          * <code>ResourceNotFoundException</code> is thrown when the server does not exist.
          * A <code>ValidationException</code> is raised when parameters of the request are
-         * invalid. </p>
+         * invalid. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/DescribeEvents">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeEventsOutcome DescribeEvents(const Model::DescribeEventsRequest& request) const;
 
@@ -488,7 +526,9 @@ namespace Model
          * newest events first. </p> <p> This operation is synchronous. </p> <p> A
          * <code>ResourceNotFoundException</code> is thrown when the server does not exist.
          * A <code>ValidationException</code> is raised when parameters of the request are
-         * invalid. </p>
+         * invalid. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/DescribeEvents">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -499,7 +539,9 @@ namespace Model
          * newest events first. </p> <p> This operation is synchronous. </p> <p> A
          * <code>ResourceNotFoundException</code> is thrown when the server does not exist.
          * A <code>ValidationException</code> is raised when parameters of the request are
-         * invalid. </p>
+         * invalid. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/DescribeEvents">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -530,7 +572,9 @@ namespace Model
          * for Chef Automate does not query other services. </p> <p> This operation is
          * synchronous. </p> <p> A <code>ResourceNotFoundException</code> is thrown when
          * the server does not exist. A <code>ValidationException</code> is raised when
-         * parameters of the request are invalid. </p>
+         * parameters of the request are invalid. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/DescribeServers">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeServersOutcome DescribeServers(const Model::DescribeServersRequest& request) const;
 
@@ -540,7 +584,9 @@ namespace Model
          * for Chef Automate does not query other services. </p> <p> This operation is
          * synchronous. </p> <p> A <code>ResourceNotFoundException</code> is thrown when
          * the server does not exist. A <code>ValidationException</code> is raised when
-         * parameters of the request are invalid. </p>
+         * parameters of the request are invalid. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/DescribeServers">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -552,7 +598,9 @@ namespace Model
          * for Chef Automate does not query other services. </p> <p> This operation is
          * synchronous. </p> <p> A <code>ResourceNotFoundException</code> is thrown when
          * the server does not exist. A <code>ValidationException</code> is raised when
-         * parameters of the request are invalid. </p>
+         * parameters of the request are invalid. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/DescribeServers">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -587,7 +635,9 @@ namespace Model
          * <code>InvalidStateException</code> is thrown when the server is not in a valid
          * state. A <code>ResourceNotFoundException</code> is thrown when the server does
          * not exist. A <code>ValidationException</code> is raised when parameters of the
-         * request are invalid. </p>
+         * request are invalid. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/RestoreServer">AWS
+         * API Reference</a></p>
          */
         virtual Model::RestoreServerOutcome RestoreServer(const Model::RestoreServerRequest& request) const;
 
@@ -601,7 +651,9 @@ namespace Model
          * <code>InvalidStateException</code> is thrown when the server is not in a valid
          * state. A <code>ResourceNotFoundException</code> is thrown when the server does
          * not exist. A <code>ValidationException</code> is raised when parameters of the
-         * request are invalid. </p>
+         * request are invalid. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/RestoreServer">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -617,7 +669,9 @@ namespace Model
          * <code>InvalidStateException</code> is thrown when the server is not in a valid
          * state. A <code>ResourceNotFoundException</code> is thrown when the server does
          * not exist. A <code>ValidationException</code> is raised when parameters of the
-         * request are invalid. </p>
+         * request are invalid. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/RestoreServer">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -632,7 +686,9 @@ namespace Model
          * <code>InvalidStateException</code> is thrown otherwise. A
          * <code>ResourceNotFoundException</code> is thrown when the server does not exist.
          * A <code>ValidationException</code> is raised when parameters of the request are
-         * invalid. </p>
+         * invalid. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/StartMaintenance">AWS
+         * API Reference</a></p>
          */
         virtual Model::StartMaintenanceOutcome StartMaintenance(const Model::StartMaintenanceRequest& request) const;
 
@@ -645,7 +701,9 @@ namespace Model
          * <code>InvalidStateException</code> is thrown otherwise. A
          * <code>ResourceNotFoundException</code> is thrown when the server does not exist.
          * A <code>ValidationException</code> is raised when parameters of the request are
-         * invalid. </p>
+         * invalid. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/StartMaintenance">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -660,26 +718,37 @@ namespace Model
          * <code>InvalidStateException</code> is thrown otherwise. A
          * <code>ResourceNotFoundException</code> is thrown when the server does not exist.
          * A <code>ValidationException</code> is raised when parameters of the request are
-         * invalid. </p>
+         * invalid. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/StartMaintenance">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void StartMaintenanceAsync(const Model::StartMaintenanceRequest& request, const StartMaintenanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Updates settings for a server. </p> <p> This operation is synchronous. </p>
+         * <p> Updates settings for a server. </p> <p> This operation is synchronous.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/UpdateServer">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateServerOutcome UpdateServer(const Model::UpdateServerRequest& request) const;
 
         /**
-         * <p> Updates settings for a server. </p> <p> This operation is synchronous. </p>
+         * <p> Updates settings for a server. </p> <p> This operation is synchronous.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/UpdateServer">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateServerOutcomeCallable UpdateServerCallable(const Model::UpdateServerRequest& request) const;
 
         /**
-         * <p> Updates settings for a server. </p> <p> This operation is synchronous. </p>
+         * <p> Updates settings for a server. </p> <p> This operation is synchronous.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/UpdateServer">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -695,7 +764,9 @@ namespace Model
          * <code>InvalidStateException</code> is raised. A
          * <code>ResourceNotFoundException</code> is thrown when the server does not exist.
          * A <code>ValidationException</code> is raised when parameters of the request are
-         * invalid. </p>
+         * invalid. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/UpdateServerEngineAttributes">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateServerEngineAttributesOutcome UpdateServerEngineAttributes(const Model::UpdateServerEngineAttributesRequest& request) const;
 
@@ -709,7 +780,9 @@ namespace Model
          * <code>InvalidStateException</code> is raised. A
          * <code>ResourceNotFoundException</code> is thrown when the server does not exist.
          * A <code>ValidationException</code> is raised when parameters of the request are
-         * invalid. </p>
+         * invalid. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/UpdateServerEngineAttributes">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -725,7 +798,9 @@ namespace Model
          * <code>InvalidStateException</code> is raised. A
          * <code>ResourceNotFoundException</code> is thrown when the server does not exist.
          * A <code>ValidationException</code> is raised when parameters of the request are
-         * invalid. </p>
+         * invalid. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/UpdateServerEngineAttributes">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */

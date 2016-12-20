@@ -35,7 +35,9 @@ namespace Model
 {
   /**
    * <p>Returned in response to a successful <code>DeleteIdentities</code>
-   * operation.</p>
+   * operation.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/DeleteIdentitiesResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_COGNITOIDENTITY_API DeleteIdentitiesResult
   {

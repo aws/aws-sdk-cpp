@@ -34,7 +34,10 @@ namespace Model
 {
 
   /**
-   * <p>Describes an event in the history of the Spot fleet request.</p>
+   * <p>Describes an event in the history of the Spot fleet request.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/HistoryRecord">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API HistoryRecord
   {

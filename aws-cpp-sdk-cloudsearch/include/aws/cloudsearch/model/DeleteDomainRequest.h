@@ -26,7 +26,10 @@ namespace Model
 
   /**
    * <p>Container for the parameters to the <code><a>DeleteDomain</a></code>
-   * operation. Specifies the name of the domain you want to delete.</p>
+   * operation. Specifies the name of the domain you want to delete.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DeleteDomainRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDSEARCH_API DeleteDomainRequest : public CloudSearchRequest
   {

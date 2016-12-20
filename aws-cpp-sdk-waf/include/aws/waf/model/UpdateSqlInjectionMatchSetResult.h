@@ -33,7 +33,10 @@ namespace WAF
 namespace Model
 {
   /**
-   * <p>The response to an <a>UpdateSqlInjectionMatchSets</a> request.</p>
+   * <p>The response to an <a>UpdateSqlInjectionMatchSets</a> request.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateSqlInjectionMatchSetResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_WAF_API UpdateSqlInjectionMatchSetResult
   {

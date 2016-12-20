@@ -33,7 +33,9 @@ namespace Model
 
   /**
    * <p>Contains information about a rule in Amazon CloudWatch Events. A
-   * ListRulesResult contains a list of Rules.</p>
+   * ListRulesResult contains a list of Rules.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/Rule">AWS API
+   * Reference</a></p>
    */
   class AWS_CLOUDWATCHEVENTS_API Rule
   {

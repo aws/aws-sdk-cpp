@@ -39,7 +39,9 @@ namespace Model
 {
   /**
    * <p>A virtual interface (VLAN) transmits the traffic between the AWS Direct
-   * Connect location and the customer.</p>
+   * Connect location and the customer.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/VirtualInterface">AWS
+   * API Reference</a></p>
    */
   class AWS_DIRECTCONNECT_API CreatePublicVirtualInterfaceResult
   {

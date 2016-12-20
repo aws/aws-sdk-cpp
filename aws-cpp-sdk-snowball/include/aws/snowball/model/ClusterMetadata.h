@@ -38,7 +38,9 @@ namespace Model
 {
 
   /**
-   * <p>Contains metadata about a specific cluster.</p>
+   * <p>Contains metadata about a specific cluster.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ClusterMetadata">AWS
+   * API Reference</a></p>
    */
   class AWS_SNOWBALL_API ClusterMetadata
   {

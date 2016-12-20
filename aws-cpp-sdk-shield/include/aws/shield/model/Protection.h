@@ -31,7 +31,10 @@ namespace Model
 {
 
   /**
-   * <p>An object that represents a resource that is under DDoS protection.</p>
+   * <p>An object that represents a resource that is under DDoS
+   * protection.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/Protection">AWS
+   * API Reference</a></p>
    */
   class AWS_SHIELD_API Protection
   {

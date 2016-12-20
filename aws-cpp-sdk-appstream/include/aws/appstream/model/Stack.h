@@ -32,7 +32,9 @@ namespace Model
 {
 
   /**
-   * <p>Details about a stack.</p>
+   * <p>Details about a stack.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/Stack">AWS API
+   * Reference</a></p>
    */
   class AWS_APPSTREAM_API Stack
   {

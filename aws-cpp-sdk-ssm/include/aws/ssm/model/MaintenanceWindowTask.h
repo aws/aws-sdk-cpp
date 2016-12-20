@@ -37,7 +37,10 @@ namespace Model
 {
 
   /**
-   * <p>Information about a task defined for a Maintenance Window.</p>
+   * <p>Information about a task defined for a Maintenance Window.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/MaintenanceWindowTask">AWS
+   * API Reference</a></p>
    */
   class AWS_SSM_API MaintenanceWindowTask
   {

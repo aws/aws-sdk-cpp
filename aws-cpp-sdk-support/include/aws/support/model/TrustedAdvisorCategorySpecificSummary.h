@@ -32,7 +32,9 @@ namespace Model
 
   /**
    * <p>The container for summary information that relates to the category of the
-   * Trusted Advisor check.</p>
+   * Trusted Advisor check.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/TrustedAdvisorCategorySpecificSummary">AWS
+   * API Reference</a></p>
    */
   class AWS_SUPPORT_API TrustedAdvisorCategorySpecificSummary
   {

@@ -26,7 +26,10 @@ namespace Model
 {
 
   /**
-   * <p> Input to the <a>TerminateJobFlows</a> operation. </p>
+   * <p> Input to the <a>TerminateJobFlows</a> operation. </p><p><h3>See Also:</h3>  
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/TerminateJobFlowsInput">AWS
+   * API Reference</a></p>
    */
   class AWS_EMR_API TerminateJobFlowsRequest : public EMRRequest
   {

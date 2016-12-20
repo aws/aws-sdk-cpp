@@ -25,7 +25,9 @@ namespace Model
 {
 
   /**
-   * <p>CreateTapesInput</p>
+   * <p>CreateTapesInput</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateTapesInput">AWS
+   * API Reference</a></p>
    */
   class AWS_STORAGEGATEWAY_API CreateTapesRequest : public StorageGatewayRequest
   {

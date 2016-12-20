@@ -45,7 +45,10 @@ namespace Model
 {
 
   /**
-   * <p>A container with information about the user pool type.</p>
+   * <p>A container with information about the user pool type.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UserPoolType">AWS
+   * API Reference</a></p>
    */
   class AWS_COGNITOIDENTITYPROVIDER_API UserPoolType
   {

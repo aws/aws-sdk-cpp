@@ -31,7 +31,9 @@ namespace Model
 {
 
   /**
-   * <p>Describes an app's data source.</p>
+   * <p>Describes an app's data source.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DataSource">AWS
+   * API Reference</a></p>
    */
   class AWS_OPSWORKS_API DataSource
   {

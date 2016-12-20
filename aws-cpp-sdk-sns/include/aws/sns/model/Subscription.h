@@ -32,7 +32,10 @@ namespace Model
 {
 
   /**
-   * <p>A wrapper type for the attributes of an Amazon SNS subscription.</p>
+   * <p>A wrapper type for the attributes of an Amazon SNS
+   * subscription.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Subscription">AWS
+   * API Reference</a></p>
    */
   class AWS_SNS_API Subscription
   {

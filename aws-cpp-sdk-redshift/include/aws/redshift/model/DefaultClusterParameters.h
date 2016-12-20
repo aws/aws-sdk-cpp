@@ -34,7 +34,10 @@ namespace Model
 {
 
   /**
-   * <p>Describes the default cluster parameters for a parameter group family.</p>
+   * <p>Describes the default cluster parameters for a parameter group
+   * family.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DefaultClusterParameters">AWS
+   * API Reference</a></p>
    */
   class AWS_REDSHIFT_API DefaultClusterParameters
   {

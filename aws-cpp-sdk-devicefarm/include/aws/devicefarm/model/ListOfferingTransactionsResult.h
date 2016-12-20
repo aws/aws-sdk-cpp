@@ -35,7 +35,10 @@ namespace DeviceFarm
 namespace Model
 {
   /**
-   * <p>Returns the transaction log of the specified offerings.</p>
+   * <p>Returns the transaction log of the specified offerings.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListOfferingTransactionsResult">AWS
+   * API Reference</a></p>
    */
   class AWS_DEVICEFARM_API ListOfferingTransactionsResult
   {

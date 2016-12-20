@@ -32,7 +32,9 @@ namespace Model
 {
 
   /**
-   * <p>The reason why the last state change occurred.</p>
+   * <p>The reason why the last state change occurred.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ImageStateChangeReason">AWS
+   * API Reference</a></p>
    */
   class AWS_APPSTREAM_API ImageStateChangeReason
   {

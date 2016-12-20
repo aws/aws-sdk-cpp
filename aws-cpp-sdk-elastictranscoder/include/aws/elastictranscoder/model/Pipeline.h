@@ -33,7 +33,10 @@ namespace Model
 {
 
   /**
-   * <p>The pipeline (queue) that is used to manage jobs.</p>
+   * <p>The pipeline (queue) that is used to manage jobs.</p><p><h3>See Also:</h3>  
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/Pipeline">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICTRANSCODER_API Pipeline
   {

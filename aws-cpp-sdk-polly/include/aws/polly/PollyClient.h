@@ -141,7 +141,9 @@ namespace Model
          * possible to retrieve it using either the <code>GetLexicon</code> or
          * <code>ListLexicon</code> APIs.</p> <p>For more information, see <a
          * href="http://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing
-         * Lexicons</a>.</p>
+         * Lexicons</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/DeleteLexicon">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteLexiconOutcome DeleteLexicon(const Model::DeleteLexiconRequest& request) const;
 
@@ -151,7 +153,9 @@ namespace Model
          * possible to retrieve it using either the <code>GetLexicon</code> or
          * <code>ListLexicon</code> APIs.</p> <p>For more information, see <a
          * href="http://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing
-         * Lexicons</a>.</p>
+         * Lexicons</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/DeleteLexicon">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -163,7 +167,9 @@ namespace Model
          * possible to retrieve it using either the <code>GetLexicon</code> or
          * <code>ListLexicon</code> APIs.</p> <p>For more information, see <a
          * href="http://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing
-         * Lexicons</a>.</p>
+         * Lexicons</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/DeleteLexicon">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -182,7 +188,9 @@ namespace Model
          * optionally specify a language code to filter the available voices. For example,
          * if you specify <code>en-US</code>, the operation returns a list of all available
          * US English voices. </p> <p>This operation requires permissions to perform the
-         * <code>polly:DescribeVoices</code> action.</p>
+         * <code>polly:DescribeVoices</code> action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/DescribeVoices">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeVoicesOutcome DescribeVoices(const Model::DescribeVoicesRequest& request) const;
 
@@ -199,7 +207,9 @@ namespace Model
          * optionally specify a language code to filter the available voices. For example,
          * if you specify <code>en-US</code>, the operation returns a list of all available
          * US English voices. </p> <p>This operation requires permissions to perform the
-         * <code>polly:DescribeVoices</code> action.</p>
+         * <code>polly:DescribeVoices</code> action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/DescribeVoices">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -218,7 +228,9 @@ namespace Model
          * optionally specify a language code to filter the available voices. For example,
          * if you specify <code>en-US</code>, the operation returns a list of all available
          * US English voices. </p> <p>This operation requires permissions to perform the
-         * <code>polly:DescribeVoices</code> action.</p>
+         * <code>polly:DescribeVoices</code> action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/DescribeVoices">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -228,7 +240,9 @@ namespace Model
          * <p>Returns the content of the specified pronunciation lexicon stored in an AWS
          * Region. For more information, see <a
          * href="http://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing
-         * Lexicons</a>.</p>
+         * Lexicons</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/GetLexicon">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetLexiconOutcome GetLexicon(const Model::GetLexiconRequest& request) const;
 
@@ -236,7 +250,9 @@ namespace Model
          * <p>Returns the content of the specified pronunciation lexicon stored in an AWS
          * Region. For more information, see <a
          * href="http://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing
-         * Lexicons</a>.</p>
+         * Lexicons</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/GetLexicon">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -246,7 +262,9 @@ namespace Model
          * <p>Returns the content of the specified pronunciation lexicon stored in an AWS
          * Region. For more information, see <a
          * href="http://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing
-         * Lexicons</a>.</p>
+         * Lexicons</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/GetLexicon">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -256,7 +274,9 @@ namespace Model
          * <p>Returns a list of pronunciation lexicons stored in an AWS Region. For more
          * information, see <a
          * href="http://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing
-         * Lexicons</a>.</p>
+         * Lexicons</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/ListLexicons">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListLexiconsOutcome ListLexicons(const Model::ListLexiconsRequest& request) const;
 
@@ -264,7 +284,9 @@ namespace Model
          * <p>Returns a list of pronunciation lexicons stored in an AWS Region. For more
          * information, see <a
          * href="http://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing
-         * Lexicons</a>.</p>
+         * Lexicons</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/ListLexicons">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -274,7 +296,9 @@ namespace Model
          * <p>Returns a list of pronunciation lexicons stored in an AWS Region. For more
          * information, see <a
          * href="http://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing
-         * Lexicons</a>.</p>
+         * Lexicons</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/ListLexicons">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -287,7 +311,9 @@ namespace Model
          * the lexicon is available to the SynthesizeSpeech operation.</p> <p>For more
          * information, see <a
          * href="http://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing
-         * Lexicons</a>.</p>
+         * Lexicons</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/PutLexicon">AWS
+         * API Reference</a></p>
          */
         virtual Model::PutLexiconOutcome PutLexicon(const Model::PutLexiconRequest& request) const;
 
@@ -298,7 +324,9 @@ namespace Model
          * the lexicon is available to the SynthesizeSpeech operation.</p> <p>For more
          * information, see <a
          * href="http://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing
-         * Lexicons</a>.</p>
+         * Lexicons</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/PutLexicon">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -311,7 +339,9 @@ namespace Model
          * the lexicon is available to the SynthesizeSpeech operation.</p> <p>For more
          * information, see <a
          * href="http://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing
-         * Lexicons</a>.</p>
+         * Lexicons</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/PutLexicon">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -323,7 +353,9 @@ namespace Model
          * the voices (for example, Cyrillic might not be read at all by English voices)
          * unless phoneme mapping is used. For more information, see <a
          * href="http://docs.aws.amazon.com/polly/latest/dg/how-text-to-speech-works.html">How
-         * it Works</a>.</p>
+         * it Works</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/SynthesizeSpeech">AWS
+         * API Reference</a></p>
          */
         virtual Model::SynthesizeSpeechOutcome SynthesizeSpeech(const Model::SynthesizeSpeechRequest& request) const;
 
@@ -333,7 +365,9 @@ namespace Model
          * the voices (for example, Cyrillic might not be read at all by English voices)
          * unless phoneme mapping is used. For more information, see <a
          * href="http://docs.aws.amazon.com/polly/latest/dg/how-text-to-speech-works.html">How
-         * it Works</a>.</p>
+         * it Works</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/SynthesizeSpeech">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -345,7 +379,9 @@ namespace Model
          * the voices (for example, Cyrillic might not be read at all by English voices)
          * unless phoneme mapping is used. For more information, see <a
          * href="http://docs.aws.amazon.com/polly/latest/dg/how-text-to-speech-works.html">How
-         * it Works</a>.</p>
+         * it Works</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/SynthesizeSpeech">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */

@@ -36,7 +36,9 @@ namespace Model
    * <p>Defines the high-level patch compliance state for a managed instance,
    * providing information about the number of installed, missing, not applicable,
    * and failed patches along with metadata about the operation when this information
-   * was gathered for the instance.</p>
+   * was gathered for the instance.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/InstancePatchState">AWS
+   * API Reference</a></p>
    */
   class AWS_SSM_API InstancePatchState
   {

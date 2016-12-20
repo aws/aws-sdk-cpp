@@ -31,7 +31,10 @@ namespace Model
 {
 
   /**
-   * <p>Contains information about the user storage for a WorkSpace bundle.</p>
+   * <p>Contains information about the user storage for a WorkSpace
+   * bundle.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/UserStorage">AWS
+   * API Reference</a></p>
    */
   class AWS_WORKSPACES_API UserStorage
   {

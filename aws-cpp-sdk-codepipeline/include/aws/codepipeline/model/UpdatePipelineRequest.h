@@ -25,7 +25,10 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input of an update pipeline action.</p>
+   * <p>Represents the input of an update pipeline action.</p><p><h3>See Also:</h3>  
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/UpdatePipelineInput">AWS
+   * API Reference</a></p>
    */
   class AWS_CODEPIPELINE_API UpdatePipelineRequest : public CodePipelineRequest
   {

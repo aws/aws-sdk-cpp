@@ -34,7 +34,9 @@ namespace Model
 
   /**
    * <p>Identifies an AWS resource and indicates whether it complies with the AWS
-   * Config rule that it was evaluated against.</p>
+   * Config rule that it was evaluated against.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/Evaluation">AWS
+   * API Reference</a></p>
    */
   class AWS_CONFIGSERVICE_API Evaluation
   {

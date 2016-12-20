@@ -46,7 +46,9 @@ namespace Model
    * that is at the image edge and is only partially visible, the service can return
    * coordinates that are outside the image bounds and, depending on the image edge,
    * you might get negative values or values greater than 1 for the <code>left</code>
-   * or <code>top</code> values. </p> </note>
+   * or <code>top</code> values. </p> </note><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/BoundingBox">AWS
+   * API Reference</a></p>
    */
   class AWS_REKOGNITION_API BoundingBox
   {

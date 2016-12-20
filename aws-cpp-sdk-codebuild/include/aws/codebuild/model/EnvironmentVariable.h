@@ -31,7 +31,10 @@ namespace Model
 {
 
   /**
-   * <p>Information about an environment variable for a build project or a build.</p>
+   * <p>Information about an environment variable for a build project or a
+   * build.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/EnvironmentVariable">AWS
+   * API Reference</a></p>
    */
   class AWS_CODEBUILD_API EnvironmentVariable
   {

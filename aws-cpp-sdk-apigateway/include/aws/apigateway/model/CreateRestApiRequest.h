@@ -26,7 +26,10 @@ namespace Model
 {
 
   /**
-   * <p>The POST Request to add a new <a>RestApi</a> resource to your collection.</p>
+   * <p>The POST Request to add a new <a>RestApi</a> resource to your
+   * collection.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateRestApiRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_APIGATEWAY_API CreateRestApiRequest : public APIGatewayRequest
   {

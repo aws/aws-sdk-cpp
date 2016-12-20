@@ -34,7 +34,9 @@ namespace Model
 
   /**
    * <p>A UsageRecordResult indicates the status of a given UsageRecord processed by
-   * BatchMeterUsage.</p>
+   * BatchMeterUsage.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/meteringmarketplace-2016-01-14/UsageRecordResult">AWS
+   * API Reference</a></p>
    */
   class AWS_MARKETPLACEMETERING_API UsageRecordResult
   {

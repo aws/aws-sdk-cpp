@@ -34,7 +34,9 @@ namespace Model
 {
   /**
    * <p>A complex type that contains information about the health checks or hosted
-   * zones for which you want to list tags.</p>
+   * zones for which you want to list tags.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTagsForResourceResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_ROUTE53_API ListTagsForResourceResult
   {

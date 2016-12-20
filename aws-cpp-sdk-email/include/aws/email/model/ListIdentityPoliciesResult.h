@@ -36,7 +36,9 @@ namespace Model
 {
   /**
    * <p>A list of names of sending authorization policies that apply to an
-   * identity.</p>
+   * identity.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListIdentityPoliciesResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_SES_API ListIdentityPoliciesResult
   {

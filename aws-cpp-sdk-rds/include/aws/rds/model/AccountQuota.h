@@ -33,7 +33,9 @@ namespace Model
 
   /**
    * <p>Describes a quota for an AWS account, for example, the number of DB instances
-   * allowed.</p>
+   * allowed.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/AccountQuota">AWS
+   * API Reference</a></p>
    */
   class AWS_RDS_API AccountQuota
   {

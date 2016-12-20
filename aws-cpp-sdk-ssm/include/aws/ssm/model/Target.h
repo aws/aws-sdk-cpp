@@ -35,7 +35,9 @@ namespace Model
    * <p>An array of search criteria that targets instances using a
    * <code>Key</code>;<code>Value</code> combination that you specify.
    * <code>Targets</code> is required if you don't provide one or more instance IDs
-   * in the call.</p>
+   * in the call.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/Target">AWS API
+   * Reference</a></p>
    */
   class AWS_SSM_API Target
   {

@@ -27,7 +27,10 @@ namespace Model
 {
 
   /**
-   * <p>Requests Amazon API Gateway to create a <a>Stage</a> resource.</p>
+   * <p>Requests Amazon API Gateway to create a <a>Stage</a> resource.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateStageRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_APIGATEWAY_API CreateStageRequest : public APIGatewayRequest
   {

@@ -423,19 +423,28 @@ namespace Model
         virtual ~CognitoIdentityProviderClient();
 
         /**
-         * <p>Adds additional user attributes to the user pool schema.</p>
+         * <p>Adds additional user attributes to the user pool schema.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AddCustomAttributes">AWS
+         * API Reference</a></p>
          */
         virtual Model::AddCustomAttributesOutcome AddCustomAttributes(const Model::AddCustomAttributesRequest& request) const;
 
         /**
-         * <p>Adds additional user attributes to the user pool schema.</p>
+         * <p>Adds additional user attributes to the user pool schema.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AddCustomAttributes">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::AddCustomAttributesOutcomeCallable AddCustomAttributesCallable(const Model::AddCustomAttributesRequest& request) const;
 
         /**
-         * <p>Adds additional user attributes to the user pool schema.</p>
+         * <p>Adds additional user attributes to the user pool schema.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AddCustomAttributes">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -443,13 +452,17 @@ namespace Model
 
         /**
          * <p>Adds the specified user to the specified group.</p> <p>Requires developer
-         * credentials.</p>
+         * credentials.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminAddUserToGroup">AWS
+         * API Reference</a></p>
          */
         virtual Model::AdminAddUserToGroupOutcome AdminAddUserToGroup(const Model::AdminAddUserToGroupRequest& request) const;
 
         /**
          * <p>Adds the specified user to the specified group.</p> <p>Requires developer
-         * credentials.</p>
+         * credentials.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminAddUserToGroup">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -457,7 +470,9 @@ namespace Model
 
         /**
          * <p>Adds the specified user to the specified group.</p> <p>Requires developer
-         * credentials.</p>
+         * credentials.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminAddUserToGroup">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -465,13 +480,19 @@ namespace Model
 
         /**
          * <p>Confirms user registration as an admin without using a confirmation code.
-         * Works on any user.</p> <p>Requires developer credentials.</p>
+         * Works on any user.</p> <p>Requires developer credentials.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminConfirmSignUp">AWS
+         * API Reference</a></p>
          */
         virtual Model::AdminConfirmSignUpOutcome AdminConfirmSignUp(const Model::AdminConfirmSignUpRequest& request) const;
 
         /**
          * <p>Confirms user registration as an admin without using a confirmation code.
-         * Works on any user.</p> <p>Requires developer credentials.</p>
+         * Works on any user.</p> <p>Requires developer credentials.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminConfirmSignUp">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -479,7 +500,10 @@ namespace Model
 
         /**
          * <p>Confirms user registration as an admin without using a confirmation code.
-         * Works on any user.</p> <p>Requires developer credentials.</p>
+         * Works on any user.</p> <p>Requires developer credentials.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminConfirmSignUp">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -490,7 +514,9 @@ namespace Model
          * email or phone (SMS). This message is based on a template that you configured in
          * your call to CreateUserPool or UpdateUserPool. This template includes your
          * custom sign-up instructions and placeholders for user name and temporary
-         * password.</p> <p>Requires developer credentials.</p>
+         * password.</p> <p>Requires developer credentials.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminCreateUser">AWS
+         * API Reference</a></p>
          */
         virtual Model::AdminCreateUserOutcome AdminCreateUser(const Model::AdminCreateUserRequest& request) const;
 
@@ -499,7 +525,9 @@ namespace Model
          * email or phone (SMS). This message is based on a template that you configured in
          * your call to CreateUserPool or UpdateUserPool. This template includes your
          * custom sign-up instructions and placeholders for user name and temporary
-         * password.</p> <p>Requires developer credentials.</p>
+         * password.</p> <p>Requires developer credentials.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminCreateUser">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -510,7 +538,9 @@ namespace Model
          * email or phone (SMS). This message is based on a template that you configured in
          * your call to CreateUserPool or UpdateUserPool. This template includes your
          * custom sign-up instructions and placeholders for user name and temporary
-         * password.</p> <p>Requires developer credentials.</p>
+         * password.</p> <p>Requires developer credentials.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminCreateUser">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -518,13 +548,17 @@ namespace Model
 
         /**
          * <p>Deletes a user as an administrator. Works on any user.</p> <p>Requires
-         * developer credentials.</p>
+         * developer credentials.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminDeleteUser">AWS
+         * API Reference</a></p>
          */
         virtual Model::AdminDeleteUserOutcome AdminDeleteUser(const Model::AdminDeleteUserRequest& request) const;
 
         /**
          * <p>Deletes a user as an administrator. Works on any user.</p> <p>Requires
-         * developer credentials.</p>
+         * developer credentials.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminDeleteUser">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -532,7 +566,9 @@ namespace Model
 
         /**
          * <p>Deletes a user as an administrator. Works on any user.</p> <p>Requires
-         * developer credentials.</p>
+         * developer credentials.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminDeleteUser">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -540,13 +576,17 @@ namespace Model
 
         /**
          * <p>Deletes the user attributes in a user pool as an administrator. Works on any
-         * user.</p> <p>Requires developer credentials.</p>
+         * user.</p> <p>Requires developer credentials.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminDeleteUserAttributes">AWS
+         * API Reference</a></p>
          */
         virtual Model::AdminDeleteUserAttributesOutcome AdminDeleteUserAttributes(const Model::AdminDeleteUserAttributesRequest& request) const;
 
         /**
          * <p>Deletes the user attributes in a user pool as an administrator. Works on any
-         * user.</p> <p>Requires developer credentials.</p>
+         * user.</p> <p>Requires developer credentials.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminDeleteUserAttributes">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -554,7 +594,9 @@ namespace Model
 
         /**
          * <p>Deletes the user attributes in a user pool as an administrator. Works on any
-         * user.</p> <p>Requires developer credentials.</p>
+         * user.</p> <p>Requires developer credentials.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminDeleteUserAttributes">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -562,13 +604,17 @@ namespace Model
 
         /**
          * <p>Disables the specified user as an administrator. Works on any user.</p>
-         * <p>Requires developer credentials.</p>
+         * <p>Requires developer credentials.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminDisableUser">AWS
+         * API Reference</a></p>
          */
         virtual Model::AdminDisableUserOutcome AdminDisableUser(const Model::AdminDisableUserRequest& request) const;
 
         /**
          * <p>Disables the specified user as an administrator. Works on any user.</p>
-         * <p>Requires developer credentials.</p>
+         * <p>Requires developer credentials.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminDisableUser">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -576,7 +622,9 @@ namespace Model
 
         /**
          * <p>Disables the specified user as an administrator. Works on any user.</p>
-         * <p>Requires developer credentials.</p>
+         * <p>Requires developer credentials.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminDisableUser">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -584,13 +632,17 @@ namespace Model
 
         /**
          * <p>Enables the specified user as an administrator. Works on any user.</p>
-         * <p>Requires developer credentials.</p>
+         * <p>Requires developer credentials.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminEnableUser">AWS
+         * API Reference</a></p>
          */
         virtual Model::AdminEnableUserOutcome AdminEnableUser(const Model::AdminEnableUserRequest& request) const;
 
         /**
          * <p>Enables the specified user as an administrator. Works on any user.</p>
-         * <p>Requires developer credentials.</p>
+         * <p>Requires developer credentials.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminEnableUser">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -598,7 +650,9 @@ namespace Model
 
         /**
          * <p>Enables the specified user as an administrator. Works on any user.</p>
-         * <p>Requires developer credentials.</p>
+         * <p>Requires developer credentials.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminEnableUser">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -606,13 +660,17 @@ namespace Model
 
         /**
          * <p>Forgets the device, as an administrator.</p> <p>Requires developer
-         * credentials.</p>
+         * credentials.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminForgetDevice">AWS
+         * API Reference</a></p>
          */
         virtual Model::AdminForgetDeviceOutcome AdminForgetDevice(const Model::AdminForgetDeviceRequest& request) const;
 
         /**
          * <p>Forgets the device, as an administrator.</p> <p>Requires developer
-         * credentials.</p>
+         * credentials.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminForgetDevice">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -620,7 +678,9 @@ namespace Model
 
         /**
          * <p>Forgets the device, as an administrator.</p> <p>Requires developer
-         * credentials.</p>
+         * credentials.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminForgetDevice">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -628,13 +688,17 @@ namespace Model
 
         /**
          * <p>Gets the device, as an administrator.</p> <p>Requires developer
-         * credentials.</p>
+         * credentials.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminGetDevice">AWS
+         * API Reference</a></p>
          */
         virtual Model::AdminGetDeviceOutcome AdminGetDevice(const Model::AdminGetDeviceRequest& request) const;
 
         /**
          * <p>Gets the device, as an administrator.</p> <p>Requires developer
-         * credentials.</p>
+         * credentials.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminGetDevice">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -642,7 +706,9 @@ namespace Model
 
         /**
          * <p>Gets the device, as an administrator.</p> <p>Requires developer
-         * credentials.</p>
+         * credentials.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminGetDevice">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -650,13 +716,19 @@ namespace Model
 
         /**
          * <p>Gets the specified user by user name in a user pool as an administrator.
-         * Works on any user.</p> <p>Requires developer credentials.</p>
+         * Works on any user.</p> <p>Requires developer credentials.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminGetUser">AWS
+         * API Reference</a></p>
          */
         virtual Model::AdminGetUserOutcome AdminGetUser(const Model::AdminGetUserRequest& request) const;
 
         /**
          * <p>Gets the specified user by user name in a user pool as an administrator.
-         * Works on any user.</p> <p>Requires developer credentials.</p>
+         * Works on any user.</p> <p>Requires developer credentials.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminGetUser">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -664,7 +736,10 @@ namespace Model
 
         /**
          * <p>Gets the specified user by user name in a user pool as an administrator.
-         * Works on any user.</p> <p>Requires developer credentials.</p>
+         * Works on any user.</p> <p>Requires developer credentials.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminGetUser">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -672,13 +747,17 @@ namespace Model
 
         /**
          * <p>Initiates the authentication flow, as an administrator.</p> <p>Requires
-         * developer credentials.</p>
+         * developer credentials.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminInitiateAuth">AWS
+         * API Reference</a></p>
          */
         virtual Model::AdminInitiateAuthOutcome AdminInitiateAuth(const Model::AdminInitiateAuthRequest& request) const;
 
         /**
          * <p>Initiates the authentication flow, as an administrator.</p> <p>Requires
-         * developer credentials.</p>
+         * developer credentials.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminInitiateAuth">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -686,7 +765,9 @@ namespace Model
 
         /**
          * <p>Initiates the authentication flow, as an administrator.</p> <p>Requires
-         * developer credentials.</p>
+         * developer credentials.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminInitiateAuth">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -694,13 +775,17 @@ namespace Model
 
         /**
          * <p>Lists devices, as an administrator.</p> <p>Requires developer
-         * credentials.</p>
+         * credentials.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminListDevices">AWS
+         * API Reference</a></p>
          */
         virtual Model::AdminListDevicesOutcome AdminListDevices(const Model::AdminListDevicesRequest& request) const;
 
         /**
          * <p>Lists devices, as an administrator.</p> <p>Requires developer
-         * credentials.</p>
+         * credentials.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminListDevices">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -708,7 +793,9 @@ namespace Model
 
         /**
          * <p>Lists devices, as an administrator.</p> <p>Requires developer
-         * credentials.</p>
+         * credentials.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminListDevices">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -716,13 +803,17 @@ namespace Model
 
         /**
          * <p>Lists the groups that the user belongs to.</p> <p>Requires developer
-         * credentials.</p>
+         * credentials.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminListGroupsForUser">AWS
+         * API Reference</a></p>
          */
         virtual Model::AdminListGroupsForUserOutcome AdminListGroupsForUser(const Model::AdminListGroupsForUserRequest& request) const;
 
         /**
          * <p>Lists the groups that the user belongs to.</p> <p>Requires developer
-         * credentials.</p>
+         * credentials.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminListGroupsForUser">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -730,7 +821,9 @@ namespace Model
 
         /**
          * <p>Lists the groups that the user belongs to.</p> <p>Requires developer
-         * credentials.</p>
+         * credentials.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminListGroupsForUser">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -738,13 +831,17 @@ namespace Model
 
         /**
          * <p>Removes the specified user from the specified group.</p> <p>Requires
-         * developer credentials.</p>
+         * developer credentials.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminRemoveUserFromGroup">AWS
+         * API Reference</a></p>
          */
         virtual Model::AdminRemoveUserFromGroupOutcome AdminRemoveUserFromGroup(const Model::AdminRemoveUserFromGroupRequest& request) const;
 
         /**
          * <p>Removes the specified user from the specified group.</p> <p>Requires
-         * developer credentials.</p>
+         * developer credentials.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminRemoveUserFromGroup">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -752,7 +849,9 @@ namespace Model
 
         /**
          * <p>Removes the specified user from the specified group.</p> <p>Requires
-         * developer credentials.</p>
+         * developer credentials.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminRemoveUserFromGroup">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -768,7 +867,10 @@ namespace Model
          * selected and a verified phone number exists for the user, or if email
          * verification is selected and a verified email exists for the user, calling this
          * API will also result in sending a message to the end user with the code to
-         * change their password.</p> <p>Requires developer credentials.</p>
+         * change their password.</p> <p>Requires developer credentials.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminResetUserPassword">AWS
+         * API Reference</a></p>
          */
         virtual Model::AdminResetUserPasswordOutcome AdminResetUserPassword(const Model::AdminResetUserPasswordRequest& request) const;
 
@@ -782,7 +884,10 @@ namespace Model
          * selected and a verified phone number exists for the user, or if email
          * verification is selected and a verified email exists for the user, calling this
          * API will also result in sending a message to the end user with the code to
-         * change their password.</p> <p>Requires developer credentials.</p>
+         * change their password.</p> <p>Requires developer credentials.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminResetUserPassword">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -798,7 +903,10 @@ namespace Model
          * selected and a verified phone number exists for the user, or if email
          * verification is selected and a verified email exists for the user, calling this
          * API will also result in sending a message to the end user with the code to
-         * change their password.</p> <p>Requires developer credentials.</p>
+         * change their password.</p> <p>Requires developer credentials.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminResetUserPassword">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -806,13 +914,17 @@ namespace Model
 
         /**
          * <p>Responds to an authentication challenge, as an administrator.</p> <p>Requires
-         * developer credentials.</p>
+         * developer credentials.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminRespondToAuthChallenge">AWS
+         * API Reference</a></p>
          */
         virtual Model::AdminRespondToAuthChallengeOutcome AdminRespondToAuthChallenge(const Model::AdminRespondToAuthChallengeRequest& request) const;
 
         /**
          * <p>Responds to an authentication challenge, as an administrator.</p> <p>Requires
-         * developer credentials.</p>
+         * developer credentials.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminRespondToAuthChallenge">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -820,7 +932,9 @@ namespace Model
 
         /**
          * <p>Responds to an authentication challenge, as an administrator.</p> <p>Requires
-         * developer credentials.</p>
+         * developer credentials.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminRespondToAuthChallenge">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -828,13 +942,17 @@ namespace Model
 
         /**
          * <p>Sets all the user settings for a specified user name. Works on any user.</p>
-         * <p>Requires developer credentials.</p>
+         * <p>Requires developer credentials.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminSetUserSettings">AWS
+         * API Reference</a></p>
          */
         virtual Model::AdminSetUserSettingsOutcome AdminSetUserSettings(const Model::AdminSetUserSettingsRequest& request) const;
 
         /**
          * <p>Sets all the user settings for a specified user name. Works on any user.</p>
-         * <p>Requires developer credentials.</p>
+         * <p>Requires developer credentials.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminSetUserSettings">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -842,7 +960,9 @@ namespace Model
 
         /**
          * <p>Sets all the user settings for a specified user name. Works on any user.</p>
-         * <p>Requires developer credentials.</p>
+         * <p>Requires developer credentials.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminSetUserSettings">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -850,13 +970,17 @@ namespace Model
 
         /**
          * <p>Updates the device status as an administrator.</p> <p>Requires developer
-         * credentials.</p>
+         * credentials.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminUpdateDeviceStatus">AWS
+         * API Reference</a></p>
          */
         virtual Model::AdminUpdateDeviceStatusOutcome AdminUpdateDeviceStatus(const Model::AdminUpdateDeviceStatusRequest& request) const;
 
         /**
          * <p>Updates the device status as an administrator.</p> <p>Requires developer
-         * credentials.</p>
+         * credentials.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminUpdateDeviceStatus">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -864,7 +988,9 @@ namespace Model
 
         /**
          * <p>Updates the device status as an administrator.</p> <p>Requires developer
-         * credentials.</p>
+         * credentials.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminUpdateDeviceStatus">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -872,13 +998,19 @@ namespace Model
 
         /**
          * <p>Updates the specified user's attributes, including developer attributes, as
-         * an administrator. Works on any user.</p> <p>Requires developer credentials.</p>
+         * an administrator. Works on any user.</p> <p>Requires developer
+         * credentials.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminUpdateUserAttributes">AWS
+         * API Reference</a></p>
          */
         virtual Model::AdminUpdateUserAttributesOutcome AdminUpdateUserAttributes(const Model::AdminUpdateUserAttributesRequest& request) const;
 
         /**
          * <p>Updates the specified user's attributes, including developer attributes, as
-         * an administrator. Works on any user.</p> <p>Requires developer credentials.</p>
+         * an administrator. Works on any user.</p> <p>Requires developer
+         * credentials.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminUpdateUserAttributes">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -886,7 +1018,10 @@ namespace Model
 
         /**
          * <p>Updates the specified user's attributes, including developer attributes, as
-         * an administrator. Works on any user.</p> <p>Requires developer credentials.</p>
+         * an administrator. Works on any user.</p> <p>Requires developer
+         * credentials.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminUpdateUserAttributes">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -894,13 +1029,17 @@ namespace Model
 
         /**
          * <p>Signs out users from all devices, as an administrator.</p> <p>Requires
-         * developer credentials.</p>
+         * developer credentials.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminUserGlobalSignOut">AWS
+         * API Reference</a></p>
          */
         virtual Model::AdminUserGlobalSignOutOutcome AdminUserGlobalSignOut(const Model::AdminUserGlobalSignOutRequest& request) const;
 
         /**
          * <p>Signs out users from all devices, as an administrator.</p> <p>Requires
-         * developer credentials.</p>
+         * developer credentials.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminUserGlobalSignOut">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -908,26 +1047,37 @@ namespace Model
 
         /**
          * <p>Signs out users from all devices, as an administrator.</p> <p>Requires
-         * developer credentials.</p>
+         * developer credentials.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminUserGlobalSignOut">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void AdminUserGlobalSignOutAsync(const Model::AdminUserGlobalSignOutRequest& request, const AdminUserGlobalSignOutResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Changes the password for a specified user in a user pool.</p>
+         * <p>Changes the password for a specified user in a user pool.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ChangePassword">AWS
+         * API Reference</a></p>
          */
         virtual Model::ChangePasswordOutcome ChangePassword(const Model::ChangePasswordRequest& request) const;
 
         /**
-         * <p>Changes the password for a specified user in a user pool.</p>
+         * <p>Changes the password for a specified user in a user pool.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ChangePassword">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ChangePasswordOutcomeCallable ChangePasswordCallable(const Model::ChangePasswordRequest& request) const;
 
         /**
-         * <p>Changes the password for a specified user in a user pool.</p>
+         * <p>Changes the password for a specified user in a user pool.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ChangePassword">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -935,13 +1085,17 @@ namespace Model
 
         /**
          * <p>Confirms tracking of the device. This API call is the call that beings device
-         * tracking.</p>
+         * tracking.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ConfirmDevice">AWS
+         * API Reference</a></p>
          */
         virtual Model::ConfirmDeviceOutcome ConfirmDevice(const Model::ConfirmDeviceRequest& request) const;
 
         /**
          * <p>Confirms tracking of the device. This API call is the call that beings device
-         * tracking.</p>
+         * tracking.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ConfirmDevice">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -949,7 +1103,9 @@ namespace Model
 
         /**
          * <p>Confirms tracking of the device. This API call is the call that beings device
-         * tracking.</p>
+         * tracking.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ConfirmDevice">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -957,13 +1113,17 @@ namespace Model
 
         /**
          * <p>Allows a user to enter a code provided when they reset their password to
-         * update their password.</p>
+         * update their password.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ConfirmForgotPassword">AWS
+         * API Reference</a></p>
          */
         virtual Model::ConfirmForgotPasswordOutcome ConfirmForgotPassword(const Model::ConfirmForgotPasswordRequest& request) const;
 
         /**
          * <p>Allows a user to enter a code provided when they reset their password to
-         * update their password.</p>
+         * update their password.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ConfirmForgotPassword">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -971,7 +1131,9 @@ namespace Model
 
         /**
          * <p>Allows a user to enter a code provided when they reset their password to
-         * update their password.</p>
+         * update their password.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ConfirmForgotPassword">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -979,13 +1141,17 @@ namespace Model
 
         /**
          * <p>Confirms registration of a user and handles the existing alias from a
-         * previous user.</p>
+         * previous user.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ConfirmSignUp">AWS
+         * API Reference</a></p>
          */
         virtual Model::ConfirmSignUpOutcome ConfirmSignUp(const Model::ConfirmSignUpRequest& request) const;
 
         /**
          * <p>Confirms registration of a user and handles the existing alias from a
-         * previous user.</p>
+         * previous user.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ConfirmSignUp">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -993,7 +1159,9 @@ namespace Model
 
         /**
          * <p>Confirms registration of a user and handles the existing alias from a
-         * previous user.</p>
+         * previous user.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ConfirmSignUp">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1001,13 +1169,17 @@ namespace Model
 
         /**
          * <p>Creates a new group in the specified user pool.</p> <p>Requires developer
-         * credentials.</p>
+         * credentials.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CreateGroup">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateGroupOutcome CreateGroup(const Model::CreateGroupRequest& request) const;
 
         /**
          * <p>Creates a new group in the specified user pool.</p> <p>Requires developer
-         * credentials.</p>
+         * credentials.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CreateGroup">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1015,26 +1187,34 @@ namespace Model
 
         /**
          * <p>Creates a new group in the specified user pool.</p> <p>Requires developer
-         * credentials.</p>
+         * credentials.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CreateGroup">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateGroupAsync(const Model::CreateGroupRequest& request, const CreateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates the user import job.</p>
+         * <p>Creates the user import job.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CreateUserImportJob">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateUserImportJobOutcome CreateUserImportJob(const Model::CreateUserImportJobRequest& request) const;
 
         /**
-         * <p>Creates the user import job.</p>
+         * <p>Creates the user import job.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CreateUserImportJob">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateUserImportJobOutcomeCallable CreateUserImportJobCallable(const Model::CreateUserImportJobRequest& request) const;
 
         /**
-         * <p>Creates the user import job.</p>
+         * <p>Creates the user import job.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CreateUserImportJob">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1042,13 +1222,17 @@ namespace Model
 
         /**
          * <p>Creates a new Amazon Cognito user pool and sets the password policy for the
-         * pool.</p>
+         * pool.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CreateUserPool">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateUserPoolOutcome CreateUserPool(const Model::CreateUserPoolRequest& request) const;
 
         /**
          * <p>Creates a new Amazon Cognito user pool and sets the password policy for the
-         * pool.</p>
+         * pool.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CreateUserPool">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1056,26 +1240,34 @@ namespace Model
 
         /**
          * <p>Creates a new Amazon Cognito user pool and sets the password policy for the
-         * pool.</p>
+         * pool.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CreateUserPool">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateUserPoolAsync(const Model::CreateUserPoolRequest& request, const CreateUserPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates the user pool client.</p>
+         * <p>Creates the user pool client.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CreateUserPoolClient">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateUserPoolClientOutcome CreateUserPoolClient(const Model::CreateUserPoolClientRequest& request) const;
 
         /**
-         * <p>Creates the user pool client.</p>
+         * <p>Creates the user pool client.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CreateUserPoolClient">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateUserPoolClientOutcomeCallable CreateUserPoolClientCallable(const Model::CreateUserPoolClientRequest& request) const;
 
         /**
-         * <p>Creates the user pool client.</p>
+         * <p>Creates the user pool client.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CreateUserPoolClient">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1083,13 +1275,17 @@ namespace Model
 
         /**
          * <p>Deletes a group. Currently only groups with no members can be deleted.</p>
-         * <p>Requires developer credentials.</p>
+         * <p>Requires developer credentials.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteGroup">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteGroupOutcome DeleteGroup(const Model::DeleteGroupRequest& request) const;
 
         /**
          * <p>Deletes a group. Currently only groups with no members can be deleted.</p>
-         * <p>Requires developer credentials.</p>
+         * <p>Requires developer credentials.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteGroup">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1097,102 +1293,137 @@ namespace Model
 
         /**
          * <p>Deletes a group. Currently only groups with no members can be deleted.</p>
-         * <p>Requires developer credentials.</p>
+         * <p>Requires developer credentials.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteGroup">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteGroupAsync(const Model::DeleteGroupRequest& request, const DeleteGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Allows a user to delete one's self.</p>
+         * <p>Allows a user to delete one's self.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteUser">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteUserOutcome DeleteUser(const Model::DeleteUserRequest& request) const;
 
         /**
-         * <p>Allows a user to delete one's self.</p>
+         * <p>Allows a user to delete one's self.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteUser">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteUserOutcomeCallable DeleteUserCallable(const Model::DeleteUserRequest& request) const;
 
         /**
-         * <p>Allows a user to delete one's self.</p>
+         * <p>Allows a user to delete one's self.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteUser">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteUserAsync(const Model::DeleteUserRequest& request, const DeleteUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the attributes for a user.</p>
+         * <p>Deletes the attributes for a user.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteUserAttributes">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteUserAttributesOutcome DeleteUserAttributes(const Model::DeleteUserAttributesRequest& request) const;
 
         /**
-         * <p>Deletes the attributes for a user.</p>
+         * <p>Deletes the attributes for a user.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteUserAttributes">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteUserAttributesOutcomeCallable DeleteUserAttributesCallable(const Model::DeleteUserAttributesRequest& request) const;
 
         /**
-         * <p>Deletes the attributes for a user.</p>
+         * <p>Deletes the attributes for a user.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteUserAttributes">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteUserAttributesAsync(const Model::DeleteUserAttributesRequest& request, const DeleteUserAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the specified Amazon Cognito user pool.</p>
+         * <p>Deletes the specified Amazon Cognito user pool.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteUserPool">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteUserPoolOutcome DeleteUserPool(const Model::DeleteUserPoolRequest& request) const;
 
         /**
-         * <p>Deletes the specified Amazon Cognito user pool.</p>
+         * <p>Deletes the specified Amazon Cognito user pool.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteUserPool">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteUserPoolOutcomeCallable DeleteUserPoolCallable(const Model::DeleteUserPoolRequest& request) const;
 
         /**
-         * <p>Deletes the specified Amazon Cognito user pool.</p>
+         * <p>Deletes the specified Amazon Cognito user pool.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteUserPool">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteUserPoolAsync(const Model::DeleteUserPoolRequest& request, const DeleteUserPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Allows the developer to delete the user pool client.</p>
+         * <p>Allows the developer to delete the user pool client.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteUserPoolClient">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteUserPoolClientOutcome DeleteUserPoolClient(const Model::DeleteUserPoolClientRequest& request) const;
 
         /**
-         * <p>Allows the developer to delete the user pool client.</p>
+         * <p>Allows the developer to delete the user pool client.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteUserPoolClient">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteUserPoolClientOutcomeCallable DeleteUserPoolClientCallable(const Model::DeleteUserPoolClientRequest& request) const;
 
         /**
-         * <p>Allows the developer to delete the user pool client.</p>
+         * <p>Allows the developer to delete the user pool client.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteUserPoolClient">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteUserPoolClientAsync(const Model::DeleteUserPoolClientRequest& request, const DeleteUserPoolClientResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes the user import job.</p>
+         * <p>Describes the user import job.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DescribeUserImportJob">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeUserImportJobOutcome DescribeUserImportJob(const Model::DescribeUserImportJobRequest& request) const;
 
         /**
-         * <p>Describes the user import job.</p>
+         * <p>Describes the user import job.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DescribeUserImportJob">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeUserImportJobOutcomeCallable DescribeUserImportJobCallable(const Model::DescribeUserImportJobRequest& request) const;
 
         /**
-         * <p>Describes the user import job.</p>
+         * <p>Describes the user import job.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DescribeUserImportJob">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1200,13 +1431,17 @@ namespace Model
 
         /**
          * <p>Returns the configuration information and metadata of the specified user
-         * pool.</p>
+         * pool.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DescribeUserPool">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeUserPoolOutcome DescribeUserPool(const Model::DescribeUserPoolRequest& request) const;
 
         /**
          * <p>Returns the configuration information and metadata of the specified user
-         * pool.</p>
+         * pool.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DescribeUserPool">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1214,7 +1449,9 @@ namespace Model
 
         /**
          * <p>Returns the configuration information and metadata of the specified user
-         * pool.</p>
+         * pool.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DescribeUserPool">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1222,13 +1459,17 @@ namespace Model
 
         /**
          * <p>Client method for returning the configuration information and metadata of the
-         * specified user pool client.</p>
+         * specified user pool client.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DescribeUserPoolClient">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeUserPoolClientOutcome DescribeUserPoolClient(const Model::DescribeUserPoolClientRequest& request) const;
 
         /**
          * <p>Client method for returning the configuration information and metadata of the
-         * specified user pool client.</p>
+         * specified user pool client.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DescribeUserPoolClient">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1236,45 +1477,62 @@ namespace Model
 
         /**
          * <p>Client method for returning the configuration information and metadata of the
-         * specified user pool client.</p>
+         * specified user pool client.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DescribeUserPoolClient">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeUserPoolClientAsync(const Model::DescribeUserPoolClientRequest& request, const DescribeUserPoolClientResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Forgets the specified device.</p>
+         * <p>Forgets the specified device.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ForgetDevice">AWS
+         * API Reference</a></p>
          */
         virtual Model::ForgetDeviceOutcome ForgetDevice(const Model::ForgetDeviceRequest& request) const;
 
         /**
-         * <p>Forgets the specified device.</p>
+         * <p>Forgets the specified device.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ForgetDevice">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ForgetDeviceOutcomeCallable ForgetDeviceCallable(const Model::ForgetDeviceRequest& request) const;
 
         /**
-         * <p>Forgets the specified device.</p>
+         * <p>Forgets the specified device.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ForgetDevice">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ForgetDeviceAsync(const Model::ForgetDeviceRequest& request, const ForgetDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves the password for the specified client ID or username.</p>
+         * <p>Retrieves the password for the specified client ID or username.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ForgotPassword">AWS
+         * API Reference</a></p>
          */
         virtual Model::ForgotPasswordOutcome ForgotPassword(const Model::ForgotPasswordRequest& request) const;
 
         /**
-         * <p>Retrieves the password for the specified client ID or username.</p>
+         * <p>Retrieves the password for the specified client ID or username.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ForgotPassword">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ForgotPasswordOutcomeCallable ForgotPasswordCallable(const Model::ForgotPasswordRequest& request) const;
 
         /**
-         * <p>Retrieves the password for the specified client ID or username.</p>
+         * <p>Retrieves the password for the specified client ID or username.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ForgotPassword">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1282,13 +1540,17 @@ namespace Model
 
         /**
          * <p>Gets the header information for the .csv file to be used as input for the
-         * user import job.</p>
+         * user import job.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetCSVHeader">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetCSVHeaderOutcome GetCSVHeader(const Model::GetCSVHeaderRequest& request) const;
 
         /**
          * <p>Gets the header information for the .csv file to be used as input for the
-         * user import job.</p>
+         * user import job.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetCSVHeader">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1296,64 +1558,90 @@ namespace Model
 
         /**
          * <p>Gets the header information for the .csv file to be used as input for the
-         * user import job.</p>
+         * user import job.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetCSVHeader">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetCSVHeaderAsync(const Model::GetCSVHeaderRequest& request, const GetCSVHeaderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets the device.</p>
+         * <p>Gets the device.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetDevice">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetDeviceOutcome GetDevice(const Model::GetDeviceRequest& request) const;
 
         /**
-         * <p>Gets the device.</p>
+         * <p>Gets the device.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetDevice">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetDeviceOutcomeCallable GetDeviceCallable(const Model::GetDeviceRequest& request) const;
 
         /**
-         * <p>Gets the device.</p>
+         * <p>Gets the device.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetDevice">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetDeviceAsync(const Model::GetDeviceRequest& request, const GetDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets a group.</p> <p>Requires developer credentials.</p>
+         * <p>Gets a group.</p> <p>Requires developer credentials.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetGroup">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetGroupOutcome GetGroup(const Model::GetGroupRequest& request) const;
 
         /**
-         * <p>Gets a group.</p> <p>Requires developer credentials.</p>
+         * <p>Gets a group.</p> <p>Requires developer credentials.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetGroup">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetGroupOutcomeCallable GetGroupCallable(const Model::GetGroupRequest& request) const;
 
         /**
-         * <p>Gets a group.</p> <p>Requires developer credentials.</p>
+         * <p>Gets a group.</p> <p>Requires developer credentials.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetGroup">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetGroupAsync(const Model::GetGroupRequest& request, const GetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets the user attributes and metadata for a user.</p>
+         * <p>Gets the user attributes and metadata for a user.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetUser">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetUserOutcome GetUser(const Model::GetUserRequest& request) const;
 
         /**
-         * <p>Gets the user attributes and metadata for a user.</p>
+         * <p>Gets the user attributes and metadata for a user.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetUser">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetUserOutcomeCallable GetUserCallable(const Model::GetUserRequest& request) const;
 
         /**
-         * <p>Gets the user attributes and metadata for a user.</p>
+         * <p>Gets the user attributes and metadata for a user.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetUser">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1361,13 +1649,17 @@ namespace Model
 
         /**
          * <p>Gets the user attribute verification code for the specified attribute
-         * name.</p>
+         * name.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetUserAttributeVerificationCode">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetUserAttributeVerificationCodeOutcome GetUserAttributeVerificationCode(const Model::GetUserAttributeVerificationCodeRequest& request) const;
 
         /**
          * <p>Gets the user attribute verification code for the specified attribute
-         * name.</p>
+         * name.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetUserAttributeVerificationCode">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1375,64 +1667,84 @@ namespace Model
 
         /**
          * <p>Gets the user attribute verification code for the specified attribute
-         * name.</p>
+         * name.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetUserAttributeVerificationCode">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetUserAttributeVerificationCodeAsync(const Model::GetUserAttributeVerificationCodeRequest& request, const GetUserAttributeVerificationCodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Signs out users from all devices.</p>
+         * <p>Signs out users from all devices.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GlobalSignOut">AWS
+         * API Reference</a></p>
          */
         virtual Model::GlobalSignOutOutcome GlobalSignOut(const Model::GlobalSignOutRequest& request) const;
 
         /**
-         * <p>Signs out users from all devices.</p>
+         * <p>Signs out users from all devices.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GlobalSignOut">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GlobalSignOutOutcomeCallable GlobalSignOutCallable(const Model::GlobalSignOutRequest& request) const;
 
         /**
-         * <p>Signs out users from all devices.</p>
+         * <p>Signs out users from all devices.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GlobalSignOut">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GlobalSignOutAsync(const Model::GlobalSignOutRequest& request, const GlobalSignOutResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Initiates the authentication flow.</p>
+         * <p>Initiates the authentication flow.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/InitiateAuth">AWS
+         * API Reference</a></p>
          */
         virtual Model::InitiateAuthOutcome InitiateAuth(const Model::InitiateAuthRequest& request) const;
 
         /**
-         * <p>Initiates the authentication flow.</p>
+         * <p>Initiates the authentication flow.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/InitiateAuth">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::InitiateAuthOutcomeCallable InitiateAuthCallable(const Model::InitiateAuthRequest& request) const;
 
         /**
-         * <p>Initiates the authentication flow.</p>
+         * <p>Initiates the authentication flow.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/InitiateAuth">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void InitiateAuthAsync(const Model::InitiateAuthRequest& request, const InitiateAuthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the devices.</p>
+         * <p>Lists the devices.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListDevices">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListDevicesOutcome ListDevices(const Model::ListDevicesRequest& request) const;
 
         /**
-         * <p>Lists the devices.</p>
+         * <p>Lists the devices.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListDevices">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListDevicesOutcomeCallable ListDevicesCallable(const Model::ListDevicesRequest& request) const;
 
         /**
-         * <p>Lists the devices.</p>
+         * <p>Lists the devices.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListDevices">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1440,13 +1752,17 @@ namespace Model
 
         /**
          * <p>Lists the groups associated with a user pool.</p> <p>Requires developer
-         * credentials.</p>
+         * credentials.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListGroups">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListGroupsOutcome ListGroups(const Model::ListGroupsRequest& request) const;
 
         /**
          * <p>Lists the groups associated with a user pool.</p> <p>Requires developer
-         * credentials.</p>
+         * credentials.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListGroups">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1454,83 +1770,118 @@ namespace Model
 
         /**
          * <p>Lists the groups associated with a user pool.</p> <p>Requires developer
-         * credentials.</p>
+         * credentials.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListGroups">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListGroupsAsync(const Model::ListGroupsRequest& request, const ListGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the user import jobs.</p>
+         * <p>Lists the user import jobs.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListUserImportJobs">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListUserImportJobsOutcome ListUserImportJobs(const Model::ListUserImportJobsRequest& request) const;
 
         /**
-         * <p>Lists the user import jobs.</p>
+         * <p>Lists the user import jobs.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListUserImportJobs">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListUserImportJobsOutcomeCallable ListUserImportJobsCallable(const Model::ListUserImportJobsRequest& request) const;
 
         /**
-         * <p>Lists the user import jobs.</p>
+         * <p>Lists the user import jobs.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListUserImportJobs">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListUserImportJobsAsync(const Model::ListUserImportJobsRequest& request, const ListUserImportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the clients that have been created for the specified user pool.</p>
+         * <p>Lists the clients that have been created for the specified user
+         * pool.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListUserPoolClients">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListUserPoolClientsOutcome ListUserPoolClients(const Model::ListUserPoolClientsRequest& request) const;
 
         /**
-         * <p>Lists the clients that have been created for the specified user pool.</p>
+         * <p>Lists the clients that have been created for the specified user
+         * pool.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListUserPoolClients">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListUserPoolClientsOutcomeCallable ListUserPoolClientsCallable(const Model::ListUserPoolClientsRequest& request) const;
 
         /**
-         * <p>Lists the clients that have been created for the specified user pool.</p>
+         * <p>Lists the clients that have been created for the specified user
+         * pool.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListUserPoolClients">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListUserPoolClientsAsync(const Model::ListUserPoolClientsRequest& request, const ListUserPoolClientsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the user pools associated with an AWS account.</p>
+         * <p>Lists the user pools associated with an AWS account.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListUserPools">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListUserPoolsOutcome ListUserPools(const Model::ListUserPoolsRequest& request) const;
 
         /**
-         * <p>Lists the user pools associated with an AWS account.</p>
+         * <p>Lists the user pools associated with an AWS account.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListUserPools">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListUserPoolsOutcomeCallable ListUserPoolsCallable(const Model::ListUserPoolsRequest& request) const;
 
         /**
-         * <p>Lists the user pools associated with an AWS account.</p>
+         * <p>Lists the user pools associated with an AWS account.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListUserPools">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListUserPoolsAsync(const Model::ListUserPoolsRequest& request, const ListUserPoolsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the users in the Amazon Cognito user pool.</p>
+         * <p>Lists the users in the Amazon Cognito user pool.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListUsers">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListUsersOutcome ListUsers(const Model::ListUsersRequest& request) const;
 
         /**
-         * <p>Lists the users in the Amazon Cognito user pool.</p>
+         * <p>Lists the users in the Amazon Cognito user pool.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListUsers">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListUsersOutcomeCallable ListUsersCallable(const Model::ListUsersRequest& request) const;
 
         /**
-         * <p>Lists the users in the Amazon Cognito user pool.</p>
+         * <p>Lists the users in the Amazon Cognito user pool.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListUsers">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1538,13 +1889,17 @@ namespace Model
 
         /**
          * <p>Lists the users in the specified group.</p> <p>Requires developer
-         * credentials.</p>
+         * credentials.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListUsersInGroup">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListUsersInGroupOutcome ListUsersInGroup(const Model::ListUsersInGroupRequest& request) const;
 
         /**
          * <p>Lists the users in the specified group.</p> <p>Requires developer
-         * credentials.</p>
+         * credentials.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListUsersInGroup">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1552,7 +1907,9 @@ namespace Model
 
         /**
          * <p>Lists the users in the specified group.</p> <p>Requires developer
-         * credentials.</p>
+         * credentials.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListUsersInGroup">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1560,13 +1917,17 @@ namespace Model
 
         /**
          * <p>Resends the confirmation (for confirmation of registration) to a specific
-         * user in the user pool.</p>
+         * user in the user pool.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ResendConfirmationCode">AWS
+         * API Reference</a></p>
          */
         virtual Model::ResendConfirmationCodeOutcome ResendConfirmationCode(const Model::ResendConfirmationCodeRequest& request) const;
 
         /**
          * <p>Resends the confirmation (for confirmation of registration) to a specific
-         * user in the user pool.</p>
+         * user in the user pool.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ResendConfirmationCode">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1574,26 +1935,34 @@ namespace Model
 
         /**
          * <p>Resends the confirmation (for confirmation of registration) to a specific
-         * user in the user pool.</p>
+         * user in the user pool.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ResendConfirmationCode">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ResendConfirmationCodeAsync(const Model::ResendConfirmationCodeRequest& request, const ResendConfirmationCodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Responds to the authentication challenge.</p>
+         * <p>Responds to the authentication challenge.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/RespondToAuthChallenge">AWS
+         * API Reference</a></p>
          */
         virtual Model::RespondToAuthChallengeOutcome RespondToAuthChallenge(const Model::RespondToAuthChallengeRequest& request) const;
 
         /**
-         * <p>Responds to the authentication challenge.</p>
+         * <p>Responds to the authentication challenge.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/RespondToAuthChallenge">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::RespondToAuthChallengeOutcomeCallable RespondToAuthChallengeCallable(const Model::RespondToAuthChallengeRequest& request) const;
 
         /**
-         * <p>Responds to the authentication challenge.</p>
+         * <p>Responds to the authentication challenge.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/RespondToAuthChallenge">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1602,14 +1971,20 @@ namespace Model
         /**
          * <p>Sets the user settings like multi-factor authentication (MFA). If MFA is to
          * be removed for a particular attribute pass the attribute with code delivery as
-         * null. If null list is passed, all MFA options are removed.</p>
+         * null. If null list is passed, all MFA options are removed.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SetUserSettings">AWS
+         * API Reference</a></p>
          */
         virtual Model::SetUserSettingsOutcome SetUserSettings(const Model::SetUserSettingsRequest& request) const;
 
         /**
          * <p>Sets the user settings like multi-factor authentication (MFA). If MFA is to
          * be removed for a particular attribute pass the attribute with code delivery as
-         * null. If null list is passed, all MFA options are removed.</p>
+         * null. If null list is passed, all MFA options are removed.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SetUserSettings">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1618,7 +1993,10 @@ namespace Model
         /**
          * <p>Sets the user settings like multi-factor authentication (MFA). If MFA is to
          * be removed for a particular attribute pass the attribute with code delivery as
-         * null. If null list is passed, all MFA options are removed.</p>
+         * null. If null list is passed, all MFA options are removed.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SetUserSettings">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1626,13 +2004,17 @@ namespace Model
 
         /**
          * <p>Registers the user in the specified user pool and creates a user name,
-         * password, and user attributes.</p>
+         * password, and user attributes.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SignUp">AWS
+         * API Reference</a></p>
          */
         virtual Model::SignUpOutcome SignUp(const Model::SignUpRequest& request) const;
 
         /**
          * <p>Registers the user in the specified user pool and creates a user name,
-         * password, and user attributes.</p>
+         * password, and user attributes.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SignUp">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1640,64 +2022,84 @@ namespace Model
 
         /**
          * <p>Registers the user in the specified user pool and creates a user name,
-         * password, and user attributes.</p>
+         * password, and user attributes.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SignUp">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void SignUpAsync(const Model::SignUpRequest& request, const SignUpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Starts the user import.</p>
+         * <p>Starts the user import.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/StartUserImportJob">AWS
+         * API Reference</a></p>
          */
         virtual Model::StartUserImportJobOutcome StartUserImportJob(const Model::StartUserImportJobRequest& request) const;
 
         /**
-         * <p>Starts the user import.</p>
+         * <p>Starts the user import.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/StartUserImportJob">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::StartUserImportJobOutcomeCallable StartUserImportJobCallable(const Model::StartUserImportJobRequest& request) const;
 
         /**
-         * <p>Starts the user import.</p>
+         * <p>Starts the user import.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/StartUserImportJob">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void StartUserImportJobAsync(const Model::StartUserImportJobRequest& request, const StartUserImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Stops the user import job.</p>
+         * <p>Stops the user import job.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/StopUserImportJob">AWS
+         * API Reference</a></p>
          */
         virtual Model::StopUserImportJobOutcome StopUserImportJob(const Model::StopUserImportJobRequest& request) const;
 
         /**
-         * <p>Stops the user import job.</p>
+         * <p>Stops the user import job.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/StopUserImportJob">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::StopUserImportJobOutcomeCallable StopUserImportJobCallable(const Model::StopUserImportJobRequest& request) const;
 
         /**
-         * <p>Stops the user import job.</p>
+         * <p>Stops the user import job.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/StopUserImportJob">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void StopUserImportJobAsync(const Model::StopUserImportJobRequest& request, const StopUserImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates the device status.</p>
+         * <p>Updates the device status.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateDeviceStatus">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateDeviceStatusOutcome UpdateDeviceStatus(const Model::UpdateDeviceStatusRequest& request) const;
 
         /**
-         * <p>Updates the device status.</p>
+         * <p>Updates the device status.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateDeviceStatus">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateDeviceStatusOutcomeCallable UpdateDeviceStatusCallable(const Model::UpdateDeviceStatusRequest& request) const;
 
         /**
-         * <p>Updates the device status.</p>
+         * <p>Updates the device status.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateDeviceStatus">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1705,13 +2107,17 @@ namespace Model
 
         /**
          * <p>Updates the specified group with the specified attributes.</p> <p>Requires
-         * developer credentials.</p>
+         * developer credentials.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateGroup">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateGroupOutcome UpdateGroup(const Model::UpdateGroupRequest& request) const;
 
         /**
          * <p>Updates the specified group with the specified attributes.</p> <p>Requires
-         * developer credentials.</p>
+         * developer credentials.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateGroup">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1719,45 +2125,65 @@ namespace Model
 
         /**
          * <p>Updates the specified group with the specified attributes.</p> <p>Requires
-         * developer credentials.</p>
+         * developer credentials.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateGroup">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateGroupAsync(const Model::UpdateGroupRequest& request, const UpdateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Allows a user to update a specific attribute (one at a time).</p>
+         * <p>Allows a user to update a specific attribute (one at a time).</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateUserAttributes">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateUserAttributesOutcome UpdateUserAttributes(const Model::UpdateUserAttributesRequest& request) const;
 
         /**
-         * <p>Allows a user to update a specific attribute (one at a time).</p>
+         * <p>Allows a user to update a specific attribute (one at a time).</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateUserAttributes">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateUserAttributesOutcomeCallable UpdateUserAttributesCallable(const Model::UpdateUserAttributesRequest& request) const;
 
         /**
-         * <p>Allows a user to update a specific attribute (one at a time).</p>
+         * <p>Allows a user to update a specific attribute (one at a time).</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateUserAttributes">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateUserAttributesAsync(const Model::UpdateUserAttributesRequest& request, const UpdateUserAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates the specified user pool with the specified attributes.</p>
+         * <p>Updates the specified user pool with the specified attributes.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateUserPool">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateUserPoolOutcome UpdateUserPool(const Model::UpdateUserPoolRequest& request) const;
 
         /**
-         * <p>Updates the specified user pool with the specified attributes.</p>
+         * <p>Updates the specified user pool with the specified attributes.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateUserPool">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateUserPoolOutcomeCallable UpdateUserPoolCallable(const Model::UpdateUserPoolRequest& request) const;
 
         /**
-         * <p>Updates the specified user pool with the specified attributes.</p>
+         * <p>Updates the specified user pool with the specified attributes.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateUserPool">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1765,13 +2191,17 @@ namespace Model
 
         /**
          * <p>Allows the developer to update the specified user pool client and password
-         * policy.</p>
+         * policy.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateUserPoolClient">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateUserPoolClientOutcome UpdateUserPoolClient(const Model::UpdateUserPoolClientRequest& request) const;
 
         /**
          * <p>Allows the developer to update the specified user pool client and password
-         * policy.</p>
+         * policy.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateUserPoolClient">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1779,26 +2209,37 @@ namespace Model
 
         /**
          * <p>Allows the developer to update the specified user pool client and password
-         * policy.</p>
+         * policy.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateUserPoolClient">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateUserPoolClientAsync(const Model::UpdateUserPoolClientRequest& request, const UpdateUserPoolClientResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Verifies the specified user attributes in the user pool.</p>
+         * <p>Verifies the specified user attributes in the user pool.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/VerifyUserAttribute">AWS
+         * API Reference</a></p>
          */
         virtual Model::VerifyUserAttributeOutcome VerifyUserAttribute(const Model::VerifyUserAttributeRequest& request) const;
 
         /**
-         * <p>Verifies the specified user attributes in the user pool.</p>
+         * <p>Verifies the specified user attributes in the user pool.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/VerifyUserAttribute">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::VerifyUserAttributeOutcomeCallable VerifyUserAttributeCallable(const Model::VerifyUserAttributeRequest& request) const;
 
         /**
-         * <p>Verifies the specified user attributes in the user pool.</p>
+         * <p>Verifies the specified user attributes in the user pool.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/VerifyUserAttribute">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */

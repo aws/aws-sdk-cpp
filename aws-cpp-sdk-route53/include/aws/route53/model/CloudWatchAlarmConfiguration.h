@@ -36,7 +36,10 @@ namespace Model
 
   /**
    * <p>A complex type that contains information about the CloudWatch alarm that
-   * Amazon Route 53 is monitoring for this health check.</p>
+   * Amazon Route 53 is monitoring for this health check.</p><p><h3>See Also:</h3>  
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CloudWatchAlarmConfiguration">AWS
+   * API Reference</a></p>
    */
   class AWS_ROUTE53_API CloudWatchAlarmConfiguration
   {

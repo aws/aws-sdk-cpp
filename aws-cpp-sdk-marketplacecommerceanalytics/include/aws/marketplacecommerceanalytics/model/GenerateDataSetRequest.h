@@ -28,7 +28,10 @@ namespace Model
 {
 
   /**
-   * Container for the parameters to the GenerateDataSet operation.
+   * Container for the parameters to the GenerateDataSet operation.<p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/marketplacecommerceanalytics-2015-07-01/GenerateDataSetRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_MARKETPLACECOMMERCEANALYTICS_API GenerateDataSetRequest : public MarketplaceCommerceAnalyticsRequest
   {

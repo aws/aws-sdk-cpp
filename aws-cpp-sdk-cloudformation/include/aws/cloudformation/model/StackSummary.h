@@ -34,7 +34,9 @@ namespace Model
 {
 
   /**
-   * <p>The StackSummary Data Type</p>
+   * <p>The StackSummary Data Type</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/StackSummary">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDFORMATION_API StackSummary
   {

@@ -35,7 +35,9 @@ namespace IoT
 namespace Model
 {
   /**
-   * <p>The output from the ListPolicies operation.</p>
+   * <p>The output from the ListPolicies operation.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListPoliciesResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_IOT_API ListPoliciesResult
   {

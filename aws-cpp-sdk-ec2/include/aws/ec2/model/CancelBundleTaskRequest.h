@@ -25,7 +25,9 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for CancelBundleTask.</p>
+   * <p>Contains the parameters for CancelBundleTask.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelBundleTaskRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API CancelBundleTaskRequest : public EC2Request
   {

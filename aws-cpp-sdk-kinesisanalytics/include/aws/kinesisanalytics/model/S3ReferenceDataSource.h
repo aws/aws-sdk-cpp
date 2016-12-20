@@ -35,7 +35,10 @@ namespace Model
    * identifies the IAM role Amazon Kinesis Analytics can assume to read this object
    * on your behalf.</p> <p>An Amazon Kinesis Analytics application loads reference
    * data only once. If the data changes, you call the <a>UpdateApplication</a>
-   * operation to trigger reloading of data into your application.</p>
+   * operation to trigger reloading of data into your application.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/S3ReferenceDataSource">AWS
+   * API Reference</a></p>
    */
   class AWS_KINESISANALYTICS_API S3ReferenceDataSource
   {

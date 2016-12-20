@@ -38,7 +38,10 @@ namespace Model
    * <code>FieldToMatch</code> to build an expression in the form of
    * "<code>Size</code> <code>ComparisonOperator</code> size in bytes of
    * <code>FieldToMatch</code>". If that expression is true, the
-   * <code>SizeConstraint</code> is considered to match.</p>
+   * <code>SizeConstraint</code> is considered to match.</p><p><h3>See Also:</h3>  
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/SizeConstraint">AWS
+   * API Reference</a></p>
    */
   class AWS_WAF_API SizeConstraint
   {

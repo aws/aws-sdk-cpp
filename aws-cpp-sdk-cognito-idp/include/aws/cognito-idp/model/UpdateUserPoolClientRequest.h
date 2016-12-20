@@ -27,7 +27,10 @@ namespace Model
 {
 
   /**
-   * <p>Represents the request to update the user pool client.</p>
+   * <p>Represents the request to update the user pool client.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateUserPoolClientRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_COGNITOIDENTITYPROVIDER_API UpdateUserPoolClientRequest : public CognitoIdentityProviderRequest
   {

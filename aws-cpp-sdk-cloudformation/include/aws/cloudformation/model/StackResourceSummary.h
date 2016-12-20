@@ -34,7 +34,10 @@ namespace Model
 {
 
   /**
-   * <p>Contains high-level information about the specified stack resource.</p>
+   * <p>Contains high-level information about the specified stack
+   * resource.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/StackResourceSummary">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDFORMATION_API StackResourceSummary
   {

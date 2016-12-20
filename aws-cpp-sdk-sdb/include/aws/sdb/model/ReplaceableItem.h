@@ -34,7 +34,9 @@ namespace Model
 {
 
   /**
-   * <p></p>
+   * <p></p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sdb-2009-04-15/ReplaceableItem">AWS
+   * API Reference</a></p>
    */
   class AWS_SIMPLEDB_API ReplaceableItem
   {

@@ -31,7 +31,10 @@ namespace Model
 {
 
   /**
-   * <p>Information about the user who made a specified commit.</p>
+   * <p>Information about the user who made a specified commit.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UserInfo">AWS
+   * API Reference</a></p>
    */
   class AWS_CODECOMMIT_API UserInfo
   {

@@ -35,7 +35,9 @@ namespace Model
 
   /**
    * <p>A structure containing information about a public virtual interface that will
-   * be provisioned on a connection.</p>
+   * be provisioned on a connection.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/NewPublicVirtualInterfaceAllocation">AWS
+   * API Reference</a></p>
    */
   class AWS_DIRECTCONNECT_API NewPublicVirtualInterfaceAllocation
   {

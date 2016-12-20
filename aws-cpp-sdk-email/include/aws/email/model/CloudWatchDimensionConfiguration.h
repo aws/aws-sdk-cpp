@@ -37,7 +37,9 @@ namespace Model
    * events to Amazon CloudWatch.</p> <p>For information about publishing email
    * sending events to Amazon CloudWatch, see the <a
    * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
-   * SES Developer Guide</a>.</p>
+   * SES Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CloudWatchDimensionConfiguration">AWS
+   * API Reference</a></p>
    */
   class AWS_SES_API CloudWatchDimensionConfiguration
   {

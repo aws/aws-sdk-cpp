@@ -25,7 +25,9 @@ namespace Model
 {
 
   /**
-   * <p>Represents the request to list all offerings.</p>
+   * <p>Represents the request to list all offerings.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListOfferingsRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_DEVICEFARM_API ListOfferingsRequest : public DeviceFarmRequest
   {

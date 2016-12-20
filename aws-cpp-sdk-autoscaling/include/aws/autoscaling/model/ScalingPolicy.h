@@ -35,7 +35,9 @@ namespace Model
 {
 
   /**
-   * <p>Describes a scaling policy.</p>
+   * <p>Describes a scaling policy.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/ScalingPolicy">AWS
+   * API Reference</a></p>
    */
   class AWS_AUTOSCALING_API ScalingPolicy
   {

@@ -163,7 +163,9 @@ namespace Model
          * affected entities, or where the extent of impact is unknown, include at least
          * one entity indicating this.</p> <p>At least one event ARN is required. Results
          * are sorted by the <code>lastUpdatedTime</code> of the entity, starting with the
-         * most recent.</p>
+         * most recent.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeAffectedEntities">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeAffectedEntitiesOutcome DescribeAffectedEntities(const Model::DescribeAffectedEntitiesRequest& request) const;
 
@@ -175,7 +177,9 @@ namespace Model
          * affected entities, or where the extent of impact is unknown, include at least
          * one entity indicating this.</p> <p>At least one event ARN is required. Results
          * are sorted by the <code>lastUpdatedTime</code> of the entity, starting with the
-         * most recent.</p>
+         * most recent.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeAffectedEntities">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -189,7 +193,9 @@ namespace Model
          * affected entities, or where the extent of impact is unknown, include at least
          * one entity indicating this.</p> <p>At least one event ARN is required. Results
          * are sorted by the <code>lastUpdatedTime</code> of the entity, starting with the
-         * most recent.</p>
+         * most recent.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeAffectedEntities">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -198,14 +204,18 @@ namespace Model
         /**
          * <p>Returns the number of entities that are affected by each of the specified
          * events. If no events are specified, the counts of all affected entities are
-         * returned.</p>
+         * returned.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEntityAggregates">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeEntityAggregatesOutcome DescribeEntityAggregates(const Model::DescribeEntityAggregatesRequest& request) const;
 
         /**
          * <p>Returns the number of entities that are affected by each of the specified
          * events. If no events are specified, the counts of all affected entities are
-         * returned.</p>
+         * returned.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEntityAggregates">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -214,7 +224,9 @@ namespace Model
         /**
          * <p>Returns the number of entities that are affected by each of the specified
          * events. If no events are specified, the counts of all affected entities are
-         * returned.</p>
+         * returned.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEntityAggregates">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -223,14 +235,18 @@ namespace Model
         /**
          * <p>Returns the number of events of each event type (issue, scheduled change, and
          * account notification). If no filter is specified, the counts of all events in
-         * each category are returned.</p>
+         * each category are returned.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEventAggregates">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeEventAggregatesOutcome DescribeEventAggregates(const Model::DescribeEventAggregatesRequest& request) const;
 
         /**
          * <p>Returns the number of events of each event type (issue, scheduled change, and
          * account notification). If no filter is specified, the counts of all events in
-         * each category are returned.</p>
+         * each category are returned.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEventAggregates">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -239,7 +255,9 @@ namespace Model
         /**
          * <p>Returns the number of events of each event type (issue, scheduled change, and
          * account notification). If no filter is specified, the counts of all events in
-         * each category are returned.</p>
+         * each category are returned.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEventAggregates">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -252,7 +270,9 @@ namespace Model
          * metadata that depends upon the nature of the event. Affected entities are not
          * included; to retrieve those, use the <a>DescribeAffectedEntities</a>
          * operation.</p> <p>If a specified event cannot be retrieved, an error message is
-         * returned for that event.</p>
+         * returned for that event.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEventDetails">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeEventDetailsOutcome DescribeEventDetails(const Model::DescribeEventDetailsRequest& request) const;
 
@@ -263,7 +283,9 @@ namespace Model
          * metadata that depends upon the nature of the event. Affected entities are not
          * included; to retrieve those, use the <a>DescribeAffectedEntities</a>
          * operation.</p> <p>If a specified event cannot be retrieved, an error message is
-         * returned for that event.</p>
+         * returned for that event.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEventDetails">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -276,7 +298,9 @@ namespace Model
          * metadata that depends upon the nature of the event. Affected entities are not
          * included; to retrieve those, use the <a>DescribeAffectedEntities</a>
          * operation.</p> <p>If a specified event cannot be retrieved, an error message is
-         * returned for that event.</p>
+         * returned for that event.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEventDetails">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -285,14 +309,18 @@ namespace Model
         /**
          * <p>Returns the event types that meet the specified filter criteria. If no filter
          * criteria are specified, all event types are returned, in no particular
-         * order.</p>
+         * order.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEventTypes">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeEventTypesOutcome DescribeEventTypes(const Model::DescribeEventTypesRequest& request) const;
 
         /**
          * <p>Returns the event types that meet the specified filter criteria. If no filter
          * criteria are specified, all event types are returned, in no particular
-         * order.</p>
+         * order.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEventTypes">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -301,7 +329,9 @@ namespace Model
         /**
          * <p>Returns the event types that meet the specified filter criteria. If no filter
          * criteria are specified, all event types are returned, in no particular
-         * order.</p>
+         * order.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEventTypes">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -314,7 +344,10 @@ namespace Model
          * affected resources. To retrieve that information, use the
          * <a>DescribeEventDetails</a> and <a>DescribeAffectedEntities</a> operations.</p>
          * <p>If no filter criteria are specified, all events are returned. Results are
-         * sorted by <code>lastModifiedTime</code>, starting with the most recent.</p>
+         * sorted by <code>lastModifiedTime</code>, starting with the most
+         * recent.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEvents">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeEventsOutcome DescribeEvents(const Model::DescribeEventsRequest& request) const;
 
@@ -325,7 +358,10 @@ namespace Model
          * affected resources. To retrieve that information, use the
          * <a>DescribeEventDetails</a> and <a>DescribeAffectedEntities</a> operations.</p>
          * <p>If no filter criteria are specified, all events are returned. Results are
-         * sorted by <code>lastModifiedTime</code>, starting with the most recent.</p>
+         * sorted by <code>lastModifiedTime</code>, starting with the most
+         * recent.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEvents">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -338,7 +374,10 @@ namespace Model
          * affected resources. To retrieve that information, use the
          * <a>DescribeEventDetails</a> and <a>DescribeAffectedEntities</a> operations.</p>
          * <p>If no filter criteria are specified, all events are returned. Results are
-         * sorted by <code>lastModifiedTime</code>, starting with the most recent.</p>
+         * sorted by <code>lastModifiedTime</code>, starting with the most
+         * recent.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEvents">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */

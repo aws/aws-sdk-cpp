@@ -33,7 +33,9 @@ namespace Model
 
   /**
    * <p>A structure containing the Letter of Authorization - Connecting Facility
-   * Assignment (LOA-CFA) for a connection.</p>
+   * Assignment (LOA-CFA) for a connection.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/Loa">AWS
+   * API Reference</a></p>
    */
   class AWS_DIRECTCONNECT_API Loa
   {

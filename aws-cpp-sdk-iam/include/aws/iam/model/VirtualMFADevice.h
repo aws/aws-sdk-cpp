@@ -35,7 +35,10 @@ namespace Model
 {
 
   /**
-   * <p>Contains information about a virtual MFA device.</p>
+   * <p>Contains information about a virtual MFA device.</p><p><h3>See Also:</h3>  
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/VirtualMFADevice">AWS
+   * API Reference</a></p>
    */
   class AWS_IAM_API VirtualMFADevice
   {

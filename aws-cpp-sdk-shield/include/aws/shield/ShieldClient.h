@@ -155,14 +155,18 @@ namespace Model
         /**
          * <p>Enables AWS Shield Advanced for a specific AWS resource. The resource can be
          * an Amazon CloudFront distribution, Elastic Load Balancing load balancer, or an
-         * Amazon Route 53 hosted zone.</p>
+         * Amazon Route 53 hosted zone.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/CreateProtection">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateProtectionOutcome CreateProtection(const Model::CreateProtectionRequest& request) const;
 
         /**
          * <p>Enables AWS Shield Advanced for a specific AWS resource. The resource can be
          * an Amazon CloudFront distribution, Elastic Load Balancing load balancer, or an
-         * Amazon Route 53 hosted zone.</p>
+         * Amazon Route 53 hosted zone.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/CreateProtection">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -171,102 +175,140 @@ namespace Model
         /**
          * <p>Enables AWS Shield Advanced for a specific AWS resource. The resource can be
          * an Amazon CloudFront distribution, Elastic Load Balancing load balancer, or an
-         * Amazon Route 53 hosted zone.</p>
+         * Amazon Route 53 hosted zone.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/CreateProtection">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateProtectionAsync(const Model::CreateProtectionRequest& request, const CreateProtectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Activates AWS Shield Advanced for an account.</p>
+         * <p>Activates AWS Shield Advanced for an account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/CreateSubscription">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateSubscriptionOutcome CreateSubscription(const Model::CreateSubscriptionRequest& request) const;
 
         /**
-         * <p>Activates AWS Shield Advanced for an account.</p>
+         * <p>Activates AWS Shield Advanced for an account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/CreateSubscription">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateSubscriptionOutcomeCallable CreateSubscriptionCallable(const Model::CreateSubscriptionRequest& request) const;
 
         /**
-         * <p>Activates AWS Shield Advanced for an account.</p>
+         * <p>Activates AWS Shield Advanced for an account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/CreateSubscription">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateSubscriptionAsync(const Model::CreateSubscriptionRequest& request, const CreateSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes an AWS Shield Advanced <a>Protection</a>.</p>
+         * <p>Deletes an AWS Shield Advanced <a>Protection</a>.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DeleteProtection">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteProtectionOutcome DeleteProtection(const Model::DeleteProtectionRequest& request) const;
 
         /**
-         * <p>Deletes an AWS Shield Advanced <a>Protection</a>.</p>
+         * <p>Deletes an AWS Shield Advanced <a>Protection</a>.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DeleteProtection">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteProtectionOutcomeCallable DeleteProtectionCallable(const Model::DeleteProtectionRequest& request) const;
 
         /**
-         * <p>Deletes an AWS Shield Advanced <a>Protection</a>.</p>
+         * <p>Deletes an AWS Shield Advanced <a>Protection</a>.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DeleteProtection">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteProtectionAsync(const Model::DeleteProtectionRequest& request, const DeleteProtectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Removes AWS Shield Advanced from an account.</p>
+         * <p>Removes AWS Shield Advanced from an account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DeleteSubscription">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteSubscriptionOutcome DeleteSubscription(const Model::DeleteSubscriptionRequest& request) const;
 
         /**
-         * <p>Removes AWS Shield Advanced from an account.</p>
+         * <p>Removes AWS Shield Advanced from an account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DeleteSubscription">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteSubscriptionOutcomeCallable DeleteSubscriptionCallable(const Model::DeleteSubscriptionRequest& request) const;
 
         /**
-         * <p>Removes AWS Shield Advanced from an account.</p>
+         * <p>Removes AWS Shield Advanced from an account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DeleteSubscription">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteSubscriptionAsync(const Model::DeleteSubscriptionRequest& request, const DeleteSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes the details of a DDoS attack. </p>
+         * <p>Describes the details of a DDoS attack. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DescribeAttack">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeAttackOutcome DescribeAttack(const Model::DescribeAttackRequest& request) const;
 
         /**
-         * <p>Describes the details of a DDoS attack. </p>
+         * <p>Describes the details of a DDoS attack. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DescribeAttack">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeAttackOutcomeCallable DescribeAttackCallable(const Model::DescribeAttackRequest& request) const;
 
         /**
-         * <p>Describes the details of a DDoS attack. </p>
+         * <p>Describes the details of a DDoS attack. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DescribeAttack">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeAttackAsync(const Model::DescribeAttackRequest& request, const DescribeAttackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the details of a <a>Protection</a> object.</p>
+         * <p>Lists the details of a <a>Protection</a> object.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DescribeProtection">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeProtectionOutcome DescribeProtection(const Model::DescribeProtectionRequest& request) const;
 
         /**
-         * <p>Lists the details of a <a>Protection</a> object.</p>
+         * <p>Lists the details of a <a>Protection</a> object.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DescribeProtection">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeProtectionOutcomeCallable DescribeProtectionCallable(const Model::DescribeProtectionRequest& request) const;
 
         /**
-         * <p>Lists the details of a <a>Protection</a> object.</p>
+         * <p>Lists the details of a <a>Protection</a> object.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DescribeProtection">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -274,13 +316,17 @@ namespace Model
 
         /**
          * <p>Provides details about the AWS Shield Advanced subscription for an
-         * account.</p>
+         * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DescribeSubscription">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeSubscriptionOutcome DescribeSubscription(const Model::DescribeSubscriptionRequest& request) const;
 
         /**
          * <p>Provides details about the AWS Shield Advanced subscription for an
-         * account.</p>
+         * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DescribeSubscription">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -288,7 +334,9 @@ namespace Model
 
         /**
          * <p>Provides details about the AWS Shield Advanced subscription for an
-         * account.</p>
+         * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DescribeSubscription">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -296,13 +344,17 @@ namespace Model
 
         /**
          * <p>Returns all ongoing DDoS attacks or all DDoS attacks during a specified time
-         * period.</p>
+         * period.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/ListAttacks">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListAttacksOutcome ListAttacks(const Model::ListAttacksRequest& request) const;
 
         /**
          * <p>Returns all ongoing DDoS attacks or all DDoS attacks during a specified time
-         * period.</p>
+         * period.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/ListAttacks">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -310,26 +362,37 @@ namespace Model
 
         /**
          * <p>Returns all ongoing DDoS attacks or all DDoS attacks during a specified time
-         * period.</p>
+         * period.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/ListAttacks">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListAttacksAsync(const Model::ListAttacksRequest& request, const ListAttacksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists all <a>Protection</a> objects for the account.</p>
+         * <p>Lists all <a>Protection</a> objects for the account.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/ListProtections">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListProtectionsOutcome ListProtections(const Model::ListProtectionsRequest& request) const;
 
         /**
-         * <p>Lists all <a>Protection</a> objects for the account.</p>
+         * <p>Lists all <a>Protection</a> objects for the account.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/ListProtections">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListProtectionsOutcomeCallable ListProtectionsCallable(const Model::ListProtectionsRequest& request) const;
 
         /**
-         * <p>Lists all <a>Protection</a> objects for the account.</p>
+         * <p>Lists all <a>Protection</a> objects for the account.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/ListProtections">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */

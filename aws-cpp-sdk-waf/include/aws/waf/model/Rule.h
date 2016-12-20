@@ -43,7 +43,9 @@ namespace Model
    * <code>User-Agent</code> header is <code>BadBot</code>.</p> </li> </ul> <p>To
    * match the settings in this <code>Rule</code>, a request must originate from
    * <code>192.0.2.44</code> AND include a <code>User-Agent</code> header for which
-   * the value is <code>BadBot</code>.</p>
+   * the value is <code>BadBot</code>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/Rule">AWS API
+   * Reference</a></p>
    */
   class AWS_WAF_API Rule
   {

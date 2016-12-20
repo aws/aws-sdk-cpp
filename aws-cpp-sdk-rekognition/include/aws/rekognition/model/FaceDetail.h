@@ -44,7 +44,10 @@ namespace Model
 {
 
   /**
-   * <p>Structure containing attributes of the face that the algorithm detected.</p>
+   * <p>Structure containing attributes of the face that the algorithm
+   * detected.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/FaceDetail">AWS
+   * API Reference</a></p>
    */
   class AWS_REKOGNITION_API FaceDetail
   {

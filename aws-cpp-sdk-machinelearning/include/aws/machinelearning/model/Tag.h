@@ -32,7 +32,9 @@ namespace Model
 
   /**
    * <p>A custom key-value pair associated with an ML object, such as an ML
-   * model.</p>
+   * model.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/Tag">AWS
+   * API Reference</a></p>
    */
   class AWS_MACHINELEARNING_API Tag
   {

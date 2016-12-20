@@ -36,7 +36,10 @@ namespace Model
 {
   /**
    * <p>Represents a list of data points. This list contains aggregated data from the
-   * previous two weeks of your sending activity with Amazon SES.</p>
+   * previous two weeks of your sending activity with Amazon SES.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetSendStatisticsResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_SES_API GetSendStatisticsResult
   {

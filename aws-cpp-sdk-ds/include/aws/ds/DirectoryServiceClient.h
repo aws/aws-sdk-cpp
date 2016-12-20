@@ -304,7 +304,9 @@ namespace Model
          * what permissions are required to run the <i>AddIpRoutes</i> operation, see <a
          * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html">AWS
          * Directory Service API Permissions: Actions, Resources, and Conditions
-         * Reference</a>.</p>
+         * Reference</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/AddIpRoutes">AWS API
+         * Reference</a></p>
          */
         virtual Model::AddIpRoutesOutcome AddIpRoutes(const Model::AddIpRoutesRequest& request) const;
 
@@ -319,7 +321,9 @@ namespace Model
          * what permissions are required to run the <i>AddIpRoutes</i> operation, see <a
          * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html">AWS
          * Directory Service API Permissions: Actions, Resources, and Conditions
-         * Reference</a>.</p>
+         * Reference</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/AddIpRoutes">AWS API
+         * Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -336,7 +340,9 @@ namespace Model
          * what permissions are required to run the <i>AddIpRoutes</i> operation, see <a
          * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html">AWS
          * Directory Service API Permissions: Actions, Resources, and Conditions
-         * Reference</a>.</p>
+         * Reference</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/AddIpRoutes">AWS API
+         * Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -346,7 +352,9 @@ namespace Model
          * <p>Adds or overwrites one or more tags for the specified Amazon Directory
          * Services directory. Each directory can have a maximum of 50 tags. Each tag
          * consists of a key and optional value. Tag keys must be unique to each
-         * resource.</p>
+         * resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/AddTagsToResource">AWS
+         * API Reference</a></p>
          */
         virtual Model::AddTagsToResourceOutcome AddTagsToResource(const Model::AddTagsToResourceRequest& request) const;
 
@@ -354,7 +362,9 @@ namespace Model
          * <p>Adds or overwrites one or more tags for the specified Amazon Directory
          * Services directory. Each directory can have a maximum of 50 tags. Each tag
          * consists of a key and optional value. Tag keys must be unique to each
-         * resource.</p>
+         * resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/AddTagsToResource">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -364,7 +374,9 @@ namespace Model
          * <p>Adds or overwrites one or more tags for the specified Amazon Directory
          * Services directory. Each directory can have a maximum of 50 tags. Each tag
          * consists of a key and optional value. Tag keys must be unique to each
-         * resource.</p>
+         * resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/AddTagsToResource">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -375,7 +387,9 @@ namespace Model
          * schema extension has started replicating to all domain controllers, the task can
          * no longer be canceled. A schema extension can be canceled during any of the
          * following states; <code>Initializing</code>, <code>CreatingSnapshot</code>, and
-         * <code>UpdatingSchema</code>.</p>
+         * <code>UpdatingSchema</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CancelSchemaExtension">AWS
+         * API Reference</a></p>
          */
         virtual Model::CancelSchemaExtensionOutcome CancelSchemaExtension(const Model::CancelSchemaExtensionRequest& request) const;
 
@@ -384,7 +398,9 @@ namespace Model
          * schema extension has started replicating to all domain controllers, the task can
          * no longer be canceled. A schema extension can be canceled during any of the
          * following states; <code>Initializing</code>, <code>CreatingSnapshot</code>, and
-         * <code>UpdatingSchema</code>.</p>
+         * <code>UpdatingSchema</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CancelSchemaExtension">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -395,7 +411,9 @@ namespace Model
          * schema extension has started replicating to all domain controllers, the task can
          * no longer be canceled. A schema extension can be canceled during any of the
          * following states; <code>Initializing</code>, <code>CreatingSnapshot</code>, and
-         * <code>UpdatingSchema</code>.</p>
+         * <code>UpdatingSchema</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CancelSchemaExtension">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -408,7 +426,9 @@ namespace Model
          * permissions are required to run the <i>ConnectDirectory</i> operation, see <a
          * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html">AWS
          * Directory Service API Permissions: Actions, Resources, and Conditions
-         * Reference</a>.</p>
+         * Reference</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ConnectDirectory">AWS
+         * API Reference</a></p>
          */
         virtual Model::ConnectDirectoryOutcome ConnectDirectory(const Model::ConnectDirectoryRequest& request) const;
 
@@ -419,7 +439,9 @@ namespace Model
          * permissions are required to run the <i>ConnectDirectory</i> operation, see <a
          * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html">AWS
          * Directory Service API Permissions: Actions, Resources, and Conditions
-         * Reference</a>.</p>
+         * Reference</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ConnectDirectory">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -432,7 +454,9 @@ namespace Model
          * permissions are required to run the <i>ConnectDirectory</i> operation, see <a
          * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html">AWS
          * Directory Service API Permissions: Actions, Resources, and Conditions
-         * Reference</a>.</p>
+         * Reference</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ConnectDirectory">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -443,7 +467,9 @@ namespace Model
          * alias is used to construct the access URL for the directory, such as
          * <code>http://&lt;alias&gt;.awsapps.com</code>.</p> <important> <p>After an alias
          * has been created, it cannot be deleted or reused, so this operation should only
-         * be used when absolutely necessary.</p> </important>
+         * be used when absolutely necessary.</p> </important><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateAlias">AWS API
+         * Reference</a></p>
          */
         virtual Model::CreateAliasOutcome CreateAlias(const Model::CreateAliasRequest& request) const;
 
@@ -452,7 +478,9 @@ namespace Model
          * alias is used to construct the access URL for the directory, such as
          * <code>http://&lt;alias&gt;.awsapps.com</code>.</p> <important> <p>After an alias
          * has been created, it cannot be deleted or reused, so this operation should only
-         * be used when absolutely necessary.</p> </important>
+         * be used when absolutely necessary.</p> </important><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateAlias">AWS API
+         * Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -463,7 +491,9 @@ namespace Model
          * alias is used to construct the access URL for the directory, such as
          * <code>http://&lt;alias&gt;.awsapps.com</code>.</p> <important> <p>After an alias
          * has been created, it cannot be deleted or reused, so this operation should only
-         * be used when absolutely necessary.</p> </important>
+         * be used when absolutely necessary.</p> </important><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateAlias">AWS API
+         * Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -471,13 +501,17 @@ namespace Model
 
         /**
          * <p>Creates a computer account in the specified directory, and joins the computer
-         * to the directory.</p>
+         * to the directory.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateComputer">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateComputerOutcome CreateComputer(const Model::CreateComputerRequest& request) const;
 
         /**
          * <p>Creates a computer account in the specified directory, and joins the computer
-         * to the directory.</p>
+         * to the directory.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateComputer">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -485,7 +519,9 @@ namespace Model
 
         /**
          * <p>Creates a computer account in the specified directory, and joins the computer
-         * to the directory.</p>
+         * to the directory.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateComputer">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -494,14 +530,20 @@ namespace Model
         /**
          * <p>Creates a conditional forwarder associated with your AWS directory.
          * Conditional forwarders are required in order to set up a trust relationship with
-         * another domain. The conditional forwarder points to the trusted domain.</p>
+         * another domain. The conditional forwarder points to the trusted
+         * domain.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateConditionalForwarder">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateConditionalForwarderOutcome CreateConditionalForwarder(const Model::CreateConditionalForwarderRequest& request) const;
 
         /**
          * <p>Creates a conditional forwarder associated with your AWS directory.
          * Conditional forwarders are required in order to set up a trust relationship with
-         * another domain. The conditional forwarder points to the trusted domain.</p>
+         * another domain. The conditional forwarder points to the trusted
+         * domain.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateConditionalForwarder">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -510,7 +552,10 @@ namespace Model
         /**
          * <p>Creates a conditional forwarder associated with your AWS directory.
          * Conditional forwarders are required in order to set up a trust relationship with
-         * another domain. The conditional forwarder points to the trusted domain.</p>
+         * another domain. The conditional forwarder points to the trusted
+         * domain.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateConditionalForwarder">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -523,7 +568,9 @@ namespace Model
          * <i>CreateDirectory</i> operation, see <a
          * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html">AWS
          * Directory Service API Permissions: Actions, Resources, and Conditions
-         * Reference</a>.</p>
+         * Reference</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateDirectory">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateDirectoryOutcome CreateDirectory(const Model::CreateDirectoryRequest& request) const;
 
@@ -534,7 +581,9 @@ namespace Model
          * <i>CreateDirectory</i> operation, see <a
          * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html">AWS
          * Directory Service API Permissions: Actions, Resources, and Conditions
-         * Reference</a>.</p>
+         * Reference</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateDirectory">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -547,7 +596,9 @@ namespace Model
          * <i>CreateDirectory</i> operation, see <a
          * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html">AWS
          * Directory Service API Permissions: Actions, Resources, and Conditions
-         * Reference</a>.</p>
+         * Reference</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateDirectory">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -560,7 +611,9 @@ namespace Model
          * required to run the <i>CreateMicrosoftAD</i> operation, see <a
          * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html">AWS
          * Directory Service API Permissions: Actions, Resources, and Conditions
-         * Reference</a>.</p>
+         * Reference</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateMicrosoftAD">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateMicrosoftADOutcome CreateMicrosoftAD(const Model::CreateMicrosoftADRequest& request) const;
 
@@ -571,7 +624,9 @@ namespace Model
          * required to run the <i>CreateMicrosoftAD</i> operation, see <a
          * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html">AWS
          * Directory Service API Permissions: Actions, Resources, and Conditions
-         * Reference</a>.</p>
+         * Reference</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateMicrosoftAD">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -584,7 +639,9 @@ namespace Model
          * required to run the <i>CreateMicrosoftAD</i> operation, see <a
          * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html">AWS
          * Directory Service API Permissions: Actions, Resources, and Conditions
-         * Reference</a>.</p>
+         * Reference</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateMicrosoftAD">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -593,14 +650,18 @@ namespace Model
         /**
          * <p>Creates a snapshot of a Simple AD or Microsoft AD directory in the AWS
          * cloud.</p> <note> <p>You cannot take snapshots of AD Connector directories.</p>
-         * </note>
+         * </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateSnapshot">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateSnapshotOutcome CreateSnapshot(const Model::CreateSnapshotRequest& request) const;
 
         /**
          * <p>Creates a snapshot of a Simple AD or Microsoft AD directory in the AWS
          * cloud.</p> <note> <p>You cannot take snapshots of AD Connector directories.</p>
-         * </note>
+         * </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateSnapshot">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -609,7 +670,9 @@ namespace Model
         /**
          * <p>Creates a snapshot of a Simple AD or Microsoft AD directory in the AWS
          * cloud.</p> <note> <p>You cannot take snapshots of AD Connector directories.</p>
-         * </note>
+         * </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateSnapshot">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -622,7 +685,9 @@ namespace Model
          * Directory. This would allow you to provide users and groups access to resources
          * in either domain, with a single set of credentials.</p> <p>This action initiates
          * the creation of the AWS side of a trust relationship between a Microsoft AD in
-         * the AWS cloud and an external domain.</p>
+         * the AWS cloud and an external domain.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateTrust">AWS API
+         * Reference</a></p>
          */
         virtual Model::CreateTrustOutcome CreateTrust(const Model::CreateTrustRequest& request) const;
 
@@ -633,7 +698,9 @@ namespace Model
          * Directory. This would allow you to provide users and groups access to resources
          * in either domain, with a single set of credentials.</p> <p>This action initiates
          * the creation of the AWS side of a trust relationship between a Microsoft AD in
-         * the AWS cloud and an external domain.</p>
+         * the AWS cloud and an external domain.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateTrust">AWS API
+         * Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -646,7 +713,9 @@ namespace Model
          * Directory. This would allow you to provide users and groups access to resources
          * in either domain, with a single set of credentials.</p> <p>This action initiates
          * the creation of the AWS side of a trust relationship between a Microsoft AD in
-         * the AWS cloud and an external domain.</p>
+         * the AWS cloud and an external domain.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateTrust">AWS API
+         * Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -654,13 +723,17 @@ namespace Model
 
         /**
          * <p>Deletes a conditional forwarder that has been set up for your AWS
-         * directory.</p>
+         * directory.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeleteConditionalForwarder">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteConditionalForwarderOutcome DeleteConditionalForwarder(const Model::DeleteConditionalForwarderRequest& request) const;
 
         /**
          * <p>Deletes a conditional forwarder that has been set up for your AWS
-         * directory.</p>
+         * directory.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeleteConditionalForwarder">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -668,7 +741,9 @@ namespace Model
 
         /**
          * <p>Deletes a conditional forwarder that has been set up for your AWS
-         * directory.</p>
+         * directory.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeleteConditionalForwarder">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -681,7 +756,9 @@ namespace Model
          * required to run the <i>DeleteDirectory</i> operation, see <a
          * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html">AWS
          * Directory Service API Permissions: Actions, Resources, and Conditions
-         * Reference</a>.</p>
+         * Reference</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeleteDirectory">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteDirectoryOutcome DeleteDirectory(const Model::DeleteDirectoryRequest& request) const;
 
@@ -692,7 +769,9 @@ namespace Model
          * required to run the <i>DeleteDirectory</i> operation, see <a
          * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html">AWS
          * Directory Service API Permissions: Actions, Resources, and Conditions
-         * Reference</a>.</p>
+         * Reference</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeleteDirectory">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -705,26 +784,34 @@ namespace Model
          * required to run the <i>DeleteDirectory</i> operation, see <a
          * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html">AWS
          * Directory Service API Permissions: Actions, Resources, and Conditions
-         * Reference</a>.</p>
+         * Reference</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeleteDirectory">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteDirectoryAsync(const Model::DeleteDirectoryRequest& request, const DeleteDirectoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a directory snapshot.</p>
+         * <p>Deletes a directory snapshot.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeleteSnapshot">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteSnapshotOutcome DeleteSnapshot(const Model::DeleteSnapshotRequest& request) const;
 
         /**
-         * <p>Deletes a directory snapshot.</p>
+         * <p>Deletes a directory snapshot.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeleteSnapshot">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteSnapshotOutcomeCallable DeleteSnapshotCallable(const Model::DeleteSnapshotRequest& request) const;
 
         /**
-         * <p>Deletes a directory snapshot.</p>
+         * <p>Deletes a directory snapshot.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeleteSnapshot">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -732,13 +819,17 @@ namespace Model
 
         /**
          * <p>Deletes an existing trust relationship between your Microsoft AD in the AWS
-         * cloud and an external domain.</p>
+         * cloud and an external domain.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeleteTrust">AWS API
+         * Reference</a></p>
          */
         virtual Model::DeleteTrustOutcome DeleteTrust(const Model::DeleteTrustRequest& request) const;
 
         /**
          * <p>Deletes an existing trust relationship between your Microsoft AD in the AWS
-         * cloud and an external domain.</p>
+         * cloud and an external domain.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeleteTrust">AWS API
+         * Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -746,7 +837,9 @@ namespace Model
 
         /**
          * <p>Deletes an existing trust relationship between your Microsoft AD in the AWS
-         * cloud and an external domain.</p>
+         * cloud and an external domain.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeleteTrust">AWS API
+         * Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -754,13 +847,17 @@ namespace Model
 
         /**
          * <p>Removes the specified directory as a publisher to the specified SNS
-         * topic.</p>
+         * topic.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeregisterEventTopic">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeregisterEventTopicOutcome DeregisterEventTopic(const Model::DeregisterEventTopicRequest& request) const;
 
         /**
          * <p>Removes the specified directory as a publisher to the specified SNS
-         * topic.</p>
+         * topic.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeregisterEventTopic">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -768,7 +865,9 @@ namespace Model
 
         /**
          * <p>Removes the specified directory as a publisher to the specified SNS
-         * topic.</p>
+         * topic.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeregisterEventTopic">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -777,14 +876,20 @@ namespace Model
         /**
          * <p>Obtains information about the conditional forwarders for this account.</p>
          * <p>If no input parameters are provided for RemoteDomainNames, this request
-         * describes all conditional forwarders for the specified directory ID.</p>
+         * describes all conditional forwarders for the specified directory
+         * ID.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeConditionalForwarders">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeConditionalForwardersOutcome DescribeConditionalForwarders(const Model::DescribeConditionalForwardersRequest& request) const;
 
         /**
          * <p>Obtains information about the conditional forwarders for this account.</p>
          * <p>If no input parameters are provided for RemoteDomainNames, this request
-         * describes all conditional forwarders for the specified directory ID.</p>
+         * describes all conditional forwarders for the specified directory
+         * ID.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeConditionalForwarders">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -793,7 +898,10 @@ namespace Model
         /**
          * <p>Obtains information about the conditional forwarders for this account.</p>
          * <p>If no input parameters are provided for RemoteDomainNames, this request
-         * describes all conditional forwarders for the specified directory ID.</p>
+         * describes all conditional forwarders for the specified directory
+         * ID.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeConditionalForwarders">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -809,7 +917,9 @@ namespace Model
          * <i>DescribeDirectoriesResult.NextToken</i> member contains a token that you pass
          * in the next call to <a>DescribeDirectories</a> to retrieve the next set of
          * items.</p> <p>You can also specify a maximum number of return results with the
-         * <i>Limit</i> parameter.</p>
+         * <i>Limit</i> parameter.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeDirectories">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeDirectoriesOutcome DescribeDirectories(const Model::DescribeDirectoriesRequest& request) const;
 
@@ -823,7 +933,9 @@ namespace Model
          * <i>DescribeDirectoriesResult.NextToken</i> member contains a token that you pass
          * in the next call to <a>DescribeDirectories</a> to retrieve the next set of
          * items.</p> <p>You can also specify a maximum number of return results with the
-         * <i>Limit</i> parameter.</p>
+         * <i>Limit</i> parameter.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeDirectories">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -839,7 +951,9 @@ namespace Model
          * <i>DescribeDirectoriesResult.NextToken</i> member contains a token that you pass
          * in the next call to <a>DescribeDirectories</a> to retrieve the next set of
          * items.</p> <p>You can also specify a maximum number of return results with the
-         * <i>Limit</i> parameter.</p>
+         * <i>Limit</i> parameter.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeDirectories">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -849,7 +963,9 @@ namespace Model
          * <p>Obtains information about which SNS topics receive status messages from the
          * specified directory.</p> <p>If no input parameters are provided, such as
          * DirectoryId or TopicName, this request describes all of the associations in the
-         * account.</p>
+         * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeEventTopics">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeEventTopicsOutcome DescribeEventTopics(const Model::DescribeEventTopicsRequest& request) const;
 
@@ -857,7 +973,9 @@ namespace Model
          * <p>Obtains information about which SNS topics receive status messages from the
          * specified directory.</p> <p>If no input parameters are provided, such as
          * DirectoryId or TopicName, this request describes all of the associations in the
-         * account.</p>
+         * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeEventTopics">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -867,7 +985,9 @@ namespace Model
          * <p>Obtains information about which SNS topics receive status messages from the
          * specified directory.</p> <p>If no input parameters are provided, such as
          * DirectoryId or TopicName, this request describes all of the associations in the
-         * account.</p>
+         * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeEventTopics">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -880,7 +1000,9 @@ namespace Model
          * the <i>DescribeSnapshots.NextToken</i> member contains a token that you pass in
          * the next call to <a>DescribeSnapshots</a> to retrieve the next set of items.</p>
          * <p>You can also specify a maximum number of return results with the <i>Limit</i>
-         * parameter.</p>
+         * parameter.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeSnapshots">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeSnapshotsOutcome DescribeSnapshots(const Model::DescribeSnapshotsRequest& request) const;
 
@@ -891,7 +1013,9 @@ namespace Model
          * the <i>DescribeSnapshots.NextToken</i> member contains a token that you pass in
          * the next call to <a>DescribeSnapshots</a> to retrieve the next set of items.</p>
          * <p>You can also specify a maximum number of return results with the <i>Limit</i>
-         * parameter.</p>
+         * parameter.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeSnapshots">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -904,7 +1028,9 @@ namespace Model
          * the <i>DescribeSnapshots.NextToken</i> member contains a token that you pass in
          * the next call to <a>DescribeSnapshots</a> to retrieve the next set of items.</p>
          * <p>You can also specify a maximum number of return results with the <i>Limit</i>
-         * parameter.</p>
+         * parameter.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeSnapshots">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -913,14 +1039,20 @@ namespace Model
         /**
          * <p>Obtains information about the trust relationships for this account.</p> <p>If
          * no input parameters are provided, such as DirectoryId or TrustIds, this request
-         * describes all the trust relationships belonging to the account.</p>
+         * describes all the trust relationships belonging to the account.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeTrusts">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeTrustsOutcome DescribeTrusts(const Model::DescribeTrustsRequest& request) const;
 
         /**
          * <p>Obtains information about the trust relationships for this account.</p> <p>If
          * no input parameters are provided, such as DirectoryId or TrustIds, this request
-         * describes all the trust relationships belonging to the account.</p>
+         * describes all the trust relationships belonging to the account.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeTrusts">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -929,7 +1061,10 @@ namespace Model
         /**
          * <p>Obtains information about the trust relationships for this account.</p> <p>If
          * no input parameters are provided, such as DirectoryId or TrustIds, this request
-         * describes all the trust relationships belonging to the account.</p>
+         * describes all the trust relationships belonging to the account.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeTrusts">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -937,13 +1072,19 @@ namespace Model
 
         /**
          * <p>Disables multi-factor authentication (MFA) with the Remote Authentication
-         * Dial In User Service (RADIUS) server for an AD Connector directory.</p>
+         * Dial In User Service (RADIUS) server for an AD Connector
+         * directory.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DisableRadius">AWS
+         * API Reference</a></p>
          */
         virtual Model::DisableRadiusOutcome DisableRadius(const Model::DisableRadiusRequest& request) const;
 
         /**
          * <p>Disables multi-factor authentication (MFA) with the Remote Authentication
-         * Dial In User Service (RADIUS) server for an AD Connector directory.</p>
+         * Dial In User Service (RADIUS) server for an AD Connector
+         * directory.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DisableRadius">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -951,26 +1092,35 @@ namespace Model
 
         /**
          * <p>Disables multi-factor authentication (MFA) with the Remote Authentication
-         * Dial In User Service (RADIUS) server for an AD Connector directory.</p>
+         * Dial In User Service (RADIUS) server for an AD Connector
+         * directory.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DisableRadius">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DisableRadiusAsync(const Model::DisableRadiusRequest& request, const DisableRadiusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Disables single-sign on for a directory.</p>
+         * <p>Disables single-sign on for a directory.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DisableSso">AWS API
+         * Reference</a></p>
          */
         virtual Model::DisableSsoOutcome DisableSso(const Model::DisableSsoRequest& request) const;
 
         /**
-         * <p>Disables single-sign on for a directory.</p>
+         * <p>Disables single-sign on for a directory.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DisableSso">AWS API
+         * Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DisableSsoOutcomeCallable DisableSsoCallable(const Model::DisableSsoRequest& request) const;
 
         /**
-         * <p>Disables single-sign on for a directory.</p>
+         * <p>Disables single-sign on for a directory.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DisableSso">AWS API
+         * Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -978,13 +1128,19 @@ namespace Model
 
         /**
          * <p>Enables multi-factor authentication (MFA) with the Remote Authentication Dial
-         * In User Service (RADIUS) server for an AD Connector directory.</p>
+         * In User Service (RADIUS) server for an AD Connector directory.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/EnableRadius">AWS API
+         * Reference</a></p>
          */
         virtual Model::EnableRadiusOutcome EnableRadius(const Model::EnableRadiusRequest& request) const;
 
         /**
          * <p>Enables multi-factor authentication (MFA) with the Remote Authentication Dial
-         * In User Service (RADIUS) server for an AD Connector directory.</p>
+         * In User Service (RADIUS) server for an AD Connector directory.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/EnableRadius">AWS API
+         * Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -992,121 +1148,175 @@ namespace Model
 
         /**
          * <p>Enables multi-factor authentication (MFA) with the Remote Authentication Dial
-         * In User Service (RADIUS) server for an AD Connector directory.</p>
+         * In User Service (RADIUS) server for an AD Connector directory.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/EnableRadius">AWS API
+         * Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void EnableRadiusAsync(const Model::EnableRadiusRequest& request, const EnableRadiusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Enables single-sign on for a directory.</p>
+         * <p>Enables single-sign on for a directory.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/EnableSso">AWS API
+         * Reference</a></p>
          */
         virtual Model::EnableSsoOutcome EnableSso(const Model::EnableSsoRequest& request) const;
 
         /**
-         * <p>Enables single-sign on for a directory.</p>
+         * <p>Enables single-sign on for a directory.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/EnableSso">AWS API
+         * Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::EnableSsoOutcomeCallable EnableSsoCallable(const Model::EnableSsoRequest& request) const;
 
         /**
-         * <p>Enables single-sign on for a directory.</p>
+         * <p>Enables single-sign on for a directory.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/EnableSso">AWS API
+         * Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void EnableSsoAsync(const Model::EnableSsoRequest& request, const EnableSsoResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Obtains directory limit information for the current region.</p>
+         * <p>Obtains directory limit information for the current region.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/GetDirectoryLimits">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetDirectoryLimitsOutcome GetDirectoryLimits(const Model::GetDirectoryLimitsRequest& request) const;
 
         /**
-         * <p>Obtains directory limit information for the current region.</p>
+         * <p>Obtains directory limit information for the current region.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/GetDirectoryLimits">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetDirectoryLimitsOutcomeCallable GetDirectoryLimitsCallable(const Model::GetDirectoryLimitsRequest& request) const;
 
         /**
-         * <p>Obtains directory limit information for the current region.</p>
+         * <p>Obtains directory limit information for the current region.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/GetDirectoryLimits">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetDirectoryLimitsAsync(const Model::GetDirectoryLimitsRequest& request, const GetDirectoryLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Obtains the manual snapshot limits for a directory.</p>
+         * <p>Obtains the manual snapshot limits for a directory.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/GetSnapshotLimits">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetSnapshotLimitsOutcome GetSnapshotLimits(const Model::GetSnapshotLimitsRequest& request) const;
 
         /**
-         * <p>Obtains the manual snapshot limits for a directory.</p>
+         * <p>Obtains the manual snapshot limits for a directory.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/GetSnapshotLimits">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetSnapshotLimitsOutcomeCallable GetSnapshotLimitsCallable(const Model::GetSnapshotLimitsRequest& request) const;
 
         /**
-         * <p>Obtains the manual snapshot limits for a directory.</p>
+         * <p>Obtains the manual snapshot limits for a directory.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/GetSnapshotLimits">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetSnapshotLimitsAsync(const Model::GetSnapshotLimitsRequest& request, const GetSnapshotLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the address blocks that you have added to a directory.</p>
+         * <p>Lists the address blocks that you have added to a directory.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ListIpRoutes">AWS API
+         * Reference</a></p>
          */
         virtual Model::ListIpRoutesOutcome ListIpRoutes(const Model::ListIpRoutesRequest& request) const;
 
         /**
-         * <p>Lists the address blocks that you have added to a directory.</p>
+         * <p>Lists the address blocks that you have added to a directory.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ListIpRoutes">AWS API
+         * Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListIpRoutesOutcomeCallable ListIpRoutesCallable(const Model::ListIpRoutesRequest& request) const;
 
         /**
-         * <p>Lists the address blocks that you have added to a directory.</p>
+         * <p>Lists the address blocks that you have added to a directory.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ListIpRoutes">AWS API
+         * Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListIpRoutesAsync(const Model::ListIpRoutesRequest& request, const ListIpRoutesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists all schema extensions applied to a Microsoft AD Directory.</p>
+         * <p>Lists all schema extensions applied to a Microsoft AD
+         * Directory.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ListSchemaExtensions">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListSchemaExtensionsOutcome ListSchemaExtensions(const Model::ListSchemaExtensionsRequest& request) const;
 
         /**
-         * <p>Lists all schema extensions applied to a Microsoft AD Directory.</p>
+         * <p>Lists all schema extensions applied to a Microsoft AD
+         * Directory.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ListSchemaExtensions">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListSchemaExtensionsOutcomeCallable ListSchemaExtensionsCallable(const Model::ListSchemaExtensionsRequest& request) const;
 
         /**
-         * <p>Lists all schema extensions applied to a Microsoft AD Directory.</p>
+         * <p>Lists all schema extensions applied to a Microsoft AD
+         * Directory.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ListSchemaExtensions">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListSchemaExtensionsAsync(const Model::ListSchemaExtensionsRequest& request, const ListSchemaExtensionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists all tags on an Amazon Directory Services directory.</p>
+         * <p>Lists all tags on an Amazon Directory Services directory.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ListTagsForResource">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p>Lists all tags on an Amazon Directory Services directory.</p>
+         * <p>Lists all tags on an Amazon Directory Services directory.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ListTagsForResource">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p>Lists all tags on an Amazon Directory Services directory.</p>
+         * <p>Lists all tags on an Amazon Directory Services directory.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ListTagsForResource">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1117,7 +1327,10 @@ namespace Model
          * publisher to the specified SNS topic. You can then receive email or text (SMS)
          * messages when the status of your directory changes. You get notified if your
          * directory goes from an Active status to an Impaired or Inoperable status. You
-         * also receive a notification when the directory returns to an Active status.</p>
+         * also receive a notification when the directory returns to an Active
+         * status.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RegisterEventTopic">AWS
+         * API Reference</a></p>
          */
         virtual Model::RegisterEventTopicOutcome RegisterEventTopic(const Model::RegisterEventTopicRequest& request) const;
 
@@ -1126,7 +1339,10 @@ namespace Model
          * publisher to the specified SNS topic. You can then receive email or text (SMS)
          * messages when the status of your directory changes. You get notified if your
          * directory goes from an Active status to an Impaired or Inoperable status. You
-         * also receive a notification when the directory returns to an Active status.</p>
+         * also receive a notification when the directory returns to an Active
+         * status.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RegisterEventTopic">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1137,45 +1353,63 @@ namespace Model
          * publisher to the specified SNS topic. You can then receive email or text (SMS)
          * messages when the status of your directory changes. You get notified if your
          * directory goes from an Active status to an Impaired or Inoperable status. You
-         * also receive a notification when the directory returns to an Active status.</p>
+         * also receive a notification when the directory returns to an Active
+         * status.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RegisterEventTopic">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void RegisterEventTopicAsync(const Model::RegisterEventTopicRequest& request, const RegisterEventTopicResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Removes IP address blocks from a directory.</p>
+         * <p>Removes IP address blocks from a directory.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RemoveIpRoutes">AWS
+         * API Reference</a></p>
          */
         virtual Model::RemoveIpRoutesOutcome RemoveIpRoutes(const Model::RemoveIpRoutesRequest& request) const;
 
         /**
-         * <p>Removes IP address blocks from a directory.</p>
+         * <p>Removes IP address blocks from a directory.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RemoveIpRoutes">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::RemoveIpRoutesOutcomeCallable RemoveIpRoutesCallable(const Model::RemoveIpRoutesRequest& request) const;
 
         /**
-         * <p>Removes IP address blocks from a directory.</p>
+         * <p>Removes IP address blocks from a directory.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RemoveIpRoutes">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void RemoveIpRoutesAsync(const Model::RemoveIpRoutesRequest& request, const RemoveIpRoutesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Removes tags from an Amazon Directory Services directory.</p>
+         * <p>Removes tags from an Amazon Directory Services directory.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RemoveTagsFromResource">AWS
+         * API Reference</a></p>
          */
         virtual Model::RemoveTagsFromResourceOutcome RemoveTagsFromResource(const Model::RemoveTagsFromResourceRequest& request) const;
 
         /**
-         * <p>Removes tags from an Amazon Directory Services directory.</p>
+         * <p>Removes tags from an Amazon Directory Services directory.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RemoveTagsFromResource">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::RemoveTagsFromResourceOutcomeCallable RemoveTagsFromResourceCallable(const Model::RemoveTagsFromResourceRequest& request) const;
 
         /**
-         * <p>Removes tags from an Amazon Directory Services directory.</p>
+         * <p>Removes tags from an Amazon Directory Services directory.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RemoveTagsFromResource">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1188,7 +1422,9 @@ namespace Model
          * operation is initiated. You can monitor the progress of the restore operation by
          * calling the <a>DescribeDirectories</a> operation with the directory identifier.
          * When the <b>DirectoryDescription.Stage</b> value changes to <code>Active</code>,
-         * the restore operation is complete.</p>
+         * the restore operation is complete.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RestoreFromSnapshot">AWS
+         * API Reference</a></p>
          */
         virtual Model::RestoreFromSnapshotOutcome RestoreFromSnapshot(const Model::RestoreFromSnapshotRequest& request) const;
 
@@ -1199,7 +1435,9 @@ namespace Model
          * operation is initiated. You can monitor the progress of the restore operation by
          * calling the <a>DescribeDirectories</a> operation with the directory identifier.
          * When the <b>DirectoryDescription.Stage</b> value changes to <code>Active</code>,
-         * the restore operation is complete.</p>
+         * the restore operation is complete.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RestoreFromSnapshot">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1212,26 +1450,37 @@ namespace Model
          * operation is initiated. You can monitor the progress of the restore operation by
          * calling the <a>DescribeDirectories</a> operation with the directory identifier.
          * When the <b>DirectoryDescription.Stage</b> value changes to <code>Active</code>,
-         * the restore operation is complete.</p>
+         * the restore operation is complete.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RestoreFromSnapshot">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void RestoreFromSnapshotAsync(const Model::RestoreFromSnapshotRequest& request, const RestoreFromSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Applies a schema extension to a Microsoft AD directory.</p>
+         * <p>Applies a schema extension to a Microsoft AD directory.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/StartSchemaExtension">AWS
+         * API Reference</a></p>
          */
         virtual Model::StartSchemaExtensionOutcome StartSchemaExtension(const Model::StartSchemaExtensionRequest& request) const;
 
         /**
-         * <p>Applies a schema extension to a Microsoft AD directory.</p>
+         * <p>Applies a schema extension to a Microsoft AD directory.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/StartSchemaExtension">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::StartSchemaExtensionOutcomeCallable StartSchemaExtensionCallable(const Model::StartSchemaExtensionRequest& request) const;
 
         /**
-         * <p>Applies a schema extension to a Microsoft AD directory.</p>
+         * <p>Applies a schema extension to a Microsoft AD directory.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/StartSchemaExtension">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1239,13 +1488,17 @@ namespace Model
 
         /**
          * <p>Updates a conditional forwarder that has been set up for your AWS
-         * directory.</p>
+         * directory.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UpdateConditionalForwarder">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateConditionalForwarderOutcome UpdateConditionalForwarder(const Model::UpdateConditionalForwarderRequest& request) const;
 
         /**
          * <p>Updates a conditional forwarder that has been set up for your AWS
-         * directory.</p>
+         * directory.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UpdateConditionalForwarder">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1253,7 +1506,9 @@ namespace Model
 
         /**
          * <p>Updates a conditional forwarder that has been set up for your AWS
-         * directory.</p>
+         * directory.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UpdateConditionalForwarder">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1261,13 +1516,17 @@ namespace Model
 
         /**
          * <p>Updates the Remote Authentication Dial In User Service (RADIUS) server
-         * information for an AD Connector directory.</p>
+         * information for an AD Connector directory.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UpdateRadius">AWS API
+         * Reference</a></p>
          */
         virtual Model::UpdateRadiusOutcome UpdateRadius(const Model::UpdateRadiusRequest& request) const;
 
         /**
          * <p>Updates the Remote Authentication Dial In User Service (RADIUS) server
-         * information for an AD Connector directory.</p>
+         * information for an AD Connector directory.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UpdateRadius">AWS API
+         * Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1275,7 +1534,9 @@ namespace Model
 
         /**
          * <p>Updates the Remote Authentication Dial In User Service (RADIUS) server
-         * information for an AD Connector directory.</p>
+         * information for an AD Connector directory.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UpdateRadius">AWS API
+         * Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1284,14 +1545,20 @@ namespace Model
         /**
          * <p>AWS Directory Service for Microsoft Active Directory allows you to configure
          * and verify trust relationships.</p> <p>This action verifies a trust relationship
-         * between your Microsoft AD in the AWS cloud and an external domain.</p>
+         * between your Microsoft AD in the AWS cloud and an external domain.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/VerifyTrust">AWS API
+         * Reference</a></p>
          */
         virtual Model::VerifyTrustOutcome VerifyTrust(const Model::VerifyTrustRequest& request) const;
 
         /**
          * <p>AWS Directory Service for Microsoft Active Directory allows you to configure
          * and verify trust relationships.</p> <p>This action verifies a trust relationship
-         * between your Microsoft AD in the AWS cloud and an external domain.</p>
+         * between your Microsoft AD in the AWS cloud and an external domain.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/VerifyTrust">AWS API
+         * Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1300,7 +1567,10 @@ namespace Model
         /**
          * <p>AWS Directory Service for Microsoft Active Directory allows you to configure
          * and verify trust relationships.</p> <p>This action verifies a trust relationship
-         * between your Microsoft AD in the AWS cloud and an external domain.</p>
+         * between your Microsoft AD in the AWS cloud and an external domain.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/VerifyTrust">AWS API
+         * Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */

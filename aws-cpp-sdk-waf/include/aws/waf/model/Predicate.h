@@ -36,7 +36,9 @@ namespace Model
    * <a>XssMatchSet</a>, and <a>SizeConstraintSet</a> objects that you want to add to
    * a <code>Rule</code> and, for each object, indicates whether you want to negate
    * the settings, for example, requests that do NOT originate from the IP address
-   * 192.0.2.44. </p>
+   * 192.0.2.44. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/Predicate">AWS API
+   * Reference</a></p>
    */
   class AWS_WAF_API Predicate
   {

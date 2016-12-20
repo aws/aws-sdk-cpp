@@ -26,7 +26,10 @@ namespace Model
 
   /**
    * <p>Deletes the local side of an existing trust relationship between the
-   * Microsoft AD in the AWS cloud and the external domain.</p>
+   * Microsoft AD in the AWS cloud and the external domain.</p><p><h3>See Also:</h3> 
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeleteTrustRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_DIRECTORYSERVICE_API DeleteTrustRequest : public DirectoryServiceRequest
   {

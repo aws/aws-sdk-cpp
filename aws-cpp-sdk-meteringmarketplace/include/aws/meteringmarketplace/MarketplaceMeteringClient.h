@@ -136,7 +136,10 @@ namespace Model
          * records or a subset of the input records.</p> <p>Every request to
          * BatchMeterUsage is for one product. If you need to meter usage for multiple
          * products, you must make multiple calls to BatchMeterUsage.</p>
-         * <p>BatchMeterUsage can process up to 25 UsageRecords at a time.</p>
+         * <p>BatchMeterUsage can process up to 25 UsageRecords at a time.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/meteringmarketplace-2016-01-14/BatchMeterUsage">AWS
+         * API Reference</a></p>
          */
         virtual Model::BatchMeterUsageOutcome BatchMeterUsage(const Model::BatchMeterUsageRequest& request) const;
 
@@ -147,7 +150,10 @@ namespace Model
          * records or a subset of the input records.</p> <p>Every request to
          * BatchMeterUsage is for one product. If you need to meter usage for multiple
          * products, you must make multiple calls to BatchMeterUsage.</p>
-         * <p>BatchMeterUsage can process up to 25 UsageRecords at a time.</p>
+         * <p>BatchMeterUsage can process up to 25 UsageRecords at a time.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/meteringmarketplace-2016-01-14/BatchMeterUsage">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -160,7 +166,10 @@ namespace Model
          * records or a subset of the input records.</p> <p>Every request to
          * BatchMeterUsage is for one product. If you need to meter usage for multiple
          * products, you must make multiple calls to BatchMeterUsage.</p>
-         * <p>BatchMeterUsage can process up to 25 UsageRecords at a time.</p>
+         * <p>BatchMeterUsage can process up to 25 UsageRecords at a time.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/meteringmarketplace-2016-01-14/BatchMeterUsage">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -170,7 +179,9 @@ namespace Model
          * <p>API to emit metering records. For identical requests, the API is idempotent.
          * It simply returns the metering record ID.</p> <p>MeterUsage is authenticated on
          * the buyer's AWS account, generally when running from an EC2 instance on the AWS
-         * Marketplace.</p>
+         * Marketplace.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/meteringmarketplace-2016-01-14/MeterUsage">AWS
+         * API Reference</a></p>
          */
         virtual Model::MeterUsageOutcome MeterUsage(const Model::MeterUsageRequest& request) const;
 
@@ -178,7 +189,9 @@ namespace Model
          * <p>API to emit metering records. For identical requests, the API is idempotent.
          * It simply returns the metering record ID.</p> <p>MeterUsage is authenticated on
          * the buyer's AWS account, generally when running from an EC2 instance on the AWS
-         * Marketplace.</p>
+         * Marketplace.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/meteringmarketplace-2016-01-14/MeterUsage">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -188,7 +201,9 @@ namespace Model
          * <p>API to emit metering records. For identical requests, the API is idempotent.
          * It simply returns the metering record ID.</p> <p>MeterUsage is authenticated on
          * the buyer's AWS account, generally when running from an EC2 instance on the AWS
-         * Marketplace.</p>
+         * Marketplace.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/meteringmarketplace-2016-01-14/MeterUsage">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -199,7 +214,9 @@ namespace Model
          * process. When a buyer visits your website during the registration process, the
          * buyer submits a registration token through their browser. The registration token
          * is resolved through this API to obtain a CustomerIdentifier and product
-         * code.</p>
+         * code.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/meteringmarketplace-2016-01-14/ResolveCustomer">AWS
+         * API Reference</a></p>
          */
         virtual Model::ResolveCustomerOutcome ResolveCustomer(const Model::ResolveCustomerRequest& request) const;
 
@@ -208,7 +225,9 @@ namespace Model
          * process. When a buyer visits your website during the registration process, the
          * buyer submits a registration token through their browser. The registration token
          * is resolved through this API to obtain a CustomerIdentifier and product
-         * code.</p>
+         * code.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/meteringmarketplace-2016-01-14/ResolveCustomer">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -219,7 +238,9 @@ namespace Model
          * process. When a buyer visits your website during the registration process, the
          * buyer submits a registration token through their browser. The registration token
          * is resolved through this API to obtain a CustomerIdentifier and product
-         * code.</p>
+         * code.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/meteringmarketplace-2016-01-14/ResolveCustomer">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */

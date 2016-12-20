@@ -40,7 +40,9 @@ namespace Model
    * any <a>RestApi</a>, which indicates that the callers with the API key can make
    * requests to that stage.</p> <div class="seeAlso"> <a
    * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-api-keys.html">Use
-   * API Keys</a> </div>
+   * API Keys</a> </div><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/ApiKey">AWS
+   * API Reference</a></p>
    */
   class AWS_APIGATEWAY_API UpdateApiKeyResult
   {

@@ -34,7 +34,9 @@ namespace Model
 
   /**
    * <p>The inventory item schema definition. Users can use this to compose inventory
-   * query filters.</p>
+   * query filters.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/InventoryItemSchema">AWS
+   * API Reference</a></p>
    */
   class AWS_SSM_API InventoryItemSchema
   {

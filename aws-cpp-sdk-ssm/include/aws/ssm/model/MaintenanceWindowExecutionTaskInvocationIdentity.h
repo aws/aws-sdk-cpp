@@ -35,7 +35,9 @@ namespace Model
   /**
    * <p>Describes the information about a task invocation for a particular target as
    * part of a task execution performed as part of a Maintenance Window
-   * execution.</p>
+   * execution.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/MaintenanceWindowExecutionTaskInvocationIdentity">AWS
+   * API Reference</a></p>
    */
   class AWS_SSM_API MaintenanceWindowExecutionTaskInvocationIdentity
   {

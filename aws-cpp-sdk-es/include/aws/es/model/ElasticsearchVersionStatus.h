@@ -33,7 +33,9 @@ namespace Model
 
   /**
    * <p> Status of the Elasticsearch version options for the specified Elasticsearch
-   * domain.</p>
+   * domain.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/ElasticsearchVersionStatus">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICSEARCHSERVICE_API ElasticsearchVersionStatus
   {

@@ -36,7 +36,9 @@ namespace Model
    * the ports supported by Elastic Load Balancing, see <a
    * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners
    * for Your Classic Load Balancer</a> in the <i>Classic Load Balancers
-   * Guide</i>.</p>
+   * Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/Listener">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICLOADBALANCING_API Listener
   {

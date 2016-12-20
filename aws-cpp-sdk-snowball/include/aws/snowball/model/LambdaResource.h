@@ -33,7 +33,9 @@ namespace Model
 {
 
   /**
-   * <p>Identifies </p>
+   * <p>Identifies </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/LambdaResource">AWS
+   * API Reference</a></p>
    */
   class AWS_SNOWBALL_API LambdaResource
   {

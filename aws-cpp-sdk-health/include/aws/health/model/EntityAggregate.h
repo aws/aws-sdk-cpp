@@ -32,7 +32,9 @@ namespace Model
 
   /**
    * <p>The number of entities that are affected by one or more events. Returned by
-   * the <a>DescribeEntityAggregates</a> operation.</p>
+   * the <a>DescribeEntityAggregates</a> operation.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/EntityAggregate">AWS
+   * API Reference</a></p>
    */
   class AWS_HEALTH_API EntityAggregate
   {
