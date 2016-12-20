@@ -39,25 +39,25 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     
-    inline const Aws::String& GetFirstName() const{ return m_firstName; }
+    inline const Aws::String& GetProfilePhotoUrl() const{ return m_profilePhotoUrl; }
 
     
-    inline void SetFirstName(const Aws::String& value) { m_firstNameHasBeenSet = true; m_firstName = value; }
+    inline void SetProfilePhotoUrl(const Aws::String& value) { m_profilePhotoUrlHasBeenSet = true; m_profilePhotoUrl = value; }
 
     
-    inline void SetFirstName(Aws::String&& value) { m_firstNameHasBeenSet = true; m_firstName = value; }
+    inline void SetProfilePhotoUrl(Aws::String&& value) { m_profilePhotoUrlHasBeenSet = true; m_profilePhotoUrl = value; }
 
     
-    inline void SetFirstName(const char* value) { m_firstNameHasBeenSet = true; m_firstName.assign(value); }
+    inline void SetProfilePhotoUrl(const char* value) { m_profilePhotoUrlHasBeenSet = true; m_profilePhotoUrl.assign(value); }
 
     
-    inline GetAppointmentsResult_patientsItem& WithFirstName(const Aws::String& value) { SetFirstName(value); return *this;}
+    inline GetAppointmentsResult_patientsItem& WithProfilePhotoUrl(const Aws::String& value) { SetProfilePhotoUrl(value); return *this;}
 
     
-    inline GetAppointmentsResult_patientsItem& WithFirstName(Aws::String&& value) { SetFirstName(value); return *this;}
+    inline GetAppointmentsResult_patientsItem& WithProfilePhotoUrl(Aws::String&& value) { SetProfilePhotoUrl(value); return *this;}
 
     
-    inline GetAppointmentsResult_patientsItem& WithFirstName(const char* value) { SetFirstName(value); return *this;}
+    inline GetAppointmentsResult_patientsItem& WithProfilePhotoUrl(const char* value) { SetProfilePhotoUrl(value); return *this;}
 
     
     inline const Aws::String& GetLastName() const{ return m_lastName; }
@@ -81,25 +81,46 @@ namespace Model
     inline GetAppointmentsResult_patientsItem& WithLastName(const char* value) { SetLastName(value); return *this;}
 
     
-    inline const Aws::String& GetProfilePhotoUrl() const{ return m_profilePhotoUrl; }
+    inline const Aws::String& GetMobileNumber() const{ return m_mobileNumber; }
 
     
-    inline void SetProfilePhotoUrl(const Aws::String& value) { m_profilePhotoUrlHasBeenSet = true; m_profilePhotoUrl = value; }
+    inline void SetMobileNumber(const Aws::String& value) { m_mobileNumberHasBeenSet = true; m_mobileNumber = value; }
 
     
-    inline void SetProfilePhotoUrl(Aws::String&& value) { m_profilePhotoUrlHasBeenSet = true; m_profilePhotoUrl = value; }
+    inline void SetMobileNumber(Aws::String&& value) { m_mobileNumberHasBeenSet = true; m_mobileNumber = value; }
 
     
-    inline void SetProfilePhotoUrl(const char* value) { m_profilePhotoUrlHasBeenSet = true; m_profilePhotoUrl.assign(value); }
+    inline void SetMobileNumber(const char* value) { m_mobileNumberHasBeenSet = true; m_mobileNumber.assign(value); }
 
     
-    inline GetAppointmentsResult_patientsItem& WithProfilePhotoUrl(const Aws::String& value) { SetProfilePhotoUrl(value); return *this;}
+    inline GetAppointmentsResult_patientsItem& WithMobileNumber(const Aws::String& value) { SetMobileNumber(value); return *this;}
 
     
-    inline GetAppointmentsResult_patientsItem& WithProfilePhotoUrl(Aws::String&& value) { SetProfilePhotoUrl(value); return *this;}
+    inline GetAppointmentsResult_patientsItem& WithMobileNumber(Aws::String&& value) { SetMobileNumber(value); return *this;}
 
     
-    inline GetAppointmentsResult_patientsItem& WithProfilePhotoUrl(const char* value) { SetProfilePhotoUrl(value); return *this;}
+    inline GetAppointmentsResult_patientsItem& WithMobileNumber(const char* value) { SetMobileNumber(value); return *this;}
+
+    
+    inline const Aws::String& GetFirstName() const{ return m_firstName; }
+
+    
+    inline void SetFirstName(const Aws::String& value) { m_firstNameHasBeenSet = true; m_firstName = value; }
+
+    
+    inline void SetFirstName(Aws::String&& value) { m_firstNameHasBeenSet = true; m_firstName = value; }
+
+    
+    inline void SetFirstName(const char* value) { m_firstNameHasBeenSet = true; m_firstName.assign(value); }
+
+    
+    inline GetAppointmentsResult_patientsItem& WithFirstName(const Aws::String& value) { SetFirstName(value); return *this;}
+
+    
+    inline GetAppointmentsResult_patientsItem& WithFirstName(Aws::String&& value) { SetFirstName(value); return *this;}
+
+    
+    inline GetAppointmentsResult_patientsItem& WithFirstName(const char* value) { SetFirstName(value); return *this;}
 
     
     inline const Aws::String& GetId() const{ return m_id; }
@@ -123,12 +144,14 @@ namespace Model
     inline GetAppointmentsResult_patientsItem& WithId(const char* value) { SetId(value); return *this;}
 
   private:
-    Aws::String m_firstName;
-    bool m_firstNameHasBeenSet;
-    Aws::String m_lastName;
-    bool m_lastNameHasBeenSet;
     Aws::String m_profilePhotoUrl;
     bool m_profilePhotoUrlHasBeenSet;
+    Aws::String m_lastName;
+    bool m_lastNameHasBeenSet;
+    Aws::String m_mobileNumber;
+    bool m_mobileNumberHasBeenSet;
+    Aws::String m_firstName;
+    bool m_firstNameHasBeenSet;
     Aws::String m_id;
     bool m_idHasBeenSet;
   };

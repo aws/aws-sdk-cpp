@@ -12,40 +12,37 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
-#include <aws/vitalservices/model/cancelAppointmentRequest.h>
+#include <aws/vitalservices/model/getStripeCustomerResult.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/AmazonWebServiceResult.h>
+#include <aws/core/utils/UnreferencedParam.h>
 
 #include <utility>
 
 using namespace Aws::VitalServices::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+using namespace Aws;
 
-cancelAppointmentRequest::cancelAppointmentRequest() : 
-    m_appointmentIdHasBeenSet(false),
-    m_lateCancellation(false),
-    m_lateCancellationHasBeenSet(false)
+getStripeCustomerResult::getStripeCustomerResult()
 {
 }
 
-Aws::String cancelAppointmentRequest::SerializePayload() const
+getStripeCustomerResult::getStripeCustomerResult(const AmazonWebServiceResult<JsonValue>& result)
 {
-  JsonValue payload;
-
-  if(m_appointmentIdHasBeenSet)
-  {
-   payload.WithString("appointmentId", m_appointmentId);
-
-  }
-
-  if(m_lateCancellationHasBeenSet)
-  {
-   payload.WithBool("lateCancellation", m_lateCancellation);
-
-  }
-
-  return payload.WriteReadable();
+  *this = result;
 }
 
+getStripeCustomerResult& getStripeCustomerResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+{
+  const JsonValue& jsonValue = result.GetPayload();
+  if(jsonValue.ValueExists("jsonString"))
+  {
+    m_jsonString = jsonValue.GetString("jsonString");
+
+  }
 
 
+
+  return *this;
+}

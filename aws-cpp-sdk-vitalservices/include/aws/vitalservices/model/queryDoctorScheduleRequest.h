@@ -33,27 +33,6 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     
-    inline const Aws::String& GetLastTime() const{ return m_lastTime; }
-
-    
-    inline void SetLastTime(const Aws::String& value) { m_lastTimeHasBeenSet = true; m_lastTime = value; }
-
-    
-    inline void SetLastTime(Aws::String&& value) { m_lastTimeHasBeenSet = true; m_lastTime = value; }
-
-    
-    inline void SetLastTime(const char* value) { m_lastTimeHasBeenSet = true; m_lastTime.assign(value); }
-
-    
-    inline queryDoctorScheduleRequest& WithLastTime(const Aws::String& value) { SetLastTime(value); return *this;}
-
-    
-    inline queryDoctorScheduleRequest& WithLastTime(Aws::String&& value) { SetLastTime(value); return *this;}
-
-    
-    inline queryDoctorScheduleRequest& WithLastTime(const char* value) { SetLastTime(value); return *this;}
-
-    
     inline const Aws::String& GetDoctorId() const{ return m_doctorId; }
 
     
@@ -73,6 +52,27 @@ namespace Model
 
     
     inline queryDoctorScheduleRequest& WithDoctorId(const char* value) { SetDoctorId(value); return *this;}
+
+    
+    inline const Aws::String& GetLastTime() const{ return m_lastTime; }
+
+    
+    inline void SetLastTime(const Aws::String& value) { m_lastTimeHasBeenSet = true; m_lastTime = value; }
+
+    
+    inline void SetLastTime(Aws::String&& value) { m_lastTimeHasBeenSet = true; m_lastTime = value; }
+
+    
+    inline void SetLastTime(const char* value) { m_lastTimeHasBeenSet = true; m_lastTime.assign(value); }
+
+    
+    inline queryDoctorScheduleRequest& WithLastTime(const Aws::String& value) { SetLastTime(value); return *this;}
+
+    
+    inline queryDoctorScheduleRequest& WithLastTime(Aws::String&& value) { SetLastTime(value); return *this;}
+
+    
+    inline queryDoctorScheduleRequest& WithLastTime(const char* value) { SetLastTime(value); return *this;}
 
     
     inline const Aws::String& GetFirstTime() const{ return m_firstTime; }
@@ -96,10 +96,10 @@ namespace Model
     inline queryDoctorScheduleRequest& WithFirstTime(const char* value) { SetFirstTime(value); return *this;}
 
   private:
-    Aws::String m_lastTime;
-    bool m_lastTimeHasBeenSet;
     Aws::String m_doctorId;
     bool m_doctorIdHasBeenSet;
+    Aws::String m_lastTime;
+    bool m_lastTimeHasBeenSet;
     Aws::String m_firstTime;
     bool m_firstTimeHasBeenSet;
   };

@@ -12,7 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
-#include <aws/vitalservices/model/GetAppointmentsResult_appointmentsItem.h>
+#include <aws/vitalservices/model/CancelAppointmentResult_appointment.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 
 #include <utility>
@@ -27,7 +27,7 @@ namespace VitalServices
 namespace Model
 {
 
-GetAppointmentsResult_appointmentsItem::GetAppointmentsResult_appointmentsItem() : 
+CancelAppointmentResult_appointment::CancelAppointmentResult_appointment() : 
     m_startTimeHasBeenSet(false),
     m_cancellationDateHasBeenSet(false),
     m_dateBookedHasBeenSet(false),
@@ -48,7 +48,7 @@ GetAppointmentsResult_appointmentsItem::GetAppointmentsResult_appointmentsItem()
 {
 }
 
-GetAppointmentsResult_appointmentsItem::GetAppointmentsResult_appointmentsItem(const JsonValue& jsonValue) : 
+CancelAppointmentResult_appointment::CancelAppointmentResult_appointment(const JsonValue& jsonValue) : 
     m_startTimeHasBeenSet(false),
     m_cancellationDateHasBeenSet(false),
     m_dateBookedHasBeenSet(false),
@@ -70,7 +70,7 @@ GetAppointmentsResult_appointmentsItem::GetAppointmentsResult_appointmentsItem(c
   *this = jsonValue;
 }
 
-GetAppointmentsResult_appointmentsItem& GetAppointmentsResult_appointmentsItem::operator =(const JsonValue& jsonValue)
+CancelAppointmentResult_appointment& CancelAppointmentResult_appointment::operator =(const JsonValue& jsonValue)
 {
   if(jsonValue.ValueExists("startTime"))
   {
@@ -194,7 +194,7 @@ GetAppointmentsResult_appointmentsItem& GetAppointmentsResult_appointmentsItem::
   return *this;
 }
 
-JsonValue GetAppointmentsResult_appointmentsItem::Jsonize() const
+JsonValue CancelAppointmentResult_appointment::Jsonize() const
 {
   JsonValue payload;
 

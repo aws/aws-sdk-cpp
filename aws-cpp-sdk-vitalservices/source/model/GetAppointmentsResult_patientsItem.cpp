@@ -28,17 +28,19 @@ namespace Model
 {
 
 GetAppointmentsResult_patientsItem::GetAppointmentsResult_patientsItem() : 
-    m_firstNameHasBeenSet(false),
-    m_lastNameHasBeenSet(false),
     m_profilePhotoUrlHasBeenSet(false),
+    m_lastNameHasBeenSet(false),
+    m_mobileNumberHasBeenSet(false),
+    m_firstNameHasBeenSet(false),
     m_idHasBeenSet(false)
 {
 }
 
 GetAppointmentsResult_patientsItem::GetAppointmentsResult_patientsItem(const JsonValue& jsonValue) : 
-    m_firstNameHasBeenSet(false),
-    m_lastNameHasBeenSet(false),
     m_profilePhotoUrlHasBeenSet(false),
+    m_lastNameHasBeenSet(false),
+    m_mobileNumberHasBeenSet(false),
+    m_firstNameHasBeenSet(false),
     m_idHasBeenSet(false)
 {
   *this = jsonValue;
@@ -46,11 +48,11 @@ GetAppointmentsResult_patientsItem::GetAppointmentsResult_patientsItem(const Jso
 
 GetAppointmentsResult_patientsItem& GetAppointmentsResult_patientsItem::operator =(const JsonValue& jsonValue)
 {
-  if(jsonValue.ValueExists("firstName"))
+  if(jsonValue.ValueExists("profilePhotoUrl"))
   {
-    m_firstName = jsonValue.GetString("firstName");
+    m_profilePhotoUrl = jsonValue.GetString("profilePhotoUrl");
 
-    m_firstNameHasBeenSet = true;
+    m_profilePhotoUrlHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("lastName"))
@@ -60,11 +62,18 @@ GetAppointmentsResult_patientsItem& GetAppointmentsResult_patientsItem::operator
     m_lastNameHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("profilePhotoUrl"))
+  if(jsonValue.ValueExists("mobileNumber"))
   {
-    m_profilePhotoUrl = jsonValue.GetString("profilePhotoUrl");
+    m_mobileNumber = jsonValue.GetString("mobileNumber");
 
-    m_profilePhotoUrlHasBeenSet = true;
+    m_mobileNumberHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("firstName"))
+  {
+    m_firstName = jsonValue.GetString("firstName");
+
+    m_firstNameHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("id"))
@@ -81,9 +90,9 @@ JsonValue GetAppointmentsResult_patientsItem::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_firstNameHasBeenSet)
+  if(m_profilePhotoUrlHasBeenSet)
   {
-   payload.WithString("firstName", m_firstName);
+   payload.WithString("profilePhotoUrl", m_profilePhotoUrl);
 
   }
 
@@ -93,9 +102,15 @@ JsonValue GetAppointmentsResult_patientsItem::Jsonize() const
 
   }
 
-  if(m_profilePhotoUrlHasBeenSet)
+  if(m_mobileNumberHasBeenSet)
   {
-   payload.WithString("profilePhotoUrl", m_profilePhotoUrl);
+   payload.WithString("mobileNumber", m_mobileNumber);
+
+  }
+
+  if(m_firstNameHasBeenSet)
+  {
+   payload.WithString("firstName", m_firstName);
 
   }
 

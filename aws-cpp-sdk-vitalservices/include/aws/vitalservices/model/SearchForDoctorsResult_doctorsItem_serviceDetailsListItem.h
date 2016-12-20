@@ -60,27 +60,6 @@ namespace Model
     inline SearchForDoctorsResult_doctorsItem_serviceDetailsListItem& WithDoctorId(const char* value) { SetDoctorId(value); return *this;}
 
     
-    inline const Aws::String& GetServiceId() const{ return m_serviceId; }
-
-    
-    inline void SetServiceId(const Aws::String& value) { m_serviceIdHasBeenSet = true; m_serviceId = value; }
-
-    
-    inline void SetServiceId(Aws::String&& value) { m_serviceIdHasBeenSet = true; m_serviceId = value; }
-
-    
-    inline void SetServiceId(const char* value) { m_serviceIdHasBeenSet = true; m_serviceId.assign(value); }
-
-    
-    inline SearchForDoctorsResult_doctorsItem_serviceDetailsListItem& WithServiceId(const Aws::String& value) { SetServiceId(value); return *this;}
-
-    
-    inline SearchForDoctorsResult_doctorsItem_serviceDetailsListItem& WithServiceId(Aws::String&& value) { SetServiceId(value); return *this;}
-
-    
-    inline SearchForDoctorsResult_doctorsItem_serviceDetailsListItem& WithServiceId(const char* value) { SetServiceId(value); return *this;}
-
-    
     inline const Aws::String& GetPriceDollars() const{ return m_priceDollars; }
 
     
@@ -122,15 +101,36 @@ namespace Model
     
     inline SearchForDoctorsResult_doctorsItem_serviceDetailsListItem& WithDurationSeconds(const char* value) { SetDurationSeconds(value); return *this;}
 
+    
+    inline const Aws::String& GetServiceId() const{ return m_serviceId; }
+
+    
+    inline void SetServiceId(const Aws::String& value) { m_serviceIdHasBeenSet = true; m_serviceId = value; }
+
+    
+    inline void SetServiceId(Aws::String&& value) { m_serviceIdHasBeenSet = true; m_serviceId = value; }
+
+    
+    inline void SetServiceId(const char* value) { m_serviceIdHasBeenSet = true; m_serviceId.assign(value); }
+
+    
+    inline SearchForDoctorsResult_doctorsItem_serviceDetailsListItem& WithServiceId(const Aws::String& value) { SetServiceId(value); return *this;}
+
+    
+    inline SearchForDoctorsResult_doctorsItem_serviceDetailsListItem& WithServiceId(Aws::String&& value) { SetServiceId(value); return *this;}
+
+    
+    inline SearchForDoctorsResult_doctorsItem_serviceDetailsListItem& WithServiceId(const char* value) { SetServiceId(value); return *this;}
+
   private:
     Aws::String m_doctorId;
     bool m_doctorIdHasBeenSet;
-    Aws::String m_serviceId;
-    bool m_serviceIdHasBeenSet;
     Aws::String m_priceDollars;
     bool m_priceDollarsHasBeenSet;
     Aws::String m_durationSeconds;
     bool m_durationSecondsHasBeenSet;
+    Aws::String m_serviceId;
+    bool m_serviceIdHasBeenSet;
   };
 
 } // namespace Model

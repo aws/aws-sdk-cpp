@@ -29,17 +29,17 @@ namespace Model
 
 ClientDoctor_serviceDetailsListItem::ClientDoctor_serviceDetailsListItem() : 
     m_doctorIdHasBeenSet(false),
-    m_serviceIdHasBeenSet(false),
     m_priceDollarsHasBeenSet(false),
-    m_durationSecondsHasBeenSet(false)
+    m_durationSecondsHasBeenSet(false),
+    m_serviceIdHasBeenSet(false)
 {
 }
 
 ClientDoctor_serviceDetailsListItem::ClientDoctor_serviceDetailsListItem(const JsonValue& jsonValue) : 
     m_doctorIdHasBeenSet(false),
-    m_serviceIdHasBeenSet(false),
     m_priceDollarsHasBeenSet(false),
-    m_durationSecondsHasBeenSet(false)
+    m_durationSecondsHasBeenSet(false),
+    m_serviceIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -51,13 +51,6 @@ ClientDoctor_serviceDetailsListItem& ClientDoctor_serviceDetailsListItem::operat
     m_doctorId = jsonValue.GetString("doctorId");
 
     m_doctorIdHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("serviceId"))
-  {
-    m_serviceId = jsonValue.GetString("serviceId");
-
-    m_serviceIdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("priceDollars"))
@@ -74,6 +67,13 @@ ClientDoctor_serviceDetailsListItem& ClientDoctor_serviceDetailsListItem::operat
     m_durationSecondsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("serviceId"))
+  {
+    m_serviceId = jsonValue.GetString("serviceId");
+
+    m_serviceIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -87,12 +87,6 @@ JsonValue ClientDoctor_serviceDetailsListItem::Jsonize() const
 
   }
 
-  if(m_serviceIdHasBeenSet)
-  {
-   payload.WithString("serviceId", m_serviceId);
-
-  }
-
   if(m_priceDollarsHasBeenSet)
   {
    payload.WithString("priceDollars", m_priceDollars);
@@ -102,6 +96,12 @@ JsonValue ClientDoctor_serviceDetailsListItem::Jsonize() const
   if(m_durationSecondsHasBeenSet)
   {
    payload.WithString("durationSeconds", m_durationSeconds);
+
+  }
+
+  if(m_serviceIdHasBeenSet)
+  {
+   payload.WithString("serviceId", m_serviceId);
 
   }
 

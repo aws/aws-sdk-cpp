@@ -36,15 +36,9 @@ getAppointmentBillResult::getAppointmentBillResult(const AmazonWebServiceResult<
 getAppointmentBillResult& getAppointmentBillResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
-  if(jsonValue.ValueExists("totalPrice"))
+  if(jsonValue.ValueExists("version"))
   {
-    m_totalPrice = jsonValue.GetString("totalPrice");
-
-  }
-
-  if(jsonValue.ValueExists("basePrice"))
-  {
-    m_basePrice = jsonValue.GetString("basePrice");
+    m_version = jsonValue.GetString("version");
 
   }
 
@@ -54,15 +48,21 @@ getAppointmentBillResult& getAppointmentBillResult::operator =(const AmazonWebSe
 
   }
 
-  if(jsonValue.ValueExists("version"))
-  {
-    m_version = jsonValue.GetString("version");
-
-  }
-
   if(jsonValue.ValueExists("doctorServiceFee"))
   {
     m_doctorServiceFee = jsonValue.GetString("doctorServiceFee");
+
+  }
+
+  if(jsonValue.ValueExists("totalPrice"))
+  {
+    m_totalPrice = jsonValue.GetString("totalPrice");
+
+  }
+
+  if(jsonValue.ValueExists("basePrice"))
+  {
+    m_basePrice = jsonValue.GetString("basePrice");
 
   }
 

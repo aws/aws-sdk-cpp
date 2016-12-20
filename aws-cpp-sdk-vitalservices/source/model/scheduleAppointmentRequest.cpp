@@ -22,16 +22,22 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 scheduleAppointmentRequest::scheduleAppointmentRequest() : 
+    m_startTimeHasBeenSet(false),
     m_doctorIdHasBeenSet(false),
     m_billVersionHasBeenSet(false),
-    m_serviceIdHasBeenSet(false),
-    m_startTimeHasBeenSet(false)
+    m_serviceIdHasBeenSet(false)
 {
 }
 
 Aws::String scheduleAppointmentRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_startTimeHasBeenSet)
+  {
+   payload.WithString("startTime", m_startTime);
+
+  }
 
   if(m_doctorIdHasBeenSet)
   {
@@ -48,12 +54,6 @@ Aws::String scheduleAppointmentRequest::SerializePayload() const
   if(m_serviceIdHasBeenSet)
   {
    payload.WithString("serviceId", m_serviceId);
-
-  }
-
-  if(m_startTimeHasBeenSet)
-  {
-   payload.WithString("startTime", m_startTime);
 
   }
 

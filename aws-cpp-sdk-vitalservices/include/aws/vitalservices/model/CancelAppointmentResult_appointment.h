@@ -30,12 +30,12 @@ namespace VitalServices
 namespace Model
 {
 
-  class AWS_VITALSERVICES_API GetAppointmentsResult_appointmentsItem
+  class AWS_VITALSERVICES_API CancelAppointmentResult_appointment
   {
   public:
-    GetAppointmentsResult_appointmentsItem();
-    GetAppointmentsResult_appointmentsItem(const Aws::Utils::Json::JsonValue& jsonValue);
-    GetAppointmentsResult_appointmentsItem& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    CancelAppointmentResult_appointment();
+    CancelAppointmentResult_appointment(const Aws::Utils::Json::JsonValue& jsonValue);
+    CancelAppointmentResult_appointment& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     
@@ -51,13 +51,13 @@ namespace Model
     inline void SetStartTime(const char* value) { m_startTimeHasBeenSet = true; m_startTime.assign(value); }
 
     
-    inline GetAppointmentsResult_appointmentsItem& WithStartTime(const Aws::String& value) { SetStartTime(value); return *this;}
+    inline CancelAppointmentResult_appointment& WithStartTime(const Aws::String& value) { SetStartTime(value); return *this;}
 
     
-    inline GetAppointmentsResult_appointmentsItem& WithStartTime(Aws::String&& value) { SetStartTime(value); return *this;}
+    inline CancelAppointmentResult_appointment& WithStartTime(Aws::String&& value) { SetStartTime(value); return *this;}
 
     
-    inline GetAppointmentsResult_appointmentsItem& WithStartTime(const char* value) { SetStartTime(value); return *this;}
+    inline CancelAppointmentResult_appointment& WithStartTime(const char* value) { SetStartTime(value); return *this;}
 
     
     inline const Aws::String& GetCancellationDate() const{ return m_cancellationDate; }
@@ -72,13 +72,13 @@ namespace Model
     inline void SetCancellationDate(const char* value) { m_cancellationDateHasBeenSet = true; m_cancellationDate.assign(value); }
 
     
-    inline GetAppointmentsResult_appointmentsItem& WithCancellationDate(const Aws::String& value) { SetCancellationDate(value); return *this;}
+    inline CancelAppointmentResult_appointment& WithCancellationDate(const Aws::String& value) { SetCancellationDate(value); return *this;}
 
     
-    inline GetAppointmentsResult_appointmentsItem& WithCancellationDate(Aws::String&& value) { SetCancellationDate(value); return *this;}
+    inline CancelAppointmentResult_appointment& WithCancellationDate(Aws::String&& value) { SetCancellationDate(value); return *this;}
 
     
-    inline GetAppointmentsResult_appointmentsItem& WithCancellationDate(const char* value) { SetCancellationDate(value); return *this;}
+    inline CancelAppointmentResult_appointment& WithCancellationDate(const char* value) { SetCancellationDate(value); return *this;}
 
     
     inline const Aws::String& GetDateBooked() const{ return m_dateBooked; }
@@ -93,13 +93,13 @@ namespace Model
     inline void SetDateBooked(const char* value) { m_dateBookedHasBeenSet = true; m_dateBooked.assign(value); }
 
     
-    inline GetAppointmentsResult_appointmentsItem& WithDateBooked(const Aws::String& value) { SetDateBooked(value); return *this;}
+    inline CancelAppointmentResult_appointment& WithDateBooked(const Aws::String& value) { SetDateBooked(value); return *this;}
 
     
-    inline GetAppointmentsResult_appointmentsItem& WithDateBooked(Aws::String&& value) { SetDateBooked(value); return *this;}
+    inline CancelAppointmentResult_appointment& WithDateBooked(Aws::String&& value) { SetDateBooked(value); return *this;}
 
     
-    inline GetAppointmentsResult_appointmentsItem& WithDateBooked(const char* value) { SetDateBooked(value); return *this;}
+    inline CancelAppointmentResult_appointment& WithDateBooked(const char* value) { SetDateBooked(value); return *this;}
 
     
     inline const Aws::String& GetBasePrice() const{ return m_basePrice; }
@@ -114,13 +114,13 @@ namespace Model
     inline void SetBasePrice(const char* value) { m_basePriceHasBeenSet = true; m_basePrice.assign(value); }
 
     
-    inline GetAppointmentsResult_appointmentsItem& WithBasePrice(const Aws::String& value) { SetBasePrice(value); return *this;}
+    inline CancelAppointmentResult_appointment& WithBasePrice(const Aws::String& value) { SetBasePrice(value); return *this;}
 
     
-    inline GetAppointmentsResult_appointmentsItem& WithBasePrice(Aws::String&& value) { SetBasePrice(value); return *this;}
+    inline CancelAppointmentResult_appointment& WithBasePrice(Aws::String&& value) { SetBasePrice(value); return *this;}
 
     
-    inline GetAppointmentsResult_appointmentsItem& WithBasePrice(const char* value) { SetBasePrice(value); return *this;}
+    inline CancelAppointmentResult_appointment& WithBasePrice(const char* value) { SetBasePrice(value); return *this;}
 
     
     inline const Aws::String& GetPatientId() const{ return m_patientId; }
@@ -135,13 +135,13 @@ namespace Model
     inline void SetPatientId(const char* value) { m_patientIdHasBeenSet = true; m_patientId.assign(value); }
 
     
-    inline GetAppointmentsResult_appointmentsItem& WithPatientId(const Aws::String& value) { SetPatientId(value); return *this;}
+    inline CancelAppointmentResult_appointment& WithPatientId(const Aws::String& value) { SetPatientId(value); return *this;}
 
     
-    inline GetAppointmentsResult_appointmentsItem& WithPatientId(Aws::String&& value) { SetPatientId(value); return *this;}
+    inline CancelAppointmentResult_appointment& WithPatientId(Aws::String&& value) { SetPatientId(value); return *this;}
 
     
-    inline GetAppointmentsResult_appointmentsItem& WithPatientId(const char* value) { SetPatientId(value); return *this;}
+    inline CancelAppointmentResult_appointment& WithPatientId(const char* value) { SetPatientId(value); return *this;}
 
     
     inline const Aws::String& GetDoctorEarnings() const{ return m_doctorEarnings; }
@@ -156,13 +156,13 @@ namespace Model
     inline void SetDoctorEarnings(const char* value) { m_doctorEarningsHasBeenSet = true; m_doctorEarnings.assign(value); }
 
     
-    inline GetAppointmentsResult_appointmentsItem& WithDoctorEarnings(const Aws::String& value) { SetDoctorEarnings(value); return *this;}
+    inline CancelAppointmentResult_appointment& WithDoctorEarnings(const Aws::String& value) { SetDoctorEarnings(value); return *this;}
 
     
-    inline GetAppointmentsResult_appointmentsItem& WithDoctorEarnings(Aws::String&& value) { SetDoctorEarnings(value); return *this;}
+    inline CancelAppointmentResult_appointment& WithDoctorEarnings(Aws::String&& value) { SetDoctorEarnings(value); return *this;}
 
     
-    inline GetAppointmentsResult_appointmentsItem& WithDoctorEarnings(const char* value) { SetDoctorEarnings(value); return *this;}
+    inline CancelAppointmentResult_appointment& WithDoctorEarnings(const char* value) { SetDoctorEarnings(value); return *this;}
 
     
     inline const Aws::String& GetDoctorServiceFee() const{ return m_doctorServiceFee; }
@@ -177,13 +177,13 @@ namespace Model
     inline void SetDoctorServiceFee(const char* value) { m_doctorServiceFeeHasBeenSet = true; m_doctorServiceFee.assign(value); }
 
     
-    inline GetAppointmentsResult_appointmentsItem& WithDoctorServiceFee(const Aws::String& value) { SetDoctorServiceFee(value); return *this;}
+    inline CancelAppointmentResult_appointment& WithDoctorServiceFee(const Aws::String& value) { SetDoctorServiceFee(value); return *this;}
 
     
-    inline GetAppointmentsResult_appointmentsItem& WithDoctorServiceFee(Aws::String&& value) { SetDoctorServiceFee(value); return *this;}
+    inline CancelAppointmentResult_appointment& WithDoctorServiceFee(Aws::String&& value) { SetDoctorServiceFee(value); return *this;}
 
     
-    inline GetAppointmentsResult_appointmentsItem& WithDoctorServiceFee(const char* value) { SetDoctorServiceFee(value); return *this;}
+    inline CancelAppointmentResult_appointment& WithDoctorServiceFee(const char* value) { SetDoctorServiceFee(value); return *this;}
 
     
     inline const Aws::String& GetAppointmentState() const{ return m_appointmentState; }
@@ -198,13 +198,13 @@ namespace Model
     inline void SetAppointmentState(const char* value) { m_appointmentStateHasBeenSet = true; m_appointmentState.assign(value); }
 
     
-    inline GetAppointmentsResult_appointmentsItem& WithAppointmentState(const Aws::String& value) { SetAppointmentState(value); return *this;}
+    inline CancelAppointmentResult_appointment& WithAppointmentState(const Aws::String& value) { SetAppointmentState(value); return *this;}
 
     
-    inline GetAppointmentsResult_appointmentsItem& WithAppointmentState(Aws::String&& value) { SetAppointmentState(value); return *this;}
+    inline CancelAppointmentResult_appointment& WithAppointmentState(Aws::String&& value) { SetAppointmentState(value); return *this;}
 
     
-    inline GetAppointmentsResult_appointmentsItem& WithAppointmentState(const char* value) { SetAppointmentState(value); return *this;}
+    inline CancelAppointmentResult_appointment& WithAppointmentState(const char* value) { SetAppointmentState(value); return *this;}
 
     
     inline const Aws::String& GetAmountRefunded() const{ return m_amountRefunded; }
@@ -219,13 +219,13 @@ namespace Model
     inline void SetAmountRefunded(const char* value) { m_amountRefundedHasBeenSet = true; m_amountRefunded.assign(value); }
 
     
-    inline GetAppointmentsResult_appointmentsItem& WithAmountRefunded(const Aws::String& value) { SetAmountRefunded(value); return *this;}
+    inline CancelAppointmentResult_appointment& WithAmountRefunded(const Aws::String& value) { SetAmountRefunded(value); return *this;}
 
     
-    inline GetAppointmentsResult_appointmentsItem& WithAmountRefunded(Aws::String&& value) { SetAmountRefunded(value); return *this;}
+    inline CancelAppointmentResult_appointment& WithAmountRefunded(Aws::String&& value) { SetAmountRefunded(value); return *this;}
 
     
-    inline GetAppointmentsResult_appointmentsItem& WithAmountRefunded(const char* value) { SetAmountRefunded(value); return *this;}
+    inline CancelAppointmentResult_appointment& WithAmountRefunded(const char* value) { SetAmountRefunded(value); return *this;}
 
     
     inline const Aws::String& GetDoctorId() const{ return m_doctorId; }
@@ -240,13 +240,13 @@ namespace Model
     inline void SetDoctorId(const char* value) { m_doctorIdHasBeenSet = true; m_doctorId.assign(value); }
 
     
-    inline GetAppointmentsResult_appointmentsItem& WithDoctorId(const Aws::String& value) { SetDoctorId(value); return *this;}
+    inline CancelAppointmentResult_appointment& WithDoctorId(const Aws::String& value) { SetDoctorId(value); return *this;}
 
     
-    inline GetAppointmentsResult_appointmentsItem& WithDoctorId(Aws::String&& value) { SetDoctorId(value); return *this;}
+    inline CancelAppointmentResult_appointment& WithDoctorId(Aws::String&& value) { SetDoctorId(value); return *this;}
 
     
-    inline GetAppointmentsResult_appointmentsItem& WithDoctorId(const char* value) { SetDoctorId(value); return *this;}
+    inline CancelAppointmentResult_appointment& WithDoctorId(const char* value) { SetDoctorId(value); return *this;}
 
     
     inline const Aws::String& GetPatientServiceFee() const{ return m_patientServiceFee; }
@@ -261,13 +261,13 @@ namespace Model
     inline void SetPatientServiceFee(const char* value) { m_patientServiceFeeHasBeenSet = true; m_patientServiceFee.assign(value); }
 
     
-    inline GetAppointmentsResult_appointmentsItem& WithPatientServiceFee(const Aws::String& value) { SetPatientServiceFee(value); return *this;}
+    inline CancelAppointmentResult_appointment& WithPatientServiceFee(const Aws::String& value) { SetPatientServiceFee(value); return *this;}
 
     
-    inline GetAppointmentsResult_appointmentsItem& WithPatientServiceFee(Aws::String&& value) { SetPatientServiceFee(value); return *this;}
+    inline CancelAppointmentResult_appointment& WithPatientServiceFee(Aws::String&& value) { SetPatientServiceFee(value); return *this;}
 
     
-    inline GetAppointmentsResult_appointmentsItem& WithPatientServiceFee(const char* value) { SetPatientServiceFee(value); return *this;}
+    inline CancelAppointmentResult_appointment& WithPatientServiceFee(const char* value) { SetPatientServiceFee(value); return *this;}
 
     
     inline const Aws::String& GetServiceId() const{ return m_serviceId; }
@@ -282,13 +282,13 @@ namespace Model
     inline void SetServiceId(const char* value) { m_serviceIdHasBeenSet = true; m_serviceId.assign(value); }
 
     
-    inline GetAppointmentsResult_appointmentsItem& WithServiceId(const Aws::String& value) { SetServiceId(value); return *this;}
+    inline CancelAppointmentResult_appointment& WithServiceId(const Aws::String& value) { SetServiceId(value); return *this;}
 
     
-    inline GetAppointmentsResult_appointmentsItem& WithServiceId(Aws::String&& value) { SetServiceId(value); return *this;}
+    inline CancelAppointmentResult_appointment& WithServiceId(Aws::String&& value) { SetServiceId(value); return *this;}
 
     
-    inline GetAppointmentsResult_appointmentsItem& WithServiceId(const char* value) { SetServiceId(value); return *this;}
+    inline CancelAppointmentResult_appointment& WithServiceId(const char* value) { SetServiceId(value); return *this;}
 
     
     inline const Aws::String& GetTotalPrice() const{ return m_totalPrice; }
@@ -303,13 +303,13 @@ namespace Model
     inline void SetTotalPrice(const char* value) { m_totalPriceHasBeenSet = true; m_totalPrice.assign(value); }
 
     
-    inline GetAppointmentsResult_appointmentsItem& WithTotalPrice(const Aws::String& value) { SetTotalPrice(value); return *this;}
+    inline CancelAppointmentResult_appointment& WithTotalPrice(const Aws::String& value) { SetTotalPrice(value); return *this;}
 
     
-    inline GetAppointmentsResult_appointmentsItem& WithTotalPrice(Aws::String&& value) { SetTotalPrice(value); return *this;}
+    inline CancelAppointmentResult_appointment& WithTotalPrice(Aws::String&& value) { SetTotalPrice(value); return *this;}
 
     
-    inline GetAppointmentsResult_appointmentsItem& WithTotalPrice(const char* value) { SetTotalPrice(value); return *this;}
+    inline CancelAppointmentResult_appointment& WithTotalPrice(const char* value) { SetTotalPrice(value); return *this;}
 
     
     inline const Aws::String& GetReimbursementDate() const{ return m_reimbursementDate; }
@@ -324,13 +324,13 @@ namespace Model
     inline void SetReimbursementDate(const char* value) { m_reimbursementDateHasBeenSet = true; m_reimbursementDate.assign(value); }
 
     
-    inline GetAppointmentsResult_appointmentsItem& WithReimbursementDate(const Aws::String& value) { SetReimbursementDate(value); return *this;}
+    inline CancelAppointmentResult_appointment& WithReimbursementDate(const Aws::String& value) { SetReimbursementDate(value); return *this;}
 
     
-    inline GetAppointmentsResult_appointmentsItem& WithReimbursementDate(Aws::String&& value) { SetReimbursementDate(value); return *this;}
+    inline CancelAppointmentResult_appointment& WithReimbursementDate(Aws::String&& value) { SetReimbursementDate(value); return *this;}
 
     
-    inline GetAppointmentsResult_appointmentsItem& WithReimbursementDate(const char* value) { SetReimbursementDate(value); return *this;}
+    inline CancelAppointmentResult_appointment& WithReimbursementDate(const char* value) { SetReimbursementDate(value); return *this;}
 
     
     inline const Aws::String& GetDurationSeconds() const{ return m_durationSeconds; }
@@ -345,13 +345,13 @@ namespace Model
     inline void SetDurationSeconds(const char* value) { m_durationSecondsHasBeenSet = true; m_durationSeconds.assign(value); }
 
     
-    inline GetAppointmentsResult_appointmentsItem& WithDurationSeconds(const Aws::String& value) { SetDurationSeconds(value); return *this;}
+    inline CancelAppointmentResult_appointment& WithDurationSeconds(const Aws::String& value) { SetDurationSeconds(value); return *this;}
 
     
-    inline GetAppointmentsResult_appointmentsItem& WithDurationSeconds(Aws::String&& value) { SetDurationSeconds(value); return *this;}
+    inline CancelAppointmentResult_appointment& WithDurationSeconds(Aws::String&& value) { SetDurationSeconds(value); return *this;}
 
     
-    inline GetAppointmentsResult_appointmentsItem& WithDurationSeconds(const char* value) { SetDurationSeconds(value); return *this;}
+    inline CancelAppointmentResult_appointment& WithDurationSeconds(const char* value) { SetDurationSeconds(value); return *this;}
 
     
     inline const Aws::String& GetChargeId() const{ return m_chargeId; }
@@ -366,13 +366,13 @@ namespace Model
     inline void SetChargeId(const char* value) { m_chargeIdHasBeenSet = true; m_chargeId.assign(value); }
 
     
-    inline GetAppointmentsResult_appointmentsItem& WithChargeId(const Aws::String& value) { SetChargeId(value); return *this;}
+    inline CancelAppointmentResult_appointment& WithChargeId(const Aws::String& value) { SetChargeId(value); return *this;}
 
     
-    inline GetAppointmentsResult_appointmentsItem& WithChargeId(Aws::String&& value) { SetChargeId(value); return *this;}
+    inline CancelAppointmentResult_appointment& WithChargeId(Aws::String&& value) { SetChargeId(value); return *this;}
 
     
-    inline GetAppointmentsResult_appointmentsItem& WithChargeId(const char* value) { SetChargeId(value); return *this;}
+    inline CancelAppointmentResult_appointment& WithChargeId(const char* value) { SetChargeId(value); return *this;}
 
     
     inline const Aws::String& GetId() const{ return m_id; }
@@ -387,13 +387,13 @@ namespace Model
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     
-    inline GetAppointmentsResult_appointmentsItem& WithId(const Aws::String& value) { SetId(value); return *this;}
+    inline CancelAppointmentResult_appointment& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     
-    inline GetAppointmentsResult_appointmentsItem& WithId(Aws::String&& value) { SetId(value); return *this;}
+    inline CancelAppointmentResult_appointment& WithId(Aws::String&& value) { SetId(value); return *this;}
 
     
-    inline GetAppointmentsResult_appointmentsItem& WithId(const char* value) { SetId(value); return *this;}
+    inline CancelAppointmentResult_appointment& WithId(const char* value) { SetId(value); return *this;}
 
   private:
     Aws::String m_startTime;

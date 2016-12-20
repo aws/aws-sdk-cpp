@@ -29,17 +29,17 @@ namespace Model
 
 SearchForDoctorsResult_doctorsItem_serviceDetailsListItem::SearchForDoctorsResult_doctorsItem_serviceDetailsListItem() : 
     m_doctorIdHasBeenSet(false),
-    m_serviceIdHasBeenSet(false),
     m_priceDollarsHasBeenSet(false),
-    m_durationSecondsHasBeenSet(false)
+    m_durationSecondsHasBeenSet(false),
+    m_serviceIdHasBeenSet(false)
 {
 }
 
 SearchForDoctorsResult_doctorsItem_serviceDetailsListItem::SearchForDoctorsResult_doctorsItem_serviceDetailsListItem(const JsonValue& jsonValue) : 
     m_doctorIdHasBeenSet(false),
-    m_serviceIdHasBeenSet(false),
     m_priceDollarsHasBeenSet(false),
-    m_durationSecondsHasBeenSet(false)
+    m_durationSecondsHasBeenSet(false),
+    m_serviceIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -51,13 +51,6 @@ SearchForDoctorsResult_doctorsItem_serviceDetailsListItem& SearchForDoctorsResul
     m_doctorId = jsonValue.GetString("doctorId");
 
     m_doctorIdHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("serviceId"))
-  {
-    m_serviceId = jsonValue.GetString("serviceId");
-
-    m_serviceIdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("priceDollars"))
@@ -74,6 +67,13 @@ SearchForDoctorsResult_doctorsItem_serviceDetailsListItem& SearchForDoctorsResul
     m_durationSecondsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("serviceId"))
+  {
+    m_serviceId = jsonValue.GetString("serviceId");
+
+    m_serviceIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -87,12 +87,6 @@ JsonValue SearchForDoctorsResult_doctorsItem_serviceDetailsListItem::Jsonize() c
 
   }
 
-  if(m_serviceIdHasBeenSet)
-  {
-   payload.WithString("serviceId", m_serviceId);
-
-  }
-
   if(m_priceDollarsHasBeenSet)
   {
    payload.WithString("priceDollars", m_priceDollars);
@@ -102,6 +96,12 @@ JsonValue SearchForDoctorsResult_doctorsItem_serviceDetailsListItem::Jsonize() c
   if(m_durationSecondsHasBeenSet)
   {
    payload.WithString("durationSeconds", m_durationSeconds);
+
+  }
+
+  if(m_serviceIdHasBeenSet)
+  {
+   payload.WithString("serviceId", m_serviceId);
 
   }
 
