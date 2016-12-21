@@ -37,6 +37,7 @@ ElasticsearchDestinationUpdate::ElasticsearchDestinationUpdate() :
     m_bufferingHintsHasBeenSet(false),
     m_retryOptionsHasBeenSet(false),
     m_s3UpdateHasBeenSet(false),
+    m_processingConfigurationHasBeenSet(false),
     m_cloudWatchLoggingOptionsHasBeenSet(false)
 {
 }
@@ -51,6 +52,7 @@ ElasticsearchDestinationUpdate::ElasticsearchDestinationUpdate(const JsonValue& 
     m_bufferingHintsHasBeenSet(false),
     m_retryOptionsHasBeenSet(false),
     m_s3UpdateHasBeenSet(false),
+    m_processingConfigurationHasBeenSet(false),
     m_cloudWatchLoggingOptionsHasBeenSet(false)
 {
   *this = jsonValue;
@@ -114,6 +116,13 @@ ElasticsearchDestinationUpdate& ElasticsearchDestinationUpdate::operator =(const
     m_s3UpdateHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ProcessingConfiguration"))
+  {
+    m_processingConfiguration = jsonValue.GetObject("ProcessingConfiguration");
+
+    m_processingConfigurationHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("CloudWatchLoggingOptions"))
   {
     m_cloudWatchLoggingOptions = jsonValue.GetObject("CloudWatchLoggingOptions");
@@ -172,6 +181,12 @@ JsonValue ElasticsearchDestinationUpdate::Jsonize() const
   if(m_s3UpdateHasBeenSet)
   {
    payload.WithObject("S3Update", m_s3Update.Jsonize());
+
+  }
+
+  if(m_processingConfigurationHasBeenSet)
+  {
+   payload.WithObject("ProcessingConfiguration", m_processingConfiguration.Jsonize());
 
   }
 

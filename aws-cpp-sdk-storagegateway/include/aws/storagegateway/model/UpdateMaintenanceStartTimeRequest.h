@@ -105,17 +105,20 @@ namespace Model
     inline UpdateMaintenanceStartTimeRequest& WithMinuteOfHour(int value) { SetMinuteOfHour(value); return *this;}
 
     /**
-     * <p>The maintenance start time day of the week.</p>
+     * <p>The maintenance start time day of the week represented as an ordinal number
+     * from 0 to 6, where 0 represents Sunday and 6 Saturday.</p>
      */
     inline int GetDayOfWeek() const{ return m_dayOfWeek; }
 
     /**
-     * <p>The maintenance start time day of the week.</p>
+     * <p>The maintenance start time day of the week represented as an ordinal number
+     * from 0 to 6, where 0 represents Sunday and 6 Saturday.</p>
      */
     inline void SetDayOfWeek(int value) { m_dayOfWeekHasBeenSet = true; m_dayOfWeek = value; }
 
     /**
-     * <p>The maintenance start time day of the week.</p>
+     * <p>The maintenance start time day of the week represented as an ordinal number
+     * from 0 to 6, where 0 represents Sunday and 6 Saturday.</p>
      */
     inline UpdateMaintenanceStartTimeRequest& WithDayOfWeek(int value) { SetDayOfWeek(value); return *this;}
 

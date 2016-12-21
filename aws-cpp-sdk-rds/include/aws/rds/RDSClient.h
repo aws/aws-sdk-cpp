@@ -102,49 +102,49 @@
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
 #include <future>
-    #include <functional>
+#include <functional>
 
-    namespace Aws
-    {
+namespace Aws
+{
 
-    namespace Http
-    {
-    class HttpClient;
-    class HttpClientFactory;
-    } // namespace Http
+namespace Http
+{
+  class HttpClient;
+  class HttpClientFactory;
+} // namespace Http
 
-    namespace Utils
-    {
-    template< typename R, typename E> class Outcome;
+namespace Utils
+{
+  template< typename R, typename E> class Outcome;
 
-    namespace Threading
-    {
-    class Executor;
-    } // namespace Threading
+namespace Threading
+{
+  class Executor;
+} // namespace Threading
 
-    namespace Xml
-    {
-    class XmlDocument;
-    } // namespace Xml
-    } // namespace Utils
+namespace Xml
+{
+  class XmlDocument;
+} // namespace Xml
+} // namespace Utils
 
-    namespace Auth
-    {
-    class AWSCredentials;
-    class AWSCredentialsProvider;
-    } // namespace Auth
+namespace Auth
+{
+  class AWSCredentials;
+  class AWSCredentialsProvider;
+} // namespace Auth
 
-    namespace Client
-    {
-    class RetryStrategy;
-    } // namespace Client
+namespace Client
+{
+  class RetryStrategy;
+} // namespace Client
 
-    namespace RDS
-    {
+namespace RDS
+{
 
-    namespace Model
-    {
-            class AddRoleToDBClusterRequest;
+namespace Model
+{
+        class AddRoleToDBClusterRequest;
         class AddSourceIdentifierToSubscriptionRequest;
         class AddTagsToResourceRequest;
         class ApplyPendingMaintenanceActionRequest;
@@ -404,11 +404,11 @@
         typedef std::future<RestoreDBInstanceFromDBSnapshotOutcome> RestoreDBInstanceFromDBSnapshotOutcomeCallable;
         typedef std::future<RestoreDBInstanceToPointInTimeOutcome> RestoreDBInstanceToPointInTimeOutcomeCallable;
         typedef std::future<RevokeDBSecurityGroupIngressOutcome> RevokeDBSecurityGroupIngressOutcomeCallable;
-    } // namespace Model
+} // namespace Model
 
-        class RDSClient;
+  class RDSClient;
 
-        typedef std::function<void(const RDSClient*, const Model::AddRoleToDBClusterRequest&, const Model::AddRoleToDBClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddRoleToDBClusterResponseReceivedHandler;
+    typedef std::function<void(const RDSClient*, const Model::AddRoleToDBClusterRequest&, const Model::AddRoleToDBClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddRoleToDBClusterResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::AddSourceIdentifierToSubscriptionRequest&, const Model::AddSourceIdentifierToSubscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddSourceIdentifierToSubscriptionResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::AddTagsToResourceRequest&, const Model::AddTagsToResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddTagsToResourceResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::ApplyPendingMaintenanceActionRequest&, const Model::ApplyPendingMaintenanceActionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ApplyPendingMaintenanceActionResponseReceivedHandler;
@@ -495,8 +495,8 @@
     typedef std::function<void(const RDSClient*, const Model::RestoreDBInstanceToPointInTimeRequest&, const Model::RestoreDBInstanceToPointInTimeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RestoreDBInstanceToPointInTimeResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::RevokeDBSecurityGroupIngressRequest&, const Model::RevokeDBSecurityGroupIngressOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RevokeDBSecurityGroupIngressResponseReceivedHandler;
 
-            /**
-        * <fullname>Amazon Relational Database Service</fullname> <p> </p> <p>Amazon
+  /**
+   * <fullname>Amazon Relational Database Service</fullname> <p> </p> <p>Amazon
    * Relational Database Service (Amazon RDS) is a web service that makes it easier
    * to set up, operate, and scale a relational database in the cloud. It provides
    * cost-efficient, resizeable capacity for an industry-standard relational database
@@ -534,13 +534,13 @@
    * Query API, see <a
    * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Using_the_Query_API.html">Using
    * the Query API</a>.</p> </li> </ul>
-        */
-        class AWS_RDS_API RDSClient : public Aws::Client::AWSXMLClient
-    {
+   */
+  class AWS_RDS_API RDSClient : public Aws::Client::AWSXMLClient
+  {
     public:
-    typedef Aws::Client::AWSXMLClient BASECLASS;
+      typedef Aws::Client::AWSXMLClient BASECLASS;
 
-           /**
+       /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
@@ -560,18 +560,13 @@
             const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
 
         virtual ~RDSClient();
-    
-        /**
+
+       /**
         * Converts any request object to a presigned URL with the GET method, using region for the signer and a timeout of 15 minutes.
         */
         Aws::String ConvertRequestToPresignedUrl(const AmazonSerializableWebServiceRequest& requestToConvert, const char* region) const;
 
-        /**
-        * Generates an auth token for connecting to an rds instance.
-        */
-        Aws::String GenerateConnectAuthToken(const char* dbHostName, const char* dbRegion, unsigned port, const char* dbUserName) const;
 
-        
         /**
          * <p>Associates an Identity and Access Management (IAM) role from an Aurora DB
          * cluster. For more information, see <a
@@ -3971,10 +3966,10 @@
         virtual void RevokeDBSecurityGroupIngressAsync(const Model::RevokeDBSecurityGroupIngressRequest& request, const RevokeDBSecurityGroupIngressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
-    private:
+  private:
     void init(const Client::ClientConfiguration& clientConfiguration);
 
-            /**Async helpers**/
+        /**Async helpers**/
         void AddRoleToDBClusterAsyncHelper(const Model::AddRoleToDBClusterRequest& request, const AddRoleToDBClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AddSourceIdentifierToSubscriptionAsyncHelper(const Model::AddSourceIdentifierToSubscriptionRequest& request, const AddSourceIdentifierToSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AddTagsToResourceAsyncHelper(const Model::AddTagsToResourceRequest& request, const AddTagsToResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -4064,7 +4059,7 @@
 
     Aws::String m_uri;
     std::shared_ptr<Utils::Threading::Executor> m_executor;
-    };
+  };
 
-    } // namespace RDS
-    } // namespace Aws
+} // namespace RDS
+} // namespace Aws

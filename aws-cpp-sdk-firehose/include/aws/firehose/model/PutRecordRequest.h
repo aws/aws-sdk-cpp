@@ -26,9 +26,6 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for <a>PutRecord</a>.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/PutRecordInput">AWS
-   * API Reference</a></p>
    */
   class AWS_FIREHOSE_API PutRecordRequest : public FirehoseRequest
   {

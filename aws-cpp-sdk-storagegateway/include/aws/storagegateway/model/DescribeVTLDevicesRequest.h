@@ -61,7 +61,7 @@ namespace Model
 
     /**
      * <p>An array of strings, where each string represents the Amazon Resource Name
-     * (ARN) of a VTL device.</p> <note><p>All of the specified VTL devices must be
+     * (ARN) of a VTL device.</p> <note> <p>All of the specified VTL devices must be
      * from the same gateway. If no VTL devices are specified, the result will contain
      * all devices on the specified gateway.</p> </note>
      */
@@ -69,7 +69,7 @@ namespace Model
 
     /**
      * <p>An array of strings, where each string represents the Amazon Resource Name
-     * (ARN) of a VTL device.</p> <note><p>All of the specified VTL devices must be
+     * (ARN) of a VTL device.</p> <note> <p>All of the specified VTL devices must be
      * from the same gateway. If no VTL devices are specified, the result will contain
      * all devices on the specified gateway.</p> </note>
      */
@@ -77,7 +77,7 @@ namespace Model
 
     /**
      * <p>An array of strings, where each string represents the Amazon Resource Name
-     * (ARN) of a VTL device.</p> <note><p>All of the specified VTL devices must be
+     * (ARN) of a VTL device.</p> <note> <p>All of the specified VTL devices must be
      * from the same gateway. If no VTL devices are specified, the result will contain
      * all devices on the specified gateway.</p> </note>
      */
@@ -85,7 +85,7 @@ namespace Model
 
     /**
      * <p>An array of strings, where each string represents the Amazon Resource Name
-     * (ARN) of a VTL device.</p> <note><p>All of the specified VTL devices must be
+     * (ARN) of a VTL device.</p> <note> <p>All of the specified VTL devices must be
      * from the same gateway. If no VTL devices are specified, the result will contain
      * all devices on the specified gateway.</p> </note>
      */
@@ -93,7 +93,7 @@ namespace Model
 
     /**
      * <p>An array of strings, where each string represents the Amazon Resource Name
-     * (ARN) of a VTL device.</p> <note><p>All of the specified VTL devices must be
+     * (ARN) of a VTL device.</p> <note> <p>All of the specified VTL devices must be
      * from the same gateway. If no VTL devices are specified, the result will contain
      * all devices on the specified gateway.</p> </note>
      */
@@ -101,7 +101,7 @@ namespace Model
 
     /**
      * <p>An array of strings, where each string represents the Amazon Resource Name
-     * (ARN) of a VTL device.</p> <note><p>All of the specified VTL devices must be
+     * (ARN) of a VTL device.</p> <note> <p>All of the specified VTL devices must be
      * from the same gateway. If no VTL devices are specified, the result will contain
      * all devices on the specified gateway.</p> </note>
      */
@@ -109,7 +109,7 @@ namespace Model
 
     /**
      * <p>An array of strings, where each string represents the Amazon Resource Name
-     * (ARN) of a VTL device.</p> <note><p>All of the specified VTL devices must be
+     * (ARN) of a VTL device.</p> <note> <p>All of the specified VTL devices must be
      * from the same gateway. If no VTL devices are specified, the result will contain
      * all devices on the specified gateway.</p> </note>
      */
@@ -117,7 +117,7 @@ namespace Model
 
     /**
      * <p>An array of strings, where each string represents the Amazon Resource Name
-     * (ARN) of a VTL device.</p> <note><p>All of the specified VTL devices must be
+     * (ARN) of a VTL device.</p> <note> <p>All of the specified VTL devices must be
      * from the same gateway. If no VTL devices are specified, the result will contain
      * all devices on the specified gateway.</p> </note>
      */

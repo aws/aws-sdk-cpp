@@ -261,19 +261,19 @@ namespace Model
     inline VolumeInfo& WithVolumeType(const char* value) { SetVolumeType(value); return *this;}
 
     /**
-     * <p>The size, in bytes, of the volume.</p> <p>Valid Values: 50 to 500 lowercase
+     * <p>The size of the volume in bytes.</p> <p>Valid Values: 50 to 500 lowercase
      * letters, numbers, periods (.), and hyphens (-).</p>
      */
     inline long long GetVolumeSizeInBytes() const{ return m_volumeSizeInBytes; }
 
     /**
-     * <p>The size, in bytes, of the volume.</p> <p>Valid Values: 50 to 500 lowercase
+     * <p>The size of the volume in bytes.</p> <p>Valid Values: 50 to 500 lowercase
      * letters, numbers, periods (.), and hyphens (-).</p>
      */
     inline void SetVolumeSizeInBytes(long long value) { m_volumeSizeInBytesHasBeenSet = true; m_volumeSizeInBytes = value; }
 
     /**
-     * <p>The size, in bytes, of the volume.</p> <p>Valid Values: 50 to 500 lowercase
+     * <p>The size of the volume in bytes.</p> <p>Valid Values: 50 to 500 lowercase
      * letters, numbers, periods (.), and hyphens (-).</p>
      */
     inline VolumeInfo& WithVolumeSizeInBytes(long long value) { SetVolumeSizeInBytes(value); return *this;}

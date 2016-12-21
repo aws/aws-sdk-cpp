@@ -87,20 +87,20 @@ namespace Model
     inline CreateTapeWithBarcodeRequest& WithGatewayARN(const char* value) { SetGatewayARN(value); return *this;}
 
     /**
-     * <p>The size, in bytes, of the virtual tape that you want to create.</p>
-     * <note><p>The size must be aligned by gigabyte (1024*1024*1024 byte).</p> </note>
+     * <p>The size, in bytes, of the virtual tape that you want to create.</p> <note>
+     * <p>The size must be aligned by gigabyte (1024*1024*1024 byte).</p> </note>
      */
     inline long long GetTapeSizeInBytes() const{ return m_tapeSizeInBytes; }
 
     /**
-     * <p>The size, in bytes, of the virtual tape that you want to create.</p>
-     * <note><p>The size must be aligned by gigabyte (1024*1024*1024 byte).</p> </note>
+     * <p>The size, in bytes, of the virtual tape that you want to create.</p> <note>
+     * <p>The size must be aligned by gigabyte (1024*1024*1024 byte).</p> </note>
      */
     inline void SetTapeSizeInBytes(long long value) { m_tapeSizeInBytesHasBeenSet = true; m_tapeSizeInBytes = value; }
 
     /**
-     * <p>The size, in bytes, of the virtual tape that you want to create.</p>
-     * <note><p>The size must be aligned by gigabyte (1024*1024*1024 byte).</p> </note>
+     * <p>The size, in bytes, of the virtual tape that you want to create.</p> <note>
+     * <p>The size must be aligned by gigabyte (1024*1024*1024 byte).</p> </note>
      */
     inline CreateTapeWithBarcodeRequest& WithTapeSizeInBytes(long long value) { SetTapeSizeInBytes(value); return *this;}
 

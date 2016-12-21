@@ -115,6 +115,21 @@ namespace Model
      */
     inline TapeArchive& WithTapeBarcode(const char* value) { SetTapeBarcode(value); return *this;}
 
+    
+    inline const Aws::Utils::DateTime& GetTapeCreatedDate() const{ return m_tapeCreatedDate; }
+
+    
+    inline void SetTapeCreatedDate(const Aws::Utils::DateTime& value) { m_tapeCreatedDateHasBeenSet = true; m_tapeCreatedDate = value; }
+
+    
+    inline void SetTapeCreatedDate(Aws::Utils::DateTime&& value) { m_tapeCreatedDateHasBeenSet = true; m_tapeCreatedDate = value; }
+
+    
+    inline TapeArchive& WithTapeCreatedDate(const Aws::Utils::DateTime& value) { SetTapeCreatedDate(value); return *this;}
+
+    
+    inline TapeArchive& WithTapeCreatedDate(Aws::Utils::DateTime&& value) { SetTapeCreatedDate(value); return *this;}
+
     /**
      * <p>The size, in bytes, of the archived virtual tape.</p>
      */
@@ -254,6 +269,8 @@ namespace Model
     bool m_tapeARNHasBeenSet;
     Aws::String m_tapeBarcode;
     bool m_tapeBarcodeHasBeenSet;
+    Aws::Utils::DateTime m_tapeCreatedDate;
+    bool m_tapeCreatedDateHasBeenSet;
     long long m_tapeSizeInBytes;
     bool m_tapeSizeInBytesHasBeenSet;
     Aws::Utils::DateTime m_completionTime;
