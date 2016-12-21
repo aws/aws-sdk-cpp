@@ -45,6 +45,7 @@ static const int REQUEST_EXPIRED_HASH = HashingUtils::HashString("RequestExpired
 static const int REQUEST_EXPIRED_EXCEPTION_HASH = HashingUtils::HashString("RequestExpiredException");
 static const int SERVICE_UNAVAILABLE_HASH = HashingUtils::HashString("ServiceUnavailable");
 static const int SERVICE_UNAVAILABLE_EXCEPTION_HASH = HashingUtils::HashString("ServiceUnavailableException");
+static const int SERVICE_UNAVAILABLE_ERROR_HASH = HashingUtils::HashString("ServiceUnavailableError");
 static const int THROTTLING_HASH = HashingUtils::HashString("Throttling");
 static const int THROTTLING_EXCEPTION_HASH = HashingUtils::HashString("ThrottlingException");
 static const int VALIDATION_ERROR_HASH = HashingUtils::HashString("ValidationError");
@@ -119,7 +120,7 @@ AWSError<CoreErrors> CoreErrorsMapper::GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(CoreErrors::REQUEST_EXPIRED, true);
   }
-  else if (errorHash == SERVICE_UNAVAILABLE_HASH || errorHash == SERVICE_UNAVAILABLE_EXCEPTION_HASH)
+  else if (errorHash == SERVICE_UNAVAILABLE_HASH || errorHash == SERVICE_UNAVAILABLE_EXCEPTION_HASH || errorHash == SERVICE_UNAVAILABLE_ERROR_HASH)
   {
     return AWSError<CoreErrors>(CoreErrors::SERVICE_UNAVAILABLE, true);
   }
