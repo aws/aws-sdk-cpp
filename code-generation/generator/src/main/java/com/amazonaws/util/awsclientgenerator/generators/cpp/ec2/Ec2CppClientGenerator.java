@@ -90,6 +90,10 @@ public class Ec2CppClientGenerator extends QueryCppClientGenerator{
         diskImageSizeTooLarge.setName("DiskImageSizeTooLarge");
         diskImageSizeTooLarge.setText("DiskImageSizeTooLarge");
         serviceErrors.add(diskImageSizeTooLarge);
+        final Error dryRunOperation = new Error();
+        dryRunOperation.setName("DryRunOperation");
+        dryRunOperation.setText("DryRunOperation");
+        serviceErrors.add(dryRunOperation);
         final Error encryptedVolumesNotSupported = new Error();
         encryptedVolumesNotSupported.setName("EncryptedVolumesNotSupported");
         encryptedVolumesNotSupported.setText("EncryptedVolumesNotSupported");
