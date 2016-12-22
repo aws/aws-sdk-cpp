@@ -33,10 +33,10 @@ namespace FileSystem
 
 static const char* FILE_SYSTEM_UTILS_LOG_TAG = "FileSystem";
 
-    class PosixDirectory : public Directory
+    class AndroidDirectory : public Directory
     {
     public:
-        PosixDirectory(const Aws::String& path, const Aws::String& relativePath) : Directory(path, relativePath), m_dir(nullptr)
+        AndroidDirectory(const Aws::String& path, const Aws::String& relativePath) : Directory(path, relativePath), m_dir(nullptr)
         {
             m_dir = opendir(m_directoryEntry.path.c_str());
 
@@ -46,7 +46,7 @@ static const char* FILE_SYSTEM_UTILS_LOG_TAG = "FileSystem";
             }
         }
 
-        ~PosixDirectory()
+        ~AndroidDirectory()
         {
             if (m_dir)
             {
@@ -60,9 +60,9 @@ static const char* FILE_SYSTEM_UTILS_LOG_TAG = "FileSystem";
             DirectoryEntry entry;
 
             dirent* dirEntry;
-            bool garbage(true);
+            bool invalidEntry(true);
 
-            while(garbage)
+            while(invalidEntry)
             {
                 if ((dirEntry = readdir(m_dir)))
                 {
@@ -70,7 +70,7 @@ static const char* FILE_SYSTEM_UTILS_LOG_TAG = "FileSystem";
                     if(entryName != ".." && entryName != ".")
                     {
                         entry = ParseFileInfo(dirEntry, true);
-                        garbage = false;
+                        invalidEntry = false;
                     }
                 }
                 else
@@ -197,10 +197,10 @@ Aws::String CreateTempFilePath()
     return pathStream.str();
 }
 
-Directory* OpenDirectory(const Aws::String& path, const Aws::String& relativePath)
+std::shared_ptr<Directory> OpenDirectory(const Aws::String& path, const Aws::String& relativePath)
 {
     assert(directoryEntry.fileType != FileType::File);
-    return Aws::New<AndroidDirectory>(FILE_SYSTEM_UTILS_LOG_TAG, path, relativePath);
+    return Aws::MakeShared<AndroidDirectory>(FILE_SYSTEM_UTILS_LOG_TAG, path, relativePath);
 }
 
 } // namespace FileSystem

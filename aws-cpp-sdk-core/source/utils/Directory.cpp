@@ -15,6 +15,8 @@
 
 #include <aws/core/platform/FileSystem.h>
 #include <aws/core/utils/memory/stl/AWSQueue.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/StringUtils.h>
 #include <cassert>
 
 namespace Aws
@@ -23,32 +25,25 @@ namespace Aws
     {
         Directory::Directory(const Aws::String& path, const Aws::String& relativePath)
         {
-            if (path[path.length() - 1] == PATH_DELIM)
+            auto trimmedPath = Utils::StringUtils::Trim(path.c_str());
+            auto trimmedRelativePath = Utils::StringUtils::Trim(relativePath.c_str());
+
+            if (trimmedPath[trimmedPath.length() - 1] == PATH_DELIM)
             {
-                m_directoryEntry.path = path.substr(0, path.length() - 1);                
+                m_directoryEntry.path = trimmedPath.substr(0, trimmedPath.length() - 1);
             }
             else
             {
-                m_directoryEntry.path = path;
+                m_directoryEntry.path = trimmedPath;
             }     
             
-            m_directoryEntry.relativePath = relativePath;      
-        }
-
-        Directory::~Directory()
-        {
-            for (auto directory : m_openDirectories)
-            {
-                Aws::Delete(directory);
-            }
-
-            m_openDirectories.clear();
-        }
+            m_directoryEntry.relativePath = trimmedRelativePath;
+        }        
 
         Directory& Directory::Descend(const DirectoryEntry& directoryEntry)
         {
             assert(directoryEntry.fileType != FileType::File);
-            Directory* openDir = OpenDirectory(directoryEntry.path, directoryEntry.relativePath);
+            auto openDir = OpenDirectory(directoryEntry.path, directoryEntry.relativePath);
             m_openDirectories.push_back(openDir);
             return *openDir;
         }
@@ -56,14 +51,6 @@ namespace Aws
         DirectoryTree::DirectoryTree(const Aws::String& path)
         {
             m_dir = OpenDirectory(path);
-        }
-
-        DirectoryTree::~DirectoryTree()
-        {
-            if (m_dir)
-            {
-                Aws::Delete(m_dir);
-            }
         }
 
         DirectoryTree::operator bool() const
@@ -142,6 +129,39 @@ namespace Aws
             }
 
             return !exitTraversal;
+        }
+
+        Aws::String Join(const Aws::String& leftSegment, const Aws::String& rightSegment)
+        {
+            Aws::StringStream ss;
+
+            if (!leftSegment.empty())
+            {
+                if (leftSegment.back() == PATH_DELIM)
+                {
+                    ss << leftSegment.substr(0, leftSegment.length() - 1);
+                }
+                else
+                {
+                    ss << leftSegment;
+                }
+            }
+
+            ss << PATH_DELIM;
+
+            if (!rightSegment.empty())
+            {
+                if (rightSegment.front() == PATH_DELIM)
+                {
+                    ss << rightSegment.substr(1);
+                }
+                else
+                {
+                    ss << rightSegment;
+                }
+            }
+
+            return ss.str();
         }
 
     }

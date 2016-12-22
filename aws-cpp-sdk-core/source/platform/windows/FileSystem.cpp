@@ -43,7 +43,7 @@ public:
         {
             m_directoryEntry = ParseFileInfo(ffd, false);
             FindClose(m_find);
-            auto seachPath = m_directoryEntry.path + PATH_DELIM + "*";
+            auto seachPath = Join(m_directoryEntry.path, "*");
             m_find = FindFirstFileA(seachPath.c_str(), &m_ffd);
         }
         else
@@ -64,9 +64,9 @@ public:
     {
         assert(m_find != INVALID_HANDLE_VALUE);
         DirectoryEntry entry;
-        bool windowsGarbage = true;
+        bool invalidEntry = true;
 
-        while(windowsGarbage && !m_lastError)
+        while(invalidEntry && !m_lastError)
         {
             //due to the way the FindFirstFile api works, 
             //the first entry will already be loaded by the time we get here.
@@ -76,7 +76,7 @@ public:
             if (fileName != ".." && fileName != ".")
             {
                 AWS_LOGSTREAM_TRACE(FILE_SYSTEM_UTILS_LOG_TAG, "Found entry " << entry.path);
-                windowsGarbage = false;
+                invalidEntry = false;
             }
             else
             {
@@ -114,8 +114,8 @@ private:
 
         if(computePath)
         {
-            entry.path = m_directoryEntry.path + PATH_DELIM + ffd.cFileName;
-            entry.relativePath = m_directoryEntry.relativePath.empty() ? ffd.cFileName : m_directoryEntry.relativePath + PATH_DELIM + ffd.cFileName;
+            entry.path = Join(m_directoryEntry.path, ffd.cFileName);
+            entry.relativePath = m_directoryEntry.relativePath.empty() ? ffd.cFileName : Join(m_directoryEntry.relativePath, ffd.cFileName);
         }
         else
         {
@@ -277,9 +277,9 @@ Aws::String CreateTempFilePath()
     return s_tempName;
 }
 
-Directory* OpenDirectory(const Aws::String& path, const Aws::String& relativePath)
+std::shared_ptr<Directory> OpenDirectory(const Aws::String& path, const Aws::String& relativePath)
 {
-    return Aws::New<User32Directory>(FILE_SYSTEM_UTILS_LOG_TAG, path, relativePath);
+    return Aws::MakeShared<User32Directory>(FILE_SYSTEM_UTILS_LOG_TAG, path, relativePath);
 }
 
 } // namespace FileSystem

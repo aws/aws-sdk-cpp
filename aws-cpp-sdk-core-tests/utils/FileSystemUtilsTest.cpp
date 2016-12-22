@@ -33,10 +33,9 @@ TEST(FileTest, HomeDirectory)
 
 TEST(FileTest, TestInvalidDirectoryPath)
 {
-    Aws::FileSystem::Directory* badDir = Aws::FileSystem::OpenDirectory("boogieMan");
+    auto badDir = Aws::FileSystem::OpenDirectory("boogieMan");
     bool dirGood = *badDir;
-    ASSERT_FALSE(dirGood);
-    Aws::Delete(badDir);
+    ASSERT_FALSE(dirGood);    
 }
 
 TEST(FileTest, TempFile)
@@ -79,11 +78,11 @@ public:
         auto homeDirectory = Aws::FileSystem::GetHomeDirectory();
         ASSERT_FALSE(homeDirectory.empty());
 
-        dir1 = homeDirectory + Aws::FileSystem::PATH_DELIM + "dir1";
-        dir2 = dir1 + Aws::FileSystem::PATH_DELIM + "dir2";
+        dir1 = Aws::FileSystem::Join(homeDirectory, "dir1");
+        dir2 = Aws::FileSystem::Join(dir1, "dir2");
 
-        file1 = dir1 + Aws::FileSystem::PATH_DELIM + "file1";
-        file2 = dir2 + Aws::FileSystem::PATH_DELIM + "file2";
+        file1 = Aws::FileSystem::Join(dir1, "file1");
+        file2 = Aws::FileSystem::Join(dir2, "file2");
 
         dir1Created = Aws::FileSystem::CreateDirectoryIfNotExists(dir1.c_str());
         ASSERT_TRUE(dir1Created);
@@ -121,7 +120,7 @@ TEST_F(DirectoryTreeTest, TestManualDirectoryTraversal)
 {
     //let one have the delimiter after it just to make sure both paths get handled.
     auto dir1WithExtraDelimiter = dir1 + Aws::FileSystem::PATH_DELIM;
-    Aws::FileSystem::Directory* dir = Aws::FileSystem::OpenDirectory(dir1WithExtraDelimiter);
+    auto dir = Aws::FileSystem::OpenDirectory(dir1WithExtraDelimiter);
 
     ASSERT_STREQ(dir1.c_str(), dir->GetPath().c_str());
     ASSERT_TRUE(dir->operator bool());
@@ -163,8 +162,6 @@ TEST_F(DirectoryTreeTest, TestManualDirectoryTraversal)
 
     entry = dir->Next();
     ASSERT_FALSE(entry.operator bool());
-
-    Aws::Delete(dir);    
 }
 
 TEST_F(DirectoryTreeTest, TestDirectoryTreeDepthFirstTraversal)

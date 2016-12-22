@@ -67,9 +67,14 @@ namespace FileSystem
 
     /**
      * Opens a directory for traversal.
-     * User is responsible for the returned allocated memory. Call Aws::Delete();
      */
-    AWS_CORE_API Directory* OpenDirectory(const Aws::String& path, const Aws::String& relativePath = "");
+    AWS_CORE_API std::shared_ptr<Directory> OpenDirectory(const Aws::String& path, const Aws::String& relativePath = "");
+
+    /**
+     * Joins the leftSegment and rightSegment of a path together using platform specific delimiter.
+     * e.g. C:\users\name\ and .aws becomes C:\users\name\.aws
+     */
+    AWS_CORE_API Aws::String Join(const Aws::String& leftSegment, const Aws::String& rightSegment);
 
     /**
      * Type of directory entry encountered.
@@ -104,8 +109,7 @@ namespace FileSystem
         /**
          * Initialize a directory with it's absolute path. If the path is invalid, the bool operator will return false.
          */
-        Directory(const Aws::String& path, const Aws::String& relativePath);
-        virtual ~Directory();
+        Directory(const Aws::String& path, const Aws::String& relativePath);        
 
         /**
          * If this directory is valid for use.
@@ -115,12 +119,12 @@ namespace FileSystem
         /**
          * Get the entry representing this current directory object.
          */
-        const DirectoryEntry GetDirectoryEntry() const { return m_directoryEntry; }
+        const DirectoryEntry& GetDirectoryEntry() const { return m_directoryEntry; }
 
         /**
          * Get the current path of this directory object.
          */
-        const Aws::String GetPath() const { return m_directoryEntry.path; }
+        const Aws::String& GetPath() const { return m_directoryEntry.path; }
 
         /**
          * Get the next entry inside this directory.
@@ -137,10 +141,10 @@ namespace FileSystem
         DirectoryEntry m_directoryEntry;
 
     private:
-        Aws::Vector<Directory*> m_openDirectories;
+        Aws::Vector<std::shared_ptr<Directory>> m_openDirectories;
     };
 
-    class AWS_CORE_API DirectoryTree;
+    class DirectoryTree;
 
     /**
      * Visitor for a Directory Tree traversal. Return true to continue the traversal, false to exit the traversal immediately.
@@ -151,14 +155,13 @@ namespace FileSystem
      * Wrapper around directory. Currently provides a Depth-first and Breadth-first traversal of the provided path. This is most likely the class you are 
      * looking for.
      */
-    class DirectoryTree
+    class AWS_CORE_API DirectoryTree
     {
     public:
         /**
          * Create a directory object for use with traversal using the provided path.
          */
         DirectoryTree(const Aws::String& path);
-        ~DirectoryTree();
 
         /**
          * If the object is valid for use: true. Otherwise: false.
@@ -179,7 +182,7 @@ namespace FileSystem
         bool TraverseDepthFirst(Directory& dir, const DirectoryEntryVisitor& visitor);
         void TraverseBreadthFirst(Directory& dir, const DirectoryEntryVisitor& visitor);
 
-        Directory* m_dir;
+        std::shared_ptr<Directory> m_dir;
     };
 
 } // namespace FileSystem

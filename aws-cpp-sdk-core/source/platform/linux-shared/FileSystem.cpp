@@ -61,9 +61,9 @@ static const char* FILE_SYSTEM_UTILS_LOG_TAG = "FileSystemUtils";
             DirectoryEntry entry;
 
             dirent* dirEntry;
-            bool garbage(true);
+            bool invalidEntry(true);
 
-            while(garbage)
+            while(invalidEntry)
             {
                 if ((dirEntry = readdir(m_dir)))
                 {
@@ -71,7 +71,7 @@ static const char* FILE_SYSTEM_UTILS_LOG_TAG = "FileSystemUtils";
                     if(entryName != ".." && entryName != ".")
                     {
                         entry = ParseFileInfo(dirEntry, true);
-                        garbage = false;
+                        invalidEntry = false;
                     }
                 }
                 else
@@ -229,9 +229,9 @@ Aws::String CreateTempFilePath()
     return tempFile;
 }
 
-Directory* OpenDirectory(const Aws::String& path, const Aws::String& relativePath)
+std::shared_ptr<Directory> OpenDirectory(const Aws::String& path, const Aws::String& relativePath)
 {
-    return Aws::New<PosixDirectory>(FILE_SYSTEM_UTILS_LOG_TAG, path, relativePath);
+    return Aws::MakeShared<PosixDirectory>(FILE_SYSTEM_UTILS_LOG_TAG, path, relativePath);
 }
 
 } // namespace FileSystem
