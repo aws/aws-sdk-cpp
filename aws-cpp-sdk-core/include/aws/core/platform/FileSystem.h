@@ -17,6 +17,7 @@
 #include <aws/core/Core_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <functional>
 
 namespace Aws
@@ -59,6 +60,16 @@ namespace FileSystem
     * Moves the file. Returns true on success
     */
     AWS_CORE_API bool RelocateFileOrDirectory(const char* from, const char* to);
+
+    /**
+     * Copies a directory and all of its contents.
+     */
+    AWS_CORE_API bool DeepCopyDirectory(const char* from, const char* to);
+
+    /**
+     * Deletes a directory and all of its contents.
+     */
+    AWS_CORE_API bool DeepDeleteDirectory(const char* toDelete);
 
     /**
     * Computes a unique tmp file path
@@ -149,7 +160,7 @@ namespace FileSystem
     /**
      * Visitor for a Directory Tree traversal. Return true to continue the traversal, false to exit the traversal immediately.
      */
-    typedef std::function<bool(const DirectoryTree*, const DirectoryEntry&)> DirectoryEntryVisitor;
+    typedef std::function<bool(const DirectoryTree*, const DirectoryEntry&)> DirectoryEntryVisitor;    
 
     /**
      * Wrapper around directory. Currently provides a Depth-first and Breadth-first traversal of the provided path. This is most likely the class you are 
@@ -164,14 +175,34 @@ namespace FileSystem
         DirectoryTree(const Aws::String& path);
 
         /**
+         * Returns true if the Directory Tree structures match. Otherwise false.
+         */
+        bool operator==(DirectoryTree& other);
+
+        /**
+         * Returns true if the Directory tree structure at path matches. Otherwise false.
+         */
+        bool operator==(const Aws::String& path);
+
+        /**
+         * Computes the difference between two directory trees based on their relative paths.
+         * File contents are not taken into account, only the tree structure.
+         *
+         * Returns the diff between the two trees where the key is the relative path. The Directory entry will
+         * contain the absolute path and file size.
+         */
+        Aws::Map<Aws::String, DirectoryEntry> Diff(DirectoryTree& other);
+
+        /**
          * If the object is valid for use: true. Otherwise: false.
          */
         operator bool() const;
 
         /**
          * Performs a depth-first traversal of the directory tree. Upon encountering an entry, visitor will be invoked.
+         * If postOrder is true, a pre-order traversal will be used. otherwise pre-order will be used.
          */
-        void TraverseDepthFirst(const DirectoryEntryVisitor& visitor);
+        void TraverseDepthFirst(const DirectoryEntryVisitor& visitor, bool postOrderTraversal = false);
 
         /**
          * Performs a breadth-first traversal of the directory tree. Upon encountering an entry, visitor will be invoked.
@@ -179,7 +210,7 @@ namespace FileSystem
         void TraverseBreadthFirst(const DirectoryEntryVisitor& visitor);
 
     private:
-        bool TraverseDepthFirst(Directory& dir, const DirectoryEntryVisitor& visitor);
+        bool TraverseDepthFirst(Directory& dir, const DirectoryEntryVisitor& visitor, bool postOrder = false);
         void TraverseBreadthFirst(Directory& dir, const DirectoryEntryVisitor& visitor);
 
         std::shared_ptr<Directory> m_dir;

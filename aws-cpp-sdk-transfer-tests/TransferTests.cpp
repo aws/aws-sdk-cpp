@@ -721,9 +721,9 @@ TEST_F(TransferTests, TransferManager_DownloadDirectoryTest)
     }
 
     ASSERT_EQ(3u, directoryDownloads.size());
-    auto smallTestDownloadFile = GetTestFilesDirectory() + Aws::FileSystem::PATH_DELIM + TEST_FILE_KEY;
-    auto contentTestDownloadFile = GetTestFilesDirectory() + Aws::FileSystem::PATH_DELIM + CONTENT_FILE_KEY;   
-    auto nestedDownloadFile = GetTestFilesDirectory() + Aws::FileSystem::PATH_DELIM + NESTED_FILE_KEY;
+    auto smallTestDownloadFile = Aws::FileSystem::Join(GetTestFilesDirectory(), TEST_FILE_KEY);
+    auto contentTestDownloadFile = Aws::FileSystem::Join(GetTestFilesDirectory(), CONTENT_FILE_KEY);
+    auto nestedDownloadFile = Aws::FileSystem::Join(GetTestFilesDirectory(), NESTED_FILE_KEY);
 
     char delim[] = { Aws::FileSystem::PATH_DELIM, 0};
     StringUtils::Replace(nestedDownloadFile, "/", delim);

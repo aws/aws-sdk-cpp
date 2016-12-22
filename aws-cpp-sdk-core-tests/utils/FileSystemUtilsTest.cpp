@@ -109,10 +109,7 @@ public:
 
     void TearDown() override
     {
-        Aws::FileSystem::RemoveFileIfExists(file1.c_str());
-        Aws::FileSystem::RemoveFileIfExists(file2.c_str());
-        Aws::FileSystem::RemoveDirectoryIfExists(dir2.c_str());
-        Aws::FileSystem::RemoveDirectoryIfExists(dir1.c_str());
+        Aws::FileSystem::DeepDeleteDirectory(dir1.c_str());
     }
 };
 
@@ -175,6 +172,50 @@ TEST_F(DirectoryTreeTest, TestDirectoryTreeDepthFirstTraversal)
     tree.TraverseDepthFirst(visitor);
 
     ASSERT_TRUE(paths.empty());
+}
+
+TEST_F(DirectoryTreeTest, TestDirectoryTreeEqualityOperator)
+{
+    Aws::FileSystem::DirectoryTree tree(dir1);
+
+    Aws::String comparisonDirectory = Aws::FileSystem::Join(Aws::FileSystem::GetHomeDirectory(), "compDir");
+    ASSERT_TRUE(Aws::FileSystem::DeepCopyDirectory(dir1.c_str(), comparisonDirectory.c_str()));
+    EXPECT_TRUE(tree == comparisonDirectory);
+    ASSERT_TRUE(Aws::FileSystem::DeepDeleteDirectory(comparisonDirectory.c_str()));
+}
+
+TEST_F(DirectoryTreeTest, TestDirectoryTreeDiff)
+{
+    Aws::FileSystem::DirectoryTree tree(dir1);
+
+    Aws::String comparisonDirectory = Aws::FileSystem::Join(Aws::FileSystem::GetHomeDirectory(), "compDir");
+    ASSERT_TRUE(Aws::FileSystem::DeepCopyDirectory(dir1.c_str(), comparisonDirectory.c_str()));
+    
+    {
+        Aws::FileSystem::DirectoryTree comparisonTree(comparisonDirectory);
+        auto diff = tree.Diff(comparisonTree);
+        ASSERT_EQ(0u, diff.size());
+    }
+
+    auto additionalFile = Aws::FileSystem::Join(comparisonDirectory, "additionalFile");
+    {
+        Aws::OFStream additionalFileStrm(additionalFile.c_str());
+        ASSERT_TRUE(additionalFileStrm.good());
+        additionalFileStrm << "Additional File input." << std::endl;
+    }
+
+    auto missingFile = Aws::FileSystem::Join(Aws::FileSystem::Join(comparisonDirectory, "dir2"), "file2");
+    Aws::FileSystem::RemoveFileIfExists(missingFile.c_str());
+
+    Aws::FileSystem::DirectoryTree comparisonTree(comparisonDirectory);
+    auto diff = tree.Diff(comparisonTree);
+    Aws::FileSystem::DeepDeleteDirectory(comparisonDirectory.c_str());
+
+    ASSERT_EQ(2u, diff.size());
+    auto entry = diff.begin();
+    ASSERT_STREQ(additionalFile.c_str(), entry->second.path.c_str());
+    entry++;
+    ASSERT_STREQ(missingFile.c_str(), entry->second.path.c_str());
 }
 
 TEST_F(DirectoryTreeTest, TestDirectoryTreeBreadthFirstTraversal)
