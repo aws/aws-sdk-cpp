@@ -72,11 +72,16 @@
                 return baseUri + escapeCharacters(dirtyName);
             }
             
-            function checkResourceExists(url) {          
-                var xmlHttp = new XMLHttpRequest();
-                xmlHttp.open( "GET", url, false );
-                xmlHttp.send( null );
-                return xmlHttp.status == 200;
+            function checkResourceExists(url) {  
+                try {
+                    var xmlHttp = new XMLHttpRequest();
+                    xmlHttp.open( "GET", url, false );
+                    xmlHttp.send( null );
+                    return xmlHttp.status == 200;
+                }
+                catch(err) {
+                    return false;
+                }
             }
             
             var url = window.location.href;
