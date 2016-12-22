@@ -24,7 +24,8 @@ using namespace Aws::Utils;
 BatchGetImageRequest::BatchGetImageRequest() : 
     m_registryIdHasBeenSet(false),
     m_repositoryNameHasBeenSet(false),
-    m_imageIdsHasBeenSet(false)
+    m_imageIdsHasBeenSet(false),
+    m_acceptedMediaTypesHasBeenSet(false)
 {
 }
 
@@ -52,6 +53,17 @@ Aws::String BatchGetImageRequest::SerializePayload() const
      imageIdsJsonList[imageIdsIndex].AsObject(m_imageIds[imageIdsIndex].Jsonize());
    }
    payload.WithArray("imageIds", std::move(imageIdsJsonList));
+
+  }
+
+  if(m_acceptedMediaTypesHasBeenSet)
+  {
+   Array<JsonValue> acceptedMediaTypesJsonList(m_acceptedMediaTypes.size());
+   for(unsigned acceptedMediaTypesIndex = 0; acceptedMediaTypesIndex < acceptedMediaTypesJsonList.GetLength(); ++acceptedMediaTypesIndex)
+   {
+     acceptedMediaTypesJsonList[acceptedMediaTypesIndex].AsString(m_acceptedMediaTypes[acceptedMediaTypesIndex]);
+   }
+   payload.WithArray("acceptedMediaTypes", std::move(acceptedMediaTypesJsonList));
 
   }
 
