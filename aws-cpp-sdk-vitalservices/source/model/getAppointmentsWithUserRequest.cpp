@@ -24,9 +24,9 @@ using namespace Aws::Utils;
 getAppointmentsWithUserRequest::getAppointmentsWithUserRequest() : 
     m_getDoctors(false),
     m_getDoctorsHasBeenSet(false),
-    m_userIdHasBeenSet(false),
     m_getPatients(false),
-    m_getPatientsHasBeenSet(false)
+    m_getPatientsHasBeenSet(false),
+    m_userIdHasBeenSet(false)
 {
 }
 
@@ -40,15 +40,15 @@ Aws::String getAppointmentsWithUserRequest::SerializePayload() const
 
   }
 
-  if(m_userIdHasBeenSet)
-  {
-   payload.WithString("userId", m_userId);
-
-  }
-
   if(m_getPatientsHasBeenSet)
   {
    payload.WithBool("getPatients", m_getPatients);
+
+  }
+
+  if(m_userIdHasBeenSet)
+  {
+   payload.WithString("userId", m_userId);
 
   }
 

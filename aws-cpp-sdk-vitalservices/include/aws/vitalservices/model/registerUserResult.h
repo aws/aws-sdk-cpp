@@ -40,6 +40,69 @@ namespace Model
     registerUserResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     
+    inline const Aws::String& GetProfilePhotoUrl() const{ return m_profilePhotoUrl; }
+
+    
+    inline void SetProfilePhotoUrl(const Aws::String& value) { m_profilePhotoUrl = value; }
+
+    
+    inline void SetProfilePhotoUrl(Aws::String&& value) { m_profilePhotoUrl = value; }
+
+    
+    inline void SetProfilePhotoUrl(const char* value) { m_profilePhotoUrl.assign(value); }
+
+    
+    inline registerUserResult& WithProfilePhotoUrl(const Aws::String& value) { SetProfilePhotoUrl(value); return *this;}
+
+    
+    inline registerUserResult& WithProfilePhotoUrl(Aws::String&& value) { SetProfilePhotoUrl(value); return *this;}
+
+    
+    inline registerUserResult& WithProfilePhotoUrl(const char* value) { SetProfilePhotoUrl(value); return *this;}
+
+    
+    inline const Aws::String& GetStripeCustomerId() const{ return m_stripeCustomerId; }
+
+    
+    inline void SetStripeCustomerId(const Aws::String& value) { m_stripeCustomerId = value; }
+
+    
+    inline void SetStripeCustomerId(Aws::String&& value) { m_stripeCustomerId = value; }
+
+    
+    inline void SetStripeCustomerId(const char* value) { m_stripeCustomerId.assign(value); }
+
+    
+    inline registerUserResult& WithStripeCustomerId(const Aws::String& value) { SetStripeCustomerId(value); return *this;}
+
+    
+    inline registerUserResult& WithStripeCustomerId(Aws::String&& value) { SetStripeCustomerId(value); return *this;}
+
+    
+    inline registerUserResult& WithStripeCustomerId(const char* value) { SetStripeCustomerId(value); return *this;}
+
+    
+    inline const Aws::String& GetFirstName() const{ return m_firstName; }
+
+    
+    inline void SetFirstName(const Aws::String& value) { m_firstName = value; }
+
+    
+    inline void SetFirstName(Aws::String&& value) { m_firstName = value; }
+
+    
+    inline void SetFirstName(const char* value) { m_firstName.assign(value); }
+
+    
+    inline registerUserResult& WithFirstName(const Aws::String& value) { SetFirstName(value); return *this;}
+
+    
+    inline registerUserResult& WithFirstName(Aws::String&& value) { SetFirstName(value); return *this;}
+
+    
+    inline registerUserResult& WithFirstName(const char* value) { SetFirstName(value); return *this;}
+
+    
     inline const Aws::String& GetLastName() const{ return m_lastName; }
 
     
@@ -82,48 +145,6 @@ namespace Model
     inline registerUserResult& WithId(const char* value) { SetId(value); return *this;}
 
     
-    inline const Aws::String& GetStripeCustomerId() const{ return m_stripeCustomerId; }
-
-    
-    inline void SetStripeCustomerId(const Aws::String& value) { m_stripeCustomerId = value; }
-
-    
-    inline void SetStripeCustomerId(Aws::String&& value) { m_stripeCustomerId = value; }
-
-    
-    inline void SetStripeCustomerId(const char* value) { m_stripeCustomerId.assign(value); }
-
-    
-    inline registerUserResult& WithStripeCustomerId(const Aws::String& value) { SetStripeCustomerId(value); return *this;}
-
-    
-    inline registerUserResult& WithStripeCustomerId(Aws::String&& value) { SetStripeCustomerId(value); return *this;}
-
-    
-    inline registerUserResult& WithStripeCustomerId(const char* value) { SetStripeCustomerId(value); return *this;}
-
-    
-    inline const Aws::String& GetProfilePhotoUrl() const{ return m_profilePhotoUrl; }
-
-    
-    inline void SetProfilePhotoUrl(const Aws::String& value) { m_profilePhotoUrl = value; }
-
-    
-    inline void SetProfilePhotoUrl(Aws::String&& value) { m_profilePhotoUrl = value; }
-
-    
-    inline void SetProfilePhotoUrl(const char* value) { m_profilePhotoUrl.assign(value); }
-
-    
-    inline registerUserResult& WithProfilePhotoUrl(const Aws::String& value) { SetProfilePhotoUrl(value); return *this;}
-
-    
-    inline registerUserResult& WithProfilePhotoUrl(Aws::String&& value) { SetProfilePhotoUrl(value); return *this;}
-
-    
-    inline registerUserResult& WithProfilePhotoUrl(const char* value) { SetProfilePhotoUrl(value); return *this;}
-
-    
     inline const Aws::String& GetMobileNumber() const{ return m_mobileNumber; }
 
     
@@ -143,48 +164,6 @@ namespace Model
 
     
     inline registerUserResult& WithMobileNumber(const char* value) { SetMobileNumber(value); return *this;}
-
-    
-    inline const Aws::String& GetDoctorId() const{ return m_doctorId; }
-
-    
-    inline void SetDoctorId(const Aws::String& value) { m_doctorId = value; }
-
-    
-    inline void SetDoctorId(Aws::String&& value) { m_doctorId = value; }
-
-    
-    inline void SetDoctorId(const char* value) { m_doctorId.assign(value); }
-
-    
-    inline registerUserResult& WithDoctorId(const Aws::String& value) { SetDoctorId(value); return *this;}
-
-    
-    inline registerUserResult& WithDoctorId(Aws::String&& value) { SetDoctorId(value); return *this;}
-
-    
-    inline registerUserResult& WithDoctorId(const char* value) { SetDoctorId(value); return *this;}
-
-    
-    inline const Aws::String& GetFirstName() const{ return m_firstName; }
-
-    
-    inline void SetFirstName(const Aws::String& value) { m_firstName = value; }
-
-    
-    inline void SetFirstName(Aws::String&& value) { m_firstName = value; }
-
-    
-    inline void SetFirstName(const char* value) { m_firstName.assign(value); }
-
-    
-    inline registerUserResult& WithFirstName(const Aws::String& value) { SetFirstName(value); return *this;}
-
-    
-    inline registerUserResult& WithFirstName(Aws::String&& value) { SetFirstName(value); return *this;}
-
-    
-    inline registerUserResult& WithFirstName(const char* value) { SetFirstName(value); return *this;}
 
     
     inline const Aws::String& GetEmail() const{ return m_email; }
@@ -207,15 +186,36 @@ namespace Model
     
     inline registerUserResult& WithEmail(const char* value) { SetEmail(value); return *this;}
 
+    
+    inline const Aws::String& GetDoctorId() const{ return m_doctorId; }
+
+    
+    inline void SetDoctorId(const Aws::String& value) { m_doctorId = value; }
+
+    
+    inline void SetDoctorId(Aws::String&& value) { m_doctorId = value; }
+
+    
+    inline void SetDoctorId(const char* value) { m_doctorId.assign(value); }
+
+    
+    inline registerUserResult& WithDoctorId(const Aws::String& value) { SetDoctorId(value); return *this;}
+
+    
+    inline registerUserResult& WithDoctorId(Aws::String&& value) { SetDoctorId(value); return *this;}
+
+    
+    inline registerUserResult& WithDoctorId(const char* value) { SetDoctorId(value); return *this;}
+
   private:
+    Aws::String m_profilePhotoUrl;
+    Aws::String m_stripeCustomerId;
+    Aws::String m_firstName;
     Aws::String m_lastName;
     Aws::String m_id;
-    Aws::String m_stripeCustomerId;
-    Aws::String m_profilePhotoUrl;
     Aws::String m_mobileNumber;
-    Aws::String m_doctorId;
-    Aws::String m_firstName;
     Aws::String m_email;
+    Aws::String m_doctorId;
   };
 
 } // namespace Model

@@ -40,15 +40,6 @@ namespace Model
     getLoggedInUserResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     
-    inline bool GetUserExists() const{ return m_userExists; }
-
-    
-    inline void SetUserExists(bool value) { m_userExists = value; }
-
-    
-    inline getLoggedInUserResult& WithUserExists(bool value) { SetUserExists(value); return *this;}
-
-    
     inline const GetLoggedInUserResult_user& GetUser() const{ return m_user; }
 
     
@@ -63,9 +54,18 @@ namespace Model
     
     inline getLoggedInUserResult& WithUser(GetLoggedInUserResult_user&& value) { SetUser(value); return *this;}
 
+    
+    inline bool GetUserExists() const{ return m_userExists; }
+
+    
+    inline void SetUserExists(bool value) { m_userExists = value; }
+
+    
+    inline getLoggedInUserResult& WithUserExists(bool value) { SetUserExists(value); return *this;}
+
   private:
-    bool m_userExists;
     GetLoggedInUserResult_user m_user;
+    bool m_userExists;
   };
 
 } // namespace Model

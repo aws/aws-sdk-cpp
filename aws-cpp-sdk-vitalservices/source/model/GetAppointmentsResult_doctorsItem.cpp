@@ -28,68 +28,78 @@ namespace Model
 {
 
 GetAppointmentsResult_doctorsItem::GetAppointmentsResult_doctorsItem() : 
-    m_cityHasBeenSet(false),
-    m_lastNameHasBeenSet(false),
-    m_officeNumberHasBeenSet(false),
-    m_profilePhotoUrlHasBeenSet(false),
-    m_servicesOfferedHasBeenSet(false),
-    m_serviceDetailsListHasBeenSet(false),
-    m_specialtyIdHasBeenSet(false),
-    m_streetNumberAndNameHasBeenSet(false),
-    m_postalCodeHasBeenSet(false),
-    m_administrativeAreaL1HasBeenSet(false),
-    m_coverPhotoUrlHasBeenSet(false),
-    m_payoutInfoIsSet(false),
-    m_payoutInfoIsSetHasBeenSet(false),
-    m_firstNameHasBeenSet(false),
     m_longitude(0.0),
     m_longitudeHasBeenSet(false),
-    m_suiteHasBeenSet(false),
+    m_serviceDetailsListHasBeenSet(false),
+    m_cityHasBeenSet(false),
+    m_officeNumberHasBeenSet(false),
+    m_profilePhotoUrlHasBeenSet(false),
     m_idHasBeenSet(false),
+    m_streetNumberAndNameHasBeenSet(false),
+    m_servicesOfferedHasBeenSet(false),
+    m_administrativeAreaL1HasBeenSet(false),
+    m_lastNameHasBeenSet(false),
+    m_payoutInfoIsSet(false),
+    m_payoutInfoIsSetHasBeenSet(false),
+    m_specialtyIdHasBeenSet(false),
+    m_firstNameHasBeenSet(false),
+    m_suiteHasBeenSet(false),
     m_latitude(0.0),
-    m_latitudeHasBeenSet(false)
+    m_latitudeHasBeenSet(false),
+    m_coverPhotoUrlHasBeenSet(false),
+    m_postalCodeHasBeenSet(false)
 {
 }
 
 GetAppointmentsResult_doctorsItem::GetAppointmentsResult_doctorsItem(const JsonValue& jsonValue) : 
-    m_cityHasBeenSet(false),
-    m_lastNameHasBeenSet(false),
-    m_officeNumberHasBeenSet(false),
-    m_profilePhotoUrlHasBeenSet(false),
-    m_servicesOfferedHasBeenSet(false),
-    m_serviceDetailsListHasBeenSet(false),
-    m_specialtyIdHasBeenSet(false),
-    m_streetNumberAndNameHasBeenSet(false),
-    m_postalCodeHasBeenSet(false),
-    m_administrativeAreaL1HasBeenSet(false),
-    m_coverPhotoUrlHasBeenSet(false),
-    m_payoutInfoIsSet(false),
-    m_payoutInfoIsSetHasBeenSet(false),
-    m_firstNameHasBeenSet(false),
     m_longitude(0.0),
     m_longitudeHasBeenSet(false),
-    m_suiteHasBeenSet(false),
+    m_serviceDetailsListHasBeenSet(false),
+    m_cityHasBeenSet(false),
+    m_officeNumberHasBeenSet(false),
+    m_profilePhotoUrlHasBeenSet(false),
     m_idHasBeenSet(false),
+    m_streetNumberAndNameHasBeenSet(false),
+    m_servicesOfferedHasBeenSet(false),
+    m_administrativeAreaL1HasBeenSet(false),
+    m_lastNameHasBeenSet(false),
+    m_payoutInfoIsSet(false),
+    m_payoutInfoIsSetHasBeenSet(false),
+    m_specialtyIdHasBeenSet(false),
+    m_firstNameHasBeenSet(false),
+    m_suiteHasBeenSet(false),
     m_latitude(0.0),
-    m_latitudeHasBeenSet(false)
+    m_latitudeHasBeenSet(false),
+    m_coverPhotoUrlHasBeenSet(false),
+    m_postalCodeHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 GetAppointmentsResult_doctorsItem& GetAppointmentsResult_doctorsItem::operator =(const JsonValue& jsonValue)
 {
+  if(jsonValue.ValueExists("longitude"))
+  {
+    m_longitude = jsonValue.GetDouble("longitude");
+
+    m_longitudeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("serviceDetailsList"))
+  {
+    Array<JsonValue> serviceDetailsListJsonList = jsonValue.GetArray("serviceDetailsList");
+    for(unsigned serviceDetailsListIndex = 0; serviceDetailsListIndex < serviceDetailsListJsonList.GetLength(); ++serviceDetailsListIndex)
+    {
+      m_serviceDetailsList.push_back(serviceDetailsListJsonList[serviceDetailsListIndex].AsObject());
+    }
+    m_serviceDetailsListHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("city"))
   {
     m_city = jsonValue.GetString("city");
 
     m_cityHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("lastName"))
-  {
-    m_lastName = jsonValue.GetString("lastName");
-
-    m_lastNameHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("officeNumber"))
@@ -106,6 +116,20 @@ GetAppointmentsResult_doctorsItem& GetAppointmentsResult_doctorsItem::operator =
     m_profilePhotoUrlHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("id"))
+  {
+    m_id = jsonValue.GetString("id");
+
+    m_idHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("streetNumberAndName"))
+  {
+    m_streetNumberAndName = jsonValue.GetString("streetNumberAndName");
+
+    m_streetNumberAndNameHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("servicesOffered"))
   {
     Array<JsonValue> servicesOfferedJsonList = jsonValue.GetArray("servicesOffered");
@@ -116,37 +140,6 @@ GetAppointmentsResult_doctorsItem& GetAppointmentsResult_doctorsItem::operator =
     m_servicesOfferedHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("serviceDetailsList"))
-  {
-    Array<JsonValue> serviceDetailsListJsonList = jsonValue.GetArray("serviceDetailsList");
-    for(unsigned serviceDetailsListIndex = 0; serviceDetailsListIndex < serviceDetailsListJsonList.GetLength(); ++serviceDetailsListIndex)
-    {
-      m_serviceDetailsList.push_back(serviceDetailsListJsonList[serviceDetailsListIndex].AsObject());
-    }
-    m_serviceDetailsListHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("specialtyId"))
-  {
-    m_specialtyId = jsonValue.GetString("specialtyId");
-
-    m_specialtyIdHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("streetNumberAndName"))
-  {
-    m_streetNumberAndName = jsonValue.GetString("streetNumberAndName");
-
-    m_streetNumberAndNameHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("postalCode"))
-  {
-    m_postalCode = jsonValue.GetString("postalCode");
-
-    m_postalCodeHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("administrativeAreaL1"))
   {
     m_administrativeAreaL1 = jsonValue.GetString("administrativeAreaL1");
@@ -154,11 +147,11 @@ GetAppointmentsResult_doctorsItem& GetAppointmentsResult_doctorsItem::operator =
     m_administrativeAreaL1HasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("coverPhotoUrl"))
+  if(jsonValue.ValueExists("lastName"))
   {
-    m_coverPhotoUrl = jsonValue.GetString("coverPhotoUrl");
+    m_lastName = jsonValue.GetString("lastName");
 
-    m_coverPhotoUrlHasBeenSet = true;
+    m_lastNameHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("payoutInfoIsSet"))
@@ -168,18 +161,18 @@ GetAppointmentsResult_doctorsItem& GetAppointmentsResult_doctorsItem::operator =
     m_payoutInfoIsSetHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("specialtyId"))
+  {
+    m_specialtyId = jsonValue.GetString("specialtyId");
+
+    m_specialtyIdHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("firstName"))
   {
     m_firstName = jsonValue.GetString("firstName");
 
     m_firstNameHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("longitude"))
-  {
-    m_longitude = jsonValue.GetDouble("longitude");
-
-    m_longitudeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("suite"))
@@ -189,18 +182,25 @@ GetAppointmentsResult_doctorsItem& GetAppointmentsResult_doctorsItem::operator =
     m_suiteHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("id"))
-  {
-    m_id = jsonValue.GetString("id");
-
-    m_idHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("latitude"))
   {
     m_latitude = jsonValue.GetDouble("latitude");
 
     m_latitudeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("coverPhotoUrl"))
+  {
+    m_coverPhotoUrl = jsonValue.GetString("coverPhotoUrl");
+
+    m_coverPhotoUrlHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("postalCode"))
+  {
+    m_postalCode = jsonValue.GetString("postalCode");
+
+    m_postalCodeHasBeenSet = true;
   }
 
   return *this;
@@ -210,15 +210,26 @@ JsonValue GetAppointmentsResult_doctorsItem::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_cityHasBeenSet)
+  if(m_longitudeHasBeenSet)
   {
-   payload.WithString("city", m_city);
+   payload.WithDouble("longitude", m_longitude);
 
   }
 
-  if(m_lastNameHasBeenSet)
+  if(m_serviceDetailsListHasBeenSet)
   {
-   payload.WithString("lastName", m_lastName);
+   Array<JsonValue> serviceDetailsListJsonList(m_serviceDetailsList.size());
+   for(unsigned serviceDetailsListIndex = 0; serviceDetailsListIndex < serviceDetailsListJsonList.GetLength(); ++serviceDetailsListIndex)
+   {
+     serviceDetailsListJsonList[serviceDetailsListIndex].AsObject(m_serviceDetailsList[serviceDetailsListIndex].Jsonize());
+   }
+   payload.WithArray("serviceDetailsList", std::move(serviceDetailsListJsonList));
+
+  }
+
+  if(m_cityHasBeenSet)
+  {
+   payload.WithString("city", m_city);
 
   }
 
@@ -234,6 +245,18 @@ JsonValue GetAppointmentsResult_doctorsItem::Jsonize() const
 
   }
 
+  if(m_idHasBeenSet)
+  {
+   payload.WithString("id", m_id);
+
+  }
+
+  if(m_streetNumberAndNameHasBeenSet)
+  {
+   payload.WithString("streetNumberAndName", m_streetNumberAndName);
+
+  }
+
   if(m_servicesOfferedHasBeenSet)
   {
    Array<JsonValue> servicesOfferedJsonList(m_servicesOffered.size());
@@ -245,44 +268,15 @@ JsonValue GetAppointmentsResult_doctorsItem::Jsonize() const
 
   }
 
-  if(m_serviceDetailsListHasBeenSet)
-  {
-   Array<JsonValue> serviceDetailsListJsonList(m_serviceDetailsList.size());
-   for(unsigned serviceDetailsListIndex = 0; serviceDetailsListIndex < serviceDetailsListJsonList.GetLength(); ++serviceDetailsListIndex)
-   {
-     serviceDetailsListJsonList[serviceDetailsListIndex].AsObject(m_serviceDetailsList[serviceDetailsListIndex].Jsonize());
-   }
-   payload.WithArray("serviceDetailsList", std::move(serviceDetailsListJsonList));
-
-  }
-
-  if(m_specialtyIdHasBeenSet)
-  {
-   payload.WithString("specialtyId", m_specialtyId);
-
-  }
-
-  if(m_streetNumberAndNameHasBeenSet)
-  {
-   payload.WithString("streetNumberAndName", m_streetNumberAndName);
-
-  }
-
-  if(m_postalCodeHasBeenSet)
-  {
-   payload.WithString("postalCode", m_postalCode);
-
-  }
-
   if(m_administrativeAreaL1HasBeenSet)
   {
    payload.WithString("administrativeAreaL1", m_administrativeAreaL1);
 
   }
 
-  if(m_coverPhotoUrlHasBeenSet)
+  if(m_lastNameHasBeenSet)
   {
-   payload.WithString("coverPhotoUrl", m_coverPhotoUrl);
+   payload.WithString("lastName", m_lastName);
 
   }
 
@@ -292,15 +286,15 @@ JsonValue GetAppointmentsResult_doctorsItem::Jsonize() const
 
   }
 
-  if(m_firstNameHasBeenSet)
+  if(m_specialtyIdHasBeenSet)
   {
-   payload.WithString("firstName", m_firstName);
+   payload.WithString("specialtyId", m_specialtyId);
 
   }
 
-  if(m_longitudeHasBeenSet)
+  if(m_firstNameHasBeenSet)
   {
-   payload.WithDouble("longitude", m_longitude);
+   payload.WithString("firstName", m_firstName);
 
   }
 
@@ -310,15 +304,21 @@ JsonValue GetAppointmentsResult_doctorsItem::Jsonize() const
 
   }
 
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("id", m_id);
-
-  }
-
   if(m_latitudeHasBeenSet)
   {
    payload.WithDouble("latitude", m_latitude);
+
+  }
+
+  if(m_coverPhotoUrlHasBeenSet)
+  {
+   payload.WithString("coverPhotoUrl", m_coverPhotoUrl);
+
+  }
+
+  if(m_postalCodeHasBeenSet)
+  {
+   payload.WithString("postalCode", m_postalCode);
 
   }
 

@@ -23,8 +23,8 @@ using namespace Aws::Utils;
 
 getAppointmentBillRequest::getAppointmentBillRequest() : 
     m_startTimeHasBeenSet(false),
-    m_doctorIdHasBeenSet(false),
-    m_serviceIdHasBeenSet(false)
+    m_serviceIdHasBeenSet(false),
+    m_doctorIdHasBeenSet(false)
 {
 }
 
@@ -38,15 +38,15 @@ Aws::String getAppointmentBillRequest::SerializePayload() const
 
   }
 
-  if(m_doctorIdHasBeenSet)
-  {
-   payload.WithString("doctorId", m_doctorId);
-
-  }
-
   if(m_serviceIdHasBeenSet)
   {
    payload.WithString("serviceId", m_serviceId);
+
+  }
+
+  if(m_doctorIdHasBeenSet)
+  {
+   payload.WithString("doctorId", m_doctorId);
 
   }
 

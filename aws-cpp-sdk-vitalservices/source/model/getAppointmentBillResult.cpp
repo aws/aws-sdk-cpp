@@ -42,15 +42,9 @@ getAppointmentBillResult& getAppointmentBillResult::operator =(const AmazonWebSe
 
   }
 
-  if(jsonValue.ValueExists("patientServiceFee"))
+  if(jsonValue.ValueExists("basePrice"))
   {
-    m_patientServiceFee = jsonValue.GetString("patientServiceFee");
-
-  }
-
-  if(jsonValue.ValueExists("doctorServiceFee"))
-  {
-    m_doctorServiceFee = jsonValue.GetString("doctorServiceFee");
+    m_basePrice = jsonValue.GetString("basePrice");
 
   }
 
@@ -60,9 +54,15 @@ getAppointmentBillResult& getAppointmentBillResult::operator =(const AmazonWebSe
 
   }
 
-  if(jsonValue.ValueExists("basePrice"))
+  if(jsonValue.ValueExists("doctorServiceFee"))
   {
-    m_basePrice = jsonValue.GetString("basePrice");
+    m_doctorServiceFee = jsonValue.GetString("doctorServiceFee");
+
+  }
+
+  if(jsonValue.ValueExists("patientServiceFee"))
+  {
+    m_patientServiceFee = jsonValue.GetString("patientServiceFee");
 
   }
 

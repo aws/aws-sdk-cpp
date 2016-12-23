@@ -28,38 +28,24 @@ namespace Model
 {
 
 SearchForDoctorsResult_doctorsItem_serviceDetailsListItem::SearchForDoctorsResult_doctorsItem_serviceDetailsListItem() : 
-    m_doctorIdHasBeenSet(false),
-    m_priceDollarsHasBeenSet(false),
     m_durationSecondsHasBeenSet(false),
-    m_serviceIdHasBeenSet(false)
+    m_serviceIdHasBeenSet(false),
+    m_priceDollarsHasBeenSet(false),
+    m_doctorIdHasBeenSet(false)
 {
 }
 
 SearchForDoctorsResult_doctorsItem_serviceDetailsListItem::SearchForDoctorsResult_doctorsItem_serviceDetailsListItem(const JsonValue& jsonValue) : 
-    m_doctorIdHasBeenSet(false),
-    m_priceDollarsHasBeenSet(false),
     m_durationSecondsHasBeenSet(false),
-    m_serviceIdHasBeenSet(false)
+    m_serviceIdHasBeenSet(false),
+    m_priceDollarsHasBeenSet(false),
+    m_doctorIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 SearchForDoctorsResult_doctorsItem_serviceDetailsListItem& SearchForDoctorsResult_doctorsItem_serviceDetailsListItem::operator =(const JsonValue& jsonValue)
 {
-  if(jsonValue.ValueExists("doctorId"))
-  {
-    m_doctorId = jsonValue.GetString("doctorId");
-
-    m_doctorIdHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("priceDollars"))
-  {
-    m_priceDollars = jsonValue.GetString("priceDollars");
-
-    m_priceDollarsHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("durationSeconds"))
   {
     m_durationSeconds = jsonValue.GetString("durationSeconds");
@@ -74,24 +60,26 @@ SearchForDoctorsResult_doctorsItem_serviceDetailsListItem& SearchForDoctorsResul
     m_serviceIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("priceDollars"))
+  {
+    m_priceDollars = jsonValue.GetString("priceDollars");
+
+    m_priceDollarsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("doctorId"))
+  {
+    m_doctorId = jsonValue.GetString("doctorId");
+
+    m_doctorIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
 JsonValue SearchForDoctorsResult_doctorsItem_serviceDetailsListItem::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_doctorIdHasBeenSet)
-  {
-   payload.WithString("doctorId", m_doctorId);
-
-  }
-
-  if(m_priceDollarsHasBeenSet)
-  {
-   payload.WithString("priceDollars", m_priceDollars);
-
-  }
 
   if(m_durationSecondsHasBeenSet)
   {
@@ -102,6 +90,18 @@ JsonValue SearchForDoctorsResult_doctorsItem_serviceDetailsListItem::Jsonize() c
   if(m_serviceIdHasBeenSet)
   {
    payload.WithString("serviceId", m_serviceId);
+
+  }
+
+  if(m_priceDollarsHasBeenSet)
+  {
+   payload.WithString("priceDollars", m_priceDollars);
+
+  }
+
+  if(m_doctorIdHasBeenSet)
+  {
+   payload.WithString("doctorId", m_doctorId);
 
   }
 

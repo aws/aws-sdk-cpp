@@ -33,25 +33,25 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     
-    inline const Aws::String& GetDoctorId() const{ return m_doctorId; }
+    inline const Aws::String& GetFirstTime() const{ return m_firstTime; }
 
     
-    inline void SetDoctorId(const Aws::String& value) { m_doctorIdHasBeenSet = true; m_doctorId = value; }
+    inline void SetFirstTime(const Aws::String& value) { m_firstTimeHasBeenSet = true; m_firstTime = value; }
 
     
-    inline void SetDoctorId(Aws::String&& value) { m_doctorIdHasBeenSet = true; m_doctorId = value; }
+    inline void SetFirstTime(Aws::String&& value) { m_firstTimeHasBeenSet = true; m_firstTime = value; }
 
     
-    inline void SetDoctorId(const char* value) { m_doctorIdHasBeenSet = true; m_doctorId.assign(value); }
+    inline void SetFirstTime(const char* value) { m_firstTimeHasBeenSet = true; m_firstTime.assign(value); }
 
     
-    inline queryDoctorScheduleRequest& WithDoctorId(const Aws::String& value) { SetDoctorId(value); return *this;}
+    inline queryDoctorScheduleRequest& WithFirstTime(const Aws::String& value) { SetFirstTime(value); return *this;}
 
     
-    inline queryDoctorScheduleRequest& WithDoctorId(Aws::String&& value) { SetDoctorId(value); return *this;}
+    inline queryDoctorScheduleRequest& WithFirstTime(Aws::String&& value) { SetFirstTime(value); return *this;}
 
     
-    inline queryDoctorScheduleRequest& WithDoctorId(const char* value) { SetDoctorId(value); return *this;}
+    inline queryDoctorScheduleRequest& WithFirstTime(const char* value) { SetFirstTime(value); return *this;}
 
     
     inline const Aws::String& GetLastTime() const{ return m_lastTime; }
@@ -75,33 +75,33 @@ namespace Model
     inline queryDoctorScheduleRequest& WithLastTime(const char* value) { SetLastTime(value); return *this;}
 
     
-    inline const Aws::String& GetFirstTime() const{ return m_firstTime; }
+    inline const Aws::String& GetDoctorId() const{ return m_doctorId; }
 
     
-    inline void SetFirstTime(const Aws::String& value) { m_firstTimeHasBeenSet = true; m_firstTime = value; }
+    inline void SetDoctorId(const Aws::String& value) { m_doctorIdHasBeenSet = true; m_doctorId = value; }
 
     
-    inline void SetFirstTime(Aws::String&& value) { m_firstTimeHasBeenSet = true; m_firstTime = value; }
+    inline void SetDoctorId(Aws::String&& value) { m_doctorIdHasBeenSet = true; m_doctorId = value; }
 
     
-    inline void SetFirstTime(const char* value) { m_firstTimeHasBeenSet = true; m_firstTime.assign(value); }
+    inline void SetDoctorId(const char* value) { m_doctorIdHasBeenSet = true; m_doctorId.assign(value); }
 
     
-    inline queryDoctorScheduleRequest& WithFirstTime(const Aws::String& value) { SetFirstTime(value); return *this;}
+    inline queryDoctorScheduleRequest& WithDoctorId(const Aws::String& value) { SetDoctorId(value); return *this;}
 
     
-    inline queryDoctorScheduleRequest& WithFirstTime(Aws::String&& value) { SetFirstTime(value); return *this;}
+    inline queryDoctorScheduleRequest& WithDoctorId(Aws::String&& value) { SetDoctorId(value); return *this;}
 
     
-    inline queryDoctorScheduleRequest& WithFirstTime(const char* value) { SetFirstTime(value); return *this;}
+    inline queryDoctorScheduleRequest& WithDoctorId(const char* value) { SetDoctorId(value); return *this;}
 
   private:
-    Aws::String m_doctorId;
-    bool m_doctorIdHasBeenSet;
-    Aws::String m_lastTime;
-    bool m_lastTimeHasBeenSet;
     Aws::String m_firstTime;
     bool m_firstTimeHasBeenSet;
+    Aws::String m_lastTime;
+    bool m_lastTimeHasBeenSet;
+    Aws::String m_doctorId;
+    bool m_doctorIdHasBeenSet;
   };
 
 } // namespace Model

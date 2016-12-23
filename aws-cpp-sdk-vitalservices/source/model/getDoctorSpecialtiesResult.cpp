@@ -12,7 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
-#include <aws/vitalservices/model/cancelAppointmentResult.h>
+#include <aws/vitalservices/model/getDoctorSpecialtiesResult.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/UnreferencedParam.h>
@@ -24,28 +24,25 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-cancelAppointmentResult::cancelAppointmentResult()
+getDoctorSpecialtiesResult::getDoctorSpecialtiesResult()
 {
 }
 
-cancelAppointmentResult::cancelAppointmentResult(const AmazonWebServiceResult<JsonValue>& result)
+getDoctorSpecialtiesResult::getDoctorSpecialtiesResult(const AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-cancelAppointmentResult& cancelAppointmentResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+getDoctorSpecialtiesResult& getDoctorSpecialtiesResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
-  if(jsonValue.ValueExists("appointment"))
+  if(jsonValue.ValueExists("specialties"))
   {
-    m_appointment = jsonValue.GetObject("appointment");
-
-  }
-
-  if(jsonValue.ValueExists("errorCode"))
-  {
-    m_errorCode = jsonValue.GetString("errorCode");
-
+    Array<JsonValue> specialtiesJsonList = jsonValue.GetArray("specialties");
+    for(unsigned specialtiesIndex = 0; specialtiesIndex < specialtiesJsonList.GetLength(); ++specialtiesIndex)
+    {
+      m_specialties.push_back(specialtiesJsonList[specialtiesIndex].AsObject());
+    }
   }
 
 

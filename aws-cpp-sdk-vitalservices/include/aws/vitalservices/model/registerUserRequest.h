@@ -33,27 +33,6 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     
-    inline const Aws::String& GetLastName() const{ return m_lastName; }
-
-    
-    inline void SetLastName(const Aws::String& value) { m_lastNameHasBeenSet = true; m_lastName = value; }
-
-    
-    inline void SetLastName(Aws::String&& value) { m_lastNameHasBeenSet = true; m_lastName = value; }
-
-    
-    inline void SetLastName(const char* value) { m_lastNameHasBeenSet = true; m_lastName.assign(value); }
-
-    
-    inline registerUserRequest& WithLastName(const Aws::String& value) { SetLastName(value); return *this;}
-
-    
-    inline registerUserRequest& WithLastName(Aws::String&& value) { SetLastName(value); return *this;}
-
-    
-    inline registerUserRequest& WithLastName(const char* value) { SetLastName(value); return *this;}
-
-    
     inline const Aws::String& GetMobileNumber() const{ return m_mobileNumber; }
 
     
@@ -116,15 +95,36 @@ namespace Model
     
     inline registerUserRequest& WithFirstName(const char* value) { SetFirstName(value); return *this;}
 
+    
+    inline const Aws::String& GetLastName() const{ return m_lastName; }
+
+    
+    inline void SetLastName(const Aws::String& value) { m_lastNameHasBeenSet = true; m_lastName = value; }
+
+    
+    inline void SetLastName(Aws::String&& value) { m_lastNameHasBeenSet = true; m_lastName = value; }
+
+    
+    inline void SetLastName(const char* value) { m_lastNameHasBeenSet = true; m_lastName.assign(value); }
+
+    
+    inline registerUserRequest& WithLastName(const Aws::String& value) { SetLastName(value); return *this;}
+
+    
+    inline registerUserRequest& WithLastName(Aws::String&& value) { SetLastName(value); return *this;}
+
+    
+    inline registerUserRequest& WithLastName(const char* value) { SetLastName(value); return *this;}
+
   private:
-    Aws::String m_lastName;
-    bool m_lastNameHasBeenSet;
     Aws::String m_mobileNumber;
     bool m_mobileNumberHasBeenSet;
     Aws::String m_email;
     bool m_emailHasBeenSet;
     Aws::String m_firstName;
     bool m_firstNameHasBeenSet;
+    Aws::String m_lastName;
+    bool m_lastNameHasBeenSet;
   };
 
 } // namespace Model

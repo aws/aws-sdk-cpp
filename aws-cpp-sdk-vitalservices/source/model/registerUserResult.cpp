@@ -36,6 +36,24 @@ registerUserResult::registerUserResult(const AmazonWebServiceResult<JsonValue>& 
 registerUserResult& registerUserResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
+  if(jsonValue.ValueExists("profilePhotoUrl"))
+  {
+    m_profilePhotoUrl = jsonValue.GetString("profilePhotoUrl");
+
+  }
+
+  if(jsonValue.ValueExists("stripeCustomerId"))
+  {
+    m_stripeCustomerId = jsonValue.GetString("stripeCustomerId");
+
+  }
+
+  if(jsonValue.ValueExists("firstName"))
+  {
+    m_firstName = jsonValue.GetString("firstName");
+
+  }
+
   if(jsonValue.ValueExists("lastName"))
   {
     m_lastName = jsonValue.GetString("lastName");
@@ -48,39 +66,21 @@ registerUserResult& registerUserResult::operator =(const AmazonWebServiceResult<
 
   }
 
-  if(jsonValue.ValueExists("stripeCustomerId"))
-  {
-    m_stripeCustomerId = jsonValue.GetString("stripeCustomerId");
-
-  }
-
-  if(jsonValue.ValueExists("profilePhotoUrl"))
-  {
-    m_profilePhotoUrl = jsonValue.GetString("profilePhotoUrl");
-
-  }
-
   if(jsonValue.ValueExists("mobileNumber"))
   {
     m_mobileNumber = jsonValue.GetString("mobileNumber");
 
   }
 
-  if(jsonValue.ValueExists("doctorId"))
-  {
-    m_doctorId = jsonValue.GetString("doctorId");
-
-  }
-
-  if(jsonValue.ValueExists("firstName"))
-  {
-    m_firstName = jsonValue.GetString("firstName");
-
-  }
-
   if(jsonValue.ValueExists("email"))
   {
     m_email = jsonValue.GetString("email");
+
+  }
+
+  if(jsonValue.ValueExists("doctorId"))
+  {
+    m_doctorId = jsonValue.GetString("doctorId");
 
   }
 

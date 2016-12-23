@@ -12,7 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
-#include <aws/vitalservices/model/urlForFileRequest.h>
+#include <aws/vitalservices/model/getAllDoctorServicesRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 
 #include <utility>
@@ -21,39 +21,18 @@ using namespace Aws::VitalServices::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-urlForFileRequest::urlForFileRequest() : 
-    m_fileNameHasBeenSet(false),
-    m_httpMethodHasBeenSet(false),
-    m_patientIdHasBeenSet(false),
-    m_doctorIdHasBeenSet(false)
+getAllDoctorServicesRequest::getAllDoctorServicesRequest() : 
+    m_dummyHasBeenSet(false)
 {
 }
 
-Aws::String urlForFileRequest::SerializePayload() const
+Aws::String getAllDoctorServicesRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_fileNameHasBeenSet)
+  if(m_dummyHasBeenSet)
   {
-   payload.WithString("fileName", m_fileName);
-
-  }
-
-  if(m_httpMethodHasBeenSet)
-  {
-   payload.WithString("httpMethod", m_httpMethod);
-
-  }
-
-  if(m_patientIdHasBeenSet)
-  {
-   payload.WithString("patientId", m_patientId);
-
-  }
-
-  if(m_doctorIdHasBeenSet)
-  {
-   payload.WithString("doctorId", m_doctorId);
+   payload.WithString("dummy", m_dummy);
 
   }
 

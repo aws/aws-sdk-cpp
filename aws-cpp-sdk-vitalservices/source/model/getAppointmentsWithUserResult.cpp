@@ -45,21 +45,21 @@ getAppointmentsWithUserResult& getAppointmentsWithUserResult::operator =(const A
     }
   }
 
-  if(jsonValue.ValueExists("doctors"))
-  {
-    Array<JsonValue> doctorsJsonList = jsonValue.GetArray("doctors");
-    for(unsigned doctorsIndex = 0; doctorsIndex < doctorsJsonList.GetLength(); ++doctorsIndex)
-    {
-      m_doctors.push_back(doctorsJsonList[doctorsIndex].AsObject());
-    }
-  }
-
   if(jsonValue.ValueExists("patients"))
   {
     Array<JsonValue> patientsJsonList = jsonValue.GetArray("patients");
     for(unsigned patientsIndex = 0; patientsIndex < patientsJsonList.GetLength(); ++patientsIndex)
     {
       m_patients.push_back(patientsJsonList[patientsIndex].AsObject());
+    }
+  }
+
+  if(jsonValue.ValueExists("doctors"))
+  {
+    Array<JsonValue> doctorsJsonList = jsonValue.GetArray("doctors");
+    for(unsigned doctorsIndex = 0; doctorsIndex < doctorsJsonList.GetLength(); ++doctorsIndex)
+    {
+      m_doctors.push_back(doctorsJsonList[doctorsIndex].AsObject());
     }
   }
 
