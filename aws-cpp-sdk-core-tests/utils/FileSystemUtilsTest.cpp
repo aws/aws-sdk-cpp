@@ -215,7 +215,7 @@ TEST_F(DirectoryTreeTest, TestDirectoryTreeDiff)
     auto entry = diff.begin();
     ASSERT_STREQ(additionalFile.c_str(), entry->second.path.c_str());
     entry++;
-    ASSERT_STREQ(missingFile.c_str(), entry->second.path.c_str());
+    ASSERT_STREQ(file2.c_str(), entry->second.path.c_str());
 }
 
 TEST_F(DirectoryTreeTest, TestDirectoryTreeBreadthFirstTraversal)

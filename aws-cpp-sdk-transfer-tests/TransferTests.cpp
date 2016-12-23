@@ -70,8 +70,6 @@ static const char* BIG_FILE_KEY = "BigFileKey";
 static const char* CANCEL_TEST_FILE_NAME = "CancelTestFile.txt";
 static const char* CANCEL_FILE_KEY = "CancelFileKey";
 
-static const char* NESTED_FILE_KEY = "nested/NestedFile.txt";
-
 static const char* TEST_BUCKET_NAME_BASE = "transferintegrationtestbucket";
 static const unsigned SMALL_TEST_SIZE = MB5 / 2;
 static const unsigned MEDIUM_TEST_SIZE = MB5 * 3 / 2;
@@ -202,10 +200,7 @@ protected:
     static Aws::String MakeFilePath(const char* fileName)
     {
         Aws::String directory = GetTestFilesDirectory();
-        Aws::String filePath;
-
-        char delim[] = { Aws::FileSystem::PATH_DELIM , 0};
-        filePath = directory.append(delim).append(fileName);   
+        Aws::String filePath = Aws::FileSystem::Join(directory, fileName);
         return filePath;    
     }
 
@@ -275,11 +270,8 @@ protected:
         ASSERT_TRUE(createBucketOutcome.IsSuccess());
 
         auto testDirectory = GetTestFilesDirectory();
-        char delimiter[] = { Aws::FileSystem::PATH_DELIM, 0};
-        m_nestedDirectory = testDirectory.append(delimiter).append("nested");
         Aws::FileSystem::CreateDirectoryIfNotExists(m_nestedDirectory.c_str());
 
-        m_nestedFileName = m_nestedDirectory.append(delimiter).append(SMALL_TEST_FILE_NAME);
         m_testFileName = MakeFilePath( TEST_FILE_NAME );
         m_smallTestFileName = MakeFilePath( SMALL_TEST_FILE_NAME );
         m_bigTestFileName = MakeFilePath( BIG_TEST_FILE_NAME );
@@ -374,25 +366,7 @@ protected:
         AbortMultiPartUpload(GetTestBucketName(), BIG_FILE_KEY);
         DeleteBucket(GetTestBucketName());
 
-        Aws::FileSystem::RemoveFileIfExists(m_testFileName.c_str());
-        Aws::FileSystem::RemoveFileIfExists(m_smallTestFileName.c_str());
-        Aws::FileSystem::RemoveFileIfExists(m_contentTestFileName.c_str());
-        Aws::FileSystem::RemoveFileIfExists(m_bigTestFileName.c_str());
-        Aws::FileSystem::RemoveFileIfExists(m_mediumTestFileName.c_str());
-        Aws::FileSystem::RemoveFileIfExists(m_cancelTestFileName.c_str());
-        Aws::FileSystem::RemoveFileIfExists(m_multiPartContentFileName.c_str());
-        Aws::FileSystem::RemoveDirectoryIfExists(m_nestedFileName.c_str());
-
-        Aws::FileSystem::RemoveFileIfExists(MakeDownloadFileName(m_testFileName).c_str());
-        Aws::FileSystem::RemoveFileIfExists(MakeDownloadFileName(m_smallTestFileName).c_str());
-        Aws::FileSystem::RemoveFileIfExists(MakeDownloadFileName(m_contentTestFileName).c_str());
-        Aws::FileSystem::RemoveFileIfExists(MakeDownloadFileName(m_bigTestFileName).c_str());
-        Aws::FileSystem::RemoveFileIfExists(MakeDownloadFileName(m_mediumTestFileName).c_str());
-        Aws::FileSystem::RemoveFileIfExists(MakeDownloadFileName(m_cancelTestFileName).c_str());
-        Aws::FileSystem::RemoveFileIfExists(MakeDownloadFileName(m_multiPartContentFileName).c_str());
-
-        Aws::FileSystem::RemoveDirectoryIfExists(m_nestedDirectory.c_str());
-        Aws::FileSystem::RemoveDirectoryIfExists(GetTestFilesDirectory().c_str());
+        Aws::FileSystem::DeepDeleteDirectory(GetTestFilesDirectory().c_str());
 
         m_s3Client = nullptr;
     } 
@@ -409,7 +383,6 @@ Aws::String TransferTests::m_contentTestFileName;
 Aws::String TransferTests::m_cancelTestFileName;
 Aws::String TransferTests::m_multiPartContentFileName;
 Aws::String TransferTests::m_nonsenseFileName;
-Aws::String TransferTests::m_nestedFileName;
 Aws::String TransferTests::m_nestedDirectory;
 
 TEST_F(TransferTests, TransferManager_SinglePartUploadTest)
@@ -584,11 +557,19 @@ TEST_F(TransferTests, TransferManager_ContentTest)
                        Aws::Map<Aws::String, Aws::String>());
 }
 
-TEST_F(TransferTests, TransferManager_UploadDirectoryTest)
+TEST_F(TransferTests, TransferManager_DirectoryUploadAndDownloadTest)
 {
-    ScopedTestFile smallFile(m_smallTestFileName, SMALL_TEST_SIZE, testString);
-    ScopedTestFile contentFile(m_contentTestFileName, CONTENT_TEST_FILE_TEXT);
-    ScopedTestFile nestedFile(m_nestedFileName, CONTENT_TEST_FILE_TEXT);
+    auto uploadDir = Aws::FileSystem::Join(GetTestFilesDirectory(), "dirUpload");
+    ASSERT_TRUE(Aws::FileSystem::CreateDirectoryIfNotExists(uploadDir.c_str()));
+    auto smallTestFileName = Aws::FileSystem::Join(uploadDir, SMALL_TEST_FILE_NAME);
+    auto contentTestFileName = Aws::FileSystem::Join(uploadDir, CONTENT_TEST_FILE_NAME);
+    auto nestedDirectory = Aws::FileSystem::Join(uploadDir, "nested");
+    ASSERT_TRUE(Aws::FileSystem::CreateDirectoryIfNotExists(nestedDirectory.c_str()));
+    auto nestedFileName = Aws::FileSystem::Join(nestedDirectory, "nestedFile");
+
+    ScopedTestFile smallFile(smallTestFileName, SMALL_TEST_SIZE, testString);
+    ScopedTestFile contentFile(contentTestFileName, CONTENT_TEST_FILE_TEXT);
+    ScopedTestFile nestedFile(nestedFileName, CONTENT_TEST_FILE_TEXT);
 
     if (EmptyBucket(GetTestBucketName()))
     {
@@ -596,17 +577,32 @@ TEST_F(TransferTests, TransferManager_UploadDirectoryTest)
     }    
 
     Aws::Vector<std::shared_ptr<TransferHandle>> directoryUploads;
+    Aws::Vector<std::shared_ptr<TransferHandle>> directoryDownloads;
     std::condition_variable directoryUploadSignal;
+    std::condition_variable directoryDownloadSignal;
     std::mutex semaphoreLock;
 
     auto transferInitCallback = [&](const TransferManager*, const std::shared_ptr<TransferHandle>& handle) 
         { 
             std::lock_guard<std::mutex> m(semaphoreLock);
-            directoryUploads.push_back(handle); 
 
-            if (directoryUploads.size() == 3)
+            if(handle->GetTransferDirection() == TransferDirection::UPLOAD)
             {
-                directoryUploadSignal.notify_one();
+                directoryUploads.push_back(handle); 
+
+                if (directoryUploads.size() == 3)
+                {
+                    directoryUploadSignal.notify_one();
+                }
+            }
+            else
+            {
+                directoryDownloads.push_back(handle);
+
+                if (directoryDownloads.size() == 3)
+                {
+                    directoryDownloadSignal.notify_one();
+                }
             }
         };
 
@@ -615,7 +611,7 @@ TEST_F(TransferTests, TransferManager_UploadDirectoryTest)
     transferManagerConfig.transferInitiatedCallback = transferInitCallback;
     TransferManager transferManager(transferManagerConfig);
 
-    transferManager.UploadDirectory(GetTestFilesDirectory(), GetTestBucketName(), "nestedTest", Aws::Map<Aws::String, Aws::String>());
+    transferManager.UploadDirectory(uploadDir, GetTestBucketName(), "nestedTest", Aws::Map<Aws::String, Aws::String>());
 
     {
         std::unique_lock<std::mutex> locker(semaphoreLock);
@@ -623,7 +619,7 @@ TEST_F(TransferTests, TransferManager_UploadDirectoryTest)
     }
 
     ASSERT_EQ(3u, directoryUploads.size());
-    Aws::Set<Aws::String> pathsUploading = { m_smallTestFileName, m_contentTestFileName, m_nestedFileName };
+    Aws::Set<Aws::String> pathsUploading = { smallTestFileName, contentTestFileName, nestedFileName };
 
     for (auto handle : directoryUploads)
     {
@@ -645,75 +641,10 @@ TEST_F(TransferTests, TransferManager_UploadDirectoryTest)
             handle->GetKey(),
             "binary/octet-stream",
             Aws::Map<Aws::String, Aws::String>());
-    }    
-}
-
-TEST_F(TransferTests, TransferManager_DownloadDirectoryTest)
-{  
-    if (EmptyBucket(GetTestBucketName()))
-    {
-        WaitForBucketToEmpty(GetTestBucketName());
-    }
-
-    Aws::Vector<std::shared_ptr<TransferHandle>> directoryDownloads;
-    std::condition_variable directoryDownloadSignal;
-    std::mutex semaphoreLock;
-
-    auto transferInitCallback = [&](const TransferManager*, const std::shared_ptr<TransferHandle>& handle)
-    {
-        std::lock_guard<std::mutex> m(semaphoreLock);
-        directoryDownloads.push_back(handle);
-
-        if (directoryDownloads.size() == 3)
-        {
-            directoryDownloadSignal.notify_one();
-        }
-    };
-
-    TransferManagerConfiguration transferManagerConfig;
-    transferManagerConfig.s3Client = m_s3Client;
-    transferManagerConfig.transferInitiatedCallback = transferInitCallback;
-    TransferManager transferManager(transferManagerConfig);
+    }  
     
-    auto stream = Aws::MakeShared<Aws::StringStream>(ALLOCATION_TAG);
-    size_t written(0);
-
-    while (written < SMALL_TEST_SIZE)
-    {
-        *stream << testString;
-        written += strlen(testString);
-    }
-
-    const char* NESTED_DIR = "nestedTest/";
-    Aws::StringStream ss;
-    ss << NESTED_DIR << TEST_FILE_KEY;
-
-    auto uploadHandle = transferManager.UploadFile(stream, GetTestBucketName(), ss.str(), "binary/octet-stream", Aws::Map<Aws::String, Aws::String>());
-    ASSERT_EQ(TransferDirection::UPLOAD, uploadHandle->GetTransferDirection());
-    uploadHandle->WaitUntilFinished();
-    ASSERT_EQ(TransferStatus::COMPLETED, uploadHandle->GetStatus());
-
-    ss.str("");
-    ss << NESTED_DIR << CONTENT_FILE_KEY;
-
-    stream = Aws::MakeShared<Aws::StringStream>(ALLOCATION_TAG);
-    *stream << CONTENT_TEST_FILE_TEXT;
-    uploadHandle = transferManager.UploadFile(stream, GetTestBucketName(), ss.str(), "binary/octet-stream", Aws::Map<Aws::String, Aws::String>());
-    ASSERT_EQ(TransferDirection::UPLOAD, uploadHandle->GetTransferDirection());
-    uploadHandle->WaitUntilFinished();
-    ASSERT_EQ(TransferStatus::COMPLETED, uploadHandle->GetStatus());
-
-    ss.str("");
-    ss << NESTED_DIR << NESTED_FILE_KEY;
-    
-    stream = Aws::MakeShared<Aws::StringStream>(ALLOCATION_TAG);
-    *stream << CONTENT_TEST_FILE_TEXT;
-    uploadHandle = transferManager.UploadFile(stream, GetTestBucketName(), ss.str(), "binary/octet-stream", Aws::Map<Aws::String, Aws::String>());
-    ASSERT_EQ(TransferDirection::UPLOAD, uploadHandle->GetTransferDirection());
-    uploadHandle->WaitUntilFinished();
-    ASSERT_EQ(TransferStatus::COMPLETED, uploadHandle->GetStatus());
-
-    transferManager.DownloadToDirectory(GetTestFilesDirectory(), GetTestBucketName(), NESTED_DIR);
+    auto downloadDir = Aws::FileSystem::Join(GetTestFilesDirectory(), "dirDownload");
+    transferManager.DownloadToDirectory(downloadDir, GetTestBucketName(), "nestedTest");
 
     {
         std::unique_lock<std::mutex> locker(semaphoreLock);
@@ -721,27 +652,18 @@ TEST_F(TransferTests, TransferManager_DownloadDirectoryTest)
     }
 
     ASSERT_EQ(3u, directoryDownloads.size());
-    auto smallTestDownloadFile = Aws::FileSystem::Join(GetTestFilesDirectory(), TEST_FILE_KEY);
-    auto contentTestDownloadFile = Aws::FileSystem::Join(GetTestFilesDirectory(), CONTENT_FILE_KEY);
-    auto nestedDownloadFile = Aws::FileSystem::Join(GetTestFilesDirectory(), NESTED_FILE_KEY);
-
-    char delim[] = { Aws::FileSystem::PATH_DELIM, 0};
-    StringUtils::Replace(nestedDownloadFile, "/", delim);
-
-    Aws::Set<Aws::String> pathsDownloading = { smallTestDownloadFile, contentTestDownloadFile, nestedDownloadFile };
-
+    
     for (auto handle : directoryDownloads)
     {
-        EXPECT_TRUE(handle->ShouldContinue());
-        EXPECT_NE(pathsDownloading.end(), pathsDownloading.find(handle->GetTargetFilePath()));
+        EXPECT_TRUE(handle->ShouldContinue());       
         EXPECT_EQ(TransferDirection::DOWNLOAD, handle->GetTransferDirection());
         handle->WaitUntilFinished();
-        EXPECT_EQ(TransferStatus::COMPLETED, handle->GetStatus());        
+        EXPECT_EQ(TransferStatus::COMPLETED, handle->GetStatus());
     }
 
-    Aws::FileSystem::RemoveFileIfExists(smallTestDownloadFile.c_str());
-    Aws::FileSystem::RemoveFileIfExists(contentTestDownloadFile.c_str());
-    Aws::FileSystem::RemoveFileIfExists(nestedDownloadFile.c_str());
+    Aws::FileSystem::DirectoryTree uploadTree(uploadDir);
+    Aws::FileSystem::DirectoryTree downloadTree(downloadDir);
+    ASSERT_EQ(uploadTree, downloadTree);
 }
 
 // Test of a basic multi part upload - 7.5 megs

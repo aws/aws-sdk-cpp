@@ -80,6 +80,7 @@ public:
             }
             else
             {
+                entry.fileType = FileType::None;
                 AWS_LOGSTREAM_TRACE(FILE_SYSTEM_UTILS_LOG_TAG, "Skipping . or .. entries.");
             }
 
