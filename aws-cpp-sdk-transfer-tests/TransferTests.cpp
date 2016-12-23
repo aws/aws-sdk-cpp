@@ -147,8 +147,6 @@ public:
     static Aws::String m_cancelTestFileName;
     static Aws::String m_multiPartContentFileName;
     static Aws::String m_nonsenseFileName;
-    static Aws::String m_nestedFileName;
-    static Aws::String m_nestedDirectory;
 
 protected:
 
@@ -270,7 +268,6 @@ protected:
         ASSERT_TRUE(createBucketOutcome.IsSuccess());
 
         auto testDirectory = GetTestFilesDirectory();
-        Aws::FileSystem::CreateDirectoryIfNotExists(m_nestedDirectory.c_str());
 
         m_testFileName = MakeFilePath( TEST_FILE_NAME );
         m_smallTestFileName = MakeFilePath( SMALL_TEST_FILE_NAME );
@@ -383,7 +380,6 @@ Aws::String TransferTests::m_contentTestFileName;
 Aws::String TransferTests::m_cancelTestFileName;
 Aws::String TransferTests::m_multiPartContentFileName;
 Aws::String TransferTests::m_nonsenseFileName;
-Aws::String TransferTests::m_nestedDirectory;
 
 TEST_F(TransferTests, TransferManager_SinglePartUploadTest)
 {
