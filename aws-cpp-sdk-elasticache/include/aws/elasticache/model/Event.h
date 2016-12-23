@@ -36,7 +36,9 @@ namespace Model
   /**
    * <p>Represents a single occurrence of something interesting within the system.
    * Some examples of events are creating a cache cluster, adding or removing a cache
-   * node, or rebooting a node.</p>
+   * node, or rebooting a node.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/Event">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICACHE_API Event
   {

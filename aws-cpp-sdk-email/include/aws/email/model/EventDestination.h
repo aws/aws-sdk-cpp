@@ -44,7 +44,9 @@ namespace Model
    * email sending events to Amazon CloudWatch or Amazon Kinesis Firehose. For
    * information about using configuration sets, see the <a
    * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
-   * SES Developer Guide</a>.</p>
+   * SES Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/EventDestination">AWS
+   * API Reference</a></p>
    */
   class AWS_SES_API EventDestination
   {

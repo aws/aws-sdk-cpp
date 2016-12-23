@@ -36,7 +36,9 @@ namespace Model
 
   /**
    * <p>Contains information about an AWS Directory Service directory for use with
-   * Amazon WorkSpaces.</p>
+   * Amazon WorkSpaces.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/WorkspaceDirectory">AWS
+   * API Reference</a></p>
    */
   class AWS_WORKSPACES_API WorkspaceDirectory
   {

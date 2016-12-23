@@ -34,7 +34,10 @@ namespace Model
   /**
    * <p>Describes a process type.</p> <p>For more information, see <a
    * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/as-suspend-resume-processes.html#process-types">Auto
-   * Scaling Processes</a> in the <i>Auto Scaling User Guide</i>.</p>
+   * Scaling Processes</a> in the <i>Auto Scaling User Guide</i>.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/ProcessType">AWS
+   * API Reference</a></p>
    */
   class AWS_AUTOSCALING_API ProcessType
   {

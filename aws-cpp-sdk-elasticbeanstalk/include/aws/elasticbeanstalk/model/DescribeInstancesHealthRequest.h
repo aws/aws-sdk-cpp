@@ -27,7 +27,10 @@ namespace Model
 {
 
   /**
-   * <p>Parameters for a call to <code>DescribeInstancesHealth</code>.</p>
+   * <p>Parameters for a call to <code>DescribeInstancesHealth</code>.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeInstancesHealthRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICBEANSTALK_API DescribeInstancesHealthRequest : public ElasticBeanstalkRequest
   {

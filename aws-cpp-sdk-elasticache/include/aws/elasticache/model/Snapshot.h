@@ -37,7 +37,9 @@ namespace Model
 
   /**
    * <p>Represents a copy of an entire Redis cache cluster as of the time when the
-   * snapshot was taken.</p>
+   * snapshot was taken.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/Snapshot">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICACHE_API Snapshot
   {

@@ -37,7 +37,9 @@ namespace Model
 {
   /**
    * <p>Contains the output from the <a>DescribeOrderableClusterOptions</a> action.
-   * </p>
+   * </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/OrderableClusterOptionsMessage">AWS
+   * API Reference</a></p>
    */
   class AWS_REDSHIFT_API DescribeOrderableClusterOptionsResult
   {

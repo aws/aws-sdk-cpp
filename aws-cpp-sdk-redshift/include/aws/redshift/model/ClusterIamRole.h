@@ -33,7 +33,10 @@ namespace Model
 
   /**
    * <p>An AWS Identity and Access Management (IAM) role that can be used by the
-   * associated Amazon Redshift cluster to access other AWS services.</p>
+   * associated Amazon Redshift cluster to access other AWS services.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ClusterIamRole">AWS
+   * API Reference</a></p>
    */
   class AWS_REDSHIFT_API ClusterIamRole
   {

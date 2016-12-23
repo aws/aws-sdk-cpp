@@ -34,7 +34,9 @@ namespace Model
 
   /**
    * <p>Provides details of the <code>ChildWorkflowExecutionCompleted</code>
-   * event.</p>
+   * event.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ChildWorkflowExecutionCompletedEventAttributes">AWS
+   * API Reference</a></p>
    */
   class AWS_SWF_API ChildWorkflowExecutionCompletedEventAttributes
   {

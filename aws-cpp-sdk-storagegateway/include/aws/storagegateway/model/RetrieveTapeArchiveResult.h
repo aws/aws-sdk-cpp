@@ -33,7 +33,9 @@ namespace StorageGateway
 namespace Model
 {
   /**
-   * <p>RetrieveTapeArchiveOutput</p>
+   * <p>RetrieveTapeArchiveOutput</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/RetrieveTapeArchiveOutput">AWS
+   * API Reference</a></p>
    */
   class AWS_STORAGEGATEWAY_API RetrieveTapeArchiveResult
   {

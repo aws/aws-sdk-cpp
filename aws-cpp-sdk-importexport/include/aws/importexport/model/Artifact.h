@@ -33,7 +33,9 @@ namespace Model
 
   /**
    * A discrete item that contains the description and URL of an artifact (such as a
-   * PDF).
+   * PDF).<p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/importexport-2010-06-01/Artifact">AWS
+   * API Reference</a></p>
    */
   class AWS_IMPORTEXPORT_API Artifact
   {

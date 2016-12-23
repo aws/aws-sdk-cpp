@@ -76,7 +76,7 @@ void MetricsAndOperator::AddToNode(XmlNode& parentNode) const
   Aws::StringStream ss;
   if(m_prefixHasBeenSet)
   {
-   XmlNode prefixNode = parentNode.CreateChildElement("Tag");
+   XmlNode prefixNode = parentNode.CreateChildElement("Prefix");
    prefixNode.SetText(m_prefix);
   }
 

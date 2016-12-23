@@ -34,7 +34,10 @@ namespace EMR
 namespace Model
 {
   /**
-   * <p> The output for the <a>CancelSteps</a> operation. </p>
+   * <p> The output for the <a>CancelSteps</a> operation. </p><p><h3>See Also:</h3>  
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/CancelStepsOutput">AWS
+   * API Reference</a></p>
    */
   class AWS_EMR_API CancelStepsResult
   {

@@ -36,7 +36,10 @@ namespace ElasticBeanstalk
 namespace Model
 {
   /**
-   * <p>Describes the settings for a specified configuration set.</p>
+   * <p>Describes the settings for a specified configuration set.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ConfigurationOptionsDescription">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICBEANSTALK_API DescribeConfigurationOptionsResult
   {

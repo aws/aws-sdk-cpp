@@ -34,7 +34,9 @@ namespace Model
 {
   /**
    * <p>The ID and expiry time of the attachment set returned by the
-   * <a>AddAttachmentsToSet</a> operation.</p>
+   * <a>AddAttachmentsToSet</a> operation.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/AddAttachmentsToSetResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_SUPPORT_API AddAttachmentsToSetResult
   {

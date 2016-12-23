@@ -37,7 +37,8 @@ CachediSCSIVolume::CachediSCSIVolume() :
     m_volumeProgress(0.0),
     m_volumeProgressHasBeenSet(false),
     m_sourceSnapshotIdHasBeenSet(false),
-    m_volumeiSCSIAttributesHasBeenSet(false)
+    m_volumeiSCSIAttributesHasBeenSet(false),
+    m_createdDateHasBeenSet(false)
 {
 }
 
@@ -51,7 +52,8 @@ CachediSCSIVolume::CachediSCSIVolume(const JsonValue& jsonValue) :
     m_volumeProgress(0.0),
     m_volumeProgressHasBeenSet(false),
     m_sourceSnapshotIdHasBeenSet(false),
-    m_volumeiSCSIAttributesHasBeenSet(false)
+    m_volumeiSCSIAttributesHasBeenSet(false),
+    m_createdDateHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -114,6 +116,13 @@ CachediSCSIVolume& CachediSCSIVolume::operator =(const JsonValue& jsonValue)
     m_volumeiSCSIAttributesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CreatedDate"))
+  {
+    m_createdDate = jsonValue.GetDouble("CreatedDate");
+
+    m_createdDateHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -167,6 +176,11 @@ JsonValue CachediSCSIVolume::Jsonize() const
   {
    payload.WithObject("VolumeiSCSIAttributes", m_volumeiSCSIAttributes.Jsonize());
 
+  }
+
+  if(m_createdDateHasBeenSet)
+  {
+   payload.WithDouble("CreatedDate", m_createdDate.SecondsWithMSPrecision());
   }
 
   return payload;

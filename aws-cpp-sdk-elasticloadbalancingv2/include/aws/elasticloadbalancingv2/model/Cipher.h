@@ -32,7 +32,9 @@ namespace Model
 {
 
   /**
-   * <p>Information about a cipher used in a policy.</p>
+   * <p>Information about a cipher used in a policy.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/Cipher">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICLOADBALANCINGV2_API Cipher
   {

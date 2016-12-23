@@ -17,6 +17,7 @@
 #include <aws/cloudformation/CloudFormationErrors.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -213,9 +214,8 @@ namespace Model
    * dependencies between the resources for you.</p> <p>For more information about
    * AWS CloudFormation, see the <a href="http://aws.amazon.com/cloudformation/">AWS
    * CloudFormation Product Page</a>.</p> <p>Amazon CloudFormation makes use of other
-   * AWS products. If you need additional technical information about a specific AWS
-   * product, you can find the product's technical documentation at <a
-   * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/">http://docs.aws.amazon.com/</a>.</p>
+   * AWS products. For additional technical information about a specific AWS product,
+   * see its <a href="http://docs.aws.amazon.com/">technical documentation</a>.</p>
    */
   class AWS_CLOUDFORMATION_API CloudFormationClient : public Aws::Client::AWSXMLClient
   {
@@ -243,11 +243,19 @@ namespace Model
 
         virtual ~CloudFormationClient();
 
+       /**
+        * Converts any request object to a presigned URL with the GET method, using region for the signer and a timeout of 15 minutes.
+        */
+        Aws::String ConvertRequestToPresignedUrl(const AmazonSerializableWebServiceRequest& requestToConvert, const char* region) const;
+
+
         /**
          * <p>Cancels an update on the specified stack. If the call completes successfully,
          * the stack rolls back the update and reverts to the previous stack
          * configuration.</p> <note> <p>You can cancel only stacks that are in the
-         * UPDATE_IN_PROGRESS state.</p> </note>
+         * UPDATE_IN_PROGRESS state.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CancelUpdateStack">AWS
+         * API Reference</a></p>
          */
         virtual Model::CancelUpdateStackOutcome CancelUpdateStack(const Model::CancelUpdateStackRequest& request) const;
 
@@ -255,7 +263,9 @@ namespace Model
          * <p>Cancels an update on the specified stack. If the call completes successfully,
          * the stack rolls back the update and reverts to the previous stack
          * configuration.</p> <note> <p>You can cancel only stacks that are in the
-         * UPDATE_IN_PROGRESS state.</p> </note>
+         * UPDATE_IN_PROGRESS state.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CancelUpdateStack">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -265,7 +275,9 @@ namespace Model
          * <p>Cancels an update on the specified stack. If the call completes successfully,
          * the stack rolls back the update and reverts to the previous stack
          * configuration.</p> <note> <p>You can cancel only stacks that are in the
-         * UPDATE_IN_PROGRESS state.</p> </note>
+         * UPDATE_IN_PROGRESS state.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CancelUpdateStack">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -284,7 +296,9 @@ namespace Model
          * stack that is rolling back to an old database instance that was deleted outside
          * of AWS CloudFormation. Because AWS CloudFormation doesn't know the database was
          * deleted, it assumes that the database instance still exists and attempts to roll
-         * back to it, causing the update rollback to fail.</p>
+         * back to it, causing the update rollback to fail.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ContinueUpdateRollback">AWS
+         * API Reference</a></p>
          */
         virtual Model::ContinueUpdateRollbackOutcome ContinueUpdateRollback(const Model::ContinueUpdateRollbackRequest& request) const;
 
@@ -301,7 +315,9 @@ namespace Model
          * stack that is rolling back to an old database instance that was deleted outside
          * of AWS CloudFormation. Because AWS CloudFormation doesn't know the database was
          * deleted, it assumes that the database instance still exists and attempts to roll
-         * back to it, causing the update rollback to fail.</p>
+         * back to it, causing the update rollback to fail.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ContinueUpdateRollback">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -320,7 +336,9 @@ namespace Model
          * stack that is rolling back to an old database instance that was deleted outside
          * of AWS CloudFormation. Because AWS CloudFormation doesn't know the database was
          * deleted, it assumes that the database instance still exists and attempts to roll
-         * back to it, causing the update rollback to fail.</p>
+         * back to it, causing the update rollback to fail.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ContinueUpdateRollback">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -337,7 +355,9 @@ namespace Model
          * execute the change set by using the <a>ExecuteChangeSet</a> action.</p> <p>After
          * the call successfully completes, AWS CloudFormation starts creating the change
          * set. To check the status of the change set, use the <a>DescribeChangeSet</a>
-         * action.</p>
+         * action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateChangeSetOutcome CreateChangeSet(const Model::CreateChangeSetRequest& request) const;
 
@@ -352,7 +372,9 @@ namespace Model
          * execute the change set by using the <a>ExecuteChangeSet</a> action.</p> <p>After
          * the call successfully completes, AWS CloudFormation starts creating the change
          * set. To check the status of the change set, use the <a>DescribeChangeSet</a>
-         * action.</p>
+         * action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -369,7 +391,9 @@ namespace Model
          * execute the change set by using the <a>ExecuteChangeSet</a> action.</p> <p>After
          * the call successfully completes, AWS CloudFormation starts creating the change
          * set. To check the status of the change set, use the <a>DescribeChangeSet</a>
-         * action.</p>
+         * action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -378,14 +402,18 @@ namespace Model
         /**
          * <p>Creates a stack as specified in the template. After the call completes
          * successfully, the stack creation starts. You can check the status of the stack
-         * via the <a>DescribeStacks</a> API.</p>
+         * via the <a>DescribeStacks</a> API.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateStack">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateStackOutcome CreateStack(const Model::CreateStackRequest& request) const;
 
         /**
          * <p>Creates a stack as specified in the template. After the call completes
          * successfully, the stack creation starts. You can check the status of the stack
-         * via the <a>DescribeStacks</a> API.</p>
+         * via the <a>DescribeStacks</a> API.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateStack">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -394,7 +422,9 @@ namespace Model
         /**
          * <p>Creates a stack as specified in the template. After the call completes
          * successfully, the stack creation starts. You can check the status of the stack
-         * via the <a>DescribeStacks</a> API.</p>
+         * via the <a>DescribeStacks</a> API.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateStack">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -403,14 +433,20 @@ namespace Model
         /**
          * <p>Deletes the specified change set. Deleting change sets ensures that no one
          * executes the wrong change set.</p> <p>If the call successfully completes, AWS
-         * CloudFormation successfully deleted the change set.</p>
+         * CloudFormation successfully deleted the change set.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeleteChangeSet">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteChangeSetOutcome DeleteChangeSet(const Model::DeleteChangeSetRequest& request) const;
 
         /**
          * <p>Deletes the specified change set. Deleting change sets ensures that no one
          * executes the wrong change set.</p> <p>If the call successfully completes, AWS
-         * CloudFormation successfully deleted the change set.</p>
+         * CloudFormation successfully deleted the change set.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeleteChangeSet">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -419,7 +455,10 @@ namespace Model
         /**
          * <p>Deletes the specified change set. Deleting change sets ensures that no one
          * executes the wrong change set.</p> <p>If the call successfully completes, AWS
-         * CloudFormation successfully deleted the change set.</p>
+         * CloudFormation successfully deleted the change set.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeleteChangeSet">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -428,14 +467,18 @@ namespace Model
         /**
          * <p>Deletes a specified stack. Once the call completes successfully, stack
          * deletion starts. Deleted stacks do not show up in the <a>DescribeStacks</a> API
-         * if the deletion has been completed successfully.</p>
+         * if the deletion has been completed successfully.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeleteStack">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteStackOutcome DeleteStack(const Model::DeleteStackRequest& request) const;
 
         /**
          * <p>Deletes a specified stack. Once the call completes successfully, stack
          * deletion starts. Deleted stacks do not show up in the <a>DescribeStacks</a> API
-         * if the deletion has been completed successfully.</p>
+         * if the deletion has been completed successfully.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeleteStack">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -444,7 +487,9 @@ namespace Model
         /**
          * <p>Deletes a specified stack. Once the call completes successfully, stack
          * deletion starts. Deleted stacks do not show up in the <a>DescribeStacks</a> API
-         * if the deletion has been completed successfully.</p>
+         * if the deletion has been completed successfully.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeleteStack">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -452,13 +497,19 @@ namespace Model
 
         /**
          * <p>Retrieves your account's AWS CloudFormation limits, such as the maximum
-         * number of stacks that you can create in your account.</p>
+         * number of stacks that you can create in your account.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeAccountLimits">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeAccountLimitsOutcome DescribeAccountLimits(const Model::DescribeAccountLimitsRequest& request) const;
 
         /**
          * <p>Retrieves your account's AWS CloudFormation limits, such as the maximum
-         * number of stacks that you can create in your account.</p>
+         * number of stacks that you can create in your account.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeAccountLimits">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -466,7 +517,10 @@ namespace Model
 
         /**
          * <p>Retrieves your account's AWS CloudFormation limits, such as the maximum
-         * number of stacks that you can create in your account.</p>
+         * number of stacks that you can create in your account.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeAccountLimits">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -477,7 +531,10 @@ namespace Model
          * CloudFormation will make if you execute the change set. For more information,
          * see <a
          * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-changesets.html">Updating
-         * Stacks Using Change Sets</a> in the AWS CloudFormation User Guide.</p>
+         * Stacks Using Change Sets</a> in the AWS CloudFormation User Guide.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeChangeSet">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeChangeSetOutcome DescribeChangeSet(const Model::DescribeChangeSetRequest& request) const;
 
@@ -486,7 +543,10 @@ namespace Model
          * CloudFormation will make if you execute the change set. For more information,
          * see <a
          * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-changesets.html">Updating
-         * Stacks Using Change Sets</a> in the AWS CloudFormation User Guide.</p>
+         * Stacks Using Change Sets</a> in the AWS CloudFormation User Guide.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeChangeSet">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -497,7 +557,10 @@ namespace Model
          * CloudFormation will make if you execute the change set. For more information,
          * see <a
          * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-changesets.html">Updating
-         * Stacks Using Change Sets</a> in the AWS CloudFormation User Guide.</p>
+         * Stacks Using Change Sets</a> in the AWS CloudFormation User Guide.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeChangeSet">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -510,7 +573,9 @@ namespace Model
          * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/concept-stack.html">Stacks</a>
          * in the AWS CloudFormation User Guide.</p> <note> <p>You can list events for
          * stacks that have failed to create or have been deleted by specifying the unique
-         * stack identifier (stack ID).</p> </note>
+         * stack identifier (stack ID).</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackEvents">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeStackEventsOutcome DescribeStackEvents(const Model::DescribeStackEventsRequest& request) const;
 
@@ -521,7 +586,9 @@ namespace Model
          * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/concept-stack.html">Stacks</a>
          * in the AWS CloudFormation User Guide.</p> <note> <p>You can list events for
          * stacks that have failed to create or have been deleted by specifying the unique
-         * stack identifier (stack ID).</p> </note>
+         * stack identifier (stack ID).</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackEvents">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -534,7 +601,9 @@ namespace Model
          * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/concept-stack.html">Stacks</a>
          * in the AWS CloudFormation User Guide.</p> <note> <p>You can list events for
          * stacks that have failed to create or have been deleted by specifying the unique
-         * stack identifier (stack ID).</p> </note>
+         * stack identifier (stack ID).</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackEvents">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -543,14 +612,18 @@ namespace Model
         /**
          * <p>Returns a description of the specified resource in the specified stack.</p>
          * <p>For deleted stacks, DescribeStackResource returns resource information for up
-         * to 90 days after the stack has been deleted.</p>
+         * to 90 days after the stack has been deleted.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackResource">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeStackResourceOutcome DescribeStackResource(const Model::DescribeStackResourceRequest& request) const;
 
         /**
          * <p>Returns a description of the specified resource in the specified stack.</p>
          * <p>For deleted stacks, DescribeStackResource returns resource information for up
-         * to 90 days after the stack has been deleted.</p>
+         * to 90 days after the stack has been deleted.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackResource">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -559,7 +632,9 @@ namespace Model
         /**
          * <p>Returns a description of the specified resource in the specified stack.</p>
          * <p>For deleted stacks, DescribeStackResource returns resource information for up
-         * to 90 days after the stack has been deleted.</p>
+         * to 90 days after the stack has been deleted.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackResource">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -582,7 +657,10 @@ namespace Model
          * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/">AWS
          * CloudFormation User Guide</a>.</p> <note> <p>A <code>ValidationError</code> is
          * returned if you specify both <code>StackName</code> and
-         * <code>PhysicalResourceId</code> in the same request.</p> </note>
+         * <code>PhysicalResourceId</code> in the same request.</p> </note><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackResources">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeStackResourcesOutcome DescribeStackResources(const Model::DescribeStackResourcesRequest& request) const;
 
@@ -603,7 +681,10 @@ namespace Model
          * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/">AWS
          * CloudFormation User Guide</a>.</p> <note> <p>A <code>ValidationError</code> is
          * returned if you specify both <code>StackName</code> and
-         * <code>PhysicalResourceId</code> in the same request.</p> </note>
+         * <code>PhysicalResourceId</code> in the same request.</p> </note><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackResources">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -626,7 +707,10 @@ namespace Model
          * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/">AWS
          * CloudFormation User Guide</a>.</p> <note> <p>A <code>ValidationError</code> is
          * returned if you specify both <code>StackName</code> and
-         * <code>PhysicalResourceId</code> in the same request.</p> </note>
+         * <code>PhysicalResourceId</code> in the same request.</p> </note><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackResources">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -636,7 +720,10 @@ namespace Model
          * <p>Returns the description for the specified stack; if no stack name was
          * specified, then it returns the description for all the stacks created.</p>
          * <note> <p>If the stack does not exist, an
-         * <code>AmazonCloudFormationException</code> is returned.</p> </note>
+         * <code>AmazonCloudFormationException</code> is returned.</p> </note><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStacks">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeStacksOutcome DescribeStacks(const Model::DescribeStacksRequest& request) const;
 
@@ -644,7 +731,10 @@ namespace Model
          * <p>Returns the description for the specified stack; if no stack name was
          * specified, then it returns the description for all the stacks created.</p>
          * <note> <p>If the stack does not exist, an
-         * <code>AmazonCloudFormationException</code> is returned.</p> </note>
+         * <code>AmazonCloudFormationException</code> is returned.</p> </note><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStacks">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -654,7 +744,10 @@ namespace Model
          * <p>Returns the description for the specified stack; if no stack name was
          * specified, then it returns the description for all the stacks created.</p>
          * <note> <p>If the stack does not exist, an
-         * <code>AmazonCloudFormationException</code> is returned.</p> </note>
+         * <code>AmazonCloudFormationException</code> is returned.</p> </note><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStacks">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -663,14 +756,18 @@ namespace Model
         /**
          * <p>Returns the estimated monthly cost of a template. The return value is an AWS
          * Simple Monthly Calculator URL with a query string that describes the resources
-         * required to run the template.</p>
+         * required to run the template.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/EstimateTemplateCost">AWS
+         * API Reference</a></p>
          */
         virtual Model::EstimateTemplateCostOutcome EstimateTemplateCost(const Model::EstimateTemplateCostRequest& request) const;
 
         /**
          * <p>Returns the estimated monthly cost of a template. The return value is an AWS
          * Simple Monthly Calculator URL with a query string that describes the resources
-         * required to run the template.</p>
+         * required to run the template.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/EstimateTemplateCost">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -679,7 +776,9 @@ namespace Model
         /**
          * <p>Returns the estimated monthly cost of a template. The return value is an AWS
          * Simple Monthly Calculator URL with a query string that describes the resources
-         * required to run the template.</p>
+         * required to run the template.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/EstimateTemplateCost">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -693,7 +792,10 @@ namespace Model
          * CloudFormation deletes all other change sets associated with the stack because
          * they aren't valid for the updated stack.</p> <p>If a stack policy is associated
          * with the stack, AWS CloudFormation enforces the policy during the update. You
-         * can't specify a temporary stack policy that overrides the current policy.</p>
+         * can't specify a temporary stack policy that overrides the current
+         * policy.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ExecuteChangeSet">AWS
+         * API Reference</a></p>
          */
         virtual Model::ExecuteChangeSetOutcome ExecuteChangeSet(const Model::ExecuteChangeSetRequest& request) const;
 
@@ -705,7 +807,10 @@ namespace Model
          * CloudFormation deletes all other change sets associated with the stack because
          * they aren't valid for the updated stack.</p> <p>If a stack policy is associated
          * with the stack, AWS CloudFormation enforces the policy during the update. You
-         * can't specify a temporary stack policy that overrides the current policy.</p>
+         * can't specify a temporary stack policy that overrides the current
+         * policy.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ExecuteChangeSet">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -719,7 +824,10 @@ namespace Model
          * CloudFormation deletes all other change sets associated with the stack because
          * they aren't valid for the updated stack.</p> <p>If a stack policy is associated
          * with the stack, AWS CloudFormation enforces the policy during the update. You
-         * can't specify a temporary stack policy that overrides the current policy.</p>
+         * can't specify a temporary stack policy that overrides the current
+         * policy.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ExecuteChangeSet">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -727,13 +835,17 @@ namespace Model
 
         /**
          * <p>Returns the stack policy for a specified stack. If a stack doesn't have a
-         * policy, a null value is returned.</p>
+         * policy, a null value is returned.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/GetStackPolicy">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetStackPolicyOutcome GetStackPolicy(const Model::GetStackPolicyRequest& request) const;
 
         /**
          * <p>Returns the stack policy for a specified stack. If a stack doesn't have a
-         * policy, a null value is returned.</p>
+         * policy, a null value is returned.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/GetStackPolicy">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -741,7 +853,9 @@ namespace Model
 
         /**
          * <p>Returns the stack policy for a specified stack. If a stack doesn't have a
-         * policy, a null value is returned.</p>
+         * policy, a null value is returned.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/GetStackPolicy">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -752,7 +866,9 @@ namespace Model
          * running or deleted stacks.</p> <p>For deleted stacks, GetTemplate returns the
          * template for up to 90 days after the stack has been deleted.</p> <note> <p> If
          * the template does not exist, a <code>ValidationError</code> is returned. </p>
-         * </note>
+         * </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/GetTemplate">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetTemplateOutcome GetTemplate(const Model::GetTemplateRequest& request) const;
 
@@ -761,7 +877,9 @@ namespace Model
          * running or deleted stacks.</p> <p>For deleted stacks, GetTemplate returns the
          * template for up to 90 days after the stack has been deleted.</p> <note> <p> If
          * the template does not exist, a <code>ValidationError</code> is returned. </p>
-         * </note>
+         * </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/GetTemplate">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -772,7 +890,9 @@ namespace Model
          * running or deleted stacks.</p> <p>For deleted stacks, GetTemplate returns the
          * template for up to 90 days after the stack has been deleted.</p> <note> <p> If
          * the template does not exist, a <code>ValidationError</code> is returned. </p>
-         * </note>
+         * </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/GetTemplate">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -787,7 +907,9 @@ namespace Model
          * running or deleted stack.</p> <p>For deleted stacks,
          * <code>GetTemplateSummary</code> returns the template information for up to 90
          * days after the stack has been deleted. If the template does not exist, a
-         * <code>ValidationError</code> is returned.</p>
+         * <code>ValidationError</code> is returned.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/GetTemplateSummary">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetTemplateSummaryOutcome GetTemplateSummary(const Model::GetTemplateSummaryRequest& request) const;
 
@@ -800,7 +922,9 @@ namespace Model
          * running or deleted stack.</p> <p>For deleted stacks,
          * <code>GetTemplateSummary</code> returns the template information for up to 90
          * days after the stack has been deleted. If the template does not exist, a
-         * <code>ValidationError</code> is returned.</p>
+         * <code>ValidationError</code> is returned.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/GetTemplateSummary">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -815,7 +939,9 @@ namespace Model
          * running or deleted stack.</p> <p>For deleted stacks,
          * <code>GetTemplateSummary</code> returns the template information for up to 90
          * days after the stack has been deleted. If the template does not exist, a
-         * <code>ValidationError</code> is returned.</p>
+         * <code>ValidationError</code> is returned.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/GetTemplateSummary">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -824,14 +950,20 @@ namespace Model
         /**
          * <p>Returns the ID and status of each active change set for a stack. For example,
          * AWS CloudFormation lists change sets that are in the
-         * <code>CREATE_IN_PROGRESS</code> or <code>CREATE_PENDING</code> state.</p>
+         * <code>CREATE_IN_PROGRESS</code> or <code>CREATE_PENDING</code>
+         * state.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListChangeSets">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListChangeSetsOutcome ListChangeSets(const Model::ListChangeSetsRequest& request) const;
 
         /**
          * <p>Returns the ID and status of each active change set for a stack. For example,
          * AWS CloudFormation lists change sets that are in the
-         * <code>CREATE_IN_PROGRESS</code> or <code>CREATE_PENDING</code> state.</p>
+         * <code>CREATE_IN_PROGRESS</code> or <code>CREATE_PENDING</code>
+         * state.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListChangeSets">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -840,7 +972,10 @@ namespace Model
         /**
          * <p>Returns the ID and status of each active change set for a stack. For example,
          * AWS CloudFormation lists change sets that are in the
-         * <code>CREATE_IN_PROGRESS</code> or <code>CREATE_PENDING</code> state.</p>
+         * <code>CREATE_IN_PROGRESS</code> or <code>CREATE_PENDING</code>
+         * state.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListChangeSets">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -853,7 +988,9 @@ namespace Model
          * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-importvalue.html">
          * <code>Fn::ImportValue</code> </a> function. </p> <p>For more information, see <a
          * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-exports.html">
-         * AWS CloudFormation Export Stack Output Values</a>.</p>
+         * AWS CloudFormation Export Stack Output Values</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListExports">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListExportsOutcome ListExports(const Model::ListExportsRequest& request) const;
 
@@ -864,7 +1001,9 @@ namespace Model
          * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-importvalue.html">
          * <code>Fn::ImportValue</code> </a> function. </p> <p>For more information, see <a
          * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-exports.html">
-         * AWS CloudFormation Export Stack Output Values</a>.</p>
+         * AWS CloudFormation Export Stack Output Values</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListExports">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -877,7 +1016,9 @@ namespace Model
          * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-importvalue.html">
          * <code>Fn::ImportValue</code> </a> function. </p> <p>For more information, see <a
          * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-exports.html">
-         * AWS CloudFormation Export Stack Output Values</a>.</p>
+         * AWS CloudFormation Export Stack Output Values</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListExports">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -890,7 +1031,9 @@ namespace Model
          * <a>ListExports</a>. </p> <p>For more information about importing an exported
          * output value, see the <a
          * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-importvalue.html">
-         * <code>Fn::ImportValue</code> </a> function. </p>
+         * <code>Fn::ImportValue</code> </a> function. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListImports">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListImportsOutcome ListImports(const Model::ListImportsRequest& request) const;
 
@@ -901,7 +1044,9 @@ namespace Model
          * <a>ListExports</a>. </p> <p>For more information about importing an exported
          * output value, see the <a
          * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-importvalue.html">
-         * <code>Fn::ImportValue</code> </a> function. </p>
+         * <code>Fn::ImportValue</code> </a> function. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListImports">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -914,7 +1059,9 @@ namespace Model
          * <a>ListExports</a>. </p> <p>For more information about importing an exported
          * output value, see the <a
          * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-importvalue.html">
-         * <code>Fn::ImportValue</code> </a> function. </p>
+         * <code>Fn::ImportValue</code> </a> function. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListImports">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -923,14 +1070,18 @@ namespace Model
         /**
          * <p>Returns descriptions of all resources of the specified stack.</p> <p>For
          * deleted stacks, ListStackResources returns resource information for up to 90
-         * days after the stack has been deleted.</p>
+         * days after the stack has been deleted.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackResources">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListStackResourcesOutcome ListStackResources(const Model::ListStackResourcesRequest& request) const;
 
         /**
          * <p>Returns descriptions of all resources of the specified stack.</p> <p>For
          * deleted stacks, ListStackResources returns resource information for up to 90
-         * days after the stack has been deleted.</p>
+         * days after the stack has been deleted.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackResources">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -939,7 +1090,9 @@ namespace Model
         /**
          * <p>Returns descriptions of all resources of the specified stack.</p> <p>For
          * deleted stacks, ListStackResources returns resource information for up to 90
-         * days after the stack has been deleted.</p>
+         * days after the stack has been deleted.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackResources">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -950,7 +1103,9 @@ namespace Model
          * StackStatusFilter. Summary information for stacks that have been deleted is kept
          * for 90 days after the stack is deleted. If no StackStatusFilter is specified,
          * summary information for all stacks is returned (including existing stacks and
-         * stacks that have been deleted).</p>
+         * stacks that have been deleted).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStacks">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListStacksOutcome ListStacks(const Model::ListStacksRequest& request) const;
 
@@ -959,7 +1114,9 @@ namespace Model
          * StackStatusFilter. Summary information for stacks that have been deleted is kept
          * for 90 days after the stack is deleted. If no StackStatusFilter is specified,
          * summary information for all stacks is returned (including existing stacks and
-         * stacks that have been deleted).</p>
+         * stacks that have been deleted).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStacks">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -970,26 +1127,34 @@ namespace Model
          * StackStatusFilter. Summary information for stacks that have been deleted is kept
          * for 90 days after the stack is deleted. If no StackStatusFilter is specified,
          * summary information for all stacks is returned (including existing stacks and
-         * stacks that have been deleted).</p>
+         * stacks that have been deleted).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStacks">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListStacksAsync(const Model::ListStacksRequest& request, const ListStacksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Sets a stack policy for a specified stack.</p>
+         * <p>Sets a stack policy for a specified stack.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/SetStackPolicy">AWS
+         * API Reference</a></p>
          */
         virtual Model::SetStackPolicyOutcome SetStackPolicy(const Model::SetStackPolicyRequest& request) const;
 
         /**
-         * <p>Sets a stack policy for a specified stack.</p>
+         * <p>Sets a stack policy for a specified stack.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/SetStackPolicy">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::SetStackPolicyOutcomeCallable SetStackPolicyCallable(const Model::SetStackPolicyRequest& request) const;
 
         /**
-         * <p>Sets a stack policy for a specified stack.</p>
+         * <p>Sets a stack policy for a specified stack.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/SetStackPolicy">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1001,7 +1166,10 @@ namespace Model
          * update policy. AWS CloudFormation doesn't proceed with a stack creation or
          * update until resources receive the required number of signals or the timeout
          * period is exceeded. The SignalResource API is useful in cases where you want to
-         * send signals from anywhere other than an Amazon EC2 instance.</p>
+         * send signals from anywhere other than an Amazon EC2 instance.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/SignalResource">AWS
+         * API Reference</a></p>
          */
         virtual Model::SignalResourceOutcome SignalResource(const Model::SignalResourceRequest& request) const;
 
@@ -1011,7 +1179,10 @@ namespace Model
          * update policy. AWS CloudFormation doesn't proceed with a stack creation or
          * update until resources receive the required number of signals or the timeout
          * period is exceeded. The SignalResource API is useful in cases where you want to
-         * send signals from anywhere other than an Amazon EC2 instance.</p>
+         * send signals from anywhere other than an Amazon EC2 instance.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/SignalResource">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1023,7 +1194,10 @@ namespace Model
          * update policy. AWS CloudFormation doesn't proceed with a stack creation or
          * update until resources receive the required number of signals or the timeout
          * period is exceeded. The SignalResource API is useful in cases where you want to
-         * send signals from anywhere other than an Amazon EC2 instance.</p>
+         * send signals from anywhere other than an Amazon EC2 instance.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/SignalResource">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1037,7 +1211,9 @@ namespace Model
          * information about creating an update template, updating a stack, and monitoring
          * the progress of the update, see <a
          * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks.html">Updating
-         * a Stack</a>.</p>
+         * a Stack</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/UpdateStack">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateStackOutcome UpdateStack(const Model::UpdateStackRequest& request) const;
 
@@ -1049,7 +1225,9 @@ namespace Model
          * information about creating an update template, updating a stack, and monitoring
          * the progress of the update, see <a
          * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks.html">Updating
-         * a Stack</a>.</p>
+         * a Stack</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/UpdateStack">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1063,7 +1241,9 @@ namespace Model
          * information about creating an update template, updating a stack, and monitoring
          * the progress of the update, see <a
          * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks.html">Updating
-         * a Stack</a>.</p>
+         * a Stack</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/UpdateStack">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1073,7 +1253,9 @@ namespace Model
          * <p>Validates a specified template. AWS CloudFormation first checks if the
          * template is valid JSON. If it isn't, AWS CloudFormation checks if the template
          * is valid YAML. If both these checks fail, AWS CloudFormation returns a template
-         * validation error.</p>
+         * validation error.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ValidateTemplate">AWS
+         * API Reference</a></p>
          */
         virtual Model::ValidateTemplateOutcome ValidateTemplate(const Model::ValidateTemplateRequest& request) const;
 
@@ -1081,7 +1263,9 @@ namespace Model
          * <p>Validates a specified template. AWS CloudFormation first checks if the
          * template is valid JSON. If it isn't, AWS CloudFormation checks if the template
          * is valid YAML. If both these checks fail, AWS CloudFormation returns a template
-         * validation error.</p>
+         * validation error.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ValidateTemplate">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1091,7 +1275,9 @@ namespace Model
          * <p>Validates a specified template. AWS CloudFormation first checks if the
          * template is valid JSON. If it isn't, AWS CloudFormation checks if the template
          * is valid YAML. If both these checks fail, AWS CloudFormation returns a template
-         * validation error.</p>
+         * validation error.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ValidateTemplate">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */

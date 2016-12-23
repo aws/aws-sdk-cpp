@@ -32,7 +32,9 @@ namespace Model
 
   /**
    * <p>The ID of the target requested to be removed from the rule by Amazon
-   * CloudWatch Events.</p>
+   * CloudWatch Events.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/RemoveTargetsResultEntry">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDWATCHEVENTS_API RemoveTargetsResultEntry
   {

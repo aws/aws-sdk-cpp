@@ -40,7 +40,9 @@ namespace Model
    * load balancer. If ELB health checks are enabled for the load balancer, the state
    * transitions to <code>InService</code> after at least one instance in the group
    * passes the health check. If EC2 health checks are enabled instead, the load
-   * balancer remains in the <code>Added</code> state.</p>
+   * balancer remains in the <code>Added</code> state.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/LoadBalancerState">AWS
+   * API Reference</a></p>
    */
   class AWS_AUTOSCALING_API LoadBalancerState
   {

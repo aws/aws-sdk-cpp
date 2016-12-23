@@ -32,7 +32,10 @@ namespace Model
 {
 
   /**
-   * <p>Information about an on-premises instance tag filter.</p>
+   * <p>Information about an on-premises instance tag filter.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/TagFilter">AWS
+   * API Reference</a></p>
    */
   class AWS_CODEDEPLOY_API TagFilter
   {

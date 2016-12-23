@@ -26,7 +26,9 @@ namespace Model
 
   /**
    * <p>A <code>RenewDomain</code> request includes the number of years that you want
-   * to renew for and the current expiration year.</p>
+   * to renew for and the current expiration year.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/RenewDomainRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_ROUTE53DOMAINS_API RenewDomainRequest : public Route53DomainsRequest
   {

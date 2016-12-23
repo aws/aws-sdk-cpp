@@ -35,7 +35,10 @@ namespace CognitoSync
 namespace Model
 {
   /**
-   * <p>The output for the GetIdentityPoolConfiguration operation.</p>
+   * <p>The output for the GetIdentityPoolConfiguration operation.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/GetIdentityPoolConfigurationResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_COGNITOSYNC_API GetIdentityPoolConfigurationResult
   {

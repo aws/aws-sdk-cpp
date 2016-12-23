@@ -53,7 +53,8 @@ enum class SSMErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  ASSOCIATED_INSTANCES= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  ALREADY_EXISTS= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  ASSOCIATED_INSTANCES,
   ASSOCIATION_ALREADY_EXISTS,
   ASSOCIATION_DOES_NOT_EXIST,
   ASSOCIATION_LIMIT_EXCEEDED,
@@ -108,6 +109,7 @@ enum class SSMErrors
   PARAMETER_ALREADY_EXISTS,
   PARAMETER_LIMIT_EXCEEDED,
   PARAMETER_NOT_FOUND,
+  RESOURCE_IN_USE,
   RESOURCE_LIMIT_EXCEEDED,
   STATUS_UNCHANGED,
   TOO_MANY_TAGS,

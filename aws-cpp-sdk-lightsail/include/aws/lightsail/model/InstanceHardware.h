@@ -32,7 +32,9 @@ namespace Model
 {
 
   /**
-   * <p>Describes the hardware for the instance.</p>
+   * <p>Describes the hardware for the instance.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/InstanceHardware">AWS
+   * API Reference</a></p>
    */
   class AWS_LIGHTSAIL_API InstanceHardware
   {

@@ -51,7 +51,10 @@ namespace Model
    * element is omitted from the response.</p> </li> <li> <p>If you're making the
    * second or subsequent call to <code>ListHostedZones</code>, the
    * <code>Marker</code> element matches the value that you specified in the
-   * <code>marker</code> parameter in the previous request.</p> </li> </ul>
+   * <code>marker</code> parameter in the previous request.</p> </li> </ul><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListHostedZonesRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_ROUTE53_API ListHostedZonesRequest : public Route53Request
   {

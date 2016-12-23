@@ -27,7 +27,9 @@ namespace Model
 {
 
   /**
-   * <p>Represents the request to set user settings.</p>
+   * <p>Represents the request to set user settings.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SetUserSettingsRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_COGNITOIDENTITYPROVIDER_API SetUserSettingsRequest : public CognitoIdentityProviderRequest
   {

@@ -33,7 +33,10 @@ namespace Model
 {
 
   /**
-   * <p>Describes a filter for a specific list of instances. </p>
+   * <p>Describes a filter for a specific list of instances. </p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/InstanceInformationFilter">AWS
+   * API Reference</a></p>
    */
   class AWS_SSM_API InstanceInformationFilter
   {

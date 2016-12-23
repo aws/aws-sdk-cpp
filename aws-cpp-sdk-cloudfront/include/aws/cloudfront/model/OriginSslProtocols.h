@@ -33,7 +33,10 @@ namespace Model
 
   /**
    * A complex type that contains the list of SSL/TLS protocols that you want
-   * CloudFront to use when communicating with your origin over HTTPS.
+   * CloudFront to use when communicating with your origin over HTTPS.<p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/OriginSslProtocols">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API OriginSslProtocols
   {

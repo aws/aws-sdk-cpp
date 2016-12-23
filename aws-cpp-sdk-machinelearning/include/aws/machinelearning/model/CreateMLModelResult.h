@@ -37,7 +37,9 @@ namespace Model
    * acknowledgement that Amazon ML received the request.</p> <p>The
    * <code>CreateMLModel</code> operation is asynchronous. You can poll for status
    * updates by using the <code>GetMLModel</code> operation and checking the
-   * <code>Status</code> parameter. </p>
+   * <code>Status</code> parameter. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/CreateMLModelOutput">AWS
+   * API Reference</a></p>
    */
   class AWS_MACHINELEARNING_API CreateMLModelResult
   {

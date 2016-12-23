@@ -27,7 +27,10 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for DescribeInstanceStatus.</p>
+   * <p>Contains the parameters for DescribeInstanceStatus.</p><p><h3>See Also:</h3> 
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceStatusRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API DescribeInstanceStatusRequest : public EC2Request
   {

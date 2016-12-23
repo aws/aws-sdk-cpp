@@ -36,7 +36,10 @@ namespace Model
    * Route 53 supports.</p> <p>Countries are listed first, and continents are listed
    * last. If Amazon Route 53 supports subdivisions for a country (for example,
    * states or provinces), the subdivisions for that country are listed in
-   * alphabetical order immediately after the corresponding country. </p>
+   * alphabetical order immediately after the corresponding country. </p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListGeoLocationsRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_ROUTE53_API ListGeoLocationsRequest : public Route53Request
   {

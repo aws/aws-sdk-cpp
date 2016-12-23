@@ -36,7 +36,9 @@ namespace Model
 {
   /**
    * <p>Contains the UsageRecords processed by BatchMeterUsage and any records that
-   * have failed due to transient error.</p>
+   * have failed due to transient error.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/meteringmarketplace-2016-01-14/BatchMeterUsageResult">AWS
+   * API Reference</a></p>
    */
   class AWS_MARKETPLACEMETERING_API BatchMeterUsageResult
   {

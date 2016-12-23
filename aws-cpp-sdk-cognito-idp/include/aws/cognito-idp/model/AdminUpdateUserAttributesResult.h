@@ -33,7 +33,9 @@ namespace Model
 {
   /**
    * <p>Represents the response from the server for the request to update user
-   * attributes as an administrator.</p>
+   * attributes as an administrator.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminUpdateUserAttributesResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_COGNITOIDENTITYPROVIDER_API AdminUpdateUserAttributesResult
   {

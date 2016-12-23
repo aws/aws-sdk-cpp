@@ -27,7 +27,10 @@ namespace Model
   /**
    * <p>Container for the parameters to the
    * <code><a>UpdateServiceAccessPolicies</a></code> operation. Specifies the name of
-   * the domain you want to update and the access rules you want to configure.</p>
+   * the domain you want to update and the access rules you want to
+   * configure.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/UpdateServiceAccessPoliciesRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDSEARCH_API UpdateServiceAccessPoliciesRequest : public CloudSearchRequest
   {

@@ -49,7 +49,9 @@ namespace Model
    * injected into the associated API entity definition in the exported Swagger
    * definition file.</p></div> <div class="seeAlso"> <a
    * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-documenting-api.html">Documenting
-   * an API</a>, <a>DocumentationParts</a> </div>
+   * an API</a>, <a>DocumentationParts</a> </div><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DocumentationPart">AWS
+   * API Reference</a></p>
    */
   class AWS_APIGATEWAY_API UpdateDocumentationPartResult
   {

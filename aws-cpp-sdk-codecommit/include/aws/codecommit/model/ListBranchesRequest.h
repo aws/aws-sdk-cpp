@@ -25,7 +25,10 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input of a list branches operation.</p>
+   * <p>Represents the input of a list branches operation.</p><p><h3>See Also:</h3>  
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/ListBranchesInput">AWS
+   * API Reference</a></p>
    */
   class AWS_CODECOMMIT_API ListBranchesRequest : public CodeCommitRequest
   {

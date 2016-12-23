@@ -31,7 +31,10 @@ namespace Model
 {
 
   /**
-   * <p>The <code>ulimit</code> settings to pass to the container.</p>
+   * <p>The <code>ulimit</code> settings to pass to the container.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/Ulimit">AWS API
+   * Reference</a></p>
    */
   class AWS_ECS_API Ulimit
   {

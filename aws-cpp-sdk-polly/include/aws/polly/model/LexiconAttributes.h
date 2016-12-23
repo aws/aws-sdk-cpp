@@ -36,7 +36,9 @@ namespace Model
    * <p>Contains metadata describing the lexicon such as the number of lexemes,
    * language code, and so on. For more information, see <a
    * href="http://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing
-   * Lexicons</a>.</p>
+   * Lexicons</a>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/LexiconAttributes">AWS
+   * API Reference</a></p>
    */
   class AWS_POLLY_API LexiconAttributes
   {

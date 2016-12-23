@@ -28,7 +28,9 @@ namespace Model
    * <p>Represents a request to delete a receipt rule. You use receipt rules to
    * receive email with Amazon SES. For more information, see the <a
    * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon
-   * SES Developer Guide</a>.</p>
+   * SES Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteReceiptRuleRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_SES_API DeleteReceiptRuleRequest : public SESRequest
   {

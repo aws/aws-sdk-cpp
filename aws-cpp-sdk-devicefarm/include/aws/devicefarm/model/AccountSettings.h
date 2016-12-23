@@ -33,7 +33,10 @@ namespace Model
 {
 
   /**
-   * <p>A container for account-level settings within AWS Device Farm.</p>
+   * <p>A container for account-level settings within AWS Device Farm.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/AccountSettings">AWS
+   * API Reference</a></p>
    */
   class AWS_DEVICEFARM_API AccountSettings
   {

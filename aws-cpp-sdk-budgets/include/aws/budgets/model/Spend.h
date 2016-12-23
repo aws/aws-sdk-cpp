@@ -32,7 +32,9 @@ namespace Model
 
   /**
    * A structure represent either a cost spend or usage spend. Contains an amount and
-   * a unit.
+   * a unit.<p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/Spend">AWS API
+   * Reference</a></p>
    */
   class AWS_BUDGETS_API Spend
   {

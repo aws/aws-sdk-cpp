@@ -25,7 +25,8 @@ CopyDBSnapshotRequest::CopyDBSnapshotRequest() :
     m_kmsKeyIdHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_copyTags(false),
-    m_copyTagsHasBeenSet(false)
+    m_copyTagsHasBeenSet(false),
+    m_preSignedUrlHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,11 @@ Aws::String CopyDBSnapshotRequest::SerializePayload() const
   if(m_copyTagsHasBeenSet)
   {
     ss << "CopyTags=" << m_copyTags << "&";
+  }
+
+  if(m_preSignedUrlHasBeenSet)
+  {
+    ss << "PreSignedUrl=" << StringUtils::URLEncode(m_preSignedUrl.c_str()) << "&";
   }
 
   ss << "Version=2014-10-31";

@@ -33,7 +33,10 @@ namespace Model
   /**
    * <p>The parameter key/value pair used to update a ProvisionedProduct object. If
    * <code>UsePreviousValue</code> is set to true, <code>Value</code> is ignored and
-   * the value for <code>Key</code> is kept as previously set (current value).</p>
+   * the value for <code>Key</code> is kept as previously set (current
+   * value).</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateProvisioningParameter">AWS
+   * API Reference</a></p>
    */
   class AWS_SERVICECATALOG_API UpdateProvisioningParameter
   {

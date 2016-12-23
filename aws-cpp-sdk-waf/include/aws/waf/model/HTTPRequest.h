@@ -36,7 +36,10 @@ namespace Model
    * <p>The response from a <a>GetSampledRequests</a> request includes an
    * <code>HTTPRequest</code> complex type that appears as <code>Request</code> in
    * the response syntax. <code>HTTPRequest</code> contains information about one of
-   * the web requests that were returned by <code>GetSampledRequests</code>. </p>
+   * the web requests that were returned by <code>GetSampledRequests</code>.
+   * </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/HTTPRequest">AWS API
+   * Reference</a></p>
    */
   class AWS_WAF_API HTTPRequest
   {

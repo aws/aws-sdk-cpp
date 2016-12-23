@@ -37,7 +37,9 @@ namespace Model
    * an acknowledgement that Amazon ML received the request.</p>
    * <p><code>CreateEvaluation</code> operation is asynchronous. You can poll for
    * status updates by using the <code>GetEvcaluation</code> operation and checking
-   * the <code>Status</code> parameter. </p>
+   * the <code>Status</code> parameter. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/CreateEvaluationOutput">AWS
+   * API Reference</a></p>
    */
   class AWS_MACHINELEARNING_API CreateEvaluationResult
   {

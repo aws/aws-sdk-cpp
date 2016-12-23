@@ -30,7 +30,9 @@ namespace Model
    * domain setup for a verified identity. For information about using a custom MAIL
    * FROM domain, see the <a
    * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from.html">Amazon
-   * SES Developer Guide</a>.</p>
+   * SES Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SetIdentityMailFromDomainRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_SES_API SetIdentityMailFromDomainRequest : public SESRequest
   {

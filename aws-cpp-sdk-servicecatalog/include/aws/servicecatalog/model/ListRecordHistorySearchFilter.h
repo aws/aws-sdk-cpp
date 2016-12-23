@@ -31,7 +31,10 @@ namespace Model
 {
 
   /**
-   * <p>The search filter to limit results when listing request history records.</p>
+   * <p>The search filter to limit results when listing request history
+   * records.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListRecordHistorySearchFilter">AWS
+   * API Reference</a></p>
    */
   class AWS_SERVICECATALOG_API ListRecordHistorySearchFilter
   {

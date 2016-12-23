@@ -33,7 +33,10 @@ namespace Model
 {
 
   /**
-   * <p>A collection of segment documents with matching trace IDs.</p>
+   * <p>A collection of segment documents with matching trace IDs.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/Trace">AWS API
+   * Reference</a></p>
    */
   class AWS_XRAY_API Trace
   {

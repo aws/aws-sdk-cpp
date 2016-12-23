@@ -32,7 +32,9 @@ namespace Model
 
   /**
    * <p>Specifies the configuration for the domain cluster, such as the type and
-   * number of instances.</p>
+   * number of instances.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/ElasticsearchClusterConfig">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICSEARCHSERVICE_API ElasticsearchClusterConfig
   {

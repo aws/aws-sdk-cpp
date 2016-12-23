@@ -31,7 +31,10 @@ namespace Model
 {
 
   /**
-   * <p>Represents a global secondary index to be deleted from an existing table.</p>
+   * <p>Represents a global secondary index to be deleted from an existing
+   * table.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DeleteGlobalSecondaryIndexAction">AWS
+   * API Reference</a></p>
    */
   class AWS_DYNAMODB_API DeleteGlobalSecondaryIndexAction
   {

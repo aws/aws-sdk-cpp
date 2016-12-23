@@ -39,7 +39,9 @@ namespace Model
 
   /**
    * <p>Represents additional information about a job required for a job worker to
-   * complete the job.</p>
+   * complete the job.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/JobData">AWS
+   * API Reference</a></p>
    */
   class AWS_CODEPIPELINE_API JobData
   {

@@ -20,6 +20,7 @@
 #include <aws/firehose/model/ElasticsearchRetryOptions.h>
 #include <aws/firehose/model/ElasticsearchS3BackupMode.h>
 #include <aws/firehose/model/S3DestinationConfiguration.h>
+#include <aws/firehose/model/ProcessingConfiguration.h>
 #include <aws/firehose/model/CloudWatchLoggingOptions.h>
 
 namespace Aws
@@ -37,7 +38,10 @@ namespace Model
 {
 
   /**
-   * <p>Describes the configuration of a destination in Amazon ES.</p>
+   * <p>Describes the configuration of a destination in Amazon ES.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/ElasticsearchDestinationConfiguration">AWS
+   * API Reference</a></p>
    */
   class AWS_FIREHOSE_API ElasticsearchDestinationConfiguration
   {
@@ -104,65 +108,65 @@ namespace Model
     inline ElasticsearchDestinationConfiguration& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}
 
     /**
-     * <p>The ARN of the Amazon ES domain. The IAM role must have permission
+     * <p>The ARN of the Amazon ES domain. The IAM role must have permissions
      * for <code>DescribeElasticsearchDomain</code>,
-     * <code>DescribeElasticsearchDomains</code> , and
-     * <code>DescribeElasticsearchDomainConfig</code> after assuming
-     * <b>RoleARN</b>.</p>
+     * <code>DescribeElasticsearchDomains</code>, and
+     * <code>DescribeElasticsearchDomainConfig</code> after assuming the role specified
+     * in <b>RoleARN</b>.</p>
      */
     inline const Aws::String& GetDomainARN() const{ return m_domainARN; }
 
     /**
-     * <p>The ARN of the Amazon ES domain. The IAM role must have permission
+     * <p>The ARN of the Amazon ES domain. The IAM role must have permissions
      * for <code>DescribeElasticsearchDomain</code>,
-     * <code>DescribeElasticsearchDomains</code> , and
-     * <code>DescribeElasticsearchDomainConfig</code> after assuming
-     * <b>RoleARN</b>.</p>
+     * <code>DescribeElasticsearchDomains</code>, and
+     * <code>DescribeElasticsearchDomainConfig</code> after assuming the role specified
+     * in <b>RoleARN</b>.</p>
      */
     inline void SetDomainARN(const Aws::String& value) { m_domainARNHasBeenSet = true; m_domainARN = value; }
 
     /**
-     * <p>The ARN of the Amazon ES domain. The IAM role must have permission
+     * <p>The ARN of the Amazon ES domain. The IAM role must have permissions
      * for <code>DescribeElasticsearchDomain</code>,
-     * <code>DescribeElasticsearchDomains</code> , and
-     * <code>DescribeElasticsearchDomainConfig</code> after assuming
-     * <b>RoleARN</b>.</p>
+     * <code>DescribeElasticsearchDomains</code>, and
+     * <code>DescribeElasticsearchDomainConfig</code> after assuming the role specified
+     * in <b>RoleARN</b>.</p>
      */
     inline void SetDomainARN(Aws::String&& value) { m_domainARNHasBeenSet = true; m_domainARN = value; }
 
     /**
-     * <p>The ARN of the Amazon ES domain. The IAM role must have permission
+     * <p>The ARN of the Amazon ES domain. The IAM role must have permissions
      * for <code>DescribeElasticsearchDomain</code>,
-     * <code>DescribeElasticsearchDomains</code> , and
-     * <code>DescribeElasticsearchDomainConfig</code> after assuming
-     * <b>RoleARN</b>.</p>
+     * <code>DescribeElasticsearchDomains</code>, and
+     * <code>DescribeElasticsearchDomainConfig</code> after assuming the role specified
+     * in <b>RoleARN</b>.</p>
      */
     inline void SetDomainARN(const char* value) { m_domainARNHasBeenSet = true; m_domainARN.assign(value); }
 
     /**
-     * <p>The ARN of the Amazon ES domain. The IAM role must have permission
+     * <p>The ARN of the Amazon ES domain. The IAM role must have permissions
      * for <code>DescribeElasticsearchDomain</code>,
-     * <code>DescribeElasticsearchDomains</code> , and
-     * <code>DescribeElasticsearchDomainConfig</code> after assuming
-     * <b>RoleARN</b>.</p>
+     * <code>DescribeElasticsearchDomains</code>, and
+     * <code>DescribeElasticsearchDomainConfig</code> after assuming the role specified
+     * in <b>RoleARN</b>.</p>
      */
     inline ElasticsearchDestinationConfiguration& WithDomainARN(const Aws::String& value) { SetDomainARN(value); return *this;}
 
     /**
-     * <p>The ARN of the Amazon ES domain. The IAM role must have permission
+     * <p>The ARN of the Amazon ES domain. The IAM role must have permissions
      * for <code>DescribeElasticsearchDomain</code>,
-     * <code>DescribeElasticsearchDomains</code> , and
-     * <code>DescribeElasticsearchDomainConfig</code> after assuming
-     * <b>RoleARN</b>.</p>
+     * <code>DescribeElasticsearchDomains</code>, and
+     * <code>DescribeElasticsearchDomainConfig</code> after assuming the role specified
+     * in <b>RoleARN</b>.</p>
      */
     inline ElasticsearchDestinationConfiguration& WithDomainARN(Aws::String&& value) { SetDomainARN(value); return *this;}
 
     /**
-     * <p>The ARN of the Amazon ES domain. The IAM role must have permission
+     * <p>The ARN of the Amazon ES domain. The IAM role must have permissions
      * for <code>DescribeElasticsearchDomain</code>,
-     * <code>DescribeElasticsearchDomains</code> , and
-     * <code>DescribeElasticsearchDomainConfig</code> after assuming
-     * <b>RoleARN</b>.</p>
+     * <code>DescribeElasticsearchDomains</code>, and
+     * <code>DescribeElasticsearchDomainConfig</code> after assuming the role specified
+     * in <b>RoleARN</b>.</p>
      */
     inline ElasticsearchDestinationConfiguration& WithDomainARN(const char* value) { SetDomainARN(value); return *this;}
 
@@ -241,7 +245,7 @@ namespace Model
      * to the IndexName to facilitate expiration of old data. For more information, see
      * <a
      * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-index-rotation">Index
-     * Rotation for Amazon Elasticsearch Service Destination</a>. Default value
+     * Rotation for Amazon Elasticsearch Service Destination</a>. The default value
      * is <code>OneDay</code>.</p>
      */
     inline const ElasticsearchIndexRotationPeriod& GetIndexRotationPeriod() const{ return m_indexRotationPeriod; }
@@ -251,7 +255,7 @@ namespace Model
      * to the IndexName to facilitate expiration of old data. For more information, see
      * <a
      * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-index-rotation">Index
-     * Rotation for Amazon Elasticsearch Service Destination</a>. Default value
+     * Rotation for Amazon Elasticsearch Service Destination</a>. The default value
      * is <code>OneDay</code>.</p>
      */
     inline void SetIndexRotationPeriod(const ElasticsearchIndexRotationPeriod& value) { m_indexRotationPeriodHasBeenSet = true; m_indexRotationPeriod = value; }
@@ -261,7 +265,7 @@ namespace Model
      * to the IndexName to facilitate expiration of old data. For more information, see
      * <a
      * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-index-rotation">Index
-     * Rotation for Amazon Elasticsearch Service Destination</a>. Default value
+     * Rotation for Amazon Elasticsearch Service Destination</a>. The default value
      * is <code>OneDay</code>.</p>
      */
     inline void SetIndexRotationPeriod(ElasticsearchIndexRotationPeriod&& value) { m_indexRotationPeriodHasBeenSet = true; m_indexRotationPeriod = value; }
@@ -271,7 +275,7 @@ namespace Model
      * to the IndexName to facilitate expiration of old data. For more information, see
      * <a
      * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-index-rotation">Index
-     * Rotation for Amazon Elasticsearch Service Destination</a>. Default value
+     * Rotation for Amazon Elasticsearch Service Destination</a>. The default value
      * is <code>OneDay</code>.</p>
      */
     inline ElasticsearchDestinationConfiguration& WithIndexRotationPeriod(const ElasticsearchIndexRotationPeriod& value) { SetIndexRotationPeriod(value); return *this;}
@@ -281,68 +285,68 @@ namespace Model
      * to the IndexName to facilitate expiration of old data. For more information, see
      * <a
      * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-index-rotation">Index
-     * Rotation for Amazon Elasticsearch Service Destination</a>. Default value
+     * Rotation for Amazon Elasticsearch Service Destination</a>. The default value
      * is <code>OneDay</code>.</p>
      */
     inline ElasticsearchDestinationConfiguration& WithIndexRotationPeriod(ElasticsearchIndexRotationPeriod&& value) { SetIndexRotationPeriod(value); return *this;}
 
     /**
-     * <p>Buffering options. If no value is specified,
-     * <b>ElasticsearchBufferingHints</b> object default values are used. </p>
+     * <p>The buffering options. If no value is specified, the default values for
+     * <b>ElasticsearchBufferingHints</b> are used.</p>
      */
     inline const ElasticsearchBufferingHints& GetBufferingHints() const{ return m_bufferingHints; }
 
     /**
-     * <p>Buffering options. If no value is specified,
-     * <b>ElasticsearchBufferingHints</b> object default values are used. </p>
+     * <p>The buffering options. If no value is specified, the default values for
+     * <b>ElasticsearchBufferingHints</b> are used.</p>
      */
     inline void SetBufferingHints(const ElasticsearchBufferingHints& value) { m_bufferingHintsHasBeenSet = true; m_bufferingHints = value; }
 
     /**
-     * <p>Buffering options. If no value is specified,
-     * <b>ElasticsearchBufferingHints</b> object default values are used. </p>
+     * <p>The buffering options. If no value is specified, the default values for
+     * <b>ElasticsearchBufferingHints</b> are used.</p>
      */
     inline void SetBufferingHints(ElasticsearchBufferingHints&& value) { m_bufferingHintsHasBeenSet = true; m_bufferingHints = value; }
 
     /**
-     * <p>Buffering options. If no value is specified,
-     * <b>ElasticsearchBufferingHints</b> object default values are used. </p>
+     * <p>The buffering options. If no value is specified, the default values for
+     * <b>ElasticsearchBufferingHints</b> are used.</p>
      */
     inline ElasticsearchDestinationConfiguration& WithBufferingHints(const ElasticsearchBufferingHints& value) { SetBufferingHints(value); return *this;}
 
     /**
-     * <p>Buffering options. If no value is specified,
-     * <b>ElasticsearchBufferingHints</b> object default values are used. </p>
+     * <p>The buffering options. If no value is specified, the default values for
+     * <b>ElasticsearchBufferingHints</b> are used.</p>
      */
     inline ElasticsearchDestinationConfiguration& WithBufferingHints(ElasticsearchBufferingHints&& value) { SetBufferingHints(value); return *this;}
 
     /**
-     * <p>Configures retry behavior in the event that Firehose is unable to deliver
-     * documents to Amazon ES. Default value is 300 (5 minutes).</p>
+     * <p>The retry behavior in the event that Firehose is unable to deliver documents
+     * to Amazon ES. The default value is 300 (5 minutes).</p>
      */
     inline const ElasticsearchRetryOptions& GetRetryOptions() const{ return m_retryOptions; }
 
     /**
-     * <p>Configures retry behavior in the event that Firehose is unable to deliver
-     * documents to Amazon ES. Default value is 300 (5 minutes).</p>
+     * <p>The retry behavior in the event that Firehose is unable to deliver documents
+     * to Amazon ES. The default value is 300 (5 minutes).</p>
      */
     inline void SetRetryOptions(const ElasticsearchRetryOptions& value) { m_retryOptionsHasBeenSet = true; m_retryOptions = value; }
 
     /**
-     * <p>Configures retry behavior in the event that Firehose is unable to deliver
-     * documents to Amazon ES. Default value is 300 (5 minutes).</p>
+     * <p>The retry behavior in the event that Firehose is unable to deliver documents
+     * to Amazon ES. The default value is 300 (5 minutes).</p>
      */
     inline void SetRetryOptions(ElasticsearchRetryOptions&& value) { m_retryOptionsHasBeenSet = true; m_retryOptions = value; }
 
     /**
-     * <p>Configures retry behavior in the event that Firehose is unable to deliver
-     * documents to Amazon ES. Default value is 300 (5 minutes).</p>
+     * <p>The retry behavior in the event that Firehose is unable to deliver documents
+     * to Amazon ES. The default value is 300 (5 minutes).</p>
      */
     inline ElasticsearchDestinationConfiguration& WithRetryOptions(const ElasticsearchRetryOptions& value) { SetRetryOptions(value); return *this;}
 
     /**
-     * <p>Configures retry behavior in the event that Firehose is unable to deliver
-     * documents to Amazon ES. Default value is 300 (5 minutes).</p>
+     * <p>The retry behavior in the event that Firehose is unable to deliver documents
+     * to Amazon ES. The default value is 300 (5 minutes).</p>
      */
     inline ElasticsearchDestinationConfiguration& WithRetryOptions(ElasticsearchRetryOptions&& value) { SetRetryOptions(value); return *this;}
 
@@ -411,43 +415,83 @@ namespace Model
      */
     inline ElasticsearchDestinationConfiguration& WithS3BackupMode(ElasticsearchS3BackupMode&& value) { SetS3BackupMode(value); return *this;}
 
-    
+    /**
+     * <p>The configuration for the intermediate Amazon S3 location from which Amazon
+     * ES obtains data.</p>
+     */
     inline const S3DestinationConfiguration& GetS3Configuration() const{ return m_s3Configuration; }
 
-    
+    /**
+     * <p>The configuration for the intermediate Amazon S3 location from which Amazon
+     * ES obtains data.</p>
+     */
     inline void SetS3Configuration(const S3DestinationConfiguration& value) { m_s3ConfigurationHasBeenSet = true; m_s3Configuration = value; }
 
-    
+    /**
+     * <p>The configuration for the intermediate Amazon S3 location from which Amazon
+     * ES obtains data.</p>
+     */
     inline void SetS3Configuration(S3DestinationConfiguration&& value) { m_s3ConfigurationHasBeenSet = true; m_s3Configuration = value; }
 
-    
+    /**
+     * <p>The configuration for the intermediate Amazon S3 location from which Amazon
+     * ES obtains data.</p>
+     */
     inline ElasticsearchDestinationConfiguration& WithS3Configuration(const S3DestinationConfiguration& value) { SetS3Configuration(value); return *this;}
 
-    
+    /**
+     * <p>The configuration for the intermediate Amazon S3 location from which Amazon
+     * ES obtains data.</p>
+     */
     inline ElasticsearchDestinationConfiguration& WithS3Configuration(S3DestinationConfiguration&& value) { SetS3Configuration(value); return *this;}
 
     /**
-     * <p>Describes CloudWatch logging options for your delivery stream.</p>
+     * <p>The data processing configuration.</p>
+     */
+    inline const ProcessingConfiguration& GetProcessingConfiguration() const{ return m_processingConfiguration; }
+
+    /**
+     * <p>The data processing configuration.</p>
+     */
+    inline void SetProcessingConfiguration(const ProcessingConfiguration& value) { m_processingConfigurationHasBeenSet = true; m_processingConfiguration = value; }
+
+    /**
+     * <p>The data processing configuration.</p>
+     */
+    inline void SetProcessingConfiguration(ProcessingConfiguration&& value) { m_processingConfigurationHasBeenSet = true; m_processingConfiguration = value; }
+
+    /**
+     * <p>The data processing configuration.</p>
+     */
+    inline ElasticsearchDestinationConfiguration& WithProcessingConfiguration(const ProcessingConfiguration& value) { SetProcessingConfiguration(value); return *this;}
+
+    /**
+     * <p>The data processing configuration.</p>
+     */
+    inline ElasticsearchDestinationConfiguration& WithProcessingConfiguration(ProcessingConfiguration&& value) { SetProcessingConfiguration(value); return *this;}
+
+    /**
+     * <p>The CloudWatch logging options for your delivery stream.</p>
      */
     inline const CloudWatchLoggingOptions& GetCloudWatchLoggingOptions() const{ return m_cloudWatchLoggingOptions; }
 
     /**
-     * <p>Describes CloudWatch logging options for your delivery stream.</p>
+     * <p>The CloudWatch logging options for your delivery stream.</p>
      */
     inline void SetCloudWatchLoggingOptions(const CloudWatchLoggingOptions& value) { m_cloudWatchLoggingOptionsHasBeenSet = true; m_cloudWatchLoggingOptions = value; }
 
     /**
-     * <p>Describes CloudWatch logging options for your delivery stream.</p>
+     * <p>The CloudWatch logging options for your delivery stream.</p>
      */
     inline void SetCloudWatchLoggingOptions(CloudWatchLoggingOptions&& value) { m_cloudWatchLoggingOptionsHasBeenSet = true; m_cloudWatchLoggingOptions = value; }
 
     /**
-     * <p>Describes CloudWatch logging options for your delivery stream.</p>
+     * <p>The CloudWatch logging options for your delivery stream.</p>
      */
     inline ElasticsearchDestinationConfiguration& WithCloudWatchLoggingOptions(const CloudWatchLoggingOptions& value) { SetCloudWatchLoggingOptions(value); return *this;}
 
     /**
-     * <p>Describes CloudWatch logging options for your delivery stream.</p>
+     * <p>The CloudWatch logging options for your delivery stream.</p>
      */
     inline ElasticsearchDestinationConfiguration& WithCloudWatchLoggingOptions(CloudWatchLoggingOptions&& value) { SetCloudWatchLoggingOptions(value); return *this;}
 
@@ -470,6 +514,8 @@ namespace Model
     bool m_s3BackupModeHasBeenSet;
     S3DestinationConfiguration m_s3Configuration;
     bool m_s3ConfigurationHasBeenSet;
+    ProcessingConfiguration m_processingConfiguration;
+    bool m_processingConfigurationHasBeenSet;
     CloudWatchLoggingOptions m_cloudWatchLoggingOptions;
     bool m_cloudWatchLoggingOptionsHasBeenSet;
   };

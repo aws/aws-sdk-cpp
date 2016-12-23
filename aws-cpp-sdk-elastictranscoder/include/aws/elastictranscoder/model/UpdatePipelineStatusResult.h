@@ -34,7 +34,9 @@ namespace Model
 {
   /**
    * <p>When you update status for a pipeline, Elastic Transcoder returns the values
-   * that you specified in the request.</p>
+   * that you specified in the request.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/UpdatePipelineStatusResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICTRANSCODER_API UpdatePipelineStatusResult
   {

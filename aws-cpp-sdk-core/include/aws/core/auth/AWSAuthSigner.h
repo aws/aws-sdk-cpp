@@ -19,6 +19,7 @@
 
 #include <aws/core/Region.h>
 #include <aws/core/utils/memory/AWSMemory.h>
+#include <aws/core/utils/memory/stl/AWSSet.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/Array.h>
 
@@ -74,6 +75,12 @@ namespace Aws
             virtual bool PresignRequest(Aws::Http::HttpRequest& request, long long expirationInSeconds) const = 0;
 
             /**
+            * Generates a signed Uri using the injected signer. for the supplied uri and http method and region. expirationInSecodns defaults
+            * to 0 which is the default 7 days.
+            */
+            virtual bool PresignRequest(Aws::Http::HttpRequest& request, const char* region, long long expirationInSeconds = 0) const = 0;
+
+            /**
              * This handles detection of clock skew between clients and the server and adjusts the clock so that the next request will not
              * fail on the timestamp check.
              */
@@ -115,11 +122,20 @@ namespace Aws
 
             /**
             * Takes a request and signs the URI based on the HttpMethod, URI and other info from the request.
+            * the region the signer was initialized with will be used for the signature.
             * The URI can then be used in a normal HTTP call until expiration.
             * Uses AWS Auth V4 signing method with SHA256 HMAC algorithm.
             * expirationInSeconds defaults to 0 which provides a URI good for 7 days.
             */
             bool PresignRequest(Aws::Http::HttpRequest& request, long long expirationInSeconds = 0) const override;
+
+            /**
+            * Takes a request and signs the URI based on the HttpMethod, URI and other info from the request.            
+            * The URI can then be used in a normal HTTP call until expiration.
+            * Uses AWS Auth V4 signing method with SHA256 HMAC algorithm.
+            * expirationInSeconds defaults to 0 which provides a URI good for 7 days.
+            */
+            bool PresignRequest(Aws::Http::HttpRequest& request, const char* region, long long expirationInSeconds = 0) const override;
 
         protected:
             bool m_includeSha256HashHeader;
@@ -130,11 +146,16 @@ namespace Aws
             Aws::String GenerateStringToSign(const Aws::String& dateValue, const Aws::String& simpleDate, const Aws::String& canonicalRequestHash) const;
             const Aws::Utils::ByteBuffer& ComputeLongLivedHash(const Aws::String& secretKey, const Aws::String& simpleDate) const;
 
+            bool ShouldSignHeader(const Aws::String& header) const;
+
             std::shared_ptr<Auth::AWSCredentialsProvider> m_credentialsProvider;
             Aws::String m_serviceName;
             Aws::String m_region;
             Aws::UniquePtr<Aws::Utils::Crypto::Sha256> m_hash;
             Aws::UniquePtr<Aws::Utils::Crypto::Sha256HMAC> m_HMAC;
+
+            Aws::Set<Aws::String> m_unsignedHeaders;
+
             //these next four fields are ONLY for caching purposes and do not change
             //the logical state of the signer. They are marked mutable so the
             //interface can remain const.

@@ -37,7 +37,9 @@ namespace Model
    * specify the parts of web requests that you want AWS WAF to inspect the size of.
    * If a <code>SizeConstraintSet</code> contains more than one
    * <code>SizeConstraint</code> object, a request only needs to match one constraint
-   * to be considered a match.</p>
+   * to be considered a match.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/SizeConstraintSet">AWS
+   * API Reference</a></p>
    */
   class AWS_WAF_API SizeConstraintSet
   {

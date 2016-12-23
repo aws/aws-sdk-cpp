@@ -33,7 +33,9 @@ namespace Model
 
   /**
    * <p>Describes a cluster version, including the parameter group family and
-   * description of the version.</p>
+   * description of the version.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ClusterVersion">AWS
+   * API Reference</a></p>
    */
   class AWS_REDSHIFT_API ClusterVersion
   {

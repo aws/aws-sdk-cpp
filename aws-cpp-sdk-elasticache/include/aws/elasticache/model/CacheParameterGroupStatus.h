@@ -33,7 +33,9 @@ namespace Model
 {
 
   /**
-   * <p>Status of the cache parameter group.</p>
+   * <p>Status of the cache parameter group.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CacheParameterGroupStatus">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICACHE_API CacheParameterGroupStatus
   {

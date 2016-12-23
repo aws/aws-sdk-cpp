@@ -25,7 +25,10 @@ namespace Model
 {
 
   /**
-   * <p>The request representing the confirmation for a password reset.</p>
+   * <p>The request representing the confirmation for a password reset.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ConfirmForgotPasswordRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_COGNITOIDENTITYPROVIDER_API ConfirmForgotPasswordRequest : public CognitoIdentityProviderRequest
   {

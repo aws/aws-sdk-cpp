@@ -34,7 +34,9 @@ namespace Model
   /**
    * <p>Specifies the part of a web request that you want AWS WAF to inspect for
    * cross-site scripting attacks and, if you want AWS WAF to inspect a header, the
-   * name of the header.</p>
+   * name of the header.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/XssMatchTuple">AWS
+   * API Reference</a></p>
    */
   class AWS_WAF_API XssMatchTuple
   {

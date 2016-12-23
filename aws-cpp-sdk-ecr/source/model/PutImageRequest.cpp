@@ -24,7 +24,8 @@ using namespace Aws::Utils;
 PutImageRequest::PutImageRequest() : 
     m_registryIdHasBeenSet(false),
     m_repositoryNameHasBeenSet(false),
-    m_imageManifestHasBeenSet(false)
+    m_imageManifestHasBeenSet(false),
+    m_imageTagHasBeenSet(false)
 {
 }
 
@@ -47,6 +48,12 @@ Aws::String PutImageRequest::SerializePayload() const
   if(m_imageManifestHasBeenSet)
   {
    payload.WithString("imageManifest", m_imageManifest);
+
+  }
+
+  if(m_imageTagHasBeenSet)
+  {
+   payload.WithString("imageTag", m_imageTag);
 
   }
 

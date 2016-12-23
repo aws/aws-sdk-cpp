@@ -33,7 +33,9 @@ namespace Model
 {
 
   /**
-   * <p>Describes an EC2 instance.</p>
+   * <p>Describes an EC2 instance.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/Instance">AWS
+   * API Reference</a></p>
    */
   class AWS_AUTOSCALING_API Instance
   {

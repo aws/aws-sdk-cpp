@@ -33,7 +33,10 @@ namespace Model
 {
 
   /**
-   * <p>Provides details of the <code>ActivityTaskScheduled</code> event.</p>
+   * <p>Provides details of the <code>ActivityTaskScheduled</code>
+   * event.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ActivityTaskScheduledEventAttributes">AWS
+   * API Reference</a></p>
    */
   class AWS_SWF_API ActivityTaskScheduledEventAttributes
   {

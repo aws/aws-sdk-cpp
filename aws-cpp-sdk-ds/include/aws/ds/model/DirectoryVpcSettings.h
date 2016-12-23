@@ -33,7 +33,9 @@ namespace Model
 
   /**
    * <p>Contains VPC information for the <a>CreateDirectory</a> or
-   * <a>CreateMicrosoftAD</a> operation.</p>
+   * <a>CreateMicrosoftAD</a> operation.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DirectoryVpcSettings">AWS
+   * API Reference</a></p>
    */
   class AWS_DIRECTORYSERVICE_API DirectoryVpcSettings
   {

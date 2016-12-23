@@ -34,7 +34,10 @@ namespace SQS
 namespace Model
 {
   /**
-   * <p>Returns the QueueUrl element of the created queue.</p>
+   * <p>Returns the <code>QueueUrl</code> attribute of the created
+   * queue.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/CreateQueueResult">AWS
+   * API Reference</a></p>
    */
   class AWS_SQS_API CreateQueueResult
   {
@@ -44,37 +47,37 @@ namespace Model
     CreateQueueResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
     /**
-     * <p>The URL for the created Amazon SQS queue.</p>
+     * <p>The URL of the created Amazon SQS queue.</p>
      */
     inline const Aws::String& GetQueueUrl() const{ return m_queueUrl; }
 
     /**
-     * <p>The URL for the created Amazon SQS queue.</p>
+     * <p>The URL of the created Amazon SQS queue.</p>
      */
     inline void SetQueueUrl(const Aws::String& value) { m_queueUrl = value; }
 
     /**
-     * <p>The URL for the created Amazon SQS queue.</p>
+     * <p>The URL of the created Amazon SQS queue.</p>
      */
     inline void SetQueueUrl(Aws::String&& value) { m_queueUrl = value; }
 
     /**
-     * <p>The URL for the created Amazon SQS queue.</p>
+     * <p>The URL of the created Amazon SQS queue.</p>
      */
     inline void SetQueueUrl(const char* value) { m_queueUrl.assign(value); }
 
     /**
-     * <p>The URL for the created Amazon SQS queue.</p>
+     * <p>The URL of the created Amazon SQS queue.</p>
      */
     inline CreateQueueResult& WithQueueUrl(const Aws::String& value) { SetQueueUrl(value); return *this;}
 
     /**
-     * <p>The URL for the created Amazon SQS queue.</p>
+     * <p>The URL of the created Amazon SQS queue.</p>
      */
     inline CreateQueueResult& WithQueueUrl(Aws::String&& value) { SetQueueUrl(value); return *this;}
 
     /**
-     * <p>The URL for the created Amazon SQS queue.</p>
+     * <p>The URL of the created Amazon SQS queue.</p>
      */
     inline CreateQueueResult& WithQueueUrl(const char* value) { SetQueueUrl(value); return *this;}
 

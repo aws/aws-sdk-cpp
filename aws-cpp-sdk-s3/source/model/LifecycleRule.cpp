@@ -174,7 +174,7 @@ void LifecycleRule::AddToNode(XmlNode& parentNode) const
 
   if(m_noncurrentVersionExpirationHasBeenSet)
   {
-   XmlNode noncurrentVersionExpirationNode = parentNode.CreateChildElement("NoncurrentVersionTransition");
+   XmlNode noncurrentVersionExpirationNode = parentNode.CreateChildElement("NoncurrentVersionExpiration");
    m_noncurrentVersionExpiration.AddToNode(noncurrentVersionExpirationNode);
   }
 

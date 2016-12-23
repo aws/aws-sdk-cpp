@@ -17,6 +17,7 @@
 #include <aws/cloudsearch/CloudSearchErrors.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -231,17 +232,29 @@ namespace Model
 
         virtual ~CloudSearchClient();
 
+       /**
+        * Converts any request object to a presigned URL with the GET method, using region for the signer and a timeout of 15 minutes.
+        */
+        Aws::String ConvertRequestToPresignedUrl(const AmazonSerializableWebServiceRequest& requestToConvert, const char* region) const;
+
+
         /**
          * <p>Indexes the search suggestions. For more information, see <a
          * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-suggestions.html#configuring-suggesters">Configuring
-         * Suggesters</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
+         * Suggesters</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/BuildSuggesters">AWS
+         * API Reference</a></p>
          */
         virtual Model::BuildSuggestersOutcome BuildSuggesters(const Model::BuildSuggestersRequest& request) const;
 
         /**
          * <p>Indexes the search suggestions. For more information, see <a
          * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-suggestions.html#configuring-suggesters">Configuring
-         * Suggesters</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
+         * Suggesters</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/BuildSuggesters">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -250,7 +263,10 @@ namespace Model
         /**
          * <p>Indexes the search suggestions. For more information, see <a
          * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-suggestions.html#configuring-suggesters">Configuring
-         * Suggesters</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
+         * Suggesters</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/BuildSuggesters">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -260,7 +276,9 @@ namespace Model
          * <p>Creates a new search domain. For more information, see <a
          * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/creating-domains.html"
          * target="_blank">Creating a Search Domain</a> in the <i>Amazon CloudSearch
-         * Developer Guide</i>.</p>
+         * Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/CreateDomain">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateDomainOutcome CreateDomain(const Model::CreateDomainRequest& request) const;
 
@@ -268,7 +286,9 @@ namespace Model
          * <p>Creates a new search domain. For more information, see <a
          * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/creating-domains.html"
          * target="_blank">Creating a Search Domain</a> in the <i>Amazon CloudSearch
-         * Developer Guide</i>.</p>
+         * Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/CreateDomain">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -278,7 +298,9 @@ namespace Model
          * <p>Creates a new search domain. For more information, see <a
          * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/creating-domains.html"
          * target="_blank">Creating a Search Domain</a> in the <i>Amazon CloudSearch
-         * Developer Guide</i>.</p>
+         * Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/CreateDomain">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -290,7 +312,9 @@ namespace Model
          * options. For more information, see <a
          * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-analysis-schemes.html"
          * target="_blank">Configuring Analysis Schemes</a> in the <i>Amazon CloudSearch
-         * Developer Guide</i>.</p>
+         * Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DefineAnalysisScheme">AWS
+         * API Reference</a></p>
          */
         virtual Model::DefineAnalysisSchemeOutcome DefineAnalysisScheme(const Model::DefineAnalysisSchemeRequest& request) const;
 
@@ -300,7 +324,9 @@ namespace Model
          * options. For more information, see <a
          * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-analysis-schemes.html"
          * target="_blank">Configuring Analysis Schemes</a> in the <i>Amazon CloudSearch
-         * Developer Guide</i>.</p>
+         * Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DefineAnalysisScheme">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -312,7 +338,9 @@ namespace Model
          * options. For more information, see <a
          * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-analysis-schemes.html"
          * target="_blank">Configuring Analysis Schemes</a> in the <i>Amazon CloudSearch
-         * Developer Guide</i>.</p>
+         * Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DefineAnalysisScheme">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -324,7 +352,9 @@ namespace Model
          * new configuration replaces the old one. For more information, see <a
          * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html"
          * target="_blank">Configuring Expressions</a> in the <i>Amazon CloudSearch
-         * Developer Guide</i>.</p>
+         * Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DefineExpression">AWS
+         * API Reference</a></p>
          */
         virtual Model::DefineExpressionOutcome DefineExpression(const Model::DefineExpressionRequest& request) const;
 
@@ -334,7 +364,9 @@ namespace Model
          * new configuration replaces the old one. For more information, see <a
          * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html"
          * target="_blank">Configuring Expressions</a> in the <i>Amazon CloudSearch
-         * Developer Guide</i>.</p>
+         * Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DefineExpression">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -346,7 +378,9 @@ namespace Model
          * new configuration replaces the old one. For more information, see <a
          * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html"
          * target="_blank">Configuring Expressions</a> in the <i>Amazon CloudSearch
-         * Developer Guide</i>.</p>
+         * Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DefineExpression">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -362,7 +396,9 @@ namespace Model
          * replaces the old one. For more information, see <a
          * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-index-fields.html"
          * target="_blank">Configuring Index Fields</a> in the <i>Amazon CloudSearch
-         * Developer Guide</i>. </p>
+         * Developer Guide</i>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DefineIndexField">AWS
+         * API Reference</a></p>
          */
         virtual Model::DefineIndexFieldOutcome DefineIndexField(const Model::DefineIndexFieldRequest& request) const;
 
@@ -376,7 +412,9 @@ namespace Model
          * replaces the old one. For more information, see <a
          * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-index-fields.html"
          * target="_blank">Configuring Index Fields</a> in the <i>Amazon CloudSearch
-         * Developer Guide</i>. </p>
+         * Developer Guide</i>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DefineIndexField">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -392,7 +430,9 @@ namespace Model
          * replaces the old one. For more information, see <a
          * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-index-fields.html"
          * target="_blank">Configuring Index Fields</a> in the <i>Amazon CloudSearch
-         * Developer Guide</i>. </p>
+         * Developer Guide</i>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DefineIndexField">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -406,7 +446,9 @@ namespace Model
          * <a
          * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-suggestions.html"
          * target="_blank">Getting Search Suggestions</a> in the <i>Amazon CloudSearch
-         * Developer Guide</i>.</p>
+         * Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DefineSuggester">AWS
+         * API Reference</a></p>
          */
         virtual Model::DefineSuggesterOutcome DefineSuggester(const Model::DefineSuggesterRequest& request) const;
 
@@ -418,7 +460,9 @@ namespace Model
          * <a
          * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-suggestions.html"
          * target="_blank">Getting Search Suggestions</a> in the <i>Amazon CloudSearch
-         * Developer Guide</i>.</p>
+         * Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DefineSuggester">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -432,7 +476,9 @@ namespace Model
          * <a
          * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-suggestions.html"
          * target="_blank">Getting Search Suggestions</a> in the <i>Amazon CloudSearch
-         * Developer Guide</i>.</p>
+         * Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DefineSuggester">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -442,7 +488,9 @@ namespace Model
          * <p>Deletes an analysis scheme. For more information, see <a
          * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-analysis-schemes.html"
          * target="_blank">Configuring Analysis Schemes</a> in the <i>Amazon CloudSearch
-         * Developer Guide</i>. </p>
+         * Developer Guide</i>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DeleteAnalysisScheme">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteAnalysisSchemeOutcome DeleteAnalysisScheme(const Model::DeleteAnalysisSchemeRequest& request) const;
 
@@ -450,7 +498,9 @@ namespace Model
          * <p>Deletes an analysis scheme. For more information, see <a
          * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-analysis-schemes.html"
          * target="_blank">Configuring Analysis Schemes</a> in the <i>Amazon CloudSearch
-         * Developer Guide</i>. </p>
+         * Developer Guide</i>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DeleteAnalysisScheme">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -460,7 +510,9 @@ namespace Model
          * <p>Deletes an analysis scheme. For more information, see <a
          * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-analysis-schemes.html"
          * target="_blank">Configuring Analysis Schemes</a> in the <i>Amazon CloudSearch
-         * Developer Guide</i>. </p>
+         * Developer Guide</i>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DeleteAnalysisScheme">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -471,7 +523,9 @@ namespace Model
          * been deleted, it cannot be recovered. For more information, see <a
          * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/deleting-domains.html"
          * target="_blank">Deleting a Search Domain</a> in the <i>Amazon CloudSearch
-         * Developer Guide</i>. </p>
+         * Developer Guide</i>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DeleteDomain">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteDomainOutcome DeleteDomain(const Model::DeleteDomainRequest& request) const;
 
@@ -480,7 +534,9 @@ namespace Model
          * been deleted, it cannot be recovered. For more information, see <a
          * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/deleting-domains.html"
          * target="_blank">Deleting a Search Domain</a> in the <i>Amazon CloudSearch
-         * Developer Guide</i>. </p>
+         * Developer Guide</i>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DeleteDomain">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -491,7 +547,9 @@ namespace Model
          * been deleted, it cannot be recovered. For more information, see <a
          * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/deleting-domains.html"
          * target="_blank">Deleting a Search Domain</a> in the <i>Amazon CloudSearch
-         * Developer Guide</i>. </p>
+         * Developer Guide</i>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DeleteDomain">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -502,7 +560,9 @@ namespace Model
          * information, see <a
          * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html"
          * target="_blank">Configuring Expressions</a> in the <i>Amazon CloudSearch
-         * Developer Guide</i>.</p>
+         * Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DeleteExpression">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteExpressionOutcome DeleteExpression(const Model::DeleteExpressionRequest& request) const;
 
@@ -511,7 +571,9 @@ namespace Model
          * information, see <a
          * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html"
          * target="_blank">Configuring Expressions</a> in the <i>Amazon CloudSearch
-         * Developer Guide</i>.</p>
+         * Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DeleteExpression">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -522,7 +584,9 @@ namespace Model
          * information, see <a
          * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html"
          * target="_blank">Configuring Expressions</a> in the <i>Amazon CloudSearch
-         * Developer Guide</i>.</p>
+         * Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DeleteExpression">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -533,7 +597,9 @@ namespace Model
          * information, see <a
          * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-index-fields.html"
          * target="_blank">Configuring Index Fields</a> in the <i>Amazon CloudSearch
-         * Developer Guide</i>.</p>
+         * Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DeleteIndexField">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteIndexFieldOutcome DeleteIndexField(const Model::DeleteIndexFieldRequest& request) const;
 
@@ -542,7 +608,9 @@ namespace Model
          * information, see <a
          * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-index-fields.html"
          * target="_blank">Configuring Index Fields</a> in the <i>Amazon CloudSearch
-         * Developer Guide</i>.</p>
+         * Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DeleteIndexField">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -553,7 +621,9 @@ namespace Model
          * information, see <a
          * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-index-fields.html"
          * target="_blank">Configuring Index Fields</a> in the <i>Amazon CloudSearch
-         * Developer Guide</i>.</p>
+         * Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DeleteIndexField">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -563,7 +633,9 @@ namespace Model
          * <p>Deletes a suggester. For more information, see <a
          * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-suggestions.html"
          * target="_blank">Getting Search Suggestions</a> in the <i>Amazon CloudSearch
-         * Developer Guide</i>.</p>
+         * Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DeleteSuggester">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteSuggesterOutcome DeleteSuggester(const Model::DeleteSuggesterRequest& request) const;
 
@@ -571,7 +643,9 @@ namespace Model
          * <p>Deletes a suggester. For more information, see <a
          * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-suggestions.html"
          * target="_blank">Getting Search Suggestions</a> in the <i>Amazon CloudSearch
-         * Developer Guide</i>.</p>
+         * Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DeleteSuggester">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -581,7 +655,9 @@ namespace Model
          * <p>Deletes a suggester. For more information, see <a
          * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-suggestions.html"
          * target="_blank">Getting Search Suggestions</a> in the <i>Amazon CloudSearch
-         * Developer Guide</i>.</p>
+         * Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DeleteSuggester">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -596,7 +672,9 @@ namespace Model
          * configuration and exclude pending changes. For more information, see <a
          * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-analysis-schemes.html"
          * target="_blank">Configuring Analysis Schemes</a> in the <i>Amazon CloudSearch
-         * Developer Guide</i>.</p>
+         * Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DescribeAnalysisSchemes">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeAnalysisSchemesOutcome DescribeAnalysisSchemes(const Model::DescribeAnalysisSchemesRequest& request) const;
 
@@ -609,7 +687,9 @@ namespace Model
          * configuration and exclude pending changes. For more information, see <a
          * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-analysis-schemes.html"
          * target="_blank">Configuring Analysis Schemes</a> in the <i>Amazon CloudSearch
-         * Developer Guide</i>.</p>
+         * Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DescribeAnalysisSchemes">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -624,7 +704,9 @@ namespace Model
          * configuration and exclude pending changes. For more information, see <a
          * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-analysis-schemes.html"
          * target="_blank">Configuring Analysis Schemes</a> in the <i>Amazon CloudSearch
-         * Developer Guide</i>.</p>
+         * Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DescribeAnalysisSchemes">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -637,7 +719,9 @@ namespace Model
          * For more information, see <a
          * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-availability-options.html"
          * target="_blank">Configuring Availability Options</a> in the <i>Amazon
-         * CloudSearch Developer Guide</i>.</p>
+         * CloudSearch Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DescribeAvailabilityOptions">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeAvailabilityOptionsOutcome DescribeAvailabilityOptions(const Model::DescribeAvailabilityOptionsRequest& request) const;
 
@@ -648,7 +732,9 @@ namespace Model
          * For more information, see <a
          * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-availability-options.html"
          * target="_blank">Configuring Availability Options</a> in the <i>Amazon
-         * CloudSearch Developer Guide</i>.</p>
+         * CloudSearch Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DescribeAvailabilityOptions">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -661,7 +747,9 @@ namespace Model
          * For more information, see <a
          * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-availability-options.html"
          * target="_blank">Configuring Availability Options</a> in the <i>Amazon
-         * CloudSearch Developer Guide</i>.</p>
+         * CloudSearch Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DescribeAvailabilityOptions">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -676,7 +764,9 @@ namespace Model
          * information, see <a
          * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-domain-info.html"
          * target="_blank">Getting Information about a Search Domain</a> in the <i>Amazon
-         * CloudSearch Developer Guide</i>.</p>
+         * CloudSearch Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DescribeDomains">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeDomainsOutcome DescribeDomains(const Model::DescribeDomainsRequest& request) const;
 
@@ -689,7 +779,9 @@ namespace Model
          * information, see <a
          * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-domain-info.html"
          * target="_blank">Getting Information about a Search Domain</a> in the <i>Amazon
-         * CloudSearch Developer Guide</i>.</p>
+         * CloudSearch Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DescribeDomains">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -704,7 +796,9 @@ namespace Model
          * information, see <a
          * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-domain-info.html"
          * target="_blank">Getting Information about a Search Domain</a> in the <i>Amazon
-         * CloudSearch Developer Guide</i>.</p>
+         * CloudSearch Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DescribeDomains">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -718,7 +812,9 @@ namespace Model
          * For more information, see <a
          * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html"
          * target="_blank">Configuring Expressions</a> in the <i>Amazon CloudSearch
-         * Developer Guide</i>.</p>
+         * Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DescribeExpressions">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeExpressionsOutcome DescribeExpressions(const Model::DescribeExpressionsRequest& request) const;
 
@@ -730,7 +826,9 @@ namespace Model
          * For more information, see <a
          * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html"
          * target="_blank">Configuring Expressions</a> in the <i>Amazon CloudSearch
-         * Developer Guide</i>.</p>
+         * Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DescribeExpressions">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -744,7 +842,9 @@ namespace Model
          * For more information, see <a
          * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html"
          * target="_blank">Configuring Expressions</a> in the <i>Amazon CloudSearch
-         * Developer Guide</i>.</p>
+         * Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DescribeExpressions">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -758,7 +858,9 @@ namespace Model
          * changes. For more information, see <a
          * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-domain-info.html"
          * target="_blank">Getting Domain Information</a> in the <i>Amazon CloudSearch
-         * Developer Guide</i>.</p>
+         * Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DescribeIndexFields">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeIndexFieldsOutcome DescribeIndexFields(const Model::DescribeIndexFieldsRequest& request) const;
 
@@ -770,7 +872,9 @@ namespace Model
          * changes. For more information, see <a
          * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-domain-info.html"
          * target="_blank">Getting Domain Information</a> in the <i>Amazon CloudSearch
-         * Developer Guide</i>.</p>
+         * Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DescribeIndexFields">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -784,7 +888,9 @@ namespace Model
          * changes. For more information, see <a
          * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-domain-info.html"
          * target="_blank">Getting Domain Information</a> in the <i>Amazon CloudSearch
-         * Developer Guide</i>.</p>
+         * Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DescribeIndexFields">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -796,7 +902,9 @@ namespace Model
          * more information, see <a
          * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-scaling-options.html"
          * target="_blank">Configuring Scaling Options</a> in the <i>Amazon CloudSearch
-         * Developer Guide</i>.</p>
+         * Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DescribeScalingParameters">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeScalingParametersOutcome DescribeScalingParameters(const Model::DescribeScalingParametersRequest& request) const;
 
@@ -806,7 +914,9 @@ namespace Model
          * more information, see <a
          * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-scaling-options.html"
          * target="_blank">Configuring Scaling Options</a> in the <i>Amazon CloudSearch
-         * Developer Guide</i>.</p>
+         * Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DescribeScalingParameters">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -818,7 +928,9 @@ namespace Model
          * more information, see <a
          * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-scaling-options.html"
          * target="_blank">Configuring Scaling Options</a> in the <i>Amazon CloudSearch
-         * Developer Guide</i>.</p>
+         * Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DescribeScalingParameters">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -832,7 +944,9 @@ namespace Model
          * information, see <a
          * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-access.html"
          * target="_blank">Configuring Access for a Search Domain</a> in the <i>Amazon
-         * CloudSearch Developer Guide</i>.</p>
+         * CloudSearch Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DescribeServiceAccessPolicies">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeServiceAccessPoliciesOutcome DescribeServiceAccessPolicies(const Model::DescribeServiceAccessPoliciesRequest& request) const;
 
@@ -844,7 +958,9 @@ namespace Model
          * information, see <a
          * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-access.html"
          * target="_blank">Configuring Access for a Search Domain</a> in the <i>Amazon
-         * CloudSearch Developer Guide</i>.</p>
+         * CloudSearch Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DescribeServiceAccessPolicies">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -858,7 +974,9 @@ namespace Model
          * information, see <a
          * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-access.html"
          * target="_blank">Configuring Access for a Search Domain</a> in the <i>Amazon
-         * CloudSearch Developer Guide</i>.</p>
+         * CloudSearch Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DescribeServiceAccessPolicies">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -873,7 +991,9 @@ namespace Model
          * changes. For more information, see <a
          * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-suggestions.html"
          * target="_blank">Getting Search Suggestions</a> in the <i>Amazon CloudSearch
-         * Developer Guide</i>.</p>
+         * Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DescribeSuggesters">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeSuggestersOutcome DescribeSuggesters(const Model::DescribeSuggestersRequest& request) const;
 
@@ -886,7 +1006,9 @@ namespace Model
          * changes. For more information, see <a
          * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-suggestions.html"
          * target="_blank">Getting Search Suggestions</a> in the <i>Amazon CloudSearch
-         * Developer Guide</i>.</p>
+         * Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DescribeSuggesters">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -901,7 +1023,9 @@ namespace Model
          * changes. For more information, see <a
          * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-suggestions.html"
          * target="_blank">Getting Search Suggestions</a> in the <i>Amazon CloudSearch
-         * Developer Guide</i>.</p>
+         * Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DescribeSuggesters">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -910,14 +1034,20 @@ namespace Model
         /**
          * <p>Tells the search domain to start indexing its documents using the latest
          * indexing options. This operation must be invoked to activate options whose
-         * <a>OptionStatus</a> is <code>RequiresIndexDocuments</code>.</p>
+         * <a>OptionStatus</a> is <code>RequiresIndexDocuments</code>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/IndexDocuments">AWS
+         * API Reference</a></p>
          */
         virtual Model::IndexDocumentsOutcome IndexDocuments(const Model::IndexDocumentsRequest& request) const;
 
         /**
          * <p>Tells the search domain to start indexing its documents using the latest
          * indexing options. This operation must be invoked to activate options whose
-         * <a>OptionStatus</a> is <code>RequiresIndexDocuments</code>.</p>
+         * <a>OptionStatus</a> is <code>RequiresIndexDocuments</code>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/IndexDocuments">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -926,26 +1056,35 @@ namespace Model
         /**
          * <p>Tells the search domain to start indexing its documents using the latest
          * indexing options. This operation must be invoked to activate options whose
-         * <a>OptionStatus</a> is <code>RequiresIndexDocuments</code>.</p>
+         * <a>OptionStatus</a> is <code>RequiresIndexDocuments</code>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/IndexDocuments">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void IndexDocumentsAsync(const Model::IndexDocumentsRequest& request, const IndexDocumentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists all search domains owned by an account.</p>
+         * <p>Lists all search domains owned by an account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/ListDomainNames">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListDomainNamesOutcome ListDomainNames(const Model::ListDomainNamesRequest& request) const;
 
         /**
-         * <p>Lists all search domains owned by an account.</p>
+         * <p>Lists all search domains owned by an account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/ListDomainNames">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListDomainNamesOutcomeCallable ListDomainNamesCallable(const Model::ListDomainNamesRequest& request) const;
 
         /**
-         * <p>Lists all search domains owned by an account.</p>
+         * <p>Lists all search domains owned by an account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/ListDomainNames">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -959,7 +1098,9 @@ namespace Model
          * active. For more information, see <a
          * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-availability-options.html"
          * target="_blank">Configuring Availability Options</a> in the <i>Amazon
-         * CloudSearch Developer Guide</i>.</p>
+         * CloudSearch Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/UpdateAvailabilityOptions">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateAvailabilityOptionsOutcome UpdateAvailabilityOptions(const Model::UpdateAvailabilityOptionsRequest& request) const;
 
@@ -971,7 +1112,9 @@ namespace Model
          * active. For more information, see <a
          * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-availability-options.html"
          * target="_blank">Configuring Availability Options</a> in the <i>Amazon
-         * CloudSearch Developer Guide</i>.</p>
+         * CloudSearch Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/UpdateAvailabilityOptions">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -985,7 +1128,9 @@ namespace Model
          * active. For more information, see <a
          * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-availability-options.html"
          * target="_blank">Configuring Availability Options</a> in the <i>Amazon
-         * CloudSearch Developer Guide</i>.</p>
+         * CloudSearch Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/UpdateAvailabilityOptions">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1000,7 +1145,9 @@ namespace Model
          * Availability Zone. For more information, see <a
          * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-scaling-options.html"
          * target="_blank">Configuring Scaling Options</a> in the <i>Amazon CloudSearch
-         * Developer Guide</i>. </p>
+         * Developer Guide</i>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/UpdateScalingParameters">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateScalingParametersOutcome UpdateScalingParameters(const Model::UpdateScalingParametersRequest& request) const;
 
@@ -1013,7 +1160,9 @@ namespace Model
          * Availability Zone. For more information, see <a
          * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-scaling-options.html"
          * target="_blank">Configuring Scaling Options</a> in the <i>Amazon CloudSearch
-         * Developer Guide</i>. </p>
+         * Developer Guide</i>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/UpdateScalingParameters">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1028,7 +1177,9 @@ namespace Model
          * Availability Zone. For more information, see <a
          * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-scaling-options.html"
          * target="_blank">Configuring Scaling Options</a> in the <i>Amazon CloudSearch
-         * Developer Guide</i>. </p>
+         * Developer Guide</i>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/UpdateScalingParameters">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1038,7 +1189,10 @@ namespace Model
          * <p>Configures the access rules that control access to the domain's document and
          * search endpoints. For more information, see <a
          * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-access.html"
-         * target="_blank"> Configuring Access for an Amazon CloudSearch Domain</a>.</p>
+         * target="_blank"> Configuring Access for an Amazon CloudSearch
+         * Domain</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/UpdateServiceAccessPolicies">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateServiceAccessPoliciesOutcome UpdateServiceAccessPolicies(const Model::UpdateServiceAccessPoliciesRequest& request) const;
 
@@ -1046,7 +1200,10 @@ namespace Model
          * <p>Configures the access rules that control access to the domain's document and
          * search endpoints. For more information, see <a
          * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-access.html"
-         * target="_blank"> Configuring Access for an Amazon CloudSearch Domain</a>.</p>
+         * target="_blank"> Configuring Access for an Amazon CloudSearch
+         * Domain</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/UpdateServiceAccessPolicies">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1056,7 +1213,10 @@ namespace Model
          * <p>Configures the access rules that control access to the domain's document and
          * search endpoints. For more information, see <a
          * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-access.html"
-         * target="_blank"> Configuring Access for an Amazon CloudSearch Domain</a>.</p>
+         * target="_blank"> Configuring Access for an Amazon CloudSearch
+         * Domain</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/UpdateServiceAccessPolicies">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */

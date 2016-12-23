@@ -39,7 +39,9 @@ namespace Model
    * <code>ts</code> (MPEG-TS), Playlists contains information about the master
    * playlists that you want Elastic Transcoder to create. We recommend that you
    * create only one master playlist per output format. The maximum number of master
-   * playlists in a job is 30. </p>
+   * playlists in a job is 30. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/Playlist">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICTRANSCODER_API Playlist
   {

@@ -38,7 +38,9 @@ namespace Model
 
   /**
    * <p>Detailed health information about an Amazon EC2 instance in your Elastic
-   * Beanstalk environment.</p>
+   * Beanstalk environment.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/SingleInstanceHealth">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICBEANSTALK_API SingleInstanceHealth
   {

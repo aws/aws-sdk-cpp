@@ -42,6 +42,7 @@ public class C2jModelToGeneratorModelTransformerTest {
         c2jMetadata.setServiceFullName("Amazon AWS Service Abbr Full Name");
         c2jMetadata.setSignatureVersion("v4");
         c2jMetadata.setTargetPrefix("ServiceAbbr.");
+        c2jMetadata.setUid("service-9089-34-54");
 
         c2jServiceModel.setMetadata(c2jMetadata);
         C2jModelToGeneratorModelTransformer c2jModelToGeneratorModelTransformer = new C2jModelToGeneratorModelTransformer(c2jServiceModel);
@@ -71,6 +72,9 @@ public class C2jModelToGeneratorModelTransformerTest {
     @Test
     public void testStructureShapeConversion() {
         C2jServiceModel c2jServiceModel = new C2jServiceModel();
+        c2jServiceModel.setMetadata(new C2jMetadata());
+        c2jServiceModel.getMetadata().setUid("service-7869-05-67");
+
         Map<String, C2jShape> c2jShapeMap = new HashMap<>();
 
         C2jShape stringShape = new C2jShape();
@@ -124,6 +128,8 @@ public class C2jModelToGeneratorModelTransformerTest {
     public void testMapShapeConversion() {
         C2jServiceModel c2jServiceModel = new C2jServiceModel();
         Map<String, C2jShape> c2jShapeMap = new HashMap<>();
+        c2jServiceModel.setMetadata(new C2jMetadata());
+        c2jServiceModel.getMetadata().setUid("service-7869-05-67");
 
         C2jShape stringShape = new C2jShape();
         stringShape.setDocumentation("String Shape Documentation");
@@ -178,6 +184,8 @@ public class C2jModelToGeneratorModelTransformerTest {
     public void testListShapeConversion() {
         C2jServiceModel c2jServiceModel = new C2jServiceModel();
         Map<String, C2jShape> c2jShapeMap = new HashMap<>();
+        c2jServiceModel.setMetadata(new C2jMetadata());
+        c2jServiceModel.getMetadata().setUid("service-7869-05-67");
 
         C2jShape numberShape = new C2jShape();
         numberShape.setType("integer");
@@ -221,6 +229,8 @@ public class C2jModelToGeneratorModelTransformerTest {
     public void testOperationConversion() {
         C2jServiceModel c2jServiceModel = new C2jServiceModel();
         Map<String, C2jShape> c2jShapeMap = new HashMap<>();
+        c2jServiceModel.setMetadata(new C2jMetadata());
+        c2jServiceModel.getMetadata().setUid("service-7869-05-67");
 
         C2jShape stringShape = new C2jShape();
         stringShape.setDocumentation("String Shape Documentation");

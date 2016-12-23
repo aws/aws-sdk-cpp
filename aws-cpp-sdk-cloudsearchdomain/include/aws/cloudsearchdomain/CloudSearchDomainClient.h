@@ -144,7 +144,10 @@ namespace Model
          * submit search requests to a domain's search endpoint. To get the search endpoint
          * for your domain, use the Amazon CloudSearch configuration service
          * <code>DescribeDomains</code> action. A domain's endpoints are also displayed on
-         * the domain dashboard in the Amazon CloudSearch console. </p>
+         * the domain dashboard in the Amazon CloudSearch console. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearchdomain-2013-01-01/Search">AWS
+         * API Reference</a></p>
          */
         virtual Model::SearchOutcome Search(const Model::SearchRequest& request) const;
 
@@ -167,7 +170,10 @@ namespace Model
          * submit search requests to a domain's search endpoint. To get the search endpoint
          * for your domain, use the Amazon CloudSearch configuration service
          * <code>DescribeDomains</code> action. A domain's endpoints are also displayed on
-         * the domain dashboard in the Amazon CloudSearch console. </p>
+         * the domain dashboard in the Amazon CloudSearch console. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearchdomain-2013-01-01/Search">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -192,7 +198,10 @@ namespace Model
          * submit search requests to a domain's search endpoint. To get the search endpoint
          * for your domain, use the Amazon CloudSearch configuration service
          * <code>DescribeDomains</code> action. A domain's endpoints are also displayed on
-         * the domain dashboard in the Amazon CloudSearch console. </p>
+         * the domain dashboard in the Amazon CloudSearch console. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearchdomain-2013-01-01/Search">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -213,7 +222,10 @@ namespace Model
          * submit suggest requests to a domain's search endpoint. To get the search
          * endpoint for your domain, use the Amazon CloudSearch configuration service
          * <code>DescribeDomains</code> action. A domain's endpoints are also displayed on
-         * the domain dashboard in the Amazon CloudSearch console. </p>
+         * the domain dashboard in the Amazon CloudSearch console. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearchdomain-2013-01-01/Suggest">AWS
+         * API Reference</a></p>
          */
         virtual Model::SuggestOutcome Suggest(const Model::SuggestRequest& request) const;
 
@@ -232,7 +244,10 @@ namespace Model
          * submit suggest requests to a domain's search endpoint. To get the search
          * endpoint for your domain, use the Amazon CloudSearch configuration service
          * <code>DescribeDomains</code> action. A domain's endpoints are also displayed on
-         * the domain dashboard in the Amazon CloudSearch console. </p>
+         * the domain dashboard in the Amazon CloudSearch console. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearchdomain-2013-01-01/Suggest">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -253,7 +268,10 @@ namespace Model
          * submit suggest requests to a domain's search endpoint. To get the search
          * endpoint for your domain, use the Amazon CloudSearch configuration service
          * <code>DescribeDomains</code> action. A domain's endpoints are also displayed on
-         * the domain dashboard in the Amazon CloudSearch console. </p>
+         * the domain dashboard in the Amazon CloudSearch console. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearchdomain-2013-01-01/Suggest">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -280,7 +298,10 @@ namespace Model
          * Your Data</a> in the <i>Amazon CloudSearch Developer Guide</i>. For more
          * information about uploading data for indexing, see <a
          * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/uploading-data.html">Uploading
-         * Data</a> in the <i>Amazon CloudSearch Developer Guide</i>. </p>
+         * Data</a> in the <i>Amazon CloudSearch Developer Guide</i>. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearchdomain-2013-01-01/UploadDocuments">AWS
+         * API Reference</a></p>
          */
         virtual Model::UploadDocumentsOutcome UploadDocuments(const Model::UploadDocumentsRequest& request) const;
 
@@ -305,7 +326,10 @@ namespace Model
          * Your Data</a> in the <i>Amazon CloudSearch Developer Guide</i>. For more
          * information about uploading data for indexing, see <a
          * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/uploading-data.html">Uploading
-         * Data</a> in the <i>Amazon CloudSearch Developer Guide</i>. </p>
+         * Data</a> in the <i>Amazon CloudSearch Developer Guide</i>. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearchdomain-2013-01-01/UploadDocuments">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -332,7 +356,10 @@ namespace Model
          * Your Data</a> in the <i>Amazon CloudSearch Developer Guide</i>. For more
          * information about uploading data for indexing, see <a
          * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/uploading-data.html">Uploading
-         * Data</a> in the <i>Amazon CloudSearch Developer Guide</i>. </p>
+         * Data</a> in the <i>Amazon CloudSearch Developer Guide</i>. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearchdomain-2013-01-01/UploadDocuments">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */

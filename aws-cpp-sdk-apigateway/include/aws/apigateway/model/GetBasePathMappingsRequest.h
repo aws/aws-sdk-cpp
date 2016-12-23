@@ -30,7 +30,9 @@ namespace Model
 
   /**
    * <p>A request to get information about a collection of <a>BasePathMapping</a>
-   * resources.</p>
+   * resources.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetBasePathMappingsRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_APIGATEWAY_API GetBasePathMappingsRequest : public APIGatewayRequest
   {

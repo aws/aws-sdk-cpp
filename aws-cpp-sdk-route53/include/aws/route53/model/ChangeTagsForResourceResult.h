@@ -32,7 +32,9 @@ namespace Route53
 namespace Model
 {
   /**
-   * <p>Empty response for the request.</p>
+   * <p>Empty response for the request.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ChangeTagsForResourceResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_ROUTE53_API ChangeTagsForResourceResult
   {

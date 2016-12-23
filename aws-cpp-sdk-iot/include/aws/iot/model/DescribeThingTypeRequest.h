@@ -25,7 +25,9 @@ namespace Model
 {
 
   /**
-   * <p>The input for the DescribeThingType operation.</p>
+   * <p>The input for the DescribeThingType operation.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeThingTypeRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_IOT_API DescribeThingTypeRequest : public IoTRequest
   {

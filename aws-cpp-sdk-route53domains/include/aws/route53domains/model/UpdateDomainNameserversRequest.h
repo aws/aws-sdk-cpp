@@ -27,7 +27,10 @@ namespace Model
 {
 
   /**
-   * <p>The UpdateDomainNameserver request includes the following elements.</p>
+   * <p>The UpdateDomainNameserver request includes the following
+   * elements.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/UpdateDomainNameserversRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_ROUTE53DOMAINS_API UpdateDomainNameserversRequest : public Route53DomainsRequest
   {

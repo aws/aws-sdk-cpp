@@ -33,7 +33,10 @@ namespace Model
 
   /**
    * <p>This is used in the responses of batch API to give a detailed description of
-   * the result of an action on each entry in the request.</p>
+   * the result of an action on each entry in the request.</p><p><h3>See Also:</h3>  
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/BatchResultErrorEntry">AWS
+   * API Reference</a></p>
    */
   class AWS_SQS_API BatchResultErrorEntry
   {
@@ -46,52 +49,52 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     /**
-     * <p>The id of an entry in a batch request.</p>
+     * <p>The <code>Id</code> of an entry in a batch request.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * <p>The id of an entry in a batch request.</p>
+     * <p>The <code>Id</code> of an entry in a batch request.</p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * <p>The id of an entry in a batch request.</p>
+     * <p>The <code>Id</code> of an entry in a batch request.</p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * <p>The id of an entry in a batch request.</p>
+     * <p>The <code>Id</code> of an entry in a batch request.</p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * <p>The id of an entry in a batch request.</p>
+     * <p>The <code>Id</code> of an entry in a batch request.</p>
      */
     inline BatchResultErrorEntry& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * <p>The id of an entry in a batch request.</p>
+     * <p>The <code>Id</code> of an entry in a batch request.</p>
      */
     inline BatchResultErrorEntry& WithId(Aws::String&& value) { SetId(value); return *this;}
 
     /**
-     * <p>The id of an entry in a batch request.</p>
+     * <p>The <code>Id</code> of an entry in a batch request.</p>
      */
     inline BatchResultErrorEntry& WithId(const char* value) { SetId(value); return *this;}
 
     /**
-     * <p>Whether the error happened due to the sender's fault.</p>
+     * <p>Specifies whether the error happened due to the sender's fault.</p>
      */
     inline bool GetSenderFault() const{ return m_senderFault; }
 
     /**
-     * <p>Whether the error happened due to the sender's fault.</p>
+     * <p>Specifies whether the error happened due to the sender's fault.</p>
      */
     inline void SetSenderFault(bool value) { m_senderFaultHasBeenSet = true; m_senderFault = value; }
 
     /**
-     * <p>Whether the error happened due to the sender's fault.</p>
+     * <p>Specifies whether the error happened due to the sender's fault.</p>
      */
     inline BatchResultErrorEntry& WithSenderFault(bool value) { SetSenderFault(value); return *this;}
 

@@ -33,7 +33,10 @@ namespace Model
 {
 
   /**
-   * <p>Describes an IPv6 CIDR block associated with a subnet.</p>
+   * <p>Describes an IPv6 CIDR block associated with a subnet.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SubnetIpv6CidrBlockAssociation">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API SubnetIpv6CidrBlockAssociation
   {

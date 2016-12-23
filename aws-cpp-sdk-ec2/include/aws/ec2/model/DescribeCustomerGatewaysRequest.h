@@ -27,7 +27,10 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for DescribeCustomerGateways.</p>
+   * <p>Contains the parameters for DescribeCustomerGateways.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCustomerGatewaysRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API DescribeCustomerGatewaysRequest : public EC2Request
   {

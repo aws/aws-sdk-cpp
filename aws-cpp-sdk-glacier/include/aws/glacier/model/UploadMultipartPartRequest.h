@@ -27,7 +27,9 @@ namespace Model
 
   /**
    * <p>Provides options to upload a part of an archive in a multipart upload
-   * operation.</p>
+   * operation.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/UploadMultipartPartInput">AWS
+   * API Reference</a></p>
    */
   class AWS_GLACIER_API UploadMultipartPartRequest : public StreamingGlacierRequest
   {

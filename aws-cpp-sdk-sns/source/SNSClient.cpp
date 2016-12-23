@@ -122,6 +122,16 @@ void SNSClient::init(const ClientConfiguration& config)
   m_uri = ss.str();
 }
 
+Aws::String SNSClient::ConvertRequestToPresignedUrl(const AmazonSerializableWebServiceRequest& requestToConvert, const char* region) const
+{
+  Aws::StringStream ss;
+  ss << "https://" << SNSEndpoint::ForRegion(region);
+  ss << "?" << requestToConvert.SerializePayload();
+
+  URI uri(ss.str());
+  return GeneratePresignedUrl(uri, HttpMethod::HTTP_GET, region, 3600);
+}
+
 AddPermissionOutcome SNSClient::AddPermission(const AddPermissionRequest& request) const
 {
   Aws::StringStream ss;
@@ -1111,4 +1121,6 @@ void SNSClient::UnsubscribeAsyncHelper(const UnsubscribeRequest& request, const 
 {
   handler(this, request, Unsubscribe(request), context);
 }
+
+
 

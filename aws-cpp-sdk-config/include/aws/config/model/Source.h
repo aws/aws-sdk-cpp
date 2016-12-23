@@ -35,7 +35,10 @@ namespace Model
 
   /**
    * <p>Provides the AWS Config rule owner (AWS or customer), the rule identifier,
-   * and the events that trigger the evaluation of your AWS resources.</p>
+   * and the events that trigger the evaluation of your AWS resources.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/Source">AWS API
+   * Reference</a></p>
    */
   class AWS_CONFIGSERVICE_API Source
   {

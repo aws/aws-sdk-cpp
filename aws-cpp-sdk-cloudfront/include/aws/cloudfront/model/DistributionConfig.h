@@ -40,7 +40,9 @@ namespace Model
 {
 
   /**
-   * A distribution Configuration.
+   * A distribution Configuration.<p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/DistributionConfig">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API DistributionConfig
   {

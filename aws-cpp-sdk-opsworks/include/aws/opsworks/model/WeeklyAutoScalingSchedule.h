@@ -43,7 +43,9 @@ namespace Model
    * period.</p> <p>The following example specifies that the instance should be
    * online for four hours, from UTC 1200 - 1600. It will be off for the remainder of
    * the day.</p> <p> <code> { "12":"on", "13":"on", "14":"on", "15":"on" } </code>
-   * </p>
+   * </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/WeeklyAutoScalingSchedule">AWS
+   * API Reference</a></p>
    */
   class AWS_OPSWORKS_API WeeklyAutoScalingSchedule
   {

@@ -29,7 +29,9 @@ namespace Model
    * <p>A JSON object that contains one or more of the following fields:</p> <ul>
    * <li> <p> <a>ListTapesInput$Limit</a> </p> </li> <li> <p>
    * <a>ListTapesInput$Marker</a> </p> </li> <li> <p> <a>ListTapesInput$TapeARNs</a>
-   * </p> </li> </ul>
+   * </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListTapesInput">AWS
+   * API Reference</a></p>
    */
   class AWS_STORAGEGATEWAY_API ListTapesRequest : public StorageGatewayRequest
   {

@@ -39,7 +39,9 @@ namespace Model
 
   /**
    * <p>New streaming instances are booted from images. The image stores the
-   * application catalog and is connected to fleets.</p>
+   * application catalog and is connected to fleets.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/Image">AWS API
+   * Reference</a></p>
    */
   class AWS_APPSTREAM_API Image
   {

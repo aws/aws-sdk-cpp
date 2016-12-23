@@ -36,7 +36,9 @@ namespace Model
 {
   /**
    * <p>A complex type that contains information about the reusable delegation sets
-   * that are associated with the current AWS account.</p>
+   * that are associated with the current AWS account.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListReusableDelegationSetsResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_ROUTE53_API ListReusableDelegationSetsResult
   {

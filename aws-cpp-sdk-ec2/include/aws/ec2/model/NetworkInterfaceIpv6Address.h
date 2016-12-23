@@ -32,7 +32,10 @@ namespace Model
 {
 
   /**
-   * <p>Describes an IPv6 address associated with a network interface.</p>
+   * <p>Describes an IPv6 address associated with a network interface.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/NetworkInterfaceIpv6Address">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API NetworkInterfaceIpv6Address
   {

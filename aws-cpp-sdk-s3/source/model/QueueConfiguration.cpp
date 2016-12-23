@@ -98,7 +98,7 @@ void QueueConfiguration::AddToNode(XmlNode& parentNode) const
 
   if(m_queueArnHasBeenSet)
   {
-   XmlNode queueArnNode = parentNode.CreateChildElement("QueueArn");
+   XmlNode queueArnNode = parentNode.CreateChildElement("Queue");
    queueArnNode.SetText(m_queueArn);
   }
 
@@ -113,7 +113,7 @@ void QueueConfiguration::AddToNode(XmlNode& parentNode) const
 
   if(m_filterHasBeenSet)
   {
-   XmlNode filterNode = parentNode.CreateChildElement("Event");
+   XmlNode filterNode = parentNode.CreateChildElement("Filter");
    m_filter.AddToNode(filterNode);
   }
 

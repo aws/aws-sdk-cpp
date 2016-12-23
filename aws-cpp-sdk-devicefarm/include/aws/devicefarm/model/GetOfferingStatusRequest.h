@@ -26,7 +26,9 @@ namespace Model
 
   /**
    * <p>Represents the request to retrieve the offering status for the specified
-   * customer or account.</p>
+   * customer or account.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetOfferingStatusRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_DEVICEFARM_API GetOfferingStatusRequest : public DeviceFarmRequest
   {

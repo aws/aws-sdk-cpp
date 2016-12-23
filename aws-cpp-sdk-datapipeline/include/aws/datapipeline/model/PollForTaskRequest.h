@@ -26,7 +26,9 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for PollForTask.</p>
+   * <p>Contains the parameters for PollForTask.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/PollForTaskInput">AWS
+   * API Reference</a></p>
    */
   class AWS_DATAPIPELINE_API PollForTaskRequest : public DataPipelineRequest
   {

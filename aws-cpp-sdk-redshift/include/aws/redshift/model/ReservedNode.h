@@ -37,7 +37,9 @@ namespace Model
   /**
    * <p>Describes a reserved node. You can call the
    * <a>DescribeReservedNodeOfferings</a> API to obtain the available reserved node
-   * offerings. </p>
+   * offerings. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ReservedNode">AWS
+   * API Reference</a></p>
    */
   class AWS_REDSHIFT_API ReservedNode
   {

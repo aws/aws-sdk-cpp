@@ -31,7 +31,9 @@ namespace Model
 {
 
   /**
-   * <p>Represents the search status of a log stream.</p>
+   * <p>Represents the search status of a log stream.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/SearchedLogStream">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDWATCHLOGS_API SearchedLogStream
   {

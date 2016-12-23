@@ -34,7 +34,9 @@ namespace SES
 namespace Model
 {
   /**
-   * <p>Represents the details of a receipt rule.</p>
+   * <p>Represents the details of a receipt rule.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DescribeReceiptRuleResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_SES_API DescribeReceiptRuleResult
   {

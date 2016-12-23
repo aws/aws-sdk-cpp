@@ -18,6 +18,8 @@
 #include <aws/firehose/model/CopyCommand.h>
 #include <aws/firehose/model/RedshiftRetryOptions.h>
 #include <aws/firehose/model/S3DestinationConfiguration.h>
+#include <aws/firehose/model/ProcessingConfiguration.h>
+#include <aws/firehose/model/RedshiftS3BackupMode.h>
 #include <aws/firehose/model/CloudWatchLoggingOptions.h>
 
 namespace Aws
@@ -35,7 +37,10 @@ namespace Model
 {
 
   /**
-   * <p>Describes the configuration of a destination in Amazon Redshift.</p>
+   * <p>Describes the configuration of a destination in Amazon
+   * Redshift.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/RedshiftDestinationConfiguration">AWS
+   * API Reference</a></p>
    */
   class AWS_FIREHOSE_API RedshiftDestinationConfiguration
   {
@@ -211,38 +216,38 @@ namespace Model
     inline RedshiftDestinationConfiguration& WithPassword(const char* value) { SetPassword(value); return *this;}
 
     /**
-     * <p>Configures retry behavior in the event that Firehose is unable to deliver
-     * documents to Amazon Redshift. Default value is 3600 (60 minutes).</p>
+     * <p>The retry behavior in the event that Firehose is unable to deliver documents
+     * to Amazon Redshift. Default value is 3600 (60 minutes).</p>
      */
     inline const RedshiftRetryOptions& GetRetryOptions() const{ return m_retryOptions; }
 
     /**
-     * <p>Configures retry behavior in the event that Firehose is unable to deliver
-     * documents to Amazon Redshift. Default value is 3600 (60 minutes).</p>
+     * <p>The retry behavior in the event that Firehose is unable to deliver documents
+     * to Amazon Redshift. Default value is 3600 (60 minutes).</p>
      */
     inline void SetRetryOptions(const RedshiftRetryOptions& value) { m_retryOptionsHasBeenSet = true; m_retryOptions = value; }
 
     /**
-     * <p>Configures retry behavior in the event that Firehose is unable to deliver
-     * documents to Amazon Redshift. Default value is 3600 (60 minutes).</p>
+     * <p>The retry behavior in the event that Firehose is unable to deliver documents
+     * to Amazon Redshift. Default value is 3600 (60 minutes).</p>
      */
     inline void SetRetryOptions(RedshiftRetryOptions&& value) { m_retryOptionsHasBeenSet = true; m_retryOptions = value; }
 
     /**
-     * <p>Configures retry behavior in the event that Firehose is unable to deliver
-     * documents to Amazon Redshift. Default value is 3600 (60 minutes).</p>
+     * <p>The retry behavior in the event that Firehose is unable to deliver documents
+     * to Amazon Redshift. Default value is 3600 (60 minutes).</p>
      */
     inline RedshiftDestinationConfiguration& WithRetryOptions(const RedshiftRetryOptions& value) { SetRetryOptions(value); return *this;}
 
     /**
-     * <p>Configures retry behavior in the event that Firehose is unable to deliver
-     * documents to Amazon Redshift. Default value is 3600 (60 minutes).</p>
+     * <p>The retry behavior in the event that Firehose is unable to deliver documents
+     * to Amazon Redshift. Default value is 3600 (60 minutes).</p>
      */
     inline RedshiftDestinationConfiguration& WithRetryOptions(RedshiftRetryOptions&& value) { SetRetryOptions(value); return *this;}
 
     /**
-     * <p>The S3 configuration for the intermediate location from which Amazon Redshift
-     * obtains data. Restrictions are described in the topic for
+     * <p>The configuration for the intermediate Amazon S3 location from which Amazon
+     * Redshift obtains data. Restrictions are described in the topic for
      * <a>CreateDeliveryStream</a>.</p> <p>The compression formats <code>SNAPPY</code>
      * or <code>ZIP</code> cannot be specified in
      * <b>RedshiftDestinationConfiguration.S3Configuration</b> because the Amazon
@@ -252,8 +257,8 @@ namespace Model
     inline const S3DestinationConfiguration& GetS3Configuration() const{ return m_s3Configuration; }
 
     /**
-     * <p>The S3 configuration for the intermediate location from which Amazon Redshift
-     * obtains data. Restrictions are described in the topic for
+     * <p>The configuration for the intermediate Amazon S3 location from which Amazon
+     * Redshift obtains data. Restrictions are described in the topic for
      * <a>CreateDeliveryStream</a>.</p> <p>The compression formats <code>SNAPPY</code>
      * or <code>ZIP</code> cannot be specified in
      * <b>RedshiftDestinationConfiguration.S3Configuration</b> because the Amazon
@@ -263,8 +268,8 @@ namespace Model
     inline void SetS3Configuration(const S3DestinationConfiguration& value) { m_s3ConfigurationHasBeenSet = true; m_s3Configuration = value; }
 
     /**
-     * <p>The S3 configuration for the intermediate location from which Amazon Redshift
-     * obtains data. Restrictions are described in the topic for
+     * <p>The configuration for the intermediate Amazon S3 location from which Amazon
+     * Redshift obtains data. Restrictions are described in the topic for
      * <a>CreateDeliveryStream</a>.</p> <p>The compression formats <code>SNAPPY</code>
      * or <code>ZIP</code> cannot be specified in
      * <b>RedshiftDestinationConfiguration.S3Configuration</b> because the Amazon
@@ -274,8 +279,8 @@ namespace Model
     inline void SetS3Configuration(S3DestinationConfiguration&& value) { m_s3ConfigurationHasBeenSet = true; m_s3Configuration = value; }
 
     /**
-     * <p>The S3 configuration for the intermediate location from which Amazon Redshift
-     * obtains data. Restrictions are described in the topic for
+     * <p>The configuration for the intermediate Amazon S3 location from which Amazon
+     * Redshift obtains data. Restrictions are described in the topic for
      * <a>CreateDeliveryStream</a>.</p> <p>The compression formats <code>SNAPPY</code>
      * or <code>ZIP</code> cannot be specified in
      * <b>RedshiftDestinationConfiguration.S3Configuration</b> because the Amazon
@@ -285,8 +290,8 @@ namespace Model
     inline RedshiftDestinationConfiguration& WithS3Configuration(const S3DestinationConfiguration& value) { SetS3Configuration(value); return *this;}
 
     /**
-     * <p>The S3 configuration for the intermediate location from which Amazon Redshift
-     * obtains data. Restrictions are described in the topic for
+     * <p>The configuration for the intermediate Amazon S3 location from which Amazon
+     * Redshift obtains data. Restrictions are described in the topic for
      * <a>CreateDeliveryStream</a>.</p> <p>The compression formats <code>SNAPPY</code>
      * or <code>ZIP</code> cannot be specified in
      * <b>RedshiftDestinationConfiguration.S3Configuration</b> because the Amazon
@@ -296,27 +301,102 @@ namespace Model
     inline RedshiftDestinationConfiguration& WithS3Configuration(S3DestinationConfiguration&& value) { SetS3Configuration(value); return *this;}
 
     /**
-     * <p>Describes CloudWatch logging options for your delivery stream.</p>
+     * <p>The data processing configuration.</p>
+     */
+    inline const ProcessingConfiguration& GetProcessingConfiguration() const{ return m_processingConfiguration; }
+
+    /**
+     * <p>The data processing configuration.</p>
+     */
+    inline void SetProcessingConfiguration(const ProcessingConfiguration& value) { m_processingConfigurationHasBeenSet = true; m_processingConfiguration = value; }
+
+    /**
+     * <p>The data processing configuration.</p>
+     */
+    inline void SetProcessingConfiguration(ProcessingConfiguration&& value) { m_processingConfigurationHasBeenSet = true; m_processingConfiguration = value; }
+
+    /**
+     * <p>The data processing configuration.</p>
+     */
+    inline RedshiftDestinationConfiguration& WithProcessingConfiguration(const ProcessingConfiguration& value) { SetProcessingConfiguration(value); return *this;}
+
+    /**
+     * <p>The data processing configuration.</p>
+     */
+    inline RedshiftDestinationConfiguration& WithProcessingConfiguration(ProcessingConfiguration&& value) { SetProcessingConfiguration(value); return *this;}
+
+    /**
+     * <p>The Amazon S3 backup mode.</p>
+     */
+    inline const RedshiftS3BackupMode& GetS3BackupMode() const{ return m_s3BackupMode; }
+
+    /**
+     * <p>The Amazon S3 backup mode.</p>
+     */
+    inline void SetS3BackupMode(const RedshiftS3BackupMode& value) { m_s3BackupModeHasBeenSet = true; m_s3BackupMode = value; }
+
+    /**
+     * <p>The Amazon S3 backup mode.</p>
+     */
+    inline void SetS3BackupMode(RedshiftS3BackupMode&& value) { m_s3BackupModeHasBeenSet = true; m_s3BackupMode = value; }
+
+    /**
+     * <p>The Amazon S3 backup mode.</p>
+     */
+    inline RedshiftDestinationConfiguration& WithS3BackupMode(const RedshiftS3BackupMode& value) { SetS3BackupMode(value); return *this;}
+
+    /**
+     * <p>The Amazon S3 backup mode.</p>
+     */
+    inline RedshiftDestinationConfiguration& WithS3BackupMode(RedshiftS3BackupMode&& value) { SetS3BackupMode(value); return *this;}
+
+    /**
+     * <p>The configuration for backup in Amazon S3.</p>
+     */
+    inline const S3DestinationConfiguration& GetS3BackupConfiguration() const{ return m_s3BackupConfiguration; }
+
+    /**
+     * <p>The configuration for backup in Amazon S3.</p>
+     */
+    inline void SetS3BackupConfiguration(const S3DestinationConfiguration& value) { m_s3BackupConfigurationHasBeenSet = true; m_s3BackupConfiguration = value; }
+
+    /**
+     * <p>The configuration for backup in Amazon S3.</p>
+     */
+    inline void SetS3BackupConfiguration(S3DestinationConfiguration&& value) { m_s3BackupConfigurationHasBeenSet = true; m_s3BackupConfiguration = value; }
+
+    /**
+     * <p>The configuration for backup in Amazon S3.</p>
+     */
+    inline RedshiftDestinationConfiguration& WithS3BackupConfiguration(const S3DestinationConfiguration& value) { SetS3BackupConfiguration(value); return *this;}
+
+    /**
+     * <p>The configuration for backup in Amazon S3.</p>
+     */
+    inline RedshiftDestinationConfiguration& WithS3BackupConfiguration(S3DestinationConfiguration&& value) { SetS3BackupConfiguration(value); return *this;}
+
+    /**
+     * <p>The CloudWatch logging options for your delivery stream.</p>
      */
     inline const CloudWatchLoggingOptions& GetCloudWatchLoggingOptions() const{ return m_cloudWatchLoggingOptions; }
 
     /**
-     * <p>Describes CloudWatch logging options for your delivery stream.</p>
+     * <p>The CloudWatch logging options for your delivery stream.</p>
      */
     inline void SetCloudWatchLoggingOptions(const CloudWatchLoggingOptions& value) { m_cloudWatchLoggingOptionsHasBeenSet = true; m_cloudWatchLoggingOptions = value; }
 
     /**
-     * <p>Describes CloudWatch logging options for your delivery stream.</p>
+     * <p>The CloudWatch logging options for your delivery stream.</p>
      */
     inline void SetCloudWatchLoggingOptions(CloudWatchLoggingOptions&& value) { m_cloudWatchLoggingOptionsHasBeenSet = true; m_cloudWatchLoggingOptions = value; }
 
     /**
-     * <p>Describes CloudWatch logging options for your delivery stream.</p>
+     * <p>The CloudWatch logging options for your delivery stream.</p>
      */
     inline RedshiftDestinationConfiguration& WithCloudWatchLoggingOptions(const CloudWatchLoggingOptions& value) { SetCloudWatchLoggingOptions(value); return *this;}
 
     /**
-     * <p>Describes CloudWatch logging options for your delivery stream.</p>
+     * <p>The CloudWatch logging options for your delivery stream.</p>
      */
     inline RedshiftDestinationConfiguration& WithCloudWatchLoggingOptions(CloudWatchLoggingOptions&& value) { SetCloudWatchLoggingOptions(value); return *this;}
 
@@ -335,6 +415,12 @@ namespace Model
     bool m_retryOptionsHasBeenSet;
     S3DestinationConfiguration m_s3Configuration;
     bool m_s3ConfigurationHasBeenSet;
+    ProcessingConfiguration m_processingConfiguration;
+    bool m_processingConfigurationHasBeenSet;
+    RedshiftS3BackupMode m_s3BackupMode;
+    bool m_s3BackupModeHasBeenSet;
+    S3DestinationConfiguration m_s3BackupConfiguration;
+    bool m_s3BackupConfigurationHasBeenSet;
     CloudWatchLoggingOptions m_cloudWatchLoggingOptions;
     bool m_cloudWatchLoggingOptionsHasBeenSet;
   };

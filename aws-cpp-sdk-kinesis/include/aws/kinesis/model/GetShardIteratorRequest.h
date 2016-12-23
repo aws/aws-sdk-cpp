@@ -27,7 +27,10 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input for <code>GetShardIterator</code>.</p>
+   * <p>Represents the input for <code>GetShardIterator</code>.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/GetShardIteratorInput">AWS
+   * API Reference</a></p>
    */
   class AWS_KINESIS_API GetShardIteratorRequest : public KinesisRequest
   {

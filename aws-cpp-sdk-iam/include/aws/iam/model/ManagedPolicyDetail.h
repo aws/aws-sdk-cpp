@@ -41,7 +41,10 @@ namespace Model
    * in the <a>GetAccountAuthorizationDetails</a> action.</p> <p>For more information
    * about managed policies, see <a
    * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-   * Policies and Inline Policies</a> in the <i>Using IAM</i> guide. </p>
+   * Policies and Inline Policies</a> in the <i>Using IAM</i> guide. </p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ManagedPolicyDetail">AWS
+   * API Reference</a></p>
    */
   class AWS_IAM_API ManagedPolicyDetail
   {

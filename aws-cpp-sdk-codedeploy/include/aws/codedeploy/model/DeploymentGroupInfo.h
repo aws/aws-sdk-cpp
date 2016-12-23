@@ -39,7 +39,9 @@ namespace Model
 {
 
   /**
-   * <p>Information about a deployment group.</p>
+   * <p>Information about a deployment group.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/DeploymentGroupInfo">AWS
+   * API Reference</a></p>
    */
   class AWS_CODEDEPLOY_API DeploymentGroupInfo
   {

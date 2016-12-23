@@ -32,7 +32,9 @@ namespace Model
 
   /**
    * <p>The number of events of each issue type. Returned by the
-   * <a>DescribeEventAggregates</a> operation.</p>
+   * <a>DescribeEventAggregates</a> operation.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/EventAggregate">AWS
+   * API Reference</a></p>
    */
   class AWS_HEALTH_API EventAggregate
   {

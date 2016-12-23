@@ -34,7 +34,9 @@ namespace AppStream
 namespace Model
 {
   /**
-   * <p>The response from a successful operation.</p>
+   * <p>The response from a successful operation.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ListAssociatedFleetsResult">AWS
+   * API Reference</a></p>
    */
   class AWS_APPSTREAM_API ListAssociatedFleetsResult
   {

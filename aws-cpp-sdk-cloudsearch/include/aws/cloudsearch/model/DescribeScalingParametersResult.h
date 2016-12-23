@@ -35,7 +35,10 @@ namespace Model
 {
   /**
    * <p>The result of a <code>DescribeScalingParameters</code> request. Contains the
-   * scaling parameters configured for the domain specified in the request.</p>
+   * scaling parameters configured for the domain specified in the
+   * request.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DescribeScalingParametersResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDSEARCH_API DescribeScalingParametersResult
   {

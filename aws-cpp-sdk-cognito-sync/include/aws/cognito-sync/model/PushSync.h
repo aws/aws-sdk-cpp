@@ -32,7 +32,10 @@ namespace Model
 {
 
   /**
-   * <p>Configuration options to be applied to the identity pool.</p>
+   * <p>Configuration options to be applied to the identity pool.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/PushSync">AWS
+   * API Reference</a></p>
    */
   class AWS_COGNITOSYNC_API PushSync
   {

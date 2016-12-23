@@ -26,7 +26,9 @@ namespace Model
 
   /**
    * <p>A complex type that contains information about the traffic policy that you
-   * want to create.</p>
+   * want to create.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateTrafficPolicyRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_ROUTE53_API CreateTrafficPolicyRequest : public Route53Request
   {

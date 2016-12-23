@@ -32,7 +32,9 @@ namespace Model
 
   /**
    * <p>A route filter prefix that the customer can advertise through Border Gateway
-   * Protocol (BGP) over a public virtual interface.</p>
+   * Protocol (BGP) over a public virtual interface.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/RouteFilterPrefix">AWS
+   * API Reference</a></p>
    */
   class AWS_DIRECTCONNECT_API RouteFilterPrefix
   {

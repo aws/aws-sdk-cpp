@@ -37,7 +37,10 @@ namespace Model
   /**
    * A complex type that describes the default cache behavior if you do not specify a
    * CacheBehavior element or if files don't match any of the values of PathPattern
-   * in CacheBehavior elements.You must create exactly one default cache behavior.
+   * in CacheBehavior elements.You must create exactly one default cache
+   * behavior.<p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/DefaultCacheBehavior">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API DefaultCacheBehavior
   {

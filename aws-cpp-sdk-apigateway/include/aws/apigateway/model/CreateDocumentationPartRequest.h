@@ -26,7 +26,10 @@ namespace Model
 {
 
   /**
-   * <p>Creates a new documentation part of a given API.</p>
+   * <p>Creates a new documentation part of a given API.</p><p><h3>See Also:</h3>  
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateDocumentationPartRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_APIGATEWAY_API CreateDocumentationPartRequest : public APIGatewayRequest
   {

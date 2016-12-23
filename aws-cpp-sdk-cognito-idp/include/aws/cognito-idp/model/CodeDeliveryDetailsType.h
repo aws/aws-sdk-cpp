@@ -32,7 +32,10 @@ namespace Model
 {
 
   /**
-   * <p>The type of code delivery details being returned from the server.</p>
+   * <p>The type of code delivery details being returned from the
+   * server.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CodeDeliveryDetailsType">AWS
+   * API Reference</a></p>
    */
   class AWS_COGNITOIDENTITYPROVIDER_API CodeDeliveryDetailsType
   {

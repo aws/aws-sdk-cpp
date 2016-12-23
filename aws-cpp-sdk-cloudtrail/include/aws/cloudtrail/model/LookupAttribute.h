@@ -32,7 +32,10 @@ namespace Model
 {
 
   /**
-   * <p>Specifies an attribute and value that filter the events returned.</p>
+   * <p>Specifies an attribute and value that filter the events
+   * returned.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/LookupAttribute">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDTRAIL_API LookupAttribute
   {

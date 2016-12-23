@@ -34,7 +34,9 @@ namespace Model
 {
 
   /**
-   * <p>Describes an IP range used in a security group.</p>
+   * <p>Describes an IP range used in a security group.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/IPRange">AWS
+   * API Reference</a></p>
    */
   class AWS_REDSHIFT_API IPRange
   {

@@ -42,7 +42,9 @@ namespace Model
    * recipe, use the cookbook's directory name in the repository followed by two
    * colons and the recipe name, which is the recipe's file name without the .rb
    * extension. For example: phpapp2::dbsetup specifies the dbsetup.rb recipe in the
-   * repository's phpapp2 folder.</p>
+   * repository's phpapp2 folder.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/Recipes">AWS
+   * API Reference</a></p>
    */
   class AWS_OPSWORKS_API Recipes
   {

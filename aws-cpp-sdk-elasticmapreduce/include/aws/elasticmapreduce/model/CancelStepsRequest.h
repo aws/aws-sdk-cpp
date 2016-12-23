@@ -26,7 +26,10 @@ namespace Model
 {
 
   /**
-   * <p>The input argument to the <a>CancelSteps</a> operation.</p>
+   * <p>The input argument to the <a>CancelSteps</a> operation.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/CancelStepsInput">AWS
+   * API Reference</a></p>
    */
   class AWS_EMR_API CancelStepsRequest : public EMRRequest
   {

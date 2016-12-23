@@ -33,7 +33,10 @@ namespace Model
 {
 
   /**
-   * <p>An error or warning for a desired configuration option value.</p>
+   * <p>An error or warning for a desired configuration option value.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ValidationMessage">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICBEANSTALK_API ValidationMessage
   {

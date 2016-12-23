@@ -31,7 +31,9 @@ namespace Model
 {
 
   /**
-   * <p>A value or list of parameter values. </p>
+   * <p>A value or list of parameter values. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/ParameterValue">AWS
+   * API Reference</a></p>
    */
   class AWS_DATAPIPELINE_API ParameterValue
   {

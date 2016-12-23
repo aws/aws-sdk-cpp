@@ -37,7 +37,10 @@ namespace Model
    * <p>Contains the result of a successful invocation of the following actions:</p>
    * <ul> <li> <p> <a>CreateDBClusterSnapshot</a> </p> </li> <li> <p>
    * <a>DeleteDBClusterSnapshot</a> </p> </li> </ul> <p>This data type is used as a
-   * response element in the <a>DescribeDBClusterSnapshots</a> action.</p>
+   * response element in the <a>DescribeDBClusterSnapshots</a> action.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DBClusterSnapshot">AWS
+   * API Reference</a></p>
    */
   class AWS_RDS_API DBClusterSnapshot
   {

@@ -33,7 +33,9 @@ namespace Model
 {
   /**
    * <p>The status response from the request to update the device, as an
-   * administrator.</p>
+   * administrator.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminUpdateDeviceStatusResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_COGNITOIDENTITYPROVIDER_API AdminUpdateDeviceStatusResult
   {

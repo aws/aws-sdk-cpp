@@ -31,7 +31,9 @@ namespace Model
 {
 
   /**
-   * <p>The definition for a provisioned capacity unit.</p>
+   * <p>The definition for a provisioned capacity unit.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/ProvisionedCapacityDescription">AWS
+   * API Reference</a></p>
    */
   class AWS_GLACIER_API ProvisionedCapacityDescription
   {

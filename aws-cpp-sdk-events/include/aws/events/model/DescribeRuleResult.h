@@ -34,7 +34,10 @@ namespace CloudWatchEvents
 namespace Model
 {
   /**
-   * <p>The result of the <a>DescribeRule</a> operation.</p>
+   * <p>The result of the <a>DescribeRule</a> operation.</p><p><h3>See Also:</h3>  
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DescribeRuleResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDWATCHEVENTS_API DescribeRuleResult
   {

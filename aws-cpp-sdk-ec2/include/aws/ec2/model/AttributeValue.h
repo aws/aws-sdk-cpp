@@ -32,7 +32,10 @@ namespace Model
 {
 
   /**
-   * <p>Describes a value for a resource attribute that is a String.</p>
+   * <p>Describes a value for a resource attribute that is a String.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AttributeValue">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API AttributeValue
   {

@@ -27,7 +27,10 @@ namespace Model
 {
 
   /**
-   * <p>Represents a request to the update device pool operation.</p>
+   * <p>Represents a request to the update device pool operation.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateDevicePoolRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_DEVICEFARM_API UpdateDevicePoolRequest : public DeviceFarmRequest
   {

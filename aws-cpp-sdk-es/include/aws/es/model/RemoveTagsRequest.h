@@ -28,7 +28,9 @@ namespace Model
   /**
    * <p>Container for the parameters to the <code><a>RemoveTags</a></code> operation.
    * Specify the <code>ARN</code> for the Elasticsearch domain from which you want to
-   * remove the specified <code>TagKey</code>.</p>
+   * remove the specified <code>TagKey</code>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/RemoveTagsRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICSEARCHSERVICE_API RemoveTagsRequest : public ElasticsearchServiceRequest
   {

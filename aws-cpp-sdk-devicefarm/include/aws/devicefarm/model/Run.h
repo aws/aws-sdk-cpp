@@ -40,7 +40,9 @@ namespace Model
 
   /**
    * <p>Represents an app on a set of devices with a specific test and
-   * configuration.</p>
+   * configuration.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/Run">AWS API
+   * Reference</a></p>
    */
   class AWS_DEVICEFARM_API Run
   {

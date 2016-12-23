@@ -35,7 +35,9 @@ namespace Model
    * linking to your virtual private gateway.</p> <p>Virtual private gateways can be
    * managed using the Amazon Virtual Private Cloud (Amazon VPC) console or the <a
    * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-CreateVpnGateway.html">Amazon
-   * EC2 CreateVpnGateway action</a>.</p>
+   * EC2 CreateVpnGateway action</a>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/VirtualGateway">AWS
+   * API Reference</a></p>
    */
   class AWS_DIRECTCONNECT_API VirtualGateway
   {

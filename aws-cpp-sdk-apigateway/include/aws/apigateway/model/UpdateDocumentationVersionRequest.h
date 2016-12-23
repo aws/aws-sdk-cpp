@@ -27,7 +27,10 @@ namespace Model
 {
 
   /**
-   * <p>Updates an existing documentation version of an API.</p>
+   * <p>Updates an existing documentation version of an API.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateDocumentationVersionRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_APIGATEWAY_API UpdateDocumentationVersionRequest : public APIGatewayRequest
   {

@@ -36,7 +36,10 @@ namespace Model
 {
 
   /**
-   * <p>The full details of a specific ProvisionedProduct object.</p>
+   * <p>The full details of a specific ProvisionedProduct object.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/RecordDetail">AWS
+   * API Reference</a></p>
    */
   class AWS_SERVICECATALOG_API RecordDetail
   {

@@ -28,7 +28,9 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for CreateRule.</p>
+   * <p>Contains the parameters for CreateRule.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/CreateRuleInput">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICLOADBALANCINGV2_API CreateRuleRequest : public ElasticLoadBalancingv2Request
   {

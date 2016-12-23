@@ -26,7 +26,9 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for ReleaseHosts.</p>
+   * <p>Contains the parameters for ReleaseHosts.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReleaseHostsRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API ReleaseHostsRequest : public EC2Request
   {

@@ -28,7 +28,10 @@ namespace Model
   /**
    * <p>Container for the parameters to the
    * <code><a>UpdateScalingParameters</a></code> operation. Specifies the name of the
-   * domain you want to update and the scaling parameters you want to configure.</p>
+   * domain you want to update and the scaling parameters you want to
+   * configure.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/UpdateScalingParametersRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDSEARCH_API UpdateScalingParametersRequest : public CloudSearchRequest
   {

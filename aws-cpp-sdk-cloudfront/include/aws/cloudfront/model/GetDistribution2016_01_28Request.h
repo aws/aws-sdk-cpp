@@ -25,7 +25,9 @@ namespace Model
 {
 
   /**
-   * The request to get a distribution's information.
+   * The request to get a distribution's information.<p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/GetDistributionRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API GetDistribution2016_01_28Request : public CloudFrontRequest
   {

@@ -34,7 +34,9 @@ namespace Model
 
   /**
    * <p>Describes the user or group to be added or removed from the permissions for a
-   * volume.</p>
+   * volume.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVolumePermission">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API CreateVolumePermission
   {

@@ -33,7 +33,9 @@ namespace Model
   /**
    * <p>Key/value pairs to associate with this provisioning. These tags are entirely
    * discretionary and are propagated to the resources created in the
-   * provisioning.</p>
+   * provisioning.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/Tag">AWS
+   * API Reference</a></p>
    */
   class AWS_SERVICECATALOG_API Tag
   {

@@ -42,6 +42,7 @@ static const int INVALID_DOCUMENT_HASH = HashingUtils::HashString("InvalidDocume
 static const int INVALID_DOCUMENT_CONTENT_HASH = HashingUtils::HashString("InvalidDocumentContent");
 static const int ASSOCIATED_INSTANCES_HASH = HashingUtils::HashString("AssociatedInstances");
 static const int INVALID_ITEM_CONTENT_HASH = HashingUtils::HashString("InvalidItemContentException");
+static const int ALREADY_EXISTS_HASH = HashingUtils::HashString("AlreadyExistsException");
 static const int AUTOMATION_DEFINITION_VERSION_NOT_FOUND_HASH = HashingUtils::HashString("AutomationDefinitionVersionNotFoundException");
 static const int TOO_MANY_TAGS_HASH = HashingUtils::HashString("TooManyTagsError");
 static const int INVALID_KEY_ID_HASH = HashingUtils::HashString("InvalidKeyId");
@@ -62,6 +63,7 @@ static const int INVALID_FILTER_HASH = HashingUtils::HashString("InvalidFilter")
 static const int INVALID_INSTANCE_INFORMATION_FILTER_VALUE_HASH = HashingUtils::HashString("InvalidInstanceInformationFilterValue");
 static const int INVALID_NOTIFICATION_CONFIG_HASH = HashingUtils::HashString("InvalidNotificationConfig");
 static const int PARAMETER_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ParameterLimitExceeded");
+static const int RESOURCE_IN_USE_HASH = HashingUtils::HashString("ResourceInUseException");
 static const int INVALID_INSTANCE_ID_HASH = HashingUtils::HashString("InvalidInstanceId");
 static const int INVALID_RESOURCE_TYPE_HASH = HashingUtils::HashString("InvalidResourceType");
 static const int INVALID_NEXT_TOKEN_HASH = HashingUtils::HashString("InvalidNextToken");
@@ -156,6 +158,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_ITEM_CONTENT), false);
   }
+  else if (hashCode == ALREADY_EXISTS_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::ALREADY_EXISTS), false);
+  }
   else if (hashCode == AUTOMATION_DEFINITION_VERSION_NOT_FOUND_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::AUTOMATION_DEFINITION_VERSION_NOT_FOUND), false);
@@ -235,6 +241,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == PARAMETER_LIMIT_EXCEEDED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::PARAMETER_LIMIT_EXCEEDED), false);
+  }
+  else if (hashCode == RESOURCE_IN_USE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::RESOURCE_IN_USE), false);
   }
   else if (hashCode == INVALID_INSTANCE_ID_HASH)
   {

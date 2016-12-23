@@ -25,7 +25,10 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input of a <code>DescribeCacheParameters</code> operation.</p>
+   * <p>Represents the input of a <code>DescribeCacheParameters</code>
+   * operation.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeCacheParametersMessage">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICACHE_API DescribeCacheParametersRequest : public ElastiCacheRequest
   {

@@ -32,7 +32,9 @@ namespace Model
 {
 
   /**
-   * <p>Describes the metric data point.</p>
+   * <p>Describes the metric data point.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/MetricDatapoint">AWS
+   * API Reference</a></p>
    */
   class AWS_LIGHTSAIL_API MetricDatapoint
   {

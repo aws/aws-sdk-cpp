@@ -26,7 +26,9 @@ namespace Model
 {
 
   /**
-   * Request of DescribeSubscribersForNotification
+   * Request of DescribeSubscribersForNotification<p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeSubscribersForNotificationRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_BUDGETS_API DescribeSubscribersForNotificationRequest : public BudgetsRequest
   {

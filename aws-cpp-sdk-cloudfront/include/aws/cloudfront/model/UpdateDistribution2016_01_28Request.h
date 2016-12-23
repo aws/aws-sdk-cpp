@@ -26,7 +26,9 @@ namespace Model
 {
 
   /**
-   * The request to update a distribution.
+   * The request to update a distribution.<p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/UpdateDistributionRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API UpdateDistribution2016_01_28Request : public CloudFrontRequest
   {

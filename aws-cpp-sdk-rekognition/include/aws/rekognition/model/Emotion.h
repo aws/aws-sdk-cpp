@@ -32,7 +32,9 @@ namespace Model
 
   /**
    * <p>The emotions detected on the face, and the confidence level in the
-   * determination. For example, HAPPY, SAD, and ANGRY.</p>
+   * determination. For example, HAPPY, SAD, and ANGRY.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/Emotion">AWS
+   * API Reference</a></p>
    */
   class AWS_REKOGNITION_API Emotion
   {

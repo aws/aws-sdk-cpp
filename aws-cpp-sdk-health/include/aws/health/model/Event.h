@@ -37,7 +37,9 @@ namespace Model
    * <p>Summary information about an event, returned by the <a>DescribeEvents</a>
    * operation. The <a>DescribeEventDetails</a> operation also returns this
    * information, as well as the <a>EventDescription</a> and additional event
-   * metadata.</p>
+   * metadata.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/Event">AWS API
+   * Reference</a></p>
    */
   class AWS_HEALTH_API Event
   {

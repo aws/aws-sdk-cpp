@@ -34,7 +34,9 @@ namespace Model
    * index. The settings can be modified using the <i>UpdateTable</i> operation.</p>
    * <p>For current minimum and maximum provisioned throughput values, see <a
    * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
-   * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+   * in the <i>Amazon DynamoDB Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ProvisionedThroughput">AWS
+   * API Reference</a></p>
    */
   class AWS_DYNAMODB_API ProvisionedThroughput
   {

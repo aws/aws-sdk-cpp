@@ -33,7 +33,9 @@ namespace Model
 {
 
   /**
-   * <p>A CA certificate.</p>
+   * <p>A CA certificate.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CACertificate">AWS
+   * API Reference</a></p>
    */
   class AWS_IOT_API CACertificate
   {

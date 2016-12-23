@@ -27,7 +27,10 @@ namespace Model
 {
 
   /**
-   * <p>The PATCH request to update a usage plan of a given plan Id.</p>
+   * <p>The PATCH request to update a usage plan of a given plan Id.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateUsagePlanRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_APIGATEWAY_API UpdateUsagePlanRequest : public APIGatewayRequest
   {

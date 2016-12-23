@@ -34,7 +34,9 @@ namespace CognitoSync
 namespace Model
 {
   /**
-   * <p>The response from the GetCognitoEvents request</p>
+   * <p>The response from the GetCognitoEvents request</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/GetCognitoEventsResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_COGNITOSYNC_API GetCognitoEventsResult
   {

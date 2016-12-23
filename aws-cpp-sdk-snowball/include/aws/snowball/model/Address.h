@@ -36,7 +36,9 @@ namespace Model
    * The address you provide must be located within the serviceable area of your
    * region. Although no individual elements of the <code>Address</code> are
    * required, if the address is invalid or unsupported, then an exception is
-   * thrown.</p>
+   * thrown.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/Address">AWS
+   * API Reference</a></p>
    */
   class AWS_SNOWBALL_API Address
   {

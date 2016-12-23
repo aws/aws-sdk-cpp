@@ -36,7 +36,9 @@ namespace Model
 {
   /**
    * <p>Represents the output for <a>EnableEnhancedMonitoring</a> and
-   * <a>DisableEnhancedMonitoring</a>.</p>
+   * <a>DisableEnhancedMonitoring</a>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/EnhancedMonitoringOutput">AWS
+   * API Reference</a></p>
    */
   class AWS_KINESIS_API DisableEnhancedMonitoringResult
   {

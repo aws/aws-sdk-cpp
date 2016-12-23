@@ -35,7 +35,9 @@ namespace Model
 
   /**
    * <p>Summary information about a path for a user to have access to a specified
-   * product.</p>
+   * product.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/LaunchPathSummary">AWS
+   * API Reference</a></p>
    */
   class AWS_SERVICECATALOG_API LaunchPathSummary
   {

@@ -39,7 +39,9 @@ namespace Model
    * name of the header. If a <code>XssMatchSet</code> contains more than one
    * <code>XssMatchTuple</code> object, a request needs to include cross-site
    * scripting attacks in only one of the specified parts of the request to be
-   * considered a match.</p>
+   * considered a match.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/XssMatchSet">AWS API
+   * Reference</a></p>
    */
   class AWS_WAF_API XssMatchSet
   {

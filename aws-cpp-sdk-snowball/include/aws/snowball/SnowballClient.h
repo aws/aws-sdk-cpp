@@ -198,14 +198,18 @@ namespace Model
         /**
          * <p>Cancels a cluster job. You can only cancel a cluster job while it's in the
          * <code>AwaitingQuorum</code> status. You'll have at least an hour after creating
-         * a cluster job to cancel it.</p>
+         * a cluster job to cancel it.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CancelCluster">AWS
+         * API Reference</a></p>
          */
         virtual Model::CancelClusterOutcome CancelCluster(const Model::CancelClusterRequest& request) const;
 
         /**
          * <p>Cancels a cluster job. You can only cancel a cluster job while it's in the
          * <code>AwaitingQuorum</code> status. You'll have at least an hour after creating
-         * a cluster job to cancel it.</p>
+         * a cluster job to cancel it.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CancelCluster">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -214,7 +218,9 @@ namespace Model
         /**
          * <p>Cancels a cluster job. You can only cancel a cluster job while it's in the
          * <code>AwaitingQuorum</code> status. You'll have at least an hour after creating
-         * a cluster job to cancel it.</p>
+         * a cluster job to cancel it.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CancelCluster">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -225,7 +231,9 @@ namespace Model
          * <code>JobState</code> value changes to <code>PreparingAppliance</code>.
          * Requesting the <code>ListJobs</code> or <code>DescribeJob</code> action will
          * return a job's <code>JobState</code> as part of the response element data
-         * returned.</p>
+         * returned.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CancelJob">AWS
+         * API Reference</a></p>
          */
         virtual Model::CancelJobOutcome CancelJob(const Model::CancelJobRequest& request) const;
 
@@ -234,7 +242,9 @@ namespace Model
          * <code>JobState</code> value changes to <code>PreparingAppliance</code>.
          * Requesting the <code>ListJobs</code> or <code>DescribeJob</code> action will
          * return a job's <code>JobState</code> as part of the response element data
-         * returned.</p>
+         * returned.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CancelJob">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -245,7 +255,9 @@ namespace Model
          * <code>JobState</code> value changes to <code>PreparingAppliance</code>.
          * Requesting the <code>ListJobs</code> or <code>DescribeJob</code> action will
          * return a job's <code>JobState</code> as part of the response element data
-         * returned.</p>
+         * returned.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CancelJob">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -255,7 +267,9 @@ namespace Model
          * <p>Creates an address for a Snowball to be shipped to. </p> <p>Addresses are
          * validated at the time of creation. The address you provide must be located
          * within the serviceable area of your region. If the address is invalid or
-         * unsupported, then an exception is thrown.</p>
+         * unsupported, then an exception is thrown.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CreateAddress">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateAddressOutcome CreateAddress(const Model::CreateAddressRequest& request) const;
 
@@ -263,7 +277,9 @@ namespace Model
          * <p>Creates an address for a Snowball to be shipped to. </p> <p>Addresses are
          * validated at the time of creation. The address you provide must be located
          * within the serviceable area of your region. If the address is invalid or
-         * unsupported, then an exception is thrown.</p>
+         * unsupported, then an exception is thrown.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CreateAddress">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -273,7 +289,9 @@ namespace Model
          * <p>Creates an address for a Snowball to be shipped to. </p> <p>Addresses are
          * validated at the time of creation. The address you provide must be located
          * within the serviceable area of your region. If the address is invalid or
-         * unsupported, then an exception is thrown.</p>
+         * unsupported, then an exception is thrown.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CreateAddress">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -282,14 +300,20 @@ namespace Model
         /**
          * <p>Creates an empty cluster. Each cluster supports five nodes. You use the
          * <a>CreateJob</a> action separately to create the jobs for each of these nodes.
-         * The cluster does not ship until these five node jobs have been created.</p>
+         * The cluster does not ship until these five node jobs have been
+         * created.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CreateCluster">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateClusterOutcome CreateCluster(const Model::CreateClusterRequest& request) const;
 
         /**
          * <p>Creates an empty cluster. Each cluster supports five nodes. You use the
          * <a>CreateJob</a> action separately to create the jobs for each of these nodes.
-         * The cluster does not ship until these five node jobs have been created.</p>
+         * The cluster does not ship until these five node jobs have been
+         * created.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CreateCluster">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -298,7 +322,10 @@ namespace Model
         /**
          * <p>Creates an empty cluster. Each cluster supports five nodes. You use the
          * <a>CreateJob</a> action separately to create the jobs for each of these nodes.
-         * The cluster does not ship until these five node jobs have been created.</p>
+         * The cluster does not ship until these five node jobs have been
+         * created.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CreateCluster">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -309,7 +336,9 @@ namespace Model
          * data center. Your AWS account must have the right trust policies and permissions
          * in place to create a job for Snowball. If you're creating a job for a node in a
          * cluster, you only need to provide the <code>clusterId</code> value; the other
-         * job attributes are inherited from the cluster. .</p>
+         * job attributes are inherited from the cluster. .</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CreateJob">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateJobOutcome CreateJob(const Model::CreateJobRequest& request) const;
 
@@ -318,7 +347,9 @@ namespace Model
          * data center. Your AWS account must have the right trust policies and permissions
          * in place to create a job for Snowball. If you're creating a job for a node in a
          * cluster, you only need to provide the <code>clusterId</code> value; the other
-         * job attributes are inherited from the cluster. .</p>
+         * job attributes are inherited from the cluster. .</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CreateJob">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -329,7 +360,9 @@ namespace Model
          * data center. Your AWS account must have the right trust policies and permissions
          * in place to create a job for Snowball. If you're creating a job for a node in a
          * cluster, you only need to provide the <code>clusterId</code> value; the other
-         * job attributes are inherited from the cluster. .</p>
+         * job attributes are inherited from the cluster. .</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CreateJob">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -337,13 +370,19 @@ namespace Model
 
         /**
          * <p>Takes an <code>AddressId</code> and returns specific details about that
-         * address in the form of an <code>Address</code> object.</p>
+         * address in the form of an <code>Address</code> object.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/DescribeAddress">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeAddressOutcome DescribeAddress(const Model::DescribeAddressRequest& request) const;
 
         /**
          * <p>Takes an <code>AddressId</code> and returns specific details about that
-         * address in the form of an <code>Address</code> object.</p>
+         * address in the form of an <code>Address</code> object.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/DescribeAddress">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -351,7 +390,10 @@ namespace Model
 
         /**
          * <p>Takes an <code>AddressId</code> and returns specific details about that
-         * address in the form of an <code>Address</code> object.</p>
+         * address in the form of an <code>Address</code> object.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/DescribeAddress">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -360,14 +402,18 @@ namespace Model
         /**
          * <p>Returns a specified number of <code>ADDRESS</code> objects. Calling this API
          * in one of the US regions will return addresses from the list of all addresses
-         * associated with this account in all US regions.</p>
+         * associated with this account in all US regions.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/DescribeAddresses">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeAddressesOutcome DescribeAddresses(const Model::DescribeAddressesRequest& request) const;
 
         /**
          * <p>Returns a specified number of <code>ADDRESS</code> objects. Calling this API
          * in one of the US regions will return addresses from the list of all addresses
-         * associated with this account in all US regions.</p>
+         * associated with this account in all US regions.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/DescribeAddresses">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -376,7 +422,9 @@ namespace Model
         /**
          * <p>Returns a specified number of <code>ADDRESS</code> objects. Calling this API
          * in one of the US regions will return addresses from the list of all addresses
-         * associated with this account in all US regions.</p>
+         * associated with this account in all US regions.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/DescribeAddresses">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -384,13 +432,17 @@ namespace Model
 
         /**
          * <p>Returns information about a specific cluster including shipping information,
-         * cluster status, and other important metadata.</p>
+         * cluster status, and other important metadata.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/DescribeCluster">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeClusterOutcome DescribeCluster(const Model::DescribeClusterRequest& request) const;
 
         /**
          * <p>Returns information about a specific cluster including shipping information,
-         * cluster status, and other important metadata.</p>
+         * cluster status, and other important metadata.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/DescribeCluster">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -398,7 +450,9 @@ namespace Model
 
         /**
          * <p>Returns information about a specific cluster including shipping information,
-         * cluster status, and other important metadata.</p>
+         * cluster status, and other important metadata.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/DescribeCluster">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -406,13 +460,17 @@ namespace Model
 
         /**
          * <p>Returns information about a specific job including shipping information, job
-         * status, and other important metadata. .</p>
+         * status, and other important metadata. .</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/DescribeJob">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeJobOutcome DescribeJob(const Model::DescribeJobRequest& request) const;
 
         /**
          * <p>Returns information about a specific job including shipping information, job
-         * status, and other important metadata. .</p>
+         * status, and other important metadata. .</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/DescribeJob">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -420,7 +478,9 @@ namespace Model
 
         /**
          * <p>Returns information about a specific job including shipping information, job
-         * status, and other important metadata. .</p>
+         * status, and other important metadata. .</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/DescribeJob">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -440,7 +500,10 @@ namespace Model
          * same location as the manifest file for that job. Saving these separately helps
          * prevent unauthorized parties from gaining access to the Snowball associated with
          * that job.</p> <p>The credentials of a given job, including its manifest file and
-         * unlock code, expire 90 days after the job is created.</p>
+         * unlock code, expire 90 days after the job is created.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/GetJobManifest">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetJobManifestOutcome GetJobManifest(const Model::GetJobManifestRequest& request) const;
 
@@ -458,7 +521,10 @@ namespace Model
          * same location as the manifest file for that job. Saving these separately helps
          * prevent unauthorized parties from gaining access to the Snowball associated with
          * that job.</p> <p>The credentials of a given job, including its manifest file and
-         * unlock code, expire 90 days after the job is created.</p>
+         * unlock code, expire 90 days after the job is created.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/GetJobManifest">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -478,7 +544,10 @@ namespace Model
          * same location as the manifest file for that job. Saving these separately helps
          * prevent unauthorized parties from gaining access to the Snowball associated with
          * that job.</p> <p>The credentials of a given job, including its manifest file and
-         * unlock code, expire 90 days after the job is created.</p>
+         * unlock code, expire 90 days after the job is created.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/GetJobManifest">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -494,7 +563,10 @@ namespace Model
          * first time.</p> <p>As a best practice, we recommend that you don't save a copy
          * of the <code>UnlockCode</code> in the same location as the manifest file for
          * that job. Saving these separately helps prevent unauthorized parties from
-         * gaining access to the Snowball associated with that job.</p>
+         * gaining access to the Snowball associated with that job.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/GetJobUnlockCode">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetJobUnlockCodeOutcome GetJobUnlockCode(const Model::GetJobUnlockCodeRequest& request) const;
 
@@ -508,7 +580,10 @@ namespace Model
          * first time.</p> <p>As a best practice, we recommend that you don't save a copy
          * of the <code>UnlockCode</code> in the same location as the manifest file for
          * that job. Saving these separately helps prevent unauthorized parties from
-         * gaining access to the Snowball associated with that job.</p>
+         * gaining access to the Snowball associated with that job.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/GetJobUnlockCode">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -524,7 +599,10 @@ namespace Model
          * first time.</p> <p>As a best practice, we recommend that you don't save a copy
          * of the <code>UnlockCode</code> in the same location as the manifest file for
          * that job. Saving these separately helps prevent unauthorized parties from
-         * gaining access to the Snowball associated with that job.</p>
+         * gaining access to the Snowball associated with that job.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/GetJobUnlockCode">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -534,7 +612,10 @@ namespace Model
          * <p>Returns information about the Snowball service limit for your account, and
          * also the number of Snowballs your account has in use.</p> <p>The default service
          * limit for the number of Snowballs that you can have at one time is 1. If you
-         * want to increase your service limit, contact AWS Support.</p>
+         * want to increase your service limit, contact AWS Support.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/GetSnowballUsage">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetSnowballUsageOutcome GetSnowballUsage(const Model::GetSnowballUsageRequest& request) const;
 
@@ -542,7 +623,10 @@ namespace Model
          * <p>Returns information about the Snowball service limit for your account, and
          * also the number of Snowballs your account has in use.</p> <p>The default service
          * limit for the number of Snowballs that you can have at one time is 1. If you
-         * want to increase your service limit, contact AWS Support.</p>
+         * want to increase your service limit, contact AWS Support.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/GetSnowballUsage">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -552,7 +636,10 @@ namespace Model
          * <p>Returns information about the Snowball service limit for your account, and
          * also the number of Snowballs your account has in use.</p> <p>The default service
          * limit for the number of Snowballs that you can have at one time is 1. If you
-         * want to increase your service limit, contact AWS Support.</p>
+         * want to increase your service limit, contact AWS Support.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/GetSnowballUsage">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -561,14 +648,20 @@ namespace Model
         /**
          * <p>Returns an array of <code>JobListEntry</code> objects of the specified
          * length. Each <code>JobListEntry</code> object is for a job in the specified
-         * cluster and contains a job's state, a job's ID, and other information.</p>
+         * cluster and contains a job's state, a job's ID, and other
+         * information.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListClusterJobs">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListClusterJobsOutcome ListClusterJobs(const Model::ListClusterJobsRequest& request) const;
 
         /**
          * <p>Returns an array of <code>JobListEntry</code> objects of the specified
          * length. Each <code>JobListEntry</code> object is for a job in the specified
-         * cluster and contains a job's state, a job's ID, and other information.</p>
+         * cluster and contains a job's state, a job's ID, and other
+         * information.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListClusterJobs">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -577,7 +670,10 @@ namespace Model
         /**
          * <p>Returns an array of <code>JobListEntry</code> objects of the specified
          * length. Each <code>JobListEntry</code> object is for a job in the specified
-         * cluster and contains a job's state, a job's ID, and other information.</p>
+         * cluster and contains a job's state, a job's ID, and other
+         * information.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListClusterJobs">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -586,14 +682,20 @@ namespace Model
         /**
          * <p>Returns an array of <code>ClusterListEntry</code> objects of the specified
          * length. Each <code>ClusterListEntry</code> object contains a cluster's state, a
-         * cluster's ID, and other important status information.</p>
+         * cluster's ID, and other important status information.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListClusters">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListClustersOutcome ListClusters(const Model::ListClustersRequest& request) const;
 
         /**
          * <p>Returns an array of <code>ClusterListEntry</code> objects of the specified
          * length. Each <code>ClusterListEntry</code> object contains a cluster's state, a
-         * cluster's ID, and other important status information.</p>
+         * cluster's ID, and other important status information.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListClusters">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -602,7 +704,10 @@ namespace Model
         /**
          * <p>Returns an array of <code>ClusterListEntry</code> objects of the specified
          * length. Each <code>ClusterListEntry</code> object contains a cluster's state, a
-         * cluster's ID, and other important status information.</p>
+         * cluster's ID, and other important status information.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListClusters">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -613,7 +718,10 @@ namespace Model
          * length. Each <code>JobListEntry</code> object contains a job's state, a job's
          * ID, and a value that indicates whether the job is a job part, in the case of
          * export jobs. Calling this API action in one of the US regions will return jobs
-         * from the list of all jobs associated with this account in all US regions.</p>
+         * from the list of all jobs associated with this account in all US
+         * regions.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListJobs">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListJobsOutcome ListJobs(const Model::ListJobsRequest& request) const;
 
@@ -622,7 +730,10 @@ namespace Model
          * length. Each <code>JobListEntry</code> object contains a job's state, a job's
          * ID, and a value that indicates whether the job is a job part, in the case of
          * export jobs. Calling this API action in one of the US regions will return jobs
-         * from the list of all jobs associated with this account in all US regions.</p>
+         * from the list of all jobs associated with this account in all US
+         * regions.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListJobs">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -633,7 +744,10 @@ namespace Model
          * length. Each <code>JobListEntry</code> object contains a job's state, a job's
          * ID, and a value that indicates whether the job is a job part, in the case of
          * export jobs. Calling this API action in one of the US regions will return jobs
-         * from the list of all jobs associated with this account in all US regions.</p>
+         * from the list of all jobs associated with this account in all US
+         * regions.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListJobs">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -644,7 +758,9 @@ namespace Model
          * <code>AwaitingQuorum</code> state, you can update some of the information
          * associated with a cluster. Once the cluster changes to a different job state,
          * usually 60 minutes after the cluster being created, this action is no longer
-         * available.</p>
+         * available.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/UpdateCluster">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateClusterOutcome UpdateCluster(const Model::UpdateClusterRequest& request) const;
 
@@ -653,7 +769,9 @@ namespace Model
          * <code>AwaitingQuorum</code> state, you can update some of the information
          * associated with a cluster. Once the cluster changes to a different job state,
          * usually 60 minutes after the cluster being created, this action is no longer
-         * available.</p>
+         * available.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/UpdateCluster">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -664,7 +782,9 @@ namespace Model
          * <code>AwaitingQuorum</code> state, you can update some of the information
          * associated with a cluster. Once the cluster changes to a different job state,
          * usually 60 minutes after the cluster being created, this action is no longer
-         * available.</p>
+         * available.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/UpdateCluster">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -674,7 +794,9 @@ namespace Model
          * <p>While a job's <code>JobState</code> value is <code>New</code>, you can update
          * some of the information associated with a job. Once the job changes to a
          * different job state, usually within 60 minutes of the job being created, this
-         * action is no longer available.</p>
+         * action is no longer available.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/UpdateJob">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateJobOutcome UpdateJob(const Model::UpdateJobRequest& request) const;
 
@@ -682,7 +804,9 @@ namespace Model
          * <p>While a job's <code>JobState</code> value is <code>New</code>, you can update
          * some of the information associated with a job. Once the job changes to a
          * different job state, usually within 60 minutes of the job being created, this
-         * action is no longer available.</p>
+         * action is no longer available.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/UpdateJob">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -692,7 +816,9 @@ namespace Model
          * <p>While a job's <code>JobState</code> value is <code>New</code>, you can update
          * some of the information associated with a job. Once the job changes to a
          * different job state, usually within 60 minutes of the job being created, this
-         * action is no longer available.</p>
+         * action is no longer available.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/UpdateJob">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */

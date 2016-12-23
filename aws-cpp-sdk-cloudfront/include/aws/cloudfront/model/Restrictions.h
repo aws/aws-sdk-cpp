@@ -32,7 +32,9 @@ namespace Model
 
   /**
    * A complex type that identifies ways in which you want to restrict distribution
-   * of your content.
+   * of your content.<p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/Restrictions">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API Restrictions
   {

@@ -32,7 +32,9 @@ namespace Model
 {
 
   /**
-   * <p>Represents the raw data of the message.</p>
+   * <p>Represents the raw data of the message.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/RawMessage">AWS
+   * API Reference</a></p>
    */
   class AWS_SES_API RawMessage
   {

@@ -32,7 +32,9 @@ namespace Model
 
   /**
    * <p>The HLS content protection settings, if any, that you want Elastic Transcoder
-   * to apply to your output files.</p>
+   * to apply to your output files.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/HlsContentProtection">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICTRANSCODER_API HlsContentProtection
   {

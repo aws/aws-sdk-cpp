@@ -30,7 +30,10 @@ namespace Model
 {
 
   /**
-   * <p>Request a new export of a <a>RestApi</a> for a particular <a>Stage</a>.</p>
+   * <p>Request a new export of a <a>RestApi</a> for a particular
+   * <a>Stage</a>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetExportRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_APIGATEWAY_API GetExportRequest : public APIGatewayRequest
   {

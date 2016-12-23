@@ -31,9 +31,6 @@ namespace Firehose
 {
 namespace Model
 {
-  /**
-   * <p>Contains the output of <a>UpdateDestination</a>.</p>
-   */
   class AWS_FIREHOSE_API UpdateDestinationResult
   {
   public:

@@ -36,6 +36,7 @@ CreateUserPoolRequest::CreateUserPoolRequest() :
     m_deviceConfigurationHasBeenSet(false),
     m_emailConfigurationHasBeenSet(false),
     m_smsConfigurationHasBeenSet(false),
+    m_userPoolTagsHasBeenSet(false),
     m_adminCreateUserConfigHasBeenSet(false),
     m_schemaHasBeenSet(false)
 {
@@ -129,6 +130,17 @@ Aws::String CreateUserPoolRequest::SerializePayload() const
   if(m_smsConfigurationHasBeenSet)
   {
    payload.WithObject("SmsConfiguration", m_smsConfiguration.Jsonize());
+
+  }
+
+  if(m_userPoolTagsHasBeenSet)
+  {
+   JsonValue userPoolTagsJsonMap;
+   for(auto& userPoolTagsItem : m_userPoolTags)
+   {
+     userPoolTagsJsonMap.WithString(userPoolTagsItem.first, userPoolTagsItem.second);
+   }
+   payload.WithObject("UserPoolTags", std::move(userPoolTagsJsonMap));
 
   }
 

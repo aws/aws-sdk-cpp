@@ -32,7 +32,9 @@ namespace Model
 
   /**
    * <p>Describes the database details required to connect to an Amazon Redshift
-   * database.</p>
+   * database.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/RedshiftDatabase">AWS
+   * API Reference</a></p>
    */
   class AWS_MACHINELEARNING_API RedshiftDatabase
   {

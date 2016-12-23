@@ -16,6 +16,7 @@
 #include <aws/firehose/Firehose_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/firehose/model/S3DestinationDescription.h>
+#include <aws/firehose/model/ExtendedS3DestinationDescription.h>
 #include <aws/firehose/model/RedshiftDestinationDescription.h>
 #include <aws/firehose/model/ElasticsearchDestinationDescription.h>
 
@@ -34,7 +35,10 @@ namespace Model
 {
 
   /**
-   * <p>Describes the destination for a delivery stream.</p>
+   * <p>Describes the destination for a delivery stream.</p><p><h3>See Also:</h3>  
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/DestinationDescription">AWS
+   * API Reference</a></p>
    */
   class AWS_FIREHOSE_API DestinationDescription
   {
@@ -80,29 +84,54 @@ namespace Model
     inline DestinationDescription& WithDestinationId(const char* value) { SetDestinationId(value); return *this;}
 
     /**
-     * <p>The Amazon S3 destination.</p>
+     * <p>[Deprecated] The destination in Amazon S3.</p>
      */
     inline const S3DestinationDescription& GetS3DestinationDescription() const{ return m_s3DestinationDescription; }
 
     /**
-     * <p>The Amazon S3 destination.</p>
+     * <p>[Deprecated] The destination in Amazon S3.</p>
      */
     inline void SetS3DestinationDescription(const S3DestinationDescription& value) { m_s3DestinationDescriptionHasBeenSet = true; m_s3DestinationDescription = value; }
 
     /**
-     * <p>The Amazon S3 destination.</p>
+     * <p>[Deprecated] The destination in Amazon S3.</p>
      */
     inline void SetS3DestinationDescription(S3DestinationDescription&& value) { m_s3DestinationDescriptionHasBeenSet = true; m_s3DestinationDescription = value; }
 
     /**
-     * <p>The Amazon S3 destination.</p>
+     * <p>[Deprecated] The destination in Amazon S3.</p>
      */
     inline DestinationDescription& WithS3DestinationDescription(const S3DestinationDescription& value) { SetS3DestinationDescription(value); return *this;}
 
     /**
-     * <p>The Amazon S3 destination.</p>
+     * <p>[Deprecated] The destination in Amazon S3.</p>
      */
     inline DestinationDescription& WithS3DestinationDescription(S3DestinationDescription&& value) { SetS3DestinationDescription(value); return *this;}
+
+    /**
+     * <p>The destination in Amazon S3.</p>
+     */
+    inline const ExtendedS3DestinationDescription& GetExtendedS3DestinationDescription() const{ return m_extendedS3DestinationDescription; }
+
+    /**
+     * <p>The destination in Amazon S3.</p>
+     */
+    inline void SetExtendedS3DestinationDescription(const ExtendedS3DestinationDescription& value) { m_extendedS3DestinationDescriptionHasBeenSet = true; m_extendedS3DestinationDescription = value; }
+
+    /**
+     * <p>The destination in Amazon S3.</p>
+     */
+    inline void SetExtendedS3DestinationDescription(ExtendedS3DestinationDescription&& value) { m_extendedS3DestinationDescriptionHasBeenSet = true; m_extendedS3DestinationDescription = value; }
+
+    /**
+     * <p>The destination in Amazon S3.</p>
+     */
+    inline DestinationDescription& WithExtendedS3DestinationDescription(const ExtendedS3DestinationDescription& value) { SetExtendedS3DestinationDescription(value); return *this;}
+
+    /**
+     * <p>The destination in Amazon S3.</p>
+     */
+    inline DestinationDescription& WithExtendedS3DestinationDescription(ExtendedS3DestinationDescription&& value) { SetExtendedS3DestinationDescription(value); return *this;}
 
     /**
      * <p>The destination in Amazon Redshift.</p>
@@ -159,6 +188,8 @@ namespace Model
     bool m_destinationIdHasBeenSet;
     S3DestinationDescription m_s3DestinationDescription;
     bool m_s3DestinationDescriptionHasBeenSet;
+    ExtendedS3DestinationDescription m_extendedS3DestinationDescription;
+    bool m_extendedS3DestinationDescriptionHasBeenSet;
     RedshiftDestinationDescription m_redshiftDestinationDescription;
     bool m_redshiftDestinationDescriptionHasBeenSet;
     ElasticsearchDestinationDescription m_elasticsearchDestinationDescription;

@@ -34,7 +34,9 @@ namespace Model
    * <p>A regional grouping of one or more container instances on which you can run
    * task requests. Each account receives a default cluster the first time you use
    * the Amazon ECS service, but you may also create other clusters. Clusters may
-   * contain more than one instance type simultaneously.</p>
+   * contain more than one instance type simultaneously.</p><p><h3>See Also:</h3>  
+   * <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/Cluster">AWS API
+   * Reference</a></p>
    */
   class AWS_ECS_API Cluster
   {

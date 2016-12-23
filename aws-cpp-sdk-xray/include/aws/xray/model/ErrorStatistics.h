@@ -31,7 +31,9 @@ namespace Model
 
   /**
    * <p>Information about requests that failed with a 4xx Client Error status
-   * code.</p>
+   * code.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/ErrorStatistics">AWS
+   * API Reference</a></p>
    */
   class AWS_XRAY_API ErrorStatistics
   {

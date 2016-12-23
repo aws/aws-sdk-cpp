@@ -34,7 +34,10 @@ namespace Model
 
   /**
    * <p>A filter used to match specific automation executions. This is used to limit
-   * the scope of Automation execution information returned.</p>
+   * the scope of Automation execution information returned.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/AutomationExecutionFilter">AWS
+   * API Reference</a></p>
    */
   class AWS_SSM_API AutomationExecutionFilter
   {

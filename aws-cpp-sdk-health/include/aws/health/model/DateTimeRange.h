@@ -39,7 +39,9 @@ namespace Model
    * <code>to</code> is not set: match items where the timestamp value is equal to or
    * after <code>from</code>. If <code>from</code> is not set and <code>to</code> is
    * set: match items where the timestamp value is equal to or before
-   * <code>to</code>.</p>
+   * <code>to</code>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DateTimeRange">AWS
+   * API Reference</a></p>
    */
   class AWS_HEALTH_API DateTimeRange
   {

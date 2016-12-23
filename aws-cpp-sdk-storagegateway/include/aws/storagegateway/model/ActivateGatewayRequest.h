@@ -32,7 +32,10 @@ namespace Model
    * <a>ActivateGatewayInput$GatewayTimezone</a> </p> </li> <li> <p>
    * <a>ActivateGatewayInput$GatewayType</a> </p> </li> <li> <p>
    * <a>ActivateGatewayInput$TapeDriveType</a> </p> </li> <li> <p>
-   * <a>ActivateGatewayInput$MediumChangerType</a> </p> </li> </ul>
+   * <a>ActivateGatewayInput$MediumChangerType</a> </p> </li> </ul><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ActivateGatewayInput">AWS
+   * API Reference</a></p>
    */
   class AWS_STORAGEGATEWAY_API ActivateGatewayRequest : public StorageGatewayRequest
   {

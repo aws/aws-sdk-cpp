@@ -34,7 +34,9 @@ namespace Model
   /**
    * <p>In an <a>UpdateByteMatchSet</a> request, <code>ByteMatchSetUpdate</code>
    * specifies whether to insert or delete a <a>ByteMatchTuple</a> and includes the
-   * settings for the <code>ByteMatchTuple</code>.</p>
+   * settings for the <code>ByteMatchTuple</code>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ByteMatchSetUpdate">AWS
+   * API Reference</a></p>
    */
   class AWS_WAF_API ByteMatchSetUpdate
   {

@@ -35,7 +35,9 @@ namespace Model
 {
   /**
    * <p>The result of a <code>ListDomainNames</code> operation. Contains the names of
-   * all Elasticsearch domains owned by this account.</p>
+   * all Elasticsearch domains owned by this account.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/ListDomainNamesResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICSEARCHSERVICE_API ListDomainNamesResult
   {

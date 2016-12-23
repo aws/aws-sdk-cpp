@@ -27,7 +27,10 @@ namespace Model
 {
 
   /**
-   * <p>Request to retrieve a list of events for an environment.</p>
+   * <p>Request to retrieve a list of events for an environment.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEventsMessage">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICBEANSTALK_API DescribeEventsRequest : public ElasticBeanstalkRequest
   {

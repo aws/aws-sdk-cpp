@@ -34,7 +34,9 @@ namespace Model
 {
   /**
    * <p>The result of the ResolveCustomer operation. Contains the CustomerIdentifier
-   * and product code.</p>
+   * and product code.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/meteringmarketplace-2016-01-14/ResolveCustomerResult">AWS
+   * API Reference</a></p>
    */
   class AWS_MARKETPLACEMETERING_API ResolveCustomerResult
   {

@@ -161,7 +161,9 @@ namespace Model
          * <p>Deleting a policy deletes the underlying alarm action, but does not delete
          * the CloudWatch alarm associated with the scaling policy, even if it no longer
          * has an associated action.</p> <p>To create a scaling policy or update an
-         * existing one, see <a>PutScalingPolicy</a>.</p>
+         * existing one, see <a>PutScalingPolicy</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/DeleteScalingPolicy">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteScalingPolicyOutcome DeleteScalingPolicy(const Model::DeleteScalingPolicyRequest& request) const;
 
@@ -170,7 +172,9 @@ namespace Model
          * <p>Deleting a policy deletes the underlying alarm action, but does not delete
          * the CloudWatch alarm associated with the scaling policy, even if it no longer
          * has an associated action.</p> <p>To create a scaling policy or update an
-         * existing one, see <a>PutScalingPolicy</a>.</p>
+         * existing one, see <a>PutScalingPolicy</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/DeleteScalingPolicy">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -181,7 +185,9 @@ namespace Model
          * <p>Deleting a policy deletes the underlying alarm action, but does not delete
          * the CloudWatch alarm associated with the scaling policy, even if it no longer
          * has an associated action.</p> <p>To create a scaling policy or update an
-         * existing one, see <a>PutScalingPolicy</a>.</p>
+         * existing one, see <a>PutScalingPolicy</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/DeleteScalingPolicy">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -190,14 +196,20 @@ namespace Model
         /**
          * <p>Deregisters a scalable target.</p> <p>Deregistering a scalable target deletes
          * the scaling policies that are associated with it.</p> <p>To create a scalable
-         * target or update an existing one, see <a>RegisterScalableTarget</a>.</p>
+         * target or update an existing one, see
+         * <a>RegisterScalableTarget</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/DeregisterScalableTarget">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeregisterScalableTargetOutcome DeregisterScalableTarget(const Model::DeregisterScalableTargetRequest& request) const;
 
         /**
          * <p>Deregisters a scalable target.</p> <p>Deregistering a scalable target deletes
          * the scaling policies that are associated with it.</p> <p>To create a scalable
-         * target or update an existing one, see <a>RegisterScalableTarget</a>.</p>
+         * target or update an existing one, see
+         * <a>RegisterScalableTarget</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/DeregisterScalableTarget">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -206,7 +218,10 @@ namespace Model
         /**
          * <p>Deregisters a scalable target.</p> <p>Deregistering a scalable target deletes
          * the scaling policies that are associated with it.</p> <p>To create a scalable
-         * target or update an existing one, see <a>RegisterScalableTarget</a>.</p>
+         * target or update an existing one, see
+         * <a>RegisterScalableTarget</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/DeregisterScalableTarget">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -218,7 +233,9 @@ namespace Model
          * and <code>ScalableDimension</code> parameters.</p> <p>To create a scalable
          * target or update an existing one, see <a>RegisterScalableTarget</a>. If you are
          * no longer using a scalable target, you can deregister it using
-         * <a>DeregisterScalableTarget</a>.</p>
+         * <a>DeregisterScalableTarget</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/DescribeScalableTargets">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeScalableTargetsOutcome DescribeScalableTargets(const Model::DescribeScalableTargetsRequest& request) const;
 
@@ -228,7 +245,9 @@ namespace Model
          * and <code>ScalableDimension</code> parameters.</p> <p>To create a scalable
          * target or update an existing one, see <a>RegisterScalableTarget</a>. If you are
          * no longer using a scalable target, you can deregister it using
-         * <a>DeregisterScalableTarget</a>.</p>
+         * <a>DeregisterScalableTarget</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/DescribeScalableTargets">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -240,7 +259,9 @@ namespace Model
          * and <code>ScalableDimension</code> parameters.</p> <p>To create a scalable
          * target or update an existing one, see <a>RegisterScalableTarget</a>. If you are
          * no longer using a scalable target, you can deregister it using
-         * <a>DeregisterScalableTarget</a>.</p>
+         * <a>DeregisterScalableTarget</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/DescribeScalableTargets">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -253,7 +274,10 @@ namespace Model
          * parameters.</p> <p>Scaling activities are triggered by CloudWatch alarms that
          * are associated with scaling policies. To view the scaling policies for a service
          * namespace, see <a>DescribeScalingPolicies</a>. To create a scaling policy or
-         * update an existing one, see <a>PutScalingPolicy</a>.</p>
+         * update an existing one, see <a>PutScalingPolicy</a>.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/DescribeScalingActivities">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeScalingActivitiesOutcome DescribeScalingActivities(const Model::DescribeScalingActivitiesRequest& request) const;
 
@@ -264,7 +288,10 @@ namespace Model
          * parameters.</p> <p>Scaling activities are triggered by CloudWatch alarms that
          * are associated with scaling policies. To view the scaling policies for a service
          * namespace, see <a>DescribeScalingPolicies</a>. To create a scaling policy or
-         * update an existing one, see <a>PutScalingPolicy</a>.</p>
+         * update an existing one, see <a>PutScalingPolicy</a>.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/DescribeScalingActivities">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -277,7 +304,10 @@ namespace Model
          * parameters.</p> <p>Scaling activities are triggered by CloudWatch alarms that
          * are associated with scaling policies. To view the scaling policies for a service
          * namespace, see <a>DescribeScalingPolicies</a>. To create a scaling policy or
-         * update an existing one, see <a>PutScalingPolicy</a>.</p>
+         * update an existing one, see <a>PutScalingPolicy</a>.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/DescribeScalingActivities">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -289,7 +319,9 @@ namespace Model
          * <code>ScalableDimension</code>, and <code>PolicyNames</code> parameters.</p>
          * <p>To create a scaling policy or update an existing one, see
          * <a>PutScalingPolicy</a>. If you are no longer using a scaling policy, you can
-         * delete it using <a>DeleteScalingPolicy</a>.</p>
+         * delete it using <a>DeleteScalingPolicy</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/DescribeScalingPolicies">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeScalingPoliciesOutcome DescribeScalingPolicies(const Model::DescribeScalingPoliciesRequest& request) const;
 
@@ -299,7 +331,9 @@ namespace Model
          * <code>ScalableDimension</code>, and <code>PolicyNames</code> parameters.</p>
          * <p>To create a scaling policy or update an existing one, see
          * <a>PutScalingPolicy</a>. If you are no longer using a scaling policy, you can
-         * delete it using <a>DeleteScalingPolicy</a>.</p>
+         * delete it using <a>DeleteScalingPolicy</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/DescribeScalingPolicies">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -311,7 +345,9 @@ namespace Model
          * <code>ScalableDimension</code>, and <code>PolicyNames</code> parameters.</p>
          * <p>To create a scaling policy or update an existing one, see
          * <a>PutScalingPolicy</a>. If you are no longer using a scaling policy, you can
-         * delete it using <a>DeleteScalingPolicy</a>.</p>
+         * delete it using <a>DeleteScalingPolicy</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/DescribeScalingPolicies">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -328,7 +364,9 @@ namespace Model
          * specify are not changed by this update request.</p> <p>You can view the scaling
          * policies for a service namespace using <a>DescribeScalingPolicies</a>. If you
          * are no longer using a scaling policy, you can delete it using
-         * <a>DeleteScalingPolicy</a>.</p>
+         * <a>DeleteScalingPolicy</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/PutScalingPolicy">AWS
+         * API Reference</a></p>
          */
         virtual Model::PutScalingPolicyOutcome PutScalingPolicy(const Model::PutScalingPolicyRequest& request) const;
 
@@ -343,7 +381,9 @@ namespace Model
          * specify are not changed by this update request.</p> <p>You can view the scaling
          * policies for a service namespace using <a>DescribeScalingPolicies</a>. If you
          * are no longer using a scaling policy, you can delete it using
-         * <a>DeleteScalingPolicy</a>.</p>
+         * <a>DeleteScalingPolicy</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/PutScalingPolicy">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -360,7 +400,9 @@ namespace Model
          * specify are not changed by this update request.</p> <p>You can view the scaling
          * policies for a service namespace using <a>DescribeScalingPolicies</a>. If you
          * are no longer using a scaling policy, you can delete it using
-         * <a>DeleteScalingPolicy</a>.</p>
+         * <a>DeleteScalingPolicy</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/PutScalingPolicy">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -374,7 +416,10 @@ namespace Model
          * you can create and apply scaling policies using <a>PutScalingPolicy</a>. You can
          * view the scaling policies for a service namespace using
          * <a>DescribeScalableTargets</a>. If you are no longer using a scalable target,
-         * you can deregister it using <a>DeregisterScalableTarget</a>.</p>
+         * you can deregister it using <a>DeregisterScalableTarget</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/RegisterScalableTarget">AWS
+         * API Reference</a></p>
          */
         virtual Model::RegisterScalableTargetOutcome RegisterScalableTarget(const Model::RegisterScalableTargetRequest& request) const;
 
@@ -386,7 +431,10 @@ namespace Model
          * you can create and apply scaling policies using <a>PutScalingPolicy</a>. You can
          * view the scaling policies for a service namespace using
          * <a>DescribeScalableTargets</a>. If you are no longer using a scalable target,
-         * you can deregister it using <a>DeregisterScalableTarget</a>.</p>
+         * you can deregister it using <a>DeregisterScalableTarget</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/RegisterScalableTarget">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -400,7 +448,10 @@ namespace Model
          * you can create and apply scaling policies using <a>PutScalingPolicy</a>. You can
          * view the scaling policies for a service namespace using
          * <a>DescribeScalableTargets</a>. If you are no longer using a scalable target,
-         * you can deregister it using <a>DeregisterScalableTarget</a>.</p>
+         * you can deregister it using <a>DeregisterScalableTarget</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/RegisterScalableTarget">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */

@@ -33,7 +33,9 @@ namespace Model
 {
 
   /**
-   * <p>A tag and its associated resource.</p>
+   * <p>A tag and its associated resource.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/TaggedResource">AWS
+   * API Reference</a></p>
    */
   class AWS_REDSHIFT_API TaggedResource
   {

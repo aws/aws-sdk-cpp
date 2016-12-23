@@ -31,7 +31,10 @@ namespace Model
 {
 
   /**
-   * <p>Contains the identifier and the name or description of the <a>WebACL</a>.</p>
+   * <p>Contains the identifier and the name or description of the
+   * <a>WebACL</a>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/WebACLSummary">AWS
+   * API Reference</a></p>
    */
   class AWS_WAF_API WebACLSummary
   {

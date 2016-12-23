@@ -31,7 +31,9 @@ namespace Model
   /**
    * <p>The POST request to create a usage plan with the name, description, throttle
    * limits and quota limits, as well as the associated API stages, specified in the
-   * payload.</p>
+   * payload.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateUsagePlanRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_APIGATEWAY_API CreateUsagePlanRequest : public APIGatewayRequest
   {

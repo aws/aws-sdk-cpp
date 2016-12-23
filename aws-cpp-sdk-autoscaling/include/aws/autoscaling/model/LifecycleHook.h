@@ -39,7 +39,10 @@ namespace Model
    * <p>Pause the instance as it terminates, but before it is fully terminated</p>
    * </li> </ul> <p>For more information, see <a
    * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/AutoScalingGroupLifecycle.html">Auto
-   * Scaling Lifecycle</a> in the <i>Auto Scaling User Guide</i>.</p>
+   * Scaling Lifecycle</a> in the <i>Auto Scaling User Guide</i>.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/LifecycleHook">AWS
+   * API Reference</a></p>
    */
   class AWS_AUTOSCALING_API LifecycleHook
   {

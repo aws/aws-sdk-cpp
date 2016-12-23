@@ -33,7 +33,10 @@ namespace Model
 {
   /**
    * <p>The response body contains a JSON object. If the job is successfully
-   * canceled, the value of <code>Success</code> is <code>true</code>.</p>
+   * canceled, the value of <code>Success</code> is <code>true</code>.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/CancelJobResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICTRANSCODER_API CancelJobResult
   {

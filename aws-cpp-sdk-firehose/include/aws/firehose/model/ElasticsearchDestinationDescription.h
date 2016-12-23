@@ -20,6 +20,7 @@
 #include <aws/firehose/model/ElasticsearchRetryOptions.h>
 #include <aws/firehose/model/ElasticsearchS3BackupMode.h>
 #include <aws/firehose/model/S3DestinationDescription.h>
+#include <aws/firehose/model/ProcessingConfiguration.h>
 #include <aws/firehose/model/CloudWatchLoggingOptions.h>
 
 namespace Aws
@@ -37,7 +38,9 @@ namespace Model
 {
 
   /**
-   * <p>The destination description in Amazon ES.</p>
+   * <p>The destination description in Amazon ES.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/ElasticsearchDestinationDescription">AWS
+   * API Reference</a></p>
    */
   class AWS_FIREHOSE_API ElasticsearchDestinationDescription
   {
@@ -213,117 +216,152 @@ namespace Model
     inline ElasticsearchDestinationDescription& WithIndexRotationPeriod(ElasticsearchIndexRotationPeriod&& value) { SetIndexRotationPeriod(value); return *this;}
 
     /**
-     * <p>Buffering options.</p>
+     * <p>The buffering options.</p>
      */
     inline const ElasticsearchBufferingHints& GetBufferingHints() const{ return m_bufferingHints; }
 
     /**
-     * <p>Buffering options.</p>
+     * <p>The buffering options.</p>
      */
     inline void SetBufferingHints(const ElasticsearchBufferingHints& value) { m_bufferingHintsHasBeenSet = true; m_bufferingHints = value; }
 
     /**
-     * <p>Buffering options.</p>
+     * <p>The buffering options.</p>
      */
     inline void SetBufferingHints(ElasticsearchBufferingHints&& value) { m_bufferingHintsHasBeenSet = true; m_bufferingHints = value; }
 
     /**
-     * <p>Buffering options.</p>
+     * <p>The buffering options.</p>
      */
     inline ElasticsearchDestinationDescription& WithBufferingHints(const ElasticsearchBufferingHints& value) { SetBufferingHints(value); return *this;}
 
     /**
-     * <p>Buffering options.</p>
+     * <p>The buffering options.</p>
      */
     inline ElasticsearchDestinationDescription& WithBufferingHints(ElasticsearchBufferingHints&& value) { SetBufferingHints(value); return *this;}
 
     /**
-     * <p>Elasticsearch retry options.</p>
+     * <p>The Amazon ES retry options.</p>
      */
     inline const ElasticsearchRetryOptions& GetRetryOptions() const{ return m_retryOptions; }
 
     /**
-     * <p>Elasticsearch retry options.</p>
+     * <p>The Amazon ES retry options.</p>
      */
     inline void SetRetryOptions(const ElasticsearchRetryOptions& value) { m_retryOptionsHasBeenSet = true; m_retryOptions = value; }
 
     /**
-     * <p>Elasticsearch retry options.</p>
+     * <p>The Amazon ES retry options.</p>
      */
     inline void SetRetryOptions(ElasticsearchRetryOptions&& value) { m_retryOptionsHasBeenSet = true; m_retryOptions = value; }
 
     /**
-     * <p>Elasticsearch retry options.</p>
+     * <p>The Amazon ES retry options.</p>
      */
     inline ElasticsearchDestinationDescription& WithRetryOptions(const ElasticsearchRetryOptions& value) { SetRetryOptions(value); return *this;}
 
     /**
-     * <p>Elasticsearch retry options.</p>
+     * <p>The Amazon ES retry options.</p>
      */
     inline ElasticsearchDestinationDescription& WithRetryOptions(ElasticsearchRetryOptions&& value) { SetRetryOptions(value); return *this;}
 
     /**
-     * <p>Amazon S3 backup mode.</p>
+     * <p>The Amazon S3 backup mode.</p>
      */
     inline const ElasticsearchS3BackupMode& GetS3BackupMode() const{ return m_s3BackupMode; }
 
     /**
-     * <p>Amazon S3 backup mode.</p>
+     * <p>The Amazon S3 backup mode.</p>
      */
     inline void SetS3BackupMode(const ElasticsearchS3BackupMode& value) { m_s3BackupModeHasBeenSet = true; m_s3BackupMode = value; }
 
     /**
-     * <p>Amazon S3 backup mode.</p>
+     * <p>The Amazon S3 backup mode.</p>
      */
     inline void SetS3BackupMode(ElasticsearchS3BackupMode&& value) { m_s3BackupModeHasBeenSet = true; m_s3BackupMode = value; }
 
     /**
-     * <p>Amazon S3 backup mode.</p>
+     * <p>The Amazon S3 backup mode.</p>
      */
     inline ElasticsearchDestinationDescription& WithS3BackupMode(const ElasticsearchS3BackupMode& value) { SetS3BackupMode(value); return *this;}
 
     /**
-     * <p>Amazon S3 backup mode.</p>
+     * <p>The Amazon S3 backup mode.</p>
      */
     inline ElasticsearchDestinationDescription& WithS3BackupMode(ElasticsearchS3BackupMode&& value) { SetS3BackupMode(value); return *this;}
 
-    
+    /**
+     * <p>The Amazon S3 destination.</p>
+     */
     inline const S3DestinationDescription& GetS3DestinationDescription() const{ return m_s3DestinationDescription; }
 
-    
+    /**
+     * <p>The Amazon S3 destination.</p>
+     */
     inline void SetS3DestinationDescription(const S3DestinationDescription& value) { m_s3DestinationDescriptionHasBeenSet = true; m_s3DestinationDescription = value; }
 
-    
+    /**
+     * <p>The Amazon S3 destination.</p>
+     */
     inline void SetS3DestinationDescription(S3DestinationDescription&& value) { m_s3DestinationDescriptionHasBeenSet = true; m_s3DestinationDescription = value; }
 
-    
+    /**
+     * <p>The Amazon S3 destination.</p>
+     */
     inline ElasticsearchDestinationDescription& WithS3DestinationDescription(const S3DestinationDescription& value) { SetS3DestinationDescription(value); return *this;}
 
-    
+    /**
+     * <p>The Amazon S3 destination.</p>
+     */
     inline ElasticsearchDestinationDescription& WithS3DestinationDescription(S3DestinationDescription&& value) { SetS3DestinationDescription(value); return *this;}
 
     /**
-     * <p>CloudWatch logging options.</p>
+     * <p>The data processing configuration.</p>
+     */
+    inline const ProcessingConfiguration& GetProcessingConfiguration() const{ return m_processingConfiguration; }
+
+    /**
+     * <p>The data processing configuration.</p>
+     */
+    inline void SetProcessingConfiguration(const ProcessingConfiguration& value) { m_processingConfigurationHasBeenSet = true; m_processingConfiguration = value; }
+
+    /**
+     * <p>The data processing configuration.</p>
+     */
+    inline void SetProcessingConfiguration(ProcessingConfiguration&& value) { m_processingConfigurationHasBeenSet = true; m_processingConfiguration = value; }
+
+    /**
+     * <p>The data processing configuration.</p>
+     */
+    inline ElasticsearchDestinationDescription& WithProcessingConfiguration(const ProcessingConfiguration& value) { SetProcessingConfiguration(value); return *this;}
+
+    /**
+     * <p>The data processing configuration.</p>
+     */
+    inline ElasticsearchDestinationDescription& WithProcessingConfiguration(ProcessingConfiguration&& value) { SetProcessingConfiguration(value); return *this;}
+
+    /**
+     * <p>The CloudWatch logging options.</p>
      */
     inline const CloudWatchLoggingOptions& GetCloudWatchLoggingOptions() const{ return m_cloudWatchLoggingOptions; }
 
     /**
-     * <p>CloudWatch logging options.</p>
+     * <p>The CloudWatch logging options.</p>
      */
     inline void SetCloudWatchLoggingOptions(const CloudWatchLoggingOptions& value) { m_cloudWatchLoggingOptionsHasBeenSet = true; m_cloudWatchLoggingOptions = value; }
 
     /**
-     * <p>CloudWatch logging options.</p>
+     * <p>The CloudWatch logging options.</p>
      */
     inline void SetCloudWatchLoggingOptions(CloudWatchLoggingOptions&& value) { m_cloudWatchLoggingOptionsHasBeenSet = true; m_cloudWatchLoggingOptions = value; }
 
     /**
-     * <p>CloudWatch logging options.</p>
+     * <p>The CloudWatch logging options.</p>
      */
     inline ElasticsearchDestinationDescription& WithCloudWatchLoggingOptions(const CloudWatchLoggingOptions& value) { SetCloudWatchLoggingOptions(value); return *this;}
 
     /**
-     * <p>CloudWatch logging options.</p>
+     * <p>The CloudWatch logging options.</p>
      */
     inline ElasticsearchDestinationDescription& WithCloudWatchLoggingOptions(CloudWatchLoggingOptions&& value) { SetCloudWatchLoggingOptions(value); return *this;}
 
@@ -346,6 +384,8 @@ namespace Model
     bool m_s3BackupModeHasBeenSet;
     S3DestinationDescription m_s3DestinationDescription;
     bool m_s3DestinationDescriptionHasBeenSet;
+    ProcessingConfiguration m_processingConfiguration;
+    bool m_processingConfigurationHasBeenSet;
     CloudWatchLoggingOptions m_cloudWatchLoggingOptions;
     bool m_cloudWatchLoggingOptionsHasBeenSet;
   };

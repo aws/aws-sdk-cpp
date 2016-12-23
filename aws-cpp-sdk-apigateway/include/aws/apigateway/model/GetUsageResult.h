@@ -40,7 +40,9 @@ namespace Model
    * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-api-usage-plans.html">Create
    * and Use Usage Plans</a>, <a
    * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-create-usage-plans-with-console.html#api-gateway-usage-plan-manage-usage">Manage
-   * Usage in a Usage Plan</a> </div>
+   * Usage in a Usage Plan</a> </div><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/Usage">AWS
+   * API Reference</a></p>
    */
   class AWS_APIGATEWAY_API GetUsageResult
   {

@@ -178,6 +178,16 @@ void RDSClient::init(const ClientConfiguration& config)
   m_uri = ss.str();
 }
 
+Aws::String RDSClient::ConvertRequestToPresignedUrl(const AmazonSerializableWebServiceRequest& requestToConvert, const char* region) const
+{
+  Aws::StringStream ss;
+  ss << "https://" << RDSEndpoint::ForRegion(region);
+  ss << "?" << requestToConvert.SerializePayload();
+
+  URI uri(ss.str());
+  return GeneratePresignedUrl(uri, HttpMethod::HTTP_GET, region, 3600);
+}
+
 AddRoleToDBClusterOutcome RDSClient::AddRoleToDBCluster(const AddRoleToDBClusterRequest& request) const
 {
   Aws::StringStream ss;
@@ -3015,4 +3025,6 @@ void RDSClient::RevokeDBSecurityGroupIngressAsyncHelper(const RevokeDBSecurityGr
 {
   handler(this, request, RevokeDBSecurityGroupIngress(request), context);
 }
+
+
 

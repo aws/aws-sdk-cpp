@@ -17,6 +17,7 @@
 #include <aws/sts/STSErrors.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -180,6 +181,12 @@ namespace Model
 
         virtual ~STSClient();
 
+       /**
+        * Converts any request object to a presigned URL with the GET method, using region for the signer and a timeout of 15 minutes.
+        */
+        Aws::String ConvertRequestToPresignedUrl(const AmazonSerializableWebServiceRequest& requestToConvert, const char* region) const;
+
+
         /**
          * <p>Returns a set of temporary security credentials (consisting of an access key
          * ID, a secret access key, and a security token) that you can use to access AWS
@@ -259,7 +266,9 @@ namespace Model
          * <code>SerialNumber</code> and <code>TokenCode</code> parameters. The
          * <code>SerialNumber</code> value identifies the user's hardware or virtual MFA
          * device. The <code>TokenCode</code> is the time-based one-time password (TOTP)
-         * that the MFA devices produces. </p>
+         * that the MFA devices produces. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/AssumeRole">AWS API
+         * Reference</a></p>
          */
         virtual Model::AssumeRoleOutcome AssumeRole(const Model::AssumeRoleRequest& request) const;
 
@@ -342,7 +351,9 @@ namespace Model
          * <code>SerialNumber</code> and <code>TokenCode</code> parameters. The
          * <code>SerialNumber</code> value identifies the user's hardware or virtual MFA
          * device. The <code>TokenCode</code> is the time-based one-time password (TOTP)
-         * that the MFA devices produces. </p>
+         * that the MFA devices produces. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/AssumeRole">AWS API
+         * Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -427,7 +438,9 @@ namespace Model
          * <code>SerialNumber</code> and <code>TokenCode</code> parameters. The
          * <code>SerialNumber</code> value identifies the user's hardware or virtual MFA
          * device. The <code>TokenCode</code> is the time-based one-time password (TOTP)
-         * that the MFA devices produces. </p>
+         * that the MFA devices produces. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/AssumeRole">AWS API
+         * Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -496,7 +509,9 @@ namespace Model
          * <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-idp_saml.html">Creating
          * a Role for SAML 2.0 Federation</a> in the <i>IAM User Guide</i>. </p> </li>
-         * </ul>
+         * </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/AssumeRoleWithSAML">AWS
+         * API Reference</a></p>
          */
         virtual Model::AssumeRoleWithSAMLOutcome AssumeRoleWithSAML(const Model::AssumeRoleWithSAMLRequest& request) const;
 
@@ -563,7 +578,9 @@ namespace Model
          * <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-idp_saml.html">Creating
          * a Role for SAML 2.0 Federation</a> in the <i>IAM User Guide</i>. </p> </li>
-         * </ul>
+         * </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/AssumeRoleWithSAML">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -632,7 +649,9 @@ namespace Model
          * <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-idp_saml.html">Creating
          * a Role for SAML 2.0 Federation</a> in the <i>IAM User Guide</i>. </p> </li>
-         * </ul>
+         * </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/AssumeRoleWithSAML">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -722,7 +741,9 @@ namespace Model
          * href="http://aws.amazon.com/articles/4617974389850313">Web Identity Federation
          * with Mobile Applications</a>. This article discusses web identity federation and
          * shows an example of how to use web identity federation to get access to content
-         * in Amazon S3. </p> </li> </ul>
+         * in Amazon S3. </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/AssumeRoleWithWebIdentity">AWS
+         * API Reference</a></p>
          */
         virtual Model::AssumeRoleWithWebIdentityOutcome AssumeRoleWithWebIdentity(const Model::AssumeRoleWithWebIdentityRequest& request) const;
 
@@ -810,7 +831,9 @@ namespace Model
          * href="http://aws.amazon.com/articles/4617974389850313">Web Identity Federation
          * with Mobile Applications</a>. This article discusses web identity federation and
          * shows an example of how to use web identity federation to get access to content
-         * in Amazon S3. </p> </li> </ul>
+         * in Amazon S3. </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/AssumeRoleWithWebIdentity">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -900,7 +923,9 @@ namespace Model
          * href="http://aws.amazon.com/articles/4617974389850313">Web Identity Federation
          * with Mobile Applications</a>. This article discusses web identity federation and
          * shows an example of how to use web identity federation to get access to content
-         * in Amazon S3. </p> </li> </ul>
+         * in Amazon S3. </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/AssumeRoleWithWebIdentity">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -930,7 +955,9 @@ namespace Model
          * </li> <li> <p>The principal who made the request.</p> </li> <li> <p>The
          * requested action.</p> </li> <li> <p>The requested resource.</p> </li> <li>
          * <p>The values of condition keys in the context of the user's request.</p> </li>
-         * </ul>
+         * </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/DecodeAuthorizationMessage">AWS
+         * API Reference</a></p>
          */
         virtual Model::DecodeAuthorizationMessageOutcome DecodeAuthorizationMessage(const Model::DecodeAuthorizationMessageRequest& request) const;
 
@@ -958,7 +985,9 @@ namespace Model
          * </li> <li> <p>The principal who made the request.</p> </li> <li> <p>The
          * requested action.</p> </li> <li> <p>The requested resource.</p> </li> <li>
          * <p>The values of condition keys in the context of the user's request.</p> </li>
-         * </ul>
+         * </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/DecodeAuthorizationMessage">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -988,7 +1017,9 @@ namespace Model
          * </li> <li> <p>The principal who made the request.</p> </li> <li> <p>The
          * requested action.</p> </li> <li> <p>The requested resource.</p> </li> <li>
          * <p>The values of condition keys in the context of the user's request.</p> </li>
-         * </ul>
+         * </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/DecodeAuthorizationMessage">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -996,13 +1027,17 @@ namespace Model
 
         /**
          * <p>Returns details about the IAM identity whose credentials are used to call the
-         * API.</p>
+         * API.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/GetCallerIdentity">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetCallerIdentityOutcome GetCallerIdentity(const Model::GetCallerIdentityRequest& request) const;
 
         /**
          * <p>Returns details about the IAM identity whose credentials are used to call the
-         * API.</p>
+         * API.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/GetCallerIdentity">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1010,7 +1045,9 @@ namespace Model
 
         /**
          * <p>Returns details about the IAM identity whose credentials are used to call the
-         * API.</p>
+         * API.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/GetCallerIdentity">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1085,7 +1122,9 @@ namespace Model
          * for GetFederationToken</a>. For information about using
          * <code>GetFederationToken</code> to create temporary security credentials, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_getfederationtoken">GetFederationToken—Federation
-         * Through a Custom Identity Broker</a>. </p>
+         * Through a Custom Identity Broker</a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/GetFederationToken">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetFederationTokenOutcome GetFederationToken(const Model::GetFederationTokenRequest& request) const;
 
@@ -1158,7 +1197,9 @@ namespace Model
          * for GetFederationToken</a>. For information about using
          * <code>GetFederationToken</code> to create temporary security credentials, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_getfederationtoken">GetFederationToken—Federation
-         * Through a Custom Identity Broker</a>. </p>
+         * Through a Custom Identity Broker</a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/GetFederationToken">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1233,7 +1274,9 @@ namespace Model
          * for GetFederationToken</a>. For information about using
          * <code>GetFederationToken</code> to create temporary security credentials, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_getfederationtoken">GetFederationToken—Federation
-         * Through a Custom Identity Broker</a>. </p>
+         * Through a Custom Identity Broker</a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/GetFederationToken">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1283,7 +1326,9 @@ namespace Model
          * credentials, go to <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_getsessiontoken">Temporary
          * Credentials for Users in Untrusted Environments</a> in the <i>IAM User
-         * Guide</i>. </p>
+         * Guide</i>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/GetSessionToken">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetSessionTokenOutcome GetSessionToken(const Model::GetSessionTokenRequest& request) const;
 
@@ -1331,7 +1376,9 @@ namespace Model
          * credentials, go to <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_getsessiontoken">Temporary
          * Credentials for Users in Untrusted Environments</a> in the <i>IAM User
-         * Guide</i>. </p>
+         * Guide</i>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/GetSessionToken">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1381,7 +1428,9 @@ namespace Model
          * credentials, go to <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_getsessiontoken">Temporary
          * Credentials for Users in Untrusted Environments</a> in the <i>IAM User
-         * Guide</i>. </p>
+         * Guide</i>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/GetSessionToken">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */

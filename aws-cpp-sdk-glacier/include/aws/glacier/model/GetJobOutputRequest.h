@@ -25,7 +25,10 @@ namespace Model
 {
 
   /**
-   * <p>Provides options for downloading output of an Amazon Glacier job.</p>
+   * <p>Provides options for downloading output of an Amazon Glacier
+   * job.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/GetJobOutputInput">AWS
+   * API Reference</a></p>
    */
   class AWS_GLACIER_API GetJobOutputRequest : public GlacierRequest
   {

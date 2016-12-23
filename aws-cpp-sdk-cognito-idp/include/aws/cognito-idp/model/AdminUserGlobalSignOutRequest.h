@@ -25,7 +25,10 @@ namespace Model
 {
 
   /**
-   * <p>The request to sign out of all devices, as an administrator.</p>
+   * <p>The request to sign out of all devices, as an administrator.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminUserGlobalSignOutRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_COGNITOIDENTITYPROVIDER_API AdminUserGlobalSignOutRequest : public CognitoIdentityProviderRequest
   {

@@ -26,7 +26,10 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input for <code>PutRecord</code>.</p>
+   * <p>Represents the input for <code>PutRecord</code>.</p><p><h3>See Also:</h3>  
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/PutRecordInput">AWS
+   * API Reference</a></p>
    */
   class AWS_KINESIS_API PutRecordRequest : public KinesisRequest
   {

@@ -50,6 +50,7 @@ public class CoreErrors
         VARIANTS.add("RequestExpiredException");
         VARIANTS.add("ServiceUnavailable");
         VARIANTS.add("ServiceUnavailableException");
+        VARIANTS.add("ServiceUnavailableError");
         VARIANTS.add("Throttling");
         VARIANTS.add("ThrottlingException");
         VARIANTS.add("ValidationError");

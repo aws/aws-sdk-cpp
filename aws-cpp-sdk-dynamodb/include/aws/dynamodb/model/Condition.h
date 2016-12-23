@@ -41,7 +41,10 @@ namespace Model
    * </p> <p> <i>Condition</i> is also used in a <i>QueryFilter</i>, which evaluates
    * the query results and returns only the desired values.</p> </li> <li> <p>For a
    * <i>Scan</i> operation, <i>Condition</i> is used in a <i>ScanFilter</i>, which
-   * evaluates the scan results and returns only the desired values.</p> </li> </ul>
+   * evaluates the scan results and returns only the desired values.</p> </li>
+   * </ul><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/Condition">AWS
+   * API Reference</a></p>
    */
   class AWS_DYNAMODB_API Condition
   {

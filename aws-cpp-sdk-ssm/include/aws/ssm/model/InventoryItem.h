@@ -34,7 +34,9 @@ namespace Model
 
   /**
    * <p>Information collected from managed instances based on your inventory policy
-   * document</p>
+   * document</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/InventoryItem">AWS
+   * API Reference</a></p>
    */
   class AWS_SSM_API InventoryItem
   {

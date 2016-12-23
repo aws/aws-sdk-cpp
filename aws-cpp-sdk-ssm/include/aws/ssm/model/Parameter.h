@@ -32,7 +32,10 @@ namespace Model
 {
 
   /**
-   * <p>An Amazon EC2 Systems Manager parameter in Parameter Store.</p>
+   * <p>An Amazon EC2 Systems Manager parameter in Parameter Store.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/Parameter">AWS API
+   * Reference</a></p>
    */
   class AWS_SSM_API Parameter
   {

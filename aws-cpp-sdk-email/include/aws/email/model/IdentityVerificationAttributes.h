@@ -33,7 +33,10 @@ namespace Model
 {
 
   /**
-   * <p>Represents the verification attributes of a single identity.</p>
+   * <p>Represents the verification attributes of a single identity.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/IdentityVerificationAttributes">AWS
+   * API Reference</a></p>
    */
   class AWS_SES_API IdentityVerificationAttributes
   {

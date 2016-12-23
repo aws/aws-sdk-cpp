@@ -33,7 +33,9 @@ namespace Model
 {
 
   /**
-   * <p>Describes the state of a CIDR block.</p>
+   * <p>Describes the state of a CIDR block.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/VpcCidrBlockState">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API VpcCidrBlockState
   {

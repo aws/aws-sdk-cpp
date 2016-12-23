@@ -36,7 +36,9 @@ namespace Model
 {
   /**
    * <p>Returns CNAME records that you must publish to the DNS server of your domain
-   * to set up Easy DKIM with Amazon SES.</p>
+   * to set up Easy DKIM with Amazon SES.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/VerifyDomainDkimResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_SES_API VerifyDomainDkimResult
   {

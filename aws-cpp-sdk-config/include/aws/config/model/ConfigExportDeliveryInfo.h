@@ -34,7 +34,10 @@ namespace Model
 
   /**
    * <p>A list that contains the status of the delivery of either the snapshot or the
-   * configuration history to the specified Amazon S3 bucket.</p>
+   * configuration history to the specified Amazon S3 bucket.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ConfigExportDeliveryInfo">AWS
+   * API Reference</a></p>
    */
   class AWS_CONFIGSERVICE_API ConfigExportDeliveryInfo
   {

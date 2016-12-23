@@ -35,7 +35,10 @@ namespace DirectoryService
 namespace Model
 {
   /**
-   * <p>Contains the results of the <a>DescribeDirectories</a> operation.</p>
+   * <p>Contains the results of the <a>DescribeDirectories</a>
+   * operation.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeDirectoriesResult">AWS
+   * API Reference</a></p>
    */
   class AWS_DIRECTORYSERVICE_API DescribeDirectoriesResult
   {

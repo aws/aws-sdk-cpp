@@ -32,7 +32,10 @@ namespace Model
 {
 
   /**
-   * <p>Describes the resources available for a container instance.</p>
+   * <p>Describes the resources available for a container instance.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/Resource">AWS API
+   * Reference</a></p>
    */
   class AWS_ECS_API Resource
   {

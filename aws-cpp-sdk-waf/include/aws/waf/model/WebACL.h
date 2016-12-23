@@ -43,7 +43,9 @@ namespace Model
    * identify the requests that you want AWS WAF to filter. If you add more than one
    * <code>Rule</code> to a <code>WebACL</code>, a request needs to match only one of
    * the specifications to be allowed, blocked, or counted. For more information, see
-   * <a>UpdateWebACL</a>.</p>
+   * <a>UpdateWebACL</a>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/WebACL">AWS API
+   * Reference</a></p>
    */
   class AWS_WAF_API WebACL
   {

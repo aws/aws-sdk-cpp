@@ -39,7 +39,9 @@ namespace Model
    * name of the header. If a <code>SqlInjectionMatchSet</code> contains more than
    * one <code>SqlInjectionMatchTuple</code> object, a request needs to include
    * snippets of SQL code in only one of the specified parts of the request to be
-   * considered a match.</p>
+   * considered a match.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/SqlInjectionMatchSet">AWS
+   * API Reference</a></p>
    */
   class AWS_WAF_API SqlInjectionMatchSet
   {

@@ -35,7 +35,10 @@ namespace WorkSpaces
 namespace Model
 {
   /**
-   * <p>Contains the results of the <a>DescribeWorkspaceBundles</a> operation.</p>
+   * <p>Contains the results of the <a>DescribeWorkspaceBundles</a>
+   * operation.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaceBundlesResult">AWS
+   * API Reference</a></p>
    */
   class AWS_WORKSPACES_API DescribeWorkspaceBundlesResult
   {

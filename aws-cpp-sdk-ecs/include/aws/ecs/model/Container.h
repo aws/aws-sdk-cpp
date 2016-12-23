@@ -33,7 +33,9 @@ namespace Model
 {
 
   /**
-   * <p>A Docker container that is part of a task.</p>
+   * <p>A Docker container that is part of a task.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/Container">AWS API
+   * Reference</a></p>
    */
   class AWS_ECS_API Container
   {

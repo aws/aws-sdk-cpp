@@ -34,7 +34,10 @@ namespace Model
 {
   /**
    * <p>Returned in response to a successful
-   * <code>GetOpenIdTokenForDeveloperIdentity</code> request.</p>
+   * <code>GetOpenIdTokenForDeveloperIdentity</code> request.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetOpenIdTokenForDeveloperIdentityResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_COGNITOIDENTITY_API GetOpenIdTokenForDeveloperIdentityResult
   {

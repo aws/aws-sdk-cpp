@@ -26,7 +26,10 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input of a disable stage transition input action.</p>
+   * <p>Represents the input of a disable stage transition input
+   * action.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/DisableStageTransitionInput">AWS
+   * API Reference</a></p>
    */
   class AWS_CODEPIPELINE_API DisableStageTransitionRequest : public CodePipelineRequest
   {

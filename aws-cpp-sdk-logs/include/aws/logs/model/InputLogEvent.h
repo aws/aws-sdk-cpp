@@ -32,7 +32,9 @@ namespace Model
 
   /**
    * <p>Represents a log event, which is a record of activity that was recorded by
-   * the application or resource being monitored.</p>
+   * the application or resource being monitored.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/InputLogEvent">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDWATCHLOGS_API InputLogEvent
   {

@@ -34,7 +34,9 @@ namespace Model
 {
 
   /**
-   * <p>Describes information about the instance ports.</p>
+   * <p>Describes information about the instance ports.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/InstancePortInfo">AWS
+   * API Reference</a></p>
    */
   class AWS_LIGHTSAIL_API InstancePortInfo
   {

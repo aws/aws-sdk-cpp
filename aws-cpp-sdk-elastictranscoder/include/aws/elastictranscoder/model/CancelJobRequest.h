@@ -25,7 +25,9 @@ namespace Model
 {
 
   /**
-   * <p>The <code>CancelJobRequest</code> structure.</p>
+   * <p>The <code>CancelJobRequest</code> structure.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/CancelJobRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICTRANSCODER_API CancelJobRequest : public ElasticTranscoderRequest
   {

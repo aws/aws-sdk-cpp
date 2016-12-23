@@ -32,7 +32,10 @@ namespace Model
 
   /**
    * <p>A complex type that contains the codes and full continent, country, and
-   * subdivision names for the specified <code>geolocation</code> code.</p>
+   * subdivision names for the specified <code>geolocation</code> code.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GeoLocationDetails">AWS
+   * API Reference</a></p>
    */
   class AWS_ROUTE53_API GeoLocationDetails
   {

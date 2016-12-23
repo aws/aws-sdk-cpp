@@ -34,7 +34,10 @@ namespace Model
   /**
    * <p>Information about the authorization settings for AWS CodeBuild to access the
    * source code to be built.</p> <p>This information is only for the AWS CodeBuild
-   * console's use. Your code should not get or set this information directly.</p>
+   * console's use. Your code should not get or set this information
+   * directly.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/SourceAuth">AWS
+   * API Reference</a></p>
    */
   class AWS_CODEBUILD_API SourceAuth
   {

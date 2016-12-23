@@ -106,6 +106,62 @@ namespace Model
     
     inline CreateCachediSCSIVolumeRequest& WithTargetName(const char* value) { SetTargetName(value); return *this;}
 
+    /**
+     * <p>The ARN for an existing volume. Specifying this ARN makes the new volume into
+     * an exact copy of the specified existing volume's latest recovery point. The
+     * <code>VolumeSizeInBytes</code> value for this new volume must be equal to or
+     * larger than the size of the existing volume, in bytes.</p>
+     */
+    inline const Aws::String& GetSourceVolumeARN() const{ return m_sourceVolumeARN; }
+
+    /**
+     * <p>The ARN for an existing volume. Specifying this ARN makes the new volume into
+     * an exact copy of the specified existing volume's latest recovery point. The
+     * <code>VolumeSizeInBytes</code> value for this new volume must be equal to or
+     * larger than the size of the existing volume, in bytes.</p>
+     */
+    inline void SetSourceVolumeARN(const Aws::String& value) { m_sourceVolumeARNHasBeenSet = true; m_sourceVolumeARN = value; }
+
+    /**
+     * <p>The ARN for an existing volume. Specifying this ARN makes the new volume into
+     * an exact copy of the specified existing volume's latest recovery point. The
+     * <code>VolumeSizeInBytes</code> value for this new volume must be equal to or
+     * larger than the size of the existing volume, in bytes.</p>
+     */
+    inline void SetSourceVolumeARN(Aws::String&& value) { m_sourceVolumeARNHasBeenSet = true; m_sourceVolumeARN = value; }
+
+    /**
+     * <p>The ARN for an existing volume. Specifying this ARN makes the new volume into
+     * an exact copy of the specified existing volume's latest recovery point. The
+     * <code>VolumeSizeInBytes</code> value for this new volume must be equal to or
+     * larger than the size of the existing volume, in bytes.</p>
+     */
+    inline void SetSourceVolumeARN(const char* value) { m_sourceVolumeARNHasBeenSet = true; m_sourceVolumeARN.assign(value); }
+
+    /**
+     * <p>The ARN for an existing volume. Specifying this ARN makes the new volume into
+     * an exact copy of the specified existing volume's latest recovery point. The
+     * <code>VolumeSizeInBytes</code> value for this new volume must be equal to or
+     * larger than the size of the existing volume, in bytes.</p>
+     */
+    inline CreateCachediSCSIVolumeRequest& WithSourceVolumeARN(const Aws::String& value) { SetSourceVolumeARN(value); return *this;}
+
+    /**
+     * <p>The ARN for an existing volume. Specifying this ARN makes the new volume into
+     * an exact copy of the specified existing volume's latest recovery point. The
+     * <code>VolumeSizeInBytes</code> value for this new volume must be equal to or
+     * larger than the size of the existing volume, in bytes.</p>
+     */
+    inline CreateCachediSCSIVolumeRequest& WithSourceVolumeARN(Aws::String&& value) { SetSourceVolumeARN(value); return *this;}
+
+    /**
+     * <p>The ARN for an existing volume. Specifying this ARN makes the new volume into
+     * an exact copy of the specified existing volume's latest recovery point. The
+     * <code>VolumeSizeInBytes</code> value for this new volume must be equal to or
+     * larger than the size of the existing volume, in bytes.</p>
+     */
+    inline CreateCachediSCSIVolumeRequest& WithSourceVolumeARN(const char* value) { SetSourceVolumeARN(value); return *this;}
+
     
     inline const Aws::String& GetNetworkInterfaceId() const{ return m_networkInterfaceId; }
 
@@ -157,6 +213,8 @@ namespace Model
     bool m_snapshotIdHasBeenSet;
     Aws::String m_targetName;
     bool m_targetNameHasBeenSet;
+    Aws::String m_sourceVolumeARN;
+    bool m_sourceVolumeARNHasBeenSet;
     Aws::String m_networkInterfaceId;
     bool m_networkInterfaceIdHasBeenSet;
     Aws::String m_clientToken;

@@ -36,7 +36,9 @@ namespace Model
 {
 
   /**
-   * <p>Describes a snapshot.</p>
+   * <p>Describes a snapshot.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/Snapshot">AWS
+   * API Reference</a></p>
    */
   class AWS_REDSHIFT_API Snapshot
   {

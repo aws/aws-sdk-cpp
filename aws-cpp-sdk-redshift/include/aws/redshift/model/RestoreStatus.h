@@ -33,7 +33,9 @@ namespace Model
 
   /**
    * <p>Describes the status of a cluster restore action. Returns null if the cluster
-   * was not created by restoring a snapshot.</p>
+   * was not created by restoring a snapshot.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RestoreStatus">AWS
+   * API Reference</a></p>
    */
   class AWS_REDSHIFT_API RestoreStatus
   {

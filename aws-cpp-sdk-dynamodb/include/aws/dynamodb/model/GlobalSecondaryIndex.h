@@ -35,7 +35,10 @@ namespace Model
 {
 
   /**
-   * <p>Represents the properties of a global secondary index.</p>
+   * <p>Represents the properties of a global secondary index.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/GlobalSecondaryIndex">AWS
+   * API Reference</a></p>
    */
   class AWS_DYNAMODB_API GlobalSecondaryIndex
   {

@@ -37,7 +37,9 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for a fleet.</p>
+   * <p>Contains the parameters for a fleet.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/Fleet">AWS API
+   * Reference</a></p>
    */
   class AWS_APPSTREAM_API Fleet
   {

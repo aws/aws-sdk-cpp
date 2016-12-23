@@ -33,7 +33,9 @@ namespace Model
 
   /**
    * <p>The details of a job sent in response to a GetThirdPartyJobDetails
-   * request.</p>
+   * request.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ThirdPartyJobDetails">AWS
+   * API Reference</a></p>
    */
   class AWS_CODEPIPELINE_API ThirdPartyJobDetails
   {

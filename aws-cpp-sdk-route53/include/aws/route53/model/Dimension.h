@@ -32,7 +32,9 @@ namespace Model
 
   /**
    * <p>For the metric that the CloudWatch alarm is associated with, a complex type
-   * that contains information about one dimension.</p>
+   * that contains information about one dimension.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/Dimension">AWS
+   * API Reference</a></p>
    */
   class AWS_ROUTE53_API Dimension
   {

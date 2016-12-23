@@ -30,7 +30,10 @@ namespace Model
    * operation. Specifies the name of the domain you want to describe. To restrict
    * the response to particular suggesters, specify the names of the suggesters you
    * want to describe. To show the active configuration and exclude any pending
-   * changes, set the <code>Deployed</code> option to <code>true</code>.</p>
+   * changes, set the <code>Deployed</code> option to
+   * <code>true</code>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DescribeSuggestersRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDSEARCH_API DescribeSuggestersRequest : public CloudSearchRequest
   {

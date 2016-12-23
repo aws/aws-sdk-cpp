@@ -33,7 +33,10 @@ namespace Model
   /**
    * <p>The ThingTypeMetadata contains additional information about the thing type
    * including: creation date and time, a value indicating whether the thing type is
-   * deprecated, and a date and time when time was deprecated.</p>
+   * deprecated, and a date and time when time was deprecated.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ThingTypeMetadata">AWS
+   * API Reference</a></p>
    */
   class AWS_IOT_API ThingTypeMetadata
   {

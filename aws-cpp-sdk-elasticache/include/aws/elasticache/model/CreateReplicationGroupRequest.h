@@ -28,7 +28,10 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input of a <code>CreateReplicationGroup</code> operation.</p>
+   * <p>Represents the input of a <code>CreateReplicationGroup</code>
+   * operation.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateReplicationGroupMessage">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICACHE_API CreateReplicationGroupRequest : public ElastiCacheRequest
   {

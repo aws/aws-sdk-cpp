@@ -32,7 +32,9 @@ namespace Model
 
   /**
    * <p>A provider representing an Amazon Cognito Identity User Pool and its client
-   * ID.</p>
+   * ID.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/CognitoIdentityProvider">AWS
+   * API Reference</a></p>
    */
   class AWS_COGNITOIDENTITY_API CognitoIdentityProvider
   {

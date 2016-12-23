@@ -33,7 +33,10 @@ namespace Model
 {
 
   /**
-   * <p>Information about the build project's build input source code.</p>
+   * <p>Information about the build project's build input source code.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ProjectSource">AWS
+   * API Reference</a></p>
    */
   class AWS_CODEBUILD_API ProjectSource
   {

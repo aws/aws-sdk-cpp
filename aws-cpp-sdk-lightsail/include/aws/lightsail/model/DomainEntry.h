@@ -32,7 +32,9 @@ namespace Model
 {
 
   /**
-   * <p>Describes a domain recordset entry.</p>
+   * <p>Describes a domain recordset entry.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DomainEntry">AWS
+   * API Reference</a></p>
    */
   class AWS_LIGHTSAIL_API DomainEntry
   {
