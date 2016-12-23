@@ -33,184 +33,184 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     /**
-     * <p>The name of the role to associate the policy with.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
+     * <p>The name of the role to associate the policy with.</p> <p>This parameter
+     * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of upper and lowercase alphanumeric characters
      * with no spaces. You can also include any of the following characters: =,.@-</p>
      */
     inline const Aws::String& GetRoleName() const{ return m_roleName; }
 
     /**
-     * <p>The name of the role to associate the policy with.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
+     * <p>The name of the role to associate the policy with.</p> <p>This parameter
+     * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of upper and lowercase alphanumeric characters
      * with no spaces. You can also include any of the following characters: =,.@-</p>
      */
     inline void SetRoleName(const Aws::String& value) { m_roleNameHasBeenSet = true; m_roleName = value; }
 
     /**
-     * <p>The name of the role to associate the policy with.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
+     * <p>The name of the role to associate the policy with.</p> <p>This parameter
+     * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of upper and lowercase alphanumeric characters
      * with no spaces. You can also include any of the following characters: =,.@-</p>
      */
     inline void SetRoleName(Aws::String&& value) { m_roleNameHasBeenSet = true; m_roleName = value; }
 
     /**
-     * <p>The name of the role to associate the policy with.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
+     * <p>The name of the role to associate the policy with.</p> <p>This parameter
+     * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of upper and lowercase alphanumeric characters
      * with no spaces. You can also include any of the following characters: =,.@-</p>
      */
     inline void SetRoleName(const char* value) { m_roleNameHasBeenSet = true; m_roleName.assign(value); }
 
     /**
-     * <p>The name of the role to associate the policy with.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
+     * <p>The name of the role to associate the policy with.</p> <p>This parameter
+     * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of upper and lowercase alphanumeric characters
      * with no spaces. You can also include any of the following characters: =,.@-</p>
      */
     inline PutRolePolicyRequest& WithRoleName(const Aws::String& value) { SetRoleName(value); return *this;}
 
     /**
-     * <p>The name of the role to associate the policy with.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
+     * <p>The name of the role to associate the policy with.</p> <p>This parameter
+     * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of upper and lowercase alphanumeric characters
      * with no spaces. You can also include any of the following characters: =,.@-</p>
      */
     inline PutRolePolicyRequest& WithRoleName(Aws::String&& value) { SetRoleName(value); return *this;}
 
     /**
-     * <p>The name of the role to associate the policy with.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
+     * <p>The name of the role to associate the policy with.</p> <p>This parameter
+     * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of upper and lowercase alphanumeric characters
      * with no spaces. You can also include any of the following characters: =,.@-</p>
      */
     inline PutRolePolicyRequest& WithRoleName(const char* value) { SetRoleName(value); return *this;}
 
     /**
-     * <p>The name of the policy document.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters consisting of upper and lowercase alphanumeric characters
-     * with no spaces. You can also include any of the following characters: =,.@-</p>
+     * <p>The name of the policy document.</p> <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: =,.@-</p>
      */
     inline const Aws::String& GetPolicyName() const{ return m_policyName; }
 
     /**
-     * <p>The name of the policy document.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters consisting of upper and lowercase alphanumeric characters
-     * with no spaces. You can also include any of the following characters: =,.@-</p>
+     * <p>The name of the policy document.</p> <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: =,.@-</p>
      */
     inline void SetPolicyName(const Aws::String& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
 
     /**
-     * <p>The name of the policy document.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters consisting of upper and lowercase alphanumeric characters
-     * with no spaces. You can also include any of the following characters: =,.@-</p>
+     * <p>The name of the policy document.</p> <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: =,.@-</p>
      */
     inline void SetPolicyName(Aws::String&& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
 
     /**
-     * <p>The name of the policy document.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters consisting of upper and lowercase alphanumeric characters
-     * with no spaces. You can also include any of the following characters: =,.@-</p>
+     * <p>The name of the policy document.</p> <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: =,.@-</p>
      */
     inline void SetPolicyName(const char* value) { m_policyNameHasBeenSet = true; m_policyName.assign(value); }
 
     /**
-     * <p>The name of the policy document.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters consisting of upper and lowercase alphanumeric characters
-     * with no spaces. You can also include any of the following characters: =,.@-</p>
+     * <p>The name of the policy document.</p> <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: =,.@-</p>
      */
     inline PutRolePolicyRequest& WithPolicyName(const Aws::String& value) { SetPolicyName(value); return *this;}
 
     /**
-     * <p>The name of the policy document.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters consisting of upper and lowercase alphanumeric characters
-     * with no spaces. You can also include any of the following characters: =,.@-</p>
+     * <p>The name of the policy document.</p> <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: =,.@-</p>
      */
     inline PutRolePolicyRequest& WithPolicyName(Aws::String&& value) { SetPolicyName(value); return *this;}
 
     /**
-     * <p>The name of the policy document.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters consisting of upper and lowercase alphanumeric characters
-     * with no spaces. You can also include any of the following characters: =,.@-</p>
+     * <p>The name of the policy document.</p> <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: =,.@-</p>
      */
     inline PutRolePolicyRequest& WithPolicyName(const char* value) { SetPolicyName(value); return *this;}
 
     /**
-     * <p>The policy document.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters consisting of any printable ASCII character ranging from
-     * the space character (\u0020) through end of the ASCII character range (\u00FF).
-     * It also includes the special characters tab (\u0009), line feed (\u000A), and
-     * carriage return (\u000D).</p>
+     * <p>The policy document.</p> <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of any printable ASCII character ranging from the space character
+     * (\u0020) through end of the ASCII character range (\u00FF). It also includes the
+     * special characters tab (\u0009), line feed (\u000A), and carriage return
+     * (\u000D).</p>
      */
     inline const Aws::String& GetPolicyDocument() const{ return m_policyDocument; }
 
     /**
-     * <p>The policy document.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters consisting of any printable ASCII character ranging from
-     * the space character (\u0020) through end of the ASCII character range (\u00FF).
-     * It also includes the special characters tab (\u0009), line feed (\u000A), and
-     * carriage return (\u000D).</p>
+     * <p>The policy document.</p> <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of any printable ASCII character ranging from the space character
+     * (\u0020) through end of the ASCII character range (\u00FF). It also includes the
+     * special characters tab (\u0009), line feed (\u000A), and carriage return
+     * (\u000D).</p>
      */
     inline void SetPolicyDocument(const Aws::String& value) { m_policyDocumentHasBeenSet = true; m_policyDocument = value; }
 
     /**
-     * <p>The policy document.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters consisting of any printable ASCII character ranging from
-     * the space character (\u0020) through end of the ASCII character range (\u00FF).
-     * It also includes the special characters tab (\u0009), line feed (\u000A), and
-     * carriage return (\u000D).</p>
+     * <p>The policy document.</p> <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of any printable ASCII character ranging from the space character
+     * (\u0020) through end of the ASCII character range (\u00FF). It also includes the
+     * special characters tab (\u0009), line feed (\u000A), and carriage return
+     * (\u000D).</p>
      */
     inline void SetPolicyDocument(Aws::String&& value) { m_policyDocumentHasBeenSet = true; m_policyDocument = value; }
 
     /**
-     * <p>The policy document.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters consisting of any printable ASCII character ranging from
-     * the space character (\u0020) through end of the ASCII character range (\u00FF).
-     * It also includes the special characters tab (\u0009), line feed (\u000A), and
-     * carriage return (\u000D).</p>
+     * <p>The policy document.</p> <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of any printable ASCII character ranging from the space character
+     * (\u0020) through end of the ASCII character range (\u00FF). It also includes the
+     * special characters tab (\u0009), line feed (\u000A), and carriage return
+     * (\u000D).</p>
      */
     inline void SetPolicyDocument(const char* value) { m_policyDocumentHasBeenSet = true; m_policyDocument.assign(value); }
 
     /**
-     * <p>The policy document.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters consisting of any printable ASCII character ranging from
-     * the space character (\u0020) through end of the ASCII character range (\u00FF).
-     * It also includes the special characters tab (\u0009), line feed (\u000A), and
-     * carriage return (\u000D).</p>
+     * <p>The policy document.</p> <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of any printable ASCII character ranging from the space character
+     * (\u0020) through end of the ASCII character range (\u00FF). It also includes the
+     * special characters tab (\u0009), line feed (\u000A), and carriage return
+     * (\u000D).</p>
      */
     inline PutRolePolicyRequest& WithPolicyDocument(const Aws::String& value) { SetPolicyDocument(value); return *this;}
 
     /**
-     * <p>The policy document.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters consisting of any printable ASCII character ranging from
-     * the space character (\u0020) through end of the ASCII character range (\u00FF).
-     * It also includes the special characters tab (\u0009), line feed (\u000A), and
-     * carriage return (\u000D).</p>
+     * <p>The policy document.</p> <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of any printable ASCII character ranging from the space character
+     * (\u0020) through end of the ASCII character range (\u00FF). It also includes the
+     * special characters tab (\u0009), line feed (\u000A), and carriage return
+     * (\u000D).</p>
      */
     inline PutRolePolicyRequest& WithPolicyDocument(Aws::String&& value) { SetPolicyDocument(value); return *this;}
 
     /**
-     * <p>The policy document.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters consisting of any printable ASCII character ranging from
-     * the space character (\u0020) through end of the ASCII character range (\u00FF).
-     * It also includes the special characters tab (\u0009), line feed (\u000A), and
-     * carriage return (\u000D).</p>
+     * <p>The policy document.</p> <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of any printable ASCII character ranging from the space character
+     * (\u0020) through end of the ASCII character range (\u00FF). It also includes the
+     * special characters tab (\u0009), line feed (\u000A), and carriage return
+     * (\u000D).</p>
      */
     inline PutRolePolicyRequest& WithPolicyDocument(const char* value) { SetPolicyDocument(value); return *this;}
 

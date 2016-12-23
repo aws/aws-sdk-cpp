@@ -72,37 +72,37 @@ namespace Model
     inline AddTagsToResourceRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
 
     /**
-     * <p>The tags to be assigned to the Amazon Directory Services directory.</p>
+     * <p>The tags to be assigned to the directory.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>The tags to be assigned to the Amazon Directory Services directory.</p>
+     * <p>The tags to be assigned to the directory.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>The tags to be assigned to the Amazon Directory Services directory.</p>
+     * <p>The tags to be assigned to the directory.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>The tags to be assigned to the Amazon Directory Services directory.</p>
+     * <p>The tags to be assigned to the directory.</p>
      */
     inline AddTagsToResourceRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>The tags to be assigned to the Amazon Directory Services directory.</p>
+     * <p>The tags to be assigned to the directory.</p>
      */
     inline AddTagsToResourceRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(value); return *this;}
 
     /**
-     * <p>The tags to be assigned to the Amazon Directory Services directory.</p>
+     * <p>The tags to be assigned to the directory.</p>
      */
     inline AddTagsToResourceRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>The tags to be assigned to the Amazon Directory Services directory.</p>
+     * <p>The tags to be assigned to the directory.</p>
      */
     inline AddTagsToResourceRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 

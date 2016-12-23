@@ -30,6 +30,7 @@
 #include <aws/iam/model/CreatePolicyVersionResult.h>
 #include <aws/iam/model/CreateRoleResult.h>
 #include <aws/iam/model/CreateSAMLProviderResult.h>
+#include <aws/iam/model/CreateServiceSpecificCredentialResult.h>
 #include <aws/iam/model/CreateUserResult.h>
 #include <aws/iam/model/CreateVirtualMFADeviceResult.h>
 #include <aws/iam/model/GenerateCredentialReportResult.h>
@@ -74,10 +75,12 @@
 #include <aws/iam/model/ListSAMLProvidersResult.h>
 #include <aws/iam/model/ListSSHPublicKeysResult.h>
 #include <aws/iam/model/ListServerCertificatesResult.h>
+#include <aws/iam/model/ListServiceSpecificCredentialsResult.h>
 #include <aws/iam/model/ListSigningCertificatesResult.h>
 #include <aws/iam/model/ListUserPoliciesResult.h>
 #include <aws/iam/model/ListUsersResult.h>
 #include <aws/iam/model/ListVirtualMFADevicesResult.h>
+#include <aws/iam/model/ResetServiceSpecificCredentialResult.h>
 #include <aws/iam/model/SimulateCustomPolicyResult.h>
 #include <aws/iam/model/SimulatePrincipalPolicyResult.h>
 #include <aws/iam/model/UpdateSAMLProviderResult.h>
@@ -147,6 +150,7 @@ namespace Model
         class CreatePolicyVersionRequest;
         class CreateRoleRequest;
         class CreateSAMLProviderRequest;
+        class CreateServiceSpecificCredentialRequest;
         class CreateUserRequest;
         class CreateVirtualMFADeviceRequest;
         class DeactivateMFADeviceRequest;
@@ -165,6 +169,7 @@ namespace Model
         class DeleteSAMLProviderRequest;
         class DeleteSSHPublicKeyRequest;
         class DeleteServerCertificateRequest;
+        class DeleteServiceSpecificCredentialRequest;
         class DeleteSigningCertificateRequest;
         class DeleteUserRequest;
         class DeleteUserPolicyRequest;
@@ -215,6 +220,7 @@ namespace Model
         class ListSAMLProvidersRequest;
         class ListSSHPublicKeysRequest;
         class ListServerCertificatesRequest;
+        class ListServiceSpecificCredentialsRequest;
         class ListSigningCertificatesRequest;
         class ListUserPoliciesRequest;
         class ListUsersRequest;
@@ -225,6 +231,7 @@ namespace Model
         class RemoveClientIDFromOpenIDConnectProviderRequest;
         class RemoveRoleFromInstanceProfileRequest;
         class RemoveUserFromGroupRequest;
+        class ResetServiceSpecificCredentialRequest;
         class ResyncMFADeviceRequest;
         class SetDefaultPolicyVersionRequest;
         class SimulateCustomPolicyRequest;
@@ -238,6 +245,7 @@ namespace Model
         class UpdateSAMLProviderRequest;
         class UpdateSSHPublicKeyRequest;
         class UpdateServerCertificateRequest;
+        class UpdateServiceSpecificCredentialRequest;
         class UpdateSigningCertificateRequest;
         class UpdateUserRequest;
         class UploadSSHPublicKeyRequest;
@@ -261,6 +269,7 @@ namespace Model
         typedef Aws::Utils::Outcome<CreatePolicyVersionResult, Aws::Client::AWSError<IAMErrors>> CreatePolicyVersionOutcome;
         typedef Aws::Utils::Outcome<CreateRoleResult, Aws::Client::AWSError<IAMErrors>> CreateRoleOutcome;
         typedef Aws::Utils::Outcome<CreateSAMLProviderResult, Aws::Client::AWSError<IAMErrors>> CreateSAMLProviderOutcome;
+        typedef Aws::Utils::Outcome<CreateServiceSpecificCredentialResult, Aws::Client::AWSError<IAMErrors>> CreateServiceSpecificCredentialOutcome;
         typedef Aws::Utils::Outcome<CreateUserResult, Aws::Client::AWSError<IAMErrors>> CreateUserOutcome;
         typedef Aws::Utils::Outcome<CreateVirtualMFADeviceResult, Aws::Client::AWSError<IAMErrors>> CreateVirtualMFADeviceOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<IAMErrors>> DeactivateMFADeviceOutcome;
@@ -279,6 +288,7 @@ namespace Model
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<IAMErrors>> DeleteSAMLProviderOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<IAMErrors>> DeleteSSHPublicKeyOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<IAMErrors>> DeleteServerCertificateOutcome;
+        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<IAMErrors>> DeleteServiceSpecificCredentialOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<IAMErrors>> DeleteSigningCertificateOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<IAMErrors>> DeleteUserOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<IAMErrors>> DeleteUserPolicyOutcome;
@@ -329,6 +339,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListSAMLProvidersResult, Aws::Client::AWSError<IAMErrors>> ListSAMLProvidersOutcome;
         typedef Aws::Utils::Outcome<ListSSHPublicKeysResult, Aws::Client::AWSError<IAMErrors>> ListSSHPublicKeysOutcome;
         typedef Aws::Utils::Outcome<ListServerCertificatesResult, Aws::Client::AWSError<IAMErrors>> ListServerCertificatesOutcome;
+        typedef Aws::Utils::Outcome<ListServiceSpecificCredentialsResult, Aws::Client::AWSError<IAMErrors>> ListServiceSpecificCredentialsOutcome;
         typedef Aws::Utils::Outcome<ListSigningCertificatesResult, Aws::Client::AWSError<IAMErrors>> ListSigningCertificatesOutcome;
         typedef Aws::Utils::Outcome<ListUserPoliciesResult, Aws::Client::AWSError<IAMErrors>> ListUserPoliciesOutcome;
         typedef Aws::Utils::Outcome<ListUsersResult, Aws::Client::AWSError<IAMErrors>> ListUsersOutcome;
@@ -339,6 +350,7 @@ namespace Model
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<IAMErrors>> RemoveClientIDFromOpenIDConnectProviderOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<IAMErrors>> RemoveRoleFromInstanceProfileOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<IAMErrors>> RemoveUserFromGroupOutcome;
+        typedef Aws::Utils::Outcome<ResetServiceSpecificCredentialResult, Aws::Client::AWSError<IAMErrors>> ResetServiceSpecificCredentialOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<IAMErrors>> ResyncMFADeviceOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<IAMErrors>> SetDefaultPolicyVersionOutcome;
         typedef Aws::Utils::Outcome<SimulateCustomPolicyResult, Aws::Client::AWSError<IAMErrors>> SimulateCustomPolicyOutcome;
@@ -352,6 +364,7 @@ namespace Model
         typedef Aws::Utils::Outcome<UpdateSAMLProviderResult, Aws::Client::AWSError<IAMErrors>> UpdateSAMLProviderOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<IAMErrors>> UpdateSSHPublicKeyOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<IAMErrors>> UpdateServerCertificateOutcome;
+        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<IAMErrors>> UpdateServiceSpecificCredentialOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<IAMErrors>> UpdateSigningCertificateOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<IAMErrors>> UpdateUserOutcome;
         typedef Aws::Utils::Outcome<UploadSSHPublicKeyResult, Aws::Client::AWSError<IAMErrors>> UploadSSHPublicKeyOutcome;
@@ -375,6 +388,7 @@ namespace Model
         typedef std::future<CreatePolicyVersionOutcome> CreatePolicyVersionOutcomeCallable;
         typedef std::future<CreateRoleOutcome> CreateRoleOutcomeCallable;
         typedef std::future<CreateSAMLProviderOutcome> CreateSAMLProviderOutcomeCallable;
+        typedef std::future<CreateServiceSpecificCredentialOutcome> CreateServiceSpecificCredentialOutcomeCallable;
         typedef std::future<CreateUserOutcome> CreateUserOutcomeCallable;
         typedef std::future<CreateVirtualMFADeviceOutcome> CreateVirtualMFADeviceOutcomeCallable;
         typedef std::future<DeactivateMFADeviceOutcome> DeactivateMFADeviceOutcomeCallable;
@@ -393,6 +407,7 @@ namespace Model
         typedef std::future<DeleteSAMLProviderOutcome> DeleteSAMLProviderOutcomeCallable;
         typedef std::future<DeleteSSHPublicKeyOutcome> DeleteSSHPublicKeyOutcomeCallable;
         typedef std::future<DeleteServerCertificateOutcome> DeleteServerCertificateOutcomeCallable;
+        typedef std::future<DeleteServiceSpecificCredentialOutcome> DeleteServiceSpecificCredentialOutcomeCallable;
         typedef std::future<DeleteSigningCertificateOutcome> DeleteSigningCertificateOutcomeCallable;
         typedef std::future<DeleteUserOutcome> DeleteUserOutcomeCallable;
         typedef std::future<DeleteUserPolicyOutcome> DeleteUserPolicyOutcomeCallable;
@@ -443,6 +458,7 @@ namespace Model
         typedef std::future<ListSAMLProvidersOutcome> ListSAMLProvidersOutcomeCallable;
         typedef std::future<ListSSHPublicKeysOutcome> ListSSHPublicKeysOutcomeCallable;
         typedef std::future<ListServerCertificatesOutcome> ListServerCertificatesOutcomeCallable;
+        typedef std::future<ListServiceSpecificCredentialsOutcome> ListServiceSpecificCredentialsOutcomeCallable;
         typedef std::future<ListSigningCertificatesOutcome> ListSigningCertificatesOutcomeCallable;
         typedef std::future<ListUserPoliciesOutcome> ListUserPoliciesOutcomeCallable;
         typedef std::future<ListUsersOutcome> ListUsersOutcomeCallable;
@@ -453,6 +469,7 @@ namespace Model
         typedef std::future<RemoveClientIDFromOpenIDConnectProviderOutcome> RemoveClientIDFromOpenIDConnectProviderOutcomeCallable;
         typedef std::future<RemoveRoleFromInstanceProfileOutcome> RemoveRoleFromInstanceProfileOutcomeCallable;
         typedef std::future<RemoveUserFromGroupOutcome> RemoveUserFromGroupOutcomeCallable;
+        typedef std::future<ResetServiceSpecificCredentialOutcome> ResetServiceSpecificCredentialOutcomeCallable;
         typedef std::future<ResyncMFADeviceOutcome> ResyncMFADeviceOutcomeCallable;
         typedef std::future<SetDefaultPolicyVersionOutcome> SetDefaultPolicyVersionOutcomeCallable;
         typedef std::future<SimulateCustomPolicyOutcome> SimulateCustomPolicyOutcomeCallable;
@@ -466,6 +483,7 @@ namespace Model
         typedef std::future<UpdateSAMLProviderOutcome> UpdateSAMLProviderOutcomeCallable;
         typedef std::future<UpdateSSHPublicKeyOutcome> UpdateSSHPublicKeyOutcomeCallable;
         typedef std::future<UpdateServerCertificateOutcome> UpdateServerCertificateOutcomeCallable;
+        typedef std::future<UpdateServiceSpecificCredentialOutcome> UpdateServiceSpecificCredentialOutcomeCallable;
         typedef std::future<UpdateSigningCertificateOutcome> UpdateSigningCertificateOutcomeCallable;
         typedef std::future<UpdateUserOutcome> UpdateUserOutcomeCallable;
         typedef std::future<UploadSSHPublicKeyOutcome> UploadSSHPublicKeyOutcomeCallable;
@@ -492,6 +510,7 @@ namespace Model
     typedef std::function<void(const IAMClient*, const Model::CreatePolicyVersionRequest&, const Model::CreatePolicyVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreatePolicyVersionResponseReceivedHandler;
     typedef std::function<void(const IAMClient*, const Model::CreateRoleRequest&, const Model::CreateRoleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateRoleResponseReceivedHandler;
     typedef std::function<void(const IAMClient*, const Model::CreateSAMLProviderRequest&, const Model::CreateSAMLProviderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSAMLProviderResponseReceivedHandler;
+    typedef std::function<void(const IAMClient*, const Model::CreateServiceSpecificCredentialRequest&, const Model::CreateServiceSpecificCredentialOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateServiceSpecificCredentialResponseReceivedHandler;
     typedef std::function<void(const IAMClient*, const Model::CreateUserRequest&, const Model::CreateUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateUserResponseReceivedHandler;
     typedef std::function<void(const IAMClient*, const Model::CreateVirtualMFADeviceRequest&, const Model::CreateVirtualMFADeviceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateVirtualMFADeviceResponseReceivedHandler;
     typedef std::function<void(const IAMClient*, const Model::DeactivateMFADeviceRequest&, const Model::DeactivateMFADeviceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeactivateMFADeviceResponseReceivedHandler;
@@ -510,6 +529,7 @@ namespace Model
     typedef std::function<void(const IAMClient*, const Model::DeleteSAMLProviderRequest&, const Model::DeleteSAMLProviderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSAMLProviderResponseReceivedHandler;
     typedef std::function<void(const IAMClient*, const Model::DeleteSSHPublicKeyRequest&, const Model::DeleteSSHPublicKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSSHPublicKeyResponseReceivedHandler;
     typedef std::function<void(const IAMClient*, const Model::DeleteServerCertificateRequest&, const Model::DeleteServerCertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteServerCertificateResponseReceivedHandler;
+    typedef std::function<void(const IAMClient*, const Model::DeleteServiceSpecificCredentialRequest&, const Model::DeleteServiceSpecificCredentialOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteServiceSpecificCredentialResponseReceivedHandler;
     typedef std::function<void(const IAMClient*, const Model::DeleteSigningCertificateRequest&, const Model::DeleteSigningCertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSigningCertificateResponseReceivedHandler;
     typedef std::function<void(const IAMClient*, const Model::DeleteUserRequest&, const Model::DeleteUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteUserResponseReceivedHandler;
     typedef std::function<void(const IAMClient*, const Model::DeleteUserPolicyRequest&, const Model::DeleteUserPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteUserPolicyResponseReceivedHandler;
@@ -560,6 +580,7 @@ namespace Model
     typedef std::function<void(const IAMClient*, const Model::ListSAMLProvidersRequest&, const Model::ListSAMLProvidersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSAMLProvidersResponseReceivedHandler;
     typedef std::function<void(const IAMClient*, const Model::ListSSHPublicKeysRequest&, const Model::ListSSHPublicKeysOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSSHPublicKeysResponseReceivedHandler;
     typedef std::function<void(const IAMClient*, const Model::ListServerCertificatesRequest&, const Model::ListServerCertificatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListServerCertificatesResponseReceivedHandler;
+    typedef std::function<void(const IAMClient*, const Model::ListServiceSpecificCredentialsRequest&, const Model::ListServiceSpecificCredentialsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListServiceSpecificCredentialsResponseReceivedHandler;
     typedef std::function<void(const IAMClient*, const Model::ListSigningCertificatesRequest&, const Model::ListSigningCertificatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSigningCertificatesResponseReceivedHandler;
     typedef std::function<void(const IAMClient*, const Model::ListUserPoliciesRequest&, const Model::ListUserPoliciesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListUserPoliciesResponseReceivedHandler;
     typedef std::function<void(const IAMClient*, const Model::ListUsersRequest&, const Model::ListUsersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListUsersResponseReceivedHandler;
@@ -570,6 +591,7 @@ namespace Model
     typedef std::function<void(const IAMClient*, const Model::RemoveClientIDFromOpenIDConnectProviderRequest&, const Model::RemoveClientIDFromOpenIDConnectProviderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveClientIDFromOpenIDConnectProviderResponseReceivedHandler;
     typedef std::function<void(const IAMClient*, const Model::RemoveRoleFromInstanceProfileRequest&, const Model::RemoveRoleFromInstanceProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveRoleFromInstanceProfileResponseReceivedHandler;
     typedef std::function<void(const IAMClient*, const Model::RemoveUserFromGroupRequest&, const Model::RemoveUserFromGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveUserFromGroupResponseReceivedHandler;
+    typedef std::function<void(const IAMClient*, const Model::ResetServiceSpecificCredentialRequest&, const Model::ResetServiceSpecificCredentialOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResetServiceSpecificCredentialResponseReceivedHandler;
     typedef std::function<void(const IAMClient*, const Model::ResyncMFADeviceRequest&, const Model::ResyncMFADeviceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResyncMFADeviceResponseReceivedHandler;
     typedef std::function<void(const IAMClient*, const Model::SetDefaultPolicyVersionRequest&, const Model::SetDefaultPolicyVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetDefaultPolicyVersionResponseReceivedHandler;
     typedef std::function<void(const IAMClient*, const Model::SimulateCustomPolicyRequest&, const Model::SimulateCustomPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SimulateCustomPolicyResponseReceivedHandler;
@@ -583,6 +605,7 @@ namespace Model
     typedef std::function<void(const IAMClient*, const Model::UpdateSAMLProviderRequest&, const Model::UpdateSAMLProviderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSAMLProviderResponseReceivedHandler;
     typedef std::function<void(const IAMClient*, const Model::UpdateSSHPublicKeyRequest&, const Model::UpdateSSHPublicKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSSHPublicKeyResponseReceivedHandler;
     typedef std::function<void(const IAMClient*, const Model::UpdateServerCertificateRequest&, const Model::UpdateServerCertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateServerCertificateResponseReceivedHandler;
+    typedef std::function<void(const IAMClient*, const Model::UpdateServiceSpecificCredentialRequest&, const Model::UpdateServiceSpecificCredentialOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateServiceSpecificCredentialResponseReceivedHandler;
     typedef std::function<void(const IAMClient*, const Model::UpdateSigningCertificateRequest&, const Model::UpdateSigningCertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSigningCertificateResponseReceivedHandler;
     typedef std::function<void(const IAMClient*, const Model::UpdateUserRequest&, const Model::UpdateUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateUserResponseReceivedHandler;
     typedef std::function<void(const IAMClient*, const Model::UploadSSHPublicKeyRequest&, const Model::UploadSSHPublicKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UploadSSHPublicKeyResponseReceivedHandler;
@@ -1464,6 +1487,61 @@ namespace Model
         virtual void CreateSAMLProviderAsync(const Model::CreateSAMLProviderRequest& request, const CreateSAMLProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Generates a set of credentials consisting of a user name and password that
+         * can be used to access the service specified in the request. These credentials
+         * are generated by IAM, and can be used only for the specified service. </p>
+         * <p>You can have a maximum of two sets of service-specific credentials for each
+         * supported service per user.</p> <p>The only supported service at this time is
+         * AWS CodeCommit.</p> <p>You can reset the password to a new service-generated
+         * value by calling <a>ResetServiceSpecificCredential</a>.</p> <p>For more
+         * information about service-specific credentials, see <a
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_ssh-keys.html">Using
+         * IAM with AWS CodeCommit: Git Credentials, SSH Keys, and AWS Access Keys</a> in
+         * the <i>IAM User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateServiceSpecificCredential">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateServiceSpecificCredentialOutcome CreateServiceSpecificCredential(const Model::CreateServiceSpecificCredentialRequest& request) const;
+
+        /**
+         * <p>Generates a set of credentials consisting of a user name and password that
+         * can be used to access the service specified in the request. These credentials
+         * are generated by IAM, and can be used only for the specified service. </p>
+         * <p>You can have a maximum of two sets of service-specific credentials for each
+         * supported service per user.</p> <p>The only supported service at this time is
+         * AWS CodeCommit.</p> <p>You can reset the password to a new service-generated
+         * value by calling <a>ResetServiceSpecificCredential</a>.</p> <p>For more
+         * information about service-specific credentials, see <a
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_ssh-keys.html">Using
+         * IAM with AWS CodeCommit: Git Credentials, SSH Keys, and AWS Access Keys</a> in
+         * the <i>IAM User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateServiceSpecificCredential">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateServiceSpecificCredentialOutcomeCallable CreateServiceSpecificCredentialCallable(const Model::CreateServiceSpecificCredentialRequest& request) const;
+
+        /**
+         * <p>Generates a set of credentials consisting of a user name and password that
+         * can be used to access the service specified in the request. These credentials
+         * are generated by IAM, and can be used only for the specified service. </p>
+         * <p>You can have a maximum of two sets of service-specific credentials for each
+         * supported service per user.</p> <p>The only supported service at this time is
+         * AWS CodeCommit.</p> <p>You can reset the password to a new service-generated
+         * value by calling <a>ResetServiceSpecificCredential</a>.</p> <p>For more
+         * information about service-specific credentials, see <a
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_ssh-keys.html">Using
+         * IAM with AWS CodeCommit: Git Credentials, SSH Keys, and AWS Access Keys</a> in
+         * the <i>IAM User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateServiceSpecificCredential">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateServiceSpecificCredentialAsync(const Model::CreateServiceSpecificCredentialRequest& request, const CreateServiceSpecificCredentialResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Creates a new IAM user for your AWS account.</p> <p> For information about
          * limitations on the number of IAM users you can create, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
@@ -2269,6 +2347,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteServerCertificateAsync(const Model::DeleteServerCertificateRequest& request, const DeleteServerCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes the specified service-specific credential.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteServiceSpecificCredential">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteServiceSpecificCredentialOutcome DeleteServiceSpecificCredential(const Model::DeleteServiceSpecificCredentialRequest& request) const;
+
+        /**
+         * <p>Deletes the specified service-specific credential.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteServiceSpecificCredential">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteServiceSpecificCredentialOutcomeCallable DeleteServiceSpecificCredentialCallable(const Model::DeleteServiceSpecificCredentialRequest& request) const;
+
+        /**
+         * <p>Deletes the specified service-specific credential.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteServiceSpecificCredential">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteServiceSpecificCredentialAsync(const Model::DeleteServiceSpecificCredentialRequest& request, const DeleteServiceSpecificCredentialResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a signing certificate associated with the specified IAM user.</p>
@@ -4487,6 +4593,52 @@ namespace Model
         virtual void ListServerCertificatesAsync(const Model::ListServerCertificatesRequest& request, const ListServerCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns information about the service-specific credentials associated with
+         * the specified IAM user. If there are none, the action returns an empty list. The
+         * service-specific credentials returned by this action are used only for
+         * authenticating the IAM user to a specific service. For more information about
+         * using service-specific credentials to authenticate to an AWS service, see <a
+         * href="http://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-gc.html">Set
+         * Up service-specific credentials</a> in the AWS CodeCommit User
+         * Guide.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListServiceSpecificCredentials">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListServiceSpecificCredentialsOutcome ListServiceSpecificCredentials(const Model::ListServiceSpecificCredentialsRequest& request) const;
+
+        /**
+         * <p>Returns information about the service-specific credentials associated with
+         * the specified IAM user. If there are none, the action returns an empty list. The
+         * service-specific credentials returned by this action are used only for
+         * authenticating the IAM user to a specific service. For more information about
+         * using service-specific credentials to authenticate to an AWS service, see <a
+         * href="http://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-gc.html">Set
+         * Up service-specific credentials</a> in the AWS CodeCommit User
+         * Guide.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListServiceSpecificCredentials">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListServiceSpecificCredentialsOutcomeCallable ListServiceSpecificCredentialsCallable(const Model::ListServiceSpecificCredentialsRequest& request) const;
+
+        /**
+         * <p>Returns information about the service-specific credentials associated with
+         * the specified IAM user. If there are none, the action returns an empty list. The
+         * service-specific credentials returned by this action are used only for
+         * authenticating the IAM user to a specific service. For more information about
+         * using service-specific credentials to authenticate to an AWS service, see <a
+         * href="http://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-gc.html">Set
+         * Up service-specific credentials</a> in the AWS CodeCommit User
+         * Guide.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListServiceSpecificCredentials">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListServiceSpecificCredentialsAsync(const Model::ListServiceSpecificCredentialsRequest& request, const ListServiceSpecificCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns information about the signing certificates associated with the
          * specified IAM user. If there are none, the action returns an empty list.</p>
          * <p>Although each user is limited to a small number of signing certificates, you
@@ -5011,6 +5163,40 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void RemoveUserFromGroupAsync(const Model::RemoveUserFromGroupRequest& request, const RemoveUserFromGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Resets the password for a service-specific credential. The new password is
+         * AWS generated and cryptographically strong. It cannot be configured by the user.
+         * Resetting the password immediately invalidates the previous password associated
+         * with this user.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ResetServiceSpecificCredential">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ResetServiceSpecificCredentialOutcome ResetServiceSpecificCredential(const Model::ResetServiceSpecificCredentialRequest& request) const;
+
+        /**
+         * <p>Resets the password for a service-specific credential. The new password is
+         * AWS generated and cryptographically strong. It cannot be configured by the user.
+         * Resetting the password immediately invalidates the previous password associated
+         * with this user.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ResetServiceSpecificCredential">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ResetServiceSpecificCredentialOutcomeCallable ResetServiceSpecificCredentialCallable(const Model::ResetServiceSpecificCredentialRequest& request) const;
+
+        /**
+         * <p>Resets the password for a service-specific credential. The new password is
+         * AWS generated and cryptographically strong. It cannot be configured by the user.
+         * Resetting the password immediately invalidates the previous password associated
+         * with this user.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ResetServiceSpecificCredential">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ResetServiceSpecificCredentialAsync(const Model::ResetServiceSpecificCredentialRequest& request, const ResetServiceSpecificCredentialResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Synchronizes the specified MFA device with its IAM resource object on the AWS
@@ -5707,6 +5893,43 @@ namespace Model
         virtual void UpdateServerCertificateAsync(const Model::UpdateServerCertificateRequest& request, const UpdateServerCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Sets the status of a service-specific credential to <code>Active</code> or
+         * <code>Inactive</code>. Service-specific credentials that are inactive cannot be
+         * used for authentication to the service. This action can be used to disable a
+         * user’s service-specific credential as part of a credential rotation work
+         * flow.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateServiceSpecificCredential">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateServiceSpecificCredentialOutcome UpdateServiceSpecificCredential(const Model::UpdateServiceSpecificCredentialRequest& request) const;
+
+        /**
+         * <p>Sets the status of a service-specific credential to <code>Active</code> or
+         * <code>Inactive</code>. Service-specific credentials that are inactive cannot be
+         * used for authentication to the service. This action can be used to disable a
+         * user’s service-specific credential as part of a credential rotation work
+         * flow.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateServiceSpecificCredential">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateServiceSpecificCredentialOutcomeCallable UpdateServiceSpecificCredentialCallable(const Model::UpdateServiceSpecificCredentialRequest& request) const;
+
+        /**
+         * <p>Sets the status of a service-specific credential to <code>Active</code> or
+         * <code>Inactive</code>. Service-specific credentials that are inactive cannot be
+         * used for authentication to the service. This action can be used to disable a
+         * user’s service-specific credential as part of a credential rotation work
+         * flow.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateServiceSpecificCredential">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateServiceSpecificCredentialAsync(const Model::UpdateServiceSpecificCredentialRequest& request, const UpdateServiceSpecificCredentialResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Changes the status of the specified user signing certificate from active to
          * disabled, or vice versa. This action can be used to disable an IAM user's
          * signing certificate as part of a certificate rotation work flow.</p> <p>If the
@@ -6036,6 +6259,7 @@ namespace Model
         void CreatePolicyVersionAsyncHelper(const Model::CreatePolicyVersionRequest& request, const CreatePolicyVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateRoleAsyncHelper(const Model::CreateRoleRequest& request, const CreateRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateSAMLProviderAsyncHelper(const Model::CreateSAMLProviderRequest& request, const CreateSAMLProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateServiceSpecificCredentialAsyncHelper(const Model::CreateServiceSpecificCredentialRequest& request, const CreateServiceSpecificCredentialResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateUserAsyncHelper(const Model::CreateUserRequest& request, const CreateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateVirtualMFADeviceAsyncHelper(const Model::CreateVirtualMFADeviceRequest& request, const CreateVirtualMFADeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeactivateMFADeviceAsyncHelper(const Model::DeactivateMFADeviceRequest& request, const DeactivateMFADeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -6054,6 +6278,7 @@ namespace Model
         void DeleteSAMLProviderAsyncHelper(const Model::DeleteSAMLProviderRequest& request, const DeleteSAMLProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteSSHPublicKeyAsyncHelper(const Model::DeleteSSHPublicKeyRequest& request, const DeleteSSHPublicKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteServerCertificateAsyncHelper(const Model::DeleteServerCertificateRequest& request, const DeleteServerCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteServiceSpecificCredentialAsyncHelper(const Model::DeleteServiceSpecificCredentialRequest& request, const DeleteServiceSpecificCredentialResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteSigningCertificateAsyncHelper(const Model::DeleteSigningCertificateRequest& request, const DeleteSigningCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteUserAsyncHelper(const Model::DeleteUserRequest& request, const DeleteUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteUserPolicyAsyncHelper(const Model::DeleteUserPolicyRequest& request, const DeleteUserPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -6104,6 +6329,7 @@ namespace Model
         void ListSAMLProvidersAsyncHelper(const Model::ListSAMLProvidersRequest& request, const ListSAMLProvidersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListSSHPublicKeysAsyncHelper(const Model::ListSSHPublicKeysRequest& request, const ListSSHPublicKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListServerCertificatesAsyncHelper(const Model::ListServerCertificatesRequest& request, const ListServerCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListServiceSpecificCredentialsAsyncHelper(const Model::ListServiceSpecificCredentialsRequest& request, const ListServiceSpecificCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListSigningCertificatesAsyncHelper(const Model::ListSigningCertificatesRequest& request, const ListSigningCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListUserPoliciesAsyncHelper(const Model::ListUserPoliciesRequest& request, const ListUserPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListUsersAsyncHelper(const Model::ListUsersRequest& request, const ListUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -6114,6 +6340,7 @@ namespace Model
         void RemoveClientIDFromOpenIDConnectProviderAsyncHelper(const Model::RemoveClientIDFromOpenIDConnectProviderRequest& request, const RemoveClientIDFromOpenIDConnectProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RemoveRoleFromInstanceProfileAsyncHelper(const Model::RemoveRoleFromInstanceProfileRequest& request, const RemoveRoleFromInstanceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RemoveUserFromGroupAsyncHelper(const Model::RemoveUserFromGroupRequest& request, const RemoveUserFromGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ResetServiceSpecificCredentialAsyncHelper(const Model::ResetServiceSpecificCredentialRequest& request, const ResetServiceSpecificCredentialResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ResyncMFADeviceAsyncHelper(const Model::ResyncMFADeviceRequest& request, const ResyncMFADeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SetDefaultPolicyVersionAsyncHelper(const Model::SetDefaultPolicyVersionRequest& request, const SetDefaultPolicyVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SimulateCustomPolicyAsyncHelper(const Model::SimulateCustomPolicyRequest& request, const SimulateCustomPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -6127,6 +6354,7 @@ namespace Model
         void UpdateSAMLProviderAsyncHelper(const Model::UpdateSAMLProviderRequest& request, const UpdateSAMLProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateSSHPublicKeyAsyncHelper(const Model::UpdateSSHPublicKeyRequest& request, const UpdateSSHPublicKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateServerCertificateAsyncHelper(const Model::UpdateServerCertificateRequest& request, const UpdateServerCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateServiceSpecificCredentialAsyncHelper(const Model::UpdateServiceSpecificCredentialRequest& request, const UpdateServiceSpecificCredentialResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateSigningCertificateAsyncHelper(const Model::UpdateSigningCertificateRequest& request, const UpdateSigningCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateUserAsyncHelper(const Model::UpdateUserRequest& request, const UpdateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UploadSSHPublicKeyAsyncHelper(const Model::UploadSSHPublicKeyRequest& request, const UploadSSHPublicKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

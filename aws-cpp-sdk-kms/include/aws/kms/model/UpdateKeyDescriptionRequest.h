@@ -35,9 +35,9 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * <p>A unique identifier for the customer master key. This value can be a globally
-     * unique identifier or the fully specified ARN to a key.</p> <ul> <li> <p>Key ARN
-     * Example -
+     * <p>A unique identifier for the CMK. This value can be a globally unique
+     * identifier or the fully specified ARN to a key.</p> <ul> <li> <p>Key ARN Example
+     * -
      * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</p>
      * </li> <li> <p>Globally Unique Key ID Example -
      * 12345678-1234-1234-1234-123456789012</p> </li> </ul>
@@ -45,9 +45,9 @@ namespace Model
     inline const Aws::String& GetKeyId() const{ return m_keyId; }
 
     /**
-     * <p>A unique identifier for the customer master key. This value can be a globally
-     * unique identifier or the fully specified ARN to a key.</p> <ul> <li> <p>Key ARN
-     * Example -
+     * <p>A unique identifier for the CMK. This value can be a globally unique
+     * identifier or the fully specified ARN to a key.</p> <ul> <li> <p>Key ARN Example
+     * -
      * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</p>
      * </li> <li> <p>Globally Unique Key ID Example -
      * 12345678-1234-1234-1234-123456789012</p> </li> </ul>
@@ -55,9 +55,9 @@ namespace Model
     inline void SetKeyId(const Aws::String& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
 
     /**
-     * <p>A unique identifier for the customer master key. This value can be a globally
-     * unique identifier or the fully specified ARN to a key.</p> <ul> <li> <p>Key ARN
-     * Example -
+     * <p>A unique identifier for the CMK. This value can be a globally unique
+     * identifier or the fully specified ARN to a key.</p> <ul> <li> <p>Key ARN Example
+     * -
      * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</p>
      * </li> <li> <p>Globally Unique Key ID Example -
      * 12345678-1234-1234-1234-123456789012</p> </li> </ul>
@@ -65,9 +65,9 @@ namespace Model
     inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
 
     /**
-     * <p>A unique identifier for the customer master key. This value can be a globally
-     * unique identifier or the fully specified ARN to a key.</p> <ul> <li> <p>Key ARN
-     * Example -
+     * <p>A unique identifier for the CMK. This value can be a globally unique
+     * identifier or the fully specified ARN to a key.</p> <ul> <li> <p>Key ARN Example
+     * -
      * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</p>
      * </li> <li> <p>Globally Unique Key ID Example -
      * 12345678-1234-1234-1234-123456789012</p> </li> </ul>
@@ -75,9 +75,9 @@ namespace Model
     inline void SetKeyId(const char* value) { m_keyIdHasBeenSet = true; m_keyId.assign(value); }
 
     /**
-     * <p>A unique identifier for the customer master key. This value can be a globally
-     * unique identifier or the fully specified ARN to a key.</p> <ul> <li> <p>Key ARN
-     * Example -
+     * <p>A unique identifier for the CMK. This value can be a globally unique
+     * identifier or the fully specified ARN to a key.</p> <ul> <li> <p>Key ARN Example
+     * -
      * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</p>
      * </li> <li> <p>Globally Unique Key ID Example -
      * 12345678-1234-1234-1234-123456789012</p> </li> </ul>
@@ -85,9 +85,9 @@ namespace Model
     inline UpdateKeyDescriptionRequest& WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
 
     /**
-     * <p>A unique identifier for the customer master key. This value can be a globally
-     * unique identifier or the fully specified ARN to a key.</p> <ul> <li> <p>Key ARN
-     * Example -
+     * <p>A unique identifier for the CMK. This value can be a globally unique
+     * identifier or the fully specified ARN to a key.</p> <ul> <li> <p>Key ARN Example
+     * -
      * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</p>
      * </li> <li> <p>Globally Unique Key ID Example -
      * 12345678-1234-1234-1234-123456789012</p> </li> </ul>
@@ -95,9 +95,9 @@ namespace Model
     inline UpdateKeyDescriptionRequest& WithKeyId(Aws::String&& value) { SetKeyId(value); return *this;}
 
     /**
-     * <p>A unique identifier for the customer master key. This value can be a globally
-     * unique identifier or the fully specified ARN to a key.</p> <ul> <li> <p>Key ARN
-     * Example -
+     * <p>A unique identifier for the CMK. This value can be a globally unique
+     * identifier or the fully specified ARN to a key.</p> <ul> <li> <p>Key ARN Example
+     * -
      * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</p>
      * </li> <li> <p>Globally Unique Key ID Example -
      * 12345678-1234-1234-1234-123456789012</p> </li> </ul>
@@ -105,37 +105,37 @@ namespace Model
     inline UpdateKeyDescriptionRequest& WithKeyId(const char* value) { SetKeyId(value); return *this;}
 
     /**
-     * <p>New description for the key.</p>
+     * <p>New description for the CMK.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>New description for the key.</p>
+     * <p>New description for the CMK.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>New description for the key.</p>
+     * <p>New description for the CMK.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>New description for the key.</p>
+     * <p>New description for the CMK.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>New description for the key.</p>
+     * <p>New description for the CMK.</p>
      */
     inline UpdateKeyDescriptionRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>New description for the key.</p>
+     * <p>New description for the CMK.</p>
      */
     inline UpdateKeyDescriptionRequest& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>New description for the key.</p>
+     * <p>New description for the CMK.</p>
      */
     inline UpdateKeyDescriptionRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 

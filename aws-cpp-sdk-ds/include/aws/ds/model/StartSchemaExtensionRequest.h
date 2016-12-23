@@ -95,43 +95,57 @@ namespace Model
     inline StartSchemaExtensionRequest& WithCreateSnapshotBeforeSchemaExtension(bool value) { SetCreateSnapshotBeforeSchemaExtension(value); return *this;}
 
     /**
-     * <p>The LDIF file represented as a string. The file size can be no larger than
+     * <p>The LDIF file represented as a string. To construct the LdifContent string,
+     * precede each line as it would be formatted in an ldif file with \n. See the
+     * example request below for more details. The file size can be no larger than
      * 1MB.</p>
      */
     inline const Aws::String& GetLdifContent() const{ return m_ldifContent; }
 
     /**
-     * <p>The LDIF file represented as a string. The file size can be no larger than
+     * <p>The LDIF file represented as a string. To construct the LdifContent string,
+     * precede each line as it would be formatted in an ldif file with \n. See the
+     * example request below for more details. The file size can be no larger than
      * 1MB.</p>
      */
     inline void SetLdifContent(const Aws::String& value) { m_ldifContentHasBeenSet = true; m_ldifContent = value; }
 
     /**
-     * <p>The LDIF file represented as a string. The file size can be no larger than
+     * <p>The LDIF file represented as a string. To construct the LdifContent string,
+     * precede each line as it would be formatted in an ldif file with \n. See the
+     * example request below for more details. The file size can be no larger than
      * 1MB.</p>
      */
     inline void SetLdifContent(Aws::String&& value) { m_ldifContentHasBeenSet = true; m_ldifContent = value; }
 
     /**
-     * <p>The LDIF file represented as a string. The file size can be no larger than
+     * <p>The LDIF file represented as a string. To construct the LdifContent string,
+     * precede each line as it would be formatted in an ldif file with \n. See the
+     * example request below for more details. The file size can be no larger than
      * 1MB.</p>
      */
     inline void SetLdifContent(const char* value) { m_ldifContentHasBeenSet = true; m_ldifContent.assign(value); }
 
     /**
-     * <p>The LDIF file represented as a string. The file size can be no larger than
+     * <p>The LDIF file represented as a string. To construct the LdifContent string,
+     * precede each line as it would be formatted in an ldif file with \n. See the
+     * example request below for more details. The file size can be no larger than
      * 1MB.</p>
      */
     inline StartSchemaExtensionRequest& WithLdifContent(const Aws::String& value) { SetLdifContent(value); return *this;}
 
     /**
-     * <p>The LDIF file represented as a string. The file size can be no larger than
+     * <p>The LDIF file represented as a string. To construct the LdifContent string,
+     * precede each line as it would be formatted in an ldif file with \n. See the
+     * example request below for more details. The file size can be no larger than
      * 1MB.</p>
      */
     inline StartSchemaExtensionRequest& WithLdifContent(Aws::String&& value) { SetLdifContent(value); return *this;}
 
     /**
-     * <p>The LDIF file represented as a string. The file size can be no larger than
+     * <p>The LDIF file represented as a string. To construct the LdifContent string,
+     * precede each line as it would be formatted in an ldif file with \n. See the
+     * example request below for more details. The file size can be no larger than
      * 1MB.</p>
      */
     inline StartSchemaExtensionRequest& WithLdifContent(const char* value) { SetLdifContent(value); return *this;}

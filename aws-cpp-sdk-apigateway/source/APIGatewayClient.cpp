@@ -90,6 +90,8 @@
 #include <aws/apigateway/model/GetRestApiRequest.h>
 #include <aws/apigateway/model/GetRestApisRequest.h>
 #include <aws/apigateway/model/GetSdkRequest.h>
+#include <aws/apigateway/model/GetSdkTypeRequest.h>
+#include <aws/apigateway/model/GetSdkTypesRequest.h>
 #include <aws/apigateway/model/GetStageRequest.h>
 #include <aws/apigateway/model/GetStagesRequest.h>
 #include <aws/apigateway/model/GetUsageRequest.h>
@@ -2527,6 +2529,75 @@ void APIGatewayClient::GetSdkAsync(const GetSdkRequest& request, const GetSdkRes
 void APIGatewayClient::GetSdkAsyncHelper(const GetSdkRequest& request, const GetSdkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetSdk(request), context);
+}
+
+GetSdkTypeOutcome APIGatewayClient::GetSdkType(const GetSdkTypeRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/sdktypes/";
+  ss << request.GetId();
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  if(outcome.IsSuccess())
+  {
+    return GetSdkTypeOutcome(GetSdkTypeResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetSdkTypeOutcome(outcome.GetError());
+  }
+}
+
+GetSdkTypeOutcomeCallable APIGatewayClient::GetSdkTypeCallable(const GetSdkTypeRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetSdkTypeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetSdkType(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void APIGatewayClient::GetSdkTypeAsync(const GetSdkTypeRequest& request, const GetSdkTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetSdkTypeAsyncHelper( request, handler, context ); } );
+}
+
+void APIGatewayClient::GetSdkTypeAsyncHelper(const GetSdkTypeRequest& request, const GetSdkTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetSdkType(request), context);
+}
+
+GetSdkTypesOutcome APIGatewayClient::GetSdkTypes(const GetSdkTypesRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/sdktypes";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  if(outcome.IsSuccess())
+  {
+    return GetSdkTypesOutcome(GetSdkTypesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetSdkTypesOutcome(outcome.GetError());
+  }
+}
+
+GetSdkTypesOutcomeCallable APIGatewayClient::GetSdkTypesCallable(const GetSdkTypesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetSdkTypesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetSdkTypes(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void APIGatewayClient::GetSdkTypesAsync(const GetSdkTypesRequest& request, const GetSdkTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetSdkTypesAsyncHelper( request, handler, context ); } );
+}
+
+void APIGatewayClient::GetSdkTypesAsyncHelper(const GetSdkTypesRequest& request, const GetSdkTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetSdkTypes(request), context);
 }
 
 GetStageOutcome APIGatewayClient::GetStage(const GetStageRequest& request) const

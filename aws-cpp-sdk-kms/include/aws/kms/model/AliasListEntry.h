@@ -114,37 +114,37 @@ namespace Model
     inline AliasListEntry& WithAliasArn(const char* value) { SetAliasArn(value); return *this;}
 
     /**
-     * <p>String that contains the key identifier pointed to by the alias.</p>
+     * <p>String that contains the key identifier referred to by the alias.</p>
      */
     inline const Aws::String& GetTargetKeyId() const{ return m_targetKeyId; }
 
     /**
-     * <p>String that contains the key identifier pointed to by the alias.</p>
+     * <p>String that contains the key identifier referred to by the alias.</p>
      */
     inline void SetTargetKeyId(const Aws::String& value) { m_targetKeyIdHasBeenSet = true; m_targetKeyId = value; }
 
     /**
-     * <p>String that contains the key identifier pointed to by the alias.</p>
+     * <p>String that contains the key identifier referred to by the alias.</p>
      */
     inline void SetTargetKeyId(Aws::String&& value) { m_targetKeyIdHasBeenSet = true; m_targetKeyId = value; }
 
     /**
-     * <p>String that contains the key identifier pointed to by the alias.</p>
+     * <p>String that contains the key identifier referred to by the alias.</p>
      */
     inline void SetTargetKeyId(const char* value) { m_targetKeyIdHasBeenSet = true; m_targetKeyId.assign(value); }
 
     /**
-     * <p>String that contains the key identifier pointed to by the alias.</p>
+     * <p>String that contains the key identifier referred to by the alias.</p>
      */
     inline AliasListEntry& WithTargetKeyId(const Aws::String& value) { SetTargetKeyId(value); return *this;}
 
     /**
-     * <p>String that contains the key identifier pointed to by the alias.</p>
+     * <p>String that contains the key identifier referred to by the alias.</p>
      */
     inline AliasListEntry& WithTargetKeyId(Aws::String&& value) { SetTargetKeyId(value); return *this;}
 
     /**
-     * <p>String that contains the key identifier pointed to by the alias.</p>
+     * <p>String that contains the key identifier referred to by the alias.</p>
      */
     inline AliasListEntry& WithTargetKeyId(const char* value) { SetTargetKeyId(value); return *this;}
 

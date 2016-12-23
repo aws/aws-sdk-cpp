@@ -44,6 +44,7 @@
 #include <aws/elasticbeanstalk/model/RetrieveEnvironmentInfoResult.h>
 #include <aws/elasticbeanstalk/model/TerminateEnvironmentResult.h>
 #include <aws/elasticbeanstalk/model/UpdateApplicationResult.h>
+#include <aws/elasticbeanstalk/model/UpdateApplicationResourceLifecycleResult.h>
 #include <aws/elasticbeanstalk/model/UpdateApplicationVersionResult.h>
 #include <aws/elasticbeanstalk/model/UpdateConfigurationTemplateResult.h>
 #include <aws/elasticbeanstalk/model/UpdateEnvironmentResult.h>
@@ -126,6 +127,7 @@ namespace Model
         class SwapEnvironmentCNAMEsRequest;
         class TerminateEnvironmentRequest;
         class UpdateApplicationRequest;
+        class UpdateApplicationResourceLifecycleRequest;
         class UpdateApplicationVersionRequest;
         class UpdateConfigurationTemplateRequest;
         class UpdateEnvironmentRequest;
@@ -163,6 +165,7 @@ namespace Model
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> SwapEnvironmentCNAMEsOutcome;
         typedef Aws::Utils::Outcome<TerminateEnvironmentResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> TerminateEnvironmentOutcome;
         typedef Aws::Utils::Outcome<UpdateApplicationResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> UpdateApplicationOutcome;
+        typedef Aws::Utils::Outcome<UpdateApplicationResourceLifecycleResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> UpdateApplicationResourceLifecycleOutcome;
         typedef Aws::Utils::Outcome<UpdateApplicationVersionResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> UpdateApplicationVersionOutcome;
         typedef Aws::Utils::Outcome<UpdateConfigurationTemplateResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> UpdateConfigurationTemplateOutcome;
         typedef Aws::Utils::Outcome<UpdateEnvironmentResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> UpdateEnvironmentOutcome;
@@ -200,6 +203,7 @@ namespace Model
         typedef std::future<SwapEnvironmentCNAMEsOutcome> SwapEnvironmentCNAMEsOutcomeCallable;
         typedef std::future<TerminateEnvironmentOutcome> TerminateEnvironmentOutcomeCallable;
         typedef std::future<UpdateApplicationOutcome> UpdateApplicationOutcomeCallable;
+        typedef std::future<UpdateApplicationResourceLifecycleOutcome> UpdateApplicationResourceLifecycleOutcomeCallable;
         typedef std::future<UpdateApplicationVersionOutcome> UpdateApplicationVersionOutcomeCallable;
         typedef std::future<UpdateConfigurationTemplateOutcome> UpdateConfigurationTemplateOutcomeCallable;
         typedef std::future<UpdateEnvironmentOutcome> UpdateEnvironmentOutcomeCallable;
@@ -240,6 +244,7 @@ namespace Model
     typedef std::function<void(const ElasticBeanstalkClient*, const Model::SwapEnvironmentCNAMEsRequest&, const Model::SwapEnvironmentCNAMEsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SwapEnvironmentCNAMEsResponseReceivedHandler;
     typedef std::function<void(const ElasticBeanstalkClient*, const Model::TerminateEnvironmentRequest&, const Model::TerminateEnvironmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TerminateEnvironmentResponseReceivedHandler;
     typedef std::function<void(const ElasticBeanstalkClient*, const Model::UpdateApplicationRequest&, const Model::UpdateApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateApplicationResponseReceivedHandler;
+    typedef std::function<void(const ElasticBeanstalkClient*, const Model::UpdateApplicationResourceLifecycleRequest&, const Model::UpdateApplicationResourceLifecycleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateApplicationResourceLifecycleResponseReceivedHandler;
     typedef std::function<void(const ElasticBeanstalkClient*, const Model::UpdateApplicationVersionRequest&, const Model::UpdateApplicationVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateApplicationVersionResponseReceivedHandler;
     typedef std::function<void(const ElasticBeanstalkClient*, const Model::UpdateConfigurationTemplateRequest&, const Model::UpdateConfigurationTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateConfigurationTemplateResponseReceivedHandler;
     typedef std::function<void(const ElasticBeanstalkClient*, const Model::UpdateEnvironmentRequest&, const Model::UpdateEnvironmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateEnvironmentResponseReceivedHandler;
@@ -1349,6 +1354,31 @@ namespace Model
         virtual void UpdateApplicationAsync(const Model::UpdateApplicationRequest& request, const UpdateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Modifies lifecycle settings for an application.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateApplicationResourceLifecycle">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateApplicationResourceLifecycleOutcome UpdateApplicationResourceLifecycle(const Model::UpdateApplicationResourceLifecycleRequest& request) const;
+
+        /**
+         * <p>Modifies lifecycle settings for an application.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateApplicationResourceLifecycle">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateApplicationResourceLifecycleOutcomeCallable UpdateApplicationResourceLifecycleCallable(const Model::UpdateApplicationResourceLifecycleRequest& request) const;
+
+        /**
+         * <p>Modifies lifecycle settings for an application.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateApplicationResourceLifecycle">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateApplicationResourceLifecycleAsync(const Model::UpdateApplicationResourceLifecycleRequest& request, const UpdateApplicationResourceLifecycleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates the specified application version to have the specified
          * properties.</p> <note> <p>If a property (for example, <code>description</code>)
          * is not provided, the value remains unchanged. To clear properties, specify an
@@ -1545,6 +1575,7 @@ namespace Model
         void SwapEnvironmentCNAMEsAsyncHelper(const Model::SwapEnvironmentCNAMEsRequest& request, const SwapEnvironmentCNAMEsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TerminateEnvironmentAsyncHelper(const Model::TerminateEnvironmentRequest& request, const TerminateEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateApplicationAsyncHelper(const Model::UpdateApplicationRequest& request, const UpdateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateApplicationResourceLifecycleAsyncHelper(const Model::UpdateApplicationResourceLifecycleRequest& request, const UpdateApplicationResourceLifecycleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateApplicationVersionAsyncHelper(const Model::UpdateApplicationVersionRequest& request, const UpdateApplicationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateConfigurationTemplateAsyncHelper(const Model::UpdateConfigurationTemplateRequest& request, const UpdateConfigurationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateEnvironmentAsyncHelper(const Model::UpdateEnvironmentRequest& request, const UpdateEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
