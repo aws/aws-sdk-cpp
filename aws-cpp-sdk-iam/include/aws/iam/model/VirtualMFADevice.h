@@ -170,19 +170,29 @@ namespace Model
      */
     inline VirtualMFADevice& WithQRCodePNG(Aws::Utils::ByteBuffer&& value) { SetQRCodePNG(value); return *this;}
 
-    
+    /**
+     * <p>The user to whom the MFA device is assigned.</p>
+     */
     inline const User& GetUser() const{ return m_user; }
 
-    
+    /**
+     * <p>The user to whom the MFA device is assigned.</p>
+     */
     inline void SetUser(const User& value) { m_userHasBeenSet = true; m_user = value; }
 
-    
+    /**
+     * <p>The user to whom the MFA device is assigned.</p>
+     */
     inline void SetUser(User&& value) { m_userHasBeenSet = true; m_user = value; }
 
-    
+    /**
+     * <p>The user to whom the MFA device is assigned.</p>
+     */
     inline VirtualMFADevice& WithUser(const User& value) { SetUser(value); return *this;}
 
-    
+    /**
+     * <p>The user to whom the MFA device is assigned.</p>
+     */
     inline VirtualMFADevice& WithUser(User&& value) { SetUser(value); return *this;}
 
     /**

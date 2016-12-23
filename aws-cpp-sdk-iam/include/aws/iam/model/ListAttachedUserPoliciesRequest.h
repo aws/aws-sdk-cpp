@@ -34,141 +34,141 @@ namespace Model
 
     /**
      * <p>The name (friendly name, not ARN) of the user to list attached policies
-     * for.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for
-     * this parameter is a string of characters consisting of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-</p>
+     * for.</p> <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: =,.@-</p>
      */
     inline const Aws::String& GetUserName() const{ return m_userName; }
 
     /**
      * <p>The name (friendly name, not ARN) of the user to list attached policies
-     * for.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for
-     * this parameter is a string of characters consisting of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-</p>
+     * for.</p> <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: =,.@-</p>
      */
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /**
      * <p>The name (friendly name, not ARN) of the user to list attached policies
-     * for.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for
-     * this parameter is a string of characters consisting of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-</p>
+     * for.</p> <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: =,.@-</p>
      */
     inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /**
      * <p>The name (friendly name, not ARN) of the user to list attached policies
-     * for.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for
-     * this parameter is a string of characters consisting of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-</p>
+     * for.</p> <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: =,.@-</p>
      */
     inline void SetUserName(const char* value) { m_userNameHasBeenSet = true; m_userName.assign(value); }
 
     /**
      * <p>The name (friendly name, not ARN) of the user to list attached policies
-     * for.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for
-     * this parameter is a string of characters consisting of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-</p>
+     * for.</p> <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: =,.@-</p>
      */
     inline ListAttachedUserPoliciesRequest& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
 
     /**
      * <p>The name (friendly name, not ARN) of the user to list attached policies
-     * for.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for
-     * this parameter is a string of characters consisting of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-</p>
+     * for.</p> <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: =,.@-</p>
      */
     inline ListAttachedUserPoliciesRequest& WithUserName(Aws::String&& value) { SetUserName(value); return *this;}
 
     /**
      * <p>The name (friendly name, not ARN) of the user to list attached policies
-     * for.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for
-     * this parameter is a string of characters consisting of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-</p>
+     * for.</p> <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: =,.@-</p>
      */
     inline ListAttachedUserPoliciesRequest& WithUserName(const char* value) { SetUserName(value); return *this;}
 
     /**
      * <p>The path prefix for filtering the results. This parameter is optional. If it
-     * is not included, it defaults to a slash (/), listing all policies.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters consisting of either a forward slash (/) by itself or a
-     * string that must begin and end with forward slashes, containing any ASCII
-     * character from the ! (\u0021) thru the DEL character (\u007F), including most
-     * punctuation characters, digits, and upper and lowercased letters.</p>
+     * is not included, it defaults to a slash (/), listing all policies.</p> <p>This
+     * paramater allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+     * pattern</a>) a string of characters consisting of either a forward slash (/) by
+     * itself or a string that must begin and end with forward slashes, containing any
+     * ASCII character from the ! (\u0021) thru the DEL character (\u007F), including
+     * most punctuation characters, digits, and upper and lowercased letters.</p>
      */
     inline const Aws::String& GetPathPrefix() const{ return m_pathPrefix; }
 
     /**
      * <p>The path prefix for filtering the results. This parameter is optional. If it
-     * is not included, it defaults to a slash (/), listing all policies.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters consisting of either a forward slash (/) by itself or a
-     * string that must begin and end with forward slashes, containing any ASCII
-     * character from the ! (\u0021) thru the DEL character (\u007F), including most
-     * punctuation characters, digits, and upper and lowercased letters.</p>
+     * is not included, it defaults to a slash (/), listing all policies.</p> <p>This
+     * paramater allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+     * pattern</a>) a string of characters consisting of either a forward slash (/) by
+     * itself or a string that must begin and end with forward slashes, containing any
+     * ASCII character from the ! (\u0021) thru the DEL character (\u007F), including
+     * most punctuation characters, digits, and upper and lowercased letters.</p>
      */
     inline void SetPathPrefix(const Aws::String& value) { m_pathPrefixHasBeenSet = true; m_pathPrefix = value; }
 
     /**
      * <p>The path prefix for filtering the results. This parameter is optional. If it
-     * is not included, it defaults to a slash (/), listing all policies.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters consisting of either a forward slash (/) by itself or a
-     * string that must begin and end with forward slashes, containing any ASCII
-     * character from the ! (\u0021) thru the DEL character (\u007F), including most
-     * punctuation characters, digits, and upper and lowercased letters.</p>
+     * is not included, it defaults to a slash (/), listing all policies.</p> <p>This
+     * paramater allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+     * pattern</a>) a string of characters consisting of either a forward slash (/) by
+     * itself or a string that must begin and end with forward slashes, containing any
+     * ASCII character from the ! (\u0021) thru the DEL character (\u007F), including
+     * most punctuation characters, digits, and upper and lowercased letters.</p>
      */
     inline void SetPathPrefix(Aws::String&& value) { m_pathPrefixHasBeenSet = true; m_pathPrefix = value; }
 
     /**
      * <p>The path prefix for filtering the results. This parameter is optional. If it
-     * is not included, it defaults to a slash (/), listing all policies.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters consisting of either a forward slash (/) by itself or a
-     * string that must begin and end with forward slashes, containing any ASCII
-     * character from the ! (\u0021) thru the DEL character (\u007F), including most
-     * punctuation characters, digits, and upper and lowercased letters.</p>
+     * is not included, it defaults to a slash (/), listing all policies.</p> <p>This
+     * paramater allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+     * pattern</a>) a string of characters consisting of either a forward slash (/) by
+     * itself or a string that must begin and end with forward slashes, containing any
+     * ASCII character from the ! (\u0021) thru the DEL character (\u007F), including
+     * most punctuation characters, digits, and upper and lowercased letters.</p>
      */
     inline void SetPathPrefix(const char* value) { m_pathPrefixHasBeenSet = true; m_pathPrefix.assign(value); }
 
     /**
      * <p>The path prefix for filtering the results. This parameter is optional. If it
-     * is not included, it defaults to a slash (/), listing all policies.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters consisting of either a forward slash (/) by itself or a
-     * string that must begin and end with forward slashes, containing any ASCII
-     * character from the ! (\u0021) thru the DEL character (\u007F), including most
-     * punctuation characters, digits, and upper and lowercased letters.</p>
+     * is not included, it defaults to a slash (/), listing all policies.</p> <p>This
+     * paramater allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+     * pattern</a>) a string of characters consisting of either a forward slash (/) by
+     * itself or a string that must begin and end with forward slashes, containing any
+     * ASCII character from the ! (\u0021) thru the DEL character (\u007F), including
+     * most punctuation characters, digits, and upper and lowercased letters.</p>
      */
     inline ListAttachedUserPoliciesRequest& WithPathPrefix(const Aws::String& value) { SetPathPrefix(value); return *this;}
 
     /**
      * <p>The path prefix for filtering the results. This parameter is optional. If it
-     * is not included, it defaults to a slash (/), listing all policies.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters consisting of either a forward slash (/) by itself or a
-     * string that must begin and end with forward slashes, containing any ASCII
-     * character from the ! (\u0021) thru the DEL character (\u007F), including most
-     * punctuation characters, digits, and upper and lowercased letters.</p>
+     * is not included, it defaults to a slash (/), listing all policies.</p> <p>This
+     * paramater allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+     * pattern</a>) a string of characters consisting of either a forward slash (/) by
+     * itself or a string that must begin and end with forward slashes, containing any
+     * ASCII character from the ! (\u0021) thru the DEL character (\u007F), including
+     * most punctuation characters, digits, and upper and lowercased letters.</p>
      */
     inline ListAttachedUserPoliciesRequest& WithPathPrefix(Aws::String&& value) { SetPathPrefix(value); return *this;}
 
     /**
      * <p>The path prefix for filtering the results. This parameter is optional. If it
-     * is not included, it defaults to a slash (/), listing all policies.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters consisting of either a forward slash (/) by itself or a
-     * string that must begin and end with forward slashes, containing any ASCII
-     * character from the ! (\u0021) thru the DEL character (\u007F), including most
-     * punctuation characters, digits, and upper and lowercased letters.</p>
+     * is not included, it defaults to a slash (/), listing all policies.</p> <p>This
+     * paramater allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+     * pattern</a>) a string of characters consisting of either a forward slash (/) by
+     * itself or a string that must begin and end with forward slashes, containing any
+     * ASCII character from the ! (\u0021) thru the DEL character (\u007F), including
+     * most punctuation characters, digits, and upper and lowercased letters.</p>
      */
     inline ListAttachedUserPoliciesRequest& WithPathPrefix(const char* value) { SetPathPrefix(value); return *this;}
 
@@ -229,11 +229,11 @@ namespace Model
     inline ListAttachedUserPoliciesRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
     /**
-     * <p>Use this only when paginating results to indicate the maximum number of items
-     * you want in the response. If additional items exist beyond the maximum you
-     * specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>
-     * <p>This parameter is optional. If you do not include it, it defaults to 100.
-     * Note that IAM might return fewer results, even when there are more results
+     * <p>(Optional) Use this only when paginating results to indicate the maximum
+     * number of items you want in the response. If additional items exist beyond the
+     * maximum you specify, the <code>IsTruncated</code> response element is
+     * <code>true</code>.</p> <p>If you do not include this parameter, it defaults to
+     * 100. Note that IAM might return fewer results, even when there are more results
      * available. In that case, the <code>IsTruncated</code> response element returns
      * <code>true</code> and <code>Marker</code> contains a value to include in the
      * subsequent call that tells the service where to continue from.</p>
@@ -241,11 +241,11 @@ namespace Model
     inline int GetMaxItems() const{ return m_maxItems; }
 
     /**
-     * <p>Use this only when paginating results to indicate the maximum number of items
-     * you want in the response. If additional items exist beyond the maximum you
-     * specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>
-     * <p>This parameter is optional. If you do not include it, it defaults to 100.
-     * Note that IAM might return fewer results, even when there are more results
+     * <p>(Optional) Use this only when paginating results to indicate the maximum
+     * number of items you want in the response. If additional items exist beyond the
+     * maximum you specify, the <code>IsTruncated</code> response element is
+     * <code>true</code>.</p> <p>If you do not include this parameter, it defaults to
+     * 100. Note that IAM might return fewer results, even when there are more results
      * available. In that case, the <code>IsTruncated</code> response element returns
      * <code>true</code> and <code>Marker</code> contains a value to include in the
      * subsequent call that tells the service where to continue from.</p>
@@ -253,11 +253,11 @@ namespace Model
     inline void SetMaxItems(int value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
 
     /**
-     * <p>Use this only when paginating results to indicate the maximum number of items
-     * you want in the response. If additional items exist beyond the maximum you
-     * specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>
-     * <p>This parameter is optional. If you do not include it, it defaults to 100.
-     * Note that IAM might return fewer results, even when there are more results
+     * <p>(Optional) Use this only when paginating results to indicate the maximum
+     * number of items you want in the response. If additional items exist beyond the
+     * maximum you specify, the <code>IsTruncated</code> response element is
+     * <code>true</code>.</p> <p>If you do not include this parameter, it defaults to
+     * 100. Note that IAM might return fewer results, even when there are more results
      * available. In that case, the <code>IsTruncated</code> response element returns
      * <code>true</code> and <code>Marker</code> contains a value to include in the
      * subsequent call that tells the service where to continue from.</p>

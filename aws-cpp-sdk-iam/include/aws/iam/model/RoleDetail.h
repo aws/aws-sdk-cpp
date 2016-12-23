@@ -279,25 +279,39 @@ namespace Model
      */
     inline RoleDetail& WithAssumeRolePolicyDocument(const char* value) { SetAssumeRolePolicyDocument(value); return *this;}
 
-    
+    /**
+     * <p>A list of instance profiles that contain this role.</p>
+     */
     inline const Aws::Vector<InstanceProfile>& GetInstanceProfileList() const{ return m_instanceProfileList; }
 
-    
+    /**
+     * <p>A list of instance profiles that contain this role.</p>
+     */
     inline void SetInstanceProfileList(const Aws::Vector<InstanceProfile>& value) { m_instanceProfileListHasBeenSet = true; m_instanceProfileList = value; }
 
-    
+    /**
+     * <p>A list of instance profiles that contain this role.</p>
+     */
     inline void SetInstanceProfileList(Aws::Vector<InstanceProfile>&& value) { m_instanceProfileListHasBeenSet = true; m_instanceProfileList = value; }
 
-    
+    /**
+     * <p>A list of instance profiles that contain this role.</p>
+     */
     inline RoleDetail& WithInstanceProfileList(const Aws::Vector<InstanceProfile>& value) { SetInstanceProfileList(value); return *this;}
 
-    
+    /**
+     * <p>A list of instance profiles that contain this role.</p>
+     */
     inline RoleDetail& WithInstanceProfileList(Aws::Vector<InstanceProfile>&& value) { SetInstanceProfileList(value); return *this;}
 
-    
+    /**
+     * <p>A list of instance profiles that contain this role.</p>
+     */
     inline RoleDetail& AddInstanceProfileList(const InstanceProfile& value) { m_instanceProfileListHasBeenSet = true; m_instanceProfileList.push_back(value); return *this; }
 
-    
+    /**
+     * <p>A list of instance profiles that contain this role.</p>
+     */
     inline RoleDetail& AddInstanceProfileList(InstanceProfile&& value) { m_instanceProfileListHasBeenSet = true; m_instanceProfileList.push_back(value); return *this; }
 
     /**

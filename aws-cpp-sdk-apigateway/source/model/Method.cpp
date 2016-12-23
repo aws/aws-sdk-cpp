@@ -33,6 +33,7 @@ Method::Method() :
     m_authorizerIdHasBeenSet(false),
     m_apiKeyRequired(false),
     m_apiKeyRequiredHasBeenSet(false),
+    m_operationNameHasBeenSet(false),
     m_requestParametersHasBeenSet(false),
     m_requestModelsHasBeenSet(false),
     m_methodResponsesHasBeenSet(false),
@@ -46,6 +47,7 @@ Method::Method(const JsonValue& jsonValue) :
     m_authorizerIdHasBeenSet(false),
     m_apiKeyRequired(false),
     m_apiKeyRequiredHasBeenSet(false),
+    m_operationNameHasBeenSet(false),
     m_requestParametersHasBeenSet(false),
     m_requestModelsHasBeenSet(false),
     m_methodResponsesHasBeenSet(false),
@@ -82,6 +84,13 @@ Method& Method::operator =(const JsonValue& jsonValue)
     m_apiKeyRequired = jsonValue.GetBool("apiKeyRequired");
 
     m_apiKeyRequiredHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("operationName"))
+  {
+    m_operationName = jsonValue.GetString("operationName");
+
+    m_operationNameHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("requestParameters"))
@@ -149,6 +158,12 @@ JsonValue Method::Jsonize() const
   if(m_apiKeyRequiredHasBeenSet)
   {
    payload.WithBool("apiKeyRequired", m_apiKeyRequired);
+
+  }
+
+  if(m_operationNameHasBeenSet)
+  {
+   payload.WithString("operationName", m_operationName);
 
   }
 

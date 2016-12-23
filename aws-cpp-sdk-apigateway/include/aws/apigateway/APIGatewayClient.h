@@ -64,6 +64,8 @@
 #include <aws/apigateway/model/GetRestApiResult.h>
 #include <aws/apigateway/model/GetRestApisResult.h>
 #include <aws/apigateway/model/GetSdkResult.h>
+#include <aws/apigateway/model/GetSdkTypeResult.h>
+#include <aws/apigateway/model/GetSdkTypesResult.h>
 #include <aws/apigateway/model/GetStageResult.h>
 #include <aws/apigateway/model/GetStagesResult.h>
 #include <aws/apigateway/model/GetUsageResult.h>
@@ -210,6 +212,8 @@ namespace Model
         class GetRestApiRequest;
         class GetRestApisRequest;
         class GetSdkRequest;
+        class GetSdkTypeRequest;
+        class GetSdkTypesRequest;
         class GetStageRequest;
         class GetStagesRequest;
         class GetUsageRequest;
@@ -311,6 +315,8 @@ namespace Model
         typedef Aws::Utils::Outcome<GetRestApiResult, Aws::Client::AWSError<APIGatewayErrors>> GetRestApiOutcome;
         typedef Aws::Utils::Outcome<GetRestApisResult, Aws::Client::AWSError<APIGatewayErrors>> GetRestApisOutcome;
         typedef Aws::Utils::Outcome<GetSdkResult, Aws::Client::AWSError<APIGatewayErrors>> GetSdkOutcome;
+        typedef Aws::Utils::Outcome<GetSdkTypeResult, Aws::Client::AWSError<APIGatewayErrors>> GetSdkTypeOutcome;
+        typedef Aws::Utils::Outcome<GetSdkTypesResult, Aws::Client::AWSError<APIGatewayErrors>> GetSdkTypesOutcome;
         typedef Aws::Utils::Outcome<GetStageResult, Aws::Client::AWSError<APIGatewayErrors>> GetStageOutcome;
         typedef Aws::Utils::Outcome<GetStagesResult, Aws::Client::AWSError<APIGatewayErrors>> GetStagesOutcome;
         typedef Aws::Utils::Outcome<GetUsageResult, Aws::Client::AWSError<APIGatewayErrors>> GetUsageOutcome;
@@ -412,6 +418,8 @@ namespace Model
         typedef std::future<GetRestApiOutcome> GetRestApiOutcomeCallable;
         typedef std::future<GetRestApisOutcome> GetRestApisOutcomeCallable;
         typedef std::future<GetSdkOutcome> GetSdkOutcomeCallable;
+        typedef std::future<GetSdkTypeOutcome> GetSdkTypeOutcomeCallable;
+        typedef std::future<GetSdkTypesOutcome> GetSdkTypesOutcomeCallable;
         typedef std::future<GetStageOutcome> GetStageOutcomeCallable;
         typedef std::future<GetStagesOutcome> GetStagesOutcomeCallable;
         typedef std::future<GetUsageOutcome> GetUsageOutcomeCallable;
@@ -516,6 +524,8 @@ namespace Model
     typedef std::function<void(const APIGatewayClient*, const Model::GetRestApiRequest&, const Model::GetRestApiOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRestApiResponseReceivedHandler;
     typedef std::function<void(const APIGatewayClient*, const Model::GetRestApisRequest&, const Model::GetRestApisOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRestApisResponseReceivedHandler;
     typedef std::function<void(const APIGatewayClient*, const Model::GetSdkRequest&, const Model::GetSdkOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSdkResponseReceivedHandler;
+    typedef std::function<void(const APIGatewayClient*, const Model::GetSdkTypeRequest&, const Model::GetSdkTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSdkTypeResponseReceivedHandler;
+    typedef std::function<void(const APIGatewayClient*, const Model::GetSdkTypesRequest&, const Model::GetSdkTypesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSdkTypesResponseReceivedHandler;
     typedef std::function<void(const APIGatewayClient*, const Model::GetStageRequest&, const Model::GetStageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetStageResponseReceivedHandler;
     typedef std::function<void(const APIGatewayClient*, const Model::GetStagesRequest&, const Model::GetStagesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetStagesResponseReceivedHandler;
     typedef std::function<void(const APIGatewayClient*, const Model::GetUsageRequest&, const Model::GetUsageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetUsageResponseReceivedHandler;
@@ -2256,6 +2266,44 @@ namespace Model
         virtual void GetSdkAsync(const Model::GetSdkRequest& request, const GetSdkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * 
+         */
+        virtual Model::GetSdkTypeOutcome GetSdkType(const Model::GetSdkTypeRequest& request) const;
+
+        /**
+         * 
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetSdkTypeOutcomeCallable GetSdkTypeCallable(const Model::GetSdkTypeRequest& request) const;
+
+        /**
+         * 
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetSdkTypeAsync(const Model::GetSdkTypeRequest& request, const GetSdkTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * 
+         */
+        virtual Model::GetSdkTypesOutcome GetSdkTypes(const Model::GetSdkTypesRequest& request) const;
+
+        /**
+         * 
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetSdkTypesOutcomeCallable GetSdkTypesCallable(const Model::GetSdkTypesRequest& request) const;
+
+        /**
+         * 
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetSdkTypesAsync(const Model::GetSdkTypesRequest& request, const GetSdkTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Gets information about a <a>Stage</a> resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetStage">AWS
          * API Reference</a></p>
@@ -3290,6 +3338,8 @@ namespace Model
         void GetRestApiAsyncHelper(const Model::GetRestApiRequest& request, const GetRestApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetRestApisAsyncHelper(const Model::GetRestApisRequest& request, const GetRestApisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetSdkAsyncHelper(const Model::GetSdkRequest& request, const GetSdkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetSdkTypeAsyncHelper(const Model::GetSdkTypeRequest& request, const GetSdkTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetSdkTypesAsyncHelper(const Model::GetSdkTypesRequest& request, const GetSdkTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetStageAsyncHelper(const Model::GetStageRequest& request, const GetStageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetStagesAsyncHelper(const Model::GetStagesRequest& request, const GetStagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetUsageAsyncHelper(const Model::GetUsageRequest& request, const GetUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

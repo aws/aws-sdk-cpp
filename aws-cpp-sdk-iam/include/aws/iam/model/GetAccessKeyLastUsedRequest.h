@@ -33,58 +33,51 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     /**
-     * <p>The identifier of an access key.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters that can consist of any upper or lowercased letter or
-     * digit.</p>
+     * <p>The identifier of an access key.</p> <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * that can consist of any upper or lowercased letter or digit.</p>
      */
     inline const Aws::String& GetAccessKeyId() const{ return m_accessKeyId; }
 
     /**
-     * <p>The identifier of an access key.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters that can consist of any upper or lowercased letter or
-     * digit.</p>
+     * <p>The identifier of an access key.</p> <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * that can consist of any upper or lowercased letter or digit.</p>
      */
     inline void SetAccessKeyId(const Aws::String& value) { m_accessKeyIdHasBeenSet = true; m_accessKeyId = value; }
 
     /**
-     * <p>The identifier of an access key.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters that can consist of any upper or lowercased letter or
-     * digit.</p>
+     * <p>The identifier of an access key.</p> <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * that can consist of any upper or lowercased letter or digit.</p>
      */
     inline void SetAccessKeyId(Aws::String&& value) { m_accessKeyIdHasBeenSet = true; m_accessKeyId = value; }
 
     /**
-     * <p>The identifier of an access key.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters that can consist of any upper or lowercased letter or
-     * digit.</p>
+     * <p>The identifier of an access key.</p> <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * that can consist of any upper or lowercased letter or digit.</p>
      */
     inline void SetAccessKeyId(const char* value) { m_accessKeyIdHasBeenSet = true; m_accessKeyId.assign(value); }
 
     /**
-     * <p>The identifier of an access key.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters that can consist of any upper or lowercased letter or
-     * digit.</p>
+     * <p>The identifier of an access key.</p> <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * that can consist of any upper or lowercased letter or digit.</p>
      */
     inline GetAccessKeyLastUsedRequest& WithAccessKeyId(const Aws::String& value) { SetAccessKeyId(value); return *this;}
 
     /**
-     * <p>The identifier of an access key.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters that can consist of any upper or lowercased letter or
-     * digit.</p>
+     * <p>The identifier of an access key.</p> <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * that can consist of any upper or lowercased letter or digit.</p>
      */
     inline GetAccessKeyLastUsedRequest& WithAccessKeyId(Aws::String&& value) { SetAccessKeyId(value); return *this;}
 
     /**
-     * <p>The identifier of an access key.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters that can consist of any upper or lowercased letter or
-     * digit.</p>
+     * <p>The identifier of an access key.</p> <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * that can consist of any upper or lowercased letter or digit.</p>
      */
     inline GetAccessKeyLastUsedRequest& WithAccessKeyId(const char* value) { SetAccessKeyId(value); return *this;}
 

@@ -35,7 +35,8 @@ ApplicationDescription::ApplicationDescription() :
     m_dateCreatedHasBeenSet(false),
     m_dateUpdatedHasBeenSet(false),
     m_versionsHasBeenSet(false),
-    m_configurationTemplatesHasBeenSet(false)
+    m_configurationTemplatesHasBeenSet(false),
+    m_resourceLifecycleConfigHasBeenSet(false)
 {
 }
 
@@ -45,7 +46,8 @@ ApplicationDescription::ApplicationDescription(const XmlNode& xmlNode) :
     m_dateCreatedHasBeenSet(false),
     m_dateUpdatedHasBeenSet(false),
     m_versionsHasBeenSet(false),
-    m_configurationTemplatesHasBeenSet(false)
+    m_configurationTemplatesHasBeenSet(false),
+    m_resourceLifecycleConfigHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -104,6 +106,12 @@ ApplicationDescription& ApplicationDescription::operator =(const XmlNode& xmlNod
 
       m_configurationTemplatesHasBeenSet = true;
     }
+    XmlNode resourceLifecycleConfigNode = resultNode.FirstChild("ResourceLifecycleConfig");
+    if(!resourceLifecycleConfigNode.IsNull())
+    {
+      m_resourceLifecycleConfig = resourceLifecycleConfigNode;
+      m_resourceLifecycleConfigHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -149,6 +157,13 @@ void ApplicationDescription::OutputToStream(Aws::OStream& oStream, const char* l
       }
   }
 
+  if(m_resourceLifecycleConfigHasBeenSet)
+  {
+      Aws::StringStream resourceLifecycleConfigLocationAndMemberSs;
+      resourceLifecycleConfigLocationAndMemberSs << location << index << locationValue << ".ResourceLifecycleConfig";
+      m_resourceLifecycleConfig.OutputToStream(oStream, resourceLifecycleConfigLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void ApplicationDescription::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -184,6 +199,12 @@ void ApplicationDescription::OutputToStream(Aws::OStream& oStream, const char* l
       {
         oStream << location << ".ConfigurationTemplates.member." << configurationTemplatesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
+  }
+  if(m_resourceLifecycleConfigHasBeenSet)
+  {
+      Aws::String resourceLifecycleConfigLocationAndMember(location);
+      resourceLifecycleConfigLocationAndMember += ".ResourceLifecycleConfig";
+      m_resourceLifecycleConfig.OutputToStream(oStream, resourceLifecycleConfigLocationAndMember.c_str());
   }
 }
 

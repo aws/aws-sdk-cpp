@@ -263,9 +263,22 @@ namespace Model
     typedef std::function<void(const DirectoryServiceClient*, const Model::VerifyTrustRequest&, const Model::VerifyTrustOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > VerifyTrustResponseReceivedHandler;
 
   /**
-   * <fullname>AWS Directory Service</fullname> <p>This is the <i>AWS Directory
-   * Service API Reference</i>. This guide provides detailed information about AWS
-   * Directory Service operations, data types, parameters, and errors.</p>
+   * <fullname>AWS Directory Service</fullname> <p>AWS Directory Service is a web
+   * service that makes it easy for you to setup and run directories in the AWS
+   * cloud, or connect your AWS resources with an existing on-premises Microsoft
+   * Active Directory. This guide provides detailed information about AWS Directory
+   * Service operations, data types, parameters, and errors. For information about
+   * AWS Directory Services features, see <a
+   * href="https://aws.amazon.com/directoryservice/">AWS Directory Service</a> and
+   * the <a
+   * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/what_is.html">AWS
+   * Directory Service Administration Guide</a>.</p> <note> <p>AWS provides SDKs that
+   * consist of libraries and sample code for various programming languages and
+   * platforms (Java, Ruby, .Net, iOS, Android, etc.). The SDKs provide a convenient
+   * way to create programmatic access to AWS Directory Service and other AWS
+   * services. For more information about the AWS SDKs, including how to download and
+   * install them, see <a href="http://aws.amazon.com/tools/">Tools for Amazon Web
+   * Services</a>.</p> </note>
    */
   class AWS_DIRECTORYSERVICE_API DirectoryServiceClient : public Aws::Client::AWSJsonClient
   {
@@ -349,20 +362,18 @@ namespace Model
         virtual void AddIpRoutesAsync(const Model::AddIpRoutesRequest& request, const AddIpRoutesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Adds or overwrites one or more tags for the specified Amazon Directory
-         * Services directory. Each directory can have a maximum of 50 tags. Each tag
-         * consists of a key and optional value. Tag keys must be unique to each
-         * resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Adds or overwrites one or more tags for the specified directory. Each
+         * directory can have a maximum of 50 tags. Each tag consists of a key and optional
+         * value. Tag keys must be unique to each resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/AddTagsToResource">AWS
          * API Reference</a></p>
          */
         virtual Model::AddTagsToResourceOutcome AddTagsToResource(const Model::AddTagsToResourceRequest& request) const;
 
         /**
-         * <p>Adds or overwrites one or more tags for the specified Amazon Directory
-         * Services directory. Each directory can have a maximum of 50 tags. Each tag
-         * consists of a key and optional value. Tag keys must be unique to each
-         * resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Adds or overwrites one or more tags for the specified directory. Each
+         * directory can have a maximum of 50 tags. Each tag consists of a key and optional
+         * value. Tag keys must be unique to each resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/AddTagsToResource">AWS
          * API Reference</a></p>
          *
@@ -371,10 +382,9 @@ namespace Model
         virtual Model::AddTagsToResourceOutcomeCallable AddTagsToResourceCallable(const Model::AddTagsToResourceRequest& request) const;
 
         /**
-         * <p>Adds or overwrites one or more tags for the specified Amazon Directory
-         * Services directory. Each directory can have a maximum of 50 tags. Each tag
-         * consists of a key and optional value. Tag keys must be unique to each
-         * resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Adds or overwrites one or more tags for the specified directory. Each
+         * directory can have a maximum of 50 tags. Each tag consists of a key and optional
+         * value. Tag keys must be unique to each resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/AddTagsToResource">AWS
          * API Reference</a></p>
          *
@@ -1158,14 +1168,14 @@ namespace Model
         virtual void EnableRadiusAsync(const Model::EnableRadiusRequest& request, const EnableRadiusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Enables single-sign on for a directory.</p><p><h3>See Also:</h3>   <a
+         * <p>Enables single sign-on for a directory.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/EnableSso">AWS API
          * Reference</a></p>
          */
         virtual Model::EnableSsoOutcome EnableSso(const Model::EnableSsoRequest& request) const;
 
         /**
-         * <p>Enables single-sign on for a directory.</p><p><h3>See Also:</h3>   <a
+         * <p>Enables single sign-on for a directory.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/EnableSso">AWS API
          * Reference</a></p>
          *
@@ -1174,7 +1184,7 @@ namespace Model
         virtual Model::EnableSsoOutcomeCallable EnableSsoCallable(const Model::EnableSsoRequest& request) const;
 
         /**
-         * <p>Enables single-sign on for a directory.</p><p><h3>See Also:</h3>   <a
+         * <p>Enables single sign-on for a directory.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/EnableSso">AWS API
          * Reference</a></p>
          *
@@ -1295,16 +1305,14 @@ namespace Model
         virtual void ListSchemaExtensionsAsync(const Model::ListSchemaExtensionsRequest& request, const ListSchemaExtensionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists all tags on an Amazon Directory Services directory.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Lists all tags on a directory.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ListTagsForResource">AWS
          * API Reference</a></p>
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p>Lists all tags on an Amazon Directory Services directory.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Lists all tags on a directory.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ListTagsForResource">AWS
          * API Reference</a></p>
          *
@@ -1313,8 +1321,7 @@ namespace Model
         virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p>Lists all tags on an Amazon Directory Services directory.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Lists all tags on a directory.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ListTagsForResource">AWS
          * API Reference</a></p>
          *
@@ -1388,16 +1395,14 @@ namespace Model
         virtual void RemoveIpRoutesAsync(const Model::RemoveIpRoutesRequest& request, const RemoveIpRoutesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Removes tags from an Amazon Directory Services directory.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Removes tags from a directory.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RemoveTagsFromResource">AWS
          * API Reference</a></p>
          */
         virtual Model::RemoveTagsFromResourceOutcome RemoveTagsFromResource(const Model::RemoveTagsFromResourceRequest& request) const;
 
         /**
-         * <p>Removes tags from an Amazon Directory Services directory.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Removes tags from a directory.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RemoveTagsFromResource">AWS
          * API Reference</a></p>
          *
@@ -1406,8 +1411,7 @@ namespace Model
         virtual Model::RemoveTagsFromResourceOutcomeCallable RemoveTagsFromResourceCallable(const Model::RemoveTagsFromResourceRequest& request) const;
 
         /**
-         * <p>Removes tags from an Amazon Directory Services directory.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Removes tags from a directory.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RemoveTagsFromResource">AWS
          * API Reference</a></p>
          *

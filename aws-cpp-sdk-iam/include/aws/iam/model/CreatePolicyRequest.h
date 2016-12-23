@@ -33,58 +33,58 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     /**
-     * <p>The friendly name of the policy.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters consisting of upper and lowercase alphanumeric characters
-     * with no spaces. You can also include any of the following characters: =,.@-</p>
+     * <p>The friendly name of the policy.</p> <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: =,.@-</p>
      */
     inline const Aws::String& GetPolicyName() const{ return m_policyName; }
 
     /**
-     * <p>The friendly name of the policy.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters consisting of upper and lowercase alphanumeric characters
-     * with no spaces. You can also include any of the following characters: =,.@-</p>
+     * <p>The friendly name of the policy.</p> <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: =,.@-</p>
      */
     inline void SetPolicyName(const Aws::String& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
 
     /**
-     * <p>The friendly name of the policy.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters consisting of upper and lowercase alphanumeric characters
-     * with no spaces. You can also include any of the following characters: =,.@-</p>
+     * <p>The friendly name of the policy.</p> <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: =,.@-</p>
      */
     inline void SetPolicyName(Aws::String&& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
 
     /**
-     * <p>The friendly name of the policy.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters consisting of upper and lowercase alphanumeric characters
-     * with no spaces. You can also include any of the following characters: =,.@-</p>
+     * <p>The friendly name of the policy.</p> <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: =,.@-</p>
      */
     inline void SetPolicyName(const char* value) { m_policyNameHasBeenSet = true; m_policyName.assign(value); }
 
     /**
-     * <p>The friendly name of the policy.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters consisting of upper and lowercase alphanumeric characters
-     * with no spaces. You can also include any of the following characters: =,.@-</p>
+     * <p>The friendly name of the policy.</p> <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: =,.@-</p>
      */
     inline CreatePolicyRequest& WithPolicyName(const Aws::String& value) { SetPolicyName(value); return *this;}
 
     /**
-     * <p>The friendly name of the policy.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters consisting of upper and lowercase alphanumeric characters
-     * with no spaces. You can also include any of the following characters: =,.@-</p>
+     * <p>The friendly name of the policy.</p> <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: =,.@-</p>
      */
     inline CreatePolicyRequest& WithPolicyName(Aws::String&& value) { SetPolicyName(value); return *this;}
 
     /**
-     * <p>The friendly name of the policy.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters consisting of upper and lowercase alphanumeric characters
-     * with no spaces. You can also include any of the following characters: =,.@-</p>
+     * <p>The friendly name of the policy.</p> <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: =,.@-</p>
      */
     inline CreatePolicyRequest& WithPolicyName(const char* value) { SetPolicyName(value); return *this;}
 
@@ -92,12 +92,12 @@ namespace Model
      * <p>The path for the policy.</p> <p>For more information about paths, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
-     * If it is not included, it defaults to a slash (/).</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters consisting of either a forward slash (/) by itself or a
-     * string that must begin and end with forward slashes, containing any ASCII
-     * character from the ! (\u0021) thru the DEL character (\u007F), including most
-     * punctuation characters, digits, and upper and lowercased letters.</p>
+     * If it is not included, it defaults to a slash (/).</p> <p>This paramater allows
+     * (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     * of characters consisting of either a forward slash (/) by itself or a string
+     * that must begin and end with forward slashes, containing any ASCII character
+     * from the ! (\u0021) thru the DEL character (\u007F), including most punctuation
+     * characters, digits, and upper and lowercased letters.</p>
      */
     inline const Aws::String& GetPath() const{ return m_path; }
 
@@ -105,12 +105,12 @@ namespace Model
      * <p>The path for the policy.</p> <p>For more information about paths, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
-     * If it is not included, it defaults to a slash (/).</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters consisting of either a forward slash (/) by itself or a
-     * string that must begin and end with forward slashes, containing any ASCII
-     * character from the ! (\u0021) thru the DEL character (\u007F), including most
-     * punctuation characters, digits, and upper and lowercased letters.</p>
+     * If it is not included, it defaults to a slash (/).</p> <p>This paramater allows
+     * (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     * of characters consisting of either a forward slash (/) by itself or a string
+     * that must begin and end with forward slashes, containing any ASCII character
+     * from the ! (\u0021) thru the DEL character (\u007F), including most punctuation
+     * characters, digits, and upper and lowercased letters.</p>
      */
     inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
 
@@ -118,12 +118,12 @@ namespace Model
      * <p>The path for the policy.</p> <p>For more information about paths, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
-     * If it is not included, it defaults to a slash (/).</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters consisting of either a forward slash (/) by itself or a
-     * string that must begin and end with forward slashes, containing any ASCII
-     * character from the ! (\u0021) thru the DEL character (\u007F), including most
-     * punctuation characters, digits, and upper and lowercased letters.</p>
+     * If it is not included, it defaults to a slash (/).</p> <p>This paramater allows
+     * (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     * of characters consisting of either a forward slash (/) by itself or a string
+     * that must begin and end with forward slashes, containing any ASCII character
+     * from the ! (\u0021) thru the DEL character (\u007F), including most punctuation
+     * characters, digits, and upper and lowercased letters.</p>
      */
     inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = value; }
 
@@ -131,12 +131,12 @@ namespace Model
      * <p>The path for the policy.</p> <p>For more information about paths, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
-     * If it is not included, it defaults to a slash (/).</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters consisting of either a forward slash (/) by itself or a
-     * string that must begin and end with forward slashes, containing any ASCII
-     * character from the ! (\u0021) thru the DEL character (\u007F), including most
-     * punctuation characters, digits, and upper and lowercased letters.</p>
+     * If it is not included, it defaults to a slash (/).</p> <p>This paramater allows
+     * (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     * of characters consisting of either a forward slash (/) by itself or a string
+     * that must begin and end with forward slashes, containing any ASCII character
+     * from the ! (\u0021) thru the DEL character (\u007F), including most punctuation
+     * characters, digits, and upper and lowercased letters.</p>
      */
     inline void SetPath(const char* value) { m_pathHasBeenSet = true; m_path.assign(value); }
 
@@ -144,12 +144,12 @@ namespace Model
      * <p>The path for the policy.</p> <p>For more information about paths, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
-     * If it is not included, it defaults to a slash (/).</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters consisting of either a forward slash (/) by itself or a
-     * string that must begin and end with forward slashes, containing any ASCII
-     * character from the ! (\u0021) thru the DEL character (\u007F), including most
-     * punctuation characters, digits, and upper and lowercased letters.</p>
+     * If it is not included, it defaults to a slash (/).</p> <p>This paramater allows
+     * (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     * of characters consisting of either a forward slash (/) by itself or a string
+     * that must begin and end with forward slashes, containing any ASCII character
+     * from the ! (\u0021) thru the DEL character (\u007F), including most punctuation
+     * characters, digits, and upper and lowercased letters.</p>
      */
     inline CreatePolicyRequest& WithPath(const Aws::String& value) { SetPath(value); return *this;}
 
@@ -157,12 +157,12 @@ namespace Model
      * <p>The path for the policy.</p> <p>For more information about paths, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
-     * If it is not included, it defaults to a slash (/).</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters consisting of either a forward slash (/) by itself or a
-     * string that must begin and end with forward slashes, containing any ASCII
-     * character from the ! (\u0021) thru the DEL character (\u007F), including most
-     * punctuation characters, digits, and upper and lowercased letters.</p>
+     * If it is not included, it defaults to a slash (/).</p> <p>This paramater allows
+     * (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     * of characters consisting of either a forward slash (/) by itself or a string
+     * that must begin and end with forward slashes, containing any ASCII character
+     * from the ! (\u0021) thru the DEL character (\u007F), including most punctuation
+     * characters, digits, and upper and lowercased letters.</p>
      */
     inline CreatePolicyRequest& WithPath(Aws::String&& value) { SetPath(value); return *this;}
 
@@ -170,82 +170,89 @@ namespace Model
      * <p>The path for the policy.</p> <p>For more information about paths, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
-     * If it is not included, it defaults to a slash (/).</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters consisting of either a forward slash (/) by itself or a
-     * string that must begin and end with forward slashes, containing any ASCII
-     * character from the ! (\u0021) thru the DEL character (\u007F), including most
-     * punctuation characters, digits, and upper and lowercased letters.</p>
+     * If it is not included, it defaults to a slash (/).</p> <p>This paramater allows
+     * (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     * of characters consisting of either a forward slash (/) by itself or a string
+     * that must begin and end with forward slashes, containing any ASCII character
+     * from the ! (\u0021) thru the DEL character (\u007F), including most punctuation
+     * characters, digits, and upper and lowercased letters.</p>
      */
     inline CreatePolicyRequest& WithPath(const char* value) { SetPath(value); return *this;}
 
     /**
      * <p>The JSON policy document that you want to use as the content for the new
-     * policy.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-     * for this parameter is a string of characters consisting of any printable ASCII
-     * character ranging from the space character (\u0020) through end of the ASCII
-     * character range (\u00FF). It also includes the special characters tab (\u0009),
-     * line feed (\u000A), and carriage return (\u000D).</p>
+     * policy.</p> <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of any printable ASCII character ranging from the space character
+     * (\u0020) through end of the ASCII character range (\u00FF). It also includes the
+     * special characters tab (\u0009), line feed (\u000A), and carriage return
+     * (\u000D).</p>
      */
     inline const Aws::String& GetPolicyDocument() const{ return m_policyDocument; }
 
     /**
      * <p>The JSON policy document that you want to use as the content for the new
-     * policy.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-     * for this parameter is a string of characters consisting of any printable ASCII
-     * character ranging from the space character (\u0020) through end of the ASCII
-     * character range (\u00FF). It also includes the special characters tab (\u0009),
-     * line feed (\u000A), and carriage return (\u000D).</p>
+     * policy.</p> <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of any printable ASCII character ranging from the space character
+     * (\u0020) through end of the ASCII character range (\u00FF). It also includes the
+     * special characters tab (\u0009), line feed (\u000A), and carriage return
+     * (\u000D).</p>
      */
     inline void SetPolicyDocument(const Aws::String& value) { m_policyDocumentHasBeenSet = true; m_policyDocument = value; }
 
     /**
      * <p>The JSON policy document that you want to use as the content for the new
-     * policy.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-     * for this parameter is a string of characters consisting of any printable ASCII
-     * character ranging from the space character (\u0020) through end of the ASCII
-     * character range (\u00FF). It also includes the special characters tab (\u0009),
-     * line feed (\u000A), and carriage return (\u000D).</p>
+     * policy.</p> <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of any printable ASCII character ranging from the space character
+     * (\u0020) through end of the ASCII character range (\u00FF). It also includes the
+     * special characters tab (\u0009), line feed (\u000A), and carriage return
+     * (\u000D).</p>
      */
     inline void SetPolicyDocument(Aws::String&& value) { m_policyDocumentHasBeenSet = true; m_policyDocument = value; }
 
     /**
      * <p>The JSON policy document that you want to use as the content for the new
-     * policy.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-     * for this parameter is a string of characters consisting of any printable ASCII
-     * character ranging from the space character (\u0020) through end of the ASCII
-     * character range (\u00FF). It also includes the special characters tab (\u0009),
-     * line feed (\u000A), and carriage return (\u000D).</p>
+     * policy.</p> <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of any printable ASCII character ranging from the space character
+     * (\u0020) through end of the ASCII character range (\u00FF). It also includes the
+     * special characters tab (\u0009), line feed (\u000A), and carriage return
+     * (\u000D).</p>
      */
     inline void SetPolicyDocument(const char* value) { m_policyDocumentHasBeenSet = true; m_policyDocument.assign(value); }
 
     /**
      * <p>The JSON policy document that you want to use as the content for the new
-     * policy.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-     * for this parameter is a string of characters consisting of any printable ASCII
-     * character ranging from the space character (\u0020) through end of the ASCII
-     * character range (\u00FF). It also includes the special characters tab (\u0009),
-     * line feed (\u000A), and carriage return (\u000D).</p>
+     * policy.</p> <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of any printable ASCII character ranging from the space character
+     * (\u0020) through end of the ASCII character range (\u00FF). It also includes the
+     * special characters tab (\u0009), line feed (\u000A), and carriage return
+     * (\u000D).</p>
      */
     inline CreatePolicyRequest& WithPolicyDocument(const Aws::String& value) { SetPolicyDocument(value); return *this;}
 
     /**
      * <p>The JSON policy document that you want to use as the content for the new
-     * policy.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-     * for this parameter is a string of characters consisting of any printable ASCII
-     * character ranging from the space character (\u0020) through end of the ASCII
-     * character range (\u00FF). It also includes the special characters tab (\u0009),
-     * line feed (\u000A), and carriage return (\u000D).</p>
+     * policy.</p> <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of any printable ASCII character ranging from the space character
+     * (\u0020) through end of the ASCII character range (\u00FF). It also includes the
+     * special characters tab (\u0009), line feed (\u000A), and carriage return
+     * (\u000D).</p>
      */
     inline CreatePolicyRequest& WithPolicyDocument(Aws::String&& value) { SetPolicyDocument(value); return *this;}
 
     /**
      * <p>The JSON policy document that you want to use as the content for the new
-     * policy.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-     * for this parameter is a string of characters consisting of any printable ASCII
-     * character ranging from the space character (\u0020) through end of the ASCII
-     * character range (\u00FF). It also includes the special characters tab (\u0009),
-     * line feed (\u000A), and carriage return (\u000D).</p>
+     * policy.</p> <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of any printable ASCII character ranging from the space character
+     * (\u0020) through end of the ASCII character range (\u00FF). It also includes the
+     * special characters tab (\u0009), line feed (\u000A), and carriage return
+     * (\u000D).</p>
      */
     inline CreatePolicyRequest& WithPolicyDocument(const char* value) { SetPolicyDocument(value); return *this;}
 

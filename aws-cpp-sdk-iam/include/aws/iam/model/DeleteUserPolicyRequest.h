@@ -34,118 +34,118 @@ namespace Model
 
     /**
      * <p>The name (friendly name, not ARN) identifying the user that the policy is
-     * embedded in.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
-     * pattern</a> for this parameter is a string of characters consisting of upper and
-     * lowercase alphanumeric characters with no spaces. You can also include any of
-     * the following characters: =,.@-</p>
+     * embedded in.</p> <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: =,.@-</p>
      */
     inline const Aws::String& GetUserName() const{ return m_userName; }
 
     /**
      * <p>The name (friendly name, not ARN) identifying the user that the policy is
-     * embedded in.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
-     * pattern</a> for this parameter is a string of characters consisting of upper and
-     * lowercase alphanumeric characters with no spaces. You can also include any of
-     * the following characters: =,.@-</p>
+     * embedded in.</p> <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: =,.@-</p>
      */
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /**
      * <p>The name (friendly name, not ARN) identifying the user that the policy is
-     * embedded in.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
-     * pattern</a> for this parameter is a string of characters consisting of upper and
-     * lowercase alphanumeric characters with no spaces. You can also include any of
-     * the following characters: =,.@-</p>
+     * embedded in.</p> <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: =,.@-</p>
      */
     inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /**
      * <p>The name (friendly name, not ARN) identifying the user that the policy is
-     * embedded in.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
-     * pattern</a> for this parameter is a string of characters consisting of upper and
-     * lowercase alphanumeric characters with no spaces. You can also include any of
-     * the following characters: =,.@-</p>
+     * embedded in.</p> <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: =,.@-</p>
      */
     inline void SetUserName(const char* value) { m_userNameHasBeenSet = true; m_userName.assign(value); }
 
     /**
      * <p>The name (friendly name, not ARN) identifying the user that the policy is
-     * embedded in.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
-     * pattern</a> for this parameter is a string of characters consisting of upper and
-     * lowercase alphanumeric characters with no spaces. You can also include any of
-     * the following characters: =,.@-</p>
+     * embedded in.</p> <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: =,.@-</p>
      */
     inline DeleteUserPolicyRequest& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
 
     /**
      * <p>The name (friendly name, not ARN) identifying the user that the policy is
-     * embedded in.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
-     * pattern</a> for this parameter is a string of characters consisting of upper and
-     * lowercase alphanumeric characters with no spaces. You can also include any of
-     * the following characters: =,.@-</p>
+     * embedded in.</p> <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: =,.@-</p>
      */
     inline DeleteUserPolicyRequest& WithUserName(Aws::String&& value) { SetUserName(value); return *this;}
 
     /**
      * <p>The name (friendly name, not ARN) identifying the user that the policy is
-     * embedded in.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
-     * pattern</a> for this parameter is a string of characters consisting of upper and
-     * lowercase alphanumeric characters with no spaces. You can also include any of
-     * the following characters: =,.@-</p>
+     * embedded in.</p> <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: =,.@-</p>
      */
     inline DeleteUserPolicyRequest& WithUserName(const char* value) { SetUserName(value); return *this;}
 
     /**
-     * <p>The name identifying the policy document to delete.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
+     * <p>The name identifying the policy document to delete.</p> <p>This parameter
+     * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of upper and lowercase alphanumeric characters
      * with no spaces. You can also include any of the following characters: =,.@-</p>
      */
     inline const Aws::String& GetPolicyName() const{ return m_policyName; }
 
     /**
-     * <p>The name identifying the policy document to delete.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
+     * <p>The name identifying the policy document to delete.</p> <p>This parameter
+     * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of upper and lowercase alphanumeric characters
      * with no spaces. You can also include any of the following characters: =,.@-</p>
      */
     inline void SetPolicyName(const Aws::String& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
 
     /**
-     * <p>The name identifying the policy document to delete.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
+     * <p>The name identifying the policy document to delete.</p> <p>This parameter
+     * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of upper and lowercase alphanumeric characters
      * with no spaces. You can also include any of the following characters: =,.@-</p>
      */
     inline void SetPolicyName(Aws::String&& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
 
     /**
-     * <p>The name identifying the policy document to delete.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
+     * <p>The name identifying the policy document to delete.</p> <p>This parameter
+     * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of upper and lowercase alphanumeric characters
      * with no spaces. You can also include any of the following characters: =,.@-</p>
      */
     inline void SetPolicyName(const char* value) { m_policyNameHasBeenSet = true; m_policyName.assign(value); }
 
     /**
-     * <p>The name identifying the policy document to delete.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
+     * <p>The name identifying the policy document to delete.</p> <p>This parameter
+     * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of upper and lowercase alphanumeric characters
      * with no spaces. You can also include any of the following characters: =,.@-</p>
      */
     inline DeleteUserPolicyRequest& WithPolicyName(const Aws::String& value) { SetPolicyName(value); return *this;}
 
     /**
-     * <p>The name identifying the policy document to delete.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
+     * <p>The name identifying the policy document to delete.</p> <p>This parameter
+     * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of upper and lowercase alphanumeric characters
      * with no spaces. You can also include any of the following characters: =,.@-</p>
      */
     inline DeleteUserPolicyRequest& WithPolicyName(Aws::String&& value) { SetPolicyName(value); return *this;}
 
     /**
-     * <p>The name identifying the policy document to delete.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
+     * <p>The name identifying the policy document to delete.</p> <p>This parameter
+     * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of upper and lowercase alphanumeric characters
      * with no spaces. You can also include any of the following characters: =,.@-</p>
      */
