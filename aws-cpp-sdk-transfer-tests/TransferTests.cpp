@@ -186,7 +186,7 @@ protected:
     {
         Aws::String directory;
 #ifdef __ANDROID__
-        directory = Aws::Platform::GetCacheDirectory() + "TransferTests";
+        directory = Aws::FileSystem::Join(Aws::Platform::GetCacheDirectory(), "TransferTests");
 #else
         directory = "TransferTests";
 #endif // __ANDROID__
