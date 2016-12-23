@@ -199,7 +199,6 @@ Aws::String CreateTempFilePath()
 
 std::shared_ptr<Directory> OpenDirectory(const Aws::String& path, const Aws::String& relativePath)
 {
-    assert(directoryEntry.fileType != FileType::File);
     return Aws::MakeShared<AndroidDirectory>(FILE_SYSTEM_UTILS_LOG_TAG, path, relativePath);
 }
 
