@@ -69,9 +69,9 @@ target_link_libraries(${PROJECT_NAME} ${PROJECT_LIBS})
 
 setup_install()
 
-install (FILES ${S3ENCRYPTION_HEADERS} DESTINATION include/aws/s3-encryption)
-install (FILES ${S3ENCRYPTION_MATERIALS_HEADERS} DESTINATION include/aws/s3-encryption/materials)
-install (FILES ${S3ENCRYPTION_HANDLERS_HEADERS} DESTINATION include/aws/s3-encryption/handlers)
-install (FILES ${S3ENCRYPTION_MODULES_HEADERS} DESTINATION include/aws/s3-encryption/modules)
+install (FILES ${S3ENCRYPTION_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/s3-encryption)
+install (FILES ${S3ENCRYPTION_MATERIALS_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/s3-encryption/materials)
+install (FILES ${S3ENCRYPTION_HANDLERS_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/s3-encryption/handlers)
+install (FILES ${S3ENCRYPTION_MODULES_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/s3-encryption/modules)
 
 do_packaging()
