@@ -175,7 +175,7 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::String& uri,
                     m_signer->SetClockSkew(diff);
                     auto newError = AWSError<CoreErrors>(
                         outcome.GetError().GetErrorType(), outcome.GetError().GetExceptionName(), outcome.GetError().GetMessage(), true);
-                    newError.SetResponseHeaders = outcome.GetError().GetResponseHeaders();
+                    newError.SetResponseHeaders(outcome.GetError().GetResponseHeaders());
                     outcome = newError;
                 }
                 else
