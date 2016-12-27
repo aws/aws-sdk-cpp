@@ -71,6 +71,8 @@ public class CoreErrors
         VARIANTS.add("InvalidSignatureException");
         VARIANTS.add("SignatureDoesNotMatch");
         VARIANTS.add("SignatureDoesNotMatchException");
+        VARIANTS.add("InvalidAccessKeyId");
+        VARIANTS.add("InvalidAccessKeyIdException");
     }
 
 }
