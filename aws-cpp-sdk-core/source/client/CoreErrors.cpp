@@ -61,6 +61,8 @@ static const int SLOW_DOWN_HASH = HashingUtils::HashString("SlowDown");
 static const int SLOW_DOWN_EXCEPTION_HASH = HashingUtils::HashString("SlowDownException");
 static const int SIGNATURE_DOES_NOT_MATCH_HASH = HashingUtils::HashString("SignatureDoesNotMatch");
 static const int SIGNATURE_DOES_NOT_MATCH_EXCEPTION_HASH = HashingUtils::HashString("SignatureDoesNotMatchException");
+static const int INVALID_ACCESS_KEY_ID_HASH = HashingUtils::HashString("InvalidAccessKeyId");
+static const int INVALID_ACCESS_KEY_ID_EXCEPTION_HASH = HashingUtils::HashString("InvalidAccessKeyIdException");
 static const int REQUEST_TIME_TOO_SKEWED_HASH = HashingUtils::HashString("RequestTimeTooSkewed");
 static const int REQUEST_TIME_TOO_SKEWED_EXCEPTION_HASH = HashingUtils::HashString("RequestTimeTooSkewedException");
 
@@ -74,7 +76,7 @@ AWSError<CoreErrors> CoreErrorsMapper::GetErrorForName(const char* errorName)
   }
   else if (errorHash == INVALID_SIGNATURE_EXCEPTION_HASH || errorHash == INVALID_SIGNATURE_HASH)
   {
-      return AWSError<CoreErrors>(CoreErrors::INVALID_SIGNATURE, true);
+      return AWSError<CoreErrors>(CoreErrors::INVALID_SIGNATURE, false);
   }
   else if (errorHash == INTERNAL_FAILURE_HASH || errorHash == INTERNAL_SERVER_ERROR_HASH)
   {
@@ -150,7 +152,11 @@ AWSError<CoreErrors> CoreErrorsMapper::GetErrorForName(const char* errorName)
   }
   else if (errorHash == SIGNATURE_DOES_NOT_MATCH_HASH || errorHash == SIGNATURE_DOES_NOT_MATCH_EXCEPTION_HASH)
   {
-      return AWSError<CoreErrors>(CoreErrors::SIGNATURE_DOES_NOT_MATCH, true);
+      return AWSError<CoreErrors>(CoreErrors::SIGNATURE_DOES_NOT_MATCH, false);
+  }
+  else if (errorHash == INVALID_ACCESS_KEY_ID_HASH || errorHash == INVALID_ACCESS_KEY_ID_EXCEPTION_HASH)
+  {
+      return AWSError<CoreErrors>(CoreErrors::INVALID_ACCESS_KEY_ID, false);
   }
   else if (errorHash == REQUEST_TIME_TOO_SKEWED_HASH || errorHash == REQUEST_TIME_TOO_SKEWED_EXCEPTION_HASH)
   {

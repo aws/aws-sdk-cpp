@@ -167,13 +167,16 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::String& uri,
                 }
 
                 AWS_LOGSTREAM_DEBUG(AWS_CLIENT_LOG_TAG, "Server time is " << serverTime.ToGmtString(DateFormat::RFC822) << ", while client time is " << DateTime::Now().ToGmtString(DateFormat::RFC822));
-                auto diff = DateTime::Diff(serverTime, DateTime::Now());
+                auto diff = DateTime::Diff(serverTime, m_signer->GetSigningTimestamp());
                 //only try again if clock skew was the cause of the error.
                 if(diff >= FOUR_MINUTES)
                 {
                     AWS_LOGSTREAM_INFO(AWS_CLIENT_LOG_TAG, "Computed time difference as " << diff.count() << " milliseconds. This is more than 4 minutes. Adjusting signer with the skew.");
-
                     m_signer->SetClockSkew(diff);
+                    auto newError = AWSError<CoreErrors>(
+                        outcome.GetError().GetErrorType(), outcome.GetError().GetExceptionName(), outcome.GetError().GetMessage(), true);
+                    newError.SetResponseHeaders = outcome.GetError().GetResponseHeaders();
+                    outcome = newError;
                 }
                 else
                 {

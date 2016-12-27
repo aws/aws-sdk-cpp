@@ -86,8 +86,12 @@ namespace Aws
              */
             virtual void SetClockSkew(const std::chrono::milliseconds& clockSkew) { m_clockSkew = clockSkew; }
 
-        protected:
+            /**
+             * Gets the timestamp being used by the signer. This may include a clock skew if a clock skew has been detected.
+             */
             virtual Aws::Utils::DateTime GetSigningTimestamp() const { return Aws::Utils::DateTime::Now() + GetClockSkewOffset(); }
+
+        protected:            
             virtual std::chrono::milliseconds GetClockSkewOffset() const { return m_clockSkew.load(); }
 
             std::atomic<std::chrono::milliseconds> m_clockSkew;
