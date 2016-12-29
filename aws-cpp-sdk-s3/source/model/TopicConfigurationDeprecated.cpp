@@ -99,7 +99,7 @@ void TopicConfigurationDeprecated::AddToNode(XmlNode& parentNode) const
 
   if(m_topicHasBeenSet)
   {
-   XmlNode topicNode = parentNode.CreateChildElement("Event");
+   XmlNode topicNode = parentNode.CreateChildElement("Topic");
    topicNode.SetText(m_topic);
   }
 

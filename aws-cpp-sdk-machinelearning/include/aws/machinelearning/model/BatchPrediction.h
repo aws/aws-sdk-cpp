@@ -35,7 +35,9 @@ namespace Model
   /**
    * <p> Represents the output of a <code>GetBatchPrediction</code> operation.</p>
    * <p> The content consists of the detailed metadata, the status, and the data file
-   * information of a <code>Batch Prediction</code>.</p>
+   * information of a <code>Batch Prediction</code>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/BatchPrediction">AWS
+   * API Reference</a></p>
    */
   class AWS_MACHINELEARNING_API BatchPrediction
   {

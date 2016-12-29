@@ -26,7 +26,10 @@ namespace Model
 
   /**
    * <p>Container for the parameters to the <code><a>BuildSuggester</a></code>
-   * operation. Specifies the name of the domain you want to update.</p>
+   * operation. Specifies the name of the domain you want to update.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/BuildSuggestersRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDSEARCH_API BuildSuggestersRequest : public CloudSearchRequest
   {

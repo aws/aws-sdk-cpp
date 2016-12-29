@@ -28,6 +28,7 @@ namespace Model
 {
 
 FailureDetails::FailureDetails() : 
+    m_type(FailureType::NOT_SET),
     m_typeHasBeenSet(false),
     m_messageHasBeenSet(false),
     m_externalExecutionIdHasBeenSet(false)
@@ -35,6 +36,7 @@ FailureDetails::FailureDetails() :
 }
 
 FailureDetails::FailureDetails(const JsonValue& jsonValue) : 
+    m_type(FailureType::NOT_SET),
     m_typeHasBeenSet(false),
     m_messageHasBeenSet(false),
     m_externalExecutionIdHasBeenSet(false)

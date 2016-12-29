@@ -49,7 +49,10 @@ namespace Model
    * comparison evaluates to false.</p> </li> </ul> <p> <i>Value</i> and
    * <i>Exists</i> are incompatible with <i>AttributeValueList</i> and
    * <i>ComparisonOperator</i>. Note that if you use both sets of parameters at once,
-   * DynamoDB will return a <i>ValidationException</i> exception.</p>
+   * DynamoDB will return a <i>ValidationException</i> exception.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ExpectedAttributeValue">AWS
+   * API Reference</a></p>
    */
   class AWS_DYNAMODB_API ExpectedAttributeValue
   {

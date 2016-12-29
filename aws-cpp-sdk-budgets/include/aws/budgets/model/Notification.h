@@ -33,7 +33,9 @@ namespace Model
 
   /**
    * Notification model. Each budget may contain multiple notifications with
-   * different settings.
+   * different settings.<p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/Notification">AWS
+   * API Reference</a></p>
    */
   class AWS_BUDGETS_API Notification
   {

@@ -30,13 +30,17 @@ namespace Model
 {
 
 VersioningConfiguration::VersioningConfiguration() : 
+    m_mFADelete(MFADelete::NOT_SET),
     m_mFADeleteHasBeenSet(false),
+    m_status(BucketVersioningStatus::NOT_SET),
     m_statusHasBeenSet(false)
 {
 }
 
 VersioningConfiguration::VersioningConfiguration(const XmlNode& xmlNode) : 
+    m_mFADelete(MFADelete::NOT_SET),
     m_mFADeleteHasBeenSet(false),
+    m_status(BucketVersioningStatus::NOT_SET),
     m_statusHasBeenSet(false)
 {
   *this = xmlNode;
@@ -70,13 +74,13 @@ void VersioningConfiguration::AddToNode(XmlNode& parentNode) const
   Aws::StringStream ss;
   if(m_mFADeleteHasBeenSet)
   {
-   XmlNode mFADeleteNode = parentNode.CreateChildElement("MFADelete");
+   XmlNode mFADeleteNode = parentNode.CreateChildElement("MfaDelete");
    mFADeleteNode.SetText(MFADeleteMapper::GetNameForMFADelete(m_mFADelete));
   }
 
   if(m_statusHasBeenSet)
   {
-   XmlNode statusNode = parentNode.CreateChildElement("MfaDelete");
+   XmlNode statusNode = parentNode.CreateChildElement("Status");
    statusNode.SetText(BucketVersioningStatusMapper::GetNameForBucketVersioningStatus(m_status));
   }
 

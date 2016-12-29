@@ -32,7 +32,9 @@ namespace Model
 {
 
   /**
-   * <p>Describes the members of a VPC security group.</p>
+   * <p>Describes the members of a VPC security group.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/VpcSecurityGroupMembership">AWS
+   * API Reference</a></p>
    */
   class AWS_REDSHIFT_API VpcSecurityGroupMembership
   {

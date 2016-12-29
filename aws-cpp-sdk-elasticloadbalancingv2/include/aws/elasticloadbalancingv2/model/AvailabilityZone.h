@@ -32,7 +32,9 @@ namespace Model
 {
 
   /**
-   * <p>Information about an Availability Zone.</p>
+   * <p>Information about an Availability Zone.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/AvailabilityZone">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICLOADBALANCINGV2_API AvailabilityZone
   {

@@ -140,89 +140,89 @@ namespace Model
 
     /**
      * <p>An optional list of additional policies for which you want the list of
-     * context keys that are referenced.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters consisting of any printable ASCII character ranging from
-     * the space character (\u0020) through end of the ASCII character range (\u00FF).
-     * It also includes the special characters tab (\u0009), line feed (\u000A), and
-     * carriage return (\u000D).</p>
+     * context keys that are referenced.</p> <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of any printable ASCII character ranging from the space character
+     * (\u0020) through end of the ASCII character range (\u00FF). It also includes the
+     * special characters tab (\u0009), line feed (\u000A), and carriage return
+     * (\u000D).</p>
      */
     inline const Aws::Vector<Aws::String>& GetPolicyInputList() const{ return m_policyInputList; }
 
     /**
      * <p>An optional list of additional policies for which you want the list of
-     * context keys that are referenced.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters consisting of any printable ASCII character ranging from
-     * the space character (\u0020) through end of the ASCII character range (\u00FF).
-     * It also includes the special characters tab (\u0009), line feed (\u000A), and
-     * carriage return (\u000D).</p>
+     * context keys that are referenced.</p> <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of any printable ASCII character ranging from the space character
+     * (\u0020) through end of the ASCII character range (\u00FF). It also includes the
+     * special characters tab (\u0009), line feed (\u000A), and carriage return
+     * (\u000D).</p>
      */
     inline void SetPolicyInputList(const Aws::Vector<Aws::String>& value) { m_policyInputListHasBeenSet = true; m_policyInputList = value; }
 
     /**
      * <p>An optional list of additional policies for which you want the list of
-     * context keys that are referenced.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters consisting of any printable ASCII character ranging from
-     * the space character (\u0020) through end of the ASCII character range (\u00FF).
-     * It also includes the special characters tab (\u0009), line feed (\u000A), and
-     * carriage return (\u000D).</p>
+     * context keys that are referenced.</p> <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of any printable ASCII character ranging from the space character
+     * (\u0020) through end of the ASCII character range (\u00FF). It also includes the
+     * special characters tab (\u0009), line feed (\u000A), and carriage return
+     * (\u000D).</p>
      */
     inline void SetPolicyInputList(Aws::Vector<Aws::String>&& value) { m_policyInputListHasBeenSet = true; m_policyInputList = value; }
 
     /**
      * <p>An optional list of additional policies for which you want the list of
-     * context keys that are referenced.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters consisting of any printable ASCII character ranging from
-     * the space character (\u0020) through end of the ASCII character range (\u00FF).
-     * It also includes the special characters tab (\u0009), line feed (\u000A), and
-     * carriage return (\u000D).</p>
+     * context keys that are referenced.</p> <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of any printable ASCII character ranging from the space character
+     * (\u0020) through end of the ASCII character range (\u00FF). It also includes the
+     * special characters tab (\u0009), line feed (\u000A), and carriage return
+     * (\u000D).</p>
      */
     inline GetContextKeysForPrincipalPolicyRequest& WithPolicyInputList(const Aws::Vector<Aws::String>& value) { SetPolicyInputList(value); return *this;}
 
     /**
      * <p>An optional list of additional policies for which you want the list of
-     * context keys that are referenced.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters consisting of any printable ASCII character ranging from
-     * the space character (\u0020) through end of the ASCII character range (\u00FF).
-     * It also includes the special characters tab (\u0009), line feed (\u000A), and
-     * carriage return (\u000D).</p>
+     * context keys that are referenced.</p> <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of any printable ASCII character ranging from the space character
+     * (\u0020) through end of the ASCII character range (\u00FF). It also includes the
+     * special characters tab (\u0009), line feed (\u000A), and carriage return
+     * (\u000D).</p>
      */
     inline GetContextKeysForPrincipalPolicyRequest& WithPolicyInputList(Aws::Vector<Aws::String>&& value) { SetPolicyInputList(value); return *this;}
 
     /**
      * <p>An optional list of additional policies for which you want the list of
-     * context keys that are referenced.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters consisting of any printable ASCII character ranging from
-     * the space character (\u0020) through end of the ASCII character range (\u00FF).
-     * It also includes the special characters tab (\u0009), line feed (\u000A), and
-     * carriage return (\u000D).</p>
+     * context keys that are referenced.</p> <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of any printable ASCII character ranging from the space character
+     * (\u0020) through end of the ASCII character range (\u00FF). It also includes the
+     * special characters tab (\u0009), line feed (\u000A), and carriage return
+     * (\u000D).</p>
      */
     inline GetContextKeysForPrincipalPolicyRequest& AddPolicyInputList(const Aws::String& value) { m_policyInputListHasBeenSet = true; m_policyInputList.push_back(value); return *this; }
 
     /**
      * <p>An optional list of additional policies for which you want the list of
-     * context keys that are referenced.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters consisting of any printable ASCII character ranging from
-     * the space character (\u0020) through end of the ASCII character range (\u00FF).
-     * It also includes the special characters tab (\u0009), line feed (\u000A), and
-     * carriage return (\u000D).</p>
+     * context keys that are referenced.</p> <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of any printable ASCII character ranging from the space character
+     * (\u0020) through end of the ASCII character range (\u00FF). It also includes the
+     * special characters tab (\u0009), line feed (\u000A), and carriage return
+     * (\u000D).</p>
      */
     inline GetContextKeysForPrincipalPolicyRequest& AddPolicyInputList(Aws::String&& value) { m_policyInputListHasBeenSet = true; m_policyInputList.push_back(value); return *this; }
 
     /**
      * <p>An optional list of additional policies for which you want the list of
-     * context keys that are referenced.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters consisting of any printable ASCII character ranging from
-     * the space character (\u0020) through end of the ASCII character range (\u00FF).
-     * It also includes the special characters tab (\u0009), line feed (\u000A), and
-     * carriage return (\u000D).</p>
+     * context keys that are referenced.</p> <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of any printable ASCII character ranging from the space character
+     * (\u0020) through end of the ASCII character range (\u00FF). It also includes the
+     * special characters tab (\u0009), line feed (\u000A), and carriage return
+     * (\u000D).</p>
      */
     inline GetContextKeysForPrincipalPolicyRequest& AddPolicyInputList(const char* value) { m_policyInputListHasBeenSet = true; m_policyInputList.push_back(value); return *this; }
 

@@ -31,6 +31,7 @@ namespace Aws
 
         static const int TRIM_HORIZON_HASH = HashingUtils::HashString("TRIM_HORIZON");
         static const int LATEST_HASH = HashingUtils::HashString("LATEST");
+        static const int AT_TIMESTAMP_HASH = HashingUtils::HashString("AT_TIMESTAMP");
 
 
         EventSourcePosition GetEventSourcePositionForName(const Aws::String& name)
@@ -43,6 +44,10 @@ namespace Aws
           else if (hashCode == LATEST_HASH)
           {
             return EventSourcePosition::LATEST;
+          }
+          else if (hashCode == AT_TIMESTAMP_HASH)
+          {
+            return EventSourcePosition::AT_TIMESTAMP;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -62,6 +67,8 @@ namespace Aws
             return "TRIM_HORIZON";
           case EventSourcePosition::LATEST:
             return "LATEST";
+          case EventSourcePosition::AT_TIMESTAMP:
+            return "AT_TIMESTAMP";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

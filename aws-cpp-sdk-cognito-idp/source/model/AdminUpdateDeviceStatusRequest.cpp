@@ -25,6 +25,7 @@ AdminUpdateDeviceStatusRequest::AdminUpdateDeviceStatusRequest() :
     m_userPoolIdHasBeenSet(false),
     m_usernameHasBeenSet(false),
     m_deviceKeyHasBeenSet(false),
+    m_deviceRememberedStatus(DeviceRememberedStatusType::NOT_SET),
     m_deviceRememberedStatusHasBeenSet(false)
 {
 }

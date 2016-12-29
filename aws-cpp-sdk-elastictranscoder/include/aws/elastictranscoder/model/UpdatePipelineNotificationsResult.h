@@ -33,7 +33,10 @@ namespace ElasticTranscoder
 namespace Model
 {
   /**
-   * <p>The <code>UpdatePipelineNotificationsResponse</code> structure.</p>
+   * <p>The <code>UpdatePipelineNotificationsResponse</code> structure.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/UpdatePipelineNotificationsResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICTRANSCODER_API UpdatePipelineNotificationsResult
   {
@@ -43,32 +46,32 @@ namespace Model
     UpdatePipelineNotificationsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * <p>A section of the response body that provides information about the
-     * pipeline.</p>
+     * <p>A section of the response body that provides information about the pipeline
+     * associated with this notification.</p>
      */
     inline const Pipeline& GetPipeline() const{ return m_pipeline; }
 
     /**
-     * <p>A section of the response body that provides information about the
-     * pipeline.</p>
+     * <p>A section of the response body that provides information about the pipeline
+     * associated with this notification.</p>
      */
     inline void SetPipeline(const Pipeline& value) { m_pipeline = value; }
 
     /**
-     * <p>A section of the response body that provides information about the
-     * pipeline.</p>
+     * <p>A section of the response body that provides information about the pipeline
+     * associated with this notification.</p>
      */
     inline void SetPipeline(Pipeline&& value) { m_pipeline = value; }
 
     /**
-     * <p>A section of the response body that provides information about the
-     * pipeline.</p>
+     * <p>A section of the response body that provides information about the pipeline
+     * associated with this notification.</p>
      */
     inline UpdatePipelineNotificationsResult& WithPipeline(const Pipeline& value) { SetPipeline(value); return *this;}
 
     /**
-     * <p>A section of the response body that provides information about the
-     * pipeline.</p>
+     * <p>A section of the response body that provides information about the pipeline
+     * associated with this notification.</p>
      */
     inline UpdatePipelineNotificationsResult& WithPipeline(Pipeline&& value) { SetPipeline(value); return *this;}
 

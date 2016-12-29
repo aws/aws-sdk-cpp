@@ -27,6 +27,8 @@ namespace ServiceCatalog
 namespace ServiceCatalogErrorMapper
 {
 
+static const int RESOURCE_IN_USE_HASH = HashingUtils::HashString("ResourceInUseException");
+static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
 static const int INVALID_PARAMETERS_HASH = HashingUtils::HashString("InvalidParametersException");
 static const int DUPLICATE_RESOURCE_HASH = HashingUtils::HashString("DuplicateResourceException");
 
@@ -35,7 +37,15 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == INVALID_PARAMETERS_HASH)
+  if (hashCode == RESOURCE_IN_USE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ServiceCatalogErrors::RESOURCE_IN_USE), false);
+  }
+  else if (hashCode == LIMIT_EXCEEDED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ServiceCatalogErrors::LIMIT_EXCEEDED), false);
+  }
+  else if (hashCode == INVALID_PARAMETERS_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ServiceCatalogErrors::INVALID_PARAMETERS), false);
   }

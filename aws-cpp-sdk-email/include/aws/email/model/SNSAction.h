@@ -49,7 +49,9 @@ namespace Model
    * </important> <p>For information about using a receipt rule to publish an Amazon
    * SNS notification, see the <a
    * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-action-sns.html">Amazon
-   * SES Developer Guide</a>.</p>
+   * SES Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SNSAction">AWS API
+   * Reference</a></p>
    */
   class AWS_SES_API SNSAction
   {

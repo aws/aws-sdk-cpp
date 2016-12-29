@@ -23,8 +23,12 @@ using namespace Aws::Utils;
 
 CreateAssociationRequest::CreateAssociationRequest() : 
     m_nameHasBeenSet(false),
+    m_documentVersionHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
-    m_parametersHasBeenSet(false)
+    m_parametersHasBeenSet(false),
+    m_targetsHasBeenSet(false),
+    m_scheduleExpressionHasBeenSet(false),
+    m_outputLocationHasBeenSet(false)
 {
 }
 
@@ -35,6 +39,12 @@ Aws::String CreateAssociationRequest::SerializePayload() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("Name", m_name);
+
+  }
+
+  if(m_documentVersionHasBeenSet)
+  {
+   payload.WithString("DocumentVersion", m_documentVersion);
 
   }
 
@@ -57,6 +67,29 @@ Aws::String CreateAssociationRequest::SerializePayload() const
      parametersJsonMap.WithArray(parametersItem.first, std::move(parameterValueListJsonList));
    }
    payload.WithObject("Parameters", std::move(parametersJsonMap));
+
+  }
+
+  if(m_targetsHasBeenSet)
+  {
+   Array<JsonValue> targetsJsonList(m_targets.size());
+   for(unsigned targetsIndex = 0; targetsIndex < targetsJsonList.GetLength(); ++targetsIndex)
+   {
+     targetsJsonList[targetsIndex].AsObject(m_targets[targetsIndex].Jsonize());
+   }
+   payload.WithArray("Targets", std::move(targetsJsonList));
+
+  }
+
+  if(m_scheduleExpressionHasBeenSet)
+  {
+   payload.WithString("ScheduleExpression", m_scheduleExpression);
+
+  }
+
+  if(m_outputLocationHasBeenSet)
+  {
+   payload.WithObject("OutputLocation", m_outputLocation.Jsonize());
 
   }
 

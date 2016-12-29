@@ -27,12 +27,18 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 TerminateEnvironmentResult::TerminateEnvironmentResult() : 
-    m_abortableOperationInProgress(false)
+    m_status(EnvironmentStatus::NOT_SET),
+    m_abortableOperationInProgress(false),
+    m_health(EnvironmentHealth::NOT_SET),
+    m_healthStatus(EnvironmentHealthStatus::NOT_SET)
 {
 }
 
 TerminateEnvironmentResult::TerminateEnvironmentResult(const AmazonWebServiceResult<XmlDocument>& result) : 
-    m_abortableOperationInProgress(false)
+    m_status(EnvironmentStatus::NOT_SET),
+    m_abortableOperationInProgress(false),
+    m_health(EnvironmentHealth::NOT_SET),
+    m_healthStatus(EnvironmentHealthStatus::NOT_SET)
 {
   *this = result;
 }

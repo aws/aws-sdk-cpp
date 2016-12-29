@@ -25,7 +25,9 @@ namespace Model
 {
 
   /**
-   * <p>RetrieveTapeRecoveryPointInput</p>
+   * <p>RetrieveTapeRecoveryPointInput</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/RetrieveTapeRecoveryPointInput">AWS
+   * API Reference</a></p>
    */
   class AWS_STORAGEGATEWAY_API RetrieveTapeRecoveryPointRequest : public StorageGatewayRequest
   {

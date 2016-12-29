@@ -34,7 +34,9 @@ namespace Model
 {
 
   /**
-   * <p/>
+   * <p/><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ReplicationTask">AWS
+   * API Reference</a></p>
    */
   class AWS_DATABASEMIGRATIONSERVICE_API ReplicationTask
   {
@@ -385,6 +387,41 @@ namespace Model
     inline ReplicationTask& WithLastFailureMessage(const char* value) { SetLastFailureMessage(value); return *this;}
 
     /**
+     * <p>The reason the replication task was stopped.</p>
+     */
+    inline const Aws::String& GetStopReason() const{ return m_stopReason; }
+
+    /**
+     * <p>The reason the replication task was stopped.</p>
+     */
+    inline void SetStopReason(const Aws::String& value) { m_stopReasonHasBeenSet = true; m_stopReason = value; }
+
+    /**
+     * <p>The reason the replication task was stopped.</p>
+     */
+    inline void SetStopReason(Aws::String&& value) { m_stopReasonHasBeenSet = true; m_stopReason = value; }
+
+    /**
+     * <p>The reason the replication task was stopped.</p>
+     */
+    inline void SetStopReason(const char* value) { m_stopReasonHasBeenSet = true; m_stopReason.assign(value); }
+
+    /**
+     * <p>The reason the replication task was stopped.</p>
+     */
+    inline ReplicationTask& WithStopReason(const Aws::String& value) { SetStopReason(value); return *this;}
+
+    /**
+     * <p>The reason the replication task was stopped.</p>
+     */
+    inline ReplicationTask& WithStopReason(Aws::String&& value) { SetStopReason(value); return *this;}
+
+    /**
+     * <p>The reason the replication task was stopped.</p>
+     */
+    inline ReplicationTask& WithStopReason(const char* value) { SetStopReason(value); return *this;}
+
+    /**
      * <p>The date the replication task was created.</p>
      */
     inline const Aws::Utils::DateTime& GetReplicationTaskCreationDate() const{ return m_replicationTaskCreationDate; }
@@ -518,6 +555,8 @@ namespace Model
     bool m_statusHasBeenSet;
     Aws::String m_lastFailureMessage;
     bool m_lastFailureMessageHasBeenSet;
+    Aws::String m_stopReason;
+    bool m_stopReasonHasBeenSet;
     Aws::Utils::DateTime m_replicationTaskCreationDate;
     bool m_replicationTaskCreationDateHasBeenSet;
     Aws::Utils::DateTime m_replicationTaskStartDate;

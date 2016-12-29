@@ -43,6 +43,7 @@ UpdateHealthCheckRequest::UpdateHealthCheckRequest() :
     m_enableSNIHasBeenSet(false),
     m_regionsHasBeenSet(false),
     m_alarmIdentifierHasBeenSet(false),
+    m_insufficientDataHealthStatus(InsufficientDataHealthStatus::NOT_SET),
     m_insufficientDataHealthStatusHasBeenSet(false)
 {
 }

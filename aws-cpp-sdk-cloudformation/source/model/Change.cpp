@@ -30,12 +30,14 @@ namespace Model
 {
 
 Change::Change() : 
+    m_type(ChangeType::NOT_SET),
     m_typeHasBeenSet(false),
     m_resourceChangeHasBeenSet(false)
 {
 }
 
 Change::Change(const XmlNode& xmlNode) : 
+    m_type(ChangeType::NOT_SET),
     m_typeHasBeenSet(false),
     m_resourceChangeHasBeenSet(false)
 {

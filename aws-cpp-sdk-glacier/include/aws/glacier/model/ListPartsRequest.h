@@ -30,7 +30,9 @@ namespace Model
 
   /**
    * <p>Provides options for retrieving a list of parts of an archive that have been
-   * uploaded in a specific multipart upload.</p>
+   * uploaded in a specific multipart upload.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/ListPartsInput">AWS
+   * API Reference</a></p>
    */
   class AWS_GLACIER_API ListPartsRequest : public GlacierRequest
   {
@@ -43,63 +45,63 @@ namespace Model
     /**
      * <p>The <code>AccountId</code> value is the AWS account ID of the account that
      * owns the vault. You can either specify an AWS account ID or optionally a single
-     * apos<code>-</code>apos (hyphen), in which case Amazon Glacier uses the AWS
-     * account ID associated with the credentials used to sign the request. If you use
-     * an account ID, do not include any hyphens (apos-apos) in the ID. </p>
+     * '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID
+     * associated with the credentials used to sign the request. If you use an account
+     * ID, do not include any hyphens ('-') in the ID. </p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
 
     /**
      * <p>The <code>AccountId</code> value is the AWS account ID of the account that
      * owns the vault. You can either specify an AWS account ID or optionally a single
-     * apos<code>-</code>apos (hyphen), in which case Amazon Glacier uses the AWS
-     * account ID associated with the credentials used to sign the request. If you use
-     * an account ID, do not include any hyphens (apos-apos) in the ID. </p>
+     * '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID
+     * associated with the credentials used to sign the request. If you use an account
+     * ID, do not include any hyphens ('-') in the ID. </p>
      */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
      * <p>The <code>AccountId</code> value is the AWS account ID of the account that
      * owns the vault. You can either specify an AWS account ID or optionally a single
-     * apos<code>-</code>apos (hyphen), in which case Amazon Glacier uses the AWS
-     * account ID associated with the credentials used to sign the request. If you use
-     * an account ID, do not include any hyphens (apos-apos) in the ID. </p>
+     * '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID
+     * associated with the credentials used to sign the request. If you use an account
+     * ID, do not include any hyphens ('-') in the ID. </p>
      */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
      * <p>The <code>AccountId</code> value is the AWS account ID of the account that
      * owns the vault. You can either specify an AWS account ID or optionally a single
-     * apos<code>-</code>apos (hyphen), in which case Amazon Glacier uses the AWS
-     * account ID associated with the credentials used to sign the request. If you use
-     * an account ID, do not include any hyphens (apos-apos) in the ID. </p>
+     * '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID
+     * associated with the credentials used to sign the request. If you use an account
+     * ID, do not include any hyphens ('-') in the ID. </p>
      */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
 
     /**
      * <p>The <code>AccountId</code> value is the AWS account ID of the account that
      * owns the vault. You can either specify an AWS account ID or optionally a single
-     * apos<code>-</code>apos (hyphen), in which case Amazon Glacier uses the AWS
-     * account ID associated with the credentials used to sign the request. If you use
-     * an account ID, do not include any hyphens (apos-apos) in the ID. </p>
+     * '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID
+     * associated with the credentials used to sign the request. If you use an account
+     * ID, do not include any hyphens ('-') in the ID. </p>
      */
     inline ListPartsRequest& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
 
     /**
      * <p>The <code>AccountId</code> value is the AWS account ID of the account that
      * owns the vault. You can either specify an AWS account ID or optionally a single
-     * apos<code>-</code>apos (hyphen), in which case Amazon Glacier uses the AWS
-     * account ID associated with the credentials used to sign the request. If you use
-     * an account ID, do not include any hyphens (apos-apos) in the ID. </p>
+     * '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID
+     * associated with the credentials used to sign the request. If you use an account
+     * ID, do not include any hyphens ('-') in the ID. </p>
      */
     inline ListPartsRequest& WithAccountId(Aws::String&& value) { SetAccountId(value); return *this;}
 
     /**
      * <p>The <code>AccountId</code> value is the AWS account ID of the account that
      * owns the vault. You can either specify an AWS account ID or optionally a single
-     * apos<code>-</code>apos (hyphen), in which case Amazon Glacier uses the AWS
-     * account ID associated with the credentials used to sign the request. If you use
-     * an account ID, do not include any hyphens (apos-apos) in the ID. </p>
+     * '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID
+     * associated with the credentials used to sign the request. If you use an account
+     * ID, do not include any hyphens ('-') in the ID. </p>
      */
     inline ListPartsRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 
@@ -237,51 +239,51 @@ namespace Model
     inline ListPartsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
     /**
-     * <p>Specifies the maximum number of parts returned in the response body. If this
-     * value is not specified, the List Parts operation returns up to 1,000
-     * uploads.</p>
+     * <p>The maximum number of parts to be returned. The default limit is 1000. The
+     * number of parts returned might be fewer than the specified limit, but the number
+     * of returned parts never exceeds the limit.</p>
      */
     inline const Aws::String& GetLimit() const{ return m_limit; }
 
     /**
-     * <p>Specifies the maximum number of parts returned in the response body. If this
-     * value is not specified, the List Parts operation returns up to 1,000
-     * uploads.</p>
+     * <p>The maximum number of parts to be returned. The default limit is 1000. The
+     * number of parts returned might be fewer than the specified limit, but the number
+     * of returned parts never exceeds the limit.</p>
      */
     inline void SetLimit(const Aws::String& value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
-     * <p>Specifies the maximum number of parts returned in the response body. If this
-     * value is not specified, the List Parts operation returns up to 1,000
-     * uploads.</p>
+     * <p>The maximum number of parts to be returned. The default limit is 1000. The
+     * number of parts returned might be fewer than the specified limit, but the number
+     * of returned parts never exceeds the limit.</p>
      */
     inline void SetLimit(Aws::String&& value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
-     * <p>Specifies the maximum number of parts returned in the response body. If this
-     * value is not specified, the List Parts operation returns up to 1,000
-     * uploads.</p>
+     * <p>The maximum number of parts to be returned. The default limit is 1000. The
+     * number of parts returned might be fewer than the specified limit, but the number
+     * of returned parts never exceeds the limit.</p>
      */
     inline void SetLimit(const char* value) { m_limitHasBeenSet = true; m_limit.assign(value); }
 
     /**
-     * <p>Specifies the maximum number of parts returned in the response body. If this
-     * value is not specified, the List Parts operation returns up to 1,000
-     * uploads.</p>
+     * <p>The maximum number of parts to be returned. The default limit is 1000. The
+     * number of parts returned might be fewer than the specified limit, but the number
+     * of returned parts never exceeds the limit.</p>
      */
     inline ListPartsRequest& WithLimit(const Aws::String& value) { SetLimit(value); return *this;}
 
     /**
-     * <p>Specifies the maximum number of parts returned in the response body. If this
-     * value is not specified, the List Parts operation returns up to 1,000
-     * uploads.</p>
+     * <p>The maximum number of parts to be returned. The default limit is 1000. The
+     * number of parts returned might be fewer than the specified limit, but the number
+     * of returned parts never exceeds the limit.</p>
      */
     inline ListPartsRequest& WithLimit(Aws::String&& value) { SetLimit(value); return *this;}
 
     /**
-     * <p>Specifies the maximum number of parts returned in the response body. If this
-     * value is not specified, the List Parts operation returns up to 1,000
-     * uploads.</p>
+     * <p>The maximum number of parts to be returned. The default limit is 1000. The
+     * number of parts returned might be fewer than the specified limit, but the number
+     * of returned parts never exceeds the limit.</p>
      */
     inline ListPartsRequest& WithLimit(const char* value) { SetLimit(value); return *this;}
 

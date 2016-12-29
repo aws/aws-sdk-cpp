@@ -27,7 +27,10 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for DescribeReservedInstancesModifications.</p>
+   * <p>Contains the parameters for
+   * DescribeReservedInstancesModifications.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeReservedInstancesModificationsRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API DescribeReservedInstancesModificationsRequest : public EC2Request
   {
@@ -76,239 +79,232 @@ namespace Model
     inline DescribeReservedInstancesModificationsRequest& AddReservedInstancesModificationIds(const char* value) { m_reservedInstancesModificationIdsHasBeenSet = true; m_reservedInstancesModificationIds.push_back(value); return *this; }
 
     /**
-     * <p>The token to retrieve the next page of results. </p>
+     * <p>The token to retrieve the next page of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>The token to retrieve the next page of results. </p>
+     * <p>The token to retrieve the next page of results.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>The token to retrieve the next page of results. </p>
+     * <p>The token to retrieve the next page of results.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>The token to retrieve the next page of results. </p>
+     * <p>The token to retrieve the next page of results.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>The token to retrieve the next page of results. </p>
+     * <p>The token to retrieve the next page of results.</p>
      */
     inline DescribeReservedInstancesModificationsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>The token to retrieve the next page of results. </p>
+     * <p>The token to retrieve the next page of results.</p>
      */
     inline DescribeReservedInstancesModificationsRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>The token to retrieve the next page of results. </p>
+     * <p>The token to retrieve the next page of results.</p>
      */
     inline DescribeReservedInstancesModificationsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p><code>client-token</code> - The
-     * idempotency token for the modification request.</p> </li> <li>
-     * <p><code>create-date</code> - The time when the modification request was
-     * created.</p> </li> <li> <p><code>effective-date</code> - The time when the
-     * modification becomes effective.</p> </li> <li>
-     * <p><code>modification-result.reserved-instances-id</code> - The ID for the
-     * Reserved Instances created as part of the modification request. This ID is only
-     * available when the status of the modification is <code>fulfilled</code>.</p>
-     * </li> <li>
-     * <p><code>modification-result.target-configuration.availability-zone</code> - The
-     * Availability Zone for the new Reserved Instances.</p> </li> <li>
-     * <p><code>modification-result.target-configuration.instance-count </code> - The
-     * number of new Reserved Instances.</p> </li> <li>
-     * <p><code>modification-result.target-configuration.instance-type</code> - The
-     * instance type of the new Reserved Instances.</p> </li> <li>
-     * <p><code>modification-result.target-configuration.platform</code> - The network
+     * <p>One or more filters.</p> <ul> <li> <p> <code>client-token</code> - The
+     * idempotency token for the modification request.</p> </li> <li> <p>
+     * <code>create-date</code> - The time when the modification request was
+     * created.</p> </li> <li> <p> <code>effective-date</code> - The time when the
+     * modification becomes effective.</p> </li> <li> <p>
+     * <code>modification-result.reserved-instances-id</code> - The ID for the Reserved
+     * Instances created as part of the modification request. This ID is only available
+     * when the status of the modification is <code>fulfilled</code>.</p> </li> <li>
+     * <p> <code>modification-result.target-configuration.availability-zone</code> -
+     * The Availability Zone for the new Reserved Instances.</p> </li> <li> <p>
+     * <code>modification-result.target-configuration.instance-count </code> - The
+     * number of new Reserved Instances.</p> </li> <li> <p>
+     * <code>modification-result.target-configuration.instance-type</code> - The
+     * instance type of the new Reserved Instances.</p> </li> <li> <p>
+     * <code>modification-result.target-configuration.platform</code> - The network
      * platform of the new Reserved Instances (<code>EC2-Classic</code> |
-     * <code>EC2-VPC</code>).</p> </li> <li> <p><code>reserved-instances-id</code> -
-     * The ID of the Reserved Instances modified.</p> </li> <li>
-     * <p><code>reserved-instances-modification-id</code> - The ID of the modification
-     * request.</p> </li> <li> <p><code>status</code> - The status of the Reserved
+     * <code>EC2-VPC</code>).</p> </li> <li> <p> <code>reserved-instances-id</code> -
+     * The ID of the Reserved Instances modified.</p> </li> <li> <p>
+     * <code>reserved-instances-modification-id</code> - The ID of the modification
+     * request.</p> </li> <li> <p> <code>status</code> - The status of the Reserved
      * Instances modification request (<code>processing</code> | <code>fulfilled</code>
-     * | <code>failed</code>).</p> </li> <li> <p><code>status-message</code> - The
-     * reason for the status.</p> </li> <li> <p><code>update-date</code> - The time
+     * | <code>failed</code>).</p> </li> <li> <p> <code>status-message</code> - The
+     * reason for the status.</p> </li> <li> <p> <code>update-date</code> - The time
      * when the modification request was last updated.</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p><code>client-token</code> - The
-     * idempotency token for the modification request.</p> </li> <li>
-     * <p><code>create-date</code> - The time when the modification request was
-     * created.</p> </li> <li> <p><code>effective-date</code> - The time when the
-     * modification becomes effective.</p> </li> <li>
-     * <p><code>modification-result.reserved-instances-id</code> - The ID for the
-     * Reserved Instances created as part of the modification request. This ID is only
-     * available when the status of the modification is <code>fulfilled</code>.</p>
-     * </li> <li>
-     * <p><code>modification-result.target-configuration.availability-zone</code> - The
-     * Availability Zone for the new Reserved Instances.</p> </li> <li>
-     * <p><code>modification-result.target-configuration.instance-count </code> - The
-     * number of new Reserved Instances.</p> </li> <li>
-     * <p><code>modification-result.target-configuration.instance-type</code> - The
-     * instance type of the new Reserved Instances.</p> </li> <li>
-     * <p><code>modification-result.target-configuration.platform</code> - The network
+     * <p>One or more filters.</p> <ul> <li> <p> <code>client-token</code> - The
+     * idempotency token for the modification request.</p> </li> <li> <p>
+     * <code>create-date</code> - The time when the modification request was
+     * created.</p> </li> <li> <p> <code>effective-date</code> - The time when the
+     * modification becomes effective.</p> </li> <li> <p>
+     * <code>modification-result.reserved-instances-id</code> - The ID for the Reserved
+     * Instances created as part of the modification request. This ID is only available
+     * when the status of the modification is <code>fulfilled</code>.</p> </li> <li>
+     * <p> <code>modification-result.target-configuration.availability-zone</code> -
+     * The Availability Zone for the new Reserved Instances.</p> </li> <li> <p>
+     * <code>modification-result.target-configuration.instance-count </code> - The
+     * number of new Reserved Instances.</p> </li> <li> <p>
+     * <code>modification-result.target-configuration.instance-type</code> - The
+     * instance type of the new Reserved Instances.</p> </li> <li> <p>
+     * <code>modification-result.target-configuration.platform</code> - The network
      * platform of the new Reserved Instances (<code>EC2-Classic</code> |
-     * <code>EC2-VPC</code>).</p> </li> <li> <p><code>reserved-instances-id</code> -
-     * The ID of the Reserved Instances modified.</p> </li> <li>
-     * <p><code>reserved-instances-modification-id</code> - The ID of the modification
-     * request.</p> </li> <li> <p><code>status</code> - The status of the Reserved
+     * <code>EC2-VPC</code>).</p> </li> <li> <p> <code>reserved-instances-id</code> -
+     * The ID of the Reserved Instances modified.</p> </li> <li> <p>
+     * <code>reserved-instances-modification-id</code> - The ID of the modification
+     * request.</p> </li> <li> <p> <code>status</code> - The status of the Reserved
      * Instances modification request (<code>processing</code> | <code>fulfilled</code>
-     * | <code>failed</code>).</p> </li> <li> <p><code>status-message</code> - The
-     * reason for the status.</p> </li> <li> <p><code>update-date</code> - The time
+     * | <code>failed</code>).</p> </li> <li> <p> <code>status-message</code> - The
+     * reason for the status.</p> </li> <li> <p> <code>update-date</code> - The time
      * when the modification request was last updated.</p> </li> </ul>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p><code>client-token</code> - The
-     * idempotency token for the modification request.</p> </li> <li>
-     * <p><code>create-date</code> - The time when the modification request was
-     * created.</p> </li> <li> <p><code>effective-date</code> - The time when the
-     * modification becomes effective.</p> </li> <li>
-     * <p><code>modification-result.reserved-instances-id</code> - The ID for the
-     * Reserved Instances created as part of the modification request. This ID is only
-     * available when the status of the modification is <code>fulfilled</code>.</p>
-     * </li> <li>
-     * <p><code>modification-result.target-configuration.availability-zone</code> - The
-     * Availability Zone for the new Reserved Instances.</p> </li> <li>
-     * <p><code>modification-result.target-configuration.instance-count </code> - The
-     * number of new Reserved Instances.</p> </li> <li>
-     * <p><code>modification-result.target-configuration.instance-type</code> - The
-     * instance type of the new Reserved Instances.</p> </li> <li>
-     * <p><code>modification-result.target-configuration.platform</code> - The network
+     * <p>One or more filters.</p> <ul> <li> <p> <code>client-token</code> - The
+     * idempotency token for the modification request.</p> </li> <li> <p>
+     * <code>create-date</code> - The time when the modification request was
+     * created.</p> </li> <li> <p> <code>effective-date</code> - The time when the
+     * modification becomes effective.</p> </li> <li> <p>
+     * <code>modification-result.reserved-instances-id</code> - The ID for the Reserved
+     * Instances created as part of the modification request. This ID is only available
+     * when the status of the modification is <code>fulfilled</code>.</p> </li> <li>
+     * <p> <code>modification-result.target-configuration.availability-zone</code> -
+     * The Availability Zone for the new Reserved Instances.</p> </li> <li> <p>
+     * <code>modification-result.target-configuration.instance-count </code> - The
+     * number of new Reserved Instances.</p> </li> <li> <p>
+     * <code>modification-result.target-configuration.instance-type</code> - The
+     * instance type of the new Reserved Instances.</p> </li> <li> <p>
+     * <code>modification-result.target-configuration.platform</code> - The network
      * platform of the new Reserved Instances (<code>EC2-Classic</code> |
-     * <code>EC2-VPC</code>).</p> </li> <li> <p><code>reserved-instances-id</code> -
-     * The ID of the Reserved Instances modified.</p> </li> <li>
-     * <p><code>reserved-instances-modification-id</code> - The ID of the modification
-     * request.</p> </li> <li> <p><code>status</code> - The status of the Reserved
+     * <code>EC2-VPC</code>).</p> </li> <li> <p> <code>reserved-instances-id</code> -
+     * The ID of the Reserved Instances modified.</p> </li> <li> <p>
+     * <code>reserved-instances-modification-id</code> - The ID of the modification
+     * request.</p> </li> <li> <p> <code>status</code> - The status of the Reserved
      * Instances modification request (<code>processing</code> | <code>fulfilled</code>
-     * | <code>failed</code>).</p> </li> <li> <p><code>status-message</code> - The
-     * reason for the status.</p> </li> <li> <p><code>update-date</code> - The time
+     * | <code>failed</code>).</p> </li> <li> <p> <code>status-message</code> - The
+     * reason for the status.</p> </li> <li> <p> <code>update-date</code> - The time
      * when the modification request was last updated.</p> </li> </ul>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p><code>client-token</code> - The
-     * idempotency token for the modification request.</p> </li> <li>
-     * <p><code>create-date</code> - The time when the modification request was
-     * created.</p> </li> <li> <p><code>effective-date</code> - The time when the
-     * modification becomes effective.</p> </li> <li>
-     * <p><code>modification-result.reserved-instances-id</code> - The ID for the
-     * Reserved Instances created as part of the modification request. This ID is only
-     * available when the status of the modification is <code>fulfilled</code>.</p>
-     * </li> <li>
-     * <p><code>modification-result.target-configuration.availability-zone</code> - The
-     * Availability Zone for the new Reserved Instances.</p> </li> <li>
-     * <p><code>modification-result.target-configuration.instance-count </code> - The
-     * number of new Reserved Instances.</p> </li> <li>
-     * <p><code>modification-result.target-configuration.instance-type</code> - The
-     * instance type of the new Reserved Instances.</p> </li> <li>
-     * <p><code>modification-result.target-configuration.platform</code> - The network
+     * <p>One or more filters.</p> <ul> <li> <p> <code>client-token</code> - The
+     * idempotency token for the modification request.</p> </li> <li> <p>
+     * <code>create-date</code> - The time when the modification request was
+     * created.</p> </li> <li> <p> <code>effective-date</code> - The time when the
+     * modification becomes effective.</p> </li> <li> <p>
+     * <code>modification-result.reserved-instances-id</code> - The ID for the Reserved
+     * Instances created as part of the modification request. This ID is only available
+     * when the status of the modification is <code>fulfilled</code>.</p> </li> <li>
+     * <p> <code>modification-result.target-configuration.availability-zone</code> -
+     * The Availability Zone for the new Reserved Instances.</p> </li> <li> <p>
+     * <code>modification-result.target-configuration.instance-count </code> - The
+     * number of new Reserved Instances.</p> </li> <li> <p>
+     * <code>modification-result.target-configuration.instance-type</code> - The
+     * instance type of the new Reserved Instances.</p> </li> <li> <p>
+     * <code>modification-result.target-configuration.platform</code> - The network
      * platform of the new Reserved Instances (<code>EC2-Classic</code> |
-     * <code>EC2-VPC</code>).</p> </li> <li> <p><code>reserved-instances-id</code> -
-     * The ID of the Reserved Instances modified.</p> </li> <li>
-     * <p><code>reserved-instances-modification-id</code> - The ID of the modification
-     * request.</p> </li> <li> <p><code>status</code> - The status of the Reserved
+     * <code>EC2-VPC</code>).</p> </li> <li> <p> <code>reserved-instances-id</code> -
+     * The ID of the Reserved Instances modified.</p> </li> <li> <p>
+     * <code>reserved-instances-modification-id</code> - The ID of the modification
+     * request.</p> </li> <li> <p> <code>status</code> - The status of the Reserved
      * Instances modification request (<code>processing</code> | <code>fulfilled</code>
-     * | <code>failed</code>).</p> </li> <li> <p><code>status-message</code> - The
-     * reason for the status.</p> </li> <li> <p><code>update-date</code> - The time
+     * | <code>failed</code>).</p> </li> <li> <p> <code>status-message</code> - The
+     * reason for the status.</p> </li> <li> <p> <code>update-date</code> - The time
      * when the modification request was last updated.</p> </li> </ul>
      */
     inline DescribeReservedInstancesModificationsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p><code>client-token</code> - The
-     * idempotency token for the modification request.</p> </li> <li>
-     * <p><code>create-date</code> - The time when the modification request was
-     * created.</p> </li> <li> <p><code>effective-date</code> - The time when the
-     * modification becomes effective.</p> </li> <li>
-     * <p><code>modification-result.reserved-instances-id</code> - The ID for the
-     * Reserved Instances created as part of the modification request. This ID is only
-     * available when the status of the modification is <code>fulfilled</code>.</p>
-     * </li> <li>
-     * <p><code>modification-result.target-configuration.availability-zone</code> - The
-     * Availability Zone for the new Reserved Instances.</p> </li> <li>
-     * <p><code>modification-result.target-configuration.instance-count </code> - The
-     * number of new Reserved Instances.</p> </li> <li>
-     * <p><code>modification-result.target-configuration.instance-type</code> - The
-     * instance type of the new Reserved Instances.</p> </li> <li>
-     * <p><code>modification-result.target-configuration.platform</code> - The network
+     * <p>One or more filters.</p> <ul> <li> <p> <code>client-token</code> - The
+     * idempotency token for the modification request.</p> </li> <li> <p>
+     * <code>create-date</code> - The time when the modification request was
+     * created.</p> </li> <li> <p> <code>effective-date</code> - The time when the
+     * modification becomes effective.</p> </li> <li> <p>
+     * <code>modification-result.reserved-instances-id</code> - The ID for the Reserved
+     * Instances created as part of the modification request. This ID is only available
+     * when the status of the modification is <code>fulfilled</code>.</p> </li> <li>
+     * <p> <code>modification-result.target-configuration.availability-zone</code> -
+     * The Availability Zone for the new Reserved Instances.</p> </li> <li> <p>
+     * <code>modification-result.target-configuration.instance-count </code> - The
+     * number of new Reserved Instances.</p> </li> <li> <p>
+     * <code>modification-result.target-configuration.instance-type</code> - The
+     * instance type of the new Reserved Instances.</p> </li> <li> <p>
+     * <code>modification-result.target-configuration.platform</code> - The network
      * platform of the new Reserved Instances (<code>EC2-Classic</code> |
-     * <code>EC2-VPC</code>).</p> </li> <li> <p><code>reserved-instances-id</code> -
-     * The ID of the Reserved Instances modified.</p> </li> <li>
-     * <p><code>reserved-instances-modification-id</code> - The ID of the modification
-     * request.</p> </li> <li> <p><code>status</code> - The status of the Reserved
+     * <code>EC2-VPC</code>).</p> </li> <li> <p> <code>reserved-instances-id</code> -
+     * The ID of the Reserved Instances modified.</p> </li> <li> <p>
+     * <code>reserved-instances-modification-id</code> - The ID of the modification
+     * request.</p> </li> <li> <p> <code>status</code> - The status of the Reserved
      * Instances modification request (<code>processing</code> | <code>fulfilled</code>
-     * | <code>failed</code>).</p> </li> <li> <p><code>status-message</code> - The
-     * reason for the status.</p> </li> <li> <p><code>update-date</code> - The time
+     * | <code>failed</code>).</p> </li> <li> <p> <code>status-message</code> - The
+     * reason for the status.</p> </li> <li> <p> <code>update-date</code> - The time
      * when the modification request was last updated.</p> </li> </ul>
      */
     inline DescribeReservedInstancesModificationsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p><code>client-token</code> - The
-     * idempotency token for the modification request.</p> </li> <li>
-     * <p><code>create-date</code> - The time when the modification request was
-     * created.</p> </li> <li> <p><code>effective-date</code> - The time when the
-     * modification becomes effective.</p> </li> <li>
-     * <p><code>modification-result.reserved-instances-id</code> - The ID for the
-     * Reserved Instances created as part of the modification request. This ID is only
-     * available when the status of the modification is <code>fulfilled</code>.</p>
-     * </li> <li>
-     * <p><code>modification-result.target-configuration.availability-zone</code> - The
-     * Availability Zone for the new Reserved Instances.</p> </li> <li>
-     * <p><code>modification-result.target-configuration.instance-count </code> - The
-     * number of new Reserved Instances.</p> </li> <li>
-     * <p><code>modification-result.target-configuration.instance-type</code> - The
-     * instance type of the new Reserved Instances.</p> </li> <li>
-     * <p><code>modification-result.target-configuration.platform</code> - The network
+     * <p>One or more filters.</p> <ul> <li> <p> <code>client-token</code> - The
+     * idempotency token for the modification request.</p> </li> <li> <p>
+     * <code>create-date</code> - The time when the modification request was
+     * created.</p> </li> <li> <p> <code>effective-date</code> - The time when the
+     * modification becomes effective.</p> </li> <li> <p>
+     * <code>modification-result.reserved-instances-id</code> - The ID for the Reserved
+     * Instances created as part of the modification request. This ID is only available
+     * when the status of the modification is <code>fulfilled</code>.</p> </li> <li>
+     * <p> <code>modification-result.target-configuration.availability-zone</code> -
+     * The Availability Zone for the new Reserved Instances.</p> </li> <li> <p>
+     * <code>modification-result.target-configuration.instance-count </code> - The
+     * number of new Reserved Instances.</p> </li> <li> <p>
+     * <code>modification-result.target-configuration.instance-type</code> - The
+     * instance type of the new Reserved Instances.</p> </li> <li> <p>
+     * <code>modification-result.target-configuration.platform</code> - The network
      * platform of the new Reserved Instances (<code>EC2-Classic</code> |
-     * <code>EC2-VPC</code>).</p> </li> <li> <p><code>reserved-instances-id</code> -
-     * The ID of the Reserved Instances modified.</p> </li> <li>
-     * <p><code>reserved-instances-modification-id</code> - The ID of the modification
-     * request.</p> </li> <li> <p><code>status</code> - The status of the Reserved
+     * <code>EC2-VPC</code>).</p> </li> <li> <p> <code>reserved-instances-id</code> -
+     * The ID of the Reserved Instances modified.</p> </li> <li> <p>
+     * <code>reserved-instances-modification-id</code> - The ID of the modification
+     * request.</p> </li> <li> <p> <code>status</code> - The status of the Reserved
      * Instances modification request (<code>processing</code> | <code>fulfilled</code>
-     * | <code>failed</code>).</p> </li> <li> <p><code>status-message</code> - The
-     * reason for the status.</p> </li> <li> <p><code>update-date</code> - The time
+     * | <code>failed</code>).</p> </li> <li> <p> <code>status-message</code> - The
+     * reason for the status.</p> </li> <li> <p> <code>update-date</code> - The time
      * when the modification request was last updated.</p> </li> </ul>
      */
     inline DescribeReservedInstancesModificationsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p><code>client-token</code> - The
-     * idempotency token for the modification request.</p> </li> <li>
-     * <p><code>create-date</code> - The time when the modification request was
-     * created.</p> </li> <li> <p><code>effective-date</code> - The time when the
-     * modification becomes effective.</p> </li> <li>
-     * <p><code>modification-result.reserved-instances-id</code> - The ID for the
-     * Reserved Instances created as part of the modification request. This ID is only
-     * available when the status of the modification is <code>fulfilled</code>.</p>
-     * </li> <li>
-     * <p><code>modification-result.target-configuration.availability-zone</code> - The
-     * Availability Zone for the new Reserved Instances.</p> </li> <li>
-     * <p><code>modification-result.target-configuration.instance-count </code> - The
-     * number of new Reserved Instances.</p> </li> <li>
-     * <p><code>modification-result.target-configuration.instance-type</code> - The
-     * instance type of the new Reserved Instances.</p> </li> <li>
-     * <p><code>modification-result.target-configuration.platform</code> - The network
+     * <p>One or more filters.</p> <ul> <li> <p> <code>client-token</code> - The
+     * idempotency token for the modification request.</p> </li> <li> <p>
+     * <code>create-date</code> - The time when the modification request was
+     * created.</p> </li> <li> <p> <code>effective-date</code> - The time when the
+     * modification becomes effective.</p> </li> <li> <p>
+     * <code>modification-result.reserved-instances-id</code> - The ID for the Reserved
+     * Instances created as part of the modification request. This ID is only available
+     * when the status of the modification is <code>fulfilled</code>.</p> </li> <li>
+     * <p> <code>modification-result.target-configuration.availability-zone</code> -
+     * The Availability Zone for the new Reserved Instances.</p> </li> <li> <p>
+     * <code>modification-result.target-configuration.instance-count </code> - The
+     * number of new Reserved Instances.</p> </li> <li> <p>
+     * <code>modification-result.target-configuration.instance-type</code> - The
+     * instance type of the new Reserved Instances.</p> </li> <li> <p>
+     * <code>modification-result.target-configuration.platform</code> - The network
      * platform of the new Reserved Instances (<code>EC2-Classic</code> |
-     * <code>EC2-VPC</code>).</p> </li> <li> <p><code>reserved-instances-id</code> -
-     * The ID of the Reserved Instances modified.</p> </li> <li>
-     * <p><code>reserved-instances-modification-id</code> - The ID of the modification
-     * request.</p> </li> <li> <p><code>status</code> - The status of the Reserved
+     * <code>EC2-VPC</code>).</p> </li> <li> <p> <code>reserved-instances-id</code> -
+     * The ID of the Reserved Instances modified.</p> </li> <li> <p>
+     * <code>reserved-instances-modification-id</code> - The ID of the modification
+     * request.</p> </li> <li> <p> <code>status</code> - The status of the Reserved
      * Instances modification request (<code>processing</code> | <code>fulfilled</code>
-     * | <code>failed</code>).</p> </li> <li> <p><code>status-message</code> - The
-     * reason for the status.</p> </li> <li> <p><code>update-date</code> - The time
+     * | <code>failed</code>).</p> </li> <li> <p> <code>status-message</code> - The
+     * reason for the status.</p> </li> <li> <p> <code>update-date</code> - The time
      * when the modification request was last updated.</p> </li> </ul>
      */
     inline DescribeReservedInstancesModificationsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }

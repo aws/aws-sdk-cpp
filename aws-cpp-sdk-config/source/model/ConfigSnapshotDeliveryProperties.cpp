@@ -28,11 +28,13 @@ namespace Model
 {
 
 ConfigSnapshotDeliveryProperties::ConfigSnapshotDeliveryProperties() : 
+    m_deliveryFrequency(MaximumExecutionFrequency::NOT_SET),
     m_deliveryFrequencyHasBeenSet(false)
 {
 }
 
 ConfigSnapshotDeliveryProperties::ConfigSnapshotDeliveryProperties(const JsonValue& jsonValue) : 
+    m_deliveryFrequency(MaximumExecutionFrequency::NOT_SET),
     m_deliveryFrequencyHasBeenSet(false)
 {
   *this = jsonValue;

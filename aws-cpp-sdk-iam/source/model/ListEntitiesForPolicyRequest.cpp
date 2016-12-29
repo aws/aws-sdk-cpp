@@ -21,6 +21,7 @@ using namespace Aws::Utils;
 
 ListEntitiesForPolicyRequest::ListEntitiesForPolicyRequest() : 
     m_policyArnHasBeenSet(false),
+    m_entityFilter(EntityType::NOT_SET),
     m_entityFilterHasBeenSet(false),
     m_pathPrefixHasBeenSet(false),
     m_markerHasBeenSet(false),

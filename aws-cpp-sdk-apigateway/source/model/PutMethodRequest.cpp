@@ -29,6 +29,7 @@ PutMethodRequest::PutMethodRequest() :
     m_authorizerIdHasBeenSet(false),
     m_apiKeyRequired(false),
     m_apiKeyRequiredHasBeenSet(false),
+    m_operationNameHasBeenSet(false),
     m_requestParametersHasBeenSet(false),
     m_requestModelsHasBeenSet(false)
 {
@@ -53,6 +54,12 @@ Aws::String PutMethodRequest::SerializePayload() const
   if(m_apiKeyRequiredHasBeenSet)
   {
    payload.WithBool("apiKeyRequired", m_apiKeyRequired);
+
+  }
+
+  if(m_operationNameHasBeenSet)
+  {
+   payload.WithString("operationName", m_operationName);
 
   }
 

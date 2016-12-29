@@ -36,7 +36,10 @@ namespace CognitoIdentityProvider
 namespace Model
 {
   /**
-   * <p>Responds to the authentication challenge, as an administrator.</p>
+   * <p>Responds to the authentication challenge, as an administrator.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminRespondToAuthChallengeResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_COGNITOIDENTITYPROVIDER_API AdminRespondToAuthChallengeResult
   {
@@ -165,19 +168,34 @@ namespace Model
      */
     inline AdminRespondToAuthChallengeResult& AddChallengeParameters(const char* key, const char* value) { m_challengeParameters[key] = value; return *this; }
 
-    
+    /**
+     * <p>The result returned by the server in response to the authentication
+     * request.</p>
+     */
     inline const AuthenticationResultType& GetAuthenticationResult() const{ return m_authenticationResult; }
 
-    
+    /**
+     * <p>The result returned by the server in response to the authentication
+     * request.</p>
+     */
     inline void SetAuthenticationResult(const AuthenticationResultType& value) { m_authenticationResult = value; }
 
-    
+    /**
+     * <p>The result returned by the server in response to the authentication
+     * request.</p>
+     */
     inline void SetAuthenticationResult(AuthenticationResultType&& value) { m_authenticationResult = value; }
 
-    
+    /**
+     * <p>The result returned by the server in response to the authentication
+     * request.</p>
+     */
     inline AdminRespondToAuthChallengeResult& WithAuthenticationResult(const AuthenticationResultType& value) { SetAuthenticationResult(value); return *this;}
 
-    
+    /**
+     * <p>The result returned by the server in response to the authentication
+     * request.</p>
+     */
     inline AdminRespondToAuthChallengeResult& WithAuthenticationResult(AuthenticationResultType&& value) { SetAuthenticationResult(value); return *this;}
 
   private:

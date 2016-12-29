@@ -32,8 +32,11 @@ namespace Model
 {
 
   /**
-   * <p>Specifies the IP address type (<code>IPV4</code>) and the IP address range
-   * (in CIDR format) that web requests originate from.</p>
+   * <p>Specifies the IP address type (<code>IPV4</code> or <code>IPV6</code>) and
+   * the IP address range (in CIDR format) that web requests originate
+   * from.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/IPSetDescriptor">AWS
+   * API Reference</a></p>
    */
   class AWS_WAF_API IPSetDescriptor
   {
@@ -44,27 +47,27 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p>Specify <code>IPV4</code>.</p>
+     * <p>Specify <code>IPV4</code> or <code>IPV6</code>.</p>
      */
     inline const IPSetDescriptorType& GetType() const{ return m_type; }
 
     /**
-     * <p>Specify <code>IPV4</code>.</p>
+     * <p>Specify <code>IPV4</code> or <code>IPV6</code>.</p>
      */
     inline void SetType(const IPSetDescriptorType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>Specify <code>IPV4</code>.</p>
+     * <p>Specify <code>IPV4</code> or <code>IPV6</code>.</p>
      */
     inline void SetType(IPSetDescriptorType&& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>Specify <code>IPV4</code>.</p>
+     * <p>Specify <code>IPV4</code> or <code>IPV6</code>.</p>
      */
     inline IPSetDescriptor& WithType(const IPSetDescriptorType& value) { SetType(value); return *this;}
 
     /**
-     * <p>Specify <code>IPV4</code>.</p>
+     * <p>Specify <code>IPV4</code> or <code>IPV6</code>.</p>
      */
     inline IPSetDescriptor& WithType(IPSetDescriptorType&& value) { SetType(value); return *this;}
 
@@ -74,11 +77,18 @@ namespace Model
      * the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li> <li>
      * <p>To configure AWS WAF to allow, block, or count requests that originated from
      * IP addresses from 192.0.2.0 to 192.0.2.255, specify
-     * <code>192.0.2.0/24</code>.</p> </li> </ul> <p>AWS WAF supports only /8, /16,
-     * /24, and /32 IP addresses.</p> <p>For more information about CIDR notation, see
-     * the Wikipedia entry <a
+     * <code>192.0.2.0/24</code>.</p> </li> </ul> <p>For more information about CIDR
+     * notation, see the Wikipedia entry <a
      * href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless
-     * Inter-Domain Routing</a>.</p>
+     * Inter-Domain Routing</a>.</p> <p>Specify an IPv6 address by using CIDR notation.
+     * For example:</p> <ul> <li> <p>To configure AWS WAF to allow, block, or count
+     * requests that originated from the IP address
+     * 1111:0000:0000:0000:0000:0000:0000:0111, specify
+     * <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p> </li> <li> <p>To
+     * configure AWS WAF to allow, block, or count requests that originated from IP
+     * addresses 1111:0000:0000:0000:0000:0000:0000:0000 to
+     * 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify
+     * <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p> </li> </ul>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
 
@@ -88,11 +98,18 @@ namespace Model
      * the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li> <li>
      * <p>To configure AWS WAF to allow, block, or count requests that originated from
      * IP addresses from 192.0.2.0 to 192.0.2.255, specify
-     * <code>192.0.2.0/24</code>.</p> </li> </ul> <p>AWS WAF supports only /8, /16,
-     * /24, and /32 IP addresses.</p> <p>For more information about CIDR notation, see
-     * the Wikipedia entry <a
+     * <code>192.0.2.0/24</code>.</p> </li> </ul> <p>For more information about CIDR
+     * notation, see the Wikipedia entry <a
      * href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless
-     * Inter-Domain Routing</a>.</p>
+     * Inter-Domain Routing</a>.</p> <p>Specify an IPv6 address by using CIDR notation.
+     * For example:</p> <ul> <li> <p>To configure AWS WAF to allow, block, or count
+     * requests that originated from the IP address
+     * 1111:0000:0000:0000:0000:0000:0000:0111, specify
+     * <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p> </li> <li> <p>To
+     * configure AWS WAF to allow, block, or count requests that originated from IP
+     * addresses 1111:0000:0000:0000:0000:0000:0000:0000 to
+     * 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify
+     * <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p> </li> </ul>
      */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
@@ -102,11 +119,18 @@ namespace Model
      * the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li> <li>
      * <p>To configure AWS WAF to allow, block, or count requests that originated from
      * IP addresses from 192.0.2.0 to 192.0.2.255, specify
-     * <code>192.0.2.0/24</code>.</p> </li> </ul> <p>AWS WAF supports only /8, /16,
-     * /24, and /32 IP addresses.</p> <p>For more information about CIDR notation, see
-     * the Wikipedia entry <a
+     * <code>192.0.2.0/24</code>.</p> </li> </ul> <p>For more information about CIDR
+     * notation, see the Wikipedia entry <a
      * href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless
-     * Inter-Domain Routing</a>.</p>
+     * Inter-Domain Routing</a>.</p> <p>Specify an IPv6 address by using CIDR notation.
+     * For example:</p> <ul> <li> <p>To configure AWS WAF to allow, block, or count
+     * requests that originated from the IP address
+     * 1111:0000:0000:0000:0000:0000:0000:0111, specify
+     * <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p> </li> <li> <p>To
+     * configure AWS WAF to allow, block, or count requests that originated from IP
+     * addresses 1111:0000:0000:0000:0000:0000:0000:0000 to
+     * 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify
+     * <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p> </li> </ul>
      */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = value; }
 
@@ -116,11 +140,18 @@ namespace Model
      * the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li> <li>
      * <p>To configure AWS WAF to allow, block, or count requests that originated from
      * IP addresses from 192.0.2.0 to 192.0.2.255, specify
-     * <code>192.0.2.0/24</code>.</p> </li> </ul> <p>AWS WAF supports only /8, /16,
-     * /24, and /32 IP addresses.</p> <p>For more information about CIDR notation, see
-     * the Wikipedia entry <a
+     * <code>192.0.2.0/24</code>.</p> </li> </ul> <p>For more information about CIDR
+     * notation, see the Wikipedia entry <a
      * href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless
-     * Inter-Domain Routing</a>.</p>
+     * Inter-Domain Routing</a>.</p> <p>Specify an IPv6 address by using CIDR notation.
+     * For example:</p> <ul> <li> <p>To configure AWS WAF to allow, block, or count
+     * requests that originated from the IP address
+     * 1111:0000:0000:0000:0000:0000:0000:0111, specify
+     * <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p> </li> <li> <p>To
+     * configure AWS WAF to allow, block, or count requests that originated from IP
+     * addresses 1111:0000:0000:0000:0000:0000:0000:0000 to
+     * 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify
+     * <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p> </li> </ul>
      */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
 
@@ -130,11 +161,18 @@ namespace Model
      * the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li> <li>
      * <p>To configure AWS WAF to allow, block, or count requests that originated from
      * IP addresses from 192.0.2.0 to 192.0.2.255, specify
-     * <code>192.0.2.0/24</code>.</p> </li> </ul> <p>AWS WAF supports only /8, /16,
-     * /24, and /32 IP addresses.</p> <p>For more information about CIDR notation, see
-     * the Wikipedia entry <a
+     * <code>192.0.2.0/24</code>.</p> </li> </ul> <p>For more information about CIDR
+     * notation, see the Wikipedia entry <a
      * href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless
-     * Inter-Domain Routing</a>.</p>
+     * Inter-Domain Routing</a>.</p> <p>Specify an IPv6 address by using CIDR notation.
+     * For example:</p> <ul> <li> <p>To configure AWS WAF to allow, block, or count
+     * requests that originated from the IP address
+     * 1111:0000:0000:0000:0000:0000:0000:0111, specify
+     * <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p> </li> <li> <p>To
+     * configure AWS WAF to allow, block, or count requests that originated from IP
+     * addresses 1111:0000:0000:0000:0000:0000:0000:0000 to
+     * 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify
+     * <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p> </li> </ul>
      */
     inline IPSetDescriptor& WithValue(const Aws::String& value) { SetValue(value); return *this;}
 
@@ -144,11 +182,18 @@ namespace Model
      * the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li> <li>
      * <p>To configure AWS WAF to allow, block, or count requests that originated from
      * IP addresses from 192.0.2.0 to 192.0.2.255, specify
-     * <code>192.0.2.0/24</code>.</p> </li> </ul> <p>AWS WAF supports only /8, /16,
-     * /24, and /32 IP addresses.</p> <p>For more information about CIDR notation, see
-     * the Wikipedia entry <a
+     * <code>192.0.2.0/24</code>.</p> </li> </ul> <p>For more information about CIDR
+     * notation, see the Wikipedia entry <a
      * href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless
-     * Inter-Domain Routing</a>.</p>
+     * Inter-Domain Routing</a>.</p> <p>Specify an IPv6 address by using CIDR notation.
+     * For example:</p> <ul> <li> <p>To configure AWS WAF to allow, block, or count
+     * requests that originated from the IP address
+     * 1111:0000:0000:0000:0000:0000:0000:0111, specify
+     * <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p> </li> <li> <p>To
+     * configure AWS WAF to allow, block, or count requests that originated from IP
+     * addresses 1111:0000:0000:0000:0000:0000:0000:0000 to
+     * 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify
+     * <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p> </li> </ul>
      */
     inline IPSetDescriptor& WithValue(Aws::String&& value) { SetValue(value); return *this;}
 
@@ -158,11 +203,18 @@ namespace Model
      * the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li> <li>
      * <p>To configure AWS WAF to allow, block, or count requests that originated from
      * IP addresses from 192.0.2.0 to 192.0.2.255, specify
-     * <code>192.0.2.0/24</code>.</p> </li> </ul> <p>AWS WAF supports only /8, /16,
-     * /24, and /32 IP addresses.</p> <p>For more information about CIDR notation, see
-     * the Wikipedia entry <a
+     * <code>192.0.2.0/24</code>.</p> </li> </ul> <p>For more information about CIDR
+     * notation, see the Wikipedia entry <a
      * href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless
-     * Inter-Domain Routing</a>.</p>
+     * Inter-Domain Routing</a>.</p> <p>Specify an IPv6 address by using CIDR notation.
+     * For example:</p> <ul> <li> <p>To configure AWS WAF to allow, block, or count
+     * requests that originated from the IP address
+     * 1111:0000:0000:0000:0000:0000:0000:0111, specify
+     * <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p> </li> <li> <p>To
+     * configure AWS WAF to allow, block, or count requests that originated from IP
+     * addresses 1111:0000:0000:0000:0000:0000:0000:0000 to
+     * 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify
+     * <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p> </li> </ul>
      */
     inline IPSetDescriptor& WithValue(const char* value) { SetValue(value); return *this;}
 

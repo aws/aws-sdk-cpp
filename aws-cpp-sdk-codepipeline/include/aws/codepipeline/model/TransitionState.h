@@ -33,7 +33,9 @@ namespace Model
 
   /**
    * <p>Represents information about the state of transitions between one stage and
-   * another stage.</p>
+   * another stage.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/TransitionState">AWS
+   * API Reference</a></p>
    */
   class AWS_CODEPIPELINE_API TransitionState
   {

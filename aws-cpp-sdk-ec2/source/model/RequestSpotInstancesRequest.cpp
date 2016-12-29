@@ -26,6 +26,7 @@ RequestSpotInstancesRequest::RequestSpotInstancesRequest() :
     m_clientTokenHasBeenSet(false),
     m_instanceCount(0),
     m_instanceCountHasBeenSet(false),
+    m_type(SpotInstanceType::NOT_SET),
     m_typeHasBeenSet(false),
     m_validFromHasBeenSet(false),
     m_validUntilHasBeenSet(false),
@@ -40,7 +41,7 @@ RequestSpotInstancesRequest::RequestSpotInstancesRequest() :
 Aws::String RequestSpotInstancesRequest::SerializePayload() const
 {
   Aws::StringStream ss;
-  ss << "Action=SpotInstances&";
+  ss << "Action=RequestSpotInstances&";
   if(m_dryRunHasBeenSet)
   {
     ss << "DryRun=" << m_dryRun << "&";
@@ -96,7 +97,7 @@ Aws::String RequestSpotInstancesRequest::SerializePayload() const
     m_launchSpecification.OutputToStream(ss, "LaunchSpecification");
   }
 
-  ss << "Version=2015-10-01";
+  ss << "Version=2016-11-15";
   return ss.str();
 }
 

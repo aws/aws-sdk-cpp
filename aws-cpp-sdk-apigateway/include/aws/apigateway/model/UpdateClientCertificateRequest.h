@@ -28,7 +28,9 @@ namespace Model
 
   /**
    * <p>A request to change information about an <a>ClientCertificate</a>
-   * resource.</p>
+   * resource.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateClientCertificateRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_APIGATEWAY_API UpdateClientCertificateRequest : public APIGatewayRequest
   {

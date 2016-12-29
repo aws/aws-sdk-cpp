@@ -38,7 +38,9 @@ namespace Model
   /**
    * <p>Contains the result of the simulation of a single API action call on a single
    * resource.</p> <p>This data type is used by a member of the
-   * <a>EvaluationResult</a> data type.</p>
+   * <a>EvaluationResult</a> data type.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ResourceSpecificResult">AWS
+   * API Reference</a></p>
    */
   class AWS_IAM_API ResourceSpecificResult
   {

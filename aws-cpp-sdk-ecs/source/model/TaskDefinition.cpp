@@ -32,10 +32,12 @@ TaskDefinition::TaskDefinition() :
     m_containerDefinitionsHasBeenSet(false),
     m_familyHasBeenSet(false),
     m_taskRoleArnHasBeenSet(false),
+    m_networkMode(NetworkMode::NOT_SET),
     m_networkModeHasBeenSet(false),
     m_revision(0),
     m_revisionHasBeenSet(false),
     m_volumesHasBeenSet(false),
+    m_status(TaskDefinitionStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_requiresAttributesHasBeenSet(false)
 {
@@ -46,10 +48,12 @@ TaskDefinition::TaskDefinition(const JsonValue& jsonValue) :
     m_containerDefinitionsHasBeenSet(false),
     m_familyHasBeenSet(false),
     m_taskRoleArnHasBeenSet(false),
+    m_networkMode(NetworkMode::NOT_SET),
     m_networkModeHasBeenSet(false),
     m_revision(0),
     m_revisionHasBeenSet(false),
     m_volumesHasBeenSet(false),
+    m_status(TaskDefinitionStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_requiresAttributesHasBeenSet(false)
 {

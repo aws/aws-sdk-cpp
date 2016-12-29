@@ -34,7 +34,9 @@ namespace Model
 {
 
   /**
-   * <p>Information about an on-premises instance.</p>
+   * <p>Information about an on-premises instance.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/InstanceInfo">AWS
+   * API Reference</a></p>
    */
   class AWS_CODEDEPLOY_API InstanceInfo
   {

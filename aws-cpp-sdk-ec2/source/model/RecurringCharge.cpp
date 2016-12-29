@@ -30,6 +30,7 @@ namespace Model
 {
 
 RecurringCharge::RecurringCharge() : 
+    m_frequency(RecurringChargeFrequency::NOT_SET),
     m_frequencyHasBeenSet(false),
     m_amount(0.0),
     m_amountHasBeenSet(false)
@@ -37,6 +38,7 @@ RecurringCharge::RecurringCharge() :
 }
 
 RecurringCharge::RecurringCharge(const XmlNode& xmlNode) : 
+    m_frequency(RecurringChargeFrequency::NOT_SET),
     m_frequencyHasBeenSet(false),
     m_amount(0.0),
     m_amountHasBeenSet(false)

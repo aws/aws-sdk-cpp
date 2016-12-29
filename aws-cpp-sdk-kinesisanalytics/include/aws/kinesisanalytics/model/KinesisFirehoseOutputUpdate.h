@@ -33,7 +33,9 @@ namespace Model
   /**
    * <p> When updating an output configuration using the <a>UpdateApplication</a>
    * operation, provides information about an Amazon Kinesis Firehose delivery stream
-   * configured as the destination. </p>
+   * configured as the destination. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/KinesisFirehoseOutputUpdate">AWS
+   * API Reference</a></p>
    */
   class AWS_KINESISANALYTICS_API KinesisFirehoseOutputUpdate
   {

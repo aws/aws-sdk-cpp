@@ -36,7 +36,9 @@ namespace Model
 {
 
   /**
-   * <p>The configuration of an Elasticsearch domain.</p>
+   * <p>The configuration of an Elasticsearch domain.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/ElasticsearchDomainConfig">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICSEARCHSERVICE_API ElasticsearchDomainConfig
   {

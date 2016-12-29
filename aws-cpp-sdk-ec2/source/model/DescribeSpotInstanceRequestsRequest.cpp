@@ -30,7 +30,7 @@ DescribeSpotInstanceRequestsRequest::DescribeSpotInstanceRequestsRequest() :
 Aws::String DescribeSpotInstanceRequestsRequest::SerializePayload() const
 {
   Aws::StringStream ss;
-  ss << "Action=DescribeSpotInstances&";
+  ss << "Action=DescribeSpotInstanceRequests&";
   if(m_dryRunHasBeenSet)
   {
     ss << "DryRun=" << m_dryRun << "&";
@@ -57,7 +57,7 @@ Aws::String DescribeSpotInstanceRequestsRequest::SerializePayload() const
     }
   }
 
-  ss << "Version=2015-10-01";
+  ss << "Version=2016-11-15";
   return ss.str();
 }
 

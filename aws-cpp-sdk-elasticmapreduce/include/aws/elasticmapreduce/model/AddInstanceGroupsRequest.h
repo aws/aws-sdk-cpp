@@ -27,7 +27,9 @@ namespace Model
 {
 
   /**
-   * <p>Input to an AddInstanceGroups call.</p>
+   * <p>Input to an AddInstanceGroups call.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/AddInstanceGroupsInput">AWS
+   * API Reference</a></p>
    */
   class AWS_EMR_API AddInstanceGroupsRequest : public EMRRequest
   {
@@ -38,37 +40,37 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * <p>Instance Groups to add.</p>
+     * <p>Instance groups to add.</p>
      */
     inline const Aws::Vector<InstanceGroupConfig>& GetInstanceGroups() const{ return m_instanceGroups; }
 
     /**
-     * <p>Instance Groups to add.</p>
+     * <p>Instance groups to add.</p>
      */
     inline void SetInstanceGroups(const Aws::Vector<InstanceGroupConfig>& value) { m_instanceGroupsHasBeenSet = true; m_instanceGroups = value; }
 
     /**
-     * <p>Instance Groups to add.</p>
+     * <p>Instance groups to add.</p>
      */
     inline void SetInstanceGroups(Aws::Vector<InstanceGroupConfig>&& value) { m_instanceGroupsHasBeenSet = true; m_instanceGroups = value; }
 
     /**
-     * <p>Instance Groups to add.</p>
+     * <p>Instance groups to add.</p>
      */
     inline AddInstanceGroupsRequest& WithInstanceGroups(const Aws::Vector<InstanceGroupConfig>& value) { SetInstanceGroups(value); return *this;}
 
     /**
-     * <p>Instance Groups to add.</p>
+     * <p>Instance groups to add.</p>
      */
     inline AddInstanceGroupsRequest& WithInstanceGroups(Aws::Vector<InstanceGroupConfig>&& value) { SetInstanceGroups(value); return *this;}
 
     /**
-     * <p>Instance Groups to add.</p>
+     * <p>Instance groups to add.</p>
      */
     inline AddInstanceGroupsRequest& AddInstanceGroups(const InstanceGroupConfig& value) { m_instanceGroupsHasBeenSet = true; m_instanceGroups.push_back(value); return *this; }
 
     /**
-     * <p>Instance Groups to add.</p>
+     * <p>Instance groups to add.</p>
      */
     inline AddInstanceGroupsRequest& AddInstanceGroups(InstanceGroupConfig&& value) { m_instanceGroupsHasBeenSet = true; m_instanceGroups.push_back(value); return *this; }
 

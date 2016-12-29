@@ -30,12 +30,14 @@ namespace Model
 
 Loa::Loa() : 
     m_loaContentHasBeenSet(false),
+    m_loaContentType(LoaContentType::NOT_SET),
     m_loaContentTypeHasBeenSet(false)
 {
 }
 
 Loa::Loa(const JsonValue& jsonValue) : 
     m_loaContentHasBeenSet(false),
+    m_loaContentType(LoaContentType::NOT_SET),
     m_loaContentTypeHasBeenSet(false)
 {
   *this = jsonValue;

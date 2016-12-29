@@ -29,6 +29,7 @@ namespace Model
 
 SchemaAttributeType::SchemaAttributeType() : 
     m_nameHasBeenSet(false),
+    m_attributeDataType(AttributeDataType::NOT_SET),
     m_attributeDataTypeHasBeenSet(false),
     m_developerOnlyAttribute(false),
     m_developerOnlyAttributeHasBeenSet(false),
@@ -43,6 +44,7 @@ SchemaAttributeType::SchemaAttributeType() :
 
 SchemaAttributeType::SchemaAttributeType(const JsonValue& jsonValue) : 
     m_nameHasBeenSet(false),
+    m_attributeDataType(AttributeDataType::NOT_SET),
     m_attributeDataTypeHasBeenSet(false),
     m_developerOnlyAttribute(false),
     m_developerOnlyAttributeHasBeenSet(false),

@@ -21,6 +21,7 @@ using namespace Aws::Utils;
 
 SetIdentityHeadersInNotificationsEnabledRequest::SetIdentityHeadersInNotificationsEnabledRequest() : 
     m_identityHasBeenSet(false),
+    m_notificationType(NotificationType::NOT_SET),
     m_notificationTypeHasBeenSet(false),
     m_enabled(false),
     m_enabledHasBeenSet(false)

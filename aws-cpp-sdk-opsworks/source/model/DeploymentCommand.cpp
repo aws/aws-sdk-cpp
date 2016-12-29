@@ -28,12 +28,14 @@ namespace Model
 {
 
 DeploymentCommand::DeploymentCommand() : 
+    m_name(DeploymentCommandName::NOT_SET),
     m_nameHasBeenSet(false),
     m_argsHasBeenSet(false)
 {
 }
 
 DeploymentCommand::DeploymentCommand(const JsonValue& jsonValue) : 
+    m_name(DeploymentCommandName::NOT_SET),
     m_nameHasBeenSet(false),
     m_argsHasBeenSet(false)
 {
@@ -55,7 +57,8 @@ DeploymentCommand& DeploymentCommand::operator =(const JsonValue& jsonValue)
     for(auto& argsItem : argsJsonMap)
     {
       Array<JsonValue> stringsJsonList = argsItem.second.AsArray();
-      Aws::Vector<Aws::String> stringsList((size_t)stringsJsonList.GetLength());
+      Aws::Vector<Aws::String> stringsList;
+      stringsList.reserve((size_t)stringsJsonList.GetLength());
       for(unsigned stringsIndex = 0; stringsIndex < stringsJsonList.GetLength(); ++stringsIndex)
       {
         stringsList.push_back(stringsJsonList[stringsIndex].AsString());

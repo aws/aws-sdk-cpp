@@ -33,7 +33,9 @@ namespace Model
 
   /**
    * <p>A comparision that is used to determine whether a query should return this
-   * object.</p>
+   * object.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/Selector">AWS
+   * API Reference</a></p>
    */
   class AWS_DATAPIPELINE_API Selector
   {

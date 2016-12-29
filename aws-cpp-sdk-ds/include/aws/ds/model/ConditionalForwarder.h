@@ -35,7 +35,9 @@ namespace Model
   /**
    * <p>Points to a remote domain with which you are setting up a trust relationship.
    * Conditional forwarders are required in order to set up a trust relationship with
-   * another domain.</p>
+   * another domain.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ConditionalForwarder">AWS
+   * API Reference</a></p>
    */
   class AWS_DIRECTORYSERVICE_API ConditionalForwarder
   {

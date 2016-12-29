@@ -39,7 +39,9 @@ namespace Model
    * <code>ts</code> (MPEG-TS), Playlists contains information about the master
    * playlists that you want Elastic Transcoder to create. We recommend that you
    * create only one master playlist per output format. The maximum number of master
-   * playlists in a job is 30. </p>
+   * playlists in a job is 30. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/Playlist">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICTRANSCODER_API Playlist
   {
@@ -54,12 +56,12 @@ namespace Model
      * for example, nyc-vacation.m3u8. If the name includes a <code>/</code> character,
      * the section of the name before the last <code>/</code> must be identical for all
      * <code>Name</code> objects. If you create more than one master playlist, the
-     * values of all <code>Name</code> objects must be unique.</p> <p><b>Note</b>:
-     * Elastic Transcoder automatically appends the relevant file extension to the file
-     * name (<code>.m3u8</code> for <code>HLSv3</code> and <code>HLSv4</code>
-     * playlists, and <code>.ism</code> and <code>.ismc</code> for <code>Smooth</code>
-     * playlists). If you include a file extension in <code>Name</code>, the file name
-     * will have two extensions.</p>
+     * values of all <code>Name</code> objects must be unique.</p> <note> <p>Elastic
+     * Transcoder automatically appends the relevant file extension to the file name
+     * (<code>.m3u8</code> for <code>HLSv3</code> and <code>HLSv4</code> playlists, and
+     * <code>.ism</code> and <code>.ismc</code> for <code>Smooth</code> playlists). If
+     * you include a file extension in <code>Name</code>, the file name will have two
+     * extensions.</p> </note>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
@@ -68,12 +70,12 @@ namespace Model
      * for example, nyc-vacation.m3u8. If the name includes a <code>/</code> character,
      * the section of the name before the last <code>/</code> must be identical for all
      * <code>Name</code> objects. If you create more than one master playlist, the
-     * values of all <code>Name</code> objects must be unique.</p> <p><b>Note</b>:
-     * Elastic Transcoder automatically appends the relevant file extension to the file
-     * name (<code>.m3u8</code> for <code>HLSv3</code> and <code>HLSv4</code>
-     * playlists, and <code>.ism</code> and <code>.ismc</code> for <code>Smooth</code>
-     * playlists). If you include a file extension in <code>Name</code>, the file name
-     * will have two extensions.</p>
+     * values of all <code>Name</code> objects must be unique.</p> <note> <p>Elastic
+     * Transcoder automatically appends the relevant file extension to the file name
+     * (<code>.m3u8</code> for <code>HLSv3</code> and <code>HLSv4</code> playlists, and
+     * <code>.ism</code> and <code>.ismc</code> for <code>Smooth</code> playlists). If
+     * you include a file extension in <code>Name</code>, the file name will have two
+     * extensions.</p> </note>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
@@ -82,12 +84,12 @@ namespace Model
      * for example, nyc-vacation.m3u8. If the name includes a <code>/</code> character,
      * the section of the name before the last <code>/</code> must be identical for all
      * <code>Name</code> objects. If you create more than one master playlist, the
-     * values of all <code>Name</code> objects must be unique.</p> <p><b>Note</b>:
-     * Elastic Transcoder automatically appends the relevant file extension to the file
-     * name (<code>.m3u8</code> for <code>HLSv3</code> and <code>HLSv4</code>
-     * playlists, and <code>.ism</code> and <code>.ismc</code> for <code>Smooth</code>
-     * playlists). If you include a file extension in <code>Name</code>, the file name
-     * will have two extensions.</p>
+     * values of all <code>Name</code> objects must be unique.</p> <note> <p>Elastic
+     * Transcoder automatically appends the relevant file extension to the file name
+     * (<code>.m3u8</code> for <code>HLSv3</code> and <code>HLSv4</code> playlists, and
+     * <code>.ism</code> and <code>.ismc</code> for <code>Smooth</code> playlists). If
+     * you include a file extension in <code>Name</code>, the file name will have two
+     * extensions.</p> </note>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
 
@@ -96,12 +98,12 @@ namespace Model
      * for example, nyc-vacation.m3u8. If the name includes a <code>/</code> character,
      * the section of the name before the last <code>/</code> must be identical for all
      * <code>Name</code> objects. If you create more than one master playlist, the
-     * values of all <code>Name</code> objects must be unique.</p> <p><b>Note</b>:
-     * Elastic Transcoder automatically appends the relevant file extension to the file
-     * name (<code>.m3u8</code> for <code>HLSv3</code> and <code>HLSv4</code>
-     * playlists, and <code>.ism</code> and <code>.ismc</code> for <code>Smooth</code>
-     * playlists). If you include a file extension in <code>Name</code>, the file name
-     * will have two extensions.</p>
+     * values of all <code>Name</code> objects must be unique.</p> <note> <p>Elastic
+     * Transcoder automatically appends the relevant file extension to the file name
+     * (<code>.m3u8</code> for <code>HLSv3</code> and <code>HLSv4</code> playlists, and
+     * <code>.ism</code> and <code>.ismc</code> for <code>Smooth</code> playlists). If
+     * you include a file extension in <code>Name</code>, the file name will have two
+     * extensions.</p> </note>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
@@ -110,12 +112,12 @@ namespace Model
      * for example, nyc-vacation.m3u8. If the name includes a <code>/</code> character,
      * the section of the name before the last <code>/</code> must be identical for all
      * <code>Name</code> objects. If you create more than one master playlist, the
-     * values of all <code>Name</code> objects must be unique.</p> <p><b>Note</b>:
-     * Elastic Transcoder automatically appends the relevant file extension to the file
-     * name (<code>.m3u8</code> for <code>HLSv3</code> and <code>HLSv4</code>
-     * playlists, and <code>.ism</code> and <code>.ismc</code> for <code>Smooth</code>
-     * playlists). If you include a file extension in <code>Name</code>, the file name
-     * will have two extensions.</p>
+     * values of all <code>Name</code> objects must be unique.</p> <note> <p>Elastic
+     * Transcoder automatically appends the relevant file extension to the file name
+     * (<code>.m3u8</code> for <code>HLSv3</code> and <code>HLSv4</code> playlists, and
+     * <code>.ism</code> and <code>.ismc</code> for <code>Smooth</code> playlists). If
+     * you include a file extension in <code>Name</code>, the file name will have two
+     * extensions.</p> </note>
      */
     inline Playlist& WithName(const Aws::String& value) { SetName(value); return *this;}
 
@@ -124,12 +126,12 @@ namespace Model
      * for example, nyc-vacation.m3u8. If the name includes a <code>/</code> character,
      * the section of the name before the last <code>/</code> must be identical for all
      * <code>Name</code> objects. If you create more than one master playlist, the
-     * values of all <code>Name</code> objects must be unique.</p> <p><b>Note</b>:
-     * Elastic Transcoder automatically appends the relevant file extension to the file
-     * name (<code>.m3u8</code> for <code>HLSv3</code> and <code>HLSv4</code>
-     * playlists, and <code>.ism</code> and <code>.ismc</code> for <code>Smooth</code>
-     * playlists). If you include a file extension in <code>Name</code>, the file name
-     * will have two extensions.</p>
+     * values of all <code>Name</code> objects must be unique.</p> <note> <p>Elastic
+     * Transcoder automatically appends the relevant file extension to the file name
+     * (<code>.m3u8</code> for <code>HLSv3</code> and <code>HLSv4</code> playlists, and
+     * <code>.ism</code> and <code>.ismc</code> for <code>Smooth</code> playlists). If
+     * you include a file extension in <code>Name</code>, the file name will have two
+     * extensions.</p> </note>
      */
     inline Playlist& WithName(Aws::String&& value) { SetName(value); return *this;}
 
@@ -138,12 +140,12 @@ namespace Model
      * for example, nyc-vacation.m3u8. If the name includes a <code>/</code> character,
      * the section of the name before the last <code>/</code> must be identical for all
      * <code>Name</code> objects. If you create more than one master playlist, the
-     * values of all <code>Name</code> objects must be unique.</p> <p><b>Note</b>:
-     * Elastic Transcoder automatically appends the relevant file extension to the file
-     * name (<code>.m3u8</code> for <code>HLSv3</code> and <code>HLSv4</code>
-     * playlists, and <code>.ism</code> and <code>.ismc</code> for <code>Smooth</code>
-     * playlists). If you include a file extension in <code>Name</code>, the file name
-     * will have two extensions.</p>
+     * values of all <code>Name</code> objects must be unique.</p> <note> <p>Elastic
+     * Transcoder automatically appends the relevant file extension to the file name
+     * (<code>.m3u8</code> for <code>HLSv3</code> and <code>HLSv4</code> playlists, and
+     * <code>.ism</code> and <code>.ismc</code> for <code>Smooth</code> playlists). If
+     * you include a file extension in <code>Name</code>, the file name will have two
+     * extensions.</p> </note>
      */
     inline Playlist& WithName(const char* value) { SetName(value); return *this;}
 
@@ -194,7 +196,7 @@ namespace Model
      * the value of the Outputs:Key object.</p> <ul> <li> <p>If your output is not
      * <code>HLS</code> or does not have a segment duration set, the name of the output
      * file is a concatenation of <code>OutputKeyPrefix</code> and
-     * <code>Outputs:Key</code>:</p> <p>OutputKeyPrefix<code>Outputs:Key</code></p>
+     * <code>Outputs:Key</code>:</p> <p>OutputKeyPrefix<code>Outputs:Key</code> </p>
      * </li> <li> <p>If your output is <code>HLSv3</code> and has a segment duration
      * set, or is not included in a playlist, Elastic Transcoder creates an output
      * playlist file with a file extension of <code>.m3u8</code>, and a series of
@@ -225,7 +227,7 @@ namespace Model
      * the value of the Outputs:Key object.</p> <ul> <li> <p>If your output is not
      * <code>HLS</code> or does not have a segment duration set, the name of the output
      * file is a concatenation of <code>OutputKeyPrefix</code> and
-     * <code>Outputs:Key</code>:</p> <p>OutputKeyPrefix<code>Outputs:Key</code></p>
+     * <code>Outputs:Key</code>:</p> <p>OutputKeyPrefix<code>Outputs:Key</code> </p>
      * </li> <li> <p>If your output is <code>HLSv3</code> and has a segment duration
      * set, or is not included in a playlist, Elastic Transcoder creates an output
      * playlist file with a file extension of <code>.m3u8</code>, and a series of
@@ -256,7 +258,7 @@ namespace Model
      * the value of the Outputs:Key object.</p> <ul> <li> <p>If your output is not
      * <code>HLS</code> or does not have a segment duration set, the name of the output
      * file is a concatenation of <code>OutputKeyPrefix</code> and
-     * <code>Outputs:Key</code>:</p> <p>OutputKeyPrefix<code>Outputs:Key</code></p>
+     * <code>Outputs:Key</code>:</p> <p>OutputKeyPrefix<code>Outputs:Key</code> </p>
      * </li> <li> <p>If your output is <code>HLSv3</code> and has a segment duration
      * set, or is not included in a playlist, Elastic Transcoder creates an output
      * playlist file with a file extension of <code>.m3u8</code>, and a series of
@@ -287,7 +289,7 @@ namespace Model
      * the value of the Outputs:Key object.</p> <ul> <li> <p>If your output is not
      * <code>HLS</code> or does not have a segment duration set, the name of the output
      * file is a concatenation of <code>OutputKeyPrefix</code> and
-     * <code>Outputs:Key</code>:</p> <p>OutputKeyPrefix<code>Outputs:Key</code></p>
+     * <code>Outputs:Key</code>:</p> <p>OutputKeyPrefix<code>Outputs:Key</code> </p>
      * </li> <li> <p>If your output is <code>HLSv3</code> and has a segment duration
      * set, or is not included in a playlist, Elastic Transcoder creates an output
      * playlist file with a file extension of <code>.m3u8</code>, and a series of
@@ -318,7 +320,7 @@ namespace Model
      * the value of the Outputs:Key object.</p> <ul> <li> <p>If your output is not
      * <code>HLS</code> or does not have a segment duration set, the name of the output
      * file is a concatenation of <code>OutputKeyPrefix</code> and
-     * <code>Outputs:Key</code>:</p> <p>OutputKeyPrefix<code>Outputs:Key</code></p>
+     * <code>Outputs:Key</code>:</p> <p>OutputKeyPrefix<code>Outputs:Key</code> </p>
      * </li> <li> <p>If your output is <code>HLSv3</code> and has a segment duration
      * set, or is not included in a playlist, Elastic Transcoder creates an output
      * playlist file with a file extension of <code>.m3u8</code>, and a series of
@@ -349,7 +351,7 @@ namespace Model
      * the value of the Outputs:Key object.</p> <ul> <li> <p>If your output is not
      * <code>HLS</code> or does not have a segment duration set, the name of the output
      * file is a concatenation of <code>OutputKeyPrefix</code> and
-     * <code>Outputs:Key</code>:</p> <p>OutputKeyPrefix<code>Outputs:Key</code></p>
+     * <code>Outputs:Key</code>:</p> <p>OutputKeyPrefix<code>Outputs:Key</code> </p>
      * </li> <li> <p>If your output is <code>HLSv3</code> and has a segment duration
      * set, or is not included in a playlist, Elastic Transcoder creates an output
      * playlist file with a file extension of <code>.m3u8</code>, and a series of
@@ -380,7 +382,7 @@ namespace Model
      * the value of the Outputs:Key object.</p> <ul> <li> <p>If your output is not
      * <code>HLS</code> or does not have a segment duration set, the name of the output
      * file is a concatenation of <code>OutputKeyPrefix</code> and
-     * <code>Outputs:Key</code>:</p> <p>OutputKeyPrefix<code>Outputs:Key</code></p>
+     * <code>Outputs:Key</code>:</p> <p>OutputKeyPrefix<code>Outputs:Key</code> </p>
      * </li> <li> <p>If your output is <code>HLSv3</code> and has a segment duration
      * set, or is not included in a playlist, Elastic Transcoder creates an output
      * playlist file with a file extension of <code>.m3u8</code>, and a series of
@@ -411,7 +413,7 @@ namespace Model
      * the value of the Outputs:Key object.</p> <ul> <li> <p>If your output is not
      * <code>HLS</code> or does not have a segment duration set, the name of the output
      * file is a concatenation of <code>OutputKeyPrefix</code> and
-     * <code>Outputs:Key</code>:</p> <p>OutputKeyPrefix<code>Outputs:Key</code></p>
+     * <code>Outputs:Key</code>:</p> <p>OutputKeyPrefix<code>Outputs:Key</code> </p>
      * </li> <li> <p>If your output is <code>HLSv3</code> and has a segment duration
      * set, or is not included in a playlist, Elastic Transcoder creates an output
      * playlist file with a file extension of <code>.m3u8</code>, and a series of

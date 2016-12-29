@@ -16,6 +16,7 @@
 #include <aws/dms/DatabaseMigrationService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/Array.h>
 
 namespace Aws
 {
@@ -33,7 +34,9 @@ namespace Model
 
   /**
    * <p>The SSL certificate that can be used to encrypt connections between the
-   * endpoints and the replication instance.</p>
+   * endpoints and the replication instance.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/Certificate">AWS API
+   * Reference</a></p>
    */
   class AWS_DATABASEMIGRATIONSERVICE_API Certificate
   {
@@ -44,106 +47,131 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p>The customer-assigned name of the certificate. Valid characters are
-     * [A-z_0-9].</p>
+     * <p>The customer-assigned name of the certificate. Valid characters are A-z and
+     * 0-9.</p>
      */
     inline const Aws::String& GetCertificateIdentifier() const{ return m_certificateIdentifier; }
 
     /**
-     * <p>The customer-assigned name of the certificate. Valid characters are
-     * [A-z_0-9].</p>
+     * <p>The customer-assigned name of the certificate. Valid characters are A-z and
+     * 0-9.</p>
      */
     inline void SetCertificateIdentifier(const Aws::String& value) { m_certificateIdentifierHasBeenSet = true; m_certificateIdentifier = value; }
 
     /**
-     * <p>The customer-assigned name of the certificate. Valid characters are
-     * [A-z_0-9].</p>
+     * <p>The customer-assigned name of the certificate. Valid characters are A-z and
+     * 0-9.</p>
      */
     inline void SetCertificateIdentifier(Aws::String&& value) { m_certificateIdentifierHasBeenSet = true; m_certificateIdentifier = value; }
 
     /**
-     * <p>The customer-assigned name of the certificate. Valid characters are
-     * [A-z_0-9].</p>
+     * <p>The customer-assigned name of the certificate. Valid characters are A-z and
+     * 0-9.</p>
      */
     inline void SetCertificateIdentifier(const char* value) { m_certificateIdentifierHasBeenSet = true; m_certificateIdentifier.assign(value); }
 
     /**
-     * <p>The customer-assigned name of the certificate. Valid characters are
-     * [A-z_0-9].</p>
+     * <p>The customer-assigned name of the certificate. Valid characters are A-z and
+     * 0-9.</p>
      */
     inline Certificate& WithCertificateIdentifier(const Aws::String& value) { SetCertificateIdentifier(value); return *this;}
 
     /**
-     * <p>The customer-assigned name of the certificate. Valid characters are
-     * [A-z_0-9].</p>
+     * <p>The customer-assigned name of the certificate. Valid characters are A-z and
+     * 0-9.</p>
      */
     inline Certificate& WithCertificateIdentifier(Aws::String&& value) { SetCertificateIdentifier(value); return *this;}
 
     /**
-     * <p>The customer-assigned name of the certificate. Valid characters are
-     * [A-z_0-9].</p>
+     * <p>The customer-assigned name of the certificate. Valid characters are A-z and
+     * 0-9.</p>
      */
     inline Certificate& WithCertificateIdentifier(const char* value) { SetCertificateIdentifier(value); return *this;}
 
     /**
-     * <p>the date the certificate was created.</p>
+     * <p>The date that the certificate was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCertificateCreationDate() const{ return m_certificateCreationDate; }
 
     /**
-     * <p>the date the certificate was created.</p>
+     * <p>The date that the certificate was created.</p>
      */
     inline void SetCertificateCreationDate(const Aws::Utils::DateTime& value) { m_certificateCreationDateHasBeenSet = true; m_certificateCreationDate = value; }
 
     /**
-     * <p>the date the certificate was created.</p>
+     * <p>The date that the certificate was created.</p>
      */
     inline void SetCertificateCreationDate(Aws::Utils::DateTime&& value) { m_certificateCreationDateHasBeenSet = true; m_certificateCreationDate = value; }
 
     /**
-     * <p>the date the certificate was created.</p>
+     * <p>The date that the certificate was created.</p>
      */
     inline Certificate& WithCertificateCreationDate(const Aws::Utils::DateTime& value) { SetCertificateCreationDate(value); return *this;}
 
     /**
-     * <p>the date the certificate was created.</p>
+     * <p>The date that the certificate was created.</p>
      */
     inline Certificate& WithCertificateCreationDate(Aws::Utils::DateTime&& value) { SetCertificateCreationDate(value); return *this;}
 
     /**
-     * <p>The contents of the .pem X.509 certificate file.</p>
+     * <p>The contents of the .pem X.509 certificate file for the certificate.</p>
      */
     inline const Aws::String& GetCertificatePem() const{ return m_certificatePem; }
 
     /**
-     * <p>The contents of the .pem X.509 certificate file.</p>
+     * <p>The contents of the .pem X.509 certificate file for the certificate.</p>
      */
     inline void SetCertificatePem(const Aws::String& value) { m_certificatePemHasBeenSet = true; m_certificatePem = value; }
 
     /**
-     * <p>The contents of the .pem X.509 certificate file.</p>
+     * <p>The contents of the .pem X.509 certificate file for the certificate.</p>
      */
     inline void SetCertificatePem(Aws::String&& value) { m_certificatePemHasBeenSet = true; m_certificatePem = value; }
 
     /**
-     * <p>The contents of the .pem X.509 certificate file.</p>
+     * <p>The contents of the .pem X.509 certificate file for the certificate.</p>
      */
     inline void SetCertificatePem(const char* value) { m_certificatePemHasBeenSet = true; m_certificatePem.assign(value); }
 
     /**
-     * <p>The contents of the .pem X.509 certificate file.</p>
+     * <p>The contents of the .pem X.509 certificate file for the certificate.</p>
      */
     inline Certificate& WithCertificatePem(const Aws::String& value) { SetCertificatePem(value); return *this;}
 
     /**
-     * <p>The contents of the .pem X.509 certificate file.</p>
+     * <p>The contents of the .pem X.509 certificate file for the certificate.</p>
      */
     inline Certificate& WithCertificatePem(Aws::String&& value) { SetCertificatePem(value); return *this;}
 
     /**
-     * <p>The contents of the .pem X.509 certificate file.</p>
+     * <p>The contents of the .pem X.509 certificate file for the certificate.</p>
      */
     inline Certificate& WithCertificatePem(const char* value) { SetCertificatePem(value); return *this;}
+
+    /**
+     * <p>The location of the imported Oracle Wallet certificate for use with SSL.</p>
+     */
+    inline const Aws::Utils::ByteBuffer& GetCertificateWallet() const{ return m_certificateWallet; }
+
+    /**
+     * <p>The location of the imported Oracle Wallet certificate for use with SSL.</p>
+     */
+    inline void SetCertificateWallet(const Aws::Utils::ByteBuffer& value) { m_certificateWalletHasBeenSet = true; m_certificateWallet = value; }
+
+    /**
+     * <p>The location of the imported Oracle Wallet certificate for use with SSL.</p>
+     */
+    inline void SetCertificateWallet(Aws::Utils::ByteBuffer&& value) { m_certificateWalletHasBeenSet = true; m_certificateWallet = value; }
+
+    /**
+     * <p>The location of the imported Oracle Wallet certificate for use with SSL.</p>
+     */
+    inline Certificate& WithCertificateWallet(const Aws::Utils::ByteBuffer& value) { SetCertificateWallet(value); return *this;}
+
+    /**
+     * <p>The location of the imported Oracle Wallet certificate for use with SSL.</p>
+     */
+    inline Certificate& WithCertificateWallet(Aws::Utils::ByteBuffer&& value) { SetCertificateWallet(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) for the certificate.</p>
@@ -216,52 +244,52 @@ namespace Model
     inline Certificate& WithCertificateOwner(const char* value) { SetCertificateOwner(value); return *this;}
 
     /**
-     * <p>The beginning date the certificate is valid.</p>
+     * <p>The beginning date that the certificate is valid.</p>
      */
     inline const Aws::Utils::DateTime& GetValidFromDate() const{ return m_validFromDate; }
 
     /**
-     * <p>The beginning date the certificate is valid.</p>
+     * <p>The beginning date that the certificate is valid.</p>
      */
     inline void SetValidFromDate(const Aws::Utils::DateTime& value) { m_validFromDateHasBeenSet = true; m_validFromDate = value; }
 
     /**
-     * <p>The beginning date the certificate is valid.</p>
+     * <p>The beginning date that the certificate is valid.</p>
      */
     inline void SetValidFromDate(Aws::Utils::DateTime&& value) { m_validFromDateHasBeenSet = true; m_validFromDate = value; }
 
     /**
-     * <p>The beginning date the certificate is valid.</p>
+     * <p>The beginning date that the certificate is valid.</p>
      */
     inline Certificate& WithValidFromDate(const Aws::Utils::DateTime& value) { SetValidFromDate(value); return *this;}
 
     /**
-     * <p>The beginning date the certificate is valid.</p>
+     * <p>The beginning date that the certificate is valid.</p>
      */
     inline Certificate& WithValidFromDate(Aws::Utils::DateTime&& value) { SetValidFromDate(value); return *this;}
 
     /**
-     * <p>the final date the certificate is valid.</p>
+     * <p>The final date that the certificate is valid.</p>
      */
     inline const Aws::Utils::DateTime& GetValidToDate() const{ return m_validToDate; }
 
     /**
-     * <p>the final date the certificate is valid.</p>
+     * <p>The final date that the certificate is valid.</p>
      */
     inline void SetValidToDate(const Aws::Utils::DateTime& value) { m_validToDateHasBeenSet = true; m_validToDate = value; }
 
     /**
-     * <p>the final date the certificate is valid.</p>
+     * <p>The final date that the certificate is valid.</p>
      */
     inline void SetValidToDate(Aws::Utils::DateTime&& value) { m_validToDateHasBeenSet = true; m_validToDate = value; }
 
     /**
-     * <p>the final date the certificate is valid.</p>
+     * <p>The final date that the certificate is valid.</p>
      */
     inline Certificate& WithValidToDate(const Aws::Utils::DateTime& value) { SetValidToDate(value); return *this;}
 
     /**
-     * <p>the final date the certificate is valid.</p>
+     * <p>The final date that the certificate is valid.</p>
      */
     inline Certificate& WithValidToDate(Aws::Utils::DateTime&& value) { SetValidToDate(value); return *this;}
 
@@ -322,6 +350,8 @@ namespace Model
     bool m_certificateCreationDateHasBeenSet;
     Aws::String m_certificatePem;
     bool m_certificatePemHasBeenSet;
+    Aws::Utils::ByteBuffer m_certificateWallet;
+    bool m_certificateWalletHasBeenSet;
     Aws::String m_certificateArn;
     bool m_certificateArnHasBeenSet;
     Aws::String m_certificateOwner;

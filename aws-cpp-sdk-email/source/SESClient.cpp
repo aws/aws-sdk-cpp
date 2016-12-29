@@ -27,9 +27,13 @@
 #include <aws/email/SESEndpoint.h>
 #include <aws/email/SESErrorMarshaller.h>
 #include <aws/email/model/CloneReceiptRuleSetRequest.h>
+#include <aws/email/model/CreateConfigurationSetRequest.h>
+#include <aws/email/model/CreateConfigurationSetEventDestinationRequest.h>
 #include <aws/email/model/CreateReceiptFilterRequest.h>
 #include <aws/email/model/CreateReceiptRuleRequest.h>
 #include <aws/email/model/CreateReceiptRuleSetRequest.h>
+#include <aws/email/model/DeleteConfigurationSetRequest.h>
+#include <aws/email/model/DeleteConfigurationSetEventDestinationRequest.h>
 #include <aws/email/model/DeleteIdentityRequest.h>
 #include <aws/email/model/DeleteIdentityPolicyRequest.h>
 #include <aws/email/model/DeleteReceiptFilterRequest.h>
@@ -37,6 +41,7 @@
 #include <aws/email/model/DeleteReceiptRuleSetRequest.h>
 #include <aws/email/model/DeleteVerifiedEmailAddressRequest.h>
 #include <aws/email/model/DescribeActiveReceiptRuleSetRequest.h>
+#include <aws/email/model/DescribeConfigurationSetRequest.h>
 #include <aws/email/model/DescribeReceiptRuleRequest.h>
 #include <aws/email/model/DescribeReceiptRuleSetRequest.h>
 #include <aws/email/model/GetIdentityDkimAttributesRequest.h>
@@ -46,6 +51,7 @@
 #include <aws/email/model/GetIdentityVerificationAttributesRequest.h>
 #include <aws/email/model/GetSendQuotaRequest.h>
 #include <aws/email/model/GetSendStatisticsRequest.h>
+#include <aws/email/model/ListConfigurationSetsRequest.h>
 #include <aws/email/model/ListIdentitiesRequest.h>
 #include <aws/email/model/ListIdentityPoliciesRequest.h>
 #include <aws/email/model/ListReceiptFiltersRequest.h>
@@ -63,6 +69,7 @@
 #include <aws/email/model/SetIdentityMailFromDomainRequest.h>
 #include <aws/email/model/SetIdentityNotificationTopicRequest.h>
 #include <aws/email/model/SetReceiptRulePositionRequest.h>
+#include <aws/email/model/UpdateConfigurationSetEventDestinationRequest.h>
 #include <aws/email/model/UpdateReceiptRuleRequest.h>
 #include <aws/email/model/VerifyDomainDkimRequest.h>
 #include <aws/email/model/VerifyDomainIdentityRequest.h>
@@ -134,6 +141,16 @@ void SESClient::init(const ClientConfiguration& config)
   m_uri = ss.str();
 }
 
+Aws::String SESClient::ConvertRequestToPresignedUrl(const AmazonSerializableWebServiceRequest& requestToConvert, const char* region) const
+{
+  Aws::StringStream ss;
+  ss << "https://" << SESEndpoint::ForRegion(region);
+  ss << "?" << requestToConvert.SerializePayload();
+
+  URI uri(ss.str());
+  return GeneratePresignedUrl(uri, HttpMethod::HTTP_GET, region, 3600);
+}
+
 CloneReceiptRuleSetOutcome SESClient::CloneReceiptRuleSet(const CloneReceiptRuleSetRequest& request) const
 {
   Aws::StringStream ss;
@@ -165,6 +182,72 @@ void SESClient::CloneReceiptRuleSetAsync(const CloneReceiptRuleSetRequest& reque
 void SESClient::CloneReceiptRuleSetAsyncHelper(const CloneReceiptRuleSetRequest& request, const CloneReceiptRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CloneReceiptRuleSet(request), context);
+}
+
+CreateConfigurationSetOutcome SESClient::CreateConfigurationSet(const CreateConfigurationSetRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return CreateConfigurationSetOutcome(CreateConfigurationSetResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateConfigurationSetOutcome(outcome.GetError());
+  }
+}
+
+CreateConfigurationSetOutcomeCallable SESClient::CreateConfigurationSetCallable(const CreateConfigurationSetRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateConfigurationSetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateConfigurationSet(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SESClient::CreateConfigurationSetAsync(const CreateConfigurationSetRequest& request, const CreateConfigurationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateConfigurationSetAsyncHelper( request, handler, context ); } );
+}
+
+void SESClient::CreateConfigurationSetAsyncHelper(const CreateConfigurationSetRequest& request, const CreateConfigurationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateConfigurationSet(request), context);
+}
+
+CreateConfigurationSetEventDestinationOutcome SESClient::CreateConfigurationSetEventDestination(const CreateConfigurationSetEventDestinationRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return CreateConfigurationSetEventDestinationOutcome(CreateConfigurationSetEventDestinationResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateConfigurationSetEventDestinationOutcome(outcome.GetError());
+  }
+}
+
+CreateConfigurationSetEventDestinationOutcomeCallable SESClient::CreateConfigurationSetEventDestinationCallable(const CreateConfigurationSetEventDestinationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateConfigurationSetEventDestinationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateConfigurationSetEventDestination(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SESClient::CreateConfigurationSetEventDestinationAsync(const CreateConfigurationSetEventDestinationRequest& request, const CreateConfigurationSetEventDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateConfigurationSetEventDestinationAsyncHelper( request, handler, context ); } );
+}
+
+void SESClient::CreateConfigurationSetEventDestinationAsyncHelper(const CreateConfigurationSetEventDestinationRequest& request, const CreateConfigurationSetEventDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateConfigurationSetEventDestination(request), context);
 }
 
 CreateReceiptFilterOutcome SESClient::CreateReceiptFilter(const CreateReceiptFilterRequest& request) const
@@ -264,6 +347,72 @@ void SESClient::CreateReceiptRuleSetAsync(const CreateReceiptRuleSetRequest& req
 void SESClient::CreateReceiptRuleSetAsyncHelper(const CreateReceiptRuleSetRequest& request, const CreateReceiptRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateReceiptRuleSet(request), context);
+}
+
+DeleteConfigurationSetOutcome SESClient::DeleteConfigurationSet(const DeleteConfigurationSetRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DeleteConfigurationSetOutcome(DeleteConfigurationSetResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteConfigurationSetOutcome(outcome.GetError());
+  }
+}
+
+DeleteConfigurationSetOutcomeCallable SESClient::DeleteConfigurationSetCallable(const DeleteConfigurationSetRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteConfigurationSetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteConfigurationSet(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SESClient::DeleteConfigurationSetAsync(const DeleteConfigurationSetRequest& request, const DeleteConfigurationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteConfigurationSetAsyncHelper( request, handler, context ); } );
+}
+
+void SESClient::DeleteConfigurationSetAsyncHelper(const DeleteConfigurationSetRequest& request, const DeleteConfigurationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteConfigurationSet(request), context);
+}
+
+DeleteConfigurationSetEventDestinationOutcome SESClient::DeleteConfigurationSetEventDestination(const DeleteConfigurationSetEventDestinationRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DeleteConfigurationSetEventDestinationOutcome(DeleteConfigurationSetEventDestinationResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteConfigurationSetEventDestinationOutcome(outcome.GetError());
+  }
+}
+
+DeleteConfigurationSetEventDestinationOutcomeCallable SESClient::DeleteConfigurationSetEventDestinationCallable(const DeleteConfigurationSetEventDestinationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteConfigurationSetEventDestinationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteConfigurationSetEventDestination(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SESClient::DeleteConfigurationSetEventDestinationAsync(const DeleteConfigurationSetEventDestinationRequest& request, const DeleteConfigurationSetEventDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteConfigurationSetEventDestinationAsyncHelper( request, handler, context ); } );
+}
+
+void SESClient::DeleteConfigurationSetEventDestinationAsyncHelper(const DeleteConfigurationSetEventDestinationRequest& request, const DeleteConfigurationSetEventDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteConfigurationSetEventDestination(request), context);
 }
 
 DeleteIdentityOutcome SESClient::DeleteIdentity(const DeleteIdentityRequest& request) const
@@ -495,6 +644,39 @@ void SESClient::DescribeActiveReceiptRuleSetAsync(const DescribeActiveReceiptRul
 void SESClient::DescribeActiveReceiptRuleSetAsyncHelper(const DescribeActiveReceiptRuleSetRequest& request, const DescribeActiveReceiptRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeActiveReceiptRuleSet(request), context);
+}
+
+DescribeConfigurationSetOutcome SESClient::DescribeConfigurationSet(const DescribeConfigurationSetRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DescribeConfigurationSetOutcome(DescribeConfigurationSetResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeConfigurationSetOutcome(outcome.GetError());
+  }
+}
+
+DescribeConfigurationSetOutcomeCallable SESClient::DescribeConfigurationSetCallable(const DescribeConfigurationSetRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeConfigurationSetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeConfigurationSet(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SESClient::DescribeConfigurationSetAsync(const DescribeConfigurationSetRequest& request, const DescribeConfigurationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeConfigurationSetAsyncHelper( request, handler, context ); } );
+}
+
+void SESClient::DescribeConfigurationSetAsyncHelper(const DescribeConfigurationSetRequest& request, const DescribeConfigurationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeConfigurationSet(request), context);
 }
 
 DescribeReceiptRuleOutcome SESClient::DescribeReceiptRule(const DescribeReceiptRuleRequest& request) const
@@ -792,6 +974,39 @@ void SESClient::GetSendStatisticsAsync(const GetSendStatisticsRequest& request, 
 void SESClient::GetSendStatisticsAsyncHelper(const GetSendStatisticsRequest& request, const GetSendStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetSendStatistics(request), context);
+}
+
+ListConfigurationSetsOutcome SESClient::ListConfigurationSets(const ListConfigurationSetsRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return ListConfigurationSetsOutcome(ListConfigurationSetsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListConfigurationSetsOutcome(outcome.GetError());
+  }
+}
+
+ListConfigurationSetsOutcomeCallable SESClient::ListConfigurationSetsCallable(const ListConfigurationSetsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListConfigurationSetsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListConfigurationSets(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SESClient::ListConfigurationSetsAsync(const ListConfigurationSetsRequest& request, const ListConfigurationSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListConfigurationSetsAsyncHelper( request, handler, context ); } );
+}
+
+void SESClient::ListConfigurationSetsAsyncHelper(const ListConfigurationSetsRequest& request, const ListConfigurationSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListConfigurationSets(request), context);
 }
 
 ListIdentitiesOutcome SESClient::ListIdentities(const ListIdentitiesRequest& request) const
@@ -1355,6 +1570,39 @@ void SESClient::SetReceiptRulePositionAsyncHelper(const SetReceiptRulePositionRe
   handler(this, request, SetReceiptRulePosition(request), context);
 }
 
+UpdateConfigurationSetEventDestinationOutcome SESClient::UpdateConfigurationSetEventDestination(const UpdateConfigurationSetEventDestinationRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return UpdateConfigurationSetEventDestinationOutcome(UpdateConfigurationSetEventDestinationResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateConfigurationSetEventDestinationOutcome(outcome.GetError());
+  }
+}
+
+UpdateConfigurationSetEventDestinationOutcomeCallable SESClient::UpdateConfigurationSetEventDestinationCallable(const UpdateConfigurationSetEventDestinationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateConfigurationSetEventDestinationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateConfigurationSetEventDestination(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SESClient::UpdateConfigurationSetEventDestinationAsync(const UpdateConfigurationSetEventDestinationRequest& request, const UpdateConfigurationSetEventDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateConfigurationSetEventDestinationAsyncHelper( request, handler, context ); } );
+}
+
+void SESClient::UpdateConfigurationSetEventDestinationAsyncHelper(const UpdateConfigurationSetEventDestinationRequest& request, const UpdateConfigurationSetEventDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateConfigurationSetEventDestination(request), context);
+}
+
 UpdateReceiptRuleOutcome SESClient::UpdateReceiptRule(const UpdateReceiptRuleRequest& request) const
 {
   Aws::StringStream ss;
@@ -1519,4 +1767,6 @@ void SESClient::VerifyEmailIdentityAsyncHelper(const VerifyEmailIdentityRequest&
 {
   handler(this, request, VerifyEmailIdentity(request), context);
 }
+
+
 

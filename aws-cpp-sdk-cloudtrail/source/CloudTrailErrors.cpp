@@ -40,6 +40,7 @@ static const int INVALID_S3_PREFIX_HASH = HashingUtils::HashString("InvalidS3Pre
 static const int INVALID_TIME_RANGE_HASH = HashingUtils::HashString("InvalidTimeRangeException");
 static const int RESOURCE_TYPE_NOT_SUPPORTED_HASH = HashingUtils::HashString("ResourceTypeNotSupportedException");
 static const int TAGS_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("TagsLimitExceededException");
+static const int INVALID_EVENT_SELECTORS_HASH = HashingUtils::HashString("InvalidEventSelectorsException");
 static const int CLOUD_WATCH_LOGS_DELIVERY_UNAVAILABLE_HASH = HashingUtils::HashString("CloudWatchLogsDeliveryUnavailableException");
 static const int INVALID_NEXT_TOKEN_HASH = HashingUtils::HashString("InvalidNextTokenException");
 static const int MAXIMUM_NUMBER_OF_TRAILS_EXCEEDED_HASH = HashingUtils::HashString("MaximumNumberOfTrailsExceededException");
@@ -115,6 +116,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == TAGS_LIMIT_EXCEEDED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::TAGS_LIMIT_EXCEEDED), false);
+  }
+  else if (hashCode == INVALID_EVENT_SELECTORS_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::INVALID_EVENT_SELECTORS), false);
   }
   else if (hashCode == CLOUD_WATCH_LOGS_DELIVERY_UNAVAILABLE_HASH)
   {

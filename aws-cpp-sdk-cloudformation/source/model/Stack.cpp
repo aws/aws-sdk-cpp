@@ -32,10 +32,12 @@ namespace Model
 Stack::Stack() : 
     m_stackIdHasBeenSet(false),
     m_stackNameHasBeenSet(false),
+    m_changeSetIdHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_parametersHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
     m_lastUpdatedTimeHasBeenSet(false),
+    m_stackStatus(StackStatus::NOT_SET),
     m_stackStatusHasBeenSet(false),
     m_stackStatusReasonHasBeenSet(false),
     m_disableRollback(false),
@@ -53,10 +55,12 @@ Stack::Stack() :
 Stack::Stack(const XmlNode& xmlNode) : 
     m_stackIdHasBeenSet(false),
     m_stackNameHasBeenSet(false),
+    m_changeSetIdHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_parametersHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
     m_lastUpdatedTimeHasBeenSet(false),
+    m_stackStatus(StackStatus::NOT_SET),
     m_stackStatusHasBeenSet(false),
     m_stackStatusReasonHasBeenSet(false),
     m_disableRollback(false),
@@ -89,6 +93,12 @@ Stack& Stack::operator =(const XmlNode& xmlNode)
     {
       m_stackName = StringUtils::Trim(stackNameNode.GetText().c_str());
       m_stackNameHasBeenSet = true;
+    }
+    XmlNode changeSetIdNode = resultNode.FirstChild("ChangeSetId");
+    if(!changeSetIdNode.IsNull())
+    {
+      m_changeSetId = StringUtils::Trim(changeSetIdNode.GetText().c_str());
+      m_changeSetIdHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
     if(!descriptionNode.IsNull())
@@ -215,6 +225,11 @@ void Stack::OutputToStream(Aws::OStream& oStream, const char* location, unsigned
       oStream << location << index << locationValue << ".StackName=" << StringUtils::URLEncode(m_stackName.c_str()) << "&";
   }
 
+  if(m_changeSetIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ChangeSetId=" << StringUtils::URLEncode(m_changeSetId.c_str()) << "&";
+  }
+
   if(m_descriptionHasBeenSet)
   {
       oStream << location << index << locationValue << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
@@ -317,6 +332,10 @@ void Stack::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_stackNameHasBeenSet)
   {
       oStream << location << ".StackName=" << StringUtils::URLEncode(m_stackName.c_str()) << "&";
+  }
+  if(m_changeSetIdHasBeenSet)
+  {
+      oStream << location << ".ChangeSetId=" << StringUtils::URLEncode(m_changeSetId.c_str()) << "&";
   }
   if(m_descriptionHasBeenSet)
   {

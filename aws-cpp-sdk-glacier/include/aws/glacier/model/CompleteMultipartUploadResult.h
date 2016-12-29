@@ -34,11 +34,13 @@ namespace Model
 {
   /**
    * <p>Contains the Amazon Glacier response to your request.</p> <p>For information
-   * about the underlying REST API, go to <a
+   * about the underlying REST API, see <a
    * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-archive-post.html">Upload
-   * Archive</a>. For conceptual information, go to <a
+   * Archive</a>. For conceptual information, see <a
    * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html">Working
-   * with Archives in Amazon Glacier</a>.</p>
+   * with Archives in Amazon Glacier</a>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/ArchiveCreationOutput">AWS
+   * API Reference</a></p>
    */
   class AWS_GLACIER_API CompleteMultipartUploadResult
   {

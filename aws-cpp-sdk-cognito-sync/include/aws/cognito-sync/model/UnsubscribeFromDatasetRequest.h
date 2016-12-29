@@ -25,7 +25,9 @@ namespace Model
 {
 
   /**
-   * <p>A request to UnsubscribeFromDataset.</p>
+   * <p>A request to UnsubscribeFromDataset.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/UnsubscribeFromDatasetRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_COGNITOSYNC_API UnsubscribeFromDatasetRequest : public CognitoSyncRequest
   {

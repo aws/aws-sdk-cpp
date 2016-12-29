@@ -32,7 +32,9 @@ namespace Model
 
   /**
    * <p>The HLS content protection settings, if any, that you want Elastic Transcoder
-   * to apply to your output files.</p>
+   * to apply to your output files.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/HlsContentProtection">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICTRANSCODER_API HlsContentProtection
   {
@@ -44,50 +46,50 @@ namespace Model
 
     /**
      * <p>The content protection method for your output. The only valid value is:
-     * <code>aes-128</code>.</p> <p>This value will be written into the method
-     * attribute of the <code>EXT-X-KEY</code> metadata tag in the output playlist.</p>
+     * <code>aes-128</code>.</p> <p>This value is written into the method attribute of
+     * the <code>EXT-X-KEY</code> metadata tag in the output playlist.</p>
      */
     inline const Aws::String& GetMethod() const{ return m_method; }
 
     /**
      * <p>The content protection method for your output. The only valid value is:
-     * <code>aes-128</code>.</p> <p>This value will be written into the method
-     * attribute of the <code>EXT-X-KEY</code> metadata tag in the output playlist.</p>
+     * <code>aes-128</code>.</p> <p>This value is written into the method attribute of
+     * the <code>EXT-X-KEY</code> metadata tag in the output playlist.</p>
      */
     inline void SetMethod(const Aws::String& value) { m_methodHasBeenSet = true; m_method = value; }
 
     /**
      * <p>The content protection method for your output. The only valid value is:
-     * <code>aes-128</code>.</p> <p>This value will be written into the method
-     * attribute of the <code>EXT-X-KEY</code> metadata tag in the output playlist.</p>
+     * <code>aes-128</code>.</p> <p>This value is written into the method attribute of
+     * the <code>EXT-X-KEY</code> metadata tag in the output playlist.</p>
      */
     inline void SetMethod(Aws::String&& value) { m_methodHasBeenSet = true; m_method = value; }
 
     /**
      * <p>The content protection method for your output. The only valid value is:
-     * <code>aes-128</code>.</p> <p>This value will be written into the method
-     * attribute of the <code>EXT-X-KEY</code> metadata tag in the output playlist.</p>
+     * <code>aes-128</code>.</p> <p>This value is written into the method attribute of
+     * the <code>EXT-X-KEY</code> metadata tag in the output playlist.</p>
      */
     inline void SetMethod(const char* value) { m_methodHasBeenSet = true; m_method.assign(value); }
 
     /**
      * <p>The content protection method for your output. The only valid value is:
-     * <code>aes-128</code>.</p> <p>This value will be written into the method
-     * attribute of the <code>EXT-X-KEY</code> metadata tag in the output playlist.</p>
+     * <code>aes-128</code>.</p> <p>This value is written into the method attribute of
+     * the <code>EXT-X-KEY</code> metadata tag in the output playlist.</p>
      */
     inline HlsContentProtection& WithMethod(const Aws::String& value) { SetMethod(value); return *this;}
 
     /**
      * <p>The content protection method for your output. The only valid value is:
-     * <code>aes-128</code>.</p> <p>This value will be written into the method
-     * attribute of the <code>EXT-X-KEY</code> metadata tag in the output playlist.</p>
+     * <code>aes-128</code>.</p> <p>This value is written into the method attribute of
+     * the <code>EXT-X-KEY</code> metadata tag in the output playlist.</p>
      */
     inline HlsContentProtection& WithMethod(Aws::String&& value) { SetMethod(value); return *this;}
 
     /**
      * <p>The content protection method for your output. The only valid value is:
-     * <code>aes-128</code>.</p> <p>This value will be written into the method
-     * attribute of the <code>EXT-X-KEY</code> metadata tag in the output playlist.</p>
+     * <code>aes-128</code>.</p> <p>This value is written into the method attribute of
+     * the <code>EXT-X-KEY</code> metadata tag in the output playlist.</p>
      */
     inline HlsContentProtection& WithMethod(const char* value) { SetMethod(value); return *this;}
 
@@ -95,7 +97,7 @@ namespace Model
      * <p>If you want Elastic Transcoder to generate a key for you, leave this field
      * blank.</p> <p>If you choose to supply your own key, you must encrypt the key by
      * using AWS KMS. The key must be base64-encoded, and it must be one of the
-     * following bit lengths before being base64-encoded:</p> <p><code>128</code>,
+     * following bit lengths before being base64-encoded:</p> <p> <code>128</code>,
      * <code>192</code>, or <code>256</code>. </p>
      */
     inline const Aws::String& GetKey() const{ return m_key; }
@@ -104,7 +106,7 @@ namespace Model
      * <p>If you want Elastic Transcoder to generate a key for you, leave this field
      * blank.</p> <p>If you choose to supply your own key, you must encrypt the key by
      * using AWS KMS. The key must be base64-encoded, and it must be one of the
-     * following bit lengths before being base64-encoded:</p> <p><code>128</code>,
+     * following bit lengths before being base64-encoded:</p> <p> <code>128</code>,
      * <code>192</code>, or <code>256</code>. </p>
      */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
@@ -113,7 +115,7 @@ namespace Model
      * <p>If you want Elastic Transcoder to generate a key for you, leave this field
      * blank.</p> <p>If you choose to supply your own key, you must encrypt the key by
      * using AWS KMS. The key must be base64-encoded, and it must be one of the
-     * following bit lengths before being base64-encoded:</p> <p><code>128</code>,
+     * following bit lengths before being base64-encoded:</p> <p> <code>128</code>,
      * <code>192</code>, or <code>256</code>. </p>
      */
     inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = value; }
@@ -122,7 +124,7 @@ namespace Model
      * <p>If you want Elastic Transcoder to generate a key for you, leave this field
      * blank.</p> <p>If you choose to supply your own key, you must encrypt the key by
      * using AWS KMS. The key must be base64-encoded, and it must be one of the
-     * following bit lengths before being base64-encoded:</p> <p><code>128</code>,
+     * following bit lengths before being base64-encoded:</p> <p> <code>128</code>,
      * <code>192</code>, or <code>256</code>. </p>
      */
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
@@ -131,7 +133,7 @@ namespace Model
      * <p>If you want Elastic Transcoder to generate a key for you, leave this field
      * blank.</p> <p>If you choose to supply your own key, you must encrypt the key by
      * using AWS KMS. The key must be base64-encoded, and it must be one of the
-     * following bit lengths before being base64-encoded:</p> <p><code>128</code>,
+     * following bit lengths before being base64-encoded:</p> <p> <code>128</code>,
      * <code>192</code>, or <code>256</code>. </p>
      */
     inline HlsContentProtection& WithKey(const Aws::String& value) { SetKey(value); return *this;}
@@ -140,7 +142,7 @@ namespace Model
      * <p>If you want Elastic Transcoder to generate a key for you, leave this field
      * blank.</p> <p>If you choose to supply your own key, you must encrypt the key by
      * using AWS KMS. The key must be base64-encoded, and it must be one of the
-     * following bit lengths before being base64-encoded:</p> <p><code>128</code>,
+     * following bit lengths before being base64-encoded:</p> <p> <code>128</code>,
      * <code>192</code>, or <code>256</code>. </p>
      */
     inline HlsContentProtection& WithKey(Aws::String&& value) { SetKey(value); return *this;}
@@ -149,7 +151,7 @@ namespace Model
      * <p>If you want Elastic Transcoder to generate a key for you, leave this field
      * blank.</p> <p>If you choose to supply your own key, you must encrypt the key by
      * using AWS KMS. The key must be base64-encoded, and it must be one of the
-     * following bit lengths before being base64-encoded:</p> <p><code>128</code>,
+     * following bit lengths before being base64-encoded:</p> <p> <code>128</code>,
      * <code>192</code>, or <code>256</code>. </p>
      */
     inline HlsContentProtection& WithKey(const char* value) { SetKey(value); return *this;}

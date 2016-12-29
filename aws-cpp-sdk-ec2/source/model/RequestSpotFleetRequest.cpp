@@ -29,7 +29,7 @@ RequestSpotFleetRequest::RequestSpotFleetRequest() :
 Aws::String RequestSpotFleetRequest::SerializePayload() const
 {
   Aws::StringStream ss;
-  ss << "Action=SpotFleet&";
+  ss << "Action=RequestSpotFleet&";
   if(m_dryRunHasBeenSet)
   {
     ss << "DryRun=" << m_dryRun << "&";
@@ -40,7 +40,7 @@ Aws::String RequestSpotFleetRequest::SerializePayload() const
     m_spotFleetRequestConfig.OutputToStream(ss, "SpotFleetRequestConfig");
   }
 
-  ss << "Version=2015-10-01";
+  ss << "Version=2016-11-15";
   return ss.str();
 }
 

@@ -32,7 +32,9 @@ namespace Model
 
   /**
    * <p>A reference to a unique stage identified in the format
-   * <code>{restApiId}/{stage}</code>.</p>
+   * <code>{restApiId}/{stage}</code>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/StageKey">AWS
+   * API Reference</a></p>
    */
   class AWS_APIGATEWAY_API StageKey
   {

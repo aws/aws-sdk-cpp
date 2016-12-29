@@ -31,7 +31,9 @@ namespace Model
 {
 
   /**
-   * <p>Describes the ICMP type and code.</p>
+   * <p>Describes the ICMP type and code.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/IcmpTypeCode">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API IcmpTypeCode
   {
@@ -44,32 +46,32 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     /**
-     * <p>The ICMP code. A value of -1 means all codes for the specified ICMP type.</p>
+     * <p>The ICMP type. A value of -1 means all types.</p>
      */
     inline int GetType() const{ return m_type; }
 
     /**
-     * <p>The ICMP code. A value of -1 means all codes for the specified ICMP type.</p>
+     * <p>The ICMP type. A value of -1 means all types.</p>
      */
     inline void SetType(int value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The ICMP code. A value of -1 means all codes for the specified ICMP type.</p>
+     * <p>The ICMP type. A value of -1 means all types.</p>
      */
     inline IcmpTypeCode& WithType(int value) { SetType(value); return *this;}
 
     /**
-     * <p>The ICMP type. A value of -1 means all types.</p>
+     * <p>The ICMP code. A value of -1 means all codes for the specified ICMP type.</p>
      */
     inline int GetCode() const{ return m_code; }
 
     /**
-     * <p>The ICMP type. A value of -1 means all types.</p>
+     * <p>The ICMP code. A value of -1 means all codes for the specified ICMP type.</p>
      */
     inline void SetCode(int value) { m_codeHasBeenSet = true; m_code = value; }
 
     /**
-     * <p>The ICMP type. A value of -1 means all types.</p>
+     * <p>The ICMP code. A value of -1 means all codes for the specified ICMP type.</p>
      */
     inline IcmpTypeCode& WithCode(int value) { SetCode(value); return *this;}
 

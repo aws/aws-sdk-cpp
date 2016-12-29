@@ -23,6 +23,7 @@ CreatePlacementGroupRequest::CreatePlacementGroupRequest() :
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
     m_groupNameHasBeenSet(false),
+    m_strategy(PlacementStrategy::NOT_SET),
     m_strategyHasBeenSet(false)
 {
 }
@@ -46,7 +47,7 @@ Aws::String CreatePlacementGroupRequest::SerializePayload() const
     ss << "Strategy=" << PlacementStrategyMapper::GetNameForPlacementStrategy(m_strategy) << "&";
   }
 
-  ss << "Version=2015-10-01";
+  ss << "Version=2016-11-15";
   return ss.str();
 }
 

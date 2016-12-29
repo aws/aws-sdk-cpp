@@ -42,7 +42,9 @@ namespace Model
    * name, type, and value, are included in the message size restriction, which is
    * currently 256 KB (262,144 bytes). For more information, see <a
    * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMessageAttributes.html">Using
-   * Amazon SNS Message Attributes</a>.</p>
+   * Amazon SNS Message Attributes</a>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/MessageAttributeValue">AWS
+   * API Reference</a></p>
    */
   class AWS_SNS_API MessageAttributeValue
   {

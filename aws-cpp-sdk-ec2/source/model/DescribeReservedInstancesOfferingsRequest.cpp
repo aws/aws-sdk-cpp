@@ -23,11 +23,15 @@ DescribeReservedInstancesOfferingsRequest::DescribeReservedInstancesOfferingsReq
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
     m_reservedInstancesOfferingIdsHasBeenSet(false),
+    m_instanceType(InstanceType::NOT_SET),
     m_instanceTypeHasBeenSet(false),
     m_availabilityZoneHasBeenSet(false),
+    m_productDescription(RIProductDescription::NOT_SET),
     m_productDescriptionHasBeenSet(false),
     m_filtersHasBeenSet(false),
+    m_instanceTenancy(Tenancy::NOT_SET),
     m_instanceTenancyHasBeenSet(false),
+    m_offeringType(OfferingTypeValues::NOT_SET),
     m_offeringTypeHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
     m_maxResults(0),
@@ -39,7 +43,9 @@ DescribeReservedInstancesOfferingsRequest::DescribeReservedInstancesOfferingsReq
     m_maxDuration(0),
     m_maxDurationHasBeenSet(false),
     m_maxInstanceCount(0),
-    m_maxInstanceCountHasBeenSet(false)
+    m_maxInstanceCountHasBeenSet(false),
+    m_offeringClass(OfferingClassType::NOT_SET),
+    m_offeringClassHasBeenSet(false)
 {
 }
 
@@ -128,7 +134,12 @@ Aws::String DescribeReservedInstancesOfferingsRequest::SerializePayload() const
     ss << "MaxInstanceCount=" << m_maxInstanceCount << "&";
   }
 
-  ss << "Version=2015-10-01";
+  if(m_offeringClassHasBeenSet)
+  {
+    ss << "OfferingClass=" << OfferingClassTypeMapper::GetNameForOfferingClassType(m_offeringClass) << "&";
+  }
+
+  ss << "Version=2016-11-15";
   return ss.str();
 }
 

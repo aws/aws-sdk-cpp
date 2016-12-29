@@ -28,7 +28,9 @@ namespace Model
    * <p>Represents a request to enable or disable Amazon SES Easy DKIM signing for an
    * identity. For more information about setting up Easy DKIM, see the <a
    * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Amazon
-   * SES Developer Guide</a>.</p>
+   * SES Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SetIdentityDkimEnabledRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_SES_API SetIdentityDkimEnabledRequest : public SESRequest
   {

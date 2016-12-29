@@ -16,6 +16,7 @@
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ssm/model/DocumentType.h>
 #include <aws/ssm/model/PlatformType.h>
 
 namespace Aws
@@ -33,7 +34,9 @@ namespace Model
 {
 
   /**
-   * <p>Describes the name of an SSM document.</p>
+   * <p>Describes the name of an SSM document.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DocumentIdentifier">AWS
+   * API Reference</a></p>
    */
   class AWS_SSM_API DocumentIdentifier
   {
@@ -148,6 +151,101 @@ namespace Model
      */
     inline DocumentIdentifier& AddPlatformTypes(PlatformType&& value) { m_platformTypesHasBeenSet = true; m_platformTypes.push_back(value); return *this; }
 
+    /**
+     * <p>The document version.</p>
+     */
+    inline const Aws::String& GetDocumentVersion() const{ return m_documentVersion; }
+
+    /**
+     * <p>The document version.</p>
+     */
+    inline void SetDocumentVersion(const Aws::String& value) { m_documentVersionHasBeenSet = true; m_documentVersion = value; }
+
+    /**
+     * <p>The document version.</p>
+     */
+    inline void SetDocumentVersion(Aws::String&& value) { m_documentVersionHasBeenSet = true; m_documentVersion = value; }
+
+    /**
+     * <p>The document version.</p>
+     */
+    inline void SetDocumentVersion(const char* value) { m_documentVersionHasBeenSet = true; m_documentVersion.assign(value); }
+
+    /**
+     * <p>The document version.</p>
+     */
+    inline DocumentIdentifier& WithDocumentVersion(const Aws::String& value) { SetDocumentVersion(value); return *this;}
+
+    /**
+     * <p>The document version.</p>
+     */
+    inline DocumentIdentifier& WithDocumentVersion(Aws::String&& value) { SetDocumentVersion(value); return *this;}
+
+    /**
+     * <p>The document version.</p>
+     */
+    inline DocumentIdentifier& WithDocumentVersion(const char* value) { SetDocumentVersion(value); return *this;}
+
+    /**
+     * <p>The document type.</p>
+     */
+    inline const DocumentType& GetDocumentType() const{ return m_documentType; }
+
+    /**
+     * <p>The document type.</p>
+     */
+    inline void SetDocumentType(const DocumentType& value) { m_documentTypeHasBeenSet = true; m_documentType = value; }
+
+    /**
+     * <p>The document type.</p>
+     */
+    inline void SetDocumentType(DocumentType&& value) { m_documentTypeHasBeenSet = true; m_documentType = value; }
+
+    /**
+     * <p>The document type.</p>
+     */
+    inline DocumentIdentifier& WithDocumentType(const DocumentType& value) { SetDocumentType(value); return *this;}
+
+    /**
+     * <p>The document type.</p>
+     */
+    inline DocumentIdentifier& WithDocumentType(DocumentType&& value) { SetDocumentType(value); return *this;}
+
+    /**
+     * <p>The schema version.</p>
+     */
+    inline const Aws::String& GetSchemaVersion() const{ return m_schemaVersion; }
+
+    /**
+     * <p>The schema version.</p>
+     */
+    inline void SetSchemaVersion(const Aws::String& value) { m_schemaVersionHasBeenSet = true; m_schemaVersion = value; }
+
+    /**
+     * <p>The schema version.</p>
+     */
+    inline void SetSchemaVersion(Aws::String&& value) { m_schemaVersionHasBeenSet = true; m_schemaVersion = value; }
+
+    /**
+     * <p>The schema version.</p>
+     */
+    inline void SetSchemaVersion(const char* value) { m_schemaVersionHasBeenSet = true; m_schemaVersion.assign(value); }
+
+    /**
+     * <p>The schema version.</p>
+     */
+    inline DocumentIdentifier& WithSchemaVersion(const Aws::String& value) { SetSchemaVersion(value); return *this;}
+
+    /**
+     * <p>The schema version.</p>
+     */
+    inline DocumentIdentifier& WithSchemaVersion(Aws::String&& value) { SetSchemaVersion(value); return *this;}
+
+    /**
+     * <p>The schema version.</p>
+     */
+    inline DocumentIdentifier& WithSchemaVersion(const char* value) { SetSchemaVersion(value); return *this;}
+
   private:
     Aws::String m_name;
     bool m_nameHasBeenSet;
@@ -155,6 +253,12 @@ namespace Model
     bool m_ownerHasBeenSet;
     Aws::Vector<PlatformType> m_platformTypes;
     bool m_platformTypesHasBeenSet;
+    Aws::String m_documentVersion;
+    bool m_documentVersionHasBeenSet;
+    DocumentType m_documentType;
+    bool m_documentTypeHasBeenSet;
+    Aws::String m_schemaVersion;
+    bool m_schemaVersionHasBeenSet;
   };
 
 } // namespace Model

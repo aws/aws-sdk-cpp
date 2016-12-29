@@ -33,7 +33,9 @@ namespace CognitoIdentityProvider
 namespace Model
 {
   /**
-   * <p>Gets the device response, as an administrator.</p>
+   * <p>Gets the device response, as an administrator.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminGetDeviceResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_COGNITOIDENTITYPROVIDER_API AdminGetDeviceResult
   {

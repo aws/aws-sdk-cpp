@@ -35,7 +35,9 @@ namespace Model
 {
   /**
    * <p>A complex type that contains the response information for the
-   * <code>CreateTrafficPolicyVersion</code> request.</p>
+   * <code>CreateTrafficPolicyVersion</code> request.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateTrafficPolicyVersionResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_ROUTE53_API CreateTrafficPolicyVersionResult
   {

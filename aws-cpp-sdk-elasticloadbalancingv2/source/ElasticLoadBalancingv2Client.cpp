@@ -121,6 +121,16 @@ void ElasticLoadBalancingv2Client::init(const ClientConfiguration& config)
   m_uri = ss.str();
 }
 
+Aws::String ElasticLoadBalancingv2Client::ConvertRequestToPresignedUrl(const AmazonSerializableWebServiceRequest& requestToConvert, const char* region) const
+{
+  Aws::StringStream ss;
+  ss << "https://" << ElasticLoadBalancingv2Endpoint::ForRegion(region);
+  ss << "?" << requestToConvert.SerializePayload();
+
+  URI uri(ss.str());
+  return GeneratePresignedUrl(uri, HttpMethod::HTTP_GET, region, 3600);
+}
+
 AddTagsOutcome ElasticLoadBalancingv2Client::AddTags(const AddTagsRequest& request) const
 {
   Aws::StringStream ss;
@@ -1077,4 +1087,6 @@ void ElasticLoadBalancingv2Client::SetSubnetsAsyncHelper(const SetSubnetsRequest
 {
   handler(this, request, SetSubnets(request), context);
 }
+
+
 

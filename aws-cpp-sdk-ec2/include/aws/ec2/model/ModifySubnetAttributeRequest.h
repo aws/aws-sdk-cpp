@@ -26,7 +26,10 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for ModifySubnetAttribute.</p>
+   * <p>Contains the parameters for ModifySubnetAttribute.</p><p><h3>See Also:</h3>  
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifySubnetAttributeRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API ModifySubnetAttributeRequest : public EC2Request
   {
@@ -70,40 +73,92 @@ namespace Model
     inline ModifySubnetAttributeRequest& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
 
     /**
-     * <p>Specify <code>true</code> to indicate that instances launched into the
-     * specified subnet should be assigned public IP address.</p>
+     * <p>Specify <code>true</code> to indicate that network interfaces created in the
+     * specified subnet should be assigned a public IPv4 address. This includes a
+     * network interface that's created when launching an instance into the subnet (the
+     * instance therefore receives a public IPv4 address).</p>
      */
     inline const AttributeBooleanValue& GetMapPublicIpOnLaunch() const{ return m_mapPublicIpOnLaunch; }
 
     /**
-     * <p>Specify <code>true</code> to indicate that instances launched into the
-     * specified subnet should be assigned public IP address.</p>
+     * <p>Specify <code>true</code> to indicate that network interfaces created in the
+     * specified subnet should be assigned a public IPv4 address. This includes a
+     * network interface that's created when launching an instance into the subnet (the
+     * instance therefore receives a public IPv4 address).</p>
      */
     inline void SetMapPublicIpOnLaunch(const AttributeBooleanValue& value) { m_mapPublicIpOnLaunchHasBeenSet = true; m_mapPublicIpOnLaunch = value; }
 
     /**
-     * <p>Specify <code>true</code> to indicate that instances launched into the
-     * specified subnet should be assigned public IP address.</p>
+     * <p>Specify <code>true</code> to indicate that network interfaces created in the
+     * specified subnet should be assigned a public IPv4 address. This includes a
+     * network interface that's created when launching an instance into the subnet (the
+     * instance therefore receives a public IPv4 address).</p>
      */
     inline void SetMapPublicIpOnLaunch(AttributeBooleanValue&& value) { m_mapPublicIpOnLaunchHasBeenSet = true; m_mapPublicIpOnLaunch = value; }
 
     /**
-     * <p>Specify <code>true</code> to indicate that instances launched into the
-     * specified subnet should be assigned public IP address.</p>
+     * <p>Specify <code>true</code> to indicate that network interfaces created in the
+     * specified subnet should be assigned a public IPv4 address. This includes a
+     * network interface that's created when launching an instance into the subnet (the
+     * instance therefore receives a public IPv4 address).</p>
      */
     inline ModifySubnetAttributeRequest& WithMapPublicIpOnLaunch(const AttributeBooleanValue& value) { SetMapPublicIpOnLaunch(value); return *this;}
 
     /**
-     * <p>Specify <code>true</code> to indicate that instances launched into the
-     * specified subnet should be assigned public IP address.</p>
+     * <p>Specify <code>true</code> to indicate that network interfaces created in the
+     * specified subnet should be assigned a public IPv4 address. This includes a
+     * network interface that's created when launching an instance into the subnet (the
+     * instance therefore receives a public IPv4 address).</p>
      */
     inline ModifySubnetAttributeRequest& WithMapPublicIpOnLaunch(AttributeBooleanValue&& value) { SetMapPublicIpOnLaunch(value); return *this;}
+
+    /**
+     * <p>Specify <code>true</code> to indicate that network interfaces created in the
+     * specified subnet should be assigned an IPv6 address. This includes a network
+     * interface that's created when launching an instance into the subnet (the
+     * instance therefore receives an IPv6 address).</p>
+     */
+    inline const AttributeBooleanValue& GetAssignIpv6AddressOnCreation() const{ return m_assignIpv6AddressOnCreation; }
+
+    /**
+     * <p>Specify <code>true</code> to indicate that network interfaces created in the
+     * specified subnet should be assigned an IPv6 address. This includes a network
+     * interface that's created when launching an instance into the subnet (the
+     * instance therefore receives an IPv6 address).</p>
+     */
+    inline void SetAssignIpv6AddressOnCreation(const AttributeBooleanValue& value) { m_assignIpv6AddressOnCreationHasBeenSet = true; m_assignIpv6AddressOnCreation = value; }
+
+    /**
+     * <p>Specify <code>true</code> to indicate that network interfaces created in the
+     * specified subnet should be assigned an IPv6 address. This includes a network
+     * interface that's created when launching an instance into the subnet (the
+     * instance therefore receives an IPv6 address).</p>
+     */
+    inline void SetAssignIpv6AddressOnCreation(AttributeBooleanValue&& value) { m_assignIpv6AddressOnCreationHasBeenSet = true; m_assignIpv6AddressOnCreation = value; }
+
+    /**
+     * <p>Specify <code>true</code> to indicate that network interfaces created in the
+     * specified subnet should be assigned an IPv6 address. This includes a network
+     * interface that's created when launching an instance into the subnet (the
+     * instance therefore receives an IPv6 address).</p>
+     */
+    inline ModifySubnetAttributeRequest& WithAssignIpv6AddressOnCreation(const AttributeBooleanValue& value) { SetAssignIpv6AddressOnCreation(value); return *this;}
+
+    /**
+     * <p>Specify <code>true</code> to indicate that network interfaces created in the
+     * specified subnet should be assigned an IPv6 address. This includes a network
+     * interface that's created when launching an instance into the subnet (the
+     * instance therefore receives an IPv6 address).</p>
+     */
+    inline ModifySubnetAttributeRequest& WithAssignIpv6AddressOnCreation(AttributeBooleanValue&& value) { SetAssignIpv6AddressOnCreation(value); return *this;}
 
   private:
     Aws::String m_subnetId;
     bool m_subnetIdHasBeenSet;
     AttributeBooleanValue m_mapPublicIpOnLaunch;
     bool m_mapPublicIpOnLaunchHasBeenSet;
+    AttributeBooleanValue m_assignIpv6AddressOnCreation;
+    bool m_assignIpv6AddressOnCreationHasBeenSet;
   };
 
 } // namespace Model

@@ -7,7 +7,8 @@
     "protocol":"json",
     "serviceFullName":"AWS Direct Connect",
     "signatureVersion":"v4",
-    "targetPrefix":"OvertureService"
+    "targetPrefix":"OvertureService",
+    "uid":"directconnect-2012-10-25"
   },
   "operations":{
     "AllocateConnectionOnInterconnect":{
@@ -50,7 +51,7 @@
         {"shape":"DirectConnectServerException"},
         {"shape":"DirectConnectClientException"}
       ],
-      "documentation":"<p>Provisions a public virtual interface to be owned by a different customer.</p> <p>The owner of a connection calls this function to provision a public virtual interface which will be owned by another AWS customer.</p> <p>Virtual interfaces created using this function must be confirmed by the virtual interface owner by calling ConfirmPublicVirtualInterface. Until this step has been completed, the virtual interface will be in 'Confirming' state, and will not be available for handling traffic.</p>"
+      "documentation":"<p>Provisions a public virtual interface to be owned by a different customer.</p> <p>The owner of a connection calls this function to provision a public virtual interface which will be owned by another AWS customer.</p> <p>Virtual interfaces created using this function must be confirmed by the virtual interface owner by calling ConfirmPublicVirtualInterface. Until this step has been completed, the virtual interface will be in 'Confirming' state, and will not be available for handling traffic.</p> <p>When creating an IPv6 public virtual interface (addressFamily is 'ipv6'), the customer and amazon address fields should be left blank to use auto-assigned IPv6 space. Custom IPv6 Addresses are currently not supported.</p>"
     },
     "ConfirmConnection":{
       "name":"ConfirmConnection",
@@ -93,6 +94,20 @@
         {"shape":"DirectConnectClientException"}
       ],
       "documentation":"<p>Accept ownership of a public virtual interface created by another customer.</p> <p>After the virtual interface owner calls this function, the specified virtual interface will be created and made available for handling traffic.</p>"
+    },
+    "CreateBGPPeer":{
+      "name":"CreateBGPPeer",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"CreateBGPPeerRequest"},
+      "output":{"shape":"CreateBGPPeerResponse"},
+      "errors":[
+        {"shape":"DirectConnectServerException"},
+        {"shape":"DirectConnectClientException"}
+      ],
+      "documentation":"<p>Creates a new BGP peer on a specified virtual interface. The BGP peer cannot be in the same address family (IPv4/IPv6) of an existing BGP peer on the virtual interface.</p> <p>You must create a BGP peer for the corresponding address family in order to access AWS resources that also use that address family.</p> <p>When creating a IPv6 BGP peer, the Amazon address and customer address fields must be left blank. IPv6 addresses are automatically assigned from Amazon's pool of IPv6 addresses; you cannot specify custom IPv6 addresses.</p> <p>For a public virtual interface, the Autonomous System Number (ASN) must be private or already whitelisted for the virtual interface.</p>"
     },
     "CreateConnection":{
       "name":"CreateConnection",
@@ -148,7 +163,21 @@
         {"shape":"DirectConnectServerException"},
         {"shape":"DirectConnectClientException"}
       ],
-      "documentation":"<p>Creates a new public virtual interface. A virtual interface is the VLAN that transports AWS Direct Connect traffic. A public virtual interface supports sending traffic to public services of AWS such as Amazon Simple Storage Service (Amazon S3).</p>"
+      "documentation":"<p>Creates a new public virtual interface. A virtual interface is the VLAN that transports AWS Direct Connect traffic. A public virtual interface supports sending traffic to public services of AWS such as Amazon Simple Storage Service (Amazon S3).</p> <p>When creating an IPv6 public virtual interface (addressFamily is 'ipv6'), the customer and amazon address fields should be left blank to use auto-assigned IPv6 space. Custom IPv6 Addresses are currently not supported.</p>"
+    },
+    "DeleteBGPPeer":{
+      "name":"DeleteBGPPeer",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DeleteBGPPeerRequest"},
+      "output":{"shape":"DeleteBGPPeerResponse"},
+      "errors":[
+        {"shape":"DirectConnectServerException"},
+        {"shape":"DirectConnectClientException"}
+      ],
+      "documentation":"<p>Deletes a BGP peer on the specified virtual interface that matches the specified customer address and ASN. You cannot delete the last BGP peer from a virtual interface.</p>"
     },
     "DeleteConnection":{
       "name":"DeleteConnection",
@@ -275,6 +304,20 @@
       ],
       "documentation":"<p>Returns the list of AWS Direct Connect locations in the current AWS region. These are the locations that may be selected when calling CreateConnection or CreateInterconnect.</p>"
     },
+    "DescribeTags":{
+      "name":"DescribeTags",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DescribeTagsRequest"},
+      "output":{"shape":"DescribeTagsResponse"},
+      "errors":[
+        {"shape":"DirectConnectServerException"},
+        {"shape":"DirectConnectClientException"}
+      ],
+      "documentation":"<p>Describes the tags associated with the specified Direct Connect resources.</p>"
+    },
     "DescribeVirtualGateways":{
       "name":"DescribeVirtualGateways",
       "http":{
@@ -301,12 +344,50 @@
         {"shape":"DirectConnectClientException"}
       ],
       "documentation":"<p>Displays all virtual interfaces for an AWS account. Virtual interfaces deleted fewer than 15 minutes before DescribeVirtualInterfaces is called are also returned. If a connection ID is included then only virtual interfaces associated with this connection will be returned. If a virtual interface ID is included then only a single virtual interface will be returned.</p> <p>A virtual interface (VLAN) transmits the traffic between the AWS Direct Connect location and the customer.</p> <p>If a connection ID is provided, only virtual interfaces provisioned on the specified connection will be returned. If a virtual interface ID is provided, only this particular virtual interface will be returned.</p>"
+    },
+    "TagResource":{
+      "name":"TagResource",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"TagResourceRequest"},
+      "output":{"shape":"TagResourceResponse"},
+      "errors":[
+        {"shape":"DuplicateTagKeysException"},
+        {"shape":"TooManyTagsException"},
+        {"shape":"DirectConnectServerException"},
+        {"shape":"DirectConnectClientException"}
+      ],
+      "documentation":"<p>Adds the specified tags to the specified Direct Connect resource. Each Direct Connect resource can have a maximum of 50 tags.</p> <p>Each tag consists of a key and an optional value. If a tag with the same key is already associated with the Direct Connect resource, this action updates its value.</p>"
+    },
+    "UntagResource":{
+      "name":"UntagResource",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"UntagResourceRequest"},
+      "output":{"shape":"UntagResourceResponse"},
+      "errors":[
+        {"shape":"DirectConnectServerException"},
+        {"shape":"DirectConnectClientException"}
+      ],
+      "documentation":"<p>Removes one or more tags from the specified Direct Connect resource.</p>"
     }
   },
   "shapes":{
     "ASN":{
       "type":"integer",
       "documentation":"<p>Autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p> <p>Example: 65000</p>"
+    },
+    "AddressFamily":{
+      "type":"string",
+      "documentation":"<p>Indicates the address family for the BGP peer.</p> <ul> <li> <p> <b>ipv4</b>: IPv4 address family</p> </li> <li> <p> <b>ipv6</b>: IPv6 address family</p> </li> </ul>",
+      "enum":[
+        "ipv4",
+        "ipv6"
+      ]
     },
     "AllocateConnectionOnInterconnectRequest":{
       "type":"structure",
@@ -389,11 +470,48 @@
     },
     "AmazonAddress":{
       "type":"string",
-      "documentation":"<p>IP address assigned to the Amazon interface.</p> <p>Example: 192.168.1.1/30</p>"
+      "documentation":"<p>IP address assigned to the Amazon interface.</p> <p>Example: 192.168.1.1/30 or 2001:db8::1/125</p>"
     },
     "BGPAuthKey":{
       "type":"string",
       "documentation":"<p>Authentication key for BGP configuration.</p> <p>Example: asdf34example</p>"
+    },
+    "BGPPeer":{
+      "type":"structure",
+      "members":{
+        "asn":{"shape":"ASN"},
+        "authKey":{"shape":"BGPAuthKey"},
+        "addressFamily":{"shape":"AddressFamily"},
+        "amazonAddress":{"shape":"AmazonAddress"},
+        "customerAddress":{"shape":"CustomerAddress"},
+        "bgpPeerState":{"shape":"BGPPeerState"},
+        "bgpStatus":{"shape":"BGPStatus"}
+      },
+      "documentation":"<p>A structure containing information about a BGP peer.</p>"
+    },
+    "BGPPeerList":{
+      "type":"list",
+      "member":{"shape":"BGPPeer"},
+      "documentation":"<p>A list of the BGP peers configured on this virtual interface.</p>"
+    },
+    "BGPPeerState":{
+      "type":"string",
+      "documentation":"<p>The state of the BGP peer.</p> <ul> <li> <p> <b>Verifying</b>: The BGP peering addresses or ASN require validation before the BGP peer can be created. This state only applies to BGP peers on a public virtual interface. </p> </li> <li> <p> <b>Pending</b>: The BGP peer has been created, and is in this state until it is ready to be established.</p> </li> <li> <p> <b>Available</b>: The BGP peer can be established.</p> </li> <li> <p> <b>Deleting</b>: The BGP peer is in the process of being deleted.</p> </li> <li> <p> <b>Deleted</b>: The BGP peer has been deleted and cannot be established.</p> </li> </ul>",
+      "enum":[
+        "verifying",
+        "pending",
+        "available",
+        "deleting",
+        "deleted"
+      ]
+    },
+    "BGPStatus":{
+      "type":"string",
+      "documentation":"<p>The Up/Down state of the BGP peer.</p> <ul> <li> <p> <b>Up</b>: The BGP peer is established.</p> </li> <li> <p> <b>Down</b>: The BGP peer is down.</p> </li> </ul>",
+      "enum":[
+        "up",
+        "down"
+      ]
     },
     "Bandwidth":{
       "type":"string",
@@ -517,6 +635,27 @@
       },
       "documentation":"<p>A structure containing a list of connections.</p>"
     },
+    "CreateBGPPeerRequest":{
+      "type":"structure",
+      "members":{
+        "virtualInterfaceId":{
+          "shape":"VirtualInterfaceId",
+          "documentation":"<p>The ID of the virtual interface on which the BGP peer will be provisioned.</p> <p>Example: dxvif-456abc78</p> <p>Default: None</p>"
+        },
+        "newBGPPeer":{
+          "shape":"NewBGPPeer",
+          "documentation":"<p>Detailed information for the BGP peer to be created.</p> <p>Default: None</p>"
+        }
+      },
+      "documentation":"<p>Container for the parameters to the CreateBGPPeer operation.</p>"
+    },
+    "CreateBGPPeerResponse":{
+      "type":"structure",
+      "members":{
+        "virtualInterface":{"shape":"VirtualInterface"}
+      },
+      "documentation":"<p>The response received when CreateBGPPeer is called.</p>"
+    },
     "CreateConnectionRequest":{
       "type":"structure",
       "required":[
@@ -586,7 +725,26 @@
     },
     "CustomerAddress":{
       "type":"string",
-      "documentation":"<p>IP address assigned to the customer interface.</p> <p>Example: 192.168.1.2/30</p>"
+      "documentation":"<p>IP address assigned to the customer interface.</p> <p>Example: 192.168.1.2/30 or 2001:db8::2/125</p>"
+    },
+    "DeleteBGPPeerRequest":{
+      "type":"structure",
+      "members":{
+        "virtualInterfaceId":{
+          "shape":"VirtualInterfaceId",
+          "documentation":"<p>The ID of the virtual interface from which the BGP peer will be deleted.</p> <p>Example: dxvif-456abc78</p> <p>Default: None</p>"
+        },
+        "asn":{"shape":"ASN"},
+        "customerAddress":{"shape":"CustomerAddress"}
+      },
+      "documentation":"<p>Container for the parameters to the DeleteBGPPeer operation.</p>"
+    },
+    "DeleteBGPPeerResponse":{
+      "type":"structure",
+      "members":{
+        "virtualInterface":{"shape":"VirtualInterface"}
+      },
+      "documentation":"<p>The response received when DeleteBGPPeer is called.</p>"
     },
     "DeleteConnectionRequest":{
       "type":"structure",
@@ -691,6 +849,27 @@
       },
       "documentation":"<p>Container for the parameters to the DescribeInterconnects operation.</p>"
     },
+    "DescribeTagsRequest":{
+      "type":"structure",
+      "required":["resourceArns"],
+      "members":{
+        "resourceArns":{
+          "shape":"ResourceArnList",
+          "documentation":"<p>The Amazon Resource Names (ARNs) of the Direct Connect resources.</p>"
+        }
+      },
+      "documentation":"<p>Container for the parameters to the DescribeTags operation.</p>"
+    },
+    "DescribeTagsResponse":{
+      "type":"structure",
+      "members":{
+        "resourceTags":{
+          "shape":"ResourceTagList",
+          "documentation":"<p>Information about the tags.</p>"
+        }
+      },
+      "documentation":"<p>The response received when DescribeTags is called.</p>"
+    },
     "DescribeVirtualInterfacesRequest":{
       "type":"structure",
       "members":{
@@ -719,6 +898,13 @@
         }
       },
       "documentation":"<p>A server-side error occurred during the API call. The error message will contain additional details about the cause.</p>",
+      "exception":true
+    },
+    "DuplicateTagKeysException":{
+      "type":"structure",
+      "members":{
+      },
+      "documentation":"<p>A tag key was specified more than once.</p>",
       "exception":true
     },
     "ErrorMessage":{"type":"string"},
@@ -824,6 +1010,17 @@
       },
       "documentation":"<p>A location is a network facility where AWS Direct Connect routers are available to be connected. Generally, these are colocation hubs where many network providers have equipment, and where cross connects can be delivered. Locations include a name and facility code, and must be provided when creating a connection.</p>"
     },
+    "NewBGPPeer":{
+      "type":"structure",
+      "members":{
+        "asn":{"shape":"ASN"},
+        "authKey":{"shape":"BGPAuthKey"},
+        "addressFamily":{"shape":"AddressFamily"},
+        "amazonAddress":{"shape":"AmazonAddress"},
+        "customerAddress":{"shape":"CustomerAddress"}
+      },
+      "documentation":"<p>A structure containing information about a new BGP peer.</p>"
+    },
     "NewPrivateVirtualInterface":{
       "type":"structure",
       "required":[
@@ -839,6 +1036,7 @@
         "authKey":{"shape":"BGPAuthKey"},
         "amazonAddress":{"shape":"AmazonAddress"},
         "customerAddress":{"shape":"CustomerAddress"},
+        "addressFamily":{"shape":"AddressFamily"},
         "virtualGatewayId":{"shape":"VirtualGatewayId"}
       },
       "documentation":"<p>A structure containing information about a new private virtual interface.</p>"
@@ -856,6 +1054,7 @@
         "asn":{"shape":"ASN"},
         "authKey":{"shape":"BGPAuthKey"},
         "amazonAddress":{"shape":"AmazonAddress"},
+        "addressFamily":{"shape":"AddressFamily"},
         "customerAddress":{"shape":"CustomerAddress"}
       },
       "documentation":"<p>A structure containing information about a private virtual interface that will be provisioned on a connection.</p>"
@@ -865,10 +1064,7 @@
       "required":[
         "virtualInterfaceName",
         "vlan",
-        "asn",
-        "amazonAddress",
-        "customerAddress",
-        "routeFilterPrefixes"
+        "asn"
       ],
       "members":{
         "virtualInterfaceName":{"shape":"VirtualInterfaceName"},
@@ -877,6 +1073,7 @@
         "authKey":{"shape":"BGPAuthKey"},
         "amazonAddress":{"shape":"AmazonAddress"},
         "customerAddress":{"shape":"CustomerAddress"},
+        "addressFamily":{"shape":"AddressFamily"},
         "routeFilterPrefixes":{"shape":"RouteFilterPrefixList"}
       },
       "documentation":"<p>A structure containing information about a new public virtual interface.</p>"
@@ -886,10 +1083,7 @@
       "required":[
         "virtualInterfaceName",
         "vlan",
-        "asn",
-        "amazonAddress",
-        "customerAddress",
-        "routeFilterPrefixes"
+        "asn"
       ],
       "members":{
         "virtualInterfaceName":{"shape":"VirtualInterfaceName"},
@@ -898,6 +1092,7 @@
         "authKey":{"shape":"BGPAuthKey"},
         "amazonAddress":{"shape":"AmazonAddress"},
         "customerAddress":{"shape":"CustomerAddress"},
+        "addressFamily":{"shape":"AddressFamily"},
         "routeFilterPrefixes":{"shape":"RouteFilterPrefixList"}
       },
       "documentation":"<p>A structure containing information about a public virtual interface that will be provisioned on a connection.</p>"
@@ -909,12 +1104,35 @@
       "type":"string",
       "documentation":"<p>The AWS region where the connection is located.</p> <p>Example: us-east-1</p> <p>Default: None</p>"
     },
+    "ResourceArn":{"type":"string"},
+    "ResourceArnList":{
+      "type":"list",
+      "member":{"shape":"ResourceArn"}
+    },
+    "ResourceTag":{
+      "type":"structure",
+      "members":{
+        "resourceArn":{
+          "shape":"ResourceArn",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the Direct Connect resource.</p>"
+        },
+        "tags":{
+          "shape":"TagList",
+          "documentation":"<p>The tags.</p>"
+        }
+      },
+      "documentation":"<p>The tags associated with a Direct Connect resource.</p>"
+    },
+    "ResourceTagList":{
+      "type":"list",
+      "member":{"shape":"ResourceTag"}
+    },
     "RouteFilterPrefix":{
       "type":"structure",
       "members":{
         "cidr":{
           "shape":"CIDR",
-          "documentation":"<p>CIDR notation for the advertised route. Multiple routes are separated by commas.</p> <p>Example: 10.10.10.0/24,10.10.11.0/24</p>"
+          "documentation":"<p>CIDR notation for the advertised route. Multiple routes are separated by commas.</p> <p>IPv6 CIDRs must be at least a /64 or shorter</p> <p>Example: 10.10.10.0/24,10.10.11.0/24,2001:db8::/64</p>"
         }
       },
       "documentation":"<p>A route filter prefix that the customer can advertise through Border Gateway Protocol (BGP) over a public virtual interface.</p>"
@@ -925,6 +1143,97 @@
       "documentation":"<p>A list of routes to be advertised to the AWS network in this region (public virtual interface).</p>"
     },
     "RouterConfig":{"type":"string"},
+    "Tag":{
+      "type":"structure",
+      "required":["key"],
+      "members":{
+        "key":{
+          "shape":"TagKey",
+          "documentation":"<p>The key of the tag.</p>"
+        },
+        "value":{
+          "shape":"TagValue",
+          "documentation":"<p>The value of the tag.</p>"
+        }
+      },
+      "documentation":"<p>Information about a tag.</p>"
+    },
+    "TagKey":{
+      "type":"string",
+      "max":128,
+      "min":1,
+      "pattern":"^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-@]*)$"
+    },
+    "TagKeyList":{
+      "type":"list",
+      "member":{"shape":"TagKey"}
+    },
+    "TagList":{
+      "type":"list",
+      "member":{"shape":"Tag"},
+      "min":1
+    },
+    "TagResourceRequest":{
+      "type":"structure",
+      "required":[
+        "resourceArn",
+        "tags"
+      ],
+      "members":{
+        "resourceArn":{
+          "shape":"ResourceArn",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the Direct Connect resource.</p> <p>Example: arn:aws:directconnect:us-east-1:123456789012:dxcon/dxcon-fg5678gh</p>"
+        },
+        "tags":{
+          "shape":"TagList",
+          "documentation":"<p>The list of tags to add.</p>"
+        }
+      },
+      "documentation":"<p>Container for the parameters to the TagResource operation.</p>"
+    },
+    "TagResourceResponse":{
+      "type":"structure",
+      "members":{
+      },
+      "documentation":"<p>The response received when TagResource is called.</p>"
+    },
+    "TagValue":{
+      "type":"string",
+      "max":256,
+      "min":0,
+      "pattern":"^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-@]*)$"
+    },
+    "TooManyTagsException":{
+      "type":"structure",
+      "members":{
+      },
+      "documentation":"<p>You have reached the limit on the number of tags that can be assigned to a Direct Connect resource.</p>",
+      "exception":true
+    },
+    "UntagResourceRequest":{
+      "type":"structure",
+      "required":[
+        "resourceArn",
+        "tagKeys"
+      ],
+      "members":{
+        "resourceArn":{
+          "shape":"ResourceArn",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the Direct Connect resource.</p>"
+        },
+        "tagKeys":{
+          "shape":"TagKeyList",
+          "documentation":"<p>The list of tag keys to remove.</p>"
+        }
+      },
+      "documentation":"<p>Container for the parameters to the UntagResource operation.</p>"
+    },
+    "UntagResourceResponse":{
+      "type":"structure",
+      "members":{
+      },
+      "documentation":"<p>The response received when UntagResource is called.</p>"
+    },
     "VLAN":{
       "type":"integer",
       "documentation":"<p>The VLAN ID.</p> <p>Example: 101</p>"
@@ -977,13 +1286,15 @@
         "authKey":{"shape":"BGPAuthKey"},
         "amazonAddress":{"shape":"AmazonAddress"},
         "customerAddress":{"shape":"CustomerAddress"},
+        "addressFamily":{"shape":"AddressFamily"},
         "virtualInterfaceState":{"shape":"VirtualInterfaceState"},
         "customerRouterConfig":{
           "shape":"RouterConfig",
           "documentation":"<p>Information for generating the customer router configuration.</p>"
         },
         "virtualGatewayId":{"shape":"VirtualGatewayId"},
-        "routeFilterPrefixes":{"shape":"RouteFilterPrefixList"}
+        "routeFilterPrefixes":{"shape":"RouteFilterPrefixList"},
+        "bgpPeers":{"shape":"BGPPeerList"}
       },
       "documentation":"<p>A virtual interface (VLAN) transmits the traffic between the AWS Direct Connect location and the customer.</p>"
     },

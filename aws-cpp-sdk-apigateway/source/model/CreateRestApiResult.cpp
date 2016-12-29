@@ -60,12 +60,27 @@ CreateRestApiResult& CreateRestApiResult::operator =(const AmazonWebServiceResul
 
   }
 
+  if(jsonValue.ValueExists("version"))
+  {
+    m_version = jsonValue.GetString("version");
+
+  }
+
   if(jsonValue.ValueExists("warnings"))
   {
     Array<JsonValue> warningsJsonList = jsonValue.GetArray("warnings");
     for(unsigned warningsIndex = 0; warningsIndex < warningsJsonList.GetLength(); ++warningsIndex)
     {
       m_warnings.push_back(warningsJsonList[warningsIndex].AsString());
+    }
+  }
+
+  if(jsonValue.ValueExists("binaryMediaTypes"))
+  {
+    Array<JsonValue> binaryMediaTypesJsonList = jsonValue.GetArray("binaryMediaTypes");
+    for(unsigned binaryMediaTypesIndex = 0; binaryMediaTypesIndex < binaryMediaTypesJsonList.GetLength(); ++binaryMediaTypesIndex)
+    {
+      m_binaryMediaTypes.push_back(binaryMediaTypesJsonList[binaryMediaTypesIndex].AsString());
     }
   }
 

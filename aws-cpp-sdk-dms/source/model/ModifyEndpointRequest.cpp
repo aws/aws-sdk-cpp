@@ -24,6 +24,7 @@ using namespace Aws::Utils;
 ModifyEndpointRequest::ModifyEndpointRequest() : 
     m_endpointArnHasBeenSet(false),
     m_endpointIdentifierHasBeenSet(false),
+    m_endpointType(ReplicationEndpointTypeValue::NOT_SET),
     m_endpointTypeHasBeenSet(false),
     m_engineNameHasBeenSet(false),
     m_usernameHasBeenSet(false),
@@ -34,6 +35,7 @@ ModifyEndpointRequest::ModifyEndpointRequest() :
     m_databaseNameHasBeenSet(false),
     m_extraConnectionAttributesHasBeenSet(false),
     m_certificateArnHasBeenSet(false),
+    m_sslMode(DmsSslModeValue::NOT_SET),
     m_sslModeHasBeenSet(false)
 {
 }

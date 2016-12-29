@@ -31,12 +31,14 @@ namespace Model
 
 VpcAttachment::VpcAttachment() : 
     m_vpcIdHasBeenSet(false),
+    m_state(AttachmentStatus::NOT_SET),
     m_stateHasBeenSet(false)
 {
 }
 
 VpcAttachment::VpcAttachment(const XmlNode& xmlNode) : 
     m_vpcIdHasBeenSet(false),
+    m_state(AttachmentStatus::NOT_SET),
     m_stateHasBeenSet(false)
 {
   *this = xmlNode;

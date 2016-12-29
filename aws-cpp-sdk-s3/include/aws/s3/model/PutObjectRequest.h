@@ -895,6 +895,41 @@ namespace Model
     
     inline PutObjectRequest& WithRequestPayer(RequestPayer&& value) { SetRequestPayer(value); return *this;}
 
+    /**
+     * The tag-set for the object. The tag-set must be encoded as URL Query parameters
+     */
+    inline const Aws::String& GetTagging() const{ return m_tagging; }
+
+    /**
+     * The tag-set for the object. The tag-set must be encoded as URL Query parameters
+     */
+    inline void SetTagging(const Aws::String& value) { m_taggingHasBeenSet = true; m_tagging = value; }
+
+    /**
+     * The tag-set for the object. The tag-set must be encoded as URL Query parameters
+     */
+    inline void SetTagging(Aws::String&& value) { m_taggingHasBeenSet = true; m_tagging = value; }
+
+    /**
+     * The tag-set for the object. The tag-set must be encoded as URL Query parameters
+     */
+    inline void SetTagging(const char* value) { m_taggingHasBeenSet = true; m_tagging.assign(value); }
+
+    /**
+     * The tag-set for the object. The tag-set must be encoded as URL Query parameters
+     */
+    inline PutObjectRequest& WithTagging(const Aws::String& value) { SetTagging(value); return *this;}
+
+    /**
+     * The tag-set for the object. The tag-set must be encoded as URL Query parameters
+     */
+    inline PutObjectRequest& WithTagging(Aws::String&& value) { SetTagging(value); return *this;}
+
+    /**
+     * The tag-set for the object. The tag-set must be encoded as URL Query parameters
+     */
+    inline PutObjectRequest& WithTagging(const char* value) { SetTagging(value); return *this;}
+
   private:
     ObjectCannedACL m_aCL;
     bool m_aCLHasBeenSet;
@@ -942,6 +977,8 @@ namespace Model
     bool m_sSEKMSKeyIdHasBeenSet;
     RequestPayer m_requestPayer;
     bool m_requestPayerHasBeenSet;
+    Aws::String m_tagging;
+    bool m_taggingHasBeenSet;
   };
 
 } // namespace Model

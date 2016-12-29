@@ -34,7 +34,9 @@ namespace Model
   /**
    * <p>Option group option settings are used to display settings available for each
    * option with their default values and other information. These values are used
-   * with the DescribeOptionGroupOptions action.</p>
+   * with the DescribeOptionGroupOptions action.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/OptionGroupOptionSetting">AWS
+   * API Reference</a></p>
    */
   class AWS_RDS_API OptionGroupOptionSetting
   {

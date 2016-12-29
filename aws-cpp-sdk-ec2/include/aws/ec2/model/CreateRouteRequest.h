@@ -25,7 +25,9 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for CreateRoute.</p>
+   * <p>Contains the parameters for CreateRoute.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateRouteRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API CreateRouteRequest : public EC2Request
   {
@@ -93,44 +95,44 @@ namespace Model
     inline CreateRouteRequest& WithRouteTableId(const char* value) { SetRouteTableId(value); return *this;}
 
     /**
-     * <p>The CIDR address block used for the destination match. Routing decisions are
-     * based on the most specific match.</p>
+     * <p>The IPv4 CIDR address block used for the destination match. Routing decisions
+     * are based on the most specific match.</p>
      */
     inline const Aws::String& GetDestinationCidrBlock() const{ return m_destinationCidrBlock; }
 
     /**
-     * <p>The CIDR address block used for the destination match. Routing decisions are
-     * based on the most specific match.</p>
+     * <p>The IPv4 CIDR address block used for the destination match. Routing decisions
+     * are based on the most specific match.</p>
      */
     inline void SetDestinationCidrBlock(const Aws::String& value) { m_destinationCidrBlockHasBeenSet = true; m_destinationCidrBlock = value; }
 
     /**
-     * <p>The CIDR address block used for the destination match. Routing decisions are
-     * based on the most specific match.</p>
+     * <p>The IPv4 CIDR address block used for the destination match. Routing decisions
+     * are based on the most specific match.</p>
      */
     inline void SetDestinationCidrBlock(Aws::String&& value) { m_destinationCidrBlockHasBeenSet = true; m_destinationCidrBlock = value; }
 
     /**
-     * <p>The CIDR address block used for the destination match. Routing decisions are
-     * based on the most specific match.</p>
+     * <p>The IPv4 CIDR address block used for the destination match. Routing decisions
+     * are based on the most specific match.</p>
      */
     inline void SetDestinationCidrBlock(const char* value) { m_destinationCidrBlockHasBeenSet = true; m_destinationCidrBlock.assign(value); }
 
     /**
-     * <p>The CIDR address block used for the destination match. Routing decisions are
-     * based on the most specific match.</p>
+     * <p>The IPv4 CIDR address block used for the destination match. Routing decisions
+     * are based on the most specific match.</p>
      */
     inline CreateRouteRequest& WithDestinationCidrBlock(const Aws::String& value) { SetDestinationCidrBlock(value); return *this;}
 
     /**
-     * <p>The CIDR address block used for the destination match. Routing decisions are
-     * based on the most specific match.</p>
+     * <p>The IPv4 CIDR address block used for the destination match. Routing decisions
+     * are based on the most specific match.</p>
      */
     inline CreateRouteRequest& WithDestinationCidrBlock(Aws::String&& value) { SetDestinationCidrBlock(value); return *this;}
 
     /**
-     * <p>The CIDR address block used for the destination match. Routing decisions are
-     * based on the most specific match.</p>
+     * <p>The IPv4 CIDR address block used for the destination match. Routing decisions
+     * are based on the most specific match.</p>
      */
     inline CreateRouteRequest& WithDestinationCidrBlock(const char* value) { SetDestinationCidrBlock(value); return *this;}
 
@@ -175,6 +177,83 @@ namespace Model
      * VPC.</p>
      */
     inline CreateRouteRequest& WithGatewayId(const char* value) { SetGatewayId(value); return *this;}
+
+    /**
+     * <p>The IPv6 CIDR block used for the destination match. Routing decisions are
+     * based on the most specific match.</p>
+     */
+    inline const Aws::String& GetDestinationIpv6CidrBlock() const{ return m_destinationIpv6CidrBlock; }
+
+    /**
+     * <p>The IPv6 CIDR block used for the destination match. Routing decisions are
+     * based on the most specific match.</p>
+     */
+    inline void SetDestinationIpv6CidrBlock(const Aws::String& value) { m_destinationIpv6CidrBlockHasBeenSet = true; m_destinationIpv6CidrBlock = value; }
+
+    /**
+     * <p>The IPv6 CIDR block used for the destination match. Routing decisions are
+     * based on the most specific match.</p>
+     */
+    inline void SetDestinationIpv6CidrBlock(Aws::String&& value) { m_destinationIpv6CidrBlockHasBeenSet = true; m_destinationIpv6CidrBlock = value; }
+
+    /**
+     * <p>The IPv6 CIDR block used for the destination match. Routing decisions are
+     * based on the most specific match.</p>
+     */
+    inline void SetDestinationIpv6CidrBlock(const char* value) { m_destinationIpv6CidrBlockHasBeenSet = true; m_destinationIpv6CidrBlock.assign(value); }
+
+    /**
+     * <p>The IPv6 CIDR block used for the destination match. Routing decisions are
+     * based on the most specific match.</p>
+     */
+    inline CreateRouteRequest& WithDestinationIpv6CidrBlock(const Aws::String& value) { SetDestinationIpv6CidrBlock(value); return *this;}
+
+    /**
+     * <p>The IPv6 CIDR block used for the destination match. Routing decisions are
+     * based on the most specific match.</p>
+     */
+    inline CreateRouteRequest& WithDestinationIpv6CidrBlock(Aws::String&& value) { SetDestinationIpv6CidrBlock(value); return *this;}
+
+    /**
+     * <p>The IPv6 CIDR block used for the destination match. Routing decisions are
+     * based on the most specific match.</p>
+     */
+    inline CreateRouteRequest& WithDestinationIpv6CidrBlock(const char* value) { SetDestinationIpv6CidrBlock(value); return *this;}
+
+    /**
+     * <p>[IPv6 traffic only] The ID of an egress-only Internet gateway.</p>
+     */
+    inline const Aws::String& GetEgressOnlyInternetGatewayId() const{ return m_egressOnlyInternetGatewayId; }
+
+    /**
+     * <p>[IPv6 traffic only] The ID of an egress-only Internet gateway.</p>
+     */
+    inline void SetEgressOnlyInternetGatewayId(const Aws::String& value) { m_egressOnlyInternetGatewayIdHasBeenSet = true; m_egressOnlyInternetGatewayId = value; }
+
+    /**
+     * <p>[IPv6 traffic only] The ID of an egress-only Internet gateway.</p>
+     */
+    inline void SetEgressOnlyInternetGatewayId(Aws::String&& value) { m_egressOnlyInternetGatewayIdHasBeenSet = true; m_egressOnlyInternetGatewayId = value; }
+
+    /**
+     * <p>[IPv6 traffic only] The ID of an egress-only Internet gateway.</p>
+     */
+    inline void SetEgressOnlyInternetGatewayId(const char* value) { m_egressOnlyInternetGatewayIdHasBeenSet = true; m_egressOnlyInternetGatewayId.assign(value); }
+
+    /**
+     * <p>[IPv6 traffic only] The ID of an egress-only Internet gateway.</p>
+     */
+    inline CreateRouteRequest& WithEgressOnlyInternetGatewayId(const Aws::String& value) { SetEgressOnlyInternetGatewayId(value); return *this;}
+
+    /**
+     * <p>[IPv6 traffic only] The ID of an egress-only Internet gateway.</p>
+     */
+    inline CreateRouteRequest& WithEgressOnlyInternetGatewayId(Aws::String&& value) { SetEgressOnlyInternetGatewayId(value); return *this;}
+
+    /**
+     * <p>[IPv6 traffic only] The ID of an egress-only Internet gateway.</p>
+     */
+    inline CreateRouteRequest& WithEgressOnlyInternetGatewayId(const char* value) { SetEgressOnlyInternetGatewayId(value); return *this;}
 
     /**
      * <p>The ID of a NAT instance in your VPC. The operation fails if you specify an
@@ -289,37 +368,37 @@ namespace Model
     inline CreateRouteRequest& WithVpcPeeringConnectionId(const char* value) { SetVpcPeeringConnectionId(value); return *this;}
 
     /**
-     * <p>The ID of a NAT gateway.</p>
+     * <p>[IPv4 traffic only] The ID of a NAT gateway.</p>
      */
     inline const Aws::String& GetNatGatewayId() const{ return m_natGatewayId; }
 
     /**
-     * <p>The ID of a NAT gateway.</p>
+     * <p>[IPv4 traffic only] The ID of a NAT gateway.</p>
      */
     inline void SetNatGatewayId(const Aws::String& value) { m_natGatewayIdHasBeenSet = true; m_natGatewayId = value; }
 
     /**
-     * <p>The ID of a NAT gateway.</p>
+     * <p>[IPv4 traffic only] The ID of a NAT gateway.</p>
      */
     inline void SetNatGatewayId(Aws::String&& value) { m_natGatewayIdHasBeenSet = true; m_natGatewayId = value; }
 
     /**
-     * <p>The ID of a NAT gateway.</p>
+     * <p>[IPv4 traffic only] The ID of a NAT gateway.</p>
      */
     inline void SetNatGatewayId(const char* value) { m_natGatewayIdHasBeenSet = true; m_natGatewayId.assign(value); }
 
     /**
-     * <p>The ID of a NAT gateway.</p>
+     * <p>[IPv4 traffic only] The ID of a NAT gateway.</p>
      */
     inline CreateRouteRequest& WithNatGatewayId(const Aws::String& value) { SetNatGatewayId(value); return *this;}
 
     /**
-     * <p>The ID of a NAT gateway.</p>
+     * <p>[IPv4 traffic only] The ID of a NAT gateway.</p>
      */
     inline CreateRouteRequest& WithNatGatewayId(Aws::String&& value) { SetNatGatewayId(value); return *this;}
 
     /**
-     * <p>The ID of a NAT gateway.</p>
+     * <p>[IPv4 traffic only] The ID of a NAT gateway.</p>
      */
     inline CreateRouteRequest& WithNatGatewayId(const char* value) { SetNatGatewayId(value); return *this;}
 
@@ -332,6 +411,10 @@ namespace Model
     bool m_destinationCidrBlockHasBeenSet;
     Aws::String m_gatewayId;
     bool m_gatewayIdHasBeenSet;
+    Aws::String m_destinationIpv6CidrBlock;
+    bool m_destinationIpv6CidrBlockHasBeenSet;
+    Aws::String m_egressOnlyInternetGatewayId;
+    bool m_egressOnlyInternetGatewayIdHasBeenSet;
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;
     Aws::String m_networkInterfaceId;

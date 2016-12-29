@@ -40,6 +40,7 @@ Parameter::Parameter() :
     m_isModifiable(false),
     m_isModifiableHasBeenSet(false),
     m_minimumEngineVersionHasBeenSet(false),
+    m_applyMethod(ApplyMethod::NOT_SET),
     m_applyMethodHasBeenSet(false)
 {
 }
@@ -55,6 +56,7 @@ Parameter::Parameter(const XmlNode& xmlNode) :
     m_isModifiable(false),
     m_isModifiableHasBeenSet(false),
     m_minimumEngineVersionHasBeenSet(false),
+    m_applyMethod(ApplyMethod::NOT_SET),
     m_applyMethodHasBeenSet(false)
 {
   *this = xmlNode;

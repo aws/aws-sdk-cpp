@@ -34,6 +34,7 @@ UserType::UserType() :
     m_userLastModifiedDateHasBeenSet(false),
     m_enabled(false),
     m_enabledHasBeenSet(false),
+    m_userStatus(UserStatusType::NOT_SET),
     m_userStatusHasBeenSet(false),
     m_mFAOptionsHasBeenSet(false)
 {
@@ -46,6 +47,7 @@ UserType::UserType(const JsonValue& jsonValue) :
     m_userLastModifiedDateHasBeenSet(false),
     m_enabled(false),
     m_enabledHasBeenSet(false),
+    m_userStatus(UserStatusType::NOT_SET),
     m_userStatusHasBeenSet(false),
     m_mFAOptionsHasBeenSet(false)
 {

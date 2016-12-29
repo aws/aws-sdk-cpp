@@ -24,6 +24,7 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
 CreateBucketRequest::CreateBucketRequest() : 
+    m_aCL(BucketCannedACL::NOT_SET),
     m_aCLHasBeenSet(false),
     m_bucketHasBeenSet(false),
     m_createBucketConfigurationHasBeenSet(false),

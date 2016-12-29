@@ -46,7 +46,7 @@ Aws::String ResetNetworkInterfaceAttributeRequest::SerializePayload() const
     ss << "SourceDestCheck=" << StringUtils::URLEncode(m_sourceDestCheck.c_str()) << "&";
   }
 
-  ss << "Version=2015-10-01";
+  ss << "Version=2016-11-15";
   return ss.str();
 }
 

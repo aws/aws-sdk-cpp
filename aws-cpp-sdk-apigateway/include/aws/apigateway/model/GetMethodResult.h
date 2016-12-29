@@ -121,7 +121,9 @@ namespace Model
    * helper function.</p> </div> <div class="seeAlso"> <a>MethodResponse</a>,
    * <a>Integration</a>, <a>IntegrationResponse</a>, <a>Resource</a>, <a
    * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-method-settings.html">Set
-   * up an API's method</a> </div>
+   * up an API's method</a> </div><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/Method">AWS
+   * API Reference</a></p>
    */
   class AWS_APIGATEWAY_API GetMethodResult
   {
@@ -259,6 +261,69 @@ namespace Model
      * this method.</p>
      */
     inline GetMethodResult& WithApiKeyRequired(bool value) { SetApiKeyRequired(value); return *this;}
+
+    /**
+     * <p>A human-friendly operation identifier for the method. For example, you can
+     * assign the <code>operationName</code> of <code>ListPets</code> for the <code>GET
+     * /pets</code> method in <a
+     * href="http://petstore-demo-endpoint.execute-api.com/petstore/pets">PetStore</a>
+     * example.</p>
+     */
+    inline const Aws::String& GetOperationName() const{ return m_operationName; }
+
+    /**
+     * <p>A human-friendly operation identifier for the method. For example, you can
+     * assign the <code>operationName</code> of <code>ListPets</code> for the <code>GET
+     * /pets</code> method in <a
+     * href="http://petstore-demo-endpoint.execute-api.com/petstore/pets">PetStore</a>
+     * example.</p>
+     */
+    inline void SetOperationName(const Aws::String& value) { m_operationName = value; }
+
+    /**
+     * <p>A human-friendly operation identifier for the method. For example, you can
+     * assign the <code>operationName</code> of <code>ListPets</code> for the <code>GET
+     * /pets</code> method in <a
+     * href="http://petstore-demo-endpoint.execute-api.com/petstore/pets">PetStore</a>
+     * example.</p>
+     */
+    inline void SetOperationName(Aws::String&& value) { m_operationName = value; }
+
+    /**
+     * <p>A human-friendly operation identifier for the method. For example, you can
+     * assign the <code>operationName</code> of <code>ListPets</code> for the <code>GET
+     * /pets</code> method in <a
+     * href="http://petstore-demo-endpoint.execute-api.com/petstore/pets">PetStore</a>
+     * example.</p>
+     */
+    inline void SetOperationName(const char* value) { m_operationName.assign(value); }
+
+    /**
+     * <p>A human-friendly operation identifier for the method. For example, you can
+     * assign the <code>operationName</code> of <code>ListPets</code> for the <code>GET
+     * /pets</code> method in <a
+     * href="http://petstore-demo-endpoint.execute-api.com/petstore/pets">PetStore</a>
+     * example.</p>
+     */
+    inline GetMethodResult& WithOperationName(const Aws::String& value) { SetOperationName(value); return *this;}
+
+    /**
+     * <p>A human-friendly operation identifier for the method. For example, you can
+     * assign the <code>operationName</code> of <code>ListPets</code> for the <code>GET
+     * /pets</code> method in <a
+     * href="http://petstore-demo-endpoint.execute-api.com/petstore/pets">PetStore</a>
+     * example.</p>
+     */
+    inline GetMethodResult& WithOperationName(Aws::String&& value) { SetOperationName(value); return *this;}
+
+    /**
+     * <p>A human-friendly operation identifier for the method. For example, you can
+     * assign the <code>operationName</code> of <code>ListPets</code> for the <code>GET
+     * /pets</code> method in <a
+     * href="http://petstore-demo-endpoint.execute-api.com/petstore/pets">PetStore</a>
+     * example.</p>
+     */
+    inline GetMethodResult& WithOperationName(const char* value) { SetOperationName(value); return *this;}
 
     /**
      * <p>A key-value map defining required or optional method request parameters that
@@ -1054,6 +1119,7 @@ namespace Model
     Aws::String m_authorizationType;
     Aws::String m_authorizerId;
     bool m_apiKeyRequired;
+    Aws::String m_operationName;
     Aws::Map<Aws::String, bool> m_requestParameters;
     Aws::Map<Aws::String, Aws::String> m_requestModels;
     Aws::Map<Aws::String, MethodResponse> m_methodResponses;

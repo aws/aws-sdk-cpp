@@ -32,11 +32,14 @@ ElasticsearchDestinationDescription::ElasticsearchDestinationDescription() :
     m_domainARNHasBeenSet(false),
     m_indexNameHasBeenSet(false),
     m_typeNameHasBeenSet(false),
+    m_indexRotationPeriod(ElasticsearchIndexRotationPeriod::NOT_SET),
     m_indexRotationPeriodHasBeenSet(false),
     m_bufferingHintsHasBeenSet(false),
     m_retryOptionsHasBeenSet(false),
+    m_s3BackupMode(ElasticsearchS3BackupMode::NOT_SET),
     m_s3BackupModeHasBeenSet(false),
     m_s3DestinationDescriptionHasBeenSet(false),
+    m_processingConfigurationHasBeenSet(false),
     m_cloudWatchLoggingOptionsHasBeenSet(false)
 {
 }
@@ -46,11 +49,14 @@ ElasticsearchDestinationDescription::ElasticsearchDestinationDescription(const J
     m_domainARNHasBeenSet(false),
     m_indexNameHasBeenSet(false),
     m_typeNameHasBeenSet(false),
+    m_indexRotationPeriod(ElasticsearchIndexRotationPeriod::NOT_SET),
     m_indexRotationPeriodHasBeenSet(false),
     m_bufferingHintsHasBeenSet(false),
     m_retryOptionsHasBeenSet(false),
+    m_s3BackupMode(ElasticsearchS3BackupMode::NOT_SET),
     m_s3BackupModeHasBeenSet(false),
     m_s3DestinationDescriptionHasBeenSet(false),
+    m_processingConfigurationHasBeenSet(false),
     m_cloudWatchLoggingOptionsHasBeenSet(false)
 {
   *this = jsonValue;
@@ -121,6 +127,13 @@ ElasticsearchDestinationDescription& ElasticsearchDestinationDescription::operat
     m_s3DestinationDescriptionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ProcessingConfiguration"))
+  {
+    m_processingConfiguration = jsonValue.GetObject("ProcessingConfiguration");
+
+    m_processingConfigurationHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("CloudWatchLoggingOptions"))
   {
     m_cloudWatchLoggingOptions = jsonValue.GetObject("CloudWatchLoggingOptions");
@@ -184,6 +197,12 @@ JsonValue ElasticsearchDestinationDescription::Jsonize() const
   if(m_s3DestinationDescriptionHasBeenSet)
   {
    payload.WithObject("S3DestinationDescription", m_s3DestinationDescription.Jsonize());
+
+  }
+
+  if(m_processingConfigurationHasBeenSet)
+  {
+   payload.WithObject("ProcessingConfiguration", m_processingConfiguration.Jsonize());
 
   }
 

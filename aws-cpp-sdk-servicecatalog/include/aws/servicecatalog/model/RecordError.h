@@ -31,7 +31,10 @@ namespace Model
 {
 
   /**
-   * <p>The error code and description resulting from an operation.</p>
+   * <p>The error code and description resulting from an operation.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/RecordError">AWS
+   * API Reference</a></p>
    */
   class AWS_SERVICECATALOG_API RecordError
   {

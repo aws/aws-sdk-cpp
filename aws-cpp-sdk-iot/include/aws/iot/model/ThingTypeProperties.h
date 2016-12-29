@@ -33,7 +33,10 @@ namespace Model
 
   /**
    * <p>The ThingTypeProperties contains information about the thing type including:
-   * a thing type description, and a list of searchable thing attribute names.</p>
+   * a thing type description, and a list of searchable thing attribute
+   * names.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ThingTypeProperties">AWS
+   * API Reference</a></p>
    */
   class AWS_IOT_API ThingTypeProperties
   {

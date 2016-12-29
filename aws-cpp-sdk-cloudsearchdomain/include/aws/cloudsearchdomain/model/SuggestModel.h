@@ -34,7 +34,9 @@ namespace Model
 
   /**
    * <p>Container for the suggestion information returned in a
-   * <code>SuggestResponse</code>.</p>
+   * <code>SuggestResponse</code>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearchdomain-2013-01-01/SuggestModel">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDSEARCHDOMAIN_API SuggestModel
   {

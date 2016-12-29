@@ -24,11 +24,15 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetOperationDetailResult::GetOperationDetailResult()
+GetOperationDetailResult::GetOperationDetailResult() : 
+    m_status(OperationStatus::NOT_SET),
+    m_type(OperationType::NOT_SET)
 {
 }
 
-GetOperationDetailResult::GetOperationDetailResult(const AmazonWebServiceResult<JsonValue>& result)
+GetOperationDetailResult::GetOperationDetailResult(const AmazonWebServiceResult<JsonValue>& result) : 
+    m_status(OperationStatus::NOT_SET),
+    m_type(OperationType::NOT_SET)
 {
   *this = result;
 }

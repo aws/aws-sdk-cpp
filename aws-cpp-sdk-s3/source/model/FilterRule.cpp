@@ -30,12 +30,14 @@ namespace Model
 {
 
 FilterRule::FilterRule() : 
+    m_name(FilterRuleName::NOT_SET),
     m_nameHasBeenSet(false),
     m_valueHasBeenSet(false)
 {
 }
 
 FilterRule::FilterRule(const XmlNode& xmlNode) : 
+    m_name(FilterRuleName::NOT_SET),
     m_nameHasBeenSet(false),
     m_valueHasBeenSet(false)
 {

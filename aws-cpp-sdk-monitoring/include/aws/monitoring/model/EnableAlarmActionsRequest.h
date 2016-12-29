@@ -26,7 +26,6 @@ namespace Model
 {
 
   /**
-   * <p>Describes the inputs for EnableAlarmActions.</p>
    */
   class AWS_CLOUDWATCH_API EnableAlarmActionsRequest : public CloudWatchRequest
   {
@@ -35,42 +34,42 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     /**
-     * <p>The names of the alarms to enable actions for.</p>
+     * <p>The names of the alarms.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAlarmNames() const{ return m_alarmNames; }
 
     /**
-     * <p>The names of the alarms to enable actions for.</p>
+     * <p>The names of the alarms.</p>
      */
     inline void SetAlarmNames(const Aws::Vector<Aws::String>& value) { m_alarmNamesHasBeenSet = true; m_alarmNames = value; }
 
     /**
-     * <p>The names of the alarms to enable actions for.</p>
+     * <p>The names of the alarms.</p>
      */
     inline void SetAlarmNames(Aws::Vector<Aws::String>&& value) { m_alarmNamesHasBeenSet = true; m_alarmNames = value; }
 
     /**
-     * <p>The names of the alarms to enable actions for.</p>
+     * <p>The names of the alarms.</p>
      */
     inline EnableAlarmActionsRequest& WithAlarmNames(const Aws::Vector<Aws::String>& value) { SetAlarmNames(value); return *this;}
 
     /**
-     * <p>The names of the alarms to enable actions for.</p>
+     * <p>The names of the alarms.</p>
      */
     inline EnableAlarmActionsRequest& WithAlarmNames(Aws::Vector<Aws::String>&& value) { SetAlarmNames(value); return *this;}
 
     /**
-     * <p>The names of the alarms to enable actions for.</p>
+     * <p>The names of the alarms.</p>
      */
     inline EnableAlarmActionsRequest& AddAlarmNames(const Aws::String& value) { m_alarmNamesHasBeenSet = true; m_alarmNames.push_back(value); return *this; }
 
     /**
-     * <p>The names of the alarms to enable actions for.</p>
+     * <p>The names of the alarms.</p>
      */
     inline EnableAlarmActionsRequest& AddAlarmNames(Aws::String&& value) { m_alarmNamesHasBeenSet = true; m_alarmNames.push_back(value); return *this; }
 
     /**
-     * <p>The names of the alarms to enable actions for.</p>
+     * <p>The names of the alarms.</p>
      */
     inline EnableAlarmActionsRequest& AddAlarmNames(const char* value) { m_alarmNamesHasBeenSet = true; m_alarmNames.push_back(value); return *this; }
 

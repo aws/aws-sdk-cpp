@@ -41,7 +41,10 @@ namespace Model
    * that you want AWS WAF to inspect and the values that you want AWS WAF to search
    * for. If a <code>ByteMatchSet</code> contains more than one
    * <code>ByteMatchTuple</code> object, a request needs to match the settings in
-   * only one <code>ByteMatchTuple</code> to be considered a match.</p>
+   * only one <code>ByteMatchTuple</code> to be considered a match.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ByteMatchSet">AWS
+   * API Reference</a></p>
    */
   class AWS_WAF_API ByteMatchSet
   {

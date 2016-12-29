@@ -24,6 +24,7 @@
 #include <aws/cognito-idp/model/DeviceConfigurationType.h>
 #include <aws/cognito-idp/model/EmailConfigurationType.h>
 #include <aws/cognito-idp/model/SmsConfigurationType.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/cognito-idp/model/AdminCreateUserConfigType.h>
 #include <aws/cognito-idp/model/SchemaAttributeType.h>
 #include <aws/cognito-idp/model/VerifiedAttributeType.h>
@@ -44,7 +45,10 @@ namespace Model
 {
 
   /**
-   * <p>A container with information about the user pool type.</p>
+   * <p>A container with information about the user pool type.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UserPoolType">AWS
+   * API Reference</a></p>
    */
   class AWS_COGNITOIDENTITYPROVIDER_API UserPoolType
   {
@@ -640,6 +644,90 @@ namespace Model
     inline UserPoolType& WithSmsConfiguration(SmsConfigurationType&& value) { SetSmsConfiguration(value); return *this;}
 
     /**
+     * <p>The cost allocation tags for the user pool. For more information, see <a
+     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-cost-allocation-tagging.html">Adding
+     * Cost Allocation Tags to Your User Pool</a> </p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetUserPoolTags() const{ return m_userPoolTags; }
+
+    /**
+     * <p>The cost allocation tags for the user pool. For more information, see <a
+     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-cost-allocation-tagging.html">Adding
+     * Cost Allocation Tags to Your User Pool</a> </p>
+     */
+    inline void SetUserPoolTags(const Aws::Map<Aws::String, Aws::String>& value) { m_userPoolTagsHasBeenSet = true; m_userPoolTags = value; }
+
+    /**
+     * <p>The cost allocation tags for the user pool. For more information, see <a
+     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-cost-allocation-tagging.html">Adding
+     * Cost Allocation Tags to Your User Pool</a> </p>
+     */
+    inline void SetUserPoolTags(Aws::Map<Aws::String, Aws::String>&& value) { m_userPoolTagsHasBeenSet = true; m_userPoolTags = value; }
+
+    /**
+     * <p>The cost allocation tags for the user pool. For more information, see <a
+     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-cost-allocation-tagging.html">Adding
+     * Cost Allocation Tags to Your User Pool</a> </p>
+     */
+    inline UserPoolType& WithUserPoolTags(const Aws::Map<Aws::String, Aws::String>& value) { SetUserPoolTags(value); return *this;}
+
+    /**
+     * <p>The cost allocation tags for the user pool. For more information, see <a
+     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-cost-allocation-tagging.html">Adding
+     * Cost Allocation Tags to Your User Pool</a> </p>
+     */
+    inline UserPoolType& WithUserPoolTags(Aws::Map<Aws::String, Aws::String>&& value) { SetUserPoolTags(value); return *this;}
+
+    /**
+     * <p>The cost allocation tags for the user pool. For more information, see <a
+     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-cost-allocation-tagging.html">Adding
+     * Cost Allocation Tags to Your User Pool</a> </p>
+     */
+    inline UserPoolType& AddUserPoolTags(const Aws::String& key, const Aws::String& value) { m_userPoolTagsHasBeenSet = true; m_userPoolTags[key] = value; return *this; }
+
+    /**
+     * <p>The cost allocation tags for the user pool. For more information, see <a
+     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-cost-allocation-tagging.html">Adding
+     * Cost Allocation Tags to Your User Pool</a> </p>
+     */
+    inline UserPoolType& AddUserPoolTags(Aws::String&& key, const Aws::String& value) { m_userPoolTagsHasBeenSet = true; m_userPoolTags[key] = value; return *this; }
+
+    /**
+     * <p>The cost allocation tags for the user pool. For more information, see <a
+     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-cost-allocation-tagging.html">Adding
+     * Cost Allocation Tags to Your User Pool</a> </p>
+     */
+    inline UserPoolType& AddUserPoolTags(const Aws::String& key, Aws::String&& value) { m_userPoolTagsHasBeenSet = true; m_userPoolTags[key] = value; return *this; }
+
+    /**
+     * <p>The cost allocation tags for the user pool. For more information, see <a
+     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-cost-allocation-tagging.html">Adding
+     * Cost Allocation Tags to Your User Pool</a> </p>
+     */
+    inline UserPoolType& AddUserPoolTags(Aws::String&& key, Aws::String&& value) { m_userPoolTagsHasBeenSet = true; m_userPoolTags[key] = value; return *this; }
+
+    /**
+     * <p>The cost allocation tags for the user pool. For more information, see <a
+     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-cost-allocation-tagging.html">Adding
+     * Cost Allocation Tags to Your User Pool</a> </p>
+     */
+    inline UserPoolType& AddUserPoolTags(const char* key, Aws::String&& value) { m_userPoolTagsHasBeenSet = true; m_userPoolTags[key] = value; return *this; }
+
+    /**
+     * <p>The cost allocation tags for the user pool. For more information, see <a
+     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-cost-allocation-tagging.html">Adding
+     * Cost Allocation Tags to Your User Pool</a> </p>
+     */
+    inline UserPoolType& AddUserPoolTags(Aws::String&& key, const char* value) { m_userPoolTagsHasBeenSet = true; m_userPoolTags[key] = value; return *this; }
+
+    /**
+     * <p>The cost allocation tags for the user pool. For more information, see <a
+     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-cost-allocation-tagging.html">Adding
+     * Cost Allocation Tags to Your User Pool</a> </p>
+     */
+    inline UserPoolType& AddUserPoolTags(const char* key, const char* value) { m_userPoolTagsHasBeenSet = true; m_userPoolTags[key] = value; return *this; }
+
+    /**
      * <p>The reason why the SMS configuration cannot send the message(s) to your
      * users.</p>
      */
@@ -787,6 +875,8 @@ namespace Model
     bool m_emailConfigurationHasBeenSet;
     SmsConfigurationType m_smsConfiguration;
     bool m_smsConfigurationHasBeenSet;
+    Aws::Map<Aws::String, Aws::String> m_userPoolTags;
+    bool m_userPoolTagsHasBeenSet;
     Aws::String m_smsConfigurationFailure;
     bool m_smsConfigurationFailureHasBeenSet;
     Aws::String m_emailConfigurationFailure;

@@ -28,12 +28,14 @@ namespace Model
 {
 
 StepStateChangeReason::StepStateChangeReason() : 
+    m_code(StepStateChangeReasonCode::NOT_SET),
     m_codeHasBeenSet(false),
     m_messageHasBeenSet(false)
 {
 }
 
 StepStateChangeReason::StepStateChangeReason(const JsonValue& jsonValue) : 
+    m_code(StepStateChangeReasonCode::NOT_SET),
     m_codeHasBeenSet(false),
     m_messageHasBeenSet(false)
 {

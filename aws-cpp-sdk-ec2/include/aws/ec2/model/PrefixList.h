@@ -33,7 +33,9 @@ namespace Model
 {
 
   /**
-   * <p>Describes prefixes for AWS services. </p>
+   * <p>Describes prefixes for AWS services.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/PrefixList">AWS API
+   * Reference</a></p>
    */
   class AWS_EC2_API PrefixList
   {
@@ -46,37 +48,37 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     /**
-     * <p>The ID of the prefix. </p>
+     * <p>The ID of the prefix.</p>
      */
     inline const Aws::String& GetPrefixListId() const{ return m_prefixListId; }
 
     /**
-     * <p>The ID of the prefix. </p>
+     * <p>The ID of the prefix.</p>
      */
     inline void SetPrefixListId(const Aws::String& value) { m_prefixListIdHasBeenSet = true; m_prefixListId = value; }
 
     /**
-     * <p>The ID of the prefix. </p>
+     * <p>The ID of the prefix.</p>
      */
     inline void SetPrefixListId(Aws::String&& value) { m_prefixListIdHasBeenSet = true; m_prefixListId = value; }
 
     /**
-     * <p>The ID of the prefix. </p>
+     * <p>The ID of the prefix.</p>
      */
     inline void SetPrefixListId(const char* value) { m_prefixListIdHasBeenSet = true; m_prefixListId.assign(value); }
 
     /**
-     * <p>The ID of the prefix. </p>
+     * <p>The ID of the prefix.</p>
      */
     inline PrefixList& WithPrefixListId(const Aws::String& value) { SetPrefixListId(value); return *this;}
 
     /**
-     * <p>The ID of the prefix. </p>
+     * <p>The ID of the prefix.</p>
      */
     inline PrefixList& WithPrefixListId(Aws::String&& value) { SetPrefixListId(value); return *this;}
 
     /**
-     * <p>The ID of the prefix. </p>
+     * <p>The ID of the prefix.</p>
      */
     inline PrefixList& WithPrefixListId(const char* value) { SetPrefixListId(value); return *this;}
 

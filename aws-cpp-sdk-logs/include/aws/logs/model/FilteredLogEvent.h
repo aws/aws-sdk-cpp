@@ -31,7 +31,9 @@ namespace Model
 {
 
   /**
-   * <p>Represents a matched event from a <code>FilterLogEvents</code> request.</p>
+   * <p>Represents a matched event.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/FilteredLogEvent">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDWATCHLOGS_API FilteredLogEvent
   {
@@ -76,13 +78,22 @@ namespace Model
      */
     inline FilteredLogEvent& WithLogStreamName(const char* value) { SetLogStreamName(value); return *this;}
 
-    
+    /**
+     * <p>The time the event occurred, expressed as the number of milliseconds since
+     * Jan 1, 1970 00:00:00 UTC.</p>
+     */
     inline long long GetTimestamp() const{ return m_timestamp; }
 
-    
+    /**
+     * <p>The time the event occurred, expressed as the number of milliseconds since
+     * Jan 1, 1970 00:00:00 UTC.</p>
+     */
     inline void SetTimestamp(long long value) { m_timestampHasBeenSet = true; m_timestamp = value; }
 
-    
+    /**
+     * <p>The time the event occurred, expressed as the number of milliseconds since
+     * Jan 1, 1970 00:00:00 UTC.</p>
+     */
     inline FilteredLogEvent& WithTimestamp(long long value) { SetTimestamp(value); return *this;}
 
     /**
@@ -120,47 +131,53 @@ namespace Model
      */
     inline FilteredLogEvent& WithMessage(const char* value) { SetMessage(value); return *this;}
 
-    
+    /**
+     * <p>The time the event was ingested.</p>
+     */
     inline long long GetIngestionTime() const{ return m_ingestionTime; }
 
-    
+    /**
+     * <p>The time the event was ingested.</p>
+     */
     inline void SetIngestionTime(long long value) { m_ingestionTimeHasBeenSet = true; m_ingestionTime = value; }
 
-    
+    /**
+     * <p>The time the event was ingested.</p>
+     */
     inline FilteredLogEvent& WithIngestionTime(long long value) { SetIngestionTime(value); return *this;}
 
     /**
-     * <p>A unique identifier for this event.</p>
+     * <p>The ID of the event.</p>
      */
     inline const Aws::String& GetEventId() const{ return m_eventId; }
 
     /**
-     * <p>A unique identifier for this event.</p>
+     * <p>The ID of the event.</p>
      */
     inline void SetEventId(const Aws::String& value) { m_eventIdHasBeenSet = true; m_eventId = value; }
 
     /**
-     * <p>A unique identifier for this event.</p>
+     * <p>The ID of the event.</p>
      */
     inline void SetEventId(Aws::String&& value) { m_eventIdHasBeenSet = true; m_eventId = value; }
 
     /**
-     * <p>A unique identifier for this event.</p>
+     * <p>The ID of the event.</p>
      */
     inline void SetEventId(const char* value) { m_eventIdHasBeenSet = true; m_eventId.assign(value); }
 
     /**
-     * <p>A unique identifier for this event.</p>
+     * <p>The ID of the event.</p>
      */
     inline FilteredLogEvent& WithEventId(const Aws::String& value) { SetEventId(value); return *this;}
 
     /**
-     * <p>A unique identifier for this event.</p>
+     * <p>The ID of the event.</p>
      */
     inline FilteredLogEvent& WithEventId(Aws::String&& value) { SetEventId(value); return *this;}
 
     /**
-     * <p>A unique identifier for this event.</p>
+     * <p>The ID of the event.</p>
      */
     inline FilteredLogEvent& WithEventId(const char* value) { SetEventId(value); return *this;}
 

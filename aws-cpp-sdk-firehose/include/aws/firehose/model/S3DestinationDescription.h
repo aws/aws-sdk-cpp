@@ -35,7 +35,9 @@ namespace Model
 {
 
   /**
-   * <p>Describes a destination in Amazon S3.</p>
+   * <p>Describes a destination in Amazon S3.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/S3DestinationDescription">AWS
+   * API Reference</a></p>
    */
   class AWS_FIREHOSE_API S3DestinationDescription
   {
@@ -121,9 +123,8 @@ namespace Model
      * prefix. Note that if the prefix ends with a slash, it appears as a folder in the
      * S3 bucket. For more information, see <a
      * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html">Amazon
-     * S3 Object Name Format</a> in the <a
-     * href="http://docs.aws.amazon.com/firehose/latest/dev/">Amazon Kinesis Firehose
-     * Developer Guide</a>.</p>
+     * S3 Object Name Format</a> in the <i>Amazon Kinesis Firehose Developer
+     * Guide</i>.</p>
      */
     inline const Aws::String& GetPrefix() const{ return m_prefix; }
 
@@ -133,9 +134,8 @@ namespace Model
      * prefix. Note that if the prefix ends with a slash, it appears as a folder in the
      * S3 bucket. For more information, see <a
      * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html">Amazon
-     * S3 Object Name Format</a> in the <a
-     * href="http://docs.aws.amazon.com/firehose/latest/dev/">Amazon Kinesis Firehose
-     * Developer Guide</a>.</p>
+     * S3 Object Name Format</a> in the <i>Amazon Kinesis Firehose Developer
+     * Guide</i>.</p>
      */
     inline void SetPrefix(const Aws::String& value) { m_prefixHasBeenSet = true; m_prefix = value; }
 
@@ -145,9 +145,8 @@ namespace Model
      * prefix. Note that if the prefix ends with a slash, it appears as a folder in the
      * S3 bucket. For more information, see <a
      * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html">Amazon
-     * S3 Object Name Format</a> in the <a
-     * href="http://docs.aws.amazon.com/firehose/latest/dev/">Amazon Kinesis Firehose
-     * Developer Guide</a>.</p>
+     * S3 Object Name Format</a> in the <i>Amazon Kinesis Firehose Developer
+     * Guide</i>.</p>
      */
     inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = value; }
 
@@ -157,9 +156,8 @@ namespace Model
      * prefix. Note that if the prefix ends with a slash, it appears as a folder in the
      * S3 bucket. For more information, see <a
      * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html">Amazon
-     * S3 Object Name Format</a> in the <a
-     * href="http://docs.aws.amazon.com/firehose/latest/dev/">Amazon Kinesis Firehose
-     * Developer Guide</a>.</p>
+     * S3 Object Name Format</a> in the <i>Amazon Kinesis Firehose Developer
+     * Guide</i>.</p>
      */
     inline void SetPrefix(const char* value) { m_prefixHasBeenSet = true; m_prefix.assign(value); }
 
@@ -169,9 +167,8 @@ namespace Model
      * prefix. Note that if the prefix ends with a slash, it appears as a folder in the
      * S3 bucket. For more information, see <a
      * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html">Amazon
-     * S3 Object Name Format</a> in the <a
-     * href="http://docs.aws.amazon.com/firehose/latest/dev/">Amazon Kinesis Firehose
-     * Developer Guide</a>.</p>
+     * S3 Object Name Format</a> in the <i>Amazon Kinesis Firehose Developer
+     * Guide</i>.</p>
      */
     inline S3DestinationDescription& WithPrefix(const Aws::String& value) { SetPrefix(value); return *this;}
 
@@ -181,9 +178,8 @@ namespace Model
      * prefix. Note that if the prefix ends with a slash, it appears as a folder in the
      * S3 bucket. For more information, see <a
      * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html">Amazon
-     * S3 Object Name Format</a> in the <a
-     * href="http://docs.aws.amazon.com/firehose/latest/dev/">Amazon Kinesis Firehose
-     * Developer Guide</a>.</p>
+     * S3 Object Name Format</a> in the <i>Amazon Kinesis Firehose Developer
+     * Guide</i>.</p>
      */
     inline S3DestinationDescription& WithPrefix(Aws::String&& value) { SetPrefix(value); return *this;}
 
@@ -193,9 +189,8 @@ namespace Model
      * prefix. Note that if the prefix ends with a slash, it appears as a folder in the
      * S3 bucket. For more information, see <a
      * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html">Amazon
-     * S3 Object Name Format</a> in the <a
-     * href="http://docs.aws.amazon.com/firehose/latest/dev/">Amazon Kinesis Firehose
-     * Developer Guide</a>.</p>
+     * S3 Object Name Format</a> in the <i>Amazon Kinesis Firehose Developer
+     * Guide</i>.</p>
      */
     inline S3DestinationDescription& WithPrefix(const char* value) { SetPrefix(value); return *this;}
 
@@ -231,31 +226,31 @@ namespace Model
 
     /**
      * <p>The compression format. If no value is specified, the default is
-     * <code>NOCOMPRESSION</code>.</p>
+     * <code>UNCOMPRESSED</code>.</p>
      */
     inline const CompressionFormat& GetCompressionFormat() const{ return m_compressionFormat; }
 
     /**
      * <p>The compression format. If no value is specified, the default is
-     * <code>NOCOMPRESSION</code>.</p>
+     * <code>UNCOMPRESSED</code>.</p>
      */
     inline void SetCompressionFormat(const CompressionFormat& value) { m_compressionFormatHasBeenSet = true; m_compressionFormat = value; }
 
     /**
      * <p>The compression format. If no value is specified, the default is
-     * <code>NOCOMPRESSION</code>.</p>
+     * <code>UNCOMPRESSED</code>.</p>
      */
     inline void SetCompressionFormat(CompressionFormat&& value) { m_compressionFormatHasBeenSet = true; m_compressionFormat = value; }
 
     /**
      * <p>The compression format. If no value is specified, the default is
-     * <code>NOCOMPRESSION</code>.</p>
+     * <code>UNCOMPRESSED</code>.</p>
      */
     inline S3DestinationDescription& WithCompressionFormat(const CompressionFormat& value) { SetCompressionFormat(value); return *this;}
 
     /**
      * <p>The compression format. If no value is specified, the default is
-     * <code>NOCOMPRESSION</code>.</p>
+     * <code>UNCOMPRESSED</code>.</p>
      */
     inline S3DestinationDescription& WithCompressionFormat(CompressionFormat&& value) { SetCompressionFormat(value); return *this;}
 
@@ -290,27 +285,27 @@ namespace Model
     inline S3DestinationDescription& WithEncryptionConfiguration(EncryptionConfiguration&& value) { SetEncryptionConfiguration(value); return *this;}
 
     /**
-     * <p>Describes CloudWatch logging options for your delivery stream.</p>
+     * <p>The CloudWatch logging options for your delivery stream.</p>
      */
     inline const CloudWatchLoggingOptions& GetCloudWatchLoggingOptions() const{ return m_cloudWatchLoggingOptions; }
 
     /**
-     * <p>Describes CloudWatch logging options for your delivery stream.</p>
+     * <p>The CloudWatch logging options for your delivery stream.</p>
      */
     inline void SetCloudWatchLoggingOptions(const CloudWatchLoggingOptions& value) { m_cloudWatchLoggingOptionsHasBeenSet = true; m_cloudWatchLoggingOptions = value; }
 
     /**
-     * <p>Describes CloudWatch logging options for your delivery stream.</p>
+     * <p>The CloudWatch logging options for your delivery stream.</p>
      */
     inline void SetCloudWatchLoggingOptions(CloudWatchLoggingOptions&& value) { m_cloudWatchLoggingOptionsHasBeenSet = true; m_cloudWatchLoggingOptions = value; }
 
     /**
-     * <p>Describes CloudWatch logging options for your delivery stream.</p>
+     * <p>The CloudWatch logging options for your delivery stream.</p>
      */
     inline S3DestinationDescription& WithCloudWatchLoggingOptions(const CloudWatchLoggingOptions& value) { SetCloudWatchLoggingOptions(value); return *this;}
 
     /**
-     * <p>Describes CloudWatch logging options for your delivery stream.</p>
+     * <p>The CloudWatch logging options for your delivery stream.</p>
      */
     inline S3DestinationDescription& WithCloudWatchLoggingOptions(CloudWatchLoggingOptions&& value) { SetCloudWatchLoggingOptions(value); return *this;}
 

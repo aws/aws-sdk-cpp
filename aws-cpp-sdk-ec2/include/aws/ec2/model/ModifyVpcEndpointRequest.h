@@ -26,7 +26,9 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for ModifyVpcEndpoint.</p>
+   * <p>Contains the parameters for ModifyVpcEndpoint.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcEndpointRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API ModifyVpcEndpointRequest : public EC2Request
   {
@@ -113,43 +115,43 @@ namespace Model
 
     /**
      * <p>A policy document to attach to the endpoint. The policy must be in valid JSON
-     * format. </p>
+     * format.</p>
      */
     inline const Aws::String& GetPolicyDocument() const{ return m_policyDocument; }
 
     /**
      * <p>A policy document to attach to the endpoint. The policy must be in valid JSON
-     * format. </p>
+     * format.</p>
      */
     inline void SetPolicyDocument(const Aws::String& value) { m_policyDocumentHasBeenSet = true; m_policyDocument = value; }
 
     /**
      * <p>A policy document to attach to the endpoint. The policy must be in valid JSON
-     * format. </p>
+     * format.</p>
      */
     inline void SetPolicyDocument(Aws::String&& value) { m_policyDocumentHasBeenSet = true; m_policyDocument = value; }
 
     /**
      * <p>A policy document to attach to the endpoint. The policy must be in valid JSON
-     * format. </p>
+     * format.</p>
      */
     inline void SetPolicyDocument(const char* value) { m_policyDocumentHasBeenSet = true; m_policyDocument.assign(value); }
 
     /**
      * <p>A policy document to attach to the endpoint. The policy must be in valid JSON
-     * format. </p>
+     * format.</p>
      */
     inline ModifyVpcEndpointRequest& WithPolicyDocument(const Aws::String& value) { SetPolicyDocument(value); return *this;}
 
     /**
      * <p>A policy document to attach to the endpoint. The policy must be in valid JSON
-     * format. </p>
+     * format.</p>
      */
     inline ModifyVpcEndpointRequest& WithPolicyDocument(Aws::String&& value) { SetPolicyDocument(value); return *this;}
 
     /**
      * <p>A policy document to attach to the endpoint. The policy must be in valid JSON
-     * format. </p>
+     * format.</p>
      */
     inline ModifyVpcEndpointRequest& WithPolicyDocument(const char* value) { SetPolicyDocument(value); return *this;}
 

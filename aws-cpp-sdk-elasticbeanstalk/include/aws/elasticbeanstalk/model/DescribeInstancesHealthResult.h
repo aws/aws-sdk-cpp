@@ -37,7 +37,10 @@ namespace ElasticBeanstalk
 namespace Model
 {
   /**
-   * <p>See the example below for a sample response.</p>
+   * <p>Detailed health information about the Amazon EC2 instances in an AWS Elastic
+   * Beanstalk environment.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeInstancesHealthResult">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICBEANSTALK_API DescribeInstancesHealthResult
   {
@@ -47,104 +50,97 @@ namespace Model
     DescribeInstancesHealthResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
     /**
-     * <p>Contains the response body with information about the health of the
-     * instance.</p>
+     * <p>Detailed health information about each instance.</p>
      */
     inline const Aws::Vector<SingleInstanceHealth>& GetInstanceHealthList() const{ return m_instanceHealthList; }
 
     /**
-     * <p>Contains the response body with information about the health of the
-     * instance.</p>
+     * <p>Detailed health information about each instance.</p>
      */
     inline void SetInstanceHealthList(const Aws::Vector<SingleInstanceHealth>& value) { m_instanceHealthList = value; }
 
     /**
-     * <p>Contains the response body with information about the health of the
-     * instance.</p>
+     * <p>Detailed health information about each instance.</p>
      */
     inline void SetInstanceHealthList(Aws::Vector<SingleInstanceHealth>&& value) { m_instanceHealthList = value; }
 
     /**
-     * <p>Contains the response body with information about the health of the
-     * instance.</p>
+     * <p>Detailed health information about each instance.</p>
      */
     inline DescribeInstancesHealthResult& WithInstanceHealthList(const Aws::Vector<SingleInstanceHealth>& value) { SetInstanceHealthList(value); return *this;}
 
     /**
-     * <p>Contains the response body with information about the health of the
-     * instance.</p>
+     * <p>Detailed health information about each instance.</p>
      */
     inline DescribeInstancesHealthResult& WithInstanceHealthList(Aws::Vector<SingleInstanceHealth>&& value) { SetInstanceHealthList(value); return *this;}
 
     /**
-     * <p>Contains the response body with information about the health of the
-     * instance.</p>
+     * <p>Detailed health information about each instance.</p>
      */
     inline DescribeInstancesHealthResult& AddInstanceHealthList(const SingleInstanceHealth& value) { m_instanceHealthList.push_back(value); return *this; }
 
     /**
-     * <p>Contains the response body with information about the health of the
-     * instance.</p>
+     * <p>Detailed health information about each instance.</p>
      */
     inline DescribeInstancesHealthResult& AddInstanceHealthList(SingleInstanceHealth&& value) { m_instanceHealthList.push_back(value); return *this; }
 
     /**
-     * <p>The date and time the information was last refreshed.</p>
+     * <p>The date and time that the health information was retrieved.</p>
      */
     inline const Aws::Utils::DateTime& GetRefreshedAt() const{ return m_refreshedAt; }
 
     /**
-     * <p>The date and time the information was last refreshed.</p>
+     * <p>The date and time that the health information was retrieved.</p>
      */
     inline void SetRefreshedAt(const Aws::Utils::DateTime& value) { m_refreshedAt = value; }
 
     /**
-     * <p>The date and time the information was last refreshed.</p>
+     * <p>The date and time that the health information was retrieved.</p>
      */
     inline void SetRefreshedAt(Aws::Utils::DateTime&& value) { m_refreshedAt = value; }
 
     /**
-     * <p>The date and time the information was last refreshed.</p>
+     * <p>The date and time that the health information was retrieved.</p>
      */
     inline DescribeInstancesHealthResult& WithRefreshedAt(const Aws::Utils::DateTime& value) { SetRefreshedAt(value); return *this;}
 
     /**
-     * <p>The date and time the information was last refreshed.</p>
+     * <p>The date and time that the health information was retrieved.</p>
      */
     inline DescribeInstancesHealthResult& WithRefreshedAt(Aws::Utils::DateTime&& value) { SetRefreshedAt(value); return *this;}
 
     /**
-     * <p>The next token.</p>
+     * <p>Pagination token for the next page of results, if available.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>The next token.</p>
+     * <p>Pagination token for the next page of results, if available.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p>The next token.</p>
+     * <p>Pagination token for the next page of results, if available.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
 
     /**
-     * <p>The next token.</p>
+     * <p>Pagination token for the next page of results, if available.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p>The next token.</p>
+     * <p>Pagination token for the next page of results, if available.</p>
      */
     inline DescribeInstancesHealthResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>The next token.</p>
+     * <p>Pagination token for the next page of results, if available.</p>
      */
     inline DescribeInstancesHealthResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>The next token.</p>
+     * <p>Pagination token for the next page of results, if available.</p>
      */
     inline DescribeInstancesHealthResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

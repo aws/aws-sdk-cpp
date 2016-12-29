@@ -23,7 +23,9 @@ using namespace Aws::Utils;
 
 ListRepositoriesRequest::ListRepositoriesRequest() : 
     m_nextTokenHasBeenSet(false),
+    m_sortBy(SortByEnum::NOT_SET),
     m_sortByHasBeenSet(false),
+    m_order(OrderEnum::NOT_SET),
     m_orderHasBeenSet(false)
 {
 }

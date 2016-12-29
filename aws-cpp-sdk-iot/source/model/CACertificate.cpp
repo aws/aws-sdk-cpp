@@ -30,6 +30,7 @@ namespace Model
 CACertificate::CACertificate() : 
     m_certificateArnHasBeenSet(false),
     m_certificateIdHasBeenSet(false),
+    m_status(CACertificateStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_creationDateHasBeenSet(false)
 {
@@ -38,6 +39,7 @@ CACertificate::CACertificate() :
 CACertificate::CACertificate(const JsonValue& jsonValue) : 
     m_certificateArnHasBeenSet(false),
     m_certificateIdHasBeenSet(false),
+    m_status(CACertificateStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_creationDateHasBeenSet(false)
 {

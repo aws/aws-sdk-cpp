@@ -28,6 +28,7 @@ namespace Model
 {
 
 ElasticsearchClusterConfig::ElasticsearchClusterConfig() : 
+    m_instanceType(ESPartitionInstanceType::NOT_SET),
     m_instanceTypeHasBeenSet(false),
     m_instanceCount(0),
     m_instanceCountHasBeenSet(false),
@@ -35,6 +36,7 @@ ElasticsearchClusterConfig::ElasticsearchClusterConfig() :
     m_dedicatedMasterEnabledHasBeenSet(false),
     m_zoneAwarenessEnabled(false),
     m_zoneAwarenessEnabledHasBeenSet(false),
+    m_dedicatedMasterType(ESPartitionInstanceType::NOT_SET),
     m_dedicatedMasterTypeHasBeenSet(false),
     m_dedicatedMasterCount(0),
     m_dedicatedMasterCountHasBeenSet(false)
@@ -42,6 +44,7 @@ ElasticsearchClusterConfig::ElasticsearchClusterConfig() :
 }
 
 ElasticsearchClusterConfig::ElasticsearchClusterConfig(const JsonValue& jsonValue) : 
+    m_instanceType(ESPartitionInstanceType::NOT_SET),
     m_instanceTypeHasBeenSet(false),
     m_instanceCount(0),
     m_instanceCountHasBeenSet(false),
@@ -49,6 +52,7 @@ ElasticsearchClusterConfig::ElasticsearchClusterConfig(const JsonValue& jsonValu
     m_dedicatedMasterEnabledHasBeenSet(false),
     m_zoneAwarenessEnabled(false),
     m_zoneAwarenessEnabledHasBeenSet(false),
+    m_dedicatedMasterType(ESPartitionInstanceType::NOT_SET),
     m_dedicatedMasterTypeHasBeenSet(false),
     m_dedicatedMasterCount(0),
     m_dedicatedMasterCountHasBeenSet(false)

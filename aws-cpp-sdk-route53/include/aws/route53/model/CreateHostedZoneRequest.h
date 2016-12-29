@@ -27,7 +27,10 @@ namespace Model
 {
 
   /**
-   * <p>A complex type containing the hosted zone request information.</p>
+   * <p>A complex type containing the hosted zone request information.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateHostedZoneRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_ROUTE53_API CreateHostedZoneRequest : public Route53Request
   {
@@ -135,35 +138,35 @@ namespace Model
 
     /**
      * <p>The VPC that you want your hosted zone to be associated with. By providing
-     * this parameter, your newly created hosted cannot be resolved anywhere other than
+     * this parameter, your newly created hosted can't be resolved anywhere other than
      * the given VPC.</p>
      */
     inline const VPC& GetVPC() const{ return m_vPC; }
 
     /**
      * <p>The VPC that you want your hosted zone to be associated with. By providing
-     * this parameter, your newly created hosted cannot be resolved anywhere other than
+     * this parameter, your newly created hosted can't be resolved anywhere other than
      * the given VPC.</p>
      */
     inline void SetVPC(const VPC& value) { m_vPCHasBeenSet = true; m_vPC = value; }
 
     /**
      * <p>The VPC that you want your hosted zone to be associated with. By providing
-     * this parameter, your newly created hosted cannot be resolved anywhere other than
+     * this parameter, your newly created hosted can't be resolved anywhere other than
      * the given VPC.</p>
      */
     inline void SetVPC(VPC&& value) { m_vPCHasBeenSet = true; m_vPC = value; }
 
     /**
      * <p>The VPC that you want your hosted zone to be associated with. By providing
-     * this parameter, your newly created hosted cannot be resolved anywhere other than
+     * this parameter, your newly created hosted can't be resolved anywhere other than
      * the given VPC.</p>
      */
     inline CreateHostedZoneRequest& WithVPC(const VPC& value) { SetVPC(value); return *this;}
 
     /**
      * <p>The VPC that you want your hosted zone to be associated with. By providing
-     * this parameter, your newly created hosted cannot be resolved anywhere other than
+     * this parameter, your newly created hosted can't be resolved anywhere other than
      * the given VPC.</p>
      */
     inline CreateHostedZoneRequest& WithVPC(VPC&& value) { SetVPC(value); return *this;}

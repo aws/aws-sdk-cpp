@@ -48,12 +48,14 @@ enum class GlacierErrors
   REQUEST_TIME_TOO_SKEWED = 20,
   INVALID_SIGNATURE = 21,
   SIGNATURE_DOES_NOT_MATCH = 22,
+  INVALID_ACCESS_KEY_ID = 23,
   NETWORK_CONNECTION = 99,
   
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  LIMIT_EXCEEDED= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  INSUFFICIENT_CAPACITY= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  LIMIT_EXCEEDED,
   MISSING_PARAMETER_VALUE,
   POLICY_ENFORCED,
   REQUEST_TIMEOUT

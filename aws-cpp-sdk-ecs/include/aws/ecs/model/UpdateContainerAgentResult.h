@@ -39,19 +39,29 @@ namespace Model
     UpdateContainerAgentResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     UpdateContainerAgentResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    
+    /**
+     * <p>The container instance for which the container agent was updated.</p>
+     */
     inline const ContainerInstance& GetContainerInstance() const{ return m_containerInstance; }
 
-    
+    /**
+     * <p>The container instance for which the container agent was updated.</p>
+     */
     inline void SetContainerInstance(const ContainerInstance& value) { m_containerInstance = value; }
 
-    
+    /**
+     * <p>The container instance for which the container agent was updated.</p>
+     */
     inline void SetContainerInstance(ContainerInstance&& value) { m_containerInstance = value; }
 
-    
+    /**
+     * <p>The container instance for which the container agent was updated.</p>
+     */
     inline UpdateContainerAgentResult& WithContainerInstance(const ContainerInstance& value) { SetContainerInstance(value); return *this;}
 
-    
+    /**
+     * <p>The container instance for which the container agent was updated.</p>
+     */
     inline UpdateContainerAgentResult& WithContainerInstance(ContainerInstance&& value) { SetContainerInstance(value); return *this;}
 
   private:

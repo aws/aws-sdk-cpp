@@ -24,11 +24,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteInterconnectResult::DeleteInterconnectResult()
+DeleteInterconnectResult::DeleteInterconnectResult() : 
+    m_interconnectState(InterconnectState::NOT_SET)
 {
 }
 
-DeleteInterconnectResult::DeleteInterconnectResult(const AmazonWebServiceResult<JsonValue>& result)
+DeleteInterconnectResult::DeleteInterconnectResult(const AmazonWebServiceResult<JsonValue>& result) : 
+    m_interconnectState(InterconnectState::NOT_SET)
 {
   *this = result;
 }

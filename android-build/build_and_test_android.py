@@ -22,6 +22,9 @@ import time
 import datetime
 import sys
 
+TestName = "AndroidSDKTesting"
+TestLowerName = TestName.lower()
+
 def ArgumentException( Exception ):
     def __init__( self, argumentName, argumentValue ):
         self.m_argumentName = argumentName
@@ -155,7 +158,7 @@ def ValidateArguments(buildDir, avd, abi, clean, runTest, buildSharedObjects):
 
 
 def SetupJniDirectory(abi, clean):
-    path = os.path.join( "android-tests", "app", "src", "main", "jniLibs", abi )
+    path = os.path.join( TestName, "app", "src", "main", "jniLibs", abi )
  
     if clean and os.path.exists(path):
         shutil.rmtree(path)
@@ -167,15 +170,17 @@ def SetupJniDirectory(abi, clean):
 
 
 def CopyNativeLibraries(buildSharedObjects, jniDir, buildDir, abi):
-    if buildSharedObjects:
-        toolchainName = abi + "-standalone-clang-android-21-libc++_shared"
-        toolchainDir = os.path.join('toolchains', 'android', toolchainName)
- 
-        platformLibDir = os.path.join(toolchainDir, "sysroot", "usr", "lib")
-        shutil.copy(os.path.join(platformLibDir, "liblog.so"), jniDir)
+    # TODO: fix hardcoded 13b version
+    toolchainName = abi + "-standalone-clang-android-21-libc++_shared-13002"
+    toolchainDir = os.path.join('toolchains', 'android', toolchainName)
 
-        stdLibDir = os.path.join(toolchainDir, 'arm-linux-androideabi', 'lib')
-        shutil.copy(os.path.join(stdLibDir, "libc++_shared.so"), jniDir)
+    platformLibDir = os.path.join(toolchainDir, "sysroot", "usr", "lib")
+    shutil.copy(os.path.join(platformLibDir, "liblog.so"), jniDir)
+
+    stdLibDir = os.path.join(toolchainDir, 'arm-linux-androideabi', 'lib')
+    shutil.copy(os.path.join(stdLibDir, "libc++_shared.so"), jniDir)
+
+    if buildSharedObjects:
 
         soPattern = re.compile(".*\.so$")
 
@@ -208,21 +213,18 @@ def BuildNative(abi, clean, buildDir, jniDir, installDir, buildType, buildShared
 
         if not buildSharedObjects:
             link_type_line = "-DBUILD_SHARED_LIBS=OFF"
-            crt_line = "-DFORCE_SHARED_CRT=OFF"
         else:
             link_type_line = "-DBUILD_SHARED_LIBS=ON"
-            crt_line = "-DFORCE_SHARED_CRT=ON"
 
         subprocess.check_call( [ "cmake", 
                                  link_type_line,
-                                 crt_line,
                                  "-DCUSTOM_MEMORY_MANAGEMENT=1",
                                  "-DTARGET_ARCH=ANDROID", 
                                  "-DANDROID_ABI=" + abi, 
                                  "-DCMAKE_BUILD_TYPE=" + buildType,
                                  "-DENABLE_UNITY_BUILD=ON",
-                                 '-DTEST_CERT_PATH="/data/data/aws.coretests/certs"',
-                                 '-DBUILD_ONLY=dynamodb;sqs;s3;lambda;kinesis;cognito-identity;transfer;iam;identity-management;access-management',
+                                 '-DTEST_CERT_PATH="/data/data/aws.' + TestLowerName + '/certs"',
+                                 '-DBUILD_ONLY=dynamodb;sqs;s3;lambda;kinesis;cognito-identity;transfer;iam;identity-management;access-management;s3-encryption',
                                  ".."] )
     else:
         os.chdir( buildDir )
@@ -237,7 +239,7 @@ def BuildNative(abi, clean, buildDir, jniDir, installDir, buildType, buildShared
 
 
 def BuildJava(clean):
-    os.chdir( "android-tests" )
+    os.chdir( TestName )
     if clean:
         subprocess.check_call( [ "./gradlew", "clean" ] )
         subprocess.check_call( [ "./gradlew", "--refresh-dependencies" ] )
@@ -316,8 +318,8 @@ def BuildAndInstallCertSet(pemSourceDir, buildDir):
         shutil.copy(os.path.join( pemSourceDir, "certs", "415660c1.0" ), certDir)
         shutil.copy(os.path.join( pemSourceDir, "certs", "7651b327.0" ), certDir)
 
-    subprocess.check_call( [ "adb", "shell", "rm -rf /data/data/aws.coretests/certs" ] )
-    subprocess.check_call( [ "adb", "shell", "mkdir /data/data/aws.coretests/certs" ] )
+    subprocess.check_call( [ "adb", "shell", "rm -rf /data/data/aws." + TestLowerName + "/certs" ] )
+    subprocess.check_call( [ "adb", "shell", "mkdir /data/data/aws." + TestLowerName + "/certs" ] )
 
     # upload all the hashed certs to the emulator
     certPattern = re.compile(".*\.0$")
@@ -326,21 +328,28 @@ def BuildAndInstallCertSet(pemSourceDir, buildDir):
         for fileName in fileNames:
             if certPattern.search(fileName):
                 certFileName = os.path.join(rootDir, fileName)
-                subprocess.check_call( [ "adb", "push", certFileName, "/data/data/aws.coretests/certs" ] )
+                subprocess.check_call( [ "adb", "push", certFileName, "/data/data/aws." + TestLowerName + "/certs" ] )
 
 def UploadTestResources(resourcesDir):
     for rootDir, dirNames, fileNames in os.walk( resourcesDir ):
         for fileName in fileNames:
             resourceFileName = os.path.join( rootDir, fileName )
-            subprocess.check_call( [ "adb", "push", resourceFileName, os.path.join( "/data/data/aws.coretests/resources", fileName ) ] )
+            subprocess.check_call( [ "adb", "push", resourceFileName, os.path.join( "/data/data/aws." + TestLowerName + "/resources", fileName ) ] )
+
+def UploadAwsSigV4TestSuite(resourceDir):
+    for rootDir, dirNames, fileNames in os.walk( resourceDir ):
+        for fileName in fileNames:
+            resourceFileName = os.path.join( rootDir, fileName )
+            subDir = os.path.basename( rootDir )
+            subprocess.check_call( [ "adb", "push", resourceFileName, os.path.join( "/data/data/aws." + TestLowerName + "/resources", subDir, fileName ) ] )
 
 
 def InstallTests(credentialsFile):
-    subprocess.check_call( [ "adb", "install", "-r", "android-tests/app/build/outputs/apk/app-debug.apk" ] )
+    subprocess.check_call( [ "adb", "install", "-r", TestName + "/app/build/outputs/apk/app-debug.apk" ] )
     subprocess.check_call( [ "adb", "logcat", "-c" ] ) # this doesn't seem to work
     if credentialsFile and credentialsFile != "":
         print( "uploading credentials" )
-        subprocess.check_call( [ "adb", "push", credentialsFile, "/data/data/aws.coretests/.aws/credentials" ] )
+        subprocess.check_call( [ "adb", "push", credentialsFile, "/data/data/aws." + TestLowerName + "/.aws/credentials" ] )
 
 
 def TestsAreRunning(timeStart):
@@ -358,7 +367,7 @@ def RunTest(testName):
 
     time.sleep(5)
     print( "Attempting to run tests..." )
-    subprocess.check_call( [ "adb", "shell", "am start -e test " + testName + " -n aws.coretests/aws.coretests.TestActivity" ] )
+    subprocess.check_call( [ "adb", "shell", "am start -e test " + testName + " -n aws." + TestLowerName + "/aws." + TestLowerName + ".RunSDKTests" ] )
 
     time.sleep(10)
 
@@ -370,7 +379,7 @@ def RunTest(testName):
     subprocess.Popen( "adb logcat -t " + logTimeString + " *:V | grep -a NativeSDK > AndroidTestOutput.txt", shell=True )
 
     print( "Cleaning up..." )
-    subprocess.check_call( [ "adb", "shell", "pm clear aws.coretests" ] )
+    subprocess.check_call( [ "adb", "shell", "pm clear aws." + TestLowerName ] )
 
 
 def DidAllTestsSucceed():
@@ -419,6 +428,9 @@ def Main():
 
         print("Uploading test resources")
         UploadTestResources("aws-cpp-sdk-lambda-integration-tests/resources")
+
+        print("Uploading SigV4 test files")
+        UploadAwsSigV4TestSuite(os.path.join("aws-cpp-sdk-core-tests", "resources", "aws4_testsuite", "aws4_testsuite"))
 
     print("Running tests...")
     RunTest( runTest )

@@ -22,6 +22,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 DescribeMLModelsRequest::DescribeMLModelsRequest() : 
+    m_filterVariable(MLModelFilterVariable::NOT_SET),
     m_filterVariableHasBeenSet(false),
     m_eQHasBeenSet(false),
     m_gTHasBeenSet(false),
@@ -30,6 +31,7 @@ DescribeMLModelsRequest::DescribeMLModelsRequest() :
     m_lEHasBeenSet(false),
     m_nEHasBeenSet(false),
     m_prefixHasBeenSet(false),
+    m_sortOrder(SortOrder::NOT_SET),
     m_sortOrderHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
     m_limit(0),

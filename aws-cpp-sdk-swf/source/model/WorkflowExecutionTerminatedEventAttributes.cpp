@@ -30,7 +30,9 @@ namespace Model
 WorkflowExecutionTerminatedEventAttributes::WorkflowExecutionTerminatedEventAttributes() : 
     m_reasonHasBeenSet(false),
     m_detailsHasBeenSet(false),
+    m_childPolicy(ChildPolicy::NOT_SET),
     m_childPolicyHasBeenSet(false),
+    m_cause(WorkflowExecutionTerminatedCause::NOT_SET),
     m_causeHasBeenSet(false)
 {
 }
@@ -38,7 +40,9 @@ WorkflowExecutionTerminatedEventAttributes::WorkflowExecutionTerminatedEventAttr
 WorkflowExecutionTerminatedEventAttributes::WorkflowExecutionTerminatedEventAttributes(const JsonValue& jsonValue) : 
     m_reasonHasBeenSet(false),
     m_detailsHasBeenSet(false),
+    m_childPolicy(ChildPolicy::NOT_SET),
     m_childPolicyHasBeenSet(false),
+    m_cause(WorkflowExecutionTerminatedCause::NOT_SET),
     m_causeHasBeenSet(false)
 {
   *this = jsonValue;

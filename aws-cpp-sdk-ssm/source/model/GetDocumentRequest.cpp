@@ -22,7 +22,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 GetDocumentRequest::GetDocumentRequest() : 
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_documentVersionHasBeenSet(false)
 {
 }
 
@@ -33,6 +34,12 @@ Aws::String GetDocumentRequest::SerializePayload() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("Name", m_name);
+
+  }
+
+  if(m_documentVersionHasBeenSet)
+  {
+   payload.WithString("DocumentVersion", m_documentVersion);
 
   }
 

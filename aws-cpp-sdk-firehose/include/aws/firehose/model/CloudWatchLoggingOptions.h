@@ -31,7 +31,10 @@ namespace Model
 {
 
   /**
-   * <p>Describes CloudWatch logging options for your delivery stream.</p>
+   * <p>Describes the CloudWatch logging options for your delivery
+   * stream.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/CloudWatchLoggingOptions">AWS
+   * API Reference</a></p>
    */
   class AWS_FIREHOSE_API CloudWatchLoggingOptions
   {
@@ -57,86 +60,86 @@ namespace Model
     inline CloudWatchLoggingOptions& WithEnabled(bool value) { SetEnabled(value); return *this;}
 
     /**
-     * <p>The CloudWatch group name for logging. This value is required if Enabled is
-     * true.</p>
+     * <p>The CloudWatch group name for logging. This value is required if CloudWatch
+     * logging is enabled.</p>
      */
     inline const Aws::String& GetLogGroupName() const{ return m_logGroupName; }
 
     /**
-     * <p>The CloudWatch group name for logging. This value is required if Enabled is
-     * true.</p>
+     * <p>The CloudWatch group name for logging. This value is required if CloudWatch
+     * logging is enabled.</p>
      */
     inline void SetLogGroupName(const Aws::String& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
 
     /**
-     * <p>The CloudWatch group name for logging. This value is required if Enabled is
-     * true.</p>
+     * <p>The CloudWatch group name for logging. This value is required if CloudWatch
+     * logging is enabled.</p>
      */
     inline void SetLogGroupName(Aws::String&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
 
     /**
-     * <p>The CloudWatch group name for logging. This value is required if Enabled is
-     * true.</p>
+     * <p>The CloudWatch group name for logging. This value is required if CloudWatch
+     * logging is enabled.</p>
      */
     inline void SetLogGroupName(const char* value) { m_logGroupNameHasBeenSet = true; m_logGroupName.assign(value); }
 
     /**
-     * <p>The CloudWatch group name for logging. This value is required if Enabled is
-     * true.</p>
+     * <p>The CloudWatch group name for logging. This value is required if CloudWatch
+     * logging is enabled.</p>
      */
     inline CloudWatchLoggingOptions& WithLogGroupName(const Aws::String& value) { SetLogGroupName(value); return *this;}
 
     /**
-     * <p>The CloudWatch group name for logging. This value is required if Enabled is
-     * true.</p>
+     * <p>The CloudWatch group name for logging. This value is required if CloudWatch
+     * logging is enabled.</p>
      */
     inline CloudWatchLoggingOptions& WithLogGroupName(Aws::String&& value) { SetLogGroupName(value); return *this;}
 
     /**
-     * <p>The CloudWatch group name for logging. This value is required if Enabled is
-     * true.</p>
+     * <p>The CloudWatch group name for logging. This value is required if CloudWatch
+     * logging is enabled.</p>
      */
     inline CloudWatchLoggingOptions& WithLogGroupName(const char* value) { SetLogGroupName(value); return *this;}
 
     /**
-     * <p>The CloudWatch log stream name for logging. This value is required if Enabled
-     * is true.</p>
+     * <p>The CloudWatch log stream name for logging. This value is required if
+     * CloudWatch logging is enabled.</p>
      */
     inline const Aws::String& GetLogStreamName() const{ return m_logStreamName; }
 
     /**
-     * <p>The CloudWatch log stream name for logging. This value is required if Enabled
-     * is true.</p>
+     * <p>The CloudWatch log stream name for logging. This value is required if
+     * CloudWatch logging is enabled.</p>
      */
     inline void SetLogStreamName(const Aws::String& value) { m_logStreamNameHasBeenSet = true; m_logStreamName = value; }
 
     /**
-     * <p>The CloudWatch log stream name for logging. This value is required if Enabled
-     * is true.</p>
+     * <p>The CloudWatch log stream name for logging. This value is required if
+     * CloudWatch logging is enabled.</p>
      */
     inline void SetLogStreamName(Aws::String&& value) { m_logStreamNameHasBeenSet = true; m_logStreamName = value; }
 
     /**
-     * <p>The CloudWatch log stream name for logging. This value is required if Enabled
-     * is true.</p>
+     * <p>The CloudWatch log stream name for logging. This value is required if
+     * CloudWatch logging is enabled.</p>
      */
     inline void SetLogStreamName(const char* value) { m_logStreamNameHasBeenSet = true; m_logStreamName.assign(value); }
 
     /**
-     * <p>The CloudWatch log stream name for logging. This value is required if Enabled
-     * is true.</p>
+     * <p>The CloudWatch log stream name for logging. This value is required if
+     * CloudWatch logging is enabled.</p>
      */
     inline CloudWatchLoggingOptions& WithLogStreamName(const Aws::String& value) { SetLogStreamName(value); return *this;}
 
     /**
-     * <p>The CloudWatch log stream name for logging. This value is required if Enabled
-     * is true.</p>
+     * <p>The CloudWatch log stream name for logging. This value is required if
+     * CloudWatch logging is enabled.</p>
      */
     inline CloudWatchLoggingOptions& WithLogStreamName(Aws::String&& value) { SetLogStreamName(value); return *this;}
 
     /**
-     * <p>The CloudWatch log stream name for logging. This value is required if Enabled
-     * is true.</p>
+     * <p>The CloudWatch log stream name for logging. This value is required if
+     * CloudWatch logging is enabled.</p>
      */
     inline CloudWatchLoggingOptions& WithLogStreamName(const char* value) { SetLogStreamName(value); return *this;}
 

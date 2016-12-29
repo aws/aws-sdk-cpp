@@ -36,7 +36,10 @@ namespace RDS
 namespace Model
 {
   /**
-   * <p>Data returned from the <b>DescribePendingMaintenanceActions</b> action.</p>
+   * <p>Data returned from the <b>DescribePendingMaintenanceActions</b>
+   * action.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/PendingMaintenanceActionsMessage">AWS
+   * API Reference</a></p>
    */
   class AWS_RDS_API DescribePendingMaintenanceActionsResult
   {

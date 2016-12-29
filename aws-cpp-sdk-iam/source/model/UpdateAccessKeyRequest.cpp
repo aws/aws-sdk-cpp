@@ -22,6 +22,7 @@ using namespace Aws::Utils;
 UpdateAccessKeyRequest::UpdateAccessKeyRequest() : 
     m_userNameHasBeenSet(false),
     m_accessKeyIdHasBeenSet(false),
+    m_status(StatusType::NOT_SET),
     m_statusHasBeenSet(false)
 {
 }

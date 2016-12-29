@@ -37,7 +37,9 @@ namespace Model
 {
   /**
    * <p>Represents the metadata and receipt rules for the receipt rule set that is
-   * currently active.</p>
+   * currently active.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DescribeActiveReceiptRuleSetResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_SES_API DescribeActiveReceiptRuleSetResult
   {

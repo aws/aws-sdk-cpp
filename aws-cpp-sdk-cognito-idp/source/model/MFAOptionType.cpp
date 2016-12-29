@@ -28,12 +28,14 @@ namespace Model
 {
 
 MFAOptionType::MFAOptionType() : 
+    m_deliveryMedium(DeliveryMediumType::NOT_SET),
     m_deliveryMediumHasBeenSet(false),
     m_attributeNameHasBeenSet(false)
 {
 }
 
 MFAOptionType::MFAOptionType(const JsonValue& jsonValue) : 
+    m_deliveryMedium(DeliveryMediumType::NOT_SET),
     m_deliveryMediumHasBeenSet(false),
     m_attributeNameHasBeenSet(false)
 {

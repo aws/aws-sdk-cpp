@@ -28,6 +28,7 @@ namespace Model
 {
 
 Diagnostics::Diagnostics() : 
+    m_errorCode(LifecycleErrorCode::NOT_SET),
     m_errorCodeHasBeenSet(false),
     m_scriptNameHasBeenSet(false),
     m_messageHasBeenSet(false),
@@ -36,6 +37,7 @@ Diagnostics::Diagnostics() :
 }
 
 Diagnostics::Diagnostics(const JsonValue& jsonValue) : 
+    m_errorCode(LifecycleErrorCode::NOT_SET),
     m_errorCodeHasBeenSet(false),
     m_scriptNameHasBeenSet(false),
     m_messageHasBeenSet(false),

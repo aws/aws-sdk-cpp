@@ -33,7 +33,10 @@ namespace Model
 {
 
   /**
-   * <p>Describes the disk container object for an import image task.</p>
+   * <p>Describes the disk container object for an import image task.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImageDiskContainer">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API ImageDiskContainer
   {
@@ -82,43 +85,43 @@ namespace Model
 
     /**
      * <p>The format of the disk image being imported.</p> <p>Valid values:
-     * <code>RAW</code> | <code>VHD</code> | <code>VMDK</code> | <code>OVA</code></p>
+     * <code>RAW</code> | <code>VHD</code> | <code>VMDK</code> | <code>OVA</code> </p>
      */
     inline const Aws::String& GetFormat() const{ return m_format; }
 
     /**
      * <p>The format of the disk image being imported.</p> <p>Valid values:
-     * <code>RAW</code> | <code>VHD</code> | <code>VMDK</code> | <code>OVA</code></p>
+     * <code>RAW</code> | <code>VHD</code> | <code>VMDK</code> | <code>OVA</code> </p>
      */
     inline void SetFormat(const Aws::String& value) { m_formatHasBeenSet = true; m_format = value; }
 
     /**
      * <p>The format of the disk image being imported.</p> <p>Valid values:
-     * <code>RAW</code> | <code>VHD</code> | <code>VMDK</code> | <code>OVA</code></p>
+     * <code>RAW</code> | <code>VHD</code> | <code>VMDK</code> | <code>OVA</code> </p>
      */
     inline void SetFormat(Aws::String&& value) { m_formatHasBeenSet = true; m_format = value; }
 
     /**
      * <p>The format of the disk image being imported.</p> <p>Valid values:
-     * <code>RAW</code> | <code>VHD</code> | <code>VMDK</code> | <code>OVA</code></p>
+     * <code>RAW</code> | <code>VHD</code> | <code>VMDK</code> | <code>OVA</code> </p>
      */
     inline void SetFormat(const char* value) { m_formatHasBeenSet = true; m_format.assign(value); }
 
     /**
      * <p>The format of the disk image being imported.</p> <p>Valid values:
-     * <code>RAW</code> | <code>VHD</code> | <code>VMDK</code> | <code>OVA</code></p>
+     * <code>RAW</code> | <code>VHD</code> | <code>VMDK</code> | <code>OVA</code> </p>
      */
     inline ImageDiskContainer& WithFormat(const Aws::String& value) { SetFormat(value); return *this;}
 
     /**
      * <p>The format of the disk image being imported.</p> <p>Valid values:
-     * <code>RAW</code> | <code>VHD</code> | <code>VMDK</code> | <code>OVA</code></p>
+     * <code>RAW</code> | <code>VHD</code> | <code>VMDK</code> | <code>OVA</code> </p>
      */
     inline ImageDiskContainer& WithFormat(Aws::String&& value) { SetFormat(value); return *this;}
 
     /**
      * <p>The format of the disk image being imported.</p> <p>Valid values:
-     * <code>RAW</code> | <code>VHD</code> | <code>VMDK</code> | <code>OVA</code></p>
+     * <code>RAW</code> | <code>VHD</code> | <code>VMDK</code> | <code>OVA</code> </p>
      */
     inline ImageDiskContainer& WithFormat(const char* value) { SetFormat(value); return *this;}
 

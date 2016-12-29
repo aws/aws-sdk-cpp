@@ -26,7 +26,10 @@ namespace Model
 
   /**
    * <p>Represents a request to delete an email address from the list of email
-   * addresses you have attempted to verify under your AWS account.</p>
+   * addresses you have attempted to verify under your AWS account.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteVerifiedEmailAddressRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_SES_API DeleteVerifiedEmailAddressRequest : public SESRequest
   {

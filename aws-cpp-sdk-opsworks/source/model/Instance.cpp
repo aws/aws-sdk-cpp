@@ -30,7 +30,9 @@ namespace Model
 Instance::Instance() : 
     m_agentVersionHasBeenSet(false),
     m_amiIdHasBeenSet(false),
+    m_architecture(Architecture::NOT_SET),
     m_architectureHasBeenSet(false),
+    m_autoScalingType(AutoScalingType::NOT_SET),
     m_autoScalingTypeHasBeenSet(false),
     m_availabilityZoneHasBeenSet(false),
     m_blockDeviceMappingsHasBeenSet(false),
@@ -59,6 +61,7 @@ Instance::Instance() :
     m_registeredByHasBeenSet(false),
     m_reportedAgentVersionHasBeenSet(false),
     m_reportedOsHasBeenSet(false),
+    m_rootDeviceType(RootDeviceType::NOT_SET),
     m_rootDeviceTypeHasBeenSet(false),
     m_rootDeviceVolumeIdHasBeenSet(false),
     m_securityGroupIdsHasBeenSet(false),
@@ -69,6 +72,7 @@ Instance::Instance() :
     m_statusHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
     m_tenancyHasBeenSet(false),
+    m_virtualizationType(VirtualizationType::NOT_SET),
     m_virtualizationTypeHasBeenSet(false)
 {
 }
@@ -76,7 +80,9 @@ Instance::Instance() :
 Instance::Instance(const JsonValue& jsonValue) : 
     m_agentVersionHasBeenSet(false),
     m_amiIdHasBeenSet(false),
+    m_architecture(Architecture::NOT_SET),
     m_architectureHasBeenSet(false),
+    m_autoScalingType(AutoScalingType::NOT_SET),
     m_autoScalingTypeHasBeenSet(false),
     m_availabilityZoneHasBeenSet(false),
     m_blockDeviceMappingsHasBeenSet(false),
@@ -105,6 +111,7 @@ Instance::Instance(const JsonValue& jsonValue) :
     m_registeredByHasBeenSet(false),
     m_reportedAgentVersionHasBeenSet(false),
     m_reportedOsHasBeenSet(false),
+    m_rootDeviceType(RootDeviceType::NOT_SET),
     m_rootDeviceTypeHasBeenSet(false),
     m_rootDeviceVolumeIdHasBeenSet(false),
     m_securityGroupIdsHasBeenSet(false),
@@ -115,6 +122,7 @@ Instance::Instance(const JsonValue& jsonValue) :
     m_statusHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
     m_tenancyHasBeenSet(false),
+    m_virtualizationType(VirtualizationType::NOT_SET),
     m_virtualizationTypeHasBeenSet(false)
 {
   *this = jsonValue;

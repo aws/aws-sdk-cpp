@@ -27,6 +27,7 @@ ImportKeyMaterialRequest::ImportKeyMaterialRequest() :
     m_importTokenHasBeenSet(false),
     m_encryptedKeyMaterialHasBeenSet(false),
     m_validToHasBeenSet(false),
+    m_expirationModel(ExpirationModelType::NOT_SET),
     m_expirationModelHasBeenSet(false)
 {
 }

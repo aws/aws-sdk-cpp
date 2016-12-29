@@ -32,7 +32,9 @@ namespace Model
 {
 
   /**
-   * <p>Provides options for defining a job.</p>
+   * <p>Provides options for defining a job.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/JobParameters">AWS
+   * API Reference</a></p>
    */
   class AWS_GLACIER_API JobParameters
   {
@@ -46,7 +48,7 @@ namespace Model
      * <p>When initiating a job to retrieve a vault inventory, you can optionally add
      * this parameter to your request to specify the output format. If you are
      * initiating an inventory job and do not specify a Format field, JSON is the
-     * default format. Valid values are "CSV" and "JSON". </p>
+     * default format. Valid values are "CSV" and "JSON".</p>
      */
     inline const Aws::String& GetFormat() const{ return m_format; }
 
@@ -54,7 +56,7 @@ namespace Model
      * <p>When initiating a job to retrieve a vault inventory, you can optionally add
      * this parameter to your request to specify the output format. If you are
      * initiating an inventory job and do not specify a Format field, JSON is the
-     * default format. Valid values are "CSV" and "JSON". </p>
+     * default format. Valid values are "CSV" and "JSON".</p>
      */
     inline void SetFormat(const Aws::String& value) { m_formatHasBeenSet = true; m_format = value; }
 
@@ -62,7 +64,7 @@ namespace Model
      * <p>When initiating a job to retrieve a vault inventory, you can optionally add
      * this parameter to your request to specify the output format. If you are
      * initiating an inventory job and do not specify a Format field, JSON is the
-     * default format. Valid values are "CSV" and "JSON". </p>
+     * default format. Valid values are "CSV" and "JSON".</p>
      */
     inline void SetFormat(Aws::String&& value) { m_formatHasBeenSet = true; m_format = value; }
 
@@ -70,7 +72,7 @@ namespace Model
      * <p>When initiating a job to retrieve a vault inventory, you can optionally add
      * this parameter to your request to specify the output format. If you are
      * initiating an inventory job and do not specify a Format field, JSON is the
-     * default format. Valid values are "CSV" and "JSON". </p>
+     * default format. Valid values are "CSV" and "JSON".</p>
      */
     inline void SetFormat(const char* value) { m_formatHasBeenSet = true; m_format.assign(value); }
 
@@ -78,7 +80,7 @@ namespace Model
      * <p>When initiating a job to retrieve a vault inventory, you can optionally add
      * this parameter to your request to specify the output format. If you are
      * initiating an inventory job and do not specify a Format field, JSON is the
-     * default format. Valid values are "CSV" and "JSON". </p>
+     * default format. Valid values are "CSV" and "JSON".</p>
      */
     inline JobParameters& WithFormat(const Aws::String& value) { SetFormat(value); return *this;}
 
@@ -86,7 +88,7 @@ namespace Model
      * <p>When initiating a job to retrieve a vault inventory, you can optionally add
      * this parameter to your request to specify the output format. If you are
      * initiating an inventory job and do not specify a Format field, JSON is the
-     * default format. Valid values are "CSV" and "JSON". </p>
+     * default format. Valid values are "CSV" and "JSON".</p>
      */
     inline JobParameters& WithFormat(Aws::String&& value) { SetFormat(value); return *this;}
 
@@ -94,7 +96,7 @@ namespace Model
      * <p>When initiating a job to retrieve a vault inventory, you can optionally add
      * this parameter to your request to specify the output format. If you are
      * initiating an inventory job and do not specify a Format field, JSON is the
-     * default format. Valid values are "CSV" and "JSON". </p>
+     * default format. Valid values are "CSV" and "JSON".</p>
      */
     inline JobParameters& WithFormat(const char* value) { SetFormat(value); return *this;}
 
@@ -309,7 +311,7 @@ namespace Model
      * <i>EndByteValue</i> plus 1 must be divisible by 1 MB or be the end of the
      * archive specified as the archive byte size value minus 1. If RetrievalByteRange
      * is not megabyte aligned, this operation returns a 400 response. </p> <p>An error
-     * occurs if you specify this field for an inventory retrieval job request. </p>
+     * occurs if you specify this field for an inventory retrieval job request.</p>
      */
     inline const Aws::String& GetRetrievalByteRange() const{ return m_retrievalByteRange; }
 
@@ -321,7 +323,7 @@ namespace Model
      * <i>EndByteValue</i> plus 1 must be divisible by 1 MB or be the end of the
      * archive specified as the archive byte size value minus 1. If RetrievalByteRange
      * is not megabyte aligned, this operation returns a 400 response. </p> <p>An error
-     * occurs if you specify this field for an inventory retrieval job request. </p>
+     * occurs if you specify this field for an inventory retrieval job request.</p>
      */
     inline void SetRetrievalByteRange(const Aws::String& value) { m_retrievalByteRangeHasBeenSet = true; m_retrievalByteRange = value; }
 
@@ -333,7 +335,7 @@ namespace Model
      * <i>EndByteValue</i> plus 1 must be divisible by 1 MB or be the end of the
      * archive specified as the archive byte size value minus 1. If RetrievalByteRange
      * is not megabyte aligned, this operation returns a 400 response. </p> <p>An error
-     * occurs if you specify this field for an inventory retrieval job request. </p>
+     * occurs if you specify this field for an inventory retrieval job request.</p>
      */
     inline void SetRetrievalByteRange(Aws::String&& value) { m_retrievalByteRangeHasBeenSet = true; m_retrievalByteRange = value; }
 
@@ -345,7 +347,7 @@ namespace Model
      * <i>EndByteValue</i> plus 1 must be divisible by 1 MB or be the end of the
      * archive specified as the archive byte size value minus 1. If RetrievalByteRange
      * is not megabyte aligned, this operation returns a 400 response. </p> <p>An error
-     * occurs if you specify this field for an inventory retrieval job request. </p>
+     * occurs if you specify this field for an inventory retrieval job request.</p>
      */
     inline void SetRetrievalByteRange(const char* value) { m_retrievalByteRangeHasBeenSet = true; m_retrievalByteRange.assign(value); }
 
@@ -357,7 +359,7 @@ namespace Model
      * <i>EndByteValue</i> plus 1 must be divisible by 1 MB or be the end of the
      * archive specified as the archive byte size value minus 1. If RetrievalByteRange
      * is not megabyte aligned, this operation returns a 400 response. </p> <p>An error
-     * occurs if you specify this field for an inventory retrieval job request. </p>
+     * occurs if you specify this field for an inventory retrieval job request.</p>
      */
     inline JobParameters& WithRetrievalByteRange(const Aws::String& value) { SetRetrievalByteRange(value); return *this;}
 
@@ -369,7 +371,7 @@ namespace Model
      * <i>EndByteValue</i> plus 1 must be divisible by 1 MB or be the end of the
      * archive specified as the archive byte size value minus 1. If RetrievalByteRange
      * is not megabyte aligned, this operation returns a 400 response. </p> <p>An error
-     * occurs if you specify this field for an inventory retrieval job request. </p>
+     * occurs if you specify this field for an inventory retrieval job request.</p>
      */
     inline JobParameters& WithRetrievalByteRange(Aws::String&& value) { SetRetrievalByteRange(value); return *this;}
 
@@ -381,9 +383,58 @@ namespace Model
      * <i>EndByteValue</i> plus 1 must be divisible by 1 MB or be the end of the
      * archive specified as the archive byte size value minus 1. If RetrievalByteRange
      * is not megabyte aligned, this operation returns a 400 response. </p> <p>An error
-     * occurs if you specify this field for an inventory retrieval job request. </p>
+     * occurs if you specify this field for an inventory retrieval job request.</p>
      */
     inline JobParameters& WithRetrievalByteRange(const char* value) { SetRetrievalByteRange(value); return *this;}
+
+    /**
+     * <p>The retrieval option to use for the archive retrieval. Valid values are
+     * <code>Expedited</code>, <code>Standard</code>, or <code>Bulk</code>.
+     * <code>Standard</code> is the default.</p>
+     */
+    inline const Aws::String& GetTier() const{ return m_tier; }
+
+    /**
+     * <p>The retrieval option to use for the archive retrieval. Valid values are
+     * <code>Expedited</code>, <code>Standard</code>, or <code>Bulk</code>.
+     * <code>Standard</code> is the default.</p>
+     */
+    inline void SetTier(const Aws::String& value) { m_tierHasBeenSet = true; m_tier = value; }
+
+    /**
+     * <p>The retrieval option to use for the archive retrieval. Valid values are
+     * <code>Expedited</code>, <code>Standard</code>, or <code>Bulk</code>.
+     * <code>Standard</code> is the default.</p>
+     */
+    inline void SetTier(Aws::String&& value) { m_tierHasBeenSet = true; m_tier = value; }
+
+    /**
+     * <p>The retrieval option to use for the archive retrieval. Valid values are
+     * <code>Expedited</code>, <code>Standard</code>, or <code>Bulk</code>.
+     * <code>Standard</code> is the default.</p>
+     */
+    inline void SetTier(const char* value) { m_tierHasBeenSet = true; m_tier.assign(value); }
+
+    /**
+     * <p>The retrieval option to use for the archive retrieval. Valid values are
+     * <code>Expedited</code>, <code>Standard</code>, or <code>Bulk</code>.
+     * <code>Standard</code> is the default.</p>
+     */
+    inline JobParameters& WithTier(const Aws::String& value) { SetTier(value); return *this;}
+
+    /**
+     * <p>The retrieval option to use for the archive retrieval. Valid values are
+     * <code>Expedited</code>, <code>Standard</code>, or <code>Bulk</code>.
+     * <code>Standard</code> is the default.</p>
+     */
+    inline JobParameters& WithTier(Aws::String&& value) { SetTier(value); return *this;}
+
+    /**
+     * <p>The retrieval option to use for the archive retrieval. Valid values are
+     * <code>Expedited</code>, <code>Standard</code>, or <code>Bulk</code>.
+     * <code>Standard</code> is the default.</p>
+     */
+    inline JobParameters& WithTier(const char* value) { SetTier(value); return *this;}
 
     /**
      * <p>Input parameters used for range inventory retrieval.</p>
@@ -423,6 +474,8 @@ namespace Model
     bool m_sNSTopicHasBeenSet;
     Aws::String m_retrievalByteRange;
     bool m_retrievalByteRangeHasBeenSet;
+    Aws::String m_tier;
+    bool m_tierHasBeenSet;
     InventoryRetrievalJobInput m_inventoryRetrievalParameters;
     bool m_inventoryRetrievalParametersHasBeenSet;
   };

@@ -24,7 +24,10 @@ DescribeReservedInstancesRequest::DescribeReservedInstancesRequest() :
     m_dryRunHasBeenSet(false),
     m_reservedInstancesIdsHasBeenSet(false),
     m_filtersHasBeenSet(false),
-    m_offeringTypeHasBeenSet(false)
+    m_offeringType(OfferingTypeValues::NOT_SET),
+    m_offeringTypeHasBeenSet(false),
+    m_offeringClass(OfferingClassType::NOT_SET),
+    m_offeringClassHasBeenSet(false)
 {
 }
 
@@ -63,7 +66,12 @@ Aws::String DescribeReservedInstancesRequest::SerializePayload() const
     ss << "OfferingType=" << OfferingTypeValuesMapper::GetNameForOfferingTypeValues(m_offeringType) << "&";
   }
 
-  ss << "Version=2015-10-01";
+  if(m_offeringClassHasBeenSet)
+  {
+    ss << "OfferingClass=" << OfferingClassTypeMapper::GetNameForOfferingClassType(m_offeringClass) << "&";
+  }
+
+  ss << "Version=2016-11-15";
   return ss.str();
 }
 

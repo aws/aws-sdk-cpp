@@ -30,6 +30,7 @@ namespace Model
 {
 
 ScalingParameters::ScalingParameters() : 
+    m_desiredInstanceType(PartitionInstanceType::NOT_SET),
     m_desiredInstanceTypeHasBeenSet(false),
     m_desiredReplicationCount(0),
     m_desiredReplicationCountHasBeenSet(false),
@@ -39,6 +40,7 @@ ScalingParameters::ScalingParameters() :
 }
 
 ScalingParameters::ScalingParameters(const XmlNode& xmlNode) : 
+    m_desiredInstanceType(PartitionInstanceType::NOT_SET),
     m_desiredInstanceTypeHasBeenSet(false),
     m_desiredReplicationCount(0),
     m_desiredReplicationCountHasBeenSet(false),

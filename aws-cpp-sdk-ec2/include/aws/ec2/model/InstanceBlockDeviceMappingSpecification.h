@@ -33,7 +33,9 @@ namespace Model
 {
 
   /**
-   * <p>Describes a block device mapping entry.</p>
+   * <p>Describes a block device mapping entry.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/InstanceBlockDeviceMappingSpecification">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API InstanceBlockDeviceMappingSpecification
   {

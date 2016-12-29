@@ -25,7 +25,9 @@ namespace Model
 {
 
   /**
-   * <p>Represents a delete integration request.</p>
+   * <p>Represents a delete integration request.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteIntegrationRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_APIGATEWAY_API DeleteIntegrationRequest : public APIGatewayRequest
   {

@@ -31,8 +31,11 @@ Instance::Instance() :
     m_fleetIdHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
     m_ipAddressHasBeenSet(false),
+    m_operatingSystem(OperatingSystem::NOT_SET),
     m_operatingSystemHasBeenSet(false),
+    m_type(EC2InstanceType::NOT_SET),
     m_typeHasBeenSet(false),
+    m_status(InstanceStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_creationTimeHasBeenSet(false)
 {
@@ -42,8 +45,11 @@ Instance::Instance(const JsonValue& jsonValue) :
     m_fleetIdHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
     m_ipAddressHasBeenSet(false),
+    m_operatingSystem(OperatingSystem::NOT_SET),
     m_operatingSystemHasBeenSet(false),
+    m_type(EC2InstanceType::NOT_SET),
     m_typeHasBeenSet(false),
+    m_status(InstanceStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_creationTimeHasBeenSet(false)
 {

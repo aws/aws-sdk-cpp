@@ -28,7 +28,9 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for RegisterImage.</p>
+   * <p>Contains the parameters for RegisterImage.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RegisterImageRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API RegisterImageRequest : public EC2Request
   {
@@ -362,102 +364,126 @@ namespace Model
     inline RegisterImageRequest& AddBlockDeviceMappings(BlockDeviceMapping&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.push_back(value); return *this; }
 
     /**
-     * <p>The type of virtualization.</p> <p>Default: <code>paravirtual</code></p>
+     * <p>The type of virtualization.</p> <p>Default: <code>paravirtual</code> </p>
      */
     inline const Aws::String& GetVirtualizationType() const{ return m_virtualizationType; }
 
     /**
-     * <p>The type of virtualization.</p> <p>Default: <code>paravirtual</code></p>
+     * <p>The type of virtualization.</p> <p>Default: <code>paravirtual</code> </p>
      */
     inline void SetVirtualizationType(const Aws::String& value) { m_virtualizationTypeHasBeenSet = true; m_virtualizationType = value; }
 
     /**
-     * <p>The type of virtualization.</p> <p>Default: <code>paravirtual</code></p>
+     * <p>The type of virtualization.</p> <p>Default: <code>paravirtual</code> </p>
      */
     inline void SetVirtualizationType(Aws::String&& value) { m_virtualizationTypeHasBeenSet = true; m_virtualizationType = value; }
 
     /**
-     * <p>The type of virtualization.</p> <p>Default: <code>paravirtual</code></p>
+     * <p>The type of virtualization.</p> <p>Default: <code>paravirtual</code> </p>
      */
     inline void SetVirtualizationType(const char* value) { m_virtualizationTypeHasBeenSet = true; m_virtualizationType.assign(value); }
 
     /**
-     * <p>The type of virtualization.</p> <p>Default: <code>paravirtual</code></p>
+     * <p>The type of virtualization.</p> <p>Default: <code>paravirtual</code> </p>
      */
     inline RegisterImageRequest& WithVirtualizationType(const Aws::String& value) { SetVirtualizationType(value); return *this;}
 
     /**
-     * <p>The type of virtualization.</p> <p>Default: <code>paravirtual</code></p>
+     * <p>The type of virtualization.</p> <p>Default: <code>paravirtual</code> </p>
      */
     inline RegisterImageRequest& WithVirtualizationType(Aws::String&& value) { SetVirtualizationType(value); return *this;}
 
     /**
-     * <p>The type of virtualization.</p> <p>Default: <code>paravirtual</code></p>
+     * <p>The type of virtualization.</p> <p>Default: <code>paravirtual</code> </p>
      */
     inline RegisterImageRequest& WithVirtualizationType(const char* value) { SetVirtualizationType(value); return *this;}
 
     /**
-     * <p>Set to <code>simple</code> to enable enhanced networking for the AMI and any
-     * instances that you launch from the AMI.</p> <p>There is no way to disable
-     * enhanced networking at this time.</p> <p>This option is supported only for HVM
-     * AMIs. Specifying this option with a PV AMI can make instances launched from the
-     * AMI unreachable.</p>
+     * <p>Set to <code>simple</code> to enable enhanced networking with the Intel 82599
+     * Virtual Function interface for the AMI and any instances that you launch from
+     * the AMI.</p> <p>There is no way to disable <code>sriovNetSupport</code> at this
+     * time.</p> <p>This option is supported only for HVM AMIs. Specifying this option
+     * with a PV AMI can make instances launched from the AMI unreachable.</p>
      */
     inline const Aws::String& GetSriovNetSupport() const{ return m_sriovNetSupport; }
 
     /**
-     * <p>Set to <code>simple</code> to enable enhanced networking for the AMI and any
-     * instances that you launch from the AMI.</p> <p>There is no way to disable
-     * enhanced networking at this time.</p> <p>This option is supported only for HVM
-     * AMIs. Specifying this option with a PV AMI can make instances launched from the
-     * AMI unreachable.</p>
+     * <p>Set to <code>simple</code> to enable enhanced networking with the Intel 82599
+     * Virtual Function interface for the AMI and any instances that you launch from
+     * the AMI.</p> <p>There is no way to disable <code>sriovNetSupport</code> at this
+     * time.</p> <p>This option is supported only for HVM AMIs. Specifying this option
+     * with a PV AMI can make instances launched from the AMI unreachable.</p>
      */
     inline void SetSriovNetSupport(const Aws::String& value) { m_sriovNetSupportHasBeenSet = true; m_sriovNetSupport = value; }
 
     /**
-     * <p>Set to <code>simple</code> to enable enhanced networking for the AMI and any
-     * instances that you launch from the AMI.</p> <p>There is no way to disable
-     * enhanced networking at this time.</p> <p>This option is supported only for HVM
-     * AMIs. Specifying this option with a PV AMI can make instances launched from the
-     * AMI unreachable.</p>
+     * <p>Set to <code>simple</code> to enable enhanced networking with the Intel 82599
+     * Virtual Function interface for the AMI and any instances that you launch from
+     * the AMI.</p> <p>There is no way to disable <code>sriovNetSupport</code> at this
+     * time.</p> <p>This option is supported only for HVM AMIs. Specifying this option
+     * with a PV AMI can make instances launched from the AMI unreachable.</p>
      */
     inline void SetSriovNetSupport(Aws::String&& value) { m_sriovNetSupportHasBeenSet = true; m_sriovNetSupport = value; }
 
     /**
-     * <p>Set to <code>simple</code> to enable enhanced networking for the AMI and any
-     * instances that you launch from the AMI.</p> <p>There is no way to disable
-     * enhanced networking at this time.</p> <p>This option is supported only for HVM
-     * AMIs. Specifying this option with a PV AMI can make instances launched from the
-     * AMI unreachable.</p>
+     * <p>Set to <code>simple</code> to enable enhanced networking with the Intel 82599
+     * Virtual Function interface for the AMI and any instances that you launch from
+     * the AMI.</p> <p>There is no way to disable <code>sriovNetSupport</code> at this
+     * time.</p> <p>This option is supported only for HVM AMIs. Specifying this option
+     * with a PV AMI can make instances launched from the AMI unreachable.</p>
      */
     inline void SetSriovNetSupport(const char* value) { m_sriovNetSupportHasBeenSet = true; m_sriovNetSupport.assign(value); }
 
     /**
-     * <p>Set to <code>simple</code> to enable enhanced networking for the AMI and any
-     * instances that you launch from the AMI.</p> <p>There is no way to disable
-     * enhanced networking at this time.</p> <p>This option is supported only for HVM
-     * AMIs. Specifying this option with a PV AMI can make instances launched from the
-     * AMI unreachable.</p>
+     * <p>Set to <code>simple</code> to enable enhanced networking with the Intel 82599
+     * Virtual Function interface for the AMI and any instances that you launch from
+     * the AMI.</p> <p>There is no way to disable <code>sriovNetSupport</code> at this
+     * time.</p> <p>This option is supported only for HVM AMIs. Specifying this option
+     * with a PV AMI can make instances launched from the AMI unreachable.</p>
      */
     inline RegisterImageRequest& WithSriovNetSupport(const Aws::String& value) { SetSriovNetSupport(value); return *this;}
 
     /**
-     * <p>Set to <code>simple</code> to enable enhanced networking for the AMI and any
-     * instances that you launch from the AMI.</p> <p>There is no way to disable
-     * enhanced networking at this time.</p> <p>This option is supported only for HVM
-     * AMIs. Specifying this option with a PV AMI can make instances launched from the
-     * AMI unreachable.</p>
+     * <p>Set to <code>simple</code> to enable enhanced networking with the Intel 82599
+     * Virtual Function interface for the AMI and any instances that you launch from
+     * the AMI.</p> <p>There is no way to disable <code>sriovNetSupport</code> at this
+     * time.</p> <p>This option is supported only for HVM AMIs. Specifying this option
+     * with a PV AMI can make instances launched from the AMI unreachable.</p>
      */
     inline RegisterImageRequest& WithSriovNetSupport(Aws::String&& value) { SetSriovNetSupport(value); return *this;}
 
     /**
-     * <p>Set to <code>simple</code> to enable enhanced networking for the AMI and any
-     * instances that you launch from the AMI.</p> <p>There is no way to disable
-     * enhanced networking at this time.</p> <p>This option is supported only for HVM
-     * AMIs. Specifying this option with a PV AMI can make instances launched from the
-     * AMI unreachable.</p>
+     * <p>Set to <code>simple</code> to enable enhanced networking with the Intel 82599
+     * Virtual Function interface for the AMI and any instances that you launch from
+     * the AMI.</p> <p>There is no way to disable <code>sriovNetSupport</code> at this
+     * time.</p> <p>This option is supported only for HVM AMIs. Specifying this option
+     * with a PV AMI can make instances launched from the AMI unreachable.</p>
      */
     inline RegisterImageRequest& WithSriovNetSupport(const char* value) { SetSriovNetSupport(value); return *this;}
+
+    /**
+     * <p>Set to <code>true</code> to enable enhanced networking with ENA for the AMI
+     * and any instances that you launch from the AMI.</p> <p>This option is supported
+     * only for HVM AMIs. Specifying this option with a PV AMI can make instances
+     * launched from the AMI unreachable.</p>
+     */
+    inline bool GetEnaSupport() const{ return m_enaSupport; }
+
+    /**
+     * <p>Set to <code>true</code> to enable enhanced networking with ENA for the AMI
+     * and any instances that you launch from the AMI.</p> <p>This option is supported
+     * only for HVM AMIs. Specifying this option with a PV AMI can make instances
+     * launched from the AMI unreachable.</p>
+     */
+    inline void SetEnaSupport(bool value) { m_enaSupportHasBeenSet = true; m_enaSupport = value; }
+
+    /**
+     * <p>Set to <code>true</code> to enable enhanced networking with ENA for the AMI
+     * and any instances that you launch from the AMI.</p> <p>This option is supported
+     * only for HVM AMIs. Specifying this option with a PV AMI can make instances
+     * launched from the AMI unreachable.</p>
+     */
+    inline RegisterImageRequest& WithEnaSupport(bool value) { SetEnaSupport(value); return *this;}
 
   private:
     bool m_dryRun;
@@ -482,6 +508,8 @@ namespace Model
     bool m_virtualizationTypeHasBeenSet;
     Aws::String m_sriovNetSupport;
     bool m_sriovNetSupportHasBeenSet;
+    bool m_enaSupport;
+    bool m_enaSupportHasBeenSet;
   };
 
 } // namespace Model

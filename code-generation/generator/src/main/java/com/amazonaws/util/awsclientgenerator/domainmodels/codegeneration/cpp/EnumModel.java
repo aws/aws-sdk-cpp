@@ -17,9 +17,7 @@ package com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.cpp;
 
 import lombok.Data;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
+import java.util.*;
 
 @Data
 public class EnumModel {

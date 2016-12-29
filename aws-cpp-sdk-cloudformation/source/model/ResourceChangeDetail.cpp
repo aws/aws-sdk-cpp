@@ -31,7 +31,9 @@ namespace Model
 
 ResourceChangeDetail::ResourceChangeDetail() : 
     m_targetHasBeenSet(false),
+    m_evaluation(EvaluationType::NOT_SET),
     m_evaluationHasBeenSet(false),
+    m_changeSource(ChangeSource::NOT_SET),
     m_changeSourceHasBeenSet(false),
     m_causingEntityHasBeenSet(false)
 {
@@ -39,7 +41,9 @@ ResourceChangeDetail::ResourceChangeDetail() :
 
 ResourceChangeDetail::ResourceChangeDetail(const XmlNode& xmlNode) : 
     m_targetHasBeenSet(false),
+    m_evaluation(EvaluationType::NOT_SET),
     m_evaluationHasBeenSet(false),
+    m_changeSource(ChangeSource::NOT_SET),
     m_changeSourceHasBeenSet(false),
     m_causingEntityHasBeenSet(false)
 {

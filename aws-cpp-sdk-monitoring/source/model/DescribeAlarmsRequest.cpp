@@ -22,6 +22,7 @@ using namespace Aws::Utils;
 DescribeAlarmsRequest::DescribeAlarmsRequest() : 
     m_alarmNamesHasBeenSet(false),
     m_alarmNamePrefixHasBeenSet(false),
+    m_stateValue(StateValue::NOT_SET),
     m_stateValueHasBeenSet(false),
     m_actionPrefixHasBeenSet(false),
     m_maxRecords(0),

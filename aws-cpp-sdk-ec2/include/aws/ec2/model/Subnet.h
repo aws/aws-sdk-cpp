@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/SubnetState.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ec2/model/SubnetIpv6CidrBlockAssociation.h>
 #include <aws/ec2/model/Tag.h>
 
 namespace Aws
@@ -35,7 +36,9 @@ namespace Model
 {
 
   /**
-   * <p>Describes a subnet.</p>
+   * <p>Describes a subnet.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/Subnet">AWS API
+   * Reference</a></p>
    */
   class AWS_EC2_API Subnet
   {
@@ -143,55 +146,108 @@ namespace Model
     inline Subnet& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 
     /**
-     * <p>The CIDR block assigned to the subnet.</p>
+     * <p>The IPv4 CIDR block assigned to the subnet.</p>
      */
     inline const Aws::String& GetCidrBlock() const{ return m_cidrBlock; }
 
     /**
-     * <p>The CIDR block assigned to the subnet.</p>
+     * <p>The IPv4 CIDR block assigned to the subnet.</p>
      */
     inline void SetCidrBlock(const Aws::String& value) { m_cidrBlockHasBeenSet = true; m_cidrBlock = value; }
 
     /**
-     * <p>The CIDR block assigned to the subnet.</p>
+     * <p>The IPv4 CIDR block assigned to the subnet.</p>
      */
     inline void SetCidrBlock(Aws::String&& value) { m_cidrBlockHasBeenSet = true; m_cidrBlock = value; }
 
     /**
-     * <p>The CIDR block assigned to the subnet.</p>
+     * <p>The IPv4 CIDR block assigned to the subnet.</p>
      */
     inline void SetCidrBlock(const char* value) { m_cidrBlockHasBeenSet = true; m_cidrBlock.assign(value); }
 
     /**
-     * <p>The CIDR block assigned to the subnet.</p>
+     * <p>The IPv4 CIDR block assigned to the subnet.</p>
      */
     inline Subnet& WithCidrBlock(const Aws::String& value) { SetCidrBlock(value); return *this;}
 
     /**
-     * <p>The CIDR block assigned to the subnet.</p>
+     * <p>The IPv4 CIDR block assigned to the subnet.</p>
      */
     inline Subnet& WithCidrBlock(Aws::String&& value) { SetCidrBlock(value); return *this;}
 
     /**
-     * <p>The CIDR block assigned to the subnet.</p>
+     * <p>The IPv4 CIDR block assigned to the subnet.</p>
      */
     inline Subnet& WithCidrBlock(const char* value) { SetCidrBlock(value); return *this;}
 
     /**
-     * <p>The number of unused IP addresses in the subnet. Note that the IP addresses
-     * for any stopped instances are considered unavailable.</p>
+     * <p>Information about the IPv6 CIDR blocks associated with the subnet.</p>
+     */
+    inline const Aws::Vector<SubnetIpv6CidrBlockAssociation>& GetIpv6CidrBlockAssociationSet() const{ return m_ipv6CidrBlockAssociationSet; }
+
+    /**
+     * <p>Information about the IPv6 CIDR blocks associated with the subnet.</p>
+     */
+    inline void SetIpv6CidrBlockAssociationSet(const Aws::Vector<SubnetIpv6CidrBlockAssociation>& value) { m_ipv6CidrBlockAssociationSetHasBeenSet = true; m_ipv6CidrBlockAssociationSet = value; }
+
+    /**
+     * <p>Information about the IPv6 CIDR blocks associated with the subnet.</p>
+     */
+    inline void SetIpv6CidrBlockAssociationSet(Aws::Vector<SubnetIpv6CidrBlockAssociation>&& value) { m_ipv6CidrBlockAssociationSetHasBeenSet = true; m_ipv6CidrBlockAssociationSet = value; }
+
+    /**
+     * <p>Information about the IPv6 CIDR blocks associated with the subnet.</p>
+     */
+    inline Subnet& WithIpv6CidrBlockAssociationSet(const Aws::Vector<SubnetIpv6CidrBlockAssociation>& value) { SetIpv6CidrBlockAssociationSet(value); return *this;}
+
+    /**
+     * <p>Information about the IPv6 CIDR blocks associated with the subnet.</p>
+     */
+    inline Subnet& WithIpv6CidrBlockAssociationSet(Aws::Vector<SubnetIpv6CidrBlockAssociation>&& value) { SetIpv6CidrBlockAssociationSet(value); return *this;}
+
+    /**
+     * <p>Information about the IPv6 CIDR blocks associated with the subnet.</p>
+     */
+    inline Subnet& AddIpv6CidrBlockAssociationSet(const SubnetIpv6CidrBlockAssociation& value) { m_ipv6CidrBlockAssociationSetHasBeenSet = true; m_ipv6CidrBlockAssociationSet.push_back(value); return *this; }
+
+    /**
+     * <p>Information about the IPv6 CIDR blocks associated with the subnet.</p>
+     */
+    inline Subnet& AddIpv6CidrBlockAssociationSet(SubnetIpv6CidrBlockAssociation&& value) { m_ipv6CidrBlockAssociationSetHasBeenSet = true; m_ipv6CidrBlockAssociationSet.push_back(value); return *this; }
+
+    /**
+     * <p>Indicates whether a network interface created in this subnet (including a
+     * network interface created by <a>RunInstances</a>) receives an IPv6 address.</p>
+     */
+    inline bool GetAssignIpv6AddressOnCreation() const{ return m_assignIpv6AddressOnCreation; }
+
+    /**
+     * <p>Indicates whether a network interface created in this subnet (including a
+     * network interface created by <a>RunInstances</a>) receives an IPv6 address.</p>
+     */
+    inline void SetAssignIpv6AddressOnCreation(bool value) { m_assignIpv6AddressOnCreationHasBeenSet = true; m_assignIpv6AddressOnCreation = value; }
+
+    /**
+     * <p>Indicates whether a network interface created in this subnet (including a
+     * network interface created by <a>RunInstances</a>) receives an IPv6 address.</p>
+     */
+    inline Subnet& WithAssignIpv6AddressOnCreation(bool value) { SetAssignIpv6AddressOnCreation(value); return *this;}
+
+    /**
+     * <p>The number of unused private IPv4 addresses in the subnet. Note that the IPv4
+     * addresses for any stopped instances are considered unavailable.</p>
      */
     inline int GetAvailableIpAddressCount() const{ return m_availableIpAddressCount; }
 
     /**
-     * <p>The number of unused IP addresses in the subnet. Note that the IP addresses
-     * for any stopped instances are considered unavailable.</p>
+     * <p>The number of unused private IPv4 addresses in the subnet. Note that the IPv4
+     * addresses for any stopped instances are considered unavailable.</p>
      */
     inline void SetAvailableIpAddressCount(int value) { m_availableIpAddressCountHasBeenSet = true; m_availableIpAddressCount = value; }
 
     /**
-     * <p>The number of unused IP addresses in the subnet. Note that the IP addresses
-     * for any stopped instances are considered unavailable.</p>
+     * <p>The number of unused private IPv4 addresses in the subnet. Note that the IPv4
+     * addresses for any stopped instances are considered unavailable.</p>
      */
     inline Subnet& WithAvailableIpAddressCount(int value) { SetAvailableIpAddressCount(value); return *this;}
 
@@ -246,19 +302,19 @@ namespace Model
     inline Subnet& WithDefaultForAz(bool value) { SetDefaultForAz(value); return *this;}
 
     /**
-     * <p>Indicates whether instances launched in this subnet receive a public IP
+     * <p>Indicates whether instances launched in this subnet receive a public IPv4
      * address.</p>
      */
     inline bool GetMapPublicIpOnLaunch() const{ return m_mapPublicIpOnLaunch; }
 
     /**
-     * <p>Indicates whether instances launched in this subnet receive a public IP
+     * <p>Indicates whether instances launched in this subnet receive a public IPv4
      * address.</p>
      */
     inline void SetMapPublicIpOnLaunch(bool value) { m_mapPublicIpOnLaunchHasBeenSet = true; m_mapPublicIpOnLaunch = value; }
 
     /**
-     * <p>Indicates whether instances launched in this subnet receive a public IP
+     * <p>Indicates whether instances launched in this subnet receive a public IPv4
      * address.</p>
      */
     inline Subnet& WithMapPublicIpOnLaunch(bool value) { SetMapPublicIpOnLaunch(value); return *this;}
@@ -307,6 +363,10 @@ namespace Model
     bool m_vpcIdHasBeenSet;
     Aws::String m_cidrBlock;
     bool m_cidrBlockHasBeenSet;
+    Aws::Vector<SubnetIpv6CidrBlockAssociation> m_ipv6CidrBlockAssociationSet;
+    bool m_ipv6CidrBlockAssociationSetHasBeenSet;
+    bool m_assignIpv6AddressOnCreation;
+    bool m_assignIpv6AddressOnCreationHasBeenSet;
     int m_availableIpAddressCount;
     bool m_availableIpAddressCountHasBeenSet;
     Aws::String m_availabilityZone;

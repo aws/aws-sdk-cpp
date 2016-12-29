@@ -28,12 +28,14 @@ namespace Model
 {
 
 EncryptionConfiguration::EncryptionConfiguration() : 
+    m_noEncryptionConfig(NoEncryptionConfig::NOT_SET),
     m_noEncryptionConfigHasBeenSet(false),
     m_kMSEncryptionConfigHasBeenSet(false)
 {
 }
 
 EncryptionConfiguration::EncryptionConfiguration(const JsonValue& jsonValue) : 
+    m_noEncryptionConfig(NoEncryptionConfig::NOT_SET),
     m_noEncryptionConfigHasBeenSet(false),
     m_kMSEncryptionConfigHasBeenSet(false)
 {

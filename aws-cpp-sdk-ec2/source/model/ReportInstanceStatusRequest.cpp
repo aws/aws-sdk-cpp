@@ -23,6 +23,7 @@ ReportInstanceStatusRequest::ReportInstanceStatusRequest() :
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
     m_instancesHasBeenSet(false),
+    m_status(ReportStatusType::NOT_SET),
     m_statusHasBeenSet(false),
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
@@ -82,7 +83,7 @@ Aws::String ReportInstanceStatusRequest::SerializePayload() const
     ss << "Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
 
-  ss << "Version=2015-10-01";
+  ss << "Version=2016-11-15";
   return ss.str();
 }
 

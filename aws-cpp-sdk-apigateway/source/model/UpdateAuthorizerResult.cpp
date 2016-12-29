@@ -25,11 +25,13 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 UpdateAuthorizerResult::UpdateAuthorizerResult() : 
+    m_type(AuthorizerType::NOT_SET),
     m_authorizerResultTtlInSeconds(0)
 {
 }
 
 UpdateAuthorizerResult::UpdateAuthorizerResult(const AmazonWebServiceResult<JsonValue>& result) : 
+    m_type(AuthorizerType::NOT_SET),
     m_authorizerResultTtlInSeconds(0)
 {
   *this = result;

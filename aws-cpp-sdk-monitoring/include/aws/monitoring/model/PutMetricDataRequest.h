@@ -27,7 +27,6 @@ namespace Model
 {
 
   /**
-   * <p>Describes the inputs for PutMetricData.</p>
    */
   class AWS_CLOUDWATCH_API PutMetricDataRequest : public CloudWatchRequest
   {
@@ -36,93 +35,86 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     /**
-     * <p>The namespace for the metric data.</p> <note> <p>You cannot specify a
-     * namespace that begins with "AWS/". Namespaces that begin with "AWS/" are
-     * reserved for other Amazon Web Services products that send metrics to Amazon
-     * CloudWatch.</p> </note>
+     * <p>The namespace for the metric data.</p> <p>You cannot specify a namespace that
+     * begins with "AWS/". Namespaces that begin with "AWS/" are reserved for use by
+     * Amazon Web Services products.</p>
      */
     inline const Aws::String& GetNamespace() const{ return m_namespace; }
 
     /**
-     * <p>The namespace for the metric data.</p> <note> <p>You cannot specify a
-     * namespace that begins with "AWS/". Namespaces that begin with "AWS/" are
-     * reserved for other Amazon Web Services products that send metrics to Amazon
-     * CloudWatch.</p> </note>
+     * <p>The namespace for the metric data.</p> <p>You cannot specify a namespace that
+     * begins with "AWS/". Namespaces that begin with "AWS/" are reserved for use by
+     * Amazon Web Services products.</p>
      */
     inline void SetNamespace(const Aws::String& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
 
     /**
-     * <p>The namespace for the metric data.</p> <note> <p>You cannot specify a
-     * namespace that begins with "AWS/". Namespaces that begin with "AWS/" are
-     * reserved for other Amazon Web Services products that send metrics to Amazon
-     * CloudWatch.</p> </note>
+     * <p>The namespace for the metric data.</p> <p>You cannot specify a namespace that
+     * begins with "AWS/". Namespaces that begin with "AWS/" are reserved for use by
+     * Amazon Web Services products.</p>
      */
     inline void SetNamespace(Aws::String&& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
 
     /**
-     * <p>The namespace for the metric data.</p> <note> <p>You cannot specify a
-     * namespace that begins with "AWS/". Namespaces that begin with "AWS/" are
-     * reserved for other Amazon Web Services products that send metrics to Amazon
-     * CloudWatch.</p> </note>
+     * <p>The namespace for the metric data.</p> <p>You cannot specify a namespace that
+     * begins with "AWS/". Namespaces that begin with "AWS/" are reserved for use by
+     * Amazon Web Services products.</p>
      */
     inline void SetNamespace(const char* value) { m_namespaceHasBeenSet = true; m_namespace.assign(value); }
 
     /**
-     * <p>The namespace for the metric data.</p> <note> <p>You cannot specify a
-     * namespace that begins with "AWS/". Namespaces that begin with "AWS/" are
-     * reserved for other Amazon Web Services products that send metrics to Amazon
-     * CloudWatch.</p> </note>
+     * <p>The namespace for the metric data.</p> <p>You cannot specify a namespace that
+     * begins with "AWS/". Namespaces that begin with "AWS/" are reserved for use by
+     * Amazon Web Services products.</p>
      */
     inline PutMetricDataRequest& WithNamespace(const Aws::String& value) { SetNamespace(value); return *this;}
 
     /**
-     * <p>The namespace for the metric data.</p> <note> <p>You cannot specify a
-     * namespace that begins with "AWS/". Namespaces that begin with "AWS/" are
-     * reserved for other Amazon Web Services products that send metrics to Amazon
-     * CloudWatch.</p> </note>
+     * <p>The namespace for the metric data.</p> <p>You cannot specify a namespace that
+     * begins with "AWS/". Namespaces that begin with "AWS/" are reserved for use by
+     * Amazon Web Services products.</p>
      */
     inline PutMetricDataRequest& WithNamespace(Aws::String&& value) { SetNamespace(value); return *this;}
 
     /**
-     * <p>The namespace for the metric data.</p> <note> <p>You cannot specify a
-     * namespace that begins with "AWS/". Namespaces that begin with "AWS/" are
-     * reserved for other Amazon Web Services products that send metrics to Amazon
-     * CloudWatch.</p> </note>
+     * <p>The namespace for the metric data.</p> <p>You cannot specify a namespace that
+     * begins with "AWS/". Namespaces that begin with "AWS/" are reserved for use by
+     * Amazon Web Services products.</p>
      */
     inline PutMetricDataRequest& WithNamespace(const char* value) { SetNamespace(value); return *this;}
 
     /**
-     * <p>A list of data describing the metric.</p>
+     * <p>The data for the metric.</p>
      */
     inline const Aws::Vector<MetricDatum>& GetMetricData() const{ return m_metricData; }
 
     /**
-     * <p>A list of data describing the metric.</p>
+     * <p>The data for the metric.</p>
      */
     inline void SetMetricData(const Aws::Vector<MetricDatum>& value) { m_metricDataHasBeenSet = true; m_metricData = value; }
 
     /**
-     * <p>A list of data describing the metric.</p>
+     * <p>The data for the metric.</p>
      */
     inline void SetMetricData(Aws::Vector<MetricDatum>&& value) { m_metricDataHasBeenSet = true; m_metricData = value; }
 
     /**
-     * <p>A list of data describing the metric.</p>
+     * <p>The data for the metric.</p>
      */
     inline PutMetricDataRequest& WithMetricData(const Aws::Vector<MetricDatum>& value) { SetMetricData(value); return *this;}
 
     /**
-     * <p>A list of data describing the metric.</p>
+     * <p>The data for the metric.</p>
      */
     inline PutMetricDataRequest& WithMetricData(Aws::Vector<MetricDatum>&& value) { SetMetricData(value); return *this;}
 
     /**
-     * <p>A list of data describing the metric.</p>
+     * <p>The data for the metric.</p>
      */
     inline PutMetricDataRequest& AddMetricData(const MetricDatum& value) { m_metricDataHasBeenSet = true; m_metricData.push_back(value); return *this; }
 
     /**
-     * <p>A list of data describing the metric.</p>
+     * <p>The data for the metric.</p>
      */
     inline PutMetricDataRequest& AddMetricData(MetricDatum&& value) { m_metricDataHasBeenSet = true; m_metricData.push_back(value); return *this; }
 

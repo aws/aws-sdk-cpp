@@ -25,13 +25,16 @@ RegisterImageRequest::RegisterImageRequest() :
     m_imageLocationHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
+    m_architecture(ArchitectureValues::NOT_SET),
     m_architectureHasBeenSet(false),
     m_kernelIdHasBeenSet(false),
     m_ramdiskIdHasBeenSet(false),
     m_rootDeviceNameHasBeenSet(false),
     m_blockDeviceMappingsHasBeenSet(false),
     m_virtualizationTypeHasBeenSet(false),
-    m_sriovNetSupportHasBeenSet(false)
+    m_sriovNetSupportHasBeenSet(false),
+    m_enaSupport(false),
+    m_enaSupportHasBeenSet(false)
 {
 }
 
@@ -99,7 +102,12 @@ Aws::String RegisterImageRequest::SerializePayload() const
     ss << "SriovNetSupport=" << StringUtils::URLEncode(m_sriovNetSupport.c_str()) << "&";
   }
 
-  ss << "Version=2015-10-01";
+  if(m_enaSupportHasBeenSet)
+  {
+    ss << "EnaSupport=" << m_enaSupport << "&";
+  }
+
+  ss << "Version=2016-11-15";
   return ss.str();
 }
 

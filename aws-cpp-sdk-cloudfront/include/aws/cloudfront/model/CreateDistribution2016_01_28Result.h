@@ -34,7 +34,9 @@ namespace CloudFront
 namespace Model
 {
   /**
-   * The returned result of the corresponding request.
+   * The returned result of the corresponding request.<p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/CreateDistributionResult">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API CreateDistribution2016_01_28Result
   {

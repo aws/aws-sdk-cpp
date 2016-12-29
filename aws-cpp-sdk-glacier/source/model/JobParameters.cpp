@@ -34,6 +34,7 @@ JobParameters::JobParameters() :
     m_descriptionHasBeenSet(false),
     m_sNSTopicHasBeenSet(false),
     m_retrievalByteRangeHasBeenSet(false),
+    m_tierHasBeenSet(false),
     m_inventoryRetrievalParametersHasBeenSet(false)
 {
 }
@@ -45,6 +46,7 @@ JobParameters::JobParameters(const JsonValue& jsonValue) :
     m_descriptionHasBeenSet(false),
     m_sNSTopicHasBeenSet(false),
     m_retrievalByteRangeHasBeenSet(false),
+    m_tierHasBeenSet(false),
     m_inventoryRetrievalParametersHasBeenSet(false)
 {
   *this = jsonValue;
@@ -94,6 +96,13 @@ JobParameters& JobParameters::operator =(const JsonValue& jsonValue)
     m_retrievalByteRangeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Tier"))
+  {
+    m_tier = jsonValue.GetString("Tier");
+
+    m_tierHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("InventoryRetrievalParameters"))
   {
     m_inventoryRetrievalParameters = jsonValue.GetObject("InventoryRetrievalParameters");
@@ -141,6 +150,12 @@ JsonValue JobParameters::Jsonize() const
   if(m_retrievalByteRangeHasBeenSet)
   {
    payload.WithString("RetrievalByteRange", m_retrievalByteRange);
+
+  }
+
+  if(m_tierHasBeenSet)
+  {
+   payload.WithString("Tier", m_tier);
 
   }
 

@@ -22,6 +22,7 @@ using namespace Aws::Utils;
 AllocateAddressRequest::AllocateAddressRequest() : 
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
+    m_domain(DomainType::NOT_SET),
     m_domainHasBeenSet(false)
 {
 }
@@ -40,7 +41,7 @@ Aws::String AllocateAddressRequest::SerializePayload() const
     ss << "Domain=" << DomainTypeMapper::GetNameForDomainType(m_domain) << "&";
   }
 
-  ss << "Version=2015-10-01";
+  ss << "Version=2016-11-15";
   return ss.str();
 }
 

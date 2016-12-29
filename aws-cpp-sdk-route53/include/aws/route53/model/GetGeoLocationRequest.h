@@ -30,7 +30,9 @@ namespace Model
 
   /**
    * <p>A complex type that contains information about the request to get a geo
-   * location.</p>
+   * location.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetGeoLocationRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_ROUTE53_API GetGeoLocationRequest : public Route53Request
   {

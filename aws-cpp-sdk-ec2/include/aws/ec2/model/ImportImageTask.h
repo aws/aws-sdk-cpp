@@ -34,7 +34,9 @@ namespace Model
 {
 
   /**
-   * <p>Describes an import image task.</p>
+   * <p>Describes an import image task.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportImageTask">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API ImportImageTask
   {
@@ -83,43 +85,43 @@ namespace Model
 
     /**
      * <p>The architecture of the virtual machine.</p> <p>Valid values:
-     * <code>i386</code> | <code>x86_64</code></p>
+     * <code>i386</code> | <code>x86_64</code> </p>
      */
     inline const Aws::String& GetArchitecture() const{ return m_architecture; }
 
     /**
      * <p>The architecture of the virtual machine.</p> <p>Valid values:
-     * <code>i386</code> | <code>x86_64</code></p>
+     * <code>i386</code> | <code>x86_64</code> </p>
      */
     inline void SetArchitecture(const Aws::String& value) { m_architectureHasBeenSet = true; m_architecture = value; }
 
     /**
      * <p>The architecture of the virtual machine.</p> <p>Valid values:
-     * <code>i386</code> | <code>x86_64</code></p>
+     * <code>i386</code> | <code>x86_64</code> </p>
      */
     inline void SetArchitecture(Aws::String&& value) { m_architectureHasBeenSet = true; m_architecture = value; }
 
     /**
      * <p>The architecture of the virtual machine.</p> <p>Valid values:
-     * <code>i386</code> | <code>x86_64</code></p>
+     * <code>i386</code> | <code>x86_64</code> </p>
      */
     inline void SetArchitecture(const char* value) { m_architectureHasBeenSet = true; m_architecture.assign(value); }
 
     /**
      * <p>The architecture of the virtual machine.</p> <p>Valid values:
-     * <code>i386</code> | <code>x86_64</code></p>
+     * <code>i386</code> | <code>x86_64</code> </p>
      */
     inline ImportImageTask& WithArchitecture(const Aws::String& value) { SetArchitecture(value); return *this;}
 
     /**
      * <p>The architecture of the virtual machine.</p> <p>Valid values:
-     * <code>i386</code> | <code>x86_64</code></p>
+     * <code>i386</code> | <code>x86_64</code> </p>
      */
     inline ImportImageTask& WithArchitecture(Aws::String&& value) { SetArchitecture(value); return *this;}
 
     /**
      * <p>The architecture of the virtual machine.</p> <p>Valid values:
-     * <code>i386</code> | <code>x86_64</code></p>
+     * <code>i386</code> | <code>x86_64</code> </p>
      */
     inline ImportImageTask& WithArchitecture(const char* value) { SetArchitecture(value); return *this;}
 
@@ -195,43 +197,43 @@ namespace Model
 
     /**
      * <p>The target hypervisor for the import task.</p> <p>Valid values:
-     * <code>xen</code></p>
+     * <code>xen</code> </p>
      */
     inline const Aws::String& GetHypervisor() const{ return m_hypervisor; }
 
     /**
      * <p>The target hypervisor for the import task.</p> <p>Valid values:
-     * <code>xen</code></p>
+     * <code>xen</code> </p>
      */
     inline void SetHypervisor(const Aws::String& value) { m_hypervisorHasBeenSet = true; m_hypervisor = value; }
 
     /**
      * <p>The target hypervisor for the import task.</p> <p>Valid values:
-     * <code>xen</code></p>
+     * <code>xen</code> </p>
      */
     inline void SetHypervisor(Aws::String&& value) { m_hypervisorHasBeenSet = true; m_hypervisor = value; }
 
     /**
      * <p>The target hypervisor for the import task.</p> <p>Valid values:
-     * <code>xen</code></p>
+     * <code>xen</code> </p>
      */
     inline void SetHypervisor(const char* value) { m_hypervisorHasBeenSet = true; m_hypervisor.assign(value); }
 
     /**
      * <p>The target hypervisor for the import task.</p> <p>Valid values:
-     * <code>xen</code></p>
+     * <code>xen</code> </p>
      */
     inline ImportImageTask& WithHypervisor(const Aws::String& value) { SetHypervisor(value); return *this;}
 
     /**
      * <p>The target hypervisor for the import task.</p> <p>Valid values:
-     * <code>xen</code></p>
+     * <code>xen</code> </p>
      */
     inline ImportImageTask& WithHypervisor(Aws::String&& value) { SetHypervisor(value); return *this;}
 
     /**
      * <p>The target hypervisor for the import task.</p> <p>Valid values:
-     * <code>xen</code></p>
+     * <code>xen</code> </p>
      */
     inline ImportImageTask& WithHypervisor(const char* value) { SetHypervisor(value); return *this;}
 

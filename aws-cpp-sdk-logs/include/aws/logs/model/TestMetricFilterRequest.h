@@ -57,42 +57,42 @@ namespace Model
     inline TestMetricFilterRequest& WithFilterPattern(const char* value) { SetFilterPattern(value); return *this;}
 
     /**
-     * <p>A list of log event messages to test.</p>
+     * <p>The log event messages to test.</p>
      */
     inline const Aws::Vector<Aws::String>& GetLogEventMessages() const{ return m_logEventMessages; }
 
     /**
-     * <p>A list of log event messages to test.</p>
+     * <p>The log event messages to test.</p>
      */
     inline void SetLogEventMessages(const Aws::Vector<Aws::String>& value) { m_logEventMessagesHasBeenSet = true; m_logEventMessages = value; }
 
     /**
-     * <p>A list of log event messages to test.</p>
+     * <p>The log event messages to test.</p>
      */
     inline void SetLogEventMessages(Aws::Vector<Aws::String>&& value) { m_logEventMessagesHasBeenSet = true; m_logEventMessages = value; }
 
     /**
-     * <p>A list of log event messages to test.</p>
+     * <p>The log event messages to test.</p>
      */
     inline TestMetricFilterRequest& WithLogEventMessages(const Aws::Vector<Aws::String>& value) { SetLogEventMessages(value); return *this;}
 
     /**
-     * <p>A list of log event messages to test.</p>
+     * <p>The log event messages to test.</p>
      */
     inline TestMetricFilterRequest& WithLogEventMessages(Aws::Vector<Aws::String>&& value) { SetLogEventMessages(value); return *this;}
 
     /**
-     * <p>A list of log event messages to test.</p>
+     * <p>The log event messages to test.</p>
      */
     inline TestMetricFilterRequest& AddLogEventMessages(const Aws::String& value) { m_logEventMessagesHasBeenSet = true; m_logEventMessages.push_back(value); return *this; }
 
     /**
-     * <p>A list of log event messages to test.</p>
+     * <p>The log event messages to test.</p>
      */
     inline TestMetricFilterRequest& AddLogEventMessages(Aws::String&& value) { m_logEventMessagesHasBeenSet = true; m_logEventMessages.push_back(value); return *this; }
 
     /**
-     * <p>A list of log event messages to test.</p>
+     * <p>The log event messages to test.</p>
      */
     inline TestMetricFilterRequest& AddLogEventMessages(const char* value) { m_logEventMessagesHasBeenSet = true; m_logEventMessages.push_back(value); return *this; }
 

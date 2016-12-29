@@ -30,6 +30,7 @@ namespace Model
 Interconnect::Interconnect() : 
     m_interconnectIdHasBeenSet(false),
     m_interconnectNameHasBeenSet(false),
+    m_interconnectState(InterconnectState::NOT_SET),
     m_interconnectStateHasBeenSet(false),
     m_regionHasBeenSet(false),
     m_locationHasBeenSet(false),
@@ -41,6 +42,7 @@ Interconnect::Interconnect() :
 Interconnect::Interconnect(const JsonValue& jsonValue) : 
     m_interconnectIdHasBeenSet(false),
     m_interconnectNameHasBeenSet(false),
+    m_interconnectState(InterconnectState::NOT_SET),
     m_interconnectStateHasBeenSet(false),
     m_regionHasBeenSet(false),
     m_locationHasBeenSet(false),

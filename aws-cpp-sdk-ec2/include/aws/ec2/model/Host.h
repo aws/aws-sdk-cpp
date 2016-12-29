@@ -38,7 +38,9 @@ namespace Model
 {
 
   /**
-   * <p>Describes the properties of the Dedicated host.</p>
+   * <p>Describes the properties of the Dedicated Host.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/Host">AWS API
+   * Reference</a></p>
    */
   class AWS_EC2_API Host
   {
@@ -51,37 +53,37 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     /**
-     * <p>The ID of the Dedicated host.</p>
+     * <p>The ID of the Dedicated Host.</p>
      */
     inline const Aws::String& GetHostId() const{ return m_hostId; }
 
     /**
-     * <p>The ID of the Dedicated host.</p>
+     * <p>The ID of the Dedicated Host.</p>
      */
     inline void SetHostId(const Aws::String& value) { m_hostIdHasBeenSet = true; m_hostId = value; }
 
     /**
-     * <p>The ID of the Dedicated host.</p>
+     * <p>The ID of the Dedicated Host.</p>
      */
     inline void SetHostId(Aws::String&& value) { m_hostIdHasBeenSet = true; m_hostId = value; }
 
     /**
-     * <p>The ID of the Dedicated host.</p>
+     * <p>The ID of the Dedicated Host.</p>
      */
     inline void SetHostId(const char* value) { m_hostIdHasBeenSet = true; m_hostId.assign(value); }
 
     /**
-     * <p>The ID of the Dedicated host.</p>
+     * <p>The ID of the Dedicated Host.</p>
      */
     inline Host& WithHostId(const Aws::String& value) { SetHostId(value); return *this;}
 
     /**
-     * <p>The ID of the Dedicated host.</p>
+     * <p>The ID of the Dedicated Host.</p>
      */
     inline Host& WithHostId(Aws::String&& value) { SetHostId(value); return *this;}
 
     /**
-     * <p>The ID of the Dedicated host.</p>
+     * <p>The ID of the Dedicated Host.</p>
      */
     inline Host& WithHostId(const char* value) { SetHostId(value); return *this;}
 
@@ -111,44 +113,44 @@ namespace Model
     inline Host& WithAutoPlacement(AutoPlacement&& value) { SetAutoPlacement(value); return *this;}
 
     /**
-     * <p>The reservation ID of the Dedicated host. This returns a <code>null</code>
-     * response if the Dedicated host doesn't have an associated reservation.</p>
+     * <p>The reservation ID of the Dedicated Host. This returns a <code>null</code>
+     * response if the Dedicated Host doesn't have an associated reservation.</p>
      */
     inline const Aws::String& GetHostReservationId() const{ return m_hostReservationId; }
 
     /**
-     * <p>The reservation ID of the Dedicated host. This returns a <code>null</code>
-     * response if the Dedicated host doesn't have an associated reservation.</p>
+     * <p>The reservation ID of the Dedicated Host. This returns a <code>null</code>
+     * response if the Dedicated Host doesn't have an associated reservation.</p>
      */
     inline void SetHostReservationId(const Aws::String& value) { m_hostReservationIdHasBeenSet = true; m_hostReservationId = value; }
 
     /**
-     * <p>The reservation ID of the Dedicated host. This returns a <code>null</code>
-     * response if the Dedicated host doesn't have an associated reservation.</p>
+     * <p>The reservation ID of the Dedicated Host. This returns a <code>null</code>
+     * response if the Dedicated Host doesn't have an associated reservation.</p>
      */
     inline void SetHostReservationId(Aws::String&& value) { m_hostReservationIdHasBeenSet = true; m_hostReservationId = value; }
 
     /**
-     * <p>The reservation ID of the Dedicated host. This returns a <code>null</code>
-     * response if the Dedicated host doesn't have an associated reservation.</p>
+     * <p>The reservation ID of the Dedicated Host. This returns a <code>null</code>
+     * response if the Dedicated Host doesn't have an associated reservation.</p>
      */
     inline void SetHostReservationId(const char* value) { m_hostReservationIdHasBeenSet = true; m_hostReservationId.assign(value); }
 
     /**
-     * <p>The reservation ID of the Dedicated host. This returns a <code>null</code>
-     * response if the Dedicated host doesn't have an associated reservation.</p>
+     * <p>The reservation ID of the Dedicated Host. This returns a <code>null</code>
+     * response if the Dedicated Host doesn't have an associated reservation.</p>
      */
     inline Host& WithHostReservationId(const Aws::String& value) { SetHostReservationId(value); return *this;}
 
     /**
-     * <p>The reservation ID of the Dedicated host. This returns a <code>null</code>
-     * response if the Dedicated host doesn't have an associated reservation.</p>
+     * <p>The reservation ID of the Dedicated Host. This returns a <code>null</code>
+     * response if the Dedicated Host doesn't have an associated reservation.</p>
      */
     inline Host& WithHostReservationId(Aws::String&& value) { SetHostReservationId(value); return *this;}
 
     /**
-     * <p>The reservation ID of the Dedicated host. This returns a <code>null</code>
-     * response if the Dedicated host doesn't have an associated reservation.</p>
+     * <p>The reservation ID of the Dedicated Host. This returns a <code>null</code>
+     * response if the Dedicated Host doesn't have an associated reservation.</p>
      */
     inline Host& WithHostReservationId(const char* value) { SetHostReservationId(value); return *this;}
 
@@ -216,154 +218,154 @@ namespace Model
     inline Host& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
     /**
-     * <p>The hardware specifications of the Dedicated host.</p>
+     * <p>The hardware specifications of the Dedicated Host.</p>
      */
     inline const HostProperties& GetHostProperties() const{ return m_hostProperties; }
 
     /**
-     * <p>The hardware specifications of the Dedicated host.</p>
+     * <p>The hardware specifications of the Dedicated Host.</p>
      */
     inline void SetHostProperties(const HostProperties& value) { m_hostPropertiesHasBeenSet = true; m_hostProperties = value; }
 
     /**
-     * <p>The hardware specifications of the Dedicated host.</p>
+     * <p>The hardware specifications of the Dedicated Host.</p>
      */
     inline void SetHostProperties(HostProperties&& value) { m_hostPropertiesHasBeenSet = true; m_hostProperties = value; }
 
     /**
-     * <p>The hardware specifications of the Dedicated host.</p>
+     * <p>The hardware specifications of the Dedicated Host.</p>
      */
     inline Host& WithHostProperties(const HostProperties& value) { SetHostProperties(value); return *this;}
 
     /**
-     * <p>The hardware specifications of the Dedicated host.</p>
+     * <p>The hardware specifications of the Dedicated Host.</p>
      */
     inline Host& WithHostProperties(HostProperties&& value) { SetHostProperties(value); return *this;}
 
     /**
-     * <p>The Dedicated host's state.</p>
+     * <p>The Dedicated Host's state.</p>
      */
     inline const AllocationState& GetState() const{ return m_state; }
 
     /**
-     * <p>The Dedicated host's state.</p>
+     * <p>The Dedicated Host's state.</p>
      */
     inline void SetState(const AllocationState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
-     * <p>The Dedicated host's state.</p>
+     * <p>The Dedicated Host's state.</p>
      */
     inline void SetState(AllocationState&& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
-     * <p>The Dedicated host's state.</p>
+     * <p>The Dedicated Host's state.</p>
      */
     inline Host& WithState(const AllocationState& value) { SetState(value); return *this;}
 
     /**
-     * <p>The Dedicated host's state.</p>
+     * <p>The Dedicated Host's state.</p>
      */
     inline Host& WithState(AllocationState&& value) { SetState(value); return *this;}
 
     /**
-     * <p>The Availability Zone of the Dedicated host.</p>
+     * <p>The Availability Zone of the Dedicated Host.</p>
      */
     inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
 
     /**
-     * <p>The Availability Zone of the Dedicated host.</p>
+     * <p>The Availability Zone of the Dedicated Host.</p>
      */
     inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
 
     /**
-     * <p>The Availability Zone of the Dedicated host.</p>
+     * <p>The Availability Zone of the Dedicated Host.</p>
      */
     inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
 
     /**
-     * <p>The Availability Zone of the Dedicated host.</p>
+     * <p>The Availability Zone of the Dedicated Host.</p>
      */
     inline void SetAvailabilityZone(const char* value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone.assign(value); }
 
     /**
-     * <p>The Availability Zone of the Dedicated host.</p>
+     * <p>The Availability Zone of the Dedicated Host.</p>
      */
     inline Host& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
 
     /**
-     * <p>The Availability Zone of the Dedicated host.</p>
+     * <p>The Availability Zone of the Dedicated Host.</p>
      */
     inline Host& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(value); return *this;}
 
     /**
-     * <p>The Availability Zone of the Dedicated host.</p>
+     * <p>The Availability Zone of the Dedicated Host.</p>
      */
     inline Host& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
 
     /**
      * <p>The IDs and instance type that are currently running on the Dedicated
-     * host.</p>
+     * Host.</p>
      */
     inline const Aws::Vector<HostInstance>& GetInstances() const{ return m_instances; }
 
     /**
      * <p>The IDs and instance type that are currently running on the Dedicated
-     * host.</p>
+     * Host.</p>
      */
     inline void SetInstances(const Aws::Vector<HostInstance>& value) { m_instancesHasBeenSet = true; m_instances = value; }
 
     /**
      * <p>The IDs and instance type that are currently running on the Dedicated
-     * host.</p>
+     * Host.</p>
      */
     inline void SetInstances(Aws::Vector<HostInstance>&& value) { m_instancesHasBeenSet = true; m_instances = value; }
 
     /**
      * <p>The IDs and instance type that are currently running on the Dedicated
-     * host.</p>
+     * Host.</p>
      */
     inline Host& WithInstances(const Aws::Vector<HostInstance>& value) { SetInstances(value); return *this;}
 
     /**
      * <p>The IDs and instance type that are currently running on the Dedicated
-     * host.</p>
+     * Host.</p>
      */
     inline Host& WithInstances(Aws::Vector<HostInstance>&& value) { SetInstances(value); return *this;}
 
     /**
      * <p>The IDs and instance type that are currently running on the Dedicated
-     * host.</p>
+     * Host.</p>
      */
     inline Host& AddInstances(const HostInstance& value) { m_instancesHasBeenSet = true; m_instances.push_back(value); return *this; }
 
     /**
      * <p>The IDs and instance type that are currently running on the Dedicated
-     * host.</p>
+     * Host.</p>
      */
     inline Host& AddInstances(HostInstance&& value) { m_instancesHasBeenSet = true; m_instances.push_back(value); return *this; }
 
     /**
-     * <p>The number of new instances that can be launched onto the Dedicated host.</p>
+     * <p>The number of new instances that can be launched onto the Dedicated Host.</p>
      */
     inline const AvailableCapacity& GetAvailableCapacity() const{ return m_availableCapacity; }
 
     /**
-     * <p>The number of new instances that can be launched onto the Dedicated host.</p>
+     * <p>The number of new instances that can be launched onto the Dedicated Host.</p>
      */
     inline void SetAvailableCapacity(const AvailableCapacity& value) { m_availableCapacityHasBeenSet = true; m_availableCapacity = value; }
 
     /**
-     * <p>The number of new instances that can be launched onto the Dedicated host.</p>
+     * <p>The number of new instances that can be launched onto the Dedicated Host.</p>
      */
     inline void SetAvailableCapacity(AvailableCapacity&& value) { m_availableCapacityHasBeenSet = true; m_availableCapacity = value; }
 
     /**
-     * <p>The number of new instances that can be launched onto the Dedicated host.</p>
+     * <p>The number of new instances that can be launched onto the Dedicated Host.</p>
      */
     inline Host& WithAvailableCapacity(const AvailableCapacity& value) { SetAvailableCapacity(value); return *this;}
 
     /**
-     * <p>The number of new instances that can be launched onto the Dedicated host.</p>
+     * <p>The number of new instances that can be launched onto the Dedicated Host.</p>
      */
     inline Host& WithAvailableCapacity(AvailableCapacity&& value) { SetAvailableCapacity(value); return *this;}
 

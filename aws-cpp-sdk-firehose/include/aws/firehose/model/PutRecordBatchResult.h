@@ -33,9 +33,6 @@ namespace Firehose
 {
 namespace Model
 {
-  /**
-   * <p>Contains the output of <a>PutRecordBatch</a>.</p>
-   */
   class AWS_FIREHOSE_API PutRecordBatchResult
   {
   public:
@@ -44,59 +41,59 @@ namespace Model
     PutRecordBatchResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * <p>The number of unsuccessfully written records.</p>
+     * <p>The number of records that might have failed processing.</p>
      */
     inline int GetFailedPutCount() const{ return m_failedPutCount; }
 
     /**
-     * <p>The number of unsuccessfully written records.</p>
+     * <p>The number of records that might have failed processing.</p>
      */
     inline void SetFailedPutCount(int value) { m_failedPutCount = value; }
 
     /**
-     * <p>The number of unsuccessfully written records.</p>
+     * <p>The number of records that might have failed processing.</p>
      */
     inline PutRecordBatchResult& WithFailedPutCount(int value) { SetFailedPutCount(value); return *this;}
 
     /**
-     * <p>The results for the individual records. The index of each element matches the
-     * same index in which records were sent.</p>
+     * <p>The results array. For each record, the index of the response element is the
+     * same as the index used in the request array.</p>
      */
     inline const Aws::Vector<PutRecordBatchResponseEntry>& GetRequestResponses() const{ return m_requestResponses; }
 
     /**
-     * <p>The results for the individual records. The index of each element matches the
-     * same index in which records were sent.</p>
+     * <p>The results array. For each record, the index of the response element is the
+     * same as the index used in the request array.</p>
      */
     inline void SetRequestResponses(const Aws::Vector<PutRecordBatchResponseEntry>& value) { m_requestResponses = value; }
 
     /**
-     * <p>The results for the individual records. The index of each element matches the
-     * same index in which records were sent.</p>
+     * <p>The results array. For each record, the index of the response element is the
+     * same as the index used in the request array.</p>
      */
     inline void SetRequestResponses(Aws::Vector<PutRecordBatchResponseEntry>&& value) { m_requestResponses = value; }
 
     /**
-     * <p>The results for the individual records. The index of each element matches the
-     * same index in which records were sent.</p>
+     * <p>The results array. For each record, the index of the response element is the
+     * same as the index used in the request array.</p>
      */
     inline PutRecordBatchResult& WithRequestResponses(const Aws::Vector<PutRecordBatchResponseEntry>& value) { SetRequestResponses(value); return *this;}
 
     /**
-     * <p>The results for the individual records. The index of each element matches the
-     * same index in which records were sent.</p>
+     * <p>The results array. For each record, the index of the response element is the
+     * same as the index used in the request array.</p>
      */
     inline PutRecordBatchResult& WithRequestResponses(Aws::Vector<PutRecordBatchResponseEntry>&& value) { SetRequestResponses(value); return *this;}
 
     /**
-     * <p>The results for the individual records. The index of each element matches the
-     * same index in which records were sent.</p>
+     * <p>The results array. For each record, the index of the response element is the
+     * same as the index used in the request array.</p>
      */
     inline PutRecordBatchResult& AddRequestResponses(const PutRecordBatchResponseEntry& value) { m_requestResponses.push_back(value); return *this; }
 
     /**
-     * <p>The results for the individual records. The index of each element matches the
-     * same index in which records were sent.</p>
+     * <p>The results array. For each record, the index of the response element is the
+     * same as the index used in the request array.</p>
      */
     inline PutRecordBatchResult& AddRequestResponses(PutRecordBatchResponseEntry&& value) { m_requestResponses.push_back(value); return *this; }
 

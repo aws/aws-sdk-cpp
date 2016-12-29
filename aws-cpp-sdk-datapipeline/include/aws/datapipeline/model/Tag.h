@@ -36,7 +36,9 @@ namespace Model
    * For more information, see <a
    * href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling
    * User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer
-   * Guide</i>.</p>
+   * Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/Tag">AWS
+   * API Reference</a></p>
    */
   class AWS_DATAPIPELINE_API Tag
   {

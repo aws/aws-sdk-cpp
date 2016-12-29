@@ -26,7 +26,10 @@ namespace Model
 {
 
   /**
-   * <p>Request to create or update a group of environments.</p>
+   * <p>Request to create or update a group of environments.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ComposeEnvironmentsMessage">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICBEANSTALK_API ComposeEnvironmentsRequest : public ElasticBeanstalkRequest
   {

@@ -22,7 +22,8 @@ using namespace Aws::Utils;
 PurchaseScheduledInstancesRequest::PurchaseScheduledInstancesRequest() : 
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
-    m_clientTokenHasBeenSet(false),
+    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientTokenHasBeenSet(true),
     m_purchaseRequestsHasBeenSet(false)
 {
 }
@@ -51,7 +52,7 @@ Aws::String PurchaseScheduledInstancesRequest::SerializePayload() const
     }
   }
 
-  ss << "Version=2015-10-01";
+  ss << "Version=2016-11-15";
   return ss.str();
 }
 

@@ -34,10 +34,13 @@ Stage::Stage() :
     m_descriptionHasBeenSet(false),
     m_cacheClusterEnabled(false),
     m_cacheClusterEnabledHasBeenSet(false),
+    m_cacheClusterSize(CacheClusterSize::NOT_SET),
     m_cacheClusterSizeHasBeenSet(false),
+    m_cacheClusterStatus(CacheClusterStatus::NOT_SET),
     m_cacheClusterStatusHasBeenSet(false),
     m_methodSettingsHasBeenSet(false),
     m_variablesHasBeenSet(false),
+    m_documentationVersionHasBeenSet(false),
     m_createdDateHasBeenSet(false),
     m_lastUpdatedDateHasBeenSet(false)
 {
@@ -50,10 +53,13 @@ Stage::Stage(const JsonValue& jsonValue) :
     m_descriptionHasBeenSet(false),
     m_cacheClusterEnabled(false),
     m_cacheClusterEnabledHasBeenSet(false),
+    m_cacheClusterSize(CacheClusterSize::NOT_SET),
     m_cacheClusterSizeHasBeenSet(false),
+    m_cacheClusterStatus(CacheClusterStatus::NOT_SET),
     m_cacheClusterStatusHasBeenSet(false),
     m_methodSettingsHasBeenSet(false),
     m_variablesHasBeenSet(false),
+    m_documentationVersionHasBeenSet(false),
     m_createdDateHasBeenSet(false),
     m_lastUpdatedDateHasBeenSet(false)
 {
@@ -129,6 +135,13 @@ Stage& Stage::operator =(const JsonValue& jsonValue)
       m_variables[variablesItem.first] = variablesItem.second.AsString();
     }
     m_variablesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("documentationVersion"))
+  {
+    m_documentationVersion = jsonValue.GetString("documentationVersion");
+
+    m_documentationVersionHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("createdDate"))
@@ -211,6 +224,12 @@ JsonValue Stage::Jsonize() const
      variablesJsonMap.WithString(variablesItem.first, variablesItem.second);
    }
    payload.WithObject("variables", std::move(variablesJsonMap));
+
+  }
+
+  if(m_documentationVersionHasBeenSet)
+  {
+   payload.WithString("documentationVersion", m_documentationVersion);
 
   }
 

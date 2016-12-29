@@ -47,7 +47,7 @@ Aws::String ImportKeyPairRequest::SerializePayload() const
     ss << "PublicKeyMaterial=" << HashingUtils::Base64Encode(m_publicKeyMaterial) << "&";
   }
 
-  ss << "Version=2015-10-01";
+  ss << "Version=2016-11-15";
   return ss.str();
 }
 

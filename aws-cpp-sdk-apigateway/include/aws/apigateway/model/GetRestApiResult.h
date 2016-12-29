@@ -37,7 +37,9 @@ namespace Model
   /**
    * <p>Represents a REST API.</p> <div class="seeAlso"> <a
    * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Create
-   * an API</a> </div>
+   * an API</a> </div><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/RestApi">AWS
+   * API Reference</a></p>
    */
   class AWS_APIGATEWAY_API GetRestApiResult
   {
@@ -194,6 +196,41 @@ namespace Model
     inline GetRestApiResult& WithCreatedDate(Aws::Utils::DateTime&& value) { SetCreatedDate(value); return *this;}
 
     /**
+     * <p>A version identifier for the API.</p>
+     */
+    inline const Aws::String& GetVersion() const{ return m_version; }
+
+    /**
+     * <p>A version identifier for the API.</p>
+     */
+    inline void SetVersion(const Aws::String& value) { m_version = value; }
+
+    /**
+     * <p>A version identifier for the API.</p>
+     */
+    inline void SetVersion(Aws::String&& value) { m_version = value; }
+
+    /**
+     * <p>A version identifier for the API.</p>
+     */
+    inline void SetVersion(const char* value) { m_version.assign(value); }
+
+    /**
+     * <p>A version identifier for the API.</p>
+     */
+    inline GetRestApiResult& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
+
+    /**
+     * <p>A version identifier for the API.</p>
+     */
+    inline GetRestApiResult& WithVersion(Aws::String&& value) { SetVersion(value); return *this;}
+
+    /**
+     * <p>A version identifier for the API.</p>
+     */
+    inline GetRestApiResult& WithVersion(const char* value) { SetVersion(value); return *this;}
+
+    /**
      * <p>The warning messages reported when <code>failonwarnings</code> is turned on
      * during API import.</p>
      */
@@ -241,12 +278,62 @@ namespace Model
      */
     inline GetRestApiResult& AddWarnings(const char* value) { m_warnings.push_back(value); return *this; }
 
+    /**
+     * <p>The list of binary media types supported by the <a>RestApi</a>. By default,
+     * the <a>RestApi</a> supports only UTF-8-encoded text payloads.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetBinaryMediaTypes() const{ return m_binaryMediaTypes; }
+
+    /**
+     * <p>The list of binary media types supported by the <a>RestApi</a>. By default,
+     * the <a>RestApi</a> supports only UTF-8-encoded text payloads.</p>
+     */
+    inline void SetBinaryMediaTypes(const Aws::Vector<Aws::String>& value) { m_binaryMediaTypes = value; }
+
+    /**
+     * <p>The list of binary media types supported by the <a>RestApi</a>. By default,
+     * the <a>RestApi</a> supports only UTF-8-encoded text payloads.</p>
+     */
+    inline void SetBinaryMediaTypes(Aws::Vector<Aws::String>&& value) { m_binaryMediaTypes = value; }
+
+    /**
+     * <p>The list of binary media types supported by the <a>RestApi</a>. By default,
+     * the <a>RestApi</a> supports only UTF-8-encoded text payloads.</p>
+     */
+    inline GetRestApiResult& WithBinaryMediaTypes(const Aws::Vector<Aws::String>& value) { SetBinaryMediaTypes(value); return *this;}
+
+    /**
+     * <p>The list of binary media types supported by the <a>RestApi</a>. By default,
+     * the <a>RestApi</a> supports only UTF-8-encoded text payloads.</p>
+     */
+    inline GetRestApiResult& WithBinaryMediaTypes(Aws::Vector<Aws::String>&& value) { SetBinaryMediaTypes(value); return *this;}
+
+    /**
+     * <p>The list of binary media types supported by the <a>RestApi</a>. By default,
+     * the <a>RestApi</a> supports only UTF-8-encoded text payloads.</p>
+     */
+    inline GetRestApiResult& AddBinaryMediaTypes(const Aws::String& value) { m_binaryMediaTypes.push_back(value); return *this; }
+
+    /**
+     * <p>The list of binary media types supported by the <a>RestApi</a>. By default,
+     * the <a>RestApi</a> supports only UTF-8-encoded text payloads.</p>
+     */
+    inline GetRestApiResult& AddBinaryMediaTypes(Aws::String&& value) { m_binaryMediaTypes.push_back(value); return *this; }
+
+    /**
+     * <p>The list of binary media types supported by the <a>RestApi</a>. By default,
+     * the <a>RestApi</a> supports only UTF-8-encoded text payloads.</p>
+     */
+    inline GetRestApiResult& AddBinaryMediaTypes(const char* value) { m_binaryMediaTypes.push_back(value); return *this; }
+
   private:
     Aws::String m_id;
     Aws::String m_name;
     Aws::String m_description;
     Aws::Utils::DateTime m_createdDate;
+    Aws::String m_version;
     Aws::Vector<Aws::String> m_warnings;
+    Aws::Vector<Aws::String> m_binaryMediaTypes;
   };
 
 } // namespace Model

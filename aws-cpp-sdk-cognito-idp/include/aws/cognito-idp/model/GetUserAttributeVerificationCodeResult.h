@@ -34,7 +34,9 @@ namespace Model
 {
   /**
    * <p>The verification code response returned by the server response to get the
-   * user attribute verification code.</p>
+   * user attribute verification code.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetUserAttributeVerificationCodeResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_COGNITOIDENTITYPROVIDER_API GetUserAttributeVerificationCodeResult
   {
@@ -44,32 +46,32 @@ namespace Model
     GetUserAttributeVerificationCodeResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * <p>The code delivery details returned by the server response to get the user
-     * attribute verification code.</p>
+     * <p>The code delivery details returned by the server in response to the request
+     * to get the user attribute verification code.</p>
      */
     inline const CodeDeliveryDetailsType& GetCodeDeliveryDetails() const{ return m_codeDeliveryDetails; }
 
     /**
-     * <p>The code delivery details returned by the server response to get the user
-     * attribute verification code.</p>
+     * <p>The code delivery details returned by the server in response to the request
+     * to get the user attribute verification code.</p>
      */
     inline void SetCodeDeliveryDetails(const CodeDeliveryDetailsType& value) { m_codeDeliveryDetails = value; }
 
     /**
-     * <p>The code delivery details returned by the server response to get the user
-     * attribute verification code.</p>
+     * <p>The code delivery details returned by the server in response to the request
+     * to get the user attribute verification code.</p>
      */
     inline void SetCodeDeliveryDetails(CodeDeliveryDetailsType&& value) { m_codeDeliveryDetails = value; }
 
     /**
-     * <p>The code delivery details returned by the server response to get the user
-     * attribute verification code.</p>
+     * <p>The code delivery details returned by the server in response to the request
+     * to get the user attribute verification code.</p>
      */
     inline GetUserAttributeVerificationCodeResult& WithCodeDeliveryDetails(const CodeDeliveryDetailsType& value) { SetCodeDeliveryDetails(value); return *this;}
 
     /**
-     * <p>The code delivery details returned by the server response to get the user
-     * attribute verification code.</p>
+     * <p>The code delivery details returned by the server in response to the request
+     * to get the user attribute verification code.</p>
      */
     inline GetUserAttributeVerificationCodeResult& WithCodeDeliveryDetails(CodeDeliveryDetailsType&& value) { SetCodeDeliveryDetails(value); return *this;}
 

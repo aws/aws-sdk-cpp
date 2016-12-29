@@ -37,37 +37,37 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * <p>The name of the log group to associate the metric filter with.</p>
+     * <p>The name of the log group.</p>
      */
     inline const Aws::String& GetLogGroupName() const{ return m_logGroupName; }
 
     /**
-     * <p>The name of the log group to associate the metric filter with.</p>
+     * <p>The name of the log group.</p>
      */
     inline void SetLogGroupName(const Aws::String& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
 
     /**
-     * <p>The name of the log group to associate the metric filter with.</p>
+     * <p>The name of the log group.</p>
      */
     inline void SetLogGroupName(Aws::String&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
 
     /**
-     * <p>The name of the log group to associate the metric filter with.</p>
+     * <p>The name of the log group.</p>
      */
     inline void SetLogGroupName(const char* value) { m_logGroupNameHasBeenSet = true; m_logGroupName.assign(value); }
 
     /**
-     * <p>The name of the log group to associate the metric filter with.</p>
+     * <p>The name of the log group.</p>
      */
     inline PutMetricFilterRequest& WithLogGroupName(const Aws::String& value) { SetLogGroupName(value); return *this;}
 
     /**
-     * <p>The name of the log group to associate the metric filter with.</p>
+     * <p>The name of the log group.</p>
      */
     inline PutMetricFilterRequest& WithLogGroupName(Aws::String&& value) { SetLogGroupName(value); return *this;}
 
     /**
-     * <p>The name of the log group to associate the metric filter with.</p>
+     * <p>The name of the log group.</p>
      */
     inline PutMetricFilterRequest& WithLogGroupName(const char* value) { SetLogGroupName(value); return *this;}
 
@@ -107,44 +107,37 @@ namespace Model
     inline PutMetricFilterRequest& WithFilterName(const char* value) { SetFilterName(value); return *this;}
 
     /**
-     * <p>A valid CloudWatch Logs filter pattern for extracting metric data out of
-     * ingested log events.</p>
+     * <p>A filter pattern for extracting metric data out of ingested log events.</p>
      */
     inline const Aws::String& GetFilterPattern() const{ return m_filterPattern; }
 
     /**
-     * <p>A valid CloudWatch Logs filter pattern for extracting metric data out of
-     * ingested log events.</p>
+     * <p>A filter pattern for extracting metric data out of ingested log events.</p>
      */
     inline void SetFilterPattern(const Aws::String& value) { m_filterPatternHasBeenSet = true; m_filterPattern = value; }
 
     /**
-     * <p>A valid CloudWatch Logs filter pattern for extracting metric data out of
-     * ingested log events.</p>
+     * <p>A filter pattern for extracting metric data out of ingested log events.</p>
      */
     inline void SetFilterPattern(Aws::String&& value) { m_filterPatternHasBeenSet = true; m_filterPattern = value; }
 
     /**
-     * <p>A valid CloudWatch Logs filter pattern for extracting metric data out of
-     * ingested log events.</p>
+     * <p>A filter pattern for extracting metric data out of ingested log events.</p>
      */
     inline void SetFilterPattern(const char* value) { m_filterPatternHasBeenSet = true; m_filterPattern.assign(value); }
 
     /**
-     * <p>A valid CloudWatch Logs filter pattern for extracting metric data out of
-     * ingested log events.</p>
+     * <p>A filter pattern for extracting metric data out of ingested log events.</p>
      */
     inline PutMetricFilterRequest& WithFilterPattern(const Aws::String& value) { SetFilterPattern(value); return *this;}
 
     /**
-     * <p>A valid CloudWatch Logs filter pattern for extracting metric data out of
-     * ingested log events.</p>
+     * <p>A filter pattern for extracting metric data out of ingested log events.</p>
      */
     inline PutMetricFilterRequest& WithFilterPattern(Aws::String&& value) { SetFilterPattern(value); return *this;}
 
     /**
-     * <p>A valid CloudWatch Logs filter pattern for extracting metric data out of
-     * ingested log events.</p>
+     * <p>A filter pattern for extracting metric data out of ingested log events.</p>
      */
     inline PutMetricFilterRequest& WithFilterPattern(const char* value) { SetFilterPattern(value); return *this;}
 

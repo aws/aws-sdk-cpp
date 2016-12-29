@@ -33,7 +33,10 @@ namespace Model
 
   /**
    * <p>Represents sending statistics data. Each <code>SendDataPoint</code> contains
-   * statistics for a 15-minute period of sending activity. </p>
+   * statistics for a 15-minute period of sending activity. </p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SendDataPoint">AWS
+   * API Reference</a></p>
    */
   class AWS_SES_API SendDataPoint
   {
@@ -71,17 +74,17 @@ namespace Model
     inline SendDataPoint& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(value); return *this;}
 
     /**
-     * <p>Number of emails that have been enqueued for sending.</p>
+     * <p>Number of emails that have been sent.</p>
      */
     inline long long GetDeliveryAttempts() const{ return m_deliveryAttempts; }
 
     /**
-     * <p>Number of emails that have been enqueued for sending.</p>
+     * <p>Number of emails that have been sent.</p>
      */
     inline void SetDeliveryAttempts(long long value) { m_deliveryAttemptsHasBeenSet = true; m_deliveryAttempts = value; }
 
     /**
-     * <p>Number of emails that have been enqueued for sending.</p>
+     * <p>Number of emails that have been sent.</p>
      */
     inline SendDataPoint& WithDeliveryAttempts(long long value) { SetDeliveryAttempts(value); return *this;}
 

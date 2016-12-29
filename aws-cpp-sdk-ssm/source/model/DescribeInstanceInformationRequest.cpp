@@ -23,6 +23,7 @@ using namespace Aws::Utils;
 
 DescribeInstanceInformationRequest::DescribeInstanceInformationRequest() : 
     m_instanceInformationFilterListHasBeenSet(false),
+    m_filtersHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
     m_nextTokenHasBeenSet(false)
@@ -41,6 +42,17 @@ Aws::String DescribeInstanceInformationRequest::SerializePayload() const
      instanceInformationFilterListJsonList[instanceInformationFilterListIndex].AsObject(m_instanceInformationFilterList[instanceInformationFilterListIndex].Jsonize());
    }
    payload.WithArray("InstanceInformationFilterList", std::move(instanceInformationFilterListJsonList));
+
+  }
+
+  if(m_filtersHasBeenSet)
+  {
+   Array<JsonValue> filtersJsonList(m_filters.size());
+   for(unsigned filtersIndex = 0; filtersIndex < filtersJsonList.GetLength(); ++filtersIndex)
+   {
+     filtersJsonList[filtersIndex].AsObject(m_filters[filtersIndex].Jsonize());
+   }
+   payload.WithArray("Filters", std::move(filtersJsonList));
 
   }
 

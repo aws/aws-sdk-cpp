@@ -23,7 +23,9 @@ ModifySnapshotAttributeRequest::ModifySnapshotAttributeRequest() :
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
     m_snapshotIdHasBeenSet(false),
+    m_attribute(SnapshotAttributeName::NOT_SET),
     m_attributeHasBeenSet(false),
+    m_operationType(OperationType::NOT_SET),
     m_operationTypeHasBeenSet(false),
     m_userIdsHasBeenSet(false),
     m_groupNamesHasBeenSet(false),
@@ -82,7 +84,7 @@ Aws::String ModifySnapshotAttributeRequest::SerializePayload() const
     m_createVolumePermission.OutputToStream(ss, "CreateVolumePermission");
   }
 
-  ss << "Version=2015-10-01";
+  ss << "Version=2016-11-15";
   return ss.str();
 }
 

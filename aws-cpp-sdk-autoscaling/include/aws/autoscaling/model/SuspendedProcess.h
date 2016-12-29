@@ -33,7 +33,9 @@ namespace Model
 
   /**
    * <p>Describes an Auto Scaling process that has been suspended. For more
-   * information, see <a>ProcessType</a>.</p>
+   * information, see <a>ProcessType</a>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/SuspendedProcess">AWS
+   * API Reference</a></p>
    */
   class AWS_AUTOSCALING_API SuspendedProcess
   {

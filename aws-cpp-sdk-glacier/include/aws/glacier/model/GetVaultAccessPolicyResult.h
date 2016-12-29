@@ -33,7 +33,9 @@ namespace Glacier
 namespace Model
 {
   /**
-   * <p>Output for GetVaultAccessPolicy.</p>
+   * <p>Output for GetVaultAccessPolicy.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/GetVaultAccessPolicyOutput">AWS
+   * API Reference</a></p>
    */
   class AWS_GLACIER_API GetVaultAccessPolicyResult
   {

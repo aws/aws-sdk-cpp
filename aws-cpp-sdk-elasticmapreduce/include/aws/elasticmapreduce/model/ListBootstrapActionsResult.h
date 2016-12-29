@@ -35,7 +35,10 @@ namespace EMR
 namespace Model
 {
   /**
-   * <p>This output contains the boostrap actions detail .</p>
+   * <p>This output contains the bootstrap actions detail.</p><p><h3>See Also:</h3>  
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListBootstrapActionsOutput">AWS
+   * API Reference</a></p>
    */
   class AWS_EMR_API ListBootstrapActionsResult
   {
@@ -45,37 +48,37 @@ namespace Model
     ListBootstrapActionsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * <p>The bootstrap actions associated with the cluster .</p>
+     * <p>The bootstrap actions associated with the cluster.</p>
      */
     inline const Aws::Vector<Command>& GetBootstrapActions() const{ return m_bootstrapActions; }
 
     /**
-     * <p>The bootstrap actions associated with the cluster .</p>
+     * <p>The bootstrap actions associated with the cluster.</p>
      */
     inline void SetBootstrapActions(const Aws::Vector<Command>& value) { m_bootstrapActions = value; }
 
     /**
-     * <p>The bootstrap actions associated with the cluster .</p>
+     * <p>The bootstrap actions associated with the cluster.</p>
      */
     inline void SetBootstrapActions(Aws::Vector<Command>&& value) { m_bootstrapActions = value; }
 
     /**
-     * <p>The bootstrap actions associated with the cluster .</p>
+     * <p>The bootstrap actions associated with the cluster.</p>
      */
     inline ListBootstrapActionsResult& WithBootstrapActions(const Aws::Vector<Command>& value) { SetBootstrapActions(value); return *this;}
 
     /**
-     * <p>The bootstrap actions associated with the cluster .</p>
+     * <p>The bootstrap actions associated with the cluster.</p>
      */
     inline ListBootstrapActionsResult& WithBootstrapActions(Aws::Vector<Command>&& value) { SetBootstrapActions(value); return *this;}
 
     /**
-     * <p>The bootstrap actions associated with the cluster .</p>
+     * <p>The bootstrap actions associated with the cluster.</p>
      */
     inline ListBootstrapActionsResult& AddBootstrapActions(const Command& value) { m_bootstrapActions.push_back(value); return *this; }
 
     /**
-     * <p>The bootstrap actions associated with the cluster .</p>
+     * <p>The bootstrap actions associated with the cluster.</p>
      */
     inline ListBootstrapActionsResult& AddBootstrapActions(Command&& value) { m_bootstrapActions.push_back(value); return *this; }
 

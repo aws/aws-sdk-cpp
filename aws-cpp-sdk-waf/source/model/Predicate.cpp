@@ -30,6 +30,7 @@ namespace Model
 Predicate::Predicate() : 
     m_negated(false),
     m_negatedHasBeenSet(false),
+    m_type(PredicateType::NOT_SET),
     m_typeHasBeenSet(false),
     m_dataIdHasBeenSet(false)
 {
@@ -38,6 +39,7 @@ Predicate::Predicate() :
 Predicate::Predicate(const JsonValue& jsonValue) : 
     m_negated(false),
     m_negatedHasBeenSet(false),
+    m_type(PredicateType::NOT_SET),
     m_typeHasBeenSet(false),
     m_dataIdHasBeenSet(false)
 {

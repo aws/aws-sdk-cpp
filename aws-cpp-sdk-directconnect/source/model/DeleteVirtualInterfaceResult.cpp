@@ -24,11 +24,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteVirtualInterfaceResult::DeleteVirtualInterfaceResult()
+DeleteVirtualInterfaceResult::DeleteVirtualInterfaceResult() : 
+    m_virtualInterfaceState(VirtualInterfaceState::NOT_SET)
 {
 }
 
-DeleteVirtualInterfaceResult::DeleteVirtualInterfaceResult(const AmazonWebServiceResult<JsonValue>& result)
+DeleteVirtualInterfaceResult::DeleteVirtualInterfaceResult(const AmazonWebServiceResult<JsonValue>& result) : 
+    m_virtualInterfaceState(VirtualInterfaceState::NOT_SET)
 {
   *this = result;
 }

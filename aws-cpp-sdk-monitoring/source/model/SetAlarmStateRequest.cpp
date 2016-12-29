@@ -21,6 +21,7 @@ using namespace Aws::Utils;
 
 SetAlarmStateRequest::SetAlarmStateRequest() : 
     m_alarmNameHasBeenSet(false),
+    m_stateValue(StateValue::NOT_SET),
     m_stateValueHasBeenSet(false),
     m_stateReasonHasBeenSet(false),
     m_stateReasonDataHasBeenSet(false)

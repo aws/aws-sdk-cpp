@@ -26,6 +26,7 @@ CreateVolumeRequest::CreateVolumeRequest() :
     m_sizeHasBeenSet(false),
     m_snapshotIdHasBeenSet(false),
     m_availabilityZoneHasBeenSet(false),
+    m_volumeType(VolumeType::NOT_SET),
     m_volumeTypeHasBeenSet(false),
     m_iops(0),
     m_iopsHasBeenSet(false),
@@ -79,7 +80,7 @@ Aws::String CreateVolumeRequest::SerializePayload() const
     ss << "KmsKeyId=" << StringUtils::URLEncode(m_kmsKeyId.c_str()) << "&";
   }
 
-  ss << "Version=2015-10-01";
+  ss << "Version=2016-11-15";
   return ss.str();
 }
 

@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/config/ConfigService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/config/model/ConfigRuleEvaluationStatus.h>
 
 namespace Aws
@@ -34,7 +35,9 @@ namespace ConfigService
 namespace Model
 {
   /**
-   * <p/>
+   * <p/><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigRuleEvaluationStatusResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_CONFIGSERVICE_API DescribeConfigRuleEvaluationStatusResult
   {
@@ -78,8 +81,51 @@ namespace Model
      */
     inline DescribeConfigRuleEvaluationStatusResult& AddConfigRulesEvaluationStatus(ConfigRuleEvaluationStatus&& value) { m_configRulesEvaluationStatus.push_back(value); return *this; }
 
+    /**
+     * <p>The string that you use in a subsequent request to get the next page of
+     * results in a paginated response.</p>
+     */
+    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The string that you use in a subsequent request to get the next page of
+     * results in a paginated response.</p>
+     */
+    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
+
+    /**
+     * <p>The string that you use in a subsequent request to get the next page of
+     * results in a paginated response.</p>
+     */
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+
+    /**
+     * <p>The string that you use in a subsequent request to get the next page of
+     * results in a paginated response.</p>
+     */
+    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
+
+    /**
+     * <p>The string that you use in a subsequent request to get the next page of
+     * results in a paginated response.</p>
+     */
+    inline DescribeConfigRuleEvaluationStatusResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+
+    /**
+     * <p>The string that you use in a subsequent request to get the next page of
+     * results in a paginated response.</p>
+     */
+    inline DescribeConfigRuleEvaluationStatusResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+
+    /**
+     * <p>The string that you use in a subsequent request to get the next page of
+     * results in a paginated response.</p>
+     */
+    inline DescribeConfigRuleEvaluationStatusResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+
   private:
     Aws::Vector<ConfigRuleEvaluationStatus> m_configRulesEvaluationStatus;
+    Aws::String m_nextToken;
   };
 
 } // namespace Model

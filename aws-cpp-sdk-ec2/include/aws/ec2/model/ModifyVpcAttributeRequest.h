@@ -26,7 +26,9 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for ModifyVpcAttribute.</p>
+   * <p>Contains the parameters for ModifyVpcAttribute.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcAttributeRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API ModifyVpcAttributeRequest : public EC2Request
   {
@@ -74,7 +76,7 @@ namespace Model
      * queries to the Amazon provided DNS server at the 169.254.169.253 IP address, or
      * the reserved IP address at the base of the VPC network range "plus two" will
      * succeed. If disabled, the Amazon provided DNS service in the VPC that resolves
-     * public DNS hostnames to IP addresses is not enabled. </p> <p>You cannot modify
+     * public DNS hostnames to IP addresses is not enabled.</p> <p>You cannot modify
      * the DNS resolution and DNS hostnames attributes in the same request. Use
      * separate requests for each attribute.</p>
      */
@@ -85,7 +87,7 @@ namespace Model
      * queries to the Amazon provided DNS server at the 169.254.169.253 IP address, or
      * the reserved IP address at the base of the VPC network range "plus two" will
      * succeed. If disabled, the Amazon provided DNS service in the VPC that resolves
-     * public DNS hostnames to IP addresses is not enabled. </p> <p>You cannot modify
+     * public DNS hostnames to IP addresses is not enabled.</p> <p>You cannot modify
      * the DNS resolution and DNS hostnames attributes in the same request. Use
      * separate requests for each attribute.</p>
      */
@@ -96,7 +98,7 @@ namespace Model
      * queries to the Amazon provided DNS server at the 169.254.169.253 IP address, or
      * the reserved IP address at the base of the VPC network range "plus two" will
      * succeed. If disabled, the Amazon provided DNS service in the VPC that resolves
-     * public DNS hostnames to IP addresses is not enabled. </p> <p>You cannot modify
+     * public DNS hostnames to IP addresses is not enabled.</p> <p>You cannot modify
      * the DNS resolution and DNS hostnames attributes in the same request. Use
      * separate requests for each attribute.</p>
      */
@@ -107,7 +109,7 @@ namespace Model
      * queries to the Amazon provided DNS server at the 169.254.169.253 IP address, or
      * the reserved IP address at the base of the VPC network range "plus two" will
      * succeed. If disabled, the Amazon provided DNS service in the VPC that resolves
-     * public DNS hostnames to IP addresses is not enabled. </p> <p>You cannot modify
+     * public DNS hostnames to IP addresses is not enabled.</p> <p>You cannot modify
      * the DNS resolution and DNS hostnames attributes in the same request. Use
      * separate requests for each attribute.</p>
      */
@@ -118,7 +120,7 @@ namespace Model
      * queries to the Amazon provided DNS server at the 169.254.169.253 IP address, or
      * the reserved IP address at the base of the VPC network range "plus two" will
      * succeed. If disabled, the Amazon provided DNS service in the VPC that resolves
-     * public DNS hostnames to IP addresses is not enabled. </p> <p>You cannot modify
+     * public DNS hostnames to IP addresses is not enabled.</p> <p>You cannot modify
      * the DNS resolution and DNS hostnames attributes in the same request. Use
      * separate requests for each attribute.</p>
      */

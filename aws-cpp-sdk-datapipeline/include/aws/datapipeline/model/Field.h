@@ -33,7 +33,10 @@ namespace Model
   /**
    * <p>A key-value pair that describes a property of a pipeline object. The value is
    * specified as either a string value (<code>StringValue</code>) or a reference to
-   * another object (<code>RefValue</code>) but not as both.</p>
+   * another object (<code>RefValue</code>) but not as both.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/Field">AWS
+   * API Reference</a></p>
    */
   class AWS_DATAPIPELINE_API Field
   {

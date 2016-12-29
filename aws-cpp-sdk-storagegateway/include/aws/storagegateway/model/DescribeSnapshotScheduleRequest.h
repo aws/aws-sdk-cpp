@@ -26,7 +26,9 @@ namespace Model
 
   /**
    * <p>A JSON object containing the <a>DescribeSnapshotScheduleInput$VolumeARN</a>
-   * of the volume.</p>
+   * of the volume.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeSnapshotScheduleInput">AWS
+   * API Reference</a></p>
    */
   class AWS_STORAGEGATEWAY_API DescribeSnapshotScheduleRequest : public StorageGatewayRequest
   {

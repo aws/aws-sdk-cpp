@@ -33,7 +33,10 @@ namespace CognitoSync
 namespace Model
 {
   /**
-   * The response to a successful DescribeIdentityUsage request.
+   * The response to a successful DescribeIdentityUsage request.<p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/DescribeIdentityUsageResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_COGNITOSYNC_API DescribeIdentityUsageResult
   {

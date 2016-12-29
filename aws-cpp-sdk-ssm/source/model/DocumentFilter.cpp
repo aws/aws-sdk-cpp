@@ -28,12 +28,14 @@ namespace Model
 {
 
 DocumentFilter::DocumentFilter() : 
+    m_key(DocumentFilterKey::NOT_SET),
     m_keyHasBeenSet(false),
     m_valueHasBeenSet(false)
 {
 }
 
 DocumentFilter::DocumentFilter(const JsonValue& jsonValue) : 
+    m_key(DocumentFilterKey::NOT_SET),
     m_keyHasBeenSet(false),
     m_valueHasBeenSet(false)
 {

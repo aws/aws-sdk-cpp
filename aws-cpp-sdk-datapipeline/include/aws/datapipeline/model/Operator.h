@@ -34,7 +34,9 @@ namespace Model
 
   /**
    * <p>Contains a logical operation for comparing the value of a field with a
-   * specified value.</p>
+   * specified value.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/Operator">AWS
+   * API Reference</a></p>
    */
   class AWS_DATAPIPELINE_API Operator
   {

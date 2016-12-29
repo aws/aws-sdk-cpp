@@ -28,12 +28,14 @@ namespace Model
 {
 
 ErrorInformation::ErrorInformation() : 
+    m_code(ErrorCode::NOT_SET),
     m_codeHasBeenSet(false),
     m_messageHasBeenSet(false)
 {
 }
 
 ErrorInformation::ErrorInformation(const JsonValue& jsonValue) : 
+    m_code(ErrorCode::NOT_SET),
     m_codeHasBeenSet(false),
     m_messageHasBeenSet(false)
 {

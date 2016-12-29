@@ -28,12 +28,14 @@ namespace Model
 {
 
 RuleUpdate::RuleUpdate() : 
+    m_action(ChangeAction::NOT_SET),
     m_actionHasBeenSet(false),
     m_predicateHasBeenSet(false)
 {
 }
 
 RuleUpdate::RuleUpdate(const JsonValue& jsonValue) : 
+    m_action(ChangeAction::NOT_SET),
     m_actionHasBeenSet(false),
     m_predicateHasBeenSet(false)
 {

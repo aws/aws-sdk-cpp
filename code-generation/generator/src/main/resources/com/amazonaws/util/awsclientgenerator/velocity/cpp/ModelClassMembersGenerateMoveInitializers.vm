@@ -3,7 +3,7 @@
 #set($initializerCount = 0)
 #foreach($entry in $shape.members.entrySet())
 #set($initializerCount = $initializerCount + 1)
-#if(!$entry.value.required && $useRequiredField)
+#if((!$entry.value.required || $entry.value.idempotencyToken) && $useRequiredField)
 #set($initializerCount = $initializerCount + 1)
 #end
 #end
@@ -23,7 +23,7 @@
 #set($moveInitializers = "${moveInitializers},")
 #end
 #set($index = $index + 1)
-#if(!$entry.value.required && $useRequiredField)
+#if((!$entry.value.required || $entry.value.idempotencyToken) && $useRequiredField)
 #set($varHasBeenSetName =  $CppViewHelper.computeVariableHasBeenSetName($entry.key))
 #set($moveInitializers = "${moveInitializers}${nl}    $varHasBeenSetName(${container}.varHasBeenSetName)")
 #if($index < $initializerCount)

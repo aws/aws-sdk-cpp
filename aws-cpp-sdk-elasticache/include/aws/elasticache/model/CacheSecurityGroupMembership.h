@@ -33,7 +33,9 @@ namespace Model
 
   /**
    * <p>Represents a cache cluster's status within a particular cache security
-   * group.</p>
+   * group.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CacheSecurityGroupMembership">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICACHE_API CacheSecurityGroupMembership
   {

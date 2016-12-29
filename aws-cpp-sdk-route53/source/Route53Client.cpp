@@ -35,11 +35,13 @@
 #include <aws/route53/model/CreateTrafficPolicyRequest.h>
 #include <aws/route53/model/CreateTrafficPolicyInstanceRequest.h>
 #include <aws/route53/model/CreateTrafficPolicyVersionRequest.h>
+#include <aws/route53/model/CreateVPCAssociationAuthorizationRequest.h>
 #include <aws/route53/model/DeleteHealthCheckRequest.h>
 #include <aws/route53/model/DeleteHostedZoneRequest.h>
 #include <aws/route53/model/DeleteReusableDelegationSetRequest.h>
 #include <aws/route53/model/DeleteTrafficPolicyRequest.h>
 #include <aws/route53/model/DeleteTrafficPolicyInstanceRequest.h>
+#include <aws/route53/model/DeleteVPCAssociationAuthorizationRequest.h>
 #include <aws/route53/model/DisassociateVPCFromHostedZoneRequest.h>
 #include <aws/route53/model/GetChangeRequest.h>
 #include <aws/route53/model/GetCheckerIpRangesRequest.h>
@@ -67,6 +69,7 @@
 #include <aws/route53/model/ListTrafficPolicyInstancesByHostedZoneRequest.h>
 #include <aws/route53/model/ListTrafficPolicyInstancesByPolicyRequest.h>
 #include <aws/route53/model/ListTrafficPolicyVersionsRequest.h>
+#include <aws/route53/model/ListVPCAssociationAuthorizationsRequest.h>
 #include <aws/route53/model/TestDNSAnswerRequest.h>
 #include <aws/route53/model/UpdateHealthCheckRequest.h>
 #include <aws/route53/model/UpdateHostedZoneCommentRequest.h>
@@ -443,6 +446,41 @@ void Route53Client::CreateTrafficPolicyVersionAsyncHelper(const CreateTrafficPol
   handler(this, request, CreateTrafficPolicyVersion(request), context);
 }
 
+CreateVPCAssociationAuthorizationOutcome Route53Client::CreateVPCAssociationAuthorization(const CreateVPCAssociationAuthorizationRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/2013-04-01/hostedzone/";
+  ss << request.GetHostedZoneId();
+  ss << "/authorizevpcassociation";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return CreateVPCAssociationAuthorizationOutcome(CreateVPCAssociationAuthorizationResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateVPCAssociationAuthorizationOutcome(outcome.GetError());
+  }
+}
+
+CreateVPCAssociationAuthorizationOutcomeCallable Route53Client::CreateVPCAssociationAuthorizationCallable(const CreateVPCAssociationAuthorizationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateVPCAssociationAuthorizationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateVPCAssociationAuthorization(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void Route53Client::CreateVPCAssociationAuthorizationAsync(const CreateVPCAssociationAuthorizationRequest& request, const CreateVPCAssociationAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateVPCAssociationAuthorizationAsyncHelper( request, handler, context ); } );
+}
+
+void Route53Client::CreateVPCAssociationAuthorizationAsyncHelper(const CreateVPCAssociationAuthorizationRequest& request, const CreateVPCAssociationAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateVPCAssociationAuthorization(request), context);
+}
+
 DeleteHealthCheckOutcome Route53Client::DeleteHealthCheck(const DeleteHealthCheckRequest& request) const
 {
   Aws::StringStream ss;
@@ -613,6 +651,41 @@ void Route53Client::DeleteTrafficPolicyInstanceAsync(const DeleteTrafficPolicyIn
 void Route53Client::DeleteTrafficPolicyInstanceAsyncHelper(const DeleteTrafficPolicyInstanceRequest& request, const DeleteTrafficPolicyInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteTrafficPolicyInstance(request), context);
+}
+
+DeleteVPCAssociationAuthorizationOutcome Route53Client::DeleteVPCAssociationAuthorization(const DeleteVPCAssociationAuthorizationRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/2013-04-01/hostedzone/";
+  ss << request.GetHostedZoneId();
+  ss << "/deauthorizevpcassociation";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DeleteVPCAssociationAuthorizationOutcome(DeleteVPCAssociationAuthorizationResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteVPCAssociationAuthorizationOutcome(outcome.GetError());
+  }
+}
+
+DeleteVPCAssociationAuthorizationOutcomeCallable Route53Client::DeleteVPCAssociationAuthorizationCallable(const DeleteVPCAssociationAuthorizationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteVPCAssociationAuthorizationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteVPCAssociationAuthorization(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void Route53Client::DeleteVPCAssociationAuthorizationAsync(const DeleteVPCAssociationAuthorizationRequest& request, const DeleteVPCAssociationAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteVPCAssociationAuthorizationAsyncHelper( request, handler, context ); } );
+}
+
+void Route53Client::DeleteVPCAssociationAuthorizationAsyncHelper(const DeleteVPCAssociationAuthorizationRequest& request, const DeleteVPCAssociationAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteVPCAssociationAuthorization(request), context);
 }
 
 DisassociateVPCFromHostedZoneOutcome Route53Client::DisassociateVPCFromHostedZone(const DisassociateVPCFromHostedZoneRequest& request) const
@@ -1528,6 +1601,41 @@ void Route53Client::ListTrafficPolicyVersionsAsyncHelper(const ListTrafficPolicy
   handler(this, request, ListTrafficPolicyVersions(request), context);
 }
 
+ListVPCAssociationAuthorizationsOutcome Route53Client::ListVPCAssociationAuthorizations(const ListVPCAssociationAuthorizationsRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/2013-04-01/hostedzone/";
+  ss << request.GetHostedZoneId();
+  ss << "/authorizevpcassociation";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  if(outcome.IsSuccess())
+  {
+    return ListVPCAssociationAuthorizationsOutcome(ListVPCAssociationAuthorizationsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListVPCAssociationAuthorizationsOutcome(outcome.GetError());
+  }
+}
+
+ListVPCAssociationAuthorizationsOutcomeCallable Route53Client::ListVPCAssociationAuthorizationsCallable(const ListVPCAssociationAuthorizationsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListVPCAssociationAuthorizationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListVPCAssociationAuthorizations(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void Route53Client::ListVPCAssociationAuthorizationsAsync(const ListVPCAssociationAuthorizationsRequest& request, const ListVPCAssociationAuthorizationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListVPCAssociationAuthorizationsAsyncHelper( request, handler, context ); } );
+}
+
+void Route53Client::ListVPCAssociationAuthorizationsAsyncHelper(const ListVPCAssociationAuthorizationsRequest& request, const ListVPCAssociationAuthorizationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListVPCAssociationAuthorizations(request), context);
+}
+
 TestDNSAnswerOutcome Route53Client::TestDNSAnswer(const TestDNSAnswerRequest& request) const
 {
   Aws::StringStream ss;
@@ -1698,4 +1806,6 @@ void Route53Client::UpdateTrafficPolicyInstanceAsyncHelper(const UpdateTrafficPo
 {
   handler(this, request, UpdateTrafficPolicyInstance(request), context);
 }
+
+
 

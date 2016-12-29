@@ -36,7 +36,10 @@ namespace Model
 {
 
   /**
-   * <p>Describes the properties of an application version.</p>
+   * <p>Describes the properties of an application version.</p><p><h3>See Also:</h3> 
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ApplicationVersionDescription">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICBEANSTALK_API ApplicationVersionDescription
   {
@@ -49,147 +52,202 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     /**
-     * <p>The name of the application associated with this release.</p>
+     * <p>The name of the application to which the application version belongs.</p>
      */
     inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
 
     /**
-     * <p>The name of the application associated with this release.</p>
+     * <p>The name of the application to which the application version belongs.</p>
      */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /**
-     * <p>The name of the application associated with this release.</p>
+     * <p>The name of the application to which the application version belongs.</p>
      */
     inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /**
-     * <p>The name of the application associated with this release.</p>
+     * <p>The name of the application to which the application version belongs.</p>
      */
     inline void SetApplicationName(const char* value) { m_applicationNameHasBeenSet = true; m_applicationName.assign(value); }
 
     /**
-     * <p>The name of the application associated with this release.</p>
+     * <p>The name of the application to which the application version belongs.</p>
      */
     inline ApplicationVersionDescription& WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
 
     /**
-     * <p>The name of the application associated with this release.</p>
+     * <p>The name of the application to which the application version belongs.</p>
      */
     inline ApplicationVersionDescription& WithApplicationName(Aws::String&& value) { SetApplicationName(value); return *this;}
 
     /**
-     * <p>The name of the application associated with this release.</p>
+     * <p>The name of the application to which the application version belongs.</p>
      */
     inline ApplicationVersionDescription& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
 
     /**
-     * <p>The description of this application version.</p>
+     * <p>The description of the application version.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>The description of this application version.</p>
+     * <p>The description of the application version.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>The description of this application version.</p>
+     * <p>The description of the application version.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>The description of this application version.</p>
+     * <p>The description of the application version.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>The description of this application version.</p>
+     * <p>The description of the application version.</p>
      */
     inline ApplicationVersionDescription& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>The description of this application version.</p>
+     * <p>The description of the application version.</p>
      */
     inline ApplicationVersionDescription& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>The description of this application version.</p>
+     * <p>The description of the application version.</p>
      */
     inline ApplicationVersionDescription& WithDescription(const char* value) { SetDescription(value); return *this;}
 
     /**
-     * <p>A label uniquely identifying the version for the associated application.</p>
+     * <p>A unique identifier for the application version.</p>
      */
     inline const Aws::String& GetVersionLabel() const{ return m_versionLabel; }
 
     /**
-     * <p>A label uniquely identifying the version for the associated application.</p>
+     * <p>A unique identifier for the application version.</p>
      */
     inline void SetVersionLabel(const Aws::String& value) { m_versionLabelHasBeenSet = true; m_versionLabel = value; }
 
     /**
-     * <p>A label uniquely identifying the version for the associated application.</p>
+     * <p>A unique identifier for the application version.</p>
      */
     inline void SetVersionLabel(Aws::String&& value) { m_versionLabelHasBeenSet = true; m_versionLabel = value; }
 
     /**
-     * <p>A label uniquely identifying the version for the associated application.</p>
+     * <p>A unique identifier for the application version.</p>
      */
     inline void SetVersionLabel(const char* value) { m_versionLabelHasBeenSet = true; m_versionLabel.assign(value); }
 
     /**
-     * <p>A label uniquely identifying the version for the associated application.</p>
+     * <p>A unique identifier for the application version.</p>
      */
     inline ApplicationVersionDescription& WithVersionLabel(const Aws::String& value) { SetVersionLabel(value); return *this;}
 
     /**
-     * <p>A label uniquely identifying the version for the associated application.</p>
+     * <p>A unique identifier for the application version.</p>
      */
     inline ApplicationVersionDescription& WithVersionLabel(Aws::String&& value) { SetVersionLabel(value); return *this;}
 
     /**
-     * <p>A label uniquely identifying the version for the associated application.</p>
+     * <p>A unique identifier for the application version.</p>
      */
     inline ApplicationVersionDescription& WithVersionLabel(const char* value) { SetVersionLabel(value); return *this;}
 
-    
+    /**
+     * <p>If the version's source code was retrieved from AWS CodeCommit, the location
+     * of the source code for the application version.</p>
+     */
     inline const SourceBuildInformation& GetSourceBuildInformation() const{ return m_sourceBuildInformation; }
 
-    
+    /**
+     * <p>If the version's source code was retrieved from AWS CodeCommit, the location
+     * of the source code for the application version.</p>
+     */
     inline void SetSourceBuildInformation(const SourceBuildInformation& value) { m_sourceBuildInformationHasBeenSet = true; m_sourceBuildInformation = value; }
 
-    
+    /**
+     * <p>If the version's source code was retrieved from AWS CodeCommit, the location
+     * of the source code for the application version.</p>
+     */
     inline void SetSourceBuildInformation(SourceBuildInformation&& value) { m_sourceBuildInformationHasBeenSet = true; m_sourceBuildInformation = value; }
 
-    
+    /**
+     * <p>If the version's source code was retrieved from AWS CodeCommit, the location
+     * of the source code for the application version.</p>
+     */
     inline ApplicationVersionDescription& WithSourceBuildInformation(const SourceBuildInformation& value) { SetSourceBuildInformation(value); return *this;}
 
-    
+    /**
+     * <p>If the version's source code was retrieved from AWS CodeCommit, the location
+     * of the source code for the application version.</p>
+     */
     inline ApplicationVersionDescription& WithSourceBuildInformation(SourceBuildInformation&& value) { SetSourceBuildInformation(value); return *this;}
 
     /**
-     * <p>The location where the source bundle is located for this version.</p>
+     * <p>Reference to the artifact from the AWS CodeBuild build.</p>
+     */
+    inline const Aws::String& GetBuildArn() const{ return m_buildArn; }
+
+    /**
+     * <p>Reference to the artifact from the AWS CodeBuild build.</p>
+     */
+    inline void SetBuildArn(const Aws::String& value) { m_buildArnHasBeenSet = true; m_buildArn = value; }
+
+    /**
+     * <p>Reference to the artifact from the AWS CodeBuild build.</p>
+     */
+    inline void SetBuildArn(Aws::String&& value) { m_buildArnHasBeenSet = true; m_buildArn = value; }
+
+    /**
+     * <p>Reference to the artifact from the AWS CodeBuild build.</p>
+     */
+    inline void SetBuildArn(const char* value) { m_buildArnHasBeenSet = true; m_buildArn.assign(value); }
+
+    /**
+     * <p>Reference to the artifact from the AWS CodeBuild build.</p>
+     */
+    inline ApplicationVersionDescription& WithBuildArn(const Aws::String& value) { SetBuildArn(value); return *this;}
+
+    /**
+     * <p>Reference to the artifact from the AWS CodeBuild build.</p>
+     */
+    inline ApplicationVersionDescription& WithBuildArn(Aws::String&& value) { SetBuildArn(value); return *this;}
+
+    /**
+     * <p>Reference to the artifact from the AWS CodeBuild build.</p>
+     */
+    inline ApplicationVersionDescription& WithBuildArn(const char* value) { SetBuildArn(value); return *this;}
+
+    /**
+     * <p>The storage location of the application version's source bundle in Amazon
+     * S3.</p>
      */
     inline const S3Location& GetSourceBundle() const{ return m_sourceBundle; }
 
     /**
-     * <p>The location where the source bundle is located for this version.</p>
+     * <p>The storage location of the application version's source bundle in Amazon
+     * S3.</p>
      */
     inline void SetSourceBundle(const S3Location& value) { m_sourceBundleHasBeenSet = true; m_sourceBundle = value; }
 
     /**
-     * <p>The location where the source bundle is located for this version.</p>
+     * <p>The storage location of the application version's source bundle in Amazon
+     * S3.</p>
      */
     inline void SetSourceBundle(S3Location&& value) { m_sourceBundleHasBeenSet = true; m_sourceBundle = value; }
 
     /**
-     * <p>The location where the source bundle is located for this version.</p>
+     * <p>The storage location of the application version's source bundle in Amazon
+     * S3.</p>
      */
     inline ApplicationVersionDescription& WithSourceBundle(const S3Location& value) { SetSourceBundle(value); return *this;}
 
     /**
-     * <p>The location where the source bundle is located for this version.</p>
+     * <p>The storage location of the application version's source bundle in Amazon
+     * S3.</p>
      */
     inline ApplicationVersionDescription& WithSourceBundle(S3Location&& value) { SetSourceBundle(value); return *this;}
 
@@ -277,6 +335,8 @@ namespace Model
     bool m_versionLabelHasBeenSet;
     SourceBuildInformation m_sourceBuildInformation;
     bool m_sourceBuildInformationHasBeenSet;
+    Aws::String m_buildArn;
+    bool m_buildArnHasBeenSet;
     S3Location m_sourceBundle;
     bool m_sourceBundleHasBeenSet;
     Aws::Utils::DateTime m_dateCreated;

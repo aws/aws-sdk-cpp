@@ -30,6 +30,7 @@ namespace Model
 Certificate::Certificate() : 
     m_certificateArnHasBeenSet(false),
     m_certificateIdHasBeenSet(false),
+    m_status(CertificateStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_creationDateHasBeenSet(false)
 {
@@ -38,6 +39,7 @@ Certificate::Certificate() :
 Certificate::Certificate(const JsonValue& jsonValue) : 
     m_certificateArnHasBeenSet(false),
     m_certificateIdHasBeenSet(false),
+    m_status(CertificateStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_creationDateHasBeenSet(false)
 {

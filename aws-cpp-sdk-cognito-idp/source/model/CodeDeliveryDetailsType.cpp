@@ -29,6 +29,7 @@ namespace Model
 
 CodeDeliveryDetailsType::CodeDeliveryDetailsType() : 
     m_destinationHasBeenSet(false),
+    m_deliveryMedium(DeliveryMediumType::NOT_SET),
     m_deliveryMediumHasBeenSet(false),
     m_attributeNameHasBeenSet(false)
 {
@@ -36,6 +37,7 @@ CodeDeliveryDetailsType::CodeDeliveryDetailsType() :
 
 CodeDeliveryDetailsType::CodeDeliveryDetailsType(const JsonValue& jsonValue) : 
     m_destinationHasBeenSet(false),
+    m_deliveryMedium(DeliveryMediumType::NOT_SET),
     m_deliveryMediumHasBeenSet(false),
     m_attributeNameHasBeenSet(false)
 {

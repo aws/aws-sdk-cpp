@@ -36,7 +36,9 @@ namespace Model
    * <p>Configuration information for a search suggester. Each suggester has a unique
    * name and specifies the text field you want to use for suggestions. The following
    * options can be configured for a suggester: <code>FuzzyMatching</code>,
-   * <code>SortExpression</code>. </p>
+   * <code>SortExpression</code>. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/Suggester">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDSEARCH_API Suggester
   {

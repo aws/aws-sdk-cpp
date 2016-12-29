@@ -23,6 +23,7 @@ using namespace Aws::Utils;
 
 SetTaskStatusRequest::SetTaskStatusRequest() : 
     m_taskIdHasBeenSet(false),
+    m_taskStatus(TaskStatus::NOT_SET),
     m_taskStatusHasBeenSet(false),
     m_errorIdHasBeenSet(false),
     m_errorMessageHasBeenSet(false),

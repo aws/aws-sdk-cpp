@@ -24,6 +24,7 @@ using namespace Aws::Utils;
 RegisterDeviceRequest::RegisterDeviceRequest() : 
     m_identityPoolIdHasBeenSet(false),
     m_identityIdHasBeenSet(false),
+    m_platform(Platform::NOT_SET),
     m_platformHasBeenSet(false),
     m_tokenHasBeenSet(false)
 {

@@ -28,13 +28,17 @@ namespace Model
 {
 
 WorkflowExecutionTimedOutEventAttributes::WorkflowExecutionTimedOutEventAttributes() : 
+    m_timeoutType(WorkflowExecutionTimeoutType::NOT_SET),
     m_timeoutTypeHasBeenSet(false),
+    m_childPolicy(ChildPolicy::NOT_SET),
     m_childPolicyHasBeenSet(false)
 {
 }
 
 WorkflowExecutionTimedOutEventAttributes::WorkflowExecutionTimedOutEventAttributes(const JsonValue& jsonValue) : 
+    m_timeoutType(WorkflowExecutionTimeoutType::NOT_SET),
     m_timeoutTypeHasBeenSet(false),
+    m_childPolicy(ChildPolicy::NOT_SET),
     m_childPolicyHasBeenSet(false)
 {
   *this = jsonValue;

@@ -32,7 +32,9 @@ namespace Model
 
   /**
    * <p>The <code>Status</code> and <code>TrackingNumber</code> information for an
-   * inbound or outbound shipment.</p>
+   * inbound or outbound shipment.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/Shipment">AWS
+   * API Reference</a></p>
    */
   class AWS_SNOWBALL_API Shipment
   {

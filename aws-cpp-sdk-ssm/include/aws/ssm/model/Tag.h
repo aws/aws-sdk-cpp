@@ -31,9 +31,11 @@ namespace Model
 {
 
   /**
-   * <p> Metadata that you assign to your managed instances. Tags enable you to
+   * <p>Metadata that you assign to your managed instances. Tags enable you to
    * categorize your managed instances in different ways, for example, by purpose,
-   * owner, or environment.</p>
+   * owner, or environment.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/Tag">AWS API
+   * Reference</a></p>
    */
   class AWS_SSM_API Tag
   {

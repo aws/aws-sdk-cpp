@@ -23,6 +23,7 @@ DescribeImageAttributeRequest::DescribeImageAttributeRequest() :
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
     m_imageIdHasBeenSet(false),
+    m_attribute(ImageAttributeName::NOT_SET),
     m_attributeHasBeenSet(false)
 {
 }
@@ -46,7 +47,7 @@ Aws::String DescribeImageAttributeRequest::SerializePayload() const
     ss << "Attribute=" << ImageAttributeNameMapper::GetNameForImageAttributeName(m_attribute) << "&";
   }
 
-  ss << "Version=2015-10-01";
+  ss << "Version=2016-11-15";
   return ss.str();
 }
 

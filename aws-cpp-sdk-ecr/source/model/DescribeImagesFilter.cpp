@@ -28,11 +28,13 @@ namespace Model
 {
 
 DescribeImagesFilter::DescribeImagesFilter() : 
+    m_tagStatus(TagStatus::NOT_SET),
     m_tagStatusHasBeenSet(false)
 {
 }
 
 DescribeImagesFilter::DescribeImagesFilter(const JsonValue& jsonValue) : 
+    m_tagStatus(TagStatus::NOT_SET),
     m_tagStatusHasBeenSet(false)
 {
   *this = jsonValue;

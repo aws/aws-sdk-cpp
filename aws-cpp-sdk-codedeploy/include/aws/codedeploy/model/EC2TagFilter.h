@@ -32,7 +32,9 @@ namespace Model
 {
 
   /**
-   * <p>Information about a tag filter.</p>
+   * <p>Information about a tag filter.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/EC2TagFilter">AWS
+   * API Reference</a></p>
    */
   class AWS_CODEDEPLOY_API EC2TagFilter
   {

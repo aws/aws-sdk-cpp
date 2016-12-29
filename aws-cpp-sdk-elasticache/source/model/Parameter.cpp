@@ -39,6 +39,7 @@ Parameter::Parameter() :
     m_isModifiable(false),
     m_isModifiableHasBeenSet(false),
     m_minimumEngineVersionHasBeenSet(false),
+    m_changeType(ChangeType::NOT_SET),
     m_changeTypeHasBeenSet(false)
 {
 }
@@ -53,6 +54,7 @@ Parameter::Parameter(const XmlNode& xmlNode) :
     m_isModifiable(false),
     m_isModifiableHasBeenSet(false),
     m_minimumEngineVersionHasBeenSet(false),
+    m_changeType(ChangeType::NOT_SET),
     m_changeTypeHasBeenSet(false)
 {
   *this = xmlNode;

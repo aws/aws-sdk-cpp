@@ -33,7 +33,9 @@ namespace Model
 {
 
   /**
-   * <p>An object representing an Amazon ECR image failure.</p>
+   * <p>An object representing an Amazon ECR image failure.</p><p><h3>See Also:</h3> 
+   * <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/ImageFailure">AWS
+   * API Reference</a></p>
    */
   class AWS_ECR_API ImageFailure
   {

@@ -31,10 +31,12 @@ namespace Model
 
 Host::Host() : 
     m_hostIdHasBeenSet(false),
+    m_autoPlacement(AutoPlacement::NOT_SET),
     m_autoPlacementHasBeenSet(false),
     m_hostReservationIdHasBeenSet(false),
     m_clientTokenHasBeenSet(false),
     m_hostPropertiesHasBeenSet(false),
+    m_state(AllocationState::NOT_SET),
     m_stateHasBeenSet(false),
     m_availabilityZoneHasBeenSet(false),
     m_instancesHasBeenSet(false),
@@ -44,10 +46,12 @@ Host::Host() :
 
 Host::Host(const XmlNode& xmlNode) : 
     m_hostIdHasBeenSet(false),
+    m_autoPlacement(AutoPlacement::NOT_SET),
     m_autoPlacementHasBeenSet(false),
     m_hostReservationIdHasBeenSet(false),
     m_clientTokenHasBeenSet(false),
     m_hostPropertiesHasBeenSet(false),
+    m_state(AllocationState::NOT_SET),
     m_stateHasBeenSet(false),
     m_availabilityZoneHasBeenSet(false),
     m_instancesHasBeenSet(false),

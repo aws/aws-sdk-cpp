@@ -30,7 +30,9 @@ namespace Model
 Offering::Offering() : 
     m_idHasBeenSet(false),
     m_descriptionHasBeenSet(false),
+    m_type(OfferingType::NOT_SET),
     m_typeHasBeenSet(false),
+    m_platform(DevicePlatform::NOT_SET),
     m_platformHasBeenSet(false),
     m_recurringChargesHasBeenSet(false)
 {
@@ -39,7 +41,9 @@ Offering::Offering() :
 Offering::Offering(const JsonValue& jsonValue) : 
     m_idHasBeenSet(false),
     m_descriptionHasBeenSet(false),
+    m_type(OfferingType::NOT_SET),
     m_typeHasBeenSet(false),
+    m_platform(DevicePlatform::NOT_SET),
     m_platformHasBeenSet(false),
     m_recurringChargesHasBeenSet(false)
 {

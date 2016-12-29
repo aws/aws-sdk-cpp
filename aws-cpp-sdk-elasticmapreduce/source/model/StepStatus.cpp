@@ -28,6 +28,7 @@ namespace Model
 {
 
 StepStatus::StepStatus() : 
+    m_state(StepState::NOT_SET),
     m_stateHasBeenSet(false),
     m_stateChangeReasonHasBeenSet(false),
     m_failureDetailsHasBeenSet(false),
@@ -36,6 +37,7 @@ StepStatus::StepStatus() :
 }
 
 StepStatus::StepStatus(const JsonValue& jsonValue) : 
+    m_state(StepState::NOT_SET),
     m_stateHasBeenSet(false),
     m_stateChangeReasonHasBeenSet(false),
     m_failureDetailsHasBeenSet(false),

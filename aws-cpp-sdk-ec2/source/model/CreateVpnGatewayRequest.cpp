@@ -22,6 +22,7 @@ using namespace Aws::Utils;
 CreateVpnGatewayRequest::CreateVpnGatewayRequest() : 
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
+    m_type(GatewayType::NOT_SET),
     m_typeHasBeenSet(false),
     m_availabilityZoneHasBeenSet(false)
 {
@@ -46,7 +47,7 @@ Aws::String CreateVpnGatewayRequest::SerializePayload() const
     ss << "AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
   }
 
-  ss << "Version=2015-10-01";
+  ss << "Version=2016-11-15";
   return ss.str();
 }
 

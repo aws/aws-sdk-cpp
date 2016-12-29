@@ -24,11 +24,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-AcknowledgeJobResult::AcknowledgeJobResult()
+AcknowledgeJobResult::AcknowledgeJobResult() : 
+    m_status(JobStatus::NOT_SET)
 {
 }
 
-AcknowledgeJobResult::AcknowledgeJobResult(const AmazonWebServiceResult<JsonValue>& result)
+AcknowledgeJobResult::AcknowledgeJobResult(const AmazonWebServiceResult<JsonValue>& result) : 
+    m_status(JobStatus::NOT_SET)
 {
   *this = result;
 }

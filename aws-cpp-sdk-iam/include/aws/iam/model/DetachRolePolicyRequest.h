@@ -34,64 +34,64 @@ namespace Model
 
     /**
      * <p>The name (friendly name, not ARN) of the IAM role to detach the policy
-     * from.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for
-     * this parameter is a string of characters consisting of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-</p>
+     * from.</p> <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: =,.@-</p>
      */
     inline const Aws::String& GetRoleName() const{ return m_roleName; }
 
     /**
      * <p>The name (friendly name, not ARN) of the IAM role to detach the policy
-     * from.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for
-     * this parameter is a string of characters consisting of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-</p>
+     * from.</p> <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: =,.@-</p>
      */
     inline void SetRoleName(const Aws::String& value) { m_roleNameHasBeenSet = true; m_roleName = value; }
 
     /**
      * <p>The name (friendly name, not ARN) of the IAM role to detach the policy
-     * from.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for
-     * this parameter is a string of characters consisting of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-</p>
+     * from.</p> <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: =,.@-</p>
      */
     inline void SetRoleName(Aws::String&& value) { m_roleNameHasBeenSet = true; m_roleName = value; }
 
     /**
      * <p>The name (friendly name, not ARN) of the IAM role to detach the policy
-     * from.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for
-     * this parameter is a string of characters consisting of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-</p>
+     * from.</p> <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: =,.@-</p>
      */
     inline void SetRoleName(const char* value) { m_roleNameHasBeenSet = true; m_roleName.assign(value); }
 
     /**
      * <p>The name (friendly name, not ARN) of the IAM role to detach the policy
-     * from.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for
-     * this parameter is a string of characters consisting of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-</p>
+     * from.</p> <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: =,.@-</p>
      */
     inline DetachRolePolicyRequest& WithRoleName(const Aws::String& value) { SetRoleName(value); return *this;}
 
     /**
      * <p>The name (friendly name, not ARN) of the IAM role to detach the policy
-     * from.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for
-     * this parameter is a string of characters consisting of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-</p>
+     * from.</p> <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: =,.@-</p>
      */
     inline DetachRolePolicyRequest& WithRoleName(Aws::String&& value) { SetRoleName(value); return *this;}
 
     /**
      * <p>The name (friendly name, not ARN) of the IAM role to detach the policy
-     * from.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for
-     * this parameter is a string of characters consisting of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-</p>
+     * from.</p> <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: =,.@-</p>
      */
     inline DetachRolePolicyRequest& WithRoleName(const char* value) { SetRoleName(value); return *this;}
 

@@ -25,11 +25,15 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PutObjectResult::PutObjectResult()
+PutObjectResult::PutObjectResult() : 
+    m_serverSideEncryption(ServerSideEncryption::NOT_SET),
+    m_requestCharged(RequestCharged::NOT_SET)
 {
 }
 
-PutObjectResult::PutObjectResult(const AmazonWebServiceResult<XmlDocument>& result)
+PutObjectResult::PutObjectResult(const AmazonWebServiceResult<XmlDocument>& result) : 
+    m_serverSideEncryption(ServerSideEncryption::NOT_SET),
+    m_requestCharged(RequestCharged::NOT_SET)
 {
   *this = result;
 }

@@ -31,7 +31,10 @@ namespace Model
 {
 
   /**
-   * <p>An object representing a filter on a <a>DescribeImages</a> operation.</p>
+   * <p>An object representing a filter on a <a>DescribeImages</a>
+   * operation.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DescribeImagesFilter">AWS
+   * API Reference</a></p>
    */
   class AWS_ECR_API DescribeImagesFilter
   {

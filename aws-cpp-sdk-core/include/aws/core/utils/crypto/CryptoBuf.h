@@ -121,7 +121,7 @@ namespace Aws
                  * cipherMode, encrypt or decrypt
                  * bufferSize, amount of data to encrypt/decrypt at a time.
                  */
-                SymmetricCryptoBufSink(Aws::OStream& stream, SymmetricCipher& cipher, CipherMode cipherMode, size_t bufferSize = DEFAULT_BUF_SIZE);
+                SymmetricCryptoBufSink(Aws::OStream& stream, SymmetricCipher& cipher, CipherMode cipherMode, size_t bufferSize = DEFAULT_BUF_SIZE, int16_t blockOffset = 0);
                 SymmetricCryptoBufSink(const SymmetricCryptoBufSink&) = delete;
                 SymmetricCryptoBufSink(SymmetricCryptoBufSink&&) = delete;
 
@@ -153,6 +153,7 @@ namespace Aws
                 CipherMode m_cipherMode;
                 bool m_isFinalized;
                 size_t m_bufferSize;
+                int16_t m_blockOffset;
             };
         }
     }

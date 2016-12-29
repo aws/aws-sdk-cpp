@@ -25,11 +25,13 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 ListTrafficPolicyInstancesResult::ListTrafficPolicyInstancesResult() : 
+    m_trafficPolicyInstanceTypeMarker(RRType::NOT_SET),
     m_isTruncated(false)
 {
 }
 
 ListTrafficPolicyInstancesResult::ListTrafficPolicyInstancesResult(const AmazonWebServiceResult<XmlDocument>& result) : 
+    m_trafficPolicyInstanceTypeMarker(RRType::NOT_SET),
     m_isTruncated(false)
 {
   *this = result;

@@ -25,7 +25,9 @@ namespace Model
 {
 
   /**
-   * <p>A request to create a new domain name.</p>
+   * <p>A request to create a new domain name.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateDomainNameRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_APIGATEWAY_API CreateDomainNameRequest : public APIGatewayRequest
   {

@@ -16,6 +16,7 @@
 #include <aws/s3/S3_EXPORTS.h>
 #include <aws/s3/model/LifecycleExpiration.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/s3/model/LifecycleRuleFilter.h>
 #include <aws/s3/model/ExpirationStatus.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/s3/model/NoncurrentVersionExpiration.h>
@@ -96,40 +97,20 @@ namespace Model
      */
     inline LifecycleRule& WithID(const char* value) { SetID(value); return *this;}
 
-    /**
-     * Prefix identifying one or more objects to which the rule applies.
-     */
-    inline const Aws::String& GetPrefix() const{ return m_prefix; }
+    
+    inline const LifecycleRuleFilter& GetFilter() const{ return m_filter; }
 
-    /**
-     * Prefix identifying one or more objects to which the rule applies.
-     */
-    inline void SetPrefix(const Aws::String& value) { m_prefixHasBeenSet = true; m_prefix = value; }
+    
+    inline void SetFilter(const LifecycleRuleFilter& value) { m_filterHasBeenSet = true; m_filter = value; }
 
-    /**
-     * Prefix identifying one or more objects to which the rule applies.
-     */
-    inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = value; }
+    
+    inline void SetFilter(LifecycleRuleFilter&& value) { m_filterHasBeenSet = true; m_filter = value; }
 
-    /**
-     * Prefix identifying one or more objects to which the rule applies.
-     */
-    inline void SetPrefix(const char* value) { m_prefixHasBeenSet = true; m_prefix.assign(value); }
+    
+    inline LifecycleRule& WithFilter(const LifecycleRuleFilter& value) { SetFilter(value); return *this;}
 
-    /**
-     * Prefix identifying one or more objects to which the rule applies.
-     */
-    inline LifecycleRule& WithPrefix(const Aws::String& value) { SetPrefix(value); return *this;}
-
-    /**
-     * Prefix identifying one or more objects to which the rule applies.
-     */
-    inline LifecycleRule& WithPrefix(Aws::String&& value) { SetPrefix(value); return *this;}
-
-    /**
-     * Prefix identifying one or more objects to which the rule applies.
-     */
-    inline LifecycleRule& WithPrefix(const char* value) { SetPrefix(value); return *this;}
+    
+    inline LifecycleRule& WithFilter(LifecycleRuleFilter&& value) { SetFilter(value); return *this;}
 
     /**
      * If 'Enabled', the rule is currently being applied. If 'Disabled', the rule is
@@ -238,8 +219,8 @@ namespace Model
     bool m_expirationHasBeenSet;
     Aws::String m_iD;
     bool m_iDHasBeenSet;
-    Aws::String m_prefix;
-    bool m_prefixHasBeenSet;
+    LifecycleRuleFilter m_filter;
+    bool m_filterHasBeenSet;
     ExpirationStatus m_status;
     bool m_statusHasBeenSet;
     Aws::Vector<Transition> m_transitions;

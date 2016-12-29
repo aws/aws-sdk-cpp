@@ -25,6 +25,11 @@ namespace Model
 {
 
   /**
+   * <p>A JSON object containing the following fields:</p> <ul> <li> <p>
+   * <a>DeleteBandwidthRateLimitInput$BandwidthType</a> </p> </li> </ul><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteBandwidthRateLimitInput">AWS
+   * API Reference</a></p>
    */
   class AWS_STORAGEGATEWAY_API DeleteBandwidthRateLimitRequest : public StorageGatewayRequest
   {
@@ -55,25 +60,53 @@ namespace Model
     
     inline DeleteBandwidthRateLimitRequest& WithGatewayARN(const char* value) { SetGatewayARN(value); return *this;}
 
-    
+    /**
+     * <p>One of the BandwidthType values that indicates the gateway bandwidth rate
+     * limit to delete.</p> <p>Valid Values: <code>Upload</code>,
+     * <code>Download</code>, <code>All</code>.</p>
+     */
     inline const Aws::String& GetBandwidthType() const{ return m_bandwidthType; }
 
-    
+    /**
+     * <p>One of the BandwidthType values that indicates the gateway bandwidth rate
+     * limit to delete.</p> <p>Valid Values: <code>Upload</code>,
+     * <code>Download</code>, <code>All</code>.</p>
+     */
     inline void SetBandwidthType(const Aws::String& value) { m_bandwidthTypeHasBeenSet = true; m_bandwidthType = value; }
 
-    
+    /**
+     * <p>One of the BandwidthType values that indicates the gateway bandwidth rate
+     * limit to delete.</p> <p>Valid Values: <code>Upload</code>,
+     * <code>Download</code>, <code>All</code>.</p>
+     */
     inline void SetBandwidthType(Aws::String&& value) { m_bandwidthTypeHasBeenSet = true; m_bandwidthType = value; }
 
-    
+    /**
+     * <p>One of the BandwidthType values that indicates the gateway bandwidth rate
+     * limit to delete.</p> <p>Valid Values: <code>Upload</code>,
+     * <code>Download</code>, <code>All</code>.</p>
+     */
     inline void SetBandwidthType(const char* value) { m_bandwidthTypeHasBeenSet = true; m_bandwidthType.assign(value); }
 
-    
+    /**
+     * <p>One of the BandwidthType values that indicates the gateway bandwidth rate
+     * limit to delete.</p> <p>Valid Values: <code>Upload</code>,
+     * <code>Download</code>, <code>All</code>.</p>
+     */
     inline DeleteBandwidthRateLimitRequest& WithBandwidthType(const Aws::String& value) { SetBandwidthType(value); return *this;}
 
-    
+    /**
+     * <p>One of the BandwidthType values that indicates the gateway bandwidth rate
+     * limit to delete.</p> <p>Valid Values: <code>Upload</code>,
+     * <code>Download</code>, <code>All</code>.</p>
+     */
     inline DeleteBandwidthRateLimitRequest& WithBandwidthType(Aws::String&& value) { SetBandwidthType(value); return *this;}
 
-    
+    /**
+     * <p>One of the BandwidthType values that indicates the gateway bandwidth rate
+     * limit to delete.</p> <p>Valid Values: <code>Upload</code>,
+     * <code>Download</code>, <code>All</code>.</p>
+     */
     inline DeleteBandwidthRateLimitRequest& WithBandwidthType(const char* value) { SetBandwidthType(value); return *this;}
 
   private:

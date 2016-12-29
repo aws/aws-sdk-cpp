@@ -40,11 +40,13 @@ Instance::Instance() :
     m_amiLaunchIndex(0),
     m_amiLaunchIndexHasBeenSet(false),
     m_productCodesHasBeenSet(false),
+    m_instanceType(InstanceType::NOT_SET),
     m_instanceTypeHasBeenSet(false),
     m_launchTimeHasBeenSet(false),
     m_placementHasBeenSet(false),
     m_kernelIdHasBeenSet(false),
     m_ramdiskIdHasBeenSet(false),
+    m_platform(PlatformValues::NOT_SET),
     m_platformHasBeenSet(false),
     m_monitoringHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
@@ -52,11 +54,15 @@ Instance::Instance() :
     m_privateIpAddressHasBeenSet(false),
     m_publicIpAddressHasBeenSet(false),
     m_stateReasonHasBeenSet(false),
+    m_architecture(ArchitectureValues::NOT_SET),
     m_architectureHasBeenSet(false),
+    m_rootDeviceType(DeviceType::NOT_SET),
     m_rootDeviceTypeHasBeenSet(false),
     m_rootDeviceNameHasBeenSet(false),
     m_blockDeviceMappingsHasBeenSet(false),
+    m_virtualizationType(VirtualizationType::NOT_SET),
     m_virtualizationTypeHasBeenSet(false),
+    m_instanceLifecycle(InstanceLifecycleType::NOT_SET),
     m_instanceLifecycleHasBeenSet(false),
     m_spotInstanceRequestIdHasBeenSet(false),
     m_clientTokenHasBeenSet(false),
@@ -64,12 +70,15 @@ Instance::Instance() :
     m_securityGroupsHasBeenSet(false),
     m_sourceDestCheck(false),
     m_sourceDestCheckHasBeenSet(false),
+    m_hypervisor(HypervisorType::NOT_SET),
     m_hypervisorHasBeenSet(false),
     m_networkInterfacesHasBeenSet(false),
     m_iamInstanceProfileHasBeenSet(false),
     m_ebsOptimized(false),
     m_ebsOptimizedHasBeenSet(false),
-    m_sriovNetSupportHasBeenSet(false)
+    m_sriovNetSupportHasBeenSet(false),
+    m_enaSupport(false),
+    m_enaSupportHasBeenSet(false)
 {
 }
 
@@ -84,11 +93,13 @@ Instance::Instance(const XmlNode& xmlNode) :
     m_amiLaunchIndex(0),
     m_amiLaunchIndexHasBeenSet(false),
     m_productCodesHasBeenSet(false),
+    m_instanceType(InstanceType::NOT_SET),
     m_instanceTypeHasBeenSet(false),
     m_launchTimeHasBeenSet(false),
     m_placementHasBeenSet(false),
     m_kernelIdHasBeenSet(false),
     m_ramdiskIdHasBeenSet(false),
+    m_platform(PlatformValues::NOT_SET),
     m_platformHasBeenSet(false),
     m_monitoringHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
@@ -96,11 +107,15 @@ Instance::Instance(const XmlNode& xmlNode) :
     m_privateIpAddressHasBeenSet(false),
     m_publicIpAddressHasBeenSet(false),
     m_stateReasonHasBeenSet(false),
+    m_architecture(ArchitectureValues::NOT_SET),
     m_architectureHasBeenSet(false),
+    m_rootDeviceType(DeviceType::NOT_SET),
     m_rootDeviceTypeHasBeenSet(false),
     m_rootDeviceNameHasBeenSet(false),
     m_blockDeviceMappingsHasBeenSet(false),
+    m_virtualizationType(VirtualizationType::NOT_SET),
     m_virtualizationTypeHasBeenSet(false),
+    m_instanceLifecycle(InstanceLifecycleType::NOT_SET),
     m_instanceLifecycleHasBeenSet(false),
     m_spotInstanceRequestIdHasBeenSet(false),
     m_clientTokenHasBeenSet(false),
@@ -108,12 +123,15 @@ Instance::Instance(const XmlNode& xmlNode) :
     m_securityGroupsHasBeenSet(false),
     m_sourceDestCheck(false),
     m_sourceDestCheckHasBeenSet(false),
+    m_hypervisor(HypervisorType::NOT_SET),
     m_hypervisorHasBeenSet(false),
     m_networkInterfacesHasBeenSet(false),
     m_iamInstanceProfileHasBeenSet(false),
     m_ebsOptimized(false),
     m_ebsOptimizedHasBeenSet(false),
-    m_sriovNetSupportHasBeenSet(false)
+    m_sriovNetSupportHasBeenSet(false),
+    m_enaSupport(false),
+    m_enaSupportHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -376,6 +394,12 @@ Instance& Instance::operator =(const XmlNode& xmlNode)
       m_sriovNetSupport = StringUtils::Trim(sriovNetSupportNode.GetText().c_str());
       m_sriovNetSupportHasBeenSet = true;
     }
+    XmlNode enaSupportNode = resultNode.FirstChild("enaSupport");
+    if(!enaSupportNode.IsNull())
+    {
+      m_enaSupport = StringUtils::ConvertToBool(StringUtils::Trim(enaSupportNode.GetText().c_str()).c_str());
+      m_enaSupportHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -608,6 +632,11 @@ void Instance::OutputToStream(Aws::OStream& oStream, const char* location, unsig
       oStream << location << index << locationValue << ".SriovNetSupport=" << StringUtils::URLEncode(m_sriovNetSupport.c_str()) << "&";
   }
 
+  if(m_enaSupportHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".EnaSupport=" << m_enaSupport << "&";
+  }
+
 }
 
 void Instance::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -799,6 +828,10 @@ void Instance::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_sriovNetSupportHasBeenSet)
   {
       oStream << location << ".SriovNetSupport=" << StringUtils::URLEncode(m_sriovNetSupport.c_str()) << "&";
+  }
+  if(m_enaSupportHasBeenSet)
+  {
+      oStream << location << ".EnaSupport=" << m_enaSupport << "&";
   }
 }
 

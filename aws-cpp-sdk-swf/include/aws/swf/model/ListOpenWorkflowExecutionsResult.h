@@ -35,7 +35,10 @@ namespace SWF
 namespace Model
 {
   /**
-   * <p>Contains a paginated list of information about workflow executions.</p>
+   * <p>Contains a paginated list of information about workflow
+   * executions.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/WorkflowExecutionInfos">AWS
+   * API Reference</a></p>
    */
   class AWS_SWF_API ListOpenWorkflowExecutionsResult
   {

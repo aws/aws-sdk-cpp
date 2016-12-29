@@ -25,11 +25,13 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 CreateConnectionResult::CreateConnectionResult() : 
+    m_connectionState(ConnectionState::NOT_SET),
     m_vlan(0)
 {
 }
 
 CreateConnectionResult::CreateConnectionResult(const AmazonWebServiceResult<JsonValue>& result) : 
+    m_connectionState(ConnectionState::NOT_SET),
     m_vlan(0)
 {
   *this = result;

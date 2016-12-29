@@ -31,7 +31,9 @@ namespace Model
 {
 
   /**
-   * <p>Describes whether monitoring is enabled.</p>
+   * <p>Describes whether monitoring is enabled.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SpotFleetMonitoring">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API SpotFleetMonitoring
   {
@@ -44,17 +46,17 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     /**
-     * <p>Enables monitoring for the instance.</p> <p>Default: <code>false</code></p>
+     * <p>Enables monitoring for the instance.</p> <p>Default: <code>false</code> </p>
      */
     inline bool GetEnabled() const{ return m_enabled; }
 
     /**
-     * <p>Enables monitoring for the instance.</p> <p>Default: <code>false</code></p>
+     * <p>Enables monitoring for the instance.</p> <p>Default: <code>false</code> </p>
      */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /**
-     * <p>Enables monitoring for the instance.</p> <p>Default: <code>false</code></p>
+     * <p>Enables monitoring for the instance.</p> <p>Default: <code>false</code> </p>
      */
     inline SpotFleetMonitoring& WithEnabled(bool value) { SetEnabled(value); return *this;}
 

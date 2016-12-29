@@ -26,7 +26,9 @@ namespace Model
 {
 
   /**
-   * <p>Returns information about the trail.</p>
+   * <p>Returns information about the trail.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DescribeTrailsRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDTRAIL_API DescribeTrailsRequest : public CloudTrailRequest
   {

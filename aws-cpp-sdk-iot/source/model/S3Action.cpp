@@ -31,6 +31,7 @@ S3Action::S3Action() :
     m_roleArnHasBeenSet(false),
     m_bucketNameHasBeenSet(false),
     m_keyHasBeenSet(false),
+    m_cannedAcl(CannedAccessControlList::NOT_SET),
     m_cannedAclHasBeenSet(false)
 {
 }
@@ -39,6 +40,7 @@ S3Action::S3Action(const JsonValue& jsonValue) :
     m_roleArnHasBeenSet(false),
     m_bucketNameHasBeenSet(false),
     m_keyHasBeenSet(false),
+    m_cannedAcl(CannedAccessControlList::NOT_SET),
     m_cannedAclHasBeenSet(false)
 {
   *this = jsonValue;

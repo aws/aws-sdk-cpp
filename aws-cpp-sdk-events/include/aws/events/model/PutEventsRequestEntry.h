@@ -33,7 +33,10 @@ namespace Model
 {
 
   /**
-   * <p>Contains information about the event to be used in PutEvents.</p>
+   * <p>Contains information about the event to be used in PutEvents.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutEventsRequestEntry">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDWATCHEVENTS_API PutEventsRequestEntry
   {

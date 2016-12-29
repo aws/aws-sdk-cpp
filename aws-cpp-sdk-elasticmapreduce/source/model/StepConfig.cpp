@@ -29,6 +29,7 @@ namespace Model
 
 StepConfig::StepConfig() : 
     m_nameHasBeenSet(false),
+    m_actionOnFailure(ActionOnFailure::NOT_SET),
     m_actionOnFailureHasBeenSet(false),
     m_hadoopJarStepHasBeenSet(false)
 {
@@ -36,6 +37,7 @@ StepConfig::StepConfig() :
 
 StepConfig::StepConfig(const JsonValue& jsonValue) : 
     m_nameHasBeenSet(false),
+    m_actionOnFailure(ActionOnFailure::NOT_SET),
     m_actionOnFailureHasBeenSet(false),
     m_hadoopJarStepHasBeenSet(false)
 {

@@ -23,6 +23,7 @@ CreateLoadBalancerRequest::CreateLoadBalancerRequest() :
     m_nameHasBeenSet(false),
     m_subnetsHasBeenSet(false),
     m_securityGroupsHasBeenSet(false),
+    m_scheme(LoadBalancerSchemeEnum::NOT_SET),
     m_schemeHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {

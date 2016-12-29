@@ -27,7 +27,9 @@ namespace Model
 {
 
   /**
-   * <p>Specifies the tags to add to a trail.</p>
+   * <p>Specifies the tags to add to a trail.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/AddTagsRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDTRAIL_API AddTagsRequest : public CloudTrailRequest
   {
@@ -87,37 +89,37 @@ namespace Model
     inline AddTagsRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
 
     /**
-     * <p>Contains a list of CloudTrail tags, up to a limit of 10.</p>
+     * <p>Contains a list of CloudTrail tags, up to a limit of 50</p>
      */
     inline const Aws::Vector<Tag>& GetTagsList() const{ return m_tagsList; }
 
     /**
-     * <p>Contains a list of CloudTrail tags, up to a limit of 10.</p>
+     * <p>Contains a list of CloudTrail tags, up to a limit of 50</p>
      */
     inline void SetTagsList(const Aws::Vector<Tag>& value) { m_tagsListHasBeenSet = true; m_tagsList = value; }
 
     /**
-     * <p>Contains a list of CloudTrail tags, up to a limit of 10.</p>
+     * <p>Contains a list of CloudTrail tags, up to a limit of 50</p>
      */
     inline void SetTagsList(Aws::Vector<Tag>&& value) { m_tagsListHasBeenSet = true; m_tagsList = value; }
 
     /**
-     * <p>Contains a list of CloudTrail tags, up to a limit of 10.</p>
+     * <p>Contains a list of CloudTrail tags, up to a limit of 50</p>
      */
     inline AddTagsRequest& WithTagsList(const Aws::Vector<Tag>& value) { SetTagsList(value); return *this;}
 
     /**
-     * <p>Contains a list of CloudTrail tags, up to a limit of 10.</p>
+     * <p>Contains a list of CloudTrail tags, up to a limit of 50</p>
      */
     inline AddTagsRequest& WithTagsList(Aws::Vector<Tag>&& value) { SetTagsList(value); return *this;}
 
     /**
-     * <p>Contains a list of CloudTrail tags, up to a limit of 10.</p>
+     * <p>Contains a list of CloudTrail tags, up to a limit of 50</p>
      */
     inline AddTagsRequest& AddTagsList(const Tag& value) { m_tagsListHasBeenSet = true; m_tagsList.push_back(value); return *this; }
 
     /**
-     * <p>Contains a list of CloudTrail tags, up to a limit of 10.</p>
+     * <p>Contains a list of CloudTrail tags, up to a limit of 50</p>
      */
     inline AddTagsRequest& AddTagsList(Tag&& value) { m_tagsListHasBeenSet = true; m_tagsList.push_back(value); return *this; }
 

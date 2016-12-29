@@ -24,11 +24,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CheckDomainAvailabilityResult::CheckDomainAvailabilityResult()
+CheckDomainAvailabilityResult::CheckDomainAvailabilityResult() : 
+    m_availability(DomainAvailability::NOT_SET)
 {
 }
 
-CheckDomainAvailabilityResult::CheckDomainAvailabilityResult(const AmazonWebServiceResult<JsonValue>& result)
+CheckDomainAvailabilityResult::CheckDomainAvailabilityResult(const AmazonWebServiceResult<JsonValue>& result) : 
+    m_availability(DomainAvailability::NOT_SET)
 {
   *this = result;
 }

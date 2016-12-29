@@ -23,6 +23,7 @@ DescribeNetworkInterfaceAttributeRequest::DescribeNetworkInterfaceAttributeReque
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
     m_networkInterfaceIdHasBeenSet(false),
+    m_attribute(NetworkInterfaceAttribute::NOT_SET),
     m_attributeHasBeenSet(false)
 {
 }
@@ -46,7 +47,7 @@ Aws::String DescribeNetworkInterfaceAttributeRequest::SerializePayload() const
     ss << "Attribute=" << NetworkInterfaceAttributeMapper::GetNameForNetworkInterfaceAttribute(m_attribute) << "&";
   }
 
-  ss << "Version=2015-10-01";
+  ss << "Version=2016-11-15";
   return ss.str();
 }
 

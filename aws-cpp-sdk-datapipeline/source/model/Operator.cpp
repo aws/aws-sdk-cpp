@@ -28,12 +28,14 @@ namespace Model
 {
 
 Operator::Operator() : 
+    m_type(OperatorType::NOT_SET),
     m_typeHasBeenSet(false),
     m_valuesHasBeenSet(false)
 {
 }
 
 Operator::Operator(const JsonValue& jsonValue) : 
+    m_type(OperatorType::NOT_SET),
     m_typeHasBeenSet(false),
     m_valuesHasBeenSet(false)
 {

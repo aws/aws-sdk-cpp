@@ -162,6 +162,70 @@ namespace Model
      */
     inline BatchGetImageRequest& AddImageIds(ImageIdentifier&& value) { m_imageIdsHasBeenSet = true; m_imageIds.push_back(value); return *this; }
 
+    /**
+     * <p>The accepted media types for the request.</p> <p>Valid values:
+     * <code>application/vnd.docker.distribution.manifest.v1+json</code> |
+     * <code>application/vnd.docker.distribution.manifest.v2+json</code> |
+     * <code>application/vnd.oci.image.manifest.v1+json</code> </p>
+     */
+    inline const Aws::Vector<Aws::String>& GetAcceptedMediaTypes() const{ return m_acceptedMediaTypes; }
+
+    /**
+     * <p>The accepted media types for the request.</p> <p>Valid values:
+     * <code>application/vnd.docker.distribution.manifest.v1+json</code> |
+     * <code>application/vnd.docker.distribution.manifest.v2+json</code> |
+     * <code>application/vnd.oci.image.manifest.v1+json</code> </p>
+     */
+    inline void SetAcceptedMediaTypes(const Aws::Vector<Aws::String>& value) { m_acceptedMediaTypesHasBeenSet = true; m_acceptedMediaTypes = value; }
+
+    /**
+     * <p>The accepted media types for the request.</p> <p>Valid values:
+     * <code>application/vnd.docker.distribution.manifest.v1+json</code> |
+     * <code>application/vnd.docker.distribution.manifest.v2+json</code> |
+     * <code>application/vnd.oci.image.manifest.v1+json</code> </p>
+     */
+    inline void SetAcceptedMediaTypes(Aws::Vector<Aws::String>&& value) { m_acceptedMediaTypesHasBeenSet = true; m_acceptedMediaTypes = value; }
+
+    /**
+     * <p>The accepted media types for the request.</p> <p>Valid values:
+     * <code>application/vnd.docker.distribution.manifest.v1+json</code> |
+     * <code>application/vnd.docker.distribution.manifest.v2+json</code> |
+     * <code>application/vnd.oci.image.manifest.v1+json</code> </p>
+     */
+    inline BatchGetImageRequest& WithAcceptedMediaTypes(const Aws::Vector<Aws::String>& value) { SetAcceptedMediaTypes(value); return *this;}
+
+    /**
+     * <p>The accepted media types for the request.</p> <p>Valid values:
+     * <code>application/vnd.docker.distribution.manifest.v1+json</code> |
+     * <code>application/vnd.docker.distribution.manifest.v2+json</code> |
+     * <code>application/vnd.oci.image.manifest.v1+json</code> </p>
+     */
+    inline BatchGetImageRequest& WithAcceptedMediaTypes(Aws::Vector<Aws::String>&& value) { SetAcceptedMediaTypes(value); return *this;}
+
+    /**
+     * <p>The accepted media types for the request.</p> <p>Valid values:
+     * <code>application/vnd.docker.distribution.manifest.v1+json</code> |
+     * <code>application/vnd.docker.distribution.manifest.v2+json</code> |
+     * <code>application/vnd.oci.image.manifest.v1+json</code> </p>
+     */
+    inline BatchGetImageRequest& AddAcceptedMediaTypes(const Aws::String& value) { m_acceptedMediaTypesHasBeenSet = true; m_acceptedMediaTypes.push_back(value); return *this; }
+
+    /**
+     * <p>The accepted media types for the request.</p> <p>Valid values:
+     * <code>application/vnd.docker.distribution.manifest.v1+json</code> |
+     * <code>application/vnd.docker.distribution.manifest.v2+json</code> |
+     * <code>application/vnd.oci.image.manifest.v1+json</code> </p>
+     */
+    inline BatchGetImageRequest& AddAcceptedMediaTypes(Aws::String&& value) { m_acceptedMediaTypesHasBeenSet = true; m_acceptedMediaTypes.push_back(value); return *this; }
+
+    /**
+     * <p>The accepted media types for the request.</p> <p>Valid values:
+     * <code>application/vnd.docker.distribution.manifest.v1+json</code> |
+     * <code>application/vnd.docker.distribution.manifest.v2+json</code> |
+     * <code>application/vnd.oci.image.manifest.v1+json</code> </p>
+     */
+    inline BatchGetImageRequest& AddAcceptedMediaTypes(const char* value) { m_acceptedMediaTypesHasBeenSet = true; m_acceptedMediaTypes.push_back(value); return *this; }
+
   private:
     Aws::String m_registryId;
     bool m_registryIdHasBeenSet;
@@ -169,6 +233,8 @@ namespace Model
     bool m_repositoryNameHasBeenSet;
     Aws::Vector<ImageIdentifier> m_imageIds;
     bool m_imageIdsHasBeenSet;
+    Aws::Vector<Aws::String> m_acceptedMediaTypes;
+    bool m_acceptedMediaTypesHasBeenSet;
   };
 
 } // namespace Model

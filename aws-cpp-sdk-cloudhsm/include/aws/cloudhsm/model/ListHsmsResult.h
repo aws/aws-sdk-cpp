@@ -34,7 +34,10 @@ namespace CloudHSM
 namespace Model
 {
   /**
-   * <p>Contains the output of the <a>ListHsms</a> operation.</p>
+   * <p>Contains the output of the <a>ListHsms</a> operation.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListHsmsResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDHSM_API ListHsmsResult
   {

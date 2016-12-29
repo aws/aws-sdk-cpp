@@ -35,7 +35,10 @@ namespace Route53Domains
 namespace Model
 {
   /**
-   * <p>The ViewBilling response includes the following elements.</p>
+   * <p>The ViewBilling response includes the following elements.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ViewBillingResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_ROUTE53DOMAINS_API ViewBillingResult
   {

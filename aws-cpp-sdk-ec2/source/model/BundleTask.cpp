@@ -32,6 +32,7 @@ namespace Model
 BundleTask::BundleTask() : 
     m_instanceIdHasBeenSet(false),
     m_bundleIdHasBeenSet(false),
+    m_state(BundleTaskState::NOT_SET),
     m_stateHasBeenSet(false),
     m_startTimeHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
@@ -44,6 +45,7 @@ BundleTask::BundleTask() :
 BundleTask::BundleTask(const XmlNode& xmlNode) : 
     m_instanceIdHasBeenSet(false),
     m_bundleIdHasBeenSet(false),
+    m_state(BundleTaskState::NOT_SET),
     m_stateHasBeenSet(false),
     m_startTimeHasBeenSet(false),
     m_updateTimeHasBeenSet(false),

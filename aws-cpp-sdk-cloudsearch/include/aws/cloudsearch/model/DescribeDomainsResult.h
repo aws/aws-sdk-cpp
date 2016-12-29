@@ -36,7 +36,10 @@ namespace Model
 {
   /**
    * <p>The result of a <code>DescribeDomains</code> request. Contains the status of
-   * the domains specified in the request or all domains owned by the account.</p>
+   * the domains specified in the request or all domains owned by the
+   * account.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DescribeDomainsResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDSEARCH_API DescribeDomainsResult
   {

@@ -29,7 +29,7 @@ CancelSpotInstanceRequestsRequest::CancelSpotInstanceRequestsRequest() :
 Aws::String CancelSpotInstanceRequestsRequest::SerializePayload() const
 {
   Aws::StringStream ss;
-  ss << "Action=CancelSpotInstances&";
+  ss << "Action=CancelSpotInstanceRequests&";
   if(m_dryRunHasBeenSet)
   {
     ss << "DryRun=" << m_dryRun << "&";
@@ -46,7 +46,7 @@ Aws::String CancelSpotInstanceRequestsRequest::SerializePayload() const
     }
   }
 
-  ss << "Version=2015-10-01";
+  ss << "Version=2016-11-15";
   return ss.str();
 }
 

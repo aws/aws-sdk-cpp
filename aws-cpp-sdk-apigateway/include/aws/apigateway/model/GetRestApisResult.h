@@ -39,7 +39,9 @@ namespace Model
    * with your collection. A collection offers a paginated view of your APIs.</p>
    * <div class="seeAlso"> <a
    * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Create
-   * an API</a> </div>
+   * an API</a> </div><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/RestApis">AWS
+   * API Reference</a></p>
    */
   class AWS_APIGATEWAY_API GetRestApisResult
   {

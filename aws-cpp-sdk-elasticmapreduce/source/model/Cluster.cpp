@@ -49,7 +49,10 @@ Cluster::Cluster() :
     m_normalizedInstanceHoursHasBeenSet(false),
     m_masterPublicDnsNameHasBeenSet(false),
     m_configurationsHasBeenSet(false),
-    m_securityConfigurationHasBeenSet(false)
+    m_securityConfigurationHasBeenSet(false),
+    m_autoScalingRoleHasBeenSet(false),
+    m_scaleDownBehavior(ScaleDownBehavior::NOT_SET),
+    m_scaleDownBehaviorHasBeenSet(false)
 {
 }
 
@@ -75,7 +78,10 @@ Cluster::Cluster(const JsonValue& jsonValue) :
     m_normalizedInstanceHoursHasBeenSet(false),
     m_masterPublicDnsNameHasBeenSet(false),
     m_configurationsHasBeenSet(false),
-    m_securityConfigurationHasBeenSet(false)
+    m_securityConfigurationHasBeenSet(false),
+    m_autoScalingRoleHasBeenSet(false),
+    m_scaleDownBehavior(ScaleDownBehavior::NOT_SET),
+    m_scaleDownBehaviorHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -217,6 +223,20 @@ Cluster& Cluster::operator =(const JsonValue& jsonValue)
     m_securityConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AutoScalingRole"))
+  {
+    m_autoScalingRole = jsonValue.GetString("AutoScalingRole");
+
+    m_autoScalingRoleHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ScaleDownBehavior"))
+  {
+    m_scaleDownBehavior = ScaleDownBehaviorMapper::GetScaleDownBehaviorForName(jsonValue.GetString("ScaleDownBehavior"));
+
+    m_scaleDownBehaviorHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -345,6 +365,17 @@ JsonValue Cluster::Jsonize() const
   {
    payload.WithString("SecurityConfiguration", m_securityConfiguration);
 
+  }
+
+  if(m_autoScalingRoleHasBeenSet)
+  {
+   payload.WithString("AutoScalingRole", m_autoScalingRole);
+
+  }
+
+  if(m_scaleDownBehaviorHasBeenSet)
+  {
+   payload.WithString("ScaleDownBehavior", ScaleDownBehaviorMapper::GetNameForScaleDownBehavior(m_scaleDownBehavior));
   }
 
   return payload;

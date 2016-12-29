@@ -33,119 +33,119 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     /**
-     * <p>The name of the user whose MFA device you want to resynchronize.</p> <p>The
-     * <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter
-     * is a string of characters consisting of upper and lowercase alphanumeric
-     * characters with no spaces. You can also include any of the following characters:
-     * =,.@-</p>
+     * <p>The name of the user whose MFA device you want to resynchronize.</p> <p>This
+     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+     * pattern</a>) a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-</p>
      */
     inline const Aws::String& GetUserName() const{ return m_userName; }
 
     /**
-     * <p>The name of the user whose MFA device you want to resynchronize.</p> <p>The
-     * <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter
-     * is a string of characters consisting of upper and lowercase alphanumeric
-     * characters with no spaces. You can also include any of the following characters:
-     * =,.@-</p>
+     * <p>The name of the user whose MFA device you want to resynchronize.</p> <p>This
+     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+     * pattern</a>) a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-</p>
      */
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /**
-     * <p>The name of the user whose MFA device you want to resynchronize.</p> <p>The
-     * <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter
-     * is a string of characters consisting of upper and lowercase alphanumeric
-     * characters with no spaces. You can also include any of the following characters:
-     * =,.@-</p>
+     * <p>The name of the user whose MFA device you want to resynchronize.</p> <p>This
+     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+     * pattern</a>) a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-</p>
      */
     inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /**
-     * <p>The name of the user whose MFA device you want to resynchronize.</p> <p>The
-     * <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter
-     * is a string of characters consisting of upper and lowercase alphanumeric
-     * characters with no spaces. You can also include any of the following characters:
-     * =,.@-</p>
+     * <p>The name of the user whose MFA device you want to resynchronize.</p> <p>This
+     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+     * pattern</a>) a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-</p>
      */
     inline void SetUserName(const char* value) { m_userNameHasBeenSet = true; m_userName.assign(value); }
 
     /**
-     * <p>The name of the user whose MFA device you want to resynchronize.</p> <p>The
-     * <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter
-     * is a string of characters consisting of upper and lowercase alphanumeric
-     * characters with no spaces. You can also include any of the following characters:
-     * =,.@-</p>
+     * <p>The name of the user whose MFA device you want to resynchronize.</p> <p>This
+     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+     * pattern</a>) a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-</p>
      */
     inline ResyncMFADeviceRequest& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
 
     /**
-     * <p>The name of the user whose MFA device you want to resynchronize.</p> <p>The
-     * <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter
-     * is a string of characters consisting of upper and lowercase alphanumeric
-     * characters with no spaces. You can also include any of the following characters:
-     * =,.@-</p>
+     * <p>The name of the user whose MFA device you want to resynchronize.</p> <p>This
+     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+     * pattern</a>) a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-</p>
      */
     inline ResyncMFADeviceRequest& WithUserName(Aws::String&& value) { SetUserName(value); return *this;}
 
     /**
-     * <p>The name of the user whose MFA device you want to resynchronize.</p> <p>The
-     * <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter
-     * is a string of characters consisting of upper and lowercase alphanumeric
-     * characters with no spaces. You can also include any of the following characters:
-     * =,.@-</p>
+     * <p>The name of the user whose MFA device you want to resynchronize.</p> <p>This
+     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+     * pattern</a>) a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-</p>
      */
     inline ResyncMFADeviceRequest& WithUserName(const char* value) { SetUserName(value); return *this;}
 
     /**
-     * <p>Serial number that uniquely identifies the MFA device.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
+     * <p>Serial number that uniquely identifies the MFA device.</p> <p>This parameter
+     * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of upper and lowercase alphanumeric characters
      * with no spaces. You can also include any of the following characters: =,.@-</p>
      */
     inline const Aws::String& GetSerialNumber() const{ return m_serialNumber; }
 
     /**
-     * <p>Serial number that uniquely identifies the MFA device.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
+     * <p>Serial number that uniquely identifies the MFA device.</p> <p>This parameter
+     * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of upper and lowercase alphanumeric characters
      * with no spaces. You can also include any of the following characters: =,.@-</p>
      */
     inline void SetSerialNumber(const Aws::String& value) { m_serialNumberHasBeenSet = true; m_serialNumber = value; }
 
     /**
-     * <p>Serial number that uniquely identifies the MFA device.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
+     * <p>Serial number that uniquely identifies the MFA device.</p> <p>This parameter
+     * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of upper and lowercase alphanumeric characters
      * with no spaces. You can also include any of the following characters: =,.@-</p>
      */
     inline void SetSerialNumber(Aws::String&& value) { m_serialNumberHasBeenSet = true; m_serialNumber = value; }
 
     /**
-     * <p>Serial number that uniquely identifies the MFA device.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
+     * <p>Serial number that uniquely identifies the MFA device.</p> <p>This parameter
+     * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of upper and lowercase alphanumeric characters
      * with no spaces. You can also include any of the following characters: =,.@-</p>
      */
     inline void SetSerialNumber(const char* value) { m_serialNumberHasBeenSet = true; m_serialNumber.assign(value); }
 
     /**
-     * <p>Serial number that uniquely identifies the MFA device.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
+     * <p>Serial number that uniquely identifies the MFA device.</p> <p>This parameter
+     * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of upper and lowercase alphanumeric characters
      * with no spaces. You can also include any of the following characters: =,.@-</p>
      */
     inline ResyncMFADeviceRequest& WithSerialNumber(const Aws::String& value) { SetSerialNumber(value); return *this;}
 
     /**
-     * <p>Serial number that uniquely identifies the MFA device.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
+     * <p>Serial number that uniquely identifies the MFA device.</p> <p>This parameter
+     * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of upper and lowercase alphanumeric characters
      * with no spaces. You can also include any of the following characters: =,.@-</p>
      */
     inline ResyncMFADeviceRequest& WithSerialNumber(Aws::String&& value) { SetSerialNumber(value); return *this;}
 
     /**
-     * <p>Serial number that uniquely identifies the MFA device.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
+     * <p>Serial number that uniquely identifies the MFA device.</p> <p>This parameter
+     * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of upper and lowercase alphanumeric characters
      * with no spaces. You can also include any of the following characters: =,.@-</p>
      */

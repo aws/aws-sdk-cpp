@@ -25,7 +25,10 @@ namespace Model
 {
 
   /**
-   * <p>Represents the request to reset a user's password as an administrator.</p>
+   * <p>Represents the request to reset a user's password as an
+   * administrator.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminResetUserPasswordRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_COGNITOIDENTITYPROVIDER_API AdminResetUserPasswordRequest : public CognitoIdentityProviderRequest
   {

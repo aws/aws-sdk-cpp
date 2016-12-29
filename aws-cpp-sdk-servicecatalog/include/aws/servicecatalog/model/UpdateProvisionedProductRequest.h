@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/servicecatalog/model/UpdateProvisioningParameter.h>
+#include <aws/core/utils/UUID.h>
 
 namespace Aws
 {

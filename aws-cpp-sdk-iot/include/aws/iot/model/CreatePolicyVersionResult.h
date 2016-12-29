@@ -33,7 +33,10 @@ namespace IoT
 namespace Model
 {
   /**
-   * <p>The output of the CreatePolicyVersion operation.</p>
+   * <p>The output of the CreatePolicyVersion operation.</p><p><h3>See Also:</h3>  
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreatePolicyVersionResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_IOT_API CreatePolicyVersionResult
   {

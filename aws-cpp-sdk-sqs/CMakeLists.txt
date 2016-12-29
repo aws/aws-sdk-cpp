@@ -1,92 +1,78 @@
-cmake_minimum_required(VERSION 2.8.12)
-project(aws-cpp-sdk-sqs)
+add_project(aws-cpp-sdk-sqs "C++ SDK for the AWS sqs service" aws-cpp-sdk-core)
 
-  file(GLOB AWS_SQS_HEADERS
+file(GLOB AWS_SQS_HEADERS
     "include/aws/sqs/*.h"
-  )
+)
 
-  file(GLOB AWS_SQS_MODEL_HEADERS
+file(GLOB AWS_SQS_MODEL_HEADERS
     "include/aws/sqs/model/*.h"
-  )
+)
 
-  file(GLOB AWS_SQS_SOURCE
+file(GLOB AWS_SQS_SOURCE
     "source/*.cpp"
-  )
+)
 
-  file(GLOB AWS_SQS_MODEL_SOURCE
+file(GLOB AWS_SQS_MODEL_SOURCE
     "source/model/*.cpp"
-  )
+)
 
-  file(GLOB SQS_UNIFIED_HEADERS
+file(GLOB SQS_UNIFIED_HEADERS
     ${AWS_SQS_HEADERS}
     ${AWS_SQS_MODEL_HEADERS}
-  )
+)
 
-  file(GLOB SQS_UNITY_SRC
+file(GLOB SQS_UNITY_SRC
     ${AWS_SQS_SOURCE}
     ${AWS_SQS_MODEL_SOURCE}
-  )
+)
 
-  if(ENABLE_UNITY_BUILD)
+if(ENABLE_UNITY_BUILD)
     enable_unity_build("SQS" SQS_UNITY_SRC)
-  endif()
+endif()
 
-  file(GLOB SQS_SRC
+file(GLOB SQS_SRC
     ${SQS_UNIFIED_HEADERS}
     ${SQS_UNITY_SRC}
-  )
+)
 
-  if(WIN32)
+if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
-      source_group("Header Files\\aws\\sqs" FILES ${AWS_SQS_HEADERS})
-      source_group("Header Files\\aws\\sqs\\model" FILES ${AWS_SQS_MODEL_HEADERS})
-      source_group("Source Files" FILES ${AWS_SQS_SOURCE})
-      source_group("Source Files\\model" FILES ${AWS_SQS_MODEL_SOURCE})
+        source_group("Header Files\\aws\\sqs" FILES ${AWS_SQS_HEADERS})
+        source_group("Header Files\\aws\\sqs\\model" FILES ${AWS_SQS_MODEL_HEADERS})
+        source_group("Source Files" FILES ${AWS_SQS_SOURCE})
+        source_group("Source Files\\model" FILES ${AWS_SQS_MODEL_SOURCE})
     endif(MSVC)
-  endif()
+endif()
 
-  set(SQS_INCLUDES
+set(SQS_INCLUDES
     "${CMAKE_CURRENT_SOURCE_DIR}/include/"
-    "${CORE_DIR}/include/"
-  )
+)
 
-  include_directories(${SQS_INCLUDES})
+include_directories(${SQS_INCLUDES})
 
-  if(USE_WINDOWS_DLL_SEMANTICS AND BUILD_SHARED_LIBS)
+if(USE_WINDOWS_DLL_SEMANTICS AND BUILD_SHARED_LIBS)
     add_definitions("-DAWS_SQS_EXPORTS")
-  endif()
+endif()
 
-  add_library(aws-cpp-sdk-sqs ${LIBTYPE} ${SQS_SRC})
+add_library(${PROJECT_NAME} ${LIBTYPE} ${SQS_SRC})
+add_library(AWS::${PROJECT_NAME} ALIAS ${PROJECT_NAME})
 
-  target_include_directories(aws-cpp-sdk-sqs PUBLIC
+target_include_directories(${PROJECT_NAME} PUBLIC
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
     $<INSTALL_INTERFACE:include>)
   
-  target_link_libraries(aws-cpp-sdk-sqs aws-cpp-sdk-core)
+target_link_libraries(${PROJECT_NAME} ${PROJECT_LIBS})
 
-  if(SIMPLE_INSTALL)
-      install (TARGETS aws-cpp-sdk-sqs
-               ARCHIVE DESTINATION ${ARCHIVE_DIRECTORY}
-               LIBRARY DESTINATION lib
-               RUNTIME DESTINATION bin)
-  else()
-    if(PLATFORM_CUSTOM)
-      install_custom_library(aws-cpp-sdk-sqs)
-    else()
-      install (TARGETS aws-cpp-sdk-sqs
-               ARCHIVE DESTINATION ${ARCHIVE_DIRECTORY}/${SDK_INSTALL_BINARY_PREFIX}/${PLATFORM_INSTALL_QUALIFIER}/\${CMAKE_INSTALL_CONFIG_NAME}
-               LIBRARY DESTINATION lib/${SDK_INSTALL_BINARY_PREFIX}/${PLATFORM_INSTALL_QUALIFIER}/\${CMAKE_INSTALL_CONFIG_NAME}
-               RUNTIME DESTINATION bin/${SDK_INSTALL_BINARY_PREFIX}/${PLATFORM_INSTALL_QUALIFIER}/\${CMAKE_INSTALL_CONFIG_NAME})
-    endif()
-  endif()
+setup_install()
 
-  install (FILES ${AWS_SQS_HEADERS} DESTINATION include/aws/sqs)
-  install (FILES ${AWS_SQS_MODEL_HEADERS} DESTINATION include/aws/sqs/model)
+install (FILES ${AWS_SQS_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/sqs)
+install (FILES ${AWS_SQS_MODEL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/sqs/model)
 
-  if(PLATFORM_WINDOWS AND MSVC)
-    install (FILES nuget/aws-cpp-sdk-sqs.autopkg DESTINATION nuget)
-  endif()
+if(PLATFORM_WINDOWS AND MSVC)
+    install (FILES nuget/${PROJECT_NAME}.autopkg DESTINATION nuget)
+endif()
 
+do_packaging()
 
 

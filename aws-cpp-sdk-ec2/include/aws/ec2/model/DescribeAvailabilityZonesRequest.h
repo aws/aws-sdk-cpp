@@ -27,7 +27,10 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for DescribeAvailabilityZones.</p>
+   * <p>Contains the parameters for DescribeAvailabilityZones.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAvailabilityZonesRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API DescribeAvailabilityZonesRequest : public EC2Request
   {
@@ -100,85 +103,85 @@ namespace Model
     inline DescribeAvailabilityZonesRequest& AddZoneNames(const char* value) { m_zoneNamesHasBeenSet = true; m_zoneNames.push_back(value); return *this; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p><code>message</code> - Information
-     * about the Availability Zone.</p> </li> <li> <p><code>region-name</code> - The
+     * <p>One or more filters.</p> <ul> <li> <p> <code>message</code> - Information
+     * about the Availability Zone.</p> </li> <li> <p> <code>region-name</code> - The
      * name of the region for the Availability Zone (for example,
-     * <code>us-east-1</code>).</p> </li> <li> <p><code>state</code> - The state of the
-     * Availability Zone (<code>available</code> | <code>information</code> |
-     * <code>impaired</code> | <code>unavailable</code>).</p> </li> <li>
-     * <p><code>zone-name</code> - The name of the Availability Zone (for example,
+     * <code>us-east-1</code>).</p> </li> <li> <p> <code>state</code> - The state of
+     * the Availability Zone (<code>available</code> | <code>information</code> |
+     * <code>impaired</code> | <code>unavailable</code>).</p> </li> <li> <p>
+     * <code>zone-name</code> - The name of the Availability Zone (for example,
      * <code>us-east-1a</code>).</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p><code>message</code> - Information
-     * about the Availability Zone.</p> </li> <li> <p><code>region-name</code> - The
+     * <p>One or more filters.</p> <ul> <li> <p> <code>message</code> - Information
+     * about the Availability Zone.</p> </li> <li> <p> <code>region-name</code> - The
      * name of the region for the Availability Zone (for example,
-     * <code>us-east-1</code>).</p> </li> <li> <p><code>state</code> - The state of the
-     * Availability Zone (<code>available</code> | <code>information</code> |
-     * <code>impaired</code> | <code>unavailable</code>).</p> </li> <li>
-     * <p><code>zone-name</code> - The name of the Availability Zone (for example,
+     * <code>us-east-1</code>).</p> </li> <li> <p> <code>state</code> - The state of
+     * the Availability Zone (<code>available</code> | <code>information</code> |
+     * <code>impaired</code> | <code>unavailable</code>).</p> </li> <li> <p>
+     * <code>zone-name</code> - The name of the Availability Zone (for example,
      * <code>us-east-1a</code>).</p> </li> </ul>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p><code>message</code> - Information
-     * about the Availability Zone.</p> </li> <li> <p><code>region-name</code> - The
+     * <p>One or more filters.</p> <ul> <li> <p> <code>message</code> - Information
+     * about the Availability Zone.</p> </li> <li> <p> <code>region-name</code> - The
      * name of the region for the Availability Zone (for example,
-     * <code>us-east-1</code>).</p> </li> <li> <p><code>state</code> - The state of the
-     * Availability Zone (<code>available</code> | <code>information</code> |
-     * <code>impaired</code> | <code>unavailable</code>).</p> </li> <li>
-     * <p><code>zone-name</code> - The name of the Availability Zone (for example,
+     * <code>us-east-1</code>).</p> </li> <li> <p> <code>state</code> - The state of
+     * the Availability Zone (<code>available</code> | <code>information</code> |
+     * <code>impaired</code> | <code>unavailable</code>).</p> </li> <li> <p>
+     * <code>zone-name</code> - The name of the Availability Zone (for example,
      * <code>us-east-1a</code>).</p> </li> </ul>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p><code>message</code> - Information
-     * about the Availability Zone.</p> </li> <li> <p><code>region-name</code> - The
+     * <p>One or more filters.</p> <ul> <li> <p> <code>message</code> - Information
+     * about the Availability Zone.</p> </li> <li> <p> <code>region-name</code> - The
      * name of the region for the Availability Zone (for example,
-     * <code>us-east-1</code>).</p> </li> <li> <p><code>state</code> - The state of the
-     * Availability Zone (<code>available</code> | <code>information</code> |
-     * <code>impaired</code> | <code>unavailable</code>).</p> </li> <li>
-     * <p><code>zone-name</code> - The name of the Availability Zone (for example,
+     * <code>us-east-1</code>).</p> </li> <li> <p> <code>state</code> - The state of
+     * the Availability Zone (<code>available</code> | <code>information</code> |
+     * <code>impaired</code> | <code>unavailable</code>).</p> </li> <li> <p>
+     * <code>zone-name</code> - The name of the Availability Zone (for example,
      * <code>us-east-1a</code>).</p> </li> </ul>
      */
     inline DescribeAvailabilityZonesRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p><code>message</code> - Information
-     * about the Availability Zone.</p> </li> <li> <p><code>region-name</code> - The
+     * <p>One or more filters.</p> <ul> <li> <p> <code>message</code> - Information
+     * about the Availability Zone.</p> </li> <li> <p> <code>region-name</code> - The
      * name of the region for the Availability Zone (for example,
-     * <code>us-east-1</code>).</p> </li> <li> <p><code>state</code> - The state of the
-     * Availability Zone (<code>available</code> | <code>information</code> |
-     * <code>impaired</code> | <code>unavailable</code>).</p> </li> <li>
-     * <p><code>zone-name</code> - The name of the Availability Zone (for example,
+     * <code>us-east-1</code>).</p> </li> <li> <p> <code>state</code> - The state of
+     * the Availability Zone (<code>available</code> | <code>information</code> |
+     * <code>impaired</code> | <code>unavailable</code>).</p> </li> <li> <p>
+     * <code>zone-name</code> - The name of the Availability Zone (for example,
      * <code>us-east-1a</code>).</p> </li> </ul>
      */
     inline DescribeAvailabilityZonesRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p><code>message</code> - Information
-     * about the Availability Zone.</p> </li> <li> <p><code>region-name</code> - The
+     * <p>One or more filters.</p> <ul> <li> <p> <code>message</code> - Information
+     * about the Availability Zone.</p> </li> <li> <p> <code>region-name</code> - The
      * name of the region for the Availability Zone (for example,
-     * <code>us-east-1</code>).</p> </li> <li> <p><code>state</code> - The state of the
-     * Availability Zone (<code>available</code> | <code>information</code> |
-     * <code>impaired</code> | <code>unavailable</code>).</p> </li> <li>
-     * <p><code>zone-name</code> - The name of the Availability Zone (for example,
+     * <code>us-east-1</code>).</p> </li> <li> <p> <code>state</code> - The state of
+     * the Availability Zone (<code>available</code> | <code>information</code> |
+     * <code>impaired</code> | <code>unavailable</code>).</p> </li> <li> <p>
+     * <code>zone-name</code> - The name of the Availability Zone (for example,
      * <code>us-east-1a</code>).</p> </li> </ul>
      */
     inline DescribeAvailabilityZonesRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p><code>message</code> - Information
-     * about the Availability Zone.</p> </li> <li> <p><code>region-name</code> - The
+     * <p>One or more filters.</p> <ul> <li> <p> <code>message</code> - Information
+     * about the Availability Zone.</p> </li> <li> <p> <code>region-name</code> - The
      * name of the region for the Availability Zone (for example,
-     * <code>us-east-1</code>).</p> </li> <li> <p><code>state</code> - The state of the
-     * Availability Zone (<code>available</code> | <code>information</code> |
-     * <code>impaired</code> | <code>unavailable</code>).</p> </li> <li>
-     * <p><code>zone-name</code> - The name of the Availability Zone (for example,
+     * <code>us-east-1</code>).</p> </li> <li> <p> <code>state</code> - The state of
+     * the Availability Zone (<code>available</code> | <code>information</code> |
+     * <code>impaired</code> | <code>unavailable</code>).</p> </li> <li> <p>
+     * <code>zone-name</code> - The name of the Availability Zone (for example,
      * <code>us-east-1a</code>).</p> </li> </ul>
      */
     inline DescribeAvailabilityZonesRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }

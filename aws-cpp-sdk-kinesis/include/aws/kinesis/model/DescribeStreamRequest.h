@@ -25,7 +25,10 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input for <code>DescribeStream</code>.</p>
+   * <p>Represents the input for <code>DescribeStream</code>.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DescribeStreamInput">AWS
+   * API Reference</a></p>
    */
   class AWS_KINESIS_API DescribeStreamRequest : public KinesisRequest
   {
@@ -71,17 +74,23 @@ namespace Model
     inline DescribeStreamRequest& WithStreamName(const char* value) { SetStreamName(value); return *this;}
 
     /**
-     * <p>The maximum number of shards to return.</p>
+     * <p>The maximum number of shards to return in a single call. The default value is
+     * 100. If you specify a value greater than 100, at most 100 shards are
+     * returned.</p>
      */
     inline int GetLimit() const{ return m_limit; }
 
     /**
-     * <p>The maximum number of shards to return.</p>
+     * <p>The maximum number of shards to return in a single call. The default value is
+     * 100. If you specify a value greater than 100, at most 100 shards are
+     * returned.</p>
      */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
-     * <p>The maximum number of shards to return.</p>
+     * <p>The maximum number of shards to return in a single call. The default value is
+     * 100. If you specify a value greater than 100, at most 100 shards are
+     * returned.</p>
      */
     inline DescribeStreamRequest& WithLimit(int value) { SetLimit(value); return *this;}
 

@@ -22,6 +22,7 @@ using namespace Aws::Utils;
 CreateInstanceExportTaskRequest::CreateInstanceExportTaskRequest() : 
     m_descriptionHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
+    m_targetEnvironment(ExportEnvironment::NOT_SET),
     m_targetEnvironmentHasBeenSet(false),
     m_exportToS3TaskHasBeenSet(false)
 {
@@ -48,10 +49,10 @@ Aws::String CreateInstanceExportTaskRequest::SerializePayload() const
 
   if(m_exportToS3TaskHasBeenSet)
   {
-    m_exportToS3Task.OutputToStream(ss, "ExportToS3Task");
+    m_exportToS3Task.OutputToStream(ss, "ExportToS3");
   }
 
-  ss << "Version=2015-10-01";
+  ss << "Version=2016-11-15";
   return ss.str();
 }
 

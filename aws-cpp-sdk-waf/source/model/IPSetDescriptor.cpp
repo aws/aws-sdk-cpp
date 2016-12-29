@@ -28,12 +28,14 @@ namespace Model
 {
 
 IPSetDescriptor::IPSetDescriptor() : 
+    m_type(IPSetDescriptorType::NOT_SET),
     m_typeHasBeenSet(false),
     m_valueHasBeenSet(false)
 {
 }
 
 IPSetDescriptor::IPSetDescriptor(const JsonValue& jsonValue) : 
+    m_type(IPSetDescriptorType::NOT_SET),
     m_typeHasBeenSet(false),
     m_valueHasBeenSet(false)
 {

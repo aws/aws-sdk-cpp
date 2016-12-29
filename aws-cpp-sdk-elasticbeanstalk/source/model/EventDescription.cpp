@@ -37,6 +37,7 @@ EventDescription::EventDescription() :
     m_templateNameHasBeenSet(false),
     m_environmentNameHasBeenSet(false),
     m_requestIdHasBeenSet(false),
+    m_severity(EventSeverity::NOT_SET),
     m_severityHasBeenSet(false)
 {
 }
@@ -49,6 +50,7 @@ EventDescription::EventDescription(const XmlNode& xmlNode) :
     m_templateNameHasBeenSet(false),
     m_environmentNameHasBeenSet(false),
     m_requestIdHasBeenSet(false),
+    m_severity(EventSeverity::NOT_SET),
     m_severityHasBeenSet(false)
 {
   *this = xmlNode;

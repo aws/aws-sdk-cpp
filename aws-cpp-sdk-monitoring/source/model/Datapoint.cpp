@@ -41,7 +41,9 @@ Datapoint::Datapoint() :
     m_minimumHasBeenSet(false),
     m_maximum(0.0),
     m_maximumHasBeenSet(false),
-    m_unitHasBeenSet(false)
+    m_unit(StandardUnit::NOT_SET),
+    m_unitHasBeenSet(false),
+    m_extendedStatisticsHasBeenSet(false)
 {
 }
 
@@ -57,7 +59,9 @@ Datapoint::Datapoint(const XmlNode& xmlNode) :
     m_minimumHasBeenSet(false),
     m_maximum(0.0),
     m_maximumHasBeenSet(false),
-    m_unitHasBeenSet(false)
+    m_unit(StandardUnit::NOT_SET),
+    m_unitHasBeenSet(false),
+    m_extendedStatisticsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -110,6 +114,22 @@ Datapoint& Datapoint::operator =(const XmlNode& xmlNode)
       m_unit = StandardUnitMapper::GetStandardUnitForName(StringUtils::Trim(unitNode.GetText().c_str()).c_str());
       m_unitHasBeenSet = true;
     }
+    XmlNode extendedStatisticsNode = resultNode.FirstChild("ExtendedStatistics");
+
+    if(!extendedStatisticsNode.IsNull())
+    {
+      XmlNode extendedStatisticsEntry = extendedStatisticsNode.FirstChild("entry");
+      while(!extendedStatisticsEntry.IsNull())
+      {
+        XmlNode keyNode = extendedStatisticsEntry.FirstChild("key");
+        XmlNode valueNode = extendedStatisticsEntry.FirstChild("value");
+        m_extendedStatistics[StringUtils::Trim(keyNode.GetText().c_str())] =
+           StringUtils::ConvertToDouble(StringUtils::Trim(valueNode.GetText().c_str()).c_str());
+        extendedStatisticsEntry = extendedStatisticsEntry.NextNode("entry");
+      }
+
+      m_extendedStatisticsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -152,6 +172,19 @@ void Datapoint::OutputToStream(Aws::OStream& oStream, const char* location, unsi
       oStream << location << index << locationValue << ".Unit=" << StandardUnitMapper::GetNameForStandardUnit(m_unit) << "&";
   }
 
+  if(m_extendedStatisticsHasBeenSet)
+  {
+      unsigned extendedStatisticsIdx = 1;
+      for(auto& item : m_extendedStatistics)
+      {
+        oStream << location << index << locationValue << ".ExtendedStatistics.entry." << extendedStatisticsIdx << ".key="
+            << StringUtils::URLEncode(item.first.c_str()) << "&";
+        oStream << location << index << locationValue << ".ExtendedStatistics.entry." << extendedStatisticsIdx << ".value="
+            << StringUtils::URLEncode(item.second) << "&";
+        extendedStatisticsIdx++;
+      }
+  }
+
 }
 
 void Datapoint::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -183,6 +216,19 @@ void Datapoint::OutputToStream(Aws::OStream& oStream, const char* location) cons
   if(m_unitHasBeenSet)
   {
       oStream << location << ".Unit=" << StandardUnitMapper::GetNameForStandardUnit(m_unit) << "&";
+  }
+  if(m_extendedStatisticsHasBeenSet)
+  {
+      unsigned extendedStatisticsIdx = 1;
+      for(auto& item : m_extendedStatistics)
+      {
+        oStream << location << ".ExtendedStatistics.entry."  << extendedStatisticsIdx << ".key="
+            << StringUtils::URLEncode(item.first.c_str()) << "&";
+        oStream << location <<  ".ExtendedStatistics.entry." << extendedStatisticsIdx << ".value="
+            << StringUtils::URLEncode(item.second) << "&";
+        extendedStatisticsIdx++;
+      }
+
   }
 }
 

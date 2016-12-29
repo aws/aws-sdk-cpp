@@ -96,65 +96,65 @@ namespace Model
     inline GetPolicyVersionRequest& WithPolicyArn(const char* value) { SetPolicyArn(value); return *this;}
 
     /**
-     * <p>Identifies the policy version to retrieve.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters that consists of the lowercase letter 'v' followed by one
-     * or two digits, and optionally followed by a period '.' and a string of letters
-     * and digits.</p>
+     * <p>Identifies the policy version to retrieve.</p> <p>This parameter allows (per
+     * its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters that consists of the lowercase letter 'v' followed by one or two
+     * digits, and optionally followed by a period '.' and a string of letters and
+     * digits.</p>
      */
     inline const Aws::String& GetVersionId() const{ return m_versionId; }
 
     /**
-     * <p>Identifies the policy version to retrieve.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters that consists of the lowercase letter 'v' followed by one
-     * or two digits, and optionally followed by a period '.' and a string of letters
-     * and digits.</p>
+     * <p>Identifies the policy version to retrieve.</p> <p>This parameter allows (per
+     * its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters that consists of the lowercase letter 'v' followed by one or two
+     * digits, and optionally followed by a period '.' and a string of letters and
+     * digits.</p>
      */
     inline void SetVersionId(const Aws::String& value) { m_versionIdHasBeenSet = true; m_versionId = value; }
 
     /**
-     * <p>Identifies the policy version to retrieve.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters that consists of the lowercase letter 'v' followed by one
-     * or two digits, and optionally followed by a period '.' and a string of letters
-     * and digits.</p>
+     * <p>Identifies the policy version to retrieve.</p> <p>This parameter allows (per
+     * its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters that consists of the lowercase letter 'v' followed by one or two
+     * digits, and optionally followed by a period '.' and a string of letters and
+     * digits.</p>
      */
     inline void SetVersionId(Aws::String&& value) { m_versionIdHasBeenSet = true; m_versionId = value; }
 
     /**
-     * <p>Identifies the policy version to retrieve.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters that consists of the lowercase letter 'v' followed by one
-     * or two digits, and optionally followed by a period '.' and a string of letters
-     * and digits.</p>
+     * <p>Identifies the policy version to retrieve.</p> <p>This parameter allows (per
+     * its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters that consists of the lowercase letter 'v' followed by one or two
+     * digits, and optionally followed by a period '.' and a string of letters and
+     * digits.</p>
      */
     inline void SetVersionId(const char* value) { m_versionIdHasBeenSet = true; m_versionId.assign(value); }
 
     /**
-     * <p>Identifies the policy version to retrieve.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters that consists of the lowercase letter 'v' followed by one
-     * or two digits, and optionally followed by a period '.' and a string of letters
-     * and digits.</p>
+     * <p>Identifies the policy version to retrieve.</p> <p>This parameter allows (per
+     * its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters that consists of the lowercase letter 'v' followed by one or two
+     * digits, and optionally followed by a period '.' and a string of letters and
+     * digits.</p>
      */
     inline GetPolicyVersionRequest& WithVersionId(const Aws::String& value) { SetVersionId(value); return *this;}
 
     /**
-     * <p>Identifies the policy version to retrieve.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters that consists of the lowercase letter 'v' followed by one
-     * or two digits, and optionally followed by a period '.' and a string of letters
-     * and digits.</p>
+     * <p>Identifies the policy version to retrieve.</p> <p>This parameter allows (per
+     * its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters that consists of the lowercase letter 'v' followed by one or two
+     * digits, and optionally followed by a period '.' and a string of letters and
+     * digits.</p>
      */
     inline GetPolicyVersionRequest& WithVersionId(Aws::String&& value) { SetVersionId(value); return *this;}
 
     /**
-     * <p>Identifies the policy version to retrieve.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters that consists of the lowercase letter 'v' followed by one
-     * or two digits, and optionally followed by a period '.' and a string of letters
-     * and digits.</p>
+     * <p>Identifies the policy version to retrieve.</p> <p>This parameter allows (per
+     * its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters that consists of the lowercase letter 'v' followed by one or two
+     * digits, and optionally followed by a period '.' and a string of letters and
+     * digits.</p>
      */
     inline GetPolicyVersionRequest& WithVersionId(const char* value) { SetVersionId(value); return *this;}
 

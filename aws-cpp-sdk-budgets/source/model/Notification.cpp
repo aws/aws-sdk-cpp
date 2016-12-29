@@ -28,7 +28,9 @@ namespace Model
 {
 
 Notification::Notification() : 
+    m_notificationType(NotificationType::NOT_SET),
     m_notificationTypeHasBeenSet(false),
+    m_comparisonOperator(ComparisonOperator::NOT_SET),
     m_comparisonOperatorHasBeenSet(false),
     m_threshold(0.0),
     m_thresholdHasBeenSet(false)
@@ -36,7 +38,9 @@ Notification::Notification() :
 }
 
 Notification::Notification(const JsonValue& jsonValue) : 
+    m_notificationType(NotificationType::NOT_SET),
     m_notificationTypeHasBeenSet(false),
+    m_comparisonOperator(ComparisonOperator::NOT_SET),
     m_comparisonOperatorHasBeenSet(false),
     m_threshold(0.0),
     m_thresholdHasBeenSet(false)

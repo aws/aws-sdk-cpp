@@ -42,6 +42,10 @@ namespace Aws
                  * Uses factory to allocate underlying stream
                  */
                 ResponseStream(const Aws::IOStreamFactory& factory);
+                /**
+                 * Takes ownership of an underlying stream.
+                 */
+                ResponseStream(IOStream* underlyingStreamToManage);
                 ResponseStream(const ResponseStream&) = delete;
                 ~ResponseStream();
 

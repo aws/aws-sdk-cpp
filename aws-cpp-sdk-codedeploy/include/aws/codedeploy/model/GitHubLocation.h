@@ -31,7 +31,10 @@ namespace Model
 {
 
   /**
-   * <p>Information about the location of application artifacts stored in GitHub.</p>
+   * <p>Information about the location of application artifacts stored in
+   * GitHub.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GitHubLocation">AWS
+   * API Reference</a></p>
    */
   class AWS_CODEDEPLOY_API GitHubLocation
   {

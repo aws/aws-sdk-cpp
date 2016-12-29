@@ -25,12 +25,16 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 CreateStageResult::CreateStageResult() : 
-    m_cacheClusterEnabled(false)
+    m_cacheClusterEnabled(false),
+    m_cacheClusterSize(CacheClusterSize::NOT_SET),
+    m_cacheClusterStatus(CacheClusterStatus::NOT_SET)
 {
 }
 
 CreateStageResult::CreateStageResult(const AmazonWebServiceResult<JsonValue>& result) : 
-    m_cacheClusterEnabled(false)
+    m_cacheClusterEnabled(false),
+    m_cacheClusterSize(CacheClusterSize::NOT_SET),
+    m_cacheClusterStatus(CacheClusterStatus::NOT_SET)
 {
   *this = result;
 }
@@ -96,6 +100,12 @@ CreateStageResult& CreateStageResult::operator =(const AmazonWebServiceResult<Js
     {
       m_variables[variablesItem.first] = variablesItem.second.AsString();
     }
+  }
+
+  if(jsonValue.ValueExists("documentationVersion"))
+  {
+    m_documentationVersion = jsonValue.GetString("documentationVersion");
+
   }
 
   if(jsonValue.ValueExists("createdDate"))

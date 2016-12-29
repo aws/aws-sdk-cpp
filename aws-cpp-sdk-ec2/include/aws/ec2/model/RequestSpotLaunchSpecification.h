@@ -39,7 +39,10 @@ namespace Model
 {
 
   /**
-   * <p>Describes the launch specification for an instance.</p>
+   * <p>Describes the launch specification for an instance.</p><p><h3>See Also:</h3> 
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RequestSpotLaunchSpecification">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API RequestSpotLaunchSpecification
   {
@@ -146,37 +149,51 @@ namespace Model
     inline RequestSpotLaunchSpecification& AddSecurityGroups(const char* value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(value); return *this; }
 
     /**
-     * <p>The Base64-encoded MIME user data to make available to the instances.</p>
+     * <p>The user data to make available to the instances. If you are using an AWS SDK
+     * or command line tool, Base64-encoding is performed for you, and you can load the
+     * text from a file. Otherwise, you must provide Base64-encoded text.</p>
      */
     inline const Aws::String& GetUserData() const{ return m_userData; }
 
     /**
-     * <p>The Base64-encoded MIME user data to make available to the instances.</p>
+     * <p>The user data to make available to the instances. If you are using an AWS SDK
+     * or command line tool, Base64-encoding is performed for you, and you can load the
+     * text from a file. Otherwise, you must provide Base64-encoded text.</p>
      */
     inline void SetUserData(const Aws::String& value) { m_userDataHasBeenSet = true; m_userData = value; }
 
     /**
-     * <p>The Base64-encoded MIME user data to make available to the instances.</p>
+     * <p>The user data to make available to the instances. If you are using an AWS SDK
+     * or command line tool, Base64-encoding is performed for you, and you can load the
+     * text from a file. Otherwise, you must provide Base64-encoded text.</p>
      */
     inline void SetUserData(Aws::String&& value) { m_userDataHasBeenSet = true; m_userData = value; }
 
     /**
-     * <p>The Base64-encoded MIME user data to make available to the instances.</p>
+     * <p>The user data to make available to the instances. If you are using an AWS SDK
+     * or command line tool, Base64-encoding is performed for you, and you can load the
+     * text from a file. Otherwise, you must provide Base64-encoded text.</p>
      */
     inline void SetUserData(const char* value) { m_userDataHasBeenSet = true; m_userData.assign(value); }
 
     /**
-     * <p>The Base64-encoded MIME user data to make available to the instances.</p>
+     * <p>The user data to make available to the instances. If you are using an AWS SDK
+     * or command line tool, Base64-encoding is performed for you, and you can load the
+     * text from a file. Otherwise, you must provide Base64-encoded text.</p>
      */
     inline RequestSpotLaunchSpecification& WithUserData(const Aws::String& value) { SetUserData(value); return *this;}
 
     /**
-     * <p>The Base64-encoded MIME user data to make available to the instances.</p>
+     * <p>The user data to make available to the instances. If you are using an AWS SDK
+     * or command line tool, Base64-encoding is performed for you, and you can load the
+     * text from a file. Otherwise, you must provide Base64-encoded text.</p>
      */
     inline RequestSpotLaunchSpecification& WithUserData(Aws::String&& value) { SetUserData(value); return *this;}
 
     /**
-     * <p>The Base64-encoded MIME user data to make available to the instances.</p>
+     * <p>The user data to make available to the instances. If you are using an AWS SDK
+     * or command line tool, Base64-encoding is performed for you, and you can load the
+     * text from a file. Otherwise, you must provide Base64-encoded text.</p>
      */
     inline RequestSpotLaunchSpecification& WithUserData(const char* value) { SetUserData(value); return *this;}
 
@@ -420,37 +437,44 @@ namespace Model
     inline RequestSpotLaunchSpecification& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
 
     /**
-     * <p>One or more network interfaces.</p>
+     * <p>One or more network interfaces. If you specify a network interface, you must
+     * specify subnet IDs and security group IDs using the network interface.</p>
      */
     inline const Aws::Vector<InstanceNetworkInterfaceSpecification>& GetNetworkInterfaces() const{ return m_networkInterfaces; }
 
     /**
-     * <p>One or more network interfaces.</p>
+     * <p>One or more network interfaces. If you specify a network interface, you must
+     * specify subnet IDs and security group IDs using the network interface.</p>
      */
     inline void SetNetworkInterfaces(const Aws::Vector<InstanceNetworkInterfaceSpecification>& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces = value; }
 
     /**
-     * <p>One or more network interfaces.</p>
+     * <p>One or more network interfaces. If you specify a network interface, you must
+     * specify subnet IDs and security group IDs using the network interface.</p>
      */
     inline void SetNetworkInterfaces(Aws::Vector<InstanceNetworkInterfaceSpecification>&& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces = value; }
 
     /**
-     * <p>One or more network interfaces.</p>
+     * <p>One or more network interfaces. If you specify a network interface, you must
+     * specify subnet IDs and security group IDs using the network interface.</p>
      */
     inline RequestSpotLaunchSpecification& WithNetworkInterfaces(const Aws::Vector<InstanceNetworkInterfaceSpecification>& value) { SetNetworkInterfaces(value); return *this;}
 
     /**
-     * <p>One or more network interfaces.</p>
+     * <p>One or more network interfaces. If you specify a network interface, you must
+     * specify subnet IDs and security group IDs using the network interface.</p>
      */
     inline RequestSpotLaunchSpecification& WithNetworkInterfaces(Aws::Vector<InstanceNetworkInterfaceSpecification>&& value) { SetNetworkInterfaces(value); return *this;}
 
     /**
-     * <p>One or more network interfaces.</p>
+     * <p>One or more network interfaces. If you specify a network interface, you must
+     * specify subnet IDs and security group IDs using the network interface.</p>
      */
     inline RequestSpotLaunchSpecification& AddNetworkInterfaces(const InstanceNetworkInterfaceSpecification& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces.push_back(value); return *this; }
 
     /**
-     * <p>One or more network interfaces.</p>
+     * <p>One or more network interfaces. If you specify a network interface, you must
+     * specify subnet IDs and security group IDs using the network interface.</p>
      */
     inline RequestSpotLaunchSpecification& AddNetworkInterfaces(InstanceNetworkInterfaceSpecification&& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces.push_back(value); return *this; }
 
@@ -484,7 +508,7 @@ namespace Model
      * provides dedicated throughput to Amazon EBS and an optimized configuration stack
      * to provide optimal EBS I/O performance. This optimization isn't available with
      * all instance types. Additional usage charges apply when using an EBS Optimized
-     * instance.</p> <p>Default: <code>false</code></p>
+     * instance.</p> <p>Default: <code>false</code> </p>
      */
     inline bool GetEbsOptimized() const{ return m_ebsOptimized; }
 
@@ -493,7 +517,7 @@ namespace Model
      * provides dedicated throughput to Amazon EBS and an optimized configuration stack
      * to provide optimal EBS I/O performance. This optimization isn't available with
      * all instance types. Additional usage charges apply when using an EBS Optimized
-     * instance.</p> <p>Default: <code>false</code></p>
+     * instance.</p> <p>Default: <code>false</code> </p>
      */
     inline void SetEbsOptimized(bool value) { m_ebsOptimizedHasBeenSet = true; m_ebsOptimized = value; }
 
@@ -502,7 +526,7 @@ namespace Model
      * provides dedicated throughput to Amazon EBS and an optimized configuration stack
      * to provide optimal EBS I/O performance. This optimization isn't available with
      * all instance types. Additional usage charges apply when using an EBS Optimized
-     * instance.</p> <p>Default: <code>false</code></p>
+     * instance.</p> <p>Default: <code>false</code> </p>
      */
     inline RequestSpotLaunchSpecification& WithEbsOptimized(bool value) { SetEbsOptimized(value); return *this;}
 

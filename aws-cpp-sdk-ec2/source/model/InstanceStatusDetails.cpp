@@ -30,14 +30,18 @@ namespace Model
 {
 
 InstanceStatusDetails::InstanceStatusDetails() : 
+    m_name(StatusName::NOT_SET),
     m_nameHasBeenSet(false),
+    m_status(StatusType::NOT_SET),
     m_statusHasBeenSet(false),
     m_impairedSinceHasBeenSet(false)
 {
 }
 
 InstanceStatusDetails::InstanceStatusDetails(const XmlNode& xmlNode) : 
+    m_name(StatusName::NOT_SET),
     m_nameHasBeenSet(false),
+    m_status(StatusType::NOT_SET),
     m_statusHasBeenSet(false),
     m_impairedSinceHasBeenSet(false)
 {

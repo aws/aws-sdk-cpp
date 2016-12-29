@@ -28,12 +28,14 @@ namespace Model
 {
 
 Subscriber::Subscriber() : 
+    m_subscriptionType(SubscriptionType::NOT_SET),
     m_subscriptionTypeHasBeenSet(false),
     m_addressHasBeenSet(false)
 {
 }
 
 Subscriber::Subscriber(const JsonValue& jsonValue) : 
+    m_subscriptionType(SubscriptionType::NOT_SET),
     m_subscriptionTypeHasBeenSet(false),
     m_addressHasBeenSet(false)
 {

@@ -30,6 +30,7 @@
 #include <aws/kinesis/model/CreateStreamRequest.h>
 #include <aws/kinesis/model/DecreaseStreamRetentionPeriodRequest.h>
 #include <aws/kinesis/model/DeleteStreamRequest.h>
+#include <aws/kinesis/model/DescribeLimitsRequest.h>
 #include <aws/kinesis/model/DescribeStreamRequest.h>
 #include <aws/kinesis/model/DisableEnhancedMonitoringRequest.h>
 #include <aws/kinesis/model/EnableEnhancedMonitoringRequest.h>
@@ -43,6 +44,7 @@
 #include <aws/kinesis/model/PutRecordsRequest.h>
 #include <aws/kinesis/model/RemoveTagsFromStreamRequest.h>
 #include <aws/kinesis/model/SplitShardRequest.h>
+#include <aws/kinesis/model/UpdateShardCountRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -242,6 +244,40 @@ void KinesisClient::DeleteStreamAsync(const DeleteStreamRequest& request, const 
 void KinesisClient::DeleteStreamAsyncHelper(const DeleteStreamRequest& request, const DeleteStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteStream(request), context);
+}
+
+DescribeLimitsOutcome KinesisClient::DescribeLimits(const DescribeLimitsRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DescribeLimitsOutcome(DescribeLimitsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeLimitsOutcome(outcome.GetError());
+  }
+}
+
+DescribeLimitsOutcomeCallable KinesisClient::DescribeLimitsCallable(const DescribeLimitsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeLimitsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeLimits(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void KinesisClient::DescribeLimitsAsync(const DescribeLimitsRequest& request, const DescribeLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeLimitsAsyncHelper( request, handler, context ); } );
+}
+
+void KinesisClient::DescribeLimitsAsyncHelper(const DescribeLimitsRequest& request, const DescribeLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeLimits(request), context);
 }
 
 DescribeStreamOutcome KinesisClient::DescribeStream(const DescribeStreamRequest& request) const
@@ -684,5 +720,39 @@ void KinesisClient::SplitShardAsync(const SplitShardRequest& request, const Spli
 void KinesisClient::SplitShardAsyncHelper(const SplitShardRequest& request, const SplitShardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, SplitShard(request), context);
+}
+
+UpdateShardCountOutcome KinesisClient::UpdateShardCount(const UpdateShardCountRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return UpdateShardCountOutcome(UpdateShardCountResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateShardCountOutcome(outcome.GetError());
+  }
+}
+
+UpdateShardCountOutcomeCallable KinesisClient::UpdateShardCountCallable(const UpdateShardCountRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateShardCountOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateShardCount(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void KinesisClient::UpdateShardCountAsync(const UpdateShardCountRequest& request, const UpdateShardCountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateShardCountAsyncHelper( request, handler, context ); } );
+}
+
+void KinesisClient::UpdateShardCountAsyncHelper(const UpdateShardCountRequest& request, const UpdateShardCountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateShardCount(request), context);
 }
 

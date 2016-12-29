@@ -28,7 +28,8 @@ ReceiveMessageRequest::ReceiveMessageRequest() :
     m_visibilityTimeout(0),
     m_visibilityTimeoutHasBeenSet(false),
     m_waitTimeSeconds(0),
-    m_waitTimeSecondsHasBeenSet(false)
+    m_waitTimeSecondsHasBeenSet(false),
+    m_receiveRequestAttemptIdHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,11 @@ Aws::String ReceiveMessageRequest::SerializePayload() const
   if(m_waitTimeSecondsHasBeenSet)
   {
     ss << "WaitTimeSeconds=" << m_waitTimeSeconds << "&";
+  }
+
+  if(m_receiveRequestAttemptIdHasBeenSet)
+  {
+    ss << "ReceiveRequestAttemptId=" << StringUtils::URLEncode(m_receiveRequestAttemptId.c_str()) << "&";
   }
 
   ss << "Version=2012-11-05";

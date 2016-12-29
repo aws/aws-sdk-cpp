@@ -32,6 +32,7 @@ namespace Model
 AlarmHistoryItem::AlarmHistoryItem() : 
     m_alarmNameHasBeenSet(false),
     m_timestampHasBeenSet(false),
+    m_historyItemType(HistoryItemType::NOT_SET),
     m_historyItemTypeHasBeenSet(false),
     m_historySummaryHasBeenSet(false),
     m_historyDataHasBeenSet(false)
@@ -41,6 +42,7 @@ AlarmHistoryItem::AlarmHistoryItem() :
 AlarmHistoryItem::AlarmHistoryItem(const XmlNode& xmlNode) : 
     m_alarmNameHasBeenSet(false),
     m_timestampHasBeenSet(false),
+    m_historyItemType(HistoryItemType::NOT_SET),
     m_historyItemTypeHasBeenSet(false),
     m_historySummaryHasBeenSet(false),
     m_historyDataHasBeenSet(false)

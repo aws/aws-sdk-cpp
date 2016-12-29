@@ -21,6 +21,7 @@ using namespace Aws::Utils;
 
 ModifyHostsRequest::ModifyHostsRequest() : 
     m_hostIdsHasBeenSet(false),
+    m_autoPlacement(AutoPlacement::NOT_SET),
     m_autoPlacementHasBeenSet(false)
 {
 }
@@ -45,7 +46,7 @@ Aws::String ModifyHostsRequest::SerializePayload() const
     ss << "AutoPlacement=" << AutoPlacementMapper::GetNameForAutoPlacement(m_autoPlacement) << "&";
   }
 
-  ss << "Version=2015-10-01";
+  ss << "Version=2016-11-15";
   return ss.str();
 }
 

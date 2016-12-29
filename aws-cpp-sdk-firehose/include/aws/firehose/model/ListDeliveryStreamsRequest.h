@@ -25,7 +25,6 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for <a>ListDeliveryStreams</a>.</p>
    */
   class AWS_FIREHOSE_API ListDeliveryStreamsRequest : public FirehoseRequest
   {

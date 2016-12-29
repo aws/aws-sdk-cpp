@@ -25,7 +25,10 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input of an acknowledge job action.</p>
+   * <p>Represents the input of an acknowledge job action.</p><p><h3>See Also:</h3>  
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/AcknowledgeJobInput">AWS
+   * API Reference</a></p>
    */
   class AWS_CODEPIPELINE_API AcknowledgeJobRequest : public CodePipelineRequest
   {
@@ -79,50 +82,50 @@ namespace Model
 
     /**
      * <p>A system-generated random number that AWS CodePipeline uses to ensure that
-     * the job is being worked on by only one job worker. This number must be returned
-     * in the response.</p>
+     * the job is being worked on by only one job worker. Get this number from the
+     * response of the <a>PollForJobs</a> request that returned this job.</p>
      */
     inline const Aws::String& GetNonce() const{ return m_nonce; }
 
     /**
      * <p>A system-generated random number that AWS CodePipeline uses to ensure that
-     * the job is being worked on by only one job worker. This number must be returned
-     * in the response.</p>
+     * the job is being worked on by only one job worker. Get this number from the
+     * response of the <a>PollForJobs</a> request that returned this job.</p>
      */
     inline void SetNonce(const Aws::String& value) { m_nonceHasBeenSet = true; m_nonce = value; }
 
     /**
      * <p>A system-generated random number that AWS CodePipeline uses to ensure that
-     * the job is being worked on by only one job worker. This number must be returned
-     * in the response.</p>
+     * the job is being worked on by only one job worker. Get this number from the
+     * response of the <a>PollForJobs</a> request that returned this job.</p>
      */
     inline void SetNonce(Aws::String&& value) { m_nonceHasBeenSet = true; m_nonce = value; }
 
     /**
      * <p>A system-generated random number that AWS CodePipeline uses to ensure that
-     * the job is being worked on by only one job worker. This number must be returned
-     * in the response.</p>
+     * the job is being worked on by only one job worker. Get this number from the
+     * response of the <a>PollForJobs</a> request that returned this job.</p>
      */
     inline void SetNonce(const char* value) { m_nonceHasBeenSet = true; m_nonce.assign(value); }
 
     /**
      * <p>A system-generated random number that AWS CodePipeline uses to ensure that
-     * the job is being worked on by only one job worker. This number must be returned
-     * in the response.</p>
+     * the job is being worked on by only one job worker. Get this number from the
+     * response of the <a>PollForJobs</a> request that returned this job.</p>
      */
     inline AcknowledgeJobRequest& WithNonce(const Aws::String& value) { SetNonce(value); return *this;}
 
     /**
      * <p>A system-generated random number that AWS CodePipeline uses to ensure that
-     * the job is being worked on by only one job worker. This number must be returned
-     * in the response.</p>
+     * the job is being worked on by only one job worker. Get this number from the
+     * response of the <a>PollForJobs</a> request that returned this job.</p>
      */
     inline AcknowledgeJobRequest& WithNonce(Aws::String&& value) { SetNonce(value); return *this;}
 
     /**
      * <p>A system-generated random number that AWS CodePipeline uses to ensure that
-     * the job is being worked on by only one job worker. This number must be returned
-     * in the response.</p>
+     * the job is being worked on by only one job worker. Get this number from the
+     * response of the <a>PollForJobs</a> request that returned this job.</p>
      */
     inline AcknowledgeJobRequest& WithNonce(const char* value) { SetNonce(value); return *this;}
 

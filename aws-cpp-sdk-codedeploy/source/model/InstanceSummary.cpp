@@ -30,6 +30,7 @@ namespace Model
 InstanceSummary::InstanceSummary() : 
     m_deploymentIdHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
+    m_status(InstanceStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_lastUpdatedAtHasBeenSet(false),
     m_lifecycleEventsHasBeenSet(false)
@@ -39,6 +40,7 @@ InstanceSummary::InstanceSummary() :
 InstanceSummary::InstanceSummary(const JsonValue& jsonValue) : 
     m_deploymentIdHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
+    m_status(InstanceStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_lastUpdatedAtHasBeenSet(false),
     m_lifecycleEventsHasBeenSet(false)

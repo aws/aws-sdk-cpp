@@ -22,6 +22,7 @@ using namespace Aws::Utils;
 CreateCustomerGatewayRequest::CreateCustomerGatewayRequest() : 
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
+    m_type(GatewayType::NOT_SET),
     m_typeHasBeenSet(false),
     m_publicIpHasBeenSet(false),
     m_bgpAsn(0),
@@ -45,7 +46,7 @@ Aws::String CreateCustomerGatewayRequest::SerializePayload() const
 
   if(m_publicIpHasBeenSet)
   {
-    ss << "PublicIp=" << StringUtils::URLEncode(m_publicIp.c_str()) << "&";
+    ss << "IpAddress=" << StringUtils::URLEncode(m_publicIp.c_str()) << "&";
   }
 
   if(m_bgpAsnHasBeenSet)
@@ -53,7 +54,7 @@ Aws::String CreateCustomerGatewayRequest::SerializePayload() const
     ss << "BgpAsn=" << m_bgpAsn << "&";
   }
 
-  ss << "Version=2015-10-01";
+  ss << "Version=2016-11-15";
   return ss.str();
 }
 

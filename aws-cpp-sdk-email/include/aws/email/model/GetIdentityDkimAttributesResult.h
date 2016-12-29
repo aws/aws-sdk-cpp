@@ -39,7 +39,9 @@ namespace Model
    * <p>Represents the status of Amazon SES Easy DKIM signing for an identity. For
    * domain identities, this response also contains the DKIM tokens that are required
    * for Easy DKIM signing, and whether Amazon SES successfully verified that these
-   * tokens were published.</p>
+   * tokens were published.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetIdentityDkimAttributesResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_SES_API GetIdentityDkimAttributesResult
   {

@@ -51,7 +51,14 @@ namespace Model
     AWS_RDS_DBSnapshot,
     AWS_RDS_EventSubscription,
     AWS_ElasticLoadBalancingV2_LoadBalancer,
-    AWS_S3_Bucket
+    AWS_S3_Bucket,
+    AWS_SSM_ManagedInstanceInventory,
+    AWS_Redshift_Cluster,
+    AWS_Redshift_ClusterSnapshot,
+    AWS_Redshift_ClusterParameterGroup,
+    AWS_Redshift_ClusterSecurityGroup,
+    AWS_Redshift_ClusterSubnetGroup,
+    AWS_Redshift_EventSubscription
   };
 
 namespace ResourceTypeMapper

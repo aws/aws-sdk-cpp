@@ -33,7 +33,9 @@ namespace Model
 
   /**
    * A complex type that contains information about the objects that you want to
-   * invalidate.
+   * invalidate.<p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/Paths">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API Paths
   {

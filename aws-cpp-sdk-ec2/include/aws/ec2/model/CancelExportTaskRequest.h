@@ -25,7 +25,9 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for CancelExportTask.</p>
+   * <p>Contains the parameters for CancelExportTask.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelExportTaskRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API CancelExportTaskRequest : public EC2Request
   {

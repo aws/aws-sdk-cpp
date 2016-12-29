@@ -28,7 +28,9 @@ CreateEventSourceMappingRequest::CreateEventSourceMappingRequest() :
     m_enabledHasBeenSet(false),
     m_batchSize(0),
     m_batchSizeHasBeenSet(false),
-    m_startingPositionHasBeenSet(false)
+    m_startingPosition(EventSourcePosition::NOT_SET),
+    m_startingPositionHasBeenSet(false),
+    m_startingPositionTimestampHasBeenSet(false)
 {
 }
 
@@ -63,6 +65,11 @@ Aws::String CreateEventSourceMappingRequest::SerializePayload() const
   if(m_startingPositionHasBeenSet)
   {
    payload.WithString("StartingPosition", EventSourcePositionMapper::GetNameForEventSourcePosition(m_startingPosition));
+  }
+
+  if(m_startingPositionTimestampHasBeenSet)
+  {
+   payload.WithDouble("StartingPositionTimestamp", m_startingPositionTimestamp.SecondsWithMSPrecision());
   }
 
   return payload.WriteReadable();

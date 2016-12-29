@@ -38,6 +38,7 @@ UpdateStackRequest::UpdateStackRequest() :
     m_useCustomCookbooksHasBeenSet(false),
     m_customCookbooksSourceHasBeenSet(false),
     m_defaultSshKeyNameHasBeenSet(false),
+    m_defaultRootDeviceType(RootDeviceType::NOT_SET),
     m_defaultRootDeviceTypeHasBeenSet(false),
     m_useOpsworksSecurityGroups(false),
     m_useOpsworksSecurityGroupsHasBeenSet(false),

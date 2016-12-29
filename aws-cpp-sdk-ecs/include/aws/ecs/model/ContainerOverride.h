@@ -33,7 +33,10 @@ namespace Model
 {
 
   /**
-   * <p>The overrides that should be sent to a container.</p>
+   * <p>The overrides that should be sent to a container.</p><p><h3>See Also:</h3>  
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ContainerOverride">AWS
+   * API Reference</a></p>
    */
   class AWS_ECS_API ContainerOverride
   {

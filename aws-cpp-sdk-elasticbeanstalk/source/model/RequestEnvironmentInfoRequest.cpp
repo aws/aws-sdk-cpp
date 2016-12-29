@@ -22,6 +22,7 @@ using namespace Aws::Utils;
 RequestEnvironmentInfoRequest::RequestEnvironmentInfoRequest() : 
     m_environmentIdHasBeenSet(false),
     m_environmentNameHasBeenSet(false),
+    m_infoType(EnvironmentInfoType::NOT_SET),
     m_infoTypeHasBeenSet(false)
 {
 }
@@ -29,7 +30,7 @@ RequestEnvironmentInfoRequest::RequestEnvironmentInfoRequest() :
 Aws::String RequestEnvironmentInfoRequest::SerializePayload() const
 {
   Aws::StringStream ss;
-  ss << "Action=EnvironmentInfo&";
+  ss << "Action=RequestEnvironmentInfo&";
   if(m_environmentIdHasBeenSet)
   {
     ss << "EnvironmentId=" << StringUtils::URLEncode(m_environmentId.c_str()) << "&";

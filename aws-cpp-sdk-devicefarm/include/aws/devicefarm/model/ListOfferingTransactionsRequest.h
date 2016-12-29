@@ -25,7 +25,10 @@ namespace Model
 {
 
   /**
-   * <p>Represents the request to list the offering transaction history.</p>
+   * <p>Represents the request to list the offering transaction
+   * history.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListOfferingTransactionsRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_DEVICEFARM_API ListOfferingTransactionsRequest : public DeviceFarmRequest
   {

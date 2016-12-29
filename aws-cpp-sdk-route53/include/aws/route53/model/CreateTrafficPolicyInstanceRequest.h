@@ -26,7 +26,10 @@ namespace Model
 
   /**
    * <p>A complex type that contains information about the resource record sets that
-   * you want to create based on a specified traffic policy.</p>
+   * you want to create based on a specified traffic policy.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateTrafficPolicyInstanceRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_ROUTE53_API CreateTrafficPolicyInstanceRequest : public Route53Request
   {

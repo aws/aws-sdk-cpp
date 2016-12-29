@@ -31,11 +31,14 @@ CreateUserPoolRequest::CreateUserPoolRequest() :
     m_emailVerificationMessageHasBeenSet(false),
     m_emailVerificationSubjectHasBeenSet(false),
     m_smsAuthenticationMessageHasBeenSet(false),
+    m_mfaConfiguration(UserPoolMfaType::NOT_SET),
     m_mfaConfigurationHasBeenSet(false),
     m_deviceConfigurationHasBeenSet(false),
     m_emailConfigurationHasBeenSet(false),
     m_smsConfigurationHasBeenSet(false),
-    m_adminCreateUserConfigHasBeenSet(false)
+    m_userPoolTagsHasBeenSet(false),
+    m_adminCreateUserConfigHasBeenSet(false),
+    m_schemaHasBeenSet(false)
 {
 }
 
@@ -130,9 +133,31 @@ Aws::String CreateUserPoolRequest::SerializePayload() const
 
   }
 
+  if(m_userPoolTagsHasBeenSet)
+  {
+   JsonValue userPoolTagsJsonMap;
+   for(auto& userPoolTagsItem : m_userPoolTags)
+   {
+     userPoolTagsJsonMap.WithString(userPoolTagsItem.first, userPoolTagsItem.second);
+   }
+   payload.WithObject("UserPoolTags", std::move(userPoolTagsJsonMap));
+
+  }
+
   if(m_adminCreateUserConfigHasBeenSet)
   {
    payload.WithObject("AdminCreateUserConfig", m_adminCreateUserConfig.Jsonize());
+
+  }
+
+  if(m_schemaHasBeenSet)
+  {
+   Array<JsonValue> schemaJsonList(m_schema.size());
+   for(unsigned schemaIndex = 0; schemaIndex < schemaJsonList.GetLength(); ++schemaIndex)
+   {
+     schemaJsonList[schemaIndex].AsObject(m_schema[schemaIndex].Jsonize());
+   }
+   payload.WithArray("Schema", std::move(schemaJsonList));
 
   }
 

@@ -27,7 +27,10 @@ namespace Model
 {
 
   /**
-   * <p>A request to update a <a>SqlInjectionMatchSet</a>.</p>
+   * <p>A request to update a <a>SqlInjectionMatchSet</a>.</p><p><h3>See Also:</h3>  
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateSqlInjectionMatchSetRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_WAF_API UpdateSqlInjectionMatchSetRequest : public WAFRequest
   {

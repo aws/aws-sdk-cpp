@@ -33,7 +33,9 @@ CreateChangeSetRequest::CreateChangeSetRequest() :
     m_tagsHasBeenSet(false),
     m_changeSetNameHasBeenSet(false),
     m_clientTokenHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_changeSetType(ChangeSetType::NOT_SET),
+    m_changeSetTypeHasBeenSet(false)
 {
 }
 
@@ -132,6 +134,11 @@ Aws::String CreateChangeSetRequest::SerializePayload() const
   if(m_descriptionHasBeenSet)
   {
     ss << "Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
+  }
+
+  if(m_changeSetTypeHasBeenSet)
+  {
+    ss << "ChangeSetType=" << ChangeSetTypeMapper::GetNameForChangeSetType(m_changeSetType) << "&";
   }
 
   ss << "Version=2010-05-15";

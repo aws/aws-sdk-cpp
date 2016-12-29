@@ -35,7 +35,10 @@ namespace Model
 {
 
   /**
-   * <p>Contains information about a virtual MFA device.</p>
+   * <p>Contains information about a virtual MFA device.</p><p><h3>See Also:</h3>  
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/VirtualMFADevice">AWS
+   * API Reference</a></p>
    */
   class AWS_IAM_API VirtualMFADevice
   {
@@ -167,19 +170,29 @@ namespace Model
      */
     inline VirtualMFADevice& WithQRCodePNG(Aws::Utils::ByteBuffer&& value) { SetQRCodePNG(value); return *this;}
 
-    
+    /**
+     * <p>The user to whom the MFA device is assigned.</p>
+     */
     inline const User& GetUser() const{ return m_user; }
 
-    
+    /**
+     * <p>The user to whom the MFA device is assigned.</p>
+     */
     inline void SetUser(const User& value) { m_userHasBeenSet = true; m_user = value; }
 
-    
+    /**
+     * <p>The user to whom the MFA device is assigned.</p>
+     */
     inline void SetUser(User&& value) { m_userHasBeenSet = true; m_user = value; }
 
-    
+    /**
+     * <p>The user to whom the MFA device is assigned.</p>
+     */
     inline VirtualMFADevice& WithUser(const User& value) { SetUser(value); return *this;}
 
-    
+    /**
+     * <p>The user to whom the MFA device is assigned.</p>
+     */
     inline VirtualMFADevice& WithUser(User&& value) { SetUser(value); return *this;}
 
     /**

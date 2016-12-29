@@ -30,6 +30,7 @@ namespace Model
 StartLambdaFunctionFailedEventAttributes::StartLambdaFunctionFailedEventAttributes() : 
     m_scheduledEventId(0),
     m_scheduledEventIdHasBeenSet(false),
+    m_cause(StartLambdaFunctionFailedCause::NOT_SET),
     m_causeHasBeenSet(false),
     m_messageHasBeenSet(false)
 {
@@ -38,6 +39,7 @@ StartLambdaFunctionFailedEventAttributes::StartLambdaFunctionFailedEventAttribut
 StartLambdaFunctionFailedEventAttributes::StartLambdaFunctionFailedEventAttributes(const JsonValue& jsonValue) : 
     m_scheduledEventId(0),
     m_scheduledEventIdHasBeenSet(false),
+    m_cause(StartLambdaFunctionFailedCause::NOT_SET),
     m_causeHasBeenSet(false),
     m_messageHasBeenSet(false)
 {

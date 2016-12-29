@@ -36,7 +36,9 @@ namespace Model
 {
 
   /**
-   * <p>Option details.</p>
+   * <p>Option details.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/Option">AWS API
+   * Reference</a></p>
    */
   class AWS_RDS_API Option
   {

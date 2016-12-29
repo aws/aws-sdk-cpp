@@ -32,7 +32,9 @@ namespace Model
 {
 
   /**
-   * <p>The identifier of a node in a cluster.</p>
+   * <p>The identifier of a node in a cluster.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ClusterNode">AWS
+   * API Reference</a></p>
    */
   class AWS_REDSHIFT_API ClusterNode
   {

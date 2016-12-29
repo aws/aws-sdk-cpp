@@ -35,7 +35,10 @@ namespace CloudSearchDomain
 namespace Model
 {
   /**
-   * <p>Contains the response to an <code>UploadDocuments</code> request.</p>
+   * <p>Contains the response to an <code>UploadDocuments</code>
+   * request.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearchdomain-2013-01-01/UploadDocumentsResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDSEARCHDOMAIN_API UploadDocumentsResult
   {

@@ -25,7 +25,9 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for AssociateAddress.</p>
+   * <p>Contains the parameters for AssociateAddress.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateAddressRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API AssociateAddressRequest : public EC2Request
   {
@@ -61,7 +63,7 @@ namespace Model
      * <p>The ID of the instance. This is required for EC2-Classic. For EC2-VPC, you
      * can specify either the instance ID or the network interface ID, but not both.
      * The operation fails if you specify an instance ID unless exactly one network
-     * interface is attached. </p>
+     * interface is attached.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
 
@@ -69,7 +71,7 @@ namespace Model
      * <p>The ID of the instance. This is required for EC2-Classic. For EC2-VPC, you
      * can specify either the instance ID or the network interface ID, but not both.
      * The operation fails if you specify an instance ID unless exactly one network
-     * interface is attached. </p>
+     * interface is attached.</p>
      */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
@@ -77,7 +79,7 @@ namespace Model
      * <p>The ID of the instance. This is required for EC2-Classic. For EC2-VPC, you
      * can specify either the instance ID or the network interface ID, but not both.
      * The operation fails if you specify an instance ID unless exactly one network
-     * interface is attached. </p>
+     * interface is attached.</p>
      */
     inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
@@ -85,7 +87,7 @@ namespace Model
      * <p>The ID of the instance. This is required for EC2-Classic. For EC2-VPC, you
      * can specify either the instance ID or the network interface ID, but not both.
      * The operation fails if you specify an instance ID unless exactly one network
-     * interface is attached. </p>
+     * interface is attached.</p>
      */
     inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
 
@@ -93,7 +95,7 @@ namespace Model
      * <p>The ID of the instance. This is required for EC2-Classic. For EC2-VPC, you
      * can specify either the instance ID or the network interface ID, but not both.
      * The operation fails if you specify an instance ID unless exactly one network
-     * interface is attached. </p>
+     * interface is attached.</p>
      */
     inline AssociateAddressRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
 
@@ -101,7 +103,7 @@ namespace Model
      * <p>The ID of the instance. This is required for EC2-Classic. For EC2-VPC, you
      * can specify either the instance ID or the network interface ID, but not both.
      * The operation fails if you specify an instance ID unless exactly one network
-     * interface is attached. </p>
+     * interface is attached.</p>
      */
     inline AssociateAddressRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(value); return *this;}
 
@@ -109,7 +111,7 @@ namespace Model
      * <p>The ID of the instance. This is required for EC2-Classic. For EC2-VPC, you
      * can specify either the instance ID or the network interface ID, but not both.
      * The operation fails if you specify an instance ID unless exactly one network
-     * interface is attached. </p>
+     * interface is attached.</p>
      */
     inline AssociateAddressRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 

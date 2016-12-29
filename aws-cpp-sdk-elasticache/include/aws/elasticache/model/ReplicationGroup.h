@@ -37,7 +37,10 @@ namespace Model
 {
 
   /**
-   * <p>Contains all of the attributes of a specific Redis replication group.</p>
+   * <p>Contains all of the attributes of a specific Redis replication
+   * group.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ReplicationGroup">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICACHE_API ReplicationGroup
   {
@@ -121,43 +124,50 @@ namespace Model
 
     /**
      * <p>The current state of this replication group - <code>creating</code>,
-     * <code>available</code>, etc.</p>
+     * <code>available</code>, <code>modifying</code>, <code>deleting</code>,
+     * <code>create-failed</code>, <code>snapshotting</code>.</p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
 
     /**
      * <p>The current state of this replication group - <code>creating</code>,
-     * <code>available</code>, etc.</p>
+     * <code>available</code>, <code>modifying</code>, <code>deleting</code>,
+     * <code>create-failed</code>, <code>snapshotting</code>.</p>
      */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
      * <p>The current state of this replication group - <code>creating</code>,
-     * <code>available</code>, etc.</p>
+     * <code>available</code>, <code>modifying</code>, <code>deleting</code>,
+     * <code>create-failed</code>, <code>snapshotting</code>.</p>
      */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
      * <p>The current state of this replication group - <code>creating</code>,
-     * <code>available</code>, etc.</p>
+     * <code>available</code>, <code>modifying</code>, <code>deleting</code>,
+     * <code>create-failed</code>, <code>snapshotting</code>.</p>
      */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
 
     /**
      * <p>The current state of this replication group - <code>creating</code>,
-     * <code>available</code>, etc.</p>
+     * <code>available</code>, <code>modifying</code>, <code>deleting</code>,
+     * <code>create-failed</code>, <code>snapshotting</code>.</p>
      */
     inline ReplicationGroup& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
 
     /**
      * <p>The current state of this replication group - <code>creating</code>,
-     * <code>available</code>, etc.</p>
+     * <code>available</code>, <code>modifying</code>, <code>deleting</code>,
+     * <code>create-failed</code>, <code>snapshotting</code>.</p>
      */
     inline ReplicationGroup& WithStatus(Aws::String&& value) { SetStatus(value); return *this;}
 
     /**
      * <p>The current state of this replication group - <code>creating</code>,
-     * <code>available</code>, etc.</p>
+     * <code>available</code>, <code>modifying</code>, <code>deleting</code>,
+     * <code>create-failed</code>, <code>snapshotting</code>.</p>
      */
     inline ReplicationGroup& WithStatus(const char* value) { SetStatus(value); return *this;}
 

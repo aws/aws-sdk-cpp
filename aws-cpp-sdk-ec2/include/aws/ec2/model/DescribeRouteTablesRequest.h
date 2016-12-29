@@ -27,7 +27,10 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for DescribeRouteTables.</p>
+   * <p>Contains the parameters for DescribeRouteTables.</p><p><h3>See Also:</h3>  
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeRouteTablesRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API DescribeRouteTablesRequest : public EC2Request
   {
@@ -108,316 +111,344 @@ namespace Model
     inline DescribeRouteTablesRequest& AddRouteTableIds(const char* value) { m_routeTableIdsHasBeenSet = true; m_routeTableIds.push_back(value); return *this; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li>
-     * <p><code>association.route-table-association-id</code> - The ID of an
-     * association ID for the route table.</p> </li> <li>
-     * <p><code>association.route-table-id</code> - The ID of the route table involved
-     * in the association.</p> </li> <li> <p><code>association.subnet-id</code> - The
-     * ID of the subnet involved in the association.</p> </li> <li>
-     * <p><code>association.main</code> - Indicates whether the route table is the main
+     * <p>One or more filters.</p> <ul> <li> <p>
+     * <code>association.route-table-association-id</code> - The ID of an association
+     * ID for the route table.</p> </li> <li> <p>
+     * <code>association.route-table-id</code> - The ID of the route table involved in
+     * the association.</p> </li> <li> <p> <code>association.subnet-id</code> - The ID
+     * of the subnet involved in the association.</p> </li> <li> <p>
+     * <code>association.main</code> - Indicates whether the route table is the main
      * route table for the VPC (<code>true</code> | <code>false</code>).</p> </li> <li>
-     * <p><code>route-table-id</code> - The ID of the route table.</p> </li> <li>
-     * <p><code>route.destination-cidr-block</code> - The CIDR range specified in a
-     * route in the table.</p> </li> <li>
-     * <p><code>route.destination-prefix-list-id</code> - The ID (prefix) of the AWS
-     * service specified in a route in the table.</p> </li> <li>
-     * <p><code>route.gateway-id</code> - The ID of a gateway specified in a route in
-     * the table.</p> </li> <li> <p><code>route.instance-id</code> - The ID of an
-     * instance specified in a route in the table.</p> </li> <li>
-     * <p><code>route.nat-gateway-id</code> - The ID of a NAT gateway.</p> </li> <li>
-     * <p><code>route.origin</code> - Describes how the route was created.
+     * <p> <code>route-table-id</code> - The ID of the route table.</p> </li> <li> <p>
+     * <code>route.destination-cidr-block</code> - The IPv4 CIDR range specified in a
+     * route in the table.</p> </li> <li> <p>
+     * <code>route.destination-ipv6-cidr-block</code> - The IPv6 CIDR range specified
+     * in a route in the route table.</p> </li> <li> <p>
+     * <code>route.destination-prefix-list-id</code> - The ID (prefix) of the AWS
+     * service specified in a route in the table.</p> </li> <li> <p>
+     * <code>route.egress-only-internet-gateway-id</code> - The ID of an egress-only
+     * Internet gateway specified in a route in the route table.</p> </li> <li> <p>
+     * <code>route.gateway-id</code> - The ID of a gateway specified in a route in the
+     * table.</p> </li> <li> <p> <code>route.instance-id</code> - The ID of an instance
+     * specified in a route in the table.</p> </li> <li> <p>
+     * <code>route.nat-gateway-id</code> - The ID of a NAT gateway.</p> </li> <li> <p>
+     * <code>route.origin</code> - Describes how the route was created.
      * <code>CreateRouteTable</code> indicates that the route was automatically created
      * when the route table was created; <code>CreateRoute</code> indicates that the
      * route was manually added to the route table;
      * <code>EnableVgwRoutePropagation</code> indicates that the route was propagated
-     * by route propagation.</p> </li> <li> <p><code>route.state</code> - The state of
+     * by route propagation.</p> </li> <li> <p> <code>route.state</code> - The state of
      * a route in the route table (<code>active</code> | <code>blackhole</code>). The
      * blackhole state indicates that the route's target isn't available (for example,
      * the specified gateway isn't attached to the VPC, the specified NAT instance has
-     * been terminated, and so on).</p> </li> <li>
-     * <p><code>route.vpc-peering-connection-id</code> - The ID of a VPC peering
-     * connection specified in a route in the table.</p> </li> <li>
-     * <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag
-     * assigned to the resource.</p> </li> <li> <p><code>tag-key</code> - The key of a
+     * been terminated, and so on).</p> </li> <li> <p>
+     * <code>route.vpc-peering-connection-id</code> - The ID of a VPC peering
+     * connection specified in a route in the table.</p> </li> <li> <p>
+     * <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag
+     * assigned to the resource.</p> </li> <li> <p> <code>tag-key</code> - The key of a
      * tag assigned to the resource. This filter is independent of the
      * <code>tag-value</code> filter. For example, if you use both the filter
      * "tag-key=Purpose" and the filter "tag-value=X", you get any resources assigned
      * both the tag key Purpose (regardless of what the tag's value is), and the tag
      * value X (regardless of what the tag's key is). If you want to list only
      * resources where Purpose is X, see the <code>tag</code>:<i>key</i>=<i>value</i>
-     * filter.</p> </li> <li> <p><code>tag-value</code> - The value of a tag assigned
+     * filter.</p> </li> <li> <p> <code>tag-value</code> - The value of a tag assigned
      * to the resource. This filter is independent of the <code>tag-key</code>
-     * filter.</p> </li> <li> <p><code>vpc-id</code> - The ID of the VPC for the route
+     * filter.</p> </li> <li> <p> <code>vpc-id</code> - The ID of the VPC for the route
      * table.</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li>
-     * <p><code>association.route-table-association-id</code> - The ID of an
-     * association ID for the route table.</p> </li> <li>
-     * <p><code>association.route-table-id</code> - The ID of the route table involved
-     * in the association.</p> </li> <li> <p><code>association.subnet-id</code> - The
-     * ID of the subnet involved in the association.</p> </li> <li>
-     * <p><code>association.main</code> - Indicates whether the route table is the main
+     * <p>One or more filters.</p> <ul> <li> <p>
+     * <code>association.route-table-association-id</code> - The ID of an association
+     * ID for the route table.</p> </li> <li> <p>
+     * <code>association.route-table-id</code> - The ID of the route table involved in
+     * the association.</p> </li> <li> <p> <code>association.subnet-id</code> - The ID
+     * of the subnet involved in the association.</p> </li> <li> <p>
+     * <code>association.main</code> - Indicates whether the route table is the main
      * route table for the VPC (<code>true</code> | <code>false</code>).</p> </li> <li>
-     * <p><code>route-table-id</code> - The ID of the route table.</p> </li> <li>
-     * <p><code>route.destination-cidr-block</code> - The CIDR range specified in a
-     * route in the table.</p> </li> <li>
-     * <p><code>route.destination-prefix-list-id</code> - The ID (prefix) of the AWS
-     * service specified in a route in the table.</p> </li> <li>
-     * <p><code>route.gateway-id</code> - The ID of a gateway specified in a route in
-     * the table.</p> </li> <li> <p><code>route.instance-id</code> - The ID of an
-     * instance specified in a route in the table.</p> </li> <li>
-     * <p><code>route.nat-gateway-id</code> - The ID of a NAT gateway.</p> </li> <li>
-     * <p><code>route.origin</code> - Describes how the route was created.
+     * <p> <code>route-table-id</code> - The ID of the route table.</p> </li> <li> <p>
+     * <code>route.destination-cidr-block</code> - The IPv4 CIDR range specified in a
+     * route in the table.</p> </li> <li> <p>
+     * <code>route.destination-ipv6-cidr-block</code> - The IPv6 CIDR range specified
+     * in a route in the route table.</p> </li> <li> <p>
+     * <code>route.destination-prefix-list-id</code> - The ID (prefix) of the AWS
+     * service specified in a route in the table.</p> </li> <li> <p>
+     * <code>route.egress-only-internet-gateway-id</code> - The ID of an egress-only
+     * Internet gateway specified in a route in the route table.</p> </li> <li> <p>
+     * <code>route.gateway-id</code> - The ID of a gateway specified in a route in the
+     * table.</p> </li> <li> <p> <code>route.instance-id</code> - The ID of an instance
+     * specified in a route in the table.</p> </li> <li> <p>
+     * <code>route.nat-gateway-id</code> - The ID of a NAT gateway.</p> </li> <li> <p>
+     * <code>route.origin</code> - Describes how the route was created.
      * <code>CreateRouteTable</code> indicates that the route was automatically created
      * when the route table was created; <code>CreateRoute</code> indicates that the
      * route was manually added to the route table;
      * <code>EnableVgwRoutePropagation</code> indicates that the route was propagated
-     * by route propagation.</p> </li> <li> <p><code>route.state</code> - The state of
+     * by route propagation.</p> </li> <li> <p> <code>route.state</code> - The state of
      * a route in the route table (<code>active</code> | <code>blackhole</code>). The
      * blackhole state indicates that the route's target isn't available (for example,
      * the specified gateway isn't attached to the VPC, the specified NAT instance has
-     * been terminated, and so on).</p> </li> <li>
-     * <p><code>route.vpc-peering-connection-id</code> - The ID of a VPC peering
-     * connection specified in a route in the table.</p> </li> <li>
-     * <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag
-     * assigned to the resource.</p> </li> <li> <p><code>tag-key</code> - The key of a
+     * been terminated, and so on).</p> </li> <li> <p>
+     * <code>route.vpc-peering-connection-id</code> - The ID of a VPC peering
+     * connection specified in a route in the table.</p> </li> <li> <p>
+     * <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag
+     * assigned to the resource.</p> </li> <li> <p> <code>tag-key</code> - The key of a
      * tag assigned to the resource. This filter is independent of the
      * <code>tag-value</code> filter. For example, if you use both the filter
      * "tag-key=Purpose" and the filter "tag-value=X", you get any resources assigned
      * both the tag key Purpose (regardless of what the tag's value is), and the tag
      * value X (regardless of what the tag's key is). If you want to list only
      * resources where Purpose is X, see the <code>tag</code>:<i>key</i>=<i>value</i>
-     * filter.</p> </li> <li> <p><code>tag-value</code> - The value of a tag assigned
+     * filter.</p> </li> <li> <p> <code>tag-value</code> - The value of a tag assigned
      * to the resource. This filter is independent of the <code>tag-key</code>
-     * filter.</p> </li> <li> <p><code>vpc-id</code> - The ID of the VPC for the route
+     * filter.</p> </li> <li> <p> <code>vpc-id</code> - The ID of the VPC for the route
      * table.</p> </li> </ul>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li>
-     * <p><code>association.route-table-association-id</code> - The ID of an
-     * association ID for the route table.</p> </li> <li>
-     * <p><code>association.route-table-id</code> - The ID of the route table involved
-     * in the association.</p> </li> <li> <p><code>association.subnet-id</code> - The
-     * ID of the subnet involved in the association.</p> </li> <li>
-     * <p><code>association.main</code> - Indicates whether the route table is the main
+     * <p>One or more filters.</p> <ul> <li> <p>
+     * <code>association.route-table-association-id</code> - The ID of an association
+     * ID for the route table.</p> </li> <li> <p>
+     * <code>association.route-table-id</code> - The ID of the route table involved in
+     * the association.</p> </li> <li> <p> <code>association.subnet-id</code> - The ID
+     * of the subnet involved in the association.</p> </li> <li> <p>
+     * <code>association.main</code> - Indicates whether the route table is the main
      * route table for the VPC (<code>true</code> | <code>false</code>).</p> </li> <li>
-     * <p><code>route-table-id</code> - The ID of the route table.</p> </li> <li>
-     * <p><code>route.destination-cidr-block</code> - The CIDR range specified in a
-     * route in the table.</p> </li> <li>
-     * <p><code>route.destination-prefix-list-id</code> - The ID (prefix) of the AWS
-     * service specified in a route in the table.</p> </li> <li>
-     * <p><code>route.gateway-id</code> - The ID of a gateway specified in a route in
-     * the table.</p> </li> <li> <p><code>route.instance-id</code> - The ID of an
-     * instance specified in a route in the table.</p> </li> <li>
-     * <p><code>route.nat-gateway-id</code> - The ID of a NAT gateway.</p> </li> <li>
-     * <p><code>route.origin</code> - Describes how the route was created.
+     * <p> <code>route-table-id</code> - The ID of the route table.</p> </li> <li> <p>
+     * <code>route.destination-cidr-block</code> - The IPv4 CIDR range specified in a
+     * route in the table.</p> </li> <li> <p>
+     * <code>route.destination-ipv6-cidr-block</code> - The IPv6 CIDR range specified
+     * in a route in the route table.</p> </li> <li> <p>
+     * <code>route.destination-prefix-list-id</code> - The ID (prefix) of the AWS
+     * service specified in a route in the table.</p> </li> <li> <p>
+     * <code>route.egress-only-internet-gateway-id</code> - The ID of an egress-only
+     * Internet gateway specified in a route in the route table.</p> </li> <li> <p>
+     * <code>route.gateway-id</code> - The ID of a gateway specified in a route in the
+     * table.</p> </li> <li> <p> <code>route.instance-id</code> - The ID of an instance
+     * specified in a route in the table.</p> </li> <li> <p>
+     * <code>route.nat-gateway-id</code> - The ID of a NAT gateway.</p> </li> <li> <p>
+     * <code>route.origin</code> - Describes how the route was created.
      * <code>CreateRouteTable</code> indicates that the route was automatically created
      * when the route table was created; <code>CreateRoute</code> indicates that the
      * route was manually added to the route table;
      * <code>EnableVgwRoutePropagation</code> indicates that the route was propagated
-     * by route propagation.</p> </li> <li> <p><code>route.state</code> - The state of
+     * by route propagation.</p> </li> <li> <p> <code>route.state</code> - The state of
      * a route in the route table (<code>active</code> | <code>blackhole</code>). The
      * blackhole state indicates that the route's target isn't available (for example,
      * the specified gateway isn't attached to the VPC, the specified NAT instance has
-     * been terminated, and so on).</p> </li> <li>
-     * <p><code>route.vpc-peering-connection-id</code> - The ID of a VPC peering
-     * connection specified in a route in the table.</p> </li> <li>
-     * <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag
-     * assigned to the resource.</p> </li> <li> <p><code>tag-key</code> - The key of a
+     * been terminated, and so on).</p> </li> <li> <p>
+     * <code>route.vpc-peering-connection-id</code> - The ID of a VPC peering
+     * connection specified in a route in the table.</p> </li> <li> <p>
+     * <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag
+     * assigned to the resource.</p> </li> <li> <p> <code>tag-key</code> - The key of a
      * tag assigned to the resource. This filter is independent of the
      * <code>tag-value</code> filter. For example, if you use both the filter
      * "tag-key=Purpose" and the filter "tag-value=X", you get any resources assigned
      * both the tag key Purpose (regardless of what the tag's value is), and the tag
      * value X (regardless of what the tag's key is). If you want to list only
      * resources where Purpose is X, see the <code>tag</code>:<i>key</i>=<i>value</i>
-     * filter.</p> </li> <li> <p><code>tag-value</code> - The value of a tag assigned
+     * filter.</p> </li> <li> <p> <code>tag-value</code> - The value of a tag assigned
      * to the resource. This filter is independent of the <code>tag-key</code>
-     * filter.</p> </li> <li> <p><code>vpc-id</code> - The ID of the VPC for the route
+     * filter.</p> </li> <li> <p> <code>vpc-id</code> - The ID of the VPC for the route
      * table.</p> </li> </ul>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li>
-     * <p><code>association.route-table-association-id</code> - The ID of an
-     * association ID for the route table.</p> </li> <li>
-     * <p><code>association.route-table-id</code> - The ID of the route table involved
-     * in the association.</p> </li> <li> <p><code>association.subnet-id</code> - The
-     * ID of the subnet involved in the association.</p> </li> <li>
-     * <p><code>association.main</code> - Indicates whether the route table is the main
+     * <p>One or more filters.</p> <ul> <li> <p>
+     * <code>association.route-table-association-id</code> - The ID of an association
+     * ID for the route table.</p> </li> <li> <p>
+     * <code>association.route-table-id</code> - The ID of the route table involved in
+     * the association.</p> </li> <li> <p> <code>association.subnet-id</code> - The ID
+     * of the subnet involved in the association.</p> </li> <li> <p>
+     * <code>association.main</code> - Indicates whether the route table is the main
      * route table for the VPC (<code>true</code> | <code>false</code>).</p> </li> <li>
-     * <p><code>route-table-id</code> - The ID of the route table.</p> </li> <li>
-     * <p><code>route.destination-cidr-block</code> - The CIDR range specified in a
-     * route in the table.</p> </li> <li>
-     * <p><code>route.destination-prefix-list-id</code> - The ID (prefix) of the AWS
-     * service specified in a route in the table.</p> </li> <li>
-     * <p><code>route.gateway-id</code> - The ID of a gateway specified in a route in
-     * the table.</p> </li> <li> <p><code>route.instance-id</code> - The ID of an
-     * instance specified in a route in the table.</p> </li> <li>
-     * <p><code>route.nat-gateway-id</code> - The ID of a NAT gateway.</p> </li> <li>
-     * <p><code>route.origin</code> - Describes how the route was created.
+     * <p> <code>route-table-id</code> - The ID of the route table.</p> </li> <li> <p>
+     * <code>route.destination-cidr-block</code> - The IPv4 CIDR range specified in a
+     * route in the table.</p> </li> <li> <p>
+     * <code>route.destination-ipv6-cidr-block</code> - The IPv6 CIDR range specified
+     * in a route in the route table.</p> </li> <li> <p>
+     * <code>route.destination-prefix-list-id</code> - The ID (prefix) of the AWS
+     * service specified in a route in the table.</p> </li> <li> <p>
+     * <code>route.egress-only-internet-gateway-id</code> - The ID of an egress-only
+     * Internet gateway specified in a route in the route table.</p> </li> <li> <p>
+     * <code>route.gateway-id</code> - The ID of a gateway specified in a route in the
+     * table.</p> </li> <li> <p> <code>route.instance-id</code> - The ID of an instance
+     * specified in a route in the table.</p> </li> <li> <p>
+     * <code>route.nat-gateway-id</code> - The ID of a NAT gateway.</p> </li> <li> <p>
+     * <code>route.origin</code> - Describes how the route was created.
      * <code>CreateRouteTable</code> indicates that the route was automatically created
      * when the route table was created; <code>CreateRoute</code> indicates that the
      * route was manually added to the route table;
      * <code>EnableVgwRoutePropagation</code> indicates that the route was propagated
-     * by route propagation.</p> </li> <li> <p><code>route.state</code> - The state of
+     * by route propagation.</p> </li> <li> <p> <code>route.state</code> - The state of
      * a route in the route table (<code>active</code> | <code>blackhole</code>). The
      * blackhole state indicates that the route's target isn't available (for example,
      * the specified gateway isn't attached to the VPC, the specified NAT instance has
-     * been terminated, and so on).</p> </li> <li>
-     * <p><code>route.vpc-peering-connection-id</code> - The ID of a VPC peering
-     * connection specified in a route in the table.</p> </li> <li>
-     * <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag
-     * assigned to the resource.</p> </li> <li> <p><code>tag-key</code> - The key of a
+     * been terminated, and so on).</p> </li> <li> <p>
+     * <code>route.vpc-peering-connection-id</code> - The ID of a VPC peering
+     * connection specified in a route in the table.</p> </li> <li> <p>
+     * <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag
+     * assigned to the resource.</p> </li> <li> <p> <code>tag-key</code> - The key of a
      * tag assigned to the resource. This filter is independent of the
      * <code>tag-value</code> filter. For example, if you use both the filter
      * "tag-key=Purpose" and the filter "tag-value=X", you get any resources assigned
      * both the tag key Purpose (regardless of what the tag's value is), and the tag
      * value X (regardless of what the tag's key is). If you want to list only
      * resources where Purpose is X, see the <code>tag</code>:<i>key</i>=<i>value</i>
-     * filter.</p> </li> <li> <p><code>tag-value</code> - The value of a tag assigned
+     * filter.</p> </li> <li> <p> <code>tag-value</code> - The value of a tag assigned
      * to the resource. This filter is independent of the <code>tag-key</code>
-     * filter.</p> </li> <li> <p><code>vpc-id</code> - The ID of the VPC for the route
+     * filter.</p> </li> <li> <p> <code>vpc-id</code> - The ID of the VPC for the route
      * table.</p> </li> </ul>
      */
     inline DescribeRouteTablesRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>One or more filters.</p> <ul> <li>
-     * <p><code>association.route-table-association-id</code> - The ID of an
-     * association ID for the route table.</p> </li> <li>
-     * <p><code>association.route-table-id</code> - The ID of the route table involved
-     * in the association.</p> </li> <li> <p><code>association.subnet-id</code> - The
-     * ID of the subnet involved in the association.</p> </li> <li>
-     * <p><code>association.main</code> - Indicates whether the route table is the main
+     * <p>One or more filters.</p> <ul> <li> <p>
+     * <code>association.route-table-association-id</code> - The ID of an association
+     * ID for the route table.</p> </li> <li> <p>
+     * <code>association.route-table-id</code> - The ID of the route table involved in
+     * the association.</p> </li> <li> <p> <code>association.subnet-id</code> - The ID
+     * of the subnet involved in the association.</p> </li> <li> <p>
+     * <code>association.main</code> - Indicates whether the route table is the main
      * route table for the VPC (<code>true</code> | <code>false</code>).</p> </li> <li>
-     * <p><code>route-table-id</code> - The ID of the route table.</p> </li> <li>
-     * <p><code>route.destination-cidr-block</code> - The CIDR range specified in a
-     * route in the table.</p> </li> <li>
-     * <p><code>route.destination-prefix-list-id</code> - The ID (prefix) of the AWS
-     * service specified in a route in the table.</p> </li> <li>
-     * <p><code>route.gateway-id</code> - The ID of a gateway specified in a route in
-     * the table.</p> </li> <li> <p><code>route.instance-id</code> - The ID of an
-     * instance specified in a route in the table.</p> </li> <li>
-     * <p><code>route.nat-gateway-id</code> - The ID of a NAT gateway.</p> </li> <li>
-     * <p><code>route.origin</code> - Describes how the route was created.
+     * <p> <code>route-table-id</code> - The ID of the route table.</p> </li> <li> <p>
+     * <code>route.destination-cidr-block</code> - The IPv4 CIDR range specified in a
+     * route in the table.</p> </li> <li> <p>
+     * <code>route.destination-ipv6-cidr-block</code> - The IPv6 CIDR range specified
+     * in a route in the route table.</p> </li> <li> <p>
+     * <code>route.destination-prefix-list-id</code> - The ID (prefix) of the AWS
+     * service specified in a route in the table.</p> </li> <li> <p>
+     * <code>route.egress-only-internet-gateway-id</code> - The ID of an egress-only
+     * Internet gateway specified in a route in the route table.</p> </li> <li> <p>
+     * <code>route.gateway-id</code> - The ID of a gateway specified in a route in the
+     * table.</p> </li> <li> <p> <code>route.instance-id</code> - The ID of an instance
+     * specified in a route in the table.</p> </li> <li> <p>
+     * <code>route.nat-gateway-id</code> - The ID of a NAT gateway.</p> </li> <li> <p>
+     * <code>route.origin</code> - Describes how the route was created.
      * <code>CreateRouteTable</code> indicates that the route was automatically created
      * when the route table was created; <code>CreateRoute</code> indicates that the
      * route was manually added to the route table;
      * <code>EnableVgwRoutePropagation</code> indicates that the route was propagated
-     * by route propagation.</p> </li> <li> <p><code>route.state</code> - The state of
+     * by route propagation.</p> </li> <li> <p> <code>route.state</code> - The state of
      * a route in the route table (<code>active</code> | <code>blackhole</code>). The
      * blackhole state indicates that the route's target isn't available (for example,
      * the specified gateway isn't attached to the VPC, the specified NAT instance has
-     * been terminated, and so on).</p> </li> <li>
-     * <p><code>route.vpc-peering-connection-id</code> - The ID of a VPC peering
-     * connection specified in a route in the table.</p> </li> <li>
-     * <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag
-     * assigned to the resource.</p> </li> <li> <p><code>tag-key</code> - The key of a
+     * been terminated, and so on).</p> </li> <li> <p>
+     * <code>route.vpc-peering-connection-id</code> - The ID of a VPC peering
+     * connection specified in a route in the table.</p> </li> <li> <p>
+     * <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag
+     * assigned to the resource.</p> </li> <li> <p> <code>tag-key</code> - The key of a
      * tag assigned to the resource. This filter is independent of the
      * <code>tag-value</code> filter. For example, if you use both the filter
      * "tag-key=Purpose" and the filter "tag-value=X", you get any resources assigned
      * both the tag key Purpose (regardless of what the tag's value is), and the tag
      * value X (regardless of what the tag's key is). If you want to list only
      * resources where Purpose is X, see the <code>tag</code>:<i>key</i>=<i>value</i>
-     * filter.</p> </li> <li> <p><code>tag-value</code> - The value of a tag assigned
+     * filter.</p> </li> <li> <p> <code>tag-value</code> - The value of a tag assigned
      * to the resource. This filter is independent of the <code>tag-key</code>
-     * filter.</p> </li> <li> <p><code>vpc-id</code> - The ID of the VPC for the route
+     * filter.</p> </li> <li> <p> <code>vpc-id</code> - The ID of the VPC for the route
      * table.</p> </li> </ul>
      */
     inline DescribeRouteTablesRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>One or more filters.</p> <ul> <li>
-     * <p><code>association.route-table-association-id</code> - The ID of an
-     * association ID for the route table.</p> </li> <li>
-     * <p><code>association.route-table-id</code> - The ID of the route table involved
-     * in the association.</p> </li> <li> <p><code>association.subnet-id</code> - The
-     * ID of the subnet involved in the association.</p> </li> <li>
-     * <p><code>association.main</code> - Indicates whether the route table is the main
+     * <p>One or more filters.</p> <ul> <li> <p>
+     * <code>association.route-table-association-id</code> - The ID of an association
+     * ID for the route table.</p> </li> <li> <p>
+     * <code>association.route-table-id</code> - The ID of the route table involved in
+     * the association.</p> </li> <li> <p> <code>association.subnet-id</code> - The ID
+     * of the subnet involved in the association.</p> </li> <li> <p>
+     * <code>association.main</code> - Indicates whether the route table is the main
      * route table for the VPC (<code>true</code> | <code>false</code>).</p> </li> <li>
-     * <p><code>route-table-id</code> - The ID of the route table.</p> </li> <li>
-     * <p><code>route.destination-cidr-block</code> - The CIDR range specified in a
-     * route in the table.</p> </li> <li>
-     * <p><code>route.destination-prefix-list-id</code> - The ID (prefix) of the AWS
-     * service specified in a route in the table.</p> </li> <li>
-     * <p><code>route.gateway-id</code> - The ID of a gateway specified in a route in
-     * the table.</p> </li> <li> <p><code>route.instance-id</code> - The ID of an
-     * instance specified in a route in the table.</p> </li> <li>
-     * <p><code>route.nat-gateway-id</code> - The ID of a NAT gateway.</p> </li> <li>
-     * <p><code>route.origin</code> - Describes how the route was created.
+     * <p> <code>route-table-id</code> - The ID of the route table.</p> </li> <li> <p>
+     * <code>route.destination-cidr-block</code> - The IPv4 CIDR range specified in a
+     * route in the table.</p> </li> <li> <p>
+     * <code>route.destination-ipv6-cidr-block</code> - The IPv6 CIDR range specified
+     * in a route in the route table.</p> </li> <li> <p>
+     * <code>route.destination-prefix-list-id</code> - The ID (prefix) of the AWS
+     * service specified in a route in the table.</p> </li> <li> <p>
+     * <code>route.egress-only-internet-gateway-id</code> - The ID of an egress-only
+     * Internet gateway specified in a route in the route table.</p> </li> <li> <p>
+     * <code>route.gateway-id</code> - The ID of a gateway specified in a route in the
+     * table.</p> </li> <li> <p> <code>route.instance-id</code> - The ID of an instance
+     * specified in a route in the table.</p> </li> <li> <p>
+     * <code>route.nat-gateway-id</code> - The ID of a NAT gateway.</p> </li> <li> <p>
+     * <code>route.origin</code> - Describes how the route was created.
      * <code>CreateRouteTable</code> indicates that the route was automatically created
      * when the route table was created; <code>CreateRoute</code> indicates that the
      * route was manually added to the route table;
      * <code>EnableVgwRoutePropagation</code> indicates that the route was propagated
-     * by route propagation.</p> </li> <li> <p><code>route.state</code> - The state of
+     * by route propagation.</p> </li> <li> <p> <code>route.state</code> - The state of
      * a route in the route table (<code>active</code> | <code>blackhole</code>). The
      * blackhole state indicates that the route's target isn't available (for example,
      * the specified gateway isn't attached to the VPC, the specified NAT instance has
-     * been terminated, and so on).</p> </li> <li>
-     * <p><code>route.vpc-peering-connection-id</code> - The ID of a VPC peering
-     * connection specified in a route in the table.</p> </li> <li>
-     * <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag
-     * assigned to the resource.</p> </li> <li> <p><code>tag-key</code> - The key of a
+     * been terminated, and so on).</p> </li> <li> <p>
+     * <code>route.vpc-peering-connection-id</code> - The ID of a VPC peering
+     * connection specified in a route in the table.</p> </li> <li> <p>
+     * <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag
+     * assigned to the resource.</p> </li> <li> <p> <code>tag-key</code> - The key of a
      * tag assigned to the resource. This filter is independent of the
      * <code>tag-value</code> filter. For example, if you use both the filter
      * "tag-key=Purpose" and the filter "tag-value=X", you get any resources assigned
      * both the tag key Purpose (regardless of what the tag's value is), and the tag
      * value X (regardless of what the tag's key is). If you want to list only
      * resources where Purpose is X, see the <code>tag</code>:<i>key</i>=<i>value</i>
-     * filter.</p> </li> <li> <p><code>tag-value</code> - The value of a tag assigned
+     * filter.</p> </li> <li> <p> <code>tag-value</code> - The value of a tag assigned
      * to the resource. This filter is independent of the <code>tag-key</code>
-     * filter.</p> </li> <li> <p><code>vpc-id</code> - The ID of the VPC for the route
+     * filter.</p> </li> <li> <p> <code>vpc-id</code> - The ID of the VPC for the route
      * table.</p> </li> </ul>
      */
     inline DescribeRouteTablesRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li>
-     * <p><code>association.route-table-association-id</code> - The ID of an
-     * association ID for the route table.</p> </li> <li>
-     * <p><code>association.route-table-id</code> - The ID of the route table involved
-     * in the association.</p> </li> <li> <p><code>association.subnet-id</code> - The
-     * ID of the subnet involved in the association.</p> </li> <li>
-     * <p><code>association.main</code> - Indicates whether the route table is the main
+     * <p>One or more filters.</p> <ul> <li> <p>
+     * <code>association.route-table-association-id</code> - The ID of an association
+     * ID for the route table.</p> </li> <li> <p>
+     * <code>association.route-table-id</code> - The ID of the route table involved in
+     * the association.</p> </li> <li> <p> <code>association.subnet-id</code> - The ID
+     * of the subnet involved in the association.</p> </li> <li> <p>
+     * <code>association.main</code> - Indicates whether the route table is the main
      * route table for the VPC (<code>true</code> | <code>false</code>).</p> </li> <li>
-     * <p><code>route-table-id</code> - The ID of the route table.</p> </li> <li>
-     * <p><code>route.destination-cidr-block</code> - The CIDR range specified in a
-     * route in the table.</p> </li> <li>
-     * <p><code>route.destination-prefix-list-id</code> - The ID (prefix) of the AWS
-     * service specified in a route in the table.</p> </li> <li>
-     * <p><code>route.gateway-id</code> - The ID of a gateway specified in a route in
-     * the table.</p> </li> <li> <p><code>route.instance-id</code> - The ID of an
-     * instance specified in a route in the table.</p> </li> <li>
-     * <p><code>route.nat-gateway-id</code> - The ID of a NAT gateway.</p> </li> <li>
-     * <p><code>route.origin</code> - Describes how the route was created.
+     * <p> <code>route-table-id</code> - The ID of the route table.</p> </li> <li> <p>
+     * <code>route.destination-cidr-block</code> - The IPv4 CIDR range specified in a
+     * route in the table.</p> </li> <li> <p>
+     * <code>route.destination-ipv6-cidr-block</code> - The IPv6 CIDR range specified
+     * in a route in the route table.</p> </li> <li> <p>
+     * <code>route.destination-prefix-list-id</code> - The ID (prefix) of the AWS
+     * service specified in a route in the table.</p> </li> <li> <p>
+     * <code>route.egress-only-internet-gateway-id</code> - The ID of an egress-only
+     * Internet gateway specified in a route in the route table.</p> </li> <li> <p>
+     * <code>route.gateway-id</code> - The ID of a gateway specified in a route in the
+     * table.</p> </li> <li> <p> <code>route.instance-id</code> - The ID of an instance
+     * specified in a route in the table.</p> </li> <li> <p>
+     * <code>route.nat-gateway-id</code> - The ID of a NAT gateway.</p> </li> <li> <p>
+     * <code>route.origin</code> - Describes how the route was created.
      * <code>CreateRouteTable</code> indicates that the route was automatically created
      * when the route table was created; <code>CreateRoute</code> indicates that the
      * route was manually added to the route table;
      * <code>EnableVgwRoutePropagation</code> indicates that the route was propagated
-     * by route propagation.</p> </li> <li> <p><code>route.state</code> - The state of
+     * by route propagation.</p> </li> <li> <p> <code>route.state</code> - The state of
      * a route in the route table (<code>active</code> | <code>blackhole</code>). The
      * blackhole state indicates that the route's target isn't available (for example,
      * the specified gateway isn't attached to the VPC, the specified NAT instance has
-     * been terminated, and so on).</p> </li> <li>
-     * <p><code>route.vpc-peering-connection-id</code> - The ID of a VPC peering
-     * connection specified in a route in the table.</p> </li> <li>
-     * <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag
-     * assigned to the resource.</p> </li> <li> <p><code>tag-key</code> - The key of a
+     * been terminated, and so on).</p> </li> <li> <p>
+     * <code>route.vpc-peering-connection-id</code> - The ID of a VPC peering
+     * connection specified in a route in the table.</p> </li> <li> <p>
+     * <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag
+     * assigned to the resource.</p> </li> <li> <p> <code>tag-key</code> - The key of a
      * tag assigned to the resource. This filter is independent of the
      * <code>tag-value</code> filter. For example, if you use both the filter
      * "tag-key=Purpose" and the filter "tag-value=X", you get any resources assigned
      * both the tag key Purpose (regardless of what the tag's value is), and the tag
      * value X (regardless of what the tag's key is). If you want to list only
      * resources where Purpose is X, see the <code>tag</code>:<i>key</i>=<i>value</i>
-     * filter.</p> </li> <li> <p><code>tag-value</code> - The value of a tag assigned
+     * filter.</p> </li> <li> <p> <code>tag-value</code> - The value of a tag assigned
      * to the resource. This filter is independent of the <code>tag-key</code>
-     * filter.</p> </li> <li> <p><code>vpc-id</code> - The ID of the VPC for the route
+     * filter.</p> </li> <li> <p> <code>vpc-id</code> - The ID of the VPC for the route
      * table.</p> </li> </ul>
      */
     inline DescribeRouteTablesRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }

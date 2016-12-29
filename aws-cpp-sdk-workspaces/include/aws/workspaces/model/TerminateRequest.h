@@ -32,7 +32,9 @@ namespace Model
 
   /**
    * <p>Contains information used with the <a>TerminateWorkspaces</a> operation to
-   * terminate a WorkSpace.</p>
+   * terminate a WorkSpace.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/TerminateRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_WORKSPACES_API TerminateRequest
   {

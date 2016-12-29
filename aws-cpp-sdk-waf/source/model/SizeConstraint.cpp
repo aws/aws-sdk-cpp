@@ -29,7 +29,9 @@ namespace Model
 
 SizeConstraint::SizeConstraint() : 
     m_fieldToMatchHasBeenSet(false),
+    m_textTransformation(TextTransformation::NOT_SET),
     m_textTransformationHasBeenSet(false),
+    m_comparisonOperator(ComparisonOperator::NOT_SET),
     m_comparisonOperatorHasBeenSet(false),
     m_size(0),
     m_sizeHasBeenSet(false)
@@ -38,7 +40,9 @@ SizeConstraint::SizeConstraint() :
 
 SizeConstraint::SizeConstraint(const JsonValue& jsonValue) : 
     m_fieldToMatchHasBeenSet(false),
+    m_textTransformation(TextTransformation::NOT_SET),
     m_textTransformationHasBeenSet(false),
+    m_comparisonOperator(ComparisonOperator::NOT_SET),
     m_comparisonOperatorHasBeenSet(false),
     m_size(0),
     m_sizeHasBeenSet(false)

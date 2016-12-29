@@ -39,6 +39,7 @@ CacheNodeTypeSpecificParameter::CacheNodeTypeSpecificParameter() :
     m_isModifiableHasBeenSet(false),
     m_minimumEngineVersionHasBeenSet(false),
     m_cacheNodeTypeSpecificValuesHasBeenSet(false),
+    m_changeType(ChangeType::NOT_SET),
     m_changeTypeHasBeenSet(false)
 {
 }
@@ -53,6 +54,7 @@ CacheNodeTypeSpecificParameter::CacheNodeTypeSpecificParameter(const XmlNode& xm
     m_isModifiableHasBeenSet(false),
     m_minimumEngineVersionHasBeenSet(false),
     m_cacheNodeTypeSpecificValuesHasBeenSet(false),
+    m_changeType(ChangeType::NOT_SET),
     m_changeTypeHasBeenSet(false)
 {
   *this = xmlNode;

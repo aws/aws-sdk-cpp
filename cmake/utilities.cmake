@@ -31,3 +31,69 @@ function(enable_unity_build UNITY_SUFFIX SOURCE_FILES)
     # Complement list of translation units with the name of ub
     set(${SOURCE_FILES} ${${SOURCE_FILES}} ${unity_build_file} PARENT_SCOPE)
 endfunction(enable_unity_build)
+
+macro(setup_install)
+    if(SIMPLE_INSTALL)
+        configure_file("${CMAKE_SOURCE_DIR}/toolchains/pkg-config.pc.in" "${PROJECT_NAME}.pc" @ONLY)
+
+        install( TARGETS ${PROJECT_NAME}
+                EXPORT "${PROJECT_NAME}-targets"
+                ARCHIVE DESTINATION ${ARCHIVE_DIRECTORY}
+                LIBRARY DESTINATION ${LIBRARY_DIRECTORY}
+                RUNTIME DESTINATION ${BINARY_DIRECTORY} )
+
+        if (BUILD_SHARED_LIBS)
+            install(
+                FILES "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}.pc"
+                DESTINATION ${LIBRARY_DIRECTORY}/pkgconfig)
+        endif()
+    else()
+        if(PLATFORM_CUSTOM)
+            install_custom_library(${PROJECT_NAME})
+        else()
+            install (TARGETS ${PROJECT_NAME}
+                     ARCHIVE DESTINATION ${ARCHIVE_DIRECTORY}/${SDK_INSTALL_BINARY_PREFIX}/${PLATFORM_INSTALL_QUALIFIER}/\${CMAKE_INSTALL_CONFIG_NAME}
+                     LIBRARY DESTINATION ${LIBRARY_DIRECTORY}/${SDK_INSTALL_BINARY_PREFIX}/${PLATFORM_INSTALL_QUALIFIER}/\${CMAKE_INSTALL_CONFIG_NAME}
+                     RUNTIME DESTINATION ${BINARY_DIRECTORY}/${SDK_INSTALL_BINARY_PREFIX}/${PLATFORM_INSTALL_QUALIFIER}/\${CMAKE_INSTALL_CONFIG_NAME})
+        endif()
+    endif()
+endmacro()
+
+macro(do_packaging)
+    if(PLATFORM_WINDOWS AND MSVC)
+        install (FILES nuget/${PROJECT_NAME}.autopkg DESTINATION nuget)
+    endif()
+
+    if(SIMPLE_INSTALL)
+        write_basic_package_version_file(
+            "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}-config-version.cmake"
+            VERSION ${PROJECT_VERSION}
+            COMPATIBILITY AnyNewerVersion
+        )
+
+        export(EXPORT "${PROJECT_NAME}-targets"
+            FILE "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}-targets.cmake"
+        )
+
+        configure_file(
+            "${CMAKE_SOURCE_DIR}/toolchains/cmakeProjectConfig.cmake"
+            "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}-config.cmake"
+            @ONLY)
+
+        set(ConfigPackageLocation "${LIBRARY_DIRECTORY}/cmake/${PROJECT_NAME}")
+        install(EXPORT "${PROJECT_NAME}-targets"
+            FILE "${PROJECT_NAME}-targets.cmake"
+            DESTINATION ${ConfigPackageLocation}
+        )
+
+        install(
+            FILES
+            "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}-config.cmake"
+            "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}-config-version.cmake"
+            DESTINATION
+            ${ConfigPackageLocation}
+            COMPONENT
+            Devel)
+    endif()
+endmacro()
+

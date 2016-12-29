@@ -198,7 +198,10 @@ namespace Model
          * information, see <a
          * href="http://docs.aws.amazon.com/efs/latest/ug/how-it-works.html">Amazon EFS:
          * How it Works</a>. </p> <p> This operation requires permissions for the
-         * <code>elasticfilesystem:CreateFileSystem</code> action. </p>
+         * <code>elasticfilesystem:CreateFileSystem</code> action. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/CreateFileSystem">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateFileSystemOutcome CreateFileSystem(const Model::CreateFileSystemRequest& request) const;
 
@@ -241,7 +244,10 @@ namespace Model
          * information, see <a
          * href="http://docs.aws.amazon.com/efs/latest/ug/how-it-works.html">Amazon EFS:
          * How it Works</a>. </p> <p> This operation requires permissions for the
-         * <code>elasticfilesystem:CreateFileSystem</code> action. </p>
+         * <code>elasticfilesystem:CreateFileSystem</code> action. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/CreateFileSystem">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -286,7 +292,10 @@ namespace Model
          * information, see <a
          * href="http://docs.aws.amazon.com/efs/latest/ug/how-it-works.html">Amazon EFS:
          * How it Works</a>. </p> <p> This operation requires permissions for the
-         * <code>elasticfilesystem:CreateFileSystem</code> action. </p>
+         * <code>elasticfilesystem:CreateFileSystem</code> action. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/CreateFileSystem">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -364,7 +373,10 @@ namespace Model
          * operation also requires permissions for the following Amazon EC2 actions:</p>
          * <ul> <li> <p> <code>ec2:DescribeSubnets</code> </p> </li> <li> <p>
          * <code>ec2:DescribeNetworkInterfaces</code> </p> </li> <li> <p>
-         * <code>ec2:CreateNetworkInterface</code> </p> </li> </ul>
+         * <code>ec2:CreateNetworkInterface</code> </p> </li> </ul><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/CreateMountTarget">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateMountTargetOutcome CreateMountTarget(const Model::CreateMountTargetRequest& request) const;
 
@@ -440,7 +452,10 @@ namespace Model
          * operation also requires permissions for the following Amazon EC2 actions:</p>
          * <ul> <li> <p> <code>ec2:DescribeSubnets</code> </p> </li> <li> <p>
          * <code>ec2:DescribeNetworkInterfaces</code> </p> </li> <li> <p>
-         * <code>ec2:CreateNetworkInterface</code> </p> </li> </ul>
+         * <code>ec2:CreateNetworkInterface</code> </p> </li> </ul><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/CreateMountTarget">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -518,7 +533,10 @@ namespace Model
          * operation also requires permissions for the following Amazon EC2 actions:</p>
          * <ul> <li> <p> <code>ec2:DescribeSubnets</code> </p> </li> <li> <p>
          * <code>ec2:DescribeNetworkInterfaces</code> </p> </li> <li> <p>
-         * <code>ec2:CreateNetworkInterface</code> </p> </li> </ul>
+         * <code>ec2:CreateNetworkInterface</code> </p> </li> </ul><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/CreateMountTarget">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -531,7 +549,9 @@ namespace Model
          * request. If you add the <code>Name</code> tag to your file system, Amazon EFS
          * returns it in the response to the <a>DescribeFileSystems</a> operation. </p>
          * <p>This operation requires permission for the
-         * <code>elasticfilesystem:CreateTags</code> action.</p>
+         * <code>elasticfilesystem:CreateTags</code> action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/CreateTags">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateTagsOutcome CreateTags(const Model::CreateTagsRequest& request) const;
 
@@ -542,7 +562,9 @@ namespace Model
          * request. If you add the <code>Name</code> tag to your file system, Amazon EFS
          * returns it in the response to the <a>DescribeFileSystems</a> operation. </p>
          * <p>This operation requires permission for the
-         * <code>elasticfilesystem:CreateTags</code> action.</p>
+         * <code>elasticfilesystem:CreateTags</code> action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/CreateTags">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -555,7 +577,9 @@ namespace Model
          * request. If you add the <code>Name</code> tag to your file system, Amazon EFS
          * returns it in the response to the <a>DescribeFileSystems</a> operation. </p>
          * <p>This operation requires permission for the
-         * <code>elasticfilesystem:CreateTags</code> action.</p>
+         * <code>elasticfilesystem:CreateTags</code> action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/CreateTags">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -574,7 +598,10 @@ namespace Model
          * file system ID or creation token for the deleted file system, the
          * <a>DescribeFileSystems</a> returns a <code>404 FileSystemNotFound</code>
          * error.</p> </note> <p>This operation requires permissions for the
-         * <code>elasticfilesystem:DeleteFileSystem</code> action.</p>
+         * <code>elasticfilesystem:DeleteFileSystem</code> action.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DeleteFileSystem">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteFileSystemOutcome DeleteFileSystem(const Model::DeleteFileSystemRequest& request) const;
 
@@ -591,7 +618,10 @@ namespace Model
          * file system ID or creation token for the deleted file system, the
          * <a>DescribeFileSystems</a> returns a <code>404 FileSystemNotFound</code>
          * error.</p> </note> <p>This operation requires permissions for the
-         * <code>elasticfilesystem:DeleteFileSystem</code> action.</p>
+         * <code>elasticfilesystem:DeleteFileSystem</code> action.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DeleteFileSystem">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -610,7 +640,10 @@ namespace Model
          * file system ID or creation token for the deleted file system, the
          * <a>DescribeFileSystems</a> returns a <code>404 FileSystemNotFound</code>
          * error.</p> </note> <p>This operation requires permissions for the
-         * <code>elasticfilesystem:DeleteFileSystem</code> action.</p>
+         * <code>elasticfilesystem:DeleteFileSystem</code> action.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DeleteFileSystem">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -634,7 +667,9 @@ namespace Model
          * descriptions for the given file system. </p> </note> <p>The operation also
          * requires permissions for the following Amazon EC2 action on the mount target's
          * network interface:</p> <ul> <li> <p> <code>ec2:DeleteNetworkInterface</code>
-         * </p> </li> </ul>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DeleteMountTarget">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteMountTargetOutcome DeleteMountTarget(const Model::DeleteMountTargetRequest& request) const;
 
@@ -656,7 +691,9 @@ namespace Model
          * descriptions for the given file system. </p> </note> <p>The operation also
          * requires permissions for the following Amazon EC2 action on the mount target's
          * network interface:</p> <ul> <li> <p> <code>ec2:DeleteNetworkInterface</code>
-         * </p> </li> </ul>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DeleteMountTarget">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -680,7 +717,9 @@ namespace Model
          * descriptions for the given file system. </p> </note> <p>The operation also
          * requires permissions for the following Amazon EC2 action on the mount target's
          * network interface:</p> <ul> <li> <p> <code>ec2:DeleteNetworkInterface</code>
-         * </p> </li> </ul>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DeleteMountTarget">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -694,7 +733,9 @@ namespace Model
          * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Tag
          * Restrictions</a> in the <i>AWS Billing and Cost Management User Guide</i>.</p>
          * <p>This operation requires permissions for the
-         * <code>elasticfilesystem:DeleteTags</code> action.</p>
+         * <code>elasticfilesystem:DeleteTags</code> action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DeleteTags">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteTagsOutcome DeleteTags(const Model::DeleteTagsRequest& request) const;
 
@@ -706,7 +747,9 @@ namespace Model
          * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Tag
          * Restrictions</a> in the <i>AWS Billing and Cost Management User Guide</i>.</p>
          * <p>This operation requires permissions for the
-         * <code>elasticfilesystem:DeleteTags</code> action.</p>
+         * <code>elasticfilesystem:DeleteTags</code> action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DeleteTags">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -720,7 +763,9 @@ namespace Model
          * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Tag
          * Restrictions</a> in the <i>AWS Billing and Cost Management User Guide</i>.</p>
          * <p>This operation requires permissions for the
-         * <code>elasticfilesystem:DeleteTags</code> action.</p>
+         * <code>elasticfilesystem:DeleteTags</code> action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DeleteTags">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -748,7 +793,10 @@ namespace Model
          * <code>DescribeFileSystems</code> call and the order of file systems returned
          * across the responses of a multi-call iteration is unspecified. </p> <p> This
          * operation requires permissions for the
-         * <code>elasticfilesystem:DescribeFileSystems</code> action. </p>
+         * <code>elasticfilesystem:DescribeFileSystems</code> action. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeFileSystems">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeFileSystemsOutcome DescribeFileSystems(const Model::DescribeFileSystemsRequest& request) const;
 
@@ -774,7 +822,10 @@ namespace Model
          * <code>DescribeFileSystems</code> call and the order of file systems returned
          * across the responses of a multi-call iteration is unspecified. </p> <p> This
          * operation requires permissions for the
-         * <code>elasticfilesystem:DescribeFileSystems</code> action. </p>
+         * <code>elasticfilesystem:DescribeFileSystems</code> action. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeFileSystems">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -802,7 +853,10 @@ namespace Model
          * <code>DescribeFileSystems</code> call and the order of file systems returned
          * across the responses of a multi-call iteration is unspecified. </p> <p> This
          * operation requires permissions for the
-         * <code>elasticfilesystem:DescribeFileSystems</code> action. </p>
+         * <code>elasticfilesystem:DescribeFileSystems</code> action. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeFileSystems">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -817,7 +871,9 @@ namespace Model
          * <code>elasticfilesystem:DescribeMountTargetSecurityGroups</code> action on the
          * mount target's file system. </p> </li> <li> <p>
          * <code>ec2:DescribeNetworkInterfaceAttribute</code> action on the mount target's
-         * network interface. </p> </li> </ul>
+         * network interface. </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeMountTargetSecurityGroups">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeMountTargetSecurityGroupsOutcome DescribeMountTargetSecurityGroups(const Model::DescribeMountTargetSecurityGroupsRequest& request) const;
 
@@ -830,7 +886,9 @@ namespace Model
          * <code>elasticfilesystem:DescribeMountTargetSecurityGroups</code> action on the
          * mount target's file system. </p> </li> <li> <p>
          * <code>ec2:DescribeNetworkInterfaceAttribute</code> action on the mount target's
-         * network interface. </p> </li> </ul>
+         * network interface. </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeMountTargetSecurityGroups">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -845,7 +903,9 @@ namespace Model
          * <code>elasticfilesystem:DescribeMountTargetSecurityGroups</code> action on the
          * mount target's file system. </p> </li> <li> <p>
          * <code>ec2:DescribeNetworkInterfaceAttribute</code> action on the mount target's
-         * network interface. </p> </li> </ul>
+         * network interface. </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeMountTargetSecurityGroups">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -858,7 +918,10 @@ namespace Model
          * <p>This operation requires permissions for the
          * <code>elasticfilesystem:DescribeMountTargets</code> action, on either the file
          * system ID that you specify in <code>FileSystemId</code>, or on the file system
-         * of the mount target that you specify in <code>MountTargetId</code>.</p>
+         * of the mount target that you specify in
+         * <code>MountTargetId</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeMountTargets">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeMountTargetsOutcome DescribeMountTargets(const Model::DescribeMountTargetsRequest& request) const;
 
@@ -869,7 +932,10 @@ namespace Model
          * <p>This operation requires permissions for the
          * <code>elasticfilesystem:DescribeMountTargets</code> action, on either the file
          * system ID that you specify in <code>FileSystemId</code>, or on the file system
-         * of the mount target that you specify in <code>MountTargetId</code>.</p>
+         * of the mount target that you specify in
+         * <code>MountTargetId</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeMountTargets">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -882,7 +948,10 @@ namespace Model
          * <p>This operation requires permissions for the
          * <code>elasticfilesystem:DescribeMountTargets</code> action, on either the file
          * system ID that you specify in <code>FileSystemId</code>, or on the file system
-         * of the mount target that you specify in <code>MountTargetId</code>.</p>
+         * of the mount target that you specify in
+         * <code>MountTargetId</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeMountTargets">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -893,7 +962,10 @@ namespace Model
          * the response of one <code>DescribeTags</code> call and the order of tags
          * returned across the responses of a multi-call iteration (when using pagination)
          * is unspecified. </p> <p> This operation requires permissions for the
-         * <code>elasticfilesystem:DescribeTags</code> action. </p>
+         * <code>elasticfilesystem:DescribeTags</code> action. </p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeTags">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeTagsOutcome DescribeTags(const Model::DescribeTagsRequest& request) const;
 
@@ -902,7 +974,10 @@ namespace Model
          * the response of one <code>DescribeTags</code> call and the order of tags
          * returned across the responses of a multi-call iteration (when using pagination)
          * is unspecified. </p> <p> This operation requires permissions for the
-         * <code>elasticfilesystem:DescribeTags</code> action. </p>
+         * <code>elasticfilesystem:DescribeTags</code> action. </p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeTags">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -913,7 +988,10 @@ namespace Model
          * the response of one <code>DescribeTags</code> call and the order of tags
          * returned across the responses of a multi-call iteration (when using pagination)
          * is unspecified. </p> <p> This operation requires permissions for the
-         * <code>elasticfilesystem:DescribeTags</code> action. </p>
+         * <code>elasticfilesystem:DescribeTags</code> action. </p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeTags">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -931,7 +1009,9 @@ namespace Model
          * <li> <p> <code>elasticfilesystem:ModifyMountTargetSecurityGroups</code> action
          * on the mount target's file system. </p> </li> <li> <p>
          * <code>ec2:ModifyNetworkInterfaceAttribute</code> action on the mount target's
-         * network interface. </p> </li> </ul>
+         * network interface. </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/ModifyMountTargetSecurityGroups">AWS
+         * API Reference</a></p>
          */
         virtual Model::ModifyMountTargetSecurityGroupsOutcome ModifyMountTargetSecurityGroups(const Model::ModifyMountTargetSecurityGroupsRequest& request) const;
 
@@ -947,7 +1027,9 @@ namespace Model
          * <li> <p> <code>elasticfilesystem:ModifyMountTargetSecurityGroups</code> action
          * on the mount target's file system. </p> </li> <li> <p>
          * <code>ec2:ModifyNetworkInterfaceAttribute</code> action on the mount target's
-         * network interface. </p> </li> </ul>
+         * network interface. </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/ModifyMountTargetSecurityGroups">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -965,7 +1047,9 @@ namespace Model
          * <li> <p> <code>elasticfilesystem:ModifyMountTargetSecurityGroups</code> action
          * on the mount target's file system. </p> </li> <li> <p>
          * <code>ec2:ModifyNetworkInterfaceAttribute</code> action on the mount target's
-         * network interface. </p> </li> </ul>
+         * network interface. </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/ModifyMountTargetSecurityGroups">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */

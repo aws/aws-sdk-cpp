@@ -27,7 +27,9 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for DescribeKeyPairs.</p>
+   * <p>Contains the parameters for DescribeKeyPairs.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeKeyPairsRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API DescribeKeyPairsRequest : public EC2Request
   {
@@ -100,50 +102,50 @@ namespace Model
     inline DescribeKeyPairsRequest& AddKeyNames(const char* value) { m_keyNamesHasBeenSet = true; m_keyNames.push_back(value); return *this; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p><code>fingerprint</code> - The
-     * fingerprint of the key pair.</p> </li> <li> <p><code>key-name</code> - The name
+     * <p>One or more filters.</p> <ul> <li> <p> <code>fingerprint</code> - The
+     * fingerprint of the key pair.</p> </li> <li> <p> <code>key-name</code> - The name
      * of the key pair.</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p><code>fingerprint</code> - The
-     * fingerprint of the key pair.</p> </li> <li> <p><code>key-name</code> - The name
+     * <p>One or more filters.</p> <ul> <li> <p> <code>fingerprint</code> - The
+     * fingerprint of the key pair.</p> </li> <li> <p> <code>key-name</code> - The name
      * of the key pair.</p> </li> </ul>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p><code>fingerprint</code> - The
-     * fingerprint of the key pair.</p> </li> <li> <p><code>key-name</code> - The name
+     * <p>One or more filters.</p> <ul> <li> <p> <code>fingerprint</code> - The
+     * fingerprint of the key pair.</p> </li> <li> <p> <code>key-name</code> - The name
      * of the key pair.</p> </li> </ul>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p><code>fingerprint</code> - The
-     * fingerprint of the key pair.</p> </li> <li> <p><code>key-name</code> - The name
+     * <p>One or more filters.</p> <ul> <li> <p> <code>fingerprint</code> - The
+     * fingerprint of the key pair.</p> </li> <li> <p> <code>key-name</code> - The name
      * of the key pair.</p> </li> </ul>
      */
     inline DescribeKeyPairsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p><code>fingerprint</code> - The
-     * fingerprint of the key pair.</p> </li> <li> <p><code>key-name</code> - The name
+     * <p>One or more filters.</p> <ul> <li> <p> <code>fingerprint</code> - The
+     * fingerprint of the key pair.</p> </li> <li> <p> <code>key-name</code> - The name
      * of the key pair.</p> </li> </ul>
      */
     inline DescribeKeyPairsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p><code>fingerprint</code> - The
-     * fingerprint of the key pair.</p> </li> <li> <p><code>key-name</code> - The name
+     * <p>One or more filters.</p> <ul> <li> <p> <code>fingerprint</code> - The
+     * fingerprint of the key pair.</p> </li> <li> <p> <code>key-name</code> - The name
      * of the key pair.</p> </li> </ul>
      */
     inline DescribeKeyPairsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p><code>fingerprint</code> - The
-     * fingerprint of the key pair.</p> </li> <li> <p><code>key-name</code> - The name
+     * <p>One or more filters.</p> <ul> <li> <p> <code>fingerprint</code> - The
+     * fingerprint of the key pair.</p> </li> <li> <p> <code>key-name</code> - The name
      * of the key pair.</p> </li> </ul>
      */
     inline DescribeKeyPairsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }

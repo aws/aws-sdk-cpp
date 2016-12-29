@@ -34,9 +34,11 @@ ApplicationVersionDescription::ApplicationVersionDescription() :
     m_descriptionHasBeenSet(false),
     m_versionLabelHasBeenSet(false),
     m_sourceBuildInformationHasBeenSet(false),
+    m_buildArnHasBeenSet(false),
     m_sourceBundleHasBeenSet(false),
     m_dateCreatedHasBeenSet(false),
     m_dateUpdatedHasBeenSet(false),
+    m_status(ApplicationVersionStatus::NOT_SET),
     m_statusHasBeenSet(false)
 {
 }
@@ -46,9 +48,11 @@ ApplicationVersionDescription::ApplicationVersionDescription(const XmlNode& xmlN
     m_descriptionHasBeenSet(false),
     m_versionLabelHasBeenSet(false),
     m_sourceBuildInformationHasBeenSet(false),
+    m_buildArnHasBeenSet(false),
     m_sourceBundleHasBeenSet(false),
     m_dateCreatedHasBeenSet(false),
     m_dateUpdatedHasBeenSet(false),
+    m_status(ApplicationVersionStatus::NOT_SET),
     m_statusHasBeenSet(false)
 {
   *this = xmlNode;
@@ -83,6 +87,12 @@ ApplicationVersionDescription& ApplicationVersionDescription::operator =(const X
     {
       m_sourceBuildInformation = sourceBuildInformationNode;
       m_sourceBuildInformationHasBeenSet = true;
+    }
+    XmlNode buildArnNode = resultNode.FirstChild("BuildArn");
+    if(!buildArnNode.IsNull())
+    {
+      m_buildArn = StringUtils::Trim(buildArnNode.GetText().c_str());
+      m_buildArnHasBeenSet = true;
     }
     XmlNode sourceBundleNode = resultNode.FirstChild("SourceBundle");
     if(!sourceBundleNode.IsNull())
@@ -137,6 +147,11 @@ void ApplicationVersionDescription::OutputToStream(Aws::OStream& oStream, const 
       m_sourceBuildInformation.OutputToStream(oStream, sourceBuildInformationLocationAndMemberSs.str().c_str());
   }
 
+  if(m_buildArnHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".BuildArn=" << StringUtils::URLEncode(m_buildArn.c_str()) << "&";
+  }
+
   if(m_sourceBundleHasBeenSet)
   {
       Aws::StringStream sourceBundleLocationAndMemberSs;
@@ -180,6 +195,10 @@ void ApplicationVersionDescription::OutputToStream(Aws::OStream& oStream, const 
       Aws::String sourceBuildInformationLocationAndMember(location);
       sourceBuildInformationLocationAndMember += ".SourceBuildInformation";
       m_sourceBuildInformation.OutputToStream(oStream, sourceBuildInformationLocationAndMember.c_str());
+  }
+  if(m_buildArnHasBeenSet)
+  {
+      oStream << location << ".BuildArn=" << StringUtils::URLEncode(m_buildArn.c_str()) << "&";
   }
   if(m_sourceBundleHasBeenSet)
   {

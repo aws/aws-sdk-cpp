@@ -26,7 +26,9 @@
 #include <aws/meteringmarketplace/MarketplaceMeteringClient.h>
 #include <aws/meteringmarketplace/MarketplaceMeteringEndpoint.h>
 #include <aws/meteringmarketplace/MarketplaceMeteringErrorMarshaller.h>
+#include <aws/meteringmarketplace/model/BatchMeterUsageRequest.h>
 #include <aws/meteringmarketplace/model/MeterUsageRequest.h>
+#include <aws/meteringmarketplace/model/ResolveCustomerRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -92,6 +94,40 @@ void MarketplaceMeteringClient::init(const ClientConfiguration& config)
   m_uri = ss.str();
 }
 
+BatchMeterUsageOutcome MarketplaceMeteringClient::BatchMeterUsage(const BatchMeterUsageRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return BatchMeterUsageOutcome(BatchMeterUsageResult(outcome.GetResult()));
+  }
+  else
+  {
+    return BatchMeterUsageOutcome(outcome.GetError());
+  }
+}
+
+BatchMeterUsageOutcomeCallable MarketplaceMeteringClient::BatchMeterUsageCallable(const BatchMeterUsageRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< BatchMeterUsageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchMeterUsage(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MarketplaceMeteringClient::BatchMeterUsageAsync(const BatchMeterUsageRequest& request, const BatchMeterUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->BatchMeterUsageAsyncHelper( request, handler, context ); } );
+}
+
+void MarketplaceMeteringClient::BatchMeterUsageAsyncHelper(const BatchMeterUsageRequest& request, const BatchMeterUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, BatchMeterUsage(request), context);
+}
+
 MeterUsageOutcome MarketplaceMeteringClient::MeterUsage(const MeterUsageRequest& request) const
 {
   Aws::StringStream ss;
@@ -124,5 +160,39 @@ void MarketplaceMeteringClient::MeterUsageAsync(const MeterUsageRequest& request
 void MarketplaceMeteringClient::MeterUsageAsyncHelper(const MeterUsageRequest& request, const MeterUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, MeterUsage(request), context);
+}
+
+ResolveCustomerOutcome MarketplaceMeteringClient::ResolveCustomer(const ResolveCustomerRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return ResolveCustomerOutcome(ResolveCustomerResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ResolveCustomerOutcome(outcome.GetError());
+  }
+}
+
+ResolveCustomerOutcomeCallable MarketplaceMeteringClient::ResolveCustomerCallable(const ResolveCustomerRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ResolveCustomerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ResolveCustomer(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MarketplaceMeteringClient::ResolveCustomerAsync(const ResolveCustomerRequest& request, const ResolveCustomerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ResolveCustomerAsyncHelper( request, handler, context ); } );
+}
+
+void MarketplaceMeteringClient::ResolveCustomerAsyncHelper(const ResolveCustomerRequest& request, const ResolveCustomerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ResolveCustomer(request), context);
 }
 

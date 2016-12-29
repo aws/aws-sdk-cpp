@@ -35,8 +35,11 @@ namespace Model
 {
 
   /**
-   * <p>Properties describing an instance of a virtual computing resource that is
-   * hosting game servers. Fleets contain zero or more instances. </p>
+   * <p>Properties that describe an instance of a virtual computing resource that
+   * hosts one or more game servers. A fleet contains zero or more
+   * instances.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/Instance">AWS
+   * API Reference</a></p>
    */
   class AWS_GAMELIFT_API Instance
   {
@@ -152,27 +155,27 @@ namespace Model
     inline Instance& WithIpAddress(const char* value) { SetIpAddress(value); return *this;}
 
     /**
-     * <p>Operating system being used on this instance. </p>
+     * <p>Operating system that is running on this instance. </p>
      */
     inline const OperatingSystem& GetOperatingSystem() const{ return m_operatingSystem; }
 
     /**
-     * <p>Operating system being used on this instance. </p>
+     * <p>Operating system that is running on this instance. </p>
      */
     inline void SetOperatingSystem(const OperatingSystem& value) { m_operatingSystemHasBeenSet = true; m_operatingSystem = value; }
 
     /**
-     * <p>Operating system being used on this instance. </p>
+     * <p>Operating system that is running on this instance. </p>
      */
     inline void SetOperatingSystem(OperatingSystem&& value) { m_operatingSystemHasBeenSet = true; m_operatingSystem = value; }
 
     /**
-     * <p>Operating system being used on this instance. </p>
+     * <p>Operating system that is running on this instance. </p>
      */
     inline Instance& WithOperatingSystem(const OperatingSystem& value) { SetOperatingSystem(value); return *this;}
 
     /**
-     * <p>Operating system being used on this instance. </p>
+     * <p>Operating system that is running on this instance. </p>
      */
     inline Instance& WithOperatingSystem(OperatingSystem&& value) { SetOperatingSystem(value); return *this;}
 

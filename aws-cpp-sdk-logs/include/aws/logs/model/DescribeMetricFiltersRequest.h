@@ -35,148 +35,204 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * <p>The log group name for which metric filters are to be listed.</p>
+     * <p>The name of the log group.</p>
      */
     inline const Aws::String& GetLogGroupName() const{ return m_logGroupName; }
 
     /**
-     * <p>The log group name for which metric filters are to be listed.</p>
+     * <p>The name of the log group.</p>
      */
     inline void SetLogGroupName(const Aws::String& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
 
     /**
-     * <p>The log group name for which metric filters are to be listed.</p>
+     * <p>The name of the log group.</p>
      */
     inline void SetLogGroupName(Aws::String&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
 
     /**
-     * <p>The log group name for which metric filters are to be listed.</p>
+     * <p>The name of the log group.</p>
      */
     inline void SetLogGroupName(const char* value) { m_logGroupNameHasBeenSet = true; m_logGroupName.assign(value); }
 
     /**
-     * <p>The log group name for which metric filters are to be listed.</p>
+     * <p>The name of the log group.</p>
      */
     inline DescribeMetricFiltersRequest& WithLogGroupName(const Aws::String& value) { SetLogGroupName(value); return *this;}
 
     /**
-     * <p>The log group name for which metric filters are to be listed.</p>
+     * <p>The name of the log group.</p>
      */
     inline DescribeMetricFiltersRequest& WithLogGroupName(Aws::String&& value) { SetLogGroupName(value); return *this;}
 
     /**
-     * <p>The log group name for which metric filters are to be listed.</p>
+     * <p>The name of the log group.</p>
      */
     inline DescribeMetricFiltersRequest& WithLogGroupName(const char* value) { SetLogGroupName(value); return *this;}
 
     /**
-     * <p>Will only return metric filters that match the provided filterNamePrefix. If
-     * you don't specify a value, no prefix filter is applied.</p>
+     * <p>The prefix to match.</p>
      */
     inline const Aws::String& GetFilterNamePrefix() const{ return m_filterNamePrefix; }
 
     /**
-     * <p>Will only return metric filters that match the provided filterNamePrefix. If
-     * you don't specify a value, no prefix filter is applied.</p>
+     * <p>The prefix to match.</p>
      */
     inline void SetFilterNamePrefix(const Aws::String& value) { m_filterNamePrefixHasBeenSet = true; m_filterNamePrefix = value; }
 
     /**
-     * <p>Will only return metric filters that match the provided filterNamePrefix. If
-     * you don't specify a value, no prefix filter is applied.</p>
+     * <p>The prefix to match.</p>
      */
     inline void SetFilterNamePrefix(Aws::String&& value) { m_filterNamePrefixHasBeenSet = true; m_filterNamePrefix = value; }
 
     /**
-     * <p>Will only return metric filters that match the provided filterNamePrefix. If
-     * you don't specify a value, no prefix filter is applied.</p>
+     * <p>The prefix to match.</p>
      */
     inline void SetFilterNamePrefix(const char* value) { m_filterNamePrefixHasBeenSet = true; m_filterNamePrefix.assign(value); }
 
     /**
-     * <p>Will only return metric filters that match the provided filterNamePrefix. If
-     * you don't specify a value, no prefix filter is applied.</p>
+     * <p>The prefix to match.</p>
      */
     inline DescribeMetricFiltersRequest& WithFilterNamePrefix(const Aws::String& value) { SetFilterNamePrefix(value); return *this;}
 
     /**
-     * <p>Will only return metric filters that match the provided filterNamePrefix. If
-     * you don't specify a value, no prefix filter is applied.</p>
+     * <p>The prefix to match.</p>
      */
     inline DescribeMetricFiltersRequest& WithFilterNamePrefix(Aws::String&& value) { SetFilterNamePrefix(value); return *this;}
 
     /**
-     * <p>Will only return metric filters that match the provided filterNamePrefix. If
-     * you don't specify a value, no prefix filter is applied.</p>
+     * <p>The prefix to match.</p>
      */
     inline DescribeMetricFiltersRequest& WithFilterNamePrefix(const char* value) { SetFilterNamePrefix(value); return *this;}
 
     /**
-     * <p>A string token used for pagination that points to the next page of results.
-     * It must be a value obtained from the response of the previous
-     * <code>DescribeMetricFilters</code> request.</p>
+     * <p>The token for the next set of items to return. (You received this token from
+     * a previous call.)</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>A string token used for pagination that points to the next page of results.
-     * It must be a value obtained from the response of the previous
-     * <code>DescribeMetricFilters</code> request.</p>
+     * <p>The token for the next set of items to return. (You received this token from
+     * a previous call.)</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>A string token used for pagination that points to the next page of results.
-     * It must be a value obtained from the response of the previous
-     * <code>DescribeMetricFilters</code> request.</p>
+     * <p>The token for the next set of items to return. (You received this token from
+     * a previous call.)</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>A string token used for pagination that points to the next page of results.
-     * It must be a value obtained from the response of the previous
-     * <code>DescribeMetricFilters</code> request.</p>
+     * <p>The token for the next set of items to return. (You received this token from
+     * a previous call.)</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>A string token used for pagination that points to the next page of results.
-     * It must be a value obtained from the response of the previous
-     * <code>DescribeMetricFilters</code> request.</p>
+     * <p>The token for the next set of items to return. (You received this token from
+     * a previous call.)</p>
      */
     inline DescribeMetricFiltersRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>A string token used for pagination that points to the next page of results.
-     * It must be a value obtained from the response of the previous
-     * <code>DescribeMetricFilters</code> request.</p>
+     * <p>The token for the next set of items to return. (You received this token from
+     * a previous call.)</p>
      */
     inline DescribeMetricFiltersRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>A string token used for pagination that points to the next page of results.
-     * It must be a value obtained from the response of the previous
-     * <code>DescribeMetricFilters</code> request.</p>
+     * <p>The token for the next set of items to return. (You received this token from
+     * a previous call.)</p>
      */
     inline DescribeMetricFiltersRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>The maximum number of items returned in the response. If you don't specify a
-     * value, the request would return up to 50 items.</p>
+     * <p>The maximum number of items returned. If you don't specify a value, the
+     * default is up to 50 items.</p>
      */
     inline int GetLimit() const{ return m_limit; }
 
     /**
-     * <p>The maximum number of items returned in the response. If you don't specify a
-     * value, the request would return up to 50 items.</p>
+     * <p>The maximum number of items returned. If you don't specify a value, the
+     * default is up to 50 items.</p>
      */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
-     * <p>The maximum number of items returned in the response. If you don't specify a
-     * value, the request would return up to 50 items.</p>
+     * <p>The maximum number of items returned. If you don't specify a value, the
+     * default is up to 50 items.</p>
      */
     inline DescribeMetricFiltersRequest& WithLimit(int value) { SetLimit(value); return *this;}
+
+    /**
+     * <p>The name of the CloudWatch metric.</p>
+     */
+    inline const Aws::String& GetMetricName() const{ return m_metricName; }
+
+    /**
+     * <p>The name of the CloudWatch metric.</p>
+     */
+    inline void SetMetricName(const Aws::String& value) { m_metricNameHasBeenSet = true; m_metricName = value; }
+
+    /**
+     * <p>The name of the CloudWatch metric.</p>
+     */
+    inline void SetMetricName(Aws::String&& value) { m_metricNameHasBeenSet = true; m_metricName = value; }
+
+    /**
+     * <p>The name of the CloudWatch metric.</p>
+     */
+    inline void SetMetricName(const char* value) { m_metricNameHasBeenSet = true; m_metricName.assign(value); }
+
+    /**
+     * <p>The name of the CloudWatch metric.</p>
+     */
+    inline DescribeMetricFiltersRequest& WithMetricName(const Aws::String& value) { SetMetricName(value); return *this;}
+
+    /**
+     * <p>The name of the CloudWatch metric.</p>
+     */
+    inline DescribeMetricFiltersRequest& WithMetricName(Aws::String&& value) { SetMetricName(value); return *this;}
+
+    /**
+     * <p>The name of the CloudWatch metric.</p>
+     */
+    inline DescribeMetricFiltersRequest& WithMetricName(const char* value) { SetMetricName(value); return *this;}
+
+    /**
+     * <p>The namespace of the CloudWatch metric.</p>
+     */
+    inline const Aws::String& GetMetricNamespace() const{ return m_metricNamespace; }
+
+    /**
+     * <p>The namespace of the CloudWatch metric.</p>
+     */
+    inline void SetMetricNamespace(const Aws::String& value) { m_metricNamespaceHasBeenSet = true; m_metricNamespace = value; }
+
+    /**
+     * <p>The namespace of the CloudWatch metric.</p>
+     */
+    inline void SetMetricNamespace(Aws::String&& value) { m_metricNamespaceHasBeenSet = true; m_metricNamespace = value; }
+
+    /**
+     * <p>The namespace of the CloudWatch metric.</p>
+     */
+    inline void SetMetricNamespace(const char* value) { m_metricNamespaceHasBeenSet = true; m_metricNamespace.assign(value); }
+
+    /**
+     * <p>The namespace of the CloudWatch metric.</p>
+     */
+    inline DescribeMetricFiltersRequest& WithMetricNamespace(const Aws::String& value) { SetMetricNamespace(value); return *this;}
+
+    /**
+     * <p>The namespace of the CloudWatch metric.</p>
+     */
+    inline DescribeMetricFiltersRequest& WithMetricNamespace(Aws::String&& value) { SetMetricNamespace(value); return *this;}
+
+    /**
+     * <p>The namespace of the CloudWatch metric.</p>
+     */
+    inline DescribeMetricFiltersRequest& WithMetricNamespace(const char* value) { SetMetricNamespace(value); return *this;}
 
   private:
     Aws::String m_logGroupName;
@@ -187,6 +243,10 @@ namespace Model
     bool m_nextTokenHasBeenSet;
     int m_limit;
     bool m_limitHasBeenSet;
+    Aws::String m_metricName;
+    bool m_metricNameHasBeenSet;
+    Aws::String m_metricNamespace;
+    bool m_metricNamespaceHasBeenSet;
   };
 
 } // namespace Model

@@ -36,7 +36,9 @@ namespace Model
 
   /**
    * <p>Describes a trust relationship between an Microsoft AD in the AWS cloud and
-   * an external domain.</p>
+   * an external domain.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/Trust">AWS API
+   * Reference</a></p>
    */
   class AWS_DIRECTORYSERVICE_API Trust
   {

@@ -351,8 +351,7 @@ namespace Aws
                 size_t GetBlockSizeBytes() const override;
                 size_t GetKeyLengthBits() const override;
 
-            private:
-                static void IncrementCounter(CryptoBuffer& buffer);
+            private:                
                 static void InitBuffersToNull(Aws::Vector<ByteBuffer*>& initBuffers);
                 static void CleanupBuffers(Aws::Vector<ByteBuffer*>& cleanupBuffers);
 

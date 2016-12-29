@@ -32,7 +32,10 @@ namespace Model
 {
 
   /**
-   * <p>Information to use when checking for a successful response from a target.</p>
+   * <p>Information to use when checking for a successful response from a
+   * target.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/Matcher">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICLOADBALANCINGV2_API Matcher
   {

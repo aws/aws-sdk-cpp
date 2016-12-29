@@ -29,7 +29,8 @@ UpdateProvisionedProductRequest::UpdateProvisionedProductRequest() :
     m_provisioningArtifactIdHasBeenSet(false),
     m_pathIdHasBeenSet(false),
     m_provisioningParametersHasBeenSet(false),
-    m_updateTokenHasBeenSet(false)
+    m_updateToken(Aws::Utils::UUID::RandomUUID()),
+    m_updateTokenHasBeenSet(true)
 {
 }
 

@@ -34,7 +34,9 @@ namespace Model
 {
 
   /**
-   * <p>The summary of the cluster step.</p>
+   * <p>The summary of the cluster step.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/StepSummary">AWS
+   * API Reference</a></p>
    */
   class AWS_EMR_API StepSummary
   {

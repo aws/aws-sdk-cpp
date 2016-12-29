@@ -24,11 +24,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-StopDeploymentResult::StopDeploymentResult()
+StopDeploymentResult::StopDeploymentResult() : 
+    m_status(StopStatus::NOT_SET)
 {
 }
 
-StopDeploymentResult::StopDeploymentResult(const AmazonWebServiceResult<JsonValue>& result)
+StopDeploymentResult::StopDeploymentResult(const AmazonWebServiceResult<JsonValue>& result) : 
+    m_status(StopStatus::NOT_SET)
 {
   *this = result;
 }

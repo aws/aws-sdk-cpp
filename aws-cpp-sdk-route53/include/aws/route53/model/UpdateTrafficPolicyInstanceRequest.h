@@ -26,7 +26,10 @@ namespace Model
 
   /**
    * <p>A complex type that contains information about the resource record sets that
-   * you want to update based on a specified traffic policy instance.</p>
+   * you want to update based on a specified traffic policy instance.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/UpdateTrafficPolicyInstanceRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_ROUTE53_API UpdateTrafficPolicyInstanceRequest : public Route53Request
   {

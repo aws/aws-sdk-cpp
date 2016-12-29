@@ -23,7 +23,9 @@ using namespace Aws::Utils;
 
 BatchWriteItemRequest::BatchWriteItemRequest() : 
     m_requestItemsHasBeenSet(false),
+    m_returnConsumedCapacity(ReturnConsumedCapacity::NOT_SET),
     m_returnConsumedCapacityHasBeenSet(false),
+    m_returnItemCollectionMetrics(ReturnItemCollectionMetrics::NOT_SET),
     m_returnItemCollectionMetricsHasBeenSet(false)
 {
 }

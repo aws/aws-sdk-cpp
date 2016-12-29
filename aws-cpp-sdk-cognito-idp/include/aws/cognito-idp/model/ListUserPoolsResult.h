@@ -35,7 +35,9 @@ namespace CognitoIdentityProvider
 namespace Model
 {
   /**
-   * <p>Represents the response to list user pools.</p>
+   * <p>Represents the response to list user pools.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListUserPoolsResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_COGNITOIDENTITYPROVIDER_API ListUserPoolsResult
   {

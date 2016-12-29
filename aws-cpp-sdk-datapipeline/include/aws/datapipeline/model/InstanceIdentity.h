@@ -38,7 +38,9 @@ namespace Model
    * Metadata</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i> Passing in
    * this value proves that your task runner is running on an EC2 instance, and
    * ensures the proper AWS Data Pipeline service charges are applied to your
-   * pipeline.</p></p>
+   * pipeline.</p></p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/InstanceIdentity">AWS
+   * API Reference</a></p>
    */
   class AWS_DATAPIPELINE_API InstanceIdentity
   {

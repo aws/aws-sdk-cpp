@@ -24,11 +24,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateIntegrationResponseResult::UpdateIntegrationResponseResult()
+UpdateIntegrationResponseResult::UpdateIntegrationResponseResult() : 
+    m_contentHandling(ContentHandlingStrategy::NOT_SET)
 {
 }
 
-UpdateIntegrationResponseResult::UpdateIntegrationResponseResult(const AmazonWebServiceResult<JsonValue>& result)
+UpdateIntegrationResponseResult::UpdateIntegrationResponseResult(const AmazonWebServiceResult<JsonValue>& result) : 
+    m_contentHandling(ContentHandlingStrategy::NOT_SET)
 {
   *this = result;
 }
@@ -64,6 +66,12 @@ UpdateIntegrationResponseResult& UpdateIntegrationResponseResult::operator =(con
     {
       m_responseTemplates[responseTemplatesItem.first] = responseTemplatesItem.second.AsString();
     }
+  }
+
+  if(jsonValue.ValueExists("contentHandling"))
+  {
+    m_contentHandling = ContentHandlingStrategyMapper::GetContentHandlingStrategyForName(jsonValue.GetString("contentHandling"));
+
   }
 
 

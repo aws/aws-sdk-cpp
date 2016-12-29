@@ -32,7 +32,9 @@ namespace Model
 
   /**
    * <p>This structure is returned in the response object of <a>ListCertificates</a>
-   * action.</p>
+   * action.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/CertificateSummary">AWS
+   * API Reference</a></p>
    */
   class AWS_ACM_API CertificateSummary
   {

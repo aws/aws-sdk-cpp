@@ -28,11 +28,13 @@ namespace Model
 {
 
 InputStartingPositionConfiguration::InputStartingPositionConfiguration() : 
+    m_inputStartingPosition(InputStartingPosition::NOT_SET),
     m_inputStartingPositionHasBeenSet(false)
 {
 }
 
 InputStartingPositionConfiguration::InputStartingPositionConfiguration(const JsonValue& jsonValue) : 
+    m_inputStartingPosition(InputStartingPosition::NOT_SET),
     m_inputStartingPositionHasBeenSet(false)
 {
   *this = jsonValue;

@@ -1,5 +1,7 @@
-cmake_minimum_required(VERSION 2.8.12)
-project(aws-cpp-sdk-transfer)
+add_project(aws-cpp-sdk-transfer
+    "High-level C++ SDK for file transfer to/from AWS S3"
+    aws-cpp-sdk-s3
+    aws-cpp-sdk-core)
 
 file( GLOB TRANSFER_HEADERS "include/aws/transfer/*.h" )
 
@@ -25,8 +27,6 @@ file(GLOB ALL_TRANSFER
 
 set(TRANSFER_INCLUDES
     "${CMAKE_CURRENT_SOURCE_DIR}/include/"
-    "${AWS_NATIVE_SDK_ROOT}/aws-cpp-sdk-s3/include/"
-    "${CORE_DIR}/include/"
   )
 
 include_directories(${TRANSFER_INCLUDES})
@@ -35,31 +35,17 @@ if(USE_WINDOWS_DLL_SEMANTICS AND BUILD_SHARED_LIBS)
     add_definitions("-DAWS_TRANSFER_EXPORTS")
 endif()
 
-add_library(aws-cpp-sdk-transfer ${LIBTYPE} ${ALL_TRANSFER})
+add_library(${PROJECT_NAME} ${LIBTYPE} ${ALL_TRANSFER})
+add_library(AWS::${PROJECT_NAME} ALIAS ${PROJECT_NAME})
 
-target_include_directories(aws-cpp-sdk-transfer PUBLIC
+target_include_directories(${PROJECT_NAME} PUBLIC
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
         $<INSTALL_INTERFACE:include>)
-target_link_libraries(aws-cpp-sdk-transfer aws-cpp-sdk-s3)
+target_link_libraries(${PROJECT_NAME} ${PROJECT_LIBS})
 
-if(SIMPLE_INSTALL)
-    install (TARGETS aws-cpp-sdk-transfer
-            ARCHIVE DESTINATION ${ARCHIVE_DIRECTORY}
-            LIBRARY DESTINATION lib
-            RUNTIME DESTINATION bin)
-else()
-    if(PLATFORM_CUSTOM)
-        install_custom_library(aws-cpp-sdk-transfer)
-    else()
-        install (TARGETS aws-cpp-sdk-transfer
-                 ARCHIVE DESTINATION ${ARCHIVE_DIRECTORY}/${SDK_INSTALL_BINARY_PREFIX}/${PLATFORM_INSTALL_QUALIFIER}/\${CMAKE_INSTALL_CONFIG_NAME}
-                 LIBRARY DESTINATION lib/${SDK_INSTALL_BINARY_PREFIX}/${PLATFORM_INSTALL_QUALIFIER}/\${CMAKE_INSTALL_CONFIG_NAME}
-                RUNTIME DESTINATION bin/${SDK_INSTALL_BINARY_PREFIX}/${PLATFORM_INSTALL_QUALIFIER}/\${CMAKE_INSTALL_CONFIG_NAME})
-    endif()
-endif()
+setup_install()
 
-install (FILES ${ALL_TRANSFER_HEADERS} DESTINATION include/aws/transfer)
+install (FILES ${ALL_TRANSFER_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/transfer)
 
-if(PLATFORM_WINDOWS AND MSVC)
-    install (FILES nuget/aws-cpp-sdk-transfer.autopkg DESTINATION nuget)
-endif()
+do_packaging()
+

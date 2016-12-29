@@ -31,12 +31,14 @@ namespace Model
 
 InstanceExportDetails::InstanceExportDetails() : 
     m_instanceIdHasBeenSet(false),
+    m_targetEnvironment(ExportEnvironment::NOT_SET),
     m_targetEnvironmentHasBeenSet(false)
 {
 }
 
 InstanceExportDetails::InstanceExportDetails(const XmlNode& xmlNode) : 
     m_instanceIdHasBeenSet(false),
+    m_targetEnvironment(ExportEnvironment::NOT_SET),
     m_targetEnvironmentHasBeenSet(false)
 {
   *this = xmlNode;

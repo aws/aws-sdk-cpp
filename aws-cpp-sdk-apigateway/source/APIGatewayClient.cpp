@@ -30,6 +30,8 @@
 #include <aws/apigateway/model/CreateAuthorizerRequest.h>
 #include <aws/apigateway/model/CreateBasePathMappingRequest.h>
 #include <aws/apigateway/model/CreateDeploymentRequest.h>
+#include <aws/apigateway/model/CreateDocumentationPartRequest.h>
+#include <aws/apigateway/model/CreateDocumentationVersionRequest.h>
 #include <aws/apigateway/model/CreateDomainNameRequest.h>
 #include <aws/apigateway/model/CreateModelRequest.h>
 #include <aws/apigateway/model/CreateResourceRequest.h>
@@ -42,6 +44,8 @@
 #include <aws/apigateway/model/DeleteBasePathMappingRequest.h>
 #include <aws/apigateway/model/DeleteClientCertificateRequest.h>
 #include <aws/apigateway/model/DeleteDeploymentRequest.h>
+#include <aws/apigateway/model/DeleteDocumentationPartRequest.h>
+#include <aws/apigateway/model/DeleteDocumentationVersionRequest.h>
 #include <aws/apigateway/model/DeleteDomainNameRequest.h>
 #include <aws/apigateway/model/DeleteIntegrationRequest.h>
 #include <aws/apigateway/model/DeleteIntegrationResponseRequest.h>
@@ -67,6 +71,10 @@
 #include <aws/apigateway/model/GetClientCertificatesRequest.h>
 #include <aws/apigateway/model/GetDeploymentRequest.h>
 #include <aws/apigateway/model/GetDeploymentsRequest.h>
+#include <aws/apigateway/model/GetDocumentationPartRequest.h>
+#include <aws/apigateway/model/GetDocumentationPartsRequest.h>
+#include <aws/apigateway/model/GetDocumentationVersionRequest.h>
+#include <aws/apigateway/model/GetDocumentationVersionsRequest.h>
 #include <aws/apigateway/model/GetDomainNameRequest.h>
 #include <aws/apigateway/model/GetDomainNamesRequest.h>
 #include <aws/apigateway/model/GetExportRequest.h>
@@ -82,6 +90,8 @@
 #include <aws/apigateway/model/GetRestApiRequest.h>
 #include <aws/apigateway/model/GetRestApisRequest.h>
 #include <aws/apigateway/model/GetSdkRequest.h>
+#include <aws/apigateway/model/GetSdkTypeRequest.h>
+#include <aws/apigateway/model/GetSdkTypesRequest.h>
 #include <aws/apigateway/model/GetStageRequest.h>
 #include <aws/apigateway/model/GetStagesRequest.h>
 #include <aws/apigateway/model/GetUsageRequest.h>
@@ -90,6 +100,7 @@
 #include <aws/apigateway/model/GetUsagePlanKeysRequest.h>
 #include <aws/apigateway/model/GetUsagePlansRequest.h>
 #include <aws/apigateway/model/ImportApiKeysRequest.h>
+#include <aws/apigateway/model/ImportDocumentationPartsRequest.h>
 #include <aws/apigateway/model/ImportRestApiRequest.h>
 #include <aws/apigateway/model/PutIntegrationRequest.h>
 #include <aws/apigateway/model/PutIntegrationResponseRequest.h>
@@ -104,6 +115,8 @@
 #include <aws/apigateway/model/UpdateBasePathMappingRequest.h>
 #include <aws/apigateway/model/UpdateClientCertificateRequest.h>
 #include <aws/apigateway/model/UpdateDeploymentRequest.h>
+#include <aws/apigateway/model/UpdateDocumentationPartRequest.h>
+#include <aws/apigateway/model/UpdateDocumentationVersionRequest.h>
 #include <aws/apigateway/model/UpdateDomainNameRequest.h>
 #include <aws/apigateway/model/UpdateIntegrationRequest.h>
 #include <aws/apigateway/model/UpdateIntegrationResponseRequest.h>
@@ -320,6 +333,78 @@ void APIGatewayClient::CreateDeploymentAsync(const CreateDeploymentRequest& requ
 void APIGatewayClient::CreateDeploymentAsyncHelper(const CreateDeploymentRequest& request, const CreateDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateDeployment(request), context);
+}
+
+CreateDocumentationPartOutcome APIGatewayClient::CreateDocumentationPart(const CreateDocumentationPartRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/restapis/";
+  ss << request.GetRestApiId();
+  ss << "/documentation/parts";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return CreateDocumentationPartOutcome(CreateDocumentationPartResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateDocumentationPartOutcome(outcome.GetError());
+  }
+}
+
+CreateDocumentationPartOutcomeCallable APIGatewayClient::CreateDocumentationPartCallable(const CreateDocumentationPartRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateDocumentationPartOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateDocumentationPart(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void APIGatewayClient::CreateDocumentationPartAsync(const CreateDocumentationPartRequest& request, const CreateDocumentationPartResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateDocumentationPartAsyncHelper( request, handler, context ); } );
+}
+
+void APIGatewayClient::CreateDocumentationPartAsyncHelper(const CreateDocumentationPartRequest& request, const CreateDocumentationPartResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateDocumentationPart(request), context);
+}
+
+CreateDocumentationVersionOutcome APIGatewayClient::CreateDocumentationVersion(const CreateDocumentationVersionRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/restapis/";
+  ss << request.GetRestApiId();
+  ss << "/documentation/versions";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return CreateDocumentationVersionOutcome(CreateDocumentationVersionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateDocumentationVersionOutcome(outcome.GetError());
+  }
+}
+
+CreateDocumentationVersionOutcomeCallable APIGatewayClient::CreateDocumentationVersionCallable(const CreateDocumentationVersionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateDocumentationVersionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateDocumentationVersion(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void APIGatewayClient::CreateDocumentationVersionAsync(const CreateDocumentationVersionRequest& request, const CreateDocumentationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateDocumentationVersionAsyncHelper( request, handler, context ); } );
+}
+
+void APIGatewayClient::CreateDocumentationVersionAsyncHelper(const CreateDocumentationVersionRequest& request, const CreateDocumentationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateDocumentationVersion(request), context);
 }
 
 CreateDomainNameOutcome APIGatewayClient::CreateDomainName(const CreateDomainNameRequest& request) const
@@ -748,6 +833,80 @@ void APIGatewayClient::DeleteDeploymentAsync(const DeleteDeploymentRequest& requ
 void APIGatewayClient::DeleteDeploymentAsyncHelper(const DeleteDeploymentRequest& request, const DeleteDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteDeployment(request), context);
+}
+
+DeleteDocumentationPartOutcome APIGatewayClient::DeleteDocumentationPart(const DeleteDocumentationPartRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/restapis/";
+  ss << request.GetRestApiId();
+  ss << "/documentation/parts/";
+  ss << request.GetDocumentationPartId();
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_DELETE);
+  if(outcome.IsSuccess())
+  {
+    return DeleteDocumentationPartOutcome(NoResult());
+  }
+  else
+  {
+    return DeleteDocumentationPartOutcome(outcome.GetError());
+  }
+}
+
+DeleteDocumentationPartOutcomeCallable APIGatewayClient::DeleteDocumentationPartCallable(const DeleteDocumentationPartRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteDocumentationPartOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteDocumentationPart(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void APIGatewayClient::DeleteDocumentationPartAsync(const DeleteDocumentationPartRequest& request, const DeleteDocumentationPartResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteDocumentationPartAsyncHelper( request, handler, context ); } );
+}
+
+void APIGatewayClient::DeleteDocumentationPartAsyncHelper(const DeleteDocumentationPartRequest& request, const DeleteDocumentationPartResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteDocumentationPart(request), context);
+}
+
+DeleteDocumentationVersionOutcome APIGatewayClient::DeleteDocumentationVersion(const DeleteDocumentationVersionRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/restapis/";
+  ss << request.GetRestApiId();
+  ss << "/documentation/versions/";
+  ss << request.GetDocumentationVersion();
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_DELETE);
+  if(outcome.IsSuccess())
+  {
+    return DeleteDocumentationVersionOutcome(NoResult());
+  }
+  else
+  {
+    return DeleteDocumentationVersionOutcome(outcome.GetError());
+  }
+}
+
+DeleteDocumentationVersionOutcomeCallable APIGatewayClient::DeleteDocumentationVersionCallable(const DeleteDocumentationVersionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteDocumentationVersionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteDocumentationVersion(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void APIGatewayClient::DeleteDocumentationVersionAsync(const DeleteDocumentationVersionRequest& request, const DeleteDocumentationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteDocumentationVersionAsyncHelper( request, handler, context ); } );
+}
+
+void APIGatewayClient::DeleteDocumentationVersionAsyncHelper(const DeleteDocumentationVersionRequest& request, const DeleteDocumentationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteDocumentationVersion(request), context);
 }
 
 DeleteDomainNameOutcome APIGatewayClient::DeleteDomainName(const DeleteDomainNameRequest& request) const
@@ -1665,6 +1824,152 @@ void APIGatewayClient::GetDeploymentsAsyncHelper(const GetDeploymentsRequest& re
   handler(this, request, GetDeployments(request), context);
 }
 
+GetDocumentationPartOutcome APIGatewayClient::GetDocumentationPart(const GetDocumentationPartRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/restapis/";
+  ss << request.GetRestApiId();
+  ss << "/documentation/parts/";
+  ss << request.GetDocumentationPartId();
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  if(outcome.IsSuccess())
+  {
+    return GetDocumentationPartOutcome(GetDocumentationPartResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetDocumentationPartOutcome(outcome.GetError());
+  }
+}
+
+GetDocumentationPartOutcomeCallable APIGatewayClient::GetDocumentationPartCallable(const GetDocumentationPartRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetDocumentationPartOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetDocumentationPart(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void APIGatewayClient::GetDocumentationPartAsync(const GetDocumentationPartRequest& request, const GetDocumentationPartResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetDocumentationPartAsyncHelper( request, handler, context ); } );
+}
+
+void APIGatewayClient::GetDocumentationPartAsyncHelper(const GetDocumentationPartRequest& request, const GetDocumentationPartResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetDocumentationPart(request), context);
+}
+
+GetDocumentationPartsOutcome APIGatewayClient::GetDocumentationParts(const GetDocumentationPartsRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/restapis/";
+  ss << request.GetRestApiId();
+  ss << "/documentation/parts";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  if(outcome.IsSuccess())
+  {
+    return GetDocumentationPartsOutcome(GetDocumentationPartsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetDocumentationPartsOutcome(outcome.GetError());
+  }
+}
+
+GetDocumentationPartsOutcomeCallable APIGatewayClient::GetDocumentationPartsCallable(const GetDocumentationPartsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetDocumentationPartsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetDocumentationParts(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void APIGatewayClient::GetDocumentationPartsAsync(const GetDocumentationPartsRequest& request, const GetDocumentationPartsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetDocumentationPartsAsyncHelper( request, handler, context ); } );
+}
+
+void APIGatewayClient::GetDocumentationPartsAsyncHelper(const GetDocumentationPartsRequest& request, const GetDocumentationPartsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetDocumentationParts(request), context);
+}
+
+GetDocumentationVersionOutcome APIGatewayClient::GetDocumentationVersion(const GetDocumentationVersionRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/restapis/";
+  ss << request.GetRestApiId();
+  ss << "/documentation/versions/";
+  ss << request.GetDocumentationVersion();
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  if(outcome.IsSuccess())
+  {
+    return GetDocumentationVersionOutcome(GetDocumentationVersionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetDocumentationVersionOutcome(outcome.GetError());
+  }
+}
+
+GetDocumentationVersionOutcomeCallable APIGatewayClient::GetDocumentationVersionCallable(const GetDocumentationVersionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetDocumentationVersionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetDocumentationVersion(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void APIGatewayClient::GetDocumentationVersionAsync(const GetDocumentationVersionRequest& request, const GetDocumentationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetDocumentationVersionAsyncHelper( request, handler, context ); } );
+}
+
+void APIGatewayClient::GetDocumentationVersionAsyncHelper(const GetDocumentationVersionRequest& request, const GetDocumentationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetDocumentationVersion(request), context);
+}
+
+GetDocumentationVersionsOutcome APIGatewayClient::GetDocumentationVersions(const GetDocumentationVersionsRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/restapis/";
+  ss << request.GetRestApiId();
+  ss << "/documentation/versions";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  if(outcome.IsSuccess())
+  {
+    return GetDocumentationVersionsOutcome(GetDocumentationVersionsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetDocumentationVersionsOutcome(outcome.GetError());
+  }
+}
+
+GetDocumentationVersionsOutcomeCallable APIGatewayClient::GetDocumentationVersionsCallable(const GetDocumentationVersionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetDocumentationVersionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetDocumentationVersions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void APIGatewayClient::GetDocumentationVersionsAsync(const GetDocumentationVersionsRequest& request, const GetDocumentationVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetDocumentationVersionsAsyncHelper( request, handler, context ); } );
+}
+
+void APIGatewayClient::GetDocumentationVersionsAsyncHelper(const GetDocumentationVersionsRequest& request, const GetDocumentationVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetDocumentationVersions(request), context);
+}
+
 GetDomainNameOutcome APIGatewayClient::GetDomainName(const GetDomainNameRequest& request) const
 {
   Aws::StringStream ss;
@@ -2226,6 +2531,75 @@ void APIGatewayClient::GetSdkAsyncHelper(const GetSdkRequest& request, const Get
   handler(this, request, GetSdk(request), context);
 }
 
+GetSdkTypeOutcome APIGatewayClient::GetSdkType(const GetSdkTypeRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/sdktypes/";
+  ss << request.GetId();
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  if(outcome.IsSuccess())
+  {
+    return GetSdkTypeOutcome(GetSdkTypeResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetSdkTypeOutcome(outcome.GetError());
+  }
+}
+
+GetSdkTypeOutcomeCallable APIGatewayClient::GetSdkTypeCallable(const GetSdkTypeRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetSdkTypeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetSdkType(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void APIGatewayClient::GetSdkTypeAsync(const GetSdkTypeRequest& request, const GetSdkTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetSdkTypeAsyncHelper( request, handler, context ); } );
+}
+
+void APIGatewayClient::GetSdkTypeAsyncHelper(const GetSdkTypeRequest& request, const GetSdkTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetSdkType(request), context);
+}
+
+GetSdkTypesOutcome APIGatewayClient::GetSdkTypes(const GetSdkTypesRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/sdktypes";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  if(outcome.IsSuccess())
+  {
+    return GetSdkTypesOutcome(GetSdkTypesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetSdkTypesOutcome(outcome.GetError());
+  }
+}
+
+GetSdkTypesOutcomeCallable APIGatewayClient::GetSdkTypesCallable(const GetSdkTypesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetSdkTypesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetSdkTypes(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void APIGatewayClient::GetSdkTypesAsync(const GetSdkTypesRequest& request, const GetSdkTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetSdkTypesAsyncHelper( request, handler, context ); } );
+}
+
+void APIGatewayClient::GetSdkTypesAsyncHelper(const GetSdkTypesRequest& request, const GetSdkTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetSdkTypes(request), context);
+}
+
 GetStageOutcome APIGatewayClient::GetStage(const GetStageRequest& request) const
 {
   Aws::StringStream ss;
@@ -2509,6 +2883,42 @@ void APIGatewayClient::ImportApiKeysAsync(const ImportApiKeysRequest& request, c
 void APIGatewayClient::ImportApiKeysAsyncHelper(const ImportApiKeysRequest& request, const ImportApiKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ImportApiKeys(request), context);
+}
+
+ImportDocumentationPartsOutcome APIGatewayClient::ImportDocumentationParts(const ImportDocumentationPartsRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/restapis/";
+  ss << request.GetRestApiId();
+  ss << "/documentation/parts";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_PUT);
+  if(outcome.IsSuccess())
+  {
+    return ImportDocumentationPartsOutcome(ImportDocumentationPartsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ImportDocumentationPartsOutcome(outcome.GetError());
+  }
+}
+
+ImportDocumentationPartsOutcomeCallable APIGatewayClient::ImportDocumentationPartsCallable(const ImportDocumentationPartsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ImportDocumentationPartsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ImportDocumentationParts(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void APIGatewayClient::ImportDocumentationPartsAsync(const ImportDocumentationPartsRequest& request, const ImportDocumentationPartsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ImportDocumentationPartsAsyncHelper( request, handler, context ); } );
+}
+
+void APIGatewayClient::ImportDocumentationPartsAsyncHelper(const ImportDocumentationPartsRequest& request, const ImportDocumentationPartsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ImportDocumentationParts(request), context);
 }
 
 ImportRestApiOutcome APIGatewayClient::ImportRestApi(const ImportRestApiRequest& request) const
@@ -3030,6 +3440,80 @@ void APIGatewayClient::UpdateDeploymentAsync(const UpdateDeploymentRequest& requ
 void APIGatewayClient::UpdateDeploymentAsyncHelper(const UpdateDeploymentRequest& request, const UpdateDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateDeployment(request), context);
+}
+
+UpdateDocumentationPartOutcome APIGatewayClient::UpdateDocumentationPart(const UpdateDocumentationPartRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/restapis/";
+  ss << request.GetRestApiId();
+  ss << "/documentation/parts/";
+  ss << request.GetDocumentationPartId();
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_PATCH);
+  if(outcome.IsSuccess())
+  {
+    return UpdateDocumentationPartOutcome(UpdateDocumentationPartResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateDocumentationPartOutcome(outcome.GetError());
+  }
+}
+
+UpdateDocumentationPartOutcomeCallable APIGatewayClient::UpdateDocumentationPartCallable(const UpdateDocumentationPartRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateDocumentationPartOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateDocumentationPart(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void APIGatewayClient::UpdateDocumentationPartAsync(const UpdateDocumentationPartRequest& request, const UpdateDocumentationPartResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateDocumentationPartAsyncHelper( request, handler, context ); } );
+}
+
+void APIGatewayClient::UpdateDocumentationPartAsyncHelper(const UpdateDocumentationPartRequest& request, const UpdateDocumentationPartResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateDocumentationPart(request), context);
+}
+
+UpdateDocumentationVersionOutcome APIGatewayClient::UpdateDocumentationVersion(const UpdateDocumentationVersionRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/restapis/";
+  ss << request.GetRestApiId();
+  ss << "/documentation/versions/";
+  ss << request.GetDocumentationVersion();
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_PATCH);
+  if(outcome.IsSuccess())
+  {
+    return UpdateDocumentationVersionOutcome(UpdateDocumentationVersionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateDocumentationVersionOutcome(outcome.GetError());
+  }
+}
+
+UpdateDocumentationVersionOutcomeCallable APIGatewayClient::UpdateDocumentationVersionCallable(const UpdateDocumentationVersionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateDocumentationVersionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateDocumentationVersion(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void APIGatewayClient::UpdateDocumentationVersionAsync(const UpdateDocumentationVersionRequest& request, const UpdateDocumentationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateDocumentationVersionAsyncHelper( request, handler, context ); } );
+}
+
+void APIGatewayClient::UpdateDocumentationVersionAsyncHelper(const UpdateDocumentationVersionRequest& request, const UpdateDocumentationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateDocumentationVersion(request), context);
 }
 
 UpdateDomainNameOutcome APIGatewayClient::UpdateDomainName(const UpdateDomainNameRequest& request) const

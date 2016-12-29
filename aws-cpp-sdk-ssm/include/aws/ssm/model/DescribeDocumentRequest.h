@@ -69,9 +69,53 @@ namespace Model
      */
     inline DescribeDocumentRequest& WithName(const char* value) { SetName(value); return *this;}
 
+    /**
+     * <p>The document version for which you want information. Can be a specific
+     * version or the default version.</p>
+     */
+    inline const Aws::String& GetDocumentVersion() const{ return m_documentVersion; }
+
+    /**
+     * <p>The document version for which you want information. Can be a specific
+     * version or the default version.</p>
+     */
+    inline void SetDocumentVersion(const Aws::String& value) { m_documentVersionHasBeenSet = true; m_documentVersion = value; }
+
+    /**
+     * <p>The document version for which you want information. Can be a specific
+     * version or the default version.</p>
+     */
+    inline void SetDocumentVersion(Aws::String&& value) { m_documentVersionHasBeenSet = true; m_documentVersion = value; }
+
+    /**
+     * <p>The document version for which you want information. Can be a specific
+     * version or the default version.</p>
+     */
+    inline void SetDocumentVersion(const char* value) { m_documentVersionHasBeenSet = true; m_documentVersion.assign(value); }
+
+    /**
+     * <p>The document version for which you want information. Can be a specific
+     * version or the default version.</p>
+     */
+    inline DescribeDocumentRequest& WithDocumentVersion(const Aws::String& value) { SetDocumentVersion(value); return *this;}
+
+    /**
+     * <p>The document version for which you want information. Can be a specific
+     * version or the default version.</p>
+     */
+    inline DescribeDocumentRequest& WithDocumentVersion(Aws::String&& value) { SetDocumentVersion(value); return *this;}
+
+    /**
+     * <p>The document version for which you want information. Can be a specific
+     * version or the default version.</p>
+     */
+    inline DescribeDocumentRequest& WithDocumentVersion(const char* value) { SetDocumentVersion(value); return *this;}
+
   private:
     Aws::String m_name;
     bool m_nameHasBeenSet;
+    Aws::String m_documentVersion;
+    bool m_documentVersionHasBeenSet;
   };
 
 } // namespace Model

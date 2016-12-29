@@ -30,7 +30,10 @@ namespace Model
 {
 
   /**
-   * <p>Contains manual snapshot limit information for a directory.</p>
+   * <p>Contains manual snapshot limit information for a directory.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/SnapshotLimits">AWS
+   * API Reference</a></p>
    */
   class AWS_DIRECTORYSERVICE_API SnapshotLimits
   {

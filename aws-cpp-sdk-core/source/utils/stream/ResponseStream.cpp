@@ -23,6 +23,11 @@ ResponseStream::ResponseStream(void) :
 {
 }
 
+ResponseStream::ResponseStream(Aws::IOStream* underlyingStreamToManage) :
+    m_underlyingStream(underlyingStreamToManage)
+{
+}
+
 ResponseStream::ResponseStream(const Aws::IOStreamFactory& factory) :
     m_underlyingStream(factory())
 {

@@ -31,6 +31,7 @@ namespace Model
 
 ChangeInfo::ChangeInfo() : 
     m_idHasBeenSet(false),
+    m_status(ChangeStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_submittedAtHasBeenSet(false),
     m_commentHasBeenSet(false)
@@ -39,6 +40,7 @@ ChangeInfo::ChangeInfo() :
 
 ChangeInfo::ChangeInfo(const XmlNode& xmlNode) : 
     m_idHasBeenSet(false),
+    m_status(ChangeStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_submittedAtHasBeenSet(false),
     m_commentHasBeenSet(false)

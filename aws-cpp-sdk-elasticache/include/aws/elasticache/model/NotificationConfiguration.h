@@ -34,7 +34,9 @@ namespace Model
   /**
    * <p>Describes a notification topic and its status. Notification topics are used
    * for publishing ElastiCache events to subscribers using Amazon Simple
-   * Notification Service (SNS).</p>
+   * Notification Service (SNS).</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/NotificationConfiguration">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICACHE_API NotificationConfiguration
   {

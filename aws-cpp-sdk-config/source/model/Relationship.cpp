@@ -28,6 +28,7 @@ namespace Model
 {
 
 Relationship::Relationship() : 
+    m_resourceType(ResourceType::NOT_SET),
     m_resourceTypeHasBeenSet(false),
     m_resourceIdHasBeenSet(false),
     m_resourceNameHasBeenSet(false),
@@ -36,6 +37,7 @@ Relationship::Relationship() :
 }
 
 Relationship::Relationship(const JsonValue& jsonValue) : 
+    m_resourceType(ResourceType::NOT_SET),
     m_resourceTypeHasBeenSet(false),
     m_resourceIdHasBeenSet(false),
     m_resourceNameHasBeenSet(false),

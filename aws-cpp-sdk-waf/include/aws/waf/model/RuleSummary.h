@@ -32,7 +32,9 @@ namespace Model
 
   /**
    * <p>Contains the identifier and the friendly name or description of the
-   * <code>Rule</code>.</p>
+   * <code>Rule</code>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/RuleSummary">AWS API
+   * Reference</a></p>
    */
   class AWS_WAF_API RuleSummary
   {

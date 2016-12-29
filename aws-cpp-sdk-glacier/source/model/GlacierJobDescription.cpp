@@ -30,12 +30,14 @@ namespace Model
 GlacierJobDescription::GlacierJobDescription() : 
     m_jobIdHasBeenSet(false),
     m_jobDescriptionHasBeenSet(false),
+    m_action(ActionCode::NOT_SET),
     m_actionHasBeenSet(false),
     m_archiveIdHasBeenSet(false),
     m_vaultARNHasBeenSet(false),
     m_creationDateHasBeenSet(false),
     m_completed(false),
     m_completedHasBeenSet(false),
+    m_statusCode(StatusCode::NOT_SET),
     m_statusCodeHasBeenSet(false),
     m_statusMessageHasBeenSet(false),
     m_archiveSizeInBytes(0),
@@ -47,6 +49,7 @@ GlacierJobDescription::GlacierJobDescription() :
     m_sHA256TreeHashHasBeenSet(false),
     m_archiveSHA256TreeHashHasBeenSet(false),
     m_retrievalByteRangeHasBeenSet(false),
+    m_tierHasBeenSet(false),
     m_inventoryRetrievalParametersHasBeenSet(false)
 {
 }
@@ -54,12 +57,14 @@ GlacierJobDescription::GlacierJobDescription() :
 GlacierJobDescription::GlacierJobDescription(const JsonValue& jsonValue) : 
     m_jobIdHasBeenSet(false),
     m_jobDescriptionHasBeenSet(false),
+    m_action(ActionCode::NOT_SET),
     m_actionHasBeenSet(false),
     m_archiveIdHasBeenSet(false),
     m_vaultARNHasBeenSet(false),
     m_creationDateHasBeenSet(false),
     m_completed(false),
     m_completedHasBeenSet(false),
+    m_statusCode(StatusCode::NOT_SET),
     m_statusCodeHasBeenSet(false),
     m_statusMessageHasBeenSet(false),
     m_archiveSizeInBytes(0),
@@ -71,6 +76,7 @@ GlacierJobDescription::GlacierJobDescription(const JsonValue& jsonValue) :
     m_sHA256TreeHashHasBeenSet(false),
     m_archiveSHA256TreeHashHasBeenSet(false),
     m_retrievalByteRangeHasBeenSet(false),
+    m_tierHasBeenSet(false),
     m_inventoryRetrievalParametersHasBeenSet(false)
 {
   *this = jsonValue;
@@ -190,6 +196,13 @@ GlacierJobDescription& GlacierJobDescription::operator =(const JsonValue& jsonVa
     m_retrievalByteRangeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Tier"))
+  {
+    m_tier = jsonValue.GetString("Tier");
+
+    m_tierHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("InventoryRetrievalParameters"))
   {
     m_inventoryRetrievalParameters = jsonValue.GetObject("InventoryRetrievalParameters");
@@ -295,6 +308,12 @@ JsonValue GlacierJobDescription::Jsonize() const
   if(m_retrievalByteRangeHasBeenSet)
   {
    payload.WithString("RetrievalByteRange", m_retrievalByteRange);
+
+  }
+
+  if(m_tierHasBeenSet)
+  {
+   payload.WithString("Tier", m_tier);
 
   }
 

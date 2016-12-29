@@ -26,6 +26,7 @@ ConnectDirectoryRequest::ConnectDirectoryRequest() :
     m_shortNameHasBeenSet(false),
     m_passwordHasBeenSet(false),
     m_descriptionHasBeenSet(false),
+    m_size(DirectorySize::NOT_SET),
     m_sizeHasBeenSet(false),
     m_connectSettingsHasBeenSet(false)
 {

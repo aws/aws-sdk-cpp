@@ -31,6 +31,7 @@ WorkflowExecutionCancelRequestedEventAttributes::WorkflowExecutionCancelRequeste
     m_externalWorkflowExecutionHasBeenSet(false),
     m_externalInitiatedEventId(0),
     m_externalInitiatedEventIdHasBeenSet(false),
+    m_cause(WorkflowExecutionCancelRequestedCause::NOT_SET),
     m_causeHasBeenSet(false)
 {
 }
@@ -39,6 +40,7 @@ WorkflowExecutionCancelRequestedEventAttributes::WorkflowExecutionCancelRequeste
     m_externalWorkflowExecutionHasBeenSet(false),
     m_externalInitiatedEventId(0),
     m_externalInitiatedEventIdHasBeenSet(false),
+    m_cause(WorkflowExecutionCancelRequestedCause::NOT_SET),
     m_causeHasBeenSet(false)
 {
   *this = jsonValue;

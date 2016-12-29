@@ -26,7 +26,9 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for StopInstances.</p>
+   * <p>Contains the parameters for StopInstances.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/StopInstancesRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API StopInstancesRequest : public EC2Request
   {
@@ -102,7 +104,7 @@ namespace Model
      * <p>Forces the instances to stop. The instances do not have an opportunity to
      * flush file system caches or file system metadata. If you use this option, you
      * must perform file system check and repair procedures. This option is not
-     * recommended for Windows instances.</p> <p>Default: <code>false</code></p>
+     * recommended for Windows instances.</p> <p>Default: <code>false</code> </p>
      */
     inline bool GetForce() const{ return m_force; }
 
@@ -110,7 +112,7 @@ namespace Model
      * <p>Forces the instances to stop. The instances do not have an opportunity to
      * flush file system caches or file system metadata. If you use this option, you
      * must perform file system check and repair procedures. This option is not
-     * recommended for Windows instances.</p> <p>Default: <code>false</code></p>
+     * recommended for Windows instances.</p> <p>Default: <code>false</code> </p>
      */
     inline void SetForce(bool value) { m_forceHasBeenSet = true; m_force = value; }
 
@@ -118,7 +120,7 @@ namespace Model
      * <p>Forces the instances to stop. The instances do not have an opportunity to
      * flush file system caches or file system metadata. If you use this option, you
      * must perform file system check and repair procedures. This option is not
-     * recommended for Windows instances.</p> <p>Default: <code>false</code></p>
+     * recommended for Windows instances.</p> <p>Default: <code>false</code> </p>
      */
     inline StopInstancesRequest& WithForce(bool value) { SetForce(value); return *this;}
 

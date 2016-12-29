@@ -33,7 +33,9 @@ namespace Model
 
   /**
    * <p>An array of UnprocessedIdentityId objects, each of which contains an
-   * ErrorCode and IdentityId.</p>
+   * ErrorCode and IdentityId.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/UnprocessedIdentityId">AWS
+   * API Reference</a></p>
    */
   class AWS_COGNITOIDENTITY_API UnprocessedIdentityId
   {

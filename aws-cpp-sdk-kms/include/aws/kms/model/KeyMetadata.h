@@ -38,7 +38,9 @@ namespace Model
   /**
    * <p>Contains metadata about a customer master key (CMK).</p> <p>This data type is
    * used as a response element for the <a>CreateKey</a> and <a>DescribeKey</a>
-   * operations.</p>
+   * operations.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/KeyMetadata">AWS API
+   * Reference</a></p>
    */
   class AWS_KMS_API KeyMetadata
   {

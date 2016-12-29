@@ -28,6 +28,7 @@ using namespace Aws::Http;
 ListResourceRecordSetsRequest::ListResourceRecordSetsRequest() : 
     m_hostedZoneIdHasBeenSet(false),
     m_startRecordNameHasBeenSet(false),
+    m_startRecordType(RRType::NOT_SET),
     m_startRecordTypeHasBeenSet(false),
     m_startRecordIdentifierHasBeenSet(false),
     m_maxItemsHasBeenSet(false)

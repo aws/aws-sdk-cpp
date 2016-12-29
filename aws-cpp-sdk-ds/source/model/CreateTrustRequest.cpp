@@ -25,7 +25,9 @@ CreateTrustRequest::CreateTrustRequest() :
     m_directoryIdHasBeenSet(false),
     m_remoteDomainNameHasBeenSet(false),
     m_trustPasswordHasBeenSet(false),
+    m_trustDirection(TrustDirection::NOT_SET),
     m_trustDirectionHasBeenSet(false),
+    m_trustType(TrustType::NOT_SET),
     m_trustTypeHasBeenSet(false),
     m_conditionalForwarderIpAddrsHasBeenSet(false)
 {

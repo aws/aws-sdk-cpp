@@ -29,7 +29,9 @@ namespace Model
 
   /**
    * <p>The result message containing the options for the specified solution
-   * stack.</p>
+   * stack.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateConfigurationTemplateMessage">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICBEANSTALK_API UpdateConfigurationTemplateRequest : public ElasticBeanstalkRequest
   {

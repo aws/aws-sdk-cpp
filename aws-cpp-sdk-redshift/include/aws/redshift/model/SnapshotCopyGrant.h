@@ -40,7 +40,9 @@ namespace Model
    * copy grants, go to <a
    * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html">Amazon
    * Redshift Database Encryption</a> in the <i>Amazon Redshift Cluster Management
-   * Guide</i>. </p>
+   * Guide</i>. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/SnapshotCopyGrant">AWS
+   * API Reference</a></p>
    */
   class AWS_REDSHIFT_API SnapshotCopyGrant
   {

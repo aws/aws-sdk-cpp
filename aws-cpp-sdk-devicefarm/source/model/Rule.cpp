@@ -28,14 +28,18 @@ namespace Model
 {
 
 Rule::Rule() : 
+    m_attribute(DeviceAttribute::NOT_SET),
     m_attributeHasBeenSet(false),
+    m_operator(RuleOperator::NOT_SET),
     m_operatorHasBeenSet(false),
     m_valueHasBeenSet(false)
 {
 }
 
 Rule::Rule(const JsonValue& jsonValue) : 
+    m_attribute(DeviceAttribute::NOT_SET),
     m_attributeHasBeenSet(false),
+    m_operator(RuleOperator::NOT_SET),
     m_operatorHasBeenSet(false),
     m_valueHasBeenSet(false)
 {

@@ -32,6 +32,7 @@ namespace Model
 NoncurrentVersionTransition::NoncurrentVersionTransition() : 
     m_noncurrentDays(0),
     m_noncurrentDaysHasBeenSet(false),
+    m_storageClass(TransitionStorageClass::NOT_SET),
     m_storageClassHasBeenSet(false)
 {
 }
@@ -39,6 +40,7 @@ NoncurrentVersionTransition::NoncurrentVersionTransition() :
 NoncurrentVersionTransition::NoncurrentVersionTransition(const XmlNode& xmlNode) : 
     m_noncurrentDays(0),
     m_noncurrentDaysHasBeenSet(false),
+    m_storageClass(TransitionStorageClass::NOT_SET),
     m_storageClassHasBeenSet(false)
 {
   *this = xmlNode;

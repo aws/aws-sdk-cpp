@@ -32,7 +32,10 @@ namespace Model
 {
 
   /**
-   * <p>Provides all of the details about a particular cache engine version.</p>
+   * <p>Provides all of the details about a particular cache engine
+   * version.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CacheEngineVersion">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICACHE_API CacheEngineVersion
   {

@@ -35,7 +35,10 @@ namespace Redshift
 namespace Model
 {
   /**
-   * <p>Describes the result of a cluster resize operation.</p>
+   * <p>Describes the result of a cluster resize operation.</p><p><h3>See Also:</h3> 
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ResizeProgressMessage">AWS
+   * API Reference</a></p>
    */
   class AWS_REDSHIFT_API DescribeResizeResult
   {

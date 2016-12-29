@@ -34,6 +34,7 @@ SearchRequest::SearchRequest() :
     m_partialHasBeenSet(false),
     m_queryHasBeenSet(false),
     m_queryOptionsHasBeenSet(false),
+    m_queryParser(QueryParser::NOT_SET),
     m_queryParserHasBeenSet(false),
     m_returnHasBeenSet(false),
     m_size(0),

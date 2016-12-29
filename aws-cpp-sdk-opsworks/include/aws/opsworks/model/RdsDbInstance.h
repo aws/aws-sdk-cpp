@@ -31,7 +31,9 @@ namespace Model
 {
 
   /**
-   * <p>Describes an Amazon RDS instance.</p>
+   * <p>Describes an Amazon RDS instance.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/RdsDbInstance">AWS
+   * API Reference</a></p>
    */
   class AWS_OPSWORKS_API RdsDbInstance
   {

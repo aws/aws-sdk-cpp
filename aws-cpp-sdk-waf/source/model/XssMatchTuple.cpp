@@ -29,12 +29,14 @@ namespace Model
 
 XssMatchTuple::XssMatchTuple() : 
     m_fieldToMatchHasBeenSet(false),
+    m_textTransformation(TextTransformation::NOT_SET),
     m_textTransformationHasBeenSet(false)
 {
 }
 
 XssMatchTuple::XssMatchTuple(const JsonValue& jsonValue) : 
     m_fieldToMatchHasBeenSet(false),
+    m_textTransformation(TextTransformation::NOT_SET),
     m_textTransformationHasBeenSet(false)
 {
   *this = jsonValue;

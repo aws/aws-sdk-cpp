@@ -28,11 +28,13 @@ namespace Model
 {
 
 CloseStatusFilter::CloseStatusFilter() : 
+    m_status(CloseStatus::NOT_SET),
     m_statusHasBeenSet(false)
 {
 }
 
 CloseStatusFilter::CloseStatusFilter(const JsonValue& jsonValue) : 
+    m_status(CloseStatus::NOT_SET),
     m_statusHasBeenSet(false)
 {
   *this = jsonValue;

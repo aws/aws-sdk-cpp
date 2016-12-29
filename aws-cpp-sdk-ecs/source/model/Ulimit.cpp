@@ -28,6 +28,7 @@ namespace Model
 {
 
 Ulimit::Ulimit() : 
+    m_name(UlimitName::NOT_SET),
     m_nameHasBeenSet(false),
     m_softLimit(0),
     m_softLimitHasBeenSet(false),
@@ -37,6 +38,7 @@ Ulimit::Ulimit() :
 }
 
 Ulimit::Ulimit(const JsonValue& jsonValue) : 
+    m_name(UlimitName::NOT_SET),
     m_nameHasBeenSet(false),
     m_softLimit(0),
     m_softLimitHasBeenSet(false),

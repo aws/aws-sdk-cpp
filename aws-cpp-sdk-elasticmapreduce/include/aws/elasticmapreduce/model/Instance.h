@@ -34,7 +34,10 @@ namespace Model
 {
 
   /**
-   * <p>Represents an EC2 instance provisioned as part of cluster.</p>
+   * <p>Represents an EC2 instance provisioned as part of cluster.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/Instance">AWS
+   * API Reference</a></p>
    */
   class AWS_EMR_API Instance
   {

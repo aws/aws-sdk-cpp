@@ -32,7 +32,10 @@ namespace Model
 {
 
   /**
-   * <p>Summarizes the number of layers, instances, and apps in a stack.</p>
+   * <p>Summarizes the number of layers, instances, and apps in a
+   * stack.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/StackSummary">AWS
+   * API Reference</a></p>
    */
   class AWS_OPSWORKS_API StackSummary
   {

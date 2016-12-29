@@ -36,7 +36,9 @@ namespace Model
   /**
    * A complex type that describes the Amazon S3 bucket or the HTTP server (for
    * example, a web server) from which CloudFront gets your files.You must create at
-   * least one origin.
+   * least one origin.<p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/Origin">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API Origin
   {

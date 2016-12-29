@@ -29,6 +29,10 @@ HeadObjectResult::HeadObjectResult() :
     m_deleteMarker(false),
     m_contentLength(0),
     m_missingMeta(0),
+    m_serverSideEncryption(ServerSideEncryption::NOT_SET),
+    m_storageClass(StorageClass::NOT_SET),
+    m_requestCharged(RequestCharged::NOT_SET),
+    m_replicationStatus(ReplicationStatus::NOT_SET),
     m_partsCount(0)
 {
 }
@@ -37,6 +41,10 @@ HeadObjectResult::HeadObjectResult(const AmazonWebServiceResult<XmlDocument>& re
     m_deleteMarker(false),
     m_contentLength(0),
     m_missingMeta(0),
+    m_serverSideEncryption(ServerSideEncryption::NOT_SET),
+    m_storageClass(StorageClass::NOT_SET),
+    m_requestCharged(RequestCharged::NOT_SET),
+    m_replicationStatus(ReplicationStatus::NOT_SET),
     m_partsCount(0)
 {
   *this = result;

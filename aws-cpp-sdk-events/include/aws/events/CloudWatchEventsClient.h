@@ -176,7 +176,10 @@ namespace Model
          * <p>Deletes a rule. You must remove all targets from a rule using
          * <a>RemoveTargets</a> before you can delete the rule.</p> <p> <b>Note:</b> When
          * you delete a rule, incoming events might still continue to match to the deleted
-         * rule. Please allow a short period of time for changes to take effect. </p>
+         * rule. Please allow a short period of time for changes to take effect.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DeleteRule">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteRuleOutcome DeleteRule(const Model::DeleteRuleRequest& request) const;
 
@@ -184,7 +187,10 @@ namespace Model
          * <p>Deletes a rule. You must remove all targets from a rule using
          * <a>RemoveTargets</a> before you can delete the rule.</p> <p> <b>Note:</b> When
          * you delete a rule, incoming events might still continue to match to the deleted
-         * rule. Please allow a short period of time for changes to take effect. </p>
+         * rule. Please allow a short period of time for changes to take effect.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DeleteRule">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -194,26 +200,35 @@ namespace Model
          * <p>Deletes a rule. You must remove all targets from a rule using
          * <a>RemoveTargets</a> before you can delete the rule.</p> <p> <b>Note:</b> When
          * you delete a rule, incoming events might still continue to match to the deleted
-         * rule. Please allow a short period of time for changes to take effect. </p>
+         * rule. Please allow a short period of time for changes to take effect.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DeleteRule">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteRuleAsync(const Model::DeleteRuleRequest& request, const DeleteRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes the details of the specified rule.</p>
+         * <p>Describes the details of the specified rule.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DescribeRule">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeRuleOutcome DescribeRule(const Model::DescribeRuleRequest& request) const;
 
         /**
-         * <p>Describes the details of the specified rule.</p>
+         * <p>Describes the details of the specified rule.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DescribeRule">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeRuleOutcomeCallable DescribeRuleCallable(const Model::DescribeRuleRequest& request) const;
 
         /**
-         * <p>Describes the details of the specified rule.</p>
+         * <p>Describes the details of the specified rule.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DescribeRule">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -223,7 +238,10 @@ namespace Model
          * <p>Disables a rule. A disabled rule won't match any events, and won't
          * self-trigger if it has a schedule expression.</p> <p> <b>Note:</b> When you
          * disable a rule, incoming events might still continue to match to the disabled
-         * rule. Please allow a short period of time for changes to take effect. </p>
+         * rule. Please allow a short period of time for changes to take effect.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DisableRule">AWS
+         * API Reference</a></p>
          */
         virtual Model::DisableRuleOutcome DisableRule(const Model::DisableRuleRequest& request) const;
 
@@ -231,7 +249,10 @@ namespace Model
          * <p>Disables a rule. A disabled rule won't match any events, and won't
          * self-trigger if it has a schedule expression.</p> <p> <b>Note:</b> When you
          * disable a rule, incoming events might still continue to match to the disabled
-         * rule. Please allow a short period of time for changes to take effect. </p>
+         * rule. Please allow a short period of time for changes to take effect.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DisableRule">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -241,7 +262,10 @@ namespace Model
          * <p>Disables a rule. A disabled rule won't match any events, and won't
          * self-trigger if it has a schedule expression.</p> <p> <b>Note:</b> When you
          * disable a rule, incoming events might still continue to match to the disabled
-         * rule. Please allow a short period of time for changes to take effect. </p>
+         * rule. Please allow a short period of time for changes to take effect.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DisableRule">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -251,7 +275,9 @@ namespace Model
          * <p>Enables a rule. If the rule does not exist, the operation fails.</p> <p>
          * <b>Note:</b> When you enable a rule, incoming events might not immediately start
          * matching to a newly enabled rule. Please allow a short period of time for
-         * changes to take effect. </p>
+         * changes to take effect. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/EnableRule">AWS
+         * API Reference</a></p>
          */
         virtual Model::EnableRuleOutcome EnableRule(const Model::EnableRuleRequest& request) const;
 
@@ -259,7 +285,9 @@ namespace Model
          * <p>Enables a rule. If the rule does not exist, the operation fails.</p> <p>
          * <b>Note:</b> When you enable a rule, incoming events might not immediately start
          * matching to a newly enabled rule. Please allow a short period of time for
-         * changes to take effect. </p>
+         * changes to take effect. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/EnableRule">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -269,7 +297,9 @@ namespace Model
          * <p>Enables a rule. If the rule does not exist, the operation fails.</p> <p>
          * <b>Note:</b> When you enable a rule, incoming events might not immediately start
          * matching to a newly enabled rule. Please allow a short period of time for
-         * changes to take effect. </p>
+         * changes to take effect. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/EnableRule">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -281,7 +311,9 @@ namespace Model
          * your account. If you have more rules in your account than the given limit, the
          * results will be paginated. In that case, use the next token returned in the
          * response and repeat ListRulesByTarget until the NextToken in the response is
-         * returned as null.</p>
+         * returned as null.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListRuleNamesByTarget">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListRuleNamesByTargetOutcome ListRuleNamesByTarget(const Model::ListRuleNamesByTargetRequest& request) const;
 
@@ -291,7 +323,9 @@ namespace Model
          * your account. If you have more rules in your account than the given limit, the
          * results will be paginated. In that case, use the next token returned in the
          * response and repeat ListRulesByTarget until the NextToken in the response is
-         * returned as null.</p>
+         * returned as null.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListRuleNamesByTarget">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -303,7 +337,9 @@ namespace Model
          * your account. If you have more rules in your account than the given limit, the
          * results will be paginated. In that case, use the next token returned in the
          * response and repeat ListRulesByTarget until the NextToken in the response is
-         * returned as null.</p>
+         * returned as null.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListRuleNamesByTarget">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -314,7 +350,10 @@ namespace Model
          * all the rules or you can provide a prefix to match to the rule names. If you
          * have more rules in your account than the given limit, the results will be
          * paginated. In that case, use the next token returned in the response and repeat
-         * ListRules until the NextToken in the response is returned as null.</p>
+         * ListRules until the NextToken in the response is returned as null.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListRules">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListRulesOutcome ListRules(const Model::ListRulesRequest& request) const;
 
@@ -323,7 +362,10 @@ namespace Model
          * all the rules or you can provide a prefix to match to the rule names. If you
          * have more rules in your account than the given limit, the results will be
          * paginated. In that case, use the next token returned in the response and repeat
-         * ListRules until the NextToken in the response is returned as null.</p>
+         * ListRules until the NextToken in the response is returned as null.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListRules">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -334,26 +376,35 @@ namespace Model
          * all the rules or you can provide a prefix to match to the rule names. If you
          * have more rules in your account than the given limit, the results will be
          * paginated. In that case, use the next token returned in the response and repeat
-         * ListRules until the NextToken in the response is returned as null.</p>
+         * ListRules until the NextToken in the response is returned as null.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListRules">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListRulesAsync(const Model::ListRulesRequest& request, const ListRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists of targets assigned to the rule.</p>
+         * <p>Lists of targets assigned to the rule.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListTargetsByRule">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListTargetsByRuleOutcome ListTargetsByRule(const Model::ListTargetsByRuleRequest& request) const;
 
         /**
-         * <p>Lists of targets assigned to the rule.</p>
+         * <p>Lists of targets assigned to the rule.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListTargetsByRule">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListTargetsByRuleOutcomeCallable ListTargetsByRuleCallable(const Model::ListTargetsByRuleRequest& request) const;
 
         /**
-         * <p>Lists of targets assigned to the rule.</p>
+         * <p>Lists of targets assigned to the rule.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListTargetsByRule">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -361,13 +412,17 @@ namespace Model
 
         /**
          * <p>Sends custom events to Amazon CloudWatch Events so that they can be matched
-         * to rules.</p>
+         * to rules.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutEvents">AWS
+         * API Reference</a></p>
          */
         virtual Model::PutEventsOutcome PutEvents(const Model::PutEventsRequest& request) const;
 
         /**
          * <p>Sends custom events to Amazon CloudWatch Events so that they can be matched
-         * to rules.</p>
+         * to rules.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutEvents">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -375,7 +430,9 @@ namespace Model
 
         /**
          * <p>Sends custom events to Amazon CloudWatch Events so that they can be matched
-         * to rules.</p>
+         * to rules.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutEvents">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -395,7 +452,9 @@ namespace Model
          * the same character in Amazon Resource Names (ARNs). However, CloudWatch Events
          * uses an exact match in event patterns and rules. Be sure to use the correct ARN
          * characters when creating event patterns so that they match the ARN syntax in the
-         * event you want to match. </p>
+         * event you want to match. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutRule">AWS API
+         * Reference</a></p>
          */
         virtual Model::PutRuleOutcome PutRule(const Model::PutRuleRequest& request) const;
 
@@ -413,7 +472,9 @@ namespace Model
          * the same character in Amazon Resource Names (ARNs). However, CloudWatch Events
          * uses an exact match in event patterns and rules. Be sure to use the correct ARN
          * characters when creating event patterns so that they match the ARN syntax in the
-         * event you want to match. </p>
+         * event you want to match. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutRule">AWS API
+         * Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -433,7 +494,9 @@ namespace Model
          * the same character in Amazon Resource Names (ARNs). However, CloudWatch Events
          * uses an exact match in event patterns and rules. Be sure to use the correct ARN
          * characters when creating event patterns so that they match the ARN syntax in the
-         * event you want to match. </p>
+         * event you want to match. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutRule">AWS API
+         * Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -462,7 +525,9 @@ namespace Model
          * event is overridden with this constant.</li> </ul> <p> <b>Note:</b> When you add
          * targets to a rule, when the associated rule triggers, new or updated targets
          * might not be immediately invoked. Please allow a short period of time for
-         * changes to take effect. </p>
+         * changes to take effect. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutTargets">AWS
+         * API Reference</a></p>
          */
         virtual Model::PutTargetsOutcome PutTargets(const Model::PutTargetsRequest& request) const;
 
@@ -489,7 +554,9 @@ namespace Model
          * event is overridden with this constant.</li> </ul> <p> <b>Note:</b> When you add
          * targets to a rule, when the associated rule triggers, new or updated targets
          * might not be immediately invoked. Please allow a short period of time for
-         * changes to take effect. </p>
+         * changes to take effect. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutTargets">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -518,7 +585,9 @@ namespace Model
          * event is overridden with this constant.</li> </ul> <p> <b>Note:</b> When you add
          * targets to a rule, when the associated rule triggers, new or updated targets
          * might not be immediately invoked. Please allow a short period of time for
-         * changes to take effect. </p>
+         * changes to take effect. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutTargets">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -529,7 +598,9 @@ namespace Model
          * targets will no longer be invoked.</p> <p> <b>Note:</b> When you remove a
          * target, when the associated rule triggers, removed targets might still continue
          * to be invoked. Please allow a short period of time for changes to take effect.
-         * </p>
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/RemoveTargets">AWS
+         * API Reference</a></p>
          */
         virtual Model::RemoveTargetsOutcome RemoveTargets(const Model::RemoveTargetsRequest& request) const;
 
@@ -538,7 +609,9 @@ namespace Model
          * targets will no longer be invoked.</p> <p> <b>Note:</b> When you remove a
          * target, when the associated rule triggers, removed targets might still continue
          * to be invoked. Please allow a short period of time for changes to take effect.
-         * </p>
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/RemoveTargets">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -549,7 +622,9 @@ namespace Model
          * targets will no longer be invoked.</p> <p> <b>Note:</b> When you remove a
          * target, when the associated rule triggers, removed targets might still continue
          * to be invoked. Please allow a short period of time for changes to take effect.
-         * </p>
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/RemoveTargets">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -561,7 +636,9 @@ namespace Model
          * Resource Names (ARNs). However, CloudWatch Events uses an exact match in event
          * patterns and rules. Be sure to use the correct ARN characters when creating
          * event patterns so that they match the ARN syntax in the event you want to match.
-         * </p>
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/TestEventPattern">AWS
+         * API Reference</a></p>
          */
         virtual Model::TestEventPatternOutcome TestEventPattern(const Model::TestEventPatternRequest& request) const;
 
@@ -571,7 +648,9 @@ namespace Model
          * Resource Names (ARNs). However, CloudWatch Events uses an exact match in event
          * patterns and rules. Be sure to use the correct ARN characters when creating
          * event patterns so that they match the ARN syntax in the event you want to match.
-         * </p>
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/TestEventPattern">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -583,7 +662,9 @@ namespace Model
          * Resource Names (ARNs). However, CloudWatch Events uses an exact match in event
          * patterns and rules. Be sure to use the correct ARN characters when creating
          * event patterns so that they match the ARN syntax in the event you want to match.
-         * </p>
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/TestEventPattern">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */

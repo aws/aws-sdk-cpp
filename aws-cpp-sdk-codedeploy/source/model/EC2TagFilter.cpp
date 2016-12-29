@@ -30,6 +30,7 @@ namespace Model
 EC2TagFilter::EC2TagFilter() : 
     m_keyHasBeenSet(false),
     m_valueHasBeenSet(false),
+    m_type(EC2TagFilterType::NOT_SET),
     m_typeHasBeenSet(false)
 {
 }
@@ -37,6 +38,7 @@ EC2TagFilter::EC2TagFilter() :
 EC2TagFilter::EC2TagFilter(const JsonValue& jsonValue) : 
     m_keyHasBeenSet(false),
     m_valueHasBeenSet(false),
+    m_type(EC2TagFilterType::NOT_SET),
     m_typeHasBeenSet(false)
 {
   *this = jsonValue;

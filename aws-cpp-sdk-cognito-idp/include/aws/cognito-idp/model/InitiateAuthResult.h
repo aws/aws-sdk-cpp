@@ -36,7 +36,9 @@ namespace CognitoIdentityProvider
 namespace Model
 {
   /**
-   * <p>Initiates the authentication response.</p>
+   * <p>Initiates the authentication response.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/InitiateAuthResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_COGNITOIDENTITYPROVIDER_API InitiateAuthResult
   {
@@ -165,19 +167,34 @@ namespace Model
      */
     inline InitiateAuthResult& AddChallengeParameters(const char* key, const char* value) { m_challengeParameters[key] = value; return *this; }
 
-    
+    /**
+     * <p>The result returned by the server in response to the request to initiate
+     * authentication.</p>
+     */
     inline const AuthenticationResultType& GetAuthenticationResult() const{ return m_authenticationResult; }
 
-    
+    /**
+     * <p>The result returned by the server in response to the request to initiate
+     * authentication.</p>
+     */
     inline void SetAuthenticationResult(const AuthenticationResultType& value) { m_authenticationResult = value; }
 
-    
+    /**
+     * <p>The result returned by the server in response to the request to initiate
+     * authentication.</p>
+     */
     inline void SetAuthenticationResult(AuthenticationResultType&& value) { m_authenticationResult = value; }
 
-    
+    /**
+     * <p>The result returned by the server in response to the request to initiate
+     * authentication.</p>
+     */
     inline InitiateAuthResult& WithAuthenticationResult(const AuthenticationResultType& value) { SetAuthenticationResult(value); return *this;}
 
-    
+    /**
+     * <p>The result returned by the server in response to the request to initiate
+     * authentication.</p>
+     */
     inline InitiateAuthResult& WithAuthenticationResult(AuthenticationResultType&& value) { SetAuthenticationResult(value); return *this;}
 
   private:

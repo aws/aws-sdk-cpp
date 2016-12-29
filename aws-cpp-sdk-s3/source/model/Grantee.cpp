@@ -33,6 +33,7 @@ Grantee::Grantee() :
     m_displayNameHasBeenSet(false),
     m_emailAddressHasBeenSet(false),
     m_iDHasBeenSet(false),
+    m_type(Type::NOT_SET),
     m_typeHasBeenSet(false),
     m_uRIHasBeenSet(false)
 {
@@ -42,6 +43,7 @@ Grantee::Grantee(const XmlNode& xmlNode) :
     m_displayNameHasBeenSet(false),
     m_emailAddressHasBeenSet(false),
     m_iDHasBeenSet(false),
+    m_type(Type::NOT_SET),
     m_typeHasBeenSet(false),
     m_uRIHasBeenSet(false)
 {
@@ -112,13 +114,13 @@ void Grantee::AddToNode(XmlNode& parentNode) const
 
   if(m_typeHasBeenSet)
   {
-   XmlNode typeNode = parentNode.CreateChildElement("Type");
+   XmlNode typeNode = parentNode.CreateChildElement("xsi:type");
    typeNode.SetText(TypeMapper::GetNameForType(m_type));
   }
 
   if(m_uRIHasBeenSet)
   {
-   XmlNode uRINode = parentNode.CreateChildElement("xsi:type");
+   XmlNode uRINode = parentNode.CreateChildElement("URI");
    uRINode.SetText(m_uRI);
   }
 

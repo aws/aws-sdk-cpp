@@ -31,6 +31,7 @@ StepSummary::StepSummary() :
     m_idHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_configHasBeenSet(false),
+    m_actionOnFailure(ActionOnFailure::NOT_SET),
     m_actionOnFailureHasBeenSet(false),
     m_statusHasBeenSet(false)
 {
@@ -40,6 +41,7 @@ StepSummary::StepSummary(const JsonValue& jsonValue) :
     m_idHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_configHasBeenSet(false),
+    m_actionOnFailure(ActionOnFailure::NOT_SET),
     m_actionOnFailureHasBeenSet(false),
     m_statusHasBeenSet(false)
 {

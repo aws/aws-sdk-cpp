@@ -26,7 +26,9 @@ namespace Model
 
   /**
    * <p>A complex type that contains information about the request to get health
-   * check status for a health check.</p>
+   * check status for a health check.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHealthCheckStatusRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_ROUTE53_API GetHealthCheckStatusRequest : public Route53Request
   {

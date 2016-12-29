@@ -24,6 +24,7 @@ using namespace Aws::Utils;
 CreateAuthorizerRequest::CreateAuthorizerRequest() : 
     m_restApiIdHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_type(AuthorizerType::NOT_SET),
     m_typeHasBeenSet(false),
     m_providerARNsHasBeenSet(false),
     m_authTypeHasBeenSet(false),

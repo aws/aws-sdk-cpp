@@ -24,6 +24,7 @@ ModifyImageAttributeRequest::ModifyImageAttributeRequest() :
     m_dryRunHasBeenSet(false),
     m_imageIdHasBeenSet(false),
     m_attributeHasBeenSet(false),
+    m_operationType(OperationType::NOT_SET),
     m_operationTypeHasBeenSet(false),
     m_userIdsHasBeenSet(false),
     m_userGroupsHasBeenSet(false),
@@ -106,7 +107,7 @@ Aws::String ModifyImageAttributeRequest::SerializePayload() const
     m_description.OutputToStream(ss, "Description");
   }
 
-  ss << "Version=2015-10-01";
+  ss << "Version=2016-11-15";
   return ss.str();
 }
 

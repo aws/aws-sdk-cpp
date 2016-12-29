@@ -290,100 +290,37 @@ namespace Model
     inline CreateGrantRequest& WithRetiringPrincipal(const char* value) { SetRetiringPrincipal(value); return *this;}
 
     /**
-     * <p>A list of operations that the grant permits. The list can contain any
-     * combination of one or more of the following values:</p> <ul> <li> <p>
-     * <a>Decrypt</a> </p> </li> <li> <p> <a>Encrypt</a> </p> </li> <li> <p>
-     * <a>GenerateDataKey</a> </p> </li> <li> <p>
-     * <a>GenerateDataKeyWithoutPlaintext</a> </p> </li> <li> <p> <a
-     * href="http://docs.aws.amazon.com/kms/latest/APIReference/API_ReEncrypt.html">ReEncryptFrom</a>
-     * </p> </li> <li> <p> <a
-     * href="http://docs.aws.amazon.com/kms/latest/APIReference/API_ReEncrypt.html">ReEncryptTo</a>
-     * </p> </li> <li> <p> <a>CreateGrant</a> </p> </li> <li> <p> <a>RetireGrant</a>
-     * </p> </li> <li> <p> <a>DescribeKey</a> </p> </li> </ul>
+     * <p>A list of operations that the grant permits.</p>
      */
     inline const Aws::Vector<GrantOperation>& GetOperations() const{ return m_operations; }
 
     /**
-     * <p>A list of operations that the grant permits. The list can contain any
-     * combination of one or more of the following values:</p> <ul> <li> <p>
-     * <a>Decrypt</a> </p> </li> <li> <p> <a>Encrypt</a> </p> </li> <li> <p>
-     * <a>GenerateDataKey</a> </p> </li> <li> <p>
-     * <a>GenerateDataKeyWithoutPlaintext</a> </p> </li> <li> <p> <a
-     * href="http://docs.aws.amazon.com/kms/latest/APIReference/API_ReEncrypt.html">ReEncryptFrom</a>
-     * </p> </li> <li> <p> <a
-     * href="http://docs.aws.amazon.com/kms/latest/APIReference/API_ReEncrypt.html">ReEncryptTo</a>
-     * </p> </li> <li> <p> <a>CreateGrant</a> </p> </li> <li> <p> <a>RetireGrant</a>
-     * </p> </li> <li> <p> <a>DescribeKey</a> </p> </li> </ul>
+     * <p>A list of operations that the grant permits.</p>
      */
     inline void SetOperations(const Aws::Vector<GrantOperation>& value) { m_operationsHasBeenSet = true; m_operations = value; }
 
     /**
-     * <p>A list of operations that the grant permits. The list can contain any
-     * combination of one or more of the following values:</p> <ul> <li> <p>
-     * <a>Decrypt</a> </p> </li> <li> <p> <a>Encrypt</a> </p> </li> <li> <p>
-     * <a>GenerateDataKey</a> </p> </li> <li> <p>
-     * <a>GenerateDataKeyWithoutPlaintext</a> </p> </li> <li> <p> <a
-     * href="http://docs.aws.amazon.com/kms/latest/APIReference/API_ReEncrypt.html">ReEncryptFrom</a>
-     * </p> </li> <li> <p> <a
-     * href="http://docs.aws.amazon.com/kms/latest/APIReference/API_ReEncrypt.html">ReEncryptTo</a>
-     * </p> </li> <li> <p> <a>CreateGrant</a> </p> </li> <li> <p> <a>RetireGrant</a>
-     * </p> </li> <li> <p> <a>DescribeKey</a> </p> </li> </ul>
+     * <p>A list of operations that the grant permits.</p>
      */
     inline void SetOperations(Aws::Vector<GrantOperation>&& value) { m_operationsHasBeenSet = true; m_operations = value; }
 
     /**
-     * <p>A list of operations that the grant permits. The list can contain any
-     * combination of one or more of the following values:</p> <ul> <li> <p>
-     * <a>Decrypt</a> </p> </li> <li> <p> <a>Encrypt</a> </p> </li> <li> <p>
-     * <a>GenerateDataKey</a> </p> </li> <li> <p>
-     * <a>GenerateDataKeyWithoutPlaintext</a> </p> </li> <li> <p> <a
-     * href="http://docs.aws.amazon.com/kms/latest/APIReference/API_ReEncrypt.html">ReEncryptFrom</a>
-     * </p> </li> <li> <p> <a
-     * href="http://docs.aws.amazon.com/kms/latest/APIReference/API_ReEncrypt.html">ReEncryptTo</a>
-     * </p> </li> <li> <p> <a>CreateGrant</a> </p> </li> <li> <p> <a>RetireGrant</a>
-     * </p> </li> <li> <p> <a>DescribeKey</a> </p> </li> </ul>
+     * <p>A list of operations that the grant permits.</p>
      */
     inline CreateGrantRequest& WithOperations(const Aws::Vector<GrantOperation>& value) { SetOperations(value); return *this;}
 
     /**
-     * <p>A list of operations that the grant permits. The list can contain any
-     * combination of one or more of the following values:</p> <ul> <li> <p>
-     * <a>Decrypt</a> </p> </li> <li> <p> <a>Encrypt</a> </p> </li> <li> <p>
-     * <a>GenerateDataKey</a> </p> </li> <li> <p>
-     * <a>GenerateDataKeyWithoutPlaintext</a> </p> </li> <li> <p> <a
-     * href="http://docs.aws.amazon.com/kms/latest/APIReference/API_ReEncrypt.html">ReEncryptFrom</a>
-     * </p> </li> <li> <p> <a
-     * href="http://docs.aws.amazon.com/kms/latest/APIReference/API_ReEncrypt.html">ReEncryptTo</a>
-     * </p> </li> <li> <p> <a>CreateGrant</a> </p> </li> <li> <p> <a>RetireGrant</a>
-     * </p> </li> <li> <p> <a>DescribeKey</a> </p> </li> </ul>
+     * <p>A list of operations that the grant permits.</p>
      */
     inline CreateGrantRequest& WithOperations(Aws::Vector<GrantOperation>&& value) { SetOperations(value); return *this;}
 
     /**
-     * <p>A list of operations that the grant permits. The list can contain any
-     * combination of one or more of the following values:</p> <ul> <li> <p>
-     * <a>Decrypt</a> </p> </li> <li> <p> <a>Encrypt</a> </p> </li> <li> <p>
-     * <a>GenerateDataKey</a> </p> </li> <li> <p>
-     * <a>GenerateDataKeyWithoutPlaintext</a> </p> </li> <li> <p> <a
-     * href="http://docs.aws.amazon.com/kms/latest/APIReference/API_ReEncrypt.html">ReEncryptFrom</a>
-     * </p> </li> <li> <p> <a
-     * href="http://docs.aws.amazon.com/kms/latest/APIReference/API_ReEncrypt.html">ReEncryptTo</a>
-     * </p> </li> <li> <p> <a>CreateGrant</a> </p> </li> <li> <p> <a>RetireGrant</a>
-     * </p> </li> <li> <p> <a>DescribeKey</a> </p> </li> </ul>
+     * <p>A list of operations that the grant permits.</p>
      */
     inline CreateGrantRequest& AddOperations(const GrantOperation& value) { m_operationsHasBeenSet = true; m_operations.push_back(value); return *this; }
 
     /**
-     * <p>A list of operations that the grant permits. The list can contain any
-     * combination of one or more of the following values:</p> <ul> <li> <p>
-     * <a>Decrypt</a> </p> </li> <li> <p> <a>Encrypt</a> </p> </li> <li> <p>
-     * <a>GenerateDataKey</a> </p> </li> <li> <p>
-     * <a>GenerateDataKeyWithoutPlaintext</a> </p> </li> <li> <p> <a
-     * href="http://docs.aws.amazon.com/kms/latest/APIReference/API_ReEncrypt.html">ReEncryptFrom</a>
-     * </p> </li> <li> <p> <a
-     * href="http://docs.aws.amazon.com/kms/latest/APIReference/API_ReEncrypt.html">ReEncryptTo</a>
-     * </p> </li> <li> <p> <a>CreateGrant</a> </p> </li> <li> <p> <a>RetireGrant</a>
-     * </p> </li> <li> <p> <a>DescribeKey</a> </p> </li> </ul>
+     * <p>A list of operations that the grant permits.</p>
      */
     inline CreateGrantRequest& AddOperations(GrantOperation&& value) { m_operationsHasBeenSet = true; m_operations.push_back(value); return *this; }
 

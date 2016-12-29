@@ -33,8 +33,12 @@ namespace Model
 {
 
   /**
-   * <p>Log entry describing an event involving an Amazon GameLift resource (such as
-   * a fleet).</p>
+   * <p>Log entry describing an event involving Amazon GameLift resources (such as a
+   * fleet). In addition to tracking activity, event codes and messages can provide
+   * additional information for troubleshooting and debugging problems.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/Event">AWS API
+   * Reference</a></p>
    */
   class AWS_GAMELIFT_API Event
   {
@@ -115,27 +119,27 @@ namespace Model
     inline Event& WithResourceId(const char* value) { SetResourceId(value); return *this;}
 
     /**
-     * <p>Type of event being logged.</p>
+     * <p>Type of event being logged. </p>
      */
     inline const EventCode& GetEventCode() const{ return m_eventCode; }
 
     /**
-     * <p>Type of event being logged.</p>
+     * <p>Type of event being logged. </p>
      */
     inline void SetEventCode(const EventCode& value) { m_eventCodeHasBeenSet = true; m_eventCode = value; }
 
     /**
-     * <p>Type of event being logged.</p>
+     * <p>Type of event being logged. </p>
      */
     inline void SetEventCode(EventCode&& value) { m_eventCodeHasBeenSet = true; m_eventCode = value; }
 
     /**
-     * <p>Type of event being logged.</p>
+     * <p>Type of event being logged. </p>
      */
     inline Event& WithEventCode(const EventCode& value) { SetEventCode(value); return *this;}
 
     /**
-     * <p>Type of event being logged.</p>
+     * <p>Type of event being logged. </p>
      */
     inline Event& WithEventCode(EventCode&& value) { SetEventCode(value); return *this;}
 
@@ -176,31 +180,31 @@ namespace Model
 
     /**
      * <p>Time stamp indicating when this event occurred. Format is a number expressed
-     * in Unix time as milliseconds (ex: "1469498468.057".</p>
+     * in Unix time as milliseconds (ex: "1469498468.057").</p>
      */
     inline const Aws::Utils::DateTime& GetEventTime() const{ return m_eventTime; }
 
     /**
      * <p>Time stamp indicating when this event occurred. Format is a number expressed
-     * in Unix time as milliseconds (ex: "1469498468.057".</p>
+     * in Unix time as milliseconds (ex: "1469498468.057").</p>
      */
     inline void SetEventTime(const Aws::Utils::DateTime& value) { m_eventTimeHasBeenSet = true; m_eventTime = value; }
 
     /**
      * <p>Time stamp indicating when this event occurred. Format is a number expressed
-     * in Unix time as milliseconds (ex: "1469498468.057".</p>
+     * in Unix time as milliseconds (ex: "1469498468.057").</p>
      */
     inline void SetEventTime(Aws::Utils::DateTime&& value) { m_eventTimeHasBeenSet = true; m_eventTime = value; }
 
     /**
      * <p>Time stamp indicating when this event occurred. Format is a number expressed
-     * in Unix time as milliseconds (ex: "1469498468.057".</p>
+     * in Unix time as milliseconds (ex: "1469498468.057").</p>
      */
     inline Event& WithEventTime(const Aws::Utils::DateTime& value) { SetEventTime(value); return *this;}
 
     /**
      * <p>Time stamp indicating when this event occurred. Format is a number expressed
-     * in Unix time as milliseconds (ex: "1469498468.057".</p>
+     * in Unix time as milliseconds (ex: "1469498468.057").</p>
      */
     inline Event& WithEventTime(Aws::Utils::DateTime&& value) { SetEventTime(value); return *this;}
 

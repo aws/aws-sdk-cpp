@@ -29,17 +29,21 @@ namespace Model
 
 Layer::Layer() : 
     m_layerDigestHasBeenSet(false),
+    m_layerAvailability(LayerAvailability::NOT_SET),
     m_layerAvailabilityHasBeenSet(false),
     m_layerSize(0),
-    m_layerSizeHasBeenSet(false)
+    m_layerSizeHasBeenSet(false),
+    m_mediaTypeHasBeenSet(false)
 {
 }
 
 Layer::Layer(const JsonValue& jsonValue) : 
     m_layerDigestHasBeenSet(false),
+    m_layerAvailability(LayerAvailability::NOT_SET),
     m_layerAvailabilityHasBeenSet(false),
     m_layerSize(0),
-    m_layerSizeHasBeenSet(false)
+    m_layerSizeHasBeenSet(false),
+    m_mediaTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -67,6 +71,13 @@ Layer& Layer::operator =(const JsonValue& jsonValue)
     m_layerSizeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("mediaType"))
+  {
+    m_mediaType = jsonValue.GetString("mediaType");
+
+    m_mediaTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -88,6 +99,12 @@ JsonValue Layer::Jsonize() const
   if(m_layerSizeHasBeenSet)
   {
    payload.WithInt64("layerSize", m_layerSize);
+
+  }
+
+  if(m_mediaTypeHasBeenSet)
+  {
+   payload.WithString("mediaType", m_mediaType);
 
   }
 

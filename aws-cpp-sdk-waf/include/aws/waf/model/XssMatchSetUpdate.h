@@ -34,7 +34,10 @@ namespace Model
   /**
    * <p>Specifies the part of a web request that you want to inspect for cross-site
    * scripting attacks and indicates whether you want to add the specification to an
-   * <a>XssMatchSet</a> or delete it from an <code>XssMatchSet</code>.</p>
+   * <a>XssMatchSet</a> or delete it from an <code>XssMatchSet</code>.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/XssMatchSetUpdate">AWS
+   * API Reference</a></p>
    */
   class AWS_WAF_API XssMatchSetUpdate
   {

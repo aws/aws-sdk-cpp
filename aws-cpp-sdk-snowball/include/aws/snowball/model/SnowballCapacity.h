@@ -27,6 +27,7 @@ namespace Model
     NOT_SET,
     T50,
     T80,
+    T100,
     NoPreference
   };
 

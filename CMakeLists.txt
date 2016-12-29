@@ -13,10 +13,13 @@
 # permissions and limitations under the License.
 #
 
-# minimum version of cmake that 
-#   (1) supports ExternalProject_Add URL_HASH
-#   (2) correctly extracts OPENSSL's version number from openssl/opensslv.h in version 1.0.2d
 cmake_minimum_required (VERSION 2.8.12)
+
+# 3.0 or higher is strongly suggested; build settings (target_compile_options/etc...) sometimes do not get propagated properly under certain conditions prior to this version
+# Making this a hard requirement is potentially disruptive to existing customers who aren't affected by the bad behavior though, so just warn for now
+if(CMAKE_MAJOR_VERSION LESS 3)
+    message(WARNING "Building with CMake 3.0 or higher is strongly suggested; current version is ${CMAKE_MAJOR_VERSION}.${CMAKE_MINOR_VERSION}.${CMAKE_PATCH_VERSION}")
+endif()
 
 # git is required for Android builds and optional for all other platforms
 find_package(Git)
@@ -66,16 +69,7 @@ SET(PYTHON_CMD "python")
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/cmake")
 
 include(resolve_platform)
-
-if(BUILD_SHARED_LIBS)
-    SET(ARCHIVE_DIRECTORY "bin")
-    SET(LIBTYPE SHARED)
-    message(STATUS "Building AWS libraries as shared objects")
-else()
-    SET(ARCHIVE_DIRECTORY "lib")
-    SET(LIBTYPE STATIC)
-    message(STATUS "Building AWS libraries as static objects")
-endif()
+include(CMakePackageConfigHelpers)
 
 # use response files to prevent command-line-too-big errors for large libraries like iam
 SET(CMAKE_CXX_USE_RESPONSE_FILE_FOR_OBJECTS 1)
@@ -86,9 +80,16 @@ if(COMMAND apply_pre_project_platform_settings)
     apply_pre_project_platform_settings()
 endif()
 
-project(aws-sdk-cpp-all)
+include(initialize_project_version)
 
-# http client, encryption, zlib, uuid
+cmake_policy(SET CMP0028 NEW)
+cmake_policy(SET CMP0048 NEW)
+cmake_policy(SET CMP0054 NEW)
+cmake_policy(SET CMP0056 NEW)
+
+project("aws-cpp-sdk-all" VERSION "${PROJECT_VERSION}" LANGUAGES CXX)
+
+# http client, encryption, zlib
 include(external_dependencies)
 
 if(COMMAND apply_post_project_platform_settings)
@@ -109,14 +110,7 @@ include(sdks)
 
 include(utilities)
 
-# In Windows, this dumps the CL and LINK command lines to the output - makes it much easier to
-# check that CMake is passing in the right defines, paths, etc...
-#
-# set( CMAKE_VERBOSE_MAKEFILE 1 )
-
 get_filename_component(AWS_NATIVE_SDK_ROOT "${CMAKE_CURRENT_SOURCE_DIR}" ABSOLUTE)
-
-set(CORE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/aws-cpp-sdk-core/")
 
 include(build_external)
 
@@ -134,10 +128,6 @@ elseif(ENABLE_WINDOWS_CLIENT)
     else()
         set(CLIENT_LIBS Wininet winhttp)
     endif()
-endif()
-
-if(COMMAND apply_custom_platform_settings)
-    apply_custom_platform_settings()
 endif()
 
 add_sdks()

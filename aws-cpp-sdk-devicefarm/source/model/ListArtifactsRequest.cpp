@@ -23,6 +23,7 @@ using namespace Aws::Utils;
 
 ListArtifactsRequest::ListArtifactsRequest() : 
     m_arnHasBeenSet(false),
+    m_type(ArtifactCategory::NOT_SET),
     m_typeHasBeenSet(false),
     m_nextTokenHasBeenSet(false)
 {

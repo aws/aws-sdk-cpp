@@ -29,41 +29,55 @@ namespace Model
 
 InstanceInformation::InstanceInformation() : 
     m_instanceIdHasBeenSet(false),
+    m_pingStatus(PingStatus::NOT_SET),
     m_pingStatusHasBeenSet(false),
     m_lastPingDateTimeHasBeenSet(false),
     m_agentVersionHasBeenSet(false),
     m_isLatestVersion(false),
     m_isLatestVersionHasBeenSet(false),
+    m_platformType(PlatformType::NOT_SET),
     m_platformTypeHasBeenSet(false),
     m_platformNameHasBeenSet(false),
     m_platformVersionHasBeenSet(false),
     m_activationIdHasBeenSet(false),
     m_iamRoleHasBeenSet(false),
     m_registrationDateHasBeenSet(false),
+    m_resourceType(ResourceType::NOT_SET),
     m_resourceTypeHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_iPAddressHasBeenSet(false),
-    m_computerNameHasBeenSet(false)
+    m_computerNameHasBeenSet(false),
+    m_associationStatusHasBeenSet(false),
+    m_lastAssociationExecutionDateHasBeenSet(false),
+    m_lastSuccessfulAssociationExecutionDateHasBeenSet(false),
+    m_associationOverviewHasBeenSet(false)
 {
 }
 
 InstanceInformation::InstanceInformation(const JsonValue& jsonValue) : 
     m_instanceIdHasBeenSet(false),
+    m_pingStatus(PingStatus::NOT_SET),
     m_pingStatusHasBeenSet(false),
     m_lastPingDateTimeHasBeenSet(false),
     m_agentVersionHasBeenSet(false),
     m_isLatestVersion(false),
     m_isLatestVersionHasBeenSet(false),
+    m_platformType(PlatformType::NOT_SET),
     m_platformTypeHasBeenSet(false),
     m_platformNameHasBeenSet(false),
     m_platformVersionHasBeenSet(false),
     m_activationIdHasBeenSet(false),
     m_iamRoleHasBeenSet(false),
     m_registrationDateHasBeenSet(false),
+    m_resourceType(ResourceType::NOT_SET),
     m_resourceTypeHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_iPAddressHasBeenSet(false),
-    m_computerNameHasBeenSet(false)
+    m_computerNameHasBeenSet(false),
+    m_associationStatusHasBeenSet(false),
+    m_lastAssociationExecutionDateHasBeenSet(false),
+    m_lastSuccessfulAssociationExecutionDateHasBeenSet(false),
+    m_associationOverviewHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -175,6 +189,34 @@ InstanceInformation& InstanceInformation::operator =(const JsonValue& jsonValue)
     m_computerNameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AssociationStatus"))
+  {
+    m_associationStatus = jsonValue.GetString("AssociationStatus");
+
+    m_associationStatusHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("LastAssociationExecutionDate"))
+  {
+    m_lastAssociationExecutionDate = jsonValue.GetDouble("LastAssociationExecutionDate");
+
+    m_lastAssociationExecutionDateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("LastSuccessfulAssociationExecutionDate"))
+  {
+    m_lastSuccessfulAssociationExecutionDate = jsonValue.GetDouble("LastSuccessfulAssociationExecutionDate");
+
+    m_lastSuccessfulAssociationExecutionDateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AssociationOverview"))
+  {
+    m_associationOverview = jsonValue.GetObject("AssociationOverview");
+
+    m_associationOverviewHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -264,6 +306,28 @@ JsonValue InstanceInformation::Jsonize() const
   if(m_computerNameHasBeenSet)
   {
    payload.WithString("ComputerName", m_computerName);
+
+  }
+
+  if(m_associationStatusHasBeenSet)
+  {
+   payload.WithString("AssociationStatus", m_associationStatus);
+
+  }
+
+  if(m_lastAssociationExecutionDateHasBeenSet)
+  {
+   payload.WithDouble("LastAssociationExecutionDate", m_lastAssociationExecutionDate.SecondsWithMSPrecision());
+  }
+
+  if(m_lastSuccessfulAssociationExecutionDateHasBeenSet)
+  {
+   payload.WithDouble("LastSuccessfulAssociationExecutionDate", m_lastSuccessfulAssociationExecutionDate.SecondsWithMSPrecision());
+  }
+
+  if(m_associationOverviewHasBeenSet)
+  {
+   payload.WithObject("AssociationOverview", m_associationOverview.Jsonize());
 
   }
 

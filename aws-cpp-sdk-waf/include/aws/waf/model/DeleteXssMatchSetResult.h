@@ -33,7 +33,10 @@ namespace WAF
 namespace Model
 {
   /**
-   * <p>The response to a request to delete an <a>XssMatchSet</a> from AWS WAF.</p>
+   * <p>The response to a request to delete an <a>XssMatchSet</a> from AWS
+   * WAF.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteXssMatchSetResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_WAF_API DeleteXssMatchSetResult
   {

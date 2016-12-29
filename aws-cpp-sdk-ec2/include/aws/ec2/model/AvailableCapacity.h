@@ -33,7 +33,10 @@ namespace Model
 {
 
   /**
-   * <p>The capacity information for instances launched onto the Dedicated host.</p>
+   * <p>The capacity information for instances launched onto the Dedicated
+   * Host.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AvailableCapacity">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API AvailableCapacity
   {
@@ -46,52 +49,52 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     /**
-     * <p>The total number of instances that the Dedicated host supports.</p>
+     * <p>The total number of instances that the Dedicated Host supports.</p>
      */
     inline const Aws::Vector<InstanceCapacity>& GetAvailableInstanceCapacity() const{ return m_availableInstanceCapacity; }
 
     /**
-     * <p>The total number of instances that the Dedicated host supports.</p>
+     * <p>The total number of instances that the Dedicated Host supports.</p>
      */
     inline void SetAvailableInstanceCapacity(const Aws::Vector<InstanceCapacity>& value) { m_availableInstanceCapacityHasBeenSet = true; m_availableInstanceCapacity = value; }
 
     /**
-     * <p>The total number of instances that the Dedicated host supports.</p>
+     * <p>The total number of instances that the Dedicated Host supports.</p>
      */
     inline void SetAvailableInstanceCapacity(Aws::Vector<InstanceCapacity>&& value) { m_availableInstanceCapacityHasBeenSet = true; m_availableInstanceCapacity = value; }
 
     /**
-     * <p>The total number of instances that the Dedicated host supports.</p>
+     * <p>The total number of instances that the Dedicated Host supports.</p>
      */
     inline AvailableCapacity& WithAvailableInstanceCapacity(const Aws::Vector<InstanceCapacity>& value) { SetAvailableInstanceCapacity(value); return *this;}
 
     /**
-     * <p>The total number of instances that the Dedicated host supports.</p>
+     * <p>The total number of instances that the Dedicated Host supports.</p>
      */
     inline AvailableCapacity& WithAvailableInstanceCapacity(Aws::Vector<InstanceCapacity>&& value) { SetAvailableInstanceCapacity(value); return *this;}
 
     /**
-     * <p>The total number of instances that the Dedicated host supports.</p>
+     * <p>The total number of instances that the Dedicated Host supports.</p>
      */
     inline AvailableCapacity& AddAvailableInstanceCapacity(const InstanceCapacity& value) { m_availableInstanceCapacityHasBeenSet = true; m_availableInstanceCapacity.push_back(value); return *this; }
 
     /**
-     * <p>The total number of instances that the Dedicated host supports.</p>
+     * <p>The total number of instances that the Dedicated Host supports.</p>
      */
     inline AvailableCapacity& AddAvailableInstanceCapacity(InstanceCapacity&& value) { m_availableInstanceCapacityHasBeenSet = true; m_availableInstanceCapacity.push_back(value); return *this; }
 
     /**
-     * <p>The number of vCPUs available on the Dedicated host.</p>
+     * <p>The number of vCPUs available on the Dedicated Host.</p>
      */
     inline int GetAvailableVCpus() const{ return m_availableVCpus; }
 
     /**
-     * <p>The number of vCPUs available on the Dedicated host.</p>
+     * <p>The number of vCPUs available on the Dedicated Host.</p>
      */
     inline void SetAvailableVCpus(int value) { m_availableVCpusHasBeenSet = true; m_availableVCpus = value; }
 
     /**
-     * <p>The number of vCPUs available on the Dedicated host.</p>
+     * <p>The number of vCPUs available on the Dedicated Host.</p>
      */
     inline AvailableCapacity& WithAvailableVCpus(int value) { SetAvailableVCpus(value); return *this;}
 

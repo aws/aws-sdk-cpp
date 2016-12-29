@@ -32,7 +32,9 @@ namespace Model
 {
 
   /**
-   * <p>Credentials for the provided identity ID.</p>
+   * <p>Credentials for the provided identity ID.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/Credentials">AWS
+   * API Reference</a></p>
    */
   class AWS_COGNITOIDENTITY_API Credentials
   {

@@ -32,7 +32,9 @@ namespace Model
    * that these tokens were published. For more information about Easy DKIM, see the
    * <a
    * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Amazon
-   * SES Developer Guide</a>.</p>
+   * SES Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetIdentityDkimAttributesRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_SES_API GetIdentityDkimAttributesRequest : public SESRequest
   {

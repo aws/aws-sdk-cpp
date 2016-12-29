@@ -28,7 +28,10 @@ namespace Model
 {
 
   /**
-   * Container for the parameters to the GenerateDataSet operation.
+   * Container for the parameters to the GenerateDataSet operation.<p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/marketplacecommerceanalytics-2015-07-01/GenerateDataSetRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_MARKETPLACECOMMERCEANALYTICS_API GenerateDataSetRequest : public MarketplaceCommerceAnalyticsRequest
   {
@@ -75,7 +78,9 @@ namespace Model
      * Time since 2015-10-01.</li> <li><i>customer_profile_by_revenue</i> - Available
      * daily by 5:00 PM Pacific Time since 2015-10-01.</li>
      * <li><i>customer_profile_by_geography</i> - Available daily by 5:00 PM Pacific
-     * Time since 2015-10-01.</li> </ul> </p>
+     * Time since 2015-10-01.</li> <li><i>sales_compensation_billed_revenue</i> -
+     * Available monthly on the 4th day of the month by 5:00 PM Pacific Time since
+     * 2016-12.</li> </ul> </p>
      */
     inline const DataSetType& GetDataSetType() const{ return m_dataSetType; }
 
@@ -116,7 +121,9 @@ namespace Model
      * Time since 2015-10-01.</li> <li><i>customer_profile_by_revenue</i> - Available
      * daily by 5:00 PM Pacific Time since 2015-10-01.</li>
      * <li><i>customer_profile_by_geography</i> - Available daily by 5:00 PM Pacific
-     * Time since 2015-10-01.</li> </ul> </p>
+     * Time since 2015-10-01.</li> <li><i>sales_compensation_billed_revenue</i> -
+     * Available monthly on the 4th day of the month by 5:00 PM Pacific Time since
+     * 2016-12.</li> </ul> </p>
      */
     inline void SetDataSetType(const DataSetType& value) { m_dataSetTypeHasBeenSet = true; m_dataSetType = value; }
 
@@ -157,7 +164,9 @@ namespace Model
      * Time since 2015-10-01.</li> <li><i>customer_profile_by_revenue</i> - Available
      * daily by 5:00 PM Pacific Time since 2015-10-01.</li>
      * <li><i>customer_profile_by_geography</i> - Available daily by 5:00 PM Pacific
-     * Time since 2015-10-01.</li> </ul> </p>
+     * Time since 2015-10-01.</li> <li><i>sales_compensation_billed_revenue</i> -
+     * Available monthly on the 4th day of the month by 5:00 PM Pacific Time since
+     * 2016-12.</li> </ul> </p>
      */
     inline void SetDataSetType(DataSetType&& value) { m_dataSetTypeHasBeenSet = true; m_dataSetType = value; }
 
@@ -198,7 +207,9 @@ namespace Model
      * Time since 2015-10-01.</li> <li><i>customer_profile_by_revenue</i> - Available
      * daily by 5:00 PM Pacific Time since 2015-10-01.</li>
      * <li><i>customer_profile_by_geography</i> - Available daily by 5:00 PM Pacific
-     * Time since 2015-10-01.</li> </ul> </p>
+     * Time since 2015-10-01.</li> <li><i>sales_compensation_billed_revenue</i> -
+     * Available monthly on the 4th day of the month by 5:00 PM Pacific Time since
+     * 2016-12.</li> </ul> </p>
      */
     inline GenerateDataSetRequest& WithDataSetType(const DataSetType& value) { SetDataSetType(value); return *this;}
 
@@ -239,7 +250,9 @@ namespace Model
      * Time since 2015-10-01.</li> <li><i>customer_profile_by_revenue</i> - Available
      * daily by 5:00 PM Pacific Time since 2015-10-01.</li>
      * <li><i>customer_profile_by_geography</i> - Available daily by 5:00 PM Pacific
-     * Time since 2015-10-01.</li> </ul> </p>
+     * Time since 2015-10-01.</li> <li><i>sales_compensation_billed_revenue</i> -
+     * Available monthly on the 4th day of the month by 5:00 PM Pacific Time since
+     * 2016-12.</li> </ul> </p>
      */
     inline GenerateDataSetRequest& WithDataSetType(DataSetType&& value) { SetDataSetType(value); return *this;}
 

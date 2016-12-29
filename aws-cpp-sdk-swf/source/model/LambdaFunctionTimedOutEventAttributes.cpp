@@ -32,6 +32,7 @@ LambdaFunctionTimedOutEventAttributes::LambdaFunctionTimedOutEventAttributes() :
     m_scheduledEventIdHasBeenSet(false),
     m_startedEventId(0),
     m_startedEventIdHasBeenSet(false),
+    m_timeoutType(LambdaFunctionTimeoutType::NOT_SET),
     m_timeoutTypeHasBeenSet(false)
 {
 }
@@ -41,6 +42,7 @@ LambdaFunctionTimedOutEventAttributes::LambdaFunctionTimedOutEventAttributes(con
     m_scheduledEventIdHasBeenSet(false),
     m_startedEventId(0),
     m_startedEventIdHasBeenSet(false),
+    m_timeoutType(LambdaFunctionTimeoutType::NOT_SET),
     m_timeoutTypeHasBeenSet(false)
 {
   *this = jsonValue;

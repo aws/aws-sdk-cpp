@@ -39,7 +39,6 @@
 #include <aws/elastictranscoder/model/ReadJobRequest.h>
 #include <aws/elastictranscoder/model/ReadPipelineRequest.h>
 #include <aws/elastictranscoder/model/ReadPresetRequest.h>
-#include <aws/elastictranscoder/model/TestRoleRequest.h>
 #include <aws/elastictranscoder/model/UpdatePipelineRequest.h>
 #include <aws/elastictranscoder/model/UpdatePipelineNotificationsRequest.h>
 #include <aws/elastictranscoder/model/UpdatePipelineStatusRequest.h>
@@ -556,40 +555,6 @@ void ElasticTranscoderClient::ReadPresetAsync(const ReadPresetRequest& request, 
 void ElasticTranscoderClient::ReadPresetAsyncHelper(const ReadPresetRequest& request, const ReadPresetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ReadPreset(request), context);
-}
-
-TestRoleOutcome ElasticTranscoderClient::TestRole(const TestRoleRequest& request) const
-{
-  Aws::StringStream ss;
-  ss << m_uri << "/2012-09-25/roleTests";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
-  if(outcome.IsSuccess())
-  {
-    return TestRoleOutcome(TestRoleResult(outcome.GetResult()));
-  }
-  else
-  {
-    return TestRoleOutcome(outcome.GetError());
-  }
-}
-
-TestRoleOutcomeCallable ElasticTranscoderClient::TestRoleCallable(const TestRoleRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< TestRoleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TestRole(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
-
-void ElasticTranscoderClient::TestRoleAsync(const TestRoleRequest& request, const TestRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  m_executor->Submit( [this, request, handler, context](){ this->TestRoleAsyncHelper( request, handler, context ); } );
-}
-
-void ElasticTranscoderClient::TestRoleAsyncHelper(const TestRoleRequest& request, const TestRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, TestRole(request), context);
 }
 
 UpdatePipelineOutcome ElasticTranscoderClient::UpdatePipeline(const UpdatePipelineRequest& request) const

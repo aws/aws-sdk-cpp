@@ -37,7 +37,9 @@ namespace Model
   /**
    * <p> Represents the output of the <code>GetDataSource</code> operation. </p> <p>
    * The content consists of the detailed metadata and data file information and the
-   * current status of the <code>DataSource</code>. </p>
+   * current status of the <code>DataSource</code>. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DataSource">AWS
+   * API Reference</a></p>
    */
   class AWS_MACHINELEARNING_API DataSource
   {

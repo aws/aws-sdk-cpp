@@ -30,6 +30,7 @@ namespace Model
 DeliveryStreamDescription::DeliveryStreamDescription() : 
     m_deliveryStreamNameHasBeenSet(false),
     m_deliveryStreamARNHasBeenSet(false),
+    m_deliveryStreamStatus(DeliveryStreamStatus::NOT_SET),
     m_deliveryStreamStatusHasBeenSet(false),
     m_versionIdHasBeenSet(false),
     m_createTimestampHasBeenSet(false),
@@ -43,6 +44,7 @@ DeliveryStreamDescription::DeliveryStreamDescription() :
 DeliveryStreamDescription::DeliveryStreamDescription(const JsonValue& jsonValue) : 
     m_deliveryStreamNameHasBeenSet(false),
     m_deliveryStreamARNHasBeenSet(false),
+    m_deliveryStreamStatus(DeliveryStreamStatus::NOT_SET),
     m_deliveryStreamStatusHasBeenSet(false),
     m_versionIdHasBeenSet(false),
     m_createTimestampHasBeenSet(false),

@@ -30,7 +30,9 @@ namespace Model
 {
 
   /**
-   * <p>Represents the status of an export task.</p>
+   * <p>Represents the status of an export task.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/ExportTaskExecutionInfo">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDWATCHLOGS_API ExportTaskExecutionInfo
   {
@@ -41,32 +43,32 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p>A point in time when the export task got created.</p>
+     * <p>The creation time of the export task.</p>
      */
     inline long long GetCreationTime() const{ return m_creationTime; }
 
     /**
-     * <p>A point in time when the export task got created.</p>
+     * <p>The creation time of the export task.</p>
      */
     inline void SetCreationTime(long long value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
-     * <p>A point in time when the export task got created.</p>
+     * <p>The creation time of the export task.</p>
      */
     inline ExportTaskExecutionInfo& WithCreationTime(long long value) { SetCreationTime(value); return *this;}
 
     /**
-     * <p>A point in time when the export task got completed.</p>
+     * <p>The completion time of the export task.</p>
      */
     inline long long GetCompletionTime() const{ return m_completionTime; }
 
     /**
-     * <p>A point in time when the export task got completed.</p>
+     * <p>The completion time of the export task.</p>
      */
     inline void SetCompletionTime(long long value) { m_completionTimeHasBeenSet = true; m_completionTime = value; }
 
     /**
-     * <p>A point in time when the export task got completed.</p>
+     * <p>The completion time of the export task.</p>
      */
     inline ExportTaskExecutionInfo& WithCompletionTime(long long value) { SetCompletionTime(value); return *this;}
 

@@ -25,7 +25,9 @@ namespace Model
 {
 
   /**
-   * Input to the ListIdentities action.
+   * <p>Input to the ListIdentities action.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/ListIdentitiesInput">AWS
+   * API Reference</a></p>
    */
   class AWS_COGNITOIDENTITY_API ListIdentitiesRequest : public CognitoIdentityRequest
   {
@@ -36,87 +38,87 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * An identity pool ID in the format REGION:GUID.
+     * <p>An identity pool ID in the format REGION:GUID.</p>
      */
     inline const Aws::String& GetIdentityPoolId() const{ return m_identityPoolId; }
 
     /**
-     * An identity pool ID in the format REGION:GUID.
+     * <p>An identity pool ID in the format REGION:GUID.</p>
      */
     inline void SetIdentityPoolId(const Aws::String& value) { m_identityPoolIdHasBeenSet = true; m_identityPoolId = value; }
 
     /**
-     * An identity pool ID in the format REGION:GUID.
+     * <p>An identity pool ID in the format REGION:GUID.</p>
      */
     inline void SetIdentityPoolId(Aws::String&& value) { m_identityPoolIdHasBeenSet = true; m_identityPoolId = value; }
 
     /**
-     * An identity pool ID in the format REGION:GUID.
+     * <p>An identity pool ID in the format REGION:GUID.</p>
      */
     inline void SetIdentityPoolId(const char* value) { m_identityPoolIdHasBeenSet = true; m_identityPoolId.assign(value); }
 
     /**
-     * An identity pool ID in the format REGION:GUID.
+     * <p>An identity pool ID in the format REGION:GUID.</p>
      */
     inline ListIdentitiesRequest& WithIdentityPoolId(const Aws::String& value) { SetIdentityPoolId(value); return *this;}
 
     /**
-     * An identity pool ID in the format REGION:GUID.
+     * <p>An identity pool ID in the format REGION:GUID.</p>
      */
     inline ListIdentitiesRequest& WithIdentityPoolId(Aws::String&& value) { SetIdentityPoolId(value); return *this;}
 
     /**
-     * An identity pool ID in the format REGION:GUID.
+     * <p>An identity pool ID in the format REGION:GUID.</p>
      */
     inline ListIdentitiesRequest& WithIdentityPoolId(const char* value) { SetIdentityPoolId(value); return *this;}
 
     /**
-     * The maximum number of identities to return.
+     * <p>The maximum number of identities to return.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * The maximum number of identities to return.
+     * <p>The maximum number of identities to return.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * The maximum number of identities to return.
+     * <p>The maximum number of identities to return.</p>
      */
     inline ListIdentitiesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
     /**
-     * A pagination token.
+     * <p>A pagination token.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * A pagination token.
+     * <p>A pagination token.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * A pagination token.
+     * <p>A pagination token.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * A pagination token.
+     * <p>A pagination token.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * A pagination token.
+     * <p>A pagination token.</p>
      */
     inline ListIdentitiesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * A pagination token.
+     * <p>A pagination token.</p>
      */
     inline ListIdentitiesRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
     /**
-     * A pagination token.
+     * <p>A pagination token.</p>
      */
     inline ListIdentitiesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

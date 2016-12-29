@@ -30,6 +30,7 @@ namespace Aws
       {
 
         static const int ecs_HASH = HashingUtils::HashString("ecs");
+        static const int elasticmapreduce_HASH = HashingUtils::HashString("elasticmapreduce");
         static const int ec2_HASH = HashingUtils::HashString("ec2");
 
 
@@ -39,6 +40,10 @@ namespace Aws
           if (hashCode == ecs_HASH)
           {
             return ServiceNamespace::ecs;
+          }
+          else if (hashCode == elasticmapreduce_HASH)
+          {
+            return ServiceNamespace::elasticmapreduce;
           }
           else if (hashCode == ec2_HASH)
           {
@@ -60,6 +65,8 @@ namespace Aws
           {
           case ServiceNamespace::ecs:
             return "ecs";
+          case ServiceNamespace::elasticmapreduce:
+            return "elasticmapreduce";
           case ServiceNamespace::ec2:
             return "ec2";
           default:

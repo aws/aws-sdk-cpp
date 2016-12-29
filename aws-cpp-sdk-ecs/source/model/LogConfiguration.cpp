@@ -28,12 +28,14 @@ namespace Model
 {
 
 LogConfiguration::LogConfiguration() : 
+    m_logDriver(LogDriver::NOT_SET),
     m_logDriverHasBeenSet(false),
     m_optionsHasBeenSet(false)
 {
 }
 
 LogConfiguration::LogConfiguration(const JsonValue& jsonValue) : 
+    m_logDriver(LogDriver::NOT_SET),
     m_logDriverHasBeenSet(false),
     m_optionsHasBeenSet(false)
 {

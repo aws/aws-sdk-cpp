@@ -26,7 +26,9 @@ DescribeMetricFiltersRequest::DescribeMetricFiltersRequest() :
     m_filterNamePrefixHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
     m_limit(0),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_metricNameHasBeenSet(false),
+    m_metricNamespaceHasBeenSet(false)
 {
 }
 
@@ -55,6 +57,18 @@ Aws::String DescribeMetricFiltersRequest::SerializePayload() const
   if(m_limitHasBeenSet)
   {
    payload.WithInteger("limit", m_limit);
+
+  }
+
+  if(m_metricNameHasBeenSet)
+  {
+   payload.WithString("metricName", m_metricName);
+
+  }
+
+  if(m_metricNamespaceHasBeenSet)
+  {
+   payload.WithString("metricNamespace", m_metricNamespace);
 
   }
 

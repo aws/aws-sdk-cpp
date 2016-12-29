@@ -22,15 +22,21 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 CreateJobRequest::CreateJobRequest() : 
+    m_jobType(JobType::NOT_SET),
     m_jobTypeHasBeenSet(false),
     m_resourcesHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_addressIdHasBeenSet(false),
     m_kmsKeyARNHasBeenSet(false),
     m_roleARNHasBeenSet(false),
+    m_snowballCapacityPreference(SnowballCapacity::NOT_SET),
     m_snowballCapacityPreferenceHasBeenSet(false),
+    m_shippingOption(ShippingOption::NOT_SET),
     m_shippingOptionHasBeenSet(false),
-    m_notificationHasBeenSet(false)
+    m_notificationHasBeenSet(false),
+    m_clusterIdHasBeenSet(false),
+    m_snowballType(SnowballType::NOT_SET),
+    m_snowballTypeHasBeenSet(false)
 {
 }
 
@@ -87,6 +93,17 @@ Aws::String CreateJobRequest::SerializePayload() const
   {
    payload.WithObject("Notification", m_notification.Jsonize());
 
+  }
+
+  if(m_clusterIdHasBeenSet)
+  {
+   payload.WithString("ClusterId", m_clusterId);
+
+  }
+
+  if(m_snowballTypeHasBeenSet)
+  {
+   payload.WithString("SnowballType", SnowballTypeMapper::GetNameForSnowballType(m_snowballType));
   }
 
   return payload.WriteReadable();

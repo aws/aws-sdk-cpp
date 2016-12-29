@@ -24,6 +24,7 @@ using namespace Aws::Utils;
 CreateMLModelRequest::CreateMLModelRequest() : 
     m_mLModelIdHasBeenSet(false),
     m_mLModelNameHasBeenSet(false),
+    m_mLModelType(MLModelType::NOT_SET),
     m_mLModelTypeHasBeenSet(false),
     m_parametersHasBeenSet(false),
     m_trainingDataSourceIdHasBeenSet(false),

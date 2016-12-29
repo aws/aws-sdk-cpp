@@ -30,6 +30,7 @@ namespace Model
 RecordDetail::RecordDetail() : 
     m_recordIdHasBeenSet(false),
     m_provisionedProductNameHasBeenSet(false),
+    m_status(RecordStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_createdTimeHasBeenSet(false),
     m_updatedTimeHasBeenSet(false),
@@ -47,6 +48,7 @@ RecordDetail::RecordDetail() :
 RecordDetail::RecordDetail(const JsonValue& jsonValue) : 
     m_recordIdHasBeenSet(false),
     m_provisionedProductNameHasBeenSet(false),
+    m_status(RecordStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_createdTimeHasBeenSet(false),
     m_updatedTimeHasBeenSet(false),

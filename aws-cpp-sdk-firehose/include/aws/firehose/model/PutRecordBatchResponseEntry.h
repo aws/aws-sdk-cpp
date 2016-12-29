@@ -34,7 +34,10 @@ namespace Model
    * <p>Contains the result for an individual record from a <a>PutRecordBatch</a>
    * request. If the record is successfully added to your delivery stream, it
    * receives a record ID. If the record fails to be added to your delivery stream,
-   * the result includes an error code and an error message.</p>
+   * the result includes an error code and an error message.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/PutRecordBatchResponseEntry">AWS
+   * API Reference</a></p>
    */
   class AWS_FIREHOSE_API PutRecordBatchResponseEntry
   {

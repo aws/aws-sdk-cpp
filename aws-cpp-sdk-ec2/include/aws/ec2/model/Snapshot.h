@@ -37,7 +37,9 @@ namespace Model
 {
 
   /**
-   * <p>Describes a snapshot.</p>
+   * <p>Describes a snapshot.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/Snapshot">AWS API
+   * Reference</a></p>
    */
   class AWS_EC2_API Snapshot
   {
@@ -92,37 +94,51 @@ namespace Model
     inline Snapshot& WithSnapshotId(const char* value) { SetSnapshotId(value); return *this;}
 
     /**
-     * <p>The ID of the volume that was used to create the snapshot.</p>
+     * <p>The ID of the volume that was used to create the snapshot. Snapshots created
+     * by the <a>CopySnapshot</a> action have an arbitrary volume ID that should not be
+     * used for any purpose.</p>
      */
     inline const Aws::String& GetVolumeId() const{ return m_volumeId; }
 
     /**
-     * <p>The ID of the volume that was used to create the snapshot.</p>
+     * <p>The ID of the volume that was used to create the snapshot. Snapshots created
+     * by the <a>CopySnapshot</a> action have an arbitrary volume ID that should not be
+     * used for any purpose.</p>
      */
     inline void SetVolumeId(const Aws::String& value) { m_volumeIdHasBeenSet = true; m_volumeId = value; }
 
     /**
-     * <p>The ID of the volume that was used to create the snapshot.</p>
+     * <p>The ID of the volume that was used to create the snapshot. Snapshots created
+     * by the <a>CopySnapshot</a> action have an arbitrary volume ID that should not be
+     * used for any purpose.</p>
      */
     inline void SetVolumeId(Aws::String&& value) { m_volumeIdHasBeenSet = true; m_volumeId = value; }
 
     /**
-     * <p>The ID of the volume that was used to create the snapshot.</p>
+     * <p>The ID of the volume that was used to create the snapshot. Snapshots created
+     * by the <a>CopySnapshot</a> action have an arbitrary volume ID that should not be
+     * used for any purpose.</p>
      */
     inline void SetVolumeId(const char* value) { m_volumeIdHasBeenSet = true; m_volumeId.assign(value); }
 
     /**
-     * <p>The ID of the volume that was used to create the snapshot.</p>
+     * <p>The ID of the volume that was used to create the snapshot. Snapshots created
+     * by the <a>CopySnapshot</a> action have an arbitrary volume ID that should not be
+     * used for any purpose.</p>
      */
     inline Snapshot& WithVolumeId(const Aws::String& value) { SetVolumeId(value); return *this;}
 
     /**
-     * <p>The ID of the volume that was used to create the snapshot.</p>
+     * <p>The ID of the volume that was used to create the snapshot. Snapshots created
+     * by the <a>CopySnapshot</a> action have an arbitrary volume ID that should not be
+     * used for any purpose.</p>
      */
     inline Snapshot& WithVolumeId(Aws::String&& value) { SetVolumeId(value); return *this;}
 
     /**
-     * <p>The ID of the volume that was used to create the snapshot.</p>
+     * <p>The ID of the volume that was used to create the snapshot. Snapshots created
+     * by the <a>CopySnapshot</a> action have an arbitrary volume ID that should not be
+     * used for any purpose.</p>
      */
     inline Snapshot& WithVolumeId(const char* value) { SetVolumeId(value); return *this;}
 
@@ -360,44 +376,58 @@ namespace Model
     inline Snapshot& WithVolumeSize(int value) { SetVolumeSize(value); return *this;}
 
     /**
-     * <p>The AWS account alias (for example, <code>amazon</code>, <code>self</code>)
-     * or AWS account ID that owns the snapshot.</p>
+     * <p> Value from an Amazon-maintained list (<code>amazon</code> |
+     * <code>aws-marketplace</code> | <code>microsoft</code>) of snapshot owners. Not
+     * to be confused with the user-configured AWS account alias, which is set from the
+     * IAM console. </p>
      */
     inline const Aws::String& GetOwnerAlias() const{ return m_ownerAlias; }
 
     /**
-     * <p>The AWS account alias (for example, <code>amazon</code>, <code>self</code>)
-     * or AWS account ID that owns the snapshot.</p>
+     * <p> Value from an Amazon-maintained list (<code>amazon</code> |
+     * <code>aws-marketplace</code> | <code>microsoft</code>) of snapshot owners. Not
+     * to be confused with the user-configured AWS account alias, which is set from the
+     * IAM console. </p>
      */
     inline void SetOwnerAlias(const Aws::String& value) { m_ownerAliasHasBeenSet = true; m_ownerAlias = value; }
 
     /**
-     * <p>The AWS account alias (for example, <code>amazon</code>, <code>self</code>)
-     * or AWS account ID that owns the snapshot.</p>
+     * <p> Value from an Amazon-maintained list (<code>amazon</code> |
+     * <code>aws-marketplace</code> | <code>microsoft</code>) of snapshot owners. Not
+     * to be confused with the user-configured AWS account alias, which is set from the
+     * IAM console. </p>
      */
     inline void SetOwnerAlias(Aws::String&& value) { m_ownerAliasHasBeenSet = true; m_ownerAlias = value; }
 
     /**
-     * <p>The AWS account alias (for example, <code>amazon</code>, <code>self</code>)
-     * or AWS account ID that owns the snapshot.</p>
+     * <p> Value from an Amazon-maintained list (<code>amazon</code> |
+     * <code>aws-marketplace</code> | <code>microsoft</code>) of snapshot owners. Not
+     * to be confused with the user-configured AWS account alias, which is set from the
+     * IAM console. </p>
      */
     inline void SetOwnerAlias(const char* value) { m_ownerAliasHasBeenSet = true; m_ownerAlias.assign(value); }
 
     /**
-     * <p>The AWS account alias (for example, <code>amazon</code>, <code>self</code>)
-     * or AWS account ID that owns the snapshot.</p>
+     * <p> Value from an Amazon-maintained list (<code>amazon</code> |
+     * <code>aws-marketplace</code> | <code>microsoft</code>) of snapshot owners. Not
+     * to be confused with the user-configured AWS account alias, which is set from the
+     * IAM console. </p>
      */
     inline Snapshot& WithOwnerAlias(const Aws::String& value) { SetOwnerAlias(value); return *this;}
 
     /**
-     * <p>The AWS account alias (for example, <code>amazon</code>, <code>self</code>)
-     * or AWS account ID that owns the snapshot.</p>
+     * <p> Value from an Amazon-maintained list (<code>amazon</code> |
+     * <code>aws-marketplace</code> | <code>microsoft</code>) of snapshot owners. Not
+     * to be confused with the user-configured AWS account alias, which is set from the
+     * IAM console. </p>
      */
     inline Snapshot& WithOwnerAlias(Aws::String&& value) { SetOwnerAlias(value); return *this;}
 
     /**
-     * <p>The AWS account alias (for example, <code>amazon</code>, <code>self</code>)
-     * or AWS account ID that owns the snapshot.</p>
+     * <p> Value from an Amazon-maintained list (<code>amazon</code> |
+     * <code>aws-marketplace</code> | <code>microsoft</code>) of snapshot owners. Not
+     * to be confused with the user-configured AWS account alias, which is set from the
+     * IAM console. </p>
      */
     inline Snapshot& WithOwnerAlias(const char* value) { SetOwnerAlias(value); return *this;}
 

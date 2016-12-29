@@ -33,7 +33,9 @@ namespace Model
 {
   /**
    * <p>Represents the response from the server to reset a user password as an
-   * administrator.</p>
+   * administrator.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminResetUserPasswordResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_COGNITOIDENTITYPROVIDER_API AdminResetUserPasswordResult
   {

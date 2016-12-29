@@ -32,9 +32,6 @@ namespace Firehose
 {
 namespace Model
 {
-  /**
-   * <p>Contains the output of <a>DescribeDeliveryStream</a>.</p>
-   */
   class AWS_FIREHOSE_API DescribeDeliveryStreamResult
   {
   public:

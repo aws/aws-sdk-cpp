@@ -28,7 +28,10 @@ namespace Lambda
 namespace Model
 {
   /**
-   * <p>Upon success, returns an empty response. Otherwise, throws an exception.</p>
+   * <p>Upon success, returns an empty response. Otherwise, throws an
+   * exception.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/InvocationResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_LAMBDA_API InvokeResult
   {
@@ -213,7 +216,7 @@ namespace Model
 
     /**
      * <p> It is the JSON representation of the object returned by the Lambda function.
-     * In This is present only if the invocation type is <code>RequestResponse</code>.
+     * This is present only if the invocation type is <code>RequestResponse</code>.
      * </p> <p>In the event of a function error this field contains a message
      * describing the error. For the <code>Handled</code> errors the Lambda function
      * will report this message. For <code>Unhandled</code> errors AWS Lambda reports
@@ -221,6 +224,16 @@ namespace Model
      */
     inline Aws::IOStream& GetPayload() { return m_payload.GetUnderlyingStream(); }
 
+    /**
+     * <p> It is the JSON representation of the object returned by the Lambda function.
+     * This is present only if the invocation type is <code>RequestResponse</code>.
+     * </p> <p>In the event of a function error this field contains a message
+     * describing the error. For the <code>Handled</code> errors the Lambda function
+     * will report this message. For <code>Unhandled</code> errors AWS Lambda reports
+     * the message. </p>
+     */
+    inline void ReplaceBody(Aws::IOStream* body) { m_payload = Aws::Utils::Stream::ResponseStream(body); }
+    
   private:
     int m_statusCode;
     Aws::String m_functionError;

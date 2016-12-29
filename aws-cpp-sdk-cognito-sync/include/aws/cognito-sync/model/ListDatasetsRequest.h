@@ -29,7 +29,9 @@ namespace Model
 {
 
   /**
-   * Request for a list of datasets for an identity.
+   * Request for a list of datasets for an identity.<p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/ListDatasetsRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_COGNITOSYNC_API ListDatasetsRequest : public CognitoSyncRequest
   {

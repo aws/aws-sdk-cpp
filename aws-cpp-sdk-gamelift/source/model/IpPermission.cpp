@@ -33,6 +33,7 @@ IpPermission::IpPermission() :
     m_toPort(0),
     m_toPortHasBeenSet(false),
     m_ipRangeHasBeenSet(false),
+    m_protocol(IpProtocol::NOT_SET),
     m_protocolHasBeenSet(false)
 {
 }
@@ -43,6 +44,7 @@ IpPermission::IpPermission(const JsonValue& jsonValue) :
     m_toPort(0),
     m_toPortHasBeenSet(false),
     m_ipRangeHasBeenSet(false),
+    m_protocol(IpProtocol::NOT_SET),
     m_protocolHasBeenSet(false)
 {
   *this = jsonValue;

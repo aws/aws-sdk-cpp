@@ -34,6 +34,7 @@ PriceScheduleSpecification::PriceScheduleSpecification() :
     m_termHasBeenSet(false),
     m_price(0.0),
     m_priceHasBeenSet(false),
+    m_currencyCode(CurrencyCodeValues::NOT_SET),
     m_currencyCodeHasBeenSet(false)
 {
 }
@@ -43,6 +44,7 @@ PriceScheduleSpecification::PriceScheduleSpecification(const XmlNode& xmlNode) :
     m_termHasBeenSet(false),
     m_price(0.0),
     m_priceHasBeenSet(false),
+    m_currencyCode(CurrencyCodeValues::NOT_SET),
     m_currencyCodeHasBeenSet(false)
 {
   *this = xmlNode;

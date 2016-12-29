@@ -30,7 +30,10 @@ namespace Model
 {
 
   /**
-   * This includes the options for getting the cost of a budget.
+   * This includes the options for getting the cost of a budget.<p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/CostTypes">AWS
+   * API Reference</a></p>
    */
   class AWS_BUDGETS_API CostTypes
   {

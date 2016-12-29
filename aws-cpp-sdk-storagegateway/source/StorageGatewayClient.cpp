@@ -34,6 +34,7 @@
 #include <aws/storagegateway/model/CancelArchivalRequest.h>
 #include <aws/storagegateway/model/CancelRetrievalRequest.h>
 #include <aws/storagegateway/model/CreateCachediSCSIVolumeRequest.h>
+#include <aws/storagegateway/model/CreateNFSFileShareRequest.h>
 #include <aws/storagegateway/model/CreateSnapshotRequest.h>
 #include <aws/storagegateway/model/CreateSnapshotFromVolumeRecoveryPointRequest.h>
 #include <aws/storagegateway/model/CreateStorediSCSIVolumeRequest.h>
@@ -41,6 +42,7 @@
 #include <aws/storagegateway/model/CreateTapesRequest.h>
 #include <aws/storagegateway/model/DeleteBandwidthRateLimitRequest.h>
 #include <aws/storagegateway/model/DeleteChapCredentialsRequest.h>
+#include <aws/storagegateway/model/DeleteFileShareRequest.h>
 #include <aws/storagegateway/model/DeleteGatewayRequest.h>
 #include <aws/storagegateway/model/DeleteSnapshotScheduleRequest.h>
 #include <aws/storagegateway/model/DeleteTapeRequest.h>
@@ -52,6 +54,7 @@
 #include <aws/storagegateway/model/DescribeChapCredentialsRequest.h>
 #include <aws/storagegateway/model/DescribeGatewayInformationRequest.h>
 #include <aws/storagegateway/model/DescribeMaintenanceStartTimeRequest.h>
+#include <aws/storagegateway/model/DescribeNFSFileSharesRequest.h>
 #include <aws/storagegateway/model/DescribeSnapshotScheduleRequest.h>
 #include <aws/storagegateway/model/DescribeStorediSCSIVolumesRequest.h>
 #include <aws/storagegateway/model/DescribeTapeArchivesRequest.h>
@@ -61,6 +64,7 @@
 #include <aws/storagegateway/model/DescribeVTLDevicesRequest.h>
 #include <aws/storagegateway/model/DescribeWorkingStorageRequest.h>
 #include <aws/storagegateway/model/DisableGatewayRequest.h>
+#include <aws/storagegateway/model/ListFileSharesRequest.h>
 #include <aws/storagegateway/model/ListGatewaysRequest.h>
 #include <aws/storagegateway/model/ListLocalDisksRequest.h>
 #include <aws/storagegateway/model/ListTagsForResourceRequest.h>
@@ -80,6 +84,7 @@
 #include <aws/storagegateway/model/UpdateGatewayInformationRequest.h>
 #include <aws/storagegateway/model/UpdateGatewaySoftwareNowRequest.h>
 #include <aws/storagegateway/model/UpdateMaintenanceStartTimeRequest.h>
+#include <aws/storagegateway/model/UpdateNFSFileShareRequest.h>
 #include <aws/storagegateway/model/UpdateSnapshotScheduleRequest.h>
 #include <aws/storagegateway/model/UpdateVTLDeviceTypeRequest.h>
 
@@ -419,6 +424,40 @@ void StorageGatewayClient::CreateCachediSCSIVolumeAsyncHelper(const CreateCached
   handler(this, request, CreateCachediSCSIVolume(request), context);
 }
 
+CreateNFSFileShareOutcome StorageGatewayClient::CreateNFSFileShare(const CreateNFSFileShareRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return CreateNFSFileShareOutcome(CreateNFSFileShareResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateNFSFileShareOutcome(outcome.GetError());
+  }
+}
+
+CreateNFSFileShareOutcomeCallable StorageGatewayClient::CreateNFSFileShareCallable(const CreateNFSFileShareRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateNFSFileShareOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateNFSFileShare(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void StorageGatewayClient::CreateNFSFileShareAsync(const CreateNFSFileShareRequest& request, const CreateNFSFileShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateNFSFileShareAsyncHelper( request, handler, context ); } );
+}
+
+void StorageGatewayClient::CreateNFSFileShareAsyncHelper(const CreateNFSFileShareRequest& request, const CreateNFSFileShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateNFSFileShare(request), context);
+}
+
 CreateSnapshotOutcome StorageGatewayClient::CreateSnapshot(const CreateSnapshotRequest& request) const
 {
   Aws::StringStream ss;
@@ -655,6 +694,40 @@ void StorageGatewayClient::DeleteChapCredentialsAsync(const DeleteChapCredential
 void StorageGatewayClient::DeleteChapCredentialsAsyncHelper(const DeleteChapCredentialsRequest& request, const DeleteChapCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteChapCredentials(request), context);
+}
+
+DeleteFileShareOutcome StorageGatewayClient::DeleteFileShare(const DeleteFileShareRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DeleteFileShareOutcome(DeleteFileShareResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteFileShareOutcome(outcome.GetError());
+  }
+}
+
+DeleteFileShareOutcomeCallable StorageGatewayClient::DeleteFileShareCallable(const DeleteFileShareRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteFileShareOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteFileShare(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void StorageGatewayClient::DeleteFileShareAsync(const DeleteFileShareRequest& request, const DeleteFileShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteFileShareAsyncHelper( request, handler, context ); } );
+}
+
+void StorageGatewayClient::DeleteFileShareAsyncHelper(const DeleteFileShareRequest& request, const DeleteFileShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteFileShare(request), context);
 }
 
 DeleteGatewayOutcome StorageGatewayClient::DeleteGateway(const DeleteGatewayRequest& request) const
@@ -1031,6 +1104,40 @@ void StorageGatewayClient::DescribeMaintenanceStartTimeAsyncHelper(const Describ
   handler(this, request, DescribeMaintenanceStartTime(request), context);
 }
 
+DescribeNFSFileSharesOutcome StorageGatewayClient::DescribeNFSFileShares(const DescribeNFSFileSharesRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DescribeNFSFileSharesOutcome(DescribeNFSFileSharesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeNFSFileSharesOutcome(outcome.GetError());
+  }
+}
+
+DescribeNFSFileSharesOutcomeCallable StorageGatewayClient::DescribeNFSFileSharesCallable(const DescribeNFSFileSharesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeNFSFileSharesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeNFSFileShares(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void StorageGatewayClient::DescribeNFSFileSharesAsync(const DescribeNFSFileSharesRequest& request, const DescribeNFSFileSharesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeNFSFileSharesAsyncHelper( request, handler, context ); } );
+}
+
+void StorageGatewayClient::DescribeNFSFileSharesAsyncHelper(const DescribeNFSFileSharesRequest& request, const DescribeNFSFileSharesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeNFSFileShares(request), context);
+}
+
 DescribeSnapshotScheduleOutcome StorageGatewayClient::DescribeSnapshotSchedule(const DescribeSnapshotScheduleRequest& request) const
 {
   Aws::StringStream ss;
@@ -1335,6 +1442,40 @@ void StorageGatewayClient::DisableGatewayAsync(const DisableGatewayRequest& requ
 void StorageGatewayClient::DisableGatewayAsyncHelper(const DisableGatewayRequest& request, const DisableGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DisableGateway(request), context);
+}
+
+ListFileSharesOutcome StorageGatewayClient::ListFileShares(const ListFileSharesRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return ListFileSharesOutcome(ListFileSharesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListFileSharesOutcome(outcome.GetError());
+  }
+}
+
+ListFileSharesOutcomeCallable StorageGatewayClient::ListFileSharesCallable(const ListFileSharesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListFileSharesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListFileShares(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void StorageGatewayClient::ListFileSharesAsync(const ListFileSharesRequest& request, const ListFileSharesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListFileSharesAsyncHelper( request, handler, context ); } );
+}
+
+void StorageGatewayClient::ListFileSharesAsyncHelper(const ListFileSharesRequest& request, const ListFileSharesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListFileShares(request), context);
 }
 
 ListGatewaysOutcome StorageGatewayClient::ListGateways(const ListGatewaysRequest& request) const
@@ -1981,6 +2122,40 @@ void StorageGatewayClient::UpdateMaintenanceStartTimeAsync(const UpdateMaintenan
 void StorageGatewayClient::UpdateMaintenanceStartTimeAsyncHelper(const UpdateMaintenanceStartTimeRequest& request, const UpdateMaintenanceStartTimeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateMaintenanceStartTime(request), context);
+}
+
+UpdateNFSFileShareOutcome StorageGatewayClient::UpdateNFSFileShare(const UpdateNFSFileShareRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return UpdateNFSFileShareOutcome(UpdateNFSFileShareResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateNFSFileShareOutcome(outcome.GetError());
+  }
+}
+
+UpdateNFSFileShareOutcomeCallable StorageGatewayClient::UpdateNFSFileShareCallable(const UpdateNFSFileShareRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateNFSFileShareOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateNFSFileShare(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void StorageGatewayClient::UpdateNFSFileShareAsync(const UpdateNFSFileShareRequest& request, const UpdateNFSFileShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateNFSFileShareAsyncHelper( request, handler, context ); } );
+}
+
+void StorageGatewayClient::UpdateNFSFileShareAsyncHelper(const UpdateNFSFileShareRequest& request, const UpdateNFSFileShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateNFSFileShare(request), context);
 }
 
 UpdateSnapshotScheduleOutcome StorageGatewayClient::UpdateSnapshotSchedule(const UpdateSnapshotScheduleRequest& request) const

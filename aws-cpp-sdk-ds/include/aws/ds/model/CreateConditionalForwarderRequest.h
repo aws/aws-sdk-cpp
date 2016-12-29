@@ -28,7 +28,10 @@ namespace Model
   /**
    * <p>Initiates the creation of a conditional forwarder for your AWS Directory
    * Service for Microsoft Active Directory. Conditional forwarders are required in
-   * order to set up a trust relationship with another domain.</p>
+   * order to set up a trust relationship with another domain.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateConditionalForwarderRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_DIRECTORYSERVICE_API CreateConditionalForwarderRequest : public DirectoryServiceRequest
   {

@@ -56,6 +56,12 @@ CreateApiKeyResult& CreateApiKeyResult::operator =(const AmazonWebServiceResult<
 
   }
 
+  if(jsonValue.ValueExists("customerId"))
+  {
+    m_customerId = jsonValue.GetString("customerId");
+
+  }
+
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");

@@ -31,7 +31,11 @@ UpdateFunctionConfigurationRequest::UpdateFunctionConfigurationRequest() :
     m_memorySize(0),
     m_memorySizeHasBeenSet(false),
     m_vpcConfigHasBeenSet(false),
-    m_runtimeHasBeenSet(false)
+    m_environmentHasBeenSet(false),
+    m_runtime(Runtime::NOT_SET),
+    m_runtimeHasBeenSet(false),
+    m_deadLetterConfigHasBeenSet(false),
+    m_kMSKeyArnHasBeenSet(false)
 {
 }
 
@@ -75,9 +79,27 @@ Aws::String UpdateFunctionConfigurationRequest::SerializePayload() const
 
   }
 
+  if(m_environmentHasBeenSet)
+  {
+   payload.WithObject("Environment", m_environment.Jsonize());
+
+  }
+
   if(m_runtimeHasBeenSet)
   {
    payload.WithString("Runtime", RuntimeMapper::GetNameForRuntime(m_runtime));
+  }
+
+  if(m_deadLetterConfigHasBeenSet)
+  {
+   payload.WithObject("DeadLetterConfig", m_deadLetterConfig.Jsonize());
+
+  }
+
+  if(m_kMSKeyArnHasBeenSet)
+  {
+   payload.WithString("KMSKeyArn", m_kMSKeyArn);
+
   }
 
   return payload.WriteReadable();

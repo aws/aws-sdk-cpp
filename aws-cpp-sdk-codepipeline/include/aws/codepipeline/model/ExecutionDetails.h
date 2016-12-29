@@ -32,7 +32,9 @@ namespace Model
 
   /**
    * <p>The details of the actions taken and results produced on an artifact as it
-   * passes through stages in the pipeline.</p>
+   * passes through stages in the pipeline.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ExecutionDetails">AWS
+   * API Reference</a></p>
    */
   class AWS_CODEPIPELINE_API ExecutionDetails
   {

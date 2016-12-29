@@ -25,7 +25,9 @@ namespace Model
 {
 
   /**
-   * <p>Represents the request to stop a specific run.</p>
+   * <p>Represents the request to stop a specific run.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/StopRunRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_DEVICEFARM_API StopRunRequest : public DeviceFarmRequest
   {

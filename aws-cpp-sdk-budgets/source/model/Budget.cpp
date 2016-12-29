@@ -32,9 +32,11 @@ Budget::Budget() :
     m_budgetLimitHasBeenSet(false),
     m_costFiltersHasBeenSet(false),
     m_costTypesHasBeenSet(false),
+    m_timeUnit(TimeUnit::NOT_SET),
     m_timeUnitHasBeenSet(false),
     m_timePeriodHasBeenSet(false),
     m_calculatedSpendHasBeenSet(false),
+    m_budgetType(BudgetType::NOT_SET),
     m_budgetTypeHasBeenSet(false)
 {
 }
@@ -44,9 +46,11 @@ Budget::Budget(const JsonValue& jsonValue) :
     m_budgetLimitHasBeenSet(false),
     m_costFiltersHasBeenSet(false),
     m_costTypesHasBeenSet(false),
+    m_timeUnit(TimeUnit::NOT_SET),
     m_timeUnitHasBeenSet(false),
     m_timePeriodHasBeenSet(false),
     m_calculatedSpendHasBeenSet(false),
+    m_budgetType(BudgetType::NOT_SET),
     m_budgetTypeHasBeenSet(false)
 {
   *this = jsonValue;
@@ -74,7 +78,8 @@ Budget& Budget::operator =(const JsonValue& jsonValue)
     for(auto& costFiltersItem : costFiltersJsonMap)
     {
       Array<JsonValue> dimensionValuesJsonList = costFiltersItem.second.AsArray();
-      Aws::Vector<Aws::String> dimensionValuesList((size_t)dimensionValuesJsonList.GetLength());
+      Aws::Vector<Aws::String> dimensionValuesList;
+      dimensionValuesList.reserve((size_t)dimensionValuesJsonList.GetLength());
       for(unsigned dimensionValuesIndex = 0; dimensionValuesIndex < dimensionValuesJsonList.GetLength(); ++dimensionValuesIndex)
       {
         dimensionValuesList.push_back(dimensionValuesJsonList[dimensionValuesIndex].AsString());

@@ -37,11 +37,13 @@ GameSession::GameSession() :
     m_currentPlayerSessionCountHasBeenSet(false),
     m_maximumPlayerSessionCount(0),
     m_maximumPlayerSessionCountHasBeenSet(false),
+    m_status(GameSessionStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_gamePropertiesHasBeenSet(false),
     m_ipAddressHasBeenSet(false),
     m_port(0),
     m_portHasBeenSet(false),
+    m_playerSessionCreationPolicy(PlayerSessionCreationPolicy::NOT_SET),
     m_playerSessionCreationPolicyHasBeenSet(false),
     m_creatorIdHasBeenSet(false)
 {
@@ -57,11 +59,13 @@ GameSession::GameSession(const JsonValue& jsonValue) :
     m_currentPlayerSessionCountHasBeenSet(false),
     m_maximumPlayerSessionCount(0),
     m_maximumPlayerSessionCountHasBeenSet(false),
+    m_status(GameSessionStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_gamePropertiesHasBeenSet(false),
     m_ipAddressHasBeenSet(false),
     m_port(0),
     m_portHasBeenSet(false),
+    m_playerSessionCreationPolicy(PlayerSessionCreationPolicy::NOT_SET),
     m_playerSessionCreationPolicyHasBeenSet(false),
     m_creatorIdHasBeenSet(false)
 {

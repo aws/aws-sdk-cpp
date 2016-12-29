@@ -25,7 +25,10 @@ namespace Model
 {
 
   /**
-   * <p>Request to get the name of a <a>DomainName</a> resource.</p>
+   * <p>Request to get the name of a <a>DomainName</a> resource.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetDomainNameRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_APIGATEWAY_API GetDomainNameRequest : public APIGatewayRequest
   {

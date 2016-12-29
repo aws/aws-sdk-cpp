@@ -26,7 +26,9 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for ReleaseHosts.</p>
+   * <p>Contains the parameters for ReleaseHosts.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReleaseHostsRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API ReleaseHostsRequest : public EC2Request
   {
@@ -35,42 +37,42 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     /**
-     * <p>The IDs of the Dedicated hosts you want to release.</p>
+     * <p>The IDs of the Dedicated Hosts you want to release.</p>
      */
     inline const Aws::Vector<Aws::String>& GetHostIds() const{ return m_hostIds; }
 
     /**
-     * <p>The IDs of the Dedicated hosts you want to release.</p>
+     * <p>The IDs of the Dedicated Hosts you want to release.</p>
      */
     inline void SetHostIds(const Aws::Vector<Aws::String>& value) { m_hostIdsHasBeenSet = true; m_hostIds = value; }
 
     /**
-     * <p>The IDs of the Dedicated hosts you want to release.</p>
+     * <p>The IDs of the Dedicated Hosts you want to release.</p>
      */
     inline void SetHostIds(Aws::Vector<Aws::String>&& value) { m_hostIdsHasBeenSet = true; m_hostIds = value; }
 
     /**
-     * <p>The IDs of the Dedicated hosts you want to release.</p>
+     * <p>The IDs of the Dedicated Hosts you want to release.</p>
      */
     inline ReleaseHostsRequest& WithHostIds(const Aws::Vector<Aws::String>& value) { SetHostIds(value); return *this;}
 
     /**
-     * <p>The IDs of the Dedicated hosts you want to release.</p>
+     * <p>The IDs of the Dedicated Hosts you want to release.</p>
      */
     inline ReleaseHostsRequest& WithHostIds(Aws::Vector<Aws::String>&& value) { SetHostIds(value); return *this;}
 
     /**
-     * <p>The IDs of the Dedicated hosts you want to release.</p>
+     * <p>The IDs of the Dedicated Hosts you want to release.</p>
      */
     inline ReleaseHostsRequest& AddHostIds(const Aws::String& value) { m_hostIdsHasBeenSet = true; m_hostIds.push_back(value); return *this; }
 
     /**
-     * <p>The IDs of the Dedicated hosts you want to release.</p>
+     * <p>The IDs of the Dedicated Hosts you want to release.</p>
      */
     inline ReleaseHostsRequest& AddHostIds(Aws::String&& value) { m_hostIdsHasBeenSet = true; m_hostIds.push_back(value); return *this; }
 
     /**
-     * <p>The IDs of the Dedicated hosts you want to release.</p>
+     * <p>The IDs of the Dedicated Hosts you want to release.</p>
      */
     inline ReleaseHostsRequest& AddHostIds(const char* value) { m_hostIdsHasBeenSet = true; m_hostIds.push_back(value); return *this; }
 

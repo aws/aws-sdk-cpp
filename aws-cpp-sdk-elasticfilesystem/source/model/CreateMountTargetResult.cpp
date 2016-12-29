@@ -24,11 +24,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateMountTargetResult::CreateMountTargetResult()
+CreateMountTargetResult::CreateMountTargetResult() : 
+    m_lifeCycleState(LifeCycleState::NOT_SET)
 {
 }
 
-CreateMountTargetResult::CreateMountTargetResult(const AmazonWebServiceResult<JsonValue>& result)
+CreateMountTargetResult::CreateMountTargetResult(const AmazonWebServiceResult<JsonValue>& result) : 
+    m_lifeCycleState(LifeCycleState::NOT_SET)
 {
   *this = result;
 }

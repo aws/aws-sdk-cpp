@@ -34,6 +34,7 @@ ConversionTask::ConversionTask() :
     m_expirationTimeHasBeenSet(false),
     m_importInstanceHasBeenSet(false),
     m_importVolumeHasBeenSet(false),
+    m_state(ConversionTaskState::NOT_SET),
     m_stateHasBeenSet(false),
     m_statusMessageHasBeenSet(false),
     m_tagsHasBeenSet(false)
@@ -45,6 +46,7 @@ ConversionTask::ConversionTask(const XmlNode& xmlNode) :
     m_expirationTimeHasBeenSet(false),
     m_importInstanceHasBeenSet(false),
     m_importVolumeHasBeenSet(false),
+    m_state(ConversionTaskState::NOT_SET),
     m_stateHasBeenSet(false),
     m_statusMessageHasBeenSet(false),
     m_tagsHasBeenSet(false)

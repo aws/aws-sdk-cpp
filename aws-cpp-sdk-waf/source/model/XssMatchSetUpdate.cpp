@@ -28,12 +28,14 @@ namespace Model
 {
 
 XssMatchSetUpdate::XssMatchSetUpdate() : 
+    m_action(ChangeAction::NOT_SET),
     m_actionHasBeenSet(false),
     m_xssMatchTupleHasBeenSet(false)
 {
 }
 
 XssMatchSetUpdate::XssMatchSetUpdate(const JsonValue& jsonValue) : 
+    m_action(ChangeAction::NOT_SET),
     m_actionHasBeenSet(false),
     m_xssMatchTupleHasBeenSet(false)
 {

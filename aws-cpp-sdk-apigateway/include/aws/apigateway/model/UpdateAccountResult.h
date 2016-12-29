@@ -64,7 +64,9 @@ namespace Model
    * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/welcome.html">Developer
    * Guide</a>, <a
    * href="http://docs.aws.amazon.com/cli/latest/reference/apigateway/get-account.html">AWS
-   * CLI</a> </div>
+   * CLI</a> </div><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/Account">AWS
+   * API Reference</a></p>
    */
   class AWS_APIGATEWAY_API UpdateAccountResult
   {

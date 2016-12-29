@@ -36,7 +36,10 @@ namespace AutoScaling
 namespace Model
 {
   /**
-   * <p>Contains the output of DescribeMetricsCollectionTypes.</p>
+   * <p>Contains the output of DescribeMetricsCollectionTypes.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeMetricCollectionTypesAnswer">AWS
+   * API Reference</a></p>
    */
   class AWS_AUTOSCALING_API DescribeMetricCollectionTypesResult
   {

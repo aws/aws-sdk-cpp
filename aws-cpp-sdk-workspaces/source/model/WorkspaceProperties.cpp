@@ -28,6 +28,7 @@ namespace Model
 {
 
 WorkspaceProperties::WorkspaceProperties() : 
+    m_runningMode(RunningMode::NOT_SET),
     m_runningModeHasBeenSet(false),
     m_runningModeAutoStopTimeoutInMinutes(0),
     m_runningModeAutoStopTimeoutInMinutesHasBeenSet(false)
@@ -35,6 +36,7 @@ WorkspaceProperties::WorkspaceProperties() :
 }
 
 WorkspaceProperties::WorkspaceProperties(const JsonValue& jsonValue) : 
+    m_runningMode(RunningMode::NOT_SET),
     m_runningModeHasBeenSet(false),
     m_runningModeAutoStopTimeoutInMinutes(0),
     m_runningModeAutoStopTimeoutInMinutesHasBeenSet(false)

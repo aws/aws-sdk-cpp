@@ -21,7 +21,9 @@ using namespace Aws::Utils;
 
 CreateFlowLogsRequest::CreateFlowLogsRequest() : 
     m_resourceIdsHasBeenSet(false),
+    m_resourceType(FlowLogsResourceType::NOT_SET),
     m_resourceTypeHasBeenSet(false),
+    m_trafficType(TrafficType::NOT_SET),
     m_trafficTypeHasBeenSet(false),
     m_logGroupNameHasBeenSet(false),
     m_deliverLogsPermissionArnHasBeenSet(false),
@@ -69,7 +71,7 @@ Aws::String CreateFlowLogsRequest::SerializePayload() const
     ss << "ClientToken=" << StringUtils::URLEncode(m_clientToken.c_str()) << "&";
   }
 
-  ss << "Version=2015-10-01";
+  ss << "Version=2016-11-15";
   return ss.str();
 }
 

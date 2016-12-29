@@ -33,7 +33,9 @@ namespace Model
 {
 
   /**
-   * A description of the identity.
+   * <p>A description of the identity.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/IdentityDescription">AWS
+   * API Reference</a></p>
    */
   class AWS_COGNITOIDENTITY_API IdentityDescription
   {
@@ -44,77 +46,85 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * A unique identifier in the format REGION:GUID.
+     * <p>A unique identifier in the format REGION:GUID.</p>
      */
     inline const Aws::String& GetIdentityId() const{ return m_identityId; }
 
     /**
-     * A unique identifier in the format REGION:GUID.
+     * <p>A unique identifier in the format REGION:GUID.</p>
      */
     inline void SetIdentityId(const Aws::String& value) { m_identityIdHasBeenSet = true; m_identityId = value; }
 
     /**
-     * A unique identifier in the format REGION:GUID.
+     * <p>A unique identifier in the format REGION:GUID.</p>
      */
     inline void SetIdentityId(Aws::String&& value) { m_identityIdHasBeenSet = true; m_identityId = value; }
 
     /**
-     * A unique identifier in the format REGION:GUID.
+     * <p>A unique identifier in the format REGION:GUID.</p>
      */
     inline void SetIdentityId(const char* value) { m_identityIdHasBeenSet = true; m_identityId.assign(value); }
 
     /**
-     * A unique identifier in the format REGION:GUID.
+     * <p>A unique identifier in the format REGION:GUID.</p>
      */
     inline IdentityDescription& WithIdentityId(const Aws::String& value) { SetIdentityId(value); return *this;}
 
     /**
-     * A unique identifier in the format REGION:GUID.
+     * <p>A unique identifier in the format REGION:GUID.</p>
      */
     inline IdentityDescription& WithIdentityId(Aws::String&& value) { SetIdentityId(value); return *this;}
 
     /**
-     * A unique identifier in the format REGION:GUID.
+     * <p>A unique identifier in the format REGION:GUID.</p>
      */
     inline IdentityDescription& WithIdentityId(const char* value) { SetIdentityId(value); return *this;}
 
     /**
-     * A set of optional name-value pairs that map provider names to provider tokens.
+     * <p>A set of optional name-value pairs that map provider names to provider
+     * tokens.</p>
      */
     inline const Aws::Vector<Aws::String>& GetLogins() const{ return m_logins; }
 
     /**
-     * A set of optional name-value pairs that map provider names to provider tokens.
+     * <p>A set of optional name-value pairs that map provider names to provider
+     * tokens.</p>
      */
     inline void SetLogins(const Aws::Vector<Aws::String>& value) { m_loginsHasBeenSet = true; m_logins = value; }
 
     /**
-     * A set of optional name-value pairs that map provider names to provider tokens.
+     * <p>A set of optional name-value pairs that map provider names to provider
+     * tokens.</p>
      */
     inline void SetLogins(Aws::Vector<Aws::String>&& value) { m_loginsHasBeenSet = true; m_logins = value; }
 
     /**
-     * A set of optional name-value pairs that map provider names to provider tokens.
+     * <p>A set of optional name-value pairs that map provider names to provider
+     * tokens.</p>
      */
     inline IdentityDescription& WithLogins(const Aws::Vector<Aws::String>& value) { SetLogins(value); return *this;}
 
     /**
-     * A set of optional name-value pairs that map provider names to provider tokens.
+     * <p>A set of optional name-value pairs that map provider names to provider
+     * tokens.</p>
      */
     inline IdentityDescription& WithLogins(Aws::Vector<Aws::String>&& value) { SetLogins(value); return *this;}
 
     /**
-     * A set of optional name-value pairs that map provider names to provider tokens.
+     * <p>A set of optional name-value pairs that map provider names to provider
+     * tokens.</p>
      */
     inline IdentityDescription& AddLogins(const Aws::String& value) { m_loginsHasBeenSet = true; m_logins.push_back(value); return *this; }
 
     /**
-     * A set of optional name-value pairs that map provider names to provider tokens.
+     * <p>A set of optional name-value pairs that map provider names to provider
+     * tokens.</p>
      */
     inline IdentityDescription& AddLogins(Aws::String&& value) { m_loginsHasBeenSet = true; m_logins.push_back(value); return *this; }
 
     /**
-     * A set of optional name-value pairs that map provider names to provider tokens.
+     * <p>A set of optional name-value pairs that map provider names to provider
+     * tokens.</p>
      */
     inline IdentityDescription& AddLogins(const char* value) { m_loginsHasBeenSet = true; m_logins.push_back(value); return *this; }
 

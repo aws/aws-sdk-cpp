@@ -25,7 +25,10 @@ namespace Model
 {
 
   /**
-   * <p>Request to delete a draft environment configuration.</p>
+   * <p>Request to delete a draft environment configuration.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeleteEnvironmentConfigurationMessage">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICBEANSTALK_API DeleteEnvironmentConfigurationRequest : public ElasticBeanstalkRequest
   {

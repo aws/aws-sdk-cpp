@@ -27,7 +27,9 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for ModifyHosts.</p>
+   * <p>Contains the parameters for ModifyHosts.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyHostsRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API ModifyHostsRequest : public EC2Request
   {
@@ -36,42 +38,42 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     /**
-     * <p>The host IDs of the Dedicated hosts you want to modify.</p>
+     * <p>The host IDs of the Dedicated Hosts you want to modify.</p>
      */
     inline const Aws::Vector<Aws::String>& GetHostIds() const{ return m_hostIds; }
 
     /**
-     * <p>The host IDs of the Dedicated hosts you want to modify.</p>
+     * <p>The host IDs of the Dedicated Hosts you want to modify.</p>
      */
     inline void SetHostIds(const Aws::Vector<Aws::String>& value) { m_hostIdsHasBeenSet = true; m_hostIds = value; }
 
     /**
-     * <p>The host IDs of the Dedicated hosts you want to modify.</p>
+     * <p>The host IDs of the Dedicated Hosts you want to modify.</p>
      */
     inline void SetHostIds(Aws::Vector<Aws::String>&& value) { m_hostIdsHasBeenSet = true; m_hostIds = value; }
 
     /**
-     * <p>The host IDs of the Dedicated hosts you want to modify.</p>
+     * <p>The host IDs of the Dedicated Hosts you want to modify.</p>
      */
     inline ModifyHostsRequest& WithHostIds(const Aws::Vector<Aws::String>& value) { SetHostIds(value); return *this;}
 
     /**
-     * <p>The host IDs of the Dedicated hosts you want to modify.</p>
+     * <p>The host IDs of the Dedicated Hosts you want to modify.</p>
      */
     inline ModifyHostsRequest& WithHostIds(Aws::Vector<Aws::String>&& value) { SetHostIds(value); return *this;}
 
     /**
-     * <p>The host IDs of the Dedicated hosts you want to modify.</p>
+     * <p>The host IDs of the Dedicated Hosts you want to modify.</p>
      */
     inline ModifyHostsRequest& AddHostIds(const Aws::String& value) { m_hostIdsHasBeenSet = true; m_hostIds.push_back(value); return *this; }
 
     /**
-     * <p>The host IDs of the Dedicated hosts you want to modify.</p>
+     * <p>The host IDs of the Dedicated Hosts you want to modify.</p>
      */
     inline ModifyHostsRequest& AddHostIds(Aws::String&& value) { m_hostIdsHasBeenSet = true; m_hostIds.push_back(value); return *this; }
 
     /**
-     * <p>The host IDs of the Dedicated hosts you want to modify.</p>
+     * <p>The host IDs of the Dedicated Hosts you want to modify.</p>
      */
     inline ModifyHostsRequest& AddHostIds(const char* value) { m_hostIdsHasBeenSet = true; m_hostIds.push_back(value); return *this; }
 

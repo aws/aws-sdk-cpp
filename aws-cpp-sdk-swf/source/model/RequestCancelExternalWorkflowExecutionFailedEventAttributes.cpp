@@ -30,6 +30,7 @@ namespace Model
 RequestCancelExternalWorkflowExecutionFailedEventAttributes::RequestCancelExternalWorkflowExecutionFailedEventAttributes() : 
     m_workflowIdHasBeenSet(false),
     m_runIdHasBeenSet(false),
+    m_cause(RequestCancelExternalWorkflowExecutionFailedCause::NOT_SET),
     m_causeHasBeenSet(false),
     m_initiatedEventId(0),
     m_initiatedEventIdHasBeenSet(false),
@@ -42,6 +43,7 @@ RequestCancelExternalWorkflowExecutionFailedEventAttributes::RequestCancelExtern
 RequestCancelExternalWorkflowExecutionFailedEventAttributes::RequestCancelExternalWorkflowExecutionFailedEventAttributes(const JsonValue& jsonValue) : 
     m_workflowIdHasBeenSet(false),
     m_runIdHasBeenSet(false),
+    m_cause(RequestCancelExternalWorkflowExecutionFailedCause::NOT_SET),
     m_causeHasBeenSet(false),
     m_initiatedEventId(0),
     m_initiatedEventIdHasBeenSet(false),

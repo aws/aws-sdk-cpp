@@ -31,6 +31,7 @@ DevicePool::DevicePool() :
     m_arnHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
+    m_type(DevicePoolType::NOT_SET),
     m_typeHasBeenSet(false),
     m_rulesHasBeenSet(false)
 {
@@ -40,6 +41,7 @@ DevicePool::DevicePool(const JsonValue& jsonValue) :
     m_arnHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
+    m_type(DevicePoolType::NOT_SET),
     m_typeHasBeenSet(false),
     m_rulesHasBeenSet(false)
 {

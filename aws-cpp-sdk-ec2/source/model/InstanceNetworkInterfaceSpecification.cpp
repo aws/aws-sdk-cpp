@@ -43,7 +43,10 @@ InstanceNetworkInterfaceSpecification::InstanceNetworkInterfaceSpecification() :
     m_secondaryPrivateIpAddressCount(0),
     m_secondaryPrivateIpAddressCountHasBeenSet(false),
     m_associatePublicIpAddress(false),
-    m_associatePublicIpAddressHasBeenSet(false)
+    m_associatePublicIpAddressHasBeenSet(false),
+    m_ipv6AddressesHasBeenSet(false),
+    m_ipv6AddressCount(0),
+    m_ipv6AddressCountHasBeenSet(false)
 {
 }
 
@@ -61,7 +64,10 @@ InstanceNetworkInterfaceSpecification::InstanceNetworkInterfaceSpecification(con
     m_secondaryPrivateIpAddressCount(0),
     m_secondaryPrivateIpAddressCountHasBeenSet(false),
     m_associatePublicIpAddress(false),
-    m_associatePublicIpAddressHasBeenSet(false)
+    m_associatePublicIpAddressHasBeenSet(false),
+    m_ipv6AddressesHasBeenSet(false),
+    m_ipv6AddressCount(0),
+    m_ipv6AddressCountHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -144,6 +150,24 @@ InstanceNetworkInterfaceSpecification& InstanceNetworkInterfaceSpecification::op
       m_associatePublicIpAddress = StringUtils::ConvertToBool(StringUtils::Trim(associatePublicIpAddressNode.GetText().c_str()).c_str());
       m_associatePublicIpAddressHasBeenSet = true;
     }
+    XmlNode ipv6AddressesNode = resultNode.FirstChild("ipv6AddressesSet");
+    if(!ipv6AddressesNode.IsNull())
+    {
+      XmlNode ipv6AddressesMember = ipv6AddressesNode.FirstChild("item");
+      while(!ipv6AddressesMember.IsNull())
+      {
+        m_ipv6Addresses.push_back(ipv6AddressesMember);
+        ipv6AddressesMember = ipv6AddressesMember.NextNode("item");
+      }
+
+      m_ipv6AddressesHasBeenSet = true;
+    }
+    XmlNode ipv6AddressCountNode = resultNode.FirstChild("ipv6AddressCount");
+    if(!ipv6AddressCountNode.IsNull())
+    {
+      m_ipv6AddressCount = StringUtils::ConvertToInt32(StringUtils::Trim(ipv6AddressCountNode.GetText().c_str()).c_str());
+      m_ipv6AddressCountHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -211,6 +235,22 @@ void InstanceNetworkInterfaceSpecification::OutputToStream(Aws::OStream& oStream
       oStream << location << index << locationValue << ".AssociatePublicIpAddress=" << m_associatePublicIpAddress << "&";
   }
 
+  if(m_ipv6AddressesHasBeenSet)
+  {
+      unsigned ipv6AddressesIdx = 1;
+      for(auto& item : m_ipv6Addresses)
+      {
+        Aws::StringStream ipv6AddressesSs;
+        ipv6AddressesSs << location << index << locationValue << ".Ipv6AddressesSet." << ipv6AddressesIdx++;
+        item.OutputToStream(oStream, ipv6AddressesSs.str().c_str());
+      }
+  }
+
+  if(m_ipv6AddressCountHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Ipv6AddressCount=" << m_ipv6AddressCount << "&";
+  }
+
 }
 
 void InstanceNetworkInterfaceSpecification::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -264,6 +304,20 @@ void InstanceNetworkInterfaceSpecification::OutputToStream(Aws::OStream& oStream
   if(m_associatePublicIpAddressHasBeenSet)
   {
       oStream << location << ".AssociatePublicIpAddress=" << m_associatePublicIpAddress << "&";
+  }
+  if(m_ipv6AddressesHasBeenSet)
+  {
+      unsigned ipv6AddressesIdx = 1;
+      for(auto& item : m_ipv6Addresses)
+      {
+        Aws::StringStream ipv6AddressesSs;
+        ipv6AddressesSs << location <<  ".item." << ipv6AddressesIdx++;
+        item.OutputToStream(oStream, ipv6AddressesSs.str().c_str());
+      }
+  }
+  if(m_ipv6AddressCountHasBeenSet)
+  {
+      oStream << location << ".Ipv6AddressCount=" << m_ipv6AddressCount << "&";
   }
 }
 

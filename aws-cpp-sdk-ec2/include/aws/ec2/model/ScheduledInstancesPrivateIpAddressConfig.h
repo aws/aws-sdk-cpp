@@ -32,7 +32,10 @@ namespace Model
 {
 
   /**
-   * <p>Describes a private IP address for a Scheduled Instance.</p>
+   * <p>Describes a private IPv4 address for a Scheduled Instance.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ScheduledInstancesPrivateIpAddressConfig">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API ScheduledInstancesPrivateIpAddressConfig
   {
@@ -45,55 +48,55 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     /**
-     * <p>The IP address.</p>
+     * <p>The IPv4 address.</p>
      */
     inline const Aws::String& GetPrivateIpAddress() const{ return m_privateIpAddress; }
 
     /**
-     * <p>The IP address.</p>
+     * <p>The IPv4 address.</p>
      */
     inline void SetPrivateIpAddress(const Aws::String& value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress = value; }
 
     /**
-     * <p>The IP address.</p>
+     * <p>The IPv4 address.</p>
      */
     inline void SetPrivateIpAddress(Aws::String&& value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress = value; }
 
     /**
-     * <p>The IP address.</p>
+     * <p>The IPv4 address.</p>
      */
     inline void SetPrivateIpAddress(const char* value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress.assign(value); }
 
     /**
-     * <p>The IP address.</p>
+     * <p>The IPv4 address.</p>
      */
     inline ScheduledInstancesPrivateIpAddressConfig& WithPrivateIpAddress(const Aws::String& value) { SetPrivateIpAddress(value); return *this;}
 
     /**
-     * <p>The IP address.</p>
+     * <p>The IPv4 address.</p>
      */
     inline ScheduledInstancesPrivateIpAddressConfig& WithPrivateIpAddress(Aws::String&& value) { SetPrivateIpAddress(value); return *this;}
 
     /**
-     * <p>The IP address.</p>
+     * <p>The IPv4 address.</p>
      */
     inline ScheduledInstancesPrivateIpAddressConfig& WithPrivateIpAddress(const char* value) { SetPrivateIpAddress(value); return *this;}
 
     /**
-     * <p>Indicates whether this is a primary IP address. Otherwise, this is a
-     * secondary IP address.</p>
+     * <p>Indicates whether this is a primary IPv4 address. Otherwise, this is a
+     * secondary IPv4 address.</p>
      */
     inline bool GetPrimary() const{ return m_primary; }
 
     /**
-     * <p>Indicates whether this is a primary IP address. Otherwise, this is a
-     * secondary IP address.</p>
+     * <p>Indicates whether this is a primary IPv4 address. Otherwise, this is a
+     * secondary IPv4 address.</p>
      */
     inline void SetPrimary(bool value) { m_primaryHasBeenSet = true; m_primary = value; }
 
     /**
-     * <p>Indicates whether this is a primary IP address. Otherwise, this is a
-     * secondary IP address.</p>
+     * <p>Indicates whether this is a primary IPv4 address. Otherwise, this is a
+     * secondary IPv4 address.</p>
      */
     inline ScheduledInstancesPrivateIpAddressConfig& WithPrimary(bool value) { SetPrimary(value); return *this;}
 

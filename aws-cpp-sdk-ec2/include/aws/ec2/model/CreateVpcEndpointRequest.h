@@ -26,7 +26,9 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for CreateVpcEndpoint.</p>
+   * <p>Contains the parameters for CreateVpcEndpoint.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpcEndpointRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API CreateVpcEndpointRequest : public EC2Request
   {
@@ -95,49 +97,49 @@ namespace Model
 
     /**
      * <p>The AWS service name, in the form
-     * <code>com.amazonaws.<i>region</i>.<i>service</i></code>. To get a list of
+     * <code>com.amazonaws.<i>region</i>.<i>service</i> </code>. To get a list of
      * available services, use the <a>DescribeVpcEndpointServices</a> request.</p>
      */
     inline const Aws::String& GetServiceName() const{ return m_serviceName; }
 
     /**
      * <p>The AWS service name, in the form
-     * <code>com.amazonaws.<i>region</i>.<i>service</i></code>. To get a list of
+     * <code>com.amazonaws.<i>region</i>.<i>service</i> </code>. To get a list of
      * available services, use the <a>DescribeVpcEndpointServices</a> request.</p>
      */
     inline void SetServiceName(const Aws::String& value) { m_serviceNameHasBeenSet = true; m_serviceName = value; }
 
     /**
      * <p>The AWS service name, in the form
-     * <code>com.amazonaws.<i>region</i>.<i>service</i></code>. To get a list of
+     * <code>com.amazonaws.<i>region</i>.<i>service</i> </code>. To get a list of
      * available services, use the <a>DescribeVpcEndpointServices</a> request.</p>
      */
     inline void SetServiceName(Aws::String&& value) { m_serviceNameHasBeenSet = true; m_serviceName = value; }
 
     /**
      * <p>The AWS service name, in the form
-     * <code>com.amazonaws.<i>region</i>.<i>service</i></code>. To get a list of
+     * <code>com.amazonaws.<i>region</i>.<i>service</i> </code>. To get a list of
      * available services, use the <a>DescribeVpcEndpointServices</a> request.</p>
      */
     inline void SetServiceName(const char* value) { m_serviceNameHasBeenSet = true; m_serviceName.assign(value); }
 
     /**
      * <p>The AWS service name, in the form
-     * <code>com.amazonaws.<i>region</i>.<i>service</i></code>. To get a list of
+     * <code>com.amazonaws.<i>region</i>.<i>service</i> </code>. To get a list of
      * available services, use the <a>DescribeVpcEndpointServices</a> request.</p>
      */
     inline CreateVpcEndpointRequest& WithServiceName(const Aws::String& value) { SetServiceName(value); return *this;}
 
     /**
      * <p>The AWS service name, in the form
-     * <code>com.amazonaws.<i>region</i>.<i>service</i></code>. To get a list of
+     * <code>com.amazonaws.<i>region</i>.<i>service</i> </code>. To get a list of
      * available services, use the <a>DescribeVpcEndpointServices</a> request.</p>
      */
     inline CreateVpcEndpointRequest& WithServiceName(Aws::String&& value) { SetServiceName(value); return *this;}
 
     /**
      * <p>The AWS service name, in the form
-     * <code>com.amazonaws.<i>region</i>.<i>service</i></code>. To get a list of
+     * <code>com.amazonaws.<i>region</i>.<i>service</i> </code>. To get a list of
      * available services, use the <a>DescribeVpcEndpointServices</a> request.</p>
      */
     inline CreateVpcEndpointRequest& WithServiceName(const char* value) { SetServiceName(value); return *this;}
@@ -145,49 +147,49 @@ namespace Model
     /**
      * <p>A policy to attach to the endpoint that controls access to the service. The
      * policy must be in valid JSON format. If this parameter is not specified, we
-     * attach a default policy that allows full access to the service. </p>
+     * attach a default policy that allows full access to the service.</p>
      */
     inline const Aws::String& GetPolicyDocument() const{ return m_policyDocument; }
 
     /**
      * <p>A policy to attach to the endpoint that controls access to the service. The
      * policy must be in valid JSON format. If this parameter is not specified, we
-     * attach a default policy that allows full access to the service. </p>
+     * attach a default policy that allows full access to the service.</p>
      */
     inline void SetPolicyDocument(const Aws::String& value) { m_policyDocumentHasBeenSet = true; m_policyDocument = value; }
 
     /**
      * <p>A policy to attach to the endpoint that controls access to the service. The
      * policy must be in valid JSON format. If this parameter is not specified, we
-     * attach a default policy that allows full access to the service. </p>
+     * attach a default policy that allows full access to the service.</p>
      */
     inline void SetPolicyDocument(Aws::String&& value) { m_policyDocumentHasBeenSet = true; m_policyDocument = value; }
 
     /**
      * <p>A policy to attach to the endpoint that controls access to the service. The
      * policy must be in valid JSON format. If this parameter is not specified, we
-     * attach a default policy that allows full access to the service. </p>
+     * attach a default policy that allows full access to the service.</p>
      */
     inline void SetPolicyDocument(const char* value) { m_policyDocumentHasBeenSet = true; m_policyDocument.assign(value); }
 
     /**
      * <p>A policy to attach to the endpoint that controls access to the service. The
      * policy must be in valid JSON format. If this parameter is not specified, we
-     * attach a default policy that allows full access to the service. </p>
+     * attach a default policy that allows full access to the service.</p>
      */
     inline CreateVpcEndpointRequest& WithPolicyDocument(const Aws::String& value) { SetPolicyDocument(value); return *this;}
 
     /**
      * <p>A policy to attach to the endpoint that controls access to the service. The
      * policy must be in valid JSON format. If this parameter is not specified, we
-     * attach a default policy that allows full access to the service. </p>
+     * attach a default policy that allows full access to the service.</p>
      */
     inline CreateVpcEndpointRequest& WithPolicyDocument(Aws::String&& value) { SetPolicyDocument(value); return *this;}
 
     /**
      * <p>A policy to attach to the endpoint that controls access to the service. The
      * policy must be in valid JSON format. If this parameter is not specified, we
-     * attach a default policy that allows full access to the service. </p>
+     * attach a default policy that allows full access to the service.</p>
      */
     inline CreateVpcEndpointRequest& WithPolicyDocument(const char* value) { SetPolicyDocument(value); return *this;}
 

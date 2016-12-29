@@ -43,6 +43,7 @@ GetObjectRequest::GetObjectRequest() :
     m_sSECustomerAlgorithmHasBeenSet(false),
     m_sSECustomerKeyHasBeenSet(false),
     m_sSECustomerKeyMD5HasBeenSet(false),
+    m_requestPayer(RequestPayer::NOT_SET),
     m_requestPayerHasBeenSet(false),
     m_partNumber(0),
     m_partNumberHasBeenSet(false)

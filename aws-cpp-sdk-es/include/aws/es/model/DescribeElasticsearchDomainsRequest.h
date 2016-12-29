@@ -28,7 +28,9 @@ namespace Model
   /**
    * <p>Container for the parameters to the
    * <code><a>DescribeElasticsearchDomains</a></code> operation. By default, the API
-   * returns the status of all Elasticsearch domains.</p>
+   * returns the status of all Elasticsearch domains.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DescribeElasticsearchDomainsRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICSEARCHSERVICE_API DescribeElasticsearchDomainsRequest : public ElasticsearchServiceRequest
   {

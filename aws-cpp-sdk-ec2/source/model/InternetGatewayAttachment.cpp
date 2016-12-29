@@ -31,12 +31,14 @@ namespace Model
 
 InternetGatewayAttachment::InternetGatewayAttachment() : 
     m_vpcIdHasBeenSet(false),
+    m_state(AttachmentStatus::NOT_SET),
     m_stateHasBeenSet(false)
 {
 }
 
 InternetGatewayAttachment::InternetGatewayAttachment(const XmlNode& xmlNode) : 
     m_vpcIdHasBeenSet(false),
+    m_state(AttachmentStatus::NOT_SET),
     m_stateHasBeenSet(false)
 {
   *this = xmlNode;

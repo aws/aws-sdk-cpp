@@ -28,12 +28,14 @@ namespace Model
 {
 
 InstanceGroupStateChangeReason::InstanceGroupStateChangeReason() : 
+    m_code(InstanceGroupStateChangeReasonCode::NOT_SET),
     m_codeHasBeenSet(false),
     m_messageHasBeenSet(false)
 {
 }
 
 InstanceGroupStateChangeReason::InstanceGroupStateChangeReason(const JsonValue& jsonValue) : 
+    m_code(InstanceGroupStateChangeReasonCode::NOT_SET),
     m_codeHasBeenSet(false),
     m_messageHasBeenSet(false)
 {

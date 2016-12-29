@@ -25,7 +25,10 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input for <code>ListTagsForStream</code>.</p>
+   * <p>Represents the input for <code>ListTagsForStream</code>.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/ListTagsForStreamInput">AWS
+   * API Reference</a></p>
    */
   class AWS_KINESIS_API ListTagsForStreamRequest : public KinesisRequest
   {

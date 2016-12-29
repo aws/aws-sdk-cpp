@@ -25,6 +25,7 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 CreateFunctionResult::CreateFunctionResult() : 
+    m_runtime(Runtime::NOT_SET),
     m_codeSize(0),
     m_timeout(0),
     m_memorySize(0)
@@ -32,6 +33,7 @@ CreateFunctionResult::CreateFunctionResult() :
 }
 
 CreateFunctionResult::CreateFunctionResult(const AmazonWebServiceResult<JsonValue>& result) : 
+    m_runtime(Runtime::NOT_SET),
     m_codeSize(0),
     m_timeout(0),
     m_memorySize(0)
@@ -117,6 +119,24 @@ CreateFunctionResult& CreateFunctionResult::operator =(const AmazonWebServiceRes
   if(jsonValue.ValueExists("VpcConfig"))
   {
     m_vpcConfig = jsonValue.GetObject("VpcConfig");
+
+  }
+
+  if(jsonValue.ValueExists("DeadLetterConfig"))
+  {
+    m_deadLetterConfig = jsonValue.GetObject("DeadLetterConfig");
+
+  }
+
+  if(jsonValue.ValueExists("Environment"))
+  {
+    m_environment = jsonValue.GetObject("Environment");
+
+  }
+
+  if(jsonValue.ValueExists("KMSKeyArn"))
+  {
+    m_kMSKeyArn = jsonValue.GetString("KMSKeyArn");
 
   }
 

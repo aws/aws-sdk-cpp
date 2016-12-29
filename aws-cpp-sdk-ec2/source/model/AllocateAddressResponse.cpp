@@ -26,11 +26,13 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-AllocateAddressResponse::AllocateAddressResponse()
+AllocateAddressResponse::AllocateAddressResponse() : 
+    m_domain(DomainType::NOT_SET)
 {
 }
 
-AllocateAddressResponse::AllocateAddressResponse(const AmazonWebServiceResult<XmlDocument>& result)
+AllocateAddressResponse::AllocateAddressResponse(const AmazonWebServiceResult<XmlDocument>& result) : 
+    m_domain(DomainType::NOT_SET)
 {
   *this = result;
 }

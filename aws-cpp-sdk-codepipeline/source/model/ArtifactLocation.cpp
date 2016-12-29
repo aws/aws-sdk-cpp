@@ -28,12 +28,14 @@ namespace Model
 {
 
 ArtifactLocation::ArtifactLocation() : 
+    m_type(ArtifactLocationType::NOT_SET),
     m_typeHasBeenSet(false),
     m_s3LocationHasBeenSet(false)
 {
 }
 
 ArtifactLocation::ArtifactLocation(const JsonValue& jsonValue) : 
+    m_type(ArtifactLocationType::NOT_SET),
     m_typeHasBeenSet(false),
     m_s3LocationHasBeenSet(false)
 {

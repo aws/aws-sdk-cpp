@@ -32,7 +32,9 @@ namespace Model
 
   /**
    * <p> Describes the Amazon Kinesis stream that is configured as the streaming
-   * source in the application input configuration. </p>
+   * source in the application input configuration. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/KinesisStreamsInputDescription">AWS
+   * API Reference</a></p>
    */
   class AWS_KINESISANALYTICS_API KinesisStreamsInputDescription
   {

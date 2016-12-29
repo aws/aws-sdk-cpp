@@ -32,7 +32,10 @@ namespace Model
 {
 
   /**
-   * <p>Data used to transfer a certificate to an AWS account.</p>
+   * <p>Data used to transfer a certificate to an AWS account.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/TransferData">AWS
+   * API Reference</a></p>
    */
   class AWS_IOT_API TransferData
   {

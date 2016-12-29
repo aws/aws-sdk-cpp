@@ -1,5 +1,8 @@
-cmake_minimum_required(VERSION 2.8.12)
-project(aws-cpp-sdk-identity-management)
+add_project(aws-cpp-sdk-identity-management 
+    "High-level C++ SDK for identity management against AWS" 
+    aws-cpp-sdk-cognito-identity 
+    aws-cpp-sdk-sts
+    aws-cpp-sdk-core)
 
 file(GLOB AWS_IDENTITY_PROVIDER_HEADERS
     "include/aws/identity-management/auth/*.h"
@@ -27,44 +30,26 @@ file(GLOB IDENTITY_MGMT_SRC
 
 set(IDENTITY_MGMT_INCLUDES
     "${CMAKE_CURRENT_SOURCE_DIR}/include/"
-    "${AWS_NATIVE_SDK_ROOT}/aws-cpp-sdk-cognito-identity/include/"
-    "${CORE_DIR}/include/"
   )
 
 include_directories(${IDENTITY_MGMT_INCLUDES})
 
 if(USE_WINDOWS_DLL_SEMANTICS AND BUILD_SHARED_LIBS)
     add_definitions("-DAWS_IDENTITY_MANAGEMENT_EXPORTS")
-    add_definitions(-DGTEST_LINKED_AS_SHARED_LIBRARY=1)
 endif()
 
-add_library(aws-cpp-sdk-identity-management ${LIBTYPE} ${IDENTITY_MGMT_SRC})
+add_library(${PROJECT_NAME} ${LIBTYPE} ${IDENTITY_MGMT_SRC})
+add_library(AWS::${PROJECT_NAME} ALIAS ${PROJECT_NAME})
 
-target_include_directories(aws-cpp-sdk-identity-management PUBLIC
+target_include_directories(${PROJECT_NAME} PUBLIC
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
         $<INSTALL_INTERFACE:include>)
-target_link_libraries(aws-cpp-sdk-identity-management aws-cpp-sdk-cognito-identity)
+target_link_libraries(${PROJECT_NAME} ${PROJECT_LIBS})
 
-if(SIMPLE_INSTALL)
-    install (TARGETS aws-cpp-sdk-identity-management
-            ARCHIVE DESTINATION ${ARCHIVE_DIRECTORY}
-            LIBRARY DESTINATION lib
-            RUNTIME DESTINATION bin)
-else()
-    if(PLATFORM_CUSTOM)
-        install_custom_library(aws-cpp-sdk-identity-management)
-    else()
-        install (TARGETS aws-cpp-sdk-identity-management
-                 ARCHIVE DESTINATION ${ARCHIVE_DIRECTORY}/${SDK_INSTALL_BINARY_PREFIX}/${PLATFORM_INSTALL_QUALIFIER}/\${CMAKE_INSTALL_CONFIG_NAME}
-                 LIBRARY DESTINATION lib/${SDK_INSTALL_BINARY_PREFIX}/${PLATFORM_INSTALL_QUALIFIER}/\${CMAKE_INSTALL_CONFIG_NAME}
-                 RUNTIME DESTINATION bin/${SDK_INSTALL_BINARY_PREFIX}/${PLATFORM_INSTALL_QUALIFIER}/\${CMAKE_INSTALL_CONFIG_NAME})
-    endif()
-endif()
+setup_install()
 
-install (FILES ${AWS_IDENTITY_HEADERS} DESTINATION include/aws/identity-management)
-install (FILES ${AWS_IDENTITY_PROVIDER_HEADERS} DESTINATION include/aws/identity-management/auth)
+install (FILES ${AWS_IDENTITY_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/identity-management)
+install (FILES ${AWS_IDENTITY_PROVIDER_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/identity-management/auth)
 
+do_packaging()
 
-if(PLATFORM_WINDOWS AND MSVC)
-    install (FILES nuget/aws-cpp-sdk-identity-management.autopkg DESTINATION nuget)
-endif()

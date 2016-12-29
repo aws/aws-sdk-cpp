@@ -28,8 +28,10 @@ namespace Model
 {
 
 ScalableTarget::ScalableTarget() : 
+    m_serviceNamespace(ServiceNamespace::NOT_SET),
     m_serviceNamespaceHasBeenSet(false),
     m_resourceIdHasBeenSet(false),
+    m_scalableDimension(ScalableDimension::NOT_SET),
     m_scalableDimensionHasBeenSet(false),
     m_minCapacity(0),
     m_minCapacityHasBeenSet(false),
@@ -41,8 +43,10 @@ ScalableTarget::ScalableTarget() :
 }
 
 ScalableTarget::ScalableTarget(const JsonValue& jsonValue) : 
+    m_serviceNamespace(ServiceNamespace::NOT_SET),
     m_serviceNamespaceHasBeenSet(false),
     m_resourceIdHasBeenSet(false),
+    m_scalableDimension(ScalableDimension::NOT_SET),
     m_scalableDimensionHasBeenSet(false),
     m_minCapacity(0),
     m_minCapacityHasBeenSet(false),

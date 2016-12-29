@@ -33,7 +33,9 @@ namespace Model
 {
 
   /**
-   * <p>Modify an instance group size.</p>
+   * <p>Modify an instance group size.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/InstanceGroupModifyConfig">AWS
+   * API Reference</a></p>
    */
   class AWS_EMR_API InstanceGroupModifyConfig
   {
@@ -94,49 +96,49 @@ namespace Model
     inline InstanceGroupModifyConfig& WithInstanceCount(int value) { SetInstanceCount(value); return *this;}
 
     /**
-     * <p>The EC2 InstanceIds to terminate. Once you terminate the instances, the
+     * <p>The EC2 InstanceIds to terminate. After you terminate the instances, the
      * instance group will not return to its original requested size.</p>
      */
     inline const Aws::Vector<Aws::String>& GetEC2InstanceIdsToTerminate() const{ return m_eC2InstanceIdsToTerminate; }
 
     /**
-     * <p>The EC2 InstanceIds to terminate. Once you terminate the instances, the
+     * <p>The EC2 InstanceIds to terminate. After you terminate the instances, the
      * instance group will not return to its original requested size.</p>
      */
     inline void SetEC2InstanceIdsToTerminate(const Aws::Vector<Aws::String>& value) { m_eC2InstanceIdsToTerminateHasBeenSet = true; m_eC2InstanceIdsToTerminate = value; }
 
     /**
-     * <p>The EC2 InstanceIds to terminate. Once you terminate the instances, the
+     * <p>The EC2 InstanceIds to terminate. After you terminate the instances, the
      * instance group will not return to its original requested size.</p>
      */
     inline void SetEC2InstanceIdsToTerminate(Aws::Vector<Aws::String>&& value) { m_eC2InstanceIdsToTerminateHasBeenSet = true; m_eC2InstanceIdsToTerminate = value; }
 
     /**
-     * <p>The EC2 InstanceIds to terminate. Once you terminate the instances, the
+     * <p>The EC2 InstanceIds to terminate. After you terminate the instances, the
      * instance group will not return to its original requested size.</p>
      */
     inline InstanceGroupModifyConfig& WithEC2InstanceIdsToTerminate(const Aws::Vector<Aws::String>& value) { SetEC2InstanceIdsToTerminate(value); return *this;}
 
     /**
-     * <p>The EC2 InstanceIds to terminate. Once you terminate the instances, the
+     * <p>The EC2 InstanceIds to terminate. After you terminate the instances, the
      * instance group will not return to its original requested size.</p>
      */
     inline InstanceGroupModifyConfig& WithEC2InstanceIdsToTerminate(Aws::Vector<Aws::String>&& value) { SetEC2InstanceIdsToTerminate(value); return *this;}
 
     /**
-     * <p>The EC2 InstanceIds to terminate. Once you terminate the instances, the
+     * <p>The EC2 InstanceIds to terminate. After you terminate the instances, the
      * instance group will not return to its original requested size.</p>
      */
     inline InstanceGroupModifyConfig& AddEC2InstanceIdsToTerminate(const Aws::String& value) { m_eC2InstanceIdsToTerminateHasBeenSet = true; m_eC2InstanceIdsToTerminate.push_back(value); return *this; }
 
     /**
-     * <p>The EC2 InstanceIds to terminate. Once you terminate the instances, the
+     * <p>The EC2 InstanceIds to terminate. After you terminate the instances, the
      * instance group will not return to its original requested size.</p>
      */
     inline InstanceGroupModifyConfig& AddEC2InstanceIdsToTerminate(Aws::String&& value) { m_eC2InstanceIdsToTerminateHasBeenSet = true; m_eC2InstanceIdsToTerminate.push_back(value); return *this; }
 
     /**
-     * <p>The EC2 InstanceIds to terminate. Once you terminate the instances, the
+     * <p>The EC2 InstanceIds to terminate. After you terminate the instances, the
      * instance group will not return to its original requested size.</p>
      */
     inline InstanceGroupModifyConfig& AddEC2InstanceIdsToTerminate(const char* value) { m_eC2InstanceIdsToTerminateHasBeenSet = true; m_eC2InstanceIdsToTerminate.push_back(value); return *this; }

@@ -150,40 +150,40 @@ namespace Model
     /**
      * <p>The start date and time and the end date and time of the range for which you
      * want <code>GetSampledRequests</code> to return a sample of requests. Specify the
-     * date and time in Unix time format (in seconds). You can specify any time range
-     * in the previous three hours.</p>
+     * date and time in the following format: <code>"2016-09-27T14:50Z"</code>. You can
+     * specify any time range in the previous three hours.</p>
      */
     inline const TimeWindow& GetTimeWindow() const{ return m_timeWindow; }
 
     /**
      * <p>The start date and time and the end date and time of the range for which you
      * want <code>GetSampledRequests</code> to return a sample of requests. Specify the
-     * date and time in Unix time format (in seconds). You can specify any time range
-     * in the previous three hours.</p>
+     * date and time in the following format: <code>"2016-09-27T14:50Z"</code>. You can
+     * specify any time range in the previous three hours.</p>
      */
     inline void SetTimeWindow(const TimeWindow& value) { m_timeWindowHasBeenSet = true; m_timeWindow = value; }
 
     /**
      * <p>The start date and time and the end date and time of the range for which you
      * want <code>GetSampledRequests</code> to return a sample of requests. Specify the
-     * date and time in Unix time format (in seconds). You can specify any time range
-     * in the previous three hours.</p>
+     * date and time in the following format: <code>"2016-09-27T14:50Z"</code>. You can
+     * specify any time range in the previous three hours.</p>
      */
     inline void SetTimeWindow(TimeWindow&& value) { m_timeWindowHasBeenSet = true; m_timeWindow = value; }
 
     /**
      * <p>The start date and time and the end date and time of the range for which you
      * want <code>GetSampledRequests</code> to return a sample of requests. Specify the
-     * date and time in Unix time format (in seconds). You can specify any time range
-     * in the previous three hours.</p>
+     * date and time in the following format: <code>"2016-09-27T14:50Z"</code>. You can
+     * specify any time range in the previous three hours.</p>
      */
     inline GetSampledRequestsRequest& WithTimeWindow(const TimeWindow& value) { SetTimeWindow(value); return *this;}
 
     /**
      * <p>The start date and time and the end date and time of the range for which you
      * want <code>GetSampledRequests</code> to return a sample of requests. Specify the
-     * date and time in Unix time format (in seconds). You can specify any time range
-     * in the previous three hours.</p>
+     * date and time in the following format: <code>"2016-09-27T14:50Z"</code>. You can
+     * specify any time range in the previous three hours.</p>
      */
     inline GetSampledRequestsRequest& WithTimeWindow(TimeWindow&& value) { SetTimeWindow(value); return *this;}
 

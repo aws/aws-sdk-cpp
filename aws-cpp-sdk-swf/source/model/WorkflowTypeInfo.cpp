@@ -29,6 +29,7 @@ namespace Model
 
 WorkflowTypeInfo::WorkflowTypeInfo() : 
     m_workflowTypeHasBeenSet(false),
+    m_status(RegistrationStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_creationDateHasBeenSet(false),
@@ -38,6 +39,7 @@ WorkflowTypeInfo::WorkflowTypeInfo() :
 
 WorkflowTypeInfo::WorkflowTypeInfo(const JsonValue& jsonValue) : 
     m_workflowTypeHasBeenSet(false),
+    m_status(RegistrationStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_creationDateHasBeenSet(false),

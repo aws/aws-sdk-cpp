@@ -34,7 +34,10 @@ namespace Model
   /**
    * <p>Specifies the part of a web request that you want to inspect the size of and
    * indicates whether you want to add the specification to a
-   * <a>SizeConstraintSet</a> or delete it from a <code>SizeConstraintSet</code>.</p>
+   * <a>SizeConstraintSet</a> or delete it from a
+   * <code>SizeConstraintSet</code>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/SizeConstraintSetUpdate">AWS
+   * API Reference</a></p>
    */
   class AWS_WAF_API SizeConstraintSetUpdate
   {

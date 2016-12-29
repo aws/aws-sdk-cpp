@@ -34,7 +34,9 @@ namespace Model
   /**
    * <p>When you start your application, you provide this configuration, which
    * identifies the input source and the point in the input source at which you want
-   * the application to start processing records.</p>
+   * the application to start processing records.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/InputConfiguration">AWS
+   * API Reference</a></p>
    */
   class AWS_KINESISANALYTICS_API InputConfiguration
   {

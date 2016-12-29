@@ -30,6 +30,7 @@ RestoreObjectRequest::RestoreObjectRequest() :
     m_keyHasBeenSet(false),
     m_versionIdHasBeenSet(false),
     m_restoreRequestHasBeenSet(false),
+    m_requestPayer(RequestPayer::NOT_SET),
     m_requestPayerHasBeenSet(false)
 {
 }

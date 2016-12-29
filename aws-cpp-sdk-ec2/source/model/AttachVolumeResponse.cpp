@@ -27,11 +27,13 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 AttachVolumeResponse::AttachVolumeResponse() : 
+    m_state(VolumeAttachmentState::NOT_SET),
     m_deleteOnTermination(false)
 {
 }
 
 AttachVolumeResponse::AttachVolumeResponse(const AmazonWebServiceResult<XmlDocument>& result) : 
+    m_state(VolumeAttachmentState::NOT_SET),
     m_deleteOnTermination(false)
 {
   *this = result;

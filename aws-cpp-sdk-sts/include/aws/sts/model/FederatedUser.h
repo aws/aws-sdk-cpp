@@ -33,7 +33,9 @@ namespace Model
 
   /**
    * <p>Identifiers for the federated user that is associated with the
-   * credentials.</p>
+   * credentials.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/FederatedUser">AWS
+   * API Reference</a></p>
    */
   class AWS_STS_API FederatedUser
   {

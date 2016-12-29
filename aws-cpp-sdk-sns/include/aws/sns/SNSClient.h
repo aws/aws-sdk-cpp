@@ -17,6 +17,7 @@
 #include <aws/sns/SNSErrors.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -255,15 +256,25 @@ namespace Model
 
         virtual ~SNSClient();
 
+       /**
+        * Converts any request object to a presigned URL with the GET method, using region for the signer and a timeout of 15 minutes.
+        */
+        Aws::String ConvertRequestToPresignedUrl(const AmazonSerializableWebServiceRequest& requestToConvert, const char* region) const;
+
+
         /**
          * <p>Adds a statement to a topic's access control policy, granting access for the
-         * specified AWS accounts to the specified actions.</p>
+         * specified AWS accounts to the specified actions.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/AddPermission">AWS
+         * API Reference</a></p>
          */
         virtual Model::AddPermissionOutcome AddPermission(const Model::AddPermissionRequest& request) const;
 
         /**
          * <p>Adds a statement to a topic's access control policy, granting access for the
-         * specified AWS accounts to the specified actions.</p>
+         * specified AWS accounts to the specified actions.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/AddPermission">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -271,7 +282,9 @@ namespace Model
 
         /**
          * <p>Adds a statement to a topic's access control policy, granting access for the
-         * specified AWS accounts to the specified actions.</p>
+         * specified AWS accounts to the specified actions.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/AddPermission">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -281,7 +294,10 @@ namespace Model
          * <p>Accepts a phone number and indicates whether the phone holder has opted out
          * of receiving SMS messages from your account. You cannot send SMS messages to a
          * number that is opted out.</p> <p>To resume sending messages, you can opt in the
-         * number by using the <code>OptInPhoneNumber</code> action.</p>
+         * number by using the <code>OptInPhoneNumber</code> action.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CheckIfPhoneNumberIsOptedOut">AWS
+         * API Reference</a></p>
          */
         virtual Model::CheckIfPhoneNumberIsOptedOutOutcome CheckIfPhoneNumberIsOptedOut(const Model::CheckIfPhoneNumberIsOptedOutRequest& request) const;
 
@@ -289,7 +305,10 @@ namespace Model
          * <p>Accepts a phone number and indicates whether the phone holder has opted out
          * of receiving SMS messages from your account. You cannot send SMS messages to a
          * number that is opted out.</p> <p>To resume sending messages, you can opt in the
-         * number by using the <code>OptInPhoneNumber</code> action.</p>
+         * number by using the <code>OptInPhoneNumber</code> action.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CheckIfPhoneNumberIsOptedOut">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -299,7 +318,10 @@ namespace Model
          * <p>Accepts a phone number and indicates whether the phone holder has opted out
          * of receiving SMS messages from your account. You cannot send SMS messages to a
          * number that is opted out.</p> <p>To resume sending messages, you can opt in the
-         * number by using the <code>OptInPhoneNumber</code> action.</p>
+         * number by using the <code>OptInPhoneNumber</code> action.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CheckIfPhoneNumberIsOptedOut">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -310,7 +332,10 @@ namespace Model
          * token sent to the endpoint by an earlier <code>Subscribe</code> action. If the
          * token is valid, the action creates a new subscription and returns its Amazon
          * Resource Name (ARN). This call requires an AWS signature only when the
-         * <code>AuthenticateOnUnsubscribe</code> flag is set to "true".</p>
+         * <code>AuthenticateOnUnsubscribe</code> flag is set to "true".</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ConfirmSubscription">AWS
+         * API Reference</a></p>
          */
         virtual Model::ConfirmSubscriptionOutcome ConfirmSubscription(const Model::ConfirmSubscriptionRequest& request) const;
 
@@ -319,7 +344,10 @@ namespace Model
          * token sent to the endpoint by an earlier <code>Subscribe</code> action. If the
          * token is valid, the action creates a new subscription and returns its Amazon
          * Resource Name (ARN). This call requires an AWS signature only when the
-         * <code>AuthenticateOnUnsubscribe</code> flag is set to "true".</p>
+         * <code>AuthenticateOnUnsubscribe</code> flag is set to "true".</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ConfirmSubscription">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -330,7 +358,10 @@ namespace Model
          * token sent to the endpoint by an earlier <code>Subscribe</code> action. If the
          * token is valid, the action creates a new subscription and returns its Amazon
          * Resource Name (ARN). This call requires an AWS signature only when the
-         * <code>AuthenticateOnUnsubscribe</code> flag is set to "true".</p>
+         * <code>AuthenticateOnUnsubscribe</code> flag is set to "true".</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ConfirmSubscription">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -369,7 +400,9 @@ namespace Model
          * href="http://docs.aws.amazon.com/sns/latest/dg/mobile-push-mpns.html">Getting
          * Started with MPNS</a>, or <a
          * href="http://docs.aws.amazon.com/sns/latest/dg/mobile-push-wns.html">Getting
-         * Started with WNS</a>. </p>
+         * Started with WNS</a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CreatePlatformApplication">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreatePlatformApplicationOutcome CreatePlatformApplication(const Model::CreatePlatformApplicationRequest& request) const;
 
@@ -406,7 +439,9 @@ namespace Model
          * href="http://docs.aws.amazon.com/sns/latest/dg/mobile-push-mpns.html">Getting
          * Started with MPNS</a>, or <a
          * href="http://docs.aws.amazon.com/sns/latest/dg/mobile-push-wns.html">Getting
-         * Started with WNS</a>. </p>
+         * Started with WNS</a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CreatePlatformApplication">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -445,7 +480,9 @@ namespace Model
          * href="http://docs.aws.amazon.com/sns/latest/dg/mobile-push-mpns.html">Getting
          * Started with MPNS</a>, or <a
          * href="http://docs.aws.amazon.com/sns/latest/dg/mobile-push-wns.html">Getting
-         * Started with WNS</a>. </p>
+         * Started with WNS</a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CreatePlatformApplication">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -469,7 +506,9 @@ namespace Model
          * ChannelId and UserId. The token field must also contain the ChannelId. For more
          * information, see <a
          * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePushBaiduEndpoint.html">Creating
-         * an Amazon SNS Endpoint for Baidu</a>. </p>
+         * an Amazon SNS Endpoint for Baidu</a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CreatePlatformEndpoint">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreatePlatformEndpointOutcome CreatePlatformEndpoint(const Model::CreatePlatformEndpointRequest& request) const;
 
@@ -491,7 +530,9 @@ namespace Model
          * ChannelId and UserId. The token field must also contain the ChannelId. For more
          * information, see <a
          * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePushBaiduEndpoint.html">Creating
-         * an Amazon SNS Endpoint for Baidu</a>. </p>
+         * an Amazon SNS Endpoint for Baidu</a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CreatePlatformEndpoint">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -515,7 +556,9 @@ namespace Model
          * ChannelId and UserId. The token field must also contain the ChannelId. For more
          * information, see <a
          * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePushBaiduEndpoint.html">Creating
-         * an Amazon SNS Endpoint for Baidu</a>. </p>
+         * an Amazon SNS Endpoint for Baidu</a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CreatePlatformEndpoint">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -526,7 +569,10 @@ namespace Model
          * most 100,000 topics. For more information, see <a
          * href="http://aws.amazon.com/sns/">http://aws.amazon.com/sns</a>. This action is
          * idempotent, so if the requester already owns a topic with the specified name,
-         * that topic's ARN is returned without creating a new topic.</p>
+         * that topic's ARN is returned without creating a new topic.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CreateTopic">AWS API
+         * Reference</a></p>
          */
         virtual Model::CreateTopicOutcome CreateTopic(const Model::CreateTopicRequest& request) const;
 
@@ -535,7 +581,10 @@ namespace Model
          * most 100,000 topics. For more information, see <a
          * href="http://aws.amazon.com/sns/">http://aws.amazon.com/sns</a>. This action is
          * idempotent, so if the requester already owns a topic with the specified name,
-         * that topic's ARN is returned without creating a new topic.</p>
+         * that topic's ARN is returned without creating a new topic.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CreateTopic">AWS API
+         * Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -546,7 +595,10 @@ namespace Model
          * most 100,000 topics. For more information, see <a
          * href="http://aws.amazon.com/sns/">http://aws.amazon.com/sns</a>. This action is
          * idempotent, so if the requester already owns a topic with the specified name,
-         * that topic's ARN is returned without creating a new topic.</p>
+         * that topic's ARN is returned without creating a new topic.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CreateTopic">AWS API
+         * Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -558,7 +610,9 @@ namespace Model
          * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
          * SNS Mobile Push Notifications</a>. </p> <p>When you delete an endpoint that is
          * also subscribed to a topic, then you must also unsubscribe the endpoint from the
-         * topic.</p>
+         * topic.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/DeleteEndpoint">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteEndpointOutcome DeleteEndpoint(const Model::DeleteEndpointRequest& request) const;
 
@@ -568,7 +622,9 @@ namespace Model
          * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
          * SNS Mobile Push Notifications</a>. </p> <p>When you delete an endpoint that is
          * also subscribed to a topic, then you must also unsubscribe the endpoint from the
-         * topic.</p>
+         * topic.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/DeleteEndpoint">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -580,7 +636,9 @@ namespace Model
          * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
          * SNS Mobile Push Notifications</a>. </p> <p>When you delete an endpoint that is
          * also subscribed to a topic, then you must also unsubscribe the endpoint from the
-         * topic.</p>
+         * topic.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/DeleteEndpoint">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -590,7 +648,9 @@ namespace Model
          * <p>Deletes a platform application object for one of the supported push
          * notification services, such as APNS and GCM. For more information, see <a
          * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
-         * SNS Mobile Push Notifications</a>. </p>
+         * SNS Mobile Push Notifications</a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/DeletePlatformApplication">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeletePlatformApplicationOutcome DeletePlatformApplication(const Model::DeletePlatformApplicationRequest& request) const;
 
@@ -598,7 +658,9 @@ namespace Model
          * <p>Deletes a platform application object for one of the supported push
          * notification services, such as APNS and GCM. For more information, see <a
          * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
-         * SNS Mobile Push Notifications</a>. </p>
+         * SNS Mobile Push Notifications</a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/DeletePlatformApplication">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -608,7 +670,9 @@ namespace Model
          * <p>Deletes a platform application object for one of the supported push
          * notification services, such as APNS and GCM. For more information, see <a
          * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
-         * SNS Mobile Push Notifications</a>. </p>
+         * SNS Mobile Push Notifications</a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/DeletePlatformApplication">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -618,7 +682,9 @@ namespace Model
          * <p>Deletes a topic and all its subscriptions. Deleting a topic might prevent
          * some messages previously sent to the topic from being delivered to subscribers.
          * This action is idempotent, so deleting a topic that does not exist does not
-         * result in an error.</p>
+         * result in an error.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/DeleteTopic">AWS API
+         * Reference</a></p>
          */
         virtual Model::DeleteTopicOutcome DeleteTopic(const Model::DeleteTopicRequest& request) const;
 
@@ -626,7 +692,9 @@ namespace Model
          * <p>Deletes a topic and all its subscriptions. Deleting a topic might prevent
          * some messages previously sent to the topic from being delivered to subscribers.
          * This action is idempotent, so deleting a topic that does not exist does not
-         * result in an error.</p>
+         * result in an error.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/DeleteTopic">AWS API
+         * Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -636,7 +704,9 @@ namespace Model
          * <p>Deletes a topic and all its subscriptions. Deleting a topic might prevent
          * some messages previously sent to the topic from being delivered to subscribers.
          * This action is idempotent, so deleting a topic that does not exist does not
-         * result in an error.</p>
+         * result in an error.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/DeleteTopic">AWS API
+         * Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -646,7 +716,9 @@ namespace Model
          * <p>Retrieves the endpoint attributes for a device on one of the supported push
          * notification services, such as GCM and APNS. For more information, see <a
          * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
-         * SNS Mobile Push Notifications</a>. </p>
+         * SNS Mobile Push Notifications</a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetEndpointAttributes">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetEndpointAttributesOutcome GetEndpointAttributes(const Model::GetEndpointAttributesRequest& request) const;
 
@@ -654,7 +726,9 @@ namespace Model
          * <p>Retrieves the endpoint attributes for a device on one of the supported push
          * notification services, such as GCM and APNS. For more information, see <a
          * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
-         * SNS Mobile Push Notifications</a>. </p>
+         * SNS Mobile Push Notifications</a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetEndpointAttributes">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -664,7 +738,9 @@ namespace Model
          * <p>Retrieves the endpoint attributes for a device on one of the supported push
          * notification services, such as GCM and APNS. For more information, see <a
          * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
-         * SNS Mobile Push Notifications</a>. </p>
+         * SNS Mobile Push Notifications</a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetEndpointAttributes">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -674,7 +750,9 @@ namespace Model
          * <p>Retrieves the attributes of the platform application object for the supported
          * push notification services, such as APNS and GCM. For more information, see <a
          * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
-         * SNS Mobile Push Notifications</a>. </p>
+         * SNS Mobile Push Notifications</a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetPlatformApplicationAttributes">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetPlatformApplicationAttributesOutcome GetPlatformApplicationAttributes(const Model::GetPlatformApplicationAttributesRequest& request) const;
 
@@ -682,7 +760,9 @@ namespace Model
          * <p>Retrieves the attributes of the platform application object for the supported
          * push notification services, such as APNS and GCM. For more information, see <a
          * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
-         * SNS Mobile Push Notifications</a>. </p>
+         * SNS Mobile Push Notifications</a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetPlatformApplicationAttributes">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -692,7 +772,9 @@ namespace Model
          * <p>Retrieves the attributes of the platform application object for the supported
          * push notification services, such as APNS and GCM. For more information, see <a
          * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
-         * SNS Mobile Push Notifications</a>. </p>
+         * SNS Mobile Push Notifications</a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetPlatformApplicationAttributes">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -700,13 +782,19 @@ namespace Model
 
         /**
          * <p>Returns the settings for sending SMS messages from your account.</p> <p>These
-         * settings are set with the <code>SetSMSAttributes</code> action.</p>
+         * settings are set with the <code>SetSMSAttributes</code> action.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetSMSAttributes">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetSMSAttributesOutcome GetSMSAttributes(const Model::GetSMSAttributesRequest& request) const;
 
         /**
          * <p>Returns the settings for sending SMS messages from your account.</p> <p>These
-         * settings are set with the <code>SetSMSAttributes</code> action.</p>
+         * settings are set with the <code>SetSMSAttributes</code> action.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetSMSAttributes">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -714,26 +802,38 @@ namespace Model
 
         /**
          * <p>Returns the settings for sending SMS messages from your account.</p> <p>These
-         * settings are set with the <code>SetSMSAttributes</code> action.</p>
+         * settings are set with the <code>SetSMSAttributes</code> action.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetSMSAttributes">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetSMSAttributesAsync(const Model::GetSMSAttributesRequest& request, const GetSMSAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns all of the properties of a subscription.</p>
+         * <p>Returns all of the properties of a subscription.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetSubscriptionAttributes">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetSubscriptionAttributesOutcome GetSubscriptionAttributes(const Model::GetSubscriptionAttributesRequest& request) const;
 
         /**
-         * <p>Returns all of the properties of a subscription.</p>
+         * <p>Returns all of the properties of a subscription.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetSubscriptionAttributes">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetSubscriptionAttributesOutcomeCallable GetSubscriptionAttributesCallable(const Model::GetSubscriptionAttributesRequest& request) const;
 
         /**
-         * <p>Returns all of the properties of a subscription.</p>
+         * <p>Returns all of the properties of a subscription.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetSubscriptionAttributes">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -741,13 +841,17 @@ namespace Model
 
         /**
          * <p>Returns all of the properties of a topic. Topic properties returned might
-         * differ based on the authorization of the user.</p>
+         * differ based on the authorization of the user.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetTopicAttributes">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetTopicAttributesOutcome GetTopicAttributes(const Model::GetTopicAttributesRequest& request) const;
 
         /**
          * <p>Returns all of the properties of a topic. Topic properties returned might
-         * differ based on the authorization of the user.</p>
+         * differ based on the authorization of the user.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetTopicAttributes">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -755,7 +859,9 @@ namespace Model
 
         /**
          * <p>Returns all of the properties of a topic. Topic properties returned might
-         * differ based on the authorization of the user.</p>
+         * differ based on the authorization of the user.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetTopicAttributes">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -771,7 +877,9 @@ namespace Model
          * the NextToken string received from the previous call. When there are no more
          * records to return, NextToken will be null. For more information, see <a
          * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
-         * SNS Mobile Push Notifications</a>. </p>
+         * SNS Mobile Push Notifications</a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListEndpointsByPlatformApplication">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListEndpointsByPlatformApplicationOutcome ListEndpointsByPlatformApplication(const Model::ListEndpointsByPlatformApplicationRequest& request) const;
 
@@ -785,7 +893,9 @@ namespace Model
          * the NextToken string received from the previous call. When there are no more
          * records to return, NextToken will be null. For more information, see <a
          * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
-         * SNS Mobile Push Notifications</a>. </p>
+         * SNS Mobile Push Notifications</a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListEndpointsByPlatformApplication">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -801,7 +911,9 @@ namespace Model
          * the NextToken string received from the previous call. When there are no more
          * records to return, NextToken will be null. For more information, see <a
          * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
-         * SNS Mobile Push Notifications</a>. </p>
+         * SNS Mobile Push Notifications</a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListEndpointsByPlatformApplication">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -815,7 +927,10 @@ namespace Model
          * page of results, then a <code>NextToken</code> string will be returned. To
          * receive the next page, you call <code>ListPhoneNumbersOptedOut</code> again
          * using the <code>NextToken</code> string received from the previous call. When
-         * there are no more records to return, <code>NextToken</code> will be null.</p>
+         * there are no more records to return, <code>NextToken</code> will be
+         * null.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListPhoneNumbersOptedOut">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListPhoneNumbersOptedOutOutcome ListPhoneNumbersOptedOut(const Model::ListPhoneNumbersOptedOutRequest& request) const;
 
@@ -827,7 +942,10 @@ namespace Model
          * page of results, then a <code>NextToken</code> string will be returned. To
          * receive the next page, you call <code>ListPhoneNumbersOptedOut</code> again
          * using the <code>NextToken</code> string received from the previous call. When
-         * there are no more records to return, <code>NextToken</code> will be null.</p>
+         * there are no more records to return, <code>NextToken</code> will be
+         * null.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListPhoneNumbersOptedOut">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -841,7 +959,10 @@ namespace Model
          * page of results, then a <code>NextToken</code> string will be returned. To
          * receive the next page, you call <code>ListPhoneNumbersOptedOut</code> again
          * using the <code>NextToken</code> string received from the previous call. When
-         * there are no more records to return, <code>NextToken</code> will be null.</p>
+         * there are no more records to return, <code>NextToken</code> will be
+         * null.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListPhoneNumbersOptedOut">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -857,7 +978,9 @@ namespace Model
          * received from the previous call. When there are no more records to return,
          * NextToken will be null. For more information, see <a
          * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
-         * SNS Mobile Push Notifications</a>. </p>
+         * SNS Mobile Push Notifications</a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListPlatformApplications">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListPlatformApplicationsOutcome ListPlatformApplications(const Model::ListPlatformApplicationsRequest& request) const;
 
@@ -871,7 +994,9 @@ namespace Model
          * received from the previous call. When there are no more records to return,
          * NextToken will be null. For more information, see <a
          * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
-         * SNS Mobile Push Notifications</a>. </p>
+         * SNS Mobile Push Notifications</a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListPlatformApplications">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -887,7 +1012,9 @@ namespace Model
          * received from the previous call. When there are no more records to return,
          * NextToken will be null. For more information, see <a
          * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
-         * SNS Mobile Push Notifications</a>. </p>
+         * SNS Mobile Push Notifications</a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListPlatformApplications">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -898,7 +1025,9 @@ namespace Model
          * list of subscriptions, up to 100. If there are more subscriptions, a
          * <code>NextToken</code> is also returned. Use the <code>NextToken</code>
          * parameter in a new <code>ListSubscriptions</code> call to get further
-         * results.</p>
+         * results.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListSubscriptions">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListSubscriptionsOutcome ListSubscriptions(const Model::ListSubscriptionsRequest& request) const;
 
@@ -907,7 +1036,9 @@ namespace Model
          * list of subscriptions, up to 100. If there are more subscriptions, a
          * <code>NextToken</code> is also returned. Use the <code>NextToken</code>
          * parameter in a new <code>ListSubscriptions</code> call to get further
-         * results.</p>
+         * results.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListSubscriptions">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -918,7 +1049,9 @@ namespace Model
          * list of subscriptions, up to 100. If there are more subscriptions, a
          * <code>NextToken</code> is also returned. Use the <code>NextToken</code>
          * parameter in a new <code>ListSubscriptions</code> call to get further
-         * results.</p>
+         * results.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListSubscriptions">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -929,7 +1062,9 @@ namespace Model
          * limited list of subscriptions, up to 100. If there are more subscriptions, a
          * <code>NextToken</code> is also returned. Use the <code>NextToken</code>
          * parameter in a new <code>ListSubscriptionsByTopic</code> call to get further
-         * results.</p>
+         * results.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListSubscriptionsByTopic">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListSubscriptionsByTopicOutcome ListSubscriptionsByTopic(const Model::ListSubscriptionsByTopicRequest& request) const;
 
@@ -938,7 +1073,9 @@ namespace Model
          * limited list of subscriptions, up to 100. If there are more subscriptions, a
          * <code>NextToken</code> is also returned. Use the <code>NextToken</code>
          * parameter in a new <code>ListSubscriptionsByTopic</code> call to get further
-         * results.</p>
+         * results.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListSubscriptionsByTopic">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -949,7 +1086,9 @@ namespace Model
          * limited list of subscriptions, up to 100. If there are more subscriptions, a
          * <code>NextToken</code> is also returned. Use the <code>NextToken</code>
          * parameter in a new <code>ListSubscriptionsByTopic</code> call to get further
-         * results.</p>
+         * results.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListSubscriptionsByTopic">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -959,7 +1098,9 @@ namespace Model
          * <p>Returns a list of the requester's topics. Each call returns a limited list of
          * topics, up to 100. If there are more topics, a <code>NextToken</code> is also
          * returned. Use the <code>NextToken</code> parameter in a new
-         * <code>ListTopics</code> call to get further results.</p>
+         * <code>ListTopics</code> call to get further results.</p><p><h3>See Also:</h3>  
+         * <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListTopics">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListTopicsOutcome ListTopics(const Model::ListTopicsRequest& request) const;
 
@@ -967,7 +1108,9 @@ namespace Model
          * <p>Returns a list of the requester's topics. Each call returns a limited list of
          * topics, up to 100. If there are more topics, a <code>NextToken</code> is also
          * returned. Use the <code>NextToken</code> parameter in a new
-         * <code>ListTopics</code> call to get further results.</p>
+         * <code>ListTopics</code> call to get further results.</p><p><h3>See Also:</h3>  
+         * <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListTopics">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -977,7 +1120,9 @@ namespace Model
          * <p>Returns a list of the requester's topics. Each call returns a limited list of
          * topics, up to 100. If there are more topics, a <code>NextToken</code> is also
          * returned. Use the <code>NextToken</code> parameter in a new
-         * <code>ListTopics</code> call to get further results.</p>
+         * <code>ListTopics</code> call to get further results.</p><p><h3>See Also:</h3>  
+         * <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListTopics">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -986,14 +1131,18 @@ namespace Model
         /**
          * <p>Use this request to opt in a phone number that is opted out, which enables
          * you to resume sending SMS messages to the number.</p> <p>You can opt in a phone
-         * number only once every 30 days.</p>
+         * number only once every 30 days.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/OptInPhoneNumber">AWS
+         * API Reference</a></p>
          */
         virtual Model::OptInPhoneNumberOutcome OptInPhoneNumber(const Model::OptInPhoneNumberRequest& request) const;
 
         /**
          * <p>Use this request to opt in a phone number that is opted out, which enables
          * you to resume sending SMS messages to the number.</p> <p>You can opt in a phone
-         * number only once every 30 days.</p>
+         * number only once every 30 days.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/OptInPhoneNumber">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1002,7 +1151,9 @@ namespace Model
         /**
          * <p>Use this request to opt in a phone number that is opted out, which enables
          * you to resume sending SMS messages to the number.</p> <p>You can opt in a phone
-         * number only once every 30 days.</p>
+         * number only once every 30 days.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/OptInPhoneNumber">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1019,7 +1170,10 @@ namespace Model
          * when making a call with the <code>CreatePlatformEndpoint</code> action. </p>
          * <p>For more information about formatting messages, see <a
          * href="http://docs.aws.amazon.com/sns/latest/dg/mobile-push-send-custommessage.html">Send
-         * Custom Platform-Specific Payloads in Messages to Mobile Devices</a>. </p>
+         * Custom Platform-Specific Payloads in Messages to Mobile Devices</a>.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Publish">AWS API
+         * Reference</a></p>
          */
         virtual Model::PublishOutcome Publish(const Model::PublishRequest& request) const;
 
@@ -1034,7 +1188,10 @@ namespace Model
          * when making a call with the <code>CreatePlatformEndpoint</code> action. </p>
          * <p>For more information about formatting messages, see <a
          * href="http://docs.aws.amazon.com/sns/latest/dg/mobile-push-send-custommessage.html">Send
-         * Custom Platform-Specific Payloads in Messages to Mobile Devices</a>. </p>
+         * Custom Platform-Specific Payloads in Messages to Mobile Devices</a>.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Publish">AWS API
+         * Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1051,26 +1208,38 @@ namespace Model
          * when making a call with the <code>CreatePlatformEndpoint</code> action. </p>
          * <p>For more information about formatting messages, see <a
          * href="http://docs.aws.amazon.com/sns/latest/dg/mobile-push-send-custommessage.html">Send
-         * Custom Platform-Specific Payloads in Messages to Mobile Devices</a>. </p>
+         * Custom Platform-Specific Payloads in Messages to Mobile Devices</a>.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Publish">AWS API
+         * Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void PublishAsync(const Model::PublishRequest& request, const PublishResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Removes a statement from a topic's access control policy.</p>
+         * <p>Removes a statement from a topic's access control policy.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/RemovePermission">AWS
+         * API Reference</a></p>
          */
         virtual Model::RemovePermissionOutcome RemovePermission(const Model::RemovePermissionRequest& request) const;
 
         /**
-         * <p>Removes a statement from a topic's access control policy.</p>
+         * <p>Removes a statement from a topic's access control policy.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/RemovePermission">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::RemovePermissionOutcomeCallable RemovePermissionCallable(const Model::RemovePermissionRequest& request) const;
 
         /**
-         * <p>Removes a statement from a topic's access control policy.</p>
+         * <p>Removes a statement from a topic's access control policy.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/RemovePermission">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1080,7 +1249,9 @@ namespace Model
          * <p>Sets the attributes for an endpoint for a device on one of the supported push
          * notification services, such as GCM and APNS. For more information, see <a
          * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
-         * SNS Mobile Push Notifications</a>. </p>
+         * SNS Mobile Push Notifications</a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetEndpointAttributes">AWS
+         * API Reference</a></p>
          */
         virtual Model::SetEndpointAttributesOutcome SetEndpointAttributes(const Model::SetEndpointAttributesRequest& request) const;
 
@@ -1088,7 +1259,9 @@ namespace Model
          * <p>Sets the attributes for an endpoint for a device on one of the supported push
          * notification services, such as GCM and APNS. For more information, see <a
          * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
-         * SNS Mobile Push Notifications</a>. </p>
+         * SNS Mobile Push Notifications</a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetEndpointAttributes">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1098,7 +1271,9 @@ namespace Model
          * <p>Sets the attributes for an endpoint for a device on one of the supported push
          * notification services, such as GCM and APNS. For more information, see <a
          * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
-         * SNS Mobile Push Notifications</a>. </p>
+         * SNS Mobile Push Notifications</a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetEndpointAttributes">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1111,7 +1286,10 @@ namespace Model
          * SNS Mobile Push Notifications</a>. For information on configuring attributes for
          * message delivery status, see <a
          * href="http://docs.aws.amazon.com/sns/latest/dg/sns-msg-status.html">Using Amazon
-         * SNS Application Attributes for Message Delivery Status</a>. </p>
+         * SNS Application Attributes for Message Delivery Status</a>. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetPlatformApplicationAttributes">AWS
+         * API Reference</a></p>
          */
         virtual Model::SetPlatformApplicationAttributesOutcome SetPlatformApplicationAttributes(const Model::SetPlatformApplicationAttributesRequest& request) const;
 
@@ -1122,7 +1300,10 @@ namespace Model
          * SNS Mobile Push Notifications</a>. For information on configuring attributes for
          * message delivery status, see <a
          * href="http://docs.aws.amazon.com/sns/latest/dg/sns-msg-status.html">Using Amazon
-         * SNS Application Attributes for Message Delivery Status</a>. </p>
+         * SNS Application Attributes for Message Delivery Status</a>. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetPlatformApplicationAttributes">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1135,7 +1316,10 @@ namespace Model
          * SNS Mobile Push Notifications</a>. For information on configuring attributes for
          * message delivery status, see <a
          * href="http://docs.aws.amazon.com/sns/latest/dg/sns-msg-status.html">Using Amazon
-         * SNS Application Attributes for Message Delivery Status</a>. </p>
+         * SNS Application Attributes for Message Delivery Status</a>. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetPlatformApplicationAttributes">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1148,7 +1332,10 @@ namespace Model
          * the <code>MessageAttributes.entry.N</code> parameter. For more information, see
          * <a
          * href="http://docs.aws.amazon.com/sns/latest/dg/sms_publish-to-phone.html">Sending
-         * an SMS Message</a> in the <i>Amazon SNS Developer Guide</i>.</p>
+         * an SMS Message</a> in the <i>Amazon SNS Developer Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetSMSAttributes">AWS
+         * API Reference</a></p>
          */
         virtual Model::SetSMSAttributesOutcome SetSMSAttributes(const Model::SetSMSAttributesRequest& request) const;
 
@@ -1159,7 +1346,10 @@ namespace Model
          * the <code>MessageAttributes.entry.N</code> parameter. For more information, see
          * <a
          * href="http://docs.aws.amazon.com/sns/latest/dg/sms_publish-to-phone.html">Sending
-         * an SMS Message</a> in the <i>Amazon SNS Developer Guide</i>.</p>
+         * an SMS Message</a> in the <i>Amazon SNS Developer Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetSMSAttributes">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1172,7 +1362,10 @@ namespace Model
          * the <code>MessageAttributes.entry.N</code> parameter. For more information, see
          * <a
          * href="http://docs.aws.amazon.com/sns/latest/dg/sms_publish-to-phone.html">Sending
-         * an SMS Message</a> in the <i>Amazon SNS Developer Guide</i>.</p>
+         * an SMS Message</a> in the <i>Amazon SNS Developer Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetSMSAttributes">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1180,13 +1373,17 @@ namespace Model
 
         /**
          * <p>Allows a subscription owner to set an attribute of the topic to a new
-         * value.</p>
+         * value.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetSubscriptionAttributes">AWS
+         * API Reference</a></p>
          */
         virtual Model::SetSubscriptionAttributesOutcome SetSubscriptionAttributes(const Model::SetSubscriptionAttributesRequest& request) const;
 
         /**
          * <p>Allows a subscription owner to set an attribute of the topic to a new
-         * value.</p>
+         * value.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetSubscriptionAttributes">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1194,26 +1391,37 @@ namespace Model
 
         /**
          * <p>Allows a subscription owner to set an attribute of the topic to a new
-         * value.</p>
+         * value.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetSubscriptionAttributes">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void SetSubscriptionAttributesAsync(const Model::SetSubscriptionAttributesRequest& request, const SetSubscriptionAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Allows a topic owner to set an attribute of the topic to a new value.</p>
+         * <p>Allows a topic owner to set an attribute of the topic to a new
+         * value.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetTopicAttributes">AWS
+         * API Reference</a></p>
          */
         virtual Model::SetTopicAttributesOutcome SetTopicAttributes(const Model::SetTopicAttributesRequest& request) const;
 
         /**
-         * <p>Allows a topic owner to set an attribute of the topic to a new value.</p>
+         * <p>Allows a topic owner to set an attribute of the topic to a new
+         * value.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetTopicAttributes">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::SetTopicAttributesOutcomeCallable SetTopicAttributesCallable(const Model::SetTopicAttributesRequest& request) const;
 
         /**
-         * <p>Allows a topic owner to set an attribute of the topic to a new value.</p>
+         * <p>Allows a topic owner to set an attribute of the topic to a new
+         * value.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetTopicAttributes">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1223,7 +1431,9 @@ namespace Model
          * <p>Prepares to subscribe an endpoint by sending the endpoint a confirmation
          * message. To actually create a subscription, the endpoint owner must call the
          * <code>ConfirmSubscription</code> action with the token from the confirmation
-         * message. Confirmation tokens are valid for three days.</p>
+         * message. Confirmation tokens are valid for three days.</p><p><h3>See Also:</h3> 
+         * <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Subscribe">AWS
+         * API Reference</a></p>
          */
         virtual Model::SubscribeOutcome Subscribe(const Model::SubscribeRequest& request) const;
 
@@ -1231,7 +1441,9 @@ namespace Model
          * <p>Prepares to subscribe an endpoint by sending the endpoint a confirmation
          * message. To actually create a subscription, the endpoint owner must call the
          * <code>ConfirmSubscription</code> action with the token from the confirmation
-         * message. Confirmation tokens are valid for three days.</p>
+         * message. Confirmation tokens are valid for three days.</p><p><h3>See Also:</h3> 
+         * <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Subscribe">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1241,7 +1453,9 @@ namespace Model
          * <p>Prepares to subscribe an endpoint by sending the endpoint a confirmation
          * message. To actually create a subscription, the endpoint owner must call the
          * <code>ConfirmSubscription</code> action with the token from the confirmation
-         * message. Confirmation tokens are valid for three days.</p>
+         * message. Confirmation tokens are valid for three days.</p><p><h3>See Also:</h3> 
+         * <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Subscribe">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1254,7 +1468,9 @@ namespace Model
          * call does not require authentication and the requester is not the subscription
          * owner, a final cancellation message is delivered to the endpoint, so that the
          * endpoint owner can easily resubscribe to the topic if the
-         * <code>Unsubscribe</code> request was unintended.</p>
+         * <code>Unsubscribe</code> request was unintended.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Unsubscribe">AWS API
+         * Reference</a></p>
          */
         virtual Model::UnsubscribeOutcome Unsubscribe(const Model::UnsubscribeRequest& request) const;
 
@@ -1265,7 +1481,9 @@ namespace Model
          * call does not require authentication and the requester is not the subscription
          * owner, a final cancellation message is delivered to the endpoint, so that the
          * endpoint owner can easily resubscribe to the topic if the
-         * <code>Unsubscribe</code> request was unintended.</p>
+         * <code>Unsubscribe</code> request was unintended.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Unsubscribe">AWS API
+         * Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1278,7 +1496,9 @@ namespace Model
          * call does not require authentication and the requester is not the subscription
          * owner, a final cancellation message is delivered to the endpoint, so that the
          * endpoint owner can easily resubscribe to the topic if the
-         * <code>Unsubscribe</code> request was unintended.</p>
+         * <code>Unsubscribe</code> request was unintended.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Unsubscribe">AWS API
+         * Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */

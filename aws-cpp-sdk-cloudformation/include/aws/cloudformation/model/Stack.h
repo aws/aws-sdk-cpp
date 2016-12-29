@@ -39,7 +39,9 @@ namespace Model
 {
 
   /**
-   * <p>The Stack data type.</p>
+   * <p>The Stack data type.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/Stack">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDFORMATION_API Stack
   {
@@ -120,6 +122,41 @@ namespace Model
      * <p>The name associated with the stack.</p>
      */
     inline Stack& WithStackName(const char* value) { SetStackName(value); return *this;}
+
+    /**
+     * <p>The unique ID of the change set.</p>
+     */
+    inline const Aws::String& GetChangeSetId() const{ return m_changeSetId; }
+
+    /**
+     * <p>The unique ID of the change set.</p>
+     */
+    inline void SetChangeSetId(const Aws::String& value) { m_changeSetIdHasBeenSet = true; m_changeSetId = value; }
+
+    /**
+     * <p>The unique ID of the change set.</p>
+     */
+    inline void SetChangeSetId(Aws::String&& value) { m_changeSetIdHasBeenSet = true; m_changeSetId = value; }
+
+    /**
+     * <p>The unique ID of the change set.</p>
+     */
+    inline void SetChangeSetId(const char* value) { m_changeSetIdHasBeenSet = true; m_changeSetId.assign(value); }
+
+    /**
+     * <p>The unique ID of the change set.</p>
+     */
+    inline Stack& WithChangeSetId(const Aws::String& value) { SetChangeSetId(value); return *this;}
+
+    /**
+     * <p>The unique ID of the change set.</p>
+     */
+    inline Stack& WithChangeSetId(Aws::String&& value) { SetChangeSetId(value); return *this;}
+
+    /**
+     * <p>The unique ID of the change set.</p>
+     */
+    inline Stack& WithChangeSetId(const char* value) { SetChangeSetId(value); return *this;}
 
     /**
      * <p>A user-defined description associated with the stack.</p>
@@ -541,6 +578,8 @@ namespace Model
     bool m_stackIdHasBeenSet;
     Aws::String m_stackName;
     bool m_stackNameHasBeenSet;
+    Aws::String m_changeSetId;
+    bool m_changeSetIdHasBeenSet;
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
     Aws::Vector<Parameter> m_parameters;

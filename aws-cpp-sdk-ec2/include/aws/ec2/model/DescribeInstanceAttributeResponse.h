@@ -40,7 +40,9 @@ namespace EC2
 namespace Model
 {
   /**
-   * <p>Describes an instance attribute.</p>
+   * <p>Describes an instance attribute.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/InstanceAttribute">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API DescribeInstanceAttributeResponse
   {
@@ -160,27 +162,27 @@ namespace Model
     inline DescribeInstanceAttributeResponse& WithRamdiskId(AttributeValue&& value) { SetRamdiskId(value); return *this;}
 
     /**
-     * <p>The Base64-encoded MIME user data.</p>
+     * <p>The user data.</p>
      */
     inline const AttributeValue& GetUserData() const{ return m_userData; }
 
     /**
-     * <p>The Base64-encoded MIME user data.</p>
+     * <p>The user data.</p>
      */
     inline void SetUserData(const AttributeValue& value) { m_userData = value; }
 
     /**
-     * <p>The Base64-encoded MIME user data.</p>
+     * <p>The user data.</p>
      */
     inline void SetUserData(AttributeValue&& value) { m_userData = value; }
 
     /**
-     * <p>The Base64-encoded MIME user data.</p>
+     * <p>The user data.</p>
      */
     inline DescribeInstanceAttributeResponse& WithUserData(const AttributeValue& value) { SetUserData(value); return *this;}
 
     /**
-     * <p>The Base64-encoded MIME user data.</p>
+     * <p>The user data.</p>
      */
     inline DescribeInstanceAttributeResponse& WithUserData(AttributeValue&& value) { SetUserData(value); return *this;}
 
@@ -369,20 +371,60 @@ namespace Model
      */
     inline DescribeInstanceAttributeResponse& WithEbsOptimized(AttributeBooleanValue&& value) { SetEbsOptimized(value); return *this;}
 
-    
+    /**
+     * <p>Indicates whether enhanced networking with the Intel 82599 Virtual Function
+     * interface is enabled.</p>
+     */
     inline const AttributeValue& GetSriovNetSupport() const{ return m_sriovNetSupport; }
 
-    
+    /**
+     * <p>Indicates whether enhanced networking with the Intel 82599 Virtual Function
+     * interface is enabled.</p>
+     */
     inline void SetSriovNetSupport(const AttributeValue& value) { m_sriovNetSupport = value; }
 
-    
+    /**
+     * <p>Indicates whether enhanced networking with the Intel 82599 Virtual Function
+     * interface is enabled.</p>
+     */
     inline void SetSriovNetSupport(AttributeValue&& value) { m_sriovNetSupport = value; }
 
-    
+    /**
+     * <p>Indicates whether enhanced networking with the Intel 82599 Virtual Function
+     * interface is enabled.</p>
+     */
     inline DescribeInstanceAttributeResponse& WithSriovNetSupport(const AttributeValue& value) { SetSriovNetSupport(value); return *this;}
 
-    
+    /**
+     * <p>Indicates whether enhanced networking with the Intel 82599 Virtual Function
+     * interface is enabled.</p>
+     */
     inline DescribeInstanceAttributeResponse& WithSriovNetSupport(AttributeValue&& value) { SetSriovNetSupport(value); return *this;}
+
+    /**
+     * <p>Indicates whether enhanced networking with ENA is enabled.</p>
+     */
+    inline const AttributeBooleanValue& GetEnaSupport() const{ return m_enaSupport; }
+
+    /**
+     * <p>Indicates whether enhanced networking with ENA is enabled.</p>
+     */
+    inline void SetEnaSupport(const AttributeBooleanValue& value) { m_enaSupport = value; }
+
+    /**
+     * <p>Indicates whether enhanced networking with ENA is enabled.</p>
+     */
+    inline void SetEnaSupport(AttributeBooleanValue&& value) { m_enaSupport = value; }
+
+    /**
+     * <p>Indicates whether enhanced networking with ENA is enabled.</p>
+     */
+    inline DescribeInstanceAttributeResponse& WithEnaSupport(const AttributeBooleanValue& value) { SetEnaSupport(value); return *this;}
+
+    /**
+     * <p>Indicates whether enhanced networking with ENA is enabled.</p>
+     */
+    inline DescribeInstanceAttributeResponse& WithEnaSupport(AttributeBooleanValue&& value) { SetEnaSupport(value); return *this;}
 
     /**
      * <p>Indicates whether source/destination checking is enabled. A value of
@@ -487,6 +529,7 @@ namespace Model
     Aws::Vector<ProductCode> m_productCodes;
     AttributeBooleanValue m_ebsOptimized;
     AttributeValue m_sriovNetSupport;
+    AttributeBooleanValue m_enaSupport;
     AttributeBooleanValue m_sourceDestCheck;
     Aws::Vector<GroupIdentifier> m_groups;
     ResponseMetadata m_responseMetadata;

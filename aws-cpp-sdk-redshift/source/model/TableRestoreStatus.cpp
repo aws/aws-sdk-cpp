@@ -31,6 +31,7 @@ namespace Model
 
 TableRestoreStatus::TableRestoreStatus() : 
     m_tableRestoreRequestIdHasBeenSet(false),
+    m_status(TableRestoreStatusType::NOT_SET),
     m_statusHasBeenSet(false),
     m_messageHasBeenSet(false),
     m_requestTimeHasBeenSet(false),
@@ -51,6 +52,7 @@ TableRestoreStatus::TableRestoreStatus() :
 
 TableRestoreStatus::TableRestoreStatus(const XmlNode& xmlNode) : 
     m_tableRestoreRequestIdHasBeenSet(false),
+    m_status(TableRestoreStatusType::NOT_SET),
     m_statusHasBeenSet(false),
     m_messageHasBeenSet(false),
     m_requestTimeHasBeenSet(false),

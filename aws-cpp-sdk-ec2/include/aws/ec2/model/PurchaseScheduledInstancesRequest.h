@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/PurchaseRequest.h>
+#include <aws/core/utils/UUID.h>
 
 namespace Aws
 {
@@ -27,7 +28,10 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for PurchaseScheduledInstances.</p>
+   * <p>Contains the parameters for PurchaseScheduledInstances.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/PurchaseScheduledInstancesRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API PurchaseScheduledInstancesRequest : public EC2Request
   {

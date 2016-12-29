@@ -37,7 +37,10 @@ namespace Model
    * output indicates that Amazon Machine Learning (Amazon ML) received the
    * request.</p> <p>You can use the <code>GetEvaluation</code> operation and check
    * the value of the <code>Status</code> parameter to see whether an
-   * <code>Evaluation</code> is marked as <code>DELETED</code>.</p>
+   * <code>Evaluation</code> is marked as <code>DELETED</code>.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DeleteEvaluationOutput">AWS
+   * API Reference</a></p>
    */
   class AWS_MACHINELEARNING_API DeleteEvaluationResult
   {

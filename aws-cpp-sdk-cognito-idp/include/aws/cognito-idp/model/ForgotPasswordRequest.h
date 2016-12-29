@@ -25,7 +25,10 @@ namespace Model
 {
 
   /**
-   * <p>Represents the request to reset a user's password.</p>
+   * <p>Represents the request to reset a user's password.</p><p><h3>See Also:</h3>  
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ForgotPasswordRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_COGNITOIDENTITYPROVIDER_API ForgotPasswordRequest : public CognitoIdentityProviderRequest
   {
@@ -113,43 +116,43 @@ namespace Model
     inline ForgotPasswordRequest& WithSecretHash(const char* value) { SetSecretHash(value); return *this;}
 
     /**
-     * <p>The user name of the user for whom you want to enter a code to retrieve a
+     * <p>The user name of the user for whom you want to enter a code to reset a
      * forgotten password.</p>
      */
     inline const Aws::String& GetUsername() const{ return m_username; }
 
     /**
-     * <p>The user name of the user for whom you want to enter a code to retrieve a
+     * <p>The user name of the user for whom you want to enter a code to reset a
      * forgotten password.</p>
      */
     inline void SetUsername(const Aws::String& value) { m_usernameHasBeenSet = true; m_username = value; }
 
     /**
-     * <p>The user name of the user for whom you want to enter a code to retrieve a
+     * <p>The user name of the user for whom you want to enter a code to reset a
      * forgotten password.</p>
      */
     inline void SetUsername(Aws::String&& value) { m_usernameHasBeenSet = true; m_username = value; }
 
     /**
-     * <p>The user name of the user for whom you want to enter a code to retrieve a
+     * <p>The user name of the user for whom you want to enter a code to reset a
      * forgotten password.</p>
      */
     inline void SetUsername(const char* value) { m_usernameHasBeenSet = true; m_username.assign(value); }
 
     /**
-     * <p>The user name of the user for whom you want to enter a code to retrieve a
+     * <p>The user name of the user for whom you want to enter a code to reset a
      * forgotten password.</p>
      */
     inline ForgotPasswordRequest& WithUsername(const Aws::String& value) { SetUsername(value); return *this;}
 
     /**
-     * <p>The user name of the user for whom you want to enter a code to retrieve a
+     * <p>The user name of the user for whom you want to enter a code to reset a
      * forgotten password.</p>
      */
     inline ForgotPasswordRequest& WithUsername(Aws::String&& value) { SetUsername(value); return *this;}
 
     /**
-     * <p>The user name of the user for whom you want to enter a code to retrieve a
+     * <p>The user name of the user for whom you want to enter a code to reset a
      * forgotten password.</p>
      */
     inline ForgotPasswordRequest& WithUsername(const char* value) { SetUsername(value); return *this;}

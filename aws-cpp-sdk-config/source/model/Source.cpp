@@ -28,6 +28,7 @@ namespace Model
 {
 
 Source::Source() : 
+    m_owner(Owner::NOT_SET),
     m_ownerHasBeenSet(false),
     m_sourceIdentifierHasBeenSet(false),
     m_sourceDetailsHasBeenSet(false)
@@ -35,6 +36,7 @@ Source::Source() :
 }
 
 Source::Source(const JsonValue& jsonValue) : 
+    m_owner(Owner::NOT_SET),
     m_ownerHasBeenSet(false),
     m_sourceIdentifierHasBeenSet(false),
     m_sourceDetailsHasBeenSet(false)

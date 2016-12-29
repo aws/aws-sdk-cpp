@@ -27,7 +27,10 @@ namespace Model
 {
 
   /**
-   * <p>See the example below to learn how to create a request body.</p>
+   * <p>Parameters for a call to <code>DescribeInstancesHealth</code>.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeInstancesHealthRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICBEANSTALK_API DescribeInstancesHealthRequest : public ElasticBeanstalkRequest
   {
@@ -36,149 +39,156 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     /**
-     * <p>Specifies the AWS Elastic Beanstalk environment name.</p>
+     * <p>Specify the AWS Elastic Beanstalk environment by name.</p>
      */
     inline const Aws::String& GetEnvironmentName() const{ return m_environmentName; }
 
     /**
-     * <p>Specifies the AWS Elastic Beanstalk environment name.</p>
+     * <p>Specify the AWS Elastic Beanstalk environment by name.</p>
      */
     inline void SetEnvironmentName(const Aws::String& value) { m_environmentNameHasBeenSet = true; m_environmentName = value; }
 
     /**
-     * <p>Specifies the AWS Elastic Beanstalk environment name.</p>
+     * <p>Specify the AWS Elastic Beanstalk environment by name.</p>
      */
     inline void SetEnvironmentName(Aws::String&& value) { m_environmentNameHasBeenSet = true; m_environmentName = value; }
 
     /**
-     * <p>Specifies the AWS Elastic Beanstalk environment name.</p>
+     * <p>Specify the AWS Elastic Beanstalk environment by name.</p>
      */
     inline void SetEnvironmentName(const char* value) { m_environmentNameHasBeenSet = true; m_environmentName.assign(value); }
 
     /**
-     * <p>Specifies the AWS Elastic Beanstalk environment name.</p>
+     * <p>Specify the AWS Elastic Beanstalk environment by name.</p>
      */
     inline DescribeInstancesHealthRequest& WithEnvironmentName(const Aws::String& value) { SetEnvironmentName(value); return *this;}
 
     /**
-     * <p>Specifies the AWS Elastic Beanstalk environment name.</p>
+     * <p>Specify the AWS Elastic Beanstalk environment by name.</p>
      */
     inline DescribeInstancesHealthRequest& WithEnvironmentName(Aws::String&& value) { SetEnvironmentName(value); return *this;}
 
     /**
-     * <p>Specifies the AWS Elastic Beanstalk environment name.</p>
+     * <p>Specify the AWS Elastic Beanstalk environment by name.</p>
      */
     inline DescribeInstancesHealthRequest& WithEnvironmentName(const char* value) { SetEnvironmentName(value); return *this;}
 
     /**
-     * <p>Specifies the AWS Elastic Beanstalk environment ID.</p>
+     * <p>Specify the AWS Elastic Beanstalk environment by ID.</p>
      */
     inline const Aws::String& GetEnvironmentId() const{ return m_environmentId; }
 
     /**
-     * <p>Specifies the AWS Elastic Beanstalk environment ID.</p>
+     * <p>Specify the AWS Elastic Beanstalk environment by ID.</p>
      */
     inline void SetEnvironmentId(const Aws::String& value) { m_environmentIdHasBeenSet = true; m_environmentId = value; }
 
     /**
-     * <p>Specifies the AWS Elastic Beanstalk environment ID.</p>
+     * <p>Specify the AWS Elastic Beanstalk environment by ID.</p>
      */
     inline void SetEnvironmentId(Aws::String&& value) { m_environmentIdHasBeenSet = true; m_environmentId = value; }
 
     /**
-     * <p>Specifies the AWS Elastic Beanstalk environment ID.</p>
+     * <p>Specify the AWS Elastic Beanstalk environment by ID.</p>
      */
     inline void SetEnvironmentId(const char* value) { m_environmentIdHasBeenSet = true; m_environmentId.assign(value); }
 
     /**
-     * <p>Specifies the AWS Elastic Beanstalk environment ID.</p>
+     * <p>Specify the AWS Elastic Beanstalk environment by ID.</p>
      */
     inline DescribeInstancesHealthRequest& WithEnvironmentId(const Aws::String& value) { SetEnvironmentId(value); return *this;}
 
     /**
-     * <p>Specifies the AWS Elastic Beanstalk environment ID.</p>
+     * <p>Specify the AWS Elastic Beanstalk environment by ID.</p>
      */
     inline DescribeInstancesHealthRequest& WithEnvironmentId(Aws::String&& value) { SetEnvironmentId(value); return *this;}
 
     /**
-     * <p>Specifies the AWS Elastic Beanstalk environment ID.</p>
+     * <p>Specify the AWS Elastic Beanstalk environment by ID.</p>
      */
     inline DescribeInstancesHealthRequest& WithEnvironmentId(const char* value) { SetEnvironmentId(value); return *this;}
 
     /**
-     * <p>Specifies the response elements you wish to receive. If no attribute names
-     * are specified, AWS Elastic Beanstalk only returns a list of instances.</p>
+     * <p>Specifies the response elements you wish to receive. To retrieve all
+     * attributes, set to <code>All</code>. If no attribute names are specified,
+     * returns a list of instances.</p>
      */
     inline const Aws::Vector<InstancesHealthAttribute>& GetAttributeNames() const{ return m_attributeNames; }
 
     /**
-     * <p>Specifies the response elements you wish to receive. If no attribute names
-     * are specified, AWS Elastic Beanstalk only returns a list of instances.</p>
+     * <p>Specifies the response elements you wish to receive. To retrieve all
+     * attributes, set to <code>All</code>. If no attribute names are specified,
+     * returns a list of instances.</p>
      */
     inline void SetAttributeNames(const Aws::Vector<InstancesHealthAttribute>& value) { m_attributeNamesHasBeenSet = true; m_attributeNames = value; }
 
     /**
-     * <p>Specifies the response elements you wish to receive. If no attribute names
-     * are specified, AWS Elastic Beanstalk only returns a list of instances.</p>
+     * <p>Specifies the response elements you wish to receive. To retrieve all
+     * attributes, set to <code>All</code>. If no attribute names are specified,
+     * returns a list of instances.</p>
      */
     inline void SetAttributeNames(Aws::Vector<InstancesHealthAttribute>&& value) { m_attributeNamesHasBeenSet = true; m_attributeNames = value; }
 
     /**
-     * <p>Specifies the response elements you wish to receive. If no attribute names
-     * are specified, AWS Elastic Beanstalk only returns a list of instances.</p>
+     * <p>Specifies the response elements you wish to receive. To retrieve all
+     * attributes, set to <code>All</code>. If no attribute names are specified,
+     * returns a list of instances.</p>
      */
     inline DescribeInstancesHealthRequest& WithAttributeNames(const Aws::Vector<InstancesHealthAttribute>& value) { SetAttributeNames(value); return *this;}
 
     /**
-     * <p>Specifies the response elements you wish to receive. If no attribute names
-     * are specified, AWS Elastic Beanstalk only returns a list of instances.</p>
+     * <p>Specifies the response elements you wish to receive. To retrieve all
+     * attributes, set to <code>All</code>. If no attribute names are specified,
+     * returns a list of instances.</p>
      */
     inline DescribeInstancesHealthRequest& WithAttributeNames(Aws::Vector<InstancesHealthAttribute>&& value) { SetAttributeNames(value); return *this;}
 
     /**
-     * <p>Specifies the response elements you wish to receive. If no attribute names
-     * are specified, AWS Elastic Beanstalk only returns a list of instances.</p>
+     * <p>Specifies the response elements you wish to receive. To retrieve all
+     * attributes, set to <code>All</code>. If no attribute names are specified,
+     * returns a list of instances.</p>
      */
     inline DescribeInstancesHealthRequest& AddAttributeNames(const InstancesHealthAttribute& value) { m_attributeNamesHasBeenSet = true; m_attributeNames.push_back(value); return *this; }
 
     /**
-     * <p>Specifies the response elements you wish to receive. If no attribute names
-     * are specified, AWS Elastic Beanstalk only returns a list of instances.</p>
+     * <p>Specifies the response elements you wish to receive. To retrieve all
+     * attributes, set to <code>All</code>. If no attribute names are specified,
+     * returns a list of instances.</p>
      */
     inline DescribeInstancesHealthRequest& AddAttributeNames(InstancesHealthAttribute&& value) { m_attributeNamesHasBeenSet = true; m_attributeNames.push_back(value); return *this; }
 
     /**
-     * <p>Specifies the next token of the request.</p>
+     * <p>Specify the pagination token returned by a previous call.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>Specifies the next token of the request.</p>
+     * <p>Specify the pagination token returned by a previous call.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>Specifies the next token of the request.</p>
+     * <p>Specify the pagination token returned by a previous call.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>Specifies the next token of the request.</p>
+     * <p>Specify the pagination token returned by a previous call.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>Specifies the next token of the request.</p>
+     * <p>Specify the pagination token returned by a previous call.</p>
      */
     inline DescribeInstancesHealthRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>Specifies the next token of the request.</p>
+     * <p>Specify the pagination token returned by a previous call.</p>
      */
     inline DescribeInstancesHealthRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>Specifies the next token of the request.</p>
+     * <p>Specify the pagination token returned by a previous call.</p>
      */
     inline DescribeInstancesHealthRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

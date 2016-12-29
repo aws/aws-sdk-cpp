@@ -32,7 +32,9 @@ namespace Model
 ManagedAction::ManagedAction() : 
     m_actionIdHasBeenSet(false),
     m_actionDescriptionHasBeenSet(false),
+    m_actionType(ActionType::NOT_SET),
     m_actionTypeHasBeenSet(false),
+    m_status(ActionStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_windowStartTimeHasBeenSet(false)
 {
@@ -41,7 +43,9 @@ ManagedAction::ManagedAction() :
 ManagedAction::ManagedAction(const XmlNode& xmlNode) : 
     m_actionIdHasBeenSet(false),
     m_actionDescriptionHasBeenSet(false),
+    m_actionType(ActionType::NOT_SET),
     m_actionTypeHasBeenSet(false),
+    m_status(ActionStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_windowStartTimeHasBeenSet(false)
 {

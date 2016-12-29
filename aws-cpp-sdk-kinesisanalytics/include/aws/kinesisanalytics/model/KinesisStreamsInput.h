@@ -33,7 +33,9 @@ namespace Model
   /**
    * <p> Identifies an Amazon Kinesis stream as the streaming source. You provide the
    * stream's ARN and an IAM role ARN that enables Amazon Kinesis Analytics to access
-   * the stream on your behalf.</p>
+   * the stream on your behalf.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/KinesisStreamsInput">AWS
+   * API Reference</a></p>
    */
   class AWS_KINESISANALYTICS_API KinesisStreamsInput
   {

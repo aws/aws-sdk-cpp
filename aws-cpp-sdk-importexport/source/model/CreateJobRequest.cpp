@@ -20,6 +20,7 @@ using namespace Aws::ImportExport::Model;
 using namespace Aws::Utils;
 
 CreateJobRequest::CreateJobRequest() : 
+    m_jobType(JobType::NOT_SET),
     m_jobTypeHasBeenSet(false),
     m_manifestHasBeenSet(false),
     m_manifestAddendumHasBeenSet(false),

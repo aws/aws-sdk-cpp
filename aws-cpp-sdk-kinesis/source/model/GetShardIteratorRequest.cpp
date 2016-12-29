@@ -24,6 +24,7 @@ using namespace Aws::Utils;
 GetShardIteratorRequest::GetShardIteratorRequest() : 
     m_streamNameHasBeenSet(false),
     m_shardIdHasBeenSet(false),
+    m_shardIteratorType(ShardIteratorType::NOT_SET),
     m_shardIteratorTypeHasBeenSet(false),
     m_startingSequenceNumberHasBeenSet(false),
     m_timestampHasBeenSet(false)

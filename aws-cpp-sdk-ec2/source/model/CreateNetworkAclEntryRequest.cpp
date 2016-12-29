@@ -26,10 +26,12 @@ CreateNetworkAclEntryRequest::CreateNetworkAclEntryRequest() :
     m_ruleNumber(0),
     m_ruleNumberHasBeenSet(false),
     m_protocolHasBeenSet(false),
+    m_ruleAction(RuleAction::NOT_SET),
     m_ruleActionHasBeenSet(false),
     m_egress(false),
     m_egressHasBeenSet(false),
     m_cidrBlockHasBeenSet(false),
+    m_ipv6CidrBlockHasBeenSet(false),
     m_icmpTypeCodeHasBeenSet(false),
     m_portRangeHasBeenSet(false)
 {
@@ -74,9 +76,14 @@ Aws::String CreateNetworkAclEntryRequest::SerializePayload() const
     ss << "CidrBlock=" << StringUtils::URLEncode(m_cidrBlock.c_str()) << "&";
   }
 
+  if(m_ipv6CidrBlockHasBeenSet)
+  {
+    ss << "Ipv6CidrBlock=" << StringUtils::URLEncode(m_ipv6CidrBlock.c_str()) << "&";
+  }
+
   if(m_icmpTypeCodeHasBeenSet)
   {
-    m_icmpTypeCode.OutputToStream(ss, "IcmpTypeCode");
+    m_icmpTypeCode.OutputToStream(ss, "Icmp");
   }
 
   if(m_portRangeHasBeenSet)
@@ -84,7 +91,7 @@ Aws::String CreateNetworkAclEntryRequest::SerializePayload() const
     m_portRange.OutputToStream(ss, "PortRange");
   }
 
-  ss << "Version=2015-10-01";
+  ss << "Version=2016-11-15";
   return ss.str();
 }
 

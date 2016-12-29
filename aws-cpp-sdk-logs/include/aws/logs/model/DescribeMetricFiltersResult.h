@@ -41,25 +41,39 @@ namespace Model
     DescribeMetricFiltersResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     DescribeMetricFiltersResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    
+    /**
+     * <p>The metric filters.</p>
+     */
     inline const Aws::Vector<MetricFilter>& GetMetricFilters() const{ return m_metricFilters; }
 
-    
+    /**
+     * <p>The metric filters.</p>
+     */
     inline void SetMetricFilters(const Aws::Vector<MetricFilter>& value) { m_metricFilters = value; }
 
-    
+    /**
+     * <p>The metric filters.</p>
+     */
     inline void SetMetricFilters(Aws::Vector<MetricFilter>&& value) { m_metricFilters = value; }
 
-    
+    /**
+     * <p>The metric filters.</p>
+     */
     inline DescribeMetricFiltersResult& WithMetricFilters(const Aws::Vector<MetricFilter>& value) { SetMetricFilters(value); return *this;}
 
-    
+    /**
+     * <p>The metric filters.</p>
+     */
     inline DescribeMetricFiltersResult& WithMetricFilters(Aws::Vector<MetricFilter>&& value) { SetMetricFilters(value); return *this;}
 
-    
+    /**
+     * <p>The metric filters.</p>
+     */
     inline DescribeMetricFiltersResult& AddMetricFilters(const MetricFilter& value) { m_metricFilters.push_back(value); return *this; }
 
-    
+    /**
+     * <p>The metric filters.</p>
+     */
     inline DescribeMetricFiltersResult& AddMetricFilters(MetricFilter&& value) { m_metricFilters.push_back(value); return *this; }
 
     

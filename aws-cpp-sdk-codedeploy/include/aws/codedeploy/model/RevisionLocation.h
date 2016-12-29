@@ -33,7 +33,10 @@ namespace Model
 {
 
   /**
-   * <p>Information about the location of an application revision.</p>
+   * <p>Information about the location of an application revision.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/RevisionLocation">AWS
+   * API Reference</a></p>
    */
   class AWS_CODEDEPLOY_API RevisionLocation
   {

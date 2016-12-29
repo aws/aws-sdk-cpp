@@ -30,6 +30,7 @@ namespace Model
 ScheduleLambdaFunctionFailedEventAttributes::ScheduleLambdaFunctionFailedEventAttributes() : 
     m_idHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_cause(ScheduleLambdaFunctionFailedCause::NOT_SET),
     m_causeHasBeenSet(false),
     m_decisionTaskCompletedEventId(0),
     m_decisionTaskCompletedEventIdHasBeenSet(false)
@@ -39,6 +40,7 @@ ScheduleLambdaFunctionFailedEventAttributes::ScheduleLambdaFunctionFailedEventAt
 ScheduleLambdaFunctionFailedEventAttributes::ScheduleLambdaFunctionFailedEventAttributes(const JsonValue& jsonValue) : 
     m_idHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_cause(ScheduleLambdaFunctionFailedCause::NOT_SET),
     m_causeHasBeenSet(false),
     m_decisionTaskCompletedEventId(0),
     m_decisionTaskCompletedEventIdHasBeenSet(false)

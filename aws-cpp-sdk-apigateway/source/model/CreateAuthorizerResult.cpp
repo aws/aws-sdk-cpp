@@ -25,11 +25,13 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 CreateAuthorizerResult::CreateAuthorizerResult() : 
+    m_type(AuthorizerType::NOT_SET),
     m_authorizerResultTtlInSeconds(0)
 {
 }
 
 CreateAuthorizerResult::CreateAuthorizerResult(const AmazonWebServiceResult<JsonValue>& result) : 
+    m_type(AuthorizerType::NOT_SET),
     m_authorizerResultTtlInSeconds(0)
 {
   *this = result;

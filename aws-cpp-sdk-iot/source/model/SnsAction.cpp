@@ -30,6 +30,7 @@ namespace Model
 SnsAction::SnsAction() : 
     m_targetArnHasBeenSet(false),
     m_roleArnHasBeenSet(false),
+    m_messageFormat(MessageFormat::NOT_SET),
     m_messageFormatHasBeenSet(false)
 {
 }
@@ -37,6 +38,7 @@ SnsAction::SnsAction() :
 SnsAction::SnsAction(const JsonValue& jsonValue) : 
     m_targetArnHasBeenSet(false),
     m_roleArnHasBeenSet(false),
+    m_messageFormat(MessageFormat::NOT_SET),
     m_messageFormatHasBeenSet(false)
 {
   *this = jsonValue;

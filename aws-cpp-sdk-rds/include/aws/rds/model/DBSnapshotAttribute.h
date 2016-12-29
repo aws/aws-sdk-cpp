@@ -36,7 +36,9 @@ namespace Model
    * <p>Contains the name and values of a manual DB snapshot attribute</p> <p>Manual
    * DB snapshot attributes are used to authorize other AWS accounts to restore a
    * manual DB snapshot. For more information, see the
-   * <a>ModifyDBSnapshotAttribute</a> API.</p>
+   * <a>ModifyDBSnapshotAttribute</a> API.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DBSnapshotAttribute">AWS
+   * API Reference</a></p>
    */
   class AWS_RDS_API DBSnapshotAttribute
   {

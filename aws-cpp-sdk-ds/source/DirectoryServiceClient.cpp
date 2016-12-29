@@ -28,6 +28,7 @@
 #include <aws/ds/DirectoryServiceErrorMarshaller.h>
 #include <aws/ds/model/AddIpRoutesRequest.h>
 #include <aws/ds/model/AddTagsToResourceRequest.h>
+#include <aws/ds/model/CancelSchemaExtensionRequest.h>
 #include <aws/ds/model/ConnectDirectoryRequest.h>
 #include <aws/ds/model/CreateAliasRequest.h>
 #include <aws/ds/model/CreateComputerRequest.h>
@@ -53,11 +54,13 @@
 #include <aws/ds/model/GetDirectoryLimitsRequest.h>
 #include <aws/ds/model/GetSnapshotLimitsRequest.h>
 #include <aws/ds/model/ListIpRoutesRequest.h>
+#include <aws/ds/model/ListSchemaExtensionsRequest.h>
 #include <aws/ds/model/ListTagsForResourceRequest.h>
 #include <aws/ds/model/RegisterEventTopicRequest.h>
 #include <aws/ds/model/RemoveIpRoutesRequest.h>
 #include <aws/ds/model/RemoveTagsFromResourceRequest.h>
 #include <aws/ds/model/RestoreFromSnapshotRequest.h>
+#include <aws/ds/model/StartSchemaExtensionRequest.h>
 #include <aws/ds/model/UpdateConditionalForwarderRequest.h>
 #include <aws/ds/model/UpdateRadiusRequest.h>
 #include <aws/ds/model/VerifyTrustRequest.h>
@@ -192,6 +195,40 @@ void DirectoryServiceClient::AddTagsToResourceAsync(const AddTagsToResourceReque
 void DirectoryServiceClient::AddTagsToResourceAsyncHelper(const AddTagsToResourceRequest& request, const AddTagsToResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, AddTagsToResource(request), context);
+}
+
+CancelSchemaExtensionOutcome DirectoryServiceClient::CancelSchemaExtension(const CancelSchemaExtensionRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return CancelSchemaExtensionOutcome(CancelSchemaExtensionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CancelSchemaExtensionOutcome(outcome.GetError());
+  }
+}
+
+CancelSchemaExtensionOutcomeCallable DirectoryServiceClient::CancelSchemaExtensionCallable(const CancelSchemaExtensionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CancelSchemaExtensionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CancelSchemaExtension(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DirectoryServiceClient::CancelSchemaExtensionAsync(const CancelSchemaExtensionRequest& request, const CancelSchemaExtensionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CancelSchemaExtensionAsyncHelper( request, handler, context ); } );
+}
+
+void DirectoryServiceClient::CancelSchemaExtensionAsyncHelper(const CancelSchemaExtensionRequest& request, const CancelSchemaExtensionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CancelSchemaExtension(request), context);
 }
 
 ConnectDirectoryOutcome DirectoryServiceClient::ConnectDirectory(const ConnectDirectoryRequest& request) const
@@ -1044,6 +1081,40 @@ void DirectoryServiceClient::ListIpRoutesAsyncHelper(const ListIpRoutesRequest& 
   handler(this, request, ListIpRoutes(request), context);
 }
 
+ListSchemaExtensionsOutcome DirectoryServiceClient::ListSchemaExtensions(const ListSchemaExtensionsRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return ListSchemaExtensionsOutcome(ListSchemaExtensionsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListSchemaExtensionsOutcome(outcome.GetError());
+  }
+}
+
+ListSchemaExtensionsOutcomeCallable DirectoryServiceClient::ListSchemaExtensionsCallable(const ListSchemaExtensionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListSchemaExtensionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListSchemaExtensions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DirectoryServiceClient::ListSchemaExtensionsAsync(const ListSchemaExtensionsRequest& request, const ListSchemaExtensionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListSchemaExtensionsAsyncHelper( request, handler, context ); } );
+}
+
+void DirectoryServiceClient::ListSchemaExtensionsAsyncHelper(const ListSchemaExtensionsRequest& request, const ListSchemaExtensionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListSchemaExtensions(request), context);
+}
+
 ListTagsForResourceOutcome DirectoryServiceClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
   Aws::StringStream ss;
@@ -1212,6 +1283,40 @@ void DirectoryServiceClient::RestoreFromSnapshotAsync(const RestoreFromSnapshotR
 void DirectoryServiceClient::RestoreFromSnapshotAsyncHelper(const RestoreFromSnapshotRequest& request, const RestoreFromSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, RestoreFromSnapshot(request), context);
+}
+
+StartSchemaExtensionOutcome DirectoryServiceClient::StartSchemaExtension(const StartSchemaExtensionRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return StartSchemaExtensionOutcome(StartSchemaExtensionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return StartSchemaExtensionOutcome(outcome.GetError());
+  }
+}
+
+StartSchemaExtensionOutcomeCallable DirectoryServiceClient::StartSchemaExtensionCallable(const StartSchemaExtensionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StartSchemaExtensionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartSchemaExtension(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DirectoryServiceClient::StartSchemaExtensionAsync(const StartSchemaExtensionRequest& request, const StartSchemaExtensionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StartSchemaExtensionAsyncHelper( request, handler, context ); } );
+}
+
+void DirectoryServiceClient::StartSchemaExtensionAsyncHelper(const StartSchemaExtensionRequest& request, const StartSchemaExtensionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StartSchemaExtension(request), context);
 }
 
 UpdateConditionalForwarderOutcome DirectoryServiceClient::UpdateConditionalForwarder(const UpdateConditionalForwarderRequest& request) const

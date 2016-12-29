@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/email/model/RawMessage.h>
+#include <aws/email/model/MessageTag.h>
 
 namespace Aws
 {
@@ -30,7 +31,9 @@ namespace Model
    * <p>Represents a request to send a single raw email using Amazon SES. For more
    * information, see the <a
    * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Amazon
-   * SES Developer Guide</a>.</p>
+   * SES Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SendRawEmailRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_SES_API SendRawEmailRequest : public SESRequest
   {
@@ -662,6 +665,97 @@ namespace Model
      */
     inline SendRawEmailRequest& WithReturnPathArn(const char* value) { SetReturnPathArn(value); return *this;}
 
+    /**
+     * <p>A list of tags, in the form of name/value pairs, to apply to an email that
+     * you send using <code>SendRawEmail</code>. Tags correspond to characteristics of
+     * the email that you define, so that you can publish email sending events.</p>
+     */
+    inline const Aws::Vector<MessageTag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>A list of tags, in the form of name/value pairs, to apply to an email that
+     * you send using <code>SendRawEmail</code>. Tags correspond to characteristics of
+     * the email that you define, so that you can publish email sending events.</p>
+     */
+    inline void SetTags(const Aws::Vector<MessageTag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>A list of tags, in the form of name/value pairs, to apply to an email that
+     * you send using <code>SendRawEmail</code>. Tags correspond to characteristics of
+     * the email that you define, so that you can publish email sending events.</p>
+     */
+    inline void SetTags(Aws::Vector<MessageTag>&& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>A list of tags, in the form of name/value pairs, to apply to an email that
+     * you send using <code>SendRawEmail</code>. Tags correspond to characteristics of
+     * the email that you define, so that you can publish email sending events.</p>
+     */
+    inline SendRawEmailRequest& WithTags(const Aws::Vector<MessageTag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>A list of tags, in the form of name/value pairs, to apply to an email that
+     * you send using <code>SendRawEmail</code>. Tags correspond to characteristics of
+     * the email that you define, so that you can publish email sending events.</p>
+     */
+    inline SendRawEmailRequest& WithTags(Aws::Vector<MessageTag>&& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>A list of tags, in the form of name/value pairs, to apply to an email that
+     * you send using <code>SendRawEmail</code>. Tags correspond to characteristics of
+     * the email that you define, so that you can publish email sending events.</p>
+     */
+    inline SendRawEmailRequest& AddTags(const MessageTag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>A list of tags, in the form of name/value pairs, to apply to an email that
+     * you send using <code>SendRawEmail</code>. Tags correspond to characteristics of
+     * the email that you define, so that you can publish email sending events.</p>
+     */
+    inline SendRawEmailRequest& AddTags(MessageTag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>The name of the configuration set to use when you send an email using
+     * <code>SendRawEmail</code>.</p>
+     */
+    inline const Aws::String& GetConfigurationSetName() const{ return m_configurationSetName; }
+
+    /**
+     * <p>The name of the configuration set to use when you send an email using
+     * <code>SendRawEmail</code>.</p>
+     */
+    inline void SetConfigurationSetName(const Aws::String& value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName = value; }
+
+    /**
+     * <p>The name of the configuration set to use when you send an email using
+     * <code>SendRawEmail</code>.</p>
+     */
+    inline void SetConfigurationSetName(Aws::String&& value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName = value; }
+
+    /**
+     * <p>The name of the configuration set to use when you send an email using
+     * <code>SendRawEmail</code>.</p>
+     */
+    inline void SetConfigurationSetName(const char* value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName.assign(value); }
+
+    /**
+     * <p>The name of the configuration set to use when you send an email using
+     * <code>SendRawEmail</code>.</p>
+     */
+    inline SendRawEmailRequest& WithConfigurationSetName(const Aws::String& value) { SetConfigurationSetName(value); return *this;}
+
+    /**
+     * <p>The name of the configuration set to use when you send an email using
+     * <code>SendRawEmail</code>.</p>
+     */
+    inline SendRawEmailRequest& WithConfigurationSetName(Aws::String&& value) { SetConfigurationSetName(value); return *this;}
+
+    /**
+     * <p>The name of the configuration set to use when you send an email using
+     * <code>SendRawEmail</code>.</p>
+     */
+    inline SendRawEmailRequest& WithConfigurationSetName(const char* value) { SetConfigurationSetName(value); return *this;}
+
   private:
     Aws::String m_source;
     bool m_sourceHasBeenSet;
@@ -675,6 +769,10 @@ namespace Model
     bool m_sourceArnHasBeenSet;
     Aws::String m_returnPathArn;
     bool m_returnPathArnHasBeenSet;
+    Aws::Vector<MessageTag> m_tags;
+    bool m_tagsHasBeenSet;
+    Aws::String m_configurationSetName;
+    bool m_configurationSetNameHasBeenSet;
   };
 
 } // namespace Model

@@ -39,6 +39,7 @@ NetworkInterface::NetworkInterface() :
     m_requesterIdHasBeenSet(false),
     m_requesterManaged(false),
     m_requesterManagedHasBeenSet(false),
+    m_status(NetworkInterfaceStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_macAddressHasBeenSet(false),
     m_privateIpAddressHasBeenSet(false),
@@ -50,6 +51,8 @@ NetworkInterface::NetworkInterface() :
     m_associationHasBeenSet(false),
     m_tagSetHasBeenSet(false),
     m_privateIpAddressesHasBeenSet(false),
+    m_ipv6AddressesHasBeenSet(false),
+    m_interfaceType(NetworkInterfaceType::NOT_SET),
     m_interfaceTypeHasBeenSet(false)
 {
 }
@@ -64,6 +67,7 @@ NetworkInterface::NetworkInterface(const XmlNode& xmlNode) :
     m_requesterIdHasBeenSet(false),
     m_requesterManaged(false),
     m_requesterManagedHasBeenSet(false),
+    m_status(NetworkInterfaceStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_macAddressHasBeenSet(false),
     m_privateIpAddressHasBeenSet(false),
@@ -75,6 +79,8 @@ NetworkInterface::NetworkInterface(const XmlNode& xmlNode) :
     m_associationHasBeenSet(false),
     m_tagSetHasBeenSet(false),
     m_privateIpAddressesHasBeenSet(false),
+    m_ipv6AddressesHasBeenSet(false),
+    m_interfaceType(NetworkInterfaceType::NOT_SET),
     m_interfaceTypeHasBeenSet(false)
 {
   *this = xmlNode;
@@ -212,6 +218,18 @@ NetworkInterface& NetworkInterface::operator =(const XmlNode& xmlNode)
 
       m_privateIpAddressesHasBeenSet = true;
     }
+    XmlNode ipv6AddressesNode = resultNode.FirstChild("ipv6AddressesSet");
+    if(!ipv6AddressesNode.IsNull())
+    {
+      XmlNode ipv6AddressesMember = ipv6AddressesNode.FirstChild("item");
+      while(!ipv6AddressesMember.IsNull())
+      {
+        m_ipv6Addresses.push_back(ipv6AddressesMember);
+        ipv6AddressesMember = ipv6AddressesMember.NextNode("item");
+      }
+
+      m_ipv6AddressesHasBeenSet = true;
+    }
     XmlNode interfaceTypeNode = resultNode.FirstChild("interfaceType");
     if(!interfaceTypeNode.IsNull())
     {
@@ -337,6 +355,17 @@ void NetworkInterface::OutputToStream(Aws::OStream& oStream, const char* locatio
       }
   }
 
+  if(m_ipv6AddressesHasBeenSet)
+  {
+      unsigned ipv6AddressesIdx = 1;
+      for(auto& item : m_ipv6Addresses)
+      {
+        Aws::StringStream ipv6AddressesSs;
+        ipv6AddressesSs << location << index << locationValue << ".Ipv6AddressesSet." << ipv6AddressesIdx++;
+        item.OutputToStream(oStream, ipv6AddressesSs.str().c_str());
+      }
+  }
+
   if(m_interfaceTypeHasBeenSet)
   {
       oStream << location << index << locationValue << ".InterfaceType=" << NetworkInterfaceTypeMapper::GetNameForNetworkInterfaceType(m_interfaceType) << "&";
@@ -438,6 +467,16 @@ void NetworkInterface::OutputToStream(Aws::OStream& oStream, const char* locatio
         Aws::StringStream privateIpAddressesSs;
         privateIpAddressesSs << location <<  ".item." << privateIpAddressesIdx++;
         item.OutputToStream(oStream, privateIpAddressesSs.str().c_str());
+      }
+  }
+  if(m_ipv6AddressesHasBeenSet)
+  {
+      unsigned ipv6AddressesIdx = 1;
+      for(auto& item : m_ipv6Addresses)
+      {
+        Aws::StringStream ipv6AddressesSs;
+        ipv6AddressesSs << location <<  ".item." << ipv6AddressesIdx++;
+        item.OutputToStream(oStream, ipv6AddressesSs.str().c_str());
       }
   }
   if(m_interfaceTypeHasBeenSet)

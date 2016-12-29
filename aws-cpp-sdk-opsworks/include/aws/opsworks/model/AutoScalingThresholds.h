@@ -34,7 +34,9 @@ namespace Model
   /**
    * <p>Describes a load-based auto scaling upscaling or downscaling threshold
    * configuration, which specifies when AWS OpsWorks starts or stops load-based
-   * instances.</p>
+   * instances.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/AutoScalingThresholds">AWS
+   * API Reference</a></p>
    */
   class AWS_OPSWORKS_API AutoScalingThresholds
   {

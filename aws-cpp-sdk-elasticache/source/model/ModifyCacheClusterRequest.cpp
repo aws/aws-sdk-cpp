@@ -24,6 +24,7 @@ ModifyCacheClusterRequest::ModifyCacheClusterRequest() :
     m_numCacheNodes(0),
     m_numCacheNodesHasBeenSet(false),
     m_cacheNodeIdsToRemoveHasBeenSet(false),
+    m_aZMode(AZMode::NOT_SET),
     m_aZModeHasBeenSet(false),
     m_newAvailabilityZonesHasBeenSet(false),
     m_cacheSecurityGroupNamesHasBeenSet(false),

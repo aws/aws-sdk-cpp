@@ -26,11 +26,13 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GenerateCredentialReportResult::GenerateCredentialReportResult()
+GenerateCredentialReportResult::GenerateCredentialReportResult() : 
+    m_state(ReportStateType::NOT_SET)
 {
 }
 
-GenerateCredentialReportResult::GenerateCredentialReportResult(const AmazonWebServiceResult<XmlDocument>& result)
+GenerateCredentialReportResult::GenerateCredentialReportResult(const AmazonWebServiceResult<XmlDocument>& result) : 
+    m_state(ReportStateType::NOT_SET)
 {
   *this = result;
 }

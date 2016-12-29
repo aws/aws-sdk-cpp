@@ -15,9 +15,11 @@
 #pragma once
 #include <aws/directconnect/DirectConnect_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/directconnect/model/AddressFamily.h>
 #include <aws/directconnect/model/VirtualInterfaceState.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/directconnect/model/RouteFilterPrefix.h>
+#include <aws/directconnect/model/BGPPeer.h>
 
 namespace Aws
 {
@@ -35,7 +37,9 @@ namespace Model
 
   /**
    * <p>A virtual interface (VLAN) transmits the traffic between the AWS Direct
-   * Connect location and the customer.</p>
+   * Connect location and the customer.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/VirtualInterface">AWS
+   * API Reference</a></p>
    */
   class AWS_DIRECTCONNECT_API VirtualInterface
   {
@@ -267,6 +271,21 @@ namespace Model
     inline VirtualInterface& WithCustomerAddress(const char* value) { SetCustomerAddress(value); return *this;}
 
     
+    inline const AddressFamily& GetAddressFamily() const{ return m_addressFamily; }
+
+    
+    inline void SetAddressFamily(const AddressFamily& value) { m_addressFamilyHasBeenSet = true; m_addressFamily = value; }
+
+    
+    inline void SetAddressFamily(AddressFamily&& value) { m_addressFamilyHasBeenSet = true; m_addressFamily = value; }
+
+    
+    inline VirtualInterface& WithAddressFamily(const AddressFamily& value) { SetAddressFamily(value); return *this;}
+
+    
+    inline VirtualInterface& WithAddressFamily(AddressFamily&& value) { SetAddressFamily(value); return *this;}
+
+    
     inline const VirtualInterfaceState& GetVirtualInterfaceState() const{ return m_virtualInterfaceState; }
 
     
@@ -358,6 +377,27 @@ namespace Model
     
     inline VirtualInterface& AddRouteFilterPrefixes(RouteFilterPrefix&& value) { m_routeFilterPrefixesHasBeenSet = true; m_routeFilterPrefixes.push_back(value); return *this; }
 
+    
+    inline const Aws::Vector<BGPPeer>& GetBgpPeers() const{ return m_bgpPeers; }
+
+    
+    inline void SetBgpPeers(const Aws::Vector<BGPPeer>& value) { m_bgpPeersHasBeenSet = true; m_bgpPeers = value; }
+
+    
+    inline void SetBgpPeers(Aws::Vector<BGPPeer>&& value) { m_bgpPeersHasBeenSet = true; m_bgpPeers = value; }
+
+    
+    inline VirtualInterface& WithBgpPeers(const Aws::Vector<BGPPeer>& value) { SetBgpPeers(value); return *this;}
+
+    
+    inline VirtualInterface& WithBgpPeers(Aws::Vector<BGPPeer>&& value) { SetBgpPeers(value); return *this;}
+
+    
+    inline VirtualInterface& AddBgpPeers(const BGPPeer& value) { m_bgpPeersHasBeenSet = true; m_bgpPeers.push_back(value); return *this; }
+
+    
+    inline VirtualInterface& AddBgpPeers(BGPPeer&& value) { m_bgpPeersHasBeenSet = true; m_bgpPeers.push_back(value); return *this; }
+
   private:
     Aws::String m_ownerAccount;
     bool m_ownerAccountHasBeenSet;
@@ -381,6 +421,8 @@ namespace Model
     bool m_amazonAddressHasBeenSet;
     Aws::String m_customerAddress;
     bool m_customerAddressHasBeenSet;
+    AddressFamily m_addressFamily;
+    bool m_addressFamilyHasBeenSet;
     VirtualInterfaceState m_virtualInterfaceState;
     bool m_virtualInterfaceStateHasBeenSet;
     Aws::String m_customerRouterConfig;
@@ -389,6 +431,8 @@ namespace Model
     bool m_virtualGatewayIdHasBeenSet;
     Aws::Vector<RouteFilterPrefix> m_routeFilterPrefixes;
     bool m_routeFilterPrefixesHasBeenSet;
+    Aws::Vector<BGPPeer> m_bgpPeers;
+    bool m_bgpPeersHasBeenSet;
   };
 
 } // namespace Model

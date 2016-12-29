@@ -48,13 +48,16 @@ enum class ServiceCatalogErrors
   REQUEST_TIME_TOO_SKEWED = 20,
   INVALID_SIGNATURE = 21,
   SIGNATURE_DOES_NOT_MATCH = 22,
+  INVALID_ACCESS_KEY_ID = 23,
   NETWORK_CONNECTION = 99,
   
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
   DUPLICATE_RESOURCE= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
-  INVALID_PARAMETERS
+  INVALID_PARAMETERS,
+  LIMIT_EXCEEDED,
+  RESOURCE_IN_USE
 };
 namespace ServiceCatalogErrorMapper
 {

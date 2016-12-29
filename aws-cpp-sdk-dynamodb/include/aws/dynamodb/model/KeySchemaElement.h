@@ -41,7 +41,9 @@ namespace Model
    * <i>KeySchemaElement</i> for the sort key.</p> <p>A <i>KeySchemaElement</i> must
    * be a scalar, top-level attribute (not a nested attribute). The data type must be
    * one of String, Number, or Binary. The attribute cannot be nested within a List
-   * or a Map.</p>
+   * or a Map.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/KeySchemaElement">AWS
+   * API Reference</a></p>
    */
   class AWS_DYNAMODB_API KeySchemaElement
   {

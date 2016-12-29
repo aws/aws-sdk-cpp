@@ -26,6 +26,7 @@ using namespace Aws::Utils;
 using namespace Aws::Http;
 
 PutObjectAclRequest::PutObjectAclRequest() : 
+    m_aCL(ObjectCannedACL::NOT_SET),
     m_aCLHasBeenSet(false),
     m_accessControlPolicyHasBeenSet(false),
     m_bucketHasBeenSet(false),
@@ -36,6 +37,7 @@ PutObjectAclRequest::PutObjectAclRequest() :
     m_grantWriteHasBeenSet(false),
     m_grantWriteACPHasBeenSet(false),
     m_keyHasBeenSet(false),
+    m_requestPayer(RequestPayer::NOT_SET),
     m_requestPayerHasBeenSet(false),
     m_versionIdHasBeenSet(false)
 {

@@ -25,14 +25,18 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 DescribeJobResult::DescribeJobResult() : 
+    m_action(ActionCode::NOT_SET),
     m_completed(false),
+    m_statusCode(StatusCode::NOT_SET),
     m_archiveSizeInBytes(0),
     m_inventorySizeInBytes(0)
 {
 }
 
 DescribeJobResult::DescribeJobResult(const AmazonWebServiceResult<JsonValue>& result) : 
+    m_action(ActionCode::NOT_SET),
     m_completed(false),
+    m_statusCode(StatusCode::NOT_SET),
     m_archiveSizeInBytes(0),
     m_inventorySizeInBytes(0)
 {
@@ -135,6 +139,12 @@ DescribeJobResult& DescribeJobResult::operator =(const AmazonWebServiceResult<Js
   if(jsonValue.ValueExists("RetrievalByteRange"))
   {
     m_retrievalByteRange = jsonValue.GetString("RetrievalByteRange");
+
+  }
+
+  if(jsonValue.ValueExists("Tier"))
+  {
+    m_tier = jsonValue.GetString("Tier");
 
   }
 

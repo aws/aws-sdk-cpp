@@ -30,6 +30,7 @@ DeleteObjectRequest::DeleteObjectRequest() :
     m_keyHasBeenSet(false),
     m_mFAHasBeenSet(false),
     m_versionIdHasBeenSet(false),
+    m_requestPayer(RequestPayer::NOT_SET),
     m_requestPayerHasBeenSet(false)
 {
 }

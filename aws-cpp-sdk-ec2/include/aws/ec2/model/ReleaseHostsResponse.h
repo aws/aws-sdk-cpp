@@ -36,7 +36,9 @@ namespace EC2
 namespace Model
 {
   /**
-   * <p>Contains the output of ReleaseHosts.</p>
+   * <p>Contains the output of ReleaseHosts.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReleaseHostsResult">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API ReleaseHostsResponse
   {
@@ -46,83 +48,83 @@ namespace Model
     ReleaseHostsResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
     /**
-     * <p>The IDs of the Dedicated hosts that were successfully released.</p>
+     * <p>The IDs of the Dedicated Hosts that were successfully released.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSuccessful() const{ return m_successful; }
 
     /**
-     * <p>The IDs of the Dedicated hosts that were successfully released.</p>
+     * <p>The IDs of the Dedicated Hosts that were successfully released.</p>
      */
     inline void SetSuccessful(const Aws::Vector<Aws::String>& value) { m_successful = value; }
 
     /**
-     * <p>The IDs of the Dedicated hosts that were successfully released.</p>
+     * <p>The IDs of the Dedicated Hosts that were successfully released.</p>
      */
     inline void SetSuccessful(Aws::Vector<Aws::String>&& value) { m_successful = value; }
 
     /**
-     * <p>The IDs of the Dedicated hosts that were successfully released.</p>
+     * <p>The IDs of the Dedicated Hosts that were successfully released.</p>
      */
     inline ReleaseHostsResponse& WithSuccessful(const Aws::Vector<Aws::String>& value) { SetSuccessful(value); return *this;}
 
     /**
-     * <p>The IDs of the Dedicated hosts that were successfully released.</p>
+     * <p>The IDs of the Dedicated Hosts that were successfully released.</p>
      */
     inline ReleaseHostsResponse& WithSuccessful(Aws::Vector<Aws::String>&& value) { SetSuccessful(value); return *this;}
 
     /**
-     * <p>The IDs of the Dedicated hosts that were successfully released.</p>
+     * <p>The IDs of the Dedicated Hosts that were successfully released.</p>
      */
     inline ReleaseHostsResponse& AddSuccessful(const Aws::String& value) { m_successful.push_back(value); return *this; }
 
     /**
-     * <p>The IDs of the Dedicated hosts that were successfully released.</p>
+     * <p>The IDs of the Dedicated Hosts that were successfully released.</p>
      */
     inline ReleaseHostsResponse& AddSuccessful(Aws::String&& value) { m_successful.push_back(value); return *this; }
 
     /**
-     * <p>The IDs of the Dedicated hosts that were successfully released.</p>
+     * <p>The IDs of the Dedicated Hosts that were successfully released.</p>
      */
     inline ReleaseHostsResponse& AddSuccessful(const char* value) { m_successful.push_back(value); return *this; }
 
     /**
-     * <p>The IDs of the Dedicated hosts that could not be released, including an error
+     * <p>The IDs of the Dedicated Hosts that could not be released, including an error
      * message.</p>
      */
     inline const Aws::Vector<UnsuccessfulItem>& GetUnsuccessful() const{ return m_unsuccessful; }
 
     /**
-     * <p>The IDs of the Dedicated hosts that could not be released, including an error
+     * <p>The IDs of the Dedicated Hosts that could not be released, including an error
      * message.</p>
      */
     inline void SetUnsuccessful(const Aws::Vector<UnsuccessfulItem>& value) { m_unsuccessful = value; }
 
     /**
-     * <p>The IDs of the Dedicated hosts that could not be released, including an error
+     * <p>The IDs of the Dedicated Hosts that could not be released, including an error
      * message.</p>
      */
     inline void SetUnsuccessful(Aws::Vector<UnsuccessfulItem>&& value) { m_unsuccessful = value; }
 
     /**
-     * <p>The IDs of the Dedicated hosts that could not be released, including an error
+     * <p>The IDs of the Dedicated Hosts that could not be released, including an error
      * message.</p>
      */
     inline ReleaseHostsResponse& WithUnsuccessful(const Aws::Vector<UnsuccessfulItem>& value) { SetUnsuccessful(value); return *this;}
 
     /**
-     * <p>The IDs of the Dedicated hosts that could not be released, including an error
+     * <p>The IDs of the Dedicated Hosts that could not be released, including an error
      * message.</p>
      */
     inline ReleaseHostsResponse& WithUnsuccessful(Aws::Vector<UnsuccessfulItem>&& value) { SetUnsuccessful(value); return *this;}
 
     /**
-     * <p>The IDs of the Dedicated hosts that could not be released, including an error
+     * <p>The IDs of the Dedicated Hosts that could not be released, including an error
      * message.</p>
      */
     inline ReleaseHostsResponse& AddUnsuccessful(const UnsuccessfulItem& value) { m_unsuccessful.push_back(value); return *this; }
 
     /**
-     * <p>The IDs of the Dedicated hosts that could not be released, including an error
+     * <p>The IDs of the Dedicated Hosts that could not be released, including an error
      * message.</p>
      */
     inline ReleaseHostsResponse& AddUnsuccessful(UnsuccessfulItem&& value) { m_unsuccessful.push_back(value); return *this; }

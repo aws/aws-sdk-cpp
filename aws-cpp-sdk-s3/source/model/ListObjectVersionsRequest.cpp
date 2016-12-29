@@ -28,6 +28,7 @@ using namespace Aws::Http;
 ListObjectVersionsRequest::ListObjectVersionsRequest() : 
     m_bucketHasBeenSet(false),
     m_delimiterHasBeenSet(false),
+    m_encodingType(EncodingType::NOT_SET),
     m_encodingTypeHasBeenSet(false),
     m_keyMarkerHasBeenSet(false),
     m_maxKeys(0),

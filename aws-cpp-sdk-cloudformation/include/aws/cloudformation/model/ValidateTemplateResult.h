@@ -37,7 +37,9 @@ namespace CloudFormation
 namespace Model
 {
   /**
-   * <p>The output for <a>ValidateTemplate</a> action.</p>
+   * <p>The output for <a>ValidateTemplate</a> action.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ValidateTemplateOutput">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDFORMATION_API ValidateTemplateResult
   {
@@ -235,6 +237,46 @@ namespace Model
      */
     inline ValidateTemplateResult& WithCapabilitiesReason(const char* value) { SetCapabilitiesReason(value); return *this;}
 
+    /**
+     * <p>A list of the transforms that are declared in the template.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetDeclaredTransforms() const{ return m_declaredTransforms; }
+
+    /**
+     * <p>A list of the transforms that are declared in the template.</p>
+     */
+    inline void SetDeclaredTransforms(const Aws::Vector<Aws::String>& value) { m_declaredTransforms = value; }
+
+    /**
+     * <p>A list of the transforms that are declared in the template.</p>
+     */
+    inline void SetDeclaredTransforms(Aws::Vector<Aws::String>&& value) { m_declaredTransforms = value; }
+
+    /**
+     * <p>A list of the transforms that are declared in the template.</p>
+     */
+    inline ValidateTemplateResult& WithDeclaredTransforms(const Aws::Vector<Aws::String>& value) { SetDeclaredTransforms(value); return *this;}
+
+    /**
+     * <p>A list of the transforms that are declared in the template.</p>
+     */
+    inline ValidateTemplateResult& WithDeclaredTransforms(Aws::Vector<Aws::String>&& value) { SetDeclaredTransforms(value); return *this;}
+
+    /**
+     * <p>A list of the transforms that are declared in the template.</p>
+     */
+    inline ValidateTemplateResult& AddDeclaredTransforms(const Aws::String& value) { m_declaredTransforms.push_back(value); return *this; }
+
+    /**
+     * <p>A list of the transforms that are declared in the template.</p>
+     */
+    inline ValidateTemplateResult& AddDeclaredTransforms(Aws::String&& value) { m_declaredTransforms.push_back(value); return *this; }
+
+    /**
+     * <p>A list of the transforms that are declared in the template.</p>
+     */
+    inline ValidateTemplateResult& AddDeclaredTransforms(const char* value) { m_declaredTransforms.push_back(value); return *this; }
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -255,6 +297,7 @@ namespace Model
     Aws::String m_description;
     Aws::Vector<Capability> m_capabilities;
     Aws::String m_capabilitiesReason;
+    Aws::Vector<Aws::String> m_declaredTransforms;
     ResponseMetadata m_responseMetadata;
   };
 

@@ -34,7 +34,9 @@ namespace Model
   /**
    * A single patch operation to apply to the specified resource. Please refer to
    * http://tools.ietf.org/html/rfc6902#section-4 for an explanation of how each
-   * operation is used.
+   * operation is used.<p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/PatchOperation">AWS
+   * API Reference</a></p>
    */
   class AWS_APIGATEWAY_API PatchOperation
   {

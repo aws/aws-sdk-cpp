@@ -31,7 +31,9 @@ namespace Model
 {
 
   /**
-   * <p>Describes the monitoring for the instance.</p>
+   * <p>Describes the monitoring of an instance.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RunInstancesMonitoringEnabled">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API RunInstancesMonitoringEnabled
   {
@@ -44,17 +46,20 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     /**
-     * <p>Indicates whether monitoring is enabled for the instance.</p>
+     * <p>Indicates whether detailed monitoring is enabled. Otherwise, basic monitoring
+     * is enabled.</p>
      */
     inline bool GetEnabled() const{ return m_enabled; }
 
     /**
-     * <p>Indicates whether monitoring is enabled for the instance.</p>
+     * <p>Indicates whether detailed monitoring is enabled. Otherwise, basic monitoring
+     * is enabled.</p>
      */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /**
-     * <p>Indicates whether monitoring is enabled for the instance.</p>
+     * <p>Indicates whether detailed monitoring is enabled. Otherwise, basic monitoring
+     * is enabled.</p>
      */
     inline RunInstancesMonitoringEnabled& WithEnabled(bool value) { SetEnabled(value); return *this;}
 

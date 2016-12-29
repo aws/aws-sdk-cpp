@@ -19,6 +19,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/ssm/model/DocumentStatus.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ssm/model/DocumentType.h>
 #include <aws/ssm/model/DocumentParameter.h>
 #include <aws/ssm/model/PlatformType.h>
 
@@ -37,7 +38,9 @@ namespace Model
 {
 
   /**
-   * <p> Describes an SSM document. </p>
+   * <p> Describes an SSM document. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DocumentDescription">AWS
+   * API Reference</a></p>
    */
   class AWS_SSM_API DocumentDescription
   {
@@ -277,6 +280,41 @@ namespace Model
     inline DocumentDescription& WithStatus(DocumentStatus&& value) { SetStatus(value); return *this;}
 
     /**
+     * <p>The document version.</p>
+     */
+    inline const Aws::String& GetDocumentVersion() const{ return m_documentVersion; }
+
+    /**
+     * <p>The document version.</p>
+     */
+    inline void SetDocumentVersion(const Aws::String& value) { m_documentVersionHasBeenSet = true; m_documentVersion = value; }
+
+    /**
+     * <p>The document version.</p>
+     */
+    inline void SetDocumentVersion(Aws::String&& value) { m_documentVersionHasBeenSet = true; m_documentVersion = value; }
+
+    /**
+     * <p>The document version.</p>
+     */
+    inline void SetDocumentVersion(const char* value) { m_documentVersionHasBeenSet = true; m_documentVersion.assign(value); }
+
+    /**
+     * <p>The document version.</p>
+     */
+    inline DocumentDescription& WithDocumentVersion(const Aws::String& value) { SetDocumentVersion(value); return *this;}
+
+    /**
+     * <p>The document version.</p>
+     */
+    inline DocumentDescription& WithDocumentVersion(Aws::String&& value) { SetDocumentVersion(value); return *this;}
+
+    /**
+     * <p>The document version.</p>
+     */
+    inline DocumentDescription& WithDocumentVersion(const char* value) { SetDocumentVersion(value); return *this;}
+
+    /**
      * <p> A description of the document. </p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
@@ -381,6 +419,136 @@ namespace Model
      */
     inline DocumentDescription& AddPlatformTypes(PlatformType&& value) { m_platformTypesHasBeenSet = true; m_platformTypes.push_back(value); return *this; }
 
+    /**
+     * <p>The type of document. </p>
+     */
+    inline const DocumentType& GetDocumentType() const{ return m_documentType; }
+
+    /**
+     * <p>The type of document. </p>
+     */
+    inline void SetDocumentType(const DocumentType& value) { m_documentTypeHasBeenSet = true; m_documentType = value; }
+
+    /**
+     * <p>The type of document. </p>
+     */
+    inline void SetDocumentType(DocumentType&& value) { m_documentTypeHasBeenSet = true; m_documentType = value; }
+
+    /**
+     * <p>The type of document. </p>
+     */
+    inline DocumentDescription& WithDocumentType(const DocumentType& value) { SetDocumentType(value); return *this;}
+
+    /**
+     * <p>The type of document. </p>
+     */
+    inline DocumentDescription& WithDocumentType(DocumentType&& value) { SetDocumentType(value); return *this;}
+
+    /**
+     * <p>The schema version.</p>
+     */
+    inline const Aws::String& GetSchemaVersion() const{ return m_schemaVersion; }
+
+    /**
+     * <p>The schema version.</p>
+     */
+    inline void SetSchemaVersion(const Aws::String& value) { m_schemaVersionHasBeenSet = true; m_schemaVersion = value; }
+
+    /**
+     * <p>The schema version.</p>
+     */
+    inline void SetSchemaVersion(Aws::String&& value) { m_schemaVersionHasBeenSet = true; m_schemaVersion = value; }
+
+    /**
+     * <p>The schema version.</p>
+     */
+    inline void SetSchemaVersion(const char* value) { m_schemaVersionHasBeenSet = true; m_schemaVersion.assign(value); }
+
+    /**
+     * <p>The schema version.</p>
+     */
+    inline DocumentDescription& WithSchemaVersion(const Aws::String& value) { SetSchemaVersion(value); return *this;}
+
+    /**
+     * <p>The schema version.</p>
+     */
+    inline DocumentDescription& WithSchemaVersion(Aws::String&& value) { SetSchemaVersion(value); return *this;}
+
+    /**
+     * <p>The schema version.</p>
+     */
+    inline DocumentDescription& WithSchemaVersion(const char* value) { SetSchemaVersion(value); return *this;}
+
+    /**
+     * <p>The latest version of the document.</p>
+     */
+    inline const Aws::String& GetLatestVersion() const{ return m_latestVersion; }
+
+    /**
+     * <p>The latest version of the document.</p>
+     */
+    inline void SetLatestVersion(const Aws::String& value) { m_latestVersionHasBeenSet = true; m_latestVersion = value; }
+
+    /**
+     * <p>The latest version of the document.</p>
+     */
+    inline void SetLatestVersion(Aws::String&& value) { m_latestVersionHasBeenSet = true; m_latestVersion = value; }
+
+    /**
+     * <p>The latest version of the document.</p>
+     */
+    inline void SetLatestVersion(const char* value) { m_latestVersionHasBeenSet = true; m_latestVersion.assign(value); }
+
+    /**
+     * <p>The latest version of the document.</p>
+     */
+    inline DocumentDescription& WithLatestVersion(const Aws::String& value) { SetLatestVersion(value); return *this;}
+
+    /**
+     * <p>The latest version of the document.</p>
+     */
+    inline DocumentDescription& WithLatestVersion(Aws::String&& value) { SetLatestVersion(value); return *this;}
+
+    /**
+     * <p>The latest version of the document.</p>
+     */
+    inline DocumentDescription& WithLatestVersion(const char* value) { SetLatestVersion(value); return *this;}
+
+    /**
+     * <p>The default version.</p>
+     */
+    inline const Aws::String& GetDefaultVersion() const{ return m_defaultVersion; }
+
+    /**
+     * <p>The default version.</p>
+     */
+    inline void SetDefaultVersion(const Aws::String& value) { m_defaultVersionHasBeenSet = true; m_defaultVersion = value; }
+
+    /**
+     * <p>The default version.</p>
+     */
+    inline void SetDefaultVersion(Aws::String&& value) { m_defaultVersionHasBeenSet = true; m_defaultVersion = value; }
+
+    /**
+     * <p>The default version.</p>
+     */
+    inline void SetDefaultVersion(const char* value) { m_defaultVersionHasBeenSet = true; m_defaultVersion.assign(value); }
+
+    /**
+     * <p>The default version.</p>
+     */
+    inline DocumentDescription& WithDefaultVersion(const Aws::String& value) { SetDefaultVersion(value); return *this;}
+
+    /**
+     * <p>The default version.</p>
+     */
+    inline DocumentDescription& WithDefaultVersion(Aws::String&& value) { SetDefaultVersion(value); return *this;}
+
+    /**
+     * <p>The default version.</p>
+     */
+    inline DocumentDescription& WithDefaultVersion(const char* value) { SetDefaultVersion(value); return *this;}
+
   private:
     Aws::String m_sha1;
     bool m_sha1HasBeenSet;
@@ -396,12 +564,22 @@ namespace Model
     bool m_createdDateHasBeenSet;
     DocumentStatus m_status;
     bool m_statusHasBeenSet;
+    Aws::String m_documentVersion;
+    bool m_documentVersionHasBeenSet;
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
     Aws::Vector<DocumentParameter> m_parameters;
     bool m_parametersHasBeenSet;
     Aws::Vector<PlatformType> m_platformTypes;
     bool m_platformTypesHasBeenSet;
+    DocumentType m_documentType;
+    bool m_documentTypeHasBeenSet;
+    Aws::String m_schemaVersion;
+    bool m_schemaVersionHasBeenSet;
+    Aws::String m_latestVersion;
+    bool m_latestVersionHasBeenSet;
+    Aws::String m_defaultVersion;
+    bool m_defaultVersionHasBeenSet;
   };
 
 } // namespace Model

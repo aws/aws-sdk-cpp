@@ -33,7 +33,9 @@ namespace StorageGateway
 namespace Model
 {
   /**
-   * <p>RetrieveTapeRecoveryPointOutput</p>
+   * <p>RetrieveTapeRecoveryPointOutput</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/RetrieveTapeRecoveryPointOutput">AWS
+   * API Reference</a></p>
    */
   class AWS_STORAGEGATEWAY_API RetrieveTapeRecoveryPointResult
   {

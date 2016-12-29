@@ -33,12 +33,15 @@ FleetAttributes::FleetAttributes() :
     m_nameHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
     m_terminationTimeHasBeenSet(false),
+    m_status(FleetStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_buildIdHasBeenSet(false),
     m_serverLaunchPathHasBeenSet(false),
     m_serverLaunchParametersHasBeenSet(false),
     m_logPathsHasBeenSet(false),
+    m_newGameSessionProtectionPolicy(ProtectionPolicy::NOT_SET),
     m_newGameSessionProtectionPolicyHasBeenSet(false),
+    m_operatingSystem(OperatingSystem::NOT_SET),
     m_operatingSystemHasBeenSet(false),
     m_resourceCreationLimitPolicyHasBeenSet(false)
 {
@@ -50,12 +53,15 @@ FleetAttributes::FleetAttributes(const JsonValue& jsonValue) :
     m_nameHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
     m_terminationTimeHasBeenSet(false),
+    m_status(FleetStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_buildIdHasBeenSet(false),
     m_serverLaunchPathHasBeenSet(false),
     m_serverLaunchParametersHasBeenSet(false),
     m_logPathsHasBeenSet(false),
+    m_newGameSessionProtectionPolicy(ProtectionPolicy::NOT_SET),
     m_newGameSessionProtectionPolicyHasBeenSet(false),
+    m_operatingSystem(OperatingSystem::NOT_SET),
     m_operatingSystemHasBeenSet(false),
     m_resourceCreationLimitPolicyHasBeenSet(false)
 {

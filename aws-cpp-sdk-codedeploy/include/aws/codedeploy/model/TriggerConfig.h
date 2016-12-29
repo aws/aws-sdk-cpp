@@ -33,7 +33,10 @@ namespace Model
 {
 
   /**
-   * <p>Information about notification triggers for the deployment group.</p>
+   * <p>Information about notification triggers for the deployment
+   * group.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/TriggerConfig">AWS
+   * API Reference</a></p>
    */
   class AWS_CODEDEPLOY_API TriggerConfig
   {

@@ -1,92 +1,78 @@
-cmake_minimum_required(VERSION 2.8.12)
-project(aws-cpp-sdk-elasticloadbalancingv2)
+add_project(aws-cpp-sdk-elasticloadbalancingv2 "C++ SDK for the AWS elasticloadbalancingv2 service" aws-cpp-sdk-core)
 
-  file(GLOB AWS_ELASTICLOADBALANCINGV2_HEADERS
+file(GLOB AWS_ELASTICLOADBALANCINGV2_HEADERS
     "include/aws/elasticloadbalancingv2/*.h"
-  )
+)
 
-  file(GLOB AWS_ELASTICLOADBALANCINGV2_MODEL_HEADERS
+file(GLOB AWS_ELASTICLOADBALANCINGV2_MODEL_HEADERS
     "include/aws/elasticloadbalancingv2/model/*.h"
-  )
+)
 
-  file(GLOB AWS_ELASTICLOADBALANCINGV2_SOURCE
+file(GLOB AWS_ELASTICLOADBALANCINGV2_SOURCE
     "source/*.cpp"
-  )
+)
 
-  file(GLOB AWS_ELASTICLOADBALANCINGV2_MODEL_SOURCE
+file(GLOB AWS_ELASTICLOADBALANCINGV2_MODEL_SOURCE
     "source/model/*.cpp"
-  )
+)
 
-  file(GLOB ELASTICLOADBALANCINGV2_UNIFIED_HEADERS
+file(GLOB ELASTICLOADBALANCINGV2_UNIFIED_HEADERS
     ${AWS_ELASTICLOADBALANCINGV2_HEADERS}
     ${AWS_ELASTICLOADBALANCINGV2_MODEL_HEADERS}
-  )
+)
 
-  file(GLOB ELASTICLOADBALANCINGV2_UNITY_SRC
+file(GLOB ELASTICLOADBALANCINGV2_UNITY_SRC
     ${AWS_ELASTICLOADBALANCINGV2_SOURCE}
     ${AWS_ELASTICLOADBALANCINGV2_MODEL_SOURCE}
-  )
+)
 
-  if(ENABLE_UNITY_BUILD)
+if(ENABLE_UNITY_BUILD)
     enable_unity_build("ELASTICLOADBALANCINGV2" ELASTICLOADBALANCINGV2_UNITY_SRC)
-  endif()
+endif()
 
-  file(GLOB ELASTICLOADBALANCINGV2_SRC
+file(GLOB ELASTICLOADBALANCINGV2_SRC
     ${ELASTICLOADBALANCINGV2_UNIFIED_HEADERS}
     ${ELASTICLOADBALANCINGV2_UNITY_SRC}
-  )
+)
 
-  if(WIN32)
+if(WIN32)
     #if we are compiling for visual studio, create a sane directory tree.
     if(MSVC)
-      source_group("Header Files\\aws\\elasticloadbalancingv2" FILES ${AWS_ELASTICLOADBALANCINGV2_HEADERS})
-      source_group("Header Files\\aws\\elasticloadbalancingv2\\model" FILES ${AWS_ELASTICLOADBALANCINGV2_MODEL_HEADERS})
-      source_group("Source Files" FILES ${AWS_ELASTICLOADBALANCINGV2_SOURCE})
-      source_group("Source Files\\model" FILES ${AWS_ELASTICLOADBALANCINGV2_MODEL_SOURCE})
+        source_group("Header Files\\aws\\elasticloadbalancingv2" FILES ${AWS_ELASTICLOADBALANCINGV2_HEADERS})
+        source_group("Header Files\\aws\\elasticloadbalancingv2\\model" FILES ${AWS_ELASTICLOADBALANCINGV2_MODEL_HEADERS})
+        source_group("Source Files" FILES ${AWS_ELASTICLOADBALANCINGV2_SOURCE})
+        source_group("Source Files\\model" FILES ${AWS_ELASTICLOADBALANCINGV2_MODEL_SOURCE})
     endif(MSVC)
-  endif()
+endif()
 
-  set(ELASTICLOADBALANCINGV2_INCLUDES
+set(ELASTICLOADBALANCINGV2_INCLUDES
     "${CMAKE_CURRENT_SOURCE_DIR}/include/"
-    "${CORE_DIR}/include/"
-  )
+)
 
-  include_directories(${ELASTICLOADBALANCINGV2_INCLUDES})
+include_directories(${ELASTICLOADBALANCINGV2_INCLUDES})
 
-  if(USE_WINDOWS_DLL_SEMANTICS AND BUILD_SHARED_LIBS)
+if(USE_WINDOWS_DLL_SEMANTICS AND BUILD_SHARED_LIBS)
     add_definitions("-DAWS_ELASTICLOADBALANCINGV2_EXPORTS")
-  endif()
+endif()
 
-  add_library(aws-cpp-sdk-elasticloadbalancingv2 ${LIBTYPE} ${ELASTICLOADBALANCINGV2_SRC})
+add_library(${PROJECT_NAME} ${LIBTYPE} ${ELASTICLOADBALANCINGV2_SRC})
+add_library(AWS::${PROJECT_NAME} ALIAS ${PROJECT_NAME})
 
-  target_include_directories(aws-cpp-sdk-elasticloadbalancingv2 PUBLIC
+target_include_directories(${PROJECT_NAME} PUBLIC
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
     $<INSTALL_INTERFACE:include>)
   
-  target_link_libraries(aws-cpp-sdk-elasticloadbalancingv2 aws-cpp-sdk-core)
+target_link_libraries(${PROJECT_NAME} ${PROJECT_LIBS})
 
-  if(SIMPLE_INSTALL)
-      install (TARGETS aws-cpp-sdk-elasticloadbalancingv2
-               ARCHIVE DESTINATION ${ARCHIVE_DIRECTORY}
-               LIBRARY DESTINATION lib
-               RUNTIME DESTINATION bin)
-  else()
-    if(PLATFORM_CUSTOM)
-      install_custom_library(aws-cpp-sdk-elasticloadbalancingv2)
-    else()
-      install (TARGETS aws-cpp-sdk-elasticloadbalancingv2
-               ARCHIVE DESTINATION ${ARCHIVE_DIRECTORY}/${SDK_INSTALL_BINARY_PREFIX}/${PLATFORM_INSTALL_QUALIFIER}/\${CMAKE_INSTALL_CONFIG_NAME}
-               LIBRARY DESTINATION lib/${SDK_INSTALL_BINARY_PREFIX}/${PLATFORM_INSTALL_QUALIFIER}/\${CMAKE_INSTALL_CONFIG_NAME}
-               RUNTIME DESTINATION bin/${SDK_INSTALL_BINARY_PREFIX}/${PLATFORM_INSTALL_QUALIFIER}/\${CMAKE_INSTALL_CONFIG_NAME})
-    endif()
-  endif()
+setup_install()
 
-  install (FILES ${AWS_ELASTICLOADBALANCINGV2_HEADERS} DESTINATION include/aws/elasticloadbalancingv2)
-  install (FILES ${AWS_ELASTICLOADBALANCINGV2_MODEL_HEADERS} DESTINATION include/aws/elasticloadbalancingv2/model)
+install (FILES ${AWS_ELASTICLOADBALANCINGV2_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/elasticloadbalancingv2)
+install (FILES ${AWS_ELASTICLOADBALANCINGV2_MODEL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/elasticloadbalancingv2/model)
 
-  if(PLATFORM_WINDOWS AND MSVC)
-    install (FILES nuget/aws-cpp-sdk-elasticloadbalancingv2.autopkg DESTINATION nuget)
-  endif()
+if(PLATFORM_WINDOWS AND MSVC)
+    install (FILES nuget/${PROJECT_NAME}.autopkg DESTINATION nuget)
+endif()
 
+do_packaging()
 
 

@@ -31,7 +31,9 @@ namespace Model
 
 VpnGateway::VpnGateway() : 
     m_vpnGatewayIdHasBeenSet(false),
+    m_state(VpnState::NOT_SET),
     m_stateHasBeenSet(false),
+    m_type(GatewayType::NOT_SET),
     m_typeHasBeenSet(false),
     m_availabilityZoneHasBeenSet(false),
     m_vpcAttachmentsHasBeenSet(false),
@@ -41,7 +43,9 @@ VpnGateway::VpnGateway() :
 
 VpnGateway::VpnGateway(const XmlNode& xmlNode) : 
     m_vpnGatewayIdHasBeenSet(false),
+    m_state(VpnState::NOT_SET),
     m_stateHasBeenSet(false),
+    m_type(GatewayType::NOT_SET),
     m_typeHasBeenSet(false),
     m_availabilityZoneHasBeenSet(false),
     m_vpcAttachmentsHasBeenSet(false),

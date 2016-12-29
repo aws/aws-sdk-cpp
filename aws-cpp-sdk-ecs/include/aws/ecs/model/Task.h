@@ -35,7 +35,9 @@ namespace Model
 {
 
   /**
-   * <p>Details on a task in a cluster.</p>
+   * <p>Details on a task in a cluster.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/Task">AWS API
+   * Reference</a></p>
    */
   class AWS_ECS_API Task
   {
@@ -379,6 +381,36 @@ namespace Model
     inline Task& WithStartedBy(const char* value) { SetStartedBy(value); return *this;}
 
     /**
+     * <p>The version counter for the task. Every time a task experiences a change that
+     * triggers a CloudWatch event, the version counter is incremented. If you are
+     * replicating your Amazon ECS task state with CloudWatch events, you can compare
+     * the version of a task reported by the Amazon ECS APIs with the version reported
+     * in CloudWatch events for the task (inside the <code>detail</code> object) to
+     * verify that the version in your event stream is current.</p>
+     */
+    inline long long GetVersion() const{ return m_version; }
+
+    /**
+     * <p>The version counter for the task. Every time a task experiences a change that
+     * triggers a CloudWatch event, the version counter is incremented. If you are
+     * replicating your Amazon ECS task state with CloudWatch events, you can compare
+     * the version of a task reported by the Amazon ECS APIs with the version reported
+     * in CloudWatch events for the task (inside the <code>detail</code> object) to
+     * verify that the version in your event stream is current.</p>
+     */
+    inline void SetVersion(long long value) { m_versionHasBeenSet = true; m_version = value; }
+
+    /**
+     * <p>The version counter for the task. Every time a task experiences a change that
+     * triggers a CloudWatch event, the version counter is incremented. If you are
+     * replicating your Amazon ECS task state with CloudWatch events, you can compare
+     * the version of a task reported by the Amazon ECS APIs with the version reported
+     * in CloudWatch events for the task (inside the <code>detail</code> object) to
+     * verify that the version in your event stream is current.</p>
+     */
+    inline Task& WithVersion(long long value) { SetVersion(value); return *this;}
+
+    /**
      * <p>The reason the task was stopped.</p>
      */
     inline const Aws::String& GetStoppedReason() const{ return m_stoppedReason; }
@@ -522,6 +554,8 @@ namespace Model
     bool m_containersHasBeenSet;
     Aws::String m_startedBy;
     bool m_startedByHasBeenSet;
+    long long m_version;
+    bool m_versionHasBeenSet;
     Aws::String m_stoppedReason;
     bool m_stoppedReasonHasBeenSet;
     Aws::Utils::DateTime m_createdAt;

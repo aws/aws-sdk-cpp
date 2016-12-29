@@ -21,7 +21,8 @@ using namespace Aws::Utils;
 
 CreateApplicationRequest::CreateApplicationRequest() : 
     m_applicationNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_resourceLifecycleConfigHasBeenSet(false)
 {
 }
 
@@ -37,6 +38,11 @@ Aws::String CreateApplicationRequest::SerializePayload() const
   if(m_descriptionHasBeenSet)
   {
     ss << "Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
+  }
+
+  if(m_resourceLifecycleConfigHasBeenSet)
+  {
+    m_resourceLifecycleConfig.OutputToStream(ss, "ResourceLifecycleConfig");
   }
 
   ss << "Version=2010-12-01";

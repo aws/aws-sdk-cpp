@@ -41,25 +41,39 @@ namespace Model
     DescribeSubscriptionFiltersResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     DescribeSubscriptionFiltersResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    
+    /**
+     * <p>The subscription filters.</p>
+     */
     inline const Aws::Vector<SubscriptionFilter>& GetSubscriptionFilters() const{ return m_subscriptionFilters; }
 
-    
+    /**
+     * <p>The subscription filters.</p>
+     */
     inline void SetSubscriptionFilters(const Aws::Vector<SubscriptionFilter>& value) { m_subscriptionFilters = value; }
 
-    
+    /**
+     * <p>The subscription filters.</p>
+     */
     inline void SetSubscriptionFilters(Aws::Vector<SubscriptionFilter>&& value) { m_subscriptionFilters = value; }
 
-    
+    /**
+     * <p>The subscription filters.</p>
+     */
     inline DescribeSubscriptionFiltersResult& WithSubscriptionFilters(const Aws::Vector<SubscriptionFilter>& value) { SetSubscriptionFilters(value); return *this;}
 
-    
+    /**
+     * <p>The subscription filters.</p>
+     */
     inline DescribeSubscriptionFiltersResult& WithSubscriptionFilters(Aws::Vector<SubscriptionFilter>&& value) { SetSubscriptionFilters(value); return *this;}
 
-    
+    /**
+     * <p>The subscription filters.</p>
+     */
     inline DescribeSubscriptionFiltersResult& AddSubscriptionFilters(const SubscriptionFilter& value) { m_subscriptionFilters.push_back(value); return *this; }
 
-    
+    /**
+     * <p>The subscription filters.</p>
+     */
     inline DescribeSubscriptionFiltersResult& AddSubscriptionFilters(SubscriptionFilter&& value) { m_subscriptionFilters.push_back(value); return *this; }
 
     

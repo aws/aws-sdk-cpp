@@ -32,27 +32,36 @@ namespace Model
 Image::Image() : 
     m_imageIdHasBeenSet(false),
     m_imageLocationHasBeenSet(false),
+    m_state(ImageState::NOT_SET),
     m_stateHasBeenSet(false),
     m_ownerIdHasBeenSet(false),
     m_creationDateHasBeenSet(false),
     m_public(false),
     m_publicHasBeenSet(false),
     m_productCodesHasBeenSet(false),
+    m_architecture(ArchitectureValues::NOT_SET),
     m_architectureHasBeenSet(false),
+    m_imageType(ImageTypeValues::NOT_SET),
     m_imageTypeHasBeenSet(false),
     m_kernelIdHasBeenSet(false),
     m_ramdiskIdHasBeenSet(false),
+    m_platform(PlatformValues::NOT_SET),
     m_platformHasBeenSet(false),
     m_sriovNetSupportHasBeenSet(false),
+    m_enaSupport(false),
+    m_enaSupportHasBeenSet(false),
     m_stateReasonHasBeenSet(false),
     m_imageOwnerAliasHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
+    m_rootDeviceType(DeviceType::NOT_SET),
     m_rootDeviceTypeHasBeenSet(false),
     m_rootDeviceNameHasBeenSet(false),
     m_blockDeviceMappingsHasBeenSet(false),
+    m_virtualizationType(VirtualizationType::NOT_SET),
     m_virtualizationTypeHasBeenSet(false),
     m_tagsHasBeenSet(false),
+    m_hypervisor(HypervisorType::NOT_SET),
     m_hypervisorHasBeenSet(false)
 {
 }
@@ -60,27 +69,36 @@ Image::Image() :
 Image::Image(const XmlNode& xmlNode) : 
     m_imageIdHasBeenSet(false),
     m_imageLocationHasBeenSet(false),
+    m_state(ImageState::NOT_SET),
     m_stateHasBeenSet(false),
     m_ownerIdHasBeenSet(false),
     m_creationDateHasBeenSet(false),
     m_public(false),
     m_publicHasBeenSet(false),
     m_productCodesHasBeenSet(false),
+    m_architecture(ArchitectureValues::NOT_SET),
     m_architectureHasBeenSet(false),
+    m_imageType(ImageTypeValues::NOT_SET),
     m_imageTypeHasBeenSet(false),
     m_kernelIdHasBeenSet(false),
     m_ramdiskIdHasBeenSet(false),
+    m_platform(PlatformValues::NOT_SET),
     m_platformHasBeenSet(false),
     m_sriovNetSupportHasBeenSet(false),
+    m_enaSupport(false),
+    m_enaSupportHasBeenSet(false),
     m_stateReasonHasBeenSet(false),
     m_imageOwnerAliasHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
+    m_rootDeviceType(DeviceType::NOT_SET),
     m_rootDeviceTypeHasBeenSet(false),
     m_rootDeviceNameHasBeenSet(false),
     m_blockDeviceMappingsHasBeenSet(false),
+    m_virtualizationType(VirtualizationType::NOT_SET),
     m_virtualizationTypeHasBeenSet(false),
     m_tagsHasBeenSet(false),
+    m_hypervisor(HypervisorType::NOT_SET),
     m_hypervisorHasBeenSet(false)
 {
   *this = xmlNode;
@@ -175,6 +193,12 @@ Image& Image::operator =(const XmlNode& xmlNode)
     {
       m_sriovNetSupport = StringUtils::Trim(sriovNetSupportNode.GetText().c_str());
       m_sriovNetSupportHasBeenSet = true;
+    }
+    XmlNode enaSupportNode = resultNode.FirstChild("enaSupport");
+    if(!enaSupportNode.IsNull())
+    {
+      m_enaSupport = StringUtils::ConvertToBool(StringUtils::Trim(enaSupportNode.GetText().c_str()).c_str());
+      m_enaSupportHasBeenSet = true;
     }
     XmlNode stateReasonNode = resultNode.FirstChild("stateReason");
     if(!stateReasonNode.IsNull())
@@ -326,6 +350,11 @@ void Image::OutputToStream(Aws::OStream& oStream, const char* location, unsigned
       oStream << location << index << locationValue << ".SriovNetSupport=" << StringUtils::URLEncode(m_sriovNetSupport.c_str()) << "&";
   }
 
+  if(m_enaSupportHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".EnaSupport=" << m_enaSupport << "&";
+  }
+
   if(m_stateReasonHasBeenSet)
   {
       Aws::StringStream stateReasonLocationAndMemberSs;
@@ -451,6 +480,10 @@ void Image::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_sriovNetSupportHasBeenSet)
   {
       oStream << location << ".SriovNetSupport=" << StringUtils::URLEncode(m_sriovNetSupport.c_str()) << "&";
+  }
+  if(m_enaSupportHasBeenSet)
+  {
+      oStream << location << ".EnaSupport=" << m_enaSupport << "&";
   }
   if(m_stateReasonHasBeenSet)
   {

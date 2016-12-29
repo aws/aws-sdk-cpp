@@ -31,7 +31,10 @@ namespace Model
 {
 
   /**
-   * <p>Provides details for the <code>LambdaFunctionFailed</code> event.</p>
+   * <p>Provides details for the <code>LambdaFunctionFailed</code>
+   * event.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/LambdaFunctionFailedEventAttributes">AWS
+   * API Reference</a></p>
    */
   class AWS_SWF_API LambdaFunctionFailedEventAttributes
   {

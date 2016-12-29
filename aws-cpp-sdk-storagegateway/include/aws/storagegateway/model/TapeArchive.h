@@ -33,7 +33,9 @@ namespace Model
 
   /**
    * <p>Represents a virtual tape that is archived in the virtual tape shelf
-   * (VTS).</p>
+   * (VTS).</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/TapeArchive">AWS
+   * API Reference</a></p>
    */
   class AWS_STORAGEGATEWAY_API TapeArchive
   {
@@ -112,6 +114,21 @@ namespace Model
      * <p>The barcode that identifies the archived virtual tape.</p>
      */
     inline TapeArchive& WithTapeBarcode(const char* value) { SetTapeBarcode(value); return *this;}
+
+    
+    inline const Aws::Utils::DateTime& GetTapeCreatedDate() const{ return m_tapeCreatedDate; }
+
+    
+    inline void SetTapeCreatedDate(const Aws::Utils::DateTime& value) { m_tapeCreatedDateHasBeenSet = true; m_tapeCreatedDate = value; }
+
+    
+    inline void SetTapeCreatedDate(Aws::Utils::DateTime&& value) { m_tapeCreatedDateHasBeenSet = true; m_tapeCreatedDate = value; }
+
+    
+    inline TapeArchive& WithTapeCreatedDate(const Aws::Utils::DateTime& value) { SetTapeCreatedDate(value); return *this;}
+
+    
+    inline TapeArchive& WithTapeCreatedDate(Aws::Utils::DateTime&& value) { SetTapeCreatedDate(value); return *this;}
 
     /**
      * <p>The size, in bytes, of the archived virtual tape.</p>
@@ -252,6 +269,8 @@ namespace Model
     bool m_tapeARNHasBeenSet;
     Aws::String m_tapeBarcode;
     bool m_tapeBarcodeHasBeenSet;
+    Aws::Utils::DateTime m_tapeCreatedDate;
+    bool m_tapeCreatedDateHasBeenSet;
     long long m_tapeSizeInBytes;
     bool m_tapeSizeInBytesHasBeenSet;
     Aws::Utils::DateTime m_completionTime;

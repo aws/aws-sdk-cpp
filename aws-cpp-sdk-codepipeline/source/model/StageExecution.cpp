@@ -29,12 +29,14 @@ namespace Model
 
 StageExecution::StageExecution() : 
     m_pipelineExecutionIdHasBeenSet(false),
+    m_status(StageExecutionStatus::NOT_SET),
     m_statusHasBeenSet(false)
 {
 }
 
 StageExecution::StageExecution(const JsonValue& jsonValue) : 
     m_pipelineExecutionIdHasBeenSet(false),
+    m_status(StageExecutionStatus::NOT_SET),
     m_statusHasBeenSet(false)
 {
   *this = jsonValue;

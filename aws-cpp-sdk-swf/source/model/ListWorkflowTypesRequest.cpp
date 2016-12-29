@@ -24,6 +24,7 @@ using namespace Aws::Utils;
 ListWorkflowTypesRequest::ListWorkflowTypesRequest() : 
     m_domainHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_registrationStatus(RegistrationStatus::NOT_SET),
     m_registrationStatusHasBeenSet(false),
     m_nextPageTokenHasBeenSet(false),
     m_maximumPageSize(0),

@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/servicecatalog/model/ProvisioningParameter.h>
 #include <aws/servicecatalog/model/Tag.h>
+#include <aws/core/utils/UUID.h>
 
 namespace Aws
 {
@@ -87,37 +88,37 @@ namespace Model
     inline ProvisionProductRequest& WithAcceptLanguage(const char* value) { SetAcceptLanguage(value); return *this;}
 
     /**
-     * <p>The identifier of the product.</p>
+     * <p>The product identifier.</p>
      */
     inline const Aws::String& GetProductId() const{ return m_productId; }
 
     /**
-     * <p>The identifier of the product.</p>
+     * <p>The product identifier.</p>
      */
     inline void SetProductId(const Aws::String& value) { m_productIdHasBeenSet = true; m_productId = value; }
 
     /**
-     * <p>The identifier of the product.</p>
+     * <p>The product identifier.</p>
      */
     inline void SetProductId(Aws::String&& value) { m_productIdHasBeenSet = true; m_productId = value; }
 
     /**
-     * <p>The identifier of the product.</p>
+     * <p>The product identifier.</p>
      */
     inline void SetProductId(const char* value) { m_productIdHasBeenSet = true; m_productId.assign(value); }
 
     /**
-     * <p>The identifier of the product.</p>
+     * <p>The product identifier.</p>
      */
     inline ProvisionProductRequest& WithProductId(const Aws::String& value) { SetProductId(value); return *this;}
 
     /**
-     * <p>The identifier of the product.</p>
+     * <p>The product identifier.</p>
      */
     inline ProvisionProductRequest& WithProductId(Aws::String&& value) { SetProductId(value); return *this;}
 
     /**
-     * <p>The identifier of the product.</p>
+     * <p>The product identifier.</p>
      */
     inline ProvisionProductRequest& WithProductId(const char* value) { SetProductId(value); return *this;}
 
