@@ -185,12 +185,12 @@ namespace Aws
                 {
                     handle->SetMultipartId(createMultipartResponse.GetResult().GetUploadId());
                     uint64_t totalSize = handle->GetBytesTotalSize();
-                    uint64_t partCount = totalSize / m_transferConfig.bufferSize;
+                    uint64_t partCount = ( totalSize + m_transferConfig.bufferSize - 1 ) / m_transferConfig.bufferSize;
 
                     for (uint64_t i = 0; i < partCount; ++i)
                     {
                         uint64_t partSize = std::min(totalSize - i * m_transferConfig.bufferSize, m_transferConfig.bufferSize);
-                        handle->AddQueuedPart(Aws::MakeShared<PartState>(CLASS_TAG, i + 1, 0, partSize));
+                        handle->AddQueuedPart(Aws::MakeShared<PartState>(CLASS_TAG, static_cast<int>(i + 1), 0, static_cast<size_t>(partSize)));
                     }                    
                 }
                 else
@@ -233,8 +233,11 @@ namespace Aws
                     auto streamBuf = Aws::New<Aws::Utils::Stream::PreallocatedStreamBuf>(CLASS_TAG, buffer, static_cast<size_t>(lengthToWrite));
                     auto preallocatedStreamReader = Aws::MakeShared<Aws::IOStream>(CLASS_TAG, streamBuf);
 
+                    PartPointer partPtr = partsIter->second;
                     Aws::S3::Model::UploadPartRequest uploadPartRequest = m_transferConfig.uploadPartTemplate;
                     uploadPartRequest.SetContinueRequestHandler([handle](const Aws::Http::HttpRequest*) { return handle->ShouldContinue(); });
+                    uploadPartRequest.SetDataSentEventHandler([handle, partPtr](const Aws::Http::HttpRequest*, long long amount){ partPtr->OnDataTransferred(amount, handle); });
+                    uploadPartRequest.SetRequestRetryHandler([partPtr](const AmazonWebServiceRequest&){ partPtr->Reset(); });
                     uploadPartRequest.WithBucket(handle->GetBucketName())
                         .WithContentLength(static_cast<long long>(lengthToWrite))
                         .WithKey(handle->GetKey())
@@ -301,15 +304,15 @@ namespace Aws
 
             putObjectRequest.SetBody(preallocatedStreamReader);
 
-            auto uploadProgressCallback = [this, handle](const Aws::Http::HttpRequest*, long long progress)
+            auto uploadProgressCallback = [this, partState, handle](const Aws::Http::HttpRequest*, long long progress)
             {
-                handle->AddTransferredBytes(static_cast<uint64_t>(progress));
+                partState->OnDataTransferred(progress, handle);
                 TriggerUploadProgressCallback(*handle);
             };
 
-            auto retryHandlerCallback = [this, handle](const Aws::AmazonWebServiceRequest&)
+            auto retryHandlerCallback = [this, partState, handle](const Aws::AmazonWebServiceRequest&)
             {
-                handle->SetTransferredBytes(0);
+                partState->Reset();
                 TriggerUploadProgressCallback(*handle);
             };
 
@@ -342,7 +345,6 @@ namespace Aws
 
             if (outcome.IsSuccess())
             {
-                transferContext->handle->AddTransferredBytes(static_cast<uint64_t>(request.GetContentLength()));
                 TriggerUploadProgressCallback(*transferContext->handle);
                 transferContext->handle->ChangePartToCompleted(request.GetPartNumber(), outcome.GetResult().GetETag());
             }
@@ -445,7 +447,7 @@ namespace Aws
             if (headObjectOutcome.IsSuccess())
             {
                 size_t downloadSize = static_cast<uint64_t>(headObjectOutcome.GetResult().GetContentLength());
-                partState->GetSizeInBytes(downloadSize);
+                partState->SetSizeInBytes(downloadSize);
                 handle->SetBytesTotalSize(downloadSize);
                 handle->SetContentType(headObjectOutcome.GetResult().GetContentType());
                 handle->SetMetadata(headObjectOutcome.GetResult().GetMetadata());
@@ -467,15 +469,15 @@ namespace Aws
                 .WithKey(handle->GetKey());
             request.SetResponseStreamFactory(writeToStreamfn);
 
-            request.SetDataReceivedEventHandler([this, handle](const Aws::Http::HttpRequest*, Aws::Http::HttpResponse*, long long progress)
+            request.SetDataReceivedEventHandler([this, partState, handle](const Aws::Http::HttpRequest*, Aws::Http::HttpResponse*, long long progress)
             {
-                handle->AddTransferredBytes(static_cast<uint64_t>(progress));
+                partState->OnDataTransferred(progress, handle);
                 TriggerDownloadProgressCallback(*handle);
             });
 
-            request.SetRequestRetryHandler([this, handle](const Aws::AmazonWebServiceRequest&)
+            request.SetRequestRetryHandler([this, partState, handle](const Aws::AmazonWebServiceRequest&)
             {
-                handle->SetTransferredBytes(0);
+                partState->Reset();
                 TriggerDownloadProgressCallback(*handle);
             });
 

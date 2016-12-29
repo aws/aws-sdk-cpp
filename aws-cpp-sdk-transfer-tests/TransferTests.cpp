@@ -366,6 +366,7 @@ TEST_F(TransferTests, TransferManager_SinglePartUploadTest)
 
     uint64_t fileSize = requestPtr->GetBytesTotalSize();
     ASSERT_TRUE(fileSize == (MB5 / testStrLen * testStrLen));
+    ASSERT_TRUE(fileSize == requestPtr->GetBytesTransferred());
 
     HeadObjectRequest headObjectRequest;
     headObjectRequest.WithBucket(GetTestBucketName())
@@ -411,6 +412,7 @@ TEST_F(TransferTests, TransferManager_SmallTest)
 
     uint64_t fileSize = requestPtr->GetBytesTotalSize();
     ASSERT_TRUE(fileSize == (SMALL_TEST_SIZE / testStrLen * testStrLen));
+    ASSERT_TRUE(fileSize == requestPtr->GetBytesTransferred());
 
     HeadObjectRequest headObjectRequest;
     headObjectRequest.WithBucket(GetTestBucketName())
@@ -460,6 +462,7 @@ TEST_F(TransferTests, TransferManager_ContentTest)
 
     uint64_t fileSize = requestPtr->GetBytesTotalSize();
     ASSERT_TRUE(fileSize == strlen(CONTENT_TEST_FILE_TEXT));
+    ASSERT_TRUE(fileSize == requestPtr->GetBytesTransferred());
 
     HeadObjectRequest headObjectRequest;
     headObjectRequest.WithBucket(GetTestBucketName())
@@ -528,6 +531,7 @@ TEST_F(TransferTests, TransferManager_MediumTest)
 
     uint64_t fileSize = requestPtr->GetBytesTotalSize();
     ASSERT_TRUE(fileSize == MEDIUM_TEST_SIZE / testStrLen * testStrLen);
+    ASSERT_TRUE(fileSize == requestPtr->GetBytesTransferred());
 
     HeadObjectRequest headObjectRequest;
     headObjectRequest.WithBucket(GetTestBucketName())
@@ -598,6 +602,7 @@ TEST_F(TransferTests, TransferManager_BigTest)
 
     uint64_t fileSize = requestPtr->GetBytesTotalSize();
     ASSERT_TRUE(fileSize == BIG_TEST_SIZE / testStrLen * testStrLen);
+    ASSERT_TRUE(fileSize == requestPtr->GetBytesTransferred());
 
     HeadObjectRequest headObjectRequest;
     headObjectRequest.WithBucket(GetTestBucketName())
@@ -622,6 +627,7 @@ TEST_F(TransferTests, TransferManager_BigTest)
     ASSERT_EQ(BIG_TEST_SIZE / testStrLen * testStrLen, downloadPtr->GetBytesTransferred());
     ASSERT_STREQ(requestPtr->GetContentType().c_str(), downloadPtr->GetContentType().c_str());
 }
+
 
 TEST_F(TransferTests, TransferManager_CancelAndRetryTest)
 {
@@ -705,6 +711,8 @@ TEST_F(TransferTests, TransferManager_CancelAndRetryTest)
     ASSERT_TRUE(completionCheckDone);
     ASSERT_TRUE(completedPartsStayedCompletedDuringRetry);
     ASSERT_STREQ("text/plain", requestPtr->GetContentType().c_str());
+
+    ASSERT_TRUE(fileSize == requestPtr->GetBytesTransferred());
 
     listMultipartOutcome = m_s3Client->ListMultipartUploads(listMultipartRequest);
 
@@ -804,6 +812,7 @@ TEST_F(TransferTests, TransferManager_AbortAndRetryTest)
     ASSERT_EQ(30u, requestPtr->GetCompletedParts().size());
     ASSERT_TRUE(completionCheckDone);
     ASSERT_FALSE(completedPartsStayedCompletedDuringRetry);
+    ASSERT_TRUE(fileSize == requestPtr->GetBytesTransferred());
 
     headObjectRequest.WithBucket(GetTestBucketName())
         .WithKey(CANCEL_FILE_KEY);
@@ -843,6 +852,7 @@ TEST_F(TransferTests, TransferManager_MultiPartContentTest)
 
     ASSERT_EQ(TransferStatus::COMPLETED, requestPtr->GetStatus());
     ASSERT_EQ(PARTS_IN_MEDIUM_TEST, requestPtr->GetCompletedParts().size()); // > 1 part
+    ASSERT_TRUE(requestPtr->GetBytesTotalSize() == requestPtr->GetBytesTransferred());
 
     std::shared_ptr<TransferHandle> downloadPtr = transferManager.DownloadFile(GetTestBucketName(), MULTI_PART_CONTENT_KEY, m_multiPartContentDownload);
 
@@ -880,6 +890,7 @@ TEST_F(TransferTests, TransferManager_SinglePartUploadWithMetadataTest)
 
     requestPtr->WaitUntilFinished();
     ASSERT_EQ(TransferStatus::COMPLETED, requestPtr->GetStatus());
+    ASSERT_TRUE(requestPtr->GetBytesTotalSize() == requestPtr->GetBytesTransferred());
 
     // Check the metadata matches
     HeadObjectRequest headObjectRequest;
@@ -935,6 +946,7 @@ TEST_F(TransferTests, MultipartUploadWithMetadataTest)
         requestPtr->WaitUntilFinished();
     }
     ASSERT_EQ(TransferStatus::COMPLETED, requestPtr->GetStatus());
+    ASSERT_TRUE(requestPtr->GetBytesTotalSize() == requestPtr->GetBytesTransferred());
 
     // Check the metadata matches
     HeadObjectRequest headObjectRequest;

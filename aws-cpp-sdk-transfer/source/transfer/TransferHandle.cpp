@@ -19,6 +19,43 @@ namespace Aws
 {
     namespace Transfer
     {
+
+        PartState::PartState() :
+            m_partId(0),
+            m_currentProgressInBytes(0),
+            m_bestProgressInBytes(0),
+            m_sizeInBytes(0)
+        {}
+
+        PartState::PartState(int partId, size_t bestProgressInBytes, size_t sizeInBytes) :
+            m_partId(partId),
+            m_currentProgressInBytes(0),
+            m_bestProgressInBytes(bestProgressInBytes),
+            m_sizeInBytes(sizeInBytes)
+        {}
+
+        PartState::PartState(const PartState& rhs) :
+            m_partId(rhs.m_partId),
+            m_currentProgressInBytes(rhs.m_currentProgressInBytes),
+            m_bestProgressInBytes(rhs.m_bestProgressInBytes),
+            m_sizeInBytes(rhs.m_sizeInBytes)
+        {}
+
+        void PartState::Reset()
+        {
+            m_currentProgressInBytes = 0;
+        }
+
+        void PartState::OnDataTransferred(long long amount, const std::shared_ptr<TransferHandle> &transferHandle)
+        {
+            m_currentProgressInBytes += amount;
+            if (m_currentProgressInBytes > m_bestProgressInBytes)
+            {
+                transferHandle->UpdateBytesTransferred(m_currentProgressInBytes - m_bestProgressInBytes);
+                m_bestProgressInBytes = m_currentProgressInBytes;
+            }
+        }
+
         Aws::Set<std::pair<int, Aws::String>> TransferHandle::GetCompletedParts() const
         {
             std::lock_guard<std::mutex> locker(m_partsLock);
@@ -51,6 +88,7 @@ namespace Aws
         void TransferHandle::AddQueuedPart(const PartPointer& partState)
         {            
             std::lock_guard<std::mutex> locker(m_partsLock);
+            partState->Reset();
             m_failedParts.erase(partState->GetPartId());          
             m_queuedParts[partState->GetPartId()] = partState;
         }
@@ -70,6 +108,7 @@ namespace Aws
         void TransferHandle::AddPendingPart(const PartPointer& partState)
         {            
             std::lock_guard<std::mutex> locker(m_partsLock);
+            partState->Reset();
             m_queuedParts.erase(partState->GetPartId());           
             m_pendingParts[partState->GetPartId()] = partState;
         }
@@ -91,6 +130,7 @@ namespace Aws
             int partId = partState->GetPartId();
 
             std::lock_guard<std::mutex> locker(m_partsLock);
+            partState->Reset();
             m_pendingParts.erase(partId);
             m_queuedParts.erase(partId);
             m_failedParts[partId] = partState;

@@ -30,26 +30,14 @@ namespace Aws
 {
     namespace Transfer
     {
+        class TransferHandle;
+
         class PartState
         {
             public:
-                PartState() :
-                    m_partId(0),
-                    m_bestProgressInBytes(0),
-                    m_sizeInBytes(0)
-                {}
-
-                PartState(int partId, size_t bestProgressInBytes, size_t sizeInBytes) :
-                    m_partId(partId),
-                    m_bestProgressInBytes(bestProgressInBytes),
-                    m_sizeInBytes(sizeInBytes)
-                {}
-
-                PartState(const PartState& rhs) :
-                    m_partId(rhs.m_partId),
-                    m_bestProgressInBytes(rhs.m_bestProgressInBytes),
-                    m_sizeInBytes(rhs.m_sizeInBytes)
-                {}
+                PartState();
+                PartState(int partId, size_t bestProgressInBytes, size_t sizeInBytes);
+                PartState(const PartState& rhs);
 
                 int GetPartId() const { return m_partId; }
 
@@ -57,10 +45,16 @@ namespace Aws
                 void SetBestProgressInBytes(size_t progressInBytes) { m_bestProgressInBytes = progressInBytes; }
 
                 size_t GetSizeInBytes() const { return m_sizeInBytes; }
+                void SetSizeInBytes(size_t sizeInBytes) { m_sizeInBytes = sizeInBytes; }
+
+                void Reset();
+
+                void OnDataTransferred(long long amount, const std::shared_ptr<TransferHandle> &transferHandle);
 
             private:
 
                 int m_partId;
+                size_t m_currentProgressInBytes;
                 size_t m_bestProgressInBytes;
                 size_t m_sizeInBytes;
         };
@@ -199,16 +193,18 @@ namespace Aws
             void Restart();
             /**
              * Total bytes transferred successfully on this transfer operation.
+             * We implement transfer progress with two invariants:
+             *  (1) Never lock; given a callback that can happen hundreds of times a second or more on a solid connection, it isn't acceptable to lock each time
+             *  (2) Never go backwards, in spite of part upload/download failures.  Negative progress (canceling a highly concurrent transfer can
+             *      lead to an enormous step backwards if many parts are aborted at once) is a confusing and undesirable user experience.
+             * In this sense, progress represents a high-water mark, and in the presence of heavy failures or cancellation, it may appear to pause until the 
+             * necessary retries exceed the previous high-water mark.
              */
             inline uint64_t GetBytesTransferred() const { return m_bytesTransferred.load(); }
             /**
-             * Atomically add bytes to the total bytes transferred
-             */
-            inline void AddTransferredBytes(uint64_t bytes) { m_bytesTransferred += bytes; }
-            /**
-             * Atomically set the total bytes transfered
-             */
-            inline void SetTransferredBytes(uint64_t bytes) { m_bytesTransferred = bytes; }
+            * Total bytes transferred successfully on this transfer operation.
+            */
+            void UpdateBytesTransferred(uint64_t amount) { m_bytesTransferred += amount; }
 
             /**
              * The calculated total size of the object being transferred.
