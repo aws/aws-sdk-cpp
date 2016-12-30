@@ -39,7 +39,8 @@ TaskDefinition::TaskDefinition() :
     m_volumesHasBeenSet(false),
     m_status(TaskDefinitionStatus::NOT_SET),
     m_statusHasBeenSet(false),
-    m_requiresAttributesHasBeenSet(false)
+    m_requiresAttributesHasBeenSet(false),
+    m_placementConstraintsHasBeenSet(false)
 {
 }
 
@@ -55,7 +56,8 @@ TaskDefinition::TaskDefinition(const JsonValue& jsonValue) :
     m_volumesHasBeenSet(false),
     m_status(TaskDefinitionStatus::NOT_SET),
     m_statusHasBeenSet(false),
-    m_requiresAttributesHasBeenSet(false)
+    m_requiresAttributesHasBeenSet(false),
+    m_placementConstraintsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -134,6 +136,16 @@ TaskDefinition& TaskDefinition::operator =(const JsonValue& jsonValue)
     m_requiresAttributesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("placementConstraints"))
+  {
+    Array<JsonValue> placementConstraintsJsonList = jsonValue.GetArray("placementConstraints");
+    for(unsigned placementConstraintsIndex = 0; placementConstraintsIndex < placementConstraintsJsonList.GetLength(); ++placementConstraintsIndex)
+    {
+      m_placementConstraints.push_back(placementConstraintsJsonList[placementConstraintsIndex].AsObject());
+    }
+    m_placementConstraintsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -205,6 +217,17 @@ JsonValue TaskDefinition::Jsonize() const
      requiresAttributesJsonList[requiresAttributesIndex].AsObject(m_requiresAttributes[requiresAttributesIndex].Jsonize());
    }
    payload.WithArray("requiresAttributes", std::move(requiresAttributesJsonList));
+
+  }
+
+  if(m_placementConstraintsHasBeenSet)
+  {
+   Array<JsonValue> placementConstraintsJsonList(m_placementConstraints.size());
+   for(unsigned placementConstraintsIndex = 0; placementConstraintsIndex < placementConstraintsJsonList.GetLength(); ++placementConstraintsIndex)
+   {
+     placementConstraintsJsonList[placementConstraintsIndex].AsObject(m_placementConstraints[placementConstraintsIndex].Jsonize());
+   }
+   payload.WithArray("placementConstraints", std::move(placementConstraintsJsonList));
 
   }
 

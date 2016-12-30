@@ -383,16 +383,16 @@ namespace Model
         virtual void BatchGetApplicationsAsync(const Model::BatchGetApplicationsRequest& request, const BatchGetApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Get information about one or more deployment groups.</p><p><h3>See Also:</h3>
-         * <a
+         * <p>Gets information about one or more deployment groups.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetDeploymentGroups">AWS
          * API Reference</a></p>
          */
         virtual Model::BatchGetDeploymentGroupsOutcome BatchGetDeploymentGroups(const Model::BatchGetDeploymentGroupsRequest& request) const;
 
         /**
-         * <p>Get information about one or more deployment groups.</p><p><h3>See Also:</h3>
-         * <a
+         * <p>Gets information about one or more deployment groups.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetDeploymentGroups">AWS
          * API Reference</a></p>
          *
@@ -401,8 +401,8 @@ namespace Model
         virtual Model::BatchGetDeploymentGroupsOutcomeCallable BatchGetDeploymentGroupsCallable(const Model::BatchGetDeploymentGroupsRequest& request) const;
 
         /**
-         * <p>Get information about one or more deployment groups.</p><p><h3>See Also:</h3>
-         * <a
+         * <p>Gets information about one or more deployment groups.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetDeploymentGroups">AWS
          * API Reference</a></p>
          *
@@ -1115,14 +1115,18 @@ namespace Model
         virtual void RegisterApplicationRevisionAsync(const Model::RegisterApplicationRevisionRequest& request, const RegisterApplicationRevisionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Registers an on-premises instance.</p><p><h3>See Also:</h3>   <a
+         * <p>Registers an on-premises instance.</p> <note> <p>Only one IAM ARN (an IAM
+         * session ARN or IAM user ARN) is supported in the request. You cannot use
+         * both.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/RegisterOnPremisesInstance">AWS
          * API Reference</a></p>
          */
         virtual Model::RegisterOnPremisesInstanceOutcome RegisterOnPremisesInstance(const Model::RegisterOnPremisesInstanceRequest& request) const;
 
         /**
-         * <p>Registers an on-premises instance.</p><p><h3>See Also:</h3>   <a
+         * <p>Registers an on-premises instance.</p> <note> <p>Only one IAM ARN (an IAM
+         * session ARN or IAM user ARN) is supported in the request. You cannot use
+         * both.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/RegisterOnPremisesInstance">AWS
          * API Reference</a></p>
          *
@@ -1131,7 +1135,9 @@ namespace Model
         virtual Model::RegisterOnPremisesInstanceOutcomeCallable RegisterOnPremisesInstanceCallable(const Model::RegisterOnPremisesInstanceRequest& request) const;
 
         /**
-         * <p>Registers an on-premises instance.</p><p><h3>See Also:</h3>   <a
+         * <p>Registers an on-premises instance.</p> <note> <p>Only one IAM ARN (an IAM
+         * session ARN or IAM user ARN) is supported in the request. You cannot use
+         * both.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/RegisterOnPremisesInstance">AWS
          * API Reference</a></p>
          *

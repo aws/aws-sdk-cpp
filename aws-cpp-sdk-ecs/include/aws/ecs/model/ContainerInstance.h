@@ -483,44 +483,51 @@ namespace Model
     inline ContainerInstance& WithAgentUpdateStatus(AgentUpdateStatus&& value) { SetAgentUpdateStatus(value); return *this;}
 
     /**
-     * <p>The attributes set for the container instance by the Amazon ECS container
-     * agent at instance registration.</p>
+     * <p>The attributes set for the container instance, either by the Amazon ECS
+     * container agent at instance registration or manually with the
+     * <a>PutAttributes</a> operation.</p>
      */
     inline const Aws::Vector<Attribute>& GetAttributes() const{ return m_attributes; }
 
     /**
-     * <p>The attributes set for the container instance by the Amazon ECS container
-     * agent at instance registration.</p>
+     * <p>The attributes set for the container instance, either by the Amazon ECS
+     * container agent at instance registration or manually with the
+     * <a>PutAttributes</a> operation.</p>
      */
     inline void SetAttributes(const Aws::Vector<Attribute>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
 
     /**
-     * <p>The attributes set for the container instance by the Amazon ECS container
-     * agent at instance registration.</p>
+     * <p>The attributes set for the container instance, either by the Amazon ECS
+     * container agent at instance registration or manually with the
+     * <a>PutAttributes</a> operation.</p>
      */
     inline void SetAttributes(Aws::Vector<Attribute>&& value) { m_attributesHasBeenSet = true; m_attributes = value; }
 
     /**
-     * <p>The attributes set for the container instance by the Amazon ECS container
-     * agent at instance registration.</p>
+     * <p>The attributes set for the container instance, either by the Amazon ECS
+     * container agent at instance registration or manually with the
+     * <a>PutAttributes</a> operation.</p>
      */
     inline ContainerInstance& WithAttributes(const Aws::Vector<Attribute>& value) { SetAttributes(value); return *this;}
 
     /**
-     * <p>The attributes set for the container instance by the Amazon ECS container
-     * agent at instance registration.</p>
+     * <p>The attributes set for the container instance, either by the Amazon ECS
+     * container agent at instance registration or manually with the
+     * <a>PutAttributes</a> operation.</p>
      */
     inline ContainerInstance& WithAttributes(Aws::Vector<Attribute>&& value) { SetAttributes(value); return *this;}
 
     /**
-     * <p>The attributes set for the container instance by the Amazon ECS container
-     * agent at instance registration.</p>
+     * <p>The attributes set for the container instance, either by the Amazon ECS
+     * container agent at instance registration or manually with the
+     * <a>PutAttributes</a> operation.</p>
      */
     inline ContainerInstance& AddAttributes(const Attribute& value) { m_attributesHasBeenSet = true; m_attributes.push_back(value); return *this; }
 
     /**
-     * <p>The attributes set for the container instance by the Amazon ECS container
-     * agent at instance registration.</p>
+     * <p>The attributes set for the container instance, either by the Amazon ECS
+     * container agent at instance registration or manually with the
+     * <a>PutAttributes</a> operation.</p>
      */
     inline ContainerInstance& AddAttributes(Attribute&& value) { m_attributesHasBeenSet = true; m_attributes.push_back(value); return *this; }
 

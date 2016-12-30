@@ -81,34 +81,59 @@ namespace Model
      */
     inline RevisionLocation& WithRevisionType(RevisionLocationType&& value) { SetRevisionType(value); return *this;}
 
-    
+    /**
+     * <p>Information about the location of application artifacts stored in Amazon S3.
+     * </p>
+     */
     inline const S3Location& GetS3Location() const{ return m_s3Location; }
 
-    
+    /**
+     * <p>Information about the location of application artifacts stored in Amazon S3.
+     * </p>
+     */
     inline void SetS3Location(const S3Location& value) { m_s3LocationHasBeenSet = true; m_s3Location = value; }
 
-    
+    /**
+     * <p>Information about the location of application artifacts stored in Amazon S3.
+     * </p>
+     */
     inline void SetS3Location(S3Location&& value) { m_s3LocationHasBeenSet = true; m_s3Location = value; }
 
-    
+    /**
+     * <p>Information about the location of application artifacts stored in Amazon S3.
+     * </p>
+     */
     inline RevisionLocation& WithS3Location(const S3Location& value) { SetS3Location(value); return *this;}
 
-    
+    /**
+     * <p>Information about the location of application artifacts stored in Amazon S3.
+     * </p>
+     */
     inline RevisionLocation& WithS3Location(S3Location&& value) { SetS3Location(value); return *this;}
 
-    
+    /**
+     * <p>Information about the location of application artifacts stored in GitHub.</p>
+     */
     inline const GitHubLocation& GetGitHubLocation() const{ return m_gitHubLocation; }
 
-    
+    /**
+     * <p>Information about the location of application artifacts stored in GitHub.</p>
+     */
     inline void SetGitHubLocation(const GitHubLocation& value) { m_gitHubLocationHasBeenSet = true; m_gitHubLocation = value; }
 
-    
+    /**
+     * <p>Information about the location of application artifacts stored in GitHub.</p>
+     */
     inline void SetGitHubLocation(GitHubLocation&& value) { m_gitHubLocationHasBeenSet = true; m_gitHubLocation = value; }
 
-    
+    /**
+     * <p>Information about the location of application artifacts stored in GitHub.</p>
+     */
     inline RevisionLocation& WithGitHubLocation(const GitHubLocation& value) { SetGitHubLocation(value); return *this;}
 
-    
+    /**
+     * <p>Information about the location of application artifacts stored in GitHub.</p>
+     */
     inline RevisionLocation& WithGitHubLocation(GitHubLocation&& value) { SetGitHubLocation(value); return *this;}
 
   private:

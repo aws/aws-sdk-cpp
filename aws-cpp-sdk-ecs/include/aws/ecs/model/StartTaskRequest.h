@@ -208,65 +208,57 @@ namespace Model
 
     /**
      * <p>The container instance IDs or full Amazon Resource Name (ARN) entries for the
-     * container instances on which you would like to place your task.</p> <important>
-     * <p>The list of container instances to start tasks on is limited to 10.</p>
-     * </important>
+     * container instances on which you would like to place your task. You can specify
+     * up to 10 container instances.</p>
      */
     inline const Aws::Vector<Aws::String>& GetContainerInstances() const{ return m_containerInstances; }
 
     /**
      * <p>The container instance IDs or full Amazon Resource Name (ARN) entries for the
-     * container instances on which you would like to place your task.</p> <important>
-     * <p>The list of container instances to start tasks on is limited to 10.</p>
-     * </important>
+     * container instances on which you would like to place your task. You can specify
+     * up to 10 container instances.</p>
      */
     inline void SetContainerInstances(const Aws::Vector<Aws::String>& value) { m_containerInstancesHasBeenSet = true; m_containerInstances = value; }
 
     /**
      * <p>The container instance IDs or full Amazon Resource Name (ARN) entries for the
-     * container instances on which you would like to place your task.</p> <important>
-     * <p>The list of container instances to start tasks on is limited to 10.</p>
-     * </important>
+     * container instances on which you would like to place your task. You can specify
+     * up to 10 container instances.</p>
      */
     inline void SetContainerInstances(Aws::Vector<Aws::String>&& value) { m_containerInstancesHasBeenSet = true; m_containerInstances = value; }
 
     /**
      * <p>The container instance IDs or full Amazon Resource Name (ARN) entries for the
-     * container instances on which you would like to place your task.</p> <important>
-     * <p>The list of container instances to start tasks on is limited to 10.</p>
-     * </important>
+     * container instances on which you would like to place your task. You can specify
+     * up to 10 container instances.</p>
      */
     inline StartTaskRequest& WithContainerInstances(const Aws::Vector<Aws::String>& value) { SetContainerInstances(value); return *this;}
 
     /**
      * <p>The container instance IDs or full Amazon Resource Name (ARN) entries for the
-     * container instances on which you would like to place your task.</p> <important>
-     * <p>The list of container instances to start tasks on is limited to 10.</p>
-     * </important>
+     * container instances on which you would like to place your task. You can specify
+     * up to 10 container instances.</p>
      */
     inline StartTaskRequest& WithContainerInstances(Aws::Vector<Aws::String>&& value) { SetContainerInstances(value); return *this;}
 
     /**
      * <p>The container instance IDs or full Amazon Resource Name (ARN) entries for the
-     * container instances on which you would like to place your task.</p> <important>
-     * <p>The list of container instances to start tasks on is limited to 10.</p>
-     * </important>
+     * container instances on which you would like to place your task. You can specify
+     * up to 10 container instances.</p>
      */
     inline StartTaskRequest& AddContainerInstances(const Aws::String& value) { m_containerInstancesHasBeenSet = true; m_containerInstances.push_back(value); return *this; }
 
     /**
      * <p>The container instance IDs or full Amazon Resource Name (ARN) entries for the
-     * container instances on which you would like to place your task.</p> <important>
-     * <p>The list of container instances to start tasks on is limited to 10.</p>
-     * </important>
+     * container instances on which you would like to place your task. You can specify
+     * up to 10 container instances.</p>
      */
     inline StartTaskRequest& AddContainerInstances(Aws::String&& value) { m_containerInstancesHasBeenSet = true; m_containerInstances.push_back(value); return *this; }
 
     /**
      * <p>The container instance IDs or full Amazon Resource Name (ARN) entries for the
-     * container instances on which you would like to place your task.</p> <important>
-     * <p>The list of container instances to start tasks on is limited to 10.</p>
-     * </important>
+     * container instances on which you would like to place your task. You can specify
+     * up to 10 container instances.</p>
      */
     inline StartTaskRequest& AddContainerInstances(const char* value) { m_containerInstancesHasBeenSet = true; m_containerInstances.push_back(value); return *this; }
 
@@ -361,6 +353,48 @@ namespace Model
      */
     inline StartTaskRequest& WithStartedBy(const char* value) { SetStartedBy(value); return *this;}
 
+    /**
+     * <p>The task group to associate with the task. By default, if you do not specify
+     * a task group, the default group is <code>family:TASKDEF-FAMILY</code>.</p>
+     */
+    inline const Aws::String& GetGroup() const{ return m_group; }
+
+    /**
+     * <p>The task group to associate with the task. By default, if you do not specify
+     * a task group, the default group is <code>family:TASKDEF-FAMILY</code>.</p>
+     */
+    inline void SetGroup(const Aws::String& value) { m_groupHasBeenSet = true; m_group = value; }
+
+    /**
+     * <p>The task group to associate with the task. By default, if you do not specify
+     * a task group, the default group is <code>family:TASKDEF-FAMILY</code>.</p>
+     */
+    inline void SetGroup(Aws::String&& value) { m_groupHasBeenSet = true; m_group = value; }
+
+    /**
+     * <p>The task group to associate with the task. By default, if you do not specify
+     * a task group, the default group is <code>family:TASKDEF-FAMILY</code>.</p>
+     */
+    inline void SetGroup(const char* value) { m_groupHasBeenSet = true; m_group.assign(value); }
+
+    /**
+     * <p>The task group to associate with the task. By default, if you do not specify
+     * a task group, the default group is <code>family:TASKDEF-FAMILY</code>.</p>
+     */
+    inline StartTaskRequest& WithGroup(const Aws::String& value) { SetGroup(value); return *this;}
+
+    /**
+     * <p>The task group to associate with the task. By default, if you do not specify
+     * a task group, the default group is <code>family:TASKDEF-FAMILY</code>.</p>
+     */
+    inline StartTaskRequest& WithGroup(Aws::String&& value) { SetGroup(value); return *this;}
+
+    /**
+     * <p>The task group to associate with the task. By default, if you do not specify
+     * a task group, the default group is <code>family:TASKDEF-FAMILY</code>.</p>
+     */
+    inline StartTaskRequest& WithGroup(const char* value) { SetGroup(value); return *this;}
+
   private:
     Aws::String m_cluster;
     bool m_clusterHasBeenSet;
@@ -372,6 +406,8 @@ namespace Model
     bool m_containerInstancesHasBeenSet;
     Aws::String m_startedBy;
     bool m_startedByHasBeenSet;
+    Aws::String m_group;
+    bool m_groupHasBeenSet;
   };
 
 } // namespace Model

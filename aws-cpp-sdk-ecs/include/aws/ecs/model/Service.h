@@ -21,6 +21,8 @@
 #include <aws/ecs/model/LoadBalancer.h>
 #include <aws/ecs/model/Deployment.h>
 #include <aws/ecs/model/ServiceEvent.h>
+#include <aws/ecs/model/PlacementConstraint.h>
+#include <aws/ecs/model/PlacementStrategy.h>
 
 namespace Aws
 {
@@ -588,6 +590,83 @@ namespace Model
      */
     inline Service& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(value); return *this;}
 
+    /**
+     * <p>The placement constraints for the tasks in the service.</p>
+     */
+    inline const Aws::Vector<PlacementConstraint>& GetPlacementConstraints() const{ return m_placementConstraints; }
+
+    /**
+     * <p>The placement constraints for the tasks in the service.</p>
+     */
+    inline void SetPlacementConstraints(const Aws::Vector<PlacementConstraint>& value) { m_placementConstraintsHasBeenSet = true; m_placementConstraints = value; }
+
+    /**
+     * <p>The placement constraints for the tasks in the service.</p>
+     */
+    inline void SetPlacementConstraints(Aws::Vector<PlacementConstraint>&& value) { m_placementConstraintsHasBeenSet = true; m_placementConstraints = value; }
+
+    /**
+     * <p>The placement constraints for the tasks in the service.</p>
+     */
+    inline Service& WithPlacementConstraints(const Aws::Vector<PlacementConstraint>& value) { SetPlacementConstraints(value); return *this;}
+
+    /**
+     * <p>The placement constraints for the tasks in the service.</p>
+     */
+    inline Service& WithPlacementConstraints(Aws::Vector<PlacementConstraint>&& value) { SetPlacementConstraints(value); return *this;}
+
+    /**
+     * <p>The placement constraints for the tasks in the service.</p>
+     */
+    inline Service& AddPlacementConstraints(const PlacementConstraint& value) { m_placementConstraintsHasBeenSet = true; m_placementConstraints.push_back(value); return *this; }
+
+    /**
+     * <p>The placement constraints for the tasks in the service.</p>
+     */
+    inline Service& AddPlacementConstraints(PlacementConstraint&& value) { m_placementConstraintsHasBeenSet = true; m_placementConstraints.push_back(value); return *this; }
+
+    /**
+     * <p>The placement strategy that determines how tasks for the service are
+     * placed.</p>
+     */
+    inline const Aws::Vector<PlacementStrategy>& GetPlacementStrategy() const{ return m_placementStrategy; }
+
+    /**
+     * <p>The placement strategy that determines how tasks for the service are
+     * placed.</p>
+     */
+    inline void SetPlacementStrategy(const Aws::Vector<PlacementStrategy>& value) { m_placementStrategyHasBeenSet = true; m_placementStrategy = value; }
+
+    /**
+     * <p>The placement strategy that determines how tasks for the service are
+     * placed.</p>
+     */
+    inline void SetPlacementStrategy(Aws::Vector<PlacementStrategy>&& value) { m_placementStrategyHasBeenSet = true; m_placementStrategy = value; }
+
+    /**
+     * <p>The placement strategy that determines how tasks for the service are
+     * placed.</p>
+     */
+    inline Service& WithPlacementStrategy(const Aws::Vector<PlacementStrategy>& value) { SetPlacementStrategy(value); return *this;}
+
+    /**
+     * <p>The placement strategy that determines how tasks for the service are
+     * placed.</p>
+     */
+    inline Service& WithPlacementStrategy(Aws::Vector<PlacementStrategy>&& value) { SetPlacementStrategy(value); return *this;}
+
+    /**
+     * <p>The placement strategy that determines how tasks for the service are
+     * placed.</p>
+     */
+    inline Service& AddPlacementStrategy(const PlacementStrategy& value) { m_placementStrategyHasBeenSet = true; m_placementStrategy.push_back(value); return *this; }
+
+    /**
+     * <p>The placement strategy that determines how tasks for the service are
+     * placed.</p>
+     */
+    inline Service& AddPlacementStrategy(PlacementStrategy&& value) { m_placementStrategyHasBeenSet = true; m_placementStrategy.push_back(value); return *this; }
+
   private:
     Aws::String m_serviceArn;
     bool m_serviceArnHasBeenSet;
@@ -617,6 +696,10 @@ namespace Model
     bool m_eventsHasBeenSet;
     Aws::Utils::DateTime m_createdAt;
     bool m_createdAtHasBeenSet;
+    Aws::Vector<PlacementConstraint> m_placementConstraints;
+    bool m_placementConstraintsHasBeenSet;
+    Aws::Vector<PlacementStrategy> m_placementStrategy;
+    bool m_placementStrategyHasBeenSet;
   };
 
 } // namespace Model
