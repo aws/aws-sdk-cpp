@@ -15,6 +15,8 @@
 
 #include <aws/transfer/TransferHandle.h>
 
+#include <cassert>
+
 namespace Aws
 {
     namespace Transfer
@@ -22,28 +24,40 @@ namespace Aws
 
         PartState::PartState() :
             m_partId(0),
+            m_eTag(""),
             m_currentProgressInBytes(0),
             m_bestProgressInBytes(0),
-            m_sizeInBytes(0)
+            m_sizeInBytes(0),
+            m_nextAppendChain(nullptr),
+            m_appendLock(),
+            m_appendSignal(),
+            m_canAppendProceed(false),
+            m_appendValid(false),
+            m_downloadPartStream(nullptr),
+            m_downloadBuffer(nullptr)
         {}
 
         PartState::PartState(int partId, size_t bestProgressInBytes, size_t sizeInBytes) :
             m_partId(partId),
+            m_eTag(""),
             m_currentProgressInBytes(0),
             m_bestProgressInBytes(bestProgressInBytes),
-            m_sizeInBytes(sizeInBytes)
+            m_sizeInBytes(sizeInBytes),
+            m_nextAppendChain(nullptr),
+            m_appendLock(),
+            m_appendSignal(),
+            m_canAppendProceed(false),
+            m_appendValid(false),
+            m_downloadPartStream(nullptr),
+            m_downloadBuffer(nullptr)
         {}
 
-        PartState::PartState(const PartState& rhs) :
-            m_partId(rhs.m_partId),
-            m_currentProgressInBytes(rhs.m_currentProgressInBytes),
-            m_bestProgressInBytes(rhs.m_bestProgressInBytes),
-            m_sizeInBytes(rhs.m_sizeInBytes)
-        {}
 
         void PartState::Reset()
         {
             m_currentProgressInBytes = 0;
+            m_canAppendProceed = false;
+            m_appendValid = false;
         }
 
         void PartState::OnDataTransferred(long long amount, const std::shared_ptr<TransferHandle> &transferHandle)
@@ -56,21 +70,51 @@ namespace Aws
             }
         }
 
-        Aws::Set<std::pair<int, Aws::String>> TransferHandle::GetCompletedParts() const
+        void PartState::SignalNextPartForAppend(bool appendValid)
+        {
+            if(m_nextAppendChain)
+            {
+                {
+                    std::lock_guard<std::mutex> locker(m_nextAppendChain->m_appendLock);
+                    m_nextAppendChain->m_appendValid = appendValid;
+                    m_nextAppendChain->m_canAppendProceed = true;
+                }
+                m_nextAppendChain->m_appendSignal.notify_one();
+            }
+        }
+
+        bool PartState::WaitOnAppendSignal()
+        {
+            if (m_partId == 1)
+            {
+                return true;
+            }
+
+            std::unique_lock<std::mutex> locker(m_appendLock);
+            while(!m_canAppendProceed)
+            {
+                m_appendSignal.wait(locker, [this](){ return m_canAppendProceed.load(); });
+            }
+
+            return m_appendValid;
+        }
+
+        PartStateMap TransferHandle::GetCompletedParts() const
         {
             std::lock_guard<std::mutex> locker(m_partsLock);
             return m_completedParts;
         }
 
-        void TransferHandle::ChangePartToCompleted(int partNumber, const Aws::String& eTag)
+        void TransferHandle::ChangePartToCompleted(const PartPointer& partState, const Aws::String &eTag)
         {
             std::lock_guard<std::mutex> locker(m_partsLock);
-            if (!m_pendingParts.erase(partNumber))
+            if (!m_pendingParts.erase(partState->GetPartId()))
             {                   
-                m_failedParts.erase(partNumber);
+                m_failedParts.erase(partState->GetPartId());
             }
             
-            m_completedParts.insert(std::pair<int, Aws::String>(partNumber, eTag));
+            partState->SetETag(eTag);
+            m_completedParts[partState->GetPartId()] = partState;
         }
 
         PartStateMap TransferHandle::GetQueuedParts() const
@@ -137,13 +181,19 @@ namespace Aws
         }
 
         void TransferHandle::GetAllPartsTransactional(PartStateMap& queuedParts, PartStateMap& pendingParts,
-            PartStateMap& failedParts, Aws::Set<std::pair<int, Aws::String>>& completedParts)
+            PartStateMap& failedParts, PartStateMap& completedParts)
         {
             std::lock_guard<std::mutex> locker(m_partsLock);
             queuedParts = m_queuedParts;
             pendingParts = m_pendingParts;
             failedParts = m_failedParts;
             completedParts = m_completedParts;
+        }
+
+        bool TransferHandle::HasParts() const
+        {
+            std::lock_guard<std::mutex> locker(m_partsLock);
+            return !m_queuedParts.empty() || !m_pendingParts.empty() || !m_failedParts.empty() || !m_completedParts.empty();
         }
 
         static bool IsFinishedStatus(TransferStatus value)

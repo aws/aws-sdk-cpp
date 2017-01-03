@@ -36,7 +36,6 @@ namespace Aws
         typedef std::function<void(const TransferManager*, const TransferHandle&)> TransferStatusUpdatedCallback;
         typedef std::function<void(const TransferManager*, const TransferHandle&, const Aws::Client::AWSError<Aws::S3::S3Errors>&)> ErrorCallback;
         typedef std::function<void(const TransferManager*, const std::shared_ptr<TransferHandle>&)> TransferInitiatedCallback;
-        typedef std::function<Aws::IOStream*(void)> CreateDownloadStreamCallback;
 
         const uint64_t MB5 = 5 * 1024 * 1024;
 
@@ -195,10 +194,25 @@ namespace Aws
             */
             void DownloadToDirectory(const Aws::String& directory, const Aws::String& bucketName, const Aws::String& prefix = Aws::String());
 
+
+
+            std::shared_ptr<TransferHandle> DownloadFile2(const Aws::String& bucketName,
+                                                          const Aws::String& keyName,
+                                                          CreateDownloadStreamCallback createDownloadStreamfn);
+
+            std::shared_ptr<TransferHandle> RetryDownload2(const std::shared_ptr<TransferHandle>& retryHandle);
+
         private:
             void DoMultipartUpload(const std::shared_ptr<Aws::IOStream>& streamToPut, const std::shared_ptr<TransferHandle>& handle);
             void DoSinglePartUpload(const std::shared_ptr<Aws::IOStream>& streamToPut, const std::shared_ptr<TransferHandle>& handle);
             void DoDownload(CreateDownloadStreamCallback writeToStreamfn, const std::shared_ptr<TransferHandle>& handle);
+
+            void DoDownload2(const std::shared_ptr<TransferHandle>& handle);
+
+            void HandleGetObjectResponse(const Aws::S3::S3Client* client, 
+                                         const Aws::S3::Model::GetObjectRequest& request,
+                                         const Aws::S3::Model::GetObjectOutcome& outcome, 
+                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context);
 
             void WaitForCancellationAndAbortUpload(const std::shared_ptr<TransferHandle>& canceledHandle);
 
