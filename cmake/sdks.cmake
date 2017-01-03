@@ -185,8 +185,6 @@ function(get_sdks_depending_on SDK_NAME DEPENDING_SDKS_VAR)
     SET(${DEPENDING_SDKS_VAR} "${TEMP_SDK_LIST}" PARENT_SCOPE)
 endfunction()
 
-# when building a fixed target set, missing SDKs are an error
-# when building "everything", we forgive missing SDKs; should this become an option instead?
 set(SDK_DEPENDENCY_BUILD_LIST "")
 if(BUILD_ONLY)
     set(SDK_BUILD_LIST ${BUILD_ONLY})
@@ -209,52 +207,8 @@ if(BUILD_ONLY)
             endforeach()
         endif()
     endforeach()
-
     LIST(REMOVE_DUPLICATES SDK_BUILD_LIST)
-    LIST(REMOVE_DUPLICATES SDK_DEPENDENCY_BUILD_LIST)
-
-    # make sure all the sdks/c2js are present; a missing sdk-directory or c2j file is a build error when building a manually-specified set
-    foreach(SDK IN LISTS SDK_BUILD_LIST)
-        SET(SDK_DIR "aws-cpp-sdk-${SDK}")
-        if(NOT IS_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/${SDK_DIR}")
-            message(FATAL_ERROR "${SDK} is required for build, but ${SDK_DIR} directory is missing!")
-        endif()
-
-        get_c2j_date_for_service(${SDK} SDK_C2J_DATE)
-        SET(SDK_C2J_FILE "${CMAKE_CURRENT_SOURCE_DIR}/code-generation/api-descriptions/${SDK}-${SDK_C2J_DATE}.normal.json")
-        if(REGENERATE_CLIENTS AND SDK_C2J_DATE AND NOT (EXISTS ${SDK_C2J_FILE}))
-            message(FATAL_ERROR "${SDK} is required for build, but C2J file '${SDK_C2J_FILE}' is missing!")
-        endif()
-    endforeach()
-
-    set(TEMP_SDK_DEPENDENCY_BUILD_LIST ${SDK_DEPENDENCY_BUILD_LIST})
-    foreach (SDK IN LISTS TEMP_SDK_DEPENDENCY_BUILD_LIST)
-        list(FIND SDK_BUILD_LIST ${SDK} DEPENDENCY_INDEX)
-
-        if(DEPENDENCY_INDEX LESS 0)
-            find_package("aws-cpp-sdk-${SDK}" QUIET)
-            if (NOT ${SDK}_FOUND)
-                set(SDK_DIR "aws-cpp-sdk-${SDK}")
-                if (NOT IS_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/${SDK_DIR}")
-                    message(FATAL_ERROR "${SDK} is required for build, but ${SDK_DIR} directory is missing!")
-                endif ()
-
-                get_c2j_date_for_service(${SDK} SDK_C2J_DATE)
-                set(SDK_C2J_FILE "${CMAKE_CURRENT_SOURCE_DIR}/code-generation/api-descriptions/${SDK}-${SDK_C2J_DATE}.normal.json")
-                if (REGENERATE_CLIENTS AND SDK_C2J_DATE AND NOT (EXISTS ${SDK_C2J_FILE}))
-                    message(FATAL_ERROR "${SDK} is required for build, but C2J file '${SDK_C2J_FILE}' is missing")
-                endif ()
-            else ()
-                list(REMOVE_ITEM SDK_DEPENDENCY_BUILD_LIST ${SDK})
-            endif ()
-        else ()
-            list(REMOVE_ITEM SDK_DEPENDENCY_BUILD_LIST ${SDK})
-        endif ()
-    endforeach ()
-
-    foreach (SDK IN LISTS SDK_DEPENDENCY_BUILD_LIST)
-        list(APPEND SDK_BUILD_LIST "${SDK}")
-    endforeach()
+    LIST(REMOVE_DUPLICATES SDK_DEPENDENCY_BUILD_LIST)  
 else()
     set(TEMP_SDK_BUILD_LIST ${GENERATED_SERVICE_LIST})
     list(APPEND TEMP_SDK_BUILD_LIST "access-management")
@@ -270,17 +224,10 @@ else()
     foreach(SDK IN LISTS TEMP_SDK_BUILD_LIST)
         SET(REMOVE_SDK 0)
 
-        get_c2j_date_for_service(${SDK} SDK_C2J_DATE)
-        SET(SDK_C2J_FILE "${CMAKE_CURRENT_SOURCE_DIR}/code-generation/api-descriptions/${SDK}-${SDK_C2J_DATE}.normal.json")
-        if(REGENERATE_CLIENTS AND SDK_C2J_DATE AND NOT (EXISTS ${SDK_C2J_FILE}))
-            SET(REMOVE_SDK 1)
-        endif()
-
         SET(SDK_DIR "aws-cpp-sdk-${SDK}")
-        if(NOT REGENERATE_CLIENTS OR NOT SDK_C2J_DATE)
-            if(NOT IS_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/${SDK_DIR}")
-                SET(REMOVE_SDK 1)
-            endif()
+        
+        if(NOT IS_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/${SDK_DIR}")
+            SET(REMOVE_SDK 1)
         endif()
 
         if(REMOVE_SDK)
@@ -293,7 +240,6 @@ else()
 endif()
 
 # SDK_BUILD_LIST is now a list of present SDKs that can be processed unconditionally
-
 if(ADD_CUSTOM_CLIENTS OR REGENERATE_CLIENTS)
     execute_process(
         COMMAND ${PYTHON_CMD} scripts/generate_sdks.py --prepareTools
@@ -303,17 +249,92 @@ endif()
 
 if(REGENERATE_CLIENTS)
     message(STATUS "Regenerating clients that have been selected for build.")
-
-    execute_process( COMMAND ${PYTHON_CMD} scripts/wipe_generated_code.py  WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} )
-
-    foreach(SDK IN LISTS SDK_BUILD_LIST)
+    
+    SET(MERGED_BUILD_LIST ${SDK_BUILD_LIST})
+    list(APPEND MERGED_BUILD_LIST ${SDK_DEPENDENCY_BUILD_LIST})
+    LIST(REMOVE_DUPLICATES MERGED_BUILD_LIST)
+    
+    foreach(SDK IN LISTS MERGED_BUILD_LIST)
         get_c2j_date_for_service(${SDK} C2J_DATE)
-        if(C2J_DATE)
+        SET(SDK_C2J_FILE "${CMAKE_CURRENT_SOURCE_DIR}/code-generation/api-descriptions/${SDK}-${C2J_DATE}.normal.json")
+               
+        if(EXISTS ${SDK_C2J_FILE})
+            message(STATUS "Clearing existing directory for ${SDK} to prepare for generation.")
+            file(REMOVE_RECURSE "${CMAKE_CURRENT_SOURCE_DIR}/aws-cpp-sdk-${SDK}")
+            
             execute_process(
                 COMMAND ${PYTHON_CMD} scripts/generate_sdks.py --serviceName ${SDK} --apiVersion ${C2J_DATE} --outputLocation ./
                 WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
             )
+            message(STATUS "Generated service: ${SDK}, version: ${C2J_DATE}")
+        else()
+           message(STATUS "Directory for ${SDK} is either missing a service definition, is a custom client, or it is not a generated client. Skipping.")
         endif()
+    endforeach()
+endif()
+
+#at this point, if user has specified some customized clients, generate them and add them to the build here.
+foreach(custom_client ${ADD_CUSTOM_CLIENTS})
+    message(STATUS "${custom_client}")
+    STRING(REGEX MATCHALL "serviceName=(.*), ?version=(.*)" CLIENT_MATCHES "${custom_client}")
+    SET(C_LEN 0)
+    LIST(LENGTH CLIENT_MATCHES C_LEN)
+    if(CMAKE_MATCH_COUNT GREATER 0)
+        SET(C_SERVICE_NAME ${CMAKE_MATCH_1})
+        SET(C_VERSION ${CMAKE_MATCH_2})
+        
+        SET(SDK_C2J_FILE "${CMAKE_CURRENT_SOURCE_DIR}/code-generation/api-descriptions/${C_SERVICE_NAME}-${C_VERSION}.normal.json")        
+        if(NOT (EXISTS ${SDK_C2J_FILE}))
+            message(FATAL_ERROR "${C_SERVICE_NAME} is required for build, but C2J file '${SDK_C2J_FILE}' is missing!")
+        endif()
+        
+        message(STATUS "Clearing existing directory for ${C_SERVICE_NAME} to prepare for generation.")
+        file(REMOVE_RECURSE "${CMAKE_CURRENT_SOURCE_DIR}/aws-cpp-sdk-${C_SERVICE_NAME}")
+        message(STATUS "generating client for ${C_SERVICE_NAME} version ${C_VERSION}")
+        execute_process(
+            COMMAND ${PYTHON_CMD} scripts/generate_sdks.py --serviceName ${C_SERVICE_NAME} --apiVersion ${C_VERSION} --outputLocation ./
+            WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+        )
+        LIST(APPEND SDK_BUILD_LIST ${C_SERVICE_NAME})        
+    endif()
+endforeach(custom_client)
+
+LIST(REMOVE_DUPLICATES SDK_BUILD_LIST)
+LIST(REMOVE_DUPLICATES SDK_DEPENDENCY_BUILD_LIST) 
+
+# when building a fixed target set, missing SDKs are an error
+# when building "everything", we forgive missing SDKs; should this become an option instead?
+if(BUILD_ONLY)    
+    # make sure all the sdks/c2js are present; a missing sdk-directory or c2j file is a build error when building a manually-specified set
+    foreach(SDK IN LISTS SDK_BUILD_LIST)
+        SET(SDK_DIR "aws-cpp-sdk-${SDK}")
+
+        if(NOT IS_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/${SDK_DIR}")
+            message(FATAL_ERROR "${SDK} is required for build, but ${SDK_DIR} directory is missing!")
+        endif()        
+    endforeach()
+
+    set(TEMP_SDK_DEPENDENCY_BUILD_LIST ${SDK_DEPENDENCY_BUILD_LIST})
+    foreach (SDK IN LISTS TEMP_SDK_DEPENDENCY_BUILD_LIST)
+        list(FIND SDK_BUILD_LIST ${SDK} DEPENDENCY_INDEX)
+
+        if(DEPENDENCY_INDEX LESS 0)
+            find_package("aws-cpp-sdk-${SDK}" QUIET)
+            if (NOT ${SDK}_FOUND)
+                set(SDK_DIR "aws-cpp-sdk-${SDK}")
+                if (NOT IS_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/${SDK_DIR}")
+                    message(FATAL_ERROR "${SDK} is required for build, but ${SDK_DIR} directory is missing!")
+                endif ()               
+            else ()
+                list(REMOVE_ITEM SDK_DEPENDENCY_BUILD_LIST ${SDK})
+            endif ()
+        else ()
+            list(REMOVE_ITEM SDK_DEPENDENCY_BUILD_LIST ${SDK})
+        endif ()
+    endforeach ()
+
+    foreach (SDK IN LISTS SDK_DEPENDENCY_BUILD_LIST)
+        list(APPEND SDK_BUILD_LIST "${SDK}")
     endforeach()
 endif()
 
@@ -324,26 +345,7 @@ macro(add_sdks)
         SET(SDK_DIR "aws-cpp-sdk-${SDK}")
         add_subdirectory("${SDK_DIR}")
         LIST(APPEND EXPORTS "${SDK_DIR}")
-    endforeach()
-
-    #at this point, if user has specified some customized clients, generate them and add them to the build here.
-    foreach(custom_client ${ADD_CUSTOM_CLIENTS})
-        message(STATUS "${custom_client}")
-        STRING(REGEX MATCHALL "serviceName=(.*), ?version=(.*)" CLIENT_MATCHES "${custom_client}")
-        SET(C_LEN 0)
-        LIST(LENGTH CLIENT_MATCHES C_LEN)
-        if(CMAKE_MATCH_COUNT GREATER 0)
-            SET(C_SERVICE_NAME ${CMAKE_MATCH_1})
-            SET(C_VERSION ${CMAKE_MATCH_2})
-            message(STATUS "generating client for ${C_SERVICE_NAME} version ${C_VERSION}")
-            execute_process(
-                COMMAND ${PYTHON_CMD} scripts/generate_sdks.py --serviceName ${C_SERVICE_NAME} --apiVersion ${C_VERSION} --outputLocation ./
-                WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
-            )
-            STRING(CONCAT C_DIR "aws-cpp-sdk-" ${C_SERVICE_NAME})
-            add_subdirectory(${C_DIR})
-        endif()
-    endforeach(custom_client)
+    endforeach()    
 
     #testing
     if(ENABLE_TESTING)
