@@ -31,9 +31,11 @@ namespace Model
 
   /**
    * <p>Defines the real-time status of a Snowball's data transfer while the
-   * appliance is at AWS. Note that this data is only available while a job has a
+   * appliance is at AWS. This data is only available while a job has a
    * <code>JobState</code> value of <code>InProgress</code>, for both import and
-   * export jobs.</p>
+   * export jobs.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/DataTransfer">AWS
+   * API Reference</a></p>
    */
   class AWS_SNOWBALL_API DataTransfer
   {

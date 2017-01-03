@@ -26,7 +26,9 @@ PutSubscriptionFilterRequest::PutSubscriptionFilterRequest() :
     m_filterNameHasBeenSet(false),
     m_filterPatternHasBeenSet(false),
     m_destinationArnHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
+    m_roleArnHasBeenSet(false),
+    m_distribution(Distribution::NOT_SET),
+    m_distributionHasBeenSet(false)
 {
 }
 
@@ -62,6 +64,11 @@ Aws::String PutSubscriptionFilterRequest::SerializePayload() const
   {
    payload.WithString("roleArn", m_roleArn);
 
+  }
+
+  if(m_distributionHasBeenSet)
+  {
+   payload.WithString("distribution", DistributionMapper::GetNameForDistribution(m_distribution));
   }
 
   return payload.WriteReadable();

@@ -16,6 +16,7 @@
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/ssm/SSMRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ssm/model/DocumentType.h>
 
 namespace Aws
 {
@@ -104,11 +105,43 @@ namespace Model
      */
     inline CreateDocumentRequest& WithName(const char* value) { SetName(value); return *this;}
 
+    /**
+     * <p>The type of document to create. Valid document types include: Policy,
+     * Automation, and Command.</p>
+     */
+    inline const DocumentType& GetDocumentType() const{ return m_documentType; }
+
+    /**
+     * <p>The type of document to create. Valid document types include: Policy,
+     * Automation, and Command.</p>
+     */
+    inline void SetDocumentType(const DocumentType& value) { m_documentTypeHasBeenSet = true; m_documentType = value; }
+
+    /**
+     * <p>The type of document to create. Valid document types include: Policy,
+     * Automation, and Command.</p>
+     */
+    inline void SetDocumentType(DocumentType&& value) { m_documentTypeHasBeenSet = true; m_documentType = value; }
+
+    /**
+     * <p>The type of document to create. Valid document types include: Policy,
+     * Automation, and Command.</p>
+     */
+    inline CreateDocumentRequest& WithDocumentType(const DocumentType& value) { SetDocumentType(value); return *this;}
+
+    /**
+     * <p>The type of document to create. Valid document types include: Policy,
+     * Automation, and Command.</p>
+     */
+    inline CreateDocumentRequest& WithDocumentType(DocumentType&& value) { SetDocumentType(value); return *this;}
+
   private:
     Aws::String m_content;
     bool m_contentHasBeenSet;
     Aws::String m_name;
     bool m_nameHasBeenSet;
+    DocumentType m_documentType;
+    bool m_documentTypeHasBeenSet;
   };
 
 } // namespace Model

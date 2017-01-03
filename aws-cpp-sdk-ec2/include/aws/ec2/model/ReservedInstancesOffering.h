@@ -22,6 +22,8 @@
 #include <aws/ec2/model/CurrencyCodeValues.h>
 #include <aws/ec2/model/OfferingTypeValues.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ec2/model/OfferingClassType.h>
+#include <aws/ec2/model/Scope.h>
 #include <aws/ec2/model/RecurringCharge.h>
 #include <aws/ec2/model/PricingDetail.h>
 
@@ -40,7 +42,9 @@ namespace Model
 {
 
   /**
-   * <p>Describes a Reserved Instance offering.</p>
+   * <p>Describes a Reserved Instance offering.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReservedInstancesOffering">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API ReservedInstancesOffering
   {
@@ -53,37 +57,51 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     /**
-     * <p>The ID of the Reserved Instance offering.</p>
+     * <p>The ID of the Reserved Instance offering. This is the offering ID used in
+     * <a>GetReservedInstancesExchangeQuote</a> to confirm that an exchange can be
+     * made.</p>
      */
     inline const Aws::String& GetReservedInstancesOfferingId() const{ return m_reservedInstancesOfferingId; }
 
     /**
-     * <p>The ID of the Reserved Instance offering.</p>
+     * <p>The ID of the Reserved Instance offering. This is the offering ID used in
+     * <a>GetReservedInstancesExchangeQuote</a> to confirm that an exchange can be
+     * made.</p>
      */
     inline void SetReservedInstancesOfferingId(const Aws::String& value) { m_reservedInstancesOfferingIdHasBeenSet = true; m_reservedInstancesOfferingId = value; }
 
     /**
-     * <p>The ID of the Reserved Instance offering.</p>
+     * <p>The ID of the Reserved Instance offering. This is the offering ID used in
+     * <a>GetReservedInstancesExchangeQuote</a> to confirm that an exchange can be
+     * made.</p>
      */
     inline void SetReservedInstancesOfferingId(Aws::String&& value) { m_reservedInstancesOfferingIdHasBeenSet = true; m_reservedInstancesOfferingId = value; }
 
     /**
-     * <p>The ID of the Reserved Instance offering.</p>
+     * <p>The ID of the Reserved Instance offering. This is the offering ID used in
+     * <a>GetReservedInstancesExchangeQuote</a> to confirm that an exchange can be
+     * made.</p>
      */
     inline void SetReservedInstancesOfferingId(const char* value) { m_reservedInstancesOfferingIdHasBeenSet = true; m_reservedInstancesOfferingId.assign(value); }
 
     /**
-     * <p>The ID of the Reserved Instance offering.</p>
+     * <p>The ID of the Reserved Instance offering. This is the offering ID used in
+     * <a>GetReservedInstancesExchangeQuote</a> to confirm that an exchange can be
+     * made.</p>
      */
     inline ReservedInstancesOffering& WithReservedInstancesOfferingId(const Aws::String& value) { SetReservedInstancesOfferingId(value); return *this;}
 
     /**
-     * <p>The ID of the Reserved Instance offering.</p>
+     * <p>The ID of the Reserved Instance offering. This is the offering ID used in
+     * <a>GetReservedInstancesExchangeQuote</a> to confirm that an exchange can be
+     * made.</p>
      */
     inline ReservedInstancesOffering& WithReservedInstancesOfferingId(Aws::String&& value) { SetReservedInstancesOfferingId(value); return *this;}
 
     /**
-     * <p>The ID of the Reserved Instance offering.</p>
+     * <p>The ID of the Reserved Instance offering. This is the offering ID used in
+     * <a>GetReservedInstancesExchangeQuote</a> to confirm that an exchange can be
+     * made.</p>
      */
     inline ReservedInstancesOffering& WithReservedInstancesOfferingId(const char* value) { SetReservedInstancesOfferingId(value); return *this;}
 
@@ -393,6 +411,71 @@ namespace Model
      */
     inline ReservedInstancesOffering& AddPricingDetails(PricingDetail&& value) { m_pricingDetailsHasBeenSet = true; m_pricingDetails.push_back(value); return *this; }
 
+    /**
+     * <p>If <code>convertible</code> it can be exchanged for Reserved Instances of the
+     * same or higher monetary value, with different configurations. If
+     * <code>standard</code>, it is not possible to perform an exchange.</p>
+     */
+    inline const OfferingClassType& GetOfferingClass() const{ return m_offeringClass; }
+
+    /**
+     * <p>If <code>convertible</code> it can be exchanged for Reserved Instances of the
+     * same or higher monetary value, with different configurations. If
+     * <code>standard</code>, it is not possible to perform an exchange.</p>
+     */
+    inline void SetOfferingClass(const OfferingClassType& value) { m_offeringClassHasBeenSet = true; m_offeringClass = value; }
+
+    /**
+     * <p>If <code>convertible</code> it can be exchanged for Reserved Instances of the
+     * same or higher monetary value, with different configurations. If
+     * <code>standard</code>, it is not possible to perform an exchange.</p>
+     */
+    inline void SetOfferingClass(OfferingClassType&& value) { m_offeringClassHasBeenSet = true; m_offeringClass = value; }
+
+    /**
+     * <p>If <code>convertible</code> it can be exchanged for Reserved Instances of the
+     * same or higher monetary value, with different configurations. If
+     * <code>standard</code>, it is not possible to perform an exchange.</p>
+     */
+    inline ReservedInstancesOffering& WithOfferingClass(const OfferingClassType& value) { SetOfferingClass(value); return *this;}
+
+    /**
+     * <p>If <code>convertible</code> it can be exchanged for Reserved Instances of the
+     * same or higher monetary value, with different configurations. If
+     * <code>standard</code>, it is not possible to perform an exchange.</p>
+     */
+    inline ReservedInstancesOffering& WithOfferingClass(OfferingClassType&& value) { SetOfferingClass(value); return *this;}
+
+    /**
+     * <p>Whether the Reserved Instance is applied to instances in a region or an
+     * Availability Zone.</p>
+     */
+    inline const Scope& GetScope() const{ return m_scope; }
+
+    /**
+     * <p>Whether the Reserved Instance is applied to instances in a region or an
+     * Availability Zone.</p>
+     */
+    inline void SetScope(const Scope& value) { m_scopeHasBeenSet = true; m_scope = value; }
+
+    /**
+     * <p>Whether the Reserved Instance is applied to instances in a region or an
+     * Availability Zone.</p>
+     */
+    inline void SetScope(Scope&& value) { m_scopeHasBeenSet = true; m_scope = value; }
+
+    /**
+     * <p>Whether the Reserved Instance is applied to instances in a region or an
+     * Availability Zone.</p>
+     */
+    inline ReservedInstancesOffering& WithScope(const Scope& value) { SetScope(value); return *this;}
+
+    /**
+     * <p>Whether the Reserved Instance is applied to instances in a region or an
+     * Availability Zone.</p>
+     */
+    inline ReservedInstancesOffering& WithScope(Scope&& value) { SetScope(value); return *this;}
+
   private:
     Aws::String m_reservedInstancesOfferingId;
     bool m_reservedInstancesOfferingIdHasBeenSet;
@@ -420,6 +503,10 @@ namespace Model
     bool m_marketplaceHasBeenSet;
     Aws::Vector<PricingDetail> m_pricingDetails;
     bool m_pricingDetailsHasBeenSet;
+    OfferingClassType m_offeringClass;
+    bool m_offeringClassHasBeenSet;
+    Scope m_scope;
+    bool m_scopeHasBeenSet;
   };
 
 } // namespace Model

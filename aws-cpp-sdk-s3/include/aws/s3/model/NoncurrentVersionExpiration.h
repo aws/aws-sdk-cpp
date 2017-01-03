@@ -34,7 +34,9 @@ namespace Model
    * permanently deletes the noncurrent object versions. You set this lifecycle
    * configuration action on a bucket that has versioning enabled (or suspended) to
    * request that Amazon S3 delete noncurrent object versions at a specific period in
-   * the object's lifetime.
+   * the object's lifetime.<p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/NoncurrentVersionExpiration">AWS
+   * API Reference</a></p>
    */
   class AWS_S3_API NoncurrentVersionExpiration
   {

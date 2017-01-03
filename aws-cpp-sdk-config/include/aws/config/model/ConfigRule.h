@@ -47,7 +47,9 @@ namespace Model
    * more information about developing and using AWS Config rules, see <a
    * href="http://docs.aws.amazon.com/config/latest/developerguide/evaluate-config.html">Evaluating
    * AWS Resource Configurations with AWS Config</a> in the <i>AWS Config Developer
-   * Guide</i>.</p>
+   * Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ConfigRule">AWS
+   * API Reference</a></p>
    */
   class AWS_CONFIGSERVICE_API ConfigRule
   {

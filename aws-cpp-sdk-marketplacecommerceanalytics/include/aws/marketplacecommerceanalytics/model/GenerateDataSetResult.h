@@ -33,7 +33,10 @@ namespace MarketplaceCommerceAnalytics
 namespace Model
 {
   /**
-   * Container for the result of the GenerateDataSet operation.
+   * Container for the result of the GenerateDataSet operation.<p><h3>See Also:</h3> 
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/marketplacecommerceanalytics-2015-07-01/GenerateDataSetResult">AWS
+   * API Reference</a></p>
    */
   class AWS_MARKETPLACECOMMERCEANALYTICS_API GenerateDataSetResult
   {

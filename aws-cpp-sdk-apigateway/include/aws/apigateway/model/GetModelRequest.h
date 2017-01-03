@@ -30,7 +30,9 @@ namespace Model
 
   /**
    * <p>Request to list information about a model in an existing <a>RestApi</a>
-   * resource.</p>
+   * resource.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetModelRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_APIGATEWAY_API GetModelRequest : public APIGatewayRequest
   {

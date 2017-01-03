@@ -35,7 +35,10 @@ namespace Model
 
   /**
    * <p>Contains information about an event that was returned by a lookup request.
-   * The result includes a representation of a CloudTrail event.</p>
+   * The result includes a representation of a CloudTrail event.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/Event">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDTRAIL_API Event
   {
@@ -139,6 +142,41 @@ namespace Model
      * <p>The date and time of the event returned.</p>
      */
     inline Event& WithEventTime(Aws::Utils::DateTime&& value) { SetEventTime(value); return *this;}
+
+    /**
+     * <p>The AWS service that the request was made to.</p>
+     */
+    inline const Aws::String& GetEventSource() const{ return m_eventSource; }
+
+    /**
+     * <p>The AWS service that the request was made to.</p>
+     */
+    inline void SetEventSource(const Aws::String& value) { m_eventSourceHasBeenSet = true; m_eventSource = value; }
+
+    /**
+     * <p>The AWS service that the request was made to.</p>
+     */
+    inline void SetEventSource(Aws::String&& value) { m_eventSourceHasBeenSet = true; m_eventSource = value; }
+
+    /**
+     * <p>The AWS service that the request was made to.</p>
+     */
+    inline void SetEventSource(const char* value) { m_eventSourceHasBeenSet = true; m_eventSource.assign(value); }
+
+    /**
+     * <p>The AWS service that the request was made to.</p>
+     */
+    inline Event& WithEventSource(const Aws::String& value) { SetEventSource(value); return *this;}
+
+    /**
+     * <p>The AWS service that the request was made to.</p>
+     */
+    inline Event& WithEventSource(Aws::String&& value) { SetEventSource(value); return *this;}
+
+    /**
+     * <p>The AWS service that the request was made to.</p>
+     */
+    inline Event& WithEventSource(const char* value) { SetEventSource(value); return *this;}
 
     /**
      * <p>A user name or role name of the requester that called the API in the event
@@ -259,6 +297,8 @@ namespace Model
     bool m_eventNameHasBeenSet;
     Aws::Utils::DateTime m_eventTime;
     bool m_eventTimeHasBeenSet;
+    Aws::String m_eventSource;
+    bool m_eventSourceHasBeenSet;
     Aws::String m_username;
     bool m_usernameHasBeenSet;
     Aws::Vector<Resource> m_resources;

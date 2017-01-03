@@ -35,7 +35,10 @@ namespace Glacier
 namespace Model
 {
   /**
-   * <p>Contains the Amazon Glacier response to your request.</p>
+   * <p>Contains the Amazon Glacier response to your request.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/ListPartsOutput">AWS
+   * API Reference</a></p>
    */
   class AWS_GLACIER_API ListPartsResult
   {
@@ -164,17 +167,20 @@ namespace Model
     inline ListPartsResult& WithArchiveDescription(const char* value) { SetArchiveDescription(value); return *this;}
 
     /**
-     * <p>The part size in bytes.</p>
+     * <p>The part size in bytes. This is the same value that you specified in the
+     * Initiate Multipart Upload request.</p>
      */
     inline long long GetPartSizeInBytes() const{ return m_partSizeInBytes; }
 
     /**
-     * <p>The part size in bytes.</p>
+     * <p>The part size in bytes. This is the same value that you specified in the
+     * Initiate Multipart Upload request.</p>
      */
     inline void SetPartSizeInBytes(long long value) { m_partSizeInBytes = value; }
 
     /**
-     * <p>The part size in bytes.</p>
+     * <p>The part size in bytes. This is the same value that you specified in the
+     * Initiate Multipart Upload request.</p>
      */
     inline ListPartsResult& WithPartSizeInBytes(long long value) { SetPartSizeInBytes(value); return *this;}
 
@@ -214,37 +220,51 @@ namespace Model
     inline ListPartsResult& WithCreationDate(const char* value) { SetCreationDate(value); return *this;}
 
     /**
-     * <p>A list of the part sizes of the multipart upload.</p>
+     * <p>A list of the part sizes of the multipart upload. Each object in the array
+     * contains a <code>RangeBytes</code> and <code>sha256-tree-hash</code> name/value
+     * pair.</p>
      */
     inline const Aws::Vector<PartListElement>& GetParts() const{ return m_parts; }
 
     /**
-     * <p>A list of the part sizes of the multipart upload.</p>
+     * <p>A list of the part sizes of the multipart upload. Each object in the array
+     * contains a <code>RangeBytes</code> and <code>sha256-tree-hash</code> name/value
+     * pair.</p>
      */
     inline void SetParts(const Aws::Vector<PartListElement>& value) { m_parts = value; }
 
     /**
-     * <p>A list of the part sizes of the multipart upload.</p>
+     * <p>A list of the part sizes of the multipart upload. Each object in the array
+     * contains a <code>RangeBytes</code> and <code>sha256-tree-hash</code> name/value
+     * pair.</p>
      */
     inline void SetParts(Aws::Vector<PartListElement>&& value) { m_parts = value; }
 
     /**
-     * <p>A list of the part sizes of the multipart upload.</p>
+     * <p>A list of the part sizes of the multipart upload. Each object in the array
+     * contains a <code>RangeBytes</code> and <code>sha256-tree-hash</code> name/value
+     * pair.</p>
      */
     inline ListPartsResult& WithParts(const Aws::Vector<PartListElement>& value) { SetParts(value); return *this;}
 
     /**
-     * <p>A list of the part sizes of the multipart upload.</p>
+     * <p>A list of the part sizes of the multipart upload. Each object in the array
+     * contains a <code>RangeBytes</code> and <code>sha256-tree-hash</code> name/value
+     * pair.</p>
      */
     inline ListPartsResult& WithParts(Aws::Vector<PartListElement>&& value) { SetParts(value); return *this;}
 
     /**
-     * <p>A list of the part sizes of the multipart upload.</p>
+     * <p>A list of the part sizes of the multipart upload. Each object in the array
+     * contains a <code>RangeBytes</code> and <code>sha256-tree-hash</code> name/value
+     * pair.</p>
      */
     inline ListPartsResult& AddParts(const PartListElement& value) { m_parts.push_back(value); return *this; }
 
     /**
-     * <p>A list of the part sizes of the multipart upload.</p>
+     * <p>A list of the part sizes of the multipart upload. Each object in the array
+     * contains a <code>RangeBytes</code> and <code>sha256-tree-hash</code> name/value
+     * pair.</p>
      */
     inline ListPartsResult& AddParts(PartListElement&& value) { m_parts.push_back(value); return *this; }
 

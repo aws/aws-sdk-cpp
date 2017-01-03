@@ -14,7 +14,6 @@
 */
 #include <aws/servicecatalog/model/DeleteProductRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
@@ -32,6 +31,12 @@ Aws::String DeleteProductRequest::SerializePayload() const
 {
   JsonValue payload;
 
+  if(m_acceptLanguageHasBeenSet)
+  {
+   payload.WithString("AcceptLanguage", m_acceptLanguage);
+
+  }
+
   if(m_idHasBeenSet)
   {
    payload.WithString("Id", m_id);
@@ -45,14 +50,6 @@ Aws::Http::HeaderValueCollection DeleteProductRequest::GetRequestSpecificHeaders
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWS242ServiceCatalogService.DeleteProduct"));
-  Aws::StringStream ss;
-  if(m_acceptLanguageHasBeenSet)
-  {
-    ss << m_acceptLanguage;
-    headers.insert(Aws::Http::HeaderValuePair("accept-language", ss.str()));
-    ss.str("");
-  }
-
   return headers;
 
 }

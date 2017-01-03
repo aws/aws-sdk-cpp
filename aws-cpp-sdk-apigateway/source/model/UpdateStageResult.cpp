@@ -102,6 +102,12 @@ UpdateStageResult& UpdateStageResult::operator =(const AmazonWebServiceResult<Js
     }
   }
 
+  if(jsonValue.ValueExists("documentationVersion"))
+  {
+    m_documentationVersion = jsonValue.GetString("documentationVersion");
+
+  }
+
   if(jsonValue.ValueExists("createdDate"))
   {
     m_createdDate = jsonValue.GetDouble("createdDate");

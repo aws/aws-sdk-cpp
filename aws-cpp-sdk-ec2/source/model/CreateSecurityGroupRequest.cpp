@@ -44,7 +44,7 @@ Aws::String CreateSecurityGroupRequest::SerializePayload() const
 
   if(m_descriptionHasBeenSet)
   {
-    ss << "Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
+    ss << "GroupDescription=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
 
   if(m_vpcIdHasBeenSet)
@@ -52,7 +52,7 @@ Aws::String CreateSecurityGroupRequest::SerializePayload() const
     ss << "VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
   }
 
-  ss << "Version=2015-10-01";
+  ss << "Version=2016-11-15";
   return ss.str();
 }
 

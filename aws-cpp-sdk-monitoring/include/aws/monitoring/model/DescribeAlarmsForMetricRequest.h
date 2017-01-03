@@ -29,7 +29,6 @@ namespace Model
 {
 
   /**
-   * <p>Describes the inputs for DescribeAlarmsForMetric.</p>
    */
   class AWS_CLOUDWATCH_API DescribeAlarmsForMetricRequest : public CloudWatchRequest
   {
@@ -108,91 +107,131 @@ namespace Model
     inline DescribeAlarmsForMetricRequest& WithNamespace(const char* value) { SetNamespace(value); return *this;}
 
     /**
-     * <p>The statistic for the metric.</p>
+     * <p>The statistic for the metric, other than percentiles. For percentile
+     * statistics, use <code>ExtendedStatistics</code>.</p>
      */
     inline const Statistic& GetStatistic() const{ return m_statistic; }
 
     /**
-     * <p>The statistic for the metric.</p>
+     * <p>The statistic for the metric, other than percentiles. For percentile
+     * statistics, use <code>ExtendedStatistics</code>.</p>
      */
     inline void SetStatistic(const Statistic& value) { m_statisticHasBeenSet = true; m_statistic = value; }
 
     /**
-     * <p>The statistic for the metric.</p>
+     * <p>The statistic for the metric, other than percentiles. For percentile
+     * statistics, use <code>ExtendedStatistics</code>.</p>
      */
     inline void SetStatistic(Statistic&& value) { m_statisticHasBeenSet = true; m_statistic = value; }
 
     /**
-     * <p>The statistic for the metric.</p>
+     * <p>The statistic for the metric, other than percentiles. For percentile
+     * statistics, use <code>ExtendedStatistics</code>.</p>
      */
     inline DescribeAlarmsForMetricRequest& WithStatistic(const Statistic& value) { SetStatistic(value); return *this;}
 
     /**
-     * <p>The statistic for the metric.</p>
+     * <p>The statistic for the metric, other than percentiles. For percentile
+     * statistics, use <code>ExtendedStatistics</code>.</p>
      */
     inline DescribeAlarmsForMetricRequest& WithStatistic(Statistic&& value) { SetStatistic(value); return *this;}
 
     /**
-     * <p>The list of dimensions associated with the metric. If the metric has any
-     * associated dimensions, you must specify them in order for the
-     * DescribeAlarmsForMetric to succeed.</p>
+     * <p>The percentile statistic for the metric. Specify a value between p0.0 and
+     * p100.</p>
+     */
+    inline const Aws::String& GetExtendedStatistic() const{ return m_extendedStatistic; }
+
+    /**
+     * <p>The percentile statistic for the metric. Specify a value between p0.0 and
+     * p100.</p>
+     */
+    inline void SetExtendedStatistic(const Aws::String& value) { m_extendedStatisticHasBeenSet = true; m_extendedStatistic = value; }
+
+    /**
+     * <p>The percentile statistic for the metric. Specify a value between p0.0 and
+     * p100.</p>
+     */
+    inline void SetExtendedStatistic(Aws::String&& value) { m_extendedStatisticHasBeenSet = true; m_extendedStatistic = value; }
+
+    /**
+     * <p>The percentile statistic for the metric. Specify a value between p0.0 and
+     * p100.</p>
+     */
+    inline void SetExtendedStatistic(const char* value) { m_extendedStatisticHasBeenSet = true; m_extendedStatistic.assign(value); }
+
+    /**
+     * <p>The percentile statistic for the metric. Specify a value between p0.0 and
+     * p100.</p>
+     */
+    inline DescribeAlarmsForMetricRequest& WithExtendedStatistic(const Aws::String& value) { SetExtendedStatistic(value); return *this;}
+
+    /**
+     * <p>The percentile statistic for the metric. Specify a value between p0.0 and
+     * p100.</p>
+     */
+    inline DescribeAlarmsForMetricRequest& WithExtendedStatistic(Aws::String&& value) { SetExtendedStatistic(value); return *this;}
+
+    /**
+     * <p>The percentile statistic for the metric. Specify a value between p0.0 and
+     * p100.</p>
+     */
+    inline DescribeAlarmsForMetricRequest& WithExtendedStatistic(const char* value) { SetExtendedStatistic(value); return *this;}
+
+    /**
+     * <p>The dimensions associated with the metric. If the metric has any associated
+     * dimensions, you must specify them in order for the call to succeed.</p>
      */
     inline const Aws::Vector<Dimension>& GetDimensions() const{ return m_dimensions; }
 
     /**
-     * <p>The list of dimensions associated with the metric. If the metric has any
-     * associated dimensions, you must specify them in order for the
-     * DescribeAlarmsForMetric to succeed.</p>
+     * <p>The dimensions associated with the metric. If the metric has any associated
+     * dimensions, you must specify them in order for the call to succeed.</p>
      */
     inline void SetDimensions(const Aws::Vector<Dimension>& value) { m_dimensionsHasBeenSet = true; m_dimensions = value; }
 
     /**
-     * <p>The list of dimensions associated with the metric. If the metric has any
-     * associated dimensions, you must specify them in order for the
-     * DescribeAlarmsForMetric to succeed.</p>
+     * <p>The dimensions associated with the metric. If the metric has any associated
+     * dimensions, you must specify them in order for the call to succeed.</p>
      */
     inline void SetDimensions(Aws::Vector<Dimension>&& value) { m_dimensionsHasBeenSet = true; m_dimensions = value; }
 
     /**
-     * <p>The list of dimensions associated with the metric. If the metric has any
-     * associated dimensions, you must specify them in order for the
-     * DescribeAlarmsForMetric to succeed.</p>
+     * <p>The dimensions associated with the metric. If the metric has any associated
+     * dimensions, you must specify them in order for the call to succeed.</p>
      */
     inline DescribeAlarmsForMetricRequest& WithDimensions(const Aws::Vector<Dimension>& value) { SetDimensions(value); return *this;}
 
     /**
-     * <p>The list of dimensions associated with the metric. If the metric has any
-     * associated dimensions, you must specify them in order for the
-     * DescribeAlarmsForMetric to succeed.</p>
+     * <p>The dimensions associated with the metric. If the metric has any associated
+     * dimensions, you must specify them in order for the call to succeed.</p>
      */
     inline DescribeAlarmsForMetricRequest& WithDimensions(Aws::Vector<Dimension>&& value) { SetDimensions(value); return *this;}
 
     /**
-     * <p>The list of dimensions associated with the metric. If the metric has any
-     * associated dimensions, you must specify them in order for the
-     * DescribeAlarmsForMetric to succeed.</p>
+     * <p>The dimensions associated with the metric. If the metric has any associated
+     * dimensions, you must specify them in order for the call to succeed.</p>
      */
     inline DescribeAlarmsForMetricRequest& AddDimensions(const Dimension& value) { m_dimensionsHasBeenSet = true; m_dimensions.push_back(value); return *this; }
 
     /**
-     * <p>The list of dimensions associated with the metric. If the metric has any
-     * associated dimensions, you must specify them in order for the
-     * DescribeAlarmsForMetric to succeed.</p>
+     * <p>The dimensions associated with the metric. If the metric has any associated
+     * dimensions, you must specify them in order for the call to succeed.</p>
      */
     inline DescribeAlarmsForMetricRequest& AddDimensions(Dimension&& value) { m_dimensionsHasBeenSet = true; m_dimensions.push_back(value); return *this; }
 
     /**
-     * <p>The period in seconds over which the statistic is applied.</p>
+     * <p>The period, in seconds, over which the statistic is applied.</p>
      */
     inline int GetPeriod() const{ return m_period; }
 
     /**
-     * <p>The period in seconds over which the statistic is applied.</p>
+     * <p>The period, in seconds, over which the statistic is applied.</p>
      */
     inline void SetPeriod(int value) { m_periodHasBeenSet = true; m_period = value; }
 
     /**
-     * <p>The period in seconds over which the statistic is applied.</p>
+     * <p>The period, in seconds, over which the statistic is applied.</p>
      */
     inline DescribeAlarmsForMetricRequest& WithPeriod(int value) { SetPeriod(value); return *this;}
 
@@ -228,6 +267,8 @@ namespace Model
     bool m_namespaceHasBeenSet;
     Statistic m_statistic;
     bool m_statisticHasBeenSet;
+    Aws::String m_extendedStatistic;
+    bool m_extendedStatisticHasBeenSet;
     Aws::Vector<Dimension> m_dimensions;
     bool m_dimensionsHasBeenSet;
     int m_period;

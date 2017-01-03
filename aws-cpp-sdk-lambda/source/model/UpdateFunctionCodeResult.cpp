@@ -122,6 +122,24 @@ UpdateFunctionCodeResult& UpdateFunctionCodeResult::operator =(const AmazonWebSe
 
   }
 
+  if(jsonValue.ValueExists("DeadLetterConfig"))
+  {
+    m_deadLetterConfig = jsonValue.GetObject("DeadLetterConfig");
+
+  }
+
+  if(jsonValue.ValueExists("Environment"))
+  {
+    m_environment = jsonValue.GetObject("Environment");
+
+  }
+
+  if(jsonValue.ValueExists("KMSKeyArn"))
+  {
+    m_kMSKeyArn = jsonValue.GetString("KMSKeyArn");
+
+  }
+
 
 
   return *this;

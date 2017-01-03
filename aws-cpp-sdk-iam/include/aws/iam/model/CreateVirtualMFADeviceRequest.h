@@ -37,12 +37,12 @@ namespace Model
      * <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
-     * If it is not included, it defaults to a slash (/).</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters consisting of either a forward slash (/) by itself or a
-     * string that must begin and end with forward slashes, containing any ASCII
-     * character from the ! (\u0021) thru the DEL character (\u007F), including most
-     * punctuation characters, digits, and upper and lowercased letters.</p>
+     * If it is not included, it defaults to a slash (/).</p> <p>This paramater allows
+     * (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     * of characters consisting of either a forward slash (/) by itself or a string
+     * that must begin and end with forward slashes, containing any ASCII character
+     * from the ! (\u0021) thru the DEL character (\u007F), including most punctuation
+     * characters, digits, and upper and lowercased letters.</p>
      */
     inline const Aws::String& GetPath() const{ return m_path; }
 
@@ -51,12 +51,12 @@ namespace Model
      * <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
-     * If it is not included, it defaults to a slash (/).</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters consisting of either a forward slash (/) by itself or a
-     * string that must begin and end with forward slashes, containing any ASCII
-     * character from the ! (\u0021) thru the DEL character (\u007F), including most
-     * punctuation characters, digits, and upper and lowercased letters.</p>
+     * If it is not included, it defaults to a slash (/).</p> <p>This paramater allows
+     * (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     * of characters consisting of either a forward slash (/) by itself or a string
+     * that must begin and end with forward slashes, containing any ASCII character
+     * from the ! (\u0021) thru the DEL character (\u007F), including most punctuation
+     * characters, digits, and upper and lowercased letters.</p>
      */
     inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
 
@@ -65,12 +65,12 @@ namespace Model
      * <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
-     * If it is not included, it defaults to a slash (/).</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters consisting of either a forward slash (/) by itself or a
-     * string that must begin and end with forward slashes, containing any ASCII
-     * character from the ! (\u0021) thru the DEL character (\u007F), including most
-     * punctuation characters, digits, and upper and lowercased letters.</p>
+     * If it is not included, it defaults to a slash (/).</p> <p>This paramater allows
+     * (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     * of characters consisting of either a forward slash (/) by itself or a string
+     * that must begin and end with forward slashes, containing any ASCII character
+     * from the ! (\u0021) thru the DEL character (\u007F), including most punctuation
+     * characters, digits, and upper and lowercased letters.</p>
      */
     inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = value; }
 
@@ -79,12 +79,12 @@ namespace Model
      * <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
-     * If it is not included, it defaults to a slash (/).</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters consisting of either a forward slash (/) by itself or a
-     * string that must begin and end with forward slashes, containing any ASCII
-     * character from the ! (\u0021) thru the DEL character (\u007F), including most
-     * punctuation characters, digits, and upper and lowercased letters.</p>
+     * If it is not included, it defaults to a slash (/).</p> <p>This paramater allows
+     * (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     * of characters consisting of either a forward slash (/) by itself or a string
+     * that must begin and end with forward slashes, containing any ASCII character
+     * from the ! (\u0021) thru the DEL character (\u007F), including most punctuation
+     * characters, digits, and upper and lowercased letters.</p>
      */
     inline void SetPath(const char* value) { m_pathHasBeenSet = true; m_path.assign(value); }
 
@@ -93,12 +93,12 @@ namespace Model
      * <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
-     * If it is not included, it defaults to a slash (/).</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters consisting of either a forward slash (/) by itself or a
-     * string that must begin and end with forward slashes, containing any ASCII
-     * character from the ! (\u0021) thru the DEL character (\u007F), including most
-     * punctuation characters, digits, and upper and lowercased letters.</p>
+     * If it is not included, it defaults to a slash (/).</p> <p>This paramater allows
+     * (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     * of characters consisting of either a forward slash (/) by itself or a string
+     * that must begin and end with forward slashes, containing any ASCII character
+     * from the ! (\u0021) thru the DEL character (\u007F), including most punctuation
+     * characters, digits, and upper and lowercased letters.</p>
      */
     inline CreateVirtualMFADeviceRequest& WithPath(const Aws::String& value) { SetPath(value); return *this;}
 
@@ -107,12 +107,12 @@ namespace Model
      * <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
-     * If it is not included, it defaults to a slash (/).</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters consisting of either a forward slash (/) by itself or a
-     * string that must begin and end with forward slashes, containing any ASCII
-     * character from the ! (\u0021) thru the DEL character (\u007F), including most
-     * punctuation characters, digits, and upper and lowercased letters.</p>
+     * If it is not included, it defaults to a slash (/).</p> <p>This paramater allows
+     * (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     * of characters consisting of either a forward slash (/) by itself or a string
+     * that must begin and end with forward slashes, containing any ASCII character
+     * from the ! (\u0021) thru the DEL character (\u007F), including most punctuation
+     * characters, digits, and upper and lowercased letters.</p>
      */
     inline CreateVirtualMFADeviceRequest& WithPath(Aws::String&& value) { SetPath(value); return *this;}
 
@@ -121,75 +121,75 @@ namespace Model
      * <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
-     * If it is not included, it defaults to a slash (/).</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters consisting of either a forward slash (/) by itself or a
-     * string that must begin and end with forward slashes, containing any ASCII
-     * character from the ! (\u0021) thru the DEL character (\u007F), including most
-     * punctuation characters, digits, and upper and lowercased letters.</p>
+     * If it is not included, it defaults to a slash (/).</p> <p>This paramater allows
+     * (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     * of characters consisting of either a forward slash (/) by itself or a string
+     * that must begin and end with forward slashes, containing any ASCII character
+     * from the ! (\u0021) thru the DEL character (\u007F), including most punctuation
+     * characters, digits, and upper and lowercased letters.</p>
      */
     inline CreateVirtualMFADeviceRequest& WithPath(const char* value) { SetPath(value); return *this;}
 
     /**
      * <p>The name of the virtual MFA device. Use with path to uniquely identify a
-     * virtual MFA device.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
-     * pattern</a> for this parameter is a string of characters consisting of upper and
-     * lowercase alphanumeric characters with no spaces. You can also include any of
-     * the following characters: =,.@-</p>
+     * virtual MFA device.</p> <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: =,.@-</p>
      */
     inline const Aws::String& GetVirtualMFADeviceName() const{ return m_virtualMFADeviceName; }
 
     /**
      * <p>The name of the virtual MFA device. Use with path to uniquely identify a
-     * virtual MFA device.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
-     * pattern</a> for this parameter is a string of characters consisting of upper and
-     * lowercase alphanumeric characters with no spaces. You can also include any of
-     * the following characters: =,.@-</p>
+     * virtual MFA device.</p> <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: =,.@-</p>
      */
     inline void SetVirtualMFADeviceName(const Aws::String& value) { m_virtualMFADeviceNameHasBeenSet = true; m_virtualMFADeviceName = value; }
 
     /**
      * <p>The name of the virtual MFA device. Use with path to uniquely identify a
-     * virtual MFA device.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
-     * pattern</a> for this parameter is a string of characters consisting of upper and
-     * lowercase alphanumeric characters with no spaces. You can also include any of
-     * the following characters: =,.@-</p>
+     * virtual MFA device.</p> <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: =,.@-</p>
      */
     inline void SetVirtualMFADeviceName(Aws::String&& value) { m_virtualMFADeviceNameHasBeenSet = true; m_virtualMFADeviceName = value; }
 
     /**
      * <p>The name of the virtual MFA device. Use with path to uniquely identify a
-     * virtual MFA device.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
-     * pattern</a> for this parameter is a string of characters consisting of upper and
-     * lowercase alphanumeric characters with no spaces. You can also include any of
-     * the following characters: =,.@-</p>
+     * virtual MFA device.</p> <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: =,.@-</p>
      */
     inline void SetVirtualMFADeviceName(const char* value) { m_virtualMFADeviceNameHasBeenSet = true; m_virtualMFADeviceName.assign(value); }
 
     /**
      * <p>The name of the virtual MFA device. Use with path to uniquely identify a
-     * virtual MFA device.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
-     * pattern</a> for this parameter is a string of characters consisting of upper and
-     * lowercase alphanumeric characters with no spaces. You can also include any of
-     * the following characters: =,.@-</p>
+     * virtual MFA device.</p> <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: =,.@-</p>
      */
     inline CreateVirtualMFADeviceRequest& WithVirtualMFADeviceName(const Aws::String& value) { SetVirtualMFADeviceName(value); return *this;}
 
     /**
      * <p>The name of the virtual MFA device. Use with path to uniquely identify a
-     * virtual MFA device.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
-     * pattern</a> for this parameter is a string of characters consisting of upper and
-     * lowercase alphanumeric characters with no spaces. You can also include any of
-     * the following characters: =,.@-</p>
+     * virtual MFA device.</p> <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: =,.@-</p>
      */
     inline CreateVirtualMFADeviceRequest& WithVirtualMFADeviceName(Aws::String&& value) { SetVirtualMFADeviceName(value); return *this;}
 
     /**
      * <p>The name of the virtual MFA device. Use with path to uniquely identify a
-     * virtual MFA device.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
-     * pattern</a> for this parameter is a string of characters consisting of upper and
-     * lowercase alphanumeric characters with no spaces. You can also include any of
-     * the following characters: =,.@-</p>
+     * virtual MFA device.</p> <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: =,.@-</p>
      */
     inline CreateVirtualMFADeviceRequest& WithVirtualMFADeviceName(const char* value) { SetVirtualMFADeviceName(value); return *this;}
 

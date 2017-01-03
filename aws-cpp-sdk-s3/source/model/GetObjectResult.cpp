@@ -33,7 +33,8 @@ GetObjectResult::GetObjectResult() :
     m_storageClass(StorageClass::NOT_SET),
     m_requestCharged(RequestCharged::NOT_SET),
     m_replicationStatus(ReplicationStatus::NOT_SET),
-    m_partsCount(0)
+    m_partsCount(0),
+    m_tagCount(0)
 {
 }
 
@@ -64,7 +65,8 @@ GetObjectResult::GetObjectResult(GetObjectResult&& toMove) :
     m_storageClass(toMove.m_storageClass),
     m_requestCharged(toMove.m_requestCharged),
     m_replicationStatus(toMove.m_replicationStatus),
-    m_partsCount(toMove.m_partsCount)
+    m_partsCount(toMove.m_partsCount),
+    m_tagCount(toMove.m_tagCount)
 {
 }
 
@@ -102,6 +104,7 @@ GetObjectResult& GetObjectResult::operator=(GetObjectResult&& toMove)
    m_requestCharged = toMove.m_requestCharged;
    m_replicationStatus = toMove.m_replicationStatus;
    m_partsCount = toMove.m_partsCount;
+   m_tagCount = toMove.m_tagCount;
 
    return *this;
 }
@@ -114,7 +117,8 @@ GetObjectResult::GetObjectResult(AmazonWebServiceResult<ResponseStream>&& result
     m_storageClass(StorageClass::NOT_SET),
     m_requestCharged(RequestCharged::NOT_SET),
     m_replicationStatus(ReplicationStatus::NOT_SET),
-    m_partsCount(0)
+    m_partsCount(0),
+    m_tagCount(0)
 {
   *this = std::move(result);
 }
@@ -283,6 +287,12 @@ GetObjectResult& GetObjectResult::operator =(AmazonWebServiceResult<ResponseStre
   if(partsCountIter != headers.end())
   {
      m_partsCount = StringUtils::ConvertToInt32(partsCountIter->second.c_str());
+  }
+
+  const auto& tagCountIter = headers.find("x-amz-tagging-count");
+  if(tagCountIter != headers.end())
+  {
+     m_tagCount = StringUtils::ConvertToInt32(tagCountIter->second.c_str());
   }
 
    return *this;

@@ -50,7 +50,10 @@ namespace Model
    * query. For example, if you specify <code>192.0.2.44</code> for
    * <code>edns0clientsubnetip</code> and <code>24</code> for
    * <code>edns0clientsubnetmask</code>, the checking tool will simulate a request
-   * from <code>192.0.2.0/24</code>. The default value is 24 bits. </p> </dd> </dl>
+   * from <code>192.0.2.0/24</code>. The default value is 24 bits. </p> </dd>
+   * </dl><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/TestDNSAnswerRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_ROUTE53_API TestDNSAnswerRequest : public Route53Request
   {

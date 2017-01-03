@@ -26,7 +26,9 @@ namespace Model
 
   /**
    * <p>Provides options for deleting a vault notification configuration from an
-   * Amazon Glacier vault.</p>
+   * Amazon Glacier vault.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/DeleteVaultNotificationsInput">AWS
+   * API Reference</a></p>
    */
   class AWS_GLACIER_API DeleteVaultNotificationsRequest : public GlacierRequest
   {
@@ -37,63 +39,63 @@ namespace Model
     /**
      * <p>The <code>AccountId</code> value is the AWS account ID of the account that
      * owns the vault. You can either specify an AWS account ID or optionally a single
-     * apos<code>-</code>apos (hyphen), in which case Amazon Glacier uses the AWS
-     * account ID associated with the credentials used to sign the request. If you use
-     * an account ID, do not include any hyphens (apos-apos) in the ID. </p>
+     * '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID
+     * associated with the credentials used to sign the request. If you use an account
+     * ID, do not include any hyphens ('-') in the ID. </p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
 
     /**
      * <p>The <code>AccountId</code> value is the AWS account ID of the account that
      * owns the vault. You can either specify an AWS account ID or optionally a single
-     * apos<code>-</code>apos (hyphen), in which case Amazon Glacier uses the AWS
-     * account ID associated with the credentials used to sign the request. If you use
-     * an account ID, do not include any hyphens (apos-apos) in the ID. </p>
+     * '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID
+     * associated with the credentials used to sign the request. If you use an account
+     * ID, do not include any hyphens ('-') in the ID. </p>
      */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
      * <p>The <code>AccountId</code> value is the AWS account ID of the account that
      * owns the vault. You can either specify an AWS account ID or optionally a single
-     * apos<code>-</code>apos (hyphen), in which case Amazon Glacier uses the AWS
-     * account ID associated with the credentials used to sign the request. If you use
-     * an account ID, do not include any hyphens (apos-apos) in the ID. </p>
+     * '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID
+     * associated with the credentials used to sign the request. If you use an account
+     * ID, do not include any hyphens ('-') in the ID. </p>
      */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
      * <p>The <code>AccountId</code> value is the AWS account ID of the account that
      * owns the vault. You can either specify an AWS account ID or optionally a single
-     * apos<code>-</code>apos (hyphen), in which case Amazon Glacier uses the AWS
-     * account ID associated with the credentials used to sign the request. If you use
-     * an account ID, do not include any hyphens (apos-apos) in the ID. </p>
+     * '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID
+     * associated with the credentials used to sign the request. If you use an account
+     * ID, do not include any hyphens ('-') in the ID. </p>
      */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
 
     /**
      * <p>The <code>AccountId</code> value is the AWS account ID of the account that
      * owns the vault. You can either specify an AWS account ID or optionally a single
-     * apos<code>-</code>apos (hyphen), in which case Amazon Glacier uses the AWS
-     * account ID associated with the credentials used to sign the request. If you use
-     * an account ID, do not include any hyphens (apos-apos) in the ID. </p>
+     * '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID
+     * associated with the credentials used to sign the request. If you use an account
+     * ID, do not include any hyphens ('-') in the ID. </p>
      */
     inline DeleteVaultNotificationsRequest& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
 
     /**
      * <p>The <code>AccountId</code> value is the AWS account ID of the account that
      * owns the vault. You can either specify an AWS account ID or optionally a single
-     * apos<code>-</code>apos (hyphen), in which case Amazon Glacier uses the AWS
-     * account ID associated with the credentials used to sign the request. If you use
-     * an account ID, do not include any hyphens (apos-apos) in the ID. </p>
+     * '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID
+     * associated with the credentials used to sign the request. If you use an account
+     * ID, do not include any hyphens ('-') in the ID. </p>
      */
     inline DeleteVaultNotificationsRequest& WithAccountId(Aws::String&& value) { SetAccountId(value); return *this;}
 
     /**
      * <p>The <code>AccountId</code> value is the AWS account ID of the account that
      * owns the vault. You can either specify an AWS account ID or optionally a single
-     * apos<code>-</code>apos (hyphen), in which case Amazon Glacier uses the AWS
-     * account ID associated with the credentials used to sign the request. If you use
-     * an account ID, do not include any hyphens (apos-apos) in the ID. </p>
+     * '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID
+     * associated with the credentials used to sign the request. If you use an account
+     * ID, do not include any hyphens ('-') in the ID. </p>
      */
     inline DeleteVaultNotificationsRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 

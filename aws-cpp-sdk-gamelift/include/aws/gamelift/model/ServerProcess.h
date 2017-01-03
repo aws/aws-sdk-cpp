@@ -35,7 +35,10 @@ namespace Model
    * fleet. Each instruction set identifies the location of the server executable,
    * optional launch parameters, and the number of server processes with this
    * configuration to maintain concurrently on the instance. Server process
-   * configurations make up a fleet's <code> <a>RuntimeConfiguration</a> </code>.</p>
+   * configurations make up a fleet's <code> <a>RuntimeConfiguration</a>
+   * </code>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ServerProcess">AWS
+   * API Reference</a></p>
    */
   class AWS_GAMELIFT_API ServerProcess
   {
@@ -46,58 +49,86 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p>Location in the game build of the server executable. All game builds are
-     * installed on instances at the root <code>C:\game\...</code>, so an executable
-     * file located at <code>MyGame\latest\server.exe</code> has a launch path of
-     * "<code>C:\game\MyGame\latest\server.exe</code>". </p>
+     * <p>Location of the server executable in a game build. All game builds are
+     * installed on instances at the root : for Windows instances <code>C:\game</code>,
+     * and for Linux instances <code>/local/game</code>. A Windows game build with an
+     * executable file located at <code>MyGame\latest\server.exe</code> must have a
+     * launch path of "<code>C:\game\MyGame\latest\server.exe</code>". A Linux game
+     * build with an executable file located at <code>MyGame/latest/server.exe</code>
+     * must have a launch path of "<code>/local/game/MyGame/latest/server.exe</code>".
+     * </p>
      */
     inline const Aws::String& GetLaunchPath() const{ return m_launchPath; }
 
     /**
-     * <p>Location in the game build of the server executable. All game builds are
-     * installed on instances at the root <code>C:\game\...</code>, so an executable
-     * file located at <code>MyGame\latest\server.exe</code> has a launch path of
-     * "<code>C:\game\MyGame\latest\server.exe</code>". </p>
+     * <p>Location of the server executable in a game build. All game builds are
+     * installed on instances at the root : for Windows instances <code>C:\game</code>,
+     * and for Linux instances <code>/local/game</code>. A Windows game build with an
+     * executable file located at <code>MyGame\latest\server.exe</code> must have a
+     * launch path of "<code>C:\game\MyGame\latest\server.exe</code>". A Linux game
+     * build with an executable file located at <code>MyGame/latest/server.exe</code>
+     * must have a launch path of "<code>/local/game/MyGame/latest/server.exe</code>".
+     * </p>
      */
     inline void SetLaunchPath(const Aws::String& value) { m_launchPathHasBeenSet = true; m_launchPath = value; }
 
     /**
-     * <p>Location in the game build of the server executable. All game builds are
-     * installed on instances at the root <code>C:\game\...</code>, so an executable
-     * file located at <code>MyGame\latest\server.exe</code> has a launch path of
-     * "<code>C:\game\MyGame\latest\server.exe</code>". </p>
+     * <p>Location of the server executable in a game build. All game builds are
+     * installed on instances at the root : for Windows instances <code>C:\game</code>,
+     * and for Linux instances <code>/local/game</code>. A Windows game build with an
+     * executable file located at <code>MyGame\latest\server.exe</code> must have a
+     * launch path of "<code>C:\game\MyGame\latest\server.exe</code>". A Linux game
+     * build with an executable file located at <code>MyGame/latest/server.exe</code>
+     * must have a launch path of "<code>/local/game/MyGame/latest/server.exe</code>".
+     * </p>
      */
     inline void SetLaunchPath(Aws::String&& value) { m_launchPathHasBeenSet = true; m_launchPath = value; }
 
     /**
-     * <p>Location in the game build of the server executable. All game builds are
-     * installed on instances at the root <code>C:\game\...</code>, so an executable
-     * file located at <code>MyGame\latest\server.exe</code> has a launch path of
-     * "<code>C:\game\MyGame\latest\server.exe</code>". </p>
+     * <p>Location of the server executable in a game build. All game builds are
+     * installed on instances at the root : for Windows instances <code>C:\game</code>,
+     * and for Linux instances <code>/local/game</code>. A Windows game build with an
+     * executable file located at <code>MyGame\latest\server.exe</code> must have a
+     * launch path of "<code>C:\game\MyGame\latest\server.exe</code>". A Linux game
+     * build with an executable file located at <code>MyGame/latest/server.exe</code>
+     * must have a launch path of "<code>/local/game/MyGame/latest/server.exe</code>".
+     * </p>
      */
     inline void SetLaunchPath(const char* value) { m_launchPathHasBeenSet = true; m_launchPath.assign(value); }
 
     /**
-     * <p>Location in the game build of the server executable. All game builds are
-     * installed on instances at the root <code>C:\game\...</code>, so an executable
-     * file located at <code>MyGame\latest\server.exe</code> has a launch path of
-     * "<code>C:\game\MyGame\latest\server.exe</code>". </p>
+     * <p>Location of the server executable in a game build. All game builds are
+     * installed on instances at the root : for Windows instances <code>C:\game</code>,
+     * and for Linux instances <code>/local/game</code>. A Windows game build with an
+     * executable file located at <code>MyGame\latest\server.exe</code> must have a
+     * launch path of "<code>C:\game\MyGame\latest\server.exe</code>". A Linux game
+     * build with an executable file located at <code>MyGame/latest/server.exe</code>
+     * must have a launch path of "<code>/local/game/MyGame/latest/server.exe</code>".
+     * </p>
      */
     inline ServerProcess& WithLaunchPath(const Aws::String& value) { SetLaunchPath(value); return *this;}
 
     /**
-     * <p>Location in the game build of the server executable. All game builds are
-     * installed on instances at the root <code>C:\game\...</code>, so an executable
-     * file located at <code>MyGame\latest\server.exe</code> has a launch path of
-     * "<code>C:\game\MyGame\latest\server.exe</code>". </p>
+     * <p>Location of the server executable in a game build. All game builds are
+     * installed on instances at the root : for Windows instances <code>C:\game</code>,
+     * and for Linux instances <code>/local/game</code>. A Windows game build with an
+     * executable file located at <code>MyGame\latest\server.exe</code> must have a
+     * launch path of "<code>C:\game\MyGame\latest\server.exe</code>". A Linux game
+     * build with an executable file located at <code>MyGame/latest/server.exe</code>
+     * must have a launch path of "<code>/local/game/MyGame/latest/server.exe</code>".
+     * </p>
      */
     inline ServerProcess& WithLaunchPath(Aws::String&& value) { SetLaunchPath(value); return *this;}
 
     /**
-     * <p>Location in the game build of the server executable. All game builds are
-     * installed on instances at the root <code>C:\game\...</code>, so an executable
-     * file located at <code>MyGame\latest\server.exe</code> has a launch path of
-     * "<code>C:\game\MyGame\latest\server.exe</code>". </p>
+     * <p>Location of the server executable in a game build. All game builds are
+     * installed on instances at the root : for Windows instances <code>C:\game</code>,
+     * and for Linux instances <code>/local/game</code>. A Windows game build with an
+     * executable file located at <code>MyGame\latest\server.exe</code> must have a
+     * launch path of "<code>C:\game\MyGame\latest\server.exe</code>". A Linux game
+     * build with an executable file located at <code>MyGame/latest/server.exe</code>
+     * must have a launch path of "<code>/local/game/MyGame/latest/server.exe</code>".
+     * </p>
      */
     inline ServerProcess& WithLaunchPath(const char* value) { SetLaunchPath(value); return *this;}
 

@@ -114,13 +114,13 @@ void Grantee::AddToNode(XmlNode& parentNode) const
 
   if(m_typeHasBeenSet)
   {
-   XmlNode typeNode = parentNode.CreateChildElement("Type");
+   XmlNode typeNode = parentNode.CreateChildElement("xsi:type");
    typeNode.SetText(TypeMapper::GetNameForType(m_type));
   }
 
   if(m_uRIHasBeenSet)
   {
-   XmlNode uRINode = parentNode.CreateChildElement("xsi:type");
+   XmlNode uRINode = parentNode.CreateChildElement("URI");
    uRINode.SetText(m_uRI);
   }
 

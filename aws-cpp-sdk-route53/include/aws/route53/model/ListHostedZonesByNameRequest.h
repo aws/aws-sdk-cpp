@@ -69,7 +69,9 @@ namespace Model
    * zones, make another call to <code>ListHostedZonesByName</code>, and specify the
    * value of <code>NextDNSName</code> and <code>NextHostedZoneId</code> in the
    * <code>dnsname</code> and <code>hostedzoneid</code> parameters, respectively.</p>
-   * </li> </ul>
+   * </li> </ul><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListHostedZonesByNameRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_ROUTE53_API ListHostedZonesByNameRequest : public Route53Request
   {

@@ -29,7 +29,9 @@ namespace Model
    * <code><a>DescribeServiceAccessPolicies</a></code> operation. Specifies the name
    * of the domain you want to describe. To show the active configuration and exclude
    * any pending changes, set the <code>Deployed</code> option to
-   * <code>true</code>.</p>
+   * <code>true</code>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DescribeServiceAccessPoliciesRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDSEARCH_API DescribeServiceAccessPoliciesRequest : public CloudSearchRequest
   {

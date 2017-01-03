@@ -28,6 +28,7 @@
 #include <aws/storagegateway/model/CancelArchivalResult.h>
 #include <aws/storagegateway/model/CancelRetrievalResult.h>
 #include <aws/storagegateway/model/CreateCachediSCSIVolumeResult.h>
+#include <aws/storagegateway/model/CreateNFSFileShareResult.h>
 #include <aws/storagegateway/model/CreateSnapshotResult.h>
 #include <aws/storagegateway/model/CreateSnapshotFromVolumeRecoveryPointResult.h>
 #include <aws/storagegateway/model/CreateStorediSCSIVolumeResult.h>
@@ -35,6 +36,7 @@
 #include <aws/storagegateway/model/CreateTapesResult.h>
 #include <aws/storagegateway/model/DeleteBandwidthRateLimitResult.h>
 #include <aws/storagegateway/model/DeleteChapCredentialsResult.h>
+#include <aws/storagegateway/model/DeleteFileShareResult.h>
 #include <aws/storagegateway/model/DeleteGatewayResult.h>
 #include <aws/storagegateway/model/DeleteSnapshotScheduleResult.h>
 #include <aws/storagegateway/model/DeleteTapeResult.h>
@@ -46,6 +48,7 @@
 #include <aws/storagegateway/model/DescribeChapCredentialsResult.h>
 #include <aws/storagegateway/model/DescribeGatewayInformationResult.h>
 #include <aws/storagegateway/model/DescribeMaintenanceStartTimeResult.h>
+#include <aws/storagegateway/model/DescribeNFSFileSharesResult.h>
 #include <aws/storagegateway/model/DescribeSnapshotScheduleResult.h>
 #include <aws/storagegateway/model/DescribeStorediSCSIVolumesResult.h>
 #include <aws/storagegateway/model/DescribeTapeArchivesResult.h>
@@ -55,6 +58,7 @@
 #include <aws/storagegateway/model/DescribeVTLDevicesResult.h>
 #include <aws/storagegateway/model/DescribeWorkingStorageResult.h>
 #include <aws/storagegateway/model/DisableGatewayResult.h>
+#include <aws/storagegateway/model/ListFileSharesResult.h>
 #include <aws/storagegateway/model/ListGatewaysResult.h>
 #include <aws/storagegateway/model/ListLocalDisksResult.h>
 #include <aws/storagegateway/model/ListTagsForResourceResult.h>
@@ -74,6 +78,7 @@
 #include <aws/storagegateway/model/UpdateGatewayInformationResult.h>
 #include <aws/storagegateway/model/UpdateGatewaySoftwareNowResult.h>
 #include <aws/storagegateway/model/UpdateMaintenanceStartTimeResult.h>
+#include <aws/storagegateway/model/UpdateNFSFileShareResult.h>
 #include <aws/storagegateway/model/UpdateSnapshotScheduleResult.h>
 #include <aws/storagegateway/model/UpdateVTLDeviceTypeResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
@@ -129,6 +134,7 @@ namespace Model
         class CancelArchivalRequest;
         class CancelRetrievalRequest;
         class CreateCachediSCSIVolumeRequest;
+        class CreateNFSFileShareRequest;
         class CreateSnapshotRequest;
         class CreateSnapshotFromVolumeRecoveryPointRequest;
         class CreateStorediSCSIVolumeRequest;
@@ -136,6 +142,7 @@ namespace Model
         class CreateTapesRequest;
         class DeleteBandwidthRateLimitRequest;
         class DeleteChapCredentialsRequest;
+        class DeleteFileShareRequest;
         class DeleteGatewayRequest;
         class DeleteSnapshotScheduleRequest;
         class DeleteTapeRequest;
@@ -147,6 +154,7 @@ namespace Model
         class DescribeChapCredentialsRequest;
         class DescribeGatewayInformationRequest;
         class DescribeMaintenanceStartTimeRequest;
+        class DescribeNFSFileSharesRequest;
         class DescribeSnapshotScheduleRequest;
         class DescribeStorediSCSIVolumesRequest;
         class DescribeTapeArchivesRequest;
@@ -156,6 +164,7 @@ namespace Model
         class DescribeVTLDevicesRequest;
         class DescribeWorkingStorageRequest;
         class DisableGatewayRequest;
+        class ListFileSharesRequest;
         class ListGatewaysRequest;
         class ListLocalDisksRequest;
         class ListTagsForResourceRequest;
@@ -175,6 +184,7 @@ namespace Model
         class UpdateGatewayInformationRequest;
         class UpdateGatewaySoftwareNowRequest;
         class UpdateMaintenanceStartTimeRequest;
+        class UpdateNFSFileShareRequest;
         class UpdateSnapshotScheduleRequest;
         class UpdateVTLDeviceTypeRequest;
 
@@ -186,6 +196,7 @@ namespace Model
         typedef Aws::Utils::Outcome<CancelArchivalResult, Aws::Client::AWSError<StorageGatewayErrors>> CancelArchivalOutcome;
         typedef Aws::Utils::Outcome<CancelRetrievalResult, Aws::Client::AWSError<StorageGatewayErrors>> CancelRetrievalOutcome;
         typedef Aws::Utils::Outcome<CreateCachediSCSIVolumeResult, Aws::Client::AWSError<StorageGatewayErrors>> CreateCachediSCSIVolumeOutcome;
+        typedef Aws::Utils::Outcome<CreateNFSFileShareResult, Aws::Client::AWSError<StorageGatewayErrors>> CreateNFSFileShareOutcome;
         typedef Aws::Utils::Outcome<CreateSnapshotResult, Aws::Client::AWSError<StorageGatewayErrors>> CreateSnapshotOutcome;
         typedef Aws::Utils::Outcome<CreateSnapshotFromVolumeRecoveryPointResult, Aws::Client::AWSError<StorageGatewayErrors>> CreateSnapshotFromVolumeRecoveryPointOutcome;
         typedef Aws::Utils::Outcome<CreateStorediSCSIVolumeResult, Aws::Client::AWSError<StorageGatewayErrors>> CreateStorediSCSIVolumeOutcome;
@@ -193,6 +204,7 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateTapesResult, Aws::Client::AWSError<StorageGatewayErrors>> CreateTapesOutcome;
         typedef Aws::Utils::Outcome<DeleteBandwidthRateLimitResult, Aws::Client::AWSError<StorageGatewayErrors>> DeleteBandwidthRateLimitOutcome;
         typedef Aws::Utils::Outcome<DeleteChapCredentialsResult, Aws::Client::AWSError<StorageGatewayErrors>> DeleteChapCredentialsOutcome;
+        typedef Aws::Utils::Outcome<DeleteFileShareResult, Aws::Client::AWSError<StorageGatewayErrors>> DeleteFileShareOutcome;
         typedef Aws::Utils::Outcome<DeleteGatewayResult, Aws::Client::AWSError<StorageGatewayErrors>> DeleteGatewayOutcome;
         typedef Aws::Utils::Outcome<DeleteSnapshotScheduleResult, Aws::Client::AWSError<StorageGatewayErrors>> DeleteSnapshotScheduleOutcome;
         typedef Aws::Utils::Outcome<DeleteTapeResult, Aws::Client::AWSError<StorageGatewayErrors>> DeleteTapeOutcome;
@@ -204,6 +216,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeChapCredentialsResult, Aws::Client::AWSError<StorageGatewayErrors>> DescribeChapCredentialsOutcome;
         typedef Aws::Utils::Outcome<DescribeGatewayInformationResult, Aws::Client::AWSError<StorageGatewayErrors>> DescribeGatewayInformationOutcome;
         typedef Aws::Utils::Outcome<DescribeMaintenanceStartTimeResult, Aws::Client::AWSError<StorageGatewayErrors>> DescribeMaintenanceStartTimeOutcome;
+        typedef Aws::Utils::Outcome<DescribeNFSFileSharesResult, Aws::Client::AWSError<StorageGatewayErrors>> DescribeNFSFileSharesOutcome;
         typedef Aws::Utils::Outcome<DescribeSnapshotScheduleResult, Aws::Client::AWSError<StorageGatewayErrors>> DescribeSnapshotScheduleOutcome;
         typedef Aws::Utils::Outcome<DescribeStorediSCSIVolumesResult, Aws::Client::AWSError<StorageGatewayErrors>> DescribeStorediSCSIVolumesOutcome;
         typedef Aws::Utils::Outcome<DescribeTapeArchivesResult, Aws::Client::AWSError<StorageGatewayErrors>> DescribeTapeArchivesOutcome;
@@ -213,6 +226,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeVTLDevicesResult, Aws::Client::AWSError<StorageGatewayErrors>> DescribeVTLDevicesOutcome;
         typedef Aws::Utils::Outcome<DescribeWorkingStorageResult, Aws::Client::AWSError<StorageGatewayErrors>> DescribeWorkingStorageOutcome;
         typedef Aws::Utils::Outcome<DisableGatewayResult, Aws::Client::AWSError<StorageGatewayErrors>> DisableGatewayOutcome;
+        typedef Aws::Utils::Outcome<ListFileSharesResult, Aws::Client::AWSError<StorageGatewayErrors>> ListFileSharesOutcome;
         typedef Aws::Utils::Outcome<ListGatewaysResult, Aws::Client::AWSError<StorageGatewayErrors>> ListGatewaysOutcome;
         typedef Aws::Utils::Outcome<ListLocalDisksResult, Aws::Client::AWSError<StorageGatewayErrors>> ListLocalDisksOutcome;
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<StorageGatewayErrors>> ListTagsForResourceOutcome;
@@ -232,6 +246,7 @@ namespace Model
         typedef Aws::Utils::Outcome<UpdateGatewayInformationResult, Aws::Client::AWSError<StorageGatewayErrors>> UpdateGatewayInformationOutcome;
         typedef Aws::Utils::Outcome<UpdateGatewaySoftwareNowResult, Aws::Client::AWSError<StorageGatewayErrors>> UpdateGatewaySoftwareNowOutcome;
         typedef Aws::Utils::Outcome<UpdateMaintenanceStartTimeResult, Aws::Client::AWSError<StorageGatewayErrors>> UpdateMaintenanceStartTimeOutcome;
+        typedef Aws::Utils::Outcome<UpdateNFSFileShareResult, Aws::Client::AWSError<StorageGatewayErrors>> UpdateNFSFileShareOutcome;
         typedef Aws::Utils::Outcome<UpdateSnapshotScheduleResult, Aws::Client::AWSError<StorageGatewayErrors>> UpdateSnapshotScheduleOutcome;
         typedef Aws::Utils::Outcome<UpdateVTLDeviceTypeResult, Aws::Client::AWSError<StorageGatewayErrors>> UpdateVTLDeviceTypeOutcome;
 
@@ -243,6 +258,7 @@ namespace Model
         typedef std::future<CancelArchivalOutcome> CancelArchivalOutcomeCallable;
         typedef std::future<CancelRetrievalOutcome> CancelRetrievalOutcomeCallable;
         typedef std::future<CreateCachediSCSIVolumeOutcome> CreateCachediSCSIVolumeOutcomeCallable;
+        typedef std::future<CreateNFSFileShareOutcome> CreateNFSFileShareOutcomeCallable;
         typedef std::future<CreateSnapshotOutcome> CreateSnapshotOutcomeCallable;
         typedef std::future<CreateSnapshotFromVolumeRecoveryPointOutcome> CreateSnapshotFromVolumeRecoveryPointOutcomeCallable;
         typedef std::future<CreateStorediSCSIVolumeOutcome> CreateStorediSCSIVolumeOutcomeCallable;
@@ -250,6 +266,7 @@ namespace Model
         typedef std::future<CreateTapesOutcome> CreateTapesOutcomeCallable;
         typedef std::future<DeleteBandwidthRateLimitOutcome> DeleteBandwidthRateLimitOutcomeCallable;
         typedef std::future<DeleteChapCredentialsOutcome> DeleteChapCredentialsOutcomeCallable;
+        typedef std::future<DeleteFileShareOutcome> DeleteFileShareOutcomeCallable;
         typedef std::future<DeleteGatewayOutcome> DeleteGatewayOutcomeCallable;
         typedef std::future<DeleteSnapshotScheduleOutcome> DeleteSnapshotScheduleOutcomeCallable;
         typedef std::future<DeleteTapeOutcome> DeleteTapeOutcomeCallable;
@@ -261,6 +278,7 @@ namespace Model
         typedef std::future<DescribeChapCredentialsOutcome> DescribeChapCredentialsOutcomeCallable;
         typedef std::future<DescribeGatewayInformationOutcome> DescribeGatewayInformationOutcomeCallable;
         typedef std::future<DescribeMaintenanceStartTimeOutcome> DescribeMaintenanceStartTimeOutcomeCallable;
+        typedef std::future<DescribeNFSFileSharesOutcome> DescribeNFSFileSharesOutcomeCallable;
         typedef std::future<DescribeSnapshotScheduleOutcome> DescribeSnapshotScheduleOutcomeCallable;
         typedef std::future<DescribeStorediSCSIVolumesOutcome> DescribeStorediSCSIVolumesOutcomeCallable;
         typedef std::future<DescribeTapeArchivesOutcome> DescribeTapeArchivesOutcomeCallable;
@@ -270,6 +288,7 @@ namespace Model
         typedef std::future<DescribeVTLDevicesOutcome> DescribeVTLDevicesOutcomeCallable;
         typedef std::future<DescribeWorkingStorageOutcome> DescribeWorkingStorageOutcomeCallable;
         typedef std::future<DisableGatewayOutcome> DisableGatewayOutcomeCallable;
+        typedef std::future<ListFileSharesOutcome> ListFileSharesOutcomeCallable;
         typedef std::future<ListGatewaysOutcome> ListGatewaysOutcomeCallable;
         typedef std::future<ListLocalDisksOutcome> ListLocalDisksOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
@@ -289,6 +308,7 @@ namespace Model
         typedef std::future<UpdateGatewayInformationOutcome> UpdateGatewayInformationOutcomeCallable;
         typedef std::future<UpdateGatewaySoftwareNowOutcome> UpdateGatewaySoftwareNowOutcomeCallable;
         typedef std::future<UpdateMaintenanceStartTimeOutcome> UpdateMaintenanceStartTimeOutcomeCallable;
+        typedef std::future<UpdateNFSFileShareOutcome> UpdateNFSFileShareOutcomeCallable;
         typedef std::future<UpdateSnapshotScheduleOutcome> UpdateSnapshotScheduleOutcomeCallable;
         typedef std::future<UpdateVTLDeviceTypeOutcome> UpdateVTLDeviceTypeOutcomeCallable;
 } // namespace Model
@@ -303,6 +323,7 @@ namespace Model
     typedef std::function<void(const StorageGatewayClient*, const Model::CancelArchivalRequest&, const Model::CancelArchivalOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelArchivalResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::CancelRetrievalRequest&, const Model::CancelRetrievalOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelRetrievalResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::CreateCachediSCSIVolumeRequest&, const Model::CreateCachediSCSIVolumeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCachediSCSIVolumeResponseReceivedHandler;
+    typedef std::function<void(const StorageGatewayClient*, const Model::CreateNFSFileShareRequest&, const Model::CreateNFSFileShareOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateNFSFileShareResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::CreateSnapshotRequest&, const Model::CreateSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSnapshotResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::CreateSnapshotFromVolumeRecoveryPointRequest&, const Model::CreateSnapshotFromVolumeRecoveryPointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSnapshotFromVolumeRecoveryPointResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::CreateStorediSCSIVolumeRequest&, const Model::CreateStorediSCSIVolumeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateStorediSCSIVolumeResponseReceivedHandler;
@@ -310,6 +331,7 @@ namespace Model
     typedef std::function<void(const StorageGatewayClient*, const Model::CreateTapesRequest&, const Model::CreateTapesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTapesResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::DeleteBandwidthRateLimitRequest&, const Model::DeleteBandwidthRateLimitOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteBandwidthRateLimitResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::DeleteChapCredentialsRequest&, const Model::DeleteChapCredentialsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteChapCredentialsResponseReceivedHandler;
+    typedef std::function<void(const StorageGatewayClient*, const Model::DeleteFileShareRequest&, const Model::DeleteFileShareOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFileShareResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::DeleteGatewayRequest&, const Model::DeleteGatewayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteGatewayResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::DeleteSnapshotScheduleRequest&, const Model::DeleteSnapshotScheduleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSnapshotScheduleResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::DeleteTapeRequest&, const Model::DeleteTapeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTapeResponseReceivedHandler;
@@ -321,6 +343,7 @@ namespace Model
     typedef std::function<void(const StorageGatewayClient*, const Model::DescribeChapCredentialsRequest&, const Model::DescribeChapCredentialsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeChapCredentialsResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::DescribeGatewayInformationRequest&, const Model::DescribeGatewayInformationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeGatewayInformationResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::DescribeMaintenanceStartTimeRequest&, const Model::DescribeMaintenanceStartTimeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeMaintenanceStartTimeResponseReceivedHandler;
+    typedef std::function<void(const StorageGatewayClient*, const Model::DescribeNFSFileSharesRequest&, const Model::DescribeNFSFileSharesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeNFSFileSharesResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::DescribeSnapshotScheduleRequest&, const Model::DescribeSnapshotScheduleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSnapshotScheduleResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::DescribeStorediSCSIVolumesRequest&, const Model::DescribeStorediSCSIVolumesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeStorediSCSIVolumesResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::DescribeTapeArchivesRequest&, const Model::DescribeTapeArchivesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTapeArchivesResponseReceivedHandler;
@@ -330,6 +353,7 @@ namespace Model
     typedef std::function<void(const StorageGatewayClient*, const Model::DescribeVTLDevicesRequest&, const Model::DescribeVTLDevicesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeVTLDevicesResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::DescribeWorkingStorageRequest&, const Model::DescribeWorkingStorageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeWorkingStorageResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::DisableGatewayRequest&, const Model::DisableGatewayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableGatewayResponseReceivedHandler;
+    typedef std::function<void(const StorageGatewayClient*, const Model::ListFileSharesRequest&, const Model::ListFileSharesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFileSharesResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::ListGatewaysRequest&, const Model::ListGatewaysOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListGatewaysResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::ListLocalDisksRequest&, const Model::ListLocalDisksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListLocalDisksResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
@@ -349,6 +373,7 @@ namespace Model
     typedef std::function<void(const StorageGatewayClient*, const Model::UpdateGatewayInformationRequest&, const Model::UpdateGatewayInformationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateGatewayInformationResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::UpdateGatewaySoftwareNowRequest&, const Model::UpdateGatewaySoftwareNowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateGatewaySoftwareNowResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::UpdateMaintenanceStartTimeRequest&, const Model::UpdateMaintenanceStartTimeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateMaintenanceStartTimeResponseReceivedHandler;
+    typedef std::function<void(const StorageGatewayClient*, const Model::UpdateNFSFileShareRequest&, const Model::UpdateNFSFileShareOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateNFSFileShareResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::UpdateSnapshotScheduleRequest&, const Model::UpdateSnapshotScheduleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSnapshotScheduleResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::UpdateVTLDeviceTypeRequest&, const Model::UpdateVTLDeviceTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateVTLDeviceTypeResponseReceivedHandler;
 
@@ -360,17 +385,17 @@ namespace Model
    * securely upload data to the AWS cloud for cost effective backup and rapid
    * disaster recovery.</p> <p>Use the following links to get started using the
    * <i>AWS Storage Gateway Service API Reference</i>:</p> <ul> <li> <p> <a
-   * href="http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayHTTPRequestsHeaders.html">AWS
+   * href="http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayAPI.html#AWSStorageGatewayHTTPRequestsHeaders">AWS
    * Storage Gateway Required Request Headers</a>: Describes the required headers
    * that you must send with every POST request to AWS Storage Gateway.</p> </li>
    * <li> <p> <a
-   * href="http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewaySigningRequests.html">Signing
+   * href="http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayAPI.html#AWSStorageGatewaySigningRequests">Signing
    * Requests</a>: AWS Storage Gateway requires that you authenticate every request
    * you send; this topic describes how sign such a request.</p> </li> <li> <p> <a
-   * href="http://docs.aws.amazon.com/storagegateway/latest/userguide/APIErrorResponses.html">Error
+   * href="http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayAPI.html#APIErrorResponses">Error
    * Responses</a>: Provides reference information about AWS Storage Gateway
    * errors.</p> </li> <li> <p> <a
-   * href="http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayAPIOperations.html">Operations
+   * href="http://docs.aws.amazon.com/storagegateway/latest/APIReference/API_Operations.html">Operations
    * in AWS Storage Gateway</a>: Contains detailed descriptions of all AWS Storage
    * Gateway operations, their request parameters, response elements, possible
    * errors, and examples of requests and responses.</p> </li> <li> <p> <a
@@ -433,8 +458,10 @@ namespace Model
          * scheduled snapshots the gateway snapshot schedule window, an activation key, and
          * a name for your gateway. The activation process also associates your gateway
          * with your account; for more information, see
-         * <a>UpdateGatewayInformation</a>.</p> <note><p>You must turn on the gateway VM
-         * before you can activate your gateway.</p> </note>
+         * <a>UpdateGatewayInformation</a>.</p> <note> <p>You must turn on the gateway VM
+         * before you can activate your gateway.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ActivateGateway">AWS
+         * API Reference</a></p>
          */
         virtual Model::ActivateGatewayOutcome ActivateGateway(const Model::ActivateGatewayRequest& request) const;
 
@@ -447,8 +474,10 @@ namespace Model
          * scheduled snapshots the gateway snapshot schedule window, an activation key, and
          * a name for your gateway. The activation process also associates your gateway
          * with your account; for more information, see
-         * <a>UpdateGatewayInformation</a>.</p> <note><p>You must turn on the gateway VM
-         * before you can activate your gateway.</p> </note>
+         * <a>UpdateGatewayInformation</a>.</p> <note> <p>You must turn on the gateway VM
+         * before you can activate your gateway.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ActivateGateway">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -463,8 +492,10 @@ namespace Model
          * scheduled snapshots the gateway snapshot schedule window, an activation key, and
          * a name for your gateway. The activation process also associates your gateway
          * with your account; for more information, see
-         * <a>UpdateGatewayInformation</a>.</p> <note><p>You must turn on the gateway VM
-         * before you can activate your gateway.</p> </note>
+         * <a>UpdateGatewayInformation</a>.</p> <note> <p>You must turn on the gateway VM
+         * before you can activate your gateway.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ActivateGateway">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -477,7 +508,9 @@ namespace Model
          * href="http://docs.aws.amazon.com/storagegateway/latest/userguide/StorageGatewayConcepts.html">Storage
          * Gateway Concepts</a>).</p> <p>In the request, you specify the gateway Amazon
          * Resource Name (ARN) to which you want to add cache, and one or more disk IDs
-         * that you want to configure as cache.</p>
+         * that you want to configure as cache.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/AddCache">AWS
+         * API Reference</a></p>
          */
         virtual Model::AddCacheOutcome AddCache(const Model::AddCacheRequest& request) const;
 
@@ -488,7 +521,9 @@ namespace Model
          * href="http://docs.aws.amazon.com/storagegateway/latest/userguide/StorageGatewayConcepts.html">Storage
          * Gateway Concepts</a>).</p> <p>In the request, you specify the gateway Amazon
          * Resource Name (ARN) to which you want to add cache, and one or more disk IDs
-         * that you want to configure as cache.</p>
+         * that you want to configure as cache.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/AddCache">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -501,7 +536,9 @@ namespace Model
          * href="http://docs.aws.amazon.com/storagegateway/latest/userguide/StorageGatewayConcepts.html">Storage
          * Gateway Concepts</a>).</p> <p>In the request, you specify the gateway Amazon
          * Resource Name (ARN) to which you want to add cache, and one or more disk IDs
-         * that you want to configure as cache.</p>
+         * that you want to configure as cache.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/AddCache">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -516,7 +553,9 @@ namespace Model
          * all types</p> </li> </ul> <ul> <li> <p>Storage Volumes</p> </li> </ul> <ul> <li>
          * <p>Virtual Tapes</p> </li> </ul> <p>You can create a maximum of 10 tags for each
          * resource. Virtual tapes and storage volumes that are recovered to a new gateway
-         * maintain their tags.</p>
+         * maintain their tags.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/AddTagsToResource">AWS
+         * API Reference</a></p>
          */
         virtual Model::AddTagsToResourceOutcome AddTagsToResource(const Model::AddTagsToResourceRequest& request) const;
 
@@ -529,7 +568,9 @@ namespace Model
          * all types</p> </li> </ul> <ul> <li> <p>Storage Volumes</p> </li> </ul> <ul> <li>
          * <p>Virtual Tapes</p> </li> </ul> <p>You can create a maximum of 10 tags for each
          * resource. Virtual tapes and storage volumes that are recovered to a new gateway
-         * maintain their tags.</p>
+         * maintain their tags.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/AddTagsToResource">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -544,7 +585,9 @@ namespace Model
          * all types</p> </li> </ul> <ul> <li> <p>Storage Volumes</p> </li> </ul> <ul> <li>
          * <p>Virtual Tapes</p> </li> </ul> <p>You can create a maximum of 10 tags for each
          * resource. Virtual tapes and storage volumes that are recovered to a new gateway
-         * maintain their tags.</p>
+         * maintain their tags.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/AddTagsToResource">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -555,7 +598,10 @@ namespace Model
          * gateway. This operation is supported for both the gateway-stored and
          * gateway-cached volume architectures.</p> <p>In the request, you specify the
          * gateway Amazon Resource Name (ARN) to which you want to add upload buffer, and
-         * one or more disk IDs that you want to configure as upload buffer.</p>
+         * one or more disk IDs that you want to configure as upload buffer.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/AddUploadBuffer">AWS
+         * API Reference</a></p>
          */
         virtual Model::AddUploadBufferOutcome AddUploadBuffer(const Model::AddUploadBufferRequest& request) const;
 
@@ -564,7 +610,10 @@ namespace Model
          * gateway. This operation is supported for both the gateway-stored and
          * gateway-cached volume architectures.</p> <p>In the request, you specify the
          * gateway Amazon Resource Name (ARN) to which you want to add upload buffer, and
-         * one or more disk IDs that you want to configure as upload buffer.</p>
+         * one or more disk IDs that you want to configure as upload buffer.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/AddUploadBuffer">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -575,7 +624,10 @@ namespace Model
          * gateway. This operation is supported for both the gateway-stored and
          * gateway-cached volume architectures.</p> <p>In the request, you specify the
          * gateway Amazon Resource Name (ARN) to which you want to add upload buffer, and
-         * one or more disk IDs that you want to configure as upload buffer.</p>
+         * one or more disk IDs that you want to configure as upload buffer.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/AddUploadBuffer">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -590,7 +642,9 @@ namespace Model
          * add upload buffer to a stored-volume gateway.</p> </note> <p>In the request, you
          * specify the gateway Amazon Resource Name (ARN) to which you want to add working
          * storage, and one or more disk IDs that you want to configure as working
-         * storage.</p>
+         * storage.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/AddWorkingStorage">AWS
+         * API Reference</a></p>
          */
         virtual Model::AddWorkingStorageOutcome AddWorkingStorage(const Model::AddWorkingStorageRequest& request) const;
 
@@ -603,7 +657,9 @@ namespace Model
          * add upload buffer to a stored-volume gateway.</p> </note> <p>In the request, you
          * specify the gateway Amazon Resource Name (ARN) to which you want to add working
          * storage, and one or more disk IDs that you want to configure as working
-         * storage.</p>
+         * storage.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/AddWorkingStorage">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -618,7 +674,9 @@ namespace Model
          * add upload buffer to a stored-volume gateway.</p> </note> <p>In the request, you
          * specify the gateway Amazon Resource Name (ARN) to which you want to add working
          * storage, and one or more disk IDs that you want to configure as working
-         * storage.</p>
+         * storage.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/AddWorkingStorage">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -626,13 +684,17 @@ namespace Model
 
         /**
          * <p>Cancels archiving of a virtual tape to the virtual tape shelf (VTS) after the
-         * archiving process is initiated.</p>
+         * archiving process is initiated.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CancelArchival">AWS
+         * API Reference</a></p>
          */
         virtual Model::CancelArchivalOutcome CancelArchival(const Model::CancelArchivalRequest& request) const;
 
         /**
          * <p>Cancels archiving of a virtual tape to the virtual tape shelf (VTS) after the
-         * archiving process is initiated.</p>
+         * archiving process is initiated.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CancelArchival">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -640,7 +702,9 @@ namespace Model
 
         /**
          * <p>Cancels archiving of a virtual tape to the virtual tape shelf (VTS) after the
-         * archiving process is initiated.</p>
+         * archiving process is initiated.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CancelArchival">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -649,14 +713,18 @@ namespace Model
         /**
          * <p>Cancels retrieval of a virtual tape from the virtual tape shelf (VTS) to a
          * gateway after the retrieval process is initiated. The virtual tape is returned
-         * to the VTS.</p>
+         * to the VTS.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CancelRetrieval">AWS
+         * API Reference</a></p>
          */
         virtual Model::CancelRetrievalOutcome CancelRetrieval(const Model::CancelRetrievalRequest& request) const;
 
         /**
          * <p>Cancels retrieval of a virtual tape from the virtual tape shelf (VTS) to a
          * gateway after the retrieval process is initiated. The virtual tape is returned
-         * to the VTS.</p>
+         * to the VTS.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CancelRetrieval">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -665,7 +733,9 @@ namespace Model
         /**
          * <p>Cancels retrieval of a virtual tape from the virtual tape shelf (VTS) to a
          * gateway after the retrieval process is initiated. The virtual tape is returned
-         * to the VTS.</p>
+         * to the VTS.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CancelRetrieval">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -673,29 +743,41 @@ namespace Model
 
         /**
          * <p>Creates a cached volume on a specified cached gateway. This operation is
-         * supported only for the gateway-cached volume architecture.</p> <note><p>Cache
+         * supported only for the gateway-cached volume architecture.</p> <note> <p>Cache
          * storage must be allocated to the gateway before you can create a cached volume.
          * Use the <a>AddCache</a> operation to add cache storage to a gateway. </p>
          * </note> <p>In the request, you must specify the gateway, size of the volume in
          * bytes, the iSCSI target name, an IP address on which to expose the target, and a
          * unique client token. In response, AWS Storage Gateway creates the volume and
-         * returns information about it such as the volume Amazon Resource Name (ARN), its
-         * size, and the iSCSI target ARN that initiators can use to connect to the volume
-         * target.</p>
+         * returns information about it. This information includes the volume Amazon
+         * Resource Name (ARN), its size, and the iSCSI target ARN that initiators can use
+         * to connect to the volume target.</p> <p>Optionally, you can provide the ARN for
+         * an existing volume as the <code>SourceVolumeARN</code> for this cached volume,
+         * which creates an exact copy of the existing volume’s latest recovery point. The
+         * <code>VolumeSizeInBytes</code> value must be equal to or larger than the size of
+         * the copied volume, in bytes.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateCachediSCSIVolume">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateCachediSCSIVolumeOutcome CreateCachediSCSIVolume(const Model::CreateCachediSCSIVolumeRequest& request) const;
 
         /**
          * <p>Creates a cached volume on a specified cached gateway. This operation is
-         * supported only for the gateway-cached volume architecture.</p> <note><p>Cache
+         * supported only for the gateway-cached volume architecture.</p> <note> <p>Cache
          * storage must be allocated to the gateway before you can create a cached volume.
          * Use the <a>AddCache</a> operation to add cache storage to a gateway. </p>
          * </note> <p>In the request, you must specify the gateway, size of the volume in
          * bytes, the iSCSI target name, an IP address on which to expose the target, and a
          * unique client token. In response, AWS Storage Gateway creates the volume and
-         * returns information about it such as the volume Amazon Resource Name (ARN), its
-         * size, and the iSCSI target ARN that initiators can use to connect to the volume
-         * target.</p>
+         * returns information about it. This information includes the volume Amazon
+         * Resource Name (ARN), its size, and the iSCSI target ARN that initiators can use
+         * to connect to the volume target.</p> <p>Optionally, you can provide the ARN for
+         * an existing volume as the <code>SourceVolumeARN</code> for this cached volume,
+         * which creates an exact copy of the existing volume’s latest recovery point. The
+         * <code>VolumeSizeInBytes</code> value must be equal to or larger than the size of
+         * the copied volume, in bytes.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateCachediSCSIVolume">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -703,19 +785,59 @@ namespace Model
 
         /**
          * <p>Creates a cached volume on a specified cached gateway. This operation is
-         * supported only for the gateway-cached volume architecture.</p> <note><p>Cache
+         * supported only for the gateway-cached volume architecture.</p> <note> <p>Cache
          * storage must be allocated to the gateway before you can create a cached volume.
          * Use the <a>AddCache</a> operation to add cache storage to a gateway. </p>
          * </note> <p>In the request, you must specify the gateway, size of the volume in
          * bytes, the iSCSI target name, an IP address on which to expose the target, and a
          * unique client token. In response, AWS Storage Gateway creates the volume and
-         * returns information about it such as the volume Amazon Resource Name (ARN), its
-         * size, and the iSCSI target ARN that initiators can use to connect to the volume
-         * target.</p>
+         * returns information about it. This information includes the volume Amazon
+         * Resource Name (ARN), its size, and the iSCSI target ARN that initiators can use
+         * to connect to the volume target.</p> <p>Optionally, you can provide the ARN for
+         * an existing volume as the <code>SourceVolumeARN</code> for this cached volume,
+         * which creates an exact copy of the existing volume’s latest recovery point. The
+         * <code>VolumeSizeInBytes</code> value must be equal to or larger than the size of
+         * the copied volume, in bytes.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateCachediSCSIVolume">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateCachediSCSIVolumeAsync(const Model::CreateCachediSCSIVolumeRequest& request, const CreateCachediSCSIVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates a file share on an existing file gateway. In Storage Gateway, a file
+         * share is a file system mount point backed by Amazon S3 cloud storage. Storage
+         * Gateway exposes file shares using a Network File System (NFS)
+         * interface.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateNFSFileShare">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateNFSFileShareOutcome CreateNFSFileShare(const Model::CreateNFSFileShareRequest& request) const;
+
+        /**
+         * <p>Creates a file share on an existing file gateway. In Storage Gateway, a file
+         * share is a file system mount point backed by Amazon S3 cloud storage. Storage
+         * Gateway exposes file shares using a Network File System (NFS)
+         * interface.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateNFSFileShare">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateNFSFileShareOutcomeCallable CreateNFSFileShareCallable(const Model::CreateNFSFileShareRequest& request) const;
+
+        /**
+         * <p>Creates a file share on an existing file gateway. In Storage Gateway, a file
+         * share is a file system mount point backed by Amazon S3 cloud storage. Storage
+         * Gateway exposes file shares using a Network File System (NFS)
+         * interface.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateNFSFileShare">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateNFSFileShareAsync(const Model::CreateNFSFileShareRequest& request, const CreateNFSFileShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Initiates a snapshot of a volume.</p> <p>AWS Storage Gateway provides the
@@ -732,14 +854,16 @@ namespace Model
          * appears in the AWS Storage Gateway Console. In response, AWS Storage Gateway
          * returns you a snapshot ID. You can use this snapshot ID to check the snapshot
          * progress or later use it when you want to create a volume from a snapshot.</p>
-         * <note><p>To list or delete a snapshot, you must use the Amazon EC2 API. For more
-         * information, see DescribeSnapshots or DeleteSnapshot in the <a
+         * <note> <p>To list or delete a snapshot, you must use the Amazon EC2 API. For
+         * more information, see DescribeSnapshots or DeleteSnapshot in the <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_Operations.html">EC2
          * API reference</a>.</p> </note> <important> <p>Volume and snapshot IDs are
          * changing to a longer length ID format. For more information, see the important
          * note on the <a
          * href="http://docs.aws.amazon.com/storagegateway/latest/APIReference/Welcome.html">Welcome</a>
-         * page.</p> </important>
+         * page.</p> </important><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateSnapshot">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateSnapshotOutcome CreateSnapshot(const Model::CreateSnapshotRequest& request) const;
 
@@ -758,14 +882,16 @@ namespace Model
          * appears in the AWS Storage Gateway Console. In response, AWS Storage Gateway
          * returns you a snapshot ID. You can use this snapshot ID to check the snapshot
          * progress or later use it when you want to create a volume from a snapshot.</p>
-         * <note><p>To list or delete a snapshot, you must use the Amazon EC2 API. For more
-         * information, see DescribeSnapshots or DeleteSnapshot in the <a
+         * <note> <p>To list or delete a snapshot, you must use the Amazon EC2 API. For
+         * more information, see DescribeSnapshots or DeleteSnapshot in the <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_Operations.html">EC2
          * API reference</a>.</p> </note> <important> <p>Volume and snapshot IDs are
          * changing to a longer length ID format. For more information, see the important
          * note on the <a
          * href="http://docs.aws.amazon.com/storagegateway/latest/APIReference/Welcome.html">Welcome</a>
-         * page.</p> </important>
+         * page.</p> </important><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateSnapshot">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -786,14 +912,16 @@ namespace Model
          * appears in the AWS Storage Gateway Console. In response, AWS Storage Gateway
          * returns you a snapshot ID. You can use this snapshot ID to check the snapshot
          * progress or later use it when you want to create a volume from a snapshot.</p>
-         * <note><p>To list or delete a snapshot, you must use the Amazon EC2 API. For more
-         * information, see DescribeSnapshots or DeleteSnapshot in the <a
+         * <note> <p>To list or delete a snapshot, you must use the Amazon EC2 API. For
+         * more information, see DescribeSnapshots or DeleteSnapshot in the <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_Operations.html">EC2
          * API reference</a>.</p> </note> <important> <p>Volume and snapshot IDs are
          * changing to a longer length ID format. For more information, see the important
          * note on the <a
          * href="http://docs.aws.amazon.com/storagegateway/latest/APIReference/Welcome.html">Welcome</a>
-         * page.</p> </important>
+         * page.</p> </important><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateSnapshot">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -814,7 +942,9 @@ namespace Model
          * can use this snapshot ID to check the snapshot progress or later use it when you
          * want to create a volume from a snapshot.</p> <note> <p>To list or delete a
          * snapshot, you must use the Amazon EC2 API. For more information, in <i>Amazon
-         * Elastic Compute Cloud API Reference</i>.</p> </note>
+         * Elastic Compute Cloud API Reference</i>.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateSnapshotFromVolumeRecoveryPoint">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateSnapshotFromVolumeRecoveryPointOutcome CreateSnapshotFromVolumeRecoveryPoint(const Model::CreateSnapshotFromVolumeRecoveryPointRequest& request) const;
 
@@ -833,7 +963,9 @@ namespace Model
          * can use this snapshot ID to check the snapshot progress or later use it when you
          * want to create a volume from a snapshot.</p> <note> <p>To list or delete a
          * snapshot, you must use the Amazon EC2 API. For more information, in <i>Amazon
-         * Elastic Compute Cloud API Reference</i>.</p> </note>
+         * Elastic Compute Cloud API Reference</i>.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateSnapshotFromVolumeRecoveryPoint">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -854,7 +986,9 @@ namespace Model
          * can use this snapshot ID to check the snapshot progress or later use it when you
          * want to create a volume from a snapshot.</p> <note> <p>To list or delete a
          * snapshot, you must use the Amazon EC2 API. For more information, in <i>Amazon
-         * Elastic Compute Cloud API Reference</i>.</p> </note>
+         * Elastic Compute Cloud API Reference</i>.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateSnapshotFromVolumeRecoveryPoint">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -870,7 +1004,9 @@ namespace Model
          * information on which you are creating the volume. In response, AWS Storage
          * Gateway creates the volume and returns volume information such as the volume
          * Amazon Resource Name (ARN), its size, and the iSCSI target ARN that initiators
-         * can use to connect to the volume target.</p>
+         * can use to connect to the volume target.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateStorediSCSIVolume">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateStorediSCSIVolumeOutcome CreateStorediSCSIVolume(const Model::CreateStorediSCSIVolumeRequest& request) const;
 
@@ -884,7 +1020,9 @@ namespace Model
          * information on which you are creating the volume. In response, AWS Storage
          * Gateway creates the volume and returns volume information such as the volume
          * Amazon Resource Name (ARN), its size, and the iSCSI target ARN that initiators
-         * can use to connect to the volume target.</p>
+         * can use to connect to the volume target.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateStorediSCSIVolume">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -900,7 +1038,9 @@ namespace Model
          * information on which you are creating the volume. In response, AWS Storage
          * Gateway creates the volume and returns volume information such as the volume
          * Amazon Resource Name (ARN), its size, and the iSCSI target ARN that initiators
-         * can use to connect to the volume target.</p>
+         * can use to connect to the volume target.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateStorediSCSIVolume">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -908,17 +1048,23 @@ namespace Model
 
         /**
          * <p>Creates a virtual tape by using your own barcode. You write data to the
-         * virtual tape and then archive the tape.</p> <note><p>Cache storage must be
+         * virtual tape and then archive the tape.</p> <note> <p>Cache storage must be
          * allocated to the gateway before you can create a virtual tape. Use the
-         * <a>AddCache</a> operation to add cache storage to a gateway.</p> </note>
+         * <a>AddCache</a> operation to add cache storage to a gateway.</p>
+         * </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateTapeWithBarcode">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateTapeWithBarcodeOutcome CreateTapeWithBarcode(const Model::CreateTapeWithBarcodeRequest& request) const;
 
         /**
          * <p>Creates a virtual tape by using your own barcode. You write data to the
-         * virtual tape and then archive the tape.</p> <note><p>Cache storage must be
+         * virtual tape and then archive the tape.</p> <note> <p>Cache storage must be
          * allocated to the gateway before you can create a virtual tape. Use the
-         * <a>AddCache</a> operation to add cache storage to a gateway.</p> </note>
+         * <a>AddCache</a> operation to add cache storage to a gateway.</p>
+         * </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateTapeWithBarcode">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -926,9 +1072,12 @@ namespace Model
 
         /**
          * <p>Creates a virtual tape by using your own barcode. You write data to the
-         * virtual tape and then archive the tape.</p> <note><p>Cache storage must be
+         * virtual tape and then archive the tape.</p> <note> <p>Cache storage must be
          * allocated to the gateway before you can create a virtual tape. Use the
-         * <a>AddCache</a> operation to add cache storage to a gateway.</p> </note>
+         * <a>AddCache</a> operation to add cache storage to a gateway.</p>
+         * </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateTapeWithBarcode">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -936,17 +1085,21 @@ namespace Model
 
         /**
          * <p>Creates one or more virtual tapes. You write data to the virtual tapes and
-         * then archive the tapes.</p> <note><p>Cache storage must be allocated to the
+         * then archive the tapes.</p> <note> <p>Cache storage must be allocated to the
          * gateway before you can create virtual tapes. Use the <a>AddCache</a> operation
-         * to add cache storage to a gateway. </p> </note>
+         * to add cache storage to a gateway. </p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateTapes">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateTapesOutcome CreateTapes(const Model::CreateTapesRequest& request) const;
 
         /**
          * <p>Creates one or more virtual tapes. You write data to the virtual tapes and
-         * then archive the tapes.</p> <note><p>Cache storage must be allocated to the
+         * then archive the tapes.</p> <note> <p>Cache storage must be allocated to the
          * gateway before you can create virtual tapes. Use the <a>AddCache</a> operation
-         * to add cache storage to a gateway. </p> </note>
+         * to add cache storage to a gateway. </p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateTapes">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -954,9 +1107,11 @@ namespace Model
 
         /**
          * <p>Creates one or more virtual tapes. You write data to the virtual tapes and
-         * then archive the tapes.</p> <note><p>Cache storage must be allocated to the
+         * then archive the tapes.</p> <note> <p>Cache storage must be allocated to the
          * gateway before you can create virtual tapes. Use the <a>AddCache</a> operation
-         * to add cache storage to a gateway. </p> </note>
+         * to add cache storage to a gateway. </p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateTapes">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -967,7 +1122,9 @@ namespace Model
          * upload and download bandwidth rate limit, or you can delete both. If you delete
          * only one of the limits, the other limit remains unchanged. To specify which
          * gateway to work with, use the Amazon Resource Name (ARN) of the gateway in your
-         * request.</p>
+         * request.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteBandwidthRateLimit">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteBandwidthRateLimitOutcome DeleteBandwidthRateLimit(const Model::DeleteBandwidthRateLimitRequest& request) const;
 
@@ -976,7 +1133,9 @@ namespace Model
          * upload and download bandwidth rate limit, or you can delete both. If you delete
          * only one of the limits, the other limit remains unchanged. To specify which
          * gateway to work with, use the Amazon Resource Name (ARN) of the gateway in your
-         * request.</p>
+         * request.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteBandwidthRateLimit">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -987,7 +1146,9 @@ namespace Model
          * upload and download bandwidth rate limit, or you can delete both. If you delete
          * only one of the limits, the other limit remains unchanged. To specify which
          * gateway to work with, use the Amazon Resource Name (ARN) of the gateway in your
-         * request.</p>
+         * request.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteBandwidthRateLimit">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -995,13 +1156,17 @@ namespace Model
 
         /**
          * <p>Deletes Challenge-Handshake Authentication Protocol (CHAP) credentials for a
-         * specified iSCSI target and initiator pair.</p>
+         * specified iSCSI target and initiator pair.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteChapCredentials">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteChapCredentialsOutcome DeleteChapCredentials(const Model::DeleteChapCredentialsRequest& request) const;
 
         /**
          * <p>Deletes Challenge-Handshake Authentication Protocol (CHAP) credentials for a
-         * specified iSCSI target and initiator pair.</p>
+         * specified iSCSI target and initiator pair.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteChapCredentials">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1009,11 +1174,38 @@ namespace Model
 
         /**
          * <p>Deletes Challenge-Handshake Authentication Protocol (CHAP) credentials for a
-         * specified iSCSI target and initiator pair.</p>
+         * specified iSCSI target and initiator pair.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteChapCredentials">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteChapCredentialsAsync(const Model::DeleteChapCredentialsRequest& request, const DeleteChapCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes a file share from a file gateway.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteFileShare">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteFileShareOutcome DeleteFileShare(const Model::DeleteFileShareRequest& request) const;
+
+        /**
+         * <p>Deletes a file share from a file gateway.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteFileShare">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteFileShareOutcomeCallable DeleteFileShareCallable(const Model::DeleteFileShareRequest& request) const;
+
+        /**
+         * <p>Deletes a file share from a file gateway.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteFileShare">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteFileShareAsync(const Model::DeleteFileShareRequest& request, const DeleteFileShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a gateway. To specify which gateway to delete, use the Amazon
@@ -1030,7 +1222,9 @@ namespace Model
          * Amazon EC2 subscription, you can delete your snapshots using the Amazon EC2
          * console. For more information, see the <a
          * href="http://aws.amazon.com/storagegateway"> AWS Storage Gateway Detail
-         * Page</a>. </p> </important>
+         * Page</a>. </p> </important><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteGateway">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteGatewayOutcome DeleteGateway(const Model::DeleteGatewayRequest& request) const;
 
@@ -1049,7 +1243,9 @@ namespace Model
          * Amazon EC2 subscription, you can delete your snapshots using the Amazon EC2
          * console. For more information, see the <a
          * href="http://aws.amazon.com/storagegateway"> AWS Storage Gateway Detail
-         * Page</a>. </p> </important>
+         * Page</a>. </p> </important><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteGateway">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1070,7 +1266,9 @@ namespace Model
          * Amazon EC2 subscription, you can delete your snapshots using the Amazon EC2
          * console. For more information, see the <a
          * href="http://aws.amazon.com/storagegateway"> AWS Storage Gateway Detail
-         * Page</a>. </p> </important>
+         * Page</a>. </p> </important><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteGateway">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1084,7 +1282,9 @@ namespace Model
          * with Snapshots</a>. In the <code>DeleteSnapshotSchedule</code> request, you
          * identify the volume by providing its Amazon Resource Name (ARN). </p> <note>
          * <p>To list or delete a snapshot, you must use the Amazon EC2 API. in <i>Amazon
-         * Elastic Compute Cloud API Reference</i>.</p> </note>
+         * Elastic Compute Cloud API Reference</i>.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteSnapshotSchedule">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteSnapshotScheduleOutcome DeleteSnapshotSchedule(const Model::DeleteSnapshotScheduleRequest& request) const;
 
@@ -1096,7 +1296,9 @@ namespace Model
          * with Snapshots</a>. In the <code>DeleteSnapshotSchedule</code> request, you
          * identify the volume by providing its Amazon Resource Name (ARN). </p> <note>
          * <p>To list or delete a snapshot, you must use the Amazon EC2 API. in <i>Amazon
-         * Elastic Compute Cloud API Reference</i>.</p> </note>
+         * Elastic Compute Cloud API Reference</i>.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteSnapshotSchedule">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1110,45 +1312,62 @@ namespace Model
          * with Snapshots</a>. In the <code>DeleteSnapshotSchedule</code> request, you
          * identify the volume by providing its Amazon Resource Name (ARN). </p> <note>
          * <p>To list or delete a snapshot, you must use the Amazon EC2 API. in <i>Amazon
-         * Elastic Compute Cloud API Reference</i>.</p> </note>
+         * Elastic Compute Cloud API Reference</i>.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteSnapshotSchedule">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteSnapshotScheduleAsync(const Model::DeleteSnapshotScheduleRequest& request, const DeleteSnapshotScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the specified virtual tape.</p>
+         * <p>Deletes the specified virtual tape.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteTape">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteTapeOutcome DeleteTape(const Model::DeleteTapeRequest& request) const;
 
         /**
-         * <p>Deletes the specified virtual tape.</p>
+         * <p>Deletes the specified virtual tape.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteTape">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteTapeOutcomeCallable DeleteTapeCallable(const Model::DeleteTapeRequest& request) const;
 
         /**
-         * <p>Deletes the specified virtual tape.</p>
+         * <p>Deletes the specified virtual tape.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteTape">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteTapeAsync(const Model::DeleteTapeRequest& request, const DeleteTapeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the specified virtual tape from the virtual tape shelf (VTS).</p>
+         * <p>Deletes the specified virtual tape from the virtual tape shelf
+         * (VTS).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteTapeArchive">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteTapeArchiveOutcome DeleteTapeArchive(const Model::DeleteTapeArchiveRequest& request) const;
 
         /**
-         * <p>Deletes the specified virtual tape from the virtual tape shelf (VTS).</p>
+         * <p>Deletes the specified virtual tape from the virtual tape shelf
+         * (VTS).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteTapeArchive">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteTapeArchiveOutcomeCallable DeleteTapeArchiveCallable(const Model::DeleteTapeArchiveRequest& request) const;
 
         /**
-         * <p>Deletes the specified virtual tape from the virtual tape shelf (VTS).</p>
+         * <p>Deletes the specified virtual tape from the virtual tape shelf
+         * (VTS).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteTapeArchive">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1167,7 +1386,9 @@ namespace Model
          * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html">DescribeSnapshots</a>
          * in the <i>Amazon Elastic Compute Cloud API Reference</i>.</p> <p>In the request,
          * you must provide the Amazon Resource Name (ARN) of the storage volume you want
-         * to delete.</p>
+         * to delete.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteVolume">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteVolumeOutcome DeleteVolume(const Model::DeleteVolumeRequest& request) const;
 
@@ -1184,7 +1405,9 @@ namespace Model
          * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html">DescribeSnapshots</a>
          * in the <i>Amazon Elastic Compute Cloud API Reference</i>.</p> <p>In the request,
          * you must provide the Amazon Resource Name (ARN) of the storage volume you want
-         * to delete.</p>
+         * to delete.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteVolume">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1203,7 +1426,9 @@ namespace Model
          * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html">DescribeSnapshots</a>
          * in the <i>Amazon Elastic Compute Cloud API Reference</i>.</p> <p>In the request,
          * you must provide the Amazon Resource Name (ARN) of the storage volume you want
-         * to delete.</p>
+         * to delete.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteVolume">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1215,7 +1440,10 @@ namespace Model
          * operation only returns a value for a bandwidth rate limit only if the limit is
          * set. If no limits are set for the gateway, then this operation returns only the
          * gateway ARN in the response body. To specify which gateway to describe, use the
-         * Amazon Resource Name (ARN) of the gateway in your request.</p>
+         * Amazon Resource Name (ARN) of the gateway in your request.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeBandwidthRateLimit">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeBandwidthRateLimitOutcome DescribeBandwidthRateLimit(const Model::DescribeBandwidthRateLimitRequest& request) const;
 
@@ -1225,7 +1453,10 @@ namespace Model
          * operation only returns a value for a bandwidth rate limit only if the limit is
          * set. If no limits are set for the gateway, then this operation returns only the
          * gateway ARN in the response body. To specify which gateway to describe, use the
-         * Amazon Resource Name (ARN) of the gateway in your request.</p>
+         * Amazon Resource Name (ARN) of the gateway in your request.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeBandwidthRateLimit">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1237,7 +1468,10 @@ namespace Model
          * operation only returns a value for a bandwidth rate limit only if the limit is
          * set. If no limits are set for the gateway, then this operation returns only the
          * gateway ARN in the response body. To specify which gateway to describe, use the
-         * Amazon Resource Name (ARN) of the gateway in your request.</p>
+         * Amazon Resource Name (ARN) of the gateway in your request.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeBandwidthRateLimit">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1247,7 +1481,9 @@ namespace Model
          * <p>Returns information about the cache of a gateway. This operation is supported
          * only for the gateway-cached volume architecture.</p> <p>The response includes
          * disk IDs that are configured as cache, and it includes the amount of cache
-         * allocated and used.</p>
+         * allocated and used.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeCache">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeCacheOutcome DescribeCache(const Model::DescribeCacheRequest& request) const;
 
@@ -1255,7 +1491,9 @@ namespace Model
          * <p>Returns information about the cache of a gateway. This operation is supported
          * only for the gateway-cached volume architecture.</p> <p>The response includes
          * disk IDs that are configured as cache, and it includes the amount of cache
-         * allocated and used.</p>
+         * allocated and used.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeCache">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1265,7 +1503,9 @@ namespace Model
          * <p>Returns information about the cache of a gateway. This operation is supported
          * only for the gateway-cached volume architecture.</p> <p>The response includes
          * disk IDs that are configured as cache, and it includes the amount of cache
-         * allocated and used.</p>
+         * allocated and used.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeCache">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1276,7 +1516,9 @@ namespace Model
          * operation is supported only for the gateway-cached volume architecture.</p>
          * <p>The list of gateway volumes in the request must be from one gateway. In the
          * response Amazon Storage Gateway returns volume information sorted by volume
-         * Amazon Resource Name (ARN).</p>
+         * Amazon Resource Name (ARN).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeCachediSCSIVolumes">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeCachediSCSIVolumesOutcome DescribeCachediSCSIVolumes(const Model::DescribeCachediSCSIVolumesRequest& request) const;
 
@@ -1285,7 +1527,9 @@ namespace Model
          * operation is supported only for the gateway-cached volume architecture.</p>
          * <p>The list of gateway volumes in the request must be from one gateway. In the
          * response Amazon Storage Gateway returns volume information sorted by volume
-         * Amazon Resource Name (ARN).</p>
+         * Amazon Resource Name (ARN).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeCachediSCSIVolumes">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1296,7 +1540,9 @@ namespace Model
          * operation is supported only for the gateway-cached volume architecture.</p>
          * <p>The list of gateway volumes in the request must be from one gateway. In the
          * response Amazon Storage Gateway returns volume information sorted by volume
-         * Amazon Resource Name (ARN).</p>
+         * Amazon Resource Name (ARN).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeCachediSCSIVolumes">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1305,14 +1551,18 @@ namespace Model
         /**
          * <p>Returns an array of Challenge-Handshake Authentication Protocol (CHAP)
          * credentials information for a specified iSCSI target, one for each
-         * target-initiator pair.</p>
+         * target-initiator pair.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeChapCredentials">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeChapCredentialsOutcome DescribeChapCredentials(const Model::DescribeChapCredentialsRequest& request) const;
 
         /**
          * <p>Returns an array of Challenge-Handshake Authentication Protocol (CHAP)
          * credentials information for a specified iSCSI target, one for each
-         * target-initiator pair.</p>
+         * target-initiator pair.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeChapCredentials">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1321,7 +1571,9 @@ namespace Model
         /**
          * <p>Returns an array of Challenge-Handshake Authentication Protocol (CHAP)
          * credentials information for a specified iSCSI target, one for each
-         * target-initiator pair.</p>
+         * target-initiator pair.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeChapCredentials">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1331,7 +1583,9 @@ namespace Model
          * <p>Returns metadata about a gateway such as its name, network interfaces,
          * configured time zone, and the state (whether the gateway is running or not). To
          * specify which gateway to describe, use the Amazon Resource Name (ARN) of the
-         * gateway in your request.</p>
+         * gateway in your request.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeGatewayInformation">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeGatewayInformationOutcome DescribeGatewayInformation(const Model::DescribeGatewayInformationRequest& request) const;
 
@@ -1339,7 +1593,9 @@ namespace Model
          * <p>Returns metadata about a gateway such as its name, network interfaces,
          * configured time zone, and the state (whether the gateway is running or not). To
          * specify which gateway to describe, use the Amazon Resource Name (ARN) of the
-         * gateway in your request.</p>
+         * gateway in your request.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeGatewayInformation">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1349,7 +1605,9 @@ namespace Model
          * <p>Returns metadata about a gateway such as its name, network interfaces,
          * configured time zone, and the state (whether the gateway is running or not). To
          * specify which gateway to describe, use the Amazon Resource Name (ARN) of the
-         * gateway in your request.</p>
+         * gateway in your request.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeGatewayInformation">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1357,13 +1615,19 @@ namespace Model
 
         /**
          * <p>Returns your gateway's weekly maintenance start time including the day and
-         * time of the week. Note that values are in terms of the gateway's time zone.</p>
+         * time of the week. Note that values are in terms of the gateway's time
+         * zone.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeMaintenanceStartTime">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeMaintenanceStartTimeOutcome DescribeMaintenanceStartTime(const Model::DescribeMaintenanceStartTimeRequest& request) const;
 
         /**
          * <p>Returns your gateway's weekly maintenance start time including the day and
-         * time of the week. Note that values are in terms of the gateway's time zone.</p>
+         * time of the week. Note that values are in terms of the gateway's time
+         * zone.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeMaintenanceStartTime">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1371,23 +1635,58 @@ namespace Model
 
         /**
          * <p>Returns your gateway's weekly maintenance start time including the day and
-         * time of the week. Note that values are in terms of the gateway's time zone.</p>
+         * time of the week. Note that values are in terms of the gateway's time
+         * zone.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeMaintenanceStartTime">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeMaintenanceStartTimeAsync(const Model::DescribeMaintenanceStartTimeRequest& request, const DescribeMaintenanceStartTimeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Gets a description for one or more file shares from a file
+         * gateway.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeNFSFileShares">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeNFSFileSharesOutcome DescribeNFSFileShares(const Model::DescribeNFSFileSharesRequest& request) const;
+
+        /**
+         * <p>Gets a description for one or more file shares from a file
+         * gateway.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeNFSFileShares">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeNFSFileSharesOutcomeCallable DescribeNFSFileSharesCallable(const Model::DescribeNFSFileSharesRequest& request) const;
+
+        /**
+         * <p>Gets a description for one or more file shares from a file
+         * gateway.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeNFSFileShares">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeNFSFileSharesAsync(const Model::DescribeNFSFileSharesRequest& request, const DescribeNFSFileSharesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Describes the snapshot schedule for the specified gateway volume. The
          * snapshot schedule information includes intervals at which snapshots are
-         * automatically initiated on the volume.</p>
+         * automatically initiated on the volume.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeSnapshotSchedule">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeSnapshotScheduleOutcome DescribeSnapshotSchedule(const Model::DescribeSnapshotScheduleRequest& request) const;
 
         /**
          * <p>Describes the snapshot schedule for the specified gateway volume. The
          * snapshot schedule information includes intervals at which snapshots are
-         * automatically initiated on the volume.</p>
+         * automatically initiated on the volume.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeSnapshotSchedule">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1396,7 +1695,9 @@ namespace Model
         /**
          * <p>Describes the snapshot schedule for the specified gateway volume. The
          * snapshot schedule information includes intervals at which snapshots are
-         * automatically initiated on the volume.</p>
+         * automatically initiated on the volume.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeSnapshotSchedule">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1405,14 +1706,20 @@ namespace Model
         /**
          * <p>Returns the description of the gateway volumes specified in the request. The
          * list of gateway volumes in the request must be from one gateway. In the response
-         * Amazon Storage Gateway returns volume information sorted by volume ARNs.</p>
+         * Amazon Storage Gateway returns volume information sorted by volume
+         * ARNs.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeStorediSCSIVolumes">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeStorediSCSIVolumesOutcome DescribeStorediSCSIVolumes(const Model::DescribeStorediSCSIVolumesRequest& request) const;
 
         /**
          * <p>Returns the description of the gateway volumes specified in the request. The
          * list of gateway volumes in the request must be from one gateway. In the response
-         * Amazon Storage Gateway returns volume information sorted by volume ARNs.</p>
+         * Amazon Storage Gateway returns volume information sorted by volume
+         * ARNs.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeStorediSCSIVolumes">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1421,7 +1728,10 @@ namespace Model
         /**
          * <p>Returns the description of the gateway volumes specified in the request. The
          * list of gateway volumes in the request must be from one gateway. In the response
-         * Amazon Storage Gateway returns volume information sorted by volume ARNs.</p>
+         * Amazon Storage Gateway returns volume information sorted by volume
+         * ARNs.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeStorediSCSIVolumes">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1431,7 +1741,9 @@ namespace Model
          * <p>Returns a description of specified virtual tapes in the virtual tape shelf
          * (VTS).</p> <p>If a specific <code>TapeARN</code> is not specified, AWS Storage
          * Gateway returns a description of all virtual tapes found in the VTS associated
-         * with your account.</p>
+         * with your account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeTapeArchives">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeTapeArchivesOutcome DescribeTapeArchives(const Model::DescribeTapeArchivesRequest& request) const;
 
@@ -1439,7 +1751,9 @@ namespace Model
          * <p>Returns a description of specified virtual tapes in the virtual tape shelf
          * (VTS).</p> <p>If a specific <code>TapeARN</code> is not specified, AWS Storage
          * Gateway returns a description of all virtual tapes found in the VTS associated
-         * with your account.</p>
+         * with your account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeTapeArchives">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1449,7 +1763,9 @@ namespace Model
          * <p>Returns a description of specified virtual tapes in the virtual tape shelf
          * (VTS).</p> <p>If a specific <code>TapeARN</code> is not specified, AWS Storage
          * Gateway returns a description of all virtual tapes found in the VTS associated
-         * with your account.</p>
+         * with your account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeTapeArchives">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1460,7 +1776,9 @@ namespace Model
          * specified gateway-VTL.</p> <p>A recovery point is a point-in-time view of a
          * virtual tape at which all the data on the virtual tape is consistent. If your
          * gateway crashes, virtual tapes that have recovery points can be recovered to a
-         * new gateway.</p>
+         * new gateway.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeTapeRecoveryPoints">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeTapeRecoveryPointsOutcome DescribeTapeRecoveryPoints(const Model::DescribeTapeRecoveryPointsRequest& request) const;
 
@@ -1469,7 +1787,9 @@ namespace Model
          * specified gateway-VTL.</p> <p>A recovery point is a point-in-time view of a
          * virtual tape at which all the data on the virtual tape is consistent. If your
          * gateway crashes, virtual tapes that have recovery points can be recovered to a
-         * new gateway.</p>
+         * new gateway.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeTapeRecoveryPoints">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1480,7 +1800,9 @@ namespace Model
          * specified gateway-VTL.</p> <p>A recovery point is a point-in-time view of a
          * virtual tape at which all the data on the virtual tape is consistent. If your
          * gateway crashes, virtual tapes that have recovery points can be recovered to a
-         * new gateway.</p>
+         * new gateway.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeTapeRecoveryPoints">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1489,14 +1811,20 @@ namespace Model
         /**
          * <p>Returns a description of the specified Amazon Resource Name (ARN) of virtual
          * tapes. If a <code>TapeARN</code> is not specified, returns a description of all
-         * virtual tapes associated with the specified gateway.</p>
+         * virtual tapes associated with the specified gateway.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeTapes">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeTapesOutcome DescribeTapes(const Model::DescribeTapesRequest& request) const;
 
         /**
          * <p>Returns a description of the specified Amazon Resource Name (ARN) of virtual
          * tapes. If a <code>TapeARN</code> is not specified, returns a description of all
-         * virtual tapes associated with the specified gateway.</p>
+         * virtual tapes associated with the specified gateway.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeTapes">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1505,7 +1833,10 @@ namespace Model
         /**
          * <p>Returns a description of the specified Amazon Resource Name (ARN) of virtual
          * tapes. If a <code>TapeARN</code> is not specified, returns a description of all
-         * virtual tapes associated with the specified gateway.</p>
+         * virtual tapes associated with the specified gateway.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeTapes">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1516,7 +1847,9 @@ namespace Model
          * supported for both the gateway-stored and gateway-cached volume
          * architectures.</p> <p>The response includes disk IDs that are configured as
          * upload buffer space, and it includes the amount of upload buffer space allocated
-         * and used.</p>
+         * and used.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeUploadBuffer">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeUploadBufferOutcome DescribeUploadBuffer(const Model::DescribeUploadBufferRequest& request) const;
 
@@ -1525,7 +1858,9 @@ namespace Model
          * supported for both the gateway-stored and gateway-cached volume
          * architectures.</p> <p>The response includes disk IDs that are configured as
          * upload buffer space, and it includes the amount of upload buffer space allocated
-         * and used.</p>
+         * and used.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeUploadBuffer">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1536,7 +1871,9 @@ namespace Model
          * supported for both the gateway-stored and gateway-cached volume
          * architectures.</p> <p>The response includes disk IDs that are configured as
          * upload buffer space, and it includes the amount of upload buffer space allocated
-         * and used.</p>
+         * and used.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeUploadBuffer">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1545,14 +1882,20 @@ namespace Model
         /**
          * <p>Returns a description of virtual tape library (VTL) devices for the specified
          * gateway. In the response, AWS Storage Gateway returns VTL device
-         * information.</p> <p>The list of VTL devices must be from one gateway.</p>
+         * information.</p> <p>The list of VTL devices must be from one
+         * gateway.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeVTLDevices">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeVTLDevicesOutcome DescribeVTLDevices(const Model::DescribeVTLDevicesRequest& request) const;
 
         /**
          * <p>Returns a description of virtual tape library (VTL) devices for the specified
          * gateway. In the response, AWS Storage Gateway returns VTL device
-         * information.</p> <p>The list of VTL devices must be from one gateway.</p>
+         * information.</p> <p>The list of VTL devices must be from one
+         * gateway.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeVTLDevices">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1561,7 +1904,10 @@ namespace Model
         /**
          * <p>Returns a description of virtual tape library (VTL) devices for the specified
          * gateway. In the response, AWS Storage Gateway returns VTL device
-         * information.</p> <p>The list of VTL devices must be from one gateway.</p>
+         * information.</p> <p>The list of VTL devices must be from one
+         * gateway.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeVTLDevices">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1575,7 +1921,9 @@ namespace Model
          * can also use the DescribeUploadBuffer operation to add upload buffer to a
          * stored-volume gateway.</p> </note> <p>The response includes disk IDs that are
          * configured as working storage, and it includes the amount of working storage
-         * allocated and used.</p>
+         * allocated and used.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeWorkingStorage">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeWorkingStorageOutcome DescribeWorkingStorage(const Model::DescribeWorkingStorageRequest& request) const;
 
@@ -1587,7 +1935,9 @@ namespace Model
          * can also use the DescribeUploadBuffer operation to add upload buffer to a
          * stored-volume gateway.</p> </note> <p>The response includes disk IDs that are
          * configured as working storage, and it includes the amount of working storage
-         * allocated and used.</p>
+         * allocated and used.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeWorkingStorage">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1601,7 +1951,9 @@ namespace Model
          * can also use the DescribeUploadBuffer operation to add upload buffer to a
          * stored-volume gateway.</p> </note> <p>The response includes disk IDs that are
          * configured as working storage, and it includes the amount of working storage
-         * allocated and used.</p>
+         * allocated and used.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeWorkingStorage">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1611,8 +1963,10 @@ namespace Model
          * <p>Disables a gateway when the gateway is no longer functioning. For example, if
          * your gateway VM is damaged, you can disable the gateway so you can recover
          * virtual tapes.</p> <p>Use this operation for a gateway-VTL that is not reachable
-         * or not functioning.</p> <important><p>Once a gateway is disabled it cannot be
-         * enabled.</p> </important>
+         * or not functioning.</p> <important> <p>Once a gateway is disabled it cannot be
+         * enabled.</p> </important><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DisableGateway">AWS
+         * API Reference</a></p>
          */
         virtual Model::DisableGatewayOutcome DisableGateway(const Model::DisableGatewayRequest& request) const;
 
@@ -1620,8 +1974,10 @@ namespace Model
          * <p>Disables a gateway when the gateway is no longer functioning. For example, if
          * your gateway VM is damaged, you can disable the gateway so you can recover
          * virtual tapes.</p> <p>Use this operation for a gateway-VTL that is not reachable
-         * or not functioning.</p> <important><p>Once a gateway is disabled it cannot be
-         * enabled.</p> </important>
+         * or not functioning.</p> <important> <p>Once a gateway is disabled it cannot be
+         * enabled.</p> </important><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DisableGateway">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1631,12 +1987,45 @@ namespace Model
          * <p>Disables a gateway when the gateway is no longer functioning. For example, if
          * your gateway VM is damaged, you can disable the gateway so you can recover
          * virtual tapes.</p> <p>Use this operation for a gateway-VTL that is not reachable
-         * or not functioning.</p> <important><p>Once a gateway is disabled it cannot be
-         * enabled.</p> </important>
+         * or not functioning.</p> <important> <p>Once a gateway is disabled it cannot be
+         * enabled.</p> </important><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DisableGateway">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DisableGatewayAsync(const Model::DisableGatewayRequest& request, const DisableGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Gets a list of the file shares for a specific file gateway, or the list of
+         * file shares that belong to the calling user account. </p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListFileShares">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListFileSharesOutcome ListFileShares(const Model::ListFileSharesRequest& request) const;
+
+        /**
+         * <p>Gets a list of the file shares for a specific file gateway, or the list of
+         * file shares that belong to the calling user account. </p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListFileShares">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListFileSharesOutcomeCallable ListFileSharesCallable(const Model::ListFileSharesRequest& request) const;
+
+        /**
+         * <p>Gets a list of the file shares for a specific file gateway, or the list of
+         * file shares that belong to the calling user account. </p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListFileShares">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListFileSharesAsync(const Model::ListFileSharesRequest& request, const ListFileSharesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists gateways owned by an AWS account in a region specified in the request.
@@ -1646,7 +2035,9 @@ namespace Model
          * returned in a response.</p> <p>If you have more gateways than are returned in a
          * response (that is, the response returns only a truncated list of your gateways),
          * the response contains a marker that you can specify in your next request to
-         * fetch the next page of gateways.</p>
+         * fetch the next page of gateways.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListGateways">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListGatewaysOutcome ListGateways(const Model::ListGatewaysRequest& request) const;
 
@@ -1658,7 +2049,9 @@ namespace Model
          * returned in a response.</p> <p>If you have more gateways than are returned in a
          * response (that is, the response returns only a truncated list of your gateways),
          * the response contains a marker that you can specify in your next request to
-         * fetch the next page of gateways.</p>
+         * fetch the next page of gateways.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListGateways">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1672,7 +2065,9 @@ namespace Model
          * returned in a response.</p> <p>If you have more gateways than are returned in a
          * response (that is, the response returns only a truncated list of your gateways),
          * the response contains a marker that you can specify in your next request to
-         * fetch the next page of gateways.</p>
+         * fetch the next page of gateways.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListGateways">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1687,7 +2082,9 @@ namespace Model
          * field can have a value of present (the disk is available to use), missing (the
          * disk is no longer connected to the gateway), or mismatch (the disk node is
          * occupied by a disk that has incorrect metadata or the disk content is
-         * corrupted). </p>
+         * corrupted). </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListLocalDisks">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListLocalDisksOutcome ListLocalDisks(const Model::ListLocalDisksRequest& request) const;
 
@@ -1700,7 +2097,9 @@ namespace Model
          * field can have a value of present (the disk is available to use), missing (the
          * disk is no longer connected to the gateway), or mismatch (the disk node is
          * occupied by a disk that has incorrect metadata or the disk content is
-         * corrupted). </p>
+         * corrupted). </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListLocalDisks">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1715,26 +2114,37 @@ namespace Model
          * field can have a value of present (the disk is available to use), missing (the
          * disk is no longer connected to the gateway), or mismatch (the disk node is
          * occupied by a disk that has incorrect metadata or the disk content is
-         * corrupted). </p>
+         * corrupted). </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListLocalDisks">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListLocalDisksAsync(const Model::ListLocalDisksRequest& request, const ListLocalDisksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the tags that have been added to the specified resource.</p>
+         * <p>Lists the tags that have been added to the specified resource.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListTagsForResource">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p>Lists the tags that have been added to the specified resource.</p>
+         * <p>Lists the tags that have been added to the specified resource.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListTagsForResource">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p>Lists the tags that have been added to the specified resource.</p>
+         * <p>Lists the tags that have been added to the specified resource.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListTagsForResource">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1749,7 +2159,10 @@ namespace Model
          * can optionally specify the <code>Limit</code> parameter in the body to limit the
          * number of tapes in the response. If the number of tapes returned in the response
          * is truncated, the response includes a <code>Marker</code> element that you can
-         * use in your subsequent request to retrieve the next set of tapes.</p>
+         * use in your subsequent request to retrieve the next set of tapes.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListTapes">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListTapesOutcome ListTapes(const Model::ListTapesRequest& request) const;
 
@@ -1762,7 +2175,10 @@ namespace Model
          * can optionally specify the <code>Limit</code> parameter in the body to limit the
          * number of tapes in the response. If the number of tapes returned in the response
          * is truncated, the response includes a <code>Marker</code> element that you can
-         * use in your subsequent request to retrieve the next set of tapes.</p>
+         * use in your subsequent request to retrieve the next set of tapes.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListTapes">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1777,7 +2193,10 @@ namespace Model
          * can optionally specify the <code>Limit</code> parameter in the body to limit the
          * number of tapes in the response. If the number of tapes returned in the response
          * is truncated, the response includes a <code>Marker</code> element that you can
-         * use in your subsequent request to retrieve the next set of tapes.</p>
+         * use in your subsequent request to retrieve the next set of tapes.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListTapes">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1785,13 +2204,19 @@ namespace Model
 
         /**
          * <p>Lists iSCSI initiators that are connected to a volume. You can use this
-         * operation to determine whether a volume is being used or not.</p>
+         * operation to determine whether a volume is being used or not.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListVolumeInitiators">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListVolumeInitiatorsOutcome ListVolumeInitiators(const Model::ListVolumeInitiatorsRequest& request) const;
 
         /**
          * <p>Lists iSCSI initiators that are connected to a volume. You can use this
-         * operation to determine whether a volume is being used or not.</p>
+         * operation to determine whether a volume is being used or not.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListVolumeInitiators">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1799,7 +2224,10 @@ namespace Model
 
         /**
          * <p>Lists iSCSI initiators that are connected to a volume. You can use this
-         * operation to determine whether a volume is being used or not.</p>
+         * operation to determine whether a volume is being used or not.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListVolumeInitiators">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1811,7 +2239,10 @@ namespace Model
          * gateway-cached volume has one recovery point. A volume recovery point is a point
          * in time at which all data of the volume is consistent and from which you can
          * create a snapshot. To create a snapshot from a volume recovery point use the
-         * <a>CreateSnapshotFromVolumeRecoveryPoint</a> operation.</p>
+         * <a>CreateSnapshotFromVolumeRecoveryPoint</a> operation.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListVolumeRecoveryPoints">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListVolumeRecoveryPointsOutcome ListVolumeRecoveryPoints(const Model::ListVolumeRecoveryPointsRequest& request) const;
 
@@ -1821,7 +2252,10 @@ namespace Model
          * gateway-cached volume has one recovery point. A volume recovery point is a point
          * in time at which all data of the volume is consistent and from which you can
          * create a snapshot. To create a snapshot from a volume recovery point use the
-         * <a>CreateSnapshotFromVolumeRecoveryPoint</a> operation.</p>
+         * <a>CreateSnapshotFromVolumeRecoveryPoint</a> operation.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListVolumeRecoveryPoints">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1833,7 +2267,10 @@ namespace Model
          * gateway-cached volume has one recovery point. A volume recovery point is a point
          * in time at which all data of the volume is consistent and from which you can
          * create a snapshot. To create a snapshot from a volume recovery point use the
-         * <a>CreateSnapshotFromVolumeRecoveryPoint</a> operation.</p>
+         * <a>CreateSnapshotFromVolumeRecoveryPoint</a> operation.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListVolumeRecoveryPoints">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1842,26 +2279,32 @@ namespace Model
         /**
          * <p>Lists the iSCSI stored volumes of a gateway. Results are sorted by volume
          * ARN. The response includes only the volume ARNs. If you want additional volume
-         * information, use the <a>DescribeStorediSCSIVolumes</a> API.</p> <p>The operation
-         * supports pagination. By default, the operation returns a maximum of up to 100
-         * volumes. You can optionally specify the <code>Limit</code> field in the body to
-         * limit the number of volumes in the response. If the number of volumes returned
-         * in the response is truncated, the response includes a Marker field. You can use
-         * this Marker value in your subsequent request to retrieve the next set of
-         * volumes.</p>
+         * information, use the <a>DescribeStorediSCSIVolumes</a> or the
+         * <a>DescribeCachediSCSIVolumes</a> API.</p> <p>The operation supports pagination.
+         * By default, the operation returns a maximum of up to 100 volumes. You can
+         * optionally specify the <code>Limit</code> field in the body to limit the number
+         * of volumes in the response. If the number of volumes returned in the response is
+         * truncated, the response includes a Marker field. You can use this Marker value
+         * in your subsequent request to retrieve the next set of volumes.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListVolumes">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListVolumesOutcome ListVolumes(const Model::ListVolumesRequest& request) const;
 
         /**
          * <p>Lists the iSCSI stored volumes of a gateway. Results are sorted by volume
          * ARN. The response includes only the volume ARNs. If you want additional volume
-         * information, use the <a>DescribeStorediSCSIVolumes</a> API.</p> <p>The operation
-         * supports pagination. By default, the operation returns a maximum of up to 100
-         * volumes. You can optionally specify the <code>Limit</code> field in the body to
-         * limit the number of volumes in the response. If the number of volumes returned
-         * in the response is truncated, the response includes a Marker field. You can use
-         * this Marker value in your subsequent request to retrieve the next set of
-         * volumes.</p>
+         * information, use the <a>DescribeStorediSCSIVolumes</a> or the
+         * <a>DescribeCachediSCSIVolumes</a> API.</p> <p>The operation supports pagination.
+         * By default, the operation returns a maximum of up to 100 volumes. You can
+         * optionally specify the <code>Limit</code> field in the body to limit the number
+         * of volumes in the response. If the number of volumes returned in the response is
+         * truncated, the response includes a Marker field. You can use this Marker value
+         * in your subsequent request to retrieve the next set of volumes.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListVolumes">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1870,32 +2313,44 @@ namespace Model
         /**
          * <p>Lists the iSCSI stored volumes of a gateway. Results are sorted by volume
          * ARN. The response includes only the volume ARNs. If you want additional volume
-         * information, use the <a>DescribeStorediSCSIVolumes</a> API.</p> <p>The operation
-         * supports pagination. By default, the operation returns a maximum of up to 100
-         * volumes. You can optionally specify the <code>Limit</code> field in the body to
-         * limit the number of volumes in the response. If the number of volumes returned
-         * in the response is truncated, the response includes a Marker field. You can use
-         * this Marker value in your subsequent request to retrieve the next set of
-         * volumes.</p>
+         * information, use the <a>DescribeStorediSCSIVolumes</a> or the
+         * <a>DescribeCachediSCSIVolumes</a> API.</p> <p>The operation supports pagination.
+         * By default, the operation returns a maximum of up to 100 volumes. You can
+         * optionally specify the <code>Limit</code> field in the body to limit the number
+         * of volumes in the response. If the number of volumes returned in the response is
+         * truncated, the response includes a Marker field. You can use this Marker value
+         * in your subsequent request to retrieve the next set of volumes.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListVolumes">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListVolumesAsync(const Model::ListVolumesRequest& request, const ListVolumesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Removes one or more tags from the specified resource.</p>
+         * <p>Removes one or more tags from the specified resource.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/RemoveTagsFromResource">AWS
+         * API Reference</a></p>
          */
         virtual Model::RemoveTagsFromResourceOutcome RemoveTagsFromResource(const Model::RemoveTagsFromResourceRequest& request) const;
 
         /**
-         * <p>Removes one or more tags from the specified resource.</p>
+         * <p>Removes one or more tags from the specified resource.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/RemoveTagsFromResource">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::RemoveTagsFromResourceOutcomeCallable RemoveTagsFromResourceCallable(const Model::RemoveTagsFromResourceRequest& request) const;
 
         /**
-         * <p>Removes one or more tags from the specified resource.</p>
+         * <p>Removes one or more tags from the specified resource.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/RemoveTagsFromResource">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1911,7 +2366,10 @@ namespace Model
          * the cache disk you are resetting contains data that has not been uploaded to
          * Amazon S3 yet, that data can be lost. After you reset cache disks, there will be
          * no configured cache disks left in the gateway, so you must configure at least
-         * one new cache disk for your gateway to function properly.</p> </important>
+         * one new cache disk for your gateway to function properly.</p>
+         * </important><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ResetCache">AWS
+         * API Reference</a></p>
          */
         virtual Model::ResetCacheOutcome ResetCache(const Model::ResetCacheRequest& request) const;
 
@@ -1925,7 +2383,10 @@ namespace Model
          * the cache disk you are resetting contains data that has not been uploaded to
          * Amazon S3 yet, that data can be lost. After you reset cache disks, there will be
          * no configured cache disks left in the gateway, so you must configure at least
-         * one new cache disk for your gateway to function properly.</p> </important>
+         * one new cache disk for your gateway to function properly.</p>
+         * </important><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ResetCache">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1941,7 +2402,10 @@ namespace Model
          * the cache disk you are resetting contains data that has not been uploaded to
          * Amazon S3 yet, that data can be lost. After you reset cache disks, there will be
          * no configured cache disks left in the gateway, so you must configure at least
-         * one new cache disk for your gateway to function properly.</p> </important>
+         * one new cache disk for your gateway to function properly.</p>
+         * </important><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ResetCache">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1953,7 +2417,10 @@ namespace Model
          * gateway. However after a tape is retrieved, it is associated with a gateway,
          * even though it is also listed in the VTS.</p> <p>Once a tape is successfully
          * retrieved to a gateway, it cannot be retrieved again to another gateway. You
-         * must archive the tape again before you can retrieve it to another gateway.</p>
+         * must archive the tape again before you can retrieve it to another
+         * gateway.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/RetrieveTapeArchive">AWS
+         * API Reference</a></p>
          */
         virtual Model::RetrieveTapeArchiveOutcome RetrieveTapeArchive(const Model::RetrieveTapeArchiveRequest& request) const;
 
@@ -1963,7 +2430,10 @@ namespace Model
          * gateway. However after a tape is retrieved, it is associated with a gateway,
          * even though it is also listed in the VTS.</p> <p>Once a tape is successfully
          * retrieved to a gateway, it cannot be retrieved again to another gateway. You
-         * must archive the tape again before you can retrieve it to another gateway.</p>
+         * must archive the tape again before you can retrieve it to another
+         * gateway.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/RetrieveTapeArchive">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1975,7 +2445,10 @@ namespace Model
          * gateway. However after a tape is retrieved, it is associated with a gateway,
          * even though it is also listed in the VTS.</p> <p>Once a tape is successfully
          * retrieved to a gateway, it cannot be retrieved again to another gateway. You
-         * must archive the tape again before you can retrieve it to another gateway.</p>
+         * must archive the tape again before you can retrieve it to another
+         * gateway.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/RetrieveTapeArchive">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1985,10 +2458,12 @@ namespace Model
          * <p>Retrieves the recovery point for the specified virtual tape.</p> <p>A
          * recovery point is a point in time view of a virtual tape at which all the data
          * on the tape is consistent. If your gateway crashes, virtual tapes that have
-         * recovery points can be recovered to a new gateway.</p> <note><p>The virtual tape
-         * can be retrieved to only one gateway. The retrieved tape is read-only. The
+         * recovery points can be recovered to a new gateway.</p> <note> <p>The virtual
+         * tape can be retrieved to only one gateway. The retrieved tape is read-only. The
          * virtual tape can be retrieved to only a gateway-VTL. There is no charge for
-         * retrieving recovery points.</p> </note>
+         * retrieving recovery points.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/RetrieveTapeRecoveryPoint">AWS
+         * API Reference</a></p>
          */
         virtual Model::RetrieveTapeRecoveryPointOutcome RetrieveTapeRecoveryPoint(const Model::RetrieveTapeRecoveryPointRequest& request) const;
 
@@ -1996,10 +2471,12 @@ namespace Model
          * <p>Retrieves the recovery point for the specified virtual tape.</p> <p>A
          * recovery point is a point in time view of a virtual tape at which all the data
          * on the tape is consistent. If your gateway crashes, virtual tapes that have
-         * recovery points can be recovered to a new gateway.</p> <note><p>The virtual tape
-         * can be retrieved to only one gateway. The retrieved tape is read-only. The
+         * recovery points can be recovered to a new gateway.</p> <note> <p>The virtual
+         * tape can be retrieved to only one gateway. The retrieved tape is read-only. The
          * virtual tape can be retrieved to only a gateway-VTL. There is no charge for
-         * retrieving recovery points.</p> </note>
+         * retrieving recovery points.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/RetrieveTapeRecoveryPoint">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2009,10 +2486,12 @@ namespace Model
          * <p>Retrieves the recovery point for the specified virtual tape.</p> <p>A
          * recovery point is a point in time view of a virtual tape at which all the data
          * on the tape is consistent. If your gateway crashes, virtual tapes that have
-         * recovery points can be recovered to a new gateway.</p> <note><p>The virtual tape
-         * can be retrieved to only one gateway. The retrieved tape is read-only. The
+         * recovery points can be recovered to a new gateway.</p> <note> <p>The virtual
+         * tape can be retrieved to only one gateway. The retrieved tape is read-only. The
          * virtual tape can be retrieved to only a gateway-VTL. There is no charge for
-         * retrieving recovery points.</p> </note>
+         * retrieving recovery points.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/RetrieveTapeRecoveryPoint">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2022,7 +2501,9 @@ namespace Model
          * <p>Sets the password for your VM local console. When you log in to the local
          * console for the first time, you log in to the VM with the default credentials.
          * We recommend that you set a new password. You don't need to know the default
-         * password to set a new password.</p>
+         * password to set a new password.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/SetLocalConsolePassword">AWS
+         * API Reference</a></p>
          */
         virtual Model::SetLocalConsolePasswordOutcome SetLocalConsolePassword(const Model::SetLocalConsolePasswordRequest& request) const;
 
@@ -2030,7 +2511,9 @@ namespace Model
          * <p>Sets the password for your VM local console. When you log in to the local
          * console for the first time, you log in to the VM with the default credentials.
          * We recommend that you set a new password. You don't need to know the default
-         * password to set a new password.</p>
+         * password to set a new password.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/SetLocalConsolePassword">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2040,7 +2523,9 @@ namespace Model
          * <p>Sets the password for your VM local console. When you log in to the local
          * console for the first time, you log in to the VM with the default credentials.
          * We recommend that you set a new password. You don't need to know the default
-         * password to set a new password.</p>
+         * password to set a new password.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/SetLocalConsolePassword">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2050,20 +2535,22 @@ namespace Model
          * <p>Shuts down a gateway. To specify which gateway to shut down, use the Amazon
          * Resource Name (ARN) of the gateway in the body of your request.</p> <p>The
          * operation shuts down the gateway service component running in the storage
-         * gateway's virtual machine (VM) and not the VM.</p> <note><p>If you want to shut
+         * gateway's virtual machine (VM) and not the VM.</p> <note> <p>If you want to shut
          * down the VM, it is recommended that you first shut down the gateway component in
          * the VM to avoid unpredictable conditions.</p> </note> <p>After the gateway is
          * shutdown, you cannot call any other API except <a>StartGateway</a>,
          * <a>DescribeGatewayInformation</a>, and <a>ListGateways</a>. For more
          * information, see <a>ActivateGateway</a>. Your applications cannot read from or
          * write to the gateway's storage volumes, and there are no snapshots taken.</p>
-         * <note><p>When you make a shutdown request, you will get a <code>200 OK</code>
+         * <note> <p>When you make a shutdown request, you will get a <code>200 OK</code>
          * success response immediately. However, it might take some time for the gateway
          * to shut down. You can call the <a>DescribeGatewayInformation</a> API to check
          * the status. For more information, see <a>ActivateGateway</a>.</p> </note> <p>If
          * do not intend to use the gateway again, you must delete the gateway (using
          * <a>DeleteGateway</a>) to no longer pay software charges associated with the
-         * gateway.</p>
+         * gateway.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ShutdownGateway">AWS
+         * API Reference</a></p>
          */
         virtual Model::ShutdownGatewayOutcome ShutdownGateway(const Model::ShutdownGatewayRequest& request) const;
 
@@ -2071,20 +2558,22 @@ namespace Model
          * <p>Shuts down a gateway. To specify which gateway to shut down, use the Amazon
          * Resource Name (ARN) of the gateway in the body of your request.</p> <p>The
          * operation shuts down the gateway service component running in the storage
-         * gateway's virtual machine (VM) and not the VM.</p> <note><p>If you want to shut
+         * gateway's virtual machine (VM) and not the VM.</p> <note> <p>If you want to shut
          * down the VM, it is recommended that you first shut down the gateway component in
          * the VM to avoid unpredictable conditions.</p> </note> <p>After the gateway is
          * shutdown, you cannot call any other API except <a>StartGateway</a>,
          * <a>DescribeGatewayInformation</a>, and <a>ListGateways</a>. For more
          * information, see <a>ActivateGateway</a>. Your applications cannot read from or
          * write to the gateway's storage volumes, and there are no snapshots taken.</p>
-         * <note><p>When you make a shutdown request, you will get a <code>200 OK</code>
+         * <note> <p>When you make a shutdown request, you will get a <code>200 OK</code>
          * success response immediately. However, it might take some time for the gateway
          * to shut down. You can call the <a>DescribeGatewayInformation</a> API to check
          * the status. For more information, see <a>ActivateGateway</a>.</p> </note> <p>If
          * do not intend to use the gateway again, you must delete the gateway (using
          * <a>DeleteGateway</a>) to no longer pay software charges associated with the
-         * gateway.</p>
+         * gateway.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ShutdownGateway">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2094,20 +2583,22 @@ namespace Model
          * <p>Shuts down a gateway. To specify which gateway to shut down, use the Amazon
          * Resource Name (ARN) of the gateway in the body of your request.</p> <p>The
          * operation shuts down the gateway service component running in the storage
-         * gateway's virtual machine (VM) and not the VM.</p> <note><p>If you want to shut
+         * gateway's virtual machine (VM) and not the VM.</p> <note> <p>If you want to shut
          * down the VM, it is recommended that you first shut down the gateway component in
          * the VM to avoid unpredictable conditions.</p> </note> <p>After the gateway is
          * shutdown, you cannot call any other API except <a>StartGateway</a>,
          * <a>DescribeGatewayInformation</a>, and <a>ListGateways</a>. For more
          * information, see <a>ActivateGateway</a>. Your applications cannot read from or
          * write to the gateway's storage volumes, and there are no snapshots taken.</p>
-         * <note><p>When you make a shutdown request, you will get a <code>200 OK</code>
+         * <note> <p>When you make a shutdown request, you will get a <code>200 OK</code>
          * success response immediately. However, it might take some time for the gateway
          * to shut down. You can call the <a>DescribeGatewayInformation</a> API to check
          * the status. For more information, see <a>ActivateGateway</a>.</p> </note> <p>If
          * do not intend to use the gateway again, you must delete the gateway (using
          * <a>DeleteGateway</a>) to no longer pay software charges associated with the
-         * gateway.</p>
+         * gateway.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ShutdownGateway">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2117,12 +2608,15 @@ namespace Model
          * <p>Starts a gateway that you previously shut down (see <a>ShutdownGateway</a>).
          * After the gateway starts, you can then make other API calls, your applications
          * can read from or write to the gateway's storage volumes and you will be able to
-         * take snapshot backups.</p> <note><p>When you make a request, you will get a 200
+         * take snapshot backups.</p> <note> <p>When you make a request, you will get a 200
          * OK success response immediately. However, it might take some time for the
          * gateway to be ready. You should call <a>DescribeGatewayInformation</a> and check
          * the status before making any additional API calls. For more information, see
          * <a>ActivateGateway</a>.</p> </note> <p>To specify which gateway to start, use
-         * the Amazon Resource Name (ARN) of the gateway in your request.</p>
+         * the Amazon Resource Name (ARN) of the gateway in your request.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/StartGateway">AWS
+         * API Reference</a></p>
          */
         virtual Model::StartGatewayOutcome StartGateway(const Model::StartGatewayRequest& request) const;
 
@@ -2130,12 +2624,15 @@ namespace Model
          * <p>Starts a gateway that you previously shut down (see <a>ShutdownGateway</a>).
          * After the gateway starts, you can then make other API calls, your applications
          * can read from or write to the gateway's storage volumes and you will be able to
-         * take snapshot backups.</p> <note><p>When you make a request, you will get a 200
+         * take snapshot backups.</p> <note> <p>When you make a request, you will get a 200
          * OK success response immediately. However, it might take some time for the
          * gateway to be ready. You should call <a>DescribeGatewayInformation</a> and check
          * the status before making any additional API calls. For more information, see
          * <a>ActivateGateway</a>.</p> </note> <p>To specify which gateway to start, use
-         * the Amazon Resource Name (ARN) of the gateway in your request.</p>
+         * the Amazon Resource Name (ARN) of the gateway in your request.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/StartGateway">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2145,12 +2642,15 @@ namespace Model
          * <p>Starts a gateway that you previously shut down (see <a>ShutdownGateway</a>).
          * After the gateway starts, you can then make other API calls, your applications
          * can read from or write to the gateway's storage volumes and you will be able to
-         * take snapshot backups.</p> <note><p>When you make a request, you will get a 200
+         * take snapshot backups.</p> <note> <p>When you make a request, you will get a 200
          * OK success response immediately. However, it might take some time for the
          * gateway to be ready. You should call <a>DescribeGatewayInformation</a> and check
          * the status before making any additional API calls. For more information, see
          * <a>ActivateGateway</a>.</p> </note> <p>To specify which gateway to start, use
-         * the Amazon Resource Name (ARN) of the gateway in your request.</p>
+         * the Amazon Resource Name (ARN) of the gateway in your request.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/StartGateway">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2164,7 +2664,9 @@ namespace Model
          * limit, the gateway does not have any limitations on its bandwidth usage and
          * could potentially use the maximum available bandwidth.</p> <p>To specify which
          * gateway to update, use the Amazon Resource Name (ARN) of the gateway in your
-         * request.</p>
+         * request.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateBandwidthRateLimit">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateBandwidthRateLimitOutcome UpdateBandwidthRateLimit(const Model::UpdateBandwidthRateLimitRequest& request) const;
 
@@ -2176,7 +2678,9 @@ namespace Model
          * limit, the gateway does not have any limitations on its bandwidth usage and
          * could potentially use the maximum available bandwidth.</p> <p>To specify which
          * gateway to update, use the Amazon Resource Name (ARN) of the gateway in your
-         * request.</p>
+         * request.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateBandwidthRateLimit">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2190,7 +2694,9 @@ namespace Model
          * limit, the gateway does not have any limitations on its bandwidth usage and
          * could potentially use the maximum available bandwidth.</p> <p>To specify which
          * gateway to update, use the Amazon Resource Name (ARN) of the gateway in your
-         * request.</p>
+         * request.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateBandwidthRateLimit">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2201,7 +2707,10 @@ namespace Model
          * for a specified iSCSI target. By default, a gateway does not have CHAP enabled;
          * however, for added security, you might use it.</p> <important> <p>When you
          * update CHAP credentials, all existing connections on the target are closed and
-         * initiators must reconnect with the new credentials.</p> </important>
+         * initiators must reconnect with the new credentials.</p> </important><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateChapCredentials">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateChapCredentialsOutcome UpdateChapCredentials(const Model::UpdateChapCredentialsRequest& request) const;
 
@@ -2210,7 +2719,10 @@ namespace Model
          * for a specified iSCSI target. By default, a gateway does not have CHAP enabled;
          * however, for added security, you might use it.</p> <important> <p>When you
          * update CHAP credentials, all existing connections on the target are closed and
-         * initiators must reconnect with the new credentials.</p> </important>
+         * initiators must reconnect with the new credentials.</p> </important><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateChapCredentials">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2221,7 +2733,10 @@ namespace Model
          * for a specified iSCSI target. By default, a gateway does not have CHAP enabled;
          * however, for added security, you might use it.</p> <important> <p>When you
          * update CHAP credentials, all existing connections on the target are closed and
-         * initiators must reconnect with the new credentials.</p> </important>
+         * initiators must reconnect with the new credentials.</p> </important><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateChapCredentials">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2230,20 +2745,24 @@ namespace Model
         /**
          * <p>Updates a gateway's metadata, which includes the gateway's name and time
          * zone. To specify which gateway to update, use the Amazon Resource Name (ARN) of
-         * the gateway in your request.</p> <note><p>For Gateways activated after September
-         * 2, 2015, the gateway's ARN contains the gateway ID rather than the gateway name.
-         * However, changing the name of the gateway has no effect on the gateway's
-         * ARN.</p> </note>
+         * the gateway in your request.</p> <note> <p>For Gateways activated after
+         * September 2, 2015, the gateway's ARN contains the gateway ID rather than the
+         * gateway name. However, changing the name of the gateway has no effect on the
+         * gateway's ARN.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateGatewayInformation">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateGatewayInformationOutcome UpdateGatewayInformation(const Model::UpdateGatewayInformationRequest& request) const;
 
         /**
          * <p>Updates a gateway's metadata, which includes the gateway's name and time
          * zone. To specify which gateway to update, use the Amazon Resource Name (ARN) of
-         * the gateway in your request.</p> <note><p>For Gateways activated after September
-         * 2, 2015, the gateway's ARN contains the gateway ID rather than the gateway name.
-         * However, changing the name of the gateway has no effect on the gateway's
-         * ARN.</p> </note>
+         * the gateway in your request.</p> <note> <p>For Gateways activated after
+         * September 2, 2015, the gateway's ARN contains the gateway ID rather than the
+         * gateway name. However, changing the name of the gateway has no effect on the
+         * gateway's ARN.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateGatewayInformation">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2252,10 +2771,12 @@ namespace Model
         /**
          * <p>Updates a gateway's metadata, which includes the gateway's name and time
          * zone. To specify which gateway to update, use the Amazon Resource Name (ARN) of
-         * the gateway in your request.</p> <note><p>For Gateways activated after September
-         * 2, 2015, the gateway's ARN contains the gateway ID rather than the gateway name.
-         * However, changing the name of the gateway has no effect on the gateway's
-         * ARN.</p> </note>
+         * the gateway in your request.</p> <note> <p>For Gateways activated after
+         * September 2, 2015, the gateway's ARN contains the gateway ID rather than the
+         * gateway name. However, changing the name of the gateway has no effect on the
+         * gateway's ARN.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateGatewayInformation">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2263,35 +2784,41 @@ namespace Model
 
         /**
          * <p>Updates the gateway virtual machine (VM) software. The request immediately
-         * triggers the software update.</p> <note><p>When you make this request, you get a
-         * <code>200 OK</code> success response immediately. However, it might take some
+         * triggers the software update.</p> <note> <p>When you make this request, you get
+         * a <code>200 OK</code> success response immediately. However, it might take some
          * time for the update to complete. You can call <a>DescribeGatewayInformation</a>
          * to verify the gateway is in the <code>STATE_RUNNING</code> state.</p> </note>
-         * <important><p>A software update forces a system restart of your gateway. You can
-         * minimize the chance of any disruption to your applications by increasing your
-         * iSCSI Initiators' timeouts. For more information about increasing iSCSI
+         * <important> <p>A software update forces a system restart of your gateway. You
+         * can minimize the chance of any disruption to your applications by increasing
+         * your iSCSI Initiators' timeouts. For more information about increasing iSCSI
          * Initiator timeouts for Windows and Linux, see <a
          * href="http://docs.aws.amazon.com/storagegateway/latest/userguide/ConfiguringiSCSIClientInitiatorWindowsClient.html#CustomizeWindowsiSCSISettings">Customizing
          * Your Windows iSCSI Settings</a> and <a
          * href="http://docs.aws.amazon.com/storagegateway/latest/userguide/ConfiguringiSCSIClientInitiatorRedHatClient.html#CustomizeLinuxiSCSISettings">Customizing
-         * Your Linux iSCSI Settings</a>, respectively.</p> </important>
+         * Your Linux iSCSI Settings</a>, respectively.</p> </important><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateGatewaySoftwareNow">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateGatewaySoftwareNowOutcome UpdateGatewaySoftwareNow(const Model::UpdateGatewaySoftwareNowRequest& request) const;
 
         /**
          * <p>Updates the gateway virtual machine (VM) software. The request immediately
-         * triggers the software update.</p> <note><p>When you make this request, you get a
-         * <code>200 OK</code> success response immediately. However, it might take some
+         * triggers the software update.</p> <note> <p>When you make this request, you get
+         * a <code>200 OK</code> success response immediately. However, it might take some
          * time for the update to complete. You can call <a>DescribeGatewayInformation</a>
          * to verify the gateway is in the <code>STATE_RUNNING</code> state.</p> </note>
-         * <important><p>A software update forces a system restart of your gateway. You can
-         * minimize the chance of any disruption to your applications by increasing your
-         * iSCSI Initiators' timeouts. For more information about increasing iSCSI
+         * <important> <p>A software update forces a system restart of your gateway. You
+         * can minimize the chance of any disruption to your applications by increasing
+         * your iSCSI Initiators' timeouts. For more information about increasing iSCSI
          * Initiator timeouts for Windows and Linux, see <a
          * href="http://docs.aws.amazon.com/storagegateway/latest/userguide/ConfiguringiSCSIClientInitiatorWindowsClient.html#CustomizeWindowsiSCSISettings">Customizing
          * Your Windows iSCSI Settings</a> and <a
          * href="http://docs.aws.amazon.com/storagegateway/latest/userguide/ConfiguringiSCSIClientInitiatorRedHatClient.html#CustomizeLinuxiSCSISettings">Customizing
-         * Your Linux iSCSI Settings</a>, respectively.</p> </important>
+         * Your Linux iSCSI Settings</a>, respectively.</p> </important><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateGatewaySoftwareNow">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2299,18 +2826,21 @@ namespace Model
 
         /**
          * <p>Updates the gateway virtual machine (VM) software. The request immediately
-         * triggers the software update.</p> <note><p>When you make this request, you get a
-         * <code>200 OK</code> success response immediately. However, it might take some
+         * triggers the software update.</p> <note> <p>When you make this request, you get
+         * a <code>200 OK</code> success response immediately. However, it might take some
          * time for the update to complete. You can call <a>DescribeGatewayInformation</a>
          * to verify the gateway is in the <code>STATE_RUNNING</code> state.</p> </note>
-         * <important><p>A software update forces a system restart of your gateway. You can
-         * minimize the chance of any disruption to your applications by increasing your
-         * iSCSI Initiators' timeouts. For more information about increasing iSCSI
+         * <important> <p>A software update forces a system restart of your gateway. You
+         * can minimize the chance of any disruption to your applications by increasing
+         * your iSCSI Initiators' timeouts. For more information about increasing iSCSI
          * Initiator timeouts for Windows and Linux, see <a
          * href="http://docs.aws.amazon.com/storagegateway/latest/userguide/ConfiguringiSCSIClientInitiatorWindowsClient.html#CustomizeWindowsiSCSISettings">Customizing
          * Your Windows iSCSI Settings</a> and <a
          * href="http://docs.aws.amazon.com/storagegateway/latest/userguide/ConfiguringiSCSIClientInitiatorRedHatClient.html#CustomizeLinuxiSCSISettings">Customizing
-         * Your Linux iSCSI Settings</a>, respectively.</p> </important>
+         * Your Linux iSCSI Settings</a>, respectively.</p> </important><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateGatewaySoftwareNow">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2319,14 +2849,18 @@ namespace Model
         /**
          * <p>Updates a gateway's weekly maintenance start time information, including day
          * and time of the week. The maintenance time is the time in your gateway's time
-         * zone.</p>
+         * zone.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateMaintenanceStartTime">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateMaintenanceStartTimeOutcome UpdateMaintenanceStartTime(const Model::UpdateMaintenanceStartTimeRequest& request) const;
 
         /**
          * <p>Updates a gateway's weekly maintenance start time information, including day
          * and time of the week. The maintenance time is the time in your gateway's time
-         * zone.</p>
+         * zone.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateMaintenanceStartTime">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2335,11 +2869,41 @@ namespace Model
         /**
          * <p>Updates a gateway's weekly maintenance start time information, including day
          * and time of the week. The maintenance time is the time in your gateway's time
-         * zone.</p>
+         * zone.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateMaintenanceStartTime">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateMaintenanceStartTimeAsync(const Model::UpdateMaintenanceStartTimeRequest& request, const UpdateMaintenanceStartTimeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Updates a file share. </p> <note> <p>To leave a file share field unchanged,
+         * set the corresponding input field to null.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateNFSFileShare">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateNFSFileShareOutcome UpdateNFSFileShare(const Model::UpdateNFSFileShareRequest& request) const;
+
+        /**
+         * <p>Updates a file share. </p> <note> <p>To leave a file share field unchanged,
+         * set the corresponding input field to null.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateNFSFileShare">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateNFSFileShareOutcomeCallable UpdateNFSFileShareCallable(const Model::UpdateNFSFileShareRequest& request) const;
+
+        /**
+         * <p>Updates a file share. </p> <note> <p>To leave a file share field unchanged,
+         * set the corresponding input field to null.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateNFSFileShare">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateNFSFileShareAsync(const Model::UpdateNFSFileShareRequest& request, const UpdateNFSFileShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates a snapshot schedule configured for a gateway volume.</p> <p>The
@@ -2348,7 +2912,9 @@ namespace Model
          * schedule configured for the volume.</p> <p>In the request you must identify the
          * gateway volume whose snapshot schedule you want to update, and the schedule
          * information, including when you want the snapshot to begin on a day and the
-         * frequency (in hours) of snapshots.</p>
+         * frequency (in hours) of snapshots.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateSnapshotSchedule">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateSnapshotScheduleOutcome UpdateSnapshotSchedule(const Model::UpdateSnapshotScheduleRequest& request) const;
 
@@ -2359,7 +2925,9 @@ namespace Model
          * schedule configured for the volume.</p> <p>In the request you must identify the
          * gateway volume whose snapshot schedule you want to update, and the schedule
          * information, including when you want the snapshot to begin on a day and the
-         * frequency (in hours) of snapshots.</p>
+         * frequency (in hours) of snapshots.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateSnapshotSchedule">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2372,7 +2940,9 @@ namespace Model
          * schedule configured for the volume.</p> <p>In the request you must identify the
          * gateway volume whose snapshot schedule you want to update, and the schedule
          * information, including when you want the snapshot to begin on a day and the
-         * frequency (in hours) of snapshots.</p>
+         * frequency (in hours) of snapshots.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateSnapshotSchedule">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2382,7 +2952,9 @@ namespace Model
          * <p>Updates the type of medium changer in a gateway-VTL. When you activate a
          * gateway-VTL, you select a medium changer type for the gateway-VTL. This
          * operation enables you to select a different type of medium changer after a
-         * gateway-VTL is activated.</p>
+         * gateway-VTL is activated.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateVTLDeviceType">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateVTLDeviceTypeOutcome UpdateVTLDeviceType(const Model::UpdateVTLDeviceTypeRequest& request) const;
 
@@ -2390,7 +2962,9 @@ namespace Model
          * <p>Updates the type of medium changer in a gateway-VTL. When you activate a
          * gateway-VTL, you select a medium changer type for the gateway-VTL. This
          * operation enables you to select a different type of medium changer after a
-         * gateway-VTL is activated.</p>
+         * gateway-VTL is activated.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateVTLDeviceType">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2400,7 +2974,9 @@ namespace Model
          * <p>Updates the type of medium changer in a gateway-VTL. When you activate a
          * gateway-VTL, you select a medium changer type for the gateway-VTL. This
          * operation enables you to select a different type of medium changer after a
-         * gateway-VTL is activated.</p>
+         * gateway-VTL is activated.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateVTLDeviceType">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2419,6 +2995,7 @@ namespace Model
         void CancelArchivalAsyncHelper(const Model::CancelArchivalRequest& request, const CancelArchivalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CancelRetrievalAsyncHelper(const Model::CancelRetrievalRequest& request, const CancelRetrievalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateCachediSCSIVolumeAsyncHelper(const Model::CreateCachediSCSIVolumeRequest& request, const CreateCachediSCSIVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateNFSFileShareAsyncHelper(const Model::CreateNFSFileShareRequest& request, const CreateNFSFileShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateSnapshotAsyncHelper(const Model::CreateSnapshotRequest& request, const CreateSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateSnapshotFromVolumeRecoveryPointAsyncHelper(const Model::CreateSnapshotFromVolumeRecoveryPointRequest& request, const CreateSnapshotFromVolumeRecoveryPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateStorediSCSIVolumeAsyncHelper(const Model::CreateStorediSCSIVolumeRequest& request, const CreateStorediSCSIVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2426,6 +3003,7 @@ namespace Model
         void CreateTapesAsyncHelper(const Model::CreateTapesRequest& request, const CreateTapesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteBandwidthRateLimitAsyncHelper(const Model::DeleteBandwidthRateLimitRequest& request, const DeleteBandwidthRateLimitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteChapCredentialsAsyncHelper(const Model::DeleteChapCredentialsRequest& request, const DeleteChapCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteFileShareAsyncHelper(const Model::DeleteFileShareRequest& request, const DeleteFileShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteGatewayAsyncHelper(const Model::DeleteGatewayRequest& request, const DeleteGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteSnapshotScheduleAsyncHelper(const Model::DeleteSnapshotScheduleRequest& request, const DeleteSnapshotScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteTapeAsyncHelper(const Model::DeleteTapeRequest& request, const DeleteTapeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2437,6 +3015,7 @@ namespace Model
         void DescribeChapCredentialsAsyncHelper(const Model::DescribeChapCredentialsRequest& request, const DescribeChapCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeGatewayInformationAsyncHelper(const Model::DescribeGatewayInformationRequest& request, const DescribeGatewayInformationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeMaintenanceStartTimeAsyncHelper(const Model::DescribeMaintenanceStartTimeRequest& request, const DescribeMaintenanceStartTimeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeNFSFileSharesAsyncHelper(const Model::DescribeNFSFileSharesRequest& request, const DescribeNFSFileSharesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeSnapshotScheduleAsyncHelper(const Model::DescribeSnapshotScheduleRequest& request, const DescribeSnapshotScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeStorediSCSIVolumesAsyncHelper(const Model::DescribeStorediSCSIVolumesRequest& request, const DescribeStorediSCSIVolumesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeTapeArchivesAsyncHelper(const Model::DescribeTapeArchivesRequest& request, const DescribeTapeArchivesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2446,6 +3025,7 @@ namespace Model
         void DescribeVTLDevicesAsyncHelper(const Model::DescribeVTLDevicesRequest& request, const DescribeVTLDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeWorkingStorageAsyncHelper(const Model::DescribeWorkingStorageRequest& request, const DescribeWorkingStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisableGatewayAsyncHelper(const Model::DisableGatewayRequest& request, const DisableGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListFileSharesAsyncHelper(const Model::ListFileSharesRequest& request, const ListFileSharesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListGatewaysAsyncHelper(const Model::ListGatewaysRequest& request, const ListGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListLocalDisksAsyncHelper(const Model::ListLocalDisksRequest& request, const ListLocalDisksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2465,6 +3045,7 @@ namespace Model
         void UpdateGatewayInformationAsyncHelper(const Model::UpdateGatewayInformationRequest& request, const UpdateGatewayInformationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateGatewaySoftwareNowAsyncHelper(const Model::UpdateGatewaySoftwareNowRequest& request, const UpdateGatewaySoftwareNowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateMaintenanceStartTimeAsyncHelper(const Model::UpdateMaintenanceStartTimeRequest& request, const UpdateMaintenanceStartTimeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateNFSFileShareAsyncHelper(const Model::UpdateNFSFileShareRequest& request, const UpdateNFSFileShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateSnapshotScheduleAsyncHelper(const Model::UpdateSnapshotScheduleRequest& request, const UpdateSnapshotScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateVTLDeviceTypeAsyncHelper(const Model::UpdateVTLDeviceTypeRequest& request, const UpdateVTLDeviceTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 

@@ -17,6 +17,7 @@
 #include <aws/rds/RDSErrors.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -560,11 +561,20 @@ namespace Model
 
         virtual ~RDSClient();
 
+       /**
+        * Converts any request object to a presigned URL with the GET method, using region for the signer and a timeout of 15 minutes.
+        */
+        Aws::String ConvertRequestToPresignedUrl(const AmazonSerializableWebServiceRequest& requestToConvert, const char* region) const;
+
+
         /**
          * <p>Associates an Identity and Access Management (IAM) role from an Aurora DB
          * cluster. For more information, see <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Authorizing.AWSServices.html">Authorizing
-         * Amazon Aurora to Access Other AWS Services On Your Behalf</a>.</p>
+         * Amazon Aurora to Access Other AWS Services On Your Behalf</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/AddRoleToDBCluster">AWS
+         * API Reference</a></p>
          */
         virtual Model::AddRoleToDBClusterOutcome AddRoleToDBCluster(const Model::AddRoleToDBClusterRequest& request) const;
 
@@ -572,7 +582,10 @@ namespace Model
          * <p>Associates an Identity and Access Management (IAM) role from an Aurora DB
          * cluster. For more information, see <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Authorizing.AWSServices.html">Authorizing
-         * Amazon Aurora to Access Other AWS Services On Your Behalf</a>.</p>
+         * Amazon Aurora to Access Other AWS Services On Your Behalf</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/AddRoleToDBCluster">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -582,7 +595,10 @@ namespace Model
          * <p>Associates an Identity and Access Management (IAM) role from an Aurora DB
          * cluster. For more information, see <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Authorizing.AWSServices.html">Authorizing
-         * Amazon Aurora to Access Other AWS Services On Your Behalf</a>.</p>
+         * Amazon Aurora to Access Other AWS Services On Your Behalf</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/AddRoleToDBCluster">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -590,13 +606,17 @@ namespace Model
 
         /**
          * <p>Adds a source identifier to an existing RDS event notification
-         * subscription.</p>
+         * subscription.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/AddSourceIdentifierToSubscription">AWS
+         * API Reference</a></p>
          */
         virtual Model::AddSourceIdentifierToSubscriptionOutcome AddSourceIdentifierToSubscription(const Model::AddSourceIdentifierToSubscriptionRequest& request) const;
 
         /**
          * <p>Adds a source identifier to an existing RDS event notification
-         * subscription.</p>
+         * subscription.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/AddSourceIdentifierToSubscription">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -604,7 +624,9 @@ namespace Model
 
         /**
          * <p>Adds a source identifier to an existing RDS event notification
-         * subscription.</p>
+         * subscription.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/AddSourceIdentifierToSubscription">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -616,7 +638,9 @@ namespace Model
          * resources, or used in a Condition statement in an IAM policy for Amazon RDS.</p>
          * <p>For an overview on tagging Amazon RDS resources, see <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html">Tagging
-         * Amazon RDS Resources</a>.</p>
+         * Amazon RDS Resources</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/AddTagsToResource">AWS
+         * API Reference</a></p>
          */
         virtual Model::AddTagsToResourceOutcome AddTagsToResource(const Model::AddTagsToResourceRequest& request) const;
 
@@ -626,7 +650,9 @@ namespace Model
          * resources, or used in a Condition statement in an IAM policy for Amazon RDS.</p>
          * <p>For an overview on tagging Amazon RDS resources, see <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html">Tagging
-         * Amazon RDS Resources</a>.</p>
+         * Amazon RDS Resources</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/AddTagsToResource">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -638,7 +664,9 @@ namespace Model
          * resources, or used in a Condition statement in an IAM policy for Amazon RDS.</p>
          * <p>For an overview on tagging Amazon RDS resources, see <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html">Tagging
-         * Amazon RDS Resources</a>.</p>
+         * Amazon RDS Resources</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/AddTagsToResource">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -646,13 +674,17 @@ namespace Model
 
         /**
          * <p>Applies a pending maintenance action to a resource (for example, to a DB
-         * instance).</p>
+         * instance).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ApplyPendingMaintenanceAction">AWS
+         * API Reference</a></p>
          */
         virtual Model::ApplyPendingMaintenanceActionOutcome ApplyPendingMaintenanceAction(const Model::ApplyPendingMaintenanceActionRequest& request) const;
 
         /**
          * <p>Applies a pending maintenance action to a resource (for example, to a DB
-         * instance).</p>
+         * instance).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ApplyPendingMaintenanceAction">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -660,7 +692,9 @@ namespace Model
 
         /**
          * <p>Applies a pending maintenance action to a resource (for example, to a DB
-         * instance).</p>
+         * instance).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ApplyPendingMaintenanceAction">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -679,7 +713,9 @@ namespace Model
          * group in one VPC to an Amazon RDS DB instance in another.</p> </note> <p>For an
          * overview of CIDR ranges, go to the <a
          * href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Wikipedia
-         * Tutorial</a>. </p>
+         * Tutorial</a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/AuthorizeDBSecurityGroupIngress">AWS
+         * API Reference</a></p>
          */
         virtual Model::AuthorizeDBSecurityGroupIngressOutcome AuthorizeDBSecurityGroupIngress(const Model::AuthorizeDBSecurityGroupIngressRequest& request) const;
 
@@ -696,7 +732,9 @@ namespace Model
          * group in one VPC to an Amazon RDS DB instance in another.</p> </note> <p>For an
          * overview of CIDR ranges, go to the <a
          * href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Wikipedia
-         * Tutorial</a>. </p>
+         * Tutorial</a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/AuthorizeDBSecurityGroupIngress">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -715,26 +753,37 @@ namespace Model
          * group in one VPC to an Amazon RDS DB instance in another.</p> </note> <p>For an
          * overview of CIDR ranges, go to the <a
          * href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Wikipedia
-         * Tutorial</a>. </p>
+         * Tutorial</a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/AuthorizeDBSecurityGroupIngress">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void AuthorizeDBSecurityGroupIngressAsync(const Model::AuthorizeDBSecurityGroupIngressRequest& request, const AuthorizeDBSecurityGroupIngressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Copies the specified DB cluster parameter group.</p>
+         * <p>Copies the specified DB cluster parameter group.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CopyDBClusterParameterGroup">AWS
+         * API Reference</a></p>
          */
         virtual Model::CopyDBClusterParameterGroupOutcome CopyDBClusterParameterGroup(const Model::CopyDBClusterParameterGroupRequest& request) const;
 
         /**
-         * <p>Copies the specified DB cluster parameter group.</p>
+         * <p>Copies the specified DB cluster parameter group.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CopyDBClusterParameterGroup">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CopyDBClusterParameterGroupOutcomeCallable CopyDBClusterParameterGroupCallable(const Model::CopyDBClusterParameterGroupRequest& request) const;
 
         /**
-         * <p>Copies the specified DB cluster parameter group.</p>
+         * <p>Copies the specified DB cluster parameter group.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CopyDBClusterParameterGroup">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -744,7 +793,10 @@ namespace Model
          * <p>Creates a snapshot of a DB cluster. For more information on Amazon Aurora,
          * see <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-         * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
+         * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CopyDBClusterSnapshot">AWS
+         * API Reference</a></p>
          */
         virtual Model::CopyDBClusterSnapshotOutcome CopyDBClusterSnapshot(const Model::CopyDBClusterSnapshotRequest& request) const;
 
@@ -752,7 +804,10 @@ namespace Model
          * <p>Creates a snapshot of a DB cluster. For more information on Amazon Aurora,
          * see <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-         * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
+         * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CopyDBClusterSnapshot">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -762,26 +817,35 @@ namespace Model
          * <p>Creates a snapshot of a DB cluster. For more information on Amazon Aurora,
          * see <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-         * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
+         * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CopyDBClusterSnapshot">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CopyDBClusterSnapshotAsync(const Model::CopyDBClusterSnapshotRequest& request, const CopyDBClusterSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Copies the specified DB parameter group.</p>
+         * <p>Copies the specified DB parameter group.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CopyDBParameterGroup">AWS
+         * API Reference</a></p>
          */
         virtual Model::CopyDBParameterGroupOutcome CopyDBParameterGroup(const Model::CopyDBParameterGroupRequest& request) const;
 
         /**
-         * <p>Copies the specified DB parameter group.</p>
+         * <p>Copies the specified DB parameter group.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CopyDBParameterGroup">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CopyDBParameterGroupOutcomeCallable CopyDBParameterGroupCallable(const Model::CopyDBParameterGroupRequest& request) const;
 
         /**
-         * <p>Copies the specified DB parameter group.</p>
+         * <p>Copies the specified DB parameter group.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CopyDBParameterGroup">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -789,17 +853,105 @@ namespace Model
 
         /**
          * <p>Copies the specified DB snapshot. The source DB snapshot must be in the
-         * "available" state.</p> <p>If you are copying from a shared manual DB snapshot,
-         * the <code>SourceDBSnapshotIdentifier</code> must be the ARN of the shared DB
-         * snapshot.</p>
+         * "available" state.</p> <p>To copy a DB snapshot from a shared manual DB
+         * snapshot, <code>SourceDBSnapshotIdentifier</code> must be the Amazon Resource
+         * Name (ARN) of the shared DB snapshot.</p> <p>You can not copy an encrypted DB
+         * snapshot from another AWS region.</p> <p>You can copy an encrypted DB snapshot
+         * from another AWS region. In that case, the region where you call the
+         * <code>CopyDBSnapshot</code> action is the destination region for the encrypted
+         * DB snapshot to be copied to. To copy an encrypted DB snapshot from another
+         * region, you must provide the following values:</p> <ul> <li> <p>
+         * <code>KmsKeyId</code> - the AWS Key Management System (KMS) key identifier for
+         * the key to use to encrypt the copy of the DB snapshot in the destination
+         * region.</p> </li> <li> <p> <code>PreSignedUrl</code> - a URL that contains a
+         * Signature Version 4 signed request for the <code>CopyDBSnapshot</code> action to
+         * be called in the source region where the DB snapshot will be copied from. The
+         * pre-signed URL must be a valid request for the <code>CopyDBSnapshot</code> API
+         * action that can be executed in the source region that contains the encrypted DB
+         * snapshot to be copied.</p> <p>The pre-signed URL request must contain the
+         * following parameter values:</p> <ul> <li> <p> <code>KmsKeyId</code> - The KMS
+         * key identifier for the key to use to encrypt the copy of the DB snapshot in the
+         * destination region. This is the same identifier for both the
+         * <code>CopyDBSnapshot</code> action that is called in the destination region, and
+         * the action contained in the pre-signed URL.</p> </li> <li> <p>
+         * <code>SourceDBSnapshotIdentifier</code> - the DB snapshot identifier for the
+         * encrypted snapshot to be copied. This identifier must be in the Amazon Resource
+         * Name (ARN) format for the source region. For example, if you are copying an
+         * encrypted DB snapshot from the us-west-2 region, then your
+         * <code>SourceDBSnapshotIdentifier</code> would look like Example:
+         * <code>arn:aws:rds:us-west-2:123456789012:snapshot:mysql-instance1-snapshot-20161115</code>.</p>
+         * </li> </ul> <p>To learn how to generate a Signature Version 4 signed request,
+         * see <a
+         * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">
+         * Authenticating Requests: Using Query Parameters (AWS Signature Version 4)</a>
+         * and <a
+         * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/general/latest/gr/signature-version-4.html">
+         * Signature Version 4 Signing Process</a>.</p> </li> <li> <p>
+         * <code>TargetDBSnapshotIdentifier</code> - the identifier for the new copy of the
+         * DB snapshot in the destination region.</p> </li> <li> <p>
+         * <code>SourceDBSnapshotIdentifier</code> - the DB snapshot identifier for the
+         * encrypted snapshot to be copied. This identifier must be in the ARN format for
+         * the source region and is the same value as the
+         * <code>SourceDBSnapshotIdentifier</code> in the pre-signed URL. </p> </li> </ul>
+         * <p>For more information on copying encrypted snapshots from one region to
+         * another, see <a
+         * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html#USER_CopySnapshot.Encrypted.CrossRegion">
+         * Copying an Encrypted DB Snapshot to Another Region in the Amazon RDS User
+         * Guide.</a> </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CopyDBSnapshot">AWS
+         * API Reference</a></p>
          */
         virtual Model::CopyDBSnapshotOutcome CopyDBSnapshot(const Model::CopyDBSnapshotRequest& request) const;
 
         /**
          * <p>Copies the specified DB snapshot. The source DB snapshot must be in the
-         * "available" state.</p> <p>If you are copying from a shared manual DB snapshot,
-         * the <code>SourceDBSnapshotIdentifier</code> must be the ARN of the shared DB
-         * snapshot.</p>
+         * "available" state.</p> <p>To copy a DB snapshot from a shared manual DB
+         * snapshot, <code>SourceDBSnapshotIdentifier</code> must be the Amazon Resource
+         * Name (ARN) of the shared DB snapshot.</p> <p>You can not copy an encrypted DB
+         * snapshot from another AWS region.</p> <p>You can copy an encrypted DB snapshot
+         * from another AWS region. In that case, the region where you call the
+         * <code>CopyDBSnapshot</code> action is the destination region for the encrypted
+         * DB snapshot to be copied to. To copy an encrypted DB snapshot from another
+         * region, you must provide the following values:</p> <ul> <li> <p>
+         * <code>KmsKeyId</code> - the AWS Key Management System (KMS) key identifier for
+         * the key to use to encrypt the copy of the DB snapshot in the destination
+         * region.</p> </li> <li> <p> <code>PreSignedUrl</code> - a URL that contains a
+         * Signature Version 4 signed request for the <code>CopyDBSnapshot</code> action to
+         * be called in the source region where the DB snapshot will be copied from. The
+         * pre-signed URL must be a valid request for the <code>CopyDBSnapshot</code> API
+         * action that can be executed in the source region that contains the encrypted DB
+         * snapshot to be copied.</p> <p>The pre-signed URL request must contain the
+         * following parameter values:</p> <ul> <li> <p> <code>KmsKeyId</code> - The KMS
+         * key identifier for the key to use to encrypt the copy of the DB snapshot in the
+         * destination region. This is the same identifier for both the
+         * <code>CopyDBSnapshot</code> action that is called in the destination region, and
+         * the action contained in the pre-signed URL.</p> </li> <li> <p>
+         * <code>SourceDBSnapshotIdentifier</code> - the DB snapshot identifier for the
+         * encrypted snapshot to be copied. This identifier must be in the Amazon Resource
+         * Name (ARN) format for the source region. For example, if you are copying an
+         * encrypted DB snapshot from the us-west-2 region, then your
+         * <code>SourceDBSnapshotIdentifier</code> would look like Example:
+         * <code>arn:aws:rds:us-west-2:123456789012:snapshot:mysql-instance1-snapshot-20161115</code>.</p>
+         * </li> </ul> <p>To learn how to generate a Signature Version 4 signed request,
+         * see <a
+         * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">
+         * Authenticating Requests: Using Query Parameters (AWS Signature Version 4)</a>
+         * and <a
+         * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/general/latest/gr/signature-version-4.html">
+         * Signature Version 4 Signing Process</a>.</p> </li> <li> <p>
+         * <code>TargetDBSnapshotIdentifier</code> - the identifier for the new copy of the
+         * DB snapshot in the destination region.</p> </li> <li> <p>
+         * <code>SourceDBSnapshotIdentifier</code> - the DB snapshot identifier for the
+         * encrypted snapshot to be copied. This identifier must be in the ARN format for
+         * the source region and is the same value as the
+         * <code>SourceDBSnapshotIdentifier</code> in the pre-signed URL. </p> </li> </ul>
+         * <p>For more information on copying encrypted snapshots from one region to
+         * another, see <a
+         * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html#USER_CopySnapshot.Encrypted.CrossRegion">
+         * Copying an Encrypted DB Snapshot to Another Region in the Amazon RDS User
+         * Guide.</a> </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CopyDBSnapshot">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -807,28 +959,78 @@ namespace Model
 
         /**
          * <p>Copies the specified DB snapshot. The source DB snapshot must be in the
-         * "available" state.</p> <p>If you are copying from a shared manual DB snapshot,
-         * the <code>SourceDBSnapshotIdentifier</code> must be the ARN of the shared DB
-         * snapshot.</p>
+         * "available" state.</p> <p>To copy a DB snapshot from a shared manual DB
+         * snapshot, <code>SourceDBSnapshotIdentifier</code> must be the Amazon Resource
+         * Name (ARN) of the shared DB snapshot.</p> <p>You can not copy an encrypted DB
+         * snapshot from another AWS region.</p> <p>You can copy an encrypted DB snapshot
+         * from another AWS region. In that case, the region where you call the
+         * <code>CopyDBSnapshot</code> action is the destination region for the encrypted
+         * DB snapshot to be copied to. To copy an encrypted DB snapshot from another
+         * region, you must provide the following values:</p> <ul> <li> <p>
+         * <code>KmsKeyId</code> - the AWS Key Management System (KMS) key identifier for
+         * the key to use to encrypt the copy of the DB snapshot in the destination
+         * region.</p> </li> <li> <p> <code>PreSignedUrl</code> - a URL that contains a
+         * Signature Version 4 signed request for the <code>CopyDBSnapshot</code> action to
+         * be called in the source region where the DB snapshot will be copied from. The
+         * pre-signed URL must be a valid request for the <code>CopyDBSnapshot</code> API
+         * action that can be executed in the source region that contains the encrypted DB
+         * snapshot to be copied.</p> <p>The pre-signed URL request must contain the
+         * following parameter values:</p> <ul> <li> <p> <code>KmsKeyId</code> - The KMS
+         * key identifier for the key to use to encrypt the copy of the DB snapshot in the
+         * destination region. This is the same identifier for both the
+         * <code>CopyDBSnapshot</code> action that is called in the destination region, and
+         * the action contained in the pre-signed URL.</p> </li> <li> <p>
+         * <code>SourceDBSnapshotIdentifier</code> - the DB snapshot identifier for the
+         * encrypted snapshot to be copied. This identifier must be in the Amazon Resource
+         * Name (ARN) format for the source region. For example, if you are copying an
+         * encrypted DB snapshot from the us-west-2 region, then your
+         * <code>SourceDBSnapshotIdentifier</code> would look like Example:
+         * <code>arn:aws:rds:us-west-2:123456789012:snapshot:mysql-instance1-snapshot-20161115</code>.</p>
+         * </li> </ul> <p>To learn how to generate a Signature Version 4 signed request,
+         * see <a
+         * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">
+         * Authenticating Requests: Using Query Parameters (AWS Signature Version 4)</a>
+         * and <a
+         * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/general/latest/gr/signature-version-4.html">
+         * Signature Version 4 Signing Process</a>.</p> </li> <li> <p>
+         * <code>TargetDBSnapshotIdentifier</code> - the identifier for the new copy of the
+         * DB snapshot in the destination region.</p> </li> <li> <p>
+         * <code>SourceDBSnapshotIdentifier</code> - the DB snapshot identifier for the
+         * encrypted snapshot to be copied. This identifier must be in the ARN format for
+         * the source region and is the same value as the
+         * <code>SourceDBSnapshotIdentifier</code> in the pre-signed URL. </p> </li> </ul>
+         * <p>For more information on copying encrypted snapshots from one region to
+         * another, see <a
+         * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html#USER_CopySnapshot.Encrypted.CrossRegion">
+         * Copying an Encrypted DB Snapshot to Another Region in the Amazon RDS User
+         * Guide.</a> </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CopyDBSnapshot">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CopyDBSnapshotAsync(const Model::CopyDBSnapshotRequest& request, const CopyDBSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Copies the specified option group.</p>
+         * <p>Copies the specified option group.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CopyOptionGroup">AWS
+         * API Reference</a></p>
          */
         virtual Model::CopyOptionGroupOutcome CopyOptionGroup(const Model::CopyOptionGroupRequest& request) const;
 
         /**
-         * <p>Copies the specified option group.</p>
+         * <p>Copies the specified option group.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CopyOptionGroup">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CopyOptionGroupOutcomeCallable CopyOptionGroupCallable(const Model::CopyOptionGroupRequest& request) const;
 
         /**
-         * <p>Copies the specified option group.</p>
+         * <p>Copies the specified option group.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CopyOptionGroup">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -840,7 +1042,10 @@ namespace Model
          * Read Replica of another DB cluster.</p> <p>For more information on Amazon
          * Aurora, see <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-         * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
+         * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBCluster">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateDBClusterOutcome CreateDBCluster(const Model::CreateDBClusterRequest& request) const;
 
@@ -850,7 +1055,10 @@ namespace Model
          * Read Replica of another DB cluster.</p> <p>For more information on Amazon
          * Aurora, see <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-         * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
+         * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBCluster">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -862,7 +1070,10 @@ namespace Model
          * Read Replica of another DB cluster.</p> <p>For more information on Amazon
          * Aurora, see <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-         * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
+         * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBCluster">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -892,7 +1103,10 @@ namespace Model
          * your DB cluster parameter group has been created or modified.</p> </important>
          * <p>For more information on Amazon Aurora, see <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-         * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
+         * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBClusterParameterGroup">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateDBClusterParameterGroupOutcome CreateDBClusterParameterGroup(const Model::CreateDBClusterParameterGroupRequest& request) const;
 
@@ -920,7 +1134,10 @@ namespace Model
          * your DB cluster parameter group has been created or modified.</p> </important>
          * <p>For more information on Amazon Aurora, see <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-         * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
+         * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBClusterParameterGroup">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -950,7 +1167,10 @@ namespace Model
          * your DB cluster parameter group has been created or modified.</p> </important>
          * <p>For more information on Amazon Aurora, see <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-         * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
+         * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBClusterParameterGroup">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -960,7 +1180,10 @@ namespace Model
          * <p>Creates a snapshot of a DB cluster. For more information on Amazon Aurora,
          * see <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-         * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
+         * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBClusterSnapshot">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateDBClusterSnapshotOutcome CreateDBClusterSnapshot(const Model::CreateDBClusterSnapshotRequest& request) const;
 
@@ -968,7 +1191,10 @@ namespace Model
          * <p>Creates a snapshot of a DB cluster. For more information on Amazon Aurora,
          * see <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-         * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
+         * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBClusterSnapshot">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -978,26 +1204,35 @@ namespace Model
          * <p>Creates a snapshot of a DB cluster. For more information on Amazon Aurora,
          * see <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-         * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
+         * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBClusterSnapshot">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateDBClusterSnapshotAsync(const Model::CreateDBClusterSnapshotRequest& request, const CreateDBClusterSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a new DB instance.</p>
+         * <p>Creates a new DB instance.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBInstance">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateDBInstanceOutcome CreateDBInstance(const Model::CreateDBInstanceRequest& request) const;
 
         /**
-         * <p>Creates a new DB instance.</p>
+         * <p>Creates a new DB instance.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBInstance">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateDBInstanceOutcomeCallable CreateDBInstanceCallable(const Model::CreateDBInstanceRequest& request) const;
 
         /**
-         * <p>Creates a new DB instance.</p>
+         * <p>Creates a new DB instance.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBInstance">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1010,7 +1245,9 @@ namespace Model
          * DB instance attributes (including DB security groups and DB parameter groups)
          * are inherited from the source DB instance, except as specified below.</p>
          * <important> <p>The source DB instance must have backup retention enabled.</p>
-         * </important>
+         * </important><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBInstanceReadReplica">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateDBInstanceReadReplicaOutcome CreateDBInstanceReadReplica(const Model::CreateDBInstanceReadReplicaRequest& request) const;
 
@@ -1021,7 +1258,9 @@ namespace Model
          * DB instance attributes (including DB security groups and DB parameter groups)
          * are inherited from the source DB instance, except as specified below.</p>
          * <important> <p>The source DB instance must have backup retention enabled.</p>
-         * </important>
+         * </important><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBInstanceReadReplica">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1034,7 +1273,9 @@ namespace Model
          * DB instance attributes (including DB security groups and DB parameter groups)
          * are inherited from the source DB instance, except as specified below.</p>
          * <important> <p>The source DB instance must have backup retention enabled.</p>
-         * </important>
+         * </important><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBInstanceReadReplica">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1059,7 +1300,9 @@ namespace Model
          * parameter. You can use the <i>Parameter Groups</i> option of the <a
          * href="https://console.aws.amazon.com/rds/">Amazon RDS console</a> or the
          * <i>DescribeDBParameters</i> command to verify that your DB parameter group has
-         * been created or modified.</p> </important>
+         * been created or modified.</p> </important><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBParameterGroup">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateDBParameterGroupOutcome CreateDBParameterGroup(const Model::CreateDBParameterGroupRequest& request) const;
 
@@ -1082,7 +1325,9 @@ namespace Model
          * parameter. You can use the <i>Parameter Groups</i> option of the <a
          * href="https://console.aws.amazon.com/rds/">Amazon RDS console</a> or the
          * <i>DescribeDBParameters</i> command to verify that your DB parameter group has
-         * been created or modified.</p> </important>
+         * been created or modified.</p> </important><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBParameterGroup">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1107,7 +1352,9 @@ namespace Model
          * parameter. You can use the <i>Parameter Groups</i> option of the <a
          * href="https://console.aws.amazon.com/rds/">Amazon RDS console</a> or the
          * <i>DescribeDBParameters</i> command to verify that your DB parameter group has
-         * been created or modified.</p> </important>
+         * been created or modified.</p> </important><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBParameterGroup">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1115,13 +1362,17 @@ namespace Model
 
         /**
          * <p>Creates a new DB security group. DB security groups control access to a DB
-         * instance.</p>
+         * instance.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBSecurityGroup">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateDBSecurityGroupOutcome CreateDBSecurityGroup(const Model::CreateDBSecurityGroupRequest& request) const;
 
         /**
          * <p>Creates a new DB security group. DB security groups control access to a DB
-         * instance.</p>
+         * instance.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBSecurityGroup">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1129,26 +1380,37 @@ namespace Model
 
         /**
          * <p>Creates a new DB security group. DB security groups control access to a DB
-         * instance.</p>
+         * instance.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBSecurityGroup">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateDBSecurityGroupAsync(const Model::CreateDBSecurityGroupRequest& request, const CreateDBSecurityGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a DBSnapshot. The source DBInstance must be in "available" state.</p>
+         * <p>Creates a DBSnapshot. The source DBInstance must be in "available"
+         * state.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBSnapshot">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateDBSnapshotOutcome CreateDBSnapshot(const Model::CreateDBSnapshotRequest& request) const;
 
         /**
-         * <p>Creates a DBSnapshot. The source DBInstance must be in "available" state.</p>
+         * <p>Creates a DBSnapshot. The source DBInstance must be in "available"
+         * state.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBSnapshot">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateDBSnapshotOutcomeCallable CreateDBSnapshotCallable(const Model::CreateDBSnapshotRequest& request) const;
 
         /**
-         * <p>Creates a DBSnapshot. The source DBInstance must be in "available" state.</p>
+         * <p>Creates a DBSnapshot. The source DBInstance must be in "available"
+         * state.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBSnapshot">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1156,13 +1418,17 @@ namespace Model
 
         /**
          * <p>Creates a new DB subnet group. DB subnet groups must contain at least one
-         * subnet in at least two AZs in the region.</p>
+         * subnet in at least two AZs in the region.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBSubnetGroup">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateDBSubnetGroupOutcome CreateDBSubnetGroup(const Model::CreateDBSubnetGroupRequest& request) const;
 
         /**
          * <p>Creates a new DB subnet group. DB subnet groups must contain at least one
-         * subnet in at least two AZs in the region.</p>
+         * subnet in at least two AZs in the region.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBSubnetGroup">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1170,7 +1436,9 @@ namespace Model
 
         /**
          * <p>Creates a new DB subnet group. DB subnet groups must contain at least one
-         * subnet in at least two AZs in the region.</p>
+         * subnet in at least two AZs in the region.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBSubnetGroup">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1192,7 +1460,9 @@ namespace Model
          * a SourceIdentifier, you will receive notice of the events for that source type
          * for all your RDS sources. If you do not specify either the SourceType nor the
          * SourceIdentifier, you will be notified of events generated from all RDS sources
-         * belonging to your customer account.</p>
+         * belonging to your customer account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateEventSubscription">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateEventSubscriptionOutcome CreateEventSubscription(const Model::CreateEventSubscriptionRequest& request) const;
 
@@ -1212,7 +1482,9 @@ namespace Model
          * a SourceIdentifier, you will receive notice of the events for that source type
          * for all your RDS sources. If you do not specify either the SourceType nor the
          * SourceIdentifier, you will be notified of events generated from all RDS sources
-         * belonging to your customer account.</p>
+         * belonging to your customer account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateEventSubscription">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1234,26 +1506,37 @@ namespace Model
          * a SourceIdentifier, you will receive notice of the events for that source type
          * for all your RDS sources. If you do not specify either the SourceType nor the
          * SourceIdentifier, you will be notified of events generated from all RDS sources
-         * belonging to your customer account.</p>
+         * belonging to your customer account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateEventSubscription">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateEventSubscriptionAsync(const Model::CreateEventSubscriptionRequest& request, const CreateEventSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a new option group. You can create up to 20 option groups.</p>
+         * <p>Creates a new option group. You can create up to 20 option
+         * groups.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateOptionGroup">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateOptionGroupOutcome CreateOptionGroup(const Model::CreateOptionGroupRequest& request) const;
 
         /**
-         * <p>Creates a new option group. You can create up to 20 option groups.</p>
+         * <p>Creates a new option group. You can create up to 20 option
+         * groups.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateOptionGroup">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateOptionGroupOutcomeCallable CreateOptionGroupCallable(const Model::CreateOptionGroupRequest& request) const;
 
         /**
-         * <p>Creates a new option group. You can create up to 20 option groups.</p>
+         * <p>Creates a new option group. You can create up to 20 option
+         * groups.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateOptionGroup">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1265,7 +1548,10 @@ namespace Model
          * and cannot be recovered. Manual DB cluster snapshots of the specified DB cluster
          * are not deleted.</p> <p/> <p>For more information on Amazon Aurora, see <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-         * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
+         * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBCluster">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteDBClusterOutcome DeleteDBCluster(const Model::DeleteDBClusterRequest& request) const;
 
@@ -1275,7 +1561,10 @@ namespace Model
          * and cannot be recovered. Manual DB cluster snapshots of the specified DB cluster
          * are not deleted.</p> <p/> <p>For more information on Amazon Aurora, see <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-         * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
+         * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBCluster">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1287,7 +1576,10 @@ namespace Model
          * and cannot be recovered. Manual DB cluster snapshots of the specified DB cluster
          * are not deleted.</p> <p/> <p>For more information on Amazon Aurora, see <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-         * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
+         * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBCluster">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1298,7 +1590,10 @@ namespace Model
          * group to be deleted cannot be associated with any DB clusters.</p> <p>For more
          * information on Amazon Aurora, see <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-         * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
+         * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBClusterParameterGroup">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteDBClusterParameterGroupOutcome DeleteDBClusterParameterGroup(const Model::DeleteDBClusterParameterGroupRequest& request) const;
 
@@ -1307,7 +1602,10 @@ namespace Model
          * group to be deleted cannot be associated with any DB clusters.</p> <p>For more
          * information on Amazon Aurora, see <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-         * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
+         * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBClusterParameterGroup">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1318,7 +1616,10 @@ namespace Model
          * group to be deleted cannot be associated with any DB clusters.</p> <p>For more
          * information on Amazon Aurora, see <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-         * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
+         * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBClusterParameterGroup">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1330,7 +1631,10 @@ namespace Model
          * <code>available</code> state to be deleted.</p> </note> <p>For more information
          * on Amazon Aurora, see <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-         * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
+         * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBClusterSnapshot">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteDBClusterSnapshotOutcome DeleteDBClusterSnapshot(const Model::DeleteDBClusterSnapshotRequest& request) const;
 
@@ -1340,7 +1644,10 @@ namespace Model
          * <code>available</code> state to be deleted.</p> </note> <p>For more information
          * on Amazon Aurora, see <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-         * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
+         * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBClusterSnapshot">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1352,7 +1659,10 @@ namespace Model
          * <code>available</code> state to be deleted.</p> </note> <p>For more information
          * on Amazon Aurora, see <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-         * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
+         * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBClusterSnapshot">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1378,7 +1688,9 @@ namespace Model
          * <a>PromoteReadReplicaDBCluster</a> API action to promote the DB cluster so it's
          * no longer a Read Replica. After the promotion completes, then call the
          * <code>DeleteDBInstance</code> API action to delete the final instance in the DB
-         * cluster.</p>
+         * cluster.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBInstance">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteDBInstanceOutcome DeleteDBInstance(const Model::DeleteDBInstanceRequest& request) const;
 
@@ -1402,7 +1714,9 @@ namespace Model
          * <a>PromoteReadReplicaDBCluster</a> API action to promote the DB cluster so it's
          * no longer a Read Replica. After the promotion completes, then call the
          * <code>DeleteDBInstance</code> API action to delete the final instance in the DB
-         * cluster.</p>
+         * cluster.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBInstance">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1428,7 +1742,9 @@ namespace Model
          * <a>PromoteReadReplicaDBCluster</a> API action to promote the DB cluster so it's
          * no longer a Read Replica. After the promotion completes, then call the
          * <code>DeleteDBInstance</code> API action to delete the final instance in the DB
-         * cluster.</p>
+         * cluster.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBInstance">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1436,13 +1752,17 @@ namespace Model
 
         /**
          * <p>Deletes a specified DBParameterGroup. The DBParameterGroup to be deleted
-         * cannot be associated with any DB instances.</p>
+         * cannot be associated with any DB instances.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBParameterGroup">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteDBParameterGroupOutcome DeleteDBParameterGroup(const Model::DeleteDBParameterGroupRequest& request) const;
 
         /**
          * <p>Deletes a specified DBParameterGroup. The DBParameterGroup to be deleted
-         * cannot be associated with any DB instances.</p>
+         * cannot be associated with any DB instances.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBParameterGroup">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1450,7 +1770,9 @@ namespace Model
 
         /**
          * <p>Deletes a specified DBParameterGroup. The DBParameterGroup to be deleted
-         * cannot be associated with any DB instances.</p>
+         * cannot be associated with any DB instances.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBParameterGroup">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1458,13 +1780,19 @@ namespace Model
 
         /**
          * <p>Deletes a DB security group.</p> <note> <p>The specified DB security group
-         * must not be associated with any DB instances.</p> </note>
+         * must not be associated with any DB instances.</p> </note><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBSecurityGroup">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteDBSecurityGroupOutcome DeleteDBSecurityGroup(const Model::DeleteDBSecurityGroupRequest& request) const;
 
         /**
          * <p>Deletes a DB security group.</p> <note> <p>The specified DB security group
-         * must not be associated with any DB instances.</p> </note>
+         * must not be associated with any DB instances.</p> </note><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBSecurityGroup">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1472,7 +1800,10 @@ namespace Model
 
         /**
          * <p>Deletes a DB security group.</p> <note> <p>The specified DB security group
-         * must not be associated with any DB instances.</p> </note>
+         * must not be associated with any DB instances.</p> </note><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBSecurityGroup">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1481,14 +1812,18 @@ namespace Model
         /**
          * <p>Deletes a DBSnapshot. If the snapshot is being copied, the copy operation is
          * terminated.</p> <note> <p>The DBSnapshot must be in the <code>available</code>
-         * state to be deleted.</p> </note>
+         * state to be deleted.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBSnapshot">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteDBSnapshotOutcome DeleteDBSnapshot(const Model::DeleteDBSnapshotRequest& request) const;
 
         /**
          * <p>Deletes a DBSnapshot. If the snapshot is being copied, the copy operation is
          * terminated.</p> <note> <p>The DBSnapshot must be in the <code>available</code>
-         * state to be deleted.</p> </note>
+         * state to be deleted.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBSnapshot">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1497,7 +1832,9 @@ namespace Model
         /**
          * <p>Deletes a DBSnapshot. If the snapshot is being copied, the copy operation is
          * terminated.</p> <note> <p>The DBSnapshot must be in the <code>available</code>
-         * state to be deleted.</p> </note>
+         * state to be deleted.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBSnapshot">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1505,13 +1842,19 @@ namespace Model
 
         /**
          * <p>Deletes a DB subnet group.</p> <note> <p>The specified database subnet group
-         * must not be associated with any DB instances.</p> </note>
+         * must not be associated with any DB instances.</p> </note><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBSubnetGroup">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteDBSubnetGroupOutcome DeleteDBSubnetGroup(const Model::DeleteDBSubnetGroupRequest& request) const;
 
         /**
          * <p>Deletes a DB subnet group.</p> <note> <p>The specified database subnet group
-         * must not be associated with any DB instances.</p> </note>
+         * must not be associated with any DB instances.</p> </note><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBSubnetGroup">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1519,45 +1862,60 @@ namespace Model
 
         /**
          * <p>Deletes a DB subnet group.</p> <note> <p>The specified database subnet group
-         * must not be associated with any DB instances.</p> </note>
+         * must not be associated with any DB instances.</p> </note><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBSubnetGroup">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteDBSubnetGroupAsync(const Model::DeleteDBSubnetGroupRequest& request, const DeleteDBSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes an RDS event notification subscription.</p>
+         * <p>Deletes an RDS event notification subscription.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteEventSubscription">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteEventSubscriptionOutcome DeleteEventSubscription(const Model::DeleteEventSubscriptionRequest& request) const;
 
         /**
-         * <p>Deletes an RDS event notification subscription.</p>
+         * <p>Deletes an RDS event notification subscription.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteEventSubscription">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteEventSubscriptionOutcomeCallable DeleteEventSubscriptionCallable(const Model::DeleteEventSubscriptionRequest& request) const;
 
         /**
-         * <p>Deletes an RDS event notification subscription.</p>
+         * <p>Deletes an RDS event notification subscription.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteEventSubscription">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteEventSubscriptionAsync(const Model::DeleteEventSubscriptionRequest& request, const DeleteEventSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes an existing option group.</p>
+         * <p>Deletes an existing option group.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteOptionGroup">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteOptionGroupOutcome DeleteOptionGroup(const Model::DeleteOptionGroupRequest& request) const;
 
         /**
-         * <p>Deletes an existing option group.</p>
+         * <p>Deletes an existing option group.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteOptionGroup">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteOptionGroupOutcomeCallable DeleteOptionGroupCallable(const Model::DeleteOptionGroupRequest& request) const;
 
         /**
-         * <p>Deletes an existing option group.</p>
+         * <p>Deletes an existing option group.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteOptionGroup">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1568,7 +1926,9 @@ namespace Model
          * Amazon RDS quotas for the account, such as the number of DB instances allowed.
          * The description for a quota includes the quota name, current usage toward that
          * quota, and the quota's maximum value.</p> <p>This command does not take any
-         * parameters.</p>
+         * parameters.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeAccountAttributes">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeAccountAttributesOutcome DescribeAccountAttributes(const Model::DescribeAccountAttributesRequest& request) const;
 
@@ -1577,7 +1937,9 @@ namespace Model
          * Amazon RDS quotas for the account, such as the number of DB instances allowed.
          * The description for a quota includes the quota name, current usage toward that
          * quota, and the quota's maximum value.</p> <p>This command does not take any
-         * parameters.</p>
+         * parameters.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeAccountAttributes">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1588,7 +1950,9 @@ namespace Model
          * Amazon RDS quotas for the account, such as the number of DB instances allowed.
          * The description for a quota includes the quota name, current usage toward that
          * quota, and the quota's maximum value.</p> <p>This command does not take any
-         * parameters.</p>
+         * parameters.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeAccountAttributes">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1596,13 +1960,17 @@ namespace Model
 
         /**
          * <p>Lists the set of CA certificates provided by Amazon RDS for this AWS
-         * account.</p>
+         * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeCertificates">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeCertificatesOutcome DescribeCertificates(const Model::DescribeCertificatesRequest& request) const;
 
         /**
          * <p>Lists the set of CA certificates provided by Amazon RDS for this AWS
-         * account.</p>
+         * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeCertificates">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1610,7 +1978,9 @@ namespace Model
 
         /**
          * <p>Lists the set of CA certificates provided by Amazon RDS for this AWS
-         * account.</p>
+         * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeCertificates">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1622,7 +1992,10 @@ namespace Model
          * contain only the description of the specified DB cluster parameter group. </p>
          * <p>For more information on Amazon Aurora, see <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-         * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
+         * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusterParameterGroups">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeDBClusterParameterGroupsOutcome DescribeDBClusterParameterGroups(const Model::DescribeDBClusterParameterGroupsRequest& request) const;
 
@@ -1632,7 +2005,10 @@ namespace Model
          * contain only the description of the specified DB cluster parameter group. </p>
          * <p>For more information on Amazon Aurora, see <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-         * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
+         * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusterParameterGroups">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1644,7 +2020,10 @@ namespace Model
          * contain only the description of the specified DB cluster parameter group. </p>
          * <p>For more information on Amazon Aurora, see <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-         * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
+         * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusterParameterGroups">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1654,7 +2033,10 @@ namespace Model
          * <p>Returns the detailed parameter list for a particular DB cluster parameter
          * group.</p> <p>For more information on Amazon Aurora, see <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-         * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
+         * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusterParameters">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeDBClusterParametersOutcome DescribeDBClusterParameters(const Model::DescribeDBClusterParametersRequest& request) const;
 
@@ -1662,7 +2044,10 @@ namespace Model
          * <p>Returns the detailed parameter list for a particular DB cluster parameter
          * group.</p> <p>For more information on Amazon Aurora, see <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-         * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
+         * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusterParameters">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1672,7 +2057,10 @@ namespace Model
          * <p>Returns the detailed parameter list for a particular DB cluster parameter
          * group.</p> <p>For more information on Amazon Aurora, see <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-         * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
+         * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusterParameters">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1689,7 +2077,10 @@ namespace Model
          * restored by all AWS accounts.</p> <p>To add or remove access for an AWS account
          * to copy or restore a manual DB cluster snapshot, or to make the manual DB
          * cluster snapshot public or private, use the
-         * <a>ModifyDBClusterSnapshotAttribute</a> API action.</p>
+         * <a>ModifyDBClusterSnapshotAttribute</a> API action.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusterSnapshotAttributes">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeDBClusterSnapshotAttributesOutcome DescribeDBClusterSnapshotAttributes(const Model::DescribeDBClusterSnapshotAttributesRequest& request) const;
 
@@ -1704,7 +2095,10 @@ namespace Model
          * restored by all AWS accounts.</p> <p>To add or remove access for an AWS account
          * to copy or restore a manual DB cluster snapshot, or to make the manual DB
          * cluster snapshot public or private, use the
-         * <a>ModifyDBClusterSnapshotAttribute</a> API action.</p>
+         * <a>ModifyDBClusterSnapshotAttribute</a> API action.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusterSnapshotAttributes">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1721,7 +2115,10 @@ namespace Model
          * restored by all AWS accounts.</p> <p>To add or remove access for an AWS account
          * to copy or restore a manual DB cluster snapshot, or to make the manual DB
          * cluster snapshot public or private, use the
-         * <a>ModifyDBClusterSnapshotAttribute</a> API action.</p>
+         * <a>ModifyDBClusterSnapshotAttribute</a> API action.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusterSnapshotAttributes">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1731,7 +2128,10 @@ namespace Model
          * <p>Returns information about DB cluster snapshots. This API action supports
          * pagination.</p> <p>For more information on Amazon Aurora, see <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-         * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
+         * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusterSnapshots">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeDBClusterSnapshotsOutcome DescribeDBClusterSnapshots(const Model::DescribeDBClusterSnapshotsRequest& request) const;
 
@@ -1739,7 +2139,10 @@ namespace Model
          * <p>Returns information about DB cluster snapshots. This API action supports
          * pagination.</p> <p>For more information on Amazon Aurora, see <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-         * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
+         * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusterSnapshots">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1749,7 +2152,10 @@ namespace Model
          * <p>Returns information about DB cluster snapshots. This API action supports
          * pagination.</p> <p>For more information on Amazon Aurora, see <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-         * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
+         * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusterSnapshots">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1759,7 +2165,10 @@ namespace Model
          * <p>Returns information about provisioned Aurora DB clusters. This API supports
          * pagination.</p> <p>For more information on Amazon Aurora, see <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-         * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
+         * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusters">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeDBClustersOutcome DescribeDBClusters(const Model::DescribeDBClustersRequest& request) const;
 
@@ -1767,7 +2176,10 @@ namespace Model
          * <p>Returns information about provisioned Aurora DB clusters. This API supports
          * pagination.</p> <p>For more information on Amazon Aurora, see <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-         * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
+         * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusters">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1777,26 +2189,35 @@ namespace Model
          * <p>Returns information about provisioned Aurora DB clusters. This API supports
          * pagination.</p> <p>For more information on Amazon Aurora, see <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-         * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
+         * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusters">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeDBClustersAsync(const Model::DescribeDBClustersRequest& request, const DescribeDBClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns a list of the available DB engines.</p>
+         * <p>Returns a list of the available DB engines.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBEngineVersions">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeDBEngineVersionsOutcome DescribeDBEngineVersions(const Model::DescribeDBEngineVersionsRequest& request) const;
 
         /**
-         * <p>Returns a list of the available DB engines.</p>
+         * <p>Returns a list of the available DB engines.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBEngineVersions">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeDBEngineVersionsOutcomeCallable DescribeDBEngineVersionsCallable(const Model::DescribeDBEngineVersionsRequest& request) const;
 
         /**
-         * <p>Returns a list of the available DB engines.</p>
+         * <p>Returns a list of the available DB engines.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBEngineVersions">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1804,13 +2225,17 @@ namespace Model
 
         /**
          * <p>Returns information about provisioned RDS instances. This API supports
-         * pagination.</p>
+         * pagination.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBInstances">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeDBInstancesOutcome DescribeDBInstances(const Model::DescribeDBInstancesRequest& request) const;
 
         /**
          * <p>Returns information about provisioned RDS instances. This API supports
-         * pagination.</p>
+         * pagination.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBInstances">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1818,26 +2243,37 @@ namespace Model
 
         /**
          * <p>Returns information about provisioned RDS instances. This API supports
-         * pagination.</p>
+         * pagination.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBInstances">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeDBInstancesAsync(const Model::DescribeDBInstancesRequest& request, const DescribeDBInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns a list of DB log files for the DB instance.</p>
+         * <p>Returns a list of DB log files for the DB instance.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBLogFiles">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeDBLogFilesOutcome DescribeDBLogFiles(const Model::DescribeDBLogFilesRequest& request) const;
 
         /**
-         * <p>Returns a list of DB log files for the DB instance.</p>
+         * <p>Returns a list of DB log files for the DB instance.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBLogFiles">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeDBLogFilesOutcomeCallable DescribeDBLogFilesCallable(const Model::DescribeDBLogFilesRequest& request) const;
 
         /**
-         * <p>Returns a list of DB log files for the DB instance.</p>
+         * <p>Returns a list of DB log files for the DB instance.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBLogFiles">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1846,14 +2282,18 @@ namespace Model
         /**
          * <p> Returns a list of <code>DBParameterGroup</code> descriptions. If a
          * <code>DBParameterGroupName</code> is specified, the list will contain only the
-         * description of the specified DB parameter group. </p>
+         * description of the specified DB parameter group. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBParameterGroups">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeDBParameterGroupsOutcome DescribeDBParameterGroups(const Model::DescribeDBParameterGroupsRequest& request) const;
 
         /**
          * <p> Returns a list of <code>DBParameterGroup</code> descriptions. If a
          * <code>DBParameterGroupName</code> is specified, the list will contain only the
-         * description of the specified DB parameter group. </p>
+         * description of the specified DB parameter group. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBParameterGroups">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1862,26 +2302,37 @@ namespace Model
         /**
          * <p> Returns a list of <code>DBParameterGroup</code> descriptions. If a
          * <code>DBParameterGroupName</code> is specified, the list will contain only the
-         * description of the specified DB parameter group. </p>
+         * description of the specified DB parameter group. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBParameterGroups">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeDBParameterGroupsAsync(const Model::DescribeDBParameterGroupsRequest& request, const DescribeDBParameterGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns the detailed parameter list for a particular DB parameter group.</p>
+         * <p>Returns the detailed parameter list for a particular DB parameter
+         * group.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBParameters">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeDBParametersOutcome DescribeDBParameters(const Model::DescribeDBParametersRequest& request) const;
 
         /**
-         * <p>Returns the detailed parameter list for a particular DB parameter group.</p>
+         * <p>Returns the detailed parameter list for a particular DB parameter
+         * group.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBParameters">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeDBParametersOutcomeCallable DescribeDBParametersCallable(const Model::DescribeDBParametersRequest& request) const;
 
         /**
-         * <p>Returns the detailed parameter list for a particular DB parameter group.</p>
+         * <p>Returns the detailed parameter list for a particular DB parameter
+         * group.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBParameters">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1890,14 +2341,18 @@ namespace Model
         /**
          * <p> Returns a list of <code>DBSecurityGroup</code> descriptions. If a
          * <code>DBSecurityGroupName</code> is specified, the list will contain only the
-         * descriptions of the specified DB security group. </p>
+         * descriptions of the specified DB security group. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBSecurityGroups">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeDBSecurityGroupsOutcome DescribeDBSecurityGroups(const Model::DescribeDBSecurityGroupsRequest& request) const;
 
         /**
          * <p> Returns a list of <code>DBSecurityGroup</code> descriptions. If a
          * <code>DBSecurityGroupName</code> is specified, the list will contain only the
-         * descriptions of the specified DB security group. </p>
+         * descriptions of the specified DB security group. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBSecurityGroups">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1906,7 +2361,9 @@ namespace Model
         /**
          * <p> Returns a list of <code>DBSecurityGroup</code> descriptions. If a
          * <code>DBSecurityGroupName</code> is specified, the list will contain only the
-         * descriptions of the specified DB security group. </p>
+         * descriptions of the specified DB security group. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBSecurityGroups">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1922,7 +2379,9 @@ namespace Model
          * public and can be copied or restored by all AWS accounts.</p> <p>To add or
          * remove access for an AWS account to copy or restore a manual DB snapshot, or to
          * make the manual DB snapshot public or private, use the
-         * <a>ModifyDBSnapshotAttribute</a> API action.</p>
+         * <a>ModifyDBSnapshotAttribute</a> API action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBSnapshotAttributes">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeDBSnapshotAttributesOutcome DescribeDBSnapshotAttributes(const Model::DescribeDBSnapshotAttributesRequest& request) const;
 
@@ -1936,7 +2395,9 @@ namespace Model
          * public and can be copied or restored by all AWS accounts.</p> <p>To add or
          * remove access for an AWS account to copy or restore a manual DB snapshot, or to
          * make the manual DB snapshot public or private, use the
-         * <a>ModifyDBSnapshotAttribute</a> API action.</p>
+         * <a>ModifyDBSnapshotAttribute</a> API action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBSnapshotAttributes">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1952,7 +2413,9 @@ namespace Model
          * public and can be copied or restored by all AWS accounts.</p> <p>To add or
          * remove access for an AWS account to copy or restore a manual DB snapshot, or to
          * make the manual DB snapshot public or private, use the
-         * <a>ModifyDBSnapshotAttribute</a> API action.</p>
+         * <a>ModifyDBSnapshotAttribute</a> API action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBSnapshotAttributes">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1960,13 +2423,17 @@ namespace Model
 
         /**
          * <p>Returns information about DB snapshots. This API action supports
-         * pagination.</p>
+         * pagination.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBSnapshots">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeDBSnapshotsOutcome DescribeDBSnapshots(const Model::DescribeDBSnapshotsRequest& request) const;
 
         /**
          * <p>Returns information about DB snapshots. This API action supports
-         * pagination.</p>
+         * pagination.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBSnapshots">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1974,7 +2441,9 @@ namespace Model
 
         /**
          * <p>Returns information about DB snapshots. This API action supports
-         * pagination.</p>
+         * pagination.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBSnapshots">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1985,7 +2454,9 @@ namespace Model
          * specified, the list will contain only the descriptions of the specified
          * DBSubnetGroup.</p> <p>For an overview of CIDR ranges, go to the <a
          * href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Wikipedia
-         * Tutorial</a>. </p>
+         * Tutorial</a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBSubnetGroups">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeDBSubnetGroupsOutcome DescribeDBSubnetGroups(const Model::DescribeDBSubnetGroupsRequest& request) const;
 
@@ -1994,7 +2465,9 @@ namespace Model
          * specified, the list will contain only the descriptions of the specified
          * DBSubnetGroup.</p> <p>For an overview of CIDR ranges, go to the <a
          * href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Wikipedia
-         * Tutorial</a>. </p>
+         * Tutorial</a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBSubnetGroups">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2005,7 +2478,9 @@ namespace Model
          * specified, the list will contain only the descriptions of the specified
          * DBSubnetGroup.</p> <p>For an overview of CIDR ranges, go to the <a
          * href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Wikipedia
-         * Tutorial</a>. </p>
+         * Tutorial</a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBSubnetGroups">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2015,7 +2490,10 @@ namespace Model
          * <p>Returns the default engine and system parameter information for the cluster
          * database engine.</p> <p>For more information on Amazon Aurora, see <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-         * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
+         * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeEngineDefaultClusterParameters">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeEngineDefaultClusterParametersOutcome DescribeEngineDefaultClusterParameters(const Model::DescribeEngineDefaultClusterParametersRequest& request) const;
 
@@ -2023,7 +2501,10 @@ namespace Model
          * <p>Returns the default engine and system parameter information for the cluster
          * database engine.</p> <p>For more information on Amazon Aurora, see <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-         * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
+         * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeEngineDefaultClusterParameters">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2033,7 +2514,10 @@ namespace Model
          * <p>Returns the default engine and system parameter information for the cluster
          * database engine.</p> <p>For more information on Amazon Aurora, see <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-         * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
+         * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeEngineDefaultClusterParameters">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2041,13 +2525,17 @@ namespace Model
 
         /**
          * <p>Returns the default engine and system parameter information for the specified
-         * database engine.</p>
+         * database engine.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeEngineDefaultParameters">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeEngineDefaultParametersOutcome DescribeEngineDefaultParameters(const Model::DescribeEngineDefaultParametersRequest& request) const;
 
         /**
          * <p>Returns the default engine and system parameter information for the specified
-         * database engine.</p>
+         * database engine.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeEngineDefaultParameters">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2055,7 +2543,9 @@ namespace Model
 
         /**
          * <p>Returns the default engine and system parameter information for the specified
-         * database engine.</p>
+         * database engine.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeEngineDefaultParameters">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2066,7 +2556,10 @@ namespace Model
          * for a specified source type. You can see a list of the event categories and
          * source types in the <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">
-         * Events</a> topic in the <i>Amazon RDS User Guide.</i> </p>
+         * Events</a> topic in the <i>Amazon RDS User Guide.</i> </p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeEventCategories">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeEventCategoriesOutcome DescribeEventCategories(const Model::DescribeEventCategoriesRequest& request) const;
 
@@ -2075,7 +2568,10 @@ namespace Model
          * for a specified source type. You can see a list of the event categories and
          * source types in the <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">
-         * Events</a> topic in the <i>Amazon RDS User Guide.</i> </p>
+         * Events</a> topic in the <i>Amazon RDS User Guide.</i> </p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeEventCategories">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2086,7 +2582,10 @@ namespace Model
          * for a specified source type. You can see a list of the event categories and
          * source types in the <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">
-         * Events</a> topic in the <i>Amazon RDS User Guide.</i> </p>
+         * Events</a> topic in the <i>Amazon RDS User Guide.</i> </p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeEventCategories">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2096,7 +2595,10 @@ namespace Model
          * <p>Lists all the subscription descriptions for a customer account. The
          * description for a subscription includes SubscriptionName, SNSTopicARN,
          * CustomerID, SourceType, SourceID, CreationTime, and Status.</p> <p>If you
-         * specify a SubscriptionName, lists the description for that subscription.</p>
+         * specify a SubscriptionName, lists the description for that
+         * subscription.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeEventSubscriptions">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeEventSubscriptionsOutcome DescribeEventSubscriptions(const Model::DescribeEventSubscriptionsRequest& request) const;
 
@@ -2104,7 +2606,10 @@ namespace Model
          * <p>Lists all the subscription descriptions for a customer account. The
          * description for a subscription includes SubscriptionName, SNSTopicARN,
          * CustomerID, SourceType, SourceID, CreationTime, and Status.</p> <p>If you
-         * specify a SubscriptionName, lists the description for that subscription.</p>
+         * specify a SubscriptionName, lists the description for that
+         * subscription.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeEventSubscriptions">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2114,7 +2619,10 @@ namespace Model
          * <p>Lists all the subscription descriptions for a customer account. The
          * description for a subscription includes SubscriptionName, SNSTopicARN,
          * CustomerID, SourceType, SourceID, CreationTime, and Status.</p> <p>If you
-         * specify a SubscriptionName, lists the description for that subscription.</p>
+         * specify a SubscriptionName, lists the description for that
+         * subscription.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeEventSubscriptions">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2125,7 +2633,9 @@ namespace Model
          * DB parameter groups for the past 14 days. Events specific to a particular DB
          * instance, DB security group, database snapshot, or DB parameter group can be
          * obtained by providing the name as a parameter. By default, the past hour of
-         * events are returned.</p>
+         * events are returned.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeEvents">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeEventsOutcome DescribeEvents(const Model::DescribeEventsRequest& request) const;
 
@@ -2134,7 +2644,9 @@ namespace Model
          * DB parameter groups for the past 14 days. Events specific to a particular DB
          * instance, DB security group, database snapshot, or DB parameter group can be
          * obtained by providing the name as a parameter. By default, the past hour of
-         * events are returned.</p>
+         * events are returned.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeEvents">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2145,64 +2657,87 @@ namespace Model
          * DB parameter groups for the past 14 days. Events specific to a particular DB
          * instance, DB security group, database snapshot, or DB parameter group can be
          * obtained by providing the name as a parameter. By default, the past hour of
-         * events are returned.</p>
+         * events are returned.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeEvents">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeEventsAsync(const Model::DescribeEventsRequest& request, const DescribeEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes all available options.</p>
+         * <p>Describes all available options.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeOptionGroupOptions">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeOptionGroupOptionsOutcome DescribeOptionGroupOptions(const Model::DescribeOptionGroupOptionsRequest& request) const;
 
         /**
-         * <p>Describes all available options.</p>
+         * <p>Describes all available options.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeOptionGroupOptions">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeOptionGroupOptionsOutcomeCallable DescribeOptionGroupOptionsCallable(const Model::DescribeOptionGroupOptionsRequest& request) const;
 
         /**
-         * <p>Describes all available options.</p>
+         * <p>Describes all available options.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeOptionGroupOptions">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeOptionGroupOptionsAsync(const Model::DescribeOptionGroupOptionsRequest& request, const DescribeOptionGroupOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes the available option groups.</p>
+         * <p>Describes the available option groups.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeOptionGroups">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeOptionGroupsOutcome DescribeOptionGroups(const Model::DescribeOptionGroupsRequest& request) const;
 
         /**
-         * <p>Describes the available option groups.</p>
+         * <p>Describes the available option groups.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeOptionGroups">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeOptionGroupsOutcomeCallable DescribeOptionGroupsCallable(const Model::DescribeOptionGroupsRequest& request) const;
 
         /**
-         * <p>Describes the available option groups.</p>
+         * <p>Describes the available option groups.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeOptionGroups">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeOptionGroupsAsync(const Model::DescribeOptionGroupsRequest& request, const DescribeOptionGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns a list of orderable DB instance options for the specified engine.</p>
+         * <p>Returns a list of orderable DB instance options for the specified
+         * engine.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeOrderableDBInstanceOptions">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeOrderableDBInstanceOptionsOutcome DescribeOrderableDBInstanceOptions(const Model::DescribeOrderableDBInstanceOptionsRequest& request) const;
 
         /**
-         * <p>Returns a list of orderable DB instance options for the specified engine.</p>
+         * <p>Returns a list of orderable DB instance options for the specified
+         * engine.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeOrderableDBInstanceOptions">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeOrderableDBInstanceOptionsOutcomeCallable DescribeOrderableDBInstanceOptionsCallable(const Model::DescribeOrderableDBInstanceOptionsRequest& request) const;
 
         /**
-         * <p>Returns a list of orderable DB instance options for the specified engine.</p>
+         * <p>Returns a list of orderable DB instance options for the specified
+         * engine.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeOrderableDBInstanceOptions">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2210,13 +2745,17 @@ namespace Model
 
         /**
          * <p>Returns a list of resources (for example, DB instances) that have at least
-         * one pending maintenance action.</p>
+         * one pending maintenance action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribePendingMaintenanceActions">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribePendingMaintenanceActionsOutcome DescribePendingMaintenanceActions(const Model::DescribePendingMaintenanceActionsRequest& request) const;
 
         /**
          * <p>Returns a list of resources (for example, DB instances) that have at least
-         * one pending maintenance action.</p>
+         * one pending maintenance action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribePendingMaintenanceActions">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2224,7 +2763,9 @@ namespace Model
 
         /**
          * <p>Returns a list of resources (for example, DB instances) that have at least
-         * one pending maintenance action.</p>
+         * one pending maintenance action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribePendingMaintenanceActions">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2232,13 +2773,17 @@ namespace Model
 
         /**
          * <p>Returns information about reserved DB instances for this account, or about a
-         * specified reserved DB instance.</p>
+         * specified reserved DB instance.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeReservedDBInstances">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeReservedDBInstancesOutcome DescribeReservedDBInstances(const Model::DescribeReservedDBInstancesRequest& request) const;
 
         /**
          * <p>Returns information about reserved DB instances for this account, or about a
-         * specified reserved DB instance.</p>
+         * specified reserved DB instance.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeReservedDBInstances">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2246,26 +2791,34 @@ namespace Model
 
         /**
          * <p>Returns information about reserved DB instances for this account, or about a
-         * specified reserved DB instance.</p>
+         * specified reserved DB instance.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeReservedDBInstances">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeReservedDBInstancesAsync(const Model::DescribeReservedDBInstancesRequest& request, const DescribeReservedDBInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists available reserved DB instance offerings.</p>
+         * <p>Lists available reserved DB instance offerings.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeReservedDBInstancesOfferings">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeReservedDBInstancesOfferingsOutcome DescribeReservedDBInstancesOfferings(const Model::DescribeReservedDBInstancesOfferingsRequest& request) const;
 
         /**
-         * <p>Lists available reserved DB instance offerings.</p>
+         * <p>Lists available reserved DB instance offerings.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeReservedDBInstancesOfferings">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeReservedDBInstancesOfferingsOutcomeCallable DescribeReservedDBInstancesOfferingsCallable(const Model::DescribeReservedDBInstancesOfferingsRequest& request) const;
 
         /**
-         * <p>Lists available reserved DB instance offerings.</p>
+         * <p>Lists available reserved DB instance offerings.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeReservedDBInstancesOfferings">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2274,14 +2827,18 @@ namespace Model
         /**
          * <p>Returns a list of the source AWS regions where the current AWS region can
          * create a Read Replica or copy a DB snapshot from. This API action supports
-         * pagination.</p>
+         * pagination.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeSourceRegions">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeSourceRegionsOutcome DescribeSourceRegions(const Model::DescribeSourceRegionsRequest& request) const;
 
         /**
          * <p>Returns a list of the source AWS regions where the current AWS region can
          * create a Read Replica or copy a DB snapshot from. This API action supports
-         * pagination.</p>
+         * pagination.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeSourceRegions">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2290,26 +2847,37 @@ namespace Model
         /**
          * <p>Returns a list of the source AWS regions where the current AWS region can
          * create a Read Replica or copy a DB snapshot from. This API action supports
-         * pagination.</p>
+         * pagination.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeSourceRegions">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeSourceRegionsAsync(const Model::DescribeSourceRegionsRequest& request, const DescribeSourceRegionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Downloads all or a portion of the specified log file, up to 1 MB in size.</p>
+         * <p>Downloads all or a portion of the specified log file, up to 1 MB in
+         * size.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DownloadDBLogFilePortion">AWS
+         * API Reference</a></p>
          */
         virtual Model::DownloadDBLogFilePortionOutcome DownloadDBLogFilePortion(const Model::DownloadDBLogFilePortionRequest& request) const;
 
         /**
-         * <p>Downloads all or a portion of the specified log file, up to 1 MB in size.</p>
+         * <p>Downloads all or a portion of the specified log file, up to 1 MB in
+         * size.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DownloadDBLogFilePortion">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DownloadDBLogFilePortionOutcomeCallable DownloadDBLogFilePortionCallable(const Model::DownloadDBLogFilePortionRequest& request) const;
 
         /**
-         * <p>Downloads all or a portion of the specified log file, up to 1 MB in size.</p>
+         * <p>Downloads all or a portion of the specified log file, up to 1 MB in
+         * size.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DownloadDBLogFilePortion">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2317,31 +2885,37 @@ namespace Model
 
         /**
          * <p>Forces a failover for a DB cluster.</p> <p>A failover for a DB cluster
-         * promotes one of the read-only instances in the DB cluster to the master DB
-         * instance (the cluster writer) and deletes the current primary instance.</p>
-         * <p>Amazon Aurora will automatically fail over to a read-only instance, if one
-         * exists, when the primary instance fails. You can force a failover when you want
-         * to simulate a failure of a DB instance for testing. Because each instance in a
-         * DB cluster has its own endpoint address, you will need to clean up and
-         * re-establish any existing connections that use those endpoint addresses when the
-         * failover is complete.</p> <p>For more information on Amazon Aurora, see <a
+         * promotes one of the Aurora Replicas (read-only instances) in the DB cluster to
+         * be the primary instance (the cluster writer).</p> <p>Amazon Aurora will
+         * automatically fail over to an Aurora Replica, if one exists, when the primary
+         * instance fails. You can force a failover when you want to simulate a failure of
+         * a primary instance for testing. Because each instance in a DB cluster has its
+         * own endpoint address, you will need to clean up and re-establish any existing
+         * connections that use those endpoint addresses when the failover is complete.</p>
+         * <p>For more information on Amazon Aurora, see <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-         * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
+         * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/FailoverDBCluster">AWS
+         * API Reference</a></p>
          */
         virtual Model::FailoverDBClusterOutcome FailoverDBCluster(const Model::FailoverDBClusterRequest& request) const;
 
         /**
          * <p>Forces a failover for a DB cluster.</p> <p>A failover for a DB cluster
-         * promotes one of the read-only instances in the DB cluster to the master DB
-         * instance (the cluster writer) and deletes the current primary instance.</p>
-         * <p>Amazon Aurora will automatically fail over to a read-only instance, if one
-         * exists, when the primary instance fails. You can force a failover when you want
-         * to simulate a failure of a DB instance for testing. Because each instance in a
-         * DB cluster has its own endpoint address, you will need to clean up and
-         * re-establish any existing connections that use those endpoint addresses when the
-         * failover is complete.</p> <p>For more information on Amazon Aurora, see <a
+         * promotes one of the Aurora Replicas (read-only instances) in the DB cluster to
+         * be the primary instance (the cluster writer).</p> <p>Amazon Aurora will
+         * automatically fail over to an Aurora Replica, if one exists, when the primary
+         * instance fails. You can force a failover when you want to simulate a failure of
+         * a primary instance for testing. Because each instance in a DB cluster has its
+         * own endpoint address, you will need to clean up and re-establish any existing
+         * connections that use those endpoint addresses when the failover is complete.</p>
+         * <p>For more information on Amazon Aurora, see <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-         * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
+         * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/FailoverDBCluster">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2349,16 +2923,19 @@ namespace Model
 
         /**
          * <p>Forces a failover for a DB cluster.</p> <p>A failover for a DB cluster
-         * promotes one of the read-only instances in the DB cluster to the master DB
-         * instance (the cluster writer) and deletes the current primary instance.</p>
-         * <p>Amazon Aurora will automatically fail over to a read-only instance, if one
-         * exists, when the primary instance fails. You can force a failover when you want
-         * to simulate a failure of a DB instance for testing. Because each instance in a
-         * DB cluster has its own endpoint address, you will need to clean up and
-         * re-establish any existing connections that use those endpoint addresses when the
-         * failover is complete.</p> <p>For more information on Amazon Aurora, see <a
+         * promotes one of the Aurora Replicas (read-only instances) in the DB cluster to
+         * be the primary instance (the cluster writer).</p> <p>Amazon Aurora will
+         * automatically fail over to an Aurora Replica, if one exists, when the primary
+         * instance fails. You can force a failover when you want to simulate a failure of
+         * a primary instance for testing. Because each instance in a DB cluster has its
+         * own endpoint address, you will need to clean up and re-establish any existing
+         * connections that use those endpoint addresses when the failover is complete.</p>
+         * <p>For more information on Amazon Aurora, see <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-         * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
+         * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/FailoverDBCluster">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2368,7 +2945,9 @@ namespace Model
          * <p>Lists all tags on an Amazon RDS resource.</p> <p>For an overview on tagging
          * an Amazon RDS resource, see <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html">Tagging
-         * Amazon RDS Resources</a>.</p>
+         * Amazon RDS Resources</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ListTagsForResource">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
@@ -2376,7 +2955,9 @@ namespace Model
          * <p>Lists all tags on an Amazon RDS resource.</p> <p>For an overview on tagging
          * an Amazon RDS resource, see <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html">Tagging
-         * Amazon RDS Resources</a>.</p>
+         * Amazon RDS Resources</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ListTagsForResource">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2386,7 +2967,9 @@ namespace Model
          * <p>Lists all tags on an Amazon RDS resource.</p> <p>For an overview on tagging
          * an Amazon RDS resource, see <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html">Tagging
-         * Amazon RDS Resources</a>.</p>
+         * Amazon RDS Resources</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ListTagsForResource">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2397,7 +2980,10 @@ namespace Model
          * database configuration parameters by specifying these parameters and the new
          * values in the request. For more information on Amazon Aurora, see <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-         * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
+         * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBCluster">AWS
+         * API Reference</a></p>
          */
         virtual Model::ModifyDBClusterOutcome ModifyDBCluster(const Model::ModifyDBClusterRequest& request) const;
 
@@ -2406,7 +2992,10 @@ namespace Model
          * database configuration parameters by specifying these parameters and the new
          * values in the request. For more information on Amazon Aurora, see <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-         * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
+         * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBCluster">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2417,7 +3006,10 @@ namespace Model
          * database configuration parameters by specifying these parameters and the new
          * values in the request. For more information on Amazon Aurora, see <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-         * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
+         * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBCluster">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2444,7 +3036,10 @@ namespace Model
          * <i>Parameter Groups</i> option of the <a
          * href="https://console.aws.amazon.com/rds/">Amazon RDS console</a> or the
          * <a>DescribeDBClusterParameters</a> command to verify that your DB cluster
-         * parameter group has been created or modified.</p> </important>
+         * parameter group has been created or modified.</p> </important><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBClusterParameterGroup">AWS
+         * API Reference</a></p>
          */
         virtual Model::ModifyDBClusterParameterGroupOutcome ModifyDBClusterParameterGroup(const Model::ModifyDBClusterParameterGroupRequest& request) const;
 
@@ -2469,7 +3064,10 @@ namespace Model
          * <i>Parameter Groups</i> option of the <a
          * href="https://console.aws.amazon.com/rds/">Amazon RDS console</a> or the
          * <a>DescribeDBClusterParameters</a> command to verify that your DB cluster
-         * parameter group has been created or modified.</p> </important>
+         * parameter group has been created or modified.</p> </important><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBClusterParameterGroup">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2496,7 +3094,10 @@ namespace Model
          * <i>Parameter Groups</i> option of the <a
          * href="https://console.aws.amazon.com/rds/">Amazon RDS console</a> or the
          * <a>DescribeDBClusterParameters</a> command to verify that your DB cluster
-         * parameter group has been created or modified.</p> </important>
+         * parameter group has been created or modified.</p> </important><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBClusterParameterGroup">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2515,7 +3116,10 @@ namespace Model
          * AWS accounts.</p> <p>To view which AWS accounts have access to copy or restore a
          * manual DB cluster snapshot, or whether a manual DB cluster snapshot public or
          * private, use the <a>DescribeDBClusterSnapshotAttributes</a> API action.</p>
-         * <p>If a manual DB cluster snapshot is encrypted, it cannot be shared.</p>
+         * <p>If a manual DB cluster snapshot is encrypted, it cannot be
+         * shared.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBClusterSnapshotAttribute">AWS
+         * API Reference</a></p>
          */
         virtual Model::ModifyDBClusterSnapshotAttributeOutcome ModifyDBClusterSnapshotAttribute(const Model::ModifyDBClusterSnapshotAttributeRequest& request) const;
 
@@ -2532,7 +3136,10 @@ namespace Model
          * AWS accounts.</p> <p>To view which AWS accounts have access to copy or restore a
          * manual DB cluster snapshot, or whether a manual DB cluster snapshot public or
          * private, use the <a>DescribeDBClusterSnapshotAttributes</a> API action.</p>
-         * <p>If a manual DB cluster snapshot is encrypted, it cannot be shared.</p>
+         * <p>If a manual DB cluster snapshot is encrypted, it cannot be
+         * shared.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBClusterSnapshotAttribute">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2551,7 +3158,10 @@ namespace Model
          * AWS accounts.</p> <p>To view which AWS accounts have access to copy or restore a
          * manual DB cluster snapshot, or whether a manual DB cluster snapshot public or
          * private, use the <a>DescribeDBClusterSnapshotAttributes</a> API action.</p>
-         * <p>If a manual DB cluster snapshot is encrypted, it cannot be shared.</p>
+         * <p>If a manual DB cluster snapshot is encrypted, it cannot be
+         * shared.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBClusterSnapshotAttribute">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2560,14 +3170,18 @@ namespace Model
         /**
          * <p>Modifies settings for a DB instance. You can change one or more database
          * configuration parameters by specifying these parameters and the new values in
-         * the request.</p>
+         * the request.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBInstance">AWS
+         * API Reference</a></p>
          */
         virtual Model::ModifyDBInstanceOutcome ModifyDBInstance(const Model::ModifyDBInstanceRequest& request) const;
 
         /**
          * <p>Modifies settings for a DB instance. You can change one or more database
          * configuration parameters by specifying these parameters and the new values in
-         * the request.</p>
+         * the request.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBInstance">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2576,7 +3190,9 @@ namespace Model
         /**
          * <p>Modifies settings for a DB instance. You can change one or more database
          * configuration parameters by specifying these parameters and the new values in
-         * the request.</p>
+         * the request.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBInstance">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2599,7 +3215,10 @@ namespace Model
          * the <code>character_set_database</code> parameter. You can use the <i>Parameter
          * Groups</i> option of the <a href="https://console.aws.amazon.com/rds/">Amazon
          * RDS console</a> or the <i>DescribeDBParameters</i> command to verify that your
-         * DB parameter group has been created or modified.</p> </important>
+         * DB parameter group has been created or modified.</p> </important><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBParameterGroup">AWS
+         * API Reference</a></p>
          */
         virtual Model::ModifyDBParameterGroupOutcome ModifyDBParameterGroup(const Model::ModifyDBParameterGroupRequest& request) const;
 
@@ -2620,7 +3239,10 @@ namespace Model
          * the <code>character_set_database</code> parameter. You can use the <i>Parameter
          * Groups</i> option of the <a href="https://console.aws.amazon.com/rds/">Amazon
          * RDS console</a> or the <i>DescribeDBParameters</i> command to verify that your
-         * DB parameter group has been created or modified.</p> </important>
+         * DB parameter group has been created or modified.</p> </important><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBParameterGroup">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2643,7 +3265,10 @@ namespace Model
          * the <code>character_set_database</code> parameter. You can use the <i>Parameter
          * Groups</i> option of the <a href="https://console.aws.amazon.com/rds/">Amazon
          * RDS console</a> or the <i>DescribeDBParameters</i> command to verify that your
-         * DB parameter group has been created or modified.</p> </important>
+         * DB parameter group has been created or modified.</p> </important><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBParameterGroup">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2661,7 +3286,10 @@ namespace Model
          * available to all AWS accounts.</p> <p>To view which AWS accounts have access to
          * copy or restore a manual DB snapshot, or whether a manual DB snapshot public or
          * private, use the <a>DescribeDBSnapshotAttributes</a> API action.</p> <p>If the
-         * manual DB snapshot is encrypted, it cannot be shared.</p>
+         * manual DB snapshot is encrypted, it cannot be shared.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBSnapshotAttribute">AWS
+         * API Reference</a></p>
          */
         virtual Model::ModifyDBSnapshotAttributeOutcome ModifyDBSnapshotAttribute(const Model::ModifyDBSnapshotAttributeRequest& request) const;
 
@@ -2677,7 +3305,10 @@ namespace Model
          * available to all AWS accounts.</p> <p>To view which AWS accounts have access to
          * copy or restore a manual DB snapshot, or whether a manual DB snapshot public or
          * private, use the <a>DescribeDBSnapshotAttributes</a> API action.</p> <p>If the
-         * manual DB snapshot is encrypted, it cannot be shared.</p>
+         * manual DB snapshot is encrypted, it cannot be shared.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBSnapshotAttribute">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2695,7 +3326,10 @@ namespace Model
          * available to all AWS accounts.</p> <p>To view which AWS accounts have access to
          * copy or restore a manual DB snapshot, or whether a manual DB snapshot public or
          * private, use the <a>DescribeDBSnapshotAttributes</a> API action.</p> <p>If the
-         * manual DB snapshot is encrypted, it cannot be shared.</p>
+         * manual DB snapshot is encrypted, it cannot be shared.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBSnapshotAttribute">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2703,13 +3337,17 @@ namespace Model
 
         /**
          * <p>Modifies an existing DB subnet group. DB subnet groups must contain at least
-         * one subnet in at least two AZs in the region.</p>
+         * one subnet in at least two AZs in the region.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBSubnetGroup">AWS
+         * API Reference</a></p>
          */
         virtual Model::ModifyDBSubnetGroupOutcome ModifyDBSubnetGroup(const Model::ModifyDBSubnetGroupRequest& request) const;
 
         /**
          * <p>Modifies an existing DB subnet group. DB subnet groups must contain at least
-         * one subnet in at least two AZs in the region.</p>
+         * one subnet in at least two AZs in the region.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBSubnetGroup">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2717,7 +3355,9 @@ namespace Model
 
         /**
          * <p>Modifies an existing DB subnet group. DB subnet groups must contain at least
-         * one subnet in at least two AZs in the region.</p>
+         * one subnet in at least two AZs in the region.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBSubnetGroup">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2731,7 +3371,9 @@ namespace Model
          * list of the event categories for a given SourceType in the <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a>
          * topic in the Amazon RDS User Guide or by using the
-         * <b>DescribeEventCategories</b> action.</p>
+         * <b>DescribeEventCategories</b> action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyEventSubscription">AWS
+         * API Reference</a></p>
          */
         virtual Model::ModifyEventSubscriptionOutcome ModifyEventSubscription(const Model::ModifyEventSubscriptionRequest& request) const;
 
@@ -2743,7 +3385,9 @@ namespace Model
          * list of the event categories for a given SourceType in the <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a>
          * topic in the Amazon RDS User Guide or by using the
-         * <b>DescribeEventCategories</b> action.</p>
+         * <b>DescribeEventCategories</b> action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyEventSubscription">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2757,26 +3401,34 @@ namespace Model
          * list of the event categories for a given SourceType in the <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a>
          * topic in the Amazon RDS User Guide or by using the
-         * <b>DescribeEventCategories</b> action.</p>
+         * <b>DescribeEventCategories</b> action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyEventSubscription">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ModifyEventSubscriptionAsync(const Model::ModifyEventSubscriptionRequest& request, const ModifyEventSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Modifies an existing option group.</p>
+         * <p>Modifies an existing option group.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyOptionGroup">AWS
+         * API Reference</a></p>
          */
         virtual Model::ModifyOptionGroupOutcome ModifyOptionGroup(const Model::ModifyOptionGroupRequest& request) const;
 
         /**
-         * <p>Modifies an existing option group.</p>
+         * <p>Modifies an existing option group.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyOptionGroup">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ModifyOptionGroupOutcomeCallable ModifyOptionGroupCallable(const Model::ModifyOptionGroupRequest& request) const;
 
         /**
-         * <p>Modifies an existing option group.</p>
+         * <p>Modifies an existing option group.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyOptionGroup">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2787,7 +3439,9 @@ namespace Model
          * <p>We recommend that you enable automated backups on your Read Replica before
          * promoting the Read Replica. This ensures that no backup is taken during the
          * promotion process. Once the instance is promoted to a primary instance, backups
-         * are taken based on your backup settings.</p> </note>
+         * are taken based on your backup settings.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/PromoteReadReplica">AWS
+         * API Reference</a></p>
          */
         virtual Model::PromoteReadReplicaOutcome PromoteReadReplica(const Model::PromoteReadReplicaRequest& request) const;
 
@@ -2796,7 +3450,9 @@ namespace Model
          * <p>We recommend that you enable automated backups on your Read Replica before
          * promoting the Read Replica. This ensures that no backup is taken during the
          * promotion process. Once the instance is promoted to a primary instance, backups
-         * are taken based on your backup settings.</p> </note>
+         * are taken based on your backup settings.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/PromoteReadReplica">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2807,45 +3463,62 @@ namespace Model
          * <p>We recommend that you enable automated backups on your Read Replica before
          * promoting the Read Replica. This ensures that no backup is taken during the
          * promotion process. Once the instance is promoted to a primary instance, backups
-         * are taken based on your backup settings.</p> </note>
+         * are taken based on your backup settings.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/PromoteReadReplica">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void PromoteReadReplicaAsync(const Model::PromoteReadReplicaRequest& request, const PromoteReadReplicaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Promotes a Read Replica DB cluster to a standalone DB cluster.</p>
+         * <p>Promotes a Read Replica DB cluster to a standalone DB cluster.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/PromoteReadReplicaDBCluster">AWS
+         * API Reference</a></p>
          */
         virtual Model::PromoteReadReplicaDBClusterOutcome PromoteReadReplicaDBCluster(const Model::PromoteReadReplicaDBClusterRequest& request) const;
 
         /**
-         * <p>Promotes a Read Replica DB cluster to a standalone DB cluster.</p>
+         * <p>Promotes a Read Replica DB cluster to a standalone DB cluster.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/PromoteReadReplicaDBCluster">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::PromoteReadReplicaDBClusterOutcomeCallable PromoteReadReplicaDBClusterCallable(const Model::PromoteReadReplicaDBClusterRequest& request) const;
 
         /**
-         * <p>Promotes a Read Replica DB cluster to a standalone DB cluster.</p>
+         * <p>Promotes a Read Replica DB cluster to a standalone DB cluster.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/PromoteReadReplicaDBCluster">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void PromoteReadReplicaDBClusterAsync(const Model::PromoteReadReplicaDBClusterRequest& request, const PromoteReadReplicaDBClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Purchases a reserved DB instance offering.</p>
+         * <p>Purchases a reserved DB instance offering.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/PurchaseReservedDBInstancesOffering">AWS
+         * API Reference</a></p>
          */
         virtual Model::PurchaseReservedDBInstancesOfferingOutcome PurchaseReservedDBInstancesOffering(const Model::PurchaseReservedDBInstancesOfferingRequest& request) const;
 
         /**
-         * <p>Purchases a reserved DB instance offering.</p>
+         * <p>Purchases a reserved DB instance offering.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/PurchaseReservedDBInstancesOffering">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::PurchaseReservedDBInstancesOfferingOutcomeCallable PurchaseReservedDBInstancesOfferingCallable(const Model::PurchaseReservedDBInstancesOfferingRequest& request) const;
 
         /**
-         * <p>Purchases a reserved DB instance offering.</p>
+         * <p>Purchases a reserved DB instance offering.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/PurchaseReservedDBInstancesOffering">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2865,7 +3538,9 @@ namespace Model
          * time required to reboot is a function of the specific database engine's crash
          * recovery process. To improve the reboot time, we recommend that you reduce
          * database activities as much as possible during the reboot process to reduce
-         * rollback activity for in-transit transactions.</p>
+         * rollback activity for in-transit transactions.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RebootDBInstance">AWS
+         * API Reference</a></p>
          */
         virtual Model::RebootDBInstanceOutcome RebootDBInstance(const Model::RebootDBInstanceRequest& request) const;
 
@@ -2883,7 +3558,9 @@ namespace Model
          * time required to reboot is a function of the specific database engine's crash
          * recovery process. To improve the reboot time, we recommend that you reduce
          * database activities as much as possible during the reboot process to reduce
-         * rollback activity for in-transit transactions.</p>
+         * rollback activity for in-transit transactions.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RebootDBInstance">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2903,7 +3580,9 @@ namespace Model
          * time required to reboot is a function of the specific database engine's crash
          * recovery process. To improve the reboot time, we recommend that you reduce
          * database activities as much as possible during the reboot process to reduce
-         * rollback activity for in-transit transactions.</p>
+         * rollback activity for in-transit transactions.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RebootDBInstance">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2913,7 +3592,10 @@ namespace Model
          * <p>Disassociates an Identity and Access Management (IAM) role from an Aurora DB
          * cluster. For more information, see <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Authorizing.AWSServices.html">Authorizing
-         * Amazon Aurora to Access Other AWS Services On Your Behalf</a>.</p>
+         * Amazon Aurora to Access Other AWS Services On Your Behalf</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RemoveRoleFromDBCluster">AWS
+         * API Reference</a></p>
          */
         virtual Model::RemoveRoleFromDBClusterOutcome RemoveRoleFromDBCluster(const Model::RemoveRoleFromDBClusterRequest& request) const;
 
@@ -2921,7 +3603,10 @@ namespace Model
          * <p>Disassociates an Identity and Access Management (IAM) role from an Aurora DB
          * cluster. For more information, see <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Authorizing.AWSServices.html">Authorizing
-         * Amazon Aurora to Access Other AWS Services On Your Behalf</a>.</p>
+         * Amazon Aurora to Access Other AWS Services On Your Behalf</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RemoveRoleFromDBCluster">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2931,7 +3616,10 @@ namespace Model
          * <p>Disassociates an Identity and Access Management (IAM) role from an Aurora DB
          * cluster. For more information, see <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Authorizing.AWSServices.html">Authorizing
-         * Amazon Aurora to Access Other AWS Services On Your Behalf</a>.</p>
+         * Amazon Aurora to Access Other AWS Services On Your Behalf</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RemoveRoleFromDBCluster">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2939,13 +3627,17 @@ namespace Model
 
         /**
          * <p>Removes a source identifier from an existing RDS event notification
-         * subscription.</p>
+         * subscription.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RemoveSourceIdentifierFromSubscription">AWS
+         * API Reference</a></p>
          */
         virtual Model::RemoveSourceIdentifierFromSubscriptionOutcome RemoveSourceIdentifierFromSubscription(const Model::RemoveSourceIdentifierFromSubscriptionRequest& request) const;
 
         /**
          * <p>Removes a source identifier from an existing RDS event notification
-         * subscription.</p>
+         * subscription.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RemoveSourceIdentifierFromSubscription">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2953,7 +3645,9 @@ namespace Model
 
         /**
          * <p>Removes a source identifier from an existing RDS event notification
-         * subscription.</p>
+         * subscription.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RemoveSourceIdentifierFromSubscription">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2963,7 +3657,9 @@ namespace Model
          * <p>Removes metadata tags from an Amazon RDS resource.</p> <p>For an overview on
          * tagging an Amazon RDS resource, see <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html">Tagging
-         * Amazon RDS Resources</a>.</p>
+         * Amazon RDS Resources</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RemoveTagsFromResource">AWS
+         * API Reference</a></p>
          */
         virtual Model::RemoveTagsFromResourceOutcome RemoveTagsFromResource(const Model::RemoveTagsFromResourceRequest& request) const;
 
@@ -2971,7 +3667,9 @@ namespace Model
          * <p>Removes metadata tags from an Amazon RDS resource.</p> <p>For an overview on
          * tagging an Amazon RDS resource, see <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html">Tagging
-         * Amazon RDS Resources</a>.</p>
+         * Amazon RDS Resources</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RemoveTagsFromResource">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2981,7 +3679,9 @@ namespace Model
          * <p>Removes metadata tags from an Amazon RDS resource.</p> <p>For an overview on
          * tagging an Amazon RDS resource, see <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html">Tagging
-         * Amazon RDS Resources</a>.</p>
+         * Amazon RDS Resources</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RemoveTagsFromResource">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -3000,7 +3700,10 @@ namespace Model
          * the updated static parameter to apply to.</p> <p>For more information on Amazon
          * Aurora, see <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-         * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
+         * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ResetDBClusterParameterGroup">AWS
+         * API Reference</a></p>
          */
         virtual Model::ResetDBClusterParameterGroupOutcome ResetDBClusterParameterGroup(const Model::ResetDBClusterParameterGroupRequest& request) const;
 
@@ -3017,7 +3720,10 @@ namespace Model
          * the updated static parameter to apply to.</p> <p>For more information on Amazon
          * Aurora, see <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-         * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
+         * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ResetDBClusterParameterGroup">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -3036,7 +3742,10 @@ namespace Model
          * the updated static parameter to apply to.</p> <p>For more information on Amazon
          * Aurora, see <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-         * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
+         * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ResetDBClusterParameterGroup">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -3050,7 +3759,9 @@ namespace Model
          * <code>ResetAllParameters</code> parameters. When resetting the entire group,
          * dynamic parameters are updated immediately and static parameters are set to
          * <code>pending-reboot</code> to take effect on the next DB instance restart or
-         * <code>RebootDBInstance</code> request. </p>
+         * <code>RebootDBInstance</code> request. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ResetDBParameterGroup">AWS
+         * API Reference</a></p>
          */
         virtual Model::ResetDBParameterGroupOutcome ResetDBParameterGroup(const Model::ResetDBParameterGroupRequest& request) const;
 
@@ -3062,7 +3773,9 @@ namespace Model
          * <code>ResetAllParameters</code> parameters. When resetting the entire group,
          * dynamic parameters are updated immediately and static parameters are set to
          * <code>pending-reboot</code> to take effect on the next DB instance restart or
-         * <code>RebootDBInstance</code> request. </p>
+         * <code>RebootDBInstance</code> request. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ResetDBParameterGroup">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -3076,7 +3789,9 @@ namespace Model
          * <code>ResetAllParameters</code> parameters. When resetting the entire group,
          * dynamic parameters are updated immediately and static parameters are set to
          * <code>pending-reboot</code> to take effect on the next DB instance restart or
-         * <code>RebootDBInstance</code> request. </p>
+         * <code>RebootDBInstance</code> request. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ResetDBParameterGroup">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -3087,7 +3802,9 @@ namespace Model
          * Amazon RDS must be authorized to access the Amazon S3 bucket and the data must
          * be created using the Percona XtraBackup utility as described in <a
          * href="AmazonRDS/latest/UserGuide/Aurora.Migrate.MySQL.html#Aurora.Migrate.MySQL.S3">Migrating
-         * Data from MySQL by Using an Amazon S3 Bucket</a>.</p>
+         * Data from MySQL by Using an Amazon S3 Bucket</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBClusterFromS3">AWS
+         * API Reference</a></p>
          */
         virtual Model::RestoreDBClusterFromS3Outcome RestoreDBClusterFromS3(const Model::RestoreDBClusterFromS3Request& request) const;
 
@@ -3096,7 +3813,9 @@ namespace Model
          * Amazon RDS must be authorized to access the Amazon S3 bucket and the data must
          * be created using the Percona XtraBackup utility as described in <a
          * href="AmazonRDS/latest/UserGuide/Aurora.Migrate.MySQL.html#Aurora.Migrate.MySQL.S3">Migrating
-         * Data from MySQL by Using an Amazon S3 Bucket</a>.</p>
+         * Data from MySQL by Using an Amazon S3 Bucket</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBClusterFromS3">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -3107,7 +3826,9 @@ namespace Model
          * Amazon RDS must be authorized to access the Amazon S3 bucket and the data must
          * be created using the Percona XtraBackup utility as described in <a
          * href="AmazonRDS/latest/UserGuide/Aurora.Migrate.MySQL.html#Aurora.Migrate.MySQL.S3">Migrating
-         * Data from MySQL by Using an Amazon S3 Bucket</a>.</p>
+         * Data from MySQL by Using an Amazon S3 Bucket</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBClusterFromS3">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -3119,7 +3840,10 @@ namespace Model
          * the original source DB cluster, except that the new DB cluster is created with
          * the default security group.</p> <p>For more information on Amazon Aurora, see <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-         * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
+         * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBClusterFromSnapshot">AWS
+         * API Reference</a></p>
          */
         virtual Model::RestoreDBClusterFromSnapshotOutcome RestoreDBClusterFromSnapshot(const Model::RestoreDBClusterFromSnapshotRequest& request) const;
 
@@ -3129,7 +3853,10 @@ namespace Model
          * the original source DB cluster, except that the new DB cluster is created with
          * the default security group.</p> <p>For more information on Amazon Aurora, see <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-         * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
+         * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBClusterFromSnapshot">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -3141,7 +3868,10 @@ namespace Model
          * the original source DB cluster, except that the new DB cluster is created with
          * the default security group.</p> <p>For more information on Amazon Aurora, see <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-         * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
+         * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBClusterFromSnapshot">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -3155,7 +3885,10 @@ namespace Model
          * except that the new DB cluster is created with the default DB security group.
          * </p> <p>For more information on Amazon Aurora, see <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-         * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
+         * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBClusterToPointInTime">AWS
+         * API Reference</a></p>
          */
         virtual Model::RestoreDBClusterToPointInTimeOutcome RestoreDBClusterToPointInTime(const Model::RestoreDBClusterToPointInTimeRequest& request) const;
 
@@ -3167,7 +3900,10 @@ namespace Model
          * except that the new DB cluster is created with the default DB security group.
          * </p> <p>For more information on Amazon Aurora, see <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-         * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
+         * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBClusterToPointInTime">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -3181,7 +3917,10 @@ namespace Model
          * except that the new DB cluster is created with the default DB security group.
          * </p> <p>For more information on Amazon Aurora, see <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-         * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
+         * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBClusterToPointInTime">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -3203,7 +3942,10 @@ namespace Model
          * RestoreDBInstanceFromDBSnapshot action. The result is that you will replace the
          * original DB instance with the DB instance created from the snapshot.</p> <p>If
          * you are restoring from a shared manual DB snapshot, the
-         * <code>DBSnapshotIdentifier</code> must be the ARN of the shared DB snapshot.</p>
+         * <code>DBSnapshotIdentifier</code> must be the ARN of the shared DB
+         * snapshot.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBInstanceFromDBSnapshot">AWS
+         * API Reference</a></p>
          */
         virtual Model::RestoreDBInstanceFromDBSnapshotOutcome RestoreDBInstanceFromDBSnapshot(const Model::RestoreDBInstanceFromDBSnapshotRequest& request) const;
 
@@ -3223,7 +3965,10 @@ namespace Model
          * RestoreDBInstanceFromDBSnapshot action. The result is that you will replace the
          * original DB instance with the DB instance created from the snapshot.</p> <p>If
          * you are restoring from a shared manual DB snapshot, the
-         * <code>DBSnapshotIdentifier</code> must be the ARN of the shared DB snapshot.</p>
+         * <code>DBSnapshotIdentifier</code> must be the ARN of the shared DB
+         * snapshot.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBInstanceFromDBSnapshot">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -3245,7 +3990,10 @@ namespace Model
          * RestoreDBInstanceFromDBSnapshot action. The result is that you will replace the
          * original DB instance with the DB instance created from the snapshot.</p> <p>If
          * you are restoring from a shared manual DB snapshot, the
-         * <code>DBSnapshotIdentifier</code> must be the ARN of the shared DB snapshot.</p>
+         * <code>DBSnapshotIdentifier</code> must be the ARN of the shared DB
+         * snapshot.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBInstanceFromDBSnapshot">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -3261,7 +4009,10 @@ namespace Model
          * parameter group. By default, the new DB instance is created as a single-AZ
          * deployment except when the instance is a SQL Server instance that has an option
          * group that is associated with mirroring; in this case, the instance becomes a
-         * mirrored deployment and not a single-AZ deployment.</p>
+         * mirrored deployment and not a single-AZ deployment.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBInstanceToPointInTime">AWS
+         * API Reference</a></p>
          */
         virtual Model::RestoreDBInstanceToPointInTimeOutcome RestoreDBInstanceToPointInTime(const Model::RestoreDBInstanceToPointInTimeRequest& request) const;
 
@@ -3275,7 +4026,10 @@ namespace Model
          * parameter group. By default, the new DB instance is created as a single-AZ
          * deployment except when the instance is a SQL Server instance that has an option
          * group that is associated with mirroring; in this case, the instance becomes a
-         * mirrored deployment and not a single-AZ deployment.</p>
+         * mirrored deployment and not a single-AZ deployment.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBInstanceToPointInTime">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -3291,7 +4045,10 @@ namespace Model
          * parameter group. By default, the new DB instance is created as a single-AZ
          * deployment except when the instance is a SQL Server instance that has an option
          * group that is associated with mirroring; in this case, the instance becomes a
-         * mirrored deployment and not a single-AZ deployment.</p>
+         * mirrored deployment and not a single-AZ deployment.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBInstanceToPointInTime">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -3301,7 +4058,9 @@ namespace Model
          * <p>Revokes ingress from a DBSecurityGroup for previously authorized IP ranges or
          * EC2 or VPC Security Groups. Required parameters for this API are one of CIDRIP,
          * EC2SecurityGroupId for VPC, or (EC2SecurityGroupOwnerId and either
-         * EC2SecurityGroupName or EC2SecurityGroupId).</p>
+         * EC2SecurityGroupName or EC2SecurityGroupId).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RevokeDBSecurityGroupIngress">AWS
+         * API Reference</a></p>
          */
         virtual Model::RevokeDBSecurityGroupIngressOutcome RevokeDBSecurityGroupIngress(const Model::RevokeDBSecurityGroupIngressRequest& request) const;
 
@@ -3309,7 +4068,9 @@ namespace Model
          * <p>Revokes ingress from a DBSecurityGroup for previously authorized IP ranges or
          * EC2 or VPC Security Groups. Required parameters for this API are one of CIDRIP,
          * EC2SecurityGroupId for VPC, or (EC2SecurityGroupOwnerId and either
-         * EC2SecurityGroupName or EC2SecurityGroupId).</p>
+         * EC2SecurityGroupName or EC2SecurityGroupId).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RevokeDBSecurityGroupIngress">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -3319,7 +4080,9 @@ namespace Model
          * <p>Revokes ingress from a DBSecurityGroup for previously authorized IP ranges or
          * EC2 or VPC Security Groups. Required parameters for this API are one of CIDRIP,
          * EC2SecurityGroupId for VPC, or (EC2SecurityGroupOwnerId and either
-         * EC2SecurityGroupName or EC2SecurityGroupId).</p>
+         * EC2SecurityGroupName or EC2SecurityGroupId).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RevokeDBSecurityGroupIngress">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */

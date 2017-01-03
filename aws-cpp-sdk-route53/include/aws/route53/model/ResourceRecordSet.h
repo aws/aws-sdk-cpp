@@ -38,7 +38,10 @@ namespace Model
 {
 
   /**
-   * <p>Information about the resource record set to create or delete.</p>
+   * <p>Information about the resource record set to create or delete.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ResourceRecordSet">AWS
+   * API Reference</a></p>
    */
   class AWS_ROUTE53_API ResourceRecordSet
   {
@@ -71,7 +74,7 @@ namespace Model
      * (ASCII 42), not as a wildcard.</p> <important> <p>You can't use the * wildcard
      * for resource records sets that have a type of NS.</p> </important> </li> </ul>
      * <p>You can use the * wildcard as the leftmost label in a domain name, for
-     * example, <code>*.example.com</code>. You cannot use an * for one of the middle
+     * example, <code>*.example.com</code>. You can't use an * for one of the middle
      * labels, for example, <code>marketing.*.example.com</code>. In addition, the *
      * must replace the entire label; for example, you can't specify
      * <code>prod*.example.com</code>.</p>
@@ -100,7 +103,7 @@ namespace Model
      * (ASCII 42), not as a wildcard.</p> <important> <p>You can't use the * wildcard
      * for resource records sets that have a type of NS.</p> </important> </li> </ul>
      * <p>You can use the * wildcard as the leftmost label in a domain name, for
-     * example, <code>*.example.com</code>. You cannot use an * for one of the middle
+     * example, <code>*.example.com</code>. You can't use an * for one of the middle
      * labels, for example, <code>marketing.*.example.com</code>. In addition, the *
      * must replace the entire label; for example, you can't specify
      * <code>prod*.example.com</code>.</p>
@@ -129,7 +132,7 @@ namespace Model
      * (ASCII 42), not as a wildcard.</p> <important> <p>You can't use the * wildcard
      * for resource records sets that have a type of NS.</p> </important> </li> </ul>
      * <p>You can use the * wildcard as the leftmost label in a domain name, for
-     * example, <code>*.example.com</code>. You cannot use an * for one of the middle
+     * example, <code>*.example.com</code>. You can't use an * for one of the middle
      * labels, for example, <code>marketing.*.example.com</code>. In addition, the *
      * must replace the entire label; for example, you can't specify
      * <code>prod*.example.com</code>.</p>
@@ -158,7 +161,7 @@ namespace Model
      * (ASCII 42), not as a wildcard.</p> <important> <p>You can't use the * wildcard
      * for resource records sets that have a type of NS.</p> </important> </li> </ul>
      * <p>You can use the * wildcard as the leftmost label in a domain name, for
-     * example, <code>*.example.com</code>. You cannot use an * for one of the middle
+     * example, <code>*.example.com</code>. You can't use an * for one of the middle
      * labels, for example, <code>marketing.*.example.com</code>. In addition, the *
      * must replace the entire label; for example, you can't specify
      * <code>prod*.example.com</code>.</p>
@@ -187,7 +190,7 @@ namespace Model
      * (ASCII 42), not as a wildcard.</p> <important> <p>You can't use the * wildcard
      * for resource records sets that have a type of NS.</p> </important> </li> </ul>
      * <p>You can use the * wildcard as the leftmost label in a domain name, for
-     * example, <code>*.example.com</code>. You cannot use an * for one of the middle
+     * example, <code>*.example.com</code>. You can't use an * for one of the middle
      * labels, for example, <code>marketing.*.example.com</code>. In addition, the *
      * must replace the entire label; for example, you can't specify
      * <code>prod*.example.com</code>.</p>
@@ -216,7 +219,7 @@ namespace Model
      * (ASCII 42), not as a wildcard.</p> <important> <p>You can't use the * wildcard
      * for resource records sets that have a type of NS.</p> </important> </li> </ul>
      * <p>You can use the * wildcard as the leftmost label in a domain name, for
-     * example, <code>*.example.com</code>. You cannot use an * for one of the middle
+     * example, <code>*.example.com</code>. You can't use an * for one of the middle
      * labels, for example, <code>marketing.*.example.com</code>. In addition, the *
      * must replace the entire label; for example, you can't specify
      * <code>prod*.example.com</code>.</p>
@@ -245,7 +248,7 @@ namespace Model
      * (ASCII 42), not as a wildcard.</p> <important> <p>You can't use the * wildcard
      * for resource records sets that have a type of NS.</p> </important> </li> </ul>
      * <p>You can use the * wildcard as the leftmost label in a domain name, for
-     * example, <code>*.example.com</code>. You cannot use an * for one of the middle
+     * example, <code>*.example.com</code>. You can't use an * for one of the middle
      * labels, for example, <code>marketing.*.example.com</code>. In addition, the *
      * must replace the entire label; for example, you can't specify
      * <code>prod*.example.com</code>.</p>
@@ -276,13 +279,16 @@ namespace Model
      * are not to use it." In RFC 7208, see section 14.1, <a
      * href="http://tools.ietf.org/html/rfc7208#section-14.1">The SPF DNS Record
      * Type</a>.</p> </note> <p>Values for alias resource record sets:</p> <ul> <li>
-     * <p> <b>CloudFront distributions:</b> <code>A</code> </p> </li> <li> <p>
-     * <b>Elastic Beanstalk environment that has a regionalized subdomain</b>:
-     * <code>A</code> </p> </li> <li> <p> <b>ELB load balancers:</b> <code>A</code> |
-     * <code>AAAA</code> </p> </li> <li> <p> <b>Amazon S3 buckets:</b> <code>A</code>
-     * </p> </li> <li> <p> <b>Another resource record set in this hosted zone:</b>
-     * Specify the type of the resource record set for which you're creating the alias.
-     * Specify any value except <code>NS</code> or <code>SOA</code>.</p> </li> </ul>
+     * <p> <b>CloudFront distributions:</b> <code>A</code> </p> <p>If IPv6 is enabled
+     * for the distribution, create two resource record sets to route traffic to your
+     * distribution, one with a value of <code>A</code> and one with a value of
+     * <code>AAAA</code>. </p> </li> <li> <p> <b>AWS Elastic Beanstalk environment that
+     * has a regionalized subdomain</b>: <code>A</code> </p> </li> <li> <p> <b>ELB load
+     * balancers:</b> <code>A</code> | <code>AAAA</code> </p> </li> <li> <p> <b>Amazon
+     * S3 buckets:</b> <code>A</code> </p> </li> <li> <p> <b>Another resource record
+     * set in this hosted zone:</b> Specify the type of the resource record set for
+     * which you're creating the alias. Specify any value except <code>NS</code> or
+     * <code>SOA</code>.</p> </li> </ul>
      */
     inline const RRType& GetType() const{ return m_type; }
 
@@ -310,13 +316,16 @@ namespace Model
      * are not to use it." In RFC 7208, see section 14.1, <a
      * href="http://tools.ietf.org/html/rfc7208#section-14.1">The SPF DNS Record
      * Type</a>.</p> </note> <p>Values for alias resource record sets:</p> <ul> <li>
-     * <p> <b>CloudFront distributions:</b> <code>A</code> </p> </li> <li> <p>
-     * <b>Elastic Beanstalk environment that has a regionalized subdomain</b>:
-     * <code>A</code> </p> </li> <li> <p> <b>ELB load balancers:</b> <code>A</code> |
-     * <code>AAAA</code> </p> </li> <li> <p> <b>Amazon S3 buckets:</b> <code>A</code>
-     * </p> </li> <li> <p> <b>Another resource record set in this hosted zone:</b>
-     * Specify the type of the resource record set for which you're creating the alias.
-     * Specify any value except <code>NS</code> or <code>SOA</code>.</p> </li> </ul>
+     * <p> <b>CloudFront distributions:</b> <code>A</code> </p> <p>If IPv6 is enabled
+     * for the distribution, create two resource record sets to route traffic to your
+     * distribution, one with a value of <code>A</code> and one with a value of
+     * <code>AAAA</code>. </p> </li> <li> <p> <b>AWS Elastic Beanstalk environment that
+     * has a regionalized subdomain</b>: <code>A</code> </p> </li> <li> <p> <b>ELB load
+     * balancers:</b> <code>A</code> | <code>AAAA</code> </p> </li> <li> <p> <b>Amazon
+     * S3 buckets:</b> <code>A</code> </p> </li> <li> <p> <b>Another resource record
+     * set in this hosted zone:</b> Specify the type of the resource record set for
+     * which you're creating the alias. Specify any value except <code>NS</code> or
+     * <code>SOA</code>.</p> </li> </ul>
      */
     inline void SetType(const RRType& value) { m_typeHasBeenSet = true; m_type = value; }
 
@@ -344,13 +353,16 @@ namespace Model
      * are not to use it." In RFC 7208, see section 14.1, <a
      * href="http://tools.ietf.org/html/rfc7208#section-14.1">The SPF DNS Record
      * Type</a>.</p> </note> <p>Values for alias resource record sets:</p> <ul> <li>
-     * <p> <b>CloudFront distributions:</b> <code>A</code> </p> </li> <li> <p>
-     * <b>Elastic Beanstalk environment that has a regionalized subdomain</b>:
-     * <code>A</code> </p> </li> <li> <p> <b>ELB load balancers:</b> <code>A</code> |
-     * <code>AAAA</code> </p> </li> <li> <p> <b>Amazon S3 buckets:</b> <code>A</code>
-     * </p> </li> <li> <p> <b>Another resource record set in this hosted zone:</b>
-     * Specify the type of the resource record set for which you're creating the alias.
-     * Specify any value except <code>NS</code> or <code>SOA</code>.</p> </li> </ul>
+     * <p> <b>CloudFront distributions:</b> <code>A</code> </p> <p>If IPv6 is enabled
+     * for the distribution, create two resource record sets to route traffic to your
+     * distribution, one with a value of <code>A</code> and one with a value of
+     * <code>AAAA</code>. </p> </li> <li> <p> <b>AWS Elastic Beanstalk environment that
+     * has a regionalized subdomain</b>: <code>A</code> </p> </li> <li> <p> <b>ELB load
+     * balancers:</b> <code>A</code> | <code>AAAA</code> </p> </li> <li> <p> <b>Amazon
+     * S3 buckets:</b> <code>A</code> </p> </li> <li> <p> <b>Another resource record
+     * set in this hosted zone:</b> Specify the type of the resource record set for
+     * which you're creating the alias. Specify any value except <code>NS</code> or
+     * <code>SOA</code>.</p> </li> </ul>
      */
     inline void SetType(RRType&& value) { m_typeHasBeenSet = true; m_type = value; }
 
@@ -378,13 +390,16 @@ namespace Model
      * are not to use it." In RFC 7208, see section 14.1, <a
      * href="http://tools.ietf.org/html/rfc7208#section-14.1">The SPF DNS Record
      * Type</a>.</p> </note> <p>Values for alias resource record sets:</p> <ul> <li>
-     * <p> <b>CloudFront distributions:</b> <code>A</code> </p> </li> <li> <p>
-     * <b>Elastic Beanstalk environment that has a regionalized subdomain</b>:
-     * <code>A</code> </p> </li> <li> <p> <b>ELB load balancers:</b> <code>A</code> |
-     * <code>AAAA</code> </p> </li> <li> <p> <b>Amazon S3 buckets:</b> <code>A</code>
-     * </p> </li> <li> <p> <b>Another resource record set in this hosted zone:</b>
-     * Specify the type of the resource record set for which you're creating the alias.
-     * Specify any value except <code>NS</code> or <code>SOA</code>.</p> </li> </ul>
+     * <p> <b>CloudFront distributions:</b> <code>A</code> </p> <p>If IPv6 is enabled
+     * for the distribution, create two resource record sets to route traffic to your
+     * distribution, one with a value of <code>A</code> and one with a value of
+     * <code>AAAA</code>. </p> </li> <li> <p> <b>AWS Elastic Beanstalk environment that
+     * has a regionalized subdomain</b>: <code>A</code> </p> </li> <li> <p> <b>ELB load
+     * balancers:</b> <code>A</code> | <code>AAAA</code> </p> </li> <li> <p> <b>Amazon
+     * S3 buckets:</b> <code>A</code> </p> </li> <li> <p> <b>Another resource record
+     * set in this hosted zone:</b> Specify the type of the resource record set for
+     * which you're creating the alias. Specify any value except <code>NS</code> or
+     * <code>SOA</code>.</p> </li> </ul>
      */
     inline ResourceRecordSet& WithType(const RRType& value) { SetType(value); return *this;}
 
@@ -412,13 +427,16 @@ namespace Model
      * are not to use it." In RFC 7208, see section 14.1, <a
      * href="http://tools.ietf.org/html/rfc7208#section-14.1">The SPF DNS Record
      * Type</a>.</p> </note> <p>Values for alias resource record sets:</p> <ul> <li>
-     * <p> <b>CloudFront distributions:</b> <code>A</code> </p> </li> <li> <p>
-     * <b>Elastic Beanstalk environment that has a regionalized subdomain</b>:
-     * <code>A</code> </p> </li> <li> <p> <b>ELB load balancers:</b> <code>A</code> |
-     * <code>AAAA</code> </p> </li> <li> <p> <b>Amazon S3 buckets:</b> <code>A</code>
-     * </p> </li> <li> <p> <b>Another resource record set in this hosted zone:</b>
-     * Specify the type of the resource record set for which you're creating the alias.
-     * Specify any value except <code>NS</code> or <code>SOA</code>.</p> </li> </ul>
+     * <p> <b>CloudFront distributions:</b> <code>A</code> </p> <p>If IPv6 is enabled
+     * for the distribution, create two resource record sets to route traffic to your
+     * distribution, one with a value of <code>A</code> and one with a value of
+     * <code>AAAA</code>. </p> </li> <li> <p> <b>AWS Elastic Beanstalk environment that
+     * has a regionalized subdomain</b>: <code>A</code> </p> </li> <li> <p> <b>ELB load
+     * balancers:</b> <code>A</code> | <code>AAAA</code> </p> </li> <li> <p> <b>Amazon
+     * S3 buckets:</b> <code>A</code> </p> </li> <li> <p> <b>Another resource record
+     * set in this hosted zone:</b> Specify the type of the resource record set for
+     * which you're creating the alias. Specify any value except <code>NS</code> or
+     * <code>SOA</code>.</p> </li> </ul>
      */
     inline ResourceRecordSet& WithType(RRType&& value) { SetType(value); return *this;}
 
@@ -502,7 +520,7 @@ namespace Model
      * the total. Note the following:</p> <ul> <li> <p>You must specify a value for the
      * <code>Weight</code> element for every weighted resource record set.</p> </li>
      * <li> <p>You can only specify one <code>ResourceRecord</code> per weighted
-     * resource record set.</p> </li> <li> <p>You cannot create latency, failover, or
+     * resource record set.</p> </li> <li> <p>You can't create latency, failover, or
      * geolocation resource record sets that have the same values for the
      * <code>Name</code> and <code>Type</code> elements as weighted resource record
      * sets.</p> </li> <li> <p>You can create a maximum of 100 weighted resource record
@@ -532,7 +550,7 @@ namespace Model
      * the total. Note the following:</p> <ul> <li> <p>You must specify a value for the
      * <code>Weight</code> element for every weighted resource record set.</p> </li>
      * <li> <p>You can only specify one <code>ResourceRecord</code> per weighted
-     * resource record set.</p> </li> <li> <p>You cannot create latency, failover, or
+     * resource record set.</p> </li> <li> <p>You can't create latency, failover, or
      * geolocation resource record sets that have the same values for the
      * <code>Name</code> and <code>Type</code> elements as weighted resource record
      * sets.</p> </li> <li> <p>You can create a maximum of 100 weighted resource record
@@ -562,7 +580,7 @@ namespace Model
      * the total. Note the following:</p> <ul> <li> <p>You must specify a value for the
      * <code>Weight</code> element for every weighted resource record set.</p> </li>
      * <li> <p>You can only specify one <code>ResourceRecord</code> per weighted
-     * resource record set.</p> </li> <li> <p>You cannot create latency, failover, or
+     * resource record set.</p> </li> <li> <p>You can't create latency, failover, or
      * geolocation resource record sets that have the same values for the
      * <code>Name</code> and <code>Type</code> elements as weighted resource record
      * sets.</p> </li> <li> <p>You can create a maximum of 100 weighted resource record
@@ -583,23 +601,23 @@ namespace Model
     inline ResourceRecordSet& WithWeight(long long value) { SetWeight(value); return *this;}
 
     /**
-     * <p> <i>Latency-based resource record sets only:</i> The Amazon EC2 region where
+     * <p> <i>Latency-based resource record sets only:</i> The Amazon EC2 Region where
      * the resource that is specified in this resource record set resides. The resource
-     * typically is an AWS resource, such as an Amazon EC2 instance or an ELB load
-     * balancer, and is referred to by an IP address or a DNS domain name, depending on
-     * the record type.</p> <note> <p>Creating latency and latency alias resource
-     * record sets in private hosted zones is not supported.</p> </note> <p>When Amazon
-     * Route 53 receives a DNS query for a domain name and type for which you have
-     * created latency resource record sets, Amazon Route 53 selects the latency
-     * resource record set that has the lowest latency between the end user and the
-     * associated Amazon EC2 region. Amazon Route 53 then returns the value that is
-     * associated with the selected resource record set.</p> <p>Note the following:</p>
-     * <ul> <li> <p>You can only specify one <code>ResourceRecord</code> per latency
-     * resource record set.</p> </li> <li> <p>You can only create one latency resource
-     * record set for each Amazon EC2 region.</p> </li> <li> <p>You are not required to
-     * create latency resource record sets for all Amazon EC2 regions. Amazon Route 53
-     * will choose the region with the best latency from among the regions for which
-     * you create latency resource record sets.</p> </li> <li> <p>You cannot create
+     * typically is an AWS resource, such as an EC2 instance or an ELB load balancer,
+     * and is referred to by an IP address or a DNS domain name, depending on the
+     * record type.</p> <note> <p>Creating latency and latency alias resource record
+     * sets in private hosted zones is not supported.</p> </note> <p>When Amazon Route
+     * 53 receives a DNS query for a domain name and type for which you have created
+     * latency resource record sets, Amazon Route 53 selects the latency resource
+     * record set that has the lowest latency between the end user and the associated
+     * Amazon EC2 Region. Amazon Route 53 then returns the value that is associated
+     * with the selected resource record set.</p> <p>Note the following:</p> <ul> <li>
+     * <p>You can only specify one <code>ResourceRecord</code> per latency resource
+     * record set.</p> </li> <li> <p>You can only create one latency resource record
+     * set for each Amazon EC2 Region.</p> </li> <li> <p>You are not required to create
+     * latency resource record sets for all Amazon EC2 Regions. Amazon Route 53 will
+     * choose the region with the best latency from among the regions for which you
+     * create latency resource record sets.</p> </li> <li> <p>You can't create
      * non-latency resource record sets that have the same values for the
      * <code>Name</code> and <code>Type</code> elements as latency resource record
      * sets.</p> </li> </ul>
@@ -607,23 +625,23 @@ namespace Model
     inline const ResourceRecordSetRegion& GetRegion() const{ return m_region; }
 
     /**
-     * <p> <i>Latency-based resource record sets only:</i> The Amazon EC2 region where
+     * <p> <i>Latency-based resource record sets only:</i> The Amazon EC2 Region where
      * the resource that is specified in this resource record set resides. The resource
-     * typically is an AWS resource, such as an Amazon EC2 instance or an ELB load
-     * balancer, and is referred to by an IP address or a DNS domain name, depending on
-     * the record type.</p> <note> <p>Creating latency and latency alias resource
-     * record sets in private hosted zones is not supported.</p> </note> <p>When Amazon
-     * Route 53 receives a DNS query for a domain name and type for which you have
-     * created latency resource record sets, Amazon Route 53 selects the latency
-     * resource record set that has the lowest latency between the end user and the
-     * associated Amazon EC2 region. Amazon Route 53 then returns the value that is
-     * associated with the selected resource record set.</p> <p>Note the following:</p>
-     * <ul> <li> <p>You can only specify one <code>ResourceRecord</code> per latency
-     * resource record set.</p> </li> <li> <p>You can only create one latency resource
-     * record set for each Amazon EC2 region.</p> </li> <li> <p>You are not required to
-     * create latency resource record sets for all Amazon EC2 regions. Amazon Route 53
-     * will choose the region with the best latency from among the regions for which
-     * you create latency resource record sets.</p> </li> <li> <p>You cannot create
+     * typically is an AWS resource, such as an EC2 instance or an ELB load balancer,
+     * and is referred to by an IP address or a DNS domain name, depending on the
+     * record type.</p> <note> <p>Creating latency and latency alias resource record
+     * sets in private hosted zones is not supported.</p> </note> <p>When Amazon Route
+     * 53 receives a DNS query for a domain name and type for which you have created
+     * latency resource record sets, Amazon Route 53 selects the latency resource
+     * record set that has the lowest latency between the end user and the associated
+     * Amazon EC2 Region. Amazon Route 53 then returns the value that is associated
+     * with the selected resource record set.</p> <p>Note the following:</p> <ul> <li>
+     * <p>You can only specify one <code>ResourceRecord</code> per latency resource
+     * record set.</p> </li> <li> <p>You can only create one latency resource record
+     * set for each Amazon EC2 Region.</p> </li> <li> <p>You are not required to create
+     * latency resource record sets for all Amazon EC2 Regions. Amazon Route 53 will
+     * choose the region with the best latency from among the regions for which you
+     * create latency resource record sets.</p> </li> <li> <p>You can't create
      * non-latency resource record sets that have the same values for the
      * <code>Name</code> and <code>Type</code> elements as latency resource record
      * sets.</p> </li> </ul>
@@ -631,23 +649,23 @@ namespace Model
     inline void SetRegion(const ResourceRecordSetRegion& value) { m_regionHasBeenSet = true; m_region = value; }
 
     /**
-     * <p> <i>Latency-based resource record sets only:</i> The Amazon EC2 region where
+     * <p> <i>Latency-based resource record sets only:</i> The Amazon EC2 Region where
      * the resource that is specified in this resource record set resides. The resource
-     * typically is an AWS resource, such as an Amazon EC2 instance or an ELB load
-     * balancer, and is referred to by an IP address or a DNS domain name, depending on
-     * the record type.</p> <note> <p>Creating latency and latency alias resource
-     * record sets in private hosted zones is not supported.</p> </note> <p>When Amazon
-     * Route 53 receives a DNS query for a domain name and type for which you have
-     * created latency resource record sets, Amazon Route 53 selects the latency
-     * resource record set that has the lowest latency between the end user and the
-     * associated Amazon EC2 region. Amazon Route 53 then returns the value that is
-     * associated with the selected resource record set.</p> <p>Note the following:</p>
-     * <ul> <li> <p>You can only specify one <code>ResourceRecord</code> per latency
-     * resource record set.</p> </li> <li> <p>You can only create one latency resource
-     * record set for each Amazon EC2 region.</p> </li> <li> <p>You are not required to
-     * create latency resource record sets for all Amazon EC2 regions. Amazon Route 53
-     * will choose the region with the best latency from among the regions for which
-     * you create latency resource record sets.</p> </li> <li> <p>You cannot create
+     * typically is an AWS resource, such as an EC2 instance or an ELB load balancer,
+     * and is referred to by an IP address or a DNS domain name, depending on the
+     * record type.</p> <note> <p>Creating latency and latency alias resource record
+     * sets in private hosted zones is not supported.</p> </note> <p>When Amazon Route
+     * 53 receives a DNS query for a domain name and type for which you have created
+     * latency resource record sets, Amazon Route 53 selects the latency resource
+     * record set that has the lowest latency between the end user and the associated
+     * Amazon EC2 Region. Amazon Route 53 then returns the value that is associated
+     * with the selected resource record set.</p> <p>Note the following:</p> <ul> <li>
+     * <p>You can only specify one <code>ResourceRecord</code> per latency resource
+     * record set.</p> </li> <li> <p>You can only create one latency resource record
+     * set for each Amazon EC2 Region.</p> </li> <li> <p>You are not required to create
+     * latency resource record sets for all Amazon EC2 Regions. Amazon Route 53 will
+     * choose the region with the best latency from among the regions for which you
+     * create latency resource record sets.</p> </li> <li> <p>You can't create
      * non-latency resource record sets that have the same values for the
      * <code>Name</code> and <code>Type</code> elements as latency resource record
      * sets.</p> </li> </ul>
@@ -655,23 +673,23 @@ namespace Model
     inline void SetRegion(ResourceRecordSetRegion&& value) { m_regionHasBeenSet = true; m_region = value; }
 
     /**
-     * <p> <i>Latency-based resource record sets only:</i> The Amazon EC2 region where
+     * <p> <i>Latency-based resource record sets only:</i> The Amazon EC2 Region where
      * the resource that is specified in this resource record set resides. The resource
-     * typically is an AWS resource, such as an Amazon EC2 instance or an ELB load
-     * balancer, and is referred to by an IP address or a DNS domain name, depending on
-     * the record type.</p> <note> <p>Creating latency and latency alias resource
-     * record sets in private hosted zones is not supported.</p> </note> <p>When Amazon
-     * Route 53 receives a DNS query for a domain name and type for which you have
-     * created latency resource record sets, Amazon Route 53 selects the latency
-     * resource record set that has the lowest latency between the end user and the
-     * associated Amazon EC2 region. Amazon Route 53 then returns the value that is
-     * associated with the selected resource record set.</p> <p>Note the following:</p>
-     * <ul> <li> <p>You can only specify one <code>ResourceRecord</code> per latency
-     * resource record set.</p> </li> <li> <p>You can only create one latency resource
-     * record set for each Amazon EC2 region.</p> </li> <li> <p>You are not required to
-     * create latency resource record sets for all Amazon EC2 regions. Amazon Route 53
-     * will choose the region with the best latency from among the regions for which
-     * you create latency resource record sets.</p> </li> <li> <p>You cannot create
+     * typically is an AWS resource, such as an EC2 instance or an ELB load balancer,
+     * and is referred to by an IP address or a DNS domain name, depending on the
+     * record type.</p> <note> <p>Creating latency and latency alias resource record
+     * sets in private hosted zones is not supported.</p> </note> <p>When Amazon Route
+     * 53 receives a DNS query for a domain name and type for which you have created
+     * latency resource record sets, Amazon Route 53 selects the latency resource
+     * record set that has the lowest latency between the end user and the associated
+     * Amazon EC2 Region. Amazon Route 53 then returns the value that is associated
+     * with the selected resource record set.</p> <p>Note the following:</p> <ul> <li>
+     * <p>You can only specify one <code>ResourceRecord</code> per latency resource
+     * record set.</p> </li> <li> <p>You can only create one latency resource record
+     * set for each Amazon EC2 Region.</p> </li> <li> <p>You are not required to create
+     * latency resource record sets for all Amazon EC2 Regions. Amazon Route 53 will
+     * choose the region with the best latency from among the regions for which you
+     * create latency resource record sets.</p> </li> <li> <p>You can't create
      * non-latency resource record sets that have the same values for the
      * <code>Name</code> and <code>Type</code> elements as latency resource record
      * sets.</p> </li> </ul>
@@ -679,23 +697,23 @@ namespace Model
     inline ResourceRecordSet& WithRegion(const ResourceRecordSetRegion& value) { SetRegion(value); return *this;}
 
     /**
-     * <p> <i>Latency-based resource record sets only:</i> The Amazon EC2 region where
+     * <p> <i>Latency-based resource record sets only:</i> The Amazon EC2 Region where
      * the resource that is specified in this resource record set resides. The resource
-     * typically is an AWS resource, such as an Amazon EC2 instance or an ELB load
-     * balancer, and is referred to by an IP address or a DNS domain name, depending on
-     * the record type.</p> <note> <p>Creating latency and latency alias resource
-     * record sets in private hosted zones is not supported.</p> </note> <p>When Amazon
-     * Route 53 receives a DNS query for a domain name and type for which you have
-     * created latency resource record sets, Amazon Route 53 selects the latency
-     * resource record set that has the lowest latency between the end user and the
-     * associated Amazon EC2 region. Amazon Route 53 then returns the value that is
-     * associated with the selected resource record set.</p> <p>Note the following:</p>
-     * <ul> <li> <p>You can only specify one <code>ResourceRecord</code> per latency
-     * resource record set.</p> </li> <li> <p>You can only create one latency resource
-     * record set for each Amazon EC2 region.</p> </li> <li> <p>You are not required to
-     * create latency resource record sets for all Amazon EC2 regions. Amazon Route 53
-     * will choose the region with the best latency from among the regions for which
-     * you create latency resource record sets.</p> </li> <li> <p>You cannot create
+     * typically is an AWS resource, such as an EC2 instance or an ELB load balancer,
+     * and is referred to by an IP address or a DNS domain name, depending on the
+     * record type.</p> <note> <p>Creating latency and latency alias resource record
+     * sets in private hosted zones is not supported.</p> </note> <p>When Amazon Route
+     * 53 receives a DNS query for a domain name and type for which you have created
+     * latency resource record sets, Amazon Route 53 selects the latency resource
+     * record set that has the lowest latency between the end user and the associated
+     * Amazon EC2 Region. Amazon Route 53 then returns the value that is associated
+     * with the selected resource record set.</p> <p>Note the following:</p> <ul> <li>
+     * <p>You can only specify one <code>ResourceRecord</code> per latency resource
+     * record set.</p> </li> <li> <p>You can only create one latency resource record
+     * set for each Amazon EC2 Region.</p> </li> <li> <p>You are not required to create
+     * latency resource record sets for all Amazon EC2 Regions. Amazon Route 53 will
+     * choose the region with the best latency from among the regions for which you
+     * create latency resource record sets.</p> </li> <li> <p>You can't create
      * non-latency resource record sets that have the same values for the
      * <code>Name</code> and <code>Type</code> elements as latency resource record
      * sets.</p> </li> </ul>
@@ -715,24 +733,24 @@ namespace Model
      * continent and one for a country on the same continent), priority goes to the
      * smallest geographic region. This allows you to route most queries for a
      * continent to one resource and to route queries for a country on that continent
-     * to a different resource.</p> <p>You cannot create two geolocation resource
-     * record sets that specify the same geographic location.</p> <p>The value
-     * <code>*</code> in the <code>CountryCode</code> element matches all geographic
-     * locations that aren't specified in other geolocation resource record sets that
-     * have the same values for the <code>Name</code> and <code>Type</code>
-     * elements.</p> <important> <p>Geolocation works by mapping IP addresses to
-     * locations. However, some IP addresses aren't mapped to geographic locations, so
-     * even if you create geolocation resource record sets that cover all seven
-     * continents, Amazon Route 53 will receive some DNS queries from locations that it
-     * can't identify. We recommend that you create a resource record set for which the
-     * value of <code>CountryCode</code> is <code>*</code>, which handles both queries
-     * that come from locations for which you haven't created geolocation resource
-     * record sets and queries from IP addresses that aren't mapped to a location. If
-     * you don't create a <code>*</code> resource record set, Amazon Route 53 returns a
-     * "no answer" response for queries from those locations.</p> </important> <p>You
-     * cannot create non-geolocation resource record sets that have the same values for
-     * the <code>Name</code> and <code>Type</code> elements as geolocation resource
-     * record sets.</p>
+     * to a different resource.</p> <p>You can't create two geolocation resource record
+     * sets that specify the same geographic location.</p> <p>The value <code>*</code>
+     * in the <code>CountryCode</code> element matches all geographic locations that
+     * aren't specified in other geolocation resource record sets that have the same
+     * values for the <code>Name</code> and <code>Type</code> elements.</p> <important>
+     * <p>Geolocation works by mapping IP addresses to locations. However, some IP
+     * addresses aren't mapped to geographic locations, so even if you create
+     * geolocation resource record sets that cover all seven continents, Amazon Route
+     * 53 will receive some DNS queries from locations that it can't identify. We
+     * recommend that you create a resource record set for which the value of
+     * <code>CountryCode</code> is <code>*</code>, which handles both queries that come
+     * from locations for which you haven't created geolocation resource record sets
+     * and queries from IP addresses that aren't mapped to a location. If you don't
+     * create a <code>*</code> resource record set, Amazon Route 53 returns a "no
+     * answer" response for queries from those locations.</p> </important> <p>You can't
+     * create non-geolocation resource record sets that have the same values for the
+     * <code>Name</code> and <code>Type</code> elements as geolocation resource record
+     * sets.</p>
      */
     inline const GeoLocation& GetGeoLocation() const{ return m_geoLocation; }
 
@@ -749,24 +767,24 @@ namespace Model
      * continent and one for a country on the same continent), priority goes to the
      * smallest geographic region. This allows you to route most queries for a
      * continent to one resource and to route queries for a country on that continent
-     * to a different resource.</p> <p>You cannot create two geolocation resource
-     * record sets that specify the same geographic location.</p> <p>The value
-     * <code>*</code> in the <code>CountryCode</code> element matches all geographic
-     * locations that aren't specified in other geolocation resource record sets that
-     * have the same values for the <code>Name</code> and <code>Type</code>
-     * elements.</p> <important> <p>Geolocation works by mapping IP addresses to
-     * locations. However, some IP addresses aren't mapped to geographic locations, so
-     * even if you create geolocation resource record sets that cover all seven
-     * continents, Amazon Route 53 will receive some DNS queries from locations that it
-     * can't identify. We recommend that you create a resource record set for which the
-     * value of <code>CountryCode</code> is <code>*</code>, which handles both queries
-     * that come from locations for which you haven't created geolocation resource
-     * record sets and queries from IP addresses that aren't mapped to a location. If
-     * you don't create a <code>*</code> resource record set, Amazon Route 53 returns a
-     * "no answer" response for queries from those locations.</p> </important> <p>You
-     * cannot create non-geolocation resource record sets that have the same values for
-     * the <code>Name</code> and <code>Type</code> elements as geolocation resource
-     * record sets.</p>
+     * to a different resource.</p> <p>You can't create two geolocation resource record
+     * sets that specify the same geographic location.</p> <p>The value <code>*</code>
+     * in the <code>CountryCode</code> element matches all geographic locations that
+     * aren't specified in other geolocation resource record sets that have the same
+     * values for the <code>Name</code> and <code>Type</code> elements.</p> <important>
+     * <p>Geolocation works by mapping IP addresses to locations. However, some IP
+     * addresses aren't mapped to geographic locations, so even if you create
+     * geolocation resource record sets that cover all seven continents, Amazon Route
+     * 53 will receive some DNS queries from locations that it can't identify. We
+     * recommend that you create a resource record set for which the value of
+     * <code>CountryCode</code> is <code>*</code>, which handles both queries that come
+     * from locations for which you haven't created geolocation resource record sets
+     * and queries from IP addresses that aren't mapped to a location. If you don't
+     * create a <code>*</code> resource record set, Amazon Route 53 returns a "no
+     * answer" response for queries from those locations.</p> </important> <p>You can't
+     * create non-geolocation resource record sets that have the same values for the
+     * <code>Name</code> and <code>Type</code> elements as geolocation resource record
+     * sets.</p>
      */
     inline void SetGeoLocation(const GeoLocation& value) { m_geoLocationHasBeenSet = true; m_geoLocation = value; }
 
@@ -783,24 +801,24 @@ namespace Model
      * continent and one for a country on the same continent), priority goes to the
      * smallest geographic region. This allows you to route most queries for a
      * continent to one resource and to route queries for a country on that continent
-     * to a different resource.</p> <p>You cannot create two geolocation resource
-     * record sets that specify the same geographic location.</p> <p>The value
-     * <code>*</code> in the <code>CountryCode</code> element matches all geographic
-     * locations that aren't specified in other geolocation resource record sets that
-     * have the same values for the <code>Name</code> and <code>Type</code>
-     * elements.</p> <important> <p>Geolocation works by mapping IP addresses to
-     * locations. However, some IP addresses aren't mapped to geographic locations, so
-     * even if you create geolocation resource record sets that cover all seven
-     * continents, Amazon Route 53 will receive some DNS queries from locations that it
-     * can't identify. We recommend that you create a resource record set for which the
-     * value of <code>CountryCode</code> is <code>*</code>, which handles both queries
-     * that come from locations for which you haven't created geolocation resource
-     * record sets and queries from IP addresses that aren't mapped to a location. If
-     * you don't create a <code>*</code> resource record set, Amazon Route 53 returns a
-     * "no answer" response for queries from those locations.</p> </important> <p>You
-     * cannot create non-geolocation resource record sets that have the same values for
-     * the <code>Name</code> and <code>Type</code> elements as geolocation resource
-     * record sets.</p>
+     * to a different resource.</p> <p>You can't create two geolocation resource record
+     * sets that specify the same geographic location.</p> <p>The value <code>*</code>
+     * in the <code>CountryCode</code> element matches all geographic locations that
+     * aren't specified in other geolocation resource record sets that have the same
+     * values for the <code>Name</code> and <code>Type</code> elements.</p> <important>
+     * <p>Geolocation works by mapping IP addresses to locations. However, some IP
+     * addresses aren't mapped to geographic locations, so even if you create
+     * geolocation resource record sets that cover all seven continents, Amazon Route
+     * 53 will receive some DNS queries from locations that it can't identify. We
+     * recommend that you create a resource record set for which the value of
+     * <code>CountryCode</code> is <code>*</code>, which handles both queries that come
+     * from locations for which you haven't created geolocation resource record sets
+     * and queries from IP addresses that aren't mapped to a location. If you don't
+     * create a <code>*</code> resource record set, Amazon Route 53 returns a "no
+     * answer" response for queries from those locations.</p> </important> <p>You can't
+     * create non-geolocation resource record sets that have the same values for the
+     * <code>Name</code> and <code>Type</code> elements as geolocation resource record
+     * sets.</p>
      */
     inline void SetGeoLocation(GeoLocation&& value) { m_geoLocationHasBeenSet = true; m_geoLocation = value; }
 
@@ -817,24 +835,24 @@ namespace Model
      * continent and one for a country on the same continent), priority goes to the
      * smallest geographic region. This allows you to route most queries for a
      * continent to one resource and to route queries for a country on that continent
-     * to a different resource.</p> <p>You cannot create two geolocation resource
-     * record sets that specify the same geographic location.</p> <p>The value
-     * <code>*</code> in the <code>CountryCode</code> element matches all geographic
-     * locations that aren't specified in other geolocation resource record sets that
-     * have the same values for the <code>Name</code> and <code>Type</code>
-     * elements.</p> <important> <p>Geolocation works by mapping IP addresses to
-     * locations. However, some IP addresses aren't mapped to geographic locations, so
-     * even if you create geolocation resource record sets that cover all seven
-     * continents, Amazon Route 53 will receive some DNS queries from locations that it
-     * can't identify. We recommend that you create a resource record set for which the
-     * value of <code>CountryCode</code> is <code>*</code>, which handles both queries
-     * that come from locations for which you haven't created geolocation resource
-     * record sets and queries from IP addresses that aren't mapped to a location. If
-     * you don't create a <code>*</code> resource record set, Amazon Route 53 returns a
-     * "no answer" response for queries from those locations.</p> </important> <p>You
-     * cannot create non-geolocation resource record sets that have the same values for
-     * the <code>Name</code> and <code>Type</code> elements as geolocation resource
-     * record sets.</p>
+     * to a different resource.</p> <p>You can't create two geolocation resource record
+     * sets that specify the same geographic location.</p> <p>The value <code>*</code>
+     * in the <code>CountryCode</code> element matches all geographic locations that
+     * aren't specified in other geolocation resource record sets that have the same
+     * values for the <code>Name</code> and <code>Type</code> elements.</p> <important>
+     * <p>Geolocation works by mapping IP addresses to locations. However, some IP
+     * addresses aren't mapped to geographic locations, so even if you create
+     * geolocation resource record sets that cover all seven continents, Amazon Route
+     * 53 will receive some DNS queries from locations that it can't identify. We
+     * recommend that you create a resource record set for which the value of
+     * <code>CountryCode</code> is <code>*</code>, which handles both queries that come
+     * from locations for which you haven't created geolocation resource record sets
+     * and queries from IP addresses that aren't mapped to a location. If you don't
+     * create a <code>*</code> resource record set, Amazon Route 53 returns a "no
+     * answer" response for queries from those locations.</p> </important> <p>You can't
+     * create non-geolocation resource record sets that have the same values for the
+     * <code>Name</code> and <code>Type</code> elements as geolocation resource record
+     * sets.</p>
      */
     inline ResourceRecordSet& WithGeoLocation(const GeoLocation& value) { SetGeoLocation(value); return *this;}
 
@@ -851,24 +869,24 @@ namespace Model
      * continent and one for a country on the same continent), priority goes to the
      * smallest geographic region. This allows you to route most queries for a
      * continent to one resource and to route queries for a country on that continent
-     * to a different resource.</p> <p>You cannot create two geolocation resource
-     * record sets that specify the same geographic location.</p> <p>The value
-     * <code>*</code> in the <code>CountryCode</code> element matches all geographic
-     * locations that aren't specified in other geolocation resource record sets that
-     * have the same values for the <code>Name</code> and <code>Type</code>
-     * elements.</p> <important> <p>Geolocation works by mapping IP addresses to
-     * locations. However, some IP addresses aren't mapped to geographic locations, so
-     * even if you create geolocation resource record sets that cover all seven
-     * continents, Amazon Route 53 will receive some DNS queries from locations that it
-     * can't identify. We recommend that you create a resource record set for which the
-     * value of <code>CountryCode</code> is <code>*</code>, which handles both queries
-     * that come from locations for which you haven't created geolocation resource
-     * record sets and queries from IP addresses that aren't mapped to a location. If
-     * you don't create a <code>*</code> resource record set, Amazon Route 53 returns a
-     * "no answer" response for queries from those locations.</p> </important> <p>You
-     * cannot create non-geolocation resource record sets that have the same values for
-     * the <code>Name</code> and <code>Type</code> elements as geolocation resource
-     * record sets.</p>
+     * to a different resource.</p> <p>You can't create two geolocation resource record
+     * sets that specify the same geographic location.</p> <p>The value <code>*</code>
+     * in the <code>CountryCode</code> element matches all geographic locations that
+     * aren't specified in other geolocation resource record sets that have the same
+     * values for the <code>Name</code> and <code>Type</code> elements.</p> <important>
+     * <p>Geolocation works by mapping IP addresses to locations. However, some IP
+     * addresses aren't mapped to geographic locations, so even if you create
+     * geolocation resource record sets that cover all seven continents, Amazon Route
+     * 53 will receive some DNS queries from locations that it can't identify. We
+     * recommend that you create a resource record set for which the value of
+     * <code>CountryCode</code> is <code>*</code>, which handles both queries that come
+     * from locations for which you haven't created geolocation resource record sets
+     * and queries from IP addresses that aren't mapped to a location. If you don't
+     * create a <code>*</code> resource record set, Amazon Route 53 returns a "no
+     * answer" response for queries from those locations.</p> </important> <p>You can't
+     * create non-geolocation resource record sets that have the same values for the
+     * <code>Name</code> and <code>Type</code> elements as geolocation resource record
+     * sets.</p>
      */
     inline ResourceRecordSet& WithGeoLocation(GeoLocation&& value) { SetGeoLocation(value); return *this;}
 
@@ -895,7 +913,7 @@ namespace Model
      * the primary resource record set is unhealthy, Amazon Route 53 always responds to
      * DNS queries with the applicable value from the secondary resource record set.
      * This is true regardless of the health of the associated endpoint.</p> </li>
-     * </ul> <p>You cannot create non-failover resource record sets that have the same
+     * </ul> <p>You can't create non-failover resource record sets that have the same
      * values for the <code>Name</code> and <code>Type</code> elements as failover
      * resource record sets.</p> <p>For failover alias resource record sets, you must
      * also include the <code>EvaluateTargetHealth</code> element and set the value to
@@ -933,7 +951,7 @@ namespace Model
      * the primary resource record set is unhealthy, Amazon Route 53 always responds to
      * DNS queries with the applicable value from the secondary resource record set.
      * This is true regardless of the health of the associated endpoint.</p> </li>
-     * </ul> <p>You cannot create non-failover resource record sets that have the same
+     * </ul> <p>You can't create non-failover resource record sets that have the same
      * values for the <code>Name</code> and <code>Type</code> elements as failover
      * resource record sets.</p> <p>For failover alias resource record sets, you must
      * also include the <code>EvaluateTargetHealth</code> element and set the value to
@@ -971,7 +989,7 @@ namespace Model
      * the primary resource record set is unhealthy, Amazon Route 53 always responds to
      * DNS queries with the applicable value from the secondary resource record set.
      * This is true regardless of the health of the associated endpoint.</p> </li>
-     * </ul> <p>You cannot create non-failover resource record sets that have the same
+     * </ul> <p>You can't create non-failover resource record sets that have the same
      * values for the <code>Name</code> and <code>Type</code> elements as failover
      * resource record sets.</p> <p>For failover alias resource record sets, you must
      * also include the <code>EvaluateTargetHealth</code> element and set the value to
@@ -1009,7 +1027,7 @@ namespace Model
      * the primary resource record set is unhealthy, Amazon Route 53 always responds to
      * DNS queries with the applicable value from the secondary resource record set.
      * This is true regardless of the health of the associated endpoint.</p> </li>
-     * </ul> <p>You cannot create non-failover resource record sets that have the same
+     * </ul> <p>You can't create non-failover resource record sets that have the same
      * values for the <code>Name</code> and <code>Type</code> elements as failover
      * resource record sets.</p> <p>For failover alias resource record sets, you must
      * also include the <code>EvaluateTargetHealth</code> element and set the value to
@@ -1047,7 +1065,7 @@ namespace Model
      * the primary resource record set is unhealthy, Amazon Route 53 always responds to
      * DNS queries with the applicable value from the secondary resource record set.
      * This is true regardless of the health of the associated endpoint.</p> </li>
-     * </ul> <p>You cannot create non-failover resource record sets that have the same
+     * </ul> <p>You can't create non-failover resource record sets that have the same
      * values for the <code>Name</code> and <code>Type</code> elements as failover
      * resource record sets.</p> <p>For failover alias resource record sets, you must
      * also include the <code>EvaluateTargetHealth</code> element and set the value to
@@ -1170,9 +1188,9 @@ namespace Model
 
     /**
      * <p> <i>Alias resource record sets only:</i> Information about the CloudFront
-     * distribution, Elastic Beanstalk environment, ELB load balancer, Amazon S3
+     * distribution, AWS Elastic Beanstalk environment, ELB load balancer, Amazon S3
      * bucket, or Amazon Route 53 resource record set to which you are redirecting
-     * queries. The Elastic Beanstalk environment must have a regionalized
+     * queries. The AWS Elastic Beanstalk environment must have a regionalized
      * subdomain.</p> <p>If you're creating resource records sets for a private hosted
      * zone, note the following:</p> <ul> <li> <p>You can't create alias resource
      * record sets for CloudFront distributions in a private hosted zone.</p> </li>
@@ -1188,9 +1206,9 @@ namespace Model
 
     /**
      * <p> <i>Alias resource record sets only:</i> Information about the CloudFront
-     * distribution, Elastic Beanstalk environment, ELB load balancer, Amazon S3
+     * distribution, AWS Elastic Beanstalk environment, ELB load balancer, Amazon S3
      * bucket, or Amazon Route 53 resource record set to which you are redirecting
-     * queries. The Elastic Beanstalk environment must have a regionalized
+     * queries. The AWS Elastic Beanstalk environment must have a regionalized
      * subdomain.</p> <p>If you're creating resource records sets for a private hosted
      * zone, note the following:</p> <ul> <li> <p>You can't create alias resource
      * record sets for CloudFront distributions in a private hosted zone.</p> </li>
@@ -1206,9 +1224,9 @@ namespace Model
 
     /**
      * <p> <i>Alias resource record sets only:</i> Information about the CloudFront
-     * distribution, Elastic Beanstalk environment, ELB load balancer, Amazon S3
+     * distribution, AWS Elastic Beanstalk environment, ELB load balancer, Amazon S3
      * bucket, or Amazon Route 53 resource record set to which you are redirecting
-     * queries. The Elastic Beanstalk environment must have a regionalized
+     * queries. The AWS Elastic Beanstalk environment must have a regionalized
      * subdomain.</p> <p>If you're creating resource records sets for a private hosted
      * zone, note the following:</p> <ul> <li> <p>You can't create alias resource
      * record sets for CloudFront distributions in a private hosted zone.</p> </li>
@@ -1224,9 +1242,9 @@ namespace Model
 
     /**
      * <p> <i>Alias resource record sets only:</i> Information about the CloudFront
-     * distribution, Elastic Beanstalk environment, ELB load balancer, Amazon S3
+     * distribution, AWS Elastic Beanstalk environment, ELB load balancer, Amazon S3
      * bucket, or Amazon Route 53 resource record set to which you are redirecting
-     * queries. The Elastic Beanstalk environment must have a regionalized
+     * queries. The AWS Elastic Beanstalk environment must have a regionalized
      * subdomain.</p> <p>If you're creating resource records sets for a private hosted
      * zone, note the following:</p> <ul> <li> <p>You can't create alias resource
      * record sets for CloudFront distributions in a private hosted zone.</p> </li>
@@ -1242,9 +1260,9 @@ namespace Model
 
     /**
      * <p> <i>Alias resource record sets only:</i> Information about the CloudFront
-     * distribution, Elastic Beanstalk environment, ELB load balancer, Amazon S3
+     * distribution, AWS Elastic Beanstalk environment, ELB load balancer, Amazon S3
      * bucket, or Amazon Route 53 resource record set to which you are redirecting
-     * queries. The Elastic Beanstalk environment must have a regionalized
+     * queries. The AWS Elastic Beanstalk environment must have a regionalized
      * subdomain.</p> <p>If you're creating resource records sets for a private hosted
      * zone, note the following:</p> <ul> <li> <p>You can't create alias resource
      * record sets for CloudFront distributions in a private hosted zone.</p> </li>

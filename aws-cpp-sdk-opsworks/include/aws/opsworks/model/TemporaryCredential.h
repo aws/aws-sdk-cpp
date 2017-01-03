@@ -32,7 +32,9 @@ namespace Model
 
   /**
    * <p>Contains the data needed by RDP clients such as the Microsoft Remote Desktop
-   * Connection to log in to the instance.</p>
+   * Connection to log in to the instance.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/TemporaryCredential">AWS
+   * API Reference</a></p>
    */
   class AWS_OPSWORKS_API TemporaryCredential
   {

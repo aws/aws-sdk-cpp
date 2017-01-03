@@ -38,7 +38,10 @@ namespace Model
    * retrieve from the table.</p> <p>For each primary key, you must provide
    * <i>all</i> of the key attributes. For example, with a simple primary key, you
    * only need to provide the partition key. For a composite primary key, you must
-   * provide <i>both</i> the partition key and the sort key.</p>
+   * provide <i>both</i> the partition key and the sort key.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/KeysAndAttributes">AWS
+   * API Reference</a></p>
    */
   class AWS_DYNAMODB_API KeysAndAttributes
   {

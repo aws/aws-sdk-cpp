@@ -27,7 +27,10 @@ namespace Model
 {
 
   /**
-   * <p>Represents the request to create a user pool client.</p>
+   * <p>Represents the request to create a user pool client.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CreateUserPoolClientRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_COGNITOIDENTITYPROVIDER_API CreateUserPoolClientRequest : public CognitoIdentityProviderRequest
   {
@@ -133,17 +136,17 @@ namespace Model
     inline CreateUserPoolClientRequest& WithGenerateSecret(bool value) { SetGenerateSecret(value); return *this;}
 
     /**
-     * <p>Refreshes the token validity.</p>
+     * <p>The validity of the refresh token, in days.</p>
      */
     inline int GetRefreshTokenValidity() const{ return m_refreshTokenValidity; }
 
     /**
-     * <p>Refreshes the token validity.</p>
+     * <p>The validity of the refresh token, in days.</p>
      */
     inline void SetRefreshTokenValidity(int value) { m_refreshTokenValidityHasBeenSet = true; m_refreshTokenValidity = value; }
 
     /**
-     * <p>Refreshes the token validity.</p>
+     * <p>The validity of the refresh token, in days.</p>
      */
     inline CreateUserPoolClientRequest& WithRefreshTokenValidity(int value) { SetRefreshTokenValidity(value); return *this;}
 

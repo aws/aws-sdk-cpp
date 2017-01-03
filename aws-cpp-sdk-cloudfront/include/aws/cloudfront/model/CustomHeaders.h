@@ -32,7 +32,10 @@ namespace Model
 {
 
   /**
-   * A complex type that contains the list of Custom Headers for each origin.
+   * A complex type that contains the list of Custom Headers for each
+   * origin.<p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/CustomHeaders">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API CustomHeaders
   {

@@ -31,7 +31,10 @@ namespace Model
 {
 
   /**
-   * <p> Describes the data specification of a <code>DataSource</code>.</p>
+   * <p> Describes the data specification of a <code>DataSource</code>.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/S3DataSpec">AWS
+   * API Reference</a></p>
    */
   class AWS_MACHINELEARNING_API S3DataSpec
   {

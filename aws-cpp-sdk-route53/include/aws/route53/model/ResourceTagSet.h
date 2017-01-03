@@ -34,7 +34,10 @@ namespace Model
 {
 
   /**
-   * <p>A complex type containing a resource and its associated tags.</p>
+   * <p>A complex type containing a resource and its associated tags.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ResourceTagSet">AWS
+   * API Reference</a></p>
    */
   class AWS_ROUTE53_API ResourceTagSet
   {

@@ -34,7 +34,9 @@ namespace Model
 
   /**
    * <p>The configured access rules for the domain's document and search endpoints,
-   * and the current status of those rules.</p>
+   * and the current status of those rules.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/AccessPoliciesStatus">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDSEARCH_API AccessPoliciesStatus
   {

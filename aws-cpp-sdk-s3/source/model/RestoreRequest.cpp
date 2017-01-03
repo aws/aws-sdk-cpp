@@ -31,13 +31,15 @@ namespace Model
 
 RestoreRequest::RestoreRequest() : 
     m_days(0),
-    m_daysHasBeenSet(false)
+    m_daysHasBeenSet(false),
+    m_glacierJobParametersHasBeenSet(false)
 {
 }
 
 RestoreRequest::RestoreRequest(const XmlNode& xmlNode) : 
     m_days(0),
-    m_daysHasBeenSet(false)
+    m_daysHasBeenSet(false),
+    m_glacierJobParametersHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -54,6 +56,12 @@ RestoreRequest& RestoreRequest::operator =(const XmlNode& xmlNode)
       m_days = StringUtils::ConvertToInt32(StringUtils::Trim(daysNode.GetText().c_str()).c_str());
       m_daysHasBeenSet = true;
     }
+    XmlNode glacierJobParametersNode = resultNode.FirstChild("GlacierJobParameters");
+    if(!glacierJobParametersNode.IsNull())
+    {
+      m_glacierJobParameters = glacierJobParametersNode;
+      m_glacierJobParametersHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -68,6 +76,12 @@ void RestoreRequest::AddToNode(XmlNode& parentNode) const
   ss << m_days;
    daysNode.SetText(ss.str());
   ss.str("");
+  }
+
+  if(m_glacierJobParametersHasBeenSet)
+  {
+   XmlNode glacierJobParametersNode = parentNode.CreateChildElement("GlacierJobParameters");
+   m_glacierJobParameters.AddToNode(glacierJobParametersNode);
   }
 
 }

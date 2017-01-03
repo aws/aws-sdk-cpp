@@ -64,6 +64,16 @@ public class C2jModelToGeneratorModelTransformer {
         return null;
     }
 
+    String addDocCrossLinks(final String documentation, final String uid, final String shapeOrOperationName) {
+        if(documentation != null && uid != null) {
+            String seeAlsoRef = String.format("<p><h3>See Also:</h3>   <a href=\"http://docs.aws.amazon.com/goto/WebAPI/%s/%s\">AWS API Reference</a></p>",
+                     uid, shapeOrOperationName);
+
+            return documentation + seeAlsoRef;
+        }
+        return documentation;
+    }
+
     void removeUnreferencedShapes() {
         Iterator<String> iterator = shapes.keySet().iterator();
         while (iterator.hasNext()) {
@@ -152,8 +162,8 @@ public class C2jModelToGeneratorModelTransformer {
 
         Shape shape = new Shape();
         shape.setName(CppViewHelper.convertToUpperCamel(shapeName));
-
-        shape.setDocumentation(formatDocumentation(c2jShape.getDocumentation(), 3));
+        String crossLinkedShapeDocs = addDocCrossLinks(c2jShape.getDocumentation(), c2jServiceModel.getMetadata().getUid(), shape.getName());
+        shape.setDocumentation(formatDocumentation(crossLinkedShapeDocs, 3));
 
         if (c2jShape.getEnums() != null) {
             shape.setEnumValues(new ArrayList<>(c2jShape.getEnums()));
@@ -246,7 +256,10 @@ public class C2jModelToGeneratorModelTransformer {
         Operation operation = new Operation();
 
         // Documentation
-        operation.setDocumentation(formatDocumentation(c2jOperation.getDocumentation(), 9));
+        String crossLinkedShapeDocs =
+                addDocCrossLinks(c2jOperation.getDocumentation(), c2jServiceModel.getMetadata().getUid(), c2jOperation.getName());
+
+        operation.setDocumentation(formatDocumentation(crossLinkedShapeDocs, 9));
 
         // input
         if (c2jOperation.getInput() != null) {

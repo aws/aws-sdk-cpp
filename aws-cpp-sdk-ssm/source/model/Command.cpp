@@ -34,11 +34,22 @@ Command::Command() :
     m_expiresAfterHasBeenSet(false),
     m_parametersHasBeenSet(false),
     m_instanceIdsHasBeenSet(false),
+    m_targetsHasBeenSet(false),
     m_requestedDateTimeHasBeenSet(false),
     m_status(CommandStatus::NOT_SET),
     m_statusHasBeenSet(false),
+    m_statusDetailsHasBeenSet(false),
+    m_outputS3RegionHasBeenSet(false),
     m_outputS3BucketNameHasBeenSet(false),
     m_outputS3KeyPrefixHasBeenSet(false),
+    m_maxConcurrencyHasBeenSet(false),
+    m_maxErrorsHasBeenSet(false),
+    m_targetCount(0),
+    m_targetCountHasBeenSet(false),
+    m_completedCount(0),
+    m_completedCountHasBeenSet(false),
+    m_errorCount(0),
+    m_errorCountHasBeenSet(false),
     m_serviceRoleHasBeenSet(false),
     m_notificationConfigHasBeenSet(false)
 {
@@ -51,11 +62,22 @@ Command::Command(const JsonValue& jsonValue) :
     m_expiresAfterHasBeenSet(false),
     m_parametersHasBeenSet(false),
     m_instanceIdsHasBeenSet(false),
+    m_targetsHasBeenSet(false),
     m_requestedDateTimeHasBeenSet(false),
     m_status(CommandStatus::NOT_SET),
     m_statusHasBeenSet(false),
+    m_statusDetailsHasBeenSet(false),
+    m_outputS3RegionHasBeenSet(false),
     m_outputS3BucketNameHasBeenSet(false),
     m_outputS3KeyPrefixHasBeenSet(false),
+    m_maxConcurrencyHasBeenSet(false),
+    m_maxErrorsHasBeenSet(false),
+    m_targetCount(0),
+    m_targetCountHasBeenSet(false),
+    m_completedCount(0),
+    m_completedCountHasBeenSet(false),
+    m_errorCount(0),
+    m_errorCountHasBeenSet(false),
     m_serviceRoleHasBeenSet(false),
     m_notificationConfigHasBeenSet(false)
 {
@@ -98,7 +120,8 @@ Command& Command::operator =(const JsonValue& jsonValue)
     for(auto& parametersItem : parametersJsonMap)
     {
       Array<JsonValue> parameterValueListJsonList = parametersItem.second.AsArray();
-      Aws::Vector<Aws::String> parameterValueListList((size_t)parameterValueListJsonList.GetLength());
+      Aws::Vector<Aws::String> parameterValueListList;
+      parameterValueListList.reserve((size_t)parameterValueListJsonList.GetLength());
       for(unsigned parameterValueListIndex = 0; parameterValueListIndex < parameterValueListJsonList.GetLength(); ++parameterValueListIndex)
       {
         parameterValueListList.push_back(parameterValueListJsonList[parameterValueListIndex].AsString());
@@ -118,6 +141,16 @@ Command& Command::operator =(const JsonValue& jsonValue)
     m_instanceIdsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Targets"))
+  {
+    Array<JsonValue> targetsJsonList = jsonValue.GetArray("Targets");
+    for(unsigned targetsIndex = 0; targetsIndex < targetsJsonList.GetLength(); ++targetsIndex)
+    {
+      m_targets.push_back(targetsJsonList[targetsIndex].AsObject());
+    }
+    m_targetsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("RequestedDateTime"))
   {
     m_requestedDateTime = jsonValue.GetDouble("RequestedDateTime");
@@ -132,6 +165,20 @@ Command& Command::operator =(const JsonValue& jsonValue)
     m_statusHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("StatusDetails"))
+  {
+    m_statusDetails = jsonValue.GetString("StatusDetails");
+
+    m_statusDetailsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("OutputS3Region"))
+  {
+    m_outputS3Region = jsonValue.GetString("OutputS3Region");
+
+    m_outputS3RegionHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("OutputS3BucketName"))
   {
     m_outputS3BucketName = jsonValue.GetString("OutputS3BucketName");
@@ -144,6 +191,41 @@ Command& Command::operator =(const JsonValue& jsonValue)
     m_outputS3KeyPrefix = jsonValue.GetString("OutputS3KeyPrefix");
 
     m_outputS3KeyPrefixHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("MaxConcurrency"))
+  {
+    m_maxConcurrency = jsonValue.GetString("MaxConcurrency");
+
+    m_maxConcurrencyHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("MaxErrors"))
+  {
+    m_maxErrors = jsonValue.GetString("MaxErrors");
+
+    m_maxErrorsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("TargetCount"))
+  {
+    m_targetCount = jsonValue.GetInteger("TargetCount");
+
+    m_targetCountHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CompletedCount"))
+  {
+    m_completedCount = jsonValue.GetInteger("CompletedCount");
+
+    m_completedCountHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ErrorCount"))
+  {
+    m_errorCount = jsonValue.GetInteger("ErrorCount");
+
+    m_errorCountHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("ServiceRole"))
@@ -217,6 +299,17 @@ JsonValue Command::Jsonize() const
 
   }
 
+  if(m_targetsHasBeenSet)
+  {
+   Array<JsonValue> targetsJsonList(m_targets.size());
+   for(unsigned targetsIndex = 0; targetsIndex < targetsJsonList.GetLength(); ++targetsIndex)
+   {
+     targetsJsonList[targetsIndex].AsObject(m_targets[targetsIndex].Jsonize());
+   }
+   payload.WithArray("Targets", std::move(targetsJsonList));
+
+  }
+
   if(m_requestedDateTimeHasBeenSet)
   {
    payload.WithDouble("RequestedDateTime", m_requestedDateTime.SecondsWithMSPrecision());
@@ -225,6 +318,18 @@ JsonValue Command::Jsonize() const
   if(m_statusHasBeenSet)
   {
    payload.WithString("Status", CommandStatusMapper::GetNameForCommandStatus(m_status));
+  }
+
+  if(m_statusDetailsHasBeenSet)
+  {
+   payload.WithString("StatusDetails", m_statusDetails);
+
+  }
+
+  if(m_outputS3RegionHasBeenSet)
+  {
+   payload.WithString("OutputS3Region", m_outputS3Region);
+
   }
 
   if(m_outputS3BucketNameHasBeenSet)
@@ -236,6 +341,36 @@ JsonValue Command::Jsonize() const
   if(m_outputS3KeyPrefixHasBeenSet)
   {
    payload.WithString("OutputS3KeyPrefix", m_outputS3KeyPrefix);
+
+  }
+
+  if(m_maxConcurrencyHasBeenSet)
+  {
+   payload.WithString("MaxConcurrency", m_maxConcurrency);
+
+  }
+
+  if(m_maxErrorsHasBeenSet)
+  {
+   payload.WithString("MaxErrors", m_maxErrors);
+
+  }
+
+  if(m_targetCountHasBeenSet)
+  {
+   payload.WithInteger("TargetCount", m_targetCount);
+
+  }
+
+  if(m_completedCountHasBeenSet)
+  {
+   payload.WithInteger("CompletedCount", m_completedCount);
+
+  }
+
+  if(m_errorCountHasBeenSet)
+  {
+   payload.WithInteger("ErrorCount", m_errorCount);
 
   }
 

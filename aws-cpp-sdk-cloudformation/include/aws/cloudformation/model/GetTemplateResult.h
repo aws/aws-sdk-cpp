@@ -36,7 +36,9 @@ namespace CloudFormation
 namespace Model
 {
   /**
-   * <p>The output for <a>GetTemplate</a> action.</p>
+   * <p>The output for <a>GetTemplate</a> action.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/GetTemplateOutput">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDFORMATION_API GetTemplateResult
   {
@@ -102,72 +104,65 @@ namespace Model
     inline GetTemplateResult& WithTemplateBody(const char* value) { SetTemplateBody(value); return *this;}
 
     /**
-     * <p>The template type.</p> <ul> <li> <p>For stacks, you can use either the
-     * <code>Original</code> or the <code>Processed</code> template type.</p> </li>
-     * <li> <p>For change sets, you can use only the <code>Original</code> template
-     * type. After the transforms are processed, you can use the <code>Processed</code>
-     * template type.</p> </li> </ul> <note> <p>If you create a change set for a new
-     * stack, you must select the template type.</p> </note>
+     * <p>The stage of the template that you can retrieve. For stacks, the
+     * <code>Original</code> and <code>Processed</code> templates are always available.
+     * For change sets, the <code>Original</code> template is always available. After
+     * AWS CloudFormation finishes creating the change set, the <code>Processed</code>
+     * template becomes available.</p>
      */
     inline const Aws::Vector<TemplateStage>& GetStagesAvailable() const{ return m_stagesAvailable; }
 
     /**
-     * <p>The template type.</p> <ul> <li> <p>For stacks, you can use either the
-     * <code>Original</code> or the <code>Processed</code> template type.</p> </li>
-     * <li> <p>For change sets, you can use only the <code>Original</code> template
-     * type. After the transforms are processed, you can use the <code>Processed</code>
-     * template type.</p> </li> </ul> <note> <p>If you create a change set for a new
-     * stack, you must select the template type.</p> </note>
+     * <p>The stage of the template that you can retrieve. For stacks, the
+     * <code>Original</code> and <code>Processed</code> templates are always available.
+     * For change sets, the <code>Original</code> template is always available. After
+     * AWS CloudFormation finishes creating the change set, the <code>Processed</code>
+     * template becomes available.</p>
      */
     inline void SetStagesAvailable(const Aws::Vector<TemplateStage>& value) { m_stagesAvailable = value; }
 
     /**
-     * <p>The template type.</p> <ul> <li> <p>For stacks, you can use either the
-     * <code>Original</code> or the <code>Processed</code> template type.</p> </li>
-     * <li> <p>For change sets, you can use only the <code>Original</code> template
-     * type. After the transforms are processed, you can use the <code>Processed</code>
-     * template type.</p> </li> </ul> <note> <p>If you create a change set for a new
-     * stack, you must select the template type.</p> </note>
+     * <p>The stage of the template that you can retrieve. For stacks, the
+     * <code>Original</code> and <code>Processed</code> templates are always available.
+     * For change sets, the <code>Original</code> template is always available. After
+     * AWS CloudFormation finishes creating the change set, the <code>Processed</code>
+     * template becomes available.</p>
      */
     inline void SetStagesAvailable(Aws::Vector<TemplateStage>&& value) { m_stagesAvailable = value; }
 
     /**
-     * <p>The template type.</p> <ul> <li> <p>For stacks, you can use either the
-     * <code>Original</code> or the <code>Processed</code> template type.</p> </li>
-     * <li> <p>For change sets, you can use only the <code>Original</code> template
-     * type. After the transforms are processed, you can use the <code>Processed</code>
-     * template type.</p> </li> </ul> <note> <p>If you create a change set for a new
-     * stack, you must select the template type.</p> </note>
+     * <p>The stage of the template that you can retrieve. For stacks, the
+     * <code>Original</code> and <code>Processed</code> templates are always available.
+     * For change sets, the <code>Original</code> template is always available. After
+     * AWS CloudFormation finishes creating the change set, the <code>Processed</code>
+     * template becomes available.</p>
      */
     inline GetTemplateResult& WithStagesAvailable(const Aws::Vector<TemplateStage>& value) { SetStagesAvailable(value); return *this;}
 
     /**
-     * <p>The template type.</p> <ul> <li> <p>For stacks, you can use either the
-     * <code>Original</code> or the <code>Processed</code> template type.</p> </li>
-     * <li> <p>For change sets, you can use only the <code>Original</code> template
-     * type. After the transforms are processed, you can use the <code>Processed</code>
-     * template type.</p> </li> </ul> <note> <p>If you create a change set for a new
-     * stack, you must select the template type.</p> </note>
+     * <p>The stage of the template that you can retrieve. For stacks, the
+     * <code>Original</code> and <code>Processed</code> templates are always available.
+     * For change sets, the <code>Original</code> template is always available. After
+     * AWS CloudFormation finishes creating the change set, the <code>Processed</code>
+     * template becomes available.</p>
      */
     inline GetTemplateResult& WithStagesAvailable(Aws::Vector<TemplateStage>&& value) { SetStagesAvailable(value); return *this;}
 
     /**
-     * <p>The template type.</p> <ul> <li> <p>For stacks, you can use either the
-     * <code>Original</code> or the <code>Processed</code> template type.</p> </li>
-     * <li> <p>For change sets, you can use only the <code>Original</code> template
-     * type. After the transforms are processed, you can use the <code>Processed</code>
-     * template type.</p> </li> </ul> <note> <p>If you create a change set for a new
-     * stack, you must select the template type.</p> </note>
+     * <p>The stage of the template that you can retrieve. For stacks, the
+     * <code>Original</code> and <code>Processed</code> templates are always available.
+     * For change sets, the <code>Original</code> template is always available. After
+     * AWS CloudFormation finishes creating the change set, the <code>Processed</code>
+     * template becomes available.</p>
      */
     inline GetTemplateResult& AddStagesAvailable(const TemplateStage& value) { m_stagesAvailable.push_back(value); return *this; }
 
     /**
-     * <p>The template type.</p> <ul> <li> <p>For stacks, you can use either the
-     * <code>Original</code> or the <code>Processed</code> template type.</p> </li>
-     * <li> <p>For change sets, you can use only the <code>Original</code> template
-     * type. After the transforms are processed, you can use the <code>Processed</code>
-     * template type.</p> </li> </ul> <note> <p>If you create a change set for a new
-     * stack, you must select the template type.</p> </note>
+     * <p>The stage of the template that you can retrieve. For stacks, the
+     * <code>Original</code> and <code>Processed</code> templates are always available.
+     * For change sets, the <code>Original</code> template is always available. After
+     * AWS CloudFormation finishes creating the change set, the <code>Processed</code>
+     * template becomes available.</p>
      */
     inline GetTemplateResult& AddStagesAvailable(TemplateStage&& value) { m_stagesAvailable.push_back(value); return *this; }
 

@@ -37,7 +37,9 @@ namespace Model
    * this object provides all the updated values (such as the source bucket name and
    * object key name), the in-application table name that is created, and updated
    * mapping information that maps the data in the Amazon S3 object to the
-   * in-application reference table that is created.</p>
+   * in-application reference table that is created.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/ReferenceDataSourceUpdate">AWS
+   * API Reference</a></p>
    */
   class AWS_KINESISANALYTICS_API ReferenceDataSourceUpdate
   {

@@ -25,7 +25,9 @@ namespace Model
 {
 
   /**
-   * <p>Request to delete a configuration template.</p>
+   * <p>Request to delete a configuration template.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeleteConfigurationTemplateMessage">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICBEANSTALK_API DeleteConfigurationTemplateRequest : public ElasticBeanstalkRequest
   {

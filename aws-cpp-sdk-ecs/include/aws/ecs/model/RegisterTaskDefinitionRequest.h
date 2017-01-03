@@ -20,6 +20,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ecs/model/ContainerDefinition.h>
 #include <aws/ecs/model/Volume.h>
+#include <aws/ecs/model/TaskDefinitionPlacementConstraint.h>
 
 namespace Aws
 {
@@ -345,6 +346,55 @@ namespace Model
      */
     inline RegisterTaskDefinitionRequest& AddVolumes(Volume&& value) { m_volumesHasBeenSet = true; m_volumes.push_back(value); return *this; }
 
+    /**
+     * <p>An array of placement constraint objects to use for the task. You can specify
+     * a maximum of 10 constraints per task (this limit includes constraints in the
+     * task definition and those specified at run time).</p>
+     */
+    inline const Aws::Vector<TaskDefinitionPlacementConstraint>& GetPlacementConstraints() const{ return m_placementConstraints; }
+
+    /**
+     * <p>An array of placement constraint objects to use for the task. You can specify
+     * a maximum of 10 constraints per task (this limit includes constraints in the
+     * task definition and those specified at run time).</p>
+     */
+    inline void SetPlacementConstraints(const Aws::Vector<TaskDefinitionPlacementConstraint>& value) { m_placementConstraintsHasBeenSet = true; m_placementConstraints = value; }
+
+    /**
+     * <p>An array of placement constraint objects to use for the task. You can specify
+     * a maximum of 10 constraints per task (this limit includes constraints in the
+     * task definition and those specified at run time).</p>
+     */
+    inline void SetPlacementConstraints(Aws::Vector<TaskDefinitionPlacementConstraint>&& value) { m_placementConstraintsHasBeenSet = true; m_placementConstraints = value; }
+
+    /**
+     * <p>An array of placement constraint objects to use for the task. You can specify
+     * a maximum of 10 constraints per task (this limit includes constraints in the
+     * task definition and those specified at run time).</p>
+     */
+    inline RegisterTaskDefinitionRequest& WithPlacementConstraints(const Aws::Vector<TaskDefinitionPlacementConstraint>& value) { SetPlacementConstraints(value); return *this;}
+
+    /**
+     * <p>An array of placement constraint objects to use for the task. You can specify
+     * a maximum of 10 constraints per task (this limit includes constraints in the
+     * task definition and those specified at run time).</p>
+     */
+    inline RegisterTaskDefinitionRequest& WithPlacementConstraints(Aws::Vector<TaskDefinitionPlacementConstraint>&& value) { SetPlacementConstraints(value); return *this;}
+
+    /**
+     * <p>An array of placement constraint objects to use for the task. You can specify
+     * a maximum of 10 constraints per task (this limit includes constraints in the
+     * task definition and those specified at run time).</p>
+     */
+    inline RegisterTaskDefinitionRequest& AddPlacementConstraints(const TaskDefinitionPlacementConstraint& value) { m_placementConstraintsHasBeenSet = true; m_placementConstraints.push_back(value); return *this; }
+
+    /**
+     * <p>An array of placement constraint objects to use for the task. You can specify
+     * a maximum of 10 constraints per task (this limit includes constraints in the
+     * task definition and those specified at run time).</p>
+     */
+    inline RegisterTaskDefinitionRequest& AddPlacementConstraints(TaskDefinitionPlacementConstraint&& value) { m_placementConstraintsHasBeenSet = true; m_placementConstraints.push_back(value); return *this; }
+
   private:
     Aws::String m_family;
     bool m_familyHasBeenSet;
@@ -356,6 +406,8 @@ namespace Model
     bool m_containerDefinitionsHasBeenSet;
     Aws::Vector<Volume> m_volumes;
     bool m_volumesHasBeenSet;
+    Aws::Vector<TaskDefinitionPlacementConstraint> m_placementConstraints;
+    bool m_placementConstraintsHasBeenSet;
   };
 
 } // namespace Model

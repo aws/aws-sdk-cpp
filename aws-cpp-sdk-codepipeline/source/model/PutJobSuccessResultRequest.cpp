@@ -63,7 +63,7 @@ Aws::String PutJobSuccessResultRequest::SerializePayload() const
 Aws::Http::HeaderValueCollection PutJobSuccessResultRequest::GetRequestSpecificHeaders() const
 {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "CodePipeline_20150709.PutJobSuccess"));
+  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "CodePipeline_20150709.PutJobSuccessResult"));
   return headers;
 
 }

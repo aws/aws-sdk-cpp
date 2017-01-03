@@ -31,7 +31,9 @@ namespace Model
 
   /**
    * <p>Information about the deployment status of the instances in the
-   * deployment.</p>
+   * deployment.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/DeploymentOverview">AWS
+   * API Reference</a></p>
    */
   class AWS_CODEDEPLOY_API DeploymentOverview
   {

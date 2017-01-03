@@ -37,7 +37,9 @@ namespace Model
   /**
    * <p>Contains the response to a successful <a>GetAccessKeyLastUsed</a> request. It
    * is also returned as a member of the <a>AccessKeyMetaData</a> structure returned
-   * by the <a>ListAccessKeys</a> action.</p>
+   * by the <a>ListAccessKeys</a> action.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetAccessKeyLastUsedResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_IAM_API GetAccessKeyLastUsedResult
   {

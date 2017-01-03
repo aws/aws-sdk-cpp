@@ -32,7 +32,9 @@ namespace Model
 
   /**
    * <p>Settings for one clip in a composition. All jobs in a playlist must have the
-   * same clip settings.</p>
+   * same clip settings.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/Clip">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICTRANSCODER_API Clip
   {

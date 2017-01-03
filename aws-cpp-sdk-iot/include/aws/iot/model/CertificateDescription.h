@@ -34,7 +34,9 @@ namespace Model
 {
 
   /**
-   * <p>Describes a certificate.</p>
+   * <p>Describes a certificate.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CertificateDescription">AWS
+   * API Reference</a></p>
    */
   class AWS_IOT_API CertificateDescription
   {

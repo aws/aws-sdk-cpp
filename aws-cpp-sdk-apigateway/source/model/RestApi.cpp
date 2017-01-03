@@ -32,7 +32,9 @@ RestApi::RestApi() :
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_createdDateHasBeenSet(false),
-    m_warningsHasBeenSet(false)
+    m_versionHasBeenSet(false),
+    m_warningsHasBeenSet(false),
+    m_binaryMediaTypesHasBeenSet(false)
 {
 }
 
@@ -41,7 +43,9 @@ RestApi::RestApi(const JsonValue& jsonValue) :
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_createdDateHasBeenSet(false),
-    m_warningsHasBeenSet(false)
+    m_versionHasBeenSet(false),
+    m_warningsHasBeenSet(false),
+    m_binaryMediaTypesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -76,6 +80,13 @@ RestApi& RestApi::operator =(const JsonValue& jsonValue)
     m_createdDateHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("version"))
+  {
+    m_version = jsonValue.GetString("version");
+
+    m_versionHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("warnings"))
   {
     Array<JsonValue> warningsJsonList = jsonValue.GetArray("warnings");
@@ -84,6 +95,16 @@ RestApi& RestApi::operator =(const JsonValue& jsonValue)
       m_warnings.push_back(warningsJsonList[warningsIndex].AsString());
     }
     m_warningsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("binaryMediaTypes"))
+  {
+    Array<JsonValue> binaryMediaTypesJsonList = jsonValue.GetArray("binaryMediaTypes");
+    for(unsigned binaryMediaTypesIndex = 0; binaryMediaTypesIndex < binaryMediaTypesJsonList.GetLength(); ++binaryMediaTypesIndex)
+    {
+      m_binaryMediaTypes.push_back(binaryMediaTypesJsonList[binaryMediaTypesIndex].AsString());
+    }
+    m_binaryMediaTypesHasBeenSet = true;
   }
 
   return *this;
@@ -116,6 +137,12 @@ JsonValue RestApi::Jsonize() const
    payload.WithDouble("createdDate", m_createdDate.SecondsWithMSPrecision());
   }
 
+  if(m_versionHasBeenSet)
+  {
+   payload.WithString("version", m_version);
+
+  }
+
   if(m_warningsHasBeenSet)
   {
    Array<JsonValue> warningsJsonList(m_warnings.size());
@@ -124,6 +151,17 @@ JsonValue RestApi::Jsonize() const
      warningsJsonList[warningsIndex].AsString(m_warnings[warningsIndex]);
    }
    payload.WithArray("warnings", std::move(warningsJsonList));
+
+  }
+
+  if(m_binaryMediaTypesHasBeenSet)
+  {
+   Array<JsonValue> binaryMediaTypesJsonList(m_binaryMediaTypes.size());
+   for(unsigned binaryMediaTypesIndex = 0; binaryMediaTypesIndex < binaryMediaTypesJsonList.GetLength(); ++binaryMediaTypesIndex)
+   {
+     binaryMediaTypesJsonList[binaryMediaTypesIndex].AsString(m_binaryMediaTypes[binaryMediaTypesIndex]);
+   }
+   payload.WithArray("binaryMediaTypes", std::move(binaryMediaTypesJsonList));
 
   }
 

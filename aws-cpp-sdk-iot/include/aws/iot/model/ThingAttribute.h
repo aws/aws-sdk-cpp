@@ -33,7 +33,9 @@ namespace Model
 
   /**
    * <p>The properties of the thing, including thing name, thing type name, and a
-   * list of thing attributes.</p>
+   * list of thing attributes.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ThingAttribute">AWS
+   * API Reference</a></p>
    */
   class AWS_IOT_API ThingAttribute
   {

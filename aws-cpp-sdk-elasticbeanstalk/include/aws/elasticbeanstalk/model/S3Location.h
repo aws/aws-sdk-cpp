@@ -32,7 +32,10 @@ namespace Model
 {
 
   /**
-   * <p>A specification of a location in Amazon S3.</p>
+   * <p>The bucket and key of an item stored in Amazon S3.</p><p><h3>See Also:</h3>  
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/S3Location">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICBEANSTALK_API S3Location
   {

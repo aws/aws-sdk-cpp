@@ -14,7 +14,6 @@
 */
 #include <aws/servicecatalog/model/UpdatePortfolioRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
@@ -36,6 +35,12 @@ UpdatePortfolioRequest::UpdatePortfolioRequest() :
 Aws::String UpdatePortfolioRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_acceptLanguageHasBeenSet)
+  {
+   payload.WithString("AcceptLanguage", m_acceptLanguage);
+
+  }
 
   if(m_idHasBeenSet)
   {
@@ -90,14 +95,6 @@ Aws::Http::HeaderValueCollection UpdatePortfolioRequest::GetRequestSpecificHeade
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWS242ServiceCatalogService.UpdatePortfolio"));
-  Aws::StringStream ss;
-  if(m_acceptLanguageHasBeenSet)
-  {
-    ss << m_acceptLanguage;
-    headers.insert(Aws::Http::HeaderValuePair("accept-language", ss.str()));
-    ss.str("");
-  }
-
   return headers;
 
 }

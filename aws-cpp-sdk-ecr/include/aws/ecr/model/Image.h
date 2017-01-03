@@ -32,7 +32,9 @@ namespace Model
 {
 
   /**
-   * <p>An object representing an Amazon ECR image.</p>
+   * <p>An object representing an Amazon ECR image.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/Image">AWS API
+   * Reference</a></p>
    */
   class AWS_ECR_API Image
   {

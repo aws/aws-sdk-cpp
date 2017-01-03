@@ -2,6 +2,7 @@ add_project(aws-cpp-sdk-identity-management-tests
     "Tests for the AWS Identity Management C++ SDK" 
     aws-cpp-sdk-identity-management
     aws-cpp-sdk-cognito-identity
+    aws-cpp-sdk-sts
     testing-resources 
     aws-cpp-sdk-core)
 

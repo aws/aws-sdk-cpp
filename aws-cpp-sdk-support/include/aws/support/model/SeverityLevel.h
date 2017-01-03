@@ -32,7 +32,9 @@ namespace Model
 
   /**
    * <p>A code and name pair that represent a severity level that can be applied to a
-   * support case.</p>
+   * support case.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/SeverityLevel">AWS
+   * API Reference</a></p>
    */
   class AWS_SUPPORT_API SeverityLevel
   {

@@ -35,7 +35,9 @@ namespace Model
   /**
    * <p>The result of a <code>DeleteElasticsearchDomain</code> request. Contains the
    * status of the pending deletion, or no status if the domain and all of its
-   * resources have been deleted.</p>
+   * resources have been deleted.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DeleteElasticsearchDomainResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICSEARCHSERVICE_API DeleteElasticsearchDomainResult
   {

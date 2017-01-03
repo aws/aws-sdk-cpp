@@ -26,7 +26,10 @@ namespace Model
 {
 
   /**
-   * <p>Make a request to simulate the execution of an <a>Authorizer</a>.</p>
+   * <p>Make a request to simulate the execution of an
+   * <a>Authorizer</a>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/TestInvokeAuthorizerRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_APIGATEWAY_API TestInvokeAuthorizerRequest : public APIGatewayRequest
   {

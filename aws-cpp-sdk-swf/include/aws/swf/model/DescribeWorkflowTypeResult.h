@@ -34,7 +34,9 @@ namespace SWF
 namespace Model
 {
   /**
-   * <p>Contains details about a workflow type.</p>
+   * <p>Contains details about a workflow type.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/WorkflowTypeDetail">AWS
+   * API Reference</a></p>
    */
   class AWS_SWF_API DescribeWorkflowTypeResult
   {

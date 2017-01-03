@@ -25,7 +25,9 @@ namespace Model
   enum class ResourceTypeForTagging
   {
     NOT_SET,
-    ManagedInstance
+    ManagedInstance,
+    MaintenanceWindow,
+    Parameter
   };
 
 namespace ResourceTypeForTaggingMapper

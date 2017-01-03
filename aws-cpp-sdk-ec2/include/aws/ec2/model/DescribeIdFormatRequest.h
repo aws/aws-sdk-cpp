@@ -25,7 +25,9 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for DescribeIdFormat.</p>
+   * <p>Contains the parameters for DescribeIdFormat.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIdFormatRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API DescribeIdFormatRequest : public EC2Request
   {
@@ -34,37 +36,44 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     /**
-     * <p>The type of resource.</p>
+     * <p>The type of resource: <code>instance</code> | <code>reservation</code> |
+     * <code>snapshot</code> | <code>volume</code> </p>
      */
     inline const Aws::String& GetResource() const{ return m_resource; }
 
     /**
-     * <p>The type of resource.</p>
+     * <p>The type of resource: <code>instance</code> | <code>reservation</code> |
+     * <code>snapshot</code> | <code>volume</code> </p>
      */
     inline void SetResource(const Aws::String& value) { m_resourceHasBeenSet = true; m_resource = value; }
 
     /**
-     * <p>The type of resource.</p>
+     * <p>The type of resource: <code>instance</code> | <code>reservation</code> |
+     * <code>snapshot</code> | <code>volume</code> </p>
      */
     inline void SetResource(Aws::String&& value) { m_resourceHasBeenSet = true; m_resource = value; }
 
     /**
-     * <p>The type of resource.</p>
+     * <p>The type of resource: <code>instance</code> | <code>reservation</code> |
+     * <code>snapshot</code> | <code>volume</code> </p>
      */
     inline void SetResource(const char* value) { m_resourceHasBeenSet = true; m_resource.assign(value); }
 
     /**
-     * <p>The type of resource.</p>
+     * <p>The type of resource: <code>instance</code> | <code>reservation</code> |
+     * <code>snapshot</code> | <code>volume</code> </p>
      */
     inline DescribeIdFormatRequest& WithResource(const Aws::String& value) { SetResource(value); return *this;}
 
     /**
-     * <p>The type of resource.</p>
+     * <p>The type of resource: <code>instance</code> | <code>reservation</code> |
+     * <code>snapshot</code> | <code>volume</code> </p>
      */
     inline DescribeIdFormatRequest& WithResource(Aws::String&& value) { SetResource(value); return *this;}
 
     /**
-     * <p>The type of resource.</p>
+     * <p>The type of resource: <code>instance</code> | <code>reservation</code> |
+     * <code>snapshot</code> | <code>volume</code> </p>
      */
     inline DescribeIdFormatRequest& WithResource(const char* value) { SetResource(value); return *this;}
 

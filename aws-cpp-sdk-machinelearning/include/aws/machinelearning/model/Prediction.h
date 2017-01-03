@@ -42,7 +42,9 @@ namespace Model
    * <code>PredictedScores</code> - Contains the raw classification score
    * corresponding to each label. </p> </li> <li> <p> <code>PredictedValue</code> -
    * Present for a <code>REGRESSION</code> <code>MLModel</code> request. </p> </li>
-   * </ul>
+   * </ul><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/Prediction">AWS
+   * API Reference</a></p>
    */
   class AWS_MACHINELEARNING_API Prediction
   {

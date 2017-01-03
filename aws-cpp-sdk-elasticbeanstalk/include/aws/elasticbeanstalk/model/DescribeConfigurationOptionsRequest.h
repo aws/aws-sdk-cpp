@@ -27,7 +27,10 @@ namespace Model
 {
 
   /**
-   * <p>Result message containig a list of application version descriptions.</p>
+   * <p>Result message containig a list of application version
+   * descriptions.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeConfigurationOptionsMessage">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICBEANSTALK_API DescribeConfigurationOptionsRequest : public ElasticBeanstalkRequest
   {

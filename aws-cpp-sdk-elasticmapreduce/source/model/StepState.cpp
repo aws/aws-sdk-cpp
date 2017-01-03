@@ -30,6 +30,7 @@ namespace Aws
       {
 
         static const int PENDING_HASH = HashingUtils::HashString("PENDING");
+        static const int CANCEL_PENDING_HASH = HashingUtils::HashString("CANCEL_PENDING");
         static const int RUNNING_HASH = HashingUtils::HashString("RUNNING");
         static const int COMPLETED_HASH = HashingUtils::HashString("COMPLETED");
         static const int CANCELLED_HASH = HashingUtils::HashString("CANCELLED");
@@ -43,6 +44,10 @@ namespace Aws
           if (hashCode == PENDING_HASH)
           {
             return StepState::PENDING;
+          }
+          else if (hashCode == CANCEL_PENDING_HASH)
+          {
+            return StepState::CANCEL_PENDING;
           }
           else if (hashCode == RUNNING_HASH)
           {
@@ -80,6 +85,8 @@ namespace Aws
           {
           case StepState::PENDING:
             return "PENDING";
+          case StepState::CANCEL_PENDING:
+            return "CANCEL_PENDING";
           case StepState::RUNNING:
             return "RUNNING";
           case StepState::COMPLETED:

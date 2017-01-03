@@ -21,6 +21,7 @@
 #include <aws/snowball/model/SnowballCapacity.h>
 #include <aws/snowball/model/ShippingOption.h>
 #include <aws/snowball/model/Notification.h>
+#include <aws/snowball/model/SnowballType.h>
 
 namespace Aws
 {
@@ -349,77 +350,77 @@ namespace Model
     inline CreateJobRequest& WithSnowballCapacityPreference(SnowballCapacity&& value) { SetSnowballCapacityPreference(value); return *this;}
 
     /**
-     * <p>The shipping speed for this job. Note that this speed does not dictate how
-     * soon you'll get the Snowball, rather it represents how quickly the Snowball
-     * moves to its destination while in transit. Regional shipping speeds are as
-     * follows:</p> <ul> <li> <p>In Australia, you have access to express shipping.
-     * Typically, Snowballs shipped express are delivered in about a day.</p> </li>
-     * <li> <p>In the European Union (EU), you have access to express shipping.
-     * Typically, Snowballs shipped express are delivered in about a day. In addition,
-     * most countries in the EU have access to standard shipping, which typically takes
-     * less than a week, one way.</p> </li> <li> <p>In India, Snowballs are delivered
-     * in one to seven days.</p> </li> <li> <p>In the US, you have access to one-day
-     * shipping and two-day shipping.</p> </li> </ul>
+     * <p>The shipping speed for this job. This speed doesn't dictate how soon you'll
+     * get the Snowball, rather it represents how quickly the Snowball moves to its
+     * destination while in transit. Regional shipping speeds are as follows:</p> <ul>
+     * <li> <p>In Australia, you have access to express shipping. Typically, Snowballs
+     * shipped express are delivered in about a day.</p> </li> <li> <p>In the European
+     * Union (EU), you have access to express shipping. Typically, Snowballs shipped
+     * express are delivered in about a day. In addition, most countries in the EU have
+     * access to standard shipping, which typically takes less than a week, one
+     * way.</p> </li> <li> <p>In India, Snowballs are delivered in one to seven
+     * days.</p> </li> <li> <p>In the US, you have access to one-day shipping and
+     * two-day shipping.</p> </li> </ul>
      */
     inline const ShippingOption& GetShippingOption() const{ return m_shippingOption; }
 
     /**
-     * <p>The shipping speed for this job. Note that this speed does not dictate how
-     * soon you'll get the Snowball, rather it represents how quickly the Snowball
-     * moves to its destination while in transit. Regional shipping speeds are as
-     * follows:</p> <ul> <li> <p>In Australia, you have access to express shipping.
-     * Typically, Snowballs shipped express are delivered in about a day.</p> </li>
-     * <li> <p>In the European Union (EU), you have access to express shipping.
-     * Typically, Snowballs shipped express are delivered in about a day. In addition,
-     * most countries in the EU have access to standard shipping, which typically takes
-     * less than a week, one way.</p> </li> <li> <p>In India, Snowballs are delivered
-     * in one to seven days.</p> </li> <li> <p>In the US, you have access to one-day
-     * shipping and two-day shipping.</p> </li> </ul>
+     * <p>The shipping speed for this job. This speed doesn't dictate how soon you'll
+     * get the Snowball, rather it represents how quickly the Snowball moves to its
+     * destination while in transit. Regional shipping speeds are as follows:</p> <ul>
+     * <li> <p>In Australia, you have access to express shipping. Typically, Snowballs
+     * shipped express are delivered in about a day.</p> </li> <li> <p>In the European
+     * Union (EU), you have access to express shipping. Typically, Snowballs shipped
+     * express are delivered in about a day. In addition, most countries in the EU have
+     * access to standard shipping, which typically takes less than a week, one
+     * way.</p> </li> <li> <p>In India, Snowballs are delivered in one to seven
+     * days.</p> </li> <li> <p>In the US, you have access to one-day shipping and
+     * two-day shipping.</p> </li> </ul>
      */
     inline void SetShippingOption(const ShippingOption& value) { m_shippingOptionHasBeenSet = true; m_shippingOption = value; }
 
     /**
-     * <p>The shipping speed for this job. Note that this speed does not dictate how
-     * soon you'll get the Snowball, rather it represents how quickly the Snowball
-     * moves to its destination while in transit. Regional shipping speeds are as
-     * follows:</p> <ul> <li> <p>In Australia, you have access to express shipping.
-     * Typically, Snowballs shipped express are delivered in about a day.</p> </li>
-     * <li> <p>In the European Union (EU), you have access to express shipping.
-     * Typically, Snowballs shipped express are delivered in about a day. In addition,
-     * most countries in the EU have access to standard shipping, which typically takes
-     * less than a week, one way.</p> </li> <li> <p>In India, Snowballs are delivered
-     * in one to seven days.</p> </li> <li> <p>In the US, you have access to one-day
-     * shipping and two-day shipping.</p> </li> </ul>
+     * <p>The shipping speed for this job. This speed doesn't dictate how soon you'll
+     * get the Snowball, rather it represents how quickly the Snowball moves to its
+     * destination while in transit. Regional shipping speeds are as follows:</p> <ul>
+     * <li> <p>In Australia, you have access to express shipping. Typically, Snowballs
+     * shipped express are delivered in about a day.</p> </li> <li> <p>In the European
+     * Union (EU), you have access to express shipping. Typically, Snowballs shipped
+     * express are delivered in about a day. In addition, most countries in the EU have
+     * access to standard shipping, which typically takes less than a week, one
+     * way.</p> </li> <li> <p>In India, Snowballs are delivered in one to seven
+     * days.</p> </li> <li> <p>In the US, you have access to one-day shipping and
+     * two-day shipping.</p> </li> </ul>
      */
     inline void SetShippingOption(ShippingOption&& value) { m_shippingOptionHasBeenSet = true; m_shippingOption = value; }
 
     /**
-     * <p>The shipping speed for this job. Note that this speed does not dictate how
-     * soon you'll get the Snowball, rather it represents how quickly the Snowball
-     * moves to its destination while in transit. Regional shipping speeds are as
-     * follows:</p> <ul> <li> <p>In Australia, you have access to express shipping.
-     * Typically, Snowballs shipped express are delivered in about a day.</p> </li>
-     * <li> <p>In the European Union (EU), you have access to express shipping.
-     * Typically, Snowballs shipped express are delivered in about a day. In addition,
-     * most countries in the EU have access to standard shipping, which typically takes
-     * less than a week, one way.</p> </li> <li> <p>In India, Snowballs are delivered
-     * in one to seven days.</p> </li> <li> <p>In the US, you have access to one-day
-     * shipping and two-day shipping.</p> </li> </ul>
+     * <p>The shipping speed for this job. This speed doesn't dictate how soon you'll
+     * get the Snowball, rather it represents how quickly the Snowball moves to its
+     * destination while in transit. Regional shipping speeds are as follows:</p> <ul>
+     * <li> <p>In Australia, you have access to express shipping. Typically, Snowballs
+     * shipped express are delivered in about a day.</p> </li> <li> <p>In the European
+     * Union (EU), you have access to express shipping. Typically, Snowballs shipped
+     * express are delivered in about a day. In addition, most countries in the EU have
+     * access to standard shipping, which typically takes less than a week, one
+     * way.</p> </li> <li> <p>In India, Snowballs are delivered in one to seven
+     * days.</p> </li> <li> <p>In the US, you have access to one-day shipping and
+     * two-day shipping.</p> </li> </ul>
      */
     inline CreateJobRequest& WithShippingOption(const ShippingOption& value) { SetShippingOption(value); return *this;}
 
     /**
-     * <p>The shipping speed for this job. Note that this speed does not dictate how
-     * soon you'll get the Snowball, rather it represents how quickly the Snowball
-     * moves to its destination while in transit. Regional shipping speeds are as
-     * follows:</p> <ul> <li> <p>In Australia, you have access to express shipping.
-     * Typically, Snowballs shipped express are delivered in about a day.</p> </li>
-     * <li> <p>In the European Union (EU), you have access to express shipping.
-     * Typically, Snowballs shipped express are delivered in about a day. In addition,
-     * most countries in the EU have access to standard shipping, which typically takes
-     * less than a week, one way.</p> </li> <li> <p>In India, Snowballs are delivered
-     * in one to seven days.</p> </li> <li> <p>In the US, you have access to one-day
-     * shipping and two-day shipping.</p> </li> </ul>
+     * <p>The shipping speed for this job. This speed doesn't dictate how soon you'll
+     * get the Snowball, rather it represents how quickly the Snowball moves to its
+     * destination while in transit. Regional shipping speeds are as follows:</p> <ul>
+     * <li> <p>In Australia, you have access to express shipping. Typically, Snowballs
+     * shipped express are delivered in about a day.</p> </li> <li> <p>In the European
+     * Union (EU), you have access to express shipping. Typically, Snowballs shipped
+     * express are delivered in about a day. In addition, most countries in the EU have
+     * access to standard shipping, which typically takes less than a week, one
+     * way.</p> </li> <li> <p>In India, Snowballs are delivered in one to seven
+     * days.</p> </li> <li> <p>In the US, you have access to one-day shipping and
+     * two-day shipping.</p> </li> </ul>
      */
     inline CreateJobRequest& WithShippingOption(ShippingOption&& value) { SetShippingOption(value); return *this;}
 
@@ -453,6 +454,85 @@ namespace Model
      */
     inline CreateJobRequest& WithNotification(Notification&& value) { SetNotification(value); return *this;}
 
+    /**
+     * <p>The ID of a cluster. If you're creating a job for a node in a cluster, you
+     * need to provide only this <code>clusterId</code> value. The other job attributes
+     * are inherited from the cluster.</p>
+     */
+    inline const Aws::String& GetClusterId() const{ return m_clusterId; }
+
+    /**
+     * <p>The ID of a cluster. If you're creating a job for a node in a cluster, you
+     * need to provide only this <code>clusterId</code> value. The other job attributes
+     * are inherited from the cluster.</p>
+     */
+    inline void SetClusterId(const Aws::String& value) { m_clusterIdHasBeenSet = true; m_clusterId = value; }
+
+    /**
+     * <p>The ID of a cluster. If you're creating a job for a node in a cluster, you
+     * need to provide only this <code>clusterId</code> value. The other job attributes
+     * are inherited from the cluster.</p>
+     */
+    inline void SetClusterId(Aws::String&& value) { m_clusterIdHasBeenSet = true; m_clusterId = value; }
+
+    /**
+     * <p>The ID of a cluster. If you're creating a job for a node in a cluster, you
+     * need to provide only this <code>clusterId</code> value. The other job attributes
+     * are inherited from the cluster.</p>
+     */
+    inline void SetClusterId(const char* value) { m_clusterIdHasBeenSet = true; m_clusterId.assign(value); }
+
+    /**
+     * <p>The ID of a cluster. If you're creating a job for a node in a cluster, you
+     * need to provide only this <code>clusterId</code> value. The other job attributes
+     * are inherited from the cluster.</p>
+     */
+    inline CreateJobRequest& WithClusterId(const Aws::String& value) { SetClusterId(value); return *this;}
+
+    /**
+     * <p>The ID of a cluster. If you're creating a job for a node in a cluster, you
+     * need to provide only this <code>clusterId</code> value. The other job attributes
+     * are inherited from the cluster.</p>
+     */
+    inline CreateJobRequest& WithClusterId(Aws::String&& value) { SetClusterId(value); return *this;}
+
+    /**
+     * <p>The ID of a cluster. If you're creating a job for a node in a cluster, you
+     * need to provide only this <code>clusterId</code> value. The other job attributes
+     * are inherited from the cluster.</p>
+     */
+    inline CreateJobRequest& WithClusterId(const char* value) { SetClusterId(value); return *this;}
+
+    /**
+     * <p>The type of AWS Snowball appliance to use for this job. Currently, the only
+     * supported appliance type for cluster jobs is <code>EDGE</code>.</p>
+     */
+    inline const SnowballType& GetSnowballType() const{ return m_snowballType; }
+
+    /**
+     * <p>The type of AWS Snowball appliance to use for this job. Currently, the only
+     * supported appliance type for cluster jobs is <code>EDGE</code>.</p>
+     */
+    inline void SetSnowballType(const SnowballType& value) { m_snowballTypeHasBeenSet = true; m_snowballType = value; }
+
+    /**
+     * <p>The type of AWS Snowball appliance to use for this job. Currently, the only
+     * supported appliance type for cluster jobs is <code>EDGE</code>.</p>
+     */
+    inline void SetSnowballType(SnowballType&& value) { m_snowballTypeHasBeenSet = true; m_snowballType = value; }
+
+    /**
+     * <p>The type of AWS Snowball appliance to use for this job. Currently, the only
+     * supported appliance type for cluster jobs is <code>EDGE</code>.</p>
+     */
+    inline CreateJobRequest& WithSnowballType(const SnowballType& value) { SetSnowballType(value); return *this;}
+
+    /**
+     * <p>The type of AWS Snowball appliance to use for this job. Currently, the only
+     * supported appliance type for cluster jobs is <code>EDGE</code>.</p>
+     */
+    inline CreateJobRequest& WithSnowballType(SnowballType&& value) { SetSnowballType(value); return *this;}
+
   private:
     JobType m_jobType;
     bool m_jobTypeHasBeenSet;
@@ -472,6 +552,10 @@ namespace Model
     bool m_shippingOptionHasBeenSet;
     Notification m_notification;
     bool m_notificationHasBeenSet;
+    Aws::String m_clusterId;
+    bool m_clusterIdHasBeenSet;
+    SnowballType m_snowballType;
+    bool m_snowballTypeHasBeenSet;
   };
 
 } // namespace Model

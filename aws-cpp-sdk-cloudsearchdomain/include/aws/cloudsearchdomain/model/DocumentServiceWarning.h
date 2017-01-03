@@ -32,7 +32,9 @@ namespace Model
 
   /**
    * <p>A warning returned by the document service when an issue is discovered while
-   * processing an upload request.</p>
+   * processing an upload request.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearchdomain-2013-01-01/DocumentServiceWarning">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDSEARCHDOMAIN_API DocumentServiceWarning
   {

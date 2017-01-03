@@ -66,11 +66,13 @@ GetUsageResult& GetUsageResult::operator =(const AmazonWebServiceResult<JsonValu
     for(auto& itemsItem : itemsJsonMap)
     {
       Array<JsonValue> listOfUsageJsonList = itemsItem.second.AsArray();
-      Aws::Vector<Aws::Vector<long long>> listOfUsageList((size_t)listOfUsageJsonList.GetLength());
+      Aws::Vector<Aws::Vector<long long>> listOfUsageList;
+      listOfUsageList.reserve((size_t)listOfUsageJsonList.GetLength());
       for(unsigned listOfUsageIndex = 0; listOfUsageIndex < listOfUsageJsonList.GetLength(); ++listOfUsageIndex)
       {
         Array<JsonValue> listOfLongJsonList = listOfUsageJsonList[listOfUsageIndex].AsArray();
-        Aws::Vector<long long> listOfLongList((size_t)listOfLongJsonList.GetLength());
+        Aws::Vector<long long> listOfLongList;
+        listOfLongList.reserve((size_t)listOfLongJsonList.GetLength());
         for(unsigned listOfLongIndex = 0; listOfLongIndex < listOfLongJsonList.GetLength(); ++listOfLongIndex)
         {
           listOfLongList.push_back(listOfLongJsonList[listOfLongIndex].AsInt64());

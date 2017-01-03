@@ -31,7 +31,10 @@ namespace Model
 {
 
   /**
-   * <p>The device verifier against which it will be authenticated.</p>
+   * <p>The device verifier against which it will be authenticated.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeviceSecretVerifierConfigType">AWS
+   * API Reference</a></p>
    */
   class AWS_COGNITOIDENTITYPROVIDER_API DeviceSecretVerifierConfigType
   {

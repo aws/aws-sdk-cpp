@@ -14,7 +14,6 @@
 */
 #include <aws/servicecatalog/model/ListProvisioningArtifactsRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
@@ -32,6 +31,12 @@ Aws::String ListProvisioningArtifactsRequest::SerializePayload() const
 {
   JsonValue payload;
 
+  if(m_acceptLanguageHasBeenSet)
+  {
+   payload.WithString("AcceptLanguage", m_acceptLanguage);
+
+  }
+
   if(m_productIdHasBeenSet)
   {
    payload.WithString("ProductId", m_productId);
@@ -45,14 +50,6 @@ Aws::Http::HeaderValueCollection ListProvisioningArtifactsRequest::GetRequestSpe
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWS242ServiceCatalogService.ListProvisioningArtifacts"));
-  Aws::StringStream ss;
-  if(m_acceptLanguageHasBeenSet)
-  {
-    ss << m_acceptLanguage;
-    headers.insert(Aws::Http::HeaderValuePair("accept-language", ss.str()));
-    ss.str("");
-  }
-
   return headers;
 
 }

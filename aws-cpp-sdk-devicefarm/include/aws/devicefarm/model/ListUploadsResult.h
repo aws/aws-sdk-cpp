@@ -35,7 +35,10 @@ namespace DeviceFarm
 namespace Model
 {
   /**
-   * <p>Represents the result of a list uploads request.</p>
+   * <p>Represents the result of a list uploads request.</p><p><h3>See Also:</h3>  
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListUploadsResult">AWS
+   * API Reference</a></p>
    */
   class AWS_DEVICEFARM_API ListUploadsResult
   {

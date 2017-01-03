@@ -27,7 +27,10 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for DescribeInternetGateways.</p>
+   * <p>Contains the parameters for DescribeInternetGateways.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInternetGatewaysRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API DescribeInternetGatewaysRequest : public EC2Request
   {
@@ -108,140 +111,140 @@ namespace Model
     inline DescribeInternetGatewaysRequest& AddInternetGatewayIds(const char* value) { m_internetGatewayIdsHasBeenSet = true; m_internetGatewayIds.push_back(value); return *this; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p><code>attachment.state</code> - The
+     * <p>One or more filters.</p> <ul> <li> <p> <code>attachment.state</code> - The
      * current state of the attachment between the gateway and the VPC
-     * (<code>available</code>). Present only if a VPC is attached.</p> </li> <li>
-     * <p><code>attachment.vpc-id</code> - The ID of an attached VPC.</p> </li> <li>
-     * <p><code>internet-gateway-id</code> - The ID of the Internet gateway.</p> </li>
-     * <li> <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of
-     * a tag assigned to the resource.</p> </li> <li> <p><code>tag-key</code> - The key
-     * of a tag assigned to the resource. This filter is independent of the
+     * (<code>available</code>). Present only if a VPC is attached.</p> </li> <li> <p>
+     * <code>attachment.vpc-id</code> - The ID of an attached VPC.</p> </li> <li> <p>
+     * <code>internet-gateway-id</code> - The ID of the Internet gateway.</p> </li>
+     * <li> <p> <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of
+     * a tag assigned to the resource.</p> </li> <li> <p> <code>tag-key</code> - The
+     * key of a tag assigned to the resource. This filter is independent of the
      * <code>tag-value</code> filter. For example, if you use both the filter
      * "tag-key=Purpose" and the filter "tag-value=X", you get any resources assigned
      * both the tag key Purpose (regardless of what the tag's value is), and the tag
      * value X (regardless of what the tag's key is). If you want to list only
      * resources where Purpose is X, see the <code>tag</code>:<i>key</i>=<i>value</i>
-     * filter.</p> </li> <li> <p><code>tag-value</code> - The value of a tag assigned
+     * filter.</p> </li> <li> <p> <code>tag-value</code> - The value of a tag assigned
      * to the resource. This filter is independent of the <code>tag-key</code>
      * filter.</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p><code>attachment.state</code> - The
+     * <p>One or more filters.</p> <ul> <li> <p> <code>attachment.state</code> - The
      * current state of the attachment between the gateway and the VPC
-     * (<code>available</code>). Present only if a VPC is attached.</p> </li> <li>
-     * <p><code>attachment.vpc-id</code> - The ID of an attached VPC.</p> </li> <li>
-     * <p><code>internet-gateway-id</code> - The ID of the Internet gateway.</p> </li>
-     * <li> <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of
-     * a tag assigned to the resource.</p> </li> <li> <p><code>tag-key</code> - The key
-     * of a tag assigned to the resource. This filter is independent of the
+     * (<code>available</code>). Present only if a VPC is attached.</p> </li> <li> <p>
+     * <code>attachment.vpc-id</code> - The ID of an attached VPC.</p> </li> <li> <p>
+     * <code>internet-gateway-id</code> - The ID of the Internet gateway.</p> </li>
+     * <li> <p> <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of
+     * a tag assigned to the resource.</p> </li> <li> <p> <code>tag-key</code> - The
+     * key of a tag assigned to the resource. This filter is independent of the
      * <code>tag-value</code> filter. For example, if you use both the filter
      * "tag-key=Purpose" and the filter "tag-value=X", you get any resources assigned
      * both the tag key Purpose (regardless of what the tag's value is), and the tag
      * value X (regardless of what the tag's key is). If you want to list only
      * resources where Purpose is X, see the <code>tag</code>:<i>key</i>=<i>value</i>
-     * filter.</p> </li> <li> <p><code>tag-value</code> - The value of a tag assigned
+     * filter.</p> </li> <li> <p> <code>tag-value</code> - The value of a tag assigned
      * to the resource. This filter is independent of the <code>tag-key</code>
      * filter.</p> </li> </ul>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p><code>attachment.state</code> - The
+     * <p>One or more filters.</p> <ul> <li> <p> <code>attachment.state</code> - The
      * current state of the attachment between the gateway and the VPC
-     * (<code>available</code>). Present only if a VPC is attached.</p> </li> <li>
-     * <p><code>attachment.vpc-id</code> - The ID of an attached VPC.</p> </li> <li>
-     * <p><code>internet-gateway-id</code> - The ID of the Internet gateway.</p> </li>
-     * <li> <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of
-     * a tag assigned to the resource.</p> </li> <li> <p><code>tag-key</code> - The key
-     * of a tag assigned to the resource. This filter is independent of the
+     * (<code>available</code>). Present only if a VPC is attached.</p> </li> <li> <p>
+     * <code>attachment.vpc-id</code> - The ID of an attached VPC.</p> </li> <li> <p>
+     * <code>internet-gateway-id</code> - The ID of the Internet gateway.</p> </li>
+     * <li> <p> <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of
+     * a tag assigned to the resource.</p> </li> <li> <p> <code>tag-key</code> - The
+     * key of a tag assigned to the resource. This filter is independent of the
      * <code>tag-value</code> filter. For example, if you use both the filter
      * "tag-key=Purpose" and the filter "tag-value=X", you get any resources assigned
      * both the tag key Purpose (regardless of what the tag's value is), and the tag
      * value X (regardless of what the tag's key is). If you want to list only
      * resources where Purpose is X, see the <code>tag</code>:<i>key</i>=<i>value</i>
-     * filter.</p> </li> <li> <p><code>tag-value</code> - The value of a tag assigned
+     * filter.</p> </li> <li> <p> <code>tag-value</code> - The value of a tag assigned
      * to the resource. This filter is independent of the <code>tag-key</code>
      * filter.</p> </li> </ul>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p><code>attachment.state</code> - The
+     * <p>One or more filters.</p> <ul> <li> <p> <code>attachment.state</code> - The
      * current state of the attachment between the gateway and the VPC
-     * (<code>available</code>). Present only if a VPC is attached.</p> </li> <li>
-     * <p><code>attachment.vpc-id</code> - The ID of an attached VPC.</p> </li> <li>
-     * <p><code>internet-gateway-id</code> - The ID of the Internet gateway.</p> </li>
-     * <li> <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of
-     * a tag assigned to the resource.</p> </li> <li> <p><code>tag-key</code> - The key
-     * of a tag assigned to the resource. This filter is independent of the
+     * (<code>available</code>). Present only if a VPC is attached.</p> </li> <li> <p>
+     * <code>attachment.vpc-id</code> - The ID of an attached VPC.</p> </li> <li> <p>
+     * <code>internet-gateway-id</code> - The ID of the Internet gateway.</p> </li>
+     * <li> <p> <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of
+     * a tag assigned to the resource.</p> </li> <li> <p> <code>tag-key</code> - The
+     * key of a tag assigned to the resource. This filter is independent of the
      * <code>tag-value</code> filter. For example, if you use both the filter
      * "tag-key=Purpose" and the filter "tag-value=X", you get any resources assigned
      * both the tag key Purpose (regardless of what the tag's value is), and the tag
      * value X (regardless of what the tag's key is). If you want to list only
      * resources where Purpose is X, see the <code>tag</code>:<i>key</i>=<i>value</i>
-     * filter.</p> </li> <li> <p><code>tag-value</code> - The value of a tag assigned
+     * filter.</p> </li> <li> <p> <code>tag-value</code> - The value of a tag assigned
      * to the resource. This filter is independent of the <code>tag-key</code>
      * filter.</p> </li> </ul>
      */
     inline DescribeInternetGatewaysRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p><code>attachment.state</code> - The
+     * <p>One or more filters.</p> <ul> <li> <p> <code>attachment.state</code> - The
      * current state of the attachment between the gateway and the VPC
-     * (<code>available</code>). Present only if a VPC is attached.</p> </li> <li>
-     * <p><code>attachment.vpc-id</code> - The ID of an attached VPC.</p> </li> <li>
-     * <p><code>internet-gateway-id</code> - The ID of the Internet gateway.</p> </li>
-     * <li> <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of
-     * a tag assigned to the resource.</p> </li> <li> <p><code>tag-key</code> - The key
-     * of a tag assigned to the resource. This filter is independent of the
+     * (<code>available</code>). Present only if a VPC is attached.</p> </li> <li> <p>
+     * <code>attachment.vpc-id</code> - The ID of an attached VPC.</p> </li> <li> <p>
+     * <code>internet-gateway-id</code> - The ID of the Internet gateway.</p> </li>
+     * <li> <p> <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of
+     * a tag assigned to the resource.</p> </li> <li> <p> <code>tag-key</code> - The
+     * key of a tag assigned to the resource. This filter is independent of the
      * <code>tag-value</code> filter. For example, if you use both the filter
      * "tag-key=Purpose" and the filter "tag-value=X", you get any resources assigned
      * both the tag key Purpose (regardless of what the tag's value is), and the tag
      * value X (regardless of what the tag's key is). If you want to list only
      * resources where Purpose is X, see the <code>tag</code>:<i>key</i>=<i>value</i>
-     * filter.</p> </li> <li> <p><code>tag-value</code> - The value of a tag assigned
+     * filter.</p> </li> <li> <p> <code>tag-value</code> - The value of a tag assigned
      * to the resource. This filter is independent of the <code>tag-key</code>
      * filter.</p> </li> </ul>
      */
     inline DescribeInternetGatewaysRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p><code>attachment.state</code> - The
+     * <p>One or more filters.</p> <ul> <li> <p> <code>attachment.state</code> - The
      * current state of the attachment between the gateway and the VPC
-     * (<code>available</code>). Present only if a VPC is attached.</p> </li> <li>
-     * <p><code>attachment.vpc-id</code> - The ID of an attached VPC.</p> </li> <li>
-     * <p><code>internet-gateway-id</code> - The ID of the Internet gateway.</p> </li>
-     * <li> <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of
-     * a tag assigned to the resource.</p> </li> <li> <p><code>tag-key</code> - The key
-     * of a tag assigned to the resource. This filter is independent of the
+     * (<code>available</code>). Present only if a VPC is attached.</p> </li> <li> <p>
+     * <code>attachment.vpc-id</code> - The ID of an attached VPC.</p> </li> <li> <p>
+     * <code>internet-gateway-id</code> - The ID of the Internet gateway.</p> </li>
+     * <li> <p> <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of
+     * a tag assigned to the resource.</p> </li> <li> <p> <code>tag-key</code> - The
+     * key of a tag assigned to the resource. This filter is independent of the
      * <code>tag-value</code> filter. For example, if you use both the filter
      * "tag-key=Purpose" and the filter "tag-value=X", you get any resources assigned
      * both the tag key Purpose (regardless of what the tag's value is), and the tag
      * value X (regardless of what the tag's key is). If you want to list only
      * resources where Purpose is X, see the <code>tag</code>:<i>key</i>=<i>value</i>
-     * filter.</p> </li> <li> <p><code>tag-value</code> - The value of a tag assigned
+     * filter.</p> </li> <li> <p> <code>tag-value</code> - The value of a tag assigned
      * to the resource. This filter is independent of the <code>tag-key</code>
      * filter.</p> </li> </ul>
      */
     inline DescribeInternetGatewaysRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p><code>attachment.state</code> - The
+     * <p>One or more filters.</p> <ul> <li> <p> <code>attachment.state</code> - The
      * current state of the attachment between the gateway and the VPC
-     * (<code>available</code>). Present only if a VPC is attached.</p> </li> <li>
-     * <p><code>attachment.vpc-id</code> - The ID of an attached VPC.</p> </li> <li>
-     * <p><code>internet-gateway-id</code> - The ID of the Internet gateway.</p> </li>
-     * <li> <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of
-     * a tag assigned to the resource.</p> </li> <li> <p><code>tag-key</code> - The key
-     * of a tag assigned to the resource. This filter is independent of the
+     * (<code>available</code>). Present only if a VPC is attached.</p> </li> <li> <p>
+     * <code>attachment.vpc-id</code> - The ID of an attached VPC.</p> </li> <li> <p>
+     * <code>internet-gateway-id</code> - The ID of the Internet gateway.</p> </li>
+     * <li> <p> <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of
+     * a tag assigned to the resource.</p> </li> <li> <p> <code>tag-key</code> - The
+     * key of a tag assigned to the resource. This filter is independent of the
      * <code>tag-value</code> filter. For example, if you use both the filter
      * "tag-key=Purpose" and the filter "tag-value=X", you get any resources assigned
      * both the tag key Purpose (regardless of what the tag's value is), and the tag
      * value X (regardless of what the tag's key is). If you want to list only
      * resources where Purpose is X, see the <code>tag</code>:<i>key</i>=<i>value</i>
-     * filter.</p> </li> <li> <p><code>tag-value</code> - The value of a tag assigned
+     * filter.</p> </li> <li> <p> <code>tag-value</code> - The value of a tag assigned
      * to the resource. This filter is independent of the <code>tag-key</code>
      * filter.</p> </li> </ul>
      */

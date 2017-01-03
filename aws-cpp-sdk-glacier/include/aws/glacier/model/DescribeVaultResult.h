@@ -33,7 +33,10 @@ namespace Glacier
 namespace Model
 {
   /**
-   * <p>Contains the Amazon Glacier response to your request.</p>
+   * <p>Contains the Amazon Glacier response to your request.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/DescribeVaultOutput">AWS
+   * API Reference</a></p>
    */
   class AWS_GLACIER_API DescribeVaultResult
   {
@@ -113,135 +116,142 @@ namespace Model
     inline DescribeVaultResult& WithVaultName(const char* value) { SetVaultName(value); return *this;}
 
     /**
-     * <p>The UTC date when the vault was created. A string representation of ISO 8601
-     * date format, for example, "2012-03-20T17:03:43.221Z".</p>
+     * <p>The Universal Coordinated Time (UTC) date when the vault was created. This
+     * value should be a string in the ISO 8601 date format, for example
+     * <code>2012-03-20T17:03:43.221Z</code>.</p>
      */
     inline const Aws::String& GetCreationDate() const{ return m_creationDate; }
 
     /**
-     * <p>The UTC date when the vault was created. A string representation of ISO 8601
-     * date format, for example, "2012-03-20T17:03:43.221Z".</p>
+     * <p>The Universal Coordinated Time (UTC) date when the vault was created. This
+     * value should be a string in the ISO 8601 date format, for example
+     * <code>2012-03-20T17:03:43.221Z</code>.</p>
      */
     inline void SetCreationDate(const Aws::String& value) { m_creationDate = value; }
 
     /**
-     * <p>The UTC date when the vault was created. A string representation of ISO 8601
-     * date format, for example, "2012-03-20T17:03:43.221Z".</p>
+     * <p>The Universal Coordinated Time (UTC) date when the vault was created. This
+     * value should be a string in the ISO 8601 date format, for example
+     * <code>2012-03-20T17:03:43.221Z</code>.</p>
      */
     inline void SetCreationDate(Aws::String&& value) { m_creationDate = value; }
 
     /**
-     * <p>The UTC date when the vault was created. A string representation of ISO 8601
-     * date format, for example, "2012-03-20T17:03:43.221Z".</p>
+     * <p>The Universal Coordinated Time (UTC) date when the vault was created. This
+     * value should be a string in the ISO 8601 date format, for example
+     * <code>2012-03-20T17:03:43.221Z</code>.</p>
      */
     inline void SetCreationDate(const char* value) { m_creationDate.assign(value); }
 
     /**
-     * <p>The UTC date when the vault was created. A string representation of ISO 8601
-     * date format, for example, "2012-03-20T17:03:43.221Z".</p>
+     * <p>The Universal Coordinated Time (UTC) date when the vault was created. This
+     * value should be a string in the ISO 8601 date format, for example
+     * <code>2012-03-20T17:03:43.221Z</code>.</p>
      */
     inline DescribeVaultResult& WithCreationDate(const Aws::String& value) { SetCreationDate(value); return *this;}
 
     /**
-     * <p>The UTC date when the vault was created. A string representation of ISO 8601
-     * date format, for example, "2012-03-20T17:03:43.221Z".</p>
+     * <p>The Universal Coordinated Time (UTC) date when the vault was created. This
+     * value should be a string in the ISO 8601 date format, for example
+     * <code>2012-03-20T17:03:43.221Z</code>.</p>
      */
     inline DescribeVaultResult& WithCreationDate(Aws::String&& value) { SetCreationDate(value); return *this;}
 
     /**
-     * <p>The UTC date when the vault was created. A string representation of ISO 8601
-     * date format, for example, "2012-03-20T17:03:43.221Z".</p>
+     * <p>The Universal Coordinated Time (UTC) date when the vault was created. This
+     * value should be a string in the ISO 8601 date format, for example
+     * <code>2012-03-20T17:03:43.221Z</code>.</p>
      */
     inline DescribeVaultResult& WithCreationDate(const char* value) { SetCreationDate(value); return *this;}
 
     /**
-     * <p>The UTC date when Amazon Glacier completed the last vault inventory. A string
-     * representation of ISO 8601 date format, for example,
-     * "2012-03-20T17:03:43.221Z".</p>
+     * <p>The Universal Coordinated Time (UTC) date when Amazon Glacier completed the
+     * last vault inventory. This value should be a string in the ISO 8601 date format,
+     * for example <code>2012-03-20T17:03:43.221Z</code>.</p>
      */
     inline const Aws::String& GetLastInventoryDate() const{ return m_lastInventoryDate; }
 
     /**
-     * <p>The UTC date when Amazon Glacier completed the last vault inventory. A string
-     * representation of ISO 8601 date format, for example,
-     * "2012-03-20T17:03:43.221Z".</p>
+     * <p>The Universal Coordinated Time (UTC) date when Amazon Glacier completed the
+     * last vault inventory. This value should be a string in the ISO 8601 date format,
+     * for example <code>2012-03-20T17:03:43.221Z</code>.</p>
      */
     inline void SetLastInventoryDate(const Aws::String& value) { m_lastInventoryDate = value; }
 
     /**
-     * <p>The UTC date when Amazon Glacier completed the last vault inventory. A string
-     * representation of ISO 8601 date format, for example,
-     * "2012-03-20T17:03:43.221Z".</p>
+     * <p>The Universal Coordinated Time (UTC) date when Amazon Glacier completed the
+     * last vault inventory. This value should be a string in the ISO 8601 date format,
+     * for example <code>2012-03-20T17:03:43.221Z</code>.</p>
      */
     inline void SetLastInventoryDate(Aws::String&& value) { m_lastInventoryDate = value; }
 
     /**
-     * <p>The UTC date when Amazon Glacier completed the last vault inventory. A string
-     * representation of ISO 8601 date format, for example,
-     * "2012-03-20T17:03:43.221Z".</p>
+     * <p>The Universal Coordinated Time (UTC) date when Amazon Glacier completed the
+     * last vault inventory. This value should be a string in the ISO 8601 date format,
+     * for example <code>2012-03-20T17:03:43.221Z</code>.</p>
      */
     inline void SetLastInventoryDate(const char* value) { m_lastInventoryDate.assign(value); }
 
     /**
-     * <p>The UTC date when Amazon Glacier completed the last vault inventory. A string
-     * representation of ISO 8601 date format, for example,
-     * "2012-03-20T17:03:43.221Z".</p>
+     * <p>The Universal Coordinated Time (UTC) date when Amazon Glacier completed the
+     * last vault inventory. This value should be a string in the ISO 8601 date format,
+     * for example <code>2012-03-20T17:03:43.221Z</code>.</p>
      */
     inline DescribeVaultResult& WithLastInventoryDate(const Aws::String& value) { SetLastInventoryDate(value); return *this;}
 
     /**
-     * <p>The UTC date when Amazon Glacier completed the last vault inventory. A string
-     * representation of ISO 8601 date format, for example,
-     * "2012-03-20T17:03:43.221Z".</p>
+     * <p>The Universal Coordinated Time (UTC) date when Amazon Glacier completed the
+     * last vault inventory. This value should be a string in the ISO 8601 date format,
+     * for example <code>2012-03-20T17:03:43.221Z</code>.</p>
      */
     inline DescribeVaultResult& WithLastInventoryDate(Aws::String&& value) { SetLastInventoryDate(value); return *this;}
 
     /**
-     * <p>The UTC date when Amazon Glacier completed the last vault inventory. A string
-     * representation of ISO 8601 date format, for example,
-     * "2012-03-20T17:03:43.221Z".</p>
+     * <p>The Universal Coordinated Time (UTC) date when Amazon Glacier completed the
+     * last vault inventory. This value should be a string in the ISO 8601 date format,
+     * for example <code>2012-03-20T17:03:43.221Z</code>.</p>
      */
     inline DescribeVaultResult& WithLastInventoryDate(const char* value) { SetLastInventoryDate(value); return *this;}
 
     /**
      * <p>The number of archives in the vault as of the last inventory date. This field
      * will return <code>null</code> if an inventory has not yet run on the vault, for
-     * example, if you just created the vault.</p>
+     * example if you just created the vault.</p>
      */
     inline long long GetNumberOfArchives() const{ return m_numberOfArchives; }
 
     /**
      * <p>The number of archives in the vault as of the last inventory date. This field
      * will return <code>null</code> if an inventory has not yet run on the vault, for
-     * example, if you just created the vault.</p>
+     * example if you just created the vault.</p>
      */
     inline void SetNumberOfArchives(long long value) { m_numberOfArchives = value; }
 
     /**
      * <p>The number of archives in the vault as of the last inventory date. This field
      * will return <code>null</code> if an inventory has not yet run on the vault, for
-     * example, if you just created the vault.</p>
+     * example if you just created the vault.</p>
      */
     inline DescribeVaultResult& WithNumberOfArchives(long long value) { SetNumberOfArchives(value); return *this;}
 
     /**
      * <p>Total size, in bytes, of the archives in the vault as of the last inventory
      * date. This field will return null if an inventory has not yet run on the vault,
-     * for example, if you just created the vault.</p>
+     * for example if you just created the vault.</p>
      */
     inline long long GetSizeInBytes() const{ return m_sizeInBytes; }
 
     /**
      * <p>Total size, in bytes, of the archives in the vault as of the last inventory
      * date. This field will return null if an inventory has not yet run on the vault,
-     * for example, if you just created the vault.</p>
+     * for example if you just created the vault.</p>
      */
     inline void SetSizeInBytes(long long value) { m_sizeInBytes = value; }
 
     /**
      * <p>Total size, in bytes, of the archives in the vault as of the last inventory
      * date. This field will return null if an inventory has not yet run on the vault,
-     * for example, if you just created the vault.</p>
+     * for example if you just created the vault.</p>
      */
     inline DescribeVaultResult& WithSizeInBytes(long long value) { SetSizeInBytes(value); return *this;}
 

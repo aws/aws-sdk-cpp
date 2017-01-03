@@ -27,7 +27,9 @@ namespace Model
 {
 
   /**
-   * <p>This input determines which steps to list.</p>
+   * <p>This input determines which steps to list.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListStepsInput">AWS
+   * API Reference</a></p>
    */
   class AWS_EMR_API ListStepsRequest : public EMRRequest
   {

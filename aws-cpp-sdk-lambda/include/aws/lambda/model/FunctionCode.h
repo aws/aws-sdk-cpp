@@ -32,7 +32,9 @@ namespace Model
 {
 
   /**
-   * <p>The code for the Lambda function.</p>
+   * <p>The code for the Lambda function.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/FunctionCode">AWS
+   * API Reference</a></p>
    */
   class AWS_LAMBDA_API FunctionCode
   {

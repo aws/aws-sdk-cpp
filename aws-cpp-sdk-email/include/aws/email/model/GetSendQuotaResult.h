@@ -34,7 +34,10 @@ namespace Model
 {
   /**
    * <p>Represents your Amazon SES daily sending quota, maximum send rate, and the
-   * number of emails you have sent in the last 24 hours.</p>
+   * number of emails you have sent in the last 24 hours.</p><p><h3>See Also:</h3>  
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetSendQuotaResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_SES_API GetSendQuotaResult
   {

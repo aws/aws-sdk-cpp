@@ -33,7 +33,10 @@ namespace Model
 {
 
   /**
-   * <p>The tags associated with a Direct Connect resource.</p>
+   * <p>The tags associated with a Direct Connect resource.</p><p><h3>See Also:</h3> 
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ResourceTag">AWS
+   * API Reference</a></p>
    */
   class AWS_DIRECTCONNECT_API ResourceTag
   {

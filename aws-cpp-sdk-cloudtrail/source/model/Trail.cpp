@@ -42,7 +42,9 @@ Trail::Trail() :
     m_logFileValidationEnabledHasBeenSet(false),
     m_cloudWatchLogsLogGroupArnHasBeenSet(false),
     m_cloudWatchLogsRoleArnHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
+    m_kmsKeyIdHasBeenSet(false),
+    m_hasCustomEventSelectors(false),
+    m_hasCustomEventSelectorsHasBeenSet(false)
 {
 }
 
@@ -61,7 +63,9 @@ Trail::Trail(const JsonValue& jsonValue) :
     m_logFileValidationEnabledHasBeenSet(false),
     m_cloudWatchLogsLogGroupArnHasBeenSet(false),
     m_cloudWatchLogsRoleArnHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
+    m_kmsKeyIdHasBeenSet(false),
+    m_hasCustomEventSelectors(false),
+    m_hasCustomEventSelectorsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -152,6 +156,13 @@ Trail& Trail::operator =(const JsonValue& jsonValue)
     m_kmsKeyIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("HasCustomEventSelectors"))
+  {
+    m_hasCustomEventSelectors = jsonValue.GetBool("HasCustomEventSelectors");
+
+    m_hasCustomEventSelectorsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -228,6 +239,12 @@ JsonValue Trail::Jsonize() const
   if(m_kmsKeyIdHasBeenSet)
   {
    payload.WithString("KmsKeyId", m_kmsKeyId);
+
+  }
+
+  if(m_hasCustomEventSelectorsHasBeenSet)
+  {
+   payload.WithBool("HasCustomEventSelectors", m_hasCustomEventSelectors);
 
   }
 

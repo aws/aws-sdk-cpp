@@ -27,7 +27,9 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for DescribeHosts.</p>
+   * <p>Contains the parameters for DescribeHosts.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeHostsRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API DescribeHostsRequest : public EC2Request
   {
@@ -36,49 +38,49 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     /**
-     * <p>The IDs of the Dedicated hosts. The IDs are used for targeted instance
+     * <p>The IDs of the Dedicated Hosts. The IDs are used for targeted instance
      * launches.</p>
      */
     inline const Aws::Vector<Aws::String>& GetHostIds() const{ return m_hostIds; }
 
     /**
-     * <p>The IDs of the Dedicated hosts. The IDs are used for targeted instance
+     * <p>The IDs of the Dedicated Hosts. The IDs are used for targeted instance
      * launches.</p>
      */
     inline void SetHostIds(const Aws::Vector<Aws::String>& value) { m_hostIdsHasBeenSet = true; m_hostIds = value; }
 
     /**
-     * <p>The IDs of the Dedicated hosts. The IDs are used for targeted instance
+     * <p>The IDs of the Dedicated Hosts. The IDs are used for targeted instance
      * launches.</p>
      */
     inline void SetHostIds(Aws::Vector<Aws::String>&& value) { m_hostIdsHasBeenSet = true; m_hostIds = value; }
 
     /**
-     * <p>The IDs of the Dedicated hosts. The IDs are used for targeted instance
+     * <p>The IDs of the Dedicated Hosts. The IDs are used for targeted instance
      * launches.</p>
      */
     inline DescribeHostsRequest& WithHostIds(const Aws::Vector<Aws::String>& value) { SetHostIds(value); return *this;}
 
     /**
-     * <p>The IDs of the Dedicated hosts. The IDs are used for targeted instance
+     * <p>The IDs of the Dedicated Hosts. The IDs are used for targeted instance
      * launches.</p>
      */
     inline DescribeHostsRequest& WithHostIds(Aws::Vector<Aws::String>&& value) { SetHostIds(value); return *this;}
 
     /**
-     * <p>The IDs of the Dedicated hosts. The IDs are used for targeted instance
+     * <p>The IDs of the Dedicated Hosts. The IDs are used for targeted instance
      * launches.</p>
      */
     inline DescribeHostsRequest& AddHostIds(const Aws::String& value) { m_hostIdsHasBeenSet = true; m_hostIds.push_back(value); return *this; }
 
     /**
-     * <p>The IDs of the Dedicated hosts. The IDs are used for targeted instance
+     * <p>The IDs of the Dedicated Hosts. The IDs are used for targeted instance
      * launches.</p>
      */
     inline DescribeHostsRequest& AddHostIds(Aws::String&& value) { m_hostIdsHasBeenSet = true; m_hostIds.push_back(value); return *this; }
 
     /**
-     * <p>The IDs of the Dedicated hosts. The IDs are used for targeted instance
+     * <p>The IDs of the Dedicated Hosts. The IDs are used for targeted instance
      * launches.</p>
      */
     inline DescribeHostsRequest& AddHostIds(const char* value) { m_hostIdsHasBeenSet = true; m_hostIds.push_back(value); return *this; }
@@ -149,120 +151,113 @@ namespace Model
     inline DescribeHostsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
     /**
-     * <p>One or more filters.</p> <ul> <li><p><code>instance-type</code> - The
-     * instance type size that the Dedicated host is configured to support.</p></li>
-     * <li><p><code>auto-placement</code> - Whether auto-placement is enabled or
-     * disabled (<code>on</code> | <code>off</code>).</p></li>
-     * <li><p><code>host-reservation-id</code> - The ID of the reservation associated
-     * with this host.</p></li> <li><p><code>client-token</code> - The idempotency
-     * token you provided when you launched the instance</p></li>
-     * <li><p><code>state</code>- The allocation state of the Dedicated host
-     * (<code>available</code> | <code>under-assessment</code> |
-     * <code>permanent-failure</code> | <code>released</code> |
-     * <code>released-permanent-failure</code>).</p></li>
-     * <li><p><code>availability-zone</code> - The Availability Zone of the host.</p>
+     * <p>One or more filters.</p> <ul> <li> <p> <code>instance-type</code> - The
+     * instance type size that the Dedicated Host is configured to support.</p> </li>
+     * <li> <p> <code>auto-placement</code> - Whether auto-placement is enabled or
+     * disabled (<code>on</code> | <code>off</code>).</p> </li> <li> <p>
+     * <code>host-reservation-id</code> - The ID of the reservation assigned to this
+     * host.</p> </li> <li> <p> <code>client-token</code> - The idempotency token you
+     * provided when you launched the instance</p> </li> <li> <p> <code>state</code>-
+     * The allocation state of the Dedicated Host (<code>available</code> |
+     * <code>under-assessment</code> | <code>permanent-failure</code> |
+     * <code>released</code> | <code>released-permanent-failure</code>).</p> </li> <li>
+     * <p> <code>availability-zone</code> - The Availability Zone of the host.</p>
      * </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilter() const{ return m_filter; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li><p><code>instance-type</code> - The
-     * instance type size that the Dedicated host is configured to support.</p></li>
-     * <li><p><code>auto-placement</code> - Whether auto-placement is enabled or
-     * disabled (<code>on</code> | <code>off</code>).</p></li>
-     * <li><p><code>host-reservation-id</code> - The ID of the reservation associated
-     * with this host.</p></li> <li><p><code>client-token</code> - The idempotency
-     * token you provided when you launched the instance</p></li>
-     * <li><p><code>state</code>- The allocation state of the Dedicated host
-     * (<code>available</code> | <code>under-assessment</code> |
-     * <code>permanent-failure</code> | <code>released</code> |
-     * <code>released-permanent-failure</code>).</p></li>
-     * <li><p><code>availability-zone</code> - The Availability Zone of the host.</p>
+     * <p>One or more filters.</p> <ul> <li> <p> <code>instance-type</code> - The
+     * instance type size that the Dedicated Host is configured to support.</p> </li>
+     * <li> <p> <code>auto-placement</code> - Whether auto-placement is enabled or
+     * disabled (<code>on</code> | <code>off</code>).</p> </li> <li> <p>
+     * <code>host-reservation-id</code> - The ID of the reservation assigned to this
+     * host.</p> </li> <li> <p> <code>client-token</code> - The idempotency token you
+     * provided when you launched the instance</p> </li> <li> <p> <code>state</code>-
+     * The allocation state of the Dedicated Host (<code>available</code> |
+     * <code>under-assessment</code> | <code>permanent-failure</code> |
+     * <code>released</code> | <code>released-permanent-failure</code>).</p> </li> <li>
+     * <p> <code>availability-zone</code> - The Availability Zone of the host.</p>
      * </li> </ul>
      */
     inline void SetFilter(const Aws::Vector<Filter>& value) { m_filterHasBeenSet = true; m_filter = value; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li><p><code>instance-type</code> - The
-     * instance type size that the Dedicated host is configured to support.</p></li>
-     * <li><p><code>auto-placement</code> - Whether auto-placement is enabled or
-     * disabled (<code>on</code> | <code>off</code>).</p></li>
-     * <li><p><code>host-reservation-id</code> - The ID of the reservation associated
-     * with this host.</p></li> <li><p><code>client-token</code> - The idempotency
-     * token you provided when you launched the instance</p></li>
-     * <li><p><code>state</code>- The allocation state of the Dedicated host
-     * (<code>available</code> | <code>under-assessment</code> |
-     * <code>permanent-failure</code> | <code>released</code> |
-     * <code>released-permanent-failure</code>).</p></li>
-     * <li><p><code>availability-zone</code> - The Availability Zone of the host.</p>
+     * <p>One or more filters.</p> <ul> <li> <p> <code>instance-type</code> - The
+     * instance type size that the Dedicated Host is configured to support.</p> </li>
+     * <li> <p> <code>auto-placement</code> - Whether auto-placement is enabled or
+     * disabled (<code>on</code> | <code>off</code>).</p> </li> <li> <p>
+     * <code>host-reservation-id</code> - The ID of the reservation assigned to this
+     * host.</p> </li> <li> <p> <code>client-token</code> - The idempotency token you
+     * provided when you launched the instance</p> </li> <li> <p> <code>state</code>-
+     * The allocation state of the Dedicated Host (<code>available</code> |
+     * <code>under-assessment</code> | <code>permanent-failure</code> |
+     * <code>released</code> | <code>released-permanent-failure</code>).</p> </li> <li>
+     * <p> <code>availability-zone</code> - The Availability Zone of the host.</p>
      * </li> </ul>
      */
     inline void SetFilter(Aws::Vector<Filter>&& value) { m_filterHasBeenSet = true; m_filter = value; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li><p><code>instance-type</code> - The
-     * instance type size that the Dedicated host is configured to support.</p></li>
-     * <li><p><code>auto-placement</code> - Whether auto-placement is enabled or
-     * disabled (<code>on</code> | <code>off</code>).</p></li>
-     * <li><p><code>host-reservation-id</code> - The ID of the reservation associated
-     * with this host.</p></li> <li><p><code>client-token</code> - The idempotency
-     * token you provided when you launched the instance</p></li>
-     * <li><p><code>state</code>- The allocation state of the Dedicated host
-     * (<code>available</code> | <code>under-assessment</code> |
-     * <code>permanent-failure</code> | <code>released</code> |
-     * <code>released-permanent-failure</code>).</p></li>
-     * <li><p><code>availability-zone</code> - The Availability Zone of the host.</p>
+     * <p>One or more filters.</p> <ul> <li> <p> <code>instance-type</code> - The
+     * instance type size that the Dedicated Host is configured to support.</p> </li>
+     * <li> <p> <code>auto-placement</code> - Whether auto-placement is enabled or
+     * disabled (<code>on</code> | <code>off</code>).</p> </li> <li> <p>
+     * <code>host-reservation-id</code> - The ID of the reservation assigned to this
+     * host.</p> </li> <li> <p> <code>client-token</code> - The idempotency token you
+     * provided when you launched the instance</p> </li> <li> <p> <code>state</code>-
+     * The allocation state of the Dedicated Host (<code>available</code> |
+     * <code>under-assessment</code> | <code>permanent-failure</code> |
+     * <code>released</code> | <code>released-permanent-failure</code>).</p> </li> <li>
+     * <p> <code>availability-zone</code> - The Availability Zone of the host.</p>
      * </li> </ul>
      */
     inline DescribeHostsRequest& WithFilter(const Aws::Vector<Filter>& value) { SetFilter(value); return *this;}
 
     /**
-     * <p>One or more filters.</p> <ul> <li><p><code>instance-type</code> - The
-     * instance type size that the Dedicated host is configured to support.</p></li>
-     * <li><p><code>auto-placement</code> - Whether auto-placement is enabled or
-     * disabled (<code>on</code> | <code>off</code>).</p></li>
-     * <li><p><code>host-reservation-id</code> - The ID of the reservation associated
-     * with this host.</p></li> <li><p><code>client-token</code> - The idempotency
-     * token you provided when you launched the instance</p></li>
-     * <li><p><code>state</code>- The allocation state of the Dedicated host
-     * (<code>available</code> | <code>under-assessment</code> |
-     * <code>permanent-failure</code> | <code>released</code> |
-     * <code>released-permanent-failure</code>).</p></li>
-     * <li><p><code>availability-zone</code> - The Availability Zone of the host.</p>
+     * <p>One or more filters.</p> <ul> <li> <p> <code>instance-type</code> - The
+     * instance type size that the Dedicated Host is configured to support.</p> </li>
+     * <li> <p> <code>auto-placement</code> - Whether auto-placement is enabled or
+     * disabled (<code>on</code> | <code>off</code>).</p> </li> <li> <p>
+     * <code>host-reservation-id</code> - The ID of the reservation assigned to this
+     * host.</p> </li> <li> <p> <code>client-token</code> - The idempotency token you
+     * provided when you launched the instance</p> </li> <li> <p> <code>state</code>-
+     * The allocation state of the Dedicated Host (<code>available</code> |
+     * <code>under-assessment</code> | <code>permanent-failure</code> |
+     * <code>released</code> | <code>released-permanent-failure</code>).</p> </li> <li>
+     * <p> <code>availability-zone</code> - The Availability Zone of the host.</p>
      * </li> </ul>
      */
     inline DescribeHostsRequest& WithFilter(Aws::Vector<Filter>&& value) { SetFilter(value); return *this;}
 
     /**
-     * <p>One or more filters.</p> <ul> <li><p><code>instance-type</code> - The
-     * instance type size that the Dedicated host is configured to support.</p></li>
-     * <li><p><code>auto-placement</code> - Whether auto-placement is enabled or
-     * disabled (<code>on</code> | <code>off</code>).</p></li>
-     * <li><p><code>host-reservation-id</code> - The ID of the reservation associated
-     * with this host.</p></li> <li><p><code>client-token</code> - The idempotency
-     * token you provided when you launched the instance</p></li>
-     * <li><p><code>state</code>- The allocation state of the Dedicated host
-     * (<code>available</code> | <code>under-assessment</code> |
-     * <code>permanent-failure</code> | <code>released</code> |
-     * <code>released-permanent-failure</code>).</p></li>
-     * <li><p><code>availability-zone</code> - The Availability Zone of the host.</p>
+     * <p>One or more filters.</p> <ul> <li> <p> <code>instance-type</code> - The
+     * instance type size that the Dedicated Host is configured to support.</p> </li>
+     * <li> <p> <code>auto-placement</code> - Whether auto-placement is enabled or
+     * disabled (<code>on</code> | <code>off</code>).</p> </li> <li> <p>
+     * <code>host-reservation-id</code> - The ID of the reservation assigned to this
+     * host.</p> </li> <li> <p> <code>client-token</code> - The idempotency token you
+     * provided when you launched the instance</p> </li> <li> <p> <code>state</code>-
+     * The allocation state of the Dedicated Host (<code>available</code> |
+     * <code>under-assessment</code> | <code>permanent-failure</code> |
+     * <code>released</code> | <code>released-permanent-failure</code>).</p> </li> <li>
+     * <p> <code>availability-zone</code> - The Availability Zone of the host.</p>
      * </li> </ul>
      */
     inline DescribeHostsRequest& AddFilter(const Filter& value) { m_filterHasBeenSet = true; m_filter.push_back(value); return *this; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li><p><code>instance-type</code> - The
-     * instance type size that the Dedicated host is configured to support.</p></li>
-     * <li><p><code>auto-placement</code> - Whether auto-placement is enabled or
-     * disabled (<code>on</code> | <code>off</code>).</p></li>
-     * <li><p><code>host-reservation-id</code> - The ID of the reservation associated
-     * with this host.</p></li> <li><p><code>client-token</code> - The idempotency
-     * token you provided when you launched the instance</p></li>
-     * <li><p><code>state</code>- The allocation state of the Dedicated host
-     * (<code>available</code> | <code>under-assessment</code> |
-     * <code>permanent-failure</code> | <code>released</code> |
-     * <code>released-permanent-failure</code>).</p></li>
-     * <li><p><code>availability-zone</code> - The Availability Zone of the host.</p>
+     * <p>One or more filters.</p> <ul> <li> <p> <code>instance-type</code> - The
+     * instance type size that the Dedicated Host is configured to support.</p> </li>
+     * <li> <p> <code>auto-placement</code> - Whether auto-placement is enabled or
+     * disabled (<code>on</code> | <code>off</code>).</p> </li> <li> <p>
+     * <code>host-reservation-id</code> - The ID of the reservation assigned to this
+     * host.</p> </li> <li> <p> <code>client-token</code> - The idempotency token you
+     * provided when you launched the instance</p> </li> <li> <p> <code>state</code>-
+     * The allocation state of the Dedicated Host (<code>available</code> |
+     * <code>under-assessment</code> | <code>permanent-failure</code> |
+     * <code>released</code> | <code>released-permanent-failure</code>).</p> </li> <li>
+     * <p> <code>availability-zone</code> - The Availability Zone of the host.</p>
      * </li> </ul>
      */
     inline DescribeHostsRequest& AddFilter(Filter&& value) { m_filterHasBeenSet = true; m_filter.push_back(value); return *this; }

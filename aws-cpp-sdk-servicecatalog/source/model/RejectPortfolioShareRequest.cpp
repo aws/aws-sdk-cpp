@@ -14,7 +14,6 @@
 */
 #include <aws/servicecatalog/model/RejectPortfolioShareRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
@@ -32,6 +31,12 @@ Aws::String RejectPortfolioShareRequest::SerializePayload() const
 {
   JsonValue payload;
 
+  if(m_acceptLanguageHasBeenSet)
+  {
+   payload.WithString("AcceptLanguage", m_acceptLanguage);
+
+  }
+
   if(m_portfolioIdHasBeenSet)
   {
    payload.WithString("PortfolioId", m_portfolioId);
@@ -45,14 +50,6 @@ Aws::Http::HeaderValueCollection RejectPortfolioShareRequest::GetRequestSpecific
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWS242ServiceCatalogService.RejectPortfolioShare"));
-  Aws::StringStream ss;
-  if(m_acceptLanguageHasBeenSet)
-  {
-    ss << m_acceptLanguage;
-    headers.insert(Aws::Http::HeaderValuePair("accept-language", ss.str()));
-    ss.str("");
-  }
-
   return headers;
 
 }

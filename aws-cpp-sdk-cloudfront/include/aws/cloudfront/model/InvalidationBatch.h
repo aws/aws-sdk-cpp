@@ -32,7 +32,9 @@ namespace Model
 {
 
   /**
-   * An invalidation batch.
+   * An invalidation batch.<p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/InvalidationBatch">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API InvalidationBatch
   {

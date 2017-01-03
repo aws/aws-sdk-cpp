@@ -30,7 +30,10 @@ namespace Model
 {
 
   /**
-   * <p>Request a new generated client SDK for a <a>RestApi</a> and <a>Stage</a>.</p>
+   * <p>Request a new generated client SDK for a <a>RestApi</a> and
+   * <a>Stage</a>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetSdkRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_APIGATEWAY_API GetSdkRequest : public APIGatewayRequest
   {

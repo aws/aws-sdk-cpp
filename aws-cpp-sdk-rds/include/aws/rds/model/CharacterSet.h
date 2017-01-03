@@ -33,7 +33,9 @@ namespace Model
 
   /**
    * <p> This data type is used as a response element in the action
-   * <a>DescribeDBEngineVersions</a>. </p>
+   * <a>DescribeDBEngineVersions</a>. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CharacterSet">AWS
+   * API Reference</a></p>
    */
   class AWS_RDS_API CharacterSet
   {

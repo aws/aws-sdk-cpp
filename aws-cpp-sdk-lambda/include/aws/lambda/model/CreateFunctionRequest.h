@@ -19,6 +19,8 @@
 #include <aws/lambda/model/Runtime.h>
 #include <aws/lambda/model/FunctionCode.h>
 #include <aws/lambda/model/VpcConfig.h>
+#include <aws/lambda/model/DeadLetterConfig.h>
+#include <aws/lambda/model/Environment.h>
 
 namespace Aws
 {
@@ -28,7 +30,9 @@ namespace Model
 {
 
   /**
-   * <p/>
+   * <p/><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateFunctionRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_LAMBDA_API CreateFunctionRequest : public LambdaRequest
   {
@@ -95,35 +99,50 @@ namespace Model
     /**
      * <p>The runtime environment for the Lambda function you are uploading.</p> <p>To
      * use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier
-     * runtime (v0.10.42), set the value to "nodejs".</p>
+     * runtime (v0.10.42), set the value to "nodejs".</p> <note> <p>You can no longer
+     * create functions using the v0.10.42 runtime version as of November, 2016.
+     * Existing functions will be supported until early 2017 but we recommend you
+     * migrate them to nodejs4.3 runtime version as soon as possible.</p> </note>
      */
     inline const Runtime& GetRuntime() const{ return m_runtime; }
 
     /**
      * <p>The runtime environment for the Lambda function you are uploading.</p> <p>To
      * use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier
-     * runtime (v0.10.42), set the value to "nodejs".</p>
+     * runtime (v0.10.42), set the value to "nodejs".</p> <note> <p>You can no longer
+     * create functions using the v0.10.42 runtime version as of November, 2016.
+     * Existing functions will be supported until early 2017 but we recommend you
+     * migrate them to nodejs4.3 runtime version as soon as possible.</p> </note>
      */
     inline void SetRuntime(const Runtime& value) { m_runtimeHasBeenSet = true; m_runtime = value; }
 
     /**
      * <p>The runtime environment for the Lambda function you are uploading.</p> <p>To
      * use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier
-     * runtime (v0.10.42), set the value to "nodejs".</p>
+     * runtime (v0.10.42), set the value to "nodejs".</p> <note> <p>You can no longer
+     * create functions using the v0.10.42 runtime version as of November, 2016.
+     * Existing functions will be supported until early 2017 but we recommend you
+     * migrate them to nodejs4.3 runtime version as soon as possible.</p> </note>
      */
     inline void SetRuntime(Runtime&& value) { m_runtimeHasBeenSet = true; m_runtime = value; }
 
     /**
      * <p>The runtime environment for the Lambda function you are uploading.</p> <p>To
      * use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier
-     * runtime (v0.10.42), set the value to "nodejs".</p>
+     * runtime (v0.10.42), set the value to "nodejs".</p> <note> <p>You can no longer
+     * create functions using the v0.10.42 runtime version as of November, 2016.
+     * Existing functions will be supported until early 2017 but we recommend you
+     * migrate them to nodejs4.3 runtime version as soon as possible.</p> </note>
      */
     inline CreateFunctionRequest& WithRuntime(const Runtime& value) { SetRuntime(value); return *this;}
 
     /**
      * <p>The runtime environment for the Lambda function you are uploading.</p> <p>To
      * use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier
-     * runtime (v0.10.42), set the value to "nodejs".</p>
+     * runtime (v0.10.42), set the value to "nodejs".</p> <note> <p>You can no longer
+     * create functions using the v0.10.42 runtime version as of November, 2016.
+     * Existing functions will be supported until early 2017 but we recommend you
+     * migrate them to nodejs4.3 runtime version as soon as possible.</p> </note>
      */
     inline CreateFunctionRequest& WithRuntime(Runtime&& value) { SetRuntime(value); return *this;}
 
@@ -436,6 +455,100 @@ namespace Model
      */
     inline CreateFunctionRequest& WithVpcConfig(VpcConfig&& value) { SetVpcConfig(value); return *this;}
 
+    /**
+     * <p>The parent object that contains the target ARN (Amazon Resource Name) of an
+     * Amazon SQS queue or Amazon SNS topic. </p>
+     */
+    inline const DeadLetterConfig& GetDeadLetterConfig() const{ return m_deadLetterConfig; }
+
+    /**
+     * <p>The parent object that contains the target ARN (Amazon Resource Name) of an
+     * Amazon SQS queue or Amazon SNS topic. </p>
+     */
+    inline void SetDeadLetterConfig(const DeadLetterConfig& value) { m_deadLetterConfigHasBeenSet = true; m_deadLetterConfig = value; }
+
+    /**
+     * <p>The parent object that contains the target ARN (Amazon Resource Name) of an
+     * Amazon SQS queue or Amazon SNS topic. </p>
+     */
+    inline void SetDeadLetterConfig(DeadLetterConfig&& value) { m_deadLetterConfigHasBeenSet = true; m_deadLetterConfig = value; }
+
+    /**
+     * <p>The parent object that contains the target ARN (Amazon Resource Name) of an
+     * Amazon SQS queue or Amazon SNS topic. </p>
+     */
+    inline CreateFunctionRequest& WithDeadLetterConfig(const DeadLetterConfig& value) { SetDeadLetterConfig(value); return *this;}
+
+    /**
+     * <p>The parent object that contains the target ARN (Amazon Resource Name) of an
+     * Amazon SQS queue or Amazon SNS topic. </p>
+     */
+    inline CreateFunctionRequest& WithDeadLetterConfig(DeadLetterConfig&& value) { SetDeadLetterConfig(value); return *this;}
+
+    
+    inline const Environment& GetEnvironment() const{ return m_environment; }
+
+    
+    inline void SetEnvironment(const Environment& value) { m_environmentHasBeenSet = true; m_environment = value; }
+
+    
+    inline void SetEnvironment(Environment&& value) { m_environmentHasBeenSet = true; m_environment = value; }
+
+    
+    inline CreateFunctionRequest& WithEnvironment(const Environment& value) { SetEnvironment(value); return *this;}
+
+    
+    inline CreateFunctionRequest& WithEnvironment(Environment&& value) { SetEnvironment(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt your function's
+     * environment variables. If not provided, AWS Lambda will use a default service
+     * key.</p>
+     */
+    inline const Aws::String& GetKMSKeyArn() const{ return m_kMSKeyArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt your function's
+     * environment variables. If not provided, AWS Lambda will use a default service
+     * key.</p>
+     */
+    inline void SetKMSKeyArn(const Aws::String& value) { m_kMSKeyArnHasBeenSet = true; m_kMSKeyArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt your function's
+     * environment variables. If not provided, AWS Lambda will use a default service
+     * key.</p>
+     */
+    inline void SetKMSKeyArn(Aws::String&& value) { m_kMSKeyArnHasBeenSet = true; m_kMSKeyArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt your function's
+     * environment variables. If not provided, AWS Lambda will use a default service
+     * key.</p>
+     */
+    inline void SetKMSKeyArn(const char* value) { m_kMSKeyArnHasBeenSet = true; m_kMSKeyArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt your function's
+     * environment variables. If not provided, AWS Lambda will use a default service
+     * key.</p>
+     */
+    inline CreateFunctionRequest& WithKMSKeyArn(const Aws::String& value) { SetKMSKeyArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt your function's
+     * environment variables. If not provided, AWS Lambda will use a default service
+     * key.</p>
+     */
+    inline CreateFunctionRequest& WithKMSKeyArn(Aws::String&& value) { SetKMSKeyArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt your function's
+     * environment variables. If not provided, AWS Lambda will use a default service
+     * key.</p>
+     */
+    inline CreateFunctionRequest& WithKMSKeyArn(const char* value) { SetKMSKeyArn(value); return *this;}
+
   private:
     Aws::String m_functionName;
     bool m_functionNameHasBeenSet;
@@ -457,6 +570,12 @@ namespace Model
     bool m_publishHasBeenSet;
     VpcConfig m_vpcConfig;
     bool m_vpcConfigHasBeenSet;
+    DeadLetterConfig m_deadLetterConfig;
+    bool m_deadLetterConfigHasBeenSet;
+    Environment m_environment;
+    bool m_environmentHasBeenSet;
+    Aws::String m_kMSKeyArn;
+    bool m_kMSKeyArnHasBeenSet;
   };
 
 } // namespace Model

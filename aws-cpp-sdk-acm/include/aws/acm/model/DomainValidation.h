@@ -34,7 +34,9 @@ namespace Model
   /**
    * <p>Structure that contains the domain name, the base validation domain to which
    * validation email is sent, and the email addresses used to validate the domain
-   * identity.</p>
+   * identity.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/DomainValidation">AWS
+   * API Reference</a></p>
    */
   class AWS_ACM_API DomainValidation
   {

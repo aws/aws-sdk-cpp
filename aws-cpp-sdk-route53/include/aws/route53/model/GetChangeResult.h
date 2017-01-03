@@ -33,7 +33,10 @@ namespace Route53
 namespace Model
 {
   /**
-   * <p>A complex type that contains the <code>ChangeInfo</code> element.</p>
+   * <p>A complex type that contains the <code>ChangeInfo</code>
+   * element.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetChangeResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_ROUTE53_API GetChangeResult
   {

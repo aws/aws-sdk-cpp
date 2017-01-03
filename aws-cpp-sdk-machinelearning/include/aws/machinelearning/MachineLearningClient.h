@@ -244,14 +244,20 @@ namespace Model
         /**
          * <p>Adds one or more tags to an object, up to a limit of 10. Each tag consists of
          * a key and an optional value. If you add a tag using a key that is already
-         * associated with the ML object, <code>AddTags</code> updates the tag's value.</p>
+         * associated with the ML object, <code>AddTags</code> updates the tag's
+         * value.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/AddTags">AWS
+         * API Reference</a></p>
          */
         virtual Model::AddTagsOutcome AddTags(const Model::AddTagsRequest& request) const;
 
         /**
          * <p>Adds one or more tags to an object, up to a limit of 10. Each tag consists of
          * a key and an optional value. If you add a tag using a key that is already
-         * associated with the ML object, <code>AddTags</code> updates the tag's value.</p>
+         * associated with the ML object, <code>AddTags</code> updates the tag's
+         * value.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/AddTags">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -260,7 +266,10 @@ namespace Model
         /**
          * <p>Adds one or more tags to an object, up to a limit of 10. Each tag consists of
          * a key and an optional value. If you add a tag using a key that is already
-         * associated with the ML object, <code>AddTags</code> updates the tag's value.</p>
+         * associated with the ML object, <code>AddTags</code> updates the tag's
+         * value.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/AddTags">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -280,7 +289,9 @@ namespace Model
          * updates by using the <a>GetBatchPrediction</a> operation and checking the
          * <code>Status</code> parameter of the result. After the <code>COMPLETED</code>
          * status appears, the results are available in the location specified by the
-         * <code>OutputUri</code> parameter.</p>
+         * <code>OutputUri</code> parameter.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/CreateBatchPrediction">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateBatchPredictionOutcome CreateBatchPrediction(const Model::CreateBatchPredictionRequest& request) const;
 
@@ -298,7 +309,9 @@ namespace Model
          * updates by using the <a>GetBatchPrediction</a> operation and checking the
          * <code>Status</code> parameter of the result. After the <code>COMPLETED</code>
          * status appears, the results are available in the location specified by the
-         * <code>OutputUri</code> parameter.</p>
+         * <code>OutputUri</code> parameter.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/CreateBatchPrediction">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -318,7 +331,9 @@ namespace Model
          * updates by using the <a>GetBatchPrediction</a> operation and checking the
          * <code>Status</code> parameter of the result. After the <code>COMPLETED</code>
          * status appears, the results are available in the location specified by the
-         * <code>OutputUri</code> parameter.</p>
+         * <code>OutputUri</code> parameter.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/CreateBatchPrediction">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -341,7 +356,9 @@ namespace Model
          * </p> <p> If Amazon ML cannot accept the input source, it sets the
          * <code>Status</code> parameter to <code>FAILED</code> and includes an error
          * message in the <code>Message</code> attribute of the <code>GetDataSource</code>
-         * operation response. </p>
+         * operation response. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/CreateDataSourceFromRDS">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateDataSourceFromRDSOutcome CreateDataSourceFromRDS(const Model::CreateDataSourceFromRDSRequest& request) const;
 
@@ -362,7 +379,9 @@ namespace Model
          * </p> <p> If Amazon ML cannot accept the input source, it sets the
          * <code>Status</code> parameter to <code>FAILED</code> and includes an error
          * message in the <code>Message</code> attribute of the <code>GetDataSource</code>
-         * operation response. </p>
+         * operation response. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/CreateDataSourceFromRDS">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -385,7 +404,9 @@ namespace Model
          * </p> <p> If Amazon ML cannot accept the input source, it sets the
          * <code>Status</code> parameter to <code>FAILED</code> and includes an error
          * message in the <code>Message</code> attribute of the <code>GetDataSource</code>
-         * operation response. </p>
+         * operation response. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/CreateDataSourceFromRDS">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -426,7 +447,10 @@ namespace Model
          * to create a new datasource. To do so, call <code>GetDataSource</code> for an
          * existing datasource and copy the values to a <code>CreateDataSource</code> call.
          * Change the settings that you want to change and make sure that all required
-         * fields have the appropriate values.</p> <?oxy_insert_end>
+         * fields have the appropriate values.</p> <?oxy_insert_end><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/CreateDataSourceFromRedshift">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateDataSourceFromRedshiftOutcome CreateDataSourceFromRedshift(const Model::CreateDataSourceFromRedshiftRequest& request) const;
 
@@ -465,7 +489,10 @@ namespace Model
          * to create a new datasource. To do so, call <code>GetDataSource</code> for an
          * existing datasource and copy the values to a <code>CreateDataSource</code> call.
          * Change the settings that you want to change and make sure that all required
-         * fields have the appropriate values.</p> <?oxy_insert_end>
+         * fields have the appropriate values.</p> <?oxy_insert_end><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/CreateDataSourceFromRedshift">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -506,7 +533,10 @@ namespace Model
          * to create a new datasource. To do so, call <code>GetDataSource</code> for an
          * existing datasource and copy the values to a <code>CreateDataSource</code> call.
          * Change the settings that you want to change and make sure that all required
-         * fields have the appropriate values.</p> <?oxy_insert_end>
+         * fields have the appropriate values.</p> <?oxy_insert_end><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/CreateDataSourceFromRedshift">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -541,7 +571,9 @@ namespace Model
          * <code>MLModel</code>. Will the variable be included or excluded from training?
          * Will the variable be manipulated; for example, will it be combined with another
          * variable or will it be split apart into word combinations? The recipe provides
-         * answers to these questions.</p>
+         * answers to these questions.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/CreateDataSourceFromS3">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateDataSourceFromS3Outcome CreateDataSourceFromS3(const Model::CreateDataSourceFromS3Request& request) const;
 
@@ -574,7 +606,9 @@ namespace Model
          * <code>MLModel</code>. Will the variable be included or excluded from training?
          * Will the variable be manipulated; for example, will it be combined with another
          * variable or will it be split apart into word combinations? The recipe provides
-         * answers to these questions.</p>
+         * answers to these questions.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/CreateDataSourceFromS3">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -609,7 +643,9 @@ namespace Model
          * <code>MLModel</code>. Will the variable be included or excluded from training?
          * Will the variable be manipulated; for example, will it be combined with another
          * variable or will it be split apart into word combinations? The recipe provides
-         * answers to these questions.</p>
+         * answers to these questions.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/CreateDataSourceFromS3">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -632,7 +668,10 @@ namespace Model
          * returns and sets the evaluation status to <code>PENDING</code>. After the
          * <code>Evaluation</code> is created and ready for use, Amazon ML sets the status
          * to <code>COMPLETED</code>. </p> <p>You can use the <code>GetEvaluation</code>
-         * operation to check progress of the evaluation during the creation operation.</p>
+         * operation to check progress of the evaluation during the creation
+         * operation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/CreateEvaluation">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateEvaluationOutcome CreateEvaluation(const Model::CreateEvaluationRequest& request) const;
 
@@ -653,7 +692,10 @@ namespace Model
          * returns and sets the evaluation status to <code>PENDING</code>. After the
          * <code>Evaluation</code> is created and ready for use, Amazon ML sets the status
          * to <code>COMPLETED</code>. </p> <p>You can use the <code>GetEvaluation</code>
-         * operation to check progress of the evaluation during the creation operation.</p>
+         * operation to check progress of the evaluation during the creation
+         * operation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/CreateEvaluation">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -676,7 +718,10 @@ namespace Model
          * returns and sets the evaluation status to <code>PENDING</code>. After the
          * <code>Evaluation</code> is created and ready for use, Amazon ML sets the status
          * to <code>COMPLETED</code>. </p> <p>You can use the <code>GetEvaluation</code>
-         * operation to check progress of the evaluation during the creation operation.</p>
+         * operation to check progress of the evaluation during the creation
+         * operation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/CreateEvaluation">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -698,7 +743,10 @@ namespace Model
          * statistics, which can be created by setting <code>ComputeStatistics</code> to
          * <code>true</code> in <code>CreateDataSourceFromRDS</code>,
          * <code>CreateDataSourceFromS3</code>, or
-         * <code>CreateDataSourceFromRedshift</code> operations. </p>
+         * <code>CreateDataSourceFromRedshift</code> operations. </p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/CreateMLModel">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateMLModelOutcome CreateMLModel(const Model::CreateMLModelRequest& request) const;
 
@@ -718,7 +766,10 @@ namespace Model
          * statistics, which can be created by setting <code>ComputeStatistics</code> to
          * <code>true</code> in <code>CreateDataSourceFromRDS</code>,
          * <code>CreateDataSourceFromS3</code>, or
-         * <code>CreateDataSourceFromRedshift</code> operations. </p>
+         * <code>CreateDataSourceFromRedshift</code> operations. </p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/CreateMLModel">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -740,7 +791,10 @@ namespace Model
          * statistics, which can be created by setting <code>ComputeStatistics</code> to
          * <code>true</code> in <code>CreateDataSourceFromRDS</code>,
          * <code>CreateDataSourceFromS3</code>, or
-         * <code>CreateDataSourceFromRedshift</code> operations. </p>
+         * <code>CreateDataSourceFromRedshift</code> operations. </p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/CreateMLModel">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -749,14 +803,20 @@ namespace Model
         /**
          * <p>Creates a real-time endpoint for the <code>MLModel</code>. The endpoint
          * contains the URI of the <code>MLModel</code>; that is, the location to send
-         * real-time prediction requests for the specified <code>MLModel</code>.</p>
+         * real-time prediction requests for the specified
+         * <code>MLModel</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/CreateRealtimeEndpoint">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateRealtimeEndpointOutcome CreateRealtimeEndpoint(const Model::CreateRealtimeEndpointRequest& request) const;
 
         /**
          * <p>Creates a real-time endpoint for the <code>MLModel</code>. The endpoint
          * contains the URI of the <code>MLModel</code>; that is, the location to send
-         * real-time prediction requests for the specified <code>MLModel</code>.</p>
+         * real-time prediction requests for the specified
+         * <code>MLModel</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/CreateRealtimeEndpoint">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -765,7 +825,10 @@ namespace Model
         /**
          * <p>Creates a real-time endpoint for the <code>MLModel</code>. The endpoint
          * contains the URI of the <code>MLModel</code>; that is, the location to send
-         * real-time prediction requests for the specified <code>MLModel</code>.</p>
+         * real-time prediction requests for the specified
+         * <code>MLModel</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/CreateRealtimeEndpoint">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -776,7 +839,10 @@ namespace Model
          * unusable.</p> <p>After using the <code>DeleteBatchPrediction</code> operation,
          * you can use the <a>GetBatchPrediction</a> operation to verify that the status of
          * the <code>BatchPrediction</code> changed to DELETED.</p> <p><b>Caution:</b> The
-         * result of the <code>DeleteBatchPrediction</code> operation is irreversible.</p>
+         * result of the <code>DeleteBatchPrediction</code> operation is
+         * irreversible.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DeleteBatchPrediction">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteBatchPredictionOutcome DeleteBatchPrediction(const Model::DeleteBatchPredictionRequest& request) const;
 
@@ -785,7 +851,10 @@ namespace Model
          * unusable.</p> <p>After using the <code>DeleteBatchPrediction</code> operation,
          * you can use the <a>GetBatchPrediction</a> operation to verify that the status of
          * the <code>BatchPrediction</code> changed to DELETED.</p> <p><b>Caution:</b> The
-         * result of the <code>DeleteBatchPrediction</code> operation is irreversible.</p>
+         * result of the <code>DeleteBatchPrediction</code> operation is
+         * irreversible.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DeleteBatchPrediction">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -796,7 +865,10 @@ namespace Model
          * unusable.</p> <p>After using the <code>DeleteBatchPrediction</code> operation,
          * you can use the <a>GetBatchPrediction</a> operation to verify that the status of
          * the <code>BatchPrediction</code> changed to DELETED.</p> <p><b>Caution:</b> The
-         * result of the <code>DeleteBatchPrediction</code> operation is irreversible.</p>
+         * result of the <code>DeleteBatchPrediction</code> operation is
+         * irreversible.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DeleteBatchPrediction">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -807,7 +879,10 @@ namespace Model
          * unusable.</p> <p>After using the <code>DeleteDataSource</code> operation, you
          * can use the <a>GetDataSource</a> operation to verify that the status of the
          * <code>DataSource</code> changed to DELETED.</p> <p><b>Caution:</b> The results
-         * of the <code>DeleteDataSource</code> operation are irreversible.</p>
+         * of the <code>DeleteDataSource</code> operation are irreversible.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DeleteDataSource">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteDataSourceOutcome DeleteDataSource(const Model::DeleteDataSourceRequest& request) const;
 
@@ -816,7 +891,10 @@ namespace Model
          * unusable.</p> <p>After using the <code>DeleteDataSource</code> operation, you
          * can use the <a>GetDataSource</a> operation to verify that the status of the
          * <code>DataSource</code> changed to DELETED.</p> <p><b>Caution:</b> The results
-         * of the <code>DeleteDataSource</code> operation are irreversible.</p>
+         * of the <code>DeleteDataSource</code> operation are irreversible.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DeleteDataSource">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -827,7 +905,10 @@ namespace Model
          * unusable.</p> <p>After using the <code>DeleteDataSource</code> operation, you
          * can use the <a>GetDataSource</a> operation to verify that the status of the
          * <code>DataSource</code> changed to DELETED.</p> <p><b>Caution:</b> The results
-         * of the <code>DeleteDataSource</code> operation are irreversible.</p>
+         * of the <code>DeleteDataSource</code> operation are irreversible.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DeleteDataSource">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -839,7 +920,10 @@ namespace Model
          * operation, you can use the <code>GetEvaluation</code> operation to verify that
          * the status of the <code>Evaluation</code> changed to <code>DELETED</code>.</p>
          * <caution><title>Caution</title> <p>The results of the
-         * <code>DeleteEvaluation</code> operation are irreversible.</p></caution>
+         * <code>DeleteEvaluation</code> operation are
+         * irreversible.</p></caution><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DeleteEvaluation">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteEvaluationOutcome DeleteEvaluation(const Model::DeleteEvaluationRequest& request) const;
 
@@ -849,7 +933,10 @@ namespace Model
          * operation, you can use the <code>GetEvaluation</code> operation to verify that
          * the status of the <code>Evaluation</code> changed to <code>DELETED</code>.</p>
          * <caution><title>Caution</title> <p>The results of the
-         * <code>DeleteEvaluation</code> operation are irreversible.</p></caution>
+         * <code>DeleteEvaluation</code> operation are
+         * irreversible.</p></caution><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DeleteEvaluation">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -861,7 +948,10 @@ namespace Model
          * operation, you can use the <code>GetEvaluation</code> operation to verify that
          * the status of the <code>Evaluation</code> changed to <code>DELETED</code>.</p>
          * <caution><title>Caution</title> <p>The results of the
-         * <code>DeleteEvaluation</code> operation are irreversible.</p></caution>
+         * <code>DeleteEvaluation</code> operation are
+         * irreversible.</p></caution><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DeleteEvaluation">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -872,7 +962,10 @@ namespace Model
          * it unusable.</p> <p>After using the <code>DeleteMLModel</code> operation, you
          * can use the <code>GetMLModel</code> operation to verify that the status of the
          * <code>MLModel</code> changed to DELETED.</p> <p><b>Caution:</b> The result of
-         * the <code>DeleteMLModel</code> operation is irreversible.</p>
+         * the <code>DeleteMLModel</code> operation is irreversible.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DeleteMLModel">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteMLModelOutcome DeleteMLModel(const Model::DeleteMLModelRequest& request) const;
 
@@ -881,7 +974,10 @@ namespace Model
          * it unusable.</p> <p>After using the <code>DeleteMLModel</code> operation, you
          * can use the <code>GetMLModel</code> operation to verify that the status of the
          * <code>MLModel</code> changed to DELETED.</p> <p><b>Caution:</b> The result of
-         * the <code>DeleteMLModel</code> operation is irreversible.</p>
+         * the <code>DeleteMLModel</code> operation is irreversible.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DeleteMLModel">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -892,26 +988,38 @@ namespace Model
          * it unusable.</p> <p>After using the <code>DeleteMLModel</code> operation, you
          * can use the <code>GetMLModel</code> operation to verify that the status of the
          * <code>MLModel</code> changed to DELETED.</p> <p><b>Caution:</b> The result of
-         * the <code>DeleteMLModel</code> operation is irreversible.</p>
+         * the <code>DeleteMLModel</code> operation is irreversible.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DeleteMLModel">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteMLModelAsync(const Model::DeleteMLModelRequest& request, const DeleteMLModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a real time endpoint of an <code>MLModel</code>.</p>
+         * <p>Deletes a real time endpoint of an <code>MLModel</code>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DeleteRealtimeEndpoint">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteRealtimeEndpointOutcome DeleteRealtimeEndpoint(const Model::DeleteRealtimeEndpointRequest& request) const;
 
         /**
-         * <p>Deletes a real time endpoint of an <code>MLModel</code>.</p>
+         * <p>Deletes a real time endpoint of an <code>MLModel</code>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DeleteRealtimeEndpoint">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteRealtimeEndpointOutcomeCallable DeleteRealtimeEndpointCallable(const Model::DeleteRealtimeEndpointRequest& request) const;
 
         /**
-         * <p>Deletes a real time endpoint of an <code>MLModel</code>.</p>
+         * <p>Deletes a real time endpoint of an <code>MLModel</code>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DeleteRealtimeEndpoint">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -920,14 +1028,18 @@ namespace Model
         /**
          * <p>Deletes the specified tags associated with an ML object. After this operation
          * is complete, you can't recover deleted tags.</p> <p>If you specify a tag that
-         * doesn't exist, Amazon ML ignores it.</p>
+         * doesn't exist, Amazon ML ignores it.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DeleteTags">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteTagsOutcome DeleteTags(const Model::DeleteTagsRequest& request) const;
 
         /**
          * <p>Deletes the specified tags associated with an ML object. After this operation
          * is complete, you can't recover deleted tags.</p> <p>If you specify a tag that
-         * doesn't exist, Amazon ML ignores it.</p>
+         * doesn't exist, Amazon ML ignores it.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DeleteTags">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -936,7 +1048,9 @@ namespace Model
         /**
          * <p>Deletes the specified tags associated with an ML object. After this operation
          * is complete, you can't recover deleted tags.</p> <p>If you specify a tag that
-         * doesn't exist, Amazon ML ignores it.</p>
+         * doesn't exist, Amazon ML ignores it.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DeleteTags">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -944,13 +1058,17 @@ namespace Model
 
         /**
          * <p>Returns a list of <code>BatchPrediction</code> operations that match the
-         * search criteria in the request.</p>
+         * search criteria in the request.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DescribeBatchPredictions">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeBatchPredictionsOutcome DescribeBatchPredictions(const Model::DescribeBatchPredictionsRequest& request) const;
 
         /**
          * <p>Returns a list of <code>BatchPrediction</code> operations that match the
-         * search criteria in the request.</p>
+         * search criteria in the request.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DescribeBatchPredictions">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -958,7 +1076,9 @@ namespace Model
 
         /**
          * <p>Returns a list of <code>BatchPrediction</code> operations that match the
-         * search criteria in the request.</p>
+         * search criteria in the request.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DescribeBatchPredictions">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -966,13 +1086,17 @@ namespace Model
 
         /**
          * <p>Returns a list of <code>DataSource</code> that match the search criteria in
-         * the request.</p>
+         * the request.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DescribeDataSources">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeDataSourcesOutcome DescribeDataSources(const Model::DescribeDataSourcesRequest& request) const;
 
         /**
          * <p>Returns a list of <code>DataSource</code> that match the search criteria in
-         * the request.</p>
+         * the request.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DescribeDataSources">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -980,7 +1104,9 @@ namespace Model
 
         /**
          * <p>Returns a list of <code>DataSource</code> that match the search criteria in
-         * the request.</p>
+         * the request.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DescribeDataSources">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -988,13 +1114,17 @@ namespace Model
 
         /**
          * <p>Returns a list of <code>DescribeEvaluations</code> that match the search
-         * criteria in the request.</p>
+         * criteria in the request.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DescribeEvaluations">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeEvaluationsOutcome DescribeEvaluations(const Model::DescribeEvaluationsRequest& request) const;
 
         /**
          * <p>Returns a list of <code>DescribeEvaluations</code> that match the search
-         * criteria in the request.</p>
+         * criteria in the request.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DescribeEvaluations">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1002,7 +1132,9 @@ namespace Model
 
         /**
          * <p>Returns a list of <code>DescribeEvaluations</code> that match the search
-         * criteria in the request.</p>
+         * criteria in the request.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DescribeEvaluations">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1010,13 +1142,17 @@ namespace Model
 
         /**
          * <p>Returns a list of <code>MLModel</code> that match the search criteria in the
-         * request.</p>
+         * request.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DescribeMLModels">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeMLModelsOutcome DescribeMLModels(const Model::DescribeMLModelsRequest& request) const;
 
         /**
          * <p>Returns a list of <code>MLModel</code> that match the search criteria in the
-         * request.</p>
+         * request.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DescribeMLModels">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1024,26 +1160,37 @@ namespace Model
 
         /**
          * <p>Returns a list of <code>MLModel</code> that match the search criteria in the
-         * request.</p>
+         * request.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DescribeMLModels">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeMLModelsAsync(const Model::DescribeMLModelsRequest& request, const DescribeMLModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes one or more of the tags for your Amazon ML object.</p>
+         * <p>Describes one or more of the tags for your Amazon ML object.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DescribeTags">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeTagsOutcome DescribeTags(const Model::DescribeTagsRequest& request) const;
 
         /**
-         * <p>Describes one or more of the tags for your Amazon ML object.</p>
+         * <p>Describes one or more of the tags for your Amazon ML object.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DescribeTags">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeTagsOutcomeCallable DescribeTagsCallable(const Model::DescribeTagsRequest& request) const;
 
         /**
-         * <p>Describes one or more of the tags for your Amazon ML object.</p>
+         * <p>Describes one or more of the tags for your Amazon ML object.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DescribeTags">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1052,14 +1199,18 @@ namespace Model
         /**
          * <p>Returns a <code>BatchPrediction</code> that includes detailed metadata,
          * status, and data file information for a <code>Batch Prediction</code>
-         * request.</p>
+         * request.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/GetBatchPrediction">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetBatchPredictionOutcome GetBatchPrediction(const Model::GetBatchPredictionRequest& request) const;
 
         /**
          * <p>Returns a <code>BatchPrediction</code> that includes detailed metadata,
          * status, and data file information for a <code>Batch Prediction</code>
-         * request.</p>
+         * request.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/GetBatchPrediction">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1068,7 +1219,9 @@ namespace Model
         /**
          * <p>Returns a <code>BatchPrediction</code> that includes detailed metadata,
          * status, and data file information for a <code>Batch Prediction</code>
-         * request.</p>
+         * request.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/GetBatchPrediction">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1079,7 +1232,9 @@ namespace Model
          * information, as well as the current status of the <code>DataSource</code>.</p>
          * <p><code>GetDataSource</code> provides results in normal or verbose format. The
          * verbose format adds the schema description and the list of files pointed to by
-         * the DataSource to the normal format.</p>
+         * the DataSource to the normal format.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/GetDataSource">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetDataSourceOutcome GetDataSource(const Model::GetDataSourceRequest& request) const;
 
@@ -1088,7 +1243,9 @@ namespace Model
          * information, as well as the current status of the <code>DataSource</code>.</p>
          * <p><code>GetDataSource</code> provides results in normal or verbose format. The
          * verbose format adds the schema description and the list of files pointed to by
-         * the DataSource to the normal format.</p>
+         * the DataSource to the normal format.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/GetDataSource">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1099,7 +1256,9 @@ namespace Model
          * information, as well as the current status of the <code>DataSource</code>.</p>
          * <p><code>GetDataSource</code> provides results in normal or verbose format. The
          * verbose format adds the schema description and the list of files pointed to by
-         * the DataSource to the normal format.</p>
+         * the DataSource to the normal format.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/GetDataSource">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1107,13 +1266,17 @@ namespace Model
 
         /**
          * <p>Returns an <code>Evaluation</code> that includes metadata as well as the
-         * current status of the <code>Evaluation</code>.</p>
+         * current status of the <code>Evaluation</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/GetEvaluation">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetEvaluationOutcome GetEvaluation(const Model::GetEvaluationRequest& request) const;
 
         /**
          * <p>Returns an <code>Evaluation</code> that includes metadata as well as the
-         * current status of the <code>Evaluation</code>.</p>
+         * current status of the <code>Evaluation</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/GetEvaluation">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1121,7 +1284,9 @@ namespace Model
 
         /**
          * <p>Returns an <code>Evaluation</code> that includes metadata as well as the
-         * current status of the <code>Evaluation</code>.</p>
+         * current status of the <code>Evaluation</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/GetEvaluation">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1130,14 +1295,20 @@ namespace Model
         /**
          * <p>Returns an <code>MLModel</code> that includes detailed metadata, data source
          * information, and the current status of the <code>MLModel</code>.</p>
-         * <p><code>GetMLModel</code> provides results in normal or verbose format. </p>
+         * <p><code>GetMLModel</code> provides results in normal or verbose format.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/GetMLModel">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetMLModelOutcome GetMLModel(const Model::GetMLModelRequest& request) const;
 
         /**
          * <p>Returns an <code>MLModel</code> that includes detailed metadata, data source
          * information, and the current status of the <code>MLModel</code>.</p>
-         * <p><code>GetMLModel</code> provides results in normal or verbose format. </p>
+         * <p><code>GetMLModel</code> provides results in normal or verbose format.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/GetMLModel">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1146,7 +1317,10 @@ namespace Model
         /**
          * <p>Returns an <code>MLModel</code> that includes detailed metadata, data source
          * information, and the current status of the <code>MLModel</code>.</p>
-         * <p><code>GetMLModel</code> provides results in normal or verbose format. </p>
+         * <p><code>GetMLModel</code> provides results in normal or verbose format.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/GetMLModel">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1156,7 +1330,9 @@ namespace Model
          * <p>Generates a prediction for the observation using the specified <code>ML
          * Model</code>.</p> <note><title>Note</title> <p>Not all response parameters will
          * be populated. Whether a response parameter is populated depends on the type of
-         * model requested.</p></note>
+         * model requested.</p></note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/Predict">AWS
+         * API Reference</a></p>
          */
         virtual Model::PredictOutcome Predict(const Model::PredictRequest& request) const;
 
@@ -1164,7 +1340,9 @@ namespace Model
          * <p>Generates a prediction for the observation using the specified <code>ML
          * Model</code>.</p> <note><title>Note</title> <p>Not all response parameters will
          * be populated. Whether a response parameter is populated depends on the type of
-         * model requested.</p></note>
+         * model requested.</p></note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/Predict">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1174,7 +1352,9 @@ namespace Model
          * <p>Generates a prediction for the observation using the specified <code>ML
          * Model</code>.</p> <note><title>Note</title> <p>Not all response parameters will
          * be populated. Whether a response parameter is populated depends on the type of
-         * model requested.</p></note>
+         * model requested.</p></note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/Predict">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1184,7 +1364,9 @@ namespace Model
          * <p>Updates the <code>BatchPredictionName</code> of a
          * <code>BatchPrediction</code>.</p> <p>You can use the
          * <code>GetBatchPrediction</code> operation to view the contents of the updated
-         * data element.</p>
+         * data element.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/UpdateBatchPrediction">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateBatchPredictionOutcome UpdateBatchPrediction(const Model::UpdateBatchPredictionRequest& request) const;
 
@@ -1192,7 +1374,9 @@ namespace Model
          * <p>Updates the <code>BatchPredictionName</code> of a
          * <code>BatchPrediction</code>.</p> <p>You can use the
          * <code>GetBatchPrediction</code> operation to view the contents of the updated
-         * data element.</p>
+         * data element.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/UpdateBatchPrediction">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1202,7 +1386,9 @@ namespace Model
          * <p>Updates the <code>BatchPredictionName</code> of a
          * <code>BatchPrediction</code>.</p> <p>You can use the
          * <code>GetBatchPrediction</code> operation to view the contents of the updated
-         * data element.</p>
+         * data element.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/UpdateBatchPrediction">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1211,14 +1397,18 @@ namespace Model
         /**
          * <p>Updates the <code>DataSourceName</code> of a <code>DataSource</code>.</p>
          * <p>You can use the <code>GetDataSource</code> operation to view the contents of
-         * the updated data element.</p>
+         * the updated data element.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/UpdateDataSource">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateDataSourceOutcome UpdateDataSource(const Model::UpdateDataSourceRequest& request) const;
 
         /**
          * <p>Updates the <code>DataSourceName</code> of a <code>DataSource</code>.</p>
          * <p>You can use the <code>GetDataSource</code> operation to view the contents of
-         * the updated data element.</p>
+         * the updated data element.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/UpdateDataSource">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1227,7 +1417,9 @@ namespace Model
         /**
          * <p>Updates the <code>DataSourceName</code> of a <code>DataSource</code>.</p>
          * <p>You can use the <code>GetDataSource</code> operation to view the contents of
-         * the updated data element.</p>
+         * the updated data element.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/UpdateDataSource">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1236,14 +1428,18 @@ namespace Model
         /**
          * <p>Updates the <code>EvaluationName</code> of an <code>Evaluation</code>.</p>
          * <p>You can use the <code>GetEvaluation</code> operation to view the contents of
-         * the updated data element.</p>
+         * the updated data element.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/UpdateEvaluation">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateEvaluationOutcome UpdateEvaluation(const Model::UpdateEvaluationRequest& request) const;
 
         /**
          * <p>Updates the <code>EvaluationName</code> of an <code>Evaluation</code>.</p>
          * <p>You can use the <code>GetEvaluation</code> operation to view the contents of
-         * the updated data element.</p>
+         * the updated data element.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/UpdateEvaluation">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1252,7 +1448,9 @@ namespace Model
         /**
          * <p>Updates the <code>EvaluationName</code> of an <code>Evaluation</code>.</p>
          * <p>You can use the <code>GetEvaluation</code> operation to view the contents of
-         * the updated data element.</p>
+         * the updated data element.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/UpdateEvaluation">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1261,14 +1459,20 @@ namespace Model
         /**
          * <p>Updates the <code>MLModelName</code> and the <code>ScoreThreshold</code> of
          * an <code>MLModel</code>.</p> <p>You can use the <code>GetMLModel</code>
-         * operation to view the contents of the updated data element.</p>
+         * operation to view the contents of the updated data element.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/UpdateMLModel">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateMLModelOutcome UpdateMLModel(const Model::UpdateMLModelRequest& request) const;
 
         /**
          * <p>Updates the <code>MLModelName</code> and the <code>ScoreThreshold</code> of
          * an <code>MLModel</code>.</p> <p>You can use the <code>GetMLModel</code>
-         * operation to view the contents of the updated data element.</p>
+         * operation to view the contents of the updated data element.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/UpdateMLModel">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1277,7 +1481,10 @@ namespace Model
         /**
          * <p>Updates the <code>MLModelName</code> and the <code>ScoreThreshold</code> of
          * an <code>MLModel</code>.</p> <p>You can use the <code>GetMLModel</code>
-         * operation to view the contents of the updated data element.</p>
+         * operation to view the contents of the updated data element.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/UpdateMLModel">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */

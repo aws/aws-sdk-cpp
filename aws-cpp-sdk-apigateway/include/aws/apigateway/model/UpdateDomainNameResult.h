@@ -37,7 +37,9 @@ namespace Model
    * <p>Represents a domain name that is contained in a simpler, more intuitive URL
    * that can be called.</p> <div class="seeAlso"> <a
    * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-custom-domains.html">Use
-   * Client-Side Certificate</a> </div>
+   * Client-Side Certificate</a> </div><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DomainName">AWS
+   * API Reference</a></p>
    */
   class AWS_APIGATEWAY_API UpdateDomainNameResult
   {

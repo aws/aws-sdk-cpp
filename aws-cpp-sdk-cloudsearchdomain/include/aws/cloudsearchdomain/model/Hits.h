@@ -33,7 +33,10 @@ namespace Model
 {
 
   /**
-   * <p>The collection of documents that match the search request.</p>
+   * <p>The collection of documents that match the search request.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearchdomain-2013-01-01/Hits">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDSEARCHDOMAIN_API Hits
   {

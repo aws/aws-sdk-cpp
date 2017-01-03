@@ -32,7 +32,9 @@ namespace Model
 
   /**
    * <p>A complex type that contains information about a tag that you want to add or
-   * edit for the specified health check or hosted zone.</p>
+   * edit for the specified health check or hosted zone.</p><p><h3>See Also:</h3>  
+   * <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/Tag">AWS API
+   * Reference</a></p>
    */
   class AWS_ROUTE53_API Tag
   {

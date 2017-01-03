@@ -38,7 +38,10 @@ namespace Model
 {
 
   /**
-   * <p>Describes the launch specification for VM import.</p>
+   * <p>Describes the launch specification for VM import.</p><p><h3>See Also:</h3>  
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportInstanceLaunchSpecification">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API ImportInstanceLaunchSpecification
   {
@@ -191,67 +194,77 @@ namespace Model
     inline ImportInstanceLaunchSpecification& WithAdditionalInfo(const char* value) { SetAdditionalInfo(value); return *this;}
 
     /**
-     * <p>The Base64-encoded MIME user data to be made available to the instance.</p>
+     * <p>The user data to make available to the instance. If you are using an AWS SDK
+     * or command line tool, Base64-encoding is performed for you, and you can load the
+     * text from a file. Otherwise, you must provide Base64-encoded text.</p>
      */
     inline const UserData& GetUserData() const{ return m_userData; }
 
     /**
-     * <p>The Base64-encoded MIME user data to be made available to the instance.</p>
+     * <p>The user data to make available to the instance. If you are using an AWS SDK
+     * or command line tool, Base64-encoding is performed for you, and you can load the
+     * text from a file. Otherwise, you must provide Base64-encoded text.</p>
      */
     inline void SetUserData(const UserData& value) { m_userDataHasBeenSet = true; m_userData = value; }
 
     /**
-     * <p>The Base64-encoded MIME user data to be made available to the instance.</p>
+     * <p>The user data to make available to the instance. If you are using an AWS SDK
+     * or command line tool, Base64-encoding is performed for you, and you can load the
+     * text from a file. Otherwise, you must provide Base64-encoded text.</p>
      */
     inline void SetUserData(UserData&& value) { m_userDataHasBeenSet = true; m_userData = value; }
 
     /**
-     * <p>The Base64-encoded MIME user data to be made available to the instance.</p>
+     * <p>The user data to make available to the instance. If you are using an AWS SDK
+     * or command line tool, Base64-encoding is performed for you, and you can load the
+     * text from a file. Otherwise, you must provide Base64-encoded text.</p>
      */
     inline ImportInstanceLaunchSpecification& WithUserData(const UserData& value) { SetUserData(value); return *this;}
 
     /**
-     * <p>The Base64-encoded MIME user data to be made available to the instance.</p>
+     * <p>The user data to make available to the instance. If you are using an AWS SDK
+     * or command line tool, Base64-encoding is performed for you, and you can load the
+     * text from a file. Otherwise, you must provide Base64-encoded text.</p>
      */
     inline ImportInstanceLaunchSpecification& WithUserData(UserData&& value) { SetUserData(value); return *this;}
 
     /**
      * <p>The instance type. For more information about the instance types that you can
      * import, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/VMImportPrerequisites.html">Before
-     * You Get Started</a> in the Amazon Elastic Compute Cloud User Guide.</p>
+     * href="http://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#vmimport-instance-types">Instance
+     * Types</a> in the VM Import/Export User Guide.</p>
      */
     inline const InstanceType& GetInstanceType() const{ return m_instanceType; }
 
     /**
      * <p>The instance type. For more information about the instance types that you can
      * import, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/VMImportPrerequisites.html">Before
-     * You Get Started</a> in the Amazon Elastic Compute Cloud User Guide.</p>
+     * href="http://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#vmimport-instance-types">Instance
+     * Types</a> in the VM Import/Export User Guide.</p>
      */
     inline void SetInstanceType(const InstanceType& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
     /**
      * <p>The instance type. For more information about the instance types that you can
      * import, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/VMImportPrerequisites.html">Before
-     * You Get Started</a> in the Amazon Elastic Compute Cloud User Guide.</p>
+     * href="http://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#vmimport-instance-types">Instance
+     * Types</a> in the VM Import/Export User Guide.</p>
      */
     inline void SetInstanceType(InstanceType&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
     /**
      * <p>The instance type. For more information about the instance types that you can
      * import, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/VMImportPrerequisites.html">Before
-     * You Get Started</a> in the Amazon Elastic Compute Cloud User Guide.</p>
+     * href="http://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#vmimport-instance-types">Instance
+     * Types</a> in the VM Import/Export User Guide.</p>
      */
     inline ImportInstanceLaunchSpecification& WithInstanceType(const InstanceType& value) { SetInstanceType(value); return *this;}
 
     /**
      * <p>The instance type. For more information about the instance types that you can
      * import, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/VMImportPrerequisites.html">Before
-     * You Get Started</a> in the Amazon Elastic Compute Cloud User Guide.</p>
+     * href="http://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#vmimport-instance-types">Instance
+     * Types</a> in the VM Import/Export User Guide.</p>
      */
     inline ImportInstanceLaunchSpecification& WithInstanceType(InstanceType&& value) { SetInstanceType(value); return *this;}
 

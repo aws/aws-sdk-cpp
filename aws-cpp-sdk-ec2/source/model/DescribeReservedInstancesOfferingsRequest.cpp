@@ -43,7 +43,9 @@ DescribeReservedInstancesOfferingsRequest::DescribeReservedInstancesOfferingsReq
     m_maxDuration(0),
     m_maxDurationHasBeenSet(false),
     m_maxInstanceCount(0),
-    m_maxInstanceCountHasBeenSet(false)
+    m_maxInstanceCountHasBeenSet(false),
+    m_offeringClass(OfferingClassType::NOT_SET),
+    m_offeringClassHasBeenSet(false)
 {
 }
 
@@ -132,7 +134,12 @@ Aws::String DescribeReservedInstancesOfferingsRequest::SerializePayload() const
     ss << "MaxInstanceCount=" << m_maxInstanceCount << "&";
   }
 
-  ss << "Version=2015-10-01";
+  if(m_offeringClassHasBeenSet)
+  {
+    ss << "OfferingClass=" << OfferingClassTypeMapper::GetNameForOfferingClassType(m_offeringClass) << "&";
+  }
+
+  ss << "Version=2016-11-15";
   return ss.str();
 }
 

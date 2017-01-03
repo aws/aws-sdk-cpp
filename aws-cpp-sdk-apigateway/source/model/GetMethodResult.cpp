@@ -62,6 +62,12 @@ GetMethodResult& GetMethodResult::operator =(const AmazonWebServiceResult<JsonVa
 
   }
 
+  if(jsonValue.ValueExists("operationName"))
+  {
+    m_operationName = jsonValue.GetString("operationName");
+
+  }
+
   if(jsonValue.ValueExists("requestParameters"))
   {
     Aws::Map<Aws::String, JsonValue> requestParametersJsonMap = jsonValue.GetObject("requestParameters").GetAllObjects();

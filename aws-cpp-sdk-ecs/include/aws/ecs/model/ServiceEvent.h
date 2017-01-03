@@ -32,7 +32,9 @@ namespace Model
 {
 
   /**
-   * <p>Details on an event associated with a service.</p>
+   * <p>Details on an event associated with a service.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ServiceEvent">AWS
+   * API Reference</a></p>
    */
   class AWS_ECS_API ServiceEvent
   {

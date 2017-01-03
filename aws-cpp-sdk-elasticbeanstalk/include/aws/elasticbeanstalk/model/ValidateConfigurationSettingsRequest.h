@@ -27,7 +27,10 @@ namespace Model
 {
 
   /**
-   * <p>A list of validation messages for a specified configuration template.</p>
+   * <p>A list of validation messages for a specified configuration
+   * template.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ValidateConfigurationSettingsMessage">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICBEANSTALK_API ValidateConfigurationSettingsRequest : public ElasticBeanstalkRequest
   {

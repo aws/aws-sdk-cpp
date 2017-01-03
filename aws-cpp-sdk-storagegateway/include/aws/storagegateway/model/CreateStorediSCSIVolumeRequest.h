@@ -30,7 +30,10 @@ namespace Model
    * <a>CreateStorediSCSIVolumeInput$NetworkInterfaceId</a> </p> </li> <li> <p>
    * <a>CreateStorediSCSIVolumeInput$PreserveExistingData</a> </p> </li> <li> <p>
    * <a>CreateStorediSCSIVolumeInput$SnapshotId</a> </p> </li> <li> <p>
-   * <a>CreateStorediSCSIVolumeInput$TargetName</a> </p> </li> </ul>
+   * <a>CreateStorediSCSIVolumeInput$TargetName</a> </p> </li> </ul><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateStorediSCSIVolumeInput">AWS
+   * API Reference</a></p>
    */
   class AWS_STORAGEGATEWAY_API CreateStorediSCSIVolumeRequest : public StorageGatewayRequest
   {

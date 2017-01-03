@@ -35,9 +35,6 @@ namespace CloudWatch
 {
 namespace Model
 {
-  /**
-   * <p> The output for <a>GetMetricStatistics</a>. </p>
-   */
   class AWS_CLOUDWATCH_API GetMetricStatisticsResult
   {
   public:
@@ -46,72 +43,72 @@ namespace Model
     GetMetricStatisticsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
     /**
-     * <p>A label describing the specified metric.</p>
+     * <p>A label for the specified metric.</p>
      */
     inline const Aws::String& GetLabel() const{ return m_label; }
 
     /**
-     * <p>A label describing the specified metric.</p>
+     * <p>A label for the specified metric.</p>
      */
     inline void SetLabel(const Aws::String& value) { m_label = value; }
 
     /**
-     * <p>A label describing the specified metric.</p>
+     * <p>A label for the specified metric.</p>
      */
     inline void SetLabel(Aws::String&& value) { m_label = value; }
 
     /**
-     * <p>A label describing the specified metric.</p>
+     * <p>A label for the specified metric.</p>
      */
     inline void SetLabel(const char* value) { m_label.assign(value); }
 
     /**
-     * <p>A label describing the specified metric.</p>
+     * <p>A label for the specified metric.</p>
      */
     inline GetMetricStatisticsResult& WithLabel(const Aws::String& value) { SetLabel(value); return *this;}
 
     /**
-     * <p>A label describing the specified metric.</p>
+     * <p>A label for the specified metric.</p>
      */
     inline GetMetricStatisticsResult& WithLabel(Aws::String&& value) { SetLabel(value); return *this;}
 
     /**
-     * <p>A label describing the specified metric.</p>
+     * <p>A label for the specified metric.</p>
      */
     inline GetMetricStatisticsResult& WithLabel(const char* value) { SetLabel(value); return *this;}
 
     /**
-     * <p>The datapoints for the specified metric.</p>
+     * <p>The data points for the specified metric.</p>
      */
     inline const Aws::Vector<Datapoint>& GetDatapoints() const{ return m_datapoints; }
 
     /**
-     * <p>The datapoints for the specified metric.</p>
+     * <p>The data points for the specified metric.</p>
      */
     inline void SetDatapoints(const Aws::Vector<Datapoint>& value) { m_datapoints = value; }
 
     /**
-     * <p>The datapoints for the specified metric.</p>
+     * <p>The data points for the specified metric.</p>
      */
     inline void SetDatapoints(Aws::Vector<Datapoint>&& value) { m_datapoints = value; }
 
     /**
-     * <p>The datapoints for the specified metric.</p>
+     * <p>The data points for the specified metric.</p>
      */
     inline GetMetricStatisticsResult& WithDatapoints(const Aws::Vector<Datapoint>& value) { SetDatapoints(value); return *this;}
 
     /**
-     * <p>The datapoints for the specified metric.</p>
+     * <p>The data points for the specified metric.</p>
      */
     inline GetMetricStatisticsResult& WithDatapoints(Aws::Vector<Datapoint>&& value) { SetDatapoints(value); return *this;}
 
     /**
-     * <p>The datapoints for the specified metric.</p>
+     * <p>The data points for the specified metric.</p>
      */
     inline GetMetricStatisticsResult& AddDatapoints(const Datapoint& value) { m_datapoints.push_back(value); return *this; }
 
     /**
-     * <p>The datapoints for the specified metric.</p>
+     * <p>The data points for the specified metric.</p>
      */
     inline GetMetricStatisticsResult& AddDatapoints(Datapoint&& value) { m_datapoints.push_back(value); return *this; }
 

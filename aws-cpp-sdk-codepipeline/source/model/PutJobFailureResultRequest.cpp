@@ -49,7 +49,7 @@ Aws::String PutJobFailureResultRequest::SerializePayload() const
 Aws::Http::HeaderValueCollection PutJobFailureResultRequest::GetRequestSpecificHeaders() const
 {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "CodePipeline_20150709.PutJobFailure"));
+  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "CodePipeline_20150709.PutJobFailureResult"));
   return headers;
 
 }

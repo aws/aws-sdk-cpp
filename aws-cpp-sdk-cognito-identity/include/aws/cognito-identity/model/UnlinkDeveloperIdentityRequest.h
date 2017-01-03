@@ -25,7 +25,10 @@ namespace Model
 {
 
   /**
-   * <p>Input to the <code>UnlinkDeveloperIdentity</code> action.</p>
+   * <p>Input to the <code>UnlinkDeveloperIdentity</code> action.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/UnlinkDeveloperIdentityInput">AWS
+   * API Reference</a></p>
    */
   class AWS_COGNITOIDENTITY_API UnlinkDeveloperIdentityRequest : public CognitoIdentityRequest
   {
@@ -141,37 +144,44 @@ namespace Model
     inline UnlinkDeveloperIdentityRequest& WithDeveloperProviderName(const char* value) { SetDeveloperProviderName(value); return *this;}
 
     /**
-     * A unique ID used by your backend authentication process to identify a user.
+     * <p>A unique ID used by your backend authentication process to identify a
+     * user.</p>
      */
     inline const Aws::String& GetDeveloperUserIdentifier() const{ return m_developerUserIdentifier; }
 
     /**
-     * A unique ID used by your backend authentication process to identify a user.
+     * <p>A unique ID used by your backend authentication process to identify a
+     * user.</p>
      */
     inline void SetDeveloperUserIdentifier(const Aws::String& value) { m_developerUserIdentifierHasBeenSet = true; m_developerUserIdentifier = value; }
 
     /**
-     * A unique ID used by your backend authentication process to identify a user.
+     * <p>A unique ID used by your backend authentication process to identify a
+     * user.</p>
      */
     inline void SetDeveloperUserIdentifier(Aws::String&& value) { m_developerUserIdentifierHasBeenSet = true; m_developerUserIdentifier = value; }
 
     /**
-     * A unique ID used by your backend authentication process to identify a user.
+     * <p>A unique ID used by your backend authentication process to identify a
+     * user.</p>
      */
     inline void SetDeveloperUserIdentifier(const char* value) { m_developerUserIdentifierHasBeenSet = true; m_developerUserIdentifier.assign(value); }
 
     /**
-     * A unique ID used by your backend authentication process to identify a user.
+     * <p>A unique ID used by your backend authentication process to identify a
+     * user.</p>
      */
     inline UnlinkDeveloperIdentityRequest& WithDeveloperUserIdentifier(const Aws::String& value) { SetDeveloperUserIdentifier(value); return *this;}
 
     /**
-     * A unique ID used by your backend authentication process to identify a user.
+     * <p>A unique ID used by your backend authentication process to identify a
+     * user.</p>
      */
     inline UnlinkDeveloperIdentityRequest& WithDeveloperUserIdentifier(Aws::String&& value) { SetDeveloperUserIdentifier(value); return *this;}
 
     /**
-     * A unique ID used by your backend authentication process to identify a user.
+     * <p>A unique ID used by your backend authentication process to identify a
+     * user.</p>
      */
     inline UnlinkDeveloperIdentityRequest& WithDeveloperUserIdentifier(const char* value) { SetDeveloperUserIdentifier(value); return *this;}
 

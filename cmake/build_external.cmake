@@ -27,7 +27,7 @@ if(BUILD_CURL OR BUILD_OPENSSL OR BUILD_ZLIB)
             SOURCE_DIR ${ZLIB_SOURCE_DIR}
             URL http://zlib.net/zlib-1.2.8.tar.gz
             URL_HASH "SHA256=36658cb768a54c1d4dec43c3116c27ed893e88b02ecfcb44f2166f9c0b7f2a0d"
-            PATCH_COMMAND patch CMakeLists.txt < ${CMAKE_SOURCE_DIR}/android-build/patches/zlib/CMakeLists.patch
+            PATCH_COMMAND ""
             CMAKE_ARGS
             -DCMAKE_TOOLCHAIN_FILE=${CMAKE_TOOLCHAIN_FILE}
             -DANDROID_NATIVE_API_LEVEL=${ANDROID_NATIVE_API_LEVEL}
@@ -55,12 +55,15 @@ if(BUILD_CURL OR BUILD_OPENSSL OR BUILD_ZLIB)
 
     # OpenSSL
     if(BUILD_OPENSSL)
-        set(OPENSSL_SOURCE_DIR ${CMAKE_BINARY_DIR}/openssl CACHE INTERNAL "openssl source dir")
+        set(OPENSSL_SOURCE_DIR ${CMAKE_BINARY_DIR}/openssl-src CACHE INTERNAL "openssl source dir")
         set(OPENSSL_INSTALL_DIR ${EXTERNAL_INSTALL_DIR}/openssl CACHE INTERNAL "openssl install dir")
         set(OPENSSL_INCLUDE_DIR ${OPENSSL_INSTALL_DIR}/include CACHE INTERNAL "openssl include dir")
         set(OPENSSL_LIBRARY_DIR ${OPENSSL_INSTALL_DIR}/lib CACHE INTERNAL "openssl library dir")
         set(OPENSSL_CXX_FLAGS "${EXTERNAL_CXX_FLAGS} ${ZLIB_INCLUDE_FLAGS} -fPIE" CACHE INTERNAL "openssl")
         set(OPENSSL_C_FLAGS "${EXTERNAL_C_FLAGS} ${ZLIB_INCLUDE_FLAGS} -fPIE" CACHE INTERNAL "openssl")
+        if(ANDROID_ABI STREQUAL "x86_64")
+            set(OPENSSL_C_FLAGS "${OPENSSL_C_FLAGS} -DOPENSSL_NO_INLINE_ASM" CACHE INTERNAL "openssl")
+        endif()
         set(OPENSSL_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -fPIE -pie" CACHE INTERNAL "openssl")
 
         set(OPENSSL_INCLUDE_FLAGS "-isystem ${OPENSSL_INCLUDE_DIR} -isystem ${OPENSSL_INCLUDE_DIR}/openssl" CACHE INTERNAL "compiler flags to find openssl includes")

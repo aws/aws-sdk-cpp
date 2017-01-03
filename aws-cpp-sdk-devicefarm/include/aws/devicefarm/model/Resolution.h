@@ -31,7 +31,9 @@ namespace Model
 
   /**
    * <p>Represents the screen resolution of a device in height and width, expressed
-   * in pixels.</p>
+   * in pixels.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/Resolution">AWS
+   * API Reference</a></p>
    */
   class AWS_DEVICEFARM_API Resolution
   {

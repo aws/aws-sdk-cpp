@@ -27,7 +27,6 @@ namespace Model
 {
 
   /**
-   * <p>Describes the inputs for DescribeAlarms.</p>
    */
   class AWS_CLOUDWATCH_API DescribeAlarmsRequest : public CloudWatchRequest
   {
@@ -36,83 +35,83 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     /**
-     * <p>A list of alarm names to retrieve information for.</p>
+     * <p>The names of the alarms.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAlarmNames() const{ return m_alarmNames; }
 
     /**
-     * <p>A list of alarm names to retrieve information for.</p>
+     * <p>The names of the alarms.</p>
      */
     inline void SetAlarmNames(const Aws::Vector<Aws::String>& value) { m_alarmNamesHasBeenSet = true; m_alarmNames = value; }
 
     /**
-     * <p>A list of alarm names to retrieve information for.</p>
+     * <p>The names of the alarms.</p>
      */
     inline void SetAlarmNames(Aws::Vector<Aws::String>&& value) { m_alarmNamesHasBeenSet = true; m_alarmNames = value; }
 
     /**
-     * <p>A list of alarm names to retrieve information for.</p>
+     * <p>The names of the alarms.</p>
      */
     inline DescribeAlarmsRequest& WithAlarmNames(const Aws::Vector<Aws::String>& value) { SetAlarmNames(value); return *this;}
 
     /**
-     * <p>A list of alarm names to retrieve information for.</p>
+     * <p>The names of the alarms.</p>
      */
     inline DescribeAlarmsRequest& WithAlarmNames(Aws::Vector<Aws::String>&& value) { SetAlarmNames(value); return *this;}
 
     /**
-     * <p>A list of alarm names to retrieve information for.</p>
+     * <p>The names of the alarms.</p>
      */
     inline DescribeAlarmsRequest& AddAlarmNames(const Aws::String& value) { m_alarmNamesHasBeenSet = true; m_alarmNames.push_back(value); return *this; }
 
     /**
-     * <p>A list of alarm names to retrieve information for.</p>
+     * <p>The names of the alarms.</p>
      */
     inline DescribeAlarmsRequest& AddAlarmNames(Aws::String&& value) { m_alarmNamesHasBeenSet = true; m_alarmNames.push_back(value); return *this; }
 
     /**
-     * <p>A list of alarm names to retrieve information for.</p>
+     * <p>The names of the alarms.</p>
      */
     inline DescribeAlarmsRequest& AddAlarmNames(const char* value) { m_alarmNamesHasBeenSet = true; m_alarmNames.push_back(value); return *this; }
 
     /**
-     * <p>The alarm name prefix. <code>AlarmNames</code> cannot be specified if this
+     * <p>The alarm name prefix. You cannot specify <code>AlarmNames</code> if this
      * parameter is specified.</p>
      */
     inline const Aws::String& GetAlarmNamePrefix() const{ return m_alarmNamePrefix; }
 
     /**
-     * <p>The alarm name prefix. <code>AlarmNames</code> cannot be specified if this
+     * <p>The alarm name prefix. You cannot specify <code>AlarmNames</code> if this
      * parameter is specified.</p>
      */
     inline void SetAlarmNamePrefix(const Aws::String& value) { m_alarmNamePrefixHasBeenSet = true; m_alarmNamePrefix = value; }
 
     /**
-     * <p>The alarm name prefix. <code>AlarmNames</code> cannot be specified if this
+     * <p>The alarm name prefix. You cannot specify <code>AlarmNames</code> if this
      * parameter is specified.</p>
      */
     inline void SetAlarmNamePrefix(Aws::String&& value) { m_alarmNamePrefixHasBeenSet = true; m_alarmNamePrefix = value; }
 
     /**
-     * <p>The alarm name prefix. <code>AlarmNames</code> cannot be specified if this
+     * <p>The alarm name prefix. You cannot specify <code>AlarmNames</code> if this
      * parameter is specified.</p>
      */
     inline void SetAlarmNamePrefix(const char* value) { m_alarmNamePrefixHasBeenSet = true; m_alarmNamePrefix.assign(value); }
 
     /**
-     * <p>The alarm name prefix. <code>AlarmNames</code> cannot be specified if this
+     * <p>The alarm name prefix. You cannot specify <code>AlarmNames</code> if this
      * parameter is specified.</p>
      */
     inline DescribeAlarmsRequest& WithAlarmNamePrefix(const Aws::String& value) { SetAlarmNamePrefix(value); return *this;}
 
     /**
-     * <p>The alarm name prefix. <code>AlarmNames</code> cannot be specified if this
+     * <p>The alarm name prefix. You cannot specify <code>AlarmNames</code> if this
      * parameter is specified.</p>
      */
     inline DescribeAlarmsRequest& WithAlarmNamePrefix(Aws::String&& value) { SetAlarmNamePrefix(value); return *this;}
 
     /**
-     * <p>The alarm name prefix. <code>AlarmNames</code> cannot be specified if this
+     * <p>The alarm name prefix. You cannot specify <code>AlarmNames</code> if this
      * parameter is specified.</p>
      */
     inline DescribeAlarmsRequest& WithAlarmNamePrefix(const char* value) { SetAlarmNamePrefix(value); return *this;}

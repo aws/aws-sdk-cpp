@@ -16,9 +16,12 @@
 #include <aws/external/gtest.h>
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/auth/AWSCredentialsProvider.h>
+#include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/http/standard/StandardHttpRequest.h>
 #include <aws/core/http/standard/StandardHttpResponse.h>
+#include <aws/core/platform/FileSystem.h>
+#include <aws/core/platform/Platform.h>
 #include <aws/core/utils/StringUtils.h>
 #include <fstream>
 
@@ -169,17 +172,28 @@ static Standard::StandardHttpRequest ParseHttpRequest(Aws::IOStream& inputStream
     return request;
 }
 
+static Aws::String MakeSigV4ResourceFilePath(const Aws::String& testName, const Aws::String& fileSuffix)
+{
+    Aws::StringStream fileName;
+    #ifdef __ANDROID__
+        fileName << Aws::Platform::GetCacheDirectory() << "resources" << Aws::FileSystem::PATH_DELIM;
+    #else
+        fileName << "./aws4_testsuite/aws4_testsuite/";
+    #endif
+
+    fileName << testName << Aws::FileSystem::PATH_DELIM << testName << "." << fileSuffix;
+
+    return fileName.str();
+}
+
 static void RunV4TestCase(const char* testCaseName)
 {
-    Aws::StringStream requestFileName;
-    requestFileName << "./aws4_testsuite/aws4_testsuite/" << testCaseName << "/" << testCaseName << ".req";
-    Aws::FStream requestFile(requestFileName.str().c_str(), std::ios::in);
+    Aws::String requestFileName = MakeSigV4ResourceFilePath(testCaseName, "req");
+    Aws::FStream requestFile(requestFileName.c_str(), std::ios::in);
     ASSERT_TRUE(requestFile.good());
 
-    Aws::StringStream expectedSignatureFileName;
-    expectedSignatureFileName << "./aws4_testsuite/aws4_testsuite/" << testCaseName << "/" << testCaseName << ".authz";
-
-    Aws::FStream signatureFile(expectedSignatureFileName.str().c_str(), std::ios::in);
+    Aws::String expectedSignatureFileName = MakeSigV4ResourceFilePath(testCaseName, "authz");
+    Aws::FStream signatureFile(expectedSignatureFileName.c_str(), std::ios::in);
     ASSERT_TRUE(signatureFile.good());
 
     DateTime timestampForSigner;

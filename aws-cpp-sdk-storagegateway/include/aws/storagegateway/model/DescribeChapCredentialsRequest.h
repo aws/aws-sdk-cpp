@@ -26,7 +26,9 @@ namespace Model
 
   /**
    * <p>A JSON object containing the Amazon Resource Name (ARN) of the iSCSI volume
-   * target.</p>
+   * target.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeChapCredentialsInput">AWS
+   * API Reference</a></p>
    */
   class AWS_STORAGEGATEWAY_API DescribeChapCredentialsRequest : public StorageGatewayRequest
   {

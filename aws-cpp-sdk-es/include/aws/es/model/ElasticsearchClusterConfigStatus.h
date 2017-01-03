@@ -33,7 +33,9 @@ namespace Model
 
   /**
    * <p> Specifies the configuration status for the specified Elasticsearch
-   * domain.</p>
+   * domain.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/ElasticsearchClusterConfigStatus">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICSEARCHSERVICE_API ElasticsearchClusterConfigStatus
   {

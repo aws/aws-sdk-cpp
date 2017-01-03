@@ -34,7 +34,9 @@ namespace Model
 {
   /**
    * <p>The response to a request to delete a <a>SqlInjectionMatchSet</a> from AWS
-   * WAF.</p>
+   * WAF.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteSqlInjectionMatchSetResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_WAF_API DeleteSqlInjectionMatchSetResult
   {

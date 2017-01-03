@@ -32,7 +32,13 @@ JobListEntry::JobListEntry() :
     m_jobState(JobState::NOT_SET),
     m_jobStateHasBeenSet(false),
     m_isMaster(false),
-    m_isMasterHasBeenSet(false)
+    m_isMasterHasBeenSet(false),
+    m_jobType(JobType::NOT_SET),
+    m_jobTypeHasBeenSet(false),
+    m_snowballType(SnowballType::NOT_SET),
+    m_snowballTypeHasBeenSet(false),
+    m_creationDateHasBeenSet(false),
+    m_descriptionHasBeenSet(false)
 {
 }
 
@@ -41,7 +47,13 @@ JobListEntry::JobListEntry(const JsonValue& jsonValue) :
     m_jobState(JobState::NOT_SET),
     m_jobStateHasBeenSet(false),
     m_isMaster(false),
-    m_isMasterHasBeenSet(false)
+    m_isMasterHasBeenSet(false),
+    m_jobType(JobType::NOT_SET),
+    m_jobTypeHasBeenSet(false),
+    m_snowballType(SnowballType::NOT_SET),
+    m_snowballTypeHasBeenSet(false),
+    m_creationDateHasBeenSet(false),
+    m_descriptionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -69,6 +81,34 @@ JobListEntry& JobListEntry::operator =(const JsonValue& jsonValue)
     m_isMasterHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("JobType"))
+  {
+    m_jobType = JobTypeMapper::GetJobTypeForName(jsonValue.GetString("JobType"));
+
+    m_jobTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SnowballType"))
+  {
+    m_snowballType = SnowballTypeMapper::GetSnowballTypeForName(jsonValue.GetString("SnowballType"));
+
+    m_snowballTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CreationDate"))
+  {
+    m_creationDate = jsonValue.GetDouble("CreationDate");
+
+    m_creationDateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Description"))
+  {
+    m_description = jsonValue.GetString("Description");
+
+    m_descriptionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -90,6 +130,27 @@ JsonValue JobListEntry::Jsonize() const
   if(m_isMasterHasBeenSet)
   {
    payload.WithBool("IsMaster", m_isMaster);
+
+  }
+
+  if(m_jobTypeHasBeenSet)
+  {
+   payload.WithString("JobType", JobTypeMapper::GetNameForJobType(m_jobType));
+  }
+
+  if(m_snowballTypeHasBeenSet)
+  {
+   payload.WithString("SnowballType", SnowballTypeMapper::GetNameForSnowballType(m_snowballType));
+  }
+
+  if(m_creationDateHasBeenSet)
+  {
+   payload.WithDouble("CreationDate", m_creationDate.SecondsWithMSPrecision());
+  }
+
+  if(m_descriptionHasBeenSet)
+  {
+   payload.WithString("Description", m_description);
 
   }
 

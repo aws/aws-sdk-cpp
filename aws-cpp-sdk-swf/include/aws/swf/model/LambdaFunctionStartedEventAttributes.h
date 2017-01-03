@@ -30,7 +30,10 @@ namespace Model
 {
 
   /**
-   * <p>Provides details for the <code>LambdaFunctionStarted</code> event.</p>
+   * <p>Provides details for the <code>LambdaFunctionStarted</code>
+   * event.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/LambdaFunctionStartedEventAttributes">AWS
+   * API Reference</a></p>
    */
   class AWS_SWF_API LambdaFunctionStartedEventAttributes
   {

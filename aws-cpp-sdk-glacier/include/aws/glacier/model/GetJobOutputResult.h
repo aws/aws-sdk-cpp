@@ -28,7 +28,10 @@ namespace Glacier
 namespace Model
 {
   /**
-   * <p>Contains the Amazon Glacier response to your request.</p>
+   * <p>Contains the Amazon Glacier response to your request.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/GetJobOutputOutput">AWS
+   * API Reference</a></p>
    */
   class AWS_GLACIER_API GetJobOutputResult
   {
@@ -58,114 +61,114 @@ namespace Model
     inline void ReplaceBody(Aws::IOStream* body) { m_body = Aws::Utils::Stream::ResponseStream(body); }
     
     /**
-     * <p> The checksum of the data in the response. This header is returned only when
+     * <p>The checksum of the data in the response. This header is returned only when
      * retrieving the output for an archive retrieval job. Furthermore, this header
-     * appears only under the following conditions: <ul> <li>You get the entire range
-     * of the archive.</li> <li>You request a range to return of the archive that
-     * starts and ends on a multiple of 1 MB. For example, if you have an 3.1 MB
-     * archive and you specify a range to return that starts at 1 MB and ends at 2 MB,
-     * then the x-amz-sha256-tree-hash is returned as a response header.</li> <li>You
-     * request a range of the archive to return that starts on a multiple of 1 MB and
-     * goes to the end of the archive. For example, if you have a 3.1 MB archive and
-     * you specify a range that starts at 2 MB and ends at 3.1 MB (the end of the
-     * archive), then the x-amz-sha256-tree-hash is returned as a response header.</li>
-     * </ul> </p>
+     * appears only under the following conditions:</p> <ul> <li> <p>You get the entire
+     * range of the archive.</p> </li> <li> <p>You request a range to return of the
+     * archive that starts and ends on a multiple of 1 MB. For example, if you have an
+     * 3.1 MB archive and you specify a range to return that starts at 1 MB and ends at
+     * 2 MB, then the x-amz-sha256-tree-hash is returned as a response header.</p>
+     * </li> <li> <p>You request a range of the archive to return that starts on a
+     * multiple of 1 MB and goes to the end of the archive. For example, if you have a
+     * 3.1 MB archive and you specify a range that starts at 2 MB and ends at 3.1 MB
+     * (the end of the archive), then the x-amz-sha256-tree-hash is returned as a
+     * response header.</p> </li> </ul>
      */
     inline const Aws::String& GetChecksum() const{ return m_checksum; }
 
     /**
-     * <p> The checksum of the data in the response. This header is returned only when
+     * <p>The checksum of the data in the response. This header is returned only when
      * retrieving the output for an archive retrieval job. Furthermore, this header
-     * appears only under the following conditions: <ul> <li>You get the entire range
-     * of the archive.</li> <li>You request a range to return of the archive that
-     * starts and ends on a multiple of 1 MB. For example, if you have an 3.1 MB
-     * archive and you specify a range to return that starts at 1 MB and ends at 2 MB,
-     * then the x-amz-sha256-tree-hash is returned as a response header.</li> <li>You
-     * request a range of the archive to return that starts on a multiple of 1 MB and
-     * goes to the end of the archive. For example, if you have a 3.1 MB archive and
-     * you specify a range that starts at 2 MB and ends at 3.1 MB (the end of the
-     * archive), then the x-amz-sha256-tree-hash is returned as a response header.</li>
-     * </ul> </p>
+     * appears only under the following conditions:</p> <ul> <li> <p>You get the entire
+     * range of the archive.</p> </li> <li> <p>You request a range to return of the
+     * archive that starts and ends on a multiple of 1 MB. For example, if you have an
+     * 3.1 MB archive and you specify a range to return that starts at 1 MB and ends at
+     * 2 MB, then the x-amz-sha256-tree-hash is returned as a response header.</p>
+     * </li> <li> <p>You request a range of the archive to return that starts on a
+     * multiple of 1 MB and goes to the end of the archive. For example, if you have a
+     * 3.1 MB archive and you specify a range that starts at 2 MB and ends at 3.1 MB
+     * (the end of the archive), then the x-amz-sha256-tree-hash is returned as a
+     * response header.</p> </li> </ul>
      */
     inline void SetChecksum(const Aws::String& value) { m_checksum = value; }
 
     /**
-     * <p> The checksum of the data in the response. This header is returned only when
+     * <p>The checksum of the data in the response. This header is returned only when
      * retrieving the output for an archive retrieval job. Furthermore, this header
-     * appears only under the following conditions: <ul> <li>You get the entire range
-     * of the archive.</li> <li>You request a range to return of the archive that
-     * starts and ends on a multiple of 1 MB. For example, if you have an 3.1 MB
-     * archive and you specify a range to return that starts at 1 MB and ends at 2 MB,
-     * then the x-amz-sha256-tree-hash is returned as a response header.</li> <li>You
-     * request a range of the archive to return that starts on a multiple of 1 MB and
-     * goes to the end of the archive. For example, if you have a 3.1 MB archive and
-     * you specify a range that starts at 2 MB and ends at 3.1 MB (the end of the
-     * archive), then the x-amz-sha256-tree-hash is returned as a response header.</li>
-     * </ul> </p>
+     * appears only under the following conditions:</p> <ul> <li> <p>You get the entire
+     * range of the archive.</p> </li> <li> <p>You request a range to return of the
+     * archive that starts and ends on a multiple of 1 MB. For example, if you have an
+     * 3.1 MB archive and you specify a range to return that starts at 1 MB and ends at
+     * 2 MB, then the x-amz-sha256-tree-hash is returned as a response header.</p>
+     * </li> <li> <p>You request a range of the archive to return that starts on a
+     * multiple of 1 MB and goes to the end of the archive. For example, if you have a
+     * 3.1 MB archive and you specify a range that starts at 2 MB and ends at 3.1 MB
+     * (the end of the archive), then the x-amz-sha256-tree-hash is returned as a
+     * response header.</p> </li> </ul>
      */
     inline void SetChecksum(Aws::String&& value) { m_checksum = value; }
 
     /**
-     * <p> The checksum of the data in the response. This header is returned only when
+     * <p>The checksum of the data in the response. This header is returned only when
      * retrieving the output for an archive retrieval job. Furthermore, this header
-     * appears only under the following conditions: <ul> <li>You get the entire range
-     * of the archive.</li> <li>You request a range to return of the archive that
-     * starts and ends on a multiple of 1 MB. For example, if you have an 3.1 MB
-     * archive and you specify a range to return that starts at 1 MB and ends at 2 MB,
-     * then the x-amz-sha256-tree-hash is returned as a response header.</li> <li>You
-     * request a range of the archive to return that starts on a multiple of 1 MB and
-     * goes to the end of the archive. For example, if you have a 3.1 MB archive and
-     * you specify a range that starts at 2 MB and ends at 3.1 MB (the end of the
-     * archive), then the x-amz-sha256-tree-hash is returned as a response header.</li>
-     * </ul> </p>
+     * appears only under the following conditions:</p> <ul> <li> <p>You get the entire
+     * range of the archive.</p> </li> <li> <p>You request a range to return of the
+     * archive that starts and ends on a multiple of 1 MB. For example, if you have an
+     * 3.1 MB archive and you specify a range to return that starts at 1 MB and ends at
+     * 2 MB, then the x-amz-sha256-tree-hash is returned as a response header.</p>
+     * </li> <li> <p>You request a range of the archive to return that starts on a
+     * multiple of 1 MB and goes to the end of the archive. For example, if you have a
+     * 3.1 MB archive and you specify a range that starts at 2 MB and ends at 3.1 MB
+     * (the end of the archive), then the x-amz-sha256-tree-hash is returned as a
+     * response header.</p> </li> </ul>
      */
     inline void SetChecksum(const char* value) { m_checksum.assign(value); }
 
     /**
-     * <p> The checksum of the data in the response. This header is returned only when
+     * <p>The checksum of the data in the response. This header is returned only when
      * retrieving the output for an archive retrieval job. Furthermore, this header
-     * appears only under the following conditions: <ul> <li>You get the entire range
-     * of the archive.</li> <li>You request a range to return of the archive that
-     * starts and ends on a multiple of 1 MB. For example, if you have an 3.1 MB
-     * archive and you specify a range to return that starts at 1 MB and ends at 2 MB,
-     * then the x-amz-sha256-tree-hash is returned as a response header.</li> <li>You
-     * request a range of the archive to return that starts on a multiple of 1 MB and
-     * goes to the end of the archive. For example, if you have a 3.1 MB archive and
-     * you specify a range that starts at 2 MB and ends at 3.1 MB (the end of the
-     * archive), then the x-amz-sha256-tree-hash is returned as a response header.</li>
-     * </ul> </p>
+     * appears only under the following conditions:</p> <ul> <li> <p>You get the entire
+     * range of the archive.</p> </li> <li> <p>You request a range to return of the
+     * archive that starts and ends on a multiple of 1 MB. For example, if you have an
+     * 3.1 MB archive and you specify a range to return that starts at 1 MB and ends at
+     * 2 MB, then the x-amz-sha256-tree-hash is returned as a response header.</p>
+     * </li> <li> <p>You request a range of the archive to return that starts on a
+     * multiple of 1 MB and goes to the end of the archive. For example, if you have a
+     * 3.1 MB archive and you specify a range that starts at 2 MB and ends at 3.1 MB
+     * (the end of the archive), then the x-amz-sha256-tree-hash is returned as a
+     * response header.</p> </li> </ul>
      */
     inline GetJobOutputResult& WithChecksum(const Aws::String& value) { SetChecksum(value); return *this;}
 
     /**
-     * <p> The checksum of the data in the response. This header is returned only when
+     * <p>The checksum of the data in the response. This header is returned only when
      * retrieving the output for an archive retrieval job. Furthermore, this header
-     * appears only under the following conditions: <ul> <li>You get the entire range
-     * of the archive.</li> <li>You request a range to return of the archive that
-     * starts and ends on a multiple of 1 MB. For example, if you have an 3.1 MB
-     * archive and you specify a range to return that starts at 1 MB and ends at 2 MB,
-     * then the x-amz-sha256-tree-hash is returned as a response header.</li> <li>You
-     * request a range of the archive to return that starts on a multiple of 1 MB and
-     * goes to the end of the archive. For example, if you have a 3.1 MB archive and
-     * you specify a range that starts at 2 MB and ends at 3.1 MB (the end of the
-     * archive), then the x-amz-sha256-tree-hash is returned as a response header.</li>
-     * </ul> </p>
+     * appears only under the following conditions:</p> <ul> <li> <p>You get the entire
+     * range of the archive.</p> </li> <li> <p>You request a range to return of the
+     * archive that starts and ends on a multiple of 1 MB. For example, if you have an
+     * 3.1 MB archive and you specify a range to return that starts at 1 MB and ends at
+     * 2 MB, then the x-amz-sha256-tree-hash is returned as a response header.</p>
+     * </li> <li> <p>You request a range of the archive to return that starts on a
+     * multiple of 1 MB and goes to the end of the archive. For example, if you have a
+     * 3.1 MB archive and you specify a range that starts at 2 MB and ends at 3.1 MB
+     * (the end of the archive), then the x-amz-sha256-tree-hash is returned as a
+     * response header.</p> </li> </ul>
      */
     inline GetJobOutputResult& WithChecksum(Aws::String&& value) { SetChecksum(value); return *this;}
 
     /**
-     * <p> The checksum of the data in the response. This header is returned only when
+     * <p>The checksum of the data in the response. This header is returned only when
      * retrieving the output for an archive retrieval job. Furthermore, this header
-     * appears only under the following conditions: <ul> <li>You get the entire range
-     * of the archive.</li> <li>You request a range to return of the archive that
-     * starts and ends on a multiple of 1 MB. For example, if you have an 3.1 MB
-     * archive and you specify a range to return that starts at 1 MB and ends at 2 MB,
-     * then the x-amz-sha256-tree-hash is returned as a response header.</li> <li>You
-     * request a range of the archive to return that starts on a multiple of 1 MB and
-     * goes to the end of the archive. For example, if you have a 3.1 MB archive and
-     * you specify a range that starts at 2 MB and ends at 3.1 MB (the end of the
-     * archive), then the x-amz-sha256-tree-hash is returned as a response header.</li>
-     * </ul> </p>
+     * appears only under the following conditions:</p> <ul> <li> <p>You get the entire
+     * range of the archive.</p> </li> <li> <p>You request a range to return of the
+     * archive that starts and ends on a multiple of 1 MB. For example, if you have an
+     * 3.1 MB archive and you specify a range to return that starts at 1 MB and ends at
+     * 2 MB, then the x-amz-sha256-tree-hash is returned as a response header.</p>
+     * </li> <li> <p>You request a range of the archive to return that starts on a
+     * multiple of 1 MB and goes to the end of the archive. For example, if you have a
+     * 3.1 MB archive and you specify a range that starts at 2 MB and ends at 3.1 MB
+     * (the end of the archive), then the x-amz-sha256-tree-hash is returned as a
+     * response header.</p> </li> </ul>
      */
     inline GetJobOutputResult& WithChecksum(const char* value) { SetChecksum(value); return *this;}
 
@@ -237,43 +240,43 @@ namespace Model
     inline GetJobOutputResult& WithContentRange(const char* value) { SetContentRange(value); return *this;}
 
     /**
-     * <p>Indicates the range units accepted. For more information, go to <a
+     * <p>Indicates the range units accepted. For more information, see <a
      * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html">RFC2616</a>. </p>
      */
     inline const Aws::String& GetAcceptRanges() const{ return m_acceptRanges; }
 
     /**
-     * <p>Indicates the range units accepted. For more information, go to <a
+     * <p>Indicates the range units accepted. For more information, see <a
      * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html">RFC2616</a>. </p>
      */
     inline void SetAcceptRanges(const Aws::String& value) { m_acceptRanges = value; }
 
     /**
-     * <p>Indicates the range units accepted. For more information, go to <a
+     * <p>Indicates the range units accepted. For more information, see <a
      * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html">RFC2616</a>. </p>
      */
     inline void SetAcceptRanges(Aws::String&& value) { m_acceptRanges = value; }
 
     /**
-     * <p>Indicates the range units accepted. For more information, go to <a
+     * <p>Indicates the range units accepted. For more information, see <a
      * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html">RFC2616</a>. </p>
      */
     inline void SetAcceptRanges(const char* value) { m_acceptRanges.assign(value); }
 
     /**
-     * <p>Indicates the range units accepted. For more information, go to <a
+     * <p>Indicates the range units accepted. For more information, see <a
      * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html">RFC2616</a>. </p>
      */
     inline GetJobOutputResult& WithAcceptRanges(const Aws::String& value) { SetAcceptRanges(value); return *this;}
 
     /**
-     * <p>Indicates the range units accepted. For more information, go to <a
+     * <p>Indicates the range units accepted. For more information, see <a
      * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html">RFC2616</a>. </p>
      */
     inline GetJobOutputResult& WithAcceptRanges(Aws::String&& value) { SetAcceptRanges(value); return *this;}
 
     /**
-     * <p>Indicates the range units accepted. For more information, go to <a
+     * <p>Indicates the range units accepted. For more information, see <a
      * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html">RFC2616</a>. </p>
      */
     inline GetJobOutputResult& WithAcceptRanges(const char* value) { SetAcceptRanges(value); return *this;}
@@ -283,7 +286,7 @@ namespace Model
      * inventory. For archive data, the Content-Type is application/octet-stream. For
      * vault inventory, if you requested CSV format when you initiated the job, the
      * Content-Type is text/csv. Otherwise, by default, vault inventory is returned as
-     * JSON, and the Content-Type is application/json. </p>
+     * JSON, and the Content-Type is application/json.</p>
      */
     inline const Aws::String& GetContentType() const{ return m_contentType; }
 
@@ -292,7 +295,7 @@ namespace Model
      * inventory. For archive data, the Content-Type is application/octet-stream. For
      * vault inventory, if you requested CSV format when you initiated the job, the
      * Content-Type is text/csv. Otherwise, by default, vault inventory is returned as
-     * JSON, and the Content-Type is application/json. </p>
+     * JSON, and the Content-Type is application/json.</p>
      */
     inline void SetContentType(const Aws::String& value) { m_contentType = value; }
 
@@ -301,7 +304,7 @@ namespace Model
      * inventory. For archive data, the Content-Type is application/octet-stream. For
      * vault inventory, if you requested CSV format when you initiated the job, the
      * Content-Type is text/csv. Otherwise, by default, vault inventory is returned as
-     * JSON, and the Content-Type is application/json. </p>
+     * JSON, and the Content-Type is application/json.</p>
      */
     inline void SetContentType(Aws::String&& value) { m_contentType = value; }
 
@@ -310,7 +313,7 @@ namespace Model
      * inventory. For archive data, the Content-Type is application/octet-stream. For
      * vault inventory, if you requested CSV format when you initiated the job, the
      * Content-Type is text/csv. Otherwise, by default, vault inventory is returned as
-     * JSON, and the Content-Type is application/json. </p>
+     * JSON, and the Content-Type is application/json.</p>
      */
     inline void SetContentType(const char* value) { m_contentType.assign(value); }
 
@@ -319,7 +322,7 @@ namespace Model
      * inventory. For archive data, the Content-Type is application/octet-stream. For
      * vault inventory, if you requested CSV format when you initiated the job, the
      * Content-Type is text/csv. Otherwise, by default, vault inventory is returned as
-     * JSON, and the Content-Type is application/json. </p>
+     * JSON, and the Content-Type is application/json.</p>
      */
     inline GetJobOutputResult& WithContentType(const Aws::String& value) { SetContentType(value); return *this;}
 
@@ -328,7 +331,7 @@ namespace Model
      * inventory. For archive data, the Content-Type is application/octet-stream. For
      * vault inventory, if you requested CSV format when you initiated the job, the
      * Content-Type is text/csv. Otherwise, by default, vault inventory is returned as
-     * JSON, and the Content-Type is application/json. </p>
+     * JSON, and the Content-Type is application/json.</p>
      */
     inline GetJobOutputResult& WithContentType(Aws::String&& value) { SetContentType(value); return *this;}
 
@@ -337,7 +340,7 @@ namespace Model
      * inventory. For archive data, the Content-Type is application/octet-stream. For
      * vault inventory, if you requested CSV format when you initiated the job, the
      * Content-Type is text/csv. Otherwise, by default, vault inventory is returned as
-     * JSON, and the Content-Type is application/json. </p>
+     * JSON, and the Content-Type is application/json.</p>
      */
     inline GetJobOutputResult& WithContentType(const char* value) { SetContentType(value); return *this;}
 

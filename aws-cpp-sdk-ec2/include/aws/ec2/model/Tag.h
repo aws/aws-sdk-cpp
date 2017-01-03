@@ -32,7 +32,9 @@ namespace Model
 {
 
   /**
-   * <p>Describes a tag.</p>
+   * <p>Describes a tag.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/Tag">AWS API
+   * Reference</a></p>
    */
   class AWS_EC2_API Tag
   {
@@ -45,51 +47,51 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     /**
-     * <p>The key of the tag. </p> <p>Constraints: Tag keys are case-sensitive and
-     * accept a maximum of 127 Unicode characters. May not begin with
-     * <code>aws:</code></p>
+     * <p>The key of the tag.</p> <p>Constraints: Tag keys are case-sensitive and
+     * accept a maximum of 127 Unicode characters. May not begin with <code>aws:</code>
+     * </p>
      */
     inline const Aws::String& GetKey() const{ return m_key; }
 
     /**
-     * <p>The key of the tag. </p> <p>Constraints: Tag keys are case-sensitive and
-     * accept a maximum of 127 Unicode characters. May not begin with
-     * <code>aws:</code></p>
+     * <p>The key of the tag.</p> <p>Constraints: Tag keys are case-sensitive and
+     * accept a maximum of 127 Unicode characters. May not begin with <code>aws:</code>
+     * </p>
      */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
-     * <p>The key of the tag. </p> <p>Constraints: Tag keys are case-sensitive and
-     * accept a maximum of 127 Unicode characters. May not begin with
-     * <code>aws:</code></p>
+     * <p>The key of the tag.</p> <p>Constraints: Tag keys are case-sensitive and
+     * accept a maximum of 127 Unicode characters. May not begin with <code>aws:</code>
+     * </p>
      */
     inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
-     * <p>The key of the tag. </p> <p>Constraints: Tag keys are case-sensitive and
-     * accept a maximum of 127 Unicode characters. May not begin with
-     * <code>aws:</code></p>
+     * <p>The key of the tag.</p> <p>Constraints: Tag keys are case-sensitive and
+     * accept a maximum of 127 Unicode characters. May not begin with <code>aws:</code>
+     * </p>
      */
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
 
     /**
-     * <p>The key of the tag. </p> <p>Constraints: Tag keys are case-sensitive and
-     * accept a maximum of 127 Unicode characters. May not begin with
-     * <code>aws:</code></p>
+     * <p>The key of the tag.</p> <p>Constraints: Tag keys are case-sensitive and
+     * accept a maximum of 127 Unicode characters. May not begin with <code>aws:</code>
+     * </p>
      */
     inline Tag& WithKey(const Aws::String& value) { SetKey(value); return *this;}
 
     /**
-     * <p>The key of the tag. </p> <p>Constraints: Tag keys are case-sensitive and
-     * accept a maximum of 127 Unicode characters. May not begin with
-     * <code>aws:</code></p>
+     * <p>The key of the tag.</p> <p>Constraints: Tag keys are case-sensitive and
+     * accept a maximum of 127 Unicode characters. May not begin with <code>aws:</code>
+     * </p>
      */
     inline Tag& WithKey(Aws::String&& value) { SetKey(value); return *this;}
 
     /**
-     * <p>The key of the tag. </p> <p>Constraints: Tag keys are case-sensitive and
-     * accept a maximum of 127 Unicode characters. May not begin with
-     * <code>aws:</code></p>
+     * <p>The key of the tag.</p> <p>Constraints: Tag keys are case-sensitive and
+     * accept a maximum of 127 Unicode characters. May not begin with <code>aws:</code>
+     * </p>
      */
     inline Tag& WithKey(const char* value) { SetKey(value); return *this;}
 

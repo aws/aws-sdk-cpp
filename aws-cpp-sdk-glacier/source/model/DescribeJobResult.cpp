@@ -142,6 +142,12 @@ DescribeJobResult& DescribeJobResult::operator =(const AmazonWebServiceResult<Js
 
   }
 
+  if(jsonValue.ValueExists("Tier"))
+  {
+    m_tier = jsonValue.GetString("Tier");
+
+  }
+
   if(jsonValue.ValueExists("InventoryRetrievalParameters"))
   {
     m_inventoryRetrievalParameters = jsonValue.GetObject("InventoryRetrievalParameters");

@@ -43,7 +43,9 @@ namespace Model
    * <code>User-Agent</code> header is <code>BadBot</code>.</p> </li> </ul> <p>To
    * match the settings in this <code>Rule</code>, a request must originate from
    * <code>192.0.2.44</code> AND include a <code>User-Agent</code> header for which
-   * the value is <code>BadBot</code>.</p>
+   * the value is <code>BadBot</code>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/Rule">AWS API
+   * Reference</a></p>
    */
   class AWS_WAF_API Rule
   {
@@ -172,25 +174,60 @@ namespace Model
      */
     inline Rule& WithName(const char* value) { SetName(value); return *this;}
 
-    
+    /**
+     * <p>A friendly name or description for the metrics for this <code>Rule</code>.
+     * The name can contain only alphanumeric characters (A-Z, a-z, 0-9); the name
+     * can't contain whitespace. You can't change <code>MetricName</code> after you
+     * create the <code>Rule</code>.</p>
+     */
     inline const Aws::String& GetMetricName() const{ return m_metricName; }
 
-    
+    /**
+     * <p>A friendly name or description for the metrics for this <code>Rule</code>.
+     * The name can contain only alphanumeric characters (A-Z, a-z, 0-9); the name
+     * can't contain whitespace. You can't change <code>MetricName</code> after you
+     * create the <code>Rule</code>.</p>
+     */
     inline void SetMetricName(const Aws::String& value) { m_metricNameHasBeenSet = true; m_metricName = value; }
 
-    
+    /**
+     * <p>A friendly name or description for the metrics for this <code>Rule</code>.
+     * The name can contain only alphanumeric characters (A-Z, a-z, 0-9); the name
+     * can't contain whitespace. You can't change <code>MetricName</code> after you
+     * create the <code>Rule</code>.</p>
+     */
     inline void SetMetricName(Aws::String&& value) { m_metricNameHasBeenSet = true; m_metricName = value; }
 
-    
+    /**
+     * <p>A friendly name or description for the metrics for this <code>Rule</code>.
+     * The name can contain only alphanumeric characters (A-Z, a-z, 0-9); the name
+     * can't contain whitespace. You can't change <code>MetricName</code> after you
+     * create the <code>Rule</code>.</p>
+     */
     inline void SetMetricName(const char* value) { m_metricNameHasBeenSet = true; m_metricName.assign(value); }
 
-    
+    /**
+     * <p>A friendly name or description for the metrics for this <code>Rule</code>.
+     * The name can contain only alphanumeric characters (A-Z, a-z, 0-9); the name
+     * can't contain whitespace. You can't change <code>MetricName</code> after you
+     * create the <code>Rule</code>.</p>
+     */
     inline Rule& WithMetricName(const Aws::String& value) { SetMetricName(value); return *this;}
 
-    
+    /**
+     * <p>A friendly name or description for the metrics for this <code>Rule</code>.
+     * The name can contain only alphanumeric characters (A-Z, a-z, 0-9); the name
+     * can't contain whitespace. You can't change <code>MetricName</code> after you
+     * create the <code>Rule</code>.</p>
+     */
     inline Rule& WithMetricName(Aws::String&& value) { SetMetricName(value); return *this;}
 
-    
+    /**
+     * <p>A friendly name or description for the metrics for this <code>Rule</code>.
+     * The name can contain only alphanumeric characters (A-Z, a-z, 0-9); the name
+     * can't contain whitespace. You can't change <code>MetricName</code> after you
+     * create the <code>Rule</code>.</p>
+     */
     inline Rule& WithMetricName(const char* value) { SetMetricName(value); return *this;}
 
     /**

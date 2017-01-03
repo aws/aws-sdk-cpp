@@ -34,204 +34,204 @@ namespace Model
 
     /**
      * <p>Name of the IAM group to update. If you're changing the name of the group,
-     * this is the original name.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters consisting of upper and lowercase alphanumeric characters
-     * with no spaces. You can also include any of the following characters: =,.@-</p>
+     * this is the original name.</p> <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: =,.@-</p>
      */
     inline const Aws::String& GetGroupName() const{ return m_groupName; }
 
     /**
      * <p>Name of the IAM group to update. If you're changing the name of the group,
-     * this is the original name.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters consisting of upper and lowercase alphanumeric characters
-     * with no spaces. You can also include any of the following characters: =,.@-</p>
+     * this is the original name.</p> <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: =,.@-</p>
      */
     inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
 
     /**
      * <p>Name of the IAM group to update. If you're changing the name of the group,
-     * this is the original name.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters consisting of upper and lowercase alphanumeric characters
-     * with no spaces. You can also include any of the following characters: =,.@-</p>
+     * this is the original name.</p> <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: =,.@-</p>
      */
     inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
 
     /**
      * <p>Name of the IAM group to update. If you're changing the name of the group,
-     * this is the original name.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters consisting of upper and lowercase alphanumeric characters
-     * with no spaces. You can also include any of the following characters: =,.@-</p>
+     * this is the original name.</p> <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: =,.@-</p>
      */
     inline void SetGroupName(const char* value) { m_groupNameHasBeenSet = true; m_groupName.assign(value); }
 
     /**
      * <p>Name of the IAM group to update. If you're changing the name of the group,
-     * this is the original name.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters consisting of upper and lowercase alphanumeric characters
-     * with no spaces. You can also include any of the following characters: =,.@-</p>
+     * this is the original name.</p> <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: =,.@-</p>
      */
     inline UpdateGroupRequest& WithGroupName(const Aws::String& value) { SetGroupName(value); return *this;}
 
     /**
      * <p>Name of the IAM group to update. If you're changing the name of the group,
-     * this is the original name.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters consisting of upper and lowercase alphanumeric characters
-     * with no spaces. You can also include any of the following characters: =,.@-</p>
+     * this is the original name.</p> <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: =,.@-</p>
      */
     inline UpdateGroupRequest& WithGroupName(Aws::String&& value) { SetGroupName(value); return *this;}
 
     /**
      * <p>Name of the IAM group to update. If you're changing the name of the group,
-     * this is the original name.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters consisting of upper and lowercase alphanumeric characters
-     * with no spaces. You can also include any of the following characters: =,.@-</p>
+     * this is the original name.</p> <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: =,.@-</p>
      */
     inline UpdateGroupRequest& WithGroupName(const char* value) { SetGroupName(value); return *this;}
 
     /**
      * <p>New path for the IAM group. Only include this if changing the group's
-     * path.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for
-     * this parameter is a string of characters consisting of either a forward slash
-     * (/) by itself or a string that must begin and end with forward slashes,
-     * containing any ASCII character from the ! (\u0021) thru the DEL character
-     * (\u007F), including most punctuation characters, digits, and upper and
-     * lowercased letters.</p>
+     * path.</p> <p>This paramater allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of either a forward slash (/) by itself or a string that must begin
+     * and end with forward slashes, containing any ASCII character from the ! (\u0021)
+     * thru the DEL character (\u007F), including most punctuation characters, digits,
+     * and upper and lowercased letters.</p>
      */
     inline const Aws::String& GetNewPath() const{ return m_newPath; }
 
     /**
      * <p>New path for the IAM group. Only include this if changing the group's
-     * path.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for
-     * this parameter is a string of characters consisting of either a forward slash
-     * (/) by itself or a string that must begin and end with forward slashes,
-     * containing any ASCII character from the ! (\u0021) thru the DEL character
-     * (\u007F), including most punctuation characters, digits, and upper and
-     * lowercased letters.</p>
+     * path.</p> <p>This paramater allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of either a forward slash (/) by itself or a string that must begin
+     * and end with forward slashes, containing any ASCII character from the ! (\u0021)
+     * thru the DEL character (\u007F), including most punctuation characters, digits,
+     * and upper and lowercased letters.</p>
      */
     inline void SetNewPath(const Aws::String& value) { m_newPathHasBeenSet = true; m_newPath = value; }
 
     /**
      * <p>New path for the IAM group. Only include this if changing the group's
-     * path.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for
-     * this parameter is a string of characters consisting of either a forward slash
-     * (/) by itself or a string that must begin and end with forward slashes,
-     * containing any ASCII character from the ! (\u0021) thru the DEL character
-     * (\u007F), including most punctuation characters, digits, and upper and
-     * lowercased letters.</p>
+     * path.</p> <p>This paramater allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of either a forward slash (/) by itself or a string that must begin
+     * and end with forward slashes, containing any ASCII character from the ! (\u0021)
+     * thru the DEL character (\u007F), including most punctuation characters, digits,
+     * and upper and lowercased letters.</p>
      */
     inline void SetNewPath(Aws::String&& value) { m_newPathHasBeenSet = true; m_newPath = value; }
 
     /**
      * <p>New path for the IAM group. Only include this if changing the group's
-     * path.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for
-     * this parameter is a string of characters consisting of either a forward slash
-     * (/) by itself or a string that must begin and end with forward slashes,
-     * containing any ASCII character from the ! (\u0021) thru the DEL character
-     * (\u007F), including most punctuation characters, digits, and upper and
-     * lowercased letters.</p>
+     * path.</p> <p>This paramater allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of either a forward slash (/) by itself or a string that must begin
+     * and end with forward slashes, containing any ASCII character from the ! (\u0021)
+     * thru the DEL character (\u007F), including most punctuation characters, digits,
+     * and upper and lowercased letters.</p>
      */
     inline void SetNewPath(const char* value) { m_newPathHasBeenSet = true; m_newPath.assign(value); }
 
     /**
      * <p>New path for the IAM group. Only include this if changing the group's
-     * path.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for
-     * this parameter is a string of characters consisting of either a forward slash
-     * (/) by itself or a string that must begin and end with forward slashes,
-     * containing any ASCII character from the ! (\u0021) thru the DEL character
-     * (\u007F), including most punctuation characters, digits, and upper and
-     * lowercased letters.</p>
+     * path.</p> <p>This paramater allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of either a forward slash (/) by itself or a string that must begin
+     * and end with forward slashes, containing any ASCII character from the ! (\u0021)
+     * thru the DEL character (\u007F), including most punctuation characters, digits,
+     * and upper and lowercased letters.</p>
      */
     inline UpdateGroupRequest& WithNewPath(const Aws::String& value) { SetNewPath(value); return *this;}
 
     /**
      * <p>New path for the IAM group. Only include this if changing the group's
-     * path.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for
-     * this parameter is a string of characters consisting of either a forward slash
-     * (/) by itself or a string that must begin and end with forward slashes,
-     * containing any ASCII character from the ! (\u0021) thru the DEL character
-     * (\u007F), including most punctuation characters, digits, and upper and
-     * lowercased letters.</p>
+     * path.</p> <p>This paramater allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of either a forward slash (/) by itself or a string that must begin
+     * and end with forward slashes, containing any ASCII character from the ! (\u0021)
+     * thru the DEL character (\u007F), including most punctuation characters, digits,
+     * and upper and lowercased letters.</p>
      */
     inline UpdateGroupRequest& WithNewPath(Aws::String&& value) { SetNewPath(value); return *this;}
 
     /**
      * <p>New path for the IAM group. Only include this if changing the group's
-     * path.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for
-     * this parameter is a string of characters consisting of either a forward slash
-     * (/) by itself or a string that must begin and end with forward slashes,
-     * containing any ASCII character from the ! (\u0021) thru the DEL character
-     * (\u007F), including most punctuation characters, digits, and upper and
-     * lowercased letters.</p>
+     * path.</p> <p>This paramater allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of either a forward slash (/) by itself or a string that must begin
+     * and end with forward slashes, containing any ASCII character from the ! (\u0021)
+     * thru the DEL character (\u007F), including most punctuation characters, digits,
+     * and upper and lowercased letters.</p>
      */
     inline UpdateGroupRequest& WithNewPath(const char* value) { SetNewPath(value); return *this;}
 
     /**
      * <p>New name for the IAM group. Only include this if changing the group's
-     * name.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for
-     * this parameter is a string of characters consisting of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-</p>
+     * name.</p> <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: =,.@-</p>
      */
     inline const Aws::String& GetNewGroupName() const{ return m_newGroupName; }
 
     /**
      * <p>New name for the IAM group. Only include this if changing the group's
-     * name.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for
-     * this parameter is a string of characters consisting of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-</p>
+     * name.</p> <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: =,.@-</p>
      */
     inline void SetNewGroupName(const Aws::String& value) { m_newGroupNameHasBeenSet = true; m_newGroupName = value; }
 
     /**
      * <p>New name for the IAM group. Only include this if changing the group's
-     * name.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for
-     * this parameter is a string of characters consisting of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-</p>
+     * name.</p> <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: =,.@-</p>
      */
     inline void SetNewGroupName(Aws::String&& value) { m_newGroupNameHasBeenSet = true; m_newGroupName = value; }
 
     /**
      * <p>New name for the IAM group. Only include this if changing the group's
-     * name.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for
-     * this parameter is a string of characters consisting of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-</p>
+     * name.</p> <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: =,.@-</p>
      */
     inline void SetNewGroupName(const char* value) { m_newGroupNameHasBeenSet = true; m_newGroupName.assign(value); }
 
     /**
      * <p>New name for the IAM group. Only include this if changing the group's
-     * name.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for
-     * this parameter is a string of characters consisting of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-</p>
+     * name.</p> <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: =,.@-</p>
      */
     inline UpdateGroupRequest& WithNewGroupName(const Aws::String& value) { SetNewGroupName(value); return *this;}
 
     /**
      * <p>New name for the IAM group. Only include this if changing the group's
-     * name.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for
-     * this parameter is a string of characters consisting of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-</p>
+     * name.</p> <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: =,.@-</p>
      */
     inline UpdateGroupRequest& WithNewGroupName(Aws::String&& value) { SetNewGroupName(value); return *this;}
 
     /**
      * <p>New name for the IAM group. Only include this if changing the group's
-     * name.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for
-     * this parameter is a string of characters consisting of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-</p>
+     * name.</p> <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: =,.@-</p>
      */
     inline UpdateGroupRequest& WithNewGroupName(const char* value) { SetNewGroupName(value); return *this;}
 

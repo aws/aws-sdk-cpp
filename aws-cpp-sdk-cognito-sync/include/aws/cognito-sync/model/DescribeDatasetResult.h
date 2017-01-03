@@ -33,7 +33,9 @@ namespace CognitoSync
 namespace Model
 {
   /**
-   * Response to a successful DescribeDataset request.
+   * Response to a successful DescribeDataset request.<p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/DescribeDatasetResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_COGNITOSYNC_API DescribeDatasetResult
   {

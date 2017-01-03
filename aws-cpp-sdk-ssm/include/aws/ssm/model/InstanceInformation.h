@@ -19,6 +19,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/ssm/model/PlatformType.h>
 #include <aws/ssm/model/ResourceType.h>
+#include <aws/ssm/model/InstanceAggregatedAssociationOverview.h>
 
 namespace Aws
 {
@@ -35,7 +36,10 @@ namespace Model
 {
 
   /**
-   * <p>Describes a filter for a specific list of instances. </p>
+   * <p>Describes a filter for a specific list of instances. </p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/InstanceInformation">AWS
+   * API Reference</a></p>
    */
   class AWS_SSM_API InstanceInformation
   {
@@ -106,27 +110,27 @@ namespace Model
     inline InstanceInformation& WithPingStatus(PingStatus&& value) { SetPingStatus(value); return *this;}
 
     /**
-     * <p>The date and time when agent last pinged SSM service. </p>
+     * <p>The date and time when agent last pinged Systems Manager service. </p>
      */
     inline const Aws::Utils::DateTime& GetLastPingDateTime() const{ return m_lastPingDateTime; }
 
     /**
-     * <p>The date and time when agent last pinged SSM service. </p>
+     * <p>The date and time when agent last pinged Systems Manager service. </p>
      */
     inline void SetLastPingDateTime(const Aws::Utils::DateTime& value) { m_lastPingDateTimeHasBeenSet = true; m_lastPingDateTime = value; }
 
     /**
-     * <p>The date and time when agent last pinged SSM service. </p>
+     * <p>The date and time when agent last pinged Systems Manager service. </p>
      */
     inline void SetLastPingDateTime(Aws::Utils::DateTime&& value) { m_lastPingDateTimeHasBeenSet = true; m_lastPingDateTime = value; }
 
     /**
-     * <p>The date and time when agent last pinged SSM service. </p>
+     * <p>The date and time when agent last pinged Systems Manager service. </p>
      */
     inline InstanceInformation& WithLastPingDateTime(const Aws::Utils::DateTime& value) { SetLastPingDateTime(value); return *this;}
 
     /**
-     * <p>The date and time when agent last pinged SSM service. </p>
+     * <p>The date and time when agent last pinged Systems Manager service. </p>
      */
     inline InstanceInformation& WithLastPingDateTime(Aws::Utils::DateTime&& value) { SetLastPingDateTime(value); return *this;}
 
@@ -279,37 +283,44 @@ namespace Model
     inline InstanceInformation& WithPlatformVersion(const char* value) { SetPlatformVersion(value); return *this;}
 
     /**
-     * <p>The activation ID created by SSM when the server or VM was registered.</p>
+     * <p>The activation ID created by Systems Manager when the server or VM was
+     * registered.</p>
      */
     inline const Aws::String& GetActivationId() const{ return m_activationId; }
 
     /**
-     * <p>The activation ID created by SSM when the server or VM was registered.</p>
+     * <p>The activation ID created by Systems Manager when the server or VM was
+     * registered.</p>
      */
     inline void SetActivationId(const Aws::String& value) { m_activationIdHasBeenSet = true; m_activationId = value; }
 
     /**
-     * <p>The activation ID created by SSM when the server or VM was registered.</p>
+     * <p>The activation ID created by Systems Manager when the server or VM was
+     * registered.</p>
      */
     inline void SetActivationId(Aws::String&& value) { m_activationIdHasBeenSet = true; m_activationId = value; }
 
     /**
-     * <p>The activation ID created by SSM when the server or VM was registered.</p>
+     * <p>The activation ID created by Systems Manager when the server or VM was
+     * registered.</p>
      */
     inline void SetActivationId(const char* value) { m_activationIdHasBeenSet = true; m_activationId.assign(value); }
 
     /**
-     * <p>The activation ID created by SSM when the server or VM was registered.</p>
+     * <p>The activation ID created by Systems Manager when the server or VM was
+     * registered.</p>
      */
     inline InstanceInformation& WithActivationId(const Aws::String& value) { SetActivationId(value); return *this;}
 
     /**
-     * <p>The activation ID created by SSM when the server or VM was registered.</p>
+     * <p>The activation ID created by Systems Manager when the server or VM was
+     * registered.</p>
      */
     inline InstanceInformation& WithActivationId(Aws::String&& value) { SetActivationId(value); return *this;}
 
     /**
-     * <p>The activation ID created by SSM when the server or VM was registered.</p>
+     * <p>The activation ID created by Systems Manager when the server or VM was
+     * registered.</p>
      */
     inline InstanceInformation& WithActivationId(const char* value) { SetActivationId(value); return *this;}
 
@@ -515,6 +526,116 @@ namespace Model
      */
     inline InstanceInformation& WithComputerName(const char* value) { SetComputerName(value); return *this;}
 
+    /**
+     * <p>The status of the association.</p>
+     */
+    inline const Aws::String& GetAssociationStatus() const{ return m_associationStatus; }
+
+    /**
+     * <p>The status of the association.</p>
+     */
+    inline void SetAssociationStatus(const Aws::String& value) { m_associationStatusHasBeenSet = true; m_associationStatus = value; }
+
+    /**
+     * <p>The status of the association.</p>
+     */
+    inline void SetAssociationStatus(Aws::String&& value) { m_associationStatusHasBeenSet = true; m_associationStatus = value; }
+
+    /**
+     * <p>The status of the association.</p>
+     */
+    inline void SetAssociationStatus(const char* value) { m_associationStatusHasBeenSet = true; m_associationStatus.assign(value); }
+
+    /**
+     * <p>The status of the association.</p>
+     */
+    inline InstanceInformation& WithAssociationStatus(const Aws::String& value) { SetAssociationStatus(value); return *this;}
+
+    /**
+     * <p>The status of the association.</p>
+     */
+    inline InstanceInformation& WithAssociationStatus(Aws::String&& value) { SetAssociationStatus(value); return *this;}
+
+    /**
+     * <p>The status of the association.</p>
+     */
+    inline InstanceInformation& WithAssociationStatus(const char* value) { SetAssociationStatus(value); return *this;}
+
+    /**
+     * <p>The date the association was last executed.</p>
+     */
+    inline const Aws::Utils::DateTime& GetLastAssociationExecutionDate() const{ return m_lastAssociationExecutionDate; }
+
+    /**
+     * <p>The date the association was last executed.</p>
+     */
+    inline void SetLastAssociationExecutionDate(const Aws::Utils::DateTime& value) { m_lastAssociationExecutionDateHasBeenSet = true; m_lastAssociationExecutionDate = value; }
+
+    /**
+     * <p>The date the association was last executed.</p>
+     */
+    inline void SetLastAssociationExecutionDate(Aws::Utils::DateTime&& value) { m_lastAssociationExecutionDateHasBeenSet = true; m_lastAssociationExecutionDate = value; }
+
+    /**
+     * <p>The date the association was last executed.</p>
+     */
+    inline InstanceInformation& WithLastAssociationExecutionDate(const Aws::Utils::DateTime& value) { SetLastAssociationExecutionDate(value); return *this;}
+
+    /**
+     * <p>The date the association was last executed.</p>
+     */
+    inline InstanceInformation& WithLastAssociationExecutionDate(Aws::Utils::DateTime&& value) { SetLastAssociationExecutionDate(value); return *this;}
+
+    /**
+     * <p>The last date the association was successfully run.</p>
+     */
+    inline const Aws::Utils::DateTime& GetLastSuccessfulAssociationExecutionDate() const{ return m_lastSuccessfulAssociationExecutionDate; }
+
+    /**
+     * <p>The last date the association was successfully run.</p>
+     */
+    inline void SetLastSuccessfulAssociationExecutionDate(const Aws::Utils::DateTime& value) { m_lastSuccessfulAssociationExecutionDateHasBeenSet = true; m_lastSuccessfulAssociationExecutionDate = value; }
+
+    /**
+     * <p>The last date the association was successfully run.</p>
+     */
+    inline void SetLastSuccessfulAssociationExecutionDate(Aws::Utils::DateTime&& value) { m_lastSuccessfulAssociationExecutionDateHasBeenSet = true; m_lastSuccessfulAssociationExecutionDate = value; }
+
+    /**
+     * <p>The last date the association was successfully run.</p>
+     */
+    inline InstanceInformation& WithLastSuccessfulAssociationExecutionDate(const Aws::Utils::DateTime& value) { SetLastSuccessfulAssociationExecutionDate(value); return *this;}
+
+    /**
+     * <p>The last date the association was successfully run.</p>
+     */
+    inline InstanceInformation& WithLastSuccessfulAssociationExecutionDate(Aws::Utils::DateTime&& value) { SetLastSuccessfulAssociationExecutionDate(value); return *this;}
+
+    /**
+     * <p>Information about the association.</p>
+     */
+    inline const InstanceAggregatedAssociationOverview& GetAssociationOverview() const{ return m_associationOverview; }
+
+    /**
+     * <p>Information about the association.</p>
+     */
+    inline void SetAssociationOverview(const InstanceAggregatedAssociationOverview& value) { m_associationOverviewHasBeenSet = true; m_associationOverview = value; }
+
+    /**
+     * <p>Information about the association.</p>
+     */
+    inline void SetAssociationOverview(InstanceAggregatedAssociationOverview&& value) { m_associationOverviewHasBeenSet = true; m_associationOverview = value; }
+
+    /**
+     * <p>Information about the association.</p>
+     */
+    inline InstanceInformation& WithAssociationOverview(const InstanceAggregatedAssociationOverview& value) { SetAssociationOverview(value); return *this;}
+
+    /**
+     * <p>Information about the association.</p>
+     */
+    inline InstanceInformation& WithAssociationOverview(InstanceAggregatedAssociationOverview&& value) { SetAssociationOverview(value); return *this;}
+
   private:
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;
@@ -546,6 +667,14 @@ namespace Model
     bool m_iPAddressHasBeenSet;
     Aws::String m_computerName;
     bool m_computerNameHasBeenSet;
+    Aws::String m_associationStatus;
+    bool m_associationStatusHasBeenSet;
+    Aws::Utils::DateTime m_lastAssociationExecutionDate;
+    bool m_lastAssociationExecutionDateHasBeenSet;
+    Aws::Utils::DateTime m_lastSuccessfulAssociationExecutionDate;
+    bool m_lastSuccessfulAssociationExecutionDateHasBeenSet;
+    InstanceAggregatedAssociationOverview m_associationOverview;
+    bool m_associationOverviewHasBeenSet;
   };
 
 } // namespace Model

@@ -36,7 +36,9 @@ namespace Glacier
 namespace Model
 {
   /**
-   * <p>Describes an Amazon Glacier job.</p>
+   * <p>Describes an Amazon Glacier job.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/GlacierJobDescription">AWS
+   * API Reference</a></p>
    */
   class AWS_GLACIER_API DescribeJobResult
   {
@@ -468,141 +470,141 @@ namespace Model
 
     /**
      * <p>For an ArchiveRetrieval job, it is the checksum of the archive. Otherwise,
-     * the value is null.</p> <p> The SHA256 tree hash value for the requested range of
+     * the value is null.</p> <p>The SHA256 tree hash value for the requested range of
      * an archive. If the Initiate a Job request for an archive specified a tree-hash
-     * aligned range, then this field returns a value. </p> <p> For the specific case
+     * aligned range, then this field returns a value.</p> <p>For the specific case
      * when the whole archive is retrieved, this value is the same as the
-     * ArchiveSHA256TreeHash value. </p> <p> This field is null in the following
-     * situations: <ul> <li><p>Archive retrieval jobs that specify a range that is not
-     * tree-hash aligned.</p></li> </ul> <ul> <li><p>Archival jobs that specify a range
-     * that is equal to the whole archive and the job status is InProgress.</p></li>
-     * </ul> <ul> <li><p>Inventory jobs.</p></li> </ul> </p>
+     * ArchiveSHA256TreeHash value.</p> <p>This field is null in the following
+     * situations:</p> <ul> <li> <p>Archive retrieval jobs that specify a range that is
+     * not tree-hash aligned.</p> </li> </ul> <ul> <li> <p>Archival jobs that specify a
+     * range that is equal to the whole archive and the job status is InProgress.</p>
+     * </li> </ul> <ul> <li> <p>Inventory jobs.</p> </li> </ul>
      */
     inline const Aws::String& GetSHA256TreeHash() const{ return m_sHA256TreeHash; }
 
     /**
      * <p>For an ArchiveRetrieval job, it is the checksum of the archive. Otherwise,
-     * the value is null.</p> <p> The SHA256 tree hash value for the requested range of
+     * the value is null.</p> <p>The SHA256 tree hash value for the requested range of
      * an archive. If the Initiate a Job request for an archive specified a tree-hash
-     * aligned range, then this field returns a value. </p> <p> For the specific case
+     * aligned range, then this field returns a value.</p> <p>For the specific case
      * when the whole archive is retrieved, this value is the same as the
-     * ArchiveSHA256TreeHash value. </p> <p> This field is null in the following
-     * situations: <ul> <li><p>Archive retrieval jobs that specify a range that is not
-     * tree-hash aligned.</p></li> </ul> <ul> <li><p>Archival jobs that specify a range
-     * that is equal to the whole archive and the job status is InProgress.</p></li>
-     * </ul> <ul> <li><p>Inventory jobs.</p></li> </ul> </p>
+     * ArchiveSHA256TreeHash value.</p> <p>This field is null in the following
+     * situations:</p> <ul> <li> <p>Archive retrieval jobs that specify a range that is
+     * not tree-hash aligned.</p> </li> </ul> <ul> <li> <p>Archival jobs that specify a
+     * range that is equal to the whole archive and the job status is InProgress.</p>
+     * </li> </ul> <ul> <li> <p>Inventory jobs.</p> </li> </ul>
      */
     inline void SetSHA256TreeHash(const Aws::String& value) { m_sHA256TreeHash = value; }
 
     /**
      * <p>For an ArchiveRetrieval job, it is the checksum of the archive. Otherwise,
-     * the value is null.</p> <p> The SHA256 tree hash value for the requested range of
+     * the value is null.</p> <p>The SHA256 tree hash value for the requested range of
      * an archive. If the Initiate a Job request for an archive specified a tree-hash
-     * aligned range, then this field returns a value. </p> <p> For the specific case
+     * aligned range, then this field returns a value.</p> <p>For the specific case
      * when the whole archive is retrieved, this value is the same as the
-     * ArchiveSHA256TreeHash value. </p> <p> This field is null in the following
-     * situations: <ul> <li><p>Archive retrieval jobs that specify a range that is not
-     * tree-hash aligned.</p></li> </ul> <ul> <li><p>Archival jobs that specify a range
-     * that is equal to the whole archive and the job status is InProgress.</p></li>
-     * </ul> <ul> <li><p>Inventory jobs.</p></li> </ul> </p>
+     * ArchiveSHA256TreeHash value.</p> <p>This field is null in the following
+     * situations:</p> <ul> <li> <p>Archive retrieval jobs that specify a range that is
+     * not tree-hash aligned.</p> </li> </ul> <ul> <li> <p>Archival jobs that specify a
+     * range that is equal to the whole archive and the job status is InProgress.</p>
+     * </li> </ul> <ul> <li> <p>Inventory jobs.</p> </li> </ul>
      */
     inline void SetSHA256TreeHash(Aws::String&& value) { m_sHA256TreeHash = value; }
 
     /**
      * <p>For an ArchiveRetrieval job, it is the checksum of the archive. Otherwise,
-     * the value is null.</p> <p> The SHA256 tree hash value for the requested range of
+     * the value is null.</p> <p>The SHA256 tree hash value for the requested range of
      * an archive. If the Initiate a Job request for an archive specified a tree-hash
-     * aligned range, then this field returns a value. </p> <p> For the specific case
+     * aligned range, then this field returns a value.</p> <p>For the specific case
      * when the whole archive is retrieved, this value is the same as the
-     * ArchiveSHA256TreeHash value. </p> <p> This field is null in the following
-     * situations: <ul> <li><p>Archive retrieval jobs that specify a range that is not
-     * tree-hash aligned.</p></li> </ul> <ul> <li><p>Archival jobs that specify a range
-     * that is equal to the whole archive and the job status is InProgress.</p></li>
-     * </ul> <ul> <li><p>Inventory jobs.</p></li> </ul> </p>
+     * ArchiveSHA256TreeHash value.</p> <p>This field is null in the following
+     * situations:</p> <ul> <li> <p>Archive retrieval jobs that specify a range that is
+     * not tree-hash aligned.</p> </li> </ul> <ul> <li> <p>Archival jobs that specify a
+     * range that is equal to the whole archive and the job status is InProgress.</p>
+     * </li> </ul> <ul> <li> <p>Inventory jobs.</p> </li> </ul>
      */
     inline void SetSHA256TreeHash(const char* value) { m_sHA256TreeHash.assign(value); }
 
     /**
      * <p>For an ArchiveRetrieval job, it is the checksum of the archive. Otherwise,
-     * the value is null.</p> <p> The SHA256 tree hash value for the requested range of
+     * the value is null.</p> <p>The SHA256 tree hash value for the requested range of
      * an archive. If the Initiate a Job request for an archive specified a tree-hash
-     * aligned range, then this field returns a value. </p> <p> For the specific case
+     * aligned range, then this field returns a value.</p> <p>For the specific case
      * when the whole archive is retrieved, this value is the same as the
-     * ArchiveSHA256TreeHash value. </p> <p> This field is null in the following
-     * situations: <ul> <li><p>Archive retrieval jobs that specify a range that is not
-     * tree-hash aligned.</p></li> </ul> <ul> <li><p>Archival jobs that specify a range
-     * that is equal to the whole archive and the job status is InProgress.</p></li>
-     * </ul> <ul> <li><p>Inventory jobs.</p></li> </ul> </p>
+     * ArchiveSHA256TreeHash value.</p> <p>This field is null in the following
+     * situations:</p> <ul> <li> <p>Archive retrieval jobs that specify a range that is
+     * not tree-hash aligned.</p> </li> </ul> <ul> <li> <p>Archival jobs that specify a
+     * range that is equal to the whole archive and the job status is InProgress.</p>
+     * </li> </ul> <ul> <li> <p>Inventory jobs.</p> </li> </ul>
      */
     inline DescribeJobResult& WithSHA256TreeHash(const Aws::String& value) { SetSHA256TreeHash(value); return *this;}
 
     /**
      * <p>For an ArchiveRetrieval job, it is the checksum of the archive. Otherwise,
-     * the value is null.</p> <p> The SHA256 tree hash value for the requested range of
+     * the value is null.</p> <p>The SHA256 tree hash value for the requested range of
      * an archive. If the Initiate a Job request for an archive specified a tree-hash
-     * aligned range, then this field returns a value. </p> <p> For the specific case
+     * aligned range, then this field returns a value.</p> <p>For the specific case
      * when the whole archive is retrieved, this value is the same as the
-     * ArchiveSHA256TreeHash value. </p> <p> This field is null in the following
-     * situations: <ul> <li><p>Archive retrieval jobs that specify a range that is not
-     * tree-hash aligned.</p></li> </ul> <ul> <li><p>Archival jobs that specify a range
-     * that is equal to the whole archive and the job status is InProgress.</p></li>
-     * </ul> <ul> <li><p>Inventory jobs.</p></li> </ul> </p>
+     * ArchiveSHA256TreeHash value.</p> <p>This field is null in the following
+     * situations:</p> <ul> <li> <p>Archive retrieval jobs that specify a range that is
+     * not tree-hash aligned.</p> </li> </ul> <ul> <li> <p>Archival jobs that specify a
+     * range that is equal to the whole archive and the job status is InProgress.</p>
+     * </li> </ul> <ul> <li> <p>Inventory jobs.</p> </li> </ul>
      */
     inline DescribeJobResult& WithSHA256TreeHash(Aws::String&& value) { SetSHA256TreeHash(value); return *this;}
 
     /**
      * <p>For an ArchiveRetrieval job, it is the checksum of the archive. Otherwise,
-     * the value is null.</p> <p> The SHA256 tree hash value for the requested range of
+     * the value is null.</p> <p>The SHA256 tree hash value for the requested range of
      * an archive. If the Initiate a Job request for an archive specified a tree-hash
-     * aligned range, then this field returns a value. </p> <p> For the specific case
+     * aligned range, then this field returns a value.</p> <p>For the specific case
      * when the whole archive is retrieved, this value is the same as the
-     * ArchiveSHA256TreeHash value. </p> <p> This field is null in the following
-     * situations: <ul> <li><p>Archive retrieval jobs that specify a range that is not
-     * tree-hash aligned.</p></li> </ul> <ul> <li><p>Archival jobs that specify a range
-     * that is equal to the whole archive and the job status is InProgress.</p></li>
-     * </ul> <ul> <li><p>Inventory jobs.</p></li> </ul> </p>
+     * ArchiveSHA256TreeHash value.</p> <p>This field is null in the following
+     * situations:</p> <ul> <li> <p>Archive retrieval jobs that specify a range that is
+     * not tree-hash aligned.</p> </li> </ul> <ul> <li> <p>Archival jobs that specify a
+     * range that is equal to the whole archive and the job status is InProgress.</p>
+     * </li> </ul> <ul> <li> <p>Inventory jobs.</p> </li> </ul>
      */
     inline DescribeJobResult& WithSHA256TreeHash(const char* value) { SetSHA256TreeHash(value); return *this;}
 
     /**
      * <p>The SHA256 tree hash of the entire archive for an archive retrieval. For
-     * inventory retrieval jobs, this field is null. </p>
+     * inventory retrieval jobs, this field is null.</p>
      */
     inline const Aws::String& GetArchiveSHA256TreeHash() const{ return m_archiveSHA256TreeHash; }
 
     /**
      * <p>The SHA256 tree hash of the entire archive for an archive retrieval. For
-     * inventory retrieval jobs, this field is null. </p>
+     * inventory retrieval jobs, this field is null.</p>
      */
     inline void SetArchiveSHA256TreeHash(const Aws::String& value) { m_archiveSHA256TreeHash = value; }
 
     /**
      * <p>The SHA256 tree hash of the entire archive for an archive retrieval. For
-     * inventory retrieval jobs, this field is null. </p>
+     * inventory retrieval jobs, this field is null.</p>
      */
     inline void SetArchiveSHA256TreeHash(Aws::String&& value) { m_archiveSHA256TreeHash = value; }
 
     /**
      * <p>The SHA256 tree hash of the entire archive for an archive retrieval. For
-     * inventory retrieval jobs, this field is null. </p>
+     * inventory retrieval jobs, this field is null.</p>
      */
     inline void SetArchiveSHA256TreeHash(const char* value) { m_archiveSHA256TreeHash.assign(value); }
 
     /**
      * <p>The SHA256 tree hash of the entire archive for an archive retrieval. For
-     * inventory retrieval jobs, this field is null. </p>
+     * inventory retrieval jobs, this field is null.</p>
      */
     inline DescribeJobResult& WithArchiveSHA256TreeHash(const Aws::String& value) { SetArchiveSHA256TreeHash(value); return *this;}
 
     /**
      * <p>The SHA256 tree hash of the entire archive for an archive retrieval. For
-     * inventory retrieval jobs, this field is null. </p>
+     * inventory retrieval jobs, this field is null.</p>
      */
     inline DescribeJobResult& WithArchiveSHA256TreeHash(Aws::String&& value) { SetArchiveSHA256TreeHash(value); return *this;}
 
     /**
      * <p>The SHA256 tree hash of the entire archive for an archive retrieval. For
-     * inventory retrieval jobs, this field is null. </p>
+     * inventory retrieval jobs, this field is null.</p>
      */
     inline DescribeJobResult& WithArchiveSHA256TreeHash(const char* value) { SetArchiveSHA256TreeHash(value); return *this;}
 
@@ -670,6 +672,55 @@ namespace Model
     inline DescribeJobResult& WithRetrievalByteRange(const char* value) { SetRetrievalByteRange(value); return *this;}
 
     /**
+     * <p>The retrieval option to use for the archive retrieval. Valid values are
+     * <code>Expedited</code>, <code>Standard</code>, or <code>Bulk</code>.
+     * <code>Standard</code> is the default.</p>
+     */
+    inline const Aws::String& GetTier() const{ return m_tier; }
+
+    /**
+     * <p>The retrieval option to use for the archive retrieval. Valid values are
+     * <code>Expedited</code>, <code>Standard</code>, or <code>Bulk</code>.
+     * <code>Standard</code> is the default.</p>
+     */
+    inline void SetTier(const Aws::String& value) { m_tier = value; }
+
+    /**
+     * <p>The retrieval option to use for the archive retrieval. Valid values are
+     * <code>Expedited</code>, <code>Standard</code>, or <code>Bulk</code>.
+     * <code>Standard</code> is the default.</p>
+     */
+    inline void SetTier(Aws::String&& value) { m_tier = value; }
+
+    /**
+     * <p>The retrieval option to use for the archive retrieval. Valid values are
+     * <code>Expedited</code>, <code>Standard</code>, or <code>Bulk</code>.
+     * <code>Standard</code> is the default.</p>
+     */
+    inline void SetTier(const char* value) { m_tier.assign(value); }
+
+    /**
+     * <p>The retrieval option to use for the archive retrieval. Valid values are
+     * <code>Expedited</code>, <code>Standard</code>, or <code>Bulk</code>.
+     * <code>Standard</code> is the default.</p>
+     */
+    inline DescribeJobResult& WithTier(const Aws::String& value) { SetTier(value); return *this;}
+
+    /**
+     * <p>The retrieval option to use for the archive retrieval. Valid values are
+     * <code>Expedited</code>, <code>Standard</code>, or <code>Bulk</code>.
+     * <code>Standard</code> is the default.</p>
+     */
+    inline DescribeJobResult& WithTier(Aws::String&& value) { SetTier(value); return *this;}
+
+    /**
+     * <p>The retrieval option to use for the archive retrieval. Valid values are
+     * <code>Expedited</code>, <code>Standard</code>, or <code>Bulk</code>.
+     * <code>Standard</code> is the default.</p>
+     */
+    inline DescribeJobResult& WithTier(const char* value) { SetTier(value); return *this;}
+
+    /**
      * <p>Parameters used for range inventory retrieval.</p>
      */
     inline const InventoryRetrievalJobDescription& GetInventoryRetrievalParameters() const{ return m_inventoryRetrievalParameters; }
@@ -711,6 +762,7 @@ namespace Model
     Aws::String m_sHA256TreeHash;
     Aws::String m_archiveSHA256TreeHash;
     Aws::String m_retrievalByteRange;
+    Aws::String m_tier;
     InventoryRetrievalJobDescription m_inventoryRetrievalParameters;
   };
 

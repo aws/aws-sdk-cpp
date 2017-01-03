@@ -35,7 +35,9 @@ namespace Model
 {
   /**
    * <p>Contains the response to a <code>DescribeElasticLoadBalancers</code>
-   * request.</p>
+   * request.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeElasticLoadBalancersResult">AWS
+   * API Reference</a></p>
    */
   class AWS_OPSWORKS_API DescribeElasticLoadBalancersResult
   {

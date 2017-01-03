@@ -33,7 +33,9 @@ namespace Model
 {
   /**
    * <p>The output when you delete the evaluation results for the specified Config
-   * rule.</p>
+   * rule.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteEvaluationResultsResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_CONFIGSERVICE_API DeleteEvaluationResultsResult
   {

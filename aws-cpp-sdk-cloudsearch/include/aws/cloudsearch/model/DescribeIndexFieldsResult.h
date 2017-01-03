@@ -36,7 +36,10 @@ namespace Model
 {
   /**
    * <p>The result of a <code>DescribeIndexFields</code> request. Contains the index
-   * fields configured for the domain specified in the request.</p>
+   * fields configured for the domain specified in the request.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DescribeIndexFieldsResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDSEARCH_API DescribeIndexFieldsResult
   {

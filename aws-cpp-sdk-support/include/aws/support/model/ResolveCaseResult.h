@@ -33,7 +33,10 @@ namespace Support
 namespace Model
 {
   /**
-   * <p>The status of the case returned by the <a>ResolveCase</a> operation.</p>
+   * <p>The status of the case returned by the <a>ResolveCase</a>
+   * operation.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/ResolveCaseResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_SUPPORT_API ResolveCaseResult
   {

@@ -34,6 +34,10 @@ RedshiftDestinationDescription::RedshiftDestinationDescription() :
     m_usernameHasBeenSet(false),
     m_retryOptionsHasBeenSet(false),
     m_s3DestinationDescriptionHasBeenSet(false),
+    m_processingConfigurationHasBeenSet(false),
+    m_s3BackupMode(RedshiftS3BackupMode::NOT_SET),
+    m_s3BackupModeHasBeenSet(false),
+    m_s3BackupDescriptionHasBeenSet(false),
     m_cloudWatchLoggingOptionsHasBeenSet(false)
 {
 }
@@ -45,6 +49,10 @@ RedshiftDestinationDescription::RedshiftDestinationDescription(const JsonValue& 
     m_usernameHasBeenSet(false),
     m_retryOptionsHasBeenSet(false),
     m_s3DestinationDescriptionHasBeenSet(false),
+    m_processingConfigurationHasBeenSet(false),
+    m_s3BackupMode(RedshiftS3BackupMode::NOT_SET),
+    m_s3BackupModeHasBeenSet(false),
+    m_s3BackupDescriptionHasBeenSet(false),
     m_cloudWatchLoggingOptionsHasBeenSet(false)
 {
   *this = jsonValue;
@@ -94,6 +102,27 @@ RedshiftDestinationDescription& RedshiftDestinationDescription::operator =(const
     m_s3DestinationDescriptionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ProcessingConfiguration"))
+  {
+    m_processingConfiguration = jsonValue.GetObject("ProcessingConfiguration");
+
+    m_processingConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("S3BackupMode"))
+  {
+    m_s3BackupMode = RedshiftS3BackupModeMapper::GetRedshiftS3BackupModeForName(jsonValue.GetString("S3BackupMode"));
+
+    m_s3BackupModeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("S3BackupDescription"))
+  {
+    m_s3BackupDescription = jsonValue.GetObject("S3BackupDescription");
+
+    m_s3BackupDescriptionHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("CloudWatchLoggingOptions"))
   {
     m_cloudWatchLoggingOptions = jsonValue.GetObject("CloudWatchLoggingOptions");
@@ -141,6 +170,23 @@ JsonValue RedshiftDestinationDescription::Jsonize() const
   if(m_s3DestinationDescriptionHasBeenSet)
   {
    payload.WithObject("S3DestinationDescription", m_s3DestinationDescription.Jsonize());
+
+  }
+
+  if(m_processingConfigurationHasBeenSet)
+  {
+   payload.WithObject("ProcessingConfiguration", m_processingConfiguration.Jsonize());
+
+  }
+
+  if(m_s3BackupModeHasBeenSet)
+  {
+   payload.WithString("S3BackupMode", RedshiftS3BackupModeMapper::GetNameForRedshiftS3BackupMode(m_s3BackupMode));
+  }
+
+  if(m_s3BackupDescriptionHasBeenSet)
+  {
+   payload.WithObject("S3BackupDescription", m_s3BackupDescription.Jsonize());
 
   }
 

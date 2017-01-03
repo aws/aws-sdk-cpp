@@ -34,7 +34,9 @@ namespace Model
    * <p> Identifies an Amazon Kinesis Firehose delivery stream as the streaming
    * source. You provide the Firehose delivery stream's Amazon Resource Name (ARN)
    * and an IAM role ARN that enables Amazon Kinesis Analytics to access the stream
-   * on your behalf.</p>
+   * on your behalf.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/KinesisFirehoseInput">AWS
+   * API Reference</a></p>
    */
   class AWS_KINESISANALYTICS_API KinesisFirehoseInput
   {

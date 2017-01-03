@@ -38,7 +38,9 @@ namespace Model
   /**
    * <p>Contains the response to a successful <a>AssumeRoleWithWebIdentity</a>
    * request, including temporary AWS credentials that can be used to make AWS
-   * requests. </p>
+   * requests. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/AssumeRoleWithWebIdentityResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_STS_API AssumeRoleWithWebIdentityResult
   {

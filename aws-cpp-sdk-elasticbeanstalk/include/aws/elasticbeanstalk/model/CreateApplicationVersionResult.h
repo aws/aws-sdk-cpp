@@ -34,7 +34,10 @@ namespace ElasticBeanstalk
 namespace Model
 {
   /**
-   * <p>Result message wrapping a single description of an application version.</p>
+   * <p>Result message wrapping a single description of an application
+   * version.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ApplicationVersionDescriptionMessage">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICBEANSTALK_API CreateApplicationVersionResult
   {

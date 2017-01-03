@@ -39,7 +39,9 @@ namespace Model
    * as a response element in the following actions:</p> <ul> <li> <p>
    * <a>CreateInstanceProfile</a> </p> </li> <li> <p> <a>GetInstanceProfile</a> </p>
    * </li> <li> <p> <a>ListInstanceProfiles</a> </p> </li> <li> <p>
-   * <a>ListInstanceProfilesForRole</a> </p> </li> </ul>
+   * <a>ListInstanceProfilesForRole</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/InstanceProfile">AWS
+   * API Reference</a></p>
    */
   class AWS_IAM_API InstanceProfile
   {

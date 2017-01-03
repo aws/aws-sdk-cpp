@@ -33,6 +33,8 @@ JobMetadata::JobMetadata() :
     m_jobStateHasBeenSet(false),
     m_jobType(JobType::NOT_SET),
     m_jobTypeHasBeenSet(false),
+    m_snowballType(SnowballType::NOT_SET),
+    m_snowballTypeHasBeenSet(false),
     m_creationDateHasBeenSet(false),
     m_resourcesHasBeenSet(false),
     m_descriptionHasBeenSet(false),
@@ -44,7 +46,8 @@ JobMetadata::JobMetadata() :
     m_snowballCapacityPreferenceHasBeenSet(false),
     m_notificationHasBeenSet(false),
     m_dataTransferProgressHasBeenSet(false),
-    m_jobLogInfoHasBeenSet(false)
+    m_jobLogInfoHasBeenSet(false),
+    m_clusterIdHasBeenSet(false)
 {
 }
 
@@ -54,6 +57,8 @@ JobMetadata::JobMetadata(const JsonValue& jsonValue) :
     m_jobStateHasBeenSet(false),
     m_jobType(JobType::NOT_SET),
     m_jobTypeHasBeenSet(false),
+    m_snowballType(SnowballType::NOT_SET),
+    m_snowballTypeHasBeenSet(false),
     m_creationDateHasBeenSet(false),
     m_resourcesHasBeenSet(false),
     m_descriptionHasBeenSet(false),
@@ -65,7 +70,8 @@ JobMetadata::JobMetadata(const JsonValue& jsonValue) :
     m_snowballCapacityPreferenceHasBeenSet(false),
     m_notificationHasBeenSet(false),
     m_dataTransferProgressHasBeenSet(false),
-    m_jobLogInfoHasBeenSet(false)
+    m_jobLogInfoHasBeenSet(false),
+    m_clusterIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -91,6 +97,13 @@ JobMetadata& JobMetadata::operator =(const JsonValue& jsonValue)
     m_jobType = JobTypeMapper::GetJobTypeForName(jsonValue.GetString("JobType"));
 
     m_jobTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SnowballType"))
+  {
+    m_snowballType = SnowballTypeMapper::GetSnowballTypeForName(jsonValue.GetString("SnowballType"));
+
+    m_snowballTypeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("CreationDate"))
@@ -170,6 +183,13 @@ JobMetadata& JobMetadata::operator =(const JsonValue& jsonValue)
     m_jobLogInfoHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ClusterId"))
+  {
+    m_clusterId = jsonValue.GetString("ClusterId");
+
+    m_clusterIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -191,6 +211,11 @@ JsonValue JobMetadata::Jsonize() const
   if(m_jobTypeHasBeenSet)
   {
    payload.WithString("JobType", JobTypeMapper::GetNameForJobType(m_jobType));
+  }
+
+  if(m_snowballTypeHasBeenSet)
+  {
+   payload.WithString("SnowballType", SnowballTypeMapper::GetNameForSnowballType(m_snowballType));
   }
 
   if(m_creationDateHasBeenSet)
@@ -254,6 +279,12 @@ JsonValue JobMetadata::Jsonize() const
   if(m_jobLogInfoHasBeenSet)
   {
    payload.WithObject("JobLogInfo", m_jobLogInfo.Jsonize());
+
+  }
+
+  if(m_clusterIdHasBeenSet)
+  {
+   payload.WithString("ClusterId", m_clusterId);
 
   }
 

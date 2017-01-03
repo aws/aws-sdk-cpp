@@ -31,7 +31,10 @@ namespace Model
 {
 
   /**
-   * <p>Describes whether instance monitoring is enabled.</p>
+   * <p>Describes whether instance monitoring is enabled.</p><p><h3>See Also:</h3>  
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/InstanceMonitoring">AWS
+   * API Reference</a></p>
    */
   class AWS_AUTOSCALING_API InstanceMonitoring
   {

@@ -31,7 +31,10 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for ModifyInstanceAttribute.</p>
+   * <p>Contains the parameters for ModifyInstanceAttribute.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceAttributeRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API ModifyInstanceAttributeRequest : public EC2Request
   {
@@ -454,32 +457,37 @@ namespace Model
     inline ModifyInstanceAttributeRequest& WithRamdisk(AttributeValue&& value) { SetRamdisk(value); return *this;}
 
     /**
-     * <p>Changes the instance's user data to the specified base64-encoded value. For
-     * command line tools, base64 encoding is performed for you.</p>
+     * <p>Changes the instance's user data to the specified value. If you are using an
+     * AWS SDK or command line tool, Base64-encoding is performed for you, and you can
+     * load the text from a file. Otherwise, you must provide Base64-encoded text.</p>
      */
     inline const BlobAttributeValue& GetUserData() const{ return m_userData; }
 
     /**
-     * <p>Changes the instance's user data to the specified base64-encoded value. For
-     * command line tools, base64 encoding is performed for you.</p>
+     * <p>Changes the instance's user data to the specified value. If you are using an
+     * AWS SDK or command line tool, Base64-encoding is performed for you, and you can
+     * load the text from a file. Otherwise, you must provide Base64-encoded text.</p>
      */
     inline void SetUserData(const BlobAttributeValue& value) { m_userDataHasBeenSet = true; m_userData = value; }
 
     /**
-     * <p>Changes the instance's user data to the specified base64-encoded value. For
-     * command line tools, base64 encoding is performed for you.</p>
+     * <p>Changes the instance's user data to the specified value. If you are using an
+     * AWS SDK or command line tool, Base64-encoding is performed for you, and you can
+     * load the text from a file. Otherwise, you must provide Base64-encoded text.</p>
      */
     inline void SetUserData(BlobAttributeValue&& value) { m_userDataHasBeenSet = true; m_userData = value; }
 
     /**
-     * <p>Changes the instance's user data to the specified base64-encoded value. For
-     * command line tools, base64 encoding is performed for you.</p>
+     * <p>Changes the instance's user data to the specified value. If you are using an
+     * AWS SDK or command line tool, Base64-encoding is performed for you, and you can
+     * load the text from a file. Otherwise, you must provide Base64-encoded text.</p>
      */
     inline ModifyInstanceAttributeRequest& WithUserData(const BlobAttributeValue& value) { SetUserData(value); return *this;}
 
     /**
-     * <p>Changes the instance's user data to the specified base64-encoded value. For
-     * command line tools, base64 encoding is performed for you.</p>
+     * <p>Changes the instance's user data to the specified value. If you are using an
+     * AWS SDK or command line tool, Base64-encoding is performed for you, and you can
+     * load the text from a file. Otherwise, you must provide Base64-encoded text.</p>
      */
     inline ModifyInstanceAttributeRequest& WithUserData(BlobAttributeValue&& value) { SetUserData(value); return *this;}
 
@@ -615,44 +623,84 @@ namespace Model
     inline ModifyInstanceAttributeRequest& WithEbsOptimized(AttributeBooleanValue&& value) { SetEbsOptimized(value); return *this;}
 
     /**
-     * <p>Set to <code>simple</code> to enable enhanced networking for the
-     * instance.</p> <p>There is no way to disable enhanced networking at this
+     * <p>Set to <code>simple</code> to enable enhanced networking with the Intel 82599
+     * Virtual Function interface for the instance.</p> <p>There is no way to disable
+     * enhanced networking with the Intel 82599 Virtual Function interface at this
      * time.</p> <p>This option is supported only for HVM instances. Specifying this
      * option with a PV instance can make it unreachable.</p>
      */
     inline const AttributeValue& GetSriovNetSupport() const{ return m_sriovNetSupport; }
 
     /**
-     * <p>Set to <code>simple</code> to enable enhanced networking for the
-     * instance.</p> <p>There is no way to disable enhanced networking at this
+     * <p>Set to <code>simple</code> to enable enhanced networking with the Intel 82599
+     * Virtual Function interface for the instance.</p> <p>There is no way to disable
+     * enhanced networking with the Intel 82599 Virtual Function interface at this
      * time.</p> <p>This option is supported only for HVM instances. Specifying this
      * option with a PV instance can make it unreachable.</p>
      */
     inline void SetSriovNetSupport(const AttributeValue& value) { m_sriovNetSupportHasBeenSet = true; m_sriovNetSupport = value; }
 
     /**
-     * <p>Set to <code>simple</code> to enable enhanced networking for the
-     * instance.</p> <p>There is no way to disable enhanced networking at this
+     * <p>Set to <code>simple</code> to enable enhanced networking with the Intel 82599
+     * Virtual Function interface for the instance.</p> <p>There is no way to disable
+     * enhanced networking with the Intel 82599 Virtual Function interface at this
      * time.</p> <p>This option is supported only for HVM instances. Specifying this
      * option with a PV instance can make it unreachable.</p>
      */
     inline void SetSriovNetSupport(AttributeValue&& value) { m_sriovNetSupportHasBeenSet = true; m_sriovNetSupport = value; }
 
     /**
-     * <p>Set to <code>simple</code> to enable enhanced networking for the
-     * instance.</p> <p>There is no way to disable enhanced networking at this
+     * <p>Set to <code>simple</code> to enable enhanced networking with the Intel 82599
+     * Virtual Function interface for the instance.</p> <p>There is no way to disable
+     * enhanced networking with the Intel 82599 Virtual Function interface at this
      * time.</p> <p>This option is supported only for HVM instances. Specifying this
      * option with a PV instance can make it unreachable.</p>
      */
     inline ModifyInstanceAttributeRequest& WithSriovNetSupport(const AttributeValue& value) { SetSriovNetSupport(value); return *this;}
 
     /**
-     * <p>Set to <code>simple</code> to enable enhanced networking for the
-     * instance.</p> <p>There is no way to disable enhanced networking at this
+     * <p>Set to <code>simple</code> to enable enhanced networking with the Intel 82599
+     * Virtual Function interface for the instance.</p> <p>There is no way to disable
+     * enhanced networking with the Intel 82599 Virtual Function interface at this
      * time.</p> <p>This option is supported only for HVM instances. Specifying this
      * option with a PV instance can make it unreachable.</p>
      */
     inline ModifyInstanceAttributeRequest& WithSriovNetSupport(AttributeValue&& value) { SetSriovNetSupport(value); return *this;}
+
+    /**
+     * <p>Set to <code>true</code> to enable enhanced networking with ENA for the
+     * instance.</p> <p>This option is supported only for HVM instances. Specifying
+     * this option with a PV instance can make it unreachable.</p>
+     */
+    inline const AttributeBooleanValue& GetEnaSupport() const{ return m_enaSupport; }
+
+    /**
+     * <p>Set to <code>true</code> to enable enhanced networking with ENA for the
+     * instance.</p> <p>This option is supported only for HVM instances. Specifying
+     * this option with a PV instance can make it unreachable.</p>
+     */
+    inline void SetEnaSupport(const AttributeBooleanValue& value) { m_enaSupportHasBeenSet = true; m_enaSupport = value; }
+
+    /**
+     * <p>Set to <code>true</code> to enable enhanced networking with ENA for the
+     * instance.</p> <p>This option is supported only for HVM instances. Specifying
+     * this option with a PV instance can make it unreachable.</p>
+     */
+    inline void SetEnaSupport(AttributeBooleanValue&& value) { m_enaSupportHasBeenSet = true; m_enaSupport = value; }
+
+    /**
+     * <p>Set to <code>true</code> to enable enhanced networking with ENA for the
+     * instance.</p> <p>This option is supported only for HVM instances. Specifying
+     * this option with a PV instance can make it unreachable.</p>
+     */
+    inline ModifyInstanceAttributeRequest& WithEnaSupport(const AttributeBooleanValue& value) { SetEnaSupport(value); return *this;}
+
+    /**
+     * <p>Set to <code>true</code> to enable enhanced networking with ENA for the
+     * instance.</p> <p>This option is supported only for HVM instances. Specifying
+     * this option with a PV instance can make it unreachable.</p>
+     */
+    inline ModifyInstanceAttributeRequest& WithEnaSupport(AttributeBooleanValue&& value) { SetEnaSupport(value); return *this;}
 
   private:
     bool m_dryRun;
@@ -685,6 +733,8 @@ namespace Model
     bool m_ebsOptimizedHasBeenSet;
     AttributeValue m_sriovNetSupport;
     bool m_sriovNetSupportHasBeenSet;
+    AttributeBooleanValue m_enaSupport;
+    bool m_enaSupportHasBeenSet;
   };
 
 } // namespace Model

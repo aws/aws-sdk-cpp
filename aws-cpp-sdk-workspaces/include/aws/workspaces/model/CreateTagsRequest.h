@@ -27,7 +27,9 @@ namespace Model
 {
 
   /**
-   * <p>The request of the <a>CreateTags</a> operation.</p>
+   * <p>The request of the <a>CreateTags</a> operation.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateTagsRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_WORKSPACES_API CreateTagsRequest : public WorkSpacesRequest
   {

@@ -36,7 +36,9 @@ namespace Model
   /**
    * <p>The result of a <code>DeleteDomain</code> request. Contains the status of a
    * newly deleted domain, or no status if the domain has already been completely
-   * deleted.</p>
+   * deleted.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DeleteDomainResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDSEARCH_API DeleteDomainResult
   {

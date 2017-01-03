@@ -33,7 +33,10 @@ namespace DeviceFarm
 namespace Model
 {
   /**
-   * <p>Represents the results of your stop run attempt.</p>
+   * <p>Represents the results of your stop run attempt.</p><p><h3>See Also:</h3>  
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/StopRunResult">AWS
+   * API Reference</a></p>
    */
   class AWS_DEVICEFARM_API StopRunResult
   {

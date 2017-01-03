@@ -36,7 +36,10 @@ namespace Model
    * <p> Represents the output of a <code>DeleteBatchPrediction</code> operation.</p>
    * <p>You can use the <code>GetBatchPrediction</code> operation and check the value
    * of the <code>Status</code> parameter to see whether a
-   * <code>BatchPrediction</code> is marked as <code>DELETED</code>.</p>
+   * <code>BatchPrediction</code> is marked as <code>DELETED</code>.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DeleteBatchPredictionOutput">AWS
+   * API Reference</a></p>
    */
   class AWS_MACHINELEARNING_API DeleteBatchPredictionResult
   {

@@ -31,7 +31,10 @@ namespace Model
 {
 
   /**
-   * <p>Provides options for specifying a range inventory retrieval job.</p>
+   * <p>Provides options for specifying a range inventory retrieval
+   * job.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/InventoryRetrievalJobInput">AWS
+   * API Reference</a></p>
    */
   class AWS_GLACIER_API InventoryRetrievalJobInput
   {
@@ -43,99 +46,99 @@ namespace Model
 
     /**
      * <p>The start of the date range in UTC for vault inventory retrieval that
-     * includes archives created on or after this date. A string representation of ISO
-     * 8601 date format, for example, 2013-03-20T17:03:43Z.</p>
+     * includes archives created on or after this date. This value should be a string
+     * in the ISO 8601 date format, for example <code>2013-03-20T17:03:43Z</code>.</p>
      */
     inline const Aws::String& GetStartDate() const{ return m_startDate; }
 
     /**
      * <p>The start of the date range in UTC for vault inventory retrieval that
-     * includes archives created on or after this date. A string representation of ISO
-     * 8601 date format, for example, 2013-03-20T17:03:43Z.</p>
+     * includes archives created on or after this date. This value should be a string
+     * in the ISO 8601 date format, for example <code>2013-03-20T17:03:43Z</code>.</p>
      */
     inline void SetStartDate(const Aws::String& value) { m_startDateHasBeenSet = true; m_startDate = value; }
 
     /**
      * <p>The start of the date range in UTC for vault inventory retrieval that
-     * includes archives created on or after this date. A string representation of ISO
-     * 8601 date format, for example, 2013-03-20T17:03:43Z.</p>
+     * includes archives created on or after this date. This value should be a string
+     * in the ISO 8601 date format, for example <code>2013-03-20T17:03:43Z</code>.</p>
      */
     inline void SetStartDate(Aws::String&& value) { m_startDateHasBeenSet = true; m_startDate = value; }
 
     /**
      * <p>The start of the date range in UTC for vault inventory retrieval that
-     * includes archives created on or after this date. A string representation of ISO
-     * 8601 date format, for example, 2013-03-20T17:03:43Z.</p>
+     * includes archives created on or after this date. This value should be a string
+     * in the ISO 8601 date format, for example <code>2013-03-20T17:03:43Z</code>.</p>
      */
     inline void SetStartDate(const char* value) { m_startDateHasBeenSet = true; m_startDate.assign(value); }
 
     /**
      * <p>The start of the date range in UTC for vault inventory retrieval that
-     * includes archives created on or after this date. A string representation of ISO
-     * 8601 date format, for example, 2013-03-20T17:03:43Z.</p>
+     * includes archives created on or after this date. This value should be a string
+     * in the ISO 8601 date format, for example <code>2013-03-20T17:03:43Z</code>.</p>
      */
     inline InventoryRetrievalJobInput& WithStartDate(const Aws::String& value) { SetStartDate(value); return *this;}
 
     /**
      * <p>The start of the date range in UTC for vault inventory retrieval that
-     * includes archives created on or after this date. A string representation of ISO
-     * 8601 date format, for example, 2013-03-20T17:03:43Z.</p>
+     * includes archives created on or after this date. This value should be a string
+     * in the ISO 8601 date format, for example <code>2013-03-20T17:03:43Z</code>.</p>
      */
     inline InventoryRetrievalJobInput& WithStartDate(Aws::String&& value) { SetStartDate(value); return *this;}
 
     /**
      * <p>The start of the date range in UTC for vault inventory retrieval that
-     * includes archives created on or after this date. A string representation of ISO
-     * 8601 date format, for example, 2013-03-20T17:03:43Z.</p>
+     * includes archives created on or after this date. This value should be a string
+     * in the ISO 8601 date format, for example <code>2013-03-20T17:03:43Z</code>.</p>
      */
     inline InventoryRetrievalJobInput& WithStartDate(const char* value) { SetStartDate(value); return *this;}
 
     /**
      * <p>The end of the date range in UTC for vault inventory retrieval that includes
-     * archives created before this date. A string representation of ISO 8601 date
-     * format, for example, 2013-03-20T17:03:43Z.</p>
+     * archives created before this date. This value should be a string in the ISO 8601
+     * date format, for example <code>2013-03-20T17:03:43Z</code>.</p>
      */
     inline const Aws::String& GetEndDate() const{ return m_endDate; }
 
     /**
      * <p>The end of the date range in UTC for vault inventory retrieval that includes
-     * archives created before this date. A string representation of ISO 8601 date
-     * format, for example, 2013-03-20T17:03:43Z.</p>
+     * archives created before this date. This value should be a string in the ISO 8601
+     * date format, for example <code>2013-03-20T17:03:43Z</code>.</p>
      */
     inline void SetEndDate(const Aws::String& value) { m_endDateHasBeenSet = true; m_endDate = value; }
 
     /**
      * <p>The end of the date range in UTC for vault inventory retrieval that includes
-     * archives created before this date. A string representation of ISO 8601 date
-     * format, for example, 2013-03-20T17:03:43Z.</p>
+     * archives created before this date. This value should be a string in the ISO 8601
+     * date format, for example <code>2013-03-20T17:03:43Z</code>.</p>
      */
     inline void SetEndDate(Aws::String&& value) { m_endDateHasBeenSet = true; m_endDate = value; }
 
     /**
      * <p>The end of the date range in UTC for vault inventory retrieval that includes
-     * archives created before this date. A string representation of ISO 8601 date
-     * format, for example, 2013-03-20T17:03:43Z.</p>
+     * archives created before this date. This value should be a string in the ISO 8601
+     * date format, for example <code>2013-03-20T17:03:43Z</code>.</p>
      */
     inline void SetEndDate(const char* value) { m_endDateHasBeenSet = true; m_endDate.assign(value); }
 
     /**
      * <p>The end of the date range in UTC for vault inventory retrieval that includes
-     * archives created before this date. A string representation of ISO 8601 date
-     * format, for example, 2013-03-20T17:03:43Z.</p>
+     * archives created before this date. This value should be a string in the ISO 8601
+     * date format, for example <code>2013-03-20T17:03:43Z</code>.</p>
      */
     inline InventoryRetrievalJobInput& WithEndDate(const Aws::String& value) { SetEndDate(value); return *this;}
 
     /**
      * <p>The end of the date range in UTC for vault inventory retrieval that includes
-     * archives created before this date. A string representation of ISO 8601 date
-     * format, for example, 2013-03-20T17:03:43Z.</p>
+     * archives created before this date. This value should be a string in the ISO 8601
+     * date format, for example <code>2013-03-20T17:03:43Z</code>.</p>
      */
     inline InventoryRetrievalJobInput& WithEndDate(Aws::String&& value) { SetEndDate(value); return *this;}
 
     /**
      * <p>The end of the date range in UTC for vault inventory retrieval that includes
-     * archives created before this date. A string representation of ISO 8601 date
-     * format, for example, 2013-03-20T17:03:43Z.</p>
+     * archives created before this date. This value should be a string in the ISO 8601
+     * date format, for example <code>2013-03-20T17:03:43Z</code>.</p>
      */
     inline InventoryRetrievalJobInput& WithEndDate(const char* value) { SetEndDate(value); return *this;}
 

@@ -32,7 +32,10 @@ namespace Model
 {
 
   /**
-   * <p>Represents information about the details of a job.</p>
+   * <p>Represents information about the details of a job.</p><p><h3>See Also:</h3>  
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/JobDetails">AWS
+   * API Reference</a></p>
    */
   class AWS_CODEPIPELINE_API JobDetails
   {

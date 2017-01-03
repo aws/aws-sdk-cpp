@@ -33,7 +33,9 @@ namespace Model
 
   /**
    * <p>Represents the new provisioned throughput settings to be applied to a global
-   * secondary index.</p>
+   * secondary index.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateGlobalSecondaryIndexAction">AWS
+   * API Reference</a></p>
    */
   class AWS_DYNAMODB_API UpdateGlobalSecondaryIndexAction
   {

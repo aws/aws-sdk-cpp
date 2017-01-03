@@ -33,7 +33,9 @@ namespace Model
 {
   /**
    * <p>A container representing the response from the server from the request to
-   * verify user attributes.</p>
+   * verify user attributes.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/VerifyUserAttributeResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_COGNITOIDENTITYPROVIDER_API VerifyUserAttributeResult
   {

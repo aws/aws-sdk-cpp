@@ -44,7 +44,10 @@ FunctionConfiguration::FunctionConfiguration() :
     m_lastModifiedHasBeenSet(false),
     m_codeSha256HasBeenSet(false),
     m_versionHasBeenSet(false),
-    m_vpcConfigHasBeenSet(false)
+    m_vpcConfigHasBeenSet(false),
+    m_deadLetterConfigHasBeenSet(false),
+    m_environmentHasBeenSet(false),
+    m_kMSKeyArnHasBeenSet(false)
 {
 }
 
@@ -65,7 +68,10 @@ FunctionConfiguration::FunctionConfiguration(const JsonValue& jsonValue) :
     m_lastModifiedHasBeenSet(false),
     m_codeSha256HasBeenSet(false),
     m_versionHasBeenSet(false),
-    m_vpcConfigHasBeenSet(false)
+    m_vpcConfigHasBeenSet(false),
+    m_deadLetterConfigHasBeenSet(false),
+    m_environmentHasBeenSet(false),
+    m_kMSKeyArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -163,6 +169,27 @@ FunctionConfiguration& FunctionConfiguration::operator =(const JsonValue& jsonVa
     m_vpcConfigHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DeadLetterConfig"))
+  {
+    m_deadLetterConfig = jsonValue.GetObject("DeadLetterConfig");
+
+    m_deadLetterConfigHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Environment"))
+  {
+    m_environment = jsonValue.GetObject("Environment");
+
+    m_environmentHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("KMSKeyArn"))
+  {
+    m_kMSKeyArn = jsonValue.GetString("KMSKeyArn");
+
+    m_kMSKeyArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -244,6 +271,24 @@ JsonValue FunctionConfiguration::Jsonize() const
   if(m_vpcConfigHasBeenSet)
   {
    payload.WithObject("VpcConfig", m_vpcConfig.Jsonize());
+
+  }
+
+  if(m_deadLetterConfigHasBeenSet)
+  {
+   payload.WithObject("DeadLetterConfig", m_deadLetterConfig.Jsonize());
+
+  }
+
+  if(m_environmentHasBeenSet)
+  {
+   payload.WithObject("Environment", m_environment.Jsonize());
+
+  }
+
+  if(m_kMSKeyArnHasBeenSet)
+  {
+   payload.WithString("KMSKeyArn", m_kMSKeyArn);
 
   }
 

@@ -46,7 +46,9 @@ namespace Model
    * the status of your transferred objects, you can look at the two associated logs:
    * a success log and a failure log. The logs are saved in comma-separated value
    * (CSV) format, and the name of each log includes the ID of the job or job part
-   * that the log describes.</p>
+   * that the log describes.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/JobLogs">AWS
+   * API Reference</a></p>
    */
   class AWS_SNOWBALL_API JobLogs
   {

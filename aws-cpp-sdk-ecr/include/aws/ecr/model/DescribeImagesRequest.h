@@ -39,50 +39,50 @@ namespace Model
 
     /**
      * <p>The AWS account ID associated with the registry that contains the repository
-     * in which to list images. If you do not specify a registry, the default registry
-     * is assumed.</p>
+     * in which to describe images. If you do not specify a registry, the default
+     * registry is assumed.</p>
      */
     inline const Aws::String& GetRegistryId() const{ return m_registryId; }
 
     /**
      * <p>The AWS account ID associated with the registry that contains the repository
-     * in which to list images. If you do not specify a registry, the default registry
-     * is assumed.</p>
+     * in which to describe images. If you do not specify a registry, the default
+     * registry is assumed.</p>
      */
     inline void SetRegistryId(const Aws::String& value) { m_registryIdHasBeenSet = true; m_registryId = value; }
 
     /**
      * <p>The AWS account ID associated with the registry that contains the repository
-     * in which to list images. If you do not specify a registry, the default registry
-     * is assumed.</p>
+     * in which to describe images. If you do not specify a registry, the default
+     * registry is assumed.</p>
      */
     inline void SetRegistryId(Aws::String&& value) { m_registryIdHasBeenSet = true; m_registryId = value; }
 
     /**
      * <p>The AWS account ID associated with the registry that contains the repository
-     * in which to list images. If you do not specify a registry, the default registry
-     * is assumed.</p>
+     * in which to describe images. If you do not specify a registry, the default
+     * registry is assumed.</p>
      */
     inline void SetRegistryId(const char* value) { m_registryIdHasBeenSet = true; m_registryId.assign(value); }
 
     /**
      * <p>The AWS account ID associated with the registry that contains the repository
-     * in which to list images. If you do not specify a registry, the default registry
-     * is assumed.</p>
+     * in which to describe images. If you do not specify a registry, the default
+     * registry is assumed.</p>
      */
     inline DescribeImagesRequest& WithRegistryId(const Aws::String& value) { SetRegistryId(value); return *this;}
 
     /**
      * <p>The AWS account ID associated with the registry that contains the repository
-     * in which to list images. If you do not specify a registry, the default registry
-     * is assumed.</p>
+     * in which to describe images. If you do not specify a registry, the default
+     * registry is assumed.</p>
      */
     inline DescribeImagesRequest& WithRegistryId(Aws::String&& value) { SetRegistryId(value); return *this;}
 
     /**
      * <p>The AWS account ID associated with the registry that contains the repository
-     * in which to list images. If you do not specify a registry, the default registry
-     * is assumed.</p>
+     * in which to describe images. If you do not specify a registry, the default
+     * registry is assumed.</p>
      */
     inline DescribeImagesRequest& WithRegistryId(const char* value) { SetRegistryId(value); return *this;}
 

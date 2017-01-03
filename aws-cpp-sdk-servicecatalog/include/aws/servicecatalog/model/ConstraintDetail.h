@@ -31,7 +31,9 @@ namespace Model
 {
 
   /**
-   * <p>Detailed constraint information.</p>
+   * <p>Detailed constraint information.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ConstraintDetail">AWS
+   * API Reference</a></p>
    */
   class AWS_SERVICECATALOG_API ConstraintDetail
   {

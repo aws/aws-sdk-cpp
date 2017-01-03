@@ -35,7 +35,10 @@ namespace EC2
 namespace Model
 {
   /**
-   * <p>Contains the output of CreateReservedInstancesListing.</p>
+   * <p>Contains the output of CreateReservedInstancesListing.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateReservedInstancesListingResult">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API CreateReservedInstancesListingResponse
   {
@@ -45,37 +48,37 @@ namespace Model
     CreateReservedInstancesListingResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
     /**
-     * <p>Information about the Reserved Instance listing.</p>
+     * <p>Information about the Standard Reserved Instance listing.</p>
      */
     inline const Aws::Vector<ReservedInstancesListing>& GetReservedInstancesListings() const{ return m_reservedInstancesListings; }
 
     /**
-     * <p>Information about the Reserved Instance listing.</p>
+     * <p>Information about the Standard Reserved Instance listing.</p>
      */
     inline void SetReservedInstancesListings(const Aws::Vector<ReservedInstancesListing>& value) { m_reservedInstancesListings = value; }
 
     /**
-     * <p>Information about the Reserved Instance listing.</p>
+     * <p>Information about the Standard Reserved Instance listing.</p>
      */
     inline void SetReservedInstancesListings(Aws::Vector<ReservedInstancesListing>&& value) { m_reservedInstancesListings = value; }
 
     /**
-     * <p>Information about the Reserved Instance listing.</p>
+     * <p>Information about the Standard Reserved Instance listing.</p>
      */
     inline CreateReservedInstancesListingResponse& WithReservedInstancesListings(const Aws::Vector<ReservedInstancesListing>& value) { SetReservedInstancesListings(value); return *this;}
 
     /**
-     * <p>Information about the Reserved Instance listing.</p>
+     * <p>Information about the Standard Reserved Instance listing.</p>
      */
     inline CreateReservedInstancesListingResponse& WithReservedInstancesListings(Aws::Vector<ReservedInstancesListing>&& value) { SetReservedInstancesListings(value); return *this;}
 
     /**
-     * <p>Information about the Reserved Instance listing.</p>
+     * <p>Information about the Standard Reserved Instance listing.</p>
      */
     inline CreateReservedInstancesListingResponse& AddReservedInstancesListings(const ReservedInstancesListing& value) { m_reservedInstancesListings.push_back(value); return *this; }
 
     /**
-     * <p>Information about the Reserved Instance listing.</p>
+     * <p>Information about the Standard Reserved Instance listing.</p>
      */
     inline CreateReservedInstancesListingResponse& AddReservedInstancesListings(ReservedInstancesListing&& value) { m_reservedInstancesListings.push_back(value); return *this; }
 

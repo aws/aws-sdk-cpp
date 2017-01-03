@@ -40,7 +40,7 @@ Aws::String DeleteRouteTableRequest::SerializePayload() const
     ss << "RouteTableId=" << StringUtils::URLEncode(m_routeTableId.c_str()) << "&";
   }
 
-  ss << "Version=2015-10-01";
+  ss << "Version=2016-11-15";
   return ss.str();
 }
 

@@ -42,6 +42,7 @@ namespace Aws
         static const int groupSet_HASH = HashingUtils::HashString("groupSet");
         static const int ebsOptimized_HASH = HashingUtils::HashString("ebsOptimized");
         static const int sriovNetSupport_HASH = HashingUtils::HashString("sriovNetSupport");
+        static const int enaSupport_HASH = HashingUtils::HashString("enaSupport");
 
 
         InstanceAttributeName GetInstanceAttributeNameForName(const Aws::String& name)
@@ -99,6 +100,10 @@ namespace Aws
           {
             return InstanceAttributeName::sriovNetSupport;
           }
+          else if (hashCode == enaSupport_HASH)
+          {
+            return InstanceAttributeName::enaSupport;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -139,6 +144,8 @@ namespace Aws
             return "ebsOptimized";
           case InstanceAttributeName::sriovNetSupport:
             return "sriovNetSupport";
+          case InstanceAttributeName::enaSupport:
+            return "enaSupport";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

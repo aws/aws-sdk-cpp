@@ -30,7 +30,9 @@ namespace Model
 {
 
   /**
-   * <p>The input for a ListResourceRecordSets request.</p>
+   * <p>The input for a ListResourceRecordSets request.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListResourceRecordSetsRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_ROUTE53_API ListResourceRecordSetsRequest : public Route53Request
   {
@@ -133,8 +135,8 @@ namespace Model
      * and failover resource record sets: <code>A</code> | <code>AAAA</code> |
      * <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> |
      * <code>SPF</code> | <code>SRV</code> | <code>TXT</code> </p> <p>Values for alias
-     * resource record sets: </p> <ul> <li> <p> <b>CloudFront distribution</b>: A</p>
-     * </li> <li> <p> <b>Elastic Beanstalk environment that has a regionalized
+     * resource record sets: </p> <ul> <li> <p> <b>CloudFront distribution</b>: A or
+     * AAAA</p> </li> <li> <p> <b>Elastic Beanstalk environment that has a regionalized
      * subdomain</b>: A</p> </li> <li> <p> <b>ELB load balancer</b>: A | AAAA</p> </li>
      * <li> <p> <b>Amazon S3 bucket</b>: A</p> </li> </ul> <p>Constraint: Specifying
      * <code>type</code> without specifying <code>name</code> returns an
@@ -151,8 +153,8 @@ namespace Model
      * and failover resource record sets: <code>A</code> | <code>AAAA</code> |
      * <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> |
      * <code>SPF</code> | <code>SRV</code> | <code>TXT</code> </p> <p>Values for alias
-     * resource record sets: </p> <ul> <li> <p> <b>CloudFront distribution</b>: A</p>
-     * </li> <li> <p> <b>Elastic Beanstalk environment that has a regionalized
+     * resource record sets: </p> <ul> <li> <p> <b>CloudFront distribution</b>: A or
+     * AAAA</p> </li> <li> <p> <b>Elastic Beanstalk environment that has a regionalized
      * subdomain</b>: A</p> </li> <li> <p> <b>ELB load balancer</b>: A | AAAA</p> </li>
      * <li> <p> <b>Amazon S3 bucket</b>: A</p> </li> </ul> <p>Constraint: Specifying
      * <code>type</code> without specifying <code>name</code> returns an
@@ -169,8 +171,8 @@ namespace Model
      * and failover resource record sets: <code>A</code> | <code>AAAA</code> |
      * <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> |
      * <code>SPF</code> | <code>SRV</code> | <code>TXT</code> </p> <p>Values for alias
-     * resource record sets: </p> <ul> <li> <p> <b>CloudFront distribution</b>: A</p>
-     * </li> <li> <p> <b>Elastic Beanstalk environment that has a regionalized
+     * resource record sets: </p> <ul> <li> <p> <b>CloudFront distribution</b>: A or
+     * AAAA</p> </li> <li> <p> <b>Elastic Beanstalk environment that has a regionalized
      * subdomain</b>: A</p> </li> <li> <p> <b>ELB load balancer</b>: A | AAAA</p> </li>
      * <li> <p> <b>Amazon S3 bucket</b>: A</p> </li> </ul> <p>Constraint: Specifying
      * <code>type</code> without specifying <code>name</code> returns an
@@ -187,8 +189,8 @@ namespace Model
      * and failover resource record sets: <code>A</code> | <code>AAAA</code> |
      * <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> |
      * <code>SPF</code> | <code>SRV</code> | <code>TXT</code> </p> <p>Values for alias
-     * resource record sets: </p> <ul> <li> <p> <b>CloudFront distribution</b>: A</p>
-     * </li> <li> <p> <b>Elastic Beanstalk environment that has a regionalized
+     * resource record sets: </p> <ul> <li> <p> <b>CloudFront distribution</b>: A or
+     * AAAA</p> </li> <li> <p> <b>Elastic Beanstalk environment that has a regionalized
      * subdomain</b>: A</p> </li> <li> <p> <b>ELB load balancer</b>: A | AAAA</p> </li>
      * <li> <p> <b>Amazon S3 bucket</b>: A</p> </li> </ul> <p>Constraint: Specifying
      * <code>type</code> without specifying <code>name</code> returns an
@@ -205,8 +207,8 @@ namespace Model
      * and failover resource record sets: <code>A</code> | <code>AAAA</code> |
      * <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> |
      * <code>SPF</code> | <code>SRV</code> | <code>TXT</code> </p> <p>Values for alias
-     * resource record sets: </p> <ul> <li> <p> <b>CloudFront distribution</b>: A</p>
-     * </li> <li> <p> <b>Elastic Beanstalk environment that has a regionalized
+     * resource record sets: </p> <ul> <li> <p> <b>CloudFront distribution</b>: A or
+     * AAAA</p> </li> <li> <p> <b>Elastic Beanstalk environment that has a regionalized
      * subdomain</b>: A</p> </li> <li> <p> <b>ELB load balancer</b>: A | AAAA</p> </li>
      * <li> <p> <b>Amazon S3 bucket</b>: A</p> </li> </ul> <p>Constraint: Specifying
      * <code>type</code> without specifying <code>name</code> returns an

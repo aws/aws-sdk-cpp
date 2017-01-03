@@ -27,7 +27,10 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for ModifyInstancePlacement.</p>
+   * <p>Contains the parameters for ModifyInstancePlacement.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstancePlacementRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API ModifyInstancePlacementRequest : public EC2Request
   {
@@ -121,37 +124,37 @@ namespace Model
     inline ModifyInstancePlacementRequest& WithAffinity(Affinity&& value) { SetAffinity(value); return *this;}
 
     /**
-     * <p>The ID of the Dedicated host that the instance will have affinity with.</p>
+     * <p>The ID of the Dedicated Host that the instance will have affinity with.</p>
      */
     inline const Aws::String& GetHostId() const{ return m_hostId; }
 
     /**
-     * <p>The ID of the Dedicated host that the instance will have affinity with.</p>
+     * <p>The ID of the Dedicated Host that the instance will have affinity with.</p>
      */
     inline void SetHostId(const Aws::String& value) { m_hostIdHasBeenSet = true; m_hostId = value; }
 
     /**
-     * <p>The ID of the Dedicated host that the instance will have affinity with.</p>
+     * <p>The ID of the Dedicated Host that the instance will have affinity with.</p>
      */
     inline void SetHostId(Aws::String&& value) { m_hostIdHasBeenSet = true; m_hostId = value; }
 
     /**
-     * <p>The ID of the Dedicated host that the instance will have affinity with.</p>
+     * <p>The ID of the Dedicated Host that the instance will have affinity with.</p>
      */
     inline void SetHostId(const char* value) { m_hostIdHasBeenSet = true; m_hostId.assign(value); }
 
     /**
-     * <p>The ID of the Dedicated host that the instance will have affinity with.</p>
+     * <p>The ID of the Dedicated Host that the instance will have affinity with.</p>
      */
     inline ModifyInstancePlacementRequest& WithHostId(const Aws::String& value) { SetHostId(value); return *this;}
 
     /**
-     * <p>The ID of the Dedicated host that the instance will have affinity with.</p>
+     * <p>The ID of the Dedicated Host that the instance will have affinity with.</p>
      */
     inline ModifyInstancePlacementRequest& WithHostId(Aws::String&& value) { SetHostId(value); return *this;}
 
     /**
-     * <p>The ID of the Dedicated host that the instance will have affinity with.</p>
+     * <p>The ID of the Dedicated Host that the instance will have affinity with.</p>
      */
     inline ModifyInstancePlacementRequest& WithHostId(const char* value) { SetHostId(value); return *this;}
 

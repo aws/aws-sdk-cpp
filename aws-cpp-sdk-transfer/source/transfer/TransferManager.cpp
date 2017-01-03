@@ -18,13 +18,17 @@
 #include <aws/core/utils/stream/PreallocatedStreamBuf.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/platform/FileSystem.h>
 #include <aws/s3/S3Client.h>
 #include <aws/s3/model/HeadObjectRequest.h>
 #include <aws/s3/model/GetObjectRequest.h>
+#include <aws/s3/model/ListObjectsV2Request.h>
 #include <aws/s3/model/CompleteMultipartUploadRequest.h>
 #include <aws/s3/model/AbortMultipartUploadRequest.h>
 #include <fstream>
 #include <algorithm>
+
+#include <aws/core/utils/logging/LogMacros.h>
 
 namespace Aws
 {
@@ -35,6 +39,12 @@ namespace Aws
         struct TransferHandleAsyncContext : public Aws::Client::AsyncCallerContext
         {
             std::shared_ptr<TransferHandle> handle;
+        };
+
+        struct DownloadDirectoryContext : public Aws::Client::AsyncCallerContext
+        {
+            Aws::String rootDirectory;
+            Aws::String prefix;
         };
 
         TransferManager::TransferManager(const TransferManagerConfiguration& configuration) : m_transferConfig(configuration)
@@ -63,6 +73,7 @@ namespace Aws
             const Aws::Map<Aws::String, Aws::String>& metadata)
         {
             auto fileStream = Aws::MakeShared<Aws::FStream>(CLASS_TAG, fileName.c_str(), std::ios_base::in | std::ios_base::binary);
+
             fileStream->seekg(0, std::ios_base::end);
             size_t length = static_cast<size_t>(fileStream->tellg());
             fileStream->seekg(0, std::ios_base::beg);
@@ -70,13 +81,21 @@ namespace Aws
             handle->SetContentType(contentType);
             handle->SetMetadata(metadata);
 
-            if (length > m_transferConfig.bufferSize)
+            if(fileStream->good())
             {
-                m_transferConfig.transferExecutor->Submit([this, fileStream, handle] { DoMultipartUpload(fileStream, handle); });
+                if (length > m_transferConfig.bufferSize)
+                {
+                    m_transferConfig.transferExecutor->Submit([this, fileStream, handle] { DoMultipartUpload(fileStream, handle); });
+                }
+                else
+                {
+                    m_transferConfig.transferExecutor->Submit([this, fileStream, handle] { DoSinglePartUpload(fileStream, handle); });
+                }
             }
             else
             {
-                m_transferConfig.transferExecutor->Submit([this, fileStream, handle] { DoSinglePartUpload(fileStream, handle); });
+                handle->SetError(Aws::Client::AWSError<Aws::Client::CoreErrors>(static_cast<Aws::Client::CoreErrors>(Aws::S3::S3Errors::NO_SUCH_UPLOAD), "NoSuchUpload", "The requested file could not be opened.", false));
+                handle->UpdateStatus(Aws::Transfer::TransferStatus::FAILED);
             }
 
             return handle;
@@ -92,13 +111,21 @@ namespace Aws
             handle->SetContentType(contentType);
             handle->SetMetadata(metadata);
 
-            if (length > m_transferConfig.bufferSize)
+            if(fileStream->good())
             {
-                m_transferConfig.transferExecutor->Submit([this, fileStream, handle] { DoMultipartUpload(fileStream, handle); });
+                if (length > m_transferConfig.bufferSize)
+                {
+                    m_transferConfig.transferExecutor->Submit([this, fileStream, handle] { DoMultipartUpload(fileStream, handle); });
+                }
+                else
+                {
+                    m_transferConfig.transferExecutor->Submit([this, fileStream, handle] { DoSinglePartUpload(fileStream, handle); });
+                }
             }
             else
             {
-                m_transferConfig.transferExecutor->Submit([this, fileStream, handle] { DoSinglePartUpload(fileStream, handle); });
+                handle->SetError(Aws::Client::AWSError<Aws::Client::CoreErrors>(static_cast<Aws::Client::CoreErrors>(Aws::S3::S3Errors::NO_SUCH_UPLOAD), "NoSuchUpload", "The requested file could not be opened.", false));
+                handle->UpdateStatus(Aws::Transfer::TransferStatus::FAILED);
             }
 
             return handle;
@@ -163,6 +190,51 @@ namespace Aws
             m_transferConfig.transferExecutor->Submit([this, inProgressHandle] { WaitForCancellationAndAbortUpload(inProgressHandle); });
         }
 
+        void TransferManager::UploadDirectory(const Aws::String& directory, const Aws::String& bucketName, const Aws::String& prefix, const Aws::Map<Aws::String, Aws::String>& metadata)
+        {
+            assert(m_transferConfig.transferInitiatedCallback);
+
+            auto visitor = [this, bucketName, prefix, metadata](const Aws::FileSystem::DirectoryTree*, const Aws::FileSystem::DirectoryEntry& entry)
+            {
+                if (entry && entry.fileType == Aws::FileSystem::FileType::File)
+                {
+                    Aws::StringStream ssKey;
+                    Aws::String relativePath = entry.relativePath;
+                    char delimiter[] = { Aws::FileSystem::PATH_DELIM, 0 };
+                    Aws::Utils::StringUtils::Replace(relativePath, delimiter, "/");
+
+                    ssKey << prefix << "/" << relativePath;
+                    Aws::String keyName = ssKey.str();
+                    
+                    m_transferConfig.transferInitiatedCallback(this, UploadFile(entry.path, bucketName, keyName, DEFAULT_CONTENT_TYPE, metadata));                    
+                }
+
+                return true;
+            };
+            
+            m_transferConfig.transferExecutor->Submit([directory, visitor]() { Aws::FileSystem::DirectoryTree dir(directory); dir.TraverseDepthFirst(visitor); });
+        }
+
+        void TransferManager::DownloadToDirectory(const Aws::String& directory, const Aws::String& bucketName, const Aws::String& prefix)
+        {
+            assert(m_transferConfig.transferInitiatedCallback);
+            Aws::FileSystem::CreateDirectoryIfNotExists(directory.c_str());
+         
+            auto handler = [this](const Aws::S3::S3Client* client, const Aws::S3::Model::ListObjectsV2Request& request, const Aws::S3::Model::ListObjectsV2Outcome& outcome,
+                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) { HandleListObjectsResponse(client, request, outcome, context); };
+
+            Aws::S3::Model::ListObjectsV2Request request;
+            request.WithBucket(bucketName)
+                .WithPrefix(prefix)
+                .WithDelimiter("/");
+
+            auto context = Aws::MakeShared<DownloadDirectoryContext>(CLASS_TAG);
+            context->rootDirectory = directory;
+            context->prefix = prefix;
+                
+            m_transferConfig.s3Client->ListObjectsV2Async(request, handler, context);
+        }        
+        
         void TransferManager::DoMultipartUpload(const std::shared_ptr<Aws::IOStream>& streamToPut, const std::shared_ptr<TransferHandle>& handle)
         {
             handle->UpdateStatus(TransferStatus::IN_PROGRESS);
@@ -508,6 +580,83 @@ namespace Aws
                     TriggerErrorCallback(*canceledHandle, abortOutcome.GetError());
                 }
             }
+        }
+
+        void TransferManager::HandleListObjectsResponse(const Aws::S3::S3Client*, const Aws::S3::Model::ListObjectsV2Request& request, const Aws::S3::Model::ListObjectsV2Outcome& outcome,
+            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
+        {
+            auto handler = [this](const Aws::S3::S3Client* client, const Aws::S3::Model::ListObjectsV2Request& request, const Aws::S3::Model::ListObjectsV2Outcome& outcome,
+                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) { HandleListObjectsResponse(client, request, outcome, context); };
+
+            if (outcome.IsSuccess())
+            {
+                Aws::S3::Model::ListObjectsV2Request requestCpy = request;
+                std::shared_ptr<const DownloadDirectoryContext> downloadContext = (const std::shared_ptr<const DownloadDirectoryContext>&)context;
+                auto directory = downloadContext->rootDirectory;
+                auto prefix = downloadContext->prefix;
+
+                auto& result = outcome.GetResult();
+                //if it was truncated, we don't care on this pass anyways. Just go ahead and kick off another list objects and will handle it when it finishes.
+                if (result.GetIsTruncated())
+                {
+                    requestCpy.SetContinuationToken(result.GetContinuationToken());
+                    m_transferConfig.s3Client->ListObjectsV2Async(requestCpy, handler, context);
+                }
+
+                //this can contain matching directories or actual objects to download. If it's a directory, go ahead and create a local directory then
+                // take the new prefix and call list again. if it's an object key, go ahead and initiate download.
+                for (auto& content : result.GetContents())
+                {
+                    if (content.GetSize() <= 0 && content.GetKey() != request.GetPrefix())
+                    {
+                        Aws::FileSystem::CreateDirectoryIfNotExists(DetermineFilePath(directory, prefix, content.GetKey()).c_str());
+                        requestCpy.SetPrefix(content.GetKey());
+                        m_transferConfig.s3Client->ListObjectsV2Async(requestCpy, handler, context);
+                    }
+                    //this is our fixed point in the algorithm. eventually, everything will return an object.
+                    else if (content.GetSize() > 0)
+                    {
+                        Aws::String fileName = DetermineFilePath(downloadContext->rootDirectory, downloadContext->prefix, content.GetKey());
+                        m_transferConfig.transferInitiatedCallback(this, DownloadFile(request.GetBucket(), content.GetKey(), fileName));
+                    }
+                }
+
+                //Take the common prefix and list with it, keep doing this until we start getting objects back. Go ahead and create the directories though.
+                for (auto& commonPrefix : result.GetCommonPrefixes())
+                {
+                    Aws::FileSystem::CreateDirectoryIfNotExists(DetermineFilePath(directory, prefix, commonPrefix.GetPrefix()).c_str());
+                    requestCpy.SetPrefix(commonPrefix.GetPrefix());
+                    m_transferConfig.s3Client->ListObjectsV2Async(requestCpy, handler, context);
+                }
+            }
+            else
+            {
+                //notify user if list objects failed.
+                if (m_transferConfig.errorCallback)
+                {
+                    auto handle = Aws::MakeShared<TransferHandle>(CLASS_TAG, request.GetBucket(), "");
+                    m_transferConfig.errorCallback(this, *handle, outcome.GetError());
+                }
+            }
+        }
+
+        Aws::String TransferManager::DetermineFilePath(const Aws::String& directory, const Aws::String& prefix, const Aws::String& keyName)
+        {
+            Aws::String prefixCpy = prefix;
+            Aws::String shortenedFileName = keyName;
+            auto loc = shortenedFileName.find(prefixCpy);
+
+            if (loc != std::string::npos)
+            {
+                shortenedFileName = shortenedFileName.substr(loc + prefixCpy.length());
+            }
+
+            char delimiter[] = { Aws::FileSystem::PATH_DELIM, 0 };
+            Aws::Utils::StringUtils::Replace(shortenedFileName, "/", delimiter);
+            Aws::StringStream ss;
+            ss << directory << delimiter << shortenedFileName;
+
+            return ss.str();
         }
 
         TransferStatus TransferManager::DetermineIfFailedOrCanceled(const TransferHandle& handle) const

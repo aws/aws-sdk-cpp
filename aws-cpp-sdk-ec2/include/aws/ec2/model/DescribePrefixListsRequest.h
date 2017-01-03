@@ -27,7 +27,10 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for DescribePrefixLists.</p>
+   * <p>Contains the parameters for DescribePrefixLists.</p><p><h3>See Also:</h3>  
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribePrefixListsRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API DescribePrefixListsRequest : public EC2Request
   {
@@ -100,50 +103,50 @@ namespace Model
     inline DescribePrefixListsRequest& AddPrefixListIds(const char* value) { m_prefixListIdsHasBeenSet = true; m_prefixListIds.push_back(value); return *this; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p><code>prefix-list-id</code>: The ID of
-     * a prefix list.</p> </li> <li> <p><code>prefix-list-name</code>: The name of a
+     * <p>One or more filters.</p> <ul> <li> <p> <code>prefix-list-id</code>: The ID of
+     * a prefix list.</p> </li> <li> <p> <code>prefix-list-name</code>: The name of a
      * prefix list.</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p><code>prefix-list-id</code>: The ID of
-     * a prefix list.</p> </li> <li> <p><code>prefix-list-name</code>: The name of a
+     * <p>One or more filters.</p> <ul> <li> <p> <code>prefix-list-id</code>: The ID of
+     * a prefix list.</p> </li> <li> <p> <code>prefix-list-name</code>: The name of a
      * prefix list.</p> </li> </ul>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p><code>prefix-list-id</code>: The ID of
-     * a prefix list.</p> </li> <li> <p><code>prefix-list-name</code>: The name of a
+     * <p>One or more filters.</p> <ul> <li> <p> <code>prefix-list-id</code>: The ID of
+     * a prefix list.</p> </li> <li> <p> <code>prefix-list-name</code>: The name of a
      * prefix list.</p> </li> </ul>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p><code>prefix-list-id</code>: The ID of
-     * a prefix list.</p> </li> <li> <p><code>prefix-list-name</code>: The name of a
+     * <p>One or more filters.</p> <ul> <li> <p> <code>prefix-list-id</code>: The ID of
+     * a prefix list.</p> </li> <li> <p> <code>prefix-list-name</code>: The name of a
      * prefix list.</p> </li> </ul>
      */
     inline DescribePrefixListsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p><code>prefix-list-id</code>: The ID of
-     * a prefix list.</p> </li> <li> <p><code>prefix-list-name</code>: The name of a
+     * <p>One or more filters.</p> <ul> <li> <p> <code>prefix-list-id</code>: The ID of
+     * a prefix list.</p> </li> <li> <p> <code>prefix-list-name</code>: The name of a
      * prefix list.</p> </li> </ul>
      */
     inline DescribePrefixListsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p><code>prefix-list-id</code>: The ID of
-     * a prefix list.</p> </li> <li> <p><code>prefix-list-name</code>: The name of a
+     * <p>One or more filters.</p> <ul> <li> <p> <code>prefix-list-id</code>: The ID of
+     * a prefix list.</p> </li> <li> <p> <code>prefix-list-name</code>: The name of a
      * prefix list.</p> </li> </ul>
      */
     inline DescribePrefixListsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p><code>prefix-list-id</code>: The ID of
-     * a prefix list.</p> </li> <li> <p><code>prefix-list-name</code>: The name of a
+     * <p>One or more filters.</p> <ul> <li> <p> <code>prefix-list-id</code>: The ID of
+     * a prefix list.</p> </li> <li> <p> <code>prefix-list-name</code>: The name of a
      * prefix list.</p> </li> </ul>
      */
     inline DescribePrefixListsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }

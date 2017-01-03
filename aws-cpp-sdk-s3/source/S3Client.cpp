@@ -32,20 +32,27 @@
 #include <aws/s3/model/CreateBucketRequest.h>
 #include <aws/s3/model/CreateMultipartUploadRequest.h>
 #include <aws/s3/model/DeleteBucketRequest.h>
+#include <aws/s3/model/DeleteBucketAnalyticsConfigurationRequest.h>
 #include <aws/s3/model/DeleteBucketCorsRequest.h>
+#include <aws/s3/model/DeleteBucketInventoryConfigurationRequest.h>
 #include <aws/s3/model/DeleteBucketLifecycleRequest.h>
+#include <aws/s3/model/DeleteBucketMetricsConfigurationRequest.h>
 #include <aws/s3/model/DeleteBucketPolicyRequest.h>
 #include <aws/s3/model/DeleteBucketReplicationRequest.h>
 #include <aws/s3/model/DeleteBucketTaggingRequest.h>
 #include <aws/s3/model/DeleteBucketWebsiteRequest.h>
 #include <aws/s3/model/DeleteObjectRequest.h>
+#include <aws/s3/model/DeleteObjectTaggingRequest.h>
 #include <aws/s3/model/DeleteObjectsRequest.h>
 #include <aws/s3/model/GetBucketAccelerateConfigurationRequest.h>
 #include <aws/s3/model/GetBucketAclRequest.h>
+#include <aws/s3/model/GetBucketAnalyticsConfigurationRequest.h>
 #include <aws/s3/model/GetBucketCorsRequest.h>
+#include <aws/s3/model/GetBucketInventoryConfigurationRequest.h>
 #include <aws/s3/model/GetBucketLifecycleConfigurationRequest.h>
 #include <aws/s3/model/GetBucketLocationRequest.h>
 #include <aws/s3/model/GetBucketLoggingRequest.h>
+#include <aws/s3/model/GetBucketMetricsConfigurationRequest.h>
 #include <aws/s3/model/GetBucketNotificationConfigurationRequest.h>
 #include <aws/s3/model/GetBucketPolicyRequest.h>
 #include <aws/s3/model/GetBucketReplicationRequest.h>
@@ -55,9 +62,13 @@
 #include <aws/s3/model/GetBucketWebsiteRequest.h>
 #include <aws/s3/model/GetObjectRequest.h>
 #include <aws/s3/model/GetObjectAclRequest.h>
+#include <aws/s3/model/GetObjectTaggingRequest.h>
 #include <aws/s3/model/GetObjectTorrentRequest.h>
 #include <aws/s3/model/HeadBucketRequest.h>
 #include <aws/s3/model/HeadObjectRequest.h>
+#include <aws/s3/model/ListBucketAnalyticsConfigurationsRequest.h>
+#include <aws/s3/model/ListBucketInventoryConfigurationsRequest.h>
+#include <aws/s3/model/ListBucketMetricsConfigurationsRequest.h>
 #include <aws/s3/model/ListMultipartUploadsRequest.h>
 #include <aws/s3/model/ListObjectVersionsRequest.h>
 #include <aws/s3/model/ListObjectsRequest.h>
@@ -65,9 +76,12 @@
 #include <aws/s3/model/ListPartsRequest.h>
 #include <aws/s3/model/PutBucketAccelerateConfigurationRequest.h>
 #include <aws/s3/model/PutBucketAclRequest.h>
+#include <aws/s3/model/PutBucketAnalyticsConfigurationRequest.h>
 #include <aws/s3/model/PutBucketCorsRequest.h>
+#include <aws/s3/model/PutBucketInventoryConfigurationRequest.h>
 #include <aws/s3/model/PutBucketLifecycleConfigurationRequest.h>
 #include <aws/s3/model/PutBucketLoggingRequest.h>
+#include <aws/s3/model/PutBucketMetricsConfigurationRequest.h>
 #include <aws/s3/model/PutBucketNotificationConfigurationRequest.h>
 #include <aws/s3/model/PutBucketPolicyRequest.h>
 #include <aws/s3/model/PutBucketReplicationRequest.h>
@@ -77,6 +91,7 @@
 #include <aws/s3/model/PutBucketWebsiteRequest.h>
 #include <aws/s3/model/PutObjectRequest.h>
 #include <aws/s3/model/PutObjectAclRequest.h>
+#include <aws/s3/model/PutObjectTaggingRequest.h>
 #include <aws/s3/model/RestoreObjectRequest.h>
 #include <aws/s3/model/UploadPartRequest.h>
 #include <aws/s3/model/UploadPartCopyRequest.h>
@@ -359,6 +374,41 @@ void S3Client::DeleteBucketAsyncHelper(const DeleteBucketRequest& request, const
   handler(this, request, DeleteBucket(request), context);
 }
 
+DeleteBucketAnalyticsConfigurationOutcome S3Client::DeleteBucketAnalyticsConfiguration(const DeleteBucketAnalyticsConfigurationRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  ss << request.GetBucket();
+  ss << "?analytics";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_DELETE);
+  if(outcome.IsSuccess())
+  {
+    return DeleteBucketAnalyticsConfigurationOutcome(NoResult());
+  }
+  else
+  {
+    return DeleteBucketAnalyticsConfigurationOutcome(outcome.GetError());
+  }
+}
+
+DeleteBucketAnalyticsConfigurationOutcomeCallable S3Client::DeleteBucketAnalyticsConfigurationCallable(const DeleteBucketAnalyticsConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteBucketAnalyticsConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteBucketAnalyticsConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void S3Client::DeleteBucketAnalyticsConfigurationAsync(const DeleteBucketAnalyticsConfigurationRequest& request, const DeleteBucketAnalyticsConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteBucketAnalyticsConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void S3Client::DeleteBucketAnalyticsConfigurationAsyncHelper(const DeleteBucketAnalyticsConfigurationRequest& request, const DeleteBucketAnalyticsConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteBucketAnalyticsConfiguration(request), context);
+}
+
 DeleteBucketCorsOutcome S3Client::DeleteBucketCors(const DeleteBucketCorsRequest& request) const
 {
   Aws::StringStream ss;
@@ -394,6 +444,41 @@ void S3Client::DeleteBucketCorsAsyncHelper(const DeleteBucketCorsRequest& reques
   handler(this, request, DeleteBucketCors(request), context);
 }
 
+DeleteBucketInventoryConfigurationOutcome S3Client::DeleteBucketInventoryConfiguration(const DeleteBucketInventoryConfigurationRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  ss << request.GetBucket();
+  ss << "?inventory";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_DELETE);
+  if(outcome.IsSuccess())
+  {
+    return DeleteBucketInventoryConfigurationOutcome(NoResult());
+  }
+  else
+  {
+    return DeleteBucketInventoryConfigurationOutcome(outcome.GetError());
+  }
+}
+
+DeleteBucketInventoryConfigurationOutcomeCallable S3Client::DeleteBucketInventoryConfigurationCallable(const DeleteBucketInventoryConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteBucketInventoryConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteBucketInventoryConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void S3Client::DeleteBucketInventoryConfigurationAsync(const DeleteBucketInventoryConfigurationRequest& request, const DeleteBucketInventoryConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteBucketInventoryConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void S3Client::DeleteBucketInventoryConfigurationAsyncHelper(const DeleteBucketInventoryConfigurationRequest& request, const DeleteBucketInventoryConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteBucketInventoryConfiguration(request), context);
+}
+
 DeleteBucketLifecycleOutcome S3Client::DeleteBucketLifecycle(const DeleteBucketLifecycleRequest& request) const
 {
   Aws::StringStream ss;
@@ -427,6 +512,41 @@ void S3Client::DeleteBucketLifecycleAsync(const DeleteBucketLifecycleRequest& re
 void S3Client::DeleteBucketLifecycleAsyncHelper(const DeleteBucketLifecycleRequest& request, const DeleteBucketLifecycleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteBucketLifecycle(request), context);
+}
+
+DeleteBucketMetricsConfigurationOutcome S3Client::DeleteBucketMetricsConfiguration(const DeleteBucketMetricsConfigurationRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  ss << request.GetBucket();
+  ss << "?metrics";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_DELETE);
+  if(outcome.IsSuccess())
+  {
+    return DeleteBucketMetricsConfigurationOutcome(NoResult());
+  }
+  else
+  {
+    return DeleteBucketMetricsConfigurationOutcome(outcome.GetError());
+  }
+}
+
+DeleteBucketMetricsConfigurationOutcomeCallable S3Client::DeleteBucketMetricsConfigurationCallable(const DeleteBucketMetricsConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteBucketMetricsConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteBucketMetricsConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void S3Client::DeleteBucketMetricsConfigurationAsync(const DeleteBucketMetricsConfigurationRequest& request, const DeleteBucketMetricsConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteBucketMetricsConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void S3Client::DeleteBucketMetricsConfigurationAsyncHelper(const DeleteBucketMetricsConfigurationRequest& request, const DeleteBucketMetricsConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteBucketMetricsConfiguration(request), context);
 }
 
 DeleteBucketPolicyOutcome S3Client::DeleteBucketPolicy(const DeleteBucketPolicyRequest& request) const
@@ -605,6 +725,43 @@ void S3Client::DeleteObjectAsyncHelper(const DeleteObjectRequest& request, const
   handler(this, request, DeleteObject(request), context);
 }
 
+DeleteObjectTaggingOutcome S3Client::DeleteObjectTagging(const DeleteObjectTaggingRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  ss << request.GetBucket();
+  ss << "/";
+  ss << request.GetKey();
+  ss << "?tagging";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_DELETE);
+  if(outcome.IsSuccess())
+  {
+    return DeleteObjectTaggingOutcome(DeleteObjectTaggingResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteObjectTaggingOutcome(outcome.GetError());
+  }
+}
+
+DeleteObjectTaggingOutcomeCallable S3Client::DeleteObjectTaggingCallable(const DeleteObjectTaggingRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteObjectTaggingOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteObjectTagging(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void S3Client::DeleteObjectTaggingAsync(const DeleteObjectTaggingRequest& request, const DeleteObjectTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteObjectTaggingAsyncHelper( request, handler, context ); } );
+}
+
+void S3Client::DeleteObjectTaggingAsyncHelper(const DeleteObjectTaggingRequest& request, const DeleteObjectTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteObjectTagging(request), context);
+}
+
 DeleteObjectsOutcome S3Client::DeleteObjects(const DeleteObjectsRequest& request) const
 {
   Aws::StringStream ss;
@@ -710,6 +867,41 @@ void S3Client::GetBucketAclAsyncHelper(const GetBucketAclRequest& request, const
   handler(this, request, GetBucketAcl(request), context);
 }
 
+GetBucketAnalyticsConfigurationOutcome S3Client::GetBucketAnalyticsConfiguration(const GetBucketAnalyticsConfigurationRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  ss << request.GetBucket();
+  ss << "?analytics";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  if(outcome.IsSuccess())
+  {
+    return GetBucketAnalyticsConfigurationOutcome(GetBucketAnalyticsConfigurationResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetBucketAnalyticsConfigurationOutcome(outcome.GetError());
+  }
+}
+
+GetBucketAnalyticsConfigurationOutcomeCallable S3Client::GetBucketAnalyticsConfigurationCallable(const GetBucketAnalyticsConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetBucketAnalyticsConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetBucketAnalyticsConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void S3Client::GetBucketAnalyticsConfigurationAsync(const GetBucketAnalyticsConfigurationRequest& request, const GetBucketAnalyticsConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetBucketAnalyticsConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void S3Client::GetBucketAnalyticsConfigurationAsyncHelper(const GetBucketAnalyticsConfigurationRequest& request, const GetBucketAnalyticsConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetBucketAnalyticsConfiguration(request), context);
+}
+
 GetBucketCorsOutcome S3Client::GetBucketCors(const GetBucketCorsRequest& request) const
 {
   Aws::StringStream ss;
@@ -743,6 +935,41 @@ void S3Client::GetBucketCorsAsync(const GetBucketCorsRequest& request, const Get
 void S3Client::GetBucketCorsAsyncHelper(const GetBucketCorsRequest& request, const GetBucketCorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetBucketCors(request), context);
+}
+
+GetBucketInventoryConfigurationOutcome S3Client::GetBucketInventoryConfiguration(const GetBucketInventoryConfigurationRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  ss << request.GetBucket();
+  ss << "?inventory";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  if(outcome.IsSuccess())
+  {
+    return GetBucketInventoryConfigurationOutcome(GetBucketInventoryConfigurationResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetBucketInventoryConfigurationOutcome(outcome.GetError());
+  }
+}
+
+GetBucketInventoryConfigurationOutcomeCallable S3Client::GetBucketInventoryConfigurationCallable(const GetBucketInventoryConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetBucketInventoryConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetBucketInventoryConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void S3Client::GetBucketInventoryConfigurationAsync(const GetBucketInventoryConfigurationRequest& request, const GetBucketInventoryConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetBucketInventoryConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void S3Client::GetBucketInventoryConfigurationAsyncHelper(const GetBucketInventoryConfigurationRequest& request, const GetBucketInventoryConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetBucketInventoryConfiguration(request), context);
 }
 
 GetBucketLifecycleConfigurationOutcome S3Client::GetBucketLifecycleConfiguration(const GetBucketLifecycleConfigurationRequest& request) const
@@ -848,6 +1075,41 @@ void S3Client::GetBucketLoggingAsync(const GetBucketLoggingRequest& request, con
 void S3Client::GetBucketLoggingAsyncHelper(const GetBucketLoggingRequest& request, const GetBucketLoggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetBucketLogging(request), context);
+}
+
+GetBucketMetricsConfigurationOutcome S3Client::GetBucketMetricsConfiguration(const GetBucketMetricsConfigurationRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  ss << request.GetBucket();
+  ss << "?metrics";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  if(outcome.IsSuccess())
+  {
+    return GetBucketMetricsConfigurationOutcome(GetBucketMetricsConfigurationResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetBucketMetricsConfigurationOutcome(outcome.GetError());
+  }
+}
+
+GetBucketMetricsConfigurationOutcomeCallable S3Client::GetBucketMetricsConfigurationCallable(const GetBucketMetricsConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetBucketMetricsConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetBucketMetricsConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void S3Client::GetBucketMetricsConfigurationAsync(const GetBucketMetricsConfigurationRequest& request, const GetBucketMetricsConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetBucketMetricsConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void S3Client::GetBucketMetricsConfigurationAsyncHelper(const GetBucketMetricsConfigurationRequest& request, const GetBucketMetricsConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetBucketMetricsConfiguration(request), context);
 }
 
 GetBucketNotificationConfigurationOutcome S3Client::GetBucketNotificationConfiguration(const GetBucketNotificationConfigurationRequest& request) const
@@ -1168,6 +1430,43 @@ void S3Client::GetObjectAclAsyncHelper(const GetObjectAclRequest& request, const
   handler(this, request, GetObjectAcl(request), context);
 }
 
+GetObjectTaggingOutcome S3Client::GetObjectTagging(const GetObjectTaggingRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  ss << request.GetBucket();
+  ss << "/";
+  ss << request.GetKey();
+  ss << "?tagging";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  if(outcome.IsSuccess())
+  {
+    return GetObjectTaggingOutcome(GetObjectTaggingResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetObjectTaggingOutcome(outcome.GetError());
+  }
+}
+
+GetObjectTaggingOutcomeCallable S3Client::GetObjectTaggingCallable(const GetObjectTaggingRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetObjectTaggingOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetObjectTagging(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void S3Client::GetObjectTaggingAsync(const GetObjectTaggingRequest& request, const GetObjectTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetObjectTaggingAsyncHelper( request, handler, context ); } );
+}
+
+void S3Client::GetObjectTaggingAsyncHelper(const GetObjectTaggingRequest& request, const GetObjectTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetObjectTagging(request), context);
+}
+
 GetObjectTorrentOutcome S3Client::GetObjectTorrent(const GetObjectTorrentRequest& request) const
 {
   Aws::StringStream ss;
@@ -1273,6 +1572,111 @@ void S3Client::HeadObjectAsync(const HeadObjectRequest& request, const HeadObjec
 void S3Client::HeadObjectAsyncHelper(const HeadObjectRequest& request, const HeadObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, HeadObject(request), context);
+}
+
+ListBucketAnalyticsConfigurationsOutcome S3Client::ListBucketAnalyticsConfigurations(const ListBucketAnalyticsConfigurationsRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  ss << request.GetBucket();
+  ss << "?analytics";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  if(outcome.IsSuccess())
+  {
+    return ListBucketAnalyticsConfigurationsOutcome(ListBucketAnalyticsConfigurationsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListBucketAnalyticsConfigurationsOutcome(outcome.GetError());
+  }
+}
+
+ListBucketAnalyticsConfigurationsOutcomeCallable S3Client::ListBucketAnalyticsConfigurationsCallable(const ListBucketAnalyticsConfigurationsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListBucketAnalyticsConfigurationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListBucketAnalyticsConfigurations(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void S3Client::ListBucketAnalyticsConfigurationsAsync(const ListBucketAnalyticsConfigurationsRequest& request, const ListBucketAnalyticsConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListBucketAnalyticsConfigurationsAsyncHelper( request, handler, context ); } );
+}
+
+void S3Client::ListBucketAnalyticsConfigurationsAsyncHelper(const ListBucketAnalyticsConfigurationsRequest& request, const ListBucketAnalyticsConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListBucketAnalyticsConfigurations(request), context);
+}
+
+ListBucketInventoryConfigurationsOutcome S3Client::ListBucketInventoryConfigurations(const ListBucketInventoryConfigurationsRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  ss << request.GetBucket();
+  ss << "?inventory";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  if(outcome.IsSuccess())
+  {
+    return ListBucketInventoryConfigurationsOutcome(ListBucketInventoryConfigurationsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListBucketInventoryConfigurationsOutcome(outcome.GetError());
+  }
+}
+
+ListBucketInventoryConfigurationsOutcomeCallable S3Client::ListBucketInventoryConfigurationsCallable(const ListBucketInventoryConfigurationsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListBucketInventoryConfigurationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListBucketInventoryConfigurations(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void S3Client::ListBucketInventoryConfigurationsAsync(const ListBucketInventoryConfigurationsRequest& request, const ListBucketInventoryConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListBucketInventoryConfigurationsAsyncHelper( request, handler, context ); } );
+}
+
+void S3Client::ListBucketInventoryConfigurationsAsyncHelper(const ListBucketInventoryConfigurationsRequest& request, const ListBucketInventoryConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListBucketInventoryConfigurations(request), context);
+}
+
+ListBucketMetricsConfigurationsOutcome S3Client::ListBucketMetricsConfigurations(const ListBucketMetricsConfigurationsRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  ss << request.GetBucket();
+  ss << "?metrics";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  if(outcome.IsSuccess())
+  {
+    return ListBucketMetricsConfigurationsOutcome(ListBucketMetricsConfigurationsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListBucketMetricsConfigurationsOutcome(outcome.GetError());
+  }
+}
+
+ListBucketMetricsConfigurationsOutcomeCallable S3Client::ListBucketMetricsConfigurationsCallable(const ListBucketMetricsConfigurationsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListBucketMetricsConfigurationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListBucketMetricsConfigurations(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void S3Client::ListBucketMetricsConfigurationsAsync(const ListBucketMetricsConfigurationsRequest& request, const ListBucketMetricsConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListBucketMetricsConfigurationsAsyncHelper( request, handler, context ); } );
+}
+
+void S3Client::ListBucketMetricsConfigurationsAsyncHelper(const ListBucketMetricsConfigurationsRequest& request, const ListBucketMetricsConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListBucketMetricsConfigurations(request), context);
 }
 
 ListBucketsOutcome S3Client::ListBuckets() const
@@ -1553,6 +1957,41 @@ void S3Client::PutBucketAclAsyncHelper(const PutBucketAclRequest& request, const
   handler(this, request, PutBucketAcl(request), context);
 }
 
+PutBucketAnalyticsConfigurationOutcome S3Client::PutBucketAnalyticsConfiguration(const PutBucketAnalyticsConfigurationRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  ss << request.GetBucket();
+  ss << "?analytics";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_PUT);
+  if(outcome.IsSuccess())
+  {
+    return PutBucketAnalyticsConfigurationOutcome(NoResult());
+  }
+  else
+  {
+    return PutBucketAnalyticsConfigurationOutcome(outcome.GetError());
+  }
+}
+
+PutBucketAnalyticsConfigurationOutcomeCallable S3Client::PutBucketAnalyticsConfigurationCallable(const PutBucketAnalyticsConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutBucketAnalyticsConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutBucketAnalyticsConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void S3Client::PutBucketAnalyticsConfigurationAsync(const PutBucketAnalyticsConfigurationRequest& request, const PutBucketAnalyticsConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutBucketAnalyticsConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void S3Client::PutBucketAnalyticsConfigurationAsyncHelper(const PutBucketAnalyticsConfigurationRequest& request, const PutBucketAnalyticsConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutBucketAnalyticsConfiguration(request), context);
+}
+
 PutBucketCorsOutcome S3Client::PutBucketCors(const PutBucketCorsRequest& request) const
 {
   Aws::StringStream ss;
@@ -1586,6 +2025,41 @@ void S3Client::PutBucketCorsAsync(const PutBucketCorsRequest& request, const Put
 void S3Client::PutBucketCorsAsyncHelper(const PutBucketCorsRequest& request, const PutBucketCorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, PutBucketCors(request), context);
+}
+
+PutBucketInventoryConfigurationOutcome S3Client::PutBucketInventoryConfiguration(const PutBucketInventoryConfigurationRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  ss << request.GetBucket();
+  ss << "?inventory";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_PUT);
+  if(outcome.IsSuccess())
+  {
+    return PutBucketInventoryConfigurationOutcome(NoResult());
+  }
+  else
+  {
+    return PutBucketInventoryConfigurationOutcome(outcome.GetError());
+  }
+}
+
+PutBucketInventoryConfigurationOutcomeCallable S3Client::PutBucketInventoryConfigurationCallable(const PutBucketInventoryConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutBucketInventoryConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutBucketInventoryConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void S3Client::PutBucketInventoryConfigurationAsync(const PutBucketInventoryConfigurationRequest& request, const PutBucketInventoryConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutBucketInventoryConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void S3Client::PutBucketInventoryConfigurationAsyncHelper(const PutBucketInventoryConfigurationRequest& request, const PutBucketInventoryConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutBucketInventoryConfiguration(request), context);
 }
 
 PutBucketLifecycleConfigurationOutcome S3Client::PutBucketLifecycleConfiguration(const PutBucketLifecycleConfigurationRequest& request) const
@@ -1656,6 +2130,41 @@ void S3Client::PutBucketLoggingAsync(const PutBucketLoggingRequest& request, con
 void S3Client::PutBucketLoggingAsyncHelper(const PutBucketLoggingRequest& request, const PutBucketLoggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, PutBucketLogging(request), context);
+}
+
+PutBucketMetricsConfigurationOutcome S3Client::PutBucketMetricsConfiguration(const PutBucketMetricsConfigurationRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  ss << request.GetBucket();
+  ss << "?metrics";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_PUT);
+  if(outcome.IsSuccess())
+  {
+    return PutBucketMetricsConfigurationOutcome(NoResult());
+  }
+  else
+  {
+    return PutBucketMetricsConfigurationOutcome(outcome.GetError());
+  }
+}
+
+PutBucketMetricsConfigurationOutcomeCallable S3Client::PutBucketMetricsConfigurationCallable(const PutBucketMetricsConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutBucketMetricsConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutBucketMetricsConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void S3Client::PutBucketMetricsConfigurationAsync(const PutBucketMetricsConfigurationRequest& request, const PutBucketMetricsConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutBucketMetricsConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void S3Client::PutBucketMetricsConfigurationAsyncHelper(const PutBucketMetricsConfigurationRequest& request, const PutBucketMetricsConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutBucketMetricsConfiguration(request), context);
 }
 
 PutBucketNotificationConfigurationOutcome S3Client::PutBucketNotificationConfiguration(const PutBucketNotificationConfigurationRequest& request) const
@@ -1976,6 +2485,43 @@ void S3Client::PutObjectAclAsyncHelper(const PutObjectAclRequest& request, const
   handler(this, request, PutObjectAcl(request), context);
 }
 
+PutObjectTaggingOutcome S3Client::PutObjectTagging(const PutObjectTaggingRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  ss << request.GetBucket();
+  ss << "/";
+  ss << request.GetKey();
+  ss << "?tagging";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_PUT);
+  if(outcome.IsSuccess())
+  {
+    return PutObjectTaggingOutcome(PutObjectTaggingResult(outcome.GetResult()));
+  }
+  else
+  {
+    return PutObjectTaggingOutcome(outcome.GetError());
+  }
+}
+
+PutObjectTaggingOutcomeCallable S3Client::PutObjectTaggingCallable(const PutObjectTaggingRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutObjectTaggingOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutObjectTagging(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void S3Client::PutObjectTaggingAsync(const PutObjectTaggingRequest& request, const PutObjectTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutObjectTaggingAsyncHelper( request, handler, context ); } );
+}
+
+void S3Client::PutObjectTaggingAsyncHelper(const PutObjectTaggingRequest& request, const PutObjectTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutObjectTagging(request), context);
+}
+
 RestoreObjectOutcome S3Client::RestoreObject(const RestoreObjectRequest& request) const
 {
   Aws::StringStream ss;
@@ -2084,6 +2630,8 @@ void S3Client::UploadPartCopyAsyncHelper(const UploadPartCopyRequest& request, c
 {
   handler(this, request, UploadPartCopy(request), context);
 }
+
+
 
 
 Aws::String S3Client::GeneratePresignedUrl(const Aws::String& bucketName, const Aws::String& key, Http::HttpMethod method, long long expirationInSeconds)

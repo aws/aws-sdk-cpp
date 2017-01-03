@@ -29,7 +29,10 @@ namespace Model
 {
 
   /**
-   * <p>A request to get information about the current <a>ApiKeys</a> resource.</p>
+   * <p>A request to get information about the current <a>ApiKeys</a>
+   * resource.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetApiKeysRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_APIGATEWAY_API GetApiKeysRequest : public APIGatewayRequest
   {
@@ -132,6 +135,48 @@ namespace Model
     inline GetApiKeysRequest& WithNameQuery(const char* value) { SetNameQuery(value); return *this;}
 
     /**
+     * <p>The identifier of a customer in AWS Marketplace or an external system, such
+     * as a developer portal.</p>
+     */
+    inline const Aws::String& GetCustomerId() const{ return m_customerId; }
+
+    /**
+     * <p>The identifier of a customer in AWS Marketplace or an external system, such
+     * as a developer portal.</p>
+     */
+    inline void SetCustomerId(const Aws::String& value) { m_customerIdHasBeenSet = true; m_customerId = value; }
+
+    /**
+     * <p>The identifier of a customer in AWS Marketplace or an external system, such
+     * as a developer portal.</p>
+     */
+    inline void SetCustomerId(Aws::String&& value) { m_customerIdHasBeenSet = true; m_customerId = value; }
+
+    /**
+     * <p>The identifier of a customer in AWS Marketplace or an external system, such
+     * as a developer portal.</p>
+     */
+    inline void SetCustomerId(const char* value) { m_customerIdHasBeenSet = true; m_customerId.assign(value); }
+
+    /**
+     * <p>The identifier of a customer in AWS Marketplace or an external system, such
+     * as a developer portal.</p>
+     */
+    inline GetApiKeysRequest& WithCustomerId(const Aws::String& value) { SetCustomerId(value); return *this;}
+
+    /**
+     * <p>The identifier of a customer in AWS Marketplace or an external system, such
+     * as a developer portal.</p>
+     */
+    inline GetApiKeysRequest& WithCustomerId(Aws::String&& value) { SetCustomerId(value); return *this;}
+
+    /**
+     * <p>The identifier of a customer in AWS Marketplace or an external system, such
+     * as a developer portal.</p>
+     */
+    inline GetApiKeysRequest& WithCustomerId(const char* value) { SetCustomerId(value); return *this;}
+
+    /**
      * <p>A boolean flag to specify whether (<code>true</code>) or not
      * (<code>false</code>) the result contains key values.</p>
      */
@@ -156,6 +201,8 @@ namespace Model
     bool m_limitHasBeenSet;
     Aws::String m_nameQuery;
     bool m_nameQueryHasBeenSet;
+    Aws::String m_customerId;
+    bool m_customerIdHasBeenSet;
     bool m_includeValues;
     bool m_includeValuesHasBeenSet;
   };

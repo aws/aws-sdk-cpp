@@ -26,7 +26,9 @@ namespace Model
 {
 
   /**
-   * <p>The input for a <a>GetTemplate</a> action.</p>
+   * <p>The input for a <a>GetTemplate</a> action.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/GetTemplateInput">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDFORMATION_API GetTemplateRequest : public CloudFormationRequest
   {
@@ -98,101 +100,106 @@ namespace Model
     inline GetTemplateRequest& WithStackName(const char* value) { SetStackName(value); return *this;}
 
     /**
-     * <p>Returns the template for a change set using the Amazon Resource Name (ARN) or
-     * name of the change set. If you specify a name, you must also specify the
-     * <code>StackName</code>.</p>
+     * <p>The name or Amazon Resource Name (ARN) of a change set for which AWS
+     * CloudFormation returns the associated template. If you specify a name, you must
+     * also specify the <code>StackName</code>.</p>
      */
     inline const Aws::String& GetChangeSetName() const{ return m_changeSetName; }
 
     /**
-     * <p>Returns the template for a change set using the Amazon Resource Name (ARN) or
-     * name of the change set. If you specify a name, you must also specify the
-     * <code>StackName</code>.</p>
+     * <p>The name or Amazon Resource Name (ARN) of a change set for which AWS
+     * CloudFormation returns the associated template. If you specify a name, you must
+     * also specify the <code>StackName</code>.</p>
      */
     inline void SetChangeSetName(const Aws::String& value) { m_changeSetNameHasBeenSet = true; m_changeSetName = value; }
 
     /**
-     * <p>Returns the template for a change set using the Amazon Resource Name (ARN) or
-     * name of the change set. If you specify a name, you must also specify the
-     * <code>StackName</code>.</p>
+     * <p>The name or Amazon Resource Name (ARN) of a change set for which AWS
+     * CloudFormation returns the associated template. If you specify a name, you must
+     * also specify the <code>StackName</code>.</p>
      */
     inline void SetChangeSetName(Aws::String&& value) { m_changeSetNameHasBeenSet = true; m_changeSetName = value; }
 
     /**
-     * <p>Returns the template for a change set using the Amazon Resource Name (ARN) or
-     * name of the change set. If you specify a name, you must also specify the
-     * <code>StackName</code>.</p>
+     * <p>The name or Amazon Resource Name (ARN) of a change set for which AWS
+     * CloudFormation returns the associated template. If you specify a name, you must
+     * also specify the <code>StackName</code>.</p>
      */
     inline void SetChangeSetName(const char* value) { m_changeSetNameHasBeenSet = true; m_changeSetName.assign(value); }
 
     /**
-     * <p>Returns the template for a change set using the Amazon Resource Name (ARN) or
-     * name of the change set. If you specify a name, you must also specify the
-     * <code>StackName</code>.</p>
+     * <p>The name or Amazon Resource Name (ARN) of a change set for which AWS
+     * CloudFormation returns the associated template. If you specify a name, you must
+     * also specify the <code>StackName</code>.</p>
      */
     inline GetTemplateRequest& WithChangeSetName(const Aws::String& value) { SetChangeSetName(value); return *this;}
 
     /**
-     * <p>Returns the template for a change set using the Amazon Resource Name (ARN) or
-     * name of the change set. If you specify a name, you must also specify the
-     * <code>StackName</code>.</p>
+     * <p>The name or Amazon Resource Name (ARN) of a change set for which AWS
+     * CloudFormation returns the associated template. If you specify a name, you must
+     * also specify the <code>StackName</code>.</p>
      */
     inline GetTemplateRequest& WithChangeSetName(Aws::String&& value) { SetChangeSetName(value); return *this;}
 
     /**
-     * <p>Returns the template for a change set using the Amazon Resource Name (ARN) or
-     * name of the change set. If you specify a name, you must also specify the
-     * <code>StackName</code>.</p>
+     * <p>The name or Amazon Resource Name (ARN) of a change set for which AWS
+     * CloudFormation returns the associated template. If you specify a name, you must
+     * also specify the <code>StackName</code>.</p>
      */
     inline GetTemplateRequest& WithChangeSetName(const char* value) { SetChangeSetName(value); return *this;}
 
     /**
-     * <p>The stage of the template that is returned.</p> <p>Valid values are
-     * <code>Original</code> and <code>Processed</code>. The default value is
-     * <code>Original</code>.</p> <ul> <li> <p> <code>Original</code> - Use this value
-     * to return the user-submitted template.</p> </li> <li> <p> <code>Processed</code>
-     * - Use this value to return the template after all transforms have been
-     * processed.</p> </li> </ul>
+     * <p>For templates that include transforms, the stage of the template that AWS
+     * CloudFormation returns. To get the user-submitted template, specify
+     * <code>Original</code>. To get the template after AWS CloudFormation has
+     * processed all transforms, specify <code>Processed</code>. </p> <p>If the
+     * template doesn't include transforms, <code>Original</code> and
+     * <code>Processed</code> return the same template. By default, AWS CloudFormation
+     * specifies <code>Original</code>. </p>
      */
     inline const TemplateStage& GetTemplateStage() const{ return m_templateStage; }
 
     /**
-     * <p>The stage of the template that is returned.</p> <p>Valid values are
-     * <code>Original</code> and <code>Processed</code>. The default value is
-     * <code>Original</code>.</p> <ul> <li> <p> <code>Original</code> - Use this value
-     * to return the user-submitted template.</p> </li> <li> <p> <code>Processed</code>
-     * - Use this value to return the template after all transforms have been
-     * processed.</p> </li> </ul>
+     * <p>For templates that include transforms, the stage of the template that AWS
+     * CloudFormation returns. To get the user-submitted template, specify
+     * <code>Original</code>. To get the template after AWS CloudFormation has
+     * processed all transforms, specify <code>Processed</code>. </p> <p>If the
+     * template doesn't include transforms, <code>Original</code> and
+     * <code>Processed</code> return the same template. By default, AWS CloudFormation
+     * specifies <code>Original</code>. </p>
      */
     inline void SetTemplateStage(const TemplateStage& value) { m_templateStageHasBeenSet = true; m_templateStage = value; }
 
     /**
-     * <p>The stage of the template that is returned.</p> <p>Valid values are
-     * <code>Original</code> and <code>Processed</code>. The default value is
-     * <code>Original</code>.</p> <ul> <li> <p> <code>Original</code> - Use this value
-     * to return the user-submitted template.</p> </li> <li> <p> <code>Processed</code>
-     * - Use this value to return the template after all transforms have been
-     * processed.</p> </li> </ul>
+     * <p>For templates that include transforms, the stage of the template that AWS
+     * CloudFormation returns. To get the user-submitted template, specify
+     * <code>Original</code>. To get the template after AWS CloudFormation has
+     * processed all transforms, specify <code>Processed</code>. </p> <p>If the
+     * template doesn't include transforms, <code>Original</code> and
+     * <code>Processed</code> return the same template. By default, AWS CloudFormation
+     * specifies <code>Original</code>. </p>
      */
     inline void SetTemplateStage(TemplateStage&& value) { m_templateStageHasBeenSet = true; m_templateStage = value; }
 
     /**
-     * <p>The stage of the template that is returned.</p> <p>Valid values are
-     * <code>Original</code> and <code>Processed</code>. The default value is
-     * <code>Original</code>.</p> <ul> <li> <p> <code>Original</code> - Use this value
-     * to return the user-submitted template.</p> </li> <li> <p> <code>Processed</code>
-     * - Use this value to return the template after all transforms have been
-     * processed.</p> </li> </ul>
+     * <p>For templates that include transforms, the stage of the template that AWS
+     * CloudFormation returns. To get the user-submitted template, specify
+     * <code>Original</code>. To get the template after AWS CloudFormation has
+     * processed all transforms, specify <code>Processed</code>. </p> <p>If the
+     * template doesn't include transforms, <code>Original</code> and
+     * <code>Processed</code> return the same template. By default, AWS CloudFormation
+     * specifies <code>Original</code>. </p>
      */
     inline GetTemplateRequest& WithTemplateStage(const TemplateStage& value) { SetTemplateStage(value); return *this;}
 
     /**
-     * <p>The stage of the template that is returned.</p> <p>Valid values are
-     * <code>Original</code> and <code>Processed</code>. The default value is
-     * <code>Original</code>.</p> <ul> <li> <p> <code>Original</code> - Use this value
-     * to return the user-submitted template.</p> </li> <li> <p> <code>Processed</code>
-     * - Use this value to return the template after all transforms have been
-     * processed.</p> </li> </ul>
+     * <p>For templates that include transforms, the stage of the template that AWS
+     * CloudFormation returns. To get the user-submitted template, specify
+     * <code>Original</code>. To get the template after AWS CloudFormation has
+     * processed all transforms, specify <code>Processed</code>. </p> <p>If the
+     * template doesn't include transforms, <code>Original</code> and
+     * <code>Processed</code> return the same template. By default, AWS CloudFormation
+     * specifies <code>Original</code>. </p>
      */
     inline GetTemplateRequest& WithTemplateStage(TemplateStage&& value) { SetTemplateStage(value); return *this;}
 

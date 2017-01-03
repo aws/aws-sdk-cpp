@@ -69,6 +69,7 @@ SET(PYTHON_CMD "python")
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/cmake")
 
 include(resolve_platform)
+include(CMakePackageConfigHelpers)
 
 # use response files to prevent command-line-too-big errors for large libraries like iam
 SET(CMAKE_CXX_USE_RESPONSE_FILE_FOR_OBJECTS 1)
@@ -88,7 +89,7 @@ cmake_policy(SET CMP0056 NEW)
 
 project("aws-cpp-sdk-all" VERSION "${PROJECT_VERSION}" LANGUAGES CXX)
 
-# http client, encryption, zlib, uuid
+# http client, encryption, zlib
 include(external_dependencies)
 
 if(COMMAND apply_post_project_platform_settings)

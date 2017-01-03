@@ -51,7 +51,11 @@ ReservedInstancesOffering::ReservedInstancesOffering() :
     m_recurringChargesHasBeenSet(false),
     m_marketplace(false),
     m_marketplaceHasBeenSet(false),
-    m_pricingDetailsHasBeenSet(false)
+    m_pricingDetailsHasBeenSet(false),
+    m_offeringClass(OfferingClassType::NOT_SET),
+    m_offeringClassHasBeenSet(false),
+    m_scope(Scope::NOT_SET),
+    m_scopeHasBeenSet(false)
 {
 }
 
@@ -77,7 +81,11 @@ ReservedInstancesOffering::ReservedInstancesOffering(const XmlNode& xmlNode) :
     m_recurringChargesHasBeenSet(false),
     m_marketplace(false),
     m_marketplaceHasBeenSet(false),
-    m_pricingDetailsHasBeenSet(false)
+    m_pricingDetailsHasBeenSet(false),
+    m_offeringClass(OfferingClassType::NOT_SET),
+    m_offeringClassHasBeenSet(false),
+    m_scope(Scope::NOT_SET),
+    m_scopeHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -178,6 +186,18 @@ ReservedInstancesOffering& ReservedInstancesOffering::operator =(const XmlNode& 
 
       m_pricingDetailsHasBeenSet = true;
     }
+    XmlNode offeringClassNode = resultNode.FirstChild("offeringClass");
+    if(!offeringClassNode.IsNull())
+    {
+      m_offeringClass = OfferingClassTypeMapper::GetOfferingClassTypeForName(StringUtils::Trim(offeringClassNode.GetText().c_str()).c_str());
+      m_offeringClassHasBeenSet = true;
+    }
+    XmlNode scopeNode = resultNode.FirstChild("scope");
+    if(!scopeNode.IsNull())
+    {
+      m_scope = ScopeMapper::GetScopeForName(StringUtils::Trim(scopeNode.GetText().c_str()).c_str());
+      m_scopeHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -262,6 +282,16 @@ void ReservedInstancesOffering::OutputToStream(Aws::OStream& oStream, const char
       }
   }
 
+  if(m_offeringClassHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".OfferingClass=" << OfferingClassTypeMapper::GetNameForOfferingClassType(m_offeringClass) << "&";
+  }
+
+  if(m_scopeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Scope=" << ScopeMapper::GetNameForScope(m_scope) << "&";
+  }
+
 }
 
 void ReservedInstancesOffering::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -329,6 +359,14 @@ void ReservedInstancesOffering::OutputToStream(Aws::OStream& oStream, const char
         pricingDetailsSs << location <<  ".item." << pricingDetailsIdx++;
         item.OutputToStream(oStream, pricingDetailsSs.str().c_str());
       }
+  }
+  if(m_offeringClassHasBeenSet)
+  {
+      oStream << location << ".OfferingClass=" << OfferingClassTypeMapper::GetNameForOfferingClassType(m_offeringClass) << "&";
+  }
+  if(m_scopeHasBeenSet)
+  {
+      oStream << location << ".Scope=" << ScopeMapper::GetNameForScope(m_scope) << "&";
   }
 }
 

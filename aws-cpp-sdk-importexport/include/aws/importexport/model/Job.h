@@ -34,7 +34,9 @@ namespace Model
 {
 
   /**
-   * Representation of a job returned by the ListJobs operation.
+   * Representation of a job returned by the ListJobs operation.<p><h3>See Also:</h3>
+   * <a href="http://docs.aws.amazon.com/goto/WebAPI/importexport-2010-06-01/Job">AWS
+   * API Reference</a></p>
    */
   class AWS_IMPORTEXPORT_API Job
   {

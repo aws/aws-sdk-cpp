@@ -28,15 +28,11 @@ namespace Model
 {
 
 Captions::Captions() : 
-    m_mergePolicyHasBeenSet(false),
-    m_captionSourcesHasBeenSet(false),
     m_captionFormatsHasBeenSet(false)
 {
 }
 
 Captions::Captions(const JsonValue& jsonValue) : 
-    m_mergePolicyHasBeenSet(false),
-    m_captionSourcesHasBeenSet(false),
     m_captionFormatsHasBeenSet(false)
 {
   *this = jsonValue;
@@ -44,23 +40,6 @@ Captions::Captions(const JsonValue& jsonValue) :
 
 Captions& Captions::operator =(const JsonValue& jsonValue)
 {
-  if(jsonValue.ValueExists("MergePolicy"))
-  {
-    m_mergePolicy = jsonValue.GetString("MergePolicy");
-
-    m_mergePolicyHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("CaptionSources"))
-  {
-    Array<JsonValue> captionSourcesJsonList = jsonValue.GetArray("CaptionSources");
-    for(unsigned captionSourcesIndex = 0; captionSourcesIndex < captionSourcesJsonList.GetLength(); ++captionSourcesIndex)
-    {
-      m_captionSources.push_back(captionSourcesJsonList[captionSourcesIndex].AsObject());
-    }
-    m_captionSourcesHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("CaptionFormats"))
   {
     Array<JsonValue> captionFormatsJsonList = jsonValue.GetArray("CaptionFormats");
@@ -77,23 +56,6 @@ Captions& Captions::operator =(const JsonValue& jsonValue)
 JsonValue Captions::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_mergePolicyHasBeenSet)
-  {
-   payload.WithString("MergePolicy", m_mergePolicy);
-
-  }
-
-  if(m_captionSourcesHasBeenSet)
-  {
-   Array<JsonValue> captionSourcesJsonList(m_captionSources.size());
-   for(unsigned captionSourcesIndex = 0; captionSourcesIndex < captionSourcesJsonList.GetLength(); ++captionSourcesIndex)
-   {
-     captionSourcesJsonList[captionSourcesIndex].AsObject(m_captionSources[captionSourcesIndex].Jsonize());
-   }
-   payload.WithArray("CaptionSources", std::move(captionSourcesJsonList));
-
-  }
 
   if(m_captionFormatsHasBeenSet)
   {

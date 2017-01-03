@@ -34,7 +34,10 @@ namespace ElasticTranscoder
 namespace Model
 {
   /**
-   * <p>The <code>CreatePresetResponse</code> structure.</p>
+   * <p>The <code>CreatePresetResponse</code> structure.</p><p><h3>See Also:</h3>  
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/CreatePresetResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICTRANSCODER_API CreatePresetResult
   {
@@ -44,32 +47,32 @@ namespace Model
     CreatePresetResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * <p> A section of the response body that provides information about the preset
-     * that is created. </p>
+     * <p>A section of the response body that provides information about the preset
+     * that is created.</p>
      */
     inline const Preset& GetPreset() const{ return m_preset; }
 
     /**
-     * <p> A section of the response body that provides information about the preset
-     * that is created. </p>
+     * <p>A section of the response body that provides information about the preset
+     * that is created.</p>
      */
     inline void SetPreset(const Preset& value) { m_preset = value; }
 
     /**
-     * <p> A section of the response body that provides information about the preset
-     * that is created. </p>
+     * <p>A section of the response body that provides information about the preset
+     * that is created.</p>
      */
     inline void SetPreset(Preset&& value) { m_preset = value; }
 
     /**
-     * <p> A section of the response body that provides information about the preset
-     * that is created. </p>
+     * <p>A section of the response body that provides information about the preset
+     * that is created.</p>
      */
     inline CreatePresetResult& WithPreset(const Preset& value) { SetPreset(value); return *this;}
 
     /**
-     * <p> A section of the response body that provides information about the preset
-     * that is created. </p>
+     * <p>A section of the response body that provides information about the preset
+     * that is created.</p>
      */
     inline CreatePresetResult& WithPreset(Preset&& value) { SetPreset(value); return *this;}
 

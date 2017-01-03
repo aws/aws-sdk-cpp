@@ -39,7 +39,9 @@ namespace Model
    * (DSN) when an email that Amazon SES receives on your behalf bounces.</p> <p>For
    * information about receiving email through Amazon SES, see the <a
    * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email.html">Amazon
-   * SES Developer Guide</a>.</p>
+   * SES Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/MessageDsn">AWS
+   * API Reference</a></p>
    */
   class AWS_SES_API MessageDsn
   {

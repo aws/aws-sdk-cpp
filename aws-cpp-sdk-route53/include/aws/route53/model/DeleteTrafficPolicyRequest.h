@@ -25,7 +25,10 @@ namespace Model
 {
 
   /**
-   * <p>A request to delete a specified traffic policy version.</p>
+   * <p>A request to delete a specified traffic policy version.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteTrafficPolicyRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_ROUTE53_API DeleteTrafficPolicyRequest : public Route53Request
   {

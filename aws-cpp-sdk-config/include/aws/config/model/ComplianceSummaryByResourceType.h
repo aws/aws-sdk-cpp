@@ -33,7 +33,10 @@ namespace Model
 
   /**
    * <p>The number of AWS resources of a specific type that are compliant or
-   * noncompliant, up to a maximum of 100 for each compliance.</p>
+   * noncompliant, up to a maximum of 100 for each compliance.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ComplianceSummaryByResourceType">AWS
+   * API Reference</a></p>
    */
   class AWS_CONFIGSERVICE_API ComplianceSummaryByResourceType
   {

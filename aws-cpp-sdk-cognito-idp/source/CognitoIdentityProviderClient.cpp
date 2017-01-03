@@ -27,6 +27,7 @@
 #include <aws/cognito-idp/CognitoIdentityProviderEndpoint.h>
 #include <aws/cognito-idp/CognitoIdentityProviderErrorMarshaller.h>
 #include <aws/cognito-idp/model/AddCustomAttributesRequest.h>
+#include <aws/cognito-idp/model/AdminAddUserToGroupRequest.h>
 #include <aws/cognito-idp/model/AdminConfirmSignUpRequest.h>
 #include <aws/cognito-idp/model/AdminCreateUserRequest.h>
 #include <aws/cognito-idp/model/AdminDeleteUserRequest.h>
@@ -38,6 +39,8 @@
 #include <aws/cognito-idp/model/AdminGetUserRequest.h>
 #include <aws/cognito-idp/model/AdminInitiateAuthRequest.h>
 #include <aws/cognito-idp/model/AdminListDevicesRequest.h>
+#include <aws/cognito-idp/model/AdminListGroupsForUserRequest.h>
+#include <aws/cognito-idp/model/AdminRemoveUserFromGroupRequest.h>
 #include <aws/cognito-idp/model/AdminResetUserPasswordRequest.h>
 #include <aws/cognito-idp/model/AdminRespondToAuthChallengeRequest.h>
 #include <aws/cognito-idp/model/AdminSetUserSettingsRequest.h>
@@ -48,9 +51,11 @@
 #include <aws/cognito-idp/model/ConfirmDeviceRequest.h>
 #include <aws/cognito-idp/model/ConfirmForgotPasswordRequest.h>
 #include <aws/cognito-idp/model/ConfirmSignUpRequest.h>
+#include <aws/cognito-idp/model/CreateGroupRequest.h>
 #include <aws/cognito-idp/model/CreateUserImportJobRequest.h>
 #include <aws/cognito-idp/model/CreateUserPoolRequest.h>
 #include <aws/cognito-idp/model/CreateUserPoolClientRequest.h>
+#include <aws/cognito-idp/model/DeleteGroupRequest.h>
 #include <aws/cognito-idp/model/DeleteUserRequest.h>
 #include <aws/cognito-idp/model/DeleteUserAttributesRequest.h>
 #include <aws/cognito-idp/model/DeleteUserPoolRequest.h>
@@ -62,15 +67,18 @@
 #include <aws/cognito-idp/model/ForgotPasswordRequest.h>
 #include <aws/cognito-idp/model/GetCSVHeaderRequest.h>
 #include <aws/cognito-idp/model/GetDeviceRequest.h>
+#include <aws/cognito-idp/model/GetGroupRequest.h>
 #include <aws/cognito-idp/model/GetUserRequest.h>
 #include <aws/cognito-idp/model/GetUserAttributeVerificationCodeRequest.h>
 #include <aws/cognito-idp/model/GlobalSignOutRequest.h>
 #include <aws/cognito-idp/model/InitiateAuthRequest.h>
 #include <aws/cognito-idp/model/ListDevicesRequest.h>
+#include <aws/cognito-idp/model/ListGroupsRequest.h>
 #include <aws/cognito-idp/model/ListUserImportJobsRequest.h>
 #include <aws/cognito-idp/model/ListUserPoolClientsRequest.h>
 #include <aws/cognito-idp/model/ListUserPoolsRequest.h>
 #include <aws/cognito-idp/model/ListUsersRequest.h>
+#include <aws/cognito-idp/model/ListUsersInGroupRequest.h>
 #include <aws/cognito-idp/model/ResendConfirmationCodeRequest.h>
 #include <aws/cognito-idp/model/RespondToAuthChallengeRequest.h>
 #include <aws/cognito-idp/model/SetUserSettingsRequest.h>
@@ -78,6 +86,7 @@
 #include <aws/cognito-idp/model/StartUserImportJobRequest.h>
 #include <aws/cognito-idp/model/StopUserImportJobRequest.h>
 #include <aws/cognito-idp/model/UpdateDeviceStatusRequest.h>
+#include <aws/cognito-idp/model/UpdateGroupRequest.h>
 #include <aws/cognito-idp/model/UpdateUserAttributesRequest.h>
 #include <aws/cognito-idp/model/UpdateUserPoolRequest.h>
 #include <aws/cognito-idp/model/UpdateUserPoolClientRequest.h>
@@ -179,6 +188,40 @@ void CognitoIdentityProviderClient::AddCustomAttributesAsync(const AddCustomAttr
 void CognitoIdentityProviderClient::AddCustomAttributesAsyncHelper(const AddCustomAttributesRequest& request, const AddCustomAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, AddCustomAttributes(request), context);
+}
+
+AdminAddUserToGroupOutcome CognitoIdentityProviderClient::AdminAddUserToGroup(const AdminAddUserToGroupRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return AdminAddUserToGroupOutcome(NoResult());
+  }
+  else
+  {
+    return AdminAddUserToGroupOutcome(outcome.GetError());
+  }
+}
+
+AdminAddUserToGroupOutcomeCallable CognitoIdentityProviderClient::AdminAddUserToGroupCallable(const AdminAddUserToGroupRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< AdminAddUserToGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AdminAddUserToGroup(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CognitoIdentityProviderClient::AdminAddUserToGroupAsync(const AdminAddUserToGroupRequest& request, const AdminAddUserToGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->AdminAddUserToGroupAsyncHelper( request, handler, context ); } );
+}
+
+void CognitoIdentityProviderClient::AdminAddUserToGroupAsyncHelper(const AdminAddUserToGroupRequest& request, const AdminAddUserToGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AdminAddUserToGroup(request), context);
 }
 
 AdminConfirmSignUpOutcome CognitoIdentityProviderClient::AdminConfirmSignUp(const AdminConfirmSignUpRequest& request) const
@@ -555,6 +598,74 @@ void CognitoIdentityProviderClient::AdminListDevicesAsyncHelper(const AdminListD
   handler(this, request, AdminListDevices(request), context);
 }
 
+AdminListGroupsForUserOutcome CognitoIdentityProviderClient::AdminListGroupsForUser(const AdminListGroupsForUserRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return AdminListGroupsForUserOutcome(AdminListGroupsForUserResult(outcome.GetResult()));
+  }
+  else
+  {
+    return AdminListGroupsForUserOutcome(outcome.GetError());
+  }
+}
+
+AdminListGroupsForUserOutcomeCallable CognitoIdentityProviderClient::AdminListGroupsForUserCallable(const AdminListGroupsForUserRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< AdminListGroupsForUserOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AdminListGroupsForUser(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CognitoIdentityProviderClient::AdminListGroupsForUserAsync(const AdminListGroupsForUserRequest& request, const AdminListGroupsForUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->AdminListGroupsForUserAsyncHelper( request, handler, context ); } );
+}
+
+void CognitoIdentityProviderClient::AdminListGroupsForUserAsyncHelper(const AdminListGroupsForUserRequest& request, const AdminListGroupsForUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AdminListGroupsForUser(request), context);
+}
+
+AdminRemoveUserFromGroupOutcome CognitoIdentityProviderClient::AdminRemoveUserFromGroup(const AdminRemoveUserFromGroupRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return AdminRemoveUserFromGroupOutcome(NoResult());
+  }
+  else
+  {
+    return AdminRemoveUserFromGroupOutcome(outcome.GetError());
+  }
+}
+
+AdminRemoveUserFromGroupOutcomeCallable CognitoIdentityProviderClient::AdminRemoveUserFromGroupCallable(const AdminRemoveUserFromGroupRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< AdminRemoveUserFromGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AdminRemoveUserFromGroup(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CognitoIdentityProviderClient::AdminRemoveUserFromGroupAsync(const AdminRemoveUserFromGroupRequest& request, const AdminRemoveUserFromGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->AdminRemoveUserFromGroupAsyncHelper( request, handler, context ); } );
+}
+
+void CognitoIdentityProviderClient::AdminRemoveUserFromGroupAsyncHelper(const AdminRemoveUserFromGroupRequest& request, const AdminRemoveUserFromGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AdminRemoveUserFromGroup(request), context);
+}
+
 AdminResetUserPasswordOutcome CognitoIdentityProviderClient::AdminResetUserPassword(const AdminResetUserPasswordRequest& request) const
 {
   Aws::StringStream ss;
@@ -895,6 +1006,40 @@ void CognitoIdentityProviderClient::ConfirmSignUpAsyncHelper(const ConfirmSignUp
   handler(this, request, ConfirmSignUp(request), context);
 }
 
+CreateGroupOutcome CognitoIdentityProviderClient::CreateGroup(const CreateGroupRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return CreateGroupOutcome(CreateGroupResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateGroupOutcome(outcome.GetError());
+  }
+}
+
+CreateGroupOutcomeCallable CognitoIdentityProviderClient::CreateGroupCallable(const CreateGroupRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateGroup(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CognitoIdentityProviderClient::CreateGroupAsync(const CreateGroupRequest& request, const CreateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateGroupAsyncHelper( request, handler, context ); } );
+}
+
+void CognitoIdentityProviderClient::CreateGroupAsyncHelper(const CreateGroupRequest& request, const CreateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateGroup(request), context);
+}
+
 CreateUserImportJobOutcome CognitoIdentityProviderClient::CreateUserImportJob(const CreateUserImportJobRequest& request) const
 {
   Aws::StringStream ss;
@@ -995,6 +1140,40 @@ void CognitoIdentityProviderClient::CreateUserPoolClientAsync(const CreateUserPo
 void CognitoIdentityProviderClient::CreateUserPoolClientAsyncHelper(const CreateUserPoolClientRequest& request, const CreateUserPoolClientResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateUserPoolClient(request), context);
+}
+
+DeleteGroupOutcome CognitoIdentityProviderClient::DeleteGroup(const DeleteGroupRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DeleteGroupOutcome(NoResult());
+  }
+  else
+  {
+    return DeleteGroupOutcome(outcome.GetError());
+  }
+}
+
+DeleteGroupOutcomeCallable CognitoIdentityProviderClient::DeleteGroupCallable(const DeleteGroupRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteGroup(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CognitoIdentityProviderClient::DeleteGroupAsync(const DeleteGroupRequest& request, const DeleteGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteGroupAsyncHelper( request, handler, context ); } );
+}
+
+void CognitoIdentityProviderClient::DeleteGroupAsyncHelper(const DeleteGroupRequest& request, const DeleteGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteGroup(request), context);
 }
 
 DeleteUserOutcome CognitoIdentityProviderClient::DeleteUser(const DeleteUserRequest& request) const
@@ -1371,6 +1550,40 @@ void CognitoIdentityProviderClient::GetDeviceAsyncHelper(const GetDeviceRequest&
   handler(this, request, GetDevice(request), context);
 }
 
+GetGroupOutcome CognitoIdentityProviderClient::GetGroup(const GetGroupRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return GetGroupOutcome(GetGroupResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetGroupOutcome(outcome.GetError());
+  }
+}
+
+GetGroupOutcomeCallable CognitoIdentityProviderClient::GetGroupCallable(const GetGroupRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetGroup(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CognitoIdentityProviderClient::GetGroupAsync(const GetGroupRequest& request, const GetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetGroupAsyncHelper( request, handler, context ); } );
+}
+
+void CognitoIdentityProviderClient::GetGroupAsyncHelper(const GetGroupRequest& request, const GetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetGroup(request), context);
+}
+
 GetUserOutcome CognitoIdentityProviderClient::GetUser(const GetUserRequest& request) const
 {
   Aws::StringStream ss;
@@ -1541,6 +1754,40 @@ void CognitoIdentityProviderClient::ListDevicesAsyncHelper(const ListDevicesRequ
   handler(this, request, ListDevices(request), context);
 }
 
+ListGroupsOutcome CognitoIdentityProviderClient::ListGroups(const ListGroupsRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return ListGroupsOutcome(ListGroupsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListGroupsOutcome(outcome.GetError());
+  }
+}
+
+ListGroupsOutcomeCallable CognitoIdentityProviderClient::ListGroupsCallable(const ListGroupsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListGroupsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListGroups(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CognitoIdentityProviderClient::ListGroupsAsync(const ListGroupsRequest& request, const ListGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListGroupsAsyncHelper( request, handler, context ); } );
+}
+
+void CognitoIdentityProviderClient::ListGroupsAsyncHelper(const ListGroupsRequest& request, const ListGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListGroups(request), context);
+}
+
 ListUserImportJobsOutcome CognitoIdentityProviderClient::ListUserImportJobs(const ListUserImportJobsRequest& request) const
 {
   Aws::StringStream ss;
@@ -1675,6 +1922,40 @@ void CognitoIdentityProviderClient::ListUsersAsync(const ListUsersRequest& reque
 void CognitoIdentityProviderClient::ListUsersAsyncHelper(const ListUsersRequest& request, const ListUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListUsers(request), context);
+}
+
+ListUsersInGroupOutcome CognitoIdentityProviderClient::ListUsersInGroup(const ListUsersInGroupRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return ListUsersInGroupOutcome(ListUsersInGroupResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListUsersInGroupOutcome(outcome.GetError());
+  }
+}
+
+ListUsersInGroupOutcomeCallable CognitoIdentityProviderClient::ListUsersInGroupCallable(const ListUsersInGroupRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListUsersInGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListUsersInGroup(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CognitoIdentityProviderClient::ListUsersInGroupAsync(const ListUsersInGroupRequest& request, const ListUsersInGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListUsersInGroupAsyncHelper( request, handler, context ); } );
+}
+
+void CognitoIdentityProviderClient::ListUsersInGroupAsyncHelper(const ListUsersInGroupRequest& request, const ListUsersInGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListUsersInGroup(request), context);
 }
 
 ResendConfirmationCodeOutcome CognitoIdentityProviderClient::ResendConfirmationCode(const ResendConfirmationCodeRequest& request) const
@@ -1913,6 +2194,40 @@ void CognitoIdentityProviderClient::UpdateDeviceStatusAsync(const UpdateDeviceSt
 void CognitoIdentityProviderClient::UpdateDeviceStatusAsyncHelper(const UpdateDeviceStatusRequest& request, const UpdateDeviceStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateDeviceStatus(request), context);
+}
+
+UpdateGroupOutcome CognitoIdentityProviderClient::UpdateGroup(const UpdateGroupRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return UpdateGroupOutcome(UpdateGroupResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateGroupOutcome(outcome.GetError());
+  }
+}
+
+UpdateGroupOutcomeCallable CognitoIdentityProviderClient::UpdateGroupCallable(const UpdateGroupRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateGroup(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CognitoIdentityProviderClient::UpdateGroupAsync(const UpdateGroupRequest& request, const UpdateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateGroupAsyncHelper( request, handler, context ); } );
+}
+
+void CognitoIdentityProviderClient::UpdateGroupAsyncHelper(const UpdateGroupRequest& request, const UpdateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateGroup(request), context);
 }
 
 UpdateUserAttributesOutcome CognitoIdentityProviderClient::UpdateUserAttributes(const UpdateUserAttributesRequest& request) const

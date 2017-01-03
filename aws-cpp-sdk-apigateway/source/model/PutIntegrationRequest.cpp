@@ -34,7 +34,9 @@ PutIntegrationRequest::PutIntegrationRequest() :
     m_requestTemplatesHasBeenSet(false),
     m_passthroughBehaviorHasBeenSet(false),
     m_cacheNamespaceHasBeenSet(false),
-    m_cacheKeyParametersHasBeenSet(false)
+    m_cacheKeyParametersHasBeenSet(false),
+    m_contentHandling(ContentHandlingStrategy::NOT_SET),
+    m_contentHandlingHasBeenSet(false)
 {
 }
 
@@ -108,6 +110,11 @@ Aws::String PutIntegrationRequest::SerializePayload() const
    }
    payload.WithArray("cacheKeyParameters", std::move(cacheKeyParametersJsonList));
 
+  }
+
+  if(m_contentHandlingHasBeenSet)
+  {
+   payload.WithString("contentHandling", ContentHandlingStrategyMapper::GetNameForContentHandlingStrategy(m_contentHandling));
   }
 
   return payload.WriteReadable();

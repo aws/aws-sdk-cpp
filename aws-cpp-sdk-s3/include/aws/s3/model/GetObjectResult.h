@@ -919,6 +919,21 @@ namespace Model
      */
     inline GetObjectResult& WithPartsCount(int value) { SetPartsCount(value); return *this;}
 
+    /**
+     * The number of tags, if any, on the object.
+     */
+    inline int GetTagCount() const{ return m_tagCount; }
+
+    /**
+     * The number of tags, if any, on the object.
+     */
+    inline void SetTagCount(int value) { m_tagCount = value; }
+
+    /**
+     * The number of tags, if any, on the object.
+     */
+    inline GetObjectResult& WithTagCount(int value) { SetTagCount(value); return *this;}
+
   private:
     Utils::Stream::ResponseStream m_body;
     bool m_deleteMarker;
@@ -947,6 +962,7 @@ namespace Model
     RequestCharged m_requestCharged;
     ReplicationStatus m_replicationStatus;
     int m_partsCount;
+    int m_tagCount;
   };
 
 } // namespace Model

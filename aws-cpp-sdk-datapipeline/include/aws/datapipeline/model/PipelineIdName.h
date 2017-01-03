@@ -31,7 +31,9 @@ namespace Model
 {
 
   /**
-   * <p>Contains the name and identifier of a pipeline.</p>
+   * <p>Contains the name and identifier of a pipeline.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/PipelineIdName">AWS
+   * API Reference</a></p>
    */
   class AWS_DATAPIPELINE_API PipelineIdName
   {

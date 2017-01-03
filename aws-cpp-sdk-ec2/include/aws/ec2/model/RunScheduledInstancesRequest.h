@@ -27,7 +27,10 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for RunScheduledInstances.</p>
+   * <p>Contains the parameters for RunScheduledInstances.</p><p><h3>See Also:</h3>  
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RunScheduledInstancesRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API RunScheduledInstancesRequest : public EC2Request
   {
@@ -166,27 +169,32 @@ namespace Model
     inline RunScheduledInstancesRequest& WithScheduledInstanceId(const char* value) { SetScheduledInstanceId(value); return *this;}
 
     /**
-     * <p>The launch specification.</p>
+     * <p>The launch specification. You must match the instance type, Availability
+     * Zone, network, and platform of the schedule that you purchased.</p>
      */
     inline const ScheduledInstancesLaunchSpecification& GetLaunchSpecification() const{ return m_launchSpecification; }
 
     /**
-     * <p>The launch specification.</p>
+     * <p>The launch specification. You must match the instance type, Availability
+     * Zone, network, and platform of the schedule that you purchased.</p>
      */
     inline void SetLaunchSpecification(const ScheduledInstancesLaunchSpecification& value) { m_launchSpecificationHasBeenSet = true; m_launchSpecification = value; }
 
     /**
-     * <p>The launch specification.</p>
+     * <p>The launch specification. You must match the instance type, Availability
+     * Zone, network, and platform of the schedule that you purchased.</p>
      */
     inline void SetLaunchSpecification(ScheduledInstancesLaunchSpecification&& value) { m_launchSpecificationHasBeenSet = true; m_launchSpecification = value; }
 
     /**
-     * <p>The launch specification.</p>
+     * <p>The launch specification. You must match the instance type, Availability
+     * Zone, network, and platform of the schedule that you purchased.</p>
      */
     inline RunScheduledInstancesRequest& WithLaunchSpecification(const ScheduledInstancesLaunchSpecification& value) { SetLaunchSpecification(value); return *this;}
 
     /**
-     * <p>The launch specification.</p>
+     * <p>The launch specification. You must match the instance type, Availability
+     * Zone, network, and platform of the schedule that you purchased.</p>
      */
     inline RunScheduledInstancesRequest& WithLaunchSpecification(ScheduledInstancesLaunchSpecification&& value) { SetLaunchSpecification(value); return *this;}
 

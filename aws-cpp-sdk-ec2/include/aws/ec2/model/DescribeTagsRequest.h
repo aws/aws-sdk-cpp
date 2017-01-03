@@ -27,7 +27,9 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for DescribeTags.</p>
+   * <p>Contains the parameters for DescribeTags.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTagsRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API DescribeTagsRequest : public EC2Request
   {
@@ -60,106 +62,106 @@ namespace Model
     inline DescribeTagsRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p><code>key</code> - The tag key.</p>
-     * </li> <li> <p><code>resource-id</code> - The resource ID.</p> </li> <li>
-     * <p><code>resource-type</code> - The resource type (<code>customer-gateway</code>
-     * | <code>dhcp-options</code> | <code>image</code> | <code>instance</code> |
+     * <p>One or more filters.</p> <ul> <li> <p> <code>key</code> - The tag key.</p>
+     * </li> <li> <p> <code>resource-id</code> - The resource ID.</p> </li> <li> <p>
+     * <code>resource-type</code> - The resource type (<code>customer-gateway</code> |
+     * <code>dhcp-options</code> | <code>image</code> | <code>instance</code> |
      * <code>internet-gateway</code> | <code>network-acl</code> |
      * <code>network-interface</code> | <code>reserved-instances</code> |
      * <code>route-table</code> | <code>security-group</code> | <code>snapshot</code> |
      * <code>spot-instances-request</code> | <code>subnet</code> | <code>volume</code>
      * | <code>vpc</code> | <code>vpn-connection</code> |
-     * <code>vpn-gateway</code>).</p> </li> <li> <p><code>value</code> - The tag
+     * <code>vpn-gateway</code>).</p> </li> <li> <p> <code>value</code> - The tag
      * value.</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p><code>key</code> - The tag key.</p>
-     * </li> <li> <p><code>resource-id</code> - The resource ID.</p> </li> <li>
-     * <p><code>resource-type</code> - The resource type (<code>customer-gateway</code>
-     * | <code>dhcp-options</code> | <code>image</code> | <code>instance</code> |
+     * <p>One or more filters.</p> <ul> <li> <p> <code>key</code> - The tag key.</p>
+     * </li> <li> <p> <code>resource-id</code> - The resource ID.</p> </li> <li> <p>
+     * <code>resource-type</code> - The resource type (<code>customer-gateway</code> |
+     * <code>dhcp-options</code> | <code>image</code> | <code>instance</code> |
      * <code>internet-gateway</code> | <code>network-acl</code> |
      * <code>network-interface</code> | <code>reserved-instances</code> |
      * <code>route-table</code> | <code>security-group</code> | <code>snapshot</code> |
      * <code>spot-instances-request</code> | <code>subnet</code> | <code>volume</code>
      * | <code>vpc</code> | <code>vpn-connection</code> |
-     * <code>vpn-gateway</code>).</p> </li> <li> <p><code>value</code> - The tag
+     * <code>vpn-gateway</code>).</p> </li> <li> <p> <code>value</code> - The tag
      * value.</p> </li> </ul>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p><code>key</code> - The tag key.</p>
-     * </li> <li> <p><code>resource-id</code> - The resource ID.</p> </li> <li>
-     * <p><code>resource-type</code> - The resource type (<code>customer-gateway</code>
-     * | <code>dhcp-options</code> | <code>image</code> | <code>instance</code> |
+     * <p>One or more filters.</p> <ul> <li> <p> <code>key</code> - The tag key.</p>
+     * </li> <li> <p> <code>resource-id</code> - The resource ID.</p> </li> <li> <p>
+     * <code>resource-type</code> - The resource type (<code>customer-gateway</code> |
+     * <code>dhcp-options</code> | <code>image</code> | <code>instance</code> |
      * <code>internet-gateway</code> | <code>network-acl</code> |
      * <code>network-interface</code> | <code>reserved-instances</code> |
      * <code>route-table</code> | <code>security-group</code> | <code>snapshot</code> |
      * <code>spot-instances-request</code> | <code>subnet</code> | <code>volume</code>
      * | <code>vpc</code> | <code>vpn-connection</code> |
-     * <code>vpn-gateway</code>).</p> </li> <li> <p><code>value</code> - The tag
+     * <code>vpn-gateway</code>).</p> </li> <li> <p> <code>value</code> - The tag
      * value.</p> </li> </ul>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p><code>key</code> - The tag key.</p>
-     * </li> <li> <p><code>resource-id</code> - The resource ID.</p> </li> <li>
-     * <p><code>resource-type</code> - The resource type (<code>customer-gateway</code>
-     * | <code>dhcp-options</code> | <code>image</code> | <code>instance</code> |
+     * <p>One or more filters.</p> <ul> <li> <p> <code>key</code> - The tag key.</p>
+     * </li> <li> <p> <code>resource-id</code> - The resource ID.</p> </li> <li> <p>
+     * <code>resource-type</code> - The resource type (<code>customer-gateway</code> |
+     * <code>dhcp-options</code> | <code>image</code> | <code>instance</code> |
      * <code>internet-gateway</code> | <code>network-acl</code> |
      * <code>network-interface</code> | <code>reserved-instances</code> |
      * <code>route-table</code> | <code>security-group</code> | <code>snapshot</code> |
      * <code>spot-instances-request</code> | <code>subnet</code> | <code>volume</code>
      * | <code>vpc</code> | <code>vpn-connection</code> |
-     * <code>vpn-gateway</code>).</p> </li> <li> <p><code>value</code> - The tag
+     * <code>vpn-gateway</code>).</p> </li> <li> <p> <code>value</code> - The tag
      * value.</p> </li> </ul>
      */
     inline DescribeTagsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p><code>key</code> - The tag key.</p>
-     * </li> <li> <p><code>resource-id</code> - The resource ID.</p> </li> <li>
-     * <p><code>resource-type</code> - The resource type (<code>customer-gateway</code>
-     * | <code>dhcp-options</code> | <code>image</code> | <code>instance</code> |
+     * <p>One or more filters.</p> <ul> <li> <p> <code>key</code> - The tag key.</p>
+     * </li> <li> <p> <code>resource-id</code> - The resource ID.</p> </li> <li> <p>
+     * <code>resource-type</code> - The resource type (<code>customer-gateway</code> |
+     * <code>dhcp-options</code> | <code>image</code> | <code>instance</code> |
      * <code>internet-gateway</code> | <code>network-acl</code> |
      * <code>network-interface</code> | <code>reserved-instances</code> |
      * <code>route-table</code> | <code>security-group</code> | <code>snapshot</code> |
      * <code>spot-instances-request</code> | <code>subnet</code> | <code>volume</code>
      * | <code>vpc</code> | <code>vpn-connection</code> |
-     * <code>vpn-gateway</code>).</p> </li> <li> <p><code>value</code> - The tag
+     * <code>vpn-gateway</code>).</p> </li> <li> <p> <code>value</code> - The tag
      * value.</p> </li> </ul>
      */
     inline DescribeTagsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p><code>key</code> - The tag key.</p>
-     * </li> <li> <p><code>resource-id</code> - The resource ID.</p> </li> <li>
-     * <p><code>resource-type</code> - The resource type (<code>customer-gateway</code>
-     * | <code>dhcp-options</code> | <code>image</code> | <code>instance</code> |
+     * <p>One or more filters.</p> <ul> <li> <p> <code>key</code> - The tag key.</p>
+     * </li> <li> <p> <code>resource-id</code> - The resource ID.</p> </li> <li> <p>
+     * <code>resource-type</code> - The resource type (<code>customer-gateway</code> |
+     * <code>dhcp-options</code> | <code>image</code> | <code>instance</code> |
      * <code>internet-gateway</code> | <code>network-acl</code> |
      * <code>network-interface</code> | <code>reserved-instances</code> |
      * <code>route-table</code> | <code>security-group</code> | <code>snapshot</code> |
      * <code>spot-instances-request</code> | <code>subnet</code> | <code>volume</code>
      * | <code>vpc</code> | <code>vpn-connection</code> |
-     * <code>vpn-gateway</code>).</p> </li> <li> <p><code>value</code> - The tag
+     * <code>vpn-gateway</code>).</p> </li> <li> <p> <code>value</code> - The tag
      * value.</p> </li> </ul>
      */
     inline DescribeTagsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p><code>key</code> - The tag key.</p>
-     * </li> <li> <p><code>resource-id</code> - The resource ID.</p> </li> <li>
-     * <p><code>resource-type</code> - The resource type (<code>customer-gateway</code>
-     * | <code>dhcp-options</code> | <code>image</code> | <code>instance</code> |
+     * <p>One or more filters.</p> <ul> <li> <p> <code>key</code> - The tag key.</p>
+     * </li> <li> <p> <code>resource-id</code> - The resource ID.</p> </li> <li> <p>
+     * <code>resource-type</code> - The resource type (<code>customer-gateway</code> |
+     * <code>dhcp-options</code> | <code>image</code> | <code>instance</code> |
      * <code>internet-gateway</code> | <code>network-acl</code> |
      * <code>network-interface</code> | <code>reserved-instances</code> |
      * <code>route-table</code> | <code>security-group</code> | <code>snapshot</code> |
      * <code>spot-instances-request</code> | <code>subnet</code> | <code>volume</code>
      * | <code>vpc</code> | <code>vpn-connection</code> |
-     * <code>vpn-gateway</code>).</p> </li> <li> <p><code>value</code> - The tag
+     * <code>vpn-gateway</code>).</p> </li> <li> <p> <code>value</code> - The tag
      * value.</p> </li> </ul>
      */
     inline DescribeTagsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }

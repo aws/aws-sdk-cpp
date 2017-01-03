@@ -35,7 +35,9 @@ namespace Model
    * set up a game session. This object allows you to pass in any set of data needed
    * for your game. For more information, see the <a
    * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/">Amazon
-   * GameLift Developer Guide</a>.</p>
+   * GameLift Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GameProperty">AWS
+   * API Reference</a></p>
    */
   class AWS_GAMELIFT_API GameProperty
   {

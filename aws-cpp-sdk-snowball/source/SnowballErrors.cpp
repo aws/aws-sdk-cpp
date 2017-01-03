@@ -29,9 +29,11 @@ namespace SnowballErrorMapper
 
 static const int K_M_S_REQUEST_FAILED_HASH = HashingUtils::HashString("KMSRequestFailedException");
 static const int UNSUPPORTED_ADDRESS_HASH = HashingUtils::HashString("UnsupportedAddressException");
+static const int CLUSTER_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ClusterLimitExceededException");
 static const int INVALID_JOB_STATE_HASH = HashingUtils::HashString("InvalidJobStateException");
 static const int INVALID_ADDRESS_HASH = HashingUtils::HashString("InvalidAddressException");
 static const int INVALID_RESOURCE_HASH = HashingUtils::HashString("InvalidResourceException");
+static const int INVALID_INPUT_COMBINATION_HASH = HashingUtils::HashString("InvalidInputCombinationException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
@@ -46,6 +48,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SnowballErrors::UNSUPPORTED_ADDRESS), false);
   }
+  else if (hashCode == CLUSTER_LIMIT_EXCEEDED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SnowballErrors::CLUSTER_LIMIT_EXCEEDED), false);
+  }
   else if (hashCode == INVALID_JOB_STATE_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SnowballErrors::INVALID_JOB_STATE), false);
@@ -57,6 +63,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INVALID_RESOURCE_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SnowballErrors::INVALID_RESOURCE), false);
+  }
+  else if (hashCode == INVALID_INPUT_COMBINATION_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SnowballErrors::INVALID_INPUT_COMBINATION), false);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

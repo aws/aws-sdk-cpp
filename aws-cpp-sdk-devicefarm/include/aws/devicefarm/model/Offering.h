@@ -35,7 +35,9 @@ namespace Model
 {
 
   /**
-   * <p>Represents the metadata of a device offering.</p>
+   * <p>Represents the metadata of a device offering.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/Offering">AWS
+   * API Reference</a></p>
    */
   class AWS_DEVICEFARM_API Offering
   {

@@ -32,7 +32,9 @@ namespace Model
    * <p>Represents a request to send a single formatted email using Amazon SES. For
    * more information, see the <a
    * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-formatted.html">Amazon
-   * SES Developer Guide</a>.</p>
+   * SES Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SendEmailRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_SES_API SendEmailRequest : public SESRequest
   {

@@ -34,7 +34,9 @@ namespace Model
 
   /**
    * <p>The unit of data of the Amazon Kinesis stream, which is composed of a
-   * sequence number, a partition key, and a data blob.</p>
+   * sequence number, a partition key, and a data blob.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/Record">AWS API
+   * Reference</a></p>
    */
   class AWS_KINESIS_API Record
   {

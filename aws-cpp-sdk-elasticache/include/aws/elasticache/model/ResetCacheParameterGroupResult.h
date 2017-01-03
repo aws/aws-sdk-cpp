@@ -36,7 +36,9 @@ namespace Model
   /**
    * <p>Represents the output of one of the following operations:</p> <ul> <li> <p>
    * <code>ModifyCacheParameterGroup</code> </p> </li> <li> <p>
-   * <code>ResetCacheParameterGroup</code> </p> </li> </ul>
+   * <code>ResetCacheParameterGroup</code> </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CacheParameterGroupNameMessage">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICACHE_API ResetCacheParameterGroupResult
   {

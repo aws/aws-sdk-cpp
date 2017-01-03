@@ -23,6 +23,7 @@ using namespace Aws::Utils;
 
 ListContainerInstancesRequest::ListContainerInstancesRequest() : 
     m_clusterHasBeenSet(false),
+    m_filterHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false)
@@ -36,6 +37,12 @@ Aws::String ListContainerInstancesRequest::SerializePayload() const
   if(m_clusterHasBeenSet)
   {
    payload.WithString("cluster", m_cluster);
+
+  }
+
+  if(m_filterHasBeenSet)
+  {
+   payload.WithString("filter", m_filter);
 
   }
 

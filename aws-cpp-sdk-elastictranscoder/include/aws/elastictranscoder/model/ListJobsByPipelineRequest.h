@@ -29,7 +29,10 @@ namespace Model
 {
 
   /**
-   * <p>The <code>ListJobsByPipelineRequest</code> structure.</p>
+   * <p>The <code>ListJobsByPipelineRequest</code> structure.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/ListJobsByPipelineRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICTRANSCODER_API ListJobsByPipelineRequest : public ElasticTranscoderRequest
   {
@@ -40,37 +43,37 @@ namespace Model
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
     /**
-     * <p> The ID of the pipeline for which you want to get job information. </p>
+     * <p>The ID of the pipeline for which you want to get job information.</p>
      */
     inline const Aws::String& GetPipelineId() const{ return m_pipelineId; }
 
     /**
-     * <p> The ID of the pipeline for which you want to get job information. </p>
+     * <p>The ID of the pipeline for which you want to get job information.</p>
      */
     inline void SetPipelineId(const Aws::String& value) { m_pipelineIdHasBeenSet = true; m_pipelineId = value; }
 
     /**
-     * <p> The ID of the pipeline for which you want to get job information. </p>
+     * <p>The ID of the pipeline for which you want to get job information.</p>
      */
     inline void SetPipelineId(Aws::String&& value) { m_pipelineIdHasBeenSet = true; m_pipelineId = value; }
 
     /**
-     * <p> The ID of the pipeline for which you want to get job information. </p>
+     * <p>The ID of the pipeline for which you want to get job information.</p>
      */
     inline void SetPipelineId(const char* value) { m_pipelineIdHasBeenSet = true; m_pipelineId.assign(value); }
 
     /**
-     * <p> The ID of the pipeline for which you want to get job information. </p>
+     * <p>The ID of the pipeline for which you want to get job information.</p>
      */
     inline ListJobsByPipelineRequest& WithPipelineId(const Aws::String& value) { SetPipelineId(value); return *this;}
 
     /**
-     * <p> The ID of the pipeline for which you want to get job information. </p>
+     * <p>The ID of the pipeline for which you want to get job information.</p>
      */
     inline ListJobsByPipelineRequest& WithPipelineId(Aws::String&& value) { SetPipelineId(value); return *this;}
 
     /**
-     * <p> The ID of the pipeline for which you want to get job information. </p>
+     * <p>The ID of the pipeline for which you want to get job information.</p>
      */
     inline ListJobsByPipelineRequest& WithPipelineId(const char* value) { SetPipelineId(value); return *this;}
 

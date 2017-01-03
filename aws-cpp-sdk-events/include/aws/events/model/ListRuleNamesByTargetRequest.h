@@ -26,7 +26,9 @@ namespace Model
 
   /**
    * <p>Container for the parameters to the <a>ListRuleNamesByTarget</a>
-   * operation.</p>
+   * operation.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListRuleNamesByTargetRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDWATCHEVENTS_API ListRuleNamesByTargetRequest : public CloudWatchEventsRequest
   {

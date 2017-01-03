@@ -36,7 +36,9 @@ namespace Model
 {
   /**
    * <p>When you update a pipeline, Elastic Transcoder returns the values that you
-   * specified in the request. </p>
+   * specified in the request.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/UpdatePipelineResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICTRANSCODER_API UpdatePipelineResult
   {
@@ -45,19 +47,29 @@ namespace Model
     UpdatePipelineResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     UpdatePipelineResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    
+    /**
+     * <p>The pipeline updated by this <code>UpdatePipelineResponse</code> call.</p>
+     */
     inline const Pipeline& GetPipeline() const{ return m_pipeline; }
 
-    
+    /**
+     * <p>The pipeline updated by this <code>UpdatePipelineResponse</code> call.</p>
+     */
     inline void SetPipeline(const Pipeline& value) { m_pipeline = value; }
 
-    
+    /**
+     * <p>The pipeline updated by this <code>UpdatePipelineResponse</code> call.</p>
+     */
     inline void SetPipeline(Pipeline&& value) { m_pipeline = value; }
 
-    
+    /**
+     * <p>The pipeline updated by this <code>UpdatePipelineResponse</code> call.</p>
+     */
     inline UpdatePipelineResult& WithPipeline(const Pipeline& value) { SetPipeline(value); return *this;}
 
-    
+    /**
+     * <p>The pipeline updated by this <code>UpdatePipelineResponse</code> call.</p>
+     */
     inline UpdatePipelineResult& WithPipeline(Pipeline&& value) { SetPipeline(value); return *this;}
 
     /**

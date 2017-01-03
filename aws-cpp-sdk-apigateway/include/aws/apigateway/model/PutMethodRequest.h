@@ -26,7 +26,10 @@ namespace Model
 {
 
   /**
-   * <p>Request to add a method to an existing <a>Resource</a> resource.</p>
+   * <p>Request to add a method to an existing <a>Resource</a>
+   * resource.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/PutMethodRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_APIGATEWAY_API PutMethodRequest : public APIGatewayRequest
   {
@@ -232,6 +235,69 @@ namespace Model
     inline PutMethodRequest& WithApiKeyRequired(bool value) { SetApiKeyRequired(value); return *this;}
 
     /**
+     * <p>A human-friendly operation identifier for the method. For example, you can
+     * assign the <code>operationName</code> of <code>ListPets</code> for the <code>GET
+     * /pets</code> method in <a
+     * href="http://petstore-demo-endpoint.execute-api.com/petstore/pets">PetStore</a>
+     * example.</p>
+     */
+    inline const Aws::String& GetOperationName() const{ return m_operationName; }
+
+    /**
+     * <p>A human-friendly operation identifier for the method. For example, you can
+     * assign the <code>operationName</code> of <code>ListPets</code> for the <code>GET
+     * /pets</code> method in <a
+     * href="http://petstore-demo-endpoint.execute-api.com/petstore/pets">PetStore</a>
+     * example.</p>
+     */
+    inline void SetOperationName(const Aws::String& value) { m_operationNameHasBeenSet = true; m_operationName = value; }
+
+    /**
+     * <p>A human-friendly operation identifier for the method. For example, you can
+     * assign the <code>operationName</code> of <code>ListPets</code> for the <code>GET
+     * /pets</code> method in <a
+     * href="http://petstore-demo-endpoint.execute-api.com/petstore/pets">PetStore</a>
+     * example.</p>
+     */
+    inline void SetOperationName(Aws::String&& value) { m_operationNameHasBeenSet = true; m_operationName = value; }
+
+    /**
+     * <p>A human-friendly operation identifier for the method. For example, you can
+     * assign the <code>operationName</code> of <code>ListPets</code> for the <code>GET
+     * /pets</code> method in <a
+     * href="http://petstore-demo-endpoint.execute-api.com/petstore/pets">PetStore</a>
+     * example.</p>
+     */
+    inline void SetOperationName(const char* value) { m_operationNameHasBeenSet = true; m_operationName.assign(value); }
+
+    /**
+     * <p>A human-friendly operation identifier for the method. For example, you can
+     * assign the <code>operationName</code> of <code>ListPets</code> for the <code>GET
+     * /pets</code> method in <a
+     * href="http://petstore-demo-endpoint.execute-api.com/petstore/pets">PetStore</a>
+     * example.</p>
+     */
+    inline PutMethodRequest& WithOperationName(const Aws::String& value) { SetOperationName(value); return *this;}
+
+    /**
+     * <p>A human-friendly operation identifier for the method. For example, you can
+     * assign the <code>operationName</code> of <code>ListPets</code> for the <code>GET
+     * /pets</code> method in <a
+     * href="http://petstore-demo-endpoint.execute-api.com/petstore/pets">PetStore</a>
+     * example.</p>
+     */
+    inline PutMethodRequest& WithOperationName(Aws::String&& value) { SetOperationName(value); return *this;}
+
+    /**
+     * <p>A human-friendly operation identifier for the method. For example, you can
+     * assign the <code>operationName</code> of <code>ListPets</code> for the <code>GET
+     * /pets</code> method in <a
+     * href="http://petstore-demo-endpoint.execute-api.com/petstore/pets">PetStore</a>
+     * example.</p>
+     */
+    inline PutMethodRequest& WithOperationName(const char* value) { SetOperationName(value); return *this;}
+
+    /**
      * <p>A key-value map defining required or optional method request parameters that
      * can be accepted by Amazon API Gateway. A key defines a method request parameter
      * name matching the pattern of <code>method.request.{location}.{name}</code>,
@@ -432,6 +498,8 @@ namespace Model
     bool m_authorizerIdHasBeenSet;
     bool m_apiKeyRequired;
     bool m_apiKeyRequiredHasBeenSet;
+    Aws::String m_operationName;
+    bool m_operationNameHasBeenSet;
     Aws::Map<Aws::String, bool> m_requestParameters;
     bool m_requestParametersHasBeenSet;
     Aws::Map<Aws::String, Aws::String> m_requestModels;

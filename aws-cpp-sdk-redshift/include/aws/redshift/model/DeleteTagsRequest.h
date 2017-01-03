@@ -26,7 +26,10 @@ namespace Model
 {
 
   /**
-   * <p>Contains the output from the <code>DeleteTags</code> action. </p>
+   * <p>Contains the output from the <code>DeleteTags</code> action. </p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteTagsMessage">AWS
+   * API Reference</a></p>
    */
   class AWS_REDSHIFT_API DeleteTagsRequest : public RedshiftRequest
   {

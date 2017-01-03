@@ -14,7 +14,6 @@
 */
 #include <aws/servicecatalog/model/ListAcceptedPortfolioSharesRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
@@ -33,6 +32,12 @@ ListAcceptedPortfolioSharesRequest::ListAcceptedPortfolioSharesRequest() :
 Aws::String ListAcceptedPortfolioSharesRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_acceptLanguageHasBeenSet)
+  {
+   payload.WithString("AcceptLanguage", m_acceptLanguage);
+
+  }
 
   if(m_pageTokenHasBeenSet)
   {
@@ -53,14 +58,6 @@ Aws::Http::HeaderValueCollection ListAcceptedPortfolioSharesRequest::GetRequestS
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWS242ServiceCatalogService.ListAcceptedPortfolioShares"));
-  Aws::StringStream ss;
-  if(m_acceptLanguageHasBeenSet)
-  {
-    ss << m_acceptLanguage;
-    headers.insert(Aws::Http::HeaderValuePair("accept-language", ss.str()));
-    ss.str("");
-  }
-
   return headers;
 
 }

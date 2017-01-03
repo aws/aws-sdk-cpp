@@ -32,7 +32,10 @@ namespace CognitoIdentityProvider
 namespace Model
 {
   /**
-   * <p>The response from the server for a set user settings request.</p>
+   * <p>The response from the server for a set user settings request.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SetUserSettingsResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_COGNITOIDENTITYPROVIDER_API SetUserSettingsResult
   {

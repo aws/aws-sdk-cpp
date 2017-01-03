@@ -539,8 +539,8 @@ public class Ec2CppClientGenerator extends QueryCppClientGenerator{
         invalidVpcPeeringConnectionIDNotFound.setText("InvalidVpcPeeringConnectionID.NotFound");
         serviceErrors.add(invalidVpcPeeringConnectionIDNotFound);
         final Error invalidVpcRange = new Error();
-        invalidVpcRange.setName("InvalidVpcRange");
-        invalidVpcRange.setText("InvalidVpcRange");
+        invalidVpcRange.setName("InvalidVpc.Range");
+        invalidVpcRange.setText("InvalidVpc.Range");
         serviceErrors.add(invalidVpcRange);
         final Error invalidVpcState = new Error();
         invalidVpcState.setName("InvalidVpcState");

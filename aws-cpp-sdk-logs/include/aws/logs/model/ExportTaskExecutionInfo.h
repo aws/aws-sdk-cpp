@@ -30,7 +30,9 @@ namespace Model
 {
 
   /**
-   * <p>Represents the status of an export task.</p>
+   * <p>Represents the status of an export task.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/ExportTaskExecutionInfo">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDWATCHLOGS_API ExportTaskExecutionInfo
   {

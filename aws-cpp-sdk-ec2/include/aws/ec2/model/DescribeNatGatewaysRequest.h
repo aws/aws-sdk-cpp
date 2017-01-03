@@ -27,7 +27,10 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for DescribeNatGateways.</p>
+   * <p>Contains the parameters for DescribeNatGateways.</p><p><h3>See Also:</h3>  
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNatGatewaysRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API DescribeNatGatewaysRequest : public EC2Request
   {
@@ -76,78 +79,78 @@ namespace Model
     inline DescribeNatGatewaysRequest& AddNatGatewayIds(const char* value) { m_natGatewayIdsHasBeenSet = true; m_natGatewayIds.push_back(value); return *this; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p><code>nat-gateway-id</code> - The ID of
-     * the NAT gateway.</p> </li> <li> <p><code>state</code> - The state of the NAT
+     * <p>One or more filters.</p> <ul> <li> <p> <code>nat-gateway-id</code> - The ID
+     * of the NAT gateway.</p> </li> <li> <p> <code>state</code> - The state of the NAT
      * gateway (<code>pending</code> | <code>failed</code> | <code>available</code> |
-     * <code>deleting</code> | <code>deleted</code>).</p> </li> <li>
-     * <p><code>subnet-id</code> - The ID of the subnet in which the NAT gateway
-     * resides.</p> </li> <li> <p><code>vpc-id</code> - The ID of the VPC in which the
+     * <code>deleting</code> | <code>deleted</code>).</p> </li> <li> <p>
+     * <code>subnet-id</code> - The ID of the subnet in which the NAT gateway
+     * resides.</p> </li> <li> <p> <code>vpc-id</code> - The ID of the VPC in which the
      * NAT gateway resides.</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilter() const{ return m_filter; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p><code>nat-gateway-id</code> - The ID of
-     * the NAT gateway.</p> </li> <li> <p><code>state</code> - The state of the NAT
+     * <p>One or more filters.</p> <ul> <li> <p> <code>nat-gateway-id</code> - The ID
+     * of the NAT gateway.</p> </li> <li> <p> <code>state</code> - The state of the NAT
      * gateway (<code>pending</code> | <code>failed</code> | <code>available</code> |
-     * <code>deleting</code> | <code>deleted</code>).</p> </li> <li>
-     * <p><code>subnet-id</code> - The ID of the subnet in which the NAT gateway
-     * resides.</p> </li> <li> <p><code>vpc-id</code> - The ID of the VPC in which the
+     * <code>deleting</code> | <code>deleted</code>).</p> </li> <li> <p>
+     * <code>subnet-id</code> - The ID of the subnet in which the NAT gateway
+     * resides.</p> </li> <li> <p> <code>vpc-id</code> - The ID of the VPC in which the
      * NAT gateway resides.</p> </li> </ul>
      */
     inline void SetFilter(const Aws::Vector<Filter>& value) { m_filterHasBeenSet = true; m_filter = value; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p><code>nat-gateway-id</code> - The ID of
-     * the NAT gateway.</p> </li> <li> <p><code>state</code> - The state of the NAT
+     * <p>One or more filters.</p> <ul> <li> <p> <code>nat-gateway-id</code> - The ID
+     * of the NAT gateway.</p> </li> <li> <p> <code>state</code> - The state of the NAT
      * gateway (<code>pending</code> | <code>failed</code> | <code>available</code> |
-     * <code>deleting</code> | <code>deleted</code>).</p> </li> <li>
-     * <p><code>subnet-id</code> - The ID of the subnet in which the NAT gateway
-     * resides.</p> </li> <li> <p><code>vpc-id</code> - The ID of the VPC in which the
+     * <code>deleting</code> | <code>deleted</code>).</p> </li> <li> <p>
+     * <code>subnet-id</code> - The ID of the subnet in which the NAT gateway
+     * resides.</p> </li> <li> <p> <code>vpc-id</code> - The ID of the VPC in which the
      * NAT gateway resides.</p> </li> </ul>
      */
     inline void SetFilter(Aws::Vector<Filter>&& value) { m_filterHasBeenSet = true; m_filter = value; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p><code>nat-gateway-id</code> - The ID of
-     * the NAT gateway.</p> </li> <li> <p><code>state</code> - The state of the NAT
+     * <p>One or more filters.</p> <ul> <li> <p> <code>nat-gateway-id</code> - The ID
+     * of the NAT gateway.</p> </li> <li> <p> <code>state</code> - The state of the NAT
      * gateway (<code>pending</code> | <code>failed</code> | <code>available</code> |
-     * <code>deleting</code> | <code>deleted</code>).</p> </li> <li>
-     * <p><code>subnet-id</code> - The ID of the subnet in which the NAT gateway
-     * resides.</p> </li> <li> <p><code>vpc-id</code> - The ID of the VPC in which the
+     * <code>deleting</code> | <code>deleted</code>).</p> </li> <li> <p>
+     * <code>subnet-id</code> - The ID of the subnet in which the NAT gateway
+     * resides.</p> </li> <li> <p> <code>vpc-id</code> - The ID of the VPC in which the
      * NAT gateway resides.</p> </li> </ul>
      */
     inline DescribeNatGatewaysRequest& WithFilter(const Aws::Vector<Filter>& value) { SetFilter(value); return *this;}
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p><code>nat-gateway-id</code> - The ID of
-     * the NAT gateway.</p> </li> <li> <p><code>state</code> - The state of the NAT
+     * <p>One or more filters.</p> <ul> <li> <p> <code>nat-gateway-id</code> - The ID
+     * of the NAT gateway.</p> </li> <li> <p> <code>state</code> - The state of the NAT
      * gateway (<code>pending</code> | <code>failed</code> | <code>available</code> |
-     * <code>deleting</code> | <code>deleted</code>).</p> </li> <li>
-     * <p><code>subnet-id</code> - The ID of the subnet in which the NAT gateway
-     * resides.</p> </li> <li> <p><code>vpc-id</code> - The ID of the VPC in which the
+     * <code>deleting</code> | <code>deleted</code>).</p> </li> <li> <p>
+     * <code>subnet-id</code> - The ID of the subnet in which the NAT gateway
+     * resides.</p> </li> <li> <p> <code>vpc-id</code> - The ID of the VPC in which the
      * NAT gateway resides.</p> </li> </ul>
      */
     inline DescribeNatGatewaysRequest& WithFilter(Aws::Vector<Filter>&& value) { SetFilter(value); return *this;}
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p><code>nat-gateway-id</code> - The ID of
-     * the NAT gateway.</p> </li> <li> <p><code>state</code> - The state of the NAT
+     * <p>One or more filters.</p> <ul> <li> <p> <code>nat-gateway-id</code> - The ID
+     * of the NAT gateway.</p> </li> <li> <p> <code>state</code> - The state of the NAT
      * gateway (<code>pending</code> | <code>failed</code> | <code>available</code> |
-     * <code>deleting</code> | <code>deleted</code>).</p> </li> <li>
-     * <p><code>subnet-id</code> - The ID of the subnet in which the NAT gateway
-     * resides.</p> </li> <li> <p><code>vpc-id</code> - The ID of the VPC in which the
+     * <code>deleting</code> | <code>deleted</code>).</p> </li> <li> <p>
+     * <code>subnet-id</code> - The ID of the subnet in which the NAT gateway
+     * resides.</p> </li> <li> <p> <code>vpc-id</code> - The ID of the VPC in which the
      * NAT gateway resides.</p> </li> </ul>
      */
     inline DescribeNatGatewaysRequest& AddFilter(const Filter& value) { m_filterHasBeenSet = true; m_filter.push_back(value); return *this; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p><code>nat-gateway-id</code> - The ID of
-     * the NAT gateway.</p> </li> <li> <p><code>state</code> - The state of the NAT
+     * <p>One or more filters.</p> <ul> <li> <p> <code>nat-gateway-id</code> - The ID
+     * of the NAT gateway.</p> </li> <li> <p> <code>state</code> - The state of the NAT
      * gateway (<code>pending</code> | <code>failed</code> | <code>available</code> |
-     * <code>deleting</code> | <code>deleted</code>).</p> </li> <li>
-     * <p><code>subnet-id</code> - The ID of the subnet in which the NAT gateway
-     * resides.</p> </li> <li> <p><code>vpc-id</code> - The ID of the VPC in which the
+     * <code>deleting</code> | <code>deleted</code>).</p> </li> <li> <p>
+     * <code>subnet-id</code> - The ID of the subnet in which the NAT gateway
+     * resides.</p> </li> <li> <p> <code>vpc-id</code> - The ID of the VPC in which the
      * NAT gateway resides.</p> </li> </ul>
      */
     inline DescribeNatGatewaysRequest& AddFilter(Filter&& value) { m_filterHasBeenSet = true; m_filter.push_back(value); return *this; }

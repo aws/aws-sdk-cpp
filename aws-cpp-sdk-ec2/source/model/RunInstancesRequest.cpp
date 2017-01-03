@@ -44,6 +44,9 @@ RunInstancesRequest::RunInstancesRequest() :
     m_instanceInitiatedShutdownBehavior(ShutdownBehavior::NOT_SET),
     m_instanceInitiatedShutdownBehaviorHasBeenSet(false),
     m_privateIpAddressHasBeenSet(false),
+    m_ipv6AddressesHasBeenSet(false),
+    m_ipv6AddressCount(0),
+    m_ipv6AddressCountHasBeenSet(false),
     m_clientTokenHasBeenSet(false),
     m_additionalInfoHasBeenSet(false),
     m_networkInterfacesHasBeenSet(false),
@@ -164,6 +167,21 @@ Aws::String RunInstancesRequest::SerializePayload() const
     ss << "PrivateIpAddress=" << StringUtils::URLEncode(m_privateIpAddress.c_str()) << "&";
   }
 
+  if(m_ipv6AddressesHasBeenSet)
+  {
+    unsigned ipv6AddressesCount = 1;
+    for(auto& item : m_ipv6Addresses)
+    {
+      item.OutputToStream(ss, "Ipv6Address.", ipv6AddressesCount, "");
+      ipv6AddressesCount++;
+    }
+  }
+
+  if(m_ipv6AddressCountHasBeenSet)
+  {
+    ss << "Ipv6AddressCount=" << m_ipv6AddressCount << "&";
+  }
+
   if(m_clientTokenHasBeenSet)
   {
     ss << "ClientToken=" << StringUtils::URLEncode(m_clientToken.c_str()) << "&";
@@ -194,7 +212,7 @@ Aws::String RunInstancesRequest::SerializePayload() const
     ss << "EbsOptimized=" << m_ebsOptimized << "&";
   }
 
-  ss << "Version=2015-10-01";
+  ss << "Version=2016-11-15";
   return ss.str();
 }
 

@@ -38,7 +38,9 @@ namespace Model
 {
   /**
    * <p>Represents the output of a <code>GetDataSource</code> operation and describes
-   * a <code>DataSource</code>.</p>
+   * a <code>DataSource</code>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/GetDataSourceOutput">AWS
+   * API Reference</a></p>
    */
   class AWS_MACHINELEARNING_API GetDataSourceResult
   {

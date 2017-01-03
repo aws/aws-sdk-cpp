@@ -32,7 +32,7 @@ namespace Model
 LifecycleRule::LifecycleRule() : 
     m_expirationHasBeenSet(false),
     m_iDHasBeenSet(false),
-    m_prefixHasBeenSet(false),
+    m_filterHasBeenSet(false),
     m_status(ExpirationStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_transitionsHasBeenSet(false),
@@ -45,7 +45,7 @@ LifecycleRule::LifecycleRule() :
 LifecycleRule::LifecycleRule(const XmlNode& xmlNode) : 
     m_expirationHasBeenSet(false),
     m_iDHasBeenSet(false),
-    m_prefixHasBeenSet(false),
+    m_filterHasBeenSet(false),
     m_status(ExpirationStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_transitionsHasBeenSet(false),
@@ -74,11 +74,11 @@ LifecycleRule& LifecycleRule::operator =(const XmlNode& xmlNode)
       m_iD = StringUtils::Trim(iDNode.GetText().c_str());
       m_iDHasBeenSet = true;
     }
-    XmlNode prefixNode = resultNode.FirstChild("Prefix");
-    if(!prefixNode.IsNull())
+    XmlNode filterNode = resultNode.FirstChild("Filter");
+    if(!filterNode.IsNull())
     {
-      m_prefix = StringUtils::Trim(prefixNode.GetText().c_str());
-      m_prefixHasBeenSet = true;
+      m_filter = filterNode;
+      m_filterHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
@@ -142,10 +142,10 @@ void LifecycleRule::AddToNode(XmlNode& parentNode) const
    iDNode.SetText(m_iD);
   }
 
-  if(m_prefixHasBeenSet)
+  if(m_filterHasBeenSet)
   {
-   XmlNode prefixNode = parentNode.CreateChildElement("Prefix");
-   prefixNode.SetText(m_prefix);
+   XmlNode filterNode = parentNode.CreateChildElement("Filter");
+   m_filter.AddToNode(filterNode);
   }
 
   if(m_statusHasBeenSet)
@@ -174,7 +174,7 @@ void LifecycleRule::AddToNode(XmlNode& parentNode) const
 
   if(m_noncurrentVersionExpirationHasBeenSet)
   {
-   XmlNode noncurrentVersionExpirationNode = parentNode.CreateChildElement("NoncurrentVersionTransition");
+   XmlNode noncurrentVersionExpirationNode = parentNode.CreateChildElement("NoncurrentVersionExpiration");
    m_noncurrentVersionExpiration.AddToNode(noncurrentVersionExpirationNode);
   }
 

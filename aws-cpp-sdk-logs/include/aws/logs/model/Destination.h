@@ -32,7 +32,9 @@ namespace Model
 
   /**
    * <p>Represents a cross-account destination that receives subscription log
-   * events.</p>
+   * events.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/Destination">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDWATCHLOGS_API Destination
   {

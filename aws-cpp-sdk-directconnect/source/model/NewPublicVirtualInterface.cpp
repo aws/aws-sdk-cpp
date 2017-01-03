@@ -36,6 +36,8 @@ NewPublicVirtualInterface::NewPublicVirtualInterface() :
     m_authKeyHasBeenSet(false),
     m_amazonAddressHasBeenSet(false),
     m_customerAddressHasBeenSet(false),
+    m_addressFamily(AddressFamily::NOT_SET),
+    m_addressFamilyHasBeenSet(false),
     m_routeFilterPrefixesHasBeenSet(false)
 {
 }
@@ -49,6 +51,8 @@ NewPublicVirtualInterface::NewPublicVirtualInterface(const JsonValue& jsonValue)
     m_authKeyHasBeenSet(false),
     m_amazonAddressHasBeenSet(false),
     m_customerAddressHasBeenSet(false),
+    m_addressFamily(AddressFamily::NOT_SET),
+    m_addressFamilyHasBeenSet(false),
     m_routeFilterPrefixesHasBeenSet(false)
 {
   *this = jsonValue;
@@ -96,6 +100,13 @@ NewPublicVirtualInterface& NewPublicVirtualInterface::operator =(const JsonValue
     m_customerAddress = jsonValue.GetString("customerAddress");
 
     m_customerAddressHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("addressFamily"))
+  {
+    m_addressFamily = AddressFamilyMapper::GetAddressFamilyForName(jsonValue.GetString("addressFamily"));
+
+    m_addressFamilyHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("routeFilterPrefixes"))
@@ -149,6 +160,11 @@ JsonValue NewPublicVirtualInterface::Jsonize() const
   {
    payload.WithString("customerAddress", m_customerAddress);
 
+  }
+
+  if(m_addressFamilyHasBeenSet)
+  {
+   payload.WithString("addressFamily", AddressFamilyMapper::GetNameForAddressFamily(m_addressFamily));
   }
 
   if(m_routeFilterPrefixesHasBeenSet)

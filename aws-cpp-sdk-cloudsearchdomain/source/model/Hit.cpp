@@ -59,7 +59,8 @@ Hit& Hit::operator =(const JsonValue& jsonValue)
     for(auto& fieldsItem : fieldsJsonMap)
     {
       Array<JsonValue> fieldValueJsonList = fieldsItem.second.AsArray();
-      Aws::Vector<Aws::String> fieldValueList((size_t)fieldValueJsonList.GetLength());
+      Aws::Vector<Aws::String> fieldValueList;
+      fieldValueList.reserve((size_t)fieldValueJsonList.GetLength());
       for(unsigned fieldValueIndex = 0; fieldValueIndex < fieldValueJsonList.GetLength(); ++fieldValueIndex)
       {
         fieldValueList.push_back(fieldValueJsonList[fieldValueIndex].AsString());

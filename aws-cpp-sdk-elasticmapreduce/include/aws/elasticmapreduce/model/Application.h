@@ -46,7 +46,10 @@ namespace Model
    * "--edition,m5" - launch the job flow using MapR M3 or M5 Edition,
    * respectively.</p> </li> </ul> <note> <p>In Amazon EMR releases 4.0 and greater,
    * the only accepted parameter is the application name. To pass arguments to
-   * applications, you supply a configuration for each application.</p> </note>
+   * applications, you supply a configuration for each application.</p>
+   * </note><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/Application">AWS
+   * API Reference</a></p>
    */
   class AWS_EMR_API Application
   {

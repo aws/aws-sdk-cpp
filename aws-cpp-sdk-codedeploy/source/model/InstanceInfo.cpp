@@ -29,6 +29,7 @@ namespace Model
 
 InstanceInfo::InstanceInfo() : 
     m_instanceNameHasBeenSet(false),
+    m_iamSessionArnHasBeenSet(false),
     m_iamUserArnHasBeenSet(false),
     m_instanceArnHasBeenSet(false),
     m_registerTimeHasBeenSet(false),
@@ -39,6 +40,7 @@ InstanceInfo::InstanceInfo() :
 
 InstanceInfo::InstanceInfo(const JsonValue& jsonValue) : 
     m_instanceNameHasBeenSet(false),
+    m_iamSessionArnHasBeenSet(false),
     m_iamUserArnHasBeenSet(false),
     m_instanceArnHasBeenSet(false),
     m_registerTimeHasBeenSet(false),
@@ -55,6 +57,13 @@ InstanceInfo& InstanceInfo::operator =(const JsonValue& jsonValue)
     m_instanceName = jsonValue.GetString("instanceName");
 
     m_instanceNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("iamSessionArn"))
+  {
+    m_iamSessionArn = jsonValue.GetString("iamSessionArn");
+
+    m_iamSessionArnHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("iamUserArn"))
@@ -105,6 +114,12 @@ JsonValue InstanceInfo::Jsonize() const
   if(m_instanceNameHasBeenSet)
   {
    payload.WithString("instanceName", m_instanceName);
+
+  }
+
+  if(m_iamSessionArnHasBeenSet)
+  {
+   payload.WithString("iamSessionArn", m_iamSessionArn);
 
   }
 

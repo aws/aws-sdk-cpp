@@ -34,7 +34,10 @@ namespace IoT
 namespace Model
 {
   /**
-   * <p>The output from the GetLoggingOptions operation.</p>
+   * <p>The output from the GetLoggingOptions operation.</p><p><h3>See Also:</h3>  
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetLoggingOptionsResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_IOT_API GetLoggingOptionsResult
   {

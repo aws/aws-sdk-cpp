@@ -31,7 +31,9 @@ namespace Model
 {
 
   /**
-   * <p>Represents a log event.</p>
+   * <p>Represents a log event.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/OutputLogEvent">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDWATCHLOGS_API OutputLogEvent
   {
@@ -42,17 +44,20 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p>The time the event occurred.</p>
+     * <p>The time the event occurred, expressed as the number of milliseconds since
+     * Jan 1, 1970 00:00:00 UTC.</p>
      */
     inline long long GetTimestamp() const{ return m_timestamp; }
 
     /**
-     * <p>The time the event occurred.</p>
+     * <p>The time the event occurred, expressed as the number of milliseconds since
+     * Jan 1, 1970 00:00:00 UTC.</p>
      */
     inline void SetTimestamp(long long value) { m_timestampHasBeenSet = true; m_timestamp = value; }
 
     /**
-     * <p>The time the event occurred.</p>
+     * <p>The time the event occurred, expressed as the number of milliseconds since
+     * Jan 1, 1970 00:00:00 UTC.</p>
      */
     inline OutputLogEvent& WithTimestamp(long long value) { SetTimestamp(value); return *this;}
 

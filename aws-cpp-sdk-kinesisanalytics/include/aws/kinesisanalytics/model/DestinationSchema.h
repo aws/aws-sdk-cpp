@@ -34,7 +34,9 @@ namespace Model
    * <p>Describes the data format when records are written to the destination. For
    * more information, see <a
    * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring
-   * Application Output</a>. </p>
+   * Application Output</a>. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/DestinationSchema">AWS
+   * API Reference</a></p>
    */
   class AWS_KINESISANALYTICS_API DestinationSchema
   {

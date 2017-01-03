@@ -35,7 +35,10 @@ namespace Model
    * to send or receive traffic. Port mappings are specified as part of the container
    * definition. After a task reaches the <code>RUNNING</code> status, manual and
    * automatic host and container port assignments are visible in the
-   * <code>networkBindings</code> section of <a>DescribeTasks</a> API responses.</p>
+   * <code>networkBindings</code> section of <a>DescribeTasks</a> API
+   * responses.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PortMapping">AWS API
+   * Reference</a></p>
    */
   class AWS_ECS_API PortMapping
   {

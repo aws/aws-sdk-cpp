@@ -35,7 +35,9 @@ namespace EC2
 namespace Model
 {
   /**
-   * <p>Contains the output of AllocateHosts.</p>
+   * <p>Contains the output of AllocateHosts.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AllocateHostsResult">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API AllocateHostsResponse
   {
@@ -45,49 +47,49 @@ namespace Model
     AllocateHostsResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
     /**
-     * <p>The ID of the allocated Dedicated host. This is used when you want to launch
+     * <p>The ID of the allocated Dedicated Host. This is used when you want to launch
      * an instance onto a specific host.</p>
      */
     inline const Aws::Vector<Aws::String>& GetHostIds() const{ return m_hostIds; }
 
     /**
-     * <p>The ID of the allocated Dedicated host. This is used when you want to launch
+     * <p>The ID of the allocated Dedicated Host. This is used when you want to launch
      * an instance onto a specific host.</p>
      */
     inline void SetHostIds(const Aws::Vector<Aws::String>& value) { m_hostIds = value; }
 
     /**
-     * <p>The ID of the allocated Dedicated host. This is used when you want to launch
+     * <p>The ID of the allocated Dedicated Host. This is used when you want to launch
      * an instance onto a specific host.</p>
      */
     inline void SetHostIds(Aws::Vector<Aws::String>&& value) { m_hostIds = value; }
 
     /**
-     * <p>The ID of the allocated Dedicated host. This is used when you want to launch
+     * <p>The ID of the allocated Dedicated Host. This is used when you want to launch
      * an instance onto a specific host.</p>
      */
     inline AllocateHostsResponse& WithHostIds(const Aws::Vector<Aws::String>& value) { SetHostIds(value); return *this;}
 
     /**
-     * <p>The ID of the allocated Dedicated host. This is used when you want to launch
+     * <p>The ID of the allocated Dedicated Host. This is used when you want to launch
      * an instance onto a specific host.</p>
      */
     inline AllocateHostsResponse& WithHostIds(Aws::Vector<Aws::String>&& value) { SetHostIds(value); return *this;}
 
     /**
-     * <p>The ID of the allocated Dedicated host. This is used when you want to launch
+     * <p>The ID of the allocated Dedicated Host. This is used when you want to launch
      * an instance onto a specific host.</p>
      */
     inline AllocateHostsResponse& AddHostIds(const Aws::String& value) { m_hostIds.push_back(value); return *this; }
 
     /**
-     * <p>The ID of the allocated Dedicated host. This is used when you want to launch
+     * <p>The ID of the allocated Dedicated Host. This is used when you want to launch
      * an instance onto a specific host.</p>
      */
     inline AllocateHostsResponse& AddHostIds(Aws::String&& value) { m_hostIds.push_back(value); return *this; }
 
     /**
-     * <p>The ID of the allocated Dedicated host. This is used when you want to launch
+     * <p>The ID of the allocated Dedicated Host. This is used when you want to launch
      * an instance onto a specific host.</p>
      */
     inline AllocateHostsResponse& AddHostIds(const char* value) { m_hostIds.push_back(value); return *this; }

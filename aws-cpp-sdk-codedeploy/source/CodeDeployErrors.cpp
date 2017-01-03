@@ -33,10 +33,12 @@ static const int TAG_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("TagLimitExc
 static const int INSTANCE_DOES_NOT_EXIST_HASH = HashingUtils::HashString("InstanceDoesNotExistException");
 static const int APPLICATION_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ApplicationLimitExceededException");
 static const int INVALID_MINIMUM_HEALTHY_HOST_VALUE_HASH = HashingUtils::HashString("InvalidMinimumHealthyHostValueException");
+static const int MULTIPLE_IAM_ARNS_PROVIDED_HASH = HashingUtils::HashString("MultipleIamArnsProvidedException");
 static const int DEPLOYMENT_NOT_STARTED_HASH = HashingUtils::HashString("DeploymentNotStartedException");
 static const int INVALID_REGISTRATION_STATUS_HASH = HashingUtils::HashString("InvalidRegistrationStatusException");
 static const int INSTANCE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("InstanceLimitExceededException");
 static const int REVISION_REQUIRED_HASH = HashingUtils::HashString("RevisionRequiredException");
+static const int IAM_ARN_REQUIRED_HASH = HashingUtils::HashString("IamArnRequiredException");
 static const int INVALID_ROLE_HASH = HashingUtils::HashString("InvalidRoleException");
 static const int APPLICATION_NAME_REQUIRED_HASH = HashingUtils::HashString("ApplicationNameRequiredException");
 static const int INVALID_REVISION_HASH = HashingUtils::HashString("InvalidRevisionException");
@@ -50,6 +52,7 @@ static const int IAM_USER_ARN_ALREADY_REGISTERED_HASH = HashingUtils::HashString
 static const int DEPLOYMENT_GROUP_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("DeploymentGroupLimitExceededException");
 static const int INVALID_NEXT_TOKEN_HASH = HashingUtils::HashString("InvalidNextTokenException");
 static const int INVALID_INSTANCE_NAME_HASH = HashingUtils::HashString("InvalidInstanceNameException");
+static const int INVALID_IAM_SESSION_ARN_HASH = HashingUtils::HashString("InvalidIamSessionArnException");
 static const int BATCH_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("BatchLimitExceededException");
 static const int DEPLOYMENT_CONFIG_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("DeploymentConfigLimitExceededException");
 static const int INVALID_SORT_ORDER_HASH = HashingUtils::HashString("InvalidSortOrderException");
@@ -61,6 +64,7 @@ static const int INVALID_DEPLOYED_STATE_FILTER_HASH = HashingUtils::HashString("
 static const int INVALID_ALARM_CONFIG_HASH = HashingUtils::HashString("InvalidAlarmConfigException");
 static const int INVALID_INSTANCE_STATUS_HASH = HashingUtils::HashString("InvalidInstanceStatusException");
 static const int REVISION_DOES_NOT_EXIST_HASH = HashingUtils::HashString("RevisionDoesNotExistException");
+static const int IAM_SESSION_ARN_ALREADY_REGISTERED_HASH = HashingUtils::HashString("IamSessionArnAlreadyRegisteredException");
 static const int INVALID_TRIGGER_CONFIG_HASH = HashingUtils::HashString("InvalidTriggerConfigException");
 static const int INVALID_DEPLOYMENT_GROUP_NAME_HASH = HashingUtils::HashString("InvalidDeploymentGroupNameException");
 static const int DEPLOYMENT_CONFIG_NAME_REQUIRED_HASH = HashingUtils::HashString("DeploymentConfigNameRequiredException");
@@ -121,6 +125,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::INVALID_MINIMUM_HEALTHY_HOST_VALUE), false);
   }
+  else if (hashCode == MULTIPLE_IAM_ARNS_PROVIDED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::MULTIPLE_IAM_ARNS_PROVIDED), false);
+  }
   else if (hashCode == DEPLOYMENT_NOT_STARTED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::DEPLOYMENT_NOT_STARTED), false);
@@ -136,6 +144,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == REVISION_REQUIRED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::REVISION_REQUIRED), false);
+  }
+  else if (hashCode == IAM_ARN_REQUIRED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::IAM_ARN_REQUIRED), false);
   }
   else if (hashCode == INVALID_ROLE_HASH)
   {
@@ -189,6 +201,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::INVALID_INSTANCE_NAME), false);
   }
+  else if (hashCode == INVALID_IAM_SESSION_ARN_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::INVALID_IAM_SESSION_ARN), false);
+  }
   else if (hashCode == BATCH_LIMIT_EXCEEDED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::BATCH_LIMIT_EXCEEDED), false);
@@ -232,6 +248,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == REVISION_DOES_NOT_EXIST_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::REVISION_DOES_NOT_EXIST), false);
+  }
+  else if (hashCode == IAM_SESSION_ARN_ALREADY_REGISTERED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::IAM_SESSION_ARN_ALREADY_REGISTERED), false);
   }
   else if (hashCode == INVALID_TRIGGER_CONFIG_HASH)
   {

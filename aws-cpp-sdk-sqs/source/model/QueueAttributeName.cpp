@@ -43,6 +43,8 @@ namespace Aws
         static const int DelaySeconds_HASH = HashingUtils::HashString("DelaySeconds");
         static const int ReceiveMessageWaitTimeSeconds_HASH = HashingUtils::HashString("ReceiveMessageWaitTimeSeconds");
         static const int RedrivePolicy_HASH = HashingUtils::HashString("RedrivePolicy");
+        static const int FifoQueue_HASH = HashingUtils::HashString("FifoQueue");
+        static const int ContentBasedDeduplication_HASH = HashingUtils::HashString("ContentBasedDeduplication");
         static const int SentTimestamp_HASH = HashingUtils::HashString("SentTimestamp");
         static const int ApproximateFirstReceiveTimestamp_HASH = HashingUtils::HashString("ApproximateFirstReceiveTimestamp");
         static const int ApproximateReceiveCount_HASH = HashingUtils::HashString("ApproximateReceiveCount");
@@ -108,6 +110,14 @@ namespace Aws
           {
             return QueueAttributeName::RedrivePolicy;
           }
+          else if (hashCode == FifoQueue_HASH)
+          {
+            return QueueAttributeName::FifoQueue;
+          }
+          else if (hashCode == ContentBasedDeduplication_HASH)
+          {
+            return QueueAttributeName::ContentBasedDeduplication;
+          }
           else if (hashCode == SentTimestamp_HASH)
           {
             return QueueAttributeName::SentTimestamp;
@@ -166,6 +176,10 @@ namespace Aws
             return "ReceiveMessageWaitTimeSeconds";
           case QueueAttributeName::RedrivePolicy:
             return "RedrivePolicy";
+          case QueueAttributeName::FifoQueue:
+            return "FifoQueue";
+          case QueueAttributeName::ContentBasedDeduplication:
+            return "ContentBasedDeduplication";
           case QueueAttributeName::SentTimestamp:
             return "SentTimestamp";
           case QueueAttributeName::ApproximateFirstReceiveTimestamp:

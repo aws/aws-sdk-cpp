@@ -33,7 +33,9 @@ namespace Model
 
   /**
    * <p>Contains information about a resource identified by a Trusted Advisor
-   * check.</p>
+   * check.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/TrustedAdvisorResourceDetail">AWS
+   * API Reference</a></p>
    */
   class AWS_SUPPORT_API TrustedAdvisorResourceDetail
   {

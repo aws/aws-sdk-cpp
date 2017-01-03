@@ -36,7 +36,9 @@ namespace Model
   /**
    * <p>Describes scaling activity, which is a long-running process that represents a
    * change to your Auto Scaling group, such as changing its size or replacing an
-   * instance.</p>
+   * instance.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/Activity">AWS
+   * API Reference</a></p>
    */
   class AWS_AUTOSCALING_API Activity
   {

@@ -37,7 +37,9 @@ namespace Model
   /**
    * <p>Represents a collection of cache nodes in a replication group. One node in
    * the node group is the read/write primary node. All the other nodes are read-only
-   * Replica nodes.</p>
+   * Replica nodes.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/NodeGroup">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICACHE_API NodeGroup
   {

@@ -25,7 +25,10 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input of a <i>ListTables</i> operation.</p>
+   * <p>Represents the input of a <i>ListTables</i> operation.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListTablesInput">AWS
+   * API Reference</a></p>
    */
   class AWS_DYNAMODB_API ListTablesRequest : public DynamoDBRequest
   {

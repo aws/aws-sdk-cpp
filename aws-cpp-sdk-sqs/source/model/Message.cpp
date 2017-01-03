@@ -90,7 +90,7 @@ Message& Message::operator =(const XmlNode& xmlNode)
       {
         XmlNode keyNode = attributeEntry.FirstChild("Name");
         XmlNode valueNode = attributeEntry.FirstChild("Value");
-        m_attributes[QueueAttributeNameMapper::GetQueueAttributeNameForName(StringUtils::Trim(keyNode.GetText().c_str()))] =
+        m_attributes[MessageSystemAttributeNameMapper::GetMessageSystemAttributeNameForName(StringUtils::Trim(keyNode.GetText().c_str()))] =
             StringUtils::Trim(valueNode.GetText().c_str());
         attributeEntry = attributeEntry.NextNode("Attribute");
       }
@@ -151,7 +151,7 @@ void Message::OutputToStream(Aws::OStream& oStream, const char* location, unsign
       for(auto& item : m_attributes)
       {
         oStream << location << index << locationValue << ".Attribute." << attributesIdx << ".Name="
-            << StringUtils::URLEncode(QueueAttributeNameMapper::GetNameForQueueAttributeName(item.first).c_str()) << "&";
+            << StringUtils::URLEncode(MessageSystemAttributeNameMapper::GetNameForMessageSystemAttributeName(item.first).c_str()) << "&";
         oStream << location << index << locationValue << ".Attribute." << attributesIdx << ".Value="
             << StringUtils::URLEncode(item.second.c_str()) << "&";
         attributesIdx++;
@@ -203,7 +203,7 @@ void Message::OutputToStream(Aws::OStream& oStream, const char* location) const
       for(auto& item : m_attributes)
       {
         oStream << location << ".Attribute."  << attributesIdx << ".Name="
-            << StringUtils::URLEncode(QueueAttributeNameMapper::GetNameForQueueAttributeName(item.first).c_str()) << "&";
+            << StringUtils::URLEncode(MessageSystemAttributeNameMapper::GetNameForMessageSystemAttributeName(item.first).c_str()) << "&";
         oStream << location <<  ".Attribute." << attributesIdx << ".Value="
             << StringUtils::URLEncode(item.second.c_str()) << "&";
         attributesIdx++;

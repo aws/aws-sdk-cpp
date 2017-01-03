@@ -32,7 +32,9 @@ namespace SWF
 namespace Model
 {
   /**
-   * <p>Status information about an activity task.</p>
+   * <p>Status information about an activity task.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ActivityTaskStatus">AWS
+   * API Reference</a></p>
    */
   class AWS_SWF_API RecordActivityTaskHeartbeatResult
   {

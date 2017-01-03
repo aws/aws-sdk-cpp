@@ -34,7 +34,9 @@ namespace SES
 namespace Model
 {
   /**
-   * <p>Represents a unique message ID.</p>
+   * <p>Represents a unique message ID.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SendEmailResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_SES_API SendEmailResult
   {

@@ -39,7 +39,9 @@ namespace Model
    * viewer requests for logo.jpg contain a custom Product header that has a value of
    * either Acme or Apex, and you configure CloudFront to vary on the Product header.
    * CloudFront forwards the Product header to the origin and caches the response
-   * from the origin once for each header value.
+   * from the origin once for each header value.<p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/Headers">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API Headers
   {

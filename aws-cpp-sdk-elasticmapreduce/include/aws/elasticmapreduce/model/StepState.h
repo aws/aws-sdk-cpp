@@ -26,6 +26,7 @@ namespace Model
   {
     NOT_SET,
     PENDING,
+    CANCEL_PENDING,
     RUNNING,
     COMPLETED,
     CANCELLED,

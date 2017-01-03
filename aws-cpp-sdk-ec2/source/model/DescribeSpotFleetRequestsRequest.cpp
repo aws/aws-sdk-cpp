@@ -32,7 +32,7 @@ DescribeSpotFleetRequestsRequest::DescribeSpotFleetRequestsRequest() :
 Aws::String DescribeSpotFleetRequestsRequest::SerializePayload() const
 {
   Aws::StringStream ss;
-  ss << "Action=DescribeSpotFleets&";
+  ss << "Action=DescribeSpotFleetRequests&";
   if(m_dryRunHasBeenSet)
   {
     ss << "DryRun=" << m_dryRun << "&";
@@ -59,7 +59,7 @@ Aws::String DescribeSpotFleetRequestsRequest::SerializePayload() const
     ss << "MaxResults=" << m_maxResults << "&";
   }
 
-  ss << "Version=2015-10-01";
+  ss << "Version=2016-11-15";
   return ss.str();
 }
 

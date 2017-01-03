@@ -33,7 +33,9 @@ namespace Model
 
   /**
    * <p> Describes the record format and relevant mapping information that should be
-   * applied to schematize the records on the stream. </p>
+   * applied to schematize the records on the stream. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/RecordFormat">AWS
+   * API Reference</a></p>
    */
   class AWS_KINESISANALYTICS_API RecordFormat
   {

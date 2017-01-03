@@ -204,14 +204,18 @@ namespace Model
         /**
          * <p>Adds or overwrites one or more tags for the specified AWS CloudHSM
          * resource.</p> <p>Each tag consists of a key and a value. Tag keys must be unique
-         * to each resource.</p>
+         * to each resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/AddTagsToResource">AWS
+         * API Reference</a></p>
          */
         virtual Model::AddTagsToResourceOutcome AddTagsToResource(const Model::AddTagsToResourceRequest& request) const;
 
         /**
          * <p>Adds or overwrites one or more tags for the specified AWS CloudHSM
          * resource.</p> <p>Each tag consists of a key and a value. Tag keys must be unique
-         * to each resource.</p>
+         * to each resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/AddTagsToResource">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -220,7 +224,9 @@ namespace Model
         /**
          * <p>Adds or overwrites one or more tags for the specified AWS CloudHSM
          * resource.</p> <p>Each tag consists of a key and a value. Tag keys must be unique
-         * to each resource.</p>
+         * to each resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/AddTagsToResource">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -228,13 +234,19 @@ namespace Model
 
         /**
          * <p>Creates a high-availability partition group. A high-availability partition
-         * group is a group of partitions that spans multiple physical HSMs.</p>
+         * group is a group of partitions that spans multiple physical HSMs.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/CreateHapg">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateHapgOutcome CreateHapg(const Model::CreateHapgRequest& request) const;
 
         /**
          * <p>Creates a high-availability partition group. A high-availability partition
-         * group is a group of partitions that spans multiple physical HSMs.</p>
+         * group is a group of partitions that spans multiple physical HSMs.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/CreateHapg">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -242,7 +254,10 @@ namespace Model
 
         /**
          * <p>Creates a high-availability partition group. A high-availability partition
-         * group is a group of partitions that spans multiple physical HSMs.</p>
+         * group is a group of partitions that spans multiple physical HSMs.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/CreateHapg">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -258,7 +273,9 @@ namespace Model
          * <important> <p>It can take up to 20 minutes to create and provision an HSM. You
          * can monitor the status of the HSM with the <a>DescribeHsm</a> operation. The HSM
          * is ready to be initialized when the status changes to <code>RUNNING</code>.</p>
-         * </important>
+         * </important><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/CreateHsm">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateHsmOutcome CreateHsm(const Model::CreateHsmRequest& request) const;
 
@@ -272,7 +289,9 @@ namespace Model
          * <important> <p>It can take up to 20 minutes to create and provision an HSM. You
          * can monitor the status of the HSM with the <a>DescribeHsm</a> operation. The HSM
          * is ready to be initialized when the status changes to <code>RUNNING</code>.</p>
-         * </important>
+         * </important><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/CreateHsm">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -288,45 +307,59 @@ namespace Model
          * <important> <p>It can take up to 20 minutes to create and provision an HSM. You
          * can monitor the status of the HSM with the <a>DescribeHsm</a> operation. The HSM
          * is ready to be initialized when the status changes to <code>RUNNING</code>.</p>
-         * </important>
+         * </important><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/CreateHsm">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateHsmAsync(const Model::CreateHsmRequest& request, const CreateHsmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates an HSM client.</p>
+         * <p>Creates an HSM client.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/CreateLunaClient">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateLunaClientOutcome CreateLunaClient(const Model::CreateLunaClientRequest& request) const;
 
         /**
-         * <p>Creates an HSM client.</p>
+         * <p>Creates an HSM client.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/CreateLunaClient">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateLunaClientOutcomeCallable CreateLunaClientCallable(const Model::CreateLunaClientRequest& request) const;
 
         /**
-         * <p>Creates an HSM client.</p>
+         * <p>Creates an HSM client.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/CreateLunaClient">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateLunaClientAsync(const Model::CreateLunaClientRequest& request, const CreateLunaClientResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a high-availability partition group.</p>
+         * <p>Deletes a high-availability partition group.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DeleteHapg">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteHapgOutcome DeleteHapg(const Model::DeleteHapgRequest& request) const;
 
         /**
-         * <p>Deletes a high-availability partition group.</p>
+         * <p>Deletes a high-availability partition group.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DeleteHapg">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteHapgOutcomeCallable DeleteHapgCallable(const Model::DeleteHapgRequest& request) const;
 
         /**
-         * <p>Deletes a high-availability partition group.</p>
+         * <p>Deletes a high-availability partition group.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DeleteHapg">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -334,13 +367,17 @@ namespace Model
 
         /**
          * <p>Deletes an HSM. After completion, this operation cannot be undone and your
-         * key material cannot be recovered.</p>
+         * key material cannot be recovered.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DeleteHsm">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteHsmOutcome DeleteHsm(const Model::DeleteHsmRequest& request) const;
 
         /**
          * <p>Deletes an HSM. After completion, this operation cannot be undone and your
-         * key material cannot be recovered.</p>
+         * key material cannot be recovered.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DeleteHsm">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -348,45 +385,62 @@ namespace Model
 
         /**
          * <p>Deletes an HSM. After completion, this operation cannot be undone and your
-         * key material cannot be recovered.</p>
+         * key material cannot be recovered.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DeleteHsm">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteHsmAsync(const Model::DeleteHsmRequest& request, const DeleteHsmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a client.</p>
+         * <p>Deletes a client.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DeleteLunaClient">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteLunaClientOutcome DeleteLunaClient(const Model::DeleteLunaClientRequest& request) const;
 
         /**
-         * <p>Deletes a client.</p>
+         * <p>Deletes a client.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DeleteLunaClient">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteLunaClientOutcomeCallable DeleteLunaClientCallable(const Model::DeleteLunaClientRequest& request) const;
 
         /**
-         * <p>Deletes a client.</p>
+         * <p>Deletes a client.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DeleteLunaClient">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteLunaClientAsync(const Model::DeleteLunaClientRequest& request, const DeleteLunaClientResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves information about a high-availability partition group.</p>
+         * <p>Retrieves information about a high-availability partition
+         * group.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DescribeHapg">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeHapgOutcome DescribeHapg(const Model::DescribeHapgRequest& request) const;
 
         /**
-         * <p>Retrieves information about a high-availability partition group.</p>
+         * <p>Retrieves information about a high-availability partition
+         * group.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DescribeHapg">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeHapgOutcomeCallable DescribeHapgCallable(const Model::DescribeHapgRequest& request) const;
 
         /**
-         * <p>Retrieves information about a high-availability partition group.</p>
+         * <p>Retrieves information about a high-availability partition
+         * group.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DescribeHapg">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -394,13 +448,17 @@ namespace Model
 
         /**
          * <p>Retrieves information about an HSM. You can identify the HSM by its ARN or
-         * its serial number.</p>
+         * its serial number.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DescribeHsm">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeHsmOutcome DescribeHsm(const Model::DescribeHsmRequest& request) const;
 
         /**
          * <p>Retrieves information about an HSM. You can identify the HSM by its ARN or
-         * its serial number.</p>
+         * its serial number.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DescribeHsm">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -408,26 +466,34 @@ namespace Model
 
         /**
          * <p>Retrieves information about an HSM. You can identify the HSM by its ARN or
-         * its serial number.</p>
+         * its serial number.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DescribeHsm">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeHsmAsync(const Model::DescribeHsmRequest& request, const DescribeHsmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves information about an HSM client.</p>
+         * <p>Retrieves information about an HSM client.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DescribeLunaClient">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeLunaClientOutcome DescribeLunaClient(const Model::DescribeLunaClientRequest& request) const;
 
         /**
-         * <p>Retrieves information about an HSM client.</p>
+         * <p>Retrieves information about an HSM client.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DescribeLunaClient">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeLunaClientOutcomeCallable DescribeLunaClientCallable(const Model::DescribeLunaClientRequest& request) const;
 
         /**
-         * <p>Retrieves information about an HSM client.</p>
+         * <p>Retrieves information about an HSM client.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DescribeLunaClient">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -435,13 +501,17 @@ namespace Model
 
         /**
          * <p>Gets the configuration files necessary to connect to all high availability
-         * partition groups the client is associated with.</p>
+         * partition groups the client is associated with.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/GetConfig">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetConfigOutcome GetConfig(const Model::GetConfigRequest& request) const;
 
         /**
          * <p>Gets the configuration files necessary to connect to all high availability
-         * partition groups the client is associated with.</p>
+         * partition groups the client is associated with.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/GetConfig">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -449,26 +519,37 @@ namespace Model
 
         /**
          * <p>Gets the configuration files necessary to connect to all high availability
-         * partition groups the client is associated with.</p>
+         * partition groups the client is associated with.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/GetConfig">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetConfigAsync(const Model::GetConfigRequest& request, const GetConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the Availability Zones that have available AWS CloudHSM capacity.</p>
+         * <p>Lists the Availability Zones that have available AWS CloudHSM
+         * capacity.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListAvailableZones">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListAvailableZonesOutcome ListAvailableZones(const Model::ListAvailableZonesRequest& request) const;
 
         /**
-         * <p>Lists the Availability Zones that have available AWS CloudHSM capacity.</p>
+         * <p>Lists the Availability Zones that have available AWS CloudHSM
+         * capacity.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListAvailableZones">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListAvailableZonesOutcomeCallable ListAvailableZonesCallable(const Model::ListAvailableZonesRequest& request) const;
 
         /**
-         * <p>Lists the Availability Zones that have available AWS CloudHSM capacity.</p>
+         * <p>Lists the Availability Zones that have available AWS CloudHSM
+         * capacity.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListAvailableZones">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -479,7 +560,9 @@ namespace Model
          * operation supports pagination with the use of the <i>NextToken</i> member. If
          * more results are available, the <i>NextToken</i> member of the response contains
          * a token that you pass in the next call to <a>ListHapgs</a> to retrieve the next
-         * set of items.</p>
+         * set of items.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListHapgs">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListHapgsOutcome ListHapgs(const Model::ListHapgsRequest& request) const;
 
@@ -488,7 +571,9 @@ namespace Model
          * operation supports pagination with the use of the <i>NextToken</i> member. If
          * more results are available, the <i>NextToken</i> member of the response contains
          * a token that you pass in the next call to <a>ListHapgs</a> to retrieve the next
-         * set of items.</p>
+         * set of items.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListHapgs">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -499,7 +584,9 @@ namespace Model
          * operation supports pagination with the use of the <i>NextToken</i> member. If
          * more results are available, the <i>NextToken</i> member of the response contains
          * a token that you pass in the next call to <a>ListHapgs</a> to retrieve the next
-         * set of items.</p>
+         * set of items.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListHapgs">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -510,7 +597,9 @@ namespace Model
          * customer.</p> <p>This operation supports pagination with the use of the
          * <i>NextToken</i> member. If more results are available, the <i>NextToken</i>
          * member of the response contains a token that you pass in the next call to
-         * <a>ListHsms</a> to retrieve the next set of items.</p>
+         * <a>ListHsms</a> to retrieve the next set of items.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListHsms">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListHsmsOutcome ListHsms(const Model::ListHsmsRequest& request) const;
 
@@ -519,7 +608,9 @@ namespace Model
          * customer.</p> <p>This operation supports pagination with the use of the
          * <i>NextToken</i> member. If more results are available, the <i>NextToken</i>
          * member of the response contains a token that you pass in the next call to
-         * <a>ListHsms</a> to retrieve the next set of items.</p>
+         * <a>ListHsms</a> to retrieve the next set of items.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListHsms">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -530,7 +621,9 @@ namespace Model
          * customer.</p> <p>This operation supports pagination with the use of the
          * <i>NextToken</i> member. If more results are available, the <i>NextToken</i>
          * member of the response contains a token that you pass in the next call to
-         * <a>ListHsms</a> to retrieve the next set of items.</p>
+         * <a>ListHsms</a> to retrieve the next set of items.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListHsms">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -540,7 +633,10 @@ namespace Model
          * <p>Lists all of the clients.</p> <p>This operation supports pagination with the
          * use of the <i>NextToken</i> member. If more results are available, the
          * <i>NextToken</i> member of the response contains a token that you pass in the
-         * next call to <a>ListLunaClients</a> to retrieve the next set of items.</p>
+         * next call to <a>ListLunaClients</a> to retrieve the next set of
+         * items.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListLunaClients">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListLunaClientsOutcome ListLunaClients(const Model::ListLunaClientsRequest& request) const;
 
@@ -548,7 +644,10 @@ namespace Model
          * <p>Lists all of the clients.</p> <p>This operation supports pagination with the
          * use of the <i>NextToken</i> member. If more results are available, the
          * <i>NextToken</i> member of the response contains a token that you pass in the
-         * next call to <a>ListLunaClients</a> to retrieve the next set of items.</p>
+         * next call to <a>ListLunaClients</a> to retrieve the next set of
+         * items.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListLunaClients">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -558,45 +657,66 @@ namespace Model
          * <p>Lists all of the clients.</p> <p>This operation supports pagination with the
          * use of the <i>NextToken</i> member. If more results are available, the
          * <i>NextToken</i> member of the response contains a token that you pass in the
-         * next call to <a>ListLunaClients</a> to retrieve the next set of items.</p>
+         * next call to <a>ListLunaClients</a> to retrieve the next set of
+         * items.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListLunaClients">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListLunaClientsAsync(const Model::ListLunaClientsRequest& request, const ListLunaClientsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns a list of all tags for the specified AWS CloudHSM resource.</p>
+         * <p>Returns a list of all tags for the specified AWS CloudHSM
+         * resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListTagsForResource">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p>Returns a list of all tags for the specified AWS CloudHSM resource.</p>
+         * <p>Returns a list of all tags for the specified AWS CloudHSM
+         * resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListTagsForResource">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p>Returns a list of all tags for the specified AWS CloudHSM resource.</p>
+         * <p>Returns a list of all tags for the specified AWS CloudHSM
+         * resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListTagsForResource">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Modifies an existing high-availability partition group.</p>
+         * <p>Modifies an existing high-availability partition group.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ModifyHapg">AWS
+         * API Reference</a></p>
          */
         virtual Model::ModifyHapgOutcome ModifyHapg(const Model::ModifyHapgRequest& request) const;
 
         /**
-         * <p>Modifies an existing high-availability partition group.</p>
+         * <p>Modifies an existing high-availability partition group.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ModifyHapg">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ModifyHapgOutcomeCallable ModifyHapgCallable(const Model::ModifyHapgRequest& request) const;
 
         /**
-         * <p>Modifies an existing high-availability partition group.</p>
+         * <p>Modifies an existing high-availability partition group.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ModifyHapg">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -607,7 +727,10 @@ namespace Model
          * being offline for up to 15 minutes while the AWS CloudHSM service is
          * reconfigured. If you are modifying a production HSM, you should ensure that your
          * AWS CloudHSM service is configured for high availability, and consider executing
-         * this operation during a maintenance window.</p> </important>
+         * this operation during a maintenance window.</p> </important><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ModifyHsm">AWS
+         * API Reference</a></p>
          */
         virtual Model::ModifyHsmOutcome ModifyHsm(const Model::ModifyHsmRequest& request) const;
 
@@ -616,7 +739,10 @@ namespace Model
          * being offline for up to 15 minutes while the AWS CloudHSM service is
          * reconfigured. If you are modifying a production HSM, you should ensure that your
          * AWS CloudHSM service is configured for high availability, and consider executing
-         * this operation during a maintenance window.</p> </important>
+         * this operation during a maintenance window.</p> </important><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ModifyHsm">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -627,7 +753,10 @@ namespace Model
          * being offline for up to 15 minutes while the AWS CloudHSM service is
          * reconfigured. If you are modifying a production HSM, you should ensure that your
          * AWS CloudHSM service is configured for high availability, and consider executing
-         * this operation during a maintenance window.</p> </important>
+         * this operation during a maintenance window.</p> </important><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ModifyHsm">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -636,14 +765,18 @@ namespace Model
         /**
          * <p>Modifies the certificate used by the client.</p> <p>This action can
          * potentially start a workflow to install the new certificate on the client's
-         * HSMs.</p>
+         * HSMs.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ModifyLunaClient">AWS
+         * API Reference</a></p>
          */
         virtual Model::ModifyLunaClientOutcome ModifyLunaClient(const Model::ModifyLunaClientRequest& request) const;
 
         /**
          * <p>Modifies the certificate used by the client.</p> <p>This action can
          * potentially start a workflow to install the new certificate on the client's
-         * HSMs.</p>
+         * HSMs.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ModifyLunaClient">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -652,7 +785,9 @@ namespace Model
         /**
          * <p>Modifies the certificate used by the client.</p> <p>This action can
          * potentially start a workflow to install the new certificate on the client's
-         * HSMs.</p>
+         * HSMs.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ModifyLunaClient">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -661,14 +796,20 @@ namespace Model
         /**
          * <p>Removes one or more tags from the specified AWS CloudHSM resource.</p> <p>To
          * remove a tag, specify only the tag key to remove (not the value). To overwrite
-         * the value for an existing tag, use <a>AddTagsToResource</a>.</p>
+         * the value for an existing tag, use <a>AddTagsToResource</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/RemoveTagsFromResource">AWS
+         * API Reference</a></p>
          */
         virtual Model::RemoveTagsFromResourceOutcome RemoveTagsFromResource(const Model::RemoveTagsFromResourceRequest& request) const;
 
         /**
          * <p>Removes one or more tags from the specified AWS CloudHSM resource.</p> <p>To
          * remove a tag, specify only the tag key to remove (not the value). To overwrite
-         * the value for an existing tag, use <a>AddTagsToResource</a>.</p>
+         * the value for an existing tag, use <a>AddTagsToResource</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/RemoveTagsFromResource">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -677,7 +818,10 @@ namespace Model
         /**
          * <p>Removes one or more tags from the specified AWS CloudHSM resource.</p> <p>To
          * remove a tag, specify only the tag key to remove (not the value). To overwrite
-         * the value for an existing tag, use <a>AddTagsToResource</a>.</p>
+         * the value for an existing tag, use <a>AddTagsToResource</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/RemoveTagsFromResource">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */

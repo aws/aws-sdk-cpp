@@ -49,8 +49,10 @@
 #include <aws/glacier/model/ListJobsRequest.h>
 #include <aws/glacier/model/ListMultipartUploadsRequest.h>
 #include <aws/glacier/model/ListPartsRequest.h>
+#include <aws/glacier/model/ListProvisionedCapacityRequest.h>
 #include <aws/glacier/model/ListTagsForVaultRequest.h>
 #include <aws/glacier/model/ListVaultsRequest.h>
+#include <aws/glacier/model/PurchaseProvisionedCapacityRequest.h>
 #include <aws/glacier/model/RemoveTagsFromVaultRequest.h>
 #include <aws/glacier/model/SetDataRetrievalPolicyRequest.h>
 #include <aws/glacier/model/SetVaultAccessPolicyRequest.h>
@@ -999,6 +1001,42 @@ void GlacierClient::ListPartsAsyncHelper(const ListPartsRequest& request, const 
   handler(this, request, ListParts(request), context);
 }
 
+ListProvisionedCapacityOutcome GlacierClient::ListProvisionedCapacity(const ListProvisionedCapacityRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  ss << request.GetAccountId();
+  ss << "/provisioned-capacity";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  if(outcome.IsSuccess())
+  {
+    return ListProvisionedCapacityOutcome(ListProvisionedCapacityResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListProvisionedCapacityOutcome(outcome.GetError());
+  }
+}
+
+ListProvisionedCapacityOutcomeCallable GlacierClient::ListProvisionedCapacityCallable(const ListProvisionedCapacityRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListProvisionedCapacityOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListProvisionedCapacity(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlacierClient::ListProvisionedCapacityAsync(const ListProvisionedCapacityRequest& request, const ListProvisionedCapacityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListProvisionedCapacityAsyncHelper( request, handler, context ); } );
+}
+
+void GlacierClient::ListProvisionedCapacityAsyncHelper(const ListProvisionedCapacityRequest& request, const ListProvisionedCapacityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListProvisionedCapacity(request), context);
+}
+
 ListTagsForVaultOutcome GlacierClient::ListTagsForVault(const ListTagsForVaultRequest& request) const
 {
   Aws::StringStream ss;
@@ -1071,6 +1109,42 @@ void GlacierClient::ListVaultsAsync(const ListVaultsRequest& request, const List
 void GlacierClient::ListVaultsAsyncHelper(const ListVaultsRequest& request, const ListVaultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListVaults(request), context);
+}
+
+PurchaseProvisionedCapacityOutcome GlacierClient::PurchaseProvisionedCapacity(const PurchaseProvisionedCapacityRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  ss << request.GetAccountId();
+  ss << "/provisioned-capacity";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return PurchaseProvisionedCapacityOutcome(PurchaseProvisionedCapacityResult(outcome.GetResult()));
+  }
+  else
+  {
+    return PurchaseProvisionedCapacityOutcome(outcome.GetError());
+  }
+}
+
+PurchaseProvisionedCapacityOutcomeCallable GlacierClient::PurchaseProvisionedCapacityCallable(const PurchaseProvisionedCapacityRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PurchaseProvisionedCapacityOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PurchaseProvisionedCapacity(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlacierClient::PurchaseProvisionedCapacityAsync(const PurchaseProvisionedCapacityRequest& request, const PurchaseProvisionedCapacityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PurchaseProvisionedCapacityAsyncHelper( request, handler, context ); } );
+}
+
+void GlacierClient::PurchaseProvisionedCapacityAsyncHelper(const PurchaseProvisionedCapacityRequest& request, const PurchaseProvisionedCapacityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PurchaseProvisionedCapacity(request), context);
 }
 
 RemoveTagsFromVaultOutcome GlacierClient::RemoveTagsFromVault(const RemoveTagsFromVaultRequest& request) const

@@ -36,6 +36,7 @@ namespace Aws
         static const int ActivationIds_HASH = HashingUtils::HashString("ActivationIds");
         static const int IamRole_HASH = HashingUtils::HashString("IamRole");
         static const int ResourceType_HASH = HashingUtils::HashString("ResourceType");
+        static const int AssociationStatus_HASH = HashingUtils::HashString("AssociationStatus");
 
 
         InstanceInformationFilterKey GetInstanceInformationFilterKeyForName(const Aws::String& name)
@@ -69,6 +70,10 @@ namespace Aws
           {
             return InstanceInformationFilterKey::ResourceType;
           }
+          else if (hashCode == AssociationStatus_HASH)
+          {
+            return InstanceInformationFilterKey::AssociationStatus;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -97,6 +102,8 @@ namespace Aws
             return "IamRole";
           case InstanceInformationFilterKey::ResourceType:
             return "ResourceType";
+          case InstanceInformationFilterKey::AssociationStatus:
+            return "AssociationStatus";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

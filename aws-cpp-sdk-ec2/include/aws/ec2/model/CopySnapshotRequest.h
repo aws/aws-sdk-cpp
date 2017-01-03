@@ -25,7 +25,9 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for CopySnapshot.</p>
+   * <p>Contains the parameters for CopySnapshot.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CopySnapshotRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API CopySnapshotRequest : public EC2Request
   {
@@ -166,8 +168,8 @@ namespace Model
      * <p>The destination region to use in the <code>PresignedUrl</code> parameter of a
      * snapshot copy operation. This parameter is only valid for specifying the
      * destination region in a <code>PresignedUrl</code> parameter, where it is
-     * required.</p> <note> <p><code>CopySnapshot</code> sends the snapshot copy to the
-     * regional endpoint that you send the HTTP request to, such as
+     * required.</p> <note> <p> <code>CopySnapshot</code> sends the snapshot copy to
+     * the regional endpoint that you send the HTTP request to, such as
      * <code>ec2.us-east-1.amazonaws.com</code> (in the AWS CLI, this is specified with
      * the <code>--region</code> parameter or the default region in your AWS
      * configuration file).</p> </note>
@@ -178,8 +180,8 @@ namespace Model
      * <p>The destination region to use in the <code>PresignedUrl</code> parameter of a
      * snapshot copy operation. This parameter is only valid for specifying the
      * destination region in a <code>PresignedUrl</code> parameter, where it is
-     * required.</p> <note> <p><code>CopySnapshot</code> sends the snapshot copy to the
-     * regional endpoint that you send the HTTP request to, such as
+     * required.</p> <note> <p> <code>CopySnapshot</code> sends the snapshot copy to
+     * the regional endpoint that you send the HTTP request to, such as
      * <code>ec2.us-east-1.amazonaws.com</code> (in the AWS CLI, this is specified with
      * the <code>--region</code> parameter or the default region in your AWS
      * configuration file).</p> </note>
@@ -190,8 +192,8 @@ namespace Model
      * <p>The destination region to use in the <code>PresignedUrl</code> parameter of a
      * snapshot copy operation. This parameter is only valid for specifying the
      * destination region in a <code>PresignedUrl</code> parameter, where it is
-     * required.</p> <note> <p><code>CopySnapshot</code> sends the snapshot copy to the
-     * regional endpoint that you send the HTTP request to, such as
+     * required.</p> <note> <p> <code>CopySnapshot</code> sends the snapshot copy to
+     * the regional endpoint that you send the HTTP request to, such as
      * <code>ec2.us-east-1.amazonaws.com</code> (in the AWS CLI, this is specified with
      * the <code>--region</code> parameter or the default region in your AWS
      * configuration file).</p> </note>
@@ -202,8 +204,8 @@ namespace Model
      * <p>The destination region to use in the <code>PresignedUrl</code> parameter of a
      * snapshot copy operation. This parameter is only valid for specifying the
      * destination region in a <code>PresignedUrl</code> parameter, where it is
-     * required.</p> <note> <p><code>CopySnapshot</code> sends the snapshot copy to the
-     * regional endpoint that you send the HTTP request to, such as
+     * required.</p> <note> <p> <code>CopySnapshot</code> sends the snapshot copy to
+     * the regional endpoint that you send the HTTP request to, such as
      * <code>ec2.us-east-1.amazonaws.com</code> (in the AWS CLI, this is specified with
      * the <code>--region</code> parameter or the default region in your AWS
      * configuration file).</p> </note>
@@ -214,8 +216,8 @@ namespace Model
      * <p>The destination region to use in the <code>PresignedUrl</code> parameter of a
      * snapshot copy operation. This parameter is only valid for specifying the
      * destination region in a <code>PresignedUrl</code> parameter, where it is
-     * required.</p> <note> <p><code>CopySnapshot</code> sends the snapshot copy to the
-     * regional endpoint that you send the HTTP request to, such as
+     * required.</p> <note> <p> <code>CopySnapshot</code> sends the snapshot copy to
+     * the regional endpoint that you send the HTTP request to, such as
      * <code>ec2.us-east-1.amazonaws.com</code> (in the AWS CLI, this is specified with
      * the <code>--region</code> parameter or the default region in your AWS
      * configuration file).</p> </note>
@@ -226,8 +228,8 @@ namespace Model
      * <p>The destination region to use in the <code>PresignedUrl</code> parameter of a
      * snapshot copy operation. This parameter is only valid for specifying the
      * destination region in a <code>PresignedUrl</code> parameter, where it is
-     * required.</p> <note> <p><code>CopySnapshot</code> sends the snapshot copy to the
-     * regional endpoint that you send the HTTP request to, such as
+     * required.</p> <note> <p> <code>CopySnapshot</code> sends the snapshot copy to
+     * the regional endpoint that you send the HTTP request to, such as
      * <code>ec2.us-east-1.amazonaws.com</code> (in the AWS CLI, this is specified with
      * the <code>--region</code> parameter or the default region in your AWS
      * configuration file).</p> </note>
@@ -238,8 +240,8 @@ namespace Model
      * <p>The destination region to use in the <code>PresignedUrl</code> parameter of a
      * snapshot copy operation. This parameter is only valid for specifying the
      * destination region in a <code>PresignedUrl</code> parameter, where it is
-     * required.</p> <note> <p><code>CopySnapshot</code> sends the snapshot copy to the
-     * regional endpoint that you send the HTTP request to, such as
+     * required.</p> <note> <p> <code>CopySnapshot</code> sends the snapshot copy to
+     * the regional endpoint that you send the HTTP request to, such as
      * <code>ec2.us-east-1.amazonaws.com</code> (in the AWS CLI, this is specified with
      * the <code>--region</code> parameter or the default region in your AWS
      * configuration file).</p> </note>
@@ -373,33 +375,33 @@ namespace Model
     inline CopySnapshotRequest& WithPresignedUrl(const char* value) { SetPresignedUrl(value); return *this;}
 
     /**
-     * <p>Specifies whether the destination snapshot should be encrypted. There is no
-     * way to create an unencrypted snapshot copy from an encrypted snapshot; however,
-     * you can encrypt a copy of an unencrypted snapshot with this flag. The default
-     * CMK for EBS is used unless a non-default AWS Key Management Service (AWS KMS)
-     * CMK is specified with <code>KmsKeyId</code>. For more information, see <a
+     * <p>Specifies whether the destination snapshot should be encrypted. You can
+     * encrypt a copy of an unencrypted snapshot using this flag, but you cannot use it
+     * to create an unencrypted copy from an encrypted snapshot. Your default CMK for
+     * EBS is used unless a non-default AWS Key Management Service (AWS KMS) CMK is
+     * specified with <code>KmsKeyId</code>. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
      * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline bool GetEncrypted() const{ return m_encrypted; }
 
     /**
-     * <p>Specifies whether the destination snapshot should be encrypted. There is no
-     * way to create an unencrypted snapshot copy from an encrypted snapshot; however,
-     * you can encrypt a copy of an unencrypted snapshot with this flag. The default
-     * CMK for EBS is used unless a non-default AWS Key Management Service (AWS KMS)
-     * CMK is specified with <code>KmsKeyId</code>. For more information, see <a
+     * <p>Specifies whether the destination snapshot should be encrypted. You can
+     * encrypt a copy of an unencrypted snapshot using this flag, but you cannot use it
+     * to create an unencrypted copy from an encrypted snapshot. Your default CMK for
+     * EBS is used unless a non-default AWS Key Management Service (AWS KMS) CMK is
+     * specified with <code>KmsKeyId</code>. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
      * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline void SetEncrypted(bool value) { m_encryptedHasBeenSet = true; m_encrypted = value; }
 
     /**
-     * <p>Specifies whether the destination snapshot should be encrypted. There is no
-     * way to create an unencrypted snapshot copy from an encrypted snapshot; however,
-     * you can encrypt a copy of an unencrypted snapshot with this flag. The default
-     * CMK for EBS is used unless a non-default AWS Key Management Service (AWS KMS)
-     * CMK is specified with <code>KmsKeyId</code>. For more information, see <a
+     * <p>Specifies whether the destination snapshot should be encrypted. You can
+     * encrypt a copy of an unencrypted snapshot using this flag, but you cannot use it
+     * to create an unencrypted copy from an encrypted snapshot. Your default CMK for
+     * EBS is used unless a non-default AWS Key Management Service (AWS KMS) CMK is
+     * specified with <code>KmsKeyId</code>. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
      * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */

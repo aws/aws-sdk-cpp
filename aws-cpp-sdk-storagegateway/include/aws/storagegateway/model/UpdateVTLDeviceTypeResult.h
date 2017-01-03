@@ -33,7 +33,9 @@ namespace StorageGateway
 namespace Model
 {
   /**
-   * <p>UpdateVTLDeviceTypeOutput</p>
+   * <p>UpdateVTLDeviceTypeOutput</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateVTLDeviceTypeOutput">AWS
+   * API Reference</a></p>
    */
   class AWS_STORAGEGATEWAY_API UpdateVTLDeviceTypeResult
   {

@@ -27,7 +27,6 @@ namespace Model
 {
 
   /**
-   * <p>Describes the inputs for DescribeAlarmHistory.</p>
    */
   class AWS_CLOUDWATCH_API DescribeAlarmHistoryRequest : public CloudWatchRequest
   {

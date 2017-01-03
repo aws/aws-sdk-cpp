@@ -38,7 +38,9 @@ namespace Model
    * <p>Represents a collection of <a>Authorizer</a> resources.</p> <div
    * class="seeAlso"> <a
    * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/use-custom-authorizer.html">Enable
-   * custom authorization</a> </div>
+   * custom authorization</a> </div><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/Authorizers">AWS
+   * API Reference</a></p>
    */
   class AWS_APIGATEWAY_API GetAuthorizersResult
   {

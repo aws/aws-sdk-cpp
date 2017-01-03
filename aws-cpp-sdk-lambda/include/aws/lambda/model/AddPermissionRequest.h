@@ -29,7 +29,9 @@ namespace Model
 {
 
   /**
-   * <p/>
+   * <p/><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/AddPermissionRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_LAMBDA_API AddPermissionRequest : public LambdaRequest
   {
@@ -369,86 +371,86 @@ namespace Model
     inline AddPermissionRequest& WithSourceArn(const char* value) { SetSourceArn(value); return *this;}
 
     /**
-     * <p>This parameter is used for S3 and SES only. The AWS account ID (without a
-     * hyphen) of the source owner. For example, if the <code>SourceArn</code>
-     * identifies a bucket, then this is the bucket owner's account ID. You can use
-     * this additional condition to ensure the bucket you specify is owned by a
-     * specific account (it is possible the bucket owner deleted the bucket and some
-     * other AWS account created the bucket). You can also use this condition to
-     * specify all sources (that is, you don't specify the <code>SourceArn</code>)
-     * owned by a specific account. </p>
+     * <p>This parameter is used for S3, SES, CloudWatch Logs and CloudWatch Rules
+     * only. The AWS account ID (without a hyphen) of the source owner. For example, if
+     * the <code>SourceArn</code> identifies a bucket, then this is the bucket owner's
+     * account ID. You can use this additional condition to ensure the bucket you
+     * specify is owned by a specific account (it is possible the bucket owner deleted
+     * the bucket and some other AWS account created the bucket). You can also use this
+     * condition to specify all sources (that is, you don't specify the
+     * <code>SourceArn</code>) owned by a specific account. </p>
      */
     inline const Aws::String& GetSourceAccount() const{ return m_sourceAccount; }
 
     /**
-     * <p>This parameter is used for S3 and SES only. The AWS account ID (without a
-     * hyphen) of the source owner. For example, if the <code>SourceArn</code>
-     * identifies a bucket, then this is the bucket owner's account ID. You can use
-     * this additional condition to ensure the bucket you specify is owned by a
-     * specific account (it is possible the bucket owner deleted the bucket and some
-     * other AWS account created the bucket). You can also use this condition to
-     * specify all sources (that is, you don't specify the <code>SourceArn</code>)
-     * owned by a specific account. </p>
+     * <p>This parameter is used for S3, SES, CloudWatch Logs and CloudWatch Rules
+     * only. The AWS account ID (without a hyphen) of the source owner. For example, if
+     * the <code>SourceArn</code> identifies a bucket, then this is the bucket owner's
+     * account ID. You can use this additional condition to ensure the bucket you
+     * specify is owned by a specific account (it is possible the bucket owner deleted
+     * the bucket and some other AWS account created the bucket). You can also use this
+     * condition to specify all sources (that is, you don't specify the
+     * <code>SourceArn</code>) owned by a specific account. </p>
      */
     inline void SetSourceAccount(const Aws::String& value) { m_sourceAccountHasBeenSet = true; m_sourceAccount = value; }
 
     /**
-     * <p>This parameter is used for S3 and SES only. The AWS account ID (without a
-     * hyphen) of the source owner. For example, if the <code>SourceArn</code>
-     * identifies a bucket, then this is the bucket owner's account ID. You can use
-     * this additional condition to ensure the bucket you specify is owned by a
-     * specific account (it is possible the bucket owner deleted the bucket and some
-     * other AWS account created the bucket). You can also use this condition to
-     * specify all sources (that is, you don't specify the <code>SourceArn</code>)
-     * owned by a specific account. </p>
+     * <p>This parameter is used for S3, SES, CloudWatch Logs and CloudWatch Rules
+     * only. The AWS account ID (without a hyphen) of the source owner. For example, if
+     * the <code>SourceArn</code> identifies a bucket, then this is the bucket owner's
+     * account ID. You can use this additional condition to ensure the bucket you
+     * specify is owned by a specific account (it is possible the bucket owner deleted
+     * the bucket and some other AWS account created the bucket). You can also use this
+     * condition to specify all sources (that is, you don't specify the
+     * <code>SourceArn</code>) owned by a specific account. </p>
      */
     inline void SetSourceAccount(Aws::String&& value) { m_sourceAccountHasBeenSet = true; m_sourceAccount = value; }
 
     /**
-     * <p>This parameter is used for S3 and SES only. The AWS account ID (without a
-     * hyphen) of the source owner. For example, if the <code>SourceArn</code>
-     * identifies a bucket, then this is the bucket owner's account ID. You can use
-     * this additional condition to ensure the bucket you specify is owned by a
-     * specific account (it is possible the bucket owner deleted the bucket and some
-     * other AWS account created the bucket). You can also use this condition to
-     * specify all sources (that is, you don't specify the <code>SourceArn</code>)
-     * owned by a specific account. </p>
+     * <p>This parameter is used for S3, SES, CloudWatch Logs and CloudWatch Rules
+     * only. The AWS account ID (without a hyphen) of the source owner. For example, if
+     * the <code>SourceArn</code> identifies a bucket, then this is the bucket owner's
+     * account ID. You can use this additional condition to ensure the bucket you
+     * specify is owned by a specific account (it is possible the bucket owner deleted
+     * the bucket and some other AWS account created the bucket). You can also use this
+     * condition to specify all sources (that is, you don't specify the
+     * <code>SourceArn</code>) owned by a specific account. </p>
      */
     inline void SetSourceAccount(const char* value) { m_sourceAccountHasBeenSet = true; m_sourceAccount.assign(value); }
 
     /**
-     * <p>This parameter is used for S3 and SES only. The AWS account ID (without a
-     * hyphen) of the source owner. For example, if the <code>SourceArn</code>
-     * identifies a bucket, then this is the bucket owner's account ID. You can use
-     * this additional condition to ensure the bucket you specify is owned by a
-     * specific account (it is possible the bucket owner deleted the bucket and some
-     * other AWS account created the bucket). You can also use this condition to
-     * specify all sources (that is, you don't specify the <code>SourceArn</code>)
-     * owned by a specific account. </p>
+     * <p>This parameter is used for S3, SES, CloudWatch Logs and CloudWatch Rules
+     * only. The AWS account ID (without a hyphen) of the source owner. For example, if
+     * the <code>SourceArn</code> identifies a bucket, then this is the bucket owner's
+     * account ID. You can use this additional condition to ensure the bucket you
+     * specify is owned by a specific account (it is possible the bucket owner deleted
+     * the bucket and some other AWS account created the bucket). You can also use this
+     * condition to specify all sources (that is, you don't specify the
+     * <code>SourceArn</code>) owned by a specific account. </p>
      */
     inline AddPermissionRequest& WithSourceAccount(const Aws::String& value) { SetSourceAccount(value); return *this;}
 
     /**
-     * <p>This parameter is used for S3 and SES only. The AWS account ID (without a
-     * hyphen) of the source owner. For example, if the <code>SourceArn</code>
-     * identifies a bucket, then this is the bucket owner's account ID. You can use
-     * this additional condition to ensure the bucket you specify is owned by a
-     * specific account (it is possible the bucket owner deleted the bucket and some
-     * other AWS account created the bucket). You can also use this condition to
-     * specify all sources (that is, you don't specify the <code>SourceArn</code>)
-     * owned by a specific account. </p>
+     * <p>This parameter is used for S3, SES, CloudWatch Logs and CloudWatch Rules
+     * only. The AWS account ID (without a hyphen) of the source owner. For example, if
+     * the <code>SourceArn</code> identifies a bucket, then this is the bucket owner's
+     * account ID. You can use this additional condition to ensure the bucket you
+     * specify is owned by a specific account (it is possible the bucket owner deleted
+     * the bucket and some other AWS account created the bucket). You can also use this
+     * condition to specify all sources (that is, you don't specify the
+     * <code>SourceArn</code>) owned by a specific account. </p>
      */
     inline AddPermissionRequest& WithSourceAccount(Aws::String&& value) { SetSourceAccount(value); return *this;}
 
     /**
-     * <p>This parameter is used for S3 and SES only. The AWS account ID (without a
-     * hyphen) of the source owner. For example, if the <code>SourceArn</code>
-     * identifies a bucket, then this is the bucket owner's account ID. You can use
-     * this additional condition to ensure the bucket you specify is owned by a
-     * specific account (it is possible the bucket owner deleted the bucket and some
-     * other AWS account created the bucket). You can also use this condition to
-     * specify all sources (that is, you don't specify the <code>SourceArn</code>)
-     * owned by a specific account. </p>
+     * <p>This parameter is used for S3, SES, CloudWatch Logs and CloudWatch Rules
+     * only. The AWS account ID (without a hyphen) of the source owner. For example, if
+     * the <code>SourceArn</code> identifies a bucket, then this is the bucket owner's
+     * account ID. You can use this additional condition to ensure the bucket you
+     * specify is owned by a specific account (it is possible the bucket owner deleted
+     * the bucket and some other AWS account created the bucket). You can also use this
+     * condition to specify all sources (that is, you don't specify the
+     * <code>SourceArn</code>) owned by a specific account. </p>
      */
     inline AddPermissionRequest& WithSourceAccount(const char* value) { SetSourceAccount(value); return *this;}
 

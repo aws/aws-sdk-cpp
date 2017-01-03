@@ -28,8 +28,9 @@ namespace GlacierErrorMapper
 {
 
 static const int MISSING_PARAMETER_VALUE_HASH = HashingUtils::HashString("MissingParameterValueException");
-static const int REQUEST_TIMEOUT_HASH = HashingUtils::HashString("RequestTimeoutException");
+static const int INSUFFICIENT_CAPACITY_HASH = HashingUtils::HashString("InsufficientCapacityException");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
+static const int REQUEST_TIMEOUT_HASH = HashingUtils::HashString("RequestTimeoutException");
 static const int POLICY_ENFORCED_HASH = HashingUtils::HashString("PolicyEnforcedException");
 
 
@@ -41,13 +42,17 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(GlacierErrors::MISSING_PARAMETER_VALUE), false);
   }
-  else if (hashCode == REQUEST_TIMEOUT_HASH)
+  else if (hashCode == INSUFFICIENT_CAPACITY_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(GlacierErrors::REQUEST_TIMEOUT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(GlacierErrors::INSUFFICIENT_CAPACITY), false);
   }
   else if (hashCode == LIMIT_EXCEEDED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(GlacierErrors::LIMIT_EXCEEDED), false);
+  }
+  else if (hashCode == REQUEST_TIMEOUT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(GlacierErrors::REQUEST_TIMEOUT), false);
   }
   else if (hashCode == POLICY_ENFORCED_HASH)
   {

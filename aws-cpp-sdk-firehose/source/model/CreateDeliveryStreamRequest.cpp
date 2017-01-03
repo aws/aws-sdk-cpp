@@ -23,7 +23,7 @@ using namespace Aws::Utils;
 
 CreateDeliveryStreamRequest::CreateDeliveryStreamRequest() : 
     m_deliveryStreamNameHasBeenSet(false),
-    m_s3DestinationConfigurationHasBeenSet(false),
+    m_extendedS3DestinationConfigurationHasBeenSet(false),
     m_redshiftDestinationConfigurationHasBeenSet(false),
     m_elasticsearchDestinationConfigurationHasBeenSet(false)
 {
@@ -39,9 +39,9 @@ Aws::String CreateDeliveryStreamRequest::SerializePayload() const
 
   }
 
-  if(m_s3DestinationConfigurationHasBeenSet)
+  if(m_extendedS3DestinationConfigurationHasBeenSet)
   {
-   payload.WithObject("S3DestinationConfiguration", m_s3DestinationConfiguration.Jsonize());
+   payload.WithObject("ExtendedS3DestinationConfiguration", m_extendedS3DestinationConfiguration.Jsonize());
 
   }
 

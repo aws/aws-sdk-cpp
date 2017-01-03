@@ -38,7 +38,9 @@ namespace Model
    * registered with the target group. If ELB health checks are enabled, the state
    * transitions to <code>InService</code> after at least one Auto Scaling instance
    * passes the health check. If EC2 health checks are enabled instead, the target
-   * group remains in the <code>Added</code> state.</p>
+   * group remains in the <code>Added</code> state.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/LoadBalancerTargetGroupState">AWS
+   * API Reference</a></p>
    */
   class AWS_AUTOSCALING_API LoadBalancerTargetGroupState
   {

@@ -102,6 +102,12 @@ namespace Aws
             Aws::String GeneratePresignedUrl(Aws::Http::URI& uri, Aws::Http::HttpMethod method, long long expirationInSeconds = 0);
 
             /**
+            * Generates a signed Uri using the injected signer. for the supplied uri and http method and region. expirationInSecodns defaults
+            * to 0 which is the default 7 days.
+            */
+            Aws::String GeneratePresignedUrl(Aws::Http::URI& uri, Aws::Http::HttpMethod method, const char* region, long long expirationInSeconds = 0) const;
+
+            /**
              * Stop all requests immediately.
              * In flight requests will likely fail.
              */

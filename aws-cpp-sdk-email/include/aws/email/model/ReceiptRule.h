@@ -42,7 +42,9 @@ namespace Model
    * address of the message, Amazon SES executes all of the receipt rule's actions on
    * the message.</p> <p>For information about setting up receipt rules, see the <a
    * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rules.html">Amazon
-   * SES Developer Guide</a>.</p>
+   * SES Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ReceiptRule">AWS
+   * API Reference</a></p>
    */
   class AWS_SES_API ReceiptRule
   {

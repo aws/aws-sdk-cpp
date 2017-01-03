@@ -33,7 +33,10 @@ namespace Model
 
   /**
    * <p>Watermarks can be in .png or .jpg format. If you want to display a watermark
-   * that is not rectangular, use the .png format, which supports transparency.</p>
+   * that is not rectangular, use the .png format, which supports
+   * transparency.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/JobWatermark">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICTRANSCODER_API JobWatermark
   {

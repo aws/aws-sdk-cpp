@@ -37,7 +37,9 @@ namespace Model
 {
   /**
    * <p>Represents the response from the server from the request to get information
-   * about the user.</p>
+   * about the user.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetUserResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_COGNITOIDENTITYPROVIDER_API GetUserResult
   {

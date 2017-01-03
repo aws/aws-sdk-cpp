@@ -33,7 +33,10 @@ namespace Model
 {
 
   /**
-   * <p>An error or warning for a desired configuration option value.</p>
+   * <p>An error or warning for a desired configuration option value.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ValidationMessage">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICBEANSTALK_API ValidationMessage
   {
@@ -121,72 +124,72 @@ namespace Model
     inline ValidationMessage& WithSeverity(ValidationSeverity&& value) { SetSeverity(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The namespace to which the option belongs.</p>
      */
     inline const Aws::String& GetNamespace() const{ return m_namespace; }
 
     /**
-     * <p/>
+     * <p>The namespace to which the option belongs.</p>
      */
     inline void SetNamespace(const Aws::String& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
 
     /**
-     * <p/>
+     * <p>The namespace to which the option belongs.</p>
      */
     inline void SetNamespace(Aws::String&& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
 
     /**
-     * <p/>
+     * <p>The namespace to which the option belongs.</p>
      */
     inline void SetNamespace(const char* value) { m_namespaceHasBeenSet = true; m_namespace.assign(value); }
 
     /**
-     * <p/>
+     * <p>The namespace to which the option belongs.</p>
      */
     inline ValidationMessage& WithNamespace(const Aws::String& value) { SetNamespace(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The namespace to which the option belongs.</p>
      */
     inline ValidationMessage& WithNamespace(Aws::String&& value) { SetNamespace(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The namespace to which the option belongs.</p>
      */
     inline ValidationMessage& WithNamespace(const char* value) { SetNamespace(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The name of the option.</p>
      */
     inline const Aws::String& GetOptionName() const{ return m_optionName; }
 
     /**
-     * <p/>
+     * <p>The name of the option.</p>
      */
     inline void SetOptionName(const Aws::String& value) { m_optionNameHasBeenSet = true; m_optionName = value; }
 
     /**
-     * <p/>
+     * <p>The name of the option.</p>
      */
     inline void SetOptionName(Aws::String&& value) { m_optionNameHasBeenSet = true; m_optionName = value; }
 
     /**
-     * <p/>
+     * <p>The name of the option.</p>
      */
     inline void SetOptionName(const char* value) { m_optionNameHasBeenSet = true; m_optionName.assign(value); }
 
     /**
-     * <p/>
+     * <p>The name of the option.</p>
      */
     inline ValidationMessage& WithOptionName(const Aws::String& value) { SetOptionName(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The name of the option.</p>
      */
     inline ValidationMessage& WithOptionName(Aws::String&& value) { SetOptionName(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The name of the option.</p>
      */
     inline ValidationMessage& WithOptionName(const char* value) { SetOptionName(value); return *this;}
 

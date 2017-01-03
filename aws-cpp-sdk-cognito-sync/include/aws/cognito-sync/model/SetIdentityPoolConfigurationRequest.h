@@ -27,7 +27,10 @@ namespace Model
 {
 
   /**
-   * <p>The input for the SetIdentityPoolConfiguration operation.</p>
+   * <p>The input for the SetIdentityPoolConfiguration operation.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/SetIdentityPoolConfigurationRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_COGNITOSYNC_API SetIdentityPoolConfigurationRequest : public CognitoSyncRequest
   {

@@ -27,7 +27,10 @@ namespace Model
 {
 
   /**
-   * <p>This input identifies a cluster and a list of tags to attach.</p>
+   * <p>This input identifies a cluster and a list of tags to attach.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/AddTagsInput">AWS
+   * API Reference</a></p>
    */
   class AWS_EMR_API AddTagsRequest : public EMRRequest
   {
@@ -80,58 +83,58 @@ namespace Model
     inline AddTagsRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
 
     /**
-     * <p>A list of tags to associate with a cluster and propagate to Amazon EC2
-     * instances. Tags are user-defined key/value pairs that consist of a required key
-     * string with a maximum of 128 characters, and an optional value string with a
-     * maximum of 256 characters.</p>
+     * <p>A list of tags to associate with a cluster and propagate to EC2 instances.
+     * Tags are user-defined key/value pairs that consist of a required key string with
+     * a maximum of 128 characters, and an optional value string with a maximum of 256
+     * characters.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>A list of tags to associate with a cluster and propagate to Amazon EC2
-     * instances. Tags are user-defined key/value pairs that consist of a required key
-     * string with a maximum of 128 characters, and an optional value string with a
-     * maximum of 256 characters.</p>
+     * <p>A list of tags to associate with a cluster and propagate to EC2 instances.
+     * Tags are user-defined key/value pairs that consist of a required key string with
+     * a maximum of 128 characters, and an optional value string with a maximum of 256
+     * characters.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>A list of tags to associate with a cluster and propagate to Amazon EC2
-     * instances. Tags are user-defined key/value pairs that consist of a required key
-     * string with a maximum of 128 characters, and an optional value string with a
-     * maximum of 256 characters.</p>
+     * <p>A list of tags to associate with a cluster and propagate to EC2 instances.
+     * Tags are user-defined key/value pairs that consist of a required key string with
+     * a maximum of 128 characters, and an optional value string with a maximum of 256
+     * characters.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>A list of tags to associate with a cluster and propagate to Amazon EC2
-     * instances. Tags are user-defined key/value pairs that consist of a required key
-     * string with a maximum of 128 characters, and an optional value string with a
-     * maximum of 256 characters.</p>
+     * <p>A list of tags to associate with a cluster and propagate to EC2 instances.
+     * Tags are user-defined key/value pairs that consist of a required key string with
+     * a maximum of 128 characters, and an optional value string with a maximum of 256
+     * characters.</p>
      */
     inline AddTagsRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>A list of tags to associate with a cluster and propagate to Amazon EC2
-     * instances. Tags are user-defined key/value pairs that consist of a required key
-     * string with a maximum of 128 characters, and an optional value string with a
-     * maximum of 256 characters.</p>
+     * <p>A list of tags to associate with a cluster and propagate to EC2 instances.
+     * Tags are user-defined key/value pairs that consist of a required key string with
+     * a maximum of 128 characters, and an optional value string with a maximum of 256
+     * characters.</p>
      */
     inline AddTagsRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(value); return *this;}
 
     /**
-     * <p>A list of tags to associate with a cluster and propagate to Amazon EC2
-     * instances. Tags are user-defined key/value pairs that consist of a required key
-     * string with a maximum of 128 characters, and an optional value string with a
-     * maximum of 256 characters.</p>
+     * <p>A list of tags to associate with a cluster and propagate to EC2 instances.
+     * Tags are user-defined key/value pairs that consist of a required key string with
+     * a maximum of 128 characters, and an optional value string with a maximum of 256
+     * characters.</p>
      */
     inline AddTagsRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>A list of tags to associate with a cluster and propagate to Amazon EC2
-     * instances. Tags are user-defined key/value pairs that consist of a required key
-     * string with a maximum of 128 characters, and an optional value string with a
-     * maximum of 256 characters.</p>
+     * <p>A list of tags to associate with a cluster and propagate to EC2 instances.
+     * Tags are user-defined key/value pairs that consist of a required key string with
+     * a maximum of 128 characters, and an optional value string with a maximum of 256
+     * characters.</p>
      */
     inline AddTagsRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 

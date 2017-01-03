@@ -17,6 +17,7 @@
 #include <aws/elasticloadbalancing/ElasticLoadBalancingErrors.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -263,13 +264,22 @@ namespace Model
 
         virtual ~ElasticLoadBalancingClient();
 
+       /**
+        * Converts any request object to a presigned URL with the GET method, using region for the signer and a timeout of 15 minutes.
+        */
+        Aws::String ConvertRequestToPresignedUrl(const AmazonSerializableWebServiceRequest& requestToConvert, const char* region) const;
+
+
         /**
          * <p>Adds the specified tags to the specified load balancer. Each load balancer
          * can have a maximum of 10 tags.</p> <p>Each tag consists of a key and an optional
          * value. If a tag with the same key is already associated with the load balancer,
          * <code>AddTags</code> updates its value.</p> <p>For more information, see <a
          * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html">Tag
-         * Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.</p>
+         * Your Classic Load Balancer</a> in the <i>Classic Load Balancers
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/AddTags">AWS
+         * API Reference</a></p>
          */
         virtual Model::AddTagsOutcome AddTags(const Model::AddTagsRequest& request) const;
 
@@ -279,7 +289,10 @@ namespace Model
          * value. If a tag with the same key is already associated with the load balancer,
          * <code>AddTags</code> updates its value.</p> <p>For more information, see <a
          * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html">Tag
-         * Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.</p>
+         * Your Classic Load Balancer</a> in the <i>Classic Load Balancers
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/AddTags">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -291,7 +304,10 @@ namespace Model
          * value. If a tag with the same key is already associated with the load balancer,
          * <code>AddTags</code> updates its value.</p> <p>For more information, see <a
          * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html">Tag
-         * Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.</p>
+         * Your Classic Load Balancer</a> in the <i>Classic Load Balancers
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/AddTags">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -303,7 +319,9 @@ namespace Model
          * associated security groups.</p> <p>For more information, see <a
          * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-security-groups.html#elb-vpc-security-groups">Security
          * Groups for Load Balancers in a VPC</a> in the <i>Classic Load Balancers
-         * Guide</i>.</p>
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/ApplySecurityGroupsToLoadBalancer">AWS
+         * API Reference</a></p>
          */
         virtual Model::ApplySecurityGroupsToLoadBalancerOutcome ApplySecurityGroupsToLoadBalancer(const Model::ApplySecurityGroupsToLoadBalancerRequest& request) const;
 
@@ -313,7 +331,9 @@ namespace Model
          * associated security groups.</p> <p>For more information, see <a
          * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-security-groups.html#elb-vpc-security-groups">Security
          * Groups for Load Balancers in a VPC</a> in the <i>Classic Load Balancers
-         * Guide</i>.</p>
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/ApplySecurityGroupsToLoadBalancer">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -325,7 +345,9 @@ namespace Model
          * associated security groups.</p> <p>For more information, see <a
          * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-security-groups.html#elb-vpc-security-groups">Security
          * Groups for Load Balancers in a VPC</a> in the <i>Classic Load Balancers
-         * Guide</i>.</p>
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/ApplySecurityGroupsToLoadBalancer">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -337,7 +359,9 @@ namespace Model
          * registered subnets. For more information, see <a
          * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-manage-subnets.html">Add
          * or Remove Subnets for Your Load Balancer in a VPC</a> in the <i>Classic Load
-         * Balancers Guide</i>.</p>
+         * Balancers Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/AttachLoadBalancerToSubnets">AWS
+         * API Reference</a></p>
          */
         virtual Model::AttachLoadBalancerToSubnetsOutcome AttachLoadBalancerToSubnets(const Model::AttachLoadBalancerToSubnetsRequest& request) const;
 
@@ -347,7 +371,9 @@ namespace Model
          * registered subnets. For more information, see <a
          * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-manage-subnets.html">Add
          * or Remove Subnets for Your Load Balancer in a VPC</a> in the <i>Classic Load
-         * Balancers Guide</i>.</p>
+         * Balancers Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/AttachLoadBalancerToSubnets">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -359,7 +385,9 @@ namespace Model
          * registered subnets. For more information, see <a
          * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-manage-subnets.html">Add
          * or Remove Subnets for Your Load Balancer in a VPC</a> in the <i>Classic Load
-         * Balancers Guide</i>.</p>
+         * Balancers Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/AttachLoadBalancerToSubnets">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -370,7 +398,9 @@ namespace Model
          * of your EC2 instances.</p> <p>For more information, see <a
          * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-healthchecks.html">Configure
          * Health Checks for Your Load Balancer</a> in the <i>Classic Load Balancers
-         * Guide</i>.</p>
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/ConfigureHealthCheck">AWS
+         * API Reference</a></p>
          */
         virtual Model::ConfigureHealthCheckOutcome ConfigureHealthCheck(const Model::ConfigureHealthCheckRequest& request) const;
 
@@ -379,7 +409,9 @@ namespace Model
          * of your EC2 instances.</p> <p>For more information, see <a
          * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-healthchecks.html">Configure
          * Health Checks for Your Load Balancer</a> in the <i>Classic Load Balancers
-         * Guide</i>.</p>
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/ConfigureHealthCheck">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -390,7 +422,9 @@ namespace Model
          * of your EC2 instances.</p> <p>For more information, see <a
          * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-healthchecks.html">Configure
          * Health Checks for Your Load Balancer</a> in the <i>Classic Load Balancers
-         * Guide</i>.</p>
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/ConfigureHealthCheck">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -408,7 +442,10 @@ namespace Model
          * explicitly removed or expires, the session stops being sticky until a new
          * application cookie is issued.</p> <p>For more information, see <a
          * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-sticky-sessions.html#enable-sticky-sessions-application">Application-Controlled
-         * Session Stickiness</a> in the <i>Classic Load Balancers Guide</i>.</p>
+         * Session Stickiness</a> in the <i>Classic Load Balancers Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/CreateAppCookieStickinessPolicy">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateAppCookieStickinessPolicyOutcome CreateAppCookieStickinessPolicy(const Model::CreateAppCookieStickinessPolicyRequest& request) const;
 
@@ -424,7 +461,10 @@ namespace Model
          * explicitly removed or expires, the session stops being sticky until a new
          * application cookie is issued.</p> <p>For more information, see <a
          * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-sticky-sessions.html#enable-sticky-sessions-application">Application-Controlled
-         * Session Stickiness</a> in the <i>Classic Load Balancers Guide</i>.</p>
+         * Session Stickiness</a> in the <i>Classic Load Balancers Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/CreateAppCookieStickinessPolicy">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -442,7 +482,10 @@ namespace Model
          * explicitly removed or expires, the session stops being sticky until a new
          * application cookie is issued.</p> <p>For more information, see <a
          * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-sticky-sessions.html#enable-sticky-sessions-application">Application-Controlled
-         * Session Stickiness</a> in the <i>Classic Load Balancers Guide</i>.</p>
+         * Session Stickiness</a> in the <i>Classic Load Balancers Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/CreateAppCookieStickinessPolicy">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -462,7 +505,10 @@ namespace Model
          * of the cookie is based on the cookie expiration time, which is specified in the
          * policy configuration.</p> <p>For more information, see <a
          * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-sticky-sessions.html#enable-sticky-sessions-duration">Duration-Based
-         * Session Stickiness</a> in the <i>Classic Load Balancers Guide</i>.</p>
+         * Session Stickiness</a> in the <i>Classic Load Balancers Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/CreateLBCookieStickinessPolicy">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateLBCookieStickinessPolicyOutcome CreateLBCookieStickinessPolicy(const Model::CreateLBCookieStickinessPolicyRequest& request) const;
 
@@ -480,7 +526,10 @@ namespace Model
          * of the cookie is based on the cookie expiration time, which is specified in the
          * policy configuration.</p> <p>For more information, see <a
          * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-sticky-sessions.html#enable-sticky-sessions-duration">Duration-Based
-         * Session Stickiness</a> in the <i>Classic Load Balancers Guide</i>.</p>
+         * Session Stickiness</a> in the <i>Classic Load Balancers Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/CreateLBCookieStickinessPolicy">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -500,7 +549,10 @@ namespace Model
          * of the cookie is based on the cookie expiration time, which is specified in the
          * policy configuration.</p> <p>For more information, see <a
          * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-sticky-sessions.html#enable-sticky-sessions-duration">Duration-Based
-         * Session Stickiness</a> in the <i>Classic Load Balancers Guide</i>.</p>
+         * Session Stickiness</a> in the <i>Classic Load Balancers Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/CreateLBCookieStickinessPolicy">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -518,7 +570,9 @@ namespace Model
          * number of load balancers for your account. For more information, see <a
          * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-limits.html">Limits
          * for Your Classic Load Balancer</a> in the <i>Classic Load Balancers
-         * Guide</i>.</p>
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/CreateLoadBalancer">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateLoadBalancerOutcome CreateLoadBalancer(const Model::CreateLoadBalancerRequest& request) const;
 
@@ -534,7 +588,9 @@ namespace Model
          * number of load balancers for your account. For more information, see <a
          * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-limits.html">Limits
          * for Your Classic Load Balancer</a> in the <i>Classic Load Balancers
-         * Guide</i>.</p>
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/CreateLoadBalancer">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -552,7 +608,9 @@ namespace Model
          * number of load balancers for your account. For more information, see <a
          * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-limits.html">Limits
          * for Your Classic Load Balancer</a> in the <i>Classic Load Balancers
-         * Guide</i>.</p>
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/CreateLoadBalancer">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -565,7 +623,9 @@ namespace Model
          * listener.</p> <p>For more information, see <a
          * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners
          * for Your Classic Load Balancer</a> in the <i>Classic Load Balancers
-         * Guide</i>.</p>
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/CreateLoadBalancerListeners">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateLoadBalancerListenersOutcome CreateLoadBalancerListeners(const Model::CreateLoadBalancerListenersRequest& request) const;
 
@@ -576,7 +636,9 @@ namespace Model
          * listener.</p> <p>For more information, see <a
          * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners
          * for Your Classic Load Balancer</a> in the <i>Classic Load Balancers
-         * Guide</i>.</p>
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/CreateLoadBalancerListeners">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -589,7 +651,9 @@ namespace Model
          * listener.</p> <p>For more information, see <a
          * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners
          * for Your Classic Load Balancer</a> in the <i>Classic Load Balancers
-         * Guide</i>.</p>
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/CreateLoadBalancerListeners">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -599,7 +663,9 @@ namespace Model
          * <p>Creates a policy with the specified attributes for the specified load
          * balancer.</p> <p>Policies are settings that are saved for your load balancer and
          * that can be applied to the listener or the application server, depending on the
-         * policy type.</p>
+         * policy type.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/CreateLoadBalancerPolicy">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateLoadBalancerPolicyOutcome CreateLoadBalancerPolicy(const Model::CreateLoadBalancerPolicyRequest& request) const;
 
@@ -607,7 +673,9 @@ namespace Model
          * <p>Creates a policy with the specified attributes for the specified load
          * balancer.</p> <p>Policies are settings that are saved for your load balancer and
          * that can be applied to the listener or the application server, depending on the
-         * policy type.</p>
+         * policy type.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/CreateLoadBalancerPolicy">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -617,7 +685,9 @@ namespace Model
          * <p>Creates a policy with the specified attributes for the specified load
          * balancer.</p> <p>Policies are settings that are saved for your load balancer and
          * that can be applied to the listener or the application server, depending on the
-         * policy type.</p>
+         * policy type.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/CreateLoadBalancerPolicy">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -630,7 +700,9 @@ namespace Model
          * of the deleted load balancer no longer exist and traffic sent to any of its IP
          * addresses is no longer delivered to your instances.</p> <p>If the load balancer
          * does not exist or has already been deleted, the call to
-         * <code>DeleteLoadBalancer</code> still succeeds.</p>
+         * <code>DeleteLoadBalancer</code> still succeeds.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DeleteLoadBalancer">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteLoadBalancerOutcome DeleteLoadBalancer(const Model::DeleteLoadBalancerRequest& request) const;
 
@@ -641,7 +713,9 @@ namespace Model
          * of the deleted load balancer no longer exist and traffic sent to any of its IP
          * addresses is no longer delivered to your instances.</p> <p>If the load balancer
          * does not exist or has already been deleted, the call to
-         * <code>DeleteLoadBalancer</code> still succeeds.</p>
+         * <code>DeleteLoadBalancer</code> still succeeds.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DeleteLoadBalancer">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -654,26 +728,37 @@ namespace Model
          * of the deleted load balancer no longer exist and traffic sent to any of its IP
          * addresses is no longer delivered to your instances.</p> <p>If the load balancer
          * does not exist or has already been deleted, the call to
-         * <code>DeleteLoadBalancer</code> still succeeds.</p>
+         * <code>DeleteLoadBalancer</code> still succeeds.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DeleteLoadBalancer">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteLoadBalancerAsync(const Model::DeleteLoadBalancerRequest& request, const DeleteLoadBalancerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the specified listeners from the specified load balancer.</p>
+         * <p>Deletes the specified listeners from the specified load
+         * balancer.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DeleteLoadBalancerListeners">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteLoadBalancerListenersOutcome DeleteLoadBalancerListeners(const Model::DeleteLoadBalancerListenersRequest& request) const;
 
         /**
-         * <p>Deletes the specified listeners from the specified load balancer.</p>
+         * <p>Deletes the specified listeners from the specified load
+         * balancer.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DeleteLoadBalancerListeners">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteLoadBalancerListenersOutcomeCallable DeleteLoadBalancerListenersCallable(const Model::DeleteLoadBalancerListenersRequest& request) const;
 
         /**
-         * <p>Deletes the specified listeners from the specified load balancer.</p>
+         * <p>Deletes the specified listeners from the specified load
+         * balancer.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DeleteLoadBalancerListeners">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -681,13 +766,17 @@ namespace Model
 
         /**
          * <p>Deletes the specified policy from the specified load balancer. This policy
-         * must not be enabled for any listeners.</p>
+         * must not be enabled for any listeners.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DeleteLoadBalancerPolicy">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteLoadBalancerPolicyOutcome DeleteLoadBalancerPolicy(const Model::DeleteLoadBalancerPolicyRequest& request) const;
 
         /**
          * <p>Deletes the specified policy from the specified load balancer. This policy
-         * must not be enabled for any listeners.</p>
+         * must not be enabled for any listeners.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DeleteLoadBalancerPolicy">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -695,7 +784,9 @@ namespace Model
 
         /**
          * <p>Deletes the specified policy from the specified load balancer. This policy
-         * must not be enabled for any listeners.</p>
+         * must not be enabled for any listeners.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DeleteLoadBalancerPolicy">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -708,7 +799,10 @@ namespace Model
          * instance is deregistered from the load balancer.</p> <p>For more information,
          * see <a
          * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-deregister-register-instances.html">Register
-         * or De-Register EC2 Instances</a> in the <i>Classic Load Balancers Guide</i>.</p>
+         * or De-Register EC2 Instances</a> in the <i>Classic Load Balancers
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DeregisterInstancesFromLoadBalancer">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeregisterInstancesFromLoadBalancerOutcome DeregisterInstancesFromLoadBalancer(const Model::DeregisterInstancesFromLoadBalancerRequest& request) const;
 
@@ -719,7 +813,10 @@ namespace Model
          * instance is deregistered from the load balancer.</p> <p>For more information,
          * see <a
          * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-deregister-register-instances.html">Register
-         * or De-Register EC2 Instances</a> in the <i>Classic Load Balancers Guide</i>.</p>
+         * or De-Register EC2 Instances</a> in the <i>Classic Load Balancers
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DeregisterInstancesFromLoadBalancer">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -732,7 +829,10 @@ namespace Model
          * instance is deregistered from the load balancer.</p> <p>For more information,
          * see <a
          * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-deregister-register-instances.html">Register
-         * or De-Register EC2 Instances</a> in the <i>Classic Load Balancers Guide</i>.</p>
+         * or De-Register EC2 Instances</a> in the <i>Classic Load Balancers
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DeregisterInstancesFromLoadBalancer">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -743,7 +843,10 @@ namespace Model
          * load balancer. If no instances are specified, the call describes the state of
          * all instances that are currently registered with the load balancer. If instances
          * are specified, their state is returned even if they are no longer registered
-         * with the load balancer. The state of terminated instances is not returned.</p>
+         * with the load balancer. The state of terminated instances is not
+         * returned.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DescribeInstanceHealth">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeInstanceHealthOutcome DescribeInstanceHealth(const Model::DescribeInstanceHealthRequest& request) const;
 
@@ -752,7 +855,10 @@ namespace Model
          * load balancer. If no instances are specified, the call describes the state of
          * all instances that are currently registered with the load balancer. If instances
          * are specified, their state is returned even if they are no longer registered
-         * with the load balancer. The state of terminated instances is not returned.</p>
+         * with the load balancer. The state of terminated instances is not
+         * returned.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DescribeInstanceHealth">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -763,26 +869,38 @@ namespace Model
          * load balancer. If no instances are specified, the call describes the state of
          * all instances that are currently registered with the load balancer. If instances
          * are specified, their state is returned even if they are no longer registered
-         * with the load balancer. The state of terminated instances is not returned.</p>
+         * with the load balancer. The state of terminated instances is not
+         * returned.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DescribeInstanceHealth">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeInstanceHealthAsync(const Model::DescribeInstanceHealthRequest& request, const DescribeInstanceHealthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes the attributes for the specified load balancer.</p>
+         * <p>Describes the attributes for the specified load balancer.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DescribeLoadBalancerAttributes">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeLoadBalancerAttributesOutcome DescribeLoadBalancerAttributes(const Model::DescribeLoadBalancerAttributesRequest& request) const;
 
         /**
-         * <p>Describes the attributes for the specified load balancer.</p>
+         * <p>Describes the attributes for the specified load balancer.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DescribeLoadBalancerAttributes">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeLoadBalancerAttributesOutcomeCallable DescribeLoadBalancerAttributesCallable(const Model::DescribeLoadBalancerAttributesRequest& request) const;
 
         /**
-         * <p>Describes the attributes for the specified load balancer.</p>
+         * <p>Describes the attributes for the specified load balancer.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DescribeLoadBalancerAttributes">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -795,7 +913,9 @@ namespace Model
          * action returns the description of that policy. If you don't specify a load
          * balancer name, the action returns descriptions of the specified sample policies,
          * or descriptions of all sample policies. The names of the sample policies have
-         * the <code>ELBSample-</code> prefix.</p>
+         * the <code>ELBSample-</code> prefix.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DescribeLoadBalancerPolicies">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeLoadBalancerPoliciesOutcome DescribeLoadBalancerPolicies(const Model::DescribeLoadBalancerPoliciesRequest& request) const;
 
@@ -806,7 +926,9 @@ namespace Model
          * action returns the description of that policy. If you don't specify a load
          * balancer name, the action returns descriptions of the specified sample policies,
          * or descriptions of all sample policies. The names of the sample policies have
-         * the <code>ELBSample-</code> prefix.</p>
+         * the <code>ELBSample-</code> prefix.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DescribeLoadBalancerPolicies">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -819,7 +941,9 @@ namespace Model
          * action returns the description of that policy. If you don't specify a load
          * balancer name, the action returns descriptions of the specified sample policies,
          * or descriptions of all sample policies. The names of the sample policies have
-         * the <code>ELBSample-</code> prefix.</p>
+         * the <code>ELBSample-</code> prefix.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DescribeLoadBalancerPolicies">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -833,7 +957,10 @@ namespace Model
          * only with your EC2 instances.</p> <p>You can use <a>CreateLoadBalancerPolicy</a>
          * to create a policy configuration for any of these policy types. Then, depending
          * on the policy type, use either <a>SetLoadBalancerPoliciesOfListener</a> or
-         * <a>SetLoadBalancerPoliciesForBackendServer</a> to set the policy.</p>
+         * <a>SetLoadBalancerPoliciesForBackendServer</a> to set the policy.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DescribeLoadBalancerPolicyTypes">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeLoadBalancerPolicyTypesOutcome DescribeLoadBalancerPolicyTypes(const Model::DescribeLoadBalancerPolicyTypesRequest& request) const;
 
@@ -845,7 +972,10 @@ namespace Model
          * only with your EC2 instances.</p> <p>You can use <a>CreateLoadBalancerPolicy</a>
          * to create a policy configuration for any of these policy types. Then, depending
          * on the policy type, use either <a>SetLoadBalancerPoliciesOfListener</a> or
-         * <a>SetLoadBalancerPoliciesForBackendServer</a> to set the policy.</p>
+         * <a>SetLoadBalancerPoliciesForBackendServer</a> to set the policy.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DescribeLoadBalancerPolicyTypes">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -859,7 +989,10 @@ namespace Model
          * only with your EC2 instances.</p> <p>You can use <a>CreateLoadBalancerPolicy</a>
          * to create a policy configuration for any of these policy types. Then, depending
          * on the policy type, use either <a>SetLoadBalancerPoliciesOfListener</a> or
-         * <a>SetLoadBalancerPoliciesForBackendServer</a> to set the policy.</p>
+         * <a>SetLoadBalancerPoliciesForBackendServer</a> to set the policy.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DescribeLoadBalancerPolicyTypes">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -867,13 +1000,19 @@ namespace Model
 
         /**
          * <p>Describes the specified the load balancers. If no load balancers are
-         * specified, the call describes all of your load balancers.</p>
+         * specified, the call describes all of your load balancers.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DescribeLoadBalancers">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeLoadBalancersOutcome DescribeLoadBalancers(const Model::DescribeLoadBalancersRequest& request) const;
 
         /**
          * <p>Describes the specified the load balancers. If no load balancers are
-         * specified, the call describes all of your load balancers.</p>
+         * specified, the call describes all of your load balancers.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DescribeLoadBalancers">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -881,26 +1020,38 @@ namespace Model
 
         /**
          * <p>Describes the specified the load balancers. If no load balancers are
-         * specified, the call describes all of your load balancers.</p>
+         * specified, the call describes all of your load balancers.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DescribeLoadBalancers">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeLoadBalancersAsync(const Model::DescribeLoadBalancersRequest& request, const DescribeLoadBalancersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes the tags associated with the specified load balancers.</p>
+         * <p>Describes the tags associated with the specified load
+         * balancers.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DescribeTags">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeTagsOutcome DescribeTags(const Model::DescribeTagsRequest& request) const;
 
         /**
-         * <p>Describes the tags associated with the specified load balancers.</p>
+         * <p>Describes the tags associated with the specified load
+         * balancers.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DescribeTags">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeTagsOutcomeCallable DescribeTagsCallable(const Model::DescribeTagsRequest& request) const;
 
         /**
-         * <p>Describes the tags associated with the specified load balancers.</p>
+         * <p>Describes the tags associated with the specified load
+         * balancers.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DescribeTags">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -911,7 +1062,9 @@ namespace Model
          * balancer.</p> <p>After a subnet is removed, all EC2 instances registered with
          * the load balancer in the removed subnet go into the <code>OutOfService</code>
          * state. Then, the load balancer balances the traffic among the remaining routable
-         * subnets.</p>
+         * subnets.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DetachLoadBalancerFromSubnets">AWS
+         * API Reference</a></p>
          */
         virtual Model::DetachLoadBalancerFromSubnetsOutcome DetachLoadBalancerFromSubnets(const Model::DetachLoadBalancerFromSubnetsRequest& request) const;
 
@@ -920,7 +1073,9 @@ namespace Model
          * balancer.</p> <p>After a subnet is removed, all EC2 instances registered with
          * the load balancer in the removed subnet go into the <code>OutOfService</code>
          * state. Then, the load balancer balances the traffic among the remaining routable
-         * subnets.</p>
+         * subnets.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DetachLoadBalancerFromSubnets">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -931,7 +1086,9 @@ namespace Model
          * balancer.</p> <p>After a subnet is removed, all EC2 instances registered with
          * the load balancer in the removed subnet go into the <code>OutOfService</code>
          * state. Then, the load balancer balances the traffic among the remaining routable
-         * subnets.</p>
+         * subnets.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DetachLoadBalancerFromSubnets">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -946,7 +1103,10 @@ namespace Model
          * balancer attempts to equally balance the traffic among its remaining
          * Availability Zones.</p> <p>For more information, see <a
          * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-disable-az.html">Add
-         * or Remove Availability Zones</a> in the <i>Classic Load Balancers Guide</i>.</p>
+         * or Remove Availability Zones</a> in the <i>Classic Load Balancers
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DisableAvailabilityZonesForLoadBalancer">AWS
+         * API Reference</a></p>
          */
         virtual Model::DisableAvailabilityZonesForLoadBalancerOutcome DisableAvailabilityZonesForLoadBalancer(const Model::DisableAvailabilityZonesForLoadBalancerRequest& request) const;
 
@@ -959,7 +1119,10 @@ namespace Model
          * balancer attempts to equally balance the traffic among its remaining
          * Availability Zones.</p> <p>For more information, see <a
          * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-disable-az.html">Add
-         * or Remove Availability Zones</a> in the <i>Classic Load Balancers Guide</i>.</p>
+         * or Remove Availability Zones</a> in the <i>Classic Load Balancers
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DisableAvailabilityZonesForLoadBalancer">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -974,7 +1137,10 @@ namespace Model
          * balancer attempts to equally balance the traffic among its remaining
          * Availability Zones.</p> <p>For more information, see <a
          * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-disable-az.html">Add
-         * or Remove Availability Zones</a> in the <i>Classic Load Balancers Guide</i>.</p>
+         * or Remove Availability Zones</a> in the <i>Classic Load Balancers
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DisableAvailabilityZonesForLoadBalancer">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -986,7 +1152,10 @@ namespace Model
          * requests across all its registered Availability Zones that contain
          * instances.</p> <p>For more information, see <a
          * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-disable-az.html">Add
-         * or Remove Availability Zones</a> in the <i>Classic Load Balancers Guide</i>.</p>
+         * or Remove Availability Zones</a> in the <i>Classic Load Balancers
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/EnableAvailabilityZonesForLoadBalancer">AWS
+         * API Reference</a></p>
          */
         virtual Model::EnableAvailabilityZonesForLoadBalancerOutcome EnableAvailabilityZonesForLoadBalancer(const Model::EnableAvailabilityZonesForLoadBalancerRequest& request) const;
 
@@ -996,7 +1165,10 @@ namespace Model
          * requests across all its registered Availability Zones that contain
          * instances.</p> <p>For more information, see <a
          * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-disable-az.html">Add
-         * or Remove Availability Zones</a> in the <i>Classic Load Balancers Guide</i>.</p>
+         * or Remove Availability Zones</a> in the <i>Classic Load Balancers
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/EnableAvailabilityZonesForLoadBalancer">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1008,7 +1180,10 @@ namespace Model
          * requests across all its registered Availability Zones that contain
          * instances.</p> <p>For more information, see <a
          * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-disable-az.html">Add
-         * or Remove Availability Zones</a> in the <i>Classic Load Balancers Guide</i>.</p>
+         * or Remove Availability Zones</a> in the <i>Classic Load Balancers
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/EnableAvailabilityZonesForLoadBalancer">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1029,7 +1204,9 @@ namespace Model
          * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/access-log-collection.html">Access
          * Logs</a> </p> </li> <li> <p> <a
          * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-idle-timeout.html">Idle
-         * Connection Timeout</a> </p> </li> </ul>
+         * Connection Timeout</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/ModifyLoadBalancerAttributes">AWS
+         * API Reference</a></p>
          */
         virtual Model::ModifyLoadBalancerAttributesOutcome ModifyLoadBalancerAttributes(const Model::ModifyLoadBalancerAttributesRequest& request) const;
 
@@ -1048,7 +1225,9 @@ namespace Model
          * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/access-log-collection.html">Access
          * Logs</a> </p> </li> <li> <p> <a
          * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-idle-timeout.html">Idle
-         * Connection Timeout</a> </p> </li> </ul>
+         * Connection Timeout</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/ModifyLoadBalancerAttributes">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1069,7 +1248,9 @@ namespace Model
          * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/access-log-collection.html">Access
          * Logs</a> </p> </li> <li> <p> <a
          * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-idle-timeout.html">Idle
-         * Connection Timeout</a> </p> </li> </ul>
+         * Connection Timeout</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/ModifyLoadBalancerAttributes">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1094,7 +1275,10 @@ namespace Model
          * balancer, use <a>DeregisterInstancesFromLoadBalancer</a>.</p> <p>For more
          * information, see <a
          * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-deregister-register-instances.html">Register
-         * or De-Register EC2 Instances</a> in the <i>Classic Load Balancers Guide</i>.</p>
+         * or De-Register EC2 Instances</a> in the <i>Classic Load Balancers
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/RegisterInstancesWithLoadBalancer">AWS
+         * API Reference</a></p>
          */
         virtual Model::RegisterInstancesWithLoadBalancerOutcome RegisterInstancesWithLoadBalancer(const Model::RegisterInstancesWithLoadBalancerRequest& request) const;
 
@@ -1117,7 +1301,10 @@ namespace Model
          * balancer, use <a>DeregisterInstancesFromLoadBalancer</a>.</p> <p>For more
          * information, see <a
          * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-deregister-register-instances.html">Register
-         * or De-Register EC2 Instances</a> in the <i>Classic Load Balancers Guide</i>.</p>
+         * or De-Register EC2 Instances</a> in the <i>Classic Load Balancers
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/RegisterInstancesWithLoadBalancer">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1142,26 +1329,38 @@ namespace Model
          * balancer, use <a>DeregisterInstancesFromLoadBalancer</a>.</p> <p>For more
          * information, see <a
          * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-deregister-register-instances.html">Register
-         * or De-Register EC2 Instances</a> in the <i>Classic Load Balancers Guide</i>.</p>
+         * or De-Register EC2 Instances</a> in the <i>Classic Load Balancers
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/RegisterInstancesWithLoadBalancer">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void RegisterInstancesWithLoadBalancerAsync(const Model::RegisterInstancesWithLoadBalancerRequest& request, const RegisterInstancesWithLoadBalancerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Removes one or more tags from the specified load balancer.</p>
+         * <p>Removes one or more tags from the specified load balancer.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/RemoveTags">AWS
+         * API Reference</a></p>
          */
         virtual Model::RemoveTagsOutcome RemoveTags(const Model::RemoveTagsRequest& request) const;
 
         /**
-         * <p>Removes one or more tags from the specified load balancer.</p>
+         * <p>Removes one or more tags from the specified load balancer.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/RemoveTags">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::RemoveTagsOutcomeCallable RemoveTagsCallable(const Model::RemoveTagsRequest& request) const;
 
         /**
-         * <p>Removes one or more tags from the specified load balancer.</p>
+         * <p>Removes one or more tags from the specified load balancer.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/RemoveTags">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1174,7 +1373,9 @@ namespace Model
          * updating your SSL certificate, see <a
          * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-update-ssl-cert.html">Replace
          * the SSL Certificate for Your Load Balancer</a> in the <i>Classic Load Balancers
-         * Guide</i>.</p>
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/SetLoadBalancerListenerSSLCertificate">AWS
+         * API Reference</a></p>
          */
         virtual Model::SetLoadBalancerListenerSSLCertificateOutcome SetLoadBalancerListenerSSLCertificate(const Model::SetLoadBalancerListenerSSLCertificateRequest& request) const;
 
@@ -1185,7 +1386,9 @@ namespace Model
          * updating your SSL certificate, see <a
          * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-update-ssl-cert.html">Replace
          * the SSL Certificate for Your Load Balancer</a> in the <i>Classic Load Balancers
-         * Guide</i>.</p>
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/SetLoadBalancerListenerSSLCertificate">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1198,7 +1401,9 @@ namespace Model
          * updating your SSL certificate, see <a
          * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-update-ssl-cert.html">Replace
          * the SSL Certificate for Your Load Balancer</a> in the <i>Classic Load Balancers
-         * Guide</i>.</p>
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/SetLoadBalancerListenerSSLCertificate">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1219,7 +1424,10 @@ namespace Model
          * Back-end Instance Authentication</a> in the <i>Classic Load Balancers Guide</i>.
          * For more information about Proxy Protocol, see <a
          * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-proxy-protocol.html">Configure
-         * Proxy Protocol Support</a> in the <i>Classic Load Balancers Guide</i>.</p>
+         * Proxy Protocol Support</a> in the <i>Classic Load Balancers
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/SetLoadBalancerPoliciesForBackendServer">AWS
+         * API Reference</a></p>
          */
         virtual Model::SetLoadBalancerPoliciesForBackendServerOutcome SetLoadBalancerPoliciesForBackendServer(const Model::SetLoadBalancerPoliciesForBackendServerRequest& request) const;
 
@@ -1238,7 +1446,10 @@ namespace Model
          * Back-end Instance Authentication</a> in the <i>Classic Load Balancers Guide</i>.
          * For more information about Proxy Protocol, see <a
          * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-proxy-protocol.html">Configure
-         * Proxy Protocol Support</a> in the <i>Classic Load Balancers Guide</i>.</p>
+         * Proxy Protocol Support</a> in the <i>Classic Load Balancers
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/SetLoadBalancerPoliciesForBackendServer">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1259,7 +1470,10 @@ namespace Model
          * Back-end Instance Authentication</a> in the <i>Classic Load Balancers Guide</i>.
          * For more information about Proxy Protocol, see <a
          * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-proxy-protocol.html">Configure
-         * Proxy Protocol Support</a> in the <i>Classic Load Balancers Guide</i>.</p>
+         * Proxy Protocol Support</a> in the <i>Classic Load Balancers
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/SetLoadBalancerPoliciesForBackendServer">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1275,7 +1489,10 @@ namespace Model
          * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-sticky-sessions.html#enable-sticky-sessions-duration">Duration-Based
          * Session Stickiness</a>, and <a
          * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-sticky-sessions.html#enable-sticky-sessions-application">Application-Controlled
-         * Session Stickiness</a> in the <i>Classic Load Balancers Guide</i>.</p>
+         * Session Stickiness</a> in the <i>Classic Load Balancers Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/SetLoadBalancerPoliciesOfListener">AWS
+         * API Reference</a></p>
          */
         virtual Model::SetLoadBalancerPoliciesOfListenerOutcome SetLoadBalancerPoliciesOfListener(const Model::SetLoadBalancerPoliciesOfListenerRequest& request) const;
 
@@ -1289,7 +1506,10 @@ namespace Model
          * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-sticky-sessions.html#enable-sticky-sessions-duration">Duration-Based
          * Session Stickiness</a>, and <a
          * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-sticky-sessions.html#enable-sticky-sessions-application">Application-Controlled
-         * Session Stickiness</a> in the <i>Classic Load Balancers Guide</i>.</p>
+         * Session Stickiness</a> in the <i>Classic Load Balancers Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/SetLoadBalancerPoliciesOfListener">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1305,7 +1525,10 @@ namespace Model
          * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-sticky-sessions.html#enable-sticky-sessions-duration">Duration-Based
          * Session Stickiness</a>, and <a
          * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-sticky-sessions.html#enable-sticky-sessions-application">Application-Controlled
-         * Session Stickiness</a> in the <i>Classic Load Balancers Guide</i>.</p>
+         * Session Stickiness</a> in the <i>Classic Load Balancers Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/SetLoadBalancerPoliciesOfListener">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */

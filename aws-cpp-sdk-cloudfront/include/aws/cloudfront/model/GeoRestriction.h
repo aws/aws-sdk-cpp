@@ -38,7 +38,9 @@ namespace Model
    * the Amazon CloudFront Developer Guide. CloudFront determines the location of
    * your users using MaxMind GeoIP databases. For information about the accuracy of
    * these databases, see How accurate are your GeoIP databases? on the MaxMind
-   * website.
+   * website.<p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/GeoRestriction">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API GeoRestriction
   {

@@ -76,7 +76,9 @@ Instance::Instance() :
     m_iamInstanceProfileHasBeenSet(false),
     m_ebsOptimized(false),
     m_ebsOptimizedHasBeenSet(false),
-    m_sriovNetSupportHasBeenSet(false)
+    m_sriovNetSupportHasBeenSet(false),
+    m_enaSupport(false),
+    m_enaSupportHasBeenSet(false)
 {
 }
 
@@ -127,7 +129,9 @@ Instance::Instance(const XmlNode& xmlNode) :
     m_iamInstanceProfileHasBeenSet(false),
     m_ebsOptimized(false),
     m_ebsOptimizedHasBeenSet(false),
-    m_sriovNetSupportHasBeenSet(false)
+    m_sriovNetSupportHasBeenSet(false),
+    m_enaSupport(false),
+    m_enaSupportHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -390,6 +394,12 @@ Instance& Instance::operator =(const XmlNode& xmlNode)
       m_sriovNetSupport = StringUtils::Trim(sriovNetSupportNode.GetText().c_str());
       m_sriovNetSupportHasBeenSet = true;
     }
+    XmlNode enaSupportNode = resultNode.FirstChild("enaSupport");
+    if(!enaSupportNode.IsNull())
+    {
+      m_enaSupport = StringUtils::ConvertToBool(StringUtils::Trim(enaSupportNode.GetText().c_str()).c_str());
+      m_enaSupportHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -622,6 +632,11 @@ void Instance::OutputToStream(Aws::OStream& oStream, const char* location, unsig
       oStream << location << index << locationValue << ".SriovNetSupport=" << StringUtils::URLEncode(m_sriovNetSupport.c_str()) << "&";
   }
 
+  if(m_enaSupportHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".EnaSupport=" << m_enaSupport << "&";
+  }
+
 }
 
 void Instance::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -813,6 +828,10 @@ void Instance::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_sriovNetSupportHasBeenSet)
   {
       oStream << location << ".SriovNetSupport=" << StringUtils::URLEncode(m_sriovNetSupport.c_str()) << "&";
+  }
+  if(m_enaSupportHasBeenSet)
+  {
+      oStream << location << ".EnaSupport=" << m_enaSupport << "&";
   }
 }
 

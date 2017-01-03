@@ -62,6 +62,11 @@ SendMessageResult& SendMessageResult::operator =(const AmazonWebServiceResult<Xm
     {
       m_messageId = StringUtils::Trim(messageIdNode.GetText().c_str());
     }
+    XmlNode sequenceNumberNode = resultNode.FirstChild("SequenceNumber");
+    if(!sequenceNumberNode.IsNull())
+    {
+      m_sequenceNumber = StringUtils::Trim(sequenceNumberNode.GetText().c_str());
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

@@ -98,7 +98,7 @@ void LambdaFunctionConfiguration::AddToNode(XmlNode& parentNode) const
 
   if(m_lambdaFunctionArnHasBeenSet)
   {
-   XmlNode lambdaFunctionArnNode = parentNode.CreateChildElement("LambdaFunctionArn");
+   XmlNode lambdaFunctionArnNode = parentNode.CreateChildElement("CloudFunction");
    lambdaFunctionArnNode.SetText(m_lambdaFunctionArn);
   }
 
@@ -113,7 +113,7 @@ void LambdaFunctionConfiguration::AddToNode(XmlNode& parentNode) const
 
   if(m_filterHasBeenSet)
   {
-   XmlNode filterNode = parentNode.CreateChildElement("Event");
+   XmlNode filterNode = parentNode.CreateChildElement("Filter");
    m_filter.AddToNode(filterNode);
   }
 

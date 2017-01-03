@@ -23,7 +23,8 @@ DeleteRouteRequest::DeleteRouteRequest() :
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
     m_routeTableIdHasBeenSet(false),
-    m_destinationCidrBlockHasBeenSet(false)
+    m_destinationCidrBlockHasBeenSet(false),
+    m_destinationIpv6CidrBlockHasBeenSet(false)
 {
 }
 
@@ -46,7 +47,12 @@ Aws::String DeleteRouteRequest::SerializePayload() const
     ss << "DestinationCidrBlock=" << StringUtils::URLEncode(m_destinationCidrBlock.c_str()) << "&";
   }
 
-  ss << "Version=2015-10-01";
+  if(m_destinationIpv6CidrBlockHasBeenSet)
+  {
+    ss << "DestinationIpv6CidrBlock=" << StringUtils::URLEncode(m_destinationIpv6CidrBlock.c_str()) << "&";
+  }
+
+  ss << "Version=2016-11-15";
   return ss.str();
 }
 

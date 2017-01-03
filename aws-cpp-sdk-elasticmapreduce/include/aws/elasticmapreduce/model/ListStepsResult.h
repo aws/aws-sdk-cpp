@@ -36,7 +36,10 @@ namespace Model
 {
   /**
    * <p>This output contains the list of steps returned in reverse order. This means
-   * that the last step is the first element in the list.</p>
+   * that the last step is the first element in the list.</p><p><h3>See Also:</h3>  
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListStepsOutput">AWS
+   * API Reference</a></p>
    */
   class AWS_EMR_API ListStepsResult
   {

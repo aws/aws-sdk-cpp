@@ -33,7 +33,9 @@ namespace Model
 
   /**
    * <p>Describes the time period for a Scheduled Instance to start its first
-   * schedule.</p>
+   * schedule.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SlotStartTimeRangeRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API SlotStartTimeRangeRequest
   {

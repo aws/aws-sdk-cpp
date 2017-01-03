@@ -32,10 +32,12 @@
 #include <aws/directconnect/model/ConfirmConnectionRequest.h>
 #include <aws/directconnect/model/ConfirmPrivateVirtualInterfaceRequest.h>
 #include <aws/directconnect/model/ConfirmPublicVirtualInterfaceRequest.h>
+#include <aws/directconnect/model/CreateBGPPeerRequest.h>
 #include <aws/directconnect/model/CreateConnectionRequest.h>
 #include <aws/directconnect/model/CreateInterconnectRequest.h>
 #include <aws/directconnect/model/CreatePrivateVirtualInterfaceRequest.h>
 #include <aws/directconnect/model/CreatePublicVirtualInterfaceRequest.h>
+#include <aws/directconnect/model/DeleteBGPPeerRequest.h>
 #include <aws/directconnect/model/DeleteConnectionRequest.h>
 #include <aws/directconnect/model/DeleteInterconnectRequest.h>
 #include <aws/directconnect/model/DeleteVirtualInterfaceRequest.h>
@@ -317,6 +319,40 @@ void DirectConnectClient::ConfirmPublicVirtualInterfaceAsyncHelper(const Confirm
   handler(this, request, ConfirmPublicVirtualInterface(request), context);
 }
 
+CreateBGPPeerOutcome DirectConnectClient::CreateBGPPeer(const CreateBGPPeerRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return CreateBGPPeerOutcome(CreateBGPPeerResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateBGPPeerOutcome(outcome.GetError());
+  }
+}
+
+CreateBGPPeerOutcomeCallable DirectConnectClient::CreateBGPPeerCallable(const CreateBGPPeerRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateBGPPeerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateBGPPeer(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DirectConnectClient::CreateBGPPeerAsync(const CreateBGPPeerRequest& request, const CreateBGPPeerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateBGPPeerAsyncHelper( request, handler, context ); } );
+}
+
+void DirectConnectClient::CreateBGPPeerAsyncHelper(const CreateBGPPeerRequest& request, const CreateBGPPeerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateBGPPeer(request), context);
+}
+
 CreateConnectionOutcome DirectConnectClient::CreateConnection(const CreateConnectionRequest& request) const
 {
   Aws::StringStream ss;
@@ -451,6 +487,40 @@ void DirectConnectClient::CreatePublicVirtualInterfaceAsync(const CreatePublicVi
 void DirectConnectClient::CreatePublicVirtualInterfaceAsyncHelper(const CreatePublicVirtualInterfaceRequest& request, const CreatePublicVirtualInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreatePublicVirtualInterface(request), context);
+}
+
+DeleteBGPPeerOutcome DirectConnectClient::DeleteBGPPeer(const DeleteBGPPeerRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DeleteBGPPeerOutcome(DeleteBGPPeerResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteBGPPeerOutcome(outcome.GetError());
+  }
+}
+
+DeleteBGPPeerOutcomeCallable DirectConnectClient::DeleteBGPPeerCallable(const DeleteBGPPeerRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteBGPPeerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteBGPPeer(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DirectConnectClient::DeleteBGPPeerAsync(const DeleteBGPPeerRequest& request, const DeleteBGPPeerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteBGPPeerAsyncHelper( request, handler, context ); } );
+}
+
+void DirectConnectClient::DeleteBGPPeerAsyncHelper(const DeleteBGPPeerRequest& request, const DeleteBGPPeerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteBGPPeer(request), context);
 }
 
 DeleteConnectionOutcome DirectConnectClient::DeleteConnection(const DeleteConnectionRequest& request) const

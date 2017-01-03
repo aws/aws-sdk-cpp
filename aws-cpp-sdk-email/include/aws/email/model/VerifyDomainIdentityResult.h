@@ -35,7 +35,9 @@ namespace Model
 {
   /**
    * <p>Returns a TXT record that you must publish to the DNS server of your domain
-   * to complete domain verification with Amazon SES.</p>
+   * to complete domain verification with Amazon SES.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/VerifyDomainIdentityResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_SES_API VerifyDomainIdentityResult
   {

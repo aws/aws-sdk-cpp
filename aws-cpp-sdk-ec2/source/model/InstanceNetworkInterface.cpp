@@ -45,7 +45,8 @@ InstanceNetworkInterface::InstanceNetworkInterface() :
     m_groupsHasBeenSet(false),
     m_attachmentHasBeenSet(false),
     m_associationHasBeenSet(false),
-    m_privateIpAddressesHasBeenSet(false)
+    m_privateIpAddressesHasBeenSet(false),
+    m_ipv6AddressesHasBeenSet(false)
 {
 }
 
@@ -65,7 +66,8 @@ InstanceNetworkInterface::InstanceNetworkInterface(const XmlNode& xmlNode) :
     m_groupsHasBeenSet(false),
     m_attachmentHasBeenSet(false),
     m_associationHasBeenSet(false),
-    m_privateIpAddressesHasBeenSet(false)
+    m_privateIpAddressesHasBeenSet(false),
+    m_ipv6AddressesHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -172,6 +174,18 @@ InstanceNetworkInterface& InstanceNetworkInterface::operator =(const XmlNode& xm
 
       m_privateIpAddressesHasBeenSet = true;
     }
+    XmlNode ipv6AddressesNode = resultNode.FirstChild("ipv6AddressesSet");
+    if(!ipv6AddressesNode.IsNull())
+    {
+      XmlNode ipv6AddressesMember = ipv6AddressesNode.FirstChild("item");
+      while(!ipv6AddressesMember.IsNull())
+      {
+        m_ipv6Addresses.push_back(ipv6AddressesMember);
+        ipv6AddressesMember = ipv6AddressesMember.NextNode("item");
+      }
+
+      m_ipv6AddressesHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -265,6 +279,17 @@ void InstanceNetworkInterface::OutputToStream(Aws::OStream& oStream, const char*
       }
   }
 
+  if(m_ipv6AddressesHasBeenSet)
+  {
+      unsigned ipv6AddressesIdx = 1;
+      for(auto& item : m_ipv6Addresses)
+      {
+        Aws::StringStream ipv6AddressesSs;
+        ipv6AddressesSs << location << index << locationValue << ".Ipv6AddressesSet." << ipv6AddressesIdx++;
+        item.OutputToStream(oStream, ipv6AddressesSs.str().c_str());
+      }
+  }
+
 }
 
 void InstanceNetworkInterface::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -339,6 +364,16 @@ void InstanceNetworkInterface::OutputToStream(Aws::OStream& oStream, const char*
         Aws::StringStream privateIpAddressesSs;
         privateIpAddressesSs << location <<  ".item." << privateIpAddressesIdx++;
         item.OutputToStream(oStream, privateIpAddressesSs.str().c_str());
+      }
+  }
+  if(m_ipv6AddressesHasBeenSet)
+  {
+      unsigned ipv6AddressesIdx = 1;
+      for(auto& item : m_ipv6Addresses)
+      {
+        Aws::StringStream ipv6AddressesSs;
+        ipv6AddressesSs << location <<  ".item." << ipv6AddressesIdx++;
+        item.OutputToStream(oStream, ipv6AddressesSs.str().c_str());
       }
   }
 }

@@ -36,7 +36,9 @@ namespace Model
    * <p>Information about the fleet's capacity. Fleet capacity is measured in EC2
    * instances. By default, new fleets have a capacity of one instance, but can be
    * updated as needed. The maximum number of instances for a fleet is determined by
-   * the fleet's instance type.</p>
+   * the fleet's instance type.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/FleetCapacity">AWS
+   * API Reference</a></p>
    */
   class AWS_GAMELIFT_API FleetCapacity
   {

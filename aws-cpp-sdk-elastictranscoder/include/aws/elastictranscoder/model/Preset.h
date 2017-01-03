@@ -39,7 +39,9 @@ namespace Model
    * presets for common formats, for example, several iPod and iPhone versions. You
    * can also create your own presets for formats that aren't included among the
    * default presets. You specify which preset you want to use when you create a
-   * job.</p>
+   * job.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/Preset">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICTRANSCODER_API Preset
   {

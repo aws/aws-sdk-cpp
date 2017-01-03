@@ -39,6 +39,8 @@ namespace Model
     DelaySeconds,
     ReceiveMessageWaitTimeSeconds,
     RedrivePolicy,
+    FifoQueue,
+    ContentBasedDeduplication,
     SentTimestamp,
     ApproximateFirstReceiveTimestamp,
     ApproximateReceiveCount,

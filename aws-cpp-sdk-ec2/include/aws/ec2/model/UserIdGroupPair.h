@@ -32,7 +32,10 @@ namespace Model
 {
 
   /**
-   * <p>Describes a security group and AWS account ID pair. </p>
+   * <p>Describes a security group and AWS account ID pair.</p><p><h3>See Also:</h3> 
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UserIdGroupPair">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API UserIdGroupPair
   {
@@ -220,37 +223,37 @@ namespace Model
     inline UserIdGroupPair& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 
     /**
-     * <p>The ID of the VPC peering connection, if applicable. </p>
+     * <p>The ID of the VPC peering connection, if applicable.</p>
      */
     inline const Aws::String& GetVpcPeeringConnectionId() const{ return m_vpcPeeringConnectionId; }
 
     /**
-     * <p>The ID of the VPC peering connection, if applicable. </p>
+     * <p>The ID of the VPC peering connection, if applicable.</p>
      */
     inline void SetVpcPeeringConnectionId(const Aws::String& value) { m_vpcPeeringConnectionIdHasBeenSet = true; m_vpcPeeringConnectionId = value; }
 
     /**
-     * <p>The ID of the VPC peering connection, if applicable. </p>
+     * <p>The ID of the VPC peering connection, if applicable.</p>
      */
     inline void SetVpcPeeringConnectionId(Aws::String&& value) { m_vpcPeeringConnectionIdHasBeenSet = true; m_vpcPeeringConnectionId = value; }
 
     /**
-     * <p>The ID of the VPC peering connection, if applicable. </p>
+     * <p>The ID of the VPC peering connection, if applicable.</p>
      */
     inline void SetVpcPeeringConnectionId(const char* value) { m_vpcPeeringConnectionIdHasBeenSet = true; m_vpcPeeringConnectionId.assign(value); }
 
     /**
-     * <p>The ID of the VPC peering connection, if applicable. </p>
+     * <p>The ID of the VPC peering connection, if applicable.</p>
      */
     inline UserIdGroupPair& WithVpcPeeringConnectionId(const Aws::String& value) { SetVpcPeeringConnectionId(value); return *this;}
 
     /**
-     * <p>The ID of the VPC peering connection, if applicable. </p>
+     * <p>The ID of the VPC peering connection, if applicable.</p>
      */
     inline UserIdGroupPair& WithVpcPeeringConnectionId(Aws::String&& value) { SetVpcPeeringConnectionId(value); return *this;}
 
     /**
-     * <p>The ID of the VPC peering connection, if applicable. </p>
+     * <p>The ID of the VPC peering connection, if applicable.</p>
      */
     inline UserIdGroupPair& WithVpcPeeringConnectionId(const char* value) { SetVpcPeeringConnectionId(value); return *this;}
 

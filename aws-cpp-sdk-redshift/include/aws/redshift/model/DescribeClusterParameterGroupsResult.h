@@ -37,7 +37,9 @@ namespace Model
 {
   /**
    * <p>Contains the output from the <a>DescribeClusterParameterGroups</a> action.
-   * </p>
+   * </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ClusterParameterGroupsMessage">AWS
+   * API Reference</a></p>
    */
   class AWS_REDSHIFT_API DescribeClusterParameterGroupsResult
   {

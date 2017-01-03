@@ -32,7 +32,9 @@ namespace SWF
 namespace Model
 {
   /**
-   * <p>Contains the count of tasks in a task list.</p>
+   * <p>Contains the count of tasks in a task list.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/PendingTaskCount">AWS
+   * API Reference</a></p>
    */
   class AWS_SWF_API CountPendingDecisionTasksResult
   {

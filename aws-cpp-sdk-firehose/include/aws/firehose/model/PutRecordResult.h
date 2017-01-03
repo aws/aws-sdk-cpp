@@ -32,9 +32,6 @@ namespace Firehose
 {
 namespace Model
 {
-  /**
-   * <p>Contains the output of <a>PutRecord</a>.</p>
-   */
   class AWS_FIREHOSE_API PutRecordResult
   {
   public:

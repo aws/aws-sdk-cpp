@@ -26,12 +26,17 @@ TEST(UUIDTest, TestPlatformGeneratesUUID)
     for(size_t i = 0u; i < 1000u; ++i)
     {
         UUID uuid = UUID::RandomUUID();
-        Aws::String uuidStr = uuid;
+        Aws::String uuidStr = uuid;        
         ASSERT_EQ(36u, uuidStr.length());
         ByteBuffer rawUUID = uuid;
         ASSERT_EQ(16u, rawUUID.GetLength());
+        ASSERT_EQ(0x40u, 0x40u & rawUUID[6]);
+        ASSERT_EQ(0x80u, 0x80u & rawUUID[8]);
 
-        ASSERT_EQ(generatedUUids.end(), generatedUUids.find(uuidStr));
+	auto iter = generatedUUids.find(uuidStr);
+	auto endIter = generatedUUids.end();
+	ASSERT_TRUE( iter == endIter );
+
         generatedUUids.insert(uuidStr);
     }    
 }

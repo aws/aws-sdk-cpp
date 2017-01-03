@@ -52,8 +52,10 @@ namespace
     static size_t const CBC_IV_SIZE_BYTES = 16u;
 
 #ifndef ENABLE_COMMONCRYPTO_ENCRYPTION
+#if !defined(NDEBUG) && defined(GTEST_HAS_DEATH_TEST)
     static const char* const BYTES_SPECIFIER = "bytes=0-10";
     static const char* const ASSERTION_FAILED = "Assertion .*";
+#endif // !defined(NDEBUG) && defined(GTEST_HAS_DEATH_TEST)
     static const char* const GET_RANGE_SPECIFIER = "bytes=20-40";
     static const char* const GET_RANGE_OUTPUT = "ge for encryption and";
     static size_t const GCM_TAG_LENGTH = 128u;
@@ -153,7 +155,7 @@ namespace
                 return result;
             }
             m_metadata = request.GetMetadata();
-            m_requestContentLength = request.GetContentLength();
+            m_requestContentLength = static_cast< size_t >(request.GetContentLength());
 
             std::shared_ptr<Aws::IOStream> body = request.GetBody();
             Aws::String tempBodyString((Aws::IStreamBufIterator(*body)), Aws::IStreamBufIterator());
@@ -177,7 +179,7 @@ namespace
                 auto bytes = m_requestContentLength;
                 auto rangeBytes = CryptoModule::ParseGetObjectRequestRange(range, bytes);
                 responseStream.GetUnderlyingStream().write((const char*)bodyString.c_str() + rangeBytes.first, rangeBytes.second - rangeBytes.first + 1);
-                written = rangeBytes.second - rangeBytes.first;
+                written = static_cast< size_t >(rangeBytes.second - rangeBytes.first);
             }
             else
             {
@@ -712,6 +714,7 @@ namespace
         ASSERT_EQ(kmsClient->m_decryptCalledCount, 1u);
     }
 
+#if !defined(NDEBUG) && defined(GTEST_HAS_DEATH_TEST)
     TEST_F(CryptoModulesTest, StrictAERangeGet)
     {
         SimpleEncryptionMaterials materials(Aws::Utils::Crypto::SymmetricCipher::GenerateKey());
@@ -826,6 +829,7 @@ namespace
         auto getObjectFunction = [&s3Client](Aws::S3::Model::GetObjectRequest getRequest) -> Aws::S3::Model::GetObjectOutcome { return s3Client.GetObject(getRequest); };
         ASSERT_DEATH({ decryptionModule->GetObjectSecurely(getRequest, headOutcome.GetResult(), contentCryptoMaterial, getObjectFunction); }, ASSERTION_FAILED);
     }
+#endif // !defined(NDEBUG) && defined(GTEST_HAS_DEATH_TEST)
 #endif
 
     TEST_F(CryptoModulesTest, RangeParserSuccess)

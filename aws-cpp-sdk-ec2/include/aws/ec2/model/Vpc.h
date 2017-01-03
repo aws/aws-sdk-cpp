@@ -20,6 +20,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/Tenancy.h>
 #include <aws/ec2/model/Tag.h>
+#include <aws/ec2/model/VpcIpv6CidrBlockAssociation.h>
 
 namespace Aws
 {
@@ -36,7 +37,9 @@ namespace Model
 {
 
   /**
-   * <p>Describes a VPC.</p>
+   * <p>Describes a VPC.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/Vpc">AWS API
+   * Reference</a></p>
    */
   class AWS_EC2_API Vpc
   {
@@ -109,37 +112,37 @@ namespace Model
     inline Vpc& WithState(VpcState&& value) { SetState(value); return *this;}
 
     /**
-     * <p>The CIDR block for the VPC.</p>
+     * <p>The IPv4 CIDR block for the VPC.</p>
      */
     inline const Aws::String& GetCidrBlock() const{ return m_cidrBlock; }
 
     /**
-     * <p>The CIDR block for the VPC.</p>
+     * <p>The IPv4 CIDR block for the VPC.</p>
      */
     inline void SetCidrBlock(const Aws::String& value) { m_cidrBlockHasBeenSet = true; m_cidrBlock = value; }
 
     /**
-     * <p>The CIDR block for the VPC.</p>
+     * <p>The IPv4 CIDR block for the VPC.</p>
      */
     inline void SetCidrBlock(Aws::String&& value) { m_cidrBlockHasBeenSet = true; m_cidrBlock = value; }
 
     /**
-     * <p>The CIDR block for the VPC.</p>
+     * <p>The IPv4 CIDR block for the VPC.</p>
      */
     inline void SetCidrBlock(const char* value) { m_cidrBlockHasBeenSet = true; m_cidrBlock.assign(value); }
 
     /**
-     * <p>The CIDR block for the VPC.</p>
+     * <p>The IPv4 CIDR block for the VPC.</p>
      */
     inline Vpc& WithCidrBlock(const Aws::String& value) { SetCidrBlock(value); return *this;}
 
     /**
-     * <p>The CIDR block for the VPC.</p>
+     * <p>The IPv4 CIDR block for the VPC.</p>
      */
     inline Vpc& WithCidrBlock(Aws::String&& value) { SetCidrBlock(value); return *this;}
 
     /**
-     * <p>The CIDR block for the VPC.</p>
+     * <p>The IPv4 CIDR block for the VPC.</p>
      */
     inline Vpc& WithCidrBlock(const char* value) { SetCidrBlock(value); return *this;}
 
@@ -260,6 +263,41 @@ namespace Model
      */
     inline Vpc& WithIsDefault(bool value) { SetIsDefault(value); return *this;}
 
+    /**
+     * <p>Information about the IPv6 CIDR blocks associated with the VPC.</p>
+     */
+    inline const Aws::Vector<VpcIpv6CidrBlockAssociation>& GetIpv6CidrBlockAssociationSet() const{ return m_ipv6CidrBlockAssociationSet; }
+
+    /**
+     * <p>Information about the IPv6 CIDR blocks associated with the VPC.</p>
+     */
+    inline void SetIpv6CidrBlockAssociationSet(const Aws::Vector<VpcIpv6CidrBlockAssociation>& value) { m_ipv6CidrBlockAssociationSetHasBeenSet = true; m_ipv6CidrBlockAssociationSet = value; }
+
+    /**
+     * <p>Information about the IPv6 CIDR blocks associated with the VPC.</p>
+     */
+    inline void SetIpv6CidrBlockAssociationSet(Aws::Vector<VpcIpv6CidrBlockAssociation>&& value) { m_ipv6CidrBlockAssociationSetHasBeenSet = true; m_ipv6CidrBlockAssociationSet = value; }
+
+    /**
+     * <p>Information about the IPv6 CIDR blocks associated with the VPC.</p>
+     */
+    inline Vpc& WithIpv6CidrBlockAssociationSet(const Aws::Vector<VpcIpv6CidrBlockAssociation>& value) { SetIpv6CidrBlockAssociationSet(value); return *this;}
+
+    /**
+     * <p>Information about the IPv6 CIDR blocks associated with the VPC.</p>
+     */
+    inline Vpc& WithIpv6CidrBlockAssociationSet(Aws::Vector<VpcIpv6CidrBlockAssociation>&& value) { SetIpv6CidrBlockAssociationSet(value); return *this;}
+
+    /**
+     * <p>Information about the IPv6 CIDR blocks associated with the VPC.</p>
+     */
+    inline Vpc& AddIpv6CidrBlockAssociationSet(const VpcIpv6CidrBlockAssociation& value) { m_ipv6CidrBlockAssociationSetHasBeenSet = true; m_ipv6CidrBlockAssociationSet.push_back(value); return *this; }
+
+    /**
+     * <p>Information about the IPv6 CIDR blocks associated with the VPC.</p>
+     */
+    inline Vpc& AddIpv6CidrBlockAssociationSet(VpcIpv6CidrBlockAssociation&& value) { m_ipv6CidrBlockAssociationSetHasBeenSet = true; m_ipv6CidrBlockAssociationSet.push_back(value); return *this; }
+
   private:
     Aws::String m_vpcId;
     bool m_vpcIdHasBeenSet;
@@ -275,6 +313,8 @@ namespace Model
     bool m_instanceTenancyHasBeenSet;
     bool m_isDefault;
     bool m_isDefaultHasBeenSet;
+    Aws::Vector<VpcIpv6CidrBlockAssociation> m_ipv6CidrBlockAssociationSet;
+    bool m_ipv6CidrBlockAssociationSetHasBeenSet;
   };
 
 } // namespace Model

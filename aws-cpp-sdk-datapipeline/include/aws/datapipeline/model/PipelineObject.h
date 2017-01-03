@@ -35,7 +35,9 @@ namespace Model
   /**
    * <p>Contains information about a pipeline object. This can be a logical,
    * physical, or physical attempt pipeline object. The complete set of components of
-   * a pipeline defines the pipeline.</p>
+   * a pipeline defines the pipeline.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/PipelineObject">AWS
+   * API Reference</a></p>
    */
   class AWS_DATAPIPELINE_API PipelineObject
   {

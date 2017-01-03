@@ -25,7 +25,8 @@ namespace Model
   enum class SourceType
   {
     NOT_SET,
-    Git
+    Git,
+    Zip
   };
 
 namespace SourceTypeMapper

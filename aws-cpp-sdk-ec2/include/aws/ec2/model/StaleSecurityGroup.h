@@ -35,7 +35,9 @@ namespace Model
 
   /**
    * <p>Describes a stale security group (a security group that contains stale
-   * rules).</p>
+   * rules).</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/StaleSecurityGroup">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API StaleSecurityGroup
   {

@@ -38,6 +38,7 @@ NetworkAclEntry::NetworkAclEntry() :
     m_egress(false),
     m_egressHasBeenSet(false),
     m_cidrBlockHasBeenSet(false),
+    m_ipv6CidrBlockHasBeenSet(false),
     m_icmpTypeCodeHasBeenSet(false),
     m_portRangeHasBeenSet(false)
 {
@@ -52,6 +53,7 @@ NetworkAclEntry::NetworkAclEntry(const XmlNode& xmlNode) :
     m_egress(false),
     m_egressHasBeenSet(false),
     m_cidrBlockHasBeenSet(false),
+    m_ipv6CidrBlockHasBeenSet(false),
     m_icmpTypeCodeHasBeenSet(false),
     m_portRangeHasBeenSet(false)
 {
@@ -93,6 +95,12 @@ NetworkAclEntry& NetworkAclEntry::operator =(const XmlNode& xmlNode)
     {
       m_cidrBlock = StringUtils::Trim(cidrBlockNode.GetText().c_str());
       m_cidrBlockHasBeenSet = true;
+    }
+    XmlNode ipv6CidrBlockNode = resultNode.FirstChild("ipv6CidrBlock");
+    if(!ipv6CidrBlockNode.IsNull())
+    {
+      m_ipv6CidrBlock = StringUtils::Trim(ipv6CidrBlockNode.GetText().c_str());
+      m_ipv6CidrBlockHasBeenSet = true;
     }
     XmlNode icmpTypeCodeNode = resultNode.FirstChild("icmpTypeCode");
     if(!icmpTypeCodeNode.IsNull())
@@ -138,6 +146,11 @@ void NetworkAclEntry::OutputToStream(Aws::OStream& oStream, const char* location
       oStream << location << index << locationValue << ".CidrBlock=" << StringUtils::URLEncode(m_cidrBlock.c_str()) << "&";
   }
 
+  if(m_ipv6CidrBlockHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Ipv6CidrBlock=" << StringUtils::URLEncode(m_ipv6CidrBlock.c_str()) << "&";
+  }
+
   if(m_icmpTypeCodeHasBeenSet)
   {
       Aws::StringStream icmpTypeCodeLocationAndMemberSs;
@@ -175,6 +188,10 @@ void NetworkAclEntry::OutputToStream(Aws::OStream& oStream, const char* location
   if(m_cidrBlockHasBeenSet)
   {
       oStream << location << ".CidrBlock=" << StringUtils::URLEncode(m_cidrBlock.c_str()) << "&";
+  }
+  if(m_ipv6CidrBlockHasBeenSet)
+  {
+      oStream << location << ".Ipv6CidrBlock=" << StringUtils::URLEncode(m_ipv6CidrBlock.c_str()) << "&";
   }
   if(m_icmpTypeCodeHasBeenSet)
   {

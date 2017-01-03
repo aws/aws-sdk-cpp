@@ -30,7 +30,10 @@ namespace Model
 {
 
   /**
-   * <p>The input for the <a>CreateChangeSet</a> action.</p>
+   * <p>The input for the <a>CreateChangeSet</a> action.</p><p><h3>See Also:</h3>  
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSetInput">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDFORMATION_API CreateChangeSetRequest : public CloudFormationRequest
   {
@@ -1003,77 +1006,72 @@ namespace Model
     inline CreateChangeSetRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
     /**
-     * <p>The type of change set operation.</p> <p>Valid values are <code>CREATE</code>
-     * and <code>UPDATE</code>. The default value is <code>UPDATE</code>.</p> <ul> <li>
-     * <p> <code>CREATE</code> - Specify to use the change set to create a new stack.
-     * While AWS CloudFormation creates the stack, the stack has the <a
+     * <p>The type of change set operation. To create a change set for a new stack,
+     * specify <code>CREATE</code>. To create a change set for an existing stack,
+     * specify <code>UPDATE</code>.</p> <p>If you create a change set for a new stack,
+     * AWS Cloudformation creates a stack with a unique stack ID, but no template or
+     * resources. The stack will be in the <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995">
-     * <code>REVIEW_IN_PROGRESS</code> </a> status and an expected
-     * <code>StackId</code>, but no template or resources. Except for its
-     * <code>StackId</code>, the stack is completely empty until you execute the change
-     * set. You can apply multiple change sets to a stack.</p> </li> <li> <p>
-     * <code>UPDATE</code> - Specify to create a change set for an existing stack.</p>
-     * </li> </ul>
+     * <code>REVIEW_IN_PROGRESS</code> </a> state until you execute the change set.</p>
+     * <p>By default, AWS CloudFormation specifies <code>UPDATE</code>. You can't use
+     * the <code>UPDATE</code> type to create a change set for a new stack or the
+     * <code>CREATE</code> type to create a change set for an existing stack.</p>
      */
     inline const ChangeSetType& GetChangeSetType() const{ return m_changeSetType; }
 
     /**
-     * <p>The type of change set operation.</p> <p>Valid values are <code>CREATE</code>
-     * and <code>UPDATE</code>. The default value is <code>UPDATE</code>.</p> <ul> <li>
-     * <p> <code>CREATE</code> - Specify to use the change set to create a new stack.
-     * While AWS CloudFormation creates the stack, the stack has the <a
+     * <p>The type of change set operation. To create a change set for a new stack,
+     * specify <code>CREATE</code>. To create a change set for an existing stack,
+     * specify <code>UPDATE</code>.</p> <p>If you create a change set for a new stack,
+     * AWS Cloudformation creates a stack with a unique stack ID, but no template or
+     * resources. The stack will be in the <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995">
-     * <code>REVIEW_IN_PROGRESS</code> </a> status and an expected
-     * <code>StackId</code>, but no template or resources. Except for its
-     * <code>StackId</code>, the stack is completely empty until you execute the change
-     * set. You can apply multiple change sets to a stack.</p> </li> <li> <p>
-     * <code>UPDATE</code> - Specify to create a change set for an existing stack.</p>
-     * </li> </ul>
+     * <code>REVIEW_IN_PROGRESS</code> </a> state until you execute the change set.</p>
+     * <p>By default, AWS CloudFormation specifies <code>UPDATE</code>. You can't use
+     * the <code>UPDATE</code> type to create a change set for a new stack or the
+     * <code>CREATE</code> type to create a change set for an existing stack.</p>
      */
     inline void SetChangeSetType(const ChangeSetType& value) { m_changeSetTypeHasBeenSet = true; m_changeSetType = value; }
 
     /**
-     * <p>The type of change set operation.</p> <p>Valid values are <code>CREATE</code>
-     * and <code>UPDATE</code>. The default value is <code>UPDATE</code>.</p> <ul> <li>
-     * <p> <code>CREATE</code> - Specify to use the change set to create a new stack.
-     * While AWS CloudFormation creates the stack, the stack has the <a
+     * <p>The type of change set operation. To create a change set for a new stack,
+     * specify <code>CREATE</code>. To create a change set for an existing stack,
+     * specify <code>UPDATE</code>.</p> <p>If you create a change set for a new stack,
+     * AWS Cloudformation creates a stack with a unique stack ID, but no template or
+     * resources. The stack will be in the <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995">
-     * <code>REVIEW_IN_PROGRESS</code> </a> status and an expected
-     * <code>StackId</code>, but no template or resources. Except for its
-     * <code>StackId</code>, the stack is completely empty until you execute the change
-     * set. You can apply multiple change sets to a stack.</p> </li> <li> <p>
-     * <code>UPDATE</code> - Specify to create a change set for an existing stack.</p>
-     * </li> </ul>
+     * <code>REVIEW_IN_PROGRESS</code> </a> state until you execute the change set.</p>
+     * <p>By default, AWS CloudFormation specifies <code>UPDATE</code>. You can't use
+     * the <code>UPDATE</code> type to create a change set for a new stack or the
+     * <code>CREATE</code> type to create a change set for an existing stack.</p>
      */
     inline void SetChangeSetType(ChangeSetType&& value) { m_changeSetTypeHasBeenSet = true; m_changeSetType = value; }
 
     /**
-     * <p>The type of change set operation.</p> <p>Valid values are <code>CREATE</code>
-     * and <code>UPDATE</code>. The default value is <code>UPDATE</code>.</p> <ul> <li>
-     * <p> <code>CREATE</code> - Specify to use the change set to create a new stack.
-     * While AWS CloudFormation creates the stack, the stack has the <a
+     * <p>The type of change set operation. To create a change set for a new stack,
+     * specify <code>CREATE</code>. To create a change set for an existing stack,
+     * specify <code>UPDATE</code>.</p> <p>If you create a change set for a new stack,
+     * AWS Cloudformation creates a stack with a unique stack ID, but no template or
+     * resources. The stack will be in the <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995">
-     * <code>REVIEW_IN_PROGRESS</code> </a> status and an expected
-     * <code>StackId</code>, but no template or resources. Except for its
-     * <code>StackId</code>, the stack is completely empty until you execute the change
-     * set. You can apply multiple change sets to a stack.</p> </li> <li> <p>
-     * <code>UPDATE</code> - Specify to create a change set for an existing stack.</p>
-     * </li> </ul>
+     * <code>REVIEW_IN_PROGRESS</code> </a> state until you execute the change set.</p>
+     * <p>By default, AWS CloudFormation specifies <code>UPDATE</code>. You can't use
+     * the <code>UPDATE</code> type to create a change set for a new stack or the
+     * <code>CREATE</code> type to create a change set for an existing stack.</p>
      */
     inline CreateChangeSetRequest& WithChangeSetType(const ChangeSetType& value) { SetChangeSetType(value); return *this;}
 
     /**
-     * <p>The type of change set operation.</p> <p>Valid values are <code>CREATE</code>
-     * and <code>UPDATE</code>. The default value is <code>UPDATE</code>.</p> <ul> <li>
-     * <p> <code>CREATE</code> - Specify to use the change set to create a new stack.
-     * While AWS CloudFormation creates the stack, the stack has the <a
+     * <p>The type of change set operation. To create a change set for a new stack,
+     * specify <code>CREATE</code>. To create a change set for an existing stack,
+     * specify <code>UPDATE</code>.</p> <p>If you create a change set for a new stack,
+     * AWS Cloudformation creates a stack with a unique stack ID, but no template or
+     * resources. The stack will be in the <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995">
-     * <code>REVIEW_IN_PROGRESS</code> </a> status and an expected
-     * <code>StackId</code>, but no template or resources. Except for its
-     * <code>StackId</code>, the stack is completely empty until you execute the change
-     * set. You can apply multiple change sets to a stack.</p> </li> <li> <p>
-     * <code>UPDATE</code> - Specify to create a change set for an existing stack.</p>
-     * </li> </ul>
+     * <code>REVIEW_IN_PROGRESS</code> </a> state until you execute the change set.</p>
+     * <p>By default, AWS CloudFormation specifies <code>UPDATE</code>. You can't use
+     * the <code>UPDATE</code> type to create a change set for a new stack or the
+     * <code>CREATE</code> type to create a change set for an existing stack.</p>
      */
     inline CreateChangeSetRequest& WithChangeSetType(ChangeSetType&& value) { SetChangeSetType(value); return *this;}
 

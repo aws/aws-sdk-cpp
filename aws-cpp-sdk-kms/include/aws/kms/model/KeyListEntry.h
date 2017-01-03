@@ -31,7 +31,10 @@ namespace Model
 {
 
   /**
-   * <p>Contains information about each entry in the key list.</p>
+   * <p>Contains information about each entry in the key list.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/KeyListEntry">AWS
+   * API Reference</a></p>
    */
   class AWS_KMS_API KeyListEntry
   {

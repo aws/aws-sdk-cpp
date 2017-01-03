@@ -34,7 +34,9 @@ namespace Model
   /**
    * <p>A complex type that identifies the CloudWatch alarm that you want Amazon
    * Route 53 health checkers to use to determine whether this health check is
-   * healthy.</p>
+   * healthy.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/AlarmIdentifier">AWS
+   * API Reference</a></p>
    */
   class AWS_ROUTE53_API AlarmIdentifier
   {

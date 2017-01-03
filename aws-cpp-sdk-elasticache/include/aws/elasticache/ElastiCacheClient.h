@@ -17,6 +17,7 @@
 #include <aws/elasticache/ElastiCacheErrors.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -297,6 +298,12 @@ namespace Model
 
         virtual ~ElastiCacheClient();
 
+       /**
+        * Converts any request object to a presigned URL with the GET method, using region for the signer and a timeout of 15 minutes.
+        */
+        Aws::String ConvertRequestToPresignedUrl(const AmazonSerializableWebServiceRequest& requestToConvert, const char* region) const;
+
+
         /**
          * <p>Adds up to 10 cost allocation tags to the named resource. A cost allocation
          * tag is a key-value pair where the key and value are case-sensitive. You can use
@@ -308,7 +315,9 @@ namespace Model
          * services. For more information, see <a
          * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Tagging.html">Using
          * Cost Allocation Tags in Amazon ElastiCache</a> in the <i>ElastiCache User
-         * Guide</i>.</p>
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/AddTagsToResource">AWS
+         * API Reference</a></p>
          */
         virtual Model::AddTagsToResourceOutcome AddTagsToResource(const Model::AddTagsToResourceRequest& request) const;
 
@@ -323,7 +332,9 @@ namespace Model
          * services. For more information, see <a
          * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Tagging.html">Using
          * Cost Allocation Tags in Amazon ElastiCache</a> in the <i>ElastiCache User
-         * Guide</i>.</p>
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/AddTagsToResource">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -340,7 +351,9 @@ namespace Model
          * services. For more information, see <a
          * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Tagging.html">Using
          * Cost Allocation Tags in Amazon ElastiCache</a> in the <i>ElastiCache User
-         * Guide</i>.</p>
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/AddTagsToResource">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -351,7 +364,9 @@ namespace Model
          * ElastiCache must be running on Amazon EC2, and Amazon EC2 security groups are
          * used as the authorization mechanism.</p> <note> <p>You cannot authorize ingress
          * from an Amazon EC2 security group in one region to an ElastiCache cluster in
-         * another region.</p> </note>
+         * another region.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/AuthorizeCacheSecurityGroupIngress">AWS
+         * API Reference</a></p>
          */
         virtual Model::AuthorizeCacheSecurityGroupIngressOutcome AuthorizeCacheSecurityGroupIngress(const Model::AuthorizeCacheSecurityGroupIngressRequest& request) const;
 
@@ -360,7 +375,9 @@ namespace Model
          * ElastiCache must be running on Amazon EC2, and Amazon EC2 security groups are
          * used as the authorization mechanism.</p> <note> <p>You cannot authorize ingress
          * from an Amazon EC2 security group in one region to an ElastiCache cluster in
-         * another region.</p> </note>
+         * another region.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/AuthorizeCacheSecurityGroupIngress">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -371,7 +388,9 @@ namespace Model
          * ElastiCache must be running on Amazon EC2, and Amazon EC2 security groups are
          * used as the authorization mechanism.</p> <note> <p>You cannot authorize ingress
          * from an Amazon EC2 security group in one region to an ElastiCache cluster in
-         * another region.</p> </note>
+         * another region.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/AuthorizeCacheSecurityGroupIngress">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -428,7 +447,9 @@ namespace Model
          * View Permissions on the bucket. For more information, see <a
          * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Snapshots.Exporting.html#Snapshots.Exporting.GrantAccess">Step
          * 2: Grant ElastiCache Access to Your Amazon S3 Bucket</a> in the ElastiCache User
-         * Guide.</p> </li> </ul>
+         * Guide.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CopySnapshot">AWS
+         * API Reference</a></p>
          */
         virtual Model::CopySnapshotOutcome CopySnapshot(const Model::CopySnapshotRequest& request) const;
 
@@ -483,7 +504,9 @@ namespace Model
          * View Permissions on the bucket. For more information, see <a
          * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Snapshots.Exporting.html#Snapshots.Exporting.GrantAccess">Step
          * 2: Grant ElastiCache Access to Your Amazon S3 Bucket</a> in the ElastiCache User
-         * Guide.</p> </li> </ul>
+         * Guide.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CopySnapshot">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -540,7 +563,9 @@ namespace Model
          * View Permissions on the bucket. For more information, see <a
          * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Snapshots.Exporting.html#Snapshots.Exporting.GrantAccess">Step
          * 2: Grant ElastiCache Access to Your Amazon S3 Bucket</a> in the ElastiCache User
-         * Guide.</p> </li> </ul>
+         * Guide.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CopySnapshot">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -551,7 +576,9 @@ namespace Model
          * protocol-compliant cache engine software, either Memcached or Redis.</p>
          * <important> <p>Due to current limitations on Redis (cluster mode disabled), this
          * operation or parameter is not supported on Redis (cluster mode enabled)
-         * replication groups.</p> </important>
+         * replication groups.</p> </important><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateCacheCluster">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateCacheClusterOutcome CreateCacheCluster(const Model::CreateCacheClusterRequest& request) const;
 
@@ -560,7 +587,9 @@ namespace Model
          * protocol-compliant cache engine software, either Memcached or Redis.</p>
          * <important> <p>Due to current limitations on Redis (cluster mode disabled), this
          * operation or parameter is not supported on Redis (cluster mode enabled)
-         * replication groups.</p> </important>
+         * replication groups.</p> </important><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateCacheCluster">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -571,7 +600,9 @@ namespace Model
          * protocol-compliant cache engine software, either Memcached or Redis.</p>
          * <important> <p>Due to current limitations on Redis (cluster mode disabled), this
          * operation or parameter is not supported on Redis (cluster mode enabled)
-         * replication groups.</p> </important>
+         * replication groups.</p> </important><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateCacheCluster">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -579,13 +610,19 @@ namespace Model
 
         /**
          * <p>Creates a new cache parameter group. A cache parameter group is a collection
-         * of parameters that you apply to all of the nodes in a cache cluster.</p>
+         * of parameters that you apply to all of the nodes in a cache
+         * cluster.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateCacheParameterGroup">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateCacheParameterGroupOutcome CreateCacheParameterGroup(const Model::CreateCacheParameterGroupRequest& request) const;
 
         /**
          * <p>Creates a new cache parameter group. A cache parameter group is a collection
-         * of parameters that you apply to all of the nodes in a cache cluster.</p>
+         * of parameters that you apply to all of the nodes in a cache
+         * cluster.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateCacheParameterGroup">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -593,7 +630,10 @@ namespace Model
 
         /**
          * <p>Creates a new cache parameter group. A cache parameter group is a collection
-         * of parameters that you apply to all of the nodes in a cache cluster.</p>
+         * of parameters that you apply to all of the nodes in a cache
+         * cluster.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateCacheParameterGroup">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -605,7 +645,10 @@ namespace Model
          * when you are creating a cache cluster outside of an Amazon Virtual Private Cloud
          * (Amazon VPC). If you are creating a cache cluster inside of a VPC, use a cache
          * subnet group instead. For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_CreateCacheSubnetGroup.html">CreateCacheSubnetGroup</a>.</p>
+         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_CreateCacheSubnetGroup.html">CreateCacheSubnetGroup</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateCacheSecurityGroup">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateCacheSecurityGroupOutcome CreateCacheSecurityGroup(const Model::CreateCacheSecurityGroupRequest& request) const;
 
@@ -615,7 +658,10 @@ namespace Model
          * when you are creating a cache cluster outside of an Amazon Virtual Private Cloud
          * (Amazon VPC). If you are creating a cache cluster inside of a VPC, use a cache
          * subnet group instead. For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_CreateCacheSubnetGroup.html">CreateCacheSubnetGroup</a>.</p>
+         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_CreateCacheSubnetGroup.html">CreateCacheSubnetGroup</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateCacheSecurityGroup">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -627,7 +673,10 @@ namespace Model
          * when you are creating a cache cluster outside of an Amazon Virtual Private Cloud
          * (Amazon VPC). If you are creating a cache cluster inside of a VPC, use a cache
          * subnet group instead. For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_CreateCacheSubnetGroup.html">CreateCacheSubnetGroup</a>.</p>
+         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_CreateCacheSubnetGroup.html">CreateCacheSubnetGroup</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateCacheSecurityGroup">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -635,13 +684,19 @@ namespace Model
 
         /**
          * <p>Creates a new cache subnet group.</p> <p>Use this parameter only when you are
-         * creating a cluster in an Amazon Virtual Private Cloud (Amazon VPC).</p>
+         * creating a cluster in an Amazon Virtual Private Cloud (Amazon
+         * VPC).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateCacheSubnetGroup">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateCacheSubnetGroupOutcome CreateCacheSubnetGroup(const Model::CreateCacheSubnetGroupRequest& request) const;
 
         /**
          * <p>Creates a new cache subnet group.</p> <p>Use this parameter only when you are
-         * creating a cluster in an Amazon Virtual Private Cloud (Amazon VPC).</p>
+         * creating a cluster in an Amazon Virtual Private Cloud (Amazon
+         * VPC).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateCacheSubnetGroup">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -649,7 +704,10 @@ namespace Model
 
         /**
          * <p>Creates a new cache subnet group.</p> <p>Use this parameter only when you are
-         * creating a cluster in an Amazon Virtual Private Cloud (Amazon VPC).</p>
+         * creating a cluster in an Amazon Virtual Private Cloud (Amazon
+         * VPC).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateCacheSubnetGroup">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -669,7 +727,9 @@ namespace Model
          * has been successfully created, you can add one or more read replicas to it, up
          * to a total of 5 read replicas. You cannot alter a Redis (cluster mode enabled)
          * replication group after it has been created.</p> <note> <p>This operation is
-         * valid for Redis only.</p> </note>
+         * valid for Redis only.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateReplicationGroup">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateReplicationGroupOutcome CreateReplicationGroup(const Model::CreateReplicationGroupRequest& request) const;
 
@@ -687,7 +747,9 @@ namespace Model
          * has been successfully created, you can add one or more read replicas to it, up
          * to a total of 5 read replicas. You cannot alter a Redis (cluster mode enabled)
          * replication group after it has been created.</p> <note> <p>This operation is
-         * valid for Redis only.</p> </note>
+         * valid for Redis only.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateReplicationGroup">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -707,7 +769,9 @@ namespace Model
          * has been successfully created, you can add one or more read replicas to it, up
          * to a total of 5 read replicas. You cannot alter a Redis (cluster mode enabled)
          * replication group after it has been created.</p> <note> <p>This operation is
-         * valid for Redis only.</p> </note>
+         * valid for Redis only.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateReplicationGroup">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -716,14 +780,18 @@ namespace Model
         /**
          * <p>Creates a copy of an entire cache cluster or replication group at a specific
          * moment in time.</p> <note> <p>This operation is valid for Redis only.</p>
-         * </note>
+         * </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateSnapshot">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateSnapshotOutcome CreateSnapshot(const Model::CreateSnapshotRequest& request) const;
 
         /**
          * <p>Creates a copy of an entire cache cluster or replication group at a specific
          * moment in time.</p> <note> <p>This operation is valid for Redis only.</p>
-         * </note>
+         * </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateSnapshot">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -732,7 +800,9 @@ namespace Model
         /**
          * <p>Creates a copy of an entire cache cluster or replication group at a specific
          * moment in time.</p> <note> <p>This operation is valid for Redis only.</p>
-         * </note>
+         * </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateSnapshot">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -749,7 +819,9 @@ namespace Model
          * cache cluster from a Redis (cluster mode enabled) replication group.</p>
          * <important> <p>Due to current limitations on Redis (cluster mode disabled), this
          * operation or parameter is not supported on Redis (cluster mode enabled)
-         * replication groups.</p> </important>
+         * replication groups.</p> </important><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteCacheCluster">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteCacheClusterOutcome DeleteCacheCluster(const Model::DeleteCacheClusterRequest& request) const;
 
@@ -764,7 +836,9 @@ namespace Model
          * cache cluster from a Redis (cluster mode enabled) replication group.</p>
          * <important> <p>Due to current limitations on Redis (cluster mode disabled), this
          * operation or parameter is not supported on Redis (cluster mode enabled)
-         * replication groups.</p> </important>
+         * replication groups.</p> </important><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteCacheCluster">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -781,7 +855,9 @@ namespace Model
          * cache cluster from a Redis (cluster mode enabled) replication group.</p>
          * <important> <p>Due to current limitations on Redis (cluster mode disabled), this
          * operation or parameter is not supported on Redis (cluster mode enabled)
-         * replication groups.</p> </important>
+         * replication groups.</p> </important><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteCacheCluster">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -789,13 +865,19 @@ namespace Model
 
         /**
          * <p>Deletes the specified cache parameter group. You cannot delete a cache
-         * parameter group if it is associated with any cache clusters.</p>
+         * parameter group if it is associated with any cache clusters.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteCacheParameterGroup">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteCacheParameterGroupOutcome DeleteCacheParameterGroup(const Model::DeleteCacheParameterGroupRequest& request) const;
 
         /**
          * <p>Deletes the specified cache parameter group. You cannot delete a cache
-         * parameter group if it is associated with any cache clusters.</p>
+         * parameter group if it is associated with any cache clusters.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteCacheParameterGroup">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -803,7 +885,10 @@ namespace Model
 
         /**
          * <p>Deletes the specified cache parameter group. You cannot delete a cache
-         * parameter group if it is associated with any cache clusters.</p>
+         * parameter group if it is associated with any cache clusters.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteCacheParameterGroup">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -811,13 +896,19 @@ namespace Model
 
         /**
          * <p>Deletes a cache security group.</p> <note> <p>You cannot delete a cache
-         * security group if it is associated with any cache clusters.</p> </note>
+         * security group if it is associated with any cache clusters.</p>
+         * </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteCacheSecurityGroup">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteCacheSecurityGroupOutcome DeleteCacheSecurityGroup(const Model::DeleteCacheSecurityGroupRequest& request) const;
 
         /**
          * <p>Deletes a cache security group.</p> <note> <p>You cannot delete a cache
-         * security group if it is associated with any cache clusters.</p> </note>
+         * security group if it is associated with any cache clusters.</p>
+         * </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteCacheSecurityGroup">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -825,7 +916,10 @@ namespace Model
 
         /**
          * <p>Deletes a cache security group.</p> <note> <p>You cannot delete a cache
-         * security group if it is associated with any cache clusters.</p> </note>
+         * security group if it is associated with any cache clusters.</p>
+         * </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteCacheSecurityGroup">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -833,13 +927,19 @@ namespace Model
 
         /**
          * <p>Deletes a cache subnet group.</p> <note> <p>You cannot delete a cache subnet
-         * group if it is associated with any cache clusters.</p> </note>
+         * group if it is associated with any cache clusters.</p> </note><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteCacheSubnetGroup">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteCacheSubnetGroupOutcome DeleteCacheSubnetGroup(const Model::DeleteCacheSubnetGroupRequest& request) const;
 
         /**
          * <p>Deletes a cache subnet group.</p> <note> <p>You cannot delete a cache subnet
-         * group if it is associated with any cache clusters.</p> </note>
+         * group if it is associated with any cache clusters.</p> </note><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteCacheSubnetGroup">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -847,7 +947,10 @@ namespace Model
 
         /**
          * <p>Deletes a cache subnet group.</p> <note> <p>You cannot delete a cache subnet
-         * group if it is associated with any cache clusters.</p> </note>
+         * group if it is associated with any cache clusters.</p> </note><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteCacheSubnetGroup">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -861,7 +964,9 @@ namespace Model
          * <code>RetainPrimaryCluster=true</code>.</p> <p>When you receive a successful
          * response from this operation, Amazon ElastiCache immediately begins deleting the
          * selected resources; you cannot cancel or revert this operation.</p> <note>
-         * <p>This operation is valid for Redis only.</p> </note>
+         * <p>This operation is valid for Redis only.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteReplicationGroup">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteReplicationGroupOutcome DeleteReplicationGroup(const Model::DeleteReplicationGroupRequest& request) const;
 
@@ -873,7 +978,9 @@ namespace Model
          * <code>RetainPrimaryCluster=true</code>.</p> <p>When you receive a successful
          * response from this operation, Amazon ElastiCache immediately begins deleting the
          * selected resources; you cannot cancel or revert this operation.</p> <note>
-         * <p>This operation is valid for Redis only.</p> </note>
+         * <p>This operation is valid for Redis only.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteReplicationGroup">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -887,7 +994,9 @@ namespace Model
          * <code>RetainPrimaryCluster=true</code>.</p> <p>When you receive a successful
          * response from this operation, Amazon ElastiCache immediately begins deleting the
          * selected resources; you cannot cancel or revert this operation.</p> <note>
-         * <p>This operation is valid for Redis only.</p> </note>
+         * <p>This operation is valid for Redis only.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteReplicationGroup">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -897,7 +1006,9 @@ namespace Model
          * <p>Deletes an existing snapshot. When you receive a successful response from
          * this operation, ElastiCache immediately begins deleting the snapshot; you cannot
          * cancel or revert this operation.</p> <note> <p>This operation is valid for Redis
-         * only.</p> </note>
+         * only.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteSnapshot">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteSnapshotOutcome DeleteSnapshot(const Model::DeleteSnapshotRequest& request) const;
 
@@ -905,7 +1016,9 @@ namespace Model
          * <p>Deletes an existing snapshot. When you receive a successful response from
          * this operation, ElastiCache immediately begins deleting the snapshot; you cannot
          * cancel or revert this operation.</p> <note> <p>This operation is valid for Redis
-         * only.</p> </note>
+         * only.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteSnapshot">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -915,7 +1028,9 @@ namespace Model
          * <p>Deletes an existing snapshot. When you receive a successful response from
          * this operation, ElastiCache immediately begins deleting the snapshot; you cannot
          * cancel or revert this operation.</p> <note> <p>This operation is valid for Redis
-         * only.</p> </note>
+         * only.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteSnapshot">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -936,7 +1051,9 @@ namespace Model
          * nodes are not displayed until they are completely provisioned. When the cache
          * cluster state is <code>available</code>, the cluster is ready for use.</p> <p>If
          * cache nodes are currently being removed from the cache cluster, no endpoint
-         * information for the removed nodes is displayed.</p>
+         * information for the removed nodes is displayed.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeCacheClusters">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeCacheClustersOutcome DescribeCacheClusters(const Model::DescribeCacheClustersRequest& request) const;
 
@@ -955,7 +1072,9 @@ namespace Model
          * nodes are not displayed until they are completely provisioned. When the cache
          * cluster state is <code>available</code>, the cluster is ready for use.</p> <p>If
          * cache nodes are currently being removed from the cache cluster, no endpoint
-         * information for the removed nodes is displayed.</p>
+         * information for the removed nodes is displayed.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeCacheClusters">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -976,26 +1095,37 @@ namespace Model
          * nodes are not displayed until they are completely provisioned. When the cache
          * cluster state is <code>available</code>, the cluster is ready for use.</p> <p>If
          * cache nodes are currently being removed from the cache cluster, no endpoint
-         * information for the removed nodes is displayed.</p>
+         * information for the removed nodes is displayed.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeCacheClusters">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeCacheClustersAsync(const Model::DescribeCacheClustersRequest& request, const DescribeCacheClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns a list of the available cache engines and their versions.</p>
+         * <p>Returns a list of the available cache engines and their
+         * versions.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeCacheEngineVersions">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeCacheEngineVersionsOutcome DescribeCacheEngineVersions(const Model::DescribeCacheEngineVersionsRequest& request) const;
 
         /**
-         * <p>Returns a list of the available cache engines and their versions.</p>
+         * <p>Returns a list of the available cache engines and their
+         * versions.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeCacheEngineVersions">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeCacheEngineVersionsOutcomeCallable DescribeCacheEngineVersionsCallable(const Model::DescribeCacheEngineVersionsRequest& request) const;
 
         /**
-         * <p>Returns a list of the available cache engines and their versions.</p>
+         * <p>Returns a list of the available cache engines and their
+         * versions.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeCacheEngineVersions">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1004,14 +1134,18 @@ namespace Model
         /**
          * <p>Returns a list of cache parameter group descriptions. If a cache parameter
          * group name is specified, the list contains only the descriptions for that
-         * group.</p>
+         * group.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeCacheParameterGroups">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeCacheParameterGroupsOutcome DescribeCacheParameterGroups(const Model::DescribeCacheParameterGroupsRequest& request) const;
 
         /**
          * <p>Returns a list of cache parameter group descriptions. If a cache parameter
          * group name is specified, the list contains only the descriptions for that
-         * group.</p>
+         * group.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeCacheParameterGroups">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1020,7 +1154,9 @@ namespace Model
         /**
          * <p>Returns a list of cache parameter group descriptions. If a cache parameter
          * group name is specified, the list contains only the descriptions for that
-         * group.</p>
+         * group.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeCacheParameterGroups">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1028,13 +1164,17 @@ namespace Model
 
         /**
          * <p>Returns the detailed parameter list for a particular cache parameter
-         * group.</p>
+         * group.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeCacheParameters">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeCacheParametersOutcome DescribeCacheParameters(const Model::DescribeCacheParametersRequest& request) const;
 
         /**
          * <p>Returns the detailed parameter list for a particular cache parameter
-         * group.</p>
+         * group.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeCacheParameters">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1042,7 +1182,9 @@ namespace Model
 
         /**
          * <p>Returns the detailed parameter list for a particular cache parameter
-         * group.</p>
+         * group.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeCacheParameters">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1051,14 +1193,18 @@ namespace Model
         /**
          * <p>Returns a list of cache security group descriptions. If a cache security
          * group name is specified, the list contains only the description of that
-         * group.</p>
+         * group.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeCacheSecurityGroups">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeCacheSecurityGroupsOutcome DescribeCacheSecurityGroups(const Model::DescribeCacheSecurityGroupsRequest& request) const;
 
         /**
          * <p>Returns a list of cache security group descriptions. If a cache security
          * group name is specified, the list contains only the description of that
-         * group.</p>
+         * group.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeCacheSecurityGroups">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1067,7 +1213,9 @@ namespace Model
         /**
          * <p>Returns a list of cache security group descriptions. If a cache security
          * group name is specified, the list contains only the description of that
-         * group.</p>
+         * group.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeCacheSecurityGroups">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1075,13 +1223,19 @@ namespace Model
 
         /**
          * <p>Returns a list of cache subnet group descriptions. If a subnet group name is
-         * specified, the list contains only the description of that group.</p>
+         * specified, the list contains only the description of that group.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeCacheSubnetGroups">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeCacheSubnetGroupsOutcome DescribeCacheSubnetGroups(const Model::DescribeCacheSubnetGroupsRequest& request) const;
 
         /**
          * <p>Returns a list of cache subnet group descriptions. If a subnet group name is
-         * specified, the list contains only the description of that group.</p>
+         * specified, the list contains only the description of that group.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeCacheSubnetGroups">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1089,7 +1243,10 @@ namespace Model
 
         /**
          * <p>Returns a list of cache subnet group descriptions. If a subnet group name is
-         * specified, the list contains only the description of that group.</p>
+         * specified, the list contains only the description of that group.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeCacheSubnetGroups">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1097,13 +1254,17 @@ namespace Model
 
         /**
          * <p>Returns the default engine and system parameter information for the specified
-         * cache engine.</p>
+         * cache engine.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeEngineDefaultParameters">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeEngineDefaultParametersOutcome DescribeEngineDefaultParameters(const Model::DescribeEngineDefaultParametersRequest& request) const;
 
         /**
          * <p>Returns the default engine and system parameter information for the specified
-         * cache engine.</p>
+         * cache engine.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeEngineDefaultParameters">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1111,7 +1272,9 @@ namespace Model
 
         /**
          * <p>Returns the default engine and system parameter information for the specified
-         * cache engine.</p>
+         * cache engine.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeEngineDefaultParameters">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1123,7 +1286,9 @@ namespace Model
          * cache security group, or cache parameter group by providing the name as a
          * parameter.</p> <p>By default, only the events occurring within the last hour are
          * returned; however, you can retrieve up to 14 days' worth of events if
-         * necessary.</p>
+         * necessary.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeEvents">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeEventsOutcome DescribeEvents(const Model::DescribeEventsRequest& request) const;
 
@@ -1133,7 +1298,9 @@ namespace Model
          * cache security group, or cache parameter group by providing the name as a
          * parameter.</p> <p>By default, only the events occurring within the last hour are
          * returned; however, you can retrieve up to 14 days' worth of events if
-         * necessary.</p>
+         * necessary.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeEvents">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1145,7 +1312,9 @@ namespace Model
          * cache security group, or cache parameter group by providing the name as a
          * parameter.</p> <p>By default, only the events occurring within the last hour are
          * returned; however, you can retrieve up to 14 days' worth of events if
-         * necessary.</p>
+         * necessary.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeEvents">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1155,7 +1324,9 @@ namespace Model
          * <p>Returns information about a particular replication group. If no identifier is
          * specified, <code>DescribeReplicationGroups</code> returns information about all
          * replication groups.</p> <note> <p>This operation is valid for Redis only.</p>
-         * </note>
+         * </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeReplicationGroups">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeReplicationGroupsOutcome DescribeReplicationGroups(const Model::DescribeReplicationGroupsRequest& request) const;
 
@@ -1163,7 +1334,9 @@ namespace Model
          * <p>Returns information about a particular replication group. If no identifier is
          * specified, <code>DescribeReplicationGroups</code> returns information about all
          * replication groups.</p> <note> <p>This operation is valid for Redis only.</p>
-         * </note>
+         * </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeReplicationGroups">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1173,7 +1346,9 @@ namespace Model
          * <p>Returns information about a particular replication group. If no identifier is
          * specified, <code>DescribeReplicationGroups</code> returns information about all
          * replication groups.</p> <note> <p>This operation is valid for Redis only.</p>
-         * </note>
+         * </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeReplicationGroups">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1181,13 +1356,17 @@ namespace Model
 
         /**
          * <p>Returns information about reserved cache nodes for this account, or about a
-         * specified reserved cache node.</p>
+         * specified reserved cache node.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeReservedCacheNodes">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeReservedCacheNodesOutcome DescribeReservedCacheNodes(const Model::DescribeReservedCacheNodesRequest& request) const;
 
         /**
          * <p>Returns information about reserved cache nodes for this account, or about a
-         * specified reserved cache node.</p>
+         * specified reserved cache node.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeReservedCacheNodes">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1195,26 +1374,34 @@ namespace Model
 
         /**
          * <p>Returns information about reserved cache nodes for this account, or about a
-         * specified reserved cache node.</p>
+         * specified reserved cache node.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeReservedCacheNodes">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeReservedCacheNodesAsync(const Model::DescribeReservedCacheNodesRequest& request, const DescribeReservedCacheNodesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists available reserved cache node offerings.</p>
+         * <p>Lists available reserved cache node offerings.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeReservedCacheNodesOfferings">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeReservedCacheNodesOfferingsOutcome DescribeReservedCacheNodesOfferings(const Model::DescribeReservedCacheNodesOfferingsRequest& request) const;
 
         /**
-         * <p>Lists available reserved cache node offerings.</p>
+         * <p>Lists available reserved cache node offerings.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeReservedCacheNodesOfferings">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeReservedCacheNodesOfferingsOutcomeCallable DescribeReservedCacheNodesOfferingsCallable(const Model::DescribeReservedCacheNodesOfferingsRequest& request) const;
 
         /**
-         * <p>Lists available reserved cache node offerings.</p>
+         * <p>Lists available reserved cache node offerings.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeReservedCacheNodesOfferings">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1225,7 +1412,9 @@ namespace Model
          * default, <code>DescribeSnapshots</code> lists all of your snapshots; it can
          * optionally describe a single snapshot, or just the snapshots associated with a
          * particular cache cluster.</p> <note> <p>This operation is valid for Redis
-         * only.</p> </note>
+         * only.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeSnapshots">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeSnapshotsOutcome DescribeSnapshots(const Model::DescribeSnapshotsRequest& request) const;
 
@@ -1234,7 +1423,9 @@ namespace Model
          * default, <code>DescribeSnapshots</code> lists all of your snapshots; it can
          * optionally describe a single snapshot, or just the snapshots associated with a
          * particular cache cluster.</p> <note> <p>This operation is valid for Redis
-         * only.</p> </note>
+         * only.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeSnapshots">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1245,7 +1436,9 @@ namespace Model
          * default, <code>DescribeSnapshots</code> lists all of your snapshots; it can
          * optionally describe a single snapshot, or just the snapshots associated with a
          * particular cache cluster.</p> <note> <p>This operation is valid for Redis
-         * only.</p> </note>
+         * only.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeSnapshots">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1257,7 +1450,9 @@ namespace Model
          * <code>ModifyCacheCluster</code> or <code>ModifyReplicationGroup</code>
          * operations to scale up your cluster or replication group, the value of the
          * <code>CacheNodeType</code> parameter must be one of the node types returned by
-         * this operation.</p>
+         * this operation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ListAllowedNodeTypeModifications">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListAllowedNodeTypeModificationsOutcome ListAllowedNodeTypeModifications(const Model::ListAllowedNodeTypeModificationsRequest& request) const;
 
@@ -1267,7 +1462,9 @@ namespace Model
          * <code>ModifyCacheCluster</code> or <code>ModifyReplicationGroup</code>
          * operations to scale up your cluster or replication group, the value of the
          * <code>CacheNodeType</code> parameter must be one of the node types returned by
-         * this operation.</p>
+         * this operation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ListAllowedNodeTypeModifications">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1279,7 +1476,9 @@ namespace Model
          * <code>ModifyCacheCluster</code> or <code>ModifyReplicationGroup</code>
          * operations to scale up your cluster or replication group, the value of the
          * <code>CacheNodeType</code> parameter must be one of the node types returned by
-         * this operation.</p>
+         * this operation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ListAllowedNodeTypeModifications">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1292,7 +1491,9 @@ namespace Model
          * your AWS costs.</p> <p>You can have a maximum of 10 cost allocation tags on an
          * ElastiCache resource. For more information, see <a
          * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/BestPractices.html">Using
-         * Cost Allocation Tags in Amazon ElastiCache</a>.</p>
+         * Cost Allocation Tags in Amazon ElastiCache</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ListTagsForResource">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
@@ -1303,7 +1504,9 @@ namespace Model
          * your AWS costs.</p> <p>You can have a maximum of 10 cost allocation tags on an
          * ElastiCache resource. For more information, see <a
          * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/BestPractices.html">Using
-         * Cost Allocation Tags in Amazon ElastiCache</a>.</p>
+         * Cost Allocation Tags in Amazon ElastiCache</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ListTagsForResource">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1316,7 +1519,9 @@ namespace Model
          * your AWS costs.</p> <p>You can have a maximum of 10 cost allocation tags on an
          * ElastiCache resource. For more information, see <a
          * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/BestPractices.html">Using
-         * Cost Allocation Tags in Amazon ElastiCache</a>.</p>
+         * Cost Allocation Tags in Amazon ElastiCache</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ListTagsForResource">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1325,14 +1530,18 @@ namespace Model
         /**
          * <p>Modifies the settings for a cache cluster. You can use this operation to
          * change one or more cluster configuration parameters by specifying the parameters
-         * and the new values.</p>
+         * and the new values.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ModifyCacheCluster">AWS
+         * API Reference</a></p>
          */
         virtual Model::ModifyCacheClusterOutcome ModifyCacheCluster(const Model::ModifyCacheClusterRequest& request) const;
 
         /**
          * <p>Modifies the settings for a cache cluster. You can use this operation to
          * change one or more cluster configuration parameters by specifying the parameters
-         * and the new values.</p>
+         * and the new values.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ModifyCacheCluster">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1341,7 +1550,9 @@ namespace Model
         /**
          * <p>Modifies the settings for a cache cluster. You can use this operation to
          * change one or more cluster configuration parameters by specifying the parameters
-         * and the new values.</p>
+         * and the new values.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ModifyCacheCluster">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1350,14 +1561,18 @@ namespace Model
         /**
          * <p>Modifies the parameters of a cache parameter group. You can modify up to 20
          * parameters in a single request by submitting a list parameter name and value
-         * pairs.</p>
+         * pairs.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ModifyCacheParameterGroup">AWS
+         * API Reference</a></p>
          */
         virtual Model::ModifyCacheParameterGroupOutcome ModifyCacheParameterGroup(const Model::ModifyCacheParameterGroupRequest& request) const;
 
         /**
          * <p>Modifies the parameters of a cache parameter group. You can modify up to 20
          * parameters in a single request by submitting a list parameter name and value
-         * pairs.</p>
+         * pairs.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ModifyCacheParameterGroup">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1366,26 +1581,34 @@ namespace Model
         /**
          * <p>Modifies the parameters of a cache parameter group. You can modify up to 20
          * parameters in a single request by submitting a list parameter name and value
-         * pairs.</p>
+         * pairs.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ModifyCacheParameterGroup">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ModifyCacheParameterGroupAsync(const Model::ModifyCacheParameterGroupRequest& request, const ModifyCacheParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Modifies an existing cache subnet group.</p>
+         * <p>Modifies an existing cache subnet group.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ModifyCacheSubnetGroup">AWS
+         * API Reference</a></p>
          */
         virtual Model::ModifyCacheSubnetGroupOutcome ModifyCacheSubnetGroup(const Model::ModifyCacheSubnetGroupRequest& request) const;
 
         /**
-         * <p>Modifies an existing cache subnet group.</p>
+         * <p>Modifies an existing cache subnet group.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ModifyCacheSubnetGroup">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ModifyCacheSubnetGroupOutcomeCallable ModifyCacheSubnetGroupCallable(const Model::ModifyCacheSubnetGroupRequest& request) const;
 
         /**
-         * <p>Modifies an existing cache subnet group.</p>
+         * <p>Modifies an existing cache subnet group.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ModifyCacheSubnetGroup">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1396,7 +1619,9 @@ namespace Model
          * current limitations on Redis (cluster mode disabled), this operation or
          * parameter is not supported on Redis (cluster mode enabled) replication
          * groups.</p> </important> <note> <p>This operation is valid for Redis only.</p>
-         * </note>
+         * </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ModifyReplicationGroup">AWS
+         * API Reference</a></p>
          */
         virtual Model::ModifyReplicationGroupOutcome ModifyReplicationGroup(const Model::ModifyReplicationGroupRequest& request) const;
 
@@ -1405,7 +1630,9 @@ namespace Model
          * current limitations on Redis (cluster mode disabled), this operation or
          * parameter is not supported on Redis (cluster mode enabled) replication
          * groups.</p> </important> <note> <p>This operation is valid for Redis only.</p>
-         * </note>
+         * </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ModifyReplicationGroup">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1416,26 +1643,37 @@ namespace Model
          * current limitations on Redis (cluster mode disabled), this operation or
          * parameter is not supported on Redis (cluster mode enabled) replication
          * groups.</p> </important> <note> <p>This operation is valid for Redis only.</p>
-         * </note>
+         * </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ModifyReplicationGroup">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ModifyReplicationGroupAsync(const Model::ModifyReplicationGroupRequest& request, const ModifyReplicationGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Allows you to purchase a reserved cache node offering.</p>
+         * <p>Allows you to purchase a reserved cache node offering.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/PurchaseReservedCacheNodesOffering">AWS
+         * API Reference</a></p>
          */
         virtual Model::PurchaseReservedCacheNodesOfferingOutcome PurchaseReservedCacheNodesOffering(const Model::PurchaseReservedCacheNodesOfferingRequest& request) const;
 
         /**
-         * <p>Allows you to purchase a reserved cache node offering.</p>
+         * <p>Allows you to purchase a reserved cache node offering.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/PurchaseReservedCacheNodesOffering">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::PurchaseReservedCacheNodesOfferingOutcomeCallable PurchaseReservedCacheNodesOfferingCallable(const Model::PurchaseReservedCacheNodesOfferingRequest& request) const;
 
         /**
-         * <p>Allows you to purchase a reserved cache node offering.</p>
+         * <p>Allows you to purchase a reserved cache node offering.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/PurchaseReservedCacheNodesOffering">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1448,7 +1686,9 @@ namespace Model
          * outage to the cache cluster. During the reboot, the cache cluster status is set
          * to REBOOTING.</p> <p>The reboot causes the contents of the cache (for each cache
          * node being rebooted) to be lost.</p> <p>When the reboot is complete, a cache
-         * cluster event is created.</p>
+         * cluster event is created.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/RebootCacheCluster">AWS
+         * API Reference</a></p>
          */
         virtual Model::RebootCacheClusterOutcome RebootCacheCluster(const Model::RebootCacheClusterRequest& request) const;
 
@@ -1459,7 +1699,9 @@ namespace Model
          * outage to the cache cluster. During the reboot, the cache cluster status is set
          * to REBOOTING.</p> <p>The reboot causes the contents of the cache (for each cache
          * node being rebooted) to be lost.</p> <p>When the reboot is complete, a cache
-         * cluster event is created.</p>
+         * cluster event is created.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/RebootCacheCluster">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1472,7 +1714,9 @@ namespace Model
          * outage to the cache cluster. During the reboot, the cache cluster status is set
          * to REBOOTING.</p> <p>The reboot causes the contents of the cache (for each cache
          * node being rebooted) to be lost.</p> <p>When the reboot is complete, a cache
-         * cluster event is created.</p>
+         * cluster event is created.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/RebootCacheCluster">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1480,13 +1724,17 @@ namespace Model
 
         /**
          * <p>Removes the tags identified by the <code>TagKeys</code> list from the named
-         * resource.</p>
+         * resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/RemoveTagsFromResource">AWS
+         * API Reference</a></p>
          */
         virtual Model::RemoveTagsFromResourceOutcome RemoveTagsFromResource(const Model::RemoveTagsFromResourceRequest& request) const;
 
         /**
          * <p>Removes the tags identified by the <code>TagKeys</code> list from the named
-         * resource.</p>
+         * resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/RemoveTagsFromResource">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1494,7 +1742,9 @@ namespace Model
 
         /**
          * <p>Removes the tags identified by the <code>TagKeys</code> list from the named
-         * resource.</p>
+         * resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/RemoveTagsFromResource">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1505,7 +1755,9 @@ namespace Model
          * default value. You can reset specific parameters by submitting a list of
          * parameter names. To reset the entire cache parameter group, specify the
          * <code>ResetAllParameters</code> and <code>CacheParameterGroupName</code>
-         * parameters.</p>
+         * parameters.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ResetCacheParameterGroup">AWS
+         * API Reference</a></p>
          */
         virtual Model::ResetCacheParameterGroupOutcome ResetCacheParameterGroup(const Model::ResetCacheParameterGroupRequest& request) const;
 
@@ -1514,7 +1766,9 @@ namespace Model
          * default value. You can reset specific parameters by submitting a list of
          * parameter names. To reset the entire cache parameter group, specify the
          * <code>ResetAllParameters</code> and <code>CacheParameterGroupName</code>
-         * parameters.</p>
+         * parameters.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ResetCacheParameterGroup">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1525,7 +1779,9 @@ namespace Model
          * default value. You can reset specific parameters by submitting a list of
          * parameter names. To reset the entire cache parameter group, specify the
          * <code>ResetAllParameters</code> and <code>CacheParameterGroupName</code>
-         * parameters.</p>
+         * parameters.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ResetCacheParameterGroup">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1534,14 +1790,18 @@ namespace Model
         /**
          * <p>Revokes ingress from a cache security group. Use this operation to disallow
          * access from an Amazon EC2 security group that had been previously
-         * authorized.</p>
+         * authorized.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/RevokeCacheSecurityGroupIngress">AWS
+         * API Reference</a></p>
          */
         virtual Model::RevokeCacheSecurityGroupIngressOutcome RevokeCacheSecurityGroupIngress(const Model::RevokeCacheSecurityGroupIngressRequest& request) const;
 
         /**
          * <p>Revokes ingress from a cache security group. Use this operation to disallow
          * access from an Amazon EC2 security group that had been previously
-         * authorized.</p>
+         * authorized.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/RevokeCacheSecurityGroupIngress">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1550,7 +1810,9 @@ namespace Model
         /**
          * <p>Revokes ingress from a cache security group. Use this operation to disallow
          * access from an Amazon EC2 security group that had been previously
-         * authorized.</p>
+         * authorized.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/RevokeCacheSecurityGroupIngress">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */

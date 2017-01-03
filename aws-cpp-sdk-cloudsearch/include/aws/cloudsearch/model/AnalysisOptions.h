@@ -34,7 +34,9 @@ namespace Model
 
   /**
    * <p>Synonyms, stopwords, and stemming options for an analysis scheme. Includes
-   * tokenization dictionary for Japanese.</p>
+   * tokenization dictionary for Japanese.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/AnalysisOptions">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDSEARCH_API AnalysisOptions
   {

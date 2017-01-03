@@ -34,7 +34,10 @@ namespace ElasticBeanstalk
 namespace Model
 {
   /**
-   * <p>Results of a <a>CreateStorageLocationResult</a> call.</p>
+   * <p>Results of a <a>CreateStorageLocationResult</a> call.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreateStorageLocationResultMessage">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICBEANSTALK_API CreateStorageLocationResult
   {

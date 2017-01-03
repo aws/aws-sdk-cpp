@@ -31,6 +31,7 @@ Event::Event() :
     m_eventIdHasBeenSet(false),
     m_eventNameHasBeenSet(false),
     m_eventTimeHasBeenSet(false),
+    m_eventSourceHasBeenSet(false),
     m_usernameHasBeenSet(false),
     m_resourcesHasBeenSet(false),
     m_cloudTrailEventHasBeenSet(false)
@@ -41,6 +42,7 @@ Event::Event(const JsonValue& jsonValue) :
     m_eventIdHasBeenSet(false),
     m_eventNameHasBeenSet(false),
     m_eventTimeHasBeenSet(false),
+    m_eventSourceHasBeenSet(false),
     m_usernameHasBeenSet(false),
     m_resourcesHasBeenSet(false),
     m_cloudTrailEventHasBeenSet(false)
@@ -69,6 +71,13 @@ Event& Event::operator =(const JsonValue& jsonValue)
     m_eventTime = jsonValue.GetDouble("EventTime");
 
     m_eventTimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("EventSource"))
+  {
+    m_eventSource = jsonValue.GetString("EventSource");
+
+    m_eventSourceHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Username"))
@@ -117,6 +126,12 @@ JsonValue Event::Jsonize() const
   if(m_eventTimeHasBeenSet)
   {
    payload.WithDouble("EventTime", m_eventTime.SecondsWithMSPrecision());
+  }
+
+  if(m_eventSourceHasBeenSet)
+  {
+   payload.WithString("EventSource", m_eventSource);
+
   }
 
   if(m_usernameHasBeenSet)

@@ -31,7 +31,10 @@ namespace Model
 {
 
   /**
-   * <p>Describes the options for a range inventory retrieval job.</p>
+   * <p>Describes the options for a range inventory retrieval job.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/InventoryRetrievalJobDescription">AWS
+   * API Reference</a></p>
    */
   class AWS_GLACIER_API InventoryRetrievalJobDescription
   {
@@ -44,196 +47,203 @@ namespace Model
     /**
      * <p>The output format for the vault inventory list, which is set by the
      * <b>InitiateJob</b> request when initiating a job to retrieve a vault inventory.
-     * Valid values are "CSV" and "JSON".</p>
+     * Valid values are <code>CSV</code> and <code>JSON</code>.</p>
      */
     inline const Aws::String& GetFormat() const{ return m_format; }
 
     /**
      * <p>The output format for the vault inventory list, which is set by the
      * <b>InitiateJob</b> request when initiating a job to retrieve a vault inventory.
-     * Valid values are "CSV" and "JSON".</p>
+     * Valid values are <code>CSV</code> and <code>JSON</code>.</p>
      */
     inline void SetFormat(const Aws::String& value) { m_formatHasBeenSet = true; m_format = value; }
 
     /**
      * <p>The output format for the vault inventory list, which is set by the
      * <b>InitiateJob</b> request when initiating a job to retrieve a vault inventory.
-     * Valid values are "CSV" and "JSON".</p>
+     * Valid values are <code>CSV</code> and <code>JSON</code>.</p>
      */
     inline void SetFormat(Aws::String&& value) { m_formatHasBeenSet = true; m_format = value; }
 
     /**
      * <p>The output format for the vault inventory list, which is set by the
      * <b>InitiateJob</b> request when initiating a job to retrieve a vault inventory.
-     * Valid values are "CSV" and "JSON".</p>
+     * Valid values are <code>CSV</code> and <code>JSON</code>.</p>
      */
     inline void SetFormat(const char* value) { m_formatHasBeenSet = true; m_format.assign(value); }
 
     /**
      * <p>The output format for the vault inventory list, which is set by the
      * <b>InitiateJob</b> request when initiating a job to retrieve a vault inventory.
-     * Valid values are "CSV" and "JSON".</p>
+     * Valid values are <code>CSV</code> and <code>JSON</code>.</p>
      */
     inline InventoryRetrievalJobDescription& WithFormat(const Aws::String& value) { SetFormat(value); return *this;}
 
     /**
      * <p>The output format for the vault inventory list, which is set by the
      * <b>InitiateJob</b> request when initiating a job to retrieve a vault inventory.
-     * Valid values are "CSV" and "JSON".</p>
+     * Valid values are <code>CSV</code> and <code>JSON</code>.</p>
      */
     inline InventoryRetrievalJobDescription& WithFormat(Aws::String&& value) { SetFormat(value); return *this;}
 
     /**
      * <p>The output format for the vault inventory list, which is set by the
      * <b>InitiateJob</b> request when initiating a job to retrieve a vault inventory.
-     * Valid values are "CSV" and "JSON".</p>
+     * Valid values are <code>CSV</code> and <code>JSON</code>.</p>
      */
     inline InventoryRetrievalJobDescription& WithFormat(const char* value) { SetFormat(value); return *this;}
 
     /**
-     * <p>The start of the date range in UTC for vault inventory retrieval that
-     * includes archives created on or after this date. A string representation of ISO
-     * 8601 date format, for example, 2013-03-20T17:03:43Z.</p>
+     * <p>The start of the date range in Universal Coordinated Time (UTC) for vault
+     * inventory retrieval that includes archives created on or after this date. This
+     * value should be a string in the ISO 8601 date format, for example
+     * <code>2013-03-20T17:03:43Z</code>.</p>
      */
     inline const Aws::String& GetStartDate() const{ return m_startDate; }
 
     /**
-     * <p>The start of the date range in UTC for vault inventory retrieval that
-     * includes archives created on or after this date. A string representation of ISO
-     * 8601 date format, for example, 2013-03-20T17:03:43Z.</p>
+     * <p>The start of the date range in Universal Coordinated Time (UTC) for vault
+     * inventory retrieval that includes archives created on or after this date. This
+     * value should be a string in the ISO 8601 date format, for example
+     * <code>2013-03-20T17:03:43Z</code>.</p>
      */
     inline void SetStartDate(const Aws::String& value) { m_startDateHasBeenSet = true; m_startDate = value; }
 
     /**
-     * <p>The start of the date range in UTC for vault inventory retrieval that
-     * includes archives created on or after this date. A string representation of ISO
-     * 8601 date format, for example, 2013-03-20T17:03:43Z.</p>
+     * <p>The start of the date range in Universal Coordinated Time (UTC) for vault
+     * inventory retrieval that includes archives created on or after this date. This
+     * value should be a string in the ISO 8601 date format, for example
+     * <code>2013-03-20T17:03:43Z</code>.</p>
      */
     inline void SetStartDate(Aws::String&& value) { m_startDateHasBeenSet = true; m_startDate = value; }
 
     /**
-     * <p>The start of the date range in UTC for vault inventory retrieval that
-     * includes archives created on or after this date. A string representation of ISO
-     * 8601 date format, for example, 2013-03-20T17:03:43Z.</p>
+     * <p>The start of the date range in Universal Coordinated Time (UTC) for vault
+     * inventory retrieval that includes archives created on or after this date. This
+     * value should be a string in the ISO 8601 date format, for example
+     * <code>2013-03-20T17:03:43Z</code>.</p>
      */
     inline void SetStartDate(const char* value) { m_startDateHasBeenSet = true; m_startDate.assign(value); }
 
     /**
-     * <p>The start of the date range in UTC for vault inventory retrieval that
-     * includes archives created on or after this date. A string representation of ISO
-     * 8601 date format, for example, 2013-03-20T17:03:43Z.</p>
+     * <p>The start of the date range in Universal Coordinated Time (UTC) for vault
+     * inventory retrieval that includes archives created on or after this date. This
+     * value should be a string in the ISO 8601 date format, for example
+     * <code>2013-03-20T17:03:43Z</code>.</p>
      */
     inline InventoryRetrievalJobDescription& WithStartDate(const Aws::String& value) { SetStartDate(value); return *this;}
 
     /**
-     * <p>The start of the date range in UTC for vault inventory retrieval that
-     * includes archives created on or after this date. A string representation of ISO
-     * 8601 date format, for example, 2013-03-20T17:03:43Z.</p>
+     * <p>The start of the date range in Universal Coordinated Time (UTC) for vault
+     * inventory retrieval that includes archives created on or after this date. This
+     * value should be a string in the ISO 8601 date format, for example
+     * <code>2013-03-20T17:03:43Z</code>.</p>
      */
     inline InventoryRetrievalJobDescription& WithStartDate(Aws::String&& value) { SetStartDate(value); return *this;}
 
     /**
-     * <p>The start of the date range in UTC for vault inventory retrieval that
-     * includes archives created on or after this date. A string representation of ISO
-     * 8601 date format, for example, 2013-03-20T17:03:43Z.</p>
+     * <p>The start of the date range in Universal Coordinated Time (UTC) for vault
+     * inventory retrieval that includes archives created on or after this date. This
+     * value should be a string in the ISO 8601 date format, for example
+     * <code>2013-03-20T17:03:43Z</code>.</p>
      */
     inline InventoryRetrievalJobDescription& WithStartDate(const char* value) { SetStartDate(value); return *this;}
 
     /**
      * <p>The end of the date range in UTC for vault inventory retrieval that includes
-     * archives created before this date. A string representation of ISO 8601 date
-     * format, for example, 2013-03-20T17:03:43Z.</p>
+     * archives created before this date. This value should be a string in the ISO 8601
+     * date format, for example <code>2013-03-20T17:03:43Z</code>.</p>
      */
     inline const Aws::String& GetEndDate() const{ return m_endDate; }
 
     /**
      * <p>The end of the date range in UTC for vault inventory retrieval that includes
-     * archives created before this date. A string representation of ISO 8601 date
-     * format, for example, 2013-03-20T17:03:43Z.</p>
+     * archives created before this date. This value should be a string in the ISO 8601
+     * date format, for example <code>2013-03-20T17:03:43Z</code>.</p>
      */
     inline void SetEndDate(const Aws::String& value) { m_endDateHasBeenSet = true; m_endDate = value; }
 
     /**
      * <p>The end of the date range in UTC for vault inventory retrieval that includes
-     * archives created before this date. A string representation of ISO 8601 date
-     * format, for example, 2013-03-20T17:03:43Z.</p>
+     * archives created before this date. This value should be a string in the ISO 8601
+     * date format, for example <code>2013-03-20T17:03:43Z</code>.</p>
      */
     inline void SetEndDate(Aws::String&& value) { m_endDateHasBeenSet = true; m_endDate = value; }
 
     /**
      * <p>The end of the date range in UTC for vault inventory retrieval that includes
-     * archives created before this date. A string representation of ISO 8601 date
-     * format, for example, 2013-03-20T17:03:43Z.</p>
+     * archives created before this date. This value should be a string in the ISO 8601
+     * date format, for example <code>2013-03-20T17:03:43Z</code>.</p>
      */
     inline void SetEndDate(const char* value) { m_endDateHasBeenSet = true; m_endDate.assign(value); }
 
     /**
      * <p>The end of the date range in UTC for vault inventory retrieval that includes
-     * archives created before this date. A string representation of ISO 8601 date
-     * format, for example, 2013-03-20T17:03:43Z.</p>
+     * archives created before this date. This value should be a string in the ISO 8601
+     * date format, for example <code>2013-03-20T17:03:43Z</code>.</p>
      */
     inline InventoryRetrievalJobDescription& WithEndDate(const Aws::String& value) { SetEndDate(value); return *this;}
 
     /**
      * <p>The end of the date range in UTC for vault inventory retrieval that includes
-     * archives created before this date. A string representation of ISO 8601 date
-     * format, for example, 2013-03-20T17:03:43Z.</p>
+     * archives created before this date. This value should be a string in the ISO 8601
+     * date format, for example <code>2013-03-20T17:03:43Z</code>.</p>
      */
     inline InventoryRetrievalJobDescription& WithEndDate(Aws::String&& value) { SetEndDate(value); return *this;}
 
     /**
      * <p>The end of the date range in UTC for vault inventory retrieval that includes
-     * archives created before this date. A string representation of ISO 8601 date
-     * format, for example, 2013-03-20T17:03:43Z.</p>
+     * archives created before this date. This value should be a string in the ISO 8601
+     * date format, for example <code>2013-03-20T17:03:43Z</code>.</p>
      */
     inline InventoryRetrievalJobDescription& WithEndDate(const char* value) { SetEndDate(value); return *this;}
 
     /**
-     * <p>Specifies the maximum number of inventory items returned per vault inventory
-     * retrieval request. This limit is set when initiating the job with the a
-     * <b>InitiateJob</b> request. </p>
+     * <p>The maximum number of inventory items returned per vault inventory retrieval
+     * request. This limit is set when initiating the job with the a <b>InitiateJob</b>
+     * request. </p>
      */
     inline const Aws::String& GetLimit() const{ return m_limit; }
 
     /**
-     * <p>Specifies the maximum number of inventory items returned per vault inventory
-     * retrieval request. This limit is set when initiating the job with the a
-     * <b>InitiateJob</b> request. </p>
+     * <p>The maximum number of inventory items returned per vault inventory retrieval
+     * request. This limit is set when initiating the job with the a <b>InitiateJob</b>
+     * request. </p>
      */
     inline void SetLimit(const Aws::String& value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
-     * <p>Specifies the maximum number of inventory items returned per vault inventory
-     * retrieval request. This limit is set when initiating the job with the a
-     * <b>InitiateJob</b> request. </p>
+     * <p>The maximum number of inventory items returned per vault inventory retrieval
+     * request. This limit is set when initiating the job with the a <b>InitiateJob</b>
+     * request. </p>
      */
     inline void SetLimit(Aws::String&& value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
-     * <p>Specifies the maximum number of inventory items returned per vault inventory
-     * retrieval request. This limit is set when initiating the job with the a
-     * <b>InitiateJob</b> request. </p>
+     * <p>The maximum number of inventory items returned per vault inventory retrieval
+     * request. This limit is set when initiating the job with the a <b>InitiateJob</b>
+     * request. </p>
      */
     inline void SetLimit(const char* value) { m_limitHasBeenSet = true; m_limit.assign(value); }
 
     /**
-     * <p>Specifies the maximum number of inventory items returned per vault inventory
-     * retrieval request. This limit is set when initiating the job with the a
-     * <b>InitiateJob</b> request. </p>
+     * <p>The maximum number of inventory items returned per vault inventory retrieval
+     * request. This limit is set when initiating the job with the a <b>InitiateJob</b>
+     * request. </p>
      */
     inline InventoryRetrievalJobDescription& WithLimit(const Aws::String& value) { SetLimit(value); return *this;}
 
     /**
-     * <p>Specifies the maximum number of inventory items returned per vault inventory
-     * retrieval request. This limit is set when initiating the job with the a
-     * <b>InitiateJob</b> request. </p>
+     * <p>The maximum number of inventory items returned per vault inventory retrieval
+     * request. This limit is set when initiating the job with the a <b>InitiateJob</b>
+     * request. </p>
      */
     inline InventoryRetrievalJobDescription& WithLimit(Aws::String&& value) { SetLimit(value); return *this;}
 
     /**
-     * <p>Specifies the maximum number of inventory items returned per vault inventory
-     * retrieval request. This limit is set when initiating the job with the a
-     * <b>InitiateJob</b> request. </p>
+     * <p>The maximum number of inventory items returned per vault inventory retrieval
+     * request. This limit is set when initiating the job with the a <b>InitiateJob</b>
+     * request. </p>
      */
     inline InventoryRetrievalJobDescription& WithLimit(const char* value) { SetLimit(value); return *this;}
 

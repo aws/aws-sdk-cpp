@@ -33,7 +33,9 @@ namespace Model
 {
 
   /**
-   * <p>Describes event information.</p>
+   * <p>Describes event information.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/EventInfoMap">AWS
+   * API Reference</a></p>
    */
   class AWS_REDSHIFT_API EventInfoMap
   {

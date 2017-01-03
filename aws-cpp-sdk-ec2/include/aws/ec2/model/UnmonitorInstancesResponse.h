@@ -35,7 +35,9 @@ namespace EC2
 namespace Model
 {
   /**
-   * <p>Contains the output of UnmonitorInstances.</p>
+   * <p>Contains the output of UnmonitorInstances.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UnmonitorInstancesResult">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API UnmonitorInstancesResponse
   {
@@ -45,37 +47,37 @@ namespace Model
     UnmonitorInstancesResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
     /**
-     * <p>Monitoring information for one or more instances.</p>
+     * <p>The monitoring information.</p>
      */
     inline const Aws::Vector<InstanceMonitoring>& GetInstanceMonitorings() const{ return m_instanceMonitorings; }
 
     /**
-     * <p>Monitoring information for one or more instances.</p>
+     * <p>The monitoring information.</p>
      */
     inline void SetInstanceMonitorings(const Aws::Vector<InstanceMonitoring>& value) { m_instanceMonitorings = value; }
 
     /**
-     * <p>Monitoring information for one or more instances.</p>
+     * <p>The monitoring information.</p>
      */
     inline void SetInstanceMonitorings(Aws::Vector<InstanceMonitoring>&& value) { m_instanceMonitorings = value; }
 
     /**
-     * <p>Monitoring information for one or more instances.</p>
+     * <p>The monitoring information.</p>
      */
     inline UnmonitorInstancesResponse& WithInstanceMonitorings(const Aws::Vector<InstanceMonitoring>& value) { SetInstanceMonitorings(value); return *this;}
 
     /**
-     * <p>Monitoring information for one or more instances.</p>
+     * <p>The monitoring information.</p>
      */
     inline UnmonitorInstancesResponse& WithInstanceMonitorings(Aws::Vector<InstanceMonitoring>&& value) { SetInstanceMonitorings(value); return *this;}
 
     /**
-     * <p>Monitoring information for one or more instances.</p>
+     * <p>The monitoring information.</p>
      */
     inline UnmonitorInstancesResponse& AddInstanceMonitorings(const InstanceMonitoring& value) { m_instanceMonitorings.push_back(value); return *this; }
 
     /**
-     * <p>Monitoring information for one or more instances.</p>
+     * <p>The monitoring information.</p>
      */
     inline UnmonitorInstancesResponse& AddInstanceMonitorings(InstanceMonitoring&& value) { m_instanceMonitorings.push_back(value); return *this; }
 
